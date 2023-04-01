@@ -122,7 +122,7 @@ header #pagename:focus {
     top: 14%;
     right: 15.36%;
     /* background-color: rgba(0, 0, 0, 0.1); */
-    height: 1600px;
+    height: auto;
     width: 1022px;
     border-radius: 5px;
     display: flex;
@@ -173,6 +173,7 @@ header #pagename:focus {
     text-align: start;
     width: 170px;
     top: 130px;
+    color: var(--white);
 }
 .boxreview .plusminus .criteria .par li {
     font-size: 16px;
@@ -212,11 +213,11 @@ header #pagename:focus {
 }
 .boxreview .plusminus .criteria:nth-child(1) i {
     color: rgb(15, 207, 79);
-    opacity: .75;
+    opacity: .9;
 }
 .boxreview .plusminus .criteria:nth-child(2) i {
     color: rgb(207, 37, 15);
-    opacity: .75;
+    opacity: .9;
 }
 .boxreview .plusminus .criteria:nth-child(1) {
     background: linear-gradient(150deg, rgba(0,0,0,.3) 0%, rgba(0, 0, 0, .3) 60%, rgba(15, 207, 79, .1) 100%);
@@ -238,15 +239,20 @@ header #pagename:focus {
     border-radius: 5px;
 }
 .features {
-    /* width: 100%; */
     width: 95.8%;
+}
+.features, .gamemodes {
     height: auto;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
     border-radius: 5px;
-    /* margin-top: 109px; */
+}
+.gamemodes {
+    position: absolute;
+    bottom: 204px;
+    z-index: 2;
 }
 .features .featuresbox {
     width: 100%;
@@ -257,7 +263,18 @@ header #pagename:focus {
     align-items: center;
     justify-content: center;
 }
-.features .featuresbox .typesinside {
+.gamemodes .featuresbox {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    background: linear-gradient(150deg, rgba(0,0,0,.3) 0%, rgba(0,0,0,.3) 10%, rgba(0, 0, 0, .3) 50%, rgba(255, 255, 255, 0) 100%);
+    /* background-color: var(--opacback); */
+    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.features .featuresbox .typesinside,
+.gamemodes .featuresbox .typesinside {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -270,6 +287,13 @@ header #pagename:focus {
     width: 32px;
     height: 32px;
 }
+.gamemodes .featuresbox .typesinside img {
+    transform: scale(0.8);
+}
+.gamemodes .featuresbox .typesinside img:hover {
+    transform: scale(1);
+    transition: ease-in-out all .4s;
+}
 .boxreview .instruction {
     margin-top: 19px;
 }
@@ -277,8 +301,11 @@ header #pagename:focus {
     /* text-transform: uppercase; */
     font-weight: 600;
     font-size: 22px;
-    color: var(--white);
+    color: var(--red);
     text-align: center;
+}
+.infoblock #PageTitle, #PageSubt {
+    color: var(--white);
 }
 .smallreview p {
     display: flex;
@@ -303,6 +330,48 @@ header #pagename:focus {
     font-size: 18px;
     width: 90%;
 }
+.ratingsumm {
+    margin-top: 19px;
+    width: 95.8%;
+    height: 100px;
+    background-color: var(--opacback);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.15);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--white);
+    padding: 30px 0px 30px 0px;
+    border-radius: 5px;
+}
+.ratingthings {
+    width: 90%;
+    display: flex;
+    height: 80%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+.ratingthings .ratingway {
+    height: 120px;
+    width: 150px;
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    color: var(--white);
+}
+.ratingthings .ratingway span {
+    margin-right: 10px;
+}
+.ratingthings .ratingway .starfull, .starhalf {
+    color: var(--red);
+}
 .instruction {
     display: flex;
     align-items: center;
@@ -312,7 +381,7 @@ header #pagename:focus {
     height: auto;
     margin-bottom: 30px !important;
 }
-.instruction ul {
+.instruction ol {
     width: 90%;
 }
 .instruction li {
@@ -340,7 +409,7 @@ header #pagename:focus {
 }
 .screentable {
     width: 95.8%;
-    height: auto;
+    height: 550px;
     background-color: var(--opacback);
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.15);
     display: flex;
@@ -358,14 +427,6 @@ header #pagename:focus {
 .screentable:hover {
     transform: scale(1.0);
     transition: all ease-in-out 1s;
-}
-.screentable .screens {
-    height: 530px;
-    opacity: .8;
-}
-.screentable .screens:hover {
-    opacity: 1;
-    transition: 0.4s ease-in-out all;
 }
 .infoblock button {
     background-color: transparent;
@@ -427,7 +488,7 @@ header img {
     margin-top: 30px;
 }
 .sitepage {
-    height: 1678px;
+    height: 1770px;
     width: 100%;
     justify-content: center;
     display: flex;
@@ -533,6 +594,10 @@ header img {
     color: white;
 }
 
+.sitepage .box .logobg .best {
+    display: none;
+}
+
 .box .content {
     position: absolute;
     width: 100%;
@@ -555,14 +620,14 @@ header img {
 }
 
 .content h2{
-    color: #fff;
+    color: var(--white);
     font-weight: 600;
     font-size: 22px;
     margin-top: 15px;
     text-transform: uppercase;
 }
 .content p{
-    color: #fff;
+    color: var(--white);
     font-weight: 400;
     font-size: 12px;
     margin-top: 13px;
@@ -574,7 +639,7 @@ header img {
     height: 55px;
 }
 .content p:nth-child(3){
-    color: #fff;
+    color: var(--white);;
     font-weight: 600;
     font-size: 11px;
     width: 180px;
@@ -702,7 +767,7 @@ header img {
     content: '';
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='16' style='fill:white'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z' /%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: center 55%;
+    background-position: center 52%;
     background-size: 40px 40px;
     transition: background-size 200ms;
     position: absolute;
@@ -743,11 +808,11 @@ header img {
   .slide {
     position: absolute;
     background-position: center;
-    background-size: 98%;
+    background-size: 100%;
     background-repeat: no-repeat;
     width: 980px;
     height: 550px;
-    top: 4px; 
+    top: 0px;
     left: 0px;
     transform: translateX(-100%);
     transition-duration: .4s;
@@ -763,19 +828,8 @@ header img {
     transform: translateX(0);
     opacity: 1;
   }
-  
-  .bg1{
-    background-image: url(img/screens/csgo500_1.png);
-  }
-  .bg2{
-    background-image: url(img/screens/csgo500_2.png);
-  }
-  .bg3{
-    background-image: url(img/screens/csgo500_3.png);
-  }
-  .bg4{
-    background-image: url(img/screens/csgo500_4.png);
-  }
-  .bg5{
-    background-image: url(img/screens/csgo500_5.png);
+  .slide img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
   }
