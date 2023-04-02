@@ -88,6 +88,7 @@ header .pages a {
 header #pagename_active {
     color: var(--white);
     font-size: 18px;
+    font-weight: 600;
     text-transform: uppercase;
 }
 header #pagename {
@@ -326,9 +327,12 @@ header #pagename:focus {
     text-align: center;
 }
 .smallreview p {
-    height: 100px;
+    height: auto;
     font-size: 18px;
     width: 90%;
+}
+.smallreview p:nth-child(3) {
+    margin-top: 30px;
 }
 .ratingsumm {
     margin-top: 19px;
@@ -357,11 +361,11 @@ header #pagename:focus {
 }
 .ratingthings .ratingway {
     height: 120px;
-    width: 150px;
+    width: 190px;
     display: flex;
     font-size: 18px;
     font-weight: 600;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: row;
     align-items: center;
     color: var(--white);
