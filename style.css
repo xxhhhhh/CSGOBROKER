@@ -221,10 +221,14 @@ header #pagename:focus {
     opacity: .9;
 }
 .boxreview .plusminus .criteria:nth-child(1) {
-    background: linear-gradient(150deg, rgba(0,0,0,.3) 0%, rgba(0, 0, 0, .3) 60%, rgba(15, 207, 79, .1) 100%);
+    /* background: linear-gradient(150deg, rgba(0,0,0,.3) 0%, rgba(0, 0, 0, .3) 60%, rgba(15, 207, 79, .1) 100%); */
+    background: linear-gradient(150deg, rgba(0, 0, 0, 0) 60%, rgba(15, 207, 79, .04) 100%);
+    background-color: var(--opacback);
 }
 .boxreview .plusminus .criteria:nth-child(2) {
-    background: linear-gradient(150deg, rgba(0,0,0,.3) 0%, rgba(0, 0, 0, .3) 60%, rgba(207, 37, 15, .1) 100%);
+    /* background: linear-gradient(150deg, rgba(0,0,0,.3) 0%, rgba(0, 0, 0, .3) 60%, rgba(207, 37, 15, .1) 100%); */
+    background: linear-gradient(150deg, rgba(0, 0, 0, 0) 60%, rgba(207, 37, 15, .04) 100%);
+    background-color: var(--opacback);
 }
 .boxreview .smallreview, .instruction {
     width: 95.8%;
