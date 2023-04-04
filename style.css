@@ -37,7 +37,7 @@ nav {
     /* border: solid var(--red);
     border-width: 0px 0 2px 0; */}
 nav .logospace {
-    width: 23.2%;
+    width: 24%;
     height: 100px;
     display: flex;
     align-items: center;
@@ -498,7 +498,7 @@ nav #pagename:focus {
 }
 nav img {
     height: auto;
-    width: 180px;
+    width: 160px;
     filter: drop-shadow(0px 5px 5px black);
 }
 .category-selector {
