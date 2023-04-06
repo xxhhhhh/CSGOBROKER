@@ -561,7 +561,7 @@ nav img {
     align-items: center;
     justify-content: center;
 }
-.firstline, .secondline, .thirdline, .fourthline, .fifthline, .sixthline, .seventhline, .eightline, .nineline {
+.boxes-holder {
     max-width: 70%;
     margin: 0 auto;
     width: auto;
@@ -772,14 +772,14 @@ nav img {
     .infoblock h1, h2, h2 {
         font-size: 20px;
     }
-    .firstline, .secondline, .thirdline{
-        width: 100%;
+    .boxes-holder {
+        max-width: 70%;
+        margin: 0 auto;
+        width: auto;
         height: 100%;
-        display: flex;
-        margin-top: 30px;
         justify-content: center;
+        display: flex;
         flex-wrap: wrap;
-        margin-top: 0;
     }
     .box{
         margin-right: 0;
