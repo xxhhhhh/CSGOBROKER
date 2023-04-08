@@ -496,7 +496,7 @@ nav #pagename:focus {
 }
 #FAQ #PageSubt {
     width: 1000px;
-    height: 160px;
+    height: auto;
     font-size: 15px;
     font-weight: 500;
     text-align: center;
@@ -504,6 +504,7 @@ nav #pagename:focus {
     align-items: center;
     justify-content: center;
     text-transform: none;
+    padding: 15px 0 15px 0;
 }
 nav img {
     height: auto;
@@ -893,6 +894,35 @@ nav img {
         justify-content: center;
         display: flex;
         flex-wrap: wrap;
+    }
+    .category-selector {
+        max-width: 70%;
+        margin: 0 auto;
+        width: auto;
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .category-selector .category-box {
+        margin: 15px 15px 0 0;
+        width: 100px;
+        height: 100px;
+    }
+    .category-selector .category-box .category-box-logo {
+        width: 100%;
+    }
+    .category-selector .category-box .category-box-content {
+        display: none;
+    }
+    .pages #PageTitle, #PageSubt {
+        font-size: 20px;
+    }
+    #FAQ {
+        margin: 15px 0 0 0;
+    }
+    .youtube {
+        display: none;
     }
     .box{
         margin-right: 0;
