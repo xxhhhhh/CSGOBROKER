@@ -149,7 +149,7 @@ nav #pagename:focus {
 }
 .boxreview .plusminus {
     width: 95.8%;
-    height: 324px;
+    height: 304px;
     display: flex;
     align-content: center;
     align-items: center;
@@ -157,7 +157,7 @@ nav #pagename:focus {
     top: 100px;
 }
 .boxreview .plusminus .criteria {
-    width: 479.5px;
+    width: 485.5px;
     height: 286px;
     border-radius: 5px;
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.15);
@@ -175,7 +175,7 @@ nav #pagename:focus {
     position: absolute;
     text-align: start;
     width: 170px;
-    top: 130px;
+    top: 120px;
     color: var(--white);
 }
 .boxreview .plusminus .criteria .par li {
@@ -258,7 +258,7 @@ nav #pagename:focus {
 }
 .gamemodes {
     position: absolute;
-    bottom: 204px;
+    bottom: 194px;
     z-index: 2;
 }
 .features .featuresbox {
@@ -306,7 +306,7 @@ nav #pagename:focus {
     transition: ease-in-out all .4s;
 }
 .boxreview .instruction {
-    margin-top: 19px;
+    margin-top: 9px;
 }
 .infoblock h1, h2, h3 {
     /* text-transform: uppercase; */
@@ -358,7 +358,7 @@ nav #pagename:focus {
     margin-top: 30px;
 }
 .ratingsumm {
-    margin-top: 19px;
+    margin-top: 9px;
     width: 95.8%;
     height: 100px;
     background-color: var(--opacback);
@@ -446,7 +446,7 @@ nav #pagename:focus {
     align-content: flex-start;
     padding: 15px 0px 15px 0px;
     border-radius: 5px;
-    margin: 19px 0 0 0;
+    margin: 9px 0 0 0;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -585,11 +585,12 @@ nav img {
 .siteleftpannel {
     position: fixed;
     margin-right: 0;
-    left: 15.36%;
+    left: 302px;
+    /* left: 15.36%; */
     top: 130px;
 }
 .bonusincludes {
-    margin-top: 19px;
+    margin-top: 9px;
 }
 .bonusdesc {
     width: 300px;
@@ -599,12 +600,12 @@ nav img {
 }
 .sitedetails {
     margin-right: 0;
-    left: -298px;
-    bottom: 199px;
+    left: -288px;
+    bottom: 189px;
     z-index: 1;
 }
 .sitedetails .sitepros {
-    margin-top: 19px;
+    margin-top: 9px;
     width: 300px;
     height: 60px;
     background-color: var(--opacback);
