@@ -91,12 +91,7 @@
             <div class="features">
                 <div class="featuresbox">
                     <div class="typesinside">
-                        <img src="./../img/minipics/csgo.png" title="CS:GO Skins" draggable="false" class="type" id="csgo" style="border-radius: 5px;" alt="">
-                        <img src="./../img/minipics/tf2.png" title="Team Fortress 2 Items" draggable="false" class="type" id="tf2" style="border-radius: 5px;" alt="">
-                        <img src="./../img/minipics/btc.png" title="Bitcoin" draggable="false" class="type" id="btc" style="border-radius: 5px;" alt="">
-                        <img src="./../img/minipics/visa.png" title="VISA" draggable="false" class="type" id="visa" style="border-radius: 5px;" alt="">
-                        <img src="./../img/minipics/mastercard.png" title="MasterCard" draggable="false" class="type" id="mastercard" style="border-radius: 5px;" alt="">
-                        <img src="./../img/minipics/paypal.png" title="PayPal" draggable="false" class="type" id="paypal" style="border-radius: 5px;" alt="">
+                        <a href="https://csgobroker.cc/freebies"><img src="./../img/minipics/signupbonus.png" title="Sign Up Bonus" draggable="false" class="type" id="signupbonus" style="border-radius: 5px;" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -198,6 +193,25 @@
                     </div>
                 </div>
             </div>
+            <div class="sitedetails">
+                <div class="sitepros active two">
+                    <span>Deposit Methods <i class="bi bi-caret-down-fill"></i></span>
+                    <div class="methodlist" id="first">
+                        <img src="./../img/minipics/csgo.png" title="CS:GO Skins" draggable="false" class="type" id="csgo" style="border-radius: 5px;" alt="">
+                        <img src="./../img/minipics/tf2.png" title="Team Fortress 2 Items" draggable="false" class="type" id="tf2" style="border-radius: 5px;" alt="">
+                        <img src="./../img/minipics/btc.png" title="Bitcoin" draggable="false" class="type" id="btc" style="border-radius: 5px;" alt="">
+                        <img src="./../img/minipics/visa.png" title="VISA" draggable="false" class="type" id="visa" style="border-radius: 5px;" alt="">
+                        <img src="./../img/minipics/mastercard.png" title="MasterCard" draggable="false" class="type" id="mastercard" style="border-radius: 5px;" alt="">
+                        <img src="./../img/minipics/paypal.png" title="PayPal" draggable="false" class="type" id="paypal" style="border-radius: 5px;" alt="">
+                    </div>
+                </div>
+                <div class="sitepros two">
+                    <span>Withdraw Methods <i class="bi bi-caret-down-fill"></i></span>
+                    <div class="methodlist" id="second">
+                        <img src="./../img/minipics/csgo.png" title="CS:GO Skins" draggable="false" class="type" id="csgo" style="border-radius: 5px;" alt="">
+                    </div>
+                </div>
+            </div>
             <div class="credits">You have to be 18+ to gamble</div>
         </div>
     </div>
@@ -212,6 +226,14 @@
             }
         }, 5000);
     </script>
+        <script>
+            $(document).ready(function(){
+      $('.sitepros').click(function(){
+        $('.sitepros').removeClass("active");
+        $(this).addClass("active");
+    });
+    });
+        </script>
 </body>
 <script src="./../scroller.js"></script>
 </html>
