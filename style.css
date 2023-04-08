@@ -292,8 +292,12 @@ nav #pagename:focus {
 }
 .features .featuresbox .typesinside img {
     margin: 12px 0 12px 12px;
-    width: 32px;
+    width: 96px;
     height: 32px;
+}
+.features .featuresbox .typesinside img:hover {
+    transform: scale(1.1);
+    transition: ease-in-out all .4s;
 }
 .gamemodes .featuresbox .typesinside img {
     transform: scale(0.8);
@@ -576,12 +580,112 @@ nav img {
     justify-content: center;
     display: flex;
 }
-.sitepage .box {
-    margin: 0 !important;
+.sitedetails {
+    position: absolute;
+}
+.siteleftpannel {
     position: fixed;
     margin-right: 0;
     left: 15.36%;
-    top: 13.5%;
+    top: 130px;
+}
+.bonusincludes {
+    margin-top: 19px;
+}
+.bonusdesc {
+    width: 300px;
+    height: 100px;
+    background-color: var(--opacback);
+    border-radius: 10px;
+}
+.sitedetails {
+    margin-right: 0;
+    left: -298px;
+    bottom: 199px;
+    z-index: 1;
+}
+.sitedetails .sitepros {
+    margin-top: 19px;
+    width: 300px;
+    height: 60px;
+    background-color: var(--opacback);
+    border-radius: 5px;
+    position: relative;
+    font-weight: 500;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    transition: height 1.1s ease-in-out;
+    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.sitedetails .methodlist {
+    height: auto;
+    position: relative;
+    transition: height 1.1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    border-radius: 5px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.sitedetails .methodlist img {
+    margin: 6px;
+    width: 32px;
+    height: 32px;
+}
+.sitedetails .methodlist img:hover {
+    transform: scale(1.1);
+    transition: transform ease-in-out .4s;
+}
+.sitedetails .sitepros.active {
+    height: 208px;
+    transition: height 1.1s ease-in-out;
+} 
+.sitedetails .sitepros.active.two {
+    height: 168px;
+    transition: height 1.1s ease-in-out;
+} 
+.sitedetails .sitepros.active.four {
+    height: 248px;
+    transition: height 1.1s ease-in-out;
+} 
+.sitedetails .sitepros span {
+    min-height: 60px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    top: 0;
+}
+.sitepros i {
+    margin-left: 10px;
+}
+.sitedetails .sitepros i {
+    transform: rotate(0deg);
+    transition: transform ease-in-out .6s;
+}
+.sitedetails .sitepros.active i {
+    transform: rotate(180deg);
+    transition: transform ease-in-out .6s;
+}
+.sitedetails .sitepros:hover.active {
+    background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(65, 65, 65, 0.3) 50%, rgba(255, 255, 255, 0) 100%) !important;
+    transform: scale(1);
+}
+.sitedetails .sitepros:hover {
+    background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(65, 65, 65, 0.3) 50%, rgba(255, 255, 255, 0) 100%) !important;
+    transform: scale(1.03);
+    transition:  1.1s ease-in-out;
+}
+.sitepage .box {
+    margin: 0 !important;
 }
 .sitepage .box .content button {
     background-color: var(--red);
