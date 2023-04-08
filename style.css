@@ -647,8 +647,16 @@ nav img {
     height: 208px;
     transition: height 1.1s ease-in-out;
 } 
+.sitedetails .sitepros.active.one {
+    height: 128px;
+    transition: height 1.1s ease-in-out;
+} 
 .sitedetails .sitepros.active.two {
     height: 168px;
+    transition: height 1.1s ease-in-out;
+} 
+.sitedetails .sitepros.active.three {
+    height: 208px;
     transition: height 1.1s ease-in-out;
 } 
 .sitedetails .sitepros.active.four {
