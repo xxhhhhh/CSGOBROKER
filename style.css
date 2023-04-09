@@ -188,7 +188,7 @@ nav #pagename:focus {
     width: 394px;
     margin-left: 30px;
     height: 70%;
-    margin-top: 18%;
+    margin-top: 87px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -924,6 +924,71 @@ nav img {
     .youtube {
         display: none;
     }
+    .sitepage .box {
+        margin: 9px 0 9px 0 !important;
+        width: 100%;
+    }
+    .features .featuresbox {
+        background: var(--opacback);
+    }
+    .boxreview {
+        left: 0;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .boxreview .plusminus {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        height: 100%;
+    }
+    .boxreview .plusminus .criteria {
+        width: 100%;
+        margin: 9px 0 0 0;
+    }
+    .boxreview .plusminus .criteria .par h2 {
+        position: static;
+    }
+    .boxreview .smallreview {
+        margin-top: 9px;
+    }
+    .ratingsumm,
+    .ratingthings {
+        height: 200px;
+    }
+    .screentable {
+        height: 210px !important;
+    }
+    input + label::after {
+        height: 210px !important;
+    }
+    .slide {
+        width: 100% !important;
+    }
+    .ratingthings {
+        flex-wrap: nowrap;
+    }
+    .gamemodes {
+        bottom: 294px;
+    }
+    .instruction li {
+        font-size: 16px !important;
+    }
+    .sitepage {
+        height: auto;
+        width: 100%;
+        justify-content: flex-start;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .siteleftpannel {
+        position: relative;
+        width: 95.8%;
+        margin-right: 0;
+        left: 0;
+        top: 0;
+    }
+    }
     .box{
         margin-right: 0;
         margin-top: 30px;
@@ -949,8 +1014,7 @@ nav img {
     #FAQ #PageSubt {
         font-size: 12px;
     }
-}
-  
+
   
   input {
     position: absolute;  
