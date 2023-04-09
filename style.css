@@ -992,6 +992,9 @@ nav img {
     }
     .sitedetails {
         margin-top: 9px;
+        position: relative !important;
+        left: 0 !important;
+        bottom: 0 !important;
     }
     .siteleftpannel {
         position: relative;
