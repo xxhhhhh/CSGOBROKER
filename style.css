@@ -622,6 +622,7 @@ nav img {
     overflow: hidden;
     flex-direction: column;
     justify-content: flex-start;
+    margin: 0 auto;
 }
 .sitedetails .methodlist {
     height: auto;
@@ -982,6 +983,15 @@ nav img {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .sitedetails .sitepros {
+        width: 95.8%;
+    }
+    .sitedetails .methodlist {
+        width: 100%;
+    }
+    .sitedetails {
+        margin-top: 9px;
     }
     .siteleftpannel {
         position: relative;
