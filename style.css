@@ -699,7 +699,9 @@ nav img {
     margin: 0 !important;
 }
 .sitepage .box .content button {
-    background-color: var(--red);
+    /* background-color: var(--red); */
+    border: var(--red) 1px dashed;
+    background-color: #141414;
 }
 .sitepage .box .content button:hover {
     background-color: #62101d;
