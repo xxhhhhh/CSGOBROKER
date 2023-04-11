@@ -3,7 +3,6 @@
 * {
     padding: 0%;
     margin: 0%;
-    display: block;
     box-sizing: border-box;
 }
 head{
@@ -409,16 +408,22 @@ nav #pagename:focus {
     margin-bottom: 30px !important;
 }
 .instruction ol {
-    width: 90%;
+    width: 88%;
 }
 .instruction li {
     color: var(--white);
-    text-align: center;
+    text-align: left;
     font-size: 17px;
     font-weight: 500;
-    display: flex;
+    display: list-item;
+    list-style: decimal;
+    vertical-align: baseline;
     height: 32px;
     align-items: center;
+
+}
+.instruction li::marker {
+    color: var(--red);
 }
 .instruction code {
     border-top: 1px solid #202020;
