@@ -666,6 +666,10 @@ nav img {
     height: 248px;
     transition: height 1.1s ease-in-out;
 } 
+.sitedetails .sitepros.active.five {
+    height: 288px;
+    transition: height 1.1s ease-in-out;
+} 
 .sitedetails .sitepros span {
     min-height: 60px;
     width: auto;
