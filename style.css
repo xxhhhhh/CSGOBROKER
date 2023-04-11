@@ -158,7 +158,7 @@ nav #pagename:focus {
 }
 .boxreview .plusminus .criteria {
     width: 485.5px;
-    height: 286px;
+    min-height: 286px;
     border-radius: 5px;
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.15);
     display: flex;
@@ -1022,6 +1022,9 @@ nav img {
     nav .logospace {
         width: 23.2%;
     }
+    #back-to-top-btn {
+        display: none;
+    }
     nav .pages {
         width: 76.8%;
     }
@@ -1111,7 +1114,7 @@ nav img {
     background-size: 100%;
     background-repeat: no-repeat;
     width: 980px;
-    height: 550px;
+    height: 100%;
     top: 0px;
     left: 0px;
     transform: translateX(-100%);
