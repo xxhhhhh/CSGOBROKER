@@ -408,7 +408,7 @@ nav #pagename:focus {
     margin-bottom: 30px !important;
 }
 .instruction ol {
-    width: 88%;
+    width: 86%;
 }
 .instruction li {
     color: var(--white);
@@ -420,10 +420,18 @@ nav #pagename:focus {
     vertical-align: baseline;
     height: 32px;
     align-items: center;
+    padding: 3px;
 
+}
+.instruction li a {
+    font-weight: 600;
 }
 .instruction li::marker {
     color: var(--red);
+    font-weight: 600;
+}
+.instruction li strong {
+    font-weight: 600 !important;
 }
 .instruction code {
     border-top: 1px solid #202020;
