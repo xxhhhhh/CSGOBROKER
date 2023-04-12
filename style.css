@@ -29,7 +29,6 @@ body{
   }
    
   ::-webkit-scrollbar-thumb {
-    background: rgba(90, 90, 90);
     background: var(--red); 
     border-radius: 5px;
   }
@@ -319,6 +318,8 @@ nav #pagename:focus {
 }
 .gamemodes .featuresbox .typesinside img {
     transform: scale(0.8);
+    height: 32px;
+    width: 32px;
 }
 .gamemodes .featuresbox .typesinside img:hover {
     transform: scale(1);
@@ -326,6 +327,9 @@ nav #pagename:focus {
 }
 .boxreview .instruction {
     margin-top: 9px;
+}
+.star_rating {
+    padding: 0 1px;
 }
 .infoblock h1, h2, h3 {
     /* text-transform: uppercase; */
@@ -415,7 +419,7 @@ nav #pagename:focus {
 .ratingthings .ratingway span {
     margin-right: 10px;
 }
-.ratingthings .ratingway .starfull, .starhalf {
+.ratingthings .ratingway .star_rating, .star_rating {
     color: var(--red);
 }
 .instruction {
