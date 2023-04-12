@@ -1,2 +1,4 @@
 ErrorDocument 404 /index.html
 ErrorDocument 500 /index.html
+RewriteBase /
+RewriteRule ^sitemap.xml$ index.php?route=extension/feed/google_sitemap [L]
