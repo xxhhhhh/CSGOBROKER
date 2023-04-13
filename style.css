@@ -85,7 +85,7 @@ nav .socials {
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 17.3%;
+    right: 17.1%;
 }
 nav .youtube .bi {
     font-size: 26px;
@@ -449,6 +449,11 @@ nav #pagename:focus {
 }
 .instruction li a {
     font-weight: 600;
+    color: var(--red);
+    text-decoration: none;
+}
+.instruction li a:hover {
+    text-decoration: underline;
 }
 .instruction li::marker {
     color: var(--red);
