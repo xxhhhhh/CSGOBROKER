@@ -55,11 +55,12 @@ nav {
     /* border: solid var(--red);
     border-width: 0px 0 2px 0; */}
 nav .logospace {
-    width: 24%;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    left: 15.7%;
+    position: absolute;
 }
 nav #logo {
     width: auto;
@@ -70,12 +71,11 @@ nav #logo {
     left: 150px;
 }
 nav .pages {
-    width: 74.8%;
     height: 100px;
     display: flex;
     align-items: center;
-    right: 0;
     position: absolute;
+    left: 25.7%;
 }
 nav .pages .socials {
     height: 50px;
@@ -961,7 +961,7 @@ nav img {
         display: none;
     }
     .pages #PageTitle, #PageSubt {
-        font-size: 20px;
+        font-size: 18px;
         text-align: center;
     }
     #FAQ {
@@ -1057,13 +1057,14 @@ nav img {
         font-size: 13px;
     }
     nav .logospace {
-        width: 23.2%;
+        left: 5%;
     }
     #back-to-top-btn {
         display: none;
     }
     nav .pages {
-        width: 76.8%;
+        left: 28%;
+        width: 68%;
     }
     nav img {
         width: 80px;
@@ -1187,6 +1188,7 @@ nav img {
     outline: none;
     border: 2px solid rgba(0,0,0,.04);
     border-radius: 50%;
+    z-index: 10000;
   }
   #back-to-top-btn:hover, #back-to-top-btn:focus {
     color: var(--white);
