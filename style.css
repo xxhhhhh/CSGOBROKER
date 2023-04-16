@@ -1001,10 +1001,13 @@ footer {
     width: 100%;
     height: 100%;
     background-color: var(--opacback);
-    margin-top: 30px;
+    margin-top: 50px;
 }
-footer#review {
+/* footer#review {
     margin-top: 9px;
+} */
+footer#review .centralizer .footer-content a {
+    left: 305px;
 }
 footer .centralizer {
     width: 69%;
@@ -1168,6 +1171,15 @@ footer .centralizer .footer-content {
     }
     #FAQ #PageSubt {
         font-size: 12px;
+    }
+    footer#review .centralizer .footer-content a {
+        left: 0 !important;
+    }
+    .copyright {
+        display: none;
+    }
+    footer {
+        margin-top: 15px;
     }
 }
   
