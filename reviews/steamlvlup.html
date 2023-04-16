@@ -117,14 +117,15 @@
                     <i class="bi bi-caret-down-fill"></i>
                 </div>
             </div>
-            <div class="smallreview">
+            <div class="smallreview" id="Review_1">
                 <h2>Review of SteamLvlUp</h2>
                 <p>SteamLvlUp is a legitimate website that enables Steam users to boost their account level by buying packs of Steam trading cards. The website allows users to purchase individual game-specific card packs, either randomly or by selecting specific packs from the store. Additionally, users can exchange their excess Steam trading cards for credits on the site.</p>
                 <p>Although the service fees are affordable, the site is a little pricier than most level-up services. Nonetheless, SteamLvlUp is an excellent option for those who want to increase their Steam account level quickly and safely.</p>
                 <p>SteamLvlUp has been operational for four years and is highly rated by users. The site's FAQ is comprehensive, offering answers to common questions about each section of the site. The support services of the site are also impressive, and users can easily contact them through a ticket system. SteamLvlUp is entirely automated by trade bots, allowing users to level up their Steam accounts instantly.</p>
                 <p>Apart from its level-up services, SteamLvlUp also offers a great TF2 key and Steam gem market. While the site separates real money deposits oddly, it does provide a free sign-up bonus. Overall, SteamLvlUp is an excellent choice for those looking to increase their Steam account level quickly and safely.</p>
+                <div class="title-space"></div>
             </div>
-                        <div class="instruction">
+                        <div class="instruction" id="Bonus_2">
                 <h2>How to Claim SteamLvlUp Bonuses</h2>
                 <ol>
                 <li>Go to <a href="https://steamlvlup.com/r/jt6p95">SteamLvlUp</a> using our provided link</li>
@@ -134,8 +135,31 @@
                 <li>Enjoy !</li>
                 </ol>
             </div>
-            <div class="sitedetails">
-                <div class="sitepros three">
+            <div class="screentable" id="Site_3">
+                <div class="gamemodes">
+                    <div class="featuresbox">
+                        <div class="typesinside">
+                            <img src="./../img/minipics/steamlvlup.png" title="Steam Level Up" draggable="false" class="type" id="steamlvlup" style="border-radius: 5px;" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="screens">
+                    <input type="radio" id="trigger1" name="slider" checked>
+                    <label for="trigger1"></label>
+                    <div class="slide bg1"><img src="./../img/screens/steamlvlup_1.png" alt=""></div>
+
+                    <input type="radio" id="trigger2" name="slider">
+                    <label for="trigger2"></label>
+                    <div class="slide bg2"><img src="./../img/screens/steamlvlup_2.png" alt=""></div>
+
+                    <input type="radio" id="trigger3" name="slider">
+                    <label for="trigger3"></label>
+                    <div class="slide bg3"><img src="./../img/screens/steamlvlup_3.png" alt=""></div>
+
+                </div>
+            </div>
+            <div class="sitedetails" id="Payment_4">
+                <div class="sitepros one">
                     <span>Deposit Methods <i class="bi bi-caret-down-fill"></i></span>
                     <div class="methodlist" id="first">
                         <img src="./../img/minipics/btc.png" title="Bitcoin" draggable="false" class="type" id="btc" style="border-radius: 5px;" alt="">
@@ -155,30 +179,14 @@
                         <img src="./../img/minipics/g2apay.png" title="G2A Pay" draggable="false" class="type" id="g2apay" style="border-radius: 5px;" alt="">
                     </div>
                 </div>
-                <div class="sitepros active one">
+                <div class="sitepros one">
                     <span>Withdraw Methods <i class="bi bi-caret-down-fill"></i></span>
                     <div class="methodlist" id="second">
                         <img src="./../img/minipics/tradingcards.png" title="Steam Trading Cards" draggable="false" class="type" id="tradingcards" style="border-radius: 5px;" alt="">
                     </div>
                 </div>
             </div>
-            <div class="screentable">
-                <div class="screens">
-                    <input type="radio" id="trigger1" name="slider" checked>
-                    <label for="trigger1"></label>
-                    <div class="slide bg1"><img src="./../img/screens/steamlvlup_1.png" alt=""></div>
-
-                    <input type="radio" id="trigger2" name="slider">
-                    <label for="trigger2"></label>
-                    <div class="slide bg2"><img src="./../img/screens/steamlvlup_2.png" alt=""></div>
-
-                    <input type="radio" id="trigger3" name="slider">
-                    <label for="trigger3"></label>
-                    <div class="slide bg3"><img src="./../img/screens/steamlvlup_3.png" alt=""></div>
-
-                </div>
-            </div>
-            <div class="ratingsumm">
+            <div class="ratingsumm" id="Rating_5">
                 <div class="ratingthings">
                     <div class="ratingway"><span>Trust</span>
                         <div class="star_rating"><i class="bi bi-star-fill"></i></div>
@@ -210,13 +218,6 @@
                     </div>
                 </div>
             </div>
-            <div class="gamemodes">
-                <div class="featuresbox">
-                    <div class="typesinside">
-                        <img src="./../img/minipics/steamlvlup.png" title="Steam Level Up" draggable="false" class="type" id="steamlvlup" style="border-radius: 5px;" alt="">
-                    </div>
-                </div>
-            </div>
             <div class="slider-placer">
                 <a href="https://csgobroker.cc/" class="slider-banner"><img src="/img/best-gambling-sites-slide.png" alt=""></a>
             </div>
@@ -242,12 +243,14 @@
         }, 5000);
     </script>
         <script>
-            $(document).ready(function(){
-      $('.sitepros').click(function(){
-        $('.sitepros').removeClass("active");
-        $(this).addClass("active");
-    });
-    });
+            $('.sitepros').click(function() {
+    $(this).toggleClass("active");
+});    
+    </script>
+        <script>
+            $('.navigation-menu').click(function() {
+    $(this).toggleClass("active");
+});    
         </script>
 </body>
 <script src="./../scroller.js"></script>

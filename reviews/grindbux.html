@@ -115,14 +115,15 @@
                     <i class="bi bi-caret-down-fill"></i>
                 </div>
             </div>
-            <div class="smallreview">
+            <div class="smallreview" id="Review_1">
                 <h2>Review of GrindBux</h2>
                 <p>GrindBux is a GPT (Get Paid To) platform that allows users to earn money by participating in activities such as answering surveys, completing offers, playing games, and watching videos, in our opinion. According to reviews, GrindBux is a legitimate platform to earn money.</p>
                 <p>The website has a decent number of survey providers and offerwall partners to choose from, and there are plenty of options for withdrawing earnings. Users can earn GrindBux coins, which can be converted into cash or gift cards.</p>
                 <p>The setup is quite simple, with different icons representing different earning opportunities. Users can choose which activities they want to participate in and earn GrindBux coins accordingly. The website also has a leaderboard, which adds a competitive element to the platform.</p>
                 <p>In conclusion, GrindBux is a legitimate GPT platform that allows users to earn money by participating in various activities, in our opinion. While the website may not have a high reputation score, reviews suggest that it is a legitimate way to earn money online.</p>
+                <div class="title-space"></div>
             </div>
-                        <div class="instruction">
+                        <div class="instruction" id="Bonus_2">
                 <h2>How to Claim 100 Diamonds on GrindBux</h2>
                 <ol>
                 <li>Go to <a href="https://grindbux.com/ref/money">GrindBux</a> using our provided link</li>
@@ -133,21 +134,14 @@
                 <li> Enjoy your bonus !</li>
                 </ol>
             </div>
-            <div class="sitedetails">
-                <div class="sitepros active two">
-                    <span>Withdraw Methods <i class="bi bi-caret-down-fill"></i></span>
-                    <div class="methodlist" id="second">
-                        <img src="./../img/minipics/btc.png" title="Bitcoin" draggable="false" class="type" id="btc" style="border-radius: 5px;" alt="">
-                        <img src="./../img/minipics/ltc.png" title="Litecoin" draggable="false" class="type" id="ltc" style="border-radius: 5px;" alt="">
-                        <img src="./../img/minipics/solana.png" title="Solana" draggable="false" class="type" id="solana" style="border-radius: 5px;" alt="">
-                        <img src="./../img/minipics/visa.png" title="VISA" draggable="false" class="type" id="visa" style="border-radius: 5px;" alt="">
-                        <img src="./../img/minipics/paypal.png" title="PayPal" draggable="false" class="type" id="paypal" style="border-radius: 5px;" alt="">
-                        <img src="./../img/minipics/giftcard.png" title="Gift Cards" draggable="false" class="type" id="giftcard" style="border-radius: 5px;" alt="">
-                        <img src="./../img/minipics/roblox.png" title="Roblox Gift Cards" draggable="false" class="type" id="roblox" style="border-radius: 5px;" alt="">
+            <div class="screentable" id="Site_3">
+                <div class="gamemodes">
+                    <div class="featuresbox">
+                        <div class="typesinside">
+                            <img src="./../img/minipics/earning.png" title="Offerwalls" draggable="false" class="type" id="offerwalls" style="border-radius: 5px;" alt="">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="screentable">
                 <div class="screens">
                     <input type="radio" id="trigger1" name="slider" checked>
                     <label for="trigger1"></label>
@@ -163,7 +157,21 @@
 
                 </div>
             </div>
-            <div class="ratingsumm">
+            <div class="sitedetails" id="Payment_4">
+                <div class="sitepros two">
+                    <span>Withdraw Methods <i class="bi bi-caret-down-fill"></i></span>
+                    <div class="methodlist" id="second">
+                        <img src="./../img/minipics/btc.png" title="Bitcoin" draggable="false" class="type" id="btc" style="border-radius: 5px;" alt="">
+                        <img src="./../img/minipics/ltc.png" title="Litecoin" draggable="false" class="type" id="ltc" style="border-radius: 5px;" alt="">
+                        <img src="./../img/minipics/solana.png" title="Solana" draggable="false" class="type" id="solana" style="border-radius: 5px;" alt="">
+                        <img src="./../img/minipics/visa.png" title="VISA" draggable="false" class="type" id="visa" style="border-radius: 5px;" alt="">
+                        <img src="./../img/minipics/paypal.png" title="PayPal" draggable="false" class="type" id="paypal" style="border-radius: 5px;" alt="">
+                        <img src="./../img/minipics/giftcard.png" title="Gift Cards" draggable="false" class="type" id="giftcard" style="border-radius: 5px;" alt="">
+                        <img src="./../img/minipics/roblox.png" title="Roblox Gift Cards" draggable="false" class="type" id="roblox" style="border-radius: 5px;" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="ratingsumm" id="Rating_5">
                 <div class="ratingthings">
                     <div class="ratingway"><span>Trust</span>
                         <div class="star_rating"><i class="bi bi-star-fill"></i></div>
@@ -195,13 +203,6 @@
                     </div>
                 </div>
             </div>
-            <div class="gamemodes">
-                <div class="featuresbox">
-                    <div class="typesinside">
-                        <img src="./../img/minipics/earning.png" title="Offerwalls" draggable="false" class="type" id="offerwalls" style="border-radius: 5px;" alt="">
-                    </div>
-                </div>
-            </div>
             <div class="slider-placer">
                 <a href="https://csgobroker.cc/" class="slider-banner"><img src="/img/best-gambling-sites-slide.png" alt=""></a>
             </div>
@@ -227,12 +228,14 @@
         }, 5000);
     </script>
         <script>
-            $(document).ready(function(){
-      $('.sitepros').click(function(){
-        $('.sitepros').removeClass("active");
-        $(this).addClass("active");
-    });
-    });
+            $('.sitepros').click(function() {
+    $(this).toggleClass("active");
+});    
+    </script>
+        <script>
+            $('.navigation-menu').click(function() {
+    $(this).toggleClass("active");
+});    
         </script>
 </body>
 <script src="./../scroller.js"></script>

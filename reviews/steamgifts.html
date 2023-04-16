@@ -111,14 +111,15 @@
                     <i class="bi bi-caret-down-fill"></i>
                 </div>
             </div>
-            <div class="smallreview">
+            <div class="smallreview" id="Review_1">
                 <h2>Review of SteamGifts</h2>
                 <p>SteamGifts is a trustworthy website that offers giveaways for Steam games. Users can create an account and enter the giveaways for a chance to win games. The site also has a community section where users can discover and share new games and leave comments using specific formatting syntax. Additionally, there is a FAQ section that addresses frequently asked questions and provides guidelines for community rules. SteamGifts has a positive reputation in the industry, and Scam-detector ranks it as 100% safe and secure.</p>
                 <p>To take part in the giveaways hosted on SteamGifts, users are required to create an account and make their Steam profile public once a week. Once registered, users can select the game they want to give away and choose the duration of the giveaway, type of giveaway, and level required for participation.</p>
                 <p>In some cases, giveaways are private and only accessible by solving puzzles shared on the forum. Every user entering the giveaways is given an equal chance to win the prize, and an automated giveaway entry feature is available to allow users to join multiple giveaways easily.</p>
                 <p>Overall, SteamGifts is a legitimate website for Steam game giveaways with a supportive community and helpful resources. To participate in the giveaways on SteamGifts, users need to create an account and switch their Steam profile to public once a week. The website offers equal opportunities to all users and provides easy accessibility through its automated giveaway entry feature.</p>
+                <div class="title-space"></div>
             </div>
-                        <div class="instruction">
+                        <div class="instruction" id="Bonus_2">
                 <h2>How to register on SteamGifts</h2>
                 <ol>
                 <li>Go to <a href="https://www.steamgifts.com/">SteamGifts</a> using our provided link</li>
@@ -126,15 +127,14 @@
                 <li>Enjoy !</li>
                 </ol>
             </div>
-            <div class="sitedetails">
-                <div class="sitepros active one">
-                    <span>Withdraw Methods <i class="bi bi-caret-down-fill"></i></span>
-                    <div class="methodlist" id="second">
-                        <img src="./../img/minipics/games.png" title="Games" draggable="false" class="type" id="games" style="border-radius: 5px;" alt="">
+            <div class="screentable" id="Site_3">
+                <div class="gamemodes">
+                    <div class="featuresbox">
+                        <div class="typesinside">
+                            <img src="./../img/minipics/giveaways_mode.png" title="Giveaways" draggable="false" class="type" id="giveaways" style="border-radius: 5px;" alt="">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="screentable">
                 <div class="screens">
                     <input type="radio" id="trigger1" name="slider" checked>
                     <label for="trigger1"></label>
@@ -146,7 +146,15 @@
 
                 </div>
             </div>
-            <div class="ratingsumm">
+            <div class="sitedetails" id="Payment_4">
+                <div class="sitepros one">
+                    <span>Withdraw Methods <i class="bi bi-caret-down-fill"></i></span>
+                    <div class="methodlist" id="second">
+                        <img src="./../img/minipics/games.png" title="Games" draggable="false" class="type" id="games" style="border-radius: 5px;" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="ratingsumm" id="Rating_5">
                 <div class="ratingthings">
                     <div class="ratingway"><span>Trust</span>
                         <div class="star_rating"><i class="bi bi-star-fill"></i></div>
@@ -178,13 +186,6 @@
                     </div>
                 </div>
             </div>
-            <div class="gamemodes">
-                <div class="featuresbox">
-                    <div class="typesinside">
-                        <img src="./../img/minipics/giveaways_mode.png" title="Giveaways" draggable="false" class="type" id="giveaways" style="border-radius: 5px;" alt="">
-                    </div>
-                </div>
-            </div>
             <div class="slider-placer">
                 <a href="https://csgobroker.cc/" class="slider-banner"><img src="/img/best-gambling-sites-slide.png" alt=""></a>
             </div>
@@ -210,12 +211,14 @@
         }, 5000);
     </script>
         <script>
-            $(document).ready(function(){
-      $('.sitepros').click(function(){
-        $('.sitepros').removeClass("active");
-        $(this).addClass("active");
-    });
-    });
+            $('.sitepros').click(function() {
+    $(this).toggleClass("active");
+});    
+    </script>
+        <script>
+            $('.navigation-menu').click(function() {
+    $(this).toggleClass("active");
+});    
         </script>
 </body>
 <script src="./../scroller.js"></script>

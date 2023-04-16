@@ -110,12 +110,13 @@
                     <i class="bi bi-caret-down-fill"></i>
                 </div>
             </div>
-            <div class="smallreview">
+            <div class="smallreview" id="Review_1">
                 <h2>Review of Bets4pro</h2>
                 <p>Bets4.pro is an online platform that offers users the ability to place bets on esports matches, particularly for CS:GO and Dota 2, also has Valorant, League of Legends, StarCraft 2, Football, Basketball, Hockey and more. The website provides a range of betting options, including predicting the winner of a match or sorting items by quality and price. Additionally, Bets4.pro features a "Trust Management" function, where users can invest in other users who place bets, and subsequently earn money from their investment through Betcoins, which can be used for bets or converted to game items.</p>
                 <p>Despite its offerings, there have been some negative reviews of Bets4.pro. One user on Steam Community reported losing $300 on a disqualified team after placing a bet.The legitimacy of Bets4.pro remains a point of contention among users. Some HLTV.org users claim that the site was once trustworthy but question whether it remains so. Others claim that the site is a scam, while some report successfully withdrawing skins from the platform. With these mixed reviews, it is important for users to exercise caution and carefully weigh their options before engaging with the website.</p>
+                <div class="title-space"></div>
             </div>
-          <div class="instruction">
+                        <div class="instruction" id="Bonus_2">
                 <h2>How to Register on Bets4pro</h2>
                 <ol>
                     <li>Go to <a href="https://bets4.org/?ref=76561198043612325">Bets4pro</a> using our provided link</li>
@@ -123,8 +124,28 @@
                     <li>Done.</li>
                 </ol>
             </div>
-            <div class="sitedetails">
-                <div class="sitepros three">
+            <div class="screentable" id="Site_3">
+                <div class="gamemodes">
+                    <div class="featuresbox">
+                        <div class="typesinside">
+                            <img src="./../img/minipics/esports.png" title="Esports Betting" draggable="false" class="type" id="esports" style="border-radius: 5px;" alt="">
+                            <img src="./../img/minipics/realsport.png" title="Sport Betting" draggable="false" class="type" id="sport" style="border-radius: 5px;" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="screens">
+                    <input type="radio" id="trigger1" name="slider" checked>
+                    <label for="trigger1"></label>
+                    <div class="slide bg1"><img src="./../img/screens/bets4pro_1.png" alt=""></div>
+
+                    <input type="radio" id="trigger2" name="slider">
+                    <label for="trigger2"></label>
+                    <div class="slide bg2"><img src="./../img/screens/bets4pro_2.png" alt=""></div>
+
+                </div>
+            </div>
+            <div class="sitedetails" id="Payment_4">
+                <div class="sitepros one">
                     <span>Deposit Methods <i class="bi bi-caret-down-fill"></i></span>
                     <div class="methodlist" id="first">
                         <img src="./../img/minipics/csgo.png" title="CS:GO Skins" draggable="false" class="type" id="csgo" style="border-radius: 5px;" alt="">
@@ -142,7 +163,7 @@
                         <img src="./../img/minipics/fkwallet.png" title="FK Wallet" draggable="false" class="type" id="fkwallet" style="border-radius: 5px;" alt="">
                     </div>
                 </div>
-                <div class="sitepros active two">
+                <div class="sitepros two">
                     <span>Withdraw Methods <i class="bi bi-caret-down-fill"></i></span>
                     <div class="methodlist" id="second">
                         <img src="./../img/minipics/csgo.png" title="CS:GO Skins" draggable="false" class="type" id="csgo" style="border-radius: 5px;" alt="">
@@ -158,19 +179,7 @@
                     </div>
                 </div>
             </div>
-            <div class="screentable">
-                <div class="screens">
-                    <input type="radio" id="trigger1" name="slider" checked>
-                    <label for="trigger1"></label>
-                    <div class="slide bg1"><img src="./../img/screens/bets4pro_1.png" alt=""></div>
-
-                    <input type="radio" id="trigger2" name="slider">
-                    <label for="trigger2"></label>
-                    <div class="slide bg2"><img src="./../img/screens/bets4pro_2.png" alt=""></div>
-
-                </div>
-            </div>
-            <div class="ratingsumm">
+            <div class="ratingsumm" id="Rating_5">
                 <div class="ratingthings">
                     <div class="ratingway"><span>Trust</span>
                         <div class="star_rating"><i class="bi bi-star-fill"></i></div>
@@ -202,14 +211,6 @@
                     </div>
                 </div>
             </div>
-            <div class="gamemodes">
-                <div class="featuresbox">
-                    <div class="typesinside">
-                        <img src="./../img/minipics/esports.png" title="Esports Betting" draggable="false" class="type" id="esports" style="border-radius: 5px;" alt="">
-                        <img src="./../img/minipics/realsport.png" title="Sport Betting" draggable="false" class="type" id="sport" style="border-radius: 5px;" alt="">
-                    </div>
-                </div>
-            </div>
             <div class="slider-placer">
                 <a href="https://csgobroker.cc/" class="slider-banner"><img src="/img/best-gambling-sites-slide.png" alt=""></a>
             </div>
@@ -235,12 +236,14 @@
         }, 5000);
     </script>
         <script>
-            $(document).ready(function(){
-      $('.sitepros').click(function(){
-        $('.sitepros').removeClass("active");
-        $(this).addClass("active");
-    });
-    });
+            $('.sitepros').click(function() {
+    $(this).toggleClass("active");
+});    
+    </script>
+        <script>
+            $('.navigation-menu').click(function() {
+    $(this).toggleClass("active");
+});    
         </script>
 </body>
 <script src="./../scroller.js"></script>

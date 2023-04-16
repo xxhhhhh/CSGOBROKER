@@ -113,13 +113,14 @@
                     <i class="bi bi-caret-down-fill"></i>
                 </div>
             </div>
-            <div class="smallreview">
+            <div class="smallreview" id="Review_1">
                 <h2>Review of Earnweb</h2>
                 <p>Earnweb is a new GPT website that offers various opportunities for users to make money by completing tasks such as surveys, downloading apps, or playing games. The website allows users to withdraw their earnings through rewards such as PayPal, gift cards, and cryptocurrencies. The virtual currency on the platform is called Coins, and the exchange rate is 1 Dollar = 1 Coin. Users can withdraw their Coins once they have earned at least 1 Coin.</p>
                 <p>Unlike other GPT websites, Earnweb has a simpler interface and fewer features, but it still provides an opportunity to earn money by playing games. However, the website has received mixed reviews from users. Some have reported that they were unable to receive their rewards and considered it a scam. Meanwhile, others have received their payouts and deem the website legitimate. It's worth noting that there is a review of a different company called EarnWeb, LLC, which shares a similar name with Earnweb, on TrustLink.</p>
                 <p>In conclusion, Earnweb offers users an opportunity to make money through various tasks and withdraw earnings via multiple rewards. While some users have reported negative experiences with the website, others have received their payouts and find it to be a legitimate platform. It's crucial to do thorough research before committing to any GPT website to avoid any potential scams.</p>
+                <div class="title-space"></div>
             </div>
-                        <div class="instruction">
+                        <div class="instruction" id="Bonus_2">
                 <h2>How to Register on Earnweb</h2>
                 <ol>
                 <li>Go to <a href="https://earnweb.com/">Earnweb</a> using our provided link</li>
@@ -127,8 +128,27 @@
                 <li>Enjoy !</li>
                 </ol>
             </div>
-            <div class="sitedetails">
-                <div class="sitepros active two">
+            <div class="screentable" id="Site_3">
+                <div class="gamemodes">
+                    <div class="featuresbox">
+                        <div class="typesinside">
+                            <img src="./../img/minipics/earning.png" title="Offerwalls" draggable="false" class="type" id="offerwalls" style="border-radius: 5px;" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="screens">
+                    <input type="radio" id="trigger1" name="slider" checked>
+                    <label for="trigger1"></label>
+                    <div class="slide bg1"><img src="./../img/screens/earnweb_1.png" alt=""></div>
+
+                    <input type="radio" id="trigger2" name="slider">
+                    <label for="trigger2"></label>
+                    <div class="slide bg2"><img src="./../img/screens/earnweb_2.png" alt=""></div>
+
+                </div>
+            </div>
+            <div class="sitedetails" id="Payment_4">
+                <div class="sitepros one">
                     <span>Withdraw Methods <i class="bi bi-caret-down-fill"></i></span>
                     <div class="methodlist" id="second">
                         <img src="./../img/minipics/btc.png" title="Bitcoin" draggable="false" class="type" id="btc" style="border-radius: 5px;" alt="">
@@ -146,19 +166,7 @@
                     </div>
                 </div>
             </div>
-            <div class="screentable">
-                <div class="screens">
-                    <input type="radio" id="trigger1" name="slider" checked>
-                    <label for="trigger1"></label>
-                    <div class="slide bg1"><img src="./../img/screens/earnweb_1.png" alt=""></div>
-
-                    <input type="radio" id="trigger2" name="slider">
-                    <label for="trigger2"></label>
-                    <div class="slide bg2"><img src="./../img/screens/earnweb_2.png" alt=""></div>
-
-                </div>
-            </div>
-            <div class="ratingsumm">
+            <div class="ratingsumm" id="Rating_5">
                 <div class="ratingthings">
                     <div class="ratingway"><span>Trust</span>
                         <div class="star_rating"><i class="bi bi-star-fill"></i></div>
@@ -190,13 +198,6 @@
                     </div>
                 </div>
             </div>
-            <div class="gamemodes">
-                <div class="featuresbox">
-                    <div class="typesinside">
-                        <img src="./../img/minipics/earning.png" title="Offerwalls" draggable="false" class="type" id="offerwalls" style="border-radius: 5px;" alt="">
-                    </div>
-                </div>
-            </div>
             <div class="slider-placer">
                 <a href="https://csgobroker.cc/" class="slider-banner"><img src="/img/best-gambling-sites-slide.png" alt=""></a>
             </div>
@@ -222,12 +223,14 @@
         }, 5000);
     </script>
         <script>
-            $(document).ready(function(){
-      $('.sitepros').click(function(){
-        $('.sitepros').removeClass("active");
-        $(this).addClass("active");
-    });
-    });
+            $('.sitepros').click(function() {
+    $(this).toggleClass("active");
+});    
+    </script>
+        <script>
+            $('.navigation-menu').click(function() {
+    $(this).toggleClass("active");
+});    
         </script>
 </body>
 <script src="./../scroller.js"></script>
