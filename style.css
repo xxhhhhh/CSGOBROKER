@@ -276,7 +276,7 @@ nav #pagename:focus {
 }
 .gamemodes {
     position: absolute;
-    bottom: 110px;
+    bottom: 331px;
     z-index: 2;
 }
 .features .featuresbox {
@@ -625,6 +625,7 @@ nav img {
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
+    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);;
 }
 .slider-banner {
     background-position: center;
@@ -950,23 +951,60 @@ nav img {
     background-size: cover;
 }
 .credits {
-    color: rgba(255, 255, 255, .1);
-    font-size: 14px;
-    font-weight: 400;
-    width: 60%;
+    width: 180px;
+    height: 60px;
     text-transform: uppercase;
+    position: absolute;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
 }
-footer#review .centralizer .footer-content .copyright {
+.credits img {
+    fill: white;
+    height: 100%;
+    width: 100%;
+}
+/* footer#review .centralizer .footer-content .copyright {
     width: 52%;
 }
 footer#review .centralizer .footer-content .credits {
     width: 48%;
+} */
+.boxreview .slider-placer {
+    width: 95.8%;
+    /* margin: 0 auto; */
+    height: auto;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 9px;
+}
+.boxreview .slider-placer a {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    border-radius: 5px;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);
+    overflow: hidden;
 }
 footer {
     width: 100%;
     height: 100%;
     background-color: var(--opacback);
     margin-top: 30px;
+}
+footer#review {
+    margin-top: 9px;
 }
 footer .centralizer {
     width: 69%;
@@ -979,7 +1017,7 @@ footer .centralizer .footer-content {
 }
 .copyright {
     color: rgba(255, 255, 255, .1);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
     width: 40%;
 }
