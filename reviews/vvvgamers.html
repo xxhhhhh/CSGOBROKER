@@ -77,7 +77,10 @@
             </div>
             <div class="content">
                 <h2>VVVGamers</h2>
-                <button type="button" style="cursor: pointer;" onclick="location.href='https://vvvgamers.com?ref=csgobroker'">Click Button</button>
+                <button type="button" id="copy_style" style="cursor: pointer;" onclick="location.href='https://vvvgamers.com?ref=csgobroker'">Click Button</button>
+                <div class="bonus-space" id="first"></div>
+                <div class="bonus_info"><span id="bonus">Receive <strong>Random Amount of Coins</strong> for Free</strong></span></div>
+                <div class="bonus-space"></div>
             </div>
         </div>
     </div>
@@ -158,7 +161,7 @@
                 </div>
             </div>
             <div class="sitedetails" id="Payment_4">
-                <div class="sitepros one">
+                <div class="sitepros one" style="cursor: pointer;">
                     <span>Withdraw Methods <i class="bi bi-caret-down-fill"></i></span>
                     <div class="methodlist" id="second">
                         <img src="./../img/minipics/visa.png" title="VISA" draggable="false" class="type" id="visa" style="border-radius: 5px;" alt="">
@@ -233,7 +236,7 @@
     </script>
         <script>
             $('.navigation-menu').click(function() {
-    $(this).toggleClass("active");
+    $(this).addClass("active");
 });    
         </script>
 </body>

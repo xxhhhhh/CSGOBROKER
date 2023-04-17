@@ -78,14 +78,17 @@
             </div>
             <div class="content">
                 <h2>csgoroll</h2>
-                <button type="button" style="cursor: pointer;" onclick="location.href='https://csgoroll.com/r/SIFA'">code: SIFA</button>
+                <button type="button" id="copy_style" style="cursor: pointer;" onclick="location.href='https://csgoroll.com/r/SIFA'">code: SIFA</button>
                 <span id="p1">SIFA</span>
+                <div class="bonus-space" id="first"></div>
+                <div class="bonus_info"><span id="bonus">Receive <strong>3 Free Cases</strong> up to <strong>$1,000</strong></span></div>
+                <div class="bonus-space"></div>
                 <button id="copy" style="cursor: pointer;" onclick="copyToClipboard('#p1')"><img src="./../img/copy.svg" alt=""></button>
                 <script  src="./.././script.js"></script>
             </div>
         </div>
     </div>
-    <div class="navigation-menu">
+    <!-- <div class="navigation-menu" style="cursor: pointer;">
         <div class="navigation-title"><span>Navigation Menu</span></div>
         <div class="navigation-space"></div>
         <ul>
@@ -105,7 +108,7 @@
                 <li>Overall Rating</li>
             </a>
         </ul>
-    </div>
+    </div> -->
 </div>
         <div class="boxreview">
             <div class="features">
@@ -192,7 +195,7 @@
                 </div>
             </div>
             <div class="sitedetails" id="Payment_4">
-                <div class="sitepros one">
+                <div class="sitepros one" style="cursor: pointer;">
                     <span>Deposit Methods <i class="bi bi-caret-down-fill"></i></span>
                     <div class="methodlist" id="first">
                         <img src="./../img/minipics/csgo.png" title="CS:GO Skins" draggable="false" class="type" id="csgo" style="border-radius: 5px;" alt="">
@@ -210,7 +213,7 @@
                         <img src="./../img/minipics/unionpay.png" title="Unionpay" draggable="false" class="type" id="unionpay" style="border-radius: 5px;" alt="">
                     </div>
                 </div>
-                <div class="sitepros one">
+                <div class="sitepros one" style="cursor: pointer;">
                     <span>Withdraw Methods <i class="bi bi-caret-down-fill"></i></span>
                     <div class="methodlist" id="second">
                         <img src="./../img/minipics/csgo.png" title="CS:GO Skins" draggable="false" class="type" id="csgo" style="border-radius: 5px;" alt="">
@@ -280,7 +283,7 @@
     </script>
         <script>
             $('.navigation-menu').click(function() {
-    $(this).toggleClass("active");
+    $(this).addClass("active");
 });    
         </script>
 </body>

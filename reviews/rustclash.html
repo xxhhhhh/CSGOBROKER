@@ -77,8 +77,11 @@
             </div>
             <div class="content">
                 <h2>RustClash</h2>
-                <button type="button" style="cursor: pointer;" onclick="location.href='https://rustclash.com/r/CSGOBROKER'">code: CSGOBROKER</button>
+                <button type="button" id="copy_style" style="cursor: pointer;" onclick="location.href='https://rustclash.com/r/CSGOBROKER'">code: CSGOBROKER</button>
                 <span id="p10">CSGOBROKER</span>
+                <div class="bonus-space" id="first"></div>
+                <div class="bonus_info"><span id="bonus">There is <strong>+5% Bonus</strong> on all Deposits</span></div>
+                <div class="bonus-space"></div>
                 <button id="copy" style="cursor: pointer;" onclick="copyToClipboard('#p10')"><img src="./../img/copy.svg" alt="" draggable="false"></button>
                 <script  src="./.././script.js"></script>
             </div>
@@ -170,7 +173,7 @@
                 </div>
             </div>
             <div class="sitedetails" id="Payment_4">
-                <div class="sitepros one">
+                <div class="sitepros one" style="cursor: pointer;">
                     <span>Deposit Methods <i class="bi bi-caret-down-fill"></i></span>
                     <div class="methodlist" id="first">
                         <img src="./../img/minipics/csgo.png" title="CS:GO Skins" draggable="false" class="type" id="csgo" style="border-radius: 5px;" alt="">
@@ -189,7 +192,7 @@
                         <img src="./../img/minipics/giftcard.png" title="Gift Cards" draggable="false" class="type" id="giftcard" style="border-radius: 5px;" alt="">
                     </div>
                 </div>
-                <div class="sitepros one">
+                <div class="sitepros one" style="cursor: pointer;">
                     <span>Withdraw Methods <i class="bi bi-caret-down-fill"></i></span>
                     <div class="methodlist" id="second">
                         <img src="./../img/minipics/rust.png" title="Rust Skins" draggable="false" class="type" id="rust" style="border-radius: 5px;" alt="">
@@ -264,7 +267,7 @@
     </script>
         <script>
             $('.navigation-menu').click(function() {
-    $(this).toggleClass("active");
+    $(this).addClass("active");
 });    
         </script>
 </body>

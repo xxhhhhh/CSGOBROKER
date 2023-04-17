@@ -78,8 +78,11 @@
             </div>
             <div class="content">
                 <h2>Freecash</h2>
-                <button type="button" style="cursor: pointer;" onclick="location.href='https://freecash.com/r/105352408697939429760'">Click Button or Copy</button>
+                <button type="button" id="copy_style" style="cursor: pointer;" onclick="location.href='https://freecash.com/r/105352408697939429760'">Click Button or Copy</button>
                 <span id="p1">105352408697939429760</span>
+                <div class="bonus-space" id="first"></div>
+                <div class="bonus_info"><span id="bonus">Receive <strong>Free Case</strong> with chance to <strong>win 250$</strong></span></div>
+                <div class="bonus-space"></div>
                 <button id="copy" style="cursor: pointer;" onclick="copyToClipboard('#p1')"><img src="./../img/copy.svg" draggable="false" alt=""></button>
                 <script  src="./.././script.js"></script>
             </div>
@@ -249,7 +252,7 @@
     </script>
         <script>
             $('.navigation-menu').click(function() {
-    $(this).toggleClass("active");
+    $(this).addClass("active");
 });    
         </script>
 </body>

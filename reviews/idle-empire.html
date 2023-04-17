@@ -78,8 +78,11 @@
             </div>
             <div class="content">
                 <h2>Idle-Empire</h2>
-                <button type="button" style="cursor: pointer;" onclick="location.href='https://www.idle-empire.com?r=csgobroker'">code: csgobroker</button>
+                <button type="button" id="copy_style" style="cursor: pointer;" onclick="location.href='https://www.idle-empire.com?r=csgobroker'">code: csgobroker</button>
                 <span id="p2">csgobroker</span>
+                <div class="bonus-space" id="first"></div>
+                <div class="bonus_info"><span id="bonus">Receive <strong>500 Coins</strong> for Free</strong></span></div>
+                <div class="bonus-space"></div>
                 <button id="copy" style="cursor: pointer;" onclick="copyToClipboard('#p2')"><img src="./../img/copy.svg" alt="" draggable="false"></button>
                 <script  src="./.././script.js"></script>
             </div>
@@ -245,7 +248,7 @@
     </script>
         <script>
             $('.navigation-menu').click(function() {
-    $(this).toggleClass("active");
+    $(this).addClass("active");
 });    
         </script>
 </body>

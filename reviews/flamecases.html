@@ -77,8 +77,11 @@
             </div>
             <div class="content">
                 <h2>FlameCases</h2>
-                <button type="button" style="cursor: pointer;" onclick="location.href='https://flamecases.com/promo/csgobroker'">code: csgobroker</button>
+                <button type="button" id="copy_style" style="cursor: pointer;" onclick="location.href='https://flamecases.com/promo/csgobroker'">code: csgobroker</button>
                 <span id="p1">csgobroker</span>
+                <div class="bonus-space" id="first"></div>
+                <div class="bonus_info"><span id="bonus">Receive <strong>$1.00</strong> for Free</strong></span></div>
+                <div class="bonus-space"></div>
                 <button id="copy" style="cursor: pointer;" onclick="copyToClipboard('#p1')"><img src="./../img/copy.svg" alt=""></button>
                 <script  src="./.././script.js"></script>
             </div>
@@ -168,7 +171,7 @@
                 </div>
             </div>
             <div class="sitedetails" id="Payment_4">
-                <div class="sitepros one">
+                <div class="sitepros one" style="cursor: pointer;">
                     <span>Deposit Methods <i class="bi bi-caret-down-fill"></i></span>
                     <div class="methodlist" id="first">
                         <img src="./../img/minipics/csgo.png" title="CS:GO Skins" draggable="false" class="type" id="csgo" style="border-radius: 5px;" alt="">
@@ -253,7 +256,7 @@
     </script>
         <script>
             $('.navigation-menu').click(function() {
-    $(this).toggleClass("active");
+    $(this).addClass("active");
 });    
         </script>
 </body>

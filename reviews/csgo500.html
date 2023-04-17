@@ -77,8 +77,11 @@
             </div>
             <div class="content">
                 <h2>CSGO500</h2>
-                <button type="button" style="cursor: pointer;" onclick="location.href='https://500.casino/r/500FREEBIES'">code: 500FREEBIES</button>
+                <button type="button" id="copy_style" style="cursor: pointer;" onclick="location.href='https://500.casino/r/500FREEBIES'">code: 500FREEBIES</button>
                 <span id="p1">500FREEBIES</span>
+                <div class="bonus-space" id="first"></div>
+                <div class="bonus_info"><span id="bonus">Get <strong>+100% Bonus</strong> and <strong>50 Free Spins</strong> on your First Deposit</span></div>
+                <div class="bonus-space"></div>
                 <button id="copy" style="cursor: pointer;" onclick="copyToClipboard('#p1')"><img src="./../img/copy.svg" alt=""></button>
                 <script  src="./.././script.js"></script>
             </div>
@@ -180,7 +183,7 @@
                 </div>
             </div>
             <div class="sitedetails" id="Payment_4">
-                <div class="sitepros two">
+                <div class="sitepros two" style="cursor: pointer;">
                     <span>Deposit Methods <i class="bi bi-caret-down-fill"></i></span>
                     <div class="methodlist" id="first">
                         <img src="./../img/minipics/csgo.png" title="CS:GO Skins" draggable="false" class="type" id="csgo" style="border-radius: 5px;" alt="">
@@ -209,7 +212,7 @@
                         <img src="./../img/minipics/paysafe.png" title="PaySafeCard" draggable="false" class="type" id="paysafe" style="border-radius: 5px;" alt="">
                     </div>
                 </div>
-                <div class="sitepros one">
+                <div class="sitepros one" style="cursor: pointer;">
                     <span>Withdraw Methods <i class="bi bi-caret-down-fill"></i></span>
                     <div class="methodlist" id="second">
                         <img src="./../img/minipics/csgo.png" title="CS:GO Skins" draggable="false" class="type" id="csgo" style="border-radius: 5px;" alt="">
@@ -296,7 +299,7 @@
     </script>
         <script>
             $('.navigation-menu').click(function() {
-    $(this).toggleClass("active");
+    $(this).addClass("active");
 });    
         </script>
 </body>
