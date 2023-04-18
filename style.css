@@ -1,9 +1,9 @@
 @import "fonts/TTNormsPro.css";
 
 * {
-    padding: 0%;
-    margin: 0%;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 head{
     display: none;
@@ -11,31 +11,38 @@ head{
 script {
     display: none;
 }
+html {
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
 body{
-    width: 100%;
-    height: 100%;
     /* background: linear-gradient(30deg, rgba(10,10,10,1) 0%, rgb(18, 18, 18) 50%); */
     background: linear-gradient(30deg, rgba(10,10,10,1) 0%, rgb(21, 21, 21) 50%);
     font-family: TTNormsPro;
     overflow: overlay;
+    margin: 0 auto;
+    padding: 0;
 }
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 17px;
   }
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, .95);
   }
    
   ::-webkit-scrollbar-thumb {
-    background: var(--red); 
+    /* background: rgba(255, 255, 255, .1);  */
+    background: rgba(0, 0, 0, .35);
     border-radius: 5px;
   }
   
+
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--red); 
+    /* background: var(--red);  */
+    background: rgba(0, 0, 0, 1);
   }
 .h1, .h2, .h2, .h3, .h4, .h6, h1, h2, h2, h3, h4, h6, p {
     line-height: 1.2 !important;
@@ -52,6 +59,8 @@ nav {
     z-index: 10000;
     display: flex;
     align-items: center;
+    top: 0;
+    left: 0;
     /* border: solid var(--red);
     border-width: 0px 0 2px 0; */}
 nav .logospace {
@@ -127,12 +136,10 @@ nav #pagename:focus {
     transition: all .3s ease-in-out;
 }
 .spaceblock {
-    width: 100%;
     height: 100px;
     z-index: 5;
 }
 .infoblock {
-    width: 100%;
     height: 70px;
     margin-top: 30px;
     display: flex;
@@ -723,8 +730,6 @@ nav img {
     width: 100%;
 }
 .sitepage {
-    height: 100%;
-    width: 100%;
     justify-content: center;
     display: flex;
     margin-top: 9px;
@@ -735,7 +740,7 @@ nav img {
 .siteleftpannel {
     position: fixed;
     margin-right: 0;
-    left: 289px;
+    left: 281px;
     /* left: 15.36%; */
     top: 109px;
 }
