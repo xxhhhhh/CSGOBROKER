@@ -641,7 +641,8 @@ nav img {
     height: 100px;
     margin: 0 15px;
     border-radius: 10px;
-    background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(0, 0, 0, .3) 50%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.3) 100%);
+    /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(0, 0, 0, .5) 50%, rgba(255, 255, 255, 0) 100%); */
     box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);
 }
 .category-selector .category-box:hover {
@@ -853,7 +854,7 @@ nav img {
     border: var(--red) 1px dashed;
     position: absolute;
     background-color: transparent;
-    bottom: 20px;
+    bottom: 17px;
 }
 .sitepage .box .content button#copy_style:hover,
 .box .content button#copy:hover {
@@ -866,7 +867,7 @@ nav img {
     margin: 30px 15px 0 15px;
     border-radius: 10px;
     /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(0, 0, 0, .3) 50%, rgba(255, 255, 255, 0) 100%); */
-    background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.2) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.3) 100%);
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.15);
 }
 
@@ -875,6 +876,7 @@ nav img {
 }
 .sitepage .box .logobg {
     height: 55%; 
+    background: linear-gradient(360deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.2) 100%);
 }
 .sitepage .box .content {
     height: 45%; 
@@ -1073,7 +1075,7 @@ nav img {
     bottom: 21px;
     border: var(--red) 1px dashed;
     background-color: transparent;
-    bottom: 21.6px;
+    bottom: 18.6px;
 }
 .content button#copy {
     width: 25px;
@@ -1247,6 +1249,10 @@ footer .centralizer .footer-content {
     }
     .gamemodes {
         bottom: 294px;
+    }
+    .sitedetails .sitepros.active {
+        height: auto !important;
+        padding-bottom: 10px;
     }
     .instruction li {
         font-size: 16px !important;
