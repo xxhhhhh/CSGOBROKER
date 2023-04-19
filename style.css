@@ -1056,12 +1056,12 @@ nav img {
     transition: all .3s ease-in-out;
     color: white;
 }
-/* .content button:hover{
+.content button:hover{
     background: var(--blackgrey);
 }
 .content button:focus{
     background: var(--blackgrey);
-} */
+}
 .conent button:active {
     background: transparent !important;
     color: #ffffff00 !important;
