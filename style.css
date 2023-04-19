@@ -1161,10 +1161,17 @@ footer .centralizer .footer-content {
     height: 60px;
 }
 .copyright {
+    width: 50%;
+}
+.contact {
+    width: 50%;
+    text-align: end;
+}
+.copyright,
+.contact {
     color: rgba(255, 255, 255, .1);
     font-size: 13px;
     font-weight: 400;
-    width: 40%;
 }
 @media screen and (max-width: 1340px) {
     .infoblock h1, h2, h2 {
