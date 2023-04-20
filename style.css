@@ -575,10 +575,7 @@ nav #pagename:focus {
     overflow: hidden;
     z-index: 1;
 }
-.screentable:hover {
-    transform: scale(1.0);
-    transition: all ease-in-out 1s;
-}
+
 .infoblock button,
 .pages button {
     background-color: transparent;
