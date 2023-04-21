@@ -407,6 +407,10 @@ nav #pagename:focus {
     height: 32px;
     width: 32px;
 }
+.gamemodes .featuresbox .typesinside a {
+    height: 32px;
+    width: 32px;
+}
 .gamemodes .featuresbox .typesinside img:hover {
     transform: scale(1);
     transition: ease-in-out all .4s;
@@ -630,28 +634,30 @@ nav #pagename:focus {
 nav img {
     height: auto;
     width: 160px;
-    filter: drop-shadow(0px 5px 5px black);
+    filter: drop-shadow(0px 3px 3px black);
 }
 .category-selector {
     max-width: 70%;
-    height: 100px;
+    height: 100%;
     justify-content: center;
     display: flex;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 .category-selector .category-box {
     position: relative;
     width: 300px;
     height: 100px;
     margin: 0 9px;
+    overflow: hidden;
     border-radius: 10px;
     background: linear-gradient(90deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.3) 100%);
     /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(0, 0, 0, .5) 50%, rgba(255, 255, 255, 0) 100%); */
     box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);
 }
 .category-selector .category-box:hover {
-    background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(65, 65, 65, 0.3) 50%, rgba(255, 255, 255, 0) 100%) !important;
-    transform: scale(1.03);
+    /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(65, 65, 65, 0.3) 50%, rgba(255, 255, 255, 0) 100%) !important; */
+    /* transform: scale(1.03); */
     transition: all .3s ease-in-out;
 }
 .category-selector .category-box:hover .category-box-logo {
@@ -1193,7 +1199,7 @@ footer .centralizer .footer-content {
         flex-wrap: wrap;
     }
     .category-selector .category-box {
-        margin: 15px 15px 0 0;
+        margin: 14px 7px 0 7px;
         width: 100px;
         height: 100px;
     }
@@ -1293,6 +1299,9 @@ footer .centralizer .footer-content {
         left: 0;
         top: 0;
     }
+    ul .submenu{
+        left: 11%;
+        }
     .box{
         margin-right: 0;
         margin-top: 30px;
@@ -1495,3 +1504,51 @@ footer .centralizer .footer-content {
       transform: translate3d(0, 100%, 0);
     }
   }
+  ul .submenu,
+  ul .submenu2 {
+    position: absolute;
+    width: 300px;
+    background-color: #101010;
+    margin-top: 100px;
+    margin-left: 10px;
+    opacity: 0;
+    z-index: -999;
+    border-radius: 5px;
+    }
+     .submenu li:hover {
+        background-color: #131313;
+        transition: all ease .2s;
+        border-radius: 5px;
+    } 
+    .submenu a:hover {
+        color: var(--red);
+        /* transition: all ease .2s; */
+    }
+    ul li:hover .submenu{
+    z-index: 90;
+    opacity: 1;
+    margin-top: 100px;
+    transition: opacity ease-in-out .15s;
+    }
+    ul li#big-category:hover .submenu2{
+        z-index: 90;
+        opacity: 1;
+        margin-top: 0px;
+        margin-left: 300px;
+        transition: opacity ease-in-out .15s;
+        }
+    ul .submenu li{
+    margin: 0;
+    width: 100%;
+    } 
+    ul .submenu li a{
+    padding: 15px 20px;
+    display: inline-block;
+    width: 100%;
+    }
+    ul .submenu a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 16px;
+        font-weight: 600;
+    }
