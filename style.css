@@ -655,11 +655,17 @@ nav img {
     /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(0, 0, 0, .5) 50%, rgba(255, 255, 255, 0) 100%); */
     box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);
 }
+.category-selector ul:hover .category-box:nth-child(1),
 .category-selector .category-box:hover {
     background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(65, 65, 65, 0.3) 50%, rgba(255, 255, 255, 0) 100%) !important;
     transform: scale(1.03);
     transition: all .3s ease-in-out;
-}
+} 
+ /* .category-selector .category-box:hover {
+    background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(65, 65, 65, 0.3) 50%, rgba(255, 255, 255, 0) 100%) !important;
+    transform: scale(1.03);
+    transition: all .3s ease-in-out;
+}  */
 .category-selector .category-box:hover .category-box-logo {
     filter: grayscale(0);
     transition: all .2s ease-in-out;
@@ -1507,10 +1513,10 @@ footer .centralizer .footer-content {
   ul .submenu,
   ul .submenu2 {
     position: absolute;
-    width: 300px;
+    width: 310px;
     background-color: #101010;
     margin-top: 100px;
-    margin-left: 10px;
+    margin-left: 5px;
     opacity: 0;
     z-index: -999;
     border-radius: 5px;
@@ -1520,9 +1526,23 @@ footer .centralizer .footer-content {
         transition: all ease .2s;
         border-radius: 5px;
     } 
-    .submenu a:hover {
+    .submenu #big-category:hover a {
         color: var(--red);
         /* transition: all ease .2s; */
+    }
+    .submenu2 a {
+        color: var(--white) !important;
+        /* transition: all ease .2s; */
+    }
+    .submenu #big-category a:hover,
+    .submenu2 a:hover {
+        color: var(--red) !important;
+    }
+    .submenu2 {
+        color: var(--white);
+    }
+    #big-category i {
+        right: 0;
     }
     ul li:hover .submenu{
     z-index: 90;
@@ -1530,20 +1550,25 @@ footer .centralizer .footer-content {
     margin-top: 100px;
     transition: opacity ease-in-out .15s;
     }
-    ul li#big-category:hover .submenu2{
+    ul #big-category:hover .submenu2{
         z-index: 90;
         opacity: 1;
         margin-top: 0px;
-        margin-left: 300px;
+        margin-left: 310px;
         transition: opacity ease-in-out .15s;
-        }
+        /* border-left: 2px solid var(--red); */
+    }
+    ul li .submenu2 li{
+        border-bottom: 2px solid rgba(255,255,255,.01);
+    }    
     ul .submenu li{
     margin: 0;
     width: 100%;
     } 
     ul .submenu li a{
     padding: 15px 20px;
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     }
     ul .submenu a {
