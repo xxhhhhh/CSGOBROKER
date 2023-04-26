@@ -417,6 +417,9 @@ nav #pagename:focus {
     height: 32px;
     width: 32px;
 }
+.gamemodes .featuresbox .typesinside a {
+    margin: 0 !important;
+}
 .gamemodes .featuresbox .typesinside img:hover {
     transform: scale(1);
     transition: ease-in-out all .4s;
