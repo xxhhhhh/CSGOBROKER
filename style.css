@@ -679,6 +679,13 @@ nav img {
     /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(0, 0, 0, .5) 50%, rgba(255, 255, 255, 0) 100%); */
     box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);
 }
+.category-selector ul:nth-child(5) .category-box,
+.category-selector ul:nth-child(6) .category-box,
+.category-selector ul:nth-child(7) .category-box,
+.category-selector ul:nth-child(8) .category-box {
+    height: 50px !important;
+    margin-top: 18px;
+}
 .category-selector ul:hover .category-box:nth-child(1),
 .category-selector .category-box:hover {
     background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(65, 65, 65, 0.3) 50%, rgba(255, 255, 255, 0) 100%) !important;
