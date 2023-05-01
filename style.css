@@ -990,7 +990,8 @@ nav img {
     right: 0;
     top: 0;
     position: absolute;
-    width: 50%;
+    width: auto;
+    padding: 0 8px;
     height: 30px;
     background-color: var(--red);
     /* background-color: var(--grey); */
