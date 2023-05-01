@@ -404,6 +404,9 @@ nav #pagename:focus {
     width: 96px;
     height: 32px;
 }
+.features .featuresbox .typesinside img#nobonus {
+    margin: 12px 0 12px 22px;
+}
 .features .featuresbox .typesinside img:hover {
     transform: scale(1.1);
     transition: ease-in-out all .4s;
