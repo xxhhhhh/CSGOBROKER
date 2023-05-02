@@ -19,7 +19,7 @@
     <meta property="og:title" content="All CS:GO Sites with Crash 2023 - CSGOBROKER">
     <meta property="og:locale" content="en_US">
     <meta property="og:description" content="Discover trustworthy CS:GO Crash Sites with real ratings and free bonus codes. Enjoy the crash game on a reliable CS:GO gambling platform.">
-    <meta property="og:site_name" content="CSGOBROKER.CC">
+    <meta property="og:site_name" content="CSGOBROKER">
     <meta property="og:image" content="https://csgobroker.cc/img/banners/gamblingbanner.png">
     <meta property="og:image:secure_url" content="https://csgobroker.cc/img/banners/gamblingbanner.png">
     <meta property="og:image:width" content="1728">
@@ -30,6 +30,10 @@
     <meta name="twitter:image" content="https://csgobroker.cc/img/banners/gamblingbanner.png">
     <meta name="twitter:title" content="All CS:GO Sites with Crash 2023 - CSGOBROKER">
     <meta name="twitter:description" content="Discover trustworthy CS:GO Crash Sites with real ratings and free bonus codes. Enjoy the crash game on a reliable CS:GO gambling platform.">
+    <link rel="alternate" hreflang="en-US" href="https://csgobroker.cc/csgo/crash">
+    <link rel="alternate" hreflang="ru-RU" href="https://csgobroker.cc/ru/csgo/crash">
+    <link rel="alternate" hreflang="en" href="https://csgobroker.cc/csgo/crash">
+    <link rel="alternate" hreflang="ru" href="https://csgobroker.cc/ru/csgo/crash">
     <style>
         :root {
             --white: rgba(255, 255, 255, .96);
@@ -61,7 +65,7 @@
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
-        <div id="FAQ"><h2 id="PageSubt">CS:GO Crash is a gambling game mode in which players bet on a multiplier that increases over time. The objective is to cash out before the multiplier crashes, resulting in the loss of all bets. This game mode is available on various CS:GO gambling sites and can be played with skins or coins.</h2></div>
+        <div id="FAQ"><h2 id="PageSubt">CS:GO Crash is a popular game mode in the CS:GO gambling community, offering a thrilling and potentially lucrative way to bet on skins or coins. In the game, players wager on a multiplier that increases incrementally over time. The longer a player waits before cashing out, the higher the multiplier becomes, increasing their potential winnings. However, there is also a risk involved because the multiplier can crash at any time, causing all bets to be lost. The goal is to cash out before the multiplier crashes and take home the winnings. CS:GO Crash game mode is available on various CS:GO gambling sites, and some sites offer additional features such as bonus coins, chat rooms, and live graphs that show the history of the multiplier.</h2></div>
     </div>
     <div class="category-selector">
         <ul>
@@ -283,7 +287,7 @@
                 <button id="copy" style="cursor: pointer;" onclick="copyToClipboard('#p23')"><img src="/img/copy.svg" alt="" draggable="false"></button>
             </div>
         </div>
-        <div class="box">
+        <div class="box" id="HellStore">
             <div class="logobg">
                 <a href="https://csgobroker.cc/reviews/hellstore"><img src="/img/hellstore-logo.png" loading="lazy" draggable="false" alt="" style="width: 200px;height: auto;"></a>
                 <div class="best">Free 2$</div>
@@ -341,8 +345,8 @@
     const targetDiv = document.getElementById("FAQ");
     const btn = document.getElementById("toggle");
     btn.onclick = function () {
-      if (targetDiv.style.height !== "100px") {
-        targetDiv.style.height = "100px";
+      if (targetDiv.style.height !== "110px") {
+        targetDiv.style.height = "110px";
       } else {
         targetDiv.style.height = "0px";
       }
