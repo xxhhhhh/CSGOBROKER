@@ -1887,3 +1887,61 @@ footer .centralizer .footer-content {
         font-weight: 16px;
         font-weight: 600;
     }
+    .lang-menu {
+        width: 40px;
+        text-align: right;
+        font-weight: bold;
+        margin-top: 1px;
+        position: absolute;
+        right: 19.1%;
+        color: rgba(255, 255, 255, .3);
+        transition: all .3s ease-in-out;
+    }
+
+    .lang-menu .selected-lang {
+        display: flex;   
+        justify-content: center;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+    }
+    .lang-menu .selected-lang:hover {
+        color: var(--white);
+        transition: all .3s ease-in-out;
+    }
+    .lang-menu ul {
+        margin: 0;
+        padding: 0;
+        display: none;
+        position: absolute;
+        padding-top: 10px;
+        right: 0px;
+        width: 40px;
+        border-radius: 5px;
+    }
+    
+    .lang-menu ul li {
+        list-style: none;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .lang-menu ul li a {
+        text-decoration: none;
+        width: 40px;
+        text-align: center;
+        padding: 10px 0;
+        display: block;
+        color: rgba(255, 255, 255, .3);
+        background-color: #101010;
+    }
+    
+    .lang-menu ul li:hover a {
+        color: var(--white);    
+        transition: all .1s ease-in-out;
+    }
+    
+    .lang-menu:hover ul {
+        display: block;
+    }
+  
