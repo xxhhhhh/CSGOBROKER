@@ -407,11 +407,11 @@ nav #pagename:focus {
 .features .featuresbox .typesinside img#nobonus {
     margin: 12px 0 12px 22px;
 }
-.features .featuresbox .typesinside img:hover {
+.features .featuresbox .typesinside a:hover {
     transform: scale(1.1);
     transition: ease-in-out all .4s;
 }
-.gamemodes .featuresbox .typesinside img {
+.gamemodes .featuresbox .typesinside a {
     transform: scale(0.8);
     height: 32px;
     width: 32px;
@@ -423,7 +423,7 @@ nav #pagename:focus {
 .gamemodes .featuresbox .typesinside a {
     margin: 0 !important;
 }
-.gamemodes .featuresbox .typesinside img:hover {
+.gamemodes .featuresbox .typesinside a:hover {
     transform: scale(1);
     transition: ease-in-out all .4s;
 }
@@ -433,6 +433,275 @@ nav #pagename:focus {
 }
 .typesinside a:nth-child(1) {
     margin: 12px 0 12px 22px;
+}
+.gamemodes .featuresbox .typesinside a::before {
+    content: '';
+}
+.sitedetails .methodlist a::before {
+    content: '';
+}
+/* Gamemodes Images List Start */
+
+.typesinside .csgo::before {                    
+    background-image: url(/img/minipics/gamemodes/esports.png);
+}
+.typesinside .sport::before {
+    background-image: url(/img/minipics/gamemodes/realsport.png);
+}
+.typesinside .slots::before {
+    background-image: url(/img/minipics/gamemodes/slots.png);
+}
+.typesinside .slotsduels::before {
+    background-image: url(/img/minipics/gamemodes/slotsduels.png);
+}
+.typesinside .livedealer::before {
+    background-image: url(/img/minipics/gamemodes/livedealer.png);
+}
+.typesinside .poker::before {
+    background-image: url(/img/minipics/gamemodes/poker.png);
+}
+.typesinside .blackjack::before {
+    background-image: url(/img/minipics/gamemodes/blackjack.png);
+}
+.typesinside .baccarat::before {
+    background-image: url(/img/minipics/gamemodes/baccarat.png);
+}
+.typesinside .wheel::before {
+    background-image: url(/img/minipics/gamemodes/wheel.png);
+}
+.typesinside .roulette::before {
+    background-image: url(/img/minipics/gamemodes/roulette.png);
+}
+.typesinside .crash::before {
+    background-image: url(/img/minipics/gamemodes/crash.png);
+}
+.typesinside .coinflip::before {
+    background-image: url(/img/minipics/gamemodes/coinflip.png);
+}
+.typesinside .cases::before {
+    background-image: url(/img/minipics/gamemodes/cases.png);
+}
+.typesinside .casebattles::before {
+    background-image: url(/img/minipics/gamemodes/casebattles.png);
+}
+.typesinside .upgrader::before {
+    background-image: url(/img/minipics/gamemodes/upgrader.png);
+}
+.typesinside .duels::before {
+    background-image: url(/img/minipics/gamemodes/duels.png);
+}
+.typesinside .plinko::before {
+    background-image: url(/img/minipics/gamemodes/plinko.png);
+}
+.typesinside .dice::before {
+    background-image: url(/img/minipics/gamemodes/dice.png);
+}
+.typesinside .towers::before {
+    background-image: url(/img/minipics/gamemodes/towers.png);
+}
+.typesinside .mines::before {
+    background-image: url(/img/minipics/gamemodes/mines.png);
+}
+.typesinside .hilo::before {
+    background-image: url(/img/minipics/gamemodes/hilo.png);
+}
+.typesinside .mining::before {
+    background-image: url(/img/minipics/gamemodes/mining.png);
+}
+.typesinside .offerwalls::before {
+    background-image: url(/img/minipics/gamemodes/earning.png);
+}
+.typesinside .playing::before {
+    background-image: url(/img/minipics/gamemodes/playing.png);
+}
+.typesinside .trade-skins::before {
+    background-image: url(/img/minipics/gamemodes/exchanger.png);
+}
+.typesinside .buy-skins::before {
+    background-image: url(/img/minipics/gamemodes/buyingskins.png);
+}
+.typesinside .sell-skins::before {
+    background-image: url(/img/minipics/gamemodes/sellingskins.png);
+}
+.typesinside .giveaways::before {
+    background-image: url(/img/minipics/gamemodes/giveaways_mode.png);
+}
+.typesinside .steamlvlup::before {
+    background-image: url(/img/minipics/gamemodes/steamlvlup.png);
+}
+
+/* Gamemodes Images List End */
+
+/* Payment Methods Start */
+
+.methodlist .csgo::before {
+    background-image: url(/img/minipics/payments/csgo.png);
+}
+.methodlist .dota::before {
+    background-image: url(/img/minipics/payments/dota.png);
+}
+.methodlist .rust::before {
+    background-image: url(/img/minipics/payments/rust.png);
+}
+.methodlist .tf2::before {
+    background-image: url(/img/minipics/payments/tf2.png);
+}
+.methodlist .visa::before {
+    background-image: url(/img/minipics/payments/visa.png);
+}
+.methodlist .mastercard::before {
+    background-image: url(/img/minipics/payments/mastercard.png);
+}
+.methodlist .paypal::before {
+    background-image: url(/img/minipics/payments/paypal.png);
+}
+.methodlist .paysafe::before {
+    background-image: url(/img/minipics/payments/paysafe.png);
+}
+.methodlist .skrill::before {
+    background-image: url(/img/minipics/payments/skrill.png);
+}
+.methodlist .qiwi::before {
+    background-image: url(/img/minipics/payments/qiwi.png);
+}
+.methodlist .piastrix::before {
+    background-image: url(/img/minipics/payments/piastrix.png);
+}
+.methodlist .webmoney::before {
+    background-image: url(/img/minipics/payments/webmoney.png);
+}
+.methodlist .yumoney::before {
+    background-image: url(/img/minipics/payments/yumoney.png);
+}
+.methodlist .bank-transfer::before {
+    background-image: url(/img/minipics/payments/bank-transfer.png);
+}
+.methodlist .sbp::before {
+    background-image: url(/img/minipics/payments/sbp.png);
+}
+.methodlist .fkwallet::before {
+    background-image: url(/img/minipics/payments/fkwallet.png);
+}
+.methodlist .gpay::before {
+    background-image: url(/img/minipics/payments/gpay.png);
+}
+.methodlist .games::before {
+    background-image: url(/img/minipics/payments/games.png);
+}
+.methodlist .h1z1::before {
+    background-image: url(/img/minipics/payments/h1z1.png);
+}
+.methodlist .apay::before {
+    background-image: url(/img/minipics/payments/apay.png);
+}
+.methodlist .unionpay::before {
+    background-image: url(/img/minipics/payments/unionpay.png);
+}
+.methodlist .g2apay::before {
+    background-image: url(/img/minipics/payments/g2apay.png);
+}
+.methodlist .jeton::before {
+    background-image: url(/img/minipics/payments/jeton.png);
+}
+.methodlist .btc::before {
+    background-image: url(/img/minipics/payments/btc.png);
+}
+.methodlist .btcc::before {
+    background-image: url(/img/minipics/payments/btc.png);
+}
+.methodlist .usdt::before {
+    background-image: url(/img/minipics/payments/usdt.png);
+}
+.methodlist .usdc::before {
+    background-image: url(/img/minipics/payments/usdc.png);
+}
+.methodlist .eth::before {
+    background-image: url(/img/minipics/payments/eth.png);
+}
+.methodlist .ltc::before {
+    background-image: url(/img/minipics/payments/ltc.png);
+}
+.methodlist .bnb::before {
+    background-image: url(/img/minipics/payments/bnb.png);
+}
+.methodlist .bnbpay::before {
+    background-image: url(/img/minipics/payments/bnb.png);
+}
+.methodlist .ripple::before {
+    background-image: url(/img/minipics/payments/ripple.png);
+}
+.methodlist .tron::before {
+    background-image: url(/img/minipics/payments/tron.png);
+}
+.methodlist .doge::before {
+    background-image: url(/img/minipics/payments/doge.png);
+}
+.methodlist .polygon::before {
+    background-image: url(/img/minipics/payments/polygon.png);
+}
+.methodlist .avalanche::before {
+    background-image: url(/img/minipics/payments/avalanche.png);
+}
+.methodlist .cardano::before {
+    background-image: url(/img/minipics/payments/cardano.png);
+}
+.methodlist .solana::before {
+    background-image: url(/img/minipics/payments/solana.png);
+}
+.methodlist .stellar::before {
+    background-image: url(/img/minipics/payments/stellar.png);
+}
+.methodlist .eos::before {
+    background-image: url(/img/minipics/payments/eos.png);
+}
+.methodlist .giftcard::before {
+    background-image: url(/img/minipics/payments/giftcard.png);
+}
+.methodlist .lol::before {
+    background-image: url(/img/minipics/payments/lol.png);
+}
+.methodlist .fortnite::before {
+    background-image: url(/img/minipics/payments/fortnite.png);
+}
+.methodlist .valorant::before {
+    background-image: url(/img/minipics/payments/valorant.png);
+}
+.methodlist .roblox::before {
+    background-image: url(/img/minipics/payments/roblox.png);
+}
+.methodlist .skinsback::before {
+    background-image: url(/img/minipics/payments/skinsback.png);
+}
+.methodlist .skinpay::before {
+    background-image: url(/img/minipics/payments/skinpay.png);
+}
+.methodlist .tradingcards::before {
+    background-image: url(/img/minipics/payments/tradingcards.png);
+}
+.methodlist .kinguingiftcards::before {
+    background-image: url(/img/minipics/payments/kinguin.png);
+}
+.methodlist .waxpeer::before {
+    background-image: url(/img/minipics/payments/waxpeer.png);
+}
+.methodlist .gamemoney::before {
+    background-image: url(/img/minipics/payments/gamemoney.png);
+}
+
+/* Payment Methods Ends */
+.typesinside ::before,
+.methodlist ::before {
+    border-radius: 5px;
+    margin-left: 1px;
+    display: inline-block;
+    background-size: cover;
+    height: 32px;
+    width: 32px;
+}
+.methodlist a {
+    margin: 4px;
+    height: 32px;
+    width: 32px;
 }
 .star_rating {
     padding: 0 2px;
@@ -833,12 +1102,7 @@ nav img {
     flex-wrap: wrap;
     align-content: flex-start;
 }
-.sitedetails .methodlist img {
-    margin: 6px;
-    width: 32px;
-    height: 32px;
-}
-.sitedetails .methodlist img:hover {
+.sitedetails .methodlist a:hover {
     transform: scale(1.1);
     transition: transform ease-in-out .4s;
 }
