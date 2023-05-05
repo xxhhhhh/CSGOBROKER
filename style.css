@@ -472,6 +472,9 @@ nav #pagename:focus {
 .typesinside .roulette::before {
     background-image: url(/img/minipics/gamemodes/roulette.png);
 }
+.typesinside .jackpot::before {
+    background-image: url(/img/minipics/gamemodes/jackpot.png);
+}
 .typesinside .crash::before {
     background-image: url(/img/minipics/gamemodes/crash.png);
 }
