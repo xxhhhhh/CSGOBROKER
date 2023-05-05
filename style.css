@@ -4,6 +4,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scrollbar-color: #000000 #0c0c0c;
+    scrollbar-width: thin; 
 }
 head{
     display: none;
@@ -24,7 +26,7 @@ body{
     padding: 0;
 }
 ::-webkit-scrollbar {
-    width: 17px;
+    width: 8px;
   }
   
   /* Track */
@@ -34,7 +36,7 @@ body{
    
   ::-webkit-scrollbar-thumb {
     /* background: rgba(255, 255, 255, .1);  */
-    background: rgba(0, 0, 0, .35);
+    background: rgba(0, 0, 0, 0.35);
     border-radius: 5px;
   }
   
@@ -42,7 +44,7 @@ body{
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     /* background: var(--red);  */
-    background: rgba(0, 0, 0, 1);
+    background: #000000;
   }
 .h1, .h2, .h2, .h3, .h4, .h6, h1, h2, h2, h3, h4, h6, p {
     line-height: 1.2 !important;
@@ -1056,7 +1058,7 @@ nav img {
 .siteleftpannel {
     position: fixed;
     margin-right: 0;
-    left: 281px;
+    left: 285px;
     /* left: 15.36%; */
     top: 109px;
 }
