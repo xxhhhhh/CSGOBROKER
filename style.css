@@ -534,6 +534,9 @@ nav #pagename:focus {
 .typesinside .steamlvlup::before {
     background-image: url(/img/minipics/gamemodes/steamlvlup.png);
 }
+.typesinside .rental::before {
+    background-image: url(/img/minipics/gamemodes/rental.png);
+}
 
 /* Gamemodes Images List End */
 
@@ -1173,6 +1176,16 @@ nav img {
     position: absolute;
     background-color: transparent;
     bottom: 17px;
+    padding: 8px 20px;
+    /* background-color: var(--red); 
+    border: var(--red) 1px dashed;
+    position: absolute;
+    background-color: var(--red);
+    bottom: 17px;
+    color: black;
+    padding: 8px 20px;
+    min-width: 140px;
+    font-size: 13px; */
 }
 .sitepage .box .content button#copy_style:hover,
 .box .content button#copy:hover {
