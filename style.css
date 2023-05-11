@@ -736,9 +736,9 @@ nav #pagename:focus {
     justify-content: center;
     color: var(--white);
 }
-.smallreview p:nth-child(3) {
+/* .smallreview p:nth-child(3) {
     font-weight: 500;
-}
+} */
 .smallreview h2 {
     height: 28.8px;
     margin-bottom: 30px !important;
@@ -750,7 +750,7 @@ nav #pagename:focus {
 .smallreview p {
     height: auto;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 16px;
     width: 95%;
     display: list-item;
     list-style: none;
@@ -826,9 +826,9 @@ nav #pagename:focus {
     display: list-item;
     list-style: decimal;
     vertical-align: baseline;
-    height: 32px;
+    height: 30px;
     align-items: center;
-    padding: 3px;
+    padding: 0 3px;
 
 }
 .instruction li a {
@@ -859,7 +859,7 @@ nav #pagename:focus {
     padding: 3px 7px;
     border-radius: 5px;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 15px;
 }
 .instruction code:hover {
     border-top: 1px solid #272727;
