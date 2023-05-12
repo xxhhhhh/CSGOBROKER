@@ -1207,7 +1207,8 @@ nav img {
 .sitepage .box .content button#copy_style {
     border: #a81d34 1px solid; 
     position: absolute;
-    background-color: #a81d34; 
+    /* background-color: #a81d34;  */
+    background-color: #a81d34;
     color: var(--white);
     bottom: 17px;
     padding: 8px 20px;
@@ -1224,7 +1225,10 @@ nav img {
 }
 .sitepage .box .content button#code_style:hover,
 .box .content button#copy:hover {
-    background-color: #62101d;
+    color: var(--white);
+    background-color: var(--red);
+    transition: all .2s ease-in-out;
+    transform: none !important;
 }
 .box{
     position: relative;
@@ -1441,8 +1445,9 @@ nav img {
     position: absolute;
     top: unset;
     bottom: 21px;
-    border: var(--red) 1px dashed;
-    background-color: transparent;
+    border: var(--red) 1px solid;
+    /* background-color: transparent; */
+    background-color: #62101d;
     bottom: 18.6px;
 }
 .content button#copy {
