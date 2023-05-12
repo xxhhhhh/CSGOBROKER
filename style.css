@@ -410,8 +410,10 @@ nav #pagename:focus {
     margin: 12px 0 12px 22px;
 }
 .features .featuresbox .typesinside a:hover {
-    transform: scale(1.1);
-    transition: ease-in-out all .4s;
+    transform: scale(1.05);
+    background-color: var(--red);
+    transition: ease-in-out all .2s;
+    color: white;
 }
 .gamemodes .featuresbox .typesinside a {
     transform: scale(0.8);
@@ -427,11 +429,26 @@ nav #pagename:focus {
 }
 .gamemodes .featuresbox .typesinside a:hover {
     transform: scale(1);
-    transition: ease-in-out all .4s;
+    transition: ease-in-out all .2s;
 }
-.typesinside a {
+.features .featuresbox .typesinside a {
     margin: 12px 0 12px 9px;
+    transition: ease-in-out all .2s;
     height: 32px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 2px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    /* border: rgba(255, 255, 255, .1) 1px solid; */
+    /* border: black 2px dashed; */
+    /* background-color: #a81d34; */
+    color: var(--white);
+    background-color: #1f1f1f;
+    /* filter: grayscale(1); */
 }
 .typesinside a:nth-child(1) {
     margin: 12px 0 12px 22px;
@@ -750,7 +767,7 @@ nav #pagename:focus {
 .smallreview p {
     height: auto;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 17px;
     width: 95%;
     display: list-item;
     list-style: none;
@@ -826,7 +843,7 @@ nav #pagename:focus {
     display: list-item;
     list-style: decimal;
     vertical-align: baseline;
-    height: 30px;
+    min-height: 30px;
     align-items: center;
     padding: 0 3px;
 
@@ -1112,7 +1129,7 @@ nav img {
 }
 .sitedetails .methodlist a:hover {
     transform: scale(1.1);
-    transition: transform ease-in-out .4s;
+    transition: transform ease-in-out .2s;
 }
 .sitedetails .sitepros.active {
     height: 208px;
@@ -1170,7 +1187,7 @@ nav img {
 .sitepage .box {
     margin: 0 !important;
 }
-.sitepage .box .content button#copy_style {
+.sitepage .box .content button#code_style {
     /* background-color: var(--red); */
     border: var(--red) 1px dashed;
     position: absolute;
@@ -1187,7 +1204,25 @@ nav img {
     min-width: 140px;
     font-size: 13px; */
 }
+.sitepage .box .content button#copy_style {
+    border: #a81d34 1px solid; 
+    position: absolute;
+    background-color: #a81d34; 
+    color: var(--white);
+    bottom: 17px;
+    padding: 8px 20px;
+    transition: all .2s ease-in-out;
+}
 .sitepage .box .content button#copy_style:hover,
+.box .content button#copy:hover {
+    /* background-color: var(--white); */
+    /* border: var(--white) 1px solid;  */
+    color: var(--white);
+    background-color: var(--red);
+    transition: all .2s ease-in-out;
+    transform: scale(1.05); 
+}
+.sitepage .box .content button#code_style:hover,
 .box .content button#copy:hover {
     background-color: #62101d;
 }
@@ -1238,9 +1273,10 @@ nav img {
 }
 
 .sitepage .box:hover {
-    background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.2) 100%);
+    /* background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.2) 100%); */
+    background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.3) 100%) !important; 
     transform: none;
-    transition: all .3s ease-in-out;
+    /* transition: all .3s ease-in-out; */
 }
 
 .box .logobg {
@@ -1380,14 +1416,14 @@ nav img {
     font-size: 12px;
     padding: 6px;
     border-radius: 5px;
-    transition: all .3s ease-in-out;
+    transition: all .2s ease-in-out;
     color: white;
 }
 .content button:hover{
-    background: var(--blackgrey);
+    background: var(--red);
 }
 .content button:focus{
-    background: var(--blackgrey);
+    background: var(--red);
 }
 .conent button:active {
     background: transparent !important;
@@ -1684,7 +1720,7 @@ footer .centralizer .footer-content {
     margin: 0 6px 0 6px;
     z-index: 2;
     cursor: pointer;
-    transition-duration: .4s;
+    transition-duration: .2s;
     box-shadow: 0 0 20px 0 #000;
   }
 
@@ -1745,7 +1781,7 @@ footer .centralizer .footer-content {
     top: 0px;
     left: 0px;
     transform: translateX(-100%);
-    transition-duration: .4s;
+    transition-duration: .2s;
     opacity: 1;
     z-index: -1;
   }
