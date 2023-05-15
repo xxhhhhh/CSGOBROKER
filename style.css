@@ -955,7 +955,8 @@ nav #pagename:focus {
 nav img {
     height: auto;
     width: 160px;
-    filter: drop-shadow(0px 3px 3px black);
+    /* filter: drop-shadow(0px 3px 3px black); */
+    filter: drop-shadow(0px 5px 2px black);
 }
 .category-selector {
     max-width: 70%;
@@ -1541,12 +1542,35 @@ footer .centralizer .footer-content {
     font-size: 13px;
     font-weight: 400;
 }
+@media screen and (max-width: 444px) {
+    .box {
+        width: 180px !important;
+        margin: 8px 4px 0 4px !important;
+    }
+    .category-selector .category-box {
+        width: 182px !important;
+        margin: 8px 4px 0 4px !important;
+    }
+    .content p:nth-child(2) {
+        width: 170px !important;
+    }
+}
+@media screen and (max-width: 644px) {
+    .category-selector ul:nth-child(3) .category-box,
+    .category-selector ul:nth-child(4) .category-box {
+    margin: 14px 6px 0 6px;
+}
+.lang-menu {
+    margin-top: 58px !important;
+    right: 3% !important;
+}
+}
 @media screen and (max-width: 1340px) {
     .infoblock h1, h2, h2 {
         font-size: 20px;
     }
     .boxes-holder {
-        max-width: 70%;
+        max-width: 100%;
         margin: 0 auto;
         width: auto;
         height: 100%;
@@ -1555,7 +1579,7 @@ footer .centralizer .footer-content {
         flex-wrap: wrap;
     }
     .category-selector {
-        max-width: 70%;
+        max-width: 100%;
         margin: 0 auto;
         width: auto;
         height: 100%;
@@ -1564,8 +1588,8 @@ footer .centralizer .footer-content {
         flex-wrap: wrap;
     }
     .category-selector .category-box {
-        margin: 14px 7px 0 7px;
-        width: 100px;
+        margin: 0px 6px 0 6px;
+        width: 204px;
         height: 100px;
     }
     .category-selector .category-box .category-box-logo {
@@ -1581,8 +1605,15 @@ footer .centralizer .footer-content {
     #FAQ {
         margin: 15px 0 0 0;
     }
-    .youtube {
+    .content p:nth-child(2){
+        width: 200px;
+        overflow: hidden;
+    }
+    .content button#copy {
         display: none;
+    }
+    .socials {
+        display: none !important;
     }
     .sitepage .box {
         margin: 9px 0 9px 0 !important;
@@ -1624,6 +1655,9 @@ footer .centralizer .footer-content {
     .slide {
         width: 100% !important;
     }
+    .contact {
+        display: none;
+    }
     .ratingthings {
         flex-wrap: nowrap;
     }
@@ -1651,6 +1685,9 @@ footer .centralizer .footer-content {
     .sitedetails .methodlist {
         width: 100%;
     }
+    nav img {
+        filter: none;
+    }
     .sitedetails {
         margin-top: 9px;
         position: relative !important;
@@ -1668,8 +1705,11 @@ footer .centralizer .footer-content {
         left: 11%;
         }
     .box{
-        margin-right: 0;
-        margin-top: 30px;
+        margin: 12px 6px 0 6px;
+        width: 210px;
+    }
+    .box .logobg img {
+        width: 80% !important;
     }
     nav #pagename {
         font-size: 13px;
