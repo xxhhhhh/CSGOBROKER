@@ -43,7 +43,7 @@ body{
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    /* background: var(--red);  */
+    /* background: var(--main-color);  */
     background: #000000;
   }
 .h1, .h2, .h2, .h3, .h4, .h6, h1, h2, h2, h3, h4, h6, p {
@@ -63,7 +63,7 @@ nav {
     align-items: center;
     top: 0;
     left: 0;
-    /* border: solid var(--red);
+    /* border: solid var(--main-color);
     border-width: 0px 0 2px 0; */}
 nav .logospace {
     height: 100px;
@@ -253,7 +253,7 @@ nav #pagename:focus {
     opacity: .9;
 }
 .boxreview .plusminus .criteria:nth-child(2) i {
-    color: var(--red);
+    color: var(--main-color);
     opacity: .9;
 }
 .boxreview .plusminus .criteria:nth-child(1) {
@@ -411,7 +411,7 @@ nav #pagename:focus {
 }
 .features .featuresbox .typesinside a:hover {
     transform: scale(1.05);
-    background-color: var(--red);
+    background-color: var(--main-color);
     transition: ease-in-out all .2s;
     color: white;
 }
@@ -735,7 +735,7 @@ nav #pagename:focus {
     /* text-transform: uppercase; */
     font-weight: 600;
     font-size: 22px;
-    color: var(--red);
+    color: var(--main-color);
     text-align: center;
 }
 .pages #PageTitle, #PageSubt,
@@ -819,7 +819,7 @@ nav #pagename:focus {
     margin-right: 10px;
 }
 .ratingthings .ratingway .star_rating, .star_rating {
-    color: var(--red);
+    color: var(--main-color);
 }
 .instruction {
     display: flex;
@@ -850,7 +850,7 @@ nav #pagename:focus {
 }
 .instruction li a {
     font-weight: 600;
-    color: var(--red);
+    color: var(--main-color);
     text-decoration: none;
 }
 .smallreview p a {
@@ -863,7 +863,7 @@ nav #pagename:focus {
     text-decoration: underline;
 }
 .instruction li::marker {
-    color: var(--red);
+    color: var(--main-color);
     font-weight: 600;
 }
 .instruction li strong {
@@ -1188,16 +1188,16 @@ nav img {
     margin: 0 !important;
 }
 .sitepage .box .content button#code_style {
-    /* background-color: var(--red); */
-    border: var(--red) 1px dashed;
+    /* background-color: var(--main-color); */
+    border: var(--main-color) 1px dashed;
     position: absolute;
     background-color: transparent;
     bottom: 17px;
     padding: 8px 20px;
-    /* background-color: var(--red); 
-    border: var(--red) 1px dashed;
+    /* background-color: var(--main-color); 
+    border: var(--main-color) 1px dashed;
     position: absolute;
-    background-color: var(--red);
+    background-color: var(--main-color);
     bottom: 17px;
     color: black;
     padding: 8px 20px;
@@ -1219,14 +1219,14 @@ nav img {
     /* background-color: var(--white); */
     /* border: var(--white) 1px solid;  */
     color: var(--white);
-    background-color: var(--red);
+    background-color: var(--main-color);
     transition: all .2s ease-in-out;
     transform: scale(1.05); 
 }
 .sitepage .box .content button#code_style:hover,
 .box .content button#copy:hover {
     color: var(--white);
-    background-color: var(--red);
+    background-color: var(--main-color);
     transition: all .2s ease-in-out;
     transform: none !important;
 }
@@ -1263,7 +1263,7 @@ nav img {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    color: var(--red);
+    color: var(--main-color);
     font-size: 18px;
     position: absolute;
     bottom: 195px;
@@ -1315,7 +1315,7 @@ nav img {
     width: auto;
     padding: 0 8px;
     height: 30px;
-    background-color: var(--red);
+    background-color: var(--main-color);
     /* background-color: var(--grey); */
     border-radius: 0px 5px 0px 5px;
     display: flex;
@@ -1424,10 +1424,10 @@ nav img {
     color: white;
 }
 .content button:hover{
-    background: var(--red);
+    background: var(--main-color);
 }
 .content button:focus{
-    background: var(--red);
+    background: var(--main-color);
 }
 .conent button:active {
     background: transparent !important;
@@ -1445,7 +1445,7 @@ nav img {
     position: absolute;
     top: unset;
     bottom: 21px;
-    border: var(--red) 1px solid;
+    border: var(--main-color) 1px solid;
     /* background-color: transparent; */
     background-color: #62101d;
     bottom: 18.6px;
@@ -1888,10 +1888,10 @@ footer .centralizer .footer-content {
         /* background-color: #101010; */
     }
     /* .submenu li:last-child {
-        border-bottom: 2px solid var(--red);
+        border-bottom: 2px solid var(--main-color);
     } */
     .submenu #big-category:hover a {
-        color: var(--red);
+        color: var(--main-color);
         /* transition: all ease .2s; */
     }
     .submenu2 a {
@@ -1900,7 +1900,7 @@ footer .centralizer .footer-content {
     }
     .submenu #big-category a:hover,
     .submenu2 a:hover {
-        color: var(--red) !important;
+        color: var(--main-color) !important;
     }
     .submenu2 {
         color: var(--white);
