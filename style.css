@@ -460,6 +460,16 @@ nav #pagename:focus {
 .sitedetails .methodlist a::before {
     content: '';
 }
+.search-container {
+    display: none;
+}
+form input {
+    opacity: 1;
+}
+div#results {
+    height: 200px;
+    width: 200px;
+}
 /* Gamemodes Images List Start */
 
 .typesinside .csgo::before {                    
