@@ -17,7 +17,7 @@ async function performSearch(query) {
 
   const reviewsDirectory = '/reviews';
 
-  const fileList = await WORKERSKV.listWithPrefix(reviewsDirectory);
+  const fileList = await WORKERSKV.list({ prefix: reviewsDirectory });
   for (const file of fileList.keys) {
     const url = `/reviews/${file.name}`;
 
