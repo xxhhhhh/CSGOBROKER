@@ -4,29 +4,29 @@ const resultsContainer = document.querySelector('#results');
 
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  
+
   const query = searchInput.value;
-  
+
   fetch(`/search?query=${query}`)
     .then(response => response.json())
     .then(results => {
       showResults(results);
     })
     .catch(error => {
-      console.error('Ошибка при выполнении поиска:', error);
+      console.error('Error performing search:', error);
     });
 });
 
 function showResults(results) {
   resultsContainer.innerHTML = '';
-  
+
   if (results.length === 0) {
-    resultsContainer.textContent = 'Ничего не найдено.';
+    resultsContainer.textContent = 'No results found.';
     return;
   }
-  
+
   const ul = document.createElement('ul');
-  
+
   results.forEach(result => {
     const li = document.createElement('li');
     const a = document.createElement('a');
@@ -35,6 +35,6 @@ function showResults(results) {
     li.appendChild(a);
     ul.appendChild(li);
   });
-  
+
   resultsContainer.appendChild(ul);
 }
