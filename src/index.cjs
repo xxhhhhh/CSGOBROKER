@@ -1,5 +1,3 @@
-const { WORKERSKV } = require('worktop/kv');
-
 async function handleRequest(request) {
   const url = new URL(request.url);
   const query = url.searchParams.get('query');
@@ -15,10 +13,10 @@ async function handleRequest(request) {
 async function performSearch(query) {
   const searchResults = [];
 
-  const reviewsDirectory = '/reviews';
+  // Replace this with your custom logic to retrieve search results
+  const fileList = await fetchFileList(); // Implement your logic to fetch the file list
 
-  const fileList = await WORKERSKV.list({ prefix: reviewsDirectory });
-  for (const file of fileList.keys) {
+  for (const file of fileList) {
     const url = `/reviews/${file.name}`;
 
     if (url.includes(query)) {
@@ -29,6 +27,16 @@ async function performSearch(query) {
 
   return searchResults;
 }
+
+async function fetchFileList() {
+  const response = await fetch('https://csgobroker.cc/reviews/');
+  if (!response.ok) {
+    throw new Error('Failed to fetch file list');
+  }
+  const fileList = await response.json();
+  return fileList;
+}
+
 
 function getTitleFromURL(url) {
   const lastIndex = url.lastIndexOf('/');
