@@ -1,42 +1,42 @@
-const searchForm = document.querySelector('#searchForm');
-const searchInput = document.querySelector('input[name="query"]');
-const resultsContainer = document.querySelector('#results');
+document.addEventListener('DOMContentLoaded', () => {
+  const searchForm = document.querySelector('#searchForm');
+  const searchInput = document.querySelector('input[name="query"]');
+  const resultsContainer = document.querySelector('#results');
 
-searchForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+  searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-  const query = searchInput.value;
+    const query = searchInput.value;
 
-  fetch(`/search?query=${query}`)
-    .then(response => response.text())
-    .then(data => {
-      console.log(data); // Log the response data
-      const results = JSON.parse(data);
-      showResults(results);
-    })
-    .catch(error => {
-      console.error('An error occurred during search:', error);
-    });
-});
-
-function showResults(results) {
-  resultsContainer.innerHTML = '';
-
-  if (results.length === 0) {
-    resultsContainer.textContent = 'No results found.';
-    return;
-  }
-
-  const ul = document.createElement('ul');
-
-  results.forEach(result => {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = result.url;
-    a.textContent = result.title;
-    li.appendChild(a);
-    ul.appendChild(li);
+    fetch(`/search?query=${query}`)
+      .then(response => response.json())
+      .then(results => {
+        showResults(results);
+      })
+      .catch(error => {
+        console.error('An error occurred during search:', error);
+      });
   });
 
-  resultsContainer.appendChild(ul);
-}
+  function showResults(results) {
+    resultsContainer.innerHTML = '';
+
+    if (results.length === 0) {
+      resultsContainer.textContent = 'No results found.';
+      return;
+    }
+
+    const ul = document.createElement('ul');
+
+    results.forEach(result => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = result.url;
+      a.textContent = result.title;
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+
+    resultsContainer.appendChild(ul);
+  }
+});
