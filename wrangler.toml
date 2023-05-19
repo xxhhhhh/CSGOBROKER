@@ -1,11 +1,10 @@
 name = "worker-searcher-cf"
-type = "javascript"
 account_id = "45a3cb295383bc335b87b00ecd51ab9e56b2e"
 workers_dev = true
 
 [site]
-bucket = "your-bucket-name"
+bucket = "88563dc09c0a47ecbc40ec5a357d8526"
 entry-point = "workers-site"
 
 [build]
-command = "node server.js"
+command = "npm run build"
