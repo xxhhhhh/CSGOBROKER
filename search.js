@@ -1,4 +1,4 @@
-const searchForm = document.querySelector('form');
+const searchForm = document.querySelector('#searchForm');
 const searchInput = document.querySelector('input[name="query"]');
 const resultsContainer = document.querySelector('#results');
 
@@ -8,12 +8,14 @@ searchForm.addEventListener('submit', (e) => {
   const query = searchInput.value;
 
   fetch(`/search?query=${query}`)
-    .then(response => response.json())
-    .then(results => {
+    .then(response => response.text())
+    .then(data => {
+      console.log(data); // Log the response data
+      const results = JSON.parse(data);
       showResults(results);
     })
     .catch(error => {
-      console.error('Error performing search:', error);
+      console.error('An error occurred during search:', error);
     });
 });
 
