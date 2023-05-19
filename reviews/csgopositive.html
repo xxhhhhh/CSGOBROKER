@@ -154,24 +154,12 @@
                     </div>
                 </div>
                 <div class="screens">
-                    <input type="radio" id="trigger1" name="slider" checked>
-                    <label for="trigger1"></label>
+                    <button class="prev-button"><i class="bi bi-chevron-left"></i></button>
+                    <button class="next-button"><i class="bi bi-chevron-right"></i></button>
                     <div class="slide bg1"><img draggable="false" src="./../img/screens/positive_1.png" alt=""></div>
-
-                    <input type="radio" id="trigger2" name="slider">
-                    <label for="trigger2"></label>
                     <div class="slide bg2"><img draggable="false" src="./../img/screens/positive_2.png" alt=""></div>
-
-                    <input type="radio" id="trigger3" name="slider">
-                    <label for="trigger3"></label>
                     <div class="slide bg3"><img draggable="false" src="./../img/screens/positive_3.png" alt=""></div>
-
-                    <input type="radio" id="trigger4" name="slider">
-                    <label for="trigger4"></label>
                     <div class="slide bg4"><img draggable="false" src="./../img/screens/positive_4.png" alt=""></div>
-
-                    <input type="radio" id="trigger5" name="slider">
-                    <label for="trigger5"></label>
                     <div class="slide bg5"><img draggable="false" src="./../img/screens/positive_5.png" alt=""></div>
                 </div>
             </div>
@@ -265,16 +253,7 @@
         </div>
     </footer>
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5d836b02d8154528a29135468e3d58f0"}'></script>
-    <script type="text/javascript">
-        var counter = 2;
-        setInterval(function(){
-            document.getElementById('trigger' + counter).checked = true;
-            counter++;
-            if(counter > 5){
-                counter = 1;
-            }
-        }, 5000);
-    </script>
+    <script src="./../slider.js"></script>
         <script>
             $('.sitepros').click(function() {
     $(this).toggleClass("active");
