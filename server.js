@@ -1,17 +1,19 @@
+export { handleRequest };
+
 addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
-})
+  event.respondWith(handleRequest(event.request));
+});
 
 async function handleRequest(request) {
-  const url = new URL(request.url)
-  const query = url.searchParams.get('query')
-  const searchResults = performSearch(query)
+  const url = new URL(request.url);
+  const query = url.searchParams.get('query');
+  const searchResults = performSearch(query);
   const response = {
     results: searchResults
-  }
+  };
   return new Response(JSON.stringify(response), {
     headers: { 'Content-Type': 'application/json' },
-  })
+  });
 }
 
 function performSearch(query) {
@@ -20,7 +22,7 @@ function performSearch(query) {
   const reviewsDirectory = '/reviews'; // Путь к папке с отзывами
 
   // Чтение содержимого директории
-  const fileList = getFilesInDirectory(reviewsDirectory)
+  const fileList = getFilesInDirectory(reviewsDirectory);
   fileList.forEach(file => {
     // Создание URL-адреса на основе пути к файлу и добавление его в массив
     const url = `/reviews/${file}`;
@@ -49,11 +51,11 @@ function getTitleFromURL(url) {
 
 // Вспомогательная функция для получения списка файлов в директории
 function getFilesInDirectory(directory) {
-  const fileList = []
-  const prefix = 'workers-site'
-  const files = WORKERSKV.getWithMetadata(prefix + directory, { type: 'json' }).metadata.contents
+  const fileList = [];
+  const prefix = 'workers-site';
+  const files = WORKERSKV.getWithMetadata(prefix + directory, { type: 'json' }).metadata.contents;
   for (const file of files) {
-    fileList.push(file.name)
+    fileList.push(file.name);
   }
-  return fileList
+  return fileList;
 }
