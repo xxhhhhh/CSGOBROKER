@@ -1,8 +1,0 @@
-name = "worker-searcher-cf"
-account_id = "40b7018d3702a1b9d2ab26e35bc49475"
-workers_dev = true
-main = "src/index.cjs"
-compatibility_date = "2023-05-19"
-
-[build]
-command = "npm run build"

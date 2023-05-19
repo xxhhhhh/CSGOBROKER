@@ -1,42 +1,37 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const searchForm = document.querySelector('#searchForm');
-  const searchInput = document.querySelector('input[name="query"]');
-  const resultsContainer = document.querySelector('#results');
+document.getElementById('search-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Предотвращаем отправку формы
 
-  searchForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const query = searchInput.value;
-
-    fetch(`/search?query=${query}`)
-      .then(response => response.json())
-      .then(results => {
-        showResults(results);
-      })
-      .catch(error => {
-        console.error('An error occurred during search:', error);
-      });
-  });
-
-  function showResults(results) {
-    resultsContainer.innerHTML = '';
-
-    if (results.length === 0) {
-      resultsContainer.textContent = 'No results found.';
-      return;
-    }
-
-    const ul = document.createElement('ul');
-
-    results.forEach(result => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = result.url;
-      a.textContent = result.title;
-      li.appendChild(a);
-      ul.appendChild(li);
-    });
-
-    resultsContainer.appendChild(ul);
-  }
+  var searchTerm = document.getElementById('search-input').value;
+  searchPages(searchTerm);
 });
+
+function searchPages(searchTerm) {
+  var pages = document.getElementsByTagName('a');
+  var resultsContainer = document.getElementById('search-results');
+  var results = [];
+
+  for (var i = 0; i < pages.length; i++) {
+    var page = pages[i];
+    if (page.textContent.toLowerCase().includes(searchTerm.toLowerCase())) {
+      results.push(page);
+    }
+  }
+
+  // Очищаем контейнер с результатами
+  while (resultsContainer.firstChild) {
+    resultsContainer.removeChild(resultsContainer.firstChild);
+  }
+
+  // Отображаем результаты поиска
+  if (results.length > 0) {
+    for (var j = 0; j < results.length; j++) {
+      var result = document.createElement('p');
+      result.textContent = results[j].textContent;
+      resultsContainer.appendChild(result);
+    }
+  } else {
+    var noResults = document.createElement('p');
+    noResults.textContent = 'Ничего не найдено.';
+    resultsContainer.appendChild(noResults);
+  }
+}
