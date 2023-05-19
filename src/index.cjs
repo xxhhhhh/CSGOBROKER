@@ -1,3 +1,5 @@
+const { WORKERSKV } = require('worktop/kv');
+
 async function handleRequest(request) {
   const url = new URL(request.url);
   const query = url.searchParams.get('query');
@@ -15,7 +17,7 @@ async function performSearch(query) {
 
   const reviewsDirectory = '/reviews';
 
-  const fileList = await WORKERSKV.list({ prefix: reviewsDirectory });
+  const fileList = await WORKERSKV.listWithPrefix(reviewsDirectory);
   for (const file of fileList.keys) {
     const url = `/reviews/${file.name}`;
 

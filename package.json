@@ -12,7 +12,8 @@
     "start": "wrangler dev"
   },
   "dependencies": {
-    "@cloudflare/kv-asset-handler": "~0.1.2"
+    "@cloudflare/kv-asset-handler": "~0.1.2",
+    "worktop": "^0.7.3"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230511.0",

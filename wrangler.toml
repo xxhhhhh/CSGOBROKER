@@ -9,7 +9,18 @@ bucket = "88563dc09c0a47ecbc40ec5a357d8526"
 
 [build]
 command = "npm run build"
-
-kv_namespaces = [
-  { binding = "__STATIC_CONTENT", id = "88563dc09c0a47ecbc40ec5a357d8526" }
+kv-namespaces = [
+  { binding = "WORKERSKV", id = "88563dc09c0a47ecbc40ec5a357d8526" }
 ]
+
+[env.production]
+name = "worker-searcher-cf"
+workers_dev = false
+route = "/search"
+zone_id = "6232f4b2f051855f42b0ce9c3f8dc8e7"
+
+[env.staging]
+name = "worker-searcher-cf"
+workers_dev = true
+route = "/search"
+zone_id = "6232f4b2f051855f42b0ce9c3f8dc8e7"
