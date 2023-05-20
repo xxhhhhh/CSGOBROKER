@@ -460,16 +460,6 @@ nav #pagename:focus {
 .sitedetails .methodlist a::before {
     content: '';
 }
-.search-container {
-    display: none;
-}
-form input {
-    opacity: 1;
-}
-div#results {
-    height: 200px;
-    width: 200px;
-}
 /* Gamemodes Images List Start */
 
 .typesinside .csgo::before {                    
@@ -1931,6 +1921,35 @@ footer .centralizer .footer-content {
     color: var(--white);
   }
   
+  @media(max-width: 1780px) {
+    .pages {
+        left: 28.7% !important;
+    }
+    }
+    @media(max-width: 1750px) {
+        .pages {
+            left: 28.7% !important;
+        }
+        .socials {
+            display: none !important;
+        }
+        }
+  @media(max-width: 1850px) {
+    #search-input {
+        width: 100px !important;
+    }
+    #site-list {
+        width: 100px !important;
+    }
+    #site-list {
+        width: 100px !important;
+    }
+    @media(max-width: 1080px) {
+        #search-input {
+            display: none !important;
+        }
+      }
+    }
   @media(max-width: 992px) {
     .container { padding: 20px 100px; }
     #back-to-top-btn { font-size: 22px; width: 40px; height: 40px; bottom: 15px; right: 15px; }
@@ -2110,4 +2129,98 @@ footer .centralizer .footer-content {
     .lang-menu:hover ul {
         display: block;
     }
-  
+
+    #site-list li {
+        display: block;
+      }
+      #site-list {
+        position: absolute;
+        top: 35px;
+        width: 200px;
+        border-radius: 5px;
+      }
+      
+      #site-list li a {
+        text-decoration: none;
+        font-weight: 500;
+        color: var(--white) !important;
+        width: 100%;
+        height: 30px;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      #search-input {
+        margin-bottom: unset;
+        margin-left: unset;
+        cursor: pointer;
+        width: 200px;
+        height: 30px;
+        color: rgba(255, 255, 255, .3);
+        background-color: rgb(20 20 20);
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+        font-family: 'TTNormsPro';
+        font-weight: 500;
+        text-align: center;
+      }
+      #search-input:hover {
+        background-color: rgb(22 22 22);
+        transition: all .2s ease-in-out;
+      }
+      #search-input:focus {
+        outline: 3px solid transparent;
+    }
+      .search-container {
+        display: block;
+        position: fixed;
+        top: 35px;
+        z-index: 10000;
+        right: 32%;
+    }
+    form input {
+        opacity: 1;
+    }
+    div#results {
+        height: 200px;
+        width: 200px;
+    }
+    .site-list {
+        height: 150px; /* Установите желаемую высоту окна выбора сайтов */
+        overflow-y: auto;
+      }
+      .site-list::-webkit-scrollbar-thumb {
+        /* background: rgba(206, 32, 61, .7);   */
+        background: rgba(255, 255, 255, .3);
+        border-radius: 5px;
+      } 
+       
+      .site-items {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      #site-list {
+        display: none;
+      }
+      .site-item {
+        height: 30px; /* Устанавливаем высоту элемента списка */
+        background-color: #1a1a1a;
+        padding: 10px;
+        border-bottom: 2px solid rgba(0,0,0,.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .site-item:hover {
+        background-color: #131313;
+        transition: all ease .2s;
+      }
+      
+      .sub-site-list {
+        padding-left: 10px; /* Отступ для вложенного списка */
+      }
+      

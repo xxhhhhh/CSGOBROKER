@@ -71,6 +71,15 @@
             </ul>
         </div>
     </nav>
+    <div class="search-container" id="filter-container">
+        <form id="search-form">
+            <input type="text" id="search-input" autocomplete="off">
+            <div id="site-list" class="site-list">
+                <ul id="site-items" class="site-items">
+                </ul>
+            </div>              
+        </form>
+    </div>    
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
@@ -226,6 +235,7 @@
         </div>
     </footer>
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5d836b02d8154528a29135468e3d58f0"}'></script>
+    <script src="/search.js"></script>
     <script src="./../slider.js"></script>
         <script>
             $('.sitepros').click(function() {
