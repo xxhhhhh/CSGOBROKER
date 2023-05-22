@@ -10,9 +10,8 @@ if (!userChoice && window.location.hostname !== 'localhost') {
     // Получаем текущий URL-адрес
     var currentUrl = window.location.href;
 
+    // Проверяем, отсутствует ли уже '/ru/' в текущем URL-адресе
     if (!currentUrl.includes('/ru/')) {
-      currentUrl = currentUrl.replace(/\/ru/g, '');
-
       // Формируем новый URL-адрес с добавленным '/ru/'
       var newUrl = 'https://csgobroker.cc/ru/' + currentUrl.substr('https://csgobroker.cc/'.length);
 
