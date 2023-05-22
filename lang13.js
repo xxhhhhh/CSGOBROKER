@@ -1,5 +1,7 @@
+var userChoice; // Объявляем переменную в глобальной области видимости
+
 function handleLanguageRedirect() {
-  var userChoice = getCookie('languageChoice');
+  userChoice = getCookie('languageChoice'); // Присваиваем значение переменной
 
   if (!userChoice && window.location.hostname !== 'localhost') {
     var userLang = navigator.language || navigator.userLanguage;
@@ -21,24 +23,18 @@ function handleLanguageRedirect() {
 
 // Обработчик события клика на элементах меню выбора языка
 document.addEventListener('click', function(event) {
-  // Проверяем, был ли клик на элементе с классом "lang-switch"
   if (event.target.classList.contains('lang-switch')) {
-    event.preventDefault(); // Предотвращаем переход по ссылке
+    event.preventDefault();
+    var selectedLang = event.target.dataset.lang;
 
-    var selectedLang = event.target.dataset.lang; // Получаем выбранный язык из атрибута "data-lang"
-
-    // Устанавливаем куку "languageChoice" с выбранным языком на 365 дней
     setCookie('languageChoice', selectedLang, 365);
 
-    // Проверяем, является ли выбранный язык отличным от текущего
     if (selectedLang !== userChoice) {
-      // Перезагружаем страницу для применения изменений языка
       location.reload();
     }
   }
 });
 
-// Функция для установки куки
 function setCookie(name, value, days) {
   var expires = '';
   if (days) {
@@ -49,7 +45,6 @@ function setCookie(name, value, days) {
   document.cookie = name + '=' + value + expires + '; path=/';
 }
 
-// Функция для получения значения куки
 function getCookie(name) {
   var nameEQ = name + '=';
   var ca = document.cookie.split(';');
@@ -65,5 +60,4 @@ function getCookie(name) {
   return null;
 }
 
-// Вызываем функцию для обработки перенаправления языка
 handleLanguageRedirect();
