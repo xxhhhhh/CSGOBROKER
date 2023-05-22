@@ -10,9 +10,7 @@ if (!userChoice) {
     // Получаем текущий URL-адрес
     var currentUrl = window.location.href;
 
-    // Проверяем, содержит ли URL-адрес "https://csgobroker.cc/ru/"
     if (currentUrl.indexOf('https://csgobroker.cc/ru/') === -1) {
-      // Удаляем возможные повторяющиеся "/ru" в URL-адресе
       currentUrl = currentUrl.replace(/\/ru/g, '');
 
       // Формируем новый URL-адрес с добавленным '/ru/'
