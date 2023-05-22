@@ -6,23 +6,24 @@ if (!userChoice && window.location.hostname !== 'localhost') {
   var userLang = navigator.language || navigator.userLanguage;
 
   // Проверяем значение языковой настройки и перенаправляем на соответствующую страницу
-  if ((userLang === 'ru' || userLang === 'ru-RU') && !window.location.pathname.includes('/ru/')) {
+  if (userLang === 'ru' || userLang === 'ru-RU') {
     // Получаем текущий URL-адрес
     var currentUrl = window.location.href;
 
-    // Удаляем первый слэш из пути, если есть
-    var newPath = window.location.pathname.replace(/^\//, '');
+    // Проверяем, является ли текущая страница главной страницей
+    if (currentUrl === 'https://csgobroker.cc/') {
+      // Формируем новый URL-адрес с добавленным '/ru'
+      var newUrl = 'https://csgobroker.cc/ru';
 
-    // Проверяем, отсутствует ли уже '/ru/' в текущем пути
-    if (!newPath.startsWith('ru/')) {
+      // Перенаправляем на новый URL-адрес
+      window.location.href = newUrl;
+    } else if (!currentUrl.includes('/ru/')) {
+      // Проверяем, отсутствует ли уже '/ru/' в текущем URL-адресе
       // Формируем новый URL-адрес с добавленным '/ru/'
-      var newUrl = window.location.origin + '/ru/' + newPath;
+      var newUrl = currentUrl.replace('://', '://ru.');
 
-      // Проверяем, является ли новый URL-адрес отличным от текущего
-      if (newUrl !== window.location.href) {
-        // Перенаправляем на новый URL-адрес
-        window.location.href = newUrl;
-      }
+      // Перенаправляем на новый URL-адрес
+      window.location.href = newUrl;
     }
   }
 }
@@ -38,11 +39,8 @@ document.addEventListener('click', function(event) {
     // Устанавливаем куку "languageChoice" с выбранным языком на 365 дней
     setCookie('languageChoice', selectedLang, 365);
 
-    // Проверяем, является ли выбранный язык отличным от текущего
-    if (selectedLang !== userChoice) {
-      // Перезагружаем страницу для применения изменений языка
-      location.reload();
-    }
+    // Перезагружаем страницу для применения изменений языка
+    location.reload();
   }
 });
 
