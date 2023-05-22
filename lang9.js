@@ -19,7 +19,7 @@ if (!userChoice && window.location.hostname !== 'localhost') {
       if (newUrl !== currentUrl) {
         // Перенаправляем на новый URL-адрес
         window.location.href = newUrl;
-        return; // Завершаем выполнение кода, чтобы предотвратить выполнение остальных действий
+        return false; // Завершаем выполнение кода, чтобы предотвратить выполнение остальных действий
       }
     } else {
       // Удаляем первый слэш из пути, если есть
