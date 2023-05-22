@@ -24,7 +24,6 @@ function handleLanguageRedirect() {
 // Обработчик события клика на элементах меню выбора языка
 document.addEventListener('click', function(event) {
   if (event.target.classList.contains('lang-switch')) {
-    event.preventDefault();
     var selectedLang = event.target.dataset.lang;
 
     setCookie('languageChoice', selectedLang, 365);
@@ -34,6 +33,7 @@ document.addEventListener('click', function(event) {
     }
   }
 });
+
 
 function setCookie(name, value, days) {
   var expires = '';
