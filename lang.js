@@ -16,7 +16,7 @@ if (!userChoice) {
       currentUrl = currentUrl.replace(/\/ru/g, '');
 
       // Формируем новый URL-адрес с добавленным '/ru/'
-      var newUrl = 'https://csgobroker.cc/ru' + currentUrl.substr('https://csgobroker.cc/'.length);
+      var newUrl = 'https://csgobroker.cc/ru/' + currentUrl.substr('https://csgobroker.cc/'.length);
 
       // Перенаправляем на новый URL-адрес
       window.location.href = newUrl;
