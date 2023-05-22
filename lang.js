@@ -1,44 +1,40 @@
-// Проверяем, был ли ранее сделан выбор пользователем
-var userChoice = getCookie('languageChoice');
+var userChoice = getCookie('languageChoice'); // Получаем значение выбранного языка из куки
 
-if (!userChoice && window.location.hostname !== 'localhost') {
-  // Получаем языковую настройку браузера пользователя
-  var userLang = navigator.language || navigator.userLanguage;
+function handleLanguageRedirect() {
+  if (!userChoice && window.location.hostname !== 'localhost') {
+    var userLang = navigator.language || navigator.userLanguage;
 
-  // Проверяем значение языковой настройки и перенаправляем на соответствующую страницу
-  if ((userLang === 'ru' || userLang === 'ru-RU') && !window.location.href.includes('/ru/')) {
-    // Получаем текущий URL-адрес
-    var currentUrl = window.location.href;
+    if ((userLang === 'ru' || userLang === 'ru-RU') && window.location.pathname === '/') {
+      var currentUrl = window.location.href;
 
-    if (!currentUrl.includes('/ru/')) {
-      currentUrl = currentUrl.replace(/\/ru/g, '');
+      if (currentUrl === 'https://csgobroker.cc/') {
+        var newUrl = currentUrl.replace('.cc/', '.cc/ru.html');
 
-      // Формируем новый URL-адрес с добавленным '/ru/'
-      var newUrl = 'https://csgobroker.cc/ru/' + currentUrl.substr('https://csgobroker.cc/'.length);
-
-      // Перенаправляем на новый URL-адрес
-      window.location.href = newUrl;
+        if (newUrl !== currentUrl) {
+          userChoice = 'ru'; // Устанавливаем выбранный язык в переменную userChoice
+          setCookie('languageChoice', userChoice, 365); // Сохраняем выбранный язык в куки
+          window.location.href = newUrl;
+          return false;
+        }
+      }
     }
   }
 }
 
 // Обработчик события клика на элементах меню выбора языка
 document.addEventListener('click', function(event) {
-  // Проверяем, был ли клик на элементе с классом "lang-switch"
   if (event.target.classList.contains('lang-switch')) {
-    event.preventDefault(); // Предотвращаем переход по ссылке
+    var selectedLang = event.target.dataset.lang;
 
-    var selectedLang = event.target.dataset.lang; // Получаем выбранный язык из атрибута "data-lang"
-
-    // Устанавливаем куку "languageChoice" с выбранным языком на 365 дней
     setCookie('languageChoice', selectedLang, 365);
+    userChoice = selectedLang; // Обновляем значение переменной userChoice
 
-    // Перезагружаем страницу для применения изменений языка
-    location.reload();
+    if (selectedLang !== userChoice) {
+      location.reload();
+    }
   }
 });
 
-// Функция для установки куки
 function setCookie(name, value, days) {
   var expires = '';
   if (days) {
@@ -46,10 +42,12 @@ function setCookie(name, value, days) {
     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
     expires = '; expires=' + date.toUTCString();
   }
-  document.cookie = name + '=' + value + expires + '; path=/';
+  
+  // Добавляем атрибуты "SameSite=None" и "Secure" для поддержки сторонних контекстов
+  var cookieString = name + '=' + value + expires + '; path=/; SameSite=None; Secure';
+  document.cookie = cookieString;
 }
 
-// Функция для получения значения куки
 function getCookie(name) {
   var nameEQ = name + '=';
   var ca = document.cookie.split(';');
@@ -64,3 +62,5 @@ function getCookie(name) {
   }
   return null;
 }
+
+handleLanguageRedirect();
