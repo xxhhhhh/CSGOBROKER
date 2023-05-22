@@ -1,7 +1,7 @@
 var userChoice; // Объявляем переменную в глобальной области видимости
 
 function handleLanguageRedirect() {
-  var userChoice = getCookie('languageChoice');
+  userChoice = getCookie('languageChoice'); // Присваиваем значение переменной
 
   if (!userChoice && window.location.hostname !== 'localhost') {
     var userLang = navigator.language || navigator.userLanguage;
@@ -13,14 +13,13 @@ function handleLanguageRedirect() {
         var newUrl = currentUrl.replace('.cc/', '.cc/ru.html');
 
         if (newUrl !== currentUrl) {
-          window.location.href = newUrl + '?r=' + Math.random(); // Добавляем случайный параметр запроса
+          window.location.href = newUrl;
           return false;
         }
       }
     }
   }
 }
-
 
 // Обработчик события клика на элементах меню выбора языка
 document.addEventListener('click', function(event) {
@@ -30,11 +29,11 @@ document.addEventListener('click', function(event) {
     setCookie('languageChoice', selectedLang, 365);
 
     if (selectedLang !== userChoice) {
+      userChoice = selectedLang; // Обновляем значение переменной userChoice
       location.reload();
     }
   }
 });
-
 
 function setCookie(name, value, days) {
   var expires = '';
@@ -48,7 +47,6 @@ function setCookie(name, value, days) {
   var cookieString = name + '=' + value + expires + '; path=/; SameSite=None; Secure';
   document.cookie = cookieString;
 }
-
 
 function getCookie(name) {
   var nameEQ = name + '=';
