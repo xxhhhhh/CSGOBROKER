@@ -40,26 +40,6 @@ nextButtonContainer.addEventListener('click', () => {
   boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
 });
 
-// Получаем языковую настройку браузера пользователя
-var userLang = navigator.language || navigator.userLanguage;
-
-// Проверяем значение языковой настройки и перенаправляем на соответствующую страницу
-if (userLang === 'ru' || userLang === 'ru-RU') {
-  // Получаем текущий URL-адрес
-  var currentUrl = window.location.href;
-
-  // Проверяем, содержит ли URL-адрес "https://csgobroker.cc/"
-  if (currentUrl.indexOf('https://csgobroker.cc/') === 0) {
-    // Формируем новый URL-адрес с добавленным '/ru/'
-    var newUrl = 'https://csgobroker.cc/ru' + currentUrl.substr('https://csgobroker.cc/'.length);
-
-    // Перенаправляем на новый URL-адрес
-    window.location.href = newUrl;
-  }
-}
-
-
-
 
 var categorySelector = document.querySelector('div.category-selector');
 var ulElements = categorySelector.querySelectorAll('div.category-selector > ul');
