@@ -1,16 +1,16 @@
 // Проверяем, был ли ранее сделан выбор пользователем
 var userChoice = getCookie('languageChoice');
 
-if (!userChoice) {
+if (!userChoice && window.location.hostname !== 'localhost') {
   // Получаем языковую настройку браузера пользователя
   var userLang = navigator.language || navigator.userLanguage;
 
   // Проверяем значение языковой настройки и перенаправляем на соответствующую страницу
-  if ((userLang === 'ru' || userLang === 'ru-RU') && !window.location.href.startsWith('https://csgobroker.cc/ru/')) {
+  if ((userLang === 'ru' || userLang === 'ru-RU') && !window.location.href.includes('/ru/')) {
     // Получаем текущий URL-адрес
     var currentUrl = window.location.href;
 
-    if (!currentUrl.startsWith('https://csgobroker.cc/ru/')) {
+    if (!currentUrl.includes('/ru/')) {
       currentUrl = currentUrl.replace(/\/ru/g, '');
 
       // Формируем новый URL-адрес с добавленным '/ru/'
