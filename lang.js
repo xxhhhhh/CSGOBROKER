@@ -22,6 +22,22 @@ if (!userChoice) {
   }
 }
 
+// Обработчик события клика на элементах меню выбора языка
+document.addEventListener('click', function(event) {
+  // Проверяем, был ли клик на элементе с классом "lang-switch"
+  if (event.target.classList.contains('lang-switch')) {
+    event.preventDefault(); // Предотвращаем переход по ссылке
+
+    var selectedLang = event.target.dataset.lang; // Получаем выбранный язык из атрибута "data-lang"
+
+    // Устанавливаем куку "languageChoice" с выбранным языком на 365 дней
+    setCookie('languageChoice', selectedLang, 365);
+
+    // Перезагружаем страницу для применения изменений языка
+    location.reload();
+  }
+});
+
 // Функция для установки куки
 function setCookie(name, value, days) {
   var expires = '';
