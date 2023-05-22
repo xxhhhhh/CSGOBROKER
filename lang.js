@@ -6,7 +6,7 @@ if (!userChoice) {
   var userLang = navigator.language || navigator.userLanguage;
 
   // Проверяем значение языковой настройки и перенаправляем на соответствующую страницу
-  if (userLang === 'ru' || userLang === 'ru-RU') {
+  if ((userLang === 'ru' || userLang === 'ru-RU') && currentUrl.indexOf('https://csgobroker.cc/ru/') !== 0) {
     // Получаем текущий URL-адрес
     var currentUrl = window.location.href;
 
