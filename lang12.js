@@ -4,29 +4,15 @@ function handleLanguageRedirect() {
   if (!userChoice && window.location.hostname !== 'localhost') {
     var userLang = navigator.language || navigator.userLanguage;
 
-    if ((userLang === 'ru' || userLang === 'ru-RU') && !window.location.pathname.includes('/ru/')) {
+    if ((userLang === 'ru' || userLang === 'ru-RU') && window.location.pathname === '/') {
       var currentUrl = window.location.href;
 
-      if (currentUrl === 'https://csgobroker.cc/' || currentUrl === 'https://csgobroker.cc/ru/') {
-        var url = new URL(window.location.href);
-        url.pathname = '/ru';
-        var newUrl = url.href;
+      if (currentUrl === 'https://csgobroker.cc/') {
+        var newUrl = currentUrl.replace('.cc/', '.cc/ru.html');
 
         if (newUrl !== currentUrl) {
           window.location.href = newUrl;
           return false;
-        }
-      } else {
-        var newPath = window.location.pathname.replace(/^\//, '');
-
-        if (!newPath.startsWith('ru/')) {
-          var url = new URL(window.location.href);
-          url.pathname = '/ru/' + newPath;
-          var newUrl = url.href;
-
-          if (newUrl !== window.location.href) {
-            window.location.href = newUrl;
-          }
         }
       }
     }
