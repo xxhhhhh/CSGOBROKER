@@ -48,18 +48,17 @@ if (userLang === 'ru' || userLang === 'ru-RU') {
   // Получаем текущий URL-адрес
   var currentUrl = window.location.href;
 
-  // Разбиваем URL-адрес на основе символа '/'
-  var urlParts = currentUrl.split('/');
+  // Проверяем, содержит ли URL-адрес "https://csgobroker.cc/"
+  if (currentUrl.indexOf('https://csgobroker.cc/') === 0) {
+    // Формируем новый URL-адрес с добавленным '/ru/'
+    var newUrl = 'https://csgobroker.cc/ru' + currentUrl.substr('https://csgobroker.cc/'.length);
 
-  // Вставляем '/ru/' перед остальной частью URL-адреса
-  urlParts.splice(3, 0, 'ru');
-
-  // Формируем новый URL-адрес
-  var newUrl = urlParts.join('/');
-
-  // Перенаправляем на новый URL-адрес
-  window.location.href = newUrl;
+    // Перенаправляем на новый URL-адрес
+    window.location.href = newUrl;
+  }
 }
+
+
 
 
 var categorySelector = document.querySelector('div.category-selector');
