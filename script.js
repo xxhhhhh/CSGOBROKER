@@ -40,6 +40,27 @@ nextButtonContainer.addEventListener('click', () => {
   boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
 });
 
+// Получаем языковую настройку браузера пользователя
+var userLang = navigator.language || navigator.userLanguage;
+
+// Проверяем значение языковой настройки и перенаправляем на соответствующую страницу
+if (userLang === 'ru' || userLang === 'ru-RU') {
+  // Получаем текущий URL-адрес
+  var currentUrl = window.location.href;
+
+  // Разбиваем URL-адрес на основе символа '/'
+  var urlParts = currentUrl.split('/');
+
+  // Вставляем '/ru/' перед остальной частью URL-адреса
+  urlParts.splice(3, 0, 'ru');
+
+  // Формируем новый URL-адрес
+  var newUrl = urlParts.join('/');
+
+  // Перенаправляем на новый URL-адрес
+  window.location.href = newUrl;
+}
+
 
 var categorySelector = document.querySelector('div.category-selector');
 var ulElements = categorySelector.querySelectorAll('div.category-selector > ul');
