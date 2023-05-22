@@ -6,14 +6,17 @@ if (!userChoice && window.location.hostname !== 'localhost') {
   var userLang = navigator.language || navigator.userLanguage;
 
   // Проверяем значение языковой настройки и перенаправляем на соответствующую страницу
-  if ((userLang === 'ru' || userLang === 'ru-RU') && !window.location.href.includes('/ru/')) {
+  if ((userLang === 'ru' || userLang === 'ru-RU') && !window.location.pathname.includes('/ru/')) {
     // Получаем текущий URL-адрес
     var currentUrl = window.location.href;
 
-    // Проверяем, отсутствует ли уже '/ru/' в текущем URL-адресе
-    if (!currentUrl.includes('/ru/')) {
+    // Удаляем первый слэш из пути, если есть
+    var newPath = window.location.pathname.replace(/^\//, '');
+
+    // Проверяем, отсутствует ли уже '/ru/' в текущем пути
+    if (!newPath.startsWith('ru/')) {
       // Формируем новый URL-адрес с добавленным '/ru/'
-      var newUrl = 'https://csgobroker.cc/ru/' + currentUrl.substr('https://csgobroker.cc/'.length);
+      var newUrl = window.location.origin + '/ru/' + newPath;
 
       // Проверяем, является ли новый URL-адрес отличным от текущего
       if (newUrl !== window.location.href) {
