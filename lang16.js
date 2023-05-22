@@ -1,7 +1,7 @@
 var userChoice; // Объявляем переменную в глобальной области видимости
 
 function handleLanguageRedirect() {
-  userChoice = getCookie('languageChoice'); // Присваиваем значение переменной
+  var userChoice = getCookie('languageChoice');
 
   if (!userChoice && window.location.hostname !== 'localhost') {
     var userLang = navigator.language || navigator.userLanguage;
@@ -13,13 +13,14 @@ function handleLanguageRedirect() {
         var newUrl = currentUrl.replace('.cc/', '.cc/ru.html');
 
         if (newUrl !== currentUrl) {
-          window.location.href = newUrl;
+          window.location.href = newUrl + '?r=' + Math.random(); // Добавляем случайный параметр запроса
           return false;
         }
       }
     }
   }
 }
+
 
 // Обработчик события клика на элементах меню выбора языка
 document.addEventListener('click', function(event) {
