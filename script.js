@@ -1,3 +1,74 @@
+if (!window.location.pathname.includes("/reviews/")) {
+  // Получаем элементы
+const boxContainer = document.querySelector('.category-selector');
+const buttonsContainer = document.createElement('div');
+const prevButtonContainer = document.createElement('button');
+const nextButtonContainer = document.createElement('button');
+const boxes = boxContainer.querySelectorAll('.category-box');
+const boxWidth = boxes[0].offsetWidth + (2 * 9); // Ширина каждого div.category-box с учетом отступов
+const containerWidth = boxWidth * 4; // Ширина контейнера для показа 4 боксов одновременно
+let scrollPosition = 0; // Текущая позиция прокрутки
+
+// Добавляем классы и текст кнопкам
+buttonsContainer.classList.add('buttons-container');
+prevButtonContainer.classList.add('controls-button');
+prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left"></i>';
+nextButtonContainer.classList.add('controls-button');
+nextButtonContainer.innerHTML = '<i class="bi bi-chevron-right"></i>';
+
+// Добавляем кнопки в контейнер
+buttonsContainer.appendChild(prevButtonContainer);
+buttonsContainer.appendChild(nextButtonContainer);
+
+// Добавляем контейнер с кнопками перед контейнером с боксами
+boxContainer.parentNode.insertBefore(buttonsContainer, boxContainer);
+
+// Устанавливаем ширину контейнера с боксами
+boxContainer.style.width = `${containerWidth}px`;
+
+// Обработчик события для кнопки "Влево"
+prevButtonContainer.addEventListener('click', () => {
+  scrollPosition -= boxWidth;
+  scrollPosition = Math.max(scrollPosition, 0);
+  boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
+});
+
+// Обработчик события для кнопки "Вправо"
+nextButtonContainer.addEventListener('click', () => {
+  scrollPosition += boxWidth;
+  scrollPosition = Math.min(scrollPosition, boxContainer.scrollWidth - containerWidth);
+  boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
+});
+
+
+var categorySelector = document.querySelector('div.category-selector');
+var ulElements = categorySelector.querySelectorAll('div.category-selector > ul');
+var ulArray = Array.from(ulElements);
+
+ulArray.sort(function(a, b) {
+  var aIsActive = a.querySelector('li a.category-box').id === 'active';
+  var bIsActive = b.querySelector('li a.category-box').id === 'active';
+
+  if (aIsActive && !bIsActive) {
+    return -1; // Первый элемент (a) активный, поэтому он идет первым
+  } else if (!aIsActive && bIsActive) {
+    return 1; // Второй элемент (b) активный, поэтому он идет вторым
+  } else {
+    return Math.random() - 0.5; // Оба элемента либо активны, либо неактивны - сортировка рандомна
+  }
+});
+
+while (categorySelector.firstChild) {
+  categorySelector.removeChild(categorySelector.firstChild);
+}
+
+ulArray.forEach(function(ul) {
+  categorySelector.appendChild(ul);
+});
+}
+
+
+
 function copyToClipboard(element) {
   var $temp = $("<input>");
   $("body").append($temp);
@@ -28,6 +99,7 @@ function scrollFunction() {
     }
   }
 }
+
 
 backToTopButton.addEventListener("click", smoothScrollBackToTop);
 
@@ -243,155 +315,157 @@ var threshold = 100; // Минимальное расстояние для оп�
 var prevButton = document.querySelector(".prev-button");
 var nextButton = document.querySelector(".next-button");
 
-function removeAllTriggers() {
-  var existingTriggers = triggersContainer.querySelectorAll(
-    "input[type='radio'], label"
-  );
-  existingTriggers.forEach(function (trigger) {
-    triggersContainer.removeChild(trigger);
-  });
-}
-
-function createTrigger(index) {
-  var trigger = document.createElement("input");
-  trigger.type = "radio";
-  trigger.id = "trigger" + (index + 1);
-  trigger.name = "slider";
-  if (index === currentIndex) {
-    trigger.checked = true;
+if (window.location.pathname.includes("/reviews/")) {
+  function removeAllTriggers() {
+    var existingTriggers = triggersContainer.querySelectorAll(
+      "input[type='radio'], label"
+    );
+    existingTriggers.forEach(function (trigger) {
+      triggersContainer.removeChild(trigger);
+    });
   }
-
-  // Добавляем обработчик события change
-  trigger.addEventListener("change", function () {
-    var previousSlide = slides[currentIndex];
-    previousSlide.classList.remove("active");
+  
+  function createTrigger(index) {
+    var trigger = document.createElement("input");
+    trigger.type = "radio";
+    trigger.id = "trigger" + (index + 1);
+    trigger.name = "slider";
+    if (index === currentIndex) {
+      trigger.checked = true;
+    }
+  
+    // Добавляем обработчик события change
+    trigger.addEventListener("change", function () {
+      var previousSlide = slides[currentIndex];
+      previousSlide.classList.remove("active");
+      currentIndex = index;
+      showSlide(currentIndex, null);
+      startSlideShow();
+    });
+  
+    var label = document.createElement("label");
+    label.setAttribute("for", trigger.id);
+  
+    triggersContainer.appendChild(trigger);
+    triggersContainer.appendChild(label);
+  }
+  
+  function createTriggers() {
+    removeAllTriggers();
+    for (var i = 0; i < slides.length; i++) {
+      createTrigger(i);
+    }
+  }
+  
+  function showSlide(index, direction) {
+    var currentSlide = slides[currentIndex];
+    var nextSlide = slides[index];
+  
+    currentSlide.classList.remove("active", "next", "previous");
+    nextSlide.classList.add("active");
+  
+    // Добавляем класс для направления анимации
+    if (direction === "next") {
+      nextSlide.classList.add("next");
+    } else if (direction === "previous") {
+      nextSlide.classList.add("previous");
+    }
+  
     currentIndex = index;
-    showSlide(currentIndex, null);
-    startSlideShow();
-  });
-
-  var label = document.createElement("label");
-  label.setAttribute("for", trigger.id);
-
-  triggersContainer.appendChild(trigger);
-  triggersContainer.appendChild(label);
-}
-
-function createTriggers() {
-  removeAllTriggers();
-  for (var i = 0; i < slides.length; i++) {
-    createTrigger(i);
-  }
-}
-
-function showSlide(index, direction) {
-  var currentSlide = slides[currentIndex];
-  var nextSlide = slides[index];
-
-  currentSlide.classList.remove("active", "next", "previous");
-  nextSlide.classList.add("active");
-
-  // Добавляем класс для направления анимации
-  if (direction === "next") {
-    nextSlide.classList.add("next");
-  } else if (direction === "previous") {
-    nextSlide.classList.add("previous");
-  }
-
-  currentIndex = index;
-
-  // Добавляем класс "active" к соответствующему label
-  var triggerLabels = triggersContainer.querySelectorAll("label");
-  triggerLabels.forEach(function (label, labelIndex) {
-    if (labelIndex === index) {
-      label.classList.add("active");
+  
+    // Добавляем класс "active" к соответствующему label
+    var triggerLabels = triggersContainer.querySelectorAll("label");
+    triggerLabels.forEach(function (label, labelIndex) {
+      if (labelIndex === index) {
+        label.classList.add("active");
+      } else {
+        label.classList.remove("active");
+      }
+    });
+  
+    // Проверяем границы слайдов и скрываем/отображаем кнопки "Prev" и "Next"
+    if (currentIndex === 0) {
+      prevButton.disabled = true;
+      nextButton.disabled = false;
+    } else if (currentIndex === slides.length - 1) {
+      prevButton.disabled = false;
+      nextButton.disabled = true;
     } else {
-      label.classList.remove("active");
+      prevButton.disabled = false;
+      nextButton.disabled = false;
+    }
+  }
+  
+  createTriggers();
+  
+  // Добавляем обработчик для события touchstart
+  triggersContainer.addEventListener("touchstart", function (event) {
+    startX = event.touches[0].clientX;
+  });
+  
+  // Добавляем обработчик для события touchend
+  triggersContainer.addEventListener("touchend", function (event) {
+    var endX = event.changedTouches[0].clientX;
+    var deltaX = endX - startX;
+  
+    if (deltaX > threshold) {
+      // Переключаемся на предыдущий слайд
+      previousSlide();
+      startSlideShow();
+    } else if (deltaX < -threshold) {
+      // Переключаемся на следующий слайд
+      nextSlide();
+      startSlideShow();
     }
   });
-
-  // Проверяем границы слайдов и скрываем/отображаем кнопки "Prev" и "Next"
-  if (currentIndex === 0) {
-    prevButton.disabled = true;
-    nextButton.disabled = false;
-  } else if (currentIndex === slides.length - 1) {
-    prevButton.disabled = false;
-    nextButton.disabled = true;
-  } else {
-    prevButton.disabled = false;
-    nextButton.disabled = false;
-  }
-}
-
-createTriggers();
-
-// Добавляем обработчик для события touchstart
-triggersContainer.addEventListener("touchstart", function (event) {
-  startX = event.touches[0].clientX;
-});
-
-// Добавляем обработчик для события touchend
-triggersContainer.addEventListener("touchend", function (event) {
-  var endX = event.changedTouches[0].clientX;
-  var deltaX = endX - startX;
-
-  if (deltaX > threshold) {
-    // Переключаемся на предыдущий слайд
-    previousSlide();
+  
+  triggersContainer.addEventListener("mouseenter", function () {
+    stopSlideShow();
+  });
+  
+  triggersContainer.addEventListener("mouseleave", function () {
     startSlideShow();
-  } else if (deltaX < -threshold) {
-    // Переключаемся на следующий слайд
-    nextSlide();
-    startSlideShow();
+  });
+  
+  // Остальная часть JavaScript кода остается неизменной
+  
+  function startSlideShow() {
+    stopSlideShow();
+    slideInterval = setInterval(nextSlide, 5000); // Интервал автоматического переключения слайдов (5 секунды)
   }
-});
-
-triggersContainer.addEventListener("mouseenter", function () {
-  stopSlideShow();
-});
-
-triggersContainer.addEventListener("mouseleave", function () {
-  startSlideShow();
-});
-
-// Остальная часть JavaScript кода остается неизменной
-
-function startSlideShow() {
-  stopSlideShow();
-  slideInterval = setInterval(nextSlide, 5000); // Интервал автоматического переключения слайдов (5 секунды)
-}
-
-function stopSlideShow() {
-  clearInterval(slideInterval);
-}
-
-function nextSlide() {
-  var nextIndex = (currentIndex + 1) % slides.length;
-  showSlide(nextIndex, "next");
-}
-
-function previousSlide() {
-  var previousIndex = (currentIndex - 1 + slides.length) % slides.length;
-  showSlide(previousIndex, "previous");
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  showSlide(currentIndex);
-  startSlideShow();
-});
-
-// Добавляем обработчик для кнопки "Prev"
-prevButton.addEventListener("click", function () {
-  if (currentIndex !== 0) {
-    previousSlide();
-    startSlideShow();
+  
+  function stopSlideShow() {
+    clearInterval(slideInterval);
   }
-});
-
-// Добавляем обработчик для кнопки "Next"
-nextButton.addEventListener("click", function () {
-  if (currentIndex !== slides.length - 1) {
-    nextSlide();
-    startSlideShow();
+  
+  function nextSlide() {
+    var nextIndex = (currentIndex + 1) % slides.length;
+    showSlide(nextIndex, "next");
   }
-});
+  
+  function previousSlide() {
+    var previousIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(previousIndex, "previous");
+  }
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    showSlide(currentIndex);
+    startSlideShow();
+  });
+  
+  // Добавляем обработчик для кнопки "Prev"
+  prevButton.addEventListener("click", function () {
+    if (currentIndex !== 0) {
+      previousSlide();
+      startSlideShow();
+    }
+  });
+  
+  // Добавляем обработчик для кнопки "Next"
+  nextButton.addEventListener("click", function () {
+    if (currentIndex !== slides.length - 1) {
+      nextSlide();
+      startSlideShow();
+    }
+  });
+}
