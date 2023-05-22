@@ -13,6 +13,7 @@ function handleLanguageRedirect() {
         var newUrl = currentUrl.replace('.cc/', '.cc/ru.html');
 
         if (newUrl !== currentUrl) {
+          setCookie('languageChoice', 'ru', 365); // Устанавливаем куки с выбранным языком
           window.location.href = newUrl;
           return false;
         }
