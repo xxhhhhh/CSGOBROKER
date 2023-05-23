@@ -149,16 +149,67 @@ if (window.location.pathname.startsWith("/ru")) {
     var translations = {
       "CSGO500 probably the best CS:GO Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, вероятно, является лучшим сайтом для азартных игр в CS:GO. Здесь регулярно проводятся раздачи и розыгрыши.",
       "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll - один из самых популярных сайтов, который включает в себя рулетку, крэш и многие другие игры включая ставки на киберспорт.",
+      "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": "CSGOEmpire - один из самых популярных сайтов, предлагающий игру в Рулетку и Монетку. Кроме того, на сайте доступны ставки на матчи.",
+      "CSGOPolygon is a legendary site like CSGODouble with classic Roulette, but have Dices, Crash, Slots and even Esports Betting!": "CSGOPolygon - это легендарный сайт, похожий на CSGODouble, с классической рулеткой, но имеющий еще множество режимов и ставки.",
+      "Gamdom Casino offers a variety of in-house games, innovative social engagement, provably fair system, and good reputation in online gaming.": "Сайт Gamdom является одним из лучших сайтов для гемблинга в CS:GO. Здесь вы можете сыграть в рулетку, краш, слоты и многие другие игры!",
+      "CSGOPOSITIVE is a famous esports betting site with interesting system of cashback, you can bet skins or money. Has various payments options.": "CSGOPOSITIVE - это известный сайт для ставок на киберспорт. Здесь вы можете делать ставки как скинами, так и настоящими деньгами!",
+      "Rollbit is a new Casino site which includes Sport Betting and many classic games like roulette. Includes Daily Bonuses !": "Rollbit - новый сайт казино, который включает в себя ставки на спорт и множество классических игр, таких как рулетка и коинфлип.",
+      "CSGOLuck is a licensed CSGO skin gambling site that accepts multiple deposit methods, offering various games and a user-friendly design.": "СSGOLuck - относительно новый сайт, где доступны игры в рулетку, Crash, мини-игры Mines и Towers, открытие кейсов и слоты.",
+      "Duelbits is a safe and licensed online casino with a variety of games, sports betting, esports betting, and instant cryptocurrency transactions.": "Duelbits - это огромное крипто-казино с классическими азартными играми для сообщества CS:GO, такими как рулетка, монетка и другие.",
+      "InsaneGG is an online platform that offers a range of CSGO skin gambling games with professionally designed and smooth animations.": "InsaneGG - это онлайн-платформа, которая предлагает широкий спектр игр на CS:GO скины с красивыми и плавными анимациями.",
+      "Rustix - gambling platform for CS:GO and Rust with original games, fair gameplay, bonuses, and impressive animations. Opened in 2023.": "Rustix - игровая платформа для CS:GO и Rust с оригинальными играми, честным геймплеем, бонусами и впечатляющей анимацией.",
+      "CSGO-Skins is a reputable online platform where users can open custom CS:GO cases and participate in daily Giveaways.": "CSGO-Skins - это надежная онлайн-платформа, где пользователи могут открывать индивидуальные кейсы CS:GO и участвовать в раздачах.",
+      "FlameCases is an online platform that permits users to open cases for CS:GO and Dota 2. Since its launch in 2017, the website provides various features.": "FlameCases - это онлайн-платформа, которая позволяет пользователям открывать кейсы для CS:GO и Dota 2. Работает еще с 2017.",
+      "KNIFEX is a CS:GO gambling site that offers a range of game modes, including case opening, case battles, coinflip, crash, clash and many more!": "KNIFEX - это сайт CS:GO азартных игр, который предлагает различные режимы игры, включая открытие кейсов, битвы кейсов и многое другое!",
+      "DatDrop is a website that specializes in opening cases that contain skins from CS:GO. Its most prominent feature is the case-opening battles.": "DatDrop - это сайт, специализирующийся на открытии кейсов со скинами из CS:GO. Основной режим кейс батл.",
+      "DaddySkins is a valid CSGO case opening website that has been in operation since 2017, and it offers Case Openings, Case Battles, and Upgrader.": "DaddySkins - это легальный сайт открытия кейсов в CS:GO, который работает с 2017 года. На нем так же есть кейс батл и апгрейдер.",
+      "Clash.gg is a new CS:GO Gambling site which includes many games like Roulette, Upgrader, Cases and many more !": "Clash.gg - это новый сайт для азартных игр CS:GO, который включает в себя множество игр, таких как Рулетка, Апгрейдер, Кейсы и многие другие!",
+      "HellStore is a platform that allows users to participate in CSGO skin betting through game modes like Coinflip, Jackpot, Upgrader, and Wheel.": "HellStore - это платформа, которая позволяет пользователям участвовать в ставках на скины CSGO через большое количество игровых режимов",
+      "Hellcase is an online platform that allows users to purchase virtual cases filled with skins and items for various games such as CS:GO, Dota 2, and Rust.": "Платформа Hellcase предоставляет возможность пользователям приобретать виртуальные кейсы CS:GO, Dota 2 и Rust.",
+      "CSGOBIG - a gambling site for CS:GO skins with game modes like Jackpot, Coinflip, Roulette, Cases, and Case Battles. Opened in 2015.": "Сайт азартных игр с использованием скинов из игры CS:GO, включающий такие режимы, как Jackpot, Coinflip, Roulette, Cases и Case Battles.",
+      "CSGOFast is a CSGO skin gambling site that offers a wide range of exclusive game modes. One of the earliest CSGO gambling sites.": "CSGOFast - это сайт для азартных игр на скины CSGO, который предлагает широкий выбор эксклюзивных игровых режимов.",
+      "CSGOLive is a safe and legitimate CS:GO case opening website with custom cases, daily bonuses, and a Provably Fair system.": "CSGOLive - это старый классический сайт открытия кейсов CS:GO, где вы можете создавать свои собственные кейсы. Включает ежедневные бонусы!",
+      "WTFSkins is a reliable and popular online platform offering unique games, daily rewards, and a simple registration process.": "WTFSkins предоставляет классические игры азартного характера для CS:GO, такие как Джекпот, Рулетка и Крэш.",
+      "Key-Drop is a reputable online gambling platform that offers various activities like Case Battles and Upgrader, as well as custom CSGO skin cases.": "Key-Drop - это надежная платформа для онлайн-гемблинга, которая предлагает различные игры, такие как битвы кейсов и апгрейдер.",
+      "Farmskins is a well-known CSGO case opening website that has been operating since 2016, offering a wide selection of skins for players to unbox.": "Farmskins - это известный сайт для открытия кейсов в CS:GO, который работает с 2016 года и предлагает широкий выбор скинов для игроков.",
+      "Bets4.pro is an online platform that offers users the ability to place bets on esports matches, particularly for CS:GO , Dota 2, Valorant and many more.": "Bets4.pro - это онлайн-платформа, которая позволяет пользователям делать ставки на матчи в киберспорте, в особенности на CS:GO и Dota 2.",
+      "Withdraw CS:GO Skins, Crypto or Real Money!": "Выводите скины CS:GO, криптовалюту или деньги!",
+      "Withdraw CS:GO Skins , Crypto or real money!": "Выводите скины CS:GO, криптовалюту или деньги!",
+      "Withdraw CS:GO Skins, Crypto or real money!": "Выводите скины CS:GO, криптовалюту или деньги!",
+      "Withdraw CS:GO Skins, Crypto or Game Keys!": "Выводите скины CS:GO, криптовалюту или Игры!",
+      "Withdraw CS:GO Skins, Crypto or PayPal!": "Выводите скины CS:GO, Криптовалюту или PayPal!",
+      "Withdraw CS:GO Skins, Dota 2 and H1Z1 Items!": "Выводите предметы CS:GO, Dota 2 и H1Z1!",
+      "Withdraw CS:GO, Rust Skins and Dota 2 Items!": "Выводите предметы CS:GO, Dota 2 и Rust!",
+      "Withdraw CS:GO And Rust Skins or Crypto!": "Выводите скины CS:GO, Rust или Крипту!",
       "Withdraw CS:GO Skins or Crypto!": "Выводите скины CS:GO или криптовалюту!",
-      "Withdraw with CS:GO Skins only.": "Вывод только скинами CS:GO!",
+      "WITHDRAW WITH P2P CS:GO SKINS.": "Вывод только скинами CS:GO через P2P!",
+      "Withdraw CS:GO Skins and Items!": "Вывод только скинами CS:GO!",
+      "Visit WebSite": "Посетить Сайт",
+      "100% deposit bonus": "+100% к Пополнению",
+      "5 Free Cases": "5 Бесплатных Кейсов",
+      "5% deposit bonus": "+5% к Пополнению",
+      "3 Free Cases": "3 Бесплатных Кейса",
+      "1.5$ for free": "1.5$ Бесплатно",
+      "Free 0.30$": "0.30$ Бесплатно",
+      "Free 0.40$": "0.40$ Бесплатно",
+      "Free 0.25$": "0.25$ Бесплатно",
+      "Free 0.50$": "0.50$ Бесплатно",
+      "Free 0.90$": "0.90$ Бесплатно",
+      "Free 0.50$": "0.50$ Бесплатно",
+      "free case": "Бесплатный Кейс",
+      "Free 1$": "1$ Бесплатно",
+      "Free 2$": "2$ Бесплатно",
+      "Free 1$": "1$ Бесплатно",
       "Free spins": "ФриСпины"
     };
 
-    var elements = document.querySelectorAll('.box .content p, .box .logobg .best');
+    var elements = parentElement.querySelectorAll('.box .content p, .box .logobg .best, .box .content button');
     for (var j = 0; j < elements.length; j++) {
       var text = elements[j].textContent.trim();
       if (translations.hasOwnProperty(text)) {
         elements[j].innerHTML = translations[text];
+      } else if (text.indexOf('code:') === 0) {
+        elements[j].innerHTML = 'Код:' + text.substring(5);
       }
     }
   }
