@@ -131,8 +131,8 @@ if (window.location.pathname.startsWith("/ru") && !window.location.pathname.star
     }
   }
   
-  var SitesList = document.querySelector('.boxes-holder');
-  translateURLs(SitesList);
+  var categorySelector = document.querySelector('.category-selector');
+  translateURLs(categorySelector);
 }
 
 if (window.location.pathname.startsWith("/ru") && !window.location.pathname.startsWith("/rust")) {
