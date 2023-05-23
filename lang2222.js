@@ -7,6 +7,7 @@ function handleLanguageRedirect() {
     if ((userLang === 'ru' || userLang === 'ru-RU') && getUrlParameter('lang') === 'ru') {
       userChoice = 'ru'; // Устанавливаем выбранный язык в переменную userChoice
       setCookie('languageChoice', userChoice, 365); // Сохраняем выбранный язык в куки
+      document.getElementById('languageChoice').value = userChoice; // Обновляем значение скрытого поля
     }
   }
 }
@@ -18,6 +19,7 @@ document.addEventListener('click', function(event) {
 
     setCookie('languageChoice', selectedLang, 365);
     userChoice = selectedLang; // Обновляем значение переменной userChoice
+    document.getElementById('languageChoice').value = userChoice; // Обновляем значение скрытого поля
 
     if (selectedLang !== userChoice) {
       location.reload();
