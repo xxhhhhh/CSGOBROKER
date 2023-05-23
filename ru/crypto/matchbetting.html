@@ -85,8 +85,8 @@
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
+    <div class="category-space"></div>
         <div id="FAQ"><h2 id="PageSubt">Ставки на спорт и киберспорт криптовалютой это относительно новый тренд в мире онлайн-гемблинга, который предоставляет пользователям более удобный и анонимный способ совершать транзакции. Вместо использования традиционных валют, таких как доллары или евро, пользователи могут использовать криптовалюту для ставок на спорт или киберспорт. Это может быть удобно для тех, кто хочет сохранять анонимность и избежать дополнительных комиссий и ограничений, связанных с традиционными методами оплаты. Существует несколько преимуществ, связанных со ставками на спорт и киберспорт криптовалютой. Во-первых, они могут обеспечить более быстрые и дешевые транзакции, поскольку криптовалютные платежи не требуют посредников, таких как банки. Во-вторых, они могут обеспечить большую степень безопасности и конфиденциальности, так как криптовалюты защищены криптографическими протоколами, что позволяет пользователям сохранять анонимность при совершении платежей.</h2></div>
-        <div class="category-space"></div>
         <div class="category-selector">
             <ul>
                 <li>
@@ -198,7 +198,7 @@
                 </ul> 
             </li>
         </ul>
-        <!-- <ul>
+        <ul>
             <li>
         <a class="category-box" href="https://csgobroker.cc/dota">
             <div class="category-box-logo"><img src="/img/gamemodes/dota2-logo.png" alt="" style="width:50px;height:auto" draggable="false"></div>
@@ -228,7 +228,7 @@
                 </li>
             </ul> 
         </li>
-    </ul> -->
+    </ul>
     </div>
     <div class="boxes-holder">
         <div class="box" id="csgo500">
@@ -358,8 +358,10 @@
     btn.onclick = function () {
       if (targetDiv.style.height !== "170px") {
         targetDiv.style.height = "170px";
+        targetDiv.style.marginTop = "29px";
       } else {
         targetDiv.style.height = "0px";
+        targetDiv.style.marginTop = "9px"; 
       }
     };
   </script>

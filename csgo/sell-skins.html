@@ -85,8 +85,8 @@
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
+    <div class="category-space"></div>
         <div id="FAQ"><h2 id="PageSubt">The "Sell Skins" option allows CS:GO players to sell their in-game items for real money or other virtual items. This feature is accessible on different skin marketplaces, where players can list their skins at a preferred price or opt for an instant sale. Trading skins is another way to earn, but it requires understanding market trends, while selling skins usually mandates a non-banned Steam account.</h2></div>
-        <div class="category-space"></div>
         <div class="category-selector">
             <ul>
                 <li>
@@ -198,7 +198,7 @@
                 </ul> 
             </li>
         </ul>
-        <!-- <ul>
+        <ul>
             <li>
         <a class="category-box" href="https://csgobroker.cc/dota">
             <div class="category-box-logo"><img src="/img/gamemodes/dota2-logo.png" alt="" style="width:50px;height:auto" draggable="false"></div>
@@ -228,7 +228,7 @@
                 </li>
             </ul> 
         </li>
-    </ul> -->
+    </ul>
     </div>
     <div class="boxes-holder">
         <div class="box" id="Tradeit">
@@ -450,8 +450,10 @@
     btn.onclick = function () {
       if (targetDiv.style.height !== "100px") {
         targetDiv.style.height = "100px";
+        targetDiv.style.marginTop = "29px";
       } else {
         targetDiv.style.height = "0px";
+        targetDiv.style.marginTop = "9px"; 
       }
     };
   </script>

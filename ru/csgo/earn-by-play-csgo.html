@@ -85,8 +85,8 @@
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
+    <div class="category-space"></div>
         <div id="FAQ"><h2 id="PageSubt">Программа "Earn By Play" предоставляет геймерам возможность зарабатывать деньги, используя свои игровые навыки во время игры в любимые игры. Участвуя в турнирах, игроки могут монетизировать свои игровые сообщества и выигрывать денежные призы. Например, xplay позволяет игрокам в CS:GO зарабатывать скины, играя на их серверах, и дает им возможность получать скины или покупать их. Кроме того, программа Earn By Play, такая как xplay, часто имеет таблицы лидеров, которые позволяют игрокам соревноваться друг с другом и получать вознаграждения на основе их результатов. Эти программы также могут предоставлять социальный аспект игр, так как игроки могут связываться с другими и создавать команды, чтобы участвовать в турнирах вместе.</h2></div>
-        <div class="category-space"></div>
         <div class="category-selector">
             <ul>
                 <li>
@@ -198,7 +198,7 @@
                 </ul> 
             </li>
         </ul>
-        <!-- <ul>
+        <ul>
             <li>
         <a class="category-box" href="https://csgobroker.cc/dota">
             <div class="category-box-logo"><img src="/img/gamemodes/dota2-logo.png" alt="" style="width:50px;height:auto" draggable="false"></div>
@@ -228,7 +228,7 @@
                 </li>
             </ul> 
         </li>
-    </ul> -->
+    </ul>
     </div>
     <div class="boxes-holder">
         <div class="box" id="xplay">
@@ -271,8 +271,10 @@
     btn.onclick = function () {
       if (targetDiv.style.height !== "120px") {
         targetDiv.style.height = "120px";
+        targetDiv.style.marginTop = "29px";
       } else {
         targetDiv.style.height = "0px";
+        targetDiv.style.marginTop = "9px"; 
       }
     };
   </script>

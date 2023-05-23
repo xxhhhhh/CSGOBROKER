@@ -85,8 +85,8 @@
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
+    <div class="category-space"></div>
         <div id="FAQ"><h2 id="PageSubt">CS:GO Casino Sites are online platforms for gambling where players can wager virtual items called skins on game outcomes. These skins hold real-world value and can be obtained or purchased within the game. Popular CS:GO casino sites like CSGO500 and Duelbits offer a range of games including Slots, Blackjack, and Live Dealer options. However, skin gambling has faced controversy due to its association with illegal gambling and match manipulation. While some sites claim to be legal and secure, it is crucial to approach these platforms with caution. In 2023, notable CS:GO gambling sites such as Gamdom, CSGO500, and CSGOLuck stand out. It's important to remember that skin gambling may not be legal in all jurisdictions, and players should familiarize themselves with local laws before participating.</h2></div>
-        <div class="category-space"></div>
         <div class="category-selector">
             <ul>
                 <li>
@@ -198,7 +198,7 @@
                 </ul> 
             </li>
         </ul>
-        <!-- <ul>
+        <ul>
             <li>
         <a class="category-box" href="https://csgobroker.cc/dota">
             <div class="category-box-logo"><img src="/img/gamemodes/dota2-logo.png" alt="" style="width:50px;height:auto" draggable="false"></div>
@@ -228,7 +228,7 @@
                 </li>
             </ul> 
         </li>
-    </ul> -->
+    </ul>
     </div>
     <div class="boxes-holder">
         <div class="box" id="csgo500">
@@ -330,8 +330,10 @@
     btn.onclick = function () {
       if (targetDiv.style.height !== "130px") {
         targetDiv.style.height = "130px";
+        targetDiv.style.marginTop = "29px";
       } else {
         targetDiv.style.height = "0px";
+        targetDiv.style.marginTop = "9px"; 
       }
     };
   </script>

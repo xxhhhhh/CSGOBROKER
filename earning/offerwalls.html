@@ -85,8 +85,8 @@
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
+    <div class="category-space"></div>
         <div id="FAQ"><h2 id="PageSubt">GPT (Get Paid To) sites provide an effortless and straightforward approach to earn additional income online. These platforms function as in-site advertising tools that endorse particular websites and apps through paid offers. These offers may entail completing surveys or quizzes, playing mobile games, downloading mobile apps, signing up for sites, and other similar tasks. However, VVVGamers sets itself apart by providing a unique way to earn money, which is by playing popular games such as PUBG Mobile, Free Fire, and Chess, among many others. So, if you're a gaming enthusiast, VVVGamers offers you an opportunity to make money while doing something you love.</h2></div>
-        <div class="category-space"></div>
         <div class="category-selector">
             <ul>
                 <li>
@@ -198,7 +198,7 @@
                 </ul> 
             </li>
         </ul>
-        <!-- <ul>
+        <ul>
             <li>
         <a class="category-box" href="https://csgobroker.cc/dota">
             <div class="category-box-logo"><img src="/img/gamemodes/dota2-logo.png" alt="" style="width:50px;height:auto" draggable="false"></div>
@@ -228,7 +228,7 @@
                 </li>
             </ul> 
         </li>
-    </ul> -->
+    </ul>
     </div>
     <div class="boxes-holder">
         <div class="box">
@@ -409,8 +409,10 @@
     btn.onclick = function () {
       if (targetDiv.style.height !== "130px") {
         targetDiv.style.height = "130px";
+        targetDiv.style.marginTop = "29px";
       } else {
         targetDiv.style.height = "0px";
+        targetDiv.style.marginTop = "9px"; 
       }
     };
   </script>

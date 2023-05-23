@@ -85,8 +85,8 @@
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
+    <div class="category-space"></div>
         <div id="FAQ"><h2 id="PageSubt">CS:GO gambling sites have become increasingly popular in recent years, offering players the opportunity to win CS:GO skins through gambling. To keep users engaged and attract new players to their platform, these sites often offer exciting promotions that provide lucky users with the chance to acquire desirable CS:GO skins for free. The promotions used by CS:GO gambling sites differ from platform to platform. Referral codes are a common method used by these sites, offering rewards to users who successfully refer new players. Leaderboard-based systems that reward users based on their ranking or performance on the site, seasonal events that offer limited-time promotions or bonuses, and VIP programs that provide exclusive perks to loyal customers are also popular methods.</h2></div>
-        <div class="category-space"></div>
         <div class="category-selector">
             <ul>
                 <li>
@@ -198,7 +198,7 @@
                 </ul> 
             </li>
         </ul>
-        <!-- <ul>
+        <ul>
             <li>
         <a class="category-box" href="https://csgobroker.cc/dota">
             <div class="category-box-logo"><img src="/img/gamemodes/dota2-logo.png" alt="" style="width:50px;height:auto" draggable="false"></div>
@@ -228,7 +228,7 @@
                 </li>
             </ul> 
         </li>
-    </ul> -->
+    </ul>
         </div>  
     <div class="boxes-holder">
         <div class="box" id="csgo500">
@@ -779,8 +779,10 @@
     btn.onclick = function () {
       if (targetDiv.style.height !== "130px") {
         targetDiv.style.height = "130px";
+        targetDiv.style.marginTop = "29px";
       } else {
         targetDiv.style.height = "0px";
+        targetDiv.style.marginTop = "9px"; 
       }
     };
   </script>

@@ -85,8 +85,8 @@
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
+    <div class="category-space"></div>
         <div id="FAQ"><h2 id="PageSubt">CSGO Игра в Кости - это популярный игровой режим, который можно найти на различных сайтах CSGO-казино. Он напоминает традиционные игры с костями, которые можно найти в онлайн-казино, но с уникальным аспектом использования скинов в качестве ставок вместо настоящих денег. Правила игр в Кости CSGO обычно просты. Этот режим игры часто представлен вместе с другими играми, такими как CSGO Roulette, CSGO Blackjack, CSGO Jackpot games, CSGO Coinflip, CSGO Crash и CSGO Mines на ведущих сайтах CSGO-казино. CSGO Кости - это популярный выбор среди игроков, поскольку он позволяет им делать ставки и выигрывать предметы и скины CSGO. Он стал важной составляющей ведущих платформ для азартных игр в CSGO.</h2></div>
-        <div class="category-space"></div>
         <div class="category-selector">
             <ul>
                 <li>
@@ -198,7 +198,7 @@
                 </ul> 
             </li>
         </ul>
-        <!-- <ul>
+        <ul>
             <li>
         <a class="category-box" href="https://csgobroker.cc/dota">
             <div class="category-box-logo"><img src="/img/gamemodes/dota2-logo.png" alt="" style="width:50px;height:auto" draggable="false"></div>
@@ -228,7 +228,7 @@
                 </li>
             </ul> 
         </li>
-    </ul> -->
+    </ul>
     </div>
     <div class="boxes-holder">
         <div class="box" id="CSGORoll">
@@ -318,8 +318,10 @@
     btn.onclick = function () {
       if (targetDiv.style.height !== "130px") {
         targetDiv.style.height = "130px";
+        targetDiv.style.marginTop = "29px";
       } else {
         targetDiv.style.height = "0px";
+        targetDiv.style.marginTop = "9px"; 
       }
     };
   </script>

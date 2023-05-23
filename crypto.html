@@ -85,8 +85,8 @@
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
+    <div class="category-space"></div>
         <div id="FAQ"><h2 id="PageSubt">Crypto gambling is a type of online gambling that involves the use of cryptocurrencies, such as Bitcoin, Ethereum, Litecoin, and others, as the primary form of payment. Instead of traditional currency, players can make deposits, place bets, and withdraw winnings in the form of cryptocurrencies. The advantage of using cryptocurrencies in gambling is that they offer more anonymity, faster transaction times, and lower fees compared to traditional payment methods. Crypto gambling sites offer a range of games, including slots, table games, sports betting, and more. These sites typically have provably fair systems in place to ensure that the games are fair and random.</h2></div>
-        <div class="category-space"></div>
         <div class="category-selector">
             <ul>
                 <li>
@@ -198,7 +198,7 @@
                 </ul> 
             </li>
         </ul>
-        <!-- <ul>
+        <ul>
             <li>
         <a class="category-box" href="https://csgobroker.cc/dota">
             <div class="category-box-logo"><img src="/img/gamemodes/dota2-logo.png" alt="" style="width:50px;height:auto" draggable="false"></div>
@@ -228,7 +228,7 @@
                 </li>
             </ul> 
         </li>
-    </ul> -->
+    </ul>
         </div> 
     <div class="boxes-holder">
         <div class="box" id="csgo500">
@@ -384,8 +384,10 @@ Duelbits is a safe and licensed online casino with a variety of games, sports be
     btn.onclick = function () {
       if (targetDiv.style.height !== "130px") {
         targetDiv.style.height = "130px";
+        targetDiv.style.marginTop = "29px";
       } else {
         targetDiv.style.height = "0px";
+        targetDiv.style.marginTop = "9px"; 
       }
     };
   </script>

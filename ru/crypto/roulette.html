@@ -85,8 +85,8 @@
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
+    <div class="category-space"></div>
         <div id="FAQ"><h2 id="PageSubt">Сайты криптовалютной рулетки представляют собой онлайн-платформы для азартных игр, на которых игроки могут использовать криптовалюту в качестве валюты для ставок. Эти сайты позволяют игрокам делать ставки на результат вращения рулетки, используя различные криптовалюты, такие как Bitcoin, Ethereum, Litecoin и другие. Использование криптовалют обеспечивает игрокам дополнительную безопасность, анонимность и быстрое проведение транзакций. В целом, сайты криптовалютной рулетки предлагают новый и увлекательный способ наслаждаться классической игрой в казино, используя преимущества технологии криптовалют.</h2></div>
-        <div class="category-space"></div>
         <div class="category-selector">
             <ul>
                 <li>
@@ -198,7 +198,7 @@
                 </ul> 
             </li>
         </ul>
-        <!-- <ul>
+        <ul>
             <li>
         <a class="category-box" href="https://csgobroker.cc/dota">
             <div class="category-box-logo"><img src="/img/gamemodes/dota2-logo.png" alt="" style="width:50px;height:auto" draggable="false"></div>
@@ -228,7 +228,7 @@
                 </li>
             </ul> 
         </li>
-    </ul> -->
+    </ul>
     </div>
     <div class="boxes-holder">
         <div class="box" id="csgo500">
@@ -372,8 +372,10 @@
     btn.onclick = function () {
       if (targetDiv.style.height !== "120px") {
         targetDiv.style.height = "120px";
+        targetDiv.style.marginTop = "29px";
       } else {
         targetDiv.style.height = "0px";
+        targetDiv.style.marginTop = "9px"; 
       }
     };
   </script>

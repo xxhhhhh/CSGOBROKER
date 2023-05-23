@@ -85,8 +85,8 @@
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
+    <div class="category-space"></div>
         <div id="FAQ"><h2 id="PageSubt">Откройте для себя полный список надежных сайтов с раздачами, включая подробные обзоры и бонус-коды, чтобы улучшить ваш опыт онлайн-игр. Наша команда экспертов составила список надежных и доверенных сайтов, которые предлагают захватывающие раздачи, от подарочных карт и товаров до игровых аксессуаров и предметов в игре. Просмотрев наши подробные обзоры, вы можете узнать о различных типах раздач, предлагаемых каждым сайтом, о частоте раздач и условиях, связанных с каждым предложением. Наши бонус-коды также предоставляют вам доступ к эксклюзивным вознаграждениям и преимуществам, которые могут улучшить ваш общий игровой опыт. Так почему бы не начать? Исследуйте наш список надежных сайтов с раздачами уже сегодня и начинайте выигрывать захватывающие призы!</h2></div>
-        <div class="category-space"></div>
         <div class="category-selector">
             <ul>
                 <li>
@@ -198,7 +198,7 @@
                 </ul> 
             </li>
         </ul>
-        <!-- <ul>
+        <ul>
             <li>
         <a class="category-box" href="https://csgobroker.cc/dota">
             <div class="category-box-logo"><img src="/img/gamemodes/dota2-logo.png" alt="" style="width:50px;height:auto" draggable="false"></div>
@@ -228,7 +228,7 @@
                 </li>
             </ul> 
         </li>
-    </ul> -->
+    </ul>
     </div>
     <div class="boxes-holder">
         <div class="box" id="csgo500">
@@ -482,8 +482,10 @@
     btn.onclick = function () {
       if (targetDiv.style.height !== "140px") {
         targetDiv.style.height = "140px";
+        targetDiv.style.marginTop = "29px";
       } else {
         targetDiv.style.height = "0px";
+        targetDiv.style.marginTop = "9px"; 
       }
     };
   </script>

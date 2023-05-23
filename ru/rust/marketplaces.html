@@ -85,8 +85,8 @@
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
+    <div class="category-space"></div>
         <div id="FAQ"><h2 id="PageSubt">На Маркетплейсах, которые предназначены для Rust, игроки могут просматривать большой ассортимент скинов и покупать их за реальные деньги. Некоторые из популярных Маркетплейсов для Rust включают Tradeit, DMarket и CS.Deals. Эти же платформы позволяют игрокам продавать свои скины, чтобы заработать на них реальные деньги или игровую валюту. Цена на скины может сильно варьироваться в зависимости от их редкости и популярности, и некоторые скины могут продаваться за тысячи долларов. Маркетплейсы для скинов часто имеют защиту для покупателя и продавца, мгновенную доставку и безопасную систему оплаты, чтобы обеспечить безопасность транзакций для всех участников.</h2></div>
-        <div class="category-space"></div>
         <div class="category-selector">
             <ul>
                 <li>
@@ -198,7 +198,7 @@
                 </ul> 
             </li>
         </ul>
-        <!-- <ul>
+        <ul>
             <li>
         <a class="category-box" href="https://csgobroker.cc/dota">
             <div class="category-box-logo"><img src="/img/gamemodes/dota2-logo.png" alt="" style="width:50px;height:auto" draggable="false"></div>
@@ -228,7 +228,7 @@
                 </li>
             </ul> 
         </li>
-    </ul> -->
+    </ul>
     </div>
     <div class="boxes-holder">
         <div class="box" id="Tradeit">
@@ -317,8 +317,10 @@
     btn.onclick = function () {
       if (targetDiv.style.height !== "130px") {
         targetDiv.style.height = "130px";
+        targetDiv.style.marginTop = "29px";
       } else {
         targetDiv.style.height = "0px";
+        targetDiv.style.marginTop = "9px"; 
       }
     };
   </script>

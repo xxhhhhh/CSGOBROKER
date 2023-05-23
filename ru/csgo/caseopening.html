@@ -85,8 +85,8 @@
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
+    <div class="category-space"></div>
         <div id="FAQ"><h2 id="PageSubt">CS:GO сайты для открытия кейсов предлагают игрокам возможность открывать виртуальные кейсы с скинами, оружием и стикерами. Они предлагают различные кейсы и скины, некоторые даже предоставляют бесплатные бонус-коды. Кроме того, многие сайты принимают несколько вариантов оплаты, таких как кредитные карты, PayPal и криптовалюты, что упрощает процесс покупки предметов. Для улучшения пользовательского опыта некоторые сайты предлагают прямые трансляции открытия кейсов, возможности апгрейда и обмена скинов. Тем не менее, важно быть осторожным, так как некоторые сайты могут иметь подозрительную практику, такую как мошенничество или подтасовка шансов. Поэтому крайне важно использовать только надежные и проверенные сайты, такие как те, что представлены в нашем списке, которые были тщательно проверены и подтверждены нашей командой.</h2></div>
-        <div class="category-space"></div>
         <div class="category-selector">
             <ul>
                 <li>
@@ -198,7 +198,7 @@
                 </ul> 
             </li>
         </ul>
-        <!-- <ul>
+        <ul>
             <li>
         <a class="category-box" href="https://csgobroker.cc/dota">
             <div class="category-box-logo"><img src="/img/gamemodes/dota2-logo.png" alt="" style="width:50px;height:auto" draggable="false"></div>
@@ -228,7 +228,7 @@
                 </li>
             </ul> 
         </li>
-    </ul> -->
+    </ul>
     </div>
     <div class="boxes-holder">
         <div class="box" id="CSGORoll">
@@ -444,8 +444,10 @@
     btn.onclick = function () {
       if (targetDiv.style.height !== "140px") {
         targetDiv.style.height = "140px";
+        targetDiv.style.marginTop = "29px";
       } else {
         targetDiv.style.height = "0px";
+        targetDiv.style.marginTop = "9px"; 
       }
     };
   </script>

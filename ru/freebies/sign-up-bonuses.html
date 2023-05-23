@@ -85,8 +85,8 @@
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
+    <div class="category-space"></div>
         <div id="FAQ"><h2 id="PageSubt">Если вы ищете надежный и доверенный сайт для онлайн-гемблинга, то может быть сложно выбрать один из множества доступных вариантов. К счастью, есть сайты, которые предоставляют обширные обзоры и бонус-коды, чтобы помочь вам сделать правильный выбор. Эти сайты не только перечисляют лучшие сайты гемблинга, но также выделяют их ключевые особенности и акции. Некоторые из ключевых факторов, которые обычно рассматриваются при обзоре сайтов гемблинга, включают в себя разнообразие доступных игр, уровень безопасности, качество поддержки клиентов, варианты оплаты и бонусные предложения. Анализируя эти факторы, рецензенты могут дать вам ясное представление о том, что ожидать при регистрации на определенном сайте. Кроме того, они могут предоставить вам бонус-коды, которые могут дать вам дополнительные преимущества при регистрации, такие как бесплатные вращения, матчи на депозит или другие поощрения.</h2></div>
-        <div class="category-space"></div>
         <div class="category-selector">
             <ul>
                 <li>
@@ -198,7 +198,7 @@
                 </ul> 
             </li>
         </ul>
-        <!-- <ul>
+        <ul>
             <li>
         <a class="category-box" href="https://csgobroker.cc/dota">
             <div class="category-box-logo"><img src="/img/gamemodes/dota2-logo.png" alt="" style="width:50px;height:auto" draggable="false"></div>
@@ -228,7 +228,7 @@
                 </li>
             </ul> 
         </li>
-    </ul> -->
+    </ul>
     </div>
     <div class="boxes-holder">
         <div class="box">
@@ -747,8 +747,10 @@
     btn.onclick = function () {
       if (targetDiv.style.height !== "150px") {
         targetDiv.style.height = "150px";
+        targetDiv.style.marginTop = "29px";
       } else {
         targetDiv.style.height = "0px";
+        targetDiv.style.marginTop = "9px"; 
       }
     };
   </script>

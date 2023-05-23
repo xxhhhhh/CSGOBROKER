@@ -85,8 +85,8 @@
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
+    <div class="category-space"></div>
         <div id="FAQ"><h2 id="PageSubt">Rust Джекпот - это форма азартных игр внутри игры Rust, где игроки размещают ставки с использованием скинов или кредитов на игру в Джекпот. Игра следует традиционному формату джекпота, где игроки выбирают сумму ставки и вносят ее в банк. После размещения всех ставок генератор случайных чисел (RNG) определяет победителя. Чем выше стоимость ставки, тем больше шансов на победу. На сайтах Rust Джекпот обычно взимается комиссия с джекпота, которая может варьироваться от 0 до 10 процентов. После введения Valve ограничения на торговлю предметами в течение 7 дней популярность сайтов со скинами для Джекпота значительно снизилась, что привело к закрытию многих подобных платформ.</h2></div>
-        <div class="category-space"></div>
         <div class="category-selector">
             <ul>
                 <li>
@@ -198,7 +198,7 @@
                 </ul> 
             </li>
         </ul>
-        <!-- <ul>
+        <ul>
             <li>
         <a class="category-box" href="https://csgobroker.cc/dota">
             <div class="category-box-logo"><img src="/img/gamemodes/dota2-logo.png" alt="" style="width:50px;height:auto" draggable="false"></div>
@@ -228,7 +228,7 @@
                 </li>
             </ul> 
         </li>
-    </ul> -->
+    </ul>
     </div>
     <div class="boxes-holder">
         <div class="box" id="howlgg">
@@ -373,8 +373,10 @@
     btn.onclick = function () {
       if (targetDiv.style.height !== "130px") {
         targetDiv.style.height = "130px";
+        targetDiv.style.marginTop = "29px";
       } else {
         targetDiv.style.height = "0px";
+        targetDiv.style.marginTop = "9px"; 
       }
     };
   </script>
