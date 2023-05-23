@@ -66,7 +66,8 @@ ulArray.forEach(function(ul) {
   categorySelector.appendChild(ul);
 });
 }
-if (window.location.pathname.startsWith("/ru")) {
+
+if (window.location.pathname.startsWith("/ru") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!ru\/)/;
@@ -133,7 +134,7 @@ if (window.location.pathname.startsWith("/ru")) {
   translateURLs(categorySelector);
 }
 
-if (window.location.pathname.startsWith("/ru")) {
+if (window.location.pathname.startsWith("/ru") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!ru\/)/;
