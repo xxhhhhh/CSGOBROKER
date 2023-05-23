@@ -4,10 +4,19 @@ function handleLanguageRedirect() {
   if (!userChoice && window.location.hostname !== 'localhost') {
     var userLang = navigator.language || navigator.userLanguage;
 
-    if ((userLang === 'ru' || userLang === 'ru-RU') && getUrlParameter('lang') === 'ru') {
-      userChoice = 'ru'; // Устанавливаем выбранный язык в переменную userChoice
-      setCookie('languageChoice', userChoice, 365); // Сохраняем выбранный язык в куки
-      document.getElementById('languageChoice').value = userChoice; // Обновляем значение скрытого поля
+    if ((userLang === 'ru' || userLang === 'ru-RU') && window.location.pathname === '/') {
+      var currentUrl = window.location.href;
+
+      if (currentUrl === 'https://csgobroker.cc/') {
+        var newUrl = currentUrl.replace('.cc/', '.cc/ru.html');
+
+        if (newUrl !== currentUrl) {
+          userChoice = 'ru'; // Устанавливаем выбранный язык в переменную userChoice
+          setCookie('languageChoice', userChoice, 365); // Сохраняем выбранный язык в куки
+          window.location.href = newUrl;
+          return false;
+        }
+      }
     }
   }
 }
@@ -19,7 +28,6 @@ document.addEventListener('click', function(event) {
 
     setCookie('languageChoice', selectedLang, 365);
     userChoice = selectedLang; // Обновляем значение переменной userChoice
-    document.getElementById('languageChoice').value = userChoice; // Обновляем значение скрытого поля
 
     if (selectedLang !== userChoice) {
       location.reload();
@@ -53,13 +61,6 @@ function getCookie(name) {
     }
   }
   return null;
-}
-
-function getUrlParameter(name) {
-  name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-  var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-  var results = regex.exec(window.location.search);
-  return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 }
 
 handleLanguageRedirect();
