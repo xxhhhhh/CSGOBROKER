@@ -131,11 +131,46 @@ if (window.location.pathname.startsWith("/ru") && !window.location.pathname.star
     }
   }
   
-  var categorySelector = document.querySelector('.category-selector');
-  translateURLs(categorySelector);
+  var SitesList = document.querySelector('.boxes-holder');
+  translateURLs(SitesList);
 }
 
-
+if (window.location.pathname.startsWith("/ru") && !window.location.pathname.startsWith("/rust")) {
+  function translateURLs(parentElement) {
+    var currentURL = window.location.href;
+  
+    if (currentURL.includes("/ru")) {
+      var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+      for (var i = 0; i < links.length; i++) {
+        var href = links[i].getAttribute('href');
+        if (!href.includes("/ru") || href.startsWith("https://csgobroker.cc/rust")) {
+          var translatedHref = href.replace("https://csgobroker.cc/", "https://csgobroker.cc/ru/");
+          links[i].setAttribute('href', translatedHref);
+        }
+      }
+  
+      var translations = {
+        "CSGO500 probably the best CS:GO Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, вероятно, является лучшим сайтом для азартных игр в CS:GO. Здесь регулярно проводятся раздачи и розыгрыши.",
+        "Withdraw CS:GO Skins or Crypto!": "Обменять Скины"
+      };
+  
+      var elements = document.querySelectorAll('.box .content p');
+      for (var j = 0; j < elements.length; j++) {
+        var text = elements[j].textContent.trim();
+        if (translations.hasOwnProperty(text)) {
+          if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
+            elements[j].innerHTML = translations[text] + ' <i class="bi bi-caret-right-fill"></i>';
+          } else {
+            elements[j].innerHTML = translations[text];
+          }
+        }
+      }
+    }
+  }
+  
+  var SitesList = document.querySelector('.boxes-holder');
+  translateURLs(SitesList);
+}
 
 
 function copyToClipboard(element) {
