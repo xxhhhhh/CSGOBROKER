@@ -18,6 +18,14 @@ function handleLanguageRedirect() {
         }
       }
     }
+  } else if (userChoice === 'ru' && window.location.pathname === '/') {
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('.cc/', '.cc/ru.html');
+
+    if (newUrl !== currentUrl) {
+      window.location.href = newUrl;
+      return false;
+    }
   }
 }
 
@@ -31,6 +39,13 @@ document.addEventListener('click', function(event) {
 
     if (selectedLang !== userChoice) {
       location.reload();
+    } else if (selectedLang === 'ru' && window.location.pathname === '/') {
+      var currentUrl = window.location.href;
+      var newUrl = currentUrl.replace('.cc/', '.cc/ru.html');
+
+      if (newUrl !== currentUrl) {
+        window.location.href = newUrl;
+      }
     }
   }
 });
