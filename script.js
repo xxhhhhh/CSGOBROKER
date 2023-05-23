@@ -66,6 +66,73 @@ ulArray.forEach(function(ul) {
   categorySelector.appendChild(ul);
 });
 }
+if (window.location.pathname.startsWith("/ru") && !window.location.pathname.startsWith("/rust")) {
+  function translateURLs(parentElement) {
+    var currentURL = window.location.href;
+  
+    if (currentURL.includes("/ru")) {
+      var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+      for (var i = 0; i < links.length; i++) {
+        var href = links[i].getAttribute('href');
+        if (!href.includes("/ru") || href.startsWith("https://csgobroker.cc/rust")) {
+          var translatedHref = href.replace("https://csgobroker.cc/", "https://csgobroker.cc/ru/");
+          links[i].setAttribute('href', translatedHref);
+        }
+      }
+  
+      var translations = {
+        "CS:GO Sites List": "Халява CS:GO",
+        "Rust Sites List": "Халява Rust",
+        "Dota 2 Sites List": "Халява Dota 2",
+        "Crypto Sites List": "Крипто Халява",
+        "Freebies Only": "Вся Халява",
+        "Earning Sites": "Заработок",
+        "Gambling Sites": "Игральные Сайты",
+        "Earn by Play CS:GO": "Заработок на Игре",
+        "All Sites": "Все Сайты",
+        "Match Betting": "Ставки на Матчи",
+        "Case Opening": "Кейсы",
+        "Roulette": "Рулетка",
+        "Coinflip": "Коинфлип",
+        "Crash": "Краш",
+        "Casino": "Казино",
+        "Jackpot": "Джекпот",
+        "Upgrader": "Апгрейдер",
+        "Dice": "Кости",
+        "Bonus Types": "Типы Халявы",
+        "Sign Up Bonuses": "Бонус за Регистрацию",
+        "Deposit Bonuses": "Бонус к Депозиту",
+        "Daily Rewards": "Ежедневный Бонус",
+        "Giveaways": "Розыгрыши",
+        "Buy or Sell Skins": "Купить/Продать Скины",
+        "Buy or Sell Items": "Купить/Продать Предметы",
+        "Marketplaces": "Торговые Площадки",
+        "Buy Items": "Купить Предметы",
+        "Sell Items": "Продать Предметы",
+        "Trade Items": "Обменять Предметы",
+        "Buy Skins": "Купить Скины",
+        "Sell Skins": "Продать Скины",
+        "Trade Skins": "Обменять Скины"
+      };
+  
+      var elements = document.querySelectorAll('.category-box-content span, ul .submenu li a');
+      for (var j = 0; j < elements.length; j++) {
+        var text = elements[j].textContent.trim();
+        if (translations.hasOwnProperty(text)) {
+          if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
+            elements[j].innerHTML = translations[text] + ' <i class="bi bi-caret-right-fill"></i>';
+          } else {
+            elements[j].innerHTML = translations[text];
+          }
+        }
+      }
+    }
+  }
+  
+  var categorySelector = document.querySelector('.category-selector');
+  translateURLs(categorySelector);
+}
+
 
 
 
