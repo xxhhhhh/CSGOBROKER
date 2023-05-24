@@ -2259,7 +2259,10 @@ footer .centralizer .footer-content {
         transition: all .2s ease-in-out;
       }
       #search-input:focus {
-        outline: 3px solid transparent;
+        outline: none;
+    }
+    #search-input:focus::placeholder {
+        color: transparent;
     }
       .search-container {
         display: block;
