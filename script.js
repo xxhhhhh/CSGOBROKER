@@ -1,71 +1,75 @@
 if (!window.location.pathname.includes("/reviews/")) {
   // Получаем элементы
-const boxContainer = document.querySelector('.category-selector');
-const buttonsContainer = document.createElement('div');
-const prevButtonContainer = document.createElement('button');
-const nextButtonContainer = document.createElement('button');
-const boxes = boxContainer.querySelectorAll('.category-box');
-const boxWidth = boxes[0].offsetWidth + (2 * 9); // Ширина каждого div.category-box с учетом отступов
-const containerWidth = boxWidth * 4; // Ширина контейнера для показа 4 боксов одновременно
-let scrollPosition = 0; // Текущая позиция прокрутки
+  const boxContainer = document.querySelector('.category-selector');
+  const buttonsContainer = document.createElement('div');
+  const prevButtonContainer = document.createElement('button');
+  const nextButtonContainer = document.createElement('button');
+  const boxes = boxContainer.querySelectorAll('.category-box');
+  const boxWidth = boxes[0].offsetWidth + (2 * 9); // Ширина каждого div.category-box с учетом отступов
+  const containerWidth = boxWidth * 4; // Ширина контейнера для показа 4 боксов одновременно
+  let scrollPosition = 0; // Текущая позиция прокрутки
 
-// Добавляем классы и текст кнопкам
-buttonsContainer.classList.add('buttons-container');
-prevButtonContainer.classList.add('controls-button');
-prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left"></i>';
-nextButtonContainer.classList.add('controls-button');
-nextButtonContainer.innerHTML = '<i class="bi bi-chevron-right"></i>';
+  // Добавляем классы и текст кнопкам
+  buttonsContainer.classList.add('buttons-container');
+  prevButtonContainer.classList.add('controls-button');
+  prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left"></i>';
+  nextButtonContainer.classList.add('controls-button');
+  nextButtonContainer.innerHTML = '<i class="bi bi-chevron-right"></i>';
 
-// Добавляем кнопки в контейнер
-buttonsContainer.appendChild(prevButtonContainer);
-buttonsContainer.appendChild(nextButtonContainer);
+  // Добавляем кнопки в контейнер
+  buttonsContainer.appendChild(prevButtonContainer);
+  buttonsContainer.appendChild(nextButtonContainer);
 
-// Добавляем контейнер с кнопками перед контейнером с боксами
-boxContainer.parentNode.insertBefore(buttonsContainer, boxContainer);
+  // Добавляем контейнер с кнопками перед контейнером с боксами
+  boxContainer.parentNode.insertBefore(buttonsContainer, boxContainer);
 
-// Устанавливаем ширину контейнера с боксами
-boxContainer.style.width = `${containerWidth}px`;
+  // Устанавливаем ширину контейнера с боксами
+  boxContainer.style.width = `${containerWidth}px`;
 
-// Обработчик события для кнопки "Влево"
-prevButtonContainer.addEventListener('click', () => {
-  scrollPosition -= boxWidth;
-  scrollPosition = Math.max(scrollPosition, 0);
-  boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
-});
+  // Обработчик события для кнопки "Влево"
+  prevButtonContainer.addEventListener('click', () => {
+    scrollPosition -= boxWidth;
+    scrollPosition = Math.max(scrollPosition, 0);
+    boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
+  });
 
-// Обработчик события для кнопки "Вправо"
-nextButtonContainer.addEventListener('click', () => {
-  scrollPosition += boxWidth;
-  scrollPosition = Math.min(scrollPosition, boxContainer.scrollWidth - containerWidth);
-  boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
-});
+  // Обработчик события для кнопки "Вправо"
+  nextButtonContainer.addEventListener('click', () => {
+    scrollPosition += boxWidth;
+    scrollPosition = Math.min(scrollPosition, boxContainer.scrollWidth - containerWidth);
+    boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
+  });
 
+  var categorySelector = document.querySelector('div.category-selector');
+  var ulElements = categorySelector.querySelectorAll('div.category-selector > ul');
+  var ulArray = Array.from(ulElements);
 
-var categorySelector = document.querySelector('div.category-selector');
-var ulElements = categorySelector.querySelectorAll('div.category-selector > ul');
-var ulArray = Array.from(ulElements);
+  ulArray.sort(function(a, b) {
+    var aIsActive = a.querySelector('li a.category-box').id === 'active';
+    var bIsActive = b.querySelector('li a.category-box').id === 'active';
 
-ulArray.sort(function(a, b) {
-  var aIsActive = a.querySelector('li a.category-box').id === 'active';
-  var bIsActive = b.querySelector('li a.category-box').id === 'active';
+    if (aIsActive && !bIsActive) {
+      return -1; // Первый элемент (a) активный, поэтому он идет первым
+    } else if (!aIsActive && bIsActive) {
+      return 1; // Второй элемент (b) активный, поэтому он идет вторым
+    } else if (a.querySelector('li a.category-box').id === 'last') {
+      return 1; // a имеет id="last", поэтому он должен быть последним
+    } else if (b.querySelector('li a.category-box').id === 'last') {
+      return -1; // b имеет id="last", поэтому он должен быть последним
+    } else {
+      return Math.random() - 0.5; // Оба элемента либо активны, либо неактивны - сортировка рандомна
+    }
+  });
 
-  if (aIsActive && !bIsActive) {
-    return -1; // Первый элемент (a) активный, поэтому он идет первым
-  } else if (!aIsActive && bIsActive) {
-    return 1; // Второй элемент (b) активный, поэтому он идет вторым
-  } else {
-    return Math.random() - 0.5; // Оба элемента либо активны, либо неактивны - сортировка рандомна
+  while (categorySelector.firstChild) {
+    categorySelector.removeChild(categorySelector.firstChild);
   }
-});
 
-while (categorySelector.firstChild) {
-  categorySelector.removeChild(categorySelector.firstChild);
+  ulArray.forEach(function(ul) {
+    categorySelector.appendChild(ul);
+  });
 }
 
-ulArray.forEach(function(ul) {
-  categorySelector.appendChild(ul);
-});
-}
 
 if (window.location.pathname.startsWith("/ru") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
@@ -86,6 +90,7 @@ if (window.location.pathname.startsWith("/ru") && !window.location.pathname.incl
         "Crypto Sites List": "Крипто Халява",
         "Freebies Only": "Вся Халява",
         "Earning Sites": "Заработок",
+        "Steam Sites": "Сайты Steam",
         "Gambling Sites": "Игральные Сайты",
         "Earn by Play CS:GO": "Заработок на Игре в CS:GO",
         "All Sites": "Все Сайты",
@@ -113,7 +118,9 @@ if (window.location.pathname.startsWith("/ru") && !window.location.pathname.incl
         "Trade Items": "Обменять Предметы",
         "Buy Skins": "Купить Скины",
         "Sell Skins": "Продать Скины",
-        "Trade Skins": "Обменять Скины"
+        "Trade Skins": "Обменять Скины",
+        "Steam Level Up": "Увеличить Уровень Steam",
+        "Buy Steam Games": "Купить Игры Steam"
       };
   
       var elements = document.querySelectorAll('.category-box-content span, ul .submenu li a');
@@ -132,6 +139,57 @@ if (window.location.pathname.startsWith("/ru") && !window.location.pathname.incl
   
   var categorySelector = document.querySelector('.category-selector');
   translateURLs(categorySelector);
+}
+
+if (window.location.pathname.includes('/ru/reviews/')) {
+  var links = document.getElementsByTagName('a');
+
+  for (var i = 0; i < links.length; i++) {
+    var link = links[i];
+
+    if (link.href.includes('csgobroker.cc') && !link.pathname.startsWith('/ru') && !link.classList.contains('lang-switch')) {
+      if (link.pathname !== '/') {
+        link.pathname = '/ru' + link.pathname;
+      } else {
+        link.href = link.href.replace('https://csgobroker.cc/', 'https://csgobroker.cc/ru/');
+      }
+    }
+  }
+  function translateTextElements(parentElement) {
+    var translations = {
+      "Deposit Methods": "Способы Пополнения",
+      "Withdraw Methods": "Способы Вывода",
+      "Sign Up Bonus": "Бонус за Регистрацию",
+      "Pros": "Плюсы",
+      "Cons": "Минусы",
+      "Trust": "Доверие",
+      "Support": "Поддержка",
+      "Payments": "Деп/Вывод",
+      "Functional": "Функционал",
+      "Sign up via Steam": "Залогиньтесь через Steam ",
+      "Enjoy !": "Наслаждайтесь !",
+      "Visit WebSite": "Посетить Сайт"
+    };
+  
+    var siteprosElements = parentElement.querySelectorAll('.sitedetails .sitepros span');
+    for (var i = 0; i < siteprosElements.length; i++) {
+      var text = siteprosElements[i].textContent.trim();
+      if (translations.hasOwnProperty(text)) {
+        siteprosElements[i].innerHTML = translations[text] + ' <i class="bi bi-caret-down-fill"></i>';
+      }
+    }
+  
+    var ratingwayElements = parentElement.querySelectorAll('.ratingthings .ratingway span, .content button, .boxreview .plusminus .criteria .par h2, .features .featuresbox .typesinside a, .instruction li');
+    for (var j = 0; j < ratingwayElements.length; j++) {
+      var text = ratingwayElements[j].textContent.trim();
+      if (translations.hasOwnProperty(text)) {
+        ratingwayElements[j].innerHTML = translations[text];
+      }
+    }
+  }
+  
+  translateTextElements(document.body);
+  
 }
 
 if (window.location.pathname.startsWith("/ru") && !window.location.pathname.includes("/reviews/")) {
@@ -184,6 +242,8 @@ if (window.location.pathname.startsWith("/ru") && !window.location.pathname.incl
       "SkinCashier is an online platform that allows players to Instant Sell their CS:GO, Rust, Dota 2, and TF2 skins for real money. Operating since 2020.": "SkinCashier - это сайт, который позволяет игрокам моментально продавать свои скины из CS:GO, Rust, Dota 2 и TF2 за настоящие деньги.",
       "Avan.Market is an online platform that offers users the opportunity to sell gaming skins from popular games like CS:GO, Dota 2, RUST, and TF2.": "Avan.Market - это онлайн-платформа, которая предоставляет возможность моментально продавать игровые скины из CS:GO, Dota 2, RUST и TF2.",
       "Skins.Cash is a reputable platform with positive reviews, reliable customer support, and over six years of operation. Pricing not the best one.": "Skins.Cash - надежная платформа с положительными отзывами, надежной поддержкой клиентов и более чем шестилетним опытом работы.",
+      "This site was created for easy leveling up Steam, you can sell emojis and profile backgrounds for Steam Trading Cards to fast level up.": "Этот сайт был создан для упрощения процесса повышения уровня в Steam. Вы можете продавать предметы Steam за карточки, чтобы повысить уровень.",
+      "SteamLevelU is a legitimate platform to buy Steam trading card packs for enhancing Steam account levels, associated with SH Level Up.": "SteamLevelU - это честный сайт, где можно купить наборы карточек Steam для повышения уровней аккаунта в Steam. Она связана с SH Level Up.",
       "Withdraw CS:GO Skins , Crypto or real money!": "Выводите скины CS:GO, криптовалюту или деньги!",
       "Withdraw CS:GO Skins, Crypto or Real Money!": "Выводите скины CS:GO, криптовалюту или деньги!",
       "Withdraw CS:GO, Dota 2, TF2 or Rust Items!": "Выводите предметы CS:GO, Dota 2, TF2 или Rust!",
@@ -200,19 +260,23 @@ if (window.location.pathname.startsWith("/ru") && !window.location.pathname.incl
       "Withdraw Real Money or Crypto!": "Выводите Реальные Деньги или Крипту!",
       "Withdraw BTC, ETH, USDT or Tron!": "Выводите BTC, ETH, USDT или Tron!",
       "Withdraw CS:GO Skins and Items!": "Вывод только скинами CS:GO!",
+      "Withdraw Steam Trading cards or Games.": "Выводите Steam Trading cards или Игры.",
+      "Withdraw Steam Trading cards.": "Выводите Steam Trading cards.",
       "Visit WebSite": "Посетить Сайт",
+      "Visit WebSite or Copy": "Посетить Сайт",
       "100% deposit bonus": "+100% к Пополнению",
       "+3% Sell Bonus": "+3% Бонус к Продаже",
       "5% deposit bonus": "+5% к Пополнению",
       "5 Free Cases": "5 Бесплатных Кейсов",
+      "Free 50 Gems": "50 Камней Бесплатно",
       "3 Free Cases": "3 Бесплатных Кейса",
       "1.5$ for free": "1.5$ Бесплатно",
-      "Free 0.30$": "0.30$ Бесплатно",
-      "Free 0.40$": "0.40$ Бесплатно",
-      "Free 0.25$": "0.25$ Бесплатно",
-      "Free 0.50$": "0.50$ Бесплатно",
       "Free 0.90$": "0.90$ Бесплатно",
       "Free 0.50$": "0.50$ Бесплатно",
+      "Free 0.40$": "0.40$ Бесплатно",
+      "Free 0.30$": "0.30$ Бесплатно",
+      "Free 0.25$": "0.25$ Бесплатно",
+      "Free 0.05$": "0.05$ Бесплатно",
       "free case": "Бесплатный Кейс",
       "Free 1$": "1$ Бесплатно",
       "Free 2$": "2$ Бесплатно",
