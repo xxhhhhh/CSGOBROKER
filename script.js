@@ -8,6 +8,7 @@ if (!window.location.pathname.includes("/reviews/")) {
   const boxWidth = boxes[0].offsetWidth + (2 * 9); // Ширина каждого div.category-box с учетом отступов
   const containerWidth = boxWidth * 4; // Ширина контейнера для показа 4 боксов одновременно
   let scrollPosition = 0; // Текущая позиция прокрутки
+  let buttonScrollPosition = 0; // Текущая позиция скролла кнопок
 
   // Добавляем классы и текст кнопкам
   buttonsContainer.classList.add('buttons-container');
@@ -31,6 +32,7 @@ if (!window.location.pathname.includes("/reviews/")) {
     scrollPosition -= boxWidth;
     scrollPosition = Math.max(scrollPosition, 0);
     boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
+    buttonScrollPosition = scrollPosition; // Обновляем позицию скролла кнопок
   });
 
   // Обработчик события для кнопки "Вправо"
@@ -38,6 +40,66 @@ if (!window.location.pathname.includes("/reviews/")) {
     scrollPosition += boxWidth;
     scrollPosition = Math.min(scrollPosition, boxContainer.scrollWidth - containerWidth);
     boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
+    buttonScrollPosition = scrollPosition; // Обновляем позицию скролла кнопок
+  });
+
+  let isMouseDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+  // Обработчик события mousedown для контейнера boxContainer
+  boxContainer.addEventListener('mousedown', (e) => {
+    e.preventDefault(); // Предотвращаем действия по умолчанию
+    isMouseDown = true;
+    startX = e.pageX - boxContainer.offsetLeft;
+    scrollLeft = boxContainer.scrollLeft;
+  });
+
+  // Обработчик события mousemove для контейнера boxContainer
+  boxContainer.addEventListener('mousemove', (e) => {
+    if (!isMouseDown) return; // Если кнопка мыши не зажата, прекращаем выполнение функции
+    e.preventDefault(); // Предотвращаем действия по умолчанию
+    const x = e.pageX - boxContainer.offsetLeft;
+    const walk = (x - startX) * 0.6; // Чувствительность перемещения
+    const newScrollLeft = scrollLeft - walk;
+    boxContainer.scrollLeft = newScrollLeft;
+    buttonScrollPosition = newScrollLeft; // Обновляем позицию скролла кнопок
+  });
+
+  // Обработчик события mouseup для контейнера boxContainer
+  boxContainer.addEventListener('mouseup', () => {
+    isMouseDown = false;
+  });
+
+  // Обработчик события mouseleave для контейнера boxContainer
+  boxContainer.addEventListener('mouseleave', () => {
+    isMouseDown = false;
+  });
+
+  // Обработчик события touchstart для контейнера boxContainer
+  boxContainer.addEventListener('touchstart', (e) => {
+    e.preventDefault(); // Предотвращаем действия по умолчанию
+    const touch = e.touches[0];
+    isMouseDown = true;
+    startX = touch.pageX - boxContainer.offsetLeft;
+    scrollLeft = boxContainer.scrollLeft;
+  });
+
+  // Обработчик события touchmove для контейнера boxContainer
+  boxContainer.addEventListener('touchmove', (e) => {
+    if (!isMouseDown) return; // Если сенсорное устройство не касается экрана, прекращаем выполнение функции
+    e.preventDefault(); // Предотвращаем действия по умолчанию
+    const touch = e.touches[0];
+    const x = touch.pageX - boxContainer.offsetLeft;
+    const walk = (x - startX) * 0.6; // Чувствительность перемещения
+    const newScrollLeft = scrollLeft - walk;
+    boxContainer.scrollLeft = newScrollLeft;
+    buttonScrollPosition = newScrollLeft; // Обновляем позицию скролла кнопок
+  });
+
+  // Обработчик события touchend для контейнера boxContainer
+  boxContainer.addEventListener('touchend', () => {
+    isMouseDown = false;
   });
 
   var categorySelector = document.querySelector('div.category-selector');
@@ -65,9 +127,12 @@ if (!window.location.pathname.includes("/reviews/")) {
     categorySelector.removeChild(categorySelector.firstChild);
   }
 
-  ulArray.forEach(function(ul) {
+  ulArray.forEach(function (ul) {
     categorySelector.appendChild(ul);
   });
+
+  // Устанавливаем начальную позицию скролла кнопок
+  buttonsContainer.scrollLeft = buttonScrollPosition;
 }
 
 
@@ -162,6 +227,7 @@ if (window.location.pathname.includes('/ru/reviews/')) {
       "Sign Up Bonus": "Бонус за Регистрацию",
       "No Bonus": "Нет Бонуса",
       "Pros": "Плюсы",
+      "Price": "Цены",
       "Cons": "Минусы",
       "Trust": "Доверие",
       "Support": "Поддержка",
@@ -246,8 +312,9 @@ if (window.location.pathname.startsWith("/ru") && !window.location.pathname.incl
       "This site was created for easy leveling up Steam, you can sell emojis and profile backgrounds for Steam Trading Cards to fast level up.": "Этот сайт был создан для упрощения процесса повышения уровня в Steam. Вы можете продавать предметы Steam за карточки, чтобы повысить уровень.",
       "SteamLevelU is a legitimate platform to buy Steam trading card packs for enhancing Steam account levels, associated with SH Level Up.": "SteamLevelU - это честный сайт, где можно купить наборы карточек Steam для повышения уровней аккаунта в Steam. Она связана с SH Level Up.",
       "SteamLevels is a user-friendly website that helps increase your Steam account level by purchasing card packs and accepting CSGO skins.": "Удобный сайт, который помогает повысить уровень вашей учетной записи Steam путем покупки наборов карточек, принимаются скины CS:GO.",
+      "SkinBid is an online marketplace for CS:GO skins and in-game items, offering buying, selling, and auctioning features with a user-friendly interface.": "Торговая Площадка для скинов и предметов CS:GO, предлагающая возможность покупки, продажи и аукциона с удобным интерфейсом.",
       "Withdraw CS:GO Skins , Crypto or real money!": "Выводите скины CS:GO, криптовалюту или деньги!",
-      "Withdraw CS:GO Skins, Crypto or Real Money!": "Выводите скины CS:GO, криптовалюту или деньги!",
+      "Withdraw CS:GO Skins, C  rypto or Real Money!": "Выводите скины CS:GO, криптовалюту или деньги!",
       "Withdraw CS:GO, Dota 2, TF2 or Rust Items!": "Выводите предметы CS:GO, Dota 2, TF2 или Rust!",
       "Withdraw CS:GO Skins, Crypto or Game Keys!": "Выводите скины CS:GO, криптовалюту или Игры!",
       "Withdraw CS:GO Skins, Crypto or PayPal!": "Выводите скины CS:GO, Криптовалюту или PayPal!",
@@ -255,6 +322,7 @@ if (window.location.pathname.startsWith("/ru") && !window.location.pathname.incl
       "Withdraw CS:GO Skins, Dota 2 and H1Z1 Items!": "Выводите предметы CS:GO, Dota 2 и H1Z1!",
       "Withdraw CS:GO, Rust Skins and Dota 2 Items!": "Выводите предметы CS:GO, Dota 2 и Rust!",
       "Withdraw CS:GO And Rust Skins or Crypto!": "Выводите скины CS:GO, Rust или Крипту!",
+      "Withdraw CS:GO Skins or real Money!": "Выводите скины CS:GO или деньги на Карту!",
       "Withdraw Money, Crypto or PayPal!": "Выводите Деньги, Крипту или PayPal!",
       "Withdraw Money, Crypto or Skins!": "Выводите Деньги, Криптовалюту или Скины!",
       "Withdraw CS:GO Skins or Crypto!": "Выводите скины CS:GO или криптовалюту!",
