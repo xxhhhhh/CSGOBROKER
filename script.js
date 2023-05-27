@@ -178,6 +178,7 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
         "Buy or Sell Skins": "Купить/Продать Скины",
         "Buy or Sell Items": "Купить/Продать Предметы",
         "Marketplaces": "Торговые Площадки",
+        "Instant Sell": "Моментальная Продажа",
         "Buy Items": "Купить Предметы",
         "Sell Items": "Продать Предметы",
         "Trade Items": "Обменять Предметы",
@@ -314,6 +315,10 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
       "SteamLevels is a user-friendly website that helps increase your Steam account level by purchasing card packs and accepting CSGO skins.": "Удобный сайт, который помогает повысить уровень вашей учетной записи Steam путем покупки наборов карточек, принимаются скины CS:GO.",
       "SkinBid is an online marketplace for CS:GO skins and in-game items, offering buying, selling, and auctioning features with a user-friendly interface.": "Торговая Площадка для скинов и предметов CS:GO, предлагающая возможность покупки, продажи и аукциона с удобным интерфейсом.",
       "WhiteMarket is a P2P platform for CS:GO skin trading. It offers secure trades, various deposit options, and community engagement.": "WhiteMarket - это P2P платформа для торговли скинами CS:GO. Безопасные сделки, различные варианты депозита и взаимодействие с сообществом.",
+      "Trusted CS:GO skin platform with rentals, endorsed by YouTubers. Secure, limited to CS:GO skins, fees apply, and user reviews indicate room for improve.": "Надежная платформа для скинов CS:GO с возможностью аренды, рекомендованная Ютуберами. Безопасная, с доступной комиссией.",
+      "SkinSwap is an online platform that allows players to trade and sell skins from popular games such as CS:GO and Rust. Owned and operated by RustySell.": "SkinSwap - онлайн-платформа, которая позволяет игрокам обменивать и продавать скины из популярных игр CS:GO и Rust.",
+      "Tradeit is an online marketplace that offers players the opportunity to trade, buy, and sell skins for a variety of games, including CS:GO. Working since 2017.": "Tradeit - это онлайн-маркетплейс, который предлагает игрокам возможность торговать, покупать и продавать скины для различных игр.",
+      "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.": "CSGOSelly - это сайт, который позволяет быстро продать свои скины CS:GO за деньги через различные способы вывода. Основан в 2021 году.",
       "Withdraw CS:GO Skins , Crypto or real money!": "Выводите скины CS:GO, криптовалюту или деньги!",
       "Withdraw CS:GO Skins, C  rypto or Real Money!": "Выводите скины CS:GO, криптовалюту или деньги!",
       "Withdraw CS:GO, Dota 2, TF2 or Rust Items!": "Выводите предметы CS:GO, Dota 2, TF2 или Rust!",
@@ -324,15 +329,17 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
       "Withdraw CS:GO, Rust Skins and Dota 2 Items!": "Выводите предметы CS:GO, Dota 2 и Rust!",
       "Withdraw CS:GO And Rust Skins or Crypto!": "Выводите скины CS:GO, Rust или Крипту!",
       "Withdraw CS:GO Skins or real Money!": "Выводите скины CS:GO или деньги на Карту!",
+      "Withdraw Steam Trading cards or Games.": "Выводите Steam Trading cards или Игры.",
       "Withdraw USDT, Skins or Real Money!": "Выводите USDT, Скины или Реальные Деньги",
+      "Withdraw Money, CS:GO or Rust Skins!": "Выводите Деньги, скины CS:GO или Rust!",
       "Withdraw Money, Crypto or Skins!": "Выводите Деньги, Криптовалюту или Скины!",
       "Withdraw CS:GO Skins or Crypto!": "Выводите скины CS:GO или криптовалюту!",
       "Withdraw Money, Crypto or PayPal!": "Выводите Деньги, Крипту или PayPal!",
       "WITHDRAW WITH P2P CS:GO SKINS.": "Вывод только скинами CS:GO через P2P!",
       "Withdraw Real Money or Crypto!": "Выводите Реальные Деньги или Крипту!",
       "Withdraw BTC, ETH, USDT or Tron!": "Выводите BTC, ETH, USDT или Tron!",
+      "Withdraw CS:GO Skins or PayPal!": "Выводите скины CS:GO или PayPal!",
       "Withdraw CS:GO Skins and Items!": "Вывод только скинами CS:GO!",
-      "Withdraw Steam Trading cards or Games.": "Выводите Steam Trading cards или Игры.",
       "Withdraw Steam Trading cards.": "Выводите Steam Trading cards.",
       "Visit WebSite": "Посетить Сайт",
       "Visit WebSite or Copy": "Посетить Сайт",
@@ -349,7 +356,7 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
       "Free 0.30$": "0.30$ Бесплатно",
       "Free 0.25$": "0.25$ Бесплатно",
       "Free 0.05$": "0.05$ Бесплатно",
-      "free case": "Бесплатный Кейс",
+      "Free Case": "Бесплатный Кейс",
       "Free 1$": "1$ Бесплатно",
       "Free 2$": "2$ Бесплатно",
       "Free 1$": "1$ Бесплатно",
@@ -361,7 +368,7 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
       var text = elements[j].textContent.trim();
       if (translations.hasOwnProperty(text)) {
         elements[j].innerHTML = translations[text];
-      } else if (text.indexOf('code:') === 0) {
+      } else if (text.indexOf('Code:') === 0) {
         elements[j].innerHTML = 'Код:' + text.substring(5);
       }
     }

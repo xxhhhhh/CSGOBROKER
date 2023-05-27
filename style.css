@@ -889,7 +889,7 @@ nav #pagename:focus {
     font-weight: 500;
     font-size: 15px;
 }
-.instruction code:hover {
+.instruction Code:hover {
     border-top: 1px solid #272727;
     border-bottom: 2px solid #272727;
     background-color: #202020;
@@ -2156,7 +2156,7 @@ footer .centralizer .footer-content {
     width: 100%;
     } 
     ul .submenu li a{
-    padding: 13px 20px;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -2164,7 +2164,7 @@ footer .centralizer .footer-content {
     ul .submenu a {
         text-decoration: none;
         text-transform: uppercase;
-        font-weight: 16px;
+        font-size: 15px;
         font-weight: 600;
     }
     .lang-menu {
