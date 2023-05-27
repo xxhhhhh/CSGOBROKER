@@ -136,7 +136,7 @@ if (!window.location.pathname.includes("/reviews/")) {
 }
 
 
-if ((window.location.pathname.startsWith("/ru") || (window.location.pathname.startsWith("/rust") && window.location.pathname !== "/rust")) && !window.location.pathname.includes("/reviews/")) {
+if ((window.location.pathname.startsWith("/ru/") || window.location.pathname === "/ru.html") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!ru\/)/;
@@ -259,7 +259,7 @@ if (window.location.pathname.includes('/ru/reviews/')) {
   
 }
 
-if (window.location.pathname.startsWith("/ru") && !window.location.pathname.includes("/reviews/")) {
+if ((window.location.pathname.startsWith("/ru/") || window.location.pathname === "/ru.html") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!ru\/)/;
