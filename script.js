@@ -379,78 +379,57 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
 }
 
 
-if ((window.location.pathname === "/in" || window.location.pathname === "/in.html") || (window.location.pathname.startsWith("/in/") || window.location.pathname === "/in") && !window.location.pathname.includes("/reviews/")) {
-  function importDivContent() {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          var divToImport = document.getElementById('csgo-best-sites');
-          divToImport.innerHTML = xhr.responseText;
-        } else {
-          console.error('Не удалось загрузить содержимое div.');
+// if (window.location.pathname === "/in" || window.location.pathname === "/in.html" && !window.location.pathname.includes("/reviews/")) {
+
+
+//   function importDivContent() {
+//     var xhr = new XMLHttpRequest();
+//     xhr.onreadystatechange = function () {
+//       if (xhr.readyState === XMLHttpRequest.DONE) {
+//         if (xhr.status === 200) {
+//           var divToImport = document.getElementById('csgo-best-sites');
+//           divToImport.innerHTML = xhr.responseText;
+//         } else {
+//           console.error('Не удалось загрузить содержимое div.');
+//         }
+//       }
+//     };
+//     xhr.open('GET', '/multitop/csgo-best-sites.html', true);
+//     xhr.send();
+//   }
+  
+  
+//   // Загружаем содержимое из файла при загрузке страницы
+//   window.onload = importDivContent;
+  
+//   }
+
+  if ((window.location.pathname.startsWith("/in/") || window.location.pathname === "/in") && !window.location.pathname.includes("/reviews/")
+  ) {
+    function translateURLs(parentElement) {
+      var translations = {
+        "CSGO500 probably the best CS:GO Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, вероятно, является лучшим сайтом для азартных игр в CS:GO. Здесь регулярно проводятся раздачи и розыгрыши.",
+        "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll - один из самых популярных сайтов, который включает в себя рулетку, крэш и многие другие игры включая ставки на киберспорт.",
+        "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": "CSGOEmpire - один из самых популярных сайтов, предлагающий игру в Рулетку и Монетку. Кроме того, на сайте доступны ставки на матчи.",
+        "Free spins": "ФриСпины"
+      };
+
+      var elements = parentElement.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
+      for (var j = 0; j < elements.length; j++) {
+        var text = elements[j].textContent.trim();
+        if (translations.hasOwnProperty(text)) {
+          elements[j].innerHTML = translations[text];
+        } else if (text.indexOf("Code:") === 0) {
+          elements[j].innerHTML = "Код:" + text.substring(5);
         }
       }
-    };
-    xhr.open('GET', '/multitop/csgo-best-sites.html', true);
-    xhr.send();
-  }
-
-  function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
-    var regex = /^https:\/\/csgobroker\.cc\/(?!in\/)/;
-
-    for (var i = 0; i < links.length; i++) {
-      var href = links[i].getAttribute('href');
-      if (regex.test(href)) {
-        var translatedHref = href.replace("https://csgobroker.cc/", "https://csgobroker.cc/in/");
-        links[i].setAttribute('href', translatedHref);
-      }
     }
-
-    var translations = {
-      "Withdraw CS:GO Skins and Items!": "Вывод только скинами CS:GO!",
-      "Withdraw Steam Trading cards.": "Выводите Steam Trading cards.",
-      "Visit WebSite": "Посетить Сайт",
-      "Visit WebSite or Copy": "Посетить Сайт",
-      "100% deposit bonus": "+100% к Пополнению",
-      "+3% Sell Bonus": "+3% Бонус к Продаже",
-      "5% deposit bonus": "+5% к Пополнению",
-      "5 Free Cases": "5 Бесплатных Кейсов",
-      "Free 50 Gems": "50 Камней Бесплатно",
-      "3 Free Cases": "3 Бесплатных Кейса",
-      "1.5$ for free": "1.5$ Бесплатно",
-      "Free 0.90$": "0.90$ Бесплатно",
-      "Free 0.50$": "0.50$ Бесплатно",
-      "Free 0.40$": "0.40$ Бесплатно",
-      "Free 0.30$": "0.30$ Бесплатно",
-      "Free 0.25$": "0.25$ Бесплатно",
-      "Free 0.05$": "0.05$ Бесплатно",
-      "Free Case": "Бесплатный Кейс",
-      "Free 1$": "1$ Бесплатно",
-      "Free 2$": "2$ Бесплатно",
-      "Free 1$": "1$ Бесплатно",
-      "Free spins": "ФриСпины"
-    };
-
-    var elements = parentElement.querySelectorAll('.box .content p, .box .logobg .best, .box .content button');
-    for (var j = 0; j < elements.length; j++) {
-      var text = elements[j].textContent.trim();
-      if (translations.hasOwnProperty(text)) {
-        elements[j].innerHTML = translations[text];
-      } else if (text.indexOf('Code:') === 0) {
-        elements[j].innerHTML = 'Код:' + text.substring(5);
-      }
+  
+    var SitesList = document.querySelector(".boxes-holder");
+    if (SitesList) {
+      translateURLs(SitesList);
     }
   }
-
-  // Загружаем содержимое из файла при загрузке страницы
-  window.onload = function () {
-    importDivContent();
-    var SitesList = document.querySelector('.boxes-holder');
-    translateURLs(SitesList);
-  };
-}
 
 
 function copyToClipboard(element) {
