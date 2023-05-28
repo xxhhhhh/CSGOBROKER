@@ -623,7 +623,7 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
 
   function importDivContent() {
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
+    xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
           var divToImport = document.getElementById('csgo-best-sites');
@@ -634,9 +634,27 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
         }
       }
     };
+    
     xhr.open('GET', '/multitop/csgo-best-sites.html', true);
     xhr.send();
-  }
+    
+    // Импорт по id=freebies-sites
+    var xhr2 = new XMLHttpRequest();
+    xhr2.onreadystatechange = function() {
+      if (xhr2.readyState === XMLHttpRequest.DONE) {
+        if (xhr2.status === 200) {
+          var divToImport = document.getElementById('freebies-sites');
+          divToImport.innerHTML = xhr2.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        } else {
+          console.error('Не удалось загрузить содержимое div.');
+        }
+      }
+    };
+    
+    xhr2.open('GET', '/multitop/freebies-sites.html', true);
+    xhr2.send();
+  }  
 
   function translateURLs(parentElement) {
     var translations = {
@@ -666,6 +684,24 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
       "Key-Drop is a reputable online gambling platform that offers various activities like Case Battles and Upgrader, as well as custom CSGO skin cases.": "Key-Drop एक प्रमुख ऑनलाइन जुआ प्लेटफॉर्म है जो केस युद्ध और अपग्रेडर के अलावा कस्टम CSGO स्किन केस भी प्रदान करता है।",
       "Farmskins is a well-known CSGO case opening website that has been operating since 2016, offering a wide selection of skins for players to unbox.": "Farmskins एक प्रसिद्ध CSGO केस खोलने वेबसाइट है जो दैनिक रिवॉर्ड, प्रोमो कोड और केस युद्ध जैसी विशेषताएं प्रदान करती है।",
       "Bets4.pro is an online platform that offers users the ability to place bets on esports matches, particularly for CS:GO , Dota 2, Valorant and many more.": "एक ऑनलाइन प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को इस्पोर्ट्स मैचों पर सट्टे लगाने की क्षमता प्रदान करती है, विशेष रूप से CS:GO, Dota 2, Valorant और बहुत सारे अन्य मैचों के लिए।",
+      "This site can be called almost legendary among peers due to its high payouts and constant promotions. Include daily bonus!": "इस साइट को अपने समकक्षों के बीच लगभग अपूर्व कहा जा सकता है क्योंकि इसमें उच्च भुगतान और नियमित प्रचार की सुविधा होती है। रोजाना बोनस भी शामिल करें!",
+      "HowlGG is a Rust skin gambling platform that offers a range of games, including jackpot, coinflip, slots, and live casino games.": "HowlGG एक Rust स्किन जुआ प्लेटफ़ॉर्म है जो जैकपॉट, कॉइनफ्लिप, स्लॉट्स और लाइव कैसीनो खेल समेत विभिन्न खेल प्रदान करता है।",
+      "BanditCamp is a Rust skin gambling website that provides several Rust-themed game modes like wheel of fortune, case unboxings, and coinflip.": "BanditCamp एक Rust स्किन जुआ वेबसाइट है जो व्हील ऑफ़ फ़ॉर्च्यून, केस अनबॉक्सिंग और कॉइनफ्लिप जैसे कई Rust थीम के खेल मोड प्रदान करती है।",
+      "GCSkins is a well-known mobile app and website that offers CSGO skins and items as rewards for completing online tasks. Available since 2016.": "GCSkins एक प्रसिद्ध मोबाइल ऐप और वेबसाइट है जो ऑनलाइन कार्यों को पूरा करने के बदले में CSGO स्किन और आइटम प्रदान करती है। 2016 से उपलब्ध है।",
+      "GrindBux is a trusted platform when you can earn some money by completing surveys or play mobile and desktop games.": "GrindBux एक विश्वसनीय प्लेटफ़ॉर्म है जहां आप सर्वेक्षण पूरा करके या मोबाइल और डेस्कटॉप खेलों का खेलकर कुछ पैसे कमा सकते हैं।",
+      "Rust skin gambling site that has been around since 2017. The platform offers a range of popular games, including high-roller jackpot and coinflip games.": "2017 से चल रही एक Rust स्किन जुआ साइट। इस प्लेटफ़ॉर्म पर लोकप्रिय खेलों की एक विस्तृत विकल्प सुविधा है, जिसमें हाई-रोलर जैकपॉट और कॉइनफ्लिप खेल शामिल हैं।",
+      "RustBet - Trusted gambling site, Rust skins as rewards. Jackpot, coinflip, and skin upgrader games. Clean reputation, SSL encryption, user-friendly.": "RustBet - विश्वसनीय जुआ साइट, पुरस्कार के रूप में Rust स्किन्स। जैकपॉट, कॉइनफ्लिप और स्किन अपग्रेडर खेल। साफ नाम, SSL एन्क्रिप्शन, उपयोगकर्ता के लिए सुविधाजनक।",
+      "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot, and coinflip. Easily enter and withdraw items from games.": "RustStake एक Rust स्किन जुआ प्लेटफ़ॉर्म है जो जैकपॉट और कॉइनफ्लिप समेत विभिन्न खेल प्रदान करता है। आसानी से खेलों से आइटम को दाखिल और निकाल सकते हैं।",
+      "In fact, the progenitor of sites for earning through Steam, stands out for its huge selection of Withdrawal methods.": "वास्तव में, स्टीम के माध्यम से कमाई के लिए साइटों का पितामह, इसके वापसी विधियों के विशाल चयन के लिए मशहूर है।",
+      "RustyLoot offers a variety of games, including Wheel, Plinko, and more. With its transparent and provably fair system, RustyLoot is safe and enjoyable.": "RustyLoot व्हील, प्लिंको और अन्य खेल समेत विविधता प्रदान करता है। अपने पारदर्शी और सत्यापन योग्य सिस्टम के साथ, RustyLoot सुरक्षित और मजेदार है।",
+      "RustChance has been operating since 2017 and offers several popular games, including Jackpot, Wheel, Coinflip, Crash, and Landmines.": "RustChance 2017 से संचालित हो रहा है और जैकपॉट, व्हील, कॉइनफ्लिप, क्रैश और लैंडमाइंस समेत कई लोकप्रिय खेल प्रदान करता है।",
+      "CrashGG focuses on Rust skin gambling and offers various games, including its primary feature, the crash game mode. Also has Duels, Blackjack and Lottery.": "CrashGG Rust स्किन जुआ पर ध्यान केंद्रित होता है और इसमें इसकी प्रमुख विशेषता, क्रैश गेम मोड समेत विभिन्न खेल प्रदान करता है। यहां द्वंद्व, ब्लैकजैक और लॉटरी भी हैं।",
+      "HypeUp is owned by the same operators of two popular betting sites, CSGORoll and HypeDrop. Offers two original games and Slots with Live Games.": "HypeUp दो प्रसिद्ध बेटिंग साइटों, CSGORoll और HypeDrop के समान ऑपरेटर्स के द्वारा स्वामित्व में है। इसमें दो मूलभूत खेल और लाइव गेम के साथ स्लॉट्स प्रदान की जाती है।",
+      "The website has a decent number of survey providers and offerwall partners to choose from, and there are plenty of options for withdrawing earnings.": "वेबसाइट पर उचित संख्या में सर्वेक्षण प्रदाता और ऑफरवॉल साझेदार हैं जिन्हें चुना जा सकता है, और कमाई को निकासी के लिए कई विकल्प हैं।",
+      "SkinSwap is an online platform that allows players to trade and sell skins from popular games such as CS:GO and Rust. Owned and operated by RustySell.": "एक ऑनलाइन प्लेटफ़ॉर्म है जो खिलाड़ियों को CS: GO और Rust जैसे प्रसिद्ध खेलों के स्किन को विनिमय और बेचने की अनुमति देता है। RustySell द्वारा स्वामित्व और संचालित होता है।",
+      "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.": "CSGOSelly एक वेबसाइट है जो उपयोगकर्ताओं को विभिन्न भुगतान विधियों के माध्यम से अपने CSGO स्किन को पैसे में बदलने की अनुमति देती है। इसे 2021 में स्थापित किया गया था।",
+      "Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.": "एक अद्वितीय साइट जहां आप विभिन्न मोबाइल गेमिंग साइबर विषयों में खेल जीतकर पैसे कमा सकते हैं। इसके अलावा कई ऑफरवॉल्स भी हैं।",
+      "RustMoment is a gambling site for Rust skin enthusiasts with six games, bonuses, and a rakeback system. It accepts standard and cryptocurrency payments.": "RustMoment एक रस्ट स्किन प्रशंसकों के लिए एक जुआ साइट है जिसमें छह खेल, बोनस और एक रेकबैक सिस्टम होता है। इसमें मानक और क्रिप्टोकरेंसी भुगतान स्वीकार किए जाते हैं।",
       "Withdraw CS:GO Skins, Crypto or Real Money!": "वापसी करें CS:GO स्किन, क्रिप्टो या वास्तविक धन!",
       "Withdraw CS:GO, Dota 2, TF2 or Rust Items!": "वापसी करें CS:GO, Dota 2, TF2 या Rust आइटम!",
       "Withdraw CS:GO Skins, Crypto or Game Keys!": "वापसी करें CS:GO स्किन, क्रिप्टो या गेम कुंजी!",
@@ -673,10 +709,14 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
       "Withdraw Money, CS:GO, TF2 or Rust Skins!": "वापसी करें धन, CS:GO, TF2 या Rust स्किन!",
       "Withdraw CS:GO Skins, Dota 2 and H1Z1 Items!": "वापसी करें CS:GO स्किन, Dota 2 और H1Z1 आइटम!",
       "Withdraw CS:GO, Rust Skins and Dota 2 Items!": "वापसी करें CS:GO, Rust स्किन और Dota 2 आइटम!",
+      "Withdraw CS:GO Skins, Gift Cards or Crypto!": "CS:GO स्किन, गिफ्ट कार्ड या क्रिप्टो को निकालें!",
+      "Withdraw Rust Skins or Crypto!": "Rust स्किन या क्रिप्टो को निकालें!",
+      "Withdraw Rust Skins and Items!": "Rust स्किन और आइटम को निकालें!",
       "Withdraw CS:GO And Rust Skins or Crypto!": "वापसी करें CS:GO और Rust स्किन या क्रिप्टो!",
       "Withdraw CS:GO Skins or real Money!": "वापसी करें CS:GO स्किन या वास्तविक धन!",
       "Withdraw Steam Trading cards or Games.": "वापसी करें Steam ट्रेडिंग कार्ड या गेम्स।",
       "Withdraw USDT, Skins or Real Money!": "वापसी करें USDT, स्किन या वास्तविक धन!",
+      "Withdraw Crypto, gift cards or real money!": "क्रिप्टो, गिफ्ट कार्ड या वास्तविक धन को निकालें!",
       "Withdraw Money, CS:GO or Rust Skins!": "वापसी करें धन, CS:GO या Rust स्किन!",
       "Withdraw Money, Crypto or Skins!": "वापसी करें धन, क्रिप्टो या स्किन!",
       "Withdraw CS:GO Skins or Crypto!": "वापसी करें CS:GO स्किन या क्रिप्टो!",
@@ -687,6 +727,10 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
       "Withdraw CS:GO Skins or PayPal!": "वापसी करें CS:GO स्किन या PayPal!",
       "Withdraw CS:GO Skins and Items!": "वापसी करें CS:GO स्किन और आइटम!",
       "Withdraw Steam Trading cards.": "Steam ट्रेडिंग कार्ड वापसी करें।",
+      "Withdraw with many-many ways.": "बहुत-सारे तरीकों से निकालें।",
+      "Withdraw Bitcoin, Ethereum or Litecoin!": "बिटकॉइन, एथेरियम या लाइटकॉइन को निकालें!",
+      "Withdraw Games, GiftCards and many more!": "गेम्स, गिफ्ट कार्ड्स और बहुत कुछ को निकालें!",
+      "Withdraw Crypto or Real Money!": "क्रिप्टो या वास्तविक धन को निकालें!",
       "Visit WebSite": "वेबसाइट पर जाएं",
       "Visit WebSite or Copy": "वेबसाइट पर जाएं",
       "100% deposit bonus": "100% जमा बोनस",
@@ -701,11 +745,21 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
       "Free 0.40$": "मुफ्त 0.40 डॉलर",
       "Free 0.30$": "मुफ्त 0.30 डॉलर",
       "Free 0.25$": "मुफ्त 0.25 डॉलर",
+      "Free 0.20$": "मुफ्त 0.20 डॉलर",
+      "Free 0.15$": "मुफ्त 0.15 डॉलर",
       "Free 0.05$": "मुफ्त 0.05 डॉलर",
       "Free Case": "मुफ्त केस",
       "Free 1$": "मुफ्त 1 डॉलर",
+      "Big Daily Giveaways": "रोज़ाना बड़े हद तक दिए जाने वाले उपहार",
+      "Free Case up to 250$": "250$ तक मुफ्त केस",
+      "Daily Giveaway": "रोज़ाना बांटने का इंतेज़ाम",
+      "Free 100 Diamonds": "100 मुफ्त हीरे",
+      "500 coins": "500 सिक्के मुफ्त",
+      "Daily Cases": "रोज़ाना केस",
+      "3 Energy Points": "3 ऊर्जा अंक",
+      "Free 200 Coins": "200 सिक्के मुफ्त",
+      "some free coins": "कुछ मुफ्त सिक्के",
       "Free 2$": "मुफ्त 2 डॉलर",
-      "Free 1$": "मुफ्त 1 डॉलर",
       "Free spins": "मुफ्त स्पिन"
     };
 
