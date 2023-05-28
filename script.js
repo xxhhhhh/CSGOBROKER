@@ -320,7 +320,6 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
       "Tradeit is an online marketplace that offers players the opportunity to trade, buy, and sell skins for a variety of games, including CS:GO. Working since 2017.": "Tradeit - это онлайн-маркетплейс, который предлагает игрокам возможность торговать, покупать и продавать скины для различных игр.",
       "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.": "CSGOSelly - это сайт, который позволяет быстро продать свои скины CS:GO за деньги через различные способы вывода. Основан в 2021 году.",
       "Withdraw CS:GO Skins , Crypto or real money!": "Выводите скины CS:GO, криптовалюту или деньги!",
-      "Withdraw CS:GO Skins, C  rypto or Real Money!": "Выводите скины CS:GO, криптовалюту или деньги!",
       "Withdraw CS:GO, Dota 2, TF2 or Rust Items!": "Выводите предметы CS:GO, Dota 2, TF2 или Rust!",
       "Withdraw CS:GO Skins, Crypto or Game Keys!": "Выводите скины CS:GO, криптовалюту или Игры!",
       "Withdraw CS:GO Skins, Crypto or PayPal!": "Выводите скины CS:GO, Криптовалюту или PayPal!",
@@ -378,58 +377,174 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
   translateURLs(SitesList);
 }
 
+if ((window.location.pathname.startsWith("/hi/") || window.location.pathname === "/hi" || window.location.pathname === "/hi.html") && !window.location.pathname.includes("/reviews/")) {
+  function translateURLs(parentElement) {
+    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
 
-// if (window.location.pathname === "/in" || window.location.pathname === "/in.html" && !window.location.pathname.includes("/reviews/")) {
-
-
-//   function importDivContent() {
-//     var xhr = new XMLHttpRequest();
-//     xhr.onreadystatechange = function () {
-//       if (xhr.readyState === XMLHttpRequest.DONE) {
-//         if (xhr.status === 200) {
-//           var divToImport = document.getElementById('csgo-best-sites');
-//           divToImport.innerHTML = xhr.responseText;
-//         } else {
-//           console.error('Не удалось загрузить содержимое div.');
-//         }
-//       }
-//     };
-//     xhr.open('GET', '/multitop/csgo-best-sites.html', true);
-//     xhr.send();
-//   }
+    for (var i = 0; i < links.length; i++) {
   
-  
-//   // Загружаем содержимое из файла при загрузке страницы
-//   window.onload = importDivContent;
-  
-//   }
-
-  if ((window.location.pathname.startsWith("/in/") || window.location.pathname === "/in") && !window.location.pathname.includes("/reviews/")
-  ) {
-    function translateURLs(parentElement) {
       var translations = {
-        "CSGO500 probably the best CS:GO Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, вероятно, является лучшим сайтом для азартных игр в CS:GO. Здесь регулярно проводятся раздачи и розыгрыши.",
-        "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll - один из самых популярных сайтов, который включает в себя рулетку, крэш и многие другие игры включая ставки на киберспорт.",
-        "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": "CSGOEmpire - один из самых популярных сайтов, предлагающий игру в Рулетку и Монетку. Кроме того, на сайте доступны ставки на матчи.",
-        "Free spins": "ФриСпины"
+        "CS:GO Sites List": "CS:GO साइटों की सूची",
+        "Rust Sites List": "Rust साइटों की सूची",
+        "Dota 2 Sites List": "डोटा 2 साइटों की सूची",
+        "Crypto Sites List": "क्रिप्टो साइटों की सूची",
+        "Freebies Only": "केवल मुफ्त आइटम",
+        "Earning Sites": "आमदनी वाली साइटें",
+        "Steam Sites": "स्टीम से संबंधित साइटें",
+        "Gambling Sites": "जुआ खेलने के लिए साइटें",
+        "Earn by Play CS:GO": "CS:GO खेलकर कमाएं",
+        "All Sites": "सभी साइटें",
+        "Match Betting": "मैच पर शर्त लगाएं",
+        "Case Opening": "केस खोलें",
+        "Roulette": "रूलेट",
+        "Coinflip": "कॉइनफ्लिप",
+        "Crash": "क्रैश",
+        "Casino": "कैसीनो",
+        "Jackpot": "जैकपॉट",
+        "Upgrader": "अपग्रेडर",
+        "Dice": "पासा",
+        "Bonus Types": "बोनस के प्रकार",
+        "Sign Up Bonuses": "साइन अप के बोनस",
+        "Deposit Bonuses": "जमा करने के बोनस",
+        "Daily Rewards": "रोज़ाना की पुरस्कार",
+        "Giveaways": "उपहार",
+        "Offerwall Sites": "ऑफ़रवॉल से संबंधित साइटें",
+        "Earn by Play Sites": "खेलकर कमाने वाली साइटें",
+        "Buy or Sell Skins": "स्किन खरीदें या बेचें",
+        "Buy or Sell Items": "आइटम खरीदें या बेचें",
+        "Marketplaces": "मार्केटप्लेस",
+        "Instant Sell": "तत्काल बेचें",
+        "Buy Items": "आइटम खरीदें",
+        "Sell Items": "आइटम बेचें",
+        "Trade Items": "आइटम विनिमय करें",
+        "Buy Skins": "स्किन खरीदें",
+        "Sell Skins": "स्किन बेचें",
+        "Trade Skins": "स्किन विनिमय करें",
+        "Steam Level Up": "स्टीम स्तर बढ़ाएं",
+        "Buy Steam Games": "स्टीम गेम्स खरीदें"
       };
-
-      var elements = parentElement.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
+  
+      var elements = document.querySelectorAll('.category-box-content span, ul .submenu li a');
       for (var j = 0; j < elements.length; j++) {
         var text = elements[j].textContent.trim();
         if (translations.hasOwnProperty(text)) {
-          elements[j].innerHTML = translations[text];
-        } else if (text.indexOf("Code:") === 0) {
-          elements[j].innerHTML = "Код:" + text.substring(5);
+          if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
+            elements[j].innerHTML = translations[text] + ' <i class="bi bi-caret-right-fill"></i>';
+          } else {
+            elements[j].innerHTML = translations[text];
+          }
         }
       }
     }
+  }
   
-    var SitesList = document.querySelector(".boxes-holder");
-    if (SitesList) {
-      translateURLs(SitesList);
+  var categorySelector = document.querySelector('.category-selector');
+  translateURLs(categorySelector);
+}
+
+
+if ((window.location.pathname.startsWith("/hi/") || window.location.pathname === "/hi" || window.location.pathname === "/hi.html") && !window.location.pathname.includes("/reviews/")) {
+
+  function importDivContent() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          var divToImport = document.getElementById('csgo-best-sites');
+          divToImport.innerHTML = xhr.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        } else {
+          console.error('Не удалось загрузить содержимое div.');
+        }
+      }
+    };
+    xhr.open('GET', '/multitop/csgo-best-sites.html', true);
+    xhr.send();
+  }
+
+  function translateURLs(parentElement) {
+    var translations = {
+      "CSGO500 probably the best CS:GO Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, संभवतः सर्वश्रेष्ठ CS:GO जुआ साइट है। नियमित वर्षवृष्टि, गिफ्टवे और प्रोमोकोड्स। आप कई खेल और स्लॉट्स खेल सकते हैं।",
+      "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll एक लोकप्रिय साइटों में से एक है। जिसमें रूलेट, क्रैश और और भी कई खेल शामिल हैं। अब ई-स्पोर्ट्स बेटिंग का परीक्षण हो रहा है।",
+      "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": "CSGOEmpire एक प्रसिद्ध साइटों में से एक है। जिसमें रूलेट और कॉइनफ्लिप शामिल हैं। 2016 से कार्यरत है। प्राथमिकता में मैच बेटिंग है।",
+      "CSGOPolygon is a legendary site like CSGODouble with classic Roulette, but have Dices, Crash, Slots and even Esports Betting!": "CSGOPolygon CSGODouble की तरह एक पुरानी साइट है जिसमें क्लासिक रूलेट है, लेकिन डाइस, क्रैश, स्लॉट्स और इसी साथ ई-स्पोर्ट्स बेटिंग भी है!",
+      "Gamdom Casino offers a variety of in-house games, innovative social engagement, provably fair system, and good reputation in online gaming.": "Gamdom Casino अपने भीतरी खेलों, अभिनव सामाजिक एंगेजमेंट, प्रमाणित निष्पक्ष तंत्र और ऑनलाइन गेमिंग में अच्छी प्रतिष्ठा के साथ विविधता प्रदान करने वाली एक प्लेटफॉर्म है।",
+      "CSGOPOSITIVE is a famous esports betting site with interesting system of cashback, you can bet skins or money. Has various payments options.": "CSGOPOSITIVE एक प्रसिद्ध ई-स्पोर्ट्स बेटिंग साइट है जिसमें दिलचस्प कैशबैक सिस्टम है, आप स्किन या पैसे पर बेट कर सकते ह",
+      "Rollbit is a new Casino site which includes Sport Betting and many classic games like roulette. Includes Daily Bonuses !": "Rollbit एक नया कैसीनो साइट है जिसमें स्पोर्ट्स बेटिंग और रूलेट जैसे क्लासिक खेल शामिल हैं। रोजाना बोनस भी मिलते हैं!",
+      "CSGOLuck is a licensed CSGO skin gambling site that accepts multiple deposit methods, offering various games and a user-friendly design.": "CSGOLuck एक लाइसेंसधारक CSGO स्किन जुआ साइट है जो कई जमा विधियों को स्वीकार करती है, विभिन्न खेल और एक उपयोगकर्ता-मित्रीपूर्ण डिज़ाइन प्रदान करती है।",
+      "Duelbits is a safe and licensed online casino with a variety of games, sports betting, esports betting, and instant cryptocurrency transactions.": "Duelbits एक सुरक्षित और लाइसेंस प्राप्त ऑनलाइन कैसीनो है जिसमें विभिन्न खेल, स्पोर्ट्स बेटिंग, ई-स्पोर्ट्स बेटिंग और तत्काल क्रिप्टोकरेंसी सौदों की सुविधा है।",
+      "InsaneGG is an online platform that offers a range of CSGO skin gambling games with professionally designed and smooth animations.": "InsaneGG एक ऑनलाइन प्लेटफॉर्म है जो पेशेवर डिज़ाइन की गई और सुविधाजनक एनिमेशन के साथ CSGO स्किन जुआ खेलने की विभिन्न गेम्स प्रदान करती है।",
+      "Rustix - gambling platform for CS:GO and Rust with original games, fair gameplay, bonuses, and impressive animations. Opened in 2023.": "Rustix - CS:GO और Rust के लिए एक जुआ प्लेटफॉर्म है जिसमें मूलभूत खेल, निष्पक्ष गेमप्ले, बोनस और अद्भुत एनिमेशन शामिल हैं। 2023 में खुला है।",
+      "CSGO-Skins is a reputable online platform where users can open custom CS:GO cases and participate in daily Giveaways.": "CSGO-Skins एक प्रमाणित ऑनलाइन प्लेटफॉर्म है जहां उपयोगकर्ता विशेष रूप से तैयार किए गए CS:GO केस खोल सकते हैं और दैनिक गिवअवे में भाग ले सकते हैं।",
+      "FlameCases is an online platform that permits users to open cases for CS:GO and Dota 2. Since its launch in 2017, the website provides various features.": "एक ऑनलाइन प्लेटफॉर्म है जो उपयोगकर्ताओं को CS:GO और Dota 2 के लिए केस खोलने की अनुमति देता है। 2017 में शुरू किए जाने के बाद, वेबसाइट विभिन्न सुविधाएं प्रदान करता है।",
+      "KNIFEX is a CS:GO gambling site that offers a range of game modes, including case opening, case battles, coinflip, crash, clash and many more!": "KNIFEX एक CS:GO जुआ साइट है जो केस खोलने, केस युद्ध, कॉइनफ्लिप, क्रैश, क्लैश और बहुत कुछ जैसे खेल मोड्स की विभिन्नता प्रदान करता है!",
+      "DatDrop is a website that specializes in opening cases that contain skins from CS:GO. Its most prominent feature is the case-opening battles.": "DatDrop एक वेबसाइट है जो CS:GO से स्किन्स शामिल करने वाले केस खोलने पर विशेषाधिकार रखती है। इसकी सबसे प्रमुख विशेषता केस खोलने की युद्ध है।",
+      "DaddySkins is a valid CSGO case opening website that has been in operation since 2017, and it offers Case Openings, Case Battles, and Upgrader.": "DaddySkins एक मान्य CSGO केस खोलने वेबसाइट है जो 2017 से संचालित हो रही है और इसमें केस खोलने, केस युद्ध और अपग्रेडर शामिल हैं।",
+      "Clash.gg is a new CS:GO Gambling site which includes many games like Roulette, Upgrader, Cases and many more !": "Clash.gg एक नया CS:GO जुआ साइट है जिसमें रूलेट, अपग्रेडर, केस और बहुत कुछ जैसे बहुत सारे खेल शामिल हैं!",
+      "HellStore is a platform that allows users to participate in CSGO skin betting through game modes like Coinflip, Jackpot, Upgrader, and Wheel.": "HellStore एक प्लेटफॉर्म है जो मुद्रा और व्हील जैसे खेल मोड्स के माध्यम से CSGO स्किन बेटिंग में भाग लेने की सुविधा प्रदान करती है।",
+      "Hellcase is an online platform that allows users to purchase virtual cases filled with skins and items for various games such as CS:GO, Dota 2, and Rust.": "Hellcase एक ऑनलाइन प्लेटफॉर्म है जो CS:GO, Dota 2 और Rust जैसे विभिन्न खेलों के लिए स्किन्स और आइटम्स से भरे हुए वर्चुअल केस खरीदने की अनुमति देती है।",
+      "CSGOBIG - a gambling site for CS:GO skins with game modes like Jackpot, Coinflip, Roulette, Cases, and Case Battles. Opened in 2015.": "CSGOBIG - CS:GO स्किन्स के साथ जैकपॉट, कॉइनफ्लिप, रूलेट, केस और केस युद्ध जैसे खेल मोड्स के साथ एक जुआ साइट। 2015 में शुरू हुआ है।",
+      "CSGOFast is a CSGO skin gambling site that offers a wide range of exclusive game modes. One of the earliest CSGO gambling sites.": "CSGOFast एक CSGO स्किन्स जुआ साइट है जो विभिन्न अनन्य खेल मोड्स प्रदान करती है। सबसे पहले CSGO जुआ साइटों में से एक।",
+      "CSGOLive is a safe and legitimate CS:GO case opening website with custom cases, daily bonuses, and a Provably Fair system.": "CSGOLive एक सुरक्षित और वैध CS:GO केस खोलने वेबसाइट है जिसमें कस्टम केस, दैनिक बोनस और एक Provably Fair सिस्टम है।",
+      "WTFSkins is a reliable and popular online platform offering unique games, daily rewards, and a simple registration process.": "WTFSkins एक विश्वसनीय और लोकप्रिय ऑनलाइन प्लेटफॉर्म है जो अद्वितीय खेल, दैनिक रिवॉर्ड और एक सरल पंजीकरण प्रक्रिया प्रदान करता है।",
+      "Key-Drop is a reputable online gambling platform that offers various activities like Case Battles and Upgrader, as well as custom CSGO skin cases.": "Key-Drop एक प्रमुख ऑनलाइन जुआ प्लेटफॉर्म है जो केस युद्ध और अपग्रेडर के अलावा कस्टम CSGO स्किन केस भी प्रदान करता है।",
+      "Farmskins is a well-known CSGO case opening website that has been operating since 2016, offering a wide selection of skins for players to unbox.": "Farmskins एक प्रसिद्ध CSGO केस खोलने वेबसाइट है जो दैनिक रिवॉर्ड, प्रोमो कोड और केस युद्ध जैसी विशेषताएं प्रदान करती है।",
+      "Bets4.pro is an online platform that offers users the ability to place bets on esports matches, particularly for CS:GO , Dota 2, Valorant and many more.": "एक ऑनलाइन प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को इस्पोर्ट्स मैचों पर सट्टे लगाने की क्षमता प्रदान करती है, विशेष रूप से CS:GO, Dota 2, Valorant और बहुत सारे अन्य मैचों के लिए।",
+      "Withdraw CS:GO Skins, Crypto or Real Money!": "वापसी करें CS:GO स्किन, क्रिप्टो या वास्तविक धन!",
+      "Withdraw CS:GO, Dota 2, TF2 or Rust Items!": "वापसी करें CS:GO, Dota 2, TF2 या Rust आइटम!",
+      "Withdraw CS:GO Skins, Crypto or Game Keys!": "वापसी करें CS:GO स्किन, क्रिप्टो या गेम कुंजी!",
+      "Withdraw CS:GO Skins, Crypto or PayPal!": "वापसी करें CS:GO स्किन, क्रिप्टो या PayPal!",
+      "Withdraw Money, CS:GO, TF2 or Rust Skins!": "वापसी करें धन, CS:GO, TF2 या Rust स्किन!",
+      "Withdraw CS:GO Skins, Dota 2 and H1Z1 Items!": "वापसी करें CS:GO स्किन, Dota 2 और H1Z1 आइटम!",
+      "Withdraw CS:GO, Rust Skins and Dota 2 Items!": "वापसी करें CS:GO, Rust स्किन और Dota 2 आइटम!",
+      "Withdraw CS:GO And Rust Skins or Crypto!": "वापसी करें CS:GO और Rust स्किन या क्रिप्टो!",
+      "Withdraw CS:GO Skins or real Money!": "वापसी करें CS:GO स्किन या वास्तविक धन!",
+      "Withdraw Steam Trading cards or Games.": "वापसी करें Steam ट्रेडिंग कार्ड या गेम्स।",
+      "Withdraw USDT, Skins or Real Money!": "वापसी करें USDT, स्किन या वास्तविक धन!",
+      "Withdraw Money, CS:GO or Rust Skins!": "वापसी करें धन, CS:GO या Rust स्किन!",
+      "Withdraw Money, Crypto or Skins!": "वापसी करें धन, क्रिप्टो या स्किन!",
+      "Withdraw CS:GO Skins or Crypto!": "वापसी करें CS:GO स्किन या क्रिप्टो!",
+      "Withdraw Money, Crypto or PayPal!": "वापसी करें धन, क्रिप्टो या PayPal!",
+      "WITHDRAW WITH P2P CS:GO SKINS.": "P2P CS:GO स्किन के साथ वापसी करें।",
+      "Withdraw Real Money or Crypto!": "वापसी करें वास्तविक धन या क्रिप्टो!",
+      "Withdraw BTC, ETH, USDT or Tron!": "वापसी करें BTC, ETH, USDT या Tron!",
+      "Withdraw CS:GO Skins or PayPal!": "वापसी करें CS:GO स्किन या PayPal!",
+      "Withdraw CS:GO Skins and Items!": "वापसी करें CS:GO स्किन और आइटम!",
+      "Withdraw Steam Trading cards.": "Steam ट्रेडिंग कार्ड वापसी करें।",
+      "Visit WebSite": "वेबसाइट पर जाएं",
+      "Visit WebSite or Copy": "वेबसाइट पर जाएं",
+      "100% deposit bonus": "100% जमा बोनस",
+      "+3% Sell Bonus": "+3% बेचने का बोनस",
+      "5% deposit bonus": "5% जमा बोनस",
+      "5 Free Cases": "5 मुफ्त केस",
+      "Free 50 Gems": "मुफ्त 50 गेम्स",
+      "3 Free Cases": "3 मुफ्त केस",
+      "1.5$ for free": "1.5 डॉलर मुफ्त में",
+      "Free 0.90$": "मुफ्त 0.90 डॉलर",
+      "Free 0.50$": "मुफ्त 0.50 डॉलर",
+      "Free 0.40$": "मुफ्त 0.40 डॉलर",
+      "Free 0.30$": "मुफ्त 0.30 डॉलर",
+      "Free 0.25$": "मुफ्त 0.25 डॉलर",
+      "Free 0.05$": "मुफ्त 0.05 डॉलर",
+      "Free Case": "मुफ्त केस",
+      "Free 1$": "मुफ्त 1 डॉलर",
+      "Free 2$": "मुफ्त 2 डॉलर",
+      "Free 1$": "मुफ्त 1 डॉलर",
+      "Free spins": "मुफ्त स्पिन"
+    };
+
+    var elements = parentElement.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
+    for (var j = 0; j < elements.length; j++) {
+      var text = elements[j].textContent.trim();
+      if (translations.hasOwnProperty(text)) {
+        elements[j].innerHTML = translations[text];
+      }
     }
   }
+
+  // Загружаем содержимое из файла при загрузке страницы
+  window.onload = importDivContent;
+}
 
 
 function copyToClipboard(element) {
