@@ -319,7 +319,7 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
       "SkinSwap is an online platform that allows players to trade and sell skins from popular games such as CS:GO and Rust. Owned and operated by RustySell.": "SkinSwap - онлайн-платформа, которая позволяет игрокам обменивать и продавать скины из популярных игр CS:GO и Rust.",
       "Tradeit is an online marketplace that offers players the opportunity to trade, buy, and sell skins for a variety of games, including CS:GO. Working since 2017.": "Tradeit - это онлайн-маркетплейс, который предлагает игрокам возможность торговать, покупать и продавать скины для различных игр.",
       "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.": "CSGOSelly - это сайт, который позволяет быстро продать свои скины CS:GO за деньги через различные способы вывода. Основан в 2021 году.",
-      "Withdraw CS:GO Skins , Crypto or real money!": "Выводите скины CS:GO, криптовалюту или деньги!",
+      "Withdraw CS:GO Skins, Crypto or Real Money!": "Выводите скины CS:GO, криптовалюту или деньги!",
       "Withdraw CS:GO, Dota 2, TF2 or Rust Items!": "Выводите предметы CS:GO, Dota 2, TF2 или Rust!",
       "Withdraw CS:GO Skins, Crypto or Game Keys!": "Выводите скины CS:GO, криптовалюту или Игры!",
       "Withdraw CS:GO Skins, Crypto or PayPal!": "Выводите скины CS:GO, Криптовалюту или PayPal!",
@@ -375,6 +375,175 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
 
   var SitesList = document.querySelector('.boxes-holder');
   translateURLs(SitesList);
+}
+
+if ((window.location.pathname.startsWith("/pt/") || window.location.pathname === "/pt" || window.location.pathname === "/pt.html") && !window.location.pathname.includes("/reviews/")) {
+  function translateURLs(parentElement) {
+    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+
+    for (var i = 0; i < links.length; i++) {
+  
+      var translations = {
+        "CS:GO Sites List": "Sites de CS:GO",
+        "Rust Sites List": "Sites de Rust",
+        "Dota 2 Sites List": "Sites de Dota 2",
+        "Crypto Sites List": "Sites de Crypto",
+        "Freebies Only": "Apenas Brindes",
+        "Earning Sites": "Sites para Ganhar",
+        "Steam Sites": "Sites do Steam",
+        "Gambling Sites": "Sites de Jogos de Azar",
+        "Earn by Play CS:GO": "Ganhe Jogando CS:GO",
+        "All Sites": "Todos os Sites",
+        "Match Betting": "Apostas em Jogos",
+        "Case Opening": "Abertura de Caixas",
+        "Roulette": "Roleta",
+        "Coinflip": "Cara ou Coroa",
+        "Crash": "Crash",
+        "Casino": "Cassino",
+        "Jackpot": "Jackpot",
+        "Upgrader": "Upgrader",
+        "Dice": "Dados",
+        "Bonus Types": "Tipos de Bônus",
+        "Sign Up Bonuses": "Bônus de Cadastro",
+        "Deposit Bonuses": "Bônus de Depósito",
+        "Daily Rewards": "Recompensas Diárias",
+        "Giveaways": "Doações",
+        "Offerwall Sites": "Sites de Ofertas",
+        "Earn by Play Sites": "Sites para Ganhar Jogando",
+        "Buy or Sell Skins": "Comprar ou Vender Skins",
+        "Buy or Sell Items": "Comprar ou Vender Itens",
+        "Marketplaces": "Mercados",
+        "Instant Sell": "Venda Imediata",
+        "Buy Items": "Comprar Itens",
+        "Sell Items": "Vender Itens",
+        "Trade Items": "Trocar Itens",
+        "Buy Skins": "Comprar Skins",
+        "Sell Skins": "Vender Skins",
+        "Trade Skins": "Trocar Skins",
+        "Steam Level Up": "Subir de Nível no Steam",
+        "Buy Steam Games": "Comprar Jogos do Steam"
+      };
+  
+      var elements = document.querySelectorAll('.category-box-content span, ul .submenu li a');
+      for (var j = 0; j < elements.length; j++) {
+        var text = elements[j].textContent.trim();
+        if (translations.hasOwnProperty(text)) {
+          if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
+            elements[j].innerHTML = translations[text] + ' <i class="bi bi-caret-right-fill"></i>';
+          } else {
+            elements[j].innerHTML = translations[text];
+          }
+        }
+      }
+    }
+  }
+  
+  var categorySelector = document.querySelector('.category-selector');
+  translateURLs(categorySelector);
+}
+
+
+if ((window.location.pathname.startsWith("/pt/") || window.location.pathname === "/pt" || window.location.pathname === "/pt.html") && !window.location.pathname.includes("/reviews/")) {
+
+  function importDivContent() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          var divToImport = document.getElementById('csgo-best-sites');
+          divToImport.innerHTML = xhr.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        } else {
+          console.error('Не удалось загрузить содержимое div.');
+        }
+      }
+    };
+    xhr.open('GET', '/multitop/csgo-best-sites.html', true);
+    xhr.send();
+  }
+
+  function translateURLs(parentElement) {
+    var translations = {
+      "CSGO500 probably the best CS:GO Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, provavelmente o melhor site de apostas de CS:GO. Chuvas regulares, brindes e códigos promocionais. Você pode jogar muitos jogos e caça-níqueis.",
+      "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll é um dos sites mais populares. Inclui roleta, crash e muitos outros. Agora testando apostas em e-sports.",
+      "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": "CSGOEmpire é um dos sites mais populares. Inclui roleta e coinflip. Trabalhando desde 2016. Aposta em partidas com prioridade.",
+      "CSGOPolygon is a legendary site like CSGODouble with classic Roulette, but have Dices, Crash, Slots and even Esports Betting!": "CSGOPolygon é um site lendário como o CSGODouble, com roleta clássica, mas tem dados, crash, caça-níqueis e até apostas em e-sports!",
+      "Gamdom Casino offers a variety of in-house games, innovative social engagement, provably fair system, and good reputation in online gaming.": "Gamdom Casino oferece uma variedade de jogos internos, envolvimento social inovador, sistema comprovadamente justo e boa reputação nos jogos online.",
+      "CSGOPOSITIVE is a famous esports betting site with interesting system of cashback, you can bet skins or money. Has various payments options.": "Famoso site de apostas em e-sports com um sistema interessante de cashback, você pode apostar skins ou dinheiro. Possui várias opções de pagamento.",
+      "Rollbit is a new Casino site which includes Sport Betting and many classic games like roulette. Includes Daily Bonuses !": "Rollbit é um novo site de cassino que inclui apostas esportivas e muitos jogos clássicos como roleta. Inclui bônus diários!",
+      "CSGOLuck is a licensed CSGO skin gambling site that accepts multiple deposit methods, offering various games and a user-friendly design.": "É um site de apostas de skins de CSGO licenciado que aceita vários métodos de depósito, oferecendo diversos jogos e um design amigável para o usuário.",
+      "Duelbits is a safe and licensed online casino with a variety of games, sports betting, esports betting, and instant cryptocurrency transactions.": "Um cassino online seguro e licenciado com jogos, apostas esportivas, apostas em e-sports e transações de criptomoedas instantâneas.",
+      "InsaneGG is an online platform that offers a range of CSGO skin gambling games with professionally designed and smooth animations.": "Uma plataforma online que oferece jogos de apostas de skins de CSGO com animações profissionalmente projetadas e suaves.",
+      "Rustix - gambling platform for CS:GO and Rust with original games, fair gameplay, bonuses, and impressive animations. Opened in 2023.": "Rustix - plataforma de apostas para CS:GO e Rust com jogos originais, jogabilidade justa, bônus e animações impressionantes. Aberto em 2023.",
+      "CSGO-Skins is a reputable online platform where users can open custom CS:GO cases and participate in daily Giveaways.": "CSGO-Skins é uma plataforma online confiável onde os usuários podem abrir caixas personalizadas de CS:GO e participar de brindes diários.",
+      "FlameCases is an online platform that permits users to open cases for CS:GO and Dota 2. Since its launch in 2017, the website provides various features.": "Uma plataforma online que permite aos usuários abrir caixas para CS:GO e Dota 2 desde 2017, oferecendo várias funcionalidades..",
+      "KNIFEX is a CS:GO gambling site that offers a range of game modes, including case opening, case battles, coinflip, crash, clash and many more!": "Um site de apostas de CS:GO com uma variedade de modos de jogo, incluindo abertura de caixas, batalhas de caixas, coinflip, crash, clash e muito mais!",
+      "DatDrop is a website that specializes in opening cases that contain skins from CS:GO. Its most prominent feature is the case-opening battles.": "DatDrop é um site que se especializa em abrir caixas que contêm skins do CS:GO. Sua característica mais proeminente são as batalhas de abertura de caixas.",      
+      "DaddySkins is a valid CSGO case opening website that has been in operation since 2017, and it offers Case Openings, Case Battles, and Upgrader.": "DaddySkins é um site de abertura de caixas do CSGO que está em operação desde 2017 e oferece Aberturas de Caixas, Batalhas de Caixas e Upgrader.",  
+      "Clash.gg is a new CS:GO Gambling site which includes many games like Roulette, Upgrader, Cases and many more !": "Clash.gg é um novo site de apostas de CS:GO que oferece uma ampla variedade de jogos emocionantes, como Roleta, Upgrader, Caixas e muito mais!",
+      "HellStore is a platform that allows users to participate in CSGO skin betting through game modes like Coinflip, Jackpot, Upgrader, and Wheel.": "HellStore é uma plataforma que permite aos usuários participarem de apostas de skins do CSGO através de modos de jogo como Coinflip, Jackpot e Roleta.",
+      "Hellcase is an online platform that allows users to purchase virtual cases filled with skins and items for various games such as CS:GO, Dota 2, and Rust.": "Hellcase é uma plataforma que permite aos usuários comprar caixas virtuais preenchidas com skins e itens para vários jogos como CS:GO, Dota 2 e Rust.",
+      "CSGOBIG - a gambling site for CS:GO skins with game modes like Jackpot, Coinflip, Roulette, Cases, and Case Battles. Opened in 2015.": "CSGOBIG - um site de apostas de skins do CS:GO com modos de jogo como Jackpot, Coinflip, Roleta, Caixas e Batalhas de Caixas. Aberto em 2015.",
+      "CSGOFast is a CSGO skin gambling site that offers a wide range of exclusive game modes. One of the earliest CSGO gambling sites.": "CSGOFast é um site de apostas de skins do CSGO que oferece uma ampla variedade de modos de jogo exclusivos. Um dos primeiros sites do CSGO.",
+      "CSGOLive is a safe and legitimate CS:GO case opening website with custom cases, daily bonuses, and a Provably Fair system.": "CSGOLive é um site seguro e legítimo de abertura de caixas do CS:GO com caixas personalizadas, bônus diários e um sistema Provably Fair.",
+      "WTFSkins is a reliable and popular online platform offering unique games, daily rewards, and a simple registration process.": "WTFSkins é uma plataforma online confiável e popular que oferece jogos únicos, recompensas diárias e um processo de registro simples.",
+      "Key-Drop is a reputable online gambling platform that offers various activities like Case Battles and Upgrader, as well as custom CSGO skin cases.": "Key-Drop é uma plataforma de apostas online renomada que oferece Batalhas de Caixas, Upgrader e caixas de skins personalizadas do CSGO.",
+      "Farmskins is a well-known CSGO case opening website that has been operating since 2016, offering a wide selection of skins for players to unbox.": "Farmskins é um conhecido site de abertura de caixas do CSGO, operando desde 2016, com ampla seleção de skins para os jogadores.",
+      "Bets4.pro is an online platform that offers users the ability to place bets on esports matches, particularly for CS:GO , Dota 2, Valorant and many more.": "Bets4.pro é uma plataforma online para apostas em esportes eletrônicos, incluindo CS:GO, Dota 2, Valorant e mais.",
+      "Withdraw CS:GO Skins, Crypto or Real Money!": "Retirar Skins do CS:GO, Criptomoedas ou Dinheiro!",
+      "Withdraw CS:GO, Dota 2, TF2 or Rust Items!": "Retirar Itens do CS:GO, Dota 2, TF2 ou Rust!",
+      "Withdraw CS:GO Skins, Crypto or Game Keys!": "Retirar Skins do CS:GO, Criptomoedas ou Jogos!",
+      "Withdraw CS:GO Skins, Crypto or PayPal!": "Retirar Skins do CS:GO, Criptomoedas ou PayPal!",
+      "Withdraw Money, CS:GO, TF2 or Rust Skins!": "Retirar Dinheiro, Skins do CS:GO, TF2 ou Rust!",
+      "Withdraw CS:GO Skins, Dota 2 and H1Z1 Items!": "Retirar Skins do CS:GO, Dota 2 e Itens do H1Z1!",
+      "Withdraw CS:GO, Rust Skins and Dota 2 Items!": "Retirar Skins do CS:GO, Rust e Itens do Dota 2!",
+      "Withdraw CS:GO And Rust Skins or Crypto!": "Retirar Skins do CS:GO e Rust ou Criptomoedas!",
+      "Withdraw CS:GO Skins or real Money!": "Retirar Skins do CS:GO ou Dinheiro Real!",
+      "Withdraw Steam Trading cards or Games.": "Retirar Cartas de Negociação do Steam ou Jogos.",
+      "Withdraw USDT, Skins or Real Money!": "Retirar USDT, Skins ou Dinheiro Real!",
+      "Withdraw Money, CS:GO or Rust Skins!": "Retirar Dinheiro, Skins do CS:GO ou Rust!",
+      "Withdraw Money, Crypto or Skins!": "Retirar Dinheiro, Criptomoedas ou Skins!",
+      "Withdraw CS:GO Skins or Crypto!": "Retirar Skins do CS:GO ou Criptomoedas!",
+      "Withdraw Money, Crypto or PayPal!": "Retirar Dinheiro, Criptomoedas ou PayPal!",
+      "WITHDRAW WITH P2P CS:GO SKINS.": "Retirar com Skins do CS:GO P2P.",
+      "Withdraw Real Money or Crypto!": "Retirar Dinheiro Real ou Criptomoedas!",
+      "Withdraw BTC, ETH, USDT or Tron!": "Retirar BTC, ETH, USDT ou Tron!",
+      "Withdraw CS:GO Skins or PayPal!": "Retirar Skins do CS:GO ou PayPal!",
+      "Withdraw CS:GO Skins and Items!": "Retirar Skins e Itens do CS:GO!",
+      "Withdraw Steam Trading cards.": "Retirar Cartas de Negociação do Steam.",
+      "Visit WebSite": "Visite o Site",
+      "Visit WebSite or Copy": "Visite o Site ou Copie",
+      "100% deposit bonus": "Bônus de depósito de 100%",
+      "+3% Sell Bonus": "Bônus de venda de +3%",
+      "5% deposit bonus": "Bônus de depósito de 5%",
+      "5 Free Cases": "5 Caixas Grátis",
+      "Free 50 Gems": "50 Gemas Grátis",
+      "3 Free Cases": "3 Caixas Grátis",
+      "1.5$ for free": "1,5$ grátis",
+      "Free 0.90$": "0,90$ grátis",
+      "Free 0.50$": "0,50$ grátis",
+      "Free 0.40$": "0,40$ grátis",
+      "Free 0.30$": "0,30$ grátis",
+      "Free 0.25$": "0,25$ grátis",
+      "Free 0.05$": "0,05$ grátis",
+      "Free Case": "Caixa Grátis",
+      "Free 1$": "1$ grátis",
+      "Free 2$": "2$ grátis",
+      "Free 1$": "1$ grátis",
+      "Free spins": "Rodadas Grátis"    
+    };
+
+    var elements = parentElement.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
+    for (var j = 0; j < elements.length; j++) {
+      var text = elements[j].textContent.trim();
+      if (translations.hasOwnProperty(text)) {
+        elements[j].innerHTML = translations[text];
+      }
+    }
+  }
+
+  // Загружаем содержимое из файла при загрузке страницы
+  window.onload = importDivContent;
 }
 
 if ((window.location.pathname.startsWith("/hi/") || window.location.pathname === "/hi" || window.location.pathname === "/hi.html") && !window.location.pathname.includes("/reviews/")) {
