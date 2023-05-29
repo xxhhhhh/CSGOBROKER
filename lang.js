@@ -202,4 +202,21 @@ function importDivContent() {
   };
   xhr7.open('GET', '/multitop/csgo/buy-skins.html', true);
   xhr7.send();
+
+  var xhr8 = new XMLHttpRequest();
+  xhr8.onreadystatechange = function() {
+    if (xhr8.readyState === XMLHttpRequest.DONE) {
+      if (xhr8.status === 200) {
+        var divToImport = document.getElementById('caseopening-csgo');
+        if (divToImport) {
+          divToImport.innerHTML = xhr8.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  xhr8.open('GET', '/multitop/csgo/caseopening.html', true);
+  xhr8.send();
 }
