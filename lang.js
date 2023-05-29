@@ -185,4 +185,21 @@ function importDivContent() {
   };
   xhr6.open('GET', '/multitop/crypto-sites.html', true);
   xhr6.send();
+
+  var xhr7 = new XMLHttpRequest();
+  xhr7.onreadystatechange = function() {
+    if (xhr7.readyState === XMLHttpRequest.DONE) {
+      if (xhr7.status === 200) {
+        var divToImport = document.getElementById('buy-skins-csgo');
+        if (divToImport) {
+          divToImport.innerHTML = xhr7.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  xhr7.open('GET', '/multitop/csgo/buy-skins.html', true);
+  xhr7.send();
 }
