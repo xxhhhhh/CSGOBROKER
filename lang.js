@@ -87,31 +87,34 @@ function importDivContent() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
         var divToImport = document.getElementById('csgo-best-sites');
-        divToImport.innerHTML = xhr.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        if (divToImport) {
+          divToImport.innerHTML = xhr.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
       } else {
         console.error('Не удалось загрузить содержимое div.');
       }
     }
   };
-  
+
   xhr.open('GET', '/multitop/csgo-best-sites.html', true);
   xhr.send();
-  
-  // Импорт по id=freebies-sites
+
   var xhr2 = new XMLHttpRequest();
   xhr2.onreadystatechange = function() {
     if (xhr2.readyState === XMLHttpRequest.DONE) {
       if (xhr2.status === 200) {
         var divToImport = document.getElementById('freebies-sites');
-        divToImport.innerHTML = xhr2.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        if (divToImport) {
+          divToImport.innerHTML = xhr2.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
       } else {
         console.error('Не удалось загрузить содержимое div.');
       }
     }
   };
-  
+
   xhr2.open('GET', '/multitop/freebies-sites.html', true);
   xhr2.send();
 
@@ -120,8 +123,10 @@ function importDivContent() {
     if (xhr3.readyState === XMLHttpRequest.DONE) {
       if (xhr3.status === 200) {
         var divToImport = document.getElementById('earning-sites');
-        divToImport.innerHTML = xhr3.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        if (divToImport) {
+          divToImport.innerHTML = xhr3.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
       } else {
         console.error('Не удалось загрузить содержимое div.');
       }
@@ -135,8 +140,10 @@ function importDivContent() {
     if (xhr4.readyState === XMLHttpRequest.DONE) {
       if (xhr4.status === 200) {
         var divToImport = document.getElementById('rust-sites');
-        divToImport.innerHTML = xhr4.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        if (divToImport) {
+          divToImport.innerHTML = xhr4.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
       } else {
         console.error('Не удалось загрузить содержимое div.');
       }
@@ -150,8 +157,10 @@ function importDivContent() {
     if (xhr5.readyState === XMLHttpRequest.DONE) {
       if (xhr5.status === 200) {
         var divToImport = document.getElementById('dota-sites');
-        divToImport.innerHTML = xhr5.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        if (divToImport) {
+          divToImport.innerHTML = xhr5.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
       } else {
         console.error('Не удалось загрузить содержимое div.');
       }
@@ -159,4 +168,4 @@ function importDivContent() {
   };
   xhr5.open('GET', '/multitop/dota-sites.html', true);
   xhr5.send();
-}  
+}
