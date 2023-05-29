@@ -219,4 +219,21 @@ function importDivContent() {
   };
   xhr8.open('GET', '/multitop/csgo/caseopening.html', true);
   xhr8.send();
+
+  var xhr9 = new XMLHttpRequest();
+  xhr9.onreadystatechange = function() {
+    if (xhr9.readyState === XMLHttpRequest.DONE) {
+      if (xhr9.status === 200) {
+        var divToImport = document.getElementById('casino-csgo');
+        if (divToImport) {
+          divToImport.innerHTML = xhr9.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  xhr9.open('GET', '/multitop/csgo/casino.html', true);
+  xhr9.send();
 }
