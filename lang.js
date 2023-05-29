@@ -236,4 +236,21 @@ function importDivContent() {
   };
   xhr9.open('GET', '/multitop/csgo/casino.html', true);
   xhr9.send();
+
+  var xhr10 = new XMLHttpRequest();
+  xhr10.onreadystatechange = function() {
+    if (xhr10.readyState === XMLHttpRequest.DONE) {
+      if (xhr10.status === 200) {
+        var divToImport = document.getElementById('coinflip-csgo');
+        if (divToImport) {
+          divToImport.innerHTML = xhr10.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  xhr10.open('GET', '/multitop/csgo/coinflip.html', true);
+  xhr10.send();
 }
