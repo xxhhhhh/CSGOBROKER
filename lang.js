@@ -79,3 +79,69 @@ function getCookie(name) {
 }
 
 handleLanguageRedirect();
+
+
+function importDivContent() {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        var divToImport = document.getElementById('csgo-best-sites');
+        divToImport.innerHTML = xhr.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      } else {
+        console.error('Не удалось загрузить содержимое div.');
+      }
+    }
+  };
+  
+  xhr.open('GET', '/multitop/csgo-best-sites.html', true);
+  xhr.send();
+  
+  // Импорт по id=freebies-sites
+  var xhr2 = new XMLHttpRequest();
+  xhr2.onreadystatechange = function() {
+    if (xhr2.readyState === XMLHttpRequest.DONE) {
+      if (xhr2.status === 200) {
+        var divToImport = document.getElementById('freebies-sites');
+        divToImport.innerHTML = xhr2.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      } else {
+        console.error('Не удалось загрузить содержимое div.');
+      }
+    }
+  };
+  
+  xhr2.open('GET', '/multitop/freebies-sites.html', true);
+  xhr2.send();
+
+  var xhr3 = new XMLHttpRequest();
+  xhr3.onreadystatechange = function() {
+    if (xhr3.readyState === XMLHttpRequest.DONE) {
+      if (xhr3.status === 200) {
+        var divToImport = document.getElementById('earning-sites');
+        divToImport.innerHTML = xhr3.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      } else {
+        console.error('Не удалось загрузить содержимое div.');
+      }
+    }
+  };
+  xhr3.open('GET', '/multitop/earning-sites.html', true);
+  xhr3.send();
+
+  var xhr4 = new XMLHttpRequest();
+  xhr4.onreadystatechange = function() {
+    if (xhr4.readyState === XMLHttpRequest.DONE) {
+      if (xhr4.status === 200) {
+        var divToImport = document.getElementById('rust-sites');
+        divToImport.innerHTML = xhr4.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      } else {
+        console.error('Не удалось загрузить содержимое div.');
+      }
+    }
+  };
+  xhr4.open('GET', '/multitop/rust-sites.html', true);
+  xhr4.send();
+}  

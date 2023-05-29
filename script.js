@@ -135,72 +135,6 @@ if (!window.location.pathname.includes("/reviews/")) {
   buttonsContainer.scrollLeft = buttonScrollPosition;
 }
 
-function importDivContent() {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
-        var divToImport = document.getElementById('csgo-best-sites');
-        divToImport.innerHTML = xhr.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
-      } else {
-        console.error('Не удалось загрузить содержимое div.');
-      }
-    }
-  };
-  
-  xhr.open('GET', '/multitop/csgo-best-sites.html', true);
-  xhr.send();
-  
-  // Импорт по id=freebies-sites
-  var xhr2 = new XMLHttpRequest();
-  xhr2.onreadystatechange = function() {
-    if (xhr2.readyState === XMLHttpRequest.DONE) {
-      if (xhr2.status === 200) {
-        var divToImport = document.getElementById('freebies-sites');
-        divToImport.innerHTML = xhr2.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
-      } else {
-        console.error('Не удалось загрузить содержимое div.');
-      }
-    }
-  };
-  
-  xhr2.open('GET', '/multitop/freebies-sites.html', true);
-  xhr2.send();
-
-  var xhr3 = new XMLHttpRequest();
-  xhr3.onreadystatechange = function() {
-    if (xhr3.readyState === XMLHttpRequest.DONE) {
-      if (xhr3.status === 200) {
-        var divToImport = document.getElementById('earning-sites');
-        divToImport.innerHTML = xhr3.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
-      } else {
-        console.error('Не удалось загрузить содержимое div.');
-      }
-    }
-  };
-  xhr3.open('GET', '/multitop/earning-sites.html', true);
-  xhr3.send();
-
-  var xhr4 = new XMLHttpRequest();
-  xhr4.onreadystatechange = function() {
-    if (xhr4.readyState === XMLHttpRequest.DONE) {
-      if (xhr4.status === 200) {
-        var divToImport = document.getElementById('rust-sites');
-        divToImport.innerHTML = xhr4.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
-      } else {
-        console.error('Не удалось загрузить содержимое div.');
-      }
-    }
-  };
-  xhr4.open('GET', '/multitop/rust-sites.html', true);
-  xhr4.send();
-}  
-
-
 if ((window.location.pathname.startsWith("/ru/") || window.location.pathname === "/ru") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
@@ -520,6 +454,7 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
   function translateURLs(parentElement) {
     var translations = {
       "CSGO500 probably the best CS:GO Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, provavelmente o melhor site de apostas de CS:GO. Chuvas regulares, brindes e códigos promocionais. Você pode jogar muitos jogos e caça-níqueis.",
+      "CSGO500 probably the best CS:GO and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, provavelmente o melhor site de apostas de CS:GO. Chuvas regulares, brindes e códigos promocionais. Você pode jogar muitos jogos e caça-níqueis.",
       "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll é um dos sites mais populares. Inclui roleta, crash e muitos outros. Agora testando apostas em e-sports.",
       "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": "CSGOEmpire é um dos sites mais populares. Inclui roleta e coinflip. Trabalhando desde 2016. Aposta em partidas com prioridade.",
       "CSGOPolygon is a legendary site like CSGODouble with classic Roulette, but have Dices, Crash, Slots and even Esports Betting!": "CSGOPolygon é um site lendário como o CSGODouble, com roleta clássica, mas tem dados, crash, caça-níqueis e até apostas em e-sports!",
@@ -573,6 +508,7 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
       "SteamGifts is a legitimate website for Steam Game Giveaways with a supportive community and helpful resources.": "SteamGifts é um site legítimo para sorteios de jogos do Steam, com uma comunidade solidária e recursos úteis.",
       "GrindBux is a trusted platform when you can earn some money by completing surveys or play mobile and desktop games.": "GrindBux é uma plataforma confiável onde você pode ganhar dinheiro ao completar pesquisas ou jogar jogos móveis e de desktop.",
       "RustCases is a trusted Rust gambling site with various game modes, a wide range of cases, and skin withdrawal options. By RustChance owners.": "RustCases é um site confiável de apostas em Rust com diversos modos de jogo, uma ampla seleção de cases e opções de retirada de skins.",
+      "RustClash is a new Rust Gambling site which includes many games like Roulette, Upgrader, Cases and many more !":"RustClash é um novo site de apostas de Rust que inclui muitos jogos como Roleta, Upgrader, Cases e muitos outros!",
       "Withdraw CS:GO Skins, Crypto or Real Money!": "Retirar Skins do CS:GO, Criptomoedas ou Dinheiro!",
       "Withdraw CS:GO, Dota 2, TF2 or Rust Items!": "Retirar Itens do CS:GO, Dota 2, TF2 ou Rust!",
       "Withdraw CS:GO Skins, Crypto or Game Keys!": "Retirar Skins do CS:GO, Criptomoedas ou Jogos!",
@@ -580,6 +516,7 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
       "Withdraw Money, CS:GO, TF2 or Rust Skins!": "Retirar Dinheiro, Skins do CS:GO, TF2 ou Rust!",
       "Withdraw CS:GO Skins, Dota 2 and H1Z1 Items!": "Retirar Skins do CS:GO, Dota 2 e Itens do H1Z1!",
       "Withdraw CS:GO, Rust Skins and Dota 2 Items!": "Retirar Skins do CS:GO, Rust e Itens do Dota 2!",
+      "Withdraw Rust Skins, Crypto or PayPal!": "Saque Skins do Rust, Criptomoedas ou PayPal!",
       "Withdraw Rust Skins or Crypto!": "Retire Skins do Rust ou Criptomoedas!",
       "Withdraw Rust Skins and Items!": "Retire Skins e Itens do Rust!",
       "Withdraw with many-many ways.": "Retirar de várias-muitas maneiras.",
@@ -731,6 +668,7 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
   function translateURLs(parentElement) {
     var translations = {
       "CSGO500 probably the best CS:GO Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, संभवतः सर्वश्रेष्ठ CS:GO जुआ साइट है। नियमित वर्षवृष्टि, गिफ्टवे और प्रोमोकोड्स। आप कई खेल और स्लॉट्स खेल सकते हैं।",
+      "CSGO500 probably the best CS:GO and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, संभवतः सर्वश्रेष्ठ CS:GO जुआ साइट है। नियमित वर्षवृष्टि, गिफ्टवे और प्रोमोकोड्स। आप कई खेल और स्लॉट्स खेल सकते हैं।",
       "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll एक लोकप्रिय साइटों में से एक है। जिसमें रूलेट, क्रैश और और भी कई खेल शामिल हैं। अब ई-स्पोर्ट्स बेटिंग का परीक्षण हो रहा है।",
       "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": "CSGOEmpire एक प्रसिद्ध साइटों में से एक है। जिसमें रूलेट और कॉइनफ्लिप शामिल हैं। 2016 से कार्यरत है। प्राथमिकता में मैच बेटिंग है।",
       "CSGOPolygon is a legendary site like CSGODouble with classic Roulette, but have Dices, Crash, Slots and even Esports Betting!": "CSGOPolygon CSGODouble की तरह एक पुरानी साइट है जिसमें क्लासिक रूलेट है, लेकिन डाइस, क्रैश, स्लॉट्स और इसी साथ ई-स्पोर्ट्स बेटिंग भी है!",
@@ -782,6 +720,8 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
       "Salad is a website that offers users the opportunity to mine wallet and buy giftcards and many more using their computer's processing power." : "Salad एक वेबसाइट है जो उपयोगकर्ताओं को अपने कंप्यूटर की प्रोसेसिंग पावर का उपयोग करके वॉलेट खनन और गिफ्टकार्ड्स खरीदने और बहुत कुछ करने का अवसर प्रदान करती है।",
       "Site from Gamehag owners. Has a decent number of survey providers and offerwall partners to choose from, plenty of options for withdrawing earnings." : "Gamehag मालिकों की वेबसाइट। इसमें विभिन्न सर्वेक्षण प्रदाताओं और ऑफरवॉल पार्टनरों की एक अच्छी संख्या होती है जिनमें से चुनने के लिए, कमाई निकालने के लिए कई विकल्प होते हैं।",
       "SteamGifts is a legitimate website for Steam Game Giveaways with a supportive community and helpful resources." : "SteamGifts एक वैध वेबसाइट है जो Steam गेम गिवअवे के लिए एक सहायक समुदाय और मददगार संसाधनों के साथ है।",
+      "RustCases is a trusted Rust gambling site with various game modes, a wide range of cases, and skin withdrawal options. By RustChance owners.":"RustCases एक भरोसेमंद Rust जुआ साइट है जिसमें विभिन्न खेल मोड, विशाल संख्या में केस, और स्किन निकासी के विकल्प होते हैं। RustChance के मालिकों द्वारा।",
+      "RustClash is a new Rust Gambling site which includes many games like Roulette, Upgrader, Cases and many more !":"RustClash एक नया Rust जुआ साइट है जिसमें रूलेट, अपग्रेडर, केस और अन्य कई खेल शामिल हैं!",
       "Withdraw CS:GO Skins, Crypto or Real Money!": "वापसी करें CS:GO स्किन, क्रिप्टो या वास्तविक धन!",
       "Withdraw CS:GO, Dota 2, TF2 or Rust Items!": "वापसी करें CS:GO, Dota 2, TF2 या Rust आइटम!",
       "Withdraw CS:GO Skins, Crypto or Game Keys!": "वापसी करें CS:GO स्किन, क्रिप्टो या गेम कुंजी!",
@@ -799,6 +739,7 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
       "Withdraw Crypto, gift cards or real money!": "क्रिप्टो, गिफ्ट कार्ड या वास्तविक धन को निकालें!",
       "Withdraw Money, CS:GO or Rust Skins!": "वापसी करें धन, CS:GO या Rust स्किन!",
       "Withdraw Money, Crypto or Skins!": "वापसी करें धन, क्रिप्टो या स्किन!",
+      "Withdraw Rust Skins, Crypto or PayPal!": "Rust स्किन, क्रिप्टो या PayPal निकालें!",
       "Withdraw CS:GO Skins or Crypto!": "वापसी करें CS:GO स्किन या क्रिप्टो!",
       "Withdraw Money, Crypto or PayPal!": "वापसी करें धन, क्रिप्टो या PayPal!",
       "WITHDRAW WITH P2P CS:GO SKINS.": "P2P CS:GO स्किन के साथ वापसी करें।",
