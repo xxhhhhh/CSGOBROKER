@@ -144,4 +144,19 @@ function importDivContent() {
   };
   xhr4.open('GET', '/multitop/rust-sites.html', true);
   xhr4.send();
+
+  var xhr5 = new XMLHttpRequest();
+  xhr5.onreadystatechange = function() {
+    if (xhr5.readyState === XMLHttpRequest.DONE) {
+      if (xhr5.status === 200) {
+        var divToImport = document.getElementById('dota-sites');
+        divToImport.innerHTML = xhr5.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      } else {
+        console.error('Не удалось загрузить содержимое div.');
+      }
+    }
+  };
+  xhr5.open('GET', '/multitop/dota-sites.html', true);
+  xhr5.send();
 }  
