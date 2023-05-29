@@ -183,6 +183,21 @@ function importDivContent() {
   };
   xhr3.open('GET', '/multitop/earning-sites.html', true);
   xhr3.send();
+
+  var xhr4 = new XMLHttpRequest();
+  xhr4.onreadystatechange = function() {
+    if (xhr4.readyState === XMLHttpRequest.DONE) {
+      if (xhr4.status === 200) {
+        var divToImport = document.getElementById('rust-sites');
+        divToImport.innerHTML = xhr4.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      } else {
+        console.error('Не удалось загрузить содержимое div.');
+      }
+    }
+  };
+  xhr4.open('GET', '/multitop/rust-sites.html', true);
+  xhr4.send();
 }  
 
 
@@ -557,6 +572,7 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
       "Site from Gamehag owners. Has a decent number of survey providers and offerwall partners to choose from, plenty of options for withdrawing earnings.": "Site dos proprietários do Gamehag. Oferece provedores de pesquisas, parceiros de oferta e opções de saque dos ganhos.",
       "SteamGifts is a legitimate website for Steam Game Giveaways with a supportive community and helpful resources.": "SteamGifts é um site legítimo para sorteios de jogos do Steam, com uma comunidade solidária e recursos úteis.",
       "GrindBux is a trusted platform when you can earn some money by completing surveys or play mobile and desktop games.": "GrindBux é uma plataforma confiável onde você pode ganhar dinheiro ao completar pesquisas ou jogar jogos móveis e de desktop.",
+      "RustCases is a trusted Rust gambling site with various game modes, a wide range of cases, and skin withdrawal options. By RustChance owners.": "RustCases é um site confiável de apostas em Rust com diversos modos de jogo, uma ampla seleção de cases e opções de retirada de skins.",
       "Withdraw CS:GO Skins, Crypto or Real Money!": "Retirar Skins do CS:GO, Criptomoedas ou Dinheiro!",
       "Withdraw CS:GO, Dota 2, TF2 or Rust Items!": "Retirar Itens do CS:GO, Dota 2, TF2 ou Rust!",
       "Withdraw CS:GO Skins, Crypto or Game Keys!": "Retirar Skins do CS:GO, Criptomoedas ou Jogos!",
