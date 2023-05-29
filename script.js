@@ -135,6 +135,56 @@ if (!window.location.pathname.includes("/reviews/")) {
   buttonsContainer.scrollLeft = buttonScrollPosition;
 }
 
+function importDivContent() {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        var divToImport = document.getElementById('csgo-best-sites');
+        divToImport.innerHTML = xhr.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      } else {
+        console.error('Не удалось загрузить содержимое div.');
+      }
+    }
+  };
+  
+  xhr.open('GET', '/multitop/csgo-best-sites.html', true);
+  xhr.send();
+  
+  // Импорт по id=freebies-sites
+  var xhr2 = new XMLHttpRequest();
+  xhr2.onreadystatechange = function() {
+    if (xhr2.readyState === XMLHttpRequest.DONE) {
+      if (xhr2.status === 200) {
+        var divToImport = document.getElementById('freebies-sites');
+        divToImport.innerHTML = xhr2.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      } else {
+        console.error('Не удалось загрузить содержимое div.');
+      }
+    }
+  };
+  
+  xhr2.open('GET', '/multitop/freebies-sites.html', true);
+  xhr2.send();
+
+  var xhr3 = new XMLHttpRequest();
+  xhr3.onreadystatechange = function() {
+    if (xhr3.readyState === XMLHttpRequest.DONE) {
+      if (xhr3.status === 200) {
+        var divToImport = document.getElementById('earning-sites');
+        divToImport.innerHTML = xhr3.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      } else {
+        console.error('Не удалось загрузить содержимое div.');
+      }
+    }
+  };
+  xhr3.open('GET', '/multitop/earning-sites.html', true);
+  xhr3.send();
+}  
+
 
 if ((window.location.pathname.startsWith("/ru/") || window.location.pathname === "/ru") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
@@ -452,43 +502,6 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
 
 if ((window.location.pathname.startsWith("/pt/") || window.location.pathname === "/pt" || window.location.pathname === "/pt.html") && !window.location.pathname.includes("/reviews/")) {
 
-  function importDivContent() {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          var divToImport = document.getElementById('csgo-best-sites');
-          divToImport.innerHTML = xhr.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
-        } else {
-          console.error('Не удалось загрузить содержимое div.');
-        }
-      }
-    };
-    xhr.open('GET', '/multitop/csgo-best-sites.html', true);
-    xhr.send();
-
-    xhr.open('GET', '/multitop/csgo-best-sites.html', true);
-    xhr.send();
-    
-    // Импорт по id=freebies-sites
-    var xhr2 = new XMLHttpRequest();
-    xhr2.onreadystatechange = function() {
-      if (xhr2.readyState === XMLHttpRequest.DONE) {
-        if (xhr2.status === 200) {
-          var divToImport = document.getElementById('freebies-sites');
-          divToImport.innerHTML = xhr2.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
-        } else {
-          console.error('Не удалось загрузить содержимое div.');
-        }
-      }
-    };
-    
-    xhr2.open('GET', '/multitop/freebies-sites.html', true);
-    xhr2.send();
-  }
-
   function translateURLs(parentElement) {
     var translations = {
       "CSGO500 probably the best CS:GO Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, provavelmente o melhor site de apostas de CS:GO. Chuvas regulares, brindes e códigos promocionais. Você pode jogar muitos jogos e caça-níqueis.",
@@ -679,41 +692,6 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
 
 if ((window.location.pathname.startsWith("/hi/") || window.location.pathname === "/hi" || window.location.pathname === "/hi.html") && !window.location.pathname.includes("/reviews/")) {
 
-  function importDivContent() {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          var divToImport = document.getElementById('csgo-best-sites');
-          divToImport.innerHTML = xhr.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
-        } else {
-          console.error('Не удалось загрузить содержимое div.');
-        }
-      }
-    };
-    
-    xhr.open('GET', '/multitop/csgo-best-sites.html', true);
-    xhr.send();
-    
-    // Импорт по id=freebies-sites
-    var xhr2 = new XMLHttpRequest();
-    xhr2.onreadystatechange = function() {
-      if (xhr2.readyState === XMLHttpRequest.DONE) {
-        if (xhr2.status === 200) {
-          var divToImport = document.getElementById('freebies-sites');
-          divToImport.innerHTML = xhr2.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
-        } else {
-          console.error('Не удалось загрузить содержимое div.');
-        }
-      }
-    };
-    
-    xhr2.open('GET', '/multitop/freebies-sites.html', true);
-    xhr2.send();
-  }  
-
   function translateURLs(parentElement) {
     var translations = {
       "CSGO500 probably the best CS:GO Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, संभवतः सर्वश्रेष्ठ CS:GO जुआ साइट है। नियमित वर्षवृष्टि, गिफ्टवे और प्रोमोकोड्स। आप कई खेल और स्लॉट्स खेल सकते हैं।",
@@ -760,6 +738,14 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
       "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.": "CSGOSelly एक वेबसाइट है जो उपयोगकर्ताओं को विभिन्न भुगतान विधियों के माध्यम से अपने CSGO स्किन को पैसे में बदलने की अनुमति देती है। इसे 2021 में स्थापित किया गया था।",
       "Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.": "एक अद्वितीय साइट जहां आप विभिन्न मोबाइल गेमिंग साइबर विषयों में खेल जीतकर पैसे कमा सकते हैं। इसके अलावा कई ऑफरवॉल्स भी हैं।",
       "RustMoment is a gambling site for Rust skin enthusiasts with six games, bonuses, and a rakeback system. It accepts standard and cryptocurrency payments.": "RustMoment एक रस्ट स्किन प्रशंसकों के लिए एक जुआ साइट है जिसमें छह खेल, बोनस और एक रेकबैक सिस्टम होता है। इसमें मानक और क्रिप्टोकरेंसी भुगतान स्वीकार किए जाते हैं।",
+      "Freeward is a GPT site that provides various opportunities for users to earn rewards through tasks like surveys and watching videos." : "Freeward एक GPT साइट है जो सर्वेक्षण और वीडियो देखकर जैसे कार्यों के माध्यम से उपयोगकर्ताओं को पुरस्कार कमाने के विभिन्न अवसर प्रदान करती है।",
+      "Roobet is an online casino that allows users to play games using cryptocurrency. The platform has a reputation for being legitimate and safe." : "Roobet एक ऑनलाइन कैसीनो है जो उपयोगकर्ताओं को क्रिप्टोकरेंसी का उपयोग करके खेल खेलने की अनुमति देता है। प्लेटफ़ॉर्म का विश्वासयोग्य और सुरक्षित होने का प्रमाण है।",
+      "xplay is a platform that allows CS:GO players to earn skins just by playing on their servers. The platform offers various servers and daily challenges." : "xplay एक प्लेटफ़ॉर्म है जो CS:GO खिलाड़ियों को उनके सर्वर पर खेलकर स्किन कमाने की सुविधा प्रदान करता है। प्लेटफ़ॉर्म में विभिन्न सर्वर और दैनिक चुनौतियाँ होती हैं।",
+      "Established in 2018, it offers jackpot, coinflip, and roulette games with enhanced features, provable fairness, and attractive animations." : "2018 में स्थापित किया गया, यह जैकपॉट, कॉइनफ्लिप और रूलेट खेल प्रदान करता है जिनमें उन्नत सुविधाएं, साबित करने योग्य न्यायता और आकर्षक एनिमेशन होते हैं।",
+      "GameTame is a GPT site that provides rewards for completing various activities and offers. The platform is specifically designed for gamers." : "GameTame एक GPT साइट है जो विभिन्न गतिविधियों और प्रस्तावों के पूरा करने के लिए पुरस्कार प्रदान करती है। प्लेटफ़ॉर्म विशेष रूप से गेमर्स के लिए डिज़ाइन किया गया है।",
+      "Salad is a website that offers users the opportunity to mine wallet and buy giftcards and many more using their computer's processing power." : "Salad एक वेबसाइट है जो उपयोगकर्ताओं को अपने कंप्यूटर की प्रोसेसिंग पावर का उपयोग करके वॉलेट खनन और गिफ्टकार्ड्स खरीदने और बहुत कुछ करने का अवसर प्रदान करती है।",
+      "Site from Gamehag owners. Has a decent number of survey providers and offerwall partners to choose from, plenty of options for withdrawing earnings." : "Gamehag मालिकों की वेबसाइट। इसमें विभिन्न सर्वेक्षण प्रदाताओं और ऑफरवॉल पार्टनरों की एक अच्छी संख्या होती है जिनमें से चुनने के लिए, कमाई निकालने के लिए कई विकल्प होते हैं।",
+      "SteamGifts is a legitimate website for Steam Game Giveaways with a supportive community and helpful resources." : "SteamGifts एक वैध वेबसाइट है जो Steam गेम गिवअवे के लिए एक सहायक समुदाय और मददगार संसाधनों के साथ है।",
       "Withdraw CS:GO Skins, Crypto or Real Money!": "वापसी करें CS:GO स्किन, क्रिप्टो या वास्तविक धन!",
       "Withdraw CS:GO, Dota 2, TF2 or Rust Items!": "वापसी करें CS:GO, Dota 2, TF2 या Rust आइटम!",
       "Withdraw CS:GO Skins, Crypto or Game Keys!": "वापसी करें CS:GO स्किन, क्रिप्टो या गेम कुंजी!",
@@ -789,6 +775,12 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
       "Withdraw Bitcoin, Ethereum or Litecoin!": "बिटकॉइन, एथेरियम या लाइटकॉइन को निकालें!",
       "Withdraw Games, GiftCards and many more!": "गेम्स, गिफ्ट कार्ड्स और बहुत कुछ को निकालें!",
       "Withdraw Crypto or Real Money!": "क्रिप्टो या वास्तविक धन को निकालें!",
+      "Withdraw Crypto and Gift Cards!": "क्रिप्टो और गिफ्ट कार्ड निकालें!",
+      "Withdraw BTC, LTC, USDT, USDC or ETH!": "BTC, LTC, USDT, USDC या ETH निकालें!",
+      "Withdraw CS:GO Skins or Items!": "CS:GO स्किन या आइटम निकालें!",
+      "Withdraw Games, GiftCards or Dota2 & TF2 Items!": "गेम्स, गिफ्ट कार्ड्स या Dota2 और TF2 आइटम निकालें!",
+      "Withdraw Games, GiftCards or Donate to Charity!": "गेम्स, गिफ्ट कार्ड्स या चैरिटी को दान करें!",
+      "Participate in Giveaways and win Steam Games.": "गिवअवे में भाग लें और स्टीम गेम जीतें।",
       "Visit WebSite": "वेबसाइट पर जाएं",
       "Visit WebSite or Copy": "वेबसाइट पर जाएं",
       "100% deposit bonus": "100% जमा बोनस",
@@ -798,6 +790,7 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
       "Free 50 Gems": "मुफ्त 50 गेम्स",
       "3 Free Cases": "3 मुफ्त केस",
       "1.5$ for free": "1.5 डॉलर मुफ्त में",
+      "Free 1.00$": "मुफ्त 1.00 डॉलर",
       "Free 0.90$": "मुफ्त 0.90 डॉलर",
       "Free 0.50$": "मुफ्त 0.50 डॉलर",
       "Free 0.40$": "मुफ्त 0.40 डॉलर",
@@ -805,6 +798,7 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
       "Free 0.25$": "मुफ्त 0.25 डॉलर",
       "Free 0.20$": "मुफ्त 0.20 डॉलर",
       "Free 0.15$": "मुफ्त 0.15 डॉलर",
+      "Free 0.10$": "मुफ्त 0.10 डॉलर",
       "Free 0.05$": "मुफ्त 0.05 डॉलर",
       "Free Case": "मुफ्त केस",
       "Free 1$": "मुफ्त 1 डॉलर",
@@ -818,7 +812,10 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
       "Free 200 Coins": "200 सिक्के मुफ्त",
       "some free coins": "कुछ मुफ्त सिक्के",
       "Free 2$": "मुफ्त 2 डॉलर",
-      "Free spins": "मुफ्त स्पिन"
+      "Free spins": "मुफ्त स्पिन",
+      "Offerwall": "ऑफरवॉल",
+      "x2 Mining Rate": "x2 खनन दर",
+      "Games Giveaways": "गेम्स गिवअवे"
     };
 
     var elements = parentElement.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
