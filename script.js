@@ -467,6 +467,26 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
     };
     xhr.open('GET', '/multitop/csgo-best-sites.html', true);
     xhr.send();
+
+    xhr.open('GET', '/multitop/csgo-best-sites.html', true);
+    xhr.send();
+    
+    // Импорт по id=freebies-sites
+    var xhr2 = new XMLHttpRequest();
+    xhr2.onreadystatechange = function() {
+      if (xhr2.readyState === XMLHttpRequest.DONE) {
+        if (xhr2.status === 200) {
+          var divToImport = document.getElementById('freebies-sites');
+          divToImport.innerHTML = xhr2.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        } else {
+          console.error('Не удалось загрузить содержимое div.');
+        }
+      }
+    };
+    
+    xhr2.open('GET', '/multitop/freebies-sites.html', true);
+    xhr2.send();
   }
 
   function translateURLs(parentElement) {
@@ -497,6 +517,24 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
       "Key-Drop is a reputable online gambling platform that offers various activities like Case Battles and Upgrader, as well as custom CSGO skin cases.": "Key-Drop é uma plataforma de apostas online renomada que oferece Batalhas de Caixas, Upgrader e caixas de skins personalizadas do CSGO.",
       "Farmskins is a well-known CSGO case opening website that has been operating since 2016, offering a wide selection of skins for players to unbox.": "Farmskins é um conhecido site de abertura de caixas do CSGO, operando desde 2016, com ampla seleção de skins para os jogadores.",
       "Bets4.pro is an online platform that offers users the ability to place bets on esports matches, particularly for CS:GO , Dota 2, Valorant and many more.": "Bets4.pro é uma plataforma online para apostas em esportes eletrônicos, incluindo CS:GO, Dota 2, Valorant e mais.",
+      "This site can be called almost legendary among peers due to its high payouts and constant promotions. Include daily bonus!" : "Este site pode ser considerado quase lendário entre os colegas devido aos seus pagamentos elevados e promoções constantes. Inclui bônus diário!",
+      "HowlGG is a Rust skin gambling platform that offers a range of games, including jackpot, coinflip, slots, and live casino games." : "HowlGG é uma plataforma de jogos de apostas de skins do Rust que oferece uma variedade de jogos, incluindo jackpot, coinflip, slots e jogos de cassino.",
+      "BanditCamp is a Rust skin gambling website that provides several Rust-themed game modes like wheel of fortune, case unboxings, and coinflip." : "BanditCamp é um site de apostas de skins do Rust que oferece vários modos de jogo temáticos do Rust, como roda da fortuna, abertura de caixas e coinflip.",
+      "GCSkins is a well-known mobile app and website that offers CSGO skins and items as rewards for completing online tasks. Available since 2016." : "GCSkins é um aplicativo móvel e um site bem conhecidos que oferecem skins e itens de CSGO como recompensa por completar tarefas online.",
+      "GrindBux is a trusted platform where you can earn some money by completing surveys or play mobile and desktop games." : "GrindBux é uma plataforma confiável onde você pode ganhar dinheiro completando pesquisas ou jogando jogos para dispositivos móveis e desktop.",
+      "Rust skin gambling site that has been around since 2017. The platform offers a range of popular games, including high-roller jackpot and coinflip games." : "Site de apostas de skins do Rust em operação desde 2017. Oferece variedade de jogos populares, incluindo jackpot e coinflip.",
+      "RustBet - Trusted gambling site, Rust skins as rewards. Jackpot, coinflip, and skin upgrader games. Clean reputation, SSL encryption, user-friendly." : "RustBet - Site confiável de apostas com skins do Rust. Jogos de jackpot, coinflip e aprimoramento. Reputação sólida, criptografia SSL, interface amigável.",
+      "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot and coinflip. Easily enter and withdraw items from games." : "RustStake é uma plataforma de jogos de apostas de skins do Rust que oferece uma variedade de jogos, incluindo jackpot e coinflip. Entre e retire itens dos jogos com facilidade.",
+      "In fact, the progenitor of sites for earning through Steam, stands out for its huge selection of Withdrawal methods." : "Na verdade, o precursor de sites para ganhar dinheiro através do Steam, destaca-se pela enorme seleção de métodos de saque.",
+      "RustyLoot offers a variety of games, including Wheel, Plinko, and more. With its transparent and provably fair system, RustyLoot is safe and enjoyable." : "RustyLoot oferece vários jogos, incluindo Roleta, Plinko e mais. Seguro e divertido, com sistema transparente e justo.",
+      "RustChance has been operating since 2017 and offers several popular games, including Jackpot, Wheel, Coinflip, Crash, and Landmines.":"O RustChance está em operação desde 2017 e oferece vários jogos populares, incluindo Jackpot, Roleta, Cara ou Coroa, Queda e Campo Minado.",
+      "CrashGG focuses on Rust skin gambling and offers various games, including its primary feature, the crash game mode. Also has Duels, Blackjack and Lottery.":"O CrashGG é especializado em apostas de skins do Rust, com vários jogos, incluindo o modo crash. Também tem Duelos, Blackjack e Loteria.",
+      "HypeUp is owned by the same operators of two popular betting sites, CSGORoll and HypeDrop. Offers two original games and Slots with Live Games.":"O HypeUp é de propriedade dos operadores de CSGORoll e HypeDrop, oferece dois jogos originais e Slots com Jogos Ao Vivo.",
+      "The website has a decent number of survey providers and offerwall partners to choose from, and there are plenty of options for withdrawing earnings.":"O site possui um número razoável de provedores de pesquisas e parceiros de oferta para escolher, e há muitas opções para sacar os ganhos.",
+      "SkinSwap is an online platform that allows players to trade and sell skins from popular games such as CS:GO and Rust. Owned and operated by RustySell.":"O SkinSwap é uma plataforma online para negociar e vender skins de jogos populares como CS:GO e Rust, pertencente à RustySell.",
+      "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.":"CSGOSelly é um site que permite aos usuários converter suas skins de CSGO em dinheiro através de vários métodos de pagamento. Foi fundado em 2021.",
+      "Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.":"Um site único onde você pode ganhar dinheiro ganhando jogos em várias disciplinas cibernéticas de jogos móveis. Também possui muitos offerwalls.",
+      "RustMoment is a gambling site for Rust skin enthusiasts with six games, bonuses, and a rakeback system. It accepts standard and cryptocurrency payments.":"RustMoment é um site de apostas para entusiastas de skins do Rust com seis jogos, bônus e pagamentos em moeda padrão e criptomoeda.",
       "Withdraw CS:GO Skins, Crypto or Real Money!": "Retirar Skins do CS:GO, Criptomoedas ou Dinheiro!",
       "Withdraw CS:GO, Dota 2, TF2 or Rust Items!": "Retirar Itens do CS:GO, Dota 2, TF2 ou Rust!",
       "Withdraw CS:GO Skins, Crypto or Game Keys!": "Retirar Skins do CS:GO, Criptomoedas ou Jogos!",
@@ -504,6 +542,14 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
       "Withdraw Money, CS:GO, TF2 or Rust Skins!": "Retirar Dinheiro, Skins do CS:GO, TF2 ou Rust!",
       "Withdraw CS:GO Skins, Dota 2 and H1Z1 Items!": "Retirar Skins do CS:GO, Dota 2 e Itens do H1Z1!",
       "Withdraw CS:GO, Rust Skins and Dota 2 Items!": "Retirar Skins do CS:GO, Rust e Itens do Dota 2!",
+      "Withdraw Rust Skins or Crypto!": "Retire Skins do Rust ou Criptomoedas!",
+      "Withdraw Rust Skins and Items!": "Retire Skins e Itens do Rust!",
+      "Withdraw with many-many ways.": "Retirar de várias-muitas maneiras.",
+      "Withdraw Crypto, gift cards or real money!": "Retire Crypto, cartões presente ou dinheiro!",
+      "Withdraw CS:GO Skins, Gift Cards or Crypto!": "Retire Skins, Cartões Presente ou Criptomoedas!",
+      "Withdraw Bitcoin, Ethereum or Litecoin!": "Retire Bitcoin, Ethereum ou Litecoin!",
+      "Withdraw Games, GiftCards and many more!": "Retire Jogos, Cartões Presente e muito mais!",
+      "Withdraw Crypto or Real Money!": "Retire Criptomoedas ou Dinheiro Real!",
       "Withdraw CS:GO And Rust Skins or Crypto!": "Retirar Skins do CS:GO e Rust ou Criptomoedas!",
       "Withdraw CS:GO Skins or real Money!": "Retirar Skins do CS:GO ou Dinheiro Real!",
       "Withdraw Steam Trading cards or Games.": "Retirar Cartas de Negociação do Steam ou Jogos.",
@@ -532,12 +578,24 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
       "Free 0.40$": "0,40$ grátis",
       "Free 0.30$": "0,30$ grátis",
       "Free 0.25$": "0,25$ grátis",
+      "Free 0.20$": "0,20$ grátis",
+      "Free 0.15$": "0,15$ grátis",
       "Free 0.05$": "0,05$ grátis",
       "Free Case": "Caixa Grátis",
       "Free 1$": "1$ grátis",
       "Free 2$": "2$ grátis",
       "Free 1$": "1$ grátis",
-      "Free spins": "Rodadas Grátis"    
+      "Big Daily Giveaways": "Grandes Sorteios Diários",
+      "Free Case up to 250$": "Caixa Grátis até 250$",
+      "Daily Giveaway": "Sorteio Diário",
+      "Free 100 Diamonds": "100 Diamantes Grátis",
+      "500 coins": "500 moedas",
+      "Daily Cases": "Caixas Diárias",
+      "3 Energy Points": "3 Pontos de Energia",
+      "Free 200 Coins": "200 Moedas Grátis",
+      "some free coins": "algumas moedas grátis",      
+      "Free 2$": "2$ Grátis",
+      "Free spins": "Rodadas Grátis"
     };
 
     var elements = parentElement.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
