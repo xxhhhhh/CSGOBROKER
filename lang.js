@@ -92,7 +92,7 @@ function importDivContent() {
           translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
         }
       } else {
-        console.error('Не удалось загрузить содержимое div.');
+        console.error('Cant load div.');
       }
     }
   };
@@ -110,7 +110,7 @@ function importDivContent() {
           translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
         }
       } else {
-        console.error('Не удалось загрузить содержимое div.');
+        console.error('Cant load div.');
       }
     }
   };
@@ -128,7 +128,7 @@ function importDivContent() {
           translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
         }
       } else {
-        console.error('Не удалось загрузить содержимое div.');
+        console.error('Cant load div.');
       }
     }
   };
@@ -145,7 +145,7 @@ function importDivContent() {
           translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
         }
       } else {
-        console.error('Не удалось загрузить содержимое div.');
+        console.error('Cant load div.');
       }
     }
   };
@@ -162,10 +162,27 @@ function importDivContent() {
           translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
         }
       } else {
-        console.error('Не удалось загрузить содержимое div.');
+        console.error('Cant load div.');
       }
     }
   };
   xhr5.open('GET', '/multitop/dota-sites.html', true);
   xhr5.send();
+
+  var xhr6 = new XMLHttpRequest();
+  xhr6.onreadystatechange = function() {
+    if (xhr6.readyState === XMLHttpRequest.DONE) {
+      if (xhr6.status === 200) {
+        var divToImport = document.getElementById('crypto-sites');
+        if (divToImport) {
+          divToImport.innerHTML = xhr6.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  xhr6.open('GET', '/multitop/crypto-sites.html', true);
+  xhr6.send();
 }
