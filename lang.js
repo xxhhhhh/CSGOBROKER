@@ -355,4 +355,89 @@ function importDivContent() {
   };
   marketplacescsgo.open('GET', '/multitop/csgo/marketplaces.html', true);
   marketplacescsgo.send();
+
+  var matchbettingcsgo = new XMLHttpRequest();
+  matchbettingcsgo.onreadystatechange = function() {
+    if (matchbettingcsgo.readyState === XMLHttpRequest.DONE) {
+      if (matchbettingcsgo.status === 200) {
+        var divToImport = document.getElementById('matchbetting-csgo');
+        if (divToImport) {
+          divToImport.innerHTML = matchbettingcsgo.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  matchbettingcsgo.open('GET', '/multitop/csgo/matchbetting.html', true);
+  matchbettingcsgo.send();
+
+  var roulettecsgo = new XMLHttpRequest();
+  roulettecsgo.onreadystatechange = function() {
+    if (roulettecsgo.readyState === XMLHttpRequest.DONE) {
+      if (roulettecsgo.status === 200) {
+        var divToImport = document.getElementById('roulette-csgo');
+        if (divToImport) {
+          divToImport.innerHTML = roulettecsgo.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  roulettecsgo.open('GET', '/multitop/csgo/roulette.html', true);
+  roulettecsgo.send();
+
+  var sellskinscsgo = new XMLHttpRequest();
+  sellskinscsgo.onreadystatechange = function() {
+    if (sellskinscsgo.readyState === XMLHttpRequest.DONE) {
+      if (sellskinscsgo.status === 200) {
+        var divToImport = document.getElementById('sell-skins-csgo');
+        if (divToImport) {
+          divToImport.innerHTML = sellskinscsgo.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  sellskinscsgo.open('GET', '/multitop/csgo/sell-skins.html', true);
+  sellskinscsgo.send();
+
+  var tradeskinscsgo = new XMLHttpRequest();
+  tradeskinscsgo.onreadystatechange = function() {
+    if (tradeskinscsgo.readyState === XMLHttpRequest.DONE) {
+      if (tradeskinscsgo.status === 200) {
+        var divToImport = document.getElementById('trade-skins-csgo');
+        if (divToImport) {
+          divToImport.innerHTML = tradeskinscsgo.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  tradeskinscsgo.open('GET', '/multitop/csgo/trade-skins.html', true);
+  tradeskinscsgo.send();
+
+  var upgradercsgo = new XMLHttpRequest();
+  upgradercsgo.onreadystatechange = function() {
+    if (upgradercsgo.readyState === XMLHttpRequest.DONE) {
+      if (upgradercsgo.status === 200) {
+        var divToImport = document.getElementById('upgrader-csgo');
+        if (divToImport) {
+          divToImport.innerHTML = upgradercsgo.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  upgradercsgo.open('GET', '/multitop/csgo/upgrader.html', true);
+  upgradercsgo.send();
 }
