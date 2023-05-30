@@ -270,4 +270,21 @@ function importDivContent() {
   };
   xhr11.open('GET', '/multitop/csgo/crash.html', true);
   xhr11.send();
+
+  var dicecsgo = new XMLHttpRequest();
+  dicecsgo.onreadystatechange = function() {
+    if (dicecsgo.readyState === XMLHttpRequest.DONE) {
+      if (dicecsgo.status === 200) {
+        var divToImport = document.getElementById('dice-csgo');
+        if (divToImport) {
+          divToImport.innerHTML = dicecsgo.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  dicecsgo.open('GET', '/multitop/csgo/dice.html', true);
+  dicecsgo.send();
 }
