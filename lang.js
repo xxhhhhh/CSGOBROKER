@@ -287,4 +287,21 @@ function importDivContent() {
   };
   dicecsgo.open('GET', '/multitop/csgo/dice.html', true);
   dicecsgo.send();
+
+  var earnbyplaycsgo = new XMLHttpRequest();
+  earnbyplaycsgo.onreadystatechange = function() {
+    if (earnbyplaycsgo.readyState === XMLHttpRequest.DONE) {
+      if (earnbyplaycsgo.status === 200) {
+        var divToImport = document.getElementById('earn-by-play-csgo');
+        if (divToImport) {
+          divToImport.innerHTML = earnbyplaycsgo.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  earnbyplaycsgo.open('GET', '/multitop/csgo/earn-by-play-csgo.html', true);
+  earnbyplaycsgo.send();
 }
