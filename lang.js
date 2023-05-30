@@ -474,4 +474,72 @@ function importDivContent() {
   };
   offerwalls.open('GET', '/multitop/earning/offerwalls.html', true);
   offerwalls.send();
+
+  var dailyrewards = new XMLHttpRequest();
+  dailyrewards.onreadystatechange = function() {
+    if (dailyrewards.readyState === XMLHttpRequest.DONE) {
+      if (dailyrewards.status === 200) {
+        var divToImport = document.getElementById('daily-rewards-list');
+        if (divToImport) {
+          divToImport.innerHTML = dailyrewards.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  dailyrewards.open('GET', '/multitop/freebies/daily-rewards.html', true);
+  dailyrewards.send();
+
+  var depositbonuses = new XMLHttpRequest();
+  depositbonuses.onreadystatechange = function() {
+    if (depositbonuses.readyState === XMLHttpRequest.DONE) {
+      if (depositbonuses.status === 200) {
+        var divToImport = document.getElementById('deposit-bonuses-list');
+        if (divToImport) {
+          divToImport.innerHTML = depositbonuses.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  depositbonuses.open('GET', '/multitop/freebies/deposit-bonuses.html', true);
+  depositbonuses.send();
+
+  var giveaways = new XMLHttpRequest();
+  giveaways.onreadystatechange = function() {
+    if (giveaways.readyState === XMLHttpRequest.DONE) {
+      if (giveaways.status === 200) {
+        var divToImport = document.getElementById('giveaways-list');
+        if (divToImport) {
+          divToImport.innerHTML = giveaways.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  giveaways.open('GET', '/multitop/freebies/giveaways.html', true);
+  giveaways.send();
+
+  var signupbonuses = new XMLHttpRequest();
+  signupbonuses.onreadystatechange = function() {
+    if (signupbonuses.readyState === XMLHttpRequest.DONE) {
+      if (signupbonuses.status === 200) {
+        var divToImport = document.getElementById('sign-up-bonuses-list');
+        if (divToImport) {
+          divToImport.innerHTML = signupbonuses.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  signupbonuses.open('GET', '/multitop/freebies/sign-up-bonuses.html', true);
+  signupbonuses.send();
 }
