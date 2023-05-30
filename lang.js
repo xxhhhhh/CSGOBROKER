@@ -253,4 +253,21 @@ function importDivContent() {
   };
   xhr10.open('GET', '/multitop/csgo/coinflip.html', true);
   xhr10.send();
+
+  var xhr11 = new XMLHttpRequest();
+  xhr11.onreadystatechange = function() {
+    if (xhr11.readyState === XMLHttpRequest.DONE) {
+      if (xhr11.status === 200) {
+        var divToImport = document.getElementById('crash-csgo');
+        if (divToImport) {
+          divToImport.innerHTML = xhr11.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  xhr11.open('GET', '/multitop/csgo/crash.html', true);
+  xhr11.send();
 }
