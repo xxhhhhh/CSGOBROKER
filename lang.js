@@ -304,4 +304,21 @@ function importDivContent() {
   };
   earnbyplaycsgo.open('GET', '/multitop/csgo/earn-by-play-csgo.html', true);
   earnbyplaycsgo.send();
+
+  var instantsellcsgo = new XMLHttpRequest();
+  instantsellcsgo.onreadystatechange = function() {
+    if (instantsellcsgo.readyState === XMLHttpRequest.DONE) {
+      if (instantsellcsgo.status === 200) {
+        var divToImport = document.getElementById('instant-sell-csgo');
+        if (divToImport) {
+          divToImport.innerHTML = instantsellcsgo.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  instantsellcsgo.open('GET', '/multitop/csgo/instant-sell.html', true);
+  instantsellcsgo.send();
 }
