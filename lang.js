@@ -542,4 +542,21 @@ function importDivContent() {
   };
   signupbonuses.open('GET', '/multitop/freebies/sign-up-bonuses.html', true);
   signupbonuses.send();
+
+  var steamlevelup = new XMLHttpRequest();
+  steamlevelup.onreadystatechange = function() {
+    if (steamlevelup.readyState === XMLHttpRequest.DONE) {
+      if (steamlevelup.status === 200) {
+        var divToImport = document.getElementById('levelup-list');
+        if (divToImport) {
+          divToImport.innerHTML = steamlevelup.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  steamlevelup.open('GET', '/multitop/steam/levelup.html', true);
+  steamlevelup.send();
 }
