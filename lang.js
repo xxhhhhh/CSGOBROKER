@@ -338,4 +338,21 @@ function importDivContent() {
   };
   jackpotcsgo.open('GET', '/multitop/csgo/jackpot.html', true);
   jackpotcsgo.send();
+
+  var marketplacescsgo = new XMLHttpRequest();
+  marketplacescsgo.onreadystatechange = function() {
+    if (marketplacescsgo.readyState === XMLHttpRequest.DONE) {
+      if (marketplacescsgo.status === 200) {
+        var divToImport = document.getElementById('marketplaces-csgo');
+        if (divToImport) {
+          divToImport.innerHTML = marketplacescsgo.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  marketplacescsgo.open('GET', '/multitop/csgo/marketplaces.html', true);
+  marketplacescsgo.send();
 }
