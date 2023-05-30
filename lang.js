@@ -440,4 +440,38 @@ function importDivContent() {
   };
   upgradercsgo.open('GET', '/multitop/csgo/upgrader.html', true);
   upgradercsgo.send();
+
+  var earnbyplay = new XMLHttpRequest();
+  earnbyplay.onreadystatechange = function() {
+    if (earnbyplay.readyState === XMLHttpRequest.DONE) {
+      if (earnbyplay.status === 200) {
+        var divToImport = document.getElementById('earn-by-play-sites');
+        if (divToImport) {
+          divToImport.innerHTML = earnbyplay.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  earnbyplay.open('GET', '/multitop/earning/earn-by-play.html', true);
+  earnbyplay.send();
+
+  var offerwalls = new XMLHttpRequest();
+  offerwalls.onreadystatechange = function() {
+    if (offerwalls.readyState === XMLHttpRequest.DONE) {
+      if (offerwalls.status === 200) {
+        var divToImport = document.getElementById('offerwalls-list');
+        if (divToImport) {
+          divToImport.innerHTML = offerwalls.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  offerwalls.open('GET', '/multitop/earning/offerwalls.html', true);
+  offerwalls.send();
 }
