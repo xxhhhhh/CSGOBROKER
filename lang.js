@@ -559,4 +559,89 @@ function importDivContent() {
   };
   steamlevelup.open('GET', '/multitop/steam/levelup.html', true);
   steamlevelup.send();
+
+  var cryptocasino = new XMLHttpRequest();
+  cryptocasino.onreadystatechange = function() {
+    if (cryptocasino.readyState === XMLHttpRequest.DONE) {
+      if (cryptocasino.status === 200) {
+        var divToImport = document.getElementById('casino-crypto');
+        if (divToImport) {
+          divToImport.innerHTML = cryptocasino.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  cryptocasino.open('GET', '/multitop/crypto/casino.html', true);
+  cryptocasino.send();
+
+  var cryptocoinflip = new XMLHttpRequest();
+  cryptocoinflip.onreadystatechange = function() {
+    if (cryptocoinflip.readyState === XMLHttpRequest.DONE) {
+      if (cryptocoinflip.status === 200) {
+        var divToImport = document.getElementById('coinflip-crypto');
+        if (divToImport) {
+          divToImport.innerHTML = cryptocoinflip.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  cryptocoinflip.open('GET', '/multitop/crypto/coinflip.html', true);
+  cryptocoinflip.send();
+
+  var cryptocrash = new XMLHttpRequest();
+  cryptocrash.onreadystatechange = function() {
+    if (cryptocrash.readyState === XMLHttpRequest.DONE) {
+      if (cryptocrash.status === 200) {
+        var divToImport = document.getElementById('crash-crypto');
+        if (divToImport) {
+          divToImport.innerHTML = cryptocrash.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  cryptocrash.open('GET', '/multitop/crypto/crash.html', true);
+  cryptocrash.send();
+
+  var cryptomatchbetting = new XMLHttpRequest();
+  cryptomatchbetting.onreadystatechange = function() {
+    if (cryptomatchbetting.readyState === XMLHttpRequest.DONE) {
+      if (cryptomatchbetting.status === 200) {
+        var divToImport = document.getElementById('matchbetting-crypto');
+        if (divToImport) {
+          divToImport.innerHTML = cryptomatchbetting.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  cryptomatchbetting.open('GET', '/multitop/crypto/matchbetting.html', true);
+  cryptomatchbetting.send();
+
+  var cryptoroulette = new XMLHttpRequest();
+  cryptoroulette.onreadystatechange = function() {
+    if (cryptoroulette.readyState === XMLHttpRequest.DONE) {
+      if (cryptoroulette.status === 200) {
+        var divToImport = document.getElementById('roulette-crypto');
+        if (divToImport) {
+          divToImport.innerHTML = cryptoroulette.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  cryptoroulette.open('GET', '/multitop/crypto/roulette.html', true);
+  cryptoroulette.send();
 }
