@@ -644,4 +644,208 @@ function importDivContent() {
   };
   cryptoroulette.open('GET', '/multitop/crypto/roulette.html', true);
   cryptoroulette.send();
+
+  var buyskinsrust = new XMLHttpRequest();
+  buyskinsrust.onreadystatechange = function() {
+    if (buyskinsrust.readyState === XMLHttpRequest.DONE) {
+      if (buyskinsrust.status === 200) {
+        var divToImport = document.getElementById('buy-skins-rust');
+        if (divToImport) {
+          divToImport.innerHTML = buyskinsrust.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  buyskinsrust.open('GET', '/multitop/rust/buy-skins.html', true);
+  buyskinsrust.send();
+
+  var caseopeningrust = new XMLHttpRequest();
+  caseopeningrust.onreadystatechange = function() {
+    if (caseopeningrust.readyState === XMLHttpRequest.DONE) {
+      if (caseopeningrust.status === 200) {
+        var divToImport = document.getElementById('caseopening-rust');
+        if (divToImport) {
+          divToImport.innerHTML = caseopeningrust.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  caseopeningrust.open('GET', '/multitop/rust/caseopening.html', true);
+  caseopeningrust.send();
+
+  var coinfliprust = new XMLHttpRequest();
+  coinfliprust.onreadystatechange = function() {
+    if (coinfliprust.readyState === XMLHttpRequest.DONE) {
+      if (coinfliprust.status === 200) {
+        var divToImport = document.getElementById('coinflip-rust');
+        if (divToImport) {
+          divToImport.innerHTML = coinfliprust.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  coinfliprust.open('GET', '/multitop/rust/coinflip.html', true);
+  coinfliprust.send();
+
+  var crashrust = new XMLHttpRequest();
+  crashrust.onreadystatechange = function() {
+    if (crashrust.readyState === XMLHttpRequest.DONE) {
+      if (crashrust.status === 200) {
+        var divToImport = document.getElementById('crash-rust');
+        if (divToImport) {
+          divToImport.innerHTML = crashrust.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  crashrust.open('GET', '/multitop/rust/crash.html', true);
+  crashrust.send();
+
+  // var instantsellrust = new XMLHttpRequest();
+  // instantsellrust.onreadystatechange = function() {
+  //   if (instantsellrust.readyState === XMLHttpRequest.DONE) {
+  //     if (instantsellrust.status === 200) {
+  //       var divToImport = document.getElementById('instant-sell-rust');
+  //       if (divToImport) {
+  //         divToImport.innerHTML = instantsellrust.responseText;
+  //         translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+  //       }
+  //     } else {
+  //       console.error('Cant load div.');
+  //     }
+  //   }
+  // };
+  // instantsellrust.open('GET', '/multitop/rust/instant-sell.html', true);
+  // instantsellrust.send();
+
+  var jackpotrust = new XMLHttpRequest();
+  jackpotrust.onreadystatechange = function() {
+    if (jackpotrust.readyState === XMLHttpRequest.DONE) {
+      if (jackpotrust.status === 200) {
+        var divToImport = document.getElementById('jackpot-rust');
+        if (divToImport) {
+          divToImport.innerHTML = jackpotrust.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  jackpotrust.open('GET', '/multitop/rust/jackpot.html', true);
+  jackpotrust.send();
+
+  var marketplacesrust = new XMLHttpRequest();
+  marketplacesrust.onreadystatechange = function() {
+    if (marketplacesrust.readyState === XMLHttpRequest.DONE) {
+      if (marketplacesrust.status === 200) {
+        var divToImport = document.getElementById('marketplaces-rust');
+        if (divToImport) {
+          divToImport.innerHTML = marketplacesrust.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  marketplacesrust.open('GET', '/multitop/rust/marketplaces.html', true);
+  marketplacesrust.send();
+
+  var matchbettingrust = new XMLHttpRequest();
+  matchbettingrust.onreadystatechange = function() {
+    if (matchbettingrust.readyState === XMLHttpRequest.DONE) {
+      if (matchbettingrust.status === 200) {
+        var divToImport = document.getElementById('matchbetting-rust');
+        if (divToImport) {
+          divToImport.innerHTML = matchbettingrust.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  matchbettingrust.open('GET', '/multitop/rust/matchbetting.html', true);
+  matchbettingrust.send();
+
+  var rouletterust = new XMLHttpRequest();
+  rouletterust.onreadystatechange = function() {
+    if (rouletterust.readyState === XMLHttpRequest.DONE) {
+      if (rouletterust.status === 200) {
+        var divToImport = document.getElementById('roulette-rust');
+        if (divToImport) {
+          divToImport.innerHTML = rouletterust.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  rouletterust.open('GET', '/multitop/rust/roulette.html', true);
+  rouletterust.send();
+
+  var sellskinsrust = new XMLHttpRequest();
+  sellskinsrust.onreadystatechange = function() {
+    if (sellskinsrust.readyState === XMLHttpRequest.DONE) {
+      if (sellskinsrust.status === 200) {
+        var divToImport = document.getElementById('sell-skins-rust');
+        if (divToImport) {
+          divToImport.innerHTML = sellskinsrust.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  sellskinsrust.open('GET', '/multitop/rust/sell-skins.html', true);
+  sellskinsrust.send();
+
+  var tradeskinsrust = new XMLHttpRequest();
+  tradeskinsrust.onreadystatechange = function() {
+    if (tradeskinsrust.readyState === XMLHttpRequest.DONE) {
+      if (tradeskinsrust.status === 200) {
+        var divToImport = document.getElementById('trade-skins-rust');
+        if (divToImport) {
+          divToImport.innerHTML = tradeskinsrust.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  tradeskinsrust.open('GET', '/multitop/rust/trade-skins.html', true);
+  tradeskinsrust.send();
+
+  var upgraderrust = new XMLHttpRequest();
+  upgraderrust.onreadystatechange = function() {
+    if (upgraderrust.readyState === XMLHttpRequest.DONE) {
+      if (upgraderrust.status === 200) {
+        var divToImport = document.getElementById('upgrader-rust');
+        if (divToImport) {
+          divToImport.innerHTML = upgraderrust.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  upgraderrust.open('GET', '/multitop/rust/upgrader.html', true);
+  upgraderrust.send();
 }
