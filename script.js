@@ -386,9 +386,15 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
 if ((window.location.pathname.startsWith("/pt/") || window.location.pathname === "/pt" || window.location.pathname === "/pt.html") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+    var regex = /^https:\/\/csgobroker\.cc\/(?!pt\/)/;
 
     for (var i = 0; i < links.length; i++) {
-  
+      var href = links[i].getAttribute('href');
+      if (regex.test(href)) {
+        var translatedHref = href.replace("https://csgobroker.cc/", "https://csgobroker.cc/pt/");
+        links[i].setAttribute('href', translatedHref);
+      }
+
       var translations = {
         "CS:GO Sites List": "Sites de CS:GO",
         "Rust Sites List": "Sites de Rust",
@@ -981,6 +987,7 @@ function easeInOutCubic(t, b, c, d) {
 var siteList = document.getElementById('site-list');
 var searchInput = document.getElementById('search-input'); // Переместите это объявление вверх
 var isRussianPage = window.location.pathname.includes('/ru'); // Проверяем, содержится ли в пути "/ru/"
+// var isPortugalPage = window.location.pathname.includes('/pt');
 var sites = [
 '<li><a href="https://csgobroker.cc/reviews/idle-empire">Idle-empire</a></li>',
 '<li><a href="https://csgobroker.cc/reviews/insanegg">Insanegg</a></li>',
@@ -1091,12 +1098,19 @@ function updateSiteList() {
       link.setAttribute('href', newHref);
     }
     
+    // if (isPortugalPage) {
+    //   var href = link.getAttribute('href');
+    //   var newHref = href.replace('csgobroker.cc/', 'csgobroker.cc/pt/');
+    //   link.setAttribute('href', newHref);
+    // }
+    
     li.innerHTML = '';
     li.appendChild(link);
     
     siteList.appendChild(li);
   });
 }
+
 
 function hideAllSites(siteItems) {
   for (var i = 0; i < siteItems.length; i++) {

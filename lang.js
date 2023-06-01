@@ -18,9 +18,29 @@ function handleLanguageRedirect() {
         }
       }
     }
+    else if ((userLang === 'pt' || userLang === 'pt-BR') && window.location.pathname === '/') {
+      var currentUrl = window.location.href;
+      var newUrl = currentUrl.replace('.cc/', '.cc/pt.html');
+
+      if (newUrl !== currentUrl) {
+        userChoice = 'pt'; // Устанавливаем выбранный язык в переменную userChoice
+        setCookie('languageChoice', userChoice, 365); // Сохраняем выбранный язык в куки
+        window.location.href = newUrl;
+        return false;
+      }
+    }
   } else if (userChoice === 'ru' && window.location.pathname === '/') {
     var currentUrl = window.location.href;
     var newUrl = currentUrl.replace('.cc/', '.cc/ru.html');
+
+    if (newUrl !== currentUrl) {
+      window.location.href = newUrl;
+      return false;
+    }
+  }
+  else if (userChoice === 'pt' && window.location.pathname === '/') {
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('.cc/', '.cc/pt.html');
 
     if (newUrl !== currentUrl) {
       window.location.href = newUrl;
@@ -42,6 +62,14 @@ document.addEventListener('click', function(event) {
     } else if (selectedLang === 'ru' && window.location.pathname === '/') {
       var currentUrl = window.location.href;
       var newUrl = currentUrl.replace('.cc/', '.cc/ru.html');
+
+      if (newUrl !== currentUrl) {
+        window.location.href = newUrl;
+      }
+    }
+    else if (selectedLang === 'pt' && window.location.pathname === '/') {
+      var currentUrl = window.location.href;
+      var newUrl = currentUrl.replace('.cc/', '.cc/pt.html');
 
       if (newUrl !== currentUrl) {
         window.location.href = newUrl;
@@ -79,6 +107,7 @@ function getCookie(name) {
 }
 
 handleLanguageRedirect();
+
 
 
 function importDivContent() {
