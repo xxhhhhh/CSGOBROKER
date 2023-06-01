@@ -713,22 +713,22 @@ function importDivContent() {
   crashrust.open('GET', '/multitop/rust/crash.html', true);
   crashrust.send();
 
-  // var instantsellrust = new XMLHttpRequest();
-  // instantsellrust.onreadystatechange = function() {
-  //   if (instantsellrust.readyState === XMLHttpRequest.DONE) {
-  //     if (instantsellrust.status === 200) {
-  //       var divToImport = document.getElementById('instant-sell-rust');
-  //       if (divToImport) {
-  //         divToImport.innerHTML = instantsellrust.responseText;
-  //         translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
-  //       }
-  //     } else {
-  //       console.error('Cant load div.');
-  //     }
-  //   }
-  // };
-  // instantsellrust.open('GET', '/multitop/rust/instant-sell.html', true);
-  // instantsellrust.send();
+  var instantsellrust = new XMLHttpRequest();
+  instantsellrust.onreadystatechange = function() {
+    if (instantsellrust.readyState === XMLHttpRequest.DONE) {
+      if (instantsellrust.status === 200) {
+        var divToImport = document.getElementById('instant-sell-rust');
+        if (divToImport) {
+          divToImport.innerHTML = instantsellrust.responseText;
+          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  instantsellrust.open('GET', '/multitop/rust/instant-sell.html', true);
+  instantsellrust.send();
 
   var jackpotrust = new XMLHttpRequest();
   jackpotrust.onreadystatechange = function() {
