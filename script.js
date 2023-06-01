@@ -534,6 +534,7 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
       "This site was created for easy leveling up Steam, you can sell emojis and profile backgrounds for Steam Trading Cards to fast level up.": "Este site facilita o aumento de nível no Steam. Venda emojis e fundos de perfil em troca de cartas de troca do Steam para subir de nível rapidamente.",
       "SteamLevelU is a legitimate platform to buy Steam trading card packs for enhancing Steam account levels, associated with SH Level Up.": "O SteamLevelU é uma plataforma legítima para comprar pacotes de cartas de troca do Steam e aumentar o nível da sua conta Steam.",
       "SteamLevels is a user-friendly website that helps increase your Steam account level by purchasing card packs and accepting CSGO skins.": "SteamLevels é um site fácil de usar que ajuda a aumentar o nível da sua conta Steam através da compra de pacotes de cartas e da aceitação de skins do CSGO.",
+      "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot, and coinflip. Easily enter and withdraw items from games.": "O RustStake é uma plataforma de apostas de skins de Rust com jogos como jackpot e coinflip. Fácil entrada e retirada de itens.",
       "Withdraw Money, Skins or Devices!":"Levantar dinheiro, skins ou dispositivos!",
       "Withdraw BTC, LTC, ETH and many else!":"Retire BTC, LTC, ETH e muito mais!",
       "Withdrawal of many types of cryptocurrencies !":"Retirada de vários tipos de criptomoedas!",
