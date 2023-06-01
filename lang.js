@@ -848,4 +848,158 @@ function importDivContent() {
   };
   upgraderrust.open('GET', '/multitop/rust/upgrader.html', true);
   upgraderrust.send();
+
+  var buyskinsdota = new XMLHttpRequest();
+buyskinsdota.onreadystatechange = function() {
+  if (buyskinsdota.readyState === XMLHttpRequest.DONE) {
+    if (buyskinsdota.status === 200) {
+      var divToImport = document.getElementById('buy-skins-dota');
+      if (divToImport) {
+        divToImport.innerHTML = buyskinsdota.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      }
+    } else {
+      console.error('Cant load div.');
+    }
+  }
+};
+buyskinsdota.open('GET', '/multitop/dota/buy-items.html', true);
+buyskinsdota.send();
+
+var caseopeningdota = new XMLHttpRequest();
+caseopeningdota.onreadystatechange = function() {
+  if (caseopeningdota.readyState === XMLHttpRequest.DONE) {
+    if (caseopeningdota.status === 200) {
+      var divToImport = document.getElementById('caseopening-dota');
+      if (divToImport) {
+        divToImport.innerHTML = caseopeningdota.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      }
+    } else {
+      console.error('Cant load div.');
+    }
+  }
+};
+caseopeningdota.open('GET', '/multitop/dota/caseopening.html', true);
+caseopeningdota.send();
+
+
+var marketplacesdota = new XMLHttpRequest();
+marketplacesdota.onreadystatechange = function() {
+  if (marketplacesdota.readyState === XMLHttpRequest.DONE) {
+    if (marketplacesdota.status === 200) {
+      var divToImport = document.getElementById('marketplaces-dota');
+      if (divToImport) {
+        divToImport.innerHTML = marketplacesdota.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      }
+    } else {
+      console.error('Cant load div.');
+    }
+  }
+};
+marketplacesdota.open('GET', '/multitop/dota/marketplaces.html', true);
+marketplacesdota.send();
+
+var matchbettingdota = new XMLHttpRequest();
+matchbettingdota.onreadystatechange = function() {
+  if (matchbettingdota.readyState === XMLHttpRequest.DONE) {
+    if (matchbettingdota.status === 200) {
+      var divToImport = document.getElementById('matchbetting-dota');
+      if (divToImport) {
+        divToImport.innerHTML = matchbettingdota.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      }
+    } else {
+      console.error('Cant load div.');
+    }
+  }
+};
+matchbettingdota.open('GET', '/multitop/dota/matchbetting.html', true);
+matchbettingdota.send();
+
+var roulettedota = new XMLHttpRequest();
+roulettedota.onreadystatechange = function() {
+  if (roulettedota.readyState === XMLHttpRequest.DONE) {
+    if (roulettedota.status === 200) {
+      var divToImport = document.getElementById('roulette-dota');
+      if (divToImport) {
+        divToImport.innerHTML = roulettedota.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      }
+    } else {
+      console.error('Cant load div.');
+    }
+  }
+};
+roulettedota.open('GET', '/multitop/dota/roulette.html', true);
+roulettedota.send();
+
+var sellskinsdota = new XMLHttpRequest();
+sellskinsdota.onreadystatechange = function() {
+  if (sellskinsdota.readyState === XMLHttpRequest.DONE) {
+    if (sellskinsdota.status === 200) {
+      var divToImport = document.getElementById('sell-skins-dota');
+      if (divToImport) {
+        divToImport.innerHTML = sellskinsdota.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      }
+    } else {
+      console.error('Cant load div.');
+    }
+  }
+};
+sellskinsdota.open('GET', '/multitop/dota/sell-items.html', true);
+sellskinsdota.send();
+
+var tradeskinsdota = new XMLHttpRequest();
+tradeskinsdota.onreadystatechange = function() {
+  if (tradeskinsdota.readyState === XMLHttpRequest.DONE) {
+    if (tradeskinsdota.status === 200) {
+      var divToImport = document.getElementById('trade-skins-dota');
+      if (divToImport) {
+        divToImport.innerHTML = tradeskinsdota.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      }
+    } else {
+      console.error('Cant load div.');
+    }
+  }
+};
+tradeskinsdota.open('GET', '/multitop/dota/trade-items.html', true);
+tradeskinsdota.send();
+
+var upgraderdota = new XMLHttpRequest();
+upgraderdota.onreadystatechange = function() {
+  if (upgraderdota.readyState === XMLHttpRequest.DONE) {
+    if (upgraderdota.status === 200) {
+      var divToImport = document.getElementById('upgrader-dota');
+      if (divToImport) {
+        divToImport.innerHTML = upgraderdota.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      }
+    } else {
+      console.error('Cant load div.');
+    }
+  }
+};
+upgraderdota.open('GET', '/multitop/dota/upgrader.html', true);
+upgraderdota.send();
+
+var instantselldota = new XMLHttpRequest();
+instantselldota.onreadystatechange = function() {
+  if (instantselldota.readyState === XMLHttpRequest.DONE) {
+    if (instantselldota.status === 200) {
+      var divToImport = document.getElementById('instant-sell-dota');
+      if (divToImport) {
+        divToImport.innerHTML = instantselldota.responseText;
+        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+      }
+    } else {
+      console.error('Cant load div.');
+    }
+  }
+};
+instantselldota.open('GET', '/multitop/dota/instant-sell.html', true);
+instantselldota.send();
 }
