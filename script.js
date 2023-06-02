@@ -206,41 +206,71 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
   translateURLs(categorySelector);
 }
 
-if (!window.location.pathname.includes("/reviews/") && window.location.pathname !== "/ru" && window.location.pathname !== "/pt" && window.location.pathname !== "/hi") {
+if (
+  !window.location.pathname.includes("/reviews/") &&
+  window.location.pathname !== "/ru" &&
+  window.location.pathname !== "/pt" &&
+  window.location.pathname !== "/hi" &&
+  !window.location.pathname.endsWith("ru.html") &&
+  !window.location.pathname.endsWith("pt.html") &&
+  !window.location.pathname.endsWith("hi.html") &&
+  !window.location.pathname.endsWith("index.html")
+) {
   // Определение текущего языка на основе URL
-    var currentLanguage = '';
+  var currentLanguage = "";
 
-    var languageMatch = window.location.pathname.match(/^\/([a-z]{2})\//);
-    if (languageMatch && languageMatch[1]) {
-        currentLanguage = languageMatch[1];
-    } else {
-        currentLanguage = 'en';
-    }
-
-    // Получение ссылки на элементы DOM
-    var langMenuDiv = document.querySelector('.lang-menu');
-
-    // Генерация нового содержимого для lang-menu
-    var newContent = '<div class="selected-lang">';
-    if (currentLanguage === 'en') {
-        newContent += 'EN';
-    } else if (currentLanguage === 'ru') {
-        newContent += 'RU';
-    } else if (currentLanguage === 'pt') {
-        newContent += 'PT';
-    } else if (currentLanguage === 'hi') {
-        newContent += 'HI';
-    }
-    newContent += '</div><ul>';
-    newContent += '<li><a href="/ru' + window.location.pathname.replace(/^\/[a-z]{2}\//, '/') + '" class="lang-switch" data-lang="ru">RU</a></li>';
-    newContent += '<li><a href="/pt' + window.location.pathname.replace(/^\/[a-z]{2}\//, '/') + '" class="lang-switch" data-lang="pt">PT</a></li>';
-    newContent += '<li><a href="/hi' + window.location.pathname.replace(/^\/[a-z]{2}\//, '/') + '" class="lang-switch" data-lang="hi">HI</a></li>';
-    newContent += '</ul>';
-
-    // Замена содержимого lang-menu
-    langMenuDiv.innerHTML = newContent;
-
+  var languageMatch = window.location.pathname.match(/^\/([a-z]{2})\//);
+  if (languageMatch && languageMatch[1]) {
+    currentLanguage = languageMatch[1];
+  } else {
+    currentLanguage = "en";
   }
+
+  // Получение ссылки на элементы DOM
+  var langMenuDiv = document.querySelector(".lang-menu");
+
+  // Генерация нового содержимого для lang-menu
+  var newContent = '<div class="selected-lang">';
+  if (currentLanguage === "en") {
+    newContent += "EN";
+  } else if (currentLanguage === "ru") {
+    newContent += "RU";
+  } else if (currentLanguage === "pt") {
+    newContent += "PT";
+  } else if (currentLanguage === "hi") {
+    newContent += "HI";
+  }
+  newContent += "</div><ul>";
+  if (currentLanguage !== "en") {
+    newContent +=
+      '<li><a href="' +
+      window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+      '" class="lang-switch" data-lang="en">EN</a></li>';
+  }
+  if (currentLanguage !== "ru") {
+    newContent +=
+      '<li><a href="/ru' +
+      window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+      '" class="lang-switch" data-lang="ru">RU</a></li>';
+  }
+  if (currentLanguage !== "pt") {
+    newContent +=
+      '<li><a href="/pt' +
+      window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+      '" class="lang-switch" data-lang="pt">PT</a></li>';
+  }
+  if (currentLanguage !== "hi") {
+    newContent +=
+      '<li><a href="/hi' +
+      window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+      '" class="lang-switch" data-lang="hi">HI</a></li>';
+  }
+  newContent += "</ul>";
+
+  // Замена содержимого lang-menu
+  langMenuDiv.innerHTML = newContent;
+}
+
 
 if (window.location.pathname.includes('/ru/reviews/')) {
   var links = document.getElementsByTagName('a');
