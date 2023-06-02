@@ -271,6 +271,55 @@ if (
   langMenuDiv.innerHTML = newContent;
 }
 
+if (window.location.pathname.includes('/pl/reviews/')) {
+  var links = document.getElementsByTagName('a');
+
+  // for (var i = 0; i < links.length; i++) {
+  //   var link = links[i];
+
+  //   if (link.href.includes('csgobroker.cc') && !link.pathname.startsWith('/pl') && !link.classList.contains('lang-switch')) {
+  //     if (link.pathname !== '/') {
+  //       link.pathname = '/pl' + link.pathname;
+  //   }
+  // }
+  function translateTextElements(parentElement) {
+    var translations = {
+      "Deposit Methods": "Metody Depozytu",
+      "Withdraw Methods": "Metody Wypłaty",
+      "Sign Up Bonus": "Bonus Rejestracyjny",
+      "No Bonus": "Brak Bonusu",
+      "Pros": "Zalety",
+      "Price": "Cena",
+      "Cons": "Wady",
+      "Trust": "Zaufanie",
+      "Support": "Wsparcie",
+      "Payments": "Płatności",
+      "Functional": "Funkcjonalność",
+      "Sign up via Steam": "Zarejestruj się za pomocą Steam",
+      "Enjoy !": "Ciesz się!",
+      "Visit WebSite": "Odwiedź stronę internetową"
+    };
+  
+    var siteprosElements = parentElement.querySelectorAll('.sitedetails .sitepros span');
+    for (var i = 0; i < siteprosElements.length; i++) {
+      var text = siteprosElements[i].textContent.trim();
+      if (translations.hasOwnProperty(text)) {
+        siteprosElements[i].innerHTML = translations[text] + ' <i class="bi bi-caret-down-fill"></i>';
+      }
+    }
+  
+    var ratingwayElements = parentElement.querySelectorAll('.ratingthings .ratingway span, .content button, .boxreview .plusminus .criteria .par h2, .features .featuresbox .typesinside a, .instruction li');
+    for (var j = 0; j < ratingwayElements.length; j++) {
+      var text = ratingwayElements[j].textContent.trim();
+      if (translations.hasOwnProperty(text)) {
+        ratingwayElements[j].innerHTML = translations[text];
+      }
+    }
+  }
+  
+  translateTextElements(document.body);
+  
+}
 
 if (window.location.pathname.includes('/ru/reviews/')) {
   var links = document.getElementsByTagName('a');
