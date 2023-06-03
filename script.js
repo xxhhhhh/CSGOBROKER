@@ -327,19 +327,22 @@ if (window.location.pathname.includes('/ru/reviews/')) {
   for (var i = 0; i < links.length; i++) {
     var link = links[i];
 
-    if (link.href.includes('csgobroker.cc') && !link.pathname.startsWith('/ru') && !link.classList.contains('lang-switch')) {
-      if (link.pathname !== '/') {
-        link.pathname = '/ru' + link.pathname;
-      } else {
-        link.href = link.href.replace('https://csgobroker.cc/', 'https://csgobroker.cc/ru/');
+    if (link.href.includes('csgobroker.cc') && !link.classList.contains('lang-switch')) {
+      if (!link.pathname.includes('/ru/')) {
+        if (link.pathname !== '/') {
+          link.pathname = '/ru' + link.pathname;
+        } else {
+          link.href = link.href.replace('https://csgobroker.cc/', 'https://csgobroker.cc/ru/');
+        }
       }
-    }
+    }     
   }
   function translateTextElements(parentElement) {
     var translations = {
       "Deposit Methods": "Способы Пополнения",
       "Withdraw Methods": "Способы Вывода",
       "Sign Up Bonus": "Бонус за Регистрацию",
+      "Daily Rewards": "Ежедневные Награды",
       "No Bonus": "Нет Бонуса",
       "Pros": "Плюсы",
       "Price": "Цены",
@@ -437,6 +440,7 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
       "Roobet is an online casino that allows users to play games using cryptocurrency. The platform has a reputation for being legitimate and safe.": "Roobet - это онлайн-казино, которое позволяет пользователям играть в игры с использованием криптовалюты. Платформа с чистой репутацией.",
       "HypeUp is owned by the same operators of two popular betting sites, CSGORoll and HypeDrop. Offers two original games and Slots with Live Games.": "HypeUp принадлежит тем же операторам, что и два популярных сайта для ставок - CSGORoll и HypeDrop. Сайт предлагает Слоты.",
       "HowlGG is a Rust skin gambling platform that offers a range of games, including jackpot, coinflip, slots, and live casino games.": "HowlGG - это платформа для азартных игр с использованием скинов из игры Rust. Можно найти джекпот, Монетку, Слоты и Игры с живыми дилерами.",
+      "iTrade.gg is a Trusted platform for trading rust skins. User-friendly design, free sign-up bonus, and daily rewards create a seamless trading experience.":"iTrade.gg - это надежная платформа для обмна скинами Rust. Удобный дизайн, Бонусы при регистрации и Ежедневные Награды.",
       "Withdraw CS:GO Skins, Crypto or Real Money!": "Выводите скины CS:GO, криптовалюту или деньги!",
       "Withdraw CS:GO, Dota 2, TF2 or Rust Items!": "Выводите предметы CS:GO, Dota 2, TF2 или Rust!",
       "Withdraw CS:GO Skins, Crypto or Game Keys!": "Выводите скины CS:GO, криптовалюту или Игры!",
@@ -447,6 +451,7 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
       "Withdraw Bitcoin, Ethereum or Litecoin!": "Выводите Bitcoin, Ethereum или Litecoin!",
       "Withdraw CS:GO And Rust Skins or Crypto!": "Выводите скины CS:GO, Rust или Крипту!",
       "Withdraw CS:GO Skins or real Money!": "Выводите скины CS:GO или деньги на Карту!",
+      "Withdraw Rust Skins and Items!": "Вывод только скинами Rust!",
       "Withdraw Steam Trading cards or Games.": "Выводите Steam Trading cards или Игры.",
       "Withdraw USDT, Skins or Real Money!": "Выводите USDT, Скины или Реальные Деньги",
       "Withdraw BTC, LTC, USDT, USDC or ETH!": "Выводите BTC, LTC, USDT, USDC или ETH!",
@@ -656,6 +661,7 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
       "SteamLevelU is a legitimate platform to buy Steam trading card packs for enhancing Steam account levels, associated with SH Level Up.": "O SteamLevelU é uma plataforma legítima para comprar pacotes de cartas de troca do Steam e aumentar o nível da sua conta Steam.",
       "SteamLevels is a user-friendly website that helps increase your Steam account level by purchasing card packs and accepting CSGO skins.": "SteamLevels é um site fácil de usar que ajuda a aumentar o nível da sua conta Steam através da compra de pacotes de cartas e da aceitação de skins do CSGO.",
       "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot, and coinflip. Easily enter and withdraw items from games.": "O RustStake é uma plataforma de apostas de skins de Rust com jogos como jackpot e coinflip. Fácil entrada e retirada de itens.",
+      "iTrade.gg is a Trusted platform for trading rust skins. User-friendly design, free sign-up bonus, and daily rewards create a seamless trading experience.":"Confiável para negociar skins de Rust. Design intuitivo, bônus de inscrição grátis e recompensas diárias para uma experiência de negociação tranquila.",
       "Withdraw Money, Skins or Devices!":"Levantar dinheiro, skins ou dispositivos!",
       "Withdraw BTC, LTC, ETH and many else!":"Retire BTC, LTC, ETH e muito mais!",
       "Withdrawal of many types of cryptocurrencies !":"Retirada de vários tipos de criptomoedas!",
@@ -924,6 +930,7 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
       "This site was created for easy leveling up Steam, you can sell emojis and profile backgrounds for Steam Trading Cards to fast level up.": "यह साइट स्टीम को आसान बनाने के लिए बनाई गई है, आप स्टीम ट्रेडिंग कार्ड के लिए इमोजी और प्रोफ़ाइल बैकग्राउंड बेचकर तेजी से स्तर बढ़ा सकते हैं।",
       "SteamLevelU is a legitimate platform to buy Steam trading card packs for enhancing Steam account levels, associated with SH Level Up.": "SteamLevelU एक विधि स्वरूपित प्लेटफ़ॉर्म है जिससे आप स्टीम खाता स्तरों को बढ़ाने के लिए स्टीम ट्रेडिंग कार्ड पैक खरीद सकते हैं, जो एसएच लेवल अप के साथ जुड़ा हुआ है।",
       "SteamLevels is a user-friendly website that helps increase your Steam account level by purchasing card packs and accepting CSGO skins.": "SteamLevels एक उपयोगकर्ता मित्रपूर्ण वेबसाइट है जो आपके स्टीम खाता स्तर को बढ़ाने में मदद करती है। इसे कार्ड पैक खरीदकर और सीएसजीओ स्किन्स स्वीकार करके किया जा सकता है।",
+      "iTrade.gg is a Trusted platform for trading rust skins. User-friendly design, free sign-up bonus, and daily rewards create a seamless trading experience.":"iTrade.gg एक विश्वसनीय प्लेटफ़ॉर्म है जहां रस्ट स्किन्स की ट्रेडिंग की जा सकती है। उपयोगकर्ता-मित्रपूर्ण डिज़ाइन, मुफ़्त साइन-अप बोनस और दैनिक पुरस्कार एक सुगठित ट्रेडिंग अनुभव बनाते हैं।",
       "Withdraw Money, Skins or Devices!": "धन, स्किन या उपकरण निकालें!",
       "Withdraw BTC, LTC, ETH and many else!":"बीटीसी, एलटीसी, ईटीएच और बहुत सारे अन्य के निकास!",
       "Withdrawal of many types of cryptocurrencies !":"बहुत सारे प्रकार के क्रिप्टोकरेंसीज़ का निकास!",
