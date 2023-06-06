@@ -398,7 +398,7 @@ nav #pagename:focus {
 .gamemodes .featuresbox {
     width: 100%;
     border-radius: 5px 5px 0 0;
-    background: linear-gradient(150deg, rgba(0,0,0,.3) 0%, rgba(0,0,0,.3) 10%, rgba(0, 0, 0, .3) 50%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(150deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,.4) 10%, rgba(0, 0, 0, .4) 50%, rgba(255, 255, 255, 0) 100%);
     /* background-color: var(--opacback); */
     box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);
     display: flex;
@@ -455,11 +455,9 @@ nav #pagename:focus {
     border-radius: 5px;
     font-weight: 600;
     font-size: 14px;
-    /* border: rgba(255, 255, 255, .1) 1px solid; */
     /* border: black 2px dashed; */
-    /* background-color: #a81d34; */
     color: var(--white);
-    background-color: rgb(24 24 24);
+    background-color: rgb(26 26 26);
     /* filter: grayscale(1); */
 }
 .typesinside a:nth-child(1) {
@@ -1606,9 +1604,9 @@ footer {
 /* footer#review {
     margin-top: 9px;
 } */
-footer#review .centralizer .footer-content a {
+/* footer#review .centralizer .footer-content a {
     left: 305px;
-}
+} */
 footer .centralizer {
     width: 69%;
     margin: 0 auto;
