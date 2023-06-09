@@ -118,7 +118,7 @@ function importDivContent() {
         var divToImport = document.getElementById('csgo-best-sites');
         if (divToImport) {
           divToImport.innerHTML = xhr.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -136,7 +136,7 @@ function importDivContent() {
         var divToImport = document.getElementById('freebies-sites');
         if (divToImport) {
           divToImport.innerHTML = xhr2.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -154,7 +154,7 @@ function importDivContent() {
         var divToImport = document.getElementById('earning-sites');
         if (divToImport) {
           divToImport.innerHTML = xhr3.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -171,7 +171,7 @@ function importDivContent() {
         var divToImport = document.getElementById('rust-sites');
         if (divToImport) {
           divToImport.innerHTML = xhr4.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -188,7 +188,7 @@ function importDivContent() {
         var divToImport = document.getElementById('dota-sites');
         if (divToImport) {
           divToImport.innerHTML = xhr5.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -205,7 +205,7 @@ function importDivContent() {
         var divToImport = document.getElementById('crypto-sites');
         if (divToImport) {
           divToImport.innerHTML = xhr6.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -222,7 +222,7 @@ function importDivContent() {
         var divToImport = document.getElementById('buy-skins-csgo');
         if (divToImport) {
           divToImport.innerHTML = xhr7.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -239,7 +239,7 @@ function importDivContent() {
         var divToImport = document.getElementById('caseopening-csgo');
         if (divToImport) {
           divToImport.innerHTML = xhr8.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -256,7 +256,7 @@ function importDivContent() {
         var divToImport = document.getElementById('casino-csgo');
         if (divToImport) {
           divToImport.innerHTML = xhr9.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -273,7 +273,7 @@ function importDivContent() {
         var divToImport = document.getElementById('coinflip-csgo');
         if (divToImport) {
           divToImport.innerHTML = xhr10.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -290,7 +290,7 @@ function importDivContent() {
         var divToImport = document.getElementById('crash-csgo');
         if (divToImport) {
           divToImport.innerHTML = xhr11.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -307,7 +307,7 @@ function importDivContent() {
         var divToImport = document.getElementById('dice-csgo');
         if (divToImport) {
           divToImport.innerHTML = dicecsgo.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -324,7 +324,7 @@ function importDivContent() {
         var divToImport = document.getElementById('earn-by-play-csgo');
         if (divToImport) {
           divToImport.innerHTML = earnbyplaycsgo.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -341,7 +341,7 @@ function importDivContent() {
         var divToImport = document.getElementById('instant-sell-csgo');
         if (divToImport) {
           divToImport.innerHTML = instantsellcsgo.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -358,7 +358,7 @@ function importDivContent() {
         var divToImport = document.getElementById('jackpot-csgo');
         if (divToImport) {
           divToImport.innerHTML = jackpotcsgo.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -375,7 +375,7 @@ function importDivContent() {
         var divToImport = document.getElementById('marketplaces-csgo');
         if (divToImport) {
           divToImport.innerHTML = marketplacescsgo.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -392,7 +392,7 @@ function importDivContent() {
         var divToImport = document.getElementById('matchbetting-csgo');
         if (divToImport) {
           divToImport.innerHTML = matchbettingcsgo.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -409,7 +409,7 @@ function importDivContent() {
         var divToImport = document.getElementById('roulette-csgo');
         if (divToImport) {
           divToImport.innerHTML = roulettecsgo.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -426,7 +426,7 @@ function importDivContent() {
         var divToImport = document.getElementById('sell-skins-csgo');
         if (divToImport) {
           divToImport.innerHTML = sellskinscsgo.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -443,7 +443,7 @@ function importDivContent() {
         var divToImport = document.getElementById('trade-skins-csgo');
         if (divToImport) {
           divToImport.innerHTML = tradeskinscsgo.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -460,7 +460,7 @@ function importDivContent() {
         var divToImport = document.getElementById('upgrader-csgo');
         if (divToImport) {
           divToImport.innerHTML = upgradercsgo.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -477,7 +477,7 @@ function importDivContent() {
         var divToImport = document.getElementById('earn-by-play-sites');
         if (divToImport) {
           divToImport.innerHTML = earnbyplay.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -494,7 +494,7 @@ function importDivContent() {
         var divToImport = document.getElementById('offerwalls-list');
         if (divToImport) {
           divToImport.innerHTML = offerwalls.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -511,7 +511,7 @@ function importDivContent() {
         var divToImport = document.getElementById('daily-rewards-list');
         if (divToImport) {
           divToImport.innerHTML = dailyrewards.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -528,7 +528,7 @@ function importDivContent() {
         var divToImport = document.getElementById('deposit-bonuses-list');
         if (divToImport) {
           divToImport.innerHTML = depositbonuses.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -545,7 +545,7 @@ function importDivContent() {
         var divToImport = document.getElementById('giveaways-list');
         if (divToImport) {
           divToImport.innerHTML = giveaways.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -562,7 +562,7 @@ function importDivContent() {
         var divToImport = document.getElementById('sign-up-bonuses-list');
         if (divToImport) {
           divToImport.innerHTML = signupbonuses.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -579,7 +579,7 @@ function importDivContent() {
         var divToImport = document.getElementById('levelup-list');
         if (divToImport) {
           divToImport.innerHTML = steamlevelup.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -596,7 +596,7 @@ function importDivContent() {
         var divToImport = document.getElementById('casino-crypto');
         if (divToImport) {
           divToImport.innerHTML = cryptocasino.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -613,7 +613,7 @@ function importDivContent() {
         var divToImport = document.getElementById('coinflip-crypto');
         if (divToImport) {
           divToImport.innerHTML = cryptocoinflip.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -630,7 +630,7 @@ function importDivContent() {
         var divToImport = document.getElementById('crash-crypto');
         if (divToImport) {
           divToImport.innerHTML = cryptocrash.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -647,7 +647,7 @@ function importDivContent() {
         var divToImport = document.getElementById('matchbetting-crypto');
         if (divToImport) {
           divToImport.innerHTML = cryptomatchbetting.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -664,7 +664,7 @@ function importDivContent() {
         var divToImport = document.getElementById('roulette-crypto');
         if (divToImport) {
           divToImport.innerHTML = cryptoroulette.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -681,7 +681,7 @@ function importDivContent() {
         var divToImport = document.getElementById('buy-skins-rust');
         if (divToImport) {
           divToImport.innerHTML = buyskinsrust.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -698,7 +698,7 @@ function importDivContent() {
         var divToImport = document.getElementById('caseopening-rust');
         if (divToImport) {
           divToImport.innerHTML = caseopeningrust.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -715,7 +715,7 @@ function importDivContent() {
         var divToImport = document.getElementById('coinflip-rust');
         if (divToImport) {
           divToImport.innerHTML = coinfliprust.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -732,7 +732,7 @@ function importDivContent() {
         var divToImport = document.getElementById('crash-rust');
         if (divToImport) {
           divToImport.innerHTML = crashrust.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -749,7 +749,7 @@ function importDivContent() {
         var divToImport = document.getElementById('instant-sell-rust');
         if (divToImport) {
           divToImport.innerHTML = instantsellrust.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -766,7 +766,7 @@ function importDivContent() {
         var divToImport = document.getElementById('jackpot-rust');
         if (divToImport) {
           divToImport.innerHTML = jackpotrust.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -783,7 +783,7 @@ function importDivContent() {
         var divToImport = document.getElementById('marketplaces-rust');
         if (divToImport) {
           divToImport.innerHTML = marketplacesrust.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -800,7 +800,7 @@ function importDivContent() {
         var divToImport = document.getElementById('matchbetting-rust');
         if (divToImport) {
           divToImport.innerHTML = matchbettingrust.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -817,7 +817,7 @@ function importDivContent() {
         var divToImport = document.getElementById('roulette-rust');
         if (divToImport) {
           divToImport.innerHTML = rouletterust.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -834,7 +834,7 @@ function importDivContent() {
         var divToImport = document.getElementById('sell-skins-rust');
         if (divToImport) {
           divToImport.innerHTML = sellskinsrust.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -851,7 +851,7 @@ function importDivContent() {
         var divToImport = document.getElementById('trade-skins-rust');
         if (divToImport) {
           divToImport.innerHTML = tradeskinsrust.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -868,7 +868,7 @@ function importDivContent() {
         var divToImport = document.getElementById('upgrader-rust');
         if (divToImport) {
           divToImport.innerHTML = upgraderrust.responseText;
-          translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -885,7 +885,7 @@ buyskinsdota.onreadystatechange = function() {
       var divToImport = document.getElementById('buy-skins-dota');
       if (divToImport) {
         divToImport.innerHTML = buyskinsdota.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        translateURLs(divToImport); 
       }
     } else {
       console.error('Cant load div.');
@@ -902,7 +902,7 @@ caseopeningdota.onreadystatechange = function() {
       var divToImport = document.getElementById('caseopening-dota');
       if (divToImport) {
         divToImport.innerHTML = caseopeningdota.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        translateURLs(divToImport); 
       }
     } else {
       console.error('Cant load div.');
@@ -920,7 +920,7 @@ marketplacesdota.onreadystatechange = function() {
       var divToImport = document.getElementById('marketplaces-dota');
       if (divToImport) {
         divToImport.innerHTML = marketplacesdota.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        translateURLs(divToImport); 
       }
     } else {
       console.error('Cant load div.');
@@ -937,7 +937,7 @@ matchbettingdota.onreadystatechange = function() {
       var divToImport = document.getElementById('matchbetting-dota');
       if (divToImport) {
         divToImport.innerHTML = matchbettingdota.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        translateURLs(divToImport); 
       }
     } else {
       console.error('Cant load div.');
@@ -954,7 +954,7 @@ roulettedota.onreadystatechange = function() {
       var divToImport = document.getElementById('roulette-dota');
       if (divToImport) {
         divToImport.innerHTML = roulettedota.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        translateURLs(divToImport); 
       }
     } else {
       console.error('Cant load div.');
@@ -971,7 +971,7 @@ sellskinsdota.onreadystatechange = function() {
       var divToImport = document.getElementById('sell-skins-dota');
       if (divToImport) {
         divToImport.innerHTML = sellskinsdota.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        translateURLs(divToImport); 
       }
     } else {
       console.error('Cant load div.');
@@ -988,7 +988,7 @@ tradeskinsdota.onreadystatechange = function() {
       var divToImport = document.getElementById('trade-skins-dota');
       if (divToImport) {
         divToImport.innerHTML = tradeskinsdota.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        translateURLs(divToImport); 
       }
     } else {
       console.error('Cant load div.');
@@ -1005,7 +1005,7 @@ upgraderdota.onreadystatechange = function() {
       var divToImport = document.getElementById('upgrader-dota');
       if (divToImport) {
         divToImport.innerHTML = upgraderdota.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        translateURLs(divToImport); 
       }
     } else {
       console.error('Cant load div.');
@@ -1022,7 +1022,7 @@ instantselldota.onreadystatechange = function() {
       var divToImport = document.getElementById('instant-sell-dota');
       if (divToImport) {
         divToImport.innerHTML = instantselldota.responseText;
-        translateURLs(divToImport); // Вызов функции перевода после загрузки содержимого
+        translateURLs(divToImport); 
       }
     } else {
       console.error('Cant load div.');
