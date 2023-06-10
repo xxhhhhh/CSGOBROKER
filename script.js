@@ -210,9 +210,11 @@ if (
   !window.location.pathname.includes("/reviews/") &&
   window.location.pathname !== "/ru" &&
   window.location.pathname !== "/pt" &&
+  window.location.pathname !== "/es" &&
   window.location.pathname !== "/hi" &&
   !window.location.pathname.endsWith("ru.html") &&
   !window.location.pathname.endsWith("pt.html") &&
+  !window.location.pathname.endsWith("es.html") &&
   !window.location.pathname.endsWith("hi.html") &&
   !window.location.pathname.endsWith("index.html")
 ) {
