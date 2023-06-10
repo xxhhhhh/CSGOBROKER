@@ -1,4 +1,4 @@
-var userChoice = getCookie('languageChoice'); // Получаем значение выбранного языка из куки
+var userChoice = getCookie('languageChoice');
 
 function handleLanguageRedirect() {
   if (!userChoice && window.location.hostname !== 'localhost') {
@@ -11,8 +11,8 @@ function handleLanguageRedirect() {
         var newUrl = currentUrl.replace('.cc/', '.cc/ru.html');
 
         if (newUrl !== currentUrl) {
-          userChoice = 'ru'; // Устанавливаем выбранный язык в переменную userChoice
-          setCookie('languageChoice', userChoice, 365); // Сохраняем выбранный язык в куки
+          userChoice = 'ru';
+          setCookie('languageChoice', userChoice, 365);
           window.location.href = newUrl;
           return false;
         }
@@ -23,8 +23,19 @@ function handleLanguageRedirect() {
       var newUrl = currentUrl.replace('.cc/', '.cc/pt.html');
 
       if (newUrl !== currentUrl) {
-        userChoice = 'pt'; // Устанавливаем выбранный язык в переменную userChoice
-        setCookie('languageChoice', userChoice, 365); // Сохраняем выбранный язык в куки
+        userChoice = 'pt';
+        setCookie('languageChoice', userChoice, 365);
+        window.location.href = newUrl;
+        return false;
+      }
+    }
+    else if ((userLang === 'hi' || userLang === 'hi-IN') && window.location.pathname === '/') {
+      var currentUrl = window.location.href;
+      var newUrl = currentUrl.replace('.cc/', '.cc/hi.html');
+
+      if (newUrl !== currentUrl) {
+        userChoice = 'hi';
+        setCookie('languageChoice', userChoice, 365);
         window.location.href = newUrl;
         return false;
       }
@@ -47,15 +58,23 @@ function handleLanguageRedirect() {
       return false;
     }
   }
+  else if (userChoice === 'hi' && window.location.pathname === '/') {
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('.cc/', '.cc/hi.html');
+
+    if (newUrl !== currentUrl) {
+      window.location.href = newUrl;
+      return false;
+    }
+  }
 }
 
-// Обработчик события клика на элементах меню выбора языка
 document.addEventListener('click', function(event) {
   if (event.target.classList.contains('lang-switch')) {
     var selectedLang = event.target.dataset.lang;
 
     setCookie('languageChoice', selectedLang, 365);
-    userChoice = selectedLang; // Обновляем значение переменной userChoice
+    userChoice = selectedLang;
 
     if (selectedLang !== userChoice) {
       location.reload();
@@ -75,6 +94,14 @@ document.addEventListener('click', function(event) {
         window.location.href = newUrl;
       }
     }
+    else if (selectedLang === 'hi' && window.location.pathname === '/') {
+      var currentUrl = window.location.href;
+      var newUrl = currentUrl.replace('.cc/', '.cc/hi.html');
+
+      if (newUrl !== currentUrl) {
+        window.location.href = newUrl;
+      }
+    }
   }
 });
 
@@ -86,7 +113,6 @@ function setCookie(name, value, days) {
     expires = '; expires=' + date.toUTCString();
   }
   
-  // Добавляем атрибуты "SameSite=None" и "Secure" для поддержки сторонних контекстов
   var cookieString = name + '=' + value + expires + '; path=/; SameSite=None; Secure';
   document.cookie = cookieString;
 }
@@ -107,6 +133,7 @@ function getCookie(name) {
 }
 
 handleLanguageRedirect();
+
 
 
 

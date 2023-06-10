@@ -790,9 +790,15 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
 if ((window.location.pathname.startsWith("/hi/") || window.location.pathname === "/hi" || window.location.pathname === "/hi.html") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+    var regex = /^https:\/\/csgobroker\.cc\/(?!hi\/)/;
 
     for (var i = 0; i < links.length; i++) {
-  
+      var href = links[i].getAttribute('href');
+      if (regex.test(href)) {
+        var translatedHref = href.replace("https://csgobroker.cc/", "https://csgobroker.cc/hi/");
+        links[i].setAttribute('href', translatedHref);
+      }
+
       var translations = {
         "CS:GO Sites List": "CS:GO साइटों की सूची",
         "Rust Sites List": "Rust साइटों की सूची",
