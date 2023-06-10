@@ -239,6 +239,8 @@ if (
     newContent += "RU";
   } else if (currentLanguage === "pt") {
     newContent += "PT";
+  } else if (currentLanguage === "es") {
+    newContent += "ES";
   } else if (currentLanguage === "hi") {
     newContent += "HI";
   }
@@ -260,6 +262,12 @@ if (
       '<li><a href="/pt' +
       window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
       '" class="lang-switch" data-lang="pt">PT</a></li>';
+  }
+  if (currentLanguage !== "es") {
+    newContent +=
+      '<li><a href="/es' +
+      window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+      '" class="lang-switch" data-lang="es">ES</a></li>';
   }
   if (currentLanguage !== "hi") {
     newContent +=
@@ -968,7 +976,7 @@ if ((window.location.pathname.startsWith("/es/") || window.location.pathname ===
       "RustyLoot offers a variety of games, including Wheel, Plinko, and more. With its transparent and provably fair system, RustyLoot is safe and enjoyable." : "RustyLoot ofrece una variedad de juegos, incluyendo Ruleta, Plinko y más. Con su sistema transparente y justamente comprobable, RustyLoot es seguro y divertido.",
       "RustChance has been operating since 2017 and offers several popular games, including Jackpot, Wheel, Coinflip, Crash, and Landmines.":"RustChance ha estado operando desde 2017 y ofrece varios juegos populares, incluyendo Jackpot, Ruleta, Cara o Cruz, Crash y Minas terrestres.",
       "CrashGG focuses on Rust skin gambling and offers various games, including its primary feature, the crash game mode. Also has Duels, Blackjack and Lottery.":"CrashGG se enfoca en las apuestas de skins de Rust y ofrece varios juegos, incluyendo su característica principal, el modo de juego de Crash. También tiene Duelos, Blackjack y Lotería.",
-      "HypeUp is owned by the same operators of two popular betting sites, CSGORoll and HypeDrop. Offers two original games and Slots with Live Games.":"HypeUp es propiedad de los mismos operadores de dos sitios de apuestas populares, CSGORoll y HypeDrop. Ofrece dos juegos originales y Tragamonedas con Juegos en Vivo.",
+      "HypeUp is owned by the same operators of two popular betting sites, CSGORoll and HypeDrop. Offers two original games and Slots with Live Games.":"HypeUp es propiedad de los mismos operadores de CSGORoll y HypeDrop. Ofrece dos juegos originales y Tragamonedas con Juegos en Vivo.",
       "The website has a decent number of survey providers and offerwall partners to choose from, and there are plenty of options for withdrawing earnings.":"El sitio web tiene una cantidad decente de proveedores de encuestas y socios de muros de ofertas para elegir, y hay muchas opciones para retirar las ganancias.",
       "SkinSwap is an online platform that allows players to trade and sell skins from popular games such as CS:GO and Rust. Owned and operated by RustySell.":"SkinSwap es una plataforma en línea que permite a los jugadores intercambiar y vender skins de juegos populares como CS:GO y Rust. Propiedad y operado por RustySell.",
       "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.":"CSGOSelly es un sitio web que permite a los usuarios convertir sus skins de CSGO en dinero a través de varios métodos de pago. Fue fundado en 2021.",
@@ -976,7 +984,7 @@ if ((window.location.pathname.startsWith("/es/") || window.location.pathname ===
       "Mobile Games. Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.":"Juegos Móviles. Sitio único donde puedes ganar dinero ganando juegos en varias disciplinas cibernéticas de juegos móviles. También tiene muchos muros de ofertas.",
       "RustMoment is a gambling site for Rust skin enthusiasts with six games, bonuses, and a rakeback system. It accepts standard and cryptocurrency payments.":"RustMoment es un sitio de apuestas para entusiastas de las skins de Rust con seis juegos, bonificaciones y un sistema de rakeback. Acepta pagos estándar y de criptomonedas.",
       "Freeward is a GPT site that provides various opportunities for users to earn rewards through tasks like surveys and watching videos.": "Freeward es un sitio GPT que ofrece diversas oportunidades para que los usuarios ganen recompensas mediante tareas como encuestas y ver videos.",
-      "Roobet is an online casino that allows users to play games using cryptocurrency. The platform has a reputation for being legitimate and safe.": "Roobet es un casino en línea que permite a los usuarios jugar juegos utilizando criptomonedas. La plataforma tiene una reputación de ser legítima y segura.",
+      "Roobet is an online casino that allows users to play games using cryptocurrency. The platform has a reputation for being legitimate and safe.": "Roobet es un casino en línea seguro que acepta criptomonedas para jugar. Es conocido por su reputación legítima y seguridad.",
       "xplay is a platform that allows CS:GO players to earn skins just by playing on their servers. The platform offers various servers and daily challenges.": "xplay es una plataforma que permite a los jugadores de CS:GO ganar skins simplemente jugando en sus servidores. La plataforma ofrece varios servidores y desafíos diarios.",
       "Established in 2018, it offers jackpot, coinflip, and roulette games with enhanced features, provable fairness, and attractive animations.": "Establecido en 2018, ofrece juegos de jackpot, coinflip y ruleta con características mejoradas, equidad demostrable y animaciones atractivas.",
       "GameTame is a GPT site that provides rewards for completing various activities and offers. The platform is specifically designed for gamers.": "GameTame es un sitio GPT que proporciona recompensas por completar diversas actividades y ofertas. La plataforma está específicamente diseñada para jugadores.",
@@ -986,7 +994,7 @@ if ((window.location.pathname.startsWith("/es/") || window.location.pathname ===
       "GrindBux is a trusted platform where you can earn some money by completing surveys or playing mobile and desktop games.": "GrindBux es una plataforma confiable donde puedes ganar dinero completando encuestas o jugando juegos móviles y de escritorio.",
       "RustCases is a trusted Rust gambling site with various game modes, a wide range of cases, and skin withdrawal options. Owned by RustChance.": "RustCases es un sitio de apuestas confiable para Rust con varios modos de juego, una amplia selección de cajas y opciones de retiro de skins. Propiedad de RustChance.",
       "RustClash is a new Rust Gambling site which includes many games like Roulette, Upgrader, Cases and many more!": "RustClash es un nuevo sitio de apuestas de Rust que incluye muchos juegos como ruleta, upgrader, cajas y ¡muchos más!",
-      "BC.Game is an online casino and sportsbook that was launched in 2017, offering over 8,000 games including proprietary and probably fair games.": "BC.Game es un casino en línea y casa de apuestas deportivas que se lanzó en 2017, ofreciendo más de 8,000 juegos, incluyendo juegos propietarios y probablemente justos.",
+      "BC.Game is an online casino and sportsbook that was launched in 2017, offering over 8,000 games including proprietary and probably fair games.": "BC.Game es un casino en línea y casa de apuestas deportivas lanzado en 2017, ofreciendo más de 8,000 juegos, incluyendo juegos propietarios.",
       "Primedice is an online Crypto Dice Game Casino that has been in operation since 2013. It was one of the first platforms to use crypto for gambling.": "Primedice es un casino en línea de juegos de dados criptográficos que está en funcionamiento desde 2013. Fue una de las primeras plataformas en utilizar criptomonedas para el juego de azar.",
       "Tradeit is an online marketplace that offers players the opportunity to trade, buy, and sell skins for a variety of games, including CS:GO. Working since 2017.": "Tradeit es un mercado en línea que ofrece a los jugadores la oportunidad de intercambiar, comprar y vender skins para una variedad de juegos, incluyendo CS:GO. Funciona desde 2017.",
       "DMarket is a reliable and popular marketplace for Steam items, with a large number of items available and positive reviews on Trustpilot.": "DMarket es un mercado confiable y popular para artículos de Steam, con una gran cantidad de artículos disponibles y reseñas positivas en Trustpilot.",
@@ -1013,7 +1021,7 @@ if ((window.location.pathname.startsWith("/es/") || window.location.pathname ===
       "SteamLevels is a user-friendly website that helps increase your Steam account level by purchasing card packs and accepting CSGO skins.": "SteamLevels es un sitio web fácil de usar que ayuda a aumentar el nivel de tu cuenta de Steam mediante la compra de paquetes de cartas y la aceptación de skins de CSGO.",
       "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot, and coinflip. Easily enter and withdraw items from games.": "RustStake es una plataforma de apuestas de skins de Rust que ofrece una variedad de juegos, incluyendo jackpot y coinflip. Entra y retira elementos de los juegos fácilmente.",
       "iTrade.gg is a Trusted platform for trading rust skins. User-friendly design, free sign-up bonus, and daily rewards create a seamless trading experience.":"iTrade.gg es una plataforma confiable para el comercio de skins de Rust. Su diseño intuitivo, bono de registro gratuito y recompensas diarias crean una experiencia de comercio fluida.",
-      "Shuffle.com is a comprehensive crypto casino with a unique registration process, original games, a VIP program, and plans for future expansion.":"Shuffle.com es un casino de criptomonedas completo con un proceso de registro único, juegos originales, un programa VIP y planes de expansión futura.",
+      "Shuffle.com is a comprehensive crypto casino with a unique registration process, original games, a VIP program, and plans for future expansion.":"Shuffle.com es un casino de criptomonedas completo con registro único, juegos originales, programa VIP y planes de expansión futura.",
       "Withdraw Money, Skins or Devices!": "Retira dinero, skins o dispositivos!",
       "Withdraw BTC, LTC, ETH and many else!": "Retira BTC, LTC, ETH y muchos más!",
       "Withdrawal of many types of cryptocurrencies !": "¡Retiro de muchos tipos de criptomonedas!",
