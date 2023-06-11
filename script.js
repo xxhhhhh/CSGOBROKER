@@ -871,8 +871,14 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
 if ((window.location.pathname.startsWith("/es/") || window.location.pathname === "/es" || window.location.pathname === "/es.html") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+    var regex = /^https:\/\/csgobroker\.cc\/(?!es\/)/;
 
     for (var i = 0; i < links.length; i++) {
+      var href = links[i].getAttribute('href');
+      if (regex.test(href)) {
+        var translatedHref = href.replace("https://csgobroker.cc/", "https://csgobroker.cc/es/");
+        links[i].setAttribute('href', translatedHref);
+      }
 
       var translations = {
         "CS:GO Sites List": "Lista de sitios de CS:GO",
