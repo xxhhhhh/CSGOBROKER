@@ -1,82 +1,70 @@
 if (!window.location.pathname.includes("/reviews/")) {
-  // Получаем элементы
   const boxContainer = document.querySelector('.category-selector');
   const buttonsContainer = document.createElement('div');
   const prevButtonContainer = document.createElement('button');
   const nextButtonContainer = document.createElement('button');
   const boxes = boxContainer.querySelectorAll('.category-box');
-  const boxWidth = boxes[0].offsetWidth + (2 * 9); // Ширина каждого div.category-box с учетом отступов
-  const containerWidth = boxWidth * 4; // Ширина контейнера для показа 4 боксов одновременно
-  let scrollPosition = 0; // Текущая позиция прокрутки
-  let buttonScrollPosition = 0; // Текущая позиция скролла кнопок
+  const boxWidth = boxes[0].offsetWidth + (2 * 9);
+  const containerWidth = boxWidth * 4;
+  let scrollPosition = 0;
+  let buttonScrollPosition = 0;
 
-  // Добавляем классы и текст кнопкам
   buttonsContainer.classList.add('buttons-container');
   prevButtonContainer.classList.add('controls-button');
   prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left"></i>';
   nextButtonContainer.classList.add('controls-button');
   nextButtonContainer.innerHTML = '<i class="bi bi-chevron-right"></i>';
 
-  // Добавляем кнопки в контейнер
   buttonsContainer.appendChild(prevButtonContainer);
   buttonsContainer.appendChild(nextButtonContainer);
 
-  // Добавляем контейнер с кнопками перед контейнером с боксами
   boxContainer.parentNode.insertBefore(buttonsContainer, boxContainer);
 
-  // Устанавливаем ширину контейнера с боксами
   boxContainer.style.width = `${containerWidth}px`;
 
-  // Обработчик события для кнопки "Влево"
   prevButtonContainer.addEventListener('click', () => {
     scrollPosition -= boxWidth;
     scrollPosition = Math.max(scrollPosition, 0);
     boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
-    buttonScrollPosition = scrollPosition; // Обновляем позицию скролла кнопок
+    buttonScrollPosition = scrollPosition;
   });
 
-  // Обработчик события для кнопки "Вправо"
   nextButtonContainer.addEventListener('click', () => {
     scrollPosition += boxWidth;
     scrollPosition = Math.min(scrollPosition, boxContainer.scrollWidth - containerWidth);
     boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
-    buttonScrollPosition = scrollPosition; // Обновляем позицию скролла кнопок
+    buttonScrollPosition = scrollPosition;
   });
 
   let isMouseDown = false;
   let startX = 0;
   let scrollLeft = 0;
 
-  // Обработчик события mousedown для контейнера boxContainer
   boxContainer.addEventListener('mousedown', (e) => {
-    e.preventDefault(); // Предотвращаем действия по умолчанию
+    e.preventDefault();
     isMouseDown = true;
     startX = e.pageX - boxContainer.offsetLeft;
     scrollLeft = boxContainer.scrollLeft;
   });
 
-  // Обработчик события mousemove для контейнера boxContainer
   boxContainer.addEventListener('mousemove', (e) => {
-    if (!isMouseDown) return; // Если кнопка мыши не зажата, прекращаем выполнение функции
-    e.preventDefault(); // Предотвращаем действия по умолчанию
+    if (!isMouseDown) return;
+    e.preventDefault();
     const x = e.pageX - boxContainer.offsetLeft;
-    const walk = (x - startX) * 0.6; // Чувствительность перемещения
+    const walk = (x - startX) * 0.6;
     const newScrollLeft = scrollLeft - walk;
     boxContainer.scrollLeft = newScrollLeft;
-    buttonScrollPosition = newScrollLeft; // Обновляем позицию скролла кнопок
+    buttonScrollPosition = newScrollLeft;
   });
 
-  // Обработчик события mouseup для контейнера boxContainer
   boxContainer.addEventListener('mouseup', () => {
     isMouseDown = false;
   });
 
-  // Обработчик события mouseleave для контейнера boxContainer
   boxContainer.addEventListener('mouseleave', () => {
     isMouseDown = false;
   });
 
-  // Обработчик события touchstart для контейнера boxContainer
   boxContainer.addEventListener('touchstart', (e) => {
     const touch = e.touches[0];
     isMouseDown = true;
@@ -84,20 +72,17 @@ if (!window.location.pathname.includes("/reviews/")) {
     scrollLeft = boxContainer.scrollLeft;
   });
 
-  // Обработчик события touchmove для контейнера boxContainer
   boxContainer.addEventListener('touchmove', (e) => {
-    if (!isMouseDown) return; // Если сенсорное устройство не касается экрана, прекращаем выполнение функции
-    e.preventDefault(); // Предотвращаем действия по умолчанию
+    if (!isMouseDown) return;
+    e.preventDefault();
     const touch = e.touches[0];
     const x = touch.pageX - boxContainer.offsetLeft;
-    const walk = (x - startX) * 0.6; // Чувствительность перемещения
+    const walk = (x - startX) * 0.6;
     const newScrollLeft = scrollLeft - walk;
     boxContainer.scrollLeft = newScrollLeft;
-    buttonScrollPosition = newScrollLeft; // Обновляем позицию скролла кнопок
+    buttonScrollPosition = newScrollLeft;
   });
 
-
-  // Обработчик события touchend для контейнера boxContainer
   boxContainer.addEventListener('touchend', () => {
     isMouseDown = false;
   });
@@ -111,15 +96,15 @@ if (!window.location.pathname.includes("/reviews/")) {
     var bIsActive = b.querySelector('li a.category-box').id === 'active';
 
     if (aIsActive && !bIsActive) {
-      return -1; // Первый элемент (a) активный, поэтому он идет первым
+      return -1;
     } else if (!aIsActive && bIsActive) {
-      return 1; // Второй элемент (b) активный, поэтому он идет вторым
+      return 1;
     } else if (a.querySelector('li a.category-box').id === 'last') {
-      return 1; // a имеет id="last", поэтому он должен быть последним
+      return 1;
     } else if (b.querySelector('li a.category-box').id === 'last') {
-      return -1; // b имеет id="last", поэтому он должен быть последним
+      return -1;
     } else {
-      return Math.random() - 0.5; // Оба элемента либо активны, либо неактивны - сортировка рандомна
+      return Math.random() - 0.5;
     }
   });
 
@@ -131,19 +116,18 @@ if (!window.location.pathname.includes("/reviews/")) {
     categorySelector.appendChild(ul);
   });
 
-  // Устанавливаем начальную позицию скролла кнопок
   buttonsContainer.scrollLeft = buttonScrollPosition;
 }
 
 if ((window.location.pathname.startsWith("/ru/") || window.location.pathname === "/ru") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+    var links = parentElement.querySelectorAll('a[href*="/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!ru\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("https://csgobroker.cc/", "https://csgobroker.cc/ru/");
+        var translatedHref = href.replace("/", "/ru/");
         links[i].setAttribute('href', translatedHref);
       }
   
@@ -218,7 +202,6 @@ if (
   !window.location.pathname.endsWith("hi.html") &&
   !window.location.pathname.endsWith("index.html")
 ) {
-  // Определение текущего языка на основе URL
   var currentLanguage = "";
 
   var languageMatch = window.location.pathname.match(/^\/([a-z]{2})\//);
@@ -228,10 +211,8 @@ if (
     currentLanguage = "en";
   }
 
-  // Получение ссылки на элементы DOM
   var langMenuDiv = document.querySelector(".lang-menu");
 
-  // Генерация нового содержимого для lang-menu
   var newContent = '<div class="selected-lang">';
   if (currentLanguage === "en") {
     newContent += "EN";
@@ -277,21 +258,11 @@ if (
   }
   newContent += "</ul>";
 
-  // Замена содержимого lang-menu
   langMenuDiv.innerHTML = newContent;
 }
 
 if (window.location.pathname.includes('/pl/reviews/')) {
   var links = document.getElementsByTagName('a');
-
-  // for (var i = 0; i < links.length; i++) {
-  //   var link = links[i];
-
-  //   if (link.href.includes('csgobroker.cc') && !link.pathname.startsWith('/pl') && !link.classList.contains('lang-switch')) {
-  //     if (link.pathname !== '/') {
-  //       link.pathname = '/pl' + link.pathname;
-  //   }
-  // }
   function translateTextElements(parentElement) {
     var translations = {
       "Deposit Methods": "Metody Depozytu",
@@ -342,7 +313,7 @@ if (window.location.pathname.includes('/ru/reviews/')) {
         if (link.pathname !== '/') {
           link.pathname = '/ru' + link.pathname;
         } else {
-          link.href = link.href.replace('https://csgobroker.cc/', 'https://csgobroker.cc/ru/');
+          link.href = link.href.replace('/', '/ru/');
         }
       }
     }     
@@ -392,13 +363,13 @@ if (window.location.pathname.includes('/ru/reviews/')) {
 
 if ((window.location.pathname.startsWith("/ru/") || window.location.pathname === "/ru") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+    var links = parentElement.querySelectorAll('a[href*="/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!ru\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("https://csgobroker.cc/", "https://csgobroker.cc/ru/");
+        var translatedHref = href.replace("/", "/ru/");
         links[i].setAttribute('href', translatedHref);
       }
     }
@@ -520,13 +491,13 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
 
 if ((window.location.pathname.startsWith("/pt/") || window.location.pathname === "/pt" || window.location.pathname === "/pt.html") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+    var links = parentElement.querySelectorAll('a[href*="/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!pt\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("https://csgobroker.cc/", "https://csgobroker.cc/pt/");
+        var translatedHref = href.replace("/", "/pt/");
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -793,19 +764,18 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
     }
   }
 
-  // Загружаем содержимое из файла при загрузке страницы
   window.onload = importDivContent;
 }
 
 if ((window.location.pathname.startsWith("/hi/") || window.location.pathname === "/hi" || window.location.pathname === "/hi.html") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+    var links = parentElement.querySelectorAll('a[href*="/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!hi\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("https://csgobroker.cc/", "https://csgobroker.cc/hi/");
+        var translatedHref = href.replace("/", "/hi/");
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -870,13 +840,13 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
 
 if ((window.location.pathname.startsWith("/es/") || window.location.pathname === "/es" || window.location.pathname === "/es.html") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+    var links = parentElement.querySelectorAll('a[href*="/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!es\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("https://csgobroker.cc/", "https://csgobroker.cc/es/");
+        var translatedHref = href.replace("/", "/es/");
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -1343,7 +1313,6 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
     }
   }
 
-  // Загружаем содержимое из файла при загрузке страницы
   window.onload = importDivContent;
 }
 
@@ -1361,14 +1330,14 @@ const backToTopButton = document.querySelector("#back-to-top-btn");
 window.addEventListener("scroll", scrollFunction);
 
 function scrollFunction() {
-  if (window.pageYOffset > 300) { // Show backToTopButton
+  if (window.pageYOffset > 300) {
     if(!backToTopButton.classList.contains("btnEntrance")) {
       backToTopButton.classList.remove("btnExit");
       backToTopButton.classList.add("btnEntrance");
       backToTopButton.style.display = "block";
     }
   }
-  else { // Hide backToTopButton
+  else { //
     if(backToTopButton.classList.contains("btnEntrance")) {
       backToTopButton.classList.remove("btnEntrance");
       backToTopButton.classList.add("btnExit");
@@ -1407,9 +1376,8 @@ function easeInOutCubic(t, b, c, d) {
 }
 
 var siteList = document.getElementById('site-list');
-var searchInput = document.getElementById('search-input'); // Переместите это объявление вверх
-var isRussianPage = window.location.pathname.includes('/ru'); // Проверяем, содержится ли в пути "/ru/"
-// var isPortugalPage = window.location.pathname.includes('/pt');
+var searchInput = document.getElementById('search-input'); 
+var isRussianPage = window.location.pathname.includes('/ru');
 var sites = [
 '<li><a href="https://csgobroker.cc/reviews/idle-empire">Idle-empire</a></li>',
 '<li><a href="https://csgobroker.cc/reviews/insanegg">Insanegg</a></li>',
@@ -1518,18 +1486,11 @@ function updateSiteList() {
     
     var link = li.querySelector('a');
     
-    // Добавляем "/ru/" после "csgobroker.cc/" к ссылке, если находимся на русской странице
     if (isRussianPage) {
       var href = link.getAttribute('href');
-      var newHref = href.replace('csgobroker.cc/', 'csgobroker.cc/ru/');
+      var newHref = href.replace('/', '/ru/');
       link.setAttribute('href', newHref);
     }
-    
-    // if (isPortugalPage) {
-    //   var href = link.getAttribute('href');
-    //   var newHref = href.replace('csgobroker.cc/', 'csgobroker.cc/pt/');
-    //   link.setAttribute('href', newHref);
-    // }
     
     li.innerHTML = '';
     li.appendChild(link);
@@ -1602,7 +1563,7 @@ var triggersContainer = document.querySelector(".screens");
 var currentIndex = 0;
 var slideInterval;
 var startX = 0;
-var threshold = 100; // Минимальное расстояние для определения свайпа
+var threshold = 100;
 
 var prevButton = document.querySelector(".prev-button");
 var nextButton = document.querySelector(".next-button");
@@ -1626,7 +1587,6 @@ if (window.location.pathname.includes("/reviews/")) {
       trigger.checked = true;
     }
   
-    // Добавляем обработчик события change
     trigger.addEventListener("change", function () {
       var previousSlide = slides[currentIndex];
       previousSlide.classList.remove("active");
@@ -1656,7 +1616,6 @@ if (window.location.pathname.includes("/reviews/")) {
     currentSlide.classList.remove("active", "next", "previous");
     nextSlide.classList.add("active");
   
-    // Добавляем класс для направления анимации
     if (direction === "next") {
       nextSlide.classList.add("next");
     } else if (direction === "previous") {
@@ -1665,7 +1624,6 @@ if (window.location.pathname.includes("/reviews/")) {
   
     currentIndex = index;
   
-    // Добавляем класс "active" к соответствующему label
     var triggerLabels = triggersContainer.querySelectorAll("label");
     triggerLabels.forEach(function (label, labelIndex) {
       if (labelIndex === index) {
@@ -1675,7 +1633,6 @@ if (window.location.pathname.includes("/reviews/")) {
       }
     });
   
-    // Проверяем границы слайдов и скрываем/отображаем кнопки "Prev" и "Next"
     if (currentIndex === 0) {
       prevButton.disabled = true;
       nextButton.disabled = false;
@@ -1690,22 +1647,18 @@ if (window.location.pathname.includes("/reviews/")) {
   
   createTriggers();
   
-  // Добавляем обработчик для события touchstart
   triggersContainer.addEventListener("touchstart", function (event) {
     startX = event.touches[0].clientX;
   });
   
-  // Добавляем обработчик для события touchend
   triggersContainer.addEventListener("touchend", function (event) {
     var endX = event.changedTouches[0].clientX;
     var deltaX = endX - startX;
   
     if (deltaX > threshold) {
-      // Переключаемся на предыдущий слайд
       previousSlide();
       startSlideShow();
     } else if (deltaX < -threshold) {
-      // Переключаемся на следующий слайд
       nextSlide();
       startSlideShow();
     }
@@ -1719,11 +1672,10 @@ if (window.location.pathname.includes("/reviews/")) {
     startSlideShow();
   });
   
-  // Остальная часть JavaScript кода остается неизменной
   
   function startSlideShow() {
     stopSlideShow();
-    slideInterval = setInterval(nextSlide, 5000); // Интервал автоматического переключения слайдов (5 секунды)
+    slideInterval = setInterval(nextSlide, 5000);
   }
   
   function stopSlideShow() {
@@ -1745,7 +1697,6 @@ if (window.location.pathname.includes("/reviews/")) {
     startSlideShow();
   });
   
-  // Добавляем обработчик для кнопки "Prev"
   prevButton.addEventListener("click", function () {
     if (currentIndex !== 0) {
       previousSlide();
@@ -1753,7 +1704,6 @@ if (window.location.pathname.includes("/reviews/")) {
     }
   });
   
-  // Добавляем обработчик для кнопки "Next"
   nextButton.addEventListener("click", function () {
     if (currentIndex !== slides.length - 1) {
       nextSlide();

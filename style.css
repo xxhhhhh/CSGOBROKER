@@ -1403,14 +1403,14 @@ nav img {
 }
 
 .sitepage .box{
-    height: 400px;
+    height: 400px !important;
 }
 .sitepage .box .logobg {
-    height: 55%; 
+    height: 55% !important; 
     background: linear-gradient(360deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.35) 100%);
 }
 .sitepage .box .content {
-    height: 45%; 
+    height: 45% !important; 
 }
 .sitepage .box .content h2 {
     margin-top: 11px;
@@ -1777,7 +1777,8 @@ footer .centralizer .footer-content {
         display: none !important;
     }
     .sitepage .box {
-        margin: 9px 0 9px 0 !important;
+        /* margin: 9px 0 9px 0 !important; */
+        border-radius: 0 !important;
         width: 100% !important;
     }
     .navigation-menu {
