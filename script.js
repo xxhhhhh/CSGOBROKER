@@ -78,7 +78,6 @@ if (!window.location.pathname.includes("/reviews/")) {
 
   // Обработчик события touchstart для контейнера boxContainer
   boxContainer.addEventListener('touchstart', (e) => {
-    e.preventDefault(); // Предотвращаем действия по умолчанию
     const touch = e.touches[0];
     isMouseDown = true;
     startX = touch.pageX - boxContainer.offsetLeft;
@@ -96,6 +95,7 @@ if (!window.location.pathname.includes("/reviews/")) {
     boxContainer.scrollLeft = newScrollLeft;
     buttonScrollPosition = newScrollLeft; // Обновляем позицию скролла кнопок
   });
+
 
   // Обработчик события touchend для контейнера boxContainer
   boxContainer.addEventListener('touchend', () => {
