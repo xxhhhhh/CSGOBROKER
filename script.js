@@ -1484,6 +1484,11 @@ var sites = [
 '<li><a href="https://csgobroker.cc/reviews/hellcase">Hellcase</a></li>',
 '<li><a href="https://csgobroker.cc/reviews/hellstore">Hellstore</a></li>',
 '<li><a href="https://csgobroker.cc/reviews/howlgg">Howlgg</a></li>',
+'<li><a href="https://csgobroker.cc/reviews/skinbid">SkinBid</a></li>',
+'<li><a href="https://csgobroker.cc/reviews/shuffle">Shuffle</a></li>',
+'<li><a href="https://csgobroker.cc/reviews/steamlevels">SteamLevels</a></li>',
+'<li><a href="https://csgobroker.cc/reviews/steamlevelu">SteamLevelU</a></li>',
+'<li><a href="https://csgobroker.cc/reviews/whitemarket">White.Market</a></li>',
 '<li><a href="https://csgobroker.cc/reviews/hypeup">Hypeup</a></li>'
 ];
 
