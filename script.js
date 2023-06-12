@@ -119,15 +119,15 @@ if (!window.location.pathname.includes("/reviews/")) {
   buttonsContainer.scrollLeft = buttonScrollPosition;
 }
 
-if ((window.location.pathname.startsWith("/ru/") || window.location.pathname === "/ru") && !window.location.pathname.includes("/reviews/")) {
+if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="/"]');
+    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!ru\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("/", "/ru");
+        var translatedHref = href.replace("csgobroker.cc/", "csgobroker.cc/ru/");
         links[i].setAttribute('href', translatedHref);
       }
   
@@ -313,7 +313,7 @@ if (window.location.pathname.includes('/ru/reviews/')) {
         if (link.pathname !== '/') {
           link.pathname = '/ru' + link.pathname;
         } else {
-          link.href = link.href.replace('/', '/ru');
+          link.href = link.href.replace('https://csgobroker.cc/', 'https://csgobroker.cc/ru/');
         }
       }
     }     
@@ -361,15 +361,15 @@ if (window.location.pathname.includes('/ru/reviews/')) {
   
 }
 
-if ((window.location.pathname.startsWith("/ru/") || window.location.pathname === "/ru") && !window.location.pathname.includes("/reviews/")) {
+if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="/"]');
+    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!ru\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("/", "/ru");
+        var translatedHref = href.replace("csgobroker.cc/", "csgobroker.cc/ru/");
         links[i].setAttribute('href', translatedHref);
       }
     }
@@ -489,15 +489,15 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
   translateURLs(SitesList);
 }
 
-if ((window.location.pathname.startsWith("/pt/") || window.location.pathname === "/pt" || window.location.pathname === "/pt.html") && !window.location.pathname.includes("/reviews/")) {
+if ((window.location.pathname.startsWith('/pt/') || window.location.pathname === '/pt' || window.location.pathname === '/pt.html') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="/"]');
+    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!pt\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("/", "/pt");
+        var translatedHref = href.replace("csgobroker.cc/", "csgobroker.cc/pt/");
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -561,7 +561,7 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
 }
 
 
-if ((window.location.pathname.startsWith("/pt/") || window.location.pathname === "/pt" || window.location.pathname === "/pt.html") && !window.location.pathname.includes("/reviews/")) {
+if ((window.location.pathname.startsWith('/pt/') || window.location.pathname === '/pt' || window.location.pathname === '/pt.html') && !window.location.pathname.includes('/reviews/')) {
 
   function translateURLs(parentElement) {
     var translations = {
@@ -767,15 +767,15 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
   window.onload = importDivContent;
 }
 
-if ((window.location.pathname.startsWith("/hi/") || window.location.pathname === "/hi" || window.location.pathname === "/hi.html") && !window.location.pathname.includes("/reviews/")) {
+if ((window.location.pathname.startsWith('/hi/') || window.location.pathname === '/hi' || window.location.pathname === '/hi.html') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="/"]');
+    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!hi\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("/", "/hi");
+        var translatedHref = href.replace("csgobroker.cc/", "csgobroker.cc/hi/");
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -840,13 +840,13 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
 
 if ((window.location.pathname.startsWith("/es/") || window.location.pathname === "/es" || window.location.pathname === "/es.html") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="/"]');
+    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!es\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("/", "/es");
+        var translatedHref = href.replace("csgobroker.cc/", "csgobroker.cc/es/");
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -1488,7 +1488,7 @@ function updateSiteList() {
     
     if (isRussianPage) {
       var href = link.getAttribute('href');
-      var newHref = href.replace('/', '/ru');
+      var newHref = href.replace('csgobroker.cc/', 'csgobroker.cc/ru/');
       link.setAttribute('href', newHref);
     }
     
