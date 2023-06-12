@@ -6,21 +6,18 @@ function handleLanguageRedirect() {
 
     if ((userLang === 'ru' || userLang === 'ru-RU') && window.location.pathname === '/') {
       var currentUrl = window.location.href;
+      var newUrl = currentUrl.replace('.cc/', '.cc/ru');
 
-      if (currentUrl === 'https://csgobroker.cc/') {
-        var newUrl = currentUrl.replace('.cc/', '.cc/ru.html');
-
-        if (newUrl !== currentUrl) {
-          userChoice = 'ru';
-          setCookie('languageChoice', userChoice, 365);
-          window.location.href = newUrl;
-          return false;
-        }
+      if (newUrl !== currentUrl) {
+        userChoice = 'ru';
+        setCookie('languageChoice', userChoice, 365);
+        window.location.href = newUrl;
+        return false;
       }
     }
     else if ((userLang === 'pt' || userLang === 'pt-BR') && window.location.pathname === '/') {
       var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/pt.html');
+      var newUrl = currentUrl.replace('.cc/', '.cc/pt');
 
       if (newUrl !== currentUrl) {
         userChoice = 'pt';
@@ -31,7 +28,7 @@ function handleLanguageRedirect() {
     }
     else if ((userLang === 'es' || userLang === 'es-ES') && window.location.pathname === '/') {
       var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/es.html');
+      var newUrl = currentUrl.replace('.cc/', '.cc/es');
 
       if (newUrl !== currentUrl) {
         userChoice = 'es';
@@ -42,7 +39,7 @@ function handleLanguageRedirect() {
     }
     else if ((userLang === 'hi' || userLang === 'hi-IN') && window.location.pathname === '/') {
       var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/hi.html');
+      var newUrl = currentUrl.replace('.cc/', '.cc/hi');
 
       if (newUrl !== currentUrl) {
         userChoice = 'hi';
@@ -51,9 +48,20 @@ function handleLanguageRedirect() {
         return false;
       }
     }
+    else if ((userLang === 'en' || userLang === 'en-US') && window.location.pathname === '/') {
+      var currentUrl = window.location.href;
+      var newUrl = currentUrl.replace('.cc/', '.cc/');
+
+      if (newUrl !== currentUrl) {
+        userChoice = 'en';
+        setCookie('languageChoice', userChoice, 365);
+        window.location.href = newUrl;
+        return false;
+      }
+    }
   } else if (userChoice === 'ru' && window.location.pathname === '/') {
     var currentUrl = window.location.href;
-    var newUrl = currentUrl.replace('.cc/', '.cc/ru.html');
+    var newUrl = currentUrl.replace('.cc/', '.cc/ru');
 
     if (newUrl !== currentUrl) {
       window.location.href = newUrl;
@@ -62,7 +70,7 @@ function handleLanguageRedirect() {
   }
   else if (userChoice === 'pt' && window.location.pathname === '/') {
     var currentUrl = window.location.href;
-    var newUrl = currentUrl.replace('.cc/', '.cc/pt.html');
+    var newUrl = currentUrl.replace('.cc/', '.cc/pt');
 
     if (newUrl !== currentUrl) {
       window.location.href = newUrl;
@@ -71,7 +79,7 @@ function handleLanguageRedirect() {
   }
   else if (userChoice === 'es' && window.location.pathname === '/') {
     var currentUrl = window.location.href;
-    var newUrl = currentUrl.replace('.cc/', '.cc/es.html');
+    var newUrl = currentUrl.replace('.cc/', '.cc/es');
 
     if (newUrl !== currentUrl) {
       window.location.href = newUrl;
@@ -80,7 +88,7 @@ function handleLanguageRedirect() {
   }
   else if (userChoice === 'hi' && window.location.pathname === '/') {
     var currentUrl = window.location.href;
-    var newUrl = currentUrl.replace('.cc/', '.cc/hi.html');
+    var newUrl = currentUrl.replace('.cc/', '.cc/hi');
 
     if (newUrl !== currentUrl) {
       window.location.href = newUrl;
@@ -100,7 +108,7 @@ document.addEventListener('click', function(event) {
       location.reload();
     } else if (selectedLang === 'ru' && window.location.pathname === '/') {
       var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/ru.html');
+      var newUrl = currentUrl.replace('.cc/', '.cc/ru');
 
       if (newUrl !== currentUrl) {
         window.location.href = newUrl;
@@ -108,7 +116,7 @@ document.addEventListener('click', function(event) {
     }
     else if (selectedLang === 'pt' && window.location.pathname === '/') {
       var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/pt.html');
+      var newUrl = currentUrl.replace('.cc/', '.cc/pt');
 
       if (newUrl !== currentUrl) {
         window.location.href = newUrl;
@@ -116,7 +124,7 @@ document.addEventListener('click', function(event) {
     }
     else if (selectedLang === 'es' && window.location.pathname === '/') {
       var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/es.html');
+      var newUrl = currentUrl.replace('.cc/', '.cc/es');
 
       if (newUrl !== currentUrl) {
         window.location.href = newUrl;
@@ -124,7 +132,15 @@ document.addEventListener('click', function(event) {
     }
     else if (selectedLang === 'hi' && window.location.pathname === '/') {
       var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/hi.html');
+      var newUrl = currentUrl.replace('.cc/', '.cc/hi');
+
+      if (newUrl !== currentUrl) {
+        window.location.href = newUrl;
+      }
+    }
+    else if (selectedLang === 'en' && window.location.pathname === '/') {
+      var currentUrl = window.location.href;
+      var newUrl = currentUrl.replace('.cc/', '.cc/');
 
       if (newUrl !== currentUrl) {
         window.location.href = newUrl;
@@ -161,6 +177,7 @@ function getCookie(name) {
 }
 
 handleLanguageRedirect();
+
 
 function importDivContent() {
   var xhr = new XMLHttpRequest();
