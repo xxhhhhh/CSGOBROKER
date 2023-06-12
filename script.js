@@ -127,7 +127,7 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("/", "/ru/");
+        var translatedHref = href.replace("/", "/ru");
         links[i].setAttribute('href', translatedHref);
       }
   
@@ -313,7 +313,7 @@ if (window.location.pathname.includes('/ru/reviews/')) {
         if (link.pathname !== '/') {
           link.pathname = '/ru' + link.pathname;
         } else {
-          link.href = link.href.replace('/', '/ru/');
+          link.href = link.href.replace('/', '/ru');
         }
       }
     }     
@@ -369,7 +369,7 @@ if ((window.location.pathname.startsWith("/ru/") || window.location.pathname ===
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("/", "/ru/");
+        var translatedHref = href.replace("/", "/ru");
         links[i].setAttribute('href', translatedHref);
       }
     }
@@ -497,7 +497,7 @@ if ((window.location.pathname.startsWith("/pt/") || window.location.pathname ===
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("/", "/pt/");
+        var translatedHref = href.replace("/", "/pt");
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -775,7 +775,7 @@ if ((window.location.pathname.startsWith("/hi/") || window.location.pathname ===
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("/", "/hi/");
+        var translatedHref = href.replace("/", "/hi");
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -846,7 +846,7 @@ if ((window.location.pathname.startsWith("/es/") || window.location.pathname ===
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("/", "/es/");
+        var translatedHref = href.replace("/", "/es");
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -1488,7 +1488,7 @@ function updateSiteList() {
     
     if (isRussianPage) {
       var href = link.getAttribute('href');
-      var newHref = href.replace('/', '/ru/');
+      var newHref = href.replace('/', '/ru');
       link.setAttribute('href', newHref);
     }
     
