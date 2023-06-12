@@ -40,17 +40,24 @@
 <body>
     <header>
         <nav>
+            <div class="main-nav-content">
         <div class="logospace">
         <a href="https://csgobroker.cc/ru" id="logo"><img src="/img/logo.png" draggable="false" alt="logo" ></a>
         </div>
         <ul class="pages">
             <h1 id="PageTitle">Обзор на LOOT.Farm, Надёжен ли сайт?</h1>
         </ul>
-        <div class="socials">
-            <div class="youtube">
-                <a href="https://www.youtube.com/@csgo.broker"><i class="bi youtube bi-youtube" id="yt"></i></a>
-            </div>
-        </div>
+    </div>
+        <div class="nav-content">
+            <div class="search-container" id="filter-container">
+                <form id="search-form">
+                    <input type="text" id="search-input" autocomplete="off">
+                    <div id="site-list" class="site-list">
+                        <ul id="site-items" class="site-items">
+                        </ul>
+                    </div>              
+                </form>
+            </div> 
         <div class="lang-menu">
             <div class="selected-lang">
                 RU
@@ -61,16 +68,8 @@
                 </li>
             </ul>
         </div>
-    </nav>
-    <div class="search-container" id="filter-container">
-        <form id="search-form">
-            <input type="text" id="search-input" autocomplete="off">
-            <div id="site-list" class="site-list">
-                <ul id="site-items" class="site-items">
-                </ul>
-            </div>              
-        </form>
-    </div>    
+        </div>
+    </nav>   
     </header>
     <div class="spaceblock"></div>
     <button id="back-to-top-btn"><i class="bi bi-chevron-up"></i></button>
