@@ -93,8 +93,8 @@ nav {
     align-items: center;
 }
 .nav-content {
-    width: 230px;
-    justify-content: space-between;
+    width: 270px; 
+    justify-content: flex-end;
 }
 nav .logospace {
     display: flex;
@@ -121,11 +121,22 @@ nav .pages {
 nav .socials {
     height: 50px;
     width: auto;
-    margin-left: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    margin-right: 20px;
+}
+nav .socials a img {
+    height: 18px;
+    width: auto;
+    opacity: 0.3;
+    margin-top: 4px;
+    transition: all .4s;
+}
+nav .socials a:hover img {
+    opacity: 1;
+    transform: scale(1.15);
 }
 nav .youtube .bi {
     font-size: 26px;
@@ -2394,6 +2405,7 @@ footer .centralizer .footer-content {
         height: 30px;
         display: block;
         position: relative;
+        margin-right: 15px;
         z-index: 10000;
     }
     form input {
