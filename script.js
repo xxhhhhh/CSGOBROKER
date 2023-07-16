@@ -1114,6 +1114,281 @@ if ((window.location.pathname.startsWith("/es/") || window.location.pathname ===
   window.onload = importDivContent;
 }
 
+if ((window.location.pathname.startsWith("/tr/") || window.location.pathname === "/tr" || window.location.pathname === "/tr.html") && !window.location.pathname.includes("/reviews/")) {
+  function translateURLs(parentElement) {
+    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+    var regex = /^https:\/\/csgobroker\.cc\/(?!tr\/)/;
+
+    for (var i = 0; i < links.length; i++) {
+      var href = links[i].getAttribute('href');
+      if (regex.test(href)) {
+        var translatedHref = href.replace("csgobroker.cc/", "csgobroker.cc/tr/");
+        links[i].setAttribute('href', translatedHref);
+      }
+
+      var translations = {
+        "CS:GO Sites List": "CS:GO Siteleri Listesi",
+        "Rust Sites List": "Rust Siteleri Listesi",
+        "Dota 2 Sites List": "Dota 2 Siteleri Listesi",
+        "Crypto Sites List": "Kripto Siteleri Listesi",
+        "Freebies Only": "Sadece Bedava Hediyeler",
+        "Earning Sites": "Para Kazanma Siteleri",
+        "Steam Sites": "Steam Siteleri",
+        "Gambling Sites": " Kumar Siteleri",
+        "Earn by Play CS:GO": "CS:GO Oynayarak Kazan",
+        "All Sites": "Tüm Siteler",
+        "Match Betting": "Maç Bahisleri",
+        "Case Opening": "Kasa Açma",
+        "Roulette": "Rulet",
+        "Coinflip": "Tura-Yazı",
+        "Crash": "Çökme",
+        "Casino": "Kumarhane",
+        "Jackpot": "Jackpot",
+        "Upgrader": "Yükseltici",
+        "Dice": "Zar",
+        "Bonus Types": "Bonus Türleri",
+        "Sign Up Bonuses": "Kayıt Bonusları",
+        "Deposit Bonuses": "Yatırım Bonusları",
+        "Daily Rewards": "Günlük Ödüller",
+        "Giveaways": "Hediyeler",
+        "Offerwall Sites": "Teklif Duvarı Siteleri",
+        "Earn by Play Sites": "Oyun Oynayarak Kazan Siteleri",
+        "Buy or Sell Skins": "Skins Satın Al veya Sat",
+        "Buy or Sell Items": "Eşya Satın Al veya Sat",
+        "Marketplaces": "Pazar Yerleri",
+        "Instant Sell": "Anında Satış",
+        "Buy Items": "Eşya Satın Al",
+        "Sell Items": "Eşya Sat",
+        "Trade Items": "Eşya Takas Et",
+        "Buy Skins": "Skins Satın Al",
+        "Sell Skins": "Skins Sat",
+        "Trade Skins": "Skins Takas Et",
+        "Steam Level Up": "Steam Seviye Atlama",
+        "Buy Steam Games": "Steam Oyunları Satın Al"
+        };
+  
+      var elements = document.querySelectorAll('.category-box-content span, ul .submenu li a');
+      for (var j = 0; j < elements.length; j++) {
+        var text = elements[j].textContent.trim();
+        if (translations.hasOwnProperty(text)) {
+          if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
+            elements[j].innerHTML = translations[text] + ' <i class="bi bi-caret-right-fill"></i>';
+          } else {
+            elements[j].innerHTML = translations[text];
+          }
+        }
+      }
+    }
+  }
+  
+  var categorySelector = document.querySelector('.category-selector');
+  translateURLs(categorySelector);
+}
+
+if ((window.location.pathname.startsWith("/tr/") || window.location.pathname === "/tr" || window.location.pathname === "/tr.html") && !window.location.pathname.includes("/reviews/")) {
+
+  function translateURLs(parentElement) {
+    var translations = {
+      "CSGO500 probably the best CS:GO Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, en iyi CS:GO Kumar Sitesi. Düzenli yağmurlar, hediyeler ve promosyon kodları. Birçok oyun ve slot oynayabilirsiniz.",
+      "CSGO500 probably the best CS:GO and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, en iyi CS:GO ve Rust Kumar Sitesi. Düzenli yağmurlar, hediyeler ve promosyon kodları. Birçok oyun ve slot oynayabilirsiniz.",
+      "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll, en popüler sitelerden biridir. Rulet, crash ve çok daha fazlasını içerir. Şu anda e-spor bahisleri test ediliyor.",
+      "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": "CSGOEmpire, en popüler sitelerden biridir. Rulet ve coinflip içerir. 2016'dan beri faaliyet gösteriyor. Öncelikli olarak maç bahisleri.",
+      "CSGOPolygon is a legendary site like CSGODouble with classic Roulette, but have Dices, Crash, Slots and even Esports Betting!": "CSGOPolygon, klasik Rulet gibi efsanevi bir sitedir, ancak Zarlar, Crash, Slotlar ve hatta e-spor bahisleri de bulunur!",
+      "Gamdom Casino offers a variety of in-house games, innovative social engagement, provably fair system, and good reputation in online gaming.": "Gamdom Casino, birçok içerideki oyun, yenilikçi sosyal etkileşim, ispat edilebilir adil sistem ve çevrimiçi oyunlarda iyi bir üne sahiptir.",
+      "CSGOPOSITIVE is a famous esports betting site with interesting system of cashback, you can bet skins or money. Has various payments options.": "CSGOPOSITIVE, ilginç bir geri ödeme sistemine sahip ünlü bir e-spor bahis sitesidir, skinler veya para bahis yapabilirsiniz. Çeşitli ödeme seçenekleri bulunmaktadır.",
+      "Rollbit is a new Casino site which includes Sport Betting and many classic games like roulette. Includes Daily Bonuses !": "Rollbit, spor bahislerini ve rulet gibi birçok klasik oyunu içeren yeni bir Casino sitesidir. Günlük bonuslar içerir!",
+      "CSGOLuck is a licensed CSGO skin gambling site that accepts multiple deposit methods, offering various games and a user-friendly design.": "CSGOLuck, birden fazla para yatırma yöntemini kabul eden lisanslı bir CSGO skin bahis sitesidir ve çeşitli oyunlar ile kullanıcı dostu bir tasarım sunar.",
+      "Duelbits is a safe and licensed online casino with a variety of games, sports betting, esports betting, and instant cryptocurrency transactions.": "Duelbits, çeşitli oyunlar, spor bahisleri, e-spor bahisleri ve anında kripto para işlemleri sunan güvenli ve lisanslı bir çevrimiçi kumarhanedir.",
+      "InsaneGG is an online platform that offers a range of CSGO skin gambling games with professionally designed and smooth animations.": "InsaneGG, profesyonel olarak tasarlanmış ve akıcı animasyonlara sahip bir dizi CSGO skin bahis oyunu sunan bir çevrimiçi platformdur.",
+      "Rustix - gambling platform for CS:GO and Rust with original games, fair gameplay, bonuses, and impressive animations. Opened in 2023.": "Rustix - CS:GO ve Rust için orijinal oyunlar, adil oyun, bonuslar ve etkileyici animasyonlarla kumar platformu. 2023 yılında açıldı.",
+      "CSGO-Skins is a reputable online platform where users can open custom CS:GO cases and participate in daily Giveaways.": "CSGO-Skins, kullanıcıların özel CS:GO estuches açabileceği ve günlük çekilişlere katılabileceği saygın bir çevrimiçi platformdur.",
+      "FlameCases is an online platform that permits users to open cases for CS:GO and Dota 2. Since its launch in 2017, the website provides various features.": "FlameCases, kullanıcıların CS:GO ve Dota 2 için estuches açmasına izin veren bir çevrimiçi platformdur. 2017'deki başlangıcından bu yana, web sitesi çeşitli özellikler sunmaktadır.",
+      "KNIFEX is a CS:GO gambling site that offers a range of game modes, including case opening, case battles, coinflip, crash, clash and many more!": "KNIFEX, kasa açma, kasa savaşları, coinflip, crash, çatışma gibi bir dizi oyun modu sunan bir CS:GO kumar sitesidir!",
+      "DatDrop is a website that specializes in opening cases that contain skins from CS:GO. Its most prominent feature is the case-opening battles.": "DatDrop, CS:GO'dan skin içeren estuches açmaya özgü bir web sitesidir. En önemli özelliği estuche açma savaşlarıdır.",
+      "DaddySkins is a valid CSGO case opening website that has been in operation since 2017, and it offers Case Openings, Case Battles, and Upgrader.": "DaddySkins, 2017'den beri faaliyet gösteren geçerli bir CSGO estuche açma web sitesidir ve Estuche Açma, Estuche Savaşları ve Upgrader sunar.",
+      "Clash.gg is a new CS:GO Gambling site which includes many games like Roulette, Upgrader, Cases and many more !": "Clash.gg, Rulet, Upgrader, Estuches gibi birçok oyunu içeren yeni bir CS:GO Kumar sitesidir!",
+      "HellStore is a platform that allows users to participate in CSGO skin betting through game modes like Coinflip, Jackpot, Upgrader, and Wheel.": "HellStore, Coinflip, Jackpot, Upgrader ve Wheel gibi oyun modları aracılığıyla kullanıcıların CSGO skin bahislerine katılmasına olanak tanıyan bir platformdur.",
+      "Hellcase is an online platform that allows users to purchase virtual cases filled with skins and items for various games such as CS:GO, Dota 2, and Rust.": "Hellcase, kullanıcıların CS:GO, Dota 2 ve Rust gibi çeşitli oyunlar için skinler ve eşyalarla dolu sanal estuches satın almasını sağlayan bir çevrimiçi platformdur.",
+      "CSGOBIG - a gambling site for CS:GO skins with game modes like Jackpot, Coinflip, Roulette, Cases, and Case Battles. Opened in 2015.": "CSGOBIG - CS:GO skinleri için Jackpot, Coinflip, Rulet, Estuches ve Estuche Savaşları gibi oyun modlarına sahip bir kumar sitesi. 2015 yılında açıldı.",
+      "CSGOFast is a CSGO skin gambling site that offers a wide range of exclusive game modes. One of the earliest CSGO gambling sites.": "CSGOFast, geniş bir özel oyun modu yelpazesi sunan bir CSGO skin kumar sitesidir. En eski CSGO kumar sitelerinden biri.",
+      "CSGOLive is a safe and legitimate CS:GO case opening website with custom cases, daily bonuses, and a Provably Fair system.": "CSGOLive, özel estuches, günlük bonuslar ve İspat Edilebilir Adil sistemle güvenli ve yasal bir CS:GO estuche açma web sitesidir.",
+      "WTFSkins is a reliable and popular online platform offering unique games, daily rewards, and a simple registration process.": "WTFSkins, benzersiz oyunlar, günlük ödüller ve basit bir kayıt süreci sunan güvenilir ve popüler bir çevrimiçi platformdur.",
+      "Key-Drop is a reputable online gambling platform that offers various activities like Case Battles and Upgrader, as well as custom CSGO skin cases.": "Key-Drop, Case Battles ve Upgrader gibi çeşitli etkinlikler sunan ve özel CSGO skin estuches'lerine sahip olan saygın bir çevrimiçi kumar platformudur.",
+      "Farmskins is a well-known CSGO case opening website that has been operating since 2016, offering a wide selection of skins for players to unbox.": "Farmskins, 2016 yılından bu yana faaliyet gösteren, oyuncuların açabileceği geniş bir skin seçeneği sunan tanınmış bir CSGO estuche açma web sitesidir.",
+      "Bets4.pro is an online platform that offers users the ability to place bets on esports matches, particularly for CS:GO , Dota 2, Valorant and many more.": "Bets4.pro, kullanıcılara özellikle CS:GO, Dota 2, Valorant ve daha birçok e-spor maçına bahis koyma imkanı sunan bir çevrimiçi platformdur.",
+      "This site can be called almost legendary among peers due to its high payouts and constant promotions. Include daily bonus!" : "Bu site, yüksek ödemeleri ve sürekli promosyonları nedeniyle neredeyse efsanevi olarak adlandırılabilir. Günlük bonus dahil!",
+      "HowlGG is a Rust skin gambling platform that offers a range of games, including jackpot, coinflip, slots, and live casino games." : "HowlGG, jackpot, coinflip, slots ve canlı casino oyunları dahil olmak üzere çeşitli oyunlar sunan bir Rust skin bahis platformudur.",
+      "BanditCamp is a Rust skin gambling website that provides several Rust-themed game modes like wheel of fortune, case unboxings, and coinflip." : "BanditCamp, tekerlek of fortune, estuche açma ve coinflip gibi Rust temalı oyun modlarını sağlayan bir Rust skin bahis sitesidir.",
+      "GCSkins is a well-known mobile app and website that offers CSGO skins and items as rewards for completing online tasks. Available since 2016." : "GCSkins, çevrimiçi görevleri tamamlamanın karşılığında CSGO skinleri ve eşyalarını ödül olarak sunan popüler bir mobil uygulama ve web sitesidir. 2016 yılından beri kullanılabilir.",
+      "GrindBux is a trusted platform where you can earn some money by completing surveys or play mobile and desktop games." : "GrindBux, anketleri tamamlayarak veya mobil ve masaüstü oyunları oynayarak para kazanabileceğiniz güvenilir bir platformdur.",
+      "Rust skin gambling site that has been around since 2017. The platform offers a range of popular games, including high-roller jackpot and coinflip games." : "2017'den beri faaliyet gösteren bir Rust skin bahis sitesi. Platform, yüksek bahisçi jackpot ve coinflip gibi popüler oyunları sunar.",
+      "RustBet - Trusted gambling site, Rust skins as rewards. Jackpot, coinflip, and skin upgrader games. Clean reputation, SSL encryption, user-friendly." : "RustBet - Güvenilir bir bahis sitesi, ödül olarak Rust skinleri. Jackpot, coinflip ve skin yükseltme oyunları. Temiz itibar, SSL şifreleme, kullanıcı dostu.",
+      "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot and coinflip. Easily enter and withdraw items from games." : "RustStake, jackpot ve coinflip dahil olmak üzere çeşitli oyunlar sunan bir Rust skin bahis platformudur. Oyunlardan kolayca eşya girip çıkartabilirsiniz.",
+      "In fact, the progenitor of sites for earning through Steam, stands out for its huge selection of Withdrawal methods." : "Aslında, Steam üzerinden kazanç elde etmek için sitelerin öncüsü olan bu site, büyük çaplı çekim yöntemleri seçeneğiyle öne çıkmaktadır.",
+      "RustyLoot offers a variety of games, including Wheel, Plinko, and more. With its transparent and provably fair system, RustyLoot is safe and enjoyable." : "RustyLoot, Tekerlek, Plinko ve daha fazlası dahil olmak üzere çeşitli oyunlar sunar. Şeffaf ve ispat edilebilir adil sistemiyle RustyLoot güvenli ve eğlencelidir.",
+      "RustChance has been operating since 2017 and offers several popular games, including Jackpot, Wheel, Coinflip, Crash, and Landmines.":"RustChance, 2017 yılından bu yana faaliyet gösteren ve Jackpot, Tekerlek, Coinflip, Crash ve Mayınlar gibi birçok popüler oyun sunan bir platformdur.",
+      "CrashGG focuses on Rust skin gambling and offers various games, including its primary feature, the crash game mode. Also has Duels, Blackjack and Lottery.":"CrashGG, Rust skin bahislerine odaklanır ve başlıca özelliği olan crash oyun modu dahil olmak üzere çeşitli oyunlar sunar. Ayrıca Düello, Blackjack ve Loto oyunlarına da sahiptir.",
+      "HypeUp is owned by the same operators of two popular betting sites, CSGORoll and HypeDrop. Offers two original games and Slots with Live Games.":"HypeUp, CSGORoll ve HypeDrop'ın aynı operatörleri tarafından işletilen bir bahis sitesidir. Orijinal oyunlar ve Canlı Oyunlarla Slot oyunları sunar.",
+      "The website has a decent number of survey providers and offerwall partners to choose from, and there are plenty of options for withdrawing earnings.":"Web sitesi, seçilebilecek makul sayıda anket sağlayıcısı ve teklif duvarı ortağına sahiptir ve kazançları çekmek için birçok seçenek vardır.",      "SkinSwap is an online platform that allows players to trade and sell skins from popular games such as CS:GO and Rust. Owned and operated by RustySell.":"SkinSwap, CS:GO ve Rust gibi popüler oyunlardan skinleri ticaret yapmanıza ve satmanıza izin veren bir çevrimiçi platformdur. RustySell tarafından sahip ve işletilir.",
+      "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.":"CSGOSelly, kullanıcıların CSGO skinlerini çeşitli ödeme yöntemleri aracılığıyla para olarak çekmelerine olanak sağlayan bir web sitesidir. 2021 yılında kuruldu.",
+      "Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.":"Farklı bir site, çeşitli mobil oyunlarda kazanarak para kazanabileceğiniz birçok teklif duvarı da dahil olmak üzere çeşitli mobil oyun cyber disiplinlerinde para kazanabilirsiniz.",
+      "Mobile Games. Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.":"Mobil Oyunlar. Farklı bir site, çeşitli mobil oyunlarda kazanarak para kazanabileceğiniz birçok teklif duvarı da dahil olmak üzere çeşitli mobil oyun cyber disiplinlerinde para kazanabilirsiniz.",
+      "RustMoment is a gambling site for Rust skin enthusiasts with six games, bonuses, and a rakeback system. It accepts standard and cryptocurrency payments.":"RustMoment, altı oyun, bonuslar ve rakeback sistemiyle Rust skin hayranları için bir bahis sitesidir. Standart ve kripto para ödemelerini kabul eder.",
+      "Freeward is a GPT site that provides various opportunities for users to earn rewards through tasks like surveys and watching videos.": "Freeward, kullanıcıların anketler yaparak ve videolar izleyerek ödüller kazanabilecekleri çeşitli fırsatlar sunan bir GPT sitesidir.",
+      "Roobet is an online casino that allows users to play games using cryptocurrency. The platform has a reputation for being legitimate and safe.": "Roobet, kullanıcıların kripto para kullanarak oyun oynayabileceği bir çevrimiçi kumarhanedir. Platformun itibarı yasal ve güvenli olmasıyla bilinir.",
+      "xplay is a platform that allows CS:GO players to earn skins just by playing on their servers. The platform offers various servers and daily challenges.": "xplay, CS:GO oyuncularının sadece sunucularında oynayarak skin kazanmasına olanak tanıyan bir platformdur. Platform, çeşitli sunucular ve günlük meydan okumalar sunar.",
+      "Established in 2018, it offers jackpot, coinflip, and roulette games with enhanced features, provable fairness, and attractive animations.": "2018 yılında kurulan bu site, gelişmiş özelliklere, ispat edilebilir adalet sistemine ve çekici animasyonlara sahip jackpot, coinflip ve rulet oyunları sunar.",
+      "GameTame is a GPT site that provides rewards for completing various activities and offers. The platform is specifically designed for gamers.": "GameTame, çeşitli aktiviteleri ve teklifleri tamamlamanın karşılığında ödüller sunan bir GPT sitesidir. Platform özellikle oyuncular için tasarlanmıştır.",
+      "Salad is a website that offers users the opportunity to mine wallet and buy gift cards and many more using their computer's processing power.": "Salad, kullanıcılara cüzdan madenciliği yapma ve bilgisayarlarının işlem gücünü kullanarak hediye kartları ve daha fazlasını satın alma fırsatı sunan bir web sitesidir.",
+      "Site from Gamehag owners. Has a decent number of survey providers and offerwall partners to choose from, plenty of options for withdrawing earnings.": "Gamehag sahiplerinin bir sitesi. Seçilebilecek makul sayıda anket sağlayıcısı ve teklif duvarı ortağına sahip, kazançları çekmek için birçok seçenek sunuyor.",
+      "SteamGifts is a legitimate website for Steam Game Giveaways with a supportive community and helpful resources.": "SteamGifts, destekleyici bir topluma ve yardımcı kaynaklara sahip Steam Oyun Hediye Çekilişleri için güvenilir bir web sitesidir.",
+      "GrindBux is a trusted platform where you can earn some money by completing surveys or playing mobile and desktop games.": "GrindBux, anketleri tamamlayarak veya mobil ve masaüstü oyunları oynayarak para kazanabileceğiniz güvenilir bir platformdur.",
+      "RustCases is a trusted Rust gambling site with various game modes, a wide range of cases, and skin withdrawal options. Owned by RustChance.": "RustCases, çeşitli oyun modlarına, geniş bir kutu seçeneğine ve skin çekme seçeneklerine sahip güvenilir bir Rust kumar sitesidir. RustChance tarafından sahiplenilmiştir.",
+      "RustClash is a new Rust Gambling site which includes many games like Roulette, Upgrader, Cases and many more!": "RustClash, Rulet, Yükseltici, Kutular ve daha birçok oyun gibi birçok oyun içeren yeni bir Rust Kumar sitesidir!",
+      "BC.Game is an online casino and sportsbook that was launched in 2017, offering over 8,000 games including proprietary and probably fair games.": "BC.Game, 2017'de piyasaya sürülen bir çevrimiçi kumarhane ve spor kitabıdır. 8.000'den fazla oyun sunar ve mülkiyetindeki ve adil olduğu bilinir.",
+      "Primedice is an online Crypto Dice Game Casino that has been in operation since 2013. It was one of the first platforms to use crypto for gambling.": "Primedice, 2013 yılından bu yana faaliyet gösteren bir çevrimiçi kripto zar oyunu kumarhanesidir. Kripto parayı kumar için kullanan ilk platformlardan biridir.",
+      "Tradeit is an online marketplace that offers players the opportunity to trade, buy, and sell skins for a variety of games, including CS:GO. Working since 2017.": "Tradeit, CS:GO dahil olmak üzere çeşitli oyunlar için skin takas etme, alma ve satma imkanı sunan bir çevrimiçi pazardır. 2017'den beri faaliyet gösteriyor.",
+      "DMarket is a reliable and popular marketplace for Steam items, with a large number of items available and positive reviews on Trustpilot.": "DMarket, geniş bir ürün yelpazesine sahip olan ve Trustpilot'ta olumlu değerlendirmeler alan Steam ürünleri için güvenilir ve popüler bir pazardır.",
+      "Swap.gg is a website that allows users to buy, sell, and trade CS:GO, Rust, TF2, and other virtual items from various games. Working since 2017.": "Swap.gg, kullanıcıların CS:GO, Rust, TF2 ve diğer çeşitli oyunlardan sanal ürünleri satın alma, satma ve takas etme imkanı sunan bir web sitesidir. 2017'den beri faaliyet gösteriyor.",    
+      "BitSkins is an online marketplace for in-game skins, particularly for Counter-Strike: Global Offensive, Dota 2, and Team Fortress 2. Launched in 2015.": "BitSkins, özellikle Counter-Strike: Global Offensive, Dota 2 ve Team Fortress 2 için oyun içi skinlerin alınıp satılabildiği bir çevrimiçi pazardır. 2015 yılında başlatılmıştır.",
+      "Secure P2P marketplace owned by Hellcase. SSL-encrypted, KYC verification, friendly design, competitive pricing, trusted trading platform.": "Hellcase'e ait güvenli P2P pazar. SSL şifrelemeli, KYC doğrulaması, kullanıcı dostu tasarım, rekabetçi fiyatlandırma, güvenilir ticaret platformu.",
+      "BitSkins P2P is an online platform for buying and selling virtual items, with a focus on CS:GO skins. The parent company, BitSkins.": "BitSkins P2P, CS:GO skinlerine odaklanan sanal ürünlerin alınıp satılabildiği bir çevrimiçi platformdur. Ana şirket, BitSkins'tir.",
+      "Trusted CS:GO skin platform with rentals, endorsed by YouTubers. Secure, limited to CS:GO skins, fees apply, and user reviews indicate room for improvement.": "YouTuber'lar tarafından desteklenen, güvenilir CS:GO skin platformu. Güvenli, sadece CS:GO skinlerine özgü, ücretler uygulanır ve kullanıcı yorumları geliştirme için potansiyel olduğunu gösterir.",
+      "GamerPay is a trusted platform for buying and selling CS:GO skins, with a free selling option, secure transactions, and high-quality skin inspection tool.": "GamerPay, CS:GO skinlerinin alınıp satılabildiği güvenilir bir platformdur. Ücretsiz satış seçeneği, güvenli işlemler ve yüksek kaliteli skin kontrol aracı sunar.",
+      "CSGO Market is an online P2P marketplace that provides a safe and secure platform for buying and selling CS:GO skins. Established in 2015.": "CSGO Market, CS:GO skinlerinin alınıp satılabildiği güvenli ve güvenli bir platform sunan çevrimiçi bir P2P pazarıdır. 2015 yılında kuruldu.",
+      "Lis-Skins is a popular marketplace for Steam items, especially CS:GO, Rust, and Dota 2 skins and items. The platform was founded in 2020.": "Lis-Skins, özellikle CS:GO, Rust ve Dota 2 skinleri ve ürünleri için popüler bir Steam pazarıdır. Platform, 2020 yılında kurulmuştur.",
+      "WhiteMarket is a P2P platform for CS:GO skin trading. It offers secure trades, various deposit options, and community engagement.": "WhiteMarket, CS:GO skin ticareti için bir P2P platformudur. Güvenli işlemler, çeşitli depozito seçenekleri ve topluluk katılımı sunar.",
+      "CS.Deals is a platform that allows users to buy, sell, and trade skins from popular games such as CS:GO, Dota 2, Rust, and Team Fortress 2. Working since 2016.": "CS.Deals, CS:GO, Dota 2, Rust ve Team Fortress 2 gibi popüler oyunlardan skinlerin alınıp satılabildiği bir platformdur. 2016 yılından beri faaliyet göstermektedir.",
+      "SkinBid is an online marketplace for CS:GO skins and in-game items, offering buying, selling, and auctioning features with a user-friendly interface.": "SkinBid, CS:GO skinleri ve oyun içi ürünler için bir çevrimiçi pazardır ve kullanıcı dostu bir arayüzle alım, satım ve açık artırma özellikleri sunar.",
+      "LOOT.Farm is an online platform that offers users the ability to trade virtual items from popular games like CS:GO, Dota 2, Team Fortress 2, and Rust.": "LOOT.Farm, CS:GO, Dota 2, Team Fortress 2 ve Rust gibi popüler oyunlardan sanal eşyaları takas etme imkanı sunan bir çevrimiçi platformdur.",
+      "SkinBaron is an online platform based in Germany that enables users to buy and sell their CS:GO skins. The platform has gained a good reputation.": "SkinBaron, kullanıcıların CS:GO skinlerini satın alıp satmalarını sağlayan Almanya merkezli bir çevrimiçi platformdur. Platform iyi bir üne sahiptir.",
+      "Gamdom is one of the best CS:GO match betting sites. You can play roulette, wheel, crash, slots, and many more!": "Gamdom, en iyi CS:GO maç bahis sitelerinden biridir. Rulet, çark, crash, slotlar ve daha birçok oyunu oynayabilirsiniz!",
+      "SkinCashier is an online platform that allows players to instantly sell their CS:GO, Rust, Dota 2, and TF2 skins for real money. Operating since 2020.": "SkinCashier, oyuncuların CS:GO, Rust, Dota 2 ve TF2 skinlerini anında gerçek para karşılığında satmalarını sağlayan bir çevrimiçi platformdur. 2020 yılından beri faaliyet göstermektedir.",
+      "Avan.Market is an online platform that offers users the opportunity to sell gaming skins from popular games like CS:GO, Dota 2, RUST, and TF2.": "Avan.Market, CS:GO, Dota 2, RUST ve TF2 gibi popüler oyunlardan oyun skinlerini satma fırsatı sunan bir çevrimiçi platformdur.",    
+      "Skins.Cash is a reputable platform with positive reviews, reliable customer support, and over six years of operation. Pricing not the best one.": "Skins.Cash, olumlu değerlendirmelere sahip, güvenilir müşteri desteği sunan ve altı yılı aşkın süredir faaliyet gösteren saygın bir platformdur. Fiyatlandırma en iyi olanlardan değil.",
+      "CYBERSHOKE is a website that provides servers for playing CS:GO. It offers various servers for players to choose.": "CYBERSHOKE, CS:GO oynamak için sunucular sağlayan bir web sitesidir. Oyuncuların seçebileceği çeşitli sunucular sunar.",
+      "This site was created for easy leveling up Steam, you can sell emojis and profile backgrounds for Steam Trading Cards to fast level up.": "Bu site, Steam'deki seviyenizi kolayca yükseltmek için oluşturulmuştur. Steam Ticaret Kartları için emojiler ve profil arka planlarını satabilir, hızlıca seviye atlayabilirsiniz.",
+      "SteamLevelU is a legitimate platform to buy Steam trading card packs for enhancing Steam account levels, associated with SH Level Up.": "SteamLevelU, Steam hesap seviyelerini artırmak için Steam ticaret kartı paketleri satın almak için kullanılan güvenilir bir platformdur. SH Level Up ile ilişkilidir.",
+      "SteamLevels is a user-friendly website that helps increase your Steam account level by purchasing card packs and accepting CSGO skins.": "SteamLevels, kart paketleri satın alarak ve CSGO skinlerini kabul ederek Steam hesabınızın seviyesini artırmaya yardımcı olan kullanıcı dostu bir web sitesidir.",
+      "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot, and coinflip. Easily enter and withdraw items from games.": "RustStake, jackpot ve coinflip gibi bir dizi oyun sunan bir Rust skin kumar platformudur. Oyundan kolayca öğeleri yatırabilir ve çekebilirsiniz.",
+      "iTrade.gg is a Trusted platform for trading rust skins. User-friendly design, free sign-up bonus, and daily rewards create a seamless trading experience.": "iTrade.gg, rostoların ticaretini yapmak için güvenilir bir platformdur. Kullanıcı dostu tasarım, ücretsiz kayıt bonusu ve günlük ödüller sorunsuz bir ticaret deneyimi sağlar.",
+      "Shuffle.com is a comprehensive crypto casino with a unique registration process, original games, a VIP program, and plans for future expansion.": "Shuffle.com, benzersiz bir kayıt süreci, orijinal oyunlar, bir VIP programı ve gelecekteki genişleme planları olan kapsamlı bir kripto casino'dur.",
+      "Withdraw Money, Skins or Devices!": "Para, Skinler veya Cihazlar Çekin!",
+      "Withdraw BTC, LTC, ETH and many else!": "BTC, LTC, ETH ve birçok şey çekin!",
+      "Withdrawal of many types of cryptocurrencies !": "Birçok türde kripto paranın çekilmesi!",
+      "Withdraw CS:GO Skins, Crypto or Real Money!": "CS:GO Skinleri, Kripto veya Gerçek Para Çekin!",
+      "Withdraw CS:GO, Dota 2, TF2 or Rust Items!": "CS:GO, Dota 2, TF2 veya Rust Eşyalarını Çekin!",
+      "Withdraw CS:GO Skins, Crypto or Game Keys!": "CS:GO Skinleri, Kripto veya Oyun Anahtarları Çekin!",
+      "Withdraw CS:GO Skins, Crypto or PayPal!": "CS:GO Skinleri, Kripto veya PayPal Çekin!",
+      "Withdraw Money, CS:GO, TF2 or Rust Skins!": "Para, CS:GO, TF2 veya Rust Skinleri Çekin!",
+      "Withdraw CS:GO Skins, Dota 2 and H1Z1 Items!": "CS:GO Skinleri, Dota 2 ve H1Z1 Eşyalarını Çekin!",
+      "Withdraw CS:GO, Rust Skins and Dota 2 Items!": "CS:GO, Rust Skinleri ve Dota 2 Eşyalarını Çekin!",
+      "Withdraw Rust Skins, Crypto or PayPal!": "Rust Skinleri, Kripto veya PayPal Çekin!",
+      "Withdraw Rust Skins or Crypto!": "Rust Skinleri veya Kripto Çekin!",
+      "Withdraw Rust Skins and Items!": "Rust Skinleri ve Eşyaları Çekin!",
+      "Withdraw with many-many ways." : "Çok çok farklı şekillerde çekim yapın.",
+      "Withdraw Crypto, gift cards or real money!" : "Kripto para, hediye kartları veya gerçek para çekin!",
+      "Withdraw CS:GO Skins, Gift Cards or Crypto!" : "CS:GO Skins, hediye kartları veya kripto para çekin!",
+      "Withdraw Bitcoin, Ethereum or Litecoin!" : "Bitcoin, Ethereum veya Litecoin çekin!",
+      "Withdraw Games, GiftCards and many more!" : "Oyunlar, hediye kartları ve çok daha fazlasını çekin!",
+      "Withdraw Crypto or Real Money!" : "Kripto para veya gerçek para çekin!",
+      "Withdraw Crypto and Gift Cards!" : "Kripto para ve hediye kartları çekin!",
+      "Withdraw BTC, LTC, USDT, USDC or ETH!" : "BTC, LTC, USDT, USDC veya ETH çekin!",
+      "Withdraw CS:GO Skins or Items!" : "CS:GO Skins veya eşyalar çekin!",
+      "Withdraw Games, GiftCards or Dota2 & TF2 Items!" : "Oyunlar, hediye kartları veya Dota2 & TF2 eşyaları çekin!",
+      "Withdraw Games, GiftCards or Donate to Charity!" : "Oyunlar, hediye kartları veya bağış yapın!",
+      "Participate in Giveaways and win Steam Games." : "Çekilişlere katılın ve Steam oyunları kazanın.",
+      "Withdraw CS:GO And Rust Skins or Crypto!" : "CS:GO ve Rust Skins veya kripto para çekin!",
+      "Withdraw CS:GO Skins or real Money!" : "CS:GO Skins veya gerçek para çekin!",
+      "Withdraw Steam Trading cards or Games." : "Steam Takas kartları veya oyunları çekin.",
+      "Withdraw USDT, Skins or Real Money!" : "USDT, Skins veya gerçek para çekin!",
+      "Withdraw Money, CS:GO or Rust Skins!" : "Para, CS:GO veya Rust Skins çekin!",
+      "Withdraw Money, Crypto or Skins!" : "Para, kripto para veya Skins çekin!",
+      "Withdraw CS:GO Skins or Crypto!" : "CS:GO Skins veya kripto para çekin!",
+      "Withdraw Money, Crypto or PayPal!" : "Para, kripto para veya PayPal çekin!",
+      "WITHDRAW WITH P2P CS:GO SKINS." : "P2P CS:GO SKINS ile çekin.",
+      "Withdraw Real Money or Crypto!" : "Gerçek para veya kripto para çekin!",
+      "Withdraw BTC, ETH, USDT or Tron!" : "BTC, ETH, USDT veya Tron çekin!",
+      "Withdraw CS:GO Skins or PayPal!" : "CS:GO Skins veya PayPal çekin!",
+      "Withdraw CS:GO Skins and Items!" : "CS:GO Skins ve eşyalar çekin!",
+      "Withdraw Steam Trading cards." : "Steam Takas kartları çekin!",
+      "1h, 24h and 7d Giveaways" : "1s, 24s ve 7g çekilişler",
+      "24h Giveaway" : "24s çekiliş",
+      "3h and 24h Giveaway" : "3s ve 24s çekiliş",
+      "Daily and Weekly Giveaways" : "Günlük ve haftalık çekilişler",
+      "1h Giveaway" : "1s çekiliş",
+      "1h, 24h Giveaways" : "1s, 24s çekilişler",
+      "Rare Giveaways" : "Nadir çekilişler",
+      "Weekly Giveaways" : "Haftalık çekilişler",
+      "Daily Giveaways" : "Günlük çekilişler",
+      "Deposit Required" : "Depozito gerekiyor",
+      "+360% Deposit Bonus" : "+360% Depozito Bonusu",
+      "+100% Deposit Bonus" : "+100% Depozito Bonusu",
+      "+10% Deposit Bonus" : "+10% Depozito Bonusu",
+      "+5% Deposit Bonus" : "+5% Depozito Bonusu",
+      "+1% Deposit Bonus" : "+1% Depozito Bonusu",
+      "70 Free Spins" : "70 Ücretsiz Dönüş",
+      "Every 24h Reward" : "Her 24 saatte bir ödül",
+      "Daily Case" : "Günlük Kasa",
+      "Daily Faucet" : "Günlük Musluk",
+      "Daily Roll" : "Günlük Çark",
+      "Daily Coins" : "Günlük Paralar",
+      "Faucet and Giveaways" : "Musluk ve çekilişler",
+      "Daily 0.02$" : "Günlük 0.02$",
+      "Daily 0.02$ + Free Case" : "Günlük 0.02$ + Ücretsiz Kasa",
+      "360% Deposit Bonus" : "360% Depozito Bonusu",
+      "Deposit Bonus" : "Depozito Bonusu",
+      "Visit WebSite" : "Web Sitesini Ziyaret Et",
+      "Visit WebSite or Copy" : "Web Sitesini Ziyaret Et veya Kopyala",
+      "100% deposit bonus" : "100% Depozito Bonusu",
+      "+3% Sell Bonus" : "+3% Satış Bonusu",
+      "5% deposit bonus" : "5% Depozito Bonusu",
+      "5 Free Cases" : "5 Ücretsiz Kasa",
+      "Free 50 Gems" : "50 Ücretsiz Taş",
+      "3 Free Cases" : "3 Ücretsiz Kasa",
+      "Free 5€" : "5€ Bedava",
+      "1.5$ for free" : "Ücretsiz 1.5$",
+      "Free 1.00$" : "Ücretsiz 1.00$",
+      "Free 0.90$" : "Ücretsiz 0.90$",
+      "Free 0.50$" : "Ücretsiz 0.50$",
+      "Free 0.40$" : "Ücretsiz 0.40$",
+      "Free 0.30$" : "Ücretsiz 0.30$",
+      "Free 0.25$" : "Ücretsiz 0.25$",
+      "Free 0.20$" : "Ücretsiz 0.20$",
+      "Free 0.15$" : "Ücretsiz 0.15$",
+      "Free 0.10$" : "Ücretsiz 0.10$",
+      "Free 0.05$" : "Ücretsiz 0.05$",
+      "Free Case" : "Ücretsiz Kasa",
+      "Free 1$" : "Ücretsiz 1$",
+      "Free 2$" : "Ücretsiz 2$",
+      "Big Daily Giveaways" : "Büyük Günlük Çekilişler",
+      "Free Case up to 250$" : "Ücretsiz Kasa, 250$'a kadar",
+      "Daily Giveaway" : "Günlük Çekiliş",
+      "Free 100 Diamonds" : "Ücretsiz 100 Elmas",
+      "500 coins" : "500 jeton",
+      "Daily Cases" : "Günlük Kasa",
+      "3 Energy Points" : "3 Enerji Puanı",
+      "Free 200 Coins" : "Ücretsiz 200 Jeton",
+      "some free coins" : "biraz ücretsiz jeton",
+      "Free 2$" : "Ücretsiz 2$",
+      "Free spins" : "Ücretsiz dönüşler",
+      "Offerwall" : "Teklif Duvarı",
+      "x2 Mining Rate" : "x2 Madencilik Oranı",
+      "Games Giveaways" : "Oyun Çekilişleri"
+      };
+
+    var elements = parentElement.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
+    for (var j = 0; j < elements.length; j++) {
+      var text = elements[j].textContent.trim();
+      if (translations.hasOwnProperty(text)) {
+        elements[j].innerHTML = translations[text];
+      }
+    }
+  }
+
+  window.onload = importDivContent;
+}
+
 if ((window.location.pathname.startsWith("/hi/") || window.location.pathname === "/hi" || window.location.pathname === "/hi.html") && !window.location.pathname.includes("/reviews/")) {
 
   function translateURLs(parentElement) {
