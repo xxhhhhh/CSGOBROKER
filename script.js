@@ -309,7 +309,7 @@ if (window.location.pathname.includes('/ru/reviews/')) {
     var link = links[i];
 
     if (link.href.includes('csgobroker.cc') && !link.classList.contains('lang-switch')) {
-      if (!link.pathname.includes('/ru/')) {
+      if (!link.pathname.includes('/ru')) {
         if (link.pathname !== '/') {
           link.pathname = '/ru' + link.pathname;
         } else {
