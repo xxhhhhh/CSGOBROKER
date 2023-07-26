@@ -1,5 +1,12 @@
 @import "fonts/TTNormsPro.css";
 
+@keyframes buttons {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.05);}
+    100% {transform: scale(1);}
+  }
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -1597,8 +1604,16 @@ nav img {
     transition: all .2s ease-in-out;
     color: white;
 }
+.box:hover .content button#copy_style{
+    /* background: rgb(52 52 52); */
+    animation: buttons 1s infinite;
+}
+.box:hover .content button{
+    background: rgb(36 36 36);
+}
 .content button:hover{
-    background: var(--main-color);
+    background: var(--main-color) !important;
+    transition: all .2s ease-in-out;
 }
 .content button:focus{
     background: var(--main-color);
