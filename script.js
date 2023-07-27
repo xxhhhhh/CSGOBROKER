@@ -317,17 +317,20 @@ if (window.location.pathname.includes('/ru/reviews/')) {
 
   for (var i = 0; i < links.length; i++) {
     var link = links[i];
-
+  
     if (link.href.includes('csgobroker.cc') && !link.classList.contains('lang-switch')) {
-      if (!link.pathname.includes('/ru')) {
-        if (link.pathname !== '/') {
-          link.pathname = '/ru' + link.pathname;
+      var path = link.pathname;
+  
+      if (!path.includes('/ru/') && path.indexOf('/ru') !== 0) {
+        if (path !== '/') {
+          link.pathname = '/ru' + path;
         } else {
-          link.href = link.href.replace('https://csgobroker.cc/', 'https://csgobroker.cc/ru/');
+          link.href = link.href.replace('csgobroker.cc/', 'csgobroker.cc/ru/');
         }
       }
     }     
   }
+  
   function translateTextElements(parentElement) {
     var translations = {
       "Deposit Methods": "Способы Пополнения",
