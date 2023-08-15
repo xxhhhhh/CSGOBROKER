@@ -1051,7 +1051,7 @@ nav img {
 }
 .controls-button {
     position: absolute;
-    top: 17%;
+    top: 150px;
     transform: translateY(-50%);
     background-color: transparent;
     color: var(--white);
@@ -1676,6 +1676,7 @@ nav img {
 .box:hover .content button#copy_style{
     /* background: rgb(52 52 52); */
     animation: buttons 1s infinite;
+    background-color: #a81d34;
 }
 .box:hover .content button{
     background: rgb(36 36 36);
