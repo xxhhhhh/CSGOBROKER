@@ -37,6 +37,17 @@ function handleLanguageRedirect() {
         return false;
       }
     }
+    else if ((userLang === 'tr' || userLang === 'tr-TR') && window.location.pathname === '/') {
+      var currentUrl = window.location.href;
+      var newUrl = currentUrl.replace('.cc/', '.cc/tr');
+
+      if (newUrl !== currentUrl) {
+        userChoice = 'tr';
+        setCookie('languageChoice', userChoice, 365);
+        window.location.href = newUrl;
+        return false;
+      }
+    }
     else if ((userLang === 'hi' || userLang === 'hi-IN') && window.location.pathname === '/') {
       var currentUrl = window.location.href;
       var newUrl = currentUrl.replace('.cc/', '.cc/hi');
@@ -86,6 +97,15 @@ function handleLanguageRedirect() {
       return false;
     }
   }
+  else if (userChoice === 'tr' && window.location.pathname === '/') {
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('.cc/', '.cc/tr');
+
+    if (newUrl !== currentUrl) {
+      window.location.href = newUrl;
+      return false;
+    }
+  }
   else if (userChoice === 'hi' && window.location.pathname === '/') {
     var currentUrl = window.location.href;
     var newUrl = currentUrl.replace('.cc/', '.cc/hi');
@@ -125,6 +145,14 @@ document.addEventListener('click', function(event) {
     else if (selectedLang === 'es' && window.location.pathname === '/') {
       var currentUrl = window.location.href;
       var newUrl = currentUrl.replace('.cc/', '.cc/es');
+
+      if (newUrl !== currentUrl) {
+        window.location.href = newUrl;
+      }
+    }
+    else if (selectedLang === 'tr' && window.location.pathname === '/') {
+      var currentUrl = window.location.href;
+      var newUrl = currentUrl.replace('.cc/', '.cc/tr');
 
       if (newUrl !== currentUrl) {
         window.location.href = newUrl;
