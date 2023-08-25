@@ -1564,7 +1564,8 @@ nav img {
     width: auto;
     padding: 0 8px;
     height: 30px;
-    background-color: rgb(30, 156, 66);
+    background-color: var(--main-color);
+    /* background-color: rgb(30, 156, 66); */
     /* background-color: var(--grey); */
     border-radius: 0px 5px 0px 5px;
     display: flex;
