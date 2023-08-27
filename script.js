@@ -256,7 +256,7 @@ if (
   }
   if (currentLanguage !== "tr") {
     newContent +=
-      '<li><a href="/es' +
+      '<li><a href="/tr' +
       window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
       '" class="lang-switch" data-lang="tr">TR</a></li>';
   }
