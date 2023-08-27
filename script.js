@@ -2000,3 +2000,30 @@ if (window.location.pathname.includes("/reviews/")) {
     }
   });
 }
+
+if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') || window.location.pathname.endsWith("ru.html") && !window.location.pathname.includes('/reviews/')) {
+        // Создаем новый div элемент
+        var newDiv = document.createElement("div");
+        newDiv.className = "vpn";
+        newDiv.textContent = "Нужен VPN";
+
+        // Массив айди, на которые нужно добавлять .vpn
+        var allowedIds = ["CSGORoll", "csgo500", "CSGOEmpire", "Clash", "Gamdom", "Rollbit", "Duelbits", "InsaneGG", "FlameCases", "KNIFEX", "DaddySkins", "Hellcase", "CSGOFast", "CSGOLive", "WTFSkins", "Key-Drop", "FarmSkins"];
+
+        // Находим все элементы .box
+        var boxElements = document.querySelectorAll(".box");
+
+        // Проходим по всем элементам .box и добавляем новый div в нужные элементы
+        boxElements.forEach(function(boxElement) {
+            var boxId = boxElement.id;
+            if (allowedIds.includes(boxId)) {
+                var logobgElement = boxElement.querySelector(".logobg");
+                if (logobgElement) {
+                    var clonedDiv = newDiv.cloneNode(true);
+                    logobgElement.appendChild(clonedDiv);
+                } else {
+                    console.error("Не удалось найти элемент .logobg внутри .box");
+                }
+            }
+        });
+      }
