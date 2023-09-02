@@ -2,9 +2,7 @@ var userChoice = getCookie('languageChoice');
 
 function setLanguage(newLang) {
   var currentUrl = window.location.href;
-  var topLevelDomain = window.location.hostname.split('.').pop();
-  var newDomain = window.location.hostname.replace('.' + topLevelDomain, '.' + newLang);
-  var newUrl = currentUrl.replace(window.location.hostname, newDomain);
+  var newUrl = currentUrl.replace(/\/[a-z]{2}\//, '/' + newLang + '/');
 
   if (newUrl !== currentUrl) {
     userChoice = newLang;
@@ -79,6 +77,7 @@ function getCookie(name) {
 }
 
 handleLanguageRedirect();
+
 
 function importDivContent() {
   var xhr = new XMLHttpRequest();
