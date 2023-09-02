@@ -49,6 +49,17 @@ function handleLanguageRedirect() {
       }
     }
   }
+  else if (userChoice && window.location.pathname === '/') {
+    var currentUrl = window.location.href;
+    var langPrefix = userChoice;
+    var newUrl = currentUrl.replace(/\.co\//g, '.co/' + langPrefix + '/');
+    newUrl = newUrl.replace(/\.cc\//g, '.cc/' + langPrefix + '/');
+
+    if (newUrl !== currentUrl) {
+      window.location.href = newUrl;
+      return false;
+    }
+  }
 }
 
 document.addEventListener('click', function(event) {
@@ -100,6 +111,7 @@ function getCookie(name) {
 }
 
 handleLanguageRedirect();
+
 
 
 
