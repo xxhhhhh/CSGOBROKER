@@ -79,6 +79,14 @@ document.addEventListener('click', function(event) {
       if (newUrl !== currentUrl) {
         window.location.href = newUrl;
       }
+    } else if (selectedLang === 'en' && window.location.pathname === '/') {
+      var currentUrl = window.location.href;
+      var newUrl = currentUrl.replace(/\.co\//g, '.co/');
+      newUrl = newUrl.replace(/\.cc\//g, '.cc/');
+
+      if (newUrl !== currentUrl) {
+        window.location.href = newUrl;
+      }
     }
   }
 });
