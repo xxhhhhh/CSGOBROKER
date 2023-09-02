@@ -121,13 +121,13 @@ if (!window.location.pathname.includes("/reviews/")) {
 
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.co/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!ru\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("csgobroker.cc/", "csgobroker.cc/ru/");
+        var translatedHref = href.replace("csgobroker.co/", "csgobroker.co/ru/");
         links[i].setAttribute('href', translatedHref);
       }
   
@@ -318,14 +318,14 @@ if (window.location.pathname.includes('/ru/reviews/')) {
   for (var i = 0; i < links.length; i++) {
     var link = links[i];
   
-    if (link.href.includes('csgobroker.cc') && !link.classList.contains('lang-switch')) {
+    if (link.href.includes('csgobroker.co') && !link.classList.contains('lang-switch')) {
       var path = link.pathname;
   
       if (!path.includes('/ru/') && path.indexOf('/ru') !== 0) {
         if (path !== '/') {
           link.pathname = '/ru' + path;
         } else {
-          link.href = link.href.replace('csgobroker.cc/', 'csgobroker.cc/ru/');
+          link.href = link.href.replace('csgobroker.co/', 'csgobroker.co/ru/');
         }
       }
     }     
@@ -376,13 +376,13 @@ if (window.location.pathname.includes('/ru/reviews/')) {
 
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.co/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!ru\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("csgobroker.cc/", "csgobroker.cc/ru/");
+        var translatedHref = href.replace("csgobroker.co/", "csgobroker.co/ru/");
         links[i].setAttribute('href', translatedHref);
       }
     }
@@ -504,13 +504,13 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
 
 if ((window.location.pathname.startsWith('/pt/') || window.location.pathname === '/pt' || window.location.pathname === '/pt.html') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.co/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!pt\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("csgobroker.cc/", "csgobroker.cc/pt/");
+        var translatedHref = href.replace("csgobroker.co/", "csgobroker.co/pt/");
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -782,13 +782,13 @@ if ((window.location.pathname.startsWith('/pt/') || window.location.pathname ===
 
 if ((window.location.pathname.startsWith('/hi/') || window.location.pathname === '/hi' || window.location.pathname === '/hi.html') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.co/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!hi\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("csgobroker.cc/", "csgobroker.cc/hi/");
+        var translatedHref = href.replace("csgobroker.co/", "csgobroker.co/hi/");
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -853,13 +853,13 @@ if ((window.location.pathname.startsWith('/hi/') || window.location.pathname ===
 
 if ((window.location.pathname.startsWith("/es/") || window.location.pathname === "/es" || window.location.pathname === "/es.html") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.co/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!es\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("csgobroker.cc/", "csgobroker.cc/es/");
+        var translatedHref = href.replace("csgobroker.co/", "csgobroker.co/es/");
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -1129,13 +1129,13 @@ if ((window.location.pathname.startsWith("/es/") || window.location.pathname ===
 
 if ((window.location.pathname.startsWith("/tr/") || window.location.pathname === "/tr" || window.location.pathname === "/tr.html") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.cc/"]');
+    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.co/"]');
     var regex = /^https:\/\/csgobroker\.cc\/(?!tr\/)/;
 
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       if (regex.test(href)) {
-        var translatedHref = href.replace("csgobroker.cc/", "csgobroker.cc/tr/");
+        var translatedHref = href.replace("csgobroker.co/", "csgobroker.co/tr/");
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -1668,85 +1668,85 @@ var siteList = document.getElementById('site-list');
 var searchInput = document.getElementById('search-input'); 
 var isRussianPage = window.location.pathname.includes('/ru');
 var sites = [
-'<li><a href="https://csgobroker.cc/reviews/idle-empire">Idle-empire</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/insanegg">Insanegg</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/key-drop">Key-drop</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/knifex">Knifex</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/lis-skins">Lis-skins</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/lootbear">Lootbear</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/lootfarm">Lootfarm</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/primedice">Primedice</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/rollbit">Rollbit</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/roobet">Roobet</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/rustbet">Rustbet</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/rustcases">Rustcases</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/rustchance">Rustchance</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/rustclash">Rustclash</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/rustix">Rustix</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/rustmoment">Rustmoment</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/ruststake">Ruststake</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/rustyloot">Rustyloot</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/rustypot">Rustypot</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/salad">Salad</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/shadowpay">Shadowpay</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/skinbaron">Skinbaron</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/skinbet">Skinbet</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/skincashier">Skincashier</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/skinscash">Skinscash</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/skinswap">Skinswap</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/steamgifts">Steamgifts</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/steamlvlup">Steamlvlup</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/swapgg">Swapgg</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/tradeit">Tradeit</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/vvvgamers">Vvvgamers</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/wtfskins">Wtfskins</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/xplay">Xplay</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/avanmarket">Avanmarket</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/banditcamp">Banditcamp</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/bcgame">Bcgame</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/bets4pro">Bets4pro</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/bitskins">Bitskins</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/bitskins-p2p">Bitskins p2p</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/clashgg">Clashgg</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/crashgg">Crashgg</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/csdeals">CsDeals</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/csgo500">CSGO500</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/csgobig">CSGOBig</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/csgoempire">CSGOEmpire</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/csgofast">CSGOFast</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/csgolive">CSGOLive</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/csgoluck">CSGOLuck</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/csgo-market">CSGO-Market</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/csgopolygon">CSGOPolygon</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/csgopositive">CSGOPositive</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/csgoroll">CSGORoll</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/csgoselly">CSGOSelly</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/csgo-skins">CSGO-Skins</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/cybershoke">Cybershoke</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/daddyskins">Daddyskins</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/datdrop">Datdrop</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/dmarket">Dmarket</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/duelbits">Duelbits</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/earnweb">Earnweb</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/farmskins">Farmskins</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/flamecases">Flamecases</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/freecash">Freecash</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/freeward">Freeward</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/gamdom">Gamdom</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/gamehag">Gamehag</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/gamerpay">Gamerpay</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/gametame">Gametame</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/gcskins">Gcskins</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/grindbux">Grindbux</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/hellcase">Hellcase</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/hellstore">Hellstore</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/howlgg">Howlgg</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/skinbid">SkinBid</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/shuffle">Shuffle</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/steamlevels">SteamLevels</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/steamlevelu">SteamLevelU</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/whitemarket">White.Market</a></li>',
-'<li><a href="https://csgobroker.cc/reviews/hypeup">Hypeup</a></li>'
+'<li><a href="https://csgobroker.co/reviews/idle-empire">Idle-empire</a></li>',
+'<li><a href="https://csgobroker.co/reviews/insanegg">Insanegg</a></li>',
+'<li><a href="https://csgobroker.co/reviews/key-drop">Key-drop</a></li>',
+'<li><a href="https://csgobroker.co/reviews/knifex">Knifex</a></li>',
+'<li><a href="https://csgobroker.co/reviews/lis-skins">Lis-skins</a></li>',
+'<li><a href="https://csgobroker.co/reviews/lootbear">Lootbear</a></li>',
+'<li><a href="https://csgobroker.co/reviews/lootfarm">Lootfarm</a></li>',
+'<li><a href="https://csgobroker.co/reviews/primedice">Primedice</a></li>',
+'<li><a href="https://csgobroker.co/reviews/rollbit">Rollbit</a></li>',
+'<li><a href="https://csgobroker.co/reviews/roobet">Roobet</a></li>',
+'<li><a href="https://csgobroker.co/reviews/rustbet">Rustbet</a></li>',
+'<li><a href="https://csgobroker.co/reviews/rustcases">Rustcases</a></li>',
+'<li><a href="https://csgobroker.co/reviews/rustchance">Rustchance</a></li>',
+'<li><a href="https://csgobroker.co/reviews/rustclash">Rustclash</a></li>',
+'<li><a href="https://csgobroker.co/reviews/rustix">Rustix</a></li>',
+'<li><a href="https://csgobroker.co/reviews/rustmoment">Rustmoment</a></li>',
+'<li><a href="https://csgobroker.co/reviews/ruststake">Ruststake</a></li>',
+'<li><a href="https://csgobroker.co/reviews/rustyloot">Rustyloot</a></li>',
+'<li><a href="https://csgobroker.co/reviews/rustypot">Rustypot</a></li>',
+'<li><a href="https://csgobroker.co/reviews/salad">Salad</a></li>',
+'<li><a href="https://csgobroker.co/reviews/shadowpay">Shadowpay</a></li>',
+'<li><a href="https://csgobroker.co/reviews/skinbaron">Skinbaron</a></li>',
+'<li><a href="https://csgobroker.co/reviews/skinbet">Skinbet</a></li>',
+'<li><a href="https://csgobroker.co/reviews/skincashier">Skincashier</a></li>',
+'<li><a href="https://csgobroker.co/reviews/skinscash">Skinscash</a></li>',
+'<li><a href="https://csgobroker.co/reviews/skinswap">Skinswap</a></li>',
+'<li><a href="https://csgobroker.co/reviews/steamgifts">Steamgifts</a></li>',
+'<li><a href="https://csgobroker.co/reviews/steamlvlup">Steamlvlup</a></li>',
+'<li><a href="https://csgobroker.co/reviews/swapgg">Swapgg</a></li>',
+'<li><a href="https://csgobroker.co/reviews/tradeit">Tradeit</a></li>',
+'<li><a href="https://csgobroker.co/reviews/vvvgamers">Vvvgamers</a></li>',
+'<li><a href="https://csgobroker.co/reviews/wtfskins">Wtfskins</a></li>',
+'<li><a href="https://csgobroker.co/reviews/xplay">Xplay</a></li>',
+'<li><a href="https://csgobroker.co/reviews/avanmarket">Avanmarket</a></li>',
+'<li><a href="https://csgobroker.co/reviews/banditcamp">Banditcamp</a></li>',
+'<li><a href="https://csgobroker.co/reviews/bcgame">Bcgame</a></li>',
+'<li><a href="https://csgobroker.co/reviews/bets4pro">Bets4pro</a></li>',
+'<li><a href="https://csgobroker.co/reviews/bitskins">Bitskins</a></li>',
+'<li><a href="https://csgobroker.co/reviews/bitskins-p2p">Bitskins p2p</a></li>',
+'<li><a href="https://csgobroker.co/reviews/clashgg">Clashgg</a></li>',
+'<li><a href="https://csgobroker.co/reviews/crashgg">Crashgg</a></li>',
+'<li><a href="https://csgobroker.co/reviews/csdeals">CsDeals</a></li>',
+'<li><a href="https://csgobroker.co/reviews/csgo500">CSGO500</a></li>',
+'<li><a href="https://csgobroker.co/reviews/csgobig">CSGOBig</a></li>',
+'<li><a href="https://csgobroker.co/reviews/csgoempire">CSGOEmpire</a></li>',
+'<li><a href="https://csgobroker.co/reviews/csgofast">CSGOFast</a></li>',
+'<li><a href="https://csgobroker.co/reviews/csgolive">CSGOLive</a></li>',
+'<li><a href="https://csgobroker.co/reviews/csgoluck">CSGOLuck</a></li>',
+'<li><a href="https://csgobroker.co/reviews/csgo-market">CSGO-Market</a></li>',
+'<li><a href="https://csgobroker.co/reviews/csgopolygon">CSGOPolygon</a></li>',
+'<li><a href="https://csgobroker.co/reviews/csgopositive">CSGOPositive</a></li>',
+'<li><a href="https://csgobroker.co/reviews/csgoroll">CSGORoll</a></li>',
+'<li><a href="https://csgobroker.co/reviews/csgoselly">CSGOSelly</a></li>',
+'<li><a href="https://csgobroker.co/reviews/csgo-skins">CSGO-Skins</a></li>',
+'<li><a href="https://csgobroker.co/reviews/cybershoke">Cybershoke</a></li>',
+'<li><a href="https://csgobroker.co/reviews/daddyskins">Daddyskins</a></li>',
+'<li><a href="https://csgobroker.co/reviews/datdrop">Datdrop</a></li>',
+'<li><a href="https://csgobroker.co/reviews/dmarket">Dmarket</a></li>',
+'<li><a href="https://csgobroker.co/reviews/duelbits">Duelbits</a></li>',
+'<li><a href="https://csgobroker.co/reviews/earnweb">Earnweb</a></li>',
+'<li><a href="https://csgobroker.co/reviews/farmskins">Farmskins</a></li>',
+'<li><a href="https://csgobroker.co/reviews/flamecases">Flamecases</a></li>',
+'<li><a href="https://csgobroker.co/reviews/freecash">Freecash</a></li>',
+'<li><a href="https://csgobroker.co/reviews/freeward">Freeward</a></li>',
+'<li><a href="https://csgobroker.co/reviews/gamdom">Gamdom</a></li>',
+'<li><a href="https://csgobroker.co/reviews/gamehag">Gamehag</a></li>',
+'<li><a href="https://csgobroker.co/reviews/gamerpay">Gamerpay</a></li>',
+'<li><a href="https://csgobroker.co/reviews/gametame">Gametame</a></li>',
+'<li><a href="https://csgobroker.co/reviews/gcskins">Gcskins</a></li>',
+'<li><a href="https://csgobroker.co/reviews/grindbux">Grindbux</a></li>',
+'<li><a href="https://csgobroker.co/reviews/hellcase">Hellcase</a></li>',
+'<li><a href="https://csgobroker.co/reviews/hellstore">Hellstore</a></li>',
+'<li><a href="https://csgobroker.co/reviews/howlgg">Howlgg</a></li>',
+'<li><a href="https://csgobroker.co/reviews/skinbid">SkinBid</a></li>',
+'<li><a href="https://csgobroker.co/reviews/shuffle">Shuffle</a></li>',
+'<li><a href="https://csgobroker.co/reviews/steamlevels">SteamLevels</a></li>',
+'<li><a href="https://csgobroker.co/reviews/steamlevelu">SteamLevelU</a></li>',
+'<li><a href="https://csgobroker.co/reviews/whitemarket">White.Market</a></li>',
+'<li><a href="https://csgobroker.co/reviews/hypeup">Hypeup</a></li>'
 ];
 
 function compareSites(a, b) {
@@ -1777,7 +1777,7 @@ function updateSiteList() {
     
     if (isRussianPage) {
       var href = link.getAttribute('href');
-      var newHref = href.replace('csgobroker.cc/', 'csgobroker.cc/ru/');
+      var newHref = href.replace('csgobroker.co/', 'csgobroker.co/ru/');
       link.setAttribute('href', newHref);
     }
     
