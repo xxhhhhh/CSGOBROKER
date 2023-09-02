@@ -51,13 +51,24 @@ function handleLanguageRedirect() {
   }
   else if (userChoice && window.location.pathname === '/') {
     var currentUrl = window.location.href;
-    var langPrefix = userChoice;
-    var newUrl = currentUrl.replace(/\.co\//g, '.co/' + langPrefix + '/');
-    newUrl = newUrl.replace(/\.cc\//g, '.cc/' + langPrefix + '/');
 
-    if (newUrl !== currentUrl) {
-      window.location.href = newUrl;
-      return false;
+    if (userChoice !== 'en') {
+      var langPrefix = userChoice;
+      var newUrl = currentUrl.replace(/\.co\//g, '.co/' + langPrefix + '/');
+      newUrl = newUrl.replace(/\.cc\//g, '.cc/' + langPrefix + '/');
+
+      if (newUrl !== currentUrl) {
+        window.location.href = newUrl;
+        return false;
+      }
+    } else {
+      var newUrl = currentUrl.replace(/\.co\//g, '.co/');
+      newUrl = newUrl.replace(/\.cc\//g, '.cc/');
+
+      if (newUrl !== currentUrl) {
+        window.location.href = newUrl;
+        return false;
+      }
     }
   }
 }
@@ -119,6 +130,7 @@ function getCookie(name) {
 }
 
 handleLanguageRedirect();
+
 
 
 
