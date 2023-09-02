@@ -133,6 +133,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
         var translatedHref = '/ru' + path;
         links[i].setAttribute('href', translatedHref);
       }
+    }
   
       var translations = {
         "CS:GO Sites List": "Халява CS:GO",
@@ -185,7 +186,6 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
             elements[j].innerHTML = translations[text];
           }
         }
-      }
     }
   }
   
