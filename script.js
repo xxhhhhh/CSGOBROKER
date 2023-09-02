@@ -122,17 +122,18 @@ if (!window.location.pathname.includes("/reviews/")) {
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href]');
-    var regex = /^(https?:\/\/[^/]+)(\/.*)$/;
+    var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
   
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       var match = href.match(regex);
       if (match) {
-        var domain = match[1];
+        var domain = match[1] || '';
         var path = match[2];
-        var translatedHref = domain + '/ru' + path;
+        var translatedHref = '/ru' + path;
         links[i].setAttribute('href', translatedHref);
       }
+    }
   
       var translations = {
         "CS:GO Sites List": "Халява CS:GO",
@@ -185,7 +186,6 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
             elements[j].innerHTML = translations[text];
           }
         }
-      }
     }
   }
   
@@ -380,15 +380,15 @@ if (window.location.pathname.includes('/ru/reviews/')) {
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href]');
-    var regex = /^(https?:\/\/[^/]+)(\/.*)$/;
+    var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
   
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       var match = href.match(regex);
       if (match) {
-        var domain = match[1];
+        var domain = match[1] || '';
         var path = match[2];
-        var translatedHref = domain + '/ru' + path;
+        var translatedHref = '/ru' + path;
         links[i].setAttribute('href', translatedHref);
       }
     }
@@ -511,15 +511,15 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
 if ((window.location.pathname.startsWith('/pt/') || window.location.pathname === '/pt' || window.location.pathname === '/pt.html') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href]');
-    var regex = /^(https?:\/\/[^/]+)(\/.*)$/;
+    var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
   
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       var match = href.match(regex);
       if (match) {
-        var domain = match[1];
+        var domain = match[1] || '';
         var path = match[2];
-        var translatedHref = domain + '/pt' + path;
+        var translatedHref = '/pt' + path;
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -792,15 +792,15 @@ if ((window.location.pathname.startsWith('/pt/') || window.location.pathname ===
 if ((window.location.pathname.startsWith('/hi/') || window.location.pathname === '/hi' || window.location.pathname === '/hi.html') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href]');
-    var regex = /^(https?:\/\/[^/]+)(\/.*)$/;
+    var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
   
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       var match = href.match(regex);
       if (match) {
-        var domain = match[1];
+        var domain = match[1] || '';
         var path = match[2];
-        var translatedHref = domain + '/hi' + path;
+        var translatedHref = '/hi' + path;
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -866,15 +866,15 @@ if ((window.location.pathname.startsWith('/hi/') || window.location.pathname ===
 if ((window.location.pathname.startsWith("/es/") || window.location.pathname === "/es" || window.location.pathname === "/es.html") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href]');
-    var regex = /^(https?:\/\/[^/]+)(\/.*)$/;
+    var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
   
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       var match = href.match(regex);
       if (match) {
-        var domain = match[1];
+        var domain = match[1] || '';
         var path = match[2];
-        var translatedHref = domain + '/es' + path;
+        var translatedHref = '/es' + path;
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -1145,15 +1145,15 @@ if ((window.location.pathname.startsWith("/es/") || window.location.pathname ===
 if ((window.location.pathname.startsWith("/tr/") || window.location.pathname === "/tr" || window.location.pathname === "/tr.html") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href]');
-    var regex = /^(https?:\/\/[^/]+)(\/.*)$/;
+    var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
   
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       var match = href.match(regex);
       if (match) {
-        var domain = match[1];
+        var domain = match[1] || '';
         var path = match[2];
-        var translatedHref = domain + '/tr' + path;
+        var translatedHref = '/tr' + path;
         links[i].setAttribute('href', translatedHref);
       }
 
