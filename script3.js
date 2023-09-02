@@ -380,15 +380,15 @@ if (window.location.pathname.includes('/ru/reviews/')) {
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href]');
-    var regex = /^(https?:\/\/[^/]+)(\/.*)$/;
+    var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
   
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
       var match = href.match(regex);
       if (match) {
-        var domain = match[1];
+        var domain = match[1] || '';
         var path = match[2];
-        var translatedHref = domain + '/ru' + path;
+        var translatedHref = '/ru' + path;
         links[i].setAttribute('href', translatedHref);
       }
     }
