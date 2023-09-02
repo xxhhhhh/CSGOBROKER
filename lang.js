@@ -1,179 +1,53 @@
 var userChoice = getCookie('languageChoice');
 
+function setLanguage(newLang) {
+  var currentUrl = window.location.href;
+  var topLevelDomain = window.location.hostname.split('.').pop();
+  var newDomain = window.location.hostname.replace('.' + topLevelDomain, '.' + newLang);
+  var newUrl = currentUrl.replace(window.location.hostname, newDomain);
+
+  if (newUrl !== currentUrl) {
+    userChoice = newLang;
+    setCookie('languageChoice', userChoice, 365);
+    window.location.href = newUrl;
+    return false;
+  }
+}
+
 function handleLanguageRedirect() {
   if (!userChoice && window.location.hostname !== 'localhost') {
     var userLang = navigator.language || navigator.userLanguage;
-
-    if ((userLang === 'ru' || userLang === 'ru-RU') && window.location.pathname === '/') {
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/ru');
-
-      if (newUrl !== currentUrl) {
-        userChoice = 'ru';
-        setCookie('languageChoice', userChoice, 365);
-        window.location.href = newUrl;
-        return false;
-      }
+    
+    switch (userLang.toLowerCase()) {
+      case 'ru':
+      case 'ru-ru':
+        return setLanguage('ru');
+      case 'pt':
+      case 'pt-br':
+        return setLanguage('pt');
+      case 'es':
+      case 'es-es':
+        return setLanguage('es');
+      case 'tr':
+      case 'tr-tr':
+        return setLanguage('tr');
+      case 'hi':
+      case 'hi-in':
+        return setLanguage('hi');
+      case 'en':
+      case 'en-us':
+      default:
+        return setLanguage('en');
     }
-    else if ((userLang === 'pt' || userLang === 'pt-BR') && window.location.pathname === '/') {
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/pt');
-
-      if (newUrl !== currentUrl) {
-        userChoice = 'pt';
-        setCookie('languageChoice', userChoice, 365);
-        window.location.href = newUrl;
-        return false;
-      }
-    }
-    else if ((userLang === 'es' || userLang === 'es-ES') && window.location.pathname === '/') {
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/es');
-
-      if (newUrl !== currentUrl) {
-        userChoice = 'es';
-        setCookie('languageChoice', userChoice, 365);
-        window.location.href = newUrl;
-        return false;
-      }
-    }
-    else if ((userLang === 'tr' || userLang === 'tr-TR') && window.location.pathname === '/') {
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/tr');
-
-      if (newUrl !== currentUrl) {
-        userChoice = 'tr';
-        setCookie('languageChoice', userChoice, 365);
-        window.location.href = newUrl;
-        return false;
-      }
-    }
-    else if ((userLang === 'hi' || userLang === 'hi-IN') && window.location.pathname === '/') {
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/hi');
-
-      if (newUrl !== currentUrl) {
-        userChoice = 'hi';
-        setCookie('languageChoice', userChoice, 365);
-        window.location.href = newUrl;
-        return false;
-      }
-    }
-    else if ((userLang === 'en' || userLang === 'en-US') && window.location.pathname === '/') {
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/');
-
-      if (newUrl !== currentUrl) {
-        userChoice = 'en';
-        setCookie('languageChoice', userChoice, 365);
-        window.location.href = newUrl;
-        return false;
-      }
-    }
-  } else if (userChoice === 'ru' && window.location.pathname === '/') {
-    var currentUrl = window.location.href;
-    var newUrl = currentUrl.replace('.cc/', '.cc/ru');
-
-    if (newUrl !== currentUrl) {
-      window.location.href = newUrl;
-      return false;
-    }
-  }
-  else if (userChoice === 'pt' && window.location.pathname === '/') {
-    var currentUrl = window.location.href;
-    var newUrl = currentUrl.replace('.cc/', '.cc/pt');
-
-    if (newUrl !== currentUrl) {
-      window.location.href = newUrl;
-      return false;
-    }
-  }
-  else if (userChoice === 'es' && window.location.pathname === '/') {
-    var currentUrl = window.location.href;
-    var newUrl = currentUrl.replace('.cc/', '.cc/es');
-
-    if (newUrl !== currentUrl) {
-      window.location.href = newUrl;
-      return false;
-    }
-  }
-  else if (userChoice === 'tr' && window.location.pathname === '/') {
-    var currentUrl = window.location.href;
-    var newUrl = currentUrl.replace('.cc/', '.cc/tr');
-
-    if (newUrl !== currentUrl) {
-      window.location.href = newUrl;
-      return false;
-    }
-  }
-  else if (userChoice === 'hi' && window.location.pathname === '/') {
-    var currentUrl = window.location.href;
-    var newUrl = currentUrl.replace('.cc/', '.cc/hi');
-
-    if (newUrl !== currentUrl) {
-      window.location.href = newUrl;
-      return false;
-    }
+  } else if (userChoice && window.location.pathname === '/') {
+    return setLanguage(userChoice);
   }
 }
 
 document.addEventListener('click', function(event) {
   if (event.target.classList.contains('lang-switch')) {
     var selectedLang = event.target.dataset.lang;
-
-    setCookie('languageChoice', selectedLang, 365);
-    userChoice = selectedLang;
-
-    if (selectedLang !== userChoice) {
-      location.reload();
-    } else if (selectedLang === 'ru' && window.location.pathname === '/') {
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/ru');
-
-      if (newUrl !== currentUrl) {
-        window.location.href = newUrl;
-      }
-    }
-    else if (selectedLang === 'pt' && window.location.pathname === '/') {
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/pt');
-
-      if (newUrl !== currentUrl) {
-        window.location.href = newUrl;
-      }
-    }
-    else if (selectedLang === 'es' && window.location.pathname === '/') {
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/es');
-
-      if (newUrl !== currentUrl) {
-        window.location.href = newUrl;
-      }
-    }
-    else if (selectedLang === 'tr' && window.location.pathname === '/') {
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/tr');
-
-      if (newUrl !== currentUrl) {
-        window.location.href = newUrl;
-      }
-    }
-    else if (selectedLang === 'hi' && window.location.pathname === '/') {
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/hi');
-
-      if (newUrl !== currentUrl) {
-        window.location.href = newUrl;
-      }
-    }
-    else if (selectedLang === 'en' && window.location.pathname === '/') {
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('.cc/', '.cc/');
-
-      if (newUrl !== currentUrl) {
-        window.location.href = newUrl;
-      }
-    }
+    setLanguage(selectedLang);
   }
 });
 
@@ -205,7 +79,6 @@ function getCookie(name) {
 }
 
 handleLanguageRedirect();
-
 
 function importDivContent() {
   var xhr = new XMLHttpRequest();
