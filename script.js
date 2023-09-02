@@ -121,13 +121,16 @@ if (!window.location.pathname.includes("/reviews/")) {
 
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.co/"]');
-    var regex = /^https:\/\/csgobroker\.cc\/(?!ru\/)/;
-
+    var links = parentElement.querySelectorAll('a[href]');
+    var regex = /^(https?:\/\/[^/]+)(\/.*)$/;
+  
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
-      if (regex.test(href)) {
-        var translatedHref = href.replace("csgobroker.co/", "csgobroker.co/ru/");
+      var match = href.match(regex);
+      if (match) {
+        var domain = match[1];
+        var path = match[2];
+        var translatedHref = domain + '/ru' + path;
         links[i].setAttribute('href', translatedHref);
       }
   
@@ -376,13 +379,16 @@ if (window.location.pathname.includes('/ru/reviews/')) {
 
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.co/"]');
-    var regex = /^https:\/\/csgobroker\.cc\/(?!ru\/)/;
-
+    var links = parentElement.querySelectorAll('a[href]');
+    var regex = /^(https?:\/\/[^/]+)(\/.*)$/;
+  
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
-      if (regex.test(href)) {
-        var translatedHref = href.replace("csgobroker.co/", "csgobroker.co/ru/");
+      var match = href.match(regex);
+      if (match) {
+        var domain = match[1];
+        var path = match[2];
+        var translatedHref = domain + '/ru' + path;
         links[i].setAttribute('href', translatedHref);
       }
     }
@@ -504,13 +510,16 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
 
 if ((window.location.pathname.startsWith('/pt/') || window.location.pathname === '/pt' || window.location.pathname === '/pt.html') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.co/"]');
-    var regex = /^https:\/\/csgobroker\.cc\/(?!pt\/)/;
-
+    var links = parentElement.querySelectorAll('a[href]');
+    var regex = /^(https?:\/\/[^/]+)(\/.*)$/;
+  
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
-      if (regex.test(href)) {
-        var translatedHref = href.replace("csgobroker.co/", "csgobroker.co/pt/");
+      var match = href.match(regex);
+      if (match) {
+        var domain = match[1];
+        var path = match[2];
+        var translatedHref = domain + '/pt' + path;
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -782,13 +791,16 @@ if ((window.location.pathname.startsWith('/pt/') || window.location.pathname ===
 
 if ((window.location.pathname.startsWith('/hi/') || window.location.pathname === '/hi' || window.location.pathname === '/hi.html') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.co/"]');
-    var regex = /^https:\/\/csgobroker\.cc\/(?!hi\/)/;
-
+    var links = parentElement.querySelectorAll('a[href]');
+    var regex = /^(https?:\/\/[^/]+)(\/.*)$/;
+  
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
-      if (regex.test(href)) {
-        var translatedHref = href.replace("csgobroker.co/", "csgobroker.co/hi/");
+      var match = href.match(regex);
+      if (match) {
+        var domain = match[1];
+        var path = match[2];
+        var translatedHref = domain + '/hi' + path;
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -853,13 +865,16 @@ if ((window.location.pathname.startsWith('/hi/') || window.location.pathname ===
 
 if ((window.location.pathname.startsWith("/es/") || window.location.pathname === "/es" || window.location.pathname === "/es.html") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.co/"]');
-    var regex = /^https:\/\/csgobroker\.cc\/(?!es\/)/;
-
+    var links = parentElement.querySelectorAll('a[href]');
+    var regex = /^(https?:\/\/[^/]+)(\/.*)$/;
+  
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
-      if (regex.test(href)) {
-        var translatedHref = href.replace("csgobroker.co/", "csgobroker.co/es/");
+      var match = href.match(regex);
+      if (match) {
+        var domain = match[1];
+        var path = match[2];
+        var translatedHref = domain + '/es' + path;
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -1129,13 +1144,16 @@ if ((window.location.pathname.startsWith("/es/") || window.location.pathname ===
 
 if ((window.location.pathname.startsWith("/tr/") || window.location.pathname === "/tr" || window.location.pathname === "/tr.html") && !window.location.pathname.includes("/reviews/")) {
   function translateURLs(parentElement) {
-    var links = parentElement.querySelectorAll('a[href*="https://csgobroker.co/"]');
-    var regex = /^https:\/\/csgobroker\.cc\/(?!tr\/)/;
-
+    var links = parentElement.querySelectorAll('a[href]');
+    var regex = /^(https?:\/\/[^/]+)(\/.*)$/;
+  
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
-      if (regex.test(href)) {
-        var translatedHref = href.replace("csgobroker.co/", "csgobroker.co/tr/");
+      var match = href.match(regex);
+      if (match) {
+        var domain = match[1];
+        var path = match[2];
+        var translatedHref = domain + '/tr' + path;
         links[i].setAttribute('href', translatedHref);
       }
 
@@ -1708,7 +1726,7 @@ var sites = [
 '<li><a href="/reviews/bitskins">Bitskins</a></li>',
 '<li><a href="/reviews/bitskins-p2p">Bitskins p2p</a></li>',
 '<li><a href="/reviews/clashgg.html">Clashgg</a></li>',
-'<li><a href="/reviews/crashgg.html">Crashgg</a></li>',
+'<li><a href="/reviews/crashgg">Crashgg</a></li>',
 '<li><a href="/reviews/csdeals">CsDeals</a></li>',
 '<li><a href="/reviews/csgo500.html">CSGO500</a></li>',
 '<li><a href="/reviews/csgobig.html">CSGOBig</a></li>',
