@@ -2019,7 +2019,7 @@ if (window.location.pathname.includes("/reviews/")) {
   });
 }
 
-if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') || window.location.pathname.endsWith("ru.html") && !window.location.pathname.includes('/reviews/')) {
+if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') || window.location.pathname.endsWith("ru.html")) {
         // Создаем новый div элемент
         var newDiv = document.createElement("div");
         newDiv.className = "vpn";

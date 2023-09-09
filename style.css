@@ -1584,7 +1584,7 @@ nav img {
     width: auto;
     padding: 0 8px;
     height: 30px;
-    background-color: #1d59a8;;
+    background-color: #1d59a8;
     border-radius: 0px 0px 5px 0px;
     display: flex;
     align-items: center;
@@ -1595,7 +1595,9 @@ nav img {
     font-size: 12px;
     color: white;
 }
-
+.sitealternates .box .logobg .vpn {
+    background-color: #191919;
+}
 .sitepage .box .logobg .best {
     display: none;
 }
