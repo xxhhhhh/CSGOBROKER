@@ -493,7 +493,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
       "Free spins": "ФриСпины"
     };
 
-    var elements = parentElement.querySelectorAll('.box .content p, .box .logobg .best, .box .content button');
+    var elements = parentElement.querySelectorAll('.box .content p, .box .logobg .best, .box .content button:not(a.giveawaysbanner)');
     for (var j = 0; j < elements.length; j++) {
       var text = elements[j].textContent.trim();
       if (translations.hasOwnProperty(text)) {
