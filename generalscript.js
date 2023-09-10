@@ -384,6 +384,11 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
+      
+      if (href.includes('vk.com')) {
+        continue;
+      }
+      
       var match = href.match(regex);
       if (match) {
         var domain = match[1] || '';
@@ -392,6 +397,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
         links[i].setAttribute('href', translatedHref);
       }
     }
+    
 
     var translations = {
       "CSGO500 probably the best CS:GO Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, вероятно, является лучшим сайтом для азартных игр в CS:GO. Здесь регулярно проводятся раздачи и розыгрыши.",
@@ -505,11 +511,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   }
 
   var SitesList = document.querySelector('.boxes-holder');
-  
-  // Проверяем, что нет класса box_vk у SitesList
-  if (!SitesList.classList.contains('box_vk')) {
-    translateURLs(SitesList);
-  }
+  translateURLs(SitesList);
 }
 
 if ((window.location.pathname.startsWith('/pt/') || window.location.pathname === '/pt' || window.location.pathname === '/pt.html') && !window.location.pathname.includes('/reviews/')) {
