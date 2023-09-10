@@ -377,7 +377,7 @@ if (window.location.pathname.includes('/ru/reviews/')) {
   
 }
 
-if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru.html') && !window.location.pathname.includes('/reviews/')) {
+if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href]');
     var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
