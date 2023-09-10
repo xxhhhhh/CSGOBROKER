@@ -377,7 +377,7 @@ if (window.location.pathname.includes('/ru/reviews/')) {
   
 }
 
-if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/')) {
+if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru.html') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href]');
     var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
@@ -493,20 +493,28 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
       "Free spins": "ФриСпины"
     };
 
-    var elements = parentElement.querySelectorAll('.box .content p, .box .logobg .best, .box .content button');
-    for (var j = 0; j < elements.length; j++) {
-      var text = elements[j].textContent.trim();
-      if (translations.hasOwnProperty(text)) {
-        elements[j].innerHTML = translations[text];
-      } else if (text.indexOf('Code:') === 0) {
-        elements[j].innerHTML = 'Код:' + text.substring(5);
+    function translateURLs(parentElement) {
+      var elements = parentElement.querySelectorAll('.box .content p, .box .logobg .best, .box .content button');
+      for (var j = 0; j < elements.length; j++) {
+        var text = elements[j].textContent.trim();
+        if (translations.hasOwnProperty(text)) {
+          elements[j].innerHTML = translations[text];
+        } else if (text.indexOf('Code:') === 0) {
+          elements[j].innerHTML = 'Код:' + text.substring(5);
+        }
+      }
+    }
+    
+    var SitesList = document.querySelector('.boxes-holder');
+    var boxes = SitesList.querySelectorAll('.box');
+    
+    for (var i = 0; i < boxes.length; i++) {
+      if (!boxes[i].classList.contains('box_vk')) {
+        translateURLs(boxes[i]);
       }
     }
   }
-
-  var SitesList = document.querySelector('.boxes-holder');
-  translateURLs(SitesList);
-}
+}    
 
 if ((window.location.pathname.startsWith('/pt/') || window.location.pathname === '/pt' || window.location.pathname === '/pt.html') && !window.location.pathname.includes('/reviews/')) {
   function translateURLs(parentElement) {
