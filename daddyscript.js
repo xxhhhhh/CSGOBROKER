@@ -315,7 +315,7 @@ if (window.location.pathname.includes('/pl/reviews/')) {
   
 }
 
-if (window.location.pathname.includes('/ru/reviews/')) {
+if (window.location.pathname.includes('/ru/reviews/') && window.location.pathname.includes('/ru/mirrors/') ) {
   var links = document.getElementsByTagName('a');
 
   for (var i = 0; i < links.length; i++) {
