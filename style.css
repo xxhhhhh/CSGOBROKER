@@ -1598,6 +1598,13 @@ nav img {
 .sitealternates .box .logobg .vpn {
     background-color: #191919;
 }
+.box .giveawaysbanner {
+    height: 100%;
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    overflow: hidden;
+}
 .sitepage .box .logobg .best {
     display: none;
 }
