@@ -343,6 +343,7 @@ if (window.location.pathname.includes('/ru/reviews/') || window.location.pathnam
       "Daily Rewards": "Ежедневные Награды",
       "No Bonus": "Нет Бонуса",
       "Deposit Bonus": "Бонус к Пополнению",
+      "Rain System": "Дожди",
       "Rakeback System": "Рейкбек",
       "Pros": "Плюсы",
       "Price": "Цены",
