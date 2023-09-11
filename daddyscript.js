@@ -1,4 +1,4 @@
-if (!window.location.pathname.includes("/reviews/")) {
+if (!window.location.pathname.includes("/reviews/") && !window.location.pathname.includes("/mirrors/")) {
   const boxContainer = document.querySelector('.category-selector');
   const buttonsContainer = document.createElement('div');
   const prevButtonContainer = document.createElement('button');
@@ -1881,7 +1881,7 @@ var threshold = 100;
 var prevButton = document.querySelector(".prev-button");
 var nextButton = document.querySelector(".next-button");
 
-if (window.location.pathname.includes("/reviews/")) {
+if (window.location.pathname.includes("/reviews/") && window.location.pathname.includes("/mirrors/")) {
   function removeAllTriggers() {
     var existingTriggers = triggersContainer.querySelectorAll(
       "input[type='radio'], label"
