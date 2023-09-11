@@ -1,4 +1,4 @@
-if (!window.location.pathname.includes("/reviews/") && !window.location.pathname.includes("/mirrors/")) {
+if (!window.location.pathname.includes("/reviews/") || !window.location.pathname.includes("/mirrors/")) {
   const boxContainer = document.querySelector('.category-selector');
   const buttonsContainer = document.createElement('div');
   const prevButtonContainer = document.createElement('button');
@@ -119,7 +119,7 @@ if (!window.location.pathname.includes("/reviews/") && !window.location.pathname
   buttonsContainer.scrollLeft = buttonScrollPosition;
 }
 
-if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
+if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/') || !window.location.pathname.includes('/mirrors/')) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href]');
     var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
@@ -316,7 +316,7 @@ if (window.location.pathname.includes('/pl/reviews/')) {
   
 }
 
-if (window.location.pathname.includes('/ru/reviews/') && window.location.pathname.includes('/ru/mirrors/') ) {
+if (window.location.pathname.includes('/ru/reviews/') || window.location.pathname.includes('/ru/mirrors/') ) {
   var links = document.getElementsByTagName('a');
 
   for (var i = 0; i < links.length; i++) {
@@ -378,7 +378,7 @@ if (window.location.pathname.includes('/ru/reviews/') && window.location.pathnam
   
 }
 
-if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
+if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/') || !window.location.pathname.includes('/mirrors/')) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href]');
     var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
@@ -1882,7 +1882,7 @@ var threshold = 100;
 var prevButton = document.querySelector(".prev-button");
 var nextButton = document.querySelector(".next-button");
 
-if (window.location.pathname.includes("/reviews/") && window.location.pathname.includes("/mirrors/")) {
+if (window.location.pathname.includes("/reviews/") || window.location.pathname.includes("/mirrors/")) {
   function removeAllTriggers() {
     var existingTriggers = triggersContainer.querySelectorAll(
       "input[type='radio'], label"
