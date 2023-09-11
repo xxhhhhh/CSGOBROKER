@@ -1325,10 +1325,30 @@ nav img {
     text-decoration: none;
     transition: transform .2s ease-in-out;
 }
-.mirror-redirect:hover {
+.partner-site {
+    width: 300px;
+    height: 60px;
+    background-color: rgba(0,0,0,.2);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform .2s ease-in-out;
+}
+.partner-site img {
+    max-width: 150px;
+    max-height: 50px;
+    height: auto;
+}
+.mirror-redirect:hover,
+.partner-site:hover {
     transform: scale(1.02);
 }
-.mirror-redirect span {
+.mirror-redirect span,
+.partner-site span {
     font-size: 16px;
     font-weight: 500;
 }
@@ -1931,7 +1951,8 @@ footer .centralizer .footer-content {
         font-size: 9px;
         width: 160px;
     }
-    .mirror-redirect {
+    .mirror-redirect,
+    .partner-site {
         width: 100%;
         margin-top: 0;
         box-shadow: unset;
