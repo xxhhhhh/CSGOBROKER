@@ -1242,19 +1242,23 @@ nav img {
     margin-top: 100px;
 } */
 .slider-placer {
-    width: 70%;
+    width: 50%;
     margin: 0 auto;
-    height: 100%;
+    height: 200px;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
 }
 .slider-banner {
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
-    width: 50%;
+    position: absolute;
+    width: 100%;
     border-radius: 5px;
     height: 100%;
     top: 0px;
@@ -1263,8 +1267,12 @@ nav img {
     display: flex;
     align-items: center;
     justify-content: center;
-    
     overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.slider-banner.active {
+    opacity: 1;
 }
 .slides .slide {
     display: none;
@@ -1851,7 +1859,7 @@ footer#review .centralizer .footer-content .credits {
 .boxreview .slider-placer {
     width: 98%;
     /* margin: 0 auto; */
-    height: auto;
+    height: 220px;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
@@ -1867,7 +1875,6 @@ footer#review .centralizer .footer-content .credits {
     height: 100%;
     top: 0px;
     left: 0px;
-    opacity: 1;
     display: flex;
     align-items: center;
     justify-content: center;

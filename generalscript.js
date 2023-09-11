@@ -1789,6 +1789,26 @@ function compareSites(a, b) {
   }
 }
 
+let currentSlideBanner = 0;
+
+function showSlideBanner(index) {
+    const slidesBanner = document.querySelectorAll('.slider-banner');
+    slidesBanner.forEach((slideBanner, i) => {
+        if (i === index) {
+          slideBanner.classList.add('active');
+        } else {
+          slideBanner.classList.remove('active');
+        }
+    });
+}
+
+function nextSlideBanner() {
+  currentSlideBanner = (currentSlideBanner + 1) % 2; // Используем 2, так как у вас два слайда
+  showSlideBanner(currentSlideBanner);
+}
+
+setInterval(nextSlideBanner, 6000); // Изменяйте интервал при необходимости (в миллисекундах)
+
 function updateSiteList() {
   siteList.innerHTML = '';
   sites.sort(compareSites);
@@ -2053,3 +2073,32 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
             }
         });
       }
+      (function() {
+        if (window.location.pathname !== '/reviews/' && window.location.pathname !== '/mirrors/') {
+            var sliderPlacer = document.createElement('div');
+            sliderPlacer.classList.add('slider-placer');
+            
+            var slider1 = document.createElement('a');
+            slider1.href = '/';
+            slider1.classList.add('slider-banner', 'active');
+            var img1 = document.createElement('img');
+            img1.src = '/img/best-gambling-sites-slide.png';
+            img1.alt = 'Best Gambling Sites';
+            slider1.appendChild(img1);
+            
+            var slider2 = document.createElement('a');
+            slider2.href = '/earning/offerwalls';
+            slider2.classList.add('slider-banner');
+            var img2 = document.createElement('img');
+            img2.src = '/img/earn-skins-slider.png';
+            img2.alt = 'Best Offerwall Sites';
+            slider2.appendChild(img2);
+            
+            sliderPlacer.appendChild(slider1);
+            sliderPlacer.appendChild(slider2);
+            
+            var footer = document.querySelector('footer');
+            footer.parentNode.insertBefore(sliderPlacer, footer);
+        }
+    })();
+    
