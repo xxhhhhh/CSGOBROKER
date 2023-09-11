@@ -119,7 +119,7 @@ if (!window.location.pathname.includes("/reviews/") && !window.location.pathname
   buttonsContainer.scrollLeft = buttonScrollPosition;
 }
 
-if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/')) {
+if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href]');
     var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
@@ -195,6 +195,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
 
 if (
   !window.location.pathname.includes("/reviews/") &&
+  !window.location.pathname.includes("/mirrors/") &&
   window.location.pathname !== "/ru" &&
   window.location.pathname !== "/pt" &&
   window.location.pathname !== "/es" &&
