@@ -1273,6 +1273,7 @@ nav img {
 }
 .slider-banner.active {
     opacity: 1;
+    z-index: 1000;
 }
 .slides .slide {
     display: none;
