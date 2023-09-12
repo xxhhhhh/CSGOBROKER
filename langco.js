@@ -143,7 +143,8 @@ function importDivContent() {
         var divToImport = document.getElementById('csgo-best-sites');
         if (divToImport) {
           divToImport.innerHTML = xhr.responseText;
-          translateURLs(divToImport); 
+          var languageTag = extractLanguageTagFromURL(window.location.pathname);
+          translateURLs(divToImport, languageTag);
         }
       } else {
         console.error('Cant load div.');
@@ -153,6 +154,15 @@ function importDivContent() {
 
   xhr.open('GET', '/multitop/csgo-best-sites.html', true);
   xhr.send();
+}
+
+function extractLanguageTagFromURL(pathname) {
+  var matches = pathname.match(/^\/([a-z]{2})\//i);
+  if (matches && matches.length > 1) {
+    return matches[1];
+  }
+  return "hi";
+}
 
   var xhr2 = new XMLHttpRequest();
   xhr2.onreadystatechange = function() {
@@ -1056,4 +1066,3 @@ instantselldota.onreadystatechange = function() {
 };
 instantselldota.open('GET', '/multitop/dota/instant-sell.html', true);
 instantselldota.send();
-}
