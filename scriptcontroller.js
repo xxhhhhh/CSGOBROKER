@@ -1,3 +1,5 @@
+if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
+
 function extractLanguageTagFromURL(pathname) {
   var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
   if (matches && matches.length > 1) {
@@ -1144,7 +1146,7 @@ function translateURLs2(parentElement, languageTag) {
 
 var categorySelector = document.querySelector('.category-selector');
 translateURLs2(categorySelector, languageTag);
-
+}
 
 document.addEventListener('DOMContentLoaded', function() {
 if (!window.location.pathname.includes("/reviews/") && !window.location.pathname.includes("/mirrors/")) {
