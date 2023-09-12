@@ -2027,7 +2027,6 @@ if (window.location.pathname.includes("/reviews/") || window.location.pathname.i
   });
 }
 
-if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') || window.location.pathname.endsWith("ru.html")) {
 
   let currentSlideBanner = 0;
 
@@ -2040,8 +2039,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
             slideBanner.classList.remove('active');
           }
       });
-  }
-  
+
   function nextSlideBanner() {
     currentSlideBanner = (currentSlideBanner + 1) % 2; // Используем 2, так как у вас два слайда
     showSlideBanner(currentSlideBanner);
