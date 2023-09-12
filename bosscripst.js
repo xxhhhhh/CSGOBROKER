@@ -2027,27 +2027,6 @@ if (window.location.pathname.includes("/reviews/") || window.location.pathname.i
   });
 }
 
-
-  let currentSlideBanner = 0;
-
-  function showSlideBanner(index) {
-      const slidesBanner = document.querySelectorAll('.slider-banner');
-      slidesBanner.forEach((slideBanner, i) => {
-          if (i === index) {
-            slideBanner.classList.add('active');
-          } else {
-            slideBanner.classList.remove('active');
-          }
-      });
-
-  function nextSlideBanner() {
-    currentSlideBanner = (currentSlideBanner + 1) % 2; // Используем 2, так как у вас два слайда
-    showSlideBanner(currentSlideBanner);
-  }
-  
-  setInterval(nextSlideBanner, 6000); // Изменяйте интервал при необходимости (в миллисекундах)
-  
-
         // Создаем новый div элемент
         var newDiv = document.createElement("div");
         newDiv.className = "vpn";
@@ -2072,11 +2051,30 @@ if (window.location.pathname.includes("/reviews/") || window.location.pathname.i
                 }
             }
         });
-      }
       (function() {
         var insertAfter = function(newNode, referenceNode) {
             referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
         };
+
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slider-banner');
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % 2; // Используем 2, так как у вас два слайда
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 6000); // Изменяйте интервал при необходимости (в миллисекундах)
     
         var sliderPlacer = document.createElement('div');
         sliderPlacer.classList.add('slider-placer');
