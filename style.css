@@ -2097,10 +2097,13 @@ footer .centralizer .footer-content {
     ul .submenu{
         left: 11%;
         }
-    .box{
+    .box {
         /* margin: 20px 10px 0 10px; */
         margin: 10px 5px 0 5px !important;
         width: 220px;
+    }
+    .box_vk {
+        display: none;
     }
     .box .logobg img {
         width: auto !important;

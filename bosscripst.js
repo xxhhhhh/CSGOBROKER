@@ -119,6 +119,68 @@ if (!window.location.pathname.includes("/reviews/") && !window.location.pathname
   buttonsContainer.scrollLeft = buttonScrollPosition;
 }
 
+(function() {
+  var insertAfter = function(newNode, referenceNode) {
+      referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  };
+
+  let currentSlide = 0;
+
+  function showSlide(index) {
+      const slides = document.querySelectorAll('.slider-banner');
+      slides.forEach((slide, i) => {
+          if (i === index) {
+              slide.classList.add('active');
+          } else {
+              slide.classList.remove('active');
+          }
+      });
+  }
+
+  function nextSlide() {
+      currentSlide = (currentSlide + 1) % 2; // Используем 2, так как у вас два слайда
+      showSlide(currentSlide);
+  }
+
+  setInterval(nextSlide, 6000); // Изменяйте интервал при необходимости (в миллисекундах)
+
+  var sliderPlacer = document.createElement('div');
+  sliderPlacer.classList.add('slider-placer');
+
+  var slider1 = document.createElement('a');
+  slider1.href = '/';
+  slider1.classList.add('slider-banner', 'active');
+  var img1 = document.createElement('img');
+  img1.src = '/img/best-gambling-sites-slide.png';
+  img1.alt = 'Best Gambling Sites';
+  slider1.appendChild(img1);
+
+  var slider2 = document.createElement('a');
+  slider2.href = '/earning/offerwalls';
+  slider2.classList.add('slider-banner');
+  var img2 = document.createElement('img');
+  img2.src = '/img/earn-skins-slider.png';
+  img2.alt = 'Best Offerwall Sites';
+  slider2.appendChild(img2);
+
+  sliderPlacer.appendChild(slider1);
+  sliderPlacer.appendChild(slider2);
+
+  var ratingsumm = document.querySelector('div.ratingsumm');
+  var existingSliderPlacer = document.querySelector('.slider-placer');
+
+  if (existingSliderPlacer) {
+      existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
+  }
+
+  if (ratingsumm) {
+      insertAfter(sliderPlacer, ratingsumm);
+  } else {
+      var footer = document.querySelector('footer');
+      footer.parentNode.insertBefore(sliderPlacer, footer);
+  }
+})();
+
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru') && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
   function translateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href]');
@@ -2051,65 +2113,4 @@ if (window.location.pathname.includes("/reviews/") || window.location.pathname.i
                 }
             }
         });
-      (function() {
-        var insertAfter = function(newNode, referenceNode) {
-            referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-        };
-
-        let currentSlide = 0;
-
-        function showSlide(index) {
-            const slides = document.querySelectorAll('.slider-banner');
-            slides.forEach((slide, i) => {
-                if (i === index) {
-                    slide.classList.add('active');
-                } else {
-                    slide.classList.remove('active');
-                }
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % 2; // Используем 2, так как у вас два слайда
-            showSlide(currentSlide);
-        }
-
-        setInterval(nextSlide, 6000); // Изменяйте интервал при необходимости (в миллисекундах)
-    
-        var sliderPlacer = document.createElement('div');
-        sliderPlacer.classList.add('slider-placer');
-    
-        var slider1 = document.createElement('a');
-        slider1.href = '/';
-        slider1.classList.add('slider-banner', 'active');
-        var img1 = document.createElement('img');
-        img1.src = '/img/best-gambling-sites-slide.png';
-        img1.alt = 'Best Gambling Sites';
-        slider1.appendChild(img1);
-    
-        var slider2 = document.createElement('a');
-        slider2.href = '/earning/offerwalls';
-        slider2.classList.add('slider-banner');
-        var img2 = document.createElement('img');
-        img2.src = '/img/earn-skins-slider.png';
-        img2.alt = 'Best Offerwall Sites';
-        slider2.appendChild(img2);
-    
-        sliderPlacer.appendChild(slider1);
-        sliderPlacer.appendChild(slider2);
-    
-        var ratingsumm = document.querySelector('div.ratingsumm');
-        var existingSliderPlacer = document.querySelector('.slider-placer');
-    
-        if (existingSliderPlacer) {
-            existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
-        }
-    
-        if (ratingsumm) {
-            insertAfter(sliderPlacer, ratingsumm);
-        } else {
-            var footer = document.querySelector('footer');
-            footer.parentNode.insertBefore(sliderPlacer, footer);
-        }
-    })();
     
