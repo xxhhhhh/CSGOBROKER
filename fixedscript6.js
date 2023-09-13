@@ -911,10 +911,9 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   var SitesList = document.querySelector('.boxes-holder');
   updateURLs(SitesList);
 }
+if (window.location.pathname.includes('/ru/') && window.location.pathname.includes('/hi/') && window.location.pathname.includes('/es/') && window.location.pathname.includes('/tr/') && window.location.pathname.includes('/pt/')) {
 
 function translateURLs2(parentElement, languageTag) {
-  if (!languageTag) return; // If no language tag is provided, do nothing
-
   var links = parentElement.querySelectorAll('a[href]');
   var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
 
@@ -928,8 +927,10 @@ function translateURLs2(parentElement, languageTag) {
 
       if (domain) {
         translatedHref = domain + '/' + languageTag + path;
-      } else {
+      } else if (languageTag) {
         translatedHref = '/' + languageTag + path;
+      } else {
+        translatedHref = href; // Keep original link if no language tag and no domain
       }
 
       links[i].setAttribute('href', translatedHref);
@@ -1154,8 +1155,8 @@ function translateURLs2(parentElement, languageTag) {
 }
 
 var categorySelector = document.querySelector('.category-selector');
-var languageTag = 'ru'; // Replace with the desired language tag, or leave empty for no translation
 translateURLs2(categorySelector, languageTag);
+}
 }
 
 document.addEventListener('DOMContentLoaded', function() {
