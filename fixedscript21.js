@@ -924,8 +924,8 @@ function translateURLs2(parentElement, languageTag) {
     var url = new URL(href, window.location.href);
     var path = url.pathname;
     var langIncluded = supportedLanguages.some(lang => {
-      var langRegex = new RegExp('\/' + lang + '\/$', 'i'); // 'i' делает регулярное выражение регистронезависимым
-      return langRegex.test(path);
+      var langWithSlashes = '/' + lang + '/';
+      return path.includes(langWithSlashes);
     });
     
     if (languageTag !== 'en') {
