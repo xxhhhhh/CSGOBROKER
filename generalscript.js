@@ -1599,7 +1599,7 @@ function updateSiteList() {
     
     if (isRussianPage) {
       var href = link.getAttribute('href');
-      var newHref = href.replace('csgobroker.co/', 'csgobroker.co/ru/');
+      var newHref = href.replace('/', '/ru/');
       link.setAttribute('href', newHref);
     }
     
