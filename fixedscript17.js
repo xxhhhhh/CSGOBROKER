@@ -925,8 +925,8 @@ function translateURLs2(parentElement, languageTag) {
     var path = url.pathname;
     var langIncluded = supportedLanguages.some(lang => path.includes('/' + lang + '/'));
     
-    if (languageTag !== 'en' && !langIncluded) {
-      if (supportedLanguages.includes(languageTag)) {
+    if (languageTag !== 'en') {
+      if (!langIncluded && supportedLanguages.includes(languageTag)) {
         path = '/' + languageTag + path;
         url.pathname = path;
         links[i].setAttribute('href', url.href);
