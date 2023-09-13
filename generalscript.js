@@ -912,6 +912,8 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   updateURLs(SitesList);
 }
 
+if (!window.location.pathname.startsWith("/rust")) {
+
 function translateURLs2(parentElement, languageTag) {
   var links = parentElement.querySelectorAll('a[href]');
   var supportedLanguages = ['hi', 'tr', 'pt', 'es', 'ru'];
@@ -1156,6 +1158,7 @@ function translateURLs2(parentElement, languageTag) {
 
 var categorySelector = document.querySelector('.category-selector');
 translateURLs2(categorySelector, languageTag);
+}
 }
 
 document.addEventListener('DOMContentLoaded', function() {
