@@ -914,7 +914,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
 
 function translateURLs2(parentElement, languageTag) {
   var links = parentElement.querySelectorAll('a[href]');
-  var regex = /^(https?:\/\/[^/]+)?(\/[^/]+)$/;
+  var regex = /^(https?:\/\/[^/]+)?(\/[^/]+\/?)$/;
   var supportedLanguages = ['hi', 'tr', 'pt', 'es', 'ru'];
 
   for (var i = 0; i < links.length; i++) {
