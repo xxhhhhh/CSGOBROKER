@@ -925,7 +925,11 @@ function translateURLs2(parentElement, languageTag) {
       var translatedHref;
 
       if (domain) {
-        translatedHref = domain + '/' + languageTag + path;
+        if (languageTag !== 'en') { // Add this condition to exclude English links
+          translatedHref = domain + '/' + languageTag + path;
+        } else {
+          translatedHref = href; // Keep the original link for English
+        }
       } else {
         translatedHref = '/' + languageTag + path;
       }
