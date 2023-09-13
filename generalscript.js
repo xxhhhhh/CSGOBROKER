@@ -1241,7 +1241,7 @@ if (!window.location.pathname.includes("/reviews/") && !window.location.pathname
     e.preventDefault();
     const touch = e.touches[0];
     const x = touch.pageX - boxContainer.offsetLeft;
-    const walk = (x - startX) * 0.6;
+    const walk = (x - startX) * 1.2;
     const newScrollLeft = scrollLeft - walk;
     boxContainer.scrollLeft = newScrollLeft;
     buttonScrollPosition = newScrollLeft;
