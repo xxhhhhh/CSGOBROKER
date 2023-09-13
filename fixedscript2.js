@@ -922,7 +922,7 @@ function translateURLs2(parentElement, languageTag) {
     if (match) {
       var domain = match[1] || '';
       var path = match[2];
-      var translatedHref = domain + '/' + languageTag + path;
+      var translatedHref = (domain ? domain : '') + '/' + languageTag + path;
       links[i].setAttribute('href', translatedHref);
     }
   }
