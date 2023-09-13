@@ -5,7 +5,7 @@ function extractLanguageTagFromURL(pathname) {
   if (matches && matches.length > 1) {
     return matches[1];
   }
-  return "en";
+  return "";
 }
 
 var languageTag = extractLanguageTagFromURL(window.location.pathname);
