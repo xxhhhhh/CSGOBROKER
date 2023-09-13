@@ -914,7 +914,8 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
 
 function translateURLs2(parentElement, languageTag) {
   var links = parentElement.querySelectorAll('a[href]');
-  var regex = /^(https?:\/\/[^/]+)?(\/[^\/]+)$/;
+  var regex = /^(https?:\/\/[^/]+)?(\/[^/]+)$/;
+  var supportedLanguages = ['hi', 'tr', 'pt', 'es', 'ru'];
 
   for (var i = 0; i < links.length; i++) {
     var href = links[i].getAttribute('href');
@@ -925,16 +926,19 @@ function translateURLs2(parentElement, languageTag) {
       var translatedHref;
 
       if (domain) {
-        translatedHref = domain + path + '/';
-      } else if (languageTag) {
-        translatedHref = '/' + languageTag + path + '/';
+        translatedHref = domain + path;
       } else {
-        translatedHref = href; // Keep original link if no language tag and no domain
+        translatedHref = path;
+      }
+
+      if (supportedLanguages.includes(languageTag)) {
+        translatedHref = '/' + languageTag + translatedHref;
       }
 
       links[i].setAttribute('href', translatedHref);
     }
   }
+
 
 
   var translations = {
