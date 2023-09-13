@@ -3,10 +3,7 @@ if (!window.location.pathname.includes('/reviews/') && !window.location.pathname
   function extractLanguageTagFromURL(pathname) {
     var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
     if (matches && matches.length > 1) {
-      var languageTag = matches[1];
-      if (languageTag !== 'en') {
-        return languageTag;
-      }
+      return matches[1];
     }
     return "";
   }
@@ -925,7 +922,7 @@ function translateURLs2(parentElement, languageTag) {
     if (match) {
       var domain = match[1] || '';
       var path = match[2];
-      var translatedHref = '/' + languageTag + path;
+      var translatedHref = domain + '/' + languageTag + path;
       links[i].setAttribute('href', translatedHref);
     }
   }
