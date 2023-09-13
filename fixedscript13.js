@@ -925,17 +925,18 @@ function translateURLs2(parentElement, languageTag) {
       var path = match[2];
       var translatedHref;
 
-      if (domain) {
-        translatedHref = domain + path;
-      } else {
-        translatedHref = path;
-      }
+      if (!supportedLanguages.some(lang => path.includes('/' + lang + '/'))) {
+        if (domain) {
+          translatedHref = domain + path;
+        } else {
+          translatedHref = path;
+        }
 
-      if (supportedLanguages.includes(languageTag)) {
-        translatedHref = '/' + languageTag + translatedHref;
+        if (supportedLanguages.includes(languageTag)) {
+          translatedHref = '/' + languageTag + translatedHref;
+        }
+        links[i].setAttribute('href', translatedHref);
       }
-
-      links[i].setAttribute('href', translatedHref);
     }
   }
 
