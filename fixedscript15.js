@@ -914,31 +914,26 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
 
 function translateURLs2(parentElement, languageTag) {
   var links = parentElement.querySelectorAll('a[href]');
-  var regex = /^(https?:\/\/[^/]+)?(\/[^/]+\/?)$/;
   var supportedLanguages = ['hi', 'tr', 'pt', 'es', 'ru'];
 
   for (var i = 0; i < links.length; i++) {
     var href = links[i].getAttribute('href');
-    var match = href.match(regex);
-    if (match) {
-      var domain = match[1] || '';
-      var path = match[2];
-      var translatedHref;
 
-      if (!supportedLanguages.some(lang => path.includes('/' + lang + '/'))) {
-        if (domain) {
-          translatedHref = domain + path;
-        } else {
-          translatedHref = path;
-        }
+    if (!href) continue;
 
-        if (supportedLanguages.includes(languageTag)) {
-          translatedHref = '/' + languageTag + translatedHref;
-        }
-        links[i].setAttribute('href', translatedHref);
+    var url = new URL(href, window.location.href);
+    var path = url.pathname;
+    var langIncluded = supportedLanguages.some(lang => path.includes('/' + lang + '/'));
+
+    if (!langIncluded) {
+      if (supportedLanguages.includes(languageTag)) {
+        path = '/' + languageTag + path;
+        url.pathname = path;
+        links[i].setAttribute('href', url.href);
       }
     }
   }
+
 
 
 
