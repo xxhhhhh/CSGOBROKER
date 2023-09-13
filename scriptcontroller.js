@@ -1,12 +1,15 @@
 if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
 
-function extractLanguageTagFromURL(pathname) {
-  var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
-  if (matches && matches.length > 1) {
-    return matches[1];
+  function extractLanguageTagFromURL(pathname) {
+    var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
+    if (matches && matches.length > 1) {
+      var languageTag = matches[1];
+      if (languageTag !== 'en') {
+        return languageTag;
+      }
+    }
+    return "";
   }
-  return "";
-}
 
 var languageTag = extractLanguageTagFromURL(window.location.pathname);
 
