@@ -915,17 +915,17 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
 function translateURLs2(parentElement, languageTag) {
   var links = parentElement.querySelectorAll('a[href]');
   var supportedLanguages = ['hi', 'tr', 'pt', 'es', 'ru'];
-
+  
   for (var i = 0; i < links.length; i++) {
     var href = links[i].getAttribute('href');
-
+    
     if (!href) continue;
-
+    
     var url = new URL(href, window.location.href);
     var path = url.pathname;
     var langIncluded = supportedLanguages.some(lang => path.includes('/' + lang + '/'));
-
-    if (!langIncluded) {
+    
+    if (languageTag !== 'en' && !langIncluded) {
       if (supportedLanguages.includes(languageTag)) {
         path = '/' + languageTag + path;
         url.pathname = path;
@@ -933,9 +933,6 @@ function translateURLs2(parentElement, languageTag) {
       }
     }
   }
-
-
-
 
   var translations = {
     "ru": {
