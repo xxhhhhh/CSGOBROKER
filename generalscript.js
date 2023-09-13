@@ -1821,6 +1821,9 @@ if (window.location.pathname.includes("/reviews/") || window.location.pathname.i
   });
 }
 
+if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
+
+
         // Создаем новый div элемент
         var newDiv = document.createElement("div");
         newDiv.className = "vpn";
@@ -1845,4 +1848,4 @@ if (window.location.pathname.includes("/reviews/") || window.location.pathname.i
                 }
             }
         });
-      });
+      }});
