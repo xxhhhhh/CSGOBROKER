@@ -1285,28 +1285,28 @@ if (!window.location.pathname.includes("/reviews/") && !window.location.pathname
 
 (function() {
   var insertAfter = function(newNode, referenceNode) {
-      referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
   };
 
   let currentSlide = 0;
 
   function showSlide(index) {
-      const slides = document.querySelectorAll('.slider-banner');
-      slides.forEach((slide, i) => {
-          if (i === index) {
-              slide.classList.add('active');
-          } else {
-              slide.classList.remove('active');
-          }
-      });
+    const slides = document.querySelectorAll('.slider-banner');
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
   }
 
   function nextSlide() {
-      currentSlide = (currentSlide + 1) % 2; // Используем 2, так как у вас два слайда
-      showSlide(currentSlide);
+    currentSlide = (currentSlide + 1) % 2;
+    showSlide(currentSlide);
   }
 
-  setInterval(nextSlide, 6000); // Изменяйте интервал при необходимости (в миллисекундах)
+  setInterval(nextSlide, 6000);
 
   var sliderPlacer = document.createElement('div');
   sliderPlacer.classList.add('slider-placer');
@@ -1330,20 +1330,29 @@ if (!window.location.pathname.includes("/reviews/") && !window.location.pathname
   sliderPlacer.appendChild(slider1);
   sliderPlacer.appendChild(slider2);
 
-  var ratingsumm = document.querySelector('div.ratingsumm');
+  var path = window.location.pathname;
   var existingSliderPlacer = document.querySelector('.slider-placer');
 
   if (existingSliderPlacer) {
-      existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
+    existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
   }
 
-  if (ratingsumm) {
+  if (path.includes('/mirrors/')) {
+    var sitealternatesboxes = document.querySelector('.sitealternatesboxes');
+    if (sitealternatesboxes) {
+      insertAfter(sliderPlacer, sitealternatesboxes);
+    }
+  } else if (path.includes('/reviews/')) {
+    var ratingsumm = document.querySelector('div.ratingsumm');
+    if (ratingsumm) {
       insertAfter(sliderPlacer, ratingsumm);
+    }
   } else {
-      var footer = document.querySelector('footer');
-      footer.parentNode.insertBefore(sliderPlacer, footer);
+    var footer = document.querySelector('footer');
+    footer.parentNode.insertBefore(sliderPlacer, footer);
   }
 })();
+
 
 if (
   !window.location.pathname.includes("/reviews/") &&
@@ -1679,7 +1688,7 @@ var threshold = 100;
 var prevButton = document.querySelector(".prev-button");
 var nextButton = document.querySelector(".next-button");
 
-if (window.location.pathname.includes("/reviews/") || window.location.pathname.includes("/mirrors/")) {
+if (window.location.pathname.includes("/reviews/")) {
   function removeAllTriggers() {
     var existingTriggers = triggersContainer.querySelectorAll(
       "input[type='radio'], label"
