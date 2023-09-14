@@ -1208,7 +1208,7 @@ if (window.location.pathname.includes('/ru/reviews/') || window.location.pathnam
   for (var i = 0; i < links.length; i++) {
     var link = links[i];
   
-    if (!link.classList.contains('lang-switch')) {
+    if (!link.classList.contains('lang-switch') && !link.closest('.instruction-mirrors')) {
       var path = link.pathname;
   
       if (!path.includes('/ru/') && path.indexOf('/ru') !== 0) {
