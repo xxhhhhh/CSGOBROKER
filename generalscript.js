@@ -1161,6 +1161,87 @@ translateURLs2(categorySelector, languageTag);
 }
 }
 
+function translateTextElements(translations) {
+  var siteprosElements = document.querySelectorAll('.sitedetails .sitepros span');
+  for (var i = 0; i < siteprosElements.length; i++) {
+    var text = siteprosElements[i].textContent.trim();
+    if (translations.hasOwnProperty(text)) {
+      siteprosElements[i].innerHTML = translations[text] + ' <i class="bi bi-caret-down-fill"></i>';
+    }
+  }
+
+  var ratingwayElements = document.querySelectorAll('.ratingthings .ratingway span, .content button, .boxreview .plusminus .criteria .par h2, .features .featuresbox .typesinside a, .instruction li');
+  for (var j = 0; j < ratingwayElements.length; j++) {
+    var text = ratingwayElements[j].textContent.trim();
+    if (translations.hasOwnProperty(text)) {
+      ratingwayElements[j].innerHTML = translations[text];
+    }
+  }
+}
+
+if (window.location.pathname.includes('/ru/reviews/') || window.location.pathname.includes('/ru/mirrors/')) {
+  var translations = {
+    "Deposit Methods": "Способы Пополнения",
+    "Withdraw Methods": "Способы Вывода",
+    "Sign Up Bonus": "Бонус за Регистрацию",
+    "Daily Rewards": "Ежедневные Награды",
+    "No Bonus": "Нет Бонуса",
+    "Deposit Bonus": "Бонус к Пополнению",
+    "Rain System": "Дожди",
+    "Rakeback System": "Рейкбек",
+    "Pros": "Плюсы",
+    "Price": "Цены",
+    "Cons": "Минусы",
+    "Trust": "Доверие",
+    "Support": "Поддержка",
+    "Payments": "Деп/Вывод",
+    "Functional": "Функционал",
+    "Playability": "Режимы",
+    "Sign up via Steam": "Залогиньтесь через Steam ",
+    "Enjoy !": "Наслаждайтесь !",
+    "Visit WebSite": "Посетить Сайт"
+  };
+  translateTextElements(translations);
+
+  var links = document.getElementsByTagName('a');
+
+  for (var i = 0; i < links.length; i++) {
+    var link = links[i];
+  
+    if (!link.classList.contains('lang-switch')) {
+      var path = link.pathname;
+  
+      if (!path.includes('/ru/') && path.indexOf('/ru') !== 0) {
+        if (path !== '/') {
+          link.pathname = '/ru' + path;
+        } else {
+          link.href = link.href.replace('csgobroker.co/', 'csgobroker.co/ru/');
+        }
+      }
+    }     
+  }
+}
+
+if (window.location.pathname.includes('/pl/reviews/')) {
+  var translations = {
+    "Deposit Methods": "Metody Depozytu",
+    "Withdraw Methods": "Metody Wypłaty",
+    "Sign Up Bonus": "Bonus Rejestracyjny",
+    "No Bonus": "Brak Bonusu",
+    "Pros": "Zalety",
+    "Price": "Cena",
+    "Cons": "Wady",
+    "Trust": "Zaufanie",
+    "Support": "Wsparcie",
+    "Payments": "Płatności",
+    "Functional": "Funkcjonalność",
+    "Sign up via Steam": "Zarejestruj się za pomocą Steam",
+    "Enjoy !": "Ciesz się!",
+    "Visit WebSite": "Odwiedź stronę internetową"
+  };
+  translateTextElements(translations);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 if (!window.location.pathname.includes("/reviews/") && !window.location.pathname.includes("/mirrors/")) {
   const boxContainer = document.querySelector('.category-selector');
