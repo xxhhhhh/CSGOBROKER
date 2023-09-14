@@ -1184,6 +1184,7 @@ if (window.location.pathname.includes('/ru/reviews/') || window.location.pathnam
     "Deposit Methods": "Способы Пополнения",
     "Withdraw Methods": "Способы Вывода",
     "Sign Up Bonus": "Бонус за Регистрацию",
+    "Faucet System": "Система Кранов",
     "Daily Rewards": "Ежедневные Награды",
     "No Bonus": "Нет Бонуса",
     "Deposit Bonus": "Бонус к Пополнению",

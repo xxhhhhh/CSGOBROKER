@@ -137,7 +137,7 @@ nav .socials {
 nav .socials a img {
     height: 18px;
     width: auto;
-    opacity: 0.3;
+    opacity: 0.1;
     margin-top: 4px;
     transition: all .4s;
 }
@@ -493,6 +493,7 @@ nav #pagename:focus {
     /* border: black 2px dashed; */
     color: var(--white);
     background-color: rgb(26 26 26);
+    border: 2px #171717 solid;
     /* filter: grayscale(1); */
 }
 .typesinside a:nth-child(1) {
@@ -900,6 +901,7 @@ nav #pagename:focus {
 }
 .typesinside#Mirrors-types {
     justify-content: center;
+    border-radius: 5px 5px 0 0;
 }
 .instruction-mirrors ol {
     display: flex;
@@ -917,13 +919,13 @@ nav #pagename:focus {
 }
 .instruction-mirrors {
     padding: 30px 0px 30px 20px;
-    background: linear-gradient(360deg, rgba(0,0,0,.3) 0%, rgba(0,0,0,.3) 10%, rgba(0, 0, 0, .3) 50%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(360deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.2) 10%, rgba(0, 0, 0, .1) 55%, rgba(255, 255, 255, 0) 100%);
     justify-content: flex-start;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     align-content: flex-start;
-    border-radius: 5px;
+    border-radius: 0 0 5px 5px;
     width: 98%;
     height: auto;
 }
@@ -942,6 +944,7 @@ nav #pagename:focus {
     color: var(--white);
     padding: 15px 10px;
     background-color: rgb(21 21 21);
+    border: 2px #171717 solid;
     transition: ease-in-out all .2s;
     text-align: center;
     border-radius: 5px;
@@ -1055,8 +1058,7 @@ nav #pagename:focus {
 nav img {
     height: auto;
     width: 150px;
-    /* filter: drop-shadow(0px 3px 3px black); */
-    filter: drop-shadow(0px 5px 2px black);
+    /* filter: drop-shadow(0px 5px 2px black); */
     transition: all .2s ease-in-out;
     /* filter: grayscale(1); */
 }
@@ -1479,7 +1481,8 @@ nav img {
     font-size: 13px; */
 }
 .sitepage .box .content button#copy_style {
-    border: #a81d34 1px solid; 
+    /* border: #a81d34 1px solid;  */
+    border: 2px solid #ce203d;
     position: absolute;
     /* background-color: #a81d34;  */
     background-color: #a81d34;
@@ -1614,6 +1617,7 @@ nav img {
 .sitealternates .box .content button#copy_style {
     bottom: 32px;
     padding: 8px 10px;
+    border: 2px solid #ce203d;
 }
 .sitealternates .site-reward {
     height: 50px;
@@ -1798,16 +1802,17 @@ nav img {
     margin-top: 5px;
 }
 .content button{
-    background-color: rgb(26 26 26);
+    background-color: rgb(32 32 32);
+    border: 2px #222222 solid;
     bottom: 15px;
     position: absolute;
-    border: none;
+    /* border: none; */
     outline: none;
     font-family: TTNormsPro;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 12px;
-    padding: 7px;
+    padding: 6px;
     border-radius: 5px;
     transition: all .2s ease-in-out;
     color: white;
@@ -1815,6 +1820,7 @@ nav img {
 .box:hover .content button#copy_style{
     /* background: rgb(52 52 52); */
     animation: buttons 1s infinite;
+    border: 2px solid #ce203d;
     background-color: #a81d34;
 }
 .box:hover .content button{
@@ -1859,6 +1865,7 @@ nav img {
     top: unset;
     padding: 6px;
     bottom: 15.6px;
+    border: none;
 }
 .credits {
     width: 180px;
@@ -2546,7 +2553,7 @@ footer .centralizer .footer-content {
         position: relative;
         font-size: 18px;
         right: 0;
-        color: rgba(255, 255, 255, .3);
+        color: rgba(255, 255, 255, .12);
         transition: all .3s ease-in-out;
     }
 
@@ -2576,7 +2583,7 @@ footer .centralizer .footer-content {
         text-align: left;
         display: flex;
         justify-content: space-between;
-        background-color: #0a0a0a;
+        background-color: #0d0d0d;
     }
     
     .lang-menu ul li a {
