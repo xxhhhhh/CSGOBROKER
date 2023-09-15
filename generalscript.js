@@ -1186,6 +1186,7 @@ if (window.location.pathname.includes('/ru/reviews/') || window.location.pathnam
     "Sign Up Bonus": "Бонус за Регистрацию",
     "Faucet System": "Система Кранов",
     "Daily Rewards": "Ежедневные Награды",
+    "Daily Giveaways": "Ежедневные Розыгрыши",
     "No Bonus": "Нет Бонуса",
     "Deposit Bonus": "Бонус к Пополнению",
     "Rain System": "Дожди",
@@ -1912,7 +1913,7 @@ if (window.location.pathname.includes("/reviews/")) {
   });
 }
 
-if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
+if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')) {
 
 
         // Создаем новый div элемент
