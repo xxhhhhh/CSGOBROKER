@@ -1374,6 +1374,36 @@ if (!window.location.pathname.includes("/reviews/") && !window.location.pathname
   buttonsContainer.scrollLeft = buttonScrollPosition;
 }
 
+function translateURLsSlider(parentElement, languageTag) {
+  var links = parentElement.querySelectorAll('a[href]');
+  var supportedLanguages = ['hi', 'tr', 'pt', 'es', 'ru'];
+  
+  for (var i = 0; i < links.length; i++) {
+    var href = links[i].getAttribute('href');
+    
+    if (!href) continue;
+    
+    var url = new URL(href, window.location.href);
+    var path = url.pathname;
+    var langIncluded = supportedLanguages.some(lang => {
+      var langWithSlashes = '/' + lang + '/';
+      return path.includes(langWithSlashes);
+    });
+    
+    if (languageTag !== 'en') {
+      if (langIncluded) {
+        path = path.replace(/\/(hi|tr|pt|es|ru)\//, '/' + languageTag + '/');
+        url.pathname = path;
+        links[i].setAttribute('href', url.href);
+      } else if (supportedLanguages.includes(languageTag)) {
+        path = '/' + languageTag + path;
+        url.pathname = path;
+        links[i].setAttribute('href', url.href);
+      }
+    }
+  }
+}
+
 (function() {
   var insertAfter = function(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -1399,6 +1429,13 @@ if (!window.location.pathname.includes("/reviews/") && !window.location.pathname
 
   setInterval(nextSlide, 6000);
 
+  var path = window.location.pathname;
+  var existingSliderPlacer = document.querySelector('.slider-placer');
+
+  if (existingSliderPlacer) {
+    existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
+  }
+
   var sliderPlacer = document.createElement('div');
   sliderPlacer.classList.add('slider-placer');
 
@@ -1421,29 +1458,15 @@ if (!window.location.pathname.includes("/reviews/") && !window.location.pathname
   sliderPlacer.appendChild(slider1);
   sliderPlacer.appendChild(slider2);
 
-  var path = window.location.pathname;
-  var existingSliderPlacer = document.querySelector('.slider-placer');
-
-  if (existingSliderPlacer) {
-    existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
+  var languageTag = path.match(/\/(hi|tr|pt|es|ru)(\.html)?/);
+  if (languageTag) {
+    languageTag = languageTag[1];
+    translateURLsSlider(sliderPlacer, languageTag);
   }
 
-  if (path.includes('/mirrors/')) {
-    var sitealternatesboxes = document.querySelector('.sitealternatesboxes');
-    if (sitealternatesboxes) {
-      insertAfter(sliderPlacer, sitealternatesboxes);
-    }
-  } else if (path.includes('/reviews/')) {
-    var ratingsumm = document.querySelector('div.ratingsumm');
-    if (ratingsumm) {
-      insertAfter(sliderPlacer, ratingsumm);
-    }
-  } else {
-    var footer = document.querySelector('footer');
-    footer.parentNode.insertBefore(sliderPlacer, footer);
-  }
+  var footer = document.querySelector('footer');
+  footer.parentNode.insertBefore(sliderPlacer, footer);
 })();
-
 
 if (
   !window.location.pathname.includes("/reviews/") &&
@@ -1930,7 +1953,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
         newDiv.textContent = "Нужен VPN";
 
         // Массив айди, на которые нужно добавлять .vpn
-        var allowedIds = ["CSGORoll", "Clash", "howlgg", "RustyPot", "RustChance", "Rollbit", "Duelbits", "FlameCases", "KNIFEX", "DaddySkins", "CSGOLive", "WTFSkins", "Key-Drop", "FarmSkins"];
+        var allowedIds = ["CSGORoll", "Clash", "howlgg", "RustyPot", "RustChance", "Rollbit", "Duelbits", "FlameCases", "DaddySkins", "CSGOLive", "WTFSkins", "Key-Drop", "FarmSkins"];
 
         // Находим все элементы .box
         var boxElements = document.querySelectorAll(".box");
