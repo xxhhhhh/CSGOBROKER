@@ -1440,7 +1440,7 @@ function translateURLsSlider(parentElement, languageTag) {
   sliderPlacer.classList.add('slider-placer');
 
   var slider1 = document.createElement('a');
-  slider1.href = '/';
+  slider1.href = '';
   slider1.classList.add('slider-banner', 'active');
   var img1 = document.createElement('img');
   img1.src = '/img/best-gambling-sites-slide.png';
