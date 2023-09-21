@@ -1464,8 +1464,20 @@ function translateURLsSlider(parentElement, languageTag) {
     translateURLsSlider(sliderPlacer, languageTag);
   }
 
-  var footer = document.querySelector('footer');
-  footer.parentNode.insertBefore(sliderPlacer, footer);
+  if (path.includes('/mirrors/')) {
+    var sitealternatesboxes = document.querySelector('.sitealternatesboxes');
+    if (sitealternatesboxes) {
+      insertAfter(sliderPlacer, sitealternatesboxes);
+    }
+  } else if (path.includes('/reviews/')) {
+    var ratingsumm = document.querySelector('div.ratingsumm');
+    if (ratingsumm) {
+      insertAfter(sliderPlacer, ratingsumm);
+    }
+  } else {
+    var footer = document.querySelector('footer');
+    footer.parentNode.insertBefore(sliderPlacer, footer);
+  }
 })();
 
 if (
