@@ -1410,6 +1410,9 @@ function translateURLsSlider(parentElement, languageTag) {
   };
 
   let currentSlide = 0;
+  var slideInterval;
+  var slideShowActive = true; // Добавляем флаг
+  var isTransitioning = false; // Флаг для блокировки анимации
 
   function showSlide(index) {
     const slides = document.querySelectorAll('.slider-banner');
@@ -1423,11 +1426,29 @@ function translateURLsSlider(parentElement, languageTag) {
   }
 
   function nextSlide() {
-    currentSlide = (currentSlide + 1) % 2;
-    showSlide(currentSlide);
+    if (slideShowActive && !isTransitioning) { // Проверяем флаги перед сменой слайда
+      isTransitioning = true; // Устанавливаем флаг анимации
+
+      setTimeout(function() {
+        isTransitioning = false; // Сбрасываем флаг анимации
+      }, 6000); // Устанавливаем длительность анимации в миллисекундах (здесь 500 мс)
+
+      currentSlide = (currentSlide + 1) % 2;
+      showSlide(currentSlide);
+    }
   }
 
-  setInterval(nextSlide, 6000);
+  function startSlideShow() {
+    slideShowActive = true;
+    slideInterval = setInterval(nextSlide, 6000);
+  }
+
+  function stopSlideShow() {
+    slideShowActive = false;
+    clearInterval(slideInterval);
+  }
+
+  startSlideShow();
 
   var path = window.location.pathname;
   var existingSliderPlacer = document.querySelector('.slider-placer');
@@ -1439,8 +1460,21 @@ function translateURLsSlider(parentElement, languageTag) {
   var sliderPlacer = document.createElement('div');
   sliderPlacer.classList.add('slider-placer');
 
+  var controlsContainer = document.createElement('div');
+  controlsContainer.classList.add('controls');
+
+  var prevButton = document.createElement('button');
+  prevButton.classList.add('prev-button');
+  prevButton.innerHTML = '<i class="bi bi-chevron-left"></i>';
+  controlsContainer.appendChild(prevButton);
+  
+  var nextButton = document.createElement('button');
+  nextButton.classList.add('next-button');
+  nextButton.innerHTML = '<i class="bi bi-chevron-right"></i>';
+  controlsContainer.appendChild(nextButton);  
+
   var slider1 = document.createElement('a');
-  slider1.href = '';
+  slider1.href = '/';
   slider1.classList.add('slider-banner', 'active');
   var img1 = document.createElement('img');
   img1.src = '/img/best-gambling-sites-slide.png';
@@ -1455,6 +1489,7 @@ function translateURLsSlider(parentElement, languageTag) {
   img2.alt = 'Best Offerwall Sites';
   slider2.appendChild(img2);
 
+  sliderPlacer.appendChild(controlsContainer);
   sliderPlacer.appendChild(slider1);
   sliderPlacer.appendChild(slider2);
 
@@ -1478,7 +1513,31 @@ function translateURLsSlider(parentElement, languageTag) {
     var footer = document.querySelector('footer');
     footer.parentNode.insertBefore(sliderPlacer, footer);
   }
+
+  var slideElements = document.querySelectorAll('.slider-banner');
+  slideElements.forEach(function(slideElement) {
+    slideElement.addEventListener('mouseenter', function() {
+      stopSlideShow();
+    });
+
+    slideElement.addEventListener('mouseleave', function() {
+      startSlideShow();
+    });
+  });
+
+  prevButton.addEventListener('click', function() {
+    currentSlide = (currentSlide - 1 + 2) % 2;
+    showSlide(currentSlide);
+  });
+
+  nextButton.addEventListener('click', function() {
+    currentSlide = (currentSlide + 1) % 2;
+    showSlide(currentSlide);
+  });
+
 })();
+
+
 
 if (
   !window.location.pathname.includes("/reviews/") &&

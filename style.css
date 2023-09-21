@@ -2284,24 +2284,33 @@ footer .centralizer .footer-content {
 
   label {
     display: inline-block;
-    width: 12px;
-    height: 12px;
+    width: 13px;
+    height: 13px;
     border: solid 2px rgba(255, 255, 255, 0.4);
-    border-radius: 999px;
+    border-radius: 3px;
     background-color: transparent;
     margin: 0 6px 0 6px;
     z-index: 2;
     cursor: pointer;
     transition-duration: .2s;
     box-shadow: 0 0 20px 0 #000;
+    position: relative;
   }
 
   label.active {
-    background-color: white;
+    background-color: rgba(255, 255, 255, .5);
     border: solid 2px white;
+    /* border: solid 2px var(--main-color);
+    background-color: rgba(206, 32, 61, .5); */
+    transform: scale(1.2);
   }
 
-    .screens button {
+  label:hover {
+    transform: scale(1.2);
+  }
+
+    .screens button,
+    .slider-placer button {
     content: '';
     position: absolute;
     color: white;
@@ -2313,7 +2322,8 @@ footer .centralizer .footer-content {
     font-size: 32px;
     cursor: pointer;
   } 
-  .screens button:hover i {
+  .screens button:hover i,
+  .slider-placer button:hover i {
     font-size: 40px;
     transition: all .1s ease-in-out;
   }
@@ -2356,6 +2366,7 @@ footer .centralizer .footer-content {
   
   input:focus + label{
     border: solid 2px var(--white);
+    /* border: solid 2px var(--main-color); */
   } 
   
   .slide {
@@ -2709,6 +2720,8 @@ footer .centralizer .footer-content {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        width: 100%;
+        z-index: 1001;
       }
   
       .controls button {
