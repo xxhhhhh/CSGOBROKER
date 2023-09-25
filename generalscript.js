@@ -1,3 +1,33 @@
+if (window.location.hostname === "cs2freebies.com") {
+  // Создаем массив с парами замен
+  var replacements = [
+    ["CS:GO", "CS2"],
+    ["CSGO", "CS2"],
+    ["Counter-Strike: Global Offensive", "Counter-Strike 2"],
+    ["Counter-Strike Global Offensive", "Counter-Strike 2"],
+    ["Counter Strike Global Offensive", "Counter-Strike 2"]
+  ];
+
+  // Функция для замены текста
+  function replaceText(node) {
+    node.childNodes.forEach(function(child) {
+      if (child.nodeType === 3) {
+        var text = child.nodeValue;
+        replacements.forEach(function(replace) {
+          var regex = new RegExp(replace[0], "gi");
+          text = text.replace(regex, replace[1]);
+        });
+        child.nodeValue = text;
+      } else {
+        replaceText(child);
+      }
+    });
+  }
+
+  // Заменяем текст на всей странице
+  replaceText(document.body);
+}
+
 if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
 
   function extractLanguageTagFromURL(pathname) {
