@@ -32,6 +32,13 @@ if (window.location.hostname === "cs2freebies.com") {
   replaceText(document.body);
 }
 
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
 
 if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
 
@@ -1654,15 +1661,6 @@ if (
   newContent += "</ul>";
 
   langMenuDiv.innerHTML = newContent;
-}
-
-
-function copyToClipboard(element) {
-  var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-  document.execCommand("copy");
-  $temp.remove();
 }
 
 const backToTopButton = document.querySelector("#back-to-top-btn");
