@@ -1,21 +1,26 @@
 if (window.location.hostname === "cs2freebies.com") {
-  // Создаем массив с парами замен
   var replacements = [
-    ["CS:GO", "CS2"],
-    ["CSGO", "CS2"],
-    ["Counter-Strike: Global Offensive", "Counter-Strike 2"],
-    ["Counter-Strike Global Offensive", "Counter-Strike 2"],
-    ["Counter Strike Global Offensive", "Counter-Strike 2"]
+    /\bCS:GO\b/g, 
+    /\bCSGO\b/g, 
+    /\bCounter-Strike: Global Offensive\b/g, 
+    /\bCounter-Strike Global Offensive\b/g, 
+    /\bCounter Strike Global Offensive\b/g
   ];
 
-  // Функция для замены текста
   function replaceText(node) {
     node.childNodes.forEach(function(child) {
       if (child.nodeType === 3) {
         var text = child.nodeValue;
-        replacements.forEach(function(replace) {
-          var regex = new RegExp(replace[0], "gi");
-          text = text.replace(regex, replace[1]);
+        replacements.forEach(function(regex) {
+          text = text.replace(regex, function(match) {
+            return match.replace(/CS:GO|CSGO|Counter-Strike: Global Offensive|Counter-Strike Global Offensive|Counter Strike Global Offensive/gi, function(matched) {
+              if (matched === 'CS:GO') return 'CS2';
+              if (matched === 'CSGO') return 'CS2';
+              if (matched === 'Counter-Strike: Global Offensive') return 'Counter-Strike 2';
+              if (matched === 'Counter-Strike Global Offensive') return 'Counter-Strike 2';
+              if (matched === 'Counter Strike Global Offensive') return 'Counter-Strike 2';
+            });
+          });
         });
         child.nodeValue = text;
       } else {
@@ -24,9 +29,9 @@ if (window.location.hostname === "cs2freebies.com") {
     });
   }
 
-  // Заменяем текст на всей странице
   replaceText(document.body);
 }
+
 
 if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
 
