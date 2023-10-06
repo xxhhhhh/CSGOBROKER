@@ -1276,7 +1276,7 @@ if (window.location.pathname.includes('/ru/reviews/') || window.location.pathnam
     var link = links[i];
     
     // Check if the link is not inside div.box
-    if (!link.closest('div.box')) {
+    if (!link.closest('div.siteblock div.box')) {
       if (!link.classList.contains('lang-switch') && !link.closest('.instruction-mirrors')) {
         var path = link.pathname;
 
