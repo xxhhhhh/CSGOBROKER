@@ -432,9 +432,10 @@ nav #pagename:focus {
 }
 .gamemodes .featuresbox {
     width: 100%;
-    border-radius: 5px 5px 0 0;
-    background: linear-gradient(150deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,.4) 10%, rgba(0, 0, 0, .4) 50%, rgba(255, 255, 255, 0) 100%);
-    /* background-color: var(--opacback); */
+    /* border-radius: 5px 5px 0 0; */
+    border-radius: 5px;
+    /* background: linear-gradient(150deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,.4) 10%, rgba(0, 0, 0, .4) 50%, rgba(255, 255, 255, 0) 100%); */
+    /* background-color: rgba(0, 0, 0 , .8); */
     box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);
     display: flex;
     align-items: center;
@@ -473,6 +474,7 @@ nav #pagename:focus {
 }
 .gamemodes .featuresbox .typesinside a {
     margin: 0 !important;
+    box-shadow: 0 0 20px 0 #080808;
 }
 .gamemodes .featuresbox .typesinside a:hover {
     transform: scale(1);
@@ -599,6 +601,9 @@ nav #pagename:focus {
 }
 .typesinside .rental::before {
     background-image: url(/img/minipics/gamemodes/rental.png);
+}
+.typesinside .buy-games::before {
+    background-image: url(/img/minipics/payments/games.png);
 }
 
 /* Gamemodes Images List End */
@@ -763,7 +768,6 @@ nav #pagename:focus {
 .typesinside ::before,
 .methodlist ::before {
     border-radius: 5px;
-    margin-left: 1px;
     display: inline-block;
     background-size: cover;
     height: 32px;

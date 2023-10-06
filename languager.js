@@ -624,6 +624,23 @@ function extractLanguageTagFromURL(pathname) {
   steamlevelup.open('GET', '/multitop/steam/levelup.html', true);
   steamlevelup.send();
 
+  var buygames = new XMLHttpRequest();
+  buygames.onreadystatechange = function() {
+    if (buygames.readyState === XMLHttpRequest.DONE) {
+      if (buygames.status === 200) {
+        var divToImport = document.getElementById('buygames-list');
+        if (divToImport) {
+          divToImport.innerHTML = buygames.responseText;
+          translateURLs(divToImport); 
+        }
+      } else {
+        console.error('Cant load div.');
+      }
+    }
+  };
+  buygames.open('GET', '/multitop/steam/buy-games.html', true);
+  buygames.send();
+
   var cryptocasino = new XMLHttpRequest();
   cryptocasino.onreadystatechange = function() {
     if (cryptocasino.readyState === XMLHttpRequest.DONE) {
