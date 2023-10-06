@@ -1274,18 +1274,21 @@ if (window.location.pathname.includes('/ru/reviews/') || window.location.pathnam
 
   for (var i = 0; i < links.length; i++) {
     var link = links[i];
-  
-    if (!link.classList.contains('lang-switch') && !link.closest('.instruction-mirrors')) {
-      var path = link.pathname;
-  
-      if (!path.includes('/ru/') && path.indexOf('/ru') !== 0) {
-        if (path !== '/') {
-          link.pathname = '/ru' + path;
-        } else {
-          link.href = link.href.replace('csgobroker.co/', 'csgobroker.co/ru/');
+    
+    // Check if the link is not inside div.box
+    if (!link.closest('div.box')) {
+      if (!link.classList.contains('lang-switch') && !link.closest('.instruction-mirrors')) {
+        var path = link.pathname;
+
+        if (!path.includes('/ru/') && path.indexOf('/ru') !== 0) {
+          if (path !== '/') {
+            link.pathname = '/ru' + path;
+          } else {
+            link.href = link.href.replace('csgobroker.co/', 'csgobroker.co/ru/');
+          }
         }
-      }
-    }     
+      }     
+    }
   }
 }
 

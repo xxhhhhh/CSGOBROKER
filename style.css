@@ -475,6 +475,7 @@ nav #pagename:focus {
 .gamemodes .featuresbox .typesinside a {
     margin: 0 !important;
     box-shadow: 0 0 20px 0 #080808;
+    border-radius: 5px;
 }
 .gamemodes .featuresbox .typesinside a:hover {
     transform: scale(1);
