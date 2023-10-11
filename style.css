@@ -195,7 +195,8 @@ nav #pagename:focus {
     justify-content: center;
     align-items: center;
 }
-.boxreview {
+.boxreview,
+.boxtopic {
     position: relative;
     left: 154px;
     height: auto;
@@ -206,7 +207,159 @@ nav #pagename:focus {
     flex-wrap: wrap;
     align-content: flex-start;
     background: linear-gradient(180deg, rgba(0,0,0,.3) 0%, rgba(0,0,0,.2) 10%, rgba(0, 0, 0, .2) 50%, rgba(0, 0, 0, 0) 100%);
+    min-height: 900px;
     padding-top: 10px;
+}
+.topic-centralizer {
+    width: 98%;
+}
+.box-skins {
+    border-radius: 5px;
+    background-color: var(--opacback);
+    height: 130px;
+    margin: 8px 0 0 0;
+    overflow-x: scroll;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.box-skins::-webkit-scrollbar {
+    width: 2px;
+    height: 4px;
+  }
+  
+  /* Track */
+  .box-skins::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+   
+  .box-skins::-webkit-scrollbar-thumb {
+    /* background: rgba(255, 255, 255, .1);  */
+    background: #2e2e2e;
+    border-radius: 5px;
+  }
+  
+
+  /* Handle on hover */
+  .box-skins::-webkit-scrollbar-thumb:hover {
+    /* background: var(--main-color);  */
+    background: #b81c36;
+  }
+.box-skins .skin {
+    height: 95%;
+    width: 155px;
+    min-width: 90px;
+    max-width: 155px;
+    margin-right: 5px;
+    background-color: #0c0c0c;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s all ease-in-out;
+    z-index: 100;
+    margin-top: 5px;
+    position: relative;
+    right: 0;
+}
+
+.box-skins .skin:hover .skin-desc,
+.box-skins .skin:focus .skin-desc {
+    opacity: 1;
+}
+
+.box-skins .skin .skin-desc {
+    position: absolute;
+    display: flex;
+    opacity: 0;
+    font-size: 12px;
+    font-weight: 500;
+    width: 155px;
+    height: 40px;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    transition: .2s all ease-in-out;
+    color: var(--white);
+    background: linear-gradient(360deg, rgba(0, 0, 0, .2) 0%, rgba(0,0,0,0) 100%);
+    filter: drop-shadow(0px 2px 2px black);
+}
+.box-skins .skin .skin-desc#pink {
+    background: linear-gradient(360deg, rgba(211, 44, 230, .2) 0%, rgba(0,0,0,0) 100%);
+}
+.box-skins .skin .skin-desc#red {
+    background: linear-gradient(360deg, rgba(235, 75, 75, .2) 0%, rgba(0,0,0,0) 100%);
+}
+.box-skins:first-child .skin,
+.box-skins:nth-child(2) .skin {
+    min-width: 90px;
+}
+.box-skins .skin:hover,
+.box-skins .skin:focus {
+    background-color: #0e0e0e;
+    width: 155px;
+    min-width: 155px;
+}
+.box-skins .skin:hover img {
+    height: 90%;
+}
+.box-skins:first-child .skin:hover img,
+.box-skins:first-child .skin:focus img {
+    height: 80% !important;
+}
+.box-skins:nth-child(2)  .skin:hover img,
+.box-skins:nth-child(2)  .skin:focus img {
+    height: 90% !important;
+}
+.box-skins .skin img {
+    width: auto;
+    height: 82%;
+    transition: .2s all ease-in-out;
+}
+.box-skins:first-child .skin img {
+    width: auto;
+    height: 60%;
+}
+.box-skins:nth-child(2) .skin img {
+    width: auto;
+    height: 60%;
+}
+.box-skins:first-child {
+    margin: unset;
+}
+.box-skins .skin:nth-child(2) {
+    margin-left: 35px;
+}
+.box-skins-name {
+    width: 35px;
+    height: 130px;
+    background-color: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    position: absolute;
+    left: 10px;
+    margin-top: 3px;
+    z-index: 1000;
+}
+.box-skins:hover .box-skins-name span {
+    color: var(--white);
+}
+.box-skins-name span {
+    transform: rotate(90deg);
+    color: #232323;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    min-width: 120px;
+    justify-content: center;
+    transition: .25s all ease-in-out;
+    margin-left: 5px;
 }
 .boxreview .infoblock h1, h2, h2 {
     font-weight: 500;
@@ -2045,7 +2198,8 @@ footer .centralizer .footer-content {
     .navigation-menu {
         display: none;
     }
-    .boxreview {
+    .boxreview,
+    .boxtopic {
         left: 0;
         margin: 0 auto;
         width: 100%;
