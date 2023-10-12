@@ -977,7 +977,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   updateURLs(SitesList);
 }
 
-if (!window.location.pathname.startsWith("/rust")) {
+if (!window.location.pathname.startsWith("/rust") &&  !window.location.pathname.startsWith("/topic")) {
 
 function translateURLs2(parentElement, languageTag) {
   var links = parentElement.querySelectorAll('a[href]');
@@ -1313,7 +1313,7 @@ if (window.location.pathname.includes('/pl/reviews/')) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-if (!window.location.pathname.includes("/reviews/") && !window.location.pathname.includes("/mirrors/")) {
+if (!window.location.pathname.includes("/reviews/") && !window.location.pathname.includes("/mirrors/") && !window.location.pathname.startsWith("/topic")) {
   const boxContainer = document.querySelector('.category-selector');
   const buttonsContainer = document.createElement('div');
   const prevButtonContainer = document.createElement('button');
