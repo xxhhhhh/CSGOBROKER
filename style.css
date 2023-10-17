@@ -1688,7 +1688,7 @@ nav img:hover {
     min-width: 140px;
     font-size: 13px; */
 }
-.sitepage .box .content button#copy_style {
+.sitepage .box .content button.copy_style {
     /* border: #a81d34 1px solid;  */
     border: 2px solid #ce203d;
     position: absolute;
@@ -1699,8 +1699,8 @@ nav img:hover {
     padding: 8px 20px;
     transition: all .2s ease-in-out;
 }
-.sitepage .box .content button#copy_style:hover,
-.box .content button#copy:hover {
+.sitepage .box .content button.copy_style:hover,
+.box .content button.copy:hover {
     /* background-color: var(--white); */
     /* border: var(--white) 1px solid;  */
     color: var(--white);
@@ -1708,8 +1708,8 @@ nav img:hover {
     transition: all .2s ease-in-out;
     transform: scale(1.05); 
 }
-.sitepage .box .content button#code_style:hover,
-.box .content button#copy:hover {
+.sitepage .box .content button.code_style:hover,
+.box .content button.copy:hover {
     color: var(--white);
     background-color: var(--main-color);
     transition: all .2s ease-in-out;
@@ -1823,7 +1823,7 @@ nav img:hover {
 .sitealternates .box .content h2 {
     font-size: 20px;
 }
-.sitealternates .box .content button#copy_style {
+.sitealternates .box .content button.copy_style {
     bottom: 32px;
     padding: 8px 10px;
     border: 2px solid #ce203d;
@@ -2094,11 +2094,15 @@ nav img:hover {
     transition: all .2s ease-in-out;
     color: white;
 }
-.box:hover .content button#copy_style{
+.box:hover .content button.copy_style{
     /* background: rgb(52 52 52); */
     animation: buttons 1s infinite;
     border: 2px solid #ce203d;
     background-color: #a81d34;
+}
+.boxes-holder .box:hover .content button.copy {
+    border: var(--main-color) 1px solid;
+    background-color: #62101d;
 }
 .box:hover .content button{
     background: rgb(36 36 36);
@@ -2118,7 +2122,7 @@ nav img:hover {
 .content button:hover:active{
     opacity: 0;
 }
-.sitepage .content button#copy {
+.sitepage .content button.copy {
     width: 25px;
     height: 25px;
     right: 20px;
@@ -2132,7 +2136,7 @@ nav img:hover {
     background-color: #62101d;
     bottom: 18.6px;
 }
-.content button#copy {
+.content button.copy {
     width: 25px;
     height: 25px;
     right: 20px;
@@ -2142,7 +2146,7 @@ nav img:hover {
     top: unset;
     padding: 6px;
     bottom: 15.6px;
-    border: none;
+    border: #222222 1px solid;
 }
 .credits {
     width: 180px;
