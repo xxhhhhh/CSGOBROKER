@@ -1011,6 +1011,7 @@ function translateURLs2(parentElement, languageTag) {
       "Rust Sites List": "Халява Rust",
       "Dota 2 Sites List": "Халява Dota 2",
       "Crypto Sites List": "Крипто Халява",
+      "Newest Sites": "Новые Сайты",
       "Freebies Only": "Вся Халява",
       "Earning Sites": "Заработок",
       "Steam Sites": "Сайты Steam",
@@ -1052,6 +1053,7 @@ function translateURLs2(parentElement, languageTag) {
       "Rust Sites List": "Rust साइटों की सूची",
       "Dota 2 Sites List": "डोटा 2 साइटों की सूची",
       "Crypto Sites List": "क्रिप्टो साइटों की सूची",
+      "Newest Sites": "सबसे नई साइटें",
       "Freebies Only": "केवल मुफ्त आइटम",
       "Earning Sites": "आमदनी वाली साइटें",
       "Steam Sites": "स्टीम से संबंधित साइटें",
@@ -1092,6 +1094,7 @@ function translateURLs2(parentElement, languageTag) {
       "Rust Sites List": "Sites de Rust",
       "Dota 2 Sites List": "Sites de Dota 2",
       "Crypto Sites List": "Sites de Crypto",
+      "Newest Sites": "Sites Mais Recentes",
       "Freebies Only": "Apenas Brindes",
       "Earning Sites": "Sites para Ganhar",
       "Steam Sites": "Sites do Steam",
@@ -1132,6 +1135,7 @@ function translateURLs2(parentElement, languageTag) {
       "Rust Sites List": "Rust Siteleri Listesi",
       "Dota 2 Sites List": "Dota 2 Siteleri Listesi",
       "Crypto Sites List": "Kripto Siteleri Listesi",
+      "Newest Sites": "En Yeni Siteler",
       "Freebies Only": "Sadece Bedava Hediyeler",
       "Earning Sites": "Para Kazanma Siteleri",
       "Steam Sites": "Steam Siteleri",
@@ -1172,6 +1176,7 @@ function translateURLs2(parentElement, languageTag) {
       "Rust Sites List": "Lista de sitios de Rust",
       "Dota 2 Sites List": "Lista de sitios de Dota 2",
       "Crypto Sites List": "Lista de sitios de criptomonedas",
+      "Newest Sites": "Sitios Más Nuevos",
       "Freebies Only": "Solo regalos gratis",
       "Earning Sites": "Sitios para ganar dinero",
       "Steam Sites": "Sitios de Steam",
@@ -1408,21 +1413,21 @@ if (!window.location.pathname.includes("/reviews/") && !window.location.pathname
   var ulArray = Array.from(ulElements);
 
   ulArray.sort(function(a, b) {
-    var aIsActive = a.querySelector('li a.category-box').id === 'active';
-    var bIsActive = b.querySelector('li a.category-box').id === 'active';
-
+    var aIsActive = a.querySelector('li a.category-box').classList.contains('active');
+    var bIsActive = b.querySelector('li a.category-box').classList.contains('active');
+  
     if (aIsActive && !bIsActive) {
       return -1;
     } else if (!aIsActive && bIsActive) {
       return 1;
-    } else if (a.querySelector('li a.category-box').id === 'last') {
+    } else if (a.querySelector('li a.category-box').classList.contains('last')) {
       return 1;
-    } else if (b.querySelector('li a.category-box').id === 'last') {
+    } else if (b.querySelector('li a.category-box').classList.contains('last')) {
       return -1;
     } else {
       return Math.random() - 0.5;
     }
-  });
+  });  
 
   while (categorySelector.firstChild) {
     categorySelector.removeChild(categorySelector.firstChild);
@@ -2076,7 +2081,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
         newDiv.textContent = "Нужен VPN";
 
         // Массив айди, на которые нужно добавлять .vpn
-        var allowedIds = ["CSGORoll", "Clash", "howlgg", "RustyPot", "RustChance", "Rollbit", "Duelbits", "FlameCases", "DaddySkins", "CSGOLive", "WTFSkins", "Key-Drop", "FarmSkins"];
+        var allowedIds = ["CSGORoll", "Clash", "howlgg", "RustyPot", "RustChance", "Rollbit", "Duelbits", "FlameCases", "BCGame", "Roobet", "DaddySkins", "CSGOLive", "WTFSkins", "Key-Drop", "gcskins", "FarmSkins", "vvvgamers"];
 
         // Находим все элементы .box
         var boxElements = document.querySelectorAll(".box");

@@ -1083,3 +1083,20 @@ instantselldota.onreadystatechange = function() {
 };
 instantselldota.open('GET', '/multitop/dota/instant-sell.html', true);
 instantselldota.send();
+
+var newestsites = new XMLHttpRequest();
+newestsites.onreadystatechange = function() {
+  if (newestsites.readyState === XMLHttpRequest.DONE) {
+    if (newestsites.status === 200) {
+      var divToImport = document.getElementById('newest-sites-list');
+      if (divToImport) {
+        divToImport.innerHTML = newestsites.responseText;
+        translateURLs(divToImport); 
+      }
+    } else {
+      console.error('Cant load div.');
+    }
+  }
+};
+newestsites.open('GET', '/multitop/newest-sites.html', true);
+newestsites.send();

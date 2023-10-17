@@ -182,7 +182,7 @@
         </ul>
         <ul>
             <li>
-                <a class="category-box" href="/freebies" id="active">
+                <a class="category-box active" href="/freebies">
                     <div class="category-box-logo"><img src="/img/gamemodes/freebies.png" alt="freebiescategory" style="width:55px;height:auto" draggable="false"></div>
                     <div class="category-box-content"><span>Freebies Only</span></div></a>
                   <ul class="submenu">
@@ -240,7 +240,7 @@
     </ul>
     <ul>    
         <li>
-          <a class="category-box" href="/steam/levelup" id="last">
+          <a class="category-box last" href="/steam/levelup">
               <div class="category-box-logo"><img src="/img/gamemodes/steam.png" alt="steamcategory" style="width:52px;height:auto" draggable="false"></div>
               <div class="category-box-content"><span>Steam Sites</span></div></a>
               <ul class="submenu">
@@ -248,6 +248,15 @@
                 <li id="big-category"><a href="/steam/buy-games">Buy Steam Games</a></li>
               </li>
             </ul> 
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <a class="category-box" href="/">
+                <div class="category-box-logo"><img src="/img/gamemodes/new.png" alt="newestcategory"
+                        style="width:60px;height:auto" draggable="false"></div>
+                <div class="category-box-content"><span>Newest Sites</span></div>
+            </a>
         </li>
     </ul>
         </div>  
@@ -342,7 +351,7 @@
                 <button id="copy" style="cursor: pointer;" onclick="copyToClipboard('#p5')"><img src="/img/copy.svg" draggable="false" alt="Copy Button"></button>
             </div>
         </div>
-        <div class="box">
+        <div class="box" id="CSGOPOSITIVE">
             <div class="logobg">
                 <a href="/reviews/csgopositive"><img src="/img/positive-logo.png" alt="csgopositive" draggable="false" loading="lazy" style="width: 250px;height: auto;"></a>
                 <div class="best">Daily Giveaway</div>
@@ -441,7 +450,7 @@
                 <button id="copy" style="cursor: pointer;" onclick="copyToClipboard('#p23')"><img src="/img/copy.svg" alt="Copy Button" draggable="false"></button>
             </div>
         </div>
-        <div class="box">
+        <div class="box" id="GrindBux">
             <div class="logobg">
                 <a href="/reviews/grindbux"><img src="/img/grindbux-logo.png" loading="lazy" draggable="false" alt="GrindBux" style="width: 250px;height: auto;"></a>
                 <div class="best">Free 100 Diamonds</div>
@@ -543,7 +552,7 @@
                 <button id="copy" style="cursor: pointer;" onclick="copyToClipboard('#p30')"><img src="/img/copy.svg" alt="Copy Button" draggable="false"></button>
             </div>
         </div>
-        <div class="box">
+        <div class="box" id="Idle-Empire">
             <div class="logobg">
                 <a href="/reviews/idle-empire"><img src="/img/idleempire-logo.png" draggable="false" loading="lazy" style="height:150px;width:auto;" alt="Idle-Empire"></a>
                 <div class="best">500 coins</div>
@@ -587,7 +596,7 @@
                 <button id="copy" style="cursor: pointer;" onclick="copyToClipboard('#p8')"><img src="/img/copy.svg" alt="Copy Button" draggable="false"></button>
             </div>
         </div>
-        <div class="box">
+        <div class="box" id="Key-Drop">
             <div class="logobg">
                 <a href="/reviews/key-drop"><img src="/img/key-drop-logo.png" draggable="false" alt="Key-Drop" loading="lazy" style="width: 240px;height: auto;"></a>
                 <div class="best">Free 0.50$</div>
@@ -672,7 +681,7 @@
                 <button id="copy" style="cursor: pointer;" onclick="copyToClipboard('#CSGOBIGcopy')"><img src="/img/copy.svg" alt="Copy Button" draggable="false"></button>
             </div>
         </div>
-        <div class="box">
+        <div class="box" id="DatDrop">
             <div class="logobg">
                 <a href="/reviews/datdrop"><img src="/img/datdrop-logo.png" loading="lazy" draggable="false" alt="DatDrop" style="width: 240px;height: auto;"></a>
                 <div class="best">Daily Cases</div>
@@ -742,7 +751,7 @@
                 <button id="copy" style="cursor: pointer;" onclick="copyToClipboard('#p31')"><img src="/img/copy.svg" draggable="false" alt="Copy Button"></button>
             </div>
         </div>
-        <div class="box">
+        <div class="box" id="vvvgamers">
             <div class="logobg">
                 <a href="/reviews/vvvgamers"><img src="/img/vvvgamers-logo.png" alt="VVVGamers" draggable="false" loading="lazy" style="width: 130px;height: auto;"></a>
                 <div class="best">some free coins</div>
