@@ -1499,7 +1499,7 @@ function translateURLsSlider(parentElement, languageTag) {
         isTransitioning = false; // Сбрасываем флаг анимации
       }, 6000); // Устанавливаем длительность анимации в миллисекундах (здесь 500 мс)
 
-      currentSlide = (currentSlide + 1) % 2;
+      currentSlide = (currentSlide + 1) % 3;
       showSlide(currentSlide);
     }
   }
@@ -1555,9 +1555,18 @@ function translateURLsSlider(parentElement, languageTag) {
   img2.alt = 'Best Offerwall Sites';
   slider2.appendChild(img2);
 
+  var slider3 = document.createElement('a');
+  slider3.href = '/rust';
+  slider3.classList.add('slider-banner');
+  var img3 = document.createElement('img');
+  img3.src = '/img/best-rust-sites-slide.png';
+  img3.alt = 'Best Rust Sites';
+  slider3.appendChild(img3);
+
   sliderPlacer.appendChild(controlsContainer);
   sliderPlacer.appendChild(slider1);
   sliderPlacer.appendChild(slider2);
+  sliderPlacer.appendChild(slider3);
 
   var languageTag = path.match(/\/(hi|tr|pt|es|ru)(\.html)?/);
   if (languageTag) {
@@ -1592,12 +1601,12 @@ function translateURLsSlider(parentElement, languageTag) {
   });
 
   prevButton.addEventListener('click', function() {
-    currentSlide = (currentSlide - 1 + 2) % 2;
+    currentSlide = (currentSlide - 1 + 2) % 3;
     showSlide(currentSlide);
   });
 
   nextButton.addEventListener('click', function() {
-    currentSlide = (currentSlide + 1) % 2;
+    currentSlide = (currentSlide + 1) % 3;
     showSlide(currentSlide);
   });
 
