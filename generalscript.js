@@ -2067,7 +2067,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
         newDiv.textContent = "Нужен VPN";
 
         // Массив айди, на которые нужно добавлять .vpn
-        var allowedIds = ["CSGORoll", "Clash", "howlgg", "RustyPot", "RustChance", "Rollbit", "Duelbits", "FlameCases", "BCGame", "Roobet", "DaddySkins", "CSGOLive", "WTFSkins", "Key-Drop", "gcskins", "FarmSkins", "vvvgamers"];
+        var allowedIds = ["CSGORoll", "Clash", "HowlGG", "RustyPot", "RustChance", "Rollbit", "Duelbits", "FlameCases", "BCGame", "Roobet", "DaddySkins", "CSGOLive", "WTFSkins", "Key-Drop", "gcskins", "FarmSkins", "vvvgamers"];
 
         // Находим все элементы .box
         var boxElements = document.querySelectorAll(".box");
