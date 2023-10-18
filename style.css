@@ -1787,13 +1787,17 @@ nav img:hover {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 .sitealternates .box {
     width: 244px;
     height: 304px !important;
     background-color: unset;
     background: var(--opacback);
+    margin-left: 9px !important;
+}
+.sitealternates .box:first-child {
+    margin-left: unset !important;
 }
 .sitealternates .box .logobg {
     height: 50%; 
@@ -2316,6 +2320,7 @@ footer .centralizer .footer-content {
     }
     .sitealternates .box  {
         width: 24.5% !important; 
+        margin-left: unset !important;
     }
     .navigation-menu {
         display: none;
