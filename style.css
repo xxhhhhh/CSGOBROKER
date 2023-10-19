@@ -667,6 +667,7 @@ nav #pagename:focus {
 }
 .gamemodes .featuresbox .typesinside a {
     transform: scale(0.8);
+    transition: ease-in-out all .2s;
     height: 32px;
     width: 32px;
 }
@@ -681,11 +682,9 @@ nav #pagename:focus {
 }
 .gamemodes .featuresbox .typesinside a:hover {
     transform: scale(1);
-    transition: ease-in-out all .2s;
 }
 .features .featuresbox .typesinside a {
     margin: 12px 0 12px 9px;
-    transition: ease-in-out all .2s;
     height: 32px;
     text-align: center;
     text-decoration: none;
@@ -2615,10 +2614,13 @@ footer .centralizer .footer-content {
     font-size: 32px;
     cursor: pointer;
   } 
+  .screens button i,
+  .slider-placer button i {
+    transition: all .1s ease-in-out;
+  }
   .screens button:hover i,
   .slider-placer button:hover i {
     font-size: 40px;
-    transition: all .1s ease-in-out;
   }
   .prev-button {
     left: 0;
