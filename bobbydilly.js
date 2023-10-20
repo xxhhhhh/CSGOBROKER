@@ -1200,22 +1200,20 @@ if (!window.location.pathname.startsWith("/rust") &&  !window.location.pathname.
 if (!window.location.pathname.startsWith("/rust")) {
 
   function translateURLs2(parentElement, languageTag) {
-    var links = parentElement.querySelectorAll('a[href]');
     var supportedLanguages = ['hi', 'tr', 'pt', 'es', 'ru'];
-
-    for (var i = 0; i < links.length; i++) {
+    var langWithSlashes = supportedLanguages.map(lang => '/' + lang + '/');
+  
+    var links = parentElement.querySelectorAll('a[href]');
+    for (var i = 0, len = links.length; i < len; i++) {
       var href = links[i].getAttribute('href');
-
+  
       if (!href) continue;
-
+  
       var url = new URL(href, window.location.href);
       var path = url.pathname;
-      var langIncluded = supportedLanguages.some(lang => {
-        var langWithSlashes = '/' + lang + '/';
-        return path.includes(langWithSlashes);
-      });
-
+  
       if (languageTag !== 'en') {
+        var langIncluded = langWithSlashes.some(lang => path.includes(lang));
         if (!langIncluded && supportedLanguages.includes(languageTag)) {
           path = '/' + languageTag + path;
           url.pathname = path;
@@ -1433,7 +1431,7 @@ if (!window.location.pathname.startsWith("/rust")) {
       },
     };
 
-    var elements = document.querySelectorAll('.category-box-content span, ul .submenu li a');
+    var elements = document.querySelectorAll('.nav-bar .category-box-content span, .nav-bar ul .submenu li a');
     for (var j = 0; j < elements.length; j++) {
       var text = elements[j].textContent.trim();
       if (translations[languageTag] && translations[languageTag].hasOwnProperty(text)) {
