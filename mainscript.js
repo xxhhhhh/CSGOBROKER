@@ -6,7 +6,6 @@ function copyToClipboard(element) {
   $temp.remove();
 }
 
-if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
 
   function extractLanguageTagFromURL(pathname) {
     var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
@@ -916,7 +915,6 @@ function translateURLs(parentElement, language) {
 window.onload = function() {
   importDivContent();
 };
-}
 
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes("/topic/") && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
   function updateURLs(parentElement) {
@@ -944,9 +942,9 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   updateURLs(SitesList);
 }
 
-if (!window.location.pathname.startsWith("/rust") &&  !window.location.pathname.includes("/topic")) {
+if (!window.location.pathname.startsWith("/rust") &&  !window.location.pathname.includes("/topic") && !window.location.pathname.includes("/reviews")) {
 
-  function translateURLs2(parentElement, languageTag) {
+  function translateURLsMain(parentElement, languageTag) {
     var links = parentElement.querySelectorAll('a[href]');
     var supportedLanguages = ['hi', 'tr', 'pt', 'es', 'ru'];
     
@@ -973,7 +971,7 @@ if (!window.location.pathname.startsWith("/rust") &&  !window.location.pathname.
   
     var translations = {
       "ru": {
-        "CS2 Sites List": "`Халява `CS2",
+        "CS2 Sites List": "Халява CS2",
         "Rust Sites List": "Халява Rust",
         "Dota 2 Sites List": "Халява Dota 2",
         "Crypto Sites List": "Крипто Халява",
@@ -1194,7 +1192,7 @@ if (!window.location.pathname.startsWith("/rust") &&  !window.location.pathname.
   }
   
   var categorySelector = document.querySelector('.category-selector');
-  translateURLs2(categorySelector, languageTag);
+  translateURLsMain(categorySelector, languageTag);
   }
 
 if (!window.location.pathname.startsWith("/rust")) {
