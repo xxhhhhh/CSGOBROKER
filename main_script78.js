@@ -19,7 +19,6 @@ if (!window.location.pathname.includes('/reviews/') && !window.location.pathname
 var languageTag = extractLanguageTagFromURL(window.location.pathname);
 
 function translateURLs(parentElement, language) {
-  console.log("Translating for language: ", language); // Убедимся, что функция вызывается с правильным языком
   var translations = {
     "hi": {
       "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, संभवतः सर्वश्रेष्ठ CS2 जुआ साइट है। नियमित वर्षवृष्टि, गिफ्टवे और प्रोमोकोड्स। आप कई खेल और स्लॉट्स खेल सकते हैं।",
@@ -899,7 +898,6 @@ function translateURLs(parentElement, language) {
       "Free spins": "ФриСпины"
     }
   };
-  console.log("Translation complete."); // Убедимся, что перевод завершен
 
 
   var currentTranslations = translations[languageTag] || {};
@@ -912,10 +910,6 @@ function translateURLs(parentElement, language) {
     }
   }
 }
-
-window.onload = function() {
-  importDivContent();
-};
 }
 
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes("/topic/") && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
@@ -944,55 +938,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   updateURLs(SitesList);
 }
 
-if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.includes("/topic") && !window.location.pathname.includes("/reviews")) {
 
-  function translateURLsMain(parentElement, languageTag, translations) {
-    var links = parentElement.querySelectorAll('a[href]');
-    var supportedLanguages = Object.keys(translations);
-    
-    for (var i = 0; i < links.length; i++) {
-      var href = links[i].getAttribute('href');
-      
-      if (!href) continue;
-      
-      var url = new URL(href, window.location.href);
-      var path = url.pathname;
-      var langIncluded = supportedLanguages.some(lang => {
-        var langWithSlashes = '/' + lang + '/';
-        return path.includes(langWithSlashes);
-      });
-      
-      if (languageTag !== 'en') {
-        if (!langIncluded && supportedLanguages.includes(languageTag)) {
-          path = '/' + languageTag + path;
-          url.pathname = path;
-          links[i].setAttribute('href', url.href);
-        }
-      }
-    }
-  
-    var elements = document.querySelectorAll('.category-box-content span, ul .submenu li a');
-    for (var j = 0; j < elements.length; j++) {
-      var text = elements[j].textContent.trim();
-      if (translations[languageTag] && translations[languageTag].hasOwnProperty(text)) {
-        if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
-          elements[j].innerHTML = translations[languageTag][text] + ' <i class="bi bi-caret-right-fill"></i>';
-        } else {
-          elements[j].innerHTML = translations[languageTag][text];
-        }
-      }
-    }
-  }
-
-  // Load translations from JSON file
-  fetch('/code-parts/translations/categories.json')
-    .then(response => response.json())
-    .then(translations => {
-      var categorySelector = document.querySelector('.category-selector');
-      translateURLsMain(categorySelector, languageTag, translations);
-    })
-    .catch(error => console.error('Error loading translations:', error));
-}
 
 
 if (!window.location.pathname.startsWith("/rust")) {
