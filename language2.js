@@ -268,5 +268,5 @@ var requests = [
 ];
 
 for (var i = 0; i < requests.length; i++) {
-  sendRequest(requests[i].url, requests[i].targetId, requests[i].language);
+  sendRequest(requests[i].url, requests[i].targetId, languageTag); // Передаем languageTag в качестве аргумента
 }
