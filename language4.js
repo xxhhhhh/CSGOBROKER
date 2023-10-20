@@ -129,55 +129,6 @@ function getCookie(name) {
   return null;
 }
 
-if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.includes("/topic") && !window.location.pathname.includes("/reviews")) {
-
-  function translateURLsMain(parentElement, languageTag, translations) {
-    var links = parentElement.querySelectorAll('a[href]');
-    var supportedLanguages = Object.keys(translations);
-    
-    for (var i = 0; i < links.length; i++) {
-      var href = links[i].getAttribute('href');
-      
-      if (!href) continue;
-      
-      var url = new URL(href, window.location.href);
-      var path = url.pathname;
-      var langIncluded = supportedLanguages.some(lang => {
-        var langWithSlashes = '/' + lang + '/';
-        return path.includes(langWithSlashes);
-      });
-      
-      if (languageTag !== 'en') {
-        if (!langIncluded && supportedLanguages.includes(languageTag)) {
-          path = '/' + languageTag + path;
-          url.pathname = path;
-          links[i].setAttribute('href', url.href);
-        }
-      }
-    }
-  
-    var elements = document.querySelectorAll('.category-box-content span, ul .submenu li a');
-    for (var j = 0; j < elements.length; j++) {
-      var text = elements[j].textContent.trim();
-      if (translations[languageTag] && translations[languageTag].hasOwnProperty(text)) {
-        if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
-          elements[j].innerHTML = translations[languageTag][text] + ' <i class="bi bi-caret-right-fill"></i>';
-        } else {
-          elements[j].innerHTML = translations[languageTag][text];
-        }
-      }
-    }
-  }
-
-  // Load translations from JSON file
-  fetch('/code-parts/translations/categories.json')
-    .then(response => response.json())
-    .then(translations => {
-      var categorySelector = document.querySelector('.category-selector');
-      translateURLsMain(categorySelector, languageTag, translations);
-    })
-    .catch(error => console.error('Error loading translations:', error));
-}
 
 handleLanguageRedirect();
 
