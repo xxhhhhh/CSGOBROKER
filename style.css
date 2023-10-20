@@ -1587,7 +1587,49 @@ nav img:hover {
 .menu-toggle {
     width: 50px;
     height: 50px;
-    background-color: red;
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all .15s ease-in-out;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin-right: 15px;
+    font-family: TTNormsPro;
+}
+
+.menu-toggle:hover .menu-line,
+.menu-toggle:focus .menu-line {
+    width: 70%;
+}
+.menu-toggle:hover .menu-line,
+.menu-toggle:focus .menu-line {
+    opacity: 1;
+    transition: all .3s ease-in-out;
+    background-color: var(--main-color);
+}
+.menu-toggle:hover span,
+.menu-toggle:focus span{
+    opacity: 1;
+    transition: all .3s ease-in-out;
+}
+.menu-toggle span {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--white);
+    transition: all .15s ease-in-out;
+    opacity: .15;
+}
+.menu-toggle .menu-line {
+    margin-top: 1px;
+    height: 3px;
+    width: 60%;
+    background-color: var(--white);
+    transition: all .15s ease-in-out;
+    opacity: .15;
 }
 .nav-bar {
     width: 100%;
@@ -1595,6 +1637,7 @@ nav img:hover {
     background-color: rgba(12, 12, 12, .8);
     position: fixed;
     transition: all .22s ease-in-out;
+    overflow: hidden;
     z-index: 1002;
     opacity: 0;
     top: 0;
@@ -2583,7 +2626,7 @@ footer .centralizer .footer-content {
         min-width: unset !important;
     }
     .pages #PageTitle, #PageSubt {
-        font-size: 16px;
+        font-size: 14px;
     }
     nav img {
         width: 50px;
@@ -2969,7 +3012,7 @@ footer .centralizer .footer-content {
         color: var(--white) !important;
         width: 100%;
         height: 30px;
-        font-size: 14px;
+        font-size: 13px;
         display: flex;
         justify-content: center;
         align-items: center;
