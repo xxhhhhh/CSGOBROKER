@@ -1281,6 +1281,7 @@ if (!window.location.pathname.startsWith("/rust")) {
         }
       });
   });
+
 }
 
 function translateTextElements(translations) {
