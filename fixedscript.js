@@ -938,7 +938,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   updateURLs(SitesList);
 }
 
-if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.includes("/topic")) {
+if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.includes("/topic") &&!window.location.pathname.includes("/reviews")) {
   function translateURLs2(parentElement, languageTag) {
     var links = parentElement.querySelectorAll("a[href]");
     var supportedLanguages = ["hi", "tr", "pt", "es", "ru"];
