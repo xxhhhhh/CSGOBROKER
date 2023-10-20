@@ -2031,9 +2031,10 @@ nav img:hover {
 }
 
 .box .logobg img {
-    bottom: 200px;
-    width: 200px;
+    width: auto;
+    max-width: 250px;
     height: auto;
+    max-height: 120px;
 }
 .box .logobg .best {
     right: 0;
