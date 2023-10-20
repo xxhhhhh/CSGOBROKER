@@ -1199,7 +1199,17 @@ if (!window.location.pathname.startsWith("/rust")) {
     var links = parentElement.querySelectorAll('a[href]');
     for (var i = 0, len = links.length; i < len; i++) {
       var href = links[i].getAttribute('href');
-  
+
+      function extractLanguageTagFromURL(pathname) {
+        var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
+        if (matches && matches.length > 1) {
+          return matches[1];
+        }
+        return "";
+      }
+    
+    var languageTag = extractLanguageTagFromURL(window.location.pathname);
+
       if (!href) continue;
   
       var url = new URL(href, window.location.href);
