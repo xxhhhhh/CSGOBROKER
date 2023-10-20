@@ -939,28 +939,27 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
 }
 
 if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.includes("/topic")) {
-
   function translateURLs2(parentElement, languageTag) {
-    var links = parentElement.querySelectorAll('a[href]');
-    var supportedLanguages = ['hi', 'tr', 'pt', 'es', 'ru'];
+    var links = parentElement.querySelectorAll("a[href]");
+    var supportedLanguages = ["hi", "tr", "pt", "es", "ru"];
 
     for (var i = 0; i < links.length; i++) {
-      var href = links[i].getAttribute('href');
+      var href = links[i].getAttribute("href");
 
       if (!href) continue;
 
       var url = new URL(href, window.location.href);
       var path = url.pathname;
-      var langIncluded = supportedLanguages.some(lang => {
-        var langWithSlashes = '/' + lang + '/';
+      var langIncluded = supportedLanguages.some((lang) => {
+        var langWithSlashes = "/" + lang + "/";
         return path.includes(langWithSlashes);
       });
 
-      if (languageTag !== 'en') {
+      if (languageTag !== "en") {
         if (!langIncluded && supportedLanguages.includes(languageTag)) {
-          path = '/' + languageTag + path;
+          path = "/" + languageTag + path;
           url.pathname = path;
-          links[i].setAttribute('href', url.href);
+          links[i].setAttribute("href", url.href);
         }
       }
     }
@@ -1186,8 +1185,10 @@ if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.i
       }
     }
   }
+  
+  var categorySelector = document.querySelector('.category-selector');
+  translateURLs2(categorySelector, languageTag);
 }
-
 
 if (!window.location.pathname.startsWith("/rust")) {
 
@@ -1280,7 +1281,6 @@ if (!window.location.pathname.startsWith("/rust")) {
         }
       });
   });
-
 }
 
 function translateTextElements(translations) {
