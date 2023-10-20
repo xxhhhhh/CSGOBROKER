@@ -131,32 +131,7 @@ function getCookie(name) {
 
 handleLanguageRedirect();
 
-function extractLanguageTagFromURL(pathname) {
-  var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
-  if (matches && matches.length > 1) {
-    return matches[1];
-  }
-  return "";
-}
-
-
-var languageTag = extractLanguageTagFromURL(window.location.pathname);
-
-function translateURLs(parentElement, language) {
-  var translations = {};
-
-  var currentTranslations = translations[languageTag] || {};
-
-  var elements = parentElement.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
-  for (var j = 0; j < elements.length; j++) {
-    var text = elements[j].textContent.trim();
-    if (currentTranslations.hasOwnProperty(text)) {
-      elements[j].innerHTML = currentTranslations[text];
-    }
-  }
-}
-
-function sendRequest(url, targetId, language) {
+function sendRequest(url, targetId) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -164,7 +139,7 @@ function sendRequest(url, targetId, language) {
         var divToImport = document.getElementById(targetId);
         if (divToImport) {
           divToImport.innerHTML = xhr.responseText;
-          translateURLs(divToImport, language); 
+          translateURLs(divToImport); 
         }
       } else {
         console.error('Cant load div.');
@@ -174,39 +149,6 @@ function sendRequest(url, targetId, language) {
   xhr.open('GET', url, true);
   xhr.send();
 }
-
-function loadTranslations(callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
-        var translations = JSON.parse(xhr.responseText);
-        callback(translations);
-      } else {
-        console.error('Failed to load translations.');
-      }
-    }
-  };
-  xhr.open('GET', '/code-parts/translations/sites-boxes.json', true);
-  xhr.send();
-}
-
-function applyTranslations(translations) {
-  var languageTranslations = translations[languageTag] || {};
-  var elements = document.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
-  for (var j = 0; j < elements.length; j++) {
-    var text = elements[j].textContent.trim();
-    if (languageTranslations.hasOwnProperty(text)) {
-      elements[j].innerHTML = languageTranslations[text];
-    }
-  }
-}
-
-window.onload = function() {
-  loadTranslations(function(translations) {
-    applyTranslations(translations);
-  });
-};
 
 var requests = [
   { url: '/multitop/csgo-best-sites.html', targetId: 'csgo-best-sites' },
@@ -268,5 +210,5 @@ var requests = [
 ];
 
 for (var i = 0; i < requests.length; i++) {
-  sendRequest(requests[i].url, requests[i].targetId, languageTag); // Передаем languageTag в качестве аргумента
+  sendRequest(requests[i].url, requests[i].targetId);
 }

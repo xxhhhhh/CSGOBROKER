@@ -6,6 +6,52 @@ function copyToClipboard(element) {
   $temp.remove();
 }
 
+function extractLanguageTagFromURL(pathname) {
+  var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
+  if (matches && matches.length > 1) {
+    return matches[1];
+  }
+  return "";
+}
+
+
+// Функция для загрузки JSON файла
+function loadJSON(url, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.overrideMimeType("application/json");
+  xhr.open('GET', url, true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      callback(xhr.responseText);
+    }
+  };
+  xhr.send(null);
+}
+
+// Получаем языковую метку из URL
+var languageTag = extractLanguageTagFromURL(window.location.pathname);
+
+function translateURLsboxes(parentElement, language, translations) {
+  var currentTranslations = translations[language] || {};
+
+  var elements = parentElement.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
+  for (var j = 0; j < elements.length; j++) {
+    var text = elements[j].textContent.trim();
+    if (currentTranslations.hasOwnProperty(text)) {
+      elements[j].innerHTML = currentTranslations[text];
+    }
+  }
+}
+
+window.onload = function() {
+  // Загружаем JSON файл
+  loadJSON('/code-parts/translations/sites-boxes.json', function(response) {
+    var translations = JSON.parse(response);
+    translateURLsboxes(document.body, languageTag, translations);
+  });
+};
+
+
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes("/topic/") && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
   function updateURLs(parentElement) {
     var links = parentElement.querySelectorAll('a[href]');
