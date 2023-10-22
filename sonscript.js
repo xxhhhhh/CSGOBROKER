@@ -2178,3 +2178,10 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
             }
         });
       }});
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.search-enabler').addEventListener('click', function() {
+            document.querySelector('#search-input').classList.add('active');
+            this.classList.add('disabled');
+            document.querySelector('.search-container').classList.add('expanded');
+        });
+    });
