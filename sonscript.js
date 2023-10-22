@@ -1190,8 +1190,6 @@ if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.i
   translateURLs2(categorySelector, languageTag);
 }
 
-if (!window.location.pathname.startsWith("/rust")) {
-
   function translateURLs2(parentElement, languageTag, translations) {
     var supportedLanguages = Object.keys(translations);
     var langWithSlashes = supportedLanguages.map(lang => '/' + lang + '/');
@@ -1291,8 +1289,6 @@ if (!window.location.pathname.startsWith("/rust")) {
         }
       });
   });
-
-}
 
 function translateTextElements(translations) {
   var siteprosElements = document.querySelectorAll('.sitedetails .sitepros span');
