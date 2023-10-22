@@ -1348,7 +1348,7 @@ if (window.location.pathname.includes('/ru/reviews/') || window.location.pathnam
           if (path !== '/') {
             link.pathname = '/ru' + path;
           } else {
-            link.href = link.href.replace('csgobroker.co/', 'csgobroker.co/ru/');
+            link.href = link.href.replace('csgobroker.cc/', 'csgobroker.cc/ru/');
           }
         }
       }     

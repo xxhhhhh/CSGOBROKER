@@ -980,7 +980,7 @@ nav #pagename:focus {
     height: 32px;
     width: 32px;
     transition: all .2s ease-in-out;
-    transform: scale(0.9);
+    transform: scale(0.8);
 }
 .star_rating {
     padding: 0 2px;
@@ -3067,6 +3067,7 @@ footer .centralizer .footer-content {
     }
     .search-container.expanded {
         width: 150px;
+        min-width: 150px;
         overflow: visible;
     }
     .search-enabler {
