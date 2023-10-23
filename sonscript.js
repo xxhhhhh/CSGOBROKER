@@ -1312,6 +1312,7 @@ if (window.location.pathname.includes('/ru/reviews/') || window.location.pathnam
   var translations = {
     "Deposit Methods": "Способы Пополнения",
     "Withdraw Methods": "Способы Вывода",
+    "Items Accepts": "Принимаются Предметы",
     "Sign Up Bonus": "Бонус за Регистрацию",
     "Faucet System": "Система Кранов",
     "Daily Rewards": "Ежедневные Награды",
