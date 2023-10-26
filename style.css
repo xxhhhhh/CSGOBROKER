@@ -252,7 +252,7 @@ nav #pagename:focus {
 .box-skins .skin {
     height: 95%;
     width: 157px;
-    min-width: 90px;
+    min-width: 157px;
     max-width: 157px;
     margin-left: 5px;
     background-color: #0c0c0c;
@@ -266,6 +266,10 @@ nav #pagename:focus {
     margin-top: 5px;
     position: relative;
     right: 0;
+}
+
+.box-skins.mac10 .skin {
+    min-width: 100px;
 }
 
 .box-skins .skin:hover .skin-desc,
@@ -339,7 +343,7 @@ nav #pagename:focus {
 .box-skins .skin:focus {
     background-color: #0e0e0e;
     width: 157px;
-    min-width: 156px;
+    min-width: 157px;
 }
 .box-skins .skin:hover img {
     height: 90%;
@@ -1958,7 +1962,7 @@ nav img:hover {
     border-radius: 10px 10px 0 0;
 }
 .box.skin-navigator {
-    height: 140px !important;
+    height: 200px !important;
     width: 40px;
     position: fixed;
     left: 0;
@@ -1999,9 +2003,11 @@ nav img:hover {
     /* margin-left: 10px; */
     transition: all .2s ease-in-out;
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.3);
+    border: 1px solid rgba(255, 255, 255, .2);
 }
 .box.skin-navigator .colors-list-unit:hover {
     transform: scale(1.15);
+    filter: brightness(0.7);
 }
 .box.skin-navigator .colors-list-unit.white {
     background-color: rgb(255 255 255);
@@ -2020,6 +2026,9 @@ nav img:hover {
 }
 .box.skin-navigator .colors-list-unit.blue {
     background-color: rgb(0 0 225);
+}
+.box.skin-navigator .colors-list-unit.black {
+    background-color: rgb(0 0 0);
 }
 
 .box .logobg a {
