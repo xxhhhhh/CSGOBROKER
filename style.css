@@ -266,6 +266,7 @@ nav #pagename:focus {
     margin-top: 5px;
     position: relative;
     right: 0;
+    scroll-snap-align: start;
 }
 
 .box-skins.mac10 .skin {
@@ -385,6 +386,7 @@ nav #pagename:focus {
     overflow-x: scroll;
     scrollbar-color: #2e2e2e transparent;
     scrollbar-width: thin; 
+    scroll-snap-type: x proximity;
 }
 .box-skins-name {
     width: 35px;
