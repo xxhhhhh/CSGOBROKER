@@ -943,7 +943,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   updateURLs(SitesList);
 }
 
-if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.includes("/topic") && !window.location.pathname.includes("/reviews")) {
+if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.includes("/topic") && !window.location.pathname.includes("/reviews") && !window.location.pathname.includes("/mirrors")) {
   function translateURLs2(parentElement, languageTag) {
     var links = parentElement.querySelectorAll("a[href]");
     var supportedLanguages = ["hi", "tr", "pt", "es", "ru"];
@@ -1639,9 +1639,9 @@ function translateURLsSlider(parentElement, languageTag) {
   }
 
   if (path.includes('/mirrors/')) {
-    var sitealternatesboxes = document.querySelector('.sitealternatesboxes');
-    if (sitealternatesboxes) {
-      insertAfter(sliderPlacer, sitealternatesboxes);
+    var sitealternates = document.querySelector('.sitealternates');
+    if (sitealternates) {
+      insertAfter(sliderPlacer, sitealternates);
     }
   } else if (path.includes('/reviews/')) {
     var ratingsumm = document.querySelector('div.ratingsumm');
