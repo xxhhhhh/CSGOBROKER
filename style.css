@@ -2039,19 +2039,22 @@ nav img:hover {
 }
 .box.skin-navigator .colors-list-unit:hover {
     transform: scale(1.15);
-    filter: brightness(0.7);
+    /* filter: brightness(0.9); */
 }
 .box.skin-navigator .colors-list-unit.white {
     background-color: rgb(255 255 255);
 }
 .box.skin-navigator .colors-list-unit.red {
-    background-color: rgb(225 0 0);
+    background-color: rgb(240 0 0);
 }
 .box.skin-navigator .colors-list-unit.yellow {
-    background-color: rgb(225 225 0);
+    background-color: rgb(240 240 0);
+}
+.box.skin-navigator .colors-list-unit.orange {
+    background-color: rgb(240, 120, 0);
 }
 .box.skin-navigator .colors-list-unit.cyan {
-    background-color: rgb(0, 225, 225);
+    background-color: rgb(0, 240, 240);
 }
 .box.skin-navigator .colors-list-unit.purple {
     background-color: #8313df;
@@ -2060,10 +2063,10 @@ nav img:hover {
     background-color: #df13ce;
 }
 .box.skin-navigator .colors-list-unit.green {
-    background-color: rgb(0 225 0);
+    background-color: rgb(0 240 0);
 }
 .box.skin-navigator .colors-list-unit.blue {
-    background-color: rgb(0 0 225);
+    background-color: rgb(0 0 240);
 }
 .box.skin-navigator .colors-list-unit.black {
     background-color: rgb(0 0 0);
