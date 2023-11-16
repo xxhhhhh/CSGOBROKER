@@ -304,6 +304,9 @@ nav #pagename:focus {
     height: 30px;
     z-index: 3;
 }
+.box-skins.disabled {
+    display: none;
+}
 .box-skins:nth-child(2) .skin .skin-desc-name {
     font-size: 9px;
 }
@@ -393,6 +396,24 @@ nav #pagename:focus {
     scrollbar-width: thin; 
     scroll-snap-type: x proximity;
 }
+.box-skins-list .skins-not-exist {
+    width: 100%;
+    height: 95%;
+    margin-top: 5px;
+    background-color: #0c0c0c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box-skins-list .skins-not-exist span {
+    font-size: 60px;
+    font-weight: 500;
+    color: rgb(8 8 8);
+    /* transition: color .15s ease-in-out; */
+}
+/* .box-skins-list .skins-not-exist:hover span {
+    color: rgb(12 12 12);
+} */
 .box-skins-name {
     width: 35px;
     height: 100%;
@@ -2071,6 +2092,9 @@ nav img:hover {
 .box.skin-navigator .colors-list-unit.black {
     background-color: rgb(0 0 0);
 }
+.box.skin-navigator .colors-list-unit.brown {
+    background-color: #6e543c;
+}
 
 .box .logobg a {
     height: 100%;
@@ -3171,10 +3195,16 @@ footer .centralizer .footer-content {
       }
       .site-list::-webkit-scrollbar-thumb {
         /* background: rgba(206, 32, 61, .7);   */
-        background: #121212;
-        border-radius: 5px;
+        background: #ce203d;
+        border-radius: 2px;
       } 
-       
+      .site-list::-webkit-scrollbar {
+        width: 4px;
+      }
+      .site-list::-webkit-scrollbar-track {
+        background: #121212;
+      } 
+     
       .site-items {
         padding: 0;
         margin: 0;

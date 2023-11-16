@@ -1817,12 +1817,86 @@ function easeInOutCubic(t, b, c, d) {
 var siteList = document.getElementById('site-list');
 var searchInput = document.getElementById('search-input'); 
 var isRussianPage = window.location.pathname.includes('/ru');
-var sites = [
-  '<li><a href="/topic/skins/red-skins">Red Skins</a></li>',
-  '<li><a href="/topic/skins/yellow-skins">Yellow Skins</a></li>',
-  '<li><a href="/topic/skins/blue-skins">Blue Skins</a></li>',
-  '<li><a href="/topic/skins/purple-skins">Purple Skins</a></li>',
-  '<li><a href="/topic/skins/green-skins">Green Skins</a></li>',
+
+var siteTranslations = {
+  '/topic/skins/black-skins': {
+    'en': 'Black Color Skins',
+    'ru': 'Черные Скины'
+  },
+  '/topic/skins/cyan-skins': {
+    'en': 'Cyan Color Skins',
+    'ru': 'Голубые Скины'
+  },
+  '/topic/skins/pink-skins': {
+    'en': 'Pink Color Skins',
+    'ru': 'Розовые Скины'
+  },
+  '/topic/skins/white-skins': {
+    'en': 'White Color Skins',
+    'ru': 'Белые Скины'
+  },
+  '/topic/skins/orange-skins': {
+    'en': 'Orange Color Skins',
+    'ru': 'Оранжевые Скины'
+  },
+  '/topic/skins/brown-skins': {
+    'en': 'Brown Color Skins',
+    'ru': 'Коричневые Скины'
+  },
+  '/topic/skins/yellow-skins': {
+    'en': 'Yellow Color Skins',
+    'ru': 'Желтые Скины'
+  },
+  '/topic/skins/blue-skins': {
+    'en': 'Blue Color Skins',
+    'ru': 'Синие Скины'
+  },
+  '/topic/skins/purple-skins': {
+    'en': 'Purple Color Skins',
+    'ru': 'Фиолетовые Скины'
+  },
+  '/topic/skins/green-skins': {
+    'en': 'Green Color Skins',
+    'ru': 'Зеленые Скины'
+  },
+  '/newest': {
+    'en': 'Newest Sites',
+    'ru': 'Новые Сайты'
+  },
+  '/dota': {
+    'en': 'Dota 2 Sites',
+    'ru': 'Сайты Dota 2'
+  },
+  '/': {
+    'en': 'CS:GO Sites',
+    'ru': 'Сайты CS:GO'
+  },
+  '/rust': {
+    'en': 'Rust Sites',
+    'ru': 'Сайты Rust'
+  },
+  '/freebies': {
+    'en': 'Sites with Freebies',
+    'ru': 'Сайты с Халявой'
+  },
+};
+
+var sites   = [
+  '<li><a href="/topic/skins/black-skins">Black Color Skins</a></li>',
+  '<li><a href="/topic/skins/cyan-skins">Cyan Color Skins</a></li>',
+  '<li><a href="/topic/skins/pink-skins">Pink Color Skins</a></li>',
+  '<li><a href="/topic/skins/white-skins">White Color Skins</a></li>',
+  '<li><a href="/topic/skins/orange-skins">Orange Color Skins</a></li>',
+  '<li><a href="/topic/skins/brown-skins">Brown Color Skins</a></li>',
+  '<li><a href="/topic/skins/yellow-skins">Yellow Color Skins</a></li>',
+  '<li><a href="/topic/skins/blue-skins">Blue Color Skins</a></li>',
+  '<li><a href="/topic/skins/purple-skins">Purple Color Skins</a></li>',
+  '<li><a href="/topic/skins/green-skins">Green Color Skins</a></li>',
+  '<li><a href="/newest">Newest Sites</a></li>',
+  '<li><a href="/dota">Dota 2 Sites</a></li>',
+  '<li><a href="/">CS:GO Sites</a></li>',
+  '<li><a href="/rust">Rust Sites</a></li>',
+  '<li><a href="/freebies">Sites with Freebies</a></li>',
   '<li><a href="/reviews/idle-empire">Idle-empire</a></li>',
   '<li><a href="/reviews/insanegg">Insanegg</a></li>',
   '<li><a href="/reviews/key-drop">Key-drop</a></li>',
@@ -1837,6 +1911,7 @@ var sites = [
   '<li><a href="/reviews/rustcases">Rustcases</a></li>',
   '<li><a href="/reviews/rustchance">Rustchance</a></li>',
   '<li><a href="/reviews/rustclash">Rustclash</a></li>',
+  '<li><a href="/reviews/dotaclash">Dotaclash</a></li>',
   '<li><a href="/reviews/rustix">Rustix</a></li>',
   '<li><a href="/reviews/rustmoment">Rustmoment</a></li>',
   '<li><a href="/reviews/ruststake">Ruststake</a></li>',
@@ -1909,42 +1984,41 @@ function compareSites(a, b) {
   var siteNameB = b.match(/<a href=".*?">(.*?)<\/a>/)[1].toLowerCase();
   var searchTerm = searchInput.value.toLowerCase();
 
-  if (
-    siteNameA.charAt(0) === searchTerm.charAt(0) &&
-    siteNameB.charAt(0) !== searchTerm.charAt(0)
-  ) {
+  var indexA = siteNameA.indexOf(searchTerm);
+  var indexB = siteNameB.indexOf(searchTerm);
+
+  if (indexA === 0 && indexB !== 0) {
     return -1;
-  } else if (
-    siteNameA.charAt(0) !== searchTerm.charAt(0) &&
-    siteNameB.charAt(0) === searchTerm.charAt(0)
-  ) {
+  } else if (indexB === 0 && indexA !== 0) {
     return 1;
   } else {
     return siteNameA.localeCompare(siteNameB);
   }
 }
 
+
 function updateSiteList() {
   siteList.innerHTML = '';
-  sites.sort(compareSites);
-
-  sites.forEach(function(site) {
+  sites.forEach(function (site) {
     var li = document.createElement('li');
     li.className = 'site-item';
     li.style.display = 'none';
     li.innerHTML = site;
-    
+
     var link = li.querySelector('a');
-    
-    if (isRussianPage) {
-      var href = link.getAttribute('href');
-      var newHref = href.replace('/', '/ru/');
-      link.setAttribute('href', newHref);
+    var href = link.getAttribute('href');
+
+    if (siteTranslations[href]) {
+      link.innerHTML = isRussianPage ? siteTranslations[href]['ru'] : siteTranslations[href]['en'];
     }
-    
+
+    if (isRussianPage) {
+      link.setAttribute('href', '/ru' + href);
+    }
+
     li.innerHTML = '';
     li.appendChild(link);
-    
+
     siteList.appendChild(li);
   });
 }
@@ -1970,20 +2044,23 @@ function handleSearchInput() {
   var siteItems = siteList.getElementsByClassName('site-item');
 
   if (searchTerm === '') {
-      hideAllSites(siteItems);
-      siteList.style.display = 'none';
-      return;
+    hideAllSites(siteItems);
+    siteList.style.display = 'none';
+    return;
   }
 
   for (var i = 0; i < siteItems.length; i++) {
-      var siteItem = siteItems[i];
-      var siteName = siteItem.textContent.toLowerCase();
+    var siteItem = siteItems[i];
+    var siteName = siteItem.textContent.toLowerCase();
 
-      if (siteName.startsWith(searchTerm)) {
-          showSite(siteItem);
-      } else {
-          hideSite(siteItem);
-      }
+    if (
+      siteName.includes(searchTerm) ||
+      siteName.includes(' ' + searchTerm)
+    ) {
+      showSite(siteItem);
+    } else {
+      hideSite(siteItem);
+    }
   }
 
   siteList.style.display = 'block';
