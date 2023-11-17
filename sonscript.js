@@ -985,6 +985,8 @@ if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.i
         "Steam Sites": "Сайты Steam",
         "Gambling Sites": "Игральные Сайты",
         "Earn by Play CS2": "Заработок на Игре в CS2",
+        "Others": "Остальное",
+        "Skins By Color": "Скины по Цвету",
         "All Sites": "Все Сайты",
         "Match Betting": "Ставки на Матчи",
         "Case Opening": "Кейсы",
@@ -1860,6 +1862,14 @@ var siteTranslations = {
     'en': 'Green Color Skins',
     'ru': 'Зеленые Скины'
   },
+  '/topic/skins/golden-skins': {
+    'en': 'Golden Color Skins',
+    'ru': 'Золотые Скины'
+  },
+  '/topic/skins': {
+    'en': 'Skins By Color',
+    'ru': 'Скины по Цвету'
+  },
   '/newest': {
     'en': 'Newest Sites',
     'ru': 'Новые Сайты'
@@ -1893,6 +1903,8 @@ var sites   = [
   '<li><a href="/topic/skins/blue-skins">Blue Color Skins</a></li>',
   '<li><a href="/topic/skins/purple-skins">Purple Color Skins</a></li>',
   '<li><a href="/topic/skins/green-skins">Green Color Skins</a></li>',
+  '<li><a href="/topic/skins/golden-skins">Golden Color Skins</a></li>',
+  '<li><a href="/topic/skins">Skins By Color</a></li>',
   '<li><a href="/newest">Newest Sites</a></li>',
   '<li><a href="/dota">Dota 2 Sites</a></li>',
   '<li><a href="/">CS:GO Sites</a></li>',
