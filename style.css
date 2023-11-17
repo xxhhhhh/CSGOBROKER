@@ -1450,7 +1450,8 @@ nav img:hover {
     justify-content: center;
     text-align: center;
 }
-.boxes-holder {
+.boxes-holder,
+.topic-boxes-holder {
     max-width: 70%;
     margin: 0 auto;
     width: auto;
@@ -1458,6 +1459,7 @@ nav img:hover {
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
     min-height: 676px;
 }
 .category-centralizer {
@@ -1853,6 +1855,82 @@ nav img:hover {
     background-color: var(--main-color);
     transition: all .2s ease-in-out;
     transform: none !important;
+}
+.topic-box {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 18px 9px 0 9px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: transparent;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.15);
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+}
+.topic-box:hover {
+    /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(65, 65, 65, 0.2) 50%, rgba(255, 255, 255, 0) 100%) !important; */
+    transform: scale(1.03);
+}
+.topic-box .logobg {
+    top: 0;
+    height: 77%;
+    background: rgba(0,0,0,.2);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.logobg.white {
+    background-image: url(/img/skins/previews/small/example-white.png);
+}
+.logobg.black {
+    background-image: url(/img/skins/previews/small/example-black.png);
+}
+.logobg.brown {
+    background-image: url(/img/skins/previews/small/example-brown.png);
+}
+.logobg.red {
+    background-image: url(/img/skins/previews/small/example-red.png);;
+}
+.logobg.orange {
+    background-image: url(/img/skins/previews/small/example-orange.png);;
+}
+.logobg.yellow {
+    background-image: url(/img/skins/previews/small/example-yellow.png);;
+}
+.logobg.green {
+    background-image: url(/img/skins/previews/small/example-green.png);;
+}
+.logobg.cyan {
+    background-image: url(/img/skins/previews/small/example-cyan.png);;
+}
+.logobg.blue {
+    background-image: url(/img/skins/previews/small/example-blue.png);;
+}
+.logobg.purple {
+    background-image: url(/img/skins/previews/small/example-purple.png);;
+}
+.logobg.pink {
+    background-image: url(/img/skins/previews/small/example-pink.png);;
+}
+.topic-box .content {
+    bottom: 0;
+    height: 23%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+}
+.topic-box .content span {
+    display: block;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 18px;
+    opacity: .08;
+    text-transform: uppercase;
+    transition: opacity .3s ease-in-out;
+}
+.topic-box:hover .content span {
+    opacity: 1;
 }
 .box{
     position: relative;
@@ -3035,15 +3113,26 @@ footer .centralizer .footer-content {
     .lang-menu ul {
         margin: 0;
         padding: 0;
-        display: none;
+        height: 0;
+        overflow: hidden;
+        display: flex;
         position: absolute;
         right: 0px;
         width: 40px;
         border-radius: 5px;
         /* transition: all .2s ease-in-out; */
-        border: 2px #212121 solid;
+        border: none;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        transition: height .2s ease-out;
     }
     
+    .lang-menu:hover ul {
+        height: 192px;
+        /* border: 2px #212121 solid; */
+    }
+
     .lang-menu ul li {
         list-style: none;
         text-align: left;
@@ -3051,14 +3140,17 @@ footer .centralizer .footer-content {
         justify-content: space-between;
         background-color: #0d0d0d;
     }
+    .lang-menu ul li:last-child {
+        border-bottom: 2px rgba(255, 255, 255, .12) solid;
+    }
     
     .lang-menu ul li a {
         text-decoration: none;
         width: 40px;
         text-align: center;
-        padding: 10px 0;
+        padding: 8px 0;
         display: block;
-        color: rgba(255, 255, 255, .3);
+        color: rgba(255, 255, 255, .12);
         transition: all .2s ease-in-out;
     }
     
@@ -3066,10 +3158,7 @@ footer .centralizer .footer-content {
         color: var(--white);    
         transition: all .1s ease-in-out;
     }
-    
-    .lang-menu:hover ul {
-        display: block;
-    }
+
 
     #site-list li {
         display: block;

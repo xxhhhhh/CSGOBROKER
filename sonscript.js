@@ -1684,6 +1684,7 @@ function translateURLsSlider(parentElement, languageTag) {
 
 if (
   !window.location.pathname.includes("/reviews/") &&
+  !window.location.pathname.includes("/topic/") &&
   !window.location.pathname.includes("/mirrors/") &&
   window.location.pathname !== "/ru" &&
   window.location.pathname !== "/pt" &&
