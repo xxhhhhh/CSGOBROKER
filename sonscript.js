@@ -21,6 +21,7 @@ var languageTag = extractLanguageTagFromURL(window.location.pathname);
 function translateURLs(parentElement, language) {
   var translations = {
     "hi": {
+      "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, Skin Gambling में एक प्रमुख वेबसाइट, CS:GO, Dota 2, और RUST skins के लिए विविध मोड, उपयोगकर्ता-सहायक इंटरफेस, और बोनस सुविधाएं प्रदान करती है।",
       "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "ये स्किन्स, एक सीएस2 स्किन गैम्ब्लिंग प्लेटफॉर्म, उपयोगकर्ता के हित में डिज़ाइन, विविध गेम मोड, लाइव चैट, और सिद्ध की गई निष्कर्षता के साथ उत्कृष्ट है।",
       "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, संभवतः सर्वश्रेष्ठ CS2 जुआ साइट है। नियमित वर्षवृष्टि, गिफ्टवे और प्रोमोकोड्स। आप कई खेल और स्लॉट्स खेल सकते हैं।",
       "CSGO500 probably the best CS2 and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, संभवतः सर्वश्रेष्ठ CS2 जुआ साइट है। नियमित वर्षवृष्टि, गिफ्टवे और प्रोमोकोड्स। आप कई खेल और स्लॉट्स खेल सकते हैं।",
@@ -215,6 +216,7 @@ function translateURLs(parentElement, language) {
       "Games Giveaways": "गेम्स गिवअवे"
     },
     "tr": {
+      "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, Skin Gambling'de öne çıkan bir web sitesi, CS:GO, Dota 2 ve RUST skinleri için çeşitli modlar, kullanıcı dostu arayüz ve bonus özellikler sunar.",
       "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins, kullanıcı dostu tasarımı, çeşitli oyun modları, canlı sohbet ve kanıtlanabilir adil oyun ile öne çıkan bir CS2 Skin Kumar Platformudur.",
       "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, en iyi CS2 Kumar Sitesi. Düzenli yağmurlar, hediyeler ve promosyon kodları. Birçok oyun ve slot oynayabilirsiniz.",
       "CSGO500 probably the best CS2 and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, en iyi CS2 ve Rust Kumar Sitesi. Düzenli yağmurlar, hediyeler ve promosyon kodları. Birçok oyun ve slot oynayabilirsiniz.",
@@ -412,6 +414,7 @@ function translateURLs(parentElement, language) {
       "Games Giveaways" : "Oyun Çekilişleri"
     },
     "es": {
+      "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, un sitio web destacado en Skin Gambling, ofrece diversos modos, una interfaz fácil de usar y características de bonificación para las skins de CS:GO, Dota 2 y RUST.",
       "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins, una plataforma de apuestas de piel CS2, se destaca por su diseño fácil de usar, diversos modos de juego, chat en vivo y equidad comprobable.",
       "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, el mejor sitio de apuestas de CS2. Lluvias, regalos y códigos promocionales. Juegos y tragamonedas disponibles.",
       "CSGO500 probably the best CS2 and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, el mejor sitio de apuestas de CS2. Lluvias, regalos y códigos promocionales. Juegos y tragamonedas disponibles.",
@@ -610,6 +613,7 @@ function translateURLs(parentElement, language) {
       "Games Giveaways": "Sorteos de juegos"    
     },
     "pt": {
+      "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, um site proeminente em Skin Gambling, oferece diversos modos, interface amigável e recursos de bônus para skins de CS:GO, Dota 2 e RUST.",
       "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins, uma plataforma de apostas de skins CS2, destaca-se pelo design amigável ao usuário, diversos modos de jogo, chat ao vivo e equidade comprovada.",
       "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, provavelmente o melhor site de apostas de CS2. Chuvas regulares, brindes e códigos promocionais. Você pode jogar muitos jogos e caça-níqueis.",
       "CSGO500 probably the best CS2 and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, provavelmente o melhor site de apostas de CS2. Chuvas regulares, brindes e códigos promocionais. Você pode jogar muitos jogos e caça-níqueis.",
@@ -1914,6 +1918,7 @@ var sites   = [
   '<li><a href="/">CS:GO Sites</a></li>',
   '<li><a href="/rust">Rust Sites</a></li>',
   '<li><a href="/freebies">Sites with Freebies</a></li>',
+  '<li><a href="/reviews/yayskins">Yayskins</a></li>',
   '<li><a href="/reviews/idle-empire">Idle-empire</a></li>',
   '<li><a href="/reviews/insanegg">Insanegg</a></li>',
   '<li><a href="/reviews/key-drop">Key-drop</a></li>',
@@ -1968,6 +1973,8 @@ var sites   = [
   '<li><a href="/reviews/csgopositive">CSGOPositive</a></li>',
   '<li><a href="/reviews/csgoroll">CSGORoll</a></li>',
   '<li><a href="/reviews/csgoselly">CSGOSelly</a></li>',
+  '<li><a href="/reviews/csgorun">CSGORUN</a></li>',
+  '<li><a href="/reviews/csfail">CSFAIL</a></li>',
   '<li><a href="/reviews/csgo-skins">CSGO-Skins</a></li>',
   '<li><a href="/reviews/cybershoke">Cybershoke</a></li>',
   '<li><a href="/reviews/daddyskins">Daddyskins</a></li>',
