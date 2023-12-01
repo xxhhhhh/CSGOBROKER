@@ -739,6 +739,7 @@ nav #pagename:focus {
 }
 .gamemodes .featuresbox .typesinside a:hover {
     transform: scale(1);
+    filter: brightness(110%);
 }
 .features .featuresbox .typesinside a {
     margin: 12px 0 12px 9px;
@@ -764,6 +765,11 @@ nav #pagename:focus {
 }
 .sitedetails .methodlist a::before {
     content: '';
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
 }
 /* Gamemodes Images List Start */
 
@@ -1025,7 +1031,7 @@ nav #pagename:focus {
 /* Payment Methods Ends */
 .typesinside ::before,
 .methodlist ::before {
-    border-radius: 5px;
+    border-radius: 3px;
     display: inline-block;
     background-size: cover;
     height: 32px;
@@ -1036,7 +1042,7 @@ nav #pagename:focus {
     height: 32px;
     width: 32px;
     transition: all .2s ease-in-out;
-    transform: scale(0.75);
+    transform: scale(0.89);
 }
 .star_rating {
     padding: 0 2px;
@@ -1757,6 +1763,7 @@ nav img:hover {
 .sitedetails .methodlist a:hover {
     transform: scale(1);
     transition: transform ease-in-out .2s;
+    filter: brightness(110%);
 }
 .sitedetails .sitepros.active {
     height: 208px;

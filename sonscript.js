@@ -21,6 +21,7 @@ var languageTag = extractLanguageTagFromURL(window.location.pathname);
 function translateURLs(parentElement, language) {
   var translations = {
     "hi": {
+      "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "ये स्किन्स, एक सीएस2 स्किन गैम्ब्लिंग प्लेटफॉर्म, उपयोगकर्ता के हित में डिज़ाइन, विविध गेम मोड, लाइव चैट, और सिद्ध की गई निष्कर्षता के साथ उत्कृष्ट है।",
       "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, संभवतः सर्वश्रेष्ठ CS2 जुआ साइट है। नियमित वर्षवृष्टि, गिफ्टवे और प्रोमोकोड्स। आप कई खेल और स्लॉट्स खेल सकते हैं।",
       "CSGO500 probably the best CS2 and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, संभवतः सर्वश्रेष्ठ CS2 जुआ साइट है। नियमित वर्षवृष्टि, गिफ्टवे और प्रोमोकोड्स। आप कई खेल और स्लॉट्स खेल सकते हैं।",
       "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll एक लोकप्रिय साइटों में से एक है। जिसमें रूलेट, क्रैश और और भी कई खेल शामिल हैं। अब ई-स्पोर्ट्स बेटिंग का परीक्षण हो रहा है।",
@@ -214,6 +215,7 @@ function translateURLs(parentElement, language) {
       "Games Giveaways": "गेम्स गिवअवे"
     },
     "tr": {
+      "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins, kullanıcı dostu tasarımı, çeşitli oyun modları, canlı sohbet ve kanıtlanabilir adil oyun ile öne çıkan bir CS2 Skin Kumar Platformudur.",
       "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, en iyi CS2 Kumar Sitesi. Düzenli yağmurlar, hediyeler ve promosyon kodları. Birçok oyun ve slot oynayabilirsiniz.",
       "CSGO500 probably the best CS2 and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, en iyi CS2 ve Rust Kumar Sitesi. Düzenli yağmurlar, hediyeler ve promosyon kodları. Birçok oyun ve slot oynayabilirsiniz.",
       "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll, en popüler sitelerden biridir. Rulet, crash ve çok daha fazlasını içerir. Şu anda e-spor bahisleri test ediliyor.",
@@ -410,6 +412,7 @@ function translateURLs(parentElement, language) {
       "Games Giveaways" : "Oyun Çekilişleri"
     },
     "es": {
+      "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins, una plataforma de apuestas de piel CS2, se destaca por su diseño fácil de usar, diversos modos de juego, chat en vivo y equidad comprobable.",
       "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, el mejor sitio de apuestas de CS2. Lluvias, regalos y códigos promocionales. Juegos y tragamonedas disponibles.",
       "CSGO500 probably the best CS2 and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, el mejor sitio de apuestas de CS2. Lluvias, regalos y códigos promocionales. Juegos y tragamonedas disponibles.",
       "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll es uno de los sitios más populares. Incluye ruleta, crash y muchos más. Ahora probando las apuestas en e-sports.",
@@ -607,6 +610,7 @@ function translateURLs(parentElement, language) {
       "Games Giveaways": "Sorteos de juegos"    
     },
     "pt": {
+      "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins, uma plataforma de apostas de skins CS2, destaca-se pelo design amigável ao usuário, diversos modos de jogo, chat ao vivo e equidade comprovada.",
       "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, provavelmente o melhor site de apostas de CS2. Chuvas regulares, brindes e códigos promocionais. Você pode jogar muitos jogos e caça-níqueis.",
       "CSGO500 probably the best CS2 and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, provavelmente o melhor site de apostas de CS2. Chuvas regulares, brindes e códigos promocionais. Você pode jogar muitos jogos e caça-níqueis.",
       "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll é um dos sites mais populares. Inclui roleta, crash e muitos outros. Agora testando apostas em e-sports.",
