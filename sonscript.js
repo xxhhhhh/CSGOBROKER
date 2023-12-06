@@ -1604,6 +1604,11 @@ function translateURLsSlider(parentElement, languageTag) {
   var sliderPlacer = document.createElement('div');
   sliderPlacer.classList.add('slider-placer');
 
+  // Add class 'topic' if the path contains '/topic/skins/'
+  if (path.includes('/topic/skins/')) {
+    sliderPlacer.classList.add('topic');
+  }
+
   var controlsContainer = document.createElement('div');
   controlsContainer.classList.add('controls');
 
@@ -1611,11 +1616,11 @@ function translateURLsSlider(parentElement, languageTag) {
   prevButton.classList.add('prev-button');
   prevButton.innerHTML = '<i class="bi bi-chevron-left"></i>';
   controlsContainer.appendChild(prevButton);
-  
+
   var nextButton = document.createElement('button');
   nextButton.classList.add('next-button');
   nextButton.innerHTML = '<i class="bi bi-chevron-right"></i>';
-  controlsContainer.appendChild(nextButton);  
+  controlsContainer.appendChild(nextButton); 
 
   var slider1 = document.createElement('a');
   slider1.href = '/';
@@ -2298,3 +2303,97 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
             document.querySelector('.search-container').classList.add('expanded');
         });
     });
+
+    if (window.location.pathname.includes("/skins/")) {
+      $(document).ready(function () {
+        // Добавляем обработчик событий для клика по элементу
+        $('.close-box-skins').on('click', function () {
+          // Получаем родительский элемент .box-skins
+          var parentBoxSkins = $(this).closest(".box-skins");
+    
+          // Переключаем класс selected для .box-skins
+          parentBoxSkins.toggleClass("selected");
+    
+          // Убираем класс selected у других .box-skins
+          $(".box-skins").not(parentBoxSkins).removeClass("selected");
+    
+          // Находим иконку зума внутри .close-box-skins
+          var zoomIcon = $(this).find("i");
+    
+          // Переключаем класс иконки зума
+          zoomIcon.toggleClass("bi-zoom-in bi-zoom-out");
+    
+          // Обновляем состояние иконки для других .close-box-skins
+          $(".close-box-skins i").not(zoomIcon).removeClass("bi-zoom-out").addClass("bi-zoom-in");
+        });
+    
+        $(".box-skins-name").click(function () {
+          // Находим родительский элемент .box-skins
+          var parentBoxSkins = $(this).closest(".box-skins");
+    
+          // Переключаем класс selected для .box-skins
+          parentBoxSkins.toggleClass("selected");
+    
+          // Убираем класс selected у других .box-skins
+          $(".box-skins").not(parentBoxSkins).removeClass("selected");
+    
+          // Находим иконку зума внутри .close-box-skins
+          var zoomIcon = $(this).siblings(".close-box-skins").find("i");
+    
+          // Переключаем класс иконки зума
+          zoomIcon.toggleClass("bi-zoom-in bi-zoom-out");
+    
+          // Обновляем состояние иконки для других .close-box-skins
+          $(".close-box-skins i").not(zoomIcon).removeClass("bi-zoom-out").addClass("bi-zoom-in");
+        });
+      });
+    
+      document.addEventListener("DOMContentLoaded", function () {
+        var boxSkinsNames = document.querySelectorAll('.box-skins-name');
+    
+        boxSkinsNames.forEach(function (boxSkinsName) {
+          boxSkinsName.classList.add('visible');
+        });
+      });
+    
+      $(document).ready(function () {
+        $(".navigation-weapon-type").click(function () {
+          var weaponType = $(this).attr("class").split(" ")[1];
+          $(".box-skins." + weaponType).toggleClass("disabled");
+    
+          // Используем toggleClass для автоматического переключения между enabled и disabled
+          $(this).toggleClass("enabled");
+    
+          updateNavigationReset();
+        });
+    
+        // Обработчик события для .navigation-reset
+        $(".topic-centralizer").on("click", ".navigation-reset", function () {
+          // Убираем все классы disabled из .box-skins
+          $(".box-skins").removeClass("disabled");
+    
+          // Добавляем класс enabled ко всем .navigation-weapon-type
+          $(".navigation-weapon-type").addClass("enabled");
+    
+          // Убираем класс selected у всех .box-skins
+          $(".box-skins").removeClass("selected");
+    
+          // Убираем .navigation-reset из .topic-centralizer
+          $(".topic-centralizer .navigation-reset").remove();
+        });
+    
+        function updateNavigationReset() {
+          // Проверка, все ли .navigation-weapon-type имеют класс disabled
+          if ($(".navigation-weapon-type.enabled").length === 0) {
+            // Если нет, добавляем .navigation-reset к .topic-centralizer
+            if ($(".topic-centralizer .navigation-reset").length === 0) {
+              $(".topic-centralizer").append('<div class="navigation-reset">Reset Navigation</div>');
+            }
+          } else {
+            // Если есть, убираем .navigation-reset из .topic-centralizer
+            $(".topic-centralizer .navigation-reset").remove();
+          }
+        }
+      });
+    }
+    
