@@ -570,7 +570,7 @@ nav #pagename:focus {
     scrollbar-width: thin; 
     scroll-snap-type: x proximity;
     transition: opacity .3s .3s ease-in-out;
-    /* opacity: 0; */
+    opacity: 0;
 }
 .box-skins-list.visible {
     opacity: 1;

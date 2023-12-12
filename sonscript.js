@@ -1609,6 +1609,11 @@ function translateURLsSlider(parentElement, languageTag) {
     sliderPlacer.classList.add('topic');
   }
 
+  var elements = document.querySelectorAll('.box-skins-list');
+  elements.forEach(function(element) {
+      element.classList.add('visible');
+  });
+
   var controlsContainer = document.createElement('div');
   controlsContainer.classList.add('controls');
 
