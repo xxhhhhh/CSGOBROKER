@@ -2092,8 +2092,18 @@ nav img:hover {
     background-size: cover;
     background-repeat: no-repeat;
 }
+.topic-boxes-holder {
+    transition: opacity .3s .3s ease-in-out;
+    opacity: 0;
+}
+.topic-boxes-holder.visible {
+    opacity: 1;
+}
 .logobg.white {
     background-image: url(/img/skins/previews/small/example-white.png);
+}
+.logobg.gray {
+    background-image: url(/img/skins/previews/small/example-gray.png);
 }
 .logobg.black {
     background-image: url(/img/skins/previews/small/example-black.png);
@@ -2391,6 +2401,9 @@ nav img:hover {
 }
 .colors-list-unit.black {
     background: linear-gradient(to right, #000000, #1d1d1d);
+}
+.colors-list-unit.gray {
+    background: linear-gradient(to right, #161616, #3a3a3a);
 }
 .colors-list-unit.brown {
     background-image: linear-gradient(315deg, #230903 0%, #d3b88c 74%);
