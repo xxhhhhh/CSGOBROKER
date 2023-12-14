@@ -190,6 +190,7 @@ var requests = [
   { url: '/multitop/crypto/roulette.html', targetId: 'roulette-crypto' },
   { url: '/multitop/rust/buy-skins.html', targetId: 'buy-skins-rust' },
   { url: '/multitop/rust/caseopening.html', targetId: 'caseopening-rust' },
+  { url: '/multitop/rust/case-battle.html', targetId: 'case-battle-rust' },
   { url: '/multitop/rust/coinflip.html', targetId: 'coinflip-rust' },
   { url: '/multitop/rust/crash.html', targetId: 'crash-rust' },
   { url: '/multitop/rust/instant-sell.html', targetId: 'instant-sell-rust' },
