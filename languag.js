@@ -161,6 +161,7 @@ var requests = [
   { url: '/multitop/crypto-sites.html', targetId: 'crypto-sites' },
   { url: '/multitop/csgo/buy-skins.html', targetId: 'buy-skins-csgo' },
   { url: '/multitop/csgo/caseopening.html', targetId: 'caseopening-csgo' },
+  { url: '/multitop/csgo/case-battle.html', targetId: 'case-battle-csgo' },
   { url: '/multitop/csgo/casino.html', targetId: 'casino-csgo' },
   { url: '/multitop/csgo/coinflip.html', targetId: 'coinflip-csgo' },
   { url: '/multitop/csgo/crash.html', targetId: 'crash-csgo' },

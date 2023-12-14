@@ -21,6 +21,7 @@ var languageTag = extractLanguageTagFromURL(window.location.pathname);
 function translateURLs(parentElement, language) {
   var translations = {
     "hi": {
+      "SKINFANS - CS2 skin case opening , beautiful animations, provably fair system. Regular giveaways, Battle-pass for newcomers, sleek design.": "SKINFANS - CS2 स्किन केस ओपनिंग, सुंदर एनीमेशन, प्रमाणित निष्पक्ष सिस्टम। नियमित गिफ्टवे, नए आनेवालों के लिए बैटल-पास, सुंदर डिज़ाइन।",
       "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, Skin Gambling में एक प्रमुख वेबसाइट, CS:GO, Dota 2, और RUST skins के लिए विविध मोड, उपयोगकर्ता-सहायक इंटरफेस, और बोनस सुविधाएं प्रदान करती है।",
       "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "ये स्किन्स, एक सीएस2 स्किन गैम्ब्लिंग प्लेटफॉर्म, उपयोगकर्ता के हित में डिज़ाइन, विविध गेम मोड, लाइव चैट, और सिद्ध की गई निष्कर्षता के साथ उत्कृष्ट है।",
       "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, संभवतः सर्वश्रेष्ठ CS2 जुआ साइट है। नियमित वर्षवृष्टि, गिफ्टवे और प्रोमोकोड्स। आप कई खेल और स्लॉट्स खेल सकते हैं।",
@@ -216,6 +217,7 @@ function translateURLs(parentElement, language) {
       "Games Giveaways": "गेम्स गिवअवे"
     },
     "tr": {
+      "SKINFANS - CS2 skin case opening , beautiful animations, provably fair system. Regular giveaways, Battle-pass for newcomers, sleek design.": "SKINFANS - CS2 cilt kılıfı açma, güzel animasyonlar, ispatlanabilir adil sistem. Düzenli ödüller, yeni gelenler için Savaş Pası, şık tasarım.",
       "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, Skin Gambling'de öne çıkan bir web sitesi, CS:GO, Dota 2 ve RUST skinleri için çeşitli modlar, kullanıcı dostu arayüz ve bonus özellikler sunar.",
       "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins, kullanıcı dostu tasarımı, çeşitli oyun modları, canlı sohbet ve kanıtlanabilir adil oyun ile öne çıkan bir CS2 Skin Kumar Platformudur.",
       "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, en iyi CS2 Kumar Sitesi. Düzenli yağmurlar, hediyeler ve promosyon kodları. Birçok oyun ve slot oynayabilirsiniz.",
@@ -414,6 +416,7 @@ function translateURLs(parentElement, language) {
       "Games Giveaways" : "Oyun Çekilişleri"
     },
     "es": {
+      "SKINFANS - CS2 skin case opening , beautiful animations, provably fair system. Regular giveaways, Battle-pass for newcomers, sleek design.": "SKINFANS - Apertura de cajas de piel CS2, hermosas animaciones, sistema probadamente justo. Sorteos regulares, Pase de batalla para recién llegados, diseño elegante.",
       "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, un sitio web destacado en Skin Gambling, ofrece diversos modos, una interfaz fácil de usar y características de bonificación para las skins de CS:GO, Dota 2 y RUST.",
       "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins, una plataforma de apuestas de piel CS2, se destaca por su diseño fácil de usar, diversos modos de juego, chat en vivo y equidad comprobable.",
       "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, el mejor sitio de apuestas de CS2. Lluvias, regalos y códigos promocionales. Juegos y tragamonedas disponibles.",
@@ -613,8 +616,9 @@ function translateURLs(parentElement, language) {
       "Games Giveaways": "Sorteos de juegos"    
     },
     "pt": {
+      "SKINFANS - CS2 skin case opening , beautiful animations, provably fair system. Regular giveaways, Battle-pass for newcomers, sleek design.": "SKINFANS - Abertura de caixas de pele CS2, animações bonitas, sistema comprovadamente justo. Sorteios regulares, Passe de Batalha para novatos, design elegante.",
       "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, um site proeminente em Skin Gambling, oferece diversos modos, interface amigável e recursos de bônus para skins de CS:GO, Dota 2 e RUST.",
-      "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins, uma plataforma de apostas de skins CS2, destaca-se pelo design amigável ao usuário, diversos modos de jogo, chat ao vivo e equidade comprovada.",
+      "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins - plataforma de apostas CS2 com design amigável, vários modos de jogo, chat ao vivo e equidade comprovada.",
       "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, provavelmente o melhor site de apostas de CS2. Chuvas regulares, brindes e códigos promocionais. Você pode jogar muitos jogos e caça-níqueis.",
       "CSGO500 probably the best CS2 and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, provavelmente o melhor site de apostas de CS2. Chuvas regulares, brindes e códigos promocionais. Você pode jogar muitos jogos e caça-níqueis.",
       "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll é um dos sites mais populares. Inclui roleta, crash e muitos outros. Agora testando apostas em e-sports.",
@@ -997,7 +1001,8 @@ if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.i
         "Skins By Color": "Скины по Цвету",
         "All Sites": "Все Сайты",
         "Match Betting": "Ставки на Матчи",
-        "Case Opening": "Кейсы",
+        "Case Opening": "Открытие Кейсов",
+        "Case Battle": "Битва Кейсов",
         "Roulette": "Рулетка",
         "Coinflip": "Коинфлип",
         "Crash": "Краш",
@@ -1040,6 +1045,7 @@ if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.i
         "All Sites": "सभी साइटें",
         "Match Betting": "मैच पर शर्त लगाएं",
         "Case Opening": "केस खोलें",
+        "Case Battle": "केस युद्ध",
         "Roulette": "रूलेट",
         "Coinflip": "कॉइनफ्लिप",
         "Crash": "क्रैश",
@@ -1081,6 +1087,7 @@ if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.i
         "All Sites": "Todos os Sites",
         "Match Betting": "Apostas em Jogos",
         "Case Opening": "Abertura de Caixas",
+        "Case Battle": "Batalha de Casos",
         "Roulette": "Roleta",
         "Coinflip": "Cara ou Coroa",
         "Crash": "Crash",
@@ -1122,6 +1129,7 @@ if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.i
         "All Sites": "Tüm Siteler",
         "Match Betting": "Maç Bahisleri",
         "Case Opening": "Kasa Açma",
+        "Case Battle": "Durum Savaşı",
         "Roulette": "Rulet",
         "Coinflip": "Tura-Yazı",
         "Crash": "Çökme",
@@ -1163,6 +1171,7 @@ if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.i
         "All Sites": "Todos los sitios",
         "Match Betting": "Apuestas de partidos",
         "Case Opening": "Apertura de estuches",
+        "Case Battle": "Batalla de Casos",
         "Roulette": "Ruleta",
         "Coinflip": "Lanzamiento de moneda",
         "Crash": "Choque",
@@ -1609,11 +1618,6 @@ function translateURLsSlider(parentElement, languageTag) {
     sliderPlacer.classList.add('topic');
   }
 
-  var elements = document.querySelectorAll('.box-skins-list');
-  elements.forEach(function(element) {
-      element.classList.add('visible');
-  });
-
   var controlsContainer = document.createElement('div');
   controlsContainer.classList.add('controls');
 
@@ -1844,6 +1848,10 @@ var siteTranslations = {
     'en': 'Black Color Skins',
     'ru': 'Черные Скины'
   },
+  '/topic/skins/gray-skins': {
+    'en': 'Gray Color Skins',
+    'ru': 'Серые Скины'
+  },
   '/topic/skins/cyan-skins': {
     'en': 'Cyan Color Skins',
     'ru': 'Голубые Скины'
@@ -1912,6 +1920,7 @@ var siteTranslations = {
 
 var sites   = [
   '<li><a href="/topic/skins/black-skins">Black Color Skins</a></li>',
+  '<li><a href="/topic/skins/gray-skins">Gray Color Skins</a></li>',
   '<li><a href="/topic/skins/cyan-skins">Cyan Color Skins</a></li>',
   '<li><a href="/topic/skins/pink-skins">Pink Color Skins</a></li>',
   '<li><a href="/topic/skins/white-skins">White Color Skins</a></li>',
@@ -1959,6 +1968,7 @@ var sites   = [
   '<li><a href="/reviews/skincashier">Skincashier</a></li>',
   '<li><a href="/reviews/skinscash">Skinscash</a></li>',
   '<li><a href="/reviews/skinswap">Skinswap</a></li>',
+  '<li><a href="/reviews/skinsfans">Skinsfans</a></li>',
   '<li><a href="/reviews/steamgifts">Steamgifts</a></li>',
   '<li><a href="/reviews/steamlvlup">Steamlvlup</a></li>',
   '<li><a href="/reviews/swapgg">Swapgg</a></li>',
@@ -2402,3 +2412,10 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
       });
     }
     
+    if (window.location.pathname.includes("/topic/")) {
+      var elements = document.querySelectorAll('.box-skins-list, .topic-boxes-holder');
+      elements.forEach(function(element) {
+          element.classList.add('visible');
+      });
+  
+    }
