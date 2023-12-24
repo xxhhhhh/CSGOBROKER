@@ -3189,6 +3189,17 @@ footer .centralizer .footer-content {
   #back-to-top-btn:hover, #back-to-top-btn:focus {
     color: var(--white);
   }
+  .settings-menu {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12, 12, 12, .8);
+    position: fixed;
+    transition: all .22s ease-in-out;
+    overflow: hidden;
+    z-index: 1002;
+    opacity: 1;
+    top: 0;
+  }
     @media(max-width: 1080px) {
         #filter-container {
             display: none !important;
