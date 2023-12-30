@@ -672,6 +672,7 @@ nav #pagename:focus {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    background-color: rgba(255, 255, 255, .05);
 }
 .boxreview .plusminus .criteria .par p, li {
     text-align: start;
@@ -755,6 +756,7 @@ nav #pagename:focus {
     align-items: center;
     height: 80px;
     background: linear-gradient(15deg, rgba(255, 255, 255, .006) 30%, rgba(0, 0, 0, 0) 100%);
+    margin-bottom: 10px;
     transition: background-color .2s ease-in-out;
 }
 .site-attention:hover {
@@ -785,6 +787,7 @@ nav #pagename:focus {
     align-content: flex-start;
     padding: 30px 0px 0px 0px;
     border-radius: 5px;
+    /* background: linear-gradient(150deg, rgba(255, 255, 255, .006) 30%, rgba(0, 0, 0, 0) 100%); */
 }
 .siteleftpannel .navigation-menu {
     position: relative;
@@ -842,7 +845,7 @@ nav #pagename:focus {
     background: linear-gradient(56deg, rgba(0,0,0,0) 0%, rgba(255,255,255,.05) 50%, rgba(0,0,0,0) 100%);
     width: 90%;
     right: 0;
-    margin: 40px auto;
+    margin: 40px auto 0px auto;
 }
 .siteleftpannel .navigation-menu li {
     color: rgb(255,255,255,.3);
@@ -1278,6 +1281,10 @@ nav #pagename:focus {
     margin-bottom: 30px !important;
     text-align: start;
 }
+.smallreview h2,
+.instruction h2 {
+    font-size: 22px !important;
+}
 .smallreview p {
     text-align: start;
 }
@@ -1342,7 +1349,8 @@ nav #pagename:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0px 0px 30px 0px;
+    padding: 20px 0px 0px 0px;
+    margin: 10px 0 20px 0;
 }
 .instruction h2 {
     height: auto;
@@ -1435,25 +1443,31 @@ nav #pagename:focus {
 }
 .instruction li::marker {
     color: var(--main-color);
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 15px;
 }
 .instruction li strong {
     font-weight: 600 !important;
 }
 .instruction code {
-    border-top: 1px solid #202020;
-    border-bottom: 2px solid #202020;
-    background-color: #1c1c1c;
-    padding: 3px 5px;
-    border-radius: 5px;
-    font-weight: 500;
-    font-size: 15px;
+    /* border-bottom: 1px solid #202020; */
+    background-color: #0c0c0c;
+    border: dashed 1px rgb(40, 40, 40);
+    padding: 5px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 12px;
     margin-left: 3px;
+    text-transform: uppercase;
+    font-family: TTNormsPro;
+    background: rgba(255, 255, 255, .06);
+    color: rgb(133, 133, 133);
+    transition: all .2s ease-in-out;
 }
 .instruction Code:hover {
-    border-top: 1px solid #272727;
-    border-bottom: 2px solid #272727;
-    background-color: #202020;
+    background: rgba(255, 255, 255, .12);
+    border: dashed 1px rgb(60, 60, 60);
+    color: var(--white);
 }
 .screentable {
     width: 98%;
@@ -2018,9 +2032,11 @@ nav img:hover {
 }
 .sitedetails .sitepros:hover.active {
     background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(65, 65, 65, 0.2) 50%, rgba(255, 255, 255, 0) 100%) !important;
+    /* background: rgba(0, 0, 0, .4); */
 }
 .sitedetails .sitepros:hover {
     background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(65, 65, 65, 0.2) 50%, rgba(255, 255, 255, 0) 100%) !important;
+    /* background: rgba(0, 0, 0, .4); */
 }
 .sitepage .box {
     margin: 0 !important;
@@ -2268,7 +2284,7 @@ nav img:hover {
     bottom: 160px;
 }
 .sitealternates .box .content h2 {
-    font-size: 20px;
+    font-size: 18px;
 }
 .sitealternates .box .content button.copy_style {
     bottom: 32px;
@@ -2523,7 +2539,8 @@ nav img:hover {
     top: 62px;
     height: 74px;
     width: 60%;
-    background: radial-gradient(var(--opacback),transparent 80%);
+    /* background: radial-gradient(var(--opacback),transparent 80%); */
+    background: linear-gradient(120deg, rgba(0,0,0,0) 14%, #0a0a0a 50%, rgba(0,0,0,0) 86%);
 }
 .sitepage .content strong {
     color: rgba(255, 255, 255, .8);
@@ -2541,7 +2558,7 @@ nav img:hover {
 }
 .bonus-space {
     /* background-color: rgb(255,255,255,.05); */
-    background: linear-gradient(56deg, rgba(0,0,0,0) 0%, rgba(255,255,255,.1) 50%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(56deg, rgba(0,0,0,0) 0%, rgba(255,255,255,.08) 50%, rgba(0,0,0,0) 100%);
     width: 55%;
     right: 0;
     height: 1px;

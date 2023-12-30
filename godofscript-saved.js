@@ -21,6 +21,8 @@ var languageTag = extractLanguageTagFromURL(window.location.pathname);
 function translateURLs(parentElement, language) {
   var translations = {
     "hi": {
+      "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins एक ऑनलाइन प्लेटफ़ॉर्म है जिसका उद्देश्य गेमर्स को सीएस2 और रस्ट के लिए स्किन खरीदने, बेचने और व्यापार करने के लिए एक बाजार प्रदान करना है।",
+      "RustMagic - a cutting-edge Rust skin betting site, features five distinct game modes, withdrawal in Rust skins, and a daily free case system for users.": "RustMagic - एक कटिंग-एज रस्ट स्किन बेटिंग साइट, पाँच विभिन्न गेम मोड, रस्ट स्किन्स में निकासी और उपयोगकर्ताओं के लिए एक दैनिक मुफ्त केस प्रणाली के साथ।",
       "SKINFANS - CS2 skin case opening , beautiful animations, provably fair system. Regular giveaways, Battle-pass for newcomers, sleek design.": "SKINFANS - CS2 स्किन केस ओपनिंग, सुंदर एनीमेशन, प्रमाणित निष्पक्ष सिस्टम। नियमित गिफ्टवे, नए आनेवालों के लिए बैटल-पास, सुंदर डिज़ाइन।",
       "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, Skin Gambling में एक प्रमुख वेबसाइट, CS:GO, Dota 2, और RUST skins के लिए विविध मोड, उपयोगकर्ता-सहायक इंटरफेस, और बोनस सुविधाएं प्रदान करती है।",
       "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "ये स्किन्स, एक सीएस2 स्किन गैम्ब्लिंग प्लेटफॉर्म, उपयोगकर्ता के हित में डिज़ाइन, विविध गेम मोड, लाइव चैट, और सिद्ध की गई निष्कर्षता के साथ उत्कृष्ट है।",
@@ -180,6 +182,7 @@ function translateURLs(parentElement, language) {
       "Visit WebSite": "वेबसाइट पर जाएं",
       "Visit WebSite or Copy": "वेबसाइट पर जाएं",
       "100% deposit bonus": "100% जमा बोनस",
+      "+1% Sell Bonus": "+1% बेचने का बोनस",
       "+3% Sell Bonus": "+3% बेचने का बोनस",
       "5% deposit bonus": "5% जमा बोनस",
       "5 Free Cases": "5 मुफ्त केस",
@@ -217,6 +220,8 @@ function translateURLs(parentElement, language) {
       "Games Giveaways": "गेम्स गिवअवे"
     },
     "tr": {
+      "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins, CS2 ve Rust için derilerin satın alınması, satılması ve takas edilmesi için oyunculara bir pazar sunmak amacıyla oluşturulmuş bir çevrimiçi platformdur.",
+      "RustMagic - a cutting-edge Rust skin betting site, features five distinct game modes, withdrawal in Rust skins, and a daily free case system for users.": "RustMagic - öncü bir Rust deri bahis sitesi, beş farklı oyun modu, Rust derilerinde çekilme ve kullanıcılar için günlük ücretsiz bir kasa sistemi sunmaktadır.",
       "SKINFANS - CS2 skin case opening , beautiful animations, provably fair system. Regular giveaways, Battle-pass for newcomers, sleek design.": "SKINFANS - CS2 cilt kılıfı açma, güzel animasyonlar, ispatlanabilir adil sistem. Düzenli ödüller, yeni gelenler için Savaş Pası, şık tasarım.",
       "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, Skin Gambling'de öne çıkan bir web sitesi, CS:GO, Dota 2 ve RUST skinleri için çeşitli modlar, kullanıcı dostu arayüz ve bonus özellikler sunar.",
       "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins, kullanıcı dostu tasarımı, çeşitli oyun modları, canlı sohbet ve kanıtlanabilir adil oyun ile öne çıkan bir CS2 Skin Kumar Platformudur.",
@@ -378,6 +383,7 @@ function translateURLs(parentElement, language) {
       "Visit WebSite" : "Web Sitesini Ziyaret Et",
       "Visit WebSite or Copy" : "Web Sitesini Ziyaret Et",
       "100% deposit bonus" : "100% Depozito Bonusu",
+      "+1% Sell Bonus": "+1% Satış Bonusu",
       "+3% Sell Bonus" : "+3% Satış Bonusu",
       "5% deposit bonus" : "5% Depozito Bonusu",
       "5 Free Cases" : "5 Ücretsiz Kasa",
@@ -416,6 +422,8 @@ function translateURLs(parentElement, language) {
       "Games Giveaways" : "Oyun Çekilişleri"
     },
     "es": {
+      "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins es una plataforma en línea creada para proporcionar a los jugadores un mercado para comprar, vender e intercambiar skins para CS2 y Rust.",
+      "RustMagic - a cutting-edge Rust skin betting site, features five distinct game modes, withdrawal in Rust skins, and a daily free case system for users.": "RustMagic - sitio de apuestas de skins Rust con cinco modos de juego, retiros en skins de Rust y sistema diario de estuches gratuitos.",
       "SKINFANS - CS2 skin case opening , beautiful animations, provably fair system. Regular giveaways, Battle-pass for newcomers, sleek design.": "SKINFANS - Apertura de cajas de piel CS2, hermosas animaciones, sistema probadamente justo. Sorteos regulares, Pase de batalla para recién llegados, diseño elegante.",
       "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, un sitio web destacado en Skin Gambling, ofrece diversos modos, una interfaz fácil de usar y características de bonificación para las skins de CS:GO, Dota 2 y RUST.",
       "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins, una plataforma de apuestas de piel CS2, se destaca por su diseño fácil de usar, diversos modos de juego, chat en vivo y equidad comprobable.",
@@ -578,6 +586,7 @@ function translateURLs(parentElement, language) {
       "Visit WebSite": "Visitar sitio web",
       "Visit WebSite or Copy": "Visitar sitio web o copiar",
       "100% deposit bonus": "Bono de depósito del 100%",
+      "+1% Sell Bonus": "Bono de venta del +1%",
       "+3% Sell Bonus": "Bono de venta del +3%",
       "5% deposit bonus": "Bono de depósito del 5%",
       "5 Free Cases": "5 Estuches gratis",
@@ -616,6 +625,8 @@ function translateURLs(parentElement, language) {
       "Games Giveaways": "Sorteos de juegos"    
     },
     "pt": {
+      "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins é uma plataforma online criada para fornecer aos jogadores um mercado para comprar, vender e negociar skins para CS2 e Rust.",
+      "RustMagic - a cutting-edge Rust skin betting site, features five distinct game modes, withdrawal in Rust skins, and a daily free case system for users.": "RustMagic - site de apostas de skins Rust com cinco modos de jogo, saques em skins Rust e sistema diário de caixas grátis.",
       "SKINFANS - CS2 skin case opening , beautiful animations, provably fair system. Regular giveaways, Battle-pass for newcomers, sleek design.": "SKINFANS - Abertura de caixas de pele CS2, animações bonitas, sistema comprovadamente justo. Sorteios regulares, Passe de Batalha para novatos, design elegante.",
       "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, um site proeminente em Skin Gambling, oferece diversos modos, interface amigável e recursos de bônus para skins de CS:GO, Dota 2 e RUST.",
       "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins - plataforma de apostas CS2 com design amigável, vários modos de jogo, chat ao vivo e equidade comprovada.",
@@ -777,6 +788,7 @@ function translateURLs(parentElement, language) {
       "Visit WebSite": "Visite o Site",
       "Visit WebSite or Copy": "Visite o Site ou Copie",
       "100% deposit bonus": "Bônus de depósito de 100%",
+      "+1% Sell Bonus": "Bônus de venda de +1%",
       "+3% Sell Bonus": "Bônus de venda de +3%",
       "5% deposit bonus": "Bônus de depósito de 5%",
       "5 Free Cases": "5 Caixas Grátis",
@@ -1358,7 +1370,7 @@ if (window.location.pathname.includes('/ru/reviews/') || window.location.pathnam
     "Functional": "Функционал",
     "Playability": "Режимы",
     "Sign up via Steam": "Залогиньтесь через Steam ",
-    "Enjoy !": "Наслаждайтесь !",
+    "Enjoy !": "Готово !",
     "Visit WebSite": "Посетить Сайт"
   };
   translateTextElements(translations);
@@ -1937,6 +1949,9 @@ var sites   = [
   '<li><a href="/">CS:GO Sites</a></li>',
   '<li><a href="/rust">Rust Sites</a></li>',
   '<li><a href="/freebies">Sites with Freebies</a></li>',
+  '<li><a href="/reviews/rapidskins">RAPIDSKINS</a></li>',
+  '<li><a href="/reviews/itrade">iTrade.GG</a></li>',
+  '<li><a href="/reviews/rustmagic">RustMagic</a></li>',
   '<li><a href="/reviews/yayskins">Yayskins</a></li>',
   '<li><a href="/reviews/idle-empire">Idle-empire</a></li>',
   '<li><a href="/reviews/insanegg">Insanegg</a></li>',
