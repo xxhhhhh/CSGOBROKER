@@ -1369,7 +1369,7 @@ if (window.location.pathname.includes('/ru/reviews/') || window.location.pathnam
     "Payments": "Деп/Вывод",
     "Functional": "Функционал",
     "Playability": "Режимы",
-    "Sign up via Steam": "Залогиньтесь через Steam ",
+    "Sign up via Steam": "Залогиньтесь через Steam",
     "Enjoy !": "Готово !",
     "Visit WebSite": "Посетить Сайт"
   };
