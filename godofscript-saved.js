@@ -1949,6 +1949,7 @@ var sites   = [
   '<li><a href="/">CS:GO Sites</a></li>',
   '<li><a href="/rust">Rust Sites</a></li>',
   '<li><a href="/freebies">Sites with Freebies</a></li>',
+  '<li><a href="/reviews/skinsly">SKINSLY</a></li>',
   '<li><a href="/reviews/rapidskins">RAPIDSKINS</a></li>',
   '<li><a href="/reviews/itrade">iTrade.GG</a></li>',
   '<li><a href="/reviews/rustmagic">RustMagic</a></li>',
