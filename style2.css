@@ -899,7 +899,6 @@ nav #pagename:focus {
     border-radius: 5px;
     /* background: linear-gradient(150deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,.4) 10%, rgba(0, 0, 0, .4) 50%, rgba(255, 255, 255, 0) 100%); */
     /* background-color: rgba(0, 0, 0 , .8); */
-    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3108,6 +3107,7 @@ footer .centralizer .footer-content {
   .screens button i,
   .slider-placer button i {
     transition: all .1s ease-in-out;
+    filter: drop-shadow(0px 0px 3px rgb(22, 22, 22));
   }
   .screens button:hover i,
   .slider-placer button:hover i {
