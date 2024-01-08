@@ -2437,3 +2437,92 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
       var categorySelector = document.querySelector('.category-selector');
       translateURLs2(categorySelector, languageTag);
     }
+// Функция для проверки адреса и добавления кнопки
+function addButtonToBoxesHolder() {
+// Проверяем адрес на наличие "/ru/", но отсутствие "/ru/reviews" и "/ru/topic"
+if (
+  window.location.pathname.includes('/ru/') ||
+  window.location.pathname === '/ru' ||
+  (window.location.pathname === '/ru.html' &&
+    !window.location.pathname.includes('/ru/reviews') &&
+    !window.location.pathname.includes('/ru/topic'))
+) {
+  // Получаем все div.boxes-holder на странице
+  var boxesHolders = document.querySelectorAll('div.boxes-holder');
+
+  // Проверяем, существует ли уже кнопка внутри текущего div.boxes-holder
+  if (!document.querySelector('#button-vpn-filter')) {
+    // Создаем элемент кнопки
+    var button = document.createElement('div');
+    button.className = 'settings-menu';
+    button.innerHTML =
+      '<a class="settings-button" id="button-vpn-filter" title="Скрыть сайты требующие VPN"><i id="vpn-icon" class="bi bi-eye"></i></a>';
+
+    // Добавляем кнопку внутрь текущего div.boxes-holder
+    boxesHolders.forEach(function (boxesHolder) {
+      boxesHolder.insertBefore(button.cloneNode(true), boxesHolder.firstChild);
+    });
+
+    // Объявляем vpnIcon здесь, чтобы он был виден во всей функции
+    var vpnIcon = document.getElementById('vpn-icon');
+
+    function toggleVpnBlocks() {
+      var vpnBlocks = document.querySelectorAll('.box');
+      vpnBlocks.forEach(function (block) {
+        var hasVpn = block.querySelector('.vpn');
+        if (hasVpn) {
+          block.style.display = block.style.display === 'none' ? '' : 'none';
+        }
+      });
+    }
+
+    // При загрузке страницы проверяем состояние кнопки в localStorage
+    window.onload = function () {
+      var buttonState = localStorage.getItem('vpnButtonState');
+      var buttonTitle = localStorage.getItem('vpnButtonTitle');
+
+      if (buttonState === 'hidden') {
+        toggleVpnBlocks();
+        // Изменяем иконку
+        vpnIcon.classList.remove('bi-eye');
+        vpnIcon.classList.add('bi-eye-slash');
+      }
+
+      // Устанавливаем title из localStorage
+      if (buttonTitle) {
+        document.getElementById('button-vpn-filter').title = buttonTitle;
+      }
+    };
+
+    // Назначаем обработчик события для кнопки
+    document.getElementById('button-vpn-filter').addEventListener('click', function () {
+      toggleVpnBlocks();
+
+      // Получаем текущее состояние кнопки из localStorage
+      var buttonState = localStorage.getItem('vpnButtonState') || 'visible';
+
+      // Изменяем и сохраняем состояние кнопки в localStorage
+      var newButtonState = buttonState === 'hidden' ? 'visible' : 'hidden';
+      localStorage.setItem('vpnButtonState', newButtonState);
+
+      // Изменяем иконку и title в зависимости от состояния
+      vpnIcon.classList.toggle('bi-eye');
+      vpnIcon.classList.toggle('bi-eye-slash');
+
+      // Изменяем title в зависимости от класса i
+      var button = document.getElementById('button-vpn-filter');
+      if (vpnIcon.classList.contains('bi-eye')) {
+        button.title = 'Скрыть сайты требующие VPN';
+      } else {
+        button.title = 'Показать сайты требующие VPN';
+      }
+
+      // Сохраняем title в localStorage
+      localStorage.setItem('vpnButtonTitle', button.title);
+    });
+  }
+}
+}
+
+// Вызываем функцию при загрузке страницы
+addButtonToBoxesHolder();
