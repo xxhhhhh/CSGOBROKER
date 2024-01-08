@@ -1053,7 +1053,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
 
         var categorySelector = document.querySelector('.category-selector');
         if (categorySelector) {
-          fetch('/code-parts/translations/categories.json')  // Load translations from JSON file
+          fetch('/code-parts/translations/categories.json')
             .then(response => response.json())
             .then(translations => {
               applyTranslation(categorySelector, languageTag, translations);
@@ -1125,7 +1125,6 @@ if (window.location.pathname.includes('/ru/reviews/') || window.location.pathnam
   for (var i = 0; i < links.length; i++) {
     var link = links[i];
     
-    // Check if the link is not inside div.box
     if (!link.closest('div.siteblock div.box, ol li a, nav .socials')) {
       if (!link.classList.contains('lang-switch') && !link.closest('.instruction-mirrors')) {
         var path = link.pathname;
@@ -1557,7 +1556,7 @@ function scrollFunction() {
       backToTopButton.style.display = "block";
     }
   }
-  else { //
+  else { 
     if(backToTopButton.classList.contains("btnEntrance")) {
       backToTopButton.classList.remove("btnEntrance");
       backToTopButton.classList.add("btnExit");
@@ -2046,18 +2045,14 @@ if (window.location.pathname.includes("/reviews/")) {
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')) {
 
 
-        // Создаем новый div элемент
         var newDiv = document.createElement("div");
         newDiv.className = "vpn";
         newDiv.textContent = "Нужен VPN";
 
-        // Массив айди, на которые нужно добавлять .vpn
         var allowedIds = ["CSGORoll", "Clash", "HowlGG", "DMarket", "RustyPot", "RustChance", "Rollbit", "Primedice", "Duelbits", "FlameCases", "BCGame", "DaddySkins", "CSGOLive", "WTFSkins", "Key-Drop", "gcskins", "FarmSkins", "vvvgamers"];
 
-        // Находим все элементы .box
         var boxElements = document.querySelectorAll(".box");
 
-        // Проходим по всем элементам .box и добавляем новый div в нужные элементы
         boxElements.forEach(function(boxElement) {
             var boxId = boxElement.id;
             if (allowedIds.includes(boxId)) {
@@ -2081,44 +2076,31 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
 
     if (window.location.pathname.includes("/skins/")) {
       $(document).ready(function () {
-        // Добавляем обработчик событий для клика по элементу
         $('.close-box-skins').on('click', function () {
-          // Получаем родительский элемент .box-skins
           var parentBoxSkins = $(this).closest(".box-skins");
     
-          // Переключаем класс selected для .box-skins
           parentBoxSkins.toggleClass("selected");
     
-          // Убираем класс selected у других .box-skins
           $(".box-skins").not(parentBoxSkins).removeClass("selected");
     
-          // Находим иконку зума внутри .close-box-skins
           var zoomIcon = $(this).find("i");
     
-          // Переключаем класс иконки зума
           zoomIcon.toggleClass("bi-zoom-in bi-zoom-out");
     
-          // Обновляем состояние иконки для других .close-box-skins
           $(".close-box-skins i").not(zoomIcon).removeClass("bi-zoom-out").addClass("bi-zoom-in");
         });
     
         $(".box-skins-name").click(function () {
-          // Находим родительский элемент .box-skins
           var parentBoxSkins = $(this).closest(".box-skins");
     
-          // Переключаем класс selected для .box-skins
           parentBoxSkins.toggleClass("selected");
     
-          // Убираем класс selected у других .box-skins
           $(".box-skins").not(parentBoxSkins).removeClass("selected");
     
-          // Находим иконку зума внутри .close-box-skins
           var zoomIcon = $(this).siblings(".close-box-skins").find("i");
     
-          // Переключаем класс иконки зума
           zoomIcon.toggleClass("bi-zoom-in bi-zoom-out");
     
-          // Обновляем состояние иконки для других .close-box-skins
           $(".close-box-skins i").not(zoomIcon).removeClass("bi-zoom-out").addClass("bi-zoom-in");
         });
       });
@@ -2136,36 +2118,27 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
           var weaponType = $(this).attr("class").split(" ")[1];
           $(".box-skins." + weaponType).toggleClass("disabled");
     
-          // Используем toggleClass для автоматического переключения между enabled и disabled
           $(this).toggleClass("enabled");
     
           updateNavigationReset();
         });
     
-        // Обработчик события для .navigation-reset
         $(".topic-centralizer").on("click", ".navigation-reset", function () {
-          // Убираем все классы disabled из .box-skins
           $(".box-skins").removeClass("disabled");
     
-          // Добавляем класс enabled ко всем .navigation-weapon-type
           $(".navigation-weapon-type").addClass("enabled");
     
-          // Убираем класс selected у всех .box-skins
           $(".box-skins").removeClass("selected");
     
-          // Убираем .navigation-reset из .topic-centralizer
           $(".topic-centralizer .navigation-reset").remove();
         });
     
         function updateNavigationReset() {
-          // Проверка, все ли .navigation-weapon-type имеют класс disabled
           if ($(".navigation-weapon-type.enabled").length === 0) {
-            // Если нет, добавляем .navigation-reset к .topic-centralizer
             if ($(".topic-centralizer .navigation-reset").length === 0) {
               $(".topic-centralizer").append('<div class="navigation-reset">Reset Navigation</div>');
             }
           } else {
-            // Если есть, убираем .navigation-reset из .topic-centralizer
             $(".topic-centralizer .navigation-reset").remove();
           }
         }
@@ -2437,92 +2410,72 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
       var categorySelector = document.querySelector('.category-selector');
       translateURLs2(categorySelector, languageTag);
     }
-// Функция для проверки адреса и добавления кнопки
-function addButtonToBoxesHolder() {
-// Проверяем адрес на наличие "/ru/", но отсутствие "/ru/reviews" и "/ru/topic"
-if (
-  window.location.pathname.includes('/ru/') ||
-  window.location.pathname === '/ru' ||
-  (window.location.pathname === '/ru.html' &&
-    !window.location.pathname.includes('/ru/reviews') &&
-    !window.location.pathname.includes('/ru/topic'))
-) {
-  // Получаем все div.boxes-holder на странице
-  var boxesHolders = document.querySelectorAll('div.boxes-holder');
-
-  // Проверяем, существует ли уже кнопка внутри текущего div.boxes-holder
-  if (!document.querySelector('#button-vpn-filter')) {
-    // Создаем элемент кнопки
-    var button = document.createElement('div');
-    button.className = 'settings-menu';
-    button.innerHTML =
-      '<a class="settings-button" id="button-vpn-filter" title="Скрыть сайты требующие VPN"><i id="vpn-icon" class="bi bi-eye"></i></a>';
-
-    // Добавляем кнопку внутрь текущего div.boxes-holder
-    boxesHolders.forEach(function (boxesHolder) {
-      boxesHolder.insertBefore(button.cloneNode(true), boxesHolder.firstChild);
-    });
-
-    // Объявляем vpnIcon здесь, чтобы он был виден во всей функции
-    var vpnIcon = document.getElementById('vpn-icon');
-
-    function toggleVpnBlocks() {
-      var vpnBlocks = document.querySelectorAll('.box');
-      vpnBlocks.forEach(function (block) {
-        var hasVpn = block.querySelector('.vpn');
-        if (hasVpn) {
-          block.style.display = block.style.display === 'none' ? '' : 'none';
+    (function() {
+      if (
+          (window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html') &&
+          !window.location.pathname.includes('/ru/reviews') &&
+          !window.location.pathname.includes('/ru/topic')
+        ) {
+        var boxesHolders = document.querySelectorAll('div.boxes-holder');
+      
+        if (!document.querySelector('#button-vpn-filter')) {
+          var button = document.createElement('div');
+          button.className = 'settings-menu';
+          button.innerHTML =
+            '<a class="settings-button" id="button-vpn-filter" title="Скрыть сайты требующие VPN"><i id="vpn-icon" class="bi bi-eye"></i></a>';
+      
+          boxesHolders.forEach(function (boxesHolder) {
+            boxesHolder.insertBefore(button.cloneNode(true), boxesHolder.firstChild);
+          });
+      
+          var vpnIcon = document.getElementById('vpn-icon');
+      
+          function toggleVpnBlocks() {
+            var vpnBlocks = document.querySelectorAll('.box');
+            vpnBlocks.forEach(function (block) {
+              var hasVpn = block.querySelector('.vpn');
+              if (hasVpn) {
+                block.style.display = block.style.display === 'none' ? '' : 'none';
+              }
+            });
+          }
+      
+          window.onload = function () {
+            var buttonState = localStorage.getItem('vpnButtonState');
+            var buttonTitle = localStorage.getItem('vpnButtonTitle');
+      
+            if (buttonState === 'hidden') {
+              toggleVpnBlocks();
+              vpnIcon.classList.remove('bi-eye');
+              vpnIcon.classList.add('bi-eye-slash');
+            }
+      
+            if (buttonTitle) {
+              document.getElementById('button-vpn-filter').title = buttonTitle;
+            }
+          };
+      
+          document.getElementById('button-vpn-filter').addEventListener('click', function () {
+            toggleVpnBlocks();
+      
+            var buttonState = localStorage.getItem('vpnButtonState') || 'visible';
+      
+            var newButtonState = buttonState === 'hidden' ? 'visible' : 'hidden';
+            localStorage.setItem('vpnButtonState', newButtonState);
+      
+            vpnIcon.classList.toggle('bi-eye');
+            vpnIcon.classList.toggle('bi-eye-slash');
+      
+            var button = document.getElementById('button-vpn-filter');
+            if (vpnIcon.classList.contains('bi-eye')) {
+              button.title = 'Скрыть сайты требующие VPN';
+            } else {
+              button.title = 'Показать сайты требующие VPN';
+            }
+      
+            localStorage.setItem('vpnButtonTitle', button.title);
+          });
         }
-      });
-    }
-
-    // При загрузке страницы проверяем состояние кнопки в localStorage
-    window.onload = function () {
-      var buttonState = localStorage.getItem('vpnButtonState');
-      var buttonTitle = localStorage.getItem('vpnButtonTitle');
-
-      if (buttonState === 'hidden') {
-        toggleVpnBlocks();
-        // Изменяем иконку
-        vpnIcon.classList.remove('bi-eye');
-        vpnIcon.classList.add('bi-eye-slash');
       }
-
-      // Устанавливаем title из localStorage
-      if (buttonTitle) {
-        document.getElementById('button-vpn-filter').title = buttonTitle;
-      }
-    };
-
-    // Назначаем обработчик события для кнопки
-    document.getElementById('button-vpn-filter').addEventListener('click', function () {
-      toggleVpnBlocks();
-
-      // Получаем текущее состояние кнопки из localStorage
-      var buttonState = localStorage.getItem('vpnButtonState') || 'visible';
-
-      // Изменяем и сохраняем состояние кнопки в localStorage
-      var newButtonState = buttonState === 'hidden' ? 'visible' : 'hidden';
-      localStorage.setItem('vpnButtonState', newButtonState);
-
-      // Изменяем иконку и title в зависимости от состояния
-      vpnIcon.classList.toggle('bi-eye');
-      vpnIcon.classList.toggle('bi-eye-slash');
-
-      // Изменяем title в зависимости от класса i
-      var button = document.getElementById('button-vpn-filter');
-      if (vpnIcon.classList.contains('bi-eye')) {
-        button.title = 'Скрыть сайты требующие VPN';
-      } else {
-        button.title = 'Показать сайты требующие VPN';
-      }
-
-      // Сохраняем title в localStorage
-      localStorage.setItem('vpnButtonTitle', button.title);
-    });
-  }
-}
-}
-
-// Вызываем функцию при загрузке страницы
-addButtonToBoxesHolder();
+    })();
+    

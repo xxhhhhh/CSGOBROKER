@@ -1,1 +1,2481 @@
-function _0x45ca(_0x2fd0a3,_0x250f8f){var _0x1a3213=_0x1a32();return _0x45ca=function(_0x45ca1c,_0x307711){_0x45ca1c=_0x45ca1c-0x1e9;var _0x2cc44d=_0x1a3213[_0x45ca1c];return _0x2cc44d;},_0x45ca(_0x2fd0a3,_0x250f8f);}var _0x774ff4=_0x45ca;function _0x1a32(){var _0x12c918=['mouseleave','Aslında,\x20Steam\x20üzerinden\x20kazanç\x20elde\x20etmek\x20için\x20sitelerin\x20öncüsü\x20olan\x20bu\x20site,\x20büyük\x20çaplı\x20çekim\x20yöntemleri\x20seçeneğiyle\x20öne\x20çıkmaktadır.','वापसी\x20करें\x20CS2\x20स्किन,\x20क्रिप्टो\x20या\x20PayPal!','Нет\x20Бонуса','वापसी\x20करें\x20CS2\x20स्किन\x20या\x20PayPal!','Принимаются\x20Предметы','Comprar\x20ou\x20Vender\x20Itens','SkinBaron,\x20kullanıcıların\x20CS2\x20skinlerini\x20satın\x20alıp\x20satmalarını\x20sağlayan\x20Almanya\x20merkezli\x20bir\x20çevrimiçi\x20platformdur.\x20Platform\x20iyi\x20bir\x20üne\x20sahiptir.','BC.Game\x20एक\x20ऑनलाइन\x20कैसीनो\x20और\x20स्पोर्ट्सबुक\x20है\x20जिसे\x202017\x20में\x20लॉन्च\x20किया\x20गया\x20था,\x20जो\x20स्वामित्व\x20वाले\x20और\x20संभावित\x20इंसाफ़\x20वाले\x20गेम्स\x20सहित\x208,000\x20से\x20अधिक\x20गेम्स\x20प्रदान\x20करता\x20है।','RustStake\x20एक\x20Rust\x20स्किन\x20जुआ\x20प्लेटफ़ॉर्म\x20है\x20जो\x20जैकपॉट\x20और\x20कॉइनफ्लिप\x20समेत\x20विभिन्न\x20खेल\x20प्रदान\x20करता\x20है।\x20आसानी\x20से\x20खेलों\x20से\x20आइटम\x20को\x20दाखिल\x20और\x20निकाल\x20सकते\x20हैं।','<li><a\x20href=\x22/freebies\x22>Sites\x20with\x20Freebies</a></li>','SkinSwap\x20es\x20una\x20plataforma\x20en\x20línea\x20para\x20intercambiar\x20y\x20vender\x20skins\x20de\x20juegos\x20populares\x20como\x20CS2\x20y\x20Rust.\x20Propiedad\x20de\x20RustySell.','Odwiedź\x20stronę\x20internetową','Venta\x20instantánea','5%\x20जमा\x20बोनस','Kripto\x20para\x20ve\x20hediye\x20kartları\x20çekin!','not','getElementsByClassName','textContent','.category-box-content\x20span,\x20ul\x20.submenu\x20li\x20a','0.50$\x20Бесплатно','वापसी\x20करें\x20CS2,\x20Rust\x20स्किन\x20और\x20Dota\x202\x20आइटम!','smooth','+100%\x20к\x20Пополнению','+1%\x20Bono\x20de\x20depósito','vpnButtonTitle','Aumentar\x20nivel\x20de\x20Steam','O\x20SkinSwap\x20é\x20uma\x20plataforma\x20online\x20para\x20negociar\x20e\x20vender\x20skins\x20de\x20jogos\x20populares\x20como\x20CS2\x20e\x20Rust,\x20pertencente\x20à\x20RustySell.','.slider-placer','querySelector','Caixas\x20Diárias','removeClass','Musluk\x20ve\x20çekilişler','Hellcase\x20द्वारा\x20स्वामित्व\x20में\x20रखा\x20गया\x20सुरक्षित\x20P2P\x20बाजार।\x20SSL\x20एन्क्रिप्टेड,\x20KYC\x20सत्यापन,\x20मित्रतापूर्ण\x20डिज़ाइन,\x20प्रतिस्पर्धी\x20मूल्य\x20निर्धारण,\x20विश्वसनीय\x20व्यापार\x20प्लेटफ़ॉर्म।','क्रिप्टो\x20और\x20गिफ्ट\x20कार्ड\x20निकालें!','RustyPot','Retira\x20Skins\x20de\x20Rust\x20o\x20criptomonedas!','Vender\x20Itens','Ücretsiz\x200.10$','CS2\x20Skins,\x20hediye\x20kartları\x20ve\x20gerçek\x20para\x20çekin!','360%\x20Bónus\x20de\x20Depósito','Kasa\x20Açma','.boxes-holder','DaddySkins','Зеленые\x20Скины','En\x20Yeni\x20Siteler','Eşya\x20Sat','text','Birçok\x20türde\x20kripto\x20paranın\x20çekilmesi!','Ruleta','Надежная\x20платформа\x20для\x20скинов\x20CS2\x20с\x20возможностью\x20аренды,\x20рекомендованная\x20Ютуберами.\x20Безопасная,\x20с\x20доступной\x20комиссией.','Retira\x20criptomonedas\x20o\x20dinero\x20real!','Plataforma\x20confiable\x20de\x20skins\x20de\x20CS2\x20con\x20alquileres,\x20respaldada\x20por\x20YouTubers.\x20Segura,\x20limitada\x20a\x20skins\x20de\x20CS2,\x20se\x20aplican\x20tarifas\x20y\x20las\x20reseñas\x20de\x20los\x20usuarios\x20indican\x20que\x20hay\x20margen\x20de\x20mejora.','A\x20CYBERSHOKE\x20é\x20um\x20site\x20que\x20disponibiliza\x20servidores\x20para\x20jogar\x20CS2.\x20Ele\x20oferece\x20vários\x20servidores\x20para\x20os\x20jogadores\x20escolherem.','Shuffle.com\x20-\x20это\x20всеобъемлющее\x20крипто-казино\x20с\x20оригинальными\x20играми,\x20VIP-программой\x20и\x20планами\x20на\x20будущее\x20расширение.','<li><a\x20href=\x22/reviews/csgopolygon\x22>CSGOPolygon</a></li>','RapidSkins\x20es\x20una\x20plataforma\x20en\x20línea\x20creada\x20para\x20proporcionar\x20a\x20los\x20jugadores\x20un\x20mercado\x20para\x20comprar,\x20vender\x20e\x20intercambiar\x20skins\x20para\x20CS2\x20y\x20Rust.','<li><a\x20href=\x22/reviews/gamerpay\x22>Gamerpay</a></li>','<i\x20class=\x22bi\x20bi-chevron-left\x22></i>','selected','<li><a\x20href=\x22/reviews/skinbaron\x22>Skinbaron</a></li>','settings-menu','KNIFEX\x20एक\x20CS2\x20जुआ\x20साइट\x20है\x20जो\x20केस\x20खोलने,\x20केस\x20युद्ध,\x20कॉइनफ्लिप,\x20क्रैश,\x20क्लैश\x20और\x20बहुत\x20कुछ\x20जैसे\x20खेल\x20मोड्स\x20की\x20विभिन्नता\x20प्रदान\x20करता\x20है!','Выводите\x20Steam\x20Trading\x20cards.','Faucet\x20e\x20Sorteios','Golden\x20Color\x20Skins','Levantar\x20Criptomoedas\x20e\x20Cartões\x20de\x20Presente!','pathname','getItem','checked','मुफ्त\x200.40\x20डॉलर','CashoutCSGO\x20es\x20una\x20plataforma\x20dedicada\x20exclusivamente\x20a\x20la\x20venta\x20de\x20skins\x20de\x20CS2,\x20ofreciendo\x20un\x20servicio\x20de\x20conversión\x20conveniente.','Bono\x20de\x20depósito\x20del\x20100%','Sorteios\x20de\x203h\x20e\x2024h','0.90$\x20gratis','SkinBaron\x20जर्मनी\x20में\x20स्थित\x20एक\x20ऑनलाइन\x20प्लेटफ़ॉर्म\x20है\x20जो\x20उपयोगकर्ताओं\x20को\x20उनकी\x20CS2\x20स्किन\x20खरीदने\x20और\x20बेचने\x20की\x20सुविधा\x20प्रदान\x20करता\x20है।\x20प्लेटफ़ॉर्म\x20को\x20एक\x20अच्छी\x20प्रतिष्ठा\x20हासिल\x20हुई\x20है।','24VCtlVp','RustChance','<li><a\x20href=\x22/reviews/salad\x22>Salad</a></li>','88pTJabf','Коинфлип','category-selector','Swap.gg\x20es\x20un\x20sitio\x20web\x20que\x20permite\x20a\x20los\x20usuarios\x20comprar,\x20vender\x20e\x20intercambiar\x20skins\x20de\x20CS2,\x20Rust,\x20TF2\x20y\x20otros\x20objetos\x20virtuales\x20de\x20varios\x20juegos.\x20Funciona\x20desde\x202017.','<li><a\x20href=\x22/reviews/csdeals\x22>CsDeals</a></li>','Steam\x20Seviye\x20Atlama','<li><a\x20href=\x22/ru','.navigation-weapon-type.enabled','आइटम\x20खरीदें\x20या\x20बेचें','Caixa\x20Grátis\x20até\x20250$','केस\x20खोलें','<li><a\x20href=\x22/reviews/csgobig\x22>CSGOBig</a></li>','Cyan\x20Color\x20Skins','CSFAIL,\x20um\x20site\x20proeminente\x20em\x20Skin\x20Gambling,\x20oferece\x20diversos\x20modos,\x20interface\x20amigável\x20e\x20recursos\x20de\x20bônus\x20para\x20skins\x20de\x20CS:GO,\x20Dota\x202\x20e\x20RUST.','Залогиньтесь\x20через\x20Steam','GamerPay,\x20CS2\x20skinlerinin\x20alınıp\x20satılabildiği\x20güvenilir\x20bir\x20platformdur.\x20Ücretsiz\x20satış\x20seçeneği,\x20güvenli\x20işlemler\x20ve\x20yüksek\x20kaliteli\x20skin\x20kontrol\x20aracı\x20sunar.','Bono\x20de\x20depósito\x20del\x205%','Este\x20sitio\x20puede\x20considerarse\x20casi\x20legendario\x20entre\x20sus\x20pares\x20debido\x20a\x20sus\x20altos\x20pagos\x20y\x20promociones\x20constantes.\x20¡Incluye\x20bonificación\x20diaria!','P2P\x20CS2\x20स्किन\x20के\x20साथ\x20वापसी\x20करें।','Key-Drop,\x20Case\x20Battles\x20ve\x20Upgrader\x20gibi\x20çeşitli\x20etkinlikler\x20sunan\x20ve\x20özel\x20CSGO\x20skin\x20estuches\x27lerine\x20sahip\x20olan\x20saygın\x20bir\x20çevrimiçi\x20kumar\x20platformudur.','Rollbit\x20é\x20um\x20novo\x20site\x20de\x20cassino\x20que\x20inclui\x20apostas\x20esportivas\x20e\x20muitos\x20jogos\x20clássicos\x20como\x20roleta.\x20Inclui\x20bônus\x20diários!','Sorteos\x20de\x20juegos','Режимы','KNIFEX\x20es\x20un\x20sitio\x20de\x20apuestas\x20de\x20CS2\x20con\x20múltiples\x20modos\x20de\x20juego,\x20incluyendo\x20apertura\x20y\x20batallas\x20de\x20estuches,\x20coinflip,\x20crash,\x20clash\x20y\x20más.','.sitedetails\x20.sitepros\x20span','addEventListener','3\x20Бесплатных\x20Кейса','Lis-Skins\x20es\x20un\x20mercado\x20popular\x20para\x20artículos\x20de\x20Steam,\x20especialmente\x20skins\x20e\x20items\x20de\x20CS2,\x20Rust\x20y\x20Dota\x202.\x20La\x20plataforma\x20fue\x20fundada\x20en\x202020.','वेबसाइट\x20पर\x20उचित\x20संख्या\x20में\x20सर्वेक्षण\x20प्रदाता\x20और\x20ऑफरवॉल\x20साझेदार\x20हैं\x20जिन्हें\x20चुना\x20जा\x20सकता\x20है,\x20और\x20कमाई\x20को\x20निकासी\x20के\x20लिए\x20कई\x20विकल्प\x20हैं।','CSGO\x20Market,\x20CS2\x20skinlerinin\x20alınıp\x20satılabildiği\x20güvenli\x20ve\x20güvenli\x20bir\x20platform\x20sunan\x20çevrimiçi\x20bir\x20P2P\x20pazarıdır.\x202015\x20yılında\x20kuruldu.','value','Tirada\x20diaria','/topic/skins/','Wsparcie','toggleClass','CSGO\x20Market\x20es\x20un\x20mercado\x20P2P\x20en\x20línea\x20que\x20ofrece\x20una\x20plataforma\x20segura\x20para\x20comprar\x20y\x20vender\x20skins\x20de\x20CS2.\x20Establecido\x20en\x202015.','Выводите\x20скины\x20CS2\x20или\x20деньги\x20на\x20Карту!','Выводите\x20Деньги,\x20Криптовалюту\x20или\x20Скины!','CS2\x20Skins\x20veya\x20eşyalar\x20çekin!','input[type=\x27radio\x27],\x20label','Retirar\x20Dinheiro,\x20Criptomoedas\x20ou\x20PayPal!','Retirar\x20Cartas\x20de\x20Negociação\x20do\x20Steam.','Zar','Skins\x20Satın\x20Al','Cara\x20ou\x20Coroa','Duelbits\x20es\x20un\x20casino\x20en\x20línea\x20seguro\x20y\x20con\x20licencia\x20que\x20ofrece\x20juegos,\x20apuestas\x20deportivas,\x20e-sports\x20y\x20transacciones\x20con\x20criptomonedas.','Para,\x20Skinler\x20veya\x20Cihazlar\x20Çekin!','search-input','DMarket\x20एक\x20विश्वसनीय\x20और\x20लोकप्रिय\x20बाजार\x20है\x20स्टीम\x20आइटमों\x20के\x20लिए,\x20जिसमें\x20बहुत\x20सारे\x20आइटम\x20उपलब्ध\x20हैं\x20और\x20ट्रस्टपायलट\x20पर\x20सकारात्मक\x20समीक्षाएं\x20हैं।','Retire\x20BTC,\x20LTC,\x20ETH\x20e\x20muito\x20mais!','WTFSkins','<li><a\x20href=\x22/reviews/csfail\x22>CSFAIL</a></li>','<li><a\x20href=\x22/reviews/yayskins\x22>Yayskins</a></li>','Ciesz\x20się!','Duelbits','<li><a\x20href=\x22/reviews/lootfarm\x22>Lootfarm</a></li>','FlameCases\x20es\x20una\x20plataforma\x20en\x20línea\x20que\x20permite\x20abrir\x20estuches\x20para\x20CS2\x20y\x20Dota\x202.\x20Desde\x202017,\x20el\x20sitio\x20web\x20ofrece\x20varias\x20funciones.','xplay\x20es\x20una\x20plataforma\x20que\x20permite\x20a\x20los\x20jugadores\x20de\x20CS2\x20ganar\x20skins\x20jugando\x20en\x20sus\x20servidores.\x20Ofrece\x20diversos\x20servidores\x20y\x20desafíos\x20diarios.','Bets4.pro\x20es\x20una\x20plataforma\x20en\x20línea\x20que\x20ofrece\x20apuestas\x20en\x20partidos\x20de\x20deportes\x20electrónicos,\x20incluyendo\x20CS2,\x20Dota\x202,\x20Valorant\x20y\x20más.','<li><a\x20href=\x22/reviews/avanmarket\x22>Avan.Market</a></li>','Sitio\x20único\x20donde\x20puedes\x20ganar\x20dinero\x20ganando\x20juegos\x20en\x20varias\x20disciplinas\x20cibernéticas\x20de\x20juegos\x20móviles.\x20También\x20tiene\x20muchos\x20muros\x20de\x20ofertas.','1,00$\x20grátis','/ru/reviews/','button','name','0.25$\x20gratis','0.40$\x20Бесплатно','flex','Retirar\x20de\x20várias-muitas\x20maneiras.','वापसी\x20करें\x20USDT,\x20स्किन\x20या\x20वास्तविक\x20धन!','Rollbit\x20es\x20un\x20nuevo\x20sitio\x20de\x20casino\x20que\x20incluye\x20apuestas\x20deportivas\x20y\x20muchos\x20juegos\x20clásicos\x20como\x20la\x20ruleta.\x20¡Incluye\x20bonos\x20diarios!','Sites\x20de\x20Dota\x202','WTFSkins\x20предоставляет\x20классические\x20игры\x20азартного\x20характера\x20для\x20CS2,\x20такие\x20как\x20Джекпот,\x20Рулетка\x20и\x20Крэш.','closest','CSGORUN\x20एक\x20प्रमुख\x20आभासी\x20त्वचा\x20जुआ\x20प्लेटफ़ॉर्म\x20है\x20जिसमें\x20क्रैश,\x20रूलेट,\x20PVP,\x20और\x20इस्पोर्ट्स\x20बेटिंग\x20जैसे\x20विभिन्न\x20मोड\x20हैं।\x20यह\x20उपयोगकर्ता-स्वीकृत\x20है।','SteamLevelU,\x20Steam\x20hesap\x20seviyelerini\x20yükseltmek\x20için\x20güvenilir\x20bir\x20platformdur.\x20SH\x20Level\x20Up\x20ile\x20bağlantılıdır.','Retire\x20Skins\x20do\x20Rust\x20ou\x20Criptomoedas!','साइन\x20अप\x20के\x20बोनस','Tradeit\x20es\x20un\x20mercado\x20en\x20línea\x20que\x20permite\x20a\x20los\x20jugadores\x20intercambiar,\x20comprar\x20y\x20vender\x20skins\x20de\x20varios\x20juegos,\x20como\x20CS2.\x20Funciona\x20desde\x202017.','BCGame','Green\x20Color\x20Skins','Bonos\x20de\x20registro','pageX','CSGOPOSITIVE\x20-\x20это\x20известный\x20сайт\x20для\x20ставок\x20на\x20киберспорт.\x20Здесь\x20вы\x20можете\x20делать\x20ставки\x20как\x20скинами,\x20так\x20и\x20настоящими\x20деньгами!','/rust','<li><a\x20href=\x22/reviews/lis-skins\x22>Lis-skins</a></li>','<li><a\x20href=\x22/reviews/rustyloot\x22>Rustyloot</a></li>','CSGOPOSITIVE,\x20geri\x20ödeme\x20sistemine\x20sahip\x20popüler\x20bir\x20e-spor\x20bahis\x20sitesidir.\x20Skinler\x20veya\x20para\x20ile\x20bahis\x20yapabilirsiniz.\x20Çeşitli\x20ödeme\x20seçenekleri\x20mevcuttur.','Para,\x20CS2\x20veya\x20Rust\x20Skins\x20çekin!','SkinBaron\x20es\x20una\x20plataforma\x20en\x20línea\x20alemana\x20para\x20comprar\x20y\x20vender\x20skins\x20de\x20CS2,\x20reconocida\x20por\x20su\x20excelente\x20reputación.','KNIFEX,\x20kasa\x20açma,\x20kasa\x20savaşları,\x20coinflip,\x20crash,\x20çatışma\x20gibi\x20bir\x20dizi\x20oyun\x20modu\x20sunan\x20bir\x20CS2\x20kumar\x20sitesidir!','ऑफरवॉल','Teklif\x20Duvarı','जुआ\x20खेलने\x20के\x20लिए\x20साइटें','mouseup','.search-container','Купить/Продать\x20Скины','for','Intercambiar\x20skins','<li><a\x20href=\x22/reviews/earnweb\x22>Earnweb</a></li>','O\x20HypeUp\x20é\x20de\x20propriedade\x20dos\x20operadores\x20de\x20CSGORoll\x20e\x20HypeDrop,\x20oferece\x20dois\x20jogos\x20originais\x20e\x20Slots\x20com\x20Jogos\x20Ao\x20Vivo.','BitSkins\x20P2P,\x20CS2\x20skinlerine\x20odaklanan\x20sanal\x20ürünlerin\x20alınıp\x20satılabildiği\x20bir\x20çevrimiçi\x20platformdur.\x20Ana\x20şirket,\x20BitSkins\x27tir.','<li><a\x20href=\x22/reviews/gcskins\x22>Gcskins</a></li>','BTC,\x20ETH,\x20LTC\x20veya\x20PayPal\x20çekin!','<li><a\x20href=\x22/reviews/vvvgamers\x22>Vvvgamers</a></li>','CSGOSelly\x20एक\x20वेबसाइट\x20है\x20जो\x20उपयोगकर्ताओं\x20को\x20विभिन्न\x20भुगतान\x20विधियों\x20के\x20माध्यम\x20से\x20अपने\x20CSGO\x20स्किन\x20को\x20पैसे\x20में\x20बदलने\x20की\x20अनुमति\x20देती\x20है।\x20इसे\x202021\x20में\x20स्थापित\x20किया\x20गया\x20था।','.navigation-weapon-type','वापसी\x20करें\x20धन,\x20CS2,\x20TF2\x20या\x20Rust\x20स्किन!','x2\x20Madencilik\x20Oranı','hi.html','Игральные\x20Сайты','Sites\x20para\x20Ganhar','Казино','Retirar\x20BTC,\x20ETH,\x20USDT\x20ou\x20Tron!','O\x20CrashGG\x20é\x20especializado\x20em\x20apostas\x20de\x20skins\x20do\x20Rust,\x20com\x20vários\x20jogos,\x20incluindo\x20o\x20modo\x20crash.\x20Também\x20tem\x20Duelos,\x20Blackjack\x20e\x20Loteria.','100%\x20Depozito\x20Bonusu','Rollbit,\x20spor\x20bahislerini\x20ve\x20rulet\x20gibi\x20birçok\x20klasik\x20oyunu\x20içeren\x20yeni\x20bir\x20Casino\x20sitesidir.\x20Günlük\x20bonuslar\x20içerir!','Bets4.pro,\x20kullanıcılara\x20özellikle\x20CS2,\x20Dota\x202,\x20Valorant\x20ve\x20daha\x20birçok\x20e-spor\x20maçına\x20bahis\x20koyma\x20imkanı\x20sunan\x20bir\x20çevrimiçi\x20platformdur.','Para,\x20kripto\x20para\x20veya\x20PayPal\x20çekin!','O\x20Shuffle.com\x20é\x20um\x20cassino\x20cripto\x20completo\x20com\x20registro\x20único,\x20jogos\x20originais\x20e\x20programa\x20VIP,\x20com\x20planos\x20de\x20expansão.','¡Retira\x20BTC,\x20ETH,\x20LTC\x20o\x20PayPal!','Recompensas\x20diarias','Best\x20Offerwall\x20Sites','क्रिप्टो\x20या\x20वास्तविक\x20धन\x20को\x20निकालें!','x2\x20खनन\x20दर','<li><a\x20href=\x22/reviews/skinscash\x22>Skinscash</a></li>','<li><a\x20href=\x22/reviews/hellstore\x22>Hellstore</a></li>','Ücretsiz\x20Kasa','Retirar\x20com\x20Skins\x20do\x20CS2\x20P2P.','पासा','Фиолетовые\x20Скины','Oyun\x20Oynayarak\x20Kazan\x20Siteleri','Gamehag,\x20birçok\x20anket\x20sağlayıcısı\x20ve\x20teklif\x20duvarı\x20ortağıyla\x20birlikte\x20kazançları\x20çekmek\x20için\x20çeşitli\x20seçenekler\x20sunan\x20bir\x20site.','Bônus\x20de\x20venda\x20de\x20+1%','xplay\x20é\x20uma\x20plataforma\x20que\x20permite\x20aos\x20jogadores\x20de\x20CS2\x20ganhar\x20skins\x20jogando\x20em\x20seus\x20servidores.\x20Oferece\x20vários\x20servidores\x20e\x20desafios\x20diários.','प्रतिदिन\x20रोल','Остальное','CSGOLive\x20é\x20um\x20site\x20seguro\x20e\x20legítimo\x20de\x20abertura\x20de\x20caixas\x20do\x20CS2\x20com\x20caixas\x20personalizadas,\x20bônus\x20diários\x20e\x20um\x20sistema\x20Provably\x20Fair.','site-item','RustCases\x20एक\x20भरोसेमंद\x20Rust\x20जुआ\x20साइट\x20है\x20जिसमें\x20विभिन्न\x20खेल\x20मोड,\x20विशाल\x20संख्या\x20में\x20केस,\x20और\x20स्किन\x20निकासी\x20के\x20विकल्प\x20होते\x20हैं।\x20RustChance\x20के\x20मालिकों\x20द्वारा।','Comprar\x20o\x20vender\x20skins','innerHTML','CSGORoll\x20é\x20um\x20dos\x20sites\x20mais\x20populares.\x20Inclui\x20roleta,\x20crash\x20e\x20muitos\x20outros.\x20Agora\x20testando\x20apostas\x20em\x20e-sports.','/ru/reviews','CS2\x20साइटों\x20की\x20सूची','<li><a\x20href=\x22/reviews/skinswap\x22>Skinswap</a></li>','Sorteos\x20diarios\x20y\x20semanales','Lista\x20de\x20sitios\x20de\x20criptomonedas','Skins.Cash,\x20güvenilir\x20müşteri\x20desteği\x20sunan\x20ve\x20altı\x20yılı\x20aşkın\x20süredir\x20aktif\x20olan\x20bir\x20platformdur,\x20ancak\x20fiyatlandırma\x20en\x20iyi\x20değildir.','स्किन\x20विनिमय\x20करें','<li><a\x20href=\x22/reviews/bitskins-p2p\x22>Bitskins\x20p2p</a></li>','CSFAIL,\x20Skin\x20Gambling\x27de\x20öne\x20çıkan\x20bir\x20web\x20sitesi,\x20CS:GO,\x20Dota\x202\x20ve\x20RUST\x20skinleri\x20için\x20çeşitli\x20modlar,\x20kullanıcı\x20dostu\x20arayüz\x20ve\x20bonus\x20özellikler\x20sunar.','CSGOPolygon\x20-\x20это\x20легендарный\x20сайт,\x20похожий\x20на\x20CSGODouble,\x20с\x20классической\x20рулеткой,\x20но\x20имеющий\x20еще\x20множество\x20режимов\x20и\x20ставки.','50\x20Камней\x20Бесплатно','Вывод\x20только\x20скинами\x20CS2\x20через\x20P2P!','Yayskins,\x20una\x20plataforma\x20de\x20apuestas\x20de\x20piel\x20CS2,\x20se\x20destaca\x20por\x20su\x20diseño\x20fácil\x20de\x20usar,\x20diversos\x20modos\x20de\x20juego,\x20chat\x20en\x20vivo\x20y\x20equidad\x20comprobable.','\x20Kumar\x20Siteleri','<li><a\x20href=\x22/reviews/gametame\x22>Gametame</a></li>','CS2\x20Skins\x20veya\x20PayPal\x20çekin!','Freeward\x20es\x20un\x20sitio\x20GPT\x20que\x20ofrece\x20diversas\x20oportunidades\x20para\x20que\x20los\x20usuarios\x20ganen\x20recompensas\x20mediante\x20tareas\x20como\x20encuestas\x20y\x20ver\x20videos.','Destacado\x20mercado\x20en\x20línea,\x20amplia\x20oferta\x20desde\x20juegos\x20hasta\x20tarjetas\x20de\x20regalo,\x20tarifas\x20reducidas,\x20reputación\x20estelar,\x20interfaz\x20intuitiva.','200\x20Moedas\x20Grátis','CS2\x20Oynayarak\x20Kazan','RustMoment\x20एक\x20रस्ट\x20स्किन\x20प्रशंसकों\x20के\x20लिए\x20एक\x20जुआ\x20साइट\x20है\x20जिसमें\x20छह\x20खेल,\x20बोनस\x20और\x20एक\x20रेकबैक\x20सिस्टम\x20होता\x20है।\x20इसमें\x20मानक\x20और\x20क्रिप्टोकरेंसी\x20भुगतान\x20स्वीकार\x20किए\x20जाते\x20हैं।','none','Tüm\x20Siteler','iTrade.gg,\x20rostoların\x20ticaretini\x20yapmak\x20için\x20güvenilir\x20bir\x20platformdur.\x20Kullanıcı\x20dostu\x20tasarım,\x20ücretsiz\x20kayıt\x20bonusu\x20ve\x20günlük\x20ödüller\x20sorunsuz\x20bir\x20ticaret\x20deneyimi\x20sağlar.','0.30$\x20gratis','Ücretsiz\x20Kasa,\x20250$\x27a\x20kadar','Duelbits\x20एक\x20सुरक्षित\x20और\x20लाइसेंस\x20प्राप्त\x20ऑनलाइन\x20कैसीनो\x20है\x20जिसमें\x20विभिन्न\x20खेल,\x20स्पोर्ट्स\x20बेटिंग,\x20ई-स्पोर्ट्स\x20बेटिंग\x20और\x20तत्काल\x20क्रिप्टोकरेंसी\x20सौदों\x20की\x20सुविधा\x20है।','<li><a\x20href=\x22/reviews/skinsfans\x22>Skinsfans</a></li>','DMarket,\x20geniş\x20bir\x20ürün\x20yelpazesine\x20sahip\x20olan\x20ve\x20Trustpilot\x27ta\x20olumlu\x20değerlendirmeler\x20alan\x20Steam\x20ürünleri\x20için\x20güvenilir\x20ve\x20popüler\x20bir\x20pazardır.','buttons-container','\x22\x20class=\x22lang-switch\x22\x20data-lang=\x22hi\x22>HI</a></li>','BanditCamp,\x20tekerlek\x20of\x20fortune,\x20estuche\x20açma\x20ve\x20coinflip\x20gibi\x20Rust\x20temalı\x20oyun\x20modlarını\x20sağlayan\x20bir\x20Rust\x20skin\x20bahis\x20sitesidir.','<li><a\x20href=\x22/reviews/bets4pro\x22>Bets4pro</a></li>','Ücretsiz\x200.25$','यह\x20साइट\x20स्टीम\x20को\x20आसान\x20बनाने\x20के\x20लिए\x20बनाई\x20गई\x20है,\x20आप\x20स्टीम\x20ट्रेडिंग\x20कार्ड\x20के\x20लिए\x20इमोजी\x20और\x20प्रोफ़ाइल\x20बैकग्राउंड\x20बेचकर\x20तेजी\x20से\x20स्तर\x20बढ़ा\x20सकते\x20हैं।','BC.Game,\x202017\x27de\x20piyasaya\x20sürülen\x20bir\x20çevrimiçi\x20kumarhane\x20ve\x20spor\x20kitabıdır.\x208.000\x27den\x20fazla\x20oyun\x20sunar\x20ve\x20mülkiyetindeki\x20ve\x20adil\x20olduğu\x20bilinir.','Lis-Skins\x20es\x20un\x20popular\x20mercado\x20para\x20objetos\x20de\x20Steam,\x20especialmente\x20skins\x20e\x20ítems\x20de\x20CS2,\x20Rust\x20y\x20Dota\x202.\x20La\x20plataforma\x20fue\x20fundada\x20en\x202020.','Key-Drop','Ücretsiz\x20dönüşler','Retirar\x20Skins\x20do\x20CS2,\x20Rust\x20e\x20Itens\x20do\x20Dota\x202!','/topic/','5€\x20Bedava','HypeUp,\x20CSGORoll\x20ve\x20HypeDrop\x27ın\x20aynı\x20operatörleri\x20tarafından\x20işletilen\x20bir\x20bahis\x20sitesidir.\x20Orijinal\x20oyunlar\x20ve\x20Canlı\x20Oyunlarla\x20Slot\x20oyunları\x20sunar.','offsetWidth','दुर्लभ\x20उपहार','active','GameTame,\x20çeşitli\x20aktiviteleri\x20ve\x20teklifleri\x20tamamlamanın\x20karşılığında\x20ödüller\x20sunan\x20bir\x20GPT\x20sitesidir.\x20Platform\x20özellikle\x20oyuncular\x20için\x20tasarlanmıştır.','RustMagic\x20-\x20site\x20de\x20apostas\x20de\x20skins\x20Rust\x20com\x20cinco\x20modos\x20de\x20jogo,\x20saques\x20em\x20skins\x20Rust\x20e\x20sistema\x20diário\x20de\x20caixas\x20grátis.','Bu\x20site,\x20çeşitli\x20mobil\x20oyunlarda\x20para\x20kazanmanızı\x20sağlayan\x20birçok\x20teklif\x20duvarı\x20gibi\x20farklı\x20mobil\x20oyun\x20disiplinlerinde\x20gelir\x20elde\x20etmenizi\x20sağlar.','Рулетка','body','classList','GameTame\x20es\x20un\x20sitio\x20GPT\x20que\x20ofrece\x20recompensas\x20por\x20completar\x20actividades\x20y\x20ofertas.\x20Es\x20especialmente\x20diseñado\x20para\x20jugadores.','Bets4.pro\x20-\x20это\x20онлайн-платформа,\x20которая\x20позволяет\x20пользователям\x20делать\x20ставки\x20на\x20матчи\x20в\x20киберспорте,\x20в\x20особенности\x20на\x20CS2\x20и\x20Dota\x202.','CSGOEmpire\x20-\x20один\x20из\x20самых\x20популярных\x20сайтов,\x20предлагающий\x20игру\x20в\x20Рулетку\x20и\x20Монетку.\x20Кроме\x20того,\x20на\x20сайте\x20доступны\x20ставки\x20на\x20матчи.','Retira\x20criptomonedas\x20y\x20tarjetas\x20de\x20regalo!','0.20$\x20gratis','ये\x20स्किन्स,\x20एक\x20सीएस2\x20स्किन\x20गैम्ब्लिंग\x20प्लेटफॉर्म,\x20उपयोगकर्ता\x20के\x20हित\x20में\x20डिज़ाइन,\x20विविध\x20गेम\x20मोड,\x20लाइव\x20चैट,\x20और\x20सिद्ध\x20की\x20गई\x20निष्कर्षता\x20के\x20साथ\x20उत्कृष्ट\x20है।','Rulet','Rust\x20Sites','CSGORUN\x20es\x20una\x20plataforma\x20líder\x20de\x20apuestas\x20virtuales\x20de\x20skins\x20con\x20diversos\x20modos\x20como\x20Crash,\x20Ruleta,\x20PVP\x20y\x20apuestas\x20de\x20deportes\x20electrónicos.\x20Es\x20fácil\x20de\x20usar.','offsetLeft','Hediyeler','3\x20Estuches\x20gratis','स्किन\x20बेचें','Серые\x20Скины','WhiteMarket\x20CS2\x20स्किन\x20ट्रेडिंग\x20के\x20लिए\x20एक\x20P2P\x20प्लेटफ़ॉर्म\x20है।\x20इसमें\x20सुरक्षित\x20व्यापार,\x20विभिन्न\x20जमा\x20विकल्प\x20और\x20समुदाय\x20का\x20सहयोग\x20है।','486711SfdsGr','match','Metody\x20Wypłaty','/pl/reviews/','फॉसेट\x20और\x20उपहार','3\x20Pontos\x20de\x20Energia','CSGOSelly\x20-\x20это\x20сайт,\x20который\x20позволяет\x20быстро\x20продать\x20свои\x20скины\x20CS2\x20за\x20деньги\x20через\x20различные\x20способы\x20вывода.\x20Основан\x20в\x202021\x20году.','Roobet\x20एक\x20ऑनलाइन\x20कैसीनो\x20है\x20जो\x20उपयोगकर्ताओं\x20को\x20क्रिप्टोकरेंसी\x20का\x20उपयोग\x20करके\x20खेल\x20खेलने\x20की\x20अनुमति\x20देता\x20है।\x20प्लेटफ़ॉर्म\x20का\x20विश्वासयोग्य\x20और\x20सुरक्षित\x20होने\x20का\x20प्रमाण\x20है।','WTFSkins,\x20benzersiz\x20oyunlar,\x20günlük\x20ödüller\x20ve\x20basit\x20bir\x20kayıt\x20süreci\x20sunan\x20güvenilir\x20ve\x20popüler\x20bir\x20çevrimiçi\x20platformdur.','Anında\x20Satış','observe','Trocar\x20Itens','<li><a\x20href=\x22/reviews/freeward\x22>Freeward</a></li>','Купить/Продать\x20Предметы','O\x20SteamLevelU\x20é\x20uma\x20plataforma\x20legítima\x20para\x20comprar\x20pacotes\x20de\x20cartas\x20de\x20troca\x20do\x20Steam\x20e\x20aumentar\x20o\x20nível\x20da\x20sua\x20conta\x20Steam.','+10%\x20जमा\x20बोनस','GameTame\x20एक\x20GPT\x20साइट\x20है\x20जो\x20विभिन्न\x20गतिविधियों\x20और\x20प्रस्तावों\x20के\x20पूरा\x20करने\x20के\x20लिए\x20पुरस्कार\x20प्रदान\x20करती\x20है।\x20प्लेटफ़ॉर्म\x20विशेष\x20रूप\x20से\x20गेमर्स\x20के\x20लिए\x20डिज़ाइन\x20किया\x20गया\x20है।','Pink\x20Color\x20Skins','RustStake,\x20jackpot\x20ve\x20coinflip\x20gibi\x20bir\x20dizi\x20oyun\x20sunan\x20bir\x20Rust\x20skin\x20kumar\x20platformudur.\x20Oyundan\x20kolayca\x20öğeleri\x20yatırabilir\x20ve\x20çekebilirsiniz.','СSGOLuck\x20-\x20относительно\x20новый\x20сайт,\x20где\x20доступны\x20игры\x20в\x20рулетку,\x20Crash,\x20мини-игры\x20Mines\x20и\x20Towers,\x20открытие\x20кейсов\x20и\x20слоты.','Retira\x20Skins\x20de\x20CS2\x20o\x20PayPal!','Retira\x20Skins\x20e\x20items\x20de\x20Rust!','5\x20Caixas\x20Grátis','CS2\x20Skinleri,\x20Dota\x202\x20ve\x20H1Z1\x20Eşyalarını\x20Çekin!','<li><a\x20href=\x22/reviews/cybershoke\x22>Cybershoke</a></li>','गेम्स,\x20गिफ्ट\x20कार्ड्स\x20और\x20बहुत\x20कुछ\x20को\x20निकालें!','createElement','Mercado\x20P2P\x20seguro\x20da\x20Hellcase.\x20Criptografado\x20com\x20SSL,\x20verificação\x20KYC,\x20design\x20amigável,\x20preços\x20competitivos,\x20plataforma\x20confiável.','Um\x20site\x20de\x20apostas\x20de\x20CS2\x20com\x20uma\x20variedade\x20de\x20modos\x20de\x20jogo,\x20incluindo\x20abertura\x20de\x20caixas,\x20batalhas\x20de\x20caixas,\x20coinflip,\x20crash,\x20clash\x20e\x20muito\x20mais!','enabled','मुफ्त\x200.20\x20डॉलर','Rustix\x20-\x20CS2\x20ve\x20Rust\x20için\x20orijinal\x20oyunlar,\x20adil\x20oyun,\x20bonuslar\x20ve\x20etkileyici\x20animasyonlarla\x20kumar\x20platformu.\x202023\x20yılında\x20açıldı.','GrindBux,\x20anketleri\x20tamamlayarak\x20veya\x20mobil\x20ve\x20masaüstü\x20oyunları\x20oynayarak\x20para\x20kazanabileceğiniz\x20güvenilir\x20bir\x20platformdur.','Um\x20site\x20único\x20onde\x20você\x20pode\x20ganhar\x20dinheiro\x20ganhando\x20jogos\x20em\x20várias\x20disciplinas\x20cibernéticas\x20de\x20jogos\x20móveis.\x20Também\x20possui\x20muitos\x20offerwalls.','<li><a\x20href=\x22/reviews/csgopositive\x22>CSGOPositive</a></li>','मुफ्त\x200.15\x20डॉलर','Depozito\x20Bonusu','img','बीटीसी,\x20एलटीसी,\x20ईटीएच\x20और\x20बहुत\x20सारे\x20अन्य\x20के\x20निकास!','insertAdjacentElement','DatDrop\x20é\x20um\x20site\x20que\x20se\x20especializa\x20em\x20abrir\x20caixas\x20que\x20contêm\x20skins\x20do\x20CS2.\x20Sua\x20característica\x20mais\x20proeminente\x20são\x20as\x20batalhas\x20de\x20abertura\x20de\x20caixas.','100\x20Diamantes\x20gratis','/skins/','BanditCamp\x20é\x20um\x20site\x20de\x20apostas\x20de\x20skins\x20do\x20Rust\x20que\x20oferece\x20vários\x20modos\x20de\x20jogo\x20temáticos\x20do\x20Rust,\x20como\x20roda\x20da\x20fortuna,\x20abertura\x20de\x20caixas\x20e\x20coinflip.','HypeUp\x20es\x20propiedad\x20de\x20los\x20mismos\x20operadores\x20de\x20CSGORoll\x20y\x20HypeDrop.\x20Ofrece\x20dos\x20juegos\x20originales\x20y\x20Tragamonedas\x20con\x20Juegos\x20en\x20Vivo.','Gerçek\x20para\x20veya\x20kripto\x20para\x20çekin!','.close-box-skins\x20i','RustCases\x20es\x20un\x20sitio\x20de\x20apuestas\x20confiable\x20para\x20Rust\x20con\x20varios\x20modos\x20de\x20juego,\x20una\x20amplia\x20selección\x20de\x20cajas\x20y\x20opciones\x20de\x20retiro\x20de\x20skins.\x20Propiedad\x20de\x20RustChance.','Sitio\x20asociado\x20a\x20Gamehag\x20con\x20varias\x20opciones\x20de\x20encuestas\x20y\x20ofertas\x20para\x20elegir,\x20y\x20múltiples\x20opciones\x20de\x20retiro\x20de\x20ganancias.','120895xCpGMB','topic','2018\x20yılında\x20kurulan\x20bu\x20site,\x20gelişmiş\x20özelliklere,\x20ispat\x20edilebilir\x20adalet\x20sistemine\x20ve\x20çekici\x20animasyonlara\x20sahip\x20jackpot,\x20coinflip\x20ve\x20rulet\x20oyunları\x20sunar.','Sorteios\x20de\x201h\x20e\x2024h','मुफ्त\x202\x20डॉलर','expanded','आइटम\x20बेचें','2609757cEeBdS','Apostas\x20em\x20Jogos','मुफ्त\x200.30\x20डॉलर','Retirar\x20Skins\x20do\x20CS2\x20ou\x20PayPal!','<li><a\x20href=\x22/reviews/swapgg\x22>Swapgg</a></li>','CS2,\x20Dota\x202,\x20TF2\x20veya\x20Rust\x20Eşyalarını\x20Çekin!','Заработок\x20на\x20Игре','Rust\x20स्किन\x20और\x20आइटम\x20को\x20निकालें!','SteamLevels\x20é\x20um\x20site\x20fácil\x20de\x20usar\x20que\x20ajuda\x20a\x20aumentar\x20o\x20nível\x20da\x20sua\x20conta\x20Steam\x20através\x20da\x20compra\x20de\x20pacotes\x20de\x20cartas\x20e\x20da\x20aceitação\x20de\x20skins\x20do\x20CSGO.','Skins.Cash:\x20plataforma\x20confiable\x20con\x20buenas\x20reseñas,\x20soporte\x20al\x20cliente\x20confiable\x20y\x20más\x20de\x20seis\x20años\x20de\x20experiencia.\x20Precios\x20no\x20óptimos.','then','CS2\x20Skins\x20ve\x20eşyalar\x20çekin!','/earning/offerwalls','CSGO\x20Market\x20é\x20um\x20mercado\x20P2P\x20online\x20que\x20oferece\x20uma\x20plataforma\x20segura\x20para\x20comprar\x20e\x20vender\x20skins\x20de\x20CS2.\x20Estabelecido\x20em\x202015.','Durum\x20Savaşı','mousemove','/pt','BTC,\x20ETH,\x20LTC\x20या\x20PayPal\x20निकालें!','#search-input','<li><a\x20href=\x22/topic/skins/golden-skins\x22>Golden\x20Color\x20Skins</a></li>','Выводите\x20предметы\x20CS2,\x20Dota\x202\x20и\x20H1Z1!','div.category-selector','1\x20घंटा,\x2024\x20घंटे\x20के\x20उपहार','DMarket\x20-\x20это\x20надежный\x20и\x20популярный\x20онлайн-маркетплейс\x20для\x20предметов\x20Steam,\x20с\x20большим\x20количеством\x20товаров\x20и\x20положительными\x20отзывами.','आइटम\x20विनिमय\x20करें','Saque\x20Skins\x20do\x20Rust,\x20Criptomoedas\x20ou\x20PayPal!','Todos\x20los\x20sitios','InsaneGG,\x20profesyonel\x20olarak\x20tasarlanmış\x20ve\x20akıcı\x20animasyonlara\x20sahip\x20bir\x20dizi\x20CSGO\x20skin\x20bahis\x20oyunu\x20sunan\x20bir\x20çevrimiçi\x20platformdur.','2$\x20Бесплатно','.search-enabler','length','Выводите\x20Реальные\x20Деньги\x20или\x20Крипту!','endsWith','YouTuber\x27lar\x20tarafından\x20desteklenen,\x20güvenilir\x20CS2\x20skin\x20platformu.\x20Güvenli,\x20sadece\x20CS2\x20skinlerine\x20özgü,\x20ücretler\x20uygulanır\x20ve\x20kullanıcı\x20yorumları\x20geliştirme\x20için\x20potansiyel\x20olduğunu\x20gösterir.','100\x20मुफ्त\x20हीरे','0,10$\x20grátis','क्रैश','Uma\x20plataforma\x20online\x20que\x20permite\x20aos\x20usuários\x20abrir\x20caixas\x20para\x20CS2\x20e\x20Dota\x202\x20desde\x202017,\x20oferecendo\x20várias\x20funcionalidades.','Clash','<li><a\x20href=\x22/reviews/itrade\x22>iTrade.GG</a></li>','RustStake,\x20jackpot\x20ve\x20coinflip\x20dahil\x20olmak\x20üzere\x20çeşitli\x20oyunlar\x20sunan\x20bir\x20Rust\x20skin\x20bahis\x20platformudur.\x20Oyunlardan\x20kolayca\x20eşya\x20girip\x20çıkartabilirsiniz.','Retirar\x20Skins\x20do\x20CS2,\x20Criptomoedas\x20ou\x20PayPal!','Retira\x20USDT,\x20Skins\x20o\x20dinero\x20real!','HellStore\x20es\x20una\x20plataforma\x20que\x20permite\x20a\x20los\x20usuarios\x20apostar\x20skins\x20de\x20CSGO\x20en\x20modos\x20de\x20juego\x20como\x20Coinflip,\x20Jackpot,\x20Upgrader\x20y\x20Wheel.','200\x20Monedas\x20gratis','Ücretsiz\x200.20$','2.00$\x20Бесплатно','Avan.Market\x20es\x20una\x20plataforma\x20en\x20línea\x20que\x20ofrece\x20a\x20los\x20usuarios\x20la\x20oportunidad\x20de\x20vender\x20skins\x20de\x20juegos\x20populares\x20como\x20CS2,\x20Dota\x202,\x20RUST\x20y\x20TF2.','CSGO500,\x20en\x20iyi\x20CS2\x20Kumar\x20Sitesi.\x20Düzenli\x20yağmurlar,\x20hediyeler\x20ve\x20promosyon\x20kodları.\x20Birçok\x20oyun\x20ve\x20slot\x20oynayabilirsiniz.','<li><a\x20href=\x22/es','<li><a\x20href=\x22/reviews/farmskins\x22>Farmskins</a></li>','Retira\x20dinero,\x20Skins\x20de\x20CS2\x20o\x20Rust!','एक\x20ऑनलाइन\x20प्लेटफ़ॉर्म\x20है\x20जो\x20उपयोगकर्ताओं\x20को\x20इस्पोर्ट्स\x20मैचों\x20पर\x20सट्टे\x20लगाने\x20की\x20क्षमता\x20प्रदान\x20करती\x20है,\x20विशेष\x20रूप\x20से\x20CS2,\x20Dota\x202,\x20Valorant\x20और\x20बहुत\x20सारे\x20अन्य\x20मैचों\x20के\x20लिए।','WhiteMarket\x20-\x20это\x20P2P\x20платформа\x20для\x20торговли\x20скинами\x20CS2.\x20Безопасные\x20сделки,\x20различные\x20варианты\x20депозита\x20и\x20взаимодействие\x20с\x20сообществом.','.prev-button','Steam\x20Oyunları\x20Satın\x20Al','Clash.gg\x20एक\x20नया\x20CS2\x20जुआ\x20साइट\x20है\x20जिसमें\x20रूलेट,\x20अपग्रेडर,\x20केस\x20और\x20बहुत\x20कुछ\x20जैसे\x20बहुत\x20सारे\x20खेल\x20शामिल\x20हैं!','Выводите\x20предметы\x20CS2,\x20Dota\x202\x20и\x20Rust!','24\x20घंटे\x20का\x20उपहार','touchmove','Casino','Mercado\x20P2P\x20seguro\x20de\x20Hellcase.\x20Encriptado\x20SSL,\x20verificación\x20KYC,\x20diseño\x20amigable,\x20precios\x20competitivos,\x20plataforma\x20confiable.','Retira\x20Skins\x20e\x20items\x20de\x20CS2!','iTrade.gg\x20-\x20это\x20надежная\x20платформа\x20для\x20обмна\x20скинами\x20Rust.\x20Удобный\x20дизайн,\x20Бонусы\x20при\x20регистрации\x20и\x20Ежедневные\x20Награды.','Gamdom\x20es\x20uno\x20de\x20los\x20mejores\x20sitios\x20de\x20apuestas\x20en\x20partidas\x20de\x20CS2.\x20¡Puedes\x20jugar\x20a\x20la\x20ruleta,\x20la\x20rueda,\x20el\x20crash,\x20las\x20tragamonedas\x20y\x20mucho\x20más!','Халява\x20CS2','vpnButtonState','<li><a\x20href=\x22/reviews/shuffle\x22>Shuffle</a></li>','Comprar\x20o\x20vender\x20objetos','मुफ्त\x20केस','Oyunlar,\x20Hediye\x20Kartları\x20ve\x20daha\x20fazlasını\x20alın.','Rust\x20स्किन,\x20क्रिप्टो\x20या\x20PayPal\x20निकालें!','Система\x20Кранов','0.30$\x20Бесплатно','Plataforma\x20confiável\x20de\x20skins\x20CS2\x20com\x20aluguel,\x20endossada\x20por\x20YouTubers.\x20Segura,\x20limitada\x20a\x20skins\x20de\x20CS2,\x20taxas\x20aplicáveis,\x20avaliações\x20indicam\x20melhorias.','RustBet:\x20sitio\x20confiable\x20de\x20apuestas\x20de\x20skins\x20de\x20Rust.\x20Jackpot,\x20coinflip\x20y\x20mejora\x20de\x20skins.\x20Buena\x20reputación,\x20encriptación\x20SSL,\x20fácil\x20de\x20usar.','Lista\x20de\x20sitios\x20de\x20Dota\x202','</ul>','Gamdom\x20Casino\x20अपने\x20भीतरी\x20खेलों,\x20अभिनव\x20सामाजिक\x20एंगेजमेंट,\x20प्रमाणित\x20निष्पक्ष\x20तंत्र\x20और\x20ऑनलाइन\x20गेमिंग\x20में\x20अच्छी\x20प्रतिष्ठा\x20के\x20साथ\x20विविधता\x20प्रदान\x20करने\x20वाली\x20एक\x20प्लेटफॉर्म\x20है।','WTFSkins\x20एक\x20विश्वसनीय\x20और\x20लोकप्रिय\x20ऑनलाइन\x20प्लेटफॉर्म\x20है\x20जो\x20अद्वितीय\x20खेल,\x20दैनिक\x20रिवॉर्ड\x20और\x20एक\x20सरल\x20पंजीकरण\x20प्रक्रिया\x20प्रदान\x20करता\x20है।','<li><a\x20href=\x22/reviews/idle-empire\x22>Idle-empire</a></li>','प्रतिदिनिक\x20और\x20साप्ताहिक\x20उपहार','prev-button','CS2\x20खेलकर\x20कमाएं','indexOf','Retira\x20items\x20de\x20CS2,\x20Dota\x202,\x20TF2\x20o\x20Rust!','CSGO\x20Market\x20-\x20это\x20онлайн-рынок\x20P2P,\x20который\x20обеспечивает\x20безопасную\x20и\x20защищенную\x20платформу\x20для\x20покупки\x20и\x20продажи\x20скинов\x20в\x20CS2.','Famoso\x20site\x20de\x20apostas\x20em\x20e-sports\x20com\x20um\x20sistema\x20interessante\x20de\x20cashback,\x20você\x20pode\x20apostar\x20skins\x20ou\x20dinheiro.\x20Possui\x20várias\x20opções\x20de\x20pagamento.','siblings','3\x20Ücretsiz\x20Kasa','Rollbit\x20एक\x20नया\x20कैसीनो\x20साइट\x20है\x20जिसमें\x20स्पोर्ट्स\x20बेटिंग\x20और\x20रूलेट\x20जैसे\x20क्लासिक\x20खेल\x20शामिल\x20हैं।\x20रोजाना\x20बोनस\x20भी\x20मिलते\x20हैं!','<li><a\x20href=\x22/topic/skins/green-skins\x22>Green\x20Color\x20Skins</a></li>','Платформа\x20Hellcase\x20предоставляет\x20возможность\x20пользователям\x20приобретать\x20виртуальные\x20кейсы\x20CS2,\x20Dota\x202\x20и\x20Rust.','Participa\x20en\x20sorteos\x20y\x20gana\x20juegos\x20de\x20Steam.','min','.topic-centralizer\x20.navigation-reset','Estuche\x20gratis','+360%\x20जमा\x20बोनस','firstChild','<li><a\x20href=\x22/reviews/dmarket\x22>Dmarket</a></li>','Бонус\x20к\x20Пополнению','/ru/','Sorteo\x20de\x201h','btnEntrance','Comprar\x20skins','Avan.Market\x20-\x20это\x20онлайн-платформа,\x20которая\x20предоставляет\x20возможность\x20моментально\x20продавать\x20игровые\x20скины\x20из\x20CS2,\x20Dota\x202,\x20RUST\x20и\x20TF2.','CS.Deals,\x20CS2,\x20Dota\x202,\x20Rust\x20ve\x20Team\x20Fortress\x202\x20gibi\x20oyunlardan\x20skin\x20alım\x20ve\x20satımını\x20sağlayan\x20bir\x20platformdur.\x202016\x27dan\x20beri\x20aktiftir.','csgobroker.cc/ru/','Dota\x202\x20Skins\x20de\x20Rust,\x20criptomonedas\x20o\x20PayPal!','Roobet,\x20kullanıcıların\x20kripto\x20para\x20kullanarak\x20oyun\x20oynayabileceği\x20bir\x20çevrimiçi\x20kumarhanedir.\x20Platformun\x20itibarı\x20yasal\x20ve\x20güvenli\x20olmasıyla\x20bilinir.','RustStake:\x20Plataforma\x20de\x20apuestas\x20de\x20skins\x20de\x20Rust.\x20Variedad\x20de\x20juegos,\x20incluyendo\x20jackpot\x20y\x20coinflip.\x20Fácil\x20retiro\x20de\x20elementos\x20del\x20juego.','Вывод\x20только\x20скинами\x20CS2!','/reviews','Вся\x20Халява','Site\x20dos\x20proprietários\x20do\x20Gamehag.\x20Oferece\x20provedores\x20de\x20pesquisas,\x20parceiros\x20de\x20oferta\x20e\x20opções\x20de\x20saque\x20dos\x20ganhos.','Sites\x20para\x20Ganhar\x20Jogando','button-vpn-filter','Кости','Синие\x20Скины','Дожди','CS2\x20स्किन\x20या\x20आइटम\x20निकालें!','0.25$\x20Бесплатно','requestAnimationFrame','Comprar\x20juegos\x20de\x20Steam','CS2\x20oyuncularının\x20sunucularında\x20oynayarak\x20skin\x20kazanmasını\x20sağlayan\x20bir\x20platformdur.\x20Çeşitli\x20sunucular\x20ve\x20günlük\x20meydan\x20okumalar\x20sunar.','<li><a\x20href=\x22/reviews/steamlvlup\x22>Steamlvlup</a></li>','0,05$\x20grátis','attr','Скрыть\x20сайты\x20требующие\x20VPN','+5%\x20к\x20Пополнению','forEach','SKINFANS\x20-\x20Apertura\x20de\x20cajas\x20de\x20piel\x20CS2,\x20hermosas\x20animaciones,\x20sistema\x20probadamente\x20justo.\x20Sorteos\x20regulares,\x20Pase\x20de\x20batalla\x20para\x20recién\x20llegados,\x20diseño\x20elegante.','afterend','0.15$\x20gratis','BitSkins\x20P2P\x20es\x20una\x20plataforma\x20en\x20línea\x20para\x20comprar\x20y\x20vender\x20artículos\x20virtuales,\x20con\x20un\x20enfoque\x20en\x20skins\x20de\x20CS2.\x20La\x20empresa\x20matriz\x20es\x20BitSkins.','includes','Ежедневные\x20Розыгрыши','BTC,\x20LTC,\x20USDT,\x20USDC\x20या\x20ETH\x20निकालें!','Retire\x20Criptomoedas\x20ou\x20Dinheiro\x20Real!','InsaneGG\x20एक\x20ऑनलाइन\x20प्लेटफॉर्म\x20है\x20जो\x20पेशेवर\x20डिज़ाइन\x20की\x20गई\x20और\x20सुविधाजनक\x20एनिमेशन\x20के\x20साथ\x20CSGO\x20स्किन\x20जुआ\x20खेलने\x20की\x20विभिन्न\x20गेम्स\x20प्रदान\x20करती\x20है।','.box','RustChance\x20ha\x20estado\x20operando\x20desde\x202017\x20y\x20ofrece\x20varios\x20juegos\x20populares,\x20incluyendo\x20Jackpot,\x20Ruleta,\x20Cara\x20o\x20Cruz,\x20Crash\x20y\x20Minas\x20terrestres.','Yükseltici','0.90$\x20Бесплатно','/topic','Caixa\x20Diária','Retirada\x20de\x20vários\x20tipos\x20de\x20criptomoedas!','Grifo\x20y\x20sorteos','Para,\x20CS2,\x20TF2\x20veya\x20Rust\x20Skinleri\x20Çekin!','appendChild','Готово\x20!','0,02$\x20Diários','Ücretsiz\x200.30$','1\x20घंटे\x20का\x20उपहार','CSGOLive\x20-\x20это\x20старый\x20классический\x20сайт\x20открытия\x20кейсов\x20CS2,\x20где\x20вы\x20можете\x20создавать\x20свои\x20собственные\x20кейсы.\x20Включает\x20ежедневные\x20бонусы!','RustyLoot\x20oferece\x20vários\x20jogos,\x20incluindo\x20Roleta,\x20Plinko\x20e\x20mais.\x20Seguro\x20e\x20divertido,\x20com\x20sistema\x20transparente\x20e\x20justo.','उपहार','O\x20site\x20possui\x20um\x20número\x20razoável\x20de\x20provedores\x20de\x20pesquisas\x20e\x20parceiros\x20de\x20oferta\x20para\x20escolher,\x20e\x20há\x20muitas\x20opções\x20para\x20sacar\x20os\x20ganhos.','<li><a\x20href=\x22/reviews/gamehag\x22>Gamehag</a></li>','className','Увеличить\x20Уровень\x20Steam','BitSkins\x20P2P\x20é\x20uma\x20plataforma\x20online\x20para\x20compra\x20e\x20venda\x20de\x20itens\x20virtuais,\x20com\x20foco\x20em\x20skins\x20de\x20CS2.\x20A\x20empresa-mãe,\x20BitSkins.','focus','Sorteios\x20Diários','/code-parts/nav-bar.html','RustMoment:\x20sitio\x20de\x20apuestas\x20de\x20skins\x20de\x20Rust.\x206\x20juegos,\x20bonificaciones\x20y\x20sistema\x20de\x20rakeback.\x20Acepta\x20pagos\x20estándar\x20y\x20criptomonedas.','वापसी\x20करें\x20CS2\x20स्किन\x20या\x20क्रिप्टो!','Freeward\x20एक\x20GPT\x20साइट\x20है\x20जो\x20सर्वेक्षण\x20और\x20वीडियो\x20देखकर\x20जैसे\x20कार्यों\x20के\x20माध्यम\x20से\x20उपयोगकर्ताओं\x20को\x20पुरस्कार\x20कमाने\x20के\x20विभिन्न\x20अवसर\x20प्रदान\x20करती\x20है।','1$\x20gratis','0,40$\x20grátis','Retira\x20BTC,\x20LTC,\x20ETH\x20y\x20muchos\x20más!','Рейкбек','Retira\x20juegos,\x20tarjetas\x20de\x20regalo\x20o\x20items\x20de\x20Dota2\x20y\x20TF2!','\x22\x20class=\x22lang-switch\x22\x20data-lang=\x22pt\x22>PT</a></li>','FlameCases','\x22\x20class=\x22lang-switch\x22\x20data-lang=\x22en\x22>EN</a></li>','Hellcase\x20एक\x20ऑनलाइन\x20प्लेटफॉर्म\x20है\x20जो\x20CS2,\x20Dota\x202\x20और\x20Rust\x20जैसे\x20विभिन्न\x20खेलों\x20के\x20लिए\x20स्किन्स\x20और\x20आइटम्स\x20से\x20भरे\x20हुए\x20वर्चुअल\x20केस\x20खरीदने\x20की\x20अनुमति\x20देती\x20है।','0.05$\x20gratis','1$\x20grátis','Выводите\x20USDT,\x20Скины\x20или\x20Реальные\x20Деньги','contains','5.00$\x20Бесплатно','\x22\x20class=\x22lang-switch\x22\x20data-lang=\x22tr\x22>TR</a></li>','Dota\x202\x20Sites','Crash','<li><a\x20href=\x22/reviews/aimmarket\x22>Aim.Market</a></li>','Lanzamiento\x20de\x20moneda','RapidSkins,\x20CS2\x20ve\x20Rust\x20için\x20derilerin\x20satın\x20alınması,\x20satılması\x20ve\x20takas\x20edilmesi\x20için\x20oyunculara\x20bir\x20pazar\x20sunmak\x20amacıyla\x20oluşturulmuş\x20bir\x20çevrimiçi\x20platformdur.','div.ratingsumm','Bu\x20site,\x20yüksek\x20ödemeleri\x20ve\x20sürekli\x20promosyonları\x20nedeniyle\x20neredeyse\x20efsanevi\x20olarak\x20adlandırılabilir.\x20Günlük\x20bonus\x20dahil!','<li><a\x20href=\x22/reviews/skinbet\x22>Skinbet</a></li>','<li><a\x20href=\x22/reviews/steamgifts\x22>Steamgifts</a></li>','Parede\x20de\x20Ofertas','<li><a\x20href=\x22/reviews/hellcase\x22>Hellcase</a></li>','मुफ्त\x200.10\x20डॉलर','Comprar\x20Skins','प्रतिदिन\x20केस','getAttribute','Оранжевые\x20Скины','Key-Drop\x20एक\x20प्रमुख\x20ऑनलाइन\x20जुआ\x20प्लेटफॉर्म\x20है\x20जो\x20केस\x20युद्ध\x20और\x20अपग्रेडर\x20के\x20अलावा\x20कस्टम\x20CSGO\x20स्किन\x20केस\x20भी\x20प्रदान\x20करता\x20है।','1\x20घंटा,\x2024\x20घंटे\x20और\x207\x20दिन\x20के\x20उपहार','Цены','Покупайте\x20игры\x20и\x20подарочные\x20карты.','<li><a\x20href=\x22/topic/skins/purple-skins\x22>Purple\x20Color\x20Skins</a></li>','hidden','एक\x20ऑनलाइन\x20प्लेटफ़ॉर्म\x20है\x20जो\x20खिलाड़ियों\x20को\x20CS:\x20GO\x20और\x20Rust\x20जैसे\x20प्रसिद्ध\x20खेलों\x20के\x20स्किन\x20को\x20विनिमय\x20और\x20बेचने\x20की\x20अनुमति\x20देता\x20है।\x20RustySell\x20द्वारा\x20स्वामित्व\x20और\x20संचालित\x20होता\x20है।','DatDrop\x20-\x20это\x20сайт,\x20специализирующийся\x20на\x20открытии\x20кейсов\x20со\x20скинами\x20из\x20CS2.\x20Основной\x20режим\x20кейс\x20батл.','touchstart','+3%\x20बेचने\x20का\x20बोनस','<li><a\x20href=\x22/reviews/skincashier\x22>Skincashier</a></li>','RustStake\x20é\x20uma\x20plataforma\x20de\x20jogos\x20de\x20apostas\x20de\x20skins\x20do\x20Rust\x20que\x20oferece\x20uma\x20variedade\x20de\x20jogos,\x20incluindo\x20jackpot\x20e\x20coinflip.\x20Entre\x20e\x20retire\x20itens\x20dos\x20jogos\x20com\x20facilidade.','Gamdom\x20Casino\x20oferece\x20uma\x20variedade\x20de\x20jogos\x20internos,\x20envolvimento\x20social\x20inovador,\x20sistema\x20comprovadamente\x20justo\x20e\x20boa\x20reputação\x20nos\x20jogos\x20online.','GrindBux\x20es\x20una\x20plataforma\x20confiable\x20donde\x20puedes\x20ganar\x20dinero\x20completando\x20encuestas\x20o\x20jugando\x20juegos\x20para\x20dispositivos\x20móviles\x20y\x20de\x20escritorio.','SteamLevelU\x20एक\x20विधि\x20स्वरूपित\x20प्लेटफ़ॉर्म\x20है\x20जिससे\x20आप\x20स्टीम\x20खाता\x20स्तरों\x20को\x20बढ़ाने\x20के\x20लिए\x20स्टीम\x20ट्रेडिंग\x20कार्ड\x20पैक\x20खरीद\x20सकते\x20हैं,\x20जो\x20एसएच\x20लेवल\x20अप\x20के\x20साथ\x20जुड़ा\x20हुआ\x20है।','CSGO500,\x20el\x20mejor\x20sitio\x20de\x20apuestas\x20de\x20CS2.\x20Lluvias,\x20regalos\x20y\x20códigos\x20promocionales.\x20Juegos\x20y\x20tragamonedas\x20disponibles.','O\x20CashoutCSGO\x20é\x20uma\x20plataforma\x20exclusivamente\x20dedicada\x20à\x20venda\x20de\x20skins\x20do\x20CS2,\x20oferecendo\x20um\x20serviço\x20de\x20conversão\x20conveniente.','json','इस\x20साइट\x20को\x20अपने\x20समकक्षों\x20के\x20बीच\x20लगभग\x20अपूर्व\x20कहा\x20जा\x20सकता\x20है\x20क्योंकि\x20इसमें\x20उच्च\x20भुगतान\x20और\x20नियमित\x20प्रचार\x20की\x20सुविधा\x20होती\x20है।\x20रोजाना\x20बोनस\x20भी\x20शामिल\x20करें!','CrashGG:\x20sitio\x20de\x20apuestas\x20de\x20skins\x20de\x20Rust.\x20Juegos\x20emocionantes\x20como\x20Crash,\x20Duelos,\x20Blackjack\x20y\x20Lotería.\x20Gran\x20variedad\x20de\x20opciones\x20de\x20apuestas.','5\x20Ücretsiz\x20Kasa','CSGOBIG\x20-\x20CS2\x20स्किन्स\x20के\x20साथ\x20जैकपॉट,\x20कॉइनफ्लिप,\x20रूलेट,\x20केस\x20और\x20केस\x20युद्ध\x20जैसे\x20खेल\x20मोड्स\x20के\x20साथ\x20एक\x20जुआ\x20साइट।\x202015\x20में\x20शुरू\x20हुआ\x20है।','.box-skins-name','preventDefault','Retira\x20dinero,\x20criptomonedas\x20o\x20PayPal!','\x22\x20class=\x22lang-switch\x22\x20data-lang=\x22es\x22>ES</a></li>','SkinBid\x20é\x20um\x20mercado\x20online\x20para\x20skins\x20de\x20CS2\x20e\x20itens\x20de\x20jogos,\x20oferecendo\x20recursos\x20de\x20compra,\x20venda\x20e\x20leilão\x20com\x20uma\x20interface\x20amigável.','display','Hellcase\x27e\x20ait\x20güvenli\x20P2P\x20pazar.\x20SSL\x20şifrelemeli,\x20KYC\x20doğrulaması,\x20kullanıcı\x20dostu\x20tasarım,\x20rekabetçi\x20fiyatlandırma,\x20güvenilir\x20ticaret\x20platformu.','Eşya\x20Takas\x20Et','CSGO-Skins,\x20kullanıcıların\x20özel\x20CS2\x20estuches\x20açabileceği\x20ve\x20günlük\x20çekilişlere\x20katılabileceği\x20saygın\x20bir\x20çevrimiçi\x20platformdur.','Batalla\x20de\x20Casos','Um\x20cassino\x20online\x20seguro\x20e\x20licenciado\x20com\x20jogos,\x20apostas\x20esportivas,\x20apostas\x20em\x20e-sports\x20e\x20transações\x20de\x20criptomoedas\x20instantâneas.','SteamLevels\x20एक\x20उपयोगकर्ता\x20मित्रपूर्ण\x20वेबसाइट\x20है\x20जो\x20आपके\x20स्टीम\x20खाता\x20स्तर\x20को\x20बढ़ाने\x20में\x20मदद\x20करती\x20है।\x20इसे\x20कार्ड\x20पैक\x20खरीदकर\x20और\x20सीएसजीओ\x20स्किन्स\x20स्वीकार\x20करके\x20किया\x20जा\x20सकता\x20है।','<li><a\x20href=\x22/reviews/rustmagic\x22>RustMagic</a></li>','href','1,5.00$\x20grátis','SteamLevels,\x20kart\x20paketleri\x20satın\x20alarak\x20ve\x20CSGO\x20skinlerini\x20kabul\x20ederek\x20Steam\x20hesabınızın\x20seviyesini\x20artırmaya\x20yardımcı\x20olan\x20kullanıcı\x20dostu\x20bir\x20web\x20sitesidir.','Grifo\x20diario','3\x20Puntos\x20de\x20energía','Depósito\x20Necessário','GCSkins\x20एक\x20प्रसिद्ध\x20मोबाइल\x20ऐप\x20और\x20वेबसाइट\x20है\x20जो\x20ऑनलाइन\x20कार्यों\x20को\x20पूरा\x20करने\x20के\x20बदले\x20में\x20CSGO\x20स्किन\x20और\x20आइटम\x20प्रदान\x20करती\x20है।\x202016\x20से\x20उपलब्ध\x20है।','100%\x20जमा\x20बोनस','वास्तव\x20में,\x20स्टीम\x20के\x20माध्यम\x20से\x20कमाई\x20के\x20लिए\x20साइटों\x20का\x20पितामह,\x20इसके\x20वापसी\x20विधियों\x20के\x20विशाल\x20चयन\x20के\x20लिए\x20मशहूर\x20है।','\x22\x20class=\x22lang-switch\x22\x20data-lang=\x22ru\x22>RU</a></li>','/img/best-rust-sites-slide.png','<li><a\x20href=\x22/reviews/whitemarket\x22>White.Market</a></li>','Retira\x20Skins\x20de\x20CS2,\x20criptomonedas\x20o\x20dinero!','Skins.Cash\x20-\x20надежная\x20платформа\x20с\x20положительными\x20отзывами,\x20надежной\x20поддержкой\x20клиентов\x20и\x20более\x20чем\x20шестилетним\x20опытом\x20работы.','algunas\x20monedas\x20gratis','2017\x27den\x20beri\x20faaliyet\x20gösteren\x20bir\x20Rust\x20skin\x20bahis\x20sitesi.\x20Platform,\x20yüksek\x20bahisçi\x20jackpot\x20ve\x20coinflip\x20gibi\x20popüler\x20oyunları\x20sunar.','Rust\x20Skinleri,\x20Kripto\x20veya\x20PayPal\x20Çekin!','RustBet\x20-\x20Site\x20confiável\x20de\x20apostas\x20com\x20skins\x20do\x20Rust.\x20Jogos\x20de\x20jackpot,\x20coinflip\x20e\x20aprimoramento.\x20Reputação\x20sólida,\x20criptografia\x20SSL,\x20interface\x20amigável.','Tasa\x20de\x20minería\x20x2','जमा\x20करने\x20के\x20बोनस','5.00$\x20grátis','Sube\x20de\x20nivel\x20fácilmente\x20en\x20Steam.\x20Vende\x20emojis\x20y\x20fondos\x20de\x20perfil\x20para\x20Cartas\x20de\x20Intercambio\x20de\x20Steam\x20y\x20progresa\x20rápidamente.','onload','Levantar\x20Jogos,\x20Cartões\x20de\x20Presente!','Salad,\x20kullanıcılara\x20cüzdan\x20madenciliği\x20yapma\x20ve\x20bilgisayarlarının\x20işlem\x20gücünü\x20kullanarak\x20hediye\x20kartları\x20ve\x20daha\x20fazlasını\x20satın\x20alma\x20fırsatı\x20sunan\x20bir\x20web\x20sitesidir.','li\x20a.category-box','Best\x20Gambling\x20Sites','mouseenter','.category-selector','एक\x20ऑनलाइन\x20प्लेटफॉर्म\x20है\x20जो\x20उपयोगकर्ताओं\x20को\x20CS2\x20और\x20Dota\x202\x20के\x20लिए\x20केस\x20खोलने\x20की\x20अनुमति\x20देता\x20है।\x202017\x20में\x20शुरू\x20किए\x20जाने\x20के\x20बाद,\x20वेबसाइट\x20विभिन्न\x20सुविधाएं\x20प्रदान\x20करता\x20है।','Sorteio\x20de\x201h','Levantar\x20Skins\x20ou\x20Itens\x20de\x20CS2!','CSGOLive\x20एक\x20सुरक्षित\x20और\x20वैध\x20CS2\x20केस\x20खोलने\x20वेबसाइट\x20है\x20जिसमें\x20कस्टम\x20केस,\x20दैनिक\x20बोनस\x20और\x20एक\x20Provably\x20Fair\x20सिस्टम\x20है।','गेम्स,\x20गिफ्ट\x20कार्ड्स\x20या\x20Dota2\x20और\x20TF2\x20आइटम\x20निकालें!','50\x20Ücretsiz\x20Taş','site-list','Минусы','Kayıt\x20Bonusları','Sites\x20de\x20Jogos\x20de\x20Azar','50\x20Gemas\x20gratis','CSFAIL,\x20un\x20sitio\x20web\x20destacado\x20en\x20Skin\x20Gambling,\x20ofrece\x20diversos\x20modos,\x20una\x20interfaz\x20fácil\x20de\x20usar\x20y\x20características\x20de\x20bonificación\x20para\x20las\x20skins\x20de\x20CS:GO,\x20Dota\x202\x20y\x20RUST.','Ücretsiz\x202.00$','clientX','Retira\x20dinero\x20real\x20o\x20criptomonedas!','<li><a\x20href=\x22/topic/skins/cyan-skins\x22>Cyan\x20Color\x20Skins</a></li>','Sorteios\x20Diários\x20e\x20Semanais','WhiteMarket:\x20plataforma\x20P2P\x20para\x20intercambio\x20seguro\x20de\x20skins\x20de\x20CS2\x20con\x20opciones\x20de\x20depósito\x20y\x20participación\x20comunitaria.','Задания','CSGOEmpire\x20एक\x20प्रसिद्ध\x20साइटों\x20में\x20से\x20एक\x20है।\x20जिसमें\x20रूलेट\x20और\x20कॉइनफ्लिप\x20शामिल\x20हैं।\x202016\x20से\x20कार्यरत\x20है।\x20प्राथमिकता\x20में\x20मैच\x20बेटिंग\x20है।','Tradeit,\x20CS2\x20ve\x20diğer\x20oyunlar\x20için\x20skin\x20takasını,\x20alımını\x20ve\x20satımını\x20sağlayan\x20çevrimiçi\x20bir\x20pazardır.\x202017\x27den\x20beri\x20hizmet\x20vermektedir.','BitSkins\x20es\x20un\x20mercado\x20en\x20línea\x20para\x20skins\x20de\x20juegos,\x20especialmente\x20para\x20Counter-Strike\x202,\x20Dota\x202\x20y\x20Team\x20Fortress\x202.\x20Lanzado\x20en\x202015.','1709229kHDxhX','slide','Yayskins,\x20kullanıcı\x20dostu\x20tasarımı,\x20çeşitli\x20oyun\x20modları,\x20canlı\x20sohbet\x20ve\x20kanıtlanabilir\x20adil\x20oyun\x20ile\x20öne\x20çıkan\x20bir\x20CS2\x20Skin\x20Kumar\x20Platformudur.','Gray\x20Color\x20Skins','append','Cassino','DMarket\x20é\x20um\x20mercado\x20confiável\x20e\x20popular\x20para\x20itens\x20do\x20Steam,\x20com\x20uma\x20grande\x20quantidade\x20de\x20itens\x20disponíveis\x20e\x20avaliações\x20positivas\x20no\x20Trustpilot.','2932292IlEaNR','map','Retirar\x20Dinheiro,\x20Skins\x20do\x20CS2\x20ou\x20Rust!','Retira\x20cartas\x20de\x20intercambio\x20de\x20Steam!','Вывод\x20большинства\x20видов\x20крипто!','Primedice\x20é\x20um\x20cassino\x20de\x20dados\x20criptografados\x20online\x20em\x20operação\x20desde\x202013,\x20pioneiro\x20no\x20uso\x20de\x20criptomoedas\x20em\x20jogos\x20de\x20azar.','Primedice\x20एक\x20ऑनलाइन\x20क्रिप्टो\x20डाइस\x20गेम\x20कैसीनो\x20है\x20जो\x202013\x20से\x20संचालन\x20में\x20है।\x20यह\x20जुए\x20के\x20लिए\x20क्रिप्टो\x20का\x20प्रयोग\x20करने\x20वाले\x20पहले\x20प्लेटफ़ॉर्मों\x20में\x20से\x20एक\x20था।','<li><a\x20href=\x22/reviews/csgoselly\x22>CSGOSelly</a></li>','1s,\x2024s\x20ve\x207g\x20çekilişler','Bono\x20de\x20venta\x20del\x20+3%','Ücretsiz\x201.00$','Çekilişlere\x20katılın\x20ve\x20Steam\x20oyunları\x20kazanın.','Ücretsiz\x202$','div.category-selector\x20>\x20ul','Все\x20Сайты','find','label','<li><a\x20href=\x22/reviews/steamlevels\x22>SteamLevels</a></li>','Steam\x20Takas\x20kartları\x20veya\x20oyunları\x20çekin.','/mirrors','CYBERSHOKE\x20es\x20un\x20sitio\x20web\x20que\x20ofrece\x20servidores\x20para\x20jugar\x20CS2.\x20Ofrece\x20varios\x20servidores\x20para\x20que\x20los\x20jugadores\x20elijan.','LOOT.Farm\x20-\x20это\x20онлайн-платформа,\x20которая\x20предоставляет\x20услуги\x20Обмена\x20и\x20Покупки\x20предметов\x20из\x20CS2,\x20Dota\x202,\x20Team\x20Fortress\x202\x20и\x20Rust.','स्टीम\x20से\x20संबंधित\x20साइटें','trim','Comprar\x20objetos','Uma\x20plataforma\x20online\x20que\x20oferece\x20jogos\x20de\x20apostas\x20de\x20skins\x20de\x20CSGO\x20com\x20animações\x20profissionalmente\x20projetadas\x20e\x20suaves.','Her\x2024\x20saatte\x20bir\x20ödül','रोज़ाना\x20बांटने\x20का\x20इंतेज़ाम','Апгрейдер','<li><a\x20href=\x22/reviews/freecash\x22>Freecash</a></li>','#button-vpn-filter','Płatności','mousedown','/reviews/','Retire\x20Skins\x20e\x20Itens\x20do\x20Rust!','width','Web\x20Sitesini\x20Ziyaret\x20Et','Caixa\x20Grátis','केस\x20युद्ध','खेलें,\x20उपहार\x20कार्ड\x20और\x20बहुत-सारा\x20और\x20भी\x20खरीदें।','कॉइनफ्लिप','<li><a\x20href=\x22/reviews/grindbux\x22>Grindbux</a></li>','बहुत-सारे\x20तरीकों\x20से\x20निकालें।','Estabelecido\x20em\x202018,\x20oferece\x20jogos\x20de\x20jackpot,\x20coinflip\x20e\x20roleta\x20com\x20recursos\x20aprimorados,\x20justiça\x20comprovável\x20e\x20animações\x20atrativas.','Ücretsiz\x20200\x20Jeton','Avan.Market\x20é\x20uma\x20plataforma\x20online\x20que\x20oferece\x20aos\x20usuários\x20a\x20oportunidade\x20de\x20vender\x20skins\x20de\x20jogos\x20populares\x20como\x20CS2,\x20Dota\x202,\x20RUST\x20e\x20TF2.','div','<li><a\x20href=\x22/reviews/csgoluck\x22>CSGOLuck</a></li>','class','cloneNode','Bónus\x20de\x20Depósito','btnExit','Халява\x20Rust','Retira\x20Skins\x20CS2,\x20tarjetas\x20regalo\x20o\x20criptomonedas!','Retire\x20BTC,\x20ETH,\x20LTC\x20ou\x20PayPal!','Jackpot','Choque','<li><a\x20href=\x22/reviews/xplay\x22>Xplay</a></li>','500\x20moedas','Lista\x20de\x20sitios\x20de\x20Rust','CSGO500,\x20provavelmente\x20o\x20melhor\x20site\x20de\x20apostas\x20de\x20CS2.\x20Chuvas\x20regulares,\x20brindes\x20e\x20códigos\x20promocionais.\x20Você\x20pode\x20jogar\x20muitos\x20jogos\x20e\x20caça-níqueis.','Para,\x20kripto\x20para\x20veya\x20Skins\x20çekin!','सभी\x20साइटें','Kripto\x20Siteleri\x20Listesi','vk.com','Заработок','.close-box-skins','रोज़ाना\x20बड़े\x20हद\x20तक\x20दिए\x20जाने\x20वाले\x20उपहार','Retirar\x20Dinheiro\x20Real\x20ou\x20Criptomoedas!','add','.instruction-mirrors','Sitios\x20Más\x20Nuevos','select','CSGOPolygon\x20é\x20um\x20site\x20lendário\x20como\x20o\x20CSGODouble,\x20com\x20roleta\x20clássica,\x20mas\x20tem\x20dados,\x20crash,\x20caça-níqueis\x20e\x20até\x20apostas\x20em\x20e-sports!','<li><a\x20href=\x22/reviews/dotaclash\x22>Dotaclash</a></li>','DMarket','ready','Çökme','Notável\x20mercado\x20online,\x20vasta\x20oferta\x20de\x20jogos\x20a\x20cartões-presente,\x20taxas\x20reduzidas,\x20reputação\x20excelente,\x20interface\x20intuitiva.','Retira\x20de\x20muchas-muchas\x20formas.','स्किन\x20खरीदें','DaddySkins\x20-\x20это\x20легальный\x20сайт\x20открытия\x20кейсов\x20в\x20CS2,\x20который\x20работает\x20с\x202017\x20года.\x20На\x20нем\x20так\x20же\x20есть\x20кейс\x20батл\x20и\x20апгрейдер.','Gamdom\x20एक\x20बेहतरीन\x20CS2\x20मैच\x20बेटिंग\x20साइटों\x20में\x20से\x20एक\x20है।\x20आप\x20रूलेट,\x20व्हील,\x20क्रैश,\x20स्लॉट\x20और\x20बहुत\x20कुछ\x20खेल\x20सकते\x20हैं!','previous','<li><a\x20href=\x22/reviews/banditcamp\x22>Banditcamp</a></li>','Cena','Receba\x20até\x205,00$','type','<li><a\x20href=\x22/topic/skins/black-skins\x22>Black\x20Color\x20Skins</a></li>','HowlGG\x20es\x20una\x20plataforma\x20de\x20apuestas\x20de\x20skins\x20de\x20Rust\x20que\x20ofrece\x20una\x20variedad\x20de\x20juegos,\x20incluyendo\x20jackpot,\x20coinflip,\x20slots\x20y\x20juegos\x20de\x20casino\x20en\x20vivo.','hasOwnProperty','Funkcjonalność','Бонус\x20к\x20Депозиту','Teklif\x20Duvarı\x20Siteleri','Este\x20site\x20facilita\x20o\x20aumento\x20de\x20nível\x20no\x20Steam.\x20Venda\x20emojis\x20e\x20fundos\x20de\x20perfil\x20em\x20troca\x20de\x20cartas\x20de\x20troca\x20do\x20Steam\x20para\x20subir\x20de\x20nível\x20rapidamente.','Бонус\x20за\x20Регистрацию','Retira\x20juegos,\x20tarjetas\x20de\x20regalo\x20y\x20mucho\x20más!','SkinBaron\x20é\x20uma\x20plataforma\x20online\x20alemã\x20para\x20compra\x20e\x20venda\x20de\x20skins\x20de\x20CS2\x20com\x20boa\x20reputação.','from','+100%\x20Depozito\x20Bonusu','Sorteos\x20de\x201h,\x2024h\x20y\x207d','changedTouches','1.5\x20डॉलर\x20मुफ्त\x20में','GrindBux\x20é\x20uma\x20plataforma\x20confiável\x20onde\x20você\x20pode\x20ganhar\x20dinheiro\x20completando\x20pesquisas\x20ou\x20jogando\x20jogos\x20para\x20dispositivos\x20móveis\x20e\x20desktop.','Bitcoin,\x20Ethereum\x20veya\x20Litecoin\x20çekin!','SKINFANS\x20-\x20CS2\x20स्किन\x20केस\x20ओपनिंग,\x20सुंदर\x20एनीमेशन,\x20प्रमाणित\x20निष्पक्ष\x20सिस्टम।\x20नियमित\x20गिफ्टवे,\x20नए\x20आनेवालों\x20के\x20लिए\x20बैटल-पास,\x20सुंदर\x20डिज़ाइन।','Выводите\x20скины\x20Rust\x20или\x20криптовалюту!','.nav-bar\x20.category-box-content\x20span,\x20.nav-bar\x20ul\x20.submenu\x20li\x20a','Халява\x20Dota\x202','<li><a\x20href=\x22/topic/skins\x22>Skins\x20By\x20Color</a></li>','es.html','0.10$\x20gratis','RustStake:\x20plataforma\x20de\x20apuestas\x20de\x20skins\x20de\x20Rust.\x20Jackpot,\x20coinflip\x20y\x20más.\x20Fácil\x20depósito\x20y\x20retiro\x20de\x20elementos\x20del\x20juego.','Eşya\x20Satın\x20Al','100\x20Diamantes\x20Grátis','SkinBid,\x20CS2\x20skinleri\x20ve\x20oyun\x20içi\x20ürünler\x20için\x20bir\x20çevrimiçi\x20pazardır\x20ve\x20kullanıcı\x20dostu\x20bir\x20arayüzle\x20alım,\x20satım\x20ve\x20açık\x20artırma\x20özellikleri\x20sunar.','360%\x20जमा\x20बोनस','iTrade.gg\x20es\x20una\x20plataforma\x20confiable\x20para\x20el\x20comercio\x20de\x20skins\x20de\x20Rust.\x20Su\x20diseño\x20intuitivo,\x20bono\x20de\x20registro\x20gratuito\x20y\x20recompensas\x20diarias\x20crean\x20una\x20experiencia\x20de\x20comercio\x20fluida.','DaddySkins,\x202017\x27den\x20beri\x20faaliyet\x20gösteren\x20geçerli\x20bir\x20CSGO\x20estuche\x20açma\x20web\x20sitesidir\x20ve\x20Estuche\x20Açma,\x20Estuche\x20Savaşları\x20ve\x20Upgrader\x20sunar.','Rust\x20Skinleri\x20ve\x20Eşyaları\x20Çekin!','Moedas\x20Diárias','3\x20Caixas\x20Grátis','Retirar\x20Skins\x20do\x20CS2,\x20Criptomoedas\x20ou\x20Dinheiro!','Este\x20site\x20pode\x20ser\x20considerado\x20quase\x20lendário\x20entre\x20os\x20colegas\x20devido\x20aos\x20seus\x20pagamentos\x20elevados\x20e\x20promoções\x20constantes.\x20Inclui\x20bônus\x20diário!','3164136BLvHLZ','/ru','Lis-Skins,\x20özellikle\x20CS2,\x20Rust\x20ve\x20Dota\x202\x20skinleri\x20ve\x20ürünleri\x20için\x20popüler\x20bir\x20Steam\x20pazarıdır.\x20Platform,\x202020\x20yılında\x20kurulmuştur.','algumas\x20moedas\x20grátis','डोटा\x202\x20साइटों\x20की\x20सूची','Hellcase,\x20CS2,\x20Dota\x202\x20ve\x20Rust\x20gibi\x20oyunlar\x20için\x20skin\x20ve\x20eşya\x20dolu\x20sanal\x20estuches\x20satın\x20almanıza\x20olanak\x20sağlayan\x20bir\x20çevrimiçi\x20platformdur.','Выводите\x20Деньги,\x20Скины\x20CS2,\x20TF2\x20или\x20Rust!','BitSkins,\x20CS2,\x20Dota\x202\x20ve\x20Team\x20Fortress\x202\x20gibi\x20oyunlardaki\x20skinleri\x20alıp\x20satabileceğiniz\x20çevrimiçi\x20bir\x20pazardır.\x202015\x20yılında\x20kurulmuştur.','गेम्स,\x20गिफ्ट\x20कार्ड्स\x20या\x20चैरिटी\x20को\x20दान\x20करें!','0.05$\x20Бесплатно','Способы\x20Вывода','<li><a\x20href=\x22/dota\x22>Dota\x202\x20Sites</a></li>','Swap.gg,\x20kullanıcıların\x20CS2,\x20Rust,\x20TF2\x20ve\x20diğer\x20çeşitli\x20oyunlardan\x20sanal\x20ürünleri\x20satın\x20alma,\x20satma\x20ve\x20takas\x20etme\x20imkanı\x20sunan\x20bir\x20web\x20sitesidir.\x202017\x27den\x20beri\x20faaliyet\x20gösteriyor.','केवल\x20मुफ्त\x20आइटम','+1%\x20Depozito\x20Bonusu','Günlük\x20Musluk','Rollbit','CSGO\x20Market\x20एक\x20ऑनलाइन\x20P2P\x20बाजार\x20है\x20जो\x20CS2\x20स्किन\x20खरीद\x20और\x20बेचने\x20के\x20लिए\x20एक\x20सुरक्षित\x20और\x20सुरक्षित\x20प्लेटफ़ॉर्म\x20प्रदान\x20करता\x20है।\x202015\x20में\x20स्थापित\x20किया\x20गया।','Mercados','Retira\x20dinero,\x20Skins\x20de\x20CS2,\x20TF2\x20o\x20Rust!','Recompensas\x20Diárias','Çok\x20çok\x20farklı\x20şekillerde\x20çekim\x20yapın.','Clash.gg,\x20Rulet,\x20Upgrader,\x20Estuches\x20gibi\x20birçok\x20oyunu\x20içeren\x20yeni\x20bir\x20CS2\x20Kumar\x20sitesidir!','5.00$\x20तक\x20प्राप्त\x20करें।','2017\x20से\x20चल\x20रही\x20एक\x20Rust\x20स्किन\x20जुआ\x20साइट।\x20इस\x20प्लेटफ़ॉर्म\x20पर\x20लोकप्रिय\x20खेलों\x20की\x20एक\x20विस्तृत\x20विकल्प\x20सुविधा\x20है,\x20जिसमें\x20हाई-रोलर\x20जैकपॉट\x20और\x20कॉइनफ्लिप\x20खेल\x20शामिल\x20हैं।','मुफ्त\x200.50\x20डॉलर','Skins\x20By\x20Color','Freeward\x20é\x20um\x20site\x20que\x20oferece\x20oportunidades\x20para\x20os\x20usuários\x20ganharem\x20recompensas\x20por\x20meio\x20de\x20tarefas\x20como\x20pesquisas\x20e\x20vídeos.','Estuches\x20diarios','Günlük\x20çekilişler','insertBefore','मैच\x20पर\x20शर्त\x20लगाएं','Levantar\x20dinheiro,\x20skins\x20ou\x20dispositivos!','.category-box','.navigation-reset','Tipos\x20de\x20Bônus','CSGOPOSITIVE\x20es\x20un\x20famoso\x20sitio\x20de\x20apuestas\x20en\x20e-sports\x20con\x20un\x20interesante\x20sistema\x20de\x20cashback,\x20puedes\x20apostar\x20skins\x20o\x20dinero.','CSGOBIG\x20-\x20CS2\x20skinleri\x20için\x20Jackpot,\x20Coinflip,\x20Rulet,\x20Estuches\x20ve\x20Estuche\x20Savaşları\x20gibi\x20oyun\x20modlarına\x20sahip\x20bir\x20kumar\x20sitesi.\x202015\x20yılında\x20açıldı.','250$\x20तक\x20मुफ्त\x20केस','Доверие','.ratingthings\x20.ratingway\x20span,\x20.content\x20button,\x20.boxreview\x20.plusminus\x20.criteria\x20.par\x20h2,\x20.features\x20.featuresbox\x20.typesinside\x20a,\x20.instruction\x20li','CSGOFast\x20-\x20это\x20сайт\x20для\x20азартных\x20игр\x20на\x20скины\x20CSGO,\x20который\x20предлагает\x20широкий\x20выбор\x20эксклюзивных\x20игровых\x20режимов.','Steam\x20Siteleri','Maç\x20Bahisleri','CashoutCSGO,\x20sadece\x20CS2\x20skinleri\x20satmaya\x20adanmış\x20bir\x20platform\x20olup,\x20pratik\x20bir\x20dönüşüm\x20hizmeti\x20sunmaktadır.','CSGO-Skins\x20-\x20это\x20надежная\x20онлайн-платформа,\x20где\x20пользователи\x20могут\x20открывать\x20индивидуальные\x20кейсы\x20CS2\x20и\x20участвовать\x20в\x20раздачах.','Vender\x20objetos','Zarejestruj\x20się\x20za\x20pomocą\x20Steam','WTFSkins\x20é\x20uma\x20plataforma\x20online\x20confiável\x20e\x20popular\x20que\x20oferece\x20jogos\x20únicos,\x20recompensas\x20diárias\x20e\x20um\x20processo\x20de\x20registro\x20simples.','Функционал','2.00$\x20gratis','वापसी\x20करें\x20धन,\x20क्रिप्टो\x20या\x20स्किन!','visible','change','Nadir\x20çekilişler','<li><a\x20href=\x22/reviews/rustbet\x22>Rustbet</a></li>','Сайт\x20Gamdom\x20является\x20одним\x20из\x20лучших\x20сайтов\x20для\x20гемблинга\x20в\x20CS2.\x20Здесь\x20вы\x20можете\x20сыграть\x20в\x20рулетку,\x20краш,\x20слоты\x20и\x20многие\x20другие\x20игры!','SteamGifts\x20es\x20un\x20sitio\x20web\x20legítimo\x20para\x20sorteos\x20de\x20juegos\x20de\x20Steam\x20con\x20una\x20comunidad\x20solidaria\x20y\x20recursos\x20útiles.','Sites\x20with\x20Freebies','<li><a\x20href=\x22/reviews/shadowpay\x22>Shadowpay</a></li>','Freeward,\x20kullanıcıların\x20anketler\x20yaparak\x20ve\x20videolar\x20izleyerek\x20ödüller\x20kazanabilecekleri\x20çeşitli\x20fırsatlar\x20sunan\x20bir\x20GPT\x20sitesidir.','0.02$\x20diarios\x20+\x20Estuche\x20gratis','1$\x20Бесплатно','Tura-Yazı','Sorteos\x20semanales','<li><a\x20href=\x22/reviews/rustcases\x22>Rustcases</a></li>','2$\x20gratis','<li><a\x20href=\x22/topic/skins/pink-skins\x22>Pink\x20Color\x20Skins</a></li>','BitSkins\x20एक\x20ऑनलाइन\x20बाजार\x20है\x20खेल\x20की\x20स्किनों\x20के\x20लिए,\x20विशेष\x20रूप\x20से\x20Counter-Strike\x202,\x20Dota\x202\x20और\x20Team\x20Fortress\x202\x20के\x20लिए।\x202015\x20में\x20लॉन्च\x20किया\x20गया।','Желтые\x20Скины','Заработок\x20на\x20Игре\x20в\x20CS2','Retire\x20Jogos,\x20Cartões\x20Presente\x20e\x20muito\x20mais!','DaddySkins\x20एक\x20मान्य\x20CSGO\x20केस\x20खोलने\x20वेबसाइट\x20है\x20जो\x202017\x20से\x20संचालित\x20हो\x20रही\x20है\x20और\x20इसमें\x20केस\x20खोलने,\x20केस\x20युद्ध\x20और\x20अपग्रेडर\x20शामिल\x20हैं।','CS2\x20Skinleri,\x20Kripto\x20veya\x20Gerçek\x20Para\x20Çekin!','click','<li><a\x20href=\x22/reviews/tradeit\x22>Tradeit</a></li>','Rust\x20साइटों\x20की\x20सूची','Vender\x20Skins','trigger','FlameCases,\x20CS2\x20ve\x20Dota\x202\x20için\x20estuches\x20açma\x20imkanı\x20sağlayan\x20bir\x20çevrimiçi\x20platformdur.\x202017\x27den\x20bu\x20yana\x20hizmet\x20vermektedir.','/ru.html','<li><a\x20href=\x22/reviews/rapidskins\x22>RAPIDSKINS</a></li>','Sorteio\x20de\x2024h','SteamLevelU\x20es\x20una\x20plataforma\x20confiable\x20para\x20mejorar\x20los\x20niveles\x20de\x20tu\x20cuenta\x20de\x20Steam\x20mediante\x20la\x20compra\x20de\x20paquetes\x20de\x20cartas\x20de\x20intercambio.','Sorteos\x20diarios','LOOT.Farm,\x20CS2,\x20Dota\x202,\x20Team\x20Fortress\x202\x20ve\x20Rust\x20gibi\x20popüler\x20oyunlardan\x20sanal\x20eşyaları\x20takas\x20etme\x20imkanı\x20sunan\x20bir\x20çevrimiçi\x20platformdur.','WhiteMarket,\x20CS2\x20skin\x20ticareti\x20için\x20bir\x20P2P\x20platformudur.\x20Güvenli\x20işlemler,\x20çeşitli\x20depozito\x20seçenekleri\x20ve\x20topluluk\x20katılımı\x20sunar.','RustyLoot,\x20Tekerlek,\x20Plinko\x20ve\x20daha\x20fazlasını\x20içeren\x20çeşitli\x20oyunlar\x20sunar.\x20Güvenli\x20ve\x20eğlenceli\x20RustyLoot,\x20şeffaf\x20ve\x20ispat\x20edilebilir\x20adil\x20bir\x20sistem\x20sunar.','CS2\x20Skinleri,\x20Kripto\x20veya\x20PayPal\x20Çekin!','GamerPay\x20एक\x20विश्वसनीय\x20प्लेटफ़ॉर्म\x20है\x20CS2\x20स्किन\x20खरीद\x20और\x20बेचने\x20के\x20लिए,\x20जिसमें\x20एक\x20मुफ्त\x20बिक्री\x20विकल्प,\x20सुरक्षित\x20लेन-देन\x20और\x20उच्च\x20गुणवत्ता\x20वाला\x20स्किन\x20जांच\x20उपकरण\x20है।','Ücretsiz\x200.05$','<li><a\x20href=\x22/topic/skins/orange-skins\x22>Orange\x20Color\x20Skins</a></li>','.slider-banner','Retirar\x20Skins\x20e\x20Itens\x20do\x20CS2!','GamerPay:\x20plataforma\x20confiable\x20de\x20compra\x20y\x20venta\x20de\x20skins\x20de\x20CS2.\x20Venta\x20gratuita,\x20transacciones\x20seguras\x20y\x20alta\x20calidad\x20en\x20la\x20inspección\x20de\x20skins.','SkinCashier\x20é\x20uma\x20plataforma\x20online\x20de\x20venda\x20instantânea\x20de\x20skins\x20de\x20CS2,\x20Rust,\x20Dota\x202\x20e\x20TF2\x20por\x20dinheiro\x20real\x20desde\x202020.','Скины\x20по\x20Цвету','RustCases,\x20çeşitli\x20oyun\x20modlarına,\x20geniş\x20bir\x20kutu\x20seçeneğine\x20ve\x20skin\x20çekme\x20seçeneklerine\x20sahip\x20güvenilir\x20bir\x20Rust\x20kumar\x20sitesidir.\x20RustChance\x20tarafından\x20sahiplenilmiştir.','Distribuição\x20de\x20Jogos','childList','Web\x20sitesi,\x20seçilebilecek\x20makul\x20sayıda\x20anket\x20sağlayıcısı\x20ve\x20teklif\x20duvarı\x20ortağına\x20sahiptir\x20ve\x20kazançları\x20çekmek\x20için\x20birçok\x20seçenek\x20vardır.','DMarket\x20es\x20un\x20mercado\x20confiable\x20y\x20popular\x20para\x20artículos\x20de\x20Steam,\x20con\x20una\x20gran\x20cantidad\x20de\x20artículos\x20disponibles\x20y\x20reseñas\x20positivas\x20en\x20Trustpilot.','InsaneGG\x20-\x20это\x20онлайн-платформа,\x20которая\x20предлагает\x20широкий\x20спектр\x20игр\x20на\x20CS2\x20скины\x20с\x20красивыми\x20и\x20плавными\x20анимациями.','Apenas\x20Brindes','biraz\x20ücretsiz\x20jeton','HowlGG\x20एक\x20Rust\x20स्किन\x20जुआ\x20प्लेटफ़ॉर्म\x20है\x20जो\x20जैकपॉट,\x20कॉइनफ्लिप,\x20स्लॉट्स\x20और\x20लाइव\x20कैसीनो\x20खेल\x20समेत\x20विभिन्न\x20खेल\x20प्रदान\x20करता\x20है।','getElementsByTagName','max','Sorteo\x20de\x2024h','CS2\x20Skins\x20veya\x20gerçek\x20para\x20çekin!','मुफ्त\x205€','disabled','.menu-toggle','<li><a\x20href=\x22/reviews/csgo-market\x22>CSGO-Market</a></li>','Sadece\x20Bedava\x20Hediyeler','<li><a\x20href=\x22/newest\x22>Newest\x20Sites</a></li>','RustCases\x20é\x20um\x20site\x20confiável\x20de\x20apostas\x20em\x20Rust\x20com\x20diversos\x20modos\x20de\x20jogo,\x20uma\x20ampla\x20seleção\x20de\x20cases\x20e\x20opções\x20de\x20retirada\x20de\x20skins.','Sitios\x20para\x20ganar\x20dinero','Sites\x20Mais\x20Recentes','Dota\x202\x20Skinleri,\x20Kripto\x20veya\x20PayPal\x20Çekin!','Comprar\x20Itens','Swap.gg\x20é\x20um\x20site\x20que\x20permite\x20aos\x20usuários\x20comprar,\x20vender\x20e\x20trocar\x20itens\x20virtuais\x20de\x20CS2,\x20Rust,\x20TF2\x20e\x20outros\x20jogos.\x20Trabalhando\x20desde\x202017.','खेलकर\x20कमाने\x20वाली\x20साइटें','Посетить\x20Сайт','/mirrors/','/img/best-gambling-sites-slide.png','Retirar\x20Dinheiro,\x20Criptomoedas\x20ou\x20Skins!','CS2\x20Skinleri,\x20Kripto\x20veya\x20Oyun\x20Anahtarları\x20Çekin!','Rust\x20Siteleri\x20Listesi','DaddySkins\x20es\x20un\x20sitio\x20web\x20de\x20apertura\x20de\x20estuches\x20de\x20CSGO\x20válido\x20desde\x202017\x20que\x20ofrece\x20Apertura\x20de\x20Estuches,\x20Batallas\x20de\x20Estuches\x20y\x20Mejoras.','next','HellStore\x20-\x20это\x20платформа,\x20которая\x20позволяет\x20пользователям\x20участвовать\x20в\x20ставках\x20на\x20скины\x20CSGO\x20через\x20большое\x20количество\x20игровых\x20режимов','Regalos','WhiteMarket\x20é\x20uma\x20plataforma\x20P2P\x20segura\x20para\x20negociação\x20de\x20skins\x20de\x20CS2\x20com\x20opções\x20de\x20depósito\x20e\x20envolvimento\x20da\x20comunidade.','5.00$\x20gratis','महत्वपूर्ण\x20ऑनलाइन\x20बाजार,\x20खेल\x20से\x20उपहार\x20कार्ड\x20तक\x20विशाल\x20विविधता,\x20कम\x20कीमतें,\x20उत्कृष्ट\x20प्रतिष्ठा,\x20सूक्ष्म\x20इंटरफेस,\x20तक\x2098%\x20छूट.','Сайты\x20Rust','+1%\x20जमा\x20बोनस','Retira\x20Skins\x20de\x20CS2\x20y\x20Rust\x20o\x20criptomonedas!','Ставки\x20на\x20Матчи','Farmskins\x20es\x20un\x20sitio\x20web\x20de\x20apertura\x20de\x20cajas\x20de\x20CSGO\x20que\x20opera\x20desde\x202016,\x20ofreciendo\x20una\x20amplia\x20selección\x20de\x20skins\x20para\x20desempaquetar.','RustyLoot\x20ofrece\x20juegos\x20como\x20Ruleta\x20y\x20Plinko,\x20asegurando\x20diversión\x20y\x20seguridad\x20con\x20su\x20sistema\x20transparente\x20y\x20comprobable.','removeChild','startsWith','<li><a\x20href=\x22/reviews/howlgg\x22>Howlgg</a></li>','CrashGG,\x20Rust\x20skin\x20bahislerine\x20odaklanır\x20ve\x20başlıca\x20özelliği\x20olan\x20crash\x20oyun\x20modu\x20dahil\x20olmak\x20üzere\x20çeşitli\x20oyunlar\x20sunar.','Торговая\x20Площадка\x20для\x20скинов\x20и\x20предметов\x20CS2,\x20предлагающая\x20возможность\x20покупки,\x20продажи\x20и\x20аукциона\x20с\x20удобным\x20интерфейсом.','Estuche\x20gratis\x20de\x20hasta\x20250$','Site\x20de\x20apostas\x20de\x20skins\x20do\x20Rust\x20em\x20operação\x20desde\x202017.\x20Oferece\x20variedade\x20de\x20jogos\x20populares,\x20incluindo\x20jackpot\x20e\x20coinflip.','मार्केटप्लेस','CSGORoll\x20एक\x20लोकप्रिय\x20साइटों\x20में\x20से\x20एक\x20है।\x20जिसमें\x20रूलेट,\x20क्रैश\x20और\x20और\x20भी\x20कई\x20खेल\x20शामिल\x20हैं।\x20अब\x20ई-स्पोर्ट्स\x20बेटिंग\x20का\x20परीक्षण\x20हो\x20रहा\x20है।','Bônus\x20de\x20Depósito','Вывод\x20только\x20скинами\x20Rust!','Sorteo\x20diario','SteamLevels\x20es\x20un\x20sitio\x20web\x20fácil\x20de\x20usar\x20que\x20te\x20ayuda\x20a\x20aumentar\x20el\x20nivel\x20de\x20tu\x20cuenta\x20de\x20Steam.\x20Compra\x20paquetes\x20de\x20cartas\x20e\x20intercambia\x20skins\x20de\x20CSGO.','CSGOEmpire,\x20en\x20popüler\x20sitelerden\x20biridir.\x20Rulet\x20ve\x20coinflip\x20içerir.\x202016\x27dan\x20beri\x20faaliyet\x20gösteriyor.\x20Öncelikli\x20olarak\x20maç\x20bahisleri.','addedNodes','<li><a\x20href=\x22/reviews/csgoempire\x22>CSGOEmpire</a></li>','div.siteblock\x20div.box,\x20ol\x20li\x20a,\x20nav\x20.socials','Skins\x20Satın\x20Al\x20veya\x20Sat','CSGOLive','CSGOLive,\x20özel\x20estuches,\x20günlük\x20bonuslar\x20ve\x20İspat\x20Edilebilir\x20Adil\x20sistemle\x20güvenli\x20ve\x20yasal\x20bir\x20CS2\x20estuche\x20açma\x20web\x20sitesidir.','+1%\x20Satış\x20Bonusu','Levantar\x20BTC,\x20LTC,\x20USDT,\x20USDC\x20ou\x20ETH!','location','CSGOSelly\x20é\x20um\x20site\x20que\x20permite\x20aos\x20usuários\x20converter\x20suas\x20skins\x20de\x20CSGO\x20em\x20dinheiro\x20através\x20de\x20vários\x20métodos\x20de\x20pagamento.\x20Foi\x20fundado\x20em\x202021.','alt','Günlük\x20Kasa','Bonus\x20Rejestracyjny','0,50$\x20grátis','क्रिप्टो,\x20गिफ्ट\x20कार्ड\x20या\x20वास्तविक\x20धन\x20को\x20निकालें!','<li><a\x20href=\x22/reviews/daddyskins\x22>Daddyskins</a></li>','Sorteos\x20diarios\x20grandes','Sorteos\x20raros','.nav-bar','DOMContentLoaded','SteamGifts,\x20destekleyici\x20bir\x20topluma\x20ve\x20yardımcı\x20kaynaklara\x20sahip\x20Steam\x20Oyun\x20Hediye\x20Çekilişleri\x20için\x20güvenilir\x20bir\x20web\x20sitesidir.','Коричневые\x20Скины','<li><a\x20href=\x22/topic/skins/blue-skins\x22>Blue\x20Color\x20Skins</a></li>','<li><a\x20href=\x22/reviews/csgo500\x22>CSGO500</a></li>','Retira\x20juegos,\x20tarjetas\x20de\x20regalo\x20o\x20dona\x20a\x20caridad!','Subir\x20de\x20Nível\x20no\x20Steam','2$\x20grátis','div.boxes-holder','Торговые\x20Площадки','मुफ्त\x201.00\x20डॉलर','Tradeit\x20-\x20это\x20онлайн-маркетплейс,\x20который\x20предлагает\x20игрокам\x20возможность\x20торговать,\x20покупать\x20и\x20продавать\x20скины\x20для\x20различных\x20игр.','Retirar\x20Skins\x20do\x20CS2\x20ou\x20Criptomoedas!','Zaufanie','+10%\x20Bónus\x20de\x20Depósito','Saque\x20Skins\x20dota\x202,\x20Criptomoedas\x20ou\x20PayPal!','Depozito\x20gerekiyor','<li><a\x20href=\x22/reviews/skinsly\x22>SKINSLY</a></li>','HypeUp\x20принадлежит\x20тем\x20же\x20операторам,\x20что\x20и\x20два\x20популярных\x20сайта\x20для\x20ставок\x20-\x20CSGORoll\x20и\x20HypeDrop.\x20Сайт\x20предлагает\x20Слоты.','Выводите\x20скины\x20CS2,\x20Криптовалюту\x20или\x20PayPal!','Günlük\x20Paralar','Actualizador','Kumarhane','<div\x20class=\x22selected-lang\x22>','Batalha\x20de\x20Casos','<li><a\x20href=\x22/reviews/bitskins\x22>Bitskins</a></li>','/es','Skins.Cash\x20एक\x20प्रतिष्ठित\x20प्लेटफ़ॉर्म\x20है\x20जिसके\x20पास\x20सकारात्मक\x20समीक्षा,\x20विश्वसनीय\x20ग्राहक\x20सहायता\x20और\x20छह\x20साल\x20से\x20अधिक\x20कार्यकाल\x20है।\x20मूल्य\x20बेहतर\x20नहीं\x20है।','<li><a\x20href=\x22/reviews/clashgg\x22>Clashgg</a></li>','¡Retiro\x20de\x20muchos\x20tipos\x20de\x20criptomonedas!','<li><a\x20href=\x22/reviews/bcgame\x22>Bcgame</a></li>','CSGOFast\x20é\x20um\x20site\x20de\x20apostas\x20de\x20skins\x20do\x20CSGO\x20que\x20oferece\x20uma\x20ampla\x20variedade\x20de\x20modos\x20de\x20jogo\x20exclusivos.\x20Um\x20dos\x20primeiros\x20sites\x20do\x20CSGO.','Clash.gg\x20es\x20un\x20nuevo\x20sitio\x20de\x20apuestas\x20de\x20CS2\x20que\x20incluye\x20muchos\x20juegos\x20como\x20la\x20ruleta,\x20upgrader,\x20estuches\x20¡y\x20muchos\x20más!','/tr','500\x20सिक्के\x20मुफ्त','CSGORoll\x20es\x20uno\x20de\x20los\x20sitios\x20más\x20populares.\x20Incluye\x20ruleta,\x20crash\x20y\x20muchos\x20más.\x20Ahora\x20probando\x20las\x20apuestas\x20en\x20e-sports.','CSGORUN\x20é\x20uma\x20plataforma\x20líder\x20de\x20apostas\x20virtuais\x20com\x20skins,\x20com\x20diversos\x20modos\x20como\x20Crash,\x20Roleta,\x20PVP\x20e\x20apostas\x20em\x20esportes\x20eletrônicos.\x20É\x20fácil\x20de\x20usar.','Retire\x20Crypto,\x20cartões\x20presente\x20ou\x20dinheiro!','LOOT.Farm\x20es\x20una\x20plataforma\x20en\x20línea\x20que\x20ofrece\x20a\x20los\x20usuarios\x20la\x20posibilidad\x20de\x20intercambiar\x20objetos\x20virtuales\x20de\x20juegos\x20populares\x20como\x20CS2,\x20Dota\x202,\x20Team\x20Fortress\x202\x20y\x20Rust.','Dikkat\x20çekici\x20online\x20pazar,\x20oyunlardan\x20hediye\x20kartlarına\x20geniş\x20ürün\x20yelpazesi,\x20düşük\x20fiyatlar,\x20mükemmel\x20itibar,\x20sezgisel\x20arayüz,\x20%98\x27e\x20varan\x20indirimler.','O\x20RustChance\x20está\x20em\x20operação\x20desde\x202017\x20e\x20oferece\x20vários\x20jogos\x20populares,\x20incluindo\x20Jackpot,\x20Roleta,\x20Cara\x20ou\x20Coroa,\x20Queda\x20e\x20Campo\x20Minado.','Купить\x20Игры\x20Steam','Lista\x20de\x20sitios\x20de\x20CS2','Black\x20Color\x20Skins','.topic-centralizer','Farmskins\x20é\x20um\x20conhecido\x20site\x20de\x20abertura\x20de\x20caixas\x20do\x20CSGO,\x20operando\x20desde\x202016,\x20com\x20ampla\x20seleção\x20de\x20skins\x20para\x20os\x20jogadores.','Büyük\x20Günlük\x20Çekilişler','Sites\x20de\x20Crypto','प्रतिदिन\x200.02$\x20+\x20मुफ्त\x20केस','1s\x20çekiliş','Na\x20verdade,\x20o\x20precursor\x20de\x20sites\x20para\x20ganhar\x20dinheiro\x20através\x20do\x20Steam,\x20destaca-se\x20pela\x20enorme\x20seleção\x20de\x20métodos\x20de\x20saque.','Этот\x20сайт\x20был\x20создан\x20для\x20упрощения\x20процесса\x20повышения\x20уровня\x20в\x20Steam.\x20Вы\x20можете\x20продавать\x20предметы\x20Steam\x20за\x20карточки,\x20чтобы\x20повысить\x20уровень.','+3%\x20Satış\x20Bonusu','Rolar\x20Diário','मुफ्त\x2050\x20गेम्स','Comprar\x20Jogos\x20do\x20Steam','Sorteios\x20Raros','Mobil\x20Oyunlar.\x20Bu\x20site,\x20çeşitli\x20mobil\x20oyunlarda\x20para\x20kazanmanızı\x20sağlayan\x20birçok\x20teklif\x20duvarı\x20gibi\x20farklı\x20mobil\x20oyun\x20disiplinlerinde\x20gelir\x20elde\x20etmenizi\x20sağlar.','remove','slider-banner','Lis-Skins\x20एक\x20लोकप्रिय\x20बाजार\x20है\x20स्टीम\x20आइटमों\x20के\x20लिए,\x20विशेष\x20रूप\x20से\x20CS2,\x20Rust\x20और\x20Dota\x202\x20स्किन\x20और\x20आइटम।\x20प्लेटफ़ॉर्म\x20का\x20स्थापना\x202020\x20में\x20की\x20गई\x20थी।','Oyunlar,\x20hediye\x20kartları\x20veya\x20bağış\x20yapın!','Обменять\x20Скины','70\x20Rodadas\x20Grátis','Eşya\x20Satın\x20Al\x20veya\x20Sat','a[href]','addClass','Recompensa\x20a\x20Cada\x2024\x20Horas','0.02$\x20diarios','Skins\x20Takas\x20Et','Rustix\x20-\x20plataforma\x20de\x20apostas\x20para\x20CS2\x20e\x20Rust\x20com\x20jogos\x20originais,\x20jogabilidade\x20justa,\x20bônus\x20e\x20animações\x20impressionantes.\x20Aberto\x20em\x202023.','setAttribute','CSGOEmpire\x20es\x20uno\x20de\x20los\x20sitios\x20más\x20populares.\x20Incluye\x20ruleta\x20y\x20coinflip.\x20Trabajando\x20desde\x202016.\x20Apuesta\x20en\x20partidas\x20con\x20prioridad.','P2P\x20CS2\x20SKINS\x20ile\x20çekin.','Купить\x20Предметы','Битва\x20Кейсов','CSGOLuck\x20es\x20un\x20sitio\x20de\x20apuestas\x20de\x20skins\x20de\x20CSGO\x20con\x20licencia\x20que\x20acepta\x20múltiples\x20métodos\x20de\x20depósito,\x20ofrece\x20varios\x20juegos\x20y\x20un\x20diseño\x20fácil\x20de\x20usar.','12291167RvwkRV','5,00$\x27a\x20kadar\x20alın','<li><a\x20href=\x22/reviews/csgolive\x22>CSGOLive</a></li>','BitSkins\x20P2P\x20एक\x20ऑनलाइन\x20प्लेटफ़ॉर्म\x20है\x20आभासी\x20आइटमों\x20की\x20खरीद\x20और\x20बेच\x20करने\x20के\x20लिए,\x20विशेष\x20रूप\x20से\x20CS2\x20स्किनों\x20पर\x20ध्यान\x20केंद्रित\x20करता\x20है।\x20मूल\x20कंपनी,\x20BitSkins।','Yatırım\x20Bonusları','error','bi-eye-slash','Retira\x20dinero,\x20criptomonedas\x20o\x20Skins!','Metody\x20Depozytu','Rustix:\x20plataforma\x20de\x20apuestas\x20para\x20CS2\x20y\x20Rust\x20con\x20juegos\x20originales,\x20juego\x20justo,\x20bonificaciones\x20e\x20impresionantes\x20animaciones.','Roleta','header','<li><a\x20href=\x22/reviews/roobet\x22>Roobet</a></li>','Открытие\x20Кейсов','RustClash\x20es\x20un\x20nuevo\x20sitio\x20de\x20apuestas\x20de\x20Rust\x20que\x20incluye\x20muchos\x20juegos\x20como\x20ruleta,\x20upgrader,\x20cajas\x20y\x20¡muchos\x20más!','blur','Visitar\x20sitio\x20web\x20o\x20copiar','Bônus\x20de\x20Cadastro','Oyun\x20Çekilişleri','Ücretsiz\x205.00$','Ganhe\x20Jogando\x20CS2','Apertura\x20de\x20estuches','localeCompare','Новые\x20Сайты','वापसी\x20करें\x20CS2\x20स्किन,\x20Dota\x202\x20और\x20H1Z1\x20आइटम!','style','धन,\x20स्किन\x20या\x20उपकरण\x20निकालें!','Bono\x20de\x20venta\x20del\x20+1%','\x20<i\x20class=\x22bi\x20bi-caret-right-fill\x22></i>','CSGORoll\x20-\x20один\x20из\x20самых\x20популярных\x20сайтов,\x20который\x20включает\x20в\x20себя\x20рулетку,\x20крэш\x20и\x20многие\x20другие\x20игры\x20включая\x20ставки\x20на\x20киберспорт.','Известный\x20онлайн-магазин,\x20огромный\x20ассортимент\x20от\x20игр\x20до\x20подарочных\x20карт,\x20отличная\x20репутация,\x20удобный\x20интерфейс,\x20скидки\x20до\x2098%.','querySelectorAll','RustChance\x202017\x20से\x20संचालित\x20हो\x20रहा\x20है\x20और\x20जैकपॉट,\x20व्हील,\x20कॉइनफ्लिप,\x20क्रैश\x20और\x20लैंडमाइंस\x20समेत\x20कई\x20लोकप्रिय\x20खेल\x20प्रदान\x20करता\x20है।','Primedice','A\x20Gamdom\x20é\x20um\x20dos\x20melhores\x20sites\x20de\x20apostas\x20em\x20partidas\x20de\x20CS2.\x20Você\x20pode\x20jogar\x20Roleta,\x20Roda\x20da\x20Sorte,\x20Crash,\x20Caça-níqueis\x20e\x20muitos\x20outros!','GameTame\x20é\x20um\x20site\x20que\x20oferece\x20recompensas\x20por\x20completar\x20atividades\x20e\x20ofertas.\x20É\x20projetado\x20especialmente\x20para\x20jogadores.','CSGOFast\x20एक\x20CSGO\x20स्किन्स\x20जुआ\x20साइट\x20है\x20जो\x20विभिन्न\x20अनन्य\x20खेल\x20मोड्स\x20प्रदान\x20करती\x20है।\x20सबसे\x20पहले\x20CSGO\x20जुआ\x20साइटों\x20में\x20से\x20एक।','CSGOLuck,\x20birden\x20fazla\x20para\x20yatırma\x20yöntemini\x20kabul\x20eden\x20lisanslı\x20bir\x20CSGO\x20skin\x20bahis\x20sitesidir\x20ve\x20çeşitli\x20oyunlar\x20ile\x20kullanıcı\x20dostu\x20bir\x20tasarım\x20sunar.','Monedas\x20diarias','Giros\x20gratis','Retire\x20Bitcoin,\x20Ethereum\x20ou\x20Litecoin!','Swap.gg\x20एक\x20वेबसाइट\x20है\x20जो\x20उपयोगकर्ताओं\x20को\x20CS2,\x20Rust,\x20TF2\x20और\x20अन्य\x20विभिन्न\x20खेलों\x20की\x20आभासी\x20आइटम\x20खरीदने,\x20बेचने\x20और\x20व्यापार\x20करने\x20की\x20अनुमति\x20देती\x20है।\x202017\x20से\x20काम\x20कर\x20रहा\x20है।','controls-button','+5%\x20जमा\x20बोनस','आइटम\x20खरीदें','HellStore\x20एक\x20प्लेटफॉर्म\x20है\x20जो\x20मुद्रा\x20और\x20व्हील\x20जैसे\x20खेल\x20मोड्स\x20के\x20माध्यम\x20से\x20CSGO\x20स्किन\x20बेटिंग\x20में\x20भाग\x20लेने\x20की\x20सुविधा\x20प्रदान\x20करती\x20है।','3\x20ऊर्जा\x20अंक','Günlük\x200.02$','bi-zoom-in\x20bi-zoom-out','वापसी\x20करें\x20CS2,\x20Dota\x202,\x20TF2\x20या\x20Rust\x20आइटम!','setItem','Retirar\x20Dinheiro,\x20Skins\x20do\x20CS2,\x20TF2\x20ou\x20Rust!','bi-eye','Retirar\x20Skins\x20do\x20CS2,\x20Dota\x202\x20e\x20Itens\x20do\x20H1Z1!','Sitios\x20de\x20apuestas','Shuffle.com\x20एक\x20समग्र\x20क्रिप्टो\x20कैसीनो\x20है\x20जिसमें\x20एक\x20अद्वितीय\x20पंजीकरण\x20प्रक्रिया,\x20मूल\x20खेल,\x20वीआईपी\x20कार्यक्रम\x20और\x20भविष्य\x20के\x20विस्तार\x20के\x20लिए\x20योजनाएं\x20हैं।','footer','replace','Выводите\x20скины\x20CS2,\x20криптовалюту\x20или\x20Игры!','LOOT.Farm\x20é\x20uma\x20plataforma\x20online\x20para\x20negociação\x20de\x20itens\x20virtuais\x20de\x20jogos\x20populares\x20como\x20CS2,\x20Dota\x202,\x20TF2\x20e\x20Rust.','Wady','RustClash\x20एक\x20नया\x20Rust\x20जुआ\x20साइट\x20है\x20जिसमें\x20रूलेट,\x20अपग्रेडर,\x20केस\x20और\x20अन्य\x20कई\x20खेल\x20शामिल\x20हैं!','controls','BanditCamp\x20एक\x20Rust\x20स्किन\x20जुआ\x20वेबसाइट\x20है\x20जो\x20व्हील\x20ऑफ़\x20फ़ॉर्च्यून,\x20केस\x20अनबॉक्सिंग\x20और\x20कॉइनफ्लिप\x20जैसे\x20कई\x20Rust\x20थीम\x20के\x20खेल\x20मोड\x20प्रदान\x20करती\x20है।','execCommand','Sorteio\x20Diário','Gamdom,\x20en\x20iyi\x20CS2\x20maç\x20bahis\x20sitelerinden\x20biridir.\x20Rulet,\x20çark,\x20crash,\x20slotlar\x20ve\x20daha\x20birçok\x20oyunu\x20oynayabilirsiniz!','De\x20hecho,\x20el\x20precursor\x20de\x20los\x20sitios\x20para\x20ganar\x20a\x20través\x20de\x20Steam\x20se\x20destaca\x20por\x20su\x20gran\x20selección\x20de\x20métodos\x20de\x20retiro.','scroll','toggle','+1%\x20बेचने\x20का\x20बोनस','Деп/Вывод','Shuffle.com,\x20benzersiz\x20bir\x20kayıt\x20süreci,\x20orijinal\x20oyunlar,\x20bir\x20VIP\x20programı\x20ve\x20gelecekteki\x20genişleme\x20planları\x20olan\x20kapsamlı\x20bir\x20kripto\x20casino\x27dur.','Retira\x20BTC,\x20ETH,\x20USDT\x20o\x20Tron!','iTrade.gg\x20एक\x20विश्वसनीय\x20प्लेटफ़ॉर्म\x20है\x20जहां\x20रस्ट\x20स्किन्स\x20की\x20ट्रेडिंग\x20की\x20जा\x20सकती\x20है।\x20उपयोगकर्ता-मित्रपूर्ण\x20डिज़ाइन,\x20मुफ़्त\x20साइन-अप\x20बोनस\x20और\x20दैनिक\x20पुरस्कार\x20एक\x20सुगठित\x20ट्रेडिंग\x20अनुभव\x20बनाते\x20हैं।','2018\x20में\x20स्थापित\x20किया\x20गया,\x20यह\x20जैकपॉट,\x20कॉइनफ्लिप\x20और\x20रूलेट\x20खेल\x20प्रदान\x20करता\x20है\x20जिनमें\x20उन्नत\x20सुविधाएं,\x20साबित\x20करने\x20योग्य\x20न्यायता\x20और\x20आकर्षक\x20एनिमेशन\x20होते\x20हैं।','+360%\x20Bónus\x20de\x20Depósito','<li><a\x20href=\x22/rust\x22>Rust\x20Sites</a></li>','Sites\x20de\x20CS2','<i\x20class=\x22bi\x20bi-chevron-right\x22></i>','Pazar\x20Yerleri','Kripto,\x20hediye\x20kartları\x20ve\x20gerçek\x20para\x20çekin!','RustMoment\x20é\x20um\x20site\x20de\x20apostas\x20para\x20entusiastas\x20de\x20skins\x20do\x20Rust\x20com\x20seis\x20jogos,\x20bônus\x20e\x20pagamentos\x20em\x20moeda\x20padrão\x20e\x20criptomoeda.','BTC,\x20LTC,\x20USDT,\x20USDC\x20veya\x20ETH\x20çekin!','GrindBux\x20es\x20una\x20plataforma\x20confiable\x20donde\x20puedes\x20ganar\x20dinero\x20completando\x20encuestas\x20o\x20jugando\x20juegos\x20móviles\x20y\x20de\x20escritorio.','3\x20घंटे\x20और\x2024\x20घंटे\x20का\x20उपहार','CSGOLuck\x20एक\x20लाइसेंसधारक\x20CSGO\x20स्किन\x20जुआ\x20साइट\x20है\x20जो\x20कई\x20जमा\x20विधियों\x20को\x20स्वीकार\x20करती\x20है,\x20विभिन्न\x20खेल\x20और\x20एक\x20उपयोगकर्ता-मित्रीपूर्ण\x20डिज़ाइन\x20प्रदान\x20करती\x20है।','tr.html','Retira\x20Skins\x20o\x20items\x20de\x20CS2!','Tradeit\x20é\x20um\x20mercado\x20online\x20de\x20skins\x20de\x20jogos,\x20incluindo\x20CS2,\x20onde\x20os\x20jogadores\x20podem\x20trocar,\x20comprar\x20e\x20vender\x20skins.\x20Trabalhando\x20desde\x202017.','<li><a\x20href=\x22/topic/skins/white-skins\x22>White\x20Color\x20Skins</a></li>','LOOT.Farm\x20एक\x20ऑनलाइन\x20प्लेटफ़ॉर्म\x20है\x20जो\x20उपयोगकर्ताओं\x20को\x20CS2,\x20Dota\x202,\x20Team\x20Fortress\x202\x20और\x20Rust\x20जैसे\x20प्रसिद्ध\x20खेलों\x20से\x20आभासी\x20आइटम\x20व्यापार\x20करने\x20की\x20क्षमता\x20प्रदान\x20करता\x20है।','ऑफ़रवॉल\x20से\x20संबंधित\x20साइटें','50\x20Gemas\x20Grátis','1.00$\x20gratis','CSGOSelly,\x20CSGO\x20skinlerini\x20para\x20olarak\x20çekmek\x20için\x20kullanıcıların\x20çeşitli\x20ödeme\x20yöntemlerini\x20kullanabildiği\x20bir\x20web\x20sitesidir.\x202021\x27de\x20kurulmuştur.','WTFSkins\x20es\x20una\x20plataforma\x20en\x20línea\x20confiable\x20y\x20popular\x20que\x20ofrece\x20juegos\x20únicos,\x20recompensas\x20diarias\x20y\x20un\x20proceso\x20de\x20registro\x20sencillo.','Retire\x20Skins,\x20Cartões\x20Presente\x20ou\x20Criptomoedas!','Продать\x20Скины','.lang-menu','SkinCashier,\x20oyuncuların\x20CS2,\x20Rust,\x20Dota\x202\x20ve\x20TF2\x20skinlerini\x20anında\x20gerçek\x20para\x20karşılığında\x20satmalarını\x20sağlayan\x20bir\x20çevrimiçi\x20platformdur.\x202020\x20yılından\x20beri\x20faaliyet\x20göstermektedir.','Gamehag\x20मालिकों\x20की\x20वेबसाइट।\x20इसमें\x20विभिन्न\x20सर्वेक्षण\x20प्रदाताओं\x20और\x20ऑफरवॉल\x20पार्टनरों\x20की\x20एक\x20अच्छी\x20संख्या\x20होती\x20है\x20जिनमें\x20से\x20चुनने\x20के\x20लिए,\x20कमाई\x20निकालने\x20के\x20लिए\x20कई\x20विकल्प\x20होते\x20हैं।','Hellcase\x20es\x20una\x20plataforma\x20en\x20línea\x20donde\x20puedes\x20comprar\x20estuches\x20virtuales\x20con\x20skins\x20y\x20objetos\x20para\x20juegos\x20como\x20CS2,\x20Dota\x202\x20y\x20Rust.','/hi','Выводите\x20BTC,\x20LTC,\x20USDT,\x20USDC\x20или\x20ETH!','lang-switch','DatDrop\x20es\x20un\x20sitio\x20web\x20especializado\x20en\x20abrir\x20estuches\x20que\x20contienen\x20skins\x20de\x20CS2.\x20Su\x20característica\x20más\x20destacada\x20son\x20las\x20batallas\x20de\x20apertura\x20de\x20estuches.','touches','/ru/mirrors/','<li><a\x20href=\x22/reviews/csgo-skins\x22>CSGO-Skins</a></li>','keys','Типы\x20Халявы','प्रतिदिन\x2024\x20घंटे\x20के\x20बाद\x20इनाम','Farmskins\x20एक\x20प्रसिद्ध\x20CSGO\x20केस\x20खोलने\x20वेबसाइट\x20है\x20जो\x20दैनिक\x20रिवॉर्ड,\x20प्रोमो\x20कोड\x20और\x20केस\x20युद्ध\x20जैसी\x20विशेषताएं\x20प्रदान\x20करती\x20है।','USDT,\x20Skins\x20veya\x20gerçek\x20para\x20çekin!','Günlük\x200.02$\x20+\x20Ücretsiz\x20Kasa','CS.Deals\x20é\x20uma\x20plataforma\x20para\x20comprar,\x20vender\x20e\x20trocar\x20skins\x20de\x20jogos\x20populares\x20como\x20CS2,\x20Dota\x202,\x20Rust\x20e\x20Team\x20Fortress\x202\x20desde\x202016.','प्रतिदिन\x20सिक्के','SteamGifts\x20é\x20um\x20site\x20legítimo\x20para\x20sorteios\x20de\x20jogos\x20do\x20Steam,\x20com\x20uma\x20comunidade\x20solidária\x20e\x20recursos\x20úteis.','+5%\x20Bono\x20de\x20depósito','Выводите\x20скины\x20CS2,\x20криптовалюту\x20или\x20деньги!','block','nextSibling','Поддержка','Salad\x20é\x20um\x20site\x20que\x20permite\x20aos\x20usuários\x20minerar\x20carteiras,\x20comprar\x20cartões-presente\x20e\x20muito\x20mais\x20usando\x20o\x20poder\x20de\x20processamento\x20do\x20computador.','Получите\x20до\x205.00$','bi-zoom-in','360%\x20Bono\x20de\x20depósito','Retira\x20Skins\x20de\x20CS2,\x20criptomonedas\x20o\x20PayPal!','bi-zoom-out','title','Retirar\x20Itens\x20do\x20CS2,\x20Dota\x202,\x20TF2\x20ou\x20Rust!','कुछ\x20मुफ्त\x20सिक्के','<li><a\x20href=\x22/reviews/gamdom\x22>Gamdom</a></li>','0.40$\x20gratis','CSGOBIG:\x20un\x20sitio\x20de\x20apuestas\x20de\x20skins\x20de\x20CS2\x20con\x20modos\x20de\x20juego\x20como\x20Jackpot,\x20Coinflip,\x20Ruleta,\x20Estuches\x20y\x20Batallas\x20de\x20Estuches.\x20Abrió\x20en\x202015.','Roobet\x20es\x20un\x20casino\x20en\x20línea\x20seguro\x20que\x20acepta\x20criptomonedas\x20para\x20jugar.\x20Es\x20conocido\x20por\x20su\x20reputación\x20legítima\x20y\x20seguridad.','ФриСпины','SteamGifts\x20एक\x20वैध\x20वेबसाइट\x20है\x20जो\x20Steam\x20गेम\x20गिवअवे\x20के\x20लिए\x20एक\x20सहायक\x20समुदाय\x20और\x20मददगार\x20संसाधनों\x20के\x20साथ\x20है।','HypeUp\x20दो\x20प्रसिद्ध\x20बेटिंग\x20साइटों,\x20CSGORoll\x20और\x20HypeDrop\x20के\x20समान\x20ऑपरेटर्स\x20के\x20द्वारा\x20स्वामित्व\x20में\x20है।\x20इसमें\x20दो\x20मूलभूत\x20खेल\x20और\x20लाइव\x20गेम\x20के\x20साथ\x20स्लॉट्स\x20प्रदान\x20की\x20जाती\x20है।','Depósito\x20requerido','Плюсы','Выводите\x20скины\x20CS2\x20или\x20PayPal!','1s,\x2024s\x20çekilişler','CSFAIL,\x20Skin\x20Gambling\x20में\x20एक\x20प्रमुख\x20वेबसाइट,\x20CS:GO,\x20Dota\x202,\x20और\x20RUST\x20skins\x20के\x20लिए\x20विविध\x20मोड,\x20उपयोगकर्ता-सहायक\x20इंटरफेस,\x20और\x20बोनस\x20सुविधाएं\x20प्रदान\x20करती\x20है।','Farmskins\x20-\x20это\x20известный\x20сайт\x20для\x20открытия\x20кейсов\x20в\x20CS2,\x20который\x20работает\x20с\x202016\x20года\x20и\x20предлагает\x20широкий\x20выбор\x20скинов\x20для\x20игроков.','वापसी\x20करें\x20BTC,\x20ETH,\x20USDT\x20या\x20Tron!','CSGOLive\x20es\x20un\x20sitio\x20web\x20seguro\x20de\x20apertura\x20de\x20estuches\x20de\x20CS2\x20con\x20estuches\x20personalizados,\x20bonos\x20diarios\x20y\x20un\x20sistema\x20justo.','वेबसाइट\x20पर\x20जाएं','Gamdom\x20Casino\x20ofrece\x20juegos\x20internos,\x20participación\x20social\x20innovadora,\x20sistema\x20justo\x20y\x20buena\x20reputación\x20en\x20juegos\x20en\x20línea.','<li><a\x20href=\x22/reviews/insanegg\x22>Insanegg</a></li>','अपग्रेडर','Ежедневный\x20Бонус','CYBERSHOKE\x20एक\x20वेबसाइट\x20है\x20जो\x20CS2\x20खेलने\x20के\x20लिए\x20सर्वर\x20प्रदान\x20करती\x20है।\x20यह\x20खिलाड़ियों\x20के\x20लिए\x20विभिन्न\x20सर्वर\x20प्रदान\x20करता\x20है\x20जिन्हें\x20चुनने\x20के\x20लिए।','CSGO500,\x20संभवतः\x20सर्वश्रेष्ठ\x20CS2\x20जुआ\x20साइट\x20है।\x20नियमित\x20वर्षवृष्टि,\x20गिफ्टवे\x20और\x20प्रोमोकोड्स।\x20आप\x20कई\x20खेल\x20और\x20स्लॉट्स\x20खेल\x20सकते\x20हैं।','<li><a\x20href=\x22/reviews/wtfskins\x22>Wtfskins</a></li>','parentNode','.box-skins','Tradeit\x20एक\x20ऑनलाइन\x20व्यापार\x20जगत\x20है\x20जो\x20खिलाड़ियों\x20को\x20अवसर\x20प्रदान\x20करता\x20है\x20खेलों\x20की\x20विभिन्न\x20प्रकारों\x20के\x20लिए\x20स्किन\x20व्यापार,\x20खरीद\x20और\x20बेचने\x20का।\x202017\x20से\x20काम\x20कर\x20रहा\x20है।','GCSkins\x20é\x20um\x20aplicativo\x20móvel\x20e\x20um\x20site\x20bem\x20conhecidos\x20que\x20oferecem\x20skins\x20e\x20itens\x20de\x20CSGO\x20como\x20recompensa\x20por\x20completar\x20tarefas\x20online.','CYBERSHOKE,\x20CS2\x20oynamak\x20için\x20sunucular\x20sağlayan\x20bir\x20web\x20sitesidir.\x20Oyuncuların\x20seçebileceği\x20çeşitli\x20sunucular\x20sunar.','एक\x20अद्वितीय\x20साइट\x20जहां\x20आप\x20विभिन्न\x20मोबाइल\x20गेमिंग\x20साइबर\x20विषयों\x20में\x20खेल\x20जीतकर\x20पैसे\x20कमा\x20सकते\x20हैं।\x20इसके\x20अलावा\x20कई\x20ऑफरवॉल्स\x20भी\x20हैं।','</div><ul>','RustChance,\x202017\x20yılından\x20bu\x20yana\x20faaliyet\x20gösteren\x20ve\x20Jackpot,\x20Tekerlek,\x20Coinflip,\x20Crash\x20ve\x20Mayınlar\x20gibi\x20birçok\x20popüler\x20oyun\x20sunan\x20bir\x20platformdur.','Retira\x20Skins\x20de\x20CS2\x20o\x20criptomonedas!','Ücretsiz\x20100\x20Elmas','BC.Game\x20-\x20это\x20онлайн-казино\x20и\x20букмекерская\x20контора,\x20запущенные\x20в\x202017\x20году.\x20Они\x20предлагают\x20более\x208000\x20игр\x20с\x20прозрачной\x20системой.','Skins.Cash\x20é\x20uma\x20plataforma\x20confiável\x20com\x20avaliações\x20positivas\x20e\x20mais\x20de\x20seis\x20anos\x20de\x20operação,\x20mas\x20preços\x20não\x20são\x20os\x20melhores.','Oyunlar,\x20hediye\x20kartları\x20ve\x20çok\x20daha\x20fazlasını\x20çekin!','<li><a\x20href=\x22/reviews/rustmoment\x22>Rustmoment</a></li>','Tipos\x20de\x20bonos','CSGORUN,\x20çeşitli\x20modlara\x20sahip\x20önde\x20gelen\x20sanal\x20deri\x20kumar\x20platformudur;\x20bu\x20modlar\x20arasında\x20Çökme,\x20Rulet,\x20PVP\x20ve\x20e-spor\x20bahisleri\x20bulunmaktadır.\x20Kullanıcı\x20dostudur.','/code-parts/translations/categories.json','CSGOPolygon\x20es\x20un\x20sitio\x20legendario\x20como\x20CSGODouble\x20con\x20ruleta\x20clásica,\x20¡pero\x20también\x20tiene\x20Dados,\x20Crash,\x20Tragamonedas\x20y\x20apuestas\x20en\x20e-sports!','Upgrader','GrindBux\x20é\x20uma\x20plataforma\x20confiável\x20onde\x20você\x20pode\x20ganhar\x20dinheiro\x20ao\x20completar\x20pesquisas\x20ou\x20jogar\x20jogos\x20móveis\x20e\x20de\x20desktop.','last','<li><a\x20href=\x22/reviews/flamecases\x22>Flamecases</a></li>','Sorteios\x20Semanais','5\x20मुफ्त\x20केस','बहुत\x20सारे\x20प्रकार\x20के\x20क्रिप्टोकरेंसीज़\x20का\x20निकास!','src','Сайты\x20CS:GO','Vender\x20skins','Kripto\x20para\x20veya\x20gerçek\x20para\x20çekin!','Recibe\x20hasta\x205,00$','Oyunlar,\x20hediye\x20kartları\x20ve\x20Dota\x202\x20&\x20TF2\x20eşyaları\x20çekin!','CS2\x20Skins\x20veya\x20kripto\x20para\x20çekin!','<i\x20class=\x22bi\x20bi-caret-right-fill\x22></i>','Сайты\x20Steam','some','vvvgamers','आमदनी\x20वाली\x20साइटें','toLowerCase','CS.Deals\x20es\x20una\x20plataforma\x20para\x20comprar,\x20vender\x20y\x20intercambiar\x20skins\x20de\x20juegos\x20populares\x20como\x20CS2,\x20Dota\x202,\x20Rust\x20y\x20Team\x20Fortress\x202.','+5%\x20Bónus\x20de\x20Depósito','RapidSkins\x20एक\x20ऑनलाइन\x20प्लेटफ़ॉर्म\x20है\x20जिसका\x20उद्देश्य\x20गेमर्स\x20को\x20सीएस2\x20और\x20रस्ट\x20के\x20लिए\x20स्किन\x20खरीदने,\x20बेचने\x20और\x20व्यापार\x20करने\x20के\x20लिए\x20एक\x20बाजार\x20प्रदान\x20करना\x20है।','स्टीम\x20गेम्स\x20खरीदें','#back-to-top-btn','Haftalık\x20çekilişler','वापसी\x20करें\x20वास्तविक\x20धन\x20या\x20क्रिप्टो!','CSGOFast\x20es\x20un\x20sitio\x20de\x20apuestas\x20de\x20skins\x20de\x20CSGO\x20con\x20diversos\x20modos\x20de\x20juego\x20exclusivos.\x20Uno\x20de\x20los\x20primeros\x20sitios\x20de\x20apuestas\x20de\x20CSGO.','Salad\x20एक\x20वेबसाइट\x20है\x20जो\x20उपयोगकर्ताओं\x20को\x20अपने\x20कंप्यूटर\x20की\x20प्रोसेसिंग\x20पावर\x20का\x20उपयोग\x20करके\x20वॉलेट\x20खनन\x20और\x20गिफ्टकार्ड्स\x20खरीदने\x20और\x20बहुत\x20कुछ\x20करने\x20का\x20अवसर\x20प्रदान\x20करती\x20है।','HowlGG,\x20jackpot,\x20coinflip,\x20slots\x20ve\x20canlı\x20casino\x20oyunları\x20dahil\x20olmak\x20üzere\x20çeşitli\x20oyunlar\x20sunan\x20bir\x20Rust\x20skin\x20bahis\x20platformudur.','रोज़ाना\x20केस','Безопасная\x20пиринговая\x20площадка,\x20принадлежащая\x20Hellcase.\x20Защита\x20SSL,\x20KYC-проверка,\x20удобный\x20дизайн,\x20достойные\x20цены,\x20доверенный\x20сайт.','vpn','RapidSkins\x20é\x20uma\x20plataforma\x20online\x20criada\x20para\x20fornecer\x20aos\x20jogadores\x20um\x20mercado\x20para\x20comprar,\x20vender\x20e\x20negociar\x20skins\x20para\x20CS2\x20e\x20Rust.','CS.Deals\x20-\x20это\x20платформа,\x20которая\x20позволяет\x20пользователям\x20покупать,\x20продавать\x20и\x20обменивать\x20скины\x20из\x20CS2,\x20Dota\x202,\x20Rust\x20и\x20Team\x20Fortress\x202.','input','0,20$\x20grátis','वापसी\x20करें\x20Steam\x20ट्रेडिंग\x20कार्ड\x20या\x20गेम्स।','CSGOFast,\x20geniş\x20bir\x20özel\x20oyun\x20modu\x20yelpazesi\x20sunan\x20bir\x20CSGO\x20skin\x20kumar\x20sitesidir.\x20En\x20eski\x20CSGO\x20kumar\x20sitelerinden\x20biri.','touchend','Key-Drop\x20é\x20uma\x20plataforma\x20de\x20apostas\x20online\x20renomada\x20que\x20oferece\x20Batalhas\x20de\x20Caixas,\x20Upgrader\x20e\x20caixas\x20de\x20skins\x20personalizadas\x20do\x20CSGO.','getElementById','24s\x20çekiliş','Visitar\x20sitio\x20web','360%\x20Depozito\x20Bonusu','scrollLeft','<li><a\x20href=\x22/reviews/moonmarket\x22>Moon.Market</a></li>'];_0x1a32=function(){return _0x12c918;};return _0x1a32();}(function(_0x16a14a,_0x248252){var _0x176ac9=_0x45ca,_0x4107a1=_0x16a14a();while(!![]){try{var _0x517518=parseInt(_0x176ac9(0x3b7))/0x1+-parseInt(_0x176ac9(0x3be))/0x2+-parseInt(_0x176ac9(0x29a))/0x3+-parseInt(_0x176ac9(0x662))/0x4*(parseInt(_0x176ac9(0x293))/0x5)+parseInt(_0x176ac9(0x43a))/0x6+parseInt(_0x176ac9(0x536))/0x7+parseInt(_0x176ac9(0x65f))/0x8*(-parseInt(_0x176ac9(0x262))/0x9);if(_0x517518===_0x248252)break;else _0x4107a1['push'](_0x4107a1['shift']());}catch(_0x1b0e85){_0x4107a1['push'](_0x4107a1['shift']());}}}(_0x1a32,0xeaeb2));function copyToClipboard(_0x4f5999){var _0x388cc2=_0x45ca,_0x28404c=$('<input>');$(_0x388cc2(0x251))[_0x388cc2(0x3bb)](_0x28404c),_0x28404c['val']($(_0x4f5999)['text']())[_0x388cc2(0x406)](),document[_0x388cc2(0x576)]('copy'),_0x28404c['remove']();}if(!window['location'][_0x774ff4(0x656)][_0x774ff4(0x321)](_0x774ff4(0x3df))&&!window[_0x774ff4(0x4de)][_0x774ff4(0x656)][_0x774ff4(0x321)](_0x774ff4(0x4b6))){function extractLanguageTagFromURL(_0x529583){var _0x12b322=_0x774ff4,_0x4681c8=_0x529583[_0x12b322(0x263)](/^\/([a-z]{2})(\/|\.html)?/i);if(_0x4681c8&&_0x4681c8[_0x12b322(0x2b8)]>0x1)return _0x4681c8[0x1];return'';}var languageTag=extractLanguageTagFromURL(window[_0x774ff4(0x4de)][_0x774ff4(0x656)]);function translateURLs(_0x2c0fd0,_0x6f1626){var _0x5b922e=_0x774ff4,_0x24cac2={'hi':{'CSGORUN\x20is\x20a\x20leading\x20virtual\x20skin\x20gambling\x20platform\x20with\x20diverse\x20modes\x20like\x20Crash,\x20Roulette,\x20PVP,\x20and\x20esports\x20betting.\x20It\x27s\x20user-friendly.':_0x5b922e(0x6ac),'RapidSkins\x20is\x20an\x20online\x20platform\x20created\x20to\x20provide\x20gamers\x20with\x20a\x20marketplace\x20for\x20purchasing,\x20selling,\x20and\x20trading\x20skins\x20for\x20CS2\x20and\x20Rust.':_0x5b922e(0x5fa),'RustMagic\x20-\x20a\x20cutting-edge\x20Rust\x20skin\x20betting\x20site,\x20features\x20five\x20distinct\x20game\x20modes,\x20withdrawal\x20in\x20Rust\x20skins,\x20and\x20a\x20daily\x20free\x20case\x20system\x20for\x20users.':'RustMagic\x20-\x20एक\x20कटिंग-एज\x20रस्ट\x20स्किन\x20बेटिंग\x20साइट,\x20पाँच\x20विभिन्न\x20गेम\x20मोड,\x20रस्ट\x20स्किन्स\x20में\x20निकासी\x20और\x20उपयोगकर्ताओं\x20के\x20लिए\x20एक\x20दैनिक\x20मुफ्त\x20केस\x20प्रणाली\x20के\x20साथ।','SKINFANS\x20-\x20CS2\x20skin\x20case\x20opening\x20,\x20beautiful\x20animations,\x20provably\x20fair\x20system.\x20Regular\x20giveaways,\x20Battle-pass\x20for\x20newcomers,\x20sleek\x20design.':_0x5b922e(0x427),'CSFAIL,\x20a\x20prominent\x20website\x20in\x20Skin\x20Gambling,\x20offers\x20diverse\x20modes,\x20user-friendly\x20interface,\x20and\x20bonus\x20features\x20for\x20CS:GO,\x20Dota\x202,\x20and\x20RUST\x20skins.':_0x5b922e(0x5c6),'Yayskins,\x20a\x20CS2\x20Skin\x20Gambling\x20Platform,\x20excels\x20with\x20user-friendly\x20design,\x20diverse\x20game\x20modes,\x20live\x20chat,\x20and\x20provable\x20fairness.':_0x5b922e(0x258),'CSGO500\x20probably\x20the\x20best\x20CS2\x20Gambling\x20Site.\x20Regular\x20rains,\x20giveaways\x20and\x20promocodes.\x20You\x20can\x20play\x20many\x20games\x20and\x20slots.':_0x5b922e(0x5d0),'CSGO500\x20probably\x20the\x20best\x20CS2\x20and\x20Rust\x20Gambling\x20Site.\x20Regular\x20rains,\x20giveaways\x20and\x20promocodes.\x20You\x20can\x20play\x20many\x20games\x20and\x20slots.':'CSGO500,\x20संभवतः\x20सर्वश्रेष्ठ\x20CS2\x20जुआ\x20साइट\x20है।\x20नियमित\x20वर्षवृष्टि,\x20गिफ्टवे\x20और\x20प्रोमोकोड्स।\x20आप\x20कई\x20खेल\x20और\x20स्लॉट्स\x20खेल\x20सकते\x20हैं।','CSGORoll\x20is\x20one\x20of\x20the\x20most\x20popular\x20sites.\x20Which\x20includes\x20roulette,\x20crash\x20and\x20many\x20more.\x20Now\x20testing\x20e-sports\x20betting.':_0x5b922e(0x4d0),'CSGOEmpire\x20is\x20one\x20of\x20the\x20most\x20popular\x20site.\x20Which\x20includes\x20roulette\x20and\x20coinflip.\x20Working\x20since\x202016.\x20Match\x20Betting\x20in\x20priority.':_0x5b922e(0x3b4),'CSGOPolygon\x20is\x20a\x20legendary\x20site\x20like\x20CSGODouble\x20with\x20classic\x20Roulette,\x20but\x20have\x20Dices,\x20Crash,\x20Slots\x20and\x20even\x20Esports\x20Betting!':'CSGOPolygon\x20CSGODouble\x20की\x20तरह\x20एक\x20पुरानी\x20साइट\x20है\x20जिसमें\x20क्लासिक\x20रूलेट\x20है,\x20लेकिन\x20डाइस,\x20क्रैश,\x20स्लॉट्स\x20और\x20इसी\x20साथ\x20ई-स्पोर्ट्स\x20बेटिंग\x20भी\x20है!','Gamdom\x20Casino\x20offers\x20a\x20variety\x20of\x20in-house\x20games,\x20innovative\x20social\x20engagement,\x20provably\x20fair\x20system,\x20and\x20good\x20reputation\x20in\x20online\x20gaming.':_0x5b922e(0x2e8),'CSGOPOSITIVE\x20is\x20a\x20famous\x20esports\x20betting\x20site\x20with\x20interesting\x20system\x20of\x20cashback,\x20you\x20can\x20bet\x20skins\x20or\x20money.\x20Has\x20various\x20payments\x20options.':'CSGOPOSITIVE\x20एक\x20प्रसिद्ध\x20ई-स्पोर्ट्स\x20बेटिंग\x20साइट\x20है\x20जिसमें\x20दिलचस्प\x20कैशबैक\x20सिस्टम\x20है,\x20आप\x20स्किन\x20या\x20पैसे\x20पर\x20बेट\x20कर\x20सकते\x20ह','Rollbit\x20is\x20a\x20new\x20Casino\x20site\x20which\x20includes\x20Sport\x20Betting\x20and\x20many\x20classic\x20games\x20like\x20roulette.\x20Includes\x20Daily\x20Bonuses\x20!':_0x5b922e(0x2f4),'CSGOLuck\x20is\x20a\x20licensed\x20CSGO\x20skin\x20gambling\x20site\x20that\x20accepts\x20multiple\x20deposit\x20methods,\x20offering\x20various\x20games\x20and\x20a\x20user-friendly\x20design.':_0x5b922e(0x58c),'Duelbits\x20is\x20a\x20safe\x20and\x20licensed\x20online\x20casino\x20with\x20a\x20variety\x20of\x20games,\x20sports\x20betting,\x20esports\x20betting,\x20and\x20instant\x20cryptocurrency\x20transactions.':_0x5b922e(0x239),'InsaneGG\x20is\x20an\x20online\x20platform\x20that\x20offers\x20a\x20range\x20of\x20CSGO\x20skin\x20gambling\x20games\x20with\x20professionally\x20designed\x20and\x20smooth\x20animations.':_0x5b922e(0x325),'Rustix\x20-\x20gambling\x20platform\x20for\x20CS2\x20and\x20Rust\x20with\x20original\x20games,\x20fair\x20gameplay,\x20bonuses,\x20and\x20impressive\x20animations.\x20Opened\x20in\x202023.':'Rustix\x20-\x20CS2\x20और\x20Rust\x20के\x20लिए\x20एक\x20जुआ\x20प्लेटफॉर्म\x20है\x20जिसमें\x20मूलभूत\x20खेल,\x20निष्पक्ष\x20गेमप्ले,\x20बोनस\x20और\x20अद्भुत\x20एनिमेशन\x20शामिल\x20हैं।\x202023\x20में\x20खुला\x20है।','CSGO-Skins\x20is\x20a\x20reputable\x20online\x20platform\x20where\x20users\x20can\x20open\x20custom\x20CS2\x20cases\x20and\x20participate\x20in\x20daily\x20Giveaways.':'CSGO-Skins\x20एक\x20प्रमाणित\x20ऑनलाइन\x20प्लेटफॉर्म\x20है\x20जहां\x20उपयोगकर्ता\x20विशेष\x20रूप\x20से\x20तैयार\x20किए\x20गए\x20CS2\x20केस\x20खोल\x20सकते\x20हैं\x20और\x20दैनिक\x20गिवअवे\x20में\x20भाग\x20ले\x20सकते\x20हैं।','FlameCases\x20is\x20an\x20online\x20platform\x20that\x20permits\x20users\x20to\x20open\x20cases\x20for\x20CS2\x20and\x20Dota\x202.\x20Since\x20its\x20launch\x20in\x202017,\x20the\x20website\x20provides\x20various\x20features.':_0x5b922e(0x3a1),'KNIFEX\x20is\x20a\x20CS2\x20gambling\x20site\x20that\x20offers\x20a\x20range\x20of\x20game\x20modes,\x20including\x20case\x20opening,\x20case\x20battles,\x20coinflip,\x20crash,\x20clash\x20and\x20many\x20more!':_0x5b922e(0x651),'DatDrop\x20is\x20a\x20website\x20that\x20specializes\x20in\x20opening\x20cases\x20that\x20contain\x20skins\x20from\x20CS2.\x20Its\x20most\x20prominent\x20feature\x20is\x20the\x20case-opening\x20battles.':'DatDrop\x20एक\x20वेबसाइट\x20है\x20जो\x20CS2\x20से\x20स्किन्स\x20शामिल\x20करने\x20वाले\x20केस\x20खोलने\x20पर\x20विशेषाधिकार\x20रखती\x20है।\x20इसकी\x20सबसे\x20प्रमुख\x20विशेषता\x20केस\x20खोलने\x20की\x20युद्ध\x20है।','DaddySkins\x20is\x20a\x20valid\x20CSGO\x20case\x20opening\x20website\x20that\x20has\x20been\x20in\x20operation\x20since\x202017,\x20and\x20it\x20offers\x20Case\x20Openings,\x20Case\x20Battles,\x20and\x20Upgrader.':_0x5b922e(0x482),'Clash.gg\x20is\x20a\x20new\x20CS2\x20Gambling\x20site\x20which\x20includes\x20many\x20games\x20like\x20Roulette,\x20Upgrader,\x20Cases\x20and\x20many\x20more\x20!':_0x5b922e(0x2d2),'HellStore\x20is\x20a\x20platform\x20that\x20allows\x20users\x20to\x20participate\x20in\x20CSGO\x20skin\x20betting\x20through\x20game\x20modes\x20like\x20Coinflip,\x20Jackpot,\x20Upgrader,\x20and\x20Wheel.':_0x5b922e(0x563),'Hellcase\x20is\x20an\x20online\x20platform\x20that\x20allows\x20users\x20to\x20purchase\x20virtual\x20cases\x20filled\x20with\x20skins\x20and\x20items\x20for\x20various\x20games\x20such\x20as\x20CS2,\x20Dota\x202,\x20and\x20Rust.':_0x5b922e(0x34a),'CSGOBIG\x20-\x20a\x20gambling\x20site\x20for\x20CS2\x20skins\x20with\x20game\x20modes\x20like\x20Jackpot,\x20Coinflip,\x20Roulette,\x20Cases,\x20and\x20Case\x20Battles.\x20Opened\x20in\x202015.':_0x5b922e(0x376),'CSGOFast\x20is\x20a\x20CSGO\x20skin\x20gambling\x20site\x20that\x20offers\x20a\x20wide\x20range\x20of\x20exclusive\x20game\x20modes.\x20One\x20of\x20the\x20earliest\x20CSGO\x20gambling\x20sites.':_0x5b922e(0x55a),'CSGOLive\x20is\x20a\x20safe\x20and\x20legitimate\x20CS2\x20case\x20opening\x20website\x20with\x20custom\x20cases,\x20daily\x20bonuses,\x20and\x20a\x20Provably\x20Fair\x20system.':_0x5b922e(0x3a4),'WTFSkins\x20is\x20a\x20reliable\x20and\x20popular\x20online\x20platform\x20offering\x20unique\x20games,\x20daily\x20rewards,\x20and\x20a\x20simple\x20registration\x20process.':_0x5b922e(0x2e9),'Key-Drop\x20is\x20a\x20reputable\x20online\x20gambling\x20platform\x20that\x20offers\x20various\x20activities\x20like\x20Case\x20Battles\x20and\x20Upgrader,\x20as\x20well\x20as\x20custom\x20CSGO\x20skin\x20cases.':_0x5b922e(0x361),'Farmskins\x20is\x20a\x20well-known\x20CSGO\x20case\x20opening\x20website\x20that\x20has\x20been\x20operating\x20since\x202016,\x20offering\x20a\x20wide\x20selection\x20of\x20skins\x20for\x20players\x20to\x20unbox.':_0x5b922e(0x5a7),'Bets4.pro\x20is\x20an\x20online\x20platform\x20that\x20offers\x20users\x20the\x20ability\x20to\x20place\x20bets\x20on\x20esports\x20matches,\x20particularly\x20for\x20CS2\x20,\x20Dota\x202,\x20Valorant\x20and\x20many\x20more.':_0x5b922e(0x2ce),'This\x20site\x20can\x20be\x20called\x20almost\x20legendary\x20among\x20peers\x20due\x20to\x20its\x20high\x20payouts\x20and\x20constant\x20promotions.\x20Include\x20daily\x20bonus!':_0x5b922e(0x373),'HowlGG\x20is\x20a\x20Rust\x20skin\x20gambling\x20platform\x20that\x20offers\x20a\x20range\x20of\x20games,\x20including\x20jackpot,\x20coinflip,\x20slots,\x20and\x20live\x20casino\x20games.':_0x5b922e(0x4a3),'BanditCamp\x20is\x20a\x20Rust\x20skin\x20gambling\x20website\x20that\x20provides\x20several\x20Rust-themed\x20game\x20modes\x20like\x20wheel\x20of\x20fortune,\x20case\x20unboxings,\x20and\x20coinflip.':_0x5b922e(0x575),'GCSkins\x20is\x20a\x20well-known\x20mobile\x20app\x20and\x20website\x20that\x20offers\x20CSGO\x20skins\x20and\x20items\x20as\x20rewards\x20for\x20completing\x20online\x20tasks.\x20Available\x20since\x202016.':_0x5b922e(0x38a),'GrindBux\x20is\x20a\x20trusted\x20platform\x20when\x20you\x20can\x20earn\x20some\x20money\x20by\x20completing\x20surveys\x20or\x20play\x20mobile\x20and\x20desktop\x20games.':'GrindBux\x20एक\x20विश्वसनीय\x20प्लेटफ़ॉर्म\x20है\x20जहां\x20आप\x20सर्वेक्षण\x20पूरा\x20करके\x20या\x20मोबाइल\x20और\x20डेस्कटॉप\x20खेलों\x20का\x20खेलकर\x20कुछ\x20पैसे\x20कमा\x20सकते\x20हैं।','Rust\x20skin\x20gambling\x20site\x20that\x20has\x20been\x20around\x20since\x202017.\x20The\x20platform\x20offers\x20a\x20range\x20of\x20popular\x20games,\x20including\x20high-roller\x20jackpot\x20and\x20coinflip\x20games.':_0x5b922e(0x452),'RustBet\x20-\x20Trusted\x20gambling\x20site,\x20Rust\x20skins\x20as\x20rewards.\x20Jackpot,\x20coinflip,\x20and\x20skin\x20upgrader\x20games.\x20Clean\x20reputation,\x20SSL\x20encryption,\x20user-friendly.':'RustBet\x20-\x20विश्वसनीय\x20जुआ\x20साइट,\x20पुरस्कार\x20के\x20रूप\x20में\x20Rust\x20स्किन्स।\x20जैकपॉट,\x20कॉइनफ्लिप\x20और\x20स्किन\x20अपग्रेडर\x20खेल।\x20साफ\x20नाम,\x20SSL\x20एन्क्रिप्शन,\x20उपयोगकर्ता\x20के\x20लिए\x20सुविधाजनक।','RustStake\x20is\x20a\x20Rust\x20skin\x20gambling\x20platform\x20that\x20offers\x20a\x20range\x20of\x20games,\x20including\x20jackpot,\x20and\x20coinflip.\x20Easily\x20enter\x20and\x20withdraw\x20items\x20from\x20games.':_0x5b922e(0x61c),'In\x20fact,\x20the\x20progenitor\x20of\x20sites\x20for\x20earning\x20through\x20Steam,\x20stands\x20out\x20for\x20its\x20huge\x20selection\x20of\x20Withdrawal\x20methods.':_0x5b922e(0x38c),'RustyLoot\x20offers\x20a\x20variety\x20of\x20games,\x20including\x20Wheel,\x20Plinko,\x20and\x20more.\x20With\x20its\x20transparent\x20and\x20provably\x20fair\x20system,\x20RustyLoot\x20is\x20safe\x20and\x20enjoyable.':'RustyLoot\x20व्हील,\x20प्लिंको\x20और\x20अन्य\x20खेल\x20समेत\x20विविधता\x20प्रदान\x20करता\x20है।\x20अपने\x20पारदर्शी\x20और\x20सत्यापन\x20योग्य\x20सिस्टम\x20के\x20साथ,\x20RustyLoot\x20सुरक्षित\x20और\x20मजेदार\x20है।','RustChance\x20has\x20been\x20operating\x20since\x202017\x20and\x20offers\x20several\x20popular\x20games,\x20including\x20Jackpot,\x20Wheel,\x20Coinflip,\x20Crash,\x20and\x20Landmines.':_0x5b922e(0x556),'CrashGG\x20focuses\x20on\x20Rust\x20skin\x20gambling\x20and\x20offers\x20various\x20games,\x20including\x20its\x20primary\x20feature,\x20the\x20crash\x20game\x20mode.\x20Also\x20has\x20Duels,\x20Blackjack\x20and\x20Lottery.':'CrashGG\x20Rust\x20स्किन\x20जुआ\x20पर\x20ध्यान\x20केंद्रित\x20होता\x20है\x20और\x20इसमें\x20इसकी\x20प्रमुख\x20विशेषता,\x20क्रैश\x20गेम\x20मोड\x20समेत\x20विभिन्न\x20खेल\x20प्रदान\x20करता\x20है।\x20यहां\x20द्वंद्व,\x20ब्लैकजैक\x20और\x20लॉटरी\x20भी\x20हैं।','HypeUp\x20is\x20owned\x20by\x20the\x20same\x20operators\x20of\x20two\x20popular\x20betting\x20sites,\x20CSGORoll\x20and\x20HypeDrop.\x20Offers\x20two\x20original\x20games\x20and\x20Slots\x20with\x20Live\x20Games.':_0x5b922e(0x5c1),'The\x20website\x20has\x20a\x20decent\x20number\x20of\x20survey\x20providers\x20and\x20offerwall\x20partners\x20to\x20choose\x20from,\x20and\x20there\x20are\x20plenty\x20of\x20options\x20for\x20withdrawing\x20earnings.':_0x5b922e(0x67e),'SkinSwap\x20is\x20an\x20online\x20platform\x20that\x20allows\x20players\x20to\x20trade\x20and\x20sell\x20skins\x20from\x20popular\x20games\x20such\x20as\x20CS2\x20and\x20Rust.\x20Owned\x20and\x20operated\x20by\x20RustySell.':_0x5b922e(0x367),'CSGOSelly\x20is\x20a\x20website\x20that\x20allows\x20users\x20to\x20cash\x20out\x20their\x20CSGO\x20skins\x20for\x20money\x20via\x20various\x20payment\x20methods.\x20It\x20was\x20founded\x20in\x202021.':_0x5b922e(0x1f9),'Unique\x20site\x20where\x20you\x20can\x20earn\x20money\x20by\x20winning\x20games\x20in\x20various\x20mobile\x20gaming\x20cyber\x20disciplines.\x20Also\x20have\x20many\x20offerwalls.':_0x5b922e(0x5d7),'Mobile\x20Games.\x20Unique\x20site\x20where\x20you\x20can\x20earn\x20money\x20by\x20winning\x20games\x20in\x20various\x20mobile\x20gaming\x20cyber\x20disciplines.\x20Also\x20have\x20many\x20offerwalls.':'एक\x20अद्वितीय\x20साइट\x20जहां\x20आप\x20विभिन्न\x20मोबाइल\x20गेमिंग\x20साइबर\x20विषयों\x20में\x20खेल\x20जीतकर\x20पैसे\x20कमा\x20सकते\x20हैं।\x20इसके\x20अलावा\x20कई\x20ऑफरवॉल्स\x20भी\x20हैं।','RustMoment\x20is\x20a\x20gambling\x20site\x20for\x20Rust\x20skin\x20enthusiasts\x20with\x20six\x20games,\x20bonuses,\x20and\x20a\x20rakeback\x20system.\x20It\x20accepts\x20standard\x20and\x20cryptocurrency\x20payments.':_0x5b922e(0x233),'Freeward\x20is\x20a\x20GPT\x20site\x20that\x20provides\x20various\x20opportunities\x20for\x20users\x20to\x20earn\x20rewards\x20through\x20tasks\x20like\x20surveys\x20and\x20watching\x20videos.':_0x5b922e(0x341),'Roobet\x20is\x20an\x20online\x20casino\x20that\x20allows\x20users\x20to\x20play\x20games\x20using\x20cryptocurrency.\x20The\x20platform\x20has\x20a\x20reputation\x20for\x20being\x20legitimate\x20and\x20safe.':_0x5b922e(0x269),'xplay\x20is\x20a\x20platform\x20that\x20allows\x20CS2\x20players\x20to\x20earn\x20skins\x20just\x20by\x20playing\x20on\x20their\x20servers.\x20The\x20platform\x20offers\x20various\x20servers\x20and\x20daily\x20challenges.':'xplay\x20एक\x20प्लेटफ़ॉर्म\x20है\x20जो\x20CS2\x20खिलाड़ियों\x20को\x20उनके\x20सर्वर\x20पर\x20खेलकर\x20स्किन\x20कमाने\x20की\x20सुविधा\x20प्रदान\x20करता\x20है।\x20प्लेटफ़ॉर्म\x20में\x20विभिन्न\x20सर्वर\x20और\x20दैनिक\x20चुनौतियाँ\x20होती\x20हैं।','Established\x20in\x202018,\x20it\x20offers\x20jackpot,\x20coinflip,\x20and\x20roulette\x20games\x20with\x20enhanced\x20features,\x20provable\x20fairness,\x20and\x20attractive\x20animations.':_0x5b922e(0x581),'GameTame\x20is\x20a\x20GPT\x20site\x20that\x20provides\x20rewards\x20for\x20completing\x20various\x20activities\x20and\x20offers.\x20The\x20platform\x20is\x20specifically\x20designed\x20for\x20gamers.':_0x5b922e(0x272),'Salad\x20is\x20a\x20website\x20that\x20offers\x20users\x20the\x20opportunity\x20to\x20mine\x20wallet\x20and\x20buy\x20giftcards\x20and\x20many\x20more\x20using\x20their\x20computer\x27s\x20processing\x20power.':_0x5b922e(0x600),'Site\x20from\x20Gamehag\x20owners.\x20Has\x20a\x20decent\x20number\x20of\x20survey\x20providers\x20and\x20offerwall\x20partners\x20to\x20choose\x20from,\x20plenty\x20of\x20options\x20for\x20withdrawing\x20earnings.':_0x5b922e(0x59b),'SteamGifts\x20is\x20a\x20legitimate\x20website\x20for\x20Steam\x20Game\x20Giveaways\x20with\x20a\x20supportive\x20community\x20and\x20helpful\x20resources.':_0x5b922e(0x5c0),'RustCases\x20is\x20a\x20trusted\x20Rust\x20gambling\x20site\x20with\x20various\x20game\x20modes,\x20a\x20wide\x20range\x20of\x20cases,\x20and\x20skin\x20withdrawal\x20options.\x20By\x20RustChance\x20owners.':_0x5b922e(0x21b),'RustClash\x20is\x20a\x20new\x20Rust\x20Gambling\x20site\x20which\x20includes\x20many\x20games\x20like\x20Roulette,\x20Upgrader,\x20Cases\x20and\x20many\x20more\x20!':_0x5b922e(0x573),'BC.Game\x20is\x20an\x20online\x20casino\x20and\x20sportsbook\x20that\x20was\x20launched\x20in\x202017,\x20offering\x20over\x208,000\x20games\x20including\x20proprietary\x20and\x20probably\x20fair\x20games.':_0x5b922e(0x61b),'Primedice\x20is\x20an\x20online\x20Crypto\x20Dice\x20Game\x20Casino\x20that\x20has\x20been\x20in\x20operation\x20since\x202013.\x20It\x20was\x20one\x20of\x20the\x20first\x20platforms\x20to\x20use\x20crypto\x20for\x20gambling.':_0x5b922e(0x3c4),'Tradeit\x20is\x20an\x20online\x20marketplace\x20that\x20offers\x20players\x20the\x20opportunity\x20to\x20trade,\x20buy,\x20and\x20sell\x20skins\x20for\x20a\x20variety\x20of\x20games,\x20including\x20CS2.\x20Working\x20since\x202017.':_0x5b922e(0x5d4),'DMarket\x20is\x20a\x20reliable\x20and\x20popular\x20marketplace\x20for\x20Steam\x20items,\x20with\x20a\x20large\x20number\x20of\x20items\x20available\x20and\x20positive\x20reviews\x20on\x20Trustpilot.':_0x5b922e(0x692),'BitSkins\x20is\x20an\x20online\x20marketplace\x20for\x20in-game\x20skins,\x20particularly\x20for\x20Counter-Strike\x202,\x20Dota\x202,\x20and\x20Team\x20Fortress\x202.\x20Launched\x20in\x202015.':_0x5b922e(0x47e),'Secure\x20P2P\x20marketplace\x20owned\x20by\x20Hellcase.\x20SSL-encrypted,\x20KYC\x20verification,\x20friendly\x20design,\x20competitive\x20pricing,\x20trusted\x20trading\x20platform.':_0x5b922e(0x634),'BitSkins\x20P2P\x20is\x20an\x20online\x20platform\x20for\x20buying\x20and\x20selling\x20virtual\x20items,\x20with\x20a\x20focus\x20on\x20CS2\x20skins.\x20The\x20parent\x20company,\x20BitSkins.':_0x5b922e(0x539),'Trusted\x20CS2\x20skin\x20platform\x20with\x20rentals,\x20endorsed\x20by\x20YouTubers.\x20Secure,\x20limited\x20to\x20CS2\x20skins,\x20fees\x20apply,\x20and\x20user\x20reviews\x20indicate\x20room\x20for\x20improve.':'विश्वसनीय\x20CS2\x20स्किन\x20प्लेटफ़ॉर्म\x20जिसमें\x20किराए\x20पर\x20मिलने\x20वाली\x20सेवाएं\x20हैं,\x20YouTubers\x20द्वारा\x20समर्थित।\x20सुरक्षित,\x20सीएस:\x20जीओ\x20स्किनों\x20तक\x20सीमित\x20है,\x20शुल्क\x20लागू\x20होता\x20है,\x20और\x20उपयोगकर्ता\x20समीक्षाएं\x20सुधार\x20के\x20लिए\x20संकेत\x20करती\x20हैं।','GamerPay\x20is\x20a\x20trusted\x20platform\x20for\x20buying\x20and\x20selling\x20CS2\x20skins,\x20with\x20a\x20free\x20selling\x20option,\x20secure\x20transactions,\x20and\x20high-quality\x20skin\x20inspection\x20tool.':_0x5b922e(0x493),'CSGO\x20Market\x20is\x20an\x20online\x20P2P\x20marketplace\x20that\x20provides\x20a\x20safe\x20and\x20secure\x20platform\x20for\x20buying\x20and\x20selling\x20CS2\x20skins.\x20Established\x20in\x202015.':_0x5b922e(0x44b),'Lis-Skins\x20is\x20a\x20popular\x20marketplace\x20for\x20Steam\x20items,\x20especially\x20CS2,\x20Rust\x20and\x20Dota\x202\x20skins\x20and\x20items.\x20The\x20platform\x20was\x20founded\x20in\x202020.':_0x5b922e(0x525),'WhiteMarket\x20is\x20a\x20P2P\x20platform\x20for\x20CS2\x20skin\x20trading.\x20It\x20offers\x20secure\x20trades,\x20various\x20deposit\x20options,\x20and\x20community\x20engagement.':_0x5b922e(0x261),'CS.Deals\x20is\x20a\x20platform\x20that\x20allows\x20users\x20to\x20buy,\x20sell,\x20and\x20trade\x20skins\x20from\x20popular\x20games\x20such\x20as\x20CS2,\x20Dota\x202,\x20Rust,\x20and\x20Team\x20Fortress\x202.\x20Working\x20since\x202016.':'CS.Deals\x20एक\x20प्लेटफ़ॉर्म\x20है\x20जो\x20उपयोगकर्ताओं\x20को\x20CS2,\x20Dota\x202,\x20Rust\x20और\x20Team\x20Fortress\x202\x20जैसे\x20प्रसिद्ध\x20खेलों\x20से\x20स्किन\x20खरीदने,\x20बेचने\x20और\x20व्यापार\x20करने\x20की\x20अनुमति\x20देता\x20है।\x202016\x20से\x20काम\x20कर\x20रहा\x20है।','SkinBid\x20is\x20an\x20online\x20marketplace\x20for\x20CS2\x20skins\x20and\x20in-game\x20items,\x20offering\x20buying,\x20selling,\x20and\x20auctioning\x20features\x20with\x20a\x20user-friendly\x20interface.':'SkinBid\x20एक\x20ऑनलाइन\x20बाजार\x20है\x20CS2\x20स्किन\x20और\x20खेल\x20की\x20आइटमों\x20के\x20लिए,\x20जो\x20एक\x20उपयोगकर्ता-मित्रतापूर्ण\x20इंटरफ़ेस\x20के\x20साथ\x20खरीदने,\x20बेचने\x20और\x20नीलामी\x20की\x20सुविधाएं\x20प्रदान\x20करता\x20है।','Swap.gg\x20is\x20a\x20website\x20that\x20allows\x20users\x20to\x20buy,\x20sell,\x20and\x20trade\x20CS2,\x20Rust\x20,\x20TF2\x20and\x20other\x20virtual\x20items\x20from\x20various\x20games.\x20Working\x20since\x202017.':_0x5b922e(0x55f),'LOOT.Farm\x20is\x20an\x20online\x20platform\x20that\x20offers\x20users\x20the\x20ability\x20to\x20Trade\x20virtual\x20items\x20from\x20popular\x20games\x20like\x20CS2,\x20Dota\x202,\x20Team\x20Fortress\x202,\x20and\x20Rust.':_0x5b922e(0x591),'SkinBaron\x20is\x20an\x20online\x20platform\x20based\x20in\x20Germany\x20that\x20enables\x20users\x20to\x20buy\x20and\x20sell\x20their\x20CS2\x20skins.\x20The\x20platform\x20has\x20gained\x20a\x20good\x20reputation.':_0x5b922e(0x65e),'Gamdom\x20is\x20one\x20of\x20the\x20best\x20CS2\x20Match\x20Betting\x20Sites.\x20You\x20can\x20play\x20Roulette,\x20Wheel,\x20Crash,\x20Slots\x20and\x20many\x20more!':_0x5b922e(0x410),'Avan.Market\x20is\x20an\x20online\x20platform\x20that\x20offers\x20users\x20the\x20opportunity\x20to\x20sell\x20gaming\x20skins\x20from\x20popular\x20games\x20like\x20CS2,\x20Dota\x202,\x20RUST,\x20and\x20TF2.':'Avan.Market\x20एक\x20ऑनलाइन\x20प्लेटफ़ॉर्म\x20है\x20जो\x20उपयोगकर्ताओं\x20को\x20CS2,\x20Dota\x202,\x20RUST\x20और\x20TF2\x20जैसे\x20प्रसिद्ध\x20खेलों\x20की\x20गेमिंग\x20स्किन\x20बेचने\x20का\x20अवसर\x20प्रदान\x20करता\x20है।','Skins.Cash\x20is\x20a\x20reputable\x20platform\x20with\x20positive\x20reviews,\x20reliable\x20customer\x20support,\x20and\x20over\x20six\x20years\x20of\x20operation.\x20Pricing\x20not\x20the\x20best\x20one.':_0x5b922e(0x504),'SkinCashier\x20is\x20an\x20online\x20platform\x20that\x20allows\x20players\x20to\x20Instant\x20Sell\x20their\x20CS2,\x20Rust,\x20Dota\x202,\x20and\x20TF2\x20skins\x20for\x20real\x20money.\x20Operating\x20since\x202020.':'SkinCashier\x20एक\x20ऑनलाइन\x20प्लेटफ़ॉर्म\x20है\x20जो\x20खिलाड़ियों\x20को\x20अपने\x20CS2,\x20Rust,\x20Dota\x202\x20और\x20TF2\x20स्किन\x20को\x20तत्काल\x20बेचने\x20की\x20अनुमति\x20देता\x20है\x20और\x20वास्तविक\x20धन\x20के\x20लिए।\x202020\x20से\x20संचालित\x20हो\x20रहा\x20है।','CYBERSHOKE\x20is\x20a\x20website\x20that\x20provides\x20servers\x20for\x20playing\x20CS2.\x20It\x20offers\x20various\x20servers\x20for\x20players\x20to\x20choose.':_0x5b922e(0x5cf),'This\x20site\x20was\x20created\x20for\x20easy\x20leveling\x20up\x20Steam,\x20you\x20can\x20sell\x20emojis\x20and\x20profile\x20backgrounds\x20for\x20Steam\x20Trading\x20Cards\x20to\x20fast\x20level\x20up.':_0x5b922e(0x241),'SteamLevelU\x20is\x20a\x20legitimate\x20platform\x20to\x20buy\x20Steam\x20trading\x20card\x20packs\x20for\x20enhancing\x20Steam\x20account\x20levels,\x20associated\x20with\x20SH\x20Level\x20Up.':_0x5b922e(0x36f),'SteamLevels\x20is\x20a\x20user-friendly\x20website\x20that\x20helps\x20increase\x20your\x20Steam\x20account\x20level\x20by\x20purchasing\x20card\x20packs\x20and\x20accepting\x20CSGO\x20skins.':_0x5b922e(0x382),'iTrade.gg\x20is\x20a\x20Trusted\x20platform\x20for\x20trading\x20rust\x20skins.\x20User-friendly\x20design,\x20free\x20sign-up\x20bonus,\x20and\x20daily\x20rewards\x20create\x20a\x20seamless\x20trading\x20experience.':_0x5b922e(0x580),'Shuffle.com\x20is\x20a\x20comprehensive\x20crypto\x20casino\x20with\x20a\x20unique\x20registration\x20process,\x20original\x20games,\x20a\x20VIP\x20program,\x20and\x20plans\x20for\x20future\x20expansion.':_0x5b922e(0x56d),'CashoutCSGO\x20is\x20a\x20platform\x20solely\x20dedicated\x20to\x20selling\x20CS2\x20skins\x20for\x20crypto\x20or\x20paypal,\x20offering\x20a\x20convenient\x20conversion\x20service.':'CashoutCSGO\x20एक\x20प्लेटफ़ॉर्म\x20है\x20जो\x20केवल\x20सीएस:गो\x20स्किन्स\x20बेचने\x20के\x20लिए\x20समर्पित\x20है\x20और\x20सुविधाजनक\x20परिवर्तन\x20सेवा\x20प्रदान\x20करती\x20है।','Notable\x20online\x20marketplace,\x20vast\x20offerings\x20from\x20games\x20to\x20gift\x20cards,\x20reduced\x20rates,\x20stellar\x20reputation,\x20intuitive\x20interface,\x20up\x20to\x2098%\x20discounts.':_0x5b922e(0x4c1),'Withdraw\x20BTC,\x20ETH,\x20LTC\x20or\x20PayPal!':_0x5b922e(0x2ab),'Withdraw\x20Money,\x20Skins\x20or\x20Devices!':_0x5b922e(0x550),'Withdraw\x20BTC,\x20LTC,\x20ETH\x20and\x20many\x20else!':_0x5b922e(0x288),'Withdrawal\x20of\x20many\x20types\x20of\x20cryptocurrencies\x20!':_0x5b922e(0x5ea),'Withdraw\x20CS2\x20Skins,\x20Crypto\x20or\x20Real\x20Money!':'वापसी\x20करें\x20CS2\x20स्किन,\x20क्रिप्टो\x20या\x20वास्तविक\x20धन!','Withdraw\x20CS2,\x20Dota\x202,\x20TF2\x20or\x20Rust\x20Items!':_0x5b922e(0x567),'Withdraw\x20CS2\x20Skins,\x20Crypto\x20or\x20Game\x20Keys!':'वापसी\x20करें\x20CS2\x20स्किन,\x20क्रिप्टो\x20या\x20गेम\x20कुंजी!','Withdraw\x20CS2\x20Skins,\x20Crypto\x20or\x20PayPal!':_0x5b922e(0x615),'Withdraw\x20Money,\x20CS2,\x20TF2\x20or\x20Rust\x20Skins!':_0x5b922e(0x1fb),'Withdraw\x20CS2\x20Skins,\x20Dota\x202\x20and\x20H1Z1\x20Items!':_0x5b922e(0x54e),'Withdraw\x20CS2,\x20Rust\x20Skins\x20and\x20Dota\x202\x20Items!':_0x5b922e(0x628),'Withdraw\x20CS2\x20Skins,\x20Gift\x20Cards\x20or\x20Crypto!':'CS2\x20स्किन,\x20गिफ्ट\x20कार्ड\x20या\x20क्रिप्टो\x20को\x20निकालें!','Withdraw\x20Rust\x20Skins\x20or\x20Crypto!':'Rust\x20स्किन\x20या\x20क्रिप्टो\x20को\x20निकालें!','Withdraw\x20Rust\x20Skins\x20and\x20Items!':_0x5b922e(0x2a1),'Withdraw\x20CS2\x20And\x20Rust\x20Skins\x20or\x20Crypto!':'वापसी\x20करें\x20CS2\x20और\x20Rust\x20स्किन\x20या\x20क्रिप्टो!','Withdraw\x20CS2\x20Skins\x20or\x20real\x20Money!':'वापसी\x20करें\x20CS2\x20स्किन\x20या\x20वास्तविक\x20धन!','Withdraw\x20Steam\x20Trading\x20cards\x20or\x20Games.':_0x5b922e(0x609),'1h,\x2024h\x20and\x207d\x20Giveaways':_0x5b922e(0x362),'24h\x20Giveaway':_0x5b922e(0x2d4),'3h\x20and\x2024h\x20Giveaway':_0x5b922e(0x58b),'Buy\x20Games,\x20Gift\x20Cards\x20and\x20many-many\x20more.':_0x5b922e(0x3e5),'Daily\x20and\x20Weekly\x20Giveaways':_0x5b922e(0x2eb),'1h\x20Giveaway':_0x5b922e(0x333),'1h,\x2024h\x20Giveaways':_0x5b922e(0x2b0),'Rare\x20Giveaways':_0x5b922e(0x24b),'Weekly\x20Giveaways':'साप्ताहिक\x20उपहार','Daily\x20Giveaways':'प्रतिदिनिक\x20उपहार','Deposit\x20Required':'जमा\x20आवश्यक','Withdraw\x20USDT,\x20Skins\x20or\x20Real\x20Money!':_0x5b922e(0x6a7),'Withdraw\x20Crypto,\x20gift\x20cards\x20or\x20real\x20money!':_0x5b922e(0x4e4),'Withdraw\x20Money,\x20CS2\x20or\x20Rust\x20Skins!':'वापसी\x20करें\x20धन,\x20CS2\x20या\x20Rust\x20स्किन!','Withdraw\x20Money,\x20Crypto\x20or\x20Skins!':_0x5b922e(0x46d),'Withdraw\x20Rust\x20Skins,\x20Crypto\x20or\x20PayPal!':_0x5b922e(0x2e1),'Withdraw\x20Dota\x202\x20Items,\x20Crypto\x20or\x20PayPal!':'Dota\x202\x20स्किन,\x20क्रिप्टो\x20या\x20PayPal\x20निकालें!','Withdraw\x20CS2\x20Skins\x20or\x20Crypto!':_0x5b922e(0x340),'Withdraw\x20Money,\x20Crypto\x20or\x20PayPal!':'वापसी\x20करें\x20धन,\x20क्रिप्टो\x20या\x20PayPal!','WITHDRAW\x20WITH\x20P2P\x20CS2\x20SKINS.':_0x5b922e(0x674),'Withdraw\x20Real\x20Money\x20or\x20Crypto!':_0x5b922e(0x5fe),'Withdraw\x20BTC,\x20ETH,\x20USDT\x20or\x20Tron!':_0x5b922e(0x5c8),'Withdraw\x20CS2\x20Skins\x20or\x20PayPal!':_0x5b922e(0x617),'Withdraw\x20CS2\x20Skins\x20and\x20Items!':'वापसी\x20करें\x20CS2\x20स्किन\x20और\x20आइटम!','Withdraw\x20Steam\x20Trading\x20cards.':'Steam\x20ट्रेडिंग\x20कार्ड\x20वापसी\x20करें।','Withdraw\x20with\x20many-many\x20ways.':_0x5b922e(0x3e8),'Withdraw\x20Bitcoin,\x20Ethereum\x20or\x20Litecoin!':'बिटकॉइन,\x20एथेरियम\x20या\x20लाइटकॉइन\x20को\x20निकालें!','Withdraw\x20Games,\x20GiftCards\x20and\x20many\x20more!':_0x5b922e(0x27b),'Withdraw\x20Crypto\x20or\x20Real\x20Money!':_0x5b922e(0x20b),'Withdraw\x20Crypto\x20and\x20Gift\x20Cards!':_0x5b922e(0x635),'Withdraw\x20BTC,\x20LTC,\x20USDT,\x20USDC\x20or\x20ETH!':_0x5b922e(0x323),'Withdraw\x20CS2\x20Skins\x20or\x20Items!':_0x5b922e(0x312),'Withdraw\x20Games,\x20GiftCards\x20or\x20Dota2\x20&\x20TF2\x20Items!':_0x5b922e(0x3a5),'Withdraw\x20Games,\x20GiftCards\x20or\x20Donate\x20to\x20Charity!':_0x5b922e(0x442),'Participate\x20in\x20Giveaways\x20and\x20win\x20Steam\x20Games.':'गिवअवे\x20में\x20भाग\x20लें\x20और\x20स्टीम\x20गेम\x20जीतें।','+360%\x20Deposit\x20Bonus':_0x5b922e(0x2fb),'+100%\x20Deposit\x20Bonus':'+100%\x20जमा\x20बोनस','+10%\x20Deposit\x20Bonus':_0x5b922e(0x271),'+5%\x20Deposit\x20Bonus':_0x5b922e(0x561),'+1%\x20Deposit\x20Bonus':_0x5b922e(0x4c3),'70\x20Free\x20Spins':'70\x20मुफ्त\x20स्पिन','Every\x2024h\x20Reward':_0x5b922e(0x5a6),'Daily\x20Case':_0x5b922e(0x35e),'Daily\x20Faucet':'प्रतिदिन\x20फॉसेट','Daily\x20Roll':_0x5b922e(0x217),'Daily\x20Coins':_0x5b922e(0x5ab),'Faucet\x20and\x20Giveaways':_0x5b922e(0x266),'Daily\x200.02$':'प्रतिदिन\x200.02$','Daily\x200.02$\x20+\x20Free\x20Case':_0x5b922e(0x519),'360%\x20Deposit\x20Bonus':_0x5b922e(0x432),'Deposit\x20Bonus':'जमा\x20बोनस','Visit\x20WebSite':_0x5b922e(0x5ca),'Visit\x20WebSite\x20or\x20Copy':_0x5b922e(0x5ca),'100%\x20deposit\x20bonus':_0x5b922e(0x38b),'+1%\x20Sell\x20Bonus':_0x5b922e(0x57c),'+3%\x20Sell\x20Bonus':_0x5b922e(0x36a),'5%\x20deposit\x20bonus':_0x5b922e(0x621),'5\x20Free\x20Cases':_0x5b922e(0x5e9),'Free\x2050\x20Gems':_0x5b922e(0x51f),'3\x20Free\x20Cases':'3\x20मुफ्त\x20केस','2.00$\x20For\x20Free':_0x5b922e(0x424),'5.00$\x20For\x20Free':'5\x20डॉलर\x20मुफ्त\x20में','Free\x205€':_0x5b922e(0x4a8),'Free\x201.00$':_0x5b922e(0x4f3),'Free\x200.90$':'मुफ्त\x200.90\x20डॉलर','Free\x200.50$':_0x5b922e(0x453),'Free\x200.40$':_0x5b922e(0x659),'Free\x200.30$':_0x5b922e(0x29c),'Free\x200.25$':'मुफ्त\x200.25\x20डॉलर','Free\x200.20$':_0x5b922e(0x280),'Free\x200.15$':_0x5b922e(0x285),'Free\x200.10$':_0x5b922e(0x35c),'Free\x200.05$':'मुफ्त\x200.05\x20डॉलर','Receive\x20up\x20to\x205.00$':_0x5b922e(0x451),'Free\x20Case':_0x5b922e(0x2df),'Free\x201$':'मुफ्त\x201\x20डॉलर','Big\x20Daily\x20Giveaways':_0x5b922e(0x401),'Free\x20Case\x20up\x20to\x20250$':_0x5b922e(0x460),'Daily\x20Giveaway':_0x5b922e(0x3d9),'Free\x20100\x20Diamonds':_0x5b922e(0x2bc),'500\x20coins':_0x5b922e(0x50b),'Daily\x20Cases':_0x5b922e(0x602),'3\x20Energy\x20Points':_0x5b922e(0x564),'Free\x20200\x20Coins':'200\x20सिक्के\x20मुफ्त','some\x20free\x20coins':_0x5b922e(0x5ba),'Free\x202$':_0x5b922e(0x297),'Free\x20spins':'मुफ्त\x20स्पिन','Offerwall':_0x5b922e(0x1eb),'x2\x20Mining\x20Rate':_0x5b922e(0x20c),'Games\x20Giveaways':'गेम्स\x20गिवअवे'},'tr':{'CSGORUN\x20is\x20a\x20leading\x20virtual\x20skin\x20gambling\x20platform\x20with\x20diverse\x20modes\x20like\x20Crash,\x20Roulette,\x20PVP,\x20and\x20esports\x20betting.\x20It\x27s\x20user-friendly.':_0x5b922e(0x5e1),'RapidSkins\x20is\x20an\x20online\x20platform\x20created\x20to\x20provide\x20gamers\x20with\x20a\x20marketplace\x20for\x20purchasing,\x20selling,\x20and\x20trading\x20skins\x20for\x20CS2\x20and\x20Rust.':_0x5b922e(0x355),'RustMagic\x20-\x20a\x20cutting-edge\x20Rust\x20skin\x20betting\x20site,\x20features\x20five\x20distinct\x20game\x20modes,\x20withdrawal\x20in\x20Rust\x20skins,\x20and\x20a\x20daily\x20free\x20case\x20system\x20for\x20users.':'RustMagic\x20-\x20öncü\x20bir\x20Rust\x20deri\x20bahis\x20sitesi,\x20beş\x20farklı\x20oyun\x20modu,\x20Rust\x20derilerinde\x20çekilme\x20ve\x20kullanıcılar\x20için\x20günlük\x20ücretsiz\x20bir\x20kasa\x20sistemi\x20sunmaktadır.','SKINFANS\x20-\x20CS2\x20skin\x20case\x20opening\x20,\x20beautiful\x20animations,\x20provably\x20fair\x20system.\x20Regular\x20giveaways,\x20Battle-pass\x20for\x20newcomers,\x20sleek\x20design.':'SKINFANS\x20-\x20CS2\x20cilt\x20kılıfı\x20açma,\x20güzel\x20animasyonlar,\x20ispatlanabilir\x20adil\x20sistem.\x20Düzenli\x20ödüller,\x20yeni\x20gelenler\x20için\x20Savaş\x20Pası,\x20şık\x20tasarım.','CSFAIL,\x20a\x20prominent\x20website\x20in\x20Skin\x20Gambling,\x20offers\x20diverse\x20modes,\x20user-friendly\x20interface,\x20and\x20bonus\x20features\x20for\x20CS:GO,\x20Dota\x202,\x20and\x20RUST\x20skins.':_0x5b922e(0x227),'Yayskins,\x20a\x20CS2\x20Skin\x20Gambling\x20Platform,\x20excels\x20with\x20user-friendly\x20design,\x20diverse\x20game\x20modes,\x20live\x20chat,\x20and\x20provable\x20fairness.':_0x5b922e(0x3b9),'CSGO500\x20probably\x20the\x20best\x20CS2\x20Gambling\x20Site.\x20Regular\x20rains,\x20giveaways\x20and\x20promocodes.\x20You\x20can\x20play\x20many\x20games\x20and\x20slots.':_0x5b922e(0x2ca),'CSGO500\x20probably\x20the\x20best\x20CS2\x20and\x20Rust\x20Gambling\x20Site.\x20Regular\x20rains,\x20giveaways\x20and\x20promocodes.\x20You\x20can\x20play\x20many\x20games\x20and\x20slots.':'CSGO500,\x20en\x20iyi\x20CS2\x20ve\x20Rust\x20Kumar\x20Sitesi.\x20Düzenli\x20yağmurlar,\x20hediyeler\x20ve\x20promosyon\x20kodları.\x20Birçok\x20oyun\x20ve\x20slot\x20oynayabilirsiniz.','CSGORoll\x20is\x20one\x20of\x20the\x20most\x20popular\x20sites.\x20Which\x20includes\x20roulette,\x20crash\x20and\x20many\x20more.\x20Now\x20testing\x20e-sports\x20betting.':'CSGORoll,\x20en\x20popüler\x20sitelerden\x20biridir.\x20Rulet,\x20crash\x20ve\x20çok\x20daha\x20fazlasını\x20içerir.\x20Şu\x20anda\x20e-spor\x20bahisleri\x20test\x20ediliyor.','CSGOEmpire\x20is\x20one\x20of\x20the\x20most\x20popular\x20site.\x20Which\x20includes\x20roulette\x20and\x20coinflip.\x20Working\x20since\x202016.\x20Match\x20Betting\x20in\x20priority.':_0x5b922e(0x4d5),'CSGOPolygon\x20is\x20a\x20legendary\x20site\x20like\x20CSGODouble\x20with\x20classic\x20Roulette,\x20but\x20have\x20Dices,\x20Crash,\x20Slots\x20and\x20even\x20Esports\x20Betting!':'CSGOPolygon,\x20klasik\x20Rulet\x20gibi\x20efsanevi\x20bir\x20sitedir,\x20ancak\x20Zarlar,\x20Crash,\x20Slotlar\x20ve\x20hatta\x20e-spor\x20bahisleri\x20de\x20bulunur!','Gamdom\x20Casino\x20offers\x20a\x20variety\x20of\x20in-house\x20games,\x20innovative\x20social\x20engagement,\x20provably\x20fair\x20system,\x20and\x20good\x20reputation\x20in\x20online\x20gaming.':'Gamdom\x20Casino,\x20birçok\x20içerideki\x20oyun,\x20yenilikçi\x20sosyal\x20etkileşim,\x20ispat\x20edilebilir\x20adil\x20sistem\x20ve\x20çevrimiçi\x20oyunlarda\x20iyi\x20bir\x20üne\x20sahiptir.','CSGOPOSITIVE\x20is\x20a\x20famous\x20esports\x20betting\x20site\x20with\x20interesting\x20system\x20of\x20cashback,\x20you\x20can\x20bet\x20skins\x20or\x20money.\x20Has\x20various\x20payments\x20options.':_0x5b922e(0x6b9),'Rollbit\x20is\x20a\x20new\x20Casino\x20site\x20which\x20includes\x20Sport\x20Betting\x20and\x20many\x20classic\x20games\x20like\x20roulette.\x20Includes\x20Daily\x20Bonuses\x20!':_0x5b922e(0x204),'CSGOLuck\x20is\x20a\x20licensed\x20CSGO\x20skin\x20gambling\x20site\x20that\x20accepts\x20multiple\x20deposit\x20methods,\x20offering\x20various\x20games\x20and\x20a\x20user-friendly\x20design.':_0x5b922e(0x55b),'Duelbits\x20is\x20a\x20safe\x20and\x20licensed\x20online\x20casino\x20with\x20a\x20variety\x20of\x20games,\x20sports\x20betting,\x20esports\x20betting,\x20and\x20instant\x20cryptocurrency\x20transactions.':'Duelbits,\x20çeşitli\x20oyunlar,\x20spor\x20bahisleri,\x20e-spor\x20bahisleri\x20ve\x20anında\x20kripto\x20para\x20işlemleri\x20sunan\x20güvenli\x20ve\x20lisanslı\x20bir\x20çevrimiçi\x20kumarhanedir.','InsaneGG\x20is\x20an\x20online\x20platform\x20that\x20offers\x20a\x20range\x20of\x20CSGO\x20skin\x20gambling\x20games\x20with\x20professionally\x20designed\x20and\x20smooth\x20animations.':_0x5b922e(0x2b5),'Rustix\x20-\x20gambling\x20platform\x20for\x20CS2\x20and\x20Rust\x20with\x20original\x20games,\x20fair\x20gameplay,\x20bonuses,\x20and\x20impressive\x20animations.\x20Opened\x20in\x202023.':_0x5b922e(0x281),'CSGO-Skins\x20is\x20a\x20reputable\x20online\x20platform\x20where\x20users\x20can\x20open\x20custom\x20CS2\x20cases\x20and\x20participate\x20in\x20daily\x20Giveaways.':_0x5b922e(0x37f),'FlameCases\x20is\x20an\x20online\x20platform\x20that\x20permits\x20users\x20to\x20open\x20cases\x20for\x20CS2\x20and\x20Dota\x202.\x20Since\x20its\x20launch\x20in\x202017,\x20the\x20website\x20provides\x20various\x20features.':_0x5b922e(0x489),'KNIFEX\x20is\x20a\x20CS2\x20gambling\x20site\x20that\x20offers\x20a\x20range\x20of\x20game\x20modes,\x20including\x20case\x20opening,\x20case\x20battles,\x20coinflip,\x20crash,\x20clash\x20and\x20many\x20more!':_0x5b922e(0x1ea),'DatDrop\x20is\x20a\x20website\x20that\x20specializes\x20in\x20opening\x20cases\x20that\x20contain\x20skins\x20from\x20CS2.\x20Its\x20most\x20prominent\x20feature\x20is\x20the\x20case-opening\x20battles.':'DatDrop,\x20CS2\x27dan\x20skin\x20içeren\x20estuches\x20açmaya\x20özgü\x20bir\x20web\x20sitesidir.\x20En\x20önemli\x20özelliği\x20estuche\x20açma\x20savaşlarıdır.','DaddySkins\x20is\x20a\x20valid\x20CSGO\x20case\x20opening\x20website\x20that\x20has\x20been\x20in\x20operation\x20since\x202017,\x20and\x20it\x20offers\x20Case\x20Openings,\x20Case\x20Battles,\x20and\x20Upgrader.':_0x5b922e(0x434),'Clash.gg\x20is\x20a\x20new\x20CS2\x20Gambling\x20site\x20which\x20includes\x20many\x20games\x20like\x20Roulette,\x20Upgrader,\x20Cases\x20and\x20many\x20more\x20!':_0x5b922e(0x450),'HellStore\x20is\x20a\x20platform\x20that\x20allows\x20users\x20to\x20participate\x20in\x20CSGO\x20skin\x20betting\x20through\x20game\x20modes\x20like\x20Coinflip,\x20Jackpot,\x20Upgrader,\x20and\x20Wheel.':'HellStore,\x20Coinflip,\x20Jackpot,\x20Upgrader\x20ve\x20Wheel\x20gibi\x20oyun\x20modlarıyla\x20CSGO\x20skin\x20bahislerine\x20katılmanızı\x20sağlayan\x20bir\x20platformdur.','Hellcase\x20is\x20an\x20online\x20platform\x20that\x20allows\x20users\x20to\x20purchase\x20virtual\x20cases\x20filled\x20with\x20skins\x20and\x20items\x20for\x20various\x20games\x20such\x20as\x20CS2,\x20Dota\x202,\x20and\x20Rust.':_0x5b922e(0x43f),'CSGOBIG\x20-\x20a\x20gambling\x20site\x20for\x20CS2\x20skins\x20with\x20game\x20modes\x20like\x20Jackpot,\x20Coinflip,\x20Roulette,\x20Cases,\x20and\x20Case\x20Battles.\x20Opened\x20in\x202015.':_0x5b922e(0x45f),'CSGOFast\x20is\x20a\x20CSGO\x20skin\x20gambling\x20site\x20that\x20offers\x20a\x20wide\x20range\x20of\x20exclusive\x20game\x20modes.\x20One\x20of\x20the\x20earliest\x20CSGO\x20gambling\x20sites.':_0x5b922e(0x60a),'CSGOLive\x20is\x20a\x20safe\x20and\x20legitimate\x20CS2\x20case\x20opening\x20website\x20with\x20custom\x20cases,\x20daily\x20bonuses,\x20and\x20a\x20Provably\x20Fair\x20system.':_0x5b922e(0x4db),'WTFSkins\x20is\x20a\x20reliable\x20and\x20popular\x20online\x20platform\x20offering\x20unique\x20games,\x20daily\x20rewards,\x20and\x20a\x20simple\x20registration\x20process.':_0x5b922e(0x26a),'Key-Drop\x20is\x20a\x20reputable\x20online\x20gambling\x20platform\x20that\x20offers\x20various\x20activities\x20like\x20Case\x20Battles\x20and\x20Upgrader,\x20as\x20well\x20as\x20custom\x20CSGO\x20skin\x20cases.':_0x5b922e(0x675),'Farmskins\x20is\x20a\x20well-known\x20CSGO\x20case\x20opening\x20website\x20that\x20has\x20been\x20operating\x20since\x202016,\x20offering\x20a\x20wide\x20selection\x20of\x20skins\x20for\x20players\x20to\x20unbox.':'Farmskins,\x202016\x20yılından\x20bu\x20yana\x20faaliyet\x20gösteren,\x20oyuncuların\x20açabileceği\x20geniş\x20bir\x20skin\x20seçeneği\x20sunan\x20tanınmış\x20bir\x20CSGO\x20estuche\x20açma\x20web\x20sitesidir.','Bets4.pro\x20is\x20an\x20online\x20platform\x20that\x20offers\x20users\x20the\x20ability\x20to\x20place\x20bets\x20on\x20esports\x20matches,\x20particularly\x20for\x20CS2\x20,\x20Dota\x202,\x20Valorant\x20and\x20many\x20more.':_0x5b922e(0x205),'This\x20site\x20can\x20be\x20called\x20almost\x20legendary\x20among\x20peers\x20due\x20to\x20its\x20high\x20payouts\x20and\x20constant\x20promotions.\x20Include\x20daily\x20bonus!':_0x5b922e(0x357),'HowlGG\x20is\x20a\x20Rust\x20skin\x20gambling\x20platform\x20that\x20offers\x20a\x20range\x20of\x20games,\x20including\x20jackpot,\x20coinflip,\x20slots,\x20and\x20live\x20casino\x20games.':_0x5b922e(0x601),'BanditCamp\x20is\x20a\x20Rust\x20skin\x20gambling\x20website\x20that\x20provides\x20several\x20Rust-themed\x20game\x20modes\x20like\x20wheel\x20of\x20fortune,\x20case\x20unboxings,\x20and\x20coinflip.':_0x5b922e(0x23e),'GCSkins\x20is\x20a\x20well-known\x20mobile\x20app\x20and\x20website\x20that\x20offers\x20CSGO\x20skins\x20and\x20items\x20as\x20rewards\x20for\x20completing\x20online\x20tasks.\x20Available\x20since\x202016.':'GCSkins,\x20CSGO\x20skinleri\x20ve\x20eşyalarını\x20ödül\x20olarak\x20sunan\x20popüler\x20bir\x20mobil\x20uygulama\x20ve\x20web\x20sitesidir.\x202016\x27dan\x20beri\x20hizmet\x20vermektedir.','GrindBux\x20is\x20a\x20trusted\x20platform\x20where\x20you\x20can\x20earn\x20some\x20money\x20by\x20completing\x20surveys\x20or\x20play\x20mobile\x20and\x20desktop\x20games.':'GrindBux,\x20anketleri\x20tamamlayarak\x20veya\x20mobil\x20ve\x20masaüstü\x20oyunları\x20oynayarak\x20para\x20kazanabileceğiniz\x20güvenilir\x20bir\x20platformdur.','Rust\x20skin\x20gambling\x20site\x20that\x20has\x20been\x20around\x20since\x202017.\x20The\x20platform\x20offers\x20a\x20range\x20of\x20popular\x20games,\x20including\x20high-roller\x20jackpot\x20and\x20coinflip\x20games.':_0x5b922e(0x393),'RustBet\x20-\x20Trusted\x20gambling\x20site,\x20Rust\x20skins\x20as\x20rewards.\x20Jackpot,\x20coinflip,\x20and\x20skin\x20upgrader\x20games.\x20Clean\x20reputation,\x20SSL\x20encryption,\x20user-friendly.':'RustBet\x20-\x20Güvenilir\x20bir\x20bahis\x20sitesi,\x20ödül\x20olarak\x20Rust\x20skinleri.\x20Jackpot,\x20coinflip\x20ve\x20skin\x20yükseltme\x20oyunları.\x20Temiz\x20itibar,\x20SSL\x20şifreleme,\x20kullanıcı\x20dostu.','RustStake\x20is\x20a\x20Rust\x20skin\x20gambling\x20platform\x20that\x20offers\x20a\x20range\x20of\x20games,\x20including\x20jackpot\x20and\x20coinflip.\x20Easily\x20enter\x20and\x20withdraw\x20items\x20from\x20games.':_0x5b922e(0x2c2),'In\x20fact,\x20the\x20progenitor\x20of\x20sites\x20for\x20earning\x20through\x20Steam,\x20stands\x20out\x20for\x20its\x20huge\x20selection\x20of\x20Withdrawal\x20methods.':_0x5b922e(0x614),'RustyLoot\x20offers\x20a\x20variety\x20of\x20games,\x20including\x20Wheel,\x20Plinko,\x20and\x20more.\x20With\x20its\x20transparent\x20and\x20provably\x20fair\x20system,\x20RustyLoot\x20is\x20safe\x20and\x20enjoyable.':_0x5b922e(0x491),'RustChance\x20has\x20been\x20operating\x20since\x202017\x20and\x20offers\x20several\x20popular\x20games,\x20including\x20Jackpot,\x20Wheel,\x20Coinflip,\x20Crash,\x20and\x20Landmines.':_0x5b922e(0x5d9),'CrashGG\x20focuses\x20on\x20Rust\x20skin\x20gambling\x20and\x20offers\x20various\x20games,\x20including\x20its\x20primary\x20feature,\x20the\x20crash\x20game\x20mode.\x20Also\x20has\x20Duels,\x20Blackjack\x20and\x20Lottery.':_0x5b922e(0x4cb),'HypeUp\x20is\x20owned\x20by\x20the\x20same\x20operators\x20of\x20two\x20popular\x20betting\x20sites,\x20CSGORoll\x20and\x20HypeDrop.\x20Offers\x20two\x20original\x20games\x20and\x20Slots\x20with\x20Live\x20Games.':_0x5b922e(0x249),'The\x20website\x20has\x20a\x20decent\x20number\x20of\x20survey\x20providers\x20and\x20offerwall\x20partners\x20to\x20choose\x20from,\x20and\x20there\x20are\x20plenty\x20of\x20options\x20for\x20withdrawing\x20earnings.':_0x5b922e(0x49e),'SkinSwap\x20is\x20an\x20online\x20platform\x20that\x20allows\x20players\x20to\x20trade\x20and\x20sell\x20skins\x20from\x20popular\x20games\x20such\x20as\x20CS2\x20and\x20Rust.\x20Owned\x20and\x20operated\x20by\x20RustySell.':'SkinSwap,\x20CS2\x20ve\x20Rust\x20gibi\x20popüler\x20oyunlardan\x20skinleri\x20ticaret\x20yapmanıza\x20ve\x20satmanıza\x20izin\x20veren\x20bir\x20çevrimiçi\x20platformdur.','CSGOSelly\x20is\x20a\x20website\x20that\x20allows\x20users\x20to\x20cash\x20out\x20their\x20CSGO\x20skins\x20for\x20money\x20via\x20various\x20payment\x20methods.\x20It\x20was\x20founded\x20in\x202021.':_0x5b922e(0x595),'Unique\x20site\x20where\x20you\x20can\x20earn\x20money\x20by\x20winning\x20games\x20in\x20various\x20mobile\x20gaming\x20cyber\x20disciplines.\x20Also\x20have\x20many\x20offerwalls.':_0x5b922e(0x24f),'Mobile\x20Games.\x20Unique\x20site\x20where\x20you\x20can\x20earn\x20money\x20by\x20winning\x20games\x20in\x20various\x20mobile\x20gaming\x20cyber\x20disciplines.\x20Also\x20have\x20many\x20offerwalls.':_0x5b922e(0x522),'RustMoment\x20is\x20a\x20gambling\x20site\x20for\x20Rust\x20skin\x20enthusiasts\x20with\x20six\x20games,\x20bonuses,\x20and\x20a\x20rakeback\x20system.\x20It\x20accepts\x20standard\x20and\x20cryptocurrency\x20payments.':'RustMoment,\x20altı\x20oyun,\x20bonuslar\x20ve\x20rakeback\x20sistemiyle\x20Rust\x20skin\x20hayranları\x20için\x20bir\x20bahis\x20sitesidir.\x20Standart\x20ve\x20kripto\x20para\x20ödemelerini\x20kabul\x20eder.','Freeward\x20is\x20a\x20GPT\x20site\x20that\x20provides\x20various\x20opportunities\x20for\x20users\x20to\x20earn\x20rewards\x20through\x20tasks\x20like\x20surveys\x20and\x20watching\x20videos.':_0x5b922e(0x476),'Roobet\x20is\x20an\x20online\x20casino\x20that\x20allows\x20users\x20to\x20play\x20games\x20using\x20cryptocurrency.\x20The\x20platform\x20has\x20a\x20reputation\x20for\x20being\x20legitimate\x20and\x20safe.':_0x5b922e(0x307),'xplay\x20is\x20a\x20platform\x20that\x20allows\x20CS2\x20players\x20to\x20earn\x20skins\x20just\x20by\x20playing\x20on\x20their\x20servers.\x20The\x20platform\x20offers\x20various\x20servers\x20and\x20daily\x20challenges.':_0x5b922e(0x316),'Established\x20in\x202018,\x20it\x20offers\x20jackpot,\x20coinflip,\x20and\x20roulette\x20games\x20with\x20enhanced\x20features,\x20provable\x20fairness,\x20and\x20attractive\x20animations.':_0x5b922e(0x295),'GameTame\x20is\x20a\x20GPT\x20site\x20that\x20provides\x20rewards\x20for\x20completing\x20various\x20activities\x20and\x20offers.\x20The\x20platform\x20is\x20specifically\x20designed\x20for\x20gamers.':_0x5b922e(0x24d),'Salad\x20is\x20a\x20website\x20that\x20offers\x20users\x20the\x20opportunity\x20to\x20mine\x20wallet\x20and\x20buy\x20gift\x20cards\x20and\x20many\x20more\x20using\x20their\x20computer\x27s\x20processing\x20power.':_0x5b922e(0x39c),'Site\x20from\x20Gamehag\x20owners.\x20Has\x20a\x20decent\x20number\x20of\x20survey\x20providers\x20and\x20offerwall\x20partners\x20to\x20choose\x20from,\x20plenty\x20of\x20options\x20for\x20withdrawing\x20earnings.':_0x5b922e(0x214),'SteamGifts\x20is\x20a\x20legitimate\x20website\x20for\x20Steam\x20Game\x20Giveaways\x20with\x20a\x20supportive\x20community\x20and\x20helpful\x20resources.':_0x5b922e(0x4ea),'GrindBux\x20is\x20a\x20trusted\x20platform\x20where\x20you\x20can\x20earn\x20some\x20money\x20by\x20completing\x20surveys\x20or\x20playing\x20mobile\x20and\x20desktop\x20games.':_0x5b922e(0x282),'RustCases\x20is\x20a\x20trusted\x20Rust\x20gambling\x20site\x20with\x20various\x20game\x20modes,\x20a\x20wide\x20range\x20of\x20cases,\x20and\x20skin\x20withdrawal\x20options.\x20Owned\x20by\x20RustChance.':_0x5b922e(0x49b),'RustClash\x20is\x20a\x20new\x20Rust\x20Gambling\x20site\x20which\x20includes\x20many\x20games\x20like\x20Roulette,\x20Upgrader,\x20Cases\x20and\x20many\x20more!':'RustClash,\x20Rulet,\x20Yükseltici,\x20Kutular\x20ve\x20daha\x20birçok\x20oyun\x20gibi\x20birçok\x20oyun\x20içeren\x20yeni\x20bir\x20Rust\x20Kumar\x20sitesidir!','BC.Game\x20is\x20an\x20online\x20casino\x20and\x20sportsbook\x20that\x20was\x20launched\x20in\x202017,\x20offering\x20over\x208,000\x20games\x20including\x20proprietary\x20and\x20probably\x20fair\x20games.':_0x5b922e(0x242),'Primedice\x20is\x20an\x20online\x20Crypto\x20Dice\x20Game\x20Casino\x20that\x20has\x20been\x20in\x20operation\x20since\x202013.\x20It\x20was\x20one\x20of\x20the\x20first\x20platforms\x20to\x20use\x20crypto\x20for\x20gambling.':'Primedice,\x202013\x20yılından\x20bu\x20yana\x20faaliyet\x20gösteren\x20bir\x20çevrimiçi\x20kripto\x20zar\x20oyunu\x20kumarhanesidir.\x20Kripto\x20parayı\x20kumar\x20için\x20kullanan\x20ilk\x20platformlardan\x20biridir.','Tradeit\x20is\x20an\x20online\x20marketplace\x20that\x20offers\x20players\x20the\x20opportunity\x20to\x20trade,\x20buy,\x20and\x20sell\x20skins\x20for\x20a\x20variety\x20of\x20games,\x20including\x20CS2.\x20Working\x20since\x202017.':_0x5b922e(0x3b5),'DMarket\x20is\x20a\x20reliable\x20and\x20popular\x20marketplace\x20for\x20Steam\x20items,\x20with\x20a\x20large\x20number\x20of\x20items\x20available\x20and\x20positive\x20reviews\x20on\x20Trustpilot.':_0x5b922e(0x23b),'Swap.gg\x20is\x20a\x20website\x20that\x20allows\x20users\x20to\x20buy,\x20sell,\x20and\x20trade\x20CS2,\x20Rust,\x20TF2,\x20and\x20other\x20virtual\x20items\x20from\x20various\x20games.\x20Working\x20since\x202017.':_0x5b922e(0x446),'BitSkins\x20is\x20an\x20online\x20marketplace\x20for\x20in-game\x20skins,\x20particularly\x20for\x20Counter-Strike\x202,\x20Dota\x202,\x20and\x20Team\x20Fortress\x202.\x20Launched\x20in\x202015.':_0x5b922e(0x441),'Secure\x20P2P\x20marketplace\x20owned\x20by\x20Hellcase.\x20SSL-encrypted,\x20KYC\x20verification,\x20friendly\x20design,\x20competitive\x20pricing,\x20trusted\x20trading\x20platform.':_0x5b922e(0x37d),'BitSkins\x20P2P\x20is\x20an\x20online\x20platform\x20for\x20buying\x20and\x20selling\x20virtual\x20items,\x20with\x20a\x20focus\x20on\x20CS2\x20skins.\x20The\x20parent\x20company,\x20BitSkins.':_0x5b922e(0x1f5),'Trusted\x20CS2\x20skin\x20platform\x20with\x20rentals,\x20endorsed\x20by\x20YouTubers.\x20Secure,\x20limited\x20to\x20CS2\x20skins,\x20fees\x20apply,\x20and\x20user\x20reviews\x20indicate\x20room\x20for\x20improvement.':_0x5b922e(0x2bb),'GamerPay\x20is\x20a\x20trusted\x20platform\x20for\x20buying\x20and\x20selling\x20CS2\x20skins,\x20with\x20a\x20free\x20selling\x20option,\x20secure\x20transactions,\x20and\x20high-quality\x20skin\x20inspection\x20tool.':_0x5b922e(0x671),'CSGO\x20Market\x20is\x20an\x20online\x20P2P\x20marketplace\x20that\x20provides\x20a\x20safe\x20and\x20secure\x20platform\x20for\x20buying\x20and\x20selling\x20CS2\x20skins.\x20Established\x20in\x202015.':_0x5b922e(0x67f),'Lis-Skins\x20is\x20a\x20popular\x20marketplace\x20for\x20Steam\x20items,\x20especially\x20CS2,\x20Rust,\x20and\x20Dota\x202\x20skins\x20and\x20items.\x20The\x20platform\x20was\x20founded\x20in\x202020.':_0x5b922e(0x43c),'WhiteMarket\x20is\x20a\x20P2P\x20platform\x20for\x20CS2\x20skin\x20trading.\x20It\x20offers\x20secure\x20trades,\x20various\x20deposit\x20options,\x20and\x20community\x20engagement.':_0x5b922e(0x490),'CS.Deals\x20is\x20a\x20platform\x20that\x20allows\x20users\x20to\x20buy,\x20sell,\x20and\x20trade\x20skins\x20from\x20popular\x20games\x20such\x20as\x20CS2,\x20Dota\x202,\x20Rust,\x20and\x20Team\x20Fortress\x202.\x20Working\x20since\x202016.':_0x5b922e(0x304),'SkinBid\x20is\x20an\x20online\x20marketplace\x20for\x20CS2\x20skins\x20and\x20in-game\x20items,\x20offering\x20buying,\x20selling,\x20and\x20auctioning\x20features\x20with\x20a\x20user-friendly\x20interface.':_0x5b922e(0x431),'LOOT.Farm\x20is\x20an\x20online\x20platform\x20that\x20offers\x20users\x20the\x20ability\x20to\x20trade\x20virtual\x20items\x20from\x20popular\x20games\x20like\x20CS2,\x20Dota\x202,\x20Team\x20Fortress\x202,\x20and\x20Rust.':_0x5b922e(0x48f),'SkinBaron\x20is\x20an\x20online\x20platform\x20based\x20in\x20Germany\x20that\x20enables\x20users\x20to\x20buy\x20and\x20sell\x20their\x20CS2\x20skins.\x20The\x20platform\x20has\x20gained\x20a\x20good\x20reputation.':_0x5b922e(0x61a),'Gamdom\x20is\x20one\x20of\x20the\x20best\x20CS2\x20match\x20betting\x20sites.\x20You\x20can\x20play\x20roulette,\x20wheel,\x20crash,\x20slots,\x20and\x20many\x20more!':_0x5b922e(0x578),'SkinCashier\x20is\x20an\x20online\x20platform\x20that\x20allows\x20players\x20to\x20instantly\x20sell\x20their\x20CS2,\x20Rust,\x20Dota\x202,\x20and\x20TF2\x20skins\x20for\x20real\x20money.\x20Operating\x20since\x202020.':_0x5b922e(0x59a),'Avan.Market\x20is\x20an\x20online\x20platform\x20that\x20offers\x20users\x20the\x20opportunity\x20to\x20sell\x20gaming\x20skins\x20from\x20popular\x20games\x20like\x20CS2,\x20Dota\x202,\x20RUST,\x20and\x20TF2.':'Avan.Market,\x20CS2,\x20Dota\x202,\x20RUST\x20ve\x20TF2\x20gibi\x20popüler\x20oyunlardan\x20oyun\x20skinlerini\x20satma\x20fırsatı\x20sunan\x20bir\x20çevrimiçi\x20platformdur.','Skins.Cash\x20is\x20a\x20reputable\x20platform\x20with\x20positive\x20reviews,\x20reliable\x20customer\x20support,\x20and\x20over\x20six\x20years\x20of\x20operation.\x20Pricing\x20not\x20the\x20best\x20one.':_0x5b922e(0x224),'CYBERSHOKE\x20is\x20a\x20website\x20that\x20provides\x20servers\x20for\x20playing\x20CS2.\x20It\x20offers\x20various\x20servers\x20for\x20players\x20to\x20choose.':_0x5b922e(0x5d6),'This\x20site\x20was\x20created\x20for\x20easy\x20leveling\x20up\x20Steam,\x20you\x20can\x20sell\x20emojis\x20and\x20profile\x20backgrounds\x20for\x20Steam\x20Trading\x20Cards\x20to\x20fast\x20level\x20up.':'Bu\x20site,\x20Steam\x20seviyenizi\x20hızla\x20yükseltmek\x20için\x20tasarlandı.\x20Steam\x20Ticaret\x20Kartlarından\x20emoji\x20ve\x20profil\x20arka\x20planları\x20satabilir,\x20seviye\x20atlayabilirsiniz.','SteamLevelU\x20is\x20a\x20legitimate\x20platform\x20to\x20buy\x20Steam\x20trading\x20card\x20packs\x20for\x20enhancing\x20Steam\x20account\x20levels,\x20associated\x20with\x20SH\x20Level\x20Up.':_0x5b922e(0x6ad),'SteamLevels\x20is\x20a\x20user-friendly\x20website\x20that\x20helps\x20increase\x20your\x20Steam\x20account\x20level\x20by\x20purchasing\x20card\x20packs\x20and\x20accepting\x20CSGO\x20skins.':_0x5b922e(0x386),'RustStake\x20is\x20a\x20Rust\x20skin\x20gambling\x20platform\x20that\x20offers\x20a\x20range\x20of\x20games,\x20including\x20jackpot,\x20and\x20coinflip.\x20Easily\x20enter\x20and\x20withdraw\x20items\x20from\x20games.':_0x5b922e(0x274),'iTrade.gg\x20is\x20a\x20Trusted\x20platform\x20for\x20trading\x20rust\x20skins.\x20User-friendly\x20design,\x20free\x20sign-up\x20bonus,\x20and\x20daily\x20rewards\x20create\x20a\x20seamless\x20trading\x20experience.':_0x5b922e(0x236),'Shuffle.com\x20is\x20a\x20comprehensive\x20crypto\x20casino\x20with\x20a\x20unique\x20registration\x20process,\x20original\x20games,\x20a\x20VIP\x20program,\x20and\x20plans\x20for\x20future\x20expansion.':_0x5b922e(0x57e),'CashoutCSGO\x20is\x20a\x20platform\x20solely\x20dedicated\x20to\x20selling\x20CS2\x20skins\x20for\x20crypto\x20or\x20paypal,\x20offering\x20a\x20convenient\x20conversion\x20service.':_0x5b922e(0x466),'Notable\x20online\x20marketplace,\x20vast\x20offerings\x20from\x20games\x20to\x20gift\x20cards,\x20reduced\x20rates,\x20stellar\x20reputation,\x20intuitive\x20interface,\x20up\x20to\x2098%\x20discounts.':_0x5b922e(0x510),'Withdraw\x20BTC,\x20ETH,\x20LTC\x20or\x20PayPal!':_0x5b922e(0x1f7),'Withdraw\x20Money,\x20Skins\x20or\x20Devices!':_0x5b922e(0x690),'Withdraw\x20BTC,\x20LTC,\x20ETH\x20and\x20many\x20else!':'BTC,\x20LTC,\x20ETH\x20ve\x20birçok\x20şey\x20çekin!','Withdrawal\x20of\x20many\x20types\x20of\x20cryptocurrencies\x20!':_0x5b922e(0x643),'Withdraw\x20CS2\x20Skins,\x20Crypto\x20or\x20Real\x20Money!':_0x5b922e(0x483),'Withdraw\x20CS2,\x20Dota\x202,\x20TF2\x20or\x20Rust\x20Items!':_0x5b922e(0x29f),'Withdraw\x20CS2\x20Skins,\x20Crypto\x20or\x20Game\x20Keys!':_0x5b922e(0x4b9),'Withdraw\x20CS2\x20Skins,\x20Crypto\x20or\x20PayPal!':_0x5b922e(0x492),'Withdraw\x20Money,\x20CS2,\x20TF2\x20or\x20Rust\x20Skins!':_0x5b922e(0x32e),'Withdraw\x20CS2\x20Skins,\x20Dota\x202\x20and\x20H1Z1\x20Items!':_0x5b922e(0x279),'Withdraw\x20CS2,\x20Rust\x20Skins\x20and\x20Dota\x202\x20Items!':'CS2,\x20Rust\x20Skinleri\x20ve\x20Dota\x202\x20Eşyalarını\x20Çekin!','Withdraw\x20Rust\x20Skins,\x20Crypto\x20or\x20PayPal!':_0x5b922e(0x394),'Withdraw\x20Dota\x202\x20Items,\x20Crypto\x20or\x20PayPal!':_0x5b922e(0x4b1),'Withdraw\x20Rust\x20Skins\x20or\x20Crypto!':'Rust\x20Skinleri\x20veya\x20Kripto\x20Çekin!','Withdraw\x20Rust\x20Skins\x20and\x20Items!':_0x5b922e(0x435),'Buy\x20Games,\x20Gift\x20Cards\x20and\x20many-many\x20more.':_0x5b922e(0x2e0),'Withdraw\x20with\x20many-many\x20ways.':_0x5b922e(0x44f),'Withdraw\x20Crypto,\x20gift\x20cards\x20or\x20real\x20money!':_0x5b922e(0x587),'Withdraw\x20CS2\x20Skins,\x20Gift\x20Cards\x20or\x20Crypto!':_0x5b922e(0x63a),'Withdraw\x20Bitcoin,\x20Ethereum\x20or\x20Litecoin!':_0x5b922e(0x426),'Withdraw\x20Games,\x20GiftCards\x20and\x20many\x20more!':_0x5b922e(0x5de),'Withdraw\x20Crypto\x20or\x20Real\x20Money!':_0x5b922e(0x5ee),'Withdraw\x20Crypto\x20and\x20Gift\x20Cards!':_0x5b922e(0x622),'Withdraw\x20BTC,\x20LTC,\x20USDT,\x20USDC\x20or\x20ETH!':_0x5b922e(0x589),'Withdraw\x20CS2\x20Skins\x20or\x20Items!':_0x5b922e(0x688),'Withdraw\x20Games,\x20GiftCards\x20or\x20Dota2\x20&\x20TF2\x20Items!':_0x5b922e(0x5f0),'Withdraw\x20Games,\x20GiftCards\x20or\x20Donate\x20to\x20Charity!':_0x5b922e(0x526),'Participate\x20in\x20Giveaways\x20and\x20win\x20Steam\x20Games.':_0x5b922e(0x3c9),'Withdraw\x20CS2\x20And\x20Rust\x20Skins\x20or\x20Crypto!':'CS2\x20ve\x20Rust\x20Skins\x20veya\x20kripto\x20para\x20çekin!','Withdraw\x20CS2\x20Skins\x20or\x20real\x20Money!':_0x5b922e(0x4a7),'Withdraw\x20Steam\x20Trading\x20cards\x20or\x20Games.':_0x5b922e(0x3d0),'Withdraw\x20USDT,\x20Skins\x20or\x20Real\x20Money!':_0x5b922e(0x5a8),'Withdraw\x20Money,\x20CS2\x20or\x20Rust\x20Skins!':_0x5b922e(0x6ba),'Withdraw\x20Money,\x20Crypto\x20or\x20Skins!':_0x5b922e(0x3fb),'Withdraw\x20CS2\x20Skins\x20or\x20Crypto!':_0x5b922e(0x5f1),'Withdraw\x20Money,\x20Crypto\x20or\x20PayPal!':_0x5b922e(0x206),'WITHDRAW\x20WITH\x20P2P\x20CS2\x20SKINS.':_0x5b922e(0x532),'Withdraw\x20Real\x20Money\x20or\x20Crypto!':_0x5b922e(0x28f),'Withdraw\x20BTC,\x20ETH,\x20USDT\x20or\x20Tron!':'BTC,\x20ETH,\x20USDT\x20veya\x20Tron\x20çekin!','Withdraw\x20CS2\x20Skins\x20or\x20PayPal!':_0x5b922e(0x22e),'Withdraw\x20CS2\x20Skins\x20and\x20Items!':_0x5b922e(0x2a5),'Withdraw\x20Steam\x20Trading\x20cards.':'Steam\x20Takas\x20kartları\x20çekin!','1h,\x2024h\x20and\x207d\x20Giveaways':_0x5b922e(0x3c6),'24h\x20Giveaway':_0x5b922e(0x60e),'3h\x20and\x2024h\x20Giveaway':'3s\x20ve\x2024s\x20çekiliş','Daily\x20and\x20Weekly\x20Giveaways':'Günlük\x20ve\x20haftalık\x20çekilişler','1h\x20Giveaway':_0x5b922e(0x51a),'1h,\x2024h\x20Giveaways':_0x5b922e(0x5c5),'Rare\x20Giveaways':_0x5b922e(0x470),'Weekly\x20Giveaways':_0x5b922e(0x5fd),'Daily\x20Giveaways':_0x5b922e(0x457),'Deposit\x20Required':_0x5b922e(0x4f9),'+360%\x20Deposit\x20Bonus':'+360%\x20Depozito\x20Bonusu','+100%\x20Deposit\x20Bonus':_0x5b922e(0x421),'+10%\x20Deposit\x20Bonus':'+10%\x20Depozito\x20Bonusu','+5%\x20Deposit\x20Bonus':'+5%\x20Depozito\x20Bonusu','+1%\x20Deposit\x20Bonus':_0x5b922e(0x448),'70\x20Free\x20Spins':'70\x20Ücretsiz\x20Dönüş','Every\x2024h\x20Reward':_0x5b922e(0x3d8),'Daily\x20Case':_0x5b922e(0x4e1),'Daily\x20Faucet':_0x5b922e(0x449),'Daily\x20Roll':'Günlük\x20Çark','Daily\x20Coins':_0x5b922e(0x4fd),'Faucet\x20and\x20Giveaways':_0x5b922e(0x633),'Daily\x200.02$':_0x5b922e(0x565),'Daily\x200.02$\x20+\x20Free\x20Case':_0x5b922e(0x5a9),'360%\x20Deposit\x20Bonus':_0x5b922e(0x610),'Deposit\x20Bonus':_0x5b922e(0x286),'Visit\x20WebSite':_0x5b922e(0x3e2),'Visit\x20WebSite\x20or\x20Copy':'Web\x20Sitesini\x20Ziyaret\x20Et','100%\x20deposit\x20bonus':_0x5b922e(0x203),'+1%\x20Sell\x20Bonus':_0x5b922e(0x4dc),'+3%\x20Sell\x20Bonus':_0x5b922e(0x51d),'5%\x20deposit\x20bonus':'5%\x20Depozito\x20Bonusu','5\x20Free\x20Cases':_0x5b922e(0x375),'Free\x2050\x20Gems':_0x5b922e(0x3a6),'3\x20Free\x20Cases':_0x5b922e(0x2f3),'Free\x205€':_0x5b922e(0x248),'2.00$\x20For\x20Free':_0x5b922e(0x3ad),'5.00$\x20For\x20Free':_0x5b922e(0x549),'Free\x201.00$':_0x5b922e(0x3c8),'Free\x200.90$':'Ücretsiz\x200.90$','Free\x200.50$':'Ücretsiz\x200.50$','Free\x200.40$':'Ücretsiz\x200.40$','Free\x200.30$':_0x5b922e(0x332),'Free\x200.25$':_0x5b922e(0x240),'Free\x200.20$':_0x5b922e(0x2c7),'Free\x200.15$':'Ücretsiz\x200.15$','Free\x200.10$':_0x5b922e(0x639),'Free\x200.05$':_0x5b922e(0x494),'Receive\x20up\x20to\x205.00$':_0x5b922e(0x537),'Free\x20Case':_0x5b922e(0x20f),'Free\x201$':'Ücretsiz\x201$','Free\x202$':_0x5b922e(0x3ca),'Big\x20Daily\x20Giveaways':_0x5b922e(0x517),'Free\x20Case\x20up\x20to\x20250$':_0x5b922e(0x238),'Daily\x20Giveaway':'Günlük\x20Çekiliş','Free\x20100\x20Diamonds':_0x5b922e(0x5db),'500\x20coins':'500\x20jeton','Daily\x20Cases':'Günlük\x20Kasa','3\x20Energy\x20Points':'3\x20Enerji\x20Puanı','Free\x20200\x20Coins':_0x5b922e(0x3ea),'some\x20free\x20coins':_0x5b922e(0x4a2),'Free\x202$':_0x5b922e(0x3ca),'Free\x20spins':_0x5b922e(0x245),'Offerwall':_0x5b922e(0x1ec),'x2\x20Mining\x20Rate':_0x5b922e(0x1fc),'Games\x20Giveaways':_0x5b922e(0x548)},'es':{'CSGORUN\x20is\x20a\x20leading\x20virtual\x20skin\x20gambling\x20platform\x20with\x20diverse\x20modes\x20like\x20Crash,\x20Roulette,\x20PVP,\x20and\x20esports\x20betting.\x20It\x27s\x20user-friendly.':_0x5b922e(0x25b),'RapidSkins\x20is\x20an\x20online\x20platform\x20created\x20to\x20provide\x20gamers\x20with\x20a\x20marketplace\x20for\x20purchasing,\x20selling,\x20and\x20trading\x20skins\x20for\x20CS2\x20and\x20Rust.':_0x5b922e(0x64b),'RustMagic\x20-\x20a\x20cutting-edge\x20Rust\x20skin\x20betting\x20site,\x20features\x20five\x20distinct\x20game\x20modes,\x20withdrawal\x20in\x20Rust\x20skins,\x20and\x20a\x20daily\x20free\x20case\x20system\x20for\x20users.':'RustMagic\x20-\x20sitio\x20de\x20apuestas\x20de\x20skins\x20Rust\x20con\x20cinco\x20modos\x20de\x20juego,\x20retiros\x20en\x20skins\x20de\x20Rust\x20y\x20sistema\x20diario\x20de\x20estuches\x20gratuitos.','SKINFANS\x20-\x20CS2\x20skin\x20case\x20opening\x20,\x20beautiful\x20animations,\x20provably\x20fair\x20system.\x20Regular\x20giveaways,\x20Battle-pass\x20for\x20newcomers,\x20sleek\x20design.':_0x5b922e(0x31d),'CSFAIL,\x20a\x20prominent\x20website\x20in\x20Skin\x20Gambling,\x20offers\x20diverse\x20modes,\x20user-friendly\x20interface,\x20and\x20bonus\x20features\x20for\x20CS:GO,\x20Dota\x202,\x20and\x20RUST\x20skins.':_0x5b922e(0x3ac),'Yayskins,\x20a\x20CS2\x20Skin\x20Gambling\x20Platform,\x20excels\x20with\x20user-friendly\x20design,\x20diverse\x20game\x20modes,\x20live\x20chat,\x20and\x20provable\x20fairness.':_0x5b922e(0x22b),'CSGO500\x20probably\x20the\x20best\x20CS2\x20Gambling\x20Site.\x20Regular\x20rains,\x20giveaways\x20and\x20promocodes.\x20You\x20can\x20play\x20many\x20games\x20and\x20slots.':_0x5b922e(0x370),'CSGO500\x20probably\x20the\x20best\x20CS2\x20and\x20Rust\x20Gambling\x20Site.\x20Regular\x20rains,\x20giveaways\x20and\x20promocodes.\x20You\x20can\x20play\x20many\x20games\x20and\x20slots.':_0x5b922e(0x370),'CSGORoll\x20is\x20one\x20of\x20the\x20most\x20popular\x20sites.\x20Which\x20includes\x20roulette,\x20crash\x20and\x20many\x20more.\x20Now\x20testing\x20e-sports\x20betting.':_0x5b922e(0x50c),'CSGOEmpire\x20is\x20one\x20of\x20the\x20most\x20popular\x20site.\x20Which\x20includes\x20roulette\x20and\x20coinflip.\x20Working\x20since\x202016.\x20Match\x20Betting\x20in\x20priority.':_0x5b922e(0x531),'CSGOPolygon\x20is\x20a\x20legendary\x20site\x20like\x20CSGODouble\x20with\x20classic\x20Roulette,\x20but\x20have\x20Dices,\x20Crash,\x20Slots\x20and\x20even\x20Esports\x20Betting!':_0x5b922e(0x5e3),'Gamdom\x20Casino\x20offers\x20a\x20variety\x20of\x20in-house\x20games,\x20innovative\x20social\x20engagement,\x20provably\x20fair\x20system,\x20and\x20good\x20reputation\x20in\x20online\x20gaming.':_0x5b922e(0x5cb),'CSGOPOSITIVE\x20is\x20a\x20famous\x20esports\x20betting\x20site\x20with\x20interesting\x20system\x20of\x20cashback,\x20you\x20can\x20bet\x20skins\x20or\x20money.\x20Has\x20various\x20payments\x20options.':_0x5b922e(0x45e),'Rollbit\x20is\x20a\x20new\x20Casino\x20site\x20which\x20includes\x20Sport\x20Betting\x20and\x20many\x20classic\x20games\x20like\x20roulette.\x20Includes\x20Daily\x20Bonuses\x20!':_0x5b922e(0x6a8),'CSGOLuck\x20is\x20a\x20licensed\x20CSGO\x20skin\x20gambling\x20site\x20that\x20accepts\x20multiple\x20deposit\x20methods,\x20offering\x20various\x20games\x20and\x20a\x20user-friendly\x20design.':_0x5b922e(0x535),'Duelbits\x20is\x20a\x20safe\x20and\x20licensed\x20online\x20casino\x20with\x20a\x20variety\x20of\x20games,\x20sports\x20betting,\x20esports\x20betting,\x20and\x20instant\x20cryptocurrency\x20transactions.':_0x5b922e(0x68f),'InsaneGG\x20is\x20an\x20online\x20platform\x20that\x20offers\x20a\x20range\x20of\x20CSGO\x20skin\x20gambling\x20games\x20with\x20professionally\x20designed\x20and\x20smooth\x20animations.':'InsaneGG\x20es\x20una\x20plataforma\x20en\x20línea\x20que\x20ofrece\x20una\x20variedad\x20de\x20juegos\x20de\x20apuestas\x20de\x20skins\x20de\x20CSGO\x20con\x20animaciones\x20profesionales\x20y\x20fluidas.','Rustix\x20-\x20gambling\x20platform\x20for\x20CS2\x20and\x20Rust\x20with\x20original\x20games,\x20fair\x20gameplay,\x20bonuses,\x20and\x20impressive\x20animations.\x20Opened\x20in\x202023.':_0x5b922e(0x53f),'CSGO-Skins\x20is\x20a\x20reputable\x20online\x20platform\x20where\x20users\x20can\x20open\x20custom\x20CS2\x20cases\x20and\x20participate\x20in\x20daily\x20Giveaways.':'CSGO-Skins\x20es\x20una\x20plataforma\x20en\x20línea\x20confiable\x20donde\x20los\x20usuarios\x20pueden\x20abrir\x20estuches\x20personalizados\x20de\x20CS2\x20y\x20participar\x20en\x20sorteos\x20diarios.','FlameCases\x20is\x20an\x20online\x20platform\x20that\x20permits\x20users\x20to\x20open\x20cases\x20for\x20CS2\x20and\x20Dota\x202.\x20Since\x20its\x20launch\x20in\x202017,\x20the\x20website\x20provides\x20various\x20features.':_0x5b922e(0x69a),'KNIFEX\x20is\x20a\x20CS2\x20gambling\x20site\x20that\x20offers\x20a\x20range\x20of\x20game\x20modes,\x20including\x20case\x20opening,\x20case\x20battles,\x20coinflip,\x20crash,\x20clash\x20and\x20many\x20more!':_0x5b922e(0x679),'DatDrop\x20is\x20a\x20website\x20that\x20specializes\x20in\x20opening\x20cases\x20that\x20contain\x20skins\x20from\x20CS2.\x20Its\x20most\x20prominent\x20feature\x20is\x20the\x20case-opening\x20battles.':_0x5b922e(0x5a0),'DaddySkins\x20is\x20a\x20valid\x20CSGO\x20case\x20opening\x20website\x20that\x20has\x20been\x20in\x20operation\x20since\x202017,\x20and\x20it\x20offers\x20Case\x20Openings,\x20Case\x20Battles,\x20and\x20Upgrader.':_0x5b922e(0x4bb),'Clash.gg\x20is\x20a\x20new\x20CS2\x20Gambling\x20site\x20which\x20includes\x20many\x20games\x20like\x20Roulette,\x20Upgrader,\x20Cases\x20and\x20many\x20more\x20!':_0x5b922e(0x509),'HellStore\x20is\x20a\x20platform\x20that\x20allows\x20users\x20to\x20participate\x20in\x20CSGO\x20skin\x20betting\x20through\x20game\x20modes\x20like\x20Coinflip,\x20Jackpot,\x20Upgrader,\x20and\x20Wheel.':_0x5b922e(0x2c5),'Hellcase\x20is\x20an\x20online\x20platform\x20that\x20allows\x20users\x20to\x20purchase\x20virtual\x20cases\x20filled\x20with\x20skins\x20and\x20items\x20for\x20various\x20games\x20such\x20as\x20CS2,\x20Dota\x202,\x20and\x20Rust.':_0x5b922e(0x59c),'CSGOBIG\x20-\x20a\x20gambling\x20site\x20for\x20CS2\x20skins\x20with\x20game\x20modes\x20like\x20Jackpot,\x20Coinflip,\x20Roulette,\x20Cases,\x20and\x20Case\x20Battles.\x20Opened\x20in\x202015.':_0x5b922e(0x5bd),'CSGOFast\x20is\x20a\x20CSGO\x20skin\x20gambling\x20site\x20that\x20offers\x20a\x20wide\x20range\x20of\x20exclusive\x20game\x20modes.\x20One\x20of\x20the\x20earliest\x20CSGO\x20gambling\x20sites.':_0x5b922e(0x5ff),'CSGOLive\x20is\x20a\x20safe\x20and\x20legitimate\x20CS2\x20case\x20opening\x20website\x20with\x20custom\x20cases,\x20daily\x20bonuses,\x20and\x20a\x20Provably\x20Fair\x20system.':_0x5b922e(0x5c9),'WTFSkins\x20is\x20a\x20reliable\x20and\x20popular\x20online\x20platform\x20offering\x20unique\x20games,\x20daily\x20rewards,\x20and\x20a\x20simple\x20registration\x20process.':_0x5b922e(0x596),'Key-Drop\x20is\x20a\x20reputable\x20online\x20gambling\x20platform\x20that\x20offers\x20various\x20activities\x20like\x20Case\x20Battles\x20and\x20Upgrader,\x20as\x20well\x20as\x20custom\x20CSGO\x20skin\x20cases.':'Key-Drop\x20es\x20una\x20plataforma\x20de\x20apuestas\x20en\x20línea\x20que\x20ofrece\x20actividades\x20como\x20Batallas\x20de\x20Cajas,\x20Mejoras\x20y\x20estuches\x20personalizados\x20de\x20skins\x20de\x20CSGO.','Farmskins\x20is\x20a\x20well-known\x20CSGO\x20case\x20opening\x20website\x20that\x20has\x20been\x20operating\x20since\x202016,\x20offering\x20a\x20wide\x20selection\x20of\x20skins\x20for\x20players\x20to\x20unbox.':_0x5b922e(0x4c6),'Bets4.pro\x20is\x20an\x20online\x20platform\x20that\x20offers\x20users\x20the\x20ability\x20to\x20place\x20bets\x20on\x20esports\x20matches,\x20particularly\x20for\x20CS2\x20,\x20Dota\x202,\x20Valorant\x20and\x20many\x20more.':_0x5b922e(0x69c),'This\x20site\x20can\x20be\x20called\x20almost\x20legendary\x20among\x20peers\x20due\x20to\x20its\x20high\x20payouts\x20and\x20constant\x20promotions.\x20Include\x20daily\x20bonus!':_0x5b922e(0x673),'HowlGG\x20is\x20a\x20Rust\x20skin\x20gambling\x20platform\x20that\x20offers\x20a\x20range\x20of\x20games,\x20including\x20jackpot,\x20coinflip,\x20slots,\x20and\x20live\x20casino\x20games.':_0x5b922e(0x417),'BanditCamp\x20is\x20a\x20Rust\x20skin\x20gambling\x20website\x20that\x20provides\x20several\x20Rust-themed\x20game\x20modes\x20like\x20wheel\x20of\x20fortune,\x20case\x20unboxings,\x20and\x20coinflip.':'BanditCamp\x20es\x20un\x20sitio\x20web\x20de\x20apuestas\x20de\x20skins\x20de\x20Rust\x20que\x20ofrece\x20modos\x20de\x20juego\x20temáticos,\x20como\x20la\x20rueda\x20de\x20la\x20fortuna,\x20la\x20apertura\x20de\x20cajas\x20y\x20el\x20coinflip.','GCSkins\x20is\x20a\x20well-known\x20mobile\x20app\x20and\x20website\x20that\x20offers\x20CSGO\x20skins\x20and\x20items\x20as\x20rewards\x20for\x20completing\x20online\x20tasks.\x20Available\x20since\x202016.':'GCSkins\x20es\x20una\x20popular\x20aplicación\x20móvil\x20y\x20sitio\x20web\x20que\x20ofrece\x20skins\x20y\x20objetos\x20de\x20CSGO\x20como\x20recompensa\x20por\x20completar\x20tareas\x20en\x20línea.\x20Disponible\x20desde\x202016.','GrindBux\x20is\x20a\x20trusted\x20platform\x20where\x20you\x20can\x20earn\x20some\x20money\x20by\x20completing\x20surveys\x20or\x20play\x20mobile\x20and\x20desktop\x20games.':_0x5b922e(0x36e),'Rust\x20skin\x20gambling\x20site\x20that\x20has\x20been\x20around\x20since\x202017.\x20The\x20platform\x20offers\x20a\x20range\x20of\x20popular\x20games,\x20including\x20high-roller\x20jackpot\x20and\x20coinflip\x20games.':'Sitio\x20de\x20apuestas\x20de\x20skins\x20de\x20Rust\x20desde\x202017.\x20Ofrece\x20juegos\x20populares\x20como\x20jackpot\x20y\x20coinflip\x20para\x20grandes\x20apostadores.','RustBet\x20-\x20Trusted\x20gambling\x20site,\x20Rust\x20skins\x20as\x20rewards.\x20Jackpot,\x20coinflip,\x20and\x20skin\x20upgrader\x20games.\x20Clean\x20reputation,\x20SSL\x20encryption,\x20user-friendly.':_0x5b922e(0x2e5),'RustStake\x20is\x20a\x20Rust\x20skin\x20gambling\x20platform\x20that\x20offers\x20a\x20range\x20of\x20games,\x20including\x20jackpot\x20and\x20coinflip.\x20Easily\x20enter\x20and\x20withdraw\x20items\x20from\x20games.':_0x5b922e(0x42e),'In\x20fact,\x20the\x20progenitor\x20of\x20sites\x20for\x20earning\x20through\x20Steam,\x20stands\x20out\x20for\x20its\x20huge\x20selection\x20of\x20Withdrawal\x20methods.':_0x5b922e(0x579),'RustyLoot\x20offers\x20a\x20variety\x20of\x20games,\x20including\x20Wheel,\x20Plinko,\x20and\x20more.\x20With\x20its\x20transparent\x20and\x20provably\x20fair\x20system,\x20RustyLoot\x20is\x20safe\x20and\x20enjoyable.':_0x5b922e(0x4c7),'RustChance\x20has\x20been\x20operating\x20since\x202017\x20and\x20offers\x20several\x20popular\x20games,\x20including\x20Jackpot,\x20Wheel,\x20Coinflip,\x20Crash,\x20and\x20Landmines.':_0x5b922e(0x327),'CrashGG\x20focuses\x20on\x20Rust\x20skin\x20gambling\x20and\x20offers\x20various\x20games,\x20including\x20its\x20primary\x20feature,\x20the\x20crash\x20game\x20mode.\x20Also\x20has\x20Duels,\x20Blackjack\x20and\x20Lottery.':_0x5b922e(0x374),'HypeUp\x20is\x20owned\x20by\x20the\x20same\x20operators\x20of\x20two\x20popular\x20betting\x20sites,\x20CSGORoll\x20and\x20HypeDrop.\x20Offers\x20two\x20original\x20games\x20and\x20Slots\x20with\x20Live\x20Games.':_0x5b922e(0x28e),'The\x20website\x20has\x20a\x20decent\x20number\x20of\x20survey\x20providers\x20and\x20offerwall\x20partners\x20to\x20choose\x20from,\x20and\x20there\x20are\x20plenty\x20of\x20options\x20for\x20withdrawing\x20earnings.':'El\x20sitio\x20web\x20cuenta\x20con\x20varios\x20proveedores\x20de\x20encuestas\x20y\x20socios\x20de\x20ofertas\x20para\x20elegir,\x20y\x20ofrece\x20múltiples\x20opciones\x20para\x20retirar\x20las\x20ganancias.','SkinSwap\x20is\x20an\x20online\x20platform\x20that\x20allows\x20players\x20to\x20trade\x20and\x20sell\x20skins\x20from\x20popular\x20games\x20such\x20as\x20CS2\x20and\x20Rust.\x20Owned\x20and\x20operated\x20by\x20RustySell.':_0x5b922e(0x61e),'CSGOSelly\x20is\x20a\x20website\x20that\x20allows\x20users\x20to\x20cash\x20out\x20their\x20CSGO\x20skins\x20for\x20money\x20via\x20various\x20payment\x20methods.\x20It\x20was\x20founded\x20in\x202021.':'CSGOSelly\x20es\x20un\x20sitio\x20web\x20que\x20permite\x20a\x20los\x20usuarios\x20convertir\x20sus\x20skins\x20de\x20CSGO\x20en\x20dinero\x20a\x20través\x20de\x20varios\x20métodos\x20de\x20pago.\x20Fue\x20fundado\x20en\x202021.','Unique\x20site\x20where\x20you\x20can\x20earn\x20money\x20by\x20winning\x20games\x20in\x20various\x20mobile\x20gaming\x20cyber\x20disciplines.\x20Also\x20have\x20many\x20offerwalls.':_0x5b922e(0x69e),'Mobile\x20Games.\x20Unique\x20site\x20where\x20you\x20can\x20earn\x20money\x20by\x20winning\x20games\x20in\x20various\x20mobile\x20gaming\x20cyber\x20disciplines.\x20Also\x20have\x20many\x20offerwalls.':_0x5b922e(0x69e),'RustMoment\x20is\x20a\x20gambling\x20site\x20for\x20Rust\x20skin\x20enthusiasts\x20with\x20six\x20games,\x20bonuses,\x20and\x20a\x20rakeback\x20system.\x20It\x20accepts\x20standard\x20and\x20cryptocurrency\x20payments.':_0x5b922e(0x33f),'Freeward\x20is\x20a\x20GPT\x20site\x20that\x20provides\x20various\x20opportunities\x20for\x20users\x20to\x20earn\x20rewards\x20through\x20tasks\x20like\x20surveys\x20and\x20watching\x20videos.':_0x5b922e(0x22f),'Roobet\x20is\x20an\x20online\x20casino\x20that\x20allows\x20users\x20to\x20play\x20games\x20using\x20cryptocurrency.\x20The\x20platform\x20has\x20a\x20reputation\x20for\x20being\x20legitimate\x20and\x20safe.':_0x5b922e(0x5be),'xplay\x20is\x20a\x20platform\x20that\x20allows\x20CS2\x20players\x20to\x20earn\x20skins\x20just\x20by\x20playing\x20on\x20their\x20servers.\x20The\x20platform\x20offers\x20various\x20servers\x20and\x20daily\x20challenges.':_0x5b922e(0x69b),'Established\x20in\x202018,\x20it\x20offers\x20jackpot,\x20coinflip,\x20and\x20roulette\x20games\x20with\x20enhanced\x20features,\x20provable\x20fairness,\x20and\x20attractive\x20animations.':'Establecido\x20en\x202018,\x20ofrece\x20juegos\x20de\x20jackpot,\x20coinflip\x20y\x20ruleta\x20con\x20características\x20mejoradas,\x20equidad\x20demostrable\x20y\x20animaciones\x20atractivas.','GameTame\x20is\x20a\x20GPT\x20site\x20that\x20provides\x20rewards\x20for\x20completing\x20various\x20activities\x20and\x20offers.\x20The\x20platform\x20is\x20specifically\x20designed\x20for\x20gamers.':_0x5b922e(0x253),'Salad\x20is\x20a\x20website\x20that\x20offers\x20users\x20the\x20opportunity\x20to\x20mine\x20wallet\x20and\x20buy\x20gift\x20cards\x20and\x20many\x20more\x20using\x20their\x20computer\x27s\x20processing\x20power.':'Salad\x20es\x20un\x20sitio\x20web\x20que\x20ofrece\x20a\x20los\x20usuarios\x20la\x20oportunidad\x20de\x20minar\x20billeteras\x20y\x20comprar\x20tarjetas\x20de\x20regalo\x20y\x20mucho\x20más\x20utilizando\x20la\x20potencia\x20de\x20procesamiento\x20de\x20su\x20computadora.','Site\x20from\x20Gamehag\x20owners.\x20Has\x20a\x20decent\x20number\x20of\x20survey\x20providers\x20and\x20offerwall\x20partners\x20to\x20choose\x20from,\x20plenty\x20of\x20options\x20for\x20withdrawing\x20earnings.':_0x5b922e(0x292),'SteamGifts\x20is\x20a\x20legitimate\x20website\x20for\x20Steam\x20Game\x20Giveaways\x20with\x20a\x20supportive\x20community\x20and\x20helpful\x20resources.':_0x5b922e(0x473),'GrindBux\x20is\x20a\x20trusted\x20platform\x20where\x20you\x20can\x20earn\x20some\x20money\x20by\x20completing\x20surveys\x20or\x20playing\x20mobile\x20and\x20desktop\x20games.':_0x5b922e(0x58a),'RustCases\x20is\x20a\x20trusted\x20Rust\x20gambling\x20site\x20with\x20various\x20game\x20modes,\x20a\x20wide\x20range\x20of\x20cases,\x20and\x20skin\x20withdrawal\x20options.\x20Owned\x20by\x20RustChance.':_0x5b922e(0x291),'RustClash\x20is\x20a\x20new\x20Rust\x20Gambling\x20site\x20which\x20includes\x20many\x20games\x20like\x20Roulette,\x20Upgrader,\x20Cases\x20and\x20many\x20more!':_0x5b922e(0x544),'BC.Game\x20is\x20an\x20online\x20casino\x20and\x20sportsbook\x20that\x20was\x20launched\x20in\x202017,\x20offering\x20over\x208,000\x20games\x20including\x20proprietary\x20and\x20probably\x20fair\x20games.':'BC.Game\x20es\x20un\x20casino\x20en\x20línea\x20y\x20casa\x20de\x20apuestas\x20deportivas\x20lanzado\x20en\x202017,\x20ofreciendo\x20más\x20de\x208,000\x20juegos,\x20incluyendo\x20juegos\x20propietarios.','Primedice\x20is\x20an\x20online\x20Crypto\x20Dice\x20Game\x20Casino\x20that\x20has\x20been\x20in\x20operation\x20since\x202013.\x20It\x20was\x20one\x20of\x20the\x20first\x20platforms\x20to\x20use\x20crypto\x20for\x20gambling.':'Primedice\x20es\x20un\x20casino\x20en\x20línea\x20que\x20utiliza\x20criptomonedas\x20para\x20juegos\x20de\x20dados.\x20Lanzado\x20en\x202013,\x20fue\x20uno\x20de\x20los\x20pioneros\x20en\x20esta\x20forma\x20de\x20juego.','Tradeit\x20is\x20an\x20online\x20marketplace\x20that\x20offers\x20players\x20the\x20opportunity\x20to\x20trade,\x20buy,\x20and\x20sell\x20skins\x20for\x20a\x20variety\x20of\x20games,\x20including\x20CS2.\x20Working\x20since\x202017.':_0x5b922e(0x6b0),'DMarket\x20is\x20a\x20reliable\x20and\x20popular\x20marketplace\x20for\x20Steam\x20items,\x20with\x20a\x20large\x20number\x20of\x20items\x20available\x20and\x20positive\x20reviews\x20on\x20Trustpilot.':_0x5b922e(0x49f),'Swap.gg\x20is\x20a\x20website\x20that\x20allows\x20users\x20to\x20buy,\x20sell,\x20and\x20trade\x20CS2,\x20Rust,\x20TF2,\x20and\x20other\x20virtual\x20items\x20from\x20various\x20games.\x20Working\x20since\x202017.':_0x5b922e(0x665),'BitSkins\x20is\x20an\x20online\x20marketplace\x20for\x20in-game\x20skins,\x20particularly\x20for\x20Counter-Strike\x202,\x20Dota\x202,\x20and\x20Team\x20Fortress\x202.\x20Launched\x20in\x202015.':_0x5b922e(0x3b6),'Secure\x20P2P\x20marketplace\x20owned\x20by\x20Hellcase.\x20SSL-encrypted,\x20KYC\x20verification,\x20friendly\x20design,\x20competitive\x20pricing,\x20trusted\x20trading\x20platform.':_0x5b922e(0x2d7),'BitSkins\x20P2P\x20is\x20an\x20online\x20platform\x20for\x20buying\x20and\x20selling\x20virtual\x20items,\x20with\x20a\x20focus\x20on\x20CS2\x20skins.\x20The\x20parent\x20company,\x20BitSkins.':_0x5b922e(0x320),'Trusted\x20CS2\x20skin\x20platform\x20with\x20rentals,\x20endorsed\x20by\x20YouTubers.\x20Secure,\x20limited\x20to\x20CS2\x20skins,\x20fees\x20apply,\x20and\x20user\x20reviews\x20indicate\x20room\x20for\x20improvement.':_0x5b922e(0x647),'GamerPay\x20is\x20a\x20trusted\x20platform\x20for\x20buying\x20and\x20selling\x20CS2\x20skins,\x20with\x20a\x20free\x20selling\x20option,\x20secure\x20transactions,\x20and\x20high-quality\x20skin\x20inspection\x20tool.':_0x5b922e(0x498),'CSGO\x20Market\x20is\x20an\x20online\x20P2P\x20marketplace\x20that\x20provides\x20a\x20safe\x20and\x20secure\x20platform\x20for\x20buying\x20and\x20selling\x20CS2\x20skins.\x20Established\x20in\x202015.':_0x5b922e(0x685),'Lis-Skins\x20is\x20a\x20popular\x20marketplace\x20for\x20Steam\x20items,\x20especially\x20CS2,\x20Rust,\x20and\x20Dota\x202\x20skins\x20and\x20items.\x20The\x20platform\x20was\x20founded\x20in\x202020.':_0x5b922e(0x67d),'WhiteMarket\x20is\x20a\x20P2P\x20platform\x20for\x20CS2\x20skin\x20trading.\x20It\x20offers\x20secure\x20trades,\x20various\x20deposit\x20options,\x20and\x20community\x20engagement.':_0x5b922e(0x3b2),'CS.Deals\x20is\x20a\x20platform\x20that\x20allows\x20users\x20to\x20buy,\x20sell,\x20and\x20trade\x20skins\x20from\x20popular\x20games\x20such\x20as\x20CS2,\x20Dota\x202,\x20Rust,\x20and\x20Team\x20Fortress\x202.\x20Working\x20since\x202016.':_0x5b922e(0x5f8),'SkinBid\x20is\x20an\x20online\x20marketplace\x20for\x20CS2\x20skins\x20and\x20in-game\x20items,\x20offering\x20buying,\x20selling,\x20and\x20auctioning\x20features\x20with\x20a\x20user-friendly\x20interface.':'SkinBid:\x20mercado\x20en\x20línea\x20para\x20skins\x20de\x20CS2\x20y\x20objetos\x20de\x20juego\x20con\x20funciones\x20de\x20compra,\x20venta\x20y\x20subasta\x20y\x20una\x20interfaz\x20intuitiva.','LOOT.Farm\x20is\x20an\x20online\x20platform\x20that\x20offers\x20users\x20the\x20ability\x20to\x20trade\x20virtual\x20items\x20from\x20popular\x20games\x20like\x20CS2,\x20Dota\x202,\x20Team\x20Fortress\x202,\x20and\x20Rust.':_0x5b922e(0x50f),'SkinBaron\x20is\x20an\x20online\x20platform\x20based\x20in\x20Germany\x20that\x20enables\x20users\x20to\x20buy\x20and\x20sell\x20their\x20CS2\x20skins.\x20The\x20platform\x20has\x20gained\x20a\x20good\x20reputation.':_0x5b922e(0x1e9),'Lis-Skins\x20is\x20a\x20popular\x20marketplace\x20for\x20Steam\x20items,\x20especially\x20CS2,\x20Rust\x20and\x20Dota\x202\x20skins\x20and\x20items.\x20The\x20platform\x20was\x20founded\x20in\x202020.':_0x5b922e(0x243),'Gamdom\x20is\x20one\x20of\x20the\x20best\x20CS2\x20match\x20betting\x20sites.\x20You\x20can\x20play\x20roulette,\x20wheel,\x20crash,\x20slots,\x20and\x20many\x20more!':_0x5b922e(0x2da),'SkinCashier\x20is\x20an\x20online\x20platform\x20that\x20allows\x20players\x20to\x20instantly\x20sell\x20their\x20CS2,\x20Rust,\x20Dota\x202,\x20and\x20TF2\x20skins\x20for\x20real\x20money.\x20Operating\x20since\x202020.':'SkinCashier\x20es\x20una\x20plataforma\x20en\x20línea\x20que\x20permite\x20a\x20los\x20jugadores\x20vender\x20al\x20instante\x20sus\x20skins\x20de\x20CS2,\x20Rust,\x20Dota\x202\x20y\x20TF2\x20por\x20dinero\x20real.\x20Operando\x20desde\x202020.','Avan.Market\x20is\x20an\x20online\x20platform\x20that\x20offers\x20users\x20the\x20opportunity\x20to\x20sell\x20gaming\x20skins\x20from\x20popular\x20games\x20like\x20CS2,\x20Dota\x202,\x20RUST,\x20and\x20TF2.':_0x5b922e(0x2c9),'Skins.Cash\x20is\x20a\x20reputable\x20platform\x20with\x20positive\x20reviews,\x20reliable\x20customer\x20support,\x20and\x20over\x20six\x20years\x20of\x20operation.\x20Pricing\x20not\x20the\x20best\x20one.':_0x5b922e(0x2a3),'CYBERSHOKE\x20is\x20a\x20website\x20that\x20provides\x20servers\x20for\x20playing\x20CS2.\x20It\x20offers\x20various\x20servers\x20for\x20players\x20to\x20choose.':_0x5b922e(0x3d2),'This\x20site\x20was\x20created\x20for\x20easy\x20leveling\x20up\x20Steam,\x20you\x20can\x20sell\x20emojis\x20and\x20profile\x20backgrounds\x20for\x20Steam\x20Trading\x20Cards\x20to\x20fast\x20level\x20up.':_0x5b922e(0x399),'SteamLevelU\x20is\x20a\x20legitimate\x20platform\x20to\x20buy\x20Steam\x20trading\x20card\x20packs\x20for\x20enhancing\x20Steam\x20account\x20levels,\x20associated\x20with\x20SH\x20Level\x20Up.':_0x5b922e(0x48d),'SteamLevels\x20is\x20a\x20user-friendly\x20website\x20that\x20helps\x20increase\x20your\x20Steam\x20account\x20level\x20by\x20purchasing\x20card\x20packs\x20and\x20accepting\x20CSGO\x20skins.':_0x5b922e(0x4d4),'RustStake\x20is\x20a\x20Rust\x20skin\x20gambling\x20platform\x20that\x20offers\x20a\x20range\x20of\x20games,\x20including\x20jackpot,\x20and\x20coinflip.\x20Easily\x20enter\x20and\x20withdraw\x20items\x20from\x20games.':_0x5b922e(0x308),'iTrade.gg\x20is\x20a\x20Trusted\x20platform\x20for\x20trading\x20rust\x20skins.\x20User-friendly\x20design,\x20free\x20sign-up\x20bonus,\x20and\x20daily\x20rewards\x20create\x20a\x20seamless\x20trading\x20experience.':_0x5b922e(0x433),'Shuffle.com\x20is\x20a\x20comprehensive\x20crypto\x20casino\x20with\x20a\x20unique\x20registration\x20process,\x20original\x20games,\x20a\x20VIP\x20program,\x20and\x20plans\x20for\x20future\x20expansion.':'Shuffle.com\x20es\x20un\x20casino\x20de\x20criptomonedas\x20completo\x20con\x20registro\x20único,\x20juegos\x20originales,\x20programa\x20VIP\x20y\x20planes\x20de\x20expansión\x20futura.','CashoutCSGO\x20is\x20a\x20platform\x20solely\x20dedicated\x20to\x20selling\x20CS2\x20skins\x20for\x20crypto\x20or\x20paypal,\x20offering\x20a\x20convenient\x20conversion\x20service.':_0x5b922e(0x65a),'Notable\x20online\x20marketplace,\x20vast\x20offerings\x20from\x20games\x20to\x20gift\x20cards,\x20reduced\x20rates,\x20stellar\x20reputation,\x20intuitive\x20interface,\x20up\x20to\x2098%\x20discounts.':_0x5b922e(0x230),'Withdraw\x20BTC,\x20ETH,\x20LTC\x20or\x20PayPal!':_0x5b922e(0x208),'Withdraw\x20Money,\x20Skins\x20or\x20Devices!':'Retira\x20dinero,\x20skins\x20o\x20dispositivos!','Withdraw\x20BTC,\x20LTC,\x20ETH\x20and\x20many\x20else!':_0x5b922e(0x344),'Withdrawal\x20of\x20many\x20types\x20of\x20cryptocurrencies\x20!':_0x5b922e(0x506),'Withdraw\x20CS2\x20Skins,\x20Crypto\x20or\x20Real\x20Money!':_0x5b922e(0x390),'Withdraw\x20CS2,\x20Dota\x202,\x20TF2\x20or\x20Rust\x20Items!':_0x5b922e(0x2ef),'Withdraw\x20CS2\x20Skins,\x20Crypto\x20or\x20Game\x20Keys!':'Retira\x20skins\x20de\x20CS2,\x20criptomonedas\x20o\x20juegos.','Withdraw\x20CS2\x20Skins,\x20Crypto\x20or\x20PayPal!':_0x5b922e(0x5b6),'Withdraw\x20Money,\x20CS2,\x20TF2\x20or\x20Rust\x20Skins!':_0x5b922e(0x44d),'Withdraw\x20CS2\x20Skins,\x20Dota\x202\x20and\x20H1Z1\x20Items!':'Retira\x20Skins\x20de\x20CS2,\x20Dota\x202\x20y\x20items\x20de\x20H1Z1!','Withdraw\x20CS2,\x20Rust\x20Skins\x20and\x20Dota\x202\x20Items!':'Retira\x20Skins\x20de\x20CS2,\x20Rust\x20y\x20items\x20de\x20Dota\x202!','Withdraw\x20Rust\x20Skins,\x20Crypto\x20or\x20PayPal!':'Retira\x20Skins\x20de\x20Rust,\x20criptomonedas\x20o\x20PayPal!','Withdraw\x20Dota\x202\x20Items,\x20Crypto\x20or\x20PayPal!':_0x5b922e(0x306),'Withdraw\x20Rust\x20Skins\x20or\x20Crypto!':_0x5b922e(0x637),'Withdraw\x20Rust\x20Skins\x20and\x20Items!':_0x5b922e(0x277),'Buy\x20Games,\x20Gift\x20Cards\x20and\x20many-many\x20more.':'¡Compra\x20Juegos,\x20Tarjetas\x20y\x20Mucho\x20Más!','Withdraw\x20with\x20many-many\x20ways.':_0x5b922e(0x40d),'Withdraw\x20Crypto,\x20gift\x20cards\x20or\x20real\x20money!':_0x5b922e(0x256),'Withdraw\x20CS2\x20Skins,\x20Gift\x20Cards\x20or\x20Crypto!':_0x5b922e(0x3f3),'Withdraw\x20Bitcoin,\x20Ethereum\x20or\x20Litecoin!':'Retira\x20Bitcoin,\x20Ethereum\x20o\x20Litecoin!','Withdraw\x20Games,\x20GiftCards\x20and\x20many\x20more!':_0x5b922e(0x41e),'Withdraw\x20Crypto\x20or\x20Real\x20Money!':_0x5b922e(0x646),'Withdraw\x20Crypto\x20and\x20Gift\x20Cards!':_0x5b922e(0x256),'Withdraw\x20BTC,\x20LTC,\x20USDT,\x20USDC\x20or\x20ETH!':'Retira\x20BTC,\x20LTC,\x20USDT,\x20USDC\x20o\x20ETH!','Withdraw\x20CS2\x20Skins\x20or\x20Items!':_0x5b922e(0x58e),'Withdraw\x20Games,\x20GiftCards\x20or\x20Dota2\x20&\x20TF2\x20Items!':_0x5b922e(0x346),'Withdraw\x20Games,\x20GiftCards\x20or\x20Donate\x20to\x20Charity!':_0x5b922e(0x4ee),'Participate\x20in\x20Giveaways\x20and\x20win\x20Steam\x20Games.':_0x5b922e(0x2f7),'Withdraw\x20CS2\x20And\x20Rust\x20Skins\x20or\x20Crypto!':_0x5b922e(0x4c4),'Withdraw\x20CS2\x20Skins\x20or\x20real\x20Money!':'Retira\x20Skins\x20de\x20CS2\x20o\x20dinero\x20real!','Withdraw\x20Steam\x20Trading\x20cards\x20or\x20Games.':'Retira\x20cartas\x20o\x20juegos\x20de\x20Steam!','Withdraw\x20USDT,\x20Skins\x20or\x20Real\x20Money!':_0x5b922e(0x2c4),'Withdraw\x20Money,\x20CS2\x20or\x20Rust\x20Skins!':_0x5b922e(0x2cd),'Withdraw\x20Money,\x20Crypto\x20or\x20Skins!':_0x5b922e(0x53d),'Withdraw\x20CS2\x20Skins\x20or\x20Crypto!':_0x5b922e(0x5da),'Withdraw\x20Money,\x20Crypto\x20or\x20PayPal!':_0x5b922e(0x379),'WITHDRAW\x20WITH\x20P2P\x20CS2\x20SKINS.':'RETIRA\x20CON\x20SKINS\x20P2P\x20DE\x20CS2.','Withdraw\x20Real\x20Money\x20or\x20Crypto!':_0x5b922e(0x3af),'Withdraw\x20BTC,\x20ETH,\x20USDT\x20or\x20Tron!':_0x5b922e(0x57f),'Withdraw\x20CS2\x20Skins\x20or\x20PayPal!':_0x5b922e(0x276),'Withdraw\x20CS2\x20Skins\x20and\x20Items!':_0x5b922e(0x2d8),'Withdraw\x20Steam\x20Trading\x20cards.':_0x5b922e(0x3c1),'1h,\x2024h\x20and\x207d\x20Giveaways':_0x5b922e(0x422),'24h\x20Giveaway':_0x5b922e(0x4a6),'3h\x20and\x2024h\x20Giveaway':'Sorteos\x20de\x203h\x20y\x2024h','Daily\x20and\x20Weekly\x20Giveaways':_0x5b922e(0x222),'1h\x20Giveaway':_0x5b922e(0x300),'1h,\x2024h\x20Giveaways':'Sorteos\x20de\x201h\x20y\x2024h','Rare\x20Giveaways':_0x5b922e(0x4e7),'Weekly\x20Giveaways':_0x5b922e(0x47a),'Daily\x20Giveaways':_0x5b922e(0x48e),'Deposit\x20Required':_0x5b922e(0x5c2),'+360%\x20Deposit\x20Bonus':'+360%\x20Bono\x20de\x20depósito','+100%\x20Deposit\x20Bonus':'+100%\x20Bono\x20de\x20depósito','+10%\x20Deposit\x20Bonus':'+10%\x20Bono\x20de\x20depósito','+5%\x20Deposit\x20Bonus':_0x5b922e(0x5ad),'+1%\x20Deposit\x20Bonus':_0x5b922e(0x62b),'70\x20Free\x20Spins':'70\x20Giros\x20gratis','Every\x2024h\x20Reward':'Recompensa\x20cada\x2024\x20horas','Daily\x20Case':'Estuche\x20diario','Daily\x20Faucet':_0x5b922e(0x387),'Daily\x20Roll':_0x5b922e(0x681),'Daily\x20Coins':_0x5b922e(0x55c),'Faucet\x20and\x20Giveaways':_0x5b922e(0x32d),'Daily\x200.02$':_0x5b922e(0x52d),'Daily\x200.02$\x20+\x20Free\x20Case':_0x5b922e(0x477),'360%\x20Deposit\x20Bonus':_0x5b922e(0x5b5),'Deposit\x20Bonus':'Bono\x20de\x20depósito','Visit\x20WebSite':_0x5b922e(0x60f),'Visit\x20WebSite\x20or\x20Copy':_0x5b922e(0x546),'100%\x20deposit\x20bonus':_0x5b922e(0x65b),'+1%\x20Sell\x20Bonus':_0x5b922e(0x551),'+3%\x20Sell\x20Bonus':_0x5b922e(0x3c7),'5%\x20deposit\x20bonus':_0x5b922e(0x672),'5\x20Free\x20Cases':'5\x20Estuches\x20gratis','Free\x2050\x20Gems':_0x5b922e(0x3ab),'3\x20Free\x20Cases':_0x5b922e(0x25e),'Free\x205€':'5€\x20gratis','2.00$\x20For\x20Free':_0x5b922e(0x46c),'5.00$\x20For\x20Free':_0x5b922e(0x4c0),'Free\x201.00$':_0x5b922e(0x594),'Free\x200.90$':_0x5b922e(0x65d),'Free\x200.50$':'0.50$\x20gratis','Free\x200.40$':_0x5b922e(0x5bc),'Free\x200.30$':_0x5b922e(0x237),'Free\x200.25$':_0x5b922e(0x6a3),'Free\x200.20$':_0x5b922e(0x257),'Free\x200.15$':_0x5b922e(0x31f),'Free\x200.10$':_0x5b922e(0x42d),'Free\x200.05$':_0x5b922e(0x34b),'Receive\x20up\x20to\x205.00$':_0x5b922e(0x5ef),'Free\x20Case':_0x5b922e(0x2fa),'Free\x201$':_0x5b922e(0x342),'Free\x202$':'2$\x20gratis','Big\x20Daily\x20Giveaways':_0x5b922e(0x4e6),'Free\x20Case\x20up\x20to\x20250$':_0x5b922e(0x4cd),'Daily\x20Giveaway':_0x5b922e(0x4d3),'Free\x20100\x20Diamonds':_0x5b922e(0x28b),'500\x20coins':'500\x20monedas','Daily\x20Cases':_0x5b922e(0x456),'3\x20Energy\x20Points':_0x5b922e(0x388),'Free\x20200\x20Coins':_0x5b922e(0x2c6),'some\x20free\x20coins':_0x5b922e(0x392),'Free\x202$':_0x5b922e(0x47c),'Free\x20spins':_0x5b922e(0x55d),'Offerwall':'Pared\x20de\x20ofertas','x2\x20Mining\x20Rate':_0x5b922e(0x396),'Games\x20Giveaways':_0x5b922e(0x677)},'pt':{'CSGORUN\x20is\x20a\x20leading\x20virtual\x20skin\x20gambling\x20platform\x20with\x20diverse\x20modes\x20like\x20Crash,\x20Roulette,\x20PVP,\x20and\x20esports\x20betting.\x20It\x27s\x20user-friendly.':_0x5b922e(0x50d),'RapidSkins\x20is\x20an\x20online\x20platform\x20created\x20to\x20provide\x20gamers\x20with\x20a\x20marketplace\x20for\x20purchasing,\x20selling,\x20and\x20trading\x20skins\x20for\x20CS2\x20and\x20Rust.':_0x5b922e(0x605),'RustMagic\x20-\x20a\x20cutting-edge\x20Rust\x20skin\x20betting\x20site,\x20features\x20five\x20distinct\x20game\x20modes,\x20withdrawal\x20in\x20Rust\x20skins,\x20and\x20a\x20daily\x20free\x20case\x20system\x20for\x20users.':_0x5b922e(0x24e),'SKINFANS\x20-\x20CS2\x20skin\x20case\x20opening\x20,\x20beautiful\x20animations,\x20provably\x20fair\x20system.\x20Regular\x20giveaways,\x20Battle-pass\x20for\x20newcomers,\x20sleek\x20design.':'SKINFANS\x20-\x20Abertura\x20de\x20caixas\x20de\x20pele\x20CS2,\x20animações\x20bonitas,\x20sistema\x20comprovadamente\x20justo.\x20Sorteios\x20regulares,\x20Passe\x20de\x20Batalha\x20para\x20novatos,\x20design\x20elegante.','CSFAIL,\x20a\x20prominent\x20website\x20in\x20Skin\x20Gambling,\x20offers\x20diverse\x20modes,\x20user-friendly\x20interface,\x20and\x20bonus\x20features\x20for\x20CS:GO,\x20Dota\x202,\x20and\x20RUST\x20skins.':_0x5b922e(0x66f),'Yayskins,\x20a\x20CS2\x20Skin\x20Gambling\x20Platform,\x20excels\x20with\x20user-friendly\x20design,\x20diverse\x20game\x20modes,\x20live\x20chat,\x20and\x20provable\x20fairness.':'Yayskins\x20-\x20plataforma\x20de\x20apostas\x20CS2\x20com\x20design\x20amigável,\x20vários\x20modos\x20de\x20jogo,\x20chat\x20ao\x20vivo\x20e\x20equidade\x20comprovada.','CSGO500\x20probably\x20the\x20best\x20CS2\x20Gambling\x20Site.\x20Regular\x20rains,\x20giveaways\x20and\x20promocodes.\x20You\x20can\x20play\x20many\x20games\x20and\x20slots.':_0x5b922e(0x3fa),'CSGO500\x20probably\x20the\x20best\x20CS2\x20and\x20Rust\x20Gambling\x20Site.\x20Regular\x20rains,\x20giveaways\x20and\x20promocodes.\x20You\x20can\x20play\x20many\x20games\x20and\x20slots.':'CSGO500,\x20provavelmente\x20o\x20melhor\x20site\x20de\x20apostas\x20de\x20CS2.\x20Chuvas\x20regulares,\x20brindes\x20e\x20códigos\x20promocionais.\x20Você\x20pode\x20jogar\x20muitos\x20jogos\x20e\x20caça-níqueis.','CSGORoll\x20is\x20one\x20of\x20the\x20most\x20popular\x20sites.\x20Which\x20includes\x20roulette,\x20crash\x20and\x20many\x20more.\x20Now\x20testing\x20e-sports\x20betting.':_0x5b922e(0x21e),'CSGOEmpire\x20is\x20one\x20of\x20the\x20most\x20popular\x20site.\x20Which\x20includes\x20roulette\x20and\x20coinflip.\x20Working\x20since\x202016.\x20Match\x20Betting\x20in\x20priority.':'CSGOEmpire\x20é\x20um\x20dos\x20sites\x20mais\x20populares.\x20Inclui\x20roleta\x20e\x20coinflip.\x20Trabalhando\x20desde\x202016.\x20Aposta\x20em\x20partidas\x20com\x20prioridade.','CSGOPolygon\x20is\x20a\x20legendary\x20site\x20like\x20CSGODouble\x20with\x20classic\x20Roulette,\x20but\x20have\x20Dices,\x20Crash,\x20Slots\x20and\x20even\x20Esports\x20Betting!':_0x5b922e(0x407),'Gamdom\x20Casino\x20offers\x20a\x20variety\x20of\x20in-house\x20games,\x20innovative\x20social\x20engagement,\x20provably\x20fair\x20system,\x20and\x20good\x20reputation\x20in\x20online\x20gaming.':_0x5b922e(0x36d),'CSGOPOSITIVE\x20is\x20a\x20famous\x20esports\x20betting\x20site\x20with\x20interesting\x20system\x20of\x20cashback,\x20you\x20can\x20bet\x20skins\x20or\x20money.\x20Has\x20various\x20payments\x20options.':_0x5b922e(0x2f1),'Rollbit\x20is\x20a\x20new\x20Casino\x20site\x20which\x20includes\x20Sport\x20Betting\x20and\x20many\x20classic\x20games\x20like\x20roulette.\x20Includes\x20Daily\x20Bonuses\x20!':_0x5b922e(0x676),'CSGOLuck\x20is\x20a\x20licensed\x20CSGO\x20skin\x20gambling\x20site\x20that\x20accepts\x20multiple\x20deposit\x20methods,\x20offering\x20various\x20games\x20and\x20a\x20user-friendly\x20design.':'É\x20um\x20site\x20de\x20apostas\x20de\x20skins\x20de\x20CSGO\x20licenciado\x20que\x20aceita\x20vários\x20métodos\x20de\x20depósito,\x20oferecendo\x20diversos\x20jogos\x20e\x20um\x20design\x20amigável\x20para\x20o\x20usuário.','Duelbits\x20is\x20a\x20safe\x20and\x20licensed\x20online\x20casino\x20with\x20a\x20variety\x20of\x20games,\x20sports\x20betting,\x20esports\x20betting,\x20and\x20instant\x20cryptocurrency\x20transactions.':_0x5b922e(0x381),'InsaneGG\x20is\x20an\x20online\x20platform\x20that\x20offers\x20a\x20range\x20of\x20CSGO\x20skin\x20gambling\x20games\x20with\x20professionally\x20designed\x20and\x20smooth\x20animations.':_0x5b922e(0x3d7),'Rustix\x20-\x20gambling\x20platform\x20for\x20CS2\x20and\x20Rust\x20with\x20original\x20games,\x20fair\x20gameplay,\x20bonuses,\x20and\x20impressive\x20animations.\x20Opened\x20in\x202023.':_0x5b922e(0x52f),'CSGO-Skins\x20is\x20a\x20reputable\x20online\x20platform\x20where\x20users\x20can\x20open\x20custom\x20CS2\x20cases\x20and\x20participate\x20in\x20daily\x20Giveaways.':'CSGO-Skins\x20é\x20uma\x20plataforma\x20online\x20confiável\x20onde\x20os\x20usuários\x20podem\x20abrir\x20caixas\x20personalizadas\x20de\x20CS2\x20e\x20participar\x20de\x20brindes\x20diários.','FlameCases\x20is\x20an\x20online\x20platform\x20that\x20permits\x20users\x20to\x20open\x20cases\x20for\x20CS2\x20and\x20Dota\x202.\x20Since\x20its\x20launch\x20in\x202017,\x20the\x20website\x20provides\x20various\x20features.':_0x5b922e(0x2bf),'KNIFEX\x20is\x20a\x20CS2\x20gambling\x20site\x20that\x20offers\x20a\x20range\x20of\x20game\x20modes,\x20including\x20case\x20opening,\x20case\x20battles,\x20coinflip,\x20crash,\x20clash\x20and\x20many\x20more!':_0x5b922e(0x27e),'DatDrop\x20is\x20a\x20website\x20that\x20specializes\x20in\x20opening\x20cases\x20that\x20contain\x20skins\x20from\x20CS2.\x20Its\x20most\x20prominent\x20feature\x20is\x20the\x20case-opening\x20battles.':_0x5b922e(0x28a),'DaddySkins\x20is\x20a\x20valid\x20CSGO\x20case\x20opening\x20website\x20that\x20has\x20been\x20in\x20operation\x20since\x202017,\x20and\x20it\x20offers\x20Case\x20Openings,\x20Case\x20Battles,\x20and\x20Upgrader.':'DaddySkins\x20é\x20um\x20site\x20de\x20abertura\x20de\x20caixas\x20do\x20CSGO\x20que\x20está\x20em\x20operação\x20desde\x202017\x20e\x20oferece\x20Aberturas\x20de\x20Caixas,\x20Batalhas\x20de\x20Caixas\x20e\x20Upgrader.','Clash.gg\x20is\x20a\x20new\x20CS2\x20Gambling\x20site\x20which\x20includes\x20many\x20games\x20like\x20Roulette,\x20Upgrader,\x20Cases\x20and\x20many\x20more\x20!':'Clash.gg\x20é\x20um\x20novo\x20site\x20de\x20apostas\x20de\x20CS2\x20que\x20oferece\x20uma\x20ampla\x20variedade\x20de\x20jogos\x20emocionantes,\x20como\x20Roleta,\x20Upgrader,\x20Caixas\x20e\x20muito\x20mais!','HellStore\x20is\x20a\x20platform\x20that\x20allows\x20users\x20to\x20participate\x20in\x20CSGO\x20skin\x20betting\x20through\x20game\x20modes\x20like\x20Coinflip,\x20Jackpot,\x20Upgrader,\x20and\x20Wheel.':'HellStore\x20é\x20uma\x20plataforma\x20que\x20permite\x20aos\x20usuários\x20participarem\x20de\x20apostas\x20de\x20skins\x20do\x20CSGO\x20através\x20de\x20modos\x20de\x20jogo\x20como\x20Coinflip,\x20Jackpot\x20e\x20Roleta.','Hellcase\x20is\x20an\x20online\x20platform\x20that\x20allows\x20users\x20to\x20purchase\x20virtual\x20cases\x20filled\x20with\x20skins\x20and\x20items\x20for\x20various\x20games\x20such\x20as\x20CS2,\x20Dota\x202,\x20and\x20Rust.':'Hellcase\x20é\x20uma\x20plataforma\x20que\x20permite\x20aos\x20usuários\x20comprar\x20caixas\x20virtuais\x20preenchidas\x20com\x20skins\x20e\x20itens\x20para\x20vários\x20jogos\x20como\x20CS2,\x20Dota\x202\x20e\x20Rust.','CSGOBIG\x20-\x20a\x20gambling\x20site\x20for\x20CS2\x20skins\x20with\x20game\x20modes\x20like\x20Jackpot,\x20Coinflip,\x20Roulette,\x20Cases,\x20and\x20Case\x20Battles.\x20Opened\x20in\x202015.':'CSGOBIG\x20-\x20um\x20site\x20de\x20apostas\x20de\x20skins\x20do\x20CS2\x20com\x20modos\x20de\x20jogo\x20como\x20Jackpot,\x20Coinflip,\x20Roleta,\x20Caixas\x20e\x20Batalhas\x20de\x20Caixas.\x20Aberto\x20em\x202015.','CSGOFast\x20is\x20a\x20CSGO\x20skin\x20gambling\x20site\x20that\x20offers\x20a\x20wide\x20range\x20of\x20exclusive\x20game\x20modes.\x20One\x20of\x20the\x20earliest\x20CSGO\x20gambling\x20sites.':_0x5b922e(0x508),'CSGOLive\x20is\x20a\x20safe\x20and\x20legitimate\x20CS2\x20case\x20opening\x20website\x20with\x20custom\x20cases,\x20daily\x20bonuses,\x20and\x20a\x20Provably\x20Fair\x20system.':_0x5b922e(0x219),'WTFSkins\x20is\x20a\x20reliable\x20and\x20popular\x20online\x20platform\x20offering\x20unique\x20games,\x20daily\x20rewards,\x20and\x20a\x20simple\x20registration\x20process.':_0x5b922e(0x46a),'Key-Drop\x20is\x20a\x20reputable\x20online\x20gambling\x20platform\x20that\x20offers\x20various\x20activities\x20like\x20Case\x20Battles\x20and\x20Upgrader,\x20as\x20well\x20as\x20custom\x20CSGO\x20skin\x20cases.':_0x5b922e(0x60c),'Farmskins\x20is\x20a\x20well-known\x20CSGO\x20case\x20opening\x20website\x20that\x20has\x20been\x20operating\x20since\x202016,\x20offering\x20a\x20wide\x20selection\x20of\x20skins\x20for\x20players\x20to\x20unbox.':_0x5b922e(0x516),'Bets4.pro\x20is\x20an\x20online\x20platform\x20that\x20offers\x20users\x20the\x20ability\x20to\x20place\x20bets\x20on\x20esports\x20matches,\x20particularly\x20for\x20CS2\x20,\x20Dota\x202,\x20Valorant\x20and\x20many\x20more.':'Bets4.pro\x20é\x20uma\x20plataforma\x20online\x20para\x20apostas\x20em\x20esportes\x20eletrônicos,\x20incluindo\x20CS2,\x20Dota\x202,\x20Valorant\x20e\x20mais.','This\x20site\x20can\x20be\x20called\x20almost\x20legendary\x20among\x20peers\x20due\x20to\x20its\x20high\x20payouts\x20and\x20constant\x20promotions.\x20Include\x20daily\x20bonus!':_0x5b922e(0x439),'HowlGG\x20is\x20a\x20Rust\x20skin\x20gambling\x20platform\x20that\x20offers\x20a\x20range\x20of\x20games,\x20including\x20jackpot,\x20coinflip,\x20slots,\x20and\x20live\x20casino\x20games.':'HowlGG\x20é\x20uma\x20plataforma\x20de\x20jogos\x20de\x20apostas\x20de\x20skins\x20do\x20Rust\x20que\x20oferece\x20uma\x20variedade\x20de\x20jogos,\x20incluindo\x20jackpot,\x20coinflip,\x20slots\x20e\x20jogos\x20de\x20cassino.','BanditCamp\x20is\x20a\x20Rust\x20skin\x20gambling\x20website\x20that\x20provides\x20several\x20Rust-themed\x20game\x20modes\x20like\x20wheel\x20of\x20fortune,\x20case\x20unboxings,\x20and\x20coinflip.':_0x5b922e(0x28d),'GCSkins\x20is\x20a\x20well-known\x20mobile\x20app\x20and\x20website\x20that\x20offers\x20CSGO\x20skins\x20and\x20items\x20as\x20rewards\x20for\x20completing\x20online\x20tasks.\x20Available\x20since\x202016.':_0x5b922e(0x5d5),'GrindBux\x20is\x20a\x20trusted\x20platform\x20where\x20you\x20can\x20earn\x20some\x20money\x20by\x20completing\x20surveys\x20or\x20play\x20mobile\x20and\x20desktop\x20games.':_0x5b922e(0x425),'Rust\x20skin\x20gambling\x20site\x20that\x20has\x20been\x20around\x20since\x202017.\x20The\x20platform\x20offers\x20a\x20range\x20of\x20popular\x20games,\x20including\x20high-roller\x20jackpot\x20and\x20coinflip\x20games.':_0x5b922e(0x4ce),'RustBet\x20-\x20Trusted\x20gambling\x20site,\x20Rust\x20skins\x20as\x20rewards.\x20Jackpot,\x20coinflip,\x20and\x20skin\x20upgrader\x20games.\x20Clean\x20reputation,\x20SSL\x20encryption,\x20user-friendly.':_0x5b922e(0x395),'RustStake\x20is\x20a\x20Rust\x20skin\x20gambling\x20platform\x20that\x20offers\x20a\x20range\x20of\x20games,\x20including\x20jackpot\x20and\x20coinflip.\x20Easily\x20enter\x20and\x20withdraw\x20items\x20from\x20games.':_0x5b922e(0x36c),'In\x20fact,\x20the\x20progenitor\x20of\x20sites\x20for\x20earning\x20through\x20Steam,\x20stands\x20out\x20for\x20its\x20huge\x20selection\x20of\x20Withdrawal\x20methods.':_0x5b922e(0x51b),'RustyLoot\x20offers\x20a\x20variety\x20of\x20games,\x20including\x20Wheel,\x20Plinko,\x20and\x20more.\x20With\x20its\x20transparent\x20and\x20provably\x20fair\x20system,\x20RustyLoot\x20is\x20safe\x20and\x20enjoyable.':_0x5b922e(0x335),'RustChance\x20has\x20been\x20operating\x20since\x202017\x20and\x20offers\x20several\x20popular\x20games,\x20including\x20Jackpot,\x20Wheel,\x20Coinflip,\x20Crash,\x20and\x20Landmines.':_0x5b922e(0x511),'CrashGG\x20focuses\x20on\x20Rust\x20skin\x20gambling\x20and\x20offers\x20various\x20games,\x20including\x20its\x20primary\x20feature,\x20the\x20crash\x20game\x20mode.\x20Also\x20has\x20Duels,\x20Blackjack\x20and\x20Lottery.':_0x5b922e(0x202),'HypeUp\x20is\x20owned\x20by\x20the\x20same\x20operators\x20of\x20two\x20popular\x20betting\x20sites,\x20CSGORoll\x20and\x20HypeDrop.\x20Offers\x20two\x20original\x20games\x20and\x20Slots\x20with\x20Live\x20Games.':_0x5b922e(0x1f4),'The\x20website\x20has\x20a\x20decent\x20number\x20of\x20survey\x20providers\x20and\x20offerwall\x20partners\x20to\x20choose\x20from,\x20and\x20there\x20are\x20plenty\x20of\x20options\x20for\x20withdrawing\x20earnings.':_0x5b922e(0x337),'SkinSwap\x20is\x20an\x20online\x20platform\x20that\x20allows\x20players\x20to\x20trade\x20and\x20sell\x20skins\x20from\x20popular\x20games\x20such\x20as\x20CS2\x20and\x20Rust.\x20Owned\x20and\x20operated\x20by\x20RustySell.':_0x5b922e(0x62e),'CSGOSelly\x20is\x20a\x20website\x20that\x20allows\x20users\x20to\x20cash\x20out\x20their\x20CSGO\x20skins\x20for\x20money\x20via\x20various\x20payment\x20methods.\x20It\x20was\x20founded\x20in\x202021.':_0x5b922e(0x4df),'Unique\x20site\x20where\x20you\x20can\x20earn\x20money\x20by\x20winning\x20games\x20in\x20various\x20mobile\x20gaming\x20cyber\x20disciplines.\x20Also\x20have\x20many\x20offerwalls.':_0x5b922e(0x283),'Mobile\x20Games.\x20Unique\x20site\x20where\x20you\x20can\x20earn\x20money\x20by\x20winning\x20games\x20in\x20various\x20mobile\x20gaming\x20cyber\x20disciplines.\x20Also\x20have\x20many\x20offerwalls.':_0x5b922e(0x283),'RustMoment\x20is\x20a\x20gambling\x20site\x20for\x20Rust\x20skin\x20enthusiasts\x20with\x20six\x20games,\x20bonuses,\x20and\x20a\x20rakeback\x20system.\x20It\x20accepts\x20standard\x20and\x20cryptocurrency\x20payments.':_0x5b922e(0x588),'Freeward\x20is\x20a\x20GPT\x20site\x20that\x20provides\x20various\x20opportunities\x20for\x20users\x20to\x20earn\x20rewards\x20through\x20tasks\x20like\x20surveys\x20and\x20watching\x20videos.':_0x5b922e(0x455),'Roobet\x20is\x20an\x20online\x20casino\x20that\x20allows\x20users\x20to\x20play\x20games\x20using\x20cryptocurrency.\x20The\x20platform\x20has\x20a\x20reputation\x20for\x20being\x20legitimate\x20and\x20safe.':'Roobet\x20é\x20um\x20cassino\x20online\x20que\x20permite\x20aos\x20usuários\x20jogar\x20jogos\x20usando\x20criptomoeda.\x20A\x20plataforma\x20tem\x20uma\x20reputação\x20de\x20ser\x20legítima\x20e\x20segura.','xplay\x20is\x20a\x20platform\x20that\x20allows\x20CS2\x20players\x20to\x20earn\x20skins\x20just\x20by\x20playing\x20on\x20their\x20servers.\x20The\x20platform\x20offers\x20various\x20servers\x20and\x20daily\x20challenges.':_0x5b922e(0x216),'Established\x20in\x202018,\x20it\x20offers\x20jackpot,\x20coinflip,\x20and\x20roulette\x20games\x20with\x20enhanced\x20features,\x20provable\x20fairness,\x20and\x20attractive\x20animations.':_0x5b922e(0x3e9),'GameTame\x20is\x20a\x20GPT\x20site\x20that\x20provides\x20rewards\x20for\x20completing\x20various\x20activities\x20and\x20offers.\x20The\x20platform\x20is\x20specifically\x20designed\x20for\x20gamers.':_0x5b922e(0x559),'Salad\x20is\x20a\x20website\x20that\x20offers\x20users\x20the\x20opportunity\x20to\x20mine\x20wallet\x20and\x20buy\x20giftcards\x20and\x20many\x20more\x20using\x20their\x20computer\x27s\x20processing\x20power.':_0x5b922e(0x5b2),'Site\x20from\x20Gamehag\x20owners.\x20Has\x20a\x20decent\x20number\x20of\x20survey\x20providers\x20and\x20offerwall\x20partners\x20to\x20choose\x20from,\x20plenty\x20of\x20options\x20for\x20withdrawing\x20earnings.':_0x5b922e(0x30c),'SteamGifts\x20is\x20a\x20legitimate\x20website\x20for\x20Steam\x20Game\x20Giveaways\x20with\x20a\x20supportive\x20community\x20and\x20helpful\x20resources.':_0x5b922e(0x5ac),'GrindBux\x20is\x20a\x20trusted\x20platform\x20when\x20you\x20can\x20earn\x20some\x20money\x20by\x20completing\x20surveys\x20or\x20play\x20mobile\x20and\x20desktop\x20games.':_0x5b922e(0x5e5),'RustCases\x20is\x20a\x20trusted\x20Rust\x20gambling\x20site\x20with\x20various\x20game\x20modes,\x20a\x20wide\x20range\x20of\x20cases,\x20and\x20skin\x20withdrawal\x20options.\x20By\x20RustChance\x20owners.':_0x5b922e(0x4ae),'RustClash\x20is\x20a\x20new\x20Rust\x20Gambling\x20site\x20which\x20includes\x20many\x20games\x20like\x20Roulette,\x20Upgrader,\x20Cases\x20and\x20many\x20more\x20!':'RustClash\x20é\x20um\x20novo\x20site\x20de\x20apostas\x20de\x20Rust\x20que\x20inclui\x20muitos\x20jogos\x20como\x20Roleta,\x20Upgrader,\x20Cases\x20e\x20muitos\x20outros!','BC.Game\x20is\x20an\x20online\x20casino\x20and\x20sportsbook\x20that\x20was\x20launched\x20in\x202017,\x20offering\x20over\x208,000\x20games\x20including\x20proprietary\x20and\x20probably\x20fair\x20games.':'BC.Game\x20é\x20um\x20cassino\x20online\x20e\x20casa\x20de\x20apostas\x20lançado\x20em\x202017,\x20com\x20mais\x20de\x208.000\x20jogos,\x20incluindo\x20jogos\x20proprietários\x20e\x20provavelmente\x20justos.','Primedice\x20is\x20an\x20online\x20Crypto\x20Dice\x20Game\x20Casino\x20that\x20has\x20been\x20in\x20operation\x20since\x202013.\x20It\x20was\x20one\x20of\x20the\x20first\x20platforms\x20to\x20use\x20crypto\x20for\x20gambling.':_0x5b922e(0x3c3),'Tradeit\x20is\x20an\x20online\x20marketplace\x20that\x20offers\x20players\x20the\x20opportunity\x20to\x20trade,\x20buy,\x20and\x20sell\x20skins\x20for\x20a\x20variety\x20of\x20games,\x20including\x20CS2.\x20Working\x20since\x202017.':_0x5b922e(0x58f),'DMarket\x20is\x20a\x20reliable\x20and\x20popular\x20marketplace\x20for\x20Steam\x20items,\x20with\x20a\x20large\x20number\x20of\x20items\x20available\x20and\x20positive\x20reviews\x20on\x20Trustpilot.':_0x5b922e(0x3bd),'Swap.gg\x20is\x20a\x20website\x20that\x20allows\x20users\x20to\x20buy,\x20sell,\x20and\x20trade\x20CS2,\x20Rust\x20,\x20TF2\x20and\x20other\x20virtual\x20items\x20from\x20various\x20games.\x20Working\x20since\x202017.':_0x5b922e(0x4b3),'BitSkins\x20is\x20an\x20online\x20marketplace\x20for\x20in-game\x20skins,\x20particularly\x20for\x20Counter-Strike\x202,\x20Dota\x202,\x20and\x20Team\x20Fortress\x202.\x20Launched\x20in\x202015.':'BitSkins\x20é\x20um\x20mercado\x20online\x20para\x20skins\x20de\x20jogos,\x20especialmente\x20para\x20Counter-Strike\x202,\x20Dota\x202\x20e\x20Team\x20Fortress\x202.\x20Lançado\x20em\x202015.','Secure\x20P2P\x20marketplace\x20owned\x20by\x20Hellcase.\x20SSL-encrypted,\x20KYC\x20verification,\x20friendly\x20design,\x20competitive\x20pricing,\x20trusted\x20trading\x20platform.':_0x5b922e(0x27d),'BitSkins\x20P2P\x20is\x20an\x20online\x20platform\x20for\x20buying\x20and\x20selling\x20virtual\x20items,\x20with\x20a\x20focus\x20on\x20CS2\x20skins.\x20The\x20parent\x20company,\x20BitSkins.':_0x5b922e(0x33b),'Trusted\x20CS2\x20skin\x20platform\x20with\x20rentals,\x20endorsed\x20by\x20YouTubers.\x20Secure,\x20limited\x20to\x20CS2\x20skins,\x20fees\x20apply,\x20and\x20user\x20reviews\x20indicate\x20room\x20for\x20improve.':_0x5b922e(0x2e4),'GamerPay\x20is\x20a\x20trusted\x20platform\x20for\x20buying\x20and\x20selling\x20CS2\x20skins,\x20with\x20a\x20free\x20selling\x20option,\x20secure\x20transactions,\x20and\x20high-quality\x20skin\x20inspection\x20tool.':'GamerPay\x20é\x20uma\x20plataforma\x20confiável\x20para\x20compra\x20e\x20venda\x20de\x20skins\x20de\x20CS2.\x20Venda\x20gratuita,\x20transações\x20seguras,\x20inspeção\x20de\x20skins\x20de\x20alta\x20qualidade.','CSGO\x20Market\x20is\x20an\x20online\x20P2P\x20marketplace\x20that\x20provides\x20a\x20safe\x20and\x20secure\x20platform\x20for\x20buying\x20and\x20selling\x20CS2\x20skins.\x20Established\x20in\x202015.':_0x5b922e(0x2a7),'Lis-Skins\x20is\x20a\x20popular\x20marketplace\x20for\x20Steam\x20items,\x20especially\x20CS2,\x20Rust\x20and\x20Dota\x202\x20skins\x20and\x20items.\x20The\x20platform\x20was\x20founded\x20in\x202020.':'Lis-Skins\x20é\x20um\x20mercado\x20popular\x20para\x20itens\x20do\x20Steam,\x20especialmente\x20skins\x20e\x20itens\x20de\x20CS2,\x20Rust\x20e\x20Dota\x202.\x20A\x20plataforma\x20foi\x20fundada\x20em\x202020.','WhiteMarket\x20is\x20a\x20P2P\x20platform\x20for\x20CS2\x20skin\x20trading.\x20It\x20offers\x20secure\x20trades,\x20various\x20deposit\x20options,\x20and\x20community\x20engagement.':_0x5b922e(0x4bf),'CS.Deals\x20is\x20a\x20platform\x20that\x20allows\x20users\x20to\x20buy,\x20sell,\x20and\x20trade\x20skins\x20from\x20popular\x20games\x20such\x20as\x20CS2,\x20Dota\x202,\x20Rust,\x20and\x20Team\x20Fortress\x202.\x20Working\x20since\x202016.':_0x5b922e(0x5aa),'SkinBid\x20is\x20an\x20online\x20marketplace\x20for\x20CS2\x20skins\x20and\x20in-game\x20items,\x20offering\x20buying,\x20selling,\x20and\x20auctioning\x20features\x20with\x20a\x20user-friendly\x20interface.':_0x5b922e(0x37b),'LOOT.Farm\x20is\x20an\x20online\x20platform\x20that\x20offers\x20users\x20the\x20ability\x20to\x20Trade\x20virtual\x20items\x20from\x20popular\x20games\x20like\x20CS2,\x20Dota\x202,\x20Team\x20Fortress\x202,\x20and\x20Rust.':_0x5b922e(0x571),'SkinBaron\x20is\x20an\x20online\x20platform\x20based\x20in\x20Germany\x20that\x20enables\x20users\x20to\x20buy\x20and\x20sell\x20their\x20CS2\x20skins.\x20The\x20platform\x20has\x20gained\x20a\x20good\x20reputation.':_0x5b922e(0x41f),'Gamdom\x20is\x20one\x20of\x20the\x20best\x20CS2\x20Match\x20Betting\x20Sites.\x20You\x20can\x20play\x20Roulette,\x20Wheel,\x20Crash,\x20Slots\x20and\x20many\x20more!':_0x5b922e(0x558),'SkinCashier\x20is\x20an\x20online\x20platform\x20that\x20allows\x20players\x20to\x20Instant\x20Sell\x20their\x20CS2,\x20Rust,\x20Dota\x202,\x20and\x20TF2\x20skins\x20for\x20real\x20money.\x20Operating\x20since\x202020.':_0x5b922e(0x499),'Avan.Market\x20is\x20an\x20online\x20platform\x20that\x20offers\x20users\x20the\x20opportunity\x20to\x20sell\x20gaming\x20skins\x20from\x20popular\x20games\x20like\x20CS2,\x20Dota\x202,\x20RUST,\x20and\x20TF2.':_0x5b922e(0x3eb),'Skins.Cash\x20is\x20a\x20reputable\x20platform\x20with\x20positive\x20reviews,\x20reliable\x20customer\x20support,\x20and\x20over\x20six\x20years\x20of\x20operation.\x20Pricing\x20not\x20the\x20best\x20one.':_0x5b922e(0x5dd),'CYBERSHOKE\x20is\x20a\x20website\x20that\x20provides\x20servers\x20for\x20playing\x20CS2.\x20It\x20offers\x20various\x20servers\x20for\x20players\x20to\x20choose.':_0x5b922e(0x648),'This\x20site\x20was\x20created\x20for\x20easy\x20leveling\x20up\x20Steam,\x20you\x20can\x20sell\x20emojis\x20and\x20profile\x20backgrounds\x20for\x20Steam\x20Trading\x20Cards\x20to\x20fast\x20level\x20up.':_0x5b922e(0x41c),'SteamLevelU\x20is\x20a\x20legitimate\x20platform\x20to\x20buy\x20Steam\x20trading\x20card\x20packs\x20for\x20enhancing\x20Steam\x20account\x20levels,\x20associated\x20with\x20SH\x20Level\x20Up.':_0x5b922e(0x270),'SteamLevels\x20is\x20a\x20user-friendly\x20website\x20that\x20helps\x20increase\x20your\x20Steam\x20account\x20level\x20by\x20purchasing\x20card\x20packs\x20and\x20accepting\x20CSGO\x20skins.':_0x5b922e(0x2a2),'RustStake\x20is\x20a\x20Rust\x20skin\x20gambling\x20platform\x20that\x20offers\x20a\x20range\x20of\x20games,\x20including\x20jackpot,\x20and\x20coinflip.\x20Easily\x20enter\x20and\x20withdraw\x20items\x20from\x20games.':'O\x20RustStake\x20é\x20uma\x20plataforma\x20de\x20apostas\x20de\x20skins\x20de\x20Rust\x20com\x20jogos\x20como\x20jackpot\x20e\x20coinflip.\x20Fácil\x20entrada\x20e\x20retirada\x20de\x20itens.','iTrade.gg\x20is\x20a\x20Trusted\x20platform\x20for\x20trading\x20rust\x20skins.\x20User-friendly\x20design,\x20free\x20sign-up\x20bonus,\x20and\x20daily\x20rewards\x20create\x20a\x20seamless\x20trading\x20experience.':'Confiável\x20para\x20negociar\x20skins\x20de\x20Rust.\x20Design\x20intuitivo,\x20bônus\x20de\x20inscrição\x20grátis\x20e\x20recompensas\x20diárias\x20para\x20uma\x20experiência\x20de\x20negociação\x20tranquila.','Shuffle.com\x20is\x20a\x20comprehensive\x20crypto\x20casino\x20with\x20a\x20unique\x20registration\x20process,\x20original\x20games,\x20a\x20VIP\x20program,\x20and\x20plans\x20for\x20future\x20expansion.':_0x5b922e(0x207),'CashoutCSGO\x20is\x20a\x20platform\x20solely\x20dedicated\x20to\x20selling\x20CS2\x20skins\x20for\x20crypto\x20or\x20paypal,\x20offering\x20a\x20convenient\x20conversion\x20service.':_0x5b922e(0x371),'Notable\x20online\x20marketplace,\x20vast\x20offerings\x20from\x20games\x20to\x20gift\x20cards,\x20reduced\x20rates,\x20stellar\x20reputation,\x20intuitive\x20interface,\x20up\x20to\x2098%\x20discounts.':_0x5b922e(0x40c),'Withdraw\x20BTC,\x20ETH,\x20LTC\x20or\x20PayPal!':_0x5b922e(0x3f4),'Withdraw\x20Money,\x20Skins\x20or\x20Devices!':_0x5b922e(0x45a),'Withdraw\x20BTC,\x20LTC,\x20ETH\x20and\x20many\x20else!':_0x5b922e(0x693),'Withdrawal\x20of\x20many\x20types\x20of\x20cryptocurrencies\x20!':_0x5b922e(0x32c),'Withdraw\x20CS2\x20Skins,\x20Crypto\x20or\x20Real\x20Money!':_0x5b922e(0x438),'Withdraw\x20CS2,\x20Dota\x202,\x20TF2\x20or\x20Rust\x20Items!':_0x5b922e(0x5b9),'Withdraw\x20CS2\x20Skins,\x20Crypto\x20or\x20Game\x20Keys!':'Retirar\x20Skins\x20do\x20CS2,\x20Criptomoedas\x20ou\x20Jogos!','Withdraw\x20CS2\x20Skins,\x20Crypto\x20or\x20PayPal!':_0x5b922e(0x2c3),'Withdraw\x20Money,\x20CS2,\x20TF2\x20or\x20Rust\x20Skins!':_0x5b922e(0x569),'Withdraw\x20CS2\x20Skins,\x20Dota\x202\x20and\x20H1Z1\x20Items!':_0x5b922e(0x56b),'Withdraw\x20CS2,\x20Rust\x20Skins\x20and\x20Dota\x202\x20Items!':_0x5b922e(0x246),'Withdraw\x20Rust\x20Skins,\x20Crypto\x20or\x20PayPal!':_0x5b922e(0x2b3),'Withdraw\x20Dota\x202\x20Items,\x20Crypto\x20or\x20PayPal!':_0x5b922e(0x4f8),'Withdraw\x20Rust\x20Skins\x20or\x20Crypto!':_0x5b922e(0x6ae),'Withdraw\x20Rust\x20Skins\x20and\x20Items!':_0x5b922e(0x3e0),'Withdraw\x20with\x20many-many\x20ways.':_0x5b922e(0x6a6),'Buy\x20Games,\x20Gift\x20Cards\x20and\x20many-many\x20more.':'Compre\x20Jogos,\x20Cartões\x20e\x20Muito\x20Mais.','Withdraw\x20Crypto,\x20gift\x20cards\x20or\x20real\x20money!':_0x5b922e(0x50e),'Withdraw\x20CS2\x20Skins,\x20Gift\x20Cards\x20or\x20Crypto!':_0x5b922e(0x597),'Withdraw\x20Bitcoin,\x20Ethereum\x20or\x20Litecoin!':_0x5b922e(0x55e),'Withdraw\x20Games,\x20GiftCards\x20and\x20many\x20more!':_0x5b922e(0x481),'Withdraw\x20Crypto\x20or\x20Real\x20Money!':_0x5b922e(0x324),'Withdraw\x20Crypto\x20and\x20Gift\x20Cards!':_0x5b922e(0x655),'Withdraw\x20BTC,\x20LTC,\x20USDT,\x20USDC\x20or\x20ETH!':_0x5b922e(0x4dd),'Withdraw\x20CS2\x20Skins\x20or\x20Items!':_0x5b922e(0x3a3),'Withdraw\x20Games,\x20GiftCards\x20or\x20Dota2\x20&\x20TF2\x20Items!':'Levantar\x20Jogos\x20ou\x20Itens\x20de\x20Dota2\x20e\x20TF2!','Withdraw\x20Games,\x20GiftCards\x20or\x20Donate\x20to\x20Charity!':_0x5b922e(0x39b),'Participate\x20in\x20Giveaways\x20and\x20win\x20Steam\x20Games.':'Participar\x20em\x20Sorteios\x20e\x20ganhar\x20Jogos\x20da\x20Steam.','Withdraw\x20CS2\x20And\x20Rust\x20Skins\x20or\x20Crypto!':'Retirar\x20Skins\x20do\x20CS2\x20e\x20Rust\x20ou\x20Criptomoedas!','Withdraw\x20CS2\x20Skins\x20or\x20real\x20Money!':'Retirar\x20Skins\x20do\x20CS2\x20ou\x20Dinheiro\x20Real!','Withdraw\x20Steam\x20Trading\x20cards\x20or\x20Games.':'Retirar\x20Cartas\x20do\x20Steam\x20ou\x20Jogos.','Withdraw\x20USDT,\x20Skins\x20or\x20Real\x20Money!':'Retirar\x20USDT,\x20Skins\x20ou\x20Dinheiro\x20Real!','Withdraw\x20Money,\x20CS2\x20or\x20Rust\x20Skins!':_0x5b922e(0x3c0),'Withdraw\x20Money,\x20Crypto\x20or\x20Skins!':_0x5b922e(0x4b8),'Withdraw\x20CS2\x20Skins\x20or\x20Crypto!':_0x5b922e(0x4f5),'Withdraw\x20Money,\x20Crypto\x20or\x20PayPal!':_0x5b922e(0x68a),'WITHDRAW\x20WITH\x20P2P\x20CS2\x20SKINS.':_0x5b922e(0x210),'Withdraw\x20Real\x20Money\x20or\x20Crypto!':_0x5b922e(0x402),'Withdraw\x20BTC,\x20ETH,\x20USDT\x20or\x20Tron!':_0x5b922e(0x201),'Withdraw\x20CS2\x20Skins\x20or\x20PayPal!':_0x5b922e(0x29d),'Withdraw\x20CS2\x20Skins\x20and\x20Items!':_0x5b922e(0x497),'Withdraw\x20Steam\x20Trading\x20cards.':_0x5b922e(0x68b),'1h,\x2024h\x20and\x207d\x20Giveaways':'Sorteios\x20de\x201h,\x2024h\x20e\x207d','24h\x20Giveaway':_0x5b922e(0x48c),'3h\x20and\x2024h\x20Giveaway':_0x5b922e(0x65c),'Daily\x20and\x20Weekly\x20Giveaways':_0x5b922e(0x3b1),'1h\x20Giveaway':_0x5b922e(0x3a2),'1h,\x2024h\x20Giveaways':_0x5b922e(0x296),'Rare\x20Giveaways':_0x5b922e(0x521),'Weekly\x20Giveaways':_0x5b922e(0x5e8),'Daily\x20Giveaways':_0x5b922e(0x33d),'Deposit\x20Required':_0x5b922e(0x389),'+360%\x20Deposit\x20Bonus':_0x5b922e(0x582),'+100%\x20Deposit\x20Bonus':'+100%\x20Bónus\x20de\x20Depósito','+10%\x20Deposit\x20Bonus':_0x5b922e(0x4f7),'+5%\x20Deposit\x20Bonus':_0x5b922e(0x5f9),'+1%\x20Deposit\x20Bonus':'+1%\x20Bónus\x20de\x20Depósito','70\x20Free\x20Spins':_0x5b922e(0x528),'Every\x2024h\x20Reward':_0x5b922e(0x52c),'Daily\x20Case':_0x5b922e(0x32b),'Daily\x20Faucet':'Faucet\x20Diário','Daily\x20Roll':_0x5b922e(0x51e),'Daily\x20Coins':_0x5b922e(0x436),'Faucet\x20and\x20Giveaways':_0x5b922e(0x653),'Daily\x200.02$':_0x5b922e(0x331),'Daily\x200.02$\x20+\x20Free\x20Case':'0,02$\x20Diários\x20+\x20Caixa\x20Grátis','360%\x20Deposit\x20Bonus':_0x5b922e(0x63b),'Deposit\x20Bonus':_0x5b922e(0x3f0),'Visit\x20WebSite':'Visite\x20o\x20Site','Visit\x20WebSite\x20or\x20Copy':'Visite\x20o\x20Site\x20ou\x20Copie','100%\x20deposit\x20bonus':'Bônus\x20de\x20depósito\x20de\x20100%','+1%\x20Sell\x20Bonus':_0x5b922e(0x215),'+3%\x20Sell\x20Bonus':'Bônus\x20de\x20venda\x20de\x20+3%','5%\x20deposit\x20bonus':'Bônus\x20de\x20depósito\x20de\x205%','5\x20Free\x20Cases':_0x5b922e(0x278),'Free\x2050\x20Gems':_0x5b922e(0x593),'3\x20Free\x20Cases':_0x5b922e(0x437),'Free\x205€':'5€\x20Grátis','2.00$\x20For\x20Free':_0x5b922e(0x385),'5.00$\x20For\x20Free':_0x5b922e(0x398),'Free\x201.00$':_0x5b922e(0x69f),'Free\x200.90$':'0,90$\x20grátis','Free\x200.50$':_0x5b922e(0x4e3),'Free\x200.40$':_0x5b922e(0x343),'Free\x200.30$':'0,30$\x20grátis','Free\x200.25$':'0,25$\x20grátis','Free\x200.20$':_0x5b922e(0x608),'Free\x200.15$':'0,15$\x20grátis','Free\x200.10$':_0x5b922e(0x2bd),'Free\x200.05$':_0x5b922e(0x318),'Receive\x20up\x20to\x205.00$':_0x5b922e(0x414),'Free\x20Case':_0x5b922e(0x3e3),'Free\x201$':'1$\x20grátis','Free\x202$':_0x5b922e(0x4f0),'Free\x201$':_0x5b922e(0x34c),'Big\x20Daily\x20Giveaways':'Grandes\x20Sorteios\x20Diários','Free\x20Case\x20up\x20to\x20250$':_0x5b922e(0x66b),'Daily\x20Giveaway':_0x5b922e(0x577),'Free\x20100\x20Diamonds':_0x5b922e(0x430),'500\x20coins':_0x5b922e(0x3f8),'Daily\x20Cases':_0x5b922e(0x631),'3\x20Energy\x20Points':_0x5b922e(0x267),'Free\x20200\x20Coins':_0x5b922e(0x231),'some\x20free\x20coins':_0x5b922e(0x43d),'Free\x202$':'2$\x20Grátis','Free\x20spins':'Rodadas\x20Grátis','Offerwall':_0x5b922e(0x35a),'x2\x20Mining\x20Rate':'Taxa\x20de\x20Mineração\x20x2','Games\x20Giveaways':_0x5b922e(0x49c)},'ru':{'CSGO500\x20probably\x20the\x20best\x20CS2\x20Gambling\x20Site.\x20Regular\x20rains,\x20giveaways\x20and\x20promocodes.\x20You\x20can\x20play\x20many\x20games\x20and\x20slots.':'CSGO500,\x20вероятно,\x20является\x20лучшим\x20сайтом\x20для\x20азартных\x20игр\x20в\x20CS2.\x20Здесь\x20регулярно\x20проводятся\x20раздачи\x20и\x20розыгрыши.','CSGORoll\x20is\x20one\x20of\x20the\x20most\x20popular\x20sites.\x20Which\x20includes\x20roulette,\x20crash\x20and\x20many\x20more.\x20Now\x20testing\x20e-sports\x20betting.':_0x5b922e(0x553),'CSGOEmpire\x20is\x20one\x20of\x20the\x20most\x20popular\x20site.\x20Which\x20includes\x20roulette\x20and\x20coinflip.\x20Working\x20since\x202016.\x20Match\x20Betting\x20in\x20priority.':_0x5b922e(0x255),'CSGOPolygon\x20is\x20a\x20legendary\x20site\x20like\x20CSGODouble\x20with\x20classic\x20Roulette,\x20but\x20have\x20Dices,\x20Crash,\x20Slots\x20and\x20even\x20Esports\x20Betting!':_0x5b922e(0x228),'Gamdom\x20Casino\x20offers\x20a\x20variety\x20of\x20in-house\x20games,\x20innovative\x20social\x20engagement,\x20provably\x20fair\x20system,\x20and\x20good\x20reputation\x20in\x20online\x20gaming.':_0x5b922e(0x472),'CSGOPOSITIVE\x20is\x20a\x20famous\x20esports\x20betting\x20site\x20with\x20interesting\x20system\x20of\x20cashback,\x20you\x20can\x20bet\x20skins\x20or\x20money.\x20Has\x20various\x20payments\x20options.':_0x5b922e(0x6b5),'Rollbit\x20is\x20a\x20new\x20Casino\x20site\x20which\x20includes\x20Sport\x20Betting\x20and\x20many\x20classic\x20games\x20like\x20roulette.\x20Includes\x20Daily\x20Bonuses\x20!':'Rollbit\x20-\x20новый\x20сайт\x20казино,\x20который\x20включает\x20в\x20себя\x20ставки\x20на\x20спорт\x20и\x20множество\x20классических\x20игр,\x20таких\x20как\x20рулетка\x20и\x20коинфлип.','CSGOLuck\x20is\x20a\x20licensed\x20CSGO\x20skin\x20gambling\x20site\x20that\x20accepts\x20multiple\x20deposit\x20methods,\x20offering\x20various\x20games\x20and\x20a\x20user-friendly\x20design.':_0x5b922e(0x275),'Duelbits\x20is\x20a\x20safe\x20and\x20licensed\x20online\x20casino\x20with\x20a\x20variety\x20of\x20games,\x20sports\x20betting,\x20esports\x20betting,\x20and\x20instant\x20cryptocurrency\x20transactions.':'Duelbits\x20-\x20это\x20огромное\x20крипто-казино\x20с\x20классическими\x20азартными\x20играми\x20для\x20сообщества\x20CS2,\x20такими\x20как\x20рулетка,\x20монетка\x20и\x20другие.','InsaneGG\x20is\x20an\x20online\x20platform\x20that\x20offers\x20a\x20range\x20of\x20CSGO\x20skin\x20gambling\x20games\x20with\x20professionally\x20designed\x20and\x20smooth\x20animations.':_0x5b922e(0x4a0),'Rustix\x20-\x20gambling\x20platform\x20for\x20CS2\x20and\x20Rust\x20with\x20original\x20games,\x20fair\x20gameplay,\x20bonuses,\x20and\x20impressive\x20animations.\x20Opened\x20in\x202023.':'Rustix\x20-\x20игровая\x20платформа\x20для\x20CS2\x20и\x20Rust\x20с\x20оригинальными\x20играми,\x20честным\x20геймплеем,\x20бонусами\x20и\x20впечатляющей\x20анимацией.','CSGO-Skins\x20is\x20a\x20reputable\x20online\x20platform\x20where\x20users\x20can\x20open\x20custom\x20CS2\x20cases\x20and\x20participate\x20in\x20daily\x20Giveaways.':_0x5b922e(0x467),'FlameCases\x20is\x20an\x20online\x20platform\x20that\x20permits\x20users\x20to\x20open\x20cases\x20for\x20CS2\x20and\x20Dota\x202.\x20Since\x20its\x20launch\x20in\x202017,\x20the\x20website\x20provides\x20various\x20features.':'FlameCases\x20-\x20это\x20онлайн-платформа,\x20которая\x20позволяет\x20пользователям\x20открывать\x20кейсы\x20для\x20CS2\x20и\x20Dota\x202.\x20Работает\x20еще\x20с\x202017.','KNIFEX\x20is\x20a\x20CS2\x20gambling\x20site\x20that\x20offers\x20a\x20range\x20of\x20game\x20modes,\x20including\x20case\x20opening,\x20case\x20battles,\x20coinflip,\x20crash,\x20clash\x20and\x20many\x20more!':'KNIFEX\x20-\x20это\x20сайт\x20CS2\x20азартных\x20игр,\x20который\x20предлагает\x20различные\x20режимы\x20игры,\x20включая\x20открытие\x20кейсов,\x20битвы\x20кейсов\x20и\x20многое\x20другое!','DatDrop\x20is\x20a\x20website\x20that\x20specializes\x20in\x20opening\x20cases\x20that\x20contain\x20skins\x20from\x20CS2.\x20Its\x20most\x20prominent\x20feature\x20is\x20the\x20case-opening\x20battles.':_0x5b922e(0x368),'DaddySkins\x20is\x20a\x20valid\x20CSGO\x20case\x20opening\x20website\x20that\x20has\x20been\x20in\x20operation\x20since\x202017,\x20and\x20it\x20offers\x20Case\x20Openings,\x20Case\x20Battles,\x20and\x20Upgrader.':_0x5b922e(0x40f),'Clash.gg\x20is\x20a\x20new\x20CS2\x20Gambling\x20site\x20which\x20includes\x20many\x20games\x20like\x20Roulette,\x20Upgrader,\x20Cases\x20and\x20many\x20more\x20!':'Clash.gg\x20-\x20это\x20новый\x20сайт\x20для\x20азартных\x20игр\x20CS2,\x20который\x20включает\x20в\x20себя\x20множество\x20игр,\x20таких\x20как\x20Рулетка,\x20Апгрейдер,\x20Кейсы\x20и\x20многие\x20другие!','HellStore\x20is\x20a\x20platform\x20that\x20allows\x20users\x20to\x20participate\x20in\x20CSGO\x20skin\x20betting\x20through\x20game\x20modes\x20like\x20Coinflip,\x20Jackpot,\x20Upgrader,\x20and\x20Wheel.':_0x5b922e(0x4bd),'Hellcase\x20is\x20an\x20online\x20platform\x20that\x20allows\x20users\x20to\x20purchase\x20virtual\x20cases\x20filled\x20with\x20skins\x20and\x20items\x20for\x20various\x20games\x20such\x20as\x20CS2,\x20Dota\x202,\x20and\x20Rust.':_0x5b922e(0x2f6),'CSGOBIG\x20-\x20a\x20gambling\x20site\x20for\x20CS2\x20skins\x20with\x20game\x20modes\x20like\x20Jackpot,\x20Coinflip,\x20Roulette,\x20Cases,\x20and\x20Case\x20Battles.\x20Opened\x20in\x202015.':'Сайт\x20азартных\x20игр\x20с\x20использованием\x20скинов\x20из\x20игры\x20CS2,\x20включающий\x20такие\x20режимы,\x20как\x20Jackpot,\x20Coinflip,\x20Roulette,\x20Cases\x20и\x20Case\x20Battles.','CSGOFast\x20is\x20a\x20CSGO\x20skin\x20gambling\x20site\x20that\x20offers\x20a\x20wide\x20range\x20of\x20exclusive\x20game\x20modes.\x20One\x20of\x20the\x20earliest\x20CSGO\x20gambling\x20sites.':_0x5b922e(0x463),'CSGOLive\x20is\x20a\x20safe\x20and\x20legitimate\x20CS2\x20case\x20opening\x20website\x20with\x20custom\x20cases,\x20daily\x20bonuses,\x20and\x20a\x20Provably\x20Fair\x20system.':_0x5b922e(0x334),'WTFSkins\x20is\x20a\x20reliable\x20and\x20popular\x20online\x20platform\x20offering\x20unique\x20games,\x20daily\x20rewards,\x20and\x20a\x20simple\x20registration\x20process.':_0x5b922e(0x6aa),'Key-Drop\x20is\x20a\x20reputable\x20online\x20gambling\x20platform\x20that\x20offers\x20various\x20activities\x20like\x20Case\x20Battles\x20and\x20Upgrader,\x20as\x20well\x20as\x20custom\x20CSGO\x20skin\x20cases.':'Key-Drop\x20-\x20это\x20надежная\x20платформа\x20для\x20онлайн-гемблинга,\x20которая\x20предлагает\x20различные\x20игры,\x20такие\x20как\x20битвы\x20кейсов\x20и\x20апгрейдер.','Farmskins\x20is\x20a\x20well-known\x20CSGO\x20case\x20opening\x20website\x20that\x20has\x20been\x20operating\x20since\x202016,\x20offering\x20a\x20wide\x20selection\x20of\x20skins\x20for\x20players\x20to\x20unbox.':_0x5b922e(0x5c7),'Bets4.pro\x20is\x20an\x20online\x20platform\x20that\x20offers\x20users\x20the\x20ability\x20to\x20place\x20bets\x20on\x20esports\x20matches,\x20particularly\x20for\x20CS2\x20,\x20Dota\x202,\x20Valorant\x20and\x20many\x20more.':_0x5b922e(0x254),'DMarket\x20is\x20a\x20reliable\x20and\x20popular\x20marketplace\x20for\x20Steam\x20items,\x20with\x20a\x20large\x20number\x20of\x20items\x20available\x20and\x20positive\x20reviews\x20on\x20Trustpilot.':_0x5b922e(0x2b1),'BitSkins\x20is\x20an\x20online\x20marketplace\x20for\x20in-game\x20skins,\x20particularly\x20for\x20Counter-Strike\x202,\x20Dota\x202,\x20and\x20Team\x20Fortress\x202.\x20Launched\x20in\x202015.':'BitSkins\x20-\x20это\x20онлайн-маркетплейс\x20для\x20игровых\x20скинов,\x20особенно\x20для\x20игр\x20Counter-Strike\x202,\x20Dota\x202\x20и\x20TF\x202.\x20Он\x20был\x20запущен\x20в\x202015\x20году.','Secure\x20P2P\x20marketplace\x20owned\x20by\x20Hellcase.\x20SSL-encrypted,\x20KYC\x20verification,\x20friendly\x20design,\x20competitive\x20pricing,\x20trusted\x20trading\x20platform.':_0x5b922e(0x603),'CSGO\x20Market\x20is\x20an\x20online\x20P2P\x20marketplace\x20that\x20provides\x20a\x20safe\x20and\x20secure\x20platform\x20for\x20buying\x20and\x20selling\x20CS2\x20skins.\x20Established\x20in\x202015.':_0x5b922e(0x2f0),'Lis-Skins\x20is\x20a\x20popular\x20marketplace\x20for\x20Steam\x20items,\x20especially\x20CS2,\x20Rust\x20and\x20Dota\x202\x20skins\x20and\x20items.\x20The\x20platform\x20was\x20founded\x20in\x202020.':'Lis-Skins\x20-\x20это\x20популярная\x20торговая\x20площадка\x20для\x20предметов\x20Steam,\x20особенно\x20для\x20скинов\x20и\x20предметов\x20в\x20играх\x20CS2,\x20Rust\x20и\x20Dota\x202.','CS.Deals\x20is\x20a\x20platform\x20that\x20allows\x20users\x20to\x20buy,\x20sell,\x20and\x20trade\x20skins\x20from\x20popular\x20games\x20such\x20as\x20CS2,\x20Dota\x202,\x20Rust,\x20and\x20Team\x20Fortress\x202.\x20Working\x20since\x202016.':_0x5b922e(0x606),'LOOT.Farm\x20is\x20an\x20online\x20platform\x20that\x20offers\x20users\x20the\x20ability\x20to\x20Trade\x20virtual\x20items\x20from\x20popular\x20games\x20like\x20CS2,\x20Dota\x202,\x20Team\x20Fortress\x202,\x20and\x20Rust.':_0x5b922e(0x3d3),'SkinCashier\x20is\x20an\x20online\x20platform\x20that\x20allows\x20players\x20to\x20Instant\x20Sell\x20their\x20CS2,\x20Rust,\x20Dota\x202,\x20and\x20TF2\x20skins\x20for\x20real\x20money.\x20Operating\x20since\x202020.':'SkinCashier\x20-\x20это\x20сайт,\x20который\x20позволяет\x20игрокам\x20моментально\x20продавать\x20свои\x20скины\x20из\x20CS2,\x20Rust,\x20Dota\x202\x20и\x20TF2\x20за\x20настоящие\x20деньги.','Avan.Market\x20is\x20an\x20online\x20platform\x20that\x20offers\x20users\x20the\x20opportunity\x20to\x20sell\x20gaming\x20skins\x20from\x20popular\x20games\x20like\x20CS2,\x20Dota\x202,\x20RUST,\x20and\x20TF2.':_0x5b922e(0x303),'Skins.Cash\x20is\x20a\x20reputable\x20platform\x20with\x20positive\x20reviews,\x20reliable\x20customer\x20support,\x20and\x20over\x20six\x20years\x20of\x20operation.\x20Pricing\x20not\x20the\x20best\x20one.':_0x5b922e(0x391),'This\x20site\x20was\x20created\x20for\x20easy\x20leveling\x20up\x20Steam,\x20you\x20can\x20sell\x20emojis\x20and\x20profile\x20backgrounds\x20for\x20Steam\x20Trading\x20Cards\x20to\x20fast\x20level\x20up.':_0x5b922e(0x51c),'SteamLevelU\x20is\x20a\x20legitimate\x20platform\x20to\x20buy\x20Steam\x20trading\x20card\x20packs\x20for\x20enhancing\x20Steam\x20account\x20levels,\x20associated\x20with\x20SH\x20Level\x20Up.':'SteamLevelU\x20-\x20это\x20честный\x20сайт,\x20где\x20можно\x20купить\x20наборы\x20карточек\x20Steam\x20для\x20повышения\x20уровней\x20аккаунта\x20в\x20Steam.\x20Она\x20связана\x20с\x20SH\x20Level\x20Up.','SteamLevels\x20is\x20a\x20user-friendly\x20website\x20that\x20helps\x20increase\x20your\x20Steam\x20account\x20level\x20by\x20purchasing\x20card\x20packs\x20and\x20accepting\x20CSGO\x20skins.':'Удобный\x20сайт,\x20который\x20помогает\x20повысить\x20уровень\x20вашей\x20учетной\x20записи\x20Steam\x20путем\x20покупки\x20наборов\x20карточек,\x20принимаются\x20скины\x20CS2.','SkinBid\x20is\x20an\x20online\x20marketplace\x20for\x20CS2\x20skins\x20and\x20in-game\x20items,\x20offering\x20buying,\x20selling,\x20and\x20auctioning\x20features\x20with\x20a\x20user-friendly\x20interface.':_0x5b922e(0x4cc),'WhiteMarket\x20is\x20a\x20P2P\x20platform\x20for\x20CS2\x20skin\x20trading.\x20It\x20offers\x20secure\x20trades,\x20various\x20deposit\x20options,\x20and\x20community\x20engagement.':_0x5b922e(0x2cf),'Trusted\x20CS2\x20skin\x20platform\x20with\x20rentals,\x20endorsed\x20by\x20YouTubers.\x20Secure,\x20limited\x20to\x20CS2\x20skins,\x20fees\x20apply,\x20and\x20user\x20reviews\x20indicate\x20room\x20for\x20improve.':_0x5b922e(0x645),'SkinSwap\x20is\x20an\x20online\x20platform\x20that\x20allows\x20players\x20to\x20trade\x20and\x20sell\x20skins\x20from\x20popular\x20games\x20such\x20as\x20CS2\x20and\x20Rust.\x20Owned\x20and\x20operated\x20by\x20RustySell.':'SkinSwap\x20-\x20онлайн-платформа,\x20которая\x20позволяет\x20игрокам\x20обменивать\x20и\x20продавать\x20скины\x20из\x20популярных\x20игр\x20CS2\x20и\x20Rust.','Tradeit\x20is\x20an\x20online\x20marketplace\x20that\x20offers\x20players\x20the\x20opportunity\x20to\x20trade,\x20buy,\x20and\x20sell\x20skins\x20for\x20a\x20variety\x20of\x20games,\x20including\x20CS2.\x20Working\x20since\x202017.':_0x5b922e(0x4f4),'CSGOSelly\x20is\x20a\x20website\x20that\x20allows\x20users\x20to\x20cash\x20out\x20their\x20CSGO\x20skins\x20for\x20money\x20via\x20various\x20payment\x20methods.\x20It\x20was\x20founded\x20in\x202021.':_0x5b922e(0x268),'BC.Game\x20is\x20an\x20online\x20casino\x20and\x20sportsbook\x20that\x20was\x20launched\x20in\x202017,\x20offering\x20over\x208,000\x20games\x20including\x20proprietary\x20and\x20probably\x20fair\x20games.':_0x5b922e(0x5dc),'Roobet\x20is\x20an\x20online\x20casino\x20that\x20allows\x20users\x20to\x20play\x20games\x20using\x20cryptocurrency.\x20The\x20platform\x20has\x20a\x20reputation\x20for\x20being\x20legitimate\x20and\x20safe.':'Roobet\x20-\x20это\x20онлайн-казино,\x20которое\x20позволяет\x20пользователям\x20играть\x20в\x20игры\x20с\x20использованием\x20криптовалюты.\x20Платформа\x20с\x20чистой\x20репутацией.','HypeUp\x20is\x20owned\x20by\x20the\x20same\x20operators\x20of\x20two\x20popular\x20betting\x20sites,\x20CSGORoll\x20and\x20HypeDrop.\x20Offers\x20two\x20original\x20games\x20and\x20Slots\x20with\x20Live\x20Games.':_0x5b922e(0x4fb),'HowlGG\x20is\x20a\x20Rust\x20skin\x20gambling\x20platform\x20that\x20offers\x20a\x20range\x20of\x20games,\x20including\x20jackpot,\x20coinflip,\x20slots,\x20and\x20live\x20casino\x20games.':'HowlGG\x20-\x20это\x20платформа\x20для\x20азартных\x20игр\x20с\x20использованием\x20скинов\x20из\x20игры\x20Rust.\x20Можно\x20найти\x20джекпот,\x20Монетку,\x20Слоты\x20и\x20Игры\x20с\x20живыми\x20дилерами.','iTrade.gg\x20is\x20a\x20Trusted\x20platform\x20for\x20trading\x20rust\x20skins.\x20User-friendly\x20design,\x20free\x20sign-up\x20bonus,\x20and\x20daily\x20rewards\x20create\x20a\x20seamless\x20trading\x20experience.':_0x5b922e(0x2d9),'Shuffle.com\x20is\x20a\x20comprehensive\x20crypto\x20casino\x20with\x20a\x20unique\x20registration\x20process,\x20original\x20games,\x20a\x20VIP\x20program,\x20and\x20plans\x20for\x20future\x20expansion.':_0x5b922e(0x649),'Notable\x20online\x20marketplace,\x20vast\x20offerings\x20from\x20games\x20to\x20gift\x20cards,\x20reduced\x20rates,\x20stellar\x20reputation,\x20intuitive\x20interface,\x20up\x20to\x2098%\x20discounts.':_0x5b922e(0x554),'Withdraw\x20CS2\x20Skins,\x20Crypto\x20or\x20Real\x20Money!':_0x5b922e(0x5ae),'Withdraw\x20CS2,\x20Dota\x202,\x20TF2\x20or\x20Rust\x20Items!':'Выводите\x20предметы\x20CS2,\x20Dota\x202,\x20TF2\x20или\x20Rust!','Withdraw\x20CS2\x20Skins,\x20Crypto\x20or\x20Game\x20Keys!':_0x5b922e(0x570),'Withdraw\x20CS2\x20Skins,\x20Crypto\x20or\x20PayPal!':_0x5b922e(0x4fc),'Withdraw\x20Money,\x20CS2,\x20TF2\x20or\x20Rust\x20Skins!':_0x5b922e(0x440),'Withdraw\x20CS2\x20Skins,\x20Dota\x202\x20and\x20H1Z1\x20Items!':_0x5b922e(0x2ae),'Withdraw\x20CS2,\x20Rust\x20Skins\x20and\x20Dota\x202\x20Items!':_0x5b922e(0x2d3),'Withdraw\x20Bitcoin,\x20Ethereum\x20or\x20Litecoin!':'Выводите\x20Bitcoin,\x20Ethereum\x20или\x20Litecoin!','Withdraw\x20CS2\x20And\x20Rust\x20Skins\x20or\x20Crypto!':'Выводите\x20скины\x20CS2,\x20Rust\x20или\x20Крипту!','Withdraw\x20CS2\x20Skins\x20or\x20real\x20Money!':_0x5b922e(0x686),'Withdraw\x20Rust\x20Skins\x20and\x20Items!':_0x5b922e(0x4d2),'Withdraw\x20Steam\x20Trading\x20cards\x20or\x20Games.':'Выводите\x20Steam\x20Trading\x20cards\x20или\x20Игры.','Withdrawal\x20of\x20many\x20types\x20of\x20cryptocurrencies\x20!':_0x5b922e(0x3c2),'Withdraw\x20USDT,\x20Skins\x20or\x20Real\x20Money!':_0x5b922e(0x34d),'Withdraw\x20BTC,\x20LTC,\x20USDT,\x20USDC\x20or\x20ETH!':_0x5b922e(0x59e),'Buy\x20Games,\x20Gift\x20Cards\x20and\x20many-many\x20more.':_0x5b922e(0x364),'Withdraw\x20Money,\x20CS2\x20or\x20Rust\x20Skins!':'Выводите\x20Деньги,\x20скины\x20CS2\x20или\x20Rust!','Withdraw\x20Money,\x20Crypto\x20or\x20Skins!':_0x5b922e(0x687),'Withdraw\x20CS2\x20Skins\x20or\x20Crypto!':'Выводите\x20скины\x20CS2\x20или\x20криптовалюту!','Withdraw\x20Money,\x20Crypto\x20or\x20PayPal!':'Выводите\x20Деньги,\x20Крипту\x20или\x20PayPal!','WITHDRAW\x20WITH\x20P2P\x20CS2\x20SKINS.':_0x5b922e(0x22a),'Withdraw\x20Rust\x20Skins\x20or\x20Crypto!':_0x5b922e(0x428),'Withdraw\x20Real\x20Money\x20or\x20Crypto!':_0x5b922e(0x2b9),'Withdraw\x20BTC,\x20ETH,\x20USDT\x20or\x20Tron!':'Выводите\x20BTC,\x20ETH,\x20USDT\x20или\x20Tron!','Withdraw\x20CS2\x20Skins\x20or\x20PayPal!':_0x5b922e(0x5c4),'Withdraw\x20CS2\x20Skins\x20and\x20Items!':_0x5b922e(0x309),'Withdraw\x20Steam\x20Trading\x20cards.':_0x5b922e(0x652),'Visit\x20WebSite':_0x5b922e(0x4b5),'Visit\x20WebSite\x20or\x20Copy':_0x5b922e(0x4b5),'100%\x20deposit\x20bonus':_0x5b922e(0x62a),'+3%\x20Sell\x20Bonus':'+3%\x20Бонус\x20к\x20Продаже','5%\x20deposit\x20bonus':_0x5b922e(0x31b),'5\x20Free\x20Cases':'5\x20Бесплатных\x20Кейсов','Free\x2050\x20Gems':_0x5b922e(0x229),'3\x20Free\x20Cases':_0x5b922e(0x67c),'2.00$\x20For\x20Free':_0x5b922e(0x2c8),'5.00$\x20For\x20Free':_0x5b922e(0x34f),'Free\x200.90$':_0x5b922e(0x329),'Free\x200.50$':_0x5b922e(0x627),'Free\x200.40$':_0x5b922e(0x6a4),'Free\x200.30$':_0x5b922e(0x2e3),'Free\x200.25$':_0x5b922e(0x313),'Free\x200.05$':_0x5b922e(0x443),'Receive\x20up\x20to\x205.00$':_0x5b922e(0x5b3),'Free\x20Case':'Бесплатный\x20Кейс','Free\x201$':_0x5b922e(0x478),'Free\x202$':_0x5b922e(0x2b6),'Free\x201$':_0x5b922e(0x478),'Free\x20spins':_0x5b922e(0x5bf)}},_0x57c619=_0x24cac2[languageTag]||{},_0x2facda=_0x2c0fd0[_0x5b922e(0x555)]('.box\x20.content\x20p,\x20.box\x20.logobg\x20.best,\x20.box\x20.content\x20button');for(var _0x3dd1ee=0x0;_0x3dd1ee<_0x2facda['length'];_0x3dd1ee++){var _0x4124ee=_0x2facda[_0x3dd1ee]['textContent'][_0x5b922e(0x3d5)]();_0x57c619['hasOwnProperty'](_0x4124ee)&&(_0x2facda[_0x3dd1ee][_0x5b922e(0x21d)]=_0x57c619[_0x4124ee]);}}}if((window[_0x774ff4(0x4de)][_0x774ff4(0x656)]['startsWith']('/ru/')||window[_0x774ff4(0x4de)][_0x774ff4(0x656)]===_0x774ff4(0x43b)||window['location'][_0x774ff4(0x656)]==='/ru.html')&&!window[_0x774ff4(0x4de)][_0x774ff4(0x656)]['includes'](_0x774ff4(0x247))&&!window[_0x774ff4(0x4de)][_0x774ff4(0x656)][_0x774ff4(0x321)](_0x774ff4(0x3df))&&!window[_0x774ff4(0x4de)]['pathname']['includes'](_0x774ff4(0x4b6))){function updateURLs(_0x19214c){var _0x128d98=_0x774ff4,_0xc26504=_0x19214c['querySelectorAll'](_0x128d98(0x52a)),_0x330d7f=/^(https?:\/\/[^/]+)?(\/.*)$/;for(var _0x48b222=0x0;_0x48b222<_0xc26504['length'];_0x48b222++){var _0x3bbab0=_0xc26504[_0x48b222][_0x128d98(0x35f)](_0x128d98(0x384));if(_0x3bbab0[_0x128d98(0x321)](_0x128d98(0x3fe)))continue;var _0x477f16=_0x3bbab0[_0x128d98(0x263)](_0x330d7f);if(_0x477f16){var _0x3fd933=_0x477f16[0x1]||'',_0x720fa9=_0x477f16[0x2],_0x42dc9a=_0x128d98(0x43b)+_0x720fa9;_0xc26504[_0x48b222][_0x128d98(0x530)](_0x128d98(0x384),_0x42dc9a);}}}var SitesList=document['querySelector'](_0x774ff4(0x63d));updateURLs(SitesList);}function translateURLs2(_0x23c389,_0x5cb833,_0x5b9205){var _0x49704e=_0x774ff4,_0x1f345a=Object[_0x49704e(0x5a4)](_0x5b9205),_0x55e922=_0x1f345a[_0x49704e(0x3bf)](_0x5cfb3a=>'/'+_0x5cfb3a+'/'),_0x41c85b=_0x23c389['querySelectorAll'](_0x49704e(0x52a));for(var _0x524ac0=0x0,_0x553d72=_0x41c85b[_0x49704e(0x2b8)];_0x524ac0<_0x553d72;_0x524ac0++){var _0x5ae3d1=_0x41c85b[_0x524ac0]['getAttribute'](_0x49704e(0x384));function _0x596f3f(_0x1e8953){var _0x53f4f4=_0x49704e,_0x3ef7eb=_0x1e8953[_0x53f4f4(0x263)](/^\/([a-z]{2})(\/|\.html)?/i);if(_0x3ef7eb&&_0x3ef7eb[_0x53f4f4(0x2b8)]>0x1)return _0x3ef7eb[0x1];return'';}var _0x5cb833=_0x596f3f(window[_0x49704e(0x4de)][_0x49704e(0x656)]);if(!_0x5ae3d1)continue;var _0x330f52=new URL(_0x5ae3d1,window['location']['href']),_0xc600cc=_0x330f52['pathname'];if(_0x5cb833!=='en'){var _0x400add=_0x55e922[_0x49704e(0x5f4)](_0x479fba=>_0xc600cc[_0x49704e(0x321)](_0x479fba));!_0x400add&&_0x1f345a['includes'](_0x5cb833)&&(_0xc600cc='/'+_0x5cb833+_0xc600cc,_0x330f52[_0x49704e(0x656)]=_0xc600cc,_0x41c85b[_0x524ac0][_0x49704e(0x530)]('href',_0x330f52['href']));}}var _0xfa953b=document[_0x49704e(0x555)](_0x49704e(0x429));for(var _0x1190f1=0x0;_0x1190f1<_0xfa953b['length'];_0x1190f1++){var _0x1d0ffc=_0xfa953b[_0x1190f1][_0x49704e(0x625)][_0x49704e(0x3d5)]();_0x5b9205[_0x5cb833]&&_0x5b9205[_0x5cb833][_0x49704e(0x418)](_0x1d0ffc)&&(_0xfa953b[_0x1190f1][_0x49704e(0x21d)][_0x49704e(0x321)](_0x49704e(0x5f2))?_0xfa953b[_0x1190f1][_0x49704e(0x21d)]=_0x5b9205[_0x5cb833][_0x1d0ffc]+_0x49704e(0x552):_0xfa953b[_0x1190f1][_0x49704e(0x21d)]=_0x5b9205[_0x5cb833][_0x1d0ffc]);}}function applyTranslation(_0x495fb4,_0x5e16ac,_0x2c0f39){var _0x5ea574=_0x774ff4;translateURLs2(_0x495fb4,_0x5e16ac,_0x2c0f39);var _0x5791d4=new MutationObserver(function(_0x2dd733){var _0x4f465d=_0x45ca;_0x2dd733[_0x4f465d(0x31c)](function(_0x27fd3e){var _0x196611=_0x4f465d;if(_0x27fd3e[_0x196611(0x415)]===_0x196611(0x49d)&&_0x27fd3e[_0x196611(0x4d6)]['length']>0x0){var _0x4639f0=_0x27fd3e[_0x196611(0x4d6)][0x0];_0x4639f0['classList']&&_0x4639f0[_0x196611(0x252)]['contains'](_0x196611(0x664))&&translateURLs2(_0x4639f0,_0x5e16ac,_0x2c0f39);}});});_0x5791d4[_0x5ea574(0x26c)](_0x495fb4,{'childList':!![],'subtree':!![]});}document[_0x774ff4(0x67b)](_0x774ff4(0x4e9),function(){var _0x143ae5=_0x774ff4,_0x2e5587=document[_0x143ae5(0x27c)](_0x143ae5(0x3ec));fetch(_0x143ae5(0x33e))[_0x143ae5(0x2a4)](_0x204933=>_0x204933[_0x143ae5(0x642)]())[_0x143ae5(0x2a4)](_0x2b1f9d=>{var _0x10d90=_0x143ae5;_0x2e5587[_0x10d90(0x21d)]=_0x2b1f9d;var _0x20e26c=document[_0x10d90(0x630)](_0x10d90(0x541));if(!_0x20e26c)return;_0x20e26c[_0x10d90(0x289)](_0x10d90(0x31e),_0x2e5587[_0x10d90(0x2fc)]);var _0x443503=document['querySelector'](_0x10d90(0x3a0));_0x443503&&fetch(_0x10d90(0x5e2))[_0x10d90(0x2a4)](_0x7dc10d=>_0x7dc10d[_0x10d90(0x372)]())['then'](_0x187e50=>{applyTranslation(_0x443503,languageTag,_0x187e50);});var _0x219656=document[_0x10d90(0x630)](_0x10d90(0x4aa)),_0x3e0daa=document[_0x10d90(0x630)](_0x10d90(0x4e8));_0x219656&&_0x3e0daa&&(_0x219656[_0x10d90(0x67b)](_0x10d90(0x484),function(){var _0x4f9082=_0x10d90;_0x3e0daa['classList']['toggle'](_0x4f9082(0x24c));}),_0x3e0daa[_0x10d90(0x67b)](_0x10d90(0x484),function(){var _0x2e50df=_0x10d90;_0x3e0daa['classList'][_0x2e50df(0x523)](_0x2e50df(0x24c));}));});});function translateTextElements(_0x42dc8b){var _0x357fc5=_0x774ff4,_0x405e6a=document['querySelectorAll'](_0x357fc5(0x67a));for(var _0x33818f=0x0;_0x33818f<_0x405e6a[_0x357fc5(0x2b8)];_0x33818f++){var _0xaa48c6=_0x405e6a[_0x33818f]['textContent'][_0x357fc5(0x3d5)]();_0x42dc8b[_0x357fc5(0x418)](_0xaa48c6)&&(_0x405e6a[_0x33818f][_0x357fc5(0x21d)]=_0x42dc8b[_0xaa48c6]+'\x20<i\x20class=\x22bi\x20bi-caret-down-fill\x22></i>');}var _0x3a4eb5=document[_0x357fc5(0x555)](_0x357fc5(0x462));for(var _0x4ff4cb=0x0;_0x4ff4cb<_0x3a4eb5['length'];_0x4ff4cb++){var _0xaa48c6=_0x3a4eb5[_0x4ff4cb]['textContent'][_0x357fc5(0x3d5)]();_0x42dc8b[_0x357fc5(0x418)](_0xaa48c6)&&(_0x3a4eb5[_0x4ff4cb][_0x357fc5(0x21d)]=_0x42dc8b[_0xaa48c6]);}}if(window[_0x774ff4(0x4de)][_0x774ff4(0x656)][_0x774ff4(0x321)](_0x774ff4(0x6a0))||window['location']['pathname'][_0x774ff4(0x321)](_0x774ff4(0x5a2))){var translations={'Deposit\x20Methods':'Способы\x20Пополнения','Withdraw\x20Methods':_0x774ff4(0x444),'Items\x20Accepts':_0x774ff4(0x618),'Sign\x20Up\x20Bonus':_0x774ff4(0x41d),'Faucet\x20System':_0x774ff4(0x2e2),'Daily\x20Rewards':'Ежедневные\x20Награды','Daily\x20Giveaways':_0x774ff4(0x322),'No\x20Bonus':_0x774ff4(0x616),'Deposit\x20Bonus':_0x774ff4(0x2fe),'Rain\x20System':_0x774ff4(0x311),'Rakeback\x20System':_0x774ff4(0x345),'Pros':_0x774ff4(0x5c3),'Price':_0x774ff4(0x363),'Cons':_0x774ff4(0x3a8),'Trust':_0x774ff4(0x461),'Support':_0x774ff4(0x5b1),'Payments':_0x774ff4(0x57d),'Functional':_0x774ff4(0x46b),'Playability':_0x774ff4(0x678),'Sign\x20up\x20via\x20Steam':_0x774ff4(0x670),'Enjoy\x20!':_0x774ff4(0x330),'Visit\x20WebSite':_0x774ff4(0x4b5)};translateTextElements(translations);var links=document[_0x774ff4(0x4a4)]('a');for(var i=0x0;i<links[_0x774ff4(0x2b8)];i++){var link=links[i];if(!link['closest'](_0x774ff4(0x4d8))){if(!link[_0x774ff4(0x252)]['contains'](_0x774ff4(0x59f))&&!link[_0x774ff4(0x6ab)](_0x774ff4(0x404))){var path=link[_0x774ff4(0x656)];!path[_0x774ff4(0x321)](_0x774ff4(0x2ff))&&path[_0x774ff4(0x2ee)](_0x774ff4(0x43b))!==0x0&&(path!=='/'?link[_0x774ff4(0x656)]=_0x774ff4(0x43b)+path:link[_0x774ff4(0x384)]=link['href'][_0x774ff4(0x56f)]('csgobroker.cc/',_0x774ff4(0x305)));}}}}if(window[_0x774ff4(0x4de)][_0x774ff4(0x656)][_0x774ff4(0x321)](_0x774ff4(0x265))){var translations={'Deposit\x20Methods':_0x774ff4(0x53e),'Withdraw\x20Methods':_0x774ff4(0x264),'Sign\x20Up\x20Bonus':_0x774ff4(0x4e2),'No\x20Bonus':'Brak\x20Bonusu','Pros':'Zalety','Price':_0x774ff4(0x413),'Cons':_0x774ff4(0x572),'Trust':_0x774ff4(0x4f6),'Support':_0x774ff4(0x683),'Payments':_0x774ff4(0x3dd),'Functional':_0x774ff4(0x419),'Sign\x20up\x20via\x20Steam':_0x774ff4(0x469),'Enjoy\x20!':_0x774ff4(0x697),'Visit\x20WebSite':_0x774ff4(0x61f)};translateTextElements(translations);}document[_0x774ff4(0x67b)]('DOMContentLoaded',function(){var _0x44225a=_0x774ff4;if(!window[_0x44225a(0x4de)][_0x44225a(0x656)][_0x44225a(0x321)](_0x44225a(0x3df))&&!window[_0x44225a(0x4de)][_0x44225a(0x656)][_0x44225a(0x321)](_0x44225a(0x4b6))&&!window[_0x44225a(0x4de)][_0x44225a(0x656)][_0x44225a(0x321)](_0x44225a(0x32a))){const _0x37b608=document[_0x44225a(0x630)]('.category-selector'),_0x3964a0=document[_0x44225a(0x27c)](_0x44225a(0x3ec)),_0xde5422=document[_0x44225a(0x27c)](_0x44225a(0x6a1)),_0x3a6b14=document[_0x44225a(0x27c)]('button'),_0x5500f0=_0x37b608[_0x44225a(0x555)](_0x44225a(0x45b)),_0x464bc7=_0x5500f0[0x0][_0x44225a(0x24a)]+0x2*0x9,_0x570c1a=_0x464bc7*0x4;let _0x3fa1a0=0x0,_0x4423e3=0x0;_0x3964a0[_0x44225a(0x252)][_0x44225a(0x403)](_0x44225a(0x23c)),_0xde5422[_0x44225a(0x252)][_0x44225a(0x403)](_0x44225a(0x560)),_0xde5422['innerHTML']=_0x44225a(0x64d),_0x3a6b14['classList']['add'](_0x44225a(0x560)),_0x3a6b14[_0x44225a(0x21d)]=_0x44225a(0x585),_0x3964a0[_0x44225a(0x32f)](_0xde5422),_0x3964a0[_0x44225a(0x32f)](_0x3a6b14),_0x37b608[_0x44225a(0x5d2)]['insertBefore'](_0x3964a0,_0x37b608),_0x37b608['style'][_0x44225a(0x3e1)]=_0x570c1a+'px',_0xde5422['addEventListener'](_0x44225a(0x484),()=>{var _0x4f0799=_0x44225a;_0x3fa1a0-=_0x464bc7,_0x3fa1a0=Math[_0x4f0799(0x4a5)](_0x3fa1a0,0x0),_0x37b608['scroll']({'left':_0x3fa1a0,'behavior':'smooth'}),_0x4423e3=_0x3fa1a0;}),_0x3a6b14[_0x44225a(0x67b)](_0x44225a(0x484),()=>{var _0x1e0a1d=_0x44225a;_0x3fa1a0+=_0x464bc7,_0x3fa1a0=Math[_0x1e0a1d(0x2f8)](_0x3fa1a0,_0x37b608['scrollWidth']-_0x570c1a),_0x37b608[_0x1e0a1d(0x57a)]({'left':_0x3fa1a0,'behavior':_0x1e0a1d(0x629)}),_0x4423e3=_0x3fa1a0;});let _0x287d9b=![],_0x42d9bb=0x0,_0x40da42=0x0;_0x37b608[_0x44225a(0x67b)](_0x44225a(0x3de),_0x251498=>{var _0x1450bd=_0x44225a;_0x251498[_0x1450bd(0x378)](),_0x287d9b=!![],_0x42d9bb=_0x251498[_0x1450bd(0x6b4)]-_0x37b608['offsetLeft'],_0x40da42=_0x37b608[_0x1450bd(0x611)];}),_0x37b608[_0x44225a(0x67b)](_0x44225a(0x2a9),_0x10a994=>{var _0x4f8ca3=_0x44225a;if(!_0x287d9b)return;_0x10a994['preventDefault']();const _0x4528bd=_0x10a994[_0x4f8ca3(0x6b4)]-_0x37b608[_0x4f8ca3(0x25c)],_0x5b17ee=(_0x4528bd-_0x42d9bb)*0.6,_0xa6eb9a=_0x40da42-_0x5b17ee;_0x37b608[_0x4f8ca3(0x611)]=_0xa6eb9a,_0x4423e3=_0xa6eb9a;}),_0x37b608[_0x44225a(0x67b)](_0x44225a(0x1ee),()=>{_0x287d9b=![];}),_0x37b608[_0x44225a(0x67b)](_0x44225a(0x613),()=>{_0x287d9b=![];}),_0x37b608[_0x44225a(0x67b)](_0x44225a(0x369),_0x14dead=>{var _0x1f5183=_0x44225a;const _0x3d5ea7=_0x14dead['touches'][0x0];_0x287d9b=!![],_0x42d9bb=_0x3d5ea7['pageX']-_0x37b608['offsetLeft'],_0x40da42=_0x37b608[_0x1f5183(0x611)];}),_0x37b608[_0x44225a(0x67b)](_0x44225a(0x2d5),_0x25331e=>{var _0x4a98cf=_0x44225a;if(!_0x287d9b)return;_0x25331e[_0x4a98cf(0x378)]();const _0xf9f484=_0x25331e[_0x4a98cf(0x5a1)][0x0],_0x1a9893=_0xf9f484[_0x4a98cf(0x6b4)]-_0x37b608['offsetLeft'],_0x46fa74=(_0x1a9893-_0x42d9bb)*1.2,_0xf096f=_0x40da42-_0x46fa74;_0x37b608['scrollLeft']=_0xf096f,_0x4423e3=_0xf096f;}),_0x37b608[_0x44225a(0x67b)](_0x44225a(0x60b),()=>{_0x287d9b=![];});var _0x45da5e=document['querySelector'](_0x44225a(0x2af)),_0x56404a=_0x45da5e[_0x44225a(0x555)](_0x44225a(0x3cb)),_0x495d1d=Array[_0x44225a(0x420)](_0x56404a);_0x495d1d['sort'](function(_0x5f1fd0,_0x31b5e1){var _0x3b098e=_0x44225a,_0x20fc66=_0x5f1fd0[_0x3b098e(0x630)](_0x3b098e(0x39d))[_0x3b098e(0x252)][_0x3b098e(0x34e)](_0x3b098e(0x24c)),_0x2656ca=_0x31b5e1[_0x3b098e(0x630)](_0x3b098e(0x39d))['classList']['contains'](_0x3b098e(0x24c));if(_0x20fc66&&!_0x2656ca)return-0x1;else{if(!_0x20fc66&&_0x2656ca)return 0x1;else{if(_0x5f1fd0[_0x3b098e(0x630)]('li\x20a.category-box')[_0x3b098e(0x252)][_0x3b098e(0x34e)](_0x3b098e(0x5e6)))return 0x1;else return _0x31b5e1[_0x3b098e(0x630)](_0x3b098e(0x39d))['classList']['contains'](_0x3b098e(0x5e6))?-0x1:Math['random']()-0.5;}}});while(_0x45da5e[_0x44225a(0x2fc)]){_0x45da5e[_0x44225a(0x4c8)](_0x45da5e[_0x44225a(0x2fc)]);}_0x495d1d[_0x44225a(0x31c)](function(_0x4492e6){_0x45da5e['appendChild'](_0x4492e6);}),_0x3964a0[_0x44225a(0x611)]=_0x4423e3;}function _0x67af6b(_0x51535c,_0x1858bf){var _0x29dd6c=_0x44225a,_0x514659=_0x51535c['querySelectorAll'](_0x29dd6c(0x52a)),_0x1fe2de=['hi','tr','pt','es','ru'];for(var _0x2f3011=0x0;_0x2f3011<_0x514659[_0x29dd6c(0x2b8)];_0x2f3011++){var _0x2d3133=_0x514659[_0x2f3011][_0x29dd6c(0x35f)](_0x29dd6c(0x384));if(!_0x2d3133)continue;var _0x194956=new URL(_0x2d3133,window['location'][_0x29dd6c(0x384)]),_0x630f2b=_0x194956[_0x29dd6c(0x656)],_0x45682c=_0x1fe2de[_0x29dd6c(0x5f4)](_0x419735=>{var _0x2b4b7d=_0x29dd6c,_0x428ec3='/'+_0x419735+'/';return _0x630f2b[_0x2b4b7d(0x321)](_0x428ec3);});if(_0x1858bf!=='en'){if(_0x45682c)_0x630f2b=_0x630f2b[_0x29dd6c(0x56f)](/\/(hi|tr|pt|es|ru)\//,'/'+_0x1858bf+'/'),_0x194956['pathname']=_0x630f2b,_0x514659[_0x2f3011]['setAttribute'](_0x29dd6c(0x384),_0x194956[_0x29dd6c(0x384)]);else _0x1fe2de['includes'](_0x1858bf)&&(_0x630f2b='/'+_0x1858bf+_0x630f2b,_0x194956[_0x29dd6c(0x656)]=_0x630f2b,_0x514659[_0x2f3011][_0x29dd6c(0x530)](_0x29dd6c(0x384),_0x194956[_0x29dd6c(0x384)]));}}}(function(){var _0x24e26b=_0x44225a,_0x112fc9=function(_0x4e4e09,_0x34e010){var _0x10094c=_0x45ca;_0x34e010[_0x10094c(0x5d2)][_0x10094c(0x458)](_0x4e4e09,_0x34e010[_0x10094c(0x5b0)]);};let _0x3f9813=0x0;var _0x239395,_0xbe3cb6=!![],_0x594411=![];function _0x88887d(_0x243f8c){var _0x481fdc=_0x45ca;const _0x45ea49=document['querySelectorAll'](_0x481fdc(0x496));_0x45ea49['forEach']((_0x15f3c8,_0x4ff5a5)=>{var _0x3e5500=_0x481fdc;_0x4ff5a5===_0x243f8c?_0x15f3c8[_0x3e5500(0x252)]['add']('active'):_0x15f3c8['classList'][_0x3e5500(0x523)](_0x3e5500(0x24c));});}function _0x1e63ae(){_0xbe3cb6&&!_0x594411&&(_0x594411=!![],setTimeout(function(){_0x594411=![];},0x1770),_0x3f9813=(_0x3f9813+0x1)%0x3,_0x88887d(_0x3f9813));}function _0x24dc06(){_0xbe3cb6=!![],_0x239395=setInterval(_0x1e63ae,0x1770);}function _0x166b65(){_0xbe3cb6=![],clearInterval(_0x239395);}_0x24dc06();var _0x42f9ef=window[_0x24e26b(0x4de)][_0x24e26b(0x656)],_0x32e24c=document['querySelector'](_0x24e26b(0x62f));_0x32e24c&&_0x32e24c[_0x24e26b(0x5d2)][_0x24e26b(0x4c8)](_0x32e24c);var _0x56006b=document[_0x24e26b(0x27c)]('div');_0x56006b['classList'][_0x24e26b(0x403)]('slider-placer');_0x42f9ef['includes'](_0x24e26b(0x682))&&_0x56006b['classList'][_0x24e26b(0x403)](_0x24e26b(0x294));var _0x5e7c70=document[_0x24e26b(0x27c)](_0x24e26b(0x3ec));_0x5e7c70[_0x24e26b(0x252)][_0x24e26b(0x403)](_0x24e26b(0x574));var _0x174910=document[_0x24e26b(0x27c)](_0x24e26b(0x6a1));_0x174910[_0x24e26b(0x252)][_0x24e26b(0x403)](_0x24e26b(0x2ec)),_0x174910['innerHTML']=_0x24e26b(0x64d),_0x5e7c70['appendChild'](_0x174910);var _0x36bf04=document['createElement'](_0x24e26b(0x6a1));_0x36bf04[_0x24e26b(0x252)][_0x24e26b(0x403)]('next-button'),_0x36bf04['innerHTML']='<i\x20class=\x22bi\x20bi-chevron-right\x22></i>',_0x5e7c70[_0x24e26b(0x32f)](_0x36bf04);var _0x1191f8=document[_0x24e26b(0x27c)]('a');_0x1191f8[_0x24e26b(0x384)]='/',_0x1191f8['classList'][_0x24e26b(0x403)](_0x24e26b(0x524),_0x24e26b(0x24c));var _0x4ac6c9=document[_0x24e26b(0x27c)]('img');_0x4ac6c9[_0x24e26b(0x5eb)]=_0x24e26b(0x4b7),_0x4ac6c9[_0x24e26b(0x4e0)]=_0x24e26b(0x39e),_0x1191f8[_0x24e26b(0x32f)](_0x4ac6c9);var _0x310abc=document['createElement']('a');_0x310abc[_0x24e26b(0x384)]=_0x24e26b(0x2a6),_0x310abc[_0x24e26b(0x252)]['add'](_0x24e26b(0x524));var _0x4a088d=document['createElement'](_0x24e26b(0x287));_0x4a088d['src']='/img/earn-skins-slider.png',_0x4a088d[_0x24e26b(0x4e0)]=_0x24e26b(0x20a),_0x310abc[_0x24e26b(0x32f)](_0x4a088d);var _0x291b5e=document[_0x24e26b(0x27c)]('a');_0x291b5e['href']=_0x24e26b(0x6b6),_0x291b5e['classList'][_0x24e26b(0x403)](_0x24e26b(0x524));var _0x48bcdd=document[_0x24e26b(0x27c)](_0x24e26b(0x287));_0x48bcdd['src']=_0x24e26b(0x38e),_0x48bcdd[_0x24e26b(0x4e0)]='Best\x20Rust\x20Sites',_0x291b5e[_0x24e26b(0x32f)](_0x48bcdd),_0x56006b[_0x24e26b(0x32f)](_0x5e7c70),_0x56006b['appendChild'](_0x1191f8),_0x56006b[_0x24e26b(0x32f)](_0x310abc),_0x56006b[_0x24e26b(0x32f)](_0x291b5e);var _0x5c7994=_0x42f9ef[_0x24e26b(0x263)](/\/(hi|tr|pt|es|ru)(\.html)?/);_0x5c7994&&(_0x5c7994=_0x5c7994[0x1],_0x67af6b(_0x56006b,_0x5c7994));if(_0x42f9ef[_0x24e26b(0x321)]('/mirrors/')){var _0x4a9ae7=document[_0x24e26b(0x630)]('.sitealternates');_0x4a9ae7&&_0x112fc9(_0x56006b,_0x4a9ae7);}else{if(_0x42f9ef[_0x24e26b(0x321)]('/reviews/')){var _0x36bf74=document[_0x24e26b(0x630)](_0x24e26b(0x356));_0x36bf74&&_0x112fc9(_0x56006b,_0x36bf74);}else{var _0x1fde34=document[_0x24e26b(0x630)](_0x24e26b(0x56e));_0x1fde34[_0x24e26b(0x5d2)][_0x24e26b(0x458)](_0x56006b,_0x1fde34);}}var _0x14d596=document['querySelectorAll'](_0x24e26b(0x496));_0x14d596[_0x24e26b(0x31c)](function(_0x3c12f8){var _0x533599=_0x24e26b;_0x3c12f8[_0x533599(0x67b)](_0x533599(0x39f),function(){_0x166b65();}),_0x3c12f8[_0x533599(0x67b)](_0x533599(0x613),function(){_0x24dc06();});}),_0x36bf04[_0x24e26b(0x67b)](_0x24e26b(0x484),function(){_0x3f9813=(_0x3f9813+0x1)%0x3,_0x88887d(_0x3f9813);}),_0x174910['addEventListener'](_0x24e26b(0x484),function(){_0x3f9813=(_0x3f9813-0x1+0x3)%0x3,_0x88887d(_0x3f9813);});}());if(!window[_0x44225a(0x4de)][_0x44225a(0x656)][_0x44225a(0x321)](_0x44225a(0x3df))&&!window['location'][_0x44225a(0x656)][_0x44225a(0x321)](_0x44225a(0x247))&&!window[_0x44225a(0x4de)][_0x44225a(0x656)]['includes'](_0x44225a(0x4b6))&&window[_0x44225a(0x4de)][_0x44225a(0x656)]!=='/ru'&&window[_0x44225a(0x4de)][_0x44225a(0x656)]!==_0x44225a(0x2aa)&&window[_0x44225a(0x4de)][_0x44225a(0x656)]!==_0x44225a(0x503)&&window[_0x44225a(0x4de)][_0x44225a(0x656)]!==_0x44225a(0x50a)&&window[_0x44225a(0x4de)][_0x44225a(0x656)]!==_0x44225a(0x59d)&&!window['location'][_0x44225a(0x656)]['endsWith']('ru.html')&&!window['location'][_0x44225a(0x656)][_0x44225a(0x2ba)]('pt.html')&&!window[_0x44225a(0x4de)][_0x44225a(0x656)][_0x44225a(0x2ba)](_0x44225a(0x42c))&&!window[_0x44225a(0x4de)]['pathname'][_0x44225a(0x2ba)](_0x44225a(0x58d))&&!window['location'][_0x44225a(0x656)]['endsWith'](_0x44225a(0x1fd))&&!window[_0x44225a(0x4de)][_0x44225a(0x656)][_0x44225a(0x2ba)]('index.html')){var _0x43ff18='',_0x1d6fce=window[_0x44225a(0x4de)][_0x44225a(0x656)][_0x44225a(0x263)](/^\/([a-z]{2})\//);_0x1d6fce&&_0x1d6fce[0x1]?_0x43ff18=_0x1d6fce[0x1]:_0x43ff18='en';var _0x37cbe2=document[_0x44225a(0x630)](_0x44225a(0x599)),_0x233fb5=_0x44225a(0x500);if(_0x43ff18==='en')_0x233fb5+='EN';else{if(_0x43ff18==='ru')_0x233fb5+='RU';else{if(_0x43ff18==='pt')_0x233fb5+='PT';else{if(_0x43ff18==='es')_0x233fb5+='ES';else{if(_0x43ff18==='tr')_0x233fb5+='TR';else _0x43ff18==='hi'&&(_0x233fb5+='HI');}}}}_0x233fb5+=_0x44225a(0x5d8),_0x43ff18!=='en'&&(_0x233fb5+='<li><a\x20href=\x22'+window['location'][_0x44225a(0x656)][_0x44225a(0x56f)](/^\/[a-z]{2}\//,'/')+_0x44225a(0x349)),_0x43ff18!=='ru'&&(_0x233fb5+=_0x44225a(0x668)+window[_0x44225a(0x4de)][_0x44225a(0x656)][_0x44225a(0x56f)](/^\/[a-z]{2}\//,'/')+_0x44225a(0x38d)),_0x43ff18!=='pt'&&(_0x233fb5+='<li><a\x20href=\x22/pt'+window[_0x44225a(0x4de)]['pathname'][_0x44225a(0x56f)](/^\/[a-z]{2}\//,'/')+_0x44225a(0x347)),_0x43ff18!=='es'&&(_0x233fb5+=_0x44225a(0x2cb)+window[_0x44225a(0x4de)]['pathname']['replace'](/^\/[a-z]{2}\//,'/')+_0x44225a(0x37a)),_0x43ff18!=='tr'&&(_0x233fb5+='<li><a\x20href=\x22/tr'+window['location'][_0x44225a(0x656)]['replace'](/^\/[a-z]{2}\//,'/')+_0x44225a(0x350)),_0x43ff18!=='hi'&&(_0x233fb5+='<li><a\x20href=\x22/hi'+window[_0x44225a(0x4de)][_0x44225a(0x656)]['replace'](/^\/[a-z]{2}\//,'/')+_0x44225a(0x23d)),_0x233fb5+=_0x44225a(0x2e7),_0x37cbe2[_0x44225a(0x21d)]=_0x233fb5;}const _0x19980b=document[_0x44225a(0x630)](_0x44225a(0x5fc));window[_0x44225a(0x67b)](_0x44225a(0x57a),_0x3febda);function _0x3febda(){var _0x16fa6c=_0x44225a;window['pageYOffset']>0x12c?!_0x19980b['classList'][_0x16fa6c(0x34e)](_0x16fa6c(0x301))&&(_0x19980b[_0x16fa6c(0x252)][_0x16fa6c(0x523)](_0x16fa6c(0x3f1)),_0x19980b[_0x16fa6c(0x252)]['add']('btnEntrance'),_0x19980b[_0x16fa6c(0x54f)]['display']=_0x16fa6c(0x5af)):_0x19980b[_0x16fa6c(0x252)]['contains'](_0x16fa6c(0x301))&&(_0x19980b[_0x16fa6c(0x252)][_0x16fa6c(0x523)]('btnEntrance'),_0x19980b[_0x16fa6c(0x252)][_0x16fa6c(0x403)](_0x16fa6c(0x3f1)),setTimeout(function(){var _0x270eae=_0x16fa6c;_0x19980b[_0x270eae(0x54f)][_0x270eae(0x37c)]=_0x270eae(0x234);},0xfa));}_0x19980b[_0x44225a(0x67b)]('click',_0x530777);function _0x530777(){var _0x53f6c2=_0x44225a;const _0x211163=0x0,_0x49c967=window['pageYOffset'],_0x2b92b9=_0x211163-_0x49c967,_0x8d8cb2=0x2ee;let _0x13189c=null;window[_0x53f6c2(0x314)](_0x29338b);function _0x29338b(_0x37486e){var _0x236b44=_0x53f6c2;if(!_0x13189c)_0x13189c=_0x37486e;const _0x43de7c=_0x37486e-_0x13189c;window['scrollTo'](0x0,_0x1ab260(_0x43de7c,_0x49c967,_0x2b92b9,_0x8d8cb2));if(_0x43de7c<_0x8d8cb2)window[_0x236b44(0x314)](_0x29338b);}}function _0x1ab260(_0x24b503,_0x26b28c,_0x2a331e,_0xae0e6e){_0x24b503/=_0xae0e6e/0x2;if(_0x24b503<0x1)return _0x2a331e/0x2*_0x24b503*_0x24b503*_0x24b503+_0x26b28c;return _0x24b503-=0x2,_0x2a331e/0x2*(_0x24b503*_0x24b503*_0x24b503+0x2)+_0x26b28c;}var _0x356ade=document[_0x44225a(0x60d)](_0x44225a(0x3a7)),_0x2a709e=document[_0x44225a(0x60d)](_0x44225a(0x691)),_0x1cdf1f=window['location'][_0x44225a(0x656)][_0x44225a(0x321)](_0x44225a(0x43b)),_0x2a857b={'/topic/skins/black-skins':{'en':_0x44225a(0x514),'ru':'Черные\x20Скины'},'/topic/skins/gray-skins':{'en':_0x44225a(0x3ba),'ru':_0x44225a(0x260)},'/topic/skins/cyan-skins':{'en':_0x44225a(0x66e),'ru':'Голубые\x20Скины'},'/topic/skins/pink-skins':{'en':_0x44225a(0x273),'ru':'Розовые\x20Скины'},'/topic/skins/white-skins':{'en':'White\x20Color\x20Skins','ru':'Белые\x20Скины'},'/topic/skins/orange-skins':{'en':'Orange\x20Color\x20Skins','ru':_0x44225a(0x360)},'/topic/skins/brown-skins':{'en':'Brown\x20Color\x20Skins','ru':_0x44225a(0x4eb)},'/topic/skins/yellow-skins':{'en':'Yellow\x20Color\x20Skins','ru':_0x44225a(0x47f)},'/topic/skins/blue-skins':{'en':'Blue\x20Color\x20Skins','ru':_0x44225a(0x310)},'/topic/skins/purple-skins':{'en':'Purple\x20Color\x20Skins','ru':_0x44225a(0x212)},'/topic/skins/green-skins':{'en':_0x44225a(0x6b2),'ru':_0x44225a(0x63f)},'/topic/skins/golden-skins':{'en':_0x44225a(0x654),'ru':'Золотые\x20Скины'},'/topic/skins':{'en':_0x44225a(0x454),'ru':_0x44225a(0x49a)},'/newest':{'en':'Newest\x20Sites','ru':'Новые\x20Сайты'},'/dota':{'en':_0x44225a(0x351),'ru':'Сайты\x20Dota\x202'},'/':{'en':'CS:GO\x20Sites','ru':_0x44225a(0x5ec)},'/rust':{'en':_0x44225a(0x25a),'ru':_0x44225a(0x4c2)},'/freebies':{'en':_0x44225a(0x474),'ru':'Сайты\x20с\x20Халявой'}},_0x596387=[_0x44225a(0x416),'<li><a\x20href=\x22/topic/skins/gray-skins\x22>Gray\x20Color\x20Skins</a></li>',_0x44225a(0x3b0),_0x44225a(0x47d),_0x44225a(0x590),_0x44225a(0x495),'<li><a\x20href=\x22/topic/skins/brown-skins\x22>Brown\x20Color\x20Skins</a></li>','<li><a\x20href=\x22/topic/skins/yellow-skins\x22>Yellow\x20Color\x20Skins</a></li>',_0x44225a(0x4ec),_0x44225a(0x365),_0x44225a(0x2f5),_0x44225a(0x2ad),_0x44225a(0x42b),_0x44225a(0x4ad),_0x44225a(0x445),'<li><a\x20href=\x22/\x22>CS:GO\x20Sites</a></li>',_0x44225a(0x583),_0x44225a(0x61d),_0x44225a(0x4fa),_0x44225a(0x48b),_0x44225a(0x2c1),_0x44225a(0x383),_0x44225a(0x696),_0x44225a(0x2ea),_0x44225a(0x5cc),'<li><a\x20href=\x22/reviews/key-drop\x22>Key-drop</a></li>','<li><a\x20href=\x22/reviews/knifex\x22>Knifex</a></li>',_0x44225a(0x6b7),_0x44225a(0x612),_0x44225a(0x69d),_0x44225a(0x353),'<li><a\x20href=\x22/reviews/lootbear\x22>Lootbear</a></li>',_0x44225a(0x699),'<li><a\x20href=\x22/reviews/primedice\x22>Primedice</a></li>','<li><a\x20href=\x22/reviews/rollbit\x22>Rollbit</a></li>',_0x44225a(0x542),_0x44225a(0x471),_0x44225a(0x47b),'<li><a\x20href=\x22/reviews/rustchance\x22>Rustchance</a></li>','<li><a\x20href=\x22/reviews/rustclash\x22>Rustclash</a></li>',_0x44225a(0x408),'<li><a\x20href=\x22/reviews/rustix\x22>Rustix</a></li>',_0x44225a(0x5df),'<li><a\x20href=\x22/reviews/ruststake\x22>Ruststake</a></li>',_0x44225a(0x6b8),'<li><a\x20href=\x22/reviews/rustypot\x22>Rustypot</a></li>',_0x44225a(0x661),_0x44225a(0x475),_0x44225a(0x64f),_0x44225a(0x358),_0x44225a(0x36b),_0x44225a(0x20d),_0x44225a(0x221),_0x44225a(0x23a),_0x44225a(0x359),_0x44225a(0x317),_0x44225a(0x29e),_0x44225a(0x485),_0x44225a(0x1f8),_0x44225a(0x5d1),_0x44225a(0x3f7),_0x44225a(0x412),_0x44225a(0x507),_0x44225a(0x23f),_0x44225a(0x502),_0x44225a(0x226),_0x44225a(0x505),'<li><a\x20href=\x22/reviews/crashgg\x22>Crashgg</a></li>',_0x44225a(0x666),_0x44225a(0x4ed),_0x44225a(0x66d),_0x44225a(0x4d7),'<li><a\x20href=\x22/reviews/csgofast\x22>CSGOFast</a></li>',_0x44225a(0x538),_0x44225a(0x3ed),_0x44225a(0x4ab),_0x44225a(0x64a),_0x44225a(0x284),'<li><a\x20href=\x22/reviews/csgoroll\x22>CSGORoll</a></li>',_0x44225a(0x3c5),'<li><a\x20href=\x22/reviews/csgorun\x22>CSGORUN</a></li>',_0x44225a(0x695),_0x44225a(0x5a3),_0x44225a(0x27a),_0x44225a(0x4e5),'<li><a\x20href=\x22/reviews/datdrop\x22>Datdrop</a></li>',_0x44225a(0x2fd),'<li><a\x20href=\x22/reviews/duelbits\x22>Duelbits</a></li>',_0x44225a(0x1f3),_0x44225a(0x2cc),_0x44225a(0x5e7),_0x44225a(0x3db),_0x44225a(0x26e),_0x44225a(0x5bb),_0x44225a(0x338),_0x44225a(0x64c),_0x44225a(0x22d),_0x44225a(0x1f6),_0x44225a(0x3e7),_0x44225a(0x35b),_0x44225a(0x20e),_0x44225a(0x4ca),'<li><a\x20href=\x22/reviews/skinbid\x22>SkinBid</a></li>',_0x44225a(0x2dd),_0x44225a(0x3cf),'<li><a\x20href=\x22/reviews/steamlevelu\x22>SteamLevelU</a></li>',_0x44225a(0x38f),'<li><a\x20href=\x22/reviews/hypeup\x22>Hypeup</a></li>'];function _0x40aabe(_0x4c5383,_0x1a3e89){var _0xdbdb7d=_0x44225a,_0x288292=_0x4c5383[_0xdbdb7d(0x263)](/<a href=".*?">(.*?)<\/a>/)[0x1][_0xdbdb7d(0x5f7)](),_0x3a4be2=_0x1a3e89[_0xdbdb7d(0x263)](/<a href=".*?">(.*?)<\/a>/)[0x1][_0xdbdb7d(0x5f7)](),_0x4e8c4a=_0x2a709e[_0xdbdb7d(0x680)][_0xdbdb7d(0x5f7)](),_0x38cb92=_0x288292[_0xdbdb7d(0x2ee)](_0x4e8c4a),_0x40b7ee=_0x3a4be2[_0xdbdb7d(0x2ee)](_0x4e8c4a);if(_0x38cb92===0x0&&_0x40b7ee!==0x0)return-0x1;else return _0x40b7ee===0x0&&_0x38cb92!==0x0?0x1:_0x288292[_0xdbdb7d(0x54c)](_0x3a4be2);}function _0xa78b92(){var _0x9f9535=_0x44225a;_0x356ade['innerHTML']='',_0x596387[_0x9f9535(0x31c)](function(_0x47a6e6){var _0x58b61d=_0x9f9535,_0x30b2a=document['createElement']('li');_0x30b2a[_0x58b61d(0x339)]=_0x58b61d(0x21a),_0x30b2a['style'][_0x58b61d(0x37c)]=_0x58b61d(0x234),_0x30b2a[_0x58b61d(0x21d)]=_0x47a6e6;var _0x4cab5d=_0x30b2a[_0x58b61d(0x630)]('a'),_0x4969a3=_0x4cab5d['getAttribute'](_0x58b61d(0x384));_0x2a857b[_0x4969a3]&&(_0x4cab5d[_0x58b61d(0x21d)]=_0x1cdf1f?_0x2a857b[_0x4969a3]['ru']:_0x2a857b[_0x4969a3]['en']),_0x1cdf1f&&_0x4cab5d[_0x58b61d(0x530)](_0x58b61d(0x384),_0x58b61d(0x43b)+_0x4969a3),_0x30b2a['innerHTML']='',_0x30b2a[_0x58b61d(0x32f)](_0x4cab5d),_0x356ade[_0x58b61d(0x32f)](_0x30b2a);});}function _0x29ba5f(_0x3e3111){var _0x2a30ab=_0x44225a;for(var _0x3b250e=0x0;_0x3b250e<_0x3e3111[_0x2a30ab(0x2b8)];_0x3b250e++){var _0x77f43=_0x3e3111[_0x3b250e];_0x2216d8(_0x77f43);}}function _0x2216d8(_0x2a0af0){var _0x755037=_0x44225a;_0x2a0af0['style']['display']=_0x755037(0x234);}function _0x1ed5a2(_0x454be5){var _0x5f5d5b=_0x44225a;_0x454be5['style'][_0x5f5d5b(0x37c)]=_0x5f5d5b(0x6a5);}function _0x2a1401(){var _0x38d782=_0x44225a,_0x576068=_0x2a709e[_0x38d782(0x680)]['toLowerCase'](),_0x3e884e=_0x356ade['getElementsByClassName'](_0x38d782(0x21a));if(_0x576068===''){_0x29ba5f(_0x3e884e),_0x356ade[_0x38d782(0x54f)]['display']='none';return;}for(var _0x2b68e1=0x0;_0x2b68e1<_0x3e884e[_0x38d782(0x2b8)];_0x2b68e1++){var _0x1b683c=_0x3e884e[_0x2b68e1],_0x1f747e=_0x1b683c[_0x38d782(0x625)][_0x38d782(0x5f7)]();_0x1f747e['includes'](_0x576068)||_0x1f747e[_0x38d782(0x321)]('\x20'+_0x576068)?_0x1ed5a2(_0x1b683c):_0x2216d8(_0x1b683c);}_0x356ade[_0x38d782(0x54f)][_0x38d782(0x37c)]='block';}_0x2a709e[_0x44225a(0x67b)](_0x44225a(0x607),_0x2a1401),_0x2a709e[_0x44225a(0x67b)](_0x44225a(0x33c),function(){var _0x239f59=_0x44225a;_0x2a709e[_0x239f59(0x680)]===''?_0x356ade[_0x239f59(0x54f)][_0x239f59(0x37c)]=_0x239f59(0x234):_0x356ade[_0x239f59(0x54f)][_0x239f59(0x37c)]='block';}),_0x2a709e[_0x44225a(0x67b)](_0x44225a(0x545),function(){setTimeout(function(){var _0x119189=_0x45ca;_0x356ade[_0x119189(0x54f)][_0x119189(0x37c)]='none';},0x96);}),_0xa78b92();var _0x555f26=document[_0x44225a(0x624)](_0x44225a(0x3b8)),_0x1246c0=document[_0x44225a(0x630)]('.screens'),_0x569547=0x0,_0x54cdbc,_0x5d2a28=0x0,_0x1297ff=0x64,_0x4b1c89=document[_0x44225a(0x630)](_0x44225a(0x2d0)),_0x14687c=document[_0x44225a(0x630)]('.next-button');if(window[_0x44225a(0x4de)][_0x44225a(0x656)][_0x44225a(0x321)]('/reviews/')){function _0x25c79c(){var _0x3e35a4=_0x44225a,_0x349fb6=_0x1246c0['querySelectorAll'](_0x3e35a4(0x689));_0x349fb6[_0x3e35a4(0x31c)](function(_0x27b853){var _0x45f3df=_0x3e35a4;_0x1246c0[_0x45f3df(0x4c8)](_0x27b853);});}function _0x14dc70(_0x18d902){var _0x26f79a=_0x44225a,_0x5ea347=document[_0x26f79a(0x27c)]('input');_0x5ea347[_0x26f79a(0x415)]='radio',_0x5ea347['id']=_0x26f79a(0x488)+(_0x18d902+0x1),_0x5ea347[_0x26f79a(0x6a2)]='slider';_0x18d902===_0x569547&&(_0x5ea347[_0x26f79a(0x658)]=!![]);_0x5ea347[_0x26f79a(0x67b)](_0x26f79a(0x46f),function(){var _0x237869=_0x26f79a,_0x4f3b14=_0x555f26[_0x569547];_0x4f3b14[_0x237869(0x252)][_0x237869(0x523)]('active'),_0x569547=_0x18d902,_0x1161eb(_0x569547,null),_0x3359a6();});var _0x2f75d8=document[_0x26f79a(0x27c)]('label');_0x2f75d8['setAttribute'](_0x26f79a(0x1f1),_0x5ea347['id']),_0x1246c0[_0x26f79a(0x32f)](_0x5ea347),_0x1246c0[_0x26f79a(0x32f)](_0x2f75d8);}function _0x1330aa(){var _0x3d1b40=_0x44225a;_0x25c79c();for(var _0x1a7a2d=0x0;_0x1a7a2d<_0x555f26[_0x3d1b40(0x2b8)];_0x1a7a2d++){_0x14dc70(_0x1a7a2d);}}function _0x1161eb(_0x1a9074,_0xc1dbf3){var _0x383a16=_0x44225a,_0x8fbfd9=_0x555f26[_0x569547],_0x22c48a=_0x555f26[_0x1a9074];_0x8fbfd9[_0x383a16(0x252)][_0x383a16(0x523)]('active',_0x383a16(0x4bc),_0x383a16(0x411)),_0x22c48a['classList'][_0x383a16(0x403)](_0x383a16(0x24c));if(_0xc1dbf3===_0x383a16(0x4bc))_0x22c48a[_0x383a16(0x252)][_0x383a16(0x403)](_0x383a16(0x4bc));else _0xc1dbf3===_0x383a16(0x411)&&_0x22c48a[_0x383a16(0x252)][_0x383a16(0x403)](_0x383a16(0x411));_0x569547=_0x1a9074;var _0x1dce5e=_0x1246c0[_0x383a16(0x555)](_0x383a16(0x3ce));_0x1dce5e[_0x383a16(0x31c)](function(_0x1920af,_0x6963ef){var _0x434fd9=_0x383a16;_0x6963ef===_0x1a9074?_0x1920af[_0x434fd9(0x252)][_0x434fd9(0x403)]('active'):_0x1920af['classList']['remove'](_0x434fd9(0x24c));});if(_0x569547===0x0)_0x4b1c89[_0x383a16(0x4a9)]=!![],_0x14687c[_0x383a16(0x4a9)]=![];else _0x569547===_0x555f26[_0x383a16(0x2b8)]-0x1?(_0x4b1c89[_0x383a16(0x4a9)]=![],_0x14687c['disabled']=!![]):(_0x4b1c89['disabled']=![],_0x14687c[_0x383a16(0x4a9)]=![]);}_0x1330aa(),_0x1246c0['addEventListener'](_0x44225a(0x369),function(_0x24d8e2){var _0x43f2ee=_0x44225a;_0x5d2a28=_0x24d8e2[_0x43f2ee(0x5a1)][0x0][_0x43f2ee(0x3ae)];}),_0x1246c0['addEventListener'](_0x44225a(0x60b),function(_0x1474a9){var _0x4b0b2d=_0x44225a,_0x327e9a=_0x1474a9[_0x4b0b2d(0x423)][0x0]['clientX'],_0x311118=_0x327e9a-_0x5d2a28;if(_0x311118>_0x1297ff)_0x263e24(),_0x3359a6();else _0x311118<-_0x1297ff&&(_0x4c379e(),_0x3359a6());}),_0x1246c0[_0x44225a(0x67b)](_0x44225a(0x39f),function(){_0x4deff5();}),_0x1246c0[_0x44225a(0x67b)](_0x44225a(0x613),function(){_0x3359a6();});function _0x3359a6(){_0x4deff5(),_0x54cdbc=setInterval(_0x4c379e,0x1388);}function _0x4deff5(){clearInterval(_0x54cdbc);}function _0x4c379e(){var _0x54e361=_0x44225a,_0xc17dc6=(_0x569547+0x1)%_0x555f26['length'];_0x1161eb(_0xc17dc6,_0x54e361(0x4bc));}function _0x263e24(){var _0xec7b4d=_0x44225a,_0x1e0189=(_0x569547-0x1+_0x555f26[_0xec7b4d(0x2b8)])%_0x555f26[_0xec7b4d(0x2b8)];_0x1161eb(_0x1e0189,'previous');}_0x1161eb(_0x569547),_0x3359a6(),_0x4b1c89[_0x44225a(0x67b)]('click',function(){_0x569547!==0x0&&(_0x263e24(),_0x3359a6());}),_0x14687c[_0x44225a(0x67b)]('click',function(){var _0x469d05=_0x44225a;_0x569547!==_0x555f26[_0x469d05(0x2b8)]-0x1&&(_0x4c379e(),_0x3359a6());});}if(window[_0x44225a(0x4de)][_0x44225a(0x656)][_0x44225a(0x4c9)](_0x44225a(0x2ff))||window[_0x44225a(0x4de)][_0x44225a(0x656)]===_0x44225a(0x43b)||window[_0x44225a(0x4de)][_0x44225a(0x656)]===_0x44225a(0x48a)){var _0x575ec3=document['createElement']('div');_0x575ec3['className']=_0x44225a(0x604),_0x575ec3['textContent']='Нужен\x20VPN';var _0x2b8090=['CSGORoll',_0x44225a(0x2c0),'HowlGG',_0x44225a(0x409),_0x44225a(0x636),_0x44225a(0x660),_0x44225a(0x44a),_0x44225a(0x557),_0x44225a(0x698),_0x44225a(0x348),_0x44225a(0x6b1),_0x44225a(0x63e),_0x44225a(0x4da),_0x44225a(0x694),_0x44225a(0x244),'gcskins','FarmSkins',_0x44225a(0x5f5)],_0x69503e=document['querySelectorAll'](_0x44225a(0x326));_0x69503e[_0x44225a(0x31c)](function(_0x3cdc41){var _0x4358d9=_0x44225a,_0x5a3a67=_0x3cdc41['id'];if(_0x2b8090[_0x4358d9(0x321)](_0x5a3a67)){var _0x30220c=_0x3cdc41[_0x4358d9(0x630)]('.logobg');if(_0x30220c){var _0x9fc4c0=_0x575ec3['cloneNode'](!![]);_0x30220c[_0x4358d9(0x32f)](_0x9fc4c0);}else console[_0x4358d9(0x53b)]('Не\x20удалось\x20найти\x20элемент\x20.logobg\x20внутри\x20.box');}});}}),document[_0x774ff4(0x67b)](_0x774ff4(0x4e9),function(){var _0x177955=_0x774ff4;document[_0x177955(0x630)](_0x177955(0x2b7))[_0x177955(0x67b)](_0x177955(0x484),function(){var _0x48c0e9=_0x177955;document[_0x48c0e9(0x630)](_0x48c0e9(0x2ac))[_0x48c0e9(0x252)]['add']('active'),this[_0x48c0e9(0x252)]['add']('disabled'),document[_0x48c0e9(0x630)](_0x48c0e9(0x1ef))[_0x48c0e9(0x252)][_0x48c0e9(0x403)](_0x48c0e9(0x298));});});window[_0x774ff4(0x4de)][_0x774ff4(0x656)]['includes'](_0x774ff4(0x28c))&&($(document)[_0x774ff4(0x40a)](function(){var _0x411c46=_0x774ff4;$(_0x411c46(0x400))['on']('click',function(){var _0x5ea526=_0x411c46,_0x5a7ddd=$(this)[_0x5ea526(0x6ab)](_0x5ea526(0x5d3));_0x5a7ddd['toggleClass']('selected'),$('.box-skins')[_0x5ea526(0x623)](_0x5a7ddd)[_0x5ea526(0x632)](_0x5ea526(0x64e));var _0x49fbce=$(this)[_0x5ea526(0x3cd)]('i');_0x49fbce[_0x5ea526(0x684)]('bi-zoom-in\x20bi-zoom-out'),$(_0x5ea526(0x290))[_0x5ea526(0x623)](_0x49fbce)[_0x5ea526(0x632)](_0x5ea526(0x5b7))[_0x5ea526(0x52b)](_0x5ea526(0x5b4));}),$(_0x411c46(0x377))[_0x411c46(0x484)](function(){var _0x3ec47f=_0x411c46,_0x3edb32=$(this)[_0x3ec47f(0x6ab)]('.box-skins');_0x3edb32[_0x3ec47f(0x684)](_0x3ec47f(0x64e)),$(_0x3ec47f(0x5d3))[_0x3ec47f(0x623)](_0x3edb32)[_0x3ec47f(0x632)](_0x3ec47f(0x64e));var _0x2a317c=$(this)[_0x3ec47f(0x2f2)](_0x3ec47f(0x400))[_0x3ec47f(0x3cd)]('i');_0x2a317c[_0x3ec47f(0x684)](_0x3ec47f(0x566)),$(_0x3ec47f(0x290))[_0x3ec47f(0x623)](_0x2a317c)[_0x3ec47f(0x632)]('bi-zoom-out')['addClass'](_0x3ec47f(0x5b4));});}),document[_0x774ff4(0x67b)]('DOMContentLoaded',function(){var _0x2cd8dd=_0x774ff4,_0x4e926e=document[_0x2cd8dd(0x555)](_0x2cd8dd(0x377));_0x4e926e[_0x2cd8dd(0x31c)](function(_0x48e5cd){var _0x2d3615=_0x2cd8dd;_0x48e5cd[_0x2d3615(0x252)][_0x2d3615(0x403)](_0x2d3615(0x46e));});}),$(document)[_0x774ff4(0x40a)](function(){var _0x4dcc58=_0x774ff4;$(_0x4dcc58(0x1fa))[_0x4dcc58(0x484)](function(){var _0x80b0ff=_0x4dcc58,_0x174ca7=$(this)[_0x80b0ff(0x319)](_0x80b0ff(0x3ee))['split']('\x20')[0x1];$('.box-skins.'+_0x174ca7)[_0x80b0ff(0x684)](_0x80b0ff(0x4a9)),$(this)['toggleClass'](_0x80b0ff(0x27f)),_0x1c3df5();}),$(_0x4dcc58(0x515))['on']('click',_0x4dcc58(0x45c),function(){var _0x2afebe=_0x4dcc58;$(_0x2afebe(0x5d3))[_0x2afebe(0x632)](_0x2afebe(0x4a9)),$(_0x2afebe(0x1fa))['addClass']('enabled'),$(_0x2afebe(0x5d3))[_0x2afebe(0x632)](_0x2afebe(0x64e)),$(_0x2afebe(0x2f9))[_0x2afebe(0x523)]();});function _0x1c3df5(){var _0x2321a4=_0x4dcc58;$(_0x2321a4(0x669))[_0x2321a4(0x2b8)]===0x0?$(_0x2321a4(0x2f9))[_0x2321a4(0x2b8)]===0x0&&$(_0x2321a4(0x515))['append']('<div\x20class=\x22navigation-reset\x22>Reset\x20Navigation</div>'):$(_0x2321a4(0x2f9))[_0x2321a4(0x523)]();}}));if(window[_0x774ff4(0x4de)]['pathname'][_0x774ff4(0x321)](_0x774ff4(0x247))){var elements=document['querySelectorAll']('.box-skins-list,\x20.topic-boxes-holder');elements[_0x774ff4(0x31c)](function(_0x3a27e2){var _0x27f239=_0x774ff4;_0x3a27e2[_0x27f239(0x252)][_0x27f239(0x403)](_0x27f239(0x46e));});}if(!window[_0x774ff4(0x4de)]['pathname'][_0x774ff4(0x4c9)](_0x774ff4(0x6b6))&&!window['location']['pathname'][_0x774ff4(0x321)](_0x774ff4(0x32a))&&!window[_0x774ff4(0x4de)][_0x774ff4(0x656)][_0x774ff4(0x321)](_0x774ff4(0x30a))&&!window['location'][_0x774ff4(0x656)][_0x774ff4(0x321)](_0x774ff4(0x3d1))){function translateURLs2(_0x534be5,_0x9bb303){var _0x3c477e=_0x774ff4,_0x1205f5=_0x534be5[_0x3c477e(0x555)](_0x3c477e(0x52a)),_0x573f55=['hi','tr','pt','es','ru'];for(var _0x1baa4e=0x0;_0x1baa4e<_0x1205f5[_0x3c477e(0x2b8)];_0x1baa4e++){var _0x47de5d=_0x1205f5[_0x1baa4e][_0x3c477e(0x35f)](_0x3c477e(0x384));if(!_0x47de5d)continue;var _0x4e7187=new URL(_0x47de5d,window[_0x3c477e(0x4de)][_0x3c477e(0x384)]),_0x2f9797=_0x4e7187['pathname'],_0xc7334f=_0x573f55[_0x3c477e(0x5f4)](_0x98eb88=>{var _0x4978b0='/'+_0x98eb88+'/';return _0x2f9797['includes'](_0x4978b0);});_0x9bb303!=='en'&&(!_0xc7334f&&_0x573f55['includes'](_0x9bb303)&&(_0x2f9797='/'+_0x9bb303+_0x2f9797,_0x4e7187['pathname']=_0x2f9797,_0x1205f5[_0x1baa4e]['setAttribute'](_0x3c477e(0x384),_0x4e7187[_0x3c477e(0x384)])));}var _0xee22c3={'ru':{'CS2\x20Sites\x20List':_0x3c477e(0x2db),'Rust\x20Sites\x20List':_0x3c477e(0x3f2),'Dota\x202\x20Sites\x20List':_0x3c477e(0x42a),'Crypto\x20Sites\x20List':'Крипто\x20Халява','Newest\x20Sites':_0x3c477e(0x54d),'Freebies\x20Only':_0x3c477e(0x30b),'Earning\x20Sites':_0x3c477e(0x3ff),'Steam\x20Sites':_0x3c477e(0x5f3),'Gambling\x20Sites':_0x3c477e(0x1fe),'Earn\x20by\x20Play\x20CS2':_0x3c477e(0x480),'Others':_0x3c477e(0x218),'Skins\x20By\x20Color':'Скины\x20по\x20Цвету','All\x20Sites':_0x3c477e(0x3cc),'Match\x20Betting':_0x3c477e(0x4c5),'Case\x20Opening':_0x3c477e(0x543),'Case\x20Battle':_0x3c477e(0x534),'Roulette':_0x3c477e(0x250),'Coinflip':_0x3c477e(0x663),'Crash':'Краш','Casino':_0x3c477e(0x200),'Jackpot':'Джекпот','Upgrader':_0x3c477e(0x3da),'Dice':_0x3c477e(0x30f),'Bonus\x20Types':_0x3c477e(0x5a5),'Sign\x20Up\x20Bonuses':'Бонус\x20за\x20Регистрацию','Deposit\x20Bonuses':_0x3c477e(0x41a),'Daily\x20Rewards':_0x3c477e(0x5ce),'Giveaways':'Розыгрыши','Offerwall\x20Sites':_0x3c477e(0x3b3),'Earn\x20by\x20Play\x20Sites':_0x3c477e(0x2a0),'Buy\x20or\x20Sell\x20Skins':_0x3c477e(0x1f0),'Buy\x20or\x20Sell\x20Items':_0x3c477e(0x26f),'Marketplaces':_0x3c477e(0x4f2),'Instant\x20Sell':'Моментальная\x20Продажа','Buy\x20Items':_0x3c477e(0x533),'Sell\x20Items':'Продать\x20Предметы','Trade\x20Items':'Обменять\x20Предметы','Buy\x20Skins':'Купить\x20Скины','Sell\x20Skins':_0x3c477e(0x598),'Trade\x20Skins':_0x3c477e(0x527),'Steam\x20Level\x20Up':_0x3c477e(0x33a),'Buy\x20Steam\x20Games':_0x3c477e(0x512)},'hi':{'CS2\x20Sites\x20List':_0x3c477e(0x220),'CS2\x20Sites\x20List':'CS2\x20साइटों\x20की\x20सूची','Rust\x20Sites\x20List':_0x3c477e(0x486),'Dota\x202\x20Sites\x20List':_0x3c477e(0x43e),'Crypto\x20Sites\x20List':'क्रिप्टो\x20साइटों\x20की\x20सूची','Newest\x20Sites':'सबसे\x20नई\x20साइटें','Freebies\x20Only':_0x3c477e(0x447),'Earning\x20Sites':_0x3c477e(0x5f6),'Steam\x20Sites':_0x3c477e(0x3d4),'Gambling\x20Sites':_0x3c477e(0x1ed),'Earn\x20by\x20Play\x20CS2':_0x3c477e(0x2ed),'All\x20Sites':_0x3c477e(0x3fc),'Match\x20Betting':_0x3c477e(0x459),'Case\x20Opening':_0x3c477e(0x66c),'Case\x20Battle':_0x3c477e(0x3e4),'Roulette':'रूलेट','Coinflip':_0x3c477e(0x3e6),'Crash':_0x3c477e(0x2be),'Casino':'कैसीनो','Jackpot':'जैकपॉट','Upgrader':_0x3c477e(0x5cd),'Dice':_0x3c477e(0x211),'Bonus\x20Types':'बोनस\x20के\x20प्रकार','Sign\x20Up\x20Bonuses':_0x3c477e(0x6af),'Deposit\x20Bonuses':_0x3c477e(0x397),'Daily\x20Rewards':'रोज़ाना\x20की\x20पुरस्कार','Giveaways':_0x3c477e(0x336),'Offerwall\x20Sites':_0x3c477e(0x592),'Earn\x20by\x20Play\x20Sites':_0x3c477e(0x4b4),'Buy\x20or\x20Sell\x20Skins':'स्किन\x20खरीदें\x20या\x20बेचें','Buy\x20or\x20Sell\x20Items':_0x3c477e(0x66a),'Marketplaces':_0x3c477e(0x4cf),'Instant\x20Sell':'तत्काल\x20बेचें','Buy\x20Items':_0x3c477e(0x562),'Sell\x20Items':_0x3c477e(0x299),'Trade\x20Items':_0x3c477e(0x2b2),'Buy\x20Skins':_0x3c477e(0x40e),'Sell\x20Skins':_0x3c477e(0x25f),'Trade\x20Skins':_0x3c477e(0x225),'Steam\x20Level\x20Up':'स्टीम\x20स्तर\x20बढ़ाएं','Buy\x20Steam\x20Games':_0x3c477e(0x5fb)},'pt':{'CS2\x20Sites\x20List':_0x3c477e(0x584),'Rust\x20Sites\x20List':'Sites\x20de\x20Rust','Dota\x202\x20Sites\x20List':_0x3c477e(0x6a9),'Crypto\x20Sites\x20List':_0x3c477e(0x518),'Newest\x20Sites':_0x3c477e(0x4b0),'Freebies\x20Only':_0x3c477e(0x4a1),'Earning\x20Sites':_0x3c477e(0x1ff),'Steam\x20Sites':'Sites\x20do\x20Steam','Gambling\x20Sites':_0x3c477e(0x3aa),'Earn\x20by\x20Play\x20CS2':_0x3c477e(0x54a),'All\x20Sites':'Todos\x20os\x20Sites','Match\x20Betting':_0x3c477e(0x29b),'Case\x20Opening':'Abertura\x20de\x20Caixas','Case\x20Battle':_0x3c477e(0x501),'Roulette':_0x3c477e(0x540),'Coinflip':_0x3c477e(0x68e),'Crash':_0x3c477e(0x352),'Casino':_0x3c477e(0x3bc),'Jackpot':'Jackpot','Upgrader':_0x3c477e(0x5e4),'Dice':'Dados','Bonus\x20Types':_0x3c477e(0x45d),'Sign\x20Up\x20Bonuses':_0x3c477e(0x547),'Deposit\x20Bonuses':_0x3c477e(0x4d1),'Daily\x20Rewards':_0x3c477e(0x44e),'Giveaways':'Doações','Offerwall\x20Sites':'Sites\x20de\x20Ofertas','Earn\x20by\x20Play\x20Sites':_0x3c477e(0x30d),'Buy\x20or\x20Sell\x20Skins':'Comprar\x20ou\x20Vender\x20Skins','Buy\x20or\x20Sell\x20Items':_0x3c477e(0x619),'Marketplaces':_0x3c477e(0x44c),'Instant\x20Sell':'Venda\x20Imediata','Buy\x20Items':_0x3c477e(0x4b2),'Sell\x20Items':_0x3c477e(0x638),'Trade\x20Items':_0x3c477e(0x26d),'Buy\x20Skins':_0x3c477e(0x35d),'Sell\x20Skins':_0x3c477e(0x487),'Trade\x20Skins':'Trocar\x20Skins','Steam\x20Level\x20Up':_0x3c477e(0x4ef),'Buy\x20Steam\x20Games':_0x3c477e(0x520)},'tr':{'CS2\x20Sites\x20List':'CS2\x20Siteleri\x20Listesi','Rust\x20Sites\x20List':_0x3c477e(0x4ba),'Dota\x202\x20Sites\x20List':'Dota\x202\x20Siteleri\x20Listesi','Crypto\x20Sites\x20List':_0x3c477e(0x3fd),'Newest\x20Sites':_0x3c477e(0x640),'Freebies\x20Only':_0x3c477e(0x4ac),'Earning\x20Sites':'Para\x20Kazanma\x20Siteleri','Steam\x20Sites':_0x3c477e(0x464),'Gambling\x20Sites':_0x3c477e(0x22c),'Earn\x20by\x20Play\x20CS2':_0x3c477e(0x232),'All\x20Sites':_0x3c477e(0x235),'Match\x20Betting':_0x3c477e(0x465),'Case\x20Opening':_0x3c477e(0x63c),'Case\x20Battle':_0x3c477e(0x2a8),'Roulette':_0x3c477e(0x259),'Coinflip':_0x3c477e(0x479),'Crash':_0x3c477e(0x40b),'Casino':_0x3c477e(0x4ff),'Jackpot':_0x3c477e(0x3f5),'Upgrader':_0x3c477e(0x328),'Dice':_0x3c477e(0x68c),'Bonus\x20Types':'Bonus\x20Türleri','Sign\x20Up\x20Bonuses':_0x3c477e(0x3a9),'Deposit\x20Bonuses':_0x3c477e(0x53a),'Daily\x20Rewards':'Günlük\x20Ödüller','Giveaways':_0x3c477e(0x25d),'Offerwall\x20Sites':_0x3c477e(0x41b),'Earn\x20by\x20Play\x20Sites':_0x3c477e(0x213),'Buy\x20or\x20Sell\x20Skins':_0x3c477e(0x4d9),'Buy\x20or\x20Sell\x20Items':_0x3c477e(0x529),'Marketplaces':_0x3c477e(0x586),'Instant\x20Sell':_0x3c477e(0x26b),'Buy\x20Items':_0x3c477e(0x42f),'Sell\x20Items':_0x3c477e(0x641),'Trade\x20Items':_0x3c477e(0x37e),'Buy\x20Skins':_0x3c477e(0x68d),'Sell\x20Skins':'Skins\x20Sat','Trade\x20Skins':_0x3c477e(0x52e),'Steam\x20Level\x20Up':_0x3c477e(0x667),'Buy\x20Steam\x20Games':_0x3c477e(0x2d1)},'es':{'CS2\x20Sites\x20List':_0x3c477e(0x513),'Rust\x20Sites\x20List':_0x3c477e(0x3f9),'Dota\x202\x20Sites\x20List':_0x3c477e(0x2e6),'Crypto\x20Sites\x20List':_0x3c477e(0x223),'Newest\x20Sites':_0x3c477e(0x405),'Freebies\x20Only':'Solo\x20regalos\x20gratis','Earning\x20Sites':_0x3c477e(0x4af),'Steam\x20Sites':'Sitios\x20de\x20Steam','Gambling\x20Sites':_0x3c477e(0x56c),'Earn\x20by\x20Play\x20CS2':'Gana\x20jugando\x20CS2','All\x20Sites':_0x3c477e(0x2b4),'Match\x20Betting':'Apuestas\x20de\x20partidos','Case\x20Opening':_0x3c477e(0x54b),'Case\x20Battle':_0x3c477e(0x380),'Roulette':_0x3c477e(0x644),'Coinflip':_0x3c477e(0x354),'Crash':_0x3c477e(0x3f6),'Casino':_0x3c477e(0x2d6),'Jackpot':'Bote','Upgrader':_0x3c477e(0x4fe),'Dice':'Dados','Bonus\x20Types':_0x3c477e(0x5e0),'Sign\x20Up\x20Bonuses':_0x3c477e(0x6b3),'Deposit\x20Bonuses':'Bonos\x20de\x20depósito','Daily\x20Rewards':_0x3c477e(0x209),'Giveaways':_0x3c477e(0x4be),'Offerwall\x20Sites':'Sitios\x20de\x20oferta','Earn\x20by\x20Play\x20Sites':'Sitios\x20para\x20ganar\x20jugando','Buy\x20or\x20Sell\x20Skins':_0x3c477e(0x21c),'Buy\x20or\x20Sell\x20Items':_0x3c477e(0x2de),'Marketplaces':_0x3c477e(0x44c),'Instant\x20Sell':_0x3c477e(0x620),'Buy\x20Items':_0x3c477e(0x3d6),'Sell\x20Items':_0x3c477e(0x468),'Trade\x20Items':'Intercambiar\x20objetos','Buy\x20Skins':_0x3c477e(0x302),'Sell\x20Skins':_0x3c477e(0x5ed),'Trade\x20Skins':_0x3c477e(0x1f2),'Steam\x20Level\x20Up':_0x3c477e(0x62d),'Buy\x20Steam\x20Games':_0x3c477e(0x315)}},_0xa9642d=document[_0x3c477e(0x555)](_0x3c477e(0x626));for(var _0x41d8d2=0x0;_0x41d8d2<_0xa9642d[_0x3c477e(0x2b8)];_0x41d8d2++){var _0x3bf8e7=_0xa9642d[_0x41d8d2]['textContent'][_0x3c477e(0x3d5)]();_0xee22c3[_0x9bb303]&&_0xee22c3[_0x9bb303][_0x3c477e(0x418)](_0x3bf8e7)&&(_0xa9642d[_0x41d8d2][_0x3c477e(0x21d)][_0x3c477e(0x321)](_0x3c477e(0x5f2))?_0xa9642d[_0x41d8d2][_0x3c477e(0x21d)]=_0xee22c3[_0x9bb303][_0x3bf8e7]+_0x3c477e(0x552):_0xa9642d[_0x41d8d2][_0x3c477e(0x21d)]=_0xee22c3[_0x9bb303][_0x3bf8e7]);}}var categorySelector=document[_0x774ff4(0x630)]('.category-selector');translateURLs2(categorySelector,languageTag);}function addButtonToBoxesHolder(){var _0x471215=_0x774ff4;if(window[_0x471215(0x4de)][_0x471215(0x656)][_0x471215(0x321)](_0x471215(0x2ff))||window[_0x471215(0x4de)][_0x471215(0x656)]===_0x471215(0x43b)||window[_0x471215(0x4de)][_0x471215(0x656)]===_0x471215(0x48a)&&!window[_0x471215(0x4de)][_0x471215(0x656)]['includes'](_0x471215(0x21f))&&!window[_0x471215(0x4de)][_0x471215(0x656)][_0x471215(0x321)]('/ru/topic')){var _0x469921=document[_0x471215(0x555)](_0x471215(0x4f1));if(!document['querySelector'](_0x471215(0x3dc))){var _0xa55f2f=document[_0x471215(0x27c)]('div');_0xa55f2f[_0x471215(0x339)]=_0x471215(0x650),_0xa55f2f[_0x471215(0x21d)]='<a\x20class=\x22settings-button\x22\x20id=\x22button-vpn-filter\x22\x20title=\x22Скрыть\x20сайты\x20требующие\x20VPN\x22><i\x20id=\x22vpn-icon\x22\x20class=\x22bi\x20bi-eye\x22></i></a>',_0x469921['forEach'](function(_0x499943){var _0x42f49a=_0x471215;_0x499943[_0x42f49a(0x458)](_0xa55f2f[_0x42f49a(0x3ef)](!![]),_0x499943[_0x42f49a(0x2fc)]);});var _0x3e9e87=document[_0x471215(0x60d)]('vpn-icon');function _0x49cfa6(){var _0x287afa=_0x471215,_0x2f6092=document[_0x287afa(0x555)](_0x287afa(0x326));_0x2f6092['forEach'](function(_0x1229a5){var _0x4e75a4=_0x287afa,_0x35a295=_0x1229a5['querySelector']('.vpn');_0x35a295&&(_0x1229a5[_0x4e75a4(0x54f)][_0x4e75a4(0x37c)]=_0x1229a5[_0x4e75a4(0x54f)][_0x4e75a4(0x37c)]==='none'?'':_0x4e75a4(0x234));});}window[_0x471215(0x39a)]=function(){var _0x571ea9=_0x471215,_0x2fd006=localStorage[_0x571ea9(0x657)](_0x571ea9(0x2dc)),_0x918a50=localStorage[_0x571ea9(0x657)]('vpnButtonTitle');_0x2fd006===_0x571ea9(0x366)&&(_0x49cfa6(),_0x3e9e87[_0x571ea9(0x252)]['remove'](_0x571ea9(0x56a)),_0x3e9e87[_0x571ea9(0x252)][_0x571ea9(0x403)](_0x571ea9(0x53c))),_0x918a50&&(document['getElementById'](_0x571ea9(0x30e))[_0x571ea9(0x5b8)]=_0x918a50);},document['getElementById'](_0x471215(0x30e))[_0x471215(0x67b)](_0x471215(0x484),function(){var _0x4e9a45=_0x471215;_0x49cfa6();var _0x14833e=localStorage[_0x4e9a45(0x657)](_0x4e9a45(0x2dc))||'visible',_0x1ad0b7=_0x14833e===_0x4e9a45(0x366)?'visible':_0x4e9a45(0x366);localStorage[_0x4e9a45(0x568)]('vpnButtonState',_0x1ad0b7),_0x3e9e87[_0x4e9a45(0x252)][_0x4e9a45(0x57b)](_0x4e9a45(0x56a)),_0x3e9e87[_0x4e9a45(0x252)][_0x4e9a45(0x57b)](_0x4e9a45(0x53c));var _0x2611c3=document['getElementById'](_0x4e9a45(0x30e));_0x3e9e87[_0x4e9a45(0x252)]['contains'](_0x4e9a45(0x56a))?_0x2611c3[_0x4e9a45(0x5b8)]=_0x4e9a45(0x31a):_0x2611c3['title']='Показать\x20сайты\x20требующие\x20VPN',localStorage[_0x4e9a45(0x568)](_0x4e9a45(0x62c),_0x2611c3[_0x4e9a45(0x5b8)]);});}}}addButtonToBoxesHolder();
+function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
+  
+  if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
+  
+    function extractLanguageTagFromURL(pathname) {
+      var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
+      if (matches && matches.length > 1) {
+        return matches[1];
+      }
+      return "";
+    }
+  
+  var languageTag = extractLanguageTagFromURL(window.location.pathname);
+  
+  function translateURLs(parentElement, language) {
+    var translations = {
+      "hi": {
+        "CSGORUN is a leading virtual skin gambling platform with diverse modes like Crash, Roulette, PVP, and esports betting. It's user-friendly.": "CSGORUN एक प्रमुख आभासी त्वचा जुआ प्लेटफ़ॉर्म है जिसमें क्रैश, रूलेट, PVP, और इस्पोर्ट्स बेटिंग जैसे विभिन्न मोड हैं। यह उपयोगकर्ता-स्वीकृत है।",
+        "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins एक ऑनलाइन प्लेटफ़ॉर्म है जिसका उद्देश्य गेमर्स को सीएस2 और रस्ट के लिए स्किन खरीदने, बेचने और व्यापार करने के लिए एक बाजार प्रदान करना है।",
+        "RustMagic - a cutting-edge Rust skin betting site, features five distinct game modes, withdrawal in Rust skins, and a daily free case system for users.": "RustMagic - एक कटिंग-एज रस्ट स्किन बेटिंग साइट, पाँच विभिन्न गेम मोड, रस्ट स्किन्स में निकासी और उपयोगकर्ताओं के लिए एक दैनिक मुफ्त केस प्रणाली के साथ।",
+        "SKINFANS - CS2 skin case opening , beautiful animations, provably fair system. Regular giveaways, Battle-pass for newcomers, sleek design.": "SKINFANS - CS2 स्किन केस ओपनिंग, सुंदर एनीमेशन, प्रमाणित निष्पक्ष सिस्टम। नियमित गिफ्टवे, नए आनेवालों के लिए बैटल-पास, सुंदर डिज़ाइन।",
+        "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, Skin Gambling में एक प्रमुख वेबसाइट, CS:GO, Dota 2, और RUST skins के लिए विविध मोड, उपयोगकर्ता-सहायक इंटरफेस, और बोनस सुविधाएं प्रदान करती है।",
+        "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "ये स्किन्स, एक सीएस2 स्किन गैम्ब्लिंग प्लेटफॉर्म, उपयोगकर्ता के हित में डिज़ाइन, विविध गेम मोड, लाइव चैट, और सिद्ध की गई निष्कर्षता के साथ उत्कृष्ट है।",
+        "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, संभवतः सर्वश्रेष्ठ CS2 जुआ साइट है। नियमित वर्षवृष्टि, गिफ्टवे और प्रोमोकोड्स। आप कई खेल और स्लॉट्स खेल सकते हैं।",
+        "CSGO500 probably the best CS2 and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, संभवतः सर्वश्रेष्ठ CS2 जुआ साइट है। नियमित वर्षवृष्टि, गिफ्टवे और प्रोमोकोड्स। आप कई खेल और स्लॉट्स खेल सकते हैं।",
+        "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll एक लोकप्रिय साइटों में से एक है। जिसमें रूलेट, क्रैश और और भी कई खेल शामिल हैं। अब ई-स्पोर्ट्स बेटिंग का परीक्षण हो रहा है।",
+        "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": "CSGOEmpire एक प्रसिद्ध साइटों में से एक है। जिसमें रूलेट और कॉइनफ्लिप शामिल हैं। 2016 से कार्यरत है। प्राथमिकता में मैच बेटिंग है।",
+        "CSGOPolygon is a legendary site like CSGODouble with classic Roulette, but have Dices, Crash, Slots and even Esports Betting!": "CSGOPolygon CSGODouble की तरह एक पुरानी साइट है जिसमें क्लासिक रूलेट है, लेकिन डाइस, क्रैश, स्लॉट्स और इसी साथ ई-स्पोर्ट्स बेटिंग भी है!",
+        "Gamdom Casino offers a variety of in-house games, innovative social engagement, provably fair system, and good reputation in online gaming.": "Gamdom Casino अपने भीतरी खेलों, अभिनव सामाजिक एंगेजमेंट, प्रमाणित निष्पक्ष तंत्र और ऑनलाइन गेमिंग में अच्छी प्रतिष्ठा के साथ विविधता प्रदान करने वाली एक प्लेटफॉर्म है।",
+        "CSGOPOSITIVE is a famous esports betting site with interesting system of cashback, you can bet skins or money. Has various payments options.": "CSGOPOSITIVE एक प्रसिद्ध ई-स्पोर्ट्स बेटिंग साइट है जिसमें दिलचस्प कैशबैक सिस्टम है, आप स्किन या पैसे पर बेट कर सकते ह",
+        "Rollbit is a new Casino site which includes Sport Betting and many classic games like roulette. Includes Daily Bonuses !": "Rollbit एक नया कैसीनो साइट है जिसमें स्पोर्ट्स बेटिंग और रूलेट जैसे क्लासिक खेल शामिल हैं। रोजाना बोनस भी मिलते हैं!",
+        "CSGOLuck is a licensed CSGO skin gambling site that accepts multiple deposit methods, offering various games and a user-friendly design.": "CSGOLuck एक लाइसेंसधारक CSGO स्किन जुआ साइट है जो कई जमा विधियों को स्वीकार करती है, विभिन्न खेल और एक उपयोगकर्ता-मित्रीपूर्ण डिज़ाइन प्रदान करती है।",
+        "Duelbits is a safe and licensed online casino with a variety of games, sports betting, esports betting, and instant cryptocurrency transactions.": "Duelbits एक सुरक्षित और लाइसेंस प्राप्त ऑनलाइन कैसीनो है जिसमें विभिन्न खेल, स्पोर्ट्स बेटिंग, ई-स्पोर्ट्स बेटिंग और तत्काल क्रिप्टोकरेंसी सौदों की सुविधा है।",
+        "InsaneGG is an online platform that offers a range of CSGO skin gambling games with professionally designed and smooth animations.": "InsaneGG एक ऑनलाइन प्लेटफॉर्म है जो पेशेवर डिज़ाइन की गई और सुविधाजनक एनिमेशन के साथ CSGO स्किन जुआ खेलने की विभिन्न गेम्स प्रदान करती है।",
+        "Rustix - gambling platform for CS2 and Rust with original games, fair gameplay, bonuses, and impressive animations. Opened in 2023.": "Rustix - CS2 और Rust के लिए एक जुआ प्लेटफॉर्म है जिसमें मूलभूत खेल, निष्पक्ष गेमप्ले, बोनस और अद्भुत एनिमेशन शामिल हैं। 2023 में खुला है।",
+        "CSGO-Skins is a reputable online platform where users can open custom CS2 cases and participate in daily Giveaways.": "CSGO-Skins एक प्रमाणित ऑनलाइन प्लेटफॉर्म है जहां उपयोगकर्ता विशेष रूप से तैयार किए गए CS2 केस खोल सकते हैं और दैनिक गिवअवे में भाग ले सकते हैं।",
+        "FlameCases is an online platform that permits users to open cases for CS2 and Dota 2. Since its launch in 2017, the website provides various features.": "एक ऑनलाइन प्लेटफॉर्म है जो उपयोगकर्ताओं को CS2 और Dota 2 के लिए केस खोलने की अनुमति देता है। 2017 में शुरू किए जाने के बाद, वेबसाइट विभिन्न सुविधाएं प्रदान करता है।",
+        "KNIFEX is a CS2 gambling site that offers a range of game modes, including case opening, case battles, coinflip, crash, clash and many more!": "KNIFEX एक CS2 जुआ साइट है जो केस खोलने, केस युद्ध, कॉइनफ्लिप, क्रैश, क्लैश और बहुत कुछ जैसे खेल मोड्स की विभिन्नता प्रदान करता है!",
+        "DatDrop is a website that specializes in opening cases that contain skins from CS2. Its most prominent feature is the case-opening battles.": "DatDrop एक वेबसाइट है जो CS2 से स्किन्स शामिल करने वाले केस खोलने पर विशेषाधिकार रखती है। इसकी सबसे प्रमुख विशेषता केस खोलने की युद्ध है।",
+        "DaddySkins is a valid CSGO case opening website that has been in operation since 2017, and it offers Case Openings, Case Battles, and Upgrader.": "DaddySkins एक मान्य CSGO केस खोलने वेबसाइट है जो 2017 से संचालित हो रही है और इसमें केस खोलने, केस युद्ध और अपग्रेडर शामिल हैं।",
+        "Clash.gg is a new CS2 Gambling site which includes many games like Roulette, Upgrader, Cases and many more !": "Clash.gg एक नया CS2 जुआ साइट है जिसमें रूलेट, अपग्रेडर, केस और बहुत कुछ जैसे बहुत सारे खेल शामिल हैं!",
+        "HellStore is a platform that allows users to participate in CSGO skin betting through game modes like Coinflip, Jackpot, Upgrader, and Wheel.": "HellStore एक प्लेटफॉर्म है जो मुद्रा और व्हील जैसे खेल मोड्स के माध्यम से CSGO स्किन बेटिंग में भाग लेने की सुविधा प्रदान करती है।",
+        "Hellcase is an online platform that allows users to purchase virtual cases filled with skins and items for various games such as CS2, Dota 2, and Rust.": "Hellcase एक ऑनलाइन प्लेटफॉर्म है जो CS2, Dota 2 और Rust जैसे विभिन्न खेलों के लिए स्किन्स और आइटम्स से भरे हुए वर्चुअल केस खरीदने की अनुमति देती है।",
+        "CSGOBIG - a gambling site for CS2 skins with game modes like Jackpot, Coinflip, Roulette, Cases, and Case Battles. Opened in 2015.": "CSGOBIG - CS2 स्किन्स के साथ जैकपॉट, कॉइनफ्लिप, रूलेट, केस और केस युद्ध जैसे खेल मोड्स के साथ एक जुआ साइट। 2015 में शुरू हुआ है।",
+        "CSGOFast is a CSGO skin gambling site that offers a wide range of exclusive game modes. One of the earliest CSGO gambling sites.": "CSGOFast एक CSGO स्किन्स जुआ साइट है जो विभिन्न अनन्य खेल मोड्स प्रदान करती है। सबसे पहले CSGO जुआ साइटों में से एक।",
+        "CSGOLive is a safe and legitimate CS2 case opening website with custom cases, daily bonuses, and a Provably Fair system.": "CSGOLive एक सुरक्षित और वैध CS2 केस खोलने वेबसाइट है जिसमें कस्टम केस, दैनिक बोनस और एक Provably Fair सिस्टम है।",
+        "WTFSkins is a reliable and popular online platform offering unique games, daily rewards, and a simple registration process.": "WTFSkins एक विश्वसनीय और लोकप्रिय ऑनलाइन प्लेटफॉर्म है जो अद्वितीय खेल, दैनिक रिवॉर्ड और एक सरल पंजीकरण प्रक्रिया प्रदान करता है।",
+        "Key-Drop is a reputable online gambling platform that offers various activities like Case Battles and Upgrader, as well as custom CSGO skin cases.": "Key-Drop एक प्रमुख ऑनलाइन जुआ प्लेटफॉर्म है जो केस युद्ध और अपग्रेडर के अलावा कस्टम CSGO स्किन केस भी प्रदान करता है।",
+        "Farmskins is a well-known CSGO case opening website that has been operating since 2016, offering a wide selection of skins for players to unbox.": "Farmskins एक प्रसिद्ध CSGO केस खोलने वेबसाइट है जो दैनिक रिवॉर्ड, प्रोमो कोड और केस युद्ध जैसी विशेषताएं प्रदान करती है।",
+        "Bets4.pro is an online platform that offers users the ability to place bets on esports matches, particularly for CS2 , Dota 2, Valorant and many more.": "एक ऑनलाइन प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को इस्पोर्ट्स मैचों पर सट्टे लगाने की क्षमता प्रदान करती है, विशेष रूप से CS2, Dota 2, Valorant और बहुत सारे अन्य मैचों के लिए।",
+        "This site can be called almost legendary among peers due to its high payouts and constant promotions. Include daily bonus!": "इस साइट को अपने समकक्षों के बीच लगभग अपूर्व कहा जा सकता है क्योंकि इसमें उच्च भुगतान और नियमित प्रचार की सुविधा होती है। रोजाना बोनस भी शामिल करें!",
+        "HowlGG is a Rust skin gambling platform that offers a range of games, including jackpot, coinflip, slots, and live casino games.": "HowlGG एक Rust स्किन जुआ प्लेटफ़ॉर्म है जो जैकपॉट, कॉइनफ्लिप, स्लॉट्स और लाइव कैसीनो खेल समेत विभिन्न खेल प्रदान करता है।",
+        "BanditCamp is a Rust skin gambling website that provides several Rust-themed game modes like wheel of fortune, case unboxings, and coinflip.": "BanditCamp एक Rust स्किन जुआ वेबसाइट है जो व्हील ऑफ़ फ़ॉर्च्यून, केस अनबॉक्सिंग और कॉइनफ्लिप जैसे कई Rust थीम के खेल मोड प्रदान करती है।",
+        "GCSkins is a well-known mobile app and website that offers CSGO skins and items as rewards for completing online tasks. Available since 2016.": "GCSkins एक प्रसिद्ध मोबाइल ऐप और वेबसाइट है जो ऑनलाइन कार्यों को पूरा करने के बदले में CSGO स्किन और आइटम प्रदान करती है। 2016 से उपलब्ध है।",
+        "GrindBux is a trusted platform when you can earn some money by completing surveys or play mobile and desktop games.": "GrindBux एक विश्वसनीय प्लेटफ़ॉर्म है जहां आप सर्वेक्षण पूरा करके या मोबाइल और डेस्कटॉप खेलों का खेलकर कुछ पैसे कमा सकते हैं।",
+        "Rust skin gambling site that has been around since 2017. The platform offers a range of popular games, including high-roller jackpot and coinflip games.": "2017 से चल रही एक Rust स्किन जुआ साइट। इस प्लेटफ़ॉर्म पर लोकप्रिय खेलों की एक विस्तृत विकल्प सुविधा है, जिसमें हाई-रोलर जैकपॉट और कॉइनफ्लिप खेल शामिल हैं।",
+        "RustBet - Trusted gambling site, Rust skins as rewards. Jackpot, coinflip, and skin upgrader games. Clean reputation, SSL encryption, user-friendly.": "RustBet - विश्वसनीय जुआ साइट, पुरस्कार के रूप में Rust स्किन्स। जैकपॉट, कॉइनफ्लिप और स्किन अपग्रेडर खेल। साफ नाम, SSL एन्क्रिप्शन, उपयोगकर्ता के लिए सुविधाजनक।",
+        "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot, and coinflip. Easily enter and withdraw items from games.": "RustStake एक Rust स्किन जुआ प्लेटफ़ॉर्म है जो जैकपॉट और कॉइनफ्लिप समेत विभिन्न खेल प्रदान करता है। आसानी से खेलों से आइटम को दाखिल और निकाल सकते हैं।",
+        "In fact, the progenitor of sites for earning through Steam, stands out for its huge selection of Withdrawal methods.": "वास्तव में, स्टीम के माध्यम से कमाई के लिए साइटों का पितामह, इसके वापसी विधियों के विशाल चयन के लिए मशहूर है।",
+        "RustyLoot offers a variety of games, including Wheel, Plinko, and more. With its transparent and provably fair system, RustyLoot is safe and enjoyable.": "RustyLoot व्हील, प्लिंको और अन्य खेल समेत विविधता प्रदान करता है। अपने पारदर्शी और सत्यापन योग्य सिस्टम के साथ, RustyLoot सुरक्षित और मजेदार है।",
+        "RustChance has been operating since 2017 and offers several popular games, including Jackpot, Wheel, Coinflip, Crash, and Landmines.": "RustChance 2017 से संचालित हो रहा है और जैकपॉट, व्हील, कॉइनफ्लिप, क्रैश और लैंडमाइंस समेत कई लोकप्रिय खेल प्रदान करता है।",
+        "CrashGG focuses on Rust skin gambling and offers various games, including its primary feature, the crash game mode. Also has Duels, Blackjack and Lottery.": "CrashGG Rust स्किन जुआ पर ध्यान केंद्रित होता है और इसमें इसकी प्रमुख विशेषता, क्रैश गेम मोड समेत विभिन्न खेल प्रदान करता है। यहां द्वंद्व, ब्लैकजैक और लॉटरी भी हैं।",
+        "HypeUp is owned by the same operators of two popular betting sites, CSGORoll and HypeDrop. Offers two original games and Slots with Live Games.": "HypeUp दो प्रसिद्ध बेटिंग साइटों, CSGORoll और HypeDrop के समान ऑपरेटर्स के द्वारा स्वामित्व में है। इसमें दो मूलभूत खेल और लाइव गेम के साथ स्लॉट्स प्रदान की जाती है।",
+        "The website has a decent number of survey providers and offerwall partners to choose from, and there are plenty of options for withdrawing earnings.": "वेबसाइट पर उचित संख्या में सर्वेक्षण प्रदाता और ऑफरवॉल साझेदार हैं जिन्हें चुना जा सकता है, और कमाई को निकासी के लिए कई विकल्प हैं।",
+        "SkinSwap is an online platform that allows players to trade and sell skins from popular games such as CS2 and Rust. Owned and operated by RustySell.": "एक ऑनलाइन प्लेटफ़ॉर्म है जो खिलाड़ियों को CS: GO और Rust जैसे प्रसिद्ध खेलों के स्किन को विनिमय और बेचने की अनुमति देता है। RustySell द्वारा स्वामित्व और संचालित होता है।",
+        "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.": "CSGOSelly एक वेबसाइट है जो उपयोगकर्ताओं को विभिन्न भुगतान विधियों के माध्यम से अपने CSGO स्किन को पैसे में बदलने की अनुमति देती है। इसे 2021 में स्थापित किया गया था।",
+        "Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.": "एक अद्वितीय साइट जहां आप विभिन्न मोबाइल गेमिंग साइबर विषयों में खेल जीतकर पैसे कमा सकते हैं। इसके अलावा कई ऑफरवॉल्स भी हैं।",
+        "Mobile Games. Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.":"एक अद्वितीय साइट जहां आप विभिन्न मोबाइल गेमिंग साइबर विषयों में खेल जीतकर पैसे कमा सकते हैं। इसके अलावा कई ऑफरवॉल्स भी हैं।",
+        "RustMoment is a gambling site for Rust skin enthusiasts with six games, bonuses, and a rakeback system. It accepts standard and cryptocurrency payments.": "RustMoment एक रस्ट स्किन प्रशंसकों के लिए एक जुआ साइट है जिसमें छह खेल, बोनस और एक रेकबैक सिस्टम होता है। इसमें मानक और क्रिप्टोकरेंसी भुगतान स्वीकार किए जाते हैं।",
+        "Freeward is a GPT site that provides various opportunities for users to earn rewards through tasks like surveys and watching videos." : "Freeward एक GPT साइट है जो सर्वेक्षण और वीडियो देखकर जैसे कार्यों के माध्यम से उपयोगकर्ताओं को पुरस्कार कमाने के विभिन्न अवसर प्रदान करती है।",
+        "Roobet is an online casino that allows users to play games using cryptocurrency. The platform has a reputation for being legitimate and safe." : "Roobet एक ऑनलाइन कैसीनो है जो उपयोगकर्ताओं को क्रिप्टोकरेंसी का उपयोग करके खेल खेलने की अनुमति देता है। प्लेटफ़ॉर्म का विश्वासयोग्य और सुरक्षित होने का प्रमाण है।",
+        "xplay is a platform that allows CS2 players to earn skins just by playing on their servers. The platform offers various servers and daily challenges." : "xplay एक प्लेटफ़ॉर्म है जो CS2 खिलाड़ियों को उनके सर्वर पर खेलकर स्किन कमाने की सुविधा प्रदान करता है। प्लेटफ़ॉर्म में विभिन्न सर्वर और दैनिक चुनौतियाँ होती हैं।",
+        "Established in 2018, it offers jackpot, coinflip, and roulette games with enhanced features, provable fairness, and attractive animations." : "2018 में स्थापित किया गया, यह जैकपॉट, कॉइनफ्लिप और रूलेट खेल प्रदान करता है जिनमें उन्नत सुविधाएं, साबित करने योग्य न्यायता और आकर्षक एनिमेशन होते हैं।",
+        "GameTame is a GPT site that provides rewards for completing various activities and offers. The platform is specifically designed for gamers." : "GameTame एक GPT साइट है जो विभिन्न गतिविधियों और प्रस्तावों के पूरा करने के लिए पुरस्कार प्रदान करती है। प्लेटफ़ॉर्म विशेष रूप से गेमर्स के लिए डिज़ाइन किया गया है।",
+        "Salad is a website that offers users the opportunity to mine wallet and buy giftcards and many more using their computer's processing power." : "Salad एक वेबसाइट है जो उपयोगकर्ताओं को अपने कंप्यूटर की प्रोसेसिंग पावर का उपयोग करके वॉलेट खनन और गिफ्टकार्ड्स खरीदने और बहुत कुछ करने का अवसर प्रदान करती है।",
+        "Site from Gamehag owners. Has a decent number of survey providers and offerwall partners to choose from, plenty of options for withdrawing earnings." : "Gamehag मालिकों की वेबसाइट। इसमें विभिन्न सर्वेक्षण प्रदाताओं और ऑफरवॉल पार्टनरों की एक अच्छी संख्या होती है जिनमें से चुनने के लिए, कमाई निकालने के लिए कई विकल्प होते हैं।",
+        "SteamGifts is a legitimate website for Steam Game Giveaways with a supportive community and helpful resources." : "SteamGifts एक वैध वेबसाइट है जो Steam गेम गिवअवे के लिए एक सहायक समुदाय और मददगार संसाधनों के साथ है।",
+        "RustCases is a trusted Rust gambling site with various game modes, a wide range of cases, and skin withdrawal options. By RustChance owners.":"RustCases एक भरोसेमंद Rust जुआ साइट है जिसमें विभिन्न खेल मोड, विशाल संख्या में केस, और स्किन निकासी के विकल्प होते हैं। RustChance के मालिकों द्वारा।",
+        "RustClash is a new Rust Gambling site which includes many games like Roulette, Upgrader, Cases and many more !":"RustClash एक नया Rust जुआ साइट है जिसमें रूलेट, अपग्रेडर, केस और अन्य कई खेल शामिल हैं!",
+        "BC.Game is an online casino and sportsbook that was launched in 2017, offering over 8,000 games including proprietary and probably fair games.":"BC.Game एक ऑनलाइन कैसीनो और स्पोर्ट्सबुक है जिसे 2017 में लॉन्च किया गया था, जो स्वामित्व वाले और संभावित इंसाफ़ वाले गेम्स सहित 8,000 से अधिक गेम्स प्रदान करता है।",
+        "Primedice is an online Crypto Dice Game Casino that has been in operation since 2013. It was one of the first platforms to use crypto for gambling.":"Primedice एक ऑनलाइन क्रिप्टो डाइस गेम कैसीनो है जो 2013 से संचालन में है। यह जुए के लिए क्रिप्टो का प्रयोग करने वाले पहले प्लेटफ़ॉर्मों में से एक था।",
+        "Tradeit is an online marketplace that offers players the opportunity to trade, buy, and sell skins for a variety of games, including CS2. Working since 2017.": "Tradeit एक ऑनलाइन व्यापार जगत है जो खिलाड़ियों को अवसर प्रदान करता है खेलों की विभिन्न प्रकारों के लिए स्किन व्यापार, खरीद और बेचने का। 2017 से काम कर रहा है।",
+        "DMarket is a reliable and popular marketplace for Steam items, with a large number of items available and positive reviews on Trustpilot.": "DMarket एक विश्वसनीय और लोकप्रिय बाजार है स्टीम आइटमों के लिए, जिसमें बहुत सारे आइटम उपलब्ध हैं और ट्रस्टपायलट पर सकारात्मक समीक्षाएं हैं।",
+        "BitSkins is an online marketplace for in-game skins, particularly for Counter-Strike 2, Dota 2, and Team Fortress 2. Launched in 2015.": "BitSkins एक ऑनलाइन बाजार है खेल की स्किनों के लिए, विशेष रूप से Counter-Strike 2, Dota 2 और Team Fortress 2 के लिए। 2015 में लॉन्च किया गया।",
+        "Secure P2P marketplace owned by Hellcase. SSL-encrypted, KYC verification, friendly design, competitive pricing, trusted trading platform.": "Hellcase द्वारा स्वामित्व में रखा गया सुरक्षित P2P बाजार। SSL एन्क्रिप्टेड, KYC सत्यापन, मित्रतापूर्ण डिज़ाइन, प्रतिस्पर्धी मूल्य निर्धारण, विश्वसनीय व्यापार प्लेटफ़ॉर्म।",
+        "BitSkins P2P is an online platform for buying and selling virtual items, with a focus on CS2 skins. The parent company, BitSkins.": "BitSkins P2P एक ऑनलाइन प्लेटफ़ॉर्म है आभासी आइटमों की खरीद और बेच करने के लिए, विशेष रूप से CS2 स्किनों पर ध्यान केंद्रित करता है। मूल कंपनी, BitSkins।",
+        "Trusted CS2 skin platform with rentals, endorsed by YouTubers. Secure, limited to CS2 skins, fees apply, and user reviews indicate room for improve.": "विश्वसनीय CS2 स्किन प्लेटफ़ॉर्म जिसमें किराए पर मिलने वाली सेवाएं हैं, YouTubers द्वारा समर्थित। सुरक्षित, सीएस: जीओ स्किनों तक सीमित है, शुल्क लागू होता है, और उपयोगकर्ता समीक्षाएं सुधार के लिए संकेत करती हैं।",
+        "GamerPay is a trusted platform for buying and selling CS2 skins, with a free selling option, secure transactions, and high-quality skin inspection tool.": "GamerPay एक विश्वसनीय प्लेटफ़ॉर्म है CS2 स्किन खरीद और बेचने के लिए, जिसमें एक मुफ्त बिक्री विकल्प, सुरक्षित लेन-देन और उच्च गुणवत्ता वाला स्किन जांच उपकरण है।",
+        "CSGO Market is an online P2P marketplace that provides a safe and secure platform for buying and selling CS2 skins. Established in 2015.": "CSGO Market एक ऑनलाइन P2P बाजार है जो CS2 स्किन खरीद और बेचने के लिए एक सुरक्षित और सुरक्षित प्लेटफ़ॉर्म प्रदान करता है। 2015 में स्थापित किया गया।",
+        "Lis-Skins is a popular marketplace for Steam items, especially CS2, Rust and Dota 2 skins and items. The platform was founded in 2020.": "Lis-Skins एक लोकप्रिय बाजार है स्टीम आइटमों के लिए, विशेष रूप से CS2, Rust और Dota 2 स्किन और आइटम। प्लेटफ़ॉर्म का स्थापना 2020 में की गई थी।",
+        "WhiteMarket is a P2P platform for CS2 skin trading. It offers secure trades, various deposit options, and community engagement.": "WhiteMarket CS2 स्किन ट्रेडिंग के लिए एक P2P प्लेटफ़ॉर्म है। इसमें सुरक्षित व्यापार, विभिन्न जमा विकल्प और समुदाय का सहयोग है।",
+        "CS.Deals is a platform that allows users to buy, sell, and trade skins from popular games such as CS2, Dota 2, Rust, and Team Fortress 2. Working since 2016.": "CS.Deals एक प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को CS2, Dota 2, Rust और Team Fortress 2 जैसे प्रसिद्ध खेलों से स्किन खरीदने, बेचने और व्यापार करने की अनुमति देता है। 2016 से काम कर रहा है।",
+        "SkinBid is an online marketplace for CS2 skins and in-game items, offering buying, selling, and auctioning features with a user-friendly interface.": "SkinBid एक ऑनलाइन बाजार है CS2 स्किन और खेल की आइटमों के लिए, जो एक उपयोगकर्ता-मित्रतापूर्ण इंटरफ़ेस के साथ खरीदने, बेचने और नीलामी की सुविधाएं प्रदान करता है।",
+        "Swap.gg is a website that allows users to buy, sell, and trade CS2, Rust , TF2 and other virtual items from various games. Working since 2017.": "Swap.gg एक वेबसाइट है जो उपयोगकर्ताओं को CS2, Rust, TF2 और अन्य विभिन्न खेलों की आभासी आइटम खरीदने, बेचने और व्यापार करने की अनुमति देती है। 2017 से काम कर रहा है।",
+        "LOOT.Farm is an online platform that offers users the ability to Trade virtual items from popular games like CS2, Dota 2, Team Fortress 2, and Rust.": "LOOT.Farm एक ऑनलाइन प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को CS2, Dota 2, Team Fortress 2 और Rust जैसे प्रसिद्ध खेलों से आभासी आइटम व्यापार करने की क्षमता प्रदान करता है।",
+        "SkinBaron is an online platform based in Germany that enables users to buy and sell their CS2 skins. The platform has gained a good reputation.": "SkinBaron जर्मनी में स्थित एक ऑनलाइन प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को उनकी CS2 स्किन खरीदने और बेचने की सुविधा प्रदान करता है। प्लेटफ़ॉर्म को एक अच्छी प्रतिष्ठा हासिल हुई है।",
+        "Gamdom is one of the best CS2 Match Betting Sites. You can play Roulette, Wheel, Crash, Slots and many more!":"Gamdom एक बेहतरीन CS2 मैच बेटिंग साइटों में से एक है। आप रूलेट, व्हील, क्रैश, स्लॉट और बहुत कुछ खेल सकते हैं!",
+        "Avan.Market is an online platform that offers users the opportunity to sell gaming skins from popular games like CS2, Dota 2, RUST, and TF2.": "Avan.Market एक ऑनलाइन प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को CS2, Dota 2, RUST और TF2 जैसे प्रसिद्ध खेलों की गेमिंग स्किन बेचने का अवसर प्रदान करता है।",
+        "Skins.Cash is a reputable platform with positive reviews, reliable customer support, and over six years of operation. Pricing not the best one.": "Skins.Cash एक प्रतिष्ठित प्लेटफ़ॉर्म है जिसके पास सकारात्मक समीक्षा, विश्वसनीय ग्राहक सहायता और छह साल से अधिक कार्यकाल है। मूल्य बेहतर नहीं है।",
+        "SkinCashier is an online platform that allows players to Instant Sell their CS2, Rust, Dota 2, and TF2 skins for real money. Operating since 2020.": "SkinCashier एक ऑनलाइन प्लेटफ़ॉर्म है जो खिलाड़ियों को अपने CS2, Rust, Dota 2 और TF2 स्किन को तत्काल बेचने की अनुमति देता है और वास्तविक धन के लिए। 2020 से संचालित हो रहा है।",
+        "CYBERSHOKE is a website that provides servers for playing CS2. It offers various servers for players to choose.":"CYBERSHOKE एक वेबसाइट है जो CS2 खेलने के लिए सर्वर प्रदान करती है। यह खिलाड़ियों के लिए विभिन्न सर्वर प्रदान करता है जिन्हें चुनने के लिए।",
+        "This site was created for easy leveling up Steam, you can sell emojis and profile backgrounds for Steam Trading Cards to fast level up.": "यह साइट स्टीम को आसान बनाने के लिए बनाई गई है, आप स्टीम ट्रेडिंग कार्ड के लिए इमोजी और प्रोफ़ाइल बैकग्राउंड बेचकर तेजी से स्तर बढ़ा सकते हैं।",
+        "SteamLevelU is a legitimate platform to buy Steam trading card packs for enhancing Steam account levels, associated with SH Level Up.": "SteamLevelU एक विधि स्वरूपित प्लेटफ़ॉर्म है जिससे आप स्टीम खाता स्तरों को बढ़ाने के लिए स्टीम ट्रेडिंग कार्ड पैक खरीद सकते हैं, जो एसएच लेवल अप के साथ जुड़ा हुआ है।",
+        "SteamLevels is a user-friendly website that helps increase your Steam account level by purchasing card packs and accepting CSGO skins.": "SteamLevels एक उपयोगकर्ता मित्रपूर्ण वेबसाइट है जो आपके स्टीम खाता स्तर को बढ़ाने में मदद करती है। इसे कार्ड पैक खरीदकर और सीएसजीओ स्किन्स स्वीकार करके किया जा सकता है।",
+        "iTrade.gg is a Trusted platform for trading rust skins. User-friendly design, free sign-up bonus, and daily rewards create a seamless trading experience.":"iTrade.gg एक विश्वसनीय प्लेटफ़ॉर्म है जहां रस्ट स्किन्स की ट्रेडिंग की जा सकती है। उपयोगकर्ता-मित्रपूर्ण डिज़ाइन, मुफ़्त साइन-अप बोनस और दैनिक पुरस्कार एक सुगठित ट्रेडिंग अनुभव बनाते हैं।",
+        "Shuffle.com is a comprehensive crypto casino with a unique registration process, original games, a VIP program, and plans for future expansion.":"Shuffle.com एक समग्र क्रिप्टो कैसीनो है जिसमें एक अद्वितीय पंजीकरण प्रक्रिया, मूल खेल, वीआईपी कार्यक्रम और भविष्य के विस्तार के लिए योजनाएं हैं।",
+        "CashoutCSGO is a platform solely dedicated to selling CS2 skins for crypto or paypal, offering a convenient conversion service.":"CashoutCSGO एक प्लेटफ़ॉर्म है जो केवल सीएस:गो स्किन्स बेचने के लिए समर्पित है और सुविधाजनक परिवर्तन सेवा प्रदान करती है।",
+        "Notable online marketplace, vast offerings from games to gift cards, reduced rates, stellar reputation, intuitive interface, up to 98% discounts.":"महत्वपूर्ण ऑनलाइन बाजार, खेल से उपहार कार्ड तक विशाल विविधता, कम कीमतें, उत्कृष्ट प्रतिष्ठा, सूक्ष्म इंटरफेस, तक 98% छूट.",
+        "Withdraw BTC, ETH, LTC or PayPal!":"BTC, ETH, LTC या PayPal निकालें!",
+        "Withdraw Money, Skins or Devices!": "धन, स्किन या उपकरण निकालें!",
+        "Withdraw BTC, LTC, ETH and many else!":"बीटीसी, एलटीसी, ईटीएच और बहुत सारे अन्य के निकास!",
+        "Withdrawal of many types of cryptocurrencies !":"बहुत सारे प्रकार के क्रिप्टोकरेंसीज़ का निकास!",
+        "Withdraw CS2 Skins, Crypto or Real Money!": "वापसी करें CS2 स्किन, क्रिप्टो या वास्तविक धन!",
+        "Withdraw CS2, Dota 2, TF2 or Rust Items!": "वापसी करें CS2, Dota 2, TF2 या Rust आइटम!",
+        "Withdraw CS2 Skins, Crypto or Game Keys!": "वापसी करें CS2 स्किन, क्रिप्टो या गेम कुंजी!",
+        "Withdraw CS2 Skins, Crypto or PayPal!": "वापसी करें CS2 स्किन, क्रिप्टो या PayPal!",
+        "Withdraw Money, CS2, TF2 or Rust Skins!": "वापसी करें धन, CS2, TF2 या Rust स्किन!",
+        "Withdraw CS2 Skins, Dota 2 and H1Z1 Items!": "वापसी करें CS2 स्किन, Dota 2 और H1Z1 आइटम!",
+        "Withdraw CS2, Rust Skins and Dota 2 Items!": "वापसी करें CS2, Rust स्किन और Dota 2 आइटम!",
+        "Withdraw CS2 Skins, Gift Cards or Crypto!": "CS2 स्किन, गिफ्ट कार्ड या क्रिप्टो को निकालें!",
+        "Withdraw Rust Skins or Crypto!": "Rust स्किन या क्रिप्टो को निकालें!",
+        "Withdraw Rust Skins and Items!": "Rust स्किन और आइटम को निकालें!",
+        "Withdraw CS2 And Rust Skins or Crypto!": "वापसी करें CS2 और Rust स्किन या क्रिप्टो!",
+        "Withdraw CS2 Skins or real Money!": "वापसी करें CS2 स्किन या वास्तविक धन!",
+        "Withdraw Steam Trading cards or Games.": "वापसी करें Steam ट्रेडिंग कार्ड या गेम्स।",
+        "1h, 24h and 7d Giveaways": "1 घंटा, 24 घंटे और 7 दिन के उपहार",
+        "24h Giveaway": "24 घंटे का उपहार",
+        "3h and 24h Giveaway": "3 घंटे और 24 घंटे का उपहार",
+        "Buy Games, Gift Cards and many-many more.": "खेलें, उपहार कार्ड और बहुत-सारा और भी खरीदें।",
+        "Daily and Weekly Giveaways": "प्रतिदिनिक और साप्ताहिक उपहार",
+        "1h Giveaway": "1 घंटे का उपहार",
+        "1h, 24h Giveaways": "1 घंटा, 24 घंटे के उपहार",
+        "Rare Giveaways": "दुर्लभ उपहार",
+        "Weekly Giveaways": "साप्ताहिक उपहार",
+        "Daily Giveaways": "प्रतिदिनिक उपहार",
+        "Deposit Required": "जमा आवश्यक",
+        "Withdraw USDT, Skins or Real Money!": "वापसी करें USDT, स्किन या वास्तविक धन!",
+        "Withdraw Crypto, gift cards or real money!": "क्रिप्टो, गिफ्ट कार्ड या वास्तविक धन को निकालें!",
+        "Withdraw Money, CS2 or Rust Skins!": "वापसी करें धन, CS2 या Rust स्किन!",
+        "Withdraw Money, Crypto or Skins!": "वापसी करें धन, क्रिप्टो या स्किन!",
+        "Withdraw Rust Skins, Crypto or PayPal!": "Rust स्किन, क्रिप्टो या PayPal निकालें!",
+        "Withdraw Dota 2 Items, Crypto or PayPal!": "Dota 2 स्किन, क्रिप्टो या PayPal निकालें!",
+        "Withdraw CS2 Skins or Crypto!": "वापसी करें CS2 स्किन या क्रिप्टो!",
+        "Withdraw Money, Crypto or PayPal!": "वापसी करें धन, क्रिप्टो या PayPal!",
+        "WITHDRAW WITH P2P CS2 SKINS.": "P2P CS2 स्किन के साथ वापसी करें।",
+        "Withdraw Real Money or Crypto!": "वापसी करें वास्तविक धन या क्रिप्टो!",
+        "Withdraw BTC, ETH, USDT or Tron!": "वापसी करें BTC, ETH, USDT या Tron!",
+        "Withdraw CS2 Skins or PayPal!": "वापसी करें CS2 स्किन या PayPal!",
+        "Withdraw CS2 Skins and Items!": "वापसी करें CS2 स्किन और आइटम!",
+        "Withdraw Steam Trading cards.": "Steam ट्रेडिंग कार्ड वापसी करें।",
+        "Withdraw with many-many ways.": "बहुत-सारे तरीकों से निकालें।",
+        "Withdraw Bitcoin, Ethereum or Litecoin!": "बिटकॉइन, एथेरियम या लाइटकॉइन को निकालें!",
+        "Withdraw Games, GiftCards and many more!": "गेम्स, गिफ्ट कार्ड्स और बहुत कुछ को निकालें!",
+        "Withdraw Crypto or Real Money!": "क्रिप्टो या वास्तविक धन को निकालें!",
+        "Withdraw Crypto and Gift Cards!": "क्रिप्टो और गिफ्ट कार्ड निकालें!",
+        "Withdraw BTC, LTC, USDT, USDC or ETH!": "BTC, LTC, USDT, USDC या ETH निकालें!",
+        "Withdraw CS2 Skins or Items!": "CS2 स्किन या आइटम निकालें!",
+        "Withdraw Games, GiftCards or Dota2 & TF2 Items!": "गेम्स, गिफ्ट कार्ड्स या Dota2 और TF2 आइटम निकालें!",
+        "Withdraw Games, GiftCards or Donate to Charity!": "गेम्स, गिफ्ट कार्ड्स या चैरिटी को दान करें!",
+        "Participate in Giveaways and win Steam Games.": "गिवअवे में भाग लें और स्टीम गेम जीतें।",
+        "+360% Deposit Bonus": "+360% जमा बोनस",
+        "+100% Deposit Bonus": "+100% जमा बोनस",
+        "+10% Deposit Bonus": "+10% जमा बोनस",
+        "+5% Deposit Bonus": "+5% जमा बोनस",
+        "+1% Deposit Bonus": "+1% जमा बोनस",
+        "70 Free Spins": "70 मुफ्त स्पिन",
+        "Every 24h Reward": "प्रतिदिन 24 घंटे के बाद इनाम",
+        "Daily Case": "प्रतिदिन केस",
+        "Daily Faucet": "प्रतिदिन फॉसेट",
+        "Daily Roll": "प्रतिदिन रोल",
+        "Daily Coins": "प्रतिदिन सिक्के",
+        "Faucet and Giveaways": "फॉसेट और उपहार",
+        "Daily 0.02$": "प्रतिदिन 0.02$",
+        "Daily 0.02$ + Free Case": "प्रतिदिन 0.02$ + मुफ्त केस",
+        "360% Deposit Bonus":"360% जमा बोनस",
+        "Deposit Bonus":"जमा बोनस",
+        "Visit WebSite": "वेबसाइट पर जाएं",
+        "Visit WebSite or Copy": "वेबसाइट पर जाएं",
+        "100% deposit bonus": "100% जमा बोनस",
+        "+1% Sell Bonus": "+1% बेचने का बोनस",
+        "+3% Sell Bonus": "+3% बेचने का बोनस",
+        "5% deposit bonus": "5% जमा बोनस",
+        "5 Free Cases": "5 मुफ्त केस",
+        "Free 50 Gems": "मुफ्त 50 गेम्स",
+        "3 Free Cases": "3 मुफ्त केस",
+        "2.00$ For Free": "1.5 डॉलर मुफ्त में",
+        "5.00$ For Free": "5 डॉलर मुफ्त में",
+        "Free 5€": "मुफ्त 5€",
+        "Free 1.00$": "मुफ्त 1.00 डॉलर",
+        "Free 0.90$": "मुफ्त 0.90 डॉलर",
+        "Free 0.50$": "मुफ्त 0.50 डॉलर",
+        "Free 0.40$": "मुफ्त 0.40 डॉलर",
+        "Free 0.30$": "मुफ्त 0.30 डॉलर",
+        "Free 0.25$": "मुफ्त 0.25 डॉलर",
+        "Free 0.20$": "मुफ्त 0.20 डॉलर",
+        "Free 0.15$": "मुफ्त 0.15 डॉलर",
+        "Free 0.10$": "मुफ्त 0.10 डॉलर",
+        "Free 0.05$": "मुफ्त 0.05 डॉलर",
+        "Receive up to 5.00$": "5.00$ तक प्राप्त करें।",
+        "Free Case": "मुफ्त केस",
+        "Free 1$": "मुफ्त 1 डॉलर",
+        "Big Daily Giveaways": "रोज़ाना बड़े हद तक दिए जाने वाले उपहार",
+        "Free Case up to 250$": "250$ तक मुफ्त केस",
+        "Daily Giveaway": "रोज़ाना बांटने का इंतेज़ाम",
+        "Free 100 Diamonds": "100 मुफ्त हीरे",
+        "500 coins": "500 सिक्के मुफ्त",
+        "Daily Cases": "रोज़ाना केस",
+        "3 Energy Points": "3 ऊर्जा अंक",
+        "Free 200 Coins": "200 सिक्के मुफ्त",
+        "some free coins": "कुछ मुफ्त सिक्के",
+        "Free 2$": "मुफ्त 2 डॉलर",
+        "Free spins": "मुफ्त स्पिन",
+        "Offerwall": "ऑफरवॉल",
+        "x2 Mining Rate": "x2 खनन दर",
+        "Games Giveaways": "गेम्स गिवअवे"
+      },
+      "tr": {
+        "CSGORUN is a leading virtual skin gambling platform with diverse modes like Crash, Roulette, PVP, and esports betting. It's user-friendly.": "CSGORUN, çeşitli modlara sahip önde gelen sanal deri kumar platformudur; bu modlar arasında Çökme, Rulet, PVP ve e-spor bahisleri bulunmaktadır. Kullanıcı dostudur.",
+        "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins, CS2 ve Rust için derilerin satın alınması, satılması ve takas edilmesi için oyunculara bir pazar sunmak amacıyla oluşturulmuş bir çevrimiçi platformdur.",
+        "RustMagic - a cutting-edge Rust skin betting site, features five distinct game modes, withdrawal in Rust skins, and a daily free case system for users.": "RustMagic - öncü bir Rust deri bahis sitesi, beş farklı oyun modu, Rust derilerinde çekilme ve kullanıcılar için günlük ücretsiz bir kasa sistemi sunmaktadır.",
+        "SKINFANS - CS2 skin case opening , beautiful animations, provably fair system. Regular giveaways, Battle-pass for newcomers, sleek design.": "SKINFANS - CS2 cilt kılıfı açma, güzel animasyonlar, ispatlanabilir adil sistem. Düzenli ödüller, yeni gelenler için Savaş Pası, şık tasarım.",
+        "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, Skin Gambling'de öne çıkan bir web sitesi, CS:GO, Dota 2 ve RUST skinleri için çeşitli modlar, kullanıcı dostu arayüz ve bonus özellikler sunar.",
+        "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins, kullanıcı dostu tasarımı, çeşitli oyun modları, canlı sohbet ve kanıtlanabilir adil oyun ile öne çıkan bir CS2 Skin Kumar Platformudur.",
+        "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, en iyi CS2 Kumar Sitesi. Düzenli yağmurlar, hediyeler ve promosyon kodları. Birçok oyun ve slot oynayabilirsiniz.",
+        "CSGO500 probably the best CS2 and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, en iyi CS2 ve Rust Kumar Sitesi. Düzenli yağmurlar, hediyeler ve promosyon kodları. Birçok oyun ve slot oynayabilirsiniz.",
+        "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll, en popüler sitelerden biridir. Rulet, crash ve çok daha fazlasını içerir. Şu anda e-spor bahisleri test ediliyor.",
+        "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": "CSGOEmpire, en popüler sitelerden biridir. Rulet ve coinflip içerir. 2016'dan beri faaliyet gösteriyor. Öncelikli olarak maç bahisleri.",
+        "CSGOPolygon is a legendary site like CSGODouble with classic Roulette, but have Dices, Crash, Slots and even Esports Betting!": "CSGOPolygon, klasik Rulet gibi efsanevi bir sitedir, ancak Zarlar, Crash, Slotlar ve hatta e-spor bahisleri de bulunur!",
+        "Gamdom Casino offers a variety of in-house games, innovative social engagement, provably fair system, and good reputation in online gaming.": "Gamdom Casino, birçok içerideki oyun, yenilikçi sosyal etkileşim, ispat edilebilir adil sistem ve çevrimiçi oyunlarda iyi bir üne sahiptir.",
+        "CSGOPOSITIVE is a famous esports betting site with interesting system of cashback, you can bet skins or money. Has various payments options.": "CSGOPOSITIVE, geri ödeme sistemine sahip popüler bir e-spor bahis sitesidir. Skinler veya para ile bahis yapabilirsiniz. Çeşitli ödeme seçenekleri mevcuttur.",
+        "Rollbit is a new Casino site which includes Sport Betting and many classic games like roulette. Includes Daily Bonuses !": "Rollbit, spor bahislerini ve rulet gibi birçok klasik oyunu içeren yeni bir Casino sitesidir. Günlük bonuslar içerir!",
+        "CSGOLuck is a licensed CSGO skin gambling site that accepts multiple deposit methods, offering various games and a user-friendly design.": "CSGOLuck, birden fazla para yatırma yöntemini kabul eden lisanslı bir CSGO skin bahis sitesidir ve çeşitli oyunlar ile kullanıcı dostu bir tasarım sunar.",
+        "Duelbits is a safe and licensed online casino with a variety of games, sports betting, esports betting, and instant cryptocurrency transactions.": "Duelbits, çeşitli oyunlar, spor bahisleri, e-spor bahisleri ve anında kripto para işlemleri sunan güvenli ve lisanslı bir çevrimiçi kumarhanedir.",
+        "InsaneGG is an online platform that offers a range of CSGO skin gambling games with professionally designed and smooth animations.": "InsaneGG, profesyonel olarak tasarlanmış ve akıcı animasyonlara sahip bir dizi CSGO skin bahis oyunu sunan bir çevrimiçi platformdur.",
+        "Rustix - gambling platform for CS2 and Rust with original games, fair gameplay, bonuses, and impressive animations. Opened in 2023.": "Rustix - CS2 ve Rust için orijinal oyunlar, adil oyun, bonuslar ve etkileyici animasyonlarla kumar platformu. 2023 yılında açıldı.",
+        "CSGO-Skins is a reputable online platform where users can open custom CS2 cases and participate in daily Giveaways.": "CSGO-Skins, kullanıcıların özel CS2 estuches açabileceği ve günlük çekilişlere katılabileceği saygın bir çevrimiçi platformdur.",
+        "FlameCases is an online platform that permits users to open cases for CS2 and Dota 2. Since its launch in 2017, the website provides various features.": "FlameCases, CS2 ve Dota 2 için estuches açma imkanı sağlayan bir çevrimiçi platformdur. 2017'den bu yana hizmet vermektedir.",
+        "KNIFEX is a CS2 gambling site that offers a range of game modes, including case opening, case battles, coinflip, crash, clash and many more!": "KNIFEX, kasa açma, kasa savaşları, coinflip, crash, çatışma gibi bir dizi oyun modu sunan bir CS2 kumar sitesidir!",
+        "DatDrop is a website that specializes in opening cases that contain skins from CS2. Its most prominent feature is the case-opening battles.": "DatDrop, CS2'dan skin içeren estuches açmaya özgü bir web sitesidir. En önemli özelliği estuche açma savaşlarıdır.",
+        "DaddySkins is a valid CSGO case opening website that has been in operation since 2017, and it offers Case Openings, Case Battles, and Upgrader.": "DaddySkins, 2017'den beri faaliyet gösteren geçerli bir CSGO estuche açma web sitesidir ve Estuche Açma, Estuche Savaşları ve Upgrader sunar.",
+        "Clash.gg is a new CS2 Gambling site which includes many games like Roulette, Upgrader, Cases and many more !": "Clash.gg, Rulet, Upgrader, Estuches gibi birçok oyunu içeren yeni bir CS2 Kumar sitesidir!",
+        "HellStore is a platform that allows users to participate in CSGO skin betting through game modes like Coinflip, Jackpot, Upgrader, and Wheel.": "HellStore, Coinflip, Jackpot, Upgrader ve Wheel gibi oyun modlarıyla CSGO skin bahislerine katılmanızı sağlayan bir platformdur.",
+        "Hellcase is an online platform that allows users to purchase virtual cases filled with skins and items for various games such as CS2, Dota 2, and Rust.": "Hellcase, CS2, Dota 2 ve Rust gibi oyunlar için skin ve eşya dolu sanal estuches satın almanıza olanak sağlayan bir çevrimiçi platformdur.",
+        "CSGOBIG - a gambling site for CS2 skins with game modes like Jackpot, Coinflip, Roulette, Cases, and Case Battles. Opened in 2015.": "CSGOBIG - CS2 skinleri için Jackpot, Coinflip, Rulet, Estuches ve Estuche Savaşları gibi oyun modlarına sahip bir kumar sitesi. 2015 yılında açıldı.",
+        "CSGOFast is a CSGO skin gambling site that offers a wide range of exclusive game modes. One of the earliest CSGO gambling sites.": "CSGOFast, geniş bir özel oyun modu yelpazesi sunan bir CSGO skin kumar sitesidir. En eski CSGO kumar sitelerinden biri.",
+        "CSGOLive is a safe and legitimate CS2 case opening website with custom cases, daily bonuses, and a Provably Fair system.": "CSGOLive, özel estuches, günlük bonuslar ve İspat Edilebilir Adil sistemle güvenli ve yasal bir CS2 estuche açma web sitesidir.",
+        "WTFSkins is a reliable and popular online platform offering unique games, daily rewards, and a simple registration process.": "WTFSkins, benzersiz oyunlar, günlük ödüller ve basit bir kayıt süreci sunan güvenilir ve popüler bir çevrimiçi platformdur.",
+        "Key-Drop is a reputable online gambling platform that offers various activities like Case Battles and Upgrader, as well as custom CSGO skin cases.": "Key-Drop, Case Battles ve Upgrader gibi çeşitli etkinlikler sunan ve özel CSGO skin estuches'lerine sahip olan saygın bir çevrimiçi kumar platformudur.",
+        "Farmskins is a well-known CSGO case opening website that has been operating since 2016, offering a wide selection of skins for players to unbox.": "Farmskins, 2016 yılından bu yana faaliyet gösteren, oyuncuların açabileceği geniş bir skin seçeneği sunan tanınmış bir CSGO estuche açma web sitesidir.",
+        "Bets4.pro is an online platform that offers users the ability to place bets on esports matches, particularly for CS2 , Dota 2, Valorant and many more.": "Bets4.pro, kullanıcılara özellikle CS2, Dota 2, Valorant ve daha birçok e-spor maçına bahis koyma imkanı sunan bir çevrimiçi platformdur.",
+        "This site can be called almost legendary among peers due to its high payouts and constant promotions. Include daily bonus!" : "Bu site, yüksek ödemeleri ve sürekli promosyonları nedeniyle neredeyse efsanevi olarak adlandırılabilir. Günlük bonus dahil!",
+        "HowlGG is a Rust skin gambling platform that offers a range of games, including jackpot, coinflip, slots, and live casino games." : "HowlGG, jackpot, coinflip, slots ve canlı casino oyunları dahil olmak üzere çeşitli oyunlar sunan bir Rust skin bahis platformudur.",
+        "BanditCamp is a Rust skin gambling website that provides several Rust-themed game modes like wheel of fortune, case unboxings, and coinflip." : "BanditCamp, tekerlek of fortune, estuche açma ve coinflip gibi Rust temalı oyun modlarını sağlayan bir Rust skin bahis sitesidir.",
+        "GCSkins is a well-known mobile app and website that offers CSGO skins and items as rewards for completing online tasks. Available since 2016." : "GCSkins, CSGO skinleri ve eşyalarını ödül olarak sunan popüler bir mobil uygulama ve web sitesidir. 2016'dan beri hizmet vermektedir.",
+        "GrindBux is a trusted platform where you can earn some money by completing surveys or play mobile and desktop games." : "GrindBux, anketleri tamamlayarak veya mobil ve masaüstü oyunları oynayarak para kazanabileceğiniz güvenilir bir platformdur.",
+        "Rust skin gambling site that has been around since 2017. The platform offers a range of popular games, including high-roller jackpot and coinflip games." : "2017'den beri faaliyet gösteren bir Rust skin bahis sitesi. Platform, yüksek bahisçi jackpot ve coinflip gibi popüler oyunları sunar.",
+        "RustBet - Trusted gambling site, Rust skins as rewards. Jackpot, coinflip, and skin upgrader games. Clean reputation, SSL encryption, user-friendly." : "RustBet - Güvenilir bir bahis sitesi, ödül olarak Rust skinleri. Jackpot, coinflip ve skin yükseltme oyunları. Temiz itibar, SSL şifreleme, kullanıcı dostu.",
+        "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot and coinflip. Easily enter and withdraw items from games." : "RustStake, jackpot ve coinflip dahil olmak üzere çeşitli oyunlar sunan bir Rust skin bahis platformudur. Oyunlardan kolayca eşya girip çıkartabilirsiniz.",
+        "In fact, the progenitor of sites for earning through Steam, stands out for its huge selection of Withdrawal methods." : "Aslında, Steam üzerinden kazanç elde etmek için sitelerin öncüsü olan bu site, büyük çaplı çekim yöntemleri seçeneğiyle öne çıkmaktadır.",
+        "RustyLoot offers a variety of games, including Wheel, Plinko, and more. With its transparent and provably fair system, RustyLoot is safe and enjoyable." : "RustyLoot, Tekerlek, Plinko ve daha fazlasını içeren çeşitli oyunlar sunar. Güvenli ve eğlenceli RustyLoot, şeffaf ve ispat edilebilir adil bir sistem sunar.",
+        "RustChance has been operating since 2017 and offers several popular games, including Jackpot, Wheel, Coinflip, Crash, and Landmines.":"RustChance, 2017 yılından bu yana faaliyet gösteren ve Jackpot, Tekerlek, Coinflip, Crash ve Mayınlar gibi birçok popüler oyun sunan bir platformdur.",
+        "CrashGG focuses on Rust skin gambling and offers various games, including its primary feature, the crash game mode. Also has Duels, Blackjack and Lottery.":"CrashGG, Rust skin bahislerine odaklanır ve başlıca özelliği olan crash oyun modu dahil olmak üzere çeşitli oyunlar sunar.",
+        "HypeUp is owned by the same operators of two popular betting sites, CSGORoll and HypeDrop. Offers two original games and Slots with Live Games.":"HypeUp, CSGORoll ve HypeDrop'ın aynı operatörleri tarafından işletilen bir bahis sitesidir. Orijinal oyunlar ve Canlı Oyunlarla Slot oyunları sunar.",
+        "The website has a decent number of survey providers and offerwall partners to choose from, and there are plenty of options for withdrawing earnings.":"Web sitesi, seçilebilecek makul sayıda anket sağlayıcısı ve teklif duvarı ortağına sahiptir ve kazançları çekmek için birçok seçenek vardır.",      
+        "SkinSwap is an online platform that allows players to trade and sell skins from popular games such as CS2 and Rust. Owned and operated by RustySell.":"SkinSwap, CS2 ve Rust gibi popüler oyunlardan skinleri ticaret yapmanıza ve satmanıza izin veren bir çevrimiçi platformdur.",
+        "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.":"CSGOSelly, CSGO skinlerini para olarak çekmek için kullanıcıların çeşitli ödeme yöntemlerini kullanabildiği bir web sitesidir. 2021'de kurulmuştur.",
+        "Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.":"Bu site, çeşitli mobil oyunlarda para kazanmanızı sağlayan birçok teklif duvarı gibi farklı mobil oyun disiplinlerinde gelir elde etmenizi sağlar.",
+        "Mobile Games. Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.":"Mobil Oyunlar. Bu site, çeşitli mobil oyunlarda para kazanmanızı sağlayan birçok teklif duvarı gibi farklı mobil oyun disiplinlerinde gelir elde etmenizi sağlar.",
+        "RustMoment is a gambling site for Rust skin enthusiasts with six games, bonuses, and a rakeback system. It accepts standard and cryptocurrency payments.":"RustMoment, altı oyun, bonuslar ve rakeback sistemiyle Rust skin hayranları için bir bahis sitesidir. Standart ve kripto para ödemelerini kabul eder.",
+        "Freeward is a GPT site that provides various opportunities for users to earn rewards through tasks like surveys and watching videos.": "Freeward, kullanıcıların anketler yaparak ve videolar izleyerek ödüller kazanabilecekleri çeşitli fırsatlar sunan bir GPT sitesidir.",
+        "Roobet is an online casino that allows users to play games using cryptocurrency. The platform has a reputation for being legitimate and safe.": "Roobet, kullanıcıların kripto para kullanarak oyun oynayabileceği bir çevrimiçi kumarhanedir. Platformun itibarı yasal ve güvenli olmasıyla bilinir.",
+        "xplay is a platform that allows CS2 players to earn skins just by playing on their servers. The platform offers various servers and daily challenges.": "CS2 oyuncularının sunucularında oynayarak skin kazanmasını sağlayan bir platformdur. Çeşitli sunucular ve günlük meydan okumalar sunar.",
+        "Established in 2018, it offers jackpot, coinflip, and roulette games with enhanced features, provable fairness, and attractive animations.": "2018 yılında kurulan bu site, gelişmiş özelliklere, ispat edilebilir adalet sistemine ve çekici animasyonlara sahip jackpot, coinflip ve rulet oyunları sunar.",
+        "GameTame is a GPT site that provides rewards for completing various activities and offers. The platform is specifically designed for gamers.": "GameTame, çeşitli aktiviteleri ve teklifleri tamamlamanın karşılığında ödüller sunan bir GPT sitesidir. Platform özellikle oyuncular için tasarlanmıştır.",
+        "Salad is a website that offers users the opportunity to mine wallet and buy gift cards and many more using their computer's processing power.": "Salad, kullanıcılara cüzdan madenciliği yapma ve bilgisayarlarının işlem gücünü kullanarak hediye kartları ve daha fazlasını satın alma fırsatı sunan bir web sitesidir.",
+        "Site from Gamehag owners. Has a decent number of survey providers and offerwall partners to choose from, plenty of options for withdrawing earnings.": "Gamehag, birçok anket sağlayıcısı ve teklif duvarı ortağıyla birlikte kazançları çekmek için çeşitli seçenekler sunan bir site.",
+        "SteamGifts is a legitimate website for Steam Game Giveaways with a supportive community and helpful resources.": "SteamGifts, destekleyici bir topluma ve yardımcı kaynaklara sahip Steam Oyun Hediye Çekilişleri için güvenilir bir web sitesidir.",
+        "GrindBux is a trusted platform where you can earn some money by completing surveys or playing mobile and desktop games.": "GrindBux, anketleri tamamlayarak veya mobil ve masaüstü oyunları oynayarak para kazanabileceğiniz güvenilir bir platformdur.",
+        "RustCases is a trusted Rust gambling site with various game modes, a wide range of cases, and skin withdrawal options. Owned by RustChance.": "RustCases, çeşitli oyun modlarına, geniş bir kutu seçeneğine ve skin çekme seçeneklerine sahip güvenilir bir Rust kumar sitesidir. RustChance tarafından sahiplenilmiştir.",
+        "RustClash is a new Rust Gambling site which includes many games like Roulette, Upgrader, Cases and many more!": "RustClash, Rulet, Yükseltici, Kutular ve daha birçok oyun gibi birçok oyun içeren yeni bir Rust Kumar sitesidir!",
+        "BC.Game is an online casino and sportsbook that was launched in 2017, offering over 8,000 games including proprietary and probably fair games.": "BC.Game, 2017'de piyasaya sürülen bir çevrimiçi kumarhane ve spor kitabıdır. 8.000'den fazla oyun sunar ve mülkiyetindeki ve adil olduğu bilinir.",
+        "Primedice is an online Crypto Dice Game Casino that has been in operation since 2013. It was one of the first platforms to use crypto for gambling.": "Primedice, 2013 yılından bu yana faaliyet gösteren bir çevrimiçi kripto zar oyunu kumarhanesidir. Kripto parayı kumar için kullanan ilk platformlardan biridir.",
+        "Tradeit is an online marketplace that offers players the opportunity to trade, buy, and sell skins for a variety of games, including CS2. Working since 2017.": "Tradeit, CS2 ve diğer oyunlar için skin takasını, alımını ve satımını sağlayan çevrimiçi bir pazardır. 2017'den beri hizmet vermektedir.",
+        "DMarket is a reliable and popular marketplace for Steam items, with a large number of items available and positive reviews on Trustpilot.": "DMarket, geniş bir ürün yelpazesine sahip olan ve Trustpilot'ta olumlu değerlendirmeler alan Steam ürünleri için güvenilir ve popüler bir pazardır.",
+        "Swap.gg is a website that allows users to buy, sell, and trade CS2, Rust, TF2, and other virtual items from various games. Working since 2017.": "Swap.gg, kullanıcıların CS2, Rust, TF2 ve diğer çeşitli oyunlardan sanal ürünleri satın alma, satma ve takas etme imkanı sunan bir web sitesidir. 2017'den beri faaliyet gösteriyor.",    
+        "BitSkins is an online marketplace for in-game skins, particularly for Counter-Strike 2, Dota 2, and Team Fortress 2. Launched in 2015.": "BitSkins, CS2, Dota 2 ve Team Fortress 2 gibi oyunlardaki skinleri alıp satabileceğiniz çevrimiçi bir pazardır. 2015 yılında kurulmuştur.",
+        "Secure P2P marketplace owned by Hellcase. SSL-encrypted, KYC verification, friendly design, competitive pricing, trusted trading platform.": "Hellcase'e ait güvenli P2P pazar. SSL şifrelemeli, KYC doğrulaması, kullanıcı dostu tasarım, rekabetçi fiyatlandırma, güvenilir ticaret platformu.",
+        "BitSkins P2P is an online platform for buying and selling virtual items, with a focus on CS2 skins. The parent company, BitSkins.": "BitSkins P2P, CS2 skinlerine odaklanan sanal ürünlerin alınıp satılabildiği bir çevrimiçi platformdur. Ana şirket, BitSkins'tir.",
+        "Trusted CS2 skin platform with rentals, endorsed by YouTubers. Secure, limited to CS2 skins, fees apply, and user reviews indicate room for improvement.": "YouTuber'lar tarafından desteklenen, güvenilir CS2 skin platformu. Güvenli, sadece CS2 skinlerine özgü, ücretler uygulanır ve kullanıcı yorumları geliştirme için potansiyel olduğunu gösterir.",
+        "GamerPay is a trusted platform for buying and selling CS2 skins, with a free selling option, secure transactions, and high-quality skin inspection tool.": "GamerPay, CS2 skinlerinin alınıp satılabildiği güvenilir bir platformdur. Ücretsiz satış seçeneği, güvenli işlemler ve yüksek kaliteli skin kontrol aracı sunar.",
+        "CSGO Market is an online P2P marketplace that provides a safe and secure platform for buying and selling CS2 skins. Established in 2015.": "CSGO Market, CS2 skinlerinin alınıp satılabildiği güvenli ve güvenli bir platform sunan çevrimiçi bir P2P pazarıdır. 2015 yılında kuruldu.",
+        "Lis-Skins is a popular marketplace for Steam items, especially CS2, Rust, and Dota 2 skins and items. The platform was founded in 2020.": "Lis-Skins, özellikle CS2, Rust ve Dota 2 skinleri ve ürünleri için popüler bir Steam pazarıdır. Platform, 2020 yılında kurulmuştur.",
+        "WhiteMarket is a P2P platform for CS2 skin trading. It offers secure trades, various deposit options, and community engagement.": "WhiteMarket, CS2 skin ticareti için bir P2P platformudur. Güvenli işlemler, çeşitli depozito seçenekleri ve topluluk katılımı sunar.",
+        "CS.Deals is a platform that allows users to buy, sell, and trade skins from popular games such as CS2, Dota 2, Rust, and Team Fortress 2. Working since 2016.": "CS.Deals, CS2, Dota 2, Rust ve Team Fortress 2 gibi oyunlardan skin alım ve satımını sağlayan bir platformdur. 2016'dan beri aktiftir.",
+        "SkinBid is an online marketplace for CS2 skins and in-game items, offering buying, selling, and auctioning features with a user-friendly interface.": "SkinBid, CS2 skinleri ve oyun içi ürünler için bir çevrimiçi pazardır ve kullanıcı dostu bir arayüzle alım, satım ve açık artırma özellikleri sunar.",
+        "LOOT.Farm is an online platform that offers users the ability to trade virtual items from popular games like CS2, Dota 2, Team Fortress 2, and Rust.": "LOOT.Farm, CS2, Dota 2, Team Fortress 2 ve Rust gibi popüler oyunlardan sanal eşyaları takas etme imkanı sunan bir çevrimiçi platformdur.",
+        "SkinBaron is an online platform based in Germany that enables users to buy and sell their CS2 skins. The platform has gained a good reputation.": "SkinBaron, kullanıcıların CS2 skinlerini satın alıp satmalarını sağlayan Almanya merkezli bir çevrimiçi platformdur. Platform iyi bir üne sahiptir.",
+        "Gamdom is one of the best CS2 match betting sites. You can play roulette, wheel, crash, slots, and many more!": "Gamdom, en iyi CS2 maç bahis sitelerinden biridir. Rulet, çark, crash, slotlar ve daha birçok oyunu oynayabilirsiniz!",
+        "SkinCashier is an online platform that allows players to instantly sell their CS2, Rust, Dota 2, and TF2 skins for real money. Operating since 2020.": "SkinCashier, oyuncuların CS2, Rust, Dota 2 ve TF2 skinlerini anında gerçek para karşılığında satmalarını sağlayan bir çevrimiçi platformdur. 2020 yılından beri faaliyet göstermektedir.",
+        "Avan.Market is an online platform that offers users the opportunity to sell gaming skins from popular games like CS2, Dota 2, RUST, and TF2.": "Avan.Market, CS2, Dota 2, RUST ve TF2 gibi popüler oyunlardan oyun skinlerini satma fırsatı sunan bir çevrimiçi platformdur.",    
+        "Skins.Cash is a reputable platform with positive reviews, reliable customer support, and over six years of operation. Pricing not the best one.": "Skins.Cash, güvenilir müşteri desteği sunan ve altı yılı aşkın süredir aktif olan bir platformdur, ancak fiyatlandırma en iyi değildir.",
+        "CYBERSHOKE is a website that provides servers for playing CS2. It offers various servers for players to choose.": "CYBERSHOKE, CS2 oynamak için sunucular sağlayan bir web sitesidir. Oyuncuların seçebileceği çeşitli sunucular sunar.",
+        "This site was created for easy leveling up Steam, you can sell emojis and profile backgrounds for Steam Trading Cards to fast level up.": "Bu site, Steam seviyenizi hızla yükseltmek için tasarlandı. Steam Ticaret Kartlarından emoji ve profil arka planları satabilir, seviye atlayabilirsiniz.",
+        "SteamLevelU is a legitimate platform to buy Steam trading card packs for enhancing Steam account levels, associated with SH Level Up.": "SteamLevelU, Steam hesap seviyelerini yükseltmek için güvenilir bir platformdur. SH Level Up ile bağlantılıdır.",
+        "SteamLevels is a user-friendly website that helps increase your Steam account level by purchasing card packs and accepting CSGO skins.": "SteamLevels, kart paketleri satın alarak ve CSGO skinlerini kabul ederek Steam hesabınızın seviyesini artırmaya yardımcı olan kullanıcı dostu bir web sitesidir.",
+        "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot, and coinflip. Easily enter and withdraw items from games.": "RustStake, jackpot ve coinflip gibi bir dizi oyun sunan bir Rust skin kumar platformudur. Oyundan kolayca öğeleri yatırabilir ve çekebilirsiniz.",
+        "iTrade.gg is a Trusted platform for trading rust skins. User-friendly design, free sign-up bonus, and daily rewards create a seamless trading experience.": "iTrade.gg, rostoların ticaretini yapmak için güvenilir bir platformdur. Kullanıcı dostu tasarım, ücretsiz kayıt bonusu ve günlük ödüller sorunsuz bir ticaret deneyimi sağlar.",
+        "Shuffle.com is a comprehensive crypto casino with a unique registration process, original games, a VIP program, and plans for future expansion.": "Shuffle.com, benzersiz bir kayıt süreci, orijinal oyunlar, bir VIP programı ve gelecekteki genişleme planları olan kapsamlı bir kripto casino'dur.",
+        "CashoutCSGO is a platform solely dedicated to selling CS2 skins for crypto or paypal, offering a convenient conversion service.":"CashoutCSGO, sadece CS2 skinleri satmaya adanmış bir platform olup, pratik bir dönüşüm hizmeti sunmaktadır.",
+        "Notable online marketplace, vast offerings from games to gift cards, reduced rates, stellar reputation, intuitive interface, up to 98% discounts.":"Dikkat çekici online pazar, oyunlardan hediye kartlarına geniş ürün yelpazesi, düşük fiyatlar, mükemmel itibar, sezgisel arayüz, %98'e varan indirimler.",
+        "Withdraw BTC, ETH, LTC or PayPal!":"BTC, ETH, LTC veya PayPal çekin!",
+        "Withdraw Money, Skins or Devices!": "Para, Skinler veya Cihazlar Çekin!",
+        "Withdraw BTC, LTC, ETH and many else!": "BTC, LTC, ETH ve birçok şey çekin!",
+        "Withdrawal of many types of cryptocurrencies !": "Birçok türde kripto paranın çekilmesi!",
+        "Withdraw CS2 Skins, Crypto or Real Money!": "CS2 Skinleri, Kripto veya Gerçek Para Çekin!",
+        "Withdraw CS2, Dota 2, TF2 or Rust Items!": "CS2, Dota 2, TF2 veya Rust Eşyalarını Çekin!",
+        "Withdraw CS2 Skins, Crypto or Game Keys!": "CS2 Skinleri, Kripto veya Oyun Anahtarları Çekin!",
+        "Withdraw CS2 Skins, Crypto or PayPal!": "CS2 Skinleri, Kripto veya PayPal Çekin!",
+        "Withdraw Money, CS2, TF2 or Rust Skins!": "Para, CS2, TF2 veya Rust Skinleri Çekin!",
+        "Withdraw CS2 Skins, Dota 2 and H1Z1 Items!": "CS2 Skinleri, Dota 2 ve H1Z1 Eşyalarını Çekin!",
+        "Withdraw CS2, Rust Skins and Dota 2 Items!": "CS2, Rust Skinleri ve Dota 2 Eşyalarını Çekin!",
+        "Withdraw Rust Skins, Crypto or PayPal!": "Rust Skinleri, Kripto veya PayPal Çekin!",
+        "Withdraw Dota 2 Items, Crypto or PayPal!": "Dota 2 Skinleri, Kripto veya PayPal Çekin!",
+        "Withdraw Rust Skins or Crypto!": "Rust Skinleri veya Kripto Çekin!",
+        "Withdraw Rust Skins and Items!": "Rust Skinleri ve Eşyaları Çekin!",
+        "Buy Games, Gift Cards and many-many more.": "Oyunlar, Hediye Kartları ve daha fazlasını alın.",
+        "Withdraw with many-many ways." : "Çok çok farklı şekillerde çekim yapın.",
+        "Withdraw Crypto, gift cards or real money!" : "Kripto, hediye kartları ve gerçek para çekin!",
+        "Withdraw CS2 Skins, Gift Cards or Crypto!" : "CS2 Skins, hediye kartları ve gerçek para çekin!",
+        "Withdraw Bitcoin, Ethereum or Litecoin!" : "Bitcoin, Ethereum veya Litecoin çekin!",
+        "Withdraw Games, GiftCards and many more!" : "Oyunlar, hediye kartları ve çok daha fazlasını çekin!",
+        "Withdraw Crypto or Real Money!" : "Kripto para veya gerçek para çekin!",
+        "Withdraw Crypto and Gift Cards!" : "Kripto para ve hediye kartları çekin!",
+        "Withdraw BTC, LTC, USDT, USDC or ETH!" : "BTC, LTC, USDT, USDC veya ETH çekin!",
+        "Withdraw CS2 Skins or Items!" : "CS2 Skins veya eşyalar çekin!",
+        "Withdraw Games, GiftCards or Dota2 & TF2 Items!" : "Oyunlar, hediye kartları ve Dota 2 & TF2 eşyaları çekin!",
+        "Withdraw Games, GiftCards or Donate to Charity!" : "Oyunlar, hediye kartları veya bağış yapın!",
+        "Participate in Giveaways and win Steam Games." : "Çekilişlere katılın ve Steam oyunları kazanın.",
+        "Withdraw CS2 And Rust Skins or Crypto!" : "CS2 ve Rust Skins veya kripto para çekin!",
+        "Withdraw CS2 Skins or real Money!" : "CS2 Skins veya gerçek para çekin!",
+        "Withdraw Steam Trading cards or Games." : "Steam Takas kartları veya oyunları çekin.",
+        "Withdraw USDT, Skins or Real Money!" : "USDT, Skins veya gerçek para çekin!",
+        "Withdraw Money, CS2 or Rust Skins!" : "Para, CS2 veya Rust Skins çekin!",
+        "Withdraw Money, Crypto or Skins!" : "Para, kripto para veya Skins çekin!",
+        "Withdraw CS2 Skins or Crypto!" : "CS2 Skins veya kripto para çekin!",
+        "Withdraw Money, Crypto or PayPal!" : "Para, kripto para veya PayPal çekin!",
+        "WITHDRAW WITH P2P CS2 SKINS." : "P2P CS2 SKINS ile çekin.",
+        "Withdraw Real Money or Crypto!" : "Gerçek para veya kripto para çekin!",
+        "Withdraw BTC, ETH, USDT or Tron!" : "BTC, ETH, USDT veya Tron çekin!",
+        "Withdraw CS2 Skins or PayPal!" : "CS2 Skins veya PayPal çekin!",
+        "Withdraw CS2 Skins and Items!" : "CS2 Skins ve eşyalar çekin!",
+        "Withdraw Steam Trading cards." : "Steam Takas kartları çekin!",
+        "1h, 24h and 7d Giveaways" : "1s, 24s ve 7g çekilişler",
+        "24h Giveaway" : "24s çekiliş",
+        "3h and 24h Giveaway" : "3s ve 24s çekiliş",
+        "Daily and Weekly Giveaways" : "Günlük ve haftalık çekilişler",
+        "1h Giveaway" : "1s çekiliş",
+        "1h, 24h Giveaways" : "1s, 24s çekilişler",
+        "Rare Giveaways" : "Nadir çekilişler",
+        "Weekly Giveaways" : "Haftalık çekilişler",
+        "Daily Giveaways" : "Günlük çekilişler",
+        "Deposit Required" : "Depozito gerekiyor",
+        "+360% Deposit Bonus" : "+360% Depozito Bonusu",
+        "+100% Deposit Bonus" : "+100% Depozito Bonusu",
+        "+10% Deposit Bonus" : "+10% Depozito Bonusu",
+        "+5% Deposit Bonus" : "+5% Depozito Bonusu",
+        "+1% Deposit Bonus" : "+1% Depozito Bonusu",
+        "70 Free Spins" : "70 Ücretsiz Dönüş",
+        "Every 24h Reward" : "Her 24 saatte bir ödül",
+        "Daily Case" : "Günlük Kasa",
+        "Daily Faucet" : "Günlük Musluk",
+        "Daily Roll" : "Günlük Çark",
+        "Daily Coins" : "Günlük Paralar",
+        "Faucet and Giveaways" : "Musluk ve çekilişler",
+        "Daily 0.02$" : "Günlük 0.02$",
+        "Daily 0.02$ + Free Case" : "Günlük 0.02$ + Ücretsiz Kasa",
+        "360% Deposit Bonus" : "360% Depozito Bonusu",
+        "Deposit Bonus" : "Depozito Bonusu",
+        "Visit WebSite" : "Web Sitesini Ziyaret Et",
+        "Visit WebSite or Copy" : "Web Sitesini Ziyaret Et",
+        "100% deposit bonus" : "100% Depozito Bonusu",
+        "+1% Sell Bonus": "+1% Satış Bonusu",
+        "+3% Sell Bonus" : "+3% Satış Bonusu",
+        "5% deposit bonus" : "5% Depozito Bonusu",
+        "5 Free Cases" : "5 Ücretsiz Kasa",
+        "Free 50 Gems" : "50 Ücretsiz Taş",
+        "3 Free Cases" : "3 Ücretsiz Kasa",
+        "Free 5€" : "5€ Bedava",
+        "2.00$ For Free" : "Ücretsiz 2.00$",
+        "5.00$ For Free" : "Ücretsiz 5.00$",
+        "Free 1.00$" : "Ücretsiz 1.00$",
+        "Free 0.90$" : "Ücretsiz 0.90$",
+        "Free 0.50$" : "Ücretsiz 0.50$",
+        "Free 0.40$" : "Ücretsiz 0.40$",
+        "Free 0.30$" : "Ücretsiz 0.30$",
+        "Free 0.25$" : "Ücretsiz 0.25$",
+        "Free 0.20$" : "Ücretsiz 0.20$",
+        "Free 0.15$" : "Ücretsiz 0.15$",
+        "Free 0.10$" : "Ücretsiz 0.10$",
+        "Free 0.05$" : "Ücretsiz 0.05$",
+        "Receive up to 5.00$": "5,00$'a kadar alın",
+        "Free Case" : "Ücretsiz Kasa",
+        "Free 1$" : "Ücretsiz 1$",
+        "Free 2$" : "Ücretsiz 2$",
+        "Big Daily Giveaways" : "Büyük Günlük Çekilişler",
+        "Free Case up to 250$" : "Ücretsiz Kasa, 250$'a kadar",
+        "Daily Giveaway" : "Günlük Çekiliş",
+        "Free 100 Diamonds" : "Ücretsiz 100 Elmas",
+        "500 coins" : "500 jeton",
+        "Daily Cases" : "Günlük Kasa",
+        "3 Energy Points" : "3 Enerji Puanı",
+        "Free 200 Coins" : "Ücretsiz 200 Jeton",
+        "some free coins" : "biraz ücretsiz jeton",
+        "Free 2$" : "Ücretsiz 2$",
+        "Free spins" : "Ücretsiz dönüşler",
+        "Offerwall" : "Teklif Duvarı",
+        "x2 Mining Rate" : "x2 Madencilik Oranı",
+        "Games Giveaways" : "Oyun Çekilişleri"
+      },
+      "es": {
+        "CSGORUN is a leading virtual skin gambling platform with diverse modes like Crash, Roulette, PVP, and esports betting. It's user-friendly.": "CSGORUN es una plataforma líder de apuestas virtuales de skins con diversos modos como Crash, Ruleta, PVP y apuestas de deportes electrónicos. Es fácil de usar.",
+        "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins es una plataforma en línea creada para proporcionar a los jugadores un mercado para comprar, vender e intercambiar skins para CS2 y Rust.",
+        "RustMagic - a cutting-edge Rust skin betting site, features five distinct game modes, withdrawal in Rust skins, and a daily free case system for users.": "RustMagic - sitio de apuestas de skins Rust con cinco modos de juego, retiros en skins de Rust y sistema diario de estuches gratuitos.",
+        "SKINFANS - CS2 skin case opening , beautiful animations, provably fair system. Regular giveaways, Battle-pass for newcomers, sleek design.": "SKINFANS - Apertura de cajas de piel CS2, hermosas animaciones, sistema probadamente justo. Sorteos regulares, Pase de batalla para recién llegados, diseño elegante.",
+        "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, un sitio web destacado en Skin Gambling, ofrece diversos modos, una interfaz fácil de usar y características de bonificación para las skins de CS:GO, Dota 2 y RUST.",
+        "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins, una plataforma de apuestas de piel CS2, se destaca por su diseño fácil de usar, diversos modos de juego, chat en vivo y equidad comprobable.",
+        "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, el mejor sitio de apuestas de CS2. Lluvias, regalos y códigos promocionales. Juegos y tragamonedas disponibles.",
+        "CSGO500 probably the best CS2 and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, el mejor sitio de apuestas de CS2. Lluvias, regalos y códigos promocionales. Juegos y tragamonedas disponibles.",
+        "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll es uno de los sitios más populares. Incluye ruleta, crash y muchos más. Ahora probando las apuestas en e-sports.",
+        "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": "CSGOEmpire es uno de los sitios más populares. Incluye ruleta y coinflip. Trabajando desde 2016. Apuesta en partidas con prioridad.",
+        "CSGOPolygon is a legendary site like CSGODouble with classic Roulette, but have Dices, Crash, Slots and even Esports Betting!": "CSGOPolygon es un sitio legendario como CSGODouble con ruleta clásica, ¡pero también tiene Dados, Crash, Tragamonedas y apuestas en e-sports!",
+        "Gamdom Casino offers a variety of in-house games, innovative social engagement, provably fair system, and good reputation in online gaming.": "Gamdom Casino ofrece juegos internos, participación social innovadora, sistema justo y buena reputación en juegos en línea.",
+        "CSGOPOSITIVE is a famous esports betting site with interesting system of cashback, you can bet skins or money. Has various payments options.": "CSGOPOSITIVE es un famoso sitio de apuestas en e-sports con un interesante sistema de cashback, puedes apostar skins o dinero.",
+        "Rollbit is a new Casino site which includes Sport Betting and many classic games like roulette. Includes Daily Bonuses !": "Rollbit es un nuevo sitio de casino que incluye apuestas deportivas y muchos juegos clásicos como la ruleta. ¡Incluye bonos diarios!",
+        "CSGOLuck is a licensed CSGO skin gambling site that accepts multiple deposit methods, offering various games and a user-friendly design.": "CSGOLuck es un sitio de apuestas de skins de CSGO con licencia que acepta múltiples métodos de depósito, ofrece varios juegos y un diseño fácil de usar.",
+        "Duelbits is a safe and licensed online casino with a variety of games, sports betting, esports betting, and instant cryptocurrency transactions.": "Duelbits es un casino en línea seguro y con licencia que ofrece juegos, apuestas deportivas, e-sports y transacciones con criptomonedas.",
+        "InsaneGG is an online platform that offers a range of CSGO skin gambling games with professionally designed and smooth animations.": "InsaneGG es una plataforma en línea que ofrece una variedad de juegos de apuestas de skins de CSGO con animaciones profesionales y fluidas.",
+        "Rustix - gambling platform for CS2 and Rust with original games, fair gameplay, bonuses, and impressive animations. Opened in 2023.": "Rustix: plataforma de apuestas para CS2 y Rust con juegos originales, juego justo, bonificaciones e impresionantes animaciones.",
+        "CSGO-Skins is a reputable online platform where users can open custom CS2 cases and participate in daily Giveaways.": "CSGO-Skins es una plataforma en línea confiable donde los usuarios pueden abrir estuches personalizados de CS2 y participar en sorteos diarios.",
+        "FlameCases is an online platform that permits users to open cases for CS2 and Dota 2. Since its launch in 2017, the website provides various features.": "FlameCases es una plataforma en línea que permite abrir estuches para CS2 y Dota 2. Desde 2017, el sitio web ofrece varias funciones.",
+        "KNIFEX is a CS2 gambling site that offers a range of game modes, including case opening, case battles, coinflip, crash, clash and many more!": "KNIFEX es un sitio de apuestas de CS2 con múltiples modos de juego, incluyendo apertura y batallas de estuches, coinflip, crash, clash y más.",
+        "DatDrop is a website that specializes in opening cases that contain skins from CS2. Its most prominent feature is the case-opening battles.": "DatDrop es un sitio web especializado en abrir estuches que contienen skins de CS2. Su característica más destacada son las batallas de apertura de estuches.",
+        "DaddySkins is a valid CSGO case opening website that has been in operation since 2017, and it offers Case Openings, Case Battles, and Upgrader.": "DaddySkins es un sitio web de apertura de estuches de CSGO válido desde 2017 que ofrece Apertura de Estuches, Batallas de Estuches y Mejoras.",
+        "Clash.gg is a new CS2 Gambling site which includes many games like Roulette, Upgrader, Cases and many more !": "Clash.gg es un nuevo sitio de apuestas de CS2 que incluye muchos juegos como la ruleta, upgrader, estuches ¡y muchos más!",
+        "HellStore is a platform that allows users to participate in CSGO skin betting through game modes like Coinflip, Jackpot, Upgrader, and Wheel.": "HellStore es una plataforma que permite a los usuarios apostar skins de CSGO en modos de juego como Coinflip, Jackpot, Upgrader y Wheel.",
+        "Hellcase is an online platform that allows users to purchase virtual cases filled with skins and items for various games such as CS2, Dota 2, and Rust.": "Hellcase es una plataforma en línea donde puedes comprar estuches virtuales con skins y objetos para juegos como CS2, Dota 2 y Rust.",
+        "CSGOBIG - a gambling site for CS2 skins with game modes like Jackpot, Coinflip, Roulette, Cases, and Case Battles. Opened in 2015.": "CSGOBIG: un sitio de apuestas de skins de CS2 con modos de juego como Jackpot, Coinflip, Ruleta, Estuches y Batallas de Estuches. Abrió en 2015.",
+        "CSGOFast is a CSGO skin gambling site that offers a wide range of exclusive game modes. One of the earliest CSGO gambling sites.": "CSGOFast es un sitio de apuestas de skins de CSGO con diversos modos de juego exclusivos. Uno de los primeros sitios de apuestas de CSGO.",
+        "CSGOLive is a safe and legitimate CS2 case opening website with custom cases, daily bonuses, and a Provably Fair system.": "CSGOLive es un sitio web seguro de apertura de estuches de CS2 con estuches personalizados, bonos diarios y un sistema justo.",
+        "WTFSkins is a reliable and popular online platform offering unique games, daily rewards, and a simple registration process.": "WTFSkins es una plataforma en línea confiable y popular que ofrece juegos únicos, recompensas diarias y un proceso de registro sencillo.",
+        "Key-Drop is a reputable online gambling platform that offers various activities like Case Battles and Upgrader, as well as custom CSGO skin cases.": "Key-Drop es una plataforma de apuestas en línea que ofrece actividades como Batallas de Cajas, Mejoras y estuches personalizados de skins de CSGO.",
+        "Farmskins is a well-known CSGO case opening website that has been operating since 2016, offering a wide selection of skins for players to unbox.": "Farmskins es un sitio web de apertura de cajas de CSGO que opera desde 2016, ofreciendo una amplia selección de skins para desempaquetar.",
+        "Bets4.pro is an online platform that offers users the ability to place bets on esports matches, particularly for CS2 , Dota 2, Valorant and many more.": "Bets4.pro es una plataforma en línea que ofrece apuestas en partidos de deportes electrónicos, incluyendo CS2, Dota 2, Valorant y más.",
+        "This site can be called almost legendary among peers due to its high payouts and constant promotions. Include daily bonus!" : "Este sitio puede considerarse casi legendario entre sus pares debido a sus altos pagos y promociones constantes. ¡Incluye bonificación diaria!",
+        "HowlGG is a Rust skin gambling platform that offers a range of games, including jackpot, coinflip, slots, and live casino games." : "HowlGG es una plataforma de apuestas de skins de Rust que ofrece una variedad de juegos, incluyendo jackpot, coinflip, slots y juegos de casino en vivo.",
+        "BanditCamp is a Rust skin gambling website that provides several Rust-themed game modes like wheel of fortune, case unboxings, and coinflip." : "BanditCamp es un sitio web de apuestas de skins de Rust que ofrece modos de juego temáticos, como la rueda de la fortuna, la apertura de cajas y el coinflip.",
+        "GCSkins is a well-known mobile app and website that offers CSGO skins and items as rewards for completing online tasks. Available since 2016." : "GCSkins es una popular aplicación móvil y sitio web que ofrece skins y objetos de CSGO como recompensa por completar tareas en línea. Disponible desde 2016.",
+        "GrindBux is a trusted platform where you can earn some money by completing surveys or play mobile and desktop games." : "GrindBux es una plataforma confiable donde puedes ganar dinero completando encuestas o jugando juegos para dispositivos móviles y de escritorio.",
+        "Rust skin gambling site that has been around since 2017. The platform offers a range of popular games, including high-roller jackpot and coinflip games." : "Sitio de apuestas de skins de Rust desde 2017. Ofrece juegos populares como jackpot y coinflip para grandes apostadores.",
+        "RustBet - Trusted gambling site, Rust skins as rewards. Jackpot, coinflip, and skin upgrader games. Clean reputation, SSL encryption, user-friendly." : "RustBet: sitio confiable de apuestas de skins de Rust. Jackpot, coinflip y mejora de skins. Buena reputación, encriptación SSL, fácil de usar.",
+        "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot and coinflip. Easily enter and withdraw items from games." : "RustStake: plataforma de apuestas de skins de Rust. Jackpot, coinflip y más. Fácil depósito y retiro de elementos del juego.",
+        "In fact, the progenitor of sites for earning through Steam, stands out for its huge selection of Withdrawal methods." : "De hecho, el precursor de los sitios para ganar a través de Steam se destaca por su gran selección de métodos de retiro.",
+        "RustyLoot offers a variety of games, including Wheel, Plinko, and more. With its transparent and provably fair system, RustyLoot is safe and enjoyable." : "RustyLoot ofrece juegos como Ruleta y Plinko, asegurando diversión y seguridad con su sistema transparente y comprobable.",
+        "RustChance has been operating since 2017 and offers several popular games, including Jackpot, Wheel, Coinflip, Crash, and Landmines.":"RustChance ha estado operando desde 2017 y ofrece varios juegos populares, incluyendo Jackpot, Ruleta, Cara o Cruz, Crash y Minas terrestres.",
+        "CrashGG focuses on Rust skin gambling and offers various games, including its primary feature, the crash game mode. Also has Duels, Blackjack and Lottery.":"CrashGG: sitio de apuestas de skins de Rust. Juegos emocionantes como Crash, Duelos, Blackjack y Lotería. Gran variedad de opciones de apuestas.",
+        "HypeUp is owned by the same operators of two popular betting sites, CSGORoll and HypeDrop. Offers two original games and Slots with Live Games.":"HypeUp es propiedad de los mismos operadores de CSGORoll y HypeDrop. Ofrece dos juegos originales y Tragamonedas con Juegos en Vivo.",
+        "The website has a decent number of survey providers and offerwall partners to choose from, and there are plenty of options for withdrawing earnings.":"El sitio web cuenta con varios proveedores de encuestas y socios de ofertas para elegir, y ofrece múltiples opciones para retirar las ganancias.",
+        "SkinSwap is an online platform that allows players to trade and sell skins from popular games such as CS2 and Rust. Owned and operated by RustySell.":"SkinSwap es una plataforma en línea para intercambiar y vender skins de juegos populares como CS2 y Rust. Propiedad de RustySell.",
+        "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.":"CSGOSelly es un sitio web que permite a los usuarios convertir sus skins de CSGO en dinero a través de varios métodos de pago. Fue fundado en 2021.",
+        "Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.":"Sitio único donde puedes ganar dinero ganando juegos en varias disciplinas cibernéticas de juegos móviles. También tiene muchos muros de ofertas.",
+        "Mobile Games. Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.":"Sitio único donde puedes ganar dinero ganando juegos en varias disciplinas cibernéticas de juegos móviles. También tiene muchos muros de ofertas.",
+        "RustMoment is a gambling site for Rust skin enthusiasts with six games, bonuses, and a rakeback system. It accepts standard and cryptocurrency payments.":"RustMoment: sitio de apuestas de skins de Rust. 6 juegos, bonificaciones y sistema de rakeback. Acepta pagos estándar y criptomonedas.",
+        "Freeward is a GPT site that provides various opportunities for users to earn rewards through tasks like surveys and watching videos.": "Freeward es un sitio GPT que ofrece diversas oportunidades para que los usuarios ganen recompensas mediante tareas como encuestas y ver videos.",
+        "Roobet is an online casino that allows users to play games using cryptocurrency. The platform has a reputation for being legitimate and safe.": "Roobet es un casino en línea seguro que acepta criptomonedas para jugar. Es conocido por su reputación legítima y seguridad.",
+        "xplay is a platform that allows CS2 players to earn skins just by playing on their servers. The platform offers various servers and daily challenges.": "xplay es una plataforma que permite a los jugadores de CS2 ganar skins jugando en sus servidores. Ofrece diversos servidores y desafíos diarios.",
+        "Established in 2018, it offers jackpot, coinflip, and roulette games with enhanced features, provable fairness, and attractive animations.": "Establecido en 2018, ofrece juegos de jackpot, coinflip y ruleta con características mejoradas, equidad demostrable y animaciones atractivas.",
+        "GameTame is a GPT site that provides rewards for completing various activities and offers. The platform is specifically designed for gamers.": "GameTame es un sitio GPT que ofrece recompensas por completar actividades y ofertas. Es especialmente diseñado para jugadores.",
+        "Salad is a website that offers users the opportunity to mine wallet and buy gift cards and many more using their computer's processing power.": "Salad es un sitio web que ofrece a los usuarios la oportunidad de minar billeteras y comprar tarjetas de regalo y mucho más utilizando la potencia de procesamiento de su computadora.",
+        "Site from Gamehag owners. Has a decent number of survey providers and offerwall partners to choose from, plenty of options for withdrawing earnings.": "Sitio asociado a Gamehag con varias opciones de encuestas y ofertas para elegir, y múltiples opciones de retiro de ganancias.",
+        "SteamGifts is a legitimate website for Steam Game Giveaways with a supportive community and helpful resources.": "SteamGifts es un sitio web legítimo para sorteos de juegos de Steam con una comunidad solidaria y recursos útiles.",
+        "GrindBux is a trusted platform where you can earn some money by completing surveys or playing mobile and desktop games.": "GrindBux es una plataforma confiable donde puedes ganar dinero completando encuestas o jugando juegos móviles y de escritorio.",
+        "RustCases is a trusted Rust gambling site with various game modes, a wide range of cases, and skin withdrawal options. Owned by RustChance.": "RustCases es un sitio de apuestas confiable para Rust con varios modos de juego, una amplia selección de cajas y opciones de retiro de skins. Propiedad de RustChance.",
+        "RustClash is a new Rust Gambling site which includes many games like Roulette, Upgrader, Cases and many more!": "RustClash es un nuevo sitio de apuestas de Rust que incluye muchos juegos como ruleta, upgrader, cajas y ¡muchos más!",
+        "BC.Game is an online casino and sportsbook that was launched in 2017, offering over 8,000 games including proprietary and probably fair games.": "BC.Game es un casino en línea y casa de apuestas deportivas lanzado en 2017, ofreciendo más de 8,000 juegos, incluyendo juegos propietarios.",
+        "Primedice is an online Crypto Dice Game Casino that has been in operation since 2013. It was one of the first platforms to use crypto for gambling.": "Primedice es un casino en línea que utiliza criptomonedas para juegos de dados. Lanzado en 2013, fue uno de los pioneros en esta forma de juego.",
+        "Tradeit is an online marketplace that offers players the opportunity to trade, buy, and sell skins for a variety of games, including CS2. Working since 2017.": "Tradeit es un mercado en línea que permite a los jugadores intercambiar, comprar y vender skins de varios juegos, como CS2. Funciona desde 2017.",
+        "DMarket is a reliable and popular marketplace for Steam items, with a large number of items available and positive reviews on Trustpilot.": "DMarket es un mercado confiable y popular para artículos de Steam, con una gran cantidad de artículos disponibles y reseñas positivas en Trustpilot.",
+        "Swap.gg is a website that allows users to buy, sell, and trade CS2, Rust, TF2, and other virtual items from various games. Working since 2017.": "Swap.gg es un sitio web que permite a los usuarios comprar, vender e intercambiar skins de CS2, Rust, TF2 y otros objetos virtuales de varios juegos. Funciona desde 2017.",
+        "BitSkins is an online marketplace for in-game skins, particularly for Counter-Strike 2, Dota 2, and Team Fortress 2. Launched in 2015.": "BitSkins es un mercado en línea para skins de juegos, especialmente para Counter-Strike 2, Dota 2 y Team Fortress 2. Lanzado en 2015.",
+        "Secure P2P marketplace owned by Hellcase. SSL-encrypted, KYC verification, friendly design, competitive pricing, trusted trading platform.": "Mercado P2P seguro de Hellcase. Encriptado SSL, verificación KYC, diseño amigable, precios competitivos, plataforma confiable.",
+        "BitSkins P2P is an online platform for buying and selling virtual items, with a focus on CS2 skins. The parent company, BitSkins.": "BitSkins P2P es una plataforma en línea para comprar y vender artículos virtuales, con un enfoque en skins de CS2. La empresa matriz es BitSkins.",
+        "Trusted CS2 skin platform with rentals, endorsed by YouTubers. Secure, limited to CS2 skins, fees apply, and user reviews indicate room for improvement.": "Plataforma confiable de skins de CS2 con alquileres, respaldada por YouTubers. Segura, limitada a skins de CS2, se aplican tarifas y las reseñas de los usuarios indican que hay margen de mejora.",
+        "GamerPay is a trusted platform for buying and selling CS2 skins, with a free selling option, secure transactions, and high-quality skin inspection tool.": "GamerPay: plataforma confiable de compra y venta de skins de CS2. Venta gratuita, transacciones seguras y alta calidad en la inspección de skins.",
+        "CSGO Market is an online P2P marketplace that provides a safe and secure platform for buying and selling CS2 skins. Established in 2015.": "CSGO Market es un mercado P2P en línea que ofrece una plataforma segura para comprar y vender skins de CS2. Establecido en 2015.",
+        "Lis-Skins is a popular marketplace for Steam items, especially CS2, Rust, and Dota 2 skins and items. The platform was founded in 2020.": "Lis-Skins es un mercado popular para artículos de Steam, especialmente skins e items de CS2, Rust y Dota 2. La plataforma fue fundada en 2020.",
+        "WhiteMarket is a P2P platform for CS2 skin trading. It offers secure trades, various deposit options, and community engagement.": "WhiteMarket: plataforma P2P para intercambio seguro de skins de CS2 con opciones de depósito y participación comunitaria.",
+        "CS.Deals is a platform that allows users to buy, sell, and trade skins from popular games such as CS2, Dota 2, Rust, and Team Fortress 2. Working since 2016.": "CS.Deals es una plataforma para comprar, vender y intercambiar skins de juegos populares como CS2, Dota 2, Rust y Team Fortress 2.",
+        "SkinBid is an online marketplace for CS2 skins and in-game items, offering buying, selling, and auctioning features with a user-friendly interface.": "SkinBid: mercado en línea para skins de CS2 y objetos de juego con funciones de compra, venta y subasta y una interfaz intuitiva.",
+        "LOOT.Farm is an online platform that offers users the ability to trade virtual items from popular games like CS2, Dota 2, Team Fortress 2, and Rust.": "LOOT.Farm es una plataforma en línea que ofrece a los usuarios la posibilidad de intercambiar objetos virtuales de juegos populares como CS2, Dota 2, Team Fortress 2 y Rust.",
+        "SkinBaron is an online platform based in Germany that enables users to buy and sell their CS2 skins. The platform has gained a good reputation.": "SkinBaron es una plataforma en línea alemana para comprar y vender skins de CS2, reconocida por su excelente reputación.",
+        "Lis-Skins is a popular marketplace for Steam items, especially CS2, Rust and Dota 2 skins and items. The platform was founded in 2020.":"Lis-Skins es un popular mercado para objetos de Steam, especialmente skins e ítems de CS2, Rust y Dota 2. La plataforma fue fundada en 2020.",
+        "Gamdom is one of the best CS2 match betting sites. You can play roulette, wheel, crash, slots, and many more!": "Gamdom es uno de los mejores sitios de apuestas en partidas de CS2. ¡Puedes jugar a la ruleta, la rueda, el crash, las tragamonedas y mucho más!",
+        "SkinCashier is an online platform that allows players to instantly sell their CS2, Rust, Dota 2, and TF2 skins for real money. Operating since 2020.": "SkinCashier es una plataforma en línea que permite a los jugadores vender al instante sus skins de CS2, Rust, Dota 2 y TF2 por dinero real. Operando desde 2020.",
+        "Avan.Market is an online platform that offers users the opportunity to sell gaming skins from popular games like CS2, Dota 2, RUST, and TF2.": "Avan.Market es una plataforma en línea que ofrece a los usuarios la oportunidad de vender skins de juegos populares como CS2, Dota 2, RUST y TF2.",
+        "Skins.Cash is a reputable platform with positive reviews, reliable customer support, and over six years of operation. Pricing not the best one.": "Skins.Cash: plataforma confiable con buenas reseñas, soporte al cliente confiable y más de seis años de experiencia. Precios no óptimos.",
+        "CYBERSHOKE is a website that provides servers for playing CS2. It offers various servers for players to choose.":"CYBERSHOKE es un sitio web que ofrece servidores para jugar CS2. Ofrece varios servidores para que los jugadores elijan.",
+        "This site was created for easy leveling up Steam, you can sell emojis and profile backgrounds for Steam Trading Cards to fast level up.": "Sube de nivel fácilmente en Steam. Vende emojis y fondos de perfil para Cartas de Intercambio de Steam y progresa rápidamente.",
+        "SteamLevelU is a legitimate platform to buy Steam trading card packs for enhancing Steam account levels, associated with SH Level Up.": "SteamLevelU es una plataforma confiable para mejorar los niveles de tu cuenta de Steam mediante la compra de paquetes de cartas de intercambio.",
+        "SteamLevels is a user-friendly website that helps increase your Steam account level by purchasing card packs and accepting CSGO skins.": "SteamLevels es un sitio web fácil de usar que te ayuda a aumentar el nivel de tu cuenta de Steam. Compra paquetes de cartas e intercambia skins de CSGO.",
+        "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot, and coinflip. Easily enter and withdraw items from games.": "RustStake: Plataforma de apuestas de skins de Rust. Variedad de juegos, incluyendo jackpot y coinflip. Fácil retiro de elementos del juego.",
+        "iTrade.gg is a Trusted platform for trading rust skins. User-friendly design, free sign-up bonus, and daily rewards create a seamless trading experience.":"iTrade.gg es una plataforma confiable para el comercio de skins de Rust. Su diseño intuitivo, bono de registro gratuito y recompensas diarias crean una experiencia de comercio fluida.",
+        "Shuffle.com is a comprehensive crypto casino with a unique registration process, original games, a VIP program, and plans for future expansion.":"Shuffle.com es un casino de criptomonedas completo con registro único, juegos originales, programa VIP y planes de expansión futura.",
+        "CashoutCSGO is a platform solely dedicated to selling CS2 skins for crypto or paypal, offering a convenient conversion service.":"CashoutCSGO es una plataforma dedicada exclusivamente a la venta de skins de CS2, ofreciendo un servicio de conversión conveniente.",
+        "Notable online marketplace, vast offerings from games to gift cards, reduced rates, stellar reputation, intuitive interface, up to 98% discounts.":"Destacado mercado en línea, amplia oferta desde juegos hasta tarjetas de regalo, tarifas reducidas, reputación estelar, interfaz intuitiva.",
+        "Withdraw BTC, ETH, LTC or PayPal!":"¡Retira BTC, ETH, LTC o PayPal!",
+        "Withdraw Money, Skins or Devices!": "Retira dinero, skins o dispositivos!",
+        "Withdraw BTC, LTC, ETH and many else!": "Retira BTC, LTC, ETH y muchos más!",
+        "Withdrawal of many types of cryptocurrencies !": "¡Retiro de muchos tipos de criptomonedas!",
+        "Withdraw CS2 Skins, Crypto or Real Money!": "Retira Skins de CS2, criptomonedas o dinero!",
+        "Withdraw CS2, Dota 2, TF2 or Rust Items!": "Retira items de CS2, Dota 2, TF2 o Rust!",
+        "Withdraw CS2 Skins, Crypto or Game Keys!": "Retira skins de CS2, criptomonedas o juegos.",
+        "Withdraw CS2 Skins, Crypto or PayPal!": "Retira Skins de CS2, criptomonedas o PayPal!",
+        "Withdraw Money, CS2, TF2 or Rust Skins!": "Retira dinero, Skins de CS2, TF2 o Rust!",
+        "Withdraw CS2 Skins, Dota 2 and H1Z1 Items!": "Retira Skins de CS2, Dota 2 y items de H1Z1!",
+        "Withdraw CS2, Rust Skins and Dota 2 Items!": "Retira Skins de CS2, Rust y items de Dota 2!",
+        "Withdraw Rust Skins, Crypto or PayPal!": "Retira Skins de Rust, criptomonedas o PayPal!",
+        "Withdraw Dota 2 Items, Crypto or PayPal!": "Dota 2 Skins de Rust, criptomonedas o PayPal!",
+        "Withdraw Rust Skins or Crypto!": "Retira Skins de Rust o criptomonedas!",
+        "Withdraw Rust Skins and Items!": "Retira Skins e items de Rust!",
+        "Buy Games, Gift Cards and many-many more.": "¡Compra Juegos, Tarjetas y Mucho Más!",
+        "Withdraw with many-many ways.": "Retira de muchas-muchas formas.",
+        "Withdraw Crypto, gift cards or real money!": "Retira criptomonedas y tarjetas de regalo!",
+        "Withdraw CS2 Skins, Gift Cards or Crypto!": "Retira Skins CS2, tarjetas regalo o criptomonedas!",
+        "Withdraw Bitcoin, Ethereum or Litecoin!": "Retira Bitcoin, Ethereum o Litecoin!",
+        "Withdraw Games, GiftCards and many more!": "Retira juegos, tarjetas de regalo y mucho más!",
+        "Withdraw Crypto or Real Money!": "Retira criptomonedas o dinero real!",
+        "Withdraw Crypto and Gift Cards!": "Retira criptomonedas y tarjetas de regalo!",
+        "Withdraw BTC, LTC, USDT, USDC or ETH!": "Retira BTC, LTC, USDT, USDC o ETH!",
+        "Withdraw CS2 Skins or Items!": "Retira Skins o items de CS2!",
+        "Withdraw Games, GiftCards or Dota2 & TF2 Items!": "Retira juegos, tarjetas de regalo o items de Dota2 y TF2!",
+        "Withdraw Games, GiftCards or Donate to Charity!": "Retira juegos, tarjetas de regalo o dona a caridad!",
+        "Participate in Giveaways and win Steam Games.": "Participa en sorteos y gana juegos de Steam.",
+        "Withdraw CS2 And Rust Skins or Crypto!": "Retira Skins de CS2 y Rust o criptomonedas!",
+        "Withdraw CS2 Skins or real Money!": "Retira Skins de CS2 o dinero real!",
+        "Withdraw Steam Trading cards or Games.": "Retira cartas o juegos de Steam!",
+        "Withdraw USDT, Skins or Real Money!": "Retira USDT, Skins o dinero real!",
+        "Withdraw Money, CS2 or Rust Skins!": "Retira dinero, Skins de CS2 o Rust!",
+        "Withdraw Money, Crypto or Skins!": "Retira dinero, criptomonedas o Skins!",
+        "Withdraw CS2 Skins or Crypto!": "Retira Skins de CS2 o criptomonedas!",
+        "Withdraw Money, Crypto or PayPal!": "Retira dinero, criptomonedas o PayPal!",
+        "WITHDRAW WITH P2P CS2 SKINS.": "RETIRA CON SKINS P2P DE CS2.",
+        "Withdraw Real Money or Crypto!": "Retira dinero real o criptomonedas!",
+        "Withdraw BTC, ETH, USDT or Tron!": "Retira BTC, ETH, USDT o Tron!",
+        "Withdraw CS2 Skins or PayPal!": "Retira Skins de CS2 o PayPal!",
+        "Withdraw CS2 Skins and Items!": "Retira Skins e items de CS2!",
+        "Withdraw Steam Trading cards.": "Retira cartas de intercambio de Steam!",    
+        "1h, 24h and 7d Giveaways": "Sorteos de 1h, 24h y 7d",
+        "24h Giveaway": "Sorteo de 24h",
+        "3h and 24h Giveaway": "Sorteos de 3h y 24h",
+        "Daily and Weekly Giveaways": "Sorteos diarios y semanales",
+        "1h Giveaway": "Sorteo de 1h",
+        "1h, 24h Giveaways": "Sorteos de 1h y 24h",
+        "Rare Giveaways": "Sorteos raros",
+        "Weekly Giveaways": "Sorteos semanales",
+        "Daily Giveaways": "Sorteos diarios",
+        "Deposit Required": "Depósito requerido",
+        "+360% Deposit Bonus": "+360% Bono de depósito",
+        "+100% Deposit Bonus": "+100% Bono de depósito",
+        "+10% Deposit Bonus": "+10% Bono de depósito",
+        "+5% Deposit Bonus": "+5% Bono de depósito",
+        "+1% Deposit Bonus": "+1% Bono de depósito",
+        "70 Free Spins": "70 Giros gratis",
+        "Every 24h Reward": "Recompensa cada 24 horas",
+        "Daily Case": "Estuche diario",
+        "Daily Faucet": "Grifo diario",
+        "Daily Roll": "Tirada diaria",
+        "Daily Coins": "Monedas diarias",
+        "Faucet and Giveaways": "Grifo y sorteos",
+        "Daily 0.02$": "0.02$ diarios",
+        "Daily 0.02$ + Free Case": "0.02$ diarios + Estuche gratis",
+        "360% Deposit Bonus":"360% Bono de depósito",
+        "Deposit Bonus":"Bono de depósito",
+        "Visit WebSite": "Visitar sitio web",
+        "Visit WebSite or Copy": "Visitar sitio web o copiar",
+        "100% deposit bonus": "Bono de depósito del 100%",
+        "+1% Sell Bonus": "Bono de venta del +1%",
+        "+3% Sell Bonus": "Bono de venta del +3%",
+        "5% deposit bonus": "Bono de depósito del 5%",
+        "5 Free Cases": "5 Estuches gratis",
+        "Free 50 Gems": "50 Gemas gratis",
+        "3 Free Cases": "3 Estuches gratis",
+        "Free 5€": "5€ gratis",
+        "2.00$ For Free": "2.00$ gratis",
+        "5.00$ For Free": "5.00$ gratis",
+        "Free 1.00$": "1.00$ gratis",
+        "Free 0.90$": "0.90$ gratis",
+        "Free 0.50$": "0.50$ gratis",
+        "Free 0.40$": "0.40$ gratis",
+        "Free 0.30$": "0.30$ gratis",
+        "Free 0.25$": "0.25$ gratis",
+        "Free 0.20$": "0.20$ gratis",
+        "Free 0.15$": "0.15$ gratis",
+        "Free 0.10$": "0.10$ gratis",
+        "Free 0.05$": "0.05$ gratis",
+        "Receive up to 5.00$": "Recibe hasta 5,00$",
+        "Free Case": "Estuche gratis",
+        "Free 1$": "1$ gratis",
+        "Free 2$": "2$ gratis",
+        "Big Daily Giveaways": "Sorteos diarios grandes",
+        "Free Case up to 250$": "Estuche gratis de hasta 250$",
+        "Daily Giveaway": "Sorteo diario",
+        "Free 100 Diamonds": "100 Diamantes gratis",
+        "500 coins": "500 monedas",
+        "Daily Cases": "Estuches diarios",
+        "3 Energy Points": "3 Puntos de energía",
+        "Free 200 Coins": "200 Monedas gratis",
+        "some free coins": "algunas monedas gratis",
+        "Free 2$": "2$ gratis",
+        "Free spins": "Giros gratis",
+        "Offerwall": "Pared de ofertas",
+        "x2 Mining Rate": "Tasa de minería x2",
+        "Games Giveaways": "Sorteos de juegos"    
+      },
+      "pt": {
+        "CSGORUN is a leading virtual skin gambling platform with diverse modes like Crash, Roulette, PVP, and esports betting. It's user-friendly.": "CSGORUN é uma plataforma líder de apostas virtuais com skins, com diversos modos como Crash, Roleta, PVP e apostas em esportes eletrônicos. É fácil de usar.",
+        "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins é uma plataforma online criada para fornecer aos jogadores um mercado para comprar, vender e negociar skins para CS2 e Rust.",
+        "RustMagic - a cutting-edge Rust skin betting site, features five distinct game modes, withdrawal in Rust skins, and a daily free case system for users.": "RustMagic - site de apostas de skins Rust com cinco modos de jogo, saques em skins Rust e sistema diário de caixas grátis.",
+        "SKINFANS - CS2 skin case opening , beautiful animations, provably fair system. Regular giveaways, Battle-pass for newcomers, sleek design.": "SKINFANS - Abertura de caixas de pele CS2, animações bonitas, sistema comprovadamente justo. Sorteios regulares, Passe de Batalha para novatos, design elegante.",
+        "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS:GO, Dota 2, and RUST skins.": "CSFAIL, um site proeminente em Skin Gambling, oferece diversos modos, interface amigável e recursos de bônus para skins de CS:GO, Dota 2 e RUST.",
+        "Yayskins, a CS2 Skin Gambling Platform, excels with user-friendly design, diverse game modes, live chat, and provable fairness.": "Yayskins - plataforma de apostas CS2 com design amigável, vários modos de jogo, chat ao vivo e equidade comprovada.",
+        "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, provavelmente o melhor site de apostas de CS2. Chuvas regulares, brindes e códigos promocionais. Você pode jogar muitos jogos e caça-níqueis.",
+        "CSGO500 probably the best CS2 and Rust Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, provavelmente o melhor site de apostas de CS2. Chuvas regulares, brindes e códigos promocionais. Você pode jogar muitos jogos e caça-níqueis.",
+        "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll é um dos sites mais populares. Inclui roleta, crash e muitos outros. Agora testando apostas em e-sports.",
+        "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": "CSGOEmpire é um dos sites mais populares. Inclui roleta e coinflip. Trabalhando desde 2016. Aposta em partidas com prioridade.",
+        "CSGOPolygon is a legendary site like CSGODouble with classic Roulette, but have Dices, Crash, Slots and even Esports Betting!": "CSGOPolygon é um site lendário como o CSGODouble, com roleta clássica, mas tem dados, crash, caça-níqueis e até apostas em e-sports!",
+        "Gamdom Casino offers a variety of in-house games, innovative social engagement, provably fair system, and good reputation in online gaming.": "Gamdom Casino oferece uma variedade de jogos internos, envolvimento social inovador, sistema comprovadamente justo e boa reputação nos jogos online.",
+        "CSGOPOSITIVE is a famous esports betting site with interesting system of cashback, you can bet skins or money. Has various payments options.": "Famoso site de apostas em e-sports com um sistema interessante de cashback, você pode apostar skins ou dinheiro. Possui várias opções de pagamento.",
+        "Rollbit is a new Casino site which includes Sport Betting and many classic games like roulette. Includes Daily Bonuses !": "Rollbit é um novo site de cassino que inclui apostas esportivas e muitos jogos clássicos como roleta. Inclui bônus diários!",
+        "CSGOLuck is a licensed CSGO skin gambling site that accepts multiple deposit methods, offering various games and a user-friendly design.": "É um site de apostas de skins de CSGO licenciado que aceita vários métodos de depósito, oferecendo diversos jogos e um design amigável para o usuário.",
+        "Duelbits is a safe and licensed online casino with a variety of games, sports betting, esports betting, and instant cryptocurrency transactions.": "Um cassino online seguro e licenciado com jogos, apostas esportivas, apostas em e-sports e transações de criptomoedas instantâneas.",
+        "InsaneGG is an online platform that offers a range of CSGO skin gambling games with professionally designed and smooth animations.": "Uma plataforma online que oferece jogos de apostas de skins de CSGO com animações profissionalmente projetadas e suaves.",
+        "Rustix - gambling platform for CS2 and Rust with original games, fair gameplay, bonuses, and impressive animations. Opened in 2023.": "Rustix - plataforma de apostas para CS2 e Rust com jogos originais, jogabilidade justa, bônus e animações impressionantes. Aberto em 2023.",
+        "CSGO-Skins is a reputable online platform where users can open custom CS2 cases and participate in daily Giveaways.": "CSGO-Skins é uma plataforma online confiável onde os usuários podem abrir caixas personalizadas de CS2 e participar de brindes diários.",
+        "FlameCases is an online platform that permits users to open cases for CS2 and Dota 2. Since its launch in 2017, the website provides various features.": "Uma plataforma online que permite aos usuários abrir caixas para CS2 e Dota 2 desde 2017, oferecendo várias funcionalidades.",
+        "KNIFEX is a CS2 gambling site that offers a range of game modes, including case opening, case battles, coinflip, crash, clash and many more!": "Um site de apostas de CS2 com uma variedade de modos de jogo, incluindo abertura de caixas, batalhas de caixas, coinflip, crash, clash e muito mais!",
+        "DatDrop is a website that specializes in opening cases that contain skins from CS2. Its most prominent feature is the case-opening battles.": "DatDrop é um site que se especializa em abrir caixas que contêm skins do CS2. Sua característica mais proeminente são as batalhas de abertura de caixas.",      
+        "DaddySkins is a valid CSGO case opening website that has been in operation since 2017, and it offers Case Openings, Case Battles, and Upgrader.": "DaddySkins é um site de abertura de caixas do CSGO que está em operação desde 2017 e oferece Aberturas de Caixas, Batalhas de Caixas e Upgrader.",  
+        "Clash.gg is a new CS2 Gambling site which includes many games like Roulette, Upgrader, Cases and many more !": "Clash.gg é um novo site de apostas de CS2 que oferece uma ampla variedade de jogos emocionantes, como Roleta, Upgrader, Caixas e muito mais!",
+        "HellStore is a platform that allows users to participate in CSGO skin betting through game modes like Coinflip, Jackpot, Upgrader, and Wheel.": "HellStore é uma plataforma que permite aos usuários participarem de apostas de skins do CSGO através de modos de jogo como Coinflip, Jackpot e Roleta.",
+        "Hellcase is an online platform that allows users to purchase virtual cases filled with skins and items for various games such as CS2, Dota 2, and Rust.": "Hellcase é uma plataforma que permite aos usuários comprar caixas virtuais preenchidas com skins e itens para vários jogos como CS2, Dota 2 e Rust.",
+        "CSGOBIG - a gambling site for CS2 skins with game modes like Jackpot, Coinflip, Roulette, Cases, and Case Battles. Opened in 2015.": "CSGOBIG - um site de apostas de skins do CS2 com modos de jogo como Jackpot, Coinflip, Roleta, Caixas e Batalhas de Caixas. Aberto em 2015.",
+        "CSGOFast is a CSGO skin gambling site that offers a wide range of exclusive game modes. One of the earliest CSGO gambling sites.": "CSGOFast é um site de apostas de skins do CSGO que oferece uma ampla variedade de modos de jogo exclusivos. Um dos primeiros sites do CSGO.",
+        "CSGOLive is a safe and legitimate CS2 case opening website with custom cases, daily bonuses, and a Provably Fair system.": "CSGOLive é um site seguro e legítimo de abertura de caixas do CS2 com caixas personalizadas, bônus diários e um sistema Provably Fair.",
+        "WTFSkins is a reliable and popular online platform offering unique games, daily rewards, and a simple registration process.": "WTFSkins é uma plataforma online confiável e popular que oferece jogos únicos, recompensas diárias e um processo de registro simples.",
+        "Key-Drop is a reputable online gambling platform that offers various activities like Case Battles and Upgrader, as well as custom CSGO skin cases.": "Key-Drop é uma plataforma de apostas online renomada que oferece Batalhas de Caixas, Upgrader e caixas de skins personalizadas do CSGO.",
+        "Farmskins is a well-known CSGO case opening website that has been operating since 2016, offering a wide selection of skins for players to unbox.": "Farmskins é um conhecido site de abertura de caixas do CSGO, operando desde 2016, com ampla seleção de skins para os jogadores.",
+        "Bets4.pro is an online platform that offers users the ability to place bets on esports matches, particularly for CS2 , Dota 2, Valorant and many more.": "Bets4.pro é uma plataforma online para apostas em esportes eletrônicos, incluindo CS2, Dota 2, Valorant e mais.",
+        "This site can be called almost legendary among peers due to its high payouts and constant promotions. Include daily bonus!" : "Este site pode ser considerado quase lendário entre os colegas devido aos seus pagamentos elevados e promoções constantes. Inclui bônus diário!",
+        "HowlGG is a Rust skin gambling platform that offers a range of games, including jackpot, coinflip, slots, and live casino games." : "HowlGG é uma plataforma de jogos de apostas de skins do Rust que oferece uma variedade de jogos, incluindo jackpot, coinflip, slots e jogos de cassino.",
+        "BanditCamp is a Rust skin gambling website that provides several Rust-themed game modes like wheel of fortune, case unboxings, and coinflip." : "BanditCamp é um site de apostas de skins do Rust que oferece vários modos de jogo temáticos do Rust, como roda da fortuna, abertura de caixas e coinflip.",
+        "GCSkins is a well-known mobile app and website that offers CSGO skins and items as rewards for completing online tasks. Available since 2016." : "GCSkins é um aplicativo móvel e um site bem conhecidos que oferecem skins e itens de CSGO como recompensa por completar tarefas online.",
+        "GrindBux is a trusted platform where you can earn some money by completing surveys or play mobile and desktop games." : "GrindBux é uma plataforma confiável onde você pode ganhar dinheiro completando pesquisas ou jogando jogos para dispositivos móveis e desktop.",
+        "Rust skin gambling site that has been around since 2017. The platform offers a range of popular games, including high-roller jackpot and coinflip games." : "Site de apostas de skins do Rust em operação desde 2017. Oferece variedade de jogos populares, incluindo jackpot e coinflip.",
+        "RustBet - Trusted gambling site, Rust skins as rewards. Jackpot, coinflip, and skin upgrader games. Clean reputation, SSL encryption, user-friendly." : "RustBet - Site confiável de apostas com skins do Rust. Jogos de jackpot, coinflip e aprimoramento. Reputação sólida, criptografia SSL, interface amigável.",
+        "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot and coinflip. Easily enter and withdraw items from games." : "RustStake é uma plataforma de jogos de apostas de skins do Rust que oferece uma variedade de jogos, incluindo jackpot e coinflip. Entre e retire itens dos jogos com facilidade.",
+        "In fact, the progenitor of sites for earning through Steam, stands out for its huge selection of Withdrawal methods." : "Na verdade, o precursor de sites para ganhar dinheiro através do Steam, destaca-se pela enorme seleção de métodos de saque.",
+        "RustyLoot offers a variety of games, including Wheel, Plinko, and more. With its transparent and provably fair system, RustyLoot is safe and enjoyable." : "RustyLoot oferece vários jogos, incluindo Roleta, Plinko e mais. Seguro e divertido, com sistema transparente e justo.",
+        "RustChance has been operating since 2017 and offers several popular games, including Jackpot, Wheel, Coinflip, Crash, and Landmines.":"O RustChance está em operação desde 2017 e oferece vários jogos populares, incluindo Jackpot, Roleta, Cara ou Coroa, Queda e Campo Minado.",
+        "CrashGG focuses on Rust skin gambling and offers various games, including its primary feature, the crash game mode. Also has Duels, Blackjack and Lottery.":"O CrashGG é especializado em apostas de skins do Rust, com vários jogos, incluindo o modo crash. Também tem Duelos, Blackjack e Loteria.",
+        "HypeUp is owned by the same operators of two popular betting sites, CSGORoll and HypeDrop. Offers two original games and Slots with Live Games.":"O HypeUp é de propriedade dos operadores de CSGORoll e HypeDrop, oferece dois jogos originais e Slots com Jogos Ao Vivo.",
+        "The website has a decent number of survey providers and offerwall partners to choose from, and there are plenty of options for withdrawing earnings.":"O site possui um número razoável de provedores de pesquisas e parceiros de oferta para escolher, e há muitas opções para sacar os ganhos.",
+        "SkinSwap is an online platform that allows players to trade and sell skins from popular games such as CS2 and Rust. Owned and operated by RustySell.":"O SkinSwap é uma plataforma online para negociar e vender skins de jogos populares como CS2 e Rust, pertencente à RustySell.",
+        "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.":"CSGOSelly é um site que permite aos usuários converter suas skins de CSGO em dinheiro através de vários métodos de pagamento. Foi fundado em 2021.",
+        "Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.":"Um site único onde você pode ganhar dinheiro ganhando jogos em várias disciplinas cibernéticas de jogos móveis. Também possui muitos offerwalls.",
+        "Mobile Games. Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.":"Um site único onde você pode ganhar dinheiro ganhando jogos em várias disciplinas cibernéticas de jogos móveis. Também possui muitos offerwalls.",
+        "RustMoment is a gambling site for Rust skin enthusiasts with six games, bonuses, and a rakeback system. It accepts standard and cryptocurrency payments.":"RustMoment é um site de apostas para entusiastas de skins do Rust com seis jogos, bônus e pagamentos em moeda padrão e criptomoeda.",
+        "Freeward is a GPT site that provides various opportunities for users to earn rewards through tasks like surveys and watching videos.": "Freeward é um site que oferece oportunidades para os usuários ganharem recompensas por meio de tarefas como pesquisas e vídeos.",
+        "Roobet is an online casino that allows users to play games using cryptocurrency. The platform has a reputation for being legitimate and safe.": "Roobet é um cassino online que permite aos usuários jogar jogos usando criptomoeda. A plataforma tem uma reputação de ser legítima e segura.",
+        "xplay is a platform that allows CS2 players to earn skins just by playing on their servers. The platform offers various servers and daily challenges.": "xplay é uma plataforma que permite aos jogadores de CS2 ganhar skins jogando em seus servidores. Oferece vários servidores e desafios diários.",
+        "Established in 2018, it offers jackpot, coinflip, and roulette games with enhanced features, provable fairness, and attractive animations.": "Estabelecido em 2018, oferece jogos de jackpot, coinflip e roleta com recursos aprimorados, justiça comprovável e animações atrativas.",
+        "GameTame is a GPT site that provides rewards for completing various activities and offers. The platform is specifically designed for gamers.": "GameTame é um site que oferece recompensas por completar atividades e ofertas. É projetado especialmente para jogadores.",
+        "Salad is a website that offers users the opportunity to mine wallet and buy giftcards and many more using their computer's processing power.": "Salad é um site que permite aos usuários minerar carteiras, comprar cartões-presente e muito mais usando o poder de processamento do computador.",
+        "Site from Gamehag owners. Has a decent number of survey providers and offerwall partners to choose from, plenty of options for withdrawing earnings.": "Site dos proprietários do Gamehag. Oferece provedores de pesquisas, parceiros de oferta e opções de saque dos ganhos.",
+        "SteamGifts is a legitimate website for Steam Game Giveaways with a supportive community and helpful resources.": "SteamGifts é um site legítimo para sorteios de jogos do Steam, com uma comunidade solidária e recursos úteis.",
+        "GrindBux is a trusted platform when you can earn some money by completing surveys or play mobile and desktop games.": "GrindBux é uma plataforma confiável onde você pode ganhar dinheiro ao completar pesquisas ou jogar jogos móveis e de desktop.",
+        "RustCases is a trusted Rust gambling site with various game modes, a wide range of cases, and skin withdrawal options. By RustChance owners.": "RustCases é um site confiável de apostas em Rust com diversos modos de jogo, uma ampla seleção de cases e opções de retirada de skins.",
+        "RustClash is a new Rust Gambling site which includes many games like Roulette, Upgrader, Cases and many more !":"RustClash é um novo site de apostas de Rust que inclui muitos jogos como Roleta, Upgrader, Cases e muitos outros!",
+        "BC.Game is an online casino and sportsbook that was launched in 2017, offering over 8,000 games including proprietary and probably fair games.":"BC.Game é um cassino online e casa de apostas lançado em 2017, com mais de 8.000 jogos, incluindo jogos proprietários e provavelmente justos.",
+        "Primedice is an online Crypto Dice Game Casino that has been in operation since 2013. It was one of the first platforms to use crypto for gambling.":"Primedice é um cassino de dados criptografados online em operação desde 2013, pioneiro no uso de criptomoedas em jogos de azar.",
+        "Tradeit is an online marketplace that offers players the opportunity to trade, buy, and sell skins for a variety of games, including CS2. Working since 2017.":"Tradeit é um mercado online de skins de jogos, incluindo CS2, onde os jogadores podem trocar, comprar e vender skins. Trabalhando desde 2017.",
+        "DMarket is a reliable and popular marketplace for Steam items, with a large number of items available and positive reviews on Trustpilot.":"DMarket é um mercado confiável e popular para itens do Steam, com uma grande quantidade de itens disponíveis e avaliações positivas no Trustpilot.",
+        "Swap.gg is a website that allows users to buy, sell, and trade CS2, Rust , TF2 and other virtual items from various games. Working since 2017.":"Swap.gg é um site que permite aos usuários comprar, vender e trocar itens virtuais de CS2, Rust, TF2 e outros jogos. Trabalhando desde 2017.",
+        "BitSkins is an online marketplace for in-game skins, particularly for Counter-Strike 2, Dota 2, and Team Fortress 2. Launched in 2015.":"BitSkins é um mercado online para skins de jogos, especialmente para Counter-Strike 2, Dota 2 e Team Fortress 2. Lançado em 2015.",
+        "Secure P2P marketplace owned by Hellcase. SSL-encrypted, KYC verification, friendly design, competitive pricing, trusted trading platform.":"Mercado P2P seguro da Hellcase. Criptografado com SSL, verificação KYC, design amigável, preços competitivos, plataforma confiável.",
+        "BitSkins P2P is an online platform for buying and selling virtual items, with a focus on CS2 skins. The parent company, BitSkins.":"BitSkins P2P é uma plataforma online para compra e venda de itens virtuais, com foco em skins de CS2. A empresa-mãe, BitSkins.",
+        "Trusted CS2 skin platform with rentals, endorsed by YouTubers. Secure, limited to CS2 skins, fees apply, and user reviews indicate room for improve.":"Plataforma confiável de skins CS2 com aluguel, endossada por YouTubers. Segura, limitada a skins de CS2, taxas aplicáveis, avaliações indicam melhorias.",
+        "GamerPay is a trusted platform for buying and selling CS2 skins, with a free selling option, secure transactions, and high-quality skin inspection tool.":"GamerPay é uma plataforma confiável para compra e venda de skins de CS2. Venda gratuita, transações seguras, inspeção de skins de alta qualidade.",
+        "CSGO Market is an online P2P marketplace that provides a safe and secure platform for buying and selling CS2 skins. Established in 2015.":"CSGO Market é um mercado P2P online que oferece uma plataforma segura para comprar e vender skins de CS2. Estabelecido em 2015.",
+        "Lis-Skins is a popular marketplace for Steam items, especially CS2, Rust and Dota 2 skins and items. The platform was founded in 2020.":"Lis-Skins é um mercado popular para itens do Steam, especialmente skins e itens de CS2, Rust e Dota 2. A plataforma foi fundada em 2020.",
+        "WhiteMarket is a P2P platform for CS2 skin trading. It offers secure trades, various deposit options, and community engagement.":"WhiteMarket é uma plataforma P2P segura para negociação de skins de CS2 com opções de depósito e envolvimento da comunidade.",
+        "CS.Deals is a platform that allows users to buy, sell, and trade skins from popular games such as CS2, Dota 2, Rust, and Team Fortress 2. Working since 2016.":"CS.Deals é uma plataforma para comprar, vender e trocar skins de jogos populares como CS2, Dota 2, Rust e Team Fortress 2 desde 2016.",
+        "SkinBid is an online marketplace for CS2 skins and in-game items, offering buying, selling, and auctioning features with a user-friendly interface.":"SkinBid é um mercado online para skins de CS2 e itens de jogos, oferecendo recursos de compra, venda e leilão com uma interface amigável.",
+        "LOOT.Farm is an online platform that offers users the ability to Trade virtual items from popular games like CS2, Dota 2, Team Fortress 2, and Rust.":"LOOT.Farm é uma plataforma online para negociação de itens virtuais de jogos populares como CS2, Dota 2, TF2 e Rust.",
+        "SkinBaron is an online platform based in Germany that enables users to buy and sell their CS2 skins. The platform has gained a good reputation.":"SkinBaron é uma plataforma online alemã para compra e venda de skins de CS2 com boa reputação.",
+        "Gamdom is one of the best CS2 Match Betting Sites. You can play Roulette, Wheel, Crash, Slots and many more!":"A Gamdom é um dos melhores sites de apostas em partidas de CS2. Você pode jogar Roleta, Roda da Sorte, Crash, Caça-níqueis e muitos outros!",
+        "SkinCashier is an online platform that allows players to Instant Sell their CS2, Rust, Dota 2, and TF2 skins for real money. Operating since 2020.": "SkinCashier é uma plataforma online de venda instantânea de skins de CS2, Rust, Dota 2 e TF2 por dinheiro real desde 2020.",
+        "Avan.Market is an online platform that offers users the opportunity to sell gaming skins from popular games like CS2, Dota 2, RUST, and TF2.": "Avan.Market é uma plataforma online que oferece aos usuários a oportunidade de vender skins de jogos populares como CS2, Dota 2, RUST e TF2.",
+        "Skins.Cash is a reputable platform with positive reviews, reliable customer support, and over six years of operation. Pricing not the best one.": "Skins.Cash é uma plataforma confiável com avaliações positivas e mais de seis anos de operação, mas preços não são os melhores.",
+        "CYBERSHOKE is a website that provides servers for playing CS2. It offers various servers for players to choose.":"A CYBERSHOKE é um site que disponibiliza servidores para jogar CS2. Ele oferece vários servidores para os jogadores escolherem.",
+        "This site was created for easy leveling up Steam, you can sell emojis and profile backgrounds for Steam Trading Cards to fast level up.": "Este site facilita o aumento de nível no Steam. Venda emojis e fundos de perfil em troca de cartas de troca do Steam para subir de nível rapidamente.",
+        "SteamLevelU is a legitimate platform to buy Steam trading card packs for enhancing Steam account levels, associated with SH Level Up.": "O SteamLevelU é uma plataforma legítima para comprar pacotes de cartas de troca do Steam e aumentar o nível da sua conta Steam.",
+        "SteamLevels is a user-friendly website that helps increase your Steam account level by purchasing card packs and accepting CSGO skins.": "SteamLevels é um site fácil de usar que ajuda a aumentar o nível da sua conta Steam através da compra de pacotes de cartas e da aceitação de skins do CSGO.",
+        "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot, and coinflip. Easily enter and withdraw items from games.": "O RustStake é uma plataforma de apostas de skins de Rust com jogos como jackpot e coinflip. Fácil entrada e retirada de itens.",
+        "iTrade.gg is a Trusted platform for trading rust skins. User-friendly design, free sign-up bonus, and daily rewards create a seamless trading experience.":"Confiável para negociar skins de Rust. Design intuitivo, bônus de inscrição grátis e recompensas diárias para uma experiência de negociação tranquila.",
+        "Shuffle.com is a comprehensive crypto casino with a unique registration process, original games, a VIP program, and plans for future expansion.":"O Shuffle.com é um cassino cripto completo com registro único, jogos originais e programa VIP, com planos de expansão.",
+        "CashoutCSGO is a platform solely dedicated to selling CS2 skins for crypto or paypal, offering a convenient conversion service.":"O CashoutCSGO é uma plataforma exclusivamente dedicada à venda de skins do CS2, oferecendo um serviço de conversão conveniente.",
+        "Notable online marketplace, vast offerings from games to gift cards, reduced rates, stellar reputation, intuitive interface, up to 98% discounts.":"Notável mercado online, vasta oferta de jogos a cartões-presente, taxas reduzidas, reputação excelente, interface intuitiva.",
+        "Withdraw BTC, ETH, LTC or PayPal!":"Retire BTC, ETH, LTC ou PayPal!",
+        "Withdraw Money, Skins or Devices!":"Levantar dinheiro, skins ou dispositivos!",
+        "Withdraw BTC, LTC, ETH and many else!":"Retire BTC, LTC, ETH e muito mais!",
+        "Withdrawal of many types of cryptocurrencies !":"Retirada de vários tipos de criptomoedas!",
+        "Withdraw CS2 Skins, Crypto or Real Money!": "Retirar Skins do CS2, Criptomoedas ou Dinheiro!",
+        "Withdraw CS2, Dota 2, TF2 or Rust Items!": "Retirar Itens do CS2, Dota 2, TF2 ou Rust!",
+        "Withdraw CS2 Skins, Crypto or Game Keys!": "Retirar Skins do CS2, Criptomoedas ou Jogos!",
+        "Withdraw CS2 Skins, Crypto or PayPal!": "Retirar Skins do CS2, Criptomoedas ou PayPal!",
+        "Withdraw Money, CS2, TF2 or Rust Skins!": "Retirar Dinheiro, Skins do CS2, TF2 ou Rust!",
+        "Withdraw CS2 Skins, Dota 2 and H1Z1 Items!": "Retirar Skins do CS2, Dota 2 e Itens do H1Z1!",
+        "Withdraw CS2, Rust Skins and Dota 2 Items!": "Retirar Skins do CS2, Rust e Itens do Dota 2!",
+        "Withdraw Rust Skins, Crypto or PayPal!": "Saque Skins do Rust, Criptomoedas ou PayPal!",
+        "Withdraw Dota 2 Items, Crypto or PayPal!": "Saque Skins dota 2, Criptomoedas ou PayPal!",
+        "Withdraw Rust Skins or Crypto!": "Retire Skins do Rust ou Criptomoedas!",
+        "Withdraw Rust Skins and Items!": "Retire Skins e Itens do Rust!",
+        "Withdraw with many-many ways.": "Retirar de várias-muitas maneiras.",
+        "Buy Games, Gift Cards and many-many more.": "Compre Jogos, Cartões e Muito Mais.",
+        "Withdraw Crypto, gift cards or real money!": "Retire Crypto, cartões presente ou dinheiro!",
+        "Withdraw CS2 Skins, Gift Cards or Crypto!": "Retire Skins, Cartões Presente ou Criptomoedas!",
+        "Withdraw Bitcoin, Ethereum or Litecoin!": "Retire Bitcoin, Ethereum ou Litecoin!",
+        "Withdraw Games, GiftCards and many more!": "Retire Jogos, Cartões Presente e muito mais!",
+        "Withdraw Crypto or Real Money!": "Retire Criptomoedas ou Dinheiro Real!",
+        "Withdraw Crypto and Gift Cards!": "Levantar Criptomoedas e Cartões de Presente!",
+        "Withdraw BTC, LTC, USDT, USDC or ETH!": "Levantar BTC, LTC, USDT, USDC ou ETH!",
+        "Withdraw CS2 Skins or Items!": "Levantar Skins ou Itens de CS2!",
+        "Withdraw Games, GiftCards or Dota2 & TF2 Items!": "Levantar Jogos ou Itens de Dota2 e TF2!",
+        "Withdraw Games, GiftCards or Donate to Charity!": "Levantar Jogos, Cartões de Presente!",
+        "Participate in Giveaways and win Steam Games.": "Participar em Sorteios e ganhar Jogos da Steam.",
+        "Withdraw CS2 And Rust Skins or Crypto!": "Retirar Skins do CS2 e Rust ou Criptomoedas!",
+        "Withdraw CS2 Skins or real Money!": "Retirar Skins do CS2 ou Dinheiro Real!",
+        "Withdraw Steam Trading cards or Games.": "Retirar Cartas do Steam ou Jogos.",
+        "Withdraw USDT, Skins or Real Money!": "Retirar USDT, Skins ou Dinheiro Real!",
+        "Withdraw Money, CS2 or Rust Skins!": "Retirar Dinheiro, Skins do CS2 ou Rust!",
+        "Withdraw Money, Crypto or Skins!": "Retirar Dinheiro, Criptomoedas ou Skins!",
+        "Withdraw CS2 Skins or Crypto!": "Retirar Skins do CS2 ou Criptomoedas!",
+        "Withdraw Money, Crypto or PayPal!": "Retirar Dinheiro, Criptomoedas ou PayPal!",
+        "WITHDRAW WITH P2P CS2 SKINS.": "Retirar com Skins do CS2 P2P.",
+        "Withdraw Real Money or Crypto!": "Retirar Dinheiro Real ou Criptomoedas!",
+        "Withdraw BTC, ETH, USDT or Tron!": "Retirar BTC, ETH, USDT ou Tron!",
+        "Withdraw CS2 Skins or PayPal!": "Retirar Skins do CS2 ou PayPal!",
+        "Withdraw CS2 Skins and Items!": "Retirar Skins e Itens do CS2!",
+        "Withdraw Steam Trading cards.": "Retirar Cartas de Negociação do Steam.",
+        "1h, 24h and 7d Giveaways": "Sorteios de 1h, 24h e 7d",
+        "24h Giveaway": "Sorteio de 24h",
+        "3h and 24h Giveaway": "Sorteios de 3h e 24h",
+        "Daily and Weekly Giveaways": "Sorteios Diários e Semanais",
+        "1h Giveaway": "Sorteio de 1h",
+        "1h, 24h Giveaways": "Sorteios de 1h e 24h",
+        "Rare Giveaways": "Sorteios Raros",
+        "Weekly Giveaways": "Sorteios Semanais",
+        "Daily Giveaways": "Sorteios Diários",
+        "Deposit Required": "Depósito Necessário",
+        "+360% Deposit Bonus": "+360% Bónus de Depósito",
+        "+100% Deposit Bonus": "+100% Bónus de Depósito",
+        "+10% Deposit Bonus": "+10% Bónus de Depósito",
+        "+5% Deposit Bonus": "+5% Bónus de Depósito",
+        "+1% Deposit Bonus": "+1% Bónus de Depósito",
+        "70 Free Spins": "70 Rodadas Grátis",
+        "Every 24h Reward": "Recompensa a Cada 24 Horas",
+        "Daily Case": "Caixa Diária",
+        "Daily Faucet": "Faucet Diário",
+        "Daily Roll": "Rolar Diário",
+        "Daily Coins": "Moedas Diárias",
+        "Faucet and Giveaways": "Faucet e Sorteios",
+        "Daily 0.02$": "0,02$ Diários",
+        "Daily 0.02$ + Free Case": "0,02$ Diários + Caixa Grátis",
+        "360% Deposit Bonus":"360% Bónus de Depósito",
+        "Deposit Bonus":"Bónus de Depósito",
+        "Visit WebSite": "Visite o Site",
+        "Visit WebSite or Copy": "Visite o Site ou Copie",
+        "100% deposit bonus": "Bônus de depósito de 100%",
+        "+1% Sell Bonus": "Bônus de venda de +1%",
+        "+3% Sell Bonus": "Bônus de venda de +3%",
+        "5% deposit bonus": "Bônus de depósito de 5%",
+        "5 Free Cases": "5 Caixas Grátis",
+        "Free 50 Gems": "50 Gemas Grátis",
+        "3 Free Cases": "3 Caixas Grátis",
+        "Free 5€": "5€ Grátis",
+        "2.00$ For Free": "1,5.00$ grátis",
+        "5.00$ For Free": "5.00$ grátis",
+        "Free 1.00$": "1,00$ grátis",
+        "Free 0.90$": "0,90$ grátis",
+        "Free 0.50$": "0,50$ grátis",
+        "Free 0.40$": "0,40$ grátis",
+        "Free 0.30$": "0,30$ grátis",
+        "Free 0.25$": "0,25$ grátis",
+        "Free 0.20$": "0,20$ grátis",
+        "Free 0.15$": "0,15$ grátis",
+        "Free 0.10$": "0,10$ grátis",
+        "Free 0.05$": "0,05$ grátis",
+        "Receive up to 5.00$": "Receba até 5,00$",
+        "Free Case": "Caixa Grátis",
+        "Free 1$": "1$ grátis",
+        "Free 2$": "2$ grátis",
+        "Free 1$": "1$ grátis",
+        "Big Daily Giveaways": "Grandes Sorteios Diários",
+        "Free Case up to 250$": "Caixa Grátis até 250$",
+        "Daily Giveaway": "Sorteio Diário",
+        "Free 100 Diamonds": "100 Diamantes Grátis",
+        "500 coins": "500 moedas",
+        "Daily Cases": "Caixas Diárias",
+        "3 Energy Points": "3 Pontos de Energia",
+        "Free 200 Coins": "200 Moedas Grátis",
+        "some free coins": "algumas moedas grátis",      
+        "Free 2$": "2$ Grátis",
+        "Free spins": "Rodadas Grátis",
+        "Offerwall": "Parede de Ofertas",
+        "x2 Mining Rate": "Taxa de Mineração x2",
+        "Games Giveaways": "Distribuição de Jogos"
+      },
+      "ru": {
+        "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, вероятно, является лучшим сайтом для азартных игр в CS2. Здесь регулярно проводятся раздачи и розыгрыши.",
+        "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll - один из самых популярных сайтов, который включает в себя рулетку, крэш и многие другие игры включая ставки на киберспорт.",
+        "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": "CSGOEmpire - один из самых популярных сайтов, предлагающий игру в Рулетку и Монетку. Кроме того, на сайте доступны ставки на матчи.",
+        "CSGOPolygon is a legendary site like CSGODouble with classic Roulette, but have Dices, Crash, Slots and even Esports Betting!": "CSGOPolygon - это легендарный сайт, похожий на CSGODouble, с классической рулеткой, но имеющий еще множество режимов и ставки.",
+        "Gamdom Casino offers a variety of in-house games, innovative social engagement, provably fair system, and good reputation in online gaming.": "Сайт Gamdom является одним из лучших сайтов для гемблинга в CS2. Здесь вы можете сыграть в рулетку, краш, слоты и многие другие игры!",
+        "CSGOPOSITIVE is a famous esports betting site with interesting system of cashback, you can bet skins or money. Has various payments options.": "CSGOPOSITIVE - это известный сайт для ставок на киберспорт. Здесь вы можете делать ставки как скинами, так и настоящими деньгами!",
+        "Rollbit is a new Casino site which includes Sport Betting and many classic games like roulette. Includes Daily Bonuses !": "Rollbit - новый сайт казино, который включает в себя ставки на спорт и множество классических игр, таких как рулетка и коинфлип.",
+        "CSGOLuck is a licensed CSGO skin gambling site that accepts multiple deposit methods, offering various games and a user-friendly design.": "СSGOLuck - относительно новый сайт, где доступны игры в рулетку, Crash, мини-игры Mines и Towers, открытие кейсов и слоты.",
+        "Duelbits is a safe and licensed online casino with a variety of games, sports betting, esports betting, and instant cryptocurrency transactions.": "Duelbits - это огромное крипто-казино с классическими азартными играми для сообщества CS2, такими как рулетка, монетка и другие.",
+        "InsaneGG is an online platform that offers a range of CSGO skin gambling games with professionally designed and smooth animations.": "InsaneGG - это онлайн-платформа, которая предлагает широкий спектр игр на CS2 скины с красивыми и плавными анимациями.",
+        "Rustix - gambling platform for CS2 and Rust with original games, fair gameplay, bonuses, and impressive animations. Opened in 2023.": "Rustix - игровая платформа для CS2 и Rust с оригинальными играми, честным геймплеем, бонусами и впечатляющей анимацией.",
+        "CSGO-Skins is a reputable online platform where users can open custom CS2 cases and participate in daily Giveaways.": "CSGO-Skins - это надежная онлайн-платформа, где пользователи могут открывать индивидуальные кейсы CS2 и участвовать в раздачах.",
+        "FlameCases is an online platform that permits users to open cases for CS2 and Dota 2. Since its launch in 2017, the website provides various features.": "FlameCases - это онлайн-платформа, которая позволяет пользователям открывать кейсы для CS2 и Dota 2. Работает еще с 2017.",
+        "KNIFEX is a CS2 gambling site that offers a range of game modes, including case opening, case battles, coinflip, crash, clash and many more!": "KNIFEX - это сайт CS2 азартных игр, который предлагает различные режимы игры, включая открытие кейсов, битвы кейсов и многое другое!",
+        "DatDrop is a website that specializes in opening cases that contain skins from CS2. Its most prominent feature is the case-opening battles.": "DatDrop - это сайт, специализирующийся на открытии кейсов со скинами из CS2. Основной режим кейс батл.",
+        "DaddySkins is a valid CSGO case opening website that has been in operation since 2017, and it offers Case Openings, Case Battles, and Upgrader.": "DaddySkins - это легальный сайт открытия кейсов в CS2, который работает с 2017 года. На нем так же есть кейс батл и апгрейдер.",
+        "Clash.gg is a new CS2 Gambling site which includes many games like Roulette, Upgrader, Cases and many more !": "Clash.gg - это новый сайт для азартных игр CS2, который включает в себя множество игр, таких как Рулетка, Апгрейдер, Кейсы и многие другие!",
+        "HellStore is a platform that allows users to participate in CSGO skin betting through game modes like Coinflip, Jackpot, Upgrader, and Wheel.": "HellStore - это платформа, которая позволяет пользователям участвовать в ставках на скины CSGO через большое количество игровых режимов",
+        "Hellcase is an online platform that allows users to purchase virtual cases filled with skins and items for various games such as CS2, Dota 2, and Rust.": "Платформа Hellcase предоставляет возможность пользователям приобретать виртуальные кейсы CS2, Dota 2 и Rust.",
+        "CSGOBIG - a gambling site for CS2 skins with game modes like Jackpot, Coinflip, Roulette, Cases, and Case Battles. Opened in 2015.": "Сайт азартных игр с использованием скинов из игры CS2, включающий такие режимы, как Jackpot, Coinflip, Roulette, Cases и Case Battles.",
+        "CSGOFast is a CSGO skin gambling site that offers a wide range of exclusive game modes. One of the earliest CSGO gambling sites.": "CSGOFast - это сайт для азартных игр на скины CSGO, который предлагает широкий выбор эксклюзивных игровых режимов.",
+        "CSGOLive is a safe and legitimate CS2 case opening website with custom cases, daily bonuses, and a Provably Fair system.": "CSGOLive - это старый классический сайт открытия кейсов CS2, где вы можете создавать свои собственные кейсы. Включает ежедневные бонусы!",
+        "WTFSkins is a reliable and popular online platform offering unique games, daily rewards, and a simple registration process.": "WTFSkins предоставляет классические игры азартного характера для CS2, такие как Джекпот, Рулетка и Крэш.",
+        "Key-Drop is a reputable online gambling platform that offers various activities like Case Battles and Upgrader, as well as custom CSGO skin cases.": "Key-Drop - это надежная платформа для онлайн-гемблинга, которая предлагает различные игры, такие как битвы кейсов и апгрейдер.",
+        "Farmskins is a well-known CSGO case opening website that has been operating since 2016, offering a wide selection of skins for players to unbox.": "Farmskins - это известный сайт для открытия кейсов в CS2, который работает с 2016 года и предлагает широкий выбор скинов для игроков.",
+        "Bets4.pro is an online platform that offers users the ability to place bets on esports matches, particularly for CS2 , Dota 2, Valorant and many more.": "Bets4.pro - это онлайн-платформа, которая позволяет пользователям делать ставки на матчи в киберспорте, в особенности на CS2 и Dota 2.",
+        "DMarket is a reliable and popular marketplace for Steam items, with a large number of items available and positive reviews on Trustpilot.": "DMarket - это надежный и популярный онлайн-маркетплейс для предметов Steam, с большим количеством товаров и положительными отзывами.",
+        "BitSkins is an online marketplace for in-game skins, particularly for Counter-Strike 2, Dota 2, and Team Fortress 2. Launched in 2015.": "BitSkins - это онлайн-маркетплейс для игровых скинов, особенно для игр Counter-Strike 2, Dota 2 и TF 2. Он был запущен в 2015 году.",
+        "Secure P2P marketplace owned by Hellcase. SSL-encrypted, KYC verification, friendly design, competitive pricing, trusted trading platform.": "Безопасная пиринговая площадка, принадлежащая Hellcase. Защита SSL, KYC-проверка, удобный дизайн, достойные цены, доверенный сайт.",
+        "CSGO Market is an online P2P marketplace that provides a safe and secure platform for buying and selling CS2 skins. Established in 2015.": "CSGO Market - это онлайн-рынок P2P, который обеспечивает безопасную и защищенную платформу для покупки и продажи скинов в CS2.",
+        "Lis-Skins is a popular marketplace for Steam items, especially CS2, Rust and Dota 2 skins and items. The platform was founded in 2020.": "Lis-Skins - это популярная торговая площадка для предметов Steam, особенно для скинов и предметов в играх CS2, Rust и Dota 2.",
+        "CS.Deals is a platform that allows users to buy, sell, and trade skins from popular games such as CS2, Dota 2, Rust, and Team Fortress 2. Working since 2016.": "CS.Deals - это платформа, которая позволяет пользователям покупать, продавать и обменивать скины из CS2, Dota 2, Rust и Team Fortress 2.",
+        "LOOT.Farm is an online platform that offers users the ability to Trade virtual items from popular games like CS2, Dota 2, Team Fortress 2, and Rust.": "LOOT.Farm - это онлайн-платформа, которая предоставляет услуги Обмена и Покупки предметов из CS2, Dota 2, Team Fortress 2 и Rust.",
+        "SkinCashier is an online platform that allows players to Instant Sell their CS2, Rust, Dota 2, and TF2 skins for real money. Operating since 2020.": "SkinCashier - это сайт, который позволяет игрокам моментально продавать свои скины из CS2, Rust, Dota 2 и TF2 за настоящие деньги.",
+        "Avan.Market is an online platform that offers users the opportunity to sell gaming skins from popular games like CS2, Dota 2, RUST, and TF2.": "Avan.Market - это онлайн-платформа, которая предоставляет возможность моментально продавать игровые скины из CS2, Dota 2, RUST и TF2.",
+        "Skins.Cash is a reputable platform with positive reviews, reliable customer support, and over six years of operation. Pricing not the best one.": "Skins.Cash - надежная платформа с положительными отзывами, надежной поддержкой клиентов и более чем шестилетним опытом работы.",
+        "This site was created for easy leveling up Steam, you can sell emojis and profile backgrounds for Steam Trading Cards to fast level up.": "Этот сайт был создан для упрощения процесса повышения уровня в Steam. Вы можете продавать предметы Steam за карточки, чтобы повысить уровень.",
+        "SteamLevelU is a legitimate platform to buy Steam trading card packs for enhancing Steam account levels, associated with SH Level Up.": "SteamLevelU - это честный сайт, где можно купить наборы карточек Steam для повышения уровней аккаунта в Steam. Она связана с SH Level Up.",
+        "SteamLevels is a user-friendly website that helps increase your Steam account level by purchasing card packs and accepting CSGO skins.": "Удобный сайт, который помогает повысить уровень вашей учетной записи Steam путем покупки наборов карточек, принимаются скины CS2.",
+        "SkinBid is an online marketplace for CS2 skins and in-game items, offering buying, selling, and auctioning features with a user-friendly interface.": "Торговая Площадка для скинов и предметов CS2, предлагающая возможность покупки, продажи и аукциона с удобным интерфейсом.",
+        "WhiteMarket is a P2P platform for CS2 skin trading. It offers secure trades, various deposit options, and community engagement.": "WhiteMarket - это P2P платформа для торговли скинами CS2. Безопасные сделки, различные варианты депозита и взаимодействие с сообществом.",
+        "Trusted CS2 skin platform with rentals, endorsed by YouTubers. Secure, limited to CS2 skins, fees apply, and user reviews indicate room for improve.": "Надежная платформа для скинов CS2 с возможностью аренды, рекомендованная Ютуберами. Безопасная, с доступной комиссией.",
+        "SkinSwap is an online platform that allows players to trade and sell skins from popular games such as CS2 and Rust. Owned and operated by RustySell.": "SkinSwap - онлайн-платформа, которая позволяет игрокам обменивать и продавать скины из популярных игр CS2 и Rust.",
+        "Tradeit is an online marketplace that offers players the opportunity to trade, buy, and sell skins for a variety of games, including CS2. Working since 2017.": "Tradeit - это онлайн-маркетплейс, который предлагает игрокам возможность торговать, покупать и продавать скины для различных игр.",
+        "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.": "CSGOSelly - это сайт, который позволяет быстро продать свои скины CS2 за деньги через различные способы вывода. Основан в 2021 году.",
+        "BC.Game is an online casino and sportsbook that was launched in 2017, offering over 8,000 games including proprietary and probably fair games.": "BC.Game - это онлайн-казино и букмекерская контора, запущенные в 2017 году. Они предлагают более 8000 игр с прозрачной системой.",
+        "Roobet is an online casino that allows users to play games using cryptocurrency. The platform has a reputation for being legitimate and safe.": "Roobet - это онлайн-казино, которое позволяет пользователям играть в игры с использованием криптовалюты. Платформа с чистой репутацией.",
+        "HypeUp is owned by the same operators of two popular betting sites, CSGORoll and HypeDrop. Offers two original games and Slots with Live Games.": "HypeUp принадлежит тем же операторам, что и два популярных сайта для ставок - CSGORoll и HypeDrop. Сайт предлагает Слоты.",
+        "HowlGG is a Rust skin gambling platform that offers a range of games, including jackpot, coinflip, slots, and live casino games.": "HowlGG - это платформа для азартных игр с использованием скинов из игры Rust. Можно найти джекпот, Монетку, Слоты и Игры с живыми дилерами.",
+        "iTrade.gg is a Trusted platform for trading rust skins. User-friendly design, free sign-up bonus, and daily rewards create a seamless trading experience.":"iTrade.gg - это надежная платформа для обмна скинами Rust. Удобный дизайн, Бонусы при регистрации и Ежедневные Награды.",
+        "Shuffle.com is a comprehensive crypto casino with a unique registration process, original games, a VIP program, and plans for future expansion.":"Shuffle.com - это всеобъемлющее крипто-казино с оригинальными играми, VIP-программой и планами на будущее расширение.",
+        "Notable online marketplace, vast offerings from games to gift cards, reduced rates, stellar reputation, intuitive interface, up to 98% discounts.":"Известный онлайн-магазин, огромный ассортимент от игр до подарочных карт, отличная репутация, удобный интерфейс, скидки до 98%.",
+        "Withdraw CS2 Skins, Crypto or Real Money!": "Выводите скины CS2, криптовалюту или деньги!",
+        "Withdraw CS2, Dota 2, TF2 or Rust Items!": "Выводите предметы CS2, Dota 2, TF2 или Rust!",
+        "Withdraw CS2 Skins, Crypto or Game Keys!": "Выводите скины CS2, криптовалюту или Игры!",
+        "Withdraw CS2 Skins, Crypto or PayPal!": "Выводите скины CS2, Криптовалюту или PayPal!",
+        "Withdraw Money, CS2, TF2 or Rust Skins!": "Выводите Деньги, Скины CS2, TF2 или Rust!",
+        "Withdraw CS2 Skins, Dota 2 and H1Z1 Items!": "Выводите предметы CS2, Dota 2 и H1Z1!",
+        "Withdraw CS2, Rust Skins and Dota 2 Items!": "Выводите предметы CS2, Dota 2 и Rust!",
+        "Withdraw Bitcoin, Ethereum or Litecoin!": "Выводите Bitcoin, Ethereum или Litecoin!",
+        "Withdraw CS2 And Rust Skins or Crypto!": "Выводите скины CS2, Rust или Крипту!",
+        "Withdraw CS2 Skins or real Money!": "Выводите скины CS2 или деньги на Карту!",
+        "Withdraw Rust Skins and Items!": "Вывод только скинами Rust!",
+        "Withdraw Steam Trading cards or Games.": "Выводите Steam Trading cards или Игры.",
+        "Withdrawal of many types of cryptocurrencies !":"Вывод большинства видов крипто!",
+        "Withdraw USDT, Skins or Real Money!": "Выводите USDT, Скины или Реальные Деньги",
+        "Withdraw BTC, LTC, USDT, USDC or ETH!": "Выводите BTC, LTC, USDT, USDC или ETH!",
+        "Buy Games, Gift Cards and many-many more.": "Покупайте игры и подарочные карты.",
+        "Withdraw Money, CS2 or Rust Skins!": "Выводите Деньги, скины CS2 или Rust!",
+        "Withdraw Money, Crypto or Skins!": "Выводите Деньги, Криптовалюту или Скины!",
+        "Withdraw CS2 Skins or Crypto!": "Выводите скины CS2 или криптовалюту!",
+        "Withdraw Money, Crypto or PayPal!": "Выводите Деньги, Крипту или PayPal!",
+        "WITHDRAW WITH P2P CS2 SKINS.": "Вывод только скинами CS2 через P2P!",
+        "Withdraw Rust Skins or Crypto!": "Выводите скины Rust или криптовалюту!",
+        "Withdraw Real Money or Crypto!": "Выводите Реальные Деньги или Крипту!",
+        "Withdraw BTC, ETH, USDT or Tron!": "Выводите BTC, ETH, USDT или Tron!",
+        "Withdraw CS2 Skins or PayPal!": "Выводите скины CS2 или PayPal!",
+        "Withdraw CS2 Skins and Items!": "Вывод только скинами CS2!",
+        "Withdraw Steam Trading cards.": "Выводите Steam Trading cards.",
+        "Visit WebSite": "Посетить Сайт",
+        "Visit WebSite or Copy": "Посетить Сайт",
+        "100% deposit bonus": "+100% к Пополнению",
+        "+3% Sell Bonus": "+3% Бонус к Продаже",
+        "5% deposit bonus": "+5% к Пополнению",
+        "5 Free Cases": "5 Бесплатных Кейсов",
+        "Free 50 Gems": "50 Камней Бесплатно",
+        "3 Free Cases": "3 Бесплатных Кейса",
+        "2.00$ For Free": "2.00$ Бесплатно",
+        "5.00$ For Free": "5.00$ Бесплатно",
+        "Free 0.90$": "0.90$ Бесплатно",
+        "Free 0.50$": "0.50$ Бесплатно",
+        "Free 0.40$": "0.40$ Бесплатно",
+        "Free 0.30$": "0.30$ Бесплатно",
+        "Free 0.25$": "0.25$ Бесплатно",
+        "Free 0.05$": "0.05$ Бесплатно",
+        "Receive up to 5.00$": "Получите до 5.00$",
+        "Free Case": "Бесплатный Кейс",
+        "Free 1$": "1$ Бесплатно",
+        "Free 2$": "2$ Бесплатно",
+        "Free 1$": "1$ Бесплатно",
+        "Free spins": "ФриСпины"
+      }
+    };
+  
+  
+    var currentTranslations = translations[languageTag] || {};
+  
+    var elements = parentElement.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
+    for (var j = 0; j < elements.length; j++) {
+      var text = elements[j].textContent.trim();
+      if (currentTranslations.hasOwnProperty(text)) {
+        elements[j].innerHTML = currentTranslations[text];
+      }
+    }
+  }
+  }
+  
+  if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes("/topic/") && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
+    function updateURLs(parentElement) {
+      var links = parentElement.querySelectorAll('a[href]');
+      var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
+    
+      for (var i = 0; i < links.length; i++) {
+        var href = links[i].getAttribute('href');
+        
+        if (href.includes('vk.com')) {
+          continue;
+        }
+        
+        var match = href.match(regex);
+        if (match) {
+          var domain = match[1] || '';
+          var path = match[2];
+          var updatedHref = '/ru' + path;
+          links[i].setAttribute('href', updatedHref);
+        }
+      }
+    }
+  
+    var SitesList = document.querySelector('.boxes-holder');
+    updateURLs(SitesList);
+  }
+  
+    function translateURLs2(parentElement, languageTag, translations) {
+      var supportedLanguages = Object.keys(translations);
+      var langWithSlashes = supportedLanguages.map(lang => '/' + lang + '/');
+    
+      var links = parentElement.querySelectorAll('a[href]');
+      for (var i = 0, len = links.length; i < len; i++) {
+        var href = links[i].getAttribute('href');
+  
+        function extractLanguageTagFromURL(pathname) {
+          var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
+          if (matches && matches.length > 1) {
+            return matches[1];
+          }
+          return "";
+        }
+      
+      var languageTag = extractLanguageTagFromURL(window.location.pathname);
+  
+        if (!href) continue;
+    
+        var url = new URL(href, window.location.href);
+        var path = url.pathname;
+    
+        if (languageTag !== 'en') {
+          var langIncluded = langWithSlashes.some(lang => path.includes(lang));
+          if (!langIncluded && supportedLanguages.includes(languageTag)) {
+            path = '/' + languageTag + path;
+            url.pathname = path;
+            links[i].setAttribute('href', url.href);
+          }
+        }
+      }
+  
+      var elements = document.querySelectorAll('.nav-bar .category-box-content span, .nav-bar ul .submenu li a');
+      for (var j = 0; j < elements.length; j++) {
+        var text = elements[j].textContent.trim();
+        if (translations[languageTag] && translations[languageTag].hasOwnProperty(text)) {
+          if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
+            elements[j].innerHTML = translations[languageTag][text] + ' <i class="bi bi-caret-right-fill"></i>';
+          } else {
+            elements[j].innerHTML = translations[languageTag][text];
+          }
+        }
+      }
+    }
+  
+    function applyTranslation(element, languageTag, translations) {
+      translateURLs2(element, languageTag, translations);
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+            var addedElement = mutation.addedNodes[0];
+            if (addedElement.classList && addedElement.classList.contains('category-selector')) {
+              translateURLs2(addedElement, languageTag, translations);
+            }
+          }
+        });
+      });
+  
+      observer.observe(element, { childList: true, subtree: true });
+    }
+  
+    document.addEventListener('DOMContentLoaded', function() {
+      var navBarContainer = document.createElement('div');
+  
+      fetch('/code-parts/nav-bar.html')
+        .then(response => response.text())
+        .then(data => {
+          navBarContainer.innerHTML = data;
+  
+          var header = document.querySelector('header');
+  
+          if (!header) return;
+  
+          header.insertAdjacentElement('afterend', navBarContainer.firstChild);
+  
+          var categorySelector = document.querySelector('.category-selector');
+          if (categorySelector) {
+            fetch('/code-parts/translations/categories.json')
+              .then(response => response.json())
+              .then(translations => {
+                applyTranslation(categorySelector, languageTag, translations);
+              });
+          }
+  
+          var menuToggle = document.querySelector('.menu-toggle');
+          var navBar = document.querySelector('.nav-bar');
+  
+          if (menuToggle && navBar) {
+            menuToggle.addEventListener('click', function() {
+              navBar.classList.toggle('active');
+            });
+  
+            navBar.addEventListener('click', function() {
+              navBar.classList.remove('active');
+            });
+          }
+        });
+    });
+  
+  function translateTextElements(translations) {
+    var siteprosElements = document.querySelectorAll('.sitedetails .sitepros span');
+    for (var i = 0; i < siteprosElements.length; i++) {
+      var text = siteprosElements[i].textContent.trim();
+      if (translations.hasOwnProperty(text)) {
+        siteprosElements[i].innerHTML = translations[text] + ' <i class="bi bi-caret-down-fill"></i>';
+      }
+    }
+  
+    var ratingwayElements = document.querySelectorAll('.ratingthings .ratingway span, .content button, .boxreview .plusminus .criteria .par h2, .features .featuresbox .typesinside a, .instruction li');
+    for (var j = 0; j < ratingwayElements.length; j++) {
+      var text = ratingwayElements[j].textContent.trim();
+      if (translations.hasOwnProperty(text)) {
+        ratingwayElements[j].innerHTML = translations[text];
+      }
+    }
+  }
+  
+  if (window.location.pathname.includes('/ru/reviews/') || window.location.pathname.includes('/ru/mirrors/')) {
+    var translations = {
+      "Deposit Methods": "Способы Пополнения",
+      "Withdraw Methods": "Способы Вывода",
+      "Items Accepts": "Принимаются Предметы",
+      "Sign Up Bonus": "Бонус за Регистрацию",
+      "Faucet System": "Система Кранов",
+      "Daily Rewards": "Ежедневные Награды",
+      "Daily Giveaways": "Ежедневные Розыгрыши",
+      "No Bonus": "Нет Бонуса",
+      "Deposit Bonus": "Бонус к Пополнению",
+      "Rain System": "Дожди",
+      "Rakeback System": "Рейкбек",
+      "Pros": "Плюсы",
+      "Price": "Цены",
+      "Cons": "Минусы",
+      "Trust": "Доверие",
+      "Support": "Поддержка",
+      "Payments": "Деп/Вывод",
+      "Functional": "Функционал",
+      "Playability": "Режимы",
+      "Sign up via Steam": "Залогиньтесь через Steam",
+      "Enjoy !": "Готово !",
+      "Visit WebSite": "Посетить Сайт"
+    };
+    translateTextElements(translations);
+  
+    var links = document.getElementsByTagName('a');
+  
+    for (var i = 0; i < links.length; i++) {
+      var link = links[i];
+      
+      if (!link.closest('div.siteblock div.box, ol li a, nav .socials')) {
+        if (!link.classList.contains('lang-switch') && !link.closest('.instruction-mirrors')) {
+          var path = link.pathname;
+  
+          if (!path.includes('/ru/') && path.indexOf('/ru') !== 0) {
+            if (path !== '/') {
+              link.pathname = '/ru' + path;
+            } else {
+              link.href = link.href.replace('csgobroker.cc/', 'csgobroker.cc/ru/');
+            }
+          }
+        }     
+      }
+    }
+  }
+  
+  if (window.location.pathname.includes('/pl/reviews/')) {
+    var translations = {
+      "Deposit Methods": "Metody Depozytu",
+      "Withdraw Methods": "Metody Wypłaty",
+      "Sign Up Bonus": "Bonus Rejestracyjny",
+      "No Bonus": "Brak Bonusu",
+      "Pros": "Zalety",
+      "Price": "Cena",
+      "Cons": "Wady",
+      "Trust": "Zaufanie",
+      "Support": "Wsparcie",
+      "Payments": "Płatności",
+      "Functional": "Funkcjonalność",
+      "Sign up via Steam": "Zarejestruj się za pomocą Steam",
+      "Enjoy !": "Ciesz się!",
+      "Visit WebSite": "Odwiedź stronę internetową"
+    };
+    translateTextElements(translations);
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+  if (!window.location.pathname.includes("/reviews/") && !window.location.pathname.includes("/mirrors/") && !window.location.pathname.includes("/topic")) {
+    const boxContainer = document.querySelector('.category-selector');
+    const buttonsContainer = document.createElement('div');
+    const prevButtonContainer = document.createElement('button');
+    const nextButtonContainer = document.createElement('button');
+    const boxes = boxContainer.querySelectorAll('.category-box');
+    const boxWidth = boxes[0].offsetWidth + (2 * 9);
+    const containerWidth = boxWidth * 4;
+    let scrollPosition = 0;
+    let buttonScrollPosition = 0;
+  
+    buttonsContainer.classList.add('buttons-container');
+    prevButtonContainer.classList.add('controls-button');
+    prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left"></i>';
+    nextButtonContainer.classList.add('controls-button');
+    nextButtonContainer.innerHTML = '<i class="bi bi-chevron-right"></i>';
+  
+    buttonsContainer.appendChild(prevButtonContainer);
+    buttonsContainer.appendChild(nextButtonContainer);
+  
+    boxContainer.parentNode.insertBefore(buttonsContainer, boxContainer);
+  
+    boxContainer.style.width = `${containerWidth}px`;
+  
+    prevButtonContainer.addEventListener('click', () => {
+      scrollPosition -= boxWidth;
+      scrollPosition = Math.max(scrollPosition, 0);
+      boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
+      buttonScrollPosition = scrollPosition;
+    });
+  
+    nextButtonContainer.addEventListener('click', () => {
+      scrollPosition += boxWidth;
+      scrollPosition = Math.min(scrollPosition, boxContainer.scrollWidth - containerWidth);
+      boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
+      buttonScrollPosition = scrollPosition;
+    });
+  
+    let isMouseDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+  
+    boxContainer.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      isMouseDown = true;
+      startX = e.pageX - boxContainer.offsetLeft;
+      scrollLeft = boxContainer.scrollLeft;
+    });
+  
+    boxContainer.addEventListener('mousemove', (e) => {
+      if (!isMouseDown) return;
+      e.preventDefault();
+      const x = e.pageX - boxContainer.offsetLeft;
+      const walk = (x - startX) * 0.6;
+      const newScrollLeft = scrollLeft - walk;
+      boxContainer.scrollLeft = newScrollLeft;
+      buttonScrollPosition = newScrollLeft;
+    });
+  
+    boxContainer.addEventListener('mouseup', () => {
+      isMouseDown = false;
+    });
+  
+    boxContainer.addEventListener('mouseleave', () => {
+      isMouseDown = false;
+    });
+  
+    boxContainer.addEventListener('touchstart', (e) => {
+      const touch = e.touches[0];
+      isMouseDown = true;
+      startX = touch.pageX - boxContainer.offsetLeft;
+      scrollLeft = boxContainer.scrollLeft;
+    });
+  
+    boxContainer.addEventListener('touchmove', (e) => {
+      if (!isMouseDown) return;
+      e.preventDefault();
+      const touch = e.touches[0];
+      const x = touch.pageX - boxContainer.offsetLeft;
+      const walk = (x - startX) * 1.2;
+      const newScrollLeft = scrollLeft - walk;
+      boxContainer.scrollLeft = newScrollLeft;
+      buttonScrollPosition = newScrollLeft;
+    });
+  
+    boxContainer.addEventListener('touchend', () => {
+      isMouseDown = false;
+    });
+  
+    var categorySelector = document.querySelector('div.category-selector');
+    var ulElements = categorySelector.querySelectorAll('div.category-selector > ul');
+    var ulArray = Array.from(ulElements);
+  
+    ulArray.sort(function(a, b) {
+      var aIsActive = a.querySelector('li a.category-box').classList.contains('active');
+      var bIsActive = b.querySelector('li a.category-box').classList.contains('active');
+    
+      if (aIsActive && !bIsActive) {
+        return -1;
+      } else if (!aIsActive && bIsActive) {
+        return 1;
+      } else if (a.querySelector('li a.category-box').classList.contains('last')) {
+        return 1;
+      } else if (b.querySelector('li a.category-box').classList.contains('last')) {
+        return -1;
+      } else {
+        return Math.random() - 0.5;
+      }
+    });  
+  
+    while (categorySelector.firstChild) {
+      categorySelector.removeChild(categorySelector.firstChild);
+    }
+  
+    ulArray.forEach(function (ul) {
+      categorySelector.appendChild(ul);
+    });
+  
+    buttonsContainer.scrollLeft = buttonScrollPosition;
+  }
+  
+  function translateURLsSlider(parentElement, languageTag) {
+    var links = parentElement.querySelectorAll('a[href]');
+    var supportedLanguages = ['hi', 'tr', 'pt', 'es', 'ru'];
+    
+    for (var i = 0; i < links.length; i++) {
+      var href = links[i].getAttribute('href');
+      
+      if (!href) continue;
+      
+      var url = new URL(href, window.location.href);
+      var path = url.pathname;
+      var langIncluded = supportedLanguages.some(lang => {
+        var langWithSlashes = '/' + lang + '/';
+        return path.includes(langWithSlashes);
+      });
+      
+      if (languageTag !== 'en') {
+        if (langIncluded) {
+          path = path.replace(/\/(hi|tr|pt|es|ru)\//, '/' + languageTag + '/');
+          url.pathname = path;
+          links[i].setAttribute('href', url.href);
+        } else if (supportedLanguages.includes(languageTag)) {
+          path = '/' + languageTag + path;
+          url.pathname = path;
+          links[i].setAttribute('href', url.href);
+        }
+      }
+    }
+  }
+  
+  (function() {
+    var insertAfter = function(newNode, referenceNode) {
+      referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    };
+  
+    let currentSlide = 0;
+    var slideInterval;
+    var slideShowActive = true;
+    var isTransitioning = false;
+  
+    function showSlide(index) {
+      const slides = document.querySelectorAll('.slider-banner');
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+    }
+  
+    function nextSlide() {
+      if (slideShowActive && !isTransitioning) {
+        isTransitioning = true; 
+  
+        setTimeout(function() {
+          isTransitioning = false; 
+        }, 6000);
+  
+        currentSlide = (currentSlide + 1) % 3;
+        showSlide(currentSlide);
+      }
+    }
+  
+    function startSlideShow() {
+      slideShowActive = true;
+      slideInterval = setInterval(nextSlide, 6000);
+    }
+  
+    function stopSlideShow() {
+      slideShowActive = false;
+      clearInterval(slideInterval);
+    }
+  
+    startSlideShow();
+  
+    var path = window.location.pathname;
+    var existingSliderPlacer = document.querySelector('.slider-placer');
+  
+    if (existingSliderPlacer) {
+      existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
+    }
+  
+    var sliderPlacer = document.createElement('div');
+    sliderPlacer.classList.add('slider-placer');
+  
+    if (path.includes('/topic/skins/')) {
+      sliderPlacer.classList.add('topic');
+    }
+  
+    var controlsContainer = document.createElement('div');
+    controlsContainer.classList.add('controls');
+  
+    var prevButton = document.createElement('button');
+    prevButton.classList.add('prev-button');
+    prevButton.innerHTML = '<i class="bi bi-chevron-left"></i>';
+    controlsContainer.appendChild(prevButton);
+  
+    var nextButton = document.createElement('button');
+    nextButton.classList.add('next-button');
+    nextButton.innerHTML = '<i class="bi bi-chevron-right"></i>';
+    controlsContainer.appendChild(nextButton); 
+  
+    var slider1 = document.createElement('a');
+    slider1.href = '/';
+    slider1.classList.add('slider-banner', 'active');
+    var img1 = document.createElement('img');
+    img1.src = '/img/best-gambling-sites-slide.png';
+    img1.alt = 'Best Gambling Sites';
+    slider1.appendChild(img1);
+  
+    var slider2 = document.createElement('a');
+    slider2.href = '/earning/offerwalls';
+    slider2.classList.add('slider-banner');
+    var img2 = document.createElement('img');
+    img2.src = '/img/earn-skins-slider.png';
+    img2.alt = 'Best Offerwall Sites';
+    slider2.appendChild(img2);
+  
+    var slider3 = document.createElement('a');
+    slider3.href = '/rust';
+    slider3.classList.add('slider-banner');
+    var img3 = document.createElement('img');
+    img3.src = '/img/best-rust-sites-slide.png';
+    img3.alt = 'Best Rust Sites';
+    slider3.appendChild(img3);
+  
+    sliderPlacer.appendChild(controlsContainer);
+    sliderPlacer.appendChild(slider1);
+    sliderPlacer.appendChild(slider2);
+    sliderPlacer.appendChild(slider3);
+  
+    var languageTag = path.match(/\/(hi|tr|pt|es|ru)(\.html)?/);
+    if (languageTag) {
+      languageTag = languageTag[1];
+      translateURLsSlider(sliderPlacer, languageTag);
+    }
+  
+    if (path.includes('/mirrors/')) {
+      var sitealternates = document.querySelector('.sitealternates');
+      if (sitealternates) {
+        insertAfter(sliderPlacer, sitealternates);
+      }
+    } else if (path.includes('/reviews/')) {
+      var ratingsumm = document.querySelector('div.ratingsumm');
+      if (ratingsumm) {
+        insertAfter(sliderPlacer, ratingsumm);
+      }
+    } else {
+      var footer = document.querySelector('footer');
+      footer.parentNode.insertBefore(sliderPlacer, footer);
+    }
+  
+    var slideElements = document.querySelectorAll('.slider-banner');
+    slideElements.forEach(function(slideElement) {
+      slideElement.addEventListener('mouseenter', function() {
+        stopSlideShow();
+      });
+  
+      slideElement.addEventListener('mouseleave', function() {
+        startSlideShow();
+      });
+    });
+  
+    nextButton.addEventListener('click', function() {
+      currentSlide = (currentSlide + 1) % 3;
+      showSlide(currentSlide);
+    });
+    
+    prevButton.addEventListener('click', function() {
+      currentSlide = (currentSlide - 1 + 3) % 3;
+      showSlide(currentSlide);
+    });
+  
+  })();
+  
+  
+  
+  if (
+    !window.location.pathname.includes("/reviews/") &&
+    !window.location.pathname.includes("/topic/") &&
+    !window.location.pathname.includes("/mirrors/") &&
+    window.location.pathname !== "/ru" &&
+    window.location.pathname !== "/pt" &&
+    window.location.pathname !== "/es" &&
+    window.location.pathname !== "/tr" &&
+    window.location.pathname !== "/hi" &&
+    !window.location.pathname.endsWith("ru.html") &&
+    !window.location.pathname.endsWith("pt.html") &&
+    !window.location.pathname.endsWith("es.html") &&
+    !window.location.pathname.endsWith("tr.html") &&
+    !window.location.pathname.endsWith("hi.html") &&
+    !window.location.pathname.endsWith("index.html")
+  ) {
+    var currentLanguage = "";
+  
+    var languageMatch = window.location.pathname.match(/^\/([a-z]{2})\//);
+    if (languageMatch && languageMatch[1]) {
+      currentLanguage = languageMatch[1];
+    } else {
+      currentLanguage = "en";
+    }
+  
+    var langMenuDiv = document.querySelector(".lang-menu");
+  
+    var newContent = '<div class="selected-lang">';
+    if (currentLanguage === "en") {
+      newContent += "EN";
+    } else if (currentLanguage === "ru") {
+      newContent += "RU";
+    } else if (currentLanguage === "pt") {
+      newContent += "PT";
+    } else if (currentLanguage === "es") {
+      newContent += "ES";
+    } else if (currentLanguage === "tr") {
+      newContent += "TR";
+    } else if (currentLanguage === "hi") {
+      newContent += "HI";
+    }
+    newContent += "</div><ul>";
+    if (currentLanguage !== "en") {
+      newContent +=
+        '<li><a href="' +
+        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+        '" class="lang-switch" data-lang="en">EN</a></li>';
+    }
+    if (currentLanguage !== "ru") {
+      newContent +=
+        '<li><a href="/ru' +
+        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+        '" class="lang-switch" data-lang="ru">RU</a></li>';
+    }
+    if (currentLanguage !== "pt") {
+      newContent +=
+        '<li><a href="/pt' +
+        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+        '" class="lang-switch" data-lang="pt">PT</a></li>';
+    }
+    if (currentLanguage !== "es") {
+      newContent +=
+        '<li><a href="/es' +
+        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+        '" class="lang-switch" data-lang="es">ES</a></li>';
+    }
+    if (currentLanguage !== "tr") {
+      newContent +=
+        '<li><a href="/tr' +
+        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+        '" class="lang-switch" data-lang="tr">TR</a></li>';
+    }
+    if (currentLanguage !== "hi") {
+      newContent +=
+        '<li><a href="/hi' +
+        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+        '" class="lang-switch" data-lang="hi">HI</a></li>';
+    }
+    newContent += "</ul>";
+  
+    langMenuDiv.innerHTML = newContent;
+  }
+  
+  const backToTopButton = document.querySelector("#back-to-top-btn");
+  
+  window.addEventListener("scroll", scrollFunction);
+  
+  function scrollFunction() {
+    if (window.pageYOffset > 300) {
+      if(!backToTopButton.classList.contains("btnEntrance")) {
+        backToTopButton.classList.remove("btnExit");
+        backToTopButton.classList.add("btnEntrance");
+        backToTopButton.style.display = "block";
+      }
+    }
+    else { 
+      if(backToTopButton.classList.contains("btnEntrance")) {
+        backToTopButton.classList.remove("btnEntrance");
+        backToTopButton.classList.add("btnExit");
+        setTimeout(function() {
+          backToTopButton.style.display = "none";
+        }, 250);
+      }
+    }
+  }
+  
+  
+  backToTopButton.addEventListener("click", smoothScrollBackToTop);
+  
+  function smoothScrollBackToTop() {
+    const targetPosition = 0;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 750;
+    let start = null;
+  
+    window.requestAnimationFrame(step);
+  
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+      if (progress < duration) window.requestAnimationFrame(step);
+    }
+  }
+  
+  function easeInOutCubic(t, b, c, d) {
+    t /= d/2;
+    if (t < 1) return c/2*t*t*t + b;
+    t -= 2;
+    return c/2*(t*t*t + 2) + b;
+  }
+  
+  var siteList = document.getElementById('site-list');
+  var searchInput = document.getElementById('search-input'); 
+  var isRussianPage = window.location.pathname.includes('/ru');
+  
+  var siteTranslations = {
+    '/topic/skins/black-skins': {
+      'en': 'Black Color Skins',
+      'ru': 'Черные Скины'
+    },
+    '/topic/skins/gray-skins': {
+      'en': 'Gray Color Skins',
+      'ru': 'Серые Скины'
+    },
+    '/topic/skins/cyan-skins': {
+      'en': 'Cyan Color Skins',
+      'ru': 'Голубые Скины'
+    },
+    '/topic/skins/pink-skins': {
+      'en': 'Pink Color Skins',
+      'ru': 'Розовые Скины'
+    },
+    '/topic/skins/white-skins': {
+      'en': 'White Color Skins',
+      'ru': 'Белые Скины'
+    },
+    '/topic/skins/orange-skins': {
+      'en': 'Orange Color Skins',
+      'ru': 'Оранжевые Скины'
+    },
+    '/topic/skins/brown-skins': {
+      'en': 'Brown Color Skins',
+      'ru': 'Коричневые Скины'
+    },
+    '/topic/skins/yellow-skins': {
+      'en': 'Yellow Color Skins',
+      'ru': 'Желтые Скины'
+    },
+    '/topic/skins/blue-skins': {
+      'en': 'Blue Color Skins',
+      'ru': 'Синие Скины'
+    },
+    '/topic/skins/purple-skins': {
+      'en': 'Purple Color Skins',
+      'ru': 'Фиолетовые Скины'
+    },
+    '/topic/skins/green-skins': {
+      'en': 'Green Color Skins',
+      'ru': 'Зеленые Скины'
+    },
+    '/topic/skins/golden-skins': {
+      'en': 'Golden Color Skins',
+      'ru': 'Золотые Скины'
+    },
+    '/topic/skins': {
+      'en': 'Skins By Color',
+      'ru': 'Скины по Цвету'
+    },
+    '/newest': {
+      'en': 'Newest Sites',
+      'ru': 'Новые Сайты'
+    },
+    '/dota': {
+      'en': 'Dota 2 Sites',
+      'ru': 'Сайты Dota 2'
+    },
+    '/': {
+      'en': 'CS:GO Sites',
+      'ru': 'Сайты CS:GO'
+    },
+    '/rust': {
+      'en': 'Rust Sites',
+      'ru': 'Сайты Rust'
+    },
+    '/freebies': {
+      'en': 'Sites with Freebies',
+      'ru': 'Сайты с Халявой'
+    },
+  };
+  
+  var sites   = [
+    '<li><a href="/topic/skins/black-skins">Black Color Skins</a></li>',
+    '<li><a href="/topic/skins/gray-skins">Gray Color Skins</a></li>',
+    '<li><a href="/topic/skins/cyan-skins">Cyan Color Skins</a></li>',
+    '<li><a href="/topic/skins/pink-skins">Pink Color Skins</a></li>',
+    '<li><a href="/topic/skins/white-skins">White Color Skins</a></li>',
+    '<li><a href="/topic/skins/orange-skins">Orange Color Skins</a></li>',
+    '<li><a href="/topic/skins/brown-skins">Brown Color Skins</a></li>',
+    '<li><a href="/topic/skins/yellow-skins">Yellow Color Skins</a></li>',
+    '<li><a href="/topic/skins/blue-skins">Blue Color Skins</a></li>',
+    '<li><a href="/topic/skins/purple-skins">Purple Color Skins</a></li>',
+    '<li><a href="/topic/skins/green-skins">Green Color Skins</a></li>',
+    '<li><a href="/topic/skins/golden-skins">Golden Color Skins</a></li>',
+    '<li><a href="/topic/skins">Skins By Color</a></li>',
+    '<li><a href="/newest">Newest Sites</a></li>',
+    '<li><a href="/dota">Dota 2 Sites</a></li>',
+    '<li><a href="/">CS:GO Sites</a></li>',
+    '<li><a href="/rust">Rust Sites</a></li>',
+    '<li><a href="/freebies">Sites with Freebies</a></li>',
+    '<li><a href="/reviews/skinsly">SKINSLY</a></li>',
+    '<li><a href="/reviews/rapidskins">RAPIDSKINS</a></li>',
+    '<li><a href="/reviews/itrade">iTrade.GG</a></li>',
+    '<li><a href="/reviews/rustmagic">RustMagic</a></li>',
+    '<li><a href="/reviews/yayskins">Yayskins</a></li>',
+    '<li><a href="/reviews/idle-empire">Idle-empire</a></li>',
+    '<li><a href="/reviews/insanegg">Insanegg</a></li>',
+    '<li><a href="/reviews/key-drop">Key-drop</a></li>',
+    '<li><a href="/reviews/knifex">Knifex</a></li>',
+    '<li><a href="/reviews/lis-skins">Lis-skins</a></li>',
+    '<li><a href="/reviews/moonmarket">Moon.Market</a></li>',
+    '<li><a href="/reviews/avanmarket">Avan.Market</a></li>',
+    '<li><a href="/reviews/aimmarket">Aim.Market</a></li>',
+    '<li><a href="/reviews/lootbear">Lootbear</a></li>',
+    '<li><a href="/reviews/lootfarm">Lootfarm</a></li>',
+    '<li><a href="/reviews/primedice">Primedice</a></li>',
+    '<li><a href="/reviews/rollbit">Rollbit</a></li>',
+    '<li><a href="/reviews/roobet">Roobet</a></li>',
+    '<li><a href="/reviews/rustbet">Rustbet</a></li>',
+    '<li><a href="/reviews/rustcases">Rustcases</a></li>',
+    '<li><a href="/reviews/rustchance">Rustchance</a></li>',
+    '<li><a href="/reviews/rustclash">Rustclash</a></li>',
+    '<li><a href="/reviews/dotaclash">Dotaclash</a></li>',
+    '<li><a href="/reviews/rustix">Rustix</a></li>',
+    '<li><a href="/reviews/rustmoment">Rustmoment</a></li>',
+    '<li><a href="/reviews/ruststake">Ruststake</a></li>',
+    '<li><a href="/reviews/rustyloot">Rustyloot</a></li>',
+    '<li><a href="/reviews/rustypot">Rustypot</a></li>',
+    '<li><a href="/reviews/salad">Salad</a></li>',
+    '<li><a href="/reviews/shadowpay">Shadowpay</a></li>',
+    '<li><a href="/reviews/skinbaron">Skinbaron</a></li>',
+    '<li><a href="/reviews/skinbet">Skinbet</a></li>',
+    '<li><a href="/reviews/skincashier">Skincashier</a></li>',
+    '<li><a href="/reviews/skinscash">Skinscash</a></li>',
+    '<li><a href="/reviews/skinswap">Skinswap</a></li>',
+    '<li><a href="/reviews/skinsfans">Skinsfans</a></li>',
+    '<li><a href="/reviews/steamgifts">Steamgifts</a></li>',
+    '<li><a href="/reviews/steamlvlup">Steamlvlup</a></li>',
+    '<li><a href="/reviews/swapgg">Swapgg</a></li>',
+    '<li><a href="/reviews/tradeit">Tradeit</a></li>',
+    '<li><a href="/reviews/vvvgamers">Vvvgamers</a></li>',
+    '<li><a href="/reviews/wtfskins">Wtfskins</a></li>',
+    '<li><a href="/reviews/xplay">Xplay</a></li>',
+    '<li><a href="/reviews/banditcamp">Banditcamp</a></li>',
+    '<li><a href="/reviews/bcgame">Bcgame</a></li>',
+    '<li><a href="/reviews/bets4pro">Bets4pro</a></li>',
+    '<li><a href="/reviews/bitskins">Bitskins</a></li>',
+    '<li><a href="/reviews/bitskins-p2p">Bitskins p2p</a></li>',
+    '<li><a href="/reviews/clashgg">Clashgg</a></li>',
+    '<li><a href="/reviews/crashgg">Crashgg</a></li>',
+    '<li><a href="/reviews/csdeals">CsDeals</a></li>',
+    '<li><a href="/reviews/csgo500">CSGO500</a></li>',
+    '<li><a href="/reviews/csgobig">CSGOBig</a></li>',
+    '<li><a href="/reviews/csgoempire">CSGOEmpire</a></li>',
+    '<li><a href="/reviews/csgofast">CSGOFast</a></li>',
+    '<li><a href="/reviews/csgolive">CSGOLive</a></li>',
+    '<li><a href="/reviews/csgoluck">CSGOLuck</a></li>',
+    '<li><a href="/reviews/csgo-market">CSGO-Market</a></li>',
+    '<li><a href="/reviews/csgopolygon">CSGOPolygon</a></li>',
+    '<li><a href="/reviews/csgopositive">CSGOPositive</a></li>',
+    '<li><a href="/reviews/csgoroll">CSGORoll</a></li>',
+    '<li><a href="/reviews/csgoselly">CSGOSelly</a></li>',
+    '<li><a href="/reviews/csgorun">CSGORUN</a></li>',
+    '<li><a href="/reviews/csfail">CSFAIL</a></li>',
+    '<li><a href="/reviews/csgo-skins">CSGO-Skins</a></li>',
+    '<li><a href="/reviews/cybershoke">Cybershoke</a></li>',
+    '<li><a href="/reviews/daddyskins">Daddyskins</a></li>',
+    '<li><a href="/reviews/datdrop">Datdrop</a></li>',
+    '<li><a href="/reviews/dmarket">Dmarket</a></li>',
+    '<li><a href="/reviews/duelbits">Duelbits</a></li>',
+    '<li><a href="/reviews/earnweb">Earnweb</a></li>',
+    '<li><a href="/reviews/farmskins">Farmskins</a></li>',
+    '<li><a href="/reviews/flamecases">Flamecases</a></li>',
+    '<li><a href="/reviews/freecash">Freecash</a></li>',
+    '<li><a href="/reviews/freeward">Freeward</a></li>',
+    '<li><a href="/reviews/gamdom">Gamdom</a></li>',
+    '<li><a href="/reviews/gamehag">Gamehag</a></li>',
+    '<li><a href="/reviews/gamerpay">Gamerpay</a></li>',
+    '<li><a href="/reviews/gametame">Gametame</a></li>',
+    '<li><a href="/reviews/gcskins">Gcskins</a></li>',
+    '<li><a href="/reviews/grindbux">Grindbux</a></li>',
+    '<li><a href="/reviews/hellcase">Hellcase</a></li>',
+    '<li><a href="/reviews/hellstore">Hellstore</a></li>',
+    '<li><a href="/reviews/howlgg">Howlgg</a></li>',
+    '<li><a href="/reviews/skinbid">SkinBid</a></li>',
+    '<li><a href="/reviews/shuffle">Shuffle</a></li>',
+    '<li><a href="/reviews/steamlevels">SteamLevels</a></li>',
+    '<li><a href="/reviews/steamlevelu">SteamLevelU</a></li>',
+    '<li><a href="/reviews/whitemarket">White.Market</a></li>',
+    '<li><a href="/reviews/hypeup">Hypeup</a></li>',
+  ];
+  
+  function compareSites(a, b) {
+    var siteNameA = a.match(/<a href=".*?">(.*?)<\/a>/)[1].toLowerCase();
+    var siteNameB = b.match(/<a href=".*?">(.*?)<\/a>/)[1].toLowerCase();
+    var searchTerm = searchInput.value.toLowerCase();
+  
+    var indexA = siteNameA.indexOf(searchTerm);
+    var indexB = siteNameB.indexOf(searchTerm);
+  
+    if (indexA === 0 && indexB !== 0) {
+      return -1;
+    } else if (indexB === 0 && indexA !== 0) {
+      return 1;
+    } else {
+      return siteNameA.localeCompare(siteNameB);
+    }
+  }
+  
+  
+  function updateSiteList() {
+    siteList.innerHTML = '';
+    sites.forEach(function (site) {
+      var li = document.createElement('li');
+      li.className = 'site-item';
+      li.style.display = 'none';
+      li.innerHTML = site;
+  
+      var link = li.querySelector('a');
+      var href = link.getAttribute('href');
+  
+      if (siteTranslations[href]) {
+        link.innerHTML = isRussianPage ? siteTranslations[href]['ru'] : siteTranslations[href]['en'];
+      }
+  
+      if (isRussianPage) {
+        link.setAttribute('href', '/ru' + href);
+      }
+  
+      li.innerHTML = '';
+      li.appendChild(link);
+  
+      siteList.appendChild(li);
+    });
+  }
+  
+  
+  function hideAllSites(siteItems) {
+    for (var i = 0; i < siteItems.length; i++) {
+        var siteItem = siteItems[i];
+        hideSite(siteItem);
+    }
+  }
+  
+  function hideSite(siteItem) {
+    siteItem.style.display = 'none';
+  }
+  
+  function showSite(siteItem) {
+    siteItem.style.display = 'flex';
+  }
+  
+  function handleSearchInput() {
+    var searchTerm = searchInput.value.toLowerCase();
+    var siteItems = siteList.getElementsByClassName('site-item');
+  
+    if (searchTerm === '') {
+      hideAllSites(siteItems);
+      siteList.style.display = 'none';
+      return;
+    }
+  
+    for (var i = 0; i < siteItems.length; i++) {
+      var siteItem = siteItems[i];
+      var siteName = siteItem.textContent.toLowerCase();
+  
+      if (
+        siteName.includes(searchTerm) ||
+        siteName.includes(' ' + searchTerm)
+      ) {
+        showSite(siteItem);
+      } else {
+        hideSite(siteItem);
+      }
+    }
+  
+    siteList.style.display = 'block';
+  }
+  
+  searchInput.addEventListener('input', handleSearchInput);
+  
+  searchInput.addEventListener('focus', function() {
+    if (searchInput.value === '') {
+        siteList.style.display = 'none';
+    } else {
+        siteList.style.display = 'block';
+    }
+  });
+  
+  searchInput.addEventListener('blur', function() {
+    setTimeout(function() {
+        siteList.style.display = 'none';
+    }, 150);
+  });
+  
+  updateSiteList();
+  
+  var slides = document.getElementsByClassName("slide");
+  var triggersContainer = document.querySelector(".screens");
+  
+  var currentIndex = 0;
+  var slideInterval;
+  var startX = 0;
+  var threshold = 100;
+  
+  var prevButton = document.querySelector(".prev-button");
+  var nextButton = document.querySelector(".next-button");
+  
+  if (window.location.pathname.includes("/reviews/")) {
+    function removeAllTriggers() {
+      var existingTriggers = triggersContainer.querySelectorAll(
+        "input[type='radio'], label"
+      );
+      existingTriggers.forEach(function (trigger) {
+        triggersContainer.removeChild(trigger);
+      });
+    }
+    
+    function createTrigger(index) {
+      var trigger = document.createElement("input");
+      trigger.type = "radio";
+      trigger.id = "trigger" + (index + 1);
+      trigger.name = "slider";
+      if (index === currentIndex) {
+        trigger.checked = true;
+      }
+    
+      trigger.addEventListener("change", function () {
+        var previousSlide = slides[currentIndex];
+        previousSlide.classList.remove("active");
+        currentIndex = index;
+        showSlide(currentIndex, null);
+        startSlideShow();
+      });
+    
+      var label = document.createElement("label");
+      label.setAttribute("for", trigger.id);
+    
+      triggersContainer.appendChild(trigger);
+      triggersContainer.appendChild(label);
+    }
+    
+    function createTriggers() {
+      removeAllTriggers();
+      for (var i = 0; i < slides.length; i++) {
+        createTrigger(i);
+      }
+    }
+    
+    function showSlide(index, direction) {
+      var currentSlide = slides[currentIndex];
+      var nextSlide = slides[index];
+    
+      currentSlide.classList.remove("active", "next", "previous");
+      nextSlide.classList.add("active");
+    
+      if (direction === "next") {
+        nextSlide.classList.add("next");
+      } else if (direction === "previous") {
+        nextSlide.classList.add("previous");
+      }
+    
+      currentIndex = index;
+    
+      var triggerLabels = triggersContainer.querySelectorAll("label");
+      triggerLabels.forEach(function (label, labelIndex) {
+        if (labelIndex === index) {
+          label.classList.add("active");
+        } else {
+          label.classList.remove("active");
+        }
+      });
+    
+      if (currentIndex === 0) {
+        prevButton.disabled = true;
+        nextButton.disabled = false;
+      } else if (currentIndex === slides.length - 1) {
+        prevButton.disabled = false;
+        nextButton.disabled = true;
+      } else {
+        prevButton.disabled = false;
+        nextButton.disabled = false;
+      }
+    }
+    
+    createTriggers();
+    
+    triggersContainer.addEventListener("touchstart", function (event) {
+      startX = event.touches[0].clientX;
+    });
+    
+    triggersContainer.addEventListener("touchend", function (event) {
+      var endX = event.changedTouches[0].clientX;
+      var deltaX = endX - startX;
+    
+      if (deltaX > threshold) {
+        previousSlide();
+        startSlideShow();
+      } else if (deltaX < -threshold) {
+        nextSlide();
+        startSlideShow();
+      }
+    });
+    
+    triggersContainer.addEventListener("mouseenter", function () {
+      stopSlideShow();
+    });
+    
+    triggersContainer.addEventListener("mouseleave", function () {
+      startSlideShow();
+    });
+    
+    
+    function startSlideShow() {
+      stopSlideShow();
+      slideInterval = setInterval(nextSlide, 5000);
+    }
+    
+    function stopSlideShow() {
+      clearInterval(slideInterval);
+    }
+    
+    function nextSlide() {
+      var nextIndex = (currentIndex + 1) % slides.length;
+      showSlide(nextIndex, "next");
+    }
+    
+    function previousSlide() {
+      var previousIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(previousIndex, "previous");
+    }
+    
+    showSlide(currentIndex);
+    startSlideShow();
+    
+    prevButton.addEventListener("click", function () {
+      if (currentIndex !== 0) {
+        previousSlide();
+        startSlideShow();
+      }
+    });
+    
+    nextButton.addEventListener("click", function () {
+      if (currentIndex !== slides.length - 1) {
+        nextSlide();
+        startSlideShow();
+      }
+    });
+  }
+  
+  if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')) {
+  
+  
+          var newDiv = document.createElement("div");
+          newDiv.className = "vpn";
+          newDiv.textContent = "Нужен VPN";
+  
+          var allowedIds = ["CSGORoll", "Clash", "HowlGG", "DMarket", "RustyPot", "RustChance", "Rollbit", "Primedice", "Duelbits", "FlameCases", "BCGame", "DaddySkins", "CSGOLive", "WTFSkins", "Key-Drop", "gcskins", "FarmSkins", "vvvgamers"];
+  
+          var boxElements = document.querySelectorAll(".box");
+  
+          boxElements.forEach(function(boxElement) {
+              var boxId = boxElement.id;
+              if (allowedIds.includes(boxId)) {
+                  var logobgElement = boxElement.querySelector(".logobg");
+                  if (logobgElement) {
+                      var clonedDiv = newDiv.cloneNode(true);
+                      logobgElement.appendChild(clonedDiv);
+                  } else {
+                      console.error("Не удалось найти элемент .logobg внутри .box");
+                  }
+              }
+          });
+        }});
+        document.addEventListener('DOMContentLoaded', function() {
+          document.querySelector('.search-enabler').addEventListener('click', function() {
+              document.querySelector('#search-input').classList.add('active');
+              this.classList.add('disabled');
+              document.querySelector('.search-container').classList.add('expanded');
+          });
+      });
+  
+      if (window.location.pathname.includes("/skins/")) {
+        $(document).ready(function () {
+          $('.close-box-skins').on('click', function () {
+            var parentBoxSkins = $(this).closest(".box-skins");
+      
+            parentBoxSkins.toggleClass("selected");
+      
+            $(".box-skins").not(parentBoxSkins).removeClass("selected");
+      
+            var zoomIcon = $(this).find("i");
+      
+            zoomIcon.toggleClass("bi-zoom-in bi-zoom-out");
+      
+            $(".close-box-skins i").not(zoomIcon).removeClass("bi-zoom-out").addClass("bi-zoom-in");
+          });
+      
+          $(".box-skins-name").click(function () {
+            var parentBoxSkins = $(this).closest(".box-skins");
+      
+            parentBoxSkins.toggleClass("selected");
+      
+            $(".box-skins").not(parentBoxSkins).removeClass("selected");
+      
+            var zoomIcon = $(this).siblings(".close-box-skins").find("i");
+      
+            zoomIcon.toggleClass("bi-zoom-in bi-zoom-out");
+      
+            $(".close-box-skins i").not(zoomIcon).removeClass("bi-zoom-out").addClass("bi-zoom-in");
+          });
+        });
+      
+        document.addEventListener("DOMContentLoaded", function () {
+          var boxSkinsNames = document.querySelectorAll('.box-skins-name');
+      
+          boxSkinsNames.forEach(function (boxSkinsName) {
+            boxSkinsName.classList.add('visible');
+          });
+        });
+      
+        $(document).ready(function () {
+          $(".navigation-weapon-type").click(function () {
+            var weaponType = $(this).attr("class").split(" ")[1];
+            $(".box-skins." + weaponType).toggleClass("disabled");
+      
+            $(this).toggleClass("enabled");
+      
+            updateNavigationReset();
+          });
+      
+          $(".topic-centralizer").on("click", ".navigation-reset", function () {
+            $(".box-skins").removeClass("disabled");
+      
+            $(".navigation-weapon-type").addClass("enabled");
+      
+            $(".box-skins").removeClass("selected");
+      
+            $(".topic-centralizer .navigation-reset").remove();
+          });
+      
+          function updateNavigationReset() {
+            if ($(".navigation-weapon-type.enabled").length === 0) {
+              if ($(".topic-centralizer .navigation-reset").length === 0) {
+                $(".topic-centralizer").append('<div class="navigation-reset">Reset Navigation</div>');
+              }
+            } else {
+              $(".topic-centralizer .navigation-reset").remove();
+            }
+          }
+        });
+      }
+      
+      if (window.location.pathname.includes("/topic/")) {
+        var elements = document.querySelectorAll('.box-skins-list, .topic-boxes-holder');
+        elements.forEach(function(element) {
+            element.classList.add('visible');
+        });
+    
+      }
+      if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.includes("/topic") && !window.location.pathname.includes("/reviews") && !window.location.pathname.includes("/mirrors")) {
+        function translateURLs2(parentElement, languageTag) {
+          var links = parentElement.querySelectorAll("a[href]");
+          var supportedLanguages = ["hi", "tr", "pt", "es", "ru"];
+      
+          for (var i = 0; i < links.length; i++) {
+            var href = links[i].getAttribute("href");
+      
+            if (!href) continue;
+      
+            var url = new URL(href, window.location.href);
+            var path = url.pathname;
+            var langIncluded = supportedLanguages.some((lang) => {
+              var langWithSlashes = "/" + lang + "/";
+              return path.includes(langWithSlashes);
+            });
+      
+            if (languageTag !== "en") {
+              if (!langIncluded && supportedLanguages.includes(languageTag)) {
+                path = "/" + languageTag + path;
+                url.pathname = path;
+                links[i].setAttribute("href", url.href);
+              }
+            }
+          }
+      
+          var translations = {
+            ru: {
+              "CS2 Sites List": "Халява CS2",
+              "Rust Sites List": "Халява Rust",
+              "Dota 2 Sites List": "Халява Dota 2",
+              "Crypto Sites List": "Крипто Халява",
+              "Newest Sites": "Новые Сайты",
+              "Freebies Only": "Вся Халява",
+              "Earning Sites": "Заработок",
+              "Steam Sites": "Сайты Steam",
+              "Gambling Sites": "Игральные Сайты",
+              "Earn by Play CS2": "Заработок на Игре в CS2",
+              "Others": "Остальное",
+              "Skins By Color": "Скины по Цвету",
+              "All Sites": "Все Сайты",
+              "Match Betting": "Ставки на Матчи",
+              "Case Opening": "Открытие Кейсов",
+              "Case Battle": "Битва Кейсов",
+              "Roulette": "Рулетка",
+              "Coinflip": "Коинфлип",
+              "Crash": "Краш",
+              "Casino": "Казино",
+              "Jackpot": "Джекпот",
+              "Upgrader": "Апгрейдер",
+              "Dice": "Кости",
+              "Bonus Types": "Типы Халявы",
+              "Sign Up Bonuses": "Бонус за Регистрацию",
+              "Deposit Bonuses": "Бонус к Депозиту",
+              "Daily Rewards": "Ежедневный Бонус",
+              "Giveaways": "Розыгрыши",
+              "Offerwall Sites": "Задания",
+              "Earn by Play Sites": "Заработок на Игре",
+              "Buy or Sell Skins": "Купить/Продать Скины",
+              "Buy or Sell Items": "Купить/Продать Предметы",
+              "Marketplaces": "Торговые Площадки",
+              "Instant Sell": "Моментальная Продажа",
+              "Buy Items": "Купить Предметы",
+              "Sell Items": "Продать Предметы",
+              "Trade Items": "Обменять Предметы",
+              "Buy Skins": "Купить Скины",
+              "Sell Skins": "Продать Скины",
+              "Trade Skins": "Обменять Скины",
+              "Steam Level Up": "Увеличить Уровень Steam",
+              "Buy Steam Games": "Купить Игры Steam",
+            },
+            hi: {
+              "CS2 Sites List": "CS2 साइटों की सूची",
+              "CS2 Sites List": "CS2 साइटों की सूची",
+              "Rust Sites List": "Rust साइटों की सूची",
+              "Dota 2 Sites List": "डोटा 2 साइटों की सूची",
+              "Crypto Sites List": "क्रिप्टो साइटों की सूची",
+              "Newest Sites": "सबसे नई साइटें",
+              "Freebies Only": "केवल मुफ्त आइटम",
+              "Earning Sites": "आमदनी वाली साइटें",
+              "Steam Sites": "स्टीम से संबंधित साइटें",
+              "Gambling Sites": "जुआ खेलने के लिए साइटें",
+              "Earn by Play CS2": "CS2 खेलकर कमाएं",
+              "All Sites": "सभी साइटें",
+              "Match Betting": "मैच पर शर्त लगाएं",
+              "Case Opening": "केस खोलें",
+              "Case Battle": "केस युद्ध",
+              "Roulette": "रूलेट",
+              "Coinflip": "कॉइनफ्लिप",
+              "Crash": "क्रैश",
+              "Casino": "कैसीनो",
+              "Jackpot": "जैकपॉट",
+              "Upgrader": "अपग्रेडर",
+              "Dice": "पासा",
+              "Bonus Types": "बोनस के प्रकार",
+              "Sign Up Bonuses": "साइन अप के बोनस",
+              "Deposit Bonuses": "जमा करने के बोनस",
+              "Daily Rewards": "रोज़ाना की पुरस्कार",
+              "Giveaways": "उपहार",
+              "Offerwall Sites": "ऑफ़रवॉल से संबंधित साइटें",
+              "Earn by Play Sites": "खेलकर कमाने वाली साइटें",
+              "Buy or Sell Skins": "स्किन खरीदें या बेचें",
+              "Buy or Sell Items": "आइटम खरीदें या बेचें",
+              "Marketplaces": "मार्केटप्लेस",
+              "Instant Sell": "तत्काल बेचें",
+              "Buy Items": "आइटम खरीदें",
+              "Sell Items": "आइटम बेचें",
+              "Trade Items": "आइटम विनिमय करें",
+              "Buy Skins": "स्किन खरीदें",
+              "Sell Skins": "स्किन बेचें",
+              "Trade Skins": "स्किन विनिमय करें",
+              "Steam Level Up": "स्टीम स्तर बढ़ाएं",
+              "Buy Steam Games": "स्टीम गेम्स खरीदें",
+            },
+            pt: {
+              "CS2 Sites List": "Sites de CS2",
+              "Rust Sites List": "Sites de Rust",
+              "Dota 2 Sites List": "Sites de Dota 2",
+              "Crypto Sites List": "Sites de Crypto",
+              "Newest Sites": "Sites Mais Recentes",
+              "Freebies Only": "Apenas Brindes",
+              "Earning Sites": "Sites para Ganhar",
+              "Steam Sites": "Sites do Steam",
+              "Gambling Sites": "Sites de Jogos de Azar",
+              "Earn by Play CS2": "Ganhe Jogando CS2",
+              "All Sites": "Todos os Sites",
+              "Match Betting": "Apostas em Jogos",
+              "Case Opening": "Abertura de Caixas",
+              "Case Battle": "Batalha de Casos",
+              "Roulette": "Roleta",
+              "Coinflip": "Cara ou Coroa",
+              "Crash": "Crash",
+              "Casino": "Cassino",
+              "Jackpot": "Jackpot",
+              "Upgrader": "Upgrader",
+              "Dice": "Dados",
+              "Bonus Types": "Tipos de Bônus",
+              "Sign Up Bonuses": "Bônus de Cadastro",
+              "Deposit Bonuses": "Bônus de Depósito",
+              "Daily Rewards": "Recompensas Diárias",
+              "Giveaways": "Doações",
+              "Offerwall Sites": "Sites de Ofertas",
+              "Earn by Play Sites": "Sites para Ganhar Jogando",
+              "Buy or Sell Skins": "Comprar ou Vender Skins",
+              "Buy or Sell Items": "Comprar ou Vender Itens",
+              "Marketplaces": "Mercados",
+              "Instant Sell": "Venda Imediata",
+              "Buy Items": "Comprar Itens",
+              "Sell Items": "Vender Itens",
+              "Trade Items": "Trocar Itens",
+              "Buy Skins": "Comprar Skins",
+              "Sell Skins": "Vender Skins",
+              "Trade Skins": "Trocar Skins",
+              "Steam Level Up": "Subir de Nível no Steam",
+              "Buy Steam Games": "Comprar Jogos do Steam",
+            },
+            tr: {
+              "CS2 Sites List": "CS2 Siteleri Listesi",
+              "Rust Sites List": "Rust Siteleri Listesi",
+              "Dota 2 Sites List": "Dota 2 Siteleri Listesi",
+              "Crypto Sites List": "Kripto Siteleri Listesi",
+              "Newest Sites": "En Yeni Siteler",
+              "Freebies Only": "Sadece Bedava Hediyeler",
+              "Earning Sites": "Para Kazanma Siteleri",
+              "Steam Sites": "Steam Siteleri",
+              "Gambling Sites": " Kumar Siteleri",
+              "Earn by Play CS2": "CS2 Oynayarak Kazan",
+              "All Sites": "Tüm Siteler",
+              "Match Betting": "Maç Bahisleri",
+              "Case Opening": "Kasa Açma",
+              "Case Battle": "Durum Savaşı",
+              "Roulette": "Rulet",
+              "Coinflip": "Tura-Yazı",
+              "Crash": "Çökme",
+              "Casino": "Kumarhane",
+              "Jackpot": "Jackpot",
+              "Upgrader": "Yükseltici",
+              "Dice": "Zar",
+              "Bonus Types": "Bonus Türleri",
+              "Sign Up Bonuses": "Kayıt Bonusları",
+              "Deposit Bonuses": "Yatırım Bonusları",
+              "Daily Rewards": "Günlük Ödüller",
+              "Giveaways": "Hediyeler",
+              "Offerwall Sites": "Teklif Duvarı Siteleri",
+              "Earn by Play Sites": "Oyun Oynayarak Kazan Siteleri",
+              "Buy or Sell Skins": "Skins Satın Al veya Sat",
+              "Buy or Sell Items": "Eşya Satın Al veya Sat",
+              "Marketplaces": "Pazar Yerleri",
+              "Instant Sell": "Anında Satış",
+              "Buy Items": "Eşya Satın Al",
+              "Sell Items": "Eşya Sat",
+              "Trade Items": "Eşya Takas Et",
+              "Buy Skins": "Skins Satın Al",
+              "Sell Skins": "Skins Sat",
+              "Trade Skins": "Skins Takas Et",
+              "Steam Level Up": "Steam Seviye Atlama",
+              "Buy Steam Games": "Steam Oyunları Satın Al",
+            },
+            es: {
+              "CS2 Sites List": "Lista de sitios de CS2",
+              "Rust Sites List": "Lista de sitios de Rust",
+              "Dota 2 Sites List": "Lista de sitios de Dota 2",
+              "Crypto Sites List": "Lista de sitios de criptomonedas",
+              "Newest Sites": "Sitios Más Nuevos",
+              "Freebies Only": "Solo regalos gratis",
+              "Earning Sites": "Sitios para ganar dinero",
+              "Steam Sites": "Sitios de Steam",
+              "Gambling Sites": "Sitios de apuestas",
+              "Earn by Play CS2": "Gana jugando CS2",
+              "All Sites": "Todos los sitios",
+              "Match Betting": "Apuestas de partidos",
+              "Case Opening": "Apertura de estuches",
+              "Case Battle": "Batalla de Casos",
+              "Roulette": "Ruleta",
+              "Coinflip": "Lanzamiento de moneda",
+              "Crash": "Choque",
+              "Casino": "Casino",
+              "Jackpot": "Bote",
+              "Upgrader": "Actualizador",
+              "Dice": "Dados",
+              "Bonus Types": "Tipos de bonos",
+              "Sign Up Bonuses": "Bonos de registro",
+              "Deposit Bonuses": "Bonos de depósito",
+              "Daily Rewards": "Recompensas diarias",
+              "Giveaways": "Regalos",
+              "Offerwall Sites": "Sitios de oferta",
+              "Earn by Play Sites": "Sitios para ganar jugando",
+              "Buy or Sell Skins": "Comprar o vender skins",
+              "Buy or Sell Items": "Comprar o vender objetos",
+              "Marketplaces": "Mercados",
+              "Instant Sell": "Venta instantánea",
+              "Buy Items": "Comprar objetos",
+              "Sell Items": "Vender objetos",
+              "Trade Items": "Intercambiar objetos",
+              "Buy Skins": "Comprar skins",
+              "Sell Skins": "Vender skins",
+              "Trade Skins": "Intercambiar skins",
+              "Steam Level Up": "Aumentar nivel de Steam",
+              "Buy Steam Games": "Comprar juegos de Steam",
+            },
+          };
+      
+          var elements = document.querySelectorAll('.category-box-content span, ul .submenu li a');
+          for (var j = 0; j < elements.length; j++) {
+            var text = elements[j].textContent.trim();
+            if (translations[languageTag] && translations[languageTag].hasOwnProperty(text)) {
+              if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
+                elements[j].innerHTML = translations[languageTag][text] + ' <i class="bi bi-caret-right-fill"></i>';
+              } else {
+                elements[j].innerHTML = translations[languageTag][text];
+              }
+            }
+          }
+        }
+        
+        var categorySelector = document.querySelector('.category-selector');
+        translateURLs2(categorySelector, languageTag);
+      }
+      (function() {
+        if (
+            (window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html') &&
+            !window.location.pathname.includes('/ru/reviews') &&
+            !window.location.pathname.includes('/ru/topic')
+          ) {
+          var boxesHolders = document.querySelectorAll('div.boxes-holder');
+        
+          if (!document.querySelector('#button-vpn-filter')) {
+            var button = document.createElement('div');
+            button.className = 'settings-menu';
+            button.innerHTML =
+              '<a class="settings-button" id="button-vpn-filter" title="Скрыть сайты требующие VPN"><i id="vpn-icon" class="bi bi-eye"></i></a>';
+        
+            boxesHolders.forEach(function (boxesHolder) {
+              boxesHolder.insertBefore(button.cloneNode(true), boxesHolder.firstChild);
+            });
+        
+            var vpnIcon = document.getElementById('vpn-icon');
+        
+            function toggleVpnBlocks() {
+              var vpnBlocks = document.querySelectorAll('.box');
+              vpnBlocks.forEach(function (block) {
+                var hasVpn = block.querySelector('.vpn');
+                if (hasVpn) {
+                  block.style.display = block.style.display === 'none' ? '' : 'none';
+                }
+              });
+            }
+        
+            window.onload = function () {
+              var buttonState = localStorage.getItem('vpnButtonState');
+              var buttonTitle = localStorage.getItem('vpnButtonTitle');
+        
+              if (buttonState === 'hidden') {
+                toggleVpnBlocks();
+                vpnIcon.classList.remove('bi-eye');
+                vpnIcon.classList.add('bi-eye-slash');
+              }
+        
+              if (buttonTitle) {
+                document.getElementById('button-vpn-filter').title = buttonTitle;
+              }
+            };
+        
+            document.getElementById('button-vpn-filter').addEventListener('click', function () {
+              toggleVpnBlocks();
+        
+              var buttonState = localStorage.getItem('vpnButtonState') || 'visible';
+        
+              var newButtonState = buttonState === 'hidden' ? 'visible' : 'hidden';
+              localStorage.setItem('vpnButtonState', newButtonState);
+        
+              vpnIcon.classList.toggle('bi-eye');
+              vpnIcon.classList.toggle('bi-eye-slash');
+        
+              var button = document.getElementById('button-vpn-filter');
+              if (vpnIcon.classList.contains('bi-eye')) {
+                button.title = 'Скрыть сайты требующие VPN';
+              } else {
+                button.title = 'Показать сайты требующие VPN';
+              }
+        
+              localStorage.setItem('vpnButtonTitle', button.title);
+            });
+          }
+        }
+      })();
+      
