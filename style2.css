@@ -933,7 +933,7 @@ nav #pagename:focus {
 }
 .gamemodes .featuresbox .typesinside a {
     height: 32px;
-    width: 32px;
+    width: 24px;
 }
 .gamemodes .featuresbox .typesinside a {
     margin: 0 !important;
@@ -2179,10 +2179,9 @@ nav img:hover {
     height: 400px;
     margin: 18px 9px 0 9px;
     border-radius: 10px;
-    /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(0, 0, 0, .3) 50%, rgba(255, 255, 255, 0) 100%); */
-    /* background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.35) 100%); */
-    background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.2) 100%);
-    /* background: rgb(0,0,0, .2); */
+    background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.2) 100%); /*     background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(0, 0, 0, .3) 50%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.35) 100%);
+    background: rgb(0,0,0, .2); */
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.15);
     transition: all .2s ease-in-out;
 }
@@ -2726,6 +2725,9 @@ footer .centralizer .footer-content {
     font-weight: 400;
 }
 @media screen and (max-width: 1340px) {
+    body {
+        background: linear-gradient(360deg, rgba(18,18,18,1) 0%, rgb(20, 20, 20) 100%);
+    }
     nav {
         width: 92%;
     }
@@ -2791,7 +2793,8 @@ footer .centralizer .footer-content {
     }
     .content p:nth-child(2){
         width: 200px;
-        overflow: hidden;
+        /* overflow: hidden; */
+        height: 60px;
     }
     .content button.copy {
         display: none;
@@ -2896,6 +2899,7 @@ footer .centralizer .footer-content {
     .box {
         /* margin: 20px 10px 0 10px; */
         margin: 10px 5px 0 5px !important;
+        background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.3) 100%);
         width: 220px;
     }
     .box_vk {
@@ -2954,13 +2958,21 @@ footer .centralizer .footer-content {
         height: 60% !important;
     }
     .box .logobg .best {
-        font-size: 10px !important;
+        font-size: 11px !important;
     }
     .content button  {
         font-size: 11px;
     }
     .slider-placer {
-        height: 80px;
+        height: 90px !important;
+    }
+    .smallreview p,
+    .boxreview .plusminus .criteria .par li,
+    .instruction li {
+        font-size: 15px !important;
+    }
+    .sitealternatesboxes .box .logobg img {
+        max-width: 55% !important;
     }
     .category-selector .category-box {
         /* width: 182px !important; */
@@ -2968,6 +2980,9 @@ footer .centralizer .footer-content {
     }
     .content p:nth-child(2) {
         width: 170px !important;
+    }
+    .content p {
+        font-size: 11px;
     }
     .pages button {
         display: none !important;
@@ -3023,9 +3038,13 @@ footer .centralizer .footer-content {
     }
     .ratingthings .ratingway {
         font-size: 16px;
+        width: 65%;
     }
     .category-selector {
         width: unset !important;
+    }
+    #notexist {
+        max-width: 80%;
     }
 }
 @media screen and (max-width: 644px) {
@@ -3070,7 +3089,7 @@ footer .centralizer .footer-content {
     height: 13px;
     border: solid 2px rgba(255, 255, 255, 0.4);
     border-radius: 5px;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, .3);
     margin: 0 6px 0 6px;
     z-index: 2;
     cursor: pointer;

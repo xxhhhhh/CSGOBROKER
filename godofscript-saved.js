@@ -1321,8 +1321,8 @@ function translateURLsSlider(parentElement, languageTag) {
 
   let currentSlide = 0;
   var slideInterval;
-  var slideShowActive = true; // Добавляем флаг
-  var isTransitioning = false; // Флаг для блокировки анимации
+  var slideShowActive = true;
+  var isTransitioning = false;
 
   function showSlide(index) {
     const slides = document.querySelectorAll('.slider-banner');
@@ -1336,12 +1336,12 @@ function translateURLsSlider(parentElement, languageTag) {
   }
 
   function nextSlide() {
-    if (slideShowActive && !isTransitioning) { // Проверяем флаги перед сменой слайда
-      isTransitioning = true; // Устанавливаем флаг анимации
+    if (slideShowActive && !isTransitioning) {
+      isTransitioning = true; 
 
       setTimeout(function() {
-        isTransitioning = false; // Сбрасываем флаг анимации
-      }, 6000); // Устанавливаем длительность анимации в миллисекундах (здесь 500 мс)
+        isTransitioning = false; 
+      }, 6000);
 
       currentSlide = (currentSlide + 1) % 3;
       showSlide(currentSlide);
@@ -1370,7 +1370,6 @@ function translateURLsSlider(parentElement, languageTag) {
   var sliderPlacer = document.createElement('div');
   sliderPlacer.classList.add('slider-placer');
 
-  // Add class 'topic' if the path contains '/topic/skins/'
   if (path.includes('/topic/skins/')) {
     sliderPlacer.classList.add('topic');
   }
@@ -1450,12 +1449,12 @@ function translateURLsSlider(parentElement, languageTag) {
   });
 
   nextButton.addEventListener('click', function() {
-    currentSlide = (currentSlide + 1) % 3; // Updated to % 3
+    currentSlide = (currentSlide + 1) % 3;
     showSlide(currentSlide);
   });
   
   prevButton.addEventListener('click', function() {
-    currentSlide = (currentSlide - 1 + 3) % 3; // Updated to % 3
+    currentSlide = (currentSlide - 1 + 3) % 3;
     showSlide(currentSlide);
   });
 
