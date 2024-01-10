@@ -2794,6 +2794,18 @@ footer .centralizer .footer-content {
     nav {
         width: 92%;
     }
+    .box-topic {
+        display: none;
+    }
+    .sitepage.topic .siteblock {
+        display: flex;
+        justify-content: center;
+    }
+    .ads-box {
+        width: 96%;
+        margin: 8px 0 0 0 !important;
+        top: 0;
+    }
     .settings-menu {
         display: none;
     }
@@ -2805,6 +2817,9 @@ footer .centralizer .footer-content {
     }
     .slider-placer {
         width: 90%;
+    }
+    .slider-placer.topic {
+        left: unset;
     }
     .content p:nth-child(3) {
         font-size: 9px;
