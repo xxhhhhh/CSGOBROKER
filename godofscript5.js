@@ -2478,4 +2478,35 @@ function copyToClipboard(element) {
           }
         }
       })();
-      
+      function insertRandomAdsBox() {
+        var currentPath = window.location.pathname;
+
+        if (currentPath.includes('/topic/skins/') && currentPath.includes('/ru/')) {
+            var adsFilePath = '/code-parts/topic-ads-ru.html';
+        } else if (currentPath.includes('/topic/skins/')) {
+            var adsFilePath = '/code-parts/topic-ads.html';
+        } else {
+            return;
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', adsFilePath, true);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var adsBoxesHtml = xhr.responseText;
+                var adsBoxes = document.createElement('div');
+                adsBoxes.innerHTML = adsBoxesHtml;
+
+                var insertAfterElement = document.querySelector('.box-topic');
+
+                var randomAdsBox = adsBoxes.children[Math.floor(Math.random() * adsBoxes.children.length)];
+
+                insertAfterElement.parentNode.insertBefore(randomAdsBox, insertAfterElement.nextSibling);
+            }
+        };
+
+        xhr.send();
+    }
+
+    window.onload = insertRandomAdsBox;
