@@ -279,7 +279,7 @@ nav #pagename:focus {
     background: var(--opacback);
     position: relative;
     width: 300px;
-    height: 400px;
+    height: 340px; /* 400 whith third panel */
     margin: 18px 9px 0 9px;
     border-radius: 10px;
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.15);
@@ -333,6 +333,9 @@ nav #pagename:focus {
     width: 100%;
     height: 30%;
 }
+.navigation-section.third {
+    height: 0%;
+}
 .navigation-section.first,
 .navigation-section.second {
     /* background-color: var(--opacback); */
@@ -353,6 +356,7 @@ nav #pagename:focus {
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: center;
+    margin-top: 7px;
 }
 .navigation-weapon-type {
     padding: 5px;
@@ -2154,6 +2158,16 @@ nav img:hover {
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.15);
     transition: all .2s ease-in-out;
     text-decoration: none;
+}
+.box-topic .topic-box {
+    margin: unset;
+}
+.box-topic .topic-box .logobg {
+    margin: unset;
+    height: 95%;
+}
+.box-topic .topic-box:hover {
+    transform: scale(1);
 }
 .topic-box:hover {
     /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(65, 65, 65, 0.2) 50%, rgba(255, 255, 255, 0) 100%) !important; */
