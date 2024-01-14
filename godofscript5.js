@@ -949,7 +949,7 @@ function copyToClipboard(element) {
   }
   }
   
-  if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes("/topic/") && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
+  if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes("/topic/") && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/') && !window.location.pathname === '/contaсt-us') {
     function updateURLs(parentElement) {
       var links = parentElement.querySelectorAll('a[href]');
       var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
@@ -1162,7 +1162,7 @@ function copyToClipboard(element) {
   }
   
   document.addEventListener('DOMContentLoaded', function() {
-  if (!window.location.pathname.includes("/reviews/") && !window.location.pathname.includes("/mirrors/") && !window.location.pathname.includes("/topic")) {
+  if (!window.location.pathname.includes("/reviews/") && !window.location.pathname.includes("/mirrors/") && !window.location.pathname === '/contaсt-us' && !window.location.pathname.includes("/topic")) {
     const boxContainer = document.querySelector('.category-selector');
     const buttonsContainer = document.createElement('div');
     const prevButtonContainer = document.createElement('button');
@@ -2152,7 +2152,7 @@ function copyToClipboard(element) {
         });
     
       }
-      if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.includes("/topic") && !window.location.pathname.includes("/reviews") && !window.location.pathname.includes("/mirrors")) {
+      if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.includes("/topic") && !window.location.pathname === '/contaсt-us' && !window.location.pathname.includes("/reviews") && !window.location.pathname.includes("/mirrors")) {
         function translateURLs2(parentElement, languageTag) {
           var links = parentElement.querySelectorAll("a[href]");
           var supportedLanguages = ["hi", "tr", "pt", "es", "ru"];
@@ -2414,7 +2414,8 @@ function copyToClipboard(element) {
         if (
             (window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html') &&
             !window.location.pathname.includes('/ru/reviews') &&
-            !window.location.pathname.includes('/ru/topic')
+            !window.location.pathname.includes('/ru/topic') &&
+            !window.location.pathname === '/contaсt-us'
           ) {
           var boxesHolders = document.querySelectorAll('div.boxes-holder');
         
@@ -2510,3 +2511,30 @@ function copyToClipboard(element) {
     }
 
     window.onload = insertRandomAdsBox;
+    document.addEventListener('DOMContentLoaded', function () {
+      // Заменяемый HTML код
+      var replacementHTML = `
+          <div class="contact">
+              <a href="/contaсt-us" class="contact-box" id="contact">
+                  <span>Contact Us</span>
+              </a>
+              <a href="/terms-of-service" class="contact-box" id="tos">
+                  <span>Terms of Service</span>
+              </a>
+              <a href="/privacy-policy" class="contact-box" id="privacy">
+                  <span>Privacy Policy</span>
+              </a>
+          </div>
+      `;
+
+      // Проверяем адрес страницы на наличие /ru/
+      var isRussianPage = window.location.href.indexOf('/ru/') !== -1;
+
+      // Если страница на русском, добавляем /ru/ к href
+      if (isRussianPage) {
+          replacementHTML = replacementHTML.replace(/href="\/(.*?)"/g, 'href="/ru/$1"');
+      }
+
+      // Заменяем содержимое элемента с классом "contact"
+      document.querySelector('.contact').innerHTML = replacementHTML;
+  });
