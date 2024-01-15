@@ -2530,6 +2530,8 @@ function copyToClipboard(element) {
         xhr.send();
     }
 
+    window.onload = insertRandomAdsBox;
+
     document.addEventListener('DOMContentLoaded', function () {
       var replacementHTML = `
           <div class="contact">
