@@ -2512,7 +2512,6 @@ function copyToClipboard(element) {
 
     window.onload = insertRandomAdsBox;
     document.addEventListener('DOMContentLoaded', function () {
-      // Заменяемый HTML код
       var replacementHTML = `
           <div class="contact">
               <a href="/contaсt-us" class="contact-box" id="contact">
@@ -2527,14 +2526,11 @@ function copyToClipboard(element) {
           </div>
       `;
 
-      // Проверяем адрес страницы на наличие /ru/
       var isRussianPage = window.location.href.indexOf('/ru/') !== -1;
 
-      // Если страница на русском, добавляем /ru/ к href
       if (isRussianPage) {
           replacementHTML = replacementHTML.replace(/href="\/(.*?)"/g, 'href="/ru/$1"');
       }
 
-      // Заменяем содержимое элемента с классом "contact"
       document.querySelector('.contact').innerHTML = replacementHTML;
   });
