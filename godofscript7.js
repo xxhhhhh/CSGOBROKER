@@ -2529,7 +2529,7 @@ function copyToClipboard(element) {
     document.addEventListener('DOMContentLoaded', function () {
       var replacementHTML = `
           <div class="contact">
-              <a href="/contant-us" class="contact-box" id="contact">
+              <a href="/contact-us" class="contact-box" id="contact">
                   <span>Contact Us</span>
               </a>
               <a href="/terms-of-service" class="contact-box" id="tos">
