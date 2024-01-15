@@ -949,7 +949,7 @@ function copyToClipboard(element) {
   }
   }
   
-  if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes("/topic/") && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/') && !window.location.pathname === '/contaсt-us') {
+  if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes("/topic/") && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/') && !window.location.pathname.includes("/contact-us")) {
     function updateURLs(parentElement) {
       var links = parentElement.querySelectorAll('a[href]');
       var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
@@ -1162,7 +1162,13 @@ function copyToClipboard(element) {
   }
   
   document.addEventListener('DOMContentLoaded', function() {
-  if (!window.location.pathname.includes("/reviews/") && !window.location.pathname.includes("/mirrors/") && !window.location.pathname === '/contaсt-us' && !window.location.pathname.includes("/topic")) {
+    if (!window.location.pathname.includes("/topic") &&
+    !window.location.pathname.includes("/reviews") &&
+    !window.location.pathname.includes("/mirrors") &&
+    !window.location.pathname.includes("/privacy-policy") &&
+    !window.location.pathname.includes("/terms-of-service") &&
+    !window.location.pathname.includes("/contact-us")) {
+      
     const boxContainer = document.querySelector('.category-selector');
     const buttonsContainer = document.createElement('div');
     const prevButtonContainer = document.createElement('button');
@@ -1315,149 +1321,154 @@ function copyToClipboard(element) {
   
   (function() {
     var insertAfter = function(newNode, referenceNode) {
-      referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+        referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
     };
-  
-    let currentSlide = 0;
-    var slideInterval;
-    var slideShowActive = true;
-    var isTransitioning = false;
-  
-    function showSlide(index) {
-      const slides = document.querySelectorAll('.slider-banner');
-      slides.forEach((slide, i) => {
-        if (i === index) {
-          slide.classList.add('active');
-        } else {
-          slide.classList.remove('active');
+
+    if (!window.location.pathname.includes("/privacy-policy") &&
+        !window.location.pathname.includes("/terms-of-service") &&
+        !window.location.pathname.includes("/contact-us")) {
+
+        let currentSlide = 0;
+        var slideInterval;
+        var slideShowActive = true;
+        var isTransitioning = false;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slider-banner');
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
         }
-      });
-    }
-  
-    function nextSlide() {
-      if (slideShowActive && !isTransitioning) {
-        isTransitioning = true; 
-  
-        setTimeout(function() {
-          isTransitioning = false; 
-        }, 6000);
-  
-        currentSlide = (currentSlide + 1) % 3;
-        showSlide(currentSlide);
-      }
-    }
-  
-    function startSlideShow() {
-      slideShowActive = true;
-      slideInterval = setInterval(nextSlide, 6000);
-    }
-  
-    function stopSlideShow() {
-      slideShowActive = false;
-      clearInterval(slideInterval);
-    }
-  
-    startSlideShow();
-  
-    var path = window.location.pathname;
-    var existingSliderPlacer = document.querySelector('.slider-placer');
-  
-    if (existingSliderPlacer) {
-      existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
-    }
-  
-    var sliderPlacer = document.createElement('div');
-    sliderPlacer.classList.add('slider-placer');
-  
-    if (path.includes('/topic/skins/')) {
-      sliderPlacer.classList.add('topic');
-    }
-  
-    var controlsContainer = document.createElement('div');
-    controlsContainer.classList.add('controls');
-  
-    var prevButton = document.createElement('button');
-    prevButton.classList.add('prev-button');
-    prevButton.innerHTML = '<i class="bi bi-chevron-left"></i>';
-    controlsContainer.appendChild(prevButton);
-  
-    var nextButton = document.createElement('button');
-    nextButton.classList.add('next-button');
-    nextButton.innerHTML = '<i class="bi bi-chevron-right"></i>';
-    controlsContainer.appendChild(nextButton); 
-  
-    var slider1 = document.createElement('a');
-    slider1.href = '/';
-    slider1.classList.add('slider-banner', 'active');
-    var img1 = document.createElement('img');
-    img1.src = '/img/best-gambling-sites-slide.png';
-    img1.alt = 'Best Gambling Sites';
-    slider1.appendChild(img1);
-  
-    var slider2 = document.createElement('a');
-    slider2.href = '/earning/offerwalls';
-    slider2.classList.add('slider-banner');
-    var img2 = document.createElement('img');
-    img2.src = '/img/earn-skins-slider.png';
-    img2.alt = 'Best Offerwall Sites';
-    slider2.appendChild(img2);
-  
-    var slider3 = document.createElement('a');
-    slider3.href = '/rust';
-    slider3.classList.add('slider-banner');
-    var img3 = document.createElement('img');
-    img3.src = '/img/best-rust-sites-slide.png';
-    img3.alt = 'Best Rust Sites';
-    slider3.appendChild(img3);
-  
-    sliderPlacer.appendChild(controlsContainer);
-    sliderPlacer.appendChild(slider1);
-    sliderPlacer.appendChild(slider2);
-    sliderPlacer.appendChild(slider3);
-  
-    var languageTag = path.match(/\/(hi|tr|pt|es|ru)(\.html)?/);
-    if (languageTag) {
-      languageTag = languageTag[1];
-      translateURLsSlider(sliderPlacer, languageTag);
-    }
-  
-    if (path.includes('/mirrors/')) {
-      var sitealternates = document.querySelector('.sitealternates');
-      if (sitealternates) {
-        insertAfter(sliderPlacer, sitealternates);
-      }
-    } else if (path.includes('/reviews/')) {
-      var ratingsumm = document.querySelector('div.ratingsumm');
-      if (ratingsumm) {
-        insertAfter(sliderPlacer, ratingsumm);
-      }
-    } else {
-      var footer = document.querySelector('footer');
-      footer.parentNode.insertBefore(sliderPlacer, footer);
-    }
-  
-    var slideElements = document.querySelectorAll('.slider-banner');
-    slideElements.forEach(function(slideElement) {
-      slideElement.addEventListener('mouseenter', function() {
-        stopSlideShow();
-      });
-  
-      slideElement.addEventListener('mouseleave', function() {
+
+        function nextSlide() {
+            if (slideShowActive && !isTransitioning) {
+                isTransitioning = true;
+
+                setTimeout(function() {
+                    isTransitioning = false;
+                }, 6000);
+
+                currentSlide = (currentSlide + 1) % 3;
+                showSlide(currentSlide);
+            }
+        }
+
+        function startSlideShow() {
+            slideShowActive = true;
+            slideInterval = setInterval(nextSlide, 6000);
+        }
+
+        function stopSlideShow() {
+            slideShowActive = false;
+            clearInterval(slideInterval);
+        }
+
         startSlideShow();
-      });
-    });
-  
-    nextButton.addEventListener('click', function() {
-      currentSlide = (currentSlide + 1) % 3;
-      showSlide(currentSlide);
-    });
-    
-    prevButton.addEventListener('click', function() {
-      currentSlide = (currentSlide - 1 + 3) % 3;
-      showSlide(currentSlide);
-    });
-  
-  })();
+
+        var path = window.location.pathname;
+        var existingSliderPlacer = document.querySelector('.slider-placer');
+
+        if (existingSliderPlacer) {
+            existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
+        }
+
+        var sliderPlacer = document.createElement('div');
+        sliderPlacer.classList.add('slider-placer');
+
+        if (path.includes('/topic/skins/')) {
+            sliderPlacer.classList.add('topic');
+        }
+
+        var controlsContainer = document.createElement('div');
+        controlsContainer.classList.add('controls');
+
+        var prevButton = document.createElement('button');
+        prevButton.classList.add('prev-button');
+        prevButton.innerHTML = '<i class="bi bi-chevron-left"></i>';
+        controlsContainer.appendChild(prevButton);
+
+        var nextButton = document.createElement('button');
+        nextButton.classList.add('next-button');
+        nextButton.innerHTML = '<i class="bi bi-chevron-right"></i>';
+        controlsContainer.appendChild(nextButton);
+
+        var slider1 = document.createElement('a');
+        slider1.href = '/';
+        slider1.classList.add('slider-banner', 'active');
+        var img1 = document.createElement('img');
+        img1.src = '/img/best-gambling-sites-slide.png';
+        img1.alt = 'Best Gambling Sites';
+        slider1.appendChild(img1);
+
+        var slider2 = document.createElement('a');
+        slider2.href = '/earning/offerwalls';
+        slider2.classList.add('slider-banner');
+        var img2 = document.createElement('img');
+        img2.src = '/img/earn-skins-slider.png';
+        img2.alt = 'Best Offerwall Sites';
+        slider2.appendChild(img2);
+
+        var slider3 = document.createElement('a');
+        slider3.href = '/rust';
+        slider3.classList.add('slider-banner');
+        var img3 = document.createElement('img');
+        img3.src = '/img/best-rust-sites-slide.png';
+        img3.alt = 'Best Rust Sites';
+        slider3.appendChild(img3);
+
+        sliderPlacer.appendChild(controlsContainer);
+        sliderPlacer.appendChild(slider1);
+        sliderPlacer.appendChild(slider2);
+        sliderPlacer.appendChild(slider3);
+
+        var languageTag = path.match(/\/(hi|tr|pt|es|ru)(\.html)?/);
+        if (languageTag) {
+            languageTag = languageTag[1];
+            translateURLsSlider(sliderPlacer, languageTag);
+        }
+
+        if (path.includes('/mirrors/')) {
+            var sitealternates = document.querySelector('.sitealternates');
+            if (sitealternates) {
+                insertAfter(sliderPlacer, sitealternates);
+            }
+        } else if (path.includes('/reviews/')) {
+            var ratingsumm = document.querySelector('div.ratingsumm');
+            if (ratingsumm) {
+                insertAfter(sliderPlacer, ratingsumm);
+            }
+        } else {
+            var footer = document.querySelector('footer');
+            footer.parentNode.insertBefore(sliderPlacer, footer);
+        }
+
+        var slideElements = document.querySelectorAll('.slider-banner');
+        slideElements.forEach(function(slideElement) {
+            slideElement.addEventListener('mouseenter', function() {
+                stopSlideShow();
+            });
+
+            slideElement.addEventListener('mouseleave', function() {
+                startSlideShow();
+            });
+        });
+
+        nextButton.addEventListener('click', function() {
+            currentSlide = (currentSlide + 1) % 3;
+            showSlide(currentSlide);
+        });
+
+        prevButton.addEventListener('click', function() {
+            currentSlide = (currentSlide - 1 + 3) % 3;
+            showSlide(currentSlide);
+        });
+    }
+})();
+
   
   
   
@@ -2152,8 +2163,13 @@ function copyToClipboard(element) {
         });
     
       }
-      if (!window.location.pathname.startsWith("/rust") && !window.location.pathname.includes("/topic") && !window.location.pathname === '/contaсt-us' && !window.location.pathname.includes("/reviews") && !window.location.pathname.includes("/mirrors")) {
-        function translateURLs2(parentElement, languageTag) {
+      if (!window.location.pathname.startsWith("/rust") &&
+      !window.location.pathname.includes("/topic") &&
+      !window.location.pathname.includes("/reviews") &&
+      !window.location.pathname.includes("/mirrors") &&
+      !window.location.pathname.includes("/privacy-policy") &&
+      !window.location.pathname.includes("/terms-of-service") &&
+      !window.location.pathname.includes("/contact-us")) {        function translateURLs2(parentElement, languageTag) {
           var links = parentElement.querySelectorAll("a[href]");
           var supportedLanguages = ["hi", "tr", "pt", "es", "ru"];
       
@@ -2415,7 +2431,7 @@ function copyToClipboard(element) {
             (window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html') &&
             !window.location.pathname.includes('/ru/reviews') &&
             !window.location.pathname.includes('/ru/topic') &&
-            !window.location.pathname === '/contaсt-us'
+            !window.location.pathname.includes("/contact-us")
           ) {
           var boxesHolders = document.querySelectorAll('div.boxes-holder');
         
