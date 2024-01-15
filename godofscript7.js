@@ -2526,11 +2526,10 @@ function copyToClipboard(element) {
         xhr.send();
     }
 
-    window.onload = insertRandomAdsBox;
     document.addEventListener('DOMContentLoaded', function () {
       var replacementHTML = `
           <div class="contact">
-              <a href="/contaсt-us" class="contact-box" id="contact">
+              <a href="/contant-us" class="contact-box" id="contact">
                   <span>Contact Us</span>
               </a>
               <a href="/terms-of-service" class="contact-box" id="tos">
@@ -2541,12 +2540,16 @@ function copyToClipboard(element) {
               </a>
           </div>
       `;
-
-      var isRussianPage = window.location.href.indexOf('/ru/') !== -1;
-
+  
+      var isRussianPage = window.location.href.match(/\/ru(?:\.html)?(?:\/|$)/);
+  
       if (isRussianPage) {
           replacementHTML = replacementHTML.replace(/href="\/(.*?)"/g, 'href="/ru/$1"');
       }
-
-      document.querySelector('.contact').innerHTML = replacementHTML;
+  
+      var contactElement = document.querySelector('.contact');
+      if (contactElement) {
+          contactElement.innerHTML = replacementHTML;
+      }
   });
+  
