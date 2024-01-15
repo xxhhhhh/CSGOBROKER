@@ -2599,7 +2599,7 @@ function copyToClipboard(element) {
         if (header) {
             var cookieWidget = document.createElement('div');
             cookieWidget.className = 'cookie-widget';
-            var languagePrefix = window.location.pathname.indexOf('/ru/') !== -1 || window.location.pathname === '/ru.html' ? 'Мы используем файлы cookie для улучшения вашего опыта' : 'We use cookies to improve your experience';
+            var languagePrefix = window.location.pathname.indexOf('/ru/') !== -1 || window.location.pathname === '/ru' || window.location.pathname === '/ru.html' ? 'Мы используем файлы cookie для улучшения вашего опыта' : 'We use cookies to improve your experience';
             var buttonText = languagePrefix === 'Мы используем файлы cookie для улучшения вашего опыта' ? 'Ознакомлен' : 'Informed';
 
             cookieWidget.innerHTML = '<span class="cookie-widget-info">' + languagePrefix + '</span>' +
