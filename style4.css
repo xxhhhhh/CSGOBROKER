@@ -195,6 +195,51 @@ nav #pagename:focus {
     justify-content: center;
     align-items: center;
 }
+.cookie-widget {
+    width: 100%;
+    height: 40px;
+    background-color: rgba(10, 10, 10, .93);
+    position: fixed;
+    bottom: 0;
+    z-index: 11111;
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation-name: btnEntrance;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.cookie-widget-info {
+    color: rgba(255, 255, 255, .7);
+    font-weight: 400;
+    font-size: 12px;
+    transition: color .1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.cookie-widget-button {
+    outline: none;
+    font-family: TTNormsPro;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 10px;
+    border-radius: 5px;
+    color: var(--white);
+    bottom: 17px;
+    padding: 4px 8px;
+    transition: all .2s ease-in-out;
+    background-color: rgb(32 32 32);
+    border: 2px #222222 solid;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.cookie-widget-button:hover {
+    border: 2px solid #ce203d;
+    background-color: #a81d34;
+}
 .ads-box {
     top: 38px;
     background: var(--opacback);

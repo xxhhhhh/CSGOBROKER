@@ -949,7 +949,9 @@ function copyToClipboard(element) {
   }
   }
   
-  if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes("/topic/") && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/') && !window.location.pathname.includes("/contact-us")) {
+  if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes("/topic/") && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/') && !window.location.pathname.includes("/privacy-policy") &&
+  !window.location.pathname.includes("/terms-of-service") &&
+  !window.location.pathname.includes("/contact-us")) {
     function updateURLs(parentElement) {
       var links = parentElement.querySelectorAll('a[href]');
       var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
@@ -2431,6 +2433,8 @@ function copyToClipboard(element) {
             (window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html') &&
             !window.location.pathname.includes('/ru/reviews') &&
             !window.location.pathname.includes('/ru/topic') &&
+            !window.location.pathname.includes("/privacy-policy") &&
+            !window.location.pathname.includes("/terms-of-service") &&
             !window.location.pathname.includes("/contact-us")
           ) {
           var boxesHolders = document.querySelectorAll('div.boxes-holder');
@@ -2552,4 +2556,61 @@ function copyToClipboard(element) {
           contactElement.innerHTML = replacementHTML;
       }
   });
-  
+  document.addEventListener("DOMContentLoaded", function () {
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    function hideCookieWidget() {
+        var cookieWidget = document.querySelector('.cookie-widget');
+        if (cookieWidget) {
+            cookieWidget.style.animationName = 'btnExit';
+            setCookie('cookieConsent', 'true', 365); 
+
+            cookieWidgetButton.removeEventListener('click', hideCookieWidget);
+        }
+    }
+
+    var cookieConsent = getCookie('cookieConsent');
+    if (!cookieConsent) {
+        var cookieWidgetButton = document.querySelector('.cookie-widget-button');
+        if (cookieWidgetButton) {
+            cookieWidgetButton.addEventListener('click', hideCookieWidget);
+        }
+
+        var header = document.querySelector('header');
+        if (header) {
+            var cookieWidget = document.createElement('div');
+            cookieWidget.className = 'cookie-widget';
+            var languagePrefix = window.location.pathname.indexOf('/ru/') !== -1 || window.location.pathname === '/ru.html' ? 'Мы используем файлы cookie для улучшения вашего опыта' : 'We use cookies to improve your experience';
+            var buttonText = languagePrefix === 'Мы используем файлы cookie для улучшения вашего опыта' ? 'Ознакомлен' : 'Informed';
+
+            cookieWidget.innerHTML = '<span class="cookie-widget-info">' + languagePrefix + '</span>' +
+                '<button class="cookie-widget-button">' + buttonText + '</button>';
+
+            header.insertAdjacentElement('afterend', cookieWidget);
+
+            cookieWidgetButton = document.querySelector('.cookie-widget-button');
+            if (cookieWidgetButton) {
+                cookieWidgetButton.addEventListener('click', hideCookieWidget);
+            }
+        }
+    }
+});
