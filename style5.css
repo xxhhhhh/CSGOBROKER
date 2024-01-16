@@ -220,6 +220,11 @@ nav #pagename:focus {
     align-items: center;
     text-align: center;
 }
+.cookie-widget-info a {
+    padding: 0 3px;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
 .cookie-widget-button {
     outline: none;
     font-family: TTNormsPro;
@@ -320,7 +325,7 @@ nav #pagename:focus {
     justify-content: center;
     flex-wrap: wrap;
     align-content: flex-start;
-    min-height: 900px;
+    min-height: 750px;
     margin: 0 auto;
 }
 .main-col-info {

@@ -2559,6 +2559,7 @@ function copyToClipboard(element) {
       }
   });
   document.addEventListener("DOMContentLoaded", function () {
+    // Функция для установки куки
     function setCookie(name, value, days) {
         var expires = "";
         if (days) {
@@ -2569,6 +2570,7 @@ function copyToClipboard(element) {
         document.cookie = name + "=" + value + expires + "; path=/";
     }
 
+    // Функция для получения значения куки
     function getCookie(name) {
         var nameEQ = name + "=";
         var ca = document.cookie.split(';');
@@ -2580,16 +2582,18 @@ function copyToClipboard(element) {
         return null;
     }
 
+    // Функция для скрытия виджета и установки куки при клике на кнопку
     function hideCookieWidget() {
         var cookieWidget = document.querySelector('.cookie-widget');
         if (cookieWidget) {
             cookieWidget.style.animationName = 'btnExit';
-            setCookie('cookieConsent', 'true', 365); 
-
+            setCookie('cookieConsent', 'true', 365);
+            // Удаляем обработчик события после первого клика
             cookieWidgetButton.removeEventListener('click', hideCookieWidget);
         }
     }
 
+    // Проверяем, было ли уже дано согласие по куки
     var cookieConsent = getCookie('cookieConsent');
     if (!cookieConsent) {
         var cookieWidgetButton = document.querySelector('.cookie-widget-button');
@@ -2597,18 +2601,20 @@ function copyToClipboard(element) {
             cookieWidgetButton.addEventListener('click', hideCookieWidget);
         }
 
+        // Вставляем виджет после закрывающего тега </header>
         var header = document.querySelector('header');
         if (header) {
             var cookieWidget = document.createElement('div');
             cookieWidget.className = 'cookie-widget';
-            var languagePrefix = window.location.pathname.indexOf('/ru/') !== -1 || window.location.pathname === '/ru' || window.location.pathname === '/ru.html' ? 'Мы используем файлы cookie для улучшения вашего опыта' : 'We use cookies to improve your experience';
-            var buttonText = languagePrefix === 'Мы используем файлы cookie для улучшения вашего опыта' ? 'Ознакомлен' : 'Informed';
+            var languagePrefix = window.location.pathname.indexOf('/ru/') !== -1 || window.location.pathname === '/ru.html' ? 'Мы используем файлы <a href="/ru/privacy-policy" class="cookie-redirect">cookie</a>, чтобы облегчить ваш опыт' : 'We use <a href="/privacy-policy" class="cookie-redirect">cookie</a> to improve your browsing experience';
+            var buttonText = languagePrefix.indexOf('/ru/') !== -1 ? 'Ознакомлен' : 'Informed';
 
             cookieWidget.innerHTML = '<span class="cookie-widget-info">' + languagePrefix + '</span>' +
                 '<button class="cookie-widget-button">' + buttonText + '</button>';
 
             header.insertAdjacentElement('afterend', cookieWidget);
 
+            // После вставки виджета, получаем ссылку на кнопку
             cookieWidgetButton = document.querySelector('.cookie-widget-button');
             if (cookieWidgetButton) {
                 cookieWidgetButton.addEventListener('click', hideCookieWidget);
