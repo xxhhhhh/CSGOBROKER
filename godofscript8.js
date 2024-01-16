@@ -2606,7 +2606,7 @@ function copyToClipboard(element) {
         if (header) {
             var cookieWidget = document.createElement('div');
             cookieWidget.className = 'cookie-widget';
-            var languagePrefix = window.location.pathname.indexOf('/ru/') !== -1 || window.location.pathname === '/ru.html' ? 'Мы используем файлы <a href="/ru/privacy-policy" class="cookie-redirect">cookie</a>, чтобы облегчить ваш опыт' : 'We use <a href="/privacy-policy" class="cookie-redirect">cookie</a> to improve your browsing experience';
+            var languagePrefix = window.location.pathname.indexOf('/ru/') !== -1 || window.location.pathname === '/ru' || window.location.pathname === '/ru.html' ? 'Мы используем файлы <a href="/ru/privacy-policy" class="cookie-redirect">cookie</a>, чтобы облегчить ваш опыт' : 'We use <a href="/privacy-policy" class="cookie-redirect">cookie</a> to improve your browsing experience';
             var buttonText = languagePrefix.indexOf('/ru/') !== -1 ? 'Ознакомлен' : 'Informed';
 
             cookieWidget.innerHTML = '<span class="cookie-widget-info">' + languagePrefix + '</span>' +
