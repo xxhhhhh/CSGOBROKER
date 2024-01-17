@@ -2622,3 +2622,25 @@ function copyToClipboard(element) {
         }
     }
 });
+const btnfaq = document.getElementById("toggle");
+
+if (btnfaq) {
+  btnfaq.onclick = function () {
+    const targetDiv = document.getElementById("FAQ");
+
+    if (targetDiv) {
+      const targetDivComputedStyle = window.getComputedStyle(targetDiv);
+      const targetDivPaddingTop = parseFloat(targetDivComputedStyle.paddingTop);
+      const targetDivPaddingBottom = parseFloat(targetDivComputedStyle.paddingBottom);
+      const targetDivHeight = targetDiv.scrollHeight + targetDivPaddingTop + targetDivPaddingBottom;
+
+      const currentHeight = parseFloat(targetDiv.style.height) || 0;
+
+      if (currentHeight === 0) {
+        targetDiv.style.height = targetDivHeight * 2 + "px";
+      } else {
+        targetDiv.style.height = "0px";
+      }
+    }
+  };
+}
