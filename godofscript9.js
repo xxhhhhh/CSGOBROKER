@@ -2437,7 +2437,7 @@ function copyToClipboard(element) {
             !window.location.pathname.includes("/terms-of-service") &&
             !window.location.pathname.includes("/contact-us")
           ) {
-          var boxesHolders = document.querySelectorAll('div.boxes-holder');
+          var boxesHolders = document.querySelectorAll('div.buttons-container-page');
         
           if (!document.querySelector('#button-vpn-filter')) {
             var button = document.createElement('div');
