@@ -1183,9 +1183,9 @@ function copyToClipboard(element) {
   
     buttonsContainer.classList.add('buttons-container');
     prevButtonContainer.classList.add('controls-button');
-    prevButtonContainer.innerHTML = '<i class="bi bi-caret-left-fill"></i>';
+    prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left"></i>';
     nextButtonContainer.classList.add('controls-button');
-    nextButtonContainer.innerHTML = '<i class="bi bi-caret-right-fill"></i>';
+    nextButtonContainer.innerHTML = '<i class="bi bi-chevron-right"></i>';
   
     buttonsContainer.appendChild(prevButtonContainer);
     buttonsContainer.appendChild(nextButtonContainer);
