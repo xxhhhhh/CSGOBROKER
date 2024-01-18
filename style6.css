@@ -2917,7 +2917,8 @@ nav img:hover {
     color: #ffffff00 !important;
 }
 .content button:hover:active{
-    opacity: 0;
+    filter: brightness(.4);
+    transition: .09s all ease-in-out;
 }
 .sitepage .content button.copy {
     width: 25px;
@@ -2947,6 +2948,16 @@ nav img:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.content button.copy i {
+    content: "\f231";
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
 }
 .content button.copy img {
     height: 12px;
@@ -3320,6 +3331,18 @@ footer .centralizer .footer-content {
     .slider-placer {
         height: 90px !important;
     }
+    .cookie-widget-info {
+        display: block;
+        padding: 0 7px;
+    }
+    .cookie-widget-button {
+        margin-right: 7px;
+        margin-left: 0;
+    }
+    .buttons-container-page {
+        bottom: 40px !important;
+        right: 10px !important;
+    }
     .smallreview p,
     .boxreview .plusminus .criteria .par li,
     .instruction li {
@@ -3381,6 +3404,9 @@ footer .centralizer .footer-content {
         max-width: 97% !important;
         left: 1% !important;
     }
+    nav img {
+        width: 40px !important;
+    }
 }
 @media screen and (max-width: 850px) {
     .ratingsumm,
@@ -3409,7 +3435,7 @@ footer .centralizer .footer-content {
         font-size: 14px;
     }
     nav img {
-        width: 50px;
+        width: 100px;
     }
     .instruction ol {
         width: 85%;

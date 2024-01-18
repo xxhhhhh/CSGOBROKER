@@ -1183,7 +1183,7 @@ function copyToClipboard(element) {
   
     buttonsContainer.classList.add('buttons-container');
     prevButtonContainer.classList.add('controls-button');
-    prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left"></i>';
+    prevButtonContainer.innerHTML = '<i class="bi bi-copy"></i>';
     nextButtonContainer.classList.add('controls-button');
     nextButtonContainer.innerHTML = '<i class="bi bi-chevron-right"></i>';
   
@@ -2061,6 +2061,10 @@ function copyToClipboard(element) {
           var newDiv = document.createElement("div");
           newDiv.className = "vpn";
           newDiv.textContent = "Нужен VPN";
+
+          if (window.innerWidth < 1000) {
+            newDiv.textContent = "VPN";
+        }
   
           var allowedIds = ["CSGORoll", "Clash", "HowlGG", "DMarket", "RustyPot", "RustChance", "Rollbit", "Primedice", "Duelbits", "FlameCases", "BCGame", "DaddySkins", "CSGOLive", "WTFSkins", "Key-Drop", "gcskins", "FarmSkins", "vvvgamers"];
   
@@ -2560,7 +2564,6 @@ function copyToClipboard(element) {
       }
   });
   document.addEventListener("DOMContentLoaded", function () {
-    // Функция для установки куки
     function setCookie(name, value, days) {
         var expires = "";
         if (days) {
@@ -2571,7 +2574,6 @@ function copyToClipboard(element) {
         document.cookie = name + "=" + value + expires + "; path=/";
     }
 
-    // Функция для получения значения куки
     function getCookie(name) {
         var nameEQ = name + "=";
         var ca = document.cookie.split(';');
@@ -2583,18 +2585,15 @@ function copyToClipboard(element) {
         return null;
     }
 
-    // Функция для скрытия виджета и установки куки при клике на кнопку
     function hideCookieWidget() {
         var cookieWidget = document.querySelector('.cookie-widget');
         if (cookieWidget) {
             cookieWidget.style.animationName = 'btnExit';
             setCookie('cookieConsent', 'true', 365);
-            // Удаляем обработчик события после первого клика
             cookieWidgetButton.removeEventListener('click', hideCookieWidget);
         }
     }
 
-    // Проверяем, было ли уже дано согласие по куки
     var cookieConsent = getCookie('cookieConsent');
     if (!cookieConsent) {
         var cookieWidgetButton = document.querySelector('.cookie-widget-button');
@@ -2602,7 +2601,6 @@ function copyToClipboard(element) {
             cookieWidgetButton.addEventListener('click', hideCookieWidget);
         }
 
-        // Вставляем виджет после закрывающего тега </header>
         var header = document.querySelector('header');
         if (header) {
             var cookieWidget = document.createElement('div');
@@ -2615,7 +2613,6 @@ function copyToClipboard(element) {
 
             header.insertAdjacentElement('afterend', cookieWidget);
 
-            // После вставки виджета, получаем ссылку на кнопку
             cookieWidgetButton = document.querySelector('.cookie-widget-button');
             if (cookieWidgetButton) {
                 cookieWidgetButton.addEventListener('click', hideCookieWidget);
