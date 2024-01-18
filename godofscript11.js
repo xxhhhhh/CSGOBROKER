@@ -2428,110 +2428,111 @@ function copyToClipboard(element) {
         var categorySelector = document.querySelector('.category-selector');
         translateURLs2(categorySelector, languageTag);
       }
-      (function() {
-        if (
-            (window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html') &&
-            !window.location.pathname.includes('/ru/reviews') &&
-            !window.location.pathname.includes('/ru/topic') &&
-            !window.location.pathname.includes("/privacy-policy") &&
-            !window.location.pathname.includes("/terms-of-service") &&
-            !window.location.pathname.includes("/contact-us")
-          ) {
-          var boxesHolders = document.querySelectorAll('div.buttons-container-page');
-        
-          if (!document.querySelector('#button-vpn-filter')) {
-            var button = document.createElement('div');
-            button.className = 'settings-menu';
-            button.innerHTML =
-              '<a class="settings-button" id="button-vpn-filter" title="Скрыть сайты требующие VPN"><i id="vpn-icon" class="bi bi-eye"></i></a>';
-        
-            boxesHolders.forEach(function (boxesHolder) {
-              boxesHolder.insertBefore(button.cloneNode(true), boxesHolder.firstChild);
-            });
-        
-            var vpnIcon = document.getElementById('vpn-icon');
-        
-            function toggleVpnBlocks() {
-              var vpnBlocks = document.querySelectorAll('.box');
-              vpnBlocks.forEach(function (block) {
-                var hasVpn = block.querySelector('.vpn');
-                if (hasVpn) {
-                  block.style.display = block.style.display === 'none' ? '' : 'none';
+      window.onload = function () {
+        (function () {
+            if (
+                (window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html') &&
+                !window.location.pathname.includes('/ru/reviews') &&
+                !window.location.pathname.includes('/ru/topic') &&
+                !window.location.pathname.includes("/privacy-policy") &&
+                !window.location.pathname.includes("/terms-of-service") &&
+                !window.location.pathname.includes("/contact-us")
+            ) {
+                var boxesHolders = document.querySelectorAll('div.buttons-container-page');
+    
+                if (!document.querySelector('#button-vpn-filter')) {
+                    var button = document.createElement('div');
+                    button.className = 'settings-menu';
+                    button.innerHTML =
+                        '<a class="settings-button" id="button-vpn-filter" title="Скрыть сайты требующие VPN"><i id="vpn-icon" class="bi bi-eye"></i></a>';
+    
+                    boxesHolders.forEach(function (boxesHolder) {
+                        boxesHolder.insertBefore(button.cloneNode(true), boxesHolder.firstChild);
+                    });
+    
+                    var vpnIcon = document.getElementById('vpn-icon');
+    
+                    function toggleVpnBlocks() {
+                        var vpnBlocks = document.querySelectorAll('.box');
+                        vpnBlocks.forEach(function (block) {
+                            var hasVpn = block.querySelector('.vpn');
+                            if (hasVpn) {
+                                block.style.display = block.style.display === 'none' ? '' : 'none';
+                            }
+                        });
+                    }
+    
+                    var buttonState = localStorage.getItem('vpnButtonState');
+                    var buttonTitle = localStorage.getItem('vpnButtonTitle');
+    
+                    if (buttonState === 'hidden') {
+                        toggleVpnBlocks();
+                        vpnIcon.classList.remove('bi-eye');
+                        vpnIcon.classList.add('bi-eye-slash');
+                    }
+    
+                    if (buttonTitle) {
+                        document.getElementById('button-vpn-filter').title = buttonTitle;
+                    }
+    
+                    document.getElementById('button-vpn-filter').addEventListener('click', function () {
+                        toggleVpnBlocks();
+    
+                        var buttonState = localStorage.getItem('vpnButtonState') || 'visible';
+    
+                        var newButtonState = buttonState === 'hidden' ? 'visible' : 'hidden';
+                        localStorage.setItem('vpnButtonState', newButtonState);
+    
+                        vpnIcon.classList.toggle('bi-eye');
+                        vpnIcon.classList.toggle('bi-eye-slash');
+    
+                        var button = document.getElementById('button-vpn-filter');
+                        if (vpnIcon.classList.contains('bi-eye')) {
+                            button.title = 'Скрыть сайты требующие VPN';
+                        } else {
+                            button.title = 'Показать сайты требующие VPN';
+                        }
+    
+                        localStorage.setItem('vpnButtonTitle', button.title);
+                    });
                 }
-              });
             }
-        
-            window.onload = function () {
-              var buttonState = localStorage.getItem('vpnButtonState');
-              var buttonTitle = localStorage.getItem('vpnButtonTitle');
-        
-              if (buttonState === 'hidden') {
-                toggleVpnBlocks();
-                vpnIcon.classList.remove('bi-eye');
-                vpnIcon.classList.add('bi-eye-slash');
-              }
-        
-              if (buttonTitle) {
-                document.getElementById('button-vpn-filter').title = buttonTitle;
-              }
+        })();
+    
+        function insertRandomAdsBox() {
+            var currentPath = window.location.pathname;
+    
+            if (currentPath.includes('/topic/skins/') && currentPath.includes('/ru/')) {
+                var adsFilePath = '/code-parts/topic-ads-ru.html';
+            } else if (currentPath.includes('/topic/skins/')) {
+                var adsFilePath = '/code-parts/topic-ads.html';
+            } else {
+                return;
+            }
+    
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', adsFilePath, true);
+    
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var adsBoxesHtml = xhr.responseText;
+                    var adsBoxes = document.createElement('div');
+                    adsBoxes.innerHTML = adsBoxesHtml;
+    
+                    var insertAfterElement = document.querySelector('.box-topic');
+    
+                    var randomAdsBox = adsBoxes.children[Math.floor(Math.random() * adsBoxes.children.length)];
+    
+                    insertAfterElement.parentNode.insertBefore(randomAdsBox, insertAfterElement.nextSibling);
+                }
             };
-        
-            document.getElementById('button-vpn-filter').addEventListener('click', function () {
-              toggleVpnBlocks();
-        
-              var buttonState = localStorage.getItem('vpnButtonState') || 'visible';
-        
-              var newButtonState = buttonState === 'hidden' ? 'visible' : 'hidden';
-              localStorage.setItem('vpnButtonState', newButtonState);
-        
-              vpnIcon.classList.toggle('bi-eye');
-              vpnIcon.classList.toggle('bi-eye-slash');
-        
-              var button = document.getElementById('button-vpn-filter');
-              if (vpnIcon.classList.contains('bi-eye')) {
-                button.title = 'Скрыть сайты требующие VPN';
-              } else {
-                button.title = 'Показать сайты требующие VPN';
-              }
-        
-              localStorage.setItem('vpnButtonTitle', button.title);
-            });
-          }
+    
+            xhr.send();
         }
-      })();
-      function insertRandomAdsBox() {
-        var currentPath = window.location.pathname;
-
-        if (currentPath.includes('/topic/skins/') && currentPath.includes('/ru/')) {
-            var adsFilePath = '/code-parts/topic-ads-ru.html';
-        } else if (currentPath.includes('/topic/skins/')) {
-            var adsFilePath = '/code-parts/topic-ads.html';
-        } else {
-            return;
-        }
-
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', adsFilePath, true);
-
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                var adsBoxesHtml = xhr.responseText;
-                var adsBoxes = document.createElement('div');
-                adsBoxes.innerHTML = adsBoxesHtml;
-
-                var insertAfterElement = document.querySelector('.box-topic');
-
-                var randomAdsBox = adsBoxes.children[Math.floor(Math.random() * adsBoxes.children.length)];
-
-                insertAfterElement.parentNode.insertBefore(randomAdsBox, insertAfterElement.nextSibling);
-            }
-        };
-
-        xhr.send();
-    }
-
-    window.onload = insertRandomAdsBox;
-
+    
+        insertRandomAdsBox();
+    };
+    
     document.addEventListener('DOMContentLoaded', function () {
       var replacementHTML = `
           <div class="contact">
