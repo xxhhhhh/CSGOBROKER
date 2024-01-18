@@ -1402,7 +1402,7 @@ function copyToClipboard(element) {
         slider1.href = '/';
         slider1.classList.add('slider-banner', 'active');
         var img1 = document.createElement('img');
-        img1.src = '/img/best-gambling-sites-slide.png';
+        img1.src = '/img/best-gambling-sites-slide-2024.png';
         img1.alt = 'Best Gambling Sites';
         slider1.appendChild(img1);
 
@@ -1410,7 +1410,7 @@ function copyToClipboard(element) {
         slider2.href = '/earning/offerwalls';
         slider2.classList.add('slider-banner');
         var img2 = document.createElement('img');
-        img2.src = '/img/earn-skins-slider.png';
+        img2.src = '/img/earn-skins-slider-2024.png';
         img2.alt = 'Best Offerwall Sites';
         slider2.appendChild(img2);
 
@@ -1418,7 +1418,7 @@ function copyToClipboard(element) {
         slider3.href = '/rust';
         slider3.classList.add('slider-banner');
         var img3 = document.createElement('img');
-        img3.src = '/img/best-rust-sites-slide.png';
+        img3.src = '/img/best-rust-sites-slide-2024.png';
         img3.alt = 'Best Rust Sites';
         slider3.appendChild(img3);
 
