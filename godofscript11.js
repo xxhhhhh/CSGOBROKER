@@ -1041,18 +1041,42 @@ function copyToClipboard(element) {
   
     document.addEventListener('DOMContentLoaded', function() {
       var navBarContainer = document.createElement('div');
-  
+    
       fetch('/code-parts/nav-bar.html')
         .then(response => response.text())
         .then(data => {
           navBarContainer.innerHTML = data;
-  
+    
+          // Проверка ширины экрана
+          var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+          if (screenWidth < 1340) {
+            var categoryBoxes = navBarContainer.querySelectorAll('.category-selector .category-box');
+            categoryBoxes.forEach(function(box) {
+              if (!box.matches('.category-box#newest')) {
+                box.removeAttribute('href');
+              }
+            });
+    
+            var notExistLinks = navBarContainer.querySelectorAll('#notexist ul .submenu li a i');
+            notExistLinks.forEach(function(icon) {
+              var link = icon.parentElement;
+              if (link && link.tagName.toLowerCase() === 'a' && !link.matches('.category-box#newest')) {
+                link.removeAttribute('href');
+              }
+            });
+    
+            var navBar = document.querySelector('.nav-bar');
+            if (navBar) {
+              navBar.style.pointerEvents = 'none';
+            }
+          }
+    
           var header = document.querySelector('header');
-  
+    
           if (!header) return;
-  
+    
           header.insertAdjacentElement('afterend', navBarContainer.firstChild);
-  
+    
           var categorySelector = document.querySelector('.category-selector');
           if (categorySelector) {
             fetch('/code-parts/translations/categories.json')
@@ -1061,21 +1085,28 @@ function copyToClipboard(element) {
                 applyTranslation(categorySelector, languageTag, translations);
               });
           }
-  
+    
           var menuToggle = document.querySelector('.menu-toggle');
           var navBar = document.querySelector('.nav-bar');
-  
+    
           if (menuToggle && navBar) {
             menuToggle.addEventListener('click', function() {
               navBar.classList.toggle('active');
             });
-  
-            navBar.addEventListener('click', function() {
-              navBar.classList.remove('active');
-            });
+    
+            if (screenWidth >= 1340) {
+              navBar.addEventListener('click', function() {
+                navBar.classList.remove('active');
+              });
+            }
           }
         });
     });
+    
+    
+    
+    
+    
   
   function translateTextElements(translations) {
     var siteprosElements = document.querySelectorAll('.sitedetails .sitepros span');
@@ -1320,6 +1351,22 @@ function copyToClipboard(element) {
       }
     }
   }
+
+  function updateCategoryBoxHrefs() {
+    const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  
+    if (windowWidth < 1340) {
+      const categoryBoxes = document.querySelectorAll('#notexist .category-box');
+  
+      categoryBoxes.forEach(box => {
+        box.removeAttribute('href');
+      });
+    }
+  }
+
+updateCategoryBoxHrefs();
+
+window.addEventListener('resize', updateCategoryBoxHrefs);
   
   (function() {
     var insertAfter = function(newNode, referenceNode) {

@@ -3133,6 +3133,35 @@ footer .centralizer .footer-content {
         left: 2%;
         top: 83px;
         display: flex;
+        /* height: 650px; */
+    }
+    #notexist .submenu, .category-selector .submenu2 {
+        width: 100% !important;
+        height: 100%;
+        margin-top: unset !important;
+        margin-left: unset !important;
+        left: 0;
+    }
+    #notexist .submenu {
+        top: 260px;
+    }
+    #notexist #big-category {
+        display: flex;
+        flex-direction: column;
+        height: 50px;
+    }
+    .category-selector .submenu2 {
+        top: unset;
+        position: relative !important;
+    }
+    .nav-bar {
+        background-color: rgba(12, 12, 12, .85);
+    }
+    .category-box-logo img {
+        opacity: .85 !important;
+    }
+    .category-centralizer.nav {
+        margin-top: 90px;
     }
     .category-space {
         height: 80px;
@@ -3148,6 +3177,9 @@ footer .centralizer .footer-content {
     }
     .category-selector .category-box .category-box-content {
         display: none;
+    }
+    .features .featuresbox .typesinside, .gamemodes .featuresbox .typesinside {
+        justify-content: center;
     }
     .pages #PageTitle, #PageSubt {
         font-size: 18px;
@@ -3194,7 +3226,7 @@ footer .centralizer .footer-content {
         height: 100%;
     }
     .boxreview .plusminus .criteria {
-        width: 100%;
+        width: 98%;
         margin: 9px 0 0 0;
     }
     .boxreview .plusminus .criteria .par h2 {
@@ -3212,8 +3244,19 @@ footer .centralizer .footer-content {
     .slide {
         width: 100% !important;
     }
+    .credits {
+        position: relative;
+    }
     .contact {
-        display: none;
+        width: 100%;
+        font-size: 11px;
+        justify-content: center;
+    }
+    footer .centralizer {
+        width: 95%;
+    }
+    footer .centralizer .footer-content {
+        flex-direction: column;
     }
     /* .gamemodes {
         bottom: 294px;
@@ -3346,10 +3389,10 @@ footer .centralizer .footer-content {
     .smallreview p,
     .boxreview .plusminus .criteria .par li,
     .instruction li {
-        font-size: 15px !important;
+        font-size: 14px !important;
     }
     .sitealternatesboxes .box .logobg img {
-        max-width: 55% !important;
+        max-width: 75% !important;
     }
     .category-selector .category-box {
         /* width: 182px !important; */
@@ -3404,9 +3447,6 @@ footer .centralizer .footer-content {
         max-width: 97% !important;
         left: 1% !important;
     }
-    nav img {
-        width: 40px !important;
-    }
 }
 @media screen and (max-width: 850px) {
     .ratingsumm,
@@ -3415,6 +3455,12 @@ footer .centralizer .footer-content {
     }
     .ratingthings {
         flex-wrap: nowrap;
+    }
+    .nav-content {
+        padding-left: 10px !important;
+    }
+    .menu-toggle {
+        margin-right: 10px;
     }
     .ratingthings .ratingway {
         font-size: 16px;
@@ -3434,19 +3480,34 @@ footer .centralizer .footer-content {
     .pages #PageTitle, #PageSubt {
         font-size: 14px;
     }
+    nav .pages {
+        padding-left: 115px;
+    }
+    nav .logospace {
+        position: absolute;
+        left: -10px;
+        top: 10px;
+    }
     nav img {
-        width: 100px;
+        width: 130px;
     }
     .instruction ol {
         width: 85%;
     }
     .sitealternatesboxes {
         flex-direction: column;
+        flex-wrap: wrap;
         padding-top: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        height: 626px;
+        align-content: space-between;
     }
     .sitealternates .box  {
         width: 100% !important; 
         margin-top: 9px !important;
+        width: 49% !important;
     }
     }
   
