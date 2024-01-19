@@ -1495,6 +1495,12 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
             footer.parentNode.insertBefore(sliderPlacer, footer);
         }
 
+        var ratingsumm = document.querySelector('.ratingsumm');
+        var sitealternates = document.querySelector('.sitealternates');
+      
+        // Вставляем div.sitealternates после div.ratingsumm
+        ratingsumm.parentNode.insertBefore(sitealternates, ratingsumm.nextSibling);
+
         var slideElements = document.querySelectorAll('.slider-banner');
         slideElements.forEach(function(slideElement) {
             slideElement.addEventListener('mouseenter', function() {
@@ -1969,7 +1975,6 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
         triggersContainer.removeChild(trigger);
       });
     }
-    
     function createTrigger(index) {
       var trigger = document.createElement("input");
       trigger.type = "radio";

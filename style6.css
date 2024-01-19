@@ -253,7 +253,7 @@ nav #pagename:focus {
     height: 200px;
     margin: 18px 9px 0 9px;
     border-radius: 10px;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.25);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     transition: all .2s ease-in-out;
     margin: 0 !important;
     display: flex;
@@ -481,7 +481,7 @@ nav #pagename:focus {
     height: 340px; /* 400 whith third panel */
     margin: 18px 9px 0 9px;
     border-radius: 10px;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.25);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     transition: all .2s ease-in-out;
     margin: 0 !important;
     display: flex;
@@ -1058,7 +1058,7 @@ nav #pagename:focus {
     background-color: rgba(0,0,0,.2);
     padding: 10px 0;
     overflow: hidden;
-    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     transition: height .9s ease-in-out;
 }
 .navigation-menu .navigation-title i {
@@ -1148,7 +1148,7 @@ nav #pagename:focus {
     width: 100%;
     border-radius: 5px;
     /* background: linear-gradient(150deg, rgba(0,0,0,.3) 0%, rgba(0,0,0,.3) 10%, rgba(0, 0, 0, .3) 50%, rgba(255, 255, 255, 0) 100%); */
-    /* box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%); */
+    /* box-shadow: 0 1px 6px 0 rgba(0,0,0,.1); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1849,7 +1849,7 @@ nav img:hover {
     border-radius: 10px;
     background-color: rgb(0,0,0, .25);
     /* background: linear-gradient(90deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.35) 100%); */
-    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     transition: all .2s ease-in-out;
     flex-shrink: 0;
 }
@@ -2099,7 +2099,7 @@ nav img:hover {
     width: 300px;
     height: 60px;
     background-color: rgba(0,0,0,.3);
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.25);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2112,7 +2112,7 @@ nav img:hover {
     width: 300px;
     height: 60px;
     background-color: rgba(0,0,0,.3);
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.25);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2144,7 +2144,9 @@ nav img:hover {
 .sitedetails {
     z-index: 1;
     position: relative;
-    width: 100%;
+    width: 98%;
+    display: flex;
+    justify-content: space-around;
 }
 .menu-toggle {
     width: 50px;
@@ -2225,8 +2227,7 @@ nav img:hover {
     background-color: rgb(16 16 16) !important;
 }
 .sitedetails .sitepros {
-    margin-top: 9px;
-    width: 98%;
+    width: 49.2%;
     height: 60px;
     background-color: var(--opacback);
     border-radius: 5px;
@@ -2235,13 +2236,12 @@ nav img:hover {
     color: var(--white);
     display: flex;
     align-items: center;
-    /* transition: height, background, .2s ease-in-out; */
     transition: .2s all ease-in-out;
-    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     overflow: hidden;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 9px auto;
+    margin: 9px 0;
 }
 .sitedetails .methodlist {
     height: 50%;
@@ -2264,7 +2264,7 @@ nav img:hover {
     filter: grayscale(0) brightness(110%);
 }
 .sitedetails .sitepros.active {
-    height: 208px;
+    height: 160px;
     transition: height .9s ease-in-out;
 } 
 .sitedetails .sitepros.active.one {
@@ -2370,7 +2370,7 @@ nav img:hover {
     border-radius: 5px;
     overflow: hidden;
     background: transparent;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.25);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     transition: all .2s ease-in-out;
     text-decoration: none;
 }
@@ -2470,7 +2470,7 @@ nav img:hover {
     background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.2) 100%); /*     background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(0, 0, 0, .3) 50%, rgba(255, 255, 255, 0) 100%);
     background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.35) 100%);
     background: rgb(0,0,0, .2); */
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.25);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     transition: all .2s ease-in-out;
 }
 .box:nth-child(1),
@@ -2486,7 +2486,7 @@ nav img:hover {
     margin: 18px 9px 0 9px;
     border-radius: 10px;
     background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.2) 100%);
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.25);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     transition: all .2s ease-in-out;
 }
 .sitepage .box{
@@ -2534,6 +2534,7 @@ nav img:hover {
     font-weight: 600;
     font-size: 16px;
     color: var(--white);
+    border-radius: 5px;
 }
 .sitealternatesboxes {
     padding-top: 9px;
@@ -3012,7 +3013,7 @@ footer#review .centralizer .footer-content .credits {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     overflow: hidden;
 }
 footer {
@@ -3096,7 +3097,10 @@ footer .centralizer .footer-content {
         display: none;
     }
     .slider-placer {
-        width: 90%;
+        width: 96%;
+    }
+    .slider-banner img {
+        width: 105%;
     }
     .slider-placer.topic {
         left: unset;
@@ -3707,7 +3711,7 @@ footer .centralizer .footer-content {
     cursor: pointer;
     transition: .2s all ease-in-out;
     border-radius: 5px;
-    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 15%);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
   }
   .settings-button i,
   #back-to-top-btn,
