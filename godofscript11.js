@@ -1495,12 +1495,6 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
             footer.parentNode.insertBefore(sliderPlacer, footer);
         }
 
-        var ratingsumm = document.querySelector('.ratingsumm');
-        var sitealternates = document.querySelector('.sitealternates');
-      
-        // Вставляем div.sitealternates после div.ratingsumm
-        ratingsumm.parentNode.insertBefore(sitealternates, ratingsumm.nextSibling);
-
         var slideElements = document.querySelectorAll('.slider-banner');
         slideElements.forEach(function(slideElement) {
             slideElement.addEventListener('mouseenter', function() {
@@ -1999,6 +1993,11 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
       triggersContainer.appendChild(label);
     }
     
+    var ratingsumm = document.querySelector('.ratingsumm');
+    var sitealternates = document.querySelector('.sitealternates');
+  
+    ratingsumm.parentNode.insertBefore(sitealternates, ratingsumm.nextSibling);
+
     function createTriggers() {
       removeAllTriggers();
       for (var i = 0; i < slides.length; i++) {
