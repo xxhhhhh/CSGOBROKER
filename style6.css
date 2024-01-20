@@ -3338,7 +3338,8 @@ footer .centralizer .footer-content {
         width: 140px;
     }
     nav .pages {
-        padding-left: 20px;
+        padding-left: unset;
+        margin-left: 20px;
     }
     nav .pages a {
         margin-left: 18px;
@@ -3485,15 +3486,19 @@ footer .centralizer .footer-content {
         font-size: 14px;
     }
     nav .pages {
-        padding-left: 115px;
+        padding-left: unset;
+        margin-left: 115px;
     }
     nav .logospace {
         position: absolute;
         left: -10px;
-        top: 10px;
+        top: -30px;
     }
     nav img {
         width: 130px;
+    }
+    nav #logo {
+        height: auto;
     }
     .instruction ol {
         width: 85%;
