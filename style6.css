@@ -2146,7 +2146,7 @@ nav img:hover {
     position: relative;
     width: 98%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .menu-toggle {
     width: 50px;
@@ -2227,7 +2227,7 @@ nav img:hover {
     background-color: rgb(16 16 16) !important;
 }
 .sitedetails .sitepros {
-    width: 49.2%;
+    width: 49.6%;
     height: 60px;
     background-color: var(--opacback);
     border-radius: 5px;
@@ -2549,6 +2549,7 @@ nav img:hover {
     background-color: unset;
     background: var(--opacback);
     margin-left: 9px !important;
+    border-radius: 5px;
 }
 .sitealternates .box:first-child {
     margin-left: unset !important;
@@ -3076,16 +3077,30 @@ footer .centralizer .footer-content {
         width: 92%;
     }
     .box-topic {
-        display: none;
+        width: 98%;
+        margin: 4px 0 0 0 !important;
+        height: 300px;
+        top: 0;
+    }
+    .topic-box {
+        width: 100%;
     }
     .sitepage.topic .siteblock {
         display: flex;
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navigation-section.second .colors-box {
+        margin-top: 3px;
     }
     .ads-box {
-        width: 96%;
-        margin: 8px 0 0 0 !important;
+        width: 98%;
+        margin: 4px 0 0 0 !important;
         top: 0;
+    }
+    .box-skins {
+        margin: 4px 0 0 0 !important;
     }
     .settings-menu {
         display: none;
@@ -3098,6 +3113,7 @@ footer .centralizer .footer-content {
     }
     .slider-placer {
         width: 96%;
+        margin-top: 4px;
     }
     .slider-banner img {
         width: 105%;
@@ -3214,6 +3230,7 @@ footer .centralizer .footer-content {
     .sitealternates .box  {
         width: 24.5% !important; 
         margin-left: unset !important;
+        margin-top: 4px !important;
     }
     .navigation-menu {
         display: none;
@@ -3223,6 +3240,8 @@ footer .centralizer .footer-content {
         left: 0;
         margin: 0 auto;
         width: 100%;
+        display: flex;
+        justify-content: center;
     }
     .boxreview .plusminus {
         flex-wrap: nowrap;
@@ -3282,7 +3301,10 @@ footer .centralizer .footer-content {
         padding-top: unset;
     }
     .sitedetails .sitepros {
-        width: 98%;
+        margin: 4px 0;
+    }
+    .sitealternates {
+        padding-top: 4px;
     }
     .sitedetails .methodlist {
         width: 100%;
@@ -3464,6 +3486,21 @@ footer .centralizer .footer-content {
     .nav-content {
         padding-left: 10px !important;
     }
+    ul .submenu li a {
+        padding: 7px 10px !important;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    #notexist #big-category {
+        height: 30px;
+    }
+    .nav-bar {
+        background-color: rgba(12, 12, 12, .9);
+    }
+    .box-skins.selected .box-skins-list .skin {
+        height: 180px;
+        width: 180px;
+    }
     .menu-toggle {
         margin-right: 10px;
     }
@@ -3515,8 +3552,7 @@ footer .centralizer .footer-content {
     }
     .sitealternates .box  {
         width: 100% !important; 
-        margin-top: 9px !important;
-        width: 49% !important;
+        width: 49.5% !important;
     }
     }
   
