@@ -2117,7 +2117,7 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
             newDiv.textContent = "VPN";
         }
   
-          var allowedIds = ["Clash", "DMarket", "RustyPot", "Rollbit", "Primedice", "Duelbits", "FlameCases", "BCGame", "DaddySkins", "CSGOLive", "WTFSkins", "gcskins", "FarmSkins", "vvvgamers"];
+          var allowedIds = ["Clash", "DMarket", "Rollbit", "Primedice", "Duelbits", "FlameCases", "BCGame", "DaddySkins", "CSGOLive", "WTFSkins", "gcskins", "FarmSkins", "vvvgamers"];
   
           var boxElements = document.querySelectorAll(".box");
   
