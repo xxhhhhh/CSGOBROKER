@@ -1998,8 +1998,10 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
     
     var ratingsumm = document.querySelector('.ratingsumm');
     var sitealternates = document.querySelector('.sitealternates');
-  
-    ratingsumm.parentNode.insertBefore(sitealternates, ratingsumm.nextSibling);
+    
+    if (sitealternates) {
+      ratingsumm.parentNode.insertBefore(sitealternates, ratingsumm.nextSibling);
+    }
 
     function createTriggers() {
       removeAllTriggers();
