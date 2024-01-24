@@ -2103,7 +2103,7 @@ nav img:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 9px;
     border-radius: 5px;
     text-decoration: none;
     transition: transform .2s ease-in-out;
@@ -2116,10 +2116,29 @@ nav img:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 9px;
     border-radius: 5px;
     text-decoration: none;
     transition: transform .2s ease-in-out;
+}
+.return-box {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0,0,0,.35);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 9px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform .2s ease-in-out;
+    font-size: 26px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, .3);
+    position: absolute;
+    top: 0;
+    left: -70px;
 }
 .partner-site img {
     max-width: 150px;
@@ -2198,7 +2217,7 @@ nav img:hover {
 .nav-bar {
     width: 100%;
     height: 0%;
-    background-color: rgba(12, 12, 12, .8);
+    background-color: rgba(12, 12, 12, .85);
     position: fixed;
     transition: all .22s ease-in-out;
     overflow: hidden;
@@ -3880,6 +3899,9 @@ footer .centralizer .footer-content {
         background-color: #121212;
         transition: all ease .2s;
     } 
+    .category-selector .submenu2 {
+        display: none;
+    }
     .submenu li {
         background-color: rgb(24 24 24);
         /* background-color: #121212; */
@@ -3922,6 +3944,7 @@ footer .centralizer .footer-content {
         margin-left: 310px;
         transition: opacity ease-in-out .15s;
         border-left: 2px solid rgba(0,0,0,.1);
+        display: block;
     }
     ul li .submenu2 li,
     ul li .submenu li{
