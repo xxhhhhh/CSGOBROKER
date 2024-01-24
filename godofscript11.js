@@ -1525,6 +1525,9 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
     !window.location.pathname.includes("/reviews/") &&
     !window.location.pathname.includes("/topic/") &&
     !window.location.pathname.includes("/mirrors/") &&
+    !window.location.pathname.endsWith("privacy-policy.html") &&
+    !window.location.pathname.endsWith("contact-us.html") &&
+    !window.location.pathname.endsWith("terms-of-service.html") &&
     window.location.pathname !== "/ru" &&
     window.location.pathname !== "/pt" &&
     window.location.pathname !== "/es" &&
@@ -2692,4 +2695,19 @@ if (btnfaq) {
       }
     }
   };
+}
+
+if (window.innerWidth <= 1340) {
+} else {
+  if (window.location.href.includes('/topic/skins/') && !window.location.href.endsWith('/topic/skins')) {
+      const skinDescNames = document.querySelectorAll('.skin-desc-name');
+
+      skinDescNames.forEach(element => {
+          const skinName = element.textContent.trim();
+          const link = `https://lis-skins.ru/market/csgo/?query=${encodeURIComponent(skinName)}&rf=83346597`;
+          const parentElement = element.parentElement;
+          parentElement.setAttribute('href', link);
+      });
+  } else {
+  }
 }

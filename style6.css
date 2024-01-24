@@ -1998,7 +1998,7 @@ nav img:hover {
     min-width: 66.5%;
     overflow: unset;
     position: relative;
-    left: 0;
+    left: unset;
     top: 8px;
     height: 100px;
     display: flex;
@@ -3146,11 +3146,11 @@ footer .centralizer .footer-content {
     }
     .category-selector {
         max-width: 98%;
-        margin: 0 auto;
         width: unset !important;
         height: 90px;
         justify-content: flex-start;
-        left: 2%;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
         top: 83px;
         display: flex;
         /* height: 650px; */
@@ -3182,6 +3182,7 @@ footer .centralizer .footer-content {
     }
     .category-centralizer.nav {
         margin-top: 90px;
+        justify-content: unset;
     }
     .category-space {
         height: 80px;
@@ -3472,7 +3473,6 @@ footer .centralizer .footer-content {
 @media screen and (max-width: 390px) {
     .category-selector {
         max-width: 97% !important;
-        left: 1% !important;
     }
 }
 @media screen and (max-width: 850px) {
