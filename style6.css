@@ -245,7 +245,7 @@ nav #pagename:focus {
     border: 2px solid #ce203d;
     background-color: #a81d34;
 }
-.ads-box {
+.rec-box {
     top: 38px;
     background: var(--opacback);
     position: relative;
@@ -259,18 +259,18 @@ nav #pagename:focus {
     display: flex;
     flex-direction: column;
 }
-#ads-box-logobg {
+#rec-box-logobg {
     width: 100%;
     height: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#ads-box-logobg img {
+#rec-box-logobg img {
     max-width: 210px;
     max-height: 60px;
 }
-#ads-box-logobg a {
+#rec-box-logobg a {
     width: 100%;
     height: 100%;
     padding-top: 20px;
@@ -278,7 +278,7 @@ nav #pagename:focus {
     align-items: center;
     justify-content: center;
 }
-#ads-box-content {
+#rec-box-content {
     width: 100%;
     height: 70%;
     display: flex;
@@ -288,7 +288,7 @@ nav #pagename:focus {
     /* background: radial-gradient( 50% 65% at 50% 100%, #ce203d31, transparent 100% ); */
     background: radial-gradient( 50% 65% at 50% 100%, #4b4b4b31, transparent 100% );
 }
-#ads-box-content p {
+#rec-box-content p {
     width: 80%;
     margin: 13px auto 0 auto;
     color: rgba(255, 255, 255, .6);
@@ -296,7 +296,7 @@ nav #pagename:focus {
     font-size: 14px;
     text-align: center;
 }
-.ads-box:hover button {
+.rec-box:hover button {
     animation: buttons 1s infinite;
     border: 2px solid #ce203d;
     background-color: #a81d34;
@@ -3113,7 +3113,7 @@ footer .centralizer .footer-content {
     .navigation-section.second .colors-box {
         margin-top: 3px;
     }
-    .ads-box {
+    .rec-box {
         width: 98%;
         margin: 4px 0 0 0 !important;
         top: 0;
@@ -3904,8 +3904,6 @@ footer .centralizer .footer-content {
     }
     .submenu li {
         background-color: rgb(24 24 24);
-        /* background-color: #121212; */
-        /* background-color: #101010; */
     }
     /* .submenu li:last-child {
         border-bottom: 2px solid var(--main-color);
