@@ -38,7 +38,7 @@ function handleLanguageRedirect() {
 
     if (langPrefix !== 'en') {
       var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace(/(\.co|\.cc)\//g, '.$1/' + selectedLang + '/');
+      var newUrl = currentUrl.replace(/(\.co|\.cc)\//g, '.$1/' + langPrefix + '/');
 
       if (newUrl !== currentUrl) {
         userChoice = langPrefix;
@@ -53,7 +53,7 @@ function handleLanguageRedirect() {
 
     if (userChoice !== 'en') {
       var langPrefix = userChoice;
-      var newUrl = currentUrl.replace(/(\.co|\.cc)\//g, '.$1/' + selectedLang + '/');
+      var newUrl = currentUrl.replace(/(\.co|\.cc)\//g, '.$1/' + langPrefix + '/');
 
       if (newUrl !== currentUrl) {
         window.location.href = newUrl;
@@ -82,8 +82,7 @@ document.addEventListener('click', function(event) {
       location.reload();
     } else if (selectedLang !== 'en' && window.location.pathname === '/') {
       var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace(/\.co\//g, '.co/' + selectedLang + '/');
-      newUrl = newUrl.replace(/\.cc\//g, '.cc/' + selectedLang + '/');
+      var newUrl = currentUrl.replace(/(\.co|\.cc)\//g, '.$1/' + selectedLang + '/');
 
       if (newUrl !== currentUrl) {
         window.location.href = newUrl;
