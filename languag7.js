@@ -38,7 +38,7 @@ function handleLanguageRedirect() {
 
     if (langPrefix !== 'en') {
       var currentUrl = window.location.href;
-      newUrl = newUrl.replace(/(\.(co|cc|com|me)\/)/g, '.$2/' + langPrefix + '/');
+      var newUrl = currentUrl.replace(/(\.(co|cc|com|me)\/)/g, '.$2/' + langPrefix + '/');
 
       if (newUrl !== currentUrl) {
         userChoice = langPrefix;
@@ -53,15 +53,14 @@ function handleLanguageRedirect() {
 
     if (userChoice !== 'en') {
       var langPrefix = userChoice;
-      newUrl = newUrl.replace(/(\.(co|cc|com|me)\/)/g, '.$2/' + langPrefix + '/');
+      var newUrl = currentUrl.replace(/(\.(co|cc|com|me)\/)/g, '.$2/' + langPrefix + '/');
 
       if (newUrl !== currentUrl) {
         window.location.href = newUrl;
         return false;
       }
     } else {
-      var newUrl = currentUrl.replace(/\.co\//g, '.co/');
-      newUrl = newUrl.replace(/\.cc\//g, '.cc/');
+      var newUrl = currentUrl.replace(/(\.(co|cc|com|me)\/)/g, '.$2/');
 
       if (newUrl !== currentUrl) {
         window.location.href = newUrl;
