@@ -38,8 +38,8 @@ function handleLanguageRedirect() {
 
     if (langPrefix !== 'en') {
       var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace(/\.co\//g, '/' + langPrefix + '/');
-      newUrl = newUrl.replace(/\.cc\//g, '/' + langPrefix + '/');      
+      var newUrl = currentUrl.replace(/\.co\//g, '.co/' + langPrefix + '/');
+      newUrl = newUrl.replace(/\.cc\//g, '.cc/' + langPrefix + '/');
 
       if (newUrl !== currentUrl) {
         userChoice = langPrefix;
@@ -54,8 +54,8 @@ function handleLanguageRedirect() {
 
     if (userChoice !== 'en') {
       var langPrefix = userChoice;
-      var newUrl = currentUrl.replace(/\.co\//g, '/' + langPrefix + '/');
-      newUrl = newUrl.replace(/\.cc\//g, '/' + langPrefix + '/');      
+      var newUrl = currentUrl.replace(/\.co\//g, '.co/' + langPrefix + '/');
+      newUrl = newUrl.replace(/\.cc\//g, '.cc/' + langPrefix + '/');
 
       if (newUrl !== currentUrl) {
         window.location.href = newUrl;
