@@ -1195,7 +1195,7 @@ function copyToClipboard(element) {
   }
   
   document.addEventListener('DOMContentLoaded', function() {
-    if (!window.location.pathname.includes("/topic") &&
+    if (!window.location.pathname.includes("/skins/") &&
     !window.location.pathname.includes("/reviews") &&
     !window.location.pathname.includes("/mirrors") &&
     !window.location.pathname.includes("/privacy-policy") &&
@@ -1214,7 +1214,7 @@ function copyToClipboard(element) {
   
     buttonsContainer.classList.add('buttons-container');
     prevButtonContainer.classList.add('controls-button');
-    prevButtonContainer.innerHTML = '<i class="bi bi-copy"></i>';
+    prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left""></i>';
     nextButtonContainer.classList.add('controls-button');
     nextButtonContainer.innerHTML = '<i class="bi bi-chevron-right"></i>';
   
@@ -2226,7 +2226,7 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
     
       }
       if (!window.location.pathname.startsWith("/rust") &&
-      !window.location.pathname.includes("/topic") &&
+      !window.location.pathname.includes("/skins/") &&
       !window.location.pathname.includes("/reviews") &&
       !window.location.pathname.includes("/mirrors") &&
       !window.location.pathname.includes("/privacy-policy") &&
