@@ -1828,9 +1828,9 @@ nav img:hover {
 .category-space {
     height: 120px;
 }
-.category-space.shorter {
+/* .category-space.shorter {
     height: 100px;
-}
+} */
 .category-selector {
     max-width: 66.5%;
     min-width: 66.5%;
@@ -1961,6 +1961,7 @@ nav img:hover {
     flex-wrap: wrap;
     align-content: flex-start;
     min-height: 676px;
+    margin-top: -18px;
 }
 .category-centralizer {
     width: 100%;
@@ -2496,12 +2497,6 @@ nav img:hover {
     background: rgb(0,0,0, .2); */
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     transition: all .2s ease-in-out;
-}
-.box:nth-child(1),
-.box:nth-child(2),
-.box:nth-child(3),
-.box:nth-child(4) {
-    margin: 0 9px 0 9px;
 }
 .box_vk {
     position: relative;
