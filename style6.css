@@ -2762,9 +2762,9 @@ nav img:hover {
     justify-content: center;
     align-items: center;
 }
-.box .logobg a:active  {
-    filter: brightness(.35);
-    transition: all .09s ease-in-out;
+.box .logobg a:active img  {
+    filter: brightness(.5);
+    transition: all .15s ease-in-out;
 }
 .slider-banner:active {
     filter: brightness(.75);
