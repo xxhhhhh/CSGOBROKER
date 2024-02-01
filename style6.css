@@ -1180,7 +1180,7 @@ nav #pagename:focus {
     margin: 12px 0 12px 22px;
 }
 .features .featuresbox .typesinside a:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     background-color: var(--main-color);
     border: 2px solid #ce203d;
     color: white;
@@ -1217,9 +1217,9 @@ nav #pagename:focus {
     font-weight: 600;
     font-size: 14px;
     color: var(--white);
-    background-color: rgb(26 26 26);
+    background-color: rgb(21 21 21);
     border: 2px #171717 solid;
-    transition: ease-in-out all .2s;
+    transition: ease-in-out all .15s;
 }
 .typesinside a:nth-child(1) {
     margin: 12px 0 12px 22px;
@@ -1676,9 +1676,16 @@ nav #pagename:focus {
 }
 .instruction-mirrors li a:hover {
     text-decoration: none;
-    transform: scale(1.05);
-    background-color: var(--main-color);
+    transform: scale(1.03);
+    /* background-color: var(--main-color); */
+    background-color: #a81d34;
+    border: 2px solid #ce203d;
     color: white;
+}
+.instruction-mirrors li a:active {
+    background-color: #5a101c !important;
+    border: 2px solid #771324 !important;
+    transition: .09s all ease-in-out !important;
 }
 .instruction-mirrors li a {
     color: var(--white);
@@ -1693,6 +1700,10 @@ nav #pagename:focus {
     width: 100%;
     text-decoration: none;
 }
+/* .instruction-mirrors li:first-child a {
+    background-color: #a81d34;
+    border: 2px solid #ce203d;
+} */
 .smallreview p a {
     font-weight: 500;
     color: var(--white);
@@ -1777,7 +1788,8 @@ nav #pagename:focus {
     transition: all .3s ease-in-out;
 }
 .pages button:active {
-    filter: brightness(.1);
+    background-color: #5a101c;
+    border: 2px solid #771324;
     transition: .09s all ease-in-out;
 }
 #FAQ {
@@ -1880,7 +1892,9 @@ nav img:hover {
     opacity: 1;
     transform: translateY(-50%) scale(1.1);
 }
-.controls-button:active {
+.controls-button:active,
+.screens button i:active, 
+.slider-placer button i:active {
     filter: brightness(.1);
     transition: .08s all ease-in-out;
 }
@@ -2748,7 +2762,14 @@ nav img:hover {
     justify-content: center;
     align-items: center;
 }
-
+.box .logobg a:active  {
+    filter: brightness(.35);
+    transition: all .09s ease-in-out;
+}
+.slider-banner:active {
+    filter: brightness(.75);
+    transition: all .09s ease-in-out;
+}
 .box .logobg img {
     width: auto;
     max-width: 250px;
@@ -2937,9 +2958,11 @@ nav img:hover {
     background: transparent !important;
     color: #ffffff00 !important;
 }
-.content button:hover:active{
-    filter: brightness(.4);
-    transition: .09s all ease-in-out;
+.content button:hover:active,
+.features .featuresbox .typesinside a:active {
+    background-color: #5a101c !important;
+    border: 2px solid #771324 !important;
+    transition: .09s all ease-in-out !important;
 }
 .sitepage .content button.copy {
     width: 25px;

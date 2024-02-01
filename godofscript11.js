@@ -1451,6 +1451,7 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
         var img1 = document.createElement('img');
         img1.src = '/img/best-gambling-sites-slide-2024.png';
         img1.alt = 'Best Gambling Sites';
+        img1.draggable = false;
         slider1.appendChild(img1);
 
         var slider2 = document.createElement('a');
@@ -1459,6 +1460,7 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
         var img2 = document.createElement('img');
         img2.src = '/img/earn-skins-slider-2024.png';
         img2.alt = 'Best Offerwall Sites';
+        img2.draggable = false;
         slider2.appendChild(img2);
 
         var slider3 = document.createElement('a');
@@ -1467,6 +1469,7 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
         var img3 = document.createElement('img');
         img3.src = '/img/best-rust-sites-slide-2024.png';
         img3.alt = 'Best Rust Sites';
+        img3.draggable = false;
         slider3.appendChild(img3);
 
         sliderPlacer.appendChild(controlsContainer);
@@ -1528,6 +1531,9 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
     !window.location.pathname.endsWith("privacy-policy.html") &&
     !window.location.pathname.endsWith("contact-us.html") &&
     !window.location.pathname.endsWith("terms-of-service.html") &&
+    !window.location.pathname.endsWith("privacy-policy") &&
+    !window.location.pathname.endsWith("contact-us") &&
+    !window.location.pathname.endsWith("terms-of-service") &&
     window.location.pathname !== "/ru" &&
     window.location.pathname !== "/pt" &&
     window.location.pathname !== "/es" &&
@@ -1964,6 +1970,11 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
   var nextButton = document.querySelector(".next-button");
   
   if (window.location.pathname.includes("/reviews/")) {
+
+    $('.sitepros').click(function() {
+      $(this).toggleClass("active");
+  });    
+
     function removeAllTriggers() {
       var existingTriggers = triggersContainer.querySelectorAll(
         "input[type='radio'], label"
@@ -2493,6 +2504,7 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
             if (
                 (window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html') &&
                 !window.location.pathname.includes('/ru/reviews') &&
+                !window.location.pathname.includes('/ru/mirrors') &&
                 !window.location.pathname.includes('/ru/topic') &&
                 !window.location.pathname.includes("/privacy-policy") &&
                 !window.location.pathname.includes("/terms-of-service") &&
@@ -2712,4 +2724,43 @@ if (window.innerWidth <= 1340) {
       });
   } else {
   }
+}
+
+// Получение префикса для путей
+const pathSegments = window.location.pathname.split('/');
+const languagePrefix = pathSegments[1] || '';
+
+// Получение индекса "mirrors"
+const identifierIndex = pathSegments.indexOf('mirrors');
+const isRussianVersion = languagePrefix === 'ru';
+
+// Проверка, что мы находимся на странице с /mirrors/
+if (identifierIndex > 0) {
+  // Формирование URL без /mirrors/ для обычной версии
+  const reviewsPath = isRussianVersion
+    ? `/${languagePrefix}/reviews/${pathSegments[identifierIndex + 1]}`
+    : `/reviews/${pathSegments[identifierIndex + 1]}`;
+
+  // Загрузка содержимого из файла /{languagePrefix}/reviews/{identifier}.html
+  fetch(reviewsPath)
+    .then(response => response.text())
+    .then(htmlContent => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(htmlContent, 'text/html');
+      const sourceAlternatesContent = doc.querySelector('div.sitealternates').innerHTML;
+      const sourceRatingContent = doc.querySelector('.box.main').innerHTML;
+
+      const targetAlternates = document.querySelector('div.sitealternates');
+      if (targetAlternates) {
+        targetAlternates.innerHTML = sourceAlternatesContent;
+      }
+
+      const targetRating = document.querySelector('.box.main');
+      if (targetRating) {
+        targetRating.innerHTML = sourceRatingContent;
+      }
+    })
+    .catch(error => {
+      console.error(`Ошибка при загрузке файла ${reviewsPath}:`, error);
+    });
 }
