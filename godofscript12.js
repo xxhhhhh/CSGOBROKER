@@ -2726,22 +2726,17 @@ if (window.innerWidth <= 1340) {
   }
 }
 
-// Получение префикса для путей
 const pathSegments = window.location.pathname.split('/');
 const languagePrefix = pathSegments[1] || '';
 
-// Получение индекса "mirrors"
 const identifierIndex = pathSegments.indexOf('mirrors');
 const isRussianVersion = languagePrefix === 'ru';
 
-// Проверка, что мы находимся на странице с /mirrors/
 if (identifierIndex > 0) {
-  // Формирование URL без /mirrors/ для обычной версии
   const reviewsPath = isRussianVersion
     ? `/${languagePrefix}/reviews/${pathSegments[identifierIndex + 1]}`
     : `/reviews/${pathSegments[identifierIndex + 1]}`;
 
-  // Загрузка содержимого из файла /{languagePrefix}/reviews/{identifier}.html
   fetch(reviewsPath)
     .then(response => response.text())
     .then(htmlContent => {
@@ -2754,13 +2749,16 @@ if (identifierIndex > 0) {
       if (targetAlternates) {
         targetAlternates.innerHTML = sourceAlternatesContent;
       }
-
       const targetRating = document.querySelector('.box.main');
       if (targetRating) {
         targetRating.innerHTML = sourceRatingContent;
       }
+      const targetLinks = document.querySelectorAll('.box.main .logobg a');
+      targetLinks.forEach(link => {
+        const linkPath = isRussianVersion
+          ? `/${languagePrefix}/reviews/${pathSegments[identifierIndex + 1]}`
+          : `/reviews/${pathSegments[identifierIndex + 1]}`;
+        link.href = linkPath;
+      });
     })
-    .catch(error => {
-      console.error(`Ошибка при загрузке файла ${reviewsPath}:`, error);
-    });
 }
