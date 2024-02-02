@@ -1778,7 +1778,7 @@ nav #pagename:focus {
     margin-top: 3px;
 }
 .infoblock button:focus,
-.pages button:focus {
+.pages button.active {
     color: var(--white);
     transition: all .3s ease-in-out;
 }
@@ -1786,11 +1786,6 @@ nav #pagename:focus {
 .pages button:hover {
     color: var(--white);;
     transition: all .3s ease-in-out;
-}
-.pages button:active {
-    background-color: #5a101c;
-    border: 2px solid #771324;
-    transition: .09s all ease-in-out;
 }
 #FAQ {
     display: flex;
@@ -1892,13 +1887,6 @@ nav img:hover {
     opacity: 1;
     transform: translateY(-50%) scale(1.1);
 }
-.controls-button:active,
-.screens button i:active, 
-.slider-placer button i:active {
-    filter: brightness(.1);
-    transition: .08s all ease-in-out;
-}
-
 .controls-button:focus {
     outline: none; /* Убираем фокусовую рамку при клике */
 }
@@ -2200,19 +2188,21 @@ nav img:hover {
     margin-right: 15px;
     font-family: TTNormsPro;
 }
-
+.menu-toggle.active {
+    transition: .2s all ease-in-out;
+}
 .menu-toggle:hover .menu-line,
-.menu-toggle:focus .menu-line {
+.menu-toggle.active .menu-line {
     width: 70%;
 }
 .menu-toggle:hover .menu-line,
-.menu-toggle:focus .menu-line {
+.menu-toggle.active .menu-line {
     opacity: 1;
     transition: all .3s ease-in-out;
     background-color: var(--main-color);
 }
 .menu-toggle:hover span,
-.menu-toggle:focus span{
+.menu-toggle.active span{
     opacity: 1;
     transition: all .3s ease-in-out;
 }
@@ -2222,7 +2212,7 @@ nav img:hover {
     text-transform: uppercase;
     color: var(--white);
     transition: all .15s ease-in-out;
-    opacity: .15;
+    opacity: .1;
 }
 .menu-toggle .menu-line {
     margin-top: 1px;
@@ -2230,7 +2220,7 @@ nav img:hover {
     width: 60%;
     background-color: var(--white);
     transition: all .15s ease-in-out;
-    opacity: .15;
+    opacity: .1;
 }
 .nav-bar {
     width: 100%;
@@ -2762,11 +2752,13 @@ nav img:hover {
     justify-content: center;
     align-items: center;
 }
-.box .logobg a:active img  {
+.box .logobg a:active img,
+.category-selector .category-box:active .category-box-logo img  {
     filter: brightness(.5);
     transition: all .15s ease-in-out;
 }
-.slider-banner:active {
+.slider-banner:active,
+nav img:active {
     filter: brightness(.75);
     transition: all .09s ease-in-out;
 }
@@ -2797,6 +2789,7 @@ nav img:hover {
     font-size: 12px;
     color: white;
     transition: .15s background-color ease-in-out;
+    user-select: none;
 }
 /* .box:hover .logobg .best {
     background-color: var(--main-color);
@@ -3746,9 +3739,7 @@ footer .centralizer .footer-content {
     width: 100%;
     height: auto;
   }
-  #back-to-top-btn,
   .settings-menu {
-    display: none;
     /* position: fixed;
     bottom: 20px;
     right: 20px; */
@@ -3763,12 +3754,27 @@ footer .centralizer .footer-content {
     border-radius: 50%;
     z-index: 10000;
     margin: 3px 0;
+    overflow: hidden;
+  }
+  #back-to-top-btn {
+    font-size: 24px;
+    width: 40px;
+    height: 0;
+    background-color: var(--opacback);
+    cursor: pointer;
+    outline: none;
+    border: 0 solid transparent;
+    transition: .15s height ease-in-out !important; 
+    border-radius: 50%;
+    z-index: 10000;
+    margin: 3px 0;
+    overflow: hidden;
   }
   #back-to-top-btn:hover, #back-to-top-btn:focus {
     color: var(--white);
   }
   #back-to-top-btn:active {
-    filter: brightness(.1) !important;
+    filter: brightness(.3) !important;
     transition: .09s all ease-in-out;
   }
   .settings-menu {
@@ -3822,7 +3828,7 @@ footer .centralizer .footer-content {
     color: var(--white);
   }
   .settings-button:active i {
-    filter: brightness(.1);
+    filter: brightness(.3);
     transition: .09s all ease-in-out;
 }
   #button-vpn-filter[title]:hover:after {
@@ -4010,7 +4016,7 @@ footer .centralizer .footer-content {
         position: relative;
         font-size: 18px;
         right: 0;
-        color: rgba(255, 255, 255, .12);
+        color: rgba(255, 255, 255, .1);
         transition: all .3s ease-in-out;
     }
 
@@ -4166,7 +4172,7 @@ footer .centralizer .footer-content {
         opacity: 0;
     }
     .search-enabler i {
-        color: rgba(255, 255, 255, .12);
+        color: rgba(255, 255, 255, .1);
         transition: all .2s ease-in-out;
         font-size: 20px;
     }
@@ -4175,18 +4181,25 @@ footer .centralizer .footer-content {
         color: var(--white);
     }
     .menu-toggle:hover .menu-line,
-    .menu-toggle:focus .menu-line {        
+    .menu-toggle.active .menu-line {        
         opacity: 1;
         transition: all .3s ease-in-out;
         background-color: var(--main-color);
     }
 .menu-toggle:hover span,
-.menu-toggle:focus span{
+.menu-toggle.active span{
     opacity: 1;
     transition: all .3s ease-in-out;
 }
-.menu-toggle:active {
-    filter: brightness(.1) !important;
+.menu-toggle:active,
+.search-enabler:active,
+.lang-menu ul li a:active,
+.pages button:active,
+.controls-button:active,
+.screens button i:active, 
+.slider-placer button i:active,
+.socials a:active {
+    filter: brightness(.3) !important;
     transition: .09s all ease-in-out;
   }
     form input {

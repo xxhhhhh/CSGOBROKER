@@ -6,17 +6,17 @@ function copyToClipboard(element) {
     $temp.remove();
   }
   
-  if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
-  
-    function extractLanguageTagFromURL(pathname) {
-      var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
-      if (matches && matches.length > 1) {
-        return matches[1];
-      }
-      return "";
+  function extractLanguageTagFromURL(pathname) {
+    var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
+    if (matches && matches.length > 1) {
+      return matches[1];
     }
-  
-  var languageTag = extractLanguageTagFromURL(window.location.pathname);
+    return "";
+  }
+
+var languageTag = extractLanguageTagFromURL(window.location.pathname);
+
+  if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
   
   function translateURLs(parentElement, language) {
     var translations = {
@@ -952,160 +952,148 @@ function copyToClipboard(element) {
   if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes("/topic/") && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/') && !window.location.pathname.includes("/privacy-policy") &&
   !window.location.pathname.includes("/terms-of-service") &&
   !window.location.pathname.includes("/contact-us")) {
-    function updateURLs(parentElement) {
-      var links = parentElement.querySelectorAll('a[href]');
-      var regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
-    
-      for (var i = 0; i < links.length; i++) {
-        var href = links[i].getAttribute('href');
-        
-        if (href.includes('vk.com')) {
-          continue;
-        }
-        
-        var match = href.match(regex);
-        if (match) {
-          var domain = match[1] || '';
-          var path = match[2];
-          var updatedHref = '/ru' + path;
-          links[i].setAttribute('href', updatedHref);
-        }
+
+  const updateURLs = (parentElement) => {
+    const links = parentElement.querySelectorAll('a[href]');
+    const regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
+
+    for (let i = 0; i < links.length; i++) {
+      const href = links[i].getAttribute('href');
+
+      if (href.includes('vk.com')) {
+        continue;
+      }
+
+      const match = href.match(regex);
+      if (match) {
+        const domain = match[1] || '';
+        const path = match[2];
+        const updatedHref = '/ru' + path;
+        links[i].setAttribute('href', updatedHref);
       }
     }
-  
-    var SitesList = document.querySelector('.boxes-holder');
-    updateURLs(SitesList);
   }
-  
-    function translateURLs2(parentElement, languageTag, translations) {
-      var supportedLanguages = Object.keys(translations);
-      var langWithSlashes = supportedLanguages.map(lang => '/' + lang + '/');
-    
-      var links = parentElement.querySelectorAll('a[href]');
-      for (var i = 0, len = links.length; i < len; i++) {
-        var href = links[i].getAttribute('href');
-  
-        function extractLanguageTagFromURL(pathname) {
-          var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
-          if (matches && matches.length > 1) {
-            return matches[1];
-          }
-          return "";
-        }
-      
-      var languageTag = extractLanguageTagFromURL(window.location.pathname);
-  
-        if (!href) continue;
-    
-        var url = new URL(href, window.location.href);
-        var path = url.pathname;
-    
-        if (languageTag !== 'en') {
-          var langIncluded = langWithSlashes.some(lang => path.includes(lang));
-          if (!langIncluded && supportedLanguages.includes(languageTag)) {
-            path = '/' + languageTag + path;
-            url.pathname = path;
-            links[i].setAttribute('href', url.href);
-          }
-        }
-      }
-  
-      var elements = document.querySelectorAll('.nav-bar .category-box-content span, .nav-bar ul .submenu li a');
-      for (var j = 0; j < elements.length; j++) {
-        var text = elements[j].textContent.trim();
-        if (translations[languageTag] && translations[languageTag].hasOwnProperty(text)) {
-          if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
-            elements[j].innerHTML = translations[languageTag][text] + ' <i class="bi bi-caret-right-fill"></i>';
-          } else {
-            elements[j].innerHTML = translations[languageTag][text];
-          }
-        }
+
+  const sitesList = document.querySelector('.boxes-holder');
+  updateURLs(sitesList);
+}
+
+function translateURLs2(parentElement, languageTag, translations) {
+  var supportedLanguages = Object.keys(translations);
+  var langWithSlashes = supportedLanguages.map(lang => '/' + lang + '/');
+
+  var links = parentElement.querySelectorAll('a[href]');
+  for (var i = 0, len = links.length; i < len; i++) {
+    var href = links[i].getAttribute('href');
+    if (!href) continue;
+
+    var url = new URL(href, window.location.href);
+    var path = url.pathname;
+
+    if (languageTag !== 'en') {
+      var langIncluded = langWithSlashes.some(lang => path.includes(lang));
+      if (!langIncluded && supportedLanguages.includes(languageTag)) {
+        path = '/' + languageTag + path;
+        url.pathname = path;
+        links[i].setAttribute('href', url.href);
       }
     }
-  
-    function applyTranslation(element, languageTag, translations) {
-      translateURLs2(element, languageTag, translations);
-      var observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-          if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-            var addedElement = mutation.addedNodes[0];
-            if (addedElement.classList && addedElement.classList.contains('category-selector')) {
-              translateURLs2(addedElement, languageTag, translations);
-            }
-          }
-        });
-      });
-  
-      observer.observe(element, { childList: true, subtree: true });
+  }
+
+  var elements = document.querySelectorAll('.nav-bar .category-box-content span, .nav-bar ul .submenu li a');
+  for (var j = 0; j < elements.length; j++) {
+    var text = elements[j].textContent.trim();
+    if (translations[languageTag] && translations[languageTag].hasOwnProperty(text)) {
+      if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
+        elements[j].innerHTML = translations[languageTag][text] + ' <i class="bi bi-caret-right-fill"></i>';
+      } else {
+        elements[j].innerHTML = translations[languageTag][text];
+      }
     }
-  
-    document.addEventListener('DOMContentLoaded', function() {
-      var navBarContainer = document.createElement('div');
-    
-      fetch('/code-parts/nav-bar.html')
-        .then(response => response.text())
-        .then(data => {
-          navBarContainer.innerHTML = data;
-    
-          // Проверка ширины экрана
-          var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-          if (screenWidth < 1340) {
-            var categoryBoxes = navBarContainer.querySelectorAll('.category-selector .category-box');
-            categoryBoxes.forEach(function(box) {
-              if (!box.matches('.category-box#newest')) {
-                box.removeAttribute('href');
-              }
-            });
-    
-            var notExistLinks = navBarContainer.querySelectorAll('#notexist ul .submenu li a i');
-            notExistLinks.forEach(function(icon) {
-              var link = icon.parentElement;
-              if (link && link.tagName.toLowerCase() === 'a' && !link.matches('.category-box#newest')) {
-                link.removeAttribute('href');
-              }
-            });
-    
-            var navBar = document.querySelector('.nav-bar');
-            if (navBar) {
-              navBar.style.pointerEvents = 'none';
-            }
-          }
-    
-          var header = document.querySelector('header');
-    
-          if (!header) return;
-    
-          header.insertAdjacentElement('afterend', navBarContainer.firstChild);
-    
-          var categorySelector = document.querySelector('.category-selector');
-          if (categorySelector) {
-            fetch('/code-parts/translations/categories.json')
-              .then(response => response.json())
-              .then(translations => {
-                applyTranslation(categorySelector, languageTag, translations);
-              });
-          }
-    
-          var menuToggle = document.querySelector('.menu-toggle');
-          var navBar = document.querySelector('.nav-bar');
-    
-          if (menuToggle && navBar) {
-            menuToggle.addEventListener('click', function() {
-              navBar.classList.toggle('active');
-            });
-    
-            if (screenWidth >= 1340) {
-              navBar.addEventListener('click', function() {
-                navBar.classList.remove('active');
-              });
-            }
-          }
-        });
+  }
+}
+
+function applyTranslation(element, languageTag, translations) {
+  translateURLs2(element, languageTag, translations);
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+        var addedElement = mutation.addedNodes[0];
+        if (addedElement.classList && addedElement.classList.contains('category-selector')) {
+          translateURLs2(addedElement, languageTag, translations);
+        }
+      }
     });
-    
-    
-    
-    
+  });
+
+  observer.observe(element, { childList: true, subtree: true });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var navBarContainer = document.createElement('div');
+
+  fetch('/code-parts/nav-bar.html')
+    .then(response => response.text())
+    .then(data => {
+      navBarContainer.innerHTML = data;
+
+      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      if (screenWidth < 1340) {
+        var categoryBoxes = navBarContainer.querySelectorAll('.category-selector .category-box');
+        categoryBoxes.forEach(function(box) {
+          if (!box.matches('.category-box#newest')) {
+            box.removeAttribute('href');
+          }
+        });
+
+        var notExistLinks = navBarContainer.querySelectorAll('#notexist ul .submenu li a i');
+        notExistLinks.forEach(function(icon) {
+          var link = icon.parentElement;
+          if (link && link.tagName.toLowerCase() === 'a' && !link.matches('.category-box#newest')) {
+            link.removeAttribute('href');
+          }
+        });
+
+        var navBar = document.querySelector('.nav-bar');
+        if (navBar) {
+          navBar.style.pointerEvents = 'none';
+        }
+      }
+
+      var header = document.querySelector('header');
+
+      if (!header) return;
+
+      header.insertAdjacentElement('afterend', navBarContainer.firstChild);
+
+      var categorySelector = document.querySelector('.category-selector');
+      if (categorySelector) {
+        fetch('/code-parts/translations/categories.json')
+          .then(response => response.json())
+          .then(translations => {
+            applyTranslation(categorySelector, languageTag, translations);
+          });
+      }
+
+      var menuToggle = document.querySelector('.menu-toggle');
+      var navBar = document.querySelector('.nav-bar');
+
+      if (menuToggle && navBar) {
+        menuToggle.addEventListener('click', function () {
+          navBar.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+        });
+
+        if (screenWidth >= 1340) {
+          navBar.addEventListener('click', function() {
+            menuToggle.classList.remove('active');
+            navBar.classList.remove('active');
+          });
+        }
+      }
+    });
+});
+
     
   
   function translateTextElements(translations) {
@@ -1614,6 +1602,7 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
   }
   
   const backToTopButton = document.querySelector("#back-to-top-btn");
+  const settingsMenuButton = document.querySelector(".buttons-container-page");
   
   window.addEventListener("scroll", scrollFunction);
   
@@ -1622,7 +1611,8 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
       if(!backToTopButton.classList.contains("btnEntrance")) {
         backToTopButton.classList.remove("btnExit");
         backToTopButton.classList.add("btnEntrance");
-        backToTopButton.style.display = "block";
+        backToTopButton.style.height = "40px";
+        backToTopButton.style.border = "2px solid rgba(0,0,0,.04)";
       }
     }
     else { 
@@ -1630,7 +1620,8 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
         backToTopButton.classList.remove("btnEntrance");
         backToTopButton.classList.add("btnExit");
         setTimeout(function() {
-          backToTopButton.style.display = "none";
+          backToTopButton.style.height = "0";
+          backToTopButton.style.border = "0 solid transparent";
         }, 250);
       }
     }
@@ -2704,8 +2695,11 @@ if (btnfaq) {
 
       if (currentHeight === 0) {
         targetDiv.style.height = targetDivHeight * 2 + "px";
+        btnfaq.classList.add("active");
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         targetDiv.style.height = "0px";
+        btnfaq.classList.remove("active");
       }
     }
   };
@@ -2728,37 +2722,49 @@ if (window.innerWidth <= 1340) {
 
 const pathSegments = window.location.pathname.split('/');
 const languagePrefix = pathSegments[1] || '';
-
 const identifierIndex = pathSegments.indexOf('mirrors');
 const isRussianVersion = languagePrefix === 'ru';
 
 if (identifierIndex > 0) {
-  const reviewsPath = isRussianVersion
-    ? `/${languagePrefix}/reviews/${pathSegments[identifierIndex + 1]}`
-    : `/reviews/${pathSegments[identifierIndex + 1]}`;
+  const reviewsPath = `/${isRussianVersion ? languagePrefix + '/' : ''}reviews/${pathSegments[identifierIndex + 1]}`;
 
   fetch(reviewsPath)
     .then(response => response.text())
     .then(htmlContent => {
       const parser = new DOMParser();
       const doc = parser.parseFromString(htmlContent, 'text/html');
-      const sourceAlternatesContent = doc.querySelector('div.sitealternates').innerHTML;
-      const sourceRatingContent = doc.querySelector('.box.main').innerHTML;
 
-      const targetAlternates = document.querySelector('div.sitealternates');
-      if (targetAlternates) {
-        targetAlternates.innerHTML = sourceAlternatesContent;
+      const updateElementContent = (selector, content) => {
+        const targetElement = document.querySelector(selector);
+        if (targetElement) {
+          targetElement.innerHTML = content;
+        }
+      };
+
+      updateElementContent('div.sitealternates', doc.querySelector('div.sitealternates').innerHTML);
+      updateElementContent('.box.main', doc.querySelector('.box.main').innerHTML);
+
+      const updateLinks = (selector, path) => {
+        const targetLinks = document.querySelectorAll(selector);
+        targetLinks.forEach(link => {
+          link.href = path;
+        });
+      };
+
+      const reviewsPathForLinks = `/${isRussianVersion ? languagePrefix + '/' : ''}reviews/${pathSegments[identifierIndex + 1]}`;
+      updateLinks('.box.main .logobg a', reviewsPathForLinks);
+
+      if (isRussianVersion) {
+        const updateAlternateLinks = () => {
+          const alternateLinks = document.querySelectorAll('div.sitealternates .box .logobg a');
+          alternateLinks.forEach(link => {
+            const currentHref = link.getAttribute('href');
+            const newHref = `/${isRussianVersion ? 'ru' : ''}${currentHref}`;
+            link.href = newHref;
+          });
+        };
+
+        updateAlternateLinks();
       }
-      const targetRating = document.querySelector('.box.main');
-      if (targetRating) {
-        targetRating.innerHTML = sourceRatingContent;
-      }
-      const targetLinks = document.querySelectorAll('.box.main .logobg a');
-      targetLinks.forEach(link => {
-        const linkPath = isRussianVersion
-          ? `/${languagePrefix}/reviews/${pathSegments[identifierIndex + 1]}`
-          : `/reviews/${pathSegments[identifierIndex + 1]}`;
-        link.href = linkPath;
-      });
-    })
+    });
 }
