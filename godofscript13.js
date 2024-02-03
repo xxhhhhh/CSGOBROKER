@@ -2112,35 +2112,8 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
       }
     });
   }
-  
-  if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')) {
-  
-  
-          var newDiv = document.createElement("div");
-          newDiv.className = "vpn";
-          newDiv.textContent = "Нужен VPN";
-
-          if (window.innerWidth < 1000) {
-            newDiv.textContent = "VPN";
-        }
-  
-          var allowedIds = ["Clash", "CSGORoll", "DMarket", "Rollbit", "Primedice", "Duelbits", "FlameCases", "BCGame", "DaddySkins", "CSGOLive", "WTFSkins", "gcskins", "FarmSkins", "vvvgamers"];
-  
-          var boxElements = document.querySelectorAll(".box");
-  
-          boxElements.forEach(function(boxElement) {
-              var boxId = boxElement.id;
-              if (allowedIds.includes(boxId)) {
-                  var logobgElement = boxElement.querySelector(".logobg");
-                  if (logobgElement) {
-                      var clonedDiv = newDiv.cloneNode(true);
-                      logobgElement.appendChild(clonedDiv);
-                  } else {
-                      console.error("Не удалось найти элемент .logobg внутри .box");
-                  }
-              }
-          });
-        }});
+  });
+        
         document.addEventListener('DOMContentLoaded', function() {
           document.querySelector('.search-enabler').addEventListener('click', function() {
               document.querySelector('#search-input').classList.add('active');
@@ -2743,6 +2716,7 @@ if (identifierIndex > 0) {
 
       updateElementContent('div.sitealternates', doc.querySelector('div.sitealternates').innerHTML);
       updateElementContent('.box.main', doc.querySelector('.box.main').innerHTML);
+      updateElementContent('.features', doc.querySelector('.features').innerHTML);
 
       const updateLinks = (selector, path) => {
         const targetLinks = document.querySelectorAll(selector);
@@ -2767,4 +2741,31 @@ if (identifierIndex > 0) {
         updateAlternateLinks();
       }
     });
+}
+
+if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')) {
+  
+  
+  var newDiv = document.createElement("div");
+  newDiv.className = "vpn";
+  newDiv.textContent = "Нужен VPN";
+
+  if (window.innerWidth < 1000) {
+    newDiv.textContent = "VPN";
+}
+
+  var allowedIds = ["Clash", "CSGORoll", "DMarket", "Rollbit", "Primedice", "Duelbits", "FlameCases", "BCGame", "DaddySkins", "CSGOLive", "WTFSkins", "gcskins", "FarmSkins", "vvvgamers"];
+
+  var boxElements = document.querySelectorAll(".box");
+
+  boxElements.forEach(function(boxElement) {
+      var boxId = boxElement.id;
+      if (allowedIds.includes(boxId)) {
+          var logobgElement = boxElement.querySelector(".logobg");
+          if (logobgElement) {
+              var clonedDiv = newDiv.cloneNode(true);
+              logobgElement.appendChild(clonedDiv);
+          }
+      }
+  });
 }
