@@ -1683,11 +1683,6 @@ nav #pagename:focus {
     border: 2px solid #ce203d;
     color: white;
 }
-.instruction-mirrors li a:active {
-    background-color: #5a101c !important;
-    border: 2px solid #771324 !important;
-    transition: .09s all ease-in-out !important;
-}
 .instruction-mirrors li a {
     color: var(--white);
     padding: 15px 10px;
@@ -2021,6 +2016,29 @@ nav img:hover {
 #notexist ul:nth-child(7) {
     margin-top: 100px;
 } */
+.language-box {
+    width: 280px;
+    height: 40px;
+    border-radius: 5px;
+    position: absolute;
+    top: 190px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background-color: rgb(22 22 22);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    color: rgba(255, 255, 255, .2);
+    z-index: 1;
+}
+.language-box .lang-menu ul {
+    overflow: hidden !important;
+}
+.language-box .lang-menu {
+    color: rgba(255, 255, 255, .5);
+}
 .slider-placer {
     width: 50%;
     margin: 0 auto;
@@ -2953,7 +2971,8 @@ nav img:active {
     color: #ffffff00 !important;
 }
 .content button:hover:active,
-.features .featuresbox .typesinside a:active {
+.features .featuresbox .typesinside a:active,
+.instruction-mirrors li a:active {
     background-color: #5a101c !important;
     border: 2px solid #771324 !important;
     transition: .09s all ease-in-out !important;
@@ -3137,6 +3156,13 @@ footer .centralizer .footer-content {
     .navigation-section.second .colors-box {
         margin-top: 3px;
     }
+    .content button:hover:active,
+    .features .featuresbox .typesinside a:active,
+    .instruction-mirrors li a:active {
+        background-color: #a81d34 !important;
+        border: 2px solid #ce203d !important;
+        transition: .09s all ease-in-out !important;
+}
     .rec-box {
         width: 98%;
         margin: 4px 0 0 0 !important;
@@ -3186,6 +3212,7 @@ footer .centralizer .footer-content {
         justify-content: center;
         display: flex;
         flex-wrap: wrap;
+        margin-top: -15px;
     }
     .category-selector {
         max-width: 98%;
@@ -3194,7 +3221,7 @@ footer .centralizer .footer-content {
         justify-content: flex-start;
         left: 50% !important;
         transform: translateX(-50%) !important;
-        top: 83px;
+        top: 80px;
         display: flex;
         /* height: 650px; */
     }
@@ -3227,13 +3254,14 @@ footer .centralizer .footer-content {
         justify-content: unset;
     }
     .category-space {
-        height: 80px;
+        height: 85px;
     }
     .category-selector .category-box {
         margin: 8px 4px 0 4px !important;
         width: 204px;
         height: 80px;
         width: 80px;
+        overflow: hidden;
     }
     .category-selector .category-box .category-box-logo {
         width: 100%;
@@ -3247,9 +3275,6 @@ footer .centralizer .footer-content {
     .pages #PageTitle, #PageSubt {
         font-size: 18px;
         text-align: center;
-    }
-    #FAQ {
-        margin: 15px 0 0 0;
     }
     .content p:nth-child(2){
         width: 200px;
@@ -3375,7 +3400,7 @@ footer .centralizer .footer-content {
         }
     .box {
         /* margin: 20px 10px 0 10px; */
-        margin: 10px 5px 0 5px !important;
+        margin: 8px 4px 0 4px !important;
         background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.3) 100%);
         width: 220px;
     }
@@ -3393,9 +3418,6 @@ footer .centralizer .footer-content {
     nav #pagename_active {
         font-size: 13px;
     }
-    #back-to-top-btn {
-        display: none;
-    }
     /* nav .pages {
         width: 68%;
     } */
@@ -3410,7 +3432,7 @@ footer .centralizer .footer-content {
         margin-left: 18px;
     }
     #FAQ #PageSubt {
-        font-size: 12px;
+        font-size: 12px !important;
     }
     footer#review .centralizer .footer-content a {
         left: 0 !important;
@@ -3425,9 +3447,24 @@ footer .centralizer .footer-content {
 
 @media screen and (max-width: 460px) {
     .box {
-        width: 180px !important;
-        margin: 8px 4px 0 4px !important;
+        width: 182px !important;
+        margin: 4px 2px 0 2px !important;
         height: 320px !important;
+    }
+    #FAQ {
+        display: none;
+    }
+    .nav-content .lang-menu {
+        display: none;
+    }
+    .language-box {
+        display: flex;
+    }
+    .category-space {
+        height: 83px;
+    }
+    .boxes-holder {
+        margin-top: 9px;
     }
     .boxes-holder .box .logobg {
         height: 40% !important;
@@ -3437,6 +3474,10 @@ footer .centralizer .footer-content {
     }
     .box .logobg .best {
         font-size: 11px !important;
+        padding: 0 8px 0 14px;
+    }
+    .box:hover {
+        transform: scale(1.02);
     }
     .content button  {
         font-size: 11px;
@@ -3453,7 +3494,7 @@ footer .centralizer .footer-content {
         margin-left: 0;
     }
     .buttons-container-page {
-        bottom: 40px !important;
+        bottom: 10px !important;
         right: 10px !important;
     }
     .smallreview p,
@@ -3470,9 +3511,15 @@ footer .centralizer .footer-content {
     }
     .content p:nth-child(2) {
         width: 170px !important;
+        overflow-y: scroll;
+        scroll-snap-type: y proximity;
+    }
+    .content p::-webkit-scrollbar {
+        width: 0px;
     }
     .content p {
         font-size: 11px;
+        margin-top: 10px;
     }
     .pages button {
         display: none !important;
@@ -3483,6 +3530,9 @@ footer .centralizer .footer-content {
         width: 96%!important;
         margin: 8px 0px 0 0px !important;
         height: 320px !important;
+    }
+    .boxes-holder {
+        margin-top: 5px;
     }
     .boxes-holder .box .logobg {
         height: 40% !important;
@@ -3875,13 +3925,13 @@ footer .centralizer .footer-content {
         }
         .pages button {
             padding: unset;
-            padding-left: 12px;
+            padding-left: 10px;
         }
     }
   @media(max-width: 992px) {
     .container { padding: 20px 100px; }
     #back-to-top-btn,
-    .settings-menu { font-size: 22px; width: 40px; height: 40px; bottom: 15px; right: 15px; background-color: rgba(10, 10, 10, .7); border: 2px solid rgba(0,0,0,.04); }
+    .settings-menu { font-size: 22px; width: 40px; height: 40px; bottom: 15px; right: 15px; background-color: rgba(10, 10, 10, .85); border: 2px solid rgba(0,0,0,.04); }
     .settings-menu { display: none; }
   }
   @media(max-width:768px) {
@@ -3891,7 +3941,7 @@ footer .centralizer .footer-content {
     h2 { font-size: 22px; }
     hr { margin: 30px 0; }
     #back-to-top-btn,
-    .settings-menu { font-size: 18px; width: 32px; height: 32px; bottom: 6px; right: 6px; }
+    .settings-menu { font-size: 18px; bottom: 6px; right: 6px; }
   }
   
   .btnEntrance {

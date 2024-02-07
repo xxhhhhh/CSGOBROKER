@@ -1091,8 +1091,20 @@ document.addEventListener('DOMContentLoaded', function() {
           });
         }
       }
+
+      var langMenuOnPage = document.querySelector('div.lang-menu');
+      if (langMenuOnPage) {
+        var languageElement = document.getElementById('language');
+        if (languageElement) {
+          var langMenuClone = langMenuOnPage.cloneNode(true);
+          languageElement.appendChild(langMenuClone);
+        }
+      }
     });
 });
+
+
+
 
     
   
