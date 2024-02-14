@@ -2210,7 +2210,82 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
         elements.forEach(function(element) {
             element.classList.add('visible');
         });
-    
+        document.addEventListener('DOMContentLoaded', function () {
+          const boxSkinsElements = document.querySelectorAll('.box-skins');
+        
+          boxSkinsElements.forEach(function(boxSkinsElement) {
+              const boxSkinsList = boxSkinsElement.querySelector('.box-skins-list');
+        
+              const boxSkinsControl = document.createElement('div');
+              boxSkinsControl.className = 'box-skins-control';
+              boxSkinsControl.innerHTML = `
+                  <div class="box-skins-button left hidden"><i class="bi bi-chevron-left"></i></div>
+                  <div class="box-skins-button right hidden"><i class="bi bi-chevron-right"></i></div>
+              `;
+              boxSkinsElement.appendChild(boxSkinsControl);
+        
+              const leftButton = boxSkinsControl.querySelector('.box-skins-button.left');
+              const rightButton = boxSkinsControl.querySelector('.box-skins-button.right');
+        
+              leftButton.addEventListener('click', function () {
+                  boxSkinsList.scrollBy({
+                      left: -boxSkinsList.querySelector('.skin').offsetWidth - 10,
+                      behavior: 'smooth'
+                  });
+              });
+        
+              rightButton.addEventListener('click', function () {
+                  boxSkinsList.scrollBy({
+                      left: boxSkinsList.querySelector('.skin').offsetWidth + 10,
+                      behavior: 'smooth'
+                  });
+              });
+        
+              boxSkinsList.addEventListener('scroll', function () {
+                  leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft === 0);
+                  rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
+              });
+        
+              leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft === 0);
+        
+              rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
+          });
+        });
+        const colorBoxes = document.querySelectorAll('.color-box-selection-button');
+        const colorList = document.getElementById('color-list');
+      
+        colorBoxes.forEach(box => {
+          box.addEventListener('click', () => {
+            box.classList.toggle('clicked');
+            colorList.classList.toggle('active');
+          });
+        });
+        function translateElements(languageTag) {
+          if (languageTag === "ru") {
+              var translations = {
+                  "Knives": "Ножи",
+                  "Gloves": "Перчатки",
+                  "Pistols": "Пистолеты",
+                  "Rifles": "Винтовки",
+                  "Sniper Rifles": "Снайперские винтовки",
+                  "SMGs": "ПП",
+                  "Shotguns": "Дробовики",
+                  "Machine guns": "Пулеметы",
+                  "Change Color": "Сменить Цвет"
+              };
+      
+              var elementsToTranslate = document.querySelectorAll('.navigation-weapon-type, .color-box-selection-button');
+              elementsToTranslate.forEach(function(element) {
+                  var originalText = element.textContent.trim();
+                  if (translations.hasOwnProperty(originalText)) {
+                      element.textContent = translations[originalText];
+                  }
+              });
+          }
+      }
+      
+      var languageTag = extractLanguageTagFromURL(window.location.pathname);
+      translateElements(languageTag);
       }
       if (!window.location.pathname.startsWith("/rust") &&
       !window.location.pathname.includes("/skins/") &&
@@ -2703,47 +2778,6 @@ if (window.innerWidth <= 1340) {
       });
   } else {
   }
-  document.addEventListener('DOMContentLoaded', function () {
-    const boxSkinsElements = document.querySelectorAll('.box-skins');
-  
-    boxSkinsElements.forEach(function(boxSkinsElement) {
-        const boxSkinsList = boxSkinsElement.querySelector('.box-skins-list');
-  
-        const boxSkinsControl = document.createElement('div');
-        boxSkinsControl.className = 'box-skins-control';
-        boxSkinsControl.innerHTML = `
-            <div class="box-skins-button left hidden"><i class="bi bi-chevron-left"></i></div>
-            <div class="box-skins-button right hidden"><i class="bi bi-chevron-right"></i></div>
-        `;
-        boxSkinsElement.appendChild(boxSkinsControl);
-  
-        const leftButton = boxSkinsControl.querySelector('.box-skins-button.left');
-        const rightButton = boxSkinsControl.querySelector('.box-skins-button.right');
-  
-        leftButton.addEventListener('click', function () {
-            boxSkinsList.scrollBy({
-                left: -boxSkinsList.querySelector('.skin').offsetWidth - 10,
-                behavior: 'smooth'
-            });
-        });
-  
-        rightButton.addEventListener('click', function () {
-            boxSkinsList.scrollBy({
-                left: boxSkinsList.querySelector('.skin').offsetWidth + 10,
-                behavior: 'smooth'
-            });
-        });
-  
-        boxSkinsList.addEventListener('scroll', function () {
-            leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft === 0);
-            rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
-        });
-  
-        leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft === 0);
-  
-        rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
-    });
-  });
 }
 
 const pathSegments = window.location.pathname.split('/');
