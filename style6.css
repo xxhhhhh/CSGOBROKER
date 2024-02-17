@@ -2787,6 +2787,12 @@ nav img:hover {
     background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
     radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
 }
+.colors-list-unit.silver {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #E8E8E8 0%, #D0D0D0 8%, #B8B8B8 30%, #A0A0A0 40%, transparent 80%),
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #F2F2F2 8%, #C9C9C9 25%, #777777 62.5%, #777777 100%);
+
+
+}
 .colors-list-unit.orange {
     background:linear-gradient(45deg, #BB1900, #FD6F01, #FFB000);
 }
