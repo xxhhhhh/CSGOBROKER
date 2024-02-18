@@ -2463,17 +2463,22 @@ nav img:hover {
     overflow: hidden;
     background: transparent;
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
-    transition: all .2s ease-in-out;
+    transition: all .15s ease-in-out;
     text-decoration: none;
+    background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.2) 100%);
+}
+.topic-box:hover {
+    background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(50, 50, 50, 0.25) 50%, rgba(255, 255, 255, 0) 100%) !important; /*     /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(206, 32, 61, 0.15) 50%, rgba(255, 255, 255, 0) 100%) !important; */
+
 }
 
 .box-topic .topic-box {
     margin: unset;
+    background: unset;
 }
 .box-topic .topic-box .logobg {
     margin: unset;
     height: 95%;
-    filter: brightness(1.2);
 }
 .box-topic .topic-box:hover {
     transform: scale(1);
@@ -2484,10 +2489,12 @@ nav img:hover {
 .topic-box .logobg {
     top: 0;
     height: 77%;
-    background: rgba(0,0,0,.2);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: rgba(0,0,0, .1);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0));
+    -webkit-mask-image: -webkit-linear-gradient(top, rgba(0,0,0,1) 75%, rgba(0,0,0,0));
 }
 .topic-boxes-holder {
     transition: opacity .3s .3s ease-in-out;
@@ -2517,6 +2524,9 @@ nav img:hover {
 .logobg.golden {
     background-image: url(/img/skins/previews/small/example-golden.png);;
 }
+.logobg.silver {
+    background-image: url(/img/skins/previews/small/example-silver.png);;
+}
 .logobg.yellow {
     background-image: url(/img/skins/previews/small/example-yellow.png);;
 }
@@ -2541,7 +2551,6 @@ nav img:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, .5);
 }
 .topic-box .content span {
     display: block;
