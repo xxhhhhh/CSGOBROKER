@@ -258,6 +258,11 @@ nav #pagename:focus {
     margin: 0 !important;
     display: flex;
     flex-direction: column;
+    opacity: 0;
+}
+.rec-box.fade-in {
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
 }
 #rec-box-logobg {
     width: 100%;
@@ -2467,9 +2472,11 @@ nav img:hover {
     text-decoration: none;
     background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.2) 100%);
 }
+.box-topic .topic-box:hover {
+    background: unset !important;
+}
 .topic-box:hover {
-    background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(50, 50, 50, 0.25) 50%, rgba(255, 255, 255, 0) 100%) !important; /*     /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(206, 32, 61, 0.15) 50%, rgba(255, 255, 255, 0) 100%) !important; */
-
+    background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(50, 50, 50, 0.25) 50%, rgba(255, 255, 255, 0) 100%); /*     /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(206, 32, 61, 0.15) 50%, rgba(255, 255, 255, 0) 100%) !important; */
 }
 
 .box-topic .topic-box {
