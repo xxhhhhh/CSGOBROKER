@@ -2646,9 +2646,14 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
       
                   var randomAdsBox = adsBoxes.children[Math.floor(Math.random() * adsBoxes.children.length)];
       
-                  randomAdsBox.classList.add('fade-in');
+                  randomAdsBox.style.opacity = '0';
+                  randomAdsBox.style.transition = 'opacity .2s ease-in-out';
       
                   insertAfterElement.parentNode.insertBefore(randomAdsBox, insertAfterElement.nextSibling);
+      
+                  setTimeout(function () {
+                      randomAdsBox.style.opacity = '1';
+                  }, 100);
               }
           };
       
@@ -2656,6 +2661,7 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
       }
       
       insertRandomAdsBox();
+      
       
     };
     

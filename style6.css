@@ -258,11 +258,6 @@ nav #pagename:focus {
     margin: 0 !important;
     display: flex;
     flex-direction: column;
-    opacity: 0;
-}
-.rec-box.fade-in {
-    opacity: 1;
-    transition: opacity .2s ease-in-out;
 }
 #rec-box-logobg {
     width: 100%;
