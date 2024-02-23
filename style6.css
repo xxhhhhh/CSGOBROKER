@@ -1146,19 +1146,43 @@ nav #pagename:focus {
 }
 .weapon-selection {
     width: 10%;
-    height: auto;
+    max-height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-snap-align: start;
     display: block;
     opacity: 0;
     align-items: center;
     justify-content: center;
     position: absolute;
-    z-index: 1000;
+    z-index: 10000;
     border-radius: 5px;
-    overflow: hidden;
-    padding-top: 10px;
+    margin-top: 10px;
     visibility: hidden;
     transition: opacity .2s ease-in-out !important;
 }
+.weapon-selection::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  .weapon-selection::-webkit-scrollbar-track {
+    background: transparent;
+  }
+   
+  .weapon-selection::-webkit-scrollbar-thumb {
+    /* background: rgba(255, 255, 255, .1);  */
+    background: #2e2e2e;
+    border-radius: 5px;
+  }
+  
+
+  /* Handle on hover */
+  .weapon-selection::-webkit-scrollbar-thumb:hover {
+    /* background: var(--main-color);  */
+    background: #414141;
+  }
 .weapon-container:hover .weapon-selection {
     visibility: visible;
     opacity: 1;
@@ -1171,10 +1195,10 @@ nav #pagename:focus {
     align-items: center;
     justify-content: center;
 }
-.weapon-selection-unite:hover {
-    background-color: #0a0a0a;
+.weapon-selection-unite:hover,
+.weapon-selection-unite.current {
+    background-color: #080808;
 }
-
 .weapon-current:hover {
     background: linear-gradient(15deg, rgba(0, 0, 0, .3) 30%, rgba(0, 0, 0, .15) 100%);
 }
@@ -1205,6 +1229,7 @@ nav #pagename:focus {
     justify-content: center !important;
     align-items: center;
     transition: all .15s ease-in-out;
+    scroll-snap-align: start;
 }
 .sitepage.items {
     flex-direction: column;
@@ -4194,7 +4219,9 @@ footer .centralizer .footer-content {
     opacity: 0;
     z-index: -999;
     border-radius: 5px;
+    display: block;
     overflow: initial !important;
+    visibility: hidden;
         }
      .submenu li:hover {
         background-color: #121212;
@@ -4236,6 +4263,7 @@ footer .centralizer .footer-content {
     margin-top: 100px;
     transition: opacity ease-in-out .15s;
     display: block;
+    visibility: visible;
     }
     ul #big-category:hover .submenu2{
         z-index: 90;
@@ -4245,6 +4273,7 @@ footer .centralizer .footer-content {
         transition: opacity ease-in-out .15s;
         border-left: 2px solid rgba(0,0,0,.1);
         display: block;
+        visibility: visible;
     }
     ul li .submenu2 li,
     ul li .submenu li{
