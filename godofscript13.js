@@ -189,7 +189,7 @@ var languageTag = extractLanguageTagFromURL(window.location.pathname);
         "5 Free Cases": "5 मुफ्त केस",
         "Free 75 Gems": "मुफ्त 50 गेम्स",
         "3 Free Cases": "3 मुफ्त केस",
-        "2.00$ For Free": "1.5 डॉलर मुफ्त में",
+        "1.50$ For Free": "1.5 डॉलर मुफ्त में",
         "5.00$ For Free": "5 डॉलर मुफ्त में",
         "Free 5€": "मुफ्त 5€",
         "Free 1.00$": "मुफ्त 1.00 डॉलर",
@@ -392,7 +392,7 @@ var languageTag = extractLanguageTagFromURL(window.location.pathname);
         "Free 75 Gems" : "50 Ücretsiz Taş",
         "3 Free Cases" : "3 Ücretsiz Kasa",
         "Free 5€" : "5€ Bedava",
-        "2.00$ For Free" : "Ücretsiz 2.00$",
+        "1.50$ For Free" : "Ücretsiz 1.50$",
         "5.00$ For Free" : "Ücretsiz 5.00$",
         "Free 1.00$" : "Ücretsiz 1.00$",
         "Free 0.90$" : "Ücretsiz 0.90$",
@@ -596,7 +596,7 @@ var languageTag = extractLanguageTagFromURL(window.location.pathname);
         "Free 75 Gems": "50 Gemas gratis",
         "3 Free Cases": "3 Estuches gratis",
         "Free 5€": "5€ gratis",
-        "2.00$ For Free": "2.00$ gratis",
+        "1.50$ For Free": "1.50$ gratis",
         "5.00$ For Free": "5.00$ gratis",
         "Free 1.00$": "1.00$ gratis",
         "Free 0.90$": "0.90$ gratis",
@@ -799,7 +799,7 @@ var languageTag = extractLanguageTagFromURL(window.location.pathname);
         "Free 75 Gems": "50 Gemas Grátis",
         "3 Free Cases": "3 Caixas Grátis",
         "Free 5€": "5€ Grátis",
-        "2.00$ For Free": "1,5.00$ grátis",
+        "1.50$ For Free": "1,5.00$ grátis",
         "5.00$ For Free": "5.00$ grátis",
         "Free 1.00$": "1,00$ grátis",
         "Free 0.90$": "0,90$ grátis",
@@ -919,7 +919,7 @@ var languageTag = extractLanguageTagFromURL(window.location.pathname);
         "5 Free Cases": "5 Бесплатных Кейсов",
         "Free 75 Gems": "50 Камней Бесплатно",
         "3 Free Cases": "3 Бесплатных Кейса",
-        "2.00$ For Free": "2.00$ Бесплатно",
+        "1.50$ For Free": "1.50$ Бесплатно",
         "5.00$ For Free": "5.00$ Бесплатно",
         "Free 0.90$": "0.90$ Бесплатно",
         "Free 0.50$": "0.50$ Бесплатно",
@@ -1196,6 +1196,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   document.addEventListener('DOMContentLoaded', function() {
     if (!window.location.pathname.includes("/skins/") &&
+    !window.location.pathname.includes("/items/") &&
     !window.location.pathname.includes("/reviews") &&
     !window.location.pathname.includes("/mirrors") &&
     !window.location.pathname.includes("/privacy-policy") &&
@@ -2289,6 +2290,7 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
       }
       if (!window.location.pathname.startsWith("/rust") &&
       !window.location.pathname.includes("/skins/") &&
+      !window.location.pathname.includes("/items/") &&
       !window.location.pathname.includes("/reviews") &&
       !window.location.pathname.includes("/mirrors") &&
       !window.location.pathname.includes("/privacy-policy") &&
@@ -2776,7 +2778,7 @@ if (btnfaq) {
 
 if (window.innerWidth <= 1340) {
 } else {
-  if (window.location.href.includes('/topic/skins/') && !window.location.href.endsWith('/topic/skins')) {
+  if (window.location.href.includes('/topic/skins/') && !window.location.href.endsWith('/topic/skins') || window.location.href.includes('/topic/items/') && !window.location.href.endsWith('/topic/items')) {
       const skinDescNames = document.querySelectorAll('.skin-desc-name');
 
       skinDescNames.forEach(element => {

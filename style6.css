@@ -471,7 +471,7 @@ nav #pagename:focus {
     padding-top: 0;
     background: unset;
     justify-content: flex-start;
-    min-height: 650px;
+    min-height: 600px;
 }
 .box-topic {
     top: 30px;
@@ -591,6 +591,22 @@ nav #pagename:focus {
     align-items: flex-start;
     width: 100%;
 }
+.box-skins.solo {
+    overflow-x: unset;
+    scroll-snap-type: unset;
+    scroll-snap-align: unset;
+    background: unset;
+    height: unset;
+    margin: unset;
+}
+.box-skins.solo .box-skins-list {
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: unset;
+    width: 100%;
+}
 .box-skins.selected .box-skins-list .skin {
     height: 200px;
     width: 197px;
@@ -598,23 +614,35 @@ nav #pagename:focus {
     max-width: 197px;
     transition: unset;
 }
+.box-skins.solo .box-skins-list .skin {
+    height: 200px;
+    width: 197px;
+    min-width: 157px;
+    max-width: 197px;
+    transition: unset;
+    margin: 5px;
+    background: linear-gradient(15deg, rgba(0, 0, 0, .3) 30%, rgba(0, 0, 0, .15) 100%);
+}
 .box-skins.selected .skin .skin-desc {
     width: 100%;
 }
 .box-skins.selected .box-skins-name {
     display: none;
 }
-.box-skins.selected:nth-child(2) .skin:hover img, .box-skins.selected:nth-child(2) .skin:focus img {
+.box-skins.selected:nth-child(2) .skin:hover img, .box-skins.selected:nth-child(2) .skin:focus img,
+.box-skins.solo:nth-child(1) .skin:hover img, .box-skins.solo:nth-child(1) .skin:focus img {
     height: 65% !important;
 }
 .box-skins.selected:nth-child(3) .skin:hover img, .box-skins.selected:nth-child(3) .skin:focus img {
     height: 70% !important;
 }
-.box-skins.selected .skin img {
+.box-skins.selected .skin img,
+.box-skins.solo .skin img {
     height: 65%;
     /* transition: unset; */
 }
-.box-skins.selected .skin:hover img {
+.box-skins.selected .skin:hover img,
+.box-skins.solo .skin:hover img {
     height: 70%;
     /* transition: all .2s ease-in-out; */
 }
@@ -780,6 +808,13 @@ nav #pagename:focus {
 .box-skins .skin.gold .skin-desc {
     background: radial-gradient( 50% 65% at 50% 100%, rgba(228, 174, 57, .2), transparent 100% );
 }
+.box-skins.solo .skin .skin-desc {
+    background: unset !important;
+}
+.box-skins.selected .skin .skin-desc-name,
+.box-skins.solo .skin .skin-desc-name {
+    font-size: 12px;
+}
 .box-skins:nth-child(1) .skin,
 .box-skins:nth-child(2) .skin {
     min-width: 90px;
@@ -842,7 +877,8 @@ nav #pagename:focus {
     scroll-snap-type: x mandatory;
     scroll-snap-align: start;
     transition: opacity .3s .3s ease-in-out;
-    background-color: var(--opacback);
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 5px;
     opacity: 0;
 }
 .box-skins-list.visible {
@@ -851,7 +887,7 @@ nav #pagename:focus {
 .close-box-skins {
     width: 40px;
     height: 40px;
-    background-color: #0a0a0a;
+    background-color: #0b0b0b;
     border: 2px solid rgb(16 16 16);
     position: absolute;
     right: 5px;
@@ -916,7 +952,8 @@ nav #pagename:focus {
     transition: .2s all ease-in-out;
     margin-left: 5px;
 }
-.box-skins.selected .box-skins-control {
+.box-skins.selected .box-skins-control,
+.box-skins.solo .box-skins-control {
     display: none;
 }
 .box-skins-control {
@@ -1095,6 +1132,88 @@ nav #pagename:focus {
     padding: 30px 0px 0px 0px;
     border-radius: 5px;
     /* background: linear-gradient(150deg, rgba(255, 255, 255, .006) 30%, rgba(0, 0, 0, 0) 100%); */
+}
+.sitetoppannel {
+    position: relative;
+    background-color: var(--opacback);
+    border-radius: 5px;
+    height: 80px;
+    width: 1026px;
+    margin-top: 10px;
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: row;
+}
+.weapon-selection {
+    width: 10%;
+    height: auto;
+    display: block;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1000;
+    border-radius: 5px;
+    overflow: hidden;
+    padding-top: 10px;
+    visibility: hidden;
+    transition: opacity .2s ease-in-out !important;
+}
+.weapon-container:hover .weapon-selection {
+    visibility: visible;
+    opacity: 1;
+
+}
+.weapon-selection-redir {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.weapon-selection-unite:hover {
+    background-color: #0a0a0a;
+}
+
+.weapon-current:hover {
+    background: linear-gradient(15deg, rgba(0, 0, 0, .3) 30%, rgba(0, 0, 0, .15) 100%);
+}
+.weapon-container {
+    width: 10%;
+}
+.weapon-current {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+.weapon-current img {
+    width: auto;
+    height: 60px;
+}
+.weapon-selection-unite img {
+    width: auto;
+    height: 60px;
+}
+.weapon-selection-unite {
+    height: 80px;
+    width: 100%;
+    background-color: #0c0c0c;
+    border-bottom: 2px solid rgba(0,0,0,.1);
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    transition: all .15s ease-in-out;
+}
+.sitepage.items {
+    flex-direction: column;
+    align-items: center;
+}
+.sitepage.items .boxtopic {
+    left: unset;
+    margin-top: 5px;
+    justify-content: center;
 }
 .siteleftpannel .navigation-menu {
     position: relative;
@@ -2468,7 +2587,7 @@ nav img:hover {
     background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.2) 100%);
 }
 .box-topic .topic-box:hover {
-    background: unset !important;
+    background-color: unset !important;
 }
 .topic-box:hover {
     background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(50, 50, 50, 0.25) 50%, rgba(255, 255, 255, 0) 100%); /*     /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(206, 32, 61, 0.15) 50%, rgba(255, 255, 255, 0) 100%) !important; */
@@ -2497,6 +2616,9 @@ nav img:hover {
     background-color: rgba(0,0,0, .1);
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0));
     -webkit-mask-image: -webkit-linear-gradient(top, rgba(0,0,0,1) 75%, rgba(0,0,0,0));
+}
+.topic-box:hover .logobg {
+    background-color: rgba(0,0,0, .1) !important;
 }
 .topic-boxes-holder {
     transition: opacity .3s .3s ease-in-out;
@@ -3677,7 +3799,8 @@ footer .centralizer .footer-content {
     .nav-bar {
         background-color: rgba(12, 12, 12, .9);
     }
-    .box-skins.selected .box-skins-list .skin {
+    .box-skins.selected .box-skins-list .skin,
+    .box-skins.solo .box-skins-list .skin {
         height: 180px;
         width: 180px;
     }
