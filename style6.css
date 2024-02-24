@@ -1141,7 +1141,7 @@ nav #pagename:focus {
     background-color: var(--opacback);
     border-radius: 5px;
     height: 80px;
-    width: 1026px;
+    width: 60%;
     margin-top: 10px;
     /* overflow: hidden; */
     display: flex;
@@ -1159,7 +1159,7 @@ nav #pagename:focus {
     align-items: center;
     justify-content: center;
     position: absolute;
-    z-index: 10000;
+    z-index: 1000;
     border-radius: 5px;
     margin-top: 10px;
     visibility: hidden;
