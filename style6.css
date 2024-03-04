@@ -3865,22 +3865,22 @@ footer .centralizer .footer-content {
         min-width: unset !important;
     }
     .pages #PageTitle, #PageSubt {
-        font-size: 14px;
+        font-size: 13px;
     }
     nav .pages {
         padding-left: unset;
-        margin-left: 115px;
+        margin-left: 10px;
     }
-    nav .logospace {
+    /* nav .logospace {
         position: absolute;
         left: -10px;
         top: -30px;
-    }
+    } */
     .topic-box {
         width: 100%;
     }
     nav img {
-        width: 130px;
+        width: 100px;
     }
     nav #logo {
         height: auto;
