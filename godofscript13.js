@@ -2867,3 +2867,20 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
       }
   });
 }
+
+if (window.location.href.indexOf("/topic/items/") > -1) {
+  var xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          var sitetoppannel = document.querySelector("div.sitetoppannel");
+          sitetoppannel.innerHTML = "";
+
+          sitetoppannel.innerHTML = this.responseText;
+
+          sitetoppannel.classList.add("fade-in-topic");
+      }
+  };
+  xhr.open("GET", "/code-parts/nav-bar-items.html", true);
+  xhr.send();
+}
