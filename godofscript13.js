@@ -2211,47 +2211,50 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
         elements.forEach(function(element) {
             element.classList.add('visible');
         });
-        document.addEventListener('DOMContentLoaded', function () {
-          const boxSkinsElements = document.querySelectorAll('.box-skins');
-  
-          boxSkinsElements.forEach(function(boxSkinsElement) {
-              const boxSkinsList = boxSkinsElement.querySelector('.box-skins-list');
-  
-              const boxSkinsControl = document.createElement('div');
-              boxSkinsControl.className = 'box-skins-control';
-              boxSkinsControl.innerHTML = `
-              <div class="box-skins-button left hidden"><i class="bi bi-chevron-left"></i></div>
-              <div class="box-skins-button right hidden"><i class="bi bi-chevron-right"></i></div>
-              `;
-              boxSkinsElement.appendChild(boxSkinsControl);
-  
-              const leftButton = boxSkinsControl.querySelector('.box-skins-button.left');
-              const rightButton = boxSkinsControl.querySelector('.box-skins-button.right');
-  
-              leftButton.addEventListener('click', function () {
-                  boxSkinsList.scrollBy({
-                      left: -boxSkinsList.querySelector('.skin').offsetWidth - 10,
-                      behavior: 'smooth'
-                  });
-              });
-  
-              rightButton.addEventListener('click', function () {
-                  boxSkinsList.scrollBy({
-                      left: boxSkinsList.querySelector('.skin').offsetWidth + 10,
-                      behavior: 'smooth'
-                  });
-              });
-  
-              boxSkinsList.addEventListener('scroll', function () {
-                  leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft <= boxSkinsList.querySelector('.skin').offsetWidth);
-                  rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
-              });
-  
-              leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft <= boxSkinsList.querySelector('.skin').offsetWidth);
-  
-              rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
-          });
-      });
+document.addEventListener('DOMContentLoaded', function () {
+    const boxSkinsElements = document.querySelectorAll('.box-skins');
+
+    boxSkinsElements.forEach(function(boxSkinsElement) {
+        const boxSkinsList = boxSkinsElement.querySelector('.box-skins-list');
+
+        if (boxSkinsList.scrollWidth > boxSkinsList.clientWidth) {
+            const boxSkinsControl = document.createElement('div');
+            boxSkinsControl.className = 'box-skins-control';
+            boxSkinsControl.innerHTML = `
+            <div class="box-skins-button left hidden"><i class="bi bi-chevron-left"></i></div>
+            <div class="box-skins-button right hidden"><i class="bi bi-chevron-right"></i></div>
+            `;
+            boxSkinsElement.appendChild(boxSkinsControl);
+
+            const leftButton = boxSkinsControl.querySelector('.box-skins-button.left');
+            const rightButton = boxSkinsControl.querySelector('.box-skins-button.right');
+
+            leftButton.addEventListener('click', function () {
+                boxSkinsList.scrollBy({
+                    left: -boxSkinsList.querySelector('.skin').offsetWidth - 10,
+                    behavior: 'smooth'
+                });
+            });
+
+            rightButton.addEventListener('click', function () {
+                boxSkinsList.scrollBy({
+                    left: boxSkinsList.querySelector('.skin').offsetWidth + 10,
+                    behavior: 'smooth'
+                });
+            });
+
+            boxSkinsList.addEventListener('scroll', function () {
+                leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft <= boxSkinsList.querySelector('.skin').offsetWidth);
+                rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
+            });
+
+            leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft <= boxSkinsList.querySelector('.skin').offsetWidth);
+
+            rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
+        }
+    });
+});
+
         const colorBoxes = document.querySelectorAll('.color-box-selection-button');
         const colorList = document.getElementById('color-list');
       
