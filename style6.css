@@ -3365,9 +3365,6 @@ footer .centralizer .footer-content {
     nav {
         width: 92%;
     }
-    .category-space.shorter {
-        height: 70px;
-    }
     .box-topic {
         width: 98%;
         margin: 4px 0 0 0 !important;
@@ -3715,6 +3712,9 @@ footer .centralizer .footer-content {
     }
     .boxes-holder .box .logobg {
         height: 40% !important;
+    }
+    .category-space.shorter {
+        height: 102px;
     }
     .boxes-holder .box .content {
         height: 60% !important;
