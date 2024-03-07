@@ -3362,6 +3362,9 @@ footer .centralizer .footer-content {
     font-weight: 400;
 }
 @media screen and (max-width: 1340px) {
+    .sitetoppannel {
+        display: none;
+    }
     body {
         background: linear-gradient(360deg, rgba(18,18,18,1) 0%, rgb(20, 20, 20) 100%);
     }
