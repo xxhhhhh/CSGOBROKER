@@ -1800,7 +1800,7 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
     '<li><a href="/reviews/skincashier">Skincashier</a></li>',
     '<li><a href="/reviews/skinscash">Skinscash</a></li>',
     '<li><a href="/reviews/skinswap">Skinswap</a></li>',
-    '<li><a href="/reviews/skinsfans">Skinsfans</a></li>',
+    '<li><a href="/reviews/skinfans">Skinfans</a></li>',
     '<li><a href="/reviews/steamgifts">Steamgifts</a></li>',
     '<li><a href="/reviews/steamlvlup">Steamlvlup</a></li>',
     '<li><a href="/reviews/swapgg">Swapgg</a></li>',

@@ -1169,7 +1169,7 @@ nav #pagename:focus {
     border-radius: 5px;
     margin-top: 10px;
     visibility: hidden;
-    transition: opacity .15s ease-in-out !important;
+    transition: opacity .05s ease-in-out !important;
 }
 @keyframes fadeIn {
     from {
@@ -1180,7 +1180,7 @@ nav #pagename:focus {
     }
 }
 .fade-in-topic {
-    animation: fadeIn .35s ease-in-out forwards;
+    animation: fadeIn .5s ease-in-out forwards;
 }
 .weapon-selection::-webkit-scrollbar {
     width: 4px;
