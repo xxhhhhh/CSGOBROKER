@@ -816,16 +816,18 @@ nav #pagename:focus {
 .box-skins .skin.gold .skin-desc {
     background: radial-gradient( 50% 65% at 50% 100%, rgba(228, 174, 57, .2), transparent 100% );
 }
-.box-skins.knives .skin .skin-desc {
+/* .box-skins.knives .skin .skin-desc {
     background: unset !important;
-}
+} */
 .box-skins.selected .skin .skin-desc-name,
 .box-skins.solo .skin .skin-desc-name {
     font-size: 12px;
 }
-.box-skins:nth-child(1) .skin,
 .box-skins:nth-child(2) .skin {
     min-width: 90px;
+}
+.box-skins:nth-child(1) .skin{
+    min-width: 100px;
 }
 .box-skins .skin:hover,
 .box-skins .skin:focus {
@@ -1168,9 +1170,9 @@ nav #pagename:focus {
     position: absolute;
     z-index: 1000;
     border-radius: 5px;
-    margin-top: 10px;
     visibility: hidden;
     transition: opacity .05s ease-in-out !important;
+    background-color: rgb(12 12 12);
 }
 @keyframes fadeIn {
     from {
@@ -1221,7 +1223,8 @@ nav #pagename:focus {
     background-color: #080808;
 }
 .weapon-current:hover {
-    background: linear-gradient(15deg, rgba(0, 0, 0, .3) 30%, rgba(0, 0, 0, .15) 100%);
+    background-color: rgba(0, 0, 0, .3);
+    transition: background-color .15s ease-in-out;
 }
 .weapon-container {
     width: 10%;
@@ -1249,7 +1252,8 @@ nav #pagename:focus {
 .weapon-selection-unite {
     height: 80px;
     width: 100%;
-    background-color: #0c0c0c;
+    background: linear-gradient(15deg, rgba(0, 0, 0, .3) 30%, rgba(0, 0, 0, .15) 100%);
+    border-radius: 5px;
     border-bottom: 2px solid rgba(0,0,0,.1);
     display: flex;
     justify-content: center !important;
