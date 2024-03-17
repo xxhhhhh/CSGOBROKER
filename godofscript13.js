@@ -1429,7 +1429,7 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
         var sliderPlacer = document.createElement('div');
         sliderPlacer.classList.add('slider-placer');
 
-        if (path.includes('/topic/skins/')) {
+        if (path.includes('/topic/skins/') || (path.includes('/topic/items/'))) {
             sliderPlacer.classList.add('topic');
         }
 
@@ -2636,13 +2636,13 @@ document.addEventListener('DOMContentLoaded', function () {
         function insertRandomAdsBox() {
           var currentPath = window.location.pathname;
       
-          if (currentPath.includes('/topic/skins/') && currentPath.includes('/ru/')) {
-              var adsFilePath = '/code-parts/topic-ads-ru.html';
-          } else if (currentPath.includes('/topic/skins/')) {
-              var adsFilePath = '/code-parts/topic-ads.html';
-          } else {
-              return;
-          }
+          if (currentPath.includes('/topic/skins/') && currentPath.includes('/ru/') || (currentPath.includes('/topic/items/') && currentPath.includes('/ru/'))) {
+            var adsFilePath = '/code-parts/topic-ads-ru.html';
+        } else if (currentPath.includes('/topic/skins/') || (currentPath.includes('/topic/items/'))) {
+            var adsFilePath = '/code-parts/topic-ads.html';
+        } else {
+            return;
+        }
       
           var xhr = new XMLHttpRequest();
           xhr.open('GET', adsFilePath, true);

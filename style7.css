@@ -621,7 +621,7 @@ nav #pagename:focus {
     min-width: 157px;
     max-width: 197px;
     transition: unset;
-    margin: 5px;
+    margin: 4px;
     background: linear-gradient(15deg, rgba(0, 0, 0, .3) 30%, rgba(0, 0, 0, .15) 100%);
 }
 .box-skins.selected .skin .skin-desc {
@@ -650,6 +650,9 @@ nav #pagename:focus {
 }
 .topic-centralizer {
     width: 98%;
+}
+.sitepage.items .topic-centralizer {
+    display: flex;
 }
 .box-skins {
     border-radius: 5px;
@@ -889,7 +892,13 @@ nav #pagename:focus {
     padding-left: 5px;
     opacity: 0;
 }
-.fade-in-topic .sitetoppannel {
+.items .box-topic,
+.items .rec-box {
+    opacity: 0;
+}
+.fade-in-topic .sitetoppannel,
+.fade-in-topic.items .box-topic,
+.fade-in-topic.items .rec-box {
     transition: all .25s .25s ease-in-out;
     opacity: 1;
 }
@@ -1150,13 +1159,14 @@ nav #pagename:focus {
     background-color: var(--opacback);
     border-radius: 5px;
     height: 80px;
-    width: 60%;
-    margin-top: 10px;
+    width: 63.8%;
+    margin-top: 8px;
     z-index: 1000;
     display: flex;
     flex-direction: row;
     justify-content: center;
     opacity: 0;
+    right: -133px;
 }
 .weapon-selection {
     width: 10%;
@@ -1264,9 +1274,9 @@ nav #pagename:focus {
 }
 .sitepage.items .boxtopic {
     left: unset;
-    margin-top: 5px;
+    margin-top: 4px;
     justify-content: center;
-    width: 70%;
+    width: 84%;
 }
 .siteleftpannel .navigation-menu {
     position: relative;
@@ -2336,6 +2346,22 @@ nav #logo:hover {
     position: relative;
     left: -154px;
 }
+.sitepage.items .siteleftpannel {
+    min-width: 300px;
+    height: 100%;
+    left: 1px;
+    top: -94px;
+}
+.sitepage.items .box-skins {
+    width: auto;
+    justify-content: flex-start;
+}
+.sitepage.items .box-skins.solo .box-skins-list {
+    justify-content: flex-start;
+}
+.sitepage.items .box-topic {
+    height: 150px;
+}
 .siteblock {
     position: fixed;
 }
@@ -2660,6 +2686,9 @@ nav #logo:hover {
 }
 .box-topic .topic-box:hover {
     transform: scale(1);
+}
+.box-topic .topic-box .logobg {
+    background-color: rgba(0,0,0, .1) !important;
 }
 .topic-box:hover {
     transform: scale(1.03);
@@ -3406,7 +3435,8 @@ footer .centralizer .footer-content {
     .topic-boxes-holder {
         max-width: 90%;
     }
-    .sitepage.topic .siteblock {
+    .sitepage.topic .siteblock,
+    .topic-centralizer {
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -3652,10 +3682,12 @@ footer .centralizer .footer-content {
     }
     .siteleftpannel {
         position: relative;
+        min-width: unset !important;
+        height: unset !important;
         width: 100%;
         margin-right: 0;
-        left: 0;
-        top: 0;
+        left: 0 !important;
+        top: 0 !important;
     }
     .siteblock {
         position: relative;
