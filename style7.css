@@ -630,22 +630,9 @@ nav #pagename:focus {
 .box-skins.selected .box-skins-name {
     display: none;
 }
-.box-skins.selected:nth-child(2) .skin:hover img, .box-skins.selected:nth-child(2) .skin:focus img,
-.box-skins.solo:nth-child(1) .skin:hover img, .box-skins.solo:nth-child(1) .skin:focus img {
-    height: 65% !important;
-}
-.box-skins.selected:nth-child(3) .skin:hover img, .box-skins.selected:nth-child(3) .skin:focus img {
-    height: 70% !important;
-}
 .box-skins.selected .skin img,
 .box-skins.solo .skin img {
     height: 65%;
-    /* transition: unset; */
-}
-.box-skins.selected .skin:hover img,
-.box-skins.solo .skin:hover img {
-    height: 70%;
-    /* transition: all .2s ease-in-out; */
 }
 .box-skins::-webkit-scrollbar {
     width: 4px;
@@ -831,22 +818,25 @@ nav #pagename:focus {
 }
 .box-skins .skin:hover,
 .box-skins .skin:focus {
-    /* background-color: #0e0e0e; */
     width: 157px;
     min-width: 157px;
 }
 .box-skins .skin:hover img {
-    height: 90%;
-    transform: rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
 }
 .box-skins:nth-child(1) .skin:hover img,
 .box-skins:nth-child(1) .skin:focus img {
-    height: 80% !important;
+    transform: scale(1.2) rotate(3deg);
 }
 .box-skins:nth-child(2)  .skin:hover img,
 .box-skins:nth-child(2)  .skin:focus img {
-    height: 85% !important;
+    transform: scale(1.25) rotate(3deg);
 }
+.box-skins.selected .skin:hover img,
+.box-skins.solo .skin:hover img {
+    transform: scale(1.1) rotate(3deg);
+}
+/* 
 .box-skins.selected:nth-child(1) .skin:hover img,
 .box-skins.selected:nth-child(1) .skin:focus img {
     height: 70% !important;
@@ -854,7 +844,14 @@ nav #pagename:focus {
 .box-skins.selected:nth-child(2)  .skin:hover img,
 .box-skins.selected:nth-child(2)  .skin:focus img {
     height: 75% !important;
+} 
+ .box-skins.selected:nth-child(2) .skin:hover img, .box-skins.selected:nth-child(2) .skin:focus img,
+.box-skins.solo:nth-child(1) .skin:hover img, .box-skins.solo:nth-child(1) .skin:focus img {
+    height: 65% !important;
 }
+.box-skins.selected:nth-child(3) .skin:hover img, .box-skins.selected:nth-child(3) .skin:focus img {
+    height: 70% !important;
+} */
 .box-skins .skin img {
     width: auto;
     height: 82%;
@@ -1188,9 +1185,7 @@ nav #pagename:focus {
 .weapon-selection::-webkit-scrollbar {
     width: 4px;
   }
-  
-  /* Track */
-  .weapon-selection::-webkit-scrollbar-track {
+    .weapon-selection::-webkit-scrollbar-track {
     background: transparent;
   }
    
@@ -1201,7 +1196,6 @@ nav #pagename:focus {
   }
   
 
-  /* Handle on hover */
   .weapon-selection::-webkit-scrollbar-thumb:hover {
     /* background: var(--main-color);  */
     background: #414141;
@@ -1222,13 +1216,22 @@ nav #pagename:focus {
 .weapon-selection-unite.current {
     background-color: #080808;
 }
-.weapon-current:hover {
+.weapon-current:hover{
     background-color: rgba(0, 0, 0, .3);
     transition: background-color .15s ease-in-out;
+}
+.weapon-current img,
+.weapon-selection-redir img {
+    transition: .2s all ease-in-out;
+}
+.weapon-current:hover img,
+.weapon-selection-redir:hover  img {
+    transform: scale(1.1) rotate(3deg);
 }
 .weapon-container {
     width: 10%;
     border-left: 2px rgba(0, 0, 0, .1) solid;
+    cursor: pointer;
     /* border-left: 2px rgb(15 15 15) solid; */
 }
 .weapon-container:first-child {
@@ -2016,6 +2019,8 @@ nav #pagename:focus {
     overflow: hidden;
     margin: 9px 0;
     bottom: 0;
+    z-index: 10000;
+    position: relative;
 }
 #FAQ #PageSubt {
     width: 1000px;
@@ -2642,7 +2647,7 @@ nav #logo:hover {
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     transition: all .15s ease-in-out;
     text-decoration: none;
-    background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.2) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.2) 100%);
 }
 .box-topic .topic-box:hover {
     background-color: unset !important;
@@ -2666,14 +2671,25 @@ nav #logo:hover {
     transform: scale(1.03);
 }
 .topic-box .logobg {
+    transition: all .2s ease-in-out;
+}
+.topic-box .logobg img {
+    height: 100%;
+}
+.topic-box:hover .logobg {
+    transform: scale(1.03);
+}
+.topic-box .logobg {
     top: 0;
+    width: 100%;
     height: 77%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: rgba(0,0,0, .1);
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0));
-    -webkit-mask-image: -webkit-linear-gradient(top, rgba(0,0,0,1) 75%, rgba(0,0,0,0));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0));
+    -webkit-mask-image: -webkit-linear-gradient(top, rgba(0,0,0,1) 80%, rgba(0,0,0,0));
+    display: flex;
+    justify-content: center;
 }
 .topic-box:hover .logobg {
     background-color: rgba(0,0,0, .1) !important;
@@ -2733,6 +2749,7 @@ nav #logo:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(0, 0, 0, .1);
 }
 .topic-box .content span {
     display: block;

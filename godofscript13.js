@@ -1724,6 +1724,10 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
       'en': 'Skins By Color',
       'ru': 'Скины по Цвету'
     },
+    '/topic/items': {
+      'en': 'Skins By Weapon Types',
+      'ru': 'Скины по Типу Оружия'
+    },
     '/newest': {
       'en': 'Newest Sites',
       'ru': 'Новые Сайты'
@@ -1760,6 +1764,7 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
     '<li><a href="/topic/skins/green-skins">Green Color Skins</a></li>',
     '<li><a href="/topic/skins/golden-skins">Golden Color Skins</a></li>',
     '<li><a href="/topic/skins">Skins By Color</a></li>',
+    '<li><a href="/topic/items">Skins By Weapon Types</a></li>',
     '<li><a href="/newest">Newest Sites</a></li>',
     '<li><a href="/dota">Dota 2 Sites</a></li>',
     '<li><a href="/">CS:GO Sites</a></li>',
@@ -2337,6 +2342,7 @@ document.addEventListener('DOMContentLoaded', function () {
               "Earn by Play CS2": "Заработок на Игре в CS2",
               "Others": "Остальное",
               "Skins By Color": "Скины по Цвету",
+              "Skins By Weapon Types": "Скины по Типу Оружия",
               "All Sites": "Все Сайты",
               "Match Betting": "Ставки на Матчи",
               "Case Opening": "Открытие Кейсов",
@@ -2881,6 +2887,16 @@ if (window.location.href.indexOf("/topic/items/") > -1) {
           sitetoppannel.innerHTML = "";
 
           sitetoppannel.innerHTML = this.responseText;
+
+          if (languageTag === 'ru') {
+            var navBarLinks = document.querySelectorAll('div.sitetoppannel a');
+            navBarLinks.forEach(function(link) {
+              var href = link.getAttribute('href');
+              if (href && href.indexOf('/ru/') !== 0) {
+                link.setAttribute('href', '/ru' + href);
+              }
+            });
+          }
 
           alltopic.classList.add("fade-in-topic");
       }
