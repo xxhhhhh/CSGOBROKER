@@ -99,6 +99,7 @@ nav {
     display: flex;
     height: 100%;
     align-items: center;
+    width: 100%;
 }
 .nav-content {
     width: 270px; 
@@ -530,22 +531,26 @@ nav #pagename:focus {
 }
 .navigation-section {
     width: 100%;
-    height: 30%;
+    height: auto;
 }
 .navigation-section.third {
     height: 0%;
 }
 .navigation-section.first,
-.navigation-section.second {
+.navigation-section.second,
+.navigation-section.searchers {
     /* background-color: var(--opacback); */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     align-content: center;
+    position: relative;
+    top: 130px;
 }
 .navigation-section.second {
     width: 100%;
+    top: 135px;
 }
 .navigation-section.second .colors-box{
     width: 70%;
@@ -557,6 +562,78 @@ nav #pagename:focus {
     justify-content: center;
     margin-top: 7px;
 }
+.navigation-section .site-searcher-box,
+.navigation-weapon-sort {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111111;
+    border: 2px solid #0f0f0f;
+    border-radius: 5px;
+    transition: .2s all ease-in-out;
+    cursor: pointer;
+    margin: 4px;
+}
+.navigation-weapon-sort i {
+    color: var(--white);
+    opacity: .15;
+    transition: all .2s ease-in-out;
+}
+.navigation-weapon-sort.enabled i {
+    opacity: .8;
+}
+.navigation-section .site-searcher-box.enabled,
+.navigation-weapon-sort.enabled {
+    background-color: #161616;
+    border: 2px solid #181818;
+}
+.navigation-section .site-searcher-box.enabled .site-searcher-logo {
+    opacity: 1;
+}
+/* .site-searcher-unit {
+    position: relative;
+    font-size: 16px;
+    color: var(--white);
+    font-weight: 500;
+    height: 100%;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+} */
+.site-searcher-logo {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: auto;
+    width: 30px;
+    transition: .2s all ease-in-out;
+    opacity: .3;
+}
+.site-searcher-logo img {
+    width: 100%;
+    height: auto;
+}
+.site-searcher-box[title]:hover:after,
+.navigation-weapon-sort[title]:hover:after {
+    transition: .2s all ease-in-out;
+    position: absolute;
+    color: var(--white);
+    content: attr(title);
+    margin-bottom: 12px;
+    width: auto;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: -58px;
+    border-radius: 5px;
+    background-color: #111111;
+    border: 2px solid #0f0f0f;
+    align-items: center;
+  }
 .navigation-weapon-type {
     padding: 5px;
     margin: 3px;
@@ -575,9 +652,10 @@ nav #pagename:focus {
     opacity: 1;
 }
 .navigation-weapon-type:hover,
-.color-box-selection-button:hover {
+.color-box-selection-button:hover,
+.navigation-section .site-searcher-box:hover,
+.navigation-weapon-sort:hover {
     background-color: #191919;
-    border: 2px solid #202020;
     transition: .2s all ease-in-out;
 }
 .box-skins.selected {
@@ -624,6 +702,28 @@ nav #pagename:focus {
     margin: 4px;
     background: linear-gradient(15deg, rgba(0, 0, 0, .3) 30%, rgba(0, 0, 0, .15) 100%);
 }
+.sitepage.items .skin {
+    transition: height .2s ease-in-out !important;
+    width: 200px !important;
+    max-width: 200px !important;
+    padding-left: unset !important;
+}
+.sitepage.items .skin img {
+    opacity: 1;
+    transition: all .2s ease-in-out !important;
+}
+.sitepage.items .skin.disabled {
+    height: 0 !important;
+    transition: height .2s ease-in-out;
+    width: 0!important;
+    padding-left: unset !important;
+    margin: unset !important;
+    overflow: hidden;
+    min-width: unset !important;
+}
+.sitepage.items .skin.disabled img {
+    opacity: 0;
+}
 .box-skins.selected .skin .skin-desc {
     width: 100%;
 }
@@ -659,6 +759,7 @@ nav #pagename:focus {
     background: linear-gradient(15deg, rgba(0, 0, 0, .3) 30%, rgba(0, 0, 0, .15) 100%);
     height: 130px;
     margin: 8px 0 0 0;
+    width: 100%;
     overflow-x: hidden;
     display: flex;
     justify-content: flex-start;
@@ -761,8 +862,8 @@ nav #pagename:focus {
     height: 50px;
 }
 .box-skins.disabled {
-    height: 0;
-    margin: 0;
+    height: 0 !important;
+    margin: 0 !important;
     overflow: hidden;
 }
 .box-skins.disabled .box-skins-control {
@@ -2360,7 +2461,17 @@ nav #logo:hover {
     justify-content: flex-start;
 }
 .sitepage.items .box-topic {
-    height: 150px;
+    height: 200px;
+}
+.sitepage.items .box-topic .navigation-section {
+    top: unset;
+}
+.sitepage.items .navigation-section {
+    height: 70%;
+}
+.sitepage.items .navigation-section.searchers {
+    height: 30%;
+    align-content: flex-start;
 }
 .siteblock {
     position: fixed;
@@ -2659,7 +2770,7 @@ nav #logo:hover {
 .topic-box {
     position: relative;
     width: 300px;
-    height: 200px;
+    height: 150px;
     margin: 18px 9px 0 9px;
     border-radius: 5px;
     overflow: hidden;
@@ -2679,6 +2790,7 @@ nav #logo:hover {
 .box-topic .topic-box {
     margin: unset;
     background: unset;
+    position: absolute;
 }
 .box-topic .topic-box .logobg {
     margin: unset;
@@ -3428,6 +3540,12 @@ footer .centralizer .footer-content {
         height: 300px;
         top: 0;
     }
+    .navigation-section.first, .navigation-section.second, .navigation-section.searchers {
+        top: 100px;
+    }
+    .navigation-section.second {
+        top: 105px;
+    }
     .category-selector .submenu,
     .category-selector .submenu2 {
         display: none;
@@ -3906,8 +4024,14 @@ footer .centralizer .footer-content {
     }
     .box-skins.selected .box-skins-list .skin,
     .box-skins.solo .box-skins-list .skin {
-        height: 180px;
-        width: 180px;
+        height: 170px;
+        width: 170px !important;
+    }
+    .sitepage.items .skin.disabled {
+        width: 0 !important;
+    }
+    .sitepage.items .box-skins.solo .box-skins-list {
+        justify-content: center;
     }
     .menu-toggle {
         margin-right: 10px;
@@ -3934,6 +4058,8 @@ footer .centralizer .footer-content {
     nav .pages {
         padding-left: unset;
         margin-left: 8px;
+        width: 100%;
+        justify-content: center;
     }
     /* nav .logospace {
         position: absolute;

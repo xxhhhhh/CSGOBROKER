@@ -2140,76 +2140,199 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
           });
       });
   
-      if (window.location.pathname.includes("/skins/")) {
-        $(document).ready(function () {
-          $('.close-box-skins').on('click', function () {
-            var parentBoxSkins = $(this).closest(".box-skins");
-      
-            parentBoxSkins.toggleClass("selected");
-      
-            $(".box-skins").not(parentBoxSkins).removeClass("selected");
-      
-            var zoomIcon = $(this).find("i");
-      
-            zoomIcon.toggleClass("bi-zoom-in bi-zoom-out");
-      
-            $(".close-box-skins i").not(zoomIcon).removeClass("bi-zoom-out").addClass("bi-zoom-in");
-          });
-      
-          $(".box-skins-name").click(function () {
-            var parentBoxSkins = $(this).closest(".box-skins");
-      
-            parentBoxSkins.toggleClass("selected");
-      
-            $(".box-skins").not(parentBoxSkins).removeClass("selected");
-      
-            var zoomIcon = $(this).siblings(".close-box-skins").find("i");
-      
-            zoomIcon.toggleClass("bi-zoom-in bi-zoom-out");
-      
-            $(".close-box-skins i").not(zoomIcon).removeClass("bi-zoom-out").addClass("bi-zoom-in");
-          });
-        });
-      
-        document.addEventListener("DOMContentLoaded", function () {
-          var boxSkinsNames = document.querySelectorAll('.box-skins-name');
-      
-          boxSkinsNames.forEach(function (boxSkinsName) {
-            boxSkinsName.classList.add('visible');
-          });
-        });
-      
-        $(document).ready(function () {
-          $(".navigation-weapon-type").click(function () {
-            var weaponType = $(this).attr("class").split(" ")[1];
-            $(".box-skins." + weaponType).toggleClass("disabled");
-      
-            $(this).toggleClass("enabled");
-      
-            updateNavigationReset();
-          });
-      
-          $(".topic-centralizer").on("click", ".navigation-reset", function () {
-            $(".box-skins").removeClass("disabled");
-      
-            $(".navigation-weapon-type").addClass("enabled");
-      
-            $(".box-skins").removeClass("selected");
-      
-            $(".topic-centralizer .navigation-reset").remove();
-          });
-      
-          function updateNavigationReset() {
-            if ($(".navigation-weapon-type.enabled").length === 0) {
-              if ($(".topic-centralizer .navigation-reset").length === 0) {
-                $(".topic-centralizer").append('<div class="navigation-reset">Reset Navigation</div>');
-              }
+      $(document).ready(function () {
+        var originalOrder = $(".box-skins-list").html();
+        var enabledFiltersState = {};
+    
+        function updateNavigationReset() {
+            var enabledFilters = $(".navigation-weapon-type.enabled").length;
+            var sortEnabled = $(".navigation-weapon-sort").hasClass("enabled");
+            if (enabledFilters === 0 && !sortEnabled) {
+                if ($(".topic-centralizer .navigation-reset").length === 0) {
+                    $(".topic-centralizer").append('<div class="navigation-reset">Reset Navigation</div>');
+                }
             } else {
-              $(".topic-centralizer .navigation-reset").remove();
+                $(".topic-centralizer .navigation-reset").remove();
             }
-          }
+        }
+    
+        function updateSearchUrl(selectedSite, languageTag) {
+            const skinLinks = document.querySelectorAll('.skin');
+    
+            skinLinks.forEach(link => {
+                const skinName = link.querySelector('.skin-desc-name').textContent.trim();
+                let href = '';
+    
+                switch (selectedSite) {
+                    case 'Tradeit':
+                        href = `https://tradeit.gg/csgo/store?search=${encodeURIComponent(skinName)}&aff=csgobroker`;
+                        break;
+                    case 'BitSkins':
+                        href = `https://bitskins.com/market/cs2?search={"order":[{"field":"price","order":"ASC"}],"where":{"skin_name":"${encodeURIComponent(skinName)}"}}&ref_alias=csgobroker`;
+                        break;
+                    case 'Steam':
+                        href = `https://steamcommunity.com/market/search?appid=730&q=${encodeURIComponent(skinName)}`;
+                        break;
+                    default:
+                        href = `https://lis-skins.ru/market/csgo/?query=${encodeURIComponent(skinName)}&rf=83346597`;
+                        break;
+                }
+    
+                link.setAttribute('href', href);
+                link.setAttribute('target', '_blank');
+            });
+    
+            if (languageTag === 'ru') {
+                if (document.getElementById('Lis-Skins')) {
+                    document.getElementById('Lis-Skins').title = 'Искать на Lis-Skins';
+                }
+                if (document.getElementById('Tradeit')) {
+                    document.getElementById('Tradeit').title = 'Искать на Tradeit';
+                }
+                if (document.getElementById('BitSkins')) {
+                    document.getElementById('BitSkins').title = 'Искать на BitSkins';
+                }
+                if (document.getElementById('Steam')) {
+                    document.getElementById('Steam').title = 'Искать в Steam';
+                }
+                if (document.getElementById('Quality-Filter')) {
+                    document.getElementById('Quality-Filter').title = 'По Редкости';
+                }
+            }
+        }
+    
+        function extractLanguageTagFromURL(pathname) {
+            var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
+            if (matches && matches.length > 1) {
+                return matches[1];
+            }
+            return "";
+        }
+    
+        $(".box-topic").on("click", ".site-searcher-box", function () {
+            $(".site-searcher-box").removeClass("enabled");
+            $(this).addClass("enabled");
+            updateSearchUrl(this.id);
+            localStorage.setItem('selectedSite', this.id);
         });
-      }
+    
+        const lastSelectedSite = localStorage.getItem('selectedSite');
+        if (lastSelectedSite) {
+            const selectedDiv = document.getElementById(lastSelectedSite);
+            if (selectedDiv) {
+                selectedDiv.classList.add('enabled');
+                const languageTag = extractLanguageTagFromURL(window.location.pathname);
+                updateSearchUrl(lastSelectedSite, languageTag);
+            }
+        }
+    
+        if (window.location.pathname.includes("/skins/")) {
+            $('.close-box-skins').on('click', function () {
+                var parentBoxSkins = $(this).closest(".box-skins");
+                parentBoxSkins.toggleClass("selected");
+                $(".box-skins").not(parentBoxSkins).removeClass("selected");
+                var zoomIcon = $(this).find("i");
+                zoomIcon.toggleClass("bi-zoom-in bi-zoom-out");
+                $(".close-box-skins i").not(zoomIcon).removeClass("bi-zoom-out").addClass("bi-zoom-in");
+            });
+    
+            $(".box-skins-name").click(function () {
+                var parentBoxSkins = $(this).closest(".box-skins");
+                parentBoxSkins.toggleClass("selected");
+                $(".box-skins").not(parentBoxSkins).removeClass("selected");
+                var zoomIcon = $(this).siblings(".close-box-skins").find("i");
+                zoomIcon.toggleClass("bi-zoom-in bi-zoom-out");
+                $(".close-box-skins i").not(zoomIcon).removeClass("bi-zoom-out").addClass("bi-zoom-in");
+            });
+    
+            document.addEventListener("DOMContentLoaded", function () {
+                var boxSkinsNames = document.querySelectorAll('.box-skins-name');
+                boxSkinsNames.forEach(function (boxSkinsName) {
+                    boxSkinsName.classList.add('visible');
+                });
+            });
+    
+            $(".navigation-weapon-type").click(function () {
+                var weaponType = $(this).attr("class").split(" ")[1];
+                $(".box-skins." + weaponType).toggleClass("disabled");
+                $(this).toggleClass("enabled");
+                updateNavigationReset();
+            });
+    
+            $(".topic-centralizer").on("click", ".navigation-reset", function () {
+                $(".box-skins").removeClass("disabled");
+                $(".navigation-weapon-type").addClass("enabled");
+                $(".box-skins").removeClass("selected");
+                $(".topic-centralizer .navigation-reset").remove();
+            });
+        } else if (window.location.pathname.includes("/items/")) {
+            $(".box-topic").load("/code-parts/micro-parts/box-topic-items.html", function () {
+                $(".navigation-weapon-type").click(function () {
+                    var weaponType = $(this).attr("class").split(" ")[1];
+                    $(".skin." + weaponType).toggleClass("disabled");
+                    $(this).toggleClass("enabled");
+                    enabledFiltersState[weaponType] = $(this).hasClass("enabled");
+                    updateNavigationReset();
+                });
+    
+                $(".navigation-weapon-sort").click(function () {
+                    var enabledFilters = $(".navigation-weapon-type.enabled").length;
+                    if (enabledFilters === 0) {
+                        return;
+                    }
+    
+                    var skins = $(".box-skins-list .skin").get();
+                    skins.sort(function (a, b) {
+                        var aClass = $(a).attr('class').split(' ')[1];
+                        var bClass = $(b).attr('class').split(' ')[1];
+                        var sortOrder = ['white', 'lblue', 'blue', 'purple', 'pink', 'red', 'gold'];
+                        return sortOrder.indexOf(aClass) - sortOrder.indexOf(bClass);
+                    });
+    
+                    if (!$(this).hasClass("enabled")) {
+                        $(".box-skins-list").html(skins);
+                    } else {
+                        $(".box-skins-list").html(originalOrder);
+                    }
+    
+                    for (var filter in enabledFiltersState) {
+                        var isEnabled = enabledFiltersState[filter];
+                        if (isEnabled) {
+                            $(".skin." + filter).removeClass("disabled");
+                            $(".navigation-weapon-type." + filter).addClass("enabled");
+                        } else {
+                            $(".skin." + filter).addClass("disabled");
+                            $(".navigation-weapon-type." + filter).removeClass("enabled");
+                        }
+                    }
+    
+                    $(this).toggleClass("enabled");
+                    updateNavigationReset();
+                });
+    
+                $(".topic-centralizer").on("click", ".navigation-reset", function () {
+                    $(".skin").removeClass("disabled");
+                    $(".navigation-weapon-type").addClass("enabled");
+                    $(".topic-centralizer .navigation-reset").remove();
+                    enabledFiltersState = {};
+                });
+    
+                const lastSelectedSite = localStorage.getItem('selectedSite');
+                if (lastSelectedSite) {
+                    const selectedDiv = document.getElementById(lastSelectedSite);
+                    if (selectedDiv) {
+                        selectedDiv.classList.add('enabled');
+                        const languageTag = extractLanguageTagFromURL(window.location.pathname);
+                        updateSearchUrl(lastSelectedSite, languageTag);
+                    }
+                }
+            });
+        }
+    });
+    
+    
+    
+    
       
       if (window.location.pathname.includes("/topic/")) {
         var elements = document.querySelectorAll('.box-skins-list, .topic-boxes-holder');
@@ -2785,20 +2908,20 @@ if (btnfaq) {
   };
 }
 
-if (window.innerWidth <= 1340) {
-} else {
-  if (window.location.href.includes('/topic/skins/') && !window.location.href.endsWith('/topic/skins') || window.location.href.includes('/topic/items/') && !window.location.href.endsWith('/topic/items')) {
-      const skinDescNames = document.querySelectorAll('.skin-desc-name');
+// if (window.innerWidth <= 1340) {
+// } else {
+//   if (window.location.href.includes('/topic/skins/') && !window.location.href.endsWith('/topic/skins') || window.location.href.includes('/topic/items/') && !window.location.href.endsWith('/topic/items')) {
+//       const skinDescNames = document.querySelectorAll('.skin-desc-name');
 
-      skinDescNames.forEach(element => {
-          const skinName = element.textContent.trim();
-          const link = `https://lis-skins.ru/market/csgo/?query=${encodeURIComponent(skinName)}&rf=83346597`;
-          const parentElement = element.parentElement;
-          parentElement.setAttribute('href', link);
-      });
-  } else {
-  }
-}
+//       skinDescNames.forEach(element => {
+//           const skinName = element.textContent.trim();
+//           const link = `https://lis-skins.ru/market/csgo/?query=${encodeURIComponent(skinName)}&rf=83346597`;
+//           const parentElement = element.parentElement;
+//           parentElement.setAttribute('href', link);
+//       });
+//   } else {
+//   }
+// }
 
 const pathSegments = window.location.pathname.split('/');
 const languagePrefix = pathSegments[1] || '';
