@@ -7,14 +7,51 @@ function copyToClipboard(element) {
   }
   
   function extractLanguageTagFromURL(pathname) {
-    var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
-    if (matches && matches.length > 1) {
-      return matches[1];
+    var lowerCasePathname = pathname.toLowerCase();
+  
+    if (lowerCasePathname.startsWith('/ru/') || lowerCasePathname.startsWith('/ru.html')) {
+      return 'ru';
     }
-    return "";
+    if (lowerCasePathname.startsWith('/hi/') || lowerCasePathname.startsWith('/hi.html')) {
+      return 'hi';
+    }
+    if (lowerCasePathname.startsWith('/tr/') || lowerCasePathname.startsWith('/tr.html')) {
+      return 'tr';
+    }
+    if (lowerCasePathname.startsWith('/es/') || lowerCasePathname.startsWith('/es.html')) {
+      return 'es';
+    }
+    if (lowerCasePathname.startsWith('/pt/') || lowerCasePathname.startsWith('/pt.html')) {
+      return 'pt';
+    }
+  
+    return '';
   }
+  
+  var languageTag = extractLanguageTagFromURL(window.location.pathname);
+  
 
-var languageTag = extractLanguageTagFromURL(window.location.pathname);
+
+function updateURLs(parentElement) {
+  const links = parentElement.querySelectorAll('a[href]');
+  const regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
+
+  for (let i = 0; i < links.length; i++) {
+      const href = links[i].getAttribute('href');
+
+      if (href.includes('vk.com')) {
+          continue;
+      }
+
+  const match = href.match(regex);
+  if (match) {
+    const domain = match[1] || '';
+    const path = match[2];
+    const updatedHref = '/ru' + path;
+    links[i].setAttribute('href', updatedHref);
+  }
+}
+}
 
   if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
   
@@ -953,28 +990,9 @@ var languageTag = extractLanguageTagFromURL(window.location.pathname);
   !window.location.pathname.includes("/terms-of-service") &&
   !window.location.pathname.includes("/contact-us")) {
 
-  const updateURLs = (parentElement) => {
-    const links = parentElement.querySelectorAll('a[href]');
-    const regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
 
-    for (let i = 0; i < links.length; i++) {
-      const href = links[i].getAttribute('href');
 
-      if (href.includes('vk.com')) {
-        continue;
-      }
-
-      const match = href.match(regex);
-      if (match) {
-        const domain = match[1] || '';
-        const path = match[2];
-        const updatedHref = '/ru' + path;
-        links[i].setAttribute('href', updatedHref);
-      }
-    }
-  }
-
-  const sitesList = document.querySelector('.boxes-holder');
+  const sitesList = document.querySelector('.boxes-holder, .newest-boxes');
   updateURLs(sitesList);
 }
 
@@ -2208,14 +2226,6 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
             }
         }
     
-        function extractLanguageTagFromURL(pathname) {
-            var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
-            if (matches && matches.length > 1) {
-                return matches[1];
-            }
-            return "";
-        }
-    
         $(".box-topic").on("click", ".site-searcher-box", function () {
             $(".site-searcher-box").removeClass("enabled");
             $(this).addClass("enabled");
@@ -2433,7 +2443,8 @@ document.addEventListener('DOMContentLoaded', function () {
       !window.location.pathname.includes("/mirrors") &&
       !window.location.pathname.includes("/privacy-policy") &&
       !window.location.pathname.includes("/terms-of-service") &&
-      !window.location.pathname.includes("/contact-us")) {        function translateURLs2(parentElement, languageTag) {
+      !window.location.pathname.includes("/contact-us")) {        
+        function translateURLs2(parentElement, languageTag) {
           var links = parentElement.querySelectorAll("a[href]");
           var supportedLanguages = ["hi", "tr", "pt", "es", "ru"];
       
@@ -2450,7 +2461,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
       
             if (languageTag !== "en") {
-              if (!langIncluded && supportedLanguages.includes(languageTag)) {
+              if (!path.includes("/topic/") && !langIncluded && supportedLanguages.includes(languageTag)) {
                 path = "/" + languageTag + path;
                 url.pathname = path;
                 links[i].setAttribute("href", url.href);
@@ -2459,7 +2470,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
       
           var translations = {
-            ru: {
+            "ru": {
               "CS2 Sites List": "Халява CS2",
               "Rust Sites List": "Халява Rust",
               "Dota 2 Sites List": "Халява Dota 2",
@@ -2475,8 +2486,7 @@ document.addEventListener('DOMContentLoaded', function () {
               "Skins By Weapon Types": "Скины по Типу Оружия",
               "All Sites": "Все Сайты",
               "Match Betting": "Ставки на Матчи",
-              "Case Opening": "Открытие Кейсов",
-              "Case Battle": "Битва Кейсов",
+              "Case Opening": "Кейсы",
               "Roulette": "Рулетка",
               "Coinflip": "Коинфлип",
               "Crash": "Краш",
@@ -2502,10 +2512,9 @@ document.addEventListener('DOMContentLoaded', function () {
               "Sell Skins": "Продать Скины",
               "Trade Skins": "Обменять Скины",
               "Steam Level Up": "Увеличить Уровень Steam",
-              "Buy Steam Games": "Купить Игры Steam",
+              "Buy Steam Games": "Купить Игры Steam"
             },
-            hi: {
-              "CS2 Sites List": "CS2 साइटों की सूची",
+            "hi": {
               "CS2 Sites List": "CS2 साइटों की सूची",
               "Rust Sites List": "Rust साइटों की सूची",
               "Dota 2 Sites List": "डोटा 2 साइटों की सूची",
@@ -2516,10 +2525,12 @@ document.addEventListener('DOMContentLoaded', function () {
               "Steam Sites": "स्टीम से संबंधित साइटें",
               "Gambling Sites": "जुआ खेलने के लिए साइटें",
               "Earn by Play CS2": "CS2 खेलकर कमाएं",
+              "Others": "अन्य",
+              "Skins By Color": "रंग द्वारा स्किनें",
+              "Skins By Weapon Types": "हथियार के प्रकार द्वारा स्किनें",
               "All Sites": "सभी साइटें",
               "Match Betting": "मैच पर शर्त लगाएं",
               "Case Opening": "केस खोलें",
-              "Case Battle": "केस युद्ध",
               "Roulette": "रूलेट",
               "Coinflip": "कॉइनफ्लिप",
               "Crash": "क्रैश",
@@ -2545,9 +2556,9 @@ document.addEventListener('DOMContentLoaded', function () {
               "Sell Skins": "स्किन बेचें",
               "Trade Skins": "स्किन विनिमय करें",
               "Steam Level Up": "स्टीम स्तर बढ़ाएं",
-              "Buy Steam Games": "स्टीम गेम्स खरीदें",
+              "Buy Steam Games": "स्टीम गेम्स खरीदें"
             },
-            pt: {
+            "pt": {
               "CS2 Sites List": "Sites de CS2",
               "Rust Sites List": "Sites de Rust",
               "Dota 2 Sites List": "Sites de Dota 2",
@@ -2558,10 +2569,12 @@ document.addEventListener('DOMContentLoaded', function () {
               "Steam Sites": "Sites do Steam",
               "Gambling Sites": "Sites de Jogos de Azar",
               "Earn by Play CS2": "Ganhe Jogando CS2",
+              "Others": "Outros",
+              "Skins By Color": "Skins por Cor",
+              "Skins By Weapon Types": "Skins por Tipo de Arma",
               "All Sites": "Todos os Sites",
               "Match Betting": "Apostas em Jogos",
               "Case Opening": "Abertura de Caixas",
-              "Case Battle": "Batalha de Casos",
               "Roulette": "Roleta",
               "Coinflip": "Cara ou Coroa",
               "Crash": "Crash",
@@ -2587,9 +2600,9 @@ document.addEventListener('DOMContentLoaded', function () {
               "Sell Skins": "Vender Skins",
               "Trade Skins": "Trocar Skins",
               "Steam Level Up": "Subir de Nível no Steam",
-              "Buy Steam Games": "Comprar Jogos do Steam",
+              "Buy Steam Games": "Comprar Jogos do Steam"
             },
-            tr: {
+            "tr": {
               "CS2 Sites List": "CS2 Siteleri Listesi",
               "Rust Sites List": "Rust Siteleri Listesi",
               "Dota 2 Sites List": "Dota 2 Siteleri Listesi",
@@ -2600,10 +2613,12 @@ document.addEventListener('DOMContentLoaded', function () {
               "Steam Sites": "Steam Siteleri",
               "Gambling Sites": " Kumar Siteleri",
               "Earn by Play CS2": "CS2 Oynayarak Kazan",
+              "Others": "Diğerleri",
+              "Skins By Color": "Renklerine Göre Skinler",
+              "Skins By Weapon Types": "Silah Türlerine Göre Skinler",
               "All Sites": "Tüm Siteler",
               "Match Betting": "Maç Bahisleri",
               "Case Opening": "Kasa Açma",
-              "Case Battle": "Durum Savaşı",
               "Roulette": "Rulet",
               "Coinflip": "Tura-Yazı",
               "Crash": "Çökme",
@@ -2629,9 +2644,9 @@ document.addEventListener('DOMContentLoaded', function () {
               "Sell Skins": "Skins Sat",
               "Trade Skins": "Skins Takas Et",
               "Steam Level Up": "Steam Seviye Atlama",
-              "Buy Steam Games": "Steam Oyunları Satın Al",
+              "Buy Steam Games": "Steam Oyunları Satın Al"
             },
-            es: {
+            "es": {
               "CS2 Sites List": "Lista de sitios de CS2",
               "Rust Sites List": "Lista de sitios de Rust",
               "Dota 2 Sites List": "Lista de sitios de Dota 2",
@@ -2642,10 +2657,12 @@ document.addEventListener('DOMContentLoaded', function () {
               "Steam Sites": "Sitios de Steam",
               "Gambling Sites": "Sitios de apuestas",
               "Earn by Play CS2": "Gana jugando CS2",
+              "Others": "Otros",
+              "Skins By Color": "Skins por Color",
+              "Skins By Weapon Types": "Skins por Tipo de Arma",
               "All Sites": "Todos los sitios",
               "Match Betting": "Apuestas de partidos",
               "Case Opening": "Apertura de estuches",
-              "Case Battle": "Batalla de Casos",
               "Roulette": "Ruleta",
               "Coinflip": "Lanzamiento de moneda",
               "Crash": "Choque",
@@ -2671,7 +2688,7 @@ document.addEventListener('DOMContentLoaded', function () {
               "Sell Skins": "Vender skins",
               "Trade Skins": "Intercambiar skins",
               "Steam Level Up": "Aumentar nivel de Steam",
-              "Buy Steam Games": "Comprar juegos de Steam",
+              "Buy Steam Games": "Comprar juegos de Steam"
             },
           };
       
@@ -3035,7 +3052,7 @@ if (window.location.href.indexOf("/topic/items/") > -1) {
   xhr.send();
 }
 
-if (window.location.href.indexOf('/reviews/') === -1) {
+if (window.location.href.indexOf('/reviews/') === -1 && window.location.href.indexOf('/mirrors/') === -1) {
   var newestBoxesDiv = document.createElement('div');
   newestBoxesDiv.classList.add('newest-boxes');
 
@@ -3049,13 +3066,13 @@ if (window.location.href.indexOf('/reviews/') === -1) {
   var newestBoxesTitleBoxDiv = document.createElement('div');
   newestBoxesTitleBoxDiv.classList.add('newest-boxes-title-box');
   var titleSpan = document.createElement('span');
-  
+
   if (languageTag === 'ru') {
       titleSpan.textContent = 'Новые Сайты';
   } else {
       titleSpan.textContent = 'Recently Added';
   }
-  
+
   newestBoxesTitleBoxDiv.appendChild(titleSpan);
 
   newestBoxesTitleDiv.appendChild(newestBoxesTitleBoxDiv);
@@ -3076,5 +3093,9 @@ if (window.location.href.indexOf('/reviews/') === -1) {
 
           var footerElement = document.querySelector('footer');
           footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
+
+          if (languageTag === 'ru') {
+              updateURLs(newestBoxesDiv);
+          }
       })
 }
