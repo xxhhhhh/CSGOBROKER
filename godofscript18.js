@@ -1485,19 +1485,26 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
         }
 
         if (path.includes('/mirrors/')) {
-            var sitealternates = document.querySelector('.sitealternates');
-            if (sitealternates) {
-                insertAfter(sliderPlacer, sitealternates);
-            }
-        } else if (path.includes('/reviews/')) {
-            var ratingsumm = document.querySelector('div.ratingsumm');
-            if (ratingsumm) {
-                insertAfter(sliderPlacer, ratingsumm);
-            }
-        } else {
-            var footer = document.querySelector('footer');
-            footer.parentNode.insertBefore(sliderPlacer, footer);
-        }
+          var sitealternates = document.querySelector('.sitealternates');
+          if (sitealternates) {
+              insertAfter(sliderPlacer, sitealternates);
+          }
+      } else if (path.includes('/reviews/')) {
+          var ratingsumm = document.querySelector('div.ratingsumm');
+          if (ratingsumm) {
+              insertAfter(sliderPlacer, ratingsumm);
+          }
+      } else {
+          var newestBoxes = document.querySelector('div.newest-boxes');
+          if (newestBoxes) {
+              newestBoxes.parentNode.insertBefore(sliderPlacer, newestBoxes);
+          } else {
+              var footer = document.querySelector('footer');
+              footer.parentNode.insertBefore(sliderPlacer, footer);
+          }
+      }
+      
+      
 
         var slideElements = document.querySelectorAll('.slider-banner');
         slideElements.forEach(function(slideElement) {
@@ -3026,4 +3033,48 @@ if (window.location.href.indexOf("/topic/items/") > -1) {
   };
   xhr.open("GET", "/code-parts/nav-bar-items.html", true);
   xhr.send();
+}
+
+if (window.location.href.indexOf('/reviews/') === -1) {
+  var newestBoxesDiv = document.createElement('div');
+  newestBoxesDiv.classList.add('newest-boxes');
+
+  if (window.location.href.indexOf('/topic/items/') !== -1 || window.location.href.indexOf('/topic/skins/') !== -1) {
+      newestBoxesDiv.classList.add('topic');
+  }
+
+  var newestBoxesTitleDiv = document.createElement('div');
+  newestBoxesTitleDiv.classList.add('newest-boxes-title');
+
+  var newestBoxesTitleBoxDiv = document.createElement('div');
+  newestBoxesTitleBoxDiv.classList.add('newest-boxes-title-box');
+  var titleSpan = document.createElement('span');
+  
+  if (languageTag === 'ru') {
+      titleSpan.textContent = 'Новые Сайты';
+  } else {
+      titleSpan.textContent = 'Recently Added';
+  }
+  
+  newestBoxesTitleBoxDiv.appendChild(titleSpan);
+
+  newestBoxesTitleDiv.appendChild(newestBoxesTitleBoxDiv);
+
+  newestBoxesDiv.appendChild(newestBoxesTitleDiv);
+
+  var newestFile = languageTag === 'ru' ? '/ru/newest.html' : '/newest.html';
+  fetch(newestFile)
+      .then(response => response.text())
+      .then(data => {
+          var tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data;
+
+          var boxes = tempDiv.querySelectorAll('div.boxes-holder .box');
+          for (var i = 0; i < 4 && i < boxes.length; i++) {
+              newestBoxesDiv.appendChild(boxes[i].cloneNode(true));
+          }
+
+          var footerElement = document.querySelector('footer');
+          footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
+      })
 }
