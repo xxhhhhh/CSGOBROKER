@@ -2461,7 +2461,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
       
             if (languageTag !== "en") {
-              if (!path.includes("/topic/") && !langIncluded && supportedLanguages.includes(languageTag)) {
+              if (!langIncluded && supportedLanguages.includes(languageTag)) {
                 path = "/" + languageTag + path;
                 url.pathname = path;
                 links[i].setAttribute("href", url.href);
