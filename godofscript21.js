@@ -3060,7 +3060,11 @@ if (window.location.href.indexOf("/topic/items/") > -1) {
   xhr.send();
 }
 
-if (window.location.href.indexOf('/reviews/') === -1 && window.location.href.indexOf('/mirrors/') === -1) {
+if (window.location.href.indexOf('/reviews/') === -1 && window.location.href.indexOf('/mirrors/') === -1 && 
+!window.location.pathname.includes("/privacy-policy") &&
+!window.location.pathname.includes("/terms-of-service") &&
+!window.location.pathname.includes("/contact-us")) {
+  
   var newestBoxesDiv = document.createElement('div');
   newestBoxesDiv.classList.add('newest-boxes');
 
@@ -3075,7 +3079,7 @@ if (window.location.href.indexOf('/reviews/') === -1 && window.location.href.ind
   newestBoxesTitleBoxDiv.classList.add('newest-boxes-title-box');
   var titleSpan = document.createElement('span');
 
-  if (languageTag === 'ru') {
+  if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
       titleSpan.textContent = 'Новые Сайты';
   } else {
       titleSpan.textContent = 'Recently Added';
@@ -3087,7 +3091,7 @@ if (window.location.href.indexOf('/reviews/') === -1 && window.location.href.ind
 
   newestBoxesDiv.appendChild(newestBoxesTitleDiv);
 
-  var newestFile = languageTag === 'ru' ? '/ru/newest.html' : '/newest.html';
+  var newestFile = languageTag === 'ru' && !window.location.pathname.startsWith("/rust") ? '/ru/newest.html' : '/newest.html';
   fetch(newestFile)
       .then(response => response.text())
       .then(data => {
@@ -3102,8 +3106,8 @@ if (window.location.href.indexOf('/reviews/') === -1 && window.location.href.ind
           var footerElement = document.querySelector('footer');
           footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
 
-          if (languageTag === 'ru') {
-              updateURLs(newestBoxesDiv);
-          }
+          if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
+            updateURLs(newestBoxesDiv);
+        }        
       })
 }
