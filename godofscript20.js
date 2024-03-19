@@ -7,28 +7,38 @@ function copyToClipboard(element) {
   }
   
   function extractLanguageTagFromURL(pathname) {
-    var lowerCasePathname = pathname.toLowerCase();
-  
-    if (lowerCasePathname.startsWith('/ru/') || lowerCasePathname.startsWith('/ru.html')) {
-      return 'ru';
+    var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
+    if (matches && matches.length > 1) {
+      return matches[1];
     }
-    if (lowerCasePathname.startsWith('/hi/') || lowerCasePathname.startsWith('/hi.html')) {
-      return 'hi';
-    }
-    if (lowerCasePathname.startsWith('/tr/') || lowerCasePathname.startsWith('/tr.html')) {
-      return 'tr';
-    }
-    if (lowerCasePathname.startsWith('/es/') || lowerCasePathname.startsWith('/es.html')) {
-      return 'es';
-    }
-    if (lowerCasePathname.startsWith('/pt/') || lowerCasePathname.startsWith('/pt.html')) {
-      return 'pt';
-    }
-  
-    return '';
+    return "";
   }
+
+var languageTag = extractLanguageTagFromURL(window.location.pathname);
+
+  // function extractLanguageTagFromURL(pathname) {
+  //   var lowerCasePathname = pathname.toLowerCase();
   
-  var languageTag = extractLanguageTagFromURL(window.location.pathname);
+  //   if (lowerCasePathname.startsWith('/ru/') || lowerCasePathname.startsWith('/ru.html')) {
+  //     return 'ru';
+  //   }
+  //   if (lowerCasePathname.startsWith('/hi/') || lowerCasePathname.startsWith('/hi.html')) {
+  //     return 'hi';
+  //   }
+  //   if (lowerCasePathname.startsWith('/tr/') || lowerCasePathname.startsWith('/tr.html')) {
+  //     return 'tr';
+  //   }
+  //   if (lowerCasePathname.startsWith('/es/') || lowerCasePathname.startsWith('/es.html')) {
+  //     return 'es';
+  //   }
+  //   if (lowerCasePathname.startsWith('/pt/') || lowerCasePathname.startsWith('/pt.html')) {
+  //     return 'pt';
+  //   }
+  
+  //   return '';
+  // }
+  
+  // var languageTag = extractLanguageTagFromURL(window.location.pathname);
   
 
 
@@ -990,9 +1000,7 @@ function updateURLs(parentElement) {
   !window.location.pathname.includes("/terms-of-service") &&
   !window.location.pathname.includes("/contact-us")) {
 
-
-
-  const sitesList = document.querySelector('.boxes-holder, .newest-boxes');
+  const sitesList = document.querySelector('.boxes-holder');
   updateURLs(sitesList);
 }
 
@@ -2461,7 +2469,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
       
             if (languageTag !== "en") {
-              if (!langIncluded && supportedLanguages.includes(languageTag)) {
+              if (!path.includes("/topic/") && !langIncluded && supportedLanguages.includes(languageTag)) {
                 path = "/" + languageTag + path;
                 url.pathname = path;
                 links[i].setAttribute("href", url.href);
