@@ -10,36 +10,43 @@ function copyToClipboard(element) {
   const modsboxes = document.querySelector('.mods-main-box');
 
   function extractLanguageTagFromURL(pathname) {
-    var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
+    var matches = pathname.match(/^\/([a-z]{2})\/?/i);
     if (matches && matches.length > 1) {
       return matches[1];
     }
-    return "";
+    return null;
   }
-
-var languageTag = extractLanguageTagFromURL(window.location.pathname);
-
-function updateURLs(parentElement) {
-  const links = parentElement.querySelectorAll('a[href]');
-  const regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
-  const languageTag = extractLanguageTagFromURL(window.location.pathname);
-
-  for (let i = 0; i < links.length; i++) {
-    const href = links[i].getAttribute('href');
-
-    if (href.includes('vk.com')) {
-      continue;
-    }
-
-    const match = href.match(regex);
-    if (match) {
-      const domain = match[1] || '';
-      const path = match[2];
-      const updatedHref = '/' + languageTag + path; // Используем языковой тег из URL
-      links[i].setAttribute('href', updatedHref);
+  
+  var languageTag = extractLanguageTagFromURL(window.location.pathname);
+  
+  function updateURLs(parentElement) {
+    const links = parentElement.querySelectorAll('a[href]');
+    const regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
+    const languageTag = extractLanguageTagFromURL(window.location.pathname);
+  
+    for (let i = 0; i < links.length; i++) {
+      const href = links[i].getAttribute('href');
+  
+      if (href.includes('vk.com')) {
+        continue;
+      }
+  
+      const match = href.match(regex);
+      if (match) {
+        const domain = match[1] || '';
+        const path = match[2];
+        let updatedHref = path;
+  
+        if (languageTag && !path.startsWith('/' + languageTag)) {
+          updatedHref = '/' + languageTag + path;
+        }
+  
+        links[i].setAttribute('href', updatedHref);
+      }
     }
   }
-}
+  
+  
 
   if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
   
