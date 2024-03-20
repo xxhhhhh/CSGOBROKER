@@ -6,6 +6,9 @@ function copyToClipboard(element) {
     $temp.remove();
   }
   
+  const sitesList = document.querySelector('.boxes-holder');
+  const modsboxes = document.querySelector('.mods-main-box');
+
   function extractLanguageTagFromURL(pathname) {
     var matches = pathname.match(/^\/([a-z]{2})(\/|\.html)?/i);
     if (matches && matches.length > 1) {
@@ -16,51 +19,26 @@ function copyToClipboard(element) {
 
 var languageTag = extractLanguageTagFromURL(window.location.pathname);
 
-  // function extractLanguageTagFromURL(pathname) {
-  //   var lowerCasePathname = pathname.toLowerCase();
-  
-  //   if (lowerCasePathname.startsWith('/ru/') || lowerCasePathname.startsWith('/ru.html')) {
-  //     return 'ru';
-  //   }
-  //   if (lowerCasePathname.startsWith('/hi/') || lowerCasePathname.startsWith('/hi.html')) {
-  //     return 'hi';
-  //   }
-  //   if (lowerCasePathname.startsWith('/tr/') || lowerCasePathname.startsWith('/tr.html')) {
-  //     return 'tr';
-  //   }
-  //   if (lowerCasePathname.startsWith('/es/') || lowerCasePathname.startsWith('/es.html')) {
-  //     return 'es';
-  //   }
-  //   if (lowerCasePathname.startsWith('/pt/') || lowerCasePathname.startsWith('/pt.html')) {
-  //     return 'pt';
-  //   }
-  
-  //   return '';
-  // }
-  
-  // var languageTag = extractLanguageTagFromURL(window.location.pathname);
-  
-
-
 function updateURLs(parentElement) {
   const links = parentElement.querySelectorAll('a[href]');
   const regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
+  const languageTag = extractLanguageTagFromURL(window.location.pathname);
 
   for (let i = 0; i < links.length; i++) {
-      const href = links[i].getAttribute('href');
+    const href = links[i].getAttribute('href');
 
-      if (href.includes('vk.com')) {
-          continue;
-      }
+    if (href.includes('vk.com')) {
+      continue;
+    }
 
-  const match = href.match(regex);
-  if (match) {
-    const domain = match[1] || '';
-    const path = match[2];
-    const updatedHref = '/ru' + path;
-    links[i].setAttribute('href', updatedHref);
+    const match = href.match(regex);
+    if (match) {
+      const domain = match[1] || '';
+      const path = match[2];
+      const updatedHref = '/' + languageTag + path; // Используем языковой тег из URL
+      links[i].setAttribute('href', updatedHref);
+    }
   }
-}
 }
 
   if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
@@ -1000,7 +978,6 @@ function updateURLs(parentElement) {
   !window.location.pathname.includes("/terms-of-service") &&
   !window.location.pathname.includes("/contact-us")) {
 
-  const sitesList = document.querySelector('.boxes-holder');
   updateURLs(sitesList);
 }
 
@@ -1269,7 +1246,39 @@ document.addEventListener('DOMContentLoaded', function() {
     let isMouseDown = false;
     let startX = 0;
     let scrollLeft = 0;
-  
+    
+    boxContainer.addEventListener('click', (e) => {
+      if (e.target.tagName === 'a' && e.target.closest('.category-box')) {
+        e.preventDefault();
+      }
+    });
+    
+
+    boxContainer.addEventListener('scroll', () => {
+      if (boxContainer.scrollLeft === 0) {
+        prevButtonContainer.style.display = 'none';
+      } else {
+        prevButtonContainer.style.display = 'block';
+      }
+    
+      const maxScrollLeft = boxContainer.scrollWidth - boxContainer.clientWidth;
+      if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
+        nextButtonContainer.style.display = 'none';
+      } else {
+        nextButtonContainer.style.display = 'block';
+      }
+    });
+    
+    if (boxContainer.scrollLeft === 0) {
+      prevButtonContainer.style.display = 'none';
+    }
+    const maxScrollLeft = boxContainer.scrollWidth - boxContainer.clientWidth;
+    if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
+      nextButtonContainer.style.display = 'none';
+    }
+
+
+
     boxContainer.addEventListener('mousedown', (e) => {
       e.preventDefault();
       isMouseDown = true;
@@ -2469,12 +2478,12 @@ document.addEventListener('DOMContentLoaded', function () {
             });
       
             if (languageTag !== "en") {
-              if (!path.includes("/topic/") && !langIncluded && supportedLanguages.includes(languageTag)) {
+              if ((languageTag === "ru" && path.includes("/topic/")) || (!path.includes("/topic/") && !langIncluded && supportedLanguages.includes(languageTag))) {
                 path = "/" + languageTag + path;
                 url.pathname = path;
                 links[i].setAttribute("href", url.href);
               }
-            }
+            }            
           }
       
           var translations = {
@@ -3110,4 +3119,46 @@ if (window.location.href.indexOf('/reviews/') === -1 && window.location.href.ind
             updateURLs(newestBoxesDiv);
         }        
       })
+}
+
+if (
+  window.location.href.includes("/csgo/") ||
+  window.location.href.endsWith("/ru") ||
+  window.location.href.endsWith("/es") ||
+  window.location.href.endsWith("/tr") ||
+  window.location.href.endsWith("/pt") ||
+  window.location.href.endsWith("/")   ||
+  window.location.href.endsWith("/ru.html") ||
+  window.location.href.endsWith("/es.html") ||
+  window.location.href.endsWith("/tr.html") ||
+  window.location.href.endsWith("/pt.html")
+) {
+  var existingContainer = document.querySelector('.boxes-holder');
+
+  if (existingContainer) {
+    fetch('/code-parts/micro-parts/csgo-mods-box.html')
+      .then(response => response.text())
+      .then(data => {
+        var tempDiv = document.createElement('div');
+        tempDiv.innerHTML = data;
+
+        var newModsBox = tempDiv.querySelector('.mods-box');
+        var singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
+
+        singlemodBoxes.forEach(box => {
+          var link = box.querySelector('a').getAttribute('href');
+          if (window.location.href.includes(link)) {
+            box.classList.add('active');
+          }
+        });
+
+        existingContainer.insertBefore(newModsBox, existingContainer.firstChild);
+
+        setTimeout(() => {
+          newModsBox.classList.add('fade-in-topic');
+        }, 100);
+
+        updateURLs(newModsBox);
+      })
+  }
 }
