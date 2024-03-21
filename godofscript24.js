@@ -3159,6 +3159,12 @@ if (
   window.location.href.endsWith("/rust.html")
 ) {
   importModsBox("rust");
+} else if (
+  window.location.href.includes("/dota/") ||
+  window.location.href.endsWith("/dota") ||
+  window.location.href.endsWith("/dota.html")
+) {
+  importModsBox("dota");
 }
 
 function importModsBox(boxId) {

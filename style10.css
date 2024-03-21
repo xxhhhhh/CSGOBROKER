@@ -80,7 +80,7 @@ header {
     z-index: 10000;
 }
 nav {
-    width: 70%;
+    width: 65%;
     height: 100%;
     /* background: linear-gradient(0deg, #101010 0%, #0d0d0d 100%); */
     /* background: linear-gradient(0deg, transparent, #111111 50%); */
@@ -140,7 +140,7 @@ nav .socials a img {
     width: auto;
     opacity: .2;
     margin-top: 4px;
-    transition: all .4s;
+    transition: all .2s;
 }
 nav .socials a:hover img {
     opacity: 1;
@@ -2613,7 +2613,7 @@ nav #logo:hover {
 .menu-toggle .menu-line {
     margin-top: 1px;
     height: 3px;
-    width: 60%;
+    width: 55%;
     background-color: var(--white);
     transition: all .15s ease-in-out;
     opacity: .2;
@@ -3545,7 +3545,7 @@ footer .centralizer .footer-content {
     font-weight: 400;
 }
 .newest-boxes-title {
-    width: 200px;
+    width: auto;
     height: 30px;
     font-weight: 600;
     font-size: 14px;
@@ -3570,11 +3570,10 @@ footer .centralizer .footer-content {
     align-items: center;
 }
 .newest-boxes {
-    max-width: 65.6%;
+    width: 1250px;
+    height: 100%;
     border-radius: 5px;
     margin: 0 auto;
-    width: auto;
-    height: 100%;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
@@ -3719,6 +3718,29 @@ footer .centralizer .footer-content {
         display: none;
     }
     .newest-boxes {
+        max-width: 100%;
+        margin: 0 auto;
+        width: auto;
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .newest-boxes .box {
+        height: 120px !important;
+        width: 182px !important;
+    }
+    .newest-boxes-title {
+        left: unset;
+        margin: 0 auto;
+        font-size: 12px;
+    }
+    .newest-boxes-title-box {
+        clip-path: polygon(8% 0, 92% 0, 100% 100%, 0 100%);
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .newest-boxes .box .logobg .best {
         display: none;
     }
     .sitetoppannel {
@@ -3784,8 +3806,9 @@ footer .centralizer .footer-content {
         display: none;
     }
     .slider-placer {
-        width: 96%;
         margin-top: 4px;
+        width: 98%;
+        height: auto;
     }
     .slider-banner img {
         width: 105%;
@@ -4062,9 +4085,22 @@ footer .centralizer .footer-content {
     }
 }
 @media screen and (max-width: 460px) {
+    .newest-boxes {
+        width: 98%;
+        justify-content: space-between;
+    }
+    .newest-boxes .box {
+        width: 49.2% !important;
+        margin: 6px 0 0 !important;
+    }
+    .newest-boxes-title {
+        left: 50%;
+        margin: unset;
+        transform: translateX(-50%);
+    }
     .box {
-        width: 182px !important;
-        margin: 4px 2px 0 2px !important;
+        width: 49.2%;
+        margin: 6px 0 0 !important;
         height: 320px !important;
     }
     #FAQ {
@@ -4080,7 +4116,9 @@ footer .centralizer .footer-content {
         height: 83px;
     }
     .boxes-holder {
+        width: 98%;
         margin-top: 9px;
+        justify-content: space-between;
     }
     .boxes-holder .box .logobg {
         height: 40% !important;
@@ -4093,7 +4131,12 @@ footer .centralizer .footer-content {
     }
     .box .logobg .best {
         font-size: 11px !important;
-        padding: 0 8px 0 14px;
+        padding: 0 8px 0 12px;
+        height: 27px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 6% 100%);
+    }
+    .box .logobg .vpn {
+        height: 27px;
     }
     .box:hover {
         transform: scale(1.02);
@@ -4146,12 +4189,13 @@ footer .centralizer .footer-content {
 }
 @media screen and (max-width: 375px) {
     .box {
-        width: 96%!important;
+        width: 96% !important;
         margin: 8px 0px 0 0px !important;
         height: 320px !important;
     }
     .boxes-holder {
         margin-top: 5px;
+        justify-content: center;
     }
     .boxes-holder .box .logobg {
         height: 40% !important;
@@ -4868,10 +4912,14 @@ footer .centralizer .footer-content {
     .search-enabler:focus i {
         color: var(--white);
     }
-    .menu-toggle:hover .menu-line,
-    .menu-toggle.active .menu-line {        
+    .menu-toggle:hover .menu-line {        
         opacity: 1;
         transition: all .3s ease-in-out;
+        background-color: var(--white);
+    }
+    .menu-toggle.active .menu-line {        
+        opacity: 1;
+        transition: all .15s ease-in-out;
         background-color: var(--main-color);
     }
 .menu-toggle:hover span,
