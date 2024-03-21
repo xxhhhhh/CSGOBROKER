@@ -9,45 +9,55 @@ function copyToClipboard(element) {
   const sitesList = document.querySelector('.boxes-holder');
   const modsboxes = document.querySelector('.mods-main-box');
 
-  function extractLanguageTagFromURL(pathname) {
-    var matches = pathname.match(/^\/([a-z]{2})\/?/i);
-    if (matches && matches.length > 1) {
-      return matches[1];
+  function extractLanguageTagFromHTML() {
+    const htmlElement = document.querySelector('html');
+    if (htmlElement) {
+      const langAttribute = htmlElement.getAttribute('lang');
+      if (langAttribute) {
+        return langAttribute.split('-')[0];
+      }
     }
     return null;
   }
   
-  var languageTag = extractLanguageTagFromURL(window.location.pathname);
-  
+  var languageTag = extractLanguageTagFromHTML(window.location.pathname);
+
+
   function updateURLs(parentElement) {
     const links = parentElement.querySelectorAll('a[href]');
-    const regex = /^(https?:\/\/[^/]+)?(\/.*)$/;
-    const languageTag = extractLanguageTagFromURL(window.location.pathname);
+    const regex = /^(https?:\/\/[^/]+)?(\/[a-z]{2}(?:\/|\.html)?\/?.*)$/;
+  
+    const languageTag = extractLanguageTagFromHTML();
+    if (!languageTag || languageTag === 'en') {
+      return;
+    }
   
     for (let i = 0; i < links.length; i++) {
       const href = links[i].getAttribute('href');
-  
-      if (href.includes('vk.com')) {
+      if (!href || href.includes('vk.com')) {
         continue;
       }
   
       const match = href.match(regex);
       if (match) {
         const domain = match[1] || '';
-        const path = match[2];
+        let path = match[2];
         let updatedHref = path;
   
-        if (languageTag && !path.startsWith('/' + languageTag)) {
-          updatedHref = '/' + languageTag + path;
+        const pathSegments = path.split('/');
+        if (pathSegments.length > 1 && pathSegments[1].length === 2) {
+          continue;
         }
   
-        links[i].setAttribute('href', updatedHref);
+        updatedHref = '/' + languageTag + path;
+  
+        links[i].setAttribute('href', domain + updatedHref);
       }
     }
   }
   
   
-
+  
   if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
   
   function translateURLs(parentElement, language) {
@@ -2262,7 +2272,7 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
             const selectedDiv = document.getElementById(lastSelectedSite);
             if (selectedDiv) {
                 selectedDiv.classList.add('enabled');
-                const languageTag = extractLanguageTagFromURL(window.location.pathname);
+                const languageTag = extractLanguageTagFromHTML(window.location.pathname);
                 updateSearchUrl(lastSelectedSite, languageTag);
             }
         }
@@ -2363,7 +2373,7 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
                     const selectedDiv = document.getElementById(lastSelectedSite);
                     if (selectedDiv) {
                         selectedDiv.classList.add('enabled');
-                        const languageTag = extractLanguageTagFromURL(window.location.pathname);
+                        const languageTag = extractLanguageTagFromHTML(window.location.pathname);
                         updateSearchUrl(lastSelectedSite, languageTag);
                     }
                 }
@@ -2457,7 +2467,6 @@ document.addEventListener('DOMContentLoaded', function () {
           }
       }
       
-      var languageTag = extractLanguageTagFromURL(window.location.pathname);
       translateElements(languageTag);
       }
       if (!window.location.pathname.startsWith("/rust") &&
@@ -3134,22 +3143,35 @@ if (
   window.location.href.endsWith("/es") ||
   window.location.href.endsWith("/tr") ||
   window.location.href.endsWith("/pt") ||
+  window.location.href.endsWith("/hi") ||
   window.location.href.endsWith("/")   ||
+  window.location.href.endsWith("index.html")   ||
   window.location.href.endsWith("/ru.html") ||
   window.location.href.endsWith("/es.html") ||
   window.location.href.endsWith("/tr.html") ||
-  window.location.href.endsWith("/pt.html")
+  window.location.href.endsWith("/pt.html") ||
+  window.location.href.endsWith("/hi.html")
 ) {
+  importModsBox("csgo");
+} else if (
+  window.location.href.includes("/rust/") ||
+  window.location.href.endsWith("/rust") ||
+  window.location.href.endsWith("/rust.html")
+) {
+  importModsBox("rust");
+}
+
+function importModsBox(boxId) {
   var existingContainer = document.querySelector('.boxes-holder');
 
   if (existingContainer) {
-    fetch('/code-parts/micro-parts/csgo-mods-box.html')
+    fetch('/code-parts/micro-parts/insert-mods-box.html')
       .then(response => response.text())
       .then(data => {
         var tempDiv = document.createElement('div');
         tempDiv.innerHTML = data;
 
-        var newModsBox = tempDiv.querySelector('.mods-box');
+        var newModsBox = tempDiv.querySelector(`[data-box-id="${boxId}"]`);
         var singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
 
         singlemodBoxes.forEach(box => {
