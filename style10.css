@@ -3411,6 +3411,25 @@ nav img:active {
     background-color: #62101d;
     bottom: 18.6px;
 }
+.sitepage.closed .features,
+.sitepage.closed .plusminus,
+.sitepage.closed .smallreview,
+.sitepage.closed .instruction,
+.sitepage.closed .sitedetails,
+.sitepage.closed .ratingsumm,
+.sitepage.closed .box.main .logobg .rating,
+.sitepage.closed .box.main .content {
+    display: none;
+}
+.sitepage.closed .box.main {
+    height: 200px !important;
+}
+.sitepage.closed .box.main .logobg {
+    height: 100%;
+}
+.sitepage.closed .box.main a {
+    pointer-events: none;
+}
 .content button.copy {
     width: 25px;
     height: 25px;
