@@ -3215,12 +3215,15 @@ nav #logo:hover {
     align-items: center;
 }
 .box .logobg a:active img,
-.category-selector .category-box:active .category-box-logo img  {
-    filter: brightness(.5);
+.category-selector .category-box:active .category-box-logo img,
+.singlemod-select:active img  {
+    filter: brightness(.5) grayscale(0) !important;
     transition: all .15s ease-in-out;
 }
+
 .slider-banner:active,
-nav img:active {
+nav img:active,
+.category-selector .category-box:active .category-box-content {
     filter: brightness(.75);
     transition: all .09s ease-in-out;
 }
@@ -3409,10 +3412,6 @@ nav img:active {
 }
 .content button:focus{
     background: var(--main-color);
-}
-.conent button:active {
-    background: transparent !important;
-    color: #ffffff00 !important;
 }
 .content button:hover:active,
 .features .featuresbox .typesinside a:active,
@@ -3735,6 +3734,7 @@ footer .centralizer .footer-content {
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    transition: all .15s ease-in-out;
     height: 100%;
     width: 100%;
 }
@@ -3815,6 +3815,9 @@ footer .centralizer .footer-content {
     .category-selector .submenu,
     .category-selector .submenu2 {
         display: none;
+    }
+    ul li:hover .submenu {
+        margin-top: 80px !important;
     }
     .topic-boxes-holder {
         max-width: 90%;
