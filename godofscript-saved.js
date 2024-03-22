@@ -1669,7 +1669,7 @@ var siteTranslations = {
   },
   '/freebies': {
     'en': 'Sites with Freebies',
-    'ru': 'Сайты с Халявой'
+    'ru': 'Сайты с Бонусами'
   },
 };
 
@@ -2181,12 +2181,12 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
     
         var translations = {
           ru: {
-            "CS2 Sites List": "Халява CS2",
-            "Rust Sites List": "Халява Rust",
-            "Dota 2 Sites List": "Халява Dota 2",
-            "Crypto Sites List": "Крипто Халява",
+            "CS2 Sites List": "Сайты CS2",
+            "Rust Sites List": "Сайты Rust",
+            "Dota 2 Sites List": "Сайты Dota 2",
+            "Crypto Sites List": "Крипто-Сайты",
             "Newest Sites": "Новые Сайты",
-            "Freebies Only": "Вся Халява",
+            "Freebies Only": "Все Бонусы",
             "Earning Sites": "Заработок",
             "Steam Sites": "Сайты Steam",
             "Gambling Sites": "Игральные Сайты",
