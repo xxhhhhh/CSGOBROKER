@@ -2279,7 +2279,7 @@ nav #logo:hover {
 }
 .category-selector .category-box .category-box-logo img {
     opacity: .7;
-    max-height: 60% !important;
+    max-height: 55% !important;
     transition: all .15s ease-in-out;
 }
 .category-selector ul {
@@ -3220,7 +3220,6 @@ nav #logo:hover {
     filter: brightness(.5) grayscale(0) !important;
     transition: all .15s ease-in-out;
 }
-
 .slider-banner:active,
 nav img:active,
 .category-selector .category-box:active .category-box-content {
@@ -3232,6 +3231,13 @@ nav img:active,
     max-width: 250px;
     height: auto;
     max-height: 120px;
+    transition: all .2s ease-in-out;
+}
+.box .logobg a:active img {
+    transform: scale(1.05);
+}
+.box .logobg a:hover img {
+    transform: scale(1.05);
 }
 .box .logobg .best {
     right: 0;
@@ -3763,7 +3769,16 @@ footer .centralizer .footer-content {
 }
 @media screen and (max-width: 1340px) {
     .mods-box {
-        display: none;
+        position: relative;
+        left: unset;
+        top: unset;
+        width: 100%;
+    }
+    .mods-main-box {
+        flex-direction: row;
+    }
+    ul:first-child li .category-box {
+        margin: 8px 4px 0 0 !important;
     }
     .newest-boxes {
         max-width: 100%;
@@ -3892,13 +3907,13 @@ footer .centralizer .footer-content {
         justify-content: center;
         display: flex;
         flex-wrap: wrap;
-        margin-top: -15px;
+        margin-top: -9px;
     }
     .category-selector {
         max-width: 98%;
         width: unset !important;
         height: 90px;
-        justify-content: flex-start;
+        justify-content: center;
         top: 80px;
         display: flex;
         /* height: 650px; */
@@ -4149,6 +4164,9 @@ footer .centralizer .footer-content {
         margin: unset;
         transform: translateX(-50%);
     }
+    .newest-boxes:hover .newest-boxes-title {
+        transform: translateX(-50%) translateY(40px);
+    }
     .newest-boxes .box .content h2 {
         display: none;
     }
@@ -4256,7 +4274,7 @@ footer .centralizer .footer-content {
         height: 320px !important;
     }
     .boxes-holder {
-        margin-top: 5px;
+        margin-top: 11px;
         justify-content: center;
     }
     .boxes-holder .box .logobg {
@@ -4342,7 +4360,7 @@ footer .centralizer .footer-content {
         height: 30px;
     }
     .category-selector {
-        width: unset !important;
+        justify-content: flex-start;
     }
     #notexist {
         max-width: 90%;
