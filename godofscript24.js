@@ -2533,7 +2533,7 @@ document.addEventListener('DOMContentLoaded', function () {
               "Buy or Sell Skins": "Купить/Продать Скины",
               "Buy or Sell Items": "Купить/Продать Предметы",
               "Marketplaces": "Торговые Площадки",
-              "Instant Sell": "Моментальная Продажа",
+              "Instant Sell": "Мгновенная Продажа",
               "Buy Items": "Купить Предметы",
               "Sell Items": "Продать Предметы",
               "Trade Items": "Обменять Предметы",
@@ -3134,6 +3134,60 @@ if (window.location.href.indexOf('/reviews/') === -1 && window.location.href.ind
 }
 
 if (
+  window.location.href.includes("/csgo/buy-skins/") ||
+  window.location.href.includes("/csgo/sell-skins/") ||
+  window.location.href.includes("/csgo/trade-skins/") ||
+  window.location.href.includes("/csgo/instant-sell/") ||
+  window.location.href.includes("/csgo/marketplaces/") ||
+  window.location.href.endsWith("/csgo/buy-skins.html") ||
+  window.location.href.endsWith("/csgo/sell-skins.html") ||
+  window.location.href.endsWith("/csgo/trade-skins.html") ||
+  window.location.href.endsWith("/csgo/marketplaces.html") ||
+  window.location.href.endsWith("/csgo/instant-sell.html")
+) {
+  importModsBox("csgo-skins") + importModsBox("csgo");
+}
+else if (
+  window.location.href.includes("/rust/buy-skins/") ||
+  window.location.href.includes("/rust/sell-skins/") ||
+  window.location.href.includes("/rust/trade-skins/") ||
+  window.location.href.includes("/rust/instant-sell/") ||
+  window.location.href.includes("/rust/marketplaces/") ||
+  window.location.href.endsWith("/rust/buy-skins.html") ||
+  window.location.href.endsWith("/rust/sell-skins.html") ||
+  window.location.href.endsWith("/rust/trade-skins.html") ||
+  window.location.href.endsWith("/rust/marketplaces.html") ||
+  window.location.href.endsWith("/rust/instant-sell.html")
+) {
+  importModsBox("rust-skins") + importModsBox("rust");
+}
+else if (
+  window.location.href.includes("/dota/buy-items/") ||
+  window.location.href.includes("/dota/sell-items/") ||
+  window.location.href.includes("/dota/trade-items/") ||
+  window.location.href.includes("/dota/instant-sell/") ||
+  window.location.href.includes("/dota/marketplaces/") ||
+  window.location.href.endsWith("/dota/buy-items.html") ||
+  window.location.href.endsWith("/dota/sell-items.html") ||
+  window.location.href.endsWith("/dota/trade-items.html") ||
+  window.location.href.endsWith("/dota/marketplaces.html") ||
+  window.location.href.endsWith("/dota/instant-sell.html")
+) {
+  importModsBox("dota-items") + importModsBox("dota");
+}
+else if (
+  window.location.href.includes("/freebies/") ||
+  window.location.href.endsWith("/freebies.html")
+) {
+  importModsBox("freebies");
+}
+else if (
+  window.location.href.includes("/crypto/") ||
+  window.location.href.endsWith("/crypto.html")
+) {
+  importModsBox("crypto");
+}
+else if (
   window.location.href.includes("/csgo/") ||
   window.location.href.endsWith("/ru") ||
   window.location.href.endsWith("/es") ||
@@ -3181,6 +3235,17 @@ function importModsBox(boxId) {
           if (window.location.href.includes(link)) {
             box.classList.add('active');
           }
+          if (languageTag === 'ru') {
+            translateElement(box, 'ru');
+          } else if (languageTag === 'tr') {
+            translateElement(box, 'tr');
+          } else if (languageTag === 'pt') {
+            translateElement(box, 'pt');
+          } else if (languageTag === 'hi') {
+            translateElement(box, 'hi');
+          } else if (languageTag === 'es') {
+            translateElement(box, 'es');
+          }
         });
 
         existingContainer.insertBefore(newModsBox, existingContainer.firstChild);
@@ -3191,5 +3256,112 @@ function importModsBox(boxId) {
 
         updateURLs(newModsBox);
       })
+  }
+}
+
+if (document.querySelector('.singlemod-box')) {
+  const languagetag = ''; 
+
+  if (languagetag === 'ru' || languagetag === 'tr' || languagetag === 'pt' || languagetag === 'hi' || languagetag === 'es') {
+    document.querySelectorAll('.singlemod-box').forEach(element => {
+      translateElement(element, languagetag);
+    });
+  }
+}
+
+function translateElement(element, targetLang) {
+  const translations = {
+    'Buy Skins': {
+      'ru': 'Купить скины',
+      'tr': 'Skinler Satın Al',
+      'pt': 'Comprar Skins',
+      'hi': 'स्किन्स खरीदें',
+      'es': 'Comprar Skins'
+    },
+    'Sell Skins': {
+      'ru': 'Продать скины',
+      'tr': 'Skinler Sat',
+      'pt': 'Vender Skins',
+      'hi': 'स्किन्स बेचें',
+      'es': 'Vender Skins'
+    },
+    'Trade Skins': {
+      'ru': 'Обменять скины',
+      'tr': 'Skinler Takas Et',
+      'pt': 'Negociar Skins',
+      'hi': 'स्किन्स विनिमय',
+      'es': 'Intercambiar Skins'
+    },
+    'Buy Items': {
+      'ru': 'Купить предметы',
+      'tr': 'Eşyalar Satın Al',
+      'pt': 'Comprar Itens',
+      'hi': 'वस्तुएँ खरीदें',
+      'es': 'Comprar Ítems'
+    },
+    'Sell Items': {
+      'ru': 'Продать предметы',
+      'tr': 'Eşyalar Sat',
+      'pt': 'Vender Itens',
+      'hi': 'वस्तुएँ बेचें',
+      'es': 'Vender Ítems'
+    },
+    'Trade Items': {
+      'ru': 'Обменять предметы',
+      'tr': 'Eşyalar Takas Et',
+      'pt': 'Negociar Itens',
+      'hi': 'वस्तुएँ विनिमय',
+      'es': 'Intercambiar Ítems'
+    },
+    'Instant Sell': {
+      'ru': 'Мгновенная продажа',
+      'tr': 'Anlık Satış',
+      'pt': 'Venda Imediata',
+      'hi': 'त्वरित बेचें',
+      'es': 'Venta Instantánea'
+    },
+    'Marketplaces': {
+      'ru': 'Торговые Площадки',
+      'tr': 'Pazarlar',
+      'pt': 'Mercados',
+      'hi': 'बाजार',
+      'es': 'Mercados'
+    },
+    'Daily Rewards': {
+      'ru': 'Ежедневные Награды',
+      'tr': 'Günlük Ödüller',
+      'pt': 'Recompensas Diárias',
+      'hi': 'दैनिक पुरस्कार',
+      'es': 'Recompensas Diarias'
+    },
+    'Deposit Bonuses': {
+      'ru': 'Бонусы за Депозит',
+      'tr': 'Yatırım Bonusları',
+      'pt': 'Bônus de Depósito',
+      'hi': 'जमा बोनस',
+      'es': 'Bonos de Depósito'
+    },
+    'Giveaways': {
+      'ru': 'Розыгрыши',
+      'tr': 'Çekilişler',
+      'pt': 'Sorteios',
+      'hi': 'गिफ्ट वे',
+      'es': 'Sorteos'
+    },
+    'Sign Up Bonuses': {
+      'ru': 'Бонусы за Регистрацию',
+      'tr': 'Kayıt Bonusları',
+      'pt': 'Bônus de Inscrição',
+      'hi': 'साइन अप बोनस',
+      'es': 'Bonos de Registro'
+    }
+  };
+
+  const textElement = element.querySelector('.singlemod-select span');
+  if (textElement) {
+    const text = textElement.innerText.trim();
+    if (translations[text] && translations[text][targetLang]) {
+      textElement.innerText = translations[text][targetLang];
+    }
   }
 }

@@ -2214,7 +2214,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
             "Buy or Sell Skins": "Купить/Продать Скины",
             "Buy or Sell Items": "Купить/Продать Предметы",
             "Marketplaces": "Торговые Площадки",
-            "Instant Sell": "Моментальная Продажа",
+            "Instant Sell": "Мгновенная Продажа",
             "Buy Items": "Купить Предметы",
             "Sell Items": "Продать Предметы",
             "Trade Items": "Обменять Предметы",

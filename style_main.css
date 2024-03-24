@@ -33,8 +33,6 @@ html {
     box-sizing: border-box;
 }
 body{
-    /* background: linear-gradient(30deg, rgba(10,10,10,1) 0%, rgb(18, 18, 18) 50%); */
-    /* background: linear-gradient(30deg, rgba(5,5,5,1) 0%, rgb(35, 35, 35) 100%); */
     background: linear-gradient(360deg, rgba(14,14,14,1) 0%, rgb(16, 16, 16) 100%);
     background-color: #0d0d0d;
     font-family: TTNormsPro;
@@ -46,19 +44,16 @@ body{
     width: 8px;
   }
   
-  /* Track */
   ::-webkit-scrollbar-track {
     background: rgb(10 10 10);
   }
    
   ::-webkit-scrollbar-thumb {
-    /* background: rgba(255, 255, 255, .1);  */
     background: rgb(5 5 5);
     border-radius: 5px;
   }
   
 
-  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(2 2 2);
   }
@@ -81,17 +76,11 @@ header {
 nav {
     width: 65%;
     height: 100%;
-    /* background: linear-gradient(0deg, #101010 0%, #0d0d0d 100%); */
-    /* background: linear-gradient(0deg, transparent, #111111 50%); */
-    /* background-color: #101010; */
-    /* background-color: #0d0d0d; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     top: 0;
     left: 0;
-    /* border: solid var(--main-color);
-    border-width: 0px 0 2px 0; */
 }
 button {
     cursor: pointer;
@@ -3236,7 +3225,7 @@ nav img:active,
 .box .logobg a:active img {
     transform: scale(1.05);
 }
-.box .logobg a:hover img {
+.box .logobg a img:hover {
     transform: scale(1.05);
 }
 .box .logobg .best {
@@ -3725,13 +3714,55 @@ footer .centralizer .footer-content {
     overflow: hidden;
 }
 .singlemod-box:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) !important;
 }
 .singlemod-box.active .singlemod-select img {
     filter: grayscale(0);
 }
 .singlemod-box.active {
     transform: scale(1.1);
+}
+.mods-box.skins-box .singlemod-box.active {
+    transform: scale(1.1);
+}
+.mods-box.skins-box .singlemod-box:hover {
+    transform: scale(1.06) !important;
+}
+.mods-box.skins-box .singlemod-box.active {
+    transform: unset;
+}
+.mods-box.mods-box.skins-box {
+    position: relative;
+    left: unset;
+    top: unset;
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: -11px;
+}
+.singlemod-box.active span {
+    opacity: 1;
+}
+.singlemod-box:hover span {
+    opacity: 1;
+}
+.mods-box.skins-box .singlemod-box {
+    width: auto;
+    height: 35px;
+    margin: 3px;
+}
+.mods-box.skins-box .mods-main-box {
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.singlemod-select span {
+    width: auto;
+    padding: 0 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    opacity: .3;
+    font-weight: 600;
+    transition: opacity .15s ease-in-out;
 }
 .singlemod-select {
     cursor: pointer;
@@ -3773,6 +3804,13 @@ footer .centralizer .footer-content {
         left: unset;
         top: unset;
         width: 100%;
+    }
+    .mods-box.mods-box.skins-box {
+        margin-top: unset;
+        margin-bottom: unset;
+    }
+    .singlemod-select span {
+        font-size: 11px;
     }
     .mods-main-box {
         flex-direction: row;
@@ -4108,7 +4146,7 @@ footer .centralizer .footer-content {
     .box .logobg img {
         width: auto !important;
         max-width: 80% !important;
-        max-height: 70px;
+        max-height: 90px !important;
     }
     nav #pagename {
         font-size: 13px;
@@ -4689,7 +4727,7 @@ footer .centralizer .footer-content {
   @media(max-width: 992px) {
     .container { padding: 20px 100px; }
     #back-to-top-btn,
-    .settings-menu { font-size: 22px; width: 40px; height: 40px; bottom: 15px; right: 15px; background-color: rgba(10, 10, 10, .85); border: 2px solid rgba(0,0,0,.04); }
+    .settings-menu { font-size: 22px; width: 40px; height: 40px; bottom: 15px; right: 15px; background-color: rgba(10, 10, 10, .92); border: 2px solid rgba(0,0,0,.04); }
     .settings-menu { display: none; }
   }
   @media(max-width:768px) {
