@@ -3134,11 +3134,11 @@ if (window.location.href.indexOf('/reviews/') === -1 && window.location.href.ind
 }
 
 if (
-  window.location.href.includes("/csgo/buy-skins/") ||
-  window.location.href.includes("/csgo/sell-skins/") ||
-  window.location.href.includes("/csgo/trade-skins/") ||
-  window.location.href.includes("/csgo/instant-sell/") ||
-  window.location.href.includes("/csgo/marketplaces/") ||
+  window.location.href.endsWith("/csgo/buy-skins") ||
+  window.location.href.endsWith("/csgo/sell-skins") ||
+  window.location.href.endsWith("/csgo/trade-skins") ||
+  window.location.href.endsWith("/csgo/instant-sell") ||
+  window.location.href.endsWith("/csgo/marketplaces") ||
   window.location.href.endsWith("/csgo/buy-skins.html") ||
   window.location.href.endsWith("/csgo/sell-skins.html") ||
   window.location.href.endsWith("/csgo/trade-skins.html") ||
@@ -3148,11 +3148,11 @@ if (
   importModsBox("csgo-skins") + importModsBox("csgo");
 }
 else if (
-  window.location.href.includes("/rust/buy-skins/") ||
-  window.location.href.includes("/rust/sell-skins/") ||
-  window.location.href.includes("/rust/trade-skins/") ||
-  window.location.href.includes("/rust/instant-sell/") ||
-  window.location.href.includes("/rust/marketplaces/") ||
+  window.location.href.endsWith("/rust/buy-skins") ||
+  window.location.href.endsWith("/rust/sell-skins") ||
+  window.location.href.endsWith("/rust/trade-skins") ||
+  window.location.href.endsWith("/rust/instant-sell") ||
+  window.location.href.endsWith("/rust/marketplaces") ||
   window.location.href.endsWith("/rust/buy-skins.html") ||
   window.location.href.endsWith("/rust/sell-skins.html") ||
   window.location.href.endsWith("/rust/trade-skins.html") ||
@@ -3162,11 +3162,11 @@ else if (
   importModsBox("rust-skins") + importModsBox("rust");
 }
 else if (
-  window.location.href.includes("/dota/buy-items/") ||
-  window.location.href.includes("/dota/sell-items/") ||
-  window.location.href.includes("/dota/trade-items/") ||
-  window.location.href.includes("/dota/instant-sell/") ||
-  window.location.href.includes("/dota/marketplaces/") ||
+  window.location.href.endsWith("/dota/buy-items") ||
+  window.location.href.endsWith("/dota/sell-items") ||
+  window.location.href.endsWith("/dota/trade-items") ||
+  window.location.href.endsWith("/dota/instant-sell") ||
+  window.location.href.endsWith("/dota/marketplaces") ||
   window.location.href.endsWith("/dota/buy-items.html") ||
   window.location.href.endsWith("/dota/sell-items.html") ||
   window.location.href.endsWith("/dota/trade-items.html") ||
@@ -3177,12 +3177,14 @@ else if (
 }
 else if (
   window.location.href.includes("/freebies/") ||
+  window.location.href.endsWith("/freebies") ||
   window.location.href.endsWith("/freebies.html")
 ) {
   importModsBox("freebies");
 }
 else if (
   window.location.href.includes("/crypto/") ||
+  window.location.href.endsWith("/crypto") ||
   window.location.href.endsWith("/crypto.html")
 ) {
   importModsBox("crypto");
