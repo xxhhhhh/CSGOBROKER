@@ -2197,9 +2197,14 @@ nav #logo:hover {
     transition: all .2s ease-in-out;
     flex-shrink: 0;
 }
+.buttons-container {
+    width: 70%;
+    position: relative;
+    bottom: 50px;
+    margin: 0 auto;
+}
 .controls-button {
     position: absolute;
-    top: 128px;
     transform: translateY(-50%);
     transition: all .2s ease-in-out;
     color: rgba(255, 255, 255, .12);
@@ -2213,11 +2218,11 @@ nav #logo:hover {
 }
 
 .controls-button:first-child {
-    left: 286px;
+    left: -1px;
 }
 
 .controls-button:last-child {
-    right: 286px;
+    right: -1px;
 }
 .controls-button.disabled {
     opacity: 0;
@@ -2745,37 +2750,23 @@ nav #logo:hover {
 }
 .sitedetails .sitepros:hover.active {
     background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(65, 65, 65, 0.2) 50%, rgba(255, 255, 255, 0) 100%) !important;
-    /* background: rgba(0, 0, 0, .4); */
 }
 .sitedetails .sitepros:hover {
     background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(65, 65, 65, 0.2) 50%, rgba(255, 255, 255, 0) 100%) !important;
-    /* background: rgba(0, 0, 0, .4); */
 }
 .sitepage .box {
     margin: 0 !important;
 }
 .sitepage .box .content button#code_style {
-    /* background-color: var(--main-color); */
     border: var(--main-color) 1px dashed;
     position: absolute;
     background-color: transparent;
     bottom: 17px;
     padding: 8px 20px;
-    /* background-color: var(--main-color); 
-    border: var(--main-color) 1px dashed;
-    position: absolute;
-    background-color: var(--main-color);
-    bottom: 17px;
-    color: black;
-    padding: 8px 20px;
-    min-width: 140px;
-    font-size: 13px; */
 }
 .sitepage .box .content button.copy_style {
-    /* border: #a81d34 1px solid;  */
     border: 2px solid #ce203d;
     position: absolute;
-    /* background-color: #a81d34;  */
     background-color: #a81d34;
     color: var(--white);
     bottom: 17px;
@@ -2784,8 +2775,6 @@ nav #logo:hover {
 }
 .sitepage .box .content button.copy_style:hover,
 .box .content button.copy:hover {
-    /* background-color: var(--white); */
-    /* border: var(--white) 1px solid;  */
     color: var(--white);
     background-color: var(--main-color);
     transition: all .2s ease-in-out;
@@ -3082,10 +3071,7 @@ nav #logo:hover {
 }
 
 .box .logobg {
-    /* background: linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.7) 100%); */
-    /* background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.2) 100%); */
     background: linear-gradient(180deg, rgba(0,0,0,.13) 0%, rgba(0,0,0,.2) 100%);
-    /* background: rgba(0,0,0,.1); */
     top: 0;
     width: 100%;
     height: 50%; 
