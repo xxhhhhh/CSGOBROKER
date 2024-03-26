@@ -1953,9 +1953,10 @@ nav #pagename:focus {
     display: list-item;
     list-style: decimal;
     vertical-align: baseline;
+    position: relative;
     min-height: 30px;
-    align-items: center;
     padding: 0 3px;
+    width: 50%;
 
 }
 .instruction li a {
@@ -2040,25 +2041,42 @@ nav #pagename:focus {
 .instruction li strong {
     font-weight: 600 !important;
 }
+.site-promo-copy {
+    width: 30px;
+    height: 28px;
+    background: rgb(25 25 25);
+    border: 2px #191919 solid;
+    border-radius: 0 5px 5px 0;
+    position: absolute;
+    bottom: 5px;
+    margin-left: -3px;
+    transition: all .15s ease-in-out;
+}
+.site-promo-copy img {
+    height: 12px;
+    transition: opacity .15s ease-in-out;
+    margin-top: 2px;
+    opacity: .4;
+}
 .instruction code {
-    /* border-bottom: 1px solid #202020; */
-    background-color: #0c0c0c;
-    border: dashed 1px rgb(55, 55, 55);
     padding: 5px;
-    border-radius: 3px;
+    border-radius: 5px 0 0 5px;
     font-weight: 600;
     font-size: 12px;
     margin-left: 3px;
     text-transform: uppercase;
     font-family: TTNormsPro;
-    background: transparent;
+    background: rgb(21 21 21);
+    border: 2px #191919 solid;
     color: rgb(155, 155, 155);
-    transition: all .2s ease-in-out;
+    transition: all .15s ease-in-out;
 }
-.instruction Code:hover {
-    /* background: rgba(255, 255, 255, .12); */
-    border: dashed 1px rgb(122, 122, 122);
-    color: var(--white);
+.instruction Code:hover,
+.site-promo-copy:hover {
+    color: rgb(188, 188, 188);
+}
+.site-promo-copy:hover img {
+    opacity: 1;
 }
 .screentable {
     width: 98%;
@@ -3779,6 +3797,19 @@ footer .centralizer .footer-content {
     font-weight: 600;
     font-size: 22px;
 }
+.topic-nav-box {
+    background: var(--opacback);
+    position: relative;
+    width: 98%;
+    margin: 8px 0 0 0 !important;
+    top: 0;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    transition: all .2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
 @media (display-mode: standalone) {
     body {
         background-color: #0d0d0d;
@@ -3812,6 +3843,9 @@ footer .centralizer .footer-content {
         justify-content: center;
         display: flex;
         flex-wrap: wrap;
+    }
+    .newest-boxes.topic {
+        left: unset;
     }
     .newest-boxes .box {
         height: 120px !important;
@@ -4076,6 +4110,7 @@ footer .centralizer .footer-content {
     }
     .instruction li {
         font-size: 16px !important;
+        width: 100%;
     }
     .sitepage {
         height: auto;
@@ -4174,6 +4209,106 @@ footer .centralizer .footer-content {
         margin-left: 5px;
     }
 }
+@media screen and (max-width: 375px) {
+    .box {
+        width: 96% !important;
+        margin: 8px 0px 0 0px !important;
+        height: 320px !important;
+    }
+    .boxes-holder {
+        margin-top: 11px;
+        justify-content: center;
+    }
+    .boxes-holder .box .logobg {
+        height: 40% !important;
+    }
+    .boxes-holder .box .content {
+        height: 60% !important;
+    }
+    .box .logobg .best {
+        font-size: 12px !important;
+    }
+    .content button  {
+        font-size: 12px;
+    }
+    .category-selector .category-box {
+        /* width: 182px !important; */
+        margin: 8px 4px 0 4px !important;
+    }
+    .content p:nth-child(2) {
+        width: 90% !important;
+        font-size: 13px;
+    }
+    .content p:nth-child(3) {
+        font-size: 11px;
+        width: 70%;
+    }
+    .pages button {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 390px) {
+    .category-selector {
+        max-width: 97% !important;
+    }
+    .sitedetails .sitepros span {
+        font-size: 15px;
+        transition: all .1s ease-in-out;
+    }
+}
+@media screen and (max-width: 850px) {
+    .ratingsumm,
+    .ratingthings {
+        height: 150px;
+        padding: 10px 0px 10px 0px;
+    }
+    .text-col-info ul {
+        padding: 5px 5px 0 5px;
+    }
+    .ratingthings {
+        flex-wrap: nowrap;
+    }
+    .topic-box {
+        margin: 12px 6px 0 6px;
+    }
+    .nav-content {
+        padding-left: 10px !important;
+    }
+    ul .submenu li a {
+        padding: 8px 10px !important;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .nav-bar {
+        background-color: rgba(12, 12, 12, .9);
+    }
+    .box-skins.selected .box-skins-list .skin,
+    .box-skins.solo .box-skins-list .skin {
+        height: 170px;
+        width: 170px !important;
+    }
+    .sitepage.items .skin.disabled {
+        width: 0 !important;
+    }
+    .sitepage.items .box-skins.solo .box-skins-list {
+        justify-content: center;
+        padding-left: 0;
+    }
+    .menu-toggle {
+        margin-right: 10px;
+    }
+    .ratingthings .ratingway {
+        font-size: 16px;
+        width: 100%;
+        height: 30px;
+    }
+    .category-selector {
+        justify-content: flex-start;
+    }
+    #notexist {
+        max-width: 90%;
+    }
+}
 @media screen and (max-width: 460px) {
     .newest-boxes {
         width: 98%;
@@ -4200,6 +4335,13 @@ footer .centralizer .footer-content {
     }
     .newest-boxes .box .content p:nth-child(3) {
         display: none;
+    }
+    .box-skins.selected .box-skins-list .skin,
+    .box-skins.solo .box-skins-list .skin {
+        height: 120px;
+        width: 120px !important;
+        min-width: 120px;
+        margin: 3px;
     }
     .box {
         width: 49.2%;
@@ -4289,105 +4431,6 @@ footer .centralizer .footer-content {
     }
     .pages button {
         display: none !important;
-    }
-}
-@media screen and (max-width: 375px) {
-    .box {
-        width: 96% !important;
-        margin: 8px 0px 0 0px !important;
-        height: 320px !important;
-    }
-    .boxes-holder {
-        margin-top: 11px;
-        justify-content: center;
-    }
-    .boxes-holder .box .logobg {
-        height: 40% !important;
-    }
-    .boxes-holder .box .content {
-        height: 60% !important;
-    }
-    .box .logobg .best {
-        font-size: 12px !important;
-    }
-    .content button  {
-        font-size: 12px;
-    }
-    .category-selector .category-box {
-        /* width: 182px !important; */
-        margin: 8px 4px 0 4px !important;
-    }
-    .content p:nth-child(2) {
-        width: 90% !important;
-        font-size: 13px;
-    }
-    .content p:nth-child(3) {
-        font-size: 11px;
-        width: 70%;
-    }
-    .pages button {
-        display: none !important;
-    }
-}
-@media screen and (max-width: 390px) {
-    .category-selector {
-        max-width: 97% !important;
-    }
-    .sitedetails .sitepros span {
-        font-size: 15px;
-        transition: all .1s ease-in-out;
-    }
-}
-@media screen and (max-width: 850px) {
-    .ratingsumm,
-    .ratingthings {
-        height: 150px;
-        padding: 10px 0px 10px 0px;
-    }
-    .text-col-info ul {
-        padding: 5px 5px 0 5px;
-    }
-    .ratingthings {
-        flex-wrap: nowrap;
-    }
-    .topic-box {
-        margin: 12px 6px 0 6px;
-    }
-    .nav-content {
-        padding-left: 10px !important;
-    }
-    ul .submenu li a {
-        padding: 8px 10px !important;
-        font-size: 13px;
-        font-weight: 600;
-    }
-    .nav-bar {
-        background-color: rgba(12, 12, 12, .9);
-    }
-    .box-skins.selected .box-skins-list .skin,
-    .box-skins.solo .box-skins-list .skin {
-        height: 170px;
-        width: 170px !important;
-    }
-    .sitepage.items .skin.disabled {
-        width: 0 !important;
-    }
-    .sitepage.items .box-skins.solo .box-skins-list {
-        justify-content: center;
-    }
-    .menu-toggle {
-        margin-right: 10px;
-    }
-    .ratingthings .ratingway {
-        font-size: 16px;
-        width: 100%;
-        height: 30px;
-    }
-    .category-selector {
-        justify-content: flex-start;
-    }
-    #notexist {
-        max-width: 90%;
     }
 }
 @media screen and (max-width: 644px) {
@@ -5039,6 +5082,7 @@ footer .centralizer .footer-content {
 .screens button i:active, 
 .slider-placer button i:active,
 .socials a:active,
+.site-promo-copy:active,
 .box-skins-button:active i {
     filter: brightness(.3) !important;
     transition: .09s all ease-in-out;
