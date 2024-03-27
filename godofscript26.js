@@ -3368,70 +3368,75 @@ function translateElement(element, targetLang) {
   }
 }
 
-        // Проверяем, содержит ли ссылка /topic/items/
-        function isTopicItemsLink() {
-          return window.location.href.includes('/topic/items/');
-      }
+$(document).ready(function () {
+  var boxtopic = $('.boxtopic');
+  if (boxtopic.length) {
+      var urlnav = '/code-parts/micro-parts/nav-topic-box.html';
+      $.get(urlnav, function (data) {
+          boxtopic.append(data);
 
-      // Функция для загрузки содержимого из файла и вставки его в элемент
-      function loadExternalContent(url, targetElement) {
-          fetch(url)
-              .then(response => {
-                  if (!response.ok) {
-                      throw new Error('Network response was not ok');
-                  }
-                  return response.text();
-              })
-              .then(data => {
-                  // Вставляем загруженное содержимое в элемент
-                  targetElement.innerHTML = data + targetElement.innerHTML;
+          boxtopic.on('click', '.topic-nav-box', function () {
+              toggleActiveClass($(this));
+              toggleActiveClass($('.topic-nav-selector'));
+          });
 
-                  // Проверяем, содержит ли ссылка /topic/items/
-                  if (!isTopicItemsLink()) return; // Выходим, если не на странице с /topic/items/
+          boxtopic.on('click', '.topic-nav-close', function () {
+              toggleActiveClass($('.topic-nav-selector'));
+          });
 
-                  const topicNavBox = document.querySelector('.topic-nav-box');
-                  const topicNavSelector = document.querySelector('.topic-nav-selector');
-                  const weaponContainers = document.querySelectorAll('.weapon-container');
-                  const topicNavClose = document.querySelector('.topic-nav-close');
-
-                  // Добавляем/удаляем класс active при клике на .topic-nav-box
-                  topicNavBox.addEventListener('click', function () {
-                      toggleActiveClass(topicNavBox);
-                      toggleActiveClass(topicNavSelector);
-                  });
-
-                  // Добавляем/удаляем класс active при клике на .topic-nav-close
-                  topicNavClose.addEventListener('click', function () {
-                      toggleActiveClass(topicNavSelector);
-                  });
-
-                  // Добавляем/удаляем класс active при клике на .weapon-container
-                  weaponContainers.forEach(function (container) {
-                      container.addEventListener('click', function () {
-                          weaponContainers.forEach(function (otherContainer) {
-                              if (otherContainer !== container) {
-                                  otherContainer.classList.remove('active');
-                              }
-                          });
-                          toggleActiveClass(container);
-                      });
-                  });
-              })
-              .catch(error => {
-                  console.error('There has been a problem with your fetch operation:', error);
-              });
-      }
-
-      document.addEventListener('DOMContentLoaded', function () {
-          var boxtopic = document.querySelector('.boxtopic');
-          if (boxtopic) {
-              // Указываем URL для загрузки содержимого и целевой элемент
-              var url = '/code-parts/micro-parts/nav-topic-box.html';
-              loadExternalContent(url, boxtopic);
-          }
+          boxtopic.on('click', '.weapon-container', function () {
+              var clickedContainer = $(this);
+              $('.weapon-container').not(clickedContainer).removeClass('active');
+              toggleActiveClass(clickedContainer);
+          });
       });
+  }
+});
 
-      // Функция для добавления/удаления класса active
-      function toggleActiveClass(element) {
-          element.classList.toggle('active');
-      }
+function toggleActiveClass(element) {
+  element.toggleClass('active');
+}
+
+function isTopicItemsLink() {
+  return window.location.href.includes('/topic/items/');
+}
+
+function loadExternalContent(url, targetElement) {
+  fetch(url)
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+          return response.text();
+      })
+      .then(data => {
+          targetElement.innerHTML = data + targetElement.innerHTML;
+
+          if (!isTopicItemsLink()) return;
+
+          const topicNavBox = document.querySelector('.topic-nav-box');
+          const topicNavSelector = document.querySelector('.topic-nav-selector');
+          const weaponContainers = document.querySelectorAll('.weapon-container');
+          const topicNavClose = document.querySelector('.topic-nav-close');
+
+          topicNavBox.addEventListener('click', function () {
+              toggleActiveClass(topicNavBox);
+              toggleActiveClass(topicNavSelector);
+          });
+
+          topicNavClose.addEventListener('click', function () {
+              toggleActiveClass(topicNavSelector);
+          });
+
+          weaponContainers.forEach(function (container) {
+              container.addEventListener('click', function () {
+                  weaponContainers.forEach(function (otherContainer) {
+                      if (otherContainer !== container) {
+                          otherContainer.classList.remove('active');
+                      }
+                  });
+                  toggleActiveClass(container);
+              });
+          });
+      })
+}
