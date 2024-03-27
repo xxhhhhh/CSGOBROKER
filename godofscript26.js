@@ -3367,3 +3367,71 @@ function translateElement(element, targetLang) {
     }
   }
 }
+
+        // Проверяем, содержит ли ссылка /topic/items/
+        function isTopicItemsLink() {
+          return window.location.href.includes('/topic/items/');
+      }
+
+      // Функция для загрузки содержимого из файла и вставки его в элемент
+      function loadExternalContent(url, targetElement) {
+          fetch(url)
+              .then(response => {
+                  if (!response.ok) {
+                      throw new Error('Network response was not ok');
+                  }
+                  return response.text();
+              })
+              .then(data => {
+                  // Вставляем загруженное содержимое в элемент
+                  targetElement.innerHTML = data + targetElement.innerHTML;
+
+                  // Проверяем, содержит ли ссылка /topic/items/
+                  if (!isTopicItemsLink()) return; // Выходим, если не на странице с /topic/items/
+
+                  const topicNavBox = document.querySelector('.topic-nav-box');
+                  const topicNavSelector = document.querySelector('.topic-nav-selector');
+                  const weaponContainers = document.querySelectorAll('.weapon-container');
+                  const topicNavClose = document.querySelector('.topic-nav-close');
+
+                  // Добавляем/удаляем класс active при клике на .topic-nav-box
+                  topicNavBox.addEventListener('click', function () {
+                      toggleActiveClass(topicNavBox);
+                      toggleActiveClass(topicNavSelector);
+                  });
+
+                  // Добавляем/удаляем класс active при клике на .topic-nav-close
+                  topicNavClose.addEventListener('click', function () {
+                      toggleActiveClass(topicNavSelector);
+                  });
+
+                  // Добавляем/удаляем класс active при клике на .weapon-container
+                  weaponContainers.forEach(function (container) {
+                      container.addEventListener('click', function () {
+                          weaponContainers.forEach(function (otherContainer) {
+                              if (otherContainer !== container) {
+                                  otherContainer.classList.remove('active');
+                              }
+                          });
+                          toggleActiveClass(container);
+                      });
+                  });
+              })
+              .catch(error => {
+                  console.error('There has been a problem with your fetch operation:', error);
+              });
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+          var boxtopic = document.querySelector('.boxtopic');
+          if (boxtopic) {
+              // Указываем URL для загрузки содержимого и целевой элемент
+              var url = '/code-parts/micro-parts/nav-topic-box.html';
+              loadExternalContent(url, boxtopic);
+          }
+      });
+
+      // Функция для добавления/удаления класса active
+      function toggleActiveClass(element) {
+          element.classList.toggle('active');
+      }
