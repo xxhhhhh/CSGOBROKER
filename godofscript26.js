@@ -63,6 +63,7 @@ function copyToClipboard(element) {
   function translateURLs(parentElement, language) {
     var translations = {
       "hi": {
+        "Rustly - Rust skin gambling platform, offers nine game modes, third-party skin marketplace, crypto support, and CSGOLuck partnership for reliability.": "Rustly - रस्ट स्किन गेम्ब्लिंग प्लेटफ़ॉर्म, नौ गेम मोड, थर्ड-पार्टी स्किन बाजार, क्रिप्टो समर्थन, और CSGOLuck साझेदारी की भरोसेमंदता के लिए।",
         "CSGORUN is a leading virtual skin gambling platform with diverse modes like Crash, Roulette, PVP, and esports betting. It's user-friendly.": "CSGORUN एक प्रमुख आभासी त्वचा जुआ प्लेटफ़ॉर्म है जिसमें क्रैश, रूलेट, PVP, और इस्पोर्ट्स बेटिंग जैसे विभिन्न मोड हैं। यह उपयोगकर्ता-स्वीकृत है।",
         "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins एक ऑनलाइन प्लेटफ़ॉर्म है जिसका उद्देश्य गेमर्स को सीएस2 और रस्ट के लिए स्किन खरीदने, बेचने और व्यापार करने के लिए एक बाजार प्रदान करना है।",
         "RustMagic - a cutting-edge Rust skin betting site, features five distinct game modes, withdrawal in Rust skins, and a daily free case system for users.": "RustMagic - एक कटिंग-एज रस्ट स्किन बेटिंग साइट, पाँच विभिन्न गेम मोड, रस्ट स्किन्स में निकासी और उपयोगकर्ताओं के लिए एक दैनिक मुफ्त केस प्रणाली के साथ।",
@@ -262,6 +263,7 @@ function copyToClipboard(element) {
         "Games Giveaways": "गेम्स गिवअवे"
       },
       "tr": {
+        "Rustly - Rust skin gambling platform, offers nine game modes, third-party skin marketplace, crypto support, and CSGOLuck partnership for reliability.": "Rustly - Rust cilt kumar platformu, dokuz oyun modu, üçüncü taraf cilt pazarı, kripto desteği ve güvenilirlik için CSGOLuck ortaklığı sunar.",
         "CSGORUN is a leading virtual skin gambling platform with diverse modes like Crash, Roulette, PVP, and esports betting. It's user-friendly.": "CSGORUN, çeşitli modlara sahip önde gelen sanal deri kumar platformudur; bu modlar arasında Çökme, Rulet, PVP ve e-spor bahisleri bulunmaktadır. Kullanıcı dostudur.",
         "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins, CS2 ve Rust için derilerin satın alınması, satılması ve takas edilmesi için oyunculara bir pazar sunmak amacıyla oluşturulmuş bir çevrimiçi platformdur.",
         "RustMagic - a cutting-edge Rust skin betting site, features five distinct game modes, withdrawal in Rust skins, and a daily free case system for users.": "RustMagic - öncü bir Rust deri bahis sitesi, beş farklı oyun modu, Rust derilerinde çekilme ve kullanıcılar için günlük ücretsiz bir kasa sistemi sunmaktadır.",
@@ -464,6 +466,7 @@ function copyToClipboard(element) {
         "Games Giveaways" : "Oyun Çekilişleri"
       },
       "es": {
+        "Rustly - Rust skin gambling platform, offers nine game modes, third-party skin marketplace, crypto support, and CSGOLuck partnership for reliability.": "Rustly - plataforma de apuestas de skins de Rust, ofrece nueve modos de juego, mercado de skins de terceros, soporte para criptomonedas y asociación con CSGOLuck para fiabilidad.",
         "CSGORUN is a leading virtual skin gambling platform with diverse modes like Crash, Roulette, PVP, and esports betting. It's user-friendly.": "CSGORUN es una plataforma líder de apuestas virtuales de skins con diversos modos como Crash, Ruleta, PVP y apuestas de deportes electrónicos. Es fácil de usar.",
         "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins es una plataforma en línea creada para proporcionar a los jugadores un mercado para comprar, vender e intercambiar skins para CS2 y Rust.",
         "RustMagic - a cutting-edge Rust skin betting site, features five distinct game modes, withdrawal in Rust skins, and a daily free case system for users.": "RustMagic - sitio de apuestas de skins Rust con cinco modos de juego, retiros en skins de Rust y sistema diario de estuches gratuitos.",
@@ -667,6 +670,7 @@ function copyToClipboard(element) {
         "Games Giveaways": "Sorteos de juegos"    
       },
       "pt": {
+        "Rustly - Rust skin gambling platform, offers nine game modes, third-party skin marketplace, crypto support, and CSGOLuck partnership for reliability.": "Rustly - plataforma de apostas de skins do Rust, oferece nove modos de jogo, mercado de skins de terceiros, suporte a criptomoedas e parceria com CSGOLuck para confiabilidade.",
         "CSGORUN is a leading virtual skin gambling platform with diverse modes like Crash, Roulette, PVP, and esports betting. It's user-friendly.": "CSGORUN é uma plataforma líder de apostas virtuais com skins, com diversos modos como Crash, Roleta, PVP e apostas em esportes eletrônicos. É fácil de usar.",
         "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins é uma plataforma online criada para fornecer aos jogadores um mercado para comprar, vender e negociar skins para CS2 e Rust.",
         "RustMagic - a cutting-edge Rust skin betting site, features five distinct game modes, withdrawal in Rust skins, and a daily free case system for users.": "RustMagic - site de apostas de skins Rust com cinco modos de jogo, saques em skins Rust e sistema diário de caixas grátis.",
@@ -870,6 +874,7 @@ function copyToClipboard(element) {
         "Games Giveaways": "Distribuição de Jogos"
       },
       "ru": {
+        "Rustly - Rust skin gambling platform, offers nine game modes, third-party skin marketplace, crypto support, and CSGOLuck partnership for reliability.": "Rustly - сайт для гемблинга на скины Rust, предлагает девять игровых режимов, поддержку криптовалют, сайтом владеет CSGOLuck.",
         "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "CSGO500, вероятно, является лучшим сайтом для азартных игр в CS2. Здесь регулярно проводятся раздачи и розыгрыши.",
         "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll - один из самых популярных сайтов, который включает в себя рулетку, крэш и многие другие игры включая ставки на киберспорт.",
         "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": "CSGOEmpire - один из самых популярных сайтов, предлагающий игру в Рулетку и Монетку. Кроме того, на сайте доступны ставки на матчи.",
@@ -1825,7 +1830,8 @@ window.addEventListener('resize', updateCategoryBoxHrefs);
     '<li><a href="/">CS:GO Sites</a></li>',
     '<li><a href="/rust">Rust Sites</a></li>',
     '<li><a href="/freebies">Sites with Freebies</a></li>',
-    '<li><a href="/reviews/skinsly">SKINSLY</a></li>',
+    '<li><a href="/reviews/rustly">Rustly</a></li>',
+    '<li><a href="/ru/reviews/skinsly">SKINSLY</a></li>',
     '<li><a href="/reviews/rapidskins">RAPIDSKINS</a></li>',
     '<li><a href="/reviews/itrade">iTrade.GG</a></li>',
     '<li><a href="/reviews/rustmagic">RustMagic</a></li>',
