@@ -1937,6 +1937,20 @@ nav #pagename:focus {
     padding: 20px 0px 0px 0px;
     margin: 10px 0 20px 0;
 }
+.instruction.double {
+    width: 47%;
+}
+.instruction:nth-child(2) {
+    filter: grayscale(1);
+}
+.instruction.double li {
+    width: 100%;
+}
+.instruction.notmain h2,
+.instruction.notmain li a,
+.instruction.notmain li::marker {
+    color: gray;
+}
 .instruction h2 {
     height: auto;
     margin-bottom: 30px !important;
@@ -1956,7 +1970,7 @@ nav #pagename:focus {
     position: relative;
     min-height: 30px;
     padding: 0 3px;
-    width: 50%;
+    width: 60%;
 
 }
 .instruction li a {
@@ -3641,6 +3655,9 @@ footer .centralizer .footer-content {
     height: 200px;
     width: 290px;
     background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.3) 100%);
+}
+.newest-boxes .box .logobg a img:hover {
+    transform: scale(.95);
 }
 .newest-boxes:hover .newest-boxes-title {
     transform: translateY(40px);
