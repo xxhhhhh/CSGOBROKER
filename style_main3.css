@@ -1100,7 +1100,7 @@ nav #pagename:focus {
 .box-skins-button.right {
     right: 0;
 }
-.boxreview .infoblock h1, h2, h2 {
+.boxreview .infoblock h1, h2, h3 {
     font-weight: 500;
     font-size: 16px;
     color: var(--white);
@@ -1138,13 +1138,16 @@ nav #pagename:focus {
     justify-content: flex-start !important;
 }
 
-.boxreview .plusminus .criteria .par h2 {
+.boxreview .plusminus .criteria .par h2,
+.boxreview .plusminus .criteria .par p {
     position: relative;
     text-align: start;
     width: 170px;
     top: 0px;
     right: 5px;
     color: var(--white);
+    font-weight: 600;
+    font-size: 22px;
 }
 .boxreview .plusminus .criteria .par li:nth-child(2) {
     margin-top: 30px;
@@ -1867,7 +1870,8 @@ nav #pagename:focus {
     text-align: start;
 }
 .smallreview h2,
-.instruction h2 {
+.instruction h2,
+.instruction h3 {
     font-size: 22px !important;
 }
 .smallreview p {
@@ -1951,7 +1955,8 @@ nav #pagename:focus {
 .instruction.notmain li::marker {
     color: gray;
 }
-.instruction h2 {
+.instruction h2,
+.instruction h3 {
     height: auto;
     margin-bottom: 30px !important;
     text-align: start;
@@ -2233,7 +2238,7 @@ nav #logo:hover {
 .buttons-container {
     width: 70%;
     position: relative;
-    bottom: 50px;
+    top: 48px;
     margin: 0 auto;
 }
 .controls-button {
@@ -2993,7 +2998,8 @@ nav #logo:hover {
     height: 45%; 
     background: radial-gradient( 50% 65% at 50% 100%, #ce203d31, transparent 100% );
 }
-.sitepage .box .content h2 {
+.sitepage .box .content h2,
+.sitepage .box .content p:first-child {
     margin-top: 11px;
     font-weight: 600;
     font-size: 24px;
@@ -3327,12 +3333,14 @@ nav img:active,
     /* background: radial-gradient( 50% 65% at 50% 100%, #4b4b4b31, transparent 100% ); */
 }
 
-.content h2{
+.content h2,
+.content p:first-child {
     color: var(--white);
     font-weight: 600;
     font-size: 22px;
     margin-top: 15px;
     text-transform: uppercase;
+    text-align: center;
 }
 .content p{
     color: var(--white);

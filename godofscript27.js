@@ -1225,6 +1225,7 @@ document.addEventListener('DOMContentLoaded', function() {
     !window.location.pathname.includes("/contact-us")) {
       
     const boxContainer = document.querySelector('.category-selector');
+    const SpaceboxContainer = document.querySelector('.category-space');
     const buttonsContainer = document.createElement('div');
     const prevButtonContainer = document.createElement('button');
     const nextButtonContainer = document.createElement('button');
@@ -1243,7 +1244,7 @@ document.addEventListener('DOMContentLoaded', function() {
     buttonsContainer.appendChild(prevButtonContainer);
     buttonsContainer.appendChild(nextButtonContainer);
   
-    boxContainer.parentNode.insertBefore(buttonsContainer, boxContainer);
+    boxContainer.parentNode.insertBefore(buttonsContainer, SpaceboxContainer);
   
     boxContainer.style.width = `${containerWidth}px`;
   
