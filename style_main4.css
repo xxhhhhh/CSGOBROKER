@@ -3270,8 +3270,6 @@ nav img:active,
     clip-path: polygon(0 0, 100% 0, 100% 100%, 9% 100%);
     height: 30px;
     background-color: var(--main-color);
-    /* background: linear-gradient(90deg, var(--main-color), rgba(206, 32, 61, .75)); */
-    /* background-color: rgb(32 32 32); */
     border-radius: 0px 5px 0px 5px; 
     display: flex;
     align-items: center;
@@ -3284,9 +3282,6 @@ nav img:active,
     transition: .15s background-color ease-in-out;
     user-select: none;
 }
-/* .box:hover .logobg .best {
-    background-color: var(--main-color);
-} */
 .box .logobg .vpn {
     left: 0;
     top: 0;
@@ -3296,7 +3291,6 @@ nav img:active,
     clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
     height: 30px;
     background-color: #1d59a8;
-    /* background: linear-gradient(270deg, rgb(29, 89, 168), rgba(29, 89, 168, .75)); */
     border-radius: 5px 0px 5px 0px; 
     display: flex;
     align-items: center;
@@ -4146,13 +4140,28 @@ footer .centralizer .footer-content {
     #notexist .submenu {
     top: 180px;
     }
-    #notexist #big-category {
+    #notexist .big-category {
         display: flex;
         flex-direction: column;
     }
     .category-selector .submenu2 {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        display: none !important;
         top: unset;
         position: relative !important;
+    }
+    ul .big-category.active .submenu2{
+        opacity: 1 !important;
+        display: block !important;
+        visibility: visible !important;
+        z-index: 100;
+    }
+    .big-category.active .nonredir {
+        color: var(--main-color);
+    }
+    .big-category.active {
+        background-color: #121212;
     }
     .nav-bar {
         background-color: rgba(12, 12, 12, .85);
@@ -4238,9 +4247,6 @@ footer .centralizer .footer-content {
     .boxreview .smallreview {
         margin-top: 9px;
     }
-    /* .screentable {
-        height: 210px !important;
-    } */
     input + label::after {
         height: 210px !important;
     }
@@ -4249,6 +4255,7 @@ footer .centralizer .footer-content {
     }
     .credits {
         position: relative;
+        min-height: 45px;
     }
     .contact {
         width: 100%;
@@ -4261,9 +4268,6 @@ footer .centralizer .footer-content {
     footer .centralizer .footer-content {
         flex-direction: column;
     }
-    /* .gamemodes {
-        bottom: 294px;
-    } */
     .sitedetails .sitepros.active {
         height: auto !important;
         padding-bottom: 10px;
@@ -4434,7 +4438,8 @@ footer .centralizer .footer-content {
     .nav-content {
         padding-left: 10px !important;
     }
-    ul .submenu li a {
+    ul .submenu li a,
+    ul .submenu li .nonredir {
         padding: 8px 10px !important;
         font-size: 13px;
         font-weight: 600;
@@ -4762,23 +4767,12 @@ footer .centralizer .footer-content {
     opacity: 1;
 }
 
-  /* input:checked ~ .slide {
-    transform: translateX(100%);
-  }
-  
-  input:checked + label + .slide {
-    transform: translateX(0);
-    opacity: 1;
-  } */
   .slide img {
     object-fit: cover;
     width: 100%;
     height: auto;
   }
   .settings-menu {
-    /* position: fixed;
-    bottom: 20px;
-    right: 20px; */
     font-size: 24px;
     width: 40px;
     height: 40px;
@@ -4814,13 +4808,6 @@ footer .centralizer .footer-content {
     transition: .09s all ease-in-out;
   }
   .settings-menu {
-    /* position: fixed;
-    z-index: 1002;
-    opacity: 1;
-    top: 216px;
-    left: 83.8%;
-    border-radius: 5px;
-    background-color: rgb(0,0,0, .2); */
     transition: all .22s ease-in-out;
     display: block;
   }
@@ -4987,7 +4974,8 @@ footer .centralizer .footer-content {
     /* .submenu li:last-child {
         border-bottom: 2px solid var(--main-color);
     } */
-    .submenu #big-category:hover a {
+    .submenu .big-category:hover a,
+    .submenu .big-category:hover .nonredir {
         color: var(--main-color);
         /* transition: all ease .2s; */
     }
@@ -4995,17 +4983,18 @@ footer .centralizer .footer-content {
         color: var(--white) !important;
         /* transition: all ease .2s; */
     }
-    .submenu #big-category a:hover,
+    .submenu .big-category a:hover,
+    .submenu .big-category .nonredir:hover,
     .submenu2 a:hover {
         color: var(--main-color) !important;
     }
     .submenu2 {
         color: var(--white);
     }
-    .submenu #big-category:nth-child(1) {
+    .submenu .big-category:nth-child(1) {
         margin-top: 18px;
     }
-    #big-category i {
+    .big-category i {
         right: 0;
     }
     ul li:hover .submenu{
@@ -5016,7 +5005,13 @@ footer .centralizer .footer-content {
     display: block;
     visibility: visible;
     }
-    ul #big-category:hover .submenu2{
+    .category-box.nonredir .submenu2 {
+        opacity: 0 !important;
+        z-index: -999;
+        display: block;
+        visibility: hidden !important;
+    }
+    ul .big-category:hover .submenu2 {
         z-index: 90;
         opacity: 1;
         margin-top: 0px;
@@ -5028,25 +5023,27 @@ footer .centralizer .footer-content {
     }
     ul li .submenu2 li,
     ul li .submenu li{
-        /* border-bottom: 2px solid rgba(255,255,255,.01); */
         border-bottom: 2px solid rgba(0,0,0,.1);
     }    
     ul .submenu li{
     margin: 0;
     width: 100%;
     } 
-    ul .submenu li a{
+    ul .submenu li a,
+    ul .submenu li .nonredir{
     padding: 14px 20px;
     display: flex;
     justify-content: space-between;
     width: 100%;
     align-items: center;
     }
-    ul .submenu a {
+    ul .submenu a,
+    ul .submenu .nonredir {
         text-decoration: none;
         text-transform: uppercase;
         font-size: 15px;
         font-weight: 600;
+        color: var(--white);
     }
     .lang-menu {
         width: 40px;
@@ -5243,6 +5240,7 @@ footer .centralizer .footer-content {
 .slider-placer button i:active,
 .socials a:active,
 .site-promo-copy:active,
+label:active,
 .box-skins-button:active i {
     filter: brightness(.3) !important;
     transition: .09s all ease-in-out;
@@ -5255,11 +5253,10 @@ footer .centralizer .footer-content {
         width: 200px;
     }
     .site-list {
-        height: 150px; /* Установите желаемую высоту окна выбора сайтов */
+        height: 150px;
         overflow-y: auto;
       }
       .site-list::-webkit-scrollbar-thumb {
-        /* background: rgba(206, 32, 61, .7);   */
         background: rgb(55, 55, 55);
         border-radius: 2px !important;
       } 

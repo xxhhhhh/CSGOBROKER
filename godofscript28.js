@@ -1003,7 +1003,7 @@ function translateURLs2(parentElement, languageTag, translations) {
   var supportedLanguages = Object.keys(translations);
   var langWithSlashes = supportedLanguages.map(lang => '/' + lang + '/');
 
-  var links = parentElement.querySelectorAll('a[href]');
+  var links = parentElement.querySelectorAll('a[href], .nonredir');
   for (var i = 0, len = links.length; i < len; i++) {
     var href = links[i].getAttribute('href');
     if (!href) continue;
@@ -1063,7 +1063,10 @@ document.addEventListener('DOMContentLoaded', function() {
         var categoryBoxes = navBarContainer.querySelectorAll('.category-selector .category-box');
         categoryBoxes.forEach(function(box) {
           if (!box.matches('.category-box#newest')) {
-            box.removeAttribute('href');
+            var divElement = document.createElement('div');
+            divElement.className = box.className.trim() === '' ? 'nonredir' : box.className + ' nonredir';
+            divElement.innerHTML = box.innerHTML;
+            box.parentNode.replaceChild(divElement, box);
           }
         });
 
@@ -1071,7 +1074,10 @@ document.addEventListener('DOMContentLoaded', function() {
         notExistLinks.forEach(function(icon) {
           var link = icon.parentElement;
           if (link && link.tagName.toLowerCase() === 'a' && !link.matches('.category-box#newest')) {
-            link.removeAttribute('href');
+            var divElement = document.createElement('div');
+            divElement.className = link.className.trim() === '' ? 'nonredir' : link.className + ' nonredir';
+            divElement.innerHTML = link.innerHTML;
+            link.parentNode.replaceChild(divElement, link);
           }
         });
 
@@ -1121,8 +1127,23 @@ document.addEventListener('DOMContentLoaded', function() {
           languageElement.appendChild(langMenuClone);
         }
       }
+
+      var bigCategories = document.querySelectorAll('.big-category');
+
+      bigCategories.forEach(function(category) {
+        category.addEventListener('click', function() {
+          bigCategories.forEach(function(otherCategory) {
+            if (otherCategory !== category) {
+              otherCategory.classList.remove('active');
+            }
+          });
+          this.classList.toggle('active');
+        });
+      });
     });
 });
+
+
 
 
 
@@ -1406,22 +1427,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   }
-
-  function updateCategoryBoxHrefs() {
-    const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  
-    if (windowWidth < 1340) {
-      const categoryBoxes = document.querySelectorAll('#notexist .category-box');
-  
-      categoryBoxes.forEach(box => {
-        box.removeAttribute('href');
-      });
-    }
-  }
-
-updateCategoryBoxHrefs();
-
-window.addEventListener('resize', updateCategoryBoxHrefs);
   
   (function() {
     var insertAfter = function(newNode, referenceNode) {
@@ -2728,7 +2733,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
           };
       
-          var elements = document.querySelectorAll('.category-box-content span, ul .submenu li a');
+          var elements = document.querySelectorAll('.category-box-content span, ul .submenu li a, ul .submenu li .nonredir');
           for (var j = 0; j < elements.length; j++) {
             var text = elements[j].textContent.trim();
             if (translations[languageTag] && translations[languageTag].hasOwnProperty(text)) {
