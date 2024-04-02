@@ -1021,7 +1021,7 @@ function translateURLs2(parentElement, languageTag, translations) {
     }
   }
 
-  var elements = document.querySelectorAll('.nav-bar .category-box-content span, .nav-bar ul .submenu li a');
+  var elements = document.querySelectorAll('.nav-bar .category-box-content span, .nav-bar ul .submenu li a, .nav-bar ul .submenu li .nonredir');
   for (var j = 0; j < elements.length; j++) {
     var text = elements[j].textContent.trim();
     if (translations[languageTag] && translations[languageTag].hasOwnProperty(text)) {
