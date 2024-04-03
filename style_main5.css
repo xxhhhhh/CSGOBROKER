@@ -36,7 +36,6 @@ body{
     background: linear-gradient(360deg, rgba(14,14,14,1) 0%, rgb(16, 16, 16) 100%);
     background-color: #0d0d0d;
     font-family: TTNormsPro;
-    overflow: overlay;
     margin: 0 auto;
     padding: 0;
 }
@@ -213,7 +212,7 @@ nav #pagename:focus {
     text-align: center;
 }
 .cookie-widget-info a {
-    padding: 0 3px;
+    padding: 16px 5px;
     text-decoration: none;
     transition: all .2s ease-in-out;
 }
@@ -1975,7 +1974,7 @@ nav #pagename:focus {
     position: relative;
     min-height: 30px;
     padding: 0 3px;
-    width: 60%;
+    width: 65%;
 
 }
 .instruction li a {
@@ -2716,6 +2715,7 @@ nav #logo:hover {
     width: 49.6%;
     height: 60px;
     background-color: var(--opacback);
+    cursor: pointer;
     border-radius: 5px;
     position: relative;
     font-weight: 500;
@@ -3444,6 +3444,10 @@ nav img:active,
     border: 2px solid #771324 !important;
     transition: .09s all ease-in-out !important;
 }
+.copy,
+button.copy_style {
+    cursor: pointer;
+}
 .sitepage .content button.copy {
     width: 25px;
     height: 25px;
@@ -4096,7 +4100,10 @@ footer .centralizer .footer-content {
     }
     .content p:nth-child(3) {
         font-size: 9px;
-        width: 160px;
+        width: 80%;
+        justify-content: center;
+        position: absolute;
+        bottom: 45px;
     }
     .boxdefaultpage {
         width: 100%;
@@ -4269,8 +4276,7 @@ footer .centralizer .footer-content {
         flex-direction: column;
     }
     .sitedetails .sitepros.active {
-        height: auto !important;
-        padding-bottom: 10px;
+        height: 100%;
     }
     .instruction li {
         font-size: 16px !important;
@@ -4371,44 +4377,6 @@ footer .centralizer .footer-content {
 @media screen and (max-width: 405px) {
     .sitepros i {
         margin-left: 5px;
-    }
-}
-@media screen and (max-width: 375px) {
-    .box {
-        width: 96% !important;
-        margin: 8px 0px 0 0px !important;
-        height: 320px !important;
-    }
-    .boxes-holder {
-        margin-top: 11px;
-        justify-content: center;
-    }
-    .boxes-holder .box .logobg {
-        height: 40% !important;
-    }
-    .boxes-holder .box .content {
-        height: 60% !important;
-    }
-    .box .logobg .best {
-        font-size: 12px !important;
-    }
-    .content button  {
-        font-size: 12px;
-    }
-    .category-selector .category-box {
-        /* width: 182px !important; */
-        margin: 8px 4px 0 4px !important;
-    }
-    .content p:nth-child(2) {
-        width: 90% !important;
-        font-size: 13px;
-    }
-    .content p:nth-child(3) {
-        font-size: 11px;
-        width: 70%;
-    }
-    .pages button {
-        display: none !important;
     }
 }
 @media screen and (max-width: 390px) {
@@ -4583,9 +4551,8 @@ footer .centralizer .footer-content {
         margin: 8px 4px 0 4px !important;
     }
     .content p:nth-child(2) {
-        width: 170px !important;
-        overflow-y: scroll;
-        scroll-snap-type: y proximity;
+        width: 96% !important;
+        height: auto;
     }
     .content p::-webkit-scrollbar {
         width: 0px;
@@ -4593,6 +4560,45 @@ footer .centralizer .footer-content {
     .content p {
         font-size: 11px;
         margin-top: 10px;
+    }
+    .pages button {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 375px) {
+    .box {
+        width: 96% !important;
+        margin: 8px 0px 0 0px !important;
+        height: 320px !important;
+    }
+    .boxes-holder {
+        margin-top: 11px;
+        justify-content: center !important;
+    }
+    .boxes-holder .box .logobg {
+        height: 40% !important;
+    }
+    .boxes-holder .box .content {
+        height: 60% !important;
+    }
+    .box .logobg .best {
+        font-size: 12px !important;
+    }
+    .content button  {
+        font-size: 12px;
+    }
+    .category-selector .category-box {
+        margin: 8px 4px 0 4px !important;
+    }
+    .content p:nth-child(2) {
+        width: 90% !important;
+        font-size: 13px;
+    }
+    .content p:nth-child(3) {
+        font-size: 11px;
+        width: 70%;
+        position: relative;
+        bottom: unset;
     }
     .pages button {
         display: none !important;

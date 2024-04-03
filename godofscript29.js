@@ -1258,8 +1258,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
     buttonsContainer.classList.add('buttons-container');
     prevButtonContainer.classList.add('controls-button');
+    prevButtonContainer.setAttribute('aria-label', 'Prev Category');
     prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left""></i>';
     nextButtonContainer.classList.add('controls-button');
+    nextButtonContainer.setAttribute('aria-label', 'Next Category');
     nextButtonContainer.innerHTML = '<i class="bi bi-chevron-right"></i>';
   
     buttonsContainer.appendChild(prevButtonContainer);
@@ -1498,12 +1500,15 @@ document.addEventListener('DOMContentLoaded', function() {
         var prevButton = document.createElement('button');
         prevButton.classList.add('prev-button');
         prevButton.innerHTML = '<i class="bi bi-chevron-left"></i>';
+        prevButton.setAttribute('aria-label', 'Prev Slide');
         controlsContainer.appendChild(prevButton);
-
+        
         var nextButton = document.createElement('button');
         nextButton.classList.add('next-button');
         nextButton.innerHTML = '<i class="bi bi-chevron-right"></i>';
+        nextButton.setAttribute('aria-label', 'Next Slide');
         controlsContainer.appendChild(nextButton);
+        
 
         var slider1 = document.createElement('a');
         slider1.href = '/';
