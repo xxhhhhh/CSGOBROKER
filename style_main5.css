@@ -3096,7 +3096,7 @@ nav #logo:hover {
     justify-content: center;
 }
 .sitealternates .site-reward p {
-    margin-top: unset;
+    margin-top: unset !important;
     text-transform: none !important;
     font-size: 14px !important;
 }
