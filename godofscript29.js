@@ -63,6 +63,7 @@ function copyToClipboard(element) {
   function translateURLs(parentElement, language) {
     var translations = {
       "hi": {
+        "CSGOStake - Skin gambling site for Counter-Strike. Offers five engaging games, provably fair system, and transparent gameplay for enthusiasts.": "CSGOStake - काउंटर-स्ट्राइक के लिए स्किन जुआ साइट। प्रशंसकों के लिए पांच आकर्षक खेल, प्रमाणित निष्पक्ष प्रणाली और पारदर्शी खेल प्रस्तुत करता है।",
         "Rustly - Rust skin gambling platform, offers nine game modes, third-party skin marketplace, crypto support, and CSGOLuck partnership for reliability.": "Rustly - रस्ट स्किन गेम्ब्लिंग प्लेटफ़ॉर्म, नौ गेम मोड, थर्ड-पार्टी स्किन बाजार, क्रिप्टो समर्थन, और CSGOLuck साझेदारी की भरोसेमंदता के लिए।",
         "CSGORUN is a leading virtual skin gambling platform with diverse modes like Crash, Roulette, PVP, and esports betting. It's user-friendly.": "CSGORUN एक प्रमुख आभासी त्वचा जुआ प्लेटफ़ॉर्म है जिसमें क्रैश, रूलेट, PVP, और इस्पोर्ट्स बेटिंग जैसे विभिन्न मोड हैं। यह उपयोगकर्ता-स्वीकृत है।",
         "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins एक ऑनलाइन प्लेटफ़ॉर्म है जिसका उद्देश्य गेमर्स को सीएस2 और रस्ट के लिए स्किन खरीदने, बेचने और व्यापार करने के लिए एक बाजार प्रदान करना है।",
@@ -263,6 +264,7 @@ function copyToClipboard(element) {
         "Games Giveaways": "गेम्स गिवअवे"
       },
       "tr": {
+        "CSGOStake - Skin gambling site for Counter-Strike. Offers five engaging games, provably fair system, and transparent gameplay for enthusiasts.": "CSGOStake - Counter-Strike için cilt kumar sitesi. Beş çekici oyun, kanıtlanabilir adil sistem ve meraklılar için şeffaf oyun sunar.",
         "Rustly - Rust skin gambling platform, offers nine game modes, third-party skin marketplace, crypto support, and CSGOLuck partnership for reliability.": "Rustly - Rust cilt kumar platformu, dokuz oyun modu, üçüncü taraf cilt pazarı, kripto desteği ve güvenilirlik için CSGOLuck ortaklığı sunar.",
         "CSGORUN is a leading virtual skin gambling platform with diverse modes like Crash, Roulette, PVP, and esports betting. It's user-friendly.": "CSGORUN - çeşitli modlar sunan lider sanal deri kumar platformudur; Çökme, Rulet, PVP ve e-spor bahisleri gibi. Kullanıcı dostudur.",
         "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins, CS2 ve Rust için derilerin satın alınması, satılması ve takas edilmesi için oyunculara bir pazar sunmak amacıyla oluşturulmuş bir çevrimiçi platformdur.",
@@ -466,6 +468,7 @@ function copyToClipboard(element) {
         "Games Giveaways" : "Oyun Çekilişleri"
       },
       "es": {
+        "CSGOStake - Skin gambling site for Counter-Strike. Offers five engaging games, provably fair system, and transparent gameplay for enthusiasts.": "CSGOStake - Sitio de apuestas de skins para Counter-Strike. Ofrece cinco juegos atractivos, un sistema probadamente justo y juego transparente para entusiastas.",
         "Rustly - Rust skin gambling platform, offers nine game modes, third-party skin marketplace, crypto support, and CSGOLuck partnership for reliability.": "Rustly - Plataforma apuestas skins Rust, 9 modos juego, mercado skins terceros, criptomonedas, asociación CSGOLuck fiabilidad.",
         "CSGORUN is a leading virtual skin gambling platform with diverse modes like Crash, Roulette, PVP, and esports betting. It's user-friendly.": "CSGORUN es una plataforma líder de apuestas virtuales de skins con diversos modos como Crash, Ruleta, PVP y apuestas de deportes electrónicos. Es fácil de usar.",
         "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins es una plataforma en línea creada para proporcionar a los jugadores un mercado para comprar, vender e intercambiar skins para CS2 y Rust.",
@@ -670,6 +673,7 @@ function copyToClipboard(element) {
         "Games Giveaways": "Sorteos de juegos"    
       },
       "pt": {
+        "CSGOStake - Skin gambling site for Counter-Strike. Offers five engaging games, provably fair system, and transparent gameplay for enthusiasts.": "CSGOStake - Site de apostas de skins para Counter-Strike. Oferece cinco jogos envolventes, sistema comprovadamente justo e jogabilidade transparente para entusiastas.",
         "Rustly - Rust skin gambling platform, offers nine game modes, third-party skin marketplace, crypto support, and CSGOLuck partnership for reliability.": "Rustly - Plataforma de apostas de skins do Rust com 9 modos de jogo, mercado de skins, criptomoedas e parceria com CSGOLuck.",
         "CSGORUN is a leading virtual skin gambling platform with diverse modes like Crash, Roulette, PVP, and esports betting. It's user-friendly.": "CSGORUN é uma plataforma líder de apostas virtuais com skins, com diversos modos como Crash, Roleta, PVP e apostas em esportes eletrônicos. É fácil de usar.",
         "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": "RapidSkins é uma plataforma online criada para fornecer aos jogadores um mercado para comprar, vender e negociar skins para CS2 e Rust.",
@@ -1867,6 +1871,7 @@ document.addEventListener('DOMContentLoaded', function() {
     '<li><a href="/reviews/dotaclash">Dotaclash</a></li>',
     '<li><a href="/reviews/bounty-stars">Bounty Stars</a></li>',
     '<li><a href="/reviews/rustmoment">Rustmoment</a></li>',
+    '<li><a href="/reviews/csgostake">CSGOStake</a></li>',
     '<li><a href="/reviews/ruststake">Ruststake</a></li>',
     '<li><a href="/reviews/rustyloot">Rustyloot</a></li>',
     '<li><a href="/reviews/rustypot">Rustypot</a></li>',
