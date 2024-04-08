@@ -36,6 +36,7 @@ body{
     background: linear-gradient(360deg, rgba(14,14,14,1) 0%, rgb(16, 16, 16) 100%);
     background-color: #0d0d0d;
     font-family: TTNormsPro;
+    overflow: hidden;
     margin: 0 auto;
     padding: 0;
 }
@@ -3747,7 +3748,7 @@ footer .centralizer .footer-content {
 .singlemod-box {
     width: 50px;
     height: 50px;
-    background-color: var(--opacback);
+    background-color: rgb(0,0,0, .25);
     transition: all .15s ease-in-out;
     margin: 5px;
     border-radius: 10px;
@@ -3762,11 +3763,8 @@ footer .centralizer .footer-content {
 .singlemod-box.active {
     transform: scale(1.1);
 }
-.mods-box.skins-box .singlemod-box.active {
-    transform: scale(1.1);
-}
 .mods-box.skins-box .singlemod-box:hover {
-    transform: scale(1.06) !important;
+    transform: scale(1.05) !important;
 }
 .mods-box.skins-box .singlemod-box.active {
     transform: unset;
@@ -3788,11 +3786,13 @@ footer .centralizer .footer-content {
 .mods-box.skins-box .singlemod-box {
     width: auto;
     height: 35px;
-    margin: 3px;
+    margin: 0 4px;
 }
 .mods-box.skins-box .mods-main-box {
     flex-wrap: wrap;
     flex-direction: row;
+    margin: 3px 0;
+    height: auto;
 }
 .singlemod-select span {
     width: auto;
@@ -3987,6 +3987,10 @@ footer .centralizer .footer-content {
     }
     .mods-main-box {
         flex-direction: row;
+        margin: unset;
+    }
+    .mods-box.skins-box .singlemod-box {
+        margin: 3px;
     }
     ul:first-child li .category-box {
         margin: 8px 4px 0 0 !important;
