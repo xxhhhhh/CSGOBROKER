@@ -1167,7 +1167,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   
-    var ratingwayElements = document.querySelectorAll('.ratingthings .ratingway span, .content button, .boxreview .plusminus .criteria .par h2, .features .featuresbox .typesinside a, .instruction li');
+    var ratingwayElements = document.querySelectorAll('.ratingthings .ratingway span, .content button, .boxreview .plusminus .criteria .par p, .features .featuresbox .typesinside a, .instruction li');
     for (var j = 0; j < ratingwayElements.length; j++) {
       var text = ratingwayElements[j].textContent.trim();
       if (translations.hasOwnProperty(text)) {
