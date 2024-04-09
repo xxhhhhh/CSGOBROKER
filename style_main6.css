@@ -2756,27 +2756,6 @@ nav #logo:hover {
 }
 .sitedetails .sitepros.active {
     height: 160px;
-    transition: height .9s ease-in-out;
-} 
-.sitedetails .sitepros.active.one {
-    height: 110px;
-    transition: height .9s ease-in-out;
-} 
-.sitedetails .sitepros.active.two {
-    height: 150px;
-    transition: height .9s ease-in-out;
-} 
-.sitedetails .sitepros.active.three {
-    height: 190px;
-    transition: height .9s ease-in-out;
-} 
-.sitedetails .sitepros.active.four {
-    height: 230px;
-    transition: height .9s ease-in-out;
-} 
-.sitedetails .sitepros.active.five {
-    height: 270px;
-    transition: height .9s ease-in-out;
 } 
 .sitedetails .sitepros span {
     min-height: 60px;
