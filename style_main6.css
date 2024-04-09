@@ -3236,6 +3236,7 @@ nav img:active,
 .box .logobg img {
     width: auto;
     max-width: 250px;
+    max-height: 135px;
     height: auto;
     transition: all .2s ease-in-out;
 }
@@ -3770,7 +3771,7 @@ footer .centralizer .footer-content {
 .mods-box.skins-box .mods-main-box {
     flex-wrap: wrap;
     flex-direction: row;
-    margin: 3px 0;
+    margin: 8px 0;
     height: auto;
 }
 .singlemod-select span {
@@ -3966,7 +3967,7 @@ footer .centralizer .footer-content {
     }
     .mods-main-box {
         flex-direction: row;
-        margin: unset;
+        margin: unset !important;
     }
     .mods-box.skins-box .singlemod-box {
         margin: 3px;

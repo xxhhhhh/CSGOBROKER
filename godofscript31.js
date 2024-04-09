@@ -883,7 +883,7 @@ function copyToClipboard(element) {
       },
       "ru": {
         "Rustly - Rust skin gambling platform, offers nine game modes, third-party skin marketplace, crypto support, and CSGOLuck partnership for reliability.": "Rustly - сайт для гемблинга на скины Rust, предлагает девять игровых режимов, поддержку криптовалют, сайтом владеет CSGOLuck.",
-        "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "500Casino - знаменитый сайт в сфере гемблинга CS2 с многочисленными режимами, постоянными акциями и бонусами для игроков.",
+        "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": "500Casino - популярный сайт в сфере гемблинга CS2 с многочисленными режимами, регулярными акциями и бонусами для игроков.",
         "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": "CSGORoll - один из самых популярных сайтов, который включает в себя рулетку, крэш и многие другие игры включая ставки на киберспорт.",
         "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": "CSGOEmpire - один из самых популярных сайтов, предлагающий игру в Рулетку и Монетку. Кроме того, на сайте доступны ставки на матчи.",
         "CSGOPolygon is a legendary site like CSGODouble with classic Roulette, but have Dices, Crash, Slots and even Esports Betting!": "CSGOPolygon - это легендарный сайт, похожий на CSGODouble, с классической рулеткой, но имеющий еще множество режимов и ставки.",
@@ -2461,15 +2461,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       
       translateElements(languageTag);
-      }
-      if (!window.location.pathname.startsWith("/rust") &&
-      !window.location.pathname.includes("/skins/") &&
-      !window.location.pathname.includes("/items/") &&
-      !window.location.pathname.includes("/reviews") &&
-      !window.location.pathname.includes("/mirrors") &&
-      !window.location.pathname.includes("/privacy-policy") &&
-      !window.location.pathname.includes("/terms-of-service") &&
-      !window.location.pathname.includes("/contact-us")) {        
+      }{        
         function translateURLs2(parentElement, languageTag) {
           var links = parentElement.querySelectorAll("a[href]");
           var supportedLanguages = ["hi", "tr", "pt", "es", "ru"];
@@ -2735,8 +2727,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         
         var categorySelector = document.querySelector('.category-selector');
-        translateURLs2(categorySelector, languageTag);
+        if (categorySelector !== null) {
+          translateURLs2(categorySelector, languageTag);
       }
+    }
       window.onload = function () {
         (function () {
             if (
