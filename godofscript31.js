@@ -2460,8 +2460,8 @@ document.addEventListener('DOMContentLoaded', function () {
           }
       }
       
-      translateElements(languageTag);
-      }{        
+      translateElements(languageTag); 
+    }{        
         function translateURLs2(parentElement, languageTag) {
           var links = parentElement.querySelectorAll("a[href]");
           var supportedLanguages = ["hi", "tr", "pt", "es", "ru"];
@@ -2479,15 +2479,16 @@ document.addEventListener('DOMContentLoaded', function () {
               });
       
               if (languageTag !== "en") {
-                  if ((languageTag === "ru" && path.includes("/topic/")) || (!path || path === "/")) {
-                      url.pathname = "/" + languageTag; 
-                      links[i].setAttribute("href", url.href);
-                  } else if (!path.includes("/topic/") && !langIncluded && supportedLanguages.includes(languageTag)) {
-                      path = "/" + languageTag + path;
-                      url.pathname = path;
-                      links[i].setAttribute("href", url.href);
-                  }
-              }
+                if ((languageTag === "ru" && path.includes("/topic/")) || (!path || path === "/")) {
+                    url.pathname = "/" + languageTag + path;
+                    links[i].setAttribute("href", url.href);
+                } else if (!path.includes("/topic/") && !langIncluded && supportedLanguages.includes(languageTag)) {
+                    path = "/" + languageTag + path;
+                    url.pathname = path;
+                    links[i].setAttribute("href", url.href);
+                }
+            }
+            
           }      
       
           var translations = {
@@ -2954,21 +2955,6 @@ if (btnfaq) {
     }
   };
 }
-
-// if (window.innerWidth <= 1340) {
-// } else {
-//   if (window.location.href.includes('/topic/skins/') && !window.location.href.endsWith('/topic/skins') || window.location.href.includes('/topic/items/') && !window.location.href.endsWith('/topic/items')) {
-//       const skinDescNames = document.querySelectorAll('.skin-desc-name');
-
-//       skinDescNames.forEach(element => {
-//           const skinName = element.textContent.trim();
-//           const link = `https://lis-skins.ru/market/csgo/?query=${encodeURIComponent(skinName)}&rf=83346597`;
-//           const parentElement = element.parentElement;
-//           parentElement.setAttribute('href', link);
-//       });
-//   } else {
-//   }
-// }
 
 const pathSegments = window.location.pathname.split('/');
 const languagePrefix = pathSegments[1] || '';
