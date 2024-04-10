@@ -1822,7 +1822,7 @@ document.addEventListener('DOMContentLoaded', function() {
     '<li><a href="/reviews/rustly">Rustly</a></li>',
     '<li><a href="/ru/reviews/skinsly">SKINSLY</a></li>',
     '<li><a href="/reviews/rapidskins">RAPIDSKINS</a></li>',
-    '<li><a href="/reviews/itrade">iTrade.GG</a></li>',
+    '<li><a href="/reviews/itradegg">iTrade.GG</a></li>',
     '<li><a href="/reviews/rustmagic">RustMagic</a></li>',
     '<li><a href="/reviews/yayskins">Yayskins</a></li>',
     '<li><a href="/reviews/idle-empire">Idle-empire</a></li>',
