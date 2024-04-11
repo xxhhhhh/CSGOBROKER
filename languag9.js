@@ -81,7 +81,7 @@ document.addEventListener('click', function(event) {
       location.reload();
     } else if (selectedLang !== 'en' && window.location.pathname === '/') {
       var currentUrl = window.location.href;
-      newUrl = newUrl.replace(/(\.(co|cc|com|me|broker)\/)/g, '.$2/' + selectedLang + '/');
+      newUrl = newUrl.replace(/(\.(co|cc|com|org|me|broker)\/)/g, '.$2/' + selectedLang + '/');
 
       if (newUrl !== currentUrl) {
         window.location.href = newUrl;
