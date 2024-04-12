@@ -3047,9 +3047,9 @@ nav #logo:hover {
 }
 .sitealternates .box .logobg img{
     width: auto;
-    max-width: 160px;
+    max-width: 160px !important;
     height: auto;
-    max-height: 80px;
+    max-height: 80px !important;
 }
 .sitealternates .box .logobg .rating {
     width: 27%;
