@@ -2887,46 +2887,46 @@ nav #logo:hover {
     opacity: 1;
 }
 .logobg.white {
-    background-image: url(/img/skins/previews/small/example-white.png);
+    background-image: url(/img/skins/previews/small/example-white.webp);
 }
 .logobg.gray {
-    background-image: url(/img/skins/previews/small/example-gray.png);
+    background-image: url(/img/skins/previews/small/example-gray.webp);
 }
 .logobg.black {
-    background-image: url(/img/skins/previews/small/example-black.png);
+    background-image: url(/img/skins/previews/small/example-black.webp);
 }
 .logobg.brown {
-    background-image: url(/img/skins/previews/small/example-brown.png);
+    background-image: url(/img/skins/previews/small/example-brown.webp);
 }
 .logobg.red {
-    background-image: url(/img/skins/previews/small/example-red.png);;
+    background-image: url(/img/skins/previews/small/example-red.webp);;
 }
 .logobg.orange {
-    background-image: url(/img/skins/previews/small/example-orange.png);;
+    background-image: url(/img/skins/previews/small/example-orange.webp);;
 }
 .logobg.golden {
-    background-image: url(/img/skins/previews/small/example-golden.png);;
+    background-image: url(/img/skins/previews/small/example-golden.webp);;
 }
 .logobg.silver {
-    background-image: url(/img/skins/previews/small/example-silver.png);;
+    background-image: url(/img/skins/previews/small/example-silver.webp);;
 }
 .logobg.yellow {
-    background-image: url(/img/skins/previews/small/example-yellow.png);;
+    background-image: url(/img/skins/previews/small/example-yellow.webp);;
 }
 .logobg.green {
-    background-image: url(/img/skins/previews/small/example-green.png);;
+    background-image: url(/img/skins/previews/small/example-green.webp);;
 }
 .logobg.cyan {
-    background-image: url(/img/skins/previews/small/example-cyan.png);;
+    background-image: url(/img/skins/previews/small/example-cyan.webp);;
 }
 .logobg.blue {
-    background-image: url(/img/skins/previews/small/example-blue.png);;
+    background-image: url(/img/skins/previews/small/example-blue.webp);;
 }
 .logobg.purple {
-    background-image: url(/img/skins/previews/small/example-purple.png);;
+    background-image: url(/img/skins/previews/small/example-purple.webp);;
 }
 .logobg.pink {
-    background-image: url(/img/skins/previews/small/example-pink.png);;
+    background-image: url(/img/skins/previews/small/example-pink.webp);;
 }
 .topic-box .content {
     bottom: 0;
@@ -3235,8 +3235,8 @@ nav img:active,
 }
 .box .logobg img {
     width: auto;
-    max-width: 250px;
-    max-height: 135px;
+    max-width: 250px !important;
+    max-height: 120px !important;
     height: auto;
     transition: all .2s ease-in-out;
 }
@@ -3266,6 +3266,7 @@ nav img:active,
     color: white;
     transition: .15s background-color ease-in-out;
     user-select: none;
+    z-index: 1;
 }
 .box .logobg .vpn {
     left: 0;
@@ -4503,6 +4504,7 @@ footer .centralizer .footer-content {
     }
     .box .logobg .vpn {
         height: 27px;
+        font-size: 11px;
     }
     .box:hover {
         transform: scale(1.02);
