@@ -3702,16 +3702,11 @@ footer .centralizer .footer-content {
     user-select: none;
 }
 .mods-box {
-    /* position: fixed;
-    left: 7px;
-    top: 215px; */
     width: auto;
     height: auto;
     position: absolute;
     left: -31px;
     top: 15px;
-    opacity: 0;
-    visibility: hidden;
 }
 .mods-box.fade-in-topic {
     transition: all .1s ease-in-out;
@@ -3755,6 +3750,7 @@ footer .centralizer .footer-content {
     left: unset;
     top: unset;
     width: 100%;
+    height: 51px;
     margin-top: 4px;
     margin-bottom: -11px;
 }
@@ -3958,10 +3954,12 @@ footer .centralizer .footer-content {
         left: unset;
         top: unset;
         width: 100%;
+        height: 60px;
     }
     .mods-box.mods-box.skins-box {
         margin-top: unset;
         margin-bottom: unset;
+        height: 80px;
     }
     .singlemod-select span {
         font-size: 11px;

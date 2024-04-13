@@ -128,23 +128,40 @@ function getCookie(name) {
 
 handleLanguageRedirect();
 
+function getRequestByTargetId(targetId) {
+  for (var i = 0; i < requests.length; i++) {
+    if (requests[i].targetId === targetId) {
+      return requests[i];
+    }
+  }
+  return null; // Если запрос не найден
+}
+
+function sendRequestByTargetId(targetId) {
+  var request = getRequestByTargetId(targetId);
+  if (request) {
+    sendRequest(request.url, request.targetId);
+  }
+}
+
 function sendRequest(url, targetId) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
-        var divToImport = document.getElementById(targetId);
-        if (divToImport) {
-          divToImport.innerHTML = xhr.responseText;
-          translateURLs(divToImport); 
-        }
-      } else {
-        console.error('Cant load div.');
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      var divToImport = document.getElementById(targetId);
+      if (divToImport) {
+        divToImport.innerHTML = xhr.responseText;
+        translateURLsIfNeeded(divToImport); 
       }
     }
   };
   xhr.open('GET', url, true);
   xhr.send();
+}
+
+function sendRequestByTargetId() {
+  var targetId = document.querySelector('.boxes-holder').id;
+  sendRequestByTargetId(targetId);
 }
 
 var requests = [
@@ -212,9 +229,21 @@ for (var i = 0; i < requests.length; i++) {
   sendRequest(requests[i].url, requests[i].targetId);
 }
 
-if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
-  
-  function translateURLs(parentElement, language) {
+function extractLanguageTagFromHTML() {
+  const htmlElement = document.querySelector('html');
+  if (htmlElement) {
+    const langAttribute = htmlElement.getAttribute('lang');
+    if (langAttribute) {
+      return langAttribute.split('-')[0];
+    }
+  }
+  return null;
+}
+
+function translateURLsIfNeeded() {
+  if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
+    var languageTag = extractLanguageTagFromHTML();
+    
     var translations = {
       "hi": {
         "CSMoney - Premier CS2/Dota 2 trading site since 2016. Vast selection, HD images, anti-scam, fast support. Reliable, user-friendly gaming platform.": "CSMoney - 2016 से प्रमुख CS:GO/Dota 2 व्यापार साइट। विस्तृत चयन, HD छवियाँ, धोखाधड़ी रोक, तेज समर्थन। विश्वसनीय, उपयोगकर्ता मित्रास्पद गेमिंग प्लेटफ़ॉर्म।",
@@ -1141,10 +1170,9 @@ if (!window.location.pathname.includes('/reviews/') && !window.location.pathname
       }
     };
   
-  
     var currentTranslations = translations[languageTag] || {};
   
-    var elements = parentElement.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
+    var elements = document.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
     for (var j = 0; j < elements.length; j++) {
       var text = elements[j].textContent.trim();
       if (currentTranslations.hasOwnProperty(text)) {
@@ -1153,3 +1181,5 @@ if (!window.location.pathname.includes('/reviews/') && !window.location.pathname
     }
   }
 }
+
+translateURLsIfNeeded(); // Вызываем функцию для перевода URL, если это необходимо

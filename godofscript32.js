@@ -2169,6 +2169,8 @@ if (window.location.href.indexOf('/reviews/') === -1 && window.location.href.ind
       })
 }
 
+const cachedContent = {};
+
 if (
   window.location.href.endsWith("/csgo/buy-skins") ||
   window.location.href.endsWith("/csgo/sell-skins") ||
@@ -2258,53 +2260,56 @@ else if (
 function importModsBox(boxId) {
   var existingContainer = document.querySelector('.boxes-holder');
 
-  if (existingContainer) {
+  if (existingContainer && cachedContent[boxId]) {
+    insertModsBox(existingContainer, boxId, cachedContent[boxId]);
+  } else {
     fetch('/code-parts/micro-parts/insert-mods-box.html')
       .then(response => response.text())
       .then(data => {
-        var tempDiv = document.createElement('div');
-        tempDiv.innerHTML = data;
-
-        var newModsBox = tempDiv.querySelector(`[data-box-id="${boxId}"]`);
-        var singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
-
-        singlemodBoxes.forEach(box => {
-          var link = box.querySelector('a').getAttribute('href');
-          if (window.location.href.includes(link)) {
-            box.classList.add('active');
-          }
-          if (languageTag === 'ru') {
-            translateElement(box, 'ru');
-          } else if (languageTag === 'tr') {
-            translateElement(box, 'tr');
-          } else if (languageTag === 'pt') {
-            translateElement(box, 'pt');
-          } else if (languageTag === 'hi') {
-            translateElement(box, 'hi');
-          } else if (languageTag === 'es') {
-            translateElement(box, 'es');
-          }
-        });
-
-        existingContainer.insertBefore(newModsBox, existingContainer.firstChild);
-
-        setTimeout(() => {
-          newModsBox.classList.add('fade-in-topic');
-        }, 100);
-
-        updateURLs(newModsBox);
-      })
+        cachedContent[boxId] = data;
+        insertModsBox(existingContainer, boxId, data);
+      });
   }
 }
 
-if (document.querySelector('.singlemod-box')) {
-  const languagetag = ''; 
+function insertModsBox(container, boxId, data) {
+  var tempDiv = document.createElement('div');
+  tempDiv.innerHTML = data;
 
-  if (languagetag === 'ru' || languagetag === 'tr' || languagetag === 'pt' || languagetag === 'hi' || languagetag === 'es') {
-    document.querySelectorAll('.singlemod-box').forEach(element => {
-      translateElement(element, languagetag);
+  var newModsBox = tempDiv.querySelector(`[data-box-id="${boxId}"]`);
+  var existingModsBoxes = container.querySelectorAll('.mods-box');
+
+  var existingBox = Array.from(existingModsBoxes).find(box => {
+    return box.getAttribute('data-box-id') === boxId;
+  });
+
+  if (existingBox) {
+    container.replaceChild(newModsBox, existingBox);
+  } else {
+    container.insertBefore(newModsBox, container.firstChild);
+  }
+
+  var languageTag = extractLanguageTagFromHTML();
+  if (languageTag === 'ru' || languageTag === 'tr' || languageTag === 'pt' || languageTag === 'hi' || languageTag === 'es') {
+    var singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
+    singlemodBoxes.forEach(box => {
+      translateElement(box, languageTag);
     });
   }
+
+  setTimeout(() => {
+    newModsBox.classList.add('fade-in-topic');
+    
+    var singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
+    singlemodBoxes.forEach(box => {
+      var link = box.querySelector('a').getAttribute('href');
+      if (window.location.href.includes(link)) {
+        box.classList.add('active');
+      }
+    });
+  }, 100);
+
+  updateURLs(newModsBox);
 }
 
 function translateElement(element, targetLang) {
@@ -2398,8 +2403,9 @@ function translateElement(element, targetLang) {
   const textElement = element.querySelector('.singlemod-select span');
   if (textElement) {
     const text = textElement.innerText.trim();
-    if (translations[text] && translations[text][targetLang]) {
-      textElement.innerText = translations[text][targetLang];
+    const key = Object.keys(translations).find(key => key.toLowerCase() === text.toLowerCase());
+    if (key && translations[key][targetLang]) {
+      textElement.innerText = translations[key][targetLang];
     }
   }
 }
