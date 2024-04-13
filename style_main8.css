@@ -3959,7 +3959,8 @@ footer .centralizer .footer-content {
     .mods-box.mods-box.skins-box {
         margin-top: unset;
         margin-bottom: unset;
-        height: 80px;
+        min-height: 80px;
+        height: auto;
     }
     .singlemod-select span {
         font-size: 11px;
