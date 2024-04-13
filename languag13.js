@@ -134,7 +134,7 @@ function getRequestByTargetId(targetId) {
       return requests[i];
     }
   }
-  return null; // Если запрос не найден
+  return null;
 }
 
 function sendRequestByTargetId(targetId) {
@@ -150,7 +150,8 @@ function sendRequest(url, targetId) {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
       var divToImport = document.getElementById(targetId);
       if (divToImport) {
-        divToImport.innerHTML = xhr.responseText;
+        var fragment = document.createRange().createContextualFragment(xhr.responseText);
+        divToImport.appendChild(fragment);
         translateURLsIfNeeded(divToImport); 
       }
     }
@@ -1182,4 +1183,4 @@ function translateURLsIfNeeded() {
   }
 }
 
-translateURLsIfNeeded(); // Вызываем функцию для перевода URL, если это необходимо
+translateURLsIfNeeded();

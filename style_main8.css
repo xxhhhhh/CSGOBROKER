@@ -4090,7 +4090,7 @@ footer .centralizer .footer-content {
         width: 80%;
         justify-content: center;
         position: absolute;
-        bottom: 45px;
+        bottom: 50px;
     }
     .boxdefaultpage {
         width: 100%;
@@ -4118,11 +4118,10 @@ footer .centralizer .footer-content {
     .category-selector {
         max-width: 98%;
         width: unset !important;
-        height: 90px;
         justify-content: center;
+        height: 80px;
         top: 80px;
         display: flex;
-        /* height: 650px; */
     }
     #notexist .submenu, .category-selector .submenu2 {
         width: 100% !important;
@@ -4168,13 +4167,13 @@ footer .centralizer .footer-content {
         justify-content: unset;
     }
     .category-space {
-        height: 85px;
+        height: 73px;
     }
     .category-selector .category-box {
         margin: 8px 4px 0 4px !important;
         width: 204px;
-        height: 80px;
-        width: 80px;
+        height: 70px;
+        width: 70px;
         overflow: hidden;
     }
     .category-selector .category-box .category-box-logo {
@@ -4322,7 +4321,6 @@ footer .centralizer .footer-content {
         display: none;
     }
     .box .logobg img {
-        width: auto !important;
         max-width: 80% !important;
         max-height: 90px !important;
     }
@@ -4476,9 +4474,6 @@ footer .centralizer .footer-content {
     }
     .language-box {
         display: flex;
-    }
-    .category-space {
-        height: 83px;
     }
     .boxes-holder {
         width: 98%;
