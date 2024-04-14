@@ -464,125 +464,198 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
   
-  (function() {
-    var insertAfter = function(newNode, referenceNode) {
-        referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-    };
+(function() {
+  var currentSlide = 0;
+  var insertAfter = function(newNode, referenceNode) {
+      referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  };
 
-    if (!window.location.pathname.includes("/privacy-policy") &&
-        !window.location.pathname.includes("/terms-of-service") &&
-        !window.location.pathname.includes("/contact-us")) {
+  if (!window.location.pathname.includes("/privacy-policy") &&
+      !window.location.pathname.includes("/terms-of-service") &&
+      !window.location.pathname.includes("/contact-us")) {
 
-        let currentSlide = 0;
-        var slideInterval;
-        var slideShowActive = true;
-        var isTransitioning = false;
+      let currentSlide = 0;
+      var slideInterval;
+      var slideShowActive = true;
+      var isTransitioning = false;
+      var navLabels;
 
-        function showSlide(index) {
-            const slides = document.querySelectorAll('.slider-banner');
-            slides.forEach((slide, i) => {
-                if (i === index) {
-                    slide.classList.add('active');
-                } else {
-                    slide.classList.remove('active');
-                }
-            });
-        }
-
-        function nextSlide() {
-            if (slideShowActive && !isTransitioning) {
-                isTransitioning = true;
-
-                setTimeout(function() {
-                    isTransitioning = false;
-                }, 6000);
-
-                currentSlide = (currentSlide + 1) % 3;
-                showSlide(currentSlide);
+      function showSlide(index) {
+        currentSlide = index;
+        const slides = document.querySelectorAll('.slider-banner');
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.add('active');
+                navLabels[i].classList.add('active');
+            } else {
+                slide.classList.remove('active');
+                navLabels[i].classList.remove('active');
             }
+        });
+    }
+
+    function nextSlide() {
+        if (slideShowActive && !isTransitioning) {
+            isTransitioning = true;
+
+            setTimeout(function() {
+                isTransitioning = false;
+            }, 4000);
+
+            currentSlide = (currentSlide + 1) % 3;
+            showSlide(currentSlide);
         }
+    }
 
-        function startSlideShow() {
-            slideShowActive = true;
-            slideInterval = setInterval(nextSlide, 6000);
+    function previousSlide() {
+        if (slideShowActive && !isTransitioning) {
+            isTransitioning = true;
+
+            setTimeout(function() {
+                isTransitioning = false;
+            }, 4000);
+
+            currentSlide = (currentSlide - 1 + 3) % 3;
+            showSlide(currentSlide);
         }
+    }
 
-        function stopSlideShow() {
-            slideShowActive = false;
-            clearInterval(slideInterval);
-        }
+      function startSlideShow() {
+          slideShowActive = true;
+          slideInterval = setInterval(nextSlide, 6000);
+      }
 
-        startSlideShow();
+      function stopSlideShow() {
+          slideShowActive = false;
+          clearInterval(slideInterval);
+      }
 
-        var path = window.location.pathname;
-        var existingSliderPlacer = document.querySelector('.slider-placer');
+      startSlideShow();
 
-        if (existingSliderPlacer) {
-            existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
-        }
+      var path = window.location.pathname;
+      var existingSliderPlacer = document.querySelector('.slider-placer');
 
-        var sliderPlacer = document.createElement('div');
-        sliderPlacer.classList.add('slider-placer');
+      if (existingSliderPlacer) {
+          existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
+      }
 
-        if (path.includes('/topic/skins/') || (path.includes('/topic/items/'))) {
-            sliderPlacer.classList.add('topic');
-        }
+      var sliderPlacer = document.createElement('div');
+      sliderPlacer.classList.add('slider-placer');
 
+      if (path.includes('/topic/skins/') || (path.includes('/topic/items/'))) {
+          sliderPlacer.classList.add('topic');
+      }
+
+      var controlsContainer = document.createElement('div');
+      controlsContainer.classList.add('controls');
+
+      var navControlsContainer;
+
+      function createSliderControls() {
         var controlsContainer = document.createElement('div');
         controlsContainer.classList.add('controls');
-
-        var prevButton = document.createElement('button');
-        prevButton.classList.add('prev-button');
-        prevButton.innerHTML = '<i class="bi bi-chevron-left"></i>';
-        prevButton.setAttribute('aria-label', 'Prev Slide');
-        controlsContainer.appendChild(prevButton);
-        
-        var nextButton = document.createElement('button');
-        nextButton.classList.add('next-button');
-        nextButton.innerHTML = '<i class="bi bi-chevron-right"></i>';
-        nextButton.setAttribute('aria-label', 'Next Slide');
-        controlsContainer.appendChild(nextButton);
-        
-
-        var slider1 = document.createElement('a');
-        slider1.href = '/';
-        slider1.classList.add('slider-banner', 'active');
-        var img1 = document.createElement('img');
-        img1.src = '/img/best-gambling-sites-slide-2024.png';
-        img1.alt = 'Best Gambling Sites';
-        img1.draggable = false;
-        slider1.appendChild(img1);
-
-        var slider2 = document.createElement('a');
-        slider2.href = '/earning/offerwalls';
-        slider2.classList.add('slider-banner');
-        var img2 = document.createElement('img');
-        img2.src = '/img/earn-skins-slider-2024.png';
-        img2.alt = 'Best Offerwall Sites';
-        img2.draggable = false;
-        slider2.appendChild(img2);
-
-        var slider3 = document.createElement('a');
-        slider3.href = '/rust';
-        slider3.classList.add('slider-banner');
-        var img3 = document.createElement('img');
-        img3.src = '/img/best-rust-sites-slide-2024.png';
-        img3.alt = 'Best Rust Sites';
-        img3.draggable = false;
-        slider3.appendChild(img3);
-
-        sliderPlacer.appendChild(controlsContainer);
-        sliderPlacer.appendChild(slider1);
-        sliderPlacer.appendChild(slider2);
-        sliderPlacer.appendChild(slider3);
-
-        var languageTag = path.match(/\/(hi|tr|pt|es|ru)(\.html)?/);
-        if (languageTag) {
-            languageTag = languageTag[1];
-            translateURLsSlider(sliderPlacer, languageTag);
+    
+        navControlsContainer = document.createElement('div');
+        navControlsContainer.classList.add('nav-controls');
+    
+        navLabels = [];
+    
+        for (var i = 0; i < 3; i++) {
+            var controlContainer = document.createElement('div');
+    
+            var input = document.createElement("input");
+            input.type = "radio";
+            input.id = "triggerbanner" + (i + 1);
+            input.name = "sliderbanner";
+            input.addEventListener("click", function () {
+                var index = Array.from(navControlsContainer.querySelectorAll("input")).indexOf(this);
+                showSlide(index);
+            });
+    
+            var label = document.createElement("label");
+            label.setAttribute("for", input.id);
+    
+            controlContainer.appendChild(input);
+            controlContainer.appendChild(label);
+            navControlsContainer.appendChild(controlContainer);
+    
+            navLabels.push(label);
+    
+            if (i === 0) {
+                label.classList.add('active');
+            }
         }
+    
+        controlsContainer.appendChild(navControlsContainer);
+    
+        return controlsContainer;
+    }
+    
+    var controlsContainer = createSliderControls();
+    sliderPlacer.appendChild(controlsContainer);
+    
+    
+    var prevButton = document.createElement('button');
+    prevButton.classList.add('prev-button');
+    prevButton.innerHTML = '<i class="bi bi-chevron-left"></i>';
+    prevButton.setAttribute('aria-label', 'Prev Slide');
+    prevButton.addEventListener('click', function() {
+        var currentIndex = (currentSlide - 1 + 3) % 3;
+        currentSlide = currentIndex;
+        showSlide(currentIndex);
+    });
+    controlsContainer.insertBefore(prevButton, controlsContainer.firstChild);
+    
+    var nextButton = document.createElement('button');
+    nextButton.classList.add('next-button');
+    nextButton.innerHTML = '<i class="bi bi-chevron-right"></i>';
+    nextButton.setAttribute('aria-label', 'Next Slide');
+    nextButton.addEventListener('click', function() {
+        var currentIndex = (currentSlide + 1) % 3;
+        currentSlide = currentIndex;
+        showSlide(currentIndex);
+    });
+    controlsContainer.appendChild(nextButton);
+    
 
-        if (path.includes('/mirrors/')) {
+      var slider1 = document.createElement('a');
+      slider1.href = '/';
+      slider1.classList.add('slider-banner', 'active');
+      var img1 = document.createElement('img');
+      img1.src = '/img/best-gambling-sites-slide-2024.png';
+      img1.alt = 'Best Gambling Sites';
+      img1.draggable = false;
+      slider1.appendChild(img1);
+
+      var slider2 = document.createElement('a');
+      slider2.href = '/earning/offerwalls';
+      slider2.classList.add('slider-banner');
+      var img2 = document.createElement('img');
+      img2.src = '/img/earn-skins-slider-2024.png';
+      img2.alt = 'Best Offerwall Sites';
+      img2.draggable = false;
+      slider2.appendChild(img2);
+
+      var slider3 = document.createElement('a');
+      slider3.href = '/rust';
+      slider3.classList.add('slider-banner');
+      var img3 = document.createElement('img');
+      img3.src = '/img/best-rust-sites-slide-2024.png';
+      img3.alt = 'Best Rust Sites';
+      img3.draggable = false;
+      slider3.appendChild(img3);
+
+      sliderPlacer.appendChild(slider1);
+      sliderPlacer.appendChild(slider2);
+      sliderPlacer.appendChild(slider3);
+
+      var languageTag = path.match(/\/(hi|tr|pt|es|ru)(\.html)?/);
+      if (languageTag) {
+          languageTag = languageTag[1];
+          translateURLsSlider(sliderPlacer, languageTag);
+      }
+
+      if (path.includes('/mirrors/')) {
           var sitealternates = document.querySelector('.sitealternates');
           if (sitealternates) {
               insertAfter(sliderPlacer, sitealternates);
@@ -601,31 +674,21 @@ document.addEventListener('DOMContentLoaded', function() {
               footer.parentNode.insertBefore(sliderPlacer, footer);
           }
       }
-      
-      
 
-        var slideElements = document.querySelectorAll('.slider-banner');
-        slideElements.forEach(function(slideElement) {
-            slideElement.addEventListener('mouseenter', function() {
-                stopSlideShow();
-            });
+      var slideElements = document.querySelectorAll('.slider-banner');
+      slideElements.forEach(function(slideElement) {
+          slideElement.addEventListener('mouseenter', function() {
+              stopSlideShow();
+          });
 
-            slideElement.addEventListener('mouseleave', function() {
-                startSlideShow();
-            });
-        });
-
-        nextButton.addEventListener('click', function() {
-            currentSlide = (currentSlide + 1) % 3;
-            showSlide(currentSlide);
-        });
-
-        prevButton.addEventListener('click', function() {
-            currentSlide = (currentSlide - 1 + 3) % 3;
-            showSlide(currentSlide);
-        });
-    }
+          slideElement.addEventListener('mouseleave', function() {
+              startSlideShow();
+          });
+      });
+  }
 })();
+
+
 
   
   

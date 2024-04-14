@@ -2465,11 +2465,23 @@ nav #logo:hover {
     top: 50%;
     transform: scale(1);
 }
+.boxreview .slider-placer .controls {
+    opacity: 1;
+    top: 50%;
+    transform: scale(1);
+}
 .slider-placer .controls {
-    /* top: 55%; */
     transform: scale(1.1);
     transition: all .2s ease-in-out;
     opacity: 0;
+    height: 0;
+}
+.slider-placer .nav-controls {
+    position: absolute;
+    top: -90px;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .slider-banner {
     background-position: center;
@@ -3525,12 +3537,11 @@ footer#review .centralizer .footer-content .credits {
 .boxreview .slider-placer {
     width: 98%;
     /* margin: 0 auto; */
-    height: 220px;
+    height: auto;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
     margin-top: 9px;
-    padding-bottom: 9px;
 }
 .boxreview .slider-placer a {
     background-position: center;
@@ -4080,6 +4091,28 @@ footer .centralizer .footer-content {
         width: 98%;
         height: auto;
     }
+    .slider-placer .controls {
+        bottom: 10%;
+        opacity: 1 !important;
+        transform: scale(1) !important;
+        top: 5% !important;
+    }
+    .slider-placer .nav-controls {
+        top: 0;
+    }
+    .slider-placer .prev-button, .slider-placer .next-button {
+        top: unset;
+        font-size: 28px;
+        transform: translateY(30%);
+    }
+    .slider-placer button:hover i {
+        font-size: 34px !important;
+    }
+    label {
+        width: 11px !important;
+        height: 11px !important;
+        border-radius: 3px !important;
+    }
     .slider-banner img {
         width: 105%;
     }
@@ -4132,7 +4165,7 @@ footer .centralizer .footer-content {
         left: 0;
     }
     #notexist .submenu {
-    top: 180px;
+        top: 150px;
     }
     #notexist .big-category {
         display: flex;
@@ -4428,6 +4461,10 @@ footer .centralizer .footer-content {
     #notexist {
         max-width: 90%;
     }
+    .buttons-container-page {
+        bottom: 10px !important;
+        right: 10px !important;
+    }
 }
 @media screen and (max-width: 460px) {
     .newest-boxes {
@@ -4506,9 +4543,6 @@ footer .centralizer .footer-content {
     .content button  {
         font-size: 11px;
     }
-    .slider-placer {
-        height: 90px !important;
-    }
     .cookie-widget-info {
         display: block;
         padding: 0 7px;
@@ -4516,10 +4550,6 @@ footer .centralizer .footer-content {
     .cookie-widget-button {
         margin-right: 7px;
         margin-left: 0;
-    }
-    .buttons-container-page {
-        bottom: 10px !important;
-        right: 10px !important;
     }
     .smallreview p,
     .boxreview .plusminus .criteria .par li,
@@ -4733,10 +4763,9 @@ footer .centralizer .footer-content {
     left: auto;
   }
   
-  input:focus + label{
+  /* input:focus + label{
     border: solid 2px var(--white);
-    /* border: solid 2px var(--main-color); */
-  } 
+  }  */
   
   .slide {
     position: absolute;
@@ -4803,7 +4832,7 @@ footer .centralizer .footer-content {
   }
   .buttons-container-page {
     width: 40px;
-    height: 100px;
+    height: auto;
     display: flex;
     position: fixed;
     bottom: 20px;
