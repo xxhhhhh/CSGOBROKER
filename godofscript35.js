@@ -2234,43 +2234,70 @@ if (window.location.href.indexOf('/reviews/') === -1 && window.location.href.ind
 
 const cachedContent = {};
 
-function getCategoryFromUrl(url) {
-  const match = url.match(/\/(csgo|rust|dota)\/(buy|sell|trade|instant-sell|marketplaces)/);
-  if (match) {
-    return { game: match[1], action: match[2] };
-  } else if (url.includes("/freebies/")) {
-    return { game: "freebies" };
-  } else if (url.includes("/crypto/")) {
-    return { game: "crypto" };
-  } else if (url.includes("/csgo/") || url.includes("/rust/") || url.includes("/dota/")) {
-    return { game: url.split("/")[3] };
-  }
-  return null;
+const url = window.location.href.toLowerCase();
+const pageType = getPageType(url);
+
+switch (pageType) {
+  case 'csgo':
+    if (isMultiBoxPage(url)) {
+      importModsBox("csgo-skins");
+      importModsBox("csgo");
+    } else {
+      importModsBox("csgo");
+    }
+    break;
+  case 'rust':
+    if (isMultiBoxPage(url)) {
+      importModsBox("rust-skins");
+      importModsBox("rust");
+    } else {
+      importModsBox("rust");
+    }
+    break;
+  case 'dota':
+    if (isMultiBoxPage(url)) {
+      importModsBox("dota-items");
+      importModsBox("dota");
+    } else {
+      importModsBox("dota");
+    }
+    break;
+  case 'freebies':
+    importModsBox("freebies");
+    break;
+  case 'crypto':
+    importModsBox("crypto");
+    break;
+  default:
+    if (url.includes("/csgo/") || url.endsWith("/ru") || url.endsWith("/es") || url.endsWith("/tr") || url.endsWith("/pt") || url.endsWith("/hi") || url.endsWith("/") || url.endsWith("index.html") || url.endsWith("/ru.html") || url.endsWith("/es.html") || url.endsWith("/tr.html") || url.endsWith("/pt.html") || url.endsWith("/hi.html")) {
+      importModsBox("csgo");
+    } else if (url.includes("/rust/") || url.endsWith("/rust") || url.endsWith("/rust.html")) {
+      importModsBox("rust");
+    } else if (url.includes("/dota/") || url.endsWith("/dota") || url.endsWith("/dota.html")) {
+      importModsBox("dota");
+    }
+    break;
 }
 
-const category = getCategoryFromUrl(window.location.href);
-if (document.querySelector('.mods-box')) {
-  if (category) {
-    if (category.game === "csgo") {
-      importModsBox("csgo-skins") + importModsBox("csgo");
-    } else if (category.game === "rust") {
-      importModsBox("rust-skins") + importModsBox("rust");
-    } else if (category.game === "dota") {
-      importModsBox("dota-items") + importModsBox("dota");
-    } else if (category.game === "freebies") {
-      importModsBox("freebies");
-    } else if (category.game === "crypto") {
-      importModsBox("crypto");
+function getPageType(url) {
+  const pageTypes = ['csgo', 'rust', 'dota', 'freebies', 'crypto'];
+  for (const type of pageTypes) {
+    if (url.includes(`/${type}/`) || url.endsWith(`/${type}`) || url.endsWith(`/${type}.html`)) {
+      return type;
     }
-  } else {
-    importModsBox("csgo");
   }
+  return 'other';
+}
+
+function isMultiBoxPage(url) {
+  return url.endsWith("/buy-skins") || url.endsWith("/buy-items") || url.endsWith("/sell-items") || url.endsWith("/trade-items") || url.endsWith("/sell-skins") || url.endsWith("/trade-skins") || url.endsWith("/instant-sell") || url.endsWith("/marketplaces") || url.endsWith("/buy-skins.html") || url.endsWith("/buy-items.html") || url.endsWith("/sell-items.html") || url.endsWith("/trade-items.html") || url.endsWith("/sell-skins.html") || url.endsWith("/trade-skins.html") || url.endsWith("/marketplaces.html") || url.endsWith("/instant-sell.html");
 }
 
 function importModsBox(boxId) {
-  var existingContainer = document.querySelector('.boxes-holder');
+  const existingContainer = document.querySelector('.boxes-holder');
+  const isExistingContentCached = existingContainer && cachedContent[boxId];
 
-  if (existingContainer && cachedContent[boxId]) {
+  if (isExistingContentCached) {
     insertModsBox(existingContainer, boxId, cachedContent[boxId]);
   } else {
     fetch('/code-parts/micro-parts/insert-mods-box.html')
@@ -2283,15 +2310,12 @@ function importModsBox(boxId) {
 }
 
 function insertModsBox(container, boxId, data) {
-  var tempDiv = document.createElement('div');
+  const tempDiv = document.createElement('div');
   tempDiv.innerHTML = data;
 
-  var newModsBox = tempDiv.querySelector(`[data-box-id="${boxId}"]`);
-  var existingModsBoxes = container.querySelectorAll('.mods-box');
-
-  var existingBox = Array.from(existingModsBoxes).find(box => {
-    return box.getAttribute('data-box-id') === boxId;
-  });
+  const newModsBox = tempDiv.querySelector(`[data-box-id="${boxId}"]`);
+  const existingModsBoxes = container.querySelectorAll('.mods-box');
+  const existingBox = Array.from(existingModsBoxes).find(box => box.getAttribute('data-box-id') === boxId);
 
   if (existingBox) {
     container.replaceChild(newModsBox, existingBox);
@@ -2299,9 +2323,9 @@ function insertModsBox(container, boxId, data) {
     container.insertBefore(newModsBox, container.firstChild);
   }
 
-  var languageTag = extractLanguageTagFromHTML();
-  if (languageTag === 'ru' || languageTag === 'tr' || languageTag === 'pt' || languageTag === 'hi' || languageTag === 'es') {
-    var singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
+  const languageTag = extractLanguageTagFromHTML();
+  if (languageTag && ['ru', 'tr', 'pt', 'hi', 'es'].includes(languageTag)) {
+    const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
     singlemodBoxes.forEach(box => {
       translateElement(box, languageTag);
     });
@@ -2309,11 +2333,10 @@ function insertModsBox(container, boxId, data) {
 
   setTimeout(() => {
     newModsBox.classList.add('fade-in-topic');
-    
-    var singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
+    const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
     singlemodBoxes.forEach(box => {
-      var link = box.querySelector('a').getAttribute('href');
-      if (window.location.href.includes(link)) {
+      const link = box.querySelector('a').getAttribute('href');
+      if (url.includes(link)) {
         box.classList.add('active');
       }
     });
