@@ -2447,7 +2447,8 @@ nav #logo:hover {
 }
 .slider-placer {
     margin: 0 auto;
-    height: 200px;
+    height: auto;
+    width: 50%;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
@@ -2497,6 +2498,7 @@ nav #logo:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     overflow: hidden;
     opacity: 0;
     transition: opacity 0.5s;
