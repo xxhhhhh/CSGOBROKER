@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "Functional": "Функционал",
       "Playability": "Режимы",
       "Sign up via Steam": "Залогиньтесь через Steam",
-      "Enjoy !": "Готово !",
+      "Done!": "Готово !",
       "Visit WebSite": "Посетить Сайт"
     };
     translateTextElements(translations);
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "Payments": "Płatności",
       "Functional": "Funkcjonalność",
       "Sign up via Steam": "Zarejestruj się za pomocą Steam",
-      "Enjoy !": "Ciesz się!",
+      "Done!": "Ciesz się!",
       "Visit WebSite": "Odwiedź stronę internetową"
     };
     translateTextElements(translations);
