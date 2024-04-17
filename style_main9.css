@@ -288,6 +288,14 @@ nav #pagename:focus {
     font-size: 14px;
     text-align: center;
 }
+#rec-box-content p:first-child {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 15px;
+    text-transform: uppercase;
+    text-align: center;
+}
 .rec-box:hover button {
     animation: buttons 1s infinite;
     border: 2px solid #ce203d;
@@ -817,9 +825,7 @@ nav #pagename:focus {
 }
 
 .box-skins .skin:hover .skin-desc,
-.box-skins .skin:hover .skin-desc-name,
-.box-skins .skin:focus .skin-desc,
-.box-skins .skin:focus .skin-desc-name {
+.box-skins .skin:hover .skin-desc-name {
     opacity: 1;
 }
 
@@ -911,42 +917,23 @@ nav #pagename:focus {
 .box-skins:nth-child(1) .skin{
     min-width: 100px;
 }
-.box-skins .skin:hover,
-.box-skins .skin:focus {
+.box-skins .skin:hover {
     width: 157px;
     min-width: 157px;
 }
 .box-skins .skin:hover img {
     transform: scale(1.1) rotate(3deg);
 }
-.box-skins:nth-child(1) .skin:hover img,
-.box-skins:nth-child(1) .skin:focus img {
+.box-skins:nth-child(1) .skin:hover img {
     transform: scale(1.2) rotate(3deg);
 }
-.box-skins:nth-child(2)  .skin:hover img,
-.box-skins:nth-child(2)  .skin:focus img {
+.box-skins:nth-child(2)  .skin:hover img {
     transform: scale(1.25) rotate(3deg);
 }
 .box-skins.selected .skin:hover img,
 .box-skins.solo .skin:hover img {
     transform: scale(1.1) rotate(3deg);
 }
-/* 
-.box-skins.selected:nth-child(1) .skin:hover img,
-.box-skins.selected:nth-child(1) .skin:focus img {
-    height: 70% !important;
-}
-.box-skins.selected:nth-child(2)  .skin:hover img,
-.box-skins.selected:nth-child(2)  .skin:focus img {
-    height: 75% !important;
-} 
- .box-skins.selected:nth-child(2) .skin:hover img, .box-skins.selected:nth-child(2) .skin:focus img,
-.box-skins.solo:nth-child(1) .skin:hover img, .box-skins.solo:nth-child(1) .skin:focus img {
-    height: 65% !important;
-}
-.box-skins.selected:nth-child(3) .skin:hover img, .box-skins.selected:nth-child(3) .skin:focus img {
-    height: 70% !important;
-} */
 .box-skins .skin img {
     width: auto;
     height: 82%;
@@ -961,12 +948,6 @@ nav #pagename:focus {
     width: auto;
     height: 60%;
 }
-/* .box-skins:first-child {
-    margin: unset;
-}
-.box-skins .skin:nth-child(2) {
-    margin-left: 35px;
-} */
 .box-skins-list {
     width: 100%;
     height: 100%;
