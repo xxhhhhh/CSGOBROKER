@@ -702,6 +702,7 @@ document.addEventListener('DOMContentLoaded', function() {
     !window.location.pathname.endsWith("terms-of-service.html") &&
     !window.location.pathname.endsWith("privacy-policy") &&
     !window.location.pathname.endsWith("contact-us") &&
+    !window.location.pathname.endsWith("404") &&
     !window.location.pathname.endsWith("terms-of-service") &&
     window.location.pathname !== "/ru" &&
     window.location.pathname !== "/pt" &&
@@ -713,6 +714,7 @@ document.addEventListener('DOMContentLoaded', function() {
     !window.location.pathname.endsWith("es.html") &&
     !window.location.pathname.endsWith("tr.html") &&
     !window.location.pathname.endsWith("hi.html") &&
+    !window.location.pathname.endsWith("404.html") &&
     !window.location.pathname.endsWith("index.html")
   ) {
     var currentLanguage = "";
