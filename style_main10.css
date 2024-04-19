@@ -3259,8 +3259,7 @@ nav img:active,
     top: 0;
     position: absolute;
     width: auto;
-    padding: 0 8px 0 17px;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 9% 100%);
+    padding: 0 8px 0 5px;
     height: 30px;
     background-color: var(--main-color);
     border-radius: 0px 5px 0px 5px; 
@@ -3276,13 +3275,23 @@ nav img:active,
     user-select: none;
     z-index: 1;
 }
+.box .logobg .best::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -8px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%);
+    background-color: var(--main-color);
+    width: 20px;
+    height: 100%;
+    z-index: -1;
+}
 .box .logobg .vpn {
     left: 0;
     top: 0;
     position: absolute;
     width: auto;
-    padding: 0 15px 0 8px;
-    clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
+    padding: 0 5px 0 8px;
     height: 30px;
     background-color: #1d59a8;
     border-radius: 5px 0px 5px 0px; 
@@ -3294,6 +3303,18 @@ nav img:active,
     text-transform: uppercase;
     font-size: 12px;
     color: white;
+    z-index: 1;
+}
+.box .logobg .vpn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -12px;
+    clip-path: polygon(0 0, 100% 0, 40% 100%, 0 100%);
+    background-color: #1d59a8;
+    width: 20px;
+    height: 100%;
+    z-index: -1;
 }
 .sitealternates .box .logobg .vpn {
     background-color: #191919;
@@ -5419,7 +5440,7 @@ label:active,
     }
     nav .pages {
         padding-left: unset;
-        margin-left: 8px;
+        margin-left: 6px;
         width: 100%;
         justify-content: center;
     }
