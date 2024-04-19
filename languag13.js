@@ -152,7 +152,8 @@ function sendRequest(url, targetId) {
       if (divToImport) {
         var fragment = document.createRange().createContextualFragment(xhr.responseText);
         divToImport.appendChild(fragment);
-        translateURLsIfNeeded(divToImport); 
+        translateURLsIfNeeded(divToImport);
+        addStarRatingToBoxesHolders();
       }
     }
   };
@@ -160,9 +161,27 @@ function sendRequest(url, targetId) {
   xhr.send();
 }
 
-function sendRequestByTargetId() {
-  var targetId = document.querySelector('.boxes-holder').id;
-  sendRequestByTargetId(targetId);
+function sendRequestByTargetId(targetId) {
+  var request = getRequestByTargetId(targetId);
+  if (request) {
+    sendRequest(request.url, request.targetId);
+  }
+}
+
+function sendRequestsForAllBoxesHolders() {
+  var boxesHolders = document.querySelectorAll('.boxes-holder');
+  boxesHolders.forEach(function(boxHolder) {
+    var targetId = boxHolder.id;
+    sendRequestByTargetId(targetId);
+  });
+}
+
+sendRequestsForAllBoxesHolders();
+
+function addStarRatingToBoxesHolders() {
+  for (var boxId in ratings) {
+    addStarRating(boxId, ratings[boxId]);
+  }
 }
 
 var requests = [

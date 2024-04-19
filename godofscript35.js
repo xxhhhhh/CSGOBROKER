@@ -2532,7 +2532,7 @@ var ratings = {
   "DatDrop":3.5,
   "HellStore":2.875,
   "CSGOStake":2.875,
-  "CSGOPOSITIVE":3.125,
+  "CSGOPOSITIVE":3.75,
   "Hellcase":3.375,
   "Bounty Stars":3,
   "CSGOBIG":3.125,
@@ -2600,6 +2600,11 @@ var ratings = {
   "WhiteMarket":3,
   "SkinBid":3.125,
   "iTrade.GG":3.125,
+  "Avan.Market":4,
+  "LootBear":3.375,
+  "Skins.Cash":2.625,
+  "RustCases":3.375,
+  "SteamLevels":3.5,
 };
 
 function addStarRating(boxId, rating) {
