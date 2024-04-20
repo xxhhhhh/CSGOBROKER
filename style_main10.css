@@ -3273,7 +3273,7 @@ nav img:active,
     color: white;
     transition: .15s background-color ease-in-out;
     user-select: none;
-    z-index: 1;
+    z-index: 2;
 }
 .box .logobg .best::before {
     content: '';
@@ -3287,37 +3287,60 @@ nav img:active,
     z-index: -1;
 }
 .box .logobg .vpn {
-    left: 0;
-    top: 0;
+    background: rgb(14 14 14);
+    color: rgba(255, 255, 255, .3);
+    top: unset;
+    left: unset;
+    bottom: 0;
+    right: 0;
+    transform: translateY(50px);
+    transition: transform .15s .05s ease-in-out;
     position: absolute;
     width: auto;
-    padding: 0 5px 0 8px;
+    padding: 0 5px 0 5px;
     height: 30px;
-    background-color: #1d59a8;
-    border-radius: 5px 0px 5px 0px; 
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: TTNormsPro;
     font-weight: 600;
     text-transform: uppercase;
+    user-select: none;
     font-size: 12px;
-    color: white;
     z-index: 1;
 }
 .box .logobg .vpn::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: -12px;
-    clip-path: polygon(0 0, 100% 0, 40% 100%, 0 100%);
-    background-color: #1d59a8;
+    top: unset;
+    bottom: 0;
+    left: -8px;
+    right: unset;
+    background: rgb(14 14 14);
+    clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%);
     width: 20px;
     height: 100%;
     z-index: -1;
 }
+.box:hover .logobg .vpn,
+.box:hover .logobg .vpn::before {
+    transform: translateY(0);
+    background: rgb(22 22 22);
+}
+.vpn:hover {
+    color: white;
+}
 .sitealternates .box .logobg .vpn {
-    background-color: #191919;
+    transform: unset;
+    transition: all .15s ease-in-out;
+    bottom: unset;
+    right: unset;
+    top: 0;
+    right: 0;
+}
+.sitealternates .box .logobg .vpn::before {
+    transition: all .15s ease-in-out;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%);
 }
 .box .giveawaysbanner {
     height: 100%;
@@ -5342,13 +5365,28 @@ label:active,
     }
     .box .logobg .best {
         font-size: 11px !important;
-        padding: 0 8px 0 12px;
         height: 27px;
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 6% 100%);
     }
     .box .logobg .vpn {
         height: 27px;
         font-size: 11px;
+        padding: 0 8px 0 5px;
+        border-radius: unset;
+        background: rgb(14 14 14);
+        color: rgba(255, 255, 255, .3);
+        transform: translateY(0);
+        top: unset;
+        left: unset;
+        bottom: 0;
+        right: 0;
+    }
+    .box .logobg .vpn::before {
+        top: unset;
+        bottom: 0;
+        left: -8px;
+        right: unset;
+        background: rgb(14 14 14);
+        clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%);
     }
     .box:hover {
         transform: scale(1.02);
