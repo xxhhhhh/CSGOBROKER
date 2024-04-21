@@ -2046,6 +2046,7 @@ nav #pagename:focus {
 .site-promo-copy i {
     color: rgb(188, 188, 188);
     transition: opacity .15s ease-in-out;
+    font-size: 12px;
     opacity: .4;
 }
 .instruction code {
