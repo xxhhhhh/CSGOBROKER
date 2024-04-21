@@ -466,233 +466,200 @@ document.addEventListener('DOMContentLoaded', function() {
   
 (function() {
   var currentSlide = 0;
-  var insertAfter = function(newNode, referenceNode) {
-      referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-  };
+  var slideShowActive = true;
+  var isTransitioning = false;
+  var navLabels;
+  var slideInterval;
+
+  function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
+
+  function showSlide(index) {
+    const slides = document.querySelectorAll('.slider-banner');
+    const totalSlides = slides.length;
+    const previousIndex = (index - 1 + totalSlides) % totalSlides;
+
+    slides.forEach((slide, i) => {
+      const isActive = i === index;
+      const isPrevious = i === previousIndex;
+
+      slide.classList.toggle('active', isActive);
+      slide.classList.toggle('previous', isPrevious);
+
+      navLabels[i].classList.toggle('active', isActive);
+    });
+  }
+
+  function nextSlide() {
+    if (slideShowActive && !isTransitioning) {
+      isTransitioning = true;
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 4000);
+
+      currentSlide = (currentSlide + 1) % 3;
+      showSlide(currentSlide);
+    }
+  }
+
+  function previousSlide() {
+    if (slideShowActive && !isTransitioning) {
+      isTransitioning = true;
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 4000);
+
+      currentSlide = (currentSlide - 1 + 3) % 3;
+      showSlide(currentSlide);
+    }
+  }
+
+  function startSlideShow() {
+    slideShowActive = true;
+    slideInterval = setInterval(nextSlide, 5000);
+  }
+
+  function stopSlideShow() {
+    slideShowActive = false;
+    clearInterval(slideInterval);
+  }
+
+  function createSliderControls() {
+    var controlsContainer = document.createElement('div');
+    controlsContainer.classList.add('controls');
+
+    var navControlsContainer = document.createElement('div');
+    navControlsContainer.classList.add('nav-controls');
+
+    navLabels = [];
+
+    for (var i = 0; i < 3; i++) {
+      var controlContainer = document.createElement('div');
+
+      var input = document.createElement("input");
+      input.type = "radio";
+      input.id = "triggerbanner" + (i + 1);
+      input.name = "sliderbanner";
+      input.addEventListener("click", function() {
+        var index = Array.from(navControlsContainer.querySelectorAll("input")).indexOf(this);
+        showSlide(index);
+      });
+
+      var label = document.createElement("label");
+      label.setAttribute("for", input.id);
+
+      controlContainer.appendChild(input);
+      controlContainer.appendChild(label);
+      navControlsContainer.appendChild(controlContainer);
+
+      navLabels.push(label);
+
+      if (i === 0) {
+        label.classList.add('active');
+      }
+    }
+
+    controlsContainer.appendChild(navControlsContainer);
+
+    return controlsContainer;
+  }
 
   if (!window.location.pathname.includes("/privacy-policy") &&
-      !window.location.pathname.includes("/terms-of-service") &&
-      !window.location.pathname.includes("/contact-us")) {
+    !window.location.pathname.includes("/terms-of-service") &&
+    !window.location.pathname.includes("/contact-us")) {
 
-      let currentSlide = 0;
-      var slideInterval;
-      var slideShowActive = true;
-      var isTransitioning = false;
-      var navLabels;
+    startSlideShow();
 
-      function showSlide(index) {
-        currentSlide = index;
-        const slides = document.querySelectorAll('.slider-banner');
-        slides.forEach((slide, i) => {
-            if (i === index) {
-                slide.classList.add('active');
-                navLabels[i].classList.add('active');
-            } else {
-                slide.classList.remove('active');
-                navLabels[i].classList.remove('active');
-            }
-        });
+    var path = window.location.pathname;
+    var existingSliderPlacer = document.querySelector('.slider-placer');
+
+    if (existingSliderPlacer) {
+      existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
     }
 
-    function nextSlide() {
-        if (slideShowActive && !isTransitioning) {
-            isTransitioning = true;
+    var sliderContainer = document.querySelector('.slider-container');
+    var sliderPlacer = document.createElement('div');
+    sliderPlacer.classList.add('slider-placer');
 
-            setTimeout(function() {
-                isTransitioning = false;
-            }, 4000);
-
-            currentSlide = (currentSlide + 1) % 3;
-            showSlide(currentSlide);
-        }
+    if (path.includes('/topic/skins/') || (path.includes('/topic/items/'))) {
+      sliderPlacer.classList.add('topic');
     }
 
-    function previousSlide() {
-        if (slideShowActive && !isTransitioning) {
-            isTransitioning = true;
-
-            setTimeout(function() {
-                isTransitioning = false;
-            }, 4000);
-
-            currentSlide = (currentSlide - 1 + 3) % 3;
-            showSlide(currentSlide);
-        }
-    }
-
-      function startSlideShow() {
-          slideShowActive = true;
-          slideInterval = setInterval(nextSlide, 6000);
-      }
-
-      function stopSlideShow() {
-          slideShowActive = false;
-          clearInterval(slideInterval);
-      }
-
-      startSlideShow();
-
-      var path = window.location.pathname;
-      var existingSliderPlacer = document.querySelector('.slider-placer');
-
-      if (existingSliderPlacer) {
-          existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
-      }
-
-      var sliderPlacer = document.createElement('div');
-      sliderPlacer.classList.add('slider-placer');
-
-      if (path.includes('/topic/skins/') || (path.includes('/topic/items/'))) {
-          sliderPlacer.classList.add('topic');
-      }
-
-      var controlsContainer = document.createElement('div');
-      controlsContainer.classList.add('controls');
-
-      var navControlsContainer;
-
-      function createSliderControls() {
-        var controlsContainer = document.createElement('div');
-        controlsContainer.classList.add('controls');
-    
-        navControlsContainer = document.createElement('div');
-        navControlsContainer.classList.add('nav-controls');
-    
-        navLabels = [];
-    
-        for (var i = 0; i < 3; i++) {
-            var controlContainer = document.createElement('div');
-    
-            var input = document.createElement("input");
-            input.type = "radio";
-            input.id = "triggerbanner" + (i + 1);
-            input.name = "sliderbanner";
-            input.addEventListener("click", function () {
-                var index = Array.from(navControlsContainer.querySelectorAll("input")).indexOf(this);
-                showSlide(index);
-            });
-    
-            var label = document.createElement("label");
-            label.setAttribute("for", input.id);
-    
-            controlContainer.appendChild(input);
-            controlContainer.appendChild(label);
-            navControlsContainer.appendChild(controlContainer);
-    
-            navLabels.push(label);
-    
-            if (i === 0) {
-                label.classList.add('active');
-            }
-        }
-    
-        controlsContainer.appendChild(navControlsContainer);
-    
-        return controlsContainer;
-    }
-    
     var controlsContainer = createSliderControls();
     sliderPlacer.appendChild(controlsContainer);
-    
-    
+
     var prevButton = document.createElement('button');
     prevButton.classList.add('prev-button');
     prevButton.innerHTML = '<i class="bi bi-chevron-left"></i>';
     prevButton.setAttribute('aria-label', 'Prev Slide');
     prevButton.addEventListener('click', function() {
-        var currentIndex = (currentSlide - 1 + 3) % 3;
-        currentSlide = currentIndex;
-        showSlide(currentIndex);
+      var currentIndex = (currentSlide - 1 + 3) % 3;
+      currentSlide = currentIndex;
+      showSlide(currentIndex);
     });
     controlsContainer.insertBefore(prevButton, controlsContainer.firstChild);
-    
+
     var nextButton = document.createElement('button');
     nextButton.classList.add('next-button');
     nextButton.innerHTML = '<i class="bi bi-chevron-right"></i>';
     nextButton.setAttribute('aria-label', 'Next Slide');
     nextButton.addEventListener('click', function() {
-        var currentIndex = (currentSlide + 1) % 3;
-        currentSlide = currentIndex;
-        showSlide(currentIndex);
+      var currentIndex = (currentSlide + 1) % 3;
+      currentSlide = currentIndex;
+      showSlide(currentIndex);
     });
     controlsContainer.appendChild(nextButton);
+
+    var slider1 = createSliderItem('/', '/img/best-gambling-sites-slide-2024.png', 'Best Gambling Sites', 0);
+    var slider2 = createSliderItem('/earning/offerwalls', '/img/earn-skins-slider-2024.png', 'Best Offerwall Sites', 1);
+    var slider3 = createSliderItem('/rust', '/img/best-rust-sites-slide-2024.png', 'Best Rust Sites', 2);
+
+    [slider1, slider2, slider3].forEach(slider => sliderPlacer.appendChild(slider));
+
+    var languageTag = path.match(/\/(hi|tr|pt|es|ru)(\.html)?/);
+    if (languageTag) {
+      translateURLsSlider(sliderPlacer, languageTag[1]);
+    }
+
+    if (path.includes('/mirrors/')) {
+      var sitealternates = document.querySelector('.sitealternates');
+      if (sitealternates) {
+        insertAfter(sliderPlacer, sitealternates);
+      }
+    } else if (path.includes('/reviews/')) {
+      var ratingsumm = document.querySelector('div.ratingsumm');
+      if (ratingsumm) {
+        insertAfter(sliderPlacer, ratingsumm);
+      }
+    } else {
+      var footer = document.querySelector('footer');
+      footer.parentNode.insertBefore(sliderPlacer, footer);
+    }
     
 
-      var slider1 = document.createElement('a');
-      slider1.href = '/';
-      slider1.classList.add('slider-banner', 'active');
-      var img1 = document.createElement('img');
-      img1.src = '/img/best-gambling-sites-slide-2024.png';
-      img1.alt = 'Best Gambling Sites';
-      img1.draggable = false;
-      slider1.appendChild(img1);
+    sliderPlacer.addEventListener('mouseenter', stopSlideShow);
+    sliderPlacer.addEventListener('mouseleave', startSlideShow);
+  }
 
-      var slider2 = document.createElement('a');
-      slider2.href = '/earning/offerwalls';
-      slider2.classList.add('slider-banner');
-      var img2 = document.createElement('img');
-      img2.src = '/img/earn-skins-slider-2024.png';
-      img2.alt = 'Best Offerwall Sites';
-      img2.draggable = false;
-      slider2.appendChild(img2);
+  function createSliderItem(href, src, alt, index) {
+    var slider = document.createElement('a');
+    slider.href = href;
+    slider.classList.add('slider-banner');
+    var img = document.createElement('img');
+    img.src = src;
+    img.alt = alt;
+    img.draggable = false;
+    slider.appendChild(img);
 
-      var slider3 = document.createElement('a');
-      slider3.href = '/rust';
-      slider3.classList.add('slider-banner');
-      var img3 = document.createElement('img');
-      img3.src = '/img/best-rust-sites-slide-2024.png';
-      img3.alt = 'Best Rust Sites';
-      img3.draggable = false;
-      slider3.appendChild(img3);
+    if (index === 0) {
+      slider.classList.add('active');
+    }
 
-      sliderPlacer.appendChild(slider1);
-      sliderPlacer.appendChild(slider2);
-      sliderPlacer.appendChild(slider3);
-
-      var languageTag = path.match(/\/(hi|tr|pt|es|ru)(\.html)?/);
-      if (languageTag) {
-          languageTag = languageTag[1];
-          translateURLsSlider(sliderPlacer, languageTag);
-      }
-
-      if (path.includes('/mirrors/')) {
-          var sitealternates = document.querySelector('.sitealternates');
-          if (sitealternates) {
-              insertAfter(sliderPlacer, sitealternates);
-          }
-      } else if (path.includes('/reviews/')) {
-          var ratingsumm = document.querySelector('div.ratingsumm');
-          if (ratingsumm) {
-              insertAfter(sliderPlacer, ratingsumm);
-          }
-      } else {
-          var newestBoxes = document.querySelector('div.newest-boxes');
-          if (newestBoxes) {
-              newestBoxes.parentNode.insertBefore(sliderPlacer, newestBoxes);
-          } else {
-              var footer = document.querySelector('footer');
-              footer.parentNode.insertBefore(sliderPlacer, footer);
-          }
-      }
-
-      var slideElements = document.querySelectorAll('.slider-banner');
-      slideElements.forEach(function(slideElement) {
-          slideElement.addEventListener('mouseenter', function() {
-              stopSlideShow();
-          });
-
-          slideElement.addEventListener('mouseleave', function() {
-              startSlideShow();
-          });
-      });
+    return slider;
   }
 })();
 
-
-
-  
-  
-  
   if (
     !window.location.pathname.includes("/reviews/") &&
     !window.location.pathname.includes("/topic/") &&
@@ -2182,57 +2149,61 @@ if (window.location.href.indexOf("/topic/items/") > -1) {
   xhr.send();
 }
 
-if (window.location.href.indexOf('/reviews/') === -1 && window.location.href.indexOf('/mirrors/') === -1 && 
-!window.location.pathname.includes("/privacy-policy") &&
-!window.location.pathname.includes("/terms-of-service") &&
-!window.location.pathname.includes("/contact-us")) {
+if (window.location.pathname !== '/newest' &&
+    window.location.pathname !== '/newest.html' &&
+    window.location.href.indexOf('/reviews/') === -1 &&
+    window.location.href.indexOf('/mirrors/') === -1 && 
+    !window.location.pathname.includes("/privacy-policy") &&
+    !window.location.pathname.includes("/terms-of-service") &&
+    !window.location.pathname.includes("/contact-us")) {
+    
+    var newestBoxesDiv = document.createElement('div');
+    newestBoxesDiv.classList.add('newest-boxes');
+
+    if (window.location.href.indexOf('/topic/items/') !== -1 || window.location.href.indexOf('/topic/skins/') !== -1) {
+        newestBoxesDiv.classList.add('topic');
+    }
+
+    var newestBoxesTitleDiv = document.createElement('div');
+    newestBoxesTitleDiv.classList.add('newest-boxes-title');
+
+    var newestBoxesTitleBoxDiv = document.createElement('div');
+    newestBoxesTitleBoxDiv.classList.add('newest-boxes-title-box');
+    var titleSpan = document.createElement('span');
+
+    if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
+        titleSpan.textContent = 'Новые Сайты';
+    } else {
+        titleSpan.textContent = 'Recently Added';
+    }
+
+    newestBoxesTitleBoxDiv.appendChild(titleSpan);
+
+    newestBoxesTitleDiv.appendChild(newestBoxesTitleBoxDiv);
+
+    newestBoxesDiv.appendChild(newestBoxesTitleDiv);
+
+    var newestFile = languageTag === 'ru' && !window.location.pathname.startsWith("/rust") ? '/ru/newest.html' : '/newest.html';
+    fetch(newestFile)
+        .then(response => response.text())
+        .then(data => {
+            var tempDiv = document.createElement('div');
+            tempDiv.innerHTML = data;
   
-  var newestBoxesDiv = document.createElement('div');
-  newestBoxesDiv.classList.add('newest-boxes');
-
-  if (window.location.href.indexOf('/topic/items/') !== -1 || window.location.href.indexOf('/topic/skins/') !== -1) {
-      newestBoxesDiv.classList.add('topic');
+            var boxes = tempDiv.querySelectorAll('div.boxes-holder .box');
+            for (var i = 0; i < 4 && i < boxes.length; i++) {
+                newestBoxesDiv.appendChild(boxes[i].cloneNode(true));
+            }
+  
+            var footerElement = document.querySelector('footer');
+            footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
+  
+            if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
+              updateURLs(newestBoxesDiv);
+          }        
+        })
   }
 
-  var newestBoxesTitleDiv = document.createElement('div');
-  newestBoxesTitleDiv.classList.add('newest-boxes-title');
-
-  var newestBoxesTitleBoxDiv = document.createElement('div');
-  newestBoxesTitleBoxDiv.classList.add('newest-boxes-title-box');
-  var titleSpan = document.createElement('span');
-
-  if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
-      titleSpan.textContent = 'Новые Сайты';
-  } else {
-      titleSpan.textContent = 'Recently Added';
-  }
-
-  newestBoxesTitleBoxDiv.appendChild(titleSpan);
-
-  newestBoxesTitleDiv.appendChild(newestBoxesTitleBoxDiv);
-
-  newestBoxesDiv.appendChild(newestBoxesTitleDiv);
-
-  var newestFile = languageTag === 'ru' && !window.location.pathname.startsWith("/rust") ? '/ru/newest.html' : '/newest.html';
-  fetch(newestFile)
-      .then(response => response.text())
-      .then(data => {
-          var tempDiv = document.createElement('div');
-          tempDiv.innerHTML = data;
-
-          var boxes = tempDiv.querySelectorAll('div.boxes-holder .box');
-          for (var i = 0; i < 4 && i < boxes.length; i++) {
-              newestBoxesDiv.appendChild(boxes[i].cloneNode(true));
-          }
-
-          var footerElement = document.querySelector('footer');
-          footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
-
-          if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
-            updateURLs(newestBoxesDiv);
-        }        
-      })
-}
 
 const cachedContent = {};
 
