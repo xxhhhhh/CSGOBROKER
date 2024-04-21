@@ -2043,10 +2043,9 @@ nav #pagename:focus {
     margin-left: -3px;
     transition: all .15s ease-in-out;
 }
-.site-promo-copy img {
-    height: 12px;
+.site-promo-copy i {
+    color: rgb(188, 188, 188);
     transition: opacity .15s ease-in-out;
-    margin-top: 2px;
     opacity: .4;
 }
 .instruction code {
@@ -2066,7 +2065,7 @@ nav #pagename:focus {
 .site-promo-copy:hover {
     color: rgb(188, 188, 188);
 }
-.site-promo-copy:hover img {
+.site-promo-copy:hover i {
     opacity: 1;
 }
 .screentable {
