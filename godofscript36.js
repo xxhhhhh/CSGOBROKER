@@ -2261,10 +2261,12 @@ function getPageType(url) {
   }
   return 'other';
 }
-
 function isMultiBoxPage(url) {
-  return url.endsWith("/buy-skins") || url.endsWith("/buy-items") || url.endsWith("/sell-items") || url.endsWith("/trade-items") || url.endsWith("/sell-skins") || url.endsWith("/trade-skins") || url.endsWith("/instant-sell") || url.endsWith("/marketplaces") || url.endsWith("/buy-skins.html") || url.endsWith("/buy-items.html") || url.endsWith("/sell-items.html") || url.endsWith("/trade-items.html") || url.endsWith("/sell-skins.html") || url.endsWith("/trade-skins.html") || url.endsWith("/marketplaces.html") || url.endsWith("/instant-sell.html");
+  const cleanUrl = url.split('?')[0].toLowerCase();
+
+  return cleanUrl.endsWith("/buy-skins") || cleanUrl.endsWith("/buy-items") || cleanUrl.endsWith("/sell-items") || cleanUrl.endsWith("/trade-items") || cleanUrl.endsWith("/sell-skins") || cleanUrl.endsWith("/trade-skins") || cleanUrl.endsWith("/instant-sell") || cleanUrl.endsWith("/marketplaces") || cleanUrl.endsWith("/buy-skins.html") || cleanUrl.endsWith("/buy-items.html") || cleanUrl.endsWith("/sell-items.html") || cleanUrl.endsWith("/trade-items.html") || cleanUrl.endsWith("/sell-skins.html") || cleanUrl.endsWith("/trade-skins.html") || cleanUrl.endsWith("/marketplaces.html") || cleanUrl.endsWith("/instant-sell.html");
 }
+
 
 function importModsBox(boxId) {
   const existingContainer = document.querySelector('.boxes-holder');
