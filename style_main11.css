@@ -1392,14 +1392,12 @@ nav #pagename:focus {
 .siteleftpannel .navigation-menu .navigation-space {
     height: 1px;
     background: linear-gradient(56deg, rgba(0,0,0,0) 0%, rgba(255,255,255,.1) 50%, rgba(0,0,0,0) 100%);
-    /* background-color: rgb(255,255,255,.05); */
     width: 35%;
     right: 0;
     margin: 10px auto; 
 }
 .title-space {
     height: 1px;
-    /* background-color: rgb(255,255,255,.05); */
     background: linear-gradient(56deg, rgba(0,0,0,0) 0%, rgba(255,255,255,.05) 50%, rgba(0,0,0,0) 100%);
     width: 90%;
     right: 0;
@@ -1445,18 +1443,13 @@ nav #pagename:focus {
 .features .featuresbox {
     width: 100%;
     border-radius: 5px;
-    /* background: linear-gradient(150deg, rgba(0,0,0,.3) 0%, rgba(0,0,0,.3) 10%, rgba(0, 0, 0, .3) 50%, rgba(255, 255, 255, 0) 100%); */
-    /* box-shadow: 0 1px 6px 0 rgba(0,0,0,.1); */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .gamemodes .featuresbox {
     width: 100%;
-    /* border-radius: 5px 5px 0 0; */
     border-radius: 5px;
-    /* background: linear-gradient(150deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,.4) 10%, rgba(0, 0, 0, .4) 50%, rgba(255, 255, 255, 0) 100%); */
-    /* background-color: rgba(0, 0, 0 , .8); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1946,8 +1939,9 @@ nav #pagename:focus {
     vertical-align: baseline;
     position: relative;
     min-height: 30px;
-    padding: 0 3px;
+    padding: 3px;
     width: 65%;
+    line-height: 28px;
 
 }
 .instruction li a {
@@ -2011,10 +2005,7 @@ nav #pagename:focus {
     width: 100%;
     text-decoration: none;
 }
-/* .instruction-mirrors li:first-child a {
-    background-color: #a81d34;
-    border: var(--main-color) 2px solid;;
-} */
+
 .smallreview p a {
     font-weight: 500;
     color: var(--white);
@@ -2027,7 +2018,7 @@ nav #pagename:focus {
 .instruction li::marker {
     color: var(--main-color);
     font-weight: 500;
-    font-size: 15px;
+    font-size: 16px;
 }
 .instruction li strong {
     font-weight: 600 !important;
@@ -2038,8 +2029,7 @@ nav #pagename:focus {
     background: rgb(25 25 25);
     border: 2px #191919 solid;
     border-radius: 0 5px 5px 0;
-    position: absolute;
-    bottom: 5px;
+    position: relative;
     margin-left: -3px;
     transition: all .15s ease-in-out;
 }
@@ -2409,11 +2399,6 @@ nav #logo:hover {
 #notexist .category-box {
     margin: 8px 8px;
 }
-/* #notexist ul:nth-child(5),
-#notexist ul:nth-child(6),
-#notexist ul:nth-child(7) {
-    margin-top: 100px;
-} */
 .language-box {
     width: 280px;
     height: 40px;
@@ -2741,8 +2726,6 @@ nav #logo:hover {
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
-    /* background-color: var(--opacback);
-    padding-top: 8px; */
 }
 .sitedetails .methodlist a:hover {
     transform: scale(1);
@@ -3231,7 +3214,8 @@ nav img:active,
 .box .logobg img {
     width: auto;
     max-width: 250px !important;
-    max-height: 120px !important;
+    max-height: 110px !important;
+    min-width: 110px;
     height: auto;
     transition: all .2s ease-in-out;
 }
@@ -4889,6 +4873,9 @@ label:active,
         width: 98%;
         height: auto;
     }
+    .boxreview .slider-placer {
+        margin-top: unset;
+    }
     .slider-placer .controls {
         bottom: 10%;
         opacity: 1 !important;
@@ -5155,6 +5142,7 @@ label:active,
     .box .logobg img {
         max-width: 80% !important;
         max-height: 90px !important;
+        min-width: 90px;
     }
     nav #pagename {
         font-size: 13px;
@@ -5162,9 +5150,6 @@ label:active,
     nav #pagename_active {
         font-size: 13px;
     }
-    /* nav .pages {
-        width: 68%;
-    } */
     nav img {
         width: 140px;
     }
@@ -5200,8 +5185,10 @@ label:active,
     .category-selector {
         max-width: 97% !important;
     }
-    .sitedetails .sitepros span {
-        font-size: 15px;
+    .sitedetails .sitepros span,
+    .alternates-title,
+    .ratingthings .ratingway {
+        font-size: 14px !important;
         transition: all .1s ease-in-out;
     }
 }
@@ -5265,6 +5252,14 @@ label:active,
     }
 }
 @media screen and (max-width: 460px) {
+    .instruction code {
+        border-radius: 5px;
+
+    }
+    .smallreview h2, .instruction h2, .instruction h3,
+    .boxreview .plusminus .criteria .par h2, .boxreview .plusminus .criteria .par p {
+        font-size: 22px !important;
+    }
     .newest-boxes {
         width: 98%;
         justify-content: space-between;
@@ -5469,7 +5464,7 @@ label:active,
         height: auto;
     }
     .instruction ol {
-        width: 85%;
+        width: 88%;
     }
     .sitealternatesboxes {
         flex-direction: column;
