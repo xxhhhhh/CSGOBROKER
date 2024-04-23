@@ -2205,52 +2205,53 @@ if (window.location.pathname !== '/newest' &&
   }
 
 
-const cachedContent = {};
+  const cachedContent = {};
 
-const url = window.location.href.toLowerCase();
-const pageType = getPageType(url);
-
-switch (pageType) {
-  case 'csgo':
-    if (isMultiBoxPage(url)) {
-      importModsBox("csgo-skins");
-      importModsBox("csgo");
-    } else {
-      importModsBox("csgo");
-    }
-    break;
-  case 'rust':
-    if (isMultiBoxPage(url)) {
-      importModsBox("rust-skins");
-      importModsBox("rust");
-    } else {
-      importModsBox("rust");
-    }
-    break;
-  case 'dota':
-    if (isMultiBoxPage(url)) {
-      importModsBox("dota-items");
-      importModsBox("dota");
-    } else {
-      importModsBox("dota");
-    }
-    break;
-  case 'freebies':
-    importModsBox("freebies");
-    break;
-  case 'crypto':
-    importModsBox("crypto");
-    break;
-  default:
-    if (url.includes("/csgo/") || url.endsWith("/ru") || url.endsWith("/es") || url.endsWith("/tr") || url.endsWith("/pt") || url.endsWith("/hi") || url.endsWith("/") || url.endsWith("index.html") || url.endsWith("/ru.html") || url.endsWith("/es.html") || url.endsWith("/tr.html") || url.endsWith("/pt.html") || url.endsWith("/hi.html")) {
-      importModsBox("csgo");
-    } else if (url.includes("/rust/") || url.endsWith("/rust") || url.endsWith("/rust.html")) {
-      importModsBox("rust");
-    } else if (url.includes("/dota/") || url.endsWith("/dota") || url.endsWith("/dota.html")) {
-      importModsBox("dota");
-    }
-    break;
-}
+  const url = cleanUrl(window.location.href);
+  const pageType = getPageType(url);
+  
+  switch (pageType) {
+    case 'csgo':
+      if (isMultiBoxPage(url)) {
+        importModsBox("csgo-skins");
+        importModsBox("csgo");
+      } else {
+        importModsBox("csgo");
+      }
+      break;
+    case 'rust':
+      if (isMultiBoxPage(url)) {
+        importModsBox("rust-skins");
+        importModsBox("rust");
+      } else {
+        importModsBox("rust");
+      }
+      break;
+    case 'dota':
+      if (isMultiBoxPage(url)) {
+        importModsBox("dota-items");
+        importModsBox("dota");
+      } else {
+        importModsBox("dota");
+      }
+      break;
+    case 'freebies':
+      importModsBox("freebies");
+      break;
+    case 'crypto':
+      importModsBox("crypto");
+      break;
+    default:
+      if (url.includes("/csgo/") || url.endsWith("/ru") || url.endsWith("/es") || url.endsWith("/tr") || url.endsWith("/pt") || url.endsWith("/hi") || url.endsWith("/") || url.endsWith("index.html") || url.endsWith("/ru.html") || url.endsWith("/es.html") || url.endsWith("/tr.html") || url.endsWith("/pt.html") || url.endsWith("/hi.html")) {
+        importModsBox("csgo");
+      } else if (url.includes("/rust/") || url.endsWith("/rust") || url.endsWith("/rust.html")) {
+        importModsBox("rust");
+      } else if (url.includes("/dota/") || url.endsWith("/dota") || url.endsWith("/dota.html")) {
+        importModsBox("dota");
+      }
+      break;
+  }
+  
 
 function getPageType(url) {
   const pageTypes = ['csgo', 'rust', 'dota', 'freebies', 'crypto'];
@@ -2261,11 +2262,17 @@ function getPageType(url) {
   }
   return 'other';
 }
-function isMultiBoxPage(url) {
-  const cleanUrl = url.split('?')[0].toLowerCase();
 
-  return cleanUrl.endsWith("/buy-skins") || cleanUrl.endsWith("/buy-items") || cleanUrl.endsWith("/sell-items") || cleanUrl.endsWith("/trade-items") || cleanUrl.endsWith("/sell-skins") || cleanUrl.endsWith("/trade-skins") || cleanUrl.endsWith("/instant-sell") || cleanUrl.endsWith("/marketplaces") || cleanUrl.endsWith("/buy-skins.html") || cleanUrl.endsWith("/buy-items.html") || cleanUrl.endsWith("/sell-items.html") || cleanUrl.endsWith("/trade-items.html") || cleanUrl.endsWith("/sell-skins.html") || cleanUrl.endsWith("/trade-skins.html") || cleanUrl.endsWith("/marketplaces.html") || cleanUrl.endsWith("/instant-sell.html");
+function cleanUrl(url) {
+  return url.split('?')[0].toLowerCase();
 }
+
+function isMultiBoxPage(url) {
+  const cleanUrlValue = cleanUrl(url);
+
+  return cleanUrlValue.endsWith("/buy-skins") || cleanUrlValue.endsWith("/buy-items") || cleanUrlValue.endsWith("/sell-items") || cleanUrlValue.endsWith("/trade-items") || cleanUrlValue.endsWith("/sell-skins") || cleanUrlValue.endsWith("/trade-skins") || cleanUrlValue.endsWith("/instant-sell") || cleanUrlValue.endsWith("/marketplaces") || cleanUrlValue.endsWith("/buy-skins.html") || cleanUrlValue.endsWith("/buy-items.html") || cleanUrlValue.endsWith("/sell-items.html") || cleanUrlValue.endsWith("/trade-items.html") || cleanUrlValue.endsWith("/sell-skins.html") || cleanUrlValue.endsWith("/trade-skins.html") || cleanUrlValue.endsWith("/marketplaces.html") || cleanUrlValue.endsWith("/instant-sell.html");
+}
+
 
 
 function importModsBox(boxId) {
@@ -2528,7 +2535,7 @@ var ratings = {
   "Rustly":3.625,
   "CS.Money":4.5,
   "RAPIDSKINS":3.125,
-  "Aim.market":3.125,
+  "Aim.market":3.5,
   "SKINBOX":3.25,
   "Moon.Market":3.875,
   "gcskins":4.125,
@@ -2570,7 +2577,7 @@ var ratings = {
   "GamerPay":3.5,
   "CSGO-Market":3.875,
   "SkinBaron":3.5,
-  "WhiteMarket":3,
+  "WhiteMarket":3.5,
   "SkinBid":3.125,
   "iTrade.GG":3.125,
   "Avan.Market":4,
