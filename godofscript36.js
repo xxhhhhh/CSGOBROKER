@@ -276,6 +276,11 @@ document.addEventListener('DOMContentLoaded', function() {
     !window.location.pathname.endsWith("contact-us") &&
     !window.location.pathname.endsWith("404") &&
     !window.location.pathname.endsWith("terms-of-service") &&
+    window.location.pathname !== "/ru" &&
+    window.location.pathname !== "/pt" &&
+    window.location.pathname !== "/es" &&
+    window.location.pathname !== "/tr" &&
+    window.location.pathname !== "/hi" &&
     !window.location.pathname.endsWith("ru.html") &&
     !window.location.pathname.endsWith("pt.html") &&
     !window.location.pathname.endsWith("es.html") &&
