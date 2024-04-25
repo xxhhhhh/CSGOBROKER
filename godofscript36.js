@@ -265,6 +265,93 @@ document.addEventListener('DOMContentLoaded', function() {
     translateTextElements(translations);
   }
   
+  if (
+    !window.location.pathname.includes("/reviews/") &&
+    !window.location.pathname.includes("/topic/") &&
+    !window.location.pathname.includes("/mirrors/") &&
+    !window.location.pathname.endsWith("privacy-policy.html") &&
+    !window.location.pathname.endsWith("contact-us.html") &&
+    !window.location.pathname.endsWith("terms-of-service.html") &&
+    !window.location.pathname.endsWith("privacy-policy") &&
+    !window.location.pathname.endsWith("contact-us") &&
+    !window.location.pathname.endsWith("404") &&
+    !window.location.pathname.endsWith("terms-of-service") &&
+    !window.location.pathname.endsWith("ru.html") &&
+    !window.location.pathname.endsWith("pt.html") &&
+    !window.location.pathname.endsWith("es.html") &&
+    !window.location.pathname.endsWith("tr.html") &&
+    !window.location.pathname.endsWith("hi.html") &&
+    !window.location.pathname.endsWith("404.html") &&
+    !window.location.pathname.endsWith("index.html")
+  ) {
+    var currentLanguage = "";
+    
+    var htmlElement = document.querySelector('html');
+    var langAttribute = htmlElement.getAttribute('lang');
+    if (langAttribute) {
+      currentLanguage = langAttribute;
+    } else {
+      currentLanguage = "en";
+    }
+  
+    var langMenuDiv = document.querySelector(".lang-menu");
+    
+    var newContent = '<div class="selected-lang">';
+    if (currentLanguage === "en") {
+      newContent += "EN";
+    } else if (currentLanguage === "ru") {
+      newContent += "RU";
+    } else if (currentLanguage === "pt") {
+      newContent += "PT";
+    } else if (currentLanguage === "es") {
+      newContent += "ES";
+    } else if (currentLanguage === "tr") {
+      newContent += "TR";
+    } else if (currentLanguage === "hi") {
+      newContent += "HI";
+    }
+    newContent += "</div><ul>";
+    if (currentLanguage !== "en") {
+      newContent +=
+        '<li><a href="' +
+        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+        '" class="lang-switch" data-lang="en">EN</a></li>';
+    }
+    if (currentLanguage !== "ru") {
+      newContent +=
+        '<li><a href="/ru' +
+        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+        '" class="lang-switch" data-lang="ru">RU</a></li>';
+    }
+    if (currentLanguage !== "pt") {
+      newContent +=
+        '<li><a href="/pt' +
+        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+        '" class="lang-switch" data-lang="pt">PT</a></li>';
+    }
+    if (currentLanguage !== "es") {
+      newContent +=
+        '<li><a href="/es' +
+        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+        '" class="lang-switch" data-lang="es">ES</a></li>';
+    }
+    if (currentLanguage !== "tr") {
+      newContent +=
+        '<li><a href="/tr' +
+        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+        '" class="lang-switch" data-lang="tr">TR</a></li>';
+    }
+    if (currentLanguage !== "hi") {
+      newContent +=
+        '<li><a href="/hi' +
+        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
+        '" class="lang-switch" data-lang="hi">HI</a></li>';
+    }
+    newContent += "</ul>";
+  
+    langMenuDiv.innerHTML = newContent;
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     if (!window.location.pathname.includes("/skins/") &&
     !window.location.pathname.includes("/items/") &&
@@ -305,7 +392,7 @@ document.addEventListener('DOMContentLoaded', function() {
       scrollPosition = Math.max(scrollPosition, 0);
       boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
       buttonScrollPosition = scrollPosition;
-    });
+  });
   
     nextButtonContainer.addEventListener('click', () => {
       scrollPosition += boxWidth;
@@ -427,329 +514,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
     buttonsContainer.scrollLeft = buttonScrollPosition;
-  }
-  
-  function translateURLsSlider(parentElement, languageTag) {
-    var links = parentElement.querySelectorAll('a[href]');
-    var supportedLanguages = ['hi', 'tr', 'pt', 'es', 'ru'];
-    
-    for (var i = 0; i < links.length; i++) {
-        var href = links[i].getAttribute('href');
-      
-        if (!href) continue;
-      
-        var url = new URL(href, window.location.href);
-        var path = url.pathname;
-        var langIncluded = supportedLanguages.some(lang => {
-            var langWithSlashes = '/' + lang + '/';
-            return path.includes(langWithSlashes);
-        });
-      
-        if (languageTag !== 'en') {
-            if (langIncluded) {
-                path = path.replace(/\/(hi|tr|pt|es|ru)\//, '/' + languageTag + '/');
-                url.pathname = path;
-                links[i].setAttribute('href', url.href);
-            } else if (supportedLanguages.includes(languageTag)) {
-                if (path === '/') {
-                    url.pathname = '/' + languageTag;
-                } else {
-                    path = '/' + languageTag + path;
-                    url.pathname = path;
-                }
-                links[i].setAttribute('href', url.href);
-            }
-        }
-    }
-}
-
-  
-(function() {
-  var currentSlide = 0;
-  var slideShowActive = true;
-  var isTransitioning = false;
-  var navLabels;
-  var slideInterval;
-
-  function insertAfter(newNode, referenceNode) {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-  }
-
-  function showSlide(index) {
-    const slides = document.querySelectorAll('.slider-banner');
-    const totalSlides = slides.length;
-    const previousIndex = (index - 1 + totalSlides) % totalSlides;
-
-    slides.forEach((slide, i) => {
-      const isActive = i === index;
-      const isPrevious = i === previousIndex;
-
-      slide.classList.toggle('active', isActive);
-      slide.classList.toggle('previous', isPrevious);
-
-      navLabels[i].classList.toggle('active', isActive);
-    });
-  }
-
-  function nextSlide() {
-    if (slideShowActive && !isTransitioning) {
-      isTransitioning = true;
-      setTimeout(() => {
-        isTransitioning = false;
-      }, 4000);
-
-      currentSlide = (currentSlide + 1) % 3;
-      showSlide(currentSlide);
-    }
-  }
-
-  function previousSlide() {
-    if (slideShowActive && !isTransitioning) {
-      isTransitioning = true;
-      setTimeout(() => {
-        isTransitioning = false;
-      }, 4000);
-
-      currentSlide = (currentSlide - 1 + 3) % 3;
-      showSlide(currentSlide);
-    }
-  }
-
-  function startSlideShow() {
-    slideShowActive = true;
-    slideInterval = setInterval(nextSlide, 5000);
-  }
-
-  function stopSlideShow() {
-    slideShowActive = false;
-    clearInterval(slideInterval);
-  }
-
-  function createSliderControls() {
-    var controlsContainer = document.createElement('div');
-    controlsContainer.classList.add('controls');
-
-    var navControlsContainer = document.createElement('div');
-    navControlsContainer.classList.add('nav-controls');
-
-    navLabels = [];
-
-    for (var i = 0; i < 3; i++) {
-      var controlContainer = document.createElement('div');
-
-      var input = document.createElement("input");
-      input.type = "radio";
-      input.id = "triggerbanner" + (i + 1);
-      input.name = "sliderbanner";
-      input.setAttribute('aria-label', `Show slide ${i + 1} of 3`); 
-      input.addEventListener("click", function() {
-        var index = Array.from(navControlsContainer.querySelectorAll("input")).indexOf(this);
-        showSlide(index);
-      });
-
-      var label = document.createElement("label");
-      label.setAttribute("for", input.id);
-
-      controlContainer.appendChild(input);
-      controlContainer.appendChild(label);
-      navControlsContainer.appendChild(controlContainer);
-
-      navLabels.push(label);
-
-      if (i === 0) {
-        label.classList.add('active');
-      }
-    }
-
-    controlsContainer.appendChild(navControlsContainer);
-
-    return controlsContainer;
-  }
-
-  if (!window.location.pathname.includes("/privacy-policy") &&
-    !window.location.pathname.includes("/terms-of-service") &&
-    !window.location.pathname.includes("/contact-us")) {
-
-    startSlideShow();
-
-    var path = window.location.pathname;
-    var existingSliderPlacer = document.querySelector('.slider-placer');
-
-    if (existingSliderPlacer) {
-      existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
-    }
-
-    var sliderContainer = document.querySelector('.slider-container');
-    var sliderPlacer = document.createElement('div');
-    sliderPlacer.classList.add('slider-placer');
-
-    if (path.includes('/topic/skins/') || (path.includes('/topic/items/'))) {
-      sliderPlacer.classList.add('topic');
-    }
-
-    var controlsContainer = createSliderControls();
-    sliderPlacer.appendChild(controlsContainer);
-
-    var prevButton = document.createElement('button');
-    prevButton.classList.add('prev-button');
-    prevButton.innerHTML = '<i class="bi bi-chevron-left"></i>';
-    prevButton.setAttribute('aria-label', 'Prev Slide');
-    prevButton.addEventListener('click', function() {
-      var currentIndex = (currentSlide - 1 + 3) % 3;
-      currentSlide = currentIndex;
-      showSlide(currentIndex);
-    });
-    controlsContainer.insertBefore(prevButton, controlsContainer.firstChild);
-
-    var nextButton = document.createElement('button');
-    nextButton.classList.add('next-button');
-    nextButton.innerHTML = '<i class="bi bi-chevron-right"></i>';
-    nextButton.setAttribute('aria-label', 'Next Slide');
-    nextButton.addEventListener('click', function() {
-      var currentIndex = (currentSlide + 1) % 3;
-      currentSlide = currentIndex;
-      showSlide(currentIndex);
-    });
-    controlsContainer.appendChild(nextButton);
-
-    var slider1 = createSliderItem('/', '/img/best-gambling-sites-slide-2024.png', 'Best Gambling Sites', 0);
-    var slider2 = createSliderItem('/earning/offerwalls', '/img/earn-skins-slider-2024.png', 'Best Offerwall Sites', 1);
-    var slider3 = createSliderItem('/rust', '/img/best-rust-sites-slide-2024.png', 'Best Rust Sites', 2);
-
-    [slider1, slider2, slider3].forEach(slider => sliderPlacer.appendChild(slider));
-
-    var languageTag = path.match(/\/(hi|tr|pt|es|ru)(\.html)?/);
-    if (languageTag) {
-      translateURLsSlider(sliderPlacer, languageTag[1]);
-    }
-
-    if (path.includes('/mirrors/')) {
-      var sitealternates = document.querySelector('.sitealternates');
-      if (sitealternates) {
-        insertAfter(sliderPlacer, sitealternates);
-      }
-    } else if (path.includes('/reviews/')) {
-      var ratingsumm = document.querySelector('div.ratingsumm');
-      if (ratingsumm) {
-        insertAfter(sliderPlacer, ratingsumm);
-      }
-    } else {
-      var footer = document.querySelector('footer');
-      footer.parentNode.insertBefore(sliderPlacer, footer);
-    }
-    
-
-    sliderPlacer.addEventListener('mouseenter', stopSlideShow);
-    sliderPlacer.addEventListener('mouseleave', startSlideShow);
-  }
-
-  function createSliderItem(href, src, alt, index) {
-    var slider = document.createElement('a');
-    slider.href = href;
-    slider.classList.add('slider-banner');
-    var img = document.createElement('img');
-    img.src = src;
-    img.alt = alt;
-    img.draggable = false;
-    slider.appendChild(img);
-
-    if (index === 0) {
-      slider.classList.add('active');
-    }
-
-    return slider;
-  }
-})();
-
-  if (
-    !window.location.pathname.includes("/reviews/") &&
-    !window.location.pathname.includes("/topic/") &&
-    !window.location.pathname.includes("/mirrors/") &&
-    !window.location.pathname.endsWith("privacy-policy.html") &&
-    !window.location.pathname.endsWith("contact-us.html") &&
-    !window.location.pathname.endsWith("terms-of-service.html") &&
-    !window.location.pathname.endsWith("privacy-policy") &&
-    !window.location.pathname.endsWith("contact-us") &&
-    !window.location.pathname.endsWith("404") &&
-    !window.location.pathname.endsWith("terms-of-service") &&
-    window.location.pathname !== "/ru" &&
-    window.location.pathname !== "/pt" &&
-    window.location.pathname !== "/es" &&
-    window.location.pathname !== "/tr" &&
-    window.location.pathname !== "/hi" &&
-    !window.location.pathname.endsWith("ru.html") &&
-    !window.location.pathname.endsWith("pt.html") &&
-    !window.location.pathname.endsWith("es.html") &&
-    !window.location.pathname.endsWith("tr.html") &&
-    !window.location.pathname.endsWith("hi.html") &&
-    !window.location.pathname.endsWith("404.html") &&
-    !window.location.pathname.endsWith("index.html")
-  ) {
-    var currentLanguage = "";
-  
-    var languageMatch = window.location.pathname.match(/^\/([a-z]{2})\//);
-    if (languageMatch && languageMatch[1]) {
-      currentLanguage = languageMatch[1];
-    } else {
-      currentLanguage = "en";
-    }
-  
-    var langMenuDiv = document.querySelector(".lang-menu");
-  
-    var newContent = '<div class="selected-lang">';
-    if (currentLanguage === "en") {
-      newContent += "EN";
-    } else if (currentLanguage === "ru") {
-      newContent += "RU";
-    } else if (currentLanguage === "pt") {
-      newContent += "PT";
-    } else if (currentLanguage === "es") {
-      newContent += "ES";
-    } else if (currentLanguage === "tr") {
-      newContent += "TR";
-    } else if (currentLanguage === "hi") {
-      newContent += "HI";
-    }
-    newContent += "</div><ul>";
-    if (currentLanguage !== "en") {
-      newContent +=
-        '<li><a href="' +
-        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
-        '" class="lang-switch" data-lang="en">EN</a></li>';
-    }
-    if (currentLanguage !== "ru") {
-      newContent +=
-        '<li><a href="/ru' +
-        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
-        '" class="lang-switch" data-lang="ru">RU</a></li>';
-    }
-    if (currentLanguage !== "pt") {
-      newContent +=
-        '<li><a href="/pt' +
-        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
-        '" class="lang-switch" data-lang="pt">PT</a></li>';
-    }
-    if (currentLanguage !== "es") {
-      newContent +=
-        '<li><a href="/es' +
-        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
-        '" class="lang-switch" data-lang="es">ES</a></li>';
-    }
-    if (currentLanguage !== "tr") {
-      newContent +=
-        '<li><a href="/tr' +
-        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
-        '" class="lang-switch" data-lang="tr">TR</a></li>';
-    }
-    if (currentLanguage !== "hi") {
-      newContent +=
-        '<li><a href="/hi' +
-        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
-        '" class="lang-switch" data-lang="hi">HI</a></li>';
-    }
-    newContent += "</ul>";
-  
-    langMenuDiv.innerHTML = newContent;
   }
   
   const backToTopButton = document.querySelector("#back-to-top-btn");
@@ -2604,5 +2368,236 @@ var boxesHolder = document.querySelector('.boxes-holder');
 if (boxesHolder) {
   for (var boxId in ratings) {
       addStarRating(boxId, ratings[boxId]);
+  }
+}
+
+(function() {
+  var currentSlide = 0;
+  var slideShowActive = true;
+  var isTransitioning = false;
+  var navLabels;
+  var slideInterval;
+
+  function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
+
+  function showSlide(index) {
+    const slides = document.querySelectorAll('.slider-banner');
+    const totalSlides = slides.length;
+    const previousIndex = (index - 1 + totalSlides) % totalSlides;
+
+    slides.forEach((slide, i) => {
+      const isActive = i === index;
+      const isPrevious = i === previousIndex;
+
+      slide.classList.toggle('active', isActive);
+      slide.classList.toggle('previous', isPrevious);
+
+      navLabels[i].classList.toggle('active', isActive);
+    });
+  }
+
+  function nextSlide() {
+    if (slideShowActive && !isTransitioning) {
+      isTransitioning = true;
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 4000);
+
+      currentSlide = (currentSlide + 1) % 3;
+      showSlide(currentSlide);
+    }
+  }
+
+  function previousSlide() {
+    if (slideShowActive && !isTransitioning) {
+      isTransitioning = true;
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 4000);
+
+      currentSlide = (currentSlide - 1 + 3) % 3;
+      showSlide(currentSlide);
+    }
+  }
+
+  function startSlideShow() {
+    slideShowActive = true;
+    slideInterval = setInterval(nextSlide, 5000);
+  }
+
+  function stopSlideShow() {
+    slideShowActive = false;
+    clearInterval(slideInterval);
+  }
+
+  function createSliderControls() {
+    var controlsContainer = document.createElement('div');
+    controlsContainer.classList.add('controls');
+
+    var navControlsContainer = document.createElement('div');
+    navControlsContainer.classList.add('nav-controls');
+
+    navLabels = [];
+
+    for (var i = 0; i < 3; i++) {
+      var controlContainer = document.createElement('div');
+
+      var input = document.createElement("input");
+      input.type = "radio";
+      input.id = "triggerbanner" + (i + 1);
+      input.name = "sliderbanner";
+      input.setAttribute('aria-label', `Show slide ${i + 1} of 3`); 
+      input.addEventListener("click", function() {
+        var index = Array.from(navControlsContainer.querySelectorAll("input")).indexOf(this);
+        showSlide(index);
+      });
+
+      var label = document.createElement("label");
+      label.setAttribute("for", input.id);
+
+      controlContainer.appendChild(input);
+      controlContainer.appendChild(label);
+      navControlsContainer.appendChild(controlContainer);
+
+      navLabels.push(label);
+
+      if (i === 0) {
+        label.classList.add('active');
+      }
+    }
+
+    controlsContainer.appendChild(navControlsContainer);
+
+    return controlsContainer;
+  }
+
+  if (!window.location.pathname.includes("/privacy-policy") &&
+    !window.location.pathname.includes("/terms-of-service") &&
+    !window.location.pathname.includes("/contact-us")) {
+
+    startSlideShow();
+
+    var path = window.location.pathname;
+    var existingSliderPlacer = document.querySelector('.slider-placer');
+
+    if (existingSliderPlacer) {
+      existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
+    }
+
+    var sliderContainer = document.querySelector('.slider-container');
+    var sliderPlacer = document.createElement('div');
+    sliderPlacer.classList.add('slider-placer');
+
+    if (path.includes('/topic/skins/') || (path.includes('/topic/items/'))) {
+      sliderPlacer.classList.add('topic');
+    }
+
+    var controlsContainer = createSliderControls();
+    sliderPlacer.appendChild(controlsContainer);
+
+    var prevButton = document.createElement('button');
+    prevButton.classList.add('prev-button');
+    prevButton.innerHTML = '<i class="bi bi-chevron-left"></i>';
+    prevButton.setAttribute('aria-label', 'Prev Slide');
+    prevButton.addEventListener('click', function() {
+      var currentIndex = (currentSlide - 1 + 3) % 3;
+      currentSlide = currentIndex;
+      showSlide(currentIndex);
+    });
+    controlsContainer.insertBefore(prevButton, controlsContainer.firstChild);
+
+    var nextButton = document.createElement('button');
+    nextButton.classList.add('next-button');
+    nextButton.innerHTML = '<i class="bi bi-chevron-right"></i>';
+    nextButton.setAttribute('aria-label', 'Next Slide');
+    nextButton.addEventListener('click', function() {
+      var currentIndex = (currentSlide + 1) % 3;
+      currentSlide = currentIndex;
+      showSlide(currentIndex);
+    });
+    controlsContainer.appendChild(nextButton);
+
+    var slider1 = createSliderItem('/', '/img/best-gambling-sites-slide-2024.png', 'Best Gambling Sites', 0);
+    var slider2 = createSliderItem('/earning/offerwalls', '/img/earn-skins-slider-2024.png', 'Best Offerwall Sites', 1);
+    var slider3 = createSliderItem('/rust', '/img/best-rust-sites-slide-2024.png', 'Best Rust Sites', 2);
+
+    [slider1, slider2, slider3].forEach(slider => sliderPlacer.appendChild(slider));
+
+    var languageTag = path.match(/\/(hi|tr|pt|es|ru)(\.html)?/);
+    if (languageTag) {
+      translateURLsSlider(sliderPlacer, languageTag[1]);
+    }
+
+    if (path.includes('/mirrors/')) {
+      var sitealternates = document.querySelector('.sitealternates');
+      if (sitealternates) {
+        insertAfter(sliderPlacer, sitealternates);
+      }
+    } else if (path.includes('/reviews/')) {
+      var ratingsumm = document.querySelector('div.ratingsumm');
+      if (ratingsumm) {
+        insertAfter(sliderPlacer, ratingsumm);
+      }
+    } else {
+      var footer = document.querySelector('footer');
+      footer.parentNode.insertBefore(sliderPlacer, footer);
+    }
+    
+
+    sliderPlacer.addEventListener('mouseenter', stopSlideShow);
+    sliderPlacer.addEventListener('mouseleave', startSlideShow);
+  }
+
+  function createSliderItem(href, src, alt, index) {
+    var slider = document.createElement('a');
+    slider.href = href;
+    slider.classList.add('slider-banner');
+    var img = document.createElement('img');
+    img.src = src;
+    img.alt = alt;
+    img.draggable = false;
+    slider.appendChild(img);
+
+    if (index === 0) {
+      slider.classList.add('active');
+    }
+
+    return slider;
+  }
+})();
+
+function translateURLsSlider(parentElement, languageTag) {
+  var links = parentElement.querySelectorAll('a[href]');
+  var supportedLanguages = ['hi', 'tr', 'pt', 'es', 'ru'];
+  
+  for (var i = 0; i < links.length; i++) {
+      var href = links[i].getAttribute('href');
+    
+      if (!href) continue;
+    
+      var url = new URL(href, window.location.href);
+      var path = url.pathname;
+      var langIncluded = supportedLanguages.some(lang => {
+          var langWithSlashes = '/' + lang + '/';
+          return path.includes(langWithSlashes);
+      });
+    
+      if (languageTag !== 'en') {
+          if (langIncluded) {
+              path = path.replace(/\/(hi|tr|pt|es|ru)\//, '/' + languageTag + '/');
+              url.pathname = path;
+              links[i].setAttribute('href', url.href);
+          } else if (supportedLanguages.includes(languageTag)) {
+              if (path === '/') {
+                  url.pathname = '/' + languageTag;
+              } else {
+                  path = '/' + languageTag + path;
+                  url.pathname = path;
+              }
+              links[i].setAttribute('href', url.href);
+          }
+      }
   }
 }
