@@ -289,15 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
     !window.location.pathname.endsWith("404.html") &&
     !window.location.pathname.endsWith("index.html")
   ) {
-    var currentLanguage = "";
-    
-    var htmlElement = document.querySelector('html');
-    var langAttribute = htmlElement.getAttribute('lang');
-    if (langAttribute) {
-      currentLanguage = langAttribute;
-    } else {
-      currentLanguage = "en";
-    }
+    var currentLanguage = languageTag || "en";
   
     var langMenuDiv = document.querySelector(".lang-menu");
     
@@ -521,362 +513,6 @@ document.addEventListener('DOMContentLoaded', function() {
     buttonsContainer.scrollLeft = buttonScrollPosition;
   }
   
-  const backToTopButton = document.querySelector("#back-to-top-btn");
-  const settingsMenuButton = document.querySelector(".buttons-container-page");
-  
-  window.addEventListener("scroll", scrollFunction);
-  
-  function scrollFunction() {
-    if (window.pageYOffset > 300) {
-      if(!backToTopButton.classList.contains("btnEntrance")) {
-        backToTopButton.classList.remove("btnExit");
-        backToTopButton.classList.add("btnEntrance");
-        backToTopButton.style.height = "40px";
-        backToTopButton.style.border = "2px solid rgba(0,0,0,.04)";
-      }
-    }
-    else { 
-      if(backToTopButton.classList.contains("btnEntrance")) {
-        backToTopButton.classList.remove("btnEntrance");
-        backToTopButton.classList.add("btnExit");
-        setTimeout(function() {
-          backToTopButton.style.height = "0";
-          backToTopButton.style.border = "0 solid transparent";
-        }, 250);
-      }
-    }
-  }
-  
-  
-  backToTopButton.addEventListener("click", smoothScrollBackToTop);
-  
-  function smoothScrollBackToTop() {
-    const targetPosition = 0;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    const duration = 750;
-    let start = null;
-  
-    window.requestAnimationFrame(step);
-  
-    function step(timestamp) {
-      if (!start) start = timestamp;
-      const progress = timestamp - start;
-      window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
-      if (progress < duration) window.requestAnimationFrame(step);
-    }
-  }
-  
-  function easeInOutCubic(t, b, c, d) {
-    t /= d/2;
-    if (t < 1) return c/2*t*t*t + b;
-    t -= 2;
-    return c/2*(t*t*t + 2) + b;
-  }
-  
-  var siteList = document.getElementById('site-list');
-  var searchInput = document.getElementById('search-input'); 
-  var isRussianPage = window.location.pathname.includes('/ru');
-  
-  var siteTranslations = {
-    '/topic/skins/black-skins': {
-      'en': 'Black Color Skins',
-      'ru': 'Черные Скины'
-    },
-    '/topic/skins/gray-skins': {
-      'en': 'Gray Color Skins',
-      'ru': 'Серые Скины'
-    },
-    '/topic/skins/cyan-skins': {
-      'en': 'Cyan Color Skins',
-      'ru': 'Голубые Скины'
-    },
-    '/topic/skins/pink-skins': {
-      'en': 'Pink Color Skins',
-      'ru': 'Розовые Скины'
-    },
-    '/topic/skins/white-skins': {
-      'en': 'White Color Skins',
-      'ru': 'Белые Скины'
-    },
-    '/topic/skins/orange-skins': {
-      'en': 'Orange Color Skins',
-      'ru': 'Оранжевые Скины'
-    },
-    '/topic/skins/brown-skins': {
-      'en': 'Brown Color Skins',
-      'ru': 'Коричневые Скины'
-    },
-    '/topic/skins/yellow-skins': {
-      'en': 'Yellow Color Skins',
-      'ru': 'Желтые Скины'
-    },
-    '/topic/skins/blue-skins': {
-      'en': 'Blue Color Skins',
-      'ru': 'Синие Скины'
-    },
-    '/topic/skins/purple-skins': {
-      'en': 'Purple Color Skins',
-      'ru': 'Фиолетовые Скины'
-    },
-    '/topic/skins/green-skins': {
-      'en': 'Green Color Skins',
-      'ru': 'Зеленые Скины'
-    },
-    '/topic/skins/golden-skins': {
-      'en': 'Golden Color Skins',
-      'ru': 'Золотые Скины'
-    },
-    '/topic/skins': {
-      'en': 'Skins By Color',
-      'ru': 'Скины по Цвету'
-    },
-    '/topic/items': {
-      'en': 'Skins By Weapon Types',
-      'ru': 'Скины по Типу Оружия'
-    },
-    '/newest': {
-      'en': 'Newest Sites',
-      'ru': 'Новые Сайты'
-    },
-    '/dota': {
-      'en': 'Dota 2 Sites',
-      'ru': 'Сайты Dota 2'
-    },
-    '/': {
-      'en': 'CS:GO Sites',
-      'ru': 'Сайты CS:GO'
-    },
-    '/rust': {
-      'en': 'Rust Sites',
-      'ru': 'Сайты Rust'
-    },
-    '/freebies': {
-      'en': 'Sites with Freebies',
-      'ru': 'Сайты с Бонусами'
-    },
-  };
-  
-  var sites   = [
-    '<li><a href="/topic/skins/black-skins">Black Color Skins</a></li>',
-    '<li><a href="/topic/skins/gray-skins">Gray Color Skins</a></li>',
-    '<li><a href="/topic/skins/cyan-skins">Cyan Color Skins</a></li>',
-    '<li><a href="/topic/skins/pink-skins">Pink Color Skins</a></li>',
-    '<li><a href="/topic/skins/white-skins">White Color Skins</a></li>',
-    '<li><a href="/topic/skins/orange-skins">Orange Color Skins</a></li>',
-    '<li><a href="/topic/skins/brown-skins">Brown Color Skins</a></li>',
-    '<li><a href="/topic/skins/yellow-skins">Yellow Color Skins</a></li>',
-    '<li><a href="/topic/skins/blue-skins">Blue Color Skins</a></li>',
-    '<li><a href="/topic/skins/purple-skins">Purple Color Skins</a></li>',
-    '<li><a href="/topic/skins/green-skins">Green Color Skins</a></li>',
-    '<li><a href="/topic/skins/golden-skins">Golden Color Skins</a></li>',
-    '<li><a href="/topic/skins">Skins By Color</a></li>',
-    '<li><a href="/topic/items">Skins By Weapon Types</a></li>',
-    '<li><a href="/newest">Newest Sites</a></li>',
-    '<li><a href="/dota">Dota 2 Sites</a></li>',
-    '<li><a href="/">CS:GO Sites</a></li>',
-    '<li><a href="/rust">Rust Sites</a></li>',
-    '<li><a href="/freebies">Sites with Freebies</a></li>',
-    '<li><a href="/reviews/rustly">Rustly</a></li>',
-    '<li><a href="/ru/reviews/skinsly">SKINSLY</a></li>',
-    '<li><a href="/reviews/rapidskins">RAPIDSKINS</a></li>',
-    '<li><a href="/reviews/itradegg">iTrade.GG</a></li>',
-    '<li><a href="/reviews/rustmagic">RustMagic</a></li>',
-    '<li><a href="/reviews/yayskins">Yayskins</a></li>',
-    '<li><a href="/reviews/idle-empire">Idle-empire</a></li>',
-    '<li><a href="/reviews/insanegg">Insanegg</a></li>',
-    '<li><a href="/reviews/key-drop">Key-drop</a></li>',
-    '<li><a href="/reviews/knifex">Knifex</a></li>',
-    '<li><a href="/reviews/lis-skins">Lis-skins</a></li>',
-    '<li><a href="/reviews/moonmarket">Moon.Market</a></li>',
-    '<li><a href="/reviews/avanmarket">Avan.Market</a></li>',
-    '<li><a href="/reviews/aimmarket">Aim.Market</a></li>',
-    '<li><a href="/reviews/lootbear">Lootbear</a></li>',
-    '<li><a href="/reviews/lootfarm">Lootfarm</a></li>',
-    '<li><a href="/reviews/primedice">Primedice</a></li>',
-    '<li><a href="/reviews/rollbit">Rollbit</a></li>',
-    '<li><a href="/reviews/roobet">Roobet</a></li>',
-    '<li><a href="/reviews/rustbet">Rustbet</a></li>',
-    '<li><a href="/reviews/rustcases">Rustcases</a></li>',
-    '<li><a href="/reviews/rustchance">Rustchance</a></li>',
-    '<li><a href="/reviews/rustclash">Rustclash</a></li>',
-    '<li><a href="/reviews/dotaclash">Dotaclash</a></li>',
-    '<li><a href="/reviews/bounty-stars">Bounty Stars</a></li>',
-    '<li><a href="/reviews/rustmoment">Rustmoment</a></li>',
-    '<li><a href="/reviews/csgostake">CSGOStake</a></li>',
-    '<li><a href="/reviews/ruststake">Ruststake</a></li>',
-    '<li><a href="/reviews/rustyloot">Rustyloot</a></li>',
-    '<li><a href="/reviews/rustypot">Rustypot</a></li>',
-    '<li><a href="/reviews/salad">Salad</a></li>',
-    '<li><a href="/reviews/shadowpay">Shadowpay</a></li>',
-    '<li><a href="/reviews/skinbaron">Skinbaron</a></li>',
-    '<li><a href="/reviews/skinbet">Skinbet</a></li>',
-    '<li><a href="/reviews/skincashier">Skincashier</a></li>',
-    '<li><a href="/reviews/skinscash">Skinscash</a></li>',
-    '<li><a href="/reviews/skinswap">Skinswap</a></li>',
-    '<li><a href="/reviews/skinfans">Skinfans</a></li>',
-    '<li><a href="/reviews/steamgifts">Steamgifts</a></li>',
-    '<li><a href="/reviews/steamlvlup">Steamlvlup</a></li>',
-    '<li><a href="/reviews/swapgg">Swapgg</a></li>',
-    '<li><a href="/reviews/tradeit">Tradeit</a></li>',
-    '<li><a href="/reviews/vvvgamers">Vvvgamers</a></li>',
-    '<li><a href="/reviews/wtfskins">Wtfskins</a></li>',
-    '<li><a href="/reviews/xplay">Xplay</a></li>',
-    '<li><a href="/reviews/banditcamp">Banditcamp</a></li>',
-    '<li><a href="/reviews/bcgame">Bcgame</a></li>',
-    '<li><a href="/reviews/bets4pro">Bets4pro</a></li>',
-    '<li><a href="/reviews/bitskins">Bitskins</a></li>',
-    '<li><a href="/reviews/bitskins-p2p">Bitskins p2p</a></li>',
-    '<li><a href="/reviews/clashgg">Clashgg</a></li>',
-    '<li><a href="/reviews/crashgg">Crashgg</a></li>',
-    '<li><a href="/reviews/csmoney">CS.Money</a></li>',
-    '<li><a href="/reviews/csdeals">CS.Deals</a></li>',
-    '<li><a href="/reviews/csgo500">CSGO500</a></li>',
-    '<li><a href="/reviews/csgobig">CSGOBig</a></li>',
-    '<li><a href="/reviews/csgoempire">CSGOEmpire</a></li>',
-    '<li><a href="/reviews/csgofast">CSGOFast</a></li>',
-    '<li><a href="/reviews/csgolive">CSGOLive</a></li>',
-    '<li><a href="/reviews/csgoluck">CSGOLuck</a></li>',
-    '<li><a href="/reviews/csgo-market">CSGO-Market</a></li>',
-    '<li><a href="/reviews/csgopolygon">CSGOPolygon</a></li>',
-    '<li><a href="/reviews/csgopositive">CSGOPositive</a></li>',
-    '<li><a href="/reviews/csgoroll">CSGORoll</a></li>',
-    '<li><a href="/reviews/csgoselly">CSGOSelly</a></li>',
-    '<li><a href="/reviews/csgorun">CSGORUN</a></li>',
-    '<li><a href="/reviews/csfail">CSFAIL</a></li>',
-    '<li><a href="/reviews/csgo-skins">CSGO-Skins</a></li>',
-    '<li><a href="/reviews/cybershoke">Cybershoke</a></li>',
-    '<li><a href="/reviews/daddyskins">Daddyskins</a></li>',
-    '<li><a href="/reviews/datdrop">Datdrop</a></li>',
-    '<li><a href="/reviews/dmarket">Dmarket</a></li>',
-    '<li><a href="/reviews/duelbits">Duelbits</a></li>',
-    '<li><a href="/reviews/earnweb">Earnweb</a></li>',
-    '<li><a href="/reviews/farmskins">Farmskins</a></li>',
-    '<li><a href="/reviews/flamecases">Flamecases</a></li>',
-    '<li><a href="/reviews/freecash">Freecash</a></li>',
-    '<li><a href="/reviews/freeward">Freeward</a></li>',
-    '<li><a href="/reviews/gamdom">Gamdom</a></li>',
-    '<li><a href="/reviews/gamehag">Gamehag</a></li>',
-    '<li><a href="/reviews/gamerpay">Gamerpay</a></li>',
-    '<li><a href="/reviews/gametame">Gametame</a></li>',
-    '<li><a href="/reviews/gcskins">Gcskins</a></li>',
-    '<li><a href="/reviews/grindbux">Grindbux</a></li>',
-    '<li><a href="/reviews/hellcase">Hellcase</a></li>',
-    '<li><a href="/reviews/hellstore">Hellstore</a></li>',
-    '<li><a href="/reviews/howlgg">Howlgg</a></li>',
-    '<li><a href="/reviews/skinbid">SkinBid</a></li>',
-    '<li><a href="/reviews/shuffle">Shuffle</a></li>',
-    '<li><a href="/reviews/steamlevels">SteamLevels</a></li>',
-    '<li><a href="/reviews/steamlevelu">SteamLevelU</a></li>',
-    '<li><a href="/reviews/whitemarket">White.Market</a></li>',
-    '<li><a href="/reviews/hypeup">Hypeup</a></li>',
-  ];
-  
-  function compareSites(a, b) {
-    var siteNameA = a.match(/<a href=".*?">(.*?)<\/a>/)[1].toLowerCase();
-    var siteNameB = b.match(/<a href=".*?">(.*?)<\/a>/)[1].toLowerCase();
-    var searchTerm = searchInput.value.toLowerCase();
-  
-    var indexA = siteNameA.indexOf(searchTerm);
-    var indexB = siteNameB.indexOf(searchTerm);
-  
-    if (indexA === 0 && indexB !== 0) {
-      return -1;
-    } else if (indexB === 0 && indexA !== 0) {
-      return 1;
-    } else {
-      return siteNameA.localeCompare(siteNameB);
-    }
-  }
-  
-  
-  function updateSiteList() {
-    siteList.innerHTML = '';
-    sites.forEach(function (site) {
-      var li = document.createElement('li');
-      li.className = 'site-item';
-      li.style.display = 'none';
-      li.innerHTML = site;
-  
-      var link = li.querySelector('a');
-      var href = link.getAttribute('href');
-  
-      if (siteTranslations[href]) {
-        link.innerHTML = isRussianPage ? siteTranslations[href]['ru'] : siteTranslations[href]['en'];
-      }
-  
-      if (isRussianPage) {
-        link.setAttribute('href', '/ru' + href);
-      }
-  
-      li.innerHTML = '';
-      li.appendChild(link);
-  
-      siteList.appendChild(li);
-    });
-  }
-  
-  
-  function hideAllSites(siteItems) {
-    for (var i = 0; i < siteItems.length; i++) {
-        var siteItem = siteItems[i];
-        hideSite(siteItem);
-    }
-  }
-  
-  function hideSite(siteItem) {
-    siteItem.style.display = 'none';
-  }
-  
-  function showSite(siteItem) {
-    siteItem.style.display = 'flex';
-  }
-  
-  function handleSearchInput() {
-    var searchTerm = searchInput.value.toLowerCase();
-    var siteItems = siteList.getElementsByClassName('site-item');
-  
-    if (searchTerm === '') {
-      hideAllSites(siteItems);
-      siteList.style.display = 'none';
-      return;
-    }
-  
-    for (var i = 0; i < siteItems.length; i++) {
-      var siteItem = siteItems[i];
-      var siteName = siteItem.textContent.toLowerCase();
-  
-      if (
-        siteName.includes(searchTerm) ||
-        siteName.includes(' ' + searchTerm)
-      ) {
-        showSite(siteItem);
-      } else {
-        hideSite(siteItem);
-      }
-    }
-  
-    siteList.style.display = 'block';
-  }
-  
-  searchInput.addEventListener('input', handleSearchInput);
-  
-  searchInput.addEventListener('focus', function() {
-    if (searchInput.value === '') {
-        siteList.style.display = 'none';
-    } else {
-        siteList.style.display = 'block';
-    }
-  });
-  
-  searchInput.addEventListener('blur', function() {
-    setTimeout(function() {
-        siteList.style.display = 'none';
-    }, 150);
-  });
-  
-  updateSiteList();
-  
   var slides = document.getElementsByClassName("slide");
   var triggersContainer = document.querySelector(".screens");
   
@@ -1041,6 +677,359 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   });
+
+  const backToTopButton = document.querySelector("#back-to-top-btn");
+  
+  window.addEventListener("scroll", scrollFunction);
+  
+  function scrollFunction() {
+    if (window.pageYOffset > 300) {
+      if(!backToTopButton.classList.contains("btnEntrance")) {
+        backToTopButton.classList.remove("btnExit");
+        backToTopButton.classList.add("btnEntrance");
+        backToTopButton.style.height = "40px";
+        backToTopButton.style.border = "2px solid rgba(0,0,0,.04)";
+      }
+    }
+    else { 
+      if(backToTopButton.classList.contains("btnEntrance")) {
+        backToTopButton.classList.remove("btnEntrance");
+        backToTopButton.classList.add("btnExit");
+        setTimeout(function() {
+          backToTopButton.style.height = "0";
+          backToTopButton.style.border = "0 solid transparent";
+        }, 250);
+      }
+    }
+  }
+  
+  
+  backToTopButton.addEventListener("click", smoothScrollBackToTop);
+  
+  function smoothScrollBackToTop() {
+    const targetPosition = 0;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 750;
+    let start = null;
+  
+    window.requestAnimationFrame(step);
+  
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+      if (progress < duration) window.requestAnimationFrame(step);
+    }
+  }
+  
+  function easeInOutCubic(t, b, c, d) {
+    t /= d/2;
+    if (t < 1) return c/2*t*t*t + b;
+    t -= 2;
+    return c/2*(t*t*t + 2) + b;
+  }
+  
+  var siteList = document.getElementById('site-list');
+  var searchInput = document.getElementById('search-input'); 
+  var isRussianPage = window.location.pathname.includes('/ru');
+  
+  var siteTranslations = {
+    '/topic/skins/black-skins': {
+      'en': 'Black Color Skins',
+      'ru': 'Черные Скины'
+    },
+    '/topic/skins/gray-skins': {
+      'en': 'Gray Color Skins',
+      'ru': 'Серые Скины'
+    },
+    '/topic/skins/cyan-skins': {
+      'en': 'Cyan Color Skins',
+      'ru': 'Голубые Скины'
+    },
+    '/topic/skins/pink-skins': {
+      'en': 'Pink Color Skins',
+      'ru': 'Розовые Скины'
+    },
+    '/topic/skins/white-skins': {
+      'en': 'White Color Skins',
+      'ru': 'Белые Скины'
+    },
+    '/topic/skins/orange-skins': {
+      'en': 'Orange Color Skins',
+      'ru': 'Оранжевые Скины'
+    },
+    '/topic/skins/brown-skins': {
+      'en': 'Brown Color Skins',
+      'ru': 'Коричневые Скины'
+    },
+    '/topic/skins/yellow-skins': {
+      'en': 'Yellow Color Skins',
+      'ru': 'Желтые Скины'
+    },
+    '/topic/skins/blue-skins': {
+      'en': 'Blue Color Skins',
+      'ru': 'Синие Скины'
+    },
+    '/topic/skins/purple-skins': {
+      'en': 'Purple Color Skins',
+      'ru': 'Фиолетовые Скины'
+    },
+    '/topic/skins/green-skins': {
+      'en': 'Green Color Skins',
+      'ru': 'Зеленые Скины'
+    },
+    '/topic/skins/golden-skins': {
+      'en': 'Golden Color Skins',
+      'ru': 'Золотые Скины'
+    },
+    '/topic/skins': {
+      'en': 'Skins By Color',
+      'ru': 'Скины по Цвету'
+    },
+    '/topic/items': {
+      'en': 'Skins By Weapon Types',
+      'ru': 'Скины по Типу Оружия'
+    },
+    '/newest': {
+      'en': 'Newest Sites',
+      'ru': 'Новые Сайты'
+    },
+    '/dota': {
+      'en': 'Dota 2 Sites',
+      'ru': 'Сайты Dota 2'
+    },
+    '/': {
+      'en': 'CS:GO Sites',
+      'ru': 'Сайты CS:GO'
+    },
+    '/rust': {
+      'en': 'Rust Sites',
+      'ru': 'Сайты Rust'
+    },
+    '/freebies': {
+      'en': 'Sites with Freebies',
+      'ru': 'Сайты с Бонусами'
+    },
+  };
+  
+  var sites   = [
+    '<li><a href="/topic/skins/black-skins">Black Color Skins</a></li>',
+    '<li><a href="/topic/skins/gray-skins">Gray Color Skins</a></li>',
+    '<li><a href="/topic/skins/cyan-skins">Cyan Color Skins</a></li>',
+    '<li><a href="/topic/skins/pink-skins">Pink Color Skins</a></li>',
+    '<li><a href="/topic/skins/white-skins">White Color Skins</a></li>',
+    '<li><a href="/topic/skins/orange-skins">Orange Color Skins</a></li>',
+    '<li><a href="/topic/skins/brown-skins">Brown Color Skins</a></li>',
+    '<li><a href="/topic/skins/yellow-skins">Yellow Color Skins</a></li>',
+    '<li><a href="/topic/skins/blue-skins">Blue Color Skins</a></li>',
+    '<li><a href="/topic/skins/purple-skins">Purple Color Skins</a></li>',
+    '<li><a href="/topic/skins/green-skins">Green Color Skins</a></li>',
+    '<li><a href="/topic/skins/golden-skins">Golden Color Skins</a></li>',
+    '<li><a href="/topic/skins">Skins By Color</a></li>',
+    '<li><a href="/topic/items">Skins By Weapon Types</a></li>',
+    '<li><a href="/newest">Newest Sites</a></li>',
+    '<li><a href="/dota">Dota 2 Sites</a></li>',
+    '<li><a href="/">CS:GO Sites</a></li>',
+    '<li><a href="/rust">Rust Sites</a></li>',
+    '<li><a href="/freebies">Sites with Freebies</a></li>',
+    '<li><a href="/reviews/rustly">Rustly</a></li>',
+    '<li><a href="/ru/reviews/skinsly">SKINSLY</a></li>',
+    '<li><a href="/reviews/rapidskins">RAPIDSKINS</a></li>',
+    '<li><a href="/reviews/itradegg">iTrade.GG</a></li>',
+    '<li><a href="/reviews/rustmagic">RustMagic</a></li>',
+    '<li><a href="/reviews/idle-empire">Idle-empire</a></li>',
+    '<li><a href="/reviews/insanegg">Insanegg</a></li>',
+    '<li><a href="/reviews/key-drop">Key-drop</a></li>',
+    '<li><a href="/reviews/knifex">Knifex</a></li>',
+    '<li><a href="/reviews/lis-skins">Lis-skins</a></li>',
+    '<li><a href="/reviews/moonmarket">Moon.Market</a></li>',
+    '<li><a href="/reviews/avanmarket">Avan.Market</a></li>',
+    '<li><a href="/reviews/aimmarket">Aim.Market</a></li>',
+    '<li><a href="/reviews/lootbear">Lootbear</a></li>',
+    '<li><a href="/reviews/lootfarm">Lootfarm</a></li>',
+    '<li><a href="/reviews/primedice">Primedice</a></li>',
+    '<li><a href="/reviews/rollbit">Rollbit</a></li>',
+    '<li><a href="/reviews/roobet">Roobet</a></li>',
+    '<li><a href="/reviews/rustbet">Rustbet</a></li>',
+    '<li><a href="/reviews/rustcases">Rustcases</a></li>',
+    '<li><a href="/reviews/rustchance">Rustchance</a></li>',
+    '<li><a href="/reviews/rustclash">Rustclash</a></li>',
+    '<li><a href="/reviews/dotaclash">Dotaclash</a></li>',
+    '<li><a href="/reviews/bounty-stars">Bounty Stars</a></li>',
+    '<li><a href="/reviews/rustmoment">Rustmoment</a></li>',
+    '<li><a href="/reviews/csgostake">CSGOStake</a></li>',
+    '<li><a href="/reviews/ruststake">Ruststake</a></li>',
+    '<li><a href="/reviews/rustyloot">Rustyloot</a></li>',
+    '<li><a href="/reviews/rustypot">Rustypot</a></li>',
+    '<li><a href="/reviews/salad">Salad</a></li>',
+    '<li><a href="/reviews/shadowpay">Shadowpay</a></li>',
+    '<li><a href="/reviews/skinbaron">Skinbaron</a></li>',
+    '<li><a href="/reviews/skinbet">Skinbet</a></li>',
+    '<li><a href="/reviews/skincashier">Skincashier</a></li>',
+    '<li><a href="/reviews/skinscash">Skinscash</a></li>',
+    '<li><a href="/reviews/skinswap">Skinswap</a></li>',
+    '<li><a href="/reviews/skinfans">Skinfans</a></li>',
+    '<li><a href="/reviews/steamgifts">Steamgifts</a></li>',
+    '<li><a href="/reviews/steamlvlup">Steamlvlup</a></li>',
+    '<li><a href="/reviews/swapgg">Swapgg</a></li>',
+    '<li><a href="/reviews/tradeit">Tradeit</a></li>',
+    '<li><a href="/reviews/vvvgamers">Vvvgamers</a></li>',
+    '<li><a href="/reviews/wtfskins">Wtfskins</a></li>',
+    '<li><a href="/reviews/xplay">Xplay</a></li>',
+    '<li><a href="/reviews/banditcamp">Banditcamp</a></li>',
+    '<li><a href="/reviews/bcgame">Bcgame</a></li>',
+    '<li><a href="/reviews/bets4pro">Bets4pro</a></li>',
+    '<li><a href="/reviews/bitskins">Bitskins</a></li>',
+    '<li><a href="/reviews/bitskins-p2p">Bitskins p2p</a></li>',
+    '<li><a href="/reviews/clashgg">Clashgg</a></li>',
+    '<li><a href="/reviews/csmoney">CS.Money</a></li>',
+    '<li><a href="/reviews/csdeals">CS.Deals</a></li>',
+    '<li><a href="/reviews/csgo500">CSGO500</a></li>',
+    '<li><a href="/reviews/csgobig">CSGOBig</a></li>',
+    '<li><a href="/reviews/csgoempire">CSGOEmpire</a></li>',
+    '<li><a href="/reviews/csgofast">CSGOFast</a></li>',
+    '<li><a href="/reviews/csgolive">CSGOLive</a></li>',
+    '<li><a href="/reviews/csgoluck">CSGOLuck</a></li>',
+    '<li><a href="/reviews/csgo-market">CSGO-Market</a></li>',
+    '<li><a href="/reviews/csgopolygon">CSGOPolygon</a></li>',
+    '<li><a href="/reviews/csgopositive">CSGOPositive</a></li>',
+    '<li><a href="/reviews/csgoroll">CSGORoll</a></li>',
+    '<li><a href="/reviews/csgoselly">CSGOSelly</a></li>',
+    '<li><a href="/reviews/csgorun">CSGORUN</a></li>',
+    '<li><a href="/reviews/csfail">CSFAIL</a></li>',
+    '<li><a href="/reviews/csgo-skins">CSGO-Skins</a></li>',
+    '<li><a href="/reviews/cybershoke">Cybershoke</a></li>',
+    '<li><a href="/reviews/daddyskins">Daddyskins</a></li>',
+    '<li><a href="/reviews/datdrop">Datdrop</a></li>',
+    '<li><a href="/reviews/dmarket">Dmarket</a></li>',
+    '<li><a href="/reviews/duelbits">Duelbits</a></li>',
+    '<li><a href="/reviews/earnweb">Earnweb</a></li>',
+    '<li><a href="/reviews/farmskins">Farmskins</a></li>',
+    '<li><a href="/reviews/flamecases">Flamecases</a></li>',
+    '<li><a href="/reviews/freecash">Freecash</a></li>',
+    '<li><a href="/reviews/freeward">Freeward</a></li>',
+    '<li><a href="/reviews/gamdom">Gamdom</a></li>',
+    '<li><a href="/reviews/gamehag">Gamehag</a></li>',
+    '<li><a href="/reviews/gamerpay">Gamerpay</a></li>',
+    '<li><a href="/reviews/gametame">Gametame</a></li>',
+    '<li><a href="/reviews/gcskins">Gcskins</a></li>',
+    '<li><a href="/reviews/grindbux">Grindbux</a></li>',
+    '<li><a href="/reviews/hellcase">Hellcase</a></li>',
+    '<li><a href="/reviews/hellstore">Hellstore</a></li>',
+    '<li><a href="/reviews/howlgg">Howlgg</a></li>',
+    '<li><a href="/reviews/skinbid">SkinBid</a></li>',
+    '<li><a href="/reviews/shuffle">Shuffle</a></li>',
+    '<li><a href="/reviews/steamlevels">SteamLevels</a></li>',
+    '<li><a href="/reviews/steamlevelu">SteamLevelU</a></li>',
+    '<li><a href="/reviews/whitemarket">White.Market</a></li>',
+    '<li><a href="/reviews/hypeup">Hypeup</a></li>',
+  ];
+  
+  function compareSites(a, b) {
+    var siteNameA = a.match(/<a href=".*?">(.*?)<\/a>/)[1].toLowerCase();
+    var siteNameB = b.match(/<a href=".*?">(.*?)<\/a>/)[1].toLowerCase();
+    var searchTerm = searchInput.value.toLowerCase();
+  
+    var indexA = siteNameA.indexOf(searchTerm);
+    var indexB = siteNameB.indexOf(searchTerm);
+  
+    if (indexA === 0 && indexB !== 0) {
+      return -1;
+    } else if (indexB === 0 && indexA !== 0) {
+      return 1;
+    } else {
+      return siteNameA.localeCompare(siteNameB);
+    }
+  }
+  
+  
+  function updateSiteList() {
+    siteList.innerHTML = '';
+    sites.forEach(function (site) {
+      var li = document.createElement('li');
+      li.className = 'site-item';
+      li.style.display = 'none';
+      li.innerHTML = site;
+  
+      var link = li.querySelector('a');
+      var href = link.getAttribute('href');
+  
+      if (siteTranslations[href]) {
+        link.innerHTML = isRussianPage ? siteTranslations[href]['ru'] : siteTranslations[href]['en'];
+      }
+  
+      if (isRussianPage) {
+        link.setAttribute('href', '/ru' + href);
+      }
+  
+      li.innerHTML = '';
+      li.appendChild(link);
+  
+      siteList.appendChild(li);
+    });
+  }
+  
+  
+  function hideAllSites(siteItems) {
+    for (var i = 0; i < siteItems.length; i++) {
+        var siteItem = siteItems[i];
+        hideSite(siteItem);
+    }
+  }
+  
+  function hideSite(siteItem) {
+    siteItem.style.display = 'none';
+  }
+  
+  function showSite(siteItem) {
+    siteItem.style.display = 'flex';
+  }
+  
+  function handleSearchInput() {
+    var searchTerm = searchInput.value.toLowerCase();
+    var siteItems = siteList.getElementsByClassName('site-item');
+  
+    if (searchTerm === '') {
+      hideAllSites(siteItems);
+      siteList.style.display = 'none';
+      return;
+    }
+  
+    for (var i = 0; i < siteItems.length; i++) {
+      var siteItem = siteItems[i];
+      var siteName = siteItem.textContent.toLowerCase();
+  
+      if (
+        siteName.includes(searchTerm) ||
+        siteName.includes(' ' + searchTerm)
+      ) {
+        showSite(siteItem);
+      } else {
+        hideSite(siteItem);
+      }
+    }
+  
+    siteList.style.display = 'block';
+  }
+  
+  searchInput.addEventListener('input', handleSearchInput);
+  
+  searchInput.addEventListener('focus', function() {
+    if (searchInput.value === '') {
+        siteList.style.display = 'none';
+    } else {
+        siteList.style.display = 'block';
+    }
+  });
+  
+  searchInput.addEventListener('blur', function() {
+    setTimeout(function() {
+        siteList.style.display = 'none';
+    }, 150);
+  });
+  
+  updateSiteList();
         
         document.addEventListener('DOMContentLoaded', function() {
           document.querySelector('.search-enabler').addEventListener('click', function() {
