@@ -541,6 +541,7 @@ document.addEventListener('DOMContentLoaded', function() {
       input.type = "radio";
       input.id = "triggerbanner" + (i + 1);
       input.name = "sliderbanner";
+      input.setAttribute('aria-label', `Show slide ${i + 1} of 3`); 
       input.addEventListener("click", function() {
         var index = Array.from(navControlsContainer.querySelectorAll("input")).indexOf(this);
         showSlide(index);

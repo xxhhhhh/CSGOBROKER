@@ -1938,10 +1938,9 @@ nav #pagename:focus {
     list-style: decimal;
     vertical-align: baseline;
     position: relative;
-    min-height: 30px;
+    line-height: 27px;
     padding: 3px;
     width: 65%;
-    line-height: 28px;
 
 }
 .instruction li a {
@@ -2017,7 +2016,7 @@ nav #pagename:focus {
 }
 .instruction li::marker {
     color: var(--main-color);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
 }
 .instruction li strong {
@@ -5085,6 +5084,7 @@ label:active,
     .instruction li {
         font-size: 16px !important;
         width: 100%;
+        line-height: 28px;
     }
     .sitepage {
         height: auto;
