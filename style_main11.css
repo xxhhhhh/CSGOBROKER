@@ -4996,7 +4996,8 @@ label:active,
         display: none;
     }
     body {
-        background: linear-gradient(360deg, rgba(18,18,18,1) 0%, rgb(20, 20, 20) 100%);
+        background: unset;
+        background-color: #141414;
     }
     nav {
         width: 92%;
