@@ -352,6 +352,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('DOMContentLoaded', function() {
     if (!window.location.pathname.includes("/skins/") &&
     !window.location.pathname.includes("/items/") &&
+    !window.location.pathname.includes("/sticker-crafts/") &&
     !window.location.pathname.includes("/reviews") &&
     !window.location.pathname.includes("/mirrors") &&
     !window.location.pathname.includes("/privacy-policy") &&
@@ -1919,7 +1920,7 @@ if (window.location.pathname !== '/newest' &&
     var newestBoxesDiv = document.createElement('div');
     newestBoxesDiv.classList.add('newest-boxes');
 
-    if (window.location.href.indexOf('/topic/items/') !== -1 || window.location.href.indexOf('/topic/skins/') !== -1) {
+    if (window.location.href.indexOf('/topic/items/') !== -1 || window.location.href.indexOf('/topic/sticker-crafts/') !== -1 || window.location.href.indexOf('/topic/skins/') !== -1) {
         newestBoxesDiv.classList.add('topic');
     }
 
@@ -2484,7 +2485,7 @@ if (boxesHolder) {
     var sliderPlacer = document.createElement('div');
     sliderPlacer.classList.add('slider-placer');
 
-    if (path.includes('/topic/skins/') || (path.includes('/topic/items/'))) {
+    if (path.includes('/topic/skins/') || (path.includes('/topic/items/') || (path.includes('/topic/sticker-crafts/')))) {
       sliderPlacer.classList.add('topic');
     }
 

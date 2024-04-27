@@ -455,13 +455,57 @@ nav #pagename:focus {
     font-size: 22px;
     color: var(--white);
 }
+.sitepage.topic-craft .boxtopic {
+    background: var(--opacback);
+    min-height: 1000px;
+}
 .boxtopic {
     width: 65%;
-    /* left: 0; */
     padding-top: 0;
     background: unset;
     justify-content: flex-start;
     min-height: 600px;
+}
+.sitepage.topic-craft .box-topic {
+    height: 240px;
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+}
+.sitepage.topic-craft .navigation-section.first span {
+    padding: 8px 8px 2px 8px;
+}
+.sitepage.topic-craft .navigation-section.second span {
+    padding: 0 8px 8px 8px;
+    font-size: 12px;
+    opacity: .4;
+}
+.sitepage.topic-craft .navigation-section.third {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 130px;
+}
+.sitepage.topic-craft .component-box {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    background-color: #121212;
+    border: 2px solid #141414;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sitepage.topic-craft .component-box img {
+    height: 90%;
+    width: 90%;
+}
+.topic-box .logobg img {
+    height: 55%;
+    transform: rotate(8deg);
+    margin: auto 0;
 }
 .box-topic {
     top: 16px;
@@ -581,17 +625,6 @@ nav #pagename:focus {
 .navigation-section .site-searcher-box.enabled .site-searcher-logo {
     opacity: 1;
 }
-/* .site-searcher-unit {
-    position: relative;
-    font-size: 16px;
-    color: var(--white);
-    font-weight: 500;
-    height: 100%;
-    width: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-} */
 .site-searcher-logo {
     position: relative;
     align-items: center;
@@ -607,8 +640,9 @@ nav #pagename:focus {
     height: auto;
 }
 .site-searcher-box[title]:hover:after,
-.navigation-weapon-sort[title]:hover:after {
-    transition: .2s all ease-in-out;
+.navigation-weapon-sort[title]:hover:after,
+.sitepage.topic-craft .component-box[title]:hover:after {
+    transition: .15s all ease-in-out;
     position: absolute;
     color: var(--white);
     content: attr(title);
@@ -619,9 +653,12 @@ nav #pagename:focus {
     font-weight: 500;
     margin-top: -58px;
     border-radius: 5px;
-    background-color: #111111;
-    border: 2px solid #0f0f0f;
+    background-color: #121212;
+    border: 2px solid #141414;
     align-items: center;
+  }
+  .sitepage.topic-craft .component-box[title]:hover:after {
+    font-size: 8px;
   }
 .navigation-weapon-type {
     padding: 5px;
@@ -2834,9 +2871,6 @@ nav #logo:hover {
 }
 .topic-box .logobg {
     transition: all .2s ease-in-out;
-}
-.topic-box .logobg img {
-    height: 100%;
 }
 .topic-box:hover .logobg {
     transform: scale(1.03);
