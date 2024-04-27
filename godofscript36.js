@@ -2186,27 +2186,29 @@ function translateElement(element, targetLang) {
 }
 
 $(document).ready(function () {
-  var boxtopic = $('.boxtopic');
-  if (boxtopic.length) {
-      var urlnav = '/code-parts/micro-parts/nav-topic-box.html';
-      $.get(urlnav, function (data) {
-          boxtopic.append(data);
+  if (isTopicItemsLink()) {
+    var boxtopic = $('.boxtopic');
+    if (boxtopic.length) {
+        var urlnav = '/code-parts/micro-parts/nav-topic-box.html';
+        $.get(urlnav, function (data) {
+            boxtopic.append(data);
 
-          boxtopic.on('click', '.topic-nav-box', function () {
-              toggleActiveClass($(this));
-              toggleActiveClass($('.topic-nav-selector'));
-          });
+            boxtopic.on('click', '.topic-nav-box', function () {
+                toggleActiveClass($(this));
+                toggleActiveClass($('.topic-nav-selector'));
+            });
 
-          boxtopic.on('click', '.topic-nav-close', function () {
-              toggleActiveClass($('.topic-nav-selector'));
-          });
+            boxtopic.on('click', '.topic-nav-close', function () {
+                toggleActiveClass($('.topic-nav-selector'));
+            });
 
-          boxtopic.on('click', '.weapon-container', function () {
-              var clickedContainer = $(this);
-              $('.weapon-container').not(clickedContainer).removeClass('active');
-              toggleActiveClass(clickedContainer);
-          });
-      });
+            boxtopic.on('click', '.weapon-container', function () {
+                var clickedContainer = $(this);
+                $('.weapon-container').not(clickedContainer).removeClass('active');
+                toggleActiveClass(clickedContainer);
+            });
+        });
+    }
   }
 });
 
@@ -2219,6 +2221,8 @@ function isTopicItemsLink() {
 }
 
 function loadExternalContent(url, targetElement) {
+  if (!isTopicItemsLink()) return;
+
   fetch(url)
       .then(response => {
           if (!response.ok) {
@@ -2228,8 +2232,6 @@ function loadExternalContent(url, targetElement) {
       })
       .then(data => {
           targetElement.innerHTML = data + targetElement.innerHTML;
-
-          if (!isTopicItemsLink()) return;
 
           const topicNavBox = document.querySelector('.topic-nav-box');
           const topicNavSelector = document.querySelector('.topic-nav-selector');
@@ -2255,8 +2257,9 @@ function loadExternalContent(url, targetElement) {
                   toggleActiveClass(container);
               });
           });
-      })
+      });
 }
+
 
 var ratings = {
   "csgo500": 4.625,
