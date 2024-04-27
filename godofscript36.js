@@ -1655,9 +1655,9 @@ document.addEventListener('DOMContentLoaded', function () {
         function insertRandomAdsBox() {
           var currentPath = window.location.pathname;
       
-          if (currentPath.includes('/topic/skins/') && currentPath.includes('/ru/') || (currentPath.includes('/topic/items/') && currentPath.includes('/ru/'))) {
+          if (currentPath.includes('/topic/skins/') && currentPath.includes('/ru/') || currentPath.includes('/topic/sticker-crafts/') && currentPath.includes('/ru/') || (currentPath.includes('/topic/items/') && currentPath.includes('/ru/'))) {
             var adsFilePath = '/code-parts/topic-ads-ru.html';
-        } else if (currentPath.includes('/topic/skins/') || (currentPath.includes('/topic/items/'))) {
+        } else if (currentPath.includes('/topic/skins/') || currentPath.includes('/topic/sticker-crafts/') || (currentPath.includes('/topic/items/'))) {
             var adsFilePath = '/code-parts/topic-ads.html';
         } else {
             return;
@@ -2596,3 +2596,22 @@ function translateURLsSlider(parentElement, languageTag) {
       }
   }
 }
+
+$(document).ready(function(){
+  $('.crafting-table-step').click(function(){
+      $('.crafting-table-step').removeClass('active');
+      $('.crafting-table-screen').removeClass('active');
+      $(this).addClass('active');
+      var index = $(this).index();
+      $('.crafting-table-screen').eq(index).addClass('active');
+  });
+
+  $('.preview-craft-unit').click(function(){
+      if ($(this).hasClass('preview')) {
+          $('.preview-craft-unit').removeClass('preview');
+      } else {
+          $('.preview-craft-unit').removeClass('preview');
+          $(this).addClass('preview');
+      }
+  });
+});
