@@ -1914,6 +1914,7 @@ if (window.location.pathname !== '/newest' &&
     window.location.href.indexOf('/reviews/') === -1 &&
     window.location.href.indexOf('/mirrors/') === -1 && 
     !window.location.pathname.includes("/privacy-policy") &&
+    !window.location.pathname.includes("/sticker-crafts/") &&
     !window.location.pathname.includes("/terms-of-service") &&
     !window.location.pathname.includes("/contact-us")) {
     
