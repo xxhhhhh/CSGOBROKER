@@ -2602,6 +2602,8 @@ nav #logo:hover {
     display: flex;
     justify-content: space-between;
     margin: 9px 0;
+    height: 60px;
+    transition: .25s all ease-in-out;
 }
 .menu-toggle {
     width: 50px;
@@ -2694,7 +2696,7 @@ nav #logo:hover {
     color: var(--white);
     display: flex;
     align-items: center;
-    transition: .2s all ease-in-out;
+    transition: .25s all ease-in-out;
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     overflow: hidden;
     flex-direction: column;
@@ -2707,7 +2709,7 @@ nav #logo:hover {
     margin-left: 4.5px;
 }
 .sitedetails .methodlist {
-    height: 50%;
+    height: auto;
     position: relative;
     transition: height .9s ease-in-out;
     display: flex;

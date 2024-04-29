@@ -529,7 +529,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $('.sitepros').click(function() {
       $(this).toggleClass("active");
-  });    
+      var $methodlist = $(this).find('.methodlist');
+      var methodlistHeight = $methodlist.outerHeight(true);
+      var totalHeight = $(this).height() + methodlistHeight;
+      var $parent = $(this).parent('.sitedetails');
+      var $otherActiveSitepros = $(this).siblings('.sitepros.active');
+      var currentHeight = parseInt($parent.css('height'));
+      if ($(this).hasClass("active")) {
+          if (currentHeight < totalHeight) {
+              $parent.css('height', totalHeight + 'px');
+          }
+      } else if ($otherActiveSitepros.length === 0) {
+          $parent.css('height', '60px');
+      }
+  });
+  
+    
 
     function removeAllTriggers() {
       var existingTriggers = triggersContainer.querySelectorAll(
