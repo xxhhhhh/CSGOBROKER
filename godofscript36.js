@@ -2349,6 +2349,7 @@ var ratings = {
   "Skins.Cash":2.625,
   "RustCases":3.375,
   "SteamLevels":3.5,
+  "GGDROP":4,
 };
 
 function addStarRating(boxId, rating) {
