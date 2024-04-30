@@ -527,8 +527,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     var ratingsumm = document.querySelector(".ratingsumm");
     var sitealternates = document.querySelector(".sitealternates");
-
-    if (sitealternates) {
+    
+    if (ratingsumm && sitealternates) {
       ratingsumm.parentNode.insertBefore(
         sitealternates,
         ratingsumm.nextSibling
@@ -2271,9 +2271,12 @@ $(document).ready(function(){
   sliderContainer.append(slider1, slider2, slider3);
 
   var path = window.location.pathname;
-  if (path.includes('/reviews/') || path.includes('/mirrors/')) {
+  if (path.includes('/reviews/')) {
     var ratingsumm = $('.ratingsumm');
     sliderContainer.insertAfter(ratingsumm);
+  } else if (path.includes('/mirrors/')) {
+    var sitealternates = $('.sitealternates');
+    sliderContainer.insertAfter(sitealternates);
   } else if (path.includes('/topic/') && $('.boxtopic').length > 0) {
     var boxTopic = $('.boxtopic');
     boxTopic.append(sliderContainer);
