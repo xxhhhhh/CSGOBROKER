@@ -349,350 +349,224 @@ document.addEventListener('DOMContentLoaded', function() {
     langMenuDiv.innerHTML = newContent;
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    if (!window.location.pathname.includes("/skins/") &&
-    !window.location.pathname.includes("/items/") &&
-    !window.location.pathname.includes("/sticker-crafts/") &&
-    !window.location.pathname.includes("/reviews") &&
-    !window.location.pathname.includes("/mirrors") &&
-    !window.location.pathname.includes("/privacy-policy") &&
-    !window.location.pathname.includes("/terms-of-service") &&
-    !window.location.pathname.includes("/contact-us")) {
-      
-    const boxContainer = document.querySelector('.category-selector');
-    const SpaceboxContainer = document.querySelector('.category-space');
-    const buttonsContainer = document.createElement('div');
-    const prevButtonContainer = document.createElement('button');
-    const nextButtonContainer = document.createElement('button');
-    const boxes = boxContainer.querySelectorAll('.category-box');
-    const boxWidth = boxes[0].offsetWidth + (2 * 9);
-    const containerWidth = boxWidth * 4;
-    let scrollPosition = 0;
-    let buttonScrollPosition = 0;
-  
-    buttonsContainer.classList.add('buttons-container');
-    prevButtonContainer.classList.add('controls-button');
-    prevButtonContainer.setAttribute('aria-label', 'Prev Category');
-    prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left""></i>';
-    nextButtonContainer.classList.add('controls-button');
-    nextButtonContainer.setAttribute('aria-label', 'Next Category');
-    nextButtonContainer.innerHTML = '<i class="bi bi-chevron-right"></i>';
-  
-    buttonsContainer.appendChild(prevButtonContainer);
-    buttonsContainer.appendChild(nextButtonContainer);
-  
-    boxContainer.parentNode.insertBefore(buttonsContainer, SpaceboxContainer);
-  
-    boxContainer.style.width = `${containerWidth}px`;
-  
-    prevButtonContainer.addEventListener('click', () => {
-      scrollPosition -= boxWidth;
-      scrollPosition = Math.max(scrollPosition, 0);
-      boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
-      buttonScrollPosition = scrollPosition;
-  });
-  
-    nextButtonContainer.addEventListener('click', () => {
-      scrollPosition += boxWidth;
-      scrollPosition = Math.min(scrollPosition, boxContainer.scrollWidth - containerWidth);
-      boxContainer.scroll({ left: scrollPosition, behavior: 'smooth' });
-      buttonScrollPosition = scrollPosition;
-    });
-  
-    let isMouseDown = false;
-    let startX = 0;
-    let scrollLeft = 0;
-    
-    boxContainer.addEventListener('click', (e) => {
-      if (e.target.tagName === 'a' && e.target.closest('.category-box')) {
-        e.preventDefault();
-      }
-    });
-    
+  document.addEventListener("DOMContentLoaded", function () {
+    if (
+      !window.location.pathname.includes("/skins/") &&
+      !window.location.pathname.includes("/items/") &&
+      !window.location.pathname.includes("/sticker-crafts/") &&
+      !window.location.pathname.includes("/reviews") &&
+      !window.location.pathname.includes("/mirrors") &&
+      !window.location.pathname.includes("/privacy-policy") &&
+      !window.location.pathname.includes("/terms-of-service") &&
+      !window.location.pathname.includes("/contact-us")
+    ) {
+      const boxContainer = document.querySelector(".category-selector");
+      const SpaceboxContainer = document.querySelector(".category-space");
+      const buttonsContainer = document.createElement("div");
+      const prevButtonContainer = document.createElement("button");
+      const nextButtonContainer = document.createElement("button");
+      const boxes = boxContainer.querySelectorAll(".category-box");
+      const boxWidth = boxes[0].offsetWidth + 2 * 9;
+      const containerWidth = boxWidth * 4;
+      let scrollPosition = 0;
+      let buttonScrollPosition = 0;
 
-    boxContainer.addEventListener('scroll', () => {
-      if (boxContainer.scrollLeft === 0) {
-        prevButtonContainer.classList.add('disabled');
-      } else {
-        prevButtonContainer.classList.remove('disabled');
-      }
-    
-      const maxScrollLeft = boxContainer.scrollWidth - boxContainer.clientWidth;
-      if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
-        nextButtonContainer.classList.add('disabled');
-      } else {
-        nextButtonContainer.classList.remove('disabled');
-      }
-    });
-    
-    if (boxContainer.scrollLeft === 0) {
-      prevButtonContainer.classList.add('disabled');
-    }
-    const maxScrollLeft = boxContainer.scrollWidth - boxContainer.clientWidth;
-    if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
-      nextButtonContainer.classList.add('disabled');
-    }
+      buttonsContainer.classList.add("buttons-container");
+      prevButtonContainer.classList.add("controls-button");
+      prevButtonContainer.setAttribute("aria-label", "Prev Category");
+      prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left""></i>';
+      nextButtonContainer.classList.add("controls-button");
+      nextButtonContainer.setAttribute("aria-label", "Next Category");
+      nextButtonContainer.innerHTML = '<i class="bi bi-chevron-right"></i>';
 
+      buttonsContainer.appendChild(prevButtonContainer);
+      buttonsContainer.appendChild(nextButtonContainer);
 
+      boxContainer.parentNode.insertBefore(buttonsContainer, SpaceboxContainer);
 
-    boxContainer.addEventListener('mousedown', (e) => {
-      e.preventDefault();
-      isMouseDown = true;
-      startX = e.pageX - boxContainer.offsetLeft;
-      scrollLeft = boxContainer.scrollLeft;
-    });
-  
-    boxContainer.addEventListener('mousemove', (e) => {
-      if (!isMouseDown) return;
-      e.preventDefault();
-      const x = e.pageX - boxContainer.offsetLeft;
-      const walk = (x - startX) * 0.6;
-      const newScrollLeft = scrollLeft - walk;
-      boxContainer.scrollLeft = newScrollLeft;
-      buttonScrollPosition = newScrollLeft;
-    });
-  
-    boxContainer.addEventListener('mouseup', () => {
-      isMouseDown = false;
-    });
-  
-    boxContainer.addEventListener('mouseleave', () => {
-      isMouseDown = false;
-    });
-  
-    boxContainer.addEventListener('touchstart', (e) => {
-      const touch = e.touches[0];
-      isMouseDown = true;
-      startX = touch.pageX - boxContainer.offsetLeft;
-      scrollLeft = boxContainer.scrollLeft;
-    });
-  
-    boxContainer.addEventListener('touchmove', (e) => {
-      if (!isMouseDown) return;
-      e.preventDefault();
-      const touch = e.touches[0];
-      const x = touch.pageX - boxContainer.offsetLeft;
-      const walk = (x - startX) * 1.2;
-      const newScrollLeft = scrollLeft - walk;
-      boxContainer.scrollLeft = newScrollLeft;
-      buttonScrollPosition = newScrollLeft;
-    });
-  
-    boxContainer.addEventListener('touchend', () => {
-      isMouseDown = false;
-    });
-  
-    var categorySelector = document.querySelector('div.category-selector');
-    var ulElements = categorySelector.querySelectorAll('div.category-selector > ul');
-    var ulArray = Array.from(ulElements);
-  
-    ulArray.sort(function(a, b) {
-      var aIsActive = a.querySelector('li a.category-box').classList.contains('active');
-      var bIsActive = b.querySelector('li a.category-box').classList.contains('active');
-    
-      if (aIsActive && !bIsActive) {
-        return -1;
-      } else if (!aIsActive && bIsActive) {
-        return 1;
-      } else if (a.querySelector('li a.category-box').classList.contains('last')) {
-        return 1;
-      } else if (b.querySelector('li a.category-box').classList.contains('last')) {
-        return -1;
-      } else {
-        return Math.random() - 0.5;
-      }
-    });  
-  
-    while (categorySelector.firstChild) {
-      categorySelector.removeChild(categorySelector.firstChild);
-    }
-  
-    ulArray.forEach(function (ul) {
-      categorySelector.appendChild(ul);
-    });
-  
-    buttonsContainer.scrollLeft = buttonScrollPosition;
-  }
-  
-  var slides = document.getElementsByClassName("slide");
-  var triggersContainer = document.querySelector(".screens");
-  
-  var currentIndex = 0;
-  var slideInterval;
-  var startX = 0;
-  var threshold = 100;
-  
-  var prevButton = document.querySelector(".prev-button");
-  var nextButton = document.querySelector(".next-button");
-  
-  if (window.location.pathname.includes("/reviews/")) {
+      boxContainer.style.width = `${containerWidth}px`;
 
-    $('.sitepros').click(function() {
-      $(this).toggleClass("active");
-      var $methodlist = $(this).find('.methodlist');
-      var methodlistHeight = $methodlist.outerHeight(true);
-      var totalHeight = $(this).height() + methodlistHeight;
-      var $parent = $(this).parent('.sitedetails');
-      var $otherActiveSitepros = $(this).siblings('.sitepros.active');
-      var currentHeight = parseInt($parent.css('height'));
-      if ($(this).hasClass("active")) {
-          if (currentHeight < totalHeight) {
-              $parent.css('height', totalHeight + 'px');
-          }
-      } else if ($otherActiveSitepros.length === 0) {
-          $parent.css('height', '60px');
-      }
-  });
-  
-    
-
-    function removeAllTriggers() {
-      var existingTriggers = triggersContainer.querySelectorAll(
-        "input[type='radio'], label"
-      );
-      existingTriggers.forEach(function (trigger) {
-        triggersContainer.removeChild(trigger);
+      prevButtonContainer.addEventListener("click", () => {
+        scrollPosition -= boxWidth;
+        scrollPosition = Math.max(scrollPosition, 0);
+        boxContainer.scroll({ left: scrollPosition, behavior: "smooth" });
+        buttonScrollPosition = scrollPosition;
       });
-    }
-    function createTrigger(index) {
-      var trigger = document.createElement("input");
-      trigger.type = "radio";
-      trigger.id = "trigger" + (index + 1);
-      trigger.name = "slider";
-      if (index === currentIndex) {
-        trigger.checked = true;
-      }
-    
-      trigger.addEventListener("change", function () {
-        var previousSlide = slides[currentIndex];
-        previousSlide.classList.remove("active");
-        currentIndex = index;
-        showSlide(currentIndex, null);
-        startSlideShow();
-      });
-    
-      var label = document.createElement("label");
-      label.setAttribute("for", trigger.id);
-    
-      triggersContainer.appendChild(trigger);
-      triggersContainer.appendChild(label);
-    }
-    
-    var ratingsumm = document.querySelector('.ratingsumm');
-    var sitealternates = document.querySelector('.sitealternates');
-    
-    if (sitealternates) {
-      ratingsumm.parentNode.insertBefore(sitealternates, ratingsumm.nextSibling);
-    }
 
-    function createTriggers() {
-      removeAllTriggers();
-      for (var i = 0; i < slides.length; i++) {
-        createTrigger(i);
-      }
-    }
-    
-    function showSlide(index, direction) {
-      var currentSlide = slides[currentIndex];
-      var nextSlide = slides[index];
-    
-      currentSlide.classList.remove("active", "next", "previous");
-      nextSlide.classList.add("active");
-    
-      if (direction === "next") {
-        nextSlide.classList.add("next");
-      } else if (direction === "previous") {
-        nextSlide.classList.add("previous");
-      }
-    
-      currentIndex = index;
-    
-      var triggerLabels = triggersContainer.querySelectorAll("label");
-      triggerLabels.forEach(function (label, labelIndex) {
-        if (labelIndex === index) {
-          label.classList.add("active");
-        } else {
-          label.classList.remove("active");
+      nextButtonContainer.addEventListener("click", () => {
+        scrollPosition += boxWidth;
+        scrollPosition = Math.min(
+          scrollPosition,
+          boxContainer.scrollWidth - containerWidth
+        );
+        boxContainer.scroll({ left: scrollPosition, behavior: "smooth" });
+        buttonScrollPosition = scrollPosition;
+      });
+
+      let isMouseDown = false;
+      let startX = 0;
+      let scrollLeft = 0;
+
+      boxContainer.addEventListener("click", (e) => {
+        if (e.target.tagName === "a" && e.target.closest(".category-box")) {
+          e.preventDefault();
         }
       });
-    
-      if (currentIndex === 0) {
-        prevButton.disabled = true;
-        nextButton.disabled = false;
-      } else if (currentIndex === slides.length - 1) {
-        prevButton.disabled = false;
-        nextButton.disabled = true;
-      } else {
-        prevButton.disabled = false;
-        nextButton.disabled = false;
+
+      boxContainer.addEventListener("scroll", () => {
+        if (boxContainer.scrollLeft === 0) {
+          prevButtonContainer.classList.add("disabled");
+        } else {
+          prevButtonContainer.classList.remove("disabled");
+        }
+
+        const maxScrollLeft =
+          boxContainer.scrollWidth - boxContainer.clientWidth;
+        if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
+          nextButtonContainer.classList.add("disabled");
+        } else {
+          nextButtonContainer.classList.remove("disabled");
+        }
+      });
+
+      if (boxContainer.scrollLeft === 0) {
+        prevButtonContainer.classList.add("disabled");
       }
-    }
-    
-    createTriggers();
-    
-    triggersContainer.addEventListener("touchstart", function (event) {
-      startX = event.touches[0].clientX;
-    });
-    
-    triggersContainer.addEventListener("touchend", function (event) {
-      var endX = event.changedTouches[0].clientX;
-      var deltaX = endX - startX;
-    
-      if (deltaX > threshold) {
-        previousSlide();
-        startSlideShow();
-      } else if (deltaX < -threshold) {
-        nextSlide();
-        startSlideShow();
+      const maxScrollLeft = boxContainer.scrollWidth - boxContainer.clientWidth;
+      if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
+        nextButtonContainer.classList.add("disabled");
       }
-    });
-    
-    triggersContainer.addEventListener("mouseenter", function () {
-      stopSlideShow();
-    });
-    
-    triggersContainer.addEventListener("mouseleave", function () {
-      startSlideShow();
-    });
-    
-    
-    function startSlideShow() {
-      stopSlideShow();
-      slideInterval = setInterval(nextSlide, 5000);
-    }
-    
-    function stopSlideShow() {
-      clearInterval(slideInterval);
-    }
-    
-    function nextSlide() {
-      var nextIndex = (currentIndex + 1) % slides.length;
-      showSlide(nextIndex, "next");
-    }
-    
-    function previousSlide() {
-      var previousIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(previousIndex, "previous");
-    }
-    
-    showSlide(currentIndex);
-    startSlideShow();
-    
-    prevButton.addEventListener("click", function () {
-      if (currentIndex !== 0) {
-        previousSlide();
-        startSlideShow();
+
+      boxContainer.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        isMouseDown = true;
+        startX = e.pageX - boxContainer.offsetLeft;
+        scrollLeft = boxContainer.scrollLeft;
+      });
+
+      boxContainer.addEventListener("mousemove", (e) => {
+        if (!isMouseDown) return;
+        e.preventDefault();
+        const x = e.pageX - boxContainer.offsetLeft;
+        const walk = (x - startX) * 0.6;
+        const newScrollLeft = scrollLeft - walk;
+        boxContainer.scrollLeft = newScrollLeft;
+        buttonScrollPosition = newScrollLeft;
+      });
+
+      boxContainer.addEventListener("mouseup", () => {
+        isMouseDown = false;
+      });
+
+      boxContainer.addEventListener("mouseleave", () => {
+        isMouseDown = false;
+      });
+
+      boxContainer.addEventListener("touchstart", (e) => {
+        const touch = e.touches[0];
+        isMouseDown = true;
+        startX = touch.pageX - boxContainer.offsetLeft;
+        scrollLeft = boxContainer.scrollLeft;
+      });
+
+      boxContainer.addEventListener("touchmove", (e) => {
+        if (!isMouseDown) return;
+        e.preventDefault();
+        const touch = e.touches[0];
+        const x = touch.pageX - boxContainer.offsetLeft;
+        const walk = (x - startX) * 1.2;
+        const newScrollLeft = scrollLeft - walk;
+        boxContainer.scrollLeft = newScrollLeft;
+        buttonScrollPosition = newScrollLeft;
+      });
+
+      boxContainer.addEventListener("touchend", () => {
+        isMouseDown = false;
+      });
+
+      var categorySelector = document.querySelector("div.category-selector");
+      var ulElements = categorySelector.querySelectorAll(
+        "div.category-selector > ul"
+      );
+      var ulArray = Array.from(ulElements);
+
+      ulArray.sort(function (a, b) {
+        var aIsActive = a
+          .querySelector("li a.category-box")
+          .classList.contains("active");
+        var bIsActive = b
+          .querySelector("li a.category-box")
+          .classList.contains("active");
+
+        if (aIsActive && !bIsActive) {
+          return -1;
+        } else if (!aIsActive && bIsActive) {
+          return 1;
+        } else if (
+          a.querySelector("li a.category-box").classList.contains("last")
+        ) {
+          return 1;
+        } else if (
+          b.querySelector("li a.category-box").classList.contains("last")
+        ) {
+          return -1;
+        } else {
+          return Math.random() - 0.5;
+        }
+      });
+
+      while (categorySelector.firstChild) {
+        categorySelector.removeChild(categorySelector.firstChild);
       }
-    });
-    
-    nextButton.addEventListener("click", function () {
-      if (currentIndex !== slides.length - 1) {
-        nextSlide();
-        startSlideShow();
-      }
-    });
-  }
+
+      ulArray.forEach(function (ul) {
+        categorySelector.appendChild(ul);
+      });
+
+      buttonsContainer.scrollLeft = buttonScrollPosition;
+    }
+    var ratingsumm = document.querySelector(".ratingsumm");
+    var sitealternates = document.querySelector(".sitealternates");
+
+    if (sitealternates) {
+      ratingsumm.parentNode.insertBefore(
+        sitealternates,
+        ratingsumm.nextSibling
+      );
+    }
   });
+
+  $('.sitepros').click(function() {
+    $(this).toggleClass("active");
+    var $methodlist = $(this).find('.methodlist');
+    var methodlistHeight = $methodlist.outerHeight(true);
+    var totalHeight = $(this).height() + methodlistHeight;
+    var $parent = $(this).parent('.sitedetails');
+    var $otherActiveSitepros = $(this).siblings('.sitepros.active');
+    var currentHeight = parseInt($parent.css('height'));
+    if ($(this).hasClass("active")) {
+        if (currentHeight < totalHeight) {
+            $parent.css('height', totalHeight + 'px');
+        }
+    } else if ($otherActiveSitepros.length === 0) {
+        $parent.css('height', '60px');
+    }
+});
+
+$(document).ready(function(){
+  $('.screens').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 450,
+    autoplaySpeed: 6000,
+    pauseOnHover: true,
+    pauseOnDotsHover: true,
+    prevArrow: '<button class="prev-button"><i class="bi bi-chevron-left"></i></button>',
+    nextArrow: '<button class="next-button"><i class="bi bi-chevron-right"></i></button>',
+    dots: true
+  });
+});
 
   const backToTopButton = document.querySelector("#back-to-top-btn");
   
@@ -2386,202 +2260,51 @@ if (boxesHolder) {
   }
 }
 
-(function() {
-  var currentSlide = 0;
-  var slideShowActive = true;
-  var isTransitioning = false;
-  var navLabels;
-  var slideInterval;
+$(document).ready(function(){
 
-  function insertAfter(newNode, referenceNode) {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  var sliderContainer = $('<div class="slider-container"></div>');  
+
+  var slider1 = createSliderItem('/', '/img/best-gambling-sites-slide-2024.png', 'Best Gambling Sites');
+  var slider2 = createSliderItem('/earning/offerwalls', '/img/earn-skins-slider-2024.png', 'Best Offerwall Sites');
+  var slider3 = createSliderItem('/rust', '/img/best-rust-sites-slide-2024.png', 'Best Rust Sites');
+  
+  sliderContainer.append(slider1, slider2, slider3);
+
+  var path = window.location.pathname;
+  if (path.includes('/reviews/') || path.includes('/mirrors/')) {
+    var ratingsumm = $('.ratingsumm');
+    sliderContainer.insertAfter(ratingsumm);
+  } else if (path.includes('/topic/') && $('.boxtopic').length > 0) {
+    var boxTopic = $('.boxtopic');
+    boxTopic.append(sliderContainer);
+  }  else {
+    var footer = $('footer');
+    sliderContainer.insertBefore(footer);
   }
+  
+  sliderContainer.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 450,
+    autoplaySpeed: 6000,
+    pauseOnHover: true,
+    pauseOnDotsHover: true,
+    prevArrow: '<button class="prev-button"><i class="bi bi-chevron-left"></i></button>',
+    nextArrow: '<button class="next-button"><i class="bi bi-chevron-right"></i></button>',
+    dots: true,
+    customPaging: function(slider, i) {
+      return '<button class="slider-dot" data-role="none">' + (i + 1) + '</button>';
+    },
+  });
+  
+  translateURLsSlider(sliderContainer[0], languageTag);
 
-  function showSlide(index) {
-    const slides = document.querySelectorAll('.slider-banner');
-    const totalSlides = slides.length;
-    const previousIndex = (index - 1 + totalSlides) % totalSlides;
-
-    slides.forEach((slide, i) => {
-      const isActive = i === index;
-      const isPrevious = i === previousIndex;
-
-      slide.classList.toggle('active', isActive);
-      slide.classList.toggle('previous', isPrevious);
-
-      navLabels[i].classList.toggle('active', isActive);
-    });
+  function createSliderItem(href, src, alt) {
+    return '<a href="' + href + '" class="slider-banner"><img src="' + src + '" alt="' + alt + '" draggable="false"></a>';
   }
+});
 
-  function nextSlide() {
-    if (slideShowActive && !isTransitioning) {
-      isTransitioning = true;
-      setTimeout(() => {
-        isTransitioning = false;
-      }, 4000);
-
-      currentSlide = (currentSlide + 1) % 3;
-      showSlide(currentSlide);
-    }
-  }
-
-  function previousSlide() {
-    if (slideShowActive && !isTransitioning) {
-      isTransitioning = true;
-      setTimeout(() => {
-        isTransitioning = false;
-      }, 4000);
-
-      currentSlide = (currentSlide - 1 + 3) % 3;
-      showSlide(currentSlide);
-    }
-  }
-
-  function startSlideShow() {
-    slideShowActive = true;
-    slideInterval = setInterval(nextSlide, 5000);
-  }
-
-  function stopSlideShow() {
-    slideShowActive = false;
-    clearInterval(slideInterval);
-  }
-
-  function createSliderControls() {
-    var controlsContainer = document.createElement('div');
-    controlsContainer.classList.add('controls');
-
-    var navControlsContainer = document.createElement('div');
-    navControlsContainer.classList.add('nav-controls');
-
-    navLabels = [];
-
-    for (var i = 0; i < 3; i++) {
-      var controlContainer = document.createElement('div');
-
-      var input = document.createElement("input");
-      input.type = "radio";
-      input.id = "triggerbanner" + (i + 1);
-      input.name = "sliderbanner";
-      input.setAttribute('aria-label', `Show slide ${i + 1} of 3`); 
-      input.addEventListener("click", function() {
-        var index = Array.from(navControlsContainer.querySelectorAll("input")).indexOf(this);
-        showSlide(index);
-      });
-
-      var label = document.createElement("label");
-      label.setAttribute("for", input.id);
-
-      controlContainer.appendChild(input);
-      controlContainer.appendChild(label);
-      navControlsContainer.appendChild(controlContainer);
-
-      navLabels.push(label);
-
-      if (i === 0) {
-        label.classList.add('active');
-      }
-    }
-
-    controlsContainer.appendChild(navControlsContainer);
-
-    return controlsContainer;
-  }
-
-  if (!window.location.pathname.includes("/privacy-policy") &&
-    !window.location.pathname.includes("/terms-of-service") &&
-    !window.location.pathname.includes("/contact-us")) {
-
-    startSlideShow();
-
-    var path = window.location.pathname;
-    var existingSliderPlacer = document.querySelector('.slider-placer');
-
-    if (existingSliderPlacer) {
-      existingSliderPlacer.parentNode.removeChild(existingSliderPlacer);
-    }
-
-    var sliderContainer = document.querySelector('.slider-container');
-    var sliderPlacer = document.createElement('div');
-    sliderPlacer.classList.add('slider-placer');
-
-    if (path.includes('/topic/skins/') || (path.includes('/topic/items/') || (path.includes('/topic/sticker-crafts/')))) {
-      sliderPlacer.classList.add('topic');
-    }
-
-    var controlsContainer = createSliderControls();
-    sliderPlacer.appendChild(controlsContainer);
-
-    var prevButton = document.createElement('button');
-    prevButton.classList.add('prev-button');
-    prevButton.innerHTML = '<i class="bi bi-chevron-left"></i>';
-    prevButton.setAttribute('aria-label', 'Prev Slide');
-    prevButton.addEventListener('click', function() {
-      var currentIndex = (currentSlide - 1 + 3) % 3;
-      currentSlide = currentIndex;
-      showSlide(currentIndex);
-    });
-    controlsContainer.insertBefore(prevButton, controlsContainer.firstChild);
-
-    var nextButton = document.createElement('button');
-    nextButton.classList.add('next-button');
-    nextButton.innerHTML = '<i class="bi bi-chevron-right"></i>';
-    nextButton.setAttribute('aria-label', 'Next Slide');
-    nextButton.addEventListener('click', function() {
-      var currentIndex = (currentSlide + 1) % 3;
-      currentSlide = currentIndex;
-      showSlide(currentIndex);
-    });
-    controlsContainer.appendChild(nextButton);
-
-    var slider1 = createSliderItem('/', '/img/best-gambling-sites-slide-2024.png', 'Best Gambling Sites', 0);
-    var slider2 = createSliderItem('/earning/offerwalls', '/img/earn-skins-slider-2024.png', 'Best Offerwall Sites', 1);
-    var slider3 = createSliderItem('/rust', '/img/best-rust-sites-slide-2024.png', 'Best Rust Sites', 2);
-
-    [slider1, slider2, slider3].forEach(slider => sliderPlacer.appendChild(slider));
-
-    var languageTag = path.match(/\/(hi|tr|pt|es|ru)(\.html)?/);
-    if (languageTag) {
-      translateURLsSlider(sliderPlacer, languageTag[1]);
-    }
-
-    if (path.includes('/mirrors/')) {
-      var sitealternates = document.querySelector('.sitealternates');
-      if (sitealternates) {
-        insertAfter(sliderPlacer, sitealternates);
-      }
-    } else if (path.includes('/reviews/')) {
-      var ratingsumm = document.querySelector('div.ratingsumm');
-      if (ratingsumm) {
-        insertAfter(sliderPlacer, ratingsumm);
-      }
-    } else {
-      var footer = document.querySelector('footer');
-      footer.parentNode.insertBefore(sliderPlacer, footer);
-    }
-    
-
-    sliderPlacer.addEventListener('mouseenter', stopSlideShow);
-    sliderPlacer.addEventListener('mouseleave', startSlideShow);
-  }
-
-  function createSliderItem(href, src, alt, index) {
-    var slider = document.createElement('a');
-    slider.href = href;
-    slider.classList.add('slider-banner');
-    var img = document.createElement('img');
-    img.src = src;
-    img.alt = alt;
-    img.draggable = false;
-    slider.appendChild(img);
-
-    if (index === 0) {
-      slider.classList.add('active');
-    }
-
-    return slider;
-  }
-})();
 
 function translateURLsSlider(parentElement, languageTag) {
   var links = parentElement.querySelectorAll('a[href]');
