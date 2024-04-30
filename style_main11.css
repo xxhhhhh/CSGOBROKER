@@ -4922,8 +4922,11 @@ label:active,
         width: 100%;
         height: 60px;
     }
-    .slider-container .slick-slider {
-        width: 80%;
+    .slider-container {
+        width: 85%;
+    }
+    .slick-dots {
+        top: 0px !important;
     }
     .slick-slider img {
         width: 100%;
@@ -5455,15 +5458,12 @@ label:active,
         border-radius: 5px;
 
     }
-    .slider-container .slick-slider {
+    .slider-container {
         width: 98%;
         margin-top: 4px;
     }
     .boxreview .slider-container {
         margin-top: unset;
-    }
-    .slick-dots {
-        top: 8px;
     }
     .slick-dots li {
         width: 15px !important;
@@ -5497,7 +5497,7 @@ label:active,
         bottom: unset;
     }
     .newest-boxes:hover .newest-boxes-title {
-        transform: translateX(-50%) translateY(40px);
+        transform: translateX(-50%) translateY(-40px);
     }
     .newest-boxes .box .content h2 {
         display: none;
