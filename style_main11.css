@@ -720,8 +720,15 @@ nav #pagename:focus {
     .box-skins-list,
     .box-skins.selected {
         scrollbar-width: thin;
-        scrollbar-color: #2e2e2e transparent;
+        scrollbar-color: #2e2e2e transparent; 
     }
+    * {
+        scrollbar-color: #000000 #0c0c0c;
+        scrollbar-width: thin;
+    }
+    .box-skins {
+        transition: unset !important;
+      }
 }
 .box-skins::-webkit-scrollbar {
     width: 4px;
@@ -939,8 +946,6 @@ nav #pagename:focus {
     justify-content: flex-start;
     align-items: center;
     overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    scroll-snap-align: start;
     transition: opacity .25s .25s ease-in-out;
     background-color: rgba(0, 0, 0, .1);
     border-radius: 5px;
