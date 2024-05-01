@@ -4042,12 +4042,17 @@ footer .centralizer .footer-content {
   }
   .slider-container .slick-slider {
     margin-top: 18px;
-}
+  }
+  .sitepage.topic-craft .slick-slider {
+    margin-top: unset;
+    width: 98.5%;
+  }
   .slick-slider {
     width: 1000px;
     margin: 0 auto;
     overflow: hidden;
     margin-top: 18px;
+    border-radius: 5px;
 }
 .screens.slick-slider {
     margin-top: unset;
@@ -4665,6 +4670,7 @@ label:active,
 .sitepage.topic-craft .boxtopic {
     background: var(--opacback);
     width: 1000px;
+    padding-bottom: 9px;
 }
 .sitepage.topic-craft .box-topic {
     height: 240px;
@@ -5260,6 +5266,7 @@ label:active,
     .sitepage.topic-craft .boxtopic {
         margin-top: 4px;
         min-height: 300px;
+        padding-bottom: 4px;
     }
     .boxreview .plusminus {
         flex-wrap: nowrap;
