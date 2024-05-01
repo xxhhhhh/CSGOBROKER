@@ -14,8 +14,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    scrollbar-color: #000000 #0c0c0c;
-    scrollbar-width: thin; 
+    /* scrollbar-color: #000000 #0c0c0c;
+    scrollbar-width: thin;  */
 }
 :root {
     --white: rgba(255, 255, 255, .96);
@@ -37,12 +37,14 @@ html {
     box-sizing: border-box;
 }
 body{
-    background: linear-gradient(360deg, rgba(14,14,14,1) 0%, rgb(16, 16, 16) 100%);
     background-color: #0d0d0d;
     font-family: TTNormsPro;
     overflow: hidden;
     margin: 0 auto;
     padding: 0;
+}
+.ssiodox {
+    background: linear-gradient(360deg, rgba(14,14,14,1) 0%, rgb(16, 16, 16) 100%);
 }
 ::-webkit-scrollbar {
     width: 8px;
@@ -480,7 +482,7 @@ nav #pagename:focus {
 }
 .navigation-reset {
     position: relative;
-    top: 150px;
+    margin: 150px auto;
     display: flex;
     height: 50px;
     cursor: pointer;
@@ -494,7 +496,6 @@ nav #pagename:focus {
     font-weight: 600;
     text-transform: uppercase;
     font-size: 16px;
-    margin: 0 auto;
     align-items: center;
     justify-content: center;
 }
@@ -528,7 +529,6 @@ nav #pagename:focus {
 .navigation-section.first,
 .navigation-section.second,
 .navigation-section.searchers {
-    /* background-color: var(--opacback); */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -641,7 +641,6 @@ nav #pagename:focus {
     transition: .2s all ease-in-out;
 }
 .box-skins.selected {
-    /* height: 1000px; */
     height: unset;
     max-height: 620px;
 }
@@ -670,9 +669,9 @@ nav #pagename:focus {
 }
 .box-skins.selected .box-skins-list .skin {
     height: 200px;
-    width: 197px;
+    width: 195px;
     min-width: 157px;
-    max-width: 197px;
+    max-width: 195px;
     transition: unset;
 }
 .box-skins.solo .box-skins-list .skin {
@@ -716,6 +715,14 @@ nav #pagename:focus {
 .box-skins.solo .skin img {
     height: 65%;
 }
+
+@-moz-document url-prefix() {
+    .box-skins-list,
+    .box-skins.selected {
+        scrollbar-width: thin;
+        scrollbar-color: #2e2e2e transparent;
+    }
+}
 .box-skins::-webkit-scrollbar {
     width: 4px;
 }
@@ -748,27 +755,25 @@ nav #pagename:focus {
     align-items: flex-start;
     user-select: none;
     transition: all .2s ease-in-out;
+    scrollbar-color: unset;
+    scrollbar-width: unset;
 }
 .box-skins-list::-webkit-scrollbar {
     width: 2px;
     height: 4px;
   }
   
-  /* Track */
   .box-skins-list::-webkit-scrollbar-track {
     background: transparent;
   }
    
   .box-skins-list::-webkit-scrollbar-thumb {
-    /* background: rgba(255, 255, 255, .1);  */
     background: #2e2e2e;
     border-radius: 5px;
   }
   
 
-  /* Handle on hover */
   .box-skins-list::-webkit-scrollbar-thumb:hover {
-    /* background: var(--main-color);  */
     background: #414141;
   }
 .box-skins .skin {
@@ -880,16 +885,12 @@ nav #pagename:focus {
 }
 .box-skins .skin .skin-desc.red,
 .box-skins .skin.red .skin-desc {
-    /* background: linear-gradient(360deg, rgba(235, 75, 75, .2) 0%, rgba(0,0,0,0) 100%); */
     background: radial-gradient( 50% 65% at 50% 100%, rgba(235, 75, 75, .2), transparent 100% );
 }
 .box-skins .skin .skin-desc.gold,
 .box-skins .skin.gold .skin-desc {
     background: radial-gradient( 50% 65% at 50% 100%, rgba(228, 174, 57, .2), transparent 100% );
 }
-/* .box-skins.knives .skin .skin-desc {
-    background: unset !important;
-} */
 .box-skins.selected .skin .skin-desc-name,
 .box-skins.solo .skin .skin-desc-name {
     font-size: 12px;
@@ -938,8 +939,6 @@ nav #pagename:focus {
     justify-content: flex-start;
     align-items: center;
     overflow-x: scroll;
-    scrollbar-color: #2e2e2e transparent;
-    scrollbar-width: thin; 
     scroll-snap-type: x mandatory;
     scroll-snap-align: start;
     transition: opacity .25s .25s ease-in-out;
@@ -947,6 +946,9 @@ nav #pagename:focus {
     border-radius: 5px;
     padding-left: 5px;
     opacity: 0;
+}
+.box-skins-list::-webkit-scrollbar {
+    width: 2px;
 }
 .items .box-topic,
 .items .rec-box {
@@ -1179,7 +1181,6 @@ nav #pagename:focus {
     align-items: center;
     height: 80px;
     background: linear-gradient(15deg, rgba(255, 255, 255, .006) 30%, rgba(0, 0, 0, 0) 100%);
-    margin-bottom: 10px;
     transition: background-color .2s ease-in-out;
 }
 .site-attention:hover {
@@ -1190,11 +1191,13 @@ nav #pagename:focus {
     font-size: 16px;
     color: var(--white);
     user-select: none;
+    text-align: center;
 }
 .site-attention span a {
     text-decoration: none;
     color: var(--main-color);
     transition: color .2s ease-in-out;
+    font-weight: 600;
 }
 .site-attention span a:hover {
     color: var(--white);
@@ -2031,6 +2034,8 @@ nav #pagename:focus {
     position: relative;
     margin-left: -3px;
     transition: all .15s ease-in-out;
+    display: inline-block;
+    vertical-align: middle;
 }
 .site-promo-copy i {
     color: rgb(188, 188, 188);
@@ -2039,7 +2044,10 @@ nav #pagename:focus {
     opacity: .4;
 }
 .instruction code {
-    padding: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 5px;
+    height: 28px;
     border-radius: 5px 0 0 5px;
     font-weight: 600;
     font-size: 12px;
@@ -3175,7 +3183,7 @@ nav img:active,
     bottom: 0;
     right: 0;
     transform: translateY(50px);
-    transition: transform .15s .05s ease-in-out;
+    transition: transform .15s .05s ease-in-out, color .15s .0s;
     position: absolute;
     width: auto;
     padding: 0 5px 0 5px;
@@ -3432,11 +3440,11 @@ footer {
     width: 100%;
     height: 100%;
     margin-top: 50px;
-    margin-bottom: 30px;
 }
 footer .centralizer {
     width: 69%;
     margin: 0 auto;
+    padding-bottom: 30px;
 }
 footer .centralizer .footer-content {
     display: flex;
@@ -3962,7 +3970,7 @@ footer .centralizer .footer-content {
     flex-wrap: nowrap;
     justify-content: flex-end;
     transition: all .22s ease-in-out;
-    z-index: 10000;
+    z-index: 11112;
   }
   .settings-button {
     width: 100%;
@@ -4621,8 +4629,10 @@ label:active,
         height: 100%;
         z-index: -1;
     }
-    .logobg:hover .rating-case-single .rating-summ {
+    .logobg:hover .rating-case-single .rating-summ,
+    .logobg:hover .vpn {
         opacity: 1 !important;
+        color: var(--white);
     }
     .logobg:hover .rating-case-single .star_rating {
         filter: grayscale(0) !important;
@@ -5009,6 +5019,9 @@ label:active,
     body {
         background: unset;
         background-color: #141414;
+    }
+    .ssiodox {
+        background: unset;
     }
     nav {
         width: 92%;
@@ -5454,7 +5467,8 @@ label:active,
     }
 }
 @media screen and (max-width: 460px) {
-    .instruction code {
+    .instruction code,
+    .site-promo-copy {
         border-radius: 5px;
 
     }

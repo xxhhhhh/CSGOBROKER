@@ -2189,7 +2189,7 @@ var ratings = {
   "CS.Money":4.5,
   "RAPIDSKINS":3.125,
   "Aim.market":3.5,
-  "SKINBOX":3.25,
+  "SKINBOX":3.5,
   "Moon.Market":3.875,
   "gcskins":4.125,
   "HypeUp":3.5,
@@ -2261,6 +2261,19 @@ if (boxesHolder) {
 }
 
 $(document).ready(function(){
+
+  var excludedPages = ['/terms-of-service', '/privacy-policy', '/contact-us'];
+  var path = window.location.pathname;
+  var excluded = false;
+  excludedPages.forEach(function(excludedPage) {
+    if (path.endsWith(excludedPage) || path.endsWith(excludedPage + '.html')) {
+      excluded = true;
+    }
+  });
+  if (excluded) {
+    return;
+  }
+  
 
   var sliderContainer = $('<div class="slider-container"></div>');  
 
