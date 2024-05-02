@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for (var i = 0; i < links.length; i++) {
       var link = links[i];
       
-      if (!link.closest('div.siteblock div.box, ol li a, nav .socials')) {
+      if (!link.closest('div.siteblock .box, .sitealternatesboxes .content , ol li a, nav .socials')) {
         if (!link.classList.contains('lang-switch') && !link.closest('.instruction-mirrors')) {
           var path = link.pathname;
   
