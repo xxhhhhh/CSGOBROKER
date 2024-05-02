@@ -302,7 +302,8 @@ nav #pagename:focus {
     text-transform: uppercase;
     text-align: center;
 }
-.rec-box:hover button {
+.rec-box:hover button,
+.rec-box:hover a.copy_style {
     animation: buttons 1s infinite;
     border: var(--main-color) 2px solid;;
     background-color: #a81d34;
@@ -2365,7 +2366,7 @@ nav #logo:hover {
     overflow-y: unset !important;
 }
 #notexist {
-    max-width: 66.5%;
+    max-width: 82.5%;
     overflow: unset;
     position: relative;
     left: unset;
@@ -2700,7 +2701,8 @@ nav #logo:hover {
     bottom: 17px;
     padding: 8px 20px;
 }
-.sitepage .box .content button.copy_style {
+.sitepage .box .content button.copy_style,
+.sitepage .box .content a.copy_style {
     border: var(--main-color) 2px solid;;
     position: absolute;
     background-color: #a81d34;
@@ -2710,6 +2712,7 @@ nav #logo:hover {
     transition: all .2s ease-in-out;
 }
 .sitepage .box .content button.copy_style:hover,
+.sitepage .box .content a.copy_style:hover,
 .box .content button.copy:hover {
     color: var(--white);
     background-color: var(--main-color);
@@ -2971,7 +2974,8 @@ nav #logo:hover {
 .sitealternates .box .content p:first-child {
     font-size: 18px;
 }
-.sitealternates .box .content button.copy_style {
+.sitealternates .box .content button.copy_style,
+.sitealternates .box .content a.copy_style {
     bottom: 32px;
     padding: 8px 10px;
     border: var(--main-color) 2px solid;;
@@ -3330,7 +3334,8 @@ nav img:active,
 .sitepage .box .content .bonus-space#first {
     margin-top: 5px;
 }
-.content button{
+.content button,
+.content a {
     background-color: rgb(32 32 32);
     border: 2px #222222 solid;
     bottom: 15px;
@@ -3344,8 +3349,10 @@ nav img:active,
     border-radius: 5px;
     transition: all .2s ease-in-out;
     color: white;
+    text-decoration: none;
 }
-.box:hover .content button.copy_style{
+.box:hover .content button.copy_style,
+.box:hover .content a.copy_style{
     animation: buttons 1s infinite;
     border: var(--main-color) 2px solid;;
     background-color: #a81d34;
@@ -3355,7 +3362,8 @@ nav img:active,
     border: var(--main-color) 1px solid;
     background-color: #62101d;
 }
-.content button:hover{
+.content button:hover,
+.content a:hover{
     background-color: #a81d34 !important;
     animation: none !important;
 }
@@ -3363,6 +3371,7 @@ nav img:active,
     background: var(--main-color);
 }
 .content button:hover:active,
+.content a:hover:active,
 .features .featuresbox .typesinside a:active,
 .instruction-mirrors li a:active {
     background-color: #5a101c !important;
@@ -3370,7 +3379,8 @@ nav img:active,
     transition: .09s all ease-in-out !important;
 }
 .copy,
-button.copy_style {
+button.copy_style,
+a.copy_style {
     cursor: pointer;
 }
 .sitepage .content button.copy {
@@ -5092,6 +5102,7 @@ label:active,
         margin-top: 3px;
     }
     .content button:hover:active,
+    .content a:hover:active,
     .features .featuresbox .typesinside a:active,
     .instruction-mirrors li a:active {
         background-color: #a81d34 !important;
@@ -5605,7 +5616,8 @@ label:active,
     .box:hover {
         transform: scale(1.02);
     }
-    .content button  {
+    .content button,
+    .content a  {
         font-size: 11px;
     }
     .cookie-widget-info {
