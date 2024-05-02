@@ -51,10 +51,12 @@ function copyToClipboard(element) {
   
         updatedHref = '/' + languageTag + path;
   
+      if (!links[i].classList.contains('copy_style')) {
         links[i].setAttribute('href', domain + updatedHref);
       }
     }
   }
+}
   
   if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes("/topic/") && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/') && !window.location.pathname.includes("/privacy-policy") &&
   !window.location.pathname.includes("/terms-of-service") &&
