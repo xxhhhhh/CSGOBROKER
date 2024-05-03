@@ -33,40 +33,24 @@ function getLanguagePrefix() {
 }
 
 function handleLanguageRedirect() {
+  var langPrefix = getLanguagePrefix();
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl;
+
   if (!userChoice && window.location.pathname === '/') {
-    var langPrefix = getLanguagePrefix();
-
     if (langPrefix !== 'en') {
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace(/(\.(co|cc|com|org|me|broker)\/)/g, '.$2/' + langPrefix + '/');
-
-      if (newUrl !== currentUrl) {
-        userChoice = langPrefix;
-        setCookie('languageChoice', userChoice, 365);
-        window.location.href = newUrl;
-        return false;
-      }
+      newUrl = currentUrl.replace(/(\.(co|cc|com|org|me|broker|dev)\/)/g, '.$2/' + langPrefix + '/');
+      setCookie('languageChoice', langPrefix, 365);
+    }
+  } else if (userChoice && window.location.pathname === '/') {
+    if (userChoice !== 'en') {
+      newUrl = currentUrl.replace(/(\.(co|cc|com|org|me|broker|dev)\/)/g, '.$2/' + userChoice + '/');
     }
   }
-  else if (userChoice && window.location.pathname === '/') {
-    var currentUrl = window.location.href;
 
-    if (userChoice !== 'en') {
-      var langPrefix = userChoice;
-      var newUrl = currentUrl.replace(/(\.(co|cc|com|org|me|broker)\/)/g, '.$2/' + langPrefix + '/');
-
-      if (newUrl !== currentUrl) {
-        window.location.href = newUrl;
-        return false;
-      }
-    } else {
-      var newUrl = currentUrl.replace(/(\.(co|cc|com|org|me|broker)\/)/g, '.$2/');
-
-      if (newUrl !== currentUrl) {
-        window.location.href = newUrl;
-        return false;
-      }
-    }
+  if (newUrl !== currentUrl) {
+    window.location.href = newUrl;
+    return false;
   }
 }
 
@@ -75,25 +59,13 @@ document.addEventListener('click', function(event) {
     var selectedLang = event.target.dataset.lang;
 
     setCookie('languageChoice', selectedLang, 365);
-    userChoice = selectedLang;
 
     if (selectedLang !== userChoice) {
       location.reload();
     } else if (selectedLang !== 'en' && window.location.pathname === '/') {
       var currentUrl = window.location.href;
-      newUrl = newUrl.replace(/(\.(co|cc|com|org|me|broker)\/)/g, '.$2/' + selectedLang + '/');
-
-      if (newUrl !== currentUrl) {
-        window.location.href = newUrl;
-      }
-    } else if (selectedLang === 'en' && window.location.pathname === '/') {
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace(/\.co\//g, '.co/');
-      newUrl = newUrl.replace(/\.cc\//g, '.cc/');
-
-      if (newUrl !== currentUrl) {
-        window.location.href = newUrl;
-      }
+      var newUrl = currentUrl.replace(/(\.(co|cc|com|org|me|broker|dev)\/)/g, '.$2/' + selectedLang + '/');
+      window.location.href = newUrl;
     }
   }
 });
@@ -124,7 +96,6 @@ function getCookie(name) {
   }
   return null;
 }
-
 
 handleLanguageRedirect();
 
