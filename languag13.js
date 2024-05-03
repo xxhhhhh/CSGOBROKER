@@ -32,25 +32,33 @@ function getLanguagePrefix() {
   return langPrefix;
 }
 
+function isLanguageMainPage(currentUrl) {
+  return currentUrl === '/';
+}
+
 function handleLanguageRedirect() {
   var langPrefix = getLanguagePrefix();
-  var currentUrl = window.location.href;
+  var currentUrl = window.location.pathname;
   var newUrl = currentUrl;
 
-  if (!userChoice && window.location.pathname === '/') {
-    if (langPrefix !== 'en') {
-      newUrl = currentUrl.replace(/(\.(co|cc|com|org|me|broker|dev)\/)/g, '.$2/' + langPrefix + '/');
-      setCookie('languageChoice', langPrefix, 365);
+  if (userChoice === 'ru' || (userChoice !== 'ru' && isLanguageMainPage(currentUrl))) {
+    if (!userChoice) {
+      if (langPrefix !== 'en' && !currentUrl.startsWith('/' + langPrefix)) {
+        newUrl = '/' + langPrefix + currentUrl;
+        setCookie('languageChoice', langPrefix, 365);
+      }
+    } else {
+      if (userChoice !== 'en' && !currentUrl.startsWith('/' + userChoice)) {
+        var parts = currentUrl.split('/');
+        parts.splice(1, 0, userChoice);
+        newUrl = parts.join('/');
+      }
     }
-  } else if (userChoice && window.location.pathname === '/') {
-    if (userChoice !== 'en') {
-      newUrl = currentUrl.replace(/(\.(co|cc|com|org|me|broker|dev)\/)/g, '.$2/' + userChoice + '/');
-    }
-  }
 
-  if (newUrl !== currentUrl) {
-    window.location.href = newUrl;
-    return false;
+    if (newUrl !== currentUrl) {
+      window.location.pathname = newUrl;
+      return false;
+    }
   }
 }
 
@@ -62,10 +70,10 @@ document.addEventListener('click', function(event) {
 
     if (selectedLang !== userChoice) {
       location.reload();
-    } else if (selectedLang !== 'en' && window.location.pathname === '/') {
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace(/(\.(co|cc|com|org|me|broker|dev)\/)/g, '.$2/' + selectedLang + '/');
-      window.location.href = newUrl;
+    } else {
+      var currentPath = window.location.pathname;
+      var newPath = '/' + selectedLang + currentPath.slice(3);
+      window.location.pathname = newPath;
     }
   }
 });
