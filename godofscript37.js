@@ -2241,6 +2241,8 @@ var ratings = {
   "RustCases":3.375,
   "SteamLevels":3.5,
   "GGDROP":4,
+  "Roobet":4.625,
+  "Primedice":4.125,
 };
 
 function addStarRating(boxId, rating) {
