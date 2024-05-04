@@ -41,6 +41,10 @@ function handleLanguageRedirect() {
   var currentUrl = window.location.pathname;
   var newUrl = currentUrl;
 
+  if (!window.location.hostname || window.location.hostname === 'localhost') {
+    return;
+  }
+
   if (userChoice === 'ru' || (userChoice !== 'ru' && isLanguageMainPage(currentUrl))) {
     if (!userChoice) {
       if (langPrefix !== 'en' && !currentUrl.startsWith('/' + langPrefix)) {
