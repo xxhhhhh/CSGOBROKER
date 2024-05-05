@@ -2188,7 +2188,6 @@ nav #logo:hover {
     top: 98px;
     height: 650px;
     display: flex;
-    border-radius: 10px;
   }
 .category-selector .category-box {
     position: relative;
@@ -2371,7 +2370,6 @@ nav #logo:hover {
     position: relative;
     left: unset;
     top: 38px;
-    height: 100px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -2614,7 +2612,7 @@ nav #logo:hover {
     height: 600px !important;
 }
 .category-centralizer.nav .category-box {
-    background-color: rgb(22 22 22);
+    background: rgb(21 21 21);
 }
 .category-centralizer.nav .category-box-logo {
     background: rgba(0,0,0,.2);
@@ -4212,17 +4210,13 @@ footer .centralizer .footer-content {
     .submenu li {
         background-color: rgb(23 23 23);
     }
-    .submenu .big-category:hover a,
-    .submenu .big-category:hover .nonredir {
-        color: var(--main-color);
-    }
     .submenu2 a {
         color: var(--white) !important;
     }
     .submenu .big-category a:hover,
     .submenu .big-category .nonredir:hover,
     .submenu2 a:hover {
-        color: var(--main-color) !important;
+        color: var(--main-color);
     }
     .submenu2 {
         color: var(--white);
@@ -5080,13 +5074,6 @@ label:active,
     .navigation-section.second {
         top: 105px;
     }
-    .category-selector .submenu,
-    .category-selector .submenu2 {
-        display: none;
-    }
-    ul li:hover .submenu {
-        margin-top: 80px !important;
-    }
     .topic-boxes-holder {
         max-width: 90%;
     }
@@ -5173,7 +5160,110 @@ label:active,
         top: 80px;
         display: flex;
     }
-    #notexist .submenu, .category-selector .submenu2 {
+    .submenu2 li a {
+        justify-content: center !important;
+    }
+    .category-selector.current {
+        height: 100%;
+        background-color: rgba(12, 12, 12, .9);
+        z-index: 10;
+        position: fixed;
+        max-width: 100%;
+        padding: 0 4px;
+    }
+    #notexist.current {
+        background-color: unset;
+        max-height: 580px;
+    }
+    .category-selector ul {
+        height: 80px;
+    }
+    .category-selector ul li .submenu {
+        display: none;
+        visibility: hidden;
+    }
+    .category-selector.current ul li .submenu.current {
+        display: block;
+        visibility: visible;
+        max-height: 525px;
+        overflow: auto !important;
+    }
+    .category-selector.current ul li .submenu.current::-webkit-scrollbar {
+        width: 0;
+    }
+    .category-selector ul li .submenu {
+        margin-left: unset;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+    }
+    .category-selector.current .category-box-logo {
+        background: rgb(18 18 18);
+    }
+    .category-selector .submenu,
+    .category-selector .submenu2 {
+        display: none;
+        overflow: hidden !important;
+        height: unset;
+    }
+    ul .submenu li a, ul .submenu li .nonredir {
+        padding: 8px 10px !important;
+        font-size: 13px;
+        font-weight: 600;
+        text-align: center;
+        border: 2px solid #181818;
+        justify-content: center;
+    }
+    ul .submenu li a i {
+        margin-left: 10px;
+    }
+    .category-selector ul:hover .category-box .category-box-logo {
+        filter: grayscale(1);
+    }
+    .category-selector.current .category-box.current .category-box-logo,
+    .category-selector.current .category-box:hover .category-box-logo {
+        background: rgb(14 14 14);
+        filter: grayscale(0);
+    }
+    .submenu .big-category a:hover, 
+     .submenu2 a:hover {
+        color: var(--white);
+    }
+    .submenu .big-category.active a {
+        color: var(--white);
+    }
+    .submenu .big-category.active a i {
+        color: var(--main-color);
+        opacity: .8;
+        font-size: 22px;
+    }
+    ul li:hover .submenu,
+    .submenu.current {
+        z-index: 90;
+        opacity: 1;
+        transition: opacity ease-in-out .15s;
+        margin-top: 88px;
+        position: fixed;
+    }
+    .submenu .big-category:nth-child(1) {
+        margin-top: unset;
+    }
+    .submenu .big-category {
+        margin: 1px 0;
+    }
+    .big-category.current a {
+        color: var(--main-color);
+    }
+    #notexist ul li:hover .submenu,
+    #notexist.current ul li .submenu {
+        position: absolute;
+        left: 50%;
+        margin-top: 20px !important;
+   }
+   .category-selector.current .category-box {
+    border: 2px solid #181818;
+}
+    .category-selector .submenu2 {
         width: 100% !important;
         height: 100%;
         margin-top: unset !important;
@@ -5182,10 +5272,6 @@ label:active,
     }
     #notexist .submenu {
         top: 150px;
-    }
-    #notexist .big-category {
-        display: flex;
-        flex-direction: column;
     }
     .category-selector .submenu2 {
         opacity: 0 !important;
@@ -5198,6 +5284,7 @@ label:active,
         opacity: 1 !important;
         display: block !important;
         visibility: visible !important;
+        border-left: 2px solid rgba(0, 0, 0, .1);
         z-index: 100;
     }
     .big-category.active .nonredir {
@@ -5225,6 +5312,7 @@ label:active,
         height: 70px;
         width: 70px;
         overflow: hidden;
+        border: 2px solid transparent;
     }
     .category-selector .category-box .category-box-logo {
         width: 100%;
@@ -5366,9 +5454,6 @@ label:active,
     .siteblock {
         position: relative;
     }
-    ul .submenu{
-        left: 11%;
-        }
     .box {
         /* margin: 20px 10px 0 10px; */
         margin: 8px 4px 0 4px !important;
@@ -5380,7 +5465,8 @@ label:active,
     }
     .box .logobg img {
         max-width: 80% !important;
-        max-height: 90px !important;
+        max-height: 75px !important;
+        width: auto !important;
     }
     nav #pagename {
         font-size: 13px;
@@ -5447,12 +5533,6 @@ label:active,
     }
     .nav-content {
         padding-left: 20px !important;
-    }
-    ul .submenu li a,
-    ul .submenu li .nonredir {
-        padding: 8px 10px !important;
-        font-size: 13px;
-        font-weight: 600;
     }
     .nav-bar {
         background-color: rgba(12, 12, 12, .9);
@@ -5564,6 +5644,7 @@ label:active,
     }
     .language-box {
         display: flex;
+        border: 2px solid #181818;
     }
     .boxes-holder {
         width: 98%;

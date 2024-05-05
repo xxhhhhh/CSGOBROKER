@@ -90,33 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
       navBarContainer.innerHTML = data;
 
       var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-      if (screenWidth < 1340) {
-        var categoryBoxes = navBarContainer.querySelectorAll('.category-selector .category-box');
-        categoryBoxes.forEach(function(box) {
-          if (!box.matches('.category-box#newest')) {
-            var divElement = document.createElement('div');
-            divElement.className = box.className.trim() === '' ? 'nonredir' : box.className + ' nonredir';
-            divElement.innerHTML = box.innerHTML;
-            box.parentNode.replaceChild(divElement, box);
-          }
-        });
 
-        var notExistLinks = navBarContainer.querySelectorAll('#notexist ul .submenu li a i');
-        notExistLinks.forEach(function(icon) {
-          var link = icon.parentElement;
-          if (link && link.tagName.toLowerCase() === 'a' && !link.matches('.category-box#newest')) {
-            var divElement = document.createElement('div');
-            divElement.className = link.className.trim() === '' ? 'nonredir' : link.className + ' nonredir';
-            divElement.innerHTML = link.innerHTML;
-            link.parentNode.replaceChild(divElement, link);
-          }
-        });
-
-        var navBar = document.querySelector('.nav-bar');
-        if (navBar) {
-          navBar.style.pointerEvents = 'none';
-        }
-      }
 
       var header = document.querySelector('header');
 
@@ -162,7 +136,12 @@ document.addEventListener('DOMContentLoaded', function() {
       var bigCategories = document.querySelectorAll('.big-category');
 
       bigCategories.forEach(function(category) {
-        category.addEventListener('click', function() {
+        category.addEventListener('click', function(e) {
+          const submenu2 = category.querySelector(".submenu2");
+          if (submenu2 && window.innerWidth <= 1340 && !e.target.matches('.submenu2 a')) {
+            e.preventDefault();
+          }
+        
           bigCategories.forEach(function(otherCategory) {
             if (otherCategory !== category) {
               otherCategory.classList.remove('active');
@@ -171,8 +150,56 @@ document.addEventListener('DOMContentLoaded', function() {
           this.classList.toggle('active');
         });
       });
+      
+      
+
+      var boxContainerNav = document.querySelector('#notexist');
+      if (boxContainerNav) {
+        boxContainerNav.addEventListener("click", (e) => {
+          const targetBox = e.target.closest(".category-box");
+
+          if (targetBox) {
+            const parentListItem = targetBox.closest("li");
+            const submenu = parentListItem.querySelector(".submenu");
+
+            const isTargetBoxNewest = targetBox.classList.contains("newest");
+
+            if (!isTargetBoxNewest && window.innerWidth <= 1340) {
+              e.preventDefault();
+            }
+
+            const allTargetBoxes = document.querySelectorAll(".category-box");
+            allTargetBoxes.forEach((box) => {
+              if (box !== targetBox) {
+                box.classList.remove("current");
+                const parentListItem = box.closest("li");
+                const siblingSubmenu = parentListItem.querySelector(".submenu");
+                if (siblingSubmenu) {
+                  siblingSubmenu.classList.remove("current");
+                }
+              }
+            });
+            boxContainerNav.classList.remove("current");
+
+            targetBox.classList.toggle("current");
+
+            const isActive = Array.from(allTargetBoxes).some((box) =>
+              box.classList.contains("current")
+            );
+
+            if (isActive) {
+              boxContainerNav.classList.add("current");
+            }
+
+            if (submenu) {
+              submenu.classList.toggle("current");
+            }
+          }
+        });
+      }
     });
 });
+
 
 
 
@@ -376,25 +403,25 @@ document.addEventListener('DOMContentLoaded', function() {
       buttonsContainer.classList.add("buttons-container");
       prevButtonContainer.classList.add("controls-button");
       prevButtonContainer.setAttribute("aria-label", "Prev Category");
-      prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left""></i>';
+      prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left"></i>';
       nextButtonContainer.classList.add("controls-button");
       nextButtonContainer.setAttribute("aria-label", "Next Category");
       nextButtonContainer.innerHTML = '<i class="bi bi-chevron-right"></i>';
-
+  
       buttonsContainer.appendChild(prevButtonContainer);
       buttonsContainer.appendChild(nextButtonContainer);
-
+  
       boxContainer.parentNode.insertBefore(buttonsContainer, SpaceboxContainer);
-
+  
       boxContainer.style.width = `${containerWidth}px`;
-
+  
       prevButtonContainer.addEventListener("click", () => {
         scrollPosition -= boxWidth;
         scrollPosition = Math.max(scrollPosition, 0);
         boxContainer.scroll({ left: scrollPosition, behavior: "smooth" });
         buttonScrollPosition = scrollPosition;
       });
-
+  
       nextButtonContainer.addEventListener("click", () => {
         scrollPosition += boxWidth;
         scrollPosition = Math.min(
@@ -409,19 +436,57 @@ document.addEventListener('DOMContentLoaded', function() {
       let startX = 0;
       let scrollLeft = 0;
 
-      boxContainer.addEventListener("click", (e) => {
-        if (e.target.tagName === "a" && e.target.closest(".category-box")) {
-          e.preventDefault();
-        }
-      });
 
+      boxContainer.addEventListener("click", (e) => {
+        const targetBox = e.target.closest(".category-box");
+    
+        if (targetBox) {
+            const parentListItem = targetBox.closest("li");
+            const submenu = parentListItem.querySelector(".submenu");
+            
+            const isTargetBoxNewest = targetBox.classList.contains("newest");
+    
+            if (!isTargetBoxNewest && window.innerWidth <= 1340) {
+                e.preventDefault();
+            }
+    
+            const allTargetBoxes = document.querySelectorAll(".category-box");
+            allTargetBoxes.forEach((box) => {
+                if (box !== targetBox) {
+                    box.classList.remove("current");
+                    const parentListItem = box.closest("li");
+                    const siblingSubmenu = parentListItem.querySelector(".submenu");
+                    if (siblingSubmenu) {
+                        siblingSubmenu.classList.remove("current");
+                    }
+                }
+            });
+            boxContainer.classList.remove("current");
+    
+            targetBox.classList.toggle("current");
+    
+            const isActive = Array.from(allTargetBoxes).some((box) =>
+                box.classList.contains("current")
+            );
+    
+            if (isActive) {
+                boxContainer.classList.add("current");
+            }
+    
+            if (submenu) {
+                submenu.classList.toggle("current");
+            }
+        }
+    });
+    
+    
       boxContainer.addEventListener("scroll", () => {
         if (boxContainer.scrollLeft === 0) {
           prevButtonContainer.classList.add("disabled");
         } else {
           prevButtonContainer.classList.remove("disabled");
         }
-
+  
         const maxScrollLeft =
           boxContainer.scrollWidth - boxContainer.clientWidth;
         if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
@@ -430,7 +495,7 @@ document.addEventListener('DOMContentLoaded', function() {
           nextButtonContainer.classList.remove("disabled");
         }
       });
-
+  
       if (boxContainer.scrollLeft === 0) {
         prevButtonContainer.classList.add("disabled");
       }
@@ -438,14 +503,14 @@ document.addEventListener('DOMContentLoaded', function() {
       if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
         nextButtonContainer.classList.add("disabled");
       }
-
+  
       boxContainer.addEventListener("mousedown", (e) => {
         e.preventDefault();
         isMouseDown = true;
         startX = e.pageX - boxContainer.offsetLeft;
         scrollLeft = boxContainer.scrollLeft;
       });
-
+  
       boxContainer.addEventListener("mousemove", (e) => {
         if (!isMouseDown) return;
         e.preventDefault();
@@ -455,22 +520,22 @@ document.addEventListener('DOMContentLoaded', function() {
         boxContainer.scrollLeft = newScrollLeft;
         buttonScrollPosition = newScrollLeft;
       });
-
+  
       boxContainer.addEventListener("mouseup", () => {
         isMouseDown = false;
       });
-
+  
       boxContainer.addEventListener("mouseleave", () => {
         isMouseDown = false;
       });
-
+  
       boxContainer.addEventListener("touchstart", (e) => {
         const touch = e.touches[0];
         isMouseDown = true;
         startX = touch.pageX - boxContainer.offsetLeft;
         scrollLeft = boxContainer.scrollLeft;
       });
-
+  
       boxContainer.addEventListener("touchmove", (e) => {
         if (!isMouseDown) return;
         e.preventDefault();
@@ -481,62 +546,65 @@ document.addEventListener('DOMContentLoaded', function() {
         boxContainer.scrollLeft = newScrollLeft;
         buttonScrollPosition = newScrollLeft;
       });
-
+  
       boxContainer.addEventListener("touchend", () => {
         isMouseDown = false;
       });
-
+  
       var categorySelector = document.querySelector("div.category-selector");
       var ulElements = categorySelector.querySelectorAll(
         "div.category-selector > ul"
       );
       var ulArray = Array.from(ulElements);
-
+  
       ulArray.sort(function (a, b) {
         var aIsActive = a
-          .querySelector("li a.category-box")
+          .querySelector("li a.category-box, li div.category-box")
           .classList.contains("active");
         var bIsActive = b
-          .querySelector("li a.category-box")
+          .querySelector("li a.category-box, li div.category-box")
           .classList.contains("active");
-
+  
         if (aIsActive && !bIsActive) {
           return -1;
         } else if (!aIsActive && bIsActive) {
           return 1;
         } else if (
-          a.querySelector("li a.category-box").classList.contains("last")
+          a.querySelector("li a.category-box, li div.category-box").classList.contains("last")
         ) {
           return 1;
         } else if (
-          b.querySelector("li a.category-box").classList.contains("last")
+          b.querySelector("li a.category-box, li div.category-box").classList.contains("last")
         ) {
           return -1;
         } else {
           return Math.random() - 0.5;
         }
       });
-
+  
       while (categorySelector.firstChild) {
         categorySelector.removeChild(categorySelector.firstChild);
       }
-
+  
       ulArray.forEach(function (ul) {
         categorySelector.appendChild(ul);
       });
-
+  
       buttonsContainer.scrollLeft = buttonScrollPosition;
     }
-    var ratingsumm = document.querySelector(".ratingsumm");
-    var sitealternates = document.querySelector(".sitealternates");
-    
-    if (ratingsumm && sitealternates) {
-      ratingsumm.parentNode.insertBefore(
-        sitealternates,
-        ratingsumm.nextSibling
-      );
-    }
   });
+
+  
+
+var ratingsumm = document.querySelector(".ratingsumm");
+var sitealternates = document.querySelector(".sitealternates");
+
+if (ratingsumm && sitealternates) {
+  ratingsumm.parentNode.insertBefore(
+    sitealternates,
+    ratingsumm.nextSibling
+  );
+}
 
   $('.sitepros').click(function() {
     $(this).toggleClass("active");
@@ -2289,8 +2357,8 @@ $(document).ready(function(){
 
   var path = window.location.pathname;
   if (path.includes('/reviews/')) {
-    var ratingsumm = $('.ratingsumm');
-    sliderContainer.insertAfter(ratingsumm);
+    var sitealternates = $('.sitealternates');
+    sliderContainer.insertAfter(sitealternates);
   } else if (path.includes('/mirrors/')) {
     var sitealternates = $('.sitealternates');
     sliderContainer.insertAfter(sitealternates);
