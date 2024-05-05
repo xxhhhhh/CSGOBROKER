@@ -1333,7 +1333,7 @@ document.addEventListener('DOMContentLoaded', function () {
               "Buy or Sell Skins": "Купить/Продать Скины",
               "Buy or Sell Items": "Купить/Продать Предметы",
               "Marketplaces": "Торговые Площадки",
-              "Instant Sell": "Мгновенная Продажа",
+              "Instant Sell": "Моментальная Продажа",
               "Buy Items": "Купить Предметы",
               "Sell Items": "Продать Предметы",
               "Trade Items": "Обменять Предметы",
@@ -2092,7 +2092,7 @@ function translateElement(element, targetLang) {
       'es': 'Intercambiar Ítems'
     },
     'Instant Sell': {
-      'ru': 'Мгновенная продажа',
+      'ru': 'Моментальная продажа',
       'tr': 'Anlık Satış',
       'pt': 'Venda Imediata',
       'hi': 'त्वरित बेचें',
