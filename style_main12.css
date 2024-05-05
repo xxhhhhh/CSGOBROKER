@@ -5241,9 +5241,6 @@ label:active,
         font-size: 16px;
         margin-left: 5px;
     }
-    .submenu li:hover {
-        background-color: unset;
-    }
     ul li:hover .submenu,
     .submenu.current {
         z-index: 90;
@@ -5259,7 +5256,7 @@ label:active,
         margin: 1px 0;
         border-radius: 5px;
         overflow: hidden;
-        background: rgba(16, 16, 16, .9);
+        background: rgba(21, 21, 21, .9);
     }
     .big-category.current a {
         color: var(--main-color);
@@ -5273,7 +5270,7 @@ label:active,
    }
    .category-selector.current .category-box {
     border: 2px solid #161616;
-    background: rgba(18, 18, 18, .9);
+    background: rgba(21, 21, 21, .9);
 }
     .category-selector .submenu2 {
         width: 100% !important;
@@ -5303,7 +5300,7 @@ label:active,
         color: var(--main-color);
     }
     .big-category.active a {
-        background: rgba(14, 14, 14, .9);
+        background: rgba(16, 16, 16, .9);
     }
     .nav-bar {
         background-color: rgba(12, 12, 12, .85);
@@ -5477,7 +5474,6 @@ label:active,
     .box .logobg img {
         max-width: 80% !important;
         max-height: 75px !important;
-        min-height: max-content !important;
     }
     nav #pagename {
         font-size: 13px;
