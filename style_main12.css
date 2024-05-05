@@ -4204,19 +4204,23 @@ footer .centralizer .footer-content {
         background-color: rgb(18 18 18);
         transition: all ease .2s;
     } 
+    .submenu li {
+        background-color: rgb(23 23 23);
+    }
     .category-selector .submenu2 {
         display: none;
     }
-    .submenu2 a {
-        color: var(--white) !important;
-    }
     .submenu .big-category a:hover,
+    .submenu li:hover a,
     .submenu .big-category .nonredir:hover,
     .submenu2 a:hover {
         color: var(--main-color);
     }
-    .submenu2 {
-        color: var(--white);
+    .submenu2 li a {
+        color: var(--white) !important;
+    }
+    .submenu2 li a:hover {
+        color: var(--main-color) !important;
     }
     .submenu .big-category:nth-child(1) {
         margin-top: 18px;
