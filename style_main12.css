@@ -4059,7 +4059,7 @@ footer .centralizer .footer-content {
     width: 1000px;
     margin: 0 auto;
     overflow: hidden;
-    margin-top: 18px;
+    /* margin-top: 18px; */
     border-radius: 5px;
 }
 .screens.slick-slider {
@@ -5467,7 +5467,6 @@ label:active,
         position: relative;
     }
     .box {
-        /* margin: 20px 10px 0 10px; */
         margin: 8px 4px 0 4px !important;
         background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.3) 100%);
         width: 220px;
@@ -5478,7 +5477,7 @@ label:active,
     .box .logobg img {
         max-width: 80% !important;
         max-height: 75px !important;
-        width: auto !important;
+        min-height: max-content !important;
     }
     nav #pagename {
         font-size: 13px;

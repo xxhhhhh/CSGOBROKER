@@ -1909,19 +1909,26 @@ if (window.location.pathname !== '/newest' &&
         .then(data => {
             var tempDiv = document.createElement('div');
             tempDiv.innerHTML = data;
-  
+    
             var boxes = tempDiv.querySelectorAll('div.boxes-holder .box');
             for (var i = 0; i < 4 && i < boxes.length; i++) {
                 newestBoxesDiv.appendChild(boxes[i].cloneNode(true));
             }
-  
+    
             var footerElement = document.querySelector('footer');
-            footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
-  
+            var sliderContainer = document.querySelector('.slider-container');
+    
+            if (sliderContainer) {
+                sliderContainer.parentNode.insertBefore(newestBoxesDiv, sliderContainer);
+            } else {
+                footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
+            }
+    
             if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
-              updateURLs(newestBoxesDiv);
-          }        
-        })
+                updateURLs(newestBoxesDiv);
+            }
+        });
+    
   }
 
 
@@ -2365,10 +2372,14 @@ $(document).ready(function(){
   } else if (path.includes('/topic/') && $('.boxtopic').length > 0) {
     var boxTopic = $('.boxtopic');
     boxTopic.append(sliderContainer);
-  }  else {
+  } else if ($('.newest-boxes').length > 0) {
+    var newestBoxes = $('.newest-boxes');
+    sliderContainer.insertAfter(newestBoxes);
+  } else {
     var footer = $('footer');
     sliderContainer.insertBefore(footer);
   }
+  
   
   sliderContainer.slick({
     slidesToShow: 1,
