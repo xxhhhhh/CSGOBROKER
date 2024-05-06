@@ -99,12 +99,9 @@ document.addEventListener('DOMContentLoaded', function() {
       header.insertAdjacentElement('afterend', navBarContainer.firstChild);
 
       var categorySelector = document.querySelector('.category-selector');
+
       if (categorySelector) {
-        fetch('/code-parts/translations/categories.json')
-          .then(response => response.json())
-          .then(translations => {
-            applyTranslation(categorySelector, languageTag, translations);
-          });
+        applyTranslation(categorySelector, languageTag, translations);
       }
 
       var menuToggle = document.querySelector('.menu-toggle');
@@ -1341,7 +1338,8 @@ document.addEventListener('DOMContentLoaded', function () {
               "Sell Skins": "Продать Скины",
               "Trade Skins": "Обменять Скины",
               "Steam Level Up": "Увеличить Уровень Steam",
-              "Buy Steam Games": "Купить Игры Steam"
+              "Buy Steam Games": "Купить Игры Steam",
+              "Case Battle": "Кейс Батл"
             },
             "hi": {
               "CS2 Sites List": "CS2 साइटों की सूची",
@@ -1919,10 +1917,11 @@ if (window.location.pathname !== '/newest' &&
             var sliderContainer = document.querySelector('.slider-container');
     
             if (sliderContainer) {
-                sliderContainer.parentNode.insertBefore(newestBoxesDiv, sliderContainer);
+              sliderContainer.parentNode.insertBefore(newestBoxesDiv, sliderContainer.nextSibling);
             } else {
-                footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
+              footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
             }
+          
     
             if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
                 updateURLs(newestBoxesDiv);
@@ -2374,7 +2373,7 @@ $(document).ready(function(){
     boxTopic.append(sliderContainer);
   } else if ($('.newest-boxes').length > 0) {
     var newestBoxes = $('.newest-boxes');
-    sliderContainer.insertAfter(newestBoxes);
+    sliderContainer.insertBefore(newestBoxes);
   } else {
     var footer = $('footer');
     sliderContainer.insertBefore(footer);
