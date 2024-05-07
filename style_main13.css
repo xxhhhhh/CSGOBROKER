@@ -3552,7 +3552,8 @@ footer .centralizer .footer-content {
 }
 .newest-boxes .box {
     height: 200px;
-    background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.3) 100%);
+    /* background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.3) 100%); */
+    background: rgba(0, 0, 0, .2);
 }
 .newest-boxes .box .logobg a img:hover {
     transform: scale(.95);
@@ -4948,6 +4949,14 @@ label:active,
     }
 }
 @media screen and (max-width: 1340px) {
+    .box .logobg img {
+        max-width: 80% !important;
+        width: auto !important;
+    }
+    .box.main .logobg img {
+        max-width: unset !important;
+        max-height: unset !important;
+    }
     .rating-case-single {
         transform: translateY(0) !important;
     }
@@ -5086,7 +5095,7 @@ label:active,
         top: 105px;
     }
     .topic-boxes-holder {
-        max-width: 90%;
+        max-width: 100%;
     }
     .sitepage.topic .siteblock,
     .topic-centralizer,
@@ -5162,7 +5171,7 @@ label:active,
         justify-content: center;
         display: flex;
         flex-wrap: wrap;
-        margin-top: -9px;
+        margin-top: 9px;
     }
     .category-selector {
         max-width: 98%;
@@ -5477,18 +5486,11 @@ label:active,
     .box {
         margin: 8px 4px 0 4px !important;
         background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.3) 100%);
-        width: 220px;
+        width: 24.2%;
+        min-width: 220px;
     }
     .box_vk {
         display: none;
-    }
-    .box .logobg img {
-        max-width: 80% !important;
-        max-height: 75px !important;
-    }
-    .box.main .logobg img {
-        max-width: unset !important;
-        max-height: unset !important;
     }
     nav #pagename {
         font-size: 13px;
@@ -5508,6 +5510,7 @@ label:active,
     }
     #FAQ #PageSubt {
         font-size: 12px !important;
+        width: 90%;
     }
     footer#review .centralizer .footer-content a {
         left: 0 !important;
@@ -5606,6 +5609,15 @@ label:active,
     }
 }
 @media screen and (max-width: 460px) {
+    .box .logobg img {
+        max-width: 80% !important;
+        max-height: 75px !important;
+        width: auto !important;
+    }
+    .box.main .logobg img {
+        max-width: unset !important;
+        max-height: unset !important;
+    }
     .instruction code,
     .site-promo-copy {
         border-radius: 5px;
@@ -5667,9 +5679,10 @@ label:active,
         margin: 3px;
     }
     .box {
-        width: 49.2%;
-        margin: 6px 0 0 !important;
+        width: 48.2%;
+        margin: 4px 2px 2px !important;
         height: 320px !important;
+        min-width: unset;
     }
     .nav-content .lang-menu {
         display: none;
@@ -5679,15 +5692,11 @@ label:active,
         border: 2px solid #161616;
     }
     .boxes-holder {
-        width: 98%;
+        width: 100%;
         margin-top: 9px;
-        justify-content: space-between;
     }
     .boxes-holder .box .logobg {
         height: 40% !important;
-    }
-    .category-space.shorter {
-        height: 102px;
     }
     .boxes-holder .box .content {
         height: 60% !important;
@@ -5833,7 +5842,16 @@ label:active,
         font-size: 18px;
     }
     .topic-box {
-        width: 100%;
+        width: 48%;
+        margin: 6px 3px 0 3px;
+        height: 150px;
+    }
+    .topic-boxes-holder {
+        margin-top: 6px;
+    }
+    .topic-box .content span {
+        font-size: 13px;
+        text-align: center;
     }
     nav img {
         width: 100px;
