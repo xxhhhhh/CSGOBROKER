@@ -1752,10 +1752,12 @@ if (btnfaq) {
       if (currentHeight === 0) {
         targetDiv.style.height = targetDivHeight * 2 + "px";
         btnfaq.classList.add("active");
+        targetDiv.classList.add("active");
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         targetDiv.style.height = "0px";
         btnfaq.classList.remove("active");
+        targetDiv.classList.remove("active");
       }
     }
   };
