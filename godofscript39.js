@@ -1183,7 +1183,7 @@ $(document).ready(function(){
     
       
       if (window.location.pathname.includes("/topic/")) {
-        var elements = document.querySelectorAll('.box-skins-list, .topic-boxes-holder');
+        var elements = document.querySelectorAll('.box-skins-list');
         elements.forEach(function(element) {
             element.classList.add('visible');
         });
@@ -1624,25 +1624,25 @@ document.addEventListener('DOMContentLoaded', function () {
           xhr.open('GET', adsFilePath, true);
       
           xhr.onreadystatechange = function () {
-              if (xhr.readyState == 4 && xhr.status == 200) {
-                  var adsBoxesHtml = xhr.responseText;
-                  var adsBoxes = document.createElement('div');
-                  adsBoxes.innerHTML = adsBoxesHtml;
-      
-                  var insertAfterElement = document.querySelector('.box-topic');
-      
-                  var randomAdsBox = adsBoxes.children[Math.floor(Math.random() * adsBoxes.children.length)];
-      
-                  randomAdsBox.style.opacity = '0';
-                  randomAdsBox.style.transition = 'opacity .2s ease-in-out';
-      
-                  insertAfterElement.parentNode.insertBefore(randomAdsBox, insertAfterElement.nextSibling);
-      
-                  setTimeout(function () {
-                      randomAdsBox.style.opacity = '1';
-                  }, 100);
-              }
-          };
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var adsBoxesHtml = xhr.responseText;
+                var adsBoxes = document.createElement('div');
+                adsBoxes.innerHTML = adsBoxesHtml;
+        
+                var insertAfterElement = document.querySelector('.box-topic');
+        
+                var randomAdsBox = adsBoxes.children[Math.floor(Math.random() * adsBoxes.children.length)];
+        
+                insertAfterElement.parentNode.insertBefore(randomAdsBox, insertAfterElement.nextSibling);
+        
+                setTimeout(function () {
+                    setTimeout(function () {
+                        randomAdsBox.classList.add('active');
+                    }, 100);
+                });
+            }
+        };
+        
       
           xhr.send();
       }
@@ -1919,10 +1919,18 @@ if (window.location.pathname !== '/newest' &&
             var sliderContainer = document.querySelector('.slider-container');
     
             if (sliderContainer) {
-              sliderContainer.parentNode.insertBefore(newestBoxesDiv, sliderContainer.nextSibling);
-            } else {
+              if (
+                  window.location.pathname.includes("/topic/skins/") ||
+                  window.location.pathname.includes("/topic/items/") ||
+                  window.location.pathname.includes("/topic/sticker-crafts/")
+              ) {
+                  footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
+              } else {
+                  sliderContainer.parentNode.insertBefore(newestBoxesDiv, sliderContainer.nextSibling);
+              }
+          } else {
               footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
-            }
+          }
           
     
             if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
@@ -2457,4 +2465,22 @@ $(document).ready(function(){
           $(this).addClass('preview');
       }
   });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  if (window.location.pathname.startsWith("/topic/skins")) {
+      var colorList = ["white", "gray", "black", "brown", "red", "orange", "golden", "silver", "yellow", "green", "cyan", "blue", "purple", "pink"];
+
+      colorList.forEach(function(color) {
+          var bgImage = new Image();
+          bgImage.src = "/img/skins/previews/small/example-" + color + ".webp";
+          bgImage.onload = function() {
+              var elements = document.querySelectorAll("[data-color='" + color + "']");
+              elements.forEach(function(element) {
+                  element.style.backgroundImage = "url(" + bgImage.src + ")";
+                  element.classList.add("active");
+              });
+          };
+      });
+  }
 });
