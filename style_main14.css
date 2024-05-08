@@ -2806,8 +2806,12 @@ nav #logo:hover {
     opacity: 1;
 } */
 .topic-box .logobg.skincolors {
+    visibility: hidden;
+}
+.topic-box .logobg.skincolors {
     transform: scale(1.05);
     opacity: 0;
+    visibility: visible;
     transition: transform .3s ease-in-out, opacity .4s;
 }
 .topic-boxes-holder .logobg.skincolors {

@@ -2468,7 +2468,7 @@ $(document).ready(function(){
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  if (window.location.pathname.startsWith("/topic/skins")) {
+  if (window.location.pathname.includes("/topic/skins")) {
       var colorList = ["white", "gray", "black", "brown", "red", "orange", "golden", "silver", "yellow", "green", "cyan", "blue", "purple", "pink"];
 
       colorList.forEach(function(color) {
