@@ -173,22 +173,6 @@ var requests = [
   { url: '/multitop/dota/instant-sell.html', targetId: 'instant-sell-dota' }
 ];
 
-function getRequestByTargetId(targetId) {
-  for (var i = 0; i < requests.length; i++) {
-    if (requests[i].targetId === targetId) {
-      return requests[i];
-    }
-  }
-  return null;
-}
-
-function sendRequestByTargetId(targetId) {
-  var request = getRequestByTargetId(targetId);
-  if (request) {
-    sendRequest(request.url, request.targetId);
-  }
-}
-
 function sendRequest(url, targetId) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
@@ -205,23 +189,6 @@ function sendRequest(url, targetId) {
   xhr.open('GET', url, true);
   xhr.send();
 }
-
-function sendRequestByTargetId(targetId) {
-  var request = getRequestByTargetId(targetId);
-  if (request) {
-    sendRequest(request.url, request.targetId);
-  }
-}
-
-function sendRequestsForAllBoxesHolders() {
-  var boxesHolders = document.querySelectorAll('.boxes-holder');
-  boxesHolders.forEach(function(boxHolder) {
-    var targetId = boxHolder.id;
-    sendRequestByTargetId(targetId);
-  });
-}
-
-sendRequestsForAllBoxesHolders();
 
 function addStarRatingToBoxesHolders() {
   for (var boxId in ratings) {
