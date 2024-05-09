@@ -954,7 +954,6 @@ nav #pagename:focus {
     justify-content: flex-start;
     align-items: center;
     overflow-x: scroll;
-    transition: opacity .25s .25s ease-in-out;
     background-color: rgba(0, 0, 0, .1);
     border-radius: 5px;
     padding-left: 5px;
@@ -971,7 +970,7 @@ nav #pagename:focus {
 .items.fade-in-topic .box-topic,
 .items.fade-in-topic .rec-box,
 .items.fade-in-topic .boxtopic {
-    transition: all .25s .25s ease-in-out;
+    transition: all .3s ease-in-out !important;
     opacity: 1 !important;
 }
 .box-skins-list.visible {
@@ -4977,7 +4976,7 @@ label:active,
     .mods-box.mods-box.skins-box {
         margin-top: unset;
         margin-bottom: unset;
-        min-height: 80px;
+        min-height: 82px;
         height: auto;
     }
     .instruction.double h3 {
@@ -5379,6 +5378,7 @@ label:active,
         width: 100%;
         display: flex;
         justify-content: center;
+        min-height: unset;
     }
     .sitepage.topic-craft .boxtopic {
         margin-top: 4px;
@@ -5667,7 +5667,7 @@ label:active,
         height: 120px;
         margin: 3px;
     }
-    .box-skins:nth-child(2) .skin img {
+    .box-skins.solo:nth-child(2) .skin img {
         width: auto;
         height: 70%;
       }
@@ -5875,7 +5875,7 @@ label:active,
 }
 .category-box-content span {
     opacity: 0;
-    transition: opacity .15s ease-in-out;
+    transition: opacity .3s ease-in-out;
 }
 .category-box-content span.translated {
     opacity: 1;
