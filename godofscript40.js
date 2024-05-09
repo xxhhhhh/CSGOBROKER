@@ -999,7 +999,8 @@ $(document).ready(function(){
       $(document).ready(function () {
         var originalOrder = $(".box-skins-list").html();
         var enabledFiltersState = {};
-    
+        var sortState = 'normal';
+        
         function updateNavigationReset() {
             var enabledFilters = $(".navigation-weapon-type.enabled").length;
             var sortEnabled = $(".navigation-weapon-sort").hasClass("enabled");
@@ -1113,6 +1114,7 @@ $(document).ready(function(){
                 $(".box-skins").removeClass("selected");
                 $(".topic-centralizer .navigation-reset").remove();
             });
+            
         } else if (window.location.pathname.includes("/items/")) {
             $(".box-topic").load("/code-parts/micro-parts/box-topic-items.html", function () {
                 $(".navigation-weapon-type").click(function () {
@@ -1124,39 +1126,35 @@ $(document).ready(function(){
                 });
     
                 $(".navigation-weapon-sort").click(function () {
-                    var enabledFilters = $(".navigation-weapon-type.enabled").length;
-                    if (enabledFilters === 0) {
-                        return;
-                    }
-    
-                    var skins = $(".box-skins-list .skin").get();
-                    skins.sort(function (a, b) {
-                        var aClass = $(a).attr('class').split(' ')[1];
-                        var bClass = $(b).attr('class').split(' ')[1];
-                        var sortOrder = ['white', 'lblue', 'blue', 'purple', 'pink', 'red', 'gold'];
-                        return sortOrder.indexOf(aClass) - sortOrder.indexOf(bClass);
-                    });
-    
-                    if (!$(this).hasClass("enabled")) {
-                        $(".box-skins-list").html(skins);
-                    } else {
-                        $(".box-skins-list").html(originalOrder);
-                    }
-    
-                    for (var filter in enabledFiltersState) {
-                        var isEnabled = enabledFiltersState[filter];
-                        if (isEnabled) {
-                            $(".skin." + filter).removeClass("disabled");
-                            $(".navigation-weapon-type." + filter).addClass("enabled");
-                        } else {
-                            $(".skin." + filter).addClass("disabled");
-                            $(".navigation-weapon-type." + filter).removeClass("enabled");
-                        }
-                    }
-    
-                    $(this).toggleClass("enabled");
-                    updateNavigationReset();
-                });
+                  var enabledFilters = $(".navigation-weapon-type.enabled").length;
+                  if (enabledFilters === 0) {
+                      return;
+                  }
+          
+                  var skins = $(".box-skins-list .skin").get();
+                  skins.sort(function (a, b) {
+                      var aClass = $(a).attr('class').split(' ')[1];
+                      var bClass = $(b).attr('class').split(' ')[1];
+                      var sortOrder = ['white', 'lblue', 'blue', 'purple', 'pink', 'red', 'gold'];
+                      if (sortState === 'none' || sortState === 'reversed') {
+                          return sortOrder.indexOf(aClass) - sortOrder.indexOf(bClass);
+                      } else { 
+                          return sortOrder.indexOf(bClass) - sortOrder.indexOf(aClass);
+                      }
+                  });
+          
+                  $(".box-skins-list").html(skins);
+          
+                  if (sortState === 'none' || sortState === 'reversed') {
+                      sortState = 'enabled';
+                      $(this).removeClass("enabled").addClass("reversed");
+                  } else {
+                      sortState = 'reversed';
+                      $(this).removeClass("reversed").addClass("enabled");
+                  }
+          
+                  updateNavigationReset();
+              });
     
                 $(".topic-centralizer").on("click", ".navigation-reset", function () {
                     $(".skin").removeClass("disabled");

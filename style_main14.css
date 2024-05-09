@@ -578,11 +578,13 @@ nav #pagename:focus {
     opacity: .15;
     transition: all .2s ease-in-out;
 }
-.navigation-weapon-sort.enabled i {
+.navigation-weapon-sort.enabled i,
+.navigation-weapon-sort.reversed i {
     opacity: .8;
 }
 .navigation-section .site-searcher-box.enabled,
-.navigation-weapon-sort.enabled {
+.navigation-weapon-sort.enabled,
+.navigation-weapon-sort.reversed {
     background-color: #161616;
     border: 2px solid #181818;
 }
@@ -861,21 +863,26 @@ nav #pagename:focus {
 .box-skins.solo .skin .skin-desc-name {
     height: 50px;
 }
-.box-skins.disabled {
+.box-skins.disabled,
+.box-skins.notexist {
     height: 0 !important;
     margin: 0 !important;
     overflow: hidden;
 }
-.box-skins.disabled .box-skins-control {
+.box-skins.disabled .box-skins-control,
+.box-skins.notexist .box-skins-control {
     display: none;
 }
-.box-skins.disabled .box-skins-list {
+.box-skins.disabled .box-skins-list,
+.box-skins.notexist .box-skins-list {
     overflow: hidden;
 }
-.box-skins.disabled .skin {
+.box-skins.disabled .skin,
+.box-skins.notexist .skin {
     display: none;
 }
-.box-skins.disabled .close-box-skins {
+.box-skins.disabled .close-box-skins,
+.box-skins.notexist .close-box-skins {
     display: none;
 }
 .box-skins .skin .skin-desc.white,
@@ -3696,10 +3703,10 @@ footer .centralizer .footer-content {
     background: var(--opacback);
     position: relative;
     width: 98%;
-    margin: 8px 0 0 0 !important;
+    margin: 4px 0 0 0 !important;
     top: 0;
     height: 60px;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     transition: all .2s ease-in-out;
     display: none;
@@ -5091,6 +5098,9 @@ label:active,
         flex-direction: column;
         align-items: center;
     }
+    .topic-centralizer {
+        width: 100%;
+    }
     .navigation-section.second .colors-box {
         margin-top: 3px;
     }
@@ -5665,7 +5675,8 @@ label:active,
     }
     .box-skins.solo .box-skins-list .skin {
         height: 120px;
-        margin: 3px;
+        margin: 2px;
+        width: 31.8% !important;
     }
     .box-skins.solo:nth-child(2) .skin img {
         width: auto;
