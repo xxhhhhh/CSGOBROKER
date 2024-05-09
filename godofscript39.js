@@ -1266,7 +1266,9 @@ document.addEventListener('DOMContentLoaded', function () {
       
       translateElements(languageTag); 
     }{        
-        function translateURLs2(parentElement, languageTag) {
+      var translationsCache = {};
+
+      function translateURLs2(parentElement, languageTag) {
           var links = parentElement.querySelectorAll("a[href]");
           var supportedLanguages = ["hi", "tr", "pt", "es", "ru"];
       
@@ -1521,17 +1523,23 @@ document.addEventListener('DOMContentLoaded', function () {
       
           var elements = document.querySelectorAll('.category-box-content span, ul .submenu li a, ul .submenu li .nonredir');
           for (var j = 0; j < elements.length; j++) {
-            var text = elements[j].textContent.trim();
-            if (translations[languageTag] && translations[languageTag].hasOwnProperty(text)) {
-              if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
-                elements[j].innerHTML = translations[languageTag][text] + ' <i class="bi bi-caret-right-fill"></i>';
-              } else {
-                elements[j].innerHTML = translations[languageTag][text];
+              var text = elements[j].textContent.trim();
+              var translatedText = translationsCache[text];
+              if (!translatedText) {
+                  translatedText = translations[languageTag] && translations[languageTag][text];
+                  if (translatedText) {
+                      translationsCache[text] = translatedText;
+                  }
               }
-            }
+              if (translatedText) {
+                  if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
+                      elements[j].innerHTML = translatedText + ' <i class="bi bi-caret-right-fill"></i>';
+                  } else {
+                      elements[j].innerHTML = translatedText;
+                  }
+              }
           }
-        }
-        
+      }
         var categorySelector = document.querySelector('.category-selector');
         if (categorySelector !== null) {
           translateURLs2(categorySelector, languageTag);
