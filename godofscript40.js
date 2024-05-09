@@ -1522,17 +1522,17 @@ document.addEventListener('DOMContentLoaded', function () {
           var elements = document.querySelectorAll('.category-box-content span, ul .submenu li a, ul .submenu li .nonredir');
           for (var j = 0; j < elements.length; j++) {
             var text = elements[j].textContent.trim();
-            var translatedText = localStorage.getItem(languageTag + '_' + text);
-            if (!translatedText && translations[languageTag] && translations[languageTag].hasOwnProperty(text)) {
-              translatedText = translations[languageTag][text];
-              localStorage.setItem(languageTag + '_' + text, translatedText);
-            }
-            if (translatedText) {
-              if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
-                elements[j].innerHTML = translatedText + ' <i class="bi bi-caret-right-fill"></i>';
-              } else {
-                elements[j].innerHTML = translatedText;
+            if (translations[languageTag] && translations[languageTag].hasOwnProperty(text)) {
+              if (!elements[j].classList.contains('translated')) {
+                if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
+                  elements[j].innerHTML = translations[languageTag][text] + ' <i class="bi bi-caret-right-fill"></i>';
+                } else {
+                  elements[j].innerHTML = translations[languageTag][text];
+                }
+                elements[j].classList.add('translated');
               }
+            } else if (languageTag === "en" && elements[j].parentNode.classList.contains('category-box-content')) {
+              elements[j].classList.add('translated');
             }
           }
         }

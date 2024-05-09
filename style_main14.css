@@ -5873,3 +5873,10 @@ label:active,
         width: 49.5% !important;
     }
 }
+.category-box-content span {
+    opacity: 0;
+    transition: opacity .15s ease-in-out;
+}
+.category-box-content span.translated {
+    opacity: 1;
+}
