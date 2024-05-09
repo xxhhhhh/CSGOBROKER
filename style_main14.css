@@ -2781,7 +2781,7 @@ nav #logo:hover {
     transition: all .2s ease-in-out;
 }
 .topic-box:hover .logobg {
-    transform: scale(1.03);
+    transform: scale(1.03) !important;
 }
 .topic-box .logobg {
     top: 0;
@@ -5667,6 +5667,10 @@ label:active,
         height: 120px;
         margin: 3px;
     }
+    .box-skins:nth-child(2) .skin img {
+        width: auto;
+        height: 70%;
+      }
     .box {
         width: 48.2%;
         margin: 4px 2px 2px !important;
