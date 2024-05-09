@@ -1266,9 +1266,7 @@ document.addEventListener('DOMContentLoaded', function () {
       
       translateElements(languageTag); 
     }{        
-      var translationsCache = {};
-
-      function translateURLs2(parentElement, languageTag) {
+        function translateURLs2(parentElement, languageTag) {
           var links = parentElement.querySelectorAll("a[href]");
           var supportedLanguages = ["hi", "tr", "pt", "es", "ru"];
       
@@ -1523,23 +1521,22 @@ document.addEventListener('DOMContentLoaded', function () {
       
           var elements = document.querySelectorAll('.category-box-content span, ul .submenu li a, ul .submenu li .nonredir');
           for (var j = 0; j < elements.length; j++) {
-              var text = elements[j].textContent.trim();
-              var translatedText = translationsCache[text];
-              if (!translatedText) {
-                  translatedText = translations[languageTag] && translations[languageTag][text];
-                  if (translatedText) {
-                      translationsCache[text] = translatedText;
-                  }
+            var text = elements[j].textContent.trim();
+            var translatedText = localStorage.getItem(languageTag + '_' + text);
+            if (!translatedText && translations[languageTag] && translations[languageTag].hasOwnProperty(text)) {
+              translatedText = translations[languageTag][text];
+              localStorage.setItem(languageTag + '_' + text, translatedText);
+            }
+            if (translatedText) {
+              if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
+                elements[j].innerHTML = translatedText + ' <i class="bi bi-caret-right-fill"></i>';
+              } else {
+                elements[j].innerHTML = translatedText;
               }
-              if (translatedText) {
-                  if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
-                      elements[j].innerHTML = translatedText + ' <i class="bi bi-caret-right-fill"></i>';
-                  } else {
-                      elements[j].innerHTML = translatedText;
-                  }
-              }
+            }
           }
-      }
+        }
+        
         var categorySelector = document.querySelector('.category-selector');
         if (categorySelector !== null) {
           translateURLs2(categorySelector, languageTag);
