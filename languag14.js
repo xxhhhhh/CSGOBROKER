@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 var userChoice = getCookie('languageChoice');
 
 function getLanguagePrefix() {
@@ -108,8 +109,9 @@ function getCookie(name) {
   }
   return null;
 }
-
 handleLanguageRedirect();
+});
+
 
 function getRequestByTargetId(targetId) {
   for (var i = 0; i < requests.length; i++) {
@@ -244,7 +246,7 @@ function extractLanguageTagFromHTML() {
 }
 
 function translateURLsIfNeeded() {
-  if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/')) {
+  if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/ru/') && !window.location.pathname.includes('/mirrors/')) {
     var languageTag = extractLanguageTagFromHTML();
     
     var translations = {
