@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-var userChoice = getCookie('languageChoice');
+  var userChoice = getCookie('languageChoice');
 
 function getLanguagePrefix() {
   var userLang = navigator.language || navigator.userLanguage;
@@ -109,65 +109,8 @@ function getCookie(name) {
   }
   return null;
 }
+
 handleLanguageRedirect();
-});
-
-
-function getRequestByTargetId(targetId) {
-  for (var i = 0; i < requests.length; i++) {
-    if (requests[i].targetId === targetId) {
-      return requests[i];
-    }
-  }
-  return null;
-}
-
-function sendRequestByTargetId(targetId) {
-  var request = getRequestByTargetId(targetId);
-  if (request) {
-    sendRequest(request.url, request.targetId);
-  }
-}
-
-function sendRequest(url, targetId) {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-      var divToImport = document.getElementById(targetId);
-      if (divToImport) {
-        var fragment = document.createRange().createContextualFragment(xhr.responseText);
-        divToImport.appendChild(fragment);
-        translateURLsIfNeeded(divToImport);
-        addStarRatingToBoxesHolders();
-      }
-    }
-  };
-  xhr.open('GET', url, true);
-  xhr.send();
-}
-
-function sendRequestByTargetId(targetId) {
-  var request = getRequestByTargetId(targetId);
-  if (request) {
-    sendRequest(request.url, request.targetId);
-  }
-}
-
-function sendRequestsForAllBoxesHolders() {
-  var boxesHolders = document.querySelectorAll('.boxes-holder');
-  boxesHolders.forEach(function(boxHolder) {
-    var targetId = boxHolder.id;
-    sendRequestByTargetId(targetId);
-  });
-}
-
-sendRequestsForAllBoxesHolders();
-
-function addStarRatingToBoxesHolders() {
-  for (var boxId in ratings) {
-    addStarRating(boxId, ratings[boxId]);
-  }
-}
 
 var requests = [
   { url: '/multitop/csgo-best-sites.html', targetId: 'csgo-best-sites' },
@@ -229,6 +172,62 @@ var requests = [
   { url: '/multitop/dota/upgrader.html', targetId: 'upgrader-dota' },
   { url: '/multitop/dota/instant-sell.html', targetId: 'instant-sell-dota' }
 ];
+
+function getRequestByTargetId(targetId) {
+  for (var i = 0; i < requests.length; i++) {
+    if (requests[i].targetId === targetId) {
+      return requests[i];
+    }
+  }
+  return null;
+}
+
+function sendRequestByTargetId(targetId) {
+  var request = getRequestByTargetId(targetId);
+  if (request) {
+    sendRequest(request.url, request.targetId);
+  }
+}
+
+function sendRequest(url, targetId) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      var divToImport = document.getElementById(targetId);
+      if (divToImport) {
+        var fragment = document.createRange().createContextualFragment(xhr.responseText);
+        divToImport.appendChild(fragment);
+        translateURLsIfNeeded(divToImport);
+        addStarRatingToBoxesHolders();
+      }
+    }
+  };
+  xhr.open('GET', url, true);
+  xhr.send();
+}
+
+function sendRequestByTargetId(targetId) {
+  var request = getRequestByTargetId(targetId);
+  if (request) {
+    sendRequest(request.url, request.targetId);
+  }
+}
+
+function sendRequestsForAllBoxesHolders() {
+  var boxesHolders = document.querySelectorAll('.boxes-holder');
+  boxesHolders.forEach(function(boxHolder) {
+    var targetId = boxHolder.id;
+    sendRequestByTargetId(targetId);
+  });
+}
+
+sendRequestsForAllBoxesHolders();
+
+function addStarRatingToBoxesHolders() {
+  for (var boxId in ratings) {
+    addStarRating(boxId, ratings[boxId]);
+  }
+}
 
 for (var i = 0; i < requests.length; i++) {
   sendRequest(requests[i].url, requests[i].targetId);
@@ -1111,3 +1110,4 @@ function translateURLsIfNeeded() {
 }
 
 translateURLsIfNeeded();
+});
