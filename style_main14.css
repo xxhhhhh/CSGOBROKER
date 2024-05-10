@@ -573,6 +573,9 @@ nav #pagename:focus {
     cursor: pointer;
     margin: 4px;
 }
+.site-searcher-box.enabled {
+    transform: scale(1.05);
+}
 .navigation-weapon-sort i {
     color: var(--white);
     opacity: .15;
@@ -613,7 +616,7 @@ nav #pagename:focus {
     color: var(--white);
     content: attr(title);
     margin-bottom: 12px;
-    width: auto;
+    width: max-content;
     padding: 3px;
     font-size: 12px;
     font-weight: 500;
@@ -643,12 +646,15 @@ nav #pagename:focus {
 .navigation-weapon-type.enabled {
     opacity: 1;
 }
-.navigation-weapon-type:hover,
+.navigation-weapon-type.enabled:hover,
 .color-box-selection-button:hover,
-.navigation-section .site-searcher-box:hover,
+.color-box-selection-button.clicked,
+.navigation-section .site-searcher-box.enabled:hover,
 .navigation-weapon-sort:hover {
-    background-color: #191919;
+    background-color: #202020;
+    border: 2px solid #212121;
     transition: .2s all ease-in-out;
+    transform: scale(1.05);
 }
 .box-skins.selected {
     height: unset;
@@ -1484,9 +1490,9 @@ nav #pagename:focus {
     margin: 12px 0 12px 22px;
 }
 .features .featuresbox .typesinside a:hover {
-    transform: scale(1.03);
-    border: var(--main-color) 2px solid;;
-    background-color: #a81d34;
+    transform: scale(1.05);
+    background-color: #202020;
+    border: 2px solid #232323;
     color: white;
 }
 .gamemodes .featuresbox .typesinside a {
@@ -2008,15 +2014,15 @@ nav #pagename:focus {
 .instruction-mirrors li a:hover {
     text-decoration: none;
     transform: scale(1.03);
-    background-color: #a81d34;
-    border: var(--main-color) 2px solid;;
+    background-color: #202020;
+    border: 2px solid #232323;
     color: white;
 }
 .instruction-mirrors li a {
     color: var(--white);
     padding: 15px 10px;
     background-color: rgb(21 21 21);
-    border: 2px #171717 solid;
+    border: 2px #181818 solid;
     transition: ease-in-out all .2s;
     text-align: center;
     border-radius: 5px;
@@ -2735,7 +2741,7 @@ nav #logo:hover {
     color: var(--white);
     background-color: var(--main-color);
     transition: all .2s ease-in-out;
-    transform: scale(1.05); 
+    transform: scale(1); 
 }
 .sitepage .box .content button.code_style:hover,
 .box .content button.copy:hover {
@@ -5615,11 +5621,10 @@ label:active,
     .box .logobg img {
         max-width: 80% !important;
         max-height: 75px !important;
-        width: auto !important;
     }
     .box.main .logobg img {
-        max-width: unset !important;
-        max-height: unset !important;
+        max-width: 100% !important;
+        max-height: 125px !important;
     }
     .instruction code,
     .site-promo-copy {
