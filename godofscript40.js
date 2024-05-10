@@ -2311,7 +2311,7 @@ var ratings = {
   "SteamGifts":4.5,
   "SKINSLY":2.625,
   "SwapGG":3.875,
-  "CS.Deals":4,
+  "CS.Deals":3.625,
   "DMarket":4.625,
   "LOOT.Farm":3.5,
   "BitSkins":4,

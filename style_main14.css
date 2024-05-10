@@ -413,15 +413,12 @@ nav #pagename:focus {
     display: flex;
     justify-content: center;
 }
-.email-placeholder .email-text,
-.email-placeholder .email-copy {
-    /* border: dashed 1px rgba(55, 55, 55, .4); */
-    background-color: rgba(0, 0, 0, .3);
-}
+
 .email-placeholder .email-text {
     width: 300px;
     height: 100;
     border-radius: 3px 0 0 3px;
+    background-color: rgba(0, 0, 0, .3);
 }
 .email-placeholder .email-text span {
     height: 100%;
@@ -5618,6 +5615,20 @@ label:active,
     }
 }
 @media screen and (max-width: 460px) {
+    .email-placeholder {
+        width: 98%;
+    }
+    .main-col-info {
+        width: 100%;
+        margin-top: 6px;
+        padding: 25px;
+    }
+    .text-col-info-box {
+        width: 95%;
+    }
+    .boxdefaultpage {
+        padding-top: 0px;
+    }
     .box .logobg img {
         max-width: 80% !important;
         max-height: 75px !important;
