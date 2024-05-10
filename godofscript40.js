@@ -2401,18 +2401,18 @@ $(document).ready(function(){
     autoplaySpeed: 6000,
     pauseOnHover: true,
     pauseOnDotsHover: true,
-    prevArrow: '<button class="prev-button"><i class="bi bi-chevron-left"></i></button>',
-    nextArrow: '<button class="next-button"><i class="bi bi-chevron-right"></i></button>',
+    prevArrow: '<button aria-label="Prev Slide" class="prev-button"><i class="bi bi-chevron-left"></i></button>',
+    nextArrow: '<button aria-label="Next Slide" class="next-button"><i class="bi bi-chevron-right"></i></button>',
     dots: true,
     customPaging: function(slider, i) {
-      return '<button class="slider-dot" data-role="none">' + (i + 1) + '</button>';
+      return '<button class="slider-dot">' + (i + 1) + '</button>';
     },
   });
   
   translateURLsSlider(sliderContainer[0], languageTag);
 
-  function createSliderItem(href, src, alt) {
-    return '<a href="' + href + '" class="slider-banner"><img src="' + src + '" alt="' + alt + '" draggable="false"></a>';
+  function createSliderItem(href, src, label) {
+    return '<a href="' + href + '" class="slider-banner" aria-label="Visit ' + label + '"><img src="' + src + '" alt="' + label + '" draggable="false"></a>';
   }
 });
 
