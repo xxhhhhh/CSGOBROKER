@@ -7,23 +7,18 @@ function getLanguagePrefix() {
 
   switch (userLang.toLowerCase()) {
     case 'ru':
-    case 'ru-ru':
       langPrefix = 'ru';
       break;
     case 'pt':
-    case 'pt-br':
       langPrefix = 'pt';
       break;
     case 'es':
-    case 'es-es':
       langPrefix = 'es';
       break;
     case 'tr':
-    case 'tr-tr':
       langPrefix = 'tr';
       break;
     case 'hi':
-    case 'hi-in':
       langPrefix = 'hi';
       break;
     default:
