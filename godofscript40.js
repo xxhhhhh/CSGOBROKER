@@ -2295,7 +2295,7 @@ var ratings = {
   "RustBet":3,
   "Rustyloot":3.5,
   "RustChance":3.5,
-  "CSGOPolygon":3.625,
+  "CSGOPolygon":3.375,
   "Skinbet":3.375,
   "RUSTMOMENT":2.75,
   "Idle-Empire":4.5,
