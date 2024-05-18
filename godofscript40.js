@@ -60,6 +60,8 @@ function copyToClipboard(element) {
   
   if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes("/topic/") && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/') && !window.location.pathname.includes("/privacy-policy") &&
   !window.location.pathname.includes("/terms-of-service") &&
+  !window.location.pathname.endsWith("404.html") &&
+  !window.location.pathname.endsWith("404") &&
   !window.location.pathname.includes("/contact-us")) {
 
   updateURLs(sitesList);
@@ -1880,66 +1882,73 @@ if (window.location.pathname !== '/newest' &&
     !window.location.pathname.includes("/terms-of-service") &&
     !window.location.pathname.includes("/contact-us")) {
     
-    var newestBoxesDiv = document.createElement('div');
-    newestBoxesDiv.classList.add('newest-boxes');
-
-    if (window.location.href.indexOf('/topic/items/') !== -1 || window.location.href.indexOf('/topic/sticker-crafts/') !== -1 || window.location.href.indexOf('/topic/skins/') !== -1) {
-        newestBoxesDiv.classList.add('topic');
-    }
-
-    var newestBoxesTitleDiv = document.createElement('div');
-    newestBoxesTitleDiv.classList.add('newest-boxes-title');
-
-    var newestBoxesTitleBoxDiv = document.createElement('div');
-    newestBoxesTitleBoxDiv.classList.add('newest-boxes-title-box');
-    var titleSpan = document.createElement('span');
-
-    if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
-        titleSpan.textContent = 'Новые Сайты';
-    } else {
-        titleSpan.textContent = 'Recently Added';
-    }
-
-    newestBoxesTitleBoxDiv.appendChild(titleSpan);
-
-    newestBoxesTitleDiv.appendChild(newestBoxesTitleBoxDiv);
-
-    newestBoxesDiv.appendChild(newestBoxesTitleDiv);
-
-    var newestFile = languageTag === 'ru' && !window.location.pathname.startsWith("/rust") ? '/ru/newest.html' : '/newest.html';
-    fetch(newestFile)
-        .then(response => response.text())
-        .then(data => {
-            var tempDiv = document.createElement('div');
-            tempDiv.innerHTML = data;
-    
-            var boxes = tempDiv.querySelectorAll('div.boxes-holder .box');
-            for (var i = 0; i < 4 && i < boxes.length; i++) {
-                newestBoxesDiv.appendChild(boxes[i].cloneNode(true));
-            }
-    
-            var footerElement = document.querySelector('footer');
-            var sliderContainer = document.querySelector('.slider-container');
-    
-            if (sliderContainer) {
-              if (
-                  window.location.pathname.includes("/topic/skins/") ||
-                  window.location.pathname.includes("/topic/items/") ||
-                  window.location.pathname.includes("/topic/sticker-crafts/")
-              ) {
-                  footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
-              } else {
-                  sliderContainer.parentNode.insertBefore(newestBoxesDiv, sliderContainer.nextSibling);
+      var newestBoxesDiv = document.createElement('div');
+      newestBoxesDiv.classList.add('newest-boxes');
+      
+      if (window.location.href.indexOf('/topic/items/') !== -1 || window.location.href.indexOf('/topic/sticker-crafts/') !== -1 || window.location.href.indexOf('/topic/skins/') !== -1) {
+          newestBoxesDiv.classList.add('topic');
+      }
+      
+      var newestBoxesTitleDiv = document.createElement('div');
+      newestBoxesTitleDiv.classList.add('newest-boxes-title');
+      
+      var newestBoxesTitleBoxDiv = document.createElement('div');
+      newestBoxesTitleBoxDiv.classList.add('newest-boxes-title-box');
+      var titleSpan = document.createElement('span');
+      
+      if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
+          titleSpan.textContent = 'Новые Сайты';
+      } else {
+          titleSpan.textContent = 'Recently Added';
+      }
+      
+      newestBoxesTitleBoxDiv.appendChild(titleSpan);
+      newestBoxesTitleDiv.appendChild(newestBoxesTitleBoxDiv);
+      newestBoxesDiv.appendChild(newestBoxesTitleDiv);
+      
+      var newestFile = languageTag === 'ru' && !window.location.pathname.startsWith("/rust") ? '/ru/newest.html' : '/newest.html';
+      
+      fetch(newestFile)
+          .then(response => response.text())
+          .then(data => {
+              var tempDiv = document.createElement('div');
+              tempDiv.innerHTML = data;
+      
+              var existingBoxIds = new Set();
+              document.querySelectorAll('.boxes-holder .box').forEach(box => {
+                  existingBoxIds.add(box.id);
+              });
+      
+              var boxes = tempDiv.querySelectorAll('div.boxes-holder .box');
+              var addedCount = 0;
+              for (var i = 0; i < boxes.length && addedCount < 4; i++) {
+                  if (!existingBoxIds.has(boxes[i].id)) {
+                      newestBoxesDiv.appendChild(boxes[i].cloneNode(true));
+                      addedCount++;
+                  }
               }
-          } else {
-              footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
-          }
-          
-    
-            if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
-                updateURLs(newestBoxesDiv);
-            }
-        });
+      
+              var footerElement = document.querySelector('footer');
+              var sliderContainer = document.querySelector('.slider-container');
+      
+              if (sliderContainer) {
+                  if (
+                      window.location.pathname.includes("/topic/skins/") ||
+                      window.location.pathname.includes("/topic/items/") ||
+                      window.location.pathname.includes("/topic/sticker-crafts/")
+                  ) {
+                      footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
+                  } else {
+                      sliderContainer.parentNode.insertBefore(newestBoxesDiv, sliderContainer.nextSibling);
+                  }
+              } else {
+                  footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
+              }
+      
+              if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
+                  updateURLs(newestBoxesDiv);
+              }
+          });      
     
   }
 
