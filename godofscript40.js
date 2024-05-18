@@ -1873,8 +1873,8 @@ if (window.location.href.indexOf("/topic/items/") > -1) {
   xhr.send();
 }
 
-if (window.location.pathname !== '/newest' &&
-    window.location.pathname !== '/newest.html' &&
+if (!window.location.pathname.endsWith("newest") &&
+    !window.location.pathname.endsWith("newest.html") &&
     window.location.href.indexOf('/reviews/') === -1 &&
     window.location.href.indexOf('/mirrors/') === -1 && 
     !window.location.pathname.includes("/privacy-policy") &&
