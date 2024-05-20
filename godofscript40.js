@@ -296,6 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (
     !window.location.pathname.includes("/mines") &&
     !window.location.pathname.includes("/plinko") &&
+    !window.location.pathname.includes("/tf2/") &&
     !window.location.pathname.includes("/reviews/") &&
     !window.location.pathname.includes("/topic/") &&
     !window.location.pathname.includes("/mirrors/") &&
