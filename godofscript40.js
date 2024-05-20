@@ -294,6 +294,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   if (
+    !window.location.pathname.includes("/mines") &&
+    !window.location.pathname.includes("/plinko") &&
     !window.location.pathname.includes("/reviews/") &&
     !window.location.pathname.includes("/topic/") &&
     !window.location.pathname.includes("/mirrors/") &&
@@ -309,13 +311,13 @@ document.addEventListener('DOMContentLoaded', function() {
     window.location.pathname !== "/es" &&
     window.location.pathname !== "/tr" &&
     window.location.pathname !== "/hi" &&
-    !window.location.pathname.endsWith("ru.html") &&
-    !window.location.pathname.endsWith("pt.html") &&
-    !window.location.pathname.endsWith("es.html") &&
-    !window.location.pathname.endsWith("tr.html") &&
-    !window.location.pathname.endsWith("hi.html") &&
-    !window.location.pathname.endsWith("404.html") &&
-    !window.location.pathname.endsWith("index.html")
+    !window.location.pathname.endsWith("/ru.html") &&
+    !window.location.pathname.endsWith("/pt.html") &&
+    !window.location.pathname.endsWith("/es.html") &&
+    !window.location.pathname.endsWith("/tr.html") &&
+    !window.location.pathname.endsWith("/hi.html") &&
+    !window.location.pathname.endsWith("/404.html") &&
+    !window.location.pathname.endsWith("/index.html")
   ) {
     var currentLanguage = languageTag || "en";
   
