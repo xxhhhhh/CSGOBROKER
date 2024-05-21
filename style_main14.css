@@ -5903,6 +5903,7 @@ label:active,
     opacity: 0;
     transition: opacity .3s ease-in-out;
 }
-.category-box-content span.translated {
+.category-box-content span.translated,
+.category-selector.notfound .category-box-content span {
     opacity: 1;
 }

@@ -58,14 +58,18 @@ function copyToClipboard(element) {
   }
 }
   
-  if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')  && !window.location.pathname.includes("/topic/") && !window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/mirrors/') && !window.location.pathname.includes("/privacy-policy") &&
-  !window.location.pathname.includes("/terms-of-service") &&
-  !window.location.pathname.endsWith("404.html") &&
-  !window.location.pathname.endsWith("404") &&
-  !window.location.pathname.includes("/contact-us")) {
+if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html') && 
+    !window.location.pathname.includes("/topic/") && 
+    !window.location.pathname.includes('/reviews/') && 
+    !window.location.pathname.includes('/mirrors/') && 
+    !window.location.pathname.includes("/privacy-policy") &&
+    !window.location.pathname.includes("/terms-of-service") &&
+    !window.location.pathname.includes("/contact-us") &&
+    !document.getElementById('error-404')) {
 
   updateURLs(sitesList);
 }
+
 
 function applyTranslation(element, languageTag, translations) {
   translateURLs2(element, languageTag, translations);
