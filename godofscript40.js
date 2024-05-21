@@ -1986,6 +1986,9 @@ if (!window.location.pathname.endsWith("newest") &&
         importModsBox("dota");
       }
       break;
+    case 'tf2':
+      importModsBox("tf2-items");
+      break;
     case 'freebies':
       importModsBox("freebies");
       break;
@@ -2005,7 +2008,7 @@ if (!window.location.pathname.endsWith("newest") &&
   
 
 function getPageType(url) {
-  const pageTypes = ['csgo', 'rust', 'dota', 'freebies', 'crypto'];
+  const pageTypes = ['csgo', 'rust', 'dota', 'tf2', 'freebies', 'crypto'];
   for (const type of pageTypes) {
     if (url.includes(`/${type}/`) || url.endsWith(`/${type}`) || url.endsWith(`/${type}.html`)) {
       return type;
