@@ -624,7 +624,8 @@ nav #pagename:focus {
     align-items: center;
   }
   .sitepage.topic-craft .component-box[title]:hover:after {
-    font-size: 8px;
+    font-size: 10px;
+    z-index: 100;
   }
 .navigation-weapon-type {
     padding: 5px;
@@ -4766,7 +4767,8 @@ label:active,
 }
 .sitepage.topic-craft .topic-box .logobg img {
     max-height: 55%;
-    max-width: 65%;
+    height: auto;
+    max-width: 70%;
     transform: rotate(8deg);
     transition: transform .15s ease-in-out;
     margin: auto 0;
