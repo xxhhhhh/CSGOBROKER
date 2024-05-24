@@ -4985,7 +4985,15 @@ label:active,
 }
 @media screen and (max-width: 1340px) {
     :root {
-        --opacback: rgb(13 13 13);
+        --opacback: rgb(12 12 12);
+    }
+    .topic-box .logobg {
+        background-color: rgba(0, 0, 0, .15);
+        mask-image: unset;
+        -webkit-mask-image: unset;
+    }
+    .topic-box .content {
+        background-color: rgba(0, 0, 0, .25);
     }
     .box-skins-control {
         width: 100%;
@@ -5108,7 +5116,7 @@ label:active,
     }
     body {
         background: unset;
-        background-color: #141414;
+        background-color: #121212;
     }
     .ssiodox {
         background: unset;
