@@ -4984,6 +4984,12 @@ label:active,
     }
 }
 @media screen and (max-width: 1340px) {
+    :root {
+        --opacback: rgb(13 13 13);
+    }
+    .box-skins-control {
+        width: 100%;
+    }
     .box .logobg img {
         max-width: 80% !important;
         width: auto !important;
