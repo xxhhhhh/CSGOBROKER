@@ -1859,26 +1859,31 @@ if (window.location.href.indexOf("/topic/items/") > -1) {
       if (this.readyState == 4 && this.status == 200) {
           var sitetoppannel = document.querySelector("div.sitetoppannel");
           var alltopic = document.querySelector("div.sitepage");
-          sitetoppannel.innerHTML = "";
 
-          sitetoppannel.innerHTML = this.responseText;
+          if (sitetoppannel) {
+              sitetoppannel.innerHTML = "";
+              sitetoppannel.innerHTML = this.responseText;
 
-          if (languageTag === 'ru') {
-            var navBarLinks = document.querySelectorAll('div.sitetoppannel a');
-            navBarLinks.forEach(function(link) {
-              var href = link.getAttribute('href');
-              if (href && href.indexOf('/ru/') !== 0) {
-                link.setAttribute('href', '/ru' + href);
+              if (languageTag === 'ru') {
+                var navBarLinks = document.querySelectorAll('div.sitetoppannel a');
+                navBarLinks.forEach(function(link) {
+                  var href = link.getAttribute('href');
+                  if (href && href.indexOf('/ru/') !== 0) {
+                    link.setAttribute('href', '/ru' + href);
+                  }
+                });
               }
-            });
           }
 
-          alltopic.classList.add("fade-in-topic");
+          if (alltopic) {
+              alltopic.classList.add("fade-in-topic");
+          }
       }
   };
   xhr.open("GET", "/code-parts/nav-bar-items.html", true);
   xhr.send();
 }
+
 
 if (!window.location.pathname.endsWith("newest") &&
     !window.location.pathname.endsWith("newest.html") &&
