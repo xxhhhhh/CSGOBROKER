@@ -25,7 +25,7 @@
     --blackgrey: #131314;
     --opacback: rgba(3,3,3,.3);
     --halfback: rgba(0,0,0, .2);
-    --gray: rgb(111, 111, 111);
+    --gray: rgb(155, 155, 155);
 }
 head{
     display: none;
@@ -866,6 +866,9 @@ nav #pagename:focus {
     color: var(--white);
     background: linear-gradient(360deg, rgba(0, 0, 0, .2) 0%, rgba(0,0,0,0) 100%);
 }
+.box-skins .skin .skin-desc {
+    filter: blur(10px);
+}
 .skin-classdot {
     position: absolute;
     width: 16px;
@@ -904,6 +907,7 @@ nav #pagename:focus {
     left: -35px;
     top: -14px;
     transform: rotate(140deg);
+    filter: blur(20px);
 }
 .sitepage.items .box-skins .skin {
     background-color: rgb(12 12 12) !important;
@@ -1991,12 +1995,6 @@ nav #pagename:focus {
 .instruction.notmain:hover {
     opacity: 1;
 }
-/* .instruction.notmain h3,
-.instruction.notmain li a,
-.instruction.notmain li::marker,
-.instruction.notmain li strong {
-    color: var(--gray);
-} */
 .instruction h2,
 .instruction h3 {
     height: auto;
@@ -5049,6 +5047,19 @@ label:active,
     }
 }
 @media screen and (max-width: 1340px) {
+    .instruction.double {
+        width: 98%;
+        justify-content: center;
+    }
+    .instruction.notmain {
+        padding-top: 0;
+    }
+    .instruction.notmain h3,
+    .instruction.notmain li a,
+    .instruction.notmain li::marker,
+    .instruction.notmain li strong {
+         color: var(--gray);
+}
     :root {
         --opacback: rgb(12 12 12);
     }
