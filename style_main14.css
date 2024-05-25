@@ -3647,7 +3647,7 @@ footer .centralizer .footer-content {
     transform: scale(1.1);
 }
 .mods-box.skins-box .singlemod-box:hover {
-    transform: scale(1.05) !important;
+    transform: scale(1.04) !important;
 }
 .mods-box.skins-box .singlemod-box.active {
     transform: unset;
@@ -3656,8 +3656,8 @@ footer .centralizer .footer-content {
     position: relative;
     left: unset;
     top: unset;
-    width: 100%;
-    height: 51px;
+    width: 93.7%;
+    height: 56px;
     margin-top: 4px;
     margin-bottom: -11px;
 }
@@ -3667,16 +3667,23 @@ footer .centralizer .footer-content {
 .singlemod-box:hover span {
     opacity: 1;
 }
-.mods-box.skins-box .singlemod-box {
-    width: auto;
-    height: 35px;
-    margin: 0 4px;
-}
 .mods-box.skins-box .mods-main-box {
-    flex-wrap: wrap;
     flex-direction: row;
     margin: 8px 0;
     height: auto;
+}
+.mods-box.skins-box .singlemod-box {
+    height: 40px;
+    width: 20%;
+    margin: 0 7px;
+}
+.mods-box.skins-box .singlemod-box:first-child {
+    margin: unset;
+    margin-right: 7px;
+}
+.mods-box.skins-box .singlemod-box:last-child {
+    margin: unset;
+    margin-left: 7px;
 }
 .singlemod-select span {
     width: auto;
@@ -5070,7 +5077,9 @@ label:active,
         margin: unset !important;
     }
     .mods-box.skins-box .singlemod-box {
-        margin: 3px;
+        margin: 3px !important;
+        height: 35px;
+        width: auto;
     }
     ul:first-child li .category-box {
         margin: 8px 4px 0 0 !important;
@@ -5675,6 +5684,10 @@ label:active,
     }
     .mods-box.mods-box.skins-box {
         min-height: 82px;
+        width: 100%;
+    }
+    .mods-box.skins-box .mods-main-box {
+        flex-wrap: wrap;
     }
     .buttons-container-page {
         bottom: 10px !important;
