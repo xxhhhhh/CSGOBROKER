@@ -3876,9 +3876,13 @@ footer .centralizer .footer-content {
     visibility: hidden;
     margin-top: 6px;
 }
+
 .topic-nav-menu .weapon-container.active .weapon-selection {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: absolute;
+    margin-top: 40px;
+    display: block;
 }
 .topic-nav-menu .weapon-selection-unite {
     height: 40px;
