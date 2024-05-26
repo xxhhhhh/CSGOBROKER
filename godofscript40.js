@@ -1690,63 +1690,7 @@ document.addEventListener('DOMContentLoaded', function () {
           contactElement.innerHTML = replacementHTML;
       }
   });
-  document.addEventListener("DOMContentLoaded", function () {
-    function setCookie(name, value, days) {
-        var expires = "";
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + value + expires + "; path=/";
-    }
-
-    function getCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-        }
-        return null;
-    }
-
-    function hideCookieWidget() {
-        var cookieWidget = document.querySelector('.cookie-widget');
-        if (cookieWidget) {
-            cookieWidget.style.animationName = 'btnExit';
-            setCookie('cookieConsent', 'true', 365);
-            cookieWidgetButton.removeEventListener('click', hideCookieWidget);
-        }
-    }
-
-    var cookieConsent = getCookie('cookieConsent');
-    if (!cookieConsent) {
-        var cookieWidgetButton = document.querySelector('.cookie-widget-button');
-        if (cookieWidgetButton) {
-            cookieWidgetButton.addEventListener('click', hideCookieWidget);
-        }
-
-        var header = document.querySelector('header');
-        if (header) {
-            var cookieWidget = document.createElement('div');
-            cookieWidget.className = 'cookie-widget';
-            var languagePrefix = window.location.pathname.indexOf('/ru/') !== -1 || window.location.pathname === '/ru' || window.location.pathname === '/ru.html' ? 'Мы используем файлы <a href="/ru/privacy-policy" class="cookie-redirect">cookie</a>для улучшения вашего опыта' : 'We use <a href="/privacy-policy" class="cookie-redirect">cookie</a> to improve your browsing experience';
-            var buttonText = languagePrefix.indexOf('/ru/') !== -1 ? 'Ознакомлен' : 'Informed';
-
-            cookieWidget.innerHTML = '<span class="cookie-widget-info">' + languagePrefix + '</span>' +
-                '<button class="cookie-widget-button">' + buttonText + '</button>';
-
-            header.insertAdjacentElement('afterend', cookieWidget);
-
-            cookieWidgetButton = document.querySelector('.cookie-widget-button');
-            if (cookieWidgetButton) {
-                cookieWidgetButton.addEventListener('click', hideCookieWidget);
-            }
-        }
-    }
-});
+  
 const btnfaq = document.getElementById("toggle");
 
 if (btnfaq) {
