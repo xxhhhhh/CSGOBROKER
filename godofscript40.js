@@ -1566,7 +1566,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     var button = document.createElement('div');
                     button.className = 'settings-menu';
                     button.innerHTML =
-                        '<a class="settings-button" id="button-vpn-filter" title="Скрыть сайты требующие VPN"><i id="vpn-icon" class="bi bi-eye"></i></a>';
+                        '<a class="settings-button" id="button-vpn-filter" data-title="Скрыть сайты требующие VPN"><i id="vpn-icon" class="bi bi-eye"></i></a>';
     
                     boxesHolders.forEach(function (boxesHolder) {
                         boxesHolder.insertBefore(button.cloneNode(true), boxesHolder.firstChild);
