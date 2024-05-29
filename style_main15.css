@@ -2349,6 +2349,7 @@ nav #logo:hover {
     transition: all .2s ease-in-out;
 }
 .category-selector .category-box .category-box-logo {
+    transform: scale(.85);
     background: rgba(0,0,0,.1);
     height: 100%;
     width: 20%;
@@ -2364,13 +2365,12 @@ nav #logo:hover {
 }
 .category-selector .category-box .category-box-logo img {
     opacity: .7;
-    max-height: 55% !important;
+    max-height: 60% !important;
     transition: all .15s ease-in-out;
 }
 .category-selector ul {
     overflow: visible !important;
     width: auto;
-    /* height: 100px; */
 }
 .category-selector .category-box#active .category-box-logo,
 .category-selector .category-box.active .category-box-logo {
@@ -3329,6 +3329,7 @@ nav img:active,
 .singlemod-box,
 .topic-box .content {
     transition: background .15s ease-in-out;
+    border-radius: 5px;
 }
 
 .boxes-holder .box:hover .content,
@@ -3337,10 +3338,9 @@ nav img:active,
 .boxes-holder .box:hover .logobg .vpn, 
 .boxes-holder .box:hover .logobg .vpn::before,
 .topic-box:hover .content,
-.singlemod-box:hover,
 .category-selector ul:hover .category-box .category-box-logo {
     background: rgb(21 21 21);
-    transition: transform .15s .05s ease-in-out, color .15s 0s, background .05s 0s;
+    transition: transform .15s .05s ease-in-out, color .15s 0s, border .15s 0s, background .15s 0s !important;
 }
 
 .content h2,
@@ -5642,8 +5642,9 @@ label:active,
         overflow: hidden;
         border: 2px solid transparent;
     }
-    .category-selector .category-box .category-box-logo {
+    .category-selector ul .category-box .category-box-logo {
         width: 100%;
+        transform: unset;
     }
     .category-selector .category-box .category-box-content {
         display: none;
@@ -6094,7 +6095,8 @@ label:active,
     }
     .content p:nth-child(2) {
         width: 96% !important;
-        height: auto;
+        height: 55px;
+        overflow: hidden;
     }
     .content p::-webkit-scrollbar {
         width: 0px;
