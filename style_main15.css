@@ -632,11 +632,13 @@ nav #pagename:focus {
     align-items: center;
     opacity: 0;
   }
+.box-topic.sticker .component-box[data-title]:hover:after {
+    display: none;
+}
 .component-box[data-title]:hover:after {
     font-size: 10px;
-    display: none;
     z-index: 100;
-  }
+}
 .navigation-weapon-type {
     padding: 5px;
     margin: 3px;
@@ -3250,7 +3252,7 @@ nav img:active,
     bottom: 0;
     right: 0;
     transform: translateY(50px);
-    transition: transform .15s .05s ease-in-out, color .15s .0s, background .15s .05s;
+    transition: transform .15s .05s ease-in-out, background .15s .05s;
     position: absolute;
     width: auto;
     padding: 0 5px 0 5px;
@@ -3327,7 +3329,7 @@ nav img:active,
 .boxes-holder .box:hover .logobg .vpn, 
 .boxes-holder .box:hover .logobg .vpn::before {
     background: rgb(20 20 20);
-    transition: transform .15s .05s ease-in-out, background .05s 0s;
+    transition: transform .15s .05s ease-in-out, color .15s 0s, background .05s 0s;
 }
 
 .content h2,
@@ -5139,15 +5141,18 @@ label:active,
     .boxes-holder .box .rating-case-single::before,
     .boxes-holder .box .logobg .vpn, 
     .boxes-holder .box .logobg .vpn::before {
-    background: rgb(20 20 20);
+    background: rgb(23 23 23);
     }
     .boxes-holder .box .content,
     .boxes-holder .box .rating-case-single {
         border-left: rgb(16 16 16) 2px solid;
     }
     .boxes-holder .box .content {
-        border-right: rgb(16 16 16) 2px solid;
         border-bottom: rgb(16 16 16) 2px solid;
+    }
+    .boxes-holder .box .content,
+    .boxes-holder .box .vpn {
+        border-right: rgb(16 16 16) 2px solid;
     }
     .mods-box {
         position: relative;

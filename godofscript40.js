@@ -1594,7 +1594,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
     
                     if (buttonTitle) {
-                        document.getElementById('button-vpn-filter').title = buttonTitle;
+                        document.getElementById('button-vpn-filter').dataset.title = buttonTitle;
                     }
     
                     document.getElementById('button-vpn-filter').addEventListener('click', function () {
@@ -1610,12 +1610,12 @@ document.addEventListener('DOMContentLoaded', function () {
     
                         var button = document.getElementById('button-vpn-filter');
                         if (vpnIcon.classList.contains('bi-eye')) {
-                            button.title = 'Скрыть сайты требующие VPN';
+                              button.dataset.title = 'Скрыть сайты требующие VPN';
                         } else {
-                            button.title = 'Показать сайты требующие VPN';
+                            button.dataset.title = 'Показать сайты требующие VPN';
                         }
     
-                        localStorage.setItem('vpnButtonTitle', button.title);
+                        localStorage.setItem('vpnButtonTitle', button.dataset.title);
                     });
                 }
             }
