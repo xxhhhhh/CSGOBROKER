@@ -127,7 +127,7 @@ nav .pages {
 nav .socials {
     height: 50px;
     width: auto;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -2869,7 +2869,7 @@ nav #logo:hover {
 .topic-box .logobg {
     top: 0;
     width: 100%;
-    height: 77%;
+    height: 80%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -2897,7 +2897,7 @@ nav #logo:hover {
 }
 .topic-box .content {
     bottom: 0;
-    height: 23%;
+    height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3323,12 +3323,23 @@ nav img:active,
     transition: background .15s ease-in-out;
     align-items: center;
 }
+
+
+.category-selector ul .category-box .category-box-logo,
+.singlemod-box,
+.topic-box .content {
+    transition: background .15s ease-in-out;
+}
+
 .boxes-holder .box:hover .content,
 .boxes-holder .box:hover .rating-case-single,
 .boxes-holder .box:hover .rating-case-single::before,
 .boxes-holder .box:hover .logobg .vpn, 
-.boxes-holder .box:hover .logobg .vpn::before {
-    background: rgb(20 20 20);
+.boxes-holder .box:hover .logobg .vpn::before,
+.topic-box:hover .content,
+.singlemod-box:hover,
+.category-selector ul:hover .category-box .category-box-logo {
+    background: rgb(21 21 21);
     transition: transform .15s .05s ease-in-out, color .15s 0s, background .05s 0s;
 }
 
