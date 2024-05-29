@@ -4326,28 +4326,38 @@ footer .centralizer .footer-content {
     display: block;
     overflow: initial !important;
     visibility: hidden;
-        }
-     .submenu li:hover {
-        background-color: rgb(18 18 18);
-        transition: all ease .2s;
-    } 
+   }
     .submenu li {
-        background-color: rgb(23 23 23);
+        background-color: rgb(12 12 12);
+        transition: all ease-in-out .15s;
     }
     .category-selector .submenu2 {
         display: none;
+        overflow: hidden !important;
     }
     .submenu .big-category a:hover,
     .submenu li:hover a,
     .submenu .big-category .nonredir:hover,
     .submenu2 a:hover {
         color: var(--main-color);
+        background-color: rgb(18 18 18);
     }
     .submenu2 li a {
         color: var(--white) !important;
+        background-color: rgb(23 23 23) !important;
     }
-    .submenu2 li a:hover {
+    .submenu2 li a:hover,
+    .category-selector ul .category-box .category-box-logo:hover,
+    .category-selector .category-box:active .category-box-logo {
         color: var(--main-color) !important;
+        background-color: rgb(18 18 18) !important;
+    }
+    .submenu li a:active {
+        background-color: rgb(14 14 14) !important;
+    }
+    .submenu .big-category:last-child,
+    .submenu2 li:last-child {
+        padding-bottom: 4px;
     }
     .submenu .big-category:nth-child(1) {
         margin-top: 18px;
@@ -4375,14 +4385,9 @@ footer .centralizer .footer-content {
         margin-top: 0px;
         margin-left: 308px;
         transition: opacity ease-in-out .15s;
-        border-left: 2px solid rgb(17 17 17);
         display: block;
         visibility: visible;
     }
-    ul li .submenu2 li,
-    ul li .submenu li{
-        border-bottom: 2px solid rgb(17 17 17);
-    }     
     ul li .submenu li:first-child{
         border-radius: 5px 0 0 0;
     }  
@@ -4409,6 +4414,14 @@ footer .centralizer .footer-content {
     justify-content: space-between;
     width: 100%;
     align-items: center;
+    background-color: rgb(23 23 23);
+    border-radius: 5px;
+    margin: 4px;
+    margin-bottom: unset;
+    transition: background .05s 0s ease-in-out;
+    }
+    ul .submenu2 li a {
+        margin-left: 3px;
     }
     ul .submenu a,
     ul .submenu .nonredir {
@@ -5516,10 +5529,10 @@ label:active,
         width: 90%;
     }
     .category-selector.current .category-box-logo {
-        background: rgba(18 18 18, .9);
+        background: rgb(23 23 23);
     }
     .submenu li {
-        background: rgba(18, 18, 18, .9);
+        background: rgb(18, 18, 18);
     }
     .category-selector .submenu,
     .category-selector .submenu2 {
@@ -5532,7 +5545,6 @@ label:active,
         font-size: 11px;
         font-weight: 600;
         text-align: center;
-        border: 2px solid #161616;
         justify-content: center;
     }
     ul .submenu li a i {
@@ -5540,10 +5552,11 @@ label:active,
     }
     .category-selector ul:hover .category-box .category-box-logo {
         filter: grayscale(1);
+        background-color: rgb(12 12 12) !important;
     }
     .category-selector.current .category-box.current .category-box-logo,
     .category-selector.current .category-box:hover .category-box-logo {
-        background: rgb(14 14 14);
+        background: rgb(12 12 12);
         filter: grayscale(0);
     }
     .submenu .big-category a:hover, 
@@ -5569,10 +5582,8 @@ label:active,
         margin-top: unset;
     }
     .submenu .big-category {
-        margin: 1px 0;
         border-radius: 5px;
         overflow: hidden;
-        background: rgba(21, 21, 21, .9);
     }
     .big-category.current a {
         color: var(--main-color);
@@ -5585,7 +5596,7 @@ label:active,
         margin-top: 20px !important;
    }
    .category-selector.current .category-box {
-    border: 2px solid #161616;
+    border: 2px solid rgb(18, 18, 18);
     background: rgba(21, 21, 21, .9);
 }
     .category-selector .submenu2 {
@@ -5615,8 +5626,9 @@ label:active,
     .big-category.active .nonredir {
         color: var(--main-color);
     }
-    .big-category.active a {
-        background: rgba(16, 16, 16, .9);
+    .big-category.active a,
+    .submenu .big-category a:hover, .submenu li:hover a {
+        background: rgb(12 12 12);
     }
     .big-category.active .submenu2 a {
         background: rgb(20 20 20);
