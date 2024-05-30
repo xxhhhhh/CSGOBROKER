@@ -757,6 +757,10 @@ $(document).ready(function(){
       'en': 'Skins By Weapon Types',
       'ru': 'Скины по Типу Оружия'
     },
+    '/topic/sticker-crafts': {
+      'en': 'Crafts with Stickers',
+      'ru': 'Крафты со Стикерами'
+    },
     '/newest': {
       'en': 'Newest Sites',
       'ru': 'Новые Сайты'
@@ -794,6 +798,7 @@ $(document).ready(function(){
     '<li><a href="/topic/skins/golden-skins">Golden Color Skins</a></li>',
     '<li><a href="/topic/skins">Skins By Color</a></li>',
     '<li><a href="/topic/items">Skins By Weapon Types</a></li>',
+    '<li><a href="/topic/sticker-crafts">Crafts with Stickers</a></li>',
     '<li><a href="/newest">Newest Sites</a></li>',
     '<li><a href="/dota">Dota 2 Sites</a></li>',
     '<li><a href="/">CS:GO Sites</a></li>',
@@ -1317,6 +1322,7 @@ document.addEventListener('DOMContentLoaded', function () {
               "Others": "Остальное",
               "Skins By Color": "Скины по Цвету",
               "Skins By Weapon Types": "Скины по Типу Оружия",
+              "Sticker-Crafts": "Крафты со Стикерами",
               "All Sites": "Все Сайты",
               "Match Betting": "Ставки на Матчи",
               "Case Opening": "Кейсы",
@@ -1362,6 +1368,7 @@ document.addEventListener('DOMContentLoaded', function () {
               "Others": "अन्य",
               "Skins By Color": "रंग द्वारा स्किनें",
               "Skins By Weapon Types": "हथियार के प्रकार द्वारा स्किनें",
+              "Sticker-Crafts": "स्टिकर्स के साथ क्राफ्ट",
               "All Sites": "सभी साइटें",
               "Match Betting": "मैच पर शर्त लगाएं",
               "Case Opening": "केस खोलें",
@@ -1406,6 +1413,7 @@ document.addEventListener('DOMContentLoaded', function () {
               "Others": "Outros",
               "Skins By Color": "Skins por Cor",
               "Skins By Weapon Types": "Skins por Tipo de Arma",
+              "Sticker-Crafts": "Artesanatos com Stickers",
               "All Sites": "Todos os Sites",
               "Match Betting": "Apostas em Jogos",
               "Case Opening": "Abertura de Caixas",
@@ -1450,6 +1458,7 @@ document.addEventListener('DOMContentLoaded', function () {
               "Others": "Diğerleri",
               "Skins By Color": "Renklerine Göre Skinler",
               "Skins By Weapon Types": "Silah Türlerine Göre Skinler",
+              "Sticker-Crafts": "Stickerlı Craftlar",
               "All Sites": "Tüm Siteler",
               "Match Betting": "Maç Bahisleri",
               "Case Opening": "Kasa Açma",
@@ -1494,6 +1503,7 @@ document.addEventListener('DOMContentLoaded', function () {
               "Others": "Otros",
               "Skins By Color": "Skins por Color",
               "Skins By Weapon Types": "Skins por Tipo de Arma",
+              "Sticker-Crafts": "Manualidades con Stickers",
               "All Sites": "Todos los sitios",
               "Match Betting": "Apuestas de partidos",
               "Case Opening": "Apertura de estuches",
