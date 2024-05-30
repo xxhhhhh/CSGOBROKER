@@ -1029,6 +1029,10 @@ nav #pagename:focus {
     width: auto;
     height: 60%;
 }
+.box-skins.solo .skin img {
+    width: 80%;
+    height: auto;
+}
 .box-skins-list {
     width: 100%;
     height: 100%;
@@ -2567,7 +2571,7 @@ nav #logo:hover {
     margin-top: 9px;
     border-radius: 5px;
     text-decoration: none;
-    transition: transform .2s ease-in-out;
+    transition: transform .15s ease-in-out;
 }
 .partner-site {
     width: 300px;
@@ -2580,7 +2584,7 @@ nav #logo:hover {
     margin-top: 9px;
     border-radius: 5px;
     text-decoration: none;
-    transition: transform .2s ease-in-out;
+    transition: transform .15s ease-in-out;
 }
 .return-box {
     width: 60px;
@@ -2822,7 +2826,6 @@ nav #logo:hover {
     margin: 18px 9px 0 9px;
     border-radius: 5px;
     overflow: hidden;
-    background: transparent;
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     transition: all .15s ease-in-out;
     text-decoration: none;
@@ -2859,7 +2862,7 @@ nav #logo:hover {
 }
 .topic-box .logobg:hover img {
     transform: scale(1.05) rotate(3deg) !important;
-    transition: transform .2s ease-in-out !important;
+    transition: transform .15s ease-in-out !important;
 }
 .topic-box .logobg img {
     transition: transform .15s ease-in-out;
@@ -2901,7 +2904,9 @@ nav #logo:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, .1);
+    background: rgb(11 11 11);
+    z-index: 10;
+    position: relative;
 }
 .topic-box .content span {
     display: block;
@@ -3773,6 +3778,12 @@ footer .centralizer .footer-content {
     left: 12.5%;
     position: fixed;
     top: 102px;
+}
+.siteleftpannel .mods-box.mods-movecolors {
+    left: 6%;
+}
+.siteleftpannel .mods-box.mods-moveitems {
+    left: 5.5%;
 }
 .singlemod-select {
     cursor: pointer;
@@ -4924,6 +4935,58 @@ label:active,
 .box-topic.sticker:hover .topic-box .logobg img {
     transform: scale(1.05) rotate(8deg);
 }
+.topic-box.maestro {
+    width: 30.3%;
+    height: auto;
+    border-radius: 10px;
+}
+.topic-box.maestro:hover {
+    transform: scale(1.03);
+}
+.topic-box.maestro .logobg {
+    height: auto;
+    mask-image: unset;
+    -webkit-mask-image: unset;
+    z-index: 2;
+    position: relative;
+}
+.topic-box.maestro .content {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: filter .15s ease-in-out, opacity .15s !important;
+    background-position: center;
+    background-size: cover;
+    filter: brightness(1.1);
+    opacity: .5;
+    z-index: 1;
+}
+.topic-box.maestro:nth-child(1) .content,
+.topic-box.maestro:nth-child(4) .content {
+    background-image: url(/img/skins/previews/topic-backplate-1.webp);
+}
+.topic-box.maestro:nth-child(2) .content,
+.topic-box.maestro:nth-child(5) .content {
+    background-image: url(/img/skins/previews/topic-backplate-2.webp);
+}
+.topic-box.maestro:nth-child(3) .content,
+.topic-box.maestro:nth-child(6) .content {
+    background-image: url(/img/skins/previews/topic-backplate-3.webp);
+}
+.topic-box.maestro .logobg img {
+    width: 100%;
+    height: auto;
+}
+.topic-box.maestro:hover .content {
+    filter: brightness(1.2);
+    opacity: .75;
+}
+.topic-box.maestro .logobg:hover img {
+    transform: scale(1.03) !important;
+}
+.topic-box.maestro:hover .logobg {
+    transform: scale(1) !important;
+}
 .box-topic.sticker {
     background: linear-gradient(180deg, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .2) 100%);
     margin: 18px 9px 0 9px !important;
@@ -5118,6 +5181,11 @@ label:active,
     }
 }
 @media screen and (max-width: 1340px) {
+    .topic-box.maestro {
+        border-radius: 10px;
+        margin-top: 8px;
+        margin: 8px 4px 0 4px;
+    }
     .instruction.double {
         width: 98%;
         justify-content: center;
@@ -5198,6 +5266,7 @@ label:active,
     }
     .mods-box.topic {
         height: unset;
+        max-width: 1050px;
     }
     .mods-box.topic .singlemod-box {
         width: 100%;
@@ -5395,6 +5464,7 @@ label:active,
     .topic-boxes-holder {
         max-width: 100%;
         min-height: 400px;
+        margin-top: 8px;
     }
     .sitepage.topic .siteblock,
     .topic-centralizer,
@@ -5852,6 +5922,13 @@ label:active,
     }
 }
 @media screen and (max-width: 850px) {
+    .topic-boxes-holder {
+        margin-top: 8px;
+    }
+    .topic-box.maestro {
+        width: 48%;
+        border-radius: 10px;
+    }
     .site-attention span {
         font-size: 14px;
         width: 80%;
@@ -5928,6 +6005,16 @@ label:active,
     }
 }
 @media screen and (max-width: 460px) {
+    .topic-box.maestro {
+        width: 97%;
+    }
+    .topic-box.maestro:first-child {
+        margin-top: 4px;
+    }
+    .topic-box.maestro .content {
+        filter: grayscale(0) brightness(1);
+        opacity: .75;
+    }
     .email-placeholder {
         width: 98%;
     }
@@ -6189,9 +6276,6 @@ label:active,
         width: 48%;
         margin: 6px 3px 0 3px;
         height: 150px;
-    }
-    .topic-boxes-holder {
-        margin-top: 8px;
     }
     .topic-box .content span {
         font-size: 13px;

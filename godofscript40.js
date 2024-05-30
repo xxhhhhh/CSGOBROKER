@@ -59,7 +59,7 @@ function copyToClipboard(element) {
 }
   
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html') && 
-    !window.location.pathname.includes("/topic/") && 
+    !window.location.pathname.includes("/topic") && 
     !window.location.pathname.includes('/reviews/') && 
     !window.location.pathname.includes('/mirrors/') && 
     !window.location.pathname.includes("/privacy-policy") &&
@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
     !window.location.pathname.includes("/plinko") &&
     !window.location.pathname.includes("/tf2/") &&
     !window.location.pathname.includes("/reviews/") &&
-    !window.location.pathname.includes("/topic/") &&
+    !window.location.pathname.includes("/topic") &&
     !window.location.pathname.includes("/mirrors/") &&
     !window.location.pathname.endsWith("privacy-policy.html") &&
     !window.location.pathname.endsWith("contact-us.html") &&
@@ -1189,7 +1189,7 @@ $(document).ready(function(){
     
     
       
-      if (window.location.pathname.includes("/topic/")) {
+      if (window.location.pathname.includes("/topic")) {
         var elements = document.querySelectorAll('.box-skins-list');
         elements.forEach(function(element) {
             element.classList.add('visible');
@@ -1290,10 +1290,10 @@ document.addEventListener('DOMContentLoaded', function () {
               });
       
               if (languageTag !== "en") {
-                if ((languageTag === "ru" && path.includes("/topic/")) || (!path || path === "/")) {
+                if ((languageTag === "ru" && path.includes("/topic")) || (!path || path === "/")) {
                     url.pathname = "/" + languageTag + path;
                     links[i].setAttribute("href", url.href);
-                } else if (!path.includes("/topic/") && !langIncluded && supportedLanguages.includes(languageTag)) {
+                } else if (!path.includes("/topic") && !langIncluded && supportedLanguages.includes(languageTag)) {
                     path = "/" + languageTag + path;
                     url.pathname = path;
                     links[i].setAttribute("href", url.href);
@@ -1312,7 +1312,7 @@ document.addEventListener('DOMContentLoaded', function () {
               "Freebies Only": "Все Бонусы",
               "Earning Sites": "Заработок",
               "Steam Sites": "Сайты Steam",
-              "Gambling Sites": "Игральные Сайты",
+              "Gambling Sites": "Гемблинг Сайты",
               "Earn by Play CS2": "Заработок на Игре в CS2",
               "Others": "Остальное",
               "Skins By Color": "Скины по Цвету",
