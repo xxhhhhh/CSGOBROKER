@@ -635,7 +635,7 @@ $(document).ready(function(){
     slidesToScroll: 1,
     autoplay: true,
     speed: 450,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 5500,
     pauseOnHover: true,
     pauseOnDotsHover: true,
     prevArrow: '<button class="prev-button"><i class="bi bi-chevron-left"></i></button>',

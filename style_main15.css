@@ -406,7 +406,8 @@ nav #pagename:focus {
 .text-col-info ul li p:first-child {
     margin-top: unset;
 }
-.email-placeholder {
+.email-placeholder,
+.skininspect-placeholder {
     width: 360px;
     height: 60px;
     margin: 0 auto;
@@ -415,13 +416,24 @@ nav #pagename:focus {
     justify-content: center;
 }
 
-.email-placeholder .email-text {
+.skininspect-placeholder {
+    width: 100%;
+    margin-bottom: 9px;
+}
+
+.email-placeholder .email-text,
+.skininspect-placeholder .skin-text {
     width: 300px;
-    height: 100;
     border-radius: 3px 0 0 3px;
     background-color: rgba(0, 0, 0, .3);
 }
-.email-placeholder .email-text span {
+
+.skininspect-placeholder .skin-text {
+    width: 94%;
+}
+
+.email-placeholder .email-text span,
+.skininspect-placeholder .skin-text span {
     height: 100%;
     width: 100%;
     color: rgb(55, 55, 55);
@@ -429,16 +441,27 @@ nav #pagename:focus {
     justify-content: center;
     align-items: center;
     font-weight: 500;
-    transition: color .35s ease-in-out;
+    transition: color .2s ease-in-out;
     font-size: 22px;
 }
-.email-placeholder .email-copy {
+
+.skininspect-placeholder .skin-text span {
+    font-size: 16px;
+    white-space: nowrap;
+    justify-content: flex-start;
+    padding-left: 20px;
+    overflow: hidden;
+    max-width: 97.5%;   
+}
+.email-placeholder .email-copy,
+.skininspect-placeholder .skin-copy {
     width: 60px;
     height: 100%;
     border-radius: 0 3px 3px 0;
     overflow: hidden;
 }
-.email-copy button {
+.email-copy button,
+.skin-copy button {
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -446,21 +469,26 @@ nav #pagename:focus {
     background-color: #ffffff05;
 }
 .email-copy button:active,
-.email-copy button:active i {
+.email-copy button:active i,
+.skin-copy button:active,
+.skin-copy button:active i {
     filter: brightness(.3);
     transition: all .15s;
 }
 
-.email-placeholder:hover span {
+.email-placeholder:hover span,
+.skininspect-placeholder:hover span {
     color: var(--white);
 }
-.email-copy button:hover i {
+.email-copy button:hover i,
+.skin-copy button:hover i {
     opacity: 1;
 }
-.email-copy button i {
+.email-copy button i,
+.skin-copy button i {
     height: 35%;
     opacity: .2;
-    transition: opacity .35s ease-in-out;
+    transition: opacity .2s ease-in-out;
     font-size: 22px;
     color: var(--white);
 }
@@ -1192,11 +1220,11 @@ nav #pagename:focus {
     width: 49.5%;
     min-height: 286px;
     border-radius: 5px;
-    
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     background-color: rgba(255, 255, 255, .05);
+    position: relative;
 }
 .boxreview .plusminus .criteria .par p, li {
     text-align: start;
@@ -1209,11 +1237,10 @@ nav #pagename:focus {
     position: relative;
     text-align: start;
     width: 170px;
-    top: 0px;
-    right: 5px;
     color: var(--white);
     font-weight: 600;
     font-size: 22px;
+    margin-left: 5px;
 }
 .boxreview .plusminus .criteria .par li:nth-child(2) {
     margin-top: 30px;
@@ -1225,10 +1252,11 @@ nav #pagename:focus {
     margin-top: 10px;
 }
 .boxreview .plusminus .criteria .par {
-    width: 394px;
-    margin-left: 32px;
+    width: 450px;
+    position: relative;
+    left: 22px;
+    top: 45px;
     height: 70%;
-    margin-top: 45px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -1237,11 +1265,12 @@ nav #pagename:focus {
     opacity: 1;
     color: var(--white);
     font-size: 16px;
-    width: 0px;
-    height: 0px;
-}
-.boxreview .plusminus .criteria .par i::before {
-    margin-bottom: 13px;
+    margin-right: 8px;
+    position: relative;
+    width: auto;
+    height: auto;
+    top: unset;
+    right: unset;
 }
 .boxreview .plusminus .criteria i {
     opacity: 1;
@@ -1252,11 +1281,10 @@ nav #pagename:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 25px 15px 0px 0px;
+    top: 25px;
+    right: 30px;
 }
-.boxreview .plusminus .criteria i:nth-child(1) {
-    margin: 15px 15px 0px 0px;
-}
+
 .boxreview .plusminus .criteria:nth-child(1) i {
     color: var(--green);
     opacity: .9;
@@ -1264,6 +1292,9 @@ nav #pagename:focus {
 .boxreview .plusminus .criteria:nth-child(2) i {
     color: var(--main-color);
     opacity: .9;
+}
+.boxreview .plusminus .criteria i {
+    position: absolute;
 }
 .boxreview .plusminus .criteria:nth-child(1) {
     background: linear-gradient(150deg, rgba(0, 0, 0, 0) 30%, rgba(15, 207, 79, .09) 100%);
@@ -2963,8 +2994,8 @@ nav #logo:hover {
     font-size: 24px;
 }
 .sitepage .box .logobg .rating {
-    width: 27%;
-    height: 5%;
+    width: auto;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2972,7 +3003,7 @@ nav #logo:hover {
     color: var(--main-color);
     font-size: 18px;
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
 }
 
 .sitealternates {
@@ -5925,6 +5956,9 @@ label:active,
     }
 }
 @media screen and (max-width: 850px) {
+    .boxreview .plusminus .criteria .par {
+        width: 90%;
+    }
     .topic-boxes-holder {
         margin-top: 8px;
     }
