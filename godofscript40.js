@@ -1014,7 +1014,7 @@ $(document).ready(function(){
         var originalOrder = $(".box-skins-list").html();
         var enabledFiltersState = {};
         var sortState = 'normal';
-        
+    
         function updateNavigationReset() {
             var enabledFilters = $(".navigation-weapon-type.enabled").length;
             var sortEnabled = $(".navigation-weapon-sort").hasClass("enabled");
@@ -1055,21 +1055,53 @@ $(document).ready(function(){
     
             if (languageTag === 'ru') {
                 if (document.getElementById('Lis-Skins')) {
-                    document.getElementById('Lis-Skins').title = 'Искать на Lis-Skins';
+                    document.getElementById('Lis-Skins').dataset.title = 'Искать на Lis-Skins';
                 }
                 if (document.getElementById('Tradeit')) {
-                    document.getElementById('Tradeit').title = 'Искать на Tradeit';
+                    document.getElementById('Tradeit').dataset.title = 'Искать на Tradeit';
                 }
                 if (document.getElementById('BitSkins')) {
-                    document.getElementById('BitSkins').title = 'Искать на BitSkins';
+                    document.getElementById('BitSkins').dataset.title = 'Искать на BitSkins';
                 }
                 if (document.getElementById('Steam')) {
-                    document.getElementById('Steam').title = 'Искать в Steam';
+                    document.getElementById('Steam').dataset.title = 'Искать в Steam';
                 }
                 if (document.getElementById('Quality-Filter')) {
-                    document.getElementById('Quality-Filter').title = 'По Редкости';
+                    document.getElementById('Quality-Filter').dataset.title = 'По Редкости';
                 }
             }
+        }
+    
+        function checkWeaponTypeAvailability() {
+            var weaponTypes = ['knives', 'gloves', 'pistols', 'rifles', 'srifles', 'smgs', 'shotguns', 'mguns'];
+            weaponTypes.forEach(function (type) {
+                var allNotExist = $(".box-skins." + type).toArray().every(function (element) {
+                    return $(element).hasClass("notexist");
+                });
+                if (allNotExist) {
+                    $(".navigation-weapon-type." + type).removeClass("enabled");
+                    $(".box-skins." + type).addClass("disabled");
+                } else {
+                    $(".navigation-weapon-type." + type).addClass("enabled");
+                    $(".box-skins." + type).removeClass("disabled");
+                }
+            });
+        }
+    
+        function checkWeaponTypeAvailabilityForItems() {
+            var weaponTypes = ['white', 'lblue', 'blue', 'purple', 'pink', 'red'];
+            weaponTypes.forEach(function (type) {
+                var allNotExist = $(".box-skins-list .skin." + type).toArray().every(function (element) {
+                    return $(element).hasClass("notexist");
+                });
+                if (allNotExist) {
+                    $(".navigation-weapon-type." + type).removeClass("enabled");
+                    $(".box-skins-list .skin." + type).addClass("disabled");
+                } else {
+                    $(".navigation-weapon-type." + type).addClass("enabled");
+                    $(".box-skins-list .skin." + type).removeClass("disabled");
+                }
+            });
         }
     
         $(".box-topic").on("click", ".site-searcher-box", function () {
@@ -1127,8 +1159,11 @@ $(document).ready(function(){
                 $(".navigation-weapon-type").addClass("enabled");
                 $(".box-skins").removeClass("selected");
                 $(".topic-centralizer .navigation-reset").remove();
+                checkWeaponTypeAvailability();
             });
-            
+    
+            checkWeaponTypeAvailability();
+    
         } else if (window.location.pathname.includes("/items/")) {
             $(".box-topic").load("/code-parts/micro-parts/box-topic-items.html", function () {
                 $(".navigation-weapon-type").click(function () {
@@ -1140,41 +1175,42 @@ $(document).ready(function(){
                 });
     
                 $(".navigation-weapon-sort").click(function () {
-                  var enabledFilters = $(".navigation-weapon-type.enabled").length;
-                  if (enabledFilters === 0) {
-                      return;
-                  }
-          
-                  var skins = $(".box-skins-list .skin").get();
-                  skins.sort(function (a, b) {
-                      var aClass = $(a).attr('class').split(' ')[1];
-                      var bClass = $(b).attr('class').split(' ')[1];
-                      var sortOrder = ['white', 'lblue', 'blue', 'purple', 'pink', 'red', 'gold'];
-                      if (sortState === 'none' || sortState === 'reversed') {
-                          return sortOrder.indexOf(aClass) - sortOrder.indexOf(bClass);
-                      } else { 
-                          return sortOrder.indexOf(bClass) - sortOrder.indexOf(aClass);
-                      }
-                  });
-          
-                  $(".box-skins-list").html(skins);
-          
-                  if (sortState === 'none' || sortState === 'reversed') {
-                      sortState = 'enabled';
-                      $(this).removeClass("enabled").addClass("reversed");
-                  } else {
-                      sortState = 'reversed';
-                      $(this).removeClass("reversed").addClass("enabled");
-                  }
-          
-                  updateNavigationReset();
-              });
+                    var enabledFilters = $(".navigation-weapon-type.enabled").length;
+                    if (enabledFilters === 0) {
+                        return;
+                    }
+    
+                    var skins = $(".box-skins-list .skin").get();
+                    skins.sort(function (a, b) {
+                        var aClass = $(a).attr('class').split(' ')[1];
+                        var bClass = $(b).attr('class').split(' ')[1];
+                        var sortOrder = ['white', 'lblue', 'blue', 'purple', 'pink', 'red', 'gold'];
+                        if (sortState === 'none' || sortState === 'reversed') {
+                            return sortOrder.indexOf(aClass) - sortOrder.indexOf(bClass);
+                        } else {
+                            return sortOrder.indexOf(bClass) - sortOrder.indexOf(aClass);
+                        }
+                    });
+    
+                    $(".box-skins-list").html(skins);
+    
+                    if (sortState === 'none' || sortState === 'reversed') {
+                        sortState = 'enabled';
+                        $(this).removeClass("enabled").addClass("reversed");
+                    } else {
+                        sortState = 'reversed';
+                        $(this).removeClass("reversed").addClass("enabled");
+                    }
+    
+                    updateNavigationReset();
+                });
     
                 $(".topic-centralizer").on("click", ".navigation-reset", function () {
                     $(".skin").removeClass("disabled");
                     $(".navigation-weapon-type").addClass("enabled");
                     $(".topic-centralizer .navigation-reset").remove();
                     enabledFiltersState = {};
+                    checkWeaponTypeAvailabilityForItems();
                 });
     
                 const lastSelectedSite = localStorage.getItem('selectedSite');
@@ -1184,11 +1220,17 @@ $(document).ready(function(){
                         selectedDiv.classList.add('enabled');
                         const languageTag = extractLanguageTagFromHTML(window.location.pathname);
                         updateSearchUrl(lastSelectedSite, languageTag);
+                        translateElements(languageTag);
                     }
                 }
+    
+                checkWeaponTypeAvailabilityForItems();
             });
         }
     });
+    
+    
+    
     
     
     
@@ -1252,6 +1294,7 @@ document.addEventListener('DOMContentLoaded', function () {
             colorList.classList.toggle('active');
           });
         });
+        
         function translateElements(languageTag) {
           if (languageTag === "ru") {
               var translations = {
@@ -1263,6 +1306,13 @@ document.addEventListener('DOMContentLoaded', function () {
                   "SMGs": "ПП",
                   "Shotguns": "Дробовики",
                   "Machine guns": "Пулеметы",
+                  "Consumer Grade": "Ширпотреб",
+                  "Industrial Grade": "Промышленное",
+                  "Mil-Spec": "Армейское",
+                  "Restricted": "Запрещенное",
+                  "Classified": "Засекреченное",
+                  "Covert": "Тайное",
+                  "Contraband": "Контрабанда",
                   "Change Color": "Сменить Цвет"
               };
       

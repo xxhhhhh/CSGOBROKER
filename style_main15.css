@@ -492,6 +492,7 @@ nav #pagename:focus {
     height: 50px;
     top: 200px;
     left: 50%;
+    transform: translateX(-50%);
     cursor: pointer;
     width: 200px;
     background-color: #161616;
@@ -508,7 +509,7 @@ nav #pagename:focus {
 }
 .navigation-reset:hover {
     filter: brightness(+130%);
-    transform: scale(1.05);
+    transform: scale(1.05)  translateX(-50%);
 }
 .navigation-topic {
     position: relative;
@@ -630,6 +631,7 @@ nav #pagename:focus {
     background-color: #121212;
     border: 2px solid #141414;
     align-items: center;
+    pointer-events: none;
     opacity: 0;
   }
 .box-topic.sticker .component-box[data-title]:hover:after {
@@ -779,6 +781,7 @@ nav #pagename:focus {
 }
 .topic-centralizer {
     width: 98%;
+    min-height: 600px;
 }
 .sitepage.items .topic-centralizer {
     display: flex;
