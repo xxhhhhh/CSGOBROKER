@@ -2379,7 +2379,7 @@ if (boxesHolder) {
   }
 }
 
-$(document).ready(function(){
+$(document).ready(function() {
 
   var excludedPages = ['/terms-of-service', '/privacy-policy', '/contact-us'];
   var path = window.location.pathname;
@@ -2392,21 +2392,27 @@ $(document).ready(function(){
   if (excluded) {
     return;
   }
-  
 
-  var sliderContainer = $('<div class="slider-container"></div>');  
+  var sliderItems = [
+    { href: '/', src: '/img/best-gambling-sites-slide-2024.png', label: 'Best Gambling Sites' },
+    { href: '/earning/offerwalls', src: '/img/earn-skins-slider-2024.png', label: 'Best Offerwall Sites' },
+    { href: '/rust', src: '/img/best-rust-sites-slide-2024.png', label: 'Best Rust Sites' }
+  ];
 
-  var slider1 = createSliderItem('/', '/img/best-gambling-sites-slide-2024.png', 'Best Gambling Sites');
-  var slider2 = createSliderItem('/earning/offerwalls', '/img/earn-skins-slider-2024.png', 'Best Offerwall Sites');
-  var slider3 = createSliderItem('/rust', '/img/best-rust-sites-slide-2024.png', 'Best Rust Sites');
-  
-  sliderContainer.append(slider1, slider2, slider3);
+  if (languageTag === 'ru') {
+    sliderItems = [
+      { href: '/', src: '/img/best-gambling-sites-slide-2024-ru.png', label: 'Лучшие Гемблинг Сайты CS2' },
+      { href: '/earning/offerwalls', src: '/img/earn-skins-slider-2024-ru.png', label: 'Лучшие Сайты с Заданиями' },
+      { href: '/rust', src: '/img/best-rust-sites-slide-2024-ru.png', label: 'Лучшие Сайты Rust' }
+    ];
+  }
 
-  var path = window.location.pathname;
-  if (path.includes('/reviews/')) {
-    var sitealternates = $('.sitealternates');
-    sliderContainer.insertAfter(sitealternates);
-  } else if (path.includes('/mirrors/')) {
+  var sliderContainer = $('<div class="slider-container"></div>');
+  sliderItems.forEach(function(item) {
+    sliderContainer.append(createSliderItem(item.href, item.src, item.label));
+  });
+
+  if (path.includes('/reviews/') || path.includes('/mirrors/')) {
     var sitealternates = $('.sitealternates');
     sliderContainer.insertAfter(sitealternates);
   } else if (path.includes('/topic/') && $('.boxtopic').length > 0) {
@@ -2419,8 +2425,7 @@ $(document).ready(function(){
     var footer = $('footer');
     sliderContainer.insertBefore(footer);
   }
-  
-  
+
   sliderContainer.slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -2436,13 +2441,12 @@ $(document).ready(function(){
       return '<button class="slider-dot">' + (i + 1) + '</button>';
     },
   });
-  
-  translateURLsSlider(sliderContainer[0], languageTag);
 
   function createSliderItem(href, src, label) {
     return '<a href="' + href + '" class="slider-banner" aria-label="Visit ' + label + '"><img src="' + src + '" alt="' + label + '" draggable="false"></a>';
   }
 });
+
 
 
 function translateURLsSlider(parentElement, languageTag) {
