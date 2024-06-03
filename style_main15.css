@@ -5956,6 +5956,13 @@ label:active,
     }
 }
 @media screen and (max-width: 850px) {
+    .introduce-craft {
+        margin-left: unset;
+        width: 94%;
+    }
+    .preview-craft {
+        margin: unset;
+    }
     .boxreview .plusminus .criteria .par {
         width: 90%;
     }
