@@ -614,7 +614,7 @@ nav #pagename:focus {
 
 .navigation-weapon-sort {
     height: 40px;
-    width: 80%;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -864,6 +864,7 @@ nav #pagename:focus {
 .navigation-weapon-type {
     padding: 5px;
     margin: 3px;
+    z-index: 11;
     background-color: #161616;
     border: 2px solid #181818;
     border-radius: 5px;
@@ -2764,10 +2765,40 @@ nav #logo:hover {
     overflow: hidden;
     margin-top: 4px;
 }
+.item-box-topic {
+    top: 16px;
+    position: relative;
+    width: 300px;
+    height: 100px;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    transition: all .2s ease-in-out;
+    margin: 0 !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item-box-topic .logobg {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .35);
+}
+.item-box-topic .logobg img {
+    height: 90%;
+    width: auto;
+    z-index: 10;
+}
 .sitepage.items .box-topic {
     height: 200px;
     transition: unset;
     border-radius: 5px;
+}
+.sitepage.cases .box-topic {
+    border-radius: 0 0 5px 5px;
 }
 .sitepage.items .box-topic .navigation-section {
     top: unset;
@@ -5603,6 +5634,10 @@ label:active,
         height: 270px;
         top: 0;
     }
+    .item-box-topic {
+        width: 100%;
+        top: 0;
+    }
     .navigation-section.second {
         width: 100%;
         margin-top: 17px;
@@ -6571,20 +6606,4 @@ label:active,
 .category-box-content span.translated,
 .category-selector.notfound .category-box-content span {
     opacity: 1;
-}
-
-.item-box-topic {
-    top: 16px;
-    background: var(--opacback);
-    position: relative;
-    width: 300px;
-    height: 100px;
-    margin: 18px 9px 0 9px;
-    border-radius: 5px 5px 0 0;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
-    transition: all .2s ease-in-out;
-    margin: 0 !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }

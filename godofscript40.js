@@ -1927,7 +1927,7 @@ if (!window.location.pathname.endsWith("newest") &&
       var newestBoxesDiv = document.createElement('div');
       newestBoxesDiv.classList.add('newest-boxes');
       
-      if (window.location.href.indexOf('/topic/items/') !== -1 || window.location.href.indexOf('/topic/sticker-crafts/') !== -1 || window.location.href.indexOf('/topic/skins/') !== -1) {
+      if (window.location.href.indexOf('/topic/items/') !== -1 || window.location.href.indexOf('/topic/cases/') !== -1 || window.location.href.indexOf('/topic/sticker-crafts/') !== -1 || window.location.href.indexOf('/topic/skins/') !== -1) {
           newestBoxesDiv.classList.add('topic');
       }
       
@@ -1977,6 +1977,7 @@ if (!window.location.pathname.endsWith("newest") &&
                   if (
                       window.location.pathname.includes("/topic/skins/") ||
                       window.location.pathname.includes("/topic/items/") ||
+                      window.location.pathname.includes("/topic/cases/") ||
                       window.location.pathname.includes("/topic/sticker-crafts/")
                   ) {
                       footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
@@ -2250,7 +2251,7 @@ function toggleActiveClass(element) {
 }
 
 function isTopicItemsLink() {
-  return window.location.href.includes('/topic/items/');
+  return window.location.href.includes('/topic/items/') || window.location.href.includes('/topic/cases/');
 }
 
 function loadExternalContent(url, targetElement) {
