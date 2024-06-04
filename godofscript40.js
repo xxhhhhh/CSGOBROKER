@@ -1350,6 +1350,7 @@ document.addEventListener('DOMContentLoaded', function () {
               });
           }
       }
+      translateElements(languageTag)
     }{        
         function translateURLs2(parentElement, languageTag) {
           var links = parentElement.querySelectorAll("a[href]");
