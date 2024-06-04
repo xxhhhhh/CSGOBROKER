@@ -22,7 +22,6 @@ function copyToClipboard(element) {
   
   var languageTag = extractLanguageTagFromHTML(window.location.pathname);
 
-
   function updateURLs(parentElement) {
     const links = parentElement.querySelectorAll('a[href]');
     const regex = /^(https?:\/\/[^/]+)?(\/[a-z]{2}(?:\/|\.html)?\/?.*)$/;
@@ -1011,9 +1010,33 @@ $(document).ready(function(){
       });
   
       $(document).ready(function () {
-        var originalOrder = $(".box-skins-list").html();
+        if (window.location.pathname.includes("/topic/items/") || window.location.pathname.includes("/topic/skins/")) {
         var enabledFiltersState = {};
         var sortState = 'normal';
+
+        $('.sitepage').prepend(`
+        <div id="preview-window" class="hidden">
+            <div id="preview-showcase">
+                <div class="skin-classdot"></div>
+                <div class="preview-close-button"><i class="bi bi-x"></i></div>
+                <div id="preview-content"></div>
+                <div class="site-searcher-buttons">
+                    <div class="site-searcher-box" id="Lis-Skins" data-title="Search on Lis-Skins">
+                        <div class="site-searcher-logo"><img src="/img/lis-skins-logo.svg" draggable="false" alt="Lis-Skins logo"></div>
+                    </div>
+                    <div class="site-searcher-box" id="Tradeit" data-title="Search on Tradeit">
+                        <div class="site-searcher-logo"><img src="/img/tradeit-logo-clear.png" draggable="false" alt="Tradeit logo"></div>
+                    </div>
+                    <div class="site-searcher-box" id="BitSkins" data-title="Search on BitSkins">
+                        <div class="site-searcher-logo"><img src="/img/bitskins-logo.webp" draggable="false" alt="BitSkins logo"></div>
+                    </div>
+                    <div class="site-searcher-box" id="Steam" data-title="Search on Steam">
+                        <div class="site-searcher-logo"><img src="/img/steam-logo.png" draggable="false" alt="Steam logo"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `);
     
         function updateNavigationReset() {
             var enabledFilters = $(".navigation-weapon-type.enabled").length;
@@ -1024,51 +1047,6 @@ $(document).ready(function(){
                 }
             } else {
                 $(".topic-centralizer .navigation-reset").remove();
-            }
-        }
-    
-        function updateSearchUrl(selectedSite, languageTag) {
-            const skinLinks = document.querySelectorAll('.skin');
-    
-            skinLinks.forEach(link => {
-                const skinName = link.querySelector('.skin-desc-name').textContent.trim();
-                let href = '';
-    
-                switch (selectedSite) {
-                    case 'Tradeit':
-                        href = `https://tradeit.gg/csgo/store?search=${encodeURIComponent(skinName)}&aff=csgobroker`;
-                        break;
-                    case 'BitSkins':
-                        href = `https://bitskins.com/market/cs2?search={"order":[{"field":"price","order":"ASC"}],"where":{"skin_name":"${encodeURIComponent(skinName)}"}}&ref_alias=csgobroker`;
-                        break;
-                    case 'Steam':
-                        href = `https://steamcommunity.com/market/search?appid=730&q=${encodeURIComponent(skinName)}`;
-                        break;
-                    default:
-                        href = `https://lis-skins.ru/market/csgo/?query=${encodeURIComponent(skinName)}&rf=83346597`;
-                        break;
-                }
-    
-                link.setAttribute('href', href);
-                link.setAttribute('target', '_blank');
-            });
-    
-            if (languageTag === 'ru') {
-                if (document.getElementById('Lis-Skins')) {
-                    document.getElementById('Lis-Skins').dataset.title = 'Искать на Lis-Skins';
-                }
-                if (document.getElementById('Tradeit')) {
-                    document.getElementById('Tradeit').dataset.title = 'Искать на Tradeit';
-                }
-                if (document.getElementById('BitSkins')) {
-                    document.getElementById('BitSkins').dataset.title = 'Искать на BitSkins';
-                }
-                if (document.getElementById('Steam')) {
-                    document.getElementById('Steam').dataset.title = 'Искать в Steam';
-                }
-                if (document.getElementById('Quality-Filter')) {
-                    document.getElementById('Quality-Filter').dataset.title = 'По Редкости';
-                }
             }
         }
     
@@ -1089,8 +1067,8 @@ $(document).ready(function(){
         }
     
         function checkWeaponTypeAvailabilityForItems() {
-            var weaponTypes = ['white', 'lblue', 'blue', 'purple', 'pink', 'red'];
-            weaponTypes.forEach(function (type) {
+           var weaponTypes = ['white', 'lblue', 'blue', 'purple', 'pink', 'red'];
+           weaponTypes.forEach(function (type) {
                 var allNotExist = $(".box-skins-list .skin." + type).toArray().every(function (element) {
                     return $(element).hasClass("notexist");
                 });
@@ -1103,23 +1081,83 @@ $(document).ready(function(){
                 }
             });
         }
+
+        if (languageTag === 'ru') {
+          if (document.getElementById('Lis-Skins')) {
+              document.getElementById('Lis-Skins').dataset.title = 'Искать на Lis-Skins';
+          }
+          if (document.getElementById('Tradeit')) {
+              document.getElementById('Tradeit').dataset.title = 'Искать на Tradeit';
+          }
+          if (document.getElementById('BitSkins')) {
+              document.getElementById('BitSkins').dataset.title = 'Искать на BitSkins';
+          }
+          if (document.getElementById('Steam')) {
+              document.getElementById('Steam').dataset.title = 'Искать в Steam';
+          }
+          if (document.getElementById('Quality-Filter')) {
+              document.getElementById('Quality-Filter').dataset.title = 'По Редкости';
+          }
+      }
+
+        function generateSearchUrl(skinName, selectedSite) {
+            let href = '';
     
-        $(".box-topic").on("click", ".site-searcher-box", function () {
-            $(".site-searcher-box").removeClass("enabled");
-            $(this).addClass("enabled");
-            updateSearchUrl(this.id);
-            localStorage.setItem('selectedSite', this.id);
-        });
-    
-        const lastSelectedSite = localStorage.getItem('selectedSite');
-        if (lastSelectedSite) {
-            const selectedDiv = document.getElementById(lastSelectedSite);
-            if (selectedDiv) {
-                selectedDiv.classList.add('enabled');
-                const languageTag = extractLanguageTagFromHTML(window.location.pathname);
-                updateSearchUrl(lastSelectedSite, languageTag);
+            switch (selectedSite) {
+                case 'Tradeit':
+                    href = `https://tradeit.gg/csgo/store?search=${encodeURIComponent(skinName)}&aff=csgobroker`;
+                    break;
+                case 'BitSkins':
+                    href = `https://bitskins.com/market/cs2?search={"order":[{"field":"price","order":"ASC"}],"where":{"skin_name":"${encodeURIComponent(skinName)}"}}&ref_alias=csgobroker`;
+                    break;
+                case 'Steam':
+                    href = `https://steamcommunity.com/market/search?appid=730&q=${encodeURIComponent(skinName)}`;
+                    break;
+                default:
+                    href = `https://lis-skins.ru/market/csgo/?query=${encodeURIComponent(skinName)}&rf=83346597`;
+                    break;
             }
+    
+            return href;
         }
+    
+        function showPreviewWindow(skinElement) {
+          const previewWindow = document.getElementById('preview-window');
+          const previewContent = document.getElementById('preview-content');
+          
+          previewWindow.className = 'preview-window';
+      
+          previewContent.innerHTML = skinElement.innerHTML;
+          previewWindow.classList.remove('hidden');
+      
+          const skinClasses = $(skinElement).attr("class").split(" ");
+          skinClasses.forEach(function(skinClass) {
+              if (skinClass !== "skin") {
+                  previewWindow.classList.add(skinClass);
+              }
+          });
+          const skinName = skinElement.querySelector('.skin-desc-name').textContent.trim();
+    
+            $(".site-searcher-box").off("click").on("click", function () {
+                const selectedSite = this.id;
+                const searchUrl = generateSearchUrl(skinName, selectedSite);
+                window.open(searchUrl, '_blank');
+            });
+        }
+    
+        function closePreviewWindow() {
+          const previewWindow = document.getElementById('preview-window');
+          $(previewWindow).attr('class', 'hidden');
+      }
+
+      $(document).on("click", ".skin", function () {
+          showPreviewWindow(this);
+      });
+
+      $(document).on("click", ".preview-close-button", function () {
+          closePreviewWindow();
+      });
+    
     
         if (window.location.pathname.includes("/skins/")) {
             $('.close-box-skins').on('click', function () {
@@ -1173,6 +1211,7 @@ $(document).ready(function(){
                     enabledFiltersState[weaponType] = $(this).hasClass("enabled");
                     updateNavigationReset();
                 });
+                translateElements(languageTag)
     
                 $(".navigation-weapon-sort").click(function () {
                     var enabledFilters = $(".navigation-weapon-type.enabled").length;
@@ -1211,31 +1250,12 @@ $(document).ready(function(){
                     $(".topic-centralizer .navigation-reset").remove();
                     enabledFiltersState = {};
                     checkWeaponTypeAvailabilityForItems();
-                });
-    
-                const lastSelectedSite = localStorage.getItem('selectedSite');
-                if (lastSelectedSite) {
-                    const selectedDiv = document.getElementById(lastSelectedSite);
-                    if (selectedDiv) {
-                        selectedDiv.classList.add('enabled');
-                        const languageTag = extractLanguageTagFromHTML(window.location.pathname);
-                        updateSearchUrl(lastSelectedSite, languageTag);
-                        translateElements(languageTag);
-                    }
-                }
-    
-                checkWeaponTypeAvailabilityForItems();
+                });   
             });
         }
+      }
     });
-    
-    
-    
-    
-    
-    
-    
-      
+  
       if (window.location.pathname.includes("/topic")) {
         var elements = document.querySelectorAll('.box-skins-list');
         elements.forEach(function(element) {
