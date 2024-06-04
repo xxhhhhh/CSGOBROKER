@@ -387,6 +387,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (
       !window.location.pathname.includes("/skins/") &&
       !window.location.pathname.includes("/items/") &&
+      !window.location.pathname.includes("/cases/") &&
       !window.location.pathname.includes("/sticker-crafts/") &&
       !window.location.pathname.includes("/reviews") &&
       !window.location.pathname.includes("/mirrors") &&
@@ -1010,7 +1011,7 @@ $(document).ready(function(){
       });
   
       $(document).ready(function () {
-        if (window.location.pathname.includes("/topic/items/") || window.location.pathname.includes("/topic/skins/")) {
+        if (window.location.pathname.includes("/topic/items/") || window.location.pathname.includes("/topic/cases/") || window.location.pathname.includes("/topic/skins/")) {
         var enabledFiltersState = {};
         var sortState = 'normal';
 
@@ -1087,16 +1088,13 @@ $(document).ready(function(){
               document.getElementById('Lis-Skins').dataset.title = 'Искать на Lis-Skins';
           }
           if (document.getElementById('Tradeit')) {
-              document.getElementById('Tradeit').dataset.title = 'Искать на Tradeit';
+              document.getElementById('Tradeit').dataset.title = 'Искать в Tradeit';
           }
           if (document.getElementById('BitSkins')) {
               document.getElementById('BitSkins').dataset.title = 'Искать на BitSkins';
           }
           if (document.getElementById('Steam')) {
               document.getElementById('Steam').dataset.title = 'Искать в Steam';
-          }
-          if (document.getElementById('Quality-Filter')) {
-              document.getElementById('Quality-Filter').dataset.title = 'По Редкости';
           }
       }
 
@@ -1202,7 +1200,7 @@ $(document).ready(function(){
     
             checkWeaponTypeAvailability();
     
-        } else if (window.location.pathname.includes("/items/")) {
+        } else if (window.location.pathname.includes("/items/") || window.location.pathname.includes("/cases/")) {
             $(".box-topic").load("/code-parts/micro-parts/box-topic-items.html", function () {
                 $(".navigation-weapon-type").click(function () {
                     var weaponType = $(this).attr("class").split(" ")[1];
@@ -1212,6 +1210,13 @@ $(document).ready(function(){
                     updateNavigationReset();
                 });
                 translateElements(languageTag)
+                checkWeaponTypeAvailabilityForItems();
+
+                if (languageTag === 'ru') {
+                  if (document.getElementById('Quality-Filter')) {
+                      document.getElementById('Quality-Filter').dataset.title = 'Сортировка по Редкости';
+                  }
+              }
     
                 $(".navigation-weapon-sort").click(function () {
                     var enabledFilters = $(".navigation-weapon-type.enabled").length;
@@ -1345,8 +1350,6 @@ document.addEventListener('DOMContentLoaded', function () {
               });
           }
       }
-      
-      translateElements(languageTag); 
     }{        
         function translateURLs2(parentElement, languageTag) {
           var links = parentElement.querySelectorAll("a[href]");
@@ -1704,9 +1707,12 @@ document.addEventListener('DOMContentLoaded', function () {
         function insertRandomAdsBox() {
           var currentPath = window.location.pathname;
       
-          if (currentPath.includes('/topic/skins/') && currentPath.includes('/ru/') || currentPath.includes('/topic/sticker-crafts/') && currentPath.includes('/ru/') || (currentPath.includes('/topic/items/') && currentPath.includes('/ru/'))) {
+          if (currentPath.includes('/topic/skins/') && currentPath.includes('/ru/') 
+          || currentPath.includes('/topic/sticker-crafts/') && currentPath.includes('/ru/') 
+          || currentPath.includes('/topic/cases/') && currentPath.includes('/ru/') 
+          || currentPath.includes('/topic/items/') && currentPath.includes('/ru/')) {
             var adsFilePath = '/code-parts/topic-ads-ru.html';
-        } else if (currentPath.includes('/topic/skins/') || currentPath.includes('/topic/sticker-crafts/') || (currentPath.includes('/topic/items/'))) {
+        } else if (currentPath.includes('/topic/skins/') || currentPath.includes('/topic/cases/') || currentPath.includes('/topic/sticker-crafts/') || (currentPath.includes('/topic/items/'))) {
             var adsFilePath = '/code-parts/topic-ads.html';
         } else {
             return;
@@ -1876,7 +1882,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   });
 }
 
-if (window.location.href.indexOf("/topic/items/") > -1) {
+if (window.location.pathname.includes("/items/") || window.location.pathname.includes("/cases/")) {
   var xhr = new XMLHttpRequest();
 
   xhr.onreadystatechange = function() {
