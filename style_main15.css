@@ -724,6 +724,7 @@ nav #pagename:focus {
     opacity: 1;
     width: 26px;
     height: 12px;
+    display: block;
     border-radius: 12px;
 }
 #preview-content .skin-desc-name {
@@ -1052,7 +1053,8 @@ nav #pagename:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .26s all ease-in-out;
+    transition: all .2s ease-in-out, opacity .15s;
+    opacity: 0;
     z-index: 100;
     margin-top: 5px;
     position: relative;
@@ -1060,6 +1062,9 @@ nav #pagename:focus {
     scroll-snap-align: start;
     cursor: pointer;
     user-select: none;
+}
+.skin.imported {
+    opacity: 1;
 }
 .box-skins.selected .skin:first-child {
     margin-left: 5px;
@@ -1114,7 +1119,11 @@ nav #pagename:focus {
     border-radius: 5px;
     background-color: white;
     transition: opacity .15s ease-in-out;
+    display: none;
     opacity: 0;
+}
+.box-skins.solo .skin-classdot {
+    display: block; 
 }
 .red .skin-classdot {
     background-color: rgba(235, 75, 75, 1);

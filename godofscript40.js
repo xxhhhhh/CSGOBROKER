@@ -1018,7 +1018,6 @@ $(document).ready(function(){
         $('.sitepage').prepend(`
         <div id="preview-window" class="hidden">
             <div id="preview-showcase">
-                <div class="skin-classdot"></div>
                 <div class="preview-close-button"><i class="bi bi-x"></i></div>
                 <div id="preview-content"></div>
                 <div class="site-searcher-buttons">
@@ -2545,5 +2544,34 @@ document.addEventListener("DOMContentLoaded", function() {
               });
           };
       });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  if (document.querySelector('.box-skins-list') && window.location.pathname.includes('/topic/')) {
+      const skinsOnPage = document.querySelectorAll('.skin');
+      
+      const skinIds = Array.from(skinsOnPage).map(skin => skin.getAttribute('data-skin-id'));
+      
+      fetch('/code-parts/micro-parts/skins-boxes.html')
+          .then(response => response.text())
+          .then(data => {
+              const tempContainer = document.createElement('div');
+              tempContainer.innerHTML = data;
+
+              skinIds.forEach(skinId => {
+                  const newSkin = tempContainer.querySelector(`.skin[data-skin-id="${skinId}"]`);
+                  
+                  if (newSkin) {
+                      const existingSkin = document.querySelector(`.skin[data-skin-id="${skinId}"]`);
+                      if (existingSkin) {
+                          existingSkin.parentNode.replaceChild(newSkin, existingSkin);
+                          setTimeout(() => {
+                              newSkin.classList.add('imported');
+                          }, 10);
+                      }
+                  }
+              });
+          })
   }
 });
