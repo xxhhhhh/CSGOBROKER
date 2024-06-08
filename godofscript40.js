@@ -1019,6 +1019,7 @@ $(document).ready(function(){
         <div id="preview-window" class="hidden">
             <div id="preview-showcase">
                 <div class="preview-close-button"><i class="bi bi-x"></i></div>
+                <div class="preview-pause-button"><i class="bi bi-pause-fill"></i></div>
                 <div id="preview-content"></div>
                 <div class="site-searcher-buttons">
                     <div class="site-searcher-box" id="Lis-Skins" data-title="Search on Lis-Skins">
@@ -1037,6 +1038,17 @@ $(document).ready(function(){
             </div>
         </div>
     `);
+
+    $(document).on('click', '.preview-pause-button', function () {
+      const previewContent = $('#preview-content');
+      previewContent.toggleClass('paused');
+      const icon = $(this).find('i');
+      if (previewContent.hasClass('paused')) {
+          icon.removeClass('bi-pause-fill').addClass('bi-play-fill');
+      } else {
+          icon.removeClass('bi-play-fill').addClass('bi-pause-fill');
+      }
+  });
   
     function insertRandomAdsBox() {
       var currentPath = window.location.pathname;
@@ -1134,7 +1146,7 @@ $(document).ready(function(){
 
         function updateNavigationReset() {
             var enabledFilters = $(".navigation-weapon-type.enabled").length;
-            var sortEnabled = $(".navigation-weapon-sort").hasClass("enabled");
+            var sortEnabled = $("#Quality-Filter").hasClass("enabled");
             if (enabledFilters === 0 && !sortEnabled) {
                 if ($(".topic-centralizer .navigation-reset").length === 0) {
                     $(".topic-centralizer").append('<div class="navigation-reset">Reset Navigation</div>');
@@ -1248,6 +1260,12 @@ $(document).ready(function(){
       $(document).on("click", ".preview-close-button", function () {
           closePreviewWindow();
       });
+
+      $(document).on("click", "#preview-window", function (e) {
+          if ($(e.target).is("#preview-window")) {
+              closePreviewWindow();
+          }
+      });
     
     
         if (window.location.pathname.includes("/skins/")) {
@@ -1306,12 +1324,18 @@ $(document).ready(function(){
                 checkWeaponTypeAvailabilityForItems();
 
                 if (languageTag === 'ru') {
-                  if (document.getElementById('Quality-Filter')) {
+                  if (document.getElementById('Quality-Filter') && document.getElementById('Rarity-Toggle')) {
                       document.getElementById('Quality-Filter').dataset.title = 'Сортировка по Редкости';
+                      document.getElementById('Rarity-Toggle').dataset.title = 'Показать Редкость';
                   }
               }
-    
-                $(".navigation-weapon-sort").click(function () {
+                 
+              $('#Rarity-Toggle').on('click', function() {
+                $('.box-skins-list').toggleClass('showrarity');
+                $(this).toggleClass('enabled');
+            });
+
+                $("#Quality-Filter").click(function () {
                     var enabledFilters = $(".navigation-weapon-type.enabled").length;
                     if (enabledFilters === 0) {
                         return;

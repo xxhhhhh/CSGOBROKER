@@ -611,6 +611,7 @@ nav #pagename:focus {
     margin-right: 8px;
 }
 
+.navigation-weapon-sort,
 .navigation-weapon-sort {
     height: 40px;
     width: 40%;
@@ -623,13 +624,21 @@ nav #pagename:focus {
     transition: .2s all ease-in-out;
     cursor: pointer;
 }
+#Rarity-Toggle {
+    width: 20%;
+    margin-left: 6px;
+}
+#Quality-Filter {
+    font-size: 18px;
+}
+
 .site-searcher-box:hover .site-searcher-logo {
     transform: scale(1.15);
 }
 .navigation-weapon-sort i {
     color: var(--white);
     opacity: .15;
-    transition: all .2s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 .navigation-weapon-sort.enabled i,
 .navigation-weapon-sort.reversed i {
@@ -640,6 +649,10 @@ nav #pagename:focus {
 .navigation-weapon-sort.reversed {
     background-color: #161616;
     border: 2px solid #181818;
+}
+.navigation-weapon-sort.reversed i {
+    /* transform: rotate(180deg); */
+    transform: scale(1, -1);
 }
 .site-searcher-logo {
     position: relative;
@@ -674,9 +687,14 @@ nav #pagename:focus {
 
 #preview-window.hidden {
     overflow: hidden;
-    transition: all 0s 0s ease-in-out !important;
     visibility: hidden;
+    user-select: none;
+    z-index: 99;
     opacity: 0;
+}
+
+#preview-window.hidden #preview-content {
+    display: none;
 }
 
 #preview-window.hidden .site-searcher-buttons  {
@@ -748,8 +766,14 @@ nav #pagename:focus {
     animation: skinblur 3s infinite;
 }
 
+
 #preview-window.preview-window #preview-content img {
     animation: skinpulse 2s infinite;
+}
+
+#preview-window.preview-window #preview-content.paused img {
+    animation: unset;
+
 }
 
 @keyframes skinblur {
@@ -800,10 +824,12 @@ nav #pagename:focus {
     filter: drop-shadow(6px 4px 6px rgba(0, 0, 0, .4));
     transition: all .15s ease-in-out;
 }
-.preview-close-button {
+.preview-close-button,
+.preview-pause-button {
     position: absolute;
     top: 3px;
     right: 5px;
+    height: 50px;
     cursor: pointer;
     font-size: 50px;
     color: var(--white);
@@ -811,7 +837,17 @@ nav #pagename:focus {
     transition: all .15s ease-in-out;
     z-index: 1000;
 }
-.preview-close-button:hover {
+.preview-pause-button {
+    opacity: .25;
+    bottom: 90px;
+    height: 35px;
+    right: 18px;
+    font-size: 30px;
+    top: unset;
+}
+
+.preview-close-button:hover,
+.preview-pause-button:hover {
     opacity: 1;
 }
 
@@ -1087,6 +1123,14 @@ nav #pagename:focus {
 .box-skins .skin:hover .skin-desc,
 .box-skins .skin:hover .skin-desc-name,
 .box-skins .skin:hover .skin-classdot {
+    opacity: 1 !important;
+}
+
+.box-skins .skin:hover .skin-desc,
+.box-skins .skin:hover .skin-desc-name,
+.box-skins .skin:hover .skin-classdot,
+.box-skins-list.showrarity .skin .skin-desc,
+.box-skins-list.showrarity .skin .skin-classdot {
     opacity: 1 !important;
 }
 
