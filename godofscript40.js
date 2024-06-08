@@ -1037,7 +1037,101 @@ $(document).ready(function(){
             </div>
         </div>
     `);
+  
+    function insertRandomAdsBox() {
+      var currentPath = window.location.pathname;
+  
+      if (currentPath.includes('/topic/skins/') && currentPath.includes('/ru/') 
+      || currentPath.includes('/topic/sticker-crafts/') && currentPath.includes('/ru/') 
+      || currentPath.includes('/topic/cases/') && currentPath.includes('/ru/') 
+      || currentPath.includes('/topic/items/') && currentPath.includes('/ru/')) {
+        var adsFilePath = '/code-parts/topic-ads-ru.html';
+    } else if (currentPath.includes('/topic/skins/') || currentPath.includes('/topic/cases/') || currentPath.includes('/topic/sticker-crafts/') || (currentPath.includes('/topic/items/'))) {
+        var adsFilePath = '/code-parts/topic-ads.html';
+    } else {
+        return;
+    }
+  
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', adsFilePath, true);
+  
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var adsBoxesHtml = xhr.responseText;
+            var adsBoxes = document.createElement('div');
+            adsBoxes.innerHTML = adsBoxesHtml;
     
+            var insertAfterElement = document.querySelector('.box-topic');
+    
+            var randomAdsBox = adsBoxes.children[Math.floor(Math.random() * adsBoxes.children.length)];
+    
+            insertAfterElement.parentNode.insertBefore(randomAdsBox, insertAfterElement.nextSibling);
+    
+            setTimeout(function () {
+                setTimeout(function () {
+                    randomAdsBox.classList.add('active');
+                }, 100);
+            });
+        }
+    };
+    
+  
+      xhr.send();
+  }
+  
+  insertRandomAdsBox();
+
+
+    if (document.querySelector('.box-skins-list') && window.location.pathname.includes('/topic/')) {
+      const skinsOnPage = document.querySelectorAll('.skin');
+      
+      const weaponToSkinIds = {};
+      skinsOnPage.forEach(skin => {
+          const weapon = skin.getAttribute('weapon');
+          const skinId = skin.getAttribute('skin-id');
+          if (weapon && skinId) {
+              if (!weaponToSkinIds[weapon]) {
+                  weaponToSkinIds[weapon] = [];
+              }
+              weaponToSkinIds[weapon].push(skinId);
+          }
+      });
+  
+      const filesToLoad = Object.keys(weaponToSkinIds).map(weapon => `/code-parts/skins-list/${weapon}.html`);
+      
+      const fetchPromises = filesToLoad.map(file => fetch(file).then(response => response.text()));
+      
+      Promise.all(fetchPromises)
+      .then(dataArray => {
+          const tempContainers = {};
+  
+          Object.keys(weaponToSkinIds).forEach((weapon, index) => {
+              const tempContainer = document.createElement('div');
+              tempContainer.innerHTML = dataArray[index];
+              tempContainers[weapon] = tempContainer;
+          });
+  
+          Object.keys(weaponToSkinIds).forEach(weapon => {
+              weaponToSkinIds[weapon].forEach(skinId => {
+                  const newSkin = tempContainers[weapon].querySelector(`.skin[skin-id="${skinId}"]`);
+                  
+                  if (newSkin) {
+                      const existingSkin = document.querySelector(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`);
+                      if (existingSkin) {
+                          existingSkin.parentNode.replaceChild(newSkin, existingSkin);
+                          setTimeout(() => {
+                              newSkin.classList.add('imported');
+                          }, 50);
+                      }
+                  }
+              });
+          });
+          checkWeaponTypeAvailabilityForItems();
+      });
+  }
+  
+  
+
         function updateNavigationReset() {
             var enabledFilters = $(".navigation-weapon-type.enabled").length;
             var sortEnabled = $(".navigation-weapon-sort").hasClass("enabled");
@@ -1702,52 +1796,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 }
             }
-        })();
-    
-        function insertRandomAdsBox() {
-          var currentPath = window.location.pathname;
-      
-          if (currentPath.includes('/topic/skins/') && currentPath.includes('/ru/') 
-          || currentPath.includes('/topic/sticker-crafts/') && currentPath.includes('/ru/') 
-          || currentPath.includes('/topic/cases/') && currentPath.includes('/ru/') 
-          || currentPath.includes('/topic/items/') && currentPath.includes('/ru/')) {
-            var adsFilePath = '/code-parts/topic-ads-ru.html';
-        } else if (currentPath.includes('/topic/skins/') || currentPath.includes('/topic/cases/') || currentPath.includes('/topic/sticker-crafts/') || (currentPath.includes('/topic/items/'))) {
-            var adsFilePath = '/code-parts/topic-ads.html';
-        } else {
-            return;
-        }
-      
-          var xhr = new XMLHttpRequest();
-          xhr.open('GET', adsFilePath, true);
-      
-          xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                var adsBoxesHtml = xhr.responseText;
-                var adsBoxes = document.createElement('div');
-                adsBoxes.innerHTML = adsBoxesHtml;
-        
-                var insertAfterElement = document.querySelector('.box-topic');
-        
-                var randomAdsBox = adsBoxes.children[Math.floor(Math.random() * adsBoxes.children.length)];
-        
-                insertAfterElement.parentNode.insertBefore(randomAdsBox, insertAfterElement.nextSibling);
-        
-                setTimeout(function () {
-                    setTimeout(function () {
-                        randomAdsBox.classList.add('active');
-                    }, 100);
-                });
-            }
-        };
-        
-      
-          xhr.send();
-      }
-      
-      insertRandomAdsBox();
-      
-      
+        })(); 
     };
     
     document.addEventListener('DOMContentLoaded', function () {
@@ -2046,6 +2095,57 @@ if (!window.location.pathname.endsWith("newest") &&
       break;
   }
   
+  function importModsBox(boxId) {
+    const existingContainer = document.querySelector('.boxes-holder');
+    const isExistingContentCached = existingContainer && cachedContent[boxId];
+  
+    if (isExistingContentCached) {
+      insertModsBox(existingContainer, boxId, cachedContent[boxId]);
+    } else {
+      fetch('/code-parts/micro-parts/insert-mods-box.html')
+        .then(response => response.text())
+        .then(data => {
+          cachedContent[boxId] = data;
+          insertModsBox(existingContainer, boxId, data);
+        });
+    }
+  }
+  
+  function insertModsBox(container, boxId, data) {
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = data;
+  
+    const newModsBox = tempDiv.querySelector(`[data-box-id="${boxId}"]`);
+    const existingModsBoxes = container.querySelectorAll('.mods-box');
+    const existingBox = Array.from(existingModsBoxes).find(box => box.getAttribute('data-box-id') === boxId);
+  
+    if (existingBox) {
+      container.replaceChild(newModsBox, existingBox);
+    } else {
+      container.insertBefore(newModsBox, container.firstChild);
+    }
+  
+    const languageTag = extractLanguageTagFromHTML();
+    if (languageTag && ['ru', 'tr', 'pt', 'hi', 'es'].includes(languageTag)) {
+      const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
+      singlemodBoxes.forEach(box => {
+        translateElement(box, languageTag);
+      });
+    }
+  
+    setTimeout(() => {
+      newModsBox.classList.add('fade-in-topic');
+      const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
+      singlemodBoxes.forEach(box => {
+        const link = box.querySelector('a').getAttribute('href');
+        if (url.includes(link)) {
+          box.classList.add('active');
+        }
+      });
+    }, 100);
+  
+    updateURLs(newModsBox);
+  }
 
 function getPageType(url) {
   const pageTypes = ['csgo', 'rust', 'dota', 'tf2', 'freebies', 'crypto'];
@@ -2065,60 +2165,6 @@ function isMultiBoxPage(url) {
   const cleanUrlValue = cleanUrl(url);
 
   return cleanUrlValue.endsWith("/buy-skins") || cleanUrlValue.endsWith("/buy-items") || cleanUrlValue.endsWith("/sell-items") || cleanUrlValue.endsWith("/trade-items") || cleanUrlValue.endsWith("/sell-skins") || cleanUrlValue.endsWith("/trade-skins") || cleanUrlValue.endsWith("/instant-sell") || cleanUrlValue.endsWith("/marketplaces") || cleanUrlValue.endsWith("/buy-skins.html") || cleanUrlValue.endsWith("/buy-items.html") || cleanUrlValue.endsWith("/sell-items.html") || cleanUrlValue.endsWith("/trade-items.html") || cleanUrlValue.endsWith("/sell-skins.html") || cleanUrlValue.endsWith("/trade-skins.html") || cleanUrlValue.endsWith("/marketplaces.html") || cleanUrlValue.endsWith("/instant-sell.html");
-}
-
-
-
-function importModsBox(boxId) {
-  const existingContainer = document.querySelector('.boxes-holder');
-  const isExistingContentCached = existingContainer && cachedContent[boxId];
-
-  if (isExistingContentCached) {
-    insertModsBox(existingContainer, boxId, cachedContent[boxId]);
-  } else {
-    fetch('/code-parts/micro-parts/insert-mods-box.html')
-      .then(response => response.text())
-      .then(data => {
-        cachedContent[boxId] = data;
-        insertModsBox(existingContainer, boxId, data);
-      });
-  }
-}
-
-function insertModsBox(container, boxId, data) {
-  const tempDiv = document.createElement('div');
-  tempDiv.innerHTML = data;
-
-  const newModsBox = tempDiv.querySelector(`[data-box-id="${boxId}"]`);
-  const existingModsBoxes = container.querySelectorAll('.mods-box');
-  const existingBox = Array.from(existingModsBoxes).find(box => box.getAttribute('data-box-id') === boxId);
-
-  if (existingBox) {
-    container.replaceChild(newModsBox, existingBox);
-  } else {
-    container.insertBefore(newModsBox, container.firstChild);
-  }
-
-  const languageTag = extractLanguageTagFromHTML();
-  if (languageTag && ['ru', 'tr', 'pt', 'hi', 'es'].includes(languageTag)) {
-    const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
-    singlemodBoxes.forEach(box => {
-      translateElement(box, languageTag);
-    });
-  }
-
-  setTimeout(() => {
-    newModsBox.classList.add('fade-in-topic');
-    const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
-    singlemodBoxes.forEach(box => {
-      const link = box.querySelector('a').getAttribute('href');
-      if (url.includes(link)) {
-        box.classList.add('active');
-      }
-    });
-  }, 100);
-
-  updateURLs(newModsBox);
 }
 
 function translateElement(element, targetLang) {
@@ -2544,34 +2590,5 @@ document.addEventListener("DOMContentLoaded", function() {
               });
           };
       });
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-  if (document.querySelector('.box-skins-list') && window.location.pathname.includes('/topic/')) {
-      const skinsOnPage = document.querySelectorAll('.skin');
-      
-      const skinIds = Array.from(skinsOnPage).map(skin => skin.getAttribute('data-skin-id'));
-      
-      fetch('/code-parts/micro-parts/skins-boxes.html')
-          .then(response => response.text())
-          .then(data => {
-              const tempContainer = document.createElement('div');
-              tempContainer.innerHTML = data;
-
-              skinIds.forEach(skinId => {
-                  const newSkin = tempContainer.querySelector(`.skin[data-skin-id="${skinId}"]`);
-                  
-                  if (newSkin) {
-                      const existingSkin = document.querySelector(`.skin[data-skin-id="${skinId}"]`);
-                      if (existingSkin) {
-                          existingSkin.parentNode.replaceChild(newSkin, existingSkin);
-                          setTimeout(() => {
-                              newSkin.classList.add('imported');
-                          }, 10);
-                      }
-                  }
-              });
-          })
   }
 });
