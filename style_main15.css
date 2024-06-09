@@ -825,7 +825,8 @@ nav #pagename:focus {
     transition: all .15s ease-in-out;
 }
 .preview-close-button,
-.preview-pause-button {
+.preview-pause-button,
+.preview-nav-button {
     position: absolute;
     top: 3px;
     right: 5px;
@@ -837,17 +838,37 @@ nav #pagename:focus {
     transition: all .15s ease-in-out;
     z-index: 1000;
 }
-.preview-pause-button {
-    opacity: .25;
-    bottom: 90px;
-    height: 35px;
-    right: 18px;
-    font-size: 30px;
-    top: unset;
+.preview-buttons {
+    position: absolute;
+    width: auto;
+    height: auto;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 80px;
+    align-items: center;
+    transition: all .15s ease-in-out;
+    opacity: 0;
+    display: flex;
+    z-index: 99;
 }
-
+#preview-showcase:hover .preview-buttons {
+    opacity: 1;
+}
+.preview-pause-button,
+.preview-nav-button {
+    top: unset;
+    right: unset;
+    width: auto;
+    height: auto;
+    position: relative;
+    font-size: 35px;
+}
+.preview-nav-button {
+    font-size: 24px;
+}
 .preview-close-button:hover,
-.preview-pause-button:hover {
+.preview-pause-button:hover,
+.preview-nav-button:hover {
     opacity: 1;
 }
 
@@ -5492,6 +5513,9 @@ label:active,
     }
 }
 @media screen and (max-width: 1340px) {
+    .preview-buttons {
+        opacity: 1;
+    }
     .topic-box.maestro {
         border-radius: 10px;
         margin-top: 8px;

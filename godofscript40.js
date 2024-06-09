@@ -1019,7 +1019,11 @@ $(document).ready(function(){
         <div id="preview-window" class="hidden">
             <div id="preview-showcase">
                 <div class="preview-close-button"><i class="bi bi-x"></i></div>
+                <div class="preview-buttons">
+                <div class="preview-nav-button left"><i class="bi bi-caret-left-fill"></i></div>
                 <div class="preview-pause-button"><i class="bi bi-pause-fill"></i></div>
+                <div class="preview-nav-button right"><i class="bi bi-caret-right-fill"></i></div>
+                </div>
                 <div id="preview-content"></div>
                 <div class="site-searcher-buttons">
                     <div class="site-searcher-box" id="Lis-Skins" data-title="Search on Lis-Skins">
@@ -1227,45 +1231,80 @@ $(document).ready(function(){
         function showPreviewWindow(skinElement) {
           const previewWindow = document.getElementById('preview-window');
           const previewContent = document.getElementById('preview-content');
-          
-          previewWindow.className = 'preview-window';
+          const skinClasses = $(skinElement).attr("class").split(" ");
+          const skinBox = $(skinElement).closest('.box-skins-list');
+          const visibleSkins = skinBox.find('.skin:not(.disabled)');
+          const totalSkins = visibleSkins.length;
+          const skinName = skinElement.querySelector('.skin-desc-name') ? skinElement.querySelector('.skin-desc-name').textContent.trim() : '';
       
+          previewWindow.className = 'preview-window';
           previewContent.innerHTML = skinElement.innerHTML;
           previewWindow.classList.remove('hidden');
+          previewWindow.setAttribute('data-current-index', visibleSkins.index(skinElement));
+          previewWindow.setAttribute('data-total-skins', totalSkins);
+          previewWindow.setAttribute('data-current-box', skinBox.index('.box-skins-list'));
       
-          const skinClasses = $(skinElement).attr("class").split(" ");
-          skinClasses.forEach(function(skinClass) {
+          skinClasses.forEach(function (skinClass) {
               if (skinClass !== "skin") {
                   previewWindow.classList.add(skinClass);
               }
           });
-          const skinName = skinElement.querySelector('.skin-desc-name').textContent.trim();
-    
-            $(".site-searcher-box").off("click").on("click", function () {
-                const selectedSite = this.id;
-                const searchUrl = generateSearchUrl(skinName, selectedSite);
-                window.open(searchUrl, '_blank');
-            });
-        }
-    
-        function closePreviewWindow() {
+      
+          $(".site-searcher-box").off("click").on("click", function () {
+              const selectedSite = this.id;
+              const searchUrl = generateSearchUrl(skinName, selectedSite);
+              window.open(searchUrl, '_blank');
+          });
+      }
+  
+      function closePreviewWindow() {
           const previewWindow = document.getElementById('preview-window');
           $(previewWindow).attr('class', 'hidden');
       }
 
-      $(document).on("click", ".skin", function () {
-          showPreviewWindow(this);
-      });
-
-      $(document).on("click", ".preview-close-button", function () {
-          closePreviewWindow();
-      });
-
-      $(document).on("click", "#preview-window", function (e) {
-          if ($(e.target).is("#preview-window")) {
-              closePreviewWindow();
-          }
-      });
+      function switchSkin(direction) {
+        const previewWindow = $('#preview-window');
+        const currentIndex = parseInt(previewWindow.attr('data-current-index'));
+        const currentBoxIndex = parseInt(previewWindow.attr('data-current-box'));
+        const currentBox = $('.box-skins-list').eq(currentBoxIndex);
+        const visibleSkins = currentBox.find('.skin:not(.disabled)');
+        const totalSkins = visibleSkins.length;
+        let newIndex = direction === 'left' ? currentIndex - 1 : currentIndex + 1;
+    
+        if (newIndex < 0) {
+            newIndex = totalSkins - 1;
+        } else if (newIndex >= totalSkins) {
+            newIndex = 0;
+        }
+    
+        const newSkinElement = visibleSkins.eq(newIndex);
+        showPreviewWindow(newSkinElement[0]);
+        previewWindow.attr('data-current-index', newIndex);
+        previewWindow.attr('data-total-skins', totalSkins);
+        previewWindow.attr('data-current-box', currentBox.index('.box-skins-list'));
+    }
+    
+    $(document).on("click", ".skin", function () {
+        showPreviewWindow(this);
+    });
+    
+    $(document).on("click", ".preview-close-button", function () {
+        closePreviewWindow();
+    });
+    
+    $(document).on("click", "#preview-window", function (e) {
+        if ($(e.target).is("#preview-window")) {
+            closePreviewWindow();
+        }
+    });
+    
+    $(document).on("click", ".preview-nav-button.left", function () {
+        switchSkin('left');
+    });
+    
+    $(document).on("click", ".preview-nav-button.right", function () {
+        switchSkin('right');
+    });
     
     
         if (window.location.pathname.includes("/skins/")) {
