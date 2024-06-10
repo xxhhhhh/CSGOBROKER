@@ -665,8 +665,10 @@ nav #pagename:focus {
     transition: .15s .05s all ease-in-out;
 }
 .site-searcher-logo img {
-    height: 100%;
-    width: auto;
+
+    height: auto;
+    width: 65%;
+    max-height: 40px;
 }
 
 .site-searcher-box:hover {
@@ -834,25 +836,27 @@ nav #pagename:focus {
     cursor: pointer;
     font-size: 50px;
     color: var(--white);
-    opacity: .25;
     transition: all .15s ease-in-out;
     z-index: 1000;
+}
+.preview-close-button {
+    opacity: .25;
 }
 .preview-buttons {
     position: absolute;
     width: auto;
     height: auto;
-    right: 50%;
-    transform: translateX(50%);
-    bottom: 80px;
+    right: 15px;
+    top: 55px;
     align-items: center;
     transition: all .15s ease-in-out;
-    opacity: 0;
+    opacity: .25;
     display: flex;
     z-index: 99;
 }
-#preview-showcase:hover .preview-buttons {
-    opacity: 1;
+#preview-showcase:hover .preview-buttons,
+#preview-showcase:hover .preview-nav-button {
+    opacity: .25;
 }
 .preview-pause-button,
 .preview-nav-button {
@@ -861,15 +865,26 @@ nav #pagename:focus {
     width: auto;
     height: auto;
     position: relative;
-    font-size: 40px;
+    font-size: 30px;
 }
 .preview-nav-button {
     font-size: 26px;
+    position: absolute;
+    font-size: 30px;
+    top: 45%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+.preview-nav-button.left {
+    left: 15px;
+}
+.preview-nav-button.right {
+    right: 15px;
 }
 .preview-close-button:hover,
-.preview-pause-button:hover,
+.preview-buttons:hover,
 .preview-nav-button:hover {
-    opacity: 1;
+    opacity: 1 !important;
 }
 
 .site-searcher-buttons {
@@ -1861,8 +1876,8 @@ nav #pagename:focus {
 }
 .features .featuresbox .typesinside a:hover {
     transform: scale(1.05);
-    background-color: #202020;
-    border: 2px solid #232323;
+    border: var(--main-color) 2px solid;
+    background-color: #a81d34;
     color: white;
 }
 .gamemodes .featuresbox .typesinside a {
@@ -4970,7 +4985,11 @@ footer .centralizer .footer-content {
 .socials a:active,
 .site-promo-copy:active,
 label:active,
-.box-skins-button:active i {
+.box-skins-button:active i,
+.preview-close-button:active,
+.preview-pause-button:active,
+.preview-nav-button:active,
+.site-searcher-box:active {
     filter: brightness(.3) !important;
     transition: .09s all ease-in-out;
   }
@@ -5513,8 +5532,9 @@ label:active,
     }
 }
 @media screen and (max-width: 1340px) {
-    .preview-buttons {
-        opacity: 1;
+    .preview-buttons,
+    .preview-nav-button {
+        opacity: .25;
     }
     .topic-box.maestro {
         border-radius: 10px;
@@ -6251,6 +6271,11 @@ label:active,
     }
 }
 @media screen and (max-width: 850px) {
+    .site-searcher-logo img {
+        height: auto;
+        width: 80%;
+        max-height: 30px;
+    }
     #preview-content {
         height: 350px;
     }

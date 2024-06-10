@@ -8,20 +8,26 @@ $(document).ready(function () {
         <div id="preview-showcase">
             <div class="preview-close-button"><i class="bi bi-x"></i></div>
             <div class="preview-buttons">
-            <div class="preview-nav-button left"><i class="bi bi-caret-left-fill"></i></div>
             <div class="preview-pause-button"><i class="bi bi-pause-fill"></i></div>
-            <div class="preview-nav-button right"><i class="bi bi-caret-right-fill"></i></div>
             </div>
+            <div class="preview-nav-button left"><i class="bi bi-chevron-left"></i></div>
+            <div class="preview-nav-button right"><i class="bi bi-chevron-right"></i></div>
             <div id="preview-content"></div>
             <div class="site-searcher-buttons">
                 <div class="site-searcher-box" id="Lis-Skins" data-title="Search on Lis-Skins">
                     <div class="site-searcher-logo"><img src="/img/lis-skins-logo.svg" draggable="false" alt="Lis-Skins logo"></div>
                 </div>
                 <div class="site-searcher-box" id="Tradeit" data-title="Search on Tradeit">
-                    <div class="site-searcher-logo"><img src="/img/tradeit-logo-clear.png" draggable="false" alt="Tradeit logo"></div>
+                    <div class="site-searcher-logo"><img src="/img/tradeit-logo.webp" draggable="false" alt="Tradeit logo"></div>
                 </div>
                 <div class="site-searcher-box" id="BitSkins" data-title="Search on BitSkins">
-                    <div class="site-searcher-logo"><img src="/img/bitskins-logo.webp" draggable="false" alt="BitSkins logo"></div>
+                    <div class="site-searcher-logo"><img src="/img/bitskins-logo.svg" draggable="false" alt="BitSkins logo"></div>
+                </div>
+                <div class="site-searcher-box" id="CSMoney" data-title="Search on CSMoney">
+                    <div class="site-searcher-logo"><img src="/img/csmoney-logo.webp" draggable="false" alt="CSMoney logo"></div>
+                </div>
+                <div class="site-searcher-box" id="SkinSwap" data-title="Search on SkinSwap">
+                    <div class="site-searcher-logo"><img src="/img/skinswap-logo.webp" draggable="false" alt="SkinSwap logo"></div>
                 </div>
                 <div class="site-searcher-box" id="Steam" data-title="Search on Steam">
                     <div class="site-searcher-logo"><img src="/img/steam-logo.png" draggable="false" alt="Steam logo"></div>
@@ -190,6 +196,12 @@ if (document.querySelector('.box-skins-list') && window.location.pathname.includ
       if (document.getElementById('BitSkins')) {
           document.getElementById('BitSkins').dataset.title = 'Искать на BitSkins';
       }
+      if (document.getElementById('CSMoney')) {
+          document.getElementById('CSMoney').dataset.title = 'Искать на CSMoney';
+      } 
+      if (document.getElementById('SkinSwap')) {
+        document.getElementById('SkinSwap').dataset.title = 'Искать на SkinSwap';
+    } 
       if (document.getElementById('Steam')) {
           document.getElementById('Steam').dataset.title = 'Искать в Steam';
       }
@@ -207,6 +219,12 @@ if (document.querySelector('.box-skins-list') && window.location.pathname.includ
                 break;
             case 'Steam':
                 href = `https://steamcommunity.com/market/search?appid=730&q=${encodeURIComponent(skinName)}`;
+                break;
+            case 'CSMoney':
+                href = `https://cs.money/market/buy/?search=${encodeURIComponent(skinName)}&sort=price&order=asc&utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=market&utm_content=link`;
+                break;
+            case 'SkinSwap':
+                href = `https://skinswap.com/buy?r=csgobroker&search=${encodeURIComponent(skinName)}&appid=730`;
                 break;
             default:
                 href = `https://lis-skins.ru/market/csgo/?query=${encodeURIComponent(skinName)}&rf=83346597`;
