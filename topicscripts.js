@@ -21,7 +21,7 @@ $(document).ready(function () {
                     <div class="site-searcher-logo"><img src="/img/tradeit-logo.webp" draggable="false" alt="Tradeit logo"></div>
                 </div>
                 <div class="site-searcher-box" id="BitSkins" data-title="Search on BitSkins">
-                    <div class="site-searcher-logo"><img src="/img/bitskins-logo.svg" draggable="false" alt="BitSkins logo"></div>
+                    <div class="site-searcher-logo"><img src="/img/bitskins-logo.webp" draggable="false" alt="BitSkins logo"></div>
                 </div>
                 <div class="site-searcher-box" id="CSMoney" data-title="Search on CSMoney">
                     <div class="site-searcher-logo"><img src="/img/csmoney-logo.webp" draggable="false" alt="CSMoney logo"></div>
