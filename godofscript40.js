@@ -1921,6 +1921,7 @@ var ratings = {
   "GGDROP":4,
   "Roobet":4.625,
   "Primedice":4.125,
+  "RustBounty":3.25,
 };
 
 function addStarRating(boxId, rating) {

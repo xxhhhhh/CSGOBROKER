@@ -1432,7 +1432,7 @@ nav #pagename:focus {
 }
 .box-skins-name span {
     transform: rotate(90deg);
-    color: #232323;
+    color: #212121;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 500;
@@ -3564,7 +3564,7 @@ nav img:active,
 .box .logobg img {
     width: auto;
     max-width: 250px !important;
-    max-height: 108px !important;
+    max-height: 120px !important;
     height: auto;
     transition: all .2s ease-in-out;
 }

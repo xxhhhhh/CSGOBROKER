@@ -212,6 +212,7 @@ function translateURLsIfNeeded() {
     
     var translations = {
       "hi": {
+        "RustBounty - a gambling site for Rust skins and Cryptocurrency. It includes Cases, Roulette, as well as Giveaways and a Rakeback system.": "RustBounty - रस्ट स्किन्स के लिए एक जुआ साइट। इसमें केस, रूलेट, साथ ही गिवअवे और रेकबैक सिस्टम शामिल हैं।",
         "GGDROP - a well-known platform for opening cases in CS2. In addition, there are Case Battle, Contracts, Upgrader, and Regular Promotions.": "GGDROP - सीएस2 में केस खोलने के लिए एक प्रसिद्ध प्लेटफ़ॉर्म। इसके अलावा, केस बैटल, कॉन्ट्रैक्ट्स, अपग्रेडर, और नियमित प्रस्ताव हैं।",
         "DaddySkins is a valid CSGO Case Battle website that has been in operation since 2017, and it offers Case Battles, Case Battles, and Upgrader.": "डैडी स्किन्स एक मान्य सीएसजीओ केस बैटल वेबसाइट है जो 2017 से कार्यान्वित है, और यह केस बैटल्स, केस बैटल्स, और अपग्रेडर प्रदान करता है।",
         "Aim.Market - CS2, Dota 2, Rust Instant-sell and skin purchasing service with a user-friendly interface. Sell any amount with no minimum.": "एम.मार्केट - सीएस2, डोटा 2, रस्ट तत्काल बिक्री और त्वचा खरीदी सेवा जिसमें एक उपयोगकर्ता मित्रपूर्ण इंटरफ़ेस होता है। कोई न्यूनतम नहीं, किसी भी मात्रा को बेचें।",
@@ -419,6 +420,7 @@ function translateURLsIfNeeded() {
         "Games Giveaways": "गेम्स गिवअवे"
       },
       "tr": {
+        "RustBounty - a gambling site for Rust skins and Cryptocurrency. It includes Cases, Roulette, as well as Giveaways and a Rakeback system.": "RustBounty - Rust kaplamaları için bir kumar sitesi. Kasa, Ruletin yanı sıra Çekilişler ve Rakeback sistemi içerir.",
         "GGDROP - a well-known platform for opening cases in CS2. In addition, there are Case Battle, Contracts, Upgrader, and Regular Promotions.": "GGDROP - CS2'de kutu açmak için tanınmış bir platform. Bunun yanı sıra, Kasa Savaşı, Sözleşmeler, Yükseltici ve Düzenli Promosyonlar bulunmaktadır.",
         "RustClash, a premier Rust gambling site, offers a variety of popular games such as Roulette, Upgrader, and Cases, alongside daily cases.":"RustClash, Rulet, Yükseltici ve Kutular gibi popüler oyunları içeren üst düzey Rust kumar sitesidir, ayrıca oyuncuların keyfi için günlük kutular da sunmaktadır.",
         "DaddySkins is a valid CSGO Case Battle website that has been in operation since 2017, and it offers Case Battles, Case Battles, and Upgrader.": "DaddySkins, 2017'den beri faaliyette olan geçerli bir CSGO Kasa Savaşı web sitesidir ve Kasa Savaşları, Kasa Savaşları ve Yükseltici sunar.",
@@ -633,6 +635,7 @@ function translateURLsIfNeeded() {
         "Games Giveaways" : "Oyun Çekilişleri"
       },
       "es": {
+        "RustBounty - a gambling site for Rust skins and Cryptocurrency. It includes Cases, Roulette, as well as Giveaways and a Rakeback system.": "RustBounty - un sitio de apuestas para skins de Rust. Incluye Cajas, Ruleta, así como Sorteos y un sistema de Rakeback.",
         "GGDROP - a well-known platform for opening cases in CS2. In addition, there are Case Battle, Contracts, Upgrader, and Regular Promotions.": "GGDROP - una plataforma conocida para abrir casos en CS2. Además, hay Batalla de Casos, Contratos, Mejoras y Promociones Regulares.",
         "RustClash, a premier Rust gambling site, offers a variety of popular games such as Roulette, Upgrader, and Cases, alongside daily cases.":"RustClash ofrece juegos populares como Ruleta, Mejorador y Cajas, además de casos diarios para el disfrute de los jugadores.",
         "DaddySkins is a valid CSGO Case Battle website that has been in operation since 2017, and it offers Case Battles, Case Battles, and Upgrader.": "DaddySkins es un sitio web válido de Batallas de Cajas de CSGO que ha estado en funcionamiento desde 2017, y ofrece Batallas de Cajas, Batallas de Cajas y Mejoras.",
@@ -847,6 +850,7 @@ function translateURLsIfNeeded() {
         "Games Giveaways": "Sorteos de juegos"    
       },
       "pt": {
+        "RustBounty - a gambling site for Rust skins and Cryptocurrency. It includes Cases, Roulette, as well as Giveaways and a Rakeback system.": "RustBounty - um site de jogos de azar para skins de Rust. Inclui Caixas, Roleta, bem como Sorteios e um sistema de Rakeback.",
         "GGDROP - a well-known platform for opening cases in CS2. In addition, there are Case Battle, Contracts, Upgrader, and Regular Promotions.": "GGDROP - uma plataforma conhecida para abrir caixas no CS2. Além disso, há Batalha de Caixas, Contratos, Aperfeiçoador e Promoções Regulares.",
         "DaddySkins is a valid CSGO Case Battle website that has been in operation since 2017, and it offers Case Battles, Case Battles, and Upgrader.": "DaddySkins é um site válido de Batalha de Caixas de CSGO que está em operação desde 2017 e oferece Batalhas de Caixas, Batalhas de Caixas e Upgrader.",
         "Aim.Market - CS2, Dota 2, Rust Instant-sell and skin purchasing service with a user-friendly interface. Sell any amount with no minimum.": "Aim.Market - Venda instantânea e compra de skins de CS2, Dota 2 e Rust com interface amigável. Sem mínimo de quantidade.",
