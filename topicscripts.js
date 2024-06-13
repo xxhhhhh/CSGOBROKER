@@ -126,17 +126,23 @@ if (document.querySelector('.box-skins-list') && window.location.pathname.includ
               const newSkin = tempContainers[weapon].querySelector(`.skin[skin-id="${skinId}"]`);
               
               if (newSkin) {
-                  const existingSkin = document.querySelector(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`);
-                  if (existingSkin) {
-                      existingSkin.parentNode.replaceChild(newSkin, existingSkin);
-                      setTimeout(() => {
-                          newSkin.classList.add('imported');
-                      }, 50);
-                  }
-              }
-          });
-      });
-      checkWeaponTypeAvailabilityForItems();
+                const existingSkin = document.querySelector(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`);
+                if (existingSkin) {
+                    existingSkin.parentNode.replaceChild(newSkin, existingSkin);
+
+                    const imgs = newSkin.querySelectorAll('img');
+                    imgs.forEach(img => {
+                        img.onload = () => {
+                            setTimeout(() => {
+                                img.classList.add('imported');
+                            }, 10);
+                        };
+                    });
+                }
+            }
+        });
+    });
+    checkWeaponTypeAvailabilityForItems();
   });
 }
 

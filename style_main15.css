@@ -1136,8 +1136,10 @@ nav #pagename:focus {
     opacity: 0;
 }
 .skin.imported img,
-.box-skins .skin.imported img {
+.box-skins .skin.imported img,
+.box-skins .skin img.imported {
     opacity: 1;
+    transform: scale(1);
 }
 .box-skins.selected .skin:first-child {
     margin-left: 5px;
@@ -1331,7 +1333,8 @@ nav #pagename:focus {
 .box-skins .skin img {
     width: auto;
     height: 82%;
-    transition: all .2s ease-in-out !important;
+    transition: all .2s ease-in-out;
+    transform: scale(1.1);
     z-index: 2;
 }
 .box-skins:nth-child(1) .skin img {
