@@ -921,7 +921,10 @@ nav #pagename:focus {
     opacity: 0;
   }
   .site-searcher-box[data-title]:after {
-    margin-top: -100px;
+    border: none;
+    margin-top: -110px;
+    background-color: rgb(12 12 12);
+    padding: 8px 12px;
     font-size: 14px;
   }
 .box-topic.sticker .component-box[data-title]:hover:after {
@@ -1495,9 +1498,10 @@ nav #pagename:focus {
     height: auto;
     display: flex;
     align-content: center;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 15px;
+    order: -1;
 }
 .boxreview .plusminus .criteria {
     width: 49.5%;
@@ -1558,6 +1562,7 @@ nav #pagename:focus {
     font-weight: 500;
     color: var(--white);
     margin-top: 10px;
+    width: 90%;
 }
 .boxreview .plusminus .criteria .par {
     width: 450px;
@@ -1946,7 +1951,7 @@ nav #pagename:focus {
     z-index: 1;
 }
 .features .featuresbox .typesinside a {
-    margin: 12px 0 12px 9px;
+    margin: 12px 0 0 9px;
     height: 32px;
     text-align: center;
     text-decoration: none;
@@ -1966,7 +1971,7 @@ nav #pagename:focus {
 
 .features .featuresbox .typesinside a:first-child {
     border-radius: 5px 0 0 5px;
-    margin-left: 16px;
+    margin-left: 18px;
 }
 
 .features .featuresbox .typesinside a:first-child::before {
@@ -3229,30 +3234,19 @@ nav #logo:hover {
     bottom: 17px;
     padding: 8px 20px;
 }
-.sitepage .box .content button.copy_style,
-.sitepage .box .content a.copy_style {
-    border: var(--main-color) 2px solid;;
+.sitepage .box .content a.copy_style,
+.sitepage .box .content a.copy_style::after,
+.sitepage .box .content a.copy_style::before {
     position: absolute;
     background-color: #a81d34;
     color: var(--white);
     bottom: 17px;
-    padding: 8px 20px;
-    transition: all .2s ease-in-out;
 }
-.sitepage .box .content button.copy_style:hover,
-.sitepage .box .content a.copy_style:hover,
-.box .content button.copy:hover {
-    color: var(--white);
-    background-color: var(--main-color);
-    transition: all .2s ease-in-out;
-    transform: scale(1); 
-}
+
 .sitepage .box .content button.code_style:hover,
 .box .content button.copy:hover {
     color: var(--white);
     opacity: 1;
-    transition: all .2s ease-in-out;
-    transform: none !important;
 }
 .topic-box {
     position: relative;
@@ -3475,8 +3469,6 @@ nav #logo:hover {
 .sitealternates .box .content button.copy_style,
 .sitealternates .box .content a.copy_style {
     bottom: 32px;
-    padding: 8px 10px;
-    border: var(--main-color) 2px solid;;
 }
 .sitealternates .site-reward {
     height: 50px;
@@ -3742,7 +3734,8 @@ nav img:active,
 }
 .sitealternates .box .logobg .vpn::before {
     transition: all .15s ease-in-out;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%);
+    transform: skewX(20deg);
+    border-radius: 0 0 0 5px;
 }
 .box .giveawaysbanner {
     height: 100%;
@@ -3860,54 +3853,114 @@ nav img:active,
 .content button,
 .content a {
     background-color: rgb(32 32 32);
-    border: 2px #222222 solid;
-    bottom: 15px;
+    /* border: 2px #222222 solid; */
+    bottom: 10px;
     position: absolute;
     outline: none;
     font-family: TTNormsPro;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 12px;
-    padding: 6px;
-    border-radius: 5px;
-    transition: all .2s ease-in-out;
+    padding: 10px 2px;
+    /* border-radius: 5px; */
+    transition: all .15s ease-in-out;
     color: white;
     text-decoration: none;
+    z-index: 2;
 }
+.content a::after,
+.content a::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    background-color: rgb(32 32 32);
+    transition: ease-in-out all .15s;
+    box-sizing: border-box;
+    transform: skewX(20deg);
+    z-index: -1;
+    top: 0;
+}
+
+.content a::before {
+    left: -10px;
+    border-radius: 5px 0 0 5px;
+    transform: skewX(-20deg);
+
+}
+
+.content a::after {
+    right: -10px;
+    border-radius: 0 5px 5px 0;
+}
+
 .box:hover .content button.copy_style,
-.box:hover .content a.copy_style{
+.box:hover .content a.copy_style {
     animation: buttons 1s infinite;
-    border: var(--main-color) 2px solid;;
+    filter: drop-shadow(0 0 1px var(--main-color));
+}
+
+.box:hover .content button.copy_style,
+.box:hover .content a.copy_style,
+.box:hover .content a::after,
+.box:hover .content a::before {
     background-color: #a81d34;
 }
+
+.content button.copy:hover {
+    transform: scale(1.09) !important;
+    filter: drop-shadow(0 0 1px var(--main-color));
+}
+
 .boxes-holder .box:hover .content button.copy,
 .newest-boxes .box:hover .content button.copy {
-    border: var(--main-color) 1px solid;
-    background-color: #62101d;
+    transform: scale(1);
 }
+
 .content button:hover,
-.content a:hover{
-    background-color: #a81d34;
-    border: var(--main-color) 2px solid;
+.content button:hover::before,
+.content a:hover::before, 
+.content a:hover::after,
+.content a:hover {
+    background-color: #a81d34 !important;
     animation: none !important;
 }
+.content a:hover {
+    background-color: #a81d34 !important;
+    filter: drop-shadow(0 0 1px var(--main-color));
+    animation: none !important;
+}
+
 .content button:focus{
     background: var(--main-color);
 }
-.content button:hover:active,
-.content a:hover:active,
+
 .instruction-mirrors li a:active {
     background-color: #5a101c !important;
     border: 2px solid #771324 !important;
     transition: .09s all ease-in-out !important;
 }
+
+.content a:hover:active,
+.content a:hover:active::before,
+.content a:hover:active::after  {
+    background-color: #5a101c !important;
+    transition: .09s all ease-in-out !important;
+}
+
+.content button:active,
+.content button:hover:active::before {
+    background-color: #5a101c !important;
+    transition: .09s all ease-in-out !important;
+}
+
 .copy,
 button.copy_style,
 a.copy_style {
     cursor: pointer;
 }
-.sitepage .content button.copy {
-    border: var(--main-color) 1px solid;
+.sitepage .content button.copy,
+.sitepage .content button.copy::before {
     background-color: #62101d;
     bottom: 18.6px;
 }
@@ -3930,25 +3983,45 @@ a.copy_style {
 .sitepage.closed .box.main a {
     pointer-events: none;
 }
+
 .content button.copy {
-    width: 25px;
-    height: 25px;
-    right: 20px;
-    border-radius: 50%;
-    background-size: cover;
+    height: 28px;
+    width: 28px;
+    right: 30px;
+    border-radius: 5px;
     position: absolute;
     top: unset;
     padding: unset;
-    bottom: 15.6px;
+    bottom: 13px;
     background-color: rgb(32 32 32);
-    border: 2px #222222 solid;
+    border: unset;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.content button.copy i {
-    font-size: 11px;
+.content button.copy::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    background-color: rgb(32 32 32);
+    transition: ease-in-out all .15s;
+    box-sizing: border-box;
+    transform: skewX(20deg);
+    z-index: -1;
+    top: 0;
 }
+
+.content button.copy::before {
+    left: -6px;
+    border-radius: 5px 0 0 5px;
+
+}
+.content button.copy i {
+    font-size: 12px;
+    margin-right: 4px;
+}
+
 .credits {
     width: 180px;
     height: 60px;
@@ -5620,6 +5693,13 @@ label:active,
     }
 }
 @media screen and (max-width: 1340px) {
+    .features .featuresbox .typesinside a:last-child {
+        border-radius: 0 5px 5px 0;
+    }
+    
+    .features .featuresbox .typesinside a:last-child::after {
+        content: unset;
+    }
     .preview-buttons,
     .preview-nav-button {
         opacity: .25;
@@ -6218,10 +6298,11 @@ label:active,
     .boxreview .plusminus {
         flex-wrap: nowrap;
         flex-direction: column;
+        align-items: center;
         height: 100%;
     }
     .boxreview .plusminus .criteria {
-        width: 98%;
+        width: 100%;
         margin: 9px 0 0 0;
     }
     .boxreview .plusminus .criteria .par h2 {
@@ -6360,6 +6441,7 @@ label:active,
 @media screen and (max-width: 850px) {
     .features {
         width: 95%;
+        margin-top: 4px;
     }
     .features .featuresbox .typesinside a {
         margin: 6px 0 6px 26px !important;
