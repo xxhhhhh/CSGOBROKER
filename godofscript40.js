@@ -1535,16 +1535,12 @@ if (!window.location.pathname.endsWith("newest") &&
     window.location.href.indexOf('/reviews/') === -1 &&
     window.location.href.indexOf('/mirrors/') === -1 && 
     !window.location.pathname.includes("/privacy-policy") &&
-    !window.location.pathname.includes("/sticker-crafts/") &&
+    !window.location.pathname.includes("/topic") &&
     !window.location.pathname.includes("/terms-of-service") &&
     !window.location.pathname.includes("/contact-us")) {
     
       var newestBoxesDiv = document.createElement('div');
       newestBoxesDiv.classList.add('newest-boxes');
-      
-      if (window.location.href.indexOf('/topic/items/') !== -1 || window.location.href.indexOf('/topic/cases/') !== -1 || window.location.href.indexOf('/topic/sticker-crafts/') !== -1 || window.location.href.indexOf('/topic/skins/') !== -1) {
-          newestBoxesDiv.classList.add('topic');
-      }
       
       var newestBoxesTitleDiv = document.createElement('div');
       newestBoxesTitleDiv.classList.add('newest-boxes-title');
@@ -1589,14 +1585,7 @@ if (!window.location.pathname.endsWith("newest") &&
               var sliderContainer = document.querySelector('.slider-container');
       
               if (sliderContainer) {
-                  if (
-                      window.location.pathname.includes("/topic/skins/") ||
-                      window.location.pathname.includes("/topic/items/") ||
-                      window.location.pathname.includes("/topic/cases/") ||
-                      window.location.pathname.includes("/topic/sticker-crafts/")
-                  ) {
-                      footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
-                  } else {
+                   {
                       sliderContainer.parentNode.insertBefore(newestBoxesDiv, sliderContainer.nextSibling);
                   }
               } else {

@@ -314,8 +314,6 @@ nav #pagename:focus {
 .rec-box:hover button,
 .rec-box:hover a.copy_style {
     animation: buttons 1s infinite;
-    border: var(--main-color) 2px solid;;
-    background-color: #a81d34;
 }
 .boxreview,
 .boxtopic {
@@ -988,10 +986,11 @@ nav #pagename:focus {
     width: 100%;
 }
 .box-skins.selected .box-skins-list .skin {
+    max-width: 300px;
+    min-width: unset;
     height: 200px;
     width: 197px;
-    min-width: 157px;
-    max-width: 197px;
+    flex-grow: 1;
     transition: unset;
 }
 .box-skins.solo .box-skins-list .skin {
@@ -1492,23 +1491,25 @@ nav #pagename:focus {
     margin-top: 0;
 }
 .boxreview .plusminus {
-    width: 98%;
-    height: 304px;
+    width: 95%;
+    height: auto;
     display: flex;
     align-content: center;
     align-items: center;
     justify-content: space-between;
-    top: 100px;
+    margin-top: 10px;
 }
 .boxreview .plusminus .criteria {
     width: 49.5%;
-    min-height: 286px;
+    min-height: 230px;
+    overflow: hidden;
     border-radius: 5px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     background-color: rgba(255, 255, 255, .05);
     position: relative;
+    padding-bottom: 20px    
 }
 .boxreview .plusminus .criteria .par p, li {
     text-align: start;
@@ -1518,16 +1519,39 @@ nav #pagename:focus {
 
 .boxreview .plusminus .criteria .par h2,
 .boxreview .plusminus .criteria .par p {
-    position: relative;
-    text-align: start;
-    width: 170px;
-    color: var(--white);
+    margin-left: unset;
+    position: absolute;
+    font-size: 16px;
+    height: 30px;
+    width: 90px;
+    color: black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    left: -20px;
+    z-index: 1;
+    justify-content: center !important;
     font-weight: 600;
-    font-size: 22px;
-    margin-left: 5px;
+    opacity: .9;
 }
+.boxreview .plusminus .criteria .par p::before {
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 100px;
+    top: 0;
+    left: -10px;
+    background-color: var(--main-color);
+    transform: skewX(-20deg);
+    z-index: -1;
+    border-radius: 0 0 5px 0;
+}
+.boxreview .plusminus .criteria:nth-child(1) .par p::before {
+    background-color: var(--green);
+}
+
 .boxreview .plusminus .criteria .par li:nth-child(2) {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 .boxreview .plusminus .criteria .par li {
     font-size: 16px;
@@ -1538,8 +1562,7 @@ nav #pagename:focus {
 .boxreview .plusminus .criteria .par {
     width: 450px;
     position: relative;
-    left: 22px;
-    top: 45px;
+    left: 20px;
     height: 70%;
     display: flex;
     flex-wrap: wrap;
@@ -1554,6 +1577,7 @@ nav #pagename:focus {
     width: auto;
     height: auto;
     top: unset;
+    bottom: unset;
     right: unset;
 }
 .boxreview .plusminus .criteria i {
@@ -1565,7 +1589,8 @@ nav #pagename:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 25px;
+
+    bottom: 25px;
     right: 30px;
 }
 
@@ -1868,6 +1893,7 @@ nav #pagename:focus {
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: flex-start;
+    position: relative;
 }
 .features .featuresbox .typesinside img {
     width: 96px;
@@ -1878,10 +1904,26 @@ nav #pagename:focus {
 }
 .features .featuresbox .typesinside a:hover {
     transform: scale(1.05);
-    border: var(--main-color) 2px solid;
+    margin-left: 31px;
+    margin-right: 4px;
+    transition: transform .15s ease-in-out, margin .15s;
+    filter: drop-shadow(0 0 1px #c91f3b) !important;
     background-color: #a81d34;
-    color: white;
 }
+
+.features .featuresbox .typesinside a:hover::before,
+.features .featuresbox .typesinside a:hover::after {
+    transition: transform .15s ease-in-out;
+    background-color: #a81d34;
+}
+
+.features .featuresbox .typesinside a:active,
+.features .featuresbox .typesinside a:active::after,
+.features .featuresbox .typesinside a:active::before {
+    background-color: #5a101c !important;
+    transition: .09s all ease-in-out !important;
+}
+
 .gamemodes .featuresbox .typesinside a {
     transform: scale(0.8);
     transition: ease-in-out all .2s;
@@ -1911,14 +1953,50 @@ nav #pagename:focus {
     display: flex;
     align-items: center;
     padding: 2px 10px;
-    border-radius: 5px;
     font-weight: 600;
     font-size: 14px;
     color: var(--white);
     background-color: rgb(21 21 21);
-    border: 2px #171717 solid;
     transition: ease-in-out all .15s;
+    filter: drop-shadow(0 0 1px rgb(50 50 50));
+    margin-left: 26px;
+    position: relative;
+    box-sizing: border-box;
 }
+
+.features .featuresbox .typesinside a:first-child {
+    border-radius: 5px 0 0 5px;
+    margin-left: 16px;
+}
+
+.features .featuresbox .typesinside a:first-child::before {
+    content: unset;
+}
+
+.features .featuresbox .typesinside a::after,
+.features .featuresbox .typesinside a::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    background-color: rgb(21 21 21);
+    transition: ease-in-out all .15s;
+    box-sizing: border-box;
+    transform: skewX(-20deg);
+    border-radius: 5px;
+    z-index: 1;
+    top: 0;
+}
+
+.features .featuresbox .typesinside a::before {
+    left: -10px;
+
+}
+
+.features .featuresbox .typesinside a::after {
+    right: -10px;
+}
+
 .typesinside a:nth-child(1) {
     margin: 12px 0 12px 22px;
 }
@@ -2726,7 +2804,7 @@ nav #logo:hover {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    min-height: 790px;
+    min-height: 540px;
     position: relative;
 }
 .category-centralizer {
@@ -3598,9 +3676,10 @@ nav img:active,
     content: '';
     position: absolute;
     top: 0;
-    left: -8px;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%);
+    left: -6px;
+    transform: skewX(20deg);
     background-color: var(--main-color);
+    border-radius: 0 0 0 5px;
     width: 20px;
     height: 100%;
     z-index: -1;
@@ -3633,10 +3712,11 @@ nav img:active,
     top: unset;
     bottom: 0;
     left: -8px;
+    transform: skewX(-20deg);
+    border-radius: 5px 0 0 0;
     right: unset;
     background: rgb(14 14 14);
     transition: background .15s .05s;
-    clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%);
     width: 20px;
     height: 100%;
     z-index: -1;
@@ -3645,6 +3725,9 @@ nav img:active,
 .box:hover .logobg .vpn::before {
     transform: translateY(0);
     background: rgb(14 14 14);
+}
+.box:hover .logobg .vpn::before {
+    transform: translateY(0) skewX(-20deg);
 }
 .vpn:hover {
     color: white;
@@ -3804,7 +3887,8 @@ nav img:active,
 }
 .content button:hover,
 .content a:hover{
-    background-color: #a81d34 !important;
+    background-color: #a81d34;
+    border: var(--main-color) 2px solid;
     animation: none !important;
 }
 .content button:focus{
@@ -3812,7 +3896,6 @@ nav img:active,
 }
 .content button:hover:active,
 .content a:hover:active,
-.features .featuresbox .typesinside a:active,
 .instruction-mirrors li a:active {
     background-color: #5a101c !important;
     border: 2px solid #771324 !important;
@@ -3996,7 +4079,7 @@ footer .centralizer .footer-content {
 .newest-boxes .box .logobg img {
     transform: scale(.95);
     transition: opacity .1s ease-in-out;
-    margin-top: 25px;
+    margin-top: 30px;
 }
 .newest-boxes .box:hover {
     z-index: 100;
@@ -5158,8 +5241,9 @@ label:active,
         content: '';
         position: absolute;
         top: 0;
-        right: -12px;
-        clip-path: polygon(0 0, 40% 0, 100% 100%, 0 100%);
+        right: -10px;
+        transform: skewX(20deg);
+        border-radius: 0 5px 0 0;
         transition: transform .15s .05s ease-in-out, background .15s .0s;
         background: rgb(13 13 13);
         width: 20px;
@@ -5192,7 +5276,9 @@ label:active,
     .box:hover .rating-case-single,
     .box:hover .rating-case-single::before {
         transform: translateY(0);
-        /* background: rgb(22 22 22); */
+    }
+    .box:hover .rating-case-single::before {
+        transform: translateY(0) skewX(20deg);
     }
 .sitepage.topic-craft .boxtopic {
     background: var(--opacback);
@@ -5833,7 +5919,6 @@ label:active,
     }
     .content button:hover:active,
     .content a:hover:active,
-    .features .featuresbox .typesinside a:active,
     .instruction-mirrors li a:active {
         background-color: #a81d34 !important;
         border: 2px solid #ce203d !important;
@@ -6273,6 +6358,15 @@ label:active,
     }
 }
 @media screen and (max-width: 850px) {
+    .features {
+        width: 95%;
+    }
+    .features .featuresbox .typesinside a {
+        margin: 6px 0 6px 26px !important;
+    }
+    .features .featuresbox .typesinside a:first-child {
+        margin-left: unset !important;
+    }
     .site-searcher-logo img {
         height: auto;
         width: 80%;
@@ -6460,8 +6554,7 @@ label:active,
     .slider-dot {
         padding: 3px !important;
       }
-    .smallreview h2, .instruction h2, .instruction h3,
-    .boxreview .plusminus .criteria .par h2, .boxreview .plusminus .criteria .par p {
+    .smallreview h2, .instruction h2, .instruction h3  {
         font-size: 22px !important;
     }
     .newest-boxes {
