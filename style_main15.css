@@ -2011,17 +2011,17 @@ nav #pagename:focus {
     box-sizing: border-box;
     transform: skewX(-20deg);
     border-radius: 5px;
-    z-index: 1;
+    z-index: -1;
     top: 0;
 }
 
 .features .featuresbox .typesinside a::before {
-    left: -10px;
+    left: -9px;
 
 }
 
 .features .featuresbox .typesinside a::after {
-    right: -10px;
+    right: -9px;
 }
 
 .typesinside a:nth-child(1) {
@@ -2546,6 +2546,13 @@ nav #pagename:focus {
     transition: all .15s ease-in-out;
     display: inline-block;
     vertical-align: middle;
+}
+.site-promo-copy .copied-title {
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 600;
+    bottom: 0;
+    right: -100px;
 }
 .site-promo-copy i {
     color: rgb(188, 188, 188);
@@ -3942,13 +3949,16 @@ nav img:active,
 }
 
 .content button:hover,
+.content button:hover .copied-title,
 .content button:hover::before,
 .content a:hover::before, 
 .content a:hover::after,
 .content a:hover {
     background-color: #a81d34 !important;
     animation: none !important;
+    opacity: 1;
 }
+
 .content a:hover {
     background-color: #a81d34 !important;
     filter: drop-shadow(0 0 1px var(--main-color));
@@ -6953,4 +6963,18 @@ label:active,
 .category-box-content span.translated,
 .category-selector.notfound .category-box-content span {
     opacity: 1;
+}
+
+.copied-title {
+    position: absolute;
+    bottom: 37px;
+    right: 0;
+    background-color: rgb(32 32 32);
+    transition: background .15s ease-in-out;
+    pointer-events: none;
+    color: var(--white);
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 500;
 }

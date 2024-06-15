@@ -1,11 +1,30 @@
-function copyToClipboard(element) {
-    var $temp = $("<input>");
-    $("body").append($temp);
-    $temp.val($(element).text()).select();
-    document.execCommand("copy");
-    $temp.remove();
-  }
-  
+function copyToClipboard(selector) {
+  var $element = $(selector);
+
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($element.text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+
+  var copiedMessage = (languageTag === 'ru') ? 'Скопировано' : 'Copied';
+
+  var $title = $("<div class='copied-title'>" + copiedMessage + "</div>");
+
+  $element.siblings('.copy').append($title);
+
+  $title.hide();
+
+  $title.fadeIn(150, function() {
+      $(this).delay(400).fadeOut(150, function() {
+          $(this).remove();
+      });
+  });
+}
+
+
+
+
   const sitesList = document.querySelector('.boxes-holder');
   const modsboxes = document.querySelector('.mods-main-box');
 
