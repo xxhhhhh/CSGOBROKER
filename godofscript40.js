@@ -846,7 +846,6 @@ $(document).ready(function(){
     '<li><a href="/reviews/swapgg">Swapgg</a></li>',
     '<li><a href="/reviews/tradeit">Tradeit</a></li>',
     '<li><a href="/reviews/vvvgamers">Vvvgamers</a></li>',
-    '<li><a href="/reviews/wtfskins">Wtfskins</a></li>',
     '<li><a href="/reviews/xplay">Xplay</a></li>',
     '<li><a href="/reviews/banditcamp">Banditcamp</a></li>',
     '<li><a href="/reviews/bcgame">Bcgame</a></li>',
@@ -860,7 +859,6 @@ $(document).ready(function(){
     '<li><a href="/reviews/csgobig">CSGOBig</a></li>',
     '<li><a href="/reviews/csgoempire">CSGOEmpire</a></li>',
     '<li><a href="/reviews/csgofast">CSGOFast</a></li>',
-    '<li><a href="/reviews/csgolive">CSGOLive</a></li>',
     '<li><a href="/reviews/csgoluck">CSGOLuck</a></li>',
     '<li><a href="/reviews/csgo-market">CSGO-Market</a></li>',
     '<li><a href="/reviews/csgopolygon">CSGOPolygon</a></li>',
@@ -1481,7 +1479,21 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
     newDiv.textContent = "VPN";
 }
 
-  var allowedIds = ["Clash", "CSGORoll", "DMarket", "Rollbit", "Primedice", "Duelbits", "FlameCases", "BCGame", "DaddySkins", "CSGOLive", "WTFSkins", "gcskins", "FarmSkins", "vvvgamers"];
+  var allowedIds = [
+    "Clash",
+    "CSGORoll",
+    "DMarket",
+    "Rollbit",
+    "Primedice",
+    "Duelbits",
+    "FlameCases",
+    "BCGame",
+    "DaddySkins",
+    "gcskins",
+    "FarmSkins",
+    "RustyPot",
+    "vvvgamers",
+  ];
 
   var boxElements = document.querySelectorAll(".box");
 
@@ -1850,7 +1862,6 @@ var ratings = {
   "DaddySkins":3.5,
   "Duelbits":4.125,
   "Rollbit":4,
-  "WTFSkins":3.375,
   "FarmSkins":2.625,
   "Bets4pro":3.125,
   "RustMagic":3.5,
@@ -1882,7 +1893,6 @@ var ratings = {
   "BCGame":4.5,
   "Freeward":3.375,
   "SteamLevelU":3.75,
-  "CSGOLive":3.5,
   "Freecash":5,
   "STEAMLVLUP":4.5,
   "CYBERSHOKE":4.125,
