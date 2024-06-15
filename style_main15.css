@@ -1621,7 +1621,7 @@ nav #pagename:focus {
     background-color: transparent;
 }
 .site-attention {
-    width: 98%;
+    width: 95%;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -1630,6 +1630,8 @@ nav #pagename:focus {
     background: linear-gradient(15deg, rgba(255, 255, 255, .006) 30%, rgba(0, 0, 0, 0) 100%);
     transition: background-color .2s ease-in-out;
     position: relative;
+    margin-top: 15px;
+    order: -1;
 }
 .info-block {
     width: 95%;
@@ -1638,7 +1640,6 @@ nav #pagename:focus {
 .site-attention.blocked {
     width: auto;
     order: -1;
-    margin-top: 15px;
     justify-content: flex-start;
     height: 40px;
     padding: 0 20px;
