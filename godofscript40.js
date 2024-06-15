@@ -22,9 +22,6 @@ function copyToClipboard(selector) {
   });
 }
 
-
-
-
   const sitesList = document.querySelector('.boxes-holder');
   const modsboxes = document.querySelector('.mods-main-box');
 
