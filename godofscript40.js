@@ -1910,7 +1910,7 @@ var ratings = {
   "Freeward":3.375,
   "SteamLevelU":3.75,
   "Freecash":5,
-  "STEAMLVLUP":4.5,
+  "SteamLvlUp":4.5,
   "CYBERSHOKE":4.125,
   "Gamehag":3.875,
   "CSGOSelly":3,
@@ -1951,7 +1951,7 @@ function addStarRating(boxId, rating) {
   }
 }
 
-var boxesHolder = document.querySelector('.boxes-holder');
+var boxesHolder = document.querySelector('.boxes-holder, .sitealternatesboxes');
 if (boxesHolder) {
   for (var boxId in ratings) {
       addStarRating(boxId, ratings[boxId]);
