@@ -1524,7 +1524,7 @@ nav #pagename:focus {
 .boxreview .plusminus .criteria .par h2,
 .boxreview .plusminus .criteria .par p {
     margin-left: unset;
-    position: absolute;
+    position: relative;
     font-size: 16px;
     height: 30px;
     width: 90px;
@@ -1555,7 +1555,7 @@ nav #pagename:focus {
 }
 
 .boxreview .plusminus .criteria .par li:nth-child(2) {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 .boxreview .plusminus .criteria .par li {
     font-size: 16px;
@@ -2552,7 +2552,7 @@ nav #pagename:focus {
     font-size: 10px;
     font-weight: 600;
     bottom: 0;
-    right: -100px;
+    right: -110px;
 }
 .site-promo-copy i {
     color: rgb(188, 188, 188);
@@ -3503,7 +3503,7 @@ nav #logo:hover {
 }
 .sitealternates .site-reward {
     height: 50px;
-    width: 80%;
+    width: 75%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6975,6 +6975,10 @@ label:active,
     color: var(--white);
     padding: 6px;
     border-radius: 5px;
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 500;
+}
+
+.sitepage .box .copied-title {
+    background-color: #62101d;
 }
