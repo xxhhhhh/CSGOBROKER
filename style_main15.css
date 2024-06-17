@@ -1856,9 +1856,8 @@ nav #pagename:focus {
 }
 .title-space {
     height: 1px;
-    background: linear-gradient(56deg, rgba(0,0,0,0) 0%, rgba(255,255,255,.05) 50%, rgba(0,0,0,0) 100%);
-    width: 90%;
-    right: 0;
+    background: linear-gradient(56deg, rgba(255, 255, 255, .05) 0%, rgba(0, 0, 0, 0) 100%);
+    width: 95%;
     margin: 40px auto 0px auto;
 }
 .siteleftpannel .navigation-menu li {
@@ -1984,12 +1983,17 @@ nav #pagename:focus {
     font-weight: 600;
     font-size: 14px;
     color: var(--white);
-    background-color: rgb(21 21 21);
     transition: ease-in-out all .15s;
     filter: drop-shadow(0 0 1px rgb(50 50 50));
     margin-left: 26px;
     position: relative;
     box-sizing: border-box;
+}
+
+.features .featuresbox .typesinside a,
+.features .featuresbox .typesinside a::after,
+.features .featuresbox .typesinside a::before {
+    background-color: rgb(21 21 21);
 }
 
 .features .featuresbox .typesinside a:first-child {
@@ -2007,7 +2011,6 @@ nav #pagename:focus {
     position: absolute;
     width: 20px;
     height: 100%;
-    background-color: rgb(21 21 21);
     transition: ease-in-out all .15s;
     box-sizing: border-box;
     transform: skewX(-20deg);
@@ -6492,6 +6495,7 @@ label:active,
     }
     .boxreview .plusminus .criteria {
         width: 100%;
+        min-height: unset;
         margin: 9px 0 0 0;
     }
     .boxreview .plusminus .criteria .par h2 {
