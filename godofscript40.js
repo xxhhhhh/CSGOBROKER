@@ -1685,13 +1685,19 @@ if (!window.location.pathname.endsWith("newest") &&
     if (isExistingContentCached) {
       insertModsBox(existingContainer, boxId, cachedContent[boxId]);
     } else {
-      fetch('/code-parts/micro-parts/insert-mods-box.html')
+      let fileToFetch = '/code-parts/micro-parts/insert-mods-box.html';
+      if (languageTag === 'ru') {
+        fileToFetch = '/code-parts/micro-parts/insert-mods-box-ru.html';
+      }
+    
+      fetch(fileToFetch)
         .then(response => response.text())
         .then(data => {
           cachedContent[boxId] = data;
           insertModsBox(existingContainer, boxId, data);
         });
     }
+    
   }
   
   function insertModsBox(container, boxId, data) {

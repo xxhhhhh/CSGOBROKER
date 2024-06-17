@@ -681,6 +681,7 @@ nav #pagename:focus {
     z-index: 10000;
     visibility: visible;
     transition: opacity .15s .0s ease-in-out, visibility .15s 0s;
+    cursor: default;
     opacity: 1;
 }
 
@@ -775,6 +776,14 @@ nav #pagename:focus {
 
 }
 
+#preview-window.component-box {
+    display: block;
+}
+
+#preview-window.component-box img {
+    height: auto;
+}
+
 @keyframes skinblur {
     0% {filter: blur(115px);
     }
@@ -814,6 +823,10 @@ nav #pagename:focus {
 }
 .gold #preview-content .skin-desc {
     background: rgb(228, 174, 57);
+}
+.topic-craft #preview-content {
+    background: radial-gradient(50% 65% at 50% 100%, #4b4b4b31, transparent 100%);
+    /* background: radial-gradient(50% 65% at 50% 100%, #d9194331, transparent 100%); */
 }
 
 #preview-showcase #preview-content img {
@@ -4330,9 +4343,37 @@ footer .centralizer .footer-content {
     transition: all .15s ease-in-out;
     margin: 5px;
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    position: relative;
 }
+.singlemod-box[data-title]:hover:after {
+    content: attr(data-title);
+    padding: 0 20px;
+    transition: padding .15s ease-in-out;
+    width: max-content;
+}
+.singlemod-box[data-title]:after {
+    content: attr(data-title);
+    position: absolute;
+    color: var(--white);
+    padding: 0;
+    display: flex;
+    height: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 10px;
+    background-color: rgb(12 12 12);
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 1;
+    bottom: 50%;
+    transform: translateY(50%);
+    overflow: hidden;
+    right: 60px;
+    width: 0px;
+  }
 .singlemod-box:hover {
     transform: scale(1.1) !important;
 }
@@ -5514,6 +5555,7 @@ label:active,
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .sitepage.topic-craft .component-box:hover,
 .box-topic.sticker .component-box:hover {
@@ -5965,6 +6007,9 @@ label:active,
         margin-bottom: 4px;
         border-radius: 0;
         background-color: rgb(11 11 11);
+    }
+    .singlemod-box[data-title]:hover:after {
+        display: none;
     }
     .mods-box.topic {
         height: unset;
