@@ -1494,13 +1494,13 @@ nav #pagename:focus {
     margin-top: 0;
 }
 .boxreview .plusminus {
-    width: 95%;
+    width: 96%;
     height: auto;
     display: flex;
     align-content: center;
     align-items: flex-start;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: 10px;
     order: -1;
 }
 .boxreview .plusminus .criteria {
@@ -1670,7 +1670,7 @@ nav #pagename:focus {
     color: var(--white);
 }
 .boxreview .smallreview, .instruction {
-    width: 98%;
+    width: 100%;
     height: auto;
     background-color: transparent;
     display: flex;
@@ -1883,7 +1883,7 @@ nav #pagename:focus {
     text-decoration: none;
 }
 .features {
-    width: 98%;
+    width: 96%;
 }
 .features, .gamemodes {
     height: auto;
@@ -1994,7 +1994,7 @@ nav #pagename:focus {
 
 .features .featuresbox .typesinside a:first-child {
     border-radius: 5px 0 0 5px;
-    margin-left: 18px;
+    margin-left: 1px;
 }
 
 .features .featuresbox .typesinside a:first-child::before {
@@ -2025,8 +2025,8 @@ nav #pagename:focus {
     right: -9px;
 }
 
-.typesinside a:nth-child(1) {
-    margin: 12px 0 12px 22px;
+.typesinside a:first-child {
+    margin: 12px 0 12px 0;
 }
 .gamemodes .featuresbox .typesinside a::before {
     content: '';
