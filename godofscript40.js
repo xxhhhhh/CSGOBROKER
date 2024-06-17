@@ -1816,7 +1816,7 @@ function translateElement(element, targetLang) {
       'es': 'Recompensas Diarias'
     },
     'Deposit Bonuses': {
-      'ru': 'Бонусы за Депозит',
+      'ru': 'Бонусы к Пополнению',
       'tr': 'Yatırım Bonusları',
       'pt': 'Bônus de Depósito',
       'hi': 'जमा बोनस',

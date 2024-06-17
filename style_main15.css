@@ -1922,6 +1922,9 @@ nav #pagename:focus {
     justify-content: flex-start;
     position: relative;
 }
+.gamemodes .featuresbox .typesinside {
+    justify-content: center;
+}
 .features .featuresbox .typesinside img {
     width: 96px;
     height: 32px;
@@ -1958,13 +1961,11 @@ nav #pagename:focus {
     width: 32px;
 }
 .gamemodes .featuresbox .typesinside a {
-    height: 32px;
-    width: 24px;
-    filter: grayscale(1);
+    height: auto;
+    width: auto;
 }
 .gamemodes .featuresbox .typesinside a {
-    margin: 0 !important;
-    box-shadow: 0 0 20px 0 #080808;
+    margin: 0 2px !important;
     border-radius: 5px;
 }
 .gamemodes .featuresbox .typesinside a:hover {
@@ -2029,6 +2030,14 @@ nav #pagename:focus {
 }
 .gamemodes .featuresbox .typesinside a::before {
     content: '';
+    height: 22px;
+    width: 22px;
+    filter: drop-shadow(0 0 3px black);
+    transition: filter .15s ease-in-out;
+    border-radius: unset;
+}
+.gamemodes .featuresbox .typesinside a:hover::before {
+    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(102%) contrast(250%);
 }
 .sitedetails .methodlist a::before {
     content: '';
@@ -2040,101 +2049,102 @@ nav #pagename:focus {
 }
 /* Gamemodes Images List Start */
 
-.typesinside .csgo::before {                    
-    background-image: url(/img/minipics/gamemodes/esports.webp);
+.typesinside .csgo::before {                   
+    background-image: url(/img/minipics/gamemodes/clear-icons/esports.webp);
 }
 .typesinside .sport::before {
-    background-image: url(/img/minipics/gamemodes/realsport.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/realsport.webp);
 }
 .typesinside .slots::before {
-    background-image: url(/img/minipics/gamemodes/slots.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/slots.webp);
 }
 .typesinside .slotsduels::before {
-    background-image: url(/img/minipics/gamemodes/slotsduels.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/slotsduels.webp);
 }
 .typesinside .livedealer::before {
-    background-image: url(/img/minipics/gamemodes/livedealer.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/livedealer.webp);
 }
 .typesinside .poker::before {
-    background-image: url(/img/minipics/gamemodes/poker.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/poker.webp);
 }
 .typesinside .blackjack::before {
-    background-image: url(/img/minipics/gamemodes/blackjack.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/blackjack.webp);
 }
 .typesinside .baccarat::before {
-    background-image: url(/img/minipics/gamemodes/baccarat.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/baccarat.webp);
 }
 .typesinside .wheel::before {
-    background-image: url(/img/minipics/gamemodes/wheel.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/wheel.webp);
 }
 .typesinside .roulette::before {
-    background-image: url(/img/minipics/gamemodes/roulette.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/roulette.webp);
 }
 .typesinside .jackpot::before {
-    background-image: url(/img/minipics/gamemodes/jackpot.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/jackpot.webp);
 }
 .typesinside .crash::before {
-    background-image: url(/img/minipics/gamemodes/crash.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/crash.webp);
 }
 .typesinside .coinflip::before {
-    background-image: url(/img/minipics/gamemodes/coinflip.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/coinflip.webp);
 }
 .typesinside .cases::before {
-    background-image: url(/img/minipics/gamemodes/cases.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/cases.webp);
 }
 .typesinside .casebattles::before {
-    background-image: url(/img/minipics/gamemodes/casebattles.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/casebattles.webp);
 }
 .typesinside .upgrader::before {
-    background-image: url(/img/minipics/gamemodes/upgrader.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/upgrader.webp);
 }
 .typesinside .duels::before {
-    background-image: url(/img/minipics/gamemodes/duels.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/duels.webp);
 }
 .typesinside .plinko::before {
-    background-image: url(/img/minipics/gamemodes/plinko.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/plinko.webp);
 }
 .typesinside .dice::before {
-    background-image: url(/img/minipics/gamemodes/dice.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/dice.webp);
 }
 .typesinside .towers::before {
-    background-image: url(/img/minipics/gamemodes/towers.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/towers.webp);
 }
 .typesinside .mines::before {
-    background-image: url(/img/minipics/gamemodes/mines.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/mines.webp);
 }
 .typesinside .hilo::before {
-    background-image: url(/img/minipics/gamemodes/hilo.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/hilo.webp);
 }
 .typesinside .mining::before {
-    background-image: url(/img/minipics/gamemodes/mining.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/mining.webp);
 }
 .typesinside .offerwalls::before {
-    background-image: url(/img/minipics/gamemodes/earning.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/earning.webp);
 }
 .typesinside .playing::before {
-    background-image: url(/img/minipics/gamemodes/playing.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/playing.webp);
 }
 .typesinside .trade-skins::before {
-    background-image: url(/img/minipics/gamemodes/exchanger.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/exchanger.webp);
 }
 .typesinside .buy-skins::before {
-    background-image: url(/img/minipics/gamemodes/buyingskins.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/buyingskins.webp);
 }
 .typesinside .sell-skins::before {
-    background-image: url(/img/minipics/gamemodes/sellingskins.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/sellingskins.webp);
 }
 .typesinside .giveaways::before {
-    background-image: url(/img/minipics/gamemodes/giveaways_mode.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/giveaways_mode.webp);
 }
 .typesinside .steamlvlup::before {
-    background-image: url(/img/minipics/gamemodes/steamlvlup.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/steamlvlup.webp);
 }
 .typesinside .rental::before {
-    background-image: url(/img/minipics/gamemodes/rental.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/rental.webp);
 }
-.typesinside .buy-games::before {
-    background-image: url(/img/minipics/payments/games.webp);
+.typesinside .buy-games::before,
+.methodlist .games::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/games.webp);
 }
 
 /* Gamemodes Images List End */
@@ -2191,9 +2201,6 @@ nav #pagename:focus {
 }
 .methodlist .gpay::before {
     background-image: url(/img/minipics/payments/gpay.webp);
-}
-.methodlist .games::before {
-    background-image: url(/img/minipics/payments/games.webp);
 }
 .methodlist .h1z1::before {
     background-image: url(/img/minipics/payments/h1z1.webp);
@@ -3438,22 +3445,27 @@ nav #logo:hover {
 }
 .alternates-title {
     width: auto;
-    height: 40px;
-    background: rgb(14 14 14);
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
     color: var(--white);
     border-radius: 0 0 5px 0;
     position: absolute;
     left: 50%;
-    top: 0;
+    top: -1px;
     transform: translateX(-50%);
     padding: 0 24px;
     user-select: none;
     z-index: 100;
+}
+
+.alternates-title,
+.alternates-title::after,
+.alternates-title::before {
+    background: rgb(13 13 13);
 }
 
 .alternates-title::after,
@@ -3462,8 +3474,6 @@ nav #logo:hover {
     position: absolute;
     width: 20px;
     height: 100%;
-    background: rgb(14 14 14);
-
     transition: ease-in-out all .15s;
     box-sizing: border-box;
     border-radius: 0 0 5px 0;
@@ -3535,9 +3545,11 @@ nav #logo:hover {
 .sitealternates .box .content p:first-child {
     font-size: 18px;
 }
-.sitealternates .box .content button.copy_style,
-.sitealternates .box .content a.copy_style {
+.sitealternates .box .content a.copy_style,
+.sitealternates .box .content a.copy_style::before,
+.sitealternates .box .content a.copy_style::after {
     bottom: 32px;
+    background-color: rgb(32 32 32);
 }
 .sitealternates .site-reward {
     height: 50px;
@@ -3800,6 +3812,7 @@ nav img:active,
     right: unset;
     top: 0;
     right: 0;
+    display: none;
 }
 .sitealternates .box .logobg .vpn::before {
     transition: all .15s ease-in-out;
@@ -3972,7 +3985,10 @@ nav img:active,
 .box:hover .content button.copy_style,
 .box:hover .content a.copy_style,
 .box:hover .content a::after,
-.box:hover .content a::before {
+.box:hover .content a::before,
+.sitealternates .box:hover .content a.copy_style,
+.sitealternates .box:hover .content a.copy_style::before,
+.sitealternates .box:hover .content a.copy_style::after {
     background-color: #a81d34;
 }
 
@@ -4351,6 +4367,7 @@ footer .centralizer .footer-content {
 }
 .mods-box.skins-box .singlemod-box {
     height: 40px;
+    flex-grow: 1;
     width: 20%;
     margin: 0 7px;
 }
@@ -4774,6 +4791,10 @@ footer .centralizer .footer-content {
     justify-content: center;
     user-select: none;
   }
+  .gamemodes .featuresbox .typesinside a[data-title]:after  {
+    left: -63px;
+    top: -85%;
+  }
   .slider-container .slick-slider {
     margin-top: 18px;
   }
@@ -4820,8 +4841,8 @@ footer .centralizer .footer-content {
     background-color: rgba(0, 0, 0, .3) !important;
     z-index: 2;
     cursor: pointer;
-    box-shadow: 0 0 20px 0 #000;
-    transition: all .2s ease-in-out;
+    box-shadow: 0 0 10px 0 rgba(.3, .3, .3, .6);
+    transition: all .15s ease-in-out;
     position: relative;
   }
   .slick-dots li button:before {
@@ -5785,12 +5806,87 @@ label:active,
 .sitepage.topic-craft .rec-box {
     top: 17px;
 }
+.category-box-content span {
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+.category-box-content span.translated,
+.category-selector.notfound .category-box-content span {
+    opacity: 1;
+}
+
+.copied-title {
+    position: absolute;
+    bottom: 37px;
+    right: 0;
+    background-color: rgb(32 32 32);
+    transition: background .15s ease-in-out;
+    pointer-events: none;
+    color: var(--white);
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 8px;
+    font-weight: 500;
+}
+
+.sitepage .box .copied-title {
+    background-color: #62101d;
+}
+.gamemodes {
+    bottom: -1px;
+}
+.gamemodes .featuresbox {
+    border-radius: unset;
+    min-width: 60px;
+    padding: 5px;  
+    padding-bottom: 3px;
+}
+.gamemodes .featuresbox:after,
+.gamemodes .featuresbox::before,
+.gamemodes .featuresbox {
+    background: rgb(13 13 13);
+}
+.gamemodes .featuresbox:after,
+.gamemodes .featuresbox::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    transition: ease-in-out all .15s;
+    box-sizing: border-box;
+    transform: skewX(-20deg);
+    z-index: -1;
+    top: 0;
+}
+
+.gamemodes .featuresbox::before {
+    left: -9px;
+    border-radius: 5px 0 0 0;
+
+}
+
+.gamemodes .featuresbox::after {
+    right: -9px;
+    transform: skewX(20deg);
+    border-radius: 0 5px 0 0;
+}
+
+
 @media (display-mode: standalone) {
     body {
         background-color: #0d0d0d;
     }
 }
 @media screen and (max-width: 1340px) {
+    .alternates-title {
+        top: 0;
+    }
+    .gamemodes {
+        position: relative;
+        order: 1;
+        bottom: 0;
+        width: 100%;
+    }
     .features .featuresbox .typesinside a:last-child {
         border-radius: 0 5px 5px 0;
     }
@@ -5922,6 +6018,7 @@ label:active,
         margin: 3px !important;
         height: 35px;
         width: auto;
+        flex-grow: unset;
     }
     ul:first-child li .category-box {
         margin: 8px 4px 0 0 !important;
@@ -6517,6 +6614,9 @@ label:active,
     }
 }
 @media screen and (max-width: 390px) {
+    .ratingthings .ratingway {
+        font-size: 13px;
+    }
     .category-selector {
         max-width: 97% !important;
     }
@@ -6528,6 +6628,15 @@ label:active,
     }
 }
 @media screen and (max-width: 850px) {
+    .ratingthings .ratingway span {
+        margin-right: 5px;
+    }
+    .gamemodes .featuresbox:after, .gamemodes .featuresbox::before, .gamemodes .featuresbox {
+        background: rgb(12 12 12);
+    }
+    .gamemodes .featuresbox:after, .gamemodes .featuresbox::before {
+        content: unset;
+    }
     .sitealternates .rating-case-single {
         bottom: 5px;
     }
@@ -6611,14 +6720,13 @@ label:active,
     }
     .ratingsumm,
     .ratingthings {
-        height: 150px;
+        height: 100px;
+        width: 100%;
         padding: 10px 0px 10px 0px;
+        align-content: center;
     }
     .text-col-info ul {
         padding: 5px 5px 0 5px;
-    }
-    .ratingthings {
-        flex-wrap: nowrap;
     }
     .topic-box {
         margin: 12px 6px 0 6px;
@@ -6665,7 +6773,7 @@ label:active,
         margin-top: unset;
     }
     .alternates-title {
-        width: 65%;
+        width: 75%;
     }
     .sitealternates .site-reward {
         width: 85%;
@@ -6674,8 +6782,10 @@ label:active,
         height: auto;
     }
     .ratingthings .ratingway {
-        width: 100%;
+        width: auto;
         height: 30px;
+        flex: 1 1 50%;
+        margin: 0 5px;
     }
     #notexist {
         max-width: 90%;
@@ -7014,30 +7124,4 @@ label:active,
     .sitealternates .box .content p:first-child {
         margin-top: 0;
     }
-}
-.category-box-content span {
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-}
-.category-box-content span.translated,
-.category-selector.notfound .category-box-content span {
-    opacity: 1;
-}
-
-.copied-title {
-    position: absolute;
-    bottom: 37px;
-    right: 0;
-    background-color: rgb(32 32 32);
-    transition: background .15s ease-in-out;
-    pointer-events: none;
-    color: var(--white);
-    padding: 6px;
-    border-radius: 5px;
-    font-size: 8px;
-    font-weight: 500;
-}
-
-.sitepage .box .copied-title {
-    background-color: #62101d;
 }
