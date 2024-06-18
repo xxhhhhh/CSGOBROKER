@@ -2015,6 +2015,19 @@ nav #pagename:focus {
     background-color: rgb(21 21 21);
 }
 
+.boxreview#mirror .features .featuresbox .typesinside a:last-child {
+    border-radius: 0 5px 5px 0;
+    content: '';
+}
+
+.boxreview#mirror .features .featuresbox .typesinside a:first-child {
+    margin-left: -30px;
+}
+
+.boxreview#mirror .features .featuresbox .typesinside a:last-child::after {
+    content: unset;
+}
+
 .features .featuresbox .typesinside a:first-child {
     border-radius: 5px 0 0 5px;
     margin-left: 1px;
@@ -2510,7 +2523,7 @@ nav #pagename:focus {
 }
 .instruction-mirrors {
     padding: 30px 0px 30px 20px;
-    background: linear-gradient(360deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.2) 10%, rgba(0, 0, 0, .1) 55%, rgba(255, 255, 255, 0) 100%);
+    /* background: linear-gradient(360deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.2) 10%, rgba(0, 0, 0, .1) 55%, rgba(255, 255, 255, 0) 100%); */
     justify-content: flex-start;
     display: flex;
     align-items: center;
@@ -6706,8 +6719,11 @@ label:active,
     }
 }
 @media screen and (max-width: 850px) {
+    .sitedetails {
+        margin: 0;
+    }
     .ratingthings .ratingway span {
-        margin-right: 5px;
+        width: 130px;
     }
     .gamemodes .featuresbox:after, .gamemodes .featuresbox::before, .gamemodes .featuresbox {
         background: rgb(12 12 12);
@@ -6799,10 +6815,17 @@ label:active,
     }
     .ratingsumm,
     .ratingthings {
-        height: 100px;
         width: 100%;
-        padding: 10px 0px 10px 0px;
         align-content: center;
+    }
+    .ratingsumm {
+        height: 200px;
+        padding: 2px 0;
+    }
+    .ratingthings {
+        flex-wrap: nowrap;
+        height: 100%;
+        width: 100%;
     }
     .text-col-info ul {
         padding: 5px 5px 0 5px;
@@ -6849,9 +6872,10 @@ label:active,
         font-size: 15px;
     }
     .sitealternates {
-        margin-top: unset;
+        margin-top: -4px;
     }
     .alternates-title {
+        margin-top: 4px;
         width: 75%;
     }
     .sitealternates .site-reward {
@@ -6861,10 +6885,11 @@ label:active,
         height: auto;
     }
     .ratingthings .ratingway {
-        width: auto;
+        width: 98%;
         height: 30px;
         flex: 1 1 50%;
-        margin: 0 5px;
+        margin: 2px 0;
+        background: rgb(13 13 13);
     }
     #notexist {
         max-width: 90%;

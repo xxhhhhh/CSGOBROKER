@@ -246,8 +246,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (window.location.pathname.includes('/ru/reviews/') || window.location.pathname.includes('/ru/mirrors/')) {
     var translations = {
-      "Deposit Methods": "Способы Пополнения",
-      "Withdraw Methods": "Способы Вывода",
+      "Deposit Methods": "Сп. Пополнения",
+      "Withdraw Methods": "Сп. Вывода",
       "Items Accepts": "Принимаются Предметы",
       "Sign Up Bonus": "Бонус за Регистрацию",
       "Faucet System": "Система Кранов",
