@@ -1877,6 +1877,7 @@ nav #pagename:focus {
     background: linear-gradient(56deg, rgba(255, 255, 255, .05) 0%, rgba(0, 0, 0, 0) 100%);
     width: 95%;
     margin: 40px auto 0px auto;
+    display: none;
 }
 .siteleftpannel .navigation-menu li {
     color: rgb(255,255,255,.3);
@@ -2442,8 +2443,7 @@ nav #pagename:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0px 0px 0px;
-    margin: 10px 0 20px 0;
+    padding: 30px 0px 20px 0px;
 }
 .instruction:nth-child(2) {
     filter: grayscale(1);
@@ -6569,6 +6569,15 @@ label:active,
     .boxreview .smallreview {
         margin-top: 9px;
     }
+    .boxreview .smallreview, .instruction {
+        width: 96%;
+    }
+    .slick-slider {
+        width: 95% !important;
+    }
+    .sitepage .box .content {
+        background: unset;
+    }
     input + label::after {
         height: 210px !important;
     }
@@ -6941,7 +6950,7 @@ label:active,
         padding: 3px !important;
       }
     .smallreview h2, .instruction h2, .instruction h3  {
-        font-size: 22px !important;
+        font-size: 20px !important;
     }
     .newest-boxes {
         width: 98%;
@@ -7174,7 +7183,8 @@ label:active,
         height: auto;
     }
     .instruction ol {
-        width: 86%;
+        width: 92%;
+        padding-left: 10px;
     }
     .sitealternatesboxes {
         flex-direction: column;
@@ -7197,3 +7207,23 @@ label:active,
         margin-top: 0;
     }
 }
+/* .box {
+    background: rgb(15 15 15);
+}
+
+.category-selector .category-box .category-box-content {
+    color: var(--white);
+}
+
+.category-selector .category-box {
+    background-color: rgb(21, 21, 21);
+}
+
+.category-selector .category-box .category-box-logo,
+.singlemod-box {
+    background: rgb(21 21 21);
+}
+
+.ssiodox {
+    background: rgb(14 14 14);
+} */
