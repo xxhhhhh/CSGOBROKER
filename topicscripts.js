@@ -92,7 +92,7 @@ function insertRandomAdsBox() {
 insertRandomAdsBox();
 
 
-if (document.querySelector('.box-skins-list') && window.location.pathname.includes('/topic/')) {
+if (document.querySelector('.skin') && window.location.pathname.includes('/topic/')) {
   const skinsOnPage = document.querySelectorAll('.skin');
   
   const weaponToSkinIds = {};
@@ -179,16 +179,16 @@ if (document.querySelector('.box-skins-list') && window.location.pathname.includ
     function checkWeaponTypeAvailabilityForItems() {
         const skinTypes = ['white', 'lblue', 'blue', 'purple', 'pink', 'red'];
         skinTypes.forEach(function (type) {
-            const allNotExist = $(".box-skins-list .skin." + type + ", .box-topic .component-box." + type).toArray().every(function (element) {
+            const allNotExist = $(".box-skins-list .skin." + type + ", .box-topic .component-interact." + type).toArray().every(function (element) {
                 return $(element).hasClass("notexist");
             });
 
             if (allNotExist) {
                 $(".navigation-weapon-type." + type).removeClass("enabled");
-                $(".box-skins-list .skin." + type + ", .box-topic .component-box." + type).addClass("disabled");
+                $(".box-skins-list .skin." + type + ", .box-topic .component-interact." + type).addClass("disabled");
             } else {
                 $(".navigation-weapon-type." + type).addClass("enabled");
-                $(".box-skins-list .skin." + type + ", .box-topic .component-box." + type).removeClass("disabled");
+                $(".box-skins-list .skin." + type + ", .box-topic .component-interact." + type).removeClass("disabled");
             }
         });
     }
@@ -248,12 +248,12 @@ if (document.querySelector('.box-skins-list') && window.location.pathname.includ
 
         if ($(element).hasClass('skin')) {
             skinClasses = $(element).attr("class").split(" ");
-        } else if ($(element).hasClass('component-box')) {
-            skinClasses = ['component-box'];
+        } else if ($(element).hasClass('component-interact')) {
+            skinClasses = ['component-interact'];
         }
 
         const skinBox = $(element).closest('.box-skins-list, .box-topic');
-        const visibleItems = skinBox.find('.skin:not(.disabled), .component-box:not(.disabled)');
+        const visibleItems = skinBox.find('.skin:not(.disabled), .component-interact:not(.disabled)');
         const totalItems = visibleItems.length;
         const itemName = element.querySelector('.skin-desc-name') ? element.querySelector('.skin-desc-name').textContent.trim() : '';
 
@@ -265,7 +265,7 @@ if (document.querySelector('.box-skins-list') && window.location.pathname.includ
         previewWindow.setAttribute('data-current-box', skinBox.index('.box-skins-list, .box-topic'));
 
         skinClasses.forEach(function (skinClass) {
-            if (skinClass !== "skin" && skinClass !== "component-box") {
+            if (skinClass !== "skin" && skinClass !== "component-interact") {
                 previewWindow.classList.add(skinClass);
             }
         });
@@ -274,7 +274,7 @@ if (document.querySelector('.box-skins-list') && window.location.pathname.includ
             const selectedSite = this.id;
             let searchName = itemName;
 
-            if ($(element).hasClass('component-box')) {
+            if ($(element).hasClass('component-interact')) {
                 searchName = $(element).data('title');
             }
 
@@ -293,7 +293,7 @@ if (document.querySelector('.box-skins-list') && window.location.pathname.includ
     const currentIndex = parseInt(previewWindow.attr('data-current-index'));
     const currentBoxIndex = parseInt(previewWindow.attr('data-current-box'));
     const currentBox = $('.box-skins-list, .box-topic').eq(currentBoxIndex);
-    const visibleItems = currentBox.find('.skin:not(.disabled), .component-box:not(.disabled)');
+    const visibleItems = currentBox.find('.skin:not(.disabled), .component-interact:not(.disabled)');
     const totalItems = visibleItems.length;
     let newIndex = direction === 'left' ? currentIndex - 1 : currentIndex + 1;
 
@@ -314,7 +314,7 @@ $(document).on("click", ".skin", function () {
     showPreviewWindow(this);
 });
 
-$(document).on("click", ".component-box", function () {
+$(document).on("click", ".component-interact", function () {
     showPreviewWindow(this);
 });
 
