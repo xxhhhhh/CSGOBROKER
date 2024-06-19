@@ -26,6 +26,7 @@
     --opacback: rgba(3,3,3,.3);
     --halfback: rgba(0,0,0, .2);
     --gray: rgb(155, 155, 155);
+    --darkgray: rgb(13, 13, 13);
 }
 head{
     display: none;
@@ -3499,7 +3500,7 @@ nav #logo:hover {
 .alternates-title,
 .alternates-title::after,
 .alternates-title::before {
-    background: rgb(13 13 13);
+    background: var(--darkgray);
 }
 
 .alternates-title::after,
@@ -4028,7 +4029,6 @@ nav img:active,
 
 .content button.copy:hover {
     transform: scale(1.09) !important;
-    filter: drop-shadow(0 0 1px var(--main-color));
 }
 
 .boxes-holder .box:hover .content button.copy,
@@ -4037,7 +4037,6 @@ nav img:active,
 }
 
 .content button:hover,
-.content button:hover .copied-title,
 .content button:hover::before,
 .content a:hover::before, 
 .content a:hover::after,
@@ -4250,7 +4249,7 @@ footer .centralizer .footer-content {
     transform: skewX(20deg);
     z-index: -1;
     right: -10px;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 0 5px 0;
     top: 0;
 }
 
@@ -4258,7 +4257,7 @@ footer .centralizer .footer-content {
     transform: skewX(-20deg);
     right: unset;
     left: -10px;
-    border-radius: 5px 0 0 5px;
+    border-radius: 0 0 0 5px;
 }
 
 .newest-boxes {
@@ -4790,13 +4789,18 @@ footer .centralizer .footer-content {
     border-radius: 5px;
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
   }
-  .settings-button i,
-  #back-to-top-btn,
+  #back-to-top-btn.btnEntrance,
   .settings-menu {
-    color: rgba(255, 255, 255, .25);
+    border-radius: 10px;
+    border: 1px solid rgb(12 12 12);
     transition: .2s all ease-in-out;
   }
 
+  .settings-button i,
+  #back-to-top-btn {
+    color: rgba(255, 255, 255, .25);
+  }
+  
   .settings-button:hover {
     opacity: 1;
   }
@@ -4964,7 +4968,7 @@ footer .centralizer .footer-content {
   @media(max-width: 992px) {
     .container { padding: 20px 100px; }
     #back-to-top-btn,
-    .settings-menu { font-size: 22px; width: 40px; height: 40px; bottom: 15px; right: 15px; background-color: rgba(10, 10, 10, .92); border: 2px solid rgba(0,0,0,.04); }
+    .settings-menu { border-radius: 10px !important; font-size: 22px; width: 40px; height: 40px; bottom: 15px; right: 15px; background-color: rgba(10, 10, 10, .92); border: 1px solid rgba(12 12 12) !important; }
     .settings-menu { display: none; }
   }
   @media(max-width:768px) {
@@ -5479,7 +5483,7 @@ label:active,
         justify-content: flex-start;
         color: var(--main-color); 
         transition: transform .15s .05s ease-in-out, background .15s .0s;
-        background: rgb(13 13 13);
+        background: var(--darkgray);
         position: absolute;
         transform: translateY(50px);
         user-select: none;
@@ -5495,7 +5499,7 @@ label:active,
         transform: skewX(20deg);
         border-radius: 0 5px 0 0;
         transition: transform .15s .05s ease-in-out, background .15s .0s;
-        background: rgb(13 13 13);
+        background: var(--darkgray);
         width: 20px;
         height: 100%;
         z-index: -1;
@@ -5896,7 +5900,7 @@ label:active,
 .copied-title {
     position: absolute;
     bottom: 37px;
-    right: 0;
+    right: -20px;
     background-color: rgb(32 32 32);
     transition: background .15s ease-in-out;
     pointer-events: none;
@@ -5922,7 +5926,7 @@ label:active,
 .gamemodes .featuresbox:after,
 .gamemodes .featuresbox::before,
 .gamemodes .featuresbox {
-    background: rgb(13 13 13);
+    background: var(--darkgray);
 }
 .gamemodes .featuresbox:after,
 .gamemodes .featuresbox::before {
@@ -5956,6 +5960,10 @@ label:active,
     }
 }
 @media screen and (max-width: 1340px) {
+    :root {
+        --darkgray: rgb(15 15 15);
+        --opacback: rgb(12 12 12);
+    }
     .alternates-title {
         top: 0;
     }
@@ -5994,9 +6002,6 @@ label:active,
     .instruction.notmain li strong {
          color: var(--gray);
 }
-    :root {
-        --opacback: rgb(12 12 12);
-    }
     .navigation-reset {
         left: unset;
         top: 300px;
@@ -6272,7 +6277,7 @@ label:active,
         background-color: #a81d34 !important;
         border: 2px solid #ce203d !important;
         transition: .09s all ease-in-out !important;
-}
+    }
     .rec-box,
     .sitepage.topic-craft .rec-box {
         width: 98%;
@@ -6587,6 +6592,7 @@ label:active,
     }
     .screens.slick-slider {
         width: 95% !important;
+        margin-top: 10px;
     }
     .sitepage .box .content {
         background: unset;
@@ -6629,6 +6635,7 @@ label:active,
     .sitedetails .sitepros {
         width: auto;
         min-width: 49.6%;
+        background: var(--darkgray);
     }
     .sitedetails .sitepros:first-child {
         margin-right: 2px;
@@ -6656,6 +6663,12 @@ label:active,
         margin-right: 0;
         left: 0 !important;
         top: 0 !important;
+    }
+    .siteleftpannel .box.main {
+        background: rgb(11 11 11);
+    }
+    .siteleftpannel .box.main .logobg {
+        background: unset;
     }
     .siteblock {
         position: relative;
@@ -6716,6 +6729,9 @@ label:active,
     .ratingthings .ratingway {
         font-size: 14px !important;
         transition: all .1s ease-in-out;
+    }
+    .pages button {
+        display: none !important;
     }
 }
 @media screen and (max-width: 850px) {
@@ -6892,7 +6908,7 @@ label:active,
         height: 30px;
         flex: 1 1 50%;
         margin: 2px 0;
-        background: rgb(13 13 13);
+        background: var(--darkgray);
     }
     #notexist {
         max-width: 90%;
@@ -6909,7 +6925,7 @@ label:active,
         right: 10px !important;
     }
 }
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 695px) {
     #preview-showcase #preview-content img {
         height: auto;
         margin-top: 30px;
@@ -6950,8 +6966,8 @@ label:active,
         padding-top: 0px;
     }
     .box .logobg img {
-        max-width: 80% !important;
-        max-height: 75px !important;
+        max-width: 70% !important;
+        max-height: 90px !important;
     }
     .box.main .logobg img {
         max-width: 100% !important;
@@ -7053,7 +7069,6 @@ label:active,
     .boxes-holder .box .content {
         height: 60% !important;
     }
-    .box .logobg .best,
     .box-topic.sticker .topic-box .best {
         font-size: 11px !important;
         height: 27px;
@@ -7128,7 +7143,7 @@ label:active,
         margin-top: 10px;
     }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 460px) {
     .box {
         width: 96% !important;
         margin: 8px 0px 0 0px !important;
@@ -7154,7 +7169,7 @@ label:active,
         margin: 8px 4px 0 4px !important;
     }
     .content p:nth-child(2) {
-        width: 90% !important;
+        width: 80% !important;
         font-size: 13px;
     }
     .content p:nth-child(3) {
@@ -7162,9 +7177,6 @@ label:active,
         width: 70%;
         position: relative;
         bottom: unset;
-    }
-    .pages button {
-        display: none !important;
     }
 }
 @media screen and (max-width: 644px) {
@@ -7212,7 +7224,7 @@ label:active,
     }
     .instruction ol {
         width: 92%;
-        padding-left: 10px;
+        padding-left: 12px;
     }
     .sitealternatesboxes {
         flex-direction: column;
