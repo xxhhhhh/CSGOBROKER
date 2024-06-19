@@ -1491,9 +1491,9 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   newDiv.className = "vpn";
   newDiv.textContent = "Нужен VPN";
 
-  if (window.innerWidth < 1000) {
-    newDiv.textContent = "VPN";
-}
+//   if (window.innerWidth < 1000) {
+//     newDiv.textContent = "VPN";
+// }
 
   var allowedIds = [
     "Clash",
