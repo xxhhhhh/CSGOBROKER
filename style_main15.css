@@ -6320,7 +6320,7 @@ label:active,
         left: unset;
     }
     .content p:nth-child(3) {
-        font-size: 9px;
+        font-size: 11px;
         width: 80%;
         justify-content: center;
         position: absolute;
@@ -7144,8 +7144,11 @@ label:active,
         width: 0px;
     }
     .content p {
-        font-size: 11px;
+        font-size: 12px;
         margin-top: 10px;
+    }
+    .box .logobg .best {
+        font-size: 11px;
     }
 }
 @media screen and (max-width: 460px) {
