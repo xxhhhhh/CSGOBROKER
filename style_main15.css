@@ -6585,7 +6585,7 @@ label:active,
     .boxreview .smallreview, .instruction {
         width: 96%;
     }
-    .slick-slider {
+    .screens.slick-slider {
         width: 95% !important;
     }
     .sitepage .box .content {
@@ -6719,6 +6719,9 @@ label:active,
     }
 }
 @media screen and (max-width: 850px) {
+    .box.main .content a.copy_style {
+        font-size: 13px;
+    }
     .sitedetails {
         margin: 0;
     }
