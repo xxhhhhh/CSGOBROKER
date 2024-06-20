@@ -246,8 +246,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (window.location.pathname.includes('/ru/reviews/') || window.location.pathname.includes('/ru/mirrors/')) {
     var translations = {
-      "Deposit Methods": "Сп. Пополнения",
-      "Withdraw Methods": "Сп. Вывода",
+      "Deposit Methods": "Способы Пополнения",
+      "Withdraw Methods": "Способы Вывода",
       "Items Accepts": "Принимаются Предметы",
       "Sign Up Bonus": "Бонус за Регистрацию",
       "Faucet System": "Система Кранов",
@@ -628,21 +628,23 @@ if (ratingsumm && sitealternates) {
   );
 }
 
-  $('.sitepros').click(function() {
-    $(this).toggleClass("active");
-    var $methodlist = $(this).find('.methodlist');
-    var methodlistHeight = $methodlist.outerHeight(true);
-    var totalHeight = $(this).height() + methodlistHeight;
-    var $parent = $(this).parent('.sitedetails');
-    var $otherActiveSitepros = $(this).siblings('.sitepros.active');
-    var currentHeight = parseInt($parent.css('height'));
-    if ($(this).hasClass("active")) {
-        if (currentHeight < totalHeight) {
-            $parent.css('height', totalHeight + 'px');
-        }
-    } else if ($otherActiveSitepros.length === 0) {
-        $parent.css('height', '60px');
-    }
+$('.sitepros').click(function() {
+  $(this).toggleClass("active");
+  if ($(window).width() >= 1340) {
+      var $methodlist = $(this).find('.methodlist');
+      var methodlistHeight = $methodlist.outerHeight(true);
+      var totalHeight = $(this).height() + methodlistHeight;
+      var $parent = $(this).parent('.sitedetails');
+      var $otherActiveSitepros = $(this).siblings('.sitepros.active');
+      var currentHeight = parseInt($parent.css('height'));
+      if ($(this).hasClass("active")) {
+          if (currentHeight < totalHeight) {
+              $parent.css('height', totalHeight + 'px');
+          }
+      } else if ($otherActiveSitepros.length === 0) {
+          $parent.css('height', '60px');
+      }
+  }
 });
 
 $(document).ready(function(){

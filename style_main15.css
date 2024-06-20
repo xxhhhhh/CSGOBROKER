@@ -3231,6 +3231,7 @@ nav #logo:hover {
 .sitedetails .sitepros {
     width: 100%;
     height: 60px;
+    min-height: 60px;
     background: rgb(11 11 11);
     cursor: pointer;
     border-radius: 5px;
@@ -6645,10 +6646,11 @@ label:active,
         background: var(--darkgray);
     }
     .sitedetails .sitepros:first-child {
-        margin-right: 2px;
+        margin-right: unset;
     }
     .sitedetails .sitepros:last-child {
-        margin-left: 2px;
+        margin-top: 4px;
+        margin-left: unset;
     }
     .sitedetails .methodlist {
         width: 100%;
@@ -6661,6 +6663,8 @@ label:active,
         margin: 4px 0;
         left: 0 !important;
         bottom: 0 !important;
+        height: auto;
+        flex-direction: column;
     }
     .siteleftpannel {
         position: relative;
@@ -6915,7 +6919,13 @@ label:active,
         height: 30px;
         flex: 1 1 50%;
         margin: 2px 0;
-        background: var(--darkgray);
+        background: rgb(11 11 11);
+    }
+    .sitedetails .sitepros {
+        background: rgb(11 11 11);
+    }
+    .ratingsumm {
+        background: unset;
     }
     #notexist {
         max-width: 90%;
@@ -7153,7 +7163,7 @@ label:active,
 }
 @media screen and (max-width: 460px) {
     .box {
-        width: 94% !important;
+        width: 96% !important;
         margin: 8px 0px 0 0px !important;
         height: 320px !important;
         background: linear-gradient(180deg, rgb(14, 14, 14) 0%, rgb(12, 12, 12) 100%);
@@ -7258,7 +7268,8 @@ label:active,
         height: 250px !important;
     }
     .sitealternates .box .content a.copy_style {
-        bottom: 10px;
+        bottom: 15px;
+        font-size: 11px;
     }
     .sitealternates .box .content p:first-child {
         margin-top: 0;
