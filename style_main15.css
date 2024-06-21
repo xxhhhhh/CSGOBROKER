@@ -4196,6 +4196,7 @@ footer .centralizer .footer-content {
 .contact-box {
     height: 30px;
     color: rgba(255, 255, 255, .2);
+    font-size: 14px !important;
     font-weight: 400;
     display: flex;
     justify-content: center;
@@ -4203,9 +4204,6 @@ footer .centralizer .footer-content {
     margin: 0 10px;
     text-decoration: none;
     transition: color .2s ease-in-out;
-}
-.contact-box span {
-    font-size: 14px !important;
 }
 .contact-box:hover {
     color: rgba(255, 255, 255, .5);
@@ -6617,7 +6615,6 @@ label:active,
     }
     .contact {
         width: 100%;
-        font-size: 11px;
         justify-content: center;
     }
     footer .centralizer {
