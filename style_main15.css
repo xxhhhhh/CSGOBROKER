@@ -4196,7 +4196,6 @@ footer .centralizer .footer-content {
 .contact-box {
     height: 30px;
     color: rgba(255, 255, 255, .2);
-    font-size: 13px;
     font-weight: 400;
     display: flex;
     justify-content: center;
@@ -4204,6 +4203,9 @@ footer .centralizer .footer-content {
     margin: 0 10px;
     text-decoration: none;
     transition: color .2s ease-in-out;
+}
+.contact-box span {
+    font-size: 14px !important;
 }
 .contact-box:hover {
     color: rgba(255, 255, 255, .5);
@@ -4903,6 +4905,7 @@ footer .centralizer .footer-content {
 .slick-dots button {
     width: 13px !important;
     height: 13px !important;
+    font-size: 15px !important;
     border: solid 2px rgba(255, 255, 255, 0.4) !important;
     border-radius: 5px;
     background-color: rgba(0, 0, 0, .3) !important;
@@ -7105,7 +7108,7 @@ label:active,
     }
     .box .logobg .vpn {
         height: 27px;
-        font-size: 11px;
+        font-size: 12px;
         padding: 0 8px 0 5px;
         border-radius: unset;
         color: rgba(255, 255, 255, .3);
