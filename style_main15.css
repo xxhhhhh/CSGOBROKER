@@ -6410,7 +6410,7 @@ label:active,
     }
     ul .submenu li a, ul .submenu li .nonredir {
         padding: 8px 10px !important;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 600;
         text-align: center;
         justify-content: center;
@@ -7183,7 +7183,10 @@ label:active,
         height: 60% !important;
     }
     .box .logobg .best {
-        font-size: 12px !important;
+        font-size: 13px !important;
+    }
+    .rating-case-single .rating-summ {
+        font-size: 15px;
     }
     .content button  {
         font-size: 12px;
@@ -7216,7 +7219,7 @@ label:active,
         justify-content: flex-start;
     }
     .pages #PageTitle, #PageSubt {
-        font-size: 12px;
+        font-size: 13px;
     }
     nav .pages {
         padding-left: unset;
