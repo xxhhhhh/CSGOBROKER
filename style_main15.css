@@ -1640,7 +1640,7 @@ nav #pagename:focus {
     background-color: transparent;
 }
 .site-attention {
-    width: 95%;
+    width: 96%;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -1649,7 +1649,7 @@ nav #pagename:focus {
     background: linear-gradient(15deg, rgba(255, 255, 255, .006) 30%, rgba(0, 0, 0, 0) 100%);
     transition: background-color .2s ease-in-out;
     position: relative;
-    margin-top: 15px;
+    margin-top: 10px;
     order: -1;
 }
 .info-block {
@@ -7188,9 +7188,9 @@ label:active,
         margin: 8px 4px 0 4px !important;
     }
     .content p:nth-child(2) {
-        width: 84% !important;
+        width: 88% !important;
         height: 65px;
-        font-size: 13px;
+        font-size: 14px;
         margin-top: 10px;
     }
     .content p {
@@ -7200,7 +7200,7 @@ label:active,
         font-size: 12px;
     }   
     .content p:nth-child(3) {
-        font-size: 11px;
+        font-size: 12px;
         width: 58%;
         position: relative;
         bottom: unset;
