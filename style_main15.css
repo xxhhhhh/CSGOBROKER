@@ -6106,7 +6106,7 @@ label:active,
         opacity: 1;
     }
     .singlemod-select span {
-        font-size: 11px;
+        font-size: 12px;
     }
     .mods-main-box {
         flex-direction: row;
@@ -6710,7 +6710,7 @@ label:active,
         margin-left: 18px;
     }
     #FAQ #PageSubt {
-        font-size: 12px !important;
+        font-size: 13px !important;
         width: 90%;
     }
     footer#review .centralizer .footer-content a {
@@ -6746,6 +6746,10 @@ label:active,
     }
 }
 @media screen and (max-width: 850px) {
+    .box-skins .skin .skin-desc,
+    .box-skins .skin .skin-desc-name {
+        font-size: 12px;  
+    }
     .box.main .content a.copy_style {
         font-size: 13px;
     }
