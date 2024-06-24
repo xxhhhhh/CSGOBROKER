@@ -292,6 +292,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
+  if (window.location.pathname.includes('/tr/reviews/')) {
+    var translations = {
+      "Deposit Methods": "Yatırma Yöntemleri",
+      "Withdraw Methods": "Çekim Yöntemleri",
+      "Sign Up Bonus": "Kayıt Bonusu",
+      "No Bonus": "Bonus Yok",
+      "Pros": "Artılar",
+      "Price": "Fiyat",
+      "Cons": "Eksiler",
+      "Trust": "Güven",
+      "Support": "Destek",
+      "Payments": "Ödemeler",
+      "Functional": "Fonksiyonel",
+      "Sign up via Steam": "Steam ile Kayıt Ol",
+      "Done!": "Keyfini Çıkar!",
+      "Playability": "Oynanabilirlik",
+      "Visit WebSite": "Web Sitesini Ziyaret Et"
+    };
+    translateTextElements(translations);
+  }
+
   if (window.location.pathname.includes('/pl/reviews/')) {
     var translations = {
       "Deposit Methods": "Metody Depozytu",
