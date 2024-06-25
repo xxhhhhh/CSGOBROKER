@@ -298,6 +298,12 @@ document.addEventListener('DOMContentLoaded', function() {
       "Withdraw Methods": "Çekim Yöntemleri",
       "Sign Up Bonus": "Kayıt Bonusu",
       "No Bonus": "Bonus Yok",
+      "Faucet System": "Musluk Sistemi",
+      "Daily Rewards": "Günlük Ödüller",
+      "Daily Giveaways": "Günlük Çekilişler",
+      "Deposit Bonus": "Depozit Bonusu",
+      "Rain System": "Yağmur Sistemi",
+      "Rakeback System": "Rakeback Sistemi",
       "Pros": "Artılar",
       "Price": "Fiyat",
       "Cons": "Eksiler",
@@ -308,6 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "Sign up via Steam": "Steam ile Kayıt Ol",
       "Done!": "Keyfini Çıkar!",
       "Playability": "Oynanabilirlik",
+      "Items Accepts": "Kabul Edilen Eşyalar",
       "Visit WebSite": "Web Sitesini Ziyaret Et"
     };
     translateTextElements(translations);
