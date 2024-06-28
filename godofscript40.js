@@ -341,19 +341,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   if (
-    !window.location.pathname.includes("/mines") &&
-    !window.location.pathname.includes("/plinko") &&
-    !window.location.pathname.includes("/tf2/") &&
+    !window.location.pathname.endsWith("404") &&
+    !window.location.pathname.includes("/mirrors/") &&
     !window.location.pathname.includes("/reviews/") &&
     !window.location.pathname.includes("/topic") &&
-    !window.location.pathname.includes("/mirrors/") &&
-    !window.location.pathname.endsWith("privacy-policy.html") &&
-    !window.location.pathname.endsWith("contact-us.html") &&
-    !window.location.pathname.endsWith("terms-of-service.html") &&
-    !window.location.pathname.endsWith("privacy-policy") &&
-    !window.location.pathname.endsWith("contact-us") &&
-    !window.location.pathname.endsWith("404") &&
-    !window.location.pathname.endsWith("terms-of-service") &&
     window.location.pathname !== "/ru" &&
     window.location.pathname !== "/pt" &&
     window.location.pathname !== "/es" &&
@@ -367,64 +358,30 @@ document.addEventListener('DOMContentLoaded', function() {
     !window.location.pathname.endsWith("/404.html") &&
     !window.location.pathname.endsWith("/index.html")
   ) {
-    var currentLanguage = languageTag || "en";
-  
+    var currentLanguage = languageTag;
+    var supportedLanguages = ["en", "ru", "pt", "es", "tr", "hi"];
     var langMenuDiv = document.querySelector(".lang-menu");
     
-    var newContent = '<div class="selected-lang">';
-    if (currentLanguage === "en") {
-      newContent += "EN";
-    } else if (currentLanguage === "ru") {
-      newContent += "RU";
-    } else if (currentLanguage === "pt") {
-      newContent += "PT";
-    } else if (currentLanguage === "es") {
-      newContent += "ES";
-    } else if (currentLanguage === "tr") {
-      newContent += "TR";
-    } else if (currentLanguage === "hi") {
-      newContent += "HI";
+    function createLanguageListItem(lang, path) {
+      return '<li><a href="' + path + '" class="lang-switch" data-lang="' + lang + '">' + lang.toUpperCase() + '</a></li>';
     }
-    newContent += "</div><ul>";
-    if (currentLanguage !== "en") {
-      newContent +=
-        '<li><a href="' +
-        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
-        '" class="lang-switch" data-lang="en">EN</a></li>';
+    
+    function checkAndAddLanguage(lang) {
+      var path = lang === "en" ? window.location.pathname.replace(/^\/[a-z]{2}\//, "/") : "/" + lang + window.location.pathname.replace(/^\/[a-z]{2}\//, "/");
+      
+      fetch(path, { method: 'HEAD' }).then(function(response) {
+        if (response.ok && currentLanguage !== lang) {
+          langMenuDiv.querySelector("ul").innerHTML += createLanguageListItem(lang, path);
+        }
+      });
     }
-    if (currentLanguage !== "ru") {
-      newContent +=
-        '<li><a href="/ru' +
-        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
-        '" class="lang-switch" data-lang="ru">RU</a></li>';
-    }
-    if (currentLanguage !== "pt") {
-      newContent +=
-        '<li><a href="/pt' +
-        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
-        '" class="lang-switch" data-lang="pt">PT</a></li>';
-    }
-    if (currentLanguage !== "es") {
-      newContent +=
-        '<li><a href="/es' +
-        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
-        '" class="lang-switch" data-lang="es">ES</a></li>';
-    }
-    if (currentLanguage !== "tr") {
-      newContent +=
-        '<li><a href="/tr' +
-        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
-        '" class="lang-switch" data-lang="tr">TR</a></li>';
-    }
-    if (currentLanguage !== "hi") {
-      newContent +=
-        '<li><a href="/hi' +
-        window.location.pathname.replace(/^\/[a-z]{2}\//, "/") +
-        '" class="lang-switch" data-lang="hi">HI</a></li>';
-    }
-    newContent += "</ul>";
-  
+    
+    var newContent = '<div class="selected-lang">' + currentLanguage.toUpperCase() + '</div><ul>';
     langMenuDiv.innerHTML = newContent;
+    
+    supportedLanguages.forEach(function(lang) {
+      checkAndAddLanguage(lang);
+    });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
