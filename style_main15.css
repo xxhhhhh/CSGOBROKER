@@ -5148,6 +5148,7 @@ footer .centralizer .footer-content {
         justify-content: center;
         cursor: pointer;
         transition: all .3s ease-in-out;
+        text-transform: uppercase;
     }
     .lang-menu .selected-lang:hover {
         color: var(--white);
@@ -5194,6 +5195,7 @@ footer .centralizer .footer-content {
         padding: 8px 0;
         display: block;
         color: rgba(255, 255, 255, .12);
+        text-transform: uppercase;
         transition: all .2s ease-in-out;
     }
     
