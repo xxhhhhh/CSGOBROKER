@@ -6710,6 +6710,10 @@ label:active,
         background: rgb(11 11 11);
     }
     .box .logobg a {
+        width: 90%;
+        height: 90%;
+    }
+    .siteleftpannel .box .logobg a {
         height: auto;
         width: auto;
     }
@@ -6987,7 +6991,7 @@ label:active,
         margin-top: 30px;
     }
     .site-searcher-logo {
-        height: 60%;
+        height: auto;
     }
     .site-searcher-box {
         height: 45px;
@@ -7204,7 +7208,7 @@ label:active,
     .box {
         width: 96% !important;
         margin: 8px 0px 0 0px !important;
-        height: 320px !important;
+        height: 350px !important;
         background: linear-gradient(180deg, rgb(14, 14, 14) 0%, rgb(12, 12, 12) 100%);
     }
     .boxes-holder {
@@ -7230,8 +7234,8 @@ label:active,
         margin: 8px 4px 0 4px !important;
     }
     .content p:nth-child(2) {
-        width: 88% !important;
-        height: 60px;
+        width: 80% !important;
+        height: 75px;
         font-size: 13px;
         margin-top: 10px;
     }
@@ -7243,7 +7247,7 @@ label:active,
     }   
     .content p:nth-child(3) {
         font-size: 12px;
-        width: 58%;
+        width: 55%;
         position: relative;
         bottom: unset;
     }
