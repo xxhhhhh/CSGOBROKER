@@ -1587,7 +1587,7 @@ nav #pagename:focus {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    top: 40px;
+    margin-top: 40px;
 }
 .boxreview .plusminus .criteria .par i {
     opacity: 1;
@@ -6708,6 +6708,10 @@ label:active,
     }
     .siteleftpannel .box.main {
         background: rgb(11 11 11);
+    }
+    .box .logobg a {
+        height: auto;
+        width: auto;
     }
     .siteleftpannel .box.main .logobg {
         background: unset;
