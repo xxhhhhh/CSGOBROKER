@@ -1534,16 +1534,16 @@ nav #pagename:focus {
     position: relative;
     padding-bottom: 20px    
 }
-.boxreview .plusminus .criteria .par p, li {
+.boxreview .plusminus .criteria p, li {
     text-align: start;
     display: flex;
     justify-content: flex-start !important;
 }
 
-.boxreview .plusminus .criteria .par h2,
-.boxreview .plusminus .criteria .par p {
+.boxreview .plusminus .criteria h2,
+.boxreview .plusminus .criteria p {
     margin-left: unset;
-    position: relative;
+    position: absolute;
     font-size: 16px;
     height: 30px;
     width: 90px;
@@ -1551,13 +1551,13 @@ nav #pagename:focus {
     text-align: center;
     display: flex;
     align-items: center;
-    left: -20px;
+    left: 0;
     z-index: 1;
     justify-content: center !important;
     font-weight: 600;
     opacity: .9;
 }
-.boxreview .plusminus .criteria .par p::before {
+.boxreview .plusminus .criteria p::before {
     content: '';
     position: absolute;
     height: 30px;
@@ -1569,12 +1569,8 @@ nav #pagename:focus {
     z-index: -1;
     border-radius: 0 0 5px 0;
 }
-.boxreview .plusminus .criteria:nth-child(1) .par p::before {
+.boxreview .plusminus .criteria:nth-child(1) p::before {
     background-color: var(--green);
-}
-
-.boxreview .plusminus .criteria .par li:nth-child(2) {
-    margin-top: 20px;
 }
 .boxreview .plusminus .criteria .par li {
     font-size: 16px;
@@ -1591,6 +1587,7 @@ nav #pagename:focus {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    top: 40px;
 }
 .boxreview .plusminus .criteria .par i {
     opacity: 1;
@@ -3751,7 +3748,7 @@ nav img:active,
 .box .logobg img {
     width: auto;
     max-width: 250px !important;
-    max-height: 120px !important;
+    max-height: 100px !important;
     height: auto;
     transition: all .2s ease-in-out;
 }
