@@ -130,21 +130,21 @@
             </div>
             <div class="plusminus">
                 <div class="criteria">
-                    <div class="par">
+                    <ul class="par">
                         <p class="plus">Плюсы</p>
                         <li><i class="bi bi-caret-up-fill"></i>Удобный интерфейс для пользователей</li>
                         <li><i class="bi bi-caret-up-fill"></i>Бонус за Регистрацию</li>
                         <li><i class="bi bi-caret-up-fill"></i>Полностью автоматизировано с помощью торговых ботов, что позволяет мгновенно повышать уровень</li>
                         <li><i class="bi bi-caret-up-fill"></i>Доступные комиссии и возможность обменять избыток торговых карточек Steam на уровень</li>
-                    </div>
+                    </ul>
                     <i class="bi bi-caret-up-fill"></i>
                 </div>
                 <div class="criteria">
-                    <div class="par">
+                    <ul class="par">
                         <p>Минусы</p>
                         <li><i class="bi bi-caret-down-fill"></i>Немного дороже, чем большинство сервисов по повышению уровня</li>
                         <li><i class="bi bi-caret-down-fill"></i>Пополнение реальных денег на сайте могут вызывать путаницу или неудобства у некоторых пользователей</li>
-                    </div>
+                    </ul>
                     <i class="bi bi-caret-down-fill"></i>
                 </div>
             </div>
@@ -162,7 +162,7 @@
                 <li>Перейдите на <a target="_blank" href="https://slvlup.com/r/jt6p95">SteamLvlUp</a> используя нашу ссылку</li>
                 <li>Залогиньтесь через Steam</li>
                 <li>Нажмите слева <strong>Настройки</strong> и найдите <strong>Активировать Код</strong> сверху-справа</li>
-                <li>Введите Код:  <code id="site-code">6AD56-1C6F3-A899A</code><button class="copy site-promo-copy" onclick="copyToClipboard('#site-code')"><i class="bi bi-copy"></i></button></li>
+                <li>Введите Код:  <code id="site-code">6AD56-1C6F3-A899A</code><button class="copy site-promo-copy" aria-label="Copy Code" onclick="copyToClipboard('#site-code')"><i class="bi bi-copy"></i></button></li>
                 <li>Наслаждайтесь Бонусом !</li>
                 </ol>
             </div>
@@ -170,7 +170,7 @@
                 <div class="gamemodes">
                     <div class="featuresbox">
                         <div class="typesinside">
-                            <a href="/ru/steam/levelup" data-title="Steam Level Up" class="steamlvlup"></a>
+                            <a href="/ru/steam/levelup" aria-label="Steam Level Up" class="steamlvlup"></a>
                         </div>
                     </div>
                 </div>
@@ -218,27 +218,27 @@
                 <div class="sitepros">
                     <span>Способы Пополнения<i class="bi bi-caret-down-fill"></i></span>
                     <div class="methodlist" id="first">
-                        <a href="/ru/crypto" data-title="Bitcoin" class="btc"></a>
-                        <a href="/ru/crypto" data-title="USDT" class="usdt"></a>
-                        <a href="/ru/crypto" data-title="Ethereum" class="eth"></a>
-                        <a href="/ru/crypto" data-title="Litecoin" class="ltc"></a>
-                        <a href="/ru" data-title="VISA" class="visa"></a>
-                        <a href="/ru" data-title="MasterCard" class="mastercard"></a>
-                        <a href="/ru" data-title="Gift Cards" class="giftcard"></a>
-                        <a href="/ru/crypto" data-title="Binance Coin" class="bnb"></a>
-                        <a href="/ru/crypto" data-title="Bitcoin Cash" class="btcc"></a>
-                        <a href="/ru/crypto" data-title="DOGE" class="doge"></a>
-                        <a href="/ru/crypto" data-title="Tron" class="tron"></a>
-                        <a href="/ru/crypto" data-title="USDC" class="usdc"></a>
-                        <a href="/crypto" data-title="Polygon (Matic)" class="polygon"></a>
-                        <a href="/ru" data-title="YUMoney" class="yumoney"></a>
-                        <a href="/ru" data-title="G2A Pay" class="g2apay"></a>
+                        <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                        <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                        <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                        <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                        <a href="/ru" aria-label="VISA" class="visa"></a>
+                        <a href="/ru" aria-label="MasterCard" class="mastercard"></a>
+                        <a href="/ru" aria-label="Gift Cards" class="giftcard"></a>
+                        <a href="/ru/crypto" aria-label="Binance Coin" class="bnb"></a>
+                        <a href="/ru/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                        <a href="/ru/crypto" aria-label="DOGE" class="doge"></a>
+                        <a href="/ru/crypto" aria-label="Tron" class="tron"></a>
+                        <a href="/ru/crypto" aria-label="USDC" class="usdc"></a>
+                        <a href="/crypto" aria-label="Polygon (Matic)" class="polygon"></a>
+                        <a href="/ru" aria-label="YUMoney" class="yumoney"></a>
+                        <a href="/ru" aria-label="G2A Pay" class="g2apay"></a>
                     </div>
                 </div>
                 <div class="sitepros">
                     <span>Способы Вывода<i class="bi bi-caret-down-fill"></i></span>
                     <div class="methodlist" id="second">
-                        <a href="/ru/earning" data-title="Steam Trading Cards" class="tradingcards"></a>
+                        <a href="/ru/earning" aria-label="Steam Trading Cards" class="tradingcards"></a>
                     </div>
                 </div>
             </div>
@@ -289,6 +289,7 @@
     
 </body>
 <script src="/godofscript40.js"></script>
+<script src="/site-ratings.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   
