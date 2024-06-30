@@ -1,111 +1,90 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+  if (
+
+  !window.location.pathname.includes("/topic") && 
+  !window.location.pathname.includes('/reviews/') && 
+  !window.location.pathname.includes('/mirrors/') && 
+  !window.location.pathname.includes("/privacy-policy") &&
+  !window.location.pathname.includes("/terms-of-service") &&
+  !window.location.pathname.includes("/contact-us") &&
+  !document.getElementById('error-404')) 
+  
+  {
+
   var userChoice = getCookie('languageChoice');
 
-function getLanguagePrefix() {
-  var userLang = navigator.language || navigator.userLanguage;
-  var langPrefix = '';
-
-  switch (userLang.toLowerCase()) {
-    case 'ru':
-      langPrefix = 'ru';
-      break;
-    case 'pt':
-      langPrefix = 'pt';
-      break;
-    case 'es':
-      langPrefix = 'es';
-      break;
-    case 'tr':
-      langPrefix = 'tr';
-      break;
-    case 'hi':
-      langPrefix = 'hi';
-      break;
-    default:
-      langPrefix = 'en';
-  }
-
-  return langPrefix;
-}
-
-function isLanguageMainPage(currentUrl) {
-  return currentUrl === '/';
-}
-
-function handleLanguageRedirect() {
-  var langPrefix = getLanguagePrefix();
-  var currentUrl = window.location.pathname;
-  var newUrl = currentUrl;
-
-  if (!window.location.hostname || window.location.hostname === 'localhost') {
-    return;
-  }
-
-  if (userChoice === 'ru' || (userChoice !== 'ru' && isLanguageMainPage(currentUrl))) {
-    if (!userChoice) {
-      if (langPrefix !== 'en' && !currentUrl.startsWith('/' + langPrefix)) {
-        newUrl = '/' + langPrefix + currentUrl;
-        setCookie('languageChoice', langPrefix, 365);
+  function handleLanguageRedirect() {
+    var currentUrl = window.location.pathname;
+    var newUrl = currentUrl;
+  
+    if (userChoice && userChoice !== 'en') {
+      var parts = currentUrl.split('/');
+  
+      if (parts.length > 1 && isLanguageTag(parts[1])) {
+        parts.splice(1, 1);
       }
-    } else {
-      if (userChoice !== 'en' && !currentUrl.startsWith('/' + userChoice)) {
-        var parts = currentUrl.split('/');
-        parts.splice(1, 0, userChoice);
-        newUrl = parts.join('/');
+  
+      parts.splice(1, 0, userChoice);
+      newUrl = parts.join('/');
+  
+      if (newUrl !== currentUrl) {
+        window.location.pathname = newUrl;
+        return false;
       }
     }
-
-    if (newUrl !== currentUrl) {
-      window.location.pathname = newUrl;
-      return false;
-    }
-  }
-}
-
-document.addEventListener('click', function(event) {
-  if (event.target.classList.contains('lang-switch')) {
-    var selectedLang = event.target.dataset.lang;
-
-    setCookie('languageChoice', selectedLang, 365);
-
-    if (selectedLang !== userChoice) {
-      location.reload();
-    } else {
-      var currentPath = window.location.pathname;
-      var newPath = '/' + selectedLang + currentPath.slice(3);
-      window.location.pathname = newPath;
-    }
-  }
-});
-
-function setCookie(name, value, days) {
-  var expires = '';
-  if (days) {
-    var date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    expires = '; expires=' + date.toUTCString();
   }
   
-  var cookieString = name + '=' + value + expires + '; path=/; SameSite=None; Secure';
-  document.cookie = cookieString;
-}
-
-function getCookie(name) {
-  var nameEQ = name + '=';
-  var ca = document.cookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) === ' ') {
-      c = c.substring(1, c.length);
-    }
-    if (c.indexOf(nameEQ) === 0) {
-      return c.substring(nameEQ.length, c.length);
-    }
+  function isLanguageTag(tag) {
+    return tag === 'ru' || tag === 'hi' || tag === 'pt' || tag === 'es' || tag === 'tr';
   }
-  return null;
+  
+  
+  document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('lang-switch')) {
+      var selectedLang = event.target.dataset.lang;
+  
+      setCookie('languageChoice', selectedLang, 365);
+  
+      if (selectedLang !== userChoice) {
+        location.reload();
+      } else {
+        var currentPath = window.location.pathname;
+        var newPath = '/' + selectedLang + currentPath.slice(3);
+        window.location.pathname = newPath;
+      }
+    }
+  });
+  
+  function setCookie(name, value, days) {
+    var expires = '';
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = '; expires=' + date.toUTCString();
+    }
+    
+    var cookieString = name + '=' + value + expires + '; path=/; SameSite=None; Secure';
+    document.cookie = cookieString;
+  }
+  
+  function getCookie(name) {
+    var nameEQ = name + '=';
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) === ' ') {
+        c = c.substring(1, c.length);
+      }
+      if (c.indexOf(nameEQ) === 0) {
+        return c.substring(nameEQ.length, c.length);
+      }
+    }
+    return null;
+  }
+  
+  handleLanguageRedirect();
 }
-
-handleLanguageRedirect();
 
 var requests = [
   { url: '/multitop/csgo-best-sites.html', targetId: 'csgo-best-sites' },
@@ -176,11 +155,11 @@ function sendRequest(url, targetId) {
       if (divToImport) {
         var fragment = document.createRange().createContextualFragment(xhr.responseText);
         divToImport.appendChild(fragment);
+        translateURLsIfNeeded(divToImport);
+        addStarRatingToBoxesHolders();
 
         if (isPageInTurkish()) {
-          translateURLsIfNeeded(divToImport);
           updateURLs(sitesList);
-          addStarRatingToBoxesHolders();
         }
       }
     }
