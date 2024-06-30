@@ -1,17 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  if (
-
-  !window.location.pathname.includes("/topic") && 
-  !window.location.pathname.includes('/reviews/') && 
-  !window.location.pathname.includes('/mirrors/') && 
-  !window.location.pathname.includes("/privacy-policy") &&
-  !window.location.pathname.includes("/terms-of-service") &&
-  !window.location.pathname.includes("/contact-us") &&
-  !document.getElementById('error-404')) 
-  
-  {
-
   var userChoice = getCookie('languageChoice');
 
   function handleLanguageRedirect() {
@@ -83,8 +71,17 @@ document.addEventListener('DOMContentLoaded', function() {
     return null;
   }
   
-  handleLanguageRedirect();
-}
+  if (
+    !window.location.pathname.includes("/topic") &&
+    !window.location.pathname.includes("/reviews/") &&
+    !window.location.pathname.includes("/mirrors/") &&
+    !window.location.pathname.includes("/privacy-policy") &&
+    !window.location.pathname.includes("/terms-of-service") &&
+    !window.location.pathname.includes("/contact-us") &&
+    !document.getElementById("error-404")
+  ) {
+    handleLanguageRedirect();
+  }
 
 var requests = [
   { url: '/multitop/csgo-best-sites.html', targetId: 'csgo-best-sites' },
