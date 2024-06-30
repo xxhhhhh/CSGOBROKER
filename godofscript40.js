@@ -36,42 +36,43 @@ function copyToClipboard(selector) {
     return null;
   }
   
-  var languageTag = extractLanguageTagFromHTML(window.location.pathname);
+  var languageTag = extractLanguageTagFromHTML();
 
   function updateURLs(parentElement) {
+    if (!parentElement) {
+      return;
+    }
+  
     const links = parentElement.querySelectorAll('a[href]');
-    const regex = /^(https?:\/\/[^/]+)?(\/[a-z]{2}(?:\/|\.html)?\/?.*)$/;
+    const regex = /^(https?:\/\/[^/]+)?(\/[a-z]{2}(?:\/|\.html)?\/?.*)(\?.*)?$/;
   
     const languageTag = extractLanguageTagFromHTML();
     if (!languageTag || languageTag === 'en') {
       return;
     }
   
-    for (let i = 0; i < links.length; i++) {
-      const href = links[i].getAttribute('href');
-      if (!href || href.includes('vk.com')) {
-        continue;
-      }
-  
+    links.forEach(link => {
+      const href = link.getAttribute('href');
       const match = href.match(regex);
+  
       if (match) {
         const domain = match[1] || '';
         let path = match[2];
-        let updatedHref = path;
+        const queryString = match[3] || '';
   
         const pathSegments = path.split('/');
         if (pathSegments.length > 1 && pathSegments[1].length === 2) {
-          continue;
+          return;
         }
   
-        updatedHref = '/' + languageTag + path;
-  
-      if (!links[i].classList.contains('copy_style')) {
-        links[i].setAttribute('href', domain + updatedHref);
+        const updatedHref = `/${languageTag}${path}${queryString}`;
+
+        if (!link.classList.contains('copy_style')) {
+          link.setAttribute('href', domain + updatedHref);
+        }
       }
-    }
+    });
   }
-}
   
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html') && 
     !window.location.pathname.includes("/topic") && 
@@ -82,7 +83,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
     !window.location.pathname.includes("/contact-us") &&
     !document.getElementById('error-404')) {
 
-  updateURLs(sitesList);
+      updateURLs(sitesList);
 }
 
 
@@ -264,25 +265,9 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     translateTextElements(translations);
   
-    var links = document.getElementsByTagName('a');
-  
-    for (var i = 0; i < links.length; i++) {
-      var link = links[i];
-      
-      if (!link.closest('div.siteblock .box, .sitealternatesboxes .content , ol li a, nav .socials')) {
-        if (!link.classList.contains('lang-switch') && !link.closest('.instruction-mirrors')) {
-          var path = link.pathname;
-  
-          if (!path.includes('/ru/') && path.indexOf('/ru') !== 0) {
-            if (path !== '/') {
-              link.pathname = '/ru' + path;
-            } else {
-              link.href = link.href.replace('csgobroker.cc/', 'csgobroker.cc/ru/');
-            }
-          }
-        }     
-      }
-    }
+    const reviewlinks = document.querySelector('.boxreview');
+    updateURLs(reviewlinks)
+
   }
   
   if (window.location.pathname.includes('/tr/reviews/')) {
@@ -311,6 +296,9 @@ document.addEventListener('DOMContentLoaded', function() {
       "Visit WebSite": "Web Sitesini Ziyaret Et"
     };
     translateTextElements(translations);
+
+    const reviewlinks = document.querySelector('.boxreview');
+    updateURLs(reviewlinks)
   }
 
   if (window.location.pathname.includes('/pl/reviews/')) {
@@ -1900,40 +1888,6 @@ $(document).ready(function() {
   function createSliderItem(href, src, label) {
     return '<a href="' + href + '" class="slider-banner" aria-label="Visit ' + label + '"><img src="' + src + '" alt="' + label + '" draggable="false"></a>';
   }
+  const sliderlinks = document.querySelector('.slider-container');
+  updateURLs(sliderlinks);
 });
-
-
-
-function translateURLsSlider(parentElement, languageTag) {
-  var links = parentElement.querySelectorAll('a[href]');
-  var supportedLanguages = ['hi', 'tr', 'pt', 'es', 'ru'];
-  
-  for (var i = 0; i < links.length; i++) {
-      var href = links[i].getAttribute('href');
-    
-      if (!href) continue;
-    
-      var url = new URL(href, window.location.href);
-      var path = url.pathname;
-      var langIncluded = supportedLanguages.some(lang => {
-          var langWithSlashes = '/' + lang + '/';
-          return path.includes(langWithSlashes);
-      });
-    
-      if (languageTag !== 'en') {
-          if (langIncluded) {
-              path = path.replace(/\/(hi|tr|pt|es|ru)\//, '/' + languageTag + '/');
-              url.pathname = path;
-              links[i].setAttribute('href', url.href);
-          } else if (supportedLanguages.includes(languageTag)) {
-              if (path === '/') {
-                  url.pathname = '/' + languageTag;
-              } else {
-                  path = '/' + languageTag + path;
-                  url.pathname = path;
-              }
-              links[i].setAttribute('href', url.href);
-          }
-      }
-  }
-}

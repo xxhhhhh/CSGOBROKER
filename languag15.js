@@ -176,13 +176,22 @@ function sendRequest(url, targetId) {
       if (divToImport) {
         var fragment = document.createRange().createContextualFragment(xhr.responseText);
         divToImport.appendChild(fragment);
-        translateURLsIfNeeded(divToImport);
-        addStarRatingToBoxesHolders();
+
+        if (isPageInTurkish()) {
+          translateURLsIfNeeded(divToImport);
+          updateURLs(sitesList);
+          addStarRatingToBoxesHolders();
+        }
       }
     }
   };
   xhr.open('GET', url, true);
   xhr.send();
+}
+
+function isPageInTurkish() {
+  var path = window.location.pathname;
+  return path.startsWith('/tr/') || path.endsWith('/tr') || path.endsWith('/tr.html');
 }
 
 function addStarRatingToBoxesHolders() {
