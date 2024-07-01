@@ -337,8 +337,7 @@ document.addEventListener('DOMContentLoaded', function() {
     !window.location.pathname.endsWith("/tr.html") &&
     !window.location.pathname.endsWith("/hi.html") &&
     !window.location.pathname.endsWith("/404.html") &&
-    !window.location.pathname.endsWith("/index.html") &&
-    !window.location.pathname.endsWith("/")
+    !window.location.pathname.endsWith("/index.html")
   ) {
     var currentLanguage = languageTag;
     var supportedLanguages = ["en", "ru", "pt", "es", "tr", "hi"];
