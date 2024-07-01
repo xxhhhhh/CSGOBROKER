@@ -176,8 +176,15 @@ function addStarRatingToBoxesHolders() {
   }
 }
 
-for (var i = 0; i < requests.length; i++) {
-  sendRequest(requests[i].url, requests[i].targetId);
+var boxesHolderElement = document.querySelector('.boxes-holder');
+var neededTargetId = boxesHolderElement ? boxesHolderElement.id : null;
+
+var request = requests.find(function(item) {
+  return item.targetId === neededTargetId;
+});
+
+if (request) {
+  sendRequest(request.url, request.targetId);
 }
 
 function extractLanguageTagFromHTML() {
