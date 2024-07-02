@@ -255,7 +255,7 @@ nav #pagename:focus {
     height: 200px;
     margin: 18px 9px 0 9px;
     border-radius: 10px;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     transition: transform .15s ease-in-out, opacity .25s !important;
     margin: 0 !important;
     display: flex;
@@ -508,7 +508,7 @@ nav #pagename:focus {
     height: 300px;
     margin: 18px 9px 0 9px;
     border-radius: 10px;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     transition: all .2s ease-in-out;
     margin: 0 !important;
     display: flex;
@@ -713,7 +713,7 @@ nav #pagename:focus {
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     background-color: rgba(10, 10, 10, .9);
     filter: drop-shadow(6px 4px 6px rgba(0, 0, 0, .5));
     border-radius: 10px;
@@ -1045,7 +1045,7 @@ nav #pagename:focus {
 }
 .sitepage.items .box-skins .skin:hover,
 .weapon-container:hover {
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.25);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.25);
 }
 .sitepage.items .box-skins .skin:hover {
     background-color: rgb(12 12 12) !important;
@@ -1830,7 +1830,7 @@ nav #pagename:focus {
     background-color: rgba(0,0,0,.2);
     padding: 10px 0;
     overflow: hidden;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     transition: height .9s ease-in-out;
 }
 .navigation-menu .navigation-title i {
@@ -2757,7 +2757,7 @@ nav #logo:hover {
     border-radius: 10px;
     background-color: rgb(12 12 12);
     cursor: pointer;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     transition: transform .15s ease-in-out;
     flex-shrink: 0;
 }
@@ -3013,7 +3013,7 @@ nav #logo:hover {
     width: 300px;
     height: 100px;
     border-radius: 5px 5px 0 0;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     transition: all .2s ease-in-out;
     margin: 0 !important;
     overflow: hidden;
@@ -3074,7 +3074,7 @@ nav #logo:hover {
     width: 300px;
     height: 60px;
     background-color: rgba(0,0,0,.3);
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3087,7 +3087,7 @@ nav #logo:hover {
     width: 300px;
     height: 60px;
     background-color: rgba(0,0,0,.3);
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3100,7 +3100,7 @@ nav #logo:hover {
     width: 60px;
     height: 60px;
     background-color: rgba(0,0,0,.35);
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3238,7 +3238,7 @@ nav #logo:hover {
     display: flex;
     align-items: center;
     transition: .25s all ease-in-out;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     overflow: hidden;
     flex-direction: column;
     justify-content: flex-start;
@@ -3326,7 +3326,7 @@ nav #logo:hover {
     margin: 18px 9px 0 9px;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     transition: all .15s ease-in-out;
     text-decoration: none;
     background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.2) 100%);
@@ -3427,7 +3427,7 @@ nav #logo:hover {
     border-radius: 10px;
     /* background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.2) 100%); */
     background: linear-gradient(180deg, rgb(14, 14, 14) 0%, rgb(12, 12, 12) 100%);
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     transition: all .2s ease-in-out;
 }
 .box_vk {
@@ -3437,7 +3437,7 @@ nav #logo:hover {
     margin: 18px 9px 0 9px;
     border-radius: 10px;
     background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.2) 100%);
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     transition: all .2s ease-in-out;
 }
 .sitepage .box{
@@ -3667,7 +3667,7 @@ nav #logo:hover {
     margin: 5px;
     /* margin-left: 10px; */
     transition: all .2s ease-in-out;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.3);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.3);
     border: 1px solid rgba(255, 255, 255, .15);
 }
 .box.skin-navigator .colors-list-unit:hover,
@@ -4358,7 +4358,7 @@ footer .centralizer .footer-content {
     transition: all .15s ease-in-out;
     margin: 5px;
     border-radius: 10px;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     position: relative;
 }
 .singlemod-box[data-title]:hover:after {
@@ -4497,7 +4497,7 @@ footer .centralizer .footer-content {
     width: 100%;
     top: 0;
     height: 50px;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     transition: all .2s ease-in-out;
     display: none;
     justify-content: center;
@@ -4785,7 +4785,7 @@ footer .centralizer .footer-content {
     cursor: pointer;
     transition: .2s all ease-in-out;
     border-radius: 5px;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
   }
   #back-to-top-btn.btnEntrance,
   .settings-menu {
@@ -6066,7 +6066,7 @@ label:active,
     .box .logobg .vpn,
     .box .logobg .vpn::before,
     .boxes-holder .box .content {
-        background: rgb(15 15 15);
+        background: rgb(18 18 18);
     }
     body {
         background: unset;
@@ -6728,6 +6728,7 @@ label:active,
         background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.3) 100%);
         width: 24%;
         min-width: 223px;
+        box-shadow: 0 0 3px 0 rgba(0, 0, 0, .7);
     }
     .box_vk {
         display: none;
@@ -7222,7 +7223,7 @@ label:active,
         height: 60% !important;
     }
     .box .logobg .best {
-        font-size: 13px !important;
+        font-size: 12px !important;
     }
     .rating-case-single .rating-summ {
         font-size: 15px;
@@ -7244,6 +7245,7 @@ label:active,
     }
     .content a {
         font-size: 12px;
+        bottom: 13px;
     }   
     .content p:nth-child(3) {
         font-size: 12px;
