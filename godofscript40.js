@@ -1892,3 +1892,18 @@ $(document).ready(function() {
   const sliderlinks = document.querySelector('.slider-container');
   updateURLs(sliderlinks);
 });
+
+$(document).ready(function() {
+  $(window).on('scroll resize', function() {
+      var $pages = $('.pages');
+      if ($pages.length && $(window).width() <= 1340) {
+          if ($(window).scrollTop() >= 100) {
+              $pages.addClass('hidden');
+          } else {
+              $pages.removeClass('hidden');
+          }
+      }
+  });
+
+  $(window).trigger('scroll');
+});

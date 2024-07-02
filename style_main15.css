@@ -2946,7 +2946,7 @@ nav #logo:hover {
     height: 40px;
     border-radius: 5px;
     position: absolute;
-    top: 88px;
+    top: 296px;
     left: 50% !important;
     transform: translateX(-50%) !important;
     background-color: rgb(18 18 18);
@@ -4992,9 +4992,6 @@ footer .centralizer .footer-content {
             color: rgba(255, 255, 255, .3);
             transition: all .3s ease-in-out;
         }
-        .pages button.active {
-            color: var(--white);
-        }
     }
   @media(max-width: 992px) {
     .container { padding: 20px 100px; }
@@ -6742,9 +6739,51 @@ label:active,
     nav img {
         width: 140px;
     }
+    .siteleftpannel .mods-box.topic {
+        left: 5px;
+        top: 60px;
+        z-index: 25;
+        width: 57px;
+    }
+    .siteleftpannel .mods-box.topic .singlemod-box {
+        border-radius: 5px;
+    }
     nav .pages {
         padding-left: unset;
-        margin-left: 20px;
+        margin: unset !important;
+        width: 100%;
+        justify-content: center;
+        position: absolute;
+        top: 79px;
+        left: 0;
+        height: 55px;
+        background-color: rgba(11, 11, 11, .8);
+        transition: height .15s ease-in-out, visibility 0s 0s;
+        visibility: visible;
+        overflow: hidden;
+        opacity: 1;
+    }
+    .category-selector {
+        top: 135px;
+    }
+    .category-space {
+        height: 128px;
+    }
+    nav .pages.hidden {
+        height: 0;
+        visibility: hidden;
+        transition: height .15s ease-in-out, visibility 0s .15s;
+    }
+    nav .pages button {
+        padding-left: unset;
+        position: absolute;
+        right: 20px;
+    }
+    nav .pages h1 {
+        width: 75%;
+    }
+    .pages button.active {
+        color: var(--main-color);
     }
     nav .pages a {
         margin-left: 18px;
@@ -7266,6 +7305,9 @@ label:active,
         min-width: unset !important;
         justify-content: flex-start;
     }
+    nav img {
+        width: 130px;
+    }
     .pages #PageTitle, #PageSubt {
         font-size: 13px;
     }
@@ -7297,9 +7339,6 @@ label:active,
     .topic-box .content span {
         font-size: 13px;
         text-align: center;
-    }
-    nav img {
-        width: 100px;
     }
     nav #logo {
         height: auto;
