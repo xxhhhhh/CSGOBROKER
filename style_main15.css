@@ -7212,6 +7212,13 @@ label:active,
         height: 350px !important;
         background: linear-gradient(180deg, rgb(14, 14, 14) 0%, rgb(12, 12, 12) 100%);
     }
+    .box .content a.copy_style,
+    .box .content a::after,
+    .box .content a::before
+     {
+          background-color: #a81d34;
+     }
+
     .boxes-holder {
         margin-top: 11px;
         justify-content: center !important;
