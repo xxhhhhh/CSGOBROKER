@@ -576,31 +576,56 @@ $(document).ready(function(){
   });
 
   $(document).ready(function () {
-    if (isTopicItemsLink()) {
-      var boxtopic = $('.boxtopic');
-      if (boxtopic.length) {
-          var urlnav = '/code-parts/micro-parts/nav-topic-box.html';
-          $.get(urlnav, function (data) {
-              boxtopic.append(data);
-  
-              boxtopic.on('click', '.topic-nav-box', function () {
-                  toggleActiveClass($(this));
-                  toggleActiveClass($('.topic-nav-selector'));
-              });
-  
-              boxtopic.on('click', '.topic-nav-close', function () {
-                  toggleActiveClass($('.topic-nav-selector'));
-              });
-  
-              boxtopic.on('click', '.weapon-container', function () {
-                  var clickedContainer = $(this);
-                  $('.weapon-container').not(clickedContainer).removeClass('active');
-                  toggleActiveClass(clickedContainer);
-              });
-          });
-      }
+    function initializeBoxTopic() {
+        var boxtopic = $('.boxtopic');
+        if (boxtopic.length) {
+            var urlnav = '/code-parts/micro-parts/nav-topic-box.html';
+            $.get(urlnav, function (data) {
+                boxtopic.append(data);
+
+                boxtopic.on('click.topicNav', '.topic-nav-box', function () {
+                    toggleActiveClass($(this));
+                    toggleActiveClass($('.topic-nav-selector'));
+                });
+
+                boxtopic.on('click.topicNav', '.topic-nav-close', function () {
+                    toggleActiveClass($('.topic-nav-selector'));
+                });
+
+                boxtopic.on('click.topicNav', '.weapon-container', function () {
+                    var clickedContainer = $(this);
+                    $('.weapon-container').not(clickedContainer).removeClass('active');
+                    toggleActiveClass(clickedContainer);
+                });
+            });
+        }
     }
-  });
+
+    function deinitializeBoxTopic() {
+        var boxtopic = $('.boxtopic');
+        if (boxtopic.length) {
+            boxtopic.off('.topicNav');
+            $('.topic-nav-selector').remove();
+            $('.topic-nav-box').removeClass('active');
+            boxtopic.data('initialized', false);
+        }
+    }
+
+    function checkWindowSize() {
+        if ($(window).width() < 1340) {
+            if (isTopicItemsLink() && !$('.boxtopic').data('initialized')) {
+                initializeBoxTopic();
+                $('.boxtopic').data('initialized', true);
+            }
+        } else {
+            deinitializeBoxTopic();
+        }
+    }
+
+    $(window).on('resize', checkWindowSize);
+    checkWindowSize();
+});
+
   
   function toggleActiveClass(element) {
     element.toggleClass('active');
