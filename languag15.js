@@ -84,79 +84,83 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 var requests = [
-  { url: '/multitop/csgo-best-sites.html', targetId: 'csgo-best-sites' },
-  { url: '/multitop/freebies-sites.html', targetId: 'freebies-sites' },
-  { url: '/multitop/earning-sites.html', targetId: 'earning-sites' },
-  { url: '/multitop/rust-sites.html', targetId: 'rust-sites' },
-  { url: '/multitop/dota-sites.html', targetId: 'dota-sites' },
-  { url: '/multitop/newest-sites.html', targetId: 'newest-sites-list' },
-  { url: '/multitop/crypto-sites.html', targetId: 'crypto-sites' },
-  { url: '/multitop/csgo/buy-skins.html', targetId: 'buy-skins-csgo' },
-  { url: '/multitop/csgo/caseopening.html', targetId: 'caseopening-csgo' },
-  { url: '/multitop/csgo/case-battle.html', targetId: 'case-battle-csgo' },
-  { url: '/multitop/csgo/casino.html', targetId: 'casino-csgo' },
-  { url: '/multitop/csgo/coinflip.html', targetId: 'coinflip-csgo' },
-  { url: '/multitop/csgo/crash.html', targetId: 'crash-csgo' },
-  { url: '/multitop/csgo/dice.html', targetId: 'dice-csgo' },
-  { url: '/multitop/csgo/earn-by-play-csgo.html', targetId: 'earn-by-play-csgo' },
-  { url: '/multitop/csgo/instant-sell.html', targetId: 'instant-sell-csgo' },
-  { url: '/multitop/csgo/jackpot.html', targetId: 'jackpot-csgo' },
-  { url: '/multitop/csgo/marketplaces.html', targetId: 'marketplaces-csgo' },
-  { url: '/multitop/csgo/matchbetting.html', targetId: 'matchbetting-csgo' },
-  { url: '/multitop/csgo/roulette.html', targetId: 'roulette-csgo' },
-  { url: '/multitop/csgo/sell-skins.html', targetId: 'sell-skins-csgo' },
-  { url: '/multitop/csgo/trade-skins.html', targetId: 'trade-skins-csgo' },
-  { url: '/multitop/csgo/upgrader.html', targetId: 'upgrader-csgo' },
-  { url: '/multitop/earning/earn-by-play.html', targetId: 'earn-by-play-sites' },
-  { url: '/multitop/earning/offerwalls.html', targetId: 'offerwalls-list' },
-  { url: '/multitop/freebies/daily-rewards.html', targetId: 'daily-rewards-list' },
-  { url: '/multitop/freebies/deposit-bonuses.html', targetId: 'deposit-bonuses-list' },
-  { url: '/multitop/freebies/giveaways.html', targetId: 'giveaways-list' },
-  { url: '/multitop/freebies/sign-up-bonuses.html', targetId: 'sign-up-bonuses-list' },
-  { url: '/multitop/steam/levelup.html', targetId: 'levelup-list' },
-  { url: '/multitop/steam/buy-games.html', targetId: 'buygames-list' },
-  { url: '/multitop/crypto/casino.html', targetId: 'casino-crypto' },
-  { url: '/multitop/crypto/coinflip.html', targetId: 'coinflip-crypto' },
-  { url: '/multitop/crypto/crash.html', targetId: 'crash-crypto' },
-  { url: '/multitop/crypto/matchbetting.html', targetId: 'matchbetting-crypto' },
-  { url: '/multitop/crypto/roulette.html', targetId: 'roulette-crypto' },
-  { url: '/multitop/rust/buy-skins.html', targetId: 'buy-skins-rust' },
-  { url: '/multitop/rust/caseopening.html', targetId: 'caseopening-rust' },
-  { url: '/multitop/rust/case-battle.html', targetId: 'case-battle-rust' },
-  { url: '/multitop/rust/coinflip.html', targetId: 'coinflip-rust' },
-  { url: '/multitop/rust/crash.html', targetId: 'crash-rust' },
-  { url: '/multitop/rust/instant-sell.html', targetId: 'instant-sell-rust' },
-  { url: '/multitop/rust/jackpot.html', targetId: 'jackpot-rust' },
-  { url: '/multitop/rust/marketplaces.html', targetId: 'marketplaces-rust' },
-  { url: '/multitop/rust/matchbetting.html', targetId: 'matchbetting-rust' },
-  { url: '/multitop/rust/roulette.html', targetId: 'roulette-rust' },
-  { url: '/multitop/rust/sell-skins.html', targetId: 'sell-skins-rust' },
-  { url: '/multitop/rust/trade-skins.html', targetId: 'trade-skins-rust' },
-  { url: '/multitop/rust/upgrader.html', targetId: 'upgrader-rust' },
-  { url: '/multitop/dota/buy-items.html', targetId: 'buy-skins-dota' },
-  { url: '/multitop/dota/caseopening.html', targetId: 'caseopening-dota' },
-  { url: '/multitop/dota/marketplaces.html', targetId: 'marketplaces-dota' },
-  { url: '/multitop/dota/matchbetting.html', targetId: 'matchbetting-dota' },
-  { url: '/multitop/dota/roulette.html', targetId: 'roulette-dota' },
-  { url: '/multitop/dota/sell-items.html', targetId: 'sell-skins-dota' },
-  { url: '/multitop/dota/trade-items.html', targetId: 'trade-skins-dota' },
-  { url: '/multitop/dota/upgrader.html', targetId: 'upgrader-dota' },
-  { url: '/multitop/dota/instant-sell.html', targetId: 'instant-sell-dota' }
+  { url: '/index.html', targetId: 'csgo-best-sites' },
+  { url: '/freebies.html', targetId: 'freebies-sites' },
+  { url: '/earning.html', targetId: 'earning-sites' },
+  { url: '/rust.html', targetId: 'rust-sites' },
+  { url: '/dota.html', targetId: 'dota-sites' },
+  { url: '/newest.html', targetId: 'newest-sites-list' },
+  { url: '/crypto.html', targetId: 'crypto-sites' },
+  { url: '/csgo/buy-skins.html', targetId: 'buy-skins-csgo' },
+  { url: '/csgo/caseopening.html', targetId: 'caseopening-csgo' },
+  { url: '/csgo/case-battle.html', targetId: 'case-battle-csgo' },
+  { url: '/csgo/casino.html', targetId: 'casino-csgo' },
+  { url: '/csgo/coinflip.html', targetId: 'coinflip-csgo' },
+  { url: '/csgo/crash.html', targetId: 'crash-csgo' },
+  { url: '/csgo/dice.html', targetId: 'dice-csgo' },
+  { url: '/csgo/earn-by-play-csgo.html', targetId: 'earn-by-play-csgo' },
+  { url: '/csgo/instant-sell.html', targetId: 'instant-sell-csgo' },
+  { url: '/csgo/jackpot.html', targetId: 'jackpot-csgo' },
+  { url: '/csgo/marketplaces.html', targetId: 'marketplaces-csgo' },
+  { url: '/csgo/matchbetting.html', targetId: 'matchbetting-csgo' },
+  { url: '/csgo/roulette.html', targetId: 'roulette-csgo' },
+  { url: '/csgo/sell-skins.html', targetId: 'sell-skins-csgo' },
+  { url: '/csgo/trade-skins.html', targetId: 'trade-skins-csgo' },
+  { url: '/csgo/upgrader.html', targetId: 'upgrader-csgo' },
+  { url: '/earning/earn-by-play.html', targetId: 'earn-by-play-sites' },
+  { url: '/earning/offerwalls.html', targetId: 'offerwalls-list' },
+  { url: '/freebies/daily-rewards.html', targetId: 'daily-rewards-list' },
+  { url: '/freebies/deposit-bonuses.html', targetId: 'deposit-bonuses-list' },
+  { url: '/freebies/giveaways.html', targetId: 'giveaways-list' },
+  { url: '/freebies/sign-up-bonuses.html', targetId: 'sign-up-bonuses-list' },
+  { url: '/steam/levelup.html', targetId: 'levelup-list' },
+  { url: '/steam/buy-games.html', targetId: 'buygames-list' },
+  { url: '/crypto/casino.html', targetId: 'casino-crypto' },
+  { url: '/crypto/coinflip.html', targetId: 'coinflip-crypto' },
+  { url: '/crypto/crash.html', targetId: 'crash-crypto' },
+  { url: '/crypto/matchbetting.html', targetId: 'matchbetting-crypto' },
+  { url: '/crypto/roulette.html', targetId: 'roulette-crypto' },
+  { url: '/rust/buy-skins.html', targetId: 'buy-skins-rust' },
+  { url: '/rust/caseopening.html', targetId: 'caseopening-rust' },
+  { url: '/rust/case-battle.html', targetId: 'case-battle-rust' },
+  { url: '/rust/coinflip.html', targetId: 'coinflip-rust' },
+  { url: '/rust/crash.html', targetId: 'crash-rust' },
+  { url: '/rust/instant-sell.html', targetId: 'instant-sell-rust' },
+  { url: '/rust/jackpot.html', targetId: 'jackpot-rust' },
+  { url: '/rust/marketplaces.html', targetId: 'marketplaces-rust' },
+  { url: '/rust/matchbetting.html', targetId: 'matchbetting-rust' },
+  { url: '/rust/roulette.html', targetId: 'roulette-rust' },
+  { url: '/rust/sell-skins.html', targetId: 'sell-skins-rust' },
+  { url: '/rust/trade-skins.html', targetId: 'trade-skins-rust' },
+  { url: '/rust/upgrader.html', targetId: 'upgrader-rust' },
+  { url: '/dota/buy-items.html', targetId: 'buy-skins-dota' },
+  { url: '/dota/caseopening.html', targetId: 'caseopening-dota' },
+  { url: '/dota/marketplaces.html', targetId: 'marketplaces-dota' },
+  { url: '/dota/matchbetting.html', targetId: 'matchbetting-dota' },
+  { url: '/dota/roulette.html', targetId: 'roulette-dota' },
+  { url: '/dota/sell-items.html', targetId: 'sell-skins-dota' },
+  { url: '/dota/trade-items.html', targetId: 'trade-skins-dota' },
+  { url: '/dota/upgrader.html', targetId: 'upgrader-dota' },
+  { url: '/dota/instant-sell.html', targetId: 'instant-sell-dota' }
 ];
 
 function sendRequest(url, targetId) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-      var divToImport = document.getElementById(targetId);
-      if (divToImport) {
-        var fragment = document.createRange().createContextualFragment(xhr.responseText);
-        divToImport.appendChild(fragment);
-        translateURLsIfNeeded(divToImport);
-        addStarRatingToBoxesHolders();
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(xhr.responseText, 'text/html');
+      var boxesHolder = doc.querySelector('.boxes-holder');
+      if (boxesHolder) {
+        var divToImport = document.getElementById(targetId);
+        if (divToImport) {
+          divToImport.innerHTML = boxesHolder.innerHTML;
+          translateURLsIfNeeded(divToImport);
+          addStarRatingToBoxesHolders();
 
-        if (isPageInTurkish()) {
-          updateURLs(sitesList);
+          if (isPageInTurkish()) {
+            updateURLs(sitesList);
+          }
         }
       }
     }
