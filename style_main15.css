@@ -25,7 +25,7 @@
     --blackgrey: #131314;
     --opacback: rgba(3,3,3,.3);
     --halfback: rgba(0,0,0, .2);
-    --gray: rgb(155, 155, 155);
+    --gray: rgb(145, 145, 145);
     --darkgray: rgb(13, 13, 13);
 }
 head{
@@ -2472,9 +2472,6 @@ nav #pagename:focus {
 .ratingthings .ratingway span {
     margin-right: 10px;
 }
-.ratingthings .ratingway .star_rating, .star_rating {
-    color: var(--main-color);
-}
 .instruction {
     display: flex;
     align-items: center;
@@ -3490,10 +3487,17 @@ nav #logo:hover {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    color: var(--main-color);
     font-size: 18px;
     position: absolute;
     bottom: 15px;
+    color: transparent;
+    background: linear-gradient(to right, rgb(116, 18, 35), var(--main-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.ratingthings .ratingway .star_rating {
+    color: var(--main-color);
 }
 
 .sitealternates {
@@ -3826,7 +3830,7 @@ nav img:active,
     transition: transform .15s .05s ease-in-out, background .15s .05s;
     position: absolute;
     width: auto;
-    padding: 0 5px 0 5px;
+    padding: 0 10px 0 3px;
     height: 30px;
     display: flex;
     align-items: center;
@@ -3970,9 +3974,9 @@ nav img:active,
 .content span#bonus,
 .sitealternates .site-reward p {
     display: block;
-    font-weight: 400 !important;
+    font-weight: 500 !important;
     font-size: 16px;
-    color: rgba(255, 255, 255, .6);
+    color: var(--gray);
     text-align: center;
     height: auto;
     width: 100%;
@@ -5164,7 +5168,7 @@ footer .centralizer .footer-content {
     border-radius: 5px;
     margin-bottom: unset;
     transition: background .05s 0s ease-in-out;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .7);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .9);
     }
     ul .submenu2 li a {
         margin-left: 2px;
