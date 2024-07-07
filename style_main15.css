@@ -2035,7 +2035,7 @@ nav #pagename:focus {
 .features .featuresbox .typesinside a,
 .features .featuresbox .typesinside a::after,
 .features .featuresbox .typesinside a::before {
-    background-color: rgb(21 21 21);
+    background-color: rgb(18 18 18);
 }
 
 .boxreview#mirror .features .featuresbox .typesinside a:last-child {
@@ -3333,6 +3333,7 @@ nav #logo:hover {
     position: absolute;
     background-color: #a81d34;
     color: var(--white);
+    filter: unset;
     bottom: 17px;
 }
 
@@ -3611,7 +3612,10 @@ nav #logo:hover {
 .sitealternates .box .content a.copy_style::before,
 .sitealternates .box .content a.copy_style::after {
     bottom: 32px;
-    background-color: rgb(32 32 32);
+    background-color: rgb(22 22 22);
+}
+.sitealternates .box .content a.copy_style {
+    filter: drop-shadow(0 0 1px rgb(85 85 85));
 }
 .sitealternates .site-reward {
     height: 50px;
@@ -3996,8 +4000,8 @@ nav img:active,
 }
 .content button,
 .content a {
-    background-color: rgb(32 32 32);
-    /* border: 2px #222222 solid; */
+    background-color: rgb(22 22 22);
+    filter: drop-shadow(0 0 1px rgb(85 85 85));
     bottom: 10px;
     position: absolute;
     outline: none;
@@ -4006,7 +4010,6 @@ nav img:active,
     text-transform: uppercase;
     font-size: 12px;
     padding: 10px 2px;
-    /* border-radius: 5px; */
     transition: all .15s ease-in-out;
     color: white;
     text-decoration: none;
@@ -4018,7 +4021,7 @@ nav img:active,
     position: absolute;
     width: 20px;
     height: 100%;
-    background-color: rgb(32 32 32);
+    background-color: rgb(22 22 22);
     transition: ease-in-out all .15s;
     box-sizing: border-box;
     transform: skewX(20deg);
@@ -4070,6 +4073,7 @@ nav img:active,
 .content a:hover {
     background-color: #a81d34 !important;
     animation: none !important;
+    filter: unset;
     opacity: 1;
 }
 
@@ -4142,6 +4146,7 @@ a.copy_style {
     padding: unset;
     bottom: 13px;
     background-color: rgb(32 32 32);
+    filter: unset;
     border: unset;
     display: flex;
     align-items: center;
@@ -7266,12 +7271,12 @@ label:active,
         height: 350px !important;
         background: linear-gradient(180deg, rgb(14, 14, 14) 0%, rgb(12, 12, 12) 100%);
     }
-    .box .content a.copy_style,
+    /* .box .content a.copy_style,
     .box .content a::after,
     .box .content a::before
      {
           background-color: #a81d34;
-     }
+     } */
 
     .boxes-holder {
         margin-top: 11px;
