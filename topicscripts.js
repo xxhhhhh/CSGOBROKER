@@ -281,7 +281,7 @@ if (document.querySelector('.skin') && window.location.pathname.includes('/topic
         const weapon = element.getAttribute('weapon').toUpperCase();
         const skinAltInfoDiv = document.createElement('a');
         skinAltInfoDiv.className = 'skin-alt-info';
-        skinAltInfoDiv.setAttribute('href', languageTag === 'ru' ? `/ru/topic/items/${weapon}.html` : `/topic/items/${weapon}`);
+        skinAltInfoDiv.setAttribute('href', languageTag === 'ru' ? `/ru/topic/items/${weapon}` : `/topic/items/${weapon}`);
         skinAltInfoDiv.setAttribute('data-title', languageTag === 'ru' ? `Все Скины на ${weapon}` : `All Skins on ${weapon}`);
         skinAltInfoDiv.innerHTML = '<i class="bi bi-collection-fill"></i>';        
         
