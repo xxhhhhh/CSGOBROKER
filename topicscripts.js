@@ -278,7 +278,7 @@ if (document.querySelector('.skin') && window.location.pathname.includes('/topic
             existingSkinAltInfo.remove();
         }
         
-        const weapon = element.getAttribute('weapon').toUpperCase();
+        const weapon = element.getAttribute('weapon');
         const skinAltInfoDiv = document.createElement('a');
         skinAltInfoDiv.className = 'skin-alt-info';
         skinAltInfoDiv.setAttribute('href', languageTag === 'ru' ? `/ru/topic/items/${weapon}` : `/topic/items/${weapon}`);
