@@ -58,7 +58,7 @@ var ratings = {
     "Idle-Empire":4.5,
     "BCGame":4.5,
     "Freeward":3.375,
-    "SteamLevelU":3.75,
+    "SteamLevelU":4,
     "Freecash":5,
     "SteamLvlUp":4.5,
     "CYBERSHOKE":4.125,

@@ -2233,6 +2233,11 @@ nav #pagename:focus {
 .typesinside .steamlvlup::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/steamlvlup.webp);
 }
+.typesinside .steamtopup::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/steamtopup.webp);
+    width: 21px !important;
+    height: 21px !important;
+}
 .typesinside .rental::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/rental.webp);
 }
@@ -2937,7 +2942,7 @@ nav #logo:hover {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    min-height: 540px;
+    min-height: 550px;
     position: relative;
 }
 .category-centralizer {

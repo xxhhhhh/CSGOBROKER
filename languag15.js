@@ -114,6 +114,7 @@ var requests = [
   { url: '/freebies/giveaways.html', targetId: 'giveaways-list' },
   { url: '/freebies/sign-up-bonuses.html', targetId: 'sign-up-bonuses-list' },
   { url: '/steam/levelup.html', targetId: 'levelup-list' },
+  { url: '/steam/topup.html', targetId: 'topup-list' },
   { url: '/steam/buy-games.html', targetId: 'buygames-list' },
   { url: '/crypto/casino.html', targetId: 'casino-crypto' },
   { url: '/crypto/coinflip.html', targetId: 'coinflip-crypto' },

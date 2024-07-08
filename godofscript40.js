@@ -1067,6 +1067,7 @@ $(document).ready(function(){
               "Sell Skins": "Продать Скины",
               "Trade Skins": "Обменять Скины",
               "Steam Level Up": "Увеличить Уровень Steam",
+              "Top Up Steam": "Пополнить Баланс Steam",
               "Buy Steam Games": "Купить Игры Steam",
               "Case Battle": "Кейс Батл"
             },
@@ -1113,6 +1114,7 @@ $(document).ready(function(){
               "Sell Skins": "स्किन बेचें",
               "Trade Skins": "स्किन विनिमय करें",
               "Steam Level Up": "स्टीम स्तर बढ़ाएं",
+              "Top Up Steam": "स्टीम रिचार्ज करें",
               "Buy Steam Games": "स्टीम गेम्स खरीदें"
             },
             "pt": {
@@ -1158,6 +1160,7 @@ $(document).ready(function(){
               "Sell Skins": "Vender Skins",
               "Trade Skins": "Trocar Skins",
               "Steam Level Up": "Subir de Nível no Steam",
+              "Top Up Steam": "Recarregar Steam",
               "Buy Steam Games": "Comprar Jogos do Steam"
             },
             "tr": {
@@ -1203,6 +1206,7 @@ $(document).ready(function(){
               "Sell Skins": "Skins Sat",
               "Trade Skins": "Skins Takas Et",
               "Steam Level Up": "Steam Seviye Atlama",
+              "Top Up Steam": "Steam Bakiye Yükle",
               "Buy Steam Games": "Steam Oyunları Satın Al"
             },
             "es": {
@@ -1248,6 +1252,7 @@ $(document).ready(function(){
               "Sell Skins": "Vender skins",
               "Trade Skins": "Intercambiar skins",
               "Steam Level Up": "Aumentar nivel de Steam",
+              "Top Up Steam": "Recargar Steam",
               "Buy Steam Games": "Comprar juegos de Steam"
             },
           };
