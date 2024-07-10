@@ -6075,6 +6075,14 @@ label:active,
         --darkgray: rgb(15 15 15);
         --opacback: rgb(12 12 12);
     }
+    .info-block {
+        order: -1;
+    }
+    .site-attention.blocked {
+        background: unset;
+        padding: 30px;
+        margin: 0 auto;
+    }
     .alternates-title {
         top: 0;
     }
