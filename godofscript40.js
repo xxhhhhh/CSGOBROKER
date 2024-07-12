@@ -1531,75 +1531,80 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
   xhr.send();
 }
 
+  if (!window.location.pathname.endsWith("newest") &&
+    !window.location.pathname.endsWith("newest.html") &&
+    window.location.href.indexOf('/reviews/') === -1 &&
+    window.location.href.indexOf('/mirrors/') === -1 && 
+    !window.location.pathname.includes("/privacy-policy") &&
+    !window.location.pathname.includes("/topic") &&
+    !window.location.pathname.includes("/terms-of-service") &&
+    !window.location.pathname.includes("/contact-us")) {
+    
+    var newestBoxesDiv = document.createElement('div');
+    newestBoxesDiv.classList.add('newest-boxes');
+    
+    var newestBoxesTitleDiv = document.createElement('div');
+    newestBoxesTitleDiv.classList.add('newest-boxes-title');
+    
+    var newestBoxesTitleBoxDiv = document.createElement('div');
+    newestBoxesTitleBoxDiv.classList.add('newest-boxes-title-box');
+    var titleSpan = document.createElement('span');
+    
+    if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
+        titleSpan.textContent = 'Новые Сайты';
+      } else if (languageTag === 'tr') {
+        titleSpan.textContent = 'Yeni Eklenenler';
+    } else if (languageTag === 'pt') {
+        titleSpan.textContent = 'Recentemente Adicionados';
+    } else if (languageTag === 'es') {
+        titleSpan.textContent = 'Recientemente Añadidos';
+    } else if (languageTag === 'hi') {
+        titleSpan.textContent = 'हाल ही में जोड़ा गया';
+    } else {
+        titleSpan.textContent = 'Recently Added';
+    }
+    
+    newestBoxesTitleBoxDiv.appendChild(titleSpan);
+    newestBoxesTitleDiv.appendChild(newestBoxesTitleBoxDiv);
+    newestBoxesDiv.appendChild(newestBoxesTitleDiv);
+    
+    var newestFragment = languageTag === 'ru' && !window.location.pathname.startsWith("/rust") ? '/code-parts/newest-ru.html' : '/code-parts/newest.html';
+    
+    fetch(newestFragment)
+        .then(response => response.text())
+        .then(data => {
+            var tempDiv = document.createElement('div');
+            tempDiv.innerHTML = data;
+    
+            var existingBoxIds = new Set();
+            document.querySelectorAll('.boxes-holder .box').forEach(box => {
+                existingBoxIds.add(box.id);
+            });
+    
+            var boxes = tempDiv.querySelectorAll('.box');
+            var addedCount = 0;
+            for (var i = 0; i < boxes.length && addedCount < 4; i++) {
+                if (!existingBoxIds.has(boxes[i].id)) {
+                    newestBoxesDiv.appendChild(boxes[i].cloneNode(true));
+                    addedCount++;
+                }
+            }
+    
+            var footerElement = document.querySelector('footer');
+            var sliderContainer = document.querySelector('.slider-container');
+    
+            if (sliderContainer) {
+                sliderContainer.parentNode.insertBefore(newestBoxesDiv, sliderContainer.nextSibling);
+            } else {
+                footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
+            }
+    
+            if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
+                updateURLs(newestBoxesDiv);
+            }
+        });      
+}
 
-// if (!window.location.pathname.endsWith("newest") &&
-//     !window.location.pathname.endsWith("newest.html") &&
-//     window.location.href.indexOf('/reviews/') === -1 &&
-//     window.location.href.indexOf('/mirrors/') === -1 && 
-//     !window.location.pathname.includes("/privacy-policy") &&
-//     !window.location.pathname.includes("/topic") &&
-//     !window.location.pathname.includes("/terms-of-service") &&
-//     !window.location.pathname.includes("/contact-us")) {
-    
-//       var newestBoxesDiv = document.createElement('div');
-//       newestBoxesDiv.classList.add('newest-boxes');
-      
-//       var newestBoxesTitleDiv = document.createElement('div');
-//       newestBoxesTitleDiv.classList.add('newest-boxes-title');
-      
-//       var newestBoxesTitleBoxDiv = document.createElement('div');
-//       newestBoxesTitleBoxDiv.classList.add('newest-boxes-title-box');
-//       var titleSpan = document.createElement('span');
-      
-//       if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
-//           titleSpan.textContent = 'Новые Сайты';
-//       } else {
-//           titleSpan.textContent = 'Recently Added';
-//       }
-      
-//       newestBoxesTitleBoxDiv.appendChild(titleSpan);
-//       newestBoxesTitleDiv.appendChild(newestBoxesTitleBoxDiv);
-//       newestBoxesDiv.appendChild(newestBoxesTitleDiv);
-      
-//       var newestFile = languageTag === 'ru' && !window.location.pathname.startsWith("/rust") ? '/ru/newest.html' : '/newest.html';
-      
-//       fetch(newestFile)
-//           .then(response => response.text())
-//           .then(data => {
-//               var tempDiv = document.createElement('div');
-//               tempDiv.innerHTML = data;
-      
-//               var existingBoxIds = new Set();
-//               document.querySelectorAll('.boxes-holder .box').forEach(box => {
-//                   existingBoxIds.add(box.id);
-//               });
-      
-//               var boxes = tempDiv.querySelectorAll('div.boxes-holder .box');
-//               var addedCount = 0;
-//               for (var i = 0; i < boxes.length && addedCount < 4; i++) {
-//                   if (!existingBoxIds.has(boxes[i].id)) {
-//                       newestBoxesDiv.appendChild(boxes[i].cloneNode(true));
-//                       addedCount++;
-//                   }
-//               }
-      
-//               var footerElement = document.querySelector('footer');
-//               var sliderContainer = document.querySelector('.slider-container');
-      
-//               if (sliderContainer) {
-//                    {
-//                       sliderContainer.parentNode.insertBefore(newestBoxesDiv, sliderContainer.nextSibling);
-//                   }
-//               } else {
-//                   footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
-//               }
-      
-//               if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
-//                   updateURLs(newestBoxesDiv);
-//               }
-//           });      
-    
-//   }
 
 
   const cachedContent = {};
