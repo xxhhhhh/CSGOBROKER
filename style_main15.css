@@ -6155,7 +6155,7 @@ label:active,
     .box .logobg .vpn,
     .box .logobg .vpn::before,
     .boxes-holder .box .content {
-        background: rgb(18 18 18);
+        background: rgb(16 16 16);
     }
     body {
         background: unset;
@@ -7375,9 +7375,15 @@ label:active,
         margin-top: 0px;
     }
     .content a {
+        background-color: #a81d34;
+        filter: unset;
         font-size: 12px;
         bottom: 13px;
     }   
+    .content a::before,
+    .content a::after {
+        background-color: #a81d34;
+    }  
     .content p:nth-child(3) {
         font-size: 12px;
         width: 55%;
