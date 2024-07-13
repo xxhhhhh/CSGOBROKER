@@ -1606,114 +1606,119 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
             }
         });      
 }
-  function forcemodsboxes() {
-    const cachedContent = {};
-    const url = cleanUrl(window.location.href);
-    const pageType = getPageType(url);
-    
-    switch (pageType) {
-      case 'csgo':
-        if (isMultiBoxPage(url)) {
-          importModsBox("csgo-skins");
-          importModsBox("csgo");
-        } else {
-          importModsBox("csgo");
-        }
-        break;
-      case 'rust':
-        if (isMultiBoxPage(url)) {
-          importModsBox("rust-skins");
-          importModsBox("rust");
-        } else {
-          importModsBox("rust");
-        }
-        break;
-      case 'dota':
-        if (isMultiBoxPage(url)) {
-          importModsBox("dota-items");
-          importModsBox("dota");
-        } else {
-          importModsBox("dota");
-        }
-        break;
-      case 'tf2':
-        importModsBox("tf2-items");
-        break;
-      case 'freebies':
-        importModsBox("freebies");
-        break;
-      case 'crypto':
-        importModsBox("crypto");
-        break;
-      default:
-        if (url.includes("/csgo/") || url.endsWith("/ru") || url.endsWith("/es") || url.endsWith("/tr") || url.endsWith("/pt") || url.endsWith("/hi") || url.endsWith("/") || url.endsWith("index.html") || url.endsWith("/ru.html") || url.endsWith("/es.html") || url.endsWith("/tr.html") || url.endsWith("/pt.html") || url.endsWith("/hi.html")) {
-          importModsBox("csgo");
-        } else if (url.includes("/rust/") || url.endsWith("/rust") || url.endsWith("/rust.html")) {
-          importModsBox("rust");
-        } else if (url.includes("/dota/") || url.endsWith("/dota") || url.endsWith("/dota.html")) {
-          importModsBox("dota");
-        }
-        break;
-    }
-    
-    function importModsBox(boxId) {
-      const existingContainer = document.querySelector('.boxes-holder');
-      const isExistingContentCached = existingContainer && cachedContent[boxId];
-    
-      if (isExistingContentCached) {
-        insertModsBox(existingContainer, boxId, cachedContent[boxId]);
+function forcemodsboxes() {
+  const cachedContent = {};
+  const importedMods = {};
+  const url = cleanUrl(window.location.href);
+  const pageType = getPageType(url);
+
+  switch (pageType) {
+    case 'csgo':
+      if (isMultiBoxPage(url)) {
+        importModsBox("csgo-skins");
+        importModsBox("csgo");
       } else {
-        let fileToFetch = '/code-parts/micro-parts/insert-mods-box.html';
-        if (languageTag === 'ru') {
-          fileToFetch = '/code-parts/micro-parts/insert-mods-box-ru.html';
-        }
-      
-        fetch(fileToFetch)
-          .then(response => response.text())
-          .then(data => {
-            cachedContent[boxId] = data;
-            insertModsBox(existingContainer, boxId, data);
-          });
+        importModsBox("csgo");
       }
-      
-    }
-    
-    function insertModsBox(container, boxId, data) {
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = data;
-    
-      const newModsBox = tempDiv.querySelector(`[data-box-id="${boxId}"]`);
-      const existingModsBoxes = container.querySelectorAll('.mods-box');
-      const existingBox = Array.from(existingModsBoxes).find(box => box.getAttribute('data-box-id') === boxId);
-    
-      if (existingBox) {
-        container.replaceChild(newModsBox, existingBox);
+      break;
+    case 'rust':
+      if (isMultiBoxPage(url)) {
+        importModsBox("rust-skins");
+        importModsBox("rust");
       } else {
-        container.insertBefore(newModsBox, container.firstChild);
+        importModsBox("rust");
       }
-    
-      const languageTag = extractLanguageTagFromHTML();
-      if (languageTag && ['ru', 'tr', 'pt', 'hi', 'es'].includes(languageTag)) {
-        const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
-        singlemodBoxes.forEach(box => {
-          translateElement(box, languageTag);
-        });
+      break;
+    case 'dota':
+      if (isMultiBoxPage(url)) {
+        importModsBox("dota-items");
+        importModsBox("dota");
+      } else {
+        importModsBox("dota");
       }
-    
-      setTimeout(() => {
-        newModsBox.classList.add('fade-in-topic');
-        const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
-        singlemodBoxes.forEach(box => {
-          const link = box.querySelector('a').getAttribute('href');
-          if (url.includes(link)) {
-            box.classList.add('active');
-          }
-        });
-      }, 100);
-    
-      updateURLs(newModsBox);
+      break;
+    case 'tf2':
+      importModsBox("tf2-items");
+      break;
+    case 'freebies':
+      importModsBox("freebies");
+      break;
+    case 'crypto':
+      importModsBox("crypto");
+      break;
+    default:
+      if (url.includes("/csgo/") || url.endsWith("/ru") || url.endsWith("/es") || url.endsWith("/tr") || url.endsWith("/pt") || url.endsWith("/hi") || url.endsWith("/") || url.endsWith("index.html") || url.endsWith("/ru.html") || url.endsWith("/es.html") || url.endsWith("/tr.html") || url.endsWith("/pt.html") || url.endsWith("/hi.html")) {
+        importModsBox("csgo");
+      } else if (url.includes("/rust/") || url.endsWith("/rust") || url.endsWith("/rust.html")) {
+        importModsBox("rust");
+      } else if (url.includes("/dota/") || url.endsWith("/dota") || url.endsWith("/dota.html")) {
+        importModsBox("dota");
+      }
+      break;
+  }
+
+  function importModsBox(boxId) {
+    if (importedMods[boxId]) {
+      return;
     }
-  
+
+    const existingContainer = document.querySelector('.boxes-holder');
+    const isExistingContentCached = existingContainer && cachedContent[boxId];
+
+    if (isExistingContentCached) {
+      insertModsBox(existingContainer, boxId, cachedContent[boxId]);
+    } else {
+      let fileToFetch = '/code-parts/micro-parts/insert-mods-box.html';
+      if (languageTag === 'ru') {
+        fileToFetch = '/code-parts/micro-parts/insert-mods-box-ru.html';
+      }
+
+      fetch(fileToFetch)
+        .then(response => response.text())
+        .then(data => {
+          cachedContent[boxId] = data;
+          insertModsBox(existingContainer, boxId, data);
+          importedMods[boxId] = true;
+        });
+    }
+  }
+
+  function insertModsBox(container, boxId, data) {
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = data;
+
+    const newModsBox = tempDiv.querySelector(`[data-box-id="${boxId}"]`);
+    const existingModsBoxes = container.querySelectorAll('.mods-box');
+    const existingBox = Array.from(existingModsBoxes).find(box => box.getAttribute('data-box-id') === boxId);
+
+    if (existingBox) {
+      container.replaceChild(newModsBox, existingBox);
+    } else {
+      container.insertBefore(newModsBox, container.firstChild);
+    }
+
+    const languageTag = extractLanguageTagFromHTML();
+    if (languageTag && ['ru', 'tr', 'pt', 'hi', 'es'].includes(languageTag)) {
+      const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
+      singlemodBoxes.forEach(box => {
+        translateElement(box, languageTag);
+      });
+    }
+
+    setTimeout(() => {
+      newModsBox.classList.add('fade-in-topic');
+      const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
+      singlemodBoxes.forEach(box => {
+        const link = box.querySelector('a').getAttribute('href');
+        if (url.includes(link)) {
+          box.classList.add('active');
+        }
+      });
+    }, 100);
+
+    updateURLs(newModsBox);
+  }
+
   function getPageType(url) {
     const pageTypes = ['csgo', 'rust', 'dota', 'tf2', 'freebies', 'crypto'];
     for (const type of pageTypes) {
@@ -1723,18 +1728,18 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
     }
     return 'other';
   }
-  
+
   function cleanUrl(url) {
     return url.split('?')[0].toLowerCase();
   }
-  
+
   function isMultiBoxPage(url) {
     const cleanUrlValue = cleanUrl(url);
-  
+
     return cleanUrlValue.endsWith("/buy-skins") || cleanUrlValue.endsWith("/buy-items") || cleanUrlValue.endsWith("/sell-items") || cleanUrlValue.endsWith("/trade-items") || cleanUrlValue.endsWith("/sell-skins") || cleanUrlValue.endsWith("/trade-skins") || cleanUrlValue.endsWith("/instant-sell") || cleanUrlValue.endsWith("/marketplaces") || cleanUrlValue.endsWith("/buy-skins.html") || cleanUrlValue.endsWith("/buy-items.html") || cleanUrlValue.endsWith("/sell-items.html") || cleanUrlValue.endsWith("/trade-items.html") || cleanUrlValue.endsWith("/sell-skins.html") || cleanUrlValue.endsWith("/trade-skins.html") || cleanUrlValue.endsWith("/marketplaces.html") || cleanUrlValue.endsWith("/instant-sell.html");
   }
-  
-  function translateElement(element, targetLang) {
+
+  function translateElement(element, languageTag) {
     const translations = {
       'Buy Skins': {
         'ru': 'Купить скины',
@@ -1821,17 +1826,26 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
         'es': 'Bonos de Registro'
       }
     };
-  
+
     const textElement = element.querySelector('.singlemod-select span');
     if (textElement) {
       const text = textElement.innerText.trim();
-      const key = Object.keys(translations).find(key => key.toLowerCase() === text.toLowerCase());
-      if (key && translations[key][targetLang]) {
-        textElement.innerText = translations[key][targetLang];
+  
+      const normalizeText = (text, lang) => {
+        if (lang === 'tr') {
+          return text.toLocaleLowerCase('tr-TR');
+        }
+        return text.toLowerCase();
+      };
+  
+      const key = Object.keys(translations).find(key => normalizeText(key, languageTag) === normalizeText(text, languageTag));
+      if (key && translations[key][languageTag]) {
+        textElement.innerText = translations[key][languageTag];
       }
     }
   }
 }
+
 
 $(document).ready(function() {
 
