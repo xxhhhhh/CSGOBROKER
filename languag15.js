@@ -142,7 +142,12 @@ var requests = [
   { url: '/dota/sell-items.html', targetId: 'sell-skins-dota' },
   { url: '/dota/trade-items.html', targetId: 'trade-skins-dota' },
   { url: '/dota/upgrader.html', targetId: 'upgrader-dota' },
-  { url: '/dota/instant-sell.html', targetId: 'instant-sell-dota' }
+  { url: '/dota/instant-sell.html', targetId: 'instant-sell-dota' },
+  { url: '/tf2/buy-items.html', targetId: 'buy-items-tf2' },
+  { url: '/tf2/instant-sell.html', targetId: 'instant-sell-tf2' },
+  { url: '/tf2/marketplaces.html', targetId: 'marketplaces-tf2' },
+  { url: '/tf2/sell-items.html', targetId: 'sell-items-tf2' },
+  { url: '/tf2/trade-items.html', targetId: 'trade-items-tf2' }
 ];
 
 function sendRequest(url, targetId) {
@@ -158,6 +163,7 @@ function sendRequest(url, targetId) {
           divToImport.innerHTML = boxesHolder.innerHTML;
           translateURLsIfNeeded(divToImport);
           addStarRatingToBoxesHolders();
+          forcemodsboxes(); 
 
           if (isPageInTurkish()) {
             updateURLs(sitesList);

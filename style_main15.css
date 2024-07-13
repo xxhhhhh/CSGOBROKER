@@ -4367,7 +4367,7 @@ footer .centralizer .footer-content {
     transform: scale(.95);
 }
 .newest-boxes:hover .newest-boxes-title {
-    transform: scale(0);
+    transform: translateY(50px);
 }
 .newest-boxes .box .logobg img {
     transform: scale(.95);

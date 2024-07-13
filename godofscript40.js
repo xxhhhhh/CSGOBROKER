@@ -22,6 +22,8 @@ function copyToClipboard(selector) {
   });
 }
 
+forcemodsboxes(); 
+
   const sitesList = document.querySelector('.boxes-holder');
   const modsboxes = document.querySelector('.mods-main-box');
 
@@ -1604,231 +1606,229 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
             }
         });      
 }
-
-
-
-  const cachedContent = {};
-
-  const url = cleanUrl(window.location.href);
-  const pageType = getPageType(url);
-  
-  switch (pageType) {
-    case 'csgo':
-      if (isMultiBoxPage(url)) {
-        importModsBox("csgo-skins");
-        importModsBox("csgo");
-      } else {
-        importModsBox("csgo");
-      }
-      break;
-    case 'rust':
-      if (isMultiBoxPage(url)) {
-        importModsBox("rust-skins");
-        importModsBox("rust");
-      } else {
-        importModsBox("rust");
-      }
-      break;
-    case 'dota':
-      if (isMultiBoxPage(url)) {
-        importModsBox("dota-items");
-        importModsBox("dota");
-      } else {
-        importModsBox("dota");
-      }
-      break;
-    case 'tf2':
-      importModsBox("tf2-items");
-      break;
-    case 'freebies':
-      importModsBox("freebies");
-      break;
-    case 'crypto':
-      importModsBox("crypto");
-      break;
-    default:
-      if (url.includes("/csgo/") || url.endsWith("/ru") || url.endsWith("/es") || url.endsWith("/tr") || url.endsWith("/pt") || url.endsWith("/hi") || url.endsWith("/") || url.endsWith("index.html") || url.endsWith("/ru.html") || url.endsWith("/es.html") || url.endsWith("/tr.html") || url.endsWith("/pt.html") || url.endsWith("/hi.html")) {
-        importModsBox("csgo");
-      } else if (url.includes("/rust/") || url.endsWith("/rust") || url.endsWith("/rust.html")) {
-        importModsBox("rust");
-      } else if (url.includes("/dota/") || url.endsWith("/dota") || url.endsWith("/dota.html")) {
-        importModsBox("dota");
-      }
-      break;
-  }
-  
-  function importModsBox(boxId) {
-    const existingContainer = document.querySelector('.boxes-holder');
-    const isExistingContentCached = existingContainer && cachedContent[boxId];
-  
-    if (isExistingContentCached) {
-      insertModsBox(existingContainer, boxId, cachedContent[boxId]);
-    } else {
-      let fileToFetch = '/code-parts/micro-parts/insert-mods-box.html';
-      if (languageTag === 'ru') {
-        fileToFetch = '/code-parts/micro-parts/insert-mods-box-ru.html';
-      }
+  function forcemodsboxes() {
+    const cachedContent = {};
+    const url = cleanUrl(window.location.href);
+    const pageType = getPageType(url);
     
-      fetch(fileToFetch)
-        .then(response => response.text())
-        .then(data => {
-          cachedContent[boxId] = data;
-          insertModsBox(existingContainer, boxId, data);
-        });
-    }
-    
-  }
-  
-  function insertModsBox(container, boxId, data) {
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = data;
-  
-    const newModsBox = tempDiv.querySelector(`[data-box-id="${boxId}"]`);
-    const existingModsBoxes = container.querySelectorAll('.mods-box');
-    const existingBox = Array.from(existingModsBoxes).find(box => box.getAttribute('data-box-id') === boxId);
-  
-    if (existingBox) {
-      container.replaceChild(newModsBox, existingBox);
-    } else {
-      container.insertBefore(newModsBox, container.firstChild);
-    }
-  
-    const languageTag = extractLanguageTagFromHTML();
-    if (languageTag && ['ru', 'tr', 'pt', 'hi', 'es'].includes(languageTag)) {
-      const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
-      singlemodBoxes.forEach(box => {
-        translateElement(box, languageTag);
-      });
-    }
-  
-    setTimeout(() => {
-      newModsBox.classList.add('fade-in-topic');
-      const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
-      singlemodBoxes.forEach(box => {
-        const link = box.querySelector('a').getAttribute('href');
-        if (url.includes(link)) {
-          box.classList.add('active');
+    switch (pageType) {
+      case 'csgo':
+        if (isMultiBoxPage(url)) {
+          importModsBox("csgo-skins");
+          importModsBox("csgo");
+        } else {
+          importModsBox("csgo");
         }
-      });
-    }, 100);
+        break;
+      case 'rust':
+        if (isMultiBoxPage(url)) {
+          importModsBox("rust-skins");
+          importModsBox("rust");
+        } else {
+          importModsBox("rust");
+        }
+        break;
+      case 'dota':
+        if (isMultiBoxPage(url)) {
+          importModsBox("dota-items");
+          importModsBox("dota");
+        } else {
+          importModsBox("dota");
+        }
+        break;
+      case 'tf2':
+        importModsBox("tf2-items");
+        break;
+      case 'freebies':
+        importModsBox("freebies");
+        break;
+      case 'crypto':
+        importModsBox("crypto");
+        break;
+      default:
+        if (url.includes("/csgo/") || url.endsWith("/ru") || url.endsWith("/es") || url.endsWith("/tr") || url.endsWith("/pt") || url.endsWith("/hi") || url.endsWith("/") || url.endsWith("index.html") || url.endsWith("/ru.html") || url.endsWith("/es.html") || url.endsWith("/tr.html") || url.endsWith("/pt.html") || url.endsWith("/hi.html")) {
+          importModsBox("csgo");
+        } else if (url.includes("/rust/") || url.endsWith("/rust") || url.endsWith("/rust.html")) {
+          importModsBox("rust");
+        } else if (url.includes("/dota/") || url.endsWith("/dota") || url.endsWith("/dota.html")) {
+          importModsBox("dota");
+        }
+        break;
+    }
+    
+    function importModsBox(boxId) {
+      const existingContainer = document.querySelector('.boxes-holder');
+      const isExistingContentCached = existingContainer && cachedContent[boxId];
+    
+      if (isExistingContentCached) {
+        insertModsBox(existingContainer, boxId, cachedContent[boxId]);
+      } else {
+        let fileToFetch = '/code-parts/micro-parts/insert-mods-box.html';
+        if (languageTag === 'ru') {
+          fileToFetch = '/code-parts/micro-parts/insert-mods-box-ru.html';
+        }
+      
+        fetch(fileToFetch)
+          .then(response => response.text())
+          .then(data => {
+            cachedContent[boxId] = data;
+            insertModsBox(existingContainer, boxId, data);
+          });
+      }
+      
+    }
+    
+    function insertModsBox(container, boxId, data) {
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = data;
+    
+      const newModsBox = tempDiv.querySelector(`[data-box-id="${boxId}"]`);
+      const existingModsBoxes = container.querySelectorAll('.mods-box');
+      const existingBox = Array.from(existingModsBoxes).find(box => box.getAttribute('data-box-id') === boxId);
+    
+      if (existingBox) {
+        container.replaceChild(newModsBox, existingBox);
+      } else {
+        container.insertBefore(newModsBox, container.firstChild);
+      }
+    
+      const languageTag = extractLanguageTagFromHTML();
+      if (languageTag && ['ru', 'tr', 'pt', 'hi', 'es'].includes(languageTag)) {
+        const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
+        singlemodBoxes.forEach(box => {
+          translateElement(box, languageTag);
+        });
+      }
+    
+      setTimeout(() => {
+        newModsBox.classList.add('fade-in-topic');
+        const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
+        singlemodBoxes.forEach(box => {
+          const link = box.querySelector('a').getAttribute('href');
+          if (url.includes(link)) {
+            box.classList.add('active');
+          }
+        });
+      }, 100);
+    
+      updateURLs(newModsBox);
+    }
   
-    updateURLs(newModsBox);
-  }
-
-function getPageType(url) {
-  const pageTypes = ['csgo', 'rust', 'dota', 'tf2', 'freebies', 'crypto'];
-  for (const type of pageTypes) {
-    if (url.includes(`/${type}/`) || url.endsWith(`/${type}`) || url.endsWith(`/${type}.html`)) {
-      return type;
+  function getPageType(url) {
+    const pageTypes = ['csgo', 'rust', 'dota', 'tf2', 'freebies', 'crypto'];
+    for (const type of pageTypes) {
+      if (url.includes(`/${type}/`) || url.endsWith(`/${type}`) || url.endsWith(`/${type}.html`)) {
+        return type;
+      }
     }
+    return 'other';
   }
-  return 'other';
-}
-
-function cleanUrl(url) {
-  return url.split('?')[0].toLowerCase();
-}
-
-function isMultiBoxPage(url) {
-  const cleanUrlValue = cleanUrl(url);
-
-  return cleanUrlValue.endsWith("/buy-skins") || cleanUrlValue.endsWith("/buy-items") || cleanUrlValue.endsWith("/sell-items") || cleanUrlValue.endsWith("/trade-items") || cleanUrlValue.endsWith("/sell-skins") || cleanUrlValue.endsWith("/trade-skins") || cleanUrlValue.endsWith("/instant-sell") || cleanUrlValue.endsWith("/marketplaces") || cleanUrlValue.endsWith("/buy-skins.html") || cleanUrlValue.endsWith("/buy-items.html") || cleanUrlValue.endsWith("/sell-items.html") || cleanUrlValue.endsWith("/trade-items.html") || cleanUrlValue.endsWith("/sell-skins.html") || cleanUrlValue.endsWith("/trade-skins.html") || cleanUrlValue.endsWith("/marketplaces.html") || cleanUrlValue.endsWith("/instant-sell.html");
-}
-
-function translateElement(element, targetLang) {
-  const translations = {
-    'Buy Skins': {
-      'ru': 'Купить скины',
-      'tr': 'Skinler Satın Al',
-      'pt': 'Comprar Skins',
-      'hi': 'स्किन्स खरीदें',
-      'es': 'Comprar Skins'
-    },
-    'Sell Skins': {
-      'ru': 'Продать скины',
-      'tr': 'Skinler Sat',
-      'pt': 'Vender Skins',
-      'hi': 'स्किन्स बेचें',
-      'es': 'Vender Skins'
-    },
-    'Trade Skins': {
-      'ru': 'Обменять скины',
-      'tr': 'Skinler Takas Et',
-      'pt': 'Negociar Skins',
-      'hi': 'स्किन्स विनिमय',
-      'es': 'Intercambiar Skins'
-    },
-    'Buy Items': {
-      'ru': 'Купить предметы',
-      'tr': 'Eşyalar Satın Al',
-      'pt': 'Comprar Itens',
-      'hi': 'वस्तुएँ खरीदें',
-      'es': 'Comprar Ítems'
-    },
-    'Sell Items': {
-      'ru': 'Продать предметы',
-      'tr': 'Eşyalar Sat',
-      'pt': 'Vender Itens',
-      'hi': 'वस्तुएँ बेचें',
-      'es': 'Vender Ítems'
-    },
-    'Trade Items': {
-      'ru': 'Обменять предметы',
-      'tr': 'Eşyalar Takas Et',
-      'pt': 'Negociar Itens',
-      'hi': 'वस्तुएँ विनिमय',
-      'es': 'Intercambiar Ítems'
-    },
-    'Instant Sell': {
-      'ru': 'Моментальная продажа',
-      'tr': 'Anlık Satış',
-      'pt': 'Venda Imediata',
-      'hi': 'त्वरित बेचें',
-      'es': 'Venta Instantánea'
-    },
-    'Marketplaces': {
-      'ru': 'Торговые Площадки',
-      'tr': 'Pazarlar',
-      'pt': 'Mercados',
-      'hi': 'बाजार',
-      'es': 'Mercados'
-    },
-    'Daily Rewards': {
-      'ru': 'Ежедневные Награды',
-      'tr': 'Günlük Ödüller',
-      'pt': 'Recompensas Diárias',
-      'hi': 'दैनिक पुरस्कार',
-      'es': 'Recompensas Diarias'
-    },
-    'Deposit Bonuses': {
-      'ru': 'Бонусы к Пополнению',
-      'tr': 'Yatırım Bonusları',
-      'pt': 'Bônus de Depósito',
-      'hi': 'जमा बोनस',
-      'es': 'Bonos de Depósito'
-    },
-    'Giveaways': {
-      'ru': 'Розыгрыши',
-      'tr': 'Çekilişler',
-      'pt': 'Sorteios',
-      'hi': 'गिफ्ट वे',
-      'es': 'Sorteos'
-    },
-    'Sign Up Bonuses': {
-      'ru': 'Бонусы за Регистрацию',
-      'tr': 'Kayıt Bonusları',
-      'pt': 'Bônus de Inscrição',
-      'hi': 'साइन अप बोनस',
-      'es': 'Bonos de Registro'
-    }
-  };
-
-  const textElement = element.querySelector('.singlemod-select span');
-  if (textElement) {
-    const text = textElement.innerText.trim();
-    const key = Object.keys(translations).find(key => key.toLowerCase() === text.toLowerCase());
-    if (key && translations[key][targetLang]) {
-      textElement.innerText = translations[key][targetLang];
+  
+  function cleanUrl(url) {
+    return url.split('?')[0].toLowerCase();
+  }
+  
+  function isMultiBoxPage(url) {
+    const cleanUrlValue = cleanUrl(url);
+  
+    return cleanUrlValue.endsWith("/buy-skins") || cleanUrlValue.endsWith("/buy-items") || cleanUrlValue.endsWith("/sell-items") || cleanUrlValue.endsWith("/trade-items") || cleanUrlValue.endsWith("/sell-skins") || cleanUrlValue.endsWith("/trade-skins") || cleanUrlValue.endsWith("/instant-sell") || cleanUrlValue.endsWith("/marketplaces") || cleanUrlValue.endsWith("/buy-skins.html") || cleanUrlValue.endsWith("/buy-items.html") || cleanUrlValue.endsWith("/sell-items.html") || cleanUrlValue.endsWith("/trade-items.html") || cleanUrlValue.endsWith("/sell-skins.html") || cleanUrlValue.endsWith("/trade-skins.html") || cleanUrlValue.endsWith("/marketplaces.html") || cleanUrlValue.endsWith("/instant-sell.html");
+  }
+  
+  function translateElement(element, targetLang) {
+    const translations = {
+      'Buy Skins': {
+        'ru': 'Купить скины',
+        'tr': 'Skinler Satın Al',
+        'pt': 'Comprar Skins',
+        'hi': 'स्किन्स खरीदें',
+        'es': 'Comprar Skins'
+      },
+      'Sell Skins': {
+        'ru': 'Продать скины',
+        'tr': 'Skinler Sat',
+        'pt': 'Vender Skins',
+        'hi': 'स्किन्स बेचें',
+        'es': 'Vender Skins'
+      },
+      'Trade Skins': {
+        'ru': 'Обменять скины',
+        'tr': 'Skinler Takas Et',
+        'pt': 'Negociar Skins',
+        'hi': 'स्किन्स विनिमय',
+        'es': 'Intercambiar Skins'
+      },
+      'Buy Items': {
+        'ru': 'Купить предметы',
+        'tr': 'Eşyalar Satın Al',
+        'pt': 'Comprar Itens',
+        'hi': 'वस्तुएँ खरीदें',
+        'es': 'Comprar Ítems'
+      },
+      'Sell Items': {
+        'ru': 'Продать предметы',
+        'tr': 'Eşyalar Sat',
+        'pt': 'Vender Itens',
+        'hi': 'वस्तुएँ बेचें',
+        'es': 'Vender Ítems'
+      },
+      'Trade Items': {
+        'ru': 'Обменять предметы',
+        'tr': 'Eşyalar Takas Et',
+        'pt': 'Negociar Itens',
+        'hi': 'वस्तुएँ विनिमय',
+        'es': 'Intercambiar Ítems'
+      },
+      'Instant Sell': {
+        'ru': 'Моментальная продажа',
+        'tr': 'Anlık Satış',
+        'pt': 'Venda Imediata',
+        'hi': 'त्वरित बेचें',
+        'es': 'Venta Instantánea'
+      },
+      'Marketplaces': {
+        'ru': 'Торговые Площадки',
+        'tr': 'Pazarlar',
+        'pt': 'Mercados',
+        'hi': 'बाजार',
+        'es': 'Mercados'
+      },
+      'Daily Rewards': {
+        'ru': 'Ежедневные Награды',
+        'tr': 'Günlük Ödüller',
+        'pt': 'Recompensas Diárias',
+        'hi': 'दैनिक पुरस्कार',
+        'es': 'Recompensas Diarias'
+      },
+      'Deposit Bonuses': {
+        'ru': 'Бонусы к Пополнению',
+        'tr': 'Yatırım Bonusları',
+        'pt': 'Bônus de Depósito',
+        'hi': 'जमा बोनस',
+        'es': 'Bonos de Depósito'
+      },
+      'Giveaways': {
+        'ru': 'Розыгрыши',
+        'tr': 'Çekilişler',
+        'pt': 'Sorteios',
+        'hi': 'गिफ्ट वे',
+        'es': 'Sorteos'
+      },
+      'Sign Up Bonuses': {
+        'ru': 'Бонусы за Регистрацию',
+        'tr': 'Kayıt Bonusları',
+        'pt': 'Bônus de Inscrição',
+        'hi': 'साइन अप बोनस',
+        'es': 'Bonos de Registro'
+      }
+    };
+  
+    const textElement = element.querySelector('.singlemod-select span');
+    if (textElement) {
+      const text = textElement.innerText.trim();
+      const key = Object.keys(translations).find(key => key.toLowerCase() === text.toLowerCase());
+      if (key && translations[key][targetLang]) {
+        textElement.innerText = translations[key][targetLang];
+      }
     }
   }
 }
