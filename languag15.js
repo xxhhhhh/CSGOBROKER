@@ -107,6 +107,8 @@ var requests = [
   { url: '/csgo/sell-skins.html', targetId: 'sell-skins-csgo' },
   { url: '/csgo/trade-skins.html', targetId: 'trade-skins-csgo' },
   { url: '/csgo/upgrader.html', targetId: 'upgrader-csgo' },
+  { url: '/csgo/mines.html', targetId: 'mines-cs2' },
+  { url: '/csgo/plinko.html', targetId: 'plinko-cs2' },
   { url: '/earning/earn-by-play.html', targetId: 'earn-by-play-sites' },
   { url: '/earning/offerwalls.html', targetId: 'offerwalls-list' },
   { url: '/freebies/daily-rewards.html', targetId: 'daily-rewards-list' },

@@ -1669,9 +1669,7 @@ function forcemodsboxes() {
       insertModsBox(existingContainer, boxId, cachedContent[boxId]);
     } else {
       let fileToFetch = '/code-parts/micro-parts/insert-mods-box.html';
-      if (languageTag === 'ru') {
-        fileToFetch = '/code-parts/micro-parts/insert-mods-box-ru.html';
-      }
+
 
       fetch(fileToFetch)
         .then(response => response.text())
@@ -1824,26 +1822,83 @@ function forcemodsboxes() {
         'pt': 'Bônus de Inscrição',
         'hi': 'साइन अप बोनस',
         'es': 'Bonos de Registro'
+      },
+      'Match Betting': {
+        'ru': 'Ставки на Матчи',
+        'tr': 'Maç Bahisleri',
+        'pt': 'Apostas em Partidas',
+        'hi': 'मैच सट्टेबाजी',
+        'es': 'Apuestas en Partidos'
+      },
+    'Roulette': {
+        'ru': 'Рулетка',
+        'tr': 'Rulet',
+        'pt': 'Roleta',
+        'hi': 'रूले',
+        'es': 'Ruleta'
+      },
+    'Case Opening': {
+        'ru': 'Открытие Кейсов',
+        'tr': 'Kasa Açma',
+        'pt': 'Abertura de Caixas',
+        'hi': 'केस खोलना',
+        'es': 'Apertura de Cajas'
+      },
+    'Crash': {
+        'ru': 'Краш',
+        'tr': 'Çöküş',
+        'pt': 'Queda',
+        'hi': 'क्रैश',
+        'es': 'Choque'
+      },
+    'Jackpot': {
+        'ru': 'Джекпот',
+        'tr': 'Büyük İkramiye',
+        'pt': 'Jackpot',
+        'hi': 'जैकपॉट',
+        'es': 'Jackpot'
+      },
+    'Coinflip': {
+        'ru': 'Монетка',
+        'tr': 'Yazı Tura',
+        'pt': 'Cara ou Coroa',
+        'hi': 'सिक्का उछालना',
+        'es': 'Lanzamiento de Moneda'
       }
     };
 
     const textElement = element.querySelector('.singlemod-select span');
     if (textElement) {
-      const text = textElement.innerText.trim();
-  
-      const normalizeText = (text, lang) => {
-        if (lang === 'tr') {
-          return text.toLocaleLowerCase('tr-TR');
+        const text = textElement.innerText.trim();
+
+        const normalizeText = (text, lang) => {
+            if (lang === 'tr') {
+                return text.toLocaleLowerCase('tr-TR');
+            }
+            return text.toLowerCase();
+        };
+
+        const key = Object.keys(translations).find(key => normalizeText(key, languageTag) === normalizeText(text, languageTag));
+        if (key && translations[key][languageTag]) {
+            textElement.innerText = translations[key][languageTag];
         }
-        return text.toLowerCase();
-      };
-  
-      const key = Object.keys(translations).find(key => normalizeText(key, languageTag) === normalizeText(text, languageTag));
-      if (key && translations[key][languageTag]) {
-        textElement.innerText = translations[key][languageTag];
-      }
     }
-  }
+
+    const dataTitle = element.getAttribute('data-title');
+    if (dataTitle) {
+        const normalizeText = (text, lang) => {
+            if (lang === 'tr') {
+                return text.toLocaleLowerCase('tr-TR');
+            }
+            return text.toLowerCase();
+        };
+
+        const key = Object.keys(translations).find(key => normalizeText(key, languageTag) === normalizeText(dataTitle, languageTag));
+        if (key && translations[key][languageTag]) {
+            element.setAttribute('data-title', translations[key][languageTag]);
+        }
+    }
+}
 }
 
 
