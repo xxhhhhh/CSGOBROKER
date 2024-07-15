@@ -1571,7 +1571,9 @@ nav #pagename:focus {
     position: relative;
     padding-bottom: 20px    
 }
-.boxreview .plusminus .criteria p, li {
+.boxreview .plusminus .criteria p, 
+.boxreview .plusminus .criteria .par li,
+.category-selector ul li {
     text-align: start;
     display: flex;
     justify-content: flex-start !important;
@@ -2584,8 +2586,8 @@ nav #pagename:focus {
     margin-bottom: 30px !important;
 }
 .instruction-mirrors {
-    padding: 30px 0px 30px 20px;
-    justify-content: flex-start;
+    padding: 30px 0 30px 0;
+    justify-content: center;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -2597,7 +2599,7 @@ nav #pagename:focus {
 .instruction-mirrors li {
     padding: 10px 5px;
     display: flex;
-    width: 65%;
+    width: 60%;
 }
 .instruction-mirrors li a:hover {
     text-decoration: none;
@@ -5288,34 +5290,32 @@ footer .centralizer .footer-content {
         transition: all .3s ease-in-out;
     }
     .lang-menu ul {
-        margin: 0;
-        padding: 0;
+        padding-top: 4px;
         height: 0;
         overflow: hidden;
         display: flex;
         position: absolute;
-        right: 0px;
-        width: 40px;
+        transform: translateX(-50%);
+        left: 50%;
+        width: fit-content;
         border-radius: 5px;
-        /* transition: all .2s ease-in-out; */
         border: none;
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: flex-start;
-        transition: all .2s ease-out;
+        transition: all .15s ease-in-out;
     }
     
     .lang-menu:hover ul {
-        height: 192px;
-        /* border: 2px #212121 solid; */
+        height: 196px;
     }
 
     .lang-menu ul li {
         list-style: none;
         text-align: left;
         display: flex;
-        justify-content: space-between;
-        background-color: #0d0d0d;
+        justify-content: center;
+        background-color: #0a0a0a;
     }
     .lang-menu ul li:last-child {
         border-bottom: 2px rgba(255, 255, 255, .12) solid;
@@ -5323,13 +5323,13 @@ footer .centralizer .footer-content {
     
     .lang-menu ul li a {
         text-decoration: none;
-        width: 40px;
+        width: auto;
         text-align: center;
-        padding: 8px 0;
+        padding: 8px;
         display: block;
         color: rgba(255, 255, 255, .12);
         text-transform: uppercase;
-        transition: all .2s ease-in-out;
+        transition: all .15s ease-in-out;
     }
     
     .lang-menu ul li:hover a {
@@ -6107,6 +6107,15 @@ label:active,
     .info-block {
         order: -1;
     }
+    .instruction-mirrors li {
+        width: 75%;
+    }
+    .instruction-mirrors {
+        padding: 15px 0;
+    }
+    .boxreview#mirror .features {
+        order: 1;
+    }
     .site-attention.blocked {
         background: unset;
         padding: 30px;
@@ -6490,14 +6499,26 @@ label:active,
         width: 100%;
         padding-top: 10px;
     }
-    .mirror-redirect {
-        display: none;
-    }
     .mirror-redirect,
     .partner-site {
         width: 100%;
+        height: auto;
+        padding: 5px 0;
         margin-top: 0;
         box-shadow: unset;
+        background-color: rgb(11 11 11);
+        border-radius: unset !important;
+    }
+    .mirror-redirect span {
+        padding: 10px 15px;
+        font-size: 14px;
+        background: linear-gradient(15deg, rgba(255, 255, 255, .03) 30%, rgba(0, 0, 0, 0) 100%);
+        border-radius: 10px;
+    }
+    .partner-site img {
+        padding: 5px 15px;
+        border-radius: 10px;
+        background: linear-gradient(15deg, rgba(255, 255, 255, .03) 30%, rgba(255, 255, 255, .02) 100%);
     }
     .boxes-holder {
         max-width: 100%;
@@ -6729,6 +6750,9 @@ label:active,
         display: flex;
         justify-content: center;
         min-height: unset;
+    }
+    .boxreview {
+        border-radius: 0;
     }
     .sitepage.topic-craft .boxtopic {
         margin-top: 4px;
@@ -7274,7 +7298,9 @@ label:active,
         min-width: unset;
     }
     .nav-content .lang-menu {
-        display: none;
+        order: -1;
+        margin-right: 15px;
+        font-size: 16px;
     }
     .language-box {
         display: flex;
