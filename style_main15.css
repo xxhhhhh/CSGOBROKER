@@ -322,7 +322,7 @@ nav #pagename:focus {
     left: 154px;
     height: auto;
     width: 1022px;
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -3384,6 +3384,8 @@ nav #logo:hover {
 }
 .sitepage .box {
     margin: 0 !important;
+    border-radius: 10px;
+    overflow: hidden;
 }
 .sitepage .box .content button#code_style {
     border: var(--main-color) 1px dashed;
