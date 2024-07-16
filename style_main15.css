@@ -1157,7 +1157,7 @@ nav #pagename:focus {
     justify-content: flex-start;
 }
 .box-skins {
-    border-radius: 5px;
+    border-radius: 10px;
     background: linear-gradient(15deg, rgba(0, 0, 0, .3) 30%, rgba(0, 0, 0, .15) 100%);
     height: 130px;
     margin: 8px 0 0 0;
@@ -1563,7 +1563,7 @@ nav #pagename:focus {
     width: 49.5%;
     min-height: 230px;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -2491,7 +2491,7 @@ nav #pagename:focus {
     align-items: center;
     color: var(--white);
     padding: 30px 0px 30px 0px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .ratingthings {
     width: 95%;
@@ -2719,7 +2719,7 @@ nav #pagename:focus {
     align-items: center;
     flex-wrap: wrap;
     align-content: flex-start;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 9px 0 0 0;
     position: relative;
     overflow: hidden;
@@ -3162,26 +3162,26 @@ nav #logo:hover {
 .mirror-redirect {
     width: 300px;
     height: 60px;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgb(11 11 11);
     box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 9px;
-    border-radius: 5px;
+    border-radius: 10px;
     text-decoration: none;
     transition: transform .15s ease-in-out;
 }
 .partner-site {
     width: 300px;
     height: 60px;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgb(11 11 11);
     box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 9px;
-    border-radius: 5px;
+    border-radius: 10px;
     text-decoration: none;
     transition: transform .15s ease-in-out;
 }
@@ -3320,7 +3320,7 @@ nav #logo:hover {
     min-height: 60px;
     background: rgb(11 11 11);
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
     position: relative;
     font-weight: 500;
     color: var(--white);
@@ -3653,7 +3653,7 @@ nav #logo:hover {
     background-color: unset;
     background: rgb(11 11 11);
     margin-left: 9px !important;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .sitealternates .box:first-child {
     margin-left: unset !important;
@@ -5009,7 +5009,7 @@ footer .centralizer .footer-content {
     margin: 0 auto;
     overflow: hidden;
     margin-top: 18px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .screens.slick-slider {
     margin-top: unset;
@@ -6107,6 +6107,9 @@ label:active,
     .info-block {
         order: -1;
     }
+    .screentable {
+        width: 100%;
+    }
     .instruction-mirrors li {
         width: 75%;
     }
@@ -6512,13 +6515,15 @@ label:active,
     .mirror-redirect span {
         padding: 10px 15px;
         font-size: 14px;
-        background: linear-gradient(15deg, rgba(255, 255, 255, .03) 30%, rgba(0, 0, 0, 0) 100%);
+        background-color: rgb(18 18 18);
+        filter: drop-shadow(0 0 1px rgb(50 50 50));
         border-radius: 10px;
     }
     .partner-site img {
         padding: 5px 15px;
         border-radius: 10px;
-        background: linear-gradient(15deg, rgba(255, 255, 255, .03) 30%, rgba(255, 255, 255, .02) 100%);
+        background-color: rgb(18 18 18);
+        filter: drop-shadow(0 0 1px rgb(50 50 50));
     }
     .boxes-holder {
         max-width: 100%;
@@ -6725,7 +6730,7 @@ label:active,
     .socials {
         display: none !important;
     }
-    .sitepage .box {
+    .sitepage .box.main {
         border-radius: 0 !important;
         width: 100% !important;
     }
@@ -6980,6 +6985,7 @@ label:active,
     }
     .sitedetails {
         margin: 0;
+        margin-top: 4px;
     }
     .ratingthings .ratingway span {
         width: 130px;
@@ -7013,10 +7019,18 @@ label:active,
     }
     .features {
         width: 95%;
-        margin-top: 4px;
+        margin-top: 14px;
+    }
+    .features .featuresbox .typesinside a::after, 
+    .features .featuresbox .typesinside a::before {
+        content: none;
     }
     .features .featuresbox .typesinside a {
-        margin: 6px 0 6px 26px !important;
+        margin: 5px !important;
+        border-radius: 10px !important;
+    }
+    .boxreview .smallreview {
+        padding: 10px 0px 0px 0px;
     }
     .features .featuresbox .typesinside a:first-child {
         margin-left: unset !important;
@@ -7149,6 +7163,12 @@ label:active,
         flex: 1 1 50%;
         margin: 2px 0;
         background: rgb(11 11 11);
+    }
+    .ratingthings .ratingway:first-child {
+        border-radius: 10px 10px 0 0;
+    }
+    .ratingthings .ratingway:last-child {
+        border-radius: 0 0 10px 10px;
     }
     .sitedetails .sitepros {
         background: rgb(11 11 11);
