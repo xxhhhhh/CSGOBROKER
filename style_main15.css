@@ -3229,7 +3229,6 @@ nav #logo:hover {
     position: relative;
     width: 98%;
     display: flex;
-    justify-content: space-between;
     margin: 9px 0;
     height: 60px;
     transition: .25s all ease-in-out;
@@ -3326,7 +3325,7 @@ nav #logo:hover {
     color: var(--white);
     display: flex;
     align-items: center;
-    transition: .25s all ease-in-out;
+    transition: .2s all ease-in-out;
     box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     overflow: hidden;
     flex-direction: column;
@@ -6840,6 +6839,7 @@ label:active,
     }
     .sitedetails .methodlist {
         width: 100%;
+        padding-bottom: 30px;
     }
     nav img {
         filter: none;
