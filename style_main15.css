@@ -2965,8 +2965,11 @@ nav #logo:hover {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    min-height: 800px;
+    min-height: 550px;
     position: relative;
+}
+.boxes-holder.langimprt {
+    min-height: 800px;
 }
 .category-centralizer {
     width: 100%;
