@@ -183,12 +183,6 @@ function isPageInTurkish() {
   return path.startsWith('/tr/') || path.endsWith('/tr') || path.endsWith('/tr.html');
 }
 
-function addStarRatingToBoxesHolders() {
-  for (var boxId in ratings) {
-    addStarRating(boxId, ratings[boxId]);
-  }
-}
-
 var boxesHolderElement = document.querySelector('.boxes-holder');
 var neededTargetId = boxesHolderElement ? boxesHolderElement.id : null;
 

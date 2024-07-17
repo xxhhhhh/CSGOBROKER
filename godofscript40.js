@@ -76,6 +76,12 @@ forcemodsboxes();
     });
   }
   
+  function addStarRatingToBoxesHolders() {
+    for (var boxId in ratings) {
+      addStarRating(boxId, ratings[boxId]);
+    }
+  }
+
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html') && 
     !window.location.pathname.includes("/topic") && 
     !window.location.pathname.includes('/reviews/') && 
@@ -631,18 +637,12 @@ $(document).ready(function(){
       if(!backToTopButton.classList.contains("btnEntrance")) {
         backToTopButton.classList.remove("btnExit");
         backToTopButton.classList.add("btnEntrance");
-        backToTopButton.style.height = "40px";
-        backToTopButton.style.border = "2px solid rgba(0,0,0,.04)";
       }
     }
     else { 
       if(backToTopButton.classList.contains("btnEntrance")) {
         backToTopButton.classList.remove("btnEntrance");
         backToTopButton.classList.add("btnExit");
-        setTimeout(function() {
-          backToTopButton.style.height = "0";
-          backToTopButton.style.border = "0 solid transparent";
-        }, 250);
       }
     }
   }
@@ -1447,6 +1447,7 @@ if (identifierIndex > 0) {
         };
 
         updateAlternateLinks();
+        addStarRatingToBoxesHolders();
       }
     });
 }

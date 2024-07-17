@@ -1557,7 +1557,7 @@ nav #pagename:focus {
     align-items: flex-start;
     justify-content: space-between;
     margin-top: 10px;
-    order: -1;
+    order: -2;
 }
 .boxreview .plusminus .criteria {
     width: 49.5%;
@@ -1682,11 +1682,11 @@ nav #pagename:focus {
     justify-content: center;
     align-items: center;
     height: 60px;
+    transition: all .15s ease-in-out;
     background: linear-gradient(15deg, rgba(255, 255, 255, .006) 30%, rgba(0, 0, 0, 0) 100%);
-    transition: background-color .2s ease-in-out;
     position: relative;
     margin-top: 10px;
-    order: -1;
+    order: -2;
 }
 .info-block {
     width: 96%;
@@ -1694,10 +1694,11 @@ nav #pagename:focus {
 }
 .site-attention.blocked {
     width: auto;
-    order: -1;
     justify-content: flex-start;
+    background: none;
     height: 40px;
     padding: 0 20px;
+    order: -1;
     left: 0;
 }
 .site-attention i {
@@ -1706,7 +1707,7 @@ nav #pagename:focus {
     font-size: 18px;
 }
 .site-attention:hover {
-    background-color: rgba(255, 255, 255, .01);
+    background-color: rgba(255, 255, 255, .006);
 }
 .site-attention span {
     font-weight: 500;
@@ -1964,6 +1965,7 @@ nav #pagename:focus {
 }
 .features {
     width: 96%;
+    order: -1;
 }
 .features, .gamemodes {
     height: auto;
@@ -2013,17 +2015,13 @@ nav #pagename:focus {
     margin: 12px 0 12px 22px;
 }
 .features .featuresbox .typesinside a:hover {
-    transform: scale(1.05);
-    margin-left: 31px;
-    margin-right: 4px;
-    transition: transform .15s ease-in-out, margin .15s;
+    transform: scale(1.03);
     filter: drop-shadow(0 0 1px #c91f3b) !important;
-    background-color: #a81d34;
 }
 
+.features .featuresbox .typesinside a:hover,
 .features .featuresbox .typesinside a:hover::before,
 .features .featuresbox .typesinside a:hover::after {
-    transition: transform .15s ease-in-out;
     background-color: #a81d34;
 }
 
@@ -2064,8 +2062,7 @@ nav #pagename:focus {
     font-weight: 600;
     font-size: 14px;
     color: var(--white);
-    transition: ease-in-out all .15s;
-    filter: drop-shadow(0 0 1px rgb(50 50 50));
+    filter: drop-shadow(0 0 1px rgb(35 35 35));
     margin-left: 26px;
     position: relative;
     box-sizing: border-box;
@@ -2074,7 +2071,8 @@ nav #pagename:focus {
 .features .featuresbox .typesinside a,
 .features .featuresbox .typesinside a::after,
 .features .featuresbox .typesinside a::before {
-    background-color: rgb(18 18 18);
+    transition: all .15s ease-in-out !important;
+    background-color: rgb(14 14 14);
 }
 
 .boxreview#mirror .features .featuresbox .typesinside a:last-child {
@@ -2105,7 +2103,6 @@ nav #pagename:focus {
     position: absolute;
     width: 20px;
     height: 100%;
-    transition: ease-in-out all .15s;
     box-sizing: border-box;
     transform: skewX(-20deg);
     border-radius: 5px;
@@ -3680,7 +3677,6 @@ nav #logo:hover {
 .sitealternates .box .content a.copy_style::before,
 .sitealternates .box .content a.copy_style::after {
     bottom: 32px;
-    background-color: rgb(22 22 22);
 }
 .sitealternates .box .content a.copy_style {
     filter: drop-shadow(0 0 1px rgb(85 85 85));
@@ -4068,7 +4064,6 @@ nav img:active,
 }
 .content button,
 .content a {
-    background-color: rgb(22 22 22);
     filter: drop-shadow(0 0 1px rgb(85 85 85));
     bottom: 10px;
     position: absolute;
@@ -4083,6 +4078,15 @@ nav img:active,
     text-decoration: none;
     z-index: 2;
 }
+.content button,
+.content a,
+.content a::after,
+.content a::before,
+.sitealternates .box .content a.copy_style,
+.sitealternates .box .content a.copy_style::before,
+.sitealternates .box .content a.copy_style::after {
+    background-color: rgb(30 30 30);
+}
 .rec-box .content a,
 .rec-box .content a::after,
 .rec-box .content a::before {
@@ -4094,7 +4098,6 @@ nav img:active,
     position: absolute;
     width: 20px;
     height: 100%;
-    background-color: rgb(22 22 22);
     transition: ease-in-out all .15s;
     box-sizing: border-box;
     transform: skewX(20deg);
@@ -4827,33 +4830,25 @@ footer .centralizer .footer-content {
 
 
 
-  .settings-menu {
+  .settings-menu,
+  #back-to-top-btn {
     font-size: 24px;
     width: 40px;
     height: 40px;
     background-color: var(--opacback);
     cursor: pointer;
     outline: none;
-    border: 2px solid rgba(0,0,0,.04);
+    border: 0px solid transparent;
     transition: .2s all ease-in-out;
     border-radius: 50%;
     z-index: 10000;
-    margin: 3px 0;
     overflow: hidden;
   }
   #back-to-top-btn {
-    font-size: 24px;
-    width: 40px;
     height: 0;
-    background-color: var(--opacback);
-    cursor: pointer;
-    outline: none;
-    border: 0 solid transparent;
-    transition: .15s all ease-in-out !important; 
-    border-radius: 50%;
-    z-index: 10000;
-    margin: 3px 0;
-    overflow: hidden;
+  }
+  #back-to-top-btn.btnEntrance {
+    margin-top: 10px;
   }
   #back-to-top-btn:hover {
     color: var(--white);
@@ -4876,7 +4871,7 @@ footer .centralizer .footer-content {
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-end;
-    transition: all .22s ease-in-out;
+    transition: all .2s ease-in-out;
     z-index: 11112;
   }
   .settings-button {
@@ -4896,7 +4891,11 @@ footer .centralizer .footer-content {
   .settings-menu {
     border-radius: 10px;
     border: 1px solid rgb(12 12 12);
-    transition: .2s all ease-in-out;
+    height: 40px;
+  }
+
+  #back-to-top-btn.btnExit {
+    height: 0;
   }
 
   .settings-button i,
@@ -5115,9 +5114,15 @@ footer .centralizer .footer-content {
   }
   
   .btnEntrance {
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
     animation-fill-mode: both;
     animation-name: btnEntrance;
+  }
+
+  .btnExit {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;  
+    animation-name: btnExit;
   }
 
   @keyframes btnEntrance {
@@ -5131,11 +5136,6 @@ footer .centralizer .footer-content {
     }
   }
   
-  .btnExit {
-    animation-duration: 0.25s;
-    animation-fill-mode: both;  
-    animation-name: btnExit;
-  }
 
   @keyframes btnExit {
     from {
