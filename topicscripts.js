@@ -615,15 +615,18 @@ $(document).ready(function(){
                 boxtopic.on('click.topicNav', '.topic-nav-box', function () {
                     toggleActiveClass($(this));
                     toggleActiveClass($('.topic-nav-selector'));
+                    $('.pages').addClass('hardhidden');
                 });
 
                 boxtopic.on('click.topicNav', '.topic-nav-close', function () {
                     toggleActiveClass($('.topic-nav-selector'));
+                    $('.pages').removeClass('hardhidden');
                 });
 
                 boxtopic.on('click.topicNav', '.weapon-container', function () {
                     var clickedContainer = $(this);
                     $('.weapon-container').not(clickedContainer).removeClass('active');
+                    $('.pages').removeClass('hardhidden');
                     toggleActiveClass(clickedContainer);
                 });
             });

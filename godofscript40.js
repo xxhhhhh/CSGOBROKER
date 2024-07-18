@@ -119,9 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(data => {
       navBarContainer.innerHTML = data;
 
-      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-
       var header = document.querySelector('header');
 
       if (!header) return;
@@ -136,19 +133,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
       var menuToggle = document.querySelector('.menu-toggle');
       var navBar = document.querySelector('.nav-bar');
+      var pages = document.querySelector('.pages');
 
       if (menuToggle && navBar) {
         menuToggle.addEventListener('click', function () {
           navBar.classList.toggle('active');
           menuToggle.classList.toggle('active');
+          pages.classList.toggle('hardhidden');
         });
 
-        if (screenWidth >= 1340) {
-          navBar.addEventListener('click', function() {
-            menuToggle.classList.remove('active');
-            navBar.classList.remove('active');
-          });
-        }
+        navBar.addEventListener('click', function(event) {
+          if (event.target === categorySelector) {
+              menuToggle.classList.remove('active');
+              navBar.classList.remove('active');
+              pages.classList.remove('hardhidden');
+          }
+      });
+      
       }
 
       var bigCategories = document.querySelectorAll('.big-category');
