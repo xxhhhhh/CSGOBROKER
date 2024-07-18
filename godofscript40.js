@@ -173,6 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       var boxContainerNav = document.querySelector('#notexist');
+      var categorySelector = document.querySelector('.category-selector');
       if (boxContainerNav) {
         boxContainerNav.addEventListener("click", (e) => {
           const targetBox = e.target.closest(".category-box");
@@ -458,6 +459,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 box.classList.contains("current")
             );
     
+            categorySelector.addEventListener('click', function(event) {
+              if (event.target === categorySelector) {
+                const boxescurrent = boxContainer.querySelectorAll('.category-box.current');
+                const submenucurrent = boxContainer.querySelectorAll('.submenu.current');
+                boxContainer.classList.remove('current');
+            
+                boxescurrent.forEach(function(box) {
+                  box.classList.remove('current');
+                });
+
+                submenucurrent.forEach(function(box) {
+                  box.classList.remove('current');
+                });
+                
+              }
+            });
+
             if (isActive) {
                 boxContainer.classList.add("current");
             }

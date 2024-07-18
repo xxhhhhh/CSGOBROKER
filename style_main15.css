@@ -3311,7 +3311,7 @@ nav #logo:hover {
     background: rgba(0,0,0,.2);
 }
 .category-centralizer.nav ul:hover .category-box {
-    background-color: rgb(16 16 16) !important;
+    background-color: rgb(16 16 16);
 }
 .sitedetails .sitepros {
     width: 100%;
@@ -5189,7 +5189,7 @@ footer .centralizer .footer-content {
     .category-selector ul .category-box .category-box-logo:hover,
     .category-selector .category-box:active .category-box-logo {
         color: var(--main-color) !important;
-        background-color: rgb(18 18 18) !important;
+        background-color: rgb(18 18 18);
     }
     .submenu li a:active {
         background-color: rgb(14 14 14) !important;
@@ -6593,9 +6593,6 @@ label:active,
         transform: translateX(-50%);
         width: 90%;
     }
-    .category-selector.current .category-box-logo {
-        background: rgb(23 23 23);
-    }
     .submenu li {
         background: rgb(18, 18, 18);
     }
@@ -6618,12 +6615,11 @@ label:active,
     .category-selector ul:hover .category-box .category-box-logo,
     .category-selector ul .category-box .category-box-logo:hover {
         filter: grayscale(1);
-        background-color: rgb(18 18 18) !important;
+        background-color: unset;
     }
     
     .category-selector.current .category-box.current .category-box-logo,
     .category-selector.current .category-box:hover .category-box-logo {
-        background: rgb(12 12 12);
         filter: grayscale(0);
     }
     .submenu .big-category a:hover, 
@@ -6660,11 +6656,25 @@ label:active,
         position: absolute;
         left: 50%;
         margin-top: 20px !important;
-   }
-   .category-selector.current .category-box {
-    border: 2px solid rgb(18, 18, 18);
-    background: rgba(21, 21, 21, .9);
-}
+    }
+    .category-centralizer.nav .category-box {
+        background: rgb(18 18 18);
+    }
+    .category-box.current {
+         background: rgb(23 23 23) !important;
+    }
+    .category-centralizer.nav ul:hover .category-box {
+        background: rgb(23 23 23);
+    }
+    .category-centralizer.nav ul:hover .category-box {
+        background: rgb(18 18 18);
+    }
+    .category-centralizer.nav ul:hover .category-box.current {
+        background: rgb(12 12 12) !important;
+    }
+    .category-centralizer.nav .category-box-logo {
+        background: none !important;
+    }
     .category-selector .submenu2 {
         width: 100% !important;
         height: 100%;
@@ -6717,12 +6727,10 @@ label:active,
         height: 70px;
         width: 70px;
         overflow: hidden;
-        border: 2px solid transparent;
     }
     .category-selector ul .category-box .category-box-logo {
         width: 100%;
         transform: unset;
-        background: rgba(0, 0, 0, .5);
     }
     .category-selector .category-box .category-box-content {
         display: none;
