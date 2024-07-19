@@ -54,6 +54,10 @@ forcemodsboxes();
     }
   
     links.forEach(link => {
+      if (link.closest('div.instruction')) {
+        return;
+      }
+
       const href = link.getAttribute('href');
       const match = href.match(regex);
   
