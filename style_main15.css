@@ -1627,18 +1627,7 @@ nav #pagename:focus {
     flex-wrap: wrap;
     flex-direction: column;
     margin-top: 40px;
-}
-.boxreview .plusminus .criteria .par i {
-    opacity: 1;
-    color: var(--white);
-    font-size: 16px;
-    margin-right: 8px;
-    position: relative;
-    width: auto;
-    height: auto;
-    top: unset;
-    bottom: unset;
-    right: unset;
+    padding-left: 24px;
 }
 .boxreview .plusminus .criteria i {
     opacity: 1;
@@ -1649,16 +1638,39 @@ nav #pagename:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-
     bottom: 25px;
     right: 30px;
 }
 
-.boxreview .plusminus .criteria:nth-child(1) i {
+.boxreview .plusminus .criteria .par li::before {
+    margin-top: 2px;
+    position: absolute;
+    left: 0;
+    margin-right: 8px;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+}
+
+.boxreview .plusminus .criteria:nth-child(1) .par li::before {
+    background-image: url(/img/icons/caret-up-fill.svg);
+    content:"";
+}
+
+.boxreview .plusminus .criteria:nth-child(2) .par li::before {
+    background-image: url(/img/icons/caret-down-fill.svg);
+    content:"";
+}
+
+.boxreview .plusminus .criteria:nth-child(1) i,
+.boxreview .plusminus .criteria:nth-child(1) .par li::before {
     color: var(--green);
     opacity: .9;
 }
-.boxreview .plusminus .criteria:nth-child(2) i {
+.boxreview .plusminus .criteria:nth-child(2) i,
+.boxreview .plusminus .criteria:nth-child(2) .par li::before {
     color: var(--main-color);
     opacity: .9;
 }
@@ -1734,7 +1746,7 @@ nav #pagename:focus {
     align-items: center;
     flex-wrap: wrap;
     align-content: flex-start;
-    padding: 30px 0px 0px 0px;
+    padding: 30px 0px 15px 0px;
     border-radius: 5px;
 }
 .sitetoppannel {
@@ -2517,7 +2529,7 @@ nav #pagename:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px 0px 20px 0px;
+    padding: 15px 0px 20px 0px;
 }
 .instruction:nth-child(2) {
     filter: grayscale(1);
@@ -3159,6 +3171,79 @@ nav #logo:hover {
 .bonusincludes {
     margin-top: 9px;
 }
+.nav-review {
+    width: 300px;
+    height: auto;
+    padding: 15px 0;
+    position: relative;
+    background-color: rgb(11 11 11);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 9px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all .15s ease-in-out;
+}
+.nav-review ol {
+    width: 85%;
+}
+.nav-review li {
+    color: var(--white);
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    vertical-align: baseline;
+    position: relative;
+    line-height: 24px;
+    transition: all .15s ease-in-out;
+    cursor: pointer;
+    padding-left: 24px;
+}
+.nav-review li::before {
+    content:"";
+    background-image: url(/img/icons/circle-fill.svg);
+    margin-right: 8px;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    left: 0;
+    width: 10px;
+    height: 10px;
+
+}
+.nav-review li:hover {
+    transform: scale(1.05);
+}
+.nav-review li::before {
+    color: var(--main-color);
+    font-size: 24px;
+}
+
+.navmark {
+    animation: navmark-animation .6s ease-in-out;
+    animation-iteration-count: 2;
+
+}
+
+@keyframes navmark-animation {
+    0% {filter: brightness(100%);
+        background-color: transparent;
+        border-radius: 10px;
+    }
+    50% {filter: brightness(120%);
+        background-color: rgb(11, 11, 11);
+        border-radius: 10px;
+    }
+    100% {filter: brightness(100%);
+        background-color: transparent;
+        border-radius: 10px;
+    }
+  }
 .mirror-redirect {
     width: 300px;
     height: 60px;
@@ -3170,7 +3255,7 @@ nav #logo:hover {
     margin-top: 9px;
     border-radius: 10px;
     text-decoration: none;
-    transition: transform .15s ease-in-out;
+    transition: all .15s ease-in-out;
 }
 .partner-site {
     width: 300px;
@@ -3217,6 +3302,7 @@ nav #logo:hover {
 .partner-site span {
     font-size: 16px;
     font-weight: 500;
+    transition: all .15s ease-in-out;
 }
 .bonusdesc {
     width: 300px;
@@ -5464,7 +5550,9 @@ label:active,
 .preview-close-button:active,
 .preview-pause-button:active,
 .preview-nav-button:active,
-.site-searcher-box:active {
+.site-searcher-box:active,
+.nav-review li:active,
+.mirror-redirect:active span {
     filter: brightness(.3) !important;
     transition: .09s all ease-in-out;
   }
@@ -6104,6 +6192,22 @@ label:active,
     }
     .info-block {
         order: -1;
+    }
+    .nav-review {
+        width: 100%;
+        border-radius: 0;
+        margin-top: 0;
+    }
+    .nav-review li {
+        line-height: 28px;
+    }
+    .nav-review ol {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-review li:hover {
+        transform: unset;
     }
     .menu-toggle:hover .menu-line {
         opacity: .2;

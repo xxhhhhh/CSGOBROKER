@@ -2001,3 +2001,93 @@ $(document).ready(function() {
 
   $(window).trigger('scroll');
 });
+  
+document.addEventListener("DOMContentLoaded", function() {
+  if (!window.location.pathname.includes('/reviews/')) {
+      return;
+  }
+
+  const translations = {
+      en: {
+          plusminus: 'Pros and Cons',
+          screentable: 'Screenshots and Modes',
+          sitedetails: 'Payment Methods',
+          sitealternates: 'Similar Sites'
+      },
+      ru: {
+          plusminus: 'Плюсы и Минусы Сайта',
+          screentable: 'Скриншоты и Режимы',
+          sitedetails: 'Платежные Способы',
+          sitealternates: 'Похожие Сайты'
+      },
+      tr: {
+          plusminus: 'Artılar ve Eksiler',
+          screentable: 'Ekran Görüntüleri ve Modlar',
+          sitedetails: 'Ödeme Yöntemleri',
+          sitealternates: 'Benzer Siteler'
+      }
+  };
+
+  const t = translations[languageTag];
+
+  const mainBox = document.querySelector('.box.main');
+  const mirrorRedirect = document.querySelector('.mirror-redirect');
+
+  const navReview = document.createElement('div');
+  navReview.classList.add('nav-review');
+
+  const ol = document.createElement('ol');
+  navReview.appendChild(ol);
+
+  const sections = [
+      { selector: '.plusminus', text: t.plusminus },
+      { selector: 'h2', text: document.querySelector('h2')?.textContent },
+      { selector: 'h3', text: document.querySelector('h3')?.textContent },
+      { selector: '.screentable', text: t.screentable },
+      { selector: '.sitedetails', text: t.sitedetails },
+      { selector: '.sitealternates', text: t.sitealternates }
+  ];
+
+  sections.forEach(section => {
+    const element = document.querySelector(section.selector);
+    if (element) {
+        const li = document.createElement('li');
+        li.textContent = section.text;
+        li.addEventListener('click', () => {
+            const rect = element.getBoundingClientRect();
+            const offsetTop = window.scrollY + rect.top - 150;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+
+            let targetElement = element;
+            if (section.selector === 'h2') {
+                targetElement = document.querySelector('.smallreview');
+            } else if (section.selector === 'h3') {
+                targetElement = document.querySelector('.instruction');
+            }
+
+            if (targetElement) {
+                targetElement.classList.remove('navmark');
+
+                void targetElement.offsetWidth;
+
+                targetElement.classList.add('navmark');
+
+                targetElement.addEventListener('animationend', function handler() {
+                    targetElement.classList.remove('navmark');
+                    targetElement.removeEventListener('animationend', handler);
+                });
+            }
+        });
+        ol.appendChild(li);
+    }
+});
+
+if (mirrorRedirect) {
+    mirrorRedirect.insertAdjacentElement('afterend', navReview);
+} else if (mainBox) {
+    mainBox.insertAdjacentElement('afterend', navReview);
+}
+});
