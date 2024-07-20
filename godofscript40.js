@@ -2031,7 +2031,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const t = translations[languageTag];
 
   const mainBox = document.querySelector('.box.main');
-  const mirrorRedirect = document.querySelector('.mirror-redirect');
+  const mirrorRedirect = document.querySelector('.mirror-redirect, .partner-site');
 
   const navReview = document.createElement('div');
   navReview.classList.add('nav-review');

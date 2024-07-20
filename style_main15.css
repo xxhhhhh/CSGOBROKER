@@ -6205,7 +6205,6 @@ label:active,
         text-align: start;
         padding-left: unset;
         padding-left: unset;
-        margin: 10px 0;
         width: 40%;
     }
     .nav-review li::before {
@@ -6214,13 +6213,15 @@ label:active,
     }
     .nav-review ol {
         display: flex;
-        flex-direction: column;
         align-items: center;
         flex-wrap: wrap;
-        height: 230px;
-        align-content: stretch;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-direction: column;
+        height: auto;
         width: 80%;
-        margin-left: 30px;
+        max-height: 250px;
+        margin-left: 70px;
     }
     .nav-review li:hover {
         transform: unset;
@@ -6636,18 +6637,30 @@ label:active,
     }
     .mirror-redirect,
     .partner-site {
-        width: 100%;
+        width: max-content;
         height: auto;
         padding: 5px 0;
-        margin-top: 0;
+        margin: 0 auto;
         box-shadow: unset;
         background-color: rgb(11 11 11);
         border-radius: unset !important;
     }
+    .mirror-redirect {
+        position: absolute;
+        z-index: 100;
+        top: 390px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0;
+        background: unset;
+        width: auto;
+    }
+    .partner-site {
+        margin-top: 20px;
+    }
     .mirror-redirect span {
-        padding: 10px 15px;
         font-size: 14px;
-        background-color: rgb(18 18 18);
+        padding: 5px 15px;
         filter: drop-shadow(0 0 1px rgb(50 50 50));
         border-radius: 10px;
     }
@@ -6866,9 +6879,6 @@ label:active,
         width: 200px;
         height: 60px;
     }
-    .content button.copy {
-        display: none;
-    }
     .socials {
         display: none !important;
     }
@@ -7004,8 +7014,9 @@ label:active,
         left: 0 !important;
         top: 0 !important;
     }
-    .siteleftpannel .box.main {
-        background: rgb(11 11 11);
+    .siteleftpannel .box.main,
+    .sitepage .box:hover {
+        background: rgb(11 11 11) !important;
     }
     .box .logobg a {
         width: 90%;
@@ -7020,6 +7031,7 @@ label:active,
     }
     .siteblock {
         position: relative;
+        background: rgb(11 11 11);
     }
     .box {
         margin: 8px 4px 0 4px !important;
