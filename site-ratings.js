@@ -38,7 +38,6 @@ var ratings = {
     "SKINBOX":3.5,
     "Moon.Market":3.875,
     "gcskins":4.125,
-    "HypeUp":3.5,
     "vvvgamers":3.375,
     "banditcamp":4.125,
     "GrindBux":3.5,

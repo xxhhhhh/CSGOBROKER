@@ -128,7 +128,7 @@ nav .pages {
     padding-left: 25px;
 }
 nav .socials {
-    height: 50px;
+    height: auto;
     width: auto;
     display: flex;
     justify-content: center;
@@ -1731,7 +1731,7 @@ nav #pagename:focus {
 .site-attention span a {
     text-decoration: none;
     color: var(--main-color);
-    transition: color .2s ease-in-out;
+    transition: all .15s ease-in-out;
     font-weight: 600;
 }
 .site-attention span a:hover {
@@ -3167,6 +3167,8 @@ nav #logo:hover {
 }
 .siteblock {
     position: fixed;
+    display: flex;
+    flex-direction: column;
 }
 .bonusincludes {
     margin-top: 9px;
@@ -3185,6 +3187,7 @@ nav #logo:hover {
     border-radius: 10px;
     text-decoration: none;
     transition: all .15s ease-in-out;
+    order: 2;
 }
 .nav-review ol {
     width: 85%;
@@ -3214,6 +3217,7 @@ nav #logo:hover {
     background-position: center;
     position: absolute;
     left: 0;
+    top: 7px;
     width: 8px;
     height: 8px;
 
@@ -3246,19 +3250,7 @@ nav #logo:hover {
         border-radius: 10px;
     }
   }
-.mirror-redirect {
-    width: 300px;
-    height: 60px;
-    background-color: rgb(11 11 11);
-    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 9px;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: all .15s ease-in-out;
-}
+.mirror-redirect,
 .partner-site {
     width: 300px;
     height: 60px;
@@ -3270,7 +3262,8 @@ nav #logo:hover {
     margin-top: 9px;
     border-radius: 10px;
     text-decoration: none;
-    transition: transform .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    order: 1;
 }
 .return-box {
     width: 60px;
@@ -4289,7 +4282,9 @@ a.copy_style {
 .sitepage.closed .sitedetails,
 .sitepage.closed .ratingsumm,
 .sitepage.closed .box.main .logobg .rating,
-.sitepage.closed .box.main .content {
+.sitepage.closed .box.main .content,
+.sitepage.closed h2,
+.sitepage.closed h3 {
     display: none;
 }
 .sitepage.closed .box.main {
@@ -6648,21 +6643,26 @@ label:active,
     .mirror-redirect {
         position: absolute;
         z-index: 100;
-        top: 390px;
+        top: 385px;
         left: 50%;
         transform: translateX(-50%);
         padding: 0;
         background: unset;
         width: auto;
     }
+    .mirror-redirect:hover {
+        transform: translateX(-50%) scale(1.02);
+    }
     .partner-site {
-        margin-top: 20px;
+        margin-top: 10px;
     }
     .mirror-redirect span {
-        font-size: 14px;
-        padding: 5px 15px;
-        filter: drop-shadow(0 0 1px rgb(50 50 50));
-        border-radius: 10px;
+        font-size: 12px;
+        padding: 4px 8px;
+        color: var(--gray);
+    }
+    .content button.copy {
+        right: 60px;
     }
     .partner-site img {
         padding: 5px 15px;
@@ -7127,7 +7127,6 @@ label:active,
     .sitedetails .sitepros span,
     .alternates-title,
     .ratingthings .ratingway {
-        font-size: 14px !important;
         transition: all .1s ease-in-out;
     }
 }
@@ -7239,7 +7238,7 @@ label:active,
         border-radius: 10px;
     }
     .site-attention span {
-        font-size: 14px;
+        font-size: 15px;
         width: 80%;
     }
     .ratingsumm,
@@ -7544,7 +7543,7 @@ label:active,
     .smallreview p,
     .boxreview .plusminus .criteria .par li,
     .instruction li {
-        font-size: 14px !important;
+        font-size: 15px !important;
     }
     .sitealternatesboxes .box .logobg img {
         max-width: 75% !important;

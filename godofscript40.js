@@ -631,7 +631,7 @@ $('.sitepros').click(function() {
               $parent.css('height', totalHeight + 'px');
           }
       } else if ($otherActiveSitepros.length === 0) {
-          $parent.css('height', '60px');
+          $parent.css('height', '');
       }
   }
 });
@@ -893,7 +893,6 @@ $(document).ready(function(){
     '<li><a href="/reviews/steamlevels">SteamLevels</a></li>',
     '<li><a href="/reviews/steamlevelu">SteamLevelU</a></li>',
     '<li><a href="/reviews/whitemarket">White.Market</a></li>',
-    '<li><a href="/reviews/hypeup">Hypeup</a></li>',
   ];
   
   function compareSites(a, b) {
@@ -2048,46 +2047,79 @@ document.addEventListener("DOMContentLoaded", function() {
       { selector: '.sitealternates', text: t.sitealternates }
   ];
 
+  function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) - 80 &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+  }
+
   sections.forEach(section => {
-    const element = document.querySelector(section.selector);
-    if (element) {
-        const li = document.createElement('li');
-        li.textContent = section.text;
-        li.addEventListener('click', () => {
-            const rect = element.getBoundingClientRect();
-            const offsetTop = window.scrollY + rect.top - 150;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+      const element = document.querySelector(section.selector);
+      if (element && window.getComputedStyle(element).display !== 'none') {
+          const li = document.createElement('li');
+          li.textContent = section.text;
+          li.addEventListener('click', () => {
+              if (!isElementInViewport(element)) {
+                  const rect = element.getBoundingClientRect();
+                  const offsetTop = window.scrollY + rect.top - 150;
+                  window.scrollTo({
+                      top: offsetTop,
+                      behavior: 'smooth'
+                  });
+              }
 
-            let targetElement = element;
-            if (section.selector === 'h2') {
-                targetElement = document.querySelector('.smallreview');
-            } else if (section.selector === 'h3') {
-                targetElement = document.querySelector('.instruction');
-            }
+              let targetElement = element;
+              if (section.selector === 'h2') {
+                  targetElement = document.querySelector('.smallreview');
+              } else if (section.selector === 'h3') {
+                  targetElement = document.querySelector('.instruction');
+              }
 
-            if (targetElement) {
-                targetElement.classList.remove('navmark');
+              if (targetElement) {
+                  targetElement.classList.remove('navmark');
 
-                void targetElement.offsetWidth;
+                  void targetElement.offsetWidth;
 
-                targetElement.classList.add('navmark');
+                  targetElement.classList.add('navmark');
 
-                targetElement.addEventListener('animationend', function handler() {
-                    targetElement.classList.remove('navmark');
-                    targetElement.removeEventListener('animationend', handler);
-                });
-            }
-        });
-        ol.appendChild(li);
-    }
-});
+                  targetElement.addEventListener('animationend', function handler() {
+                      targetElement.classList.remove('navmark');
+                      targetElement.removeEventListener('animationend', handler);
+                  });
+              }
 
-if (mirrorRedirect) {
-    mirrorRedirect.insertAdjacentElement('afterend', navReview);
-} else if (mainBox) {
-    mainBox.insertAdjacentElement('afterend', navReview);
-}
+              if (section.selector === '.sitedetails') {
+                  document.querySelectorAll('.sitepros').forEach(sitepros => {
+                      sitepros.classList.toggle('active');
+                      if (window.innerWidth >= 1340) {
+                          const methodlist = sitepros.querySelector('.methodlist');
+                          const methodlistHeight = methodlist ? methodlist.offsetHeight : 0;
+                          const totalHeight = sitepros.offsetHeight + methodlistHeight;
+                          const parent = sitepros.closest('.sitedetails');
+                          const otherActiveSitepros = Array.from(sitepros.parentNode.children).filter(child => child !== sitepros && child.classList.contains('active'));
+                          const currentHeight = parseInt(window.getComputedStyle(parent).height);
+                          if (sitepros.classList.contains('active')) {
+                              if (currentHeight < totalHeight) {
+                                  parent.style.height = totalHeight + 'px';
+                              }
+                          } else if (otherActiveSitepros.length === 0) {
+                              parent.style.height = '';
+                          }
+                      }
+                  });
+              }
+          });
+          ol.appendChild(li);
+      }
+  });
+
+  if (mirrorRedirect) {
+      mirrorRedirect.insertAdjacentElement('afterend', navReview);
+  } else if (mainBox) {
+      mainBox.insertAdjacentElement('afterend', navReview);
+  }
 });
