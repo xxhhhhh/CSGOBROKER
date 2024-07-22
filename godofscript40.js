@@ -1498,7 +1498,6 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
     "gcskins",
     "FarmSkins",
     "RustyPot",
-    "vvvgamers",
   ];
 
   var boxElements = document.querySelectorAll(".box");
@@ -2052,7 +2051,7 @@ document.addEventListener("DOMContentLoaded", function() {
       return (
           rect.top >= 0 &&
           rect.left >= 0 &&
-          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) - 80 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) - 120 &&
           rect.right <= (window.innerWidth || document.documentElement.clientWidth)
       );
   }
@@ -2122,4 +2121,25 @@ document.addEventListener("DOMContentLoaded", function() {
   } else if (mainBox) {
       mainBox.insertAdjacentElement('afterend', navReview);
   }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  var boxes = document.querySelectorAll('.box:not(.main)');
+
+  boxes.forEach(function (box) {
+      var logoLink = box.querySelector('.logobg a');
+      if (logoLink) {
+          var href = logoLink.getAttribute('href');
+
+          var firstParagraph = box.querySelector('.content p:first-child');
+          if (firstParagraph) {
+              var newLink = document.createElement('a');
+              newLink.href = href;
+              newLink.textContent = firstParagraph.textContent;
+              newLink.classList.add('boxtitle');
+
+              firstParagraph.replaceWith(newLink);
+          }
+      }
+  });
 });
