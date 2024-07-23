@@ -893,6 +893,8 @@ $(document).ready(function(){
     '<li><a href="/reviews/steamlevels">SteamLevels</a></li>',
     '<li><a href="/reviews/steamlevelu">SteamLevelU</a></li>',
     '<li><a href="/reviews/whitemarket">White.Market</a></li>',
+    '<li><a href="/reviews/rustbounty">Rust Bounty</a></li>',
+    '<li><a href="/reviews/cobaltlab">Cobalt Lab</a></li>',
   ];
   
   function compareSites(a, b) {

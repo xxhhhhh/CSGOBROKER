@@ -87,6 +87,7 @@ var ratings = {
     "Primedice":4.125,
     "RustBounty":3.25,
     "RustReaper":3.625,
+    "CobaltLab":3.75,
   };
   
   function addStarRating(boxId, rating) {

@@ -211,6 +211,7 @@ function translateURLsIfNeeded() {
     
     var translations = {
       "hi": {
+        "Cobalt Lab - a popular CIS gambling platform for Rust with a unique design, fast transactions, cashback, and rewards for activity.": "कोबाल्ट लैब - एक लोकप्रिय जुआ मंच है जो रस्ट के लिए अद्वितीय डिज़ाइन, तेज लेन-देन, कैशबैक और गतिविधि के लिए पुरस्कार प्रदान करता है।",
         "RustReaper - crypto-casino and betting platform offering various modes with Rust skins gameplay, as well as generous bonuses.": "RustReaper एक क्रिप्टो-कसीनो और सट्टेबाजी मंच है जो रस्ट स्किन्स गेमप्ले के साथ विभिन्न मोड्स और उदार बोनस प्रदान करता है।",
         "RustBounty - a gambling site for Rust skins and Cryptocurrency. It includes Cases, Roulette, as well as Giveaways and a Rakeback system.": "RustBounty - रस्ट स्किन्स के लिए एक जुआ साइट। इसमें केस, रूलेट, साथ ही गिवअवे और रेकबैक सिस्टम शामिल हैं।",
         "GGDROP - a well-known platform for opening cases in CS2. In addition, there are Case Battle, Contracts, Upgrader, and Regular Promotions.": "GGDROP - सीएस2 में केस खोलने के लिए एक प्रसिद्ध प्लेटफ़ॉर्म। इसके अलावा, केस बैटल, कॉन्ट्रैक्ट्स, अपग्रेडर, और नियमित प्रस्ताव हैं।",
@@ -419,6 +420,7 @@ function translateURLsIfNeeded() {
         "Games Giveaways": "गेम्स गिवअवे"
       },
       "tr": {
+        "Cobalt Lab - a popular CIS gambling platform for Rust with a unique design, fast transactions, cashback, and rewards for activity.": "Cobalt Lab - Rust için benzersiz tasarımı, hızlı işlemleri, cashback ve aktivite ödülleri ile popüler bir kumar platformu.",
         "RustReaper - crypto-casino and betting platform offering various modes with Rust skins gameplay, as well as generous bonuses.": "RustReaper, Rust kaplamalı oyun modları ve cömert bonuslar sunan bir kripto-kumarhane ve bahis platformudur.",
         "RustBounty - a gambling site for Rust skins and Cryptocurrency. It includes Cases, Roulette, as well as Giveaways and a Rakeback system.": "RustBounty - Rust kaplamaları için bir kumar sitesi. Kasa, Ruletin yanı sıra Çekilişler ve Rakeback sistemi içerir.",
         "GGDROP - a well-known platform for opening cases in CS2. In addition, there are Case Battle, Contracts, Upgrader, and Regular Promotions.": "GGDROP - CS2'de kutu açmak için tanınmış bir platform. Bunun yanı sıra, Kasa Savaşı, Sözleşmeler, Yükseltici ve Düzenli Promosyonlar bulunmaktadır.",
@@ -635,6 +637,7 @@ function translateURLsIfNeeded() {
         "Games Giveaways" : "Oyun Çekilişleri"
       },
       "es": {
+        "Cobalt Lab - a popular CIS gambling platform for Rust with a unique design, fast transactions, cashback, and rewards for activity.": "Cobalt Lab - una plataforma de juegos de azar popular para Rust con un diseño único, transacciones rápidas, reembolsos y recompensas por actividad.",
         "RustReaper - crypto-casino and betting platform offering various modes with Rust skins gameplay, as well as generous bonuses.": "RustReaper es un cripto-casino y plataforma de apuestas que ofrece varios modos con juego de skins de Rust, así como generosos bonos.",
         "RustBounty - a gambling site for Rust skins and Cryptocurrency. It includes Cases, Roulette, as well as Giveaways and a Rakeback system.": "RustBounty - un sitio de apuestas para skins de Rust. Incluye Cajas, Ruleta, así como Sorteos y un sistema de Rakeback.",
         "GGDROP - a well-known platform for opening cases in CS2. In addition, there are Case Battle, Contracts, Upgrader, and Regular Promotions.": "GGDROP - una plataforma conocida para abrir casos en CS2. Además, hay Batalla de Casos, Contratos, Mejoras y Promociones Regulares.",
@@ -850,6 +853,7 @@ function translateURLsIfNeeded() {
         "Games Giveaways": "Sorteos de juegos"    
       },
       "pt": {
+        "Cobalt Lab - a popular CIS gambling platform for Rust with a unique design, fast transactions, cashback, and rewards for activity.": "Cobalt Lab - uma plataforma de jogos de azar popular para Rust com um design único, transações rápidas, cashback e recompensas por atividade.",
         "RustReaper - crypto-casino and betting platform offering various modes with Rust skins gameplay, as well as generous bonuses.": "RustReaper é um cripto-cassino e plataforma de apostas que oferece vários modos com jogo de skins de Rust, bem como bônus generosos.",
         "RustBounty - a gambling site for Rust skins and Cryptocurrency. It includes Cases, Roulette, as well as Giveaways and a Rakeback system.": "RustBounty - um site de jogos de azar para skins de Rust. Inclui Caixas, Roleta, bem como Sorteios e um sistema de Rakeback.",
         "GGDROP - a well-known platform for opening cases in CS2. In addition, there are Case Battle, Contracts, Upgrader, and Regular Promotions.": "GGDROP - uma plataforma conhecida para abrir caixas no CS2. Além disso, há Batalha de Caixas, Contratos, Aperfeiçoador e Promoções Regulares.",
