@@ -3667,7 +3667,9 @@ nav #logo:hover {
 }
 
 .sitepage .box .logobg .rating::after,
-.sitepage .box .logobg .rating::before {
+.sitepage .box .logobg .rating::before,
+.sitealternates .rating-case-single::after,
+.sitealternates .rating-case-single::before {
     content: '';
     position: absolute;
     width: 20px;
@@ -3679,16 +3681,22 @@ nav #logo:hover {
     top: 0;
 }
 
-.sitepage .box .logobg .rating::before {
+.sitealternates .rating-case-single::before {
+    transform: skewX(-20deg) !important;
+}
+
+.sitepage .box .logobg .rating::before,
+.sitealternates .rating-case-single::before {
     left: -8px;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 0;
     transform: skewX(-20deg);
 
 }
 
-.sitepage .box .logobg .rating::after {
+.sitepage .box .logobg .rating::after,
+.sitealternates .rating-case-single::after {
     right: -8px;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 0 0;
 }
 
 .sitealternates {
@@ -3752,12 +3760,13 @@ nav #logo:hover {
 
 .sitealternates .rating-case-single {
     height: 30px;
-    border-radius: 5px;
+    border-radius: 0;
     left: 50%;
     transform: translateX(-50%) !important;
-    /* background-color: unset; */
     justify-content: center;
     padding-right: 10px;
+    padding-bottom: unset;
+    bottom: 10px;
 }
 
 .sitealternates .rating-case-single .rating-summ,
@@ -4019,15 +4028,16 @@ nav img:active,
     color: rgba(255, 255, 255, .3);
     top: unset;
     left: unset;
-    right: 5%;
-    bottom: 9px;
+    right: 3%;
+    bottom: 0;
     border-radius: 0 10px 0 0;
     transform: translateY(50px);
-    transition: transform .15s .05s ease-in-out, background .15s .05s;
+    transition: transform .15s .05s ease-in-out, background .15s .05s, color .15s .05s;
     position: absolute;
     width: auto;
     padding: 0 10px 0 3px;
-    height: 30px;
+    height: 40px;
+    padding-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4126,13 +4136,6 @@ nav img:active,
     background: rgb(17 17 17);
 }
 
-.boxes-holder .logobg:hover .rating-case-single,
-.boxes-holder .logobg:hover .rating-case-single::before,
-.boxes-holder .logobg:hover .vpn, 
-.boxes-holder .logobg:hover .vpn::before  {
-    background: rgb(21 21 21) !important;
-}
-
 .content p,
 .content a.boxtitle{
     color: var(--white);
@@ -4163,6 +4166,7 @@ nav img:active,
 }
 .content p:nth-child(2){
     height: 55px;
+    user-select: none;
 }
 .content p:nth-child(3){
     color: rgba(255, 255, 255, .9);
@@ -4172,6 +4176,7 @@ nav img:active,
     height: 24px;
     text-align: center;
     text-transform: uppercase;
+    user-select: none;
     display: flex;
     align-items: center;
 }
@@ -5807,18 +5812,19 @@ label:active,
     .rating-case-single {
         width: auto;
         padding-right: 4px;
-        height: 30px;
+        height: 40px;
+        padding-bottom: 10px;
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        color: var(--main-color); 
+        color: var(--main-color);
         transition: transform .15s .05s ease-in-out, background .15s .0s;
         background: var(--darkgray);
         position: absolute;
         transform: translateY(50px);
         user-select: none;
-        bottom: 9px;
-        left: 5%;
+        bottom: 0px;
+        left: 3%;
         border-radius: 10px 0 0 0;
         z-index: 1;
     }
@@ -5866,6 +5872,7 @@ label:active,
         color: var(--white);
         opacity: .3;
         transition: all .15s ease-in-out;
+        z-index: 1; 
     }
     .box:hover .rating-case,
     .box:hover .rating-case-single,
@@ -6327,6 +6334,7 @@ label:active,
     .sitealternates .box .logobg {
         height: 43%;
         background: none;
+        overflow: unset;
     }
     .sitealternates .box .content {
         height: 52%;
@@ -6464,6 +6472,9 @@ label:active,
     .box .logobg .vpn,
     .box .logobg .vpn::before {
         background: rgb(18 18 18);
+    }
+    .rating-case-single {
+        background: var(--darkgray);
     }
     body {
         background: unset;
@@ -7291,7 +7302,7 @@ label:active,
         content: unset;
     }
     .sitealternates .rating-case-single {
-        bottom: 5px;
+        bottom: -3px;
     }
     .sitealternates .site-reward p {
         font-size: 13px !important;
@@ -7819,8 +7830,9 @@ label:active,
         height: 250px !important;
     }
     .sitealternates .box .content a.copy_style {
-        bottom: 15px;
+        bottom: 7px;
         font-size: 11px;
+        padding: 8px 0;
     }
     .sitealternates .box .content p:first-child {
         margin-top: 10px;
