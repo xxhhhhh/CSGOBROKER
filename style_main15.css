@@ -4359,8 +4359,7 @@ nav img:active,
 .content a.copy_style:hover {
     background-color: #a81d34 !important;
     animation: none !important;
-    filter: unset;
-    opacity: 1;
+    filter: unset !important;
 }
 
 .content a.copy_style:hover,
