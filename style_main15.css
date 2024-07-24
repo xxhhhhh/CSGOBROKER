@@ -1626,6 +1626,19 @@ nav #pagename:focus {
 .boxreview .plusminus .criteria:nth-child(1) p::before {
     background-color: var(--green);
 }
+
+.boxreview .plusminus .criteria p::before {
+    background: linear-gradient(to right, rgb(141, 21, 41), var(--main-color));
+    -webkit-background-clip: text;
+    background-clip: inherit;
+}
+
+.boxreview .plusminus .criteria:nth-child(1) p::before {
+    background: linear-gradient(to right, rgb(21, 141, 51), var(--green));
+    -webkit-background-clip: text;
+    background-clip: inherit;
+}
+
 .boxreview .plusminus .criteria .par li {
     font-size: 16px;
     font-weight: 500;
@@ -2044,12 +2057,6 @@ nav #pagename:focus {
 .features .featuresbox .typesinside a:hover {
     transform: scale(1.03);
     filter: drop-shadow(0 0 1px #c91f3b) !important;
-}
-
-.features .featuresbox .typesinside a:hover,
-.features .featuresbox .typesinside a:hover::before,
-.features .featuresbox .typesinside a:hover::after {
-    background-color: #a81d34;
 }
 
 .features .featuresbox .typesinside a:active,
@@ -3766,7 +3773,7 @@ nav #logo:hover {
     justify-content: center;
     padding-right: 10px;
     padding-bottom: unset;
-    bottom: 10px;
+    bottom: 8px;
 }
 
 .sitealternates .rating-case-single .rating-summ,
@@ -3795,6 +3802,7 @@ nav #logo:hover {
 .sitealternates .box .content {
     height: 50%; 
     user-select: none;
+    margin-bottom: 8px;
 }
 .sitealternates .box .logobg img{
     width: auto;
@@ -4324,11 +4332,14 @@ nav img:active,
 
 .box:hover .content button.copy_style,
 .box:hover .content a.copy_style,
-.box:hover .content a::after,
-.box:hover .content a::before,
+.box:hover .content a.copy_style::after,
+.box:hover .content a.copy_style::before,
 .sitealternates .box:hover .content a.copy_style,
 .sitealternates .box:hover .content a.copy_style::before,
-.sitealternates .box:hover .content a.copy_style::after {
+.sitealternates .box:hover .content a.copy_style::after,
+.features .featuresbox .typesinside a:hover,
+.features .featuresbox .typesinside a:hover::before,
+.features .featuresbox .typesinside a:hover::after  {
     background-color: #a81d34;
 }
 
@@ -4352,14 +4363,12 @@ nav img:active,
     opacity: 1;
 }
 
-.content a.copy_style:hover {
-    background-color: #a81d34 !important;
+.content a.copy_style:hover,
+.content a.copy_style:hover::before,
+.content a.copy_style:hover::after {
+    background-color: var(--main-color) !important;
     filter: drop-shadow(0 0 1px var(--main-color));
     animation: none !important;
-}
-
-.content button:focus{
-    background: var(--main-color);
 }
 
 .instruction-mirrors li a:active {
