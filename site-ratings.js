@@ -98,13 +98,15 @@ var ratings = {
         starRatingHTML += '<div class="rating-summ">' + rating.toFixed(2) + '</div>';
         starRatingHTML += '</div>';
         var logobgElement = boxElement.querySelector('.logobg');
-        logobgElement.innerHTML += starRatingHTML;
+        if (logobgElement) {
+            logobgElement.innerHTML += starRatingHTML;
+        }
     }
-  }
-  
-  var boxesHolder = document.querySelector('.boxes-holder, .sitealternatesboxes');
-  if (boxesHolder) {
+}
+
+var boxesHolder = document.querySelector('.boxes-holder, .sitealternatesboxes');
+if (boxesHolder) {
     for (var boxId in ratings) {
         addStarRating(boxId, ratings[boxId]);
     }
-  }
+}

@@ -4245,11 +4245,13 @@ nav img:active,
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110%;
     height: 100%;
-    background: radial-gradient(50% 100% at 50% 0%, rgba(0, 0, 0, .5), transparent 100%);
-    filter: blur(5px);
+    background: rgb(12 12 12);
+    border-radius: 5px;
+    filter: blur(1px);
     z-index: 1; 
   }
 .bonus-space {
@@ -4330,6 +4332,18 @@ nav img:active,
     filter: drop-shadow(0 0 1px var(--main-color));
 }
 
+.sitepage .box:hover .content button.copy_style,
+.sitepage .box:hover .content a.copy_style {
+    filter: unset;
+}
+
+
+.sitepage .box:hover .content button.copy,
+.sitepage .box:hover .content button.copy::before {
+    background-color: rgb(32 32 32);
+    color: var(--white);
+}
+
 .box:hover .content button.copy_style,
 .box:hover .content a.copy_style,
 .box:hover .content a.copy_style::after,
@@ -4396,6 +4410,8 @@ a.copy_style {
 .sitepage .content button.copy,
 .sitepage .content button.copy::before {
     bottom: 18.6px;
+    background-color: rgb(12 12 12);
+    color: var(--gray);
 }
 .sitepage.closed .features,
 .sitepage.closed .plusminus,
