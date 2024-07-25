@@ -2145,3 +2145,28 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   });
 });
+
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = themeToggleBtn.querySelector('i');
+const themeStyleLink = document.getElementById('theme-style');
+
+let currentTheme = localStorage.getItem('theme') || 'dark';
+applyTheme(currentTheme);
+
+function applyTheme(theme) {
+  if (theme === 'light') {
+    themeStyleLink.href = '/style_light.css';
+    themeStyleLink.disabled = false;
+    themeIcon.classList.replace('bi-moon', 'bi-moon-fill');
+  } else {
+    themeStyleLink.href = '';
+    themeStyleLink.disabled = true;
+    themeIcon.classList.replace('bi-moon-fill', 'bi-moon');
+  }
+  localStorage.setItem('theme', theme);
+}
+
+themeToggleBtn.addEventListener('click', () => {
+  currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  applyTheme(currentTheme);
+});
