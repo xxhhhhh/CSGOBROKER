@@ -650,7 +650,6 @@ nav #pagename:focus {
     margin-right: 8px;
 }
 
-.navigation-weapon-sort,
 .navigation-weapon-sort {
     height: 40px;
     width: 40%;
@@ -658,9 +657,9 @@ nav #pagename:focus {
     align-items: center;
     justify-content: center;
     background-color: #111111;
-    border: 2px solid #0f0f0f;
+    filter: drop-shadow(0 0 1px #0f0f0f);
     border-radius: 5px;
-    transition: .2s all ease-in-out;
+    transition: .15s all ease-in-out;
     cursor: pointer;
 }
 #Rarity-Toggle {
@@ -685,9 +684,9 @@ nav #pagename:focus {
 }
 .site-searcher-box.enabled,
 .navigation-weapon-sort.enabled,
-.navigation-weapon-sort.reversed {
-    background-color: #161616;
-    border: 2px solid #181818;
+.navigation-weapon-sort.reversed,
+.navigation-weapon-type.enabled {
+    filter: brightness(1.1);
 }
 .navigation-weapon-sort.reversed i {
     transform: scale(1, -1);
@@ -1054,14 +1053,14 @@ nav #pagename:focus {
     margin: 3px;
     z-index: 11;
     background-color: #161616;
-    border: 2px solid #181818;
+    filter: drop-shadow(0 0 1px #181818);
     border-radius: 5px;
     color: var(--white);
     font-weight: 500;
     font-size: 12px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: .2s all ease-in-out;
+    transition: .15s all ease-in-out;
     opacity: .3;
 }
 .navigation-weapon-type.enabled {
@@ -1071,9 +1070,8 @@ nav #pagename:focus {
 .color-box-selection-button:hover,
 .color-box-selection-button.clicked,
 .navigation-weapon-sort:hover {
-    background-color: #202020;
-    border: 2px solid #212121;
-    transition: .2s all ease-in-out;
+    filter: brightness(1.1);
+    transition: .15s all ease-in-out;
     transform: scale(1.05);
 }
 .box-skins.selected {
@@ -4214,7 +4212,8 @@ nav img:active,
     padding: 0 10px;
     width: auto;
 }
-.boxes-holder .content a.boxtitle:hover {
+.boxes-holder .content a.boxtitle:hover,
+.sitealternates .content a.boxtitle:hover {
     color: rgb(188, 188, 188);
 }
 .content p:nth-child(2){
@@ -5992,6 +5991,7 @@ label:active,
     margin: 5px;
     background-color: #121212;
     border: 2px solid #141414;
+    transition: all .15s ease-in-out;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -6000,8 +6000,7 @@ label:active,
 }
 .sitepage.topic-craft .component-box:hover,
 .box-topic.sticker .component-box:hover {
-    background-color: #181818;
-    transition: all .15s ease-in-out;
+    filter: brightness(1.1);
 }
 .introduce-craft {
     margin-top: 20px;
@@ -7081,9 +7080,6 @@ label:active,
     }
     .nav-bar {
         background-color: rgba(12, 12, 12, .85);
-    }
-    .category-box-logo img {
-        opacity: .85 !important;
     }
     .category-centralizer.nav {
         margin-top: 80px;
