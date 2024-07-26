@@ -172,7 +172,7 @@ h3  {
 .content a.boxtitle,
 .box.main .content p:first-child {
     color: white;
-    background-color: #c8c8c8;
+    background-color: #181818;
     border-radius: 5px;
 }
 
@@ -434,6 +434,13 @@ h3  {
 }
 
 @media screen and (max-width: 1340px) {
+
+    .boxes-holder .content a.boxtitle,
+    .boxes-holder .content p:first-child,
+    .content a.boxtitle,
+    .box.main .content p:first-child {
+        background-color: #c8c8c8;
+    }
     .sitealternates .box .content a.boxtitle {
         padding: 0px 2px;
         background: unset;

@@ -3706,7 +3706,6 @@ nav #logo:hover {
     position: absolute;
     width: 20px;
     height: 100%;
-    transition: ease-in-out all .15s;
     background: var(--darkgray);
     box-sizing: border-box;
     transform: skewX(20deg);
