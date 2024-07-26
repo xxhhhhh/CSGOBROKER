@@ -2984,6 +2984,7 @@ nav #logo:hover {
     background: rgba(0,0,0,.1);
     height: 100%;
     width: 20%;
+    min-width: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3772,7 +3773,6 @@ nav #logo:hover {
     position: absolute;
     width: 20px;
     height: 100%;
-    transition: ease-in-out all .15s;
     box-sizing: border-box;
     border-radius: 0 0 5px 0;
     background: inherit;
@@ -3801,6 +3801,7 @@ nav #logo:hover {
     border-radius: 0;
     left: 50%;
     transform: translateX(-50%) !important;
+    transition: unset !important;
     justify-content: center;
     padding-right: 10px;
     padding-bottom: unset;
@@ -5450,10 +5451,10 @@ footer .centralizer .footer-content {
     .submenu2 li {
         transition: all .0s ease-in-out;
     }
-    .submenu2 li:hover {
-        transform: scale(1.05);
+    .submenu2 li:hover,
+    ul .submenu li:hover {
         transition: all .15s ease-in-out;
-        margin-left: 7px;
+        margin-left: 2px;
     }
     .submenu2 li a {
         color: var(--white) !important;
@@ -5465,8 +5466,9 @@ footer .centralizer .footer-content {
         color: var(--main-color) !important;
         background-color: rgb(18 18 18);
     }
-    .submenu li a:active {
-        background-color: rgb(14 14 14) !important;
+    .submenu li a:active,
+    .submenu li a:hover {
+        background-color: rgb(18 18 18) !important;
     }
     .submenu .big-category:nth-child(1) {
         margin-top: 18px;
@@ -5496,6 +5498,10 @@ footer .centralizer .footer-content {
         transition: opacity ease-in-out .15s;
         display: block;
         visibility: visible;
+        padding-right: 2px;
+        padding-bottom: 2px;
+        padding-top: 2px;
+
     }
     ul li .submenu li:first-child{
         border-radius: 5px 0 0 0;
@@ -6439,6 +6445,10 @@ label:active,
     .sitepage .box .content a.copy_style::after, 
     .sitepage .box .content a.copy_style::before {
         bottom: 12px;
+    }
+    .submenu2 li:hover,
+    ul .submenu li:hover {
+        margin-left: unset;
     }
     .nav-review ol {
         display: flex;
@@ -7635,7 +7645,7 @@ label:active,
     }
     .box.main .logobg img {
         max-width: 100% !important;
-        max-height: 125px !important;
+        max-height: 115px !important;
     }
     .instruction code,
     .site-promo-copy {
@@ -7936,6 +7946,3 @@ label:active,
         margin-top: 10px;
     }
 }
-.no-transition * {
-    transition: none !important;
-  }
