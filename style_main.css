@@ -2092,8 +2092,7 @@ nav #pagename:focus {
 .gamemodes .featuresbox .typesinside a {
     transform: scale(0.8);
     transition: ease-in-out all .2s;
-    height: 32px;
-    width: 32px;
+    position: relative;
 }
 .gamemodes .featuresbox .typesinside a {
     height: auto;
@@ -2307,165 +2306,173 @@ nav #pagename:focus {
 
 /* Payment Methods Start */
 
-.methodlist .csgo::before {
-    background-image: url(/img/minipics/payments/csgo.webp);
+.methodlist .cs2::before {
+    background-image: url(/img/minipics/payments/clear-icons/cs2.webp);
+    transform: scale(.9);
 }
 .methodlist .dota::before {
-    background-image: url(/img/minipics/payments/dota.webp);
+    background-image: url(/img/minipics/payments/clear-icons/dota.webp);
+    transform: scale(.9);
 }
 .methodlist .rust::before {
-    background-image: url(/img/minipics/payments/rust.webp);
+    background-image: url(/img/minipics/payments/clear-icons/rust.webp);
+    transform: scale(.9);
 }
 .methodlist .tf2::before {
-    background-image: url(/img/minipics/payments/tf2.webp);
+    background-image: url(/img/minipics/payments/clear-icons/tf2.webp);
 }
 .methodlist .visa::before {
-    background-image: url(/img/minipics/payments/visa.webp);
+    background-image: url(/img/minipics/payments/clear-icons/visa.webp);
 }
 .methodlist .mastercard::before {
-    background-image: url(/img/minipics/payments/mastercard.webp);
+    background-image: url(/img/minipics/payments/clear-icons/mastercard.webp);
 }
 .methodlist .paypal::before {
-    background-image: url(/img/minipics/payments/paypal.webp);
+    background-image: url(/img/minipics/payments/clear-icons/paypal.webp);
 }
 .methodlist .paysafe::before {
-    background-image: url(/img/minipics/payments/paysafe.webp);
+    background-image: url(/img/minipics/payments/clear-icons/paysafe.webp);
+    transform: scale(.9);
 }
 .methodlist .skrill::before {
-    background-image: url(/img/minipics/payments/skrill.webp);
+    background-image: url(/img/minipics/payments/clear-icons/skrill.webp);
 }
 .methodlist .qiwi::before {
-    background-image: url(/img/minipics/payments/qiwi.webp);
+    background-image: url(/img/minipics/payments/clear-icons/qiwi.webp);
 }
 .methodlist .piastrix::before {
-    background-image: url(/img/minipics/payments/piastrix.webp);
+    background-image: url(/img/minipics/payments/clear-icons/piastrix.webp);
 }
 .methodlist .webmoney::before {
-    background-image: url(/img/minipics/payments/webmoney.webp);
+    background-image: url(/img/minipics/payments/clear-icons/webmoney.webp);
 }
 .methodlist .yumoney::before {
-    background-image: url(/img/minipics/payments/yumoney.webp);
+    background-image: url(/img/minipics/payments/clear-icons/yumoney.webp);
 }
 .methodlist .bank-transfer::before {
-    background-image: url(/img/minipics/payments/bank-transfer.webp);
+    background-image: url(/img/minipics/payments/clear-icons/bank-transfer.webp);
 }
 .methodlist .sbp::before {
-    background-image: url(/img/minipics/payments/sbp.webp);
+    background-image: url(/img/minipics/payments/clear-icons/sbp.webp);
 }
 .methodlist .fkwallet::before {
-    background-image: url(/img/minipics/payments/fkwallet.webp);
+    background-image: url(/img/minipics/payments/clear-icons/fkwallet.webp);
 }
 .methodlist .gpay::before {
-    background-image: url(/img/minipics/payments/gpay.webp);
+    background-image: url(/img/minipics/payments/clear-icons/gpay.webp);
 }
 .methodlist .h1z1::before {
-    background-image: url(/img/minipics/payments/h1z1.webp);
+    background-image: url(/img/minipics/payments/clear-icons/h1z1.webp);
 }
 .methodlist .apay::before {
-    background-image: url(/img/minipics/payments/apay.webp);
+    background-image: url(/img/minipics/payments/clear-icons/apay.webp);
 }
 .methodlist .unionpay::before {
-    background-image: url(/img/minipics/payments/unionpay.webp);
+    background-image: url(/img/minipics/payments/clear-icons/unionpay.webp);
 }
 .methodlist .g2apay::before {
-    background-image: url(/img/minipics/payments/g2apay.webp);
+    background-image: url(/img/minipics/payments/clear-icons/g2apay.webp);
 }
 .methodlist .jeton::before {
-    background-image: url(/img/minipics/payments/jeton2.webp);
+    background-image: url(/img/minipics/payments/clear-icons/jeton.webp);
+    transform: scale(.95);
 }
 .methodlist .btc::before {
-    background-image: url(/img/minipics/payments/btc.webp);
+    background-image: url(/img/minipics/payments/clear-icons/btc.webp);
 }
 .methodlist .btcc::before {
-    background-image: url(/img/minipics/payments/btc.webp);
+    background-image: url(/img/minipics/payments/clear-icons/btc.webp);
 }
 .methodlist .usdt::before {
-    background-image: url(/img/minipics/payments/usdt.webp);
+    background-image: url(/img/minipics/payments/clear-icons/usdt.webp);
 }
 .methodlist .usdc::before {
-    background-image: url(/img/minipics/payments/usdc.webp);
+    background-image: url(/img/minipics/payments/clear-icons/usdc.webp);
 }
 .methodlist .eth::before {
-    background-image: url(/img/minipics/payments/eth.webp);
+    background-image: url(/img/minipics/payments/clear-icons/eth.webp);
 }
 .methodlist .ltc::before {
-    background-image: url(/img/minipics/payments/ltc.webp);
+    background-image: url(/img/minipics/payments/clear-icons/ltc.webp);
 }
 .methodlist .bnb::before {
-    background-image: url(/img/minipics/payments/bnb.webp);
+    background-image: url(/img/minipics/payments/clear-icons/bnb.webp);
 }
 .methodlist .bnbpay::before {
-    background-image: url(/img/minipics/payments/bnb.webp);
+    background-image: url(/img/minipics/payments/clear-icons/bnb.webp);
 }
 .methodlist .ripple::before {
-    background-image: url(/img/minipics/payments/ripple.webp);
+    background-image: url(/img/minipics/payments/clear-icons/ripple.webp);
+    transform: scale(.9);
 }
 .methodlist .tron::before {
-    background-image: url(/img/minipics/payments/tron.webp);
+    background-image: url(/img/minipics/payments/clear-icons/tron.webp);
+    transform: scale(.9);
 }
 .methodlist .doge::before {
-    background-image: url(/img/minipics/payments/doge.webp);
+    background-image: url(/img/minipics/payments/clear-icons/doge.webp);
 }
 .methodlist .polygon::before {
-    background-image: url(/img/minipics/payments/polygon.webp);
+    background-image: url(/img/minipics/payments/clear-icons/polygon.webp);
+    transform: scale(.9);
 }
 .methodlist .avalanche::before {
-    background-image: url(/img/minipics/payments/avalanche.webp);
+    background-image: url(/img/minipics/payments/clear-icons/avalanche.webp);
 }
 .methodlist .cardano::before {
-    background-image: url(/img/minipics/payments/cardano.webp);
+    background-image: url(/img/minipics/payments/clear-icons/cardano.webp);
 }
 .methodlist .solana::before {
-    background-image: url(/img/minipics/payments/solana.webp);
+    background-image: url(/img/minipics/payments/clear-icons/solana.webp);
 }
 .methodlist .stellar::before {
-    background-image: url(/img/minipics/payments/stellar.webp);
+    background-image: url(/img/minipics/payments/clear-icons/stellar.webp);
 }
 .methodlist .eos::before {
-    background-image: url(/img/minipics/payments/eos.webp);
+    background-image: url(/img/minipics/payments/clear-icons/eos.webp);
 }
 .methodlist .giftcard::before {
-    background-image: url(/img/minipics/payments/giftcard.webp);
+    background-image: url(/img/minipics/payments/clear-icons/giftcard.webp);
 }
 .methodlist .lol::before {
-    background-image: url(/img/minipics/payments/lol.webp);
+    background-image: url(/img/minipics/payments/clear-icons/lol.webp);
 }
 .methodlist .fortnite::before {
-    background-image: url(/img/minipics/payments/fortnite.webp);
+    background-image: url(/img/minipics/payments/clear-icons/fortnite.webp);
 }
 .methodlist .valorant::before {
-    background-image: url(/img/minipics/payments/valorant.webp);
+    background-image: url(/img/minipics/payments/clear-icons/valorant.webp);
+    transform: scale(.9);
 }
 .methodlist .roblox::before {
-    background-image: url(/img/minipics/payments/roblox.webp);
+    background-image: url(/img/minipics/payments/clear-icons/roblox.webp);
 }
 .methodlist .skinsback::before {
-    background-image: url(/img/minipics/payments/skinsback.webp);
+    background-image: url(/img/minipics/payments/clear-icons/skinsback.webp);
 }
 .methodlist .skinpay::before {
-    background-image: url(/img/minipics/payments/skinpay.webp);
+    background-image: url(/img/minipics/payments/clear-icons/skinpay.webp);
 }
 .methodlist .tradingcards::before {
-    background-image: url(/img/minipics/payments/tradingcards.webp);
+    background-image: url(/img/minipics/payments/clear-icons/tradingcards.webp);
 }
 .methodlist .kinguingiftcards::before {
-    background-image: url(/img/minipics/payments/kinguin.webp);
+    background-image: url(/img/minipics/payments/clear-icons/kinguin.webp);
 }
 .methodlist .waxpeer::before {
-    background-image: url(/img/minipics/payments/waxpeer.webp);
+    background-image: url(/img/minipics/payments/clear-icons/waxpeer.webp);
 }
 .methodlist .gamemoney::before {
-    background-image: url(/img/minipics/payments/gamemoney.webp);
+    background-image: url(/img/minipics/payments/clear-icons/gamemoney.webp);
 }
 
 /* Payment Methods Ends */
 .typesinside ::before,
 .methodlist ::before {
-    border-radius: 5px;
     display: inline-block;
     background-size: cover;
-    height: 32px;
-    width: 32px;
+    height: 28px;
+    width: 28px;
 }
 .methodlist a {
     margin: 2px;
@@ -2474,6 +2481,7 @@ nav #pagename:focus {
     transition: all .2s ease-in-out;
     transform: scale(0.89);
     filter: grayscale(1) brightness(100%);
+    position: relative;
 }
 .star_rating {
     padding: 0 2px;
@@ -5238,28 +5246,31 @@ footer .centralizer .footer-content {
   .gamemodes .featuresbox .typesinside a[aria-label]:after  {
     content: '';
     opacity: 0;
-    width: 150px;
+    width: auto;
     height: 10px;
     border-radius: 3px;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 12px;
     transition: opacity .15s ease-in-out;
-    filter: drop-shadow(0px 0px 3px rgb(22, 22, 22));
+    filter: drop-shadow(0px 0px 1px rgb(22, 22, 22));
     white-space: nowrap;
     pointer-events: none;
     position: absolute;
     top: -70%;
-    left: -60px;
     display: flex;
     justify-content: center;
     user-select: none;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .gamemodes .featuresbox .typesinside a[aria-label]:after,
   .methodlist a[aria-label]:after  {
-    left: -63px;
     top: -85%;
+  }
+  .methodlist a[aria-label]:after {
+    top: -65%;
   }
   .slider-container .slick-slider {
     margin-top: 18px;
