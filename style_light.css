@@ -517,8 +517,9 @@ h3  {
 .features .featuresbox .typesinside a::before,
 .features .featuresbox .typesinside a::after,
 .features .featuresbox .typesinside a,
-.nav-review  {
-    transition: none;
+.nav-review,
+.box .logobg .best  {
+    transition: none !important;
 }
 
 .features .featuresbox .typesinside a::before,

@@ -4215,6 +4215,9 @@ nav img:active,
     text-transform: uppercase;
     text-align: center;
 }
+.sitealternates .content a.boxtitle {
+    margin-top: 12px;
+}
 .content a.boxtitle {
     transition: all .15s ease-in-out;
     padding: 0 10px;
@@ -6580,6 +6583,16 @@ label:active,
     .box .logobg .vpn::before {
         background: inherit;
     }
+    .rating-case-single,
+    .boxes-holder .rating-case-single::before,
+    .box .logobg .vpn,
+    .box .logobg .vpn::before,
+    .boxes-holder .box .content,
+    .box,
+    .content a.boxtitle,
+    .box .content {
+        transition: .15s transform ease-in-out !important;
+    }
     .rating-case-single {
         background: rgb(18, 18, 18);
     }
@@ -7874,6 +7887,7 @@ label:active,
         width: 55%;
         position: relative;
         bottom: unset;
+        margin-top: unset;
     }
 }
 @media screen and (max-width: 644px) {
