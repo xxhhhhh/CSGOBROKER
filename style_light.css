@@ -292,8 +292,10 @@ h3  {
 
 .boxes-holder .box:hover .rating-case-single, 
 .boxes-holder .box:hover .rating-case-single::before, 
-.boxes-holder .box:hover .logobg .vpn, 
+.boxes-holder .box:hover .logobg .vpn,
 .boxes-holder .box:hover .logobg .vpn::before,
+.box .logobg .vpn,
+.box .logobg .vpn::before, 
 .rating-case-single,
 .boxes-holder .rating-case-single::before,
 .sitepage .box .logobg .rating,
