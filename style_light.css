@@ -368,6 +368,10 @@ h3  {
     filter: drop-shadow(0 0 1px rgb(200 200 200));
 }
 
+.box-skins .skin:hover {
+    background: var(--white) !important;
+}
+
 .close-box-skins {
     background-color: #f2f2f2;
     border: 2px solid #f2f2f2;

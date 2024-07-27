@@ -1,11 +1,11 @@
 var ratings = {
     "csgo500": 4.75,
     "CSGOFast":4,
-    "Gamdom": 4.125,
+    "Gamdom": 4.25,
     "CSGOEmpire":4,
     "CSFAIL":3.5,
     "CSGORUN":3.5,
-    "CSGOLuck":3.875,
+    "CSGOLuck":4.125,
     "Key-Drop":3.5,
     "xplay":4.5,
     "InsaneGG":3.5,

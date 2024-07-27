@@ -686,7 +686,7 @@ nav #pagename:focus {
 .navigation-weapon-sort.enabled,
 .navigation-weapon-sort.reversed,
 .navigation-weapon-type.enabled {
-    filter: brightness(1.1);
+    filter: brightness(1.1) drop-shadow(0 0 1px rgb(85 85 85));
 }
 .navigation-weapon-sort.reversed i {
     transform: scale(1, -1);
@@ -1053,7 +1053,7 @@ nav #pagename:focus {
     margin: 3px;
     z-index: 11;
     background-color: #161616;
-    filter: drop-shadow(0 0 1px #181818);
+    filter: drop-shadow(0 0 1px rgb(85 85 85));
     border-radius: 5px;
     color: var(--white);
     font-weight: 500;
@@ -1070,7 +1070,7 @@ nav #pagename:focus {
 .color-box-selection-button:hover,
 .color-box-selection-button.clicked,
 .navigation-weapon-sort:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.1) drop-shadow(0 0 1px rgb(85 85 85));
     transition: .15s all ease-in-out;
     transform: scale(1.05);
 }
