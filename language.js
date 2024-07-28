@@ -1,0 +1,1438 @@
+document.addEventListener('DOMContentLoaded', function() {
+
+  var userChoice = getCookie('languageChoice');
+
+  function handleLanguageRedirect() {
+    var currentUrl = window.location.pathname;
+    var newUrl = currentUrl;
+  
+    if (userChoice && userChoice !== 'en') {
+      var parts = currentUrl.split('/');
+  
+      if (parts.length > 1 && isLanguageTag(parts[1])) {
+        parts.splice(1, 1);
+      }
+  
+      parts.splice(1, 0, userChoice);
+      newUrl = parts.join('/');
+  
+      if (newUrl !== currentUrl) {
+        window.location.pathname = newUrl;
+        return false;
+      }
+    }
+  }
+  
+  function isLanguageTag(tag) {
+    return tag === 'ru' || tag === 'hi' || tag === 'pt' || tag === 'es' || tag === 'tr';
+  }
+  
+  
+  document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('lang-switch')) {
+      var selectedLang = event.target.dataset.lang;
+  
+      setCookie('languageChoice', selectedLang, 365);
+  
+      if (selectedLang !== userChoice) {
+        location.reload();
+      } else {
+        var currentPath = window.location.pathname;
+        var newPath = '/' + selectedLang + currentPath.slice(3);
+        window.location.pathname = newPath;
+      }
+    }
+  });
+  
+  function setCookie(name, value, days) {
+    var expires = '';
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = '; expires=' + date.toUTCString();
+    }
+    
+    var cookieString = name + '=' + value + expires + '; path=/; SameSite=None; Secure';
+    document.cookie = cookieString;
+  }
+  
+  function getCookie(name) {
+    var nameEQ = name + '=';
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) === ' ') {
+        c = c.substring(1, c.length);
+      }
+      if (c.indexOf(nameEQ) === 0) {
+        return c.substring(nameEQ.length, c.length);
+      }
+    }
+    return null;
+  }
+  
+  if (
+    !window.location.pathname.includes("/topic") &&
+    !window.location.pathname.includes("/reviews/") &&
+    !window.location.pathname.includes("/mirrors/") &&
+    !window.location.pathname.includes("/privacy-policy") &&
+    !window.location.pathname.includes("/terms-of-service") &&
+    !window.location.pathname.includes("/contact-us") &&
+    !document.getElementById("error-404")
+  ) {
+    handleLanguageRedirect();
+  }
+
+var requests = [
+  { url: '/index.html', targetId: 'csgo-best-sites' },
+  { url: '/freebies.html', targetId: 'freebies-sites' },
+  { url: '/earning.html', targetId: 'earning-sites' },
+  { url: '/rust.html', targetId: 'rust-sites' },
+  { url: '/dota.html', targetId: 'dota-sites' },
+  { url: '/newest.html', targetId: 'newest-sites-list' },
+  { url: '/crypto.html', targetId: 'crypto-sites' },
+  { url: '/csgo/buy-skins.html', targetId: 'buy-skins-csgo' },
+  { url: '/csgo/caseopening.html', targetId: 'caseopening-csgo' },
+  { url: '/csgo/case-battle.html', targetId: 'case-battle-csgo' },
+  { url: '/csgo/casino.html', targetId: 'casino-csgo' },
+  { url: '/csgo/coinflip.html', targetId: 'coinflip-csgo' },
+  { url: '/csgo/crash.html', targetId: 'crash-csgo' },
+  { url: '/csgo/dice.html', targetId: 'dice-csgo' },
+  { url: '/csgo/earn-by-play-csgo.html', targetId: 'earn-by-play-csgo' },
+  { url: '/csgo/instant-sell.html', targetId: 'instant-sell-csgo' },
+  { url: '/csgo/jackpot.html', targetId: 'jackpot-csgo' },
+  { url: '/csgo/marketplaces.html', targetId: 'marketplaces-csgo' },
+  { url: '/csgo/matchbetting.html', targetId: 'matchbetting-csgo' },
+  { url: '/csgo/roulette.html', targetId: 'roulette-csgo' },
+  { url: '/csgo/sell-skins.html', targetId: 'sell-skins-csgo' },
+  { url: '/csgo/trade-skins.html', targetId: 'trade-skins-csgo' },
+  { url: '/csgo/upgrader.html', targetId: 'upgrader-csgo' },
+  { url: '/csgo/mines.html', targetId: 'mines-cs2' },
+  { url: '/csgo/plinko.html', targetId: 'plinko-cs2' },
+  { url: '/earning/earn-by-play.html', targetId: 'earn-by-play-sites' },
+  { url: '/earning/offerwalls.html', targetId: 'offerwalls-list' },
+  { url: '/freebies/daily-rewards.html', targetId: 'daily-rewards-list' },
+  { url: '/freebies/deposit-bonuses.html', targetId: 'deposit-bonuses-list' },
+  { url: '/freebies/giveaways.html', targetId: 'giveaways-list' },
+  { url: '/freebies/sign-up-bonuses.html', targetId: 'sign-up-bonuses-list' },
+  { url: '/steam/levelup.html', targetId: 'levelup-list' },
+  { url: '/steam/topup.html', targetId: 'topup-list' },
+  { url: '/steam/buy-games.html', targetId: 'buygames-list' },
+  { url: '/crypto/casino.html', targetId: 'casino-crypto' },
+  { url: '/crypto/coinflip.html', targetId: 'coinflip-crypto' },
+  { url: '/crypto/crash.html', targetId: 'crash-crypto' },
+  { url: '/crypto/matchbetting.html', targetId: 'matchbetting-crypto' },
+  { url: '/crypto/roulette.html', targetId: 'roulette-crypto' },
+  { url: '/rust/buy-skins.html', targetId: 'buy-skins-rust' },
+  { url: '/rust/caseopening.html', targetId: 'caseopening-rust' },
+  { url: '/rust/case-battle.html', targetId: 'case-battle-rust' },
+  { url: '/rust/coinflip.html', targetId: 'coinflip-rust' },
+  { url: '/rust/crash.html', targetId: 'crash-rust' },
+  { url: '/rust/instant-sell.html', targetId: 'instant-sell-rust' },
+  { url: '/rust/jackpot.html', targetId: 'jackpot-rust' },
+  { url: '/rust/marketplaces.html', targetId: 'marketplaces-rust' },
+  { url: '/rust/matchbetting.html', targetId: 'matchbetting-rust' },
+  { url: '/rust/roulette.html', targetId: 'roulette-rust' },
+  { url: '/rust/sell-skins.html', targetId: 'sell-skins-rust' },
+  { url: '/rust/trade-skins.html', targetId: 'trade-skins-rust' },
+  { url: '/rust/upgrader.html', targetId: 'upgrader-rust' },
+  { url: '/dota/buy-items.html', targetId: 'buy-skins-dota' },
+  { url: '/dota/caseopening.html', targetId: 'caseopening-dota' },
+  { url: '/dota/marketplaces.html', targetId: 'marketplaces-dota' },
+  { url: '/dota/matchbetting.html', targetId: 'matchbetting-dota' },
+  { url: '/dota/roulette.html', targetId: 'roulette-dota' },
+  { url: '/dota/sell-items.html', targetId: 'sell-skins-dota' },
+  { url: '/dota/trade-items.html', targetId: 'trade-skins-dota' },
+  { url: '/dota/upgrader.html', targetId: 'upgrader-dota' },
+  { url: '/dota/instant-sell.html', targetId: 'instant-sell-dota' },
+  { url: '/tf2/buy-items.html', targetId: 'buy-items-tf2' },
+  { url: '/tf2/instant-sell.html', targetId: 'instant-sell-tf2' },
+  { url: '/tf2/marketplaces.html', targetId: 'marketplaces-tf2' },
+  { url: '/tf2/sell-items.html', targetId: 'sell-items-tf2' },
+  { url: '/tf2/trade-items.html', targetId: 'trade-items-tf2' }
+];
+
+function sendRequest(url, targetId) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(xhr.responseText, 'text/html');
+      var boxesHolder = doc.querySelector('.boxes-holder');
+      if (boxesHolder) {
+        var divToImport = document.getElementById(targetId);
+        if (divToImport) {
+          divToImport.innerHTML = boxesHolder.innerHTML;
+          translateURLsIfNeeded(divToImport);
+          addStarRatingToBoxesHolders();
+          forcemodsboxes(); 
+
+          if (isPageInTurkish()) {
+            updateURLs(sitesList);
+          }
+        }
+      }
+    }
+  };
+  xhr.open('GET', url, true);
+  xhr.send();
+}
+
+function isPageInTurkish() {
+  var path = window.location.pathname;
+  return path.startsWith('/tr/') || path.endsWith('/tr') || path.endsWith('/tr.html');
+}
+
+var boxesHolderElement = document.querySelector('.boxes-holder');
+var neededTargetId = boxesHolderElement ? boxesHolderElement.id : null;
+
+var request = requests.find(function(item) {
+  return item.targetId === neededTargetId;
+});
+
+if (request) {
+  sendRequest(request.url, request.targetId);
+}
+
+function extractLanguageTagFromHTML() {
+  const htmlElement = document.querySelector('html');
+  if (htmlElement) {
+    const langAttribute = htmlElement.getAttribute('lang');
+    if (langAttribute) {
+      return langAttribute.split('-')[0];
+    }
+  }
+  return null;
+}
+
+function translateURLsIfNeeded() {
+  if (!window.location.pathname.includes('/reviews/') && !window.location.pathname.includes('/ru/') && !window.location.pathname.includes('/mirrors/')) {
+    var languageTag = extractLanguageTagFromHTML();
+    
+    var translations = {
+      "Cobalt Lab - a popular CIS gambling platform for Rust with a unique design, fast transactions, cashback, and rewards for activity.": {
+        "es": "Cobalt Lab - una plataforma de juegos de azar popular para Rust con un diseño único, transacciones rápidas, reembolsos y recompensas por actividad.",
+        "tr": "Cobalt Lab - Rust için benzersiz tasarımı, hızlı işlemleri, cashback ve aktivite ödülleri ile popüler bir kumar platformu.",
+        "pt": "Cobalt Lab - uma plataforma de jogos de azar popular para Rust com um design único, transações rápidas, cashback e recompensas por atividade.",
+        "hi": "कोबाल्ट लैब - एक लोकप्रिय जुआ मंच है जो रस्ट के लिए अद्वितीय डिज़ाइन, तेज लेन-देन, कैशबैक और गतिविधि के लिए पुरस्कार प्रदान करता है।"
+      },
+      "RustReaper - crypto-casino and betting platform offering various modes with Rust skins gameplay, as well as generous bonuses.": {
+        "es": "RustReaper es un cripto-casino y plataforma de apuestas que ofrece varios modos con juego de skins de Rust, así como generosos bonos.",
+        "tr": "RustReaper, Rust kaplamalı oyun modları ve cömert bonuslar sunan bir kripto-kumarhane ve bahis platformudur.",
+        "pt": "RustReaper é um cripto-cassino e plataforma de apostas que oferece vários modos com jogo de skins de Rust, bem como bônus generosos.",
+        "hi": "RustReaper एक क्रिप्टो-कसीनो और सट्टेबाजी मंच है जो रस्ट स्किन्स गेमप्ले के साथ विभिन्न मोड्स और उदार बोनस प्रदान करता है।"
+      },
+      "RustBounty - a gambling site for Rust skins and Cryptocurrency. It includes Cases, Roulette, as well as Giveaways and a Rakeback system.": {
+        "es": "RustBounty - un sitio de apuestas para skins de Rust. Incluye Cajas, Ruleta, así como Sorteos y un sistema de Rakeback.",
+        "tr": "RustBounty - Rust kaplamaları için bir kumar sitesi. Kasa, Ruletin yanı sıra Çekilişler ve Rakeback sistemi içerir.",
+        "pt": "RustBounty - um site de jogos de azar para skins de Rust. Inclui Caixas, Roleta, bem como Sorteios e um sistema de Rakeback.",
+        "hi": "RustBounty - रस्ट स्किन्स के लिए एक जुआ साइट। इसमें केस, रूलेट, साथ ही गिवअवे और रेकबैक सिस्टम शामिल हैं।"
+      },
+      "GGDROP - a well-known platform for opening cases in CS2. In addition, there are Case Battle, Contracts, Upgrader, and Regular Promotions.": {
+        "es": "GGDROP - una plataforma conocida para abrir casos en CS2. Además, hay Batalla de Casos, Contratos, Mejoras y Promociones Regulares.",
+        "tr": "GGDROP - CS2'de kutu açmak için tanınmış bir platform. Bunun yanı sıra, Kasa Savaşı, Sözleşmeler, Yükseltici ve Düzenli Promosyonlar bulunmaktadır.",
+        "pt": "GGDROP - uma plataforma conhecida para abrir caixas no CS2. Além disso, há Batalha de Caixas, Contratos, Aperfeiçoador e Promoções Regulares.",
+        "hi": "GGDROP - सीएस2 में केस खोलने के लिए एक प्रसिद्ध प्लेटफ़ॉर्म। इसके अलावा, केस बैटल, कॉन्ट्रैक्ट्स, अपग्रेडर, और नियमित प्रस्ताव हैं।"
+      },
+      "RustClash, a premier Rust gambling site, offers a variety of popular games such as Roulette, Upgrader, and Cases, alongside daily cases.": {
+        "es": "RustClash ofrece juegos populares como Ruleta, Mejorador y Cajas, además de casos diarios para el disfrute de los jugadores.",
+        "tr": "RustClash, Rulet, Yükseltici ve Kutular gibi popüler oyunları içeren üst düzey Rust kumar sitesidir, ayrıca oyuncuların keyfi için günlük kutular da sunmaktadır.",
+        "pt": "RustClash é um site popular de apostas em Rust, oferecendo jogos como Roleta, Upgrader e Caixas, além de casos diários para entretenimento dos jogadores.",
+        "hi": "RustClash एक शीर्ष Rust जुआ साइट है, जिसमें रूलेट, अपग्रेडर और केस्स जैसे लोकप्रिय खेल शामिल हैं, साथ ही खिलाड़ियों के मनोरंजन के लिए रोजाना केसेस भी होते हैं।"
+      },
+      "DaddySkins is a valid CSGO Case Battle website that has been in operation since 2017, and it offers Case Battles, Case Battles, and Upgrader.": {
+        "es": "DaddySkins es un sitio web válido de Batallas de Cajas de CSGO que ha estado en funcionamiento desde 2017, y ofrece Batallas de Cajas, Batallas de Cajas y Mejoras.",
+        "tr": "DaddySkins, 2017'den beri faaliyette olan geçerli bir CSGO Kasa Savaşı web sitesidir ve Kasa Savaşları, Kasa Savaşları ve Yükseltici sunar.",
+        "pt": "DaddySkins é um site válido de Batalha de Caixas de CSGO que está em operação desde 2017 e oferece Batalhas de Caixas, Batalhas de Caixas e Upgrader.",
+        "hi": "डैडी स्किन्स एक मान्य सीएसजीओ केस बैटल वेबसाइट है जो 2017 से कार्यान्वित है, और यह केस बैटल्स, केस बैटल्स, और अपग्रेडर प्रदान करता है।"
+      },
+      "Aim.Market - CS2, Dota 2, Rust Instant-sell and skin purchasing service with a user-friendly interface. Sell any amount with no minimum.": {
+        "es": "Aim.Market - ofrece un servicio de compra y venta de skins instantáneo para CS2, Dota 2 y Rust, sin requisitos mínimos y con una interfaz fácil de usar.",
+        "tr": "Aim.Market - CS2, Dota 2 ve Rust için anında satış ve cilt satın alma hizmeti sunar. Herhangi bir minimum miktar gerekmez.",
+        "pt": "Aim.Market - Venda instantânea e compra de skins de CS2, Dota 2 e Rust com interface amigável. Sem mínimo de quantidade.",
+        "hi": "एम.मार्केट - सीएस2, डोटा 2, रस्ट तत्काल बिक्री और त्वचा खरीदी सेवा जिसमें एक उपयोगकर्ता मित्रपूर्ण इंटरफ़ेस होता है। कोई न्यूनतम नहीं, किसी भी मात्रा को बेचें।"
+      },
+      "Swap.gg is a website that allows users to buy, sell, and trade CS2, Rust , TF2 and other virtual items from various games. Working since 2017.": {
+        "es": "Swap.gg es un sitio web para comprar, vender e intercambiar objetos virtuales de varios juegos, como CS2, Rust y TF2. Funciona desde 2017.",
+        "tr": "Swap.gg, 2017'den beri CS2, Rust, TF2 ve diğer oyunlardan sanal öğeleri satın alıp, satıp ve takas etmeye olanak sağlayan bir web sitesidir.",
+        "pt": "Swap.gg é um site que permite aos usuários comprar, vender e trocar itens virtuais de CS2, Rust, TF2 e outros jogos. Trabalhando desde 2017.",
+        "hi": "Swap.gg एक वेबसाइट है जो उपयोगकर्ताओं को CS2, Rust, TF2 और अन्य विभिन्न खेलों की आभासी आइटम खरीदने, बेचने और व्यापार करने की अनुमति देती है। 2017 से काम कर रहा है।"
+      },
+      "CSMoney - Premier CS2/Dota 2 trading site since 2016. Vast selection, HD images, anti-scam, fast support. Reliable, user-friendly gaming platform.": {
+        "es": "CSMoney - líder en comercio de CS2 desde 2016. Amplia selección, protección antiestafa, soporte rápido. Plataforma confiable y fácil de usar.",
+        "tr": "CSMoney - 2016'dan beri önde gelen CS:GO/Dota 2 ticaret sitesi. Geniş seçenek, HD görüntüler, dolandırıcılığa karşı koruma, hızlı destek.",
+        "pt": "CSMoney - Site líder de negociação de CS:GO/Dota 2 desde 2016. Grande seleção, imagens em HD, proteção contra golpes, suporte rápido. Plataforma de jogos confiável e fácil de usar.",
+        "hi": "CSMoney - 2016 से प्रमुख CS:GO/Dota 2 व्यापार साइट। विस्तृत चयन, HD छवियाँ, धोखाधड़ी रोक, तेज समर्थन। विश्वसनीय, उपयोगकर्ता मित्रास्पद गेमिंग प्लेटफ़ॉर्म।"
+      },
+      "CSGOStake - Skin gambling site for Counter-Strike. Offers five engaging games, provably fair system, and transparent gameplay for enthusiasts.": {
+        "es": "CSGOStake - Sitio de apuestas de skins de Counter-Strike. Cinco juegos emocionantes, sistema justo y transparente para los fans.",
+        "tr": "CSGOStake - Counter-Strike için cilt kumar sitesi. Beş çekici oyun, kanıtlanabilir adil sistem ve meraklılar için şeffaf oyun sunar.",
+        "pt": "CSGOStake - Site de apostas de skins para Counter-Strike. Oferece cinco jogos envolventes, sistema comprovadamente justo e jogabilidade transparente para entusiastas.",
+        "hi": "CSGOStake - काउंटर-स्ट्राइक के लिए स्किन जुआ साइट। प्रशंसकों के लिए पांच आकर्षक खेल, प्रमाणित निष्पक्ष प्रणाली और पारदर्शी खेल प्रस्तुत करता है।"
+      },
+      "Rustly - Rust skin gambling platform, offers nine game modes, third-party skin marketplace, crypto support, and CSGOLuck partnership for reliability.": {
+        "es": "Rustly - Plataforma apuestas skins Rust, 9 modos juego, mercado skins terceros, criptomonedas, asociación CSGOLuck fiabilidad.",
+        "tr": "Rustly - Rust cilt kumar platformu, dokuz oyun modu, üçüncü taraf cilt pazarı, kripto desteği ve güvenilirlik için CSGOLuck ortaklığı sunar.",
+        "pt": "Rustly - Plataforma de apostas de skins do Rust com 9 modos de jogo, mercado de skins, criptomoedas e parceria com CSGOLuck.",
+        "hi": "Rustly - रस्ट स्किन गेम्ब्लिंग प्लेटफ़ॉर्म, नौ गेम मोड, थर्ड-पार्टी स्किन बाजार, क्रिप्टो समर्थन, और CSGOLuck साझेदारी की भरोसेमंदता के लिए।"
+      },
+      "CSGORUN is a leading virtual skin gambling platform with diverse modes like Crash, Roulette, PVP, and esports betting. It's user-friendly.": {
+        "es": "CSGORUN es una plataforma líder de apuestas virtuales de skins con diversos modos como Crash, Ruleta, PVP y apuestas de deportes electrónicos. Es fácil de usar.",
+        "tr": "CSGORUN - çeşitli modlar sunan lider sanal deri kumar platformudur; Çökme, Rulet, PVP ve e-spor bahisleri gibi. Kullanıcı dostudur.",
+        "pt": "CSGORUN é uma plataforma líder de apostas virtuais com skins, com diversos modos como Crash, Roleta, PVP e apostas em esportes eletrônicos. É fácil de usar.",
+        "hi": "CSGORUN एक प्रमुख आभासी त्वचा जुआ प्लेटफ़ॉर्म है जिसमें क्रैश, रूलेट, PVP, और इस्पोर्ट्स बेटिंग जैसे विभिन्न मोड हैं। यह उपयोगकर्ता-स्वीकृत है।"
+      },
+      "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": {
+        "es": "RapidSkins es una plataforma en línea creada para proporcionar a los jugadores un mercado para comprar, vender e intercambiar skins para CS2 y Rust.",
+        "tr": "RapidSkins, oyunculara CS:GO ve Rust için derileri satın alabilecekleri, satabilecekleri ve takas edebilecekleri bir çevrimiçi platformdur.",
+        "pt": "RapidSkins é uma plataforma online criada para fornecer aos jogadores um mercado para comprar, vender e negociar skins para CS2 e Rust.",
+        "hi": "RapidSkins एक ऑनलाइन प्लेटफ़ॉर्म है जिसका उद्देश्य गेमर्स को सीएस2 और रस्ट के लिए स्किन खरीदने, बेचने और व्यापार करने के लिए एक बाजार प्रदान करना है।"
+      },
+      "RustMagic - a cutting-edge Rust skin betting site, features five distinct game modes, withdrawal in Rust skins, and a daily free case system for users.": {
+        "es": "RustMagic - sitio de apuestas de skins Rust con cinco modos de juego, retiros en skins de Rust y sistema diario de estuches gratuitos.",
+        "tr": "RustMagic - Rust deri bahis sitesi olarak öne çıkar ve beş oyun modu ile Rust derilerinde çekilme ve günlük ücretsiz kasa sistemi sunar.",
+        "pt": "RustMagic - site de apostas de skins Rust com cinco modos de jogo, saques em skins Rust e sistema diário de caixas grátis.",
+        "hi": "RustMagic - एक कटिंग-एज रस्ट स्किन बेटिंग साइट, पाँच विभिन्न गेम मोड, रस्ट स्किन्स में निकासी और उपयोगकर्ताओं के लिए एक दैनिक मुफ्त केस प्रणाली के साथ।"
+      },
+      "SKINFANS - CS2 skin case opening , beautiful animations, provably fair system. Regular giveaways, Battle-pass for newcomers, sleek design.": {
+        "es": "SKINFANS - Apertura cajas piel CS2, animaciones impresionantes, sistema justo. Sorteos frecuentes, Pase batalla, diseño elegante.",
+        "tr": "SKINFANS - CS2 cilt kılıfı açma, güzel animasyonlar, ispatlanabilir adil sistem. Düzenli ödüller, yeni gelenler için Savaş Pası, şık tasarım.",
+        "pt": "SKINFANS - Abertura de caixas CS2, animações incríveis, sistema justo, sorteios, Passe de Batalha para novatos, design elegante.",
+        "hi": "SKINFANS - CS2 स्किन केस ओपनिंग, सुंदर एनीमेशन, प्रमाणित निष्पक्ष सिस्टम। नियमित गिफ्टवे, नए आनेवालों के लिए बैटल-पास, सुंदर डिज़ाइन।"
+      },
+      "CSFAIL, a prominent website in Skin Gambling, offers diverse modes, user-friendly interface, and bonus features for CS2, Dota 2, and RUST skins.": {
+        "es": "CSFAIL, un sitio web destacado en Skin Gambling, ofrece diversos modos, una interfaz fácil de usar y características de bonificación para las skins de CS2, Dota 2 y RUST.",
+        "tr": "CSFAIL, Skin Gambling'de öne çıkan bir web sitesi, CS2, Dota 2 ve RUST skinleri için çeşitli modlar, kullanıcı dostu arayüz ve bonus özellikler sunar.",
+        "pt": "CSFAIL, um site proeminente em Skin Gambling, oferece diversos modos, interface amigável e recursos de bônus para skins de CS2, Dota 2 e RUST.",
+        "hi": "CSFAIL, Skin Gambling में एक प्रमुख वेबसाइट, CS2, Dota 2, और RUST skins के लिए विविध मोड, उपयोगकर्ता-सहायक इंटरफेस, और बोनस सुविधाएं प्रदान करती है।"
+      },
+      "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": {
+        "es": "CSGO500, el mejor sitio de apuestas de CS2. Lluvias, regalos y códigos promocionales. Juegos y tragamonedas disponibles.",
+        "tr": "CSGO500, en iyi CS2 Kumar Sitesi. Düzenli yağmurlar, hediyeler ve promosyon kodları. Birçok oyun ve slot oynayabilirsiniz.",
+        "pt": "CSGO500, provavelmente o melhor site de apostas de CS2. Chuvas regulares, brindes e códigos promocionais. Você pode jogar muitos jogos e caça-níqueis.",
+        "hi": "CSGO500, संभवतः सर्वश्रेष्ठ CS2 जुआ साइट है। नियमित वर्षवृष्टि, गिफ्टवे और प्रोमोकोड्स। आप कई खेल और स्लॉट्स खेल सकते हैं।"
+      },
+      "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": {
+        "es": "CSGORoll es uno de los sitios más populares. Incluye ruleta, crash y muchos más. Ahora probando las apuestas en e-sports.",
+        "tr": "CSGORoll, en popüler sitelerden biridir. Rulet, crash ve çok daha fazlasını içerir. Şu anda e-spor bahisleri test ediliyor.",
+        "pt": "CSGORoll é um dos sites mais populares. Inclui roleta, crash e muitos outros. Agora testando apostas em e-sports.",
+        "hi": "CSGORoll एक लोकप्रिय साइटों में से एक है। जिसमें रूलेट, क्रैश और और भी कई खेल शामिल हैं। अब ई-स्पोर्ट्स बेटिंग का परीक्षण हो रहा है।"
+      },
+      "CSGOEmpire is one of the most popular site. Which includes roulette and coinflip. Working since 2016. Match Betting in priority.": {
+        "es": "CSGOEmpire es uno de los sitios más populares. Incluye ruleta y coinflip. Trabajando desde 2016. Apuesta en partidas con prioridad.",
+        "tr": "CSGOEmpire, en popüler sitelerden biridir. Rulet ve coinflip içerir. 2016'dan beri faaliyet gösteriyor. Öncelikli olarak maç bahisleri.",
+        "pt": "CSGOEmpire é um dos sites mais populares. Inclui roleta e coinflip. Trabalhando desde 2016. Aposta em partidas com prioridade.",
+        "hi": "CSGOEmpire एक प्रसिद्ध साइटों में से एक है। जिसमें रूलेट और कॉइनफ्लिप शामिल हैं। 2016 से कार्यरत है। प्राथमिकता में मैच बेटिंग है।"
+      },
+      "Trusted CS2 skin platform with rentals, endorsed by YouTubers. Secure, limited to CS2 skins, fees apply, and user reviews indicate room for improve.": {
+        "es": "Plataforma CS2 confiable respaldada por YouTubers, segura para alquilar pieles CS2. Tarifas aplicables, reseñas sugieren mejoras.",
+        "tr": "YouTuber'ların onayladığı güvenilir CS2 cilt platformu kiralama imkanı sunuyor. Ücretli, kullanıcı yorumları geliştirme alanı olduğunu gösteriyor.",
+        "pt": "Plataforma confiável de skins CS2 com aluguel, endossada por YouTubers. Segura, limitada a skins de CS2, taxas aplicáveis, avaliações indicam melhorias.",
+        "hi": "विश्वसनीय CS2 स्किन प्लेटफ़ॉर्म जिसमें किराए पर मिलने वाली सेवाएं हैं, YouTubers द्वारा समर्थित। सुरक्षित, सीएस: जीओ स्किनों तक सीमित है, शुल्क लागू होता है, और उपयोगकर्ता समीक्षाएं सुधार के लिए संकेत करती हैं।"
+      },
+      "CSGOPolygon is a legendary site like CSGODouble with classic Roulette, but have Dices, Crash, Slots and even Esports Betting!": {
+        "es": "CSGOPolygon es un sitio legendario como CSGODouble con ruleta clásica, ¡pero también tiene Dados, Crash, Tragamonedas y apuestas en e-sports!",
+        "tr": "CSGOPolygon, klasik Rulet gibi efsanevi bir sitedir, ancak Zarlar, Crash, Slotlar ve hatta e-spor bahisleri de bulunur!",
+        "pt": "CSGOPolygon é um site lendário como o CSGODouble, com roleta clássica, mas tem dados, crash, caça-níqueis e até apostas em e-sports!",
+        "hi": "CSGOPolygon CSGODouble की तरह एक पुरानी साइट है जिसमें क्लासिक रूलेट है, लेकिन डाइस, क्रैश, स्लॉट्स और इसी साथ ई-स्पोर्ट्स बेटिंग भी है!"
+      },
+      "Gamdom Casino offers a variety of in-house games, innovative social engagement, provably fair system, and good reputation in online gaming.": {
+        "es": "Gamdom Casino ofrece juegos internos, participación social innovadora, sistema justo y buena reputación en juegos en línea.",
+        "tr": "Gamdom Casino, birçok içerideki oyun, yenilikçi sosyal etkileşim, ispat edilebilir adil sistem ve çevrimiçi oyunlarda iyi bir üne sahiptir.",
+        "pt": "Gamdom Casino oferece uma variedade de jogos internos, envolvimento social inovador, sistema comprovadamente justo e boa reputação nos jogos online.",
+        "hi": "Gamdom Casino अपने भीतरी खेलों, अभिनव सामाजिक एंगेजमेंट, प्रमाणित निष्पक्ष तंत्र और ऑनलाइन गेमिंग में अच्छी प्रतिष्ठा के साथ विविधता प्रदान करने वाली एक प्लेटफॉर्म है।"
+      },
+      "CSGOPOSITIVE is a popular betting site for esports disciplines such as CS2, Dota 2, LoL, and Valorant. Also features a Cashback System.": {
+        "es": "CSGOPOSITIVE es un sitio de apuestas popular para disciplinas de deportes electrónicos como CS2, Dota 2, LoL y Valorant.",
+        "tr": "CSGOPOSITIVE, CS2, Dota 2, LoL ve Valorant gibi e-spor disiplinleri için popüler bir bahis sitesidir ve Nakit Geri Ödeme Sistemi sunar.",
+        "pt": "CSGOPOSITIVE é um popular site de apostas para eSports como CS2, Dota 2, LoL e Valorant, oferecendo sistema de cashback.",
+        "hi": "CSGOPOSITIVE CS2, Dota 2, LoL, और Valorant जैसी ईस्पोर्ट्स विधाओं के लिए एक लोकप्रिय बेटिंग साइट है। इसमें एक कैशबैक सिस्टम भी है।"
+      },
+      "Rollbit is a new Casino site which includes Sport Betting and many classic games like roulette. Includes Daily Bonuses !": {
+        "es": "Rollbit es un nuevo sitio de casino que incluye apuestas deportivas y muchos juegos clásicos como la ruleta. ¡Incluye bonos diarios!",
+        "tr": "Rollbit, spor bahislerini ve rulet gibi birçok klasik oyunu içeren yeni bir Casino sitesidir. Günlük bonuslar içerir!",
+        "pt": "Rollbit é um novo site de cassino que inclui apostas esportivas e muitos jogos clássicos como roleta. Inclui bônus diários!",
+        "hi": "Rollbit एक नया कैसीनो साइट है जिसमें स्पोर्ट्स बेटिंग और रूलेट जैसे क्लासिक खेल शामिल हैं। रोजाना बोनस भी मिलते हैं!"
+      },
+      "CSGOLuck is a licensed CSGO skin gambling site that accepts multiple deposit methods, offering various games and a user-friendly design.": {
+        "es": "CSGOLuck es un sitio de apuestas de skins de CSGO con licencia que acepta múltiples métodos de depósito, ofrece varios juegos y un diseño fácil de usar.",
+        "tr": "CSGOLuck, birden fazla para yatırma yöntemini kabul eden lisanslı bir CSGO skin bahis sitesidir ve çeşitli oyunlar ile kullanıcı dostu bir tasarım sunar.",
+        "pt": "É um site de apostas de skins de CSGO licenciado que aceita vários métodos de depósito, oferecendo diversos jogos e um design amigável para o usuário.",
+        "hi": "CSGOLuck एक लाइसेंसधारक CSGO स्किन जुआ साइट है जो कई जमा विधियों को स्वीकार करती है, विभिन्न खेल और एक उपयोगकर्ता-मित्रीपूर्ण डिज़ाइन प्रदान करती है।"
+      },
+      "Duelbits is a safe and licensed online casino with a variety of games, sports betting, esports betting, and instant cryptocurrency transactions.": {
+        "es": "Duelbits es un casino en línea seguro y con licencia que ofrece juegos, apuestas deportivas, e-sports y transacciones con criptomonedas.",
+        "tr": "Duelbits, çeşitli oyunlar, spor bahisleri, e-spor bahisleri ve anında kripto para işlemleri sunan güvenli ve lisanslı bir çevrimiçi kumarhanedir.",
+        "pt": "Um cassino online seguro e licenciado com jogos, apostas esportivas, apostas em e-sports e transações de criptomoedas instantâneas.",
+        "hi": "Duelbits एक सुरक्षित और लाइसेंस प्राप्त ऑनलाइन कैसीनो है जिसमें विभिन्न खेल, स्पोर्ट्स बेटिंग, ई-स्पोर्ट्स बेटिंग और तत्काल क्रिप्टोकरेंसी सौदों की सुविधा है।"
+      },
+      "InsaneGG is an online platform that offers a range of CSGO skin gambling games with professionally designed and smooth animations.": {
+        "es": "InsaneGG es una plataforma en línea que ofrece una variedad de juegos de apuestas de skins de CSGO con animaciones profesionales y fluidas.",
+        "tr": "InsaneGG, profesyonel olarak tasarlanmış ve akıcı animasyonlara sahip bir dizi CSGO skin bahis oyunu sunan bir çevrimiçi platformdur.",
+        "pt": "Uma plataforma online que oferece jogos de apostas de skins de CSGO com animações profissionalmente projetadas e suaves.",
+        "hi": "InsaneGG एक ऑनलाइन प्लेटफॉर्म है जो पेशेवर डिज़ाइन की गई और सुविधाजनक एनिमेशन के साथ CSGO स्किन जुआ खेलने की विभिन्न गेम्स प्रदान करती है।"
+      },
+      "Bounty Stars - gambling platform for CS2 and Rust with original games, fair gameplay, bonuses, and impressive animations. Opened in 2023.": {
+        "es": "Bounty Stars: plataforma de apuestas para CS2 y Rust con juegos originales, juego justo, bonificaciones e impresionantes animaciones.",
+        "tr": "Bounty Stars - CS2 ve Rust için orijinal oyunlar, adil oyun, bonuslar ve etkileyici animasyonlarla kumar platformu. 2023 yılında açıldı.",
+        "pt": "Bounty Stars - plataforma de apostas para CS2 e Rust com jogos originais, jogabilidade justa, bônus e animações impressionantes. Aberto em 2023.",
+        "hi": "Bounty Stars - CS2 और Rust के लिए एक जुआ प्लेटफॉर्म है जिसमें मूलभूत खेल, निष्पक्ष गेमप्ले, बोनस और अद्भुत एनिमेशन शामिल हैं। 2023 में खुला है।"
+      },
+      "CSGO-Skins is a reputable online platform where users can open custom CS2 cases and participate in daily Giveaways.": {
+        "es": "CSGO-Skins es una plataforma en línea confiable donde los usuarios pueden abrir estuches personalizados de CS2 y participar en sorteos diarios.",
+        "tr": "CSGO-Skins, kullanıcıların özel CS2 estuches açabileceği ve günlük çekilişlere katılabileceği saygın bir çevrimiçi platformdur.",
+        "pt": "CSGO-Skins é uma plataforma online confiável onde os usuários podem abrir caixas personalizadas de CS2 e participar de brindes diários.",
+        "hi": "CSGO-Skins एक प्रमाणित ऑनलाइन प्लेटफॉर्म है जहां उपयोगकर्ता विशेष रूप से तैयार किए गए CS2 केस खोल सकते हैं और दैनिक गिवअवे में भाग ले सकते हैं।"
+      },
+      "FlameCases is an online platform that permits users to open cases for CS2 and Dota 2. Since its launch in 2017, the website provides various features.": {
+        "es": "FlameCases es una plataforma en línea que permite abrir estuches para CS2 y Dota 2. Desde 2017, el sitio web ofrece varias funciones.",
+        "tr": "FlameCases, CS2 ve Dota 2 için estuches açma imkanı sağlayan bir çevrimiçi platformdur. 2017'den bu yana hizmet vermektedir.",
+        "pt": "Uma plataforma online que permite aos usuários abrir caixas para CS2 e Dota 2 desde 2017, oferecendo várias funcionalidades.",
+        "hi": "एक ऑनलाइन प्लेटफॉर्म है जो उपयोगकर्ताओं को CS2 और Dota 2 के लिए केस खोलने की अनुमति देता है। 2017 में शुरू किए जाने के बाद, वेबसाइट विभिन्न सुविधाएं प्रदान करता है।"
+      },
+      "KNIFEX is a CS2 gambling site that offers a range of game modes, including case opening, case battles, coinflip, crash, clash and many more!": {
+        "es": "KNIFEX es un sitio de apuestas de CS2 con múltiples modos de juego, incluyendo apertura y batallas de estuches, coinflip, crash, clash y más.",
+        "tr": "KNIFEX, kasa açma, kasa savaşları, coinflip, crash, çatışma gibi bir dizi oyun modu sunan bir CS2 kumar sitesidir!",
+        "pt": "Um site de apostas de CS2 com uma variedade de modos de jogo, incluindo abertura de caixas, batalhas de caixas, coinflip, crash, clash e muito mais!",
+        "hi": "KNIFEX एक CS2 जुआ साइट है जो केस खोलने, केस युद्ध, कॉइनफ्लिप, क्रैश, क्लैश और बहुत कुछ जैसे खेल मोड्स की विभिन्नता प्रदान करता है!"
+      },
+      "DatDrop is a website that specializes in opening cases that contain skins from CS2. Its most prominent feature is the case-opening battles.": {
+        "es": "DatDrop es un sitio web especializado en abrir estuches que contienen skins de CS2. Su característica más destacada son las batallas de apertura de estuches.",
+        "tr": "DatDrop, CS2'dan skin içeren estuches açmaya özgü bir web sitesidir. En önemli özelliği estuche açma savaşlarıdır.",
+        "pt": "DatDrop é um site que se especializa em abrir caixas que contêm skins do CS2. Sua característica mais proeminente são as batalhas de abertura de caixas.",
+        "hi": "DatDrop एक वेबसाइट है जो CS2 से स्किन्स शामिल करने वाले केस खोलने पर विशेषाधिकार रखती है। इसकी सबसे प्रमुख विशेषता केस खोलने की युद्ध है।"
+      },
+      "DaddySkins is a valid CSGO case opening website that has been in operation since 2017, and it offers Case Openings, Case Battles, and Upgrader.": {
+        "es": "DaddySkins es un sitio web de apertura de estuches de CSGO válido desde 2017 que ofrece Apertura de Estuches, Batallas de Estuches y Mejoras.",
+        "tr": "DaddySkins, 2017'den beri faaliyet gösteren geçerli bir CSGO estuche açma web sitesidir ve Estuche Açma, Estuche Savaşları ve Upgrader sunar.",
+        "pt": "DaddySkins é um site de abertura de caixas do CSGO que está em operação desde 2017 e oferece Aberturas de Caixas, Batalhas de Caixas e Upgrader.",
+        "hi": "DaddySkins एक मान्य CSGO केस खोलने वेबसाइट है जो 2017 से संचालित हो रही है और इसमें केस खोलने, केस युद्ध और अपग्रेडर शामिल हैं।"
+      },
+      "Clash.gg is a new CS2 Gambling site which includes many games like Roulette, Upgrader, Cases and many more !": {
+        "es": "Clash.gg es un nuevo sitio de apuestas de CS2 que incluye muchos juegos como la ruleta, upgrader, estuches ¡y muchos más!",
+        "tr": "Clash.gg, Rulet, Upgrader, Estuches gibi birçok oyunu içeren yeni bir CS2 Kumar sitesidir!",
+        "pt": "Clash.gg é um novo site de apostas de CS2 que oferece uma ampla variedade de jogos emocionantes, como Roleta, Upgrader, Caixas e muito mais!",
+        "hi": "Clash.gg एक नया CS2 जुआ साइट है जिसमें रूलेट, अपग्रेडर, केस और बहुत कुछ जैसे बहुत सारे खेल शामिल हैं!"
+      },
+      "HellStore is a platform that allows users to participate in CSGO skin betting through game modes like Coinflip, Jackpot, Upgrader, and Wheel.": {
+        "es": "HellStore es una plataforma que permite a los usuarios apostar skins de CSGO en modos de juego como Coinflip, Jackpot, Upgrader y Wheel.",
+        "tr": "HellStore, Coinflip, Jackpot, Upgrader ve Wheel gibi oyun modlarıyla CSGO skin bahislerine katılmanızı sağlayan bir platformdur.",
+        "pt": "HellStore é uma plataforma que permite aos usuários participarem de apostas de skins do CSGO através de modos de jogo como Coinflip, Jackpot e Roleta.",
+        "hi": "HellStore एक प्लेटफॉर्म है जो मुद्रा और व्हील जैसे खेल मोड्स के माध्यम से CSGO स्किन बेटिंग में भाग लेने की सुविधा प्रदान करती है।"
+      },
+      "Hellcase is an online platform that allows users to purchase virtual cases filled with skins and items for various games such as CS2, Dota 2, and Rust.": {
+        "es": "Hellcase es una plataforma en línea donde puedes comprar estuches virtuales con skins y objetos para juegos como CS2, Dota 2 y Rust.",
+        "tr": "Hellcase, CS2, Dota 2 ve Rust gibi oyunlar için skin ve eşya dolu sanal estuches satın almanıza olanak sağlayan bir çevrimiçi platformdur.",
+        "pt": "Hellcase é uma plataforma que permite aos usuários comprar caixas virtuais preenchidas com skins e itens para vários jogos como CS2, Dota 2 e Rust.",
+        "hi": "Hellcase एक ऑनलाइन प्लेटफॉर्म है जो CS2, Dota 2 और Rust जैसे विभिन्न खेलों के लिए स्किन्स और आइटम्स से भरे हुए वर्चुअल केस खरीदने की अनुमति देती है।"
+      },
+      "CSGOBIG - a gambling site for CS2 skins with game modes like Jackpot, Coinflip, Roulette, Cases, and Case Battles. Opened in 2015.": {
+        "es": "CSGOBIG: un sitio de apuestas de skins de CS2 con modos de juego como Jackpot, Coinflip, Ruleta, Estuches y Batallas de Estuches. Abrió en 2015.",
+        "tr": "CSGOBIG - CS2 skinleri için Jackpot, Coinflip, Rulet, Estuches ve Estuche Savaşları gibi oyun modlarına sahip bir kumar sitesi. 2015 yılında açıldı.",
+        "pt": "CSGOBIG - um site de apostas de skins do CS2 com modos de jogo como Jackpot, Coinflip, Roleta, Caixas e Batalhas de Caixas. Aberto em 2015.",
+        "hi": "CSGOBIG - CS2 स्किन्स के साथ जैकपॉट, कॉइनफ्लिप, रूलेट, केस और केस युद्ध जैसे खेल मोड्स के साथ एक जुआ साइट। 2015 में शुरू हुआ है।"
+      },
+      "CSGOFast is a CS2 skin gambling site that offers a wide range of exclusive game modes. One of the earliest CSGO gambling sites.": {
+        "es": "CSGOFast es un sitio de apuestas de skins de CSGO con diversos modos de juego exclusivos. Uno de los primeros sitios de apuestas de CSGO.",
+        "tr": "CSGOFast, geniş bir özel oyun modu yelpazesi sunan bir CSGO skin kumar sitesidir. En eski CSGO kumar sitelerinden biri.",
+        "pt": "CSGOFast é um site de apostas de skins do CSGO que oferece uma ampla variedade de modos de jogo exclusivos. Um dos primeiros sites do CSGO.",
+        "hi": "CSGOFast एक CSGO स्किन्स जुआ साइट है जो विभिन्न अनन्य खेल मोड्स प्रदान करती है। सबसे पहले CSGO जुआ साइटों में से एक।"
+      },
+      "Key-Drop is a reputable online platform focused on Case Opening and Case Battles, as well as custom CS2 skin cases, featuring regular giveaways.": {
+        "es": "Key-Drop es una plataforma de apuestas en línea que ofrece actividades como Batallas de Cajas, Mejoras y estuches personalizados de skins de CSGO.",
+        "tr": "Key-Drop, Case Battles ve Upgrader gibi çeşitli etkinlikler sunan ve özel CSGO skin estuches'lerine sahip olan saygın bir çevrimiçi kumar platformudur.",
+        "pt": "Key-Drop é uma plataforma de apostas online renomada que oferece Batalhas de Caixas, Upgrader e caixas de skins personalizadas do CSGO.",
+        "hi": "Key-Drop एक प्रमुख ऑनलाइन जुआ प्लेटफॉर्म है जो केस युद्ध और अपग्रेडर के अलावा कस्टम CSGO स्किन केस भी प्रदान करता है।"
+      },
+      "Farmskins is a well-known CSGO case opening website that has been operating since 2016, offering a wide selection of skins for players to unbox.": {
+        "es": "Farmskins es un sitio web de apertura de cajas de CSGO que opera desde 2016, ofreciendo una amplia selección de skins para desempaquetar.",
+        "tr": "Farmskins, 2016 yılından bu yana faaliyet gösteren, oyuncuların açabileceği geniş bir skin seçeneği sunan tanınmış bir CSGO estuche açma web sitesidir.",
+        "pt": "Farmskins é um conhecido site de abertura de caixas do CSGO, operando desde 2016, com ampla seleção de skins para os jogadores.",
+        "hi": "Farmskins एक प्रसिद्ध CSGO केस खोलने वेबसाइट है जो दैनिक रिवॉर्ड, प्रोमो कोड और केस युद्ध जैसी विशेषताएं प्रदान करती है।"
+      },
+      "Bets4.pro is an online platform that offers users the ability to place bets on esports matches, particularly for CS2 , Dota 2, Valorant and many more.": {
+        "es": "Bets4.pro es una plataforma en línea que ofrece apuestas en partidos de deportes electrónicos, incluyendo CS2, Dota 2, Valorant y más.",
+        "tr": "Bets4.pro, kullanıcılara özellikle CS2, Dota 2, Valorant ve daha birçok e-spor maçına bahis koyma imkanı sunan bir çevrimiçi platformdur.",
+        "pt": "Bets4.pro é uma plataforma online para apostas em esportes eletrônicos, incluindo CS2, Dota 2, Valorant e mais.",
+        "hi": "एक ऑनलाइन प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को इस्पोर्ट्स मैचों पर सट्टे लगाने की क्षमता प्रदान करती है, विशेष रूप से CS2, Dota 2, Valorant और बहुत सारे अन्य मैचों के लिए।"
+      },
+      "This site can be called almost legendary among peers due to its high payouts and constant promotions. Include daily bonus!": {
+        "es": "Este sitio puede considerarse casi legendario entre sus pares debido a sus altos pagos y promociones constantes. ¡Incluye bonificación diaria!",
+        "tr": "Bu site, yüksek ödemeleri ve sürekli promosyonları nedeniyle neredeyse efsanevi olarak adlandırılabilir. Günlük bonus dahil!",
+        "pt": "Este site pode ser considerado quase lendário entre os colegas devido aos seus pagamentos elevados e promoções constantes. Inclui bônus diário!",
+        "hi": "इस साइट को अपने समकक्षों के बीच लगभग अपूर्व कहा जा सकता है क्योंकि इसमें उच्च भुगतान और नियमित प्रचार की सुविधा होती है। रोजाना बोनस भी शामिल करें!"
+      },
+      "HowlGG is a Rust skin gambling platform that offers a range of games, including jackpot, coinflip, slots, and live casino games.": {
+        "es": "HowlGG es una plataforma de apuestas de skins de Rust que ofrece una variedad de juegos, incluyendo jackpot, coinflip, slots y juegos de casino en vivo.",
+        "tr": "HowlGG, jackpot, coinflip, slots ve canlı casino oyunları dahil olmak üzere çeşitli oyunlar sunan bir Rust skin bahis platformudur.",
+        "pt": "HowlGG é uma plataforma de jogos de apostas de skins do Rust que oferece uma variedade de jogos, incluindo jackpot, coinflip, slots e jogos de cassino.",
+        "hi": "HowlGG एक Rust स्किन जुआ प्लेटफ़ॉर्म है जो जैकपॉट, कॉइनफ्लिप, स्लॉट्स और लाइव कैसीनो खेल समेत विभिन्न खेल प्रदान करता है।"
+      },
+      "BanditCamp is a Rust skin gambling website that provides several Rust-themed game modes like wheel of fortune, case unboxings, and coinflip.": {
+        "es": "BanditCamp es un sitio web de apuestas de skins de Rust que ofrece modos de juego temáticos, como la rueda de la fortuna, la apertura de cajas y el coinflip.",
+        "tr": "BanditCamp, tekerlek of fortune, estuche açma ve coinflip gibi Rust temalı oyun modlarını sağlayan bir Rust skin bahis sitesidir.",
+        "pt": "BanditCamp é um site de apostas de skins do Rust que oferece vários modos de jogo temáticos do Rust, como roda da fortuna, abertura de caixas e coinflip.",
+        "hi": "BanditCamp एक Rust स्किन जुआ वेबसाइट है जो व्हील ऑफ़ फ़ॉर्च्यून, केस अनबॉक्सिंग और कॉइनफ्लिप जैसे कई Rust थीम के खेल मोड प्रदान करती है।"
+      },
+      "GCSkins is a well-known mobile app and website that offers CSGO skins and items as rewards for completing online tasks. Available since 2016.": {
+        "es": "GCSkins es una popular aplicación móvil y sitio web que ofrece skins y objetos de CSGO como recompensa por completar tareas en línea. Disponible desde 2016.",
+        "tr": "GCSkins, CSGO skinleri ve eşyalarını ödül olarak sunan popüler bir mobil uygulama ve web sitesidir. 2016'dan beri hizmet vermektedir.",
+        "pt": "GCSkins é um aplicativo móvel e um site bem conhecidos que oferecem skins e itens de CSGO como recompensa por completar tarefas online.",
+        "hi": "GCSkins एक प्रसिद्ध मोबाइल ऐप और वेबसाइट है जो ऑनलाइन कार्यों को पूरा करने के बदले में CSGO स्किन और आइटम प्रदान करती है। 2016 से उपलब्ध है।"
+      },
+      "GrindBux is a trusted platform where you can earn some money by completing surveys or play mobile and desktop games.": {
+        "es": "GrindBux es una plataforma confiable donde puedes ganar dinero completando encuestas o jugando juegos para dispositivos móviles y de escritorio.",
+        "tr": "GrindBux, anketleri tamamlayarak veya mobil ve masaüstü oyunları oynayarak para kazanabileceğiniz güvenilir bir platformdur.",
+        "pt": "GrindBux é uma plataforma confiável onde você pode ganhar dinheiro completando pesquisas ou jogando jogos para dispositivos móveis e desktop.",
+        "hi": "GrindBux एक विश्वसनीय प्लेटफ़ॉर्म है जहाँ आप सर्वेक्षण पूरा करके या मोबाइल और डेस्कटॉप गेम खेलकर कुछ पैसे कमा सकते हैं।"
+      },
+      "Rust skin gambling site that has been around since 2017. The platform offers a range of popular games, including high-roller jackpot and coinflip games.": {
+        "es": "Sitio de apuestas de skins de Rust desde 2017. Ofrece juegos populares como jackpot y coinflip para grandes apostadores.",
+        "tr": "2017'den beri faaliyet gösteren bir Rust skin bahis sitesi. Platform, yüksek bahisçi jackpot ve coinflip gibi popüler oyunları sunar.",
+        "pt": "Site de apostas de skins do Rust em operação desde 2017. Oferece variedade de jogos populares, incluindo jackpot e coinflip.",
+        "hi": "2017 से चल रही एक Rust स्किन जुआ साइट। इस प्लेटफ़ॉर्म पर लोकप्रिय खेलों की एक विस्तृत विकल्प सुविधा है, जिसमें हाई-रोलर जैकपॉट और कॉइनफ्लिप खेल शामिल हैं।"
+      },
+      "RustBet - Trusted gambling site, Rust skins as rewards. Jackpot, coinflip, and skin upgrader games. Clean reputation, SSL encryption, user-friendly.": {
+        "es": "RustBet: sitio confiable de apuestas de skins de Rust. Jackpot, coinflip y mejora de skins. Buena reputación, encriptación SSL, fácil de usar.",
+        "tr": "RustBet - Güvenilir bir bahis sitesi, ödül olarak Rust skinleri. Jackpot, coinflip ve skin yükseltme oyunları. Temiz itibar, SSL şifreleme, kullanıcı dostu.",
+        "pt": "RustBet - Site confiável de apostas com skins do Rust. Jogos de jackpot, coinflip e aprimoramento. Reputação sólida, criptografia SSL, interface amigável.",
+        "hi": "RustBet - विश्वसनीय जुआ साइट, पुरस्कार के रूप में Rust स्किन्स। जैकपॉट, कॉइनफ्लिप और स्किन अपग्रेडर खेल। साफ नाम, SSL एन्क्रिप्शन, उपयोगकर्ता के लिए सुविधाजनक।"
+      },
+      "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot and coinflip. Easily enter and withdraw items from games.": {
+        "es": "RustStake: plataforma de apuestas de skins de Rust. Jackpot, coinflip y más. Fácil depósito y retiro de elementos del juego.",
+        "tr": "RustStake, jackpot ve coinflip dahil olmak üzere çeşitli oyunlar sunan bir Rust skin bahis platformudur. Oyunlardan kolayca eşya girip çıkartabilirsiniz.",
+        "pt": "RustStake é uma plataforma de jogos de apostas de skins do Rust que oferece uma variedade de jogos, incluindo jackpot e coinflip. Entre e retire itens dos jogos com facilidade.",
+        "hi": "RustStake एक Rust स्किन जुआ मंच है जो जैकपॉट और कॉइनफ्लिप सहित कई खेलों की पेशकश करता है। आप आसानी से खेलों में आइटम प्रवेश कर सकते हैं और निकाल सकते हैं।"
+      },
+      "In fact, the progenitor of sites for earning through Steam, stands out for its huge selection of Withdrawal methods.": {
+        "es": "De hecho, el precursor de los sitios para ganar a través de Steam se destaca por su gran selección de métodos de retiro.",
+        "tr": "Aslında, Steam üzerinden kazanç elde etmek için sitelerin öncüsü olan bu site, büyük çaplı çekim yöntemleri seçeneğiyle öne çıkmaktadır.",
+        "pt": "Na verdade, o precursor de sites para ganhar dinheiro através do Steam, destaca-se pela enorme seleção de métodos de saque.",
+        "hi": "वास्तव में, स्टीम के माध्यम से कमाई के लिए साइटों का पितामह, इसके वापसी विधियों के विशाल चयन के लिए मशहूर है।"
+      },
+      "RustyLoot offers a variety of games, including Wheel, Plinko, and more. With its transparent and provably fair system, RustyLoot is safe and enjoyable.": {
+        "es": "RustyLoot ofrece juegos como Ruleta y Plinko, asegurando diversión y seguridad con su sistema transparente y comprobable.",
+        "tr": "RustyLoot, Tekerlek, Plinko ve daha fazlasını içeren çeşitli oyunlar sunar. Güvenli ve eğlenceli RustyLoot, şeffaf ve ispat edilebilir adil bir sistem sunar.",
+        "pt": "RustyLoot oferece vários jogos, incluindo Roleta, Plinko e mais. Seguro e divertido, com sistema transparente e justo.",
+        "hi": "RustyLoot व्हील, प्लिंको और अन्य खेल समेत विविधता प्रदान करता है। अपने पारदर्शी और सत्यापन योग्य सिस्टम के साथ, RustyLoot सुरक्षित और मजेदार है।"
+      },
+      "RustChance has been operating since 2017 and offers several popular games, including Jackpot, Wheel, Coinflip, Crash, and Landmines.": {
+        "es": "RustChance ha estado operando desde 2017 y ofrece varios juegos populares, incluyendo Jackpot, Ruleta, Cara o Cruz, Crash y Minas terrestres.",
+        "tr": "RustChance, 2017 yılından bu yana faaliyet gösteren ve Jackpot, Tekerlek, Coinflip, Crash ve Mayınlar gibi birçok popüler oyun sunan bir platformdur.",
+        "pt": "O RustChance está em operação desde 2017 e oferece vários jogos populares, incluindo Jackpot, Roleta, Cara ou Coroa, Queda e Campo Minado.",
+        "hi": "RustChance 2017 से संचालित हो रहा है और जैकपॉट, व्हील, कॉइनफ्लिप, क्रैश और लैंडमाइंस समेत कई लोकप्रिय खेल प्रदान करता है।"
+      },
+      "The website has a decent number of survey providers and offerwall partners to choose from, and there are plenty of options for withdrawing earnings.": {
+        "es": "El sitio web cuenta con varios proveedores de encuestas y socios de ofertas para elegir, y ofrece múltiples opciones para retirar las ganancias.",
+        "tr": "Web sitesi, seçilebilecek makul sayıda anket sağlayıcısı ve teklif duvarı ortağına sahiptir ve kazançları çekmek için birçok seçenek vardır.",
+        "pt": "O site possui um número razoável de provedores de pesquisas e parceiros de oferta para escolher, e há muitas opções para sacar os ganhos.",
+        "hi": "वेबसाइट पर उचित संख्या में सर्वेक्षण प्रदाता और ऑफरवॉल साझेदार हैं जिन्हें चुना जा सकता है, और कमाई को निकासी के लिए कई विकल्प हैं।"
+      },
+      "SkinSwap is an online platform that allows players to trade and sell skins from popular games such as CS2 and Rust. Owned and operated by RustySell.": {
+        "es": "SkinSwap es una plataforma en línea para intercambiar y vender skins de juegos populares como CS2 y Rust. Propiedad de RustySell.",
+        "tr": "SkinSwap, CS2 ve Rust gibi popüler oyunlardan skinleri ticaret yapmanıza ve satmanıza izin veren bir çevrimiçi platformdur.",
+        "pt": "O SkinSwap é uma plataforma online para negociar e vender skins de jogos populares como CS2 e Rust, pertencente à RustySell.",
+        "hi": "एक ऑनलाइन प्लेटफ़ॉर्म है जो खिलाड़ियों को CS: GO और Rust जैसे प्रसिद्ध खेलों के स्किन को विनिमय और बेचने की अनुमति देता है। RustySell द्वारा स्वामित्व और संचालित होता है।"
+      },
+      "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.": {
+        "es": "CSGOSelly es un sitio web que permite a los usuarios convertir sus skins de CSGO en dinero a través de varios métodos de pago. Fue fundado en 2021.",
+        "tr": "CSGOSelly, CSGO skinlerini para olarak çekmek için kullanıcıların çeşitli ödeme yöntemlerini kullanabildiği bir web sitesidir. 2021'de kurulmuştur.",
+        "pt": "CSGOSelly é um site que permite aos usuários converter suas skins de CSGO em dinheiro através de vários métodos de pagamento. Foi fundado em 2021.",
+        "hi": "CSGOSelly एक वेबसाइट है जो उपयोगकर्ताओं को विभिन्न भुगतान विधियों के माध्यम से अपने CSGO स्किन को पैसे में बदलने की अनुमति देती है। इसे 2021 में स्थापित किया गया था।"
+      },
+      "Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.": {
+        "es": "Sitio único donde puedes ganar dinero ganando juegos en varias disciplinas cibernéticas de juegos móviles. También tiene muchos muros de ofertas.",
+        "tr": "Bu site, çeşitli mobil oyunlarda para kazanmanızı sağlayan birçok teklif duvarı gibi farklı mobil oyun disiplinlerinde gelir elde etmenizi sağlar.",
+        "pt": "Um site único onde você pode ganhar dinheiro ganhando jogos em várias disciplinas cibernéticas de jogos móveis. Também possui muitos offerwalls.",
+        "hi": "एक अद्वितीय साइट जहां आप विभिन्न मोबाइल गेमिंग साइबर विषयों में खेल जीतकर पैसे कमा सकते हैं। इसके अलावा कई ऑफरवॉल्स भी हैं।"
+      },
+      "RustMoment is a gambling site for Rust skin enthusiasts with six games, bonuses, and a rakeback system. It accepts standard and cryptocurrency payments.": {
+        "es": "RustMoment: sitio de apuestas de skins de Rust. 6 juegos, bonificaciones y sistema de rakeback. Acepta pagos estándar y criptomonedas.",
+        "tr": "RustMoment, altı oyun, bonuslar ve rakeback sistemiyle Rust skin hayranları için bir bahis sitesidir. Standart ve kripto para ödemelerini kabul eder.",
+        "pt": "RustMoment é um site de apostas para entusiastas de skins do Rust com seis jogos, bônus e pagamentos em moeda padrão e criptomoeda.",
+        "hi": "RustMoment एक रस्ट स्किन प्रशंसकों के लिए एक जुआ साइट है जिसमें छह खेल, बोनस और एक रेकबैक सिस्टम होता है। इसमें मानक और क्रिप्टोकरेंसी भुगतान स्वीकार किए जाते हैं।"
+      },
+      "Freeward is a GPT site that provides various opportunities for users to earn rewards through tasks like surveys and watching videos.": {
+        "es": "Freeward es un sitio GPT que ofrece diversas oportunidades para que los usuarios ganen recompensas mediante tareas como encuestas y ver videos.",
+        "tr": "Freeward, kullanıcıların anketler yaparak ve videolar izleyerek ödüller kazanabilecekleri çeşitli fırsatlar sunan bir GPT sitesidir.",
+        "pt": "Freeward é um site que oferece oportunidades para os usuários ganharem recompensas por meio de tarefas como pesquisas e vídeos.",
+        "hi": "Freeward एक GPT साइट है जो सर्वेक्षण और वीडियो देखकर जैसे कार्यों के माध्यम से उपयोगकर्ताओं को पुरस्कार कमाने के विभिन्न अवसर प्रदान करती है।"
+      },
+      "Roobet is an online casino that allows users to play games using cryptocurrency. The platform has a reputation for being legitimate and safe.": {
+        "es": "Roobet es un casino en línea seguro que acepta criptomonedas para jugar. Es conocido por su reputación legítima y seguridad.",
+        "tr": "Roobet, kullanıcıların kripto para kullanarak oyun oynayabileceği bir çevrimiçi kumarhanedir. Platformun itibarı yasal ve güvenli olmasıyla bilinir.",
+        "pt": "Roobet é um cassino online que permite aos usuários jogar jogos usando criptomoeda. A plataforma tem uma reputação de ser legítima e segura.",
+        "hi": "Roobet एक ऑनलाइन कैसीनो है जो उपयोगकर्ताओं को क्रिप्टोकरेंसी का उपयोग करके खेल खेलने की अनुमति देता है। प्लेटफ़ॉर्म का विश्वासयोग्य और सुरक्षित होने का प्रमाण है।"
+      },
+      "xplay is a platform that allows CS2 players to earn skins just by playing on their servers. The platform offers various servers and daily challenges.": {
+        "es": "xplay es una plataforma que permite a los jugadores de CS2 ganar skins jugando en sus servidores. Ofrece diversos servidores y desafíos diarios.",
+        "tr": "CS2 oyuncularının sunucularında oynayarak skin kazanmasını sağlayan bir platformdur. Çeşitli sunucular ve günlük meydan okumalar sunar.",
+        "pt": "xplay é uma plataforma que permite aos jogadores de CS2 ganhar skins jogando em seus servidores. Oferece vários servidores e desafios diários.",
+        "hi": "xplay एक प्लेटफ़ॉर्म है जो CS2 खिलाड़ियों को उनके सर्वर पर खेलकर स्किन कमाने की सुविधा प्रदान करता है। प्लेटफ़ॉर्म में विभिन्न सर्वर और दैनिक चुनौतियाँ होती हैं।"
+      },
+      "Established in 2018, it offers jackpot, coinflip, and roulette games with enhanced features, provable fairness, and attractive animations.": {
+        "es": "Establecido en 2018, ofrece juegos de jackpot, coinflip y ruleta con características mejoradas, equidad demostrable y animaciones atractivas.",
+        "tr": "2018 yılında kurulan bu site, gelişmiş özelliklere, ispat edilebilir adalet sistemine ve çekici animasyonlara sahip jackpot, coinflip ve rulet oyunları sunar.",
+        "pt": "Estabelecido em 2018, oferece jogos de jackpot, coinflip e roleta com recursos aprimorados, justiça comprovável e animações atrativas.",
+        "hi": "2018 में स्थापित किया गया, यह जैकपॉट, कॉइनफ्लिप और रूलेट खेल प्रदान करता है जिनमें उन्नत सुविधाएं, साबित करने योग्य न्यायता और आकर्षक एनिमेशन होते हैं।"
+      },
+      "GameTame is a GPT site that provides rewards for completing various activities and offers. The platform is specifically designed for gamers.": {
+        "es": "GameTame es un sitio GPT que ofrece recompensas por completar actividades y ofertas. Es especialmente diseñado para jugadores.",
+        "tr": "GameTame, çeşitli aktiviteleri ve teklifleri tamamlamanın karşılığında ödüller sunan bir GPT sitesidir. Platform özellikle oyuncular için tasarlanmıştır.",
+        "pt": "GameTame é um site que oferece recompensas por completar atividades e ofertas. É projetado especialmente para jogadores.",
+        "hi": "GameTame एक GPT साइट है जो विभिन्न गतिविधियों और प्रस्तावों के पूरा करने के लिए पुरस्कार प्रदान करती है। प्लेटफ़ॉर्म विशेष रूप से गेमर्स के लिए डिज़ाइन किया गया है।"
+      },
+      "Salad is a website that offers users the opportunity to mine wallet and buy gift cards and many more using their computer's processing power.": {
+        "es": "Salad es un sitio web que ofrece a los usuarios la oportunidad de minar billeteras y comprar tarjetas de regalo y mucho más utilizando la potencia de procesamiento de su computadora.",
+        "tr": "Salad, kullanıcılara cüzdan madenciliği yapma ve bilgisayarlarının işlem gücünü kullanarak hediye kartları ve daha fazlasını satın alma fırsatı sunan bir web sitesidir.",
+        "pt": "Salad é um site que permite aos usuários minerar carteiras, comprar cartões-presente e muito mais usando o poder de processamento do computador.",
+        "hi": "Salad एक वेबसाइट है जो उपयोगकर्ताओं को अपने कंप्यूटर की प्रोसेसिंग पावर का उपयोग करके वॉलेट खनन और गिफ्टकार्ड्स खरीदने और बहुत कुछ करने का अवसर प्रदान करती है।"
+      },
+      "Site from Gamehag owners. Has a decent number of survey providers and offerwall partners to choose from, plenty of options for withdrawing earnings.": {
+        "es": "Sitio asociado a Gamehag con varias opciones de encuestas y ofertas para elegir, y múltiples opciones de retiro de ganancias.",
+        "tr": "Gamehag, birçok anket sağlayıcısı ve teklif duvarı ortağıyla birlikte kazançları çekmek için çeşitli seçenekler sunan bir site.",
+        "pt": "Site dos proprietários do Gamehag. Oferece provedores de pesquisas, parceiros de oferta e opções de saque dos ganhos.",
+        "hi": "Gamehag मालिकों की वेबसाइट। इसमें विभिन्न सर्वेक्षण प्रदाताओं और ऑफरवॉल पार्टनरों की एक अच्छी संख्या होती है जिनमें से चुनने के लिए, कमाई निकालने के लिए कई विकल्प होते हैं।"
+      },
+      "SteamGifts is a legitimate website for Steam Game Giveaways with a supportive community and helpful resources.": {
+        "es": "SteamGifts es un sitio web legítimo para sorteos de juegos de Steam con una comunidad solidaria y recursos útiles.",
+        "tr": "SteamGifts, destekleyici bir topluma ve yardımcı kaynaklara sahip Steam Oyun Hediye Çekilişleri için güvenilir bir web sitesidir.",
+        "pt": "SteamGifts é um site legítimo para sorteios de jogos do Steam, com uma comunidade solidária e recursos úteis.",
+        "hi": "SteamGifts एक वैध वेबसाइट है जो Steam गेम गिवअवे के लिए एक सहायक समुदाय और मददगार संसाधनों के साथ है।"
+      },
+      "RustCases is a trusted Rust gambling site with various game modes, a wide range of cases, and skin withdrawal options. Owned by RustChance.": {
+        "es": "RustCases es un sitio de apuestas confiable para Rust con varios modos de juego, una amplia selección de cajas y opciones de retiro de skins. Propiedad de RustChance.",
+        "tr": "RustCases, çeşitli oyun modlarına, geniş bir kutu seçeneğine ve skin çekme seçeneklerine sahip güvenilir bir Rust kumar sitesidir. RustChance tarafından sahiplenilmiştir.",
+        "pt": "RustCases é um site confiável de apostas em Rust com diversos modos de jogo, uma ampla seleção de cases e opções de retirada de skins.",
+        "hi": "RustCases एक भरोसेमंद Rust जुआ साइट है जिसमें विभिन्न खेल मोड, विशाल संख्या में केस, और स्किन निकासी के विकल्प होते हैं। RustChance के मालिकों द्वारा।"
+      },
+      "RustClash is a new Rust Gambling site which includes many games like Roulette, Upgrader, Cases and many more!": {
+        "es": "RustClash es un nuevo sitio de apuestas de Rust que incluye muchos juegos como ruleta, upgrader, cajas y ¡muchos más!",
+        "tr": "RustClash, Rulet, Yükseltici, Kutular ve daha birçok oyun gibi birçok oyun içeren yeni bir Rust Kumar sitesidir!",
+        "pt": "RustClash é um novo site de apostas de Rust que inclui muitos jogos como Roleta, Upgrader, Cases e muitos mais!",
+        "hi": "RustClash एक नया Rust जुआ साइट है जिसमें कई खेल शामिल हैं जैसे रूलेट, अपग्रेडर, केस और कई अन्य!"
+      },
+      "BC.Game is an online casino and sportsbook that was launched in 2017, offering over 8,000 games including proprietary and probably fair games.": {
+        "es": "BC.Game es un casino en línea y casa de apuestas deportivas lanzado en 2017, ofreciendo más de 8,000 juegos, incluyendo juegos propietarios.",
+        "tr": "BC.Game, 2017'de piyasaya sürülen bir çevrimiçi kumarhane ve spor kitabıdır. 8.000'den fazla oyun sunar ve mülkiyetindeki ve adil olduğu bilinir.",
+        "pt": "BC.Game é um cassino online e casa de apostas lançado em 2017, com mais de 8.000 jogos, incluindo jogos proprietários e provavelmente justos.",
+        "hi": "BC.Game एक ऑनलाइन कैसीनो और स्पोर्ट्सबुक है जिसे 2017 में लॉन्च किया गया था, जो स्वामित्व वाले और संभावित इंसाफ़ वाले गेम्स सहित 8,000 से अधिक गेम्स प्रदान करता है।"
+      },
+      "Primedice is an online Crypto Dice Game Casino that has been in operation since 2013. It was one of the first platforms to use crypto for gambling.": {
+        "es": "Primedice es un casino en línea que utiliza criptomonedas para juegos de dados. Lanzado en 2013, fue uno de los pioneros en esta forma de juego.",
+        "tr": "Primedice, 2013 yılından bu yana faaliyet gösteren bir çevrimiçi kripto zar oyunu kumarhanesidir. Kripto parayı kumar için kullanan ilk platformlardan biridir.",
+        "pt": "Primedice é um cassino de dados criptografados online em operação desde 2013, pioneiro no uso de criptomoedas em jogos de azar.",
+        "hi": "Primedice एक ऑनलाइन क्रिप्टो डाइस गेम कैसीनो है जो 2013 से संचालन में है। यह जुए के लिए क्रिप्टो का प्रयोग करने वाले पहले प्लेटफ़ॉर्मों में से एक था।"
+      },
+      "Tradeit is an online marketplace that offers players the opportunity to trade, buy, and sell skins for a variety of games, including CS2. Working since 2017.": {
+        "es": "Tradeit es un mercado en línea que permite a los jugadores intercambiar, comprar y vender skins de varios juegos, como CS2. Funciona desde 2017.",
+        "tr": "Tradeit, CS2 ve diğer oyunlar için skin takasını, alımını ve satımını sağlayan çevrimiçi bir pazardır. 2017'den beri hizmet vermektedir.",
+        "pt": "Tradeit é um mercado online de skins de jogos, incluindo CS2, onde os jogadores podem trocar, comprar e vender skins. Trabalhando desde 2017.",
+        "hi": "Tradeit एक ऑनलाइन व्यापार जगत है जो खिलाड़ियों को अवसर प्रदान करता है खेलों की विभिन्न प्रकारों के लिए स्किन व्यापार, खरीद और बेचने का। 2017 से काम कर रहा है।"
+      },
+      "DMarket is a reliable and popular marketplace for Steam items, with a large number of items available and positive reviews on Trustpilot.": {
+        "es": "DMarket es un mercado confiable y popular para artículos de Steam, con una gran cantidad de artículos disponibles y reseñas positivas en Trustpilot.",
+        "tr": "DMarket, geniş bir ürün yelpazesine sahip olan ve Trustpilot'ta olumlu değerlendirmeler alan Steam ürünleri için güvenilir ve popüler bir pazardır.",
+        "pt": "DMarket é um mercado confiável e popular para itens do Steam, com uma grande quantidade de itens disponíveis e avaliações positivas no Trustpilot.",
+        "hi": "DMarket एक विश्वसनीय और लोकप्रिय बाजार है स्टीम आइटमों के लिए, जिसमें बहुत सारे आइटम उपलब्ध हैं और ट्रस्टपायलट पर सकारात्मक समीक्षाएं हैं।"
+      },
+      "BitSkins is an online marketplace for in-game skins, particularly for Counter-Strike 2, Dota 2, and Team Fortress 2. Launched in 2015.": {
+        "es": "BitSkins es un mercado en línea para skins de juegos, especialmente para Counter-Strike 2, Dota 2 y Team Fortress 2. Lanzado en 2015.",
+        "tr": "BitSkins, CS2, Dota 2 ve Team Fortress 2 gibi oyunlardaki skinleri alıp satabileceğiniz çevrimiçi bir pazardır. 2015 yılında kurulmuştur.",
+        "pt": "BitSkins é um mercado online para skins de jogos, especialmente para Counter-Strike 2, Dota 2 e Team Fortress 2. Lançado em 2015.",
+        "hi": "BitSkins एक ऑनलाइन बाजार है खेल की स्किनों के लिए, विशेष रूप से Counter-Strike 2, Dota 2 और Team Fortress 2 के लिए। 2015 में लॉन्च किया गया।"
+      },
+      "Secure P2P marketplace owned by Hellcase. SSL-encrypted, KYC verification, friendly design, competitive pricing, trusted trading platform.": {
+        "es": "Mercado P2P seguro de Hellcase. Encriptado SSL, verificación KYC, diseño amigable, precios competitivos, plataforma confiable.",
+        "tr": "Hellcase'e ait güvenli P2P pazar. SSL şifrelemeli, KYC doğrulaması, kullanıcı dostu tasarım, rekabetçi fiyatlandırma, güvenilir ticaret platformu.",
+        "pt": "Mercado P2P seguro da Hellcase. Criptografado com SSL, verificação KYC, design amigável, preços competitivos, plataforma confiável.",
+        "hi": "Hellcase द्वारा स्वामित्व में रखा गया सुरक्षित P2P बाजार। SSL एन्क्रिप्टेड, KYC सत्यापन, मित्रतापूर्ण डिज़ाइन, प्रतिस्पर्धी मूल्य निर्धारण, विश्वसनीय व्यापार प्लेटफ़ॉर्म।"
+      },
+      "GamerPay is a trusted platform for buying and selling CS2 skins, with a free selling option, secure transactions, and high-quality skin inspection tool.": {
+        "es": "GamerPay: plataforma confiable de compra y venta de skins de CS2. Venta gratuita, transacciones seguras y alta calidad en la inspección de skins.",
+        "tr": "GamerPay, CS2 skinlerinin alınıp satılabildiği güvenilir bir platformdur. Ücretsiz satış seçeneği, güvenli işlemler ve yüksek kaliteli skin kontrol aracı sunar.",
+        "pt": "GamerPay é uma plataforma confiável para compra e venda de skins de CS2. Venda gratuita, transações seguras, inspeção de skins de alta qualidade.",
+        "hi": "GamerPay एक विश्वसनीय प्लेटफ़ॉर्म है CS2 स्किन खरीद और बेचने के लिए, जिसमें एक मुफ्त बिक्री विकल्प, सुरक्षित लेन-देन और उच्च गुणवत्ता वाला स्किन जांच उपकरण है।"
+      },
+      "CSGO Market is an online P2P marketplace that provides a safe and secure platform for buying and selling CS2 skins. Established in 2015.": {
+        "es": "CSGO Market es un mercado P2P en línea que ofrece una plataforma segura para comprar y vender skins de CS2. Establecido en 2015.",
+        "tr": "CSGO Market, CS2 skinlerinin alınıp satılabildiği güvenli ve güvenli bir platform sunan çevrimiçi bir P2P pazarıdır. 2015 yılında kuruldu.",
+        "pt": "CSGO Market é um mercado P2P online que oferece uma plataforma segura para comprar e vender skins de CS2. Estabelecido em 2015.",
+        "hi": "CSGO Market एक ऑनलाइन P2P बाजार है जो CS2 स्किन खरीद और बेचने के लिए एक सुरक्षित और सुरक्षित प्लेटफ़ॉर्म प्रदान करता है। 2015 में स्थापित किया गया।"
+      },
+      "Lis-Skins is a popular marketplace for Steam items, especially CS2, Rust and Dota 2 skins and items. The platform was founded in 2020.": {
+        "es": "Lis-Skins es un mercado popular con precios competitivos y la capacidad de vender rápidamente artículos de CS2, Dota 2 y Rust.",
+        "tr": "Lis-Skins, özellikle CS2, Rust ve Dota 2 skinleri ve ürünleri için popüler bir Steam pazarıdır. Platform, 2020 yılında kurulmuştur.",
+        "pt": "Lis-Skins é um mercado popular com preços competitivos e a capacidade de vender rapidamente itens de CS2, Dota 2 e Rust.",
+        "hi": "Lis-Skins एक लोकप्रिय मार्केटप्लेस है जहाँ प्रतिस्पर्धी कीमतों पर CS2, Dota 2 और Rust के आइटमों को जल्दी बेचने की सुविधा है।"
+      },
+      "SkinCashier is an online platform that allows players to Instant Sell their CS2, Rust, Dota 2, and TF2 skins for real money. Operating since 2020.": {
+        "es": "SkinCashier es una plataforma en línea que permite vender instantáneamente skins de CS2, Rust, Dota 2 y TF2 por dinero real. Desde 2020.",
+        "tr": "SkinCashier, CS2, Rust, Dota 2 ve TF2 kaplamalarını anında satmanızı sağlayan bir çevrimiçi platformdur. 2020'den beri faaliyette.",
+        "pt": "SkinCashier é uma plataforma online de venda instantânea de skins de CS2, Rust, Dota 2 e TF2 por dinheiro real desde 2020.",
+        "hi": "SkinCashier एक ऑनलाइन प्लेटफ़ॉर्म है जो खिलाड़ियों को अपने CS2, Rust, Dota 2 और TF2 स्किन को तत्काल बेचने की अनुमति देता है और वास्तविक धन के लिए। 2020 से संचालित हो रहा है।"
+      },
+      "WhiteMarket is a P2P platform for CS2 skin trading. It offers secure trades, various deposit options, and community engagement.": {
+        "es": "WhiteMarket: plataforma P2P para intercambio seguro de skins de CS2 con opciones de depósito y participación comunitaria.",
+        "tr": "WhiteMarket, CS2 skin ticareti için bir P2P platformudur. Güvenli işlemler, çeşitli depozito seçenekleri ve topluluk katılımı sunar.",
+        "pt": "WhiteMarket é uma plataforma P2P segura para negociação de skins de CS2 com opções de depósito e envolvimento da comunidade.",
+        "hi": "WhiteMarket CS2 स्किन ट्रेडिंग के लिए एक P2P प्लेटफ़ॉर्म है। इसमें सुरक्षित व्यापार, विभिन्न जमा विकल्प और समुदाय का सहयोग है।"
+      },
+      "CS.Deals is a platform that allows users to buy, sell, and trade skins from popular games such as CS2, Dota 2, Rust, and Team Fortress 2. Working since 2016.": {
+        "es": "CS.Deals es una plataforma para comprar, vender y intercambiar skins de juegos populares como CS2, Dota 2, Rust y Team Fortress 2.",
+        "tr": "CS.Deals, CS2, Dota 2, Rust ve Team Fortress 2 gibi oyunlardan skin alım ve satımını sağlayan bir platformdur. 2016'dan beri aktiftir.",
+        "pt": "CS.Deals é uma plataforma para comprar, vender e trocar skins de jogos populares como CS2, Dota 2, Rust e Team Fortress 2 desde 2016.",
+        "hi": "CS.Deals एक प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को CS2, Dota 2, Rust और Team Fortress 2 जैसे प्रसिद्ध खेलों से स्किन खरीदने, बेचने और व्यापार करने की अनुमति देता है। 2016 से काम कर रहा है।"
+      },
+      "SkinBid is an online marketplace for CS2 skins and in-game items, offering buying, selling, and auctioning features with a user-friendly interface.": {
+        "es": "SkinBid: mercado en línea para skins de CS2 y objetos de juego con funciones de compra, venta y subasta y una interfaz intuitiva.",
+        "tr": "SkinBid, CS2 skinleri ve oyun içi ürünler için bir çevrimiçi pazardır ve kullanıcı dostu bir arayüzle alım, satım ve açık artırma özellikleri sunar.",
+        "pt": "SkinBid é um mercado online para skins de CS2 e itens de jogos, oferecendo recursos de compra, venda e leilão com uma interface amigável.",
+        "hi": "SkinBid एक ऑनलाइन बाजार है CS2 स्किन और खेल की आइटमों के लिए, जो एक उपयोगकर्ता-मित्रतापूर्ण इंटरफ़ेस के साथ खरीदने, बेचने और नीलामी की सुविधाएं प्रदान करता है।"
+      },
+      "LOOT.Farm is an online platform that offers users the ability to Trade virtual items from popular games like CS2, Dota 2, Team Fortress 2, and Rust.": {
+        "es": "LOOT.Farm es una plataforma en línea para intercambiar objetos virtuales de juegos como CS2, Dota 2, Team Fortress 2 y Rust.",
+        "tr": "LOOT.Farm, CS2, Dota 2, Team Fortress 2 ve Rust gibi popüler oyunlardan sanal eşyaları takas etme imkanı sunan bir çevrimiçi platformdur.",
+        "pt": "LOOT.Farm é uma plataforma online para negociação de itens virtuais de jogos populares como CS2, Dota 2, TF2 e Rust.",
+        "hi": "LOOT.Farm एक ऑनलाइन प्लेटफ़ॉर्म है जो CS2, Dota 2, Team Fortress 2 और Rust जैसे लोकप्रिय खेलों के आभासी आइटम व्यापार करने का अवसर प्रदान करता है।"
+      },
+      "SkinBaron is an online platform based in Germany that enables users to buy and sell their CS2 skins. The platform has gained a good reputation.": {
+        "es": "SkinBaron es una plataforma en línea alemana para comprar y vender skins de CS2, reconocida por su excelente reputación.",
+        "tr": "SkinBaron, kullanıcıların CS2 skinlerini satın alıp satmalarını sağlayan Almanya merkezli bir çevrimiçi platformdur. Platform iyi bir üne sahiptir.",
+        "pt": "SkinBaron é uma plataforma online alemã para compra e venda de skins de CS2 com boa reputação.",
+        "hi": "SkinBaron जर्मनी में स्थित एक ऑनलाइन प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को उनकी CS2 स्किन खरीदने और बेचने की सुविधा प्रदान करता है। प्लेटफ़ॉर्म को एक अच्छी प्रतिष्ठा हासिल हुई है।"
+      },
+      "Gamdom is one of the best CS2 match betting sites. You can play roulette, wheel, crash, slots and many more!": {
+        "es": "Gamdom es uno de los mejores sitios de apuestas en partidas de CS2. ¡Puedes jugar a la ruleta, la rueda, el crash, las tragamonedas y mucho más!",
+        "tr": "Gamdom, en iyi CS2 maç bahis sitelerinden biridir. Rulet, çark, crash, slotlar ve daha birçok oyunu oynayabilirsiniz!",
+        "pt": "A Gamdom é um dos melhores sites de apostas em partidas de CS2. Você pode jogar Roleta, Roda da Sorte, Crash, Caça-níqueis e muitos outros!",
+        "hi": "Gamdom एक बेहतरीन CS2 मैच बेटिंग साइटों में से एक है। आप रूलेट, व्हील, क्रैश, स्लॉट और बहुत कुछ खेल सकते हैं!"
+      },
+      "Avan.Market is an online platform that offers users the opportunity to sell gaming skins from popular games like CS2, Dota 2, RUST, and TF2.": {
+        "es": "Avan.Market es una plataforma en línea que ofrece a los usuarios la oportunidad de vender skins de juegos populares como CS2, Dota 2, RUST y TF2.",
+        "tr": "Avan.Market, CS2, Dota 2, RUST ve TF2 gibi popüler oyunlardan oyun skinlerini satma fırsatı sunan bir çevrimiçi platformdur.",
+        "pt": "Avan.Market é uma plataforma online que oferece aos usuários a oportunidade de vender skins de jogos populares como CS2, Dota 2, RUST e TF2.",
+        "hi": "Avan.Market एक ऑनलाइन प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को CS2, Dota 2, RUST और TF2 जैसे प्रसिद्ध खेलों की गेमिंग स्किन बेचने का अवसर प्रदान करता है।"
+      },
+      "Moon.Market - a platform for the quick sale of items from games CS2, Dota 2, Rust, and TF2 at fair prices with fast payouts.": {
+        "es": "Moon.Market - una plataforma para la venta rápida de artículos de los juegos CS2, Dota 2, Rust y TF2 a precios justos con pagos rápidos.",
+        "tr": "Moon.Market - CS2, Dota 2, Rust ve TF2 oyunlarındaki öğeleri hızlı bir şekilde satmak için adil fiyatlarla ve hızlı ödemelerle bir platform.",
+        "pt": "Moon.Market - uma plataforma para a venda rápida de itens dos jogos CS2, Dota 2, Rust e TF2 a preços justos com pagamentos rápidos.",
+        "hi": "Moon.Market - CS2, Dota 2, Rust, और TF2 खेलों के आइटम्स को तेजी से बेचने के लिए एक प्लेटफ़ॉर्म, उचित कीमतों पर और तेज़ भुगतान के साथ।"
+      },
+      "Skins.Cash is a reputable platform with positive reviews, reliable customer support, and over six years of operation. Pricing not the best one.": {
+        "es": "Skins.Cash: plataforma confiable con buenas reseñas, soporte al cliente confiable y más de seis años de experiencia. Precios no óptimos.",
+        "tr": "Skins.Cash, güvenilir müşteri desteği sunan ve altı yılı aşkın süredir aktif olan bir platformdur, ancak fiyatlandırma en iyi değildir.",
+        "pt": "Skins.Cash é uma plataforma confiável com avaliações positivas e mais de seis anos de operação, mas preços não são os melhores.",
+        "hi": "Skins.Cash एक प्रतिष्ठित प्लेटफ़ॉर्म है जिसके पास सकारात्मक समीक्षा, विश्वसनीय ग्राहक सहायता और छह साल से अधिक कार्यकाल है। मूल्य बेहतर नहीं है।"
+      },
+      "CYBERSHOKE is a website that provides servers for playing CS2. It offers various servers for players to choose.": {
+        "es": "CYBERSHOKE es un sitio web que ofrece servidores para jugar CS2. Ofrece varios servidores para que los jugadores elijan.",
+        "tr": "CYBERSHOKE, CS2 oynamak için sunucular sağlayan bir web sitesidir. Oyuncuların seçebileceği çeşitli sunucular sunar.",
+        "pt": "A CYBERSHOKE é um site que disponibiliza servidores para jogar CS2. Ele oferece vários servidores para os jogadores escolherem.",
+        "hi": "CYBERSHOKE एक वेबसाइट है जो CS2 खेलने के लिए सर्वर प्रदान करती है। यह खिलाड़ियों के लिए विभिन्न सर्वर प्रदान करता है जिन्हें चुनने के लिए।"
+      },
+      "This site was created for easy leveling up Steam, you can sell emojis and profile backgrounds for Steam Trading Cards to fast level up.": {
+        "es": "Sube de nivel fácilmente en Steam. Vende emojis y fondos de perfil para Cartas de Intercambio de Steam y progresa rápidamente.",
+        "tr": "Bu site, Steam seviyenizi hızla yükseltmek için tasarlandı. Steam Ticaret Kartlarından emoji ve profil arka planları satabilir, seviye atlayabilirsiniz.",
+        "pt": "Este site facilita o aumento de nível no Steam. Venda emojis e fundos de perfil em troca de cartas de troca do Steam para subir de nível rapidamente.",
+        "hi": "यह साइट स्टीम को आसान बनाने के लिए बनाई गई है, आप स्टीम ट्रेडिंग कार्ड के लिए इमोजी और प्रोफ़ाइल बैकग्राउंड बेचकर तेजी से स्तर बढ़ा सकते हैं।"
+      },
+      "SteamLevelU is a legitimate platform to buy Steam trading card packs for enhancing Steam account levels, associated with SH Level Up.": {
+        "es": "SteamLevelU es una plataforma confiable para mejorar los niveles de tu cuenta de Steam mediante la compra de paquetes de cartas de intercambio.",
+        "tr": "SteamLevelU, Steam hesap seviyelerini yükseltmek için güvenilir bir platformdur. SH Level Up ile bağlantılıdır.",
+        "pt": "O SteamLevelU é uma plataforma legítima para comprar pacotes de cartas de troca do Steam e aumentar o nível da sua conta Steam.",
+        "hi": "SteamLevelU एक विधि स्वरूपित प्लेटफ़ॉर्म है जिससे आप स्टीम खाता स्तरों को बढ़ाने के लिए स्टीम ट्रेडिंग कार्ड पैक खरीद सकते हैं, जो एसएच लेवल अप के साथ जुड़ा हुआ है।"
+      },
+      "SteamLevels is a user-friendly website that helps increase your Steam account level by purchasing card packs and accepting CSGO skins.": {
+        "es": "SteamLevels es un sitio web fácil de usar que te ayuda a aumentar el nivel de tu cuenta de Steam. Compra paquetes de cartas e intercambia skins de CSGO.",
+        "tr": "SteamLevels, kart paketleri satın alarak ve CSGO skinlerini kabul ederek Steam hesabınızın seviyesini artırmaya yardımcı olan kullanıcı dostu bir web sitesidir.",
+        "pt": "SteamLevels é um site fácil de usar que ajuda a aumentar o nível da sua conta Steam através da compra de pacotes de cartas e da aceitação de skins do CSGO.",
+        "hi": "SteamLevels एक उपयोगकर्ता मित्रपूर्ण वेबसाइट है जो आपके स्टीम खाता स्तर को बढ़ाने में मदद करती है। इसे कार्ड पैक खरीदकर और सीएसजीओ स्किन्स स्वीकार करके किया जा सकता है।"
+      },
+      "RustStake is a Rust skin gambling platform that offers a range of games, including jackpot, and coinflip. Easily enter and withdraw items from games.": {
+        "es": "RustStake: Plataforma de apuestas de skins de Rust. Variedad de juegos, incluyendo jackpot y coinflip. Fácil retiro de elementos del juego.",
+        "tr": "RustStake, jackpot ve coinflip gibi bir dizi oyun sunan bir Rust skin kumar platformudur. Oyundan kolayca öğeleri yatırabilir ve çekebilirsiniz.",
+        "pt": "O RustStake é uma plataforma de apostas de skins de Rust com jogos como jackpot e coinflip. Fácil entrada e retirada de itens.",
+        "hi": "RustStake एक Rust स्किन जुआ प्लेटफ़ॉर्म है जो जैकपॉट और कॉइनफ्लिप समेत विभिन्न खेल प्रदान करता है। आसानी से खेलों से आइटम को दाखिल और निकाल सकते हैं।"
+      },
+      "iTrade.gg is a Trusted platform for trading rust skins. User-friendly design, free sign-up bonus, and daily rewards create a seamless trading experience.": {
+        "es": "iTrade.gg es una plataforma confiable para el comercio de skins de Rust. Su diseño intuitivo, bono de registro gratuito y recompensas diarias crean una experiencia de comercio fluida.",
+        "tr": "iTrade.gg, rostoların ticaretini yapmak için güvenilir bir platformdur. Kullanıcı dostu tasarım, ücretsiz kayıt bonusu ve günlük ödüller sorunsuz bir ticaret deneyimi sağlar.",
+        "pt": "Confiável para negociar skins de Rust. Design intuitivo, bônus de inscrição grátis e recompensas diárias para uma experiência de negociação tranquila.",
+        "hi": "iTrade.gg एक विश्वसनीय प्लेटफ़ॉर्म है जहां रस्ट स्किन्स की ट्रेडिंग की जा सकती है। उपयोगकर्ता-मित्रपूर्ण डिज़ाइन, मुफ़्त साइन-अप बोनस और दैनिक पुरस्कार एक सुगठित ट्रेडिंग अनुभव बनाते हैं।"
+      },
+      "Shuffle.com is a comprehensive crypto casino with a unique registration process, original games, a VIP program, and plans for future expansion.": {
+        "es": "Shuffle.com es un casino de criptomonedas completo con registro único, juegos originales, programa VIP y planes de expansión futura.",
+        "tr": "Shuffle.com, benzersiz bir kayıt süreci, orijinal oyunlar, bir VIP programı ve gelecekteki genişleme planları olan kapsamlı bir kripto casino'dur.",
+        "pt": "O Shuffle.com é um cassino cripto completo com registro único, jogos originais e programa VIP, com planos de expansão.",
+        "hi": "Shuffle.com एक समग्र क्रिप्टो कैसीनो है जिसमें एक अद्वितीय पंजीकरण प्रक्रिया, मूल खेल, वीआईपी कार्यक्रम और भविष्य के विस्तार के लिए योजनाएं हैं।"
+      },
+      "Notable online marketplace, vast offerings from games to gift cards, reduced rates, stellar reputation, intuitive interface, up to 98% discounts.": {
+        "es": "Destacado mercado en línea, amplia oferta desde juegos hasta tarjetas de regalo, tarifas reducidas, reputación estelar, interfaz intuitiva.",
+        "tr": "Dikkat çekici online pazar, oyunlardan hediye kartlarına geniş ürün yelpazesi, düşük fiyatlar, mükemmel itibar, sezgisel arayüz, %98'e varan indirimler.",
+        "pt": "Notável mercado online, vasta oferta de jogos a cartões-presente, taxas reduzidas, reputação excelente, interface intuitiva.",
+        "hi": "महत्वपूर्ण ऑनलाइन बाजार, खेल से उपहार कार्ड तक विशाल विविधता, कम कीमतें, उत्कृष्ट प्रतिष्ठा, सूक्ष्म इंटरफेस, तक 98% छूट."
+      },
+      "Withdraw BTC, ETH, LTC or PayPal!": {
+        "es": "¡Retira BTC, ETH, LTC o PayPal!",
+        "tr": "BTC, ETH, LTC veya PayPal çekin!",
+        "pt": "Retire BTC, ETH, LTC ou PayPal!",
+        "hi": "BTC, ETH, LTC या PayPal निकालें!"
+      },
+      "Withdraw Money, Skins or Devices!": {
+        "es": "Retira dinero, skins o dispositivos!",
+        "tr": "Para, Skinler veya Cihazlar Çekin!",
+        "pt": "Levantar dinheiro, skins ou dispositivos!",
+        "hi": "धन, स्किन या उपकरण निकालें!"
+      },
+      "Withdraw BTC, LTC, ETH and many else!": {
+        "es": "Retira BTC, LTC, ETH y muchos más!",
+        "tr": "BTC, LTC, ETH ve birçok şey çekin!",
+        "pt": "Retire BTC, LTC, ETH e muito mais!",
+        "hi": "बीटीसी, एलटीसी, ईटीएच और बहुत सारे अन्य के निकास!"
+      },
+      "Withdrawal of many types of cryptocurrencies!": {
+        "es": "¡Retiro de muchos tipos de criptomonedas!",
+        "tr": "Birçok türde kripto paranın çekilmesi!",
+        "pt": "Retirada de vários tipos de criptomoedas!",
+        "hi": "बहुत सारे प्रकार के क्रिप्टोकरेंसीज़ का निकास!"
+      },
+      "Withdraw CS2 Skins, Crypto or Real Money!": {
+        "es": "Retira Skins de CS2, criptomonedas o dinero!",
+        "tr": "CS2 Skinleri, Kripto veya Gerçek Para Çekin!",
+        "pt": "Retirar Skins do CS2, Criptomoedas ou Dinheiro!",
+        "hi": "वापसी करें CS2 स्किन, क्रिप्टो या वास्तविक धन!"
+      },
+      "Withdraw CS2, Dota 2, TF2 or Rust Items!": {
+        "es": "Retira items de CS2, Dota 2, TF2 o Rust!",
+        "tr": "CS2, Dota 2, TF2 veya Rust Eşyalarını Çekin!",
+        "pt": "Retirar Itens do CS2, Dota 2, TF2 ou Rust!",
+        "hi": "वापसी करें CS2, Dota 2, TF2 या Rust आइटम!"
+      },
+      "Withdraw CS2 Skins, Crypto or Game Keys!": {
+        "es": "Retira skins de CS2, criptomonedas o juegos.",
+        "tr": "CS2 Skinleri, Kripto veya Oyun Anahtarları Çekin!",
+        "pt": "Retirar Skins do CS2, Criptomoedas ou Jogos!",
+        "hi": "वापसी करें CS2 स्किन, क्रिप्टो या गेम कुंजी!"
+      },
+      "Withdraw CS2 Skins, Crypto or PayPal!": {
+        "es": "Retira Skins de CS2, criptomonedas o PayPal!",
+        "tr": "CS2 Skinleri, Kripto veya PayPal Çekin!",
+        "pt": "Retirar Skins do CS2, Criptomoedas ou PayPal!",
+        "hi": "वापसी करें CS2 स्किन, क्रिप्टो या PayPal!"
+      },
+      "Withdraw Money, CS2, TF2 or Rust Skins!": {
+        "es": "Retira dinero, Skins de CS2, TF2 o Rust!",
+        "tr": "Para, CS2, TF2 veya Rust Skinleri Çekin!",
+        "pt": "Retirar Dinheiro, Skins do CS2, TF2 ou Rust!",
+        "hi": "वापसी करें धन, CS2, TF2 या Rust स्किन!"
+      },
+      "Withdraw CS2 Skins, Dota 2 and H1Z1 Items!": {
+        "es": "Retira Skins de CS2, Dota 2 y items de H1Z1!",
+        "tr": "CS2 Skinleri, Dota 2 ve H1Z1 Eşyalarını Çekin!",
+        "pt": "Retirar Skins do CS2, Dota 2 e Itens do H1Z1!",
+        "hi": "वापसी करें CS2 स्किन, Dota 2 और H1Z1 आइटम!"
+      },
+      "Withdraw CS2, Rust Skins and Dota 2 Items!": {
+        "es": "Retira Skins de CS2, Rust y items de Dota 2!",
+        "tr": "CS2, Rust Skinleri ve Dota 2 Eşyalarını Çekin!",
+        "pt": "Retirar Skins do CS2, Rust e Itens do Dota 2!",
+        "hi": "वापसी करें CS2, Rust स्किन और Dota 2 आइटम!"
+      },
+      "Withdraw Rust Skins, Crypto or PayPal!": {
+        "es": "Retira Skins de Rust, criptomonedas o PayPal!",
+        "tr": "Rust Skinleri, Kripto veya PayPal Çekin!",
+        "pt": "Saque Skins do Rust, Criptomoedas ou PayPal!",
+        "hi": "Rust स्किन, क्रिप्टो या PayPal निकालें!"
+      },
+      "Withdraw Dota 2 Items, Crypto or PayPal!": {
+        "es": "Retira objetos de Dota 2, criptomonedas o PayPal!",
+        "tr": "Dota 2 Skinleri, Kripto veya PayPal Çekin!",
+        "pt": "Saque Skins dota 2, Criptomoedas ou PayPal!",
+        "hi": "Dota 2 स्किन, क्रिप्टो या PayPal निकालें!"
+      },
+      "Withdraw Rust Skins or Crypto!": {
+        "es": "Retira Skins de Rust o criptomonedas!",
+        "tr": "Rust Skinleri veya Kripto Çekin!",
+        "pt": "Retire Skins do Rust ou Criptomoedas!",
+        "hi": "Rust स्किन या क्रिप्टो को निकालें!"
+      },
+      "Withdraw Rust Skins and Items!": {
+        "es": "Retira Skins e items de Rust!",
+        "tr": "Rust Skinleri ve Eşyaları Çekin!",
+        "pt": "Retire Skins e Itens do Rust!",
+        "hi": "Rust स्किन और आइटम को निकालें!"
+      },
+      "Buy Games, Gift Cards and many-many more.": {
+        "es": "¡Compra Juegos, Tarjetas y Mucho Más!",
+        "tr": "Oyunlar, Hediye Kartları ve daha fazlasını alın.",
+        "pt": "Compre Jogos, Cartões e Muito Mais.",
+        "hi": "खेलें, उपहार कार्ड और बहुत-सारा और भी खरीदें।"
+      },
+      "Withdraw with many-many ways.": {
+        "es": "Retira de muchas-muchas formas.",
+        "tr": "Çok çok farklı şekillerde çekim yapın.",
+        "pt": "Retirar de várias-muitas maneiras.",
+        "hi": "बहुत-सारे तरीकों से निकालें।"
+      },
+      "Withdraw Crypto, gift cards or real money!": {
+        "es": "Retira criptomonedas, tarjetas de regalo o dinero real!",
+        "tr": "Kripto, hediye kartları ve gerçek para çekin!",
+        "pt": "Retire Crypto, cartões presente ou dinheiro!",
+        "hi": "क्रिप्टो, गिफ्ट कार्ड या वास्तविक धन को निकालें!"
+      },
+      "Withdraw CS2 Skins, Gift Cards or Crypto!": {
+        "es": "Retira Skins de CS2, tarjetas regalo o criptomonedas!",
+        "tr": "CS2 Skins, hediye kartları ve gerçek para çekin!",
+        "pt": "Retire Skins, Cartões Presente ou Criptomoedas!",
+        "hi": "CS2 स्किन, गिफ्ट कार्ड या क्रिप्टो को निकालें!"
+      },
+      "Withdraw Bitcoin, Ethereum or Litecoin!": {
+        "es": "Retira Bitcoin, Ethereum o Litecoin!",
+        "tr": "Bitcoin, Ethereum veya Litecoin çekin!",
+        "pt": "Retire Bitcoin, Ethereum ou Litecoin!",
+        "hi": "बिटकॉइन, एथेरियम या लाइटकॉइन को निकालें!"
+      },
+      "Withdraw Games, GiftCards and many more!": {
+        "es": "Retira juegos, tarjetas de regalo y mucho más!",
+        "tr": "Oyunlar, hediye kartları ve çok daha fazlasını çekin!",
+        "pt": "Retire Jogos, Cartões Presente e muito mais!",
+        "hi": "गेम्स, गिफ्ट कार्ड्स और बहुत कुछ को निकालें!"
+      },
+      "Withdraw Crypto or Real Money!": {
+        "es": "Retira criptomonedas o dinero real!",
+        "tr": "Kripto para veya gerçek para çekin!",
+        "pt": "Retire Criptomoedas ou Dinheiro Real!",
+        "hi": "क्रिप्टो या वास्तविक धन को निकालें!"
+      },
+      "Withdraw Crypto and Gift Cards!": {
+        "es": "Retira criptomonedas y tarjetas de regalo!",
+        "tr": "Kripto para ve hediye kartları çekin!",
+        "pt": "Levantar Criptomoedas e Cartões de Presente!",
+        "hi": "क्रिप्टो और गिफ्ट कार्ड निकालें!"
+      },
+      "Withdraw BTC, LTC, USDT, USDC or ETH!": {
+        "es": "Retira BTC, LTC, USDT, USDC o ETH!",
+        "tr": "BTC, LTC, USDT, USDC veya ETH çekin!",
+        "pt": "Levantar BTC, LTC, USDT, USDC ou ETH!",
+        "hi": "BTC, LTC, USDT, USDC या ETH निकालें!"
+      },
+      "Withdraw CS2 Skins or Items!": {
+        "es": "Retira Skins o items de CS2!",
+        "tr": "CS2 Skins veya eşyalar çekin!",
+        "pt": "Levantar Skins ou Itens de CS2!",
+        "hi": "स्किन या आइटम निकालें!"
+      },
+      "Withdraw Games, GiftCards or Dota2 & TF2 Items!": {
+        "es": "Retira juegos, tarjetas de regalo o items de Dota2 y TF2!",
+        "tr": "Oyunlar, hediye kartları ve Dota 2 & TF2 eşyaları çekin!",
+        "pt": "Levantar Jogos ou Itens de Dota2 e TF2!",
+        "hi": "गेम्स, गिफ्ट कार्ड्स या Dota2 और TF2 आइटम निकालें!"
+      },
+      "Withdraw Games, GiftCards or Donate to Charity!": {
+        "es": "Retira juegos, tarjetas de regalo o dona a caridad!",
+        "tr": "Oyunlar, hediye kartları veya bağış yapın!",
+        "pt": "Levantar Jogos, Cartões de Presente!",
+        "hi": "गेम्स, गिफ्ट कार्ड्स या चैरिटी को दान करें!"
+      },
+      "Participate in Giveaways and win Steam Games.": {
+        "es": "Participa en sorteos y gana juegos de Steam.",
+        "tr": "Çekilişlere katılın ve Steam oyunları kazanın.",
+        "pt": "Participar em Sorteios e ganhar Jogos da Steam.",
+        "hi": "गिवअवे में भाग लें और स्टीम गेम जीतें।"
+      },
+      "Withdraw CS2 And Rust Skins or Crypto!": {
+        "es": "Retira Skins de CS2 y Rust o criptomonedas!",
+        "tr": "CS2 ve Rust Skins veya kripto para çekin!",
+        "pt": "Retirar Skins do CS2 e Rust ou Criptomoedas!",
+        "hi": "वापसी करें CS2 और Rust स्किन या क्रिप्टो!"
+      },
+      "Withdraw CS2 Skins or Real Money!": {
+        "es": "Retira Skins de CS2 o dinero real!",
+        "tr": "CS2 Skins veya gerçek para çekin!",
+        "pt": "Retirar Skins do CS2 ou Dinheiro Real!",
+        "hi": "वापसी करें CS2 स्किन या वास्तविक धन!"
+      },
+      "Withdraw Steam Trading cards or Games.": {
+        "es": "Retira cartas de intercambio de Steam o juegos!",
+        "tr": "Steam Takas kartları veya oyunları çekin.",
+        "pt": "Retirar Cartas do Steam ou Jogos.",
+        "hi": "वापसी करें Steam ट्रेडिंग कार्ड या गेम्स।"
+      },
+      "Withdraw USDT, Skins or Real Money!": {
+        "es": "Retira USDT, Skins o dinero real!",
+        "tr": "USDT, Skins veya gerçek para çekin!",
+        "pt": "Retirar USDT, Skins ou Dinheiro Real!",
+        "hi": "वापसी करें USDT, स्किन या वास्तविक धन!"
+      },
+      "Withdraw Money, CS2 or Rust Skins!": {
+        "es": "Retira dinero, Skins de CS2 o Rust!",
+        "tr": "Para, CS2 veya Rust Skins çekin!",
+        "pt": "Retirar Dinheiro, Skins do CS2 ou Rust!",
+        "hi": "वापसी करें धन, CS2 या Rust स्किन!"
+      },
+      "Withdraw Money, Crypto or Skins!": {
+        "es": "Retira dinero, criptomonedas o Skins!",
+        "tr": "Para, kripto para veya Skins çekin!",
+        "pt": "Retirar Dinheiro, Criptomoedas ou Skins!",
+        "hi": "वापसी करें धन, क्रिप्टो या स्किन!"
+      },
+      "Withdraw CS2 Skins or Crypto!": {
+        "es": "Retira Skins de CS2 o criptomonedas!",
+        "tr": "CS2 Skins veya kripto para çekin!",
+        "pt": "Retirar Skins do CS2 ou Criptomoedas!",
+        "hi": "वापसी करें CS2 स्किन या क्रिप्टो!"
+      },
+      "Withdraw Money, Crypto or PayPal!": {
+        "es": "Retira dinero, criptomonedas o PayPal!",
+        "tr": "Para, kripto para veya PayPal çekin!",
+        "pt": "Retirar Dinheiro, Criptomoedas ou PayPal!",
+        "hi": "वापसी करें धन, क्रिप्टो या PayPal!"
+      },
+      "Withdraw with P2P CS2 Skins.": {
+        "es": "RETIRA CON SKINS P2P DE CS2.",
+        "tr": "P2P CS2 SKINS ile çekin.",
+        "pt": "Retirar com Skins do CS2 P2P.",
+        "hi": "P2P CS2 स्किन के साथ वापसी करें।"
+      },
+      "Withdraw Real Money or Crypto!": {
+        "es": "Retira dinero real o criptomonedas!",
+        "tr": "Gerçek para veya kripto para çekin!",
+        "pt": "Retirar Dinheiro Real ou Criptomoedas!",
+        "hi": "वापसी करें वास्तविक धन या क्रिप्टो!"
+      },
+      "Withdraw BTC, ETH, USDT or Tron!": {
+        "es": "Retira BTC, ETH, USDT o Tron!",
+        "tr": "BTC, ETH, USDT veya Tron çekin!",
+        "pt": "Retirar BTC, ETH, USDT ou Tron!",
+        "hi": "वापसी करें BTC, ETH, USDT या Tron!"
+      },
+      "Withdraw CS2 Skins or PayPal!": {
+        "es": "Retira Skins de CS2 o PayPal!",
+        "tr": "CS2 Skins veya PayPal çekin!",
+        "pt": "Retirar Skins do CS2 ou PayPal!",
+        "hi": "वापसी करें CS2 स्किन या PayPal!"
+      },
+      "Withdraw CS2 Skins and Items!": {
+        "es": "Retira Skins e items de CS2!",
+        "tr": "CS2 Skins ve eşyalar çekin!",
+        "pt": "Retirar Skins e Itens do CS2!",
+        "hi": "वापसी करें CS2 स्किन और आइटम!"
+      },
+      "Withdraw Steam Trading cards.": {
+        "es": "Retira cartas de intercambio de Steam!",
+        "tr": "Steam Takas kartları çekin!",
+        "pt": "Retirar Cartas de Negociação do Steam.",
+        "hi": "Steam ट्रेडिंग कार्ड वापसी करें।"
+      },
+      "1h, 24h and 7d Giveaways": {
+        "es": "Sorteos de 1h, 24h y 7d",
+        "tr": "1s, 24s ve 7g çekilişler",
+        "pt": "Sorteios de 1h, 24h e 7d",
+        "hi": "1 घंटा, 24 घंटे और 7 दिन के उपहार"
+      },
+      "24h Giveaway": {
+        "es": "Sorteo de 24h",
+        "tr": "24s çekiliş",
+        "pt": "Sorteio de 24h",
+        "hi": "24 घंटे का उपहार"
+      },
+      "3h and 24h Giveaway": {
+        "es": "Sorteos de 3h y 24h",
+        "tr": "3s ve 24s çekiliş",
+        "pt": "Sorteios de 3h e 24h",
+        "hi": "3 घंटे और 24 घंटे का उपहार"
+      },
+      "Daily and Weekly Giveaways": {
+        "es": "Sorteos diarios y semanales",
+        "tr": "Günlük ve haftalık çekilişler",
+        "pt": "Sorteios Diários e Semanais",
+        "hi": "प्रतिदिनिक और साप्ताहिक उपहार"
+      },
+      "1h Giveaway": {
+        "es": "Sorteo de 1h",
+        "tr": "1s çekiliş",
+        "pt": "Sorteio de 1h",
+        "hi": "1 घंटे का उपहार"
+      },
+      "1h, 24h Giveaways": {
+        "es": "Sorteos de 1h y 24h",
+        "tr": "1s, 24s çekilişler",
+        "pt": "Sorteios de 1h e 24h",
+        "hi": "1 घंटा, 24 घंटे के उपहार"
+      },
+      "Rare Giveaways": {
+        "es": "Sorteos raros",
+        "tr": "Nadir çekilişler",
+        "pt": "Sorteios Raros",
+        "hi": "दुर्लभ उपहार"
+      },
+      "Weekly Giveaways": {
+        "es": "Sorteos semanales",
+        "tr": "Haftalık çekilişler",
+        "pt": "Sorteios Semanais",
+        "hi": "साप्ताहिक उपहार"
+      },
+      "Daily Giveaways": {
+        "es": "Sorteos diarios",
+        "tr": "Günlük çekilişler",
+        "pt": "Sorteios Diários",
+        "hi": "रोज़ाना बांटने का इंतेज़ाम"
+      },
+      "Daily Giveaway": {
+        "es": "Sorteos diarios",
+        "tr": "Günlük Çekiliş",
+        "pt": "Sorteio Diário",
+        "hi": "रोज़ाना बांटने का इंतेज़ाम"
+      },
+      "Deposit Required": {
+        "es": "Depósito requerido",
+        "tr": "Depozito gerekiyor",
+        "pt": "Depósito Necessário",
+        "hi": "जमा आवश्यक"
+      },
+      "+300% Deposit Bonus": {
+        "es": "+300% Bono de depósito",
+        "tr": "+300% Depozito Bonusu",
+        "pt": "300% Bónus de Depósito",
+        "hi": "+300% जमा बोनस"
+      },
+      "+180% Deposit Bonus": {
+        "es": "+180% Bono de depósito",
+        "tr": "+180% Depozito Bonusu",
+        "pt": "180% Bónus de Depósito",
+        "hi": "+180% जमा बोनस"
+      },
+      "+100% Deposit Bonus": {
+        "es": "+100% Bono de depósito",
+        "tr": "+100% Depozito Bonusu",
+        "pt": "100% Bónus de Depósito",
+        "hi": "+100% जमा बोनस"
+      },
+      "+11% Deposit Bonus": {
+        "es": "+11% Bono de depósito",
+        "tr": "+11% Depozito Bonusu",
+        "pt": "11% Bónus de Depósito",
+        "hi": "+11% जमा बोनस"
+      },
+      "+10% Deposit Bonus": {
+        "es": "+10% Bono de depósito",
+        "tr": "+10% Depozito Bonusu",
+        "pt": "10% Bónus de Depósito",
+        "hi": "+10% जमा बोनस"
+      },
+      "+5% Deposit Bonus": {
+        "es": "+5% Bono de depósito",
+        "tr": "+5% Depozito Bonusu",
+        "pt": "5% Bónus de Depósito",
+        "hi": "+5% जमा बोनस"
+      },
+      "+1% Deposit Bonus": {
+        "es": "+1% Bono de depósito",
+        "tr": "+1% Depozito Bonusu",
+        "pt": "1% Bónus de Depósito",
+        "hi": "+1% जमा बोनस"
+      },
+      "70 Free Spins": {
+        "es": "70 Giros gratis",
+        "tr": "70 Ücretsiz Dönüş",
+        "pt": "70 Rodadas Grátis",
+        "hi": "70 मुफ्त स्पिन"
+      },
+      "Every 24h Reward": {
+        "es": "Recompensa cada 24 horas",
+        "tr": "Her 24 saatte bir ödül",
+        "pt": "ecompensa a Cada 24 Horas",
+        "hi": "प्रतिदिन 24 घंटे के बाद इनाम"
+      },
+      "Daily Case": {
+        "es": "Estuche diario",
+        "tr": "Günlük Kaa",
+        "pt": "Caixa Diária",
+        "hi": "प्रतिदिन केस"
+      },
+      "Daily Faucet": {
+        "es": "Grifo diario",
+        "tr": "Günlük Musluk",
+        "pt": "Faucet Diário",
+        "hi": "प्रतिदिन फॉसेट"
+      },
+      "Daily Roll": {
+        "es": "Tirada diaria",
+        "tr": "Günlük Çark",
+        "pt": "Rolar Diário",
+        "hi": "प्रतिदिन रोल"
+      },
+      "Daily Coins": {
+        "es": "Monedas diarias",
+        "tr": "Günlük Paralar",
+        "pt": "Moedas Diárias",
+        "hi": "प्रतिदिन सिक्के"
+      },
+      "Daily Rewards": {
+        "es": "Recompensas diarias",
+        "tr": "Günlük Ödüller",
+        "pt": "Recompensas Diárias",
+        "hi": "रोज़ाना की पुरस्कार"
+      },
+      "Faucet and Giveaways": {
+        "es": "Grifo y sorteos",
+        "tr": "Musluk ve çekilişler",
+        "pt": "Faucet e Sorteios",
+        "hi": "फॉसेट और उपहार"
+      },
+      "Daily 0.02$": {
+        "es": "0.02$ diarios",
+        "tr": "Günlük 0.02$",
+        "pt": "0,02$ Diários",
+        "hi": "प्रतिदिन 0.02$"
+      },
+      "Daily 0.02$ + Free Case": {
+        "es": "0.02$ diarios + Estuche gratis",
+        "tr": "Günlük 0.02$ + Ücretsiz Kasa",
+        "pt": "0,02$ Diários + Caixa Grátis",
+        "hi": "प्रतिदिन 0.02$ + मुफ्त केस"
+      },
+      "Deposit Bonus": {
+        "es": "Bono de depósito",
+        "tr": "Depozito Bonusu",
+        "pt": "Bónus de Depósito",
+        "hi": "जमा बोनस"
+      },
+      "Visit WebSite": {
+        "es": "Visitar sitio web",
+        "tr": "Web Sitesini Ziyaret Et",
+        "pt": "Visite o Site",
+        "hi": "वेबसाइट पर जाएं"
+      },
+      "Visit WebSite or Copy": {
+        "es": "Visitar sitio web o copiar",
+        "tr": "Web Sitesini Ziyaret Et",
+        "pt": "Visite o Site ou Copie",
+        "hi": "वेबसाइट पर जाएं"
+      },
+      "+1% Sell Bonus": {
+        "es": "Bono de venta del +1%",
+        "tr": "+1% Satış Bonusu",
+        "pt": "Bônus de venda de +1%",
+        "hi": "+1% बेचने का बोनस"
+      },
+      "+3% Sell Bonus": {
+        "es": "Bono de venta del +3%",
+        "tr": "+3% Satış Bonusu",
+        "pt": "Bônus de venda de +3%",
+        "hi": "+3% बेचने का बोनस"
+      },
+      "5 Free Cases": {
+        "es": "5 Estuches gratis",
+        "tr": "Ücretsiz Kasa",
+        "pt": "5 Caixas Grátis",
+        "hi": "5 मुफ्त केस"
+      },
+      "Free 100 Gems": {
+        "es": "100 Gemas gratis",
+        "tr": "100 Ücretsiz Taş",
+        "pt": "100 Gemas Grátis",
+        "hi": "मुफ्त 100 गेम्स"
+      },
+      "3 Free Cases": {
+        "es": "3 Estuches gratis",
+        "tr": "3 Ücretsiz Kasa",
+        "pt": "3 Caixas Grátis",
+        "hi": "3 मुफ्त केस"
+      },
+      "Free 5€": {
+        "es": "5€ gratis",
+        "tr": "5€ Bedava",
+        "pt": "5€ Grátis",
+        "hi": "मुफ्त 5€"
+      },
+      "1.50$ For Free": {
+        "es": "1.50$ gratis",
+        "tr": "Ücretsiz 1.50$",
+        "pt": "1,50$ grátis",
+        "hi": "मुफ्त 1.50 डॉलर"
+      },
+      "5.00$ For Free": {
+        "es": "5.00$ gratis",
+        "tr": "Ücretsiz 5.00$",
+        "pt": "5.00$ grátis",
+        "hi": "मुफ्त 5.00 डॉलर"
+      },
+      "Free 1.00$": {
+        "es": "1.00$ gratis",
+        "tr": "Ücretsiz 1.00$",
+        "pt": "1,00$ grátis",
+        "hi": "मुफ्त 1.00 डॉलर"
+      },
+      "Free 0.90$": {
+        "es": "0.90$ gratis",
+        "tr": "Ücretsiz 0.90$",
+        "pt": "0,90$ grátis",
+        "hi": "मुफ्त 0.90 डॉलर"
+      },
+      "Free 0.50$": {
+        "es": "0.50$ gratis",
+        "tr": "Ücretsiz 0.50$",
+        "pt": "0,50$ grátis",
+        "hi": "मुफ्त 0.50 डॉलर"
+      },
+      "Free 0.40$": {
+        "es": "0.40$ gratis",
+        "tr": "Ücretsiz 0.40$",
+        "pt": "0,40$ grátis",
+        "hi": "मुफ्त 0.40 डॉलर"
+      },
+      "Free 0.30$": {
+        "es": "0.30$ gratis",
+        "tr": "Ücretsiz 0.30$",
+        "pt": "0,30$ grátis",
+        "hi": "मुफ्त 0.30 डॉलर"
+      },
+      "Free 0.25$": {
+        "es": "0.25$ gratis",
+        "tr": "Ücretsiz 0.25$",
+        "pt": "0,25$ grátis",
+        "hi": "मुफ्त 0.25 डॉलर"
+      },
+      "Free 0.20$": {
+        "es": "0.20$ gratis",
+        "tr": "Ücretsiz 0.20$",
+        "pt": "0,20$ grátis",
+        "hi": "मुफ्त 0.20 डॉलर"
+      },
+      "Free 0.15$": {
+        "es": "0.15$ gratis",
+        "tr": "Ücretsiz 0.15$",
+        "pt": "0,15$ grátis",
+        "hi": "मुफ्त 0.15 डॉलर"
+      },
+      "Free 0.10$": {
+        "es": "0.10$ gratis",
+        "tr": "Ücretsiz 0.10$",
+        "pt": "0,10$ grátis",
+        "hi": "मुफ्त 0.10 डॉलर"
+      },
+      "Free 0.05$": {
+        "es": "0.05$ gratis",
+        "tr": "Ücretsiz 0.05$",
+        "pt": "0,05$ grátis",
+        "hi": "मुफ्त 0.05 डॉलर"
+      },
+      "Receive up to 5.00$": {
+        "es": "Recibe hasta 5,00$",
+        "tr": "5,00$'a kadar alın",
+        "pt": "Receba até 5,00$",
+        "hi": "5.00$ तक प्राप्त करें।"
+      },
+      "Free Case": {
+        "es": "Estuche gratis",
+        "tr": "Ücretsiz Kasa",
+        "pt": "Caixa Grátis",
+        "hi": "मुफ्त केस"
+      },
+      "Free 1.00$": {
+        "es": "1.00$ gratis",
+        "tr": "Ücretsiz 1.00$",
+        "pt": "1.00$ Grátis",
+        "hi": "मुफ्त 1 डॉलर"
+      },
+      "Free 2.00$": {
+        "es": "2$ gratis",
+        "tr": "Ücretsiz 2$",
+        "pt": "2$ Grátis",
+        "hi": "मुफ्त 2 डॉलर"
+      },
+      "Big Daily Giveaways": {
+        "es": "Sorteos diarios grandes",
+        "tr": "Büyük Günlük Çekilişler",
+        "pt": "Grandes Sorteios Diários",
+        "hi": "रोज़ाना बड़े हद तक दिए जाने वाले उपहार"
+      },
+      "Free Case up to 250$": {
+        "es": "Estuche gratis de hasta 250$",
+        "tr": "Ücretsiz Kasa, 250$'a kadar",
+        "pt": "Caixa Grátis até 250$",
+        "hi": "250$ तक मुफ्त केस"
+      },
+      "Free 100 Diamonds": {
+        "es": "100 Diamantes gratis",
+        "tr": "Ücretsiz 100 Elmas",
+        "pt": "100 Diamantes Grátis",
+        "hi": "100 मुफ्त हीरे"
+      },
+      "Free 500 Coins": {
+        "es": "500 monedas",
+        "tr": "500 jeton",
+        "pt": "500 moedas",
+        "hi": "500 सिक्के मुफ्त"
+      },
+      "Daily Cases": {
+        "es": "Estuches diarios",
+        "tr": "Günlük Kasa",
+        "pt": "Caixas Diárias",
+        "hi": "रोज़ाना केस"
+      },
+      "3 Energy Points": {
+        "es": "3 Puntos de energía",
+        "tr": "3 Enerji Puanı",
+        "pt": "3 Pontos de Energia",
+        "hi": "3 ऊर्जा अंक"
+      },
+      "Free 200 Coins": {
+        "es": "200 Monedas gratis",
+        "tr": "Ücretsiz 200 Jeton",
+        "pt": "200 Moedas Grátis",
+        "hi": "200 सिक्के मुफ्त"
+      },
+      "Some Free Coins": {
+        "es": "algunas monedas gratis",
+        "tr": "biraz ücretsiz jeton",
+        "pt": "algumas moedas grátis",
+        "hi": "कुछ मुफ्त सिक्के"
+      },
+      "Free Spins": {
+        "es": "Giros gratis",
+        "tr": "Ücretsiz dönüşler",
+        "pt": "Rodadas Grátis",
+        "hi": "मुफ्त स्पिन"
+      },
+      "Offerwall": {
+        "es": "Pared de ofertas",
+        "tr": "Teklif Duvarı",
+        "pt": "Parede de Ofertas",
+        "hi": "ऑफरवॉल"
+      },
+      "x2 Mining Rate": {
+        "es": "Tasa de minería x2",
+        "tr": "x2 Madencilik Oranı",
+        "pt": "Taxa de Mineração x2",
+        "hi": "x2 खनन दर"
+      },
+      "Free Wheel": {
+        "es": "Tirada libre",
+        "tr": "Ücretsiz dönüş",
+        "pt": "Rolagem grátis",
+        "hi": "मुफ़्त रोल"
+      },
+      "Games Giveaways": {
+        "es": "Sorteos de juegos",
+        "tr": "Oyun Çekilişleri",
+        "pt": "Distribuição de Jogos",
+        "hi": "गेम्स गिवअवे"
+      }
+    };
+  
+    var elements = document.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
+    for (var j = 0; j < elements.length; j++) {
+      var text = elements[j].textContent.trim();
+      if (translations[text] && translations[text][languageTag]) {
+        elements[j].innerHTML = translations[text][languageTag];
+      }
+    }
+  }
+}
+
+translateURLsIfNeeded();
+});
