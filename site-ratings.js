@@ -1,5 +1,5 @@
 var ratings = {
-    "csgo500": 4.75,
+    "csgo500": 4.875,
     "CSGOFast":4,
     "Gamdom": 4.25,
     "CSGOEmpire":4,

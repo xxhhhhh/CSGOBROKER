@@ -306,11 +306,11 @@ function translateURLsIfNeeded() {
         "pt": "CSFAIL, um site proeminente em Skin Gambling, oferece diversos modos, interface amigável e recursos de bônus para skins de CS2, Dota 2 e RUST.",
         "hi": "CSFAIL, Skin Gambling में एक प्रमुख वेबसाइट, CS2, Dota 2, और RUST skins के लिए विविध मोड, उपयोगकर्ता-सहायक इंटरफेस, और बोनस सुविधाएं प्रदान करती है।"
       },
-      "CSGO500 probably the best CS2 Gambling Site. Regular rains, giveaways and promocodes. You can play many games and slots.": {
-        "es": "CSGO500, el mejor sitio de apuestas de CS2. Lluvias, regalos y códigos promocionales. Juegos y tragamonedas disponibles.",
-        "tr": "CSGO500, en iyi CS2 Kumar Sitesi. Düzenli yağmurlar, hediyeler ve promosyon kodları. Birçok oyun ve slot oynayabilirsiniz.",
-        "pt": "CSGO500, provavelmente o melhor site de apostas de CS2. Chuvas regulares, brindes e códigos promocionais. Você pode jogar muitos jogos e caça-níqueis.",
-        "hi": "CSGO500, संभवतः सर्वश्रेष्ठ CS2 जुआ साइट है। नियमित वर्षवृष्टि, गिफ्टवे और प्रोमोकोड्स। आप कई खेल और स्लॉट्स खेल सकते हैं।"
+      "500 Casino - a leading site in the CS2 gambling sector with numerous modes, regular promotions, and bonuses for players.": {
+        "es": "500 Casino - un sitio líder en el sector de apuestas de CS2 con numerosos modos, promociones regulares y bonificaciones para los jugadores.",
+        "tr": "500 Casino - CS2 kumar sektöründe çeşitli oyun modları, düzenli promosyonlar ve oyuncular için bonuslar sunan önde gelen bir site.",
+        "pt": "500 Casino - um site líder no setor de jogos de azar de CS2 com diversos modos, promoções regulares e bônus para os jogadores.",
+        "hi": "500 कैसीनो - CS2 जुआ क्षेत्र में एक प्रमुख साइट है जिसमें कई मोड, नियमित प्रचार और खिलाड़ियों के लिए बोनस हैं।"
       },
       "CSGORoll is one of the most popular sites. Which includes roulette, crash and many more. Now testing e-sports betting.": {
         "es": "CSGORoll es uno de los sitios más populares. Incluye ruleta, crash y muchos más. Ahora probando las apuestas en e-sports.",
@@ -432,11 +432,11 @@ function translateURLsIfNeeded() {
         "pt": "CSGOBIG - um site de apostas de skins do CS2 com modos de jogo como Jackpot, Coinflip, Roleta, Caixas e Batalhas de Caixas. Aberto em 2015.",
         "hi": "CSGOBIG - CS2 स्किन्स के साथ जैकपॉट, कॉइनफ्लिप, रूलेट, केस और केस युद्ध जैसे खेल मोड्स के साथ एक जुआ साइट। 2015 में शुरू हुआ है।"
       },
-      "CSGOFast is a CS2 skin gambling site that offers a wide range of exclusive game modes. One of the earliest CSGO gambling sites.": {
-        "es": "CSGOFast es un sitio de apuestas de skins de CSGO con diversos modos de juego exclusivos. Uno de los primeros sitios de apuestas de CSGO.",
-        "tr": "CSGOFast, geniş bir özel oyun modu yelpazesi sunan bir CSGO skin kumar sitesidir. En eski CSGO kumar sitelerinden biri.",
-        "pt": "CSGOFast é um site de apostas de skins do CSGO que oferece uma ampla variedade de modos de jogo exclusivos. Um dos primeiros sites do CSGO.",
-        "hi": "CSGOFast एक CSGO स्किन्स जुआ साइट है जो विभिन्न अनन्य खेल मोड्स प्रदान करती है। सबसे पहले CSGO जुआ साइटों में से एक।"
+      "CSGOFast is a popular gambling platform for CS2 skin betting, offering 13 original games, various payment methods and regular bonuses.": {
+        "es": "CSGOFast es una plataforma de apuestas de skins de CS2, que ofrece 13 juegos originales y varios métodos de pago.",
+        "tr": "CSGOFast, CS2 kaplamalarıyla kumar oynama olanağı sunan popüler bir kumar platformudur ve 13 orijinal oyun ve çeşitli ödeme yöntemleri sunar.",
+        "pt": "CSGOFast é uma plataforma popular de jogos de azar para apostas com skins de CS2, oferecendo 13 jogos originais e vários métodos de pagamento.",
+        "hi": "CSGOFast एक लोकप्रिय जुआ प्लेटफ़ॉर्म है जो CS2 स्किन्स पर दांव लगाने के लिए है, जो 13 मौलिक खेल और विभिन्न भुगतान विधियाँ प्रदान करता है।"
       },
       "Key-Drop is a reputable online platform focused on Case Opening and Case Battles, as well as custom CS2 skin cases, featuring regular giveaways.": {
         "es": "Key-Drop es una plataforma de apuestas en línea que ofrece actividades como Batallas de Cajas, Mejoras y estuches personalizados de skins de CSGO.",
