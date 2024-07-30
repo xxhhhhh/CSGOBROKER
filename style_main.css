@@ -4200,6 +4200,16 @@ nav img:active,
     text-align: center;
     text-decoration: none;
 }
+
+.nav-review li,
+.content p,
+.instruction li,
+.boxreview .plusminus .criteria .par li,
+.nav-review li {
+    text-wrap: pretty;
+}
+
+
 .content h2,
 .content p:first-child,
 .content a.boxtitle {

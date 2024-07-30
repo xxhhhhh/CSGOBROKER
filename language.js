@@ -558,11 +558,11 @@ function translateURLsIfNeeded() {
         "pt": "Freeward é um site que oferece oportunidades para os usuários ganharem recompensas por meio de tarefas como pesquisas e vídeos.",
         "hi": "Freeward एक GPT साइट है जो सर्वेक्षण और वीडियो देखकर जैसे कार्यों के माध्यम से उपयोगकर्ताओं को पुरस्कार कमाने के विभिन्न अवसर प्रदान करती है।"
       },
-      "Roobet is an online casino that allows users to play games using cryptocurrency. The platform has a reputation for being legitimate and safe.": {
-        "es": "Roobet es un casino en línea seguro que acepta criptomonedas para jugar. Es conocido por su reputación legítima y seguridad.",
-        "tr": "Roobet, kullanıcıların kripto para kullanarak oyun oynayabileceği bir çevrimiçi kumarhanedir. Platformun itibarı yasal ve güvenli olmasıyla bilinir.",
-        "pt": "Roobet é um cassino online que permite aos usuários jogar jogos usando criptomoeda. A plataforma tem uma reputação de ser legítima e segura.",
-        "hi": "Roobet एक ऑनलाइन कैसीनो है जो उपयोगकर्ताओं को क्रिप्टोकरेंसी का उपयोग करके खेल खेलने की अनुमति देता है। प्लेटफ़ॉर्म का विश्वासयोग्य और सुरक्षित होने का प्रमाण है।"
+      "Roobet is a popular crypto-casino. It offers a variety of games, a VIP program, sport and esport betting, and quality customer support.": {
+        "es": "Roobet es un popular cripto-casino. Ofrece una variedad de juegos, un programa VIP, apuestas y soporte al cliente de calidad.",
+        "tr": "Roobet, popüler bir kripto-kumarhanedir. Çeşitli oyunlar, VIP programı, bahisler ve kaliteli müşteri desteği sunar.",
+        "pt": "Roobet é um popular cripto-cassino. Ele oferece uma variedade de jogos, um programa VIP, apostas e suporte ao cliente de qualidade.",
+        "hi": "रूबेट एक लोकप्रिय क्रिप्टो-कैसिनो है। यह विभिन्न प्रकार के खेल, वीआईपी कार्यक्रम, दांव और उच्च गुणवत्ता वाली ग्राहक सहायता प्रदान करता है।"
       },
       "xplay is a platform that allows CS2 players to earn skins just by playing on their servers. The platform offers various servers and daily challenges.": {
         "es": "xplay es una plataforma que permite a los jugadores de CS2 ganar skins jugando en sus servidores. Ofrece diversos servidores y desafíos diarios.",
@@ -786,10 +786,10 @@ function translateURLsIfNeeded() {
         "pt": "Levantar dinheiro, skins ou dispositivos!",
         "hi": "धन, स्किन या उपकरण निकालें!"
       },
-      "Withdraw BTC, LTC, ETH and many else!": {
-        "es": "Retira BTC, LTC, ETH y muchos más!",
-        "tr": "BTC, LTC, ETH ve birçok şey çekin!",
-        "pt": "Retire BTC, LTC, ETH e muito mais!",
+      "Withdraw USDT, LTC, ETH and many else!": {
+        "es": "Retira USDT, LTC, ETH y muchos más!",
+        "tr": "USDT, LTC, ETH ve birçok şey çekin!",
+        "pt": "Retire USDT, LTC, ETH e muito mais!",
         "hi": "बीटीसी, एलटीसी, ईटीएच और बहुत सारे अन्य के निकास!"
       },
       "Withdrawal of many types of cryptocurrencies!": {
@@ -911,12 +911,6 @@ function translateURLsIfNeeded() {
         "tr": "Kripto para ve hediye kartları çekin!",
         "pt": "Levantar Criptomoedas e Cartões de Presente!",
         "hi": "क्रिप्टो और गिफ्ट कार्ड निकालें!"
-      },
-      "Withdraw BTC, LTC, USDT, USDC or ETH!": {
-        "es": "Retira BTC, LTC, USDT, USDC o ETH!",
-        "tr": "BTC, LTC, USDT, USDC veya ETH çekin!",
-        "pt": "Levantar BTC, LTC, USDT, USDC ou ETH!",
-        "hi": "BTC, LTC, USDT, USDC या ETH निकालें!"
       },
       "Withdraw CS2 Skins or Items!": {
         "es": "Retira Skins o items de CS2!",
@@ -1134,11 +1128,11 @@ function translateURLsIfNeeded() {
         "pt": "1% Bónus de Depósito",
         "hi": "+1% जमा बोनस"
       },
-      "70 Free Spins": {
-        "es": "70 Giros gratis",
-        "tr": "70 Ücretsiz Dönüş",
-        "pt": "70 Rodadas Grátis",
-        "hi": "70 मुफ्त स्पिन"
+      "Rakeback System": {
+        "es": "Sistema de Rake",
+        "tr": "Rakeback Sistemi",
+        "pt": "Sistema de Rakeback",
+        "hi": "रेकबैक प्रणाली"
       },
       "Every 24h Reward": {
         "es": "Recompensa cada 24 horas",
@@ -1241,6 +1235,18 @@ function translateURLsIfNeeded() {
         "tr": "3 Ücretsiz Kasa",
         "pt": "3 Caixas Grátis",
         "hi": "3 मुफ्त केस"
+      },
+      "+25% to Rakeback": {
+        "es": "+25% de Rakeback",
+        "tr": "+%25 Rakeback",
+        "pt": "+25% de Rakeback",
+        "hi": "+25% रेकबैक"
+      },
+      "+20% to Rakeback": {
+        "es": "+20% de Rakeback",
+        "tr": "+%20 Rakeback",
+        "pt": "+20% de Rakeback",
+        "hi": "+20% रेकबैक"
       },
       "Free 5€": {
         "es": "5€ gratis",
