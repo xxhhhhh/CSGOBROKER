@@ -552,11 +552,11 @@ function translateURLsIfNeeded() {
         "pt": "RustMoment é um site de apostas para entusiastas de skins do Rust com seis jogos, bônus e pagamentos em moeda padrão e criptomoeda.",
         "hi": "RustMoment एक रस्ट स्किन प्रशंसकों के लिए एक जुआ साइट है जिसमें छह खेल, बोनस और एक रेकबैक सिस्टम होता है। इसमें मानक और क्रिप्टोकरेंसी भुगतान स्वीकार किए जाते हैं।"
       },
-      "Freeward is a GPT site that provides various opportunities for users to earn rewards through tasks like surveys and watching videos.": {
-        "es": "Freeward es un sitio GPT que ofrece diversas oportunidades para que los usuarios ganen recompensas mediante tareas como encuestas y ver videos.",
-        "tr": "Freeward, kullanıcıların anketler yaparak ve videolar izleyerek ödüller kazanabilecekleri çeşitli fırsatlar sunan bir GPT sitesidir.",
-        "pt": "Freeward é um site que oferece oportunidades para os usuários ganharem recompensas por meio de tarefas como pesquisas e vídeos.",
-        "hi": "Freeward एक GPT साइट है जो सर्वेक्षण और वीडियो देखकर जैसे कार्यों के माध्यम से उपयोगकर्ताओं को पुरस्कार कमाने के विभिन्न अवसर प्रदान करती है।"
+      "Freeward is a platform for earning through surveys, watching videos, and games, featuring an achievements system and a wide variety of withdrawal methods.": {
+        "es": "Freeward es una plataforma para ganar a través de encuestas, ver videos y juegos, con un sistema de logros y una amplia variedad de métodos de retiro.",
+        "tr": "Freeward, anketler, video izleme ve oyunlar yoluyla kazanç sağlama platformudur; başarı sistemi ve geniş bir çekilme yöntemleri yelpazesi sunar.",
+        "pt": "Freeward é uma plataforma para ganhar dinheiro respondendo pesquisas, assistindo vídeos e jogando, com conquistas e diversos métodos de saque.",
+        "hi": "Freeward एक प्लेटफ़ॉर्म है जहाँ सर्वेक्षणों, वीडियो देखने और खेलों के माध्यम से कमाई की जा सकती है, जिसमें एक उपलब्धि प्रणाली और निकासी के कई विकल्प हैं।"
       },
       "Roobet is a popular crypto-casino. It offers a variety of games, a VIP program, sport and esport betting, and quality customer support.": {
         "es": "Roobet es un popular cripto-casino. Ofrece una variedad de juegos, un programa VIP, apuestas y soporte al cliente de calidad.",
