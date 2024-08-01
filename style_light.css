@@ -52,12 +52,19 @@
     filter: drop-shadow(0 0 1px rgb(200 200 200));
     background-color: #f2f2f2;
     border-radius: 5px;
-    opacity: .5;
     color: rgb(0 0 0);
 }
 
 .navigation-weapon-sort i {
     opacity: .5;
+}
+
+.navigation-weapon-sort:hover {
+    background-color: #ffffff;
+}
+
+.navigation-weapon-sort.enabled, .navigation-weapon-sort.reversed {
+    background-color: #ffffff;
 }
 
 .box-topic.sticker .topic-box,
