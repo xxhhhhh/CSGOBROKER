@@ -427,17 +427,40 @@ $(document).on("click", ".preview-nav-button.right", function () {
                   document.getElementById('Rarity-Toggle').dataset.title = 'Показать Редкость';
               }
           }
-             
-          $('#Rarity-Toggle').on('click', function() {
-            $('.box-skins-list').toggleClass('showrarity');
-            $(this).toggleClass('enabled');
-        });
 
-            $("#Quality-Filter").click(function () {
-                var enabledFilters = $(".navigation-weapon-type.enabled").length;
-                if (enabledFilters === 0) {
-                    return;
-                }
+          function setLocalStorageState(key, value) {
+            localStorage.setItem(key, JSON.stringify(value));
+          }
+
+          function getLocalStorageState(key, defaultValue) {
+            var storedValue = localStorage.getItem(key);
+            return storedValue ? JSON.parse(storedValue) : defaultValue;
+          }
+
+          var rarityToggleState = getLocalStorageState(
+            "RarityToggleState",
+            true
+          );
+          if (rarityToggleState) {
+            $(".box-skins-list").addClass("showrarity");
+            $("#Rarity-Toggle").addClass("enabled");
+          } else {
+            $(".box-skins-list").removeClass("showrarity");
+            $("#Rarity-Toggle").removeClass("enabled");
+          }
+
+          $("#Rarity-Toggle").on("click", function () {
+            $(".box-skins-list").toggleClass("showrarity");
+            $(this).toggleClass("enabled");
+            var isEnabled = $(this).hasClass("enabled");
+            setLocalStorageState("RarityToggleState", isEnabled);
+          });
+
+          $("#Quality-Filter").click(function () {
+            var enabledFilters = $(".navigation-weapon-type.enabled").length;
+            if (enabledFilters === 0) {
+                return;
+            }
 
                 var skins = $(".box-skins-list .skin").get();
                 skins.sort(function (a, b) {

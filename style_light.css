@@ -161,7 +161,10 @@
 .infoblock h1, 
 .singlemod-select span,
 .navigation-weapon-sort i,
-h2, 
+.topic-nav-box span, 
+.topic-nav-menu span,
+.topic-nav-menu .weapon-current i,
+h2,
 h3  {
     color: #1a1a1a;
 }
@@ -319,7 +322,8 @@ h3  {
 .box-topic.sticker .component-box,
 .crafting-table-step,
 .crafting-table-step:hover,
-#notexist .category-box .category-box-logo {
+#notexist .category-box .category-box-logo,
+.topic-nav-box {
     background: #f2f2f2;
 }
 

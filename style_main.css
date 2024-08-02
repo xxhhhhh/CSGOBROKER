@@ -663,6 +663,7 @@ nav #pagename:focus {
     cursor: pointer;
     color: #494949;
     margin: 0 5px;
+    z-index: 11;
 }
 
 .navigation-weapon-sort i {
@@ -1126,9 +1127,11 @@ nav #pagename:focus {
     transition: unset;
     margin: 4px;
 }
-.sitepage.items .box-skins .skin:hover,
-.weapon-container:hover {
+.sitepage.items .box-skins .skin:hover {
     box-shadow: 0 0 6px 0 rgba(0,0,0,.25);
+}
+.weapon-container:hover {
+    box-shadow: 0 0 2px 0 rgba(0,0,0,.25);
 }
 .sitepage.items .box-skins .skin:hover {
     background-color: var(--darkygray) !important;
@@ -1285,15 +1288,19 @@ nav #pagename:focus {
 .box-skins .skin:hover .skin-desc,
 .box-skins .skin:hover .skin-desc-name,
 .box-skins .skin:hover .skin-classdot {
-    opacity: 1 !important;
+    opacity: 1;
 }
 
 .box-skins .skin:hover .skin-desc,
 .box-skins .skin:hover .skin-desc-name,
 .box-skins .skin:hover .skin-classdot,
-.box-skins-list.showrarity .skin .skin-desc,
+.box-skins-list.showrarity .skin:hover .skin-desc,
 .box-skins-list.showrarity .skin .skin-classdot {
-    opacity: 1 !important;
+    opacity: 1;
+}
+
+.box-skins-list.showrarity .skin .skin-desc {
+    opacity: .35;
 }
 
 .box-skins .skin .skin-desc,
@@ -1312,7 +1319,7 @@ nav #pagename:focus {
     color: var(--white);
     background: linear-gradient(360deg, rgba(0, 0, 0, .2) 0%, rgba(0,0,0,0) 100%);
 }
-.box-skins-list.visible .skin .skin-desc-name {
+.sitepage.items .box-skins .skin .skin-desc-name {
     width: 90%;
 }
 .box-skins .skin .skin-desc {
@@ -1344,7 +1351,9 @@ nav #pagename:focus {
     top: -14px;
     transform: rotate(140deg);
     filter: blur(20px);
+    transition: all .15s ease-in-out;
 }
+
 .sitepage.items .box-skins .skin {
     background-color: var(--darkygray) !important;
 }
@@ -1824,14 +1833,14 @@ nav #pagename:focus {
     flex-direction: row;
     justify-content: center;
     margin-top: 4px;
+    padding: 2px 2px 0 2px;
     opacity: 0;
 }
 .weapon-selection {
     width: max-content;
     min-width: 136px;
-    max-height: 500px;
-    margin-top: 80px;
-    max-height: 500px;
+    max-height: 624px;
+    margin-top: 78px;
     padding-top: 2px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -1842,6 +1851,7 @@ nav #pagename:focus {
     visibility: hidden;
     background-color: var(--darkygray);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+    padding-left: 3px;
 }
 .sitetoppannel .weapon-container:first-child .weapon-selection {
     left: 0;
@@ -1871,17 +1881,17 @@ nav #pagename:focus {
 .weapon-selection-redir {
     height: 100%;
     width: 100%;
+    border-radius: 5px;
     display: flex;
     align-items: center;
-    justify-content: center;
     text-decoration: none;
 }
 
-.weapon-selection-unite:hover,
-.weapon-selection-unite.current {
+.weapon-selection-unite:hover a,
+.weapon-selection-unite.current a{
     background-color: rgba(255, 255, 255, .03);
 }
-.weapon-current:hover{
+.weapon-container:hover{
     background-color: rgba(255, 255, 255, .015);
     border-radius: 5px;
     transition: background .15s ease-in-out;
@@ -1906,12 +1916,11 @@ nav #pagename:focus {
     margin: 0 4px;
     border-radius: 5px;
     width: 15%;
-    background: var(--halfback);
+    background: var(--darkygray);
     cursor: pointer;
     display: flex;
     justify-content: center;
     position: relative;
-    /* border-left: 2px rgb(15 15 15) solid; */
 }
 .weapon-current {
     display: flex;
@@ -1938,7 +1947,8 @@ nav #pagename:focus {
 .weapon-selection-redir span {
     position: relative;
     height: 100%;
-    width: 100%;
+    width: auto;
+    flex-grow: 1;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -1949,6 +1959,7 @@ nav #pagename:focus {
     color: var(--white);
     padding: 0 10px;
     transition: all .15s ease-in-out;
+    white-space: nowrap;
 }
 .weapon-selection-unite img {
     width: 35px;
@@ -3179,6 +3190,8 @@ nav #logo:hover {
     justify-content: flex-start;
     overflow: hidden;
     margin-top: 4px;
+    padding: 0 4px;
+    padding-bottom: 4px
 }
 .item-box-topic {
     top: 16px;
@@ -3187,7 +3200,8 @@ nav #logo:hover {
     height: 100px;
     border-radius: 5px 5px 0 0;
     box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
-    transition: all .2s ease-in-out;
+    background-color: rgb(10 10 10);
+    transition: all .15s ease-in-out;
     margin: 0 !important;
     overflow: hidden;
     display: flex;
@@ -3200,37 +3214,37 @@ nav #logo:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, .35);
+    padding-bottom: 10px;
+    mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
+    -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
+    -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, .5), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 .item-box-topic .logobg img {
-    height: 80%;
+    height: 160%;
+    margin-top: 30px;
     width: auto;
     z-index: 10;
 }
 .sitepage.items .box-topic {
-    height: 200px;
+    height: auto;
     transition: unset;
-    border-radius: 5px;
+    border-radius: 0 0 10px 10px;
 }
 .sitepage.cases .box-topic {
     border-radius: 0 0 5px 5px;
-    height: auto;
-    padding-bottom: 20px;
 }
 .sitepage.items .box-topic .navigation-section {
     top: unset;
     border-radius: 5px;
+    top: -20px;
 }
 .sitepage.items .navigation-section {
-    height: 70%;
+    margin-top: 10px;
+    height: auto;
 }
 .sitepage.items .navigation-section.searchers {
     height: 30%;
     align-content: flex-start;
-}
-.sitepage.cases .navigation-section {
-    margin-top: 10px;
-    height: auto;
 }
 .sitepage.cases .navigation-section.searchers {
     margin-top: 10px;
@@ -3631,6 +3645,10 @@ nav #logo:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.topic-box.items .logobg {
+    mask-image: unset;
+    -webkit-mask-image: unset;
 }
 .topic-box .logobg.skincolors {
     visibility: hidden;
@@ -4944,6 +4962,7 @@ footer .centralizer .footer-content {
     align-items: flex-start;
     margin: 0 auto;
     overflow-y: auto;
+    overflow-x: hidden;
     left: 0;
     right: 0;
     top: 15px;
@@ -4977,10 +4996,15 @@ footer .centralizer .footer-content {
     border-radius: 5px;
     transition: all .15s ease-in-out;
 }
+.topic-nav-menu .weapon-container.active {
+    z-index: 1;
+}
 .topic-nav-menu .weapon-container .weapon-selection{
     width: 100%;
     height: auto;
-    left: -3px;
+    left: 0;
+    padding-left: 0;
+    padding-top: 0;
     max-height: unset;
     overflow-y: unset;
     overflow-x: unset;
@@ -5002,7 +5026,7 @@ footer .centralizer .footer-content {
 .topic-nav-menu .weapon-selection-unite {
     height: 40px;
     scroll-snap-align: unset;
-    margin: 2px;
+    margin: 2px 0;
     z-index: 100;
     position: relative;
 }
@@ -6777,9 +6801,13 @@ label:active,
     .box-topic.sticker {
         width: 100%;
         height: 300px;
-        border-radius: unset;
+        border-radius: 10px;
         height: 270px;
         top: 0;
+    }
+    .sitepage.cases .box-topic,
+    .sitepage.items .box-topic {
+        border-radius: 0;
     }
     .item-box-topic {
         width: 100%;
@@ -6867,9 +6895,15 @@ label:active,
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        width: 98%;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+    .sitepage.topic .siteblock {
+        overflow: hidden;
     }
     .topic-centralizer {
-        width: 98%;
+        width: 100%;
     }
     .navigation-section.second .colors-box {
         margin-top: 3px;
@@ -6892,9 +6926,10 @@ label:active,
     }
     .box-skins {
         margin: 4px 0 0 0 !important;
+        width: 98%;
     }
     .sitepage.items .box-skins {
-        width: 100%;
+        width: 98%;
         padding-left: unset;
         background-color: unset;
     }
@@ -7345,7 +7380,7 @@ label:active,
         width: 140px;
     }
     .siteleftpannel .mods-box.topic {
-        left: 5px;
+        left: 7px;
         top: 60px;
         z-index: 25;
         width: 57px;
@@ -7582,6 +7617,7 @@ label:active,
         justify-content: center;
         padding-left: 0;
         margin-top: unset;
+        padding: 2px;
     }
     .menu-toggle {
         margin-right: 10px;
@@ -7749,7 +7785,8 @@ label:active,
     .box-skins.solo .box-skins-list .skin {
         height: 120px;
         margin: 2px;
-        width: 31.8% !important;
+        width: 30% !important;
+        flex-grow: 1;
     }
     .sitepage.items .skin.disabled {
         width: 0 !important;
