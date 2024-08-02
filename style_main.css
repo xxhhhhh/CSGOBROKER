@@ -312,6 +312,13 @@ nav #pagename:focus {
     align-items: center;
     justify-content: center;
 }
+#rec-box-logobg a img {
+    transition: all .2s ease-in-out;
+}
+
+#rec-box-logobg a img:hover {
+    transform: scale(1.05);
+}
 #rec-box-content {
     width: 94%;
     margin: 0 auto;
@@ -344,10 +351,10 @@ nav #pagename:focus {
 .rec-box .content p:nth-child(2) {
     height: auto;
 }
-#rec-box-content p:first-child {
-    color: var(--white);
+#rec-box-content a.boxtitle {
     font-weight: 600;
     font-size: 20px;
+    padding: 0;
     margin-top: 0;
     text-transform: uppercase;
     text-align: center;
@@ -3215,6 +3222,7 @@ nav #logo:hover {
     align-items: center;
     justify-content: center;
     padding-bottom: 10px;
+    transition: all .3s ease-in-out;
     mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
     -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
     -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, .5), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
@@ -3237,6 +3245,7 @@ nav #logo:hover {
     top: unset;
     border-radius: 5px;
     top: -20px;
+    width: 90%;
 }
 .sitepage.items .navigation-section {
     margin-top: 10px;
@@ -3621,7 +3630,8 @@ nav #logo:hover {
 .topic-box .logobg {
     transition: all .2s ease-in-out;
 }
-.topic-box:hover .logobg {
+.topic-box:hover .logobg,
+.item-box-topic:hover .logobg {
     transform: scale(1.03) !important;
 }
 .topic-box .logobg:hover img {
@@ -4039,7 +4049,8 @@ nav #logo:hover {
 }
 .box .logobg a:active img,
 .category-selector .category-box:active .category-box-logo img,
-.singlemod-select:active img  {
+.singlemod-select:active img,
+#rec-box-logobg a:active img  {
     filter: brightness(.5) grayscale(0) !important;
     transition: all .15s ease-in-out;
 }
@@ -4264,7 +4275,8 @@ nav img:active,
     width: auto;
 }
 .boxes-holder .content a.boxtitle:hover,
-.sitealternates .content a.boxtitle:hover {
+.sitealternates .content a.boxtitle:hover,
+.rec-box .content a.boxtitle:hover {
     color: rgb(188, 188, 188);
 }
 .content p:nth-child(2){

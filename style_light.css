@@ -589,9 +589,14 @@ ul .submenu li .nonredir,
 .submenu .big-category a:hover, 
 .submenu li:hover a, .submenu 
 .big-category .nonredir:hover, 
+.item-box-topic,
 .submenu2 a:hover {
     color: #1a1a1a;
     background-color: rgb(242 242 242);
+}
+
+.item-box-topic .logobg {
+    mask-image: unset;
 }
 
 .submenu li a:active,
