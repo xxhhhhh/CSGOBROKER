@@ -850,7 +850,7 @@ $(document).ready(function(){
     '<li><a href="/reviews/xplay">Xplay</a></li>',
     '<li><a href="/reviews/banditcamp">Banditcamp</a></li>',
     '<li><a href="/reviews/bcgame">Bcgame</a></li>',
-    '<li><a href="/reviews/bets4pro">Bets4pro</a></li>',
+    '<li><a href="/reviews/bets4pro">Bets4.pro</a></li>',
     '<li><a href="/reviews/bitskins">Bitskins</a></li>',
     '<li><a href="/reviews/bitskins-p2p">Bitskins p2p</a></li>',
     '<li><a href="/reviews/clashgg">Clashgg</a></li>',

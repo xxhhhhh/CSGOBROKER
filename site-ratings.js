@@ -29,7 +29,7 @@ var ratings = {
     "Duelbits":4.125,
     "Rollbit":4,
     "FarmSkins":2.625,
-    "Bets4pro":3.125,
+    "Bets4.pro":3.375,
     "RustMagic":3.5,
     "Rustly":3.625,
     "CS.Money":4.5,
