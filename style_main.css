@@ -3595,7 +3595,7 @@ nav #logo:hover {
     width: 300px;
     height: 200px;
     margin: 18px 9px 0 9px;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
     transition: all .15s ease-in-out;
@@ -3693,7 +3693,11 @@ nav #logo:hover {
     font-size: 16px;
     opacity: .15;
     text-transform: uppercase;
-    transition: opacity .2s ease-in-out;
+    transition: opacity .15s ease-in-out;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 90%;
 }
 .topic-box:hover .content span {
     opacity: 1;
