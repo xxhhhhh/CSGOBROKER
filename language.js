@@ -678,11 +678,11 @@ function translateURLsIfNeeded() {
         "pt": "WhiteMarket é uma plataforma P2P segura para negociação de skins de CS2 com opções de depósito e envolvimento da comunidade.",
         "hi": "WhiteMarket CS2 स्किन ट्रेडिंग के लिए एक P2P प्लेटफ़ॉर्म है। इसमें सुरक्षित व्यापार, विभिन्न जमा विकल्प और समुदाय का सहयोग है।"
       },
-      "CS.Deals is a platform that allows users to buy, sell, and trade skins from popular games such as CS2, Dota 2, Rust, and Team Fortress 2. Working since 2016.": {
-        "es": "CS.Deals es una plataforma para comprar, vender y intercambiar skins de juegos populares como CS2, Dota 2, Rust y Team Fortress 2.",
-        "tr": "CS.Deals, CS2, Dota 2, Rust ve Team Fortress 2 gibi oyunlardan skin alım ve satımını sağlayan bir platformdur. 2016'dan beri aktiftir.",
-        "pt": "CS.Deals é uma plataforma para comprar, vender e trocar skins de jogos populares como CS2, Dota 2, Rust e Team Fortress 2 desde 2016.",
-        "hi": "CS.Deals एक प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को CS2, Dota 2, Rust और Team Fortress 2 जैसे प्रसिद्ध खेलों से स्किन खरीदने, बेचने और व्यापार करने की अनुमति देता है। 2016 से काम कर रहा है।"
+      "CS.Deals is a popular trading platform for CS2, Dota 2, Rust, and TF2 game items, featuring low fees and a user-friendly interface.": {
+        "es": "CS.Deals es una plataforma de intercambio popular para artículos de juegos de CS2, Dota 2, Rust y TF2, con bajas comisiones y una interfaz fácil de usar.",
+        "tr": "CS.Deals, düşük komisyonlar ve kullanıcı dostu arayüzü ile CS2, Dota 2, Rust ve TF2 oyun eşyaları için popüler bir ticaret platformudur.",
+        "pt": "CS.Deals é uma plataforma de negociação popular para itens de jogos CS2, Dota 2, Rust e TF2, com taxas baixas e uma interface amigável.",
+        "hi": "CS.Deals कम शुल्क और उपयोगकर्ता के अनुकूल इंटरफेस के साथ CS2, Dota 2, Rust और TF2 गेम आइटम के लिए एक लोकप्रिय ट्रेडिंग प्लेटफ़ॉर्म है।"
       },
       "SkinBid is an online marketplace for CS2 skins and in-game items, offering buying, selling, and auctioning features with a user-friendly interface.": {
         "es": "SkinBid: mercado en línea para skins de CS2 y objetos de juego con funciones de compra, venta y subasta y una interfaz intuitiva.",

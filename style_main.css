@@ -1806,6 +1806,7 @@ nav #pagename:focus {
     color: var(--white);
     user-select: none;
     text-align: center;
+    width: 75%;
 }
 .site-attention span a {
     text-decoration: none;
