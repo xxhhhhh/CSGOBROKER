@@ -258,11 +258,11 @@ function translateURLsIfNeeded() {
         "pt": "Swap.gg é um site que permite aos usuários comprar, vender e trocar itens virtuais de CS2, Rust, TF2 e outros jogos. Trabalhando desde 2017.",
         "hi": "Swap.gg एक वेबसाइट है जो उपयोगकर्ताओं को CS2, Rust, TF2 और अन्य विभिन्न खेलों की आभासी आइटम खरीदने, बेचने और व्यापार करने की अनुमति देती है। 2017 से काम कर रहा है।"
       },
-      "CSMoney - Premier CS2/Dota 2 trading site since 2016. Vast selection, HD images, anti-scam, fast support. Reliable, user-friendly gaming platform.": {
-        "es": "CSMoney - líder en comercio de CS2 desde 2016. Amplia selección, protección antiestafa, soporte rápido. Plataforma confiable y fácil de usar.",
-        "tr": "CSMoney - 2016'dan beri önde gelen CS:GO/Dota 2 ticaret sitesi. Geniş seçenek, HD görüntüler, dolandırıcılığa karşı koruma, hızlı destek.",
-        "pt": "CSMoney - Site líder de negociação de CS:GO/Dota 2 desde 2016. Grande seleção, imagens em HD, proteção contra golpes, suporte rápido. Plataforma de jogos confiável e fácil de usar.",
-        "hi": "CSMoney - 2016 से प्रमुख CS:GO/Dota 2 व्यापार साइट। विस्तृत चयन, HD छवियाँ, धोखाधड़ी रोक, तेज समर्थन। विश्वसनीय, उपयोगकर्ता मित्रास्पद गेमिंग प्लेटफ़ॉर्म।"
+      "CS.Money is a leading CS2 skin trading platform with extensive features, including 3D inspection, quick sale, and efficient support.": {
+        "es": "CS.Money es una plataforma líder de intercambio de skins de CS2 con amplias características, incluyendo inspección en 3D, venta rápida y soporte eficiente.",
+        "tr": "CS.Money, 3D inceleme, hızlı satış ve etkili destek gibi geniş özelliklere sahip, önde gelen bir CS2 skin takas platformudur.",
+        "pt": "CS.Money é uma plataforma líder de troca de skins de CS2 com recursos extensivos, incluindo inspeção em 3D, venda rápida e suporte eficiente.",
+        "hi": "CS.Money एक अग्रणी CS2 स्किन ट्रेडिंग प्लेटफ़ॉर्म है जिसमें 3D निरीक्षण, त्वरित बिक्री और प्रभावी समर्थन सहित व्यापक विशेषताएं हैं।"
       },
       "CSGOStake - Skin gambling site for Counter-Strike. Offers five engaging games, provably fair system, and transparent gameplay for enthusiasts.": {
         "es": "CSGOStake - Sitio de apuestas de skins de Counter-Strike. Cinco juegos emocionantes, sistema justo y transparente para los fans.",
