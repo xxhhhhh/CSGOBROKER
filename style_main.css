@@ -1808,6 +1808,9 @@ nav #pagename:focus {
     text-align: center;
     width: 75%;
 }
+.site-attention.blocked span {
+    width: 100%;
+}
 .site-attention span a {
     text-decoration: none;
     color: var(--main-color);
