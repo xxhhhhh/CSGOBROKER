@@ -7529,6 +7529,10 @@ label:active,
     }
 }
 @media screen and (max-width: 850px) {
+    .box-skins .skin {
+        max-width: unset;
+        flex-grow: 1;
+    }
     .box-skins .skin .skin-desc,
     .box-skins .skin .skin-desc-name {
         font-size: 12px;  
@@ -7679,9 +7683,6 @@ label:active,
     .close-box-skins {
         right: 0;
         margin-top: 0;
-    }
-    .box-skins-button {
-        width: 30px;
     }
     .sitepage.items .box-skins.solo .box-skins-list {
         justify-content: center;
