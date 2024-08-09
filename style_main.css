@@ -3415,7 +3415,7 @@ nav #logo:hover {
     transition: .25s all ease-in-out;
 }
 .menu-toggle {
-    width: 50px;
+    width: auto;
     height: 50px;
     display: flex;
     background-color: transparent;
@@ -5614,12 +5614,15 @@ footer .centralizer .footer-content {
     }
     .lang-menu {
         width: auto;
+        height: 20px;
         margin-right: 15px;
-        text-align: right;
+        border-radius: 4px;
         font-weight: 600;
         position: relative;
-        font-size: 17px;
-        color: rgba(255, 255, 255, .2);
+        align-items: center;
+        font-size: 15px;
+        color: #3a3a3a;
+        border: 1px #3a3a3a solid;
         transition: all .15s ease-in-out;
     }
 
@@ -5628,14 +5631,15 @@ footer .centralizer .footer-content {
         justify-content: center;
         cursor: pointer;
         transition: all .15s ease-in-out;
-        text-transform: uppercase;
+        align-items: center;
+        position: relative;
+        padding: 0 4px;
     }
-    .lang-menu:hover .selected-lang {
-        color: var(--white);
+    .lang-menu:hover {
+        background-color: var(--white);
         transition: all .15s ease-in-out;
     }
     .lang-menu ul {
-        margin-top: 4px;
         height: 0;
         overflow: hidden;
         display: flex;
@@ -5652,7 +5656,8 @@ footer .centralizer .footer-content {
     }
     
     .lang-menu:hover ul {
-        height: 196px;
+        height: auto;
+        padding-top: 10px;
     }
 
     .lang-menu ul li {
@@ -7869,7 +7874,6 @@ label:active,
     .nav-content .lang-menu {
         order: -2;
         margin-right: 15px;
-        font-size: 16px;
     }
     .language-box {
         display: flex;

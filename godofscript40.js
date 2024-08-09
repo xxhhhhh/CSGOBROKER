@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    var newContent = '<div class="selected-lang">' + currentLanguage.toUpperCase() + '</div><ul>';
+    var newContent = '<div class="selected-lang">' + currentLanguage.charAt(0).toUpperCase()() + '</div><ul>';
     langMenuDiv.innerHTML = newContent;
     
     supportedLanguages.forEach(function(lang) {
