@@ -342,11 +342,11 @@ function translateURLsIfNeeded() {
         "pt": "Gamdom Casino oferece uma variedade de jogos internos, envolvimento social inovador, sistema comprovadamente justo e boa reputação nos jogos online.",
         "hi": "Gamdom Casino अपने भीतरी खेलों, अभिनव सामाजिक एंगेजमेंट, प्रमाणित निष्पक्ष तंत्र और ऑनलाइन गेमिंग में अच्छी प्रतिष्ठा के साथ विविधता प्रदान करने वाली एक प्लेटफॉर्म है।"
       },
-      "CSGOPOSITIVE is a popular betting site for esports disciplines such as CS2, Dota 2, LoL, and Valorant. Also features a Cashback System.": {
-        "es": "CSGOPOSITIVE es un sitio de apuestas popular para disciplinas de deportes electrónicos como CS2, Dota 2, LoL y Valorant.",
-        "tr": "CSGOPOSITIVE, CS2, Dota 2, LoL ve Valorant gibi e-spor disiplinleri için popüler bir bahis sitesidir ve Nakit Geri Ödeme Sistemi sunar.",
-        "pt": "CSGOPOSITIVE é um popular site de apostas para eSports como CS2, Dota 2, LoL e Valorant, oferecendo sistema de cashback.",
-        "hi": "CSGOPOSITIVE CS2, Dota 2, LoL, और Valorant जैसी ईस्पोर्ट्स विधाओं के लिए एक लोकप्रिय बेटिंग साइट है। इसमें एक कैशबैक सिस्टम भी है।"
+      "CSGOPositive is a popular betting platform for esports, offering cashback, a user-friendly interface, and multiple payment methods.": {
+        "es": "CSGOPositive es una plataforma popular de apuestas en deportes electrónicos, con reembolsos, interfaz fácil de usar y múltiples métodos de pago.",
+        "tr": "CSGOPositive, nakit geri ödeme, kullanıcı dostu bir arayüz ve çeşitli ödeme yöntemleri sunan popüler bir e-spor bahis platformudur.",
+        "pt": "CSGOPositive é uma plataforma de apostas popular para esports, oferecendo cashback, uma interface amigável e vários métodos de pagamento.",
+        "hi": "CSGOPositive एक लोकप्रिय ईस्पोर्ट्स सट्टेबाजी प्लेटफ़ॉर्म है, जो कैशबैक, एक उपयोगकर्ता-अनुकूल इंटरफ़ेस, और कई भुगतान विधियाँ प्रदान करता है।"
       },
       "Rollbit is a new Casino site which includes Sport Betting and many classic games like roulette. Includes Daily Bonuses !": {
         "es": "Rollbit es un nuevo sitio de casino que incluye apuestas deportivas y muchos juegos clásicos como la ruleta. ¡Incluye bonos diarios!",

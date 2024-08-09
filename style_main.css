@@ -5517,9 +5517,9 @@ footer .centralizer .footer-content {
     .submenu2 li {
         transition: all .0s ease-in-out;
     }
-    .submenu2 li:hover,
-    ul .submenu li:hover {
-        transition: all .15s ease-in-out;
+    .submenu2 li:hover a, 
+    ul .submenu li:hover a {
+        transition: all .1s ease-in-out;
         margin-left: 2px;
     }
     .submenu2 li a {
@@ -5662,7 +5662,7 @@ footer .centralizer .footer-content {
         background-color: #0a0a0a;
         justify-content: flex-start;
         border-radius: 5px;
-        box-shadow: 0 0 8px 0 rgba(0, 0, 0, .9);
+        box-shadow: 0 0 8px 0 rgba(0, 0, 0, .6);
     }
     .lang-menu ul li:last-child {
         border-bottom: 2px rgba(255, 255, 255, .12) solid;

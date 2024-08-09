@@ -12,7 +12,7 @@ var ratings = {
     "DatDrop":3.5,
     "HellStore":2.875,
     "CSGOStake":2.875,
-    "CSGOPOSITIVE":3.75,
+    "CSGOPOSITIVE":3.875,
     "Hellcase":3.375,
     "Bounty Stars":3,
     "CSGOBIG":3.125,
