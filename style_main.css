@@ -170,20 +170,17 @@ nav .socials a:hover img {
 }
 #theme-toggle i {
     color: rgba(255, 255, 255, .2);
-    transition: all .2s ease-in-out;
+    transition: all .15s ease-in-out;
 }
 nav .youtube .bi {
     font-size: 26px;
     color: rgba(255, 255, 255, .3);
-    transition: all .3s ease-in-out;
+    transition: all .15s ease-in-out;
 }
-nav .youtube .bi:hover {
-    color: var(--white);
-    transition: all .3s ease-in-out;
-}
+nav .youtube .bi:hover,
 nav .youtube .bi:focus {
     color: var(--white);
-    transition: all .3s ease-in-out;
+    transition: all .15s ease-in-out;
 }
 nav .youtube {
     margin-top: 4px;
@@ -3429,11 +3426,11 @@ nav #logo:hover {
     cursor: pointer;
     border: none;
     outline: none;
-    margin-right: 15px;
     font-family: TTNormsPro;
+    order: 1;
 }
 .menu-toggle.active {
-    transition: .2s all ease-in-out;
+    transition: .15s all ease-in-out;
 }
 .menu-toggle:hover .menu-line,
 .menu-toggle.active .menu-line {
@@ -3442,13 +3439,13 @@ nav #logo:hover {
 .menu-toggle:hover .menu-line,
 .menu-toggle.active .menu-line {
     opacity: 1;
-    transition: all .3s ease-in-out;
+    transition: all .15s ease-in-out;
     background-color: var(--main-color);
 }
 .menu-toggle:hover span,
 .menu-toggle.active span{
     color: var(--white);
-    transition: all .3s ease-in-out;
+    transition: all .15s ease-in-out;
 }
 .menu-toggle span {
     font-size: 14px;
@@ -4647,7 +4644,7 @@ footer .centralizer .footer-content {
     align-items: center;
     margin: 0 10px;
     text-decoration: none;
-    transition: color .2s ease-in-out;
+    transition: all .15s ease-in-out;
 }
 .contact-box:hover {
     color: rgba(255, 255, 255, .5);
@@ -5616,29 +5613,29 @@ footer .centralizer .footer-content {
         color: var(--white);
     }
     .lang-menu {
-        width: 40px;
+        width: auto;
+        margin-right: 15px;
         text-align: right;
         font-weight: 600;
         position: relative;
-        font-size: 18px;
-        right: 0;
+        font-size: 17px;
         color: rgba(255, 255, 255, .2);
-        transition: all .3s ease-in-out;
+        transition: all .15s ease-in-out;
     }
 
     .lang-menu .selected-lang {
         display: flex;   
         justify-content: center;
         cursor: pointer;
-        transition: all .3s ease-in-out;
+        transition: all .15s ease-in-out;
         text-transform: uppercase;
     }
-    .lang-menu .selected-lang:hover {
+    .lang-menu:hover .selected-lang {
         color: var(--white);
-        transition: all .3s ease-in-out;
+        transition: all .15s ease-in-out;
     }
     .lang-menu ul {
-        padding-top: 4px;
+        margin-top: 4px;
         height: 0;
         overflow: hidden;
         display: flex;
@@ -5662,8 +5659,10 @@ footer .centralizer .footer-content {
         list-style: none;
         text-align: left;
         display: flex;
-        justify-content: center;
         background-color: #0a0a0a;
+        justify-content: flex-start;
+        border-radius: 5px;
+        box-shadow: 0 0 8px 0 rgba(0, 0, 0, .9);
     }
     .lang-menu ul li:last-child {
         border-bottom: 2px rgba(255, 255, 255, .12) solid;
@@ -5671,20 +5670,64 @@ footer .centralizer .footer-content {
     
     .lang-menu ul li a {
         text-decoration: none;
-        width: auto;
         text-align: center;
         padding: 8px;
-        display: block;
-        color: rgba(255, 255, 255, .12);
-        text-transform: uppercase;
+        display: flex;
+        flex-direction: row;
+        color: rgba(255, 255, 255, .2);
         transition: all .15s ease-in-out;
+        font-weight: 500;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .lang-menu ul li i {
+        opacity: .4;
+        transition: all .15s ease-in-out;
+    }
+    
+    .lang-menu ul li a:hover i {
+        opacity: 1;
+    }
+    
+    .lang-menu ul li:hover {
+        background-color: #0e0e0e;
     }
     
     .lang-menu ul li:hover a {
         color: var(--white);    
-        transition: all .1s ease-in-out;
+        transition: all .15s ease-in-out;
     }
 
+    i.flagbox {
+        width: 18px;
+        border-radius: 2px;
+        aspect-ratio: 3 / 2;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+        margin: auto 0;
+        margin-right: 6px;
+    }
+    
+    i.flag-ru {
+        background-image: url(/img/icons/flags/ru.svg);
+    }
+    i.flag-en {
+        background-image: url(/img/icons/flags/uk.svg);
+    }
+    i.flag-pt {
+        background-image: url(/img/icons/flags/pt.svg);
+    }
+    i.flag-es {
+        background-image: url(/img/icons/flags/es.svg);
+    }
+    i.flag-tr {
+        background-image: url(/img/icons/flags/tr.svg);
+    }
+    i.flag-hi {
+        background-image: url(/img/icons/flags/hi.svg);
+    }
 
     #site-list li {
         display: block;
@@ -5740,11 +5783,12 @@ footer .centralizer .footer-content {
         color: transparent;
     }
     .search-container {
-        width: 30px;
+        width: auto;
         height: 30px;
         display: flex;
         position: relative;
         margin-right: 15px;
+        margin-top: 2px;
         z-index: 10000;
         overflow: hidden;
         transition: all .3s ease-in-out;
@@ -5777,8 +5821,8 @@ footer .centralizer .footer-content {
     }
     .search-enabler i {
         color: rgba(255, 255, 255, .2);
-        transition: all .2s ease-in-out;
-        font-size: 20px;
+        transition: all .15s ease-in-out;
+        font-size: 18px;
     }
     .search-enabler:hover i,
     .search-enabler:focus i {
@@ -5786,7 +5830,7 @@ footer .centralizer .footer-content {
     }
     .menu-toggle:hover .menu-line {        
         opacity: 1;
-        transition: all .3s ease-in-out;
+        transition: all .15s ease-in-out;
     }
     .menu-toggle.active .menu-line {        
         opacity: 1;
@@ -5796,7 +5840,7 @@ footer .centralizer .footer-content {
 .menu-toggle:hover span,
 .menu-toggle.active span{
     opacity: 1;
-    transition: all .3s ease-in-out;
+    transition: all .15s ease-in-out;
 }
 .menu-toggle:active,
 .search-enabler:active,
@@ -6465,6 +6509,11 @@ label:active,
     :root {
         --darkgray: rgb(15 15 15);
         --opacback: var(--darkygray);
+    }
+    .lang-menu ul li a i,
+    .lang-menu ul li a {
+        opacity: 1;
+        color: var(--white);    
     }
     .info-block {
         order: -1;

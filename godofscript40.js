@@ -349,26 +349,39 @@ document.addEventListener('DOMContentLoaded', function() {
     var supportedLanguages = ["en", "ru", "pt", "es", "tr", "hi"];
     var langMenuDiv = document.querySelector(".lang-menu");
     
+    function getLanguageName(lang) {
+        switch (lang) {
+            case "en": return "English";
+            case "ru": return "Русский";
+            case "pt": return "Português";
+            case "es": return "Español";
+            case "tr": return "Türkçe";
+            case "hi": return "हिन्दी";
+            default: return lang.toUpperCase();
+        }
+    }
+    
     function createLanguageListItem(lang, path) {
-      return '<li><a href="' + path + '" class="lang-switch" data-lang="' + lang + '">' + lang.toUpperCase() + '</a></li>';
+        return '<li><a href="' + path + '" class="lang-switch" data-lang="' + lang + '"><i class="flagbox flag-' + lang + '"></i>' + getLanguageName(lang) + '</a></li>';
     }
     
     function checkAndAddLanguage(lang) {
-      var path = lang === "en" ? window.location.pathname.replace(/^\/[a-z]{2}\//, "/") : "/" + lang + window.location.pathname.replace(/^\/[a-z]{2}\//, "/");
-      
-      fetch(path, { method: 'HEAD' }).then(function(response) {
-        if (response.ok && currentLanguage !== lang) {
-          langMenuDiv.querySelector("ul").innerHTML += createLanguageListItem(lang, path);
-        }
-      });
+        var path = lang === "en" ? window.location.pathname.replace(/^\/[a-z]{2}\//, "/") : "/" + lang + window.location.pathname.replace(/^\/[a-z]{2}\//, "/");
+        
+        fetch(path, { method: 'HEAD' }).then(function(response) {
+            if (response.ok && currentLanguage !== lang) {
+                langMenuDiv.querySelector("ul").innerHTML += createLanguageListItem(lang, path);
+            }
+        });
     }
     
     var newContent = '<div class="selected-lang">' + currentLanguage.toUpperCase() + '</div><ul>';
     langMenuDiv.innerHTML = newContent;
     
     supportedLanguages.forEach(function(lang) {
-      checkAndAddLanguage(lang);
+        checkAndAddLanguage(lang);
     });
+    
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -2157,11 +2170,11 @@ function applyTheme(theme) {
   if (theme === 'light') {
     themeStyleLink.href = '/style_light.css';
     themeStyleLink.disabled = false;
-    themeIcon.classList.replace('bi-moon', 'bi-moon-fill');
+    themeIcon.classList.replace('bi-lightbulb-off', 'bi-lightbulb-fill');
   } else {
     themeStyleLink.href = '';
     themeStyleLink.disabled = true;
-    themeIcon.classList.replace('bi-moon-fill', 'bi-moon');
+    themeIcon.classList.replace('bi-lightbulb-fill', 'bi-lightbulb-off');
   }
   localStorage.setItem('theme', theme);
 }
