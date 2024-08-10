@@ -58,6 +58,10 @@ forcemodsboxes();
         return;
       }
 
+      if (languageTag === 'tr' && link.classList.contains('mirror-redirect')) {
+        return;
+    }
+
       const href = link.getAttribute('href');
       const match = href.match(regex);
   
@@ -270,8 +274,11 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     translateTextElements(translations);
   
-    const reviewlinks = document.querySelector('.boxreview');
-    updateURLs(reviewlinks)
+    const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
+
+    reviewlinks.forEach(link => {
+        updateURLs(link);
+    });
 
   }
   
@@ -302,8 +309,11 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     translateTextElements(translations);
 
-    const reviewlinks = document.querySelector('.boxreview');
-    updateURLs(reviewlinks)
+    const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
+
+    reviewlinks.forEach(link => {
+        updateURLs(link);
+    });
   }
 
   if (window.location.pathname.includes('/pl/reviews/')) {
