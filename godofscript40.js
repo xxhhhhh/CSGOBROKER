@@ -357,7 +357,7 @@ document.addEventListener('DOMContentLoaded', function() {
             case "es": return "Español";
             case "tr": return "Türkçe";
             case "hi": return "हिन्दी";
-            default: return lang.charAt(0).toUpperCase() + lang.slice(1).toLowerCase();  // Форматирование текста
+            default: return lang.charAt(0).toUpperCase() + lang.slice(1).toLowerCase();
         }
     }
     
@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    var newContent = '<div class="selected-lang">' + currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1).toLowerCase() + '</div><ul>';  // Форматирование текста
+    var newContent = '<div class="selected-lang">' + currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1).toLowerCase() + '</div><ul>';
     langMenuDiv.innerHTML = newContent;
     
     supportedLanguages.forEach(function(lang) {

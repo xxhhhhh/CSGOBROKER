@@ -672,11 +672,11 @@ function translateURLsIfNeeded() {
         "pt": "SkinCashier é uma plataforma online de venda instantânea de skins de CS2, Rust, Dota 2 e TF2 por dinheiro real desde 2020.",
         "hi": "SkinCashier एक ऑनलाइन प्लेटफ़ॉर्म है जो खिलाड़ियों को अपने CS2, Rust, Dota 2 और TF2 स्किन को तत्काल बेचने की अनुमति देता है और वास्तविक धन के लिए। 2020 से संचालित हो रहा है।"
       },
-      "WhiteMarket is a P2P platform for CS2 skin trading. It offers secure trades, various deposit options, and community engagement.": {
-        "es": "WhiteMarket: plataforma P2P para intercambio seguro de skins de CS2 con opciones de depósito y participación comunitaria.",
-        "tr": "WhiteMarket, CS2 skin ticareti için bir P2P platformudur. Güvenli işlemler, çeşitli depozito seçenekleri ve topluluk katılımı sunar.",
-        "pt": "WhiteMarket é uma plataforma P2P segura para negociação de skins de CS2 com opções de depósito e envolvimento da comunidade.",
-        "hi": "WhiteMarket CS2 स्किन ट्रेडिंग के लिए एक P2P प्लेटफ़ॉर्म है। इसमें सुरक्षित व्यापार, विभिन्न जमा विकल्प और समुदाय का सहयोग है।"
+      "WhiteMarket is a P2P platform developed for trading items from the game CS2. Safe transactions, various deposit options, and regular activities.": {
+        "es": "WhiteMarket es una plataforma P2P desarrollada para el intercambio de artículos del juego CS2. Transacciones seguras y actividades regulares.",
+        "tr": "WhiteMarket, CS2 oyununun eşyalarını takas etmek için geliştirilen bir P2P platformudur. Güvenli işlemler ve düzenli etkinlikler.",
+        "pt": "WhiteMarket é uma plataforma P2P desenvolvida para a negociação de itens do jogo CS2. Transações seguras e atividades regulares.",
+        "hi": "WhiteMarket एक P2P प्लेटफ़ॉर्म है जिसे CS2 खेल से आइटमों की ट्रेडिंग के लिए विकसित किया गया है। सुरक्षित लेन-देन और नियमित गतिविधियाँ।"
       },
       "CS.Deals is a popular trading platform for CS2, Dota 2, Rust, and TF2 game items, featuring low fees and a user-friendly interface.": {
         "es": "CS.Deals es una plataforma de intercambio popular para artículos de juegos de CS2, Dota 2, Rust y TF2, con bajas comisiones y una interfaz fácil de usar.",
