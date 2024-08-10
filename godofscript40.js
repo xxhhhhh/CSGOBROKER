@@ -2038,7 +2038,13 @@ document.addEventListener("DOMContentLoaded", function() {
           screentable: 'Ekran Görüntüleri ve Modlar',
           sitedetails: 'Ödeme Yöntemleri',
           sitealternates: 'Benzer Siteler'
-      }
+      },
+      pl: {
+        plusminus: 'Pros and Cons',
+        screentable: 'Screenshots and Modes',
+        sitedetails: 'Payment Methods',
+        sitealternates: 'Similar Sites'
+    },
   };
 
   const t = translations[languageTag];

@@ -5112,6 +5112,12 @@ footer .centralizer .footer-content {
     filter: drop-shadow(0px 0px 3px rgb(22, 22, 22));
     opacity: .1;
   }
+
+  .slider-container button i {
+    transition: all .15s ease-in-out, opacity .5s;
+    opacity: 0;
+  }
+
   .screens button:hover i,
   .slider-container button:hover i {
     font-size: 40px !important;
@@ -5732,6 +5738,9 @@ footer .centralizer .footer-content {
     }
     i.flag-hi {
         background-image: url(/img/icons/flags/hi.svg);
+    }
+    i.flag-pl {
+        background-image: url(/img/icons/flags/pl.svg);
     }
 
     #site-list li {
@@ -6790,13 +6799,20 @@ label:active,
     }
     .mods-main-box {
         flex-direction: row;
-        margin: unset !important;
+        width: 98%;
+        margin: 0 auto !important;
     }
     .mods-box.skins-box .singlemod-box {
         margin: 3px !important;
         height: 35px;
         width: auto;
-        flex-grow: unset;
+    }
+    .singlemod-box {
+        flex-grow: 1;
+    }
+    .singlemod-select img {
+        width: auto;
+        height: 60%;
     }
     ul:first-child li .category-box {
         margin: 8px 4px 0 0 !important;

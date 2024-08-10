@@ -588,11 +588,11 @@ function translateURLsIfNeeded() {
         "pt": "Salad é um site que permite aos usuários minerar carteiras, comprar cartões-presente e muito mais usando o poder de processamento do computador.",
         "hi": "Salad एक वेबसाइट है जो उपयोगकर्ताओं को अपने कंप्यूटर की प्रोसेसिंग पावर का उपयोग करके वॉलेट खनन और गिफ्टकार्ड्स खरीदने और बहुत कुछ करने का अवसर प्रदान करती है।"
       },
-      "Site from Gamehag owners. Has a decent number of survey providers and offerwall partners to choose from, plenty of options for withdrawing earnings.": {
-        "es": "Sitio asociado a Gamehag con varias opciones de encuestas y ofertas para elegir, y múltiples opciones de retiro de ganancias.",
-        "tr": "Gamehag, birçok anket sağlayıcısı ve teklif duvarı ortağıyla birlikte kazançları çekmek için çeşitli seçenekler sunan bir site.",
-        "pt": "Site dos proprietários do Gamehag. Oferece provedores de pesquisas, parceiros de oferta e opções de saque dos ganhos.",
-        "hi": "Gamehag मालिकों की वेबसाइट। इसमें विभिन्न सर्वेक्षण प्रदाताओं और ऑफरवॉल पार्टनरों की एक अच्छी संख्या होती है जिनमें से चुनने के लिए, कमाई निकालने के लिए कई विकल्प होते हैं।"
+      "Earnweb is a GPT site from the owners of Gamehag, offering earnings through gaming tasks, and stands out with its simple interface.": {
+        "es": "Earnweb es un sitio GPT de los propietarios de Gamehag, que ofrece ganancias a través de tareas de juegos y se destaca por su interfaz simple.",
+        "tr": "Earnweb, Gamehag sahiplerinin sunduğu, oyun görevleri ile kazanç sağlayan bir GPT sitesidir ve basit arayüzüyle öne çıkar.",
+        "pt": "Earnweb é um site GPT dos proprietários do Gamehag, que oferece ganhos através de tarefas de jogos e se destaca por sua interface simples.",
+        "hi": "Earnweb Gamehag के मालिकों द्वारा संचालित एक GPT साइट है, जो गेमिंग कार्यों के माध्यम से कमाई की पेशकश करती है और इसके सरल इंटरफ़ेस के साथ अलग दिखती है।"
       },
       "SteamGifts is a legitimate website for Steam Game Giveaways with a supportive community and helpful resources.": {
         "es": "SteamGifts es un sitio web legítimo para sorteos de juegos de Steam con una comunidad solidaria y recursos útiles.",
