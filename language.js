@@ -582,11 +582,11 @@ function translateURLsIfNeeded() {
         "pt": "GameTame é um site que oferece recompensas por completar atividades e ofertas. É projetado especialmente para jogadores.",
         "hi": "GameTame एक GPT साइट है जो विभिन्न गतिविधियों और प्रस्तावों के पूरा करने के लिए पुरस्कार प्रदान करती है। प्लेटफ़ॉर्म विशेष रूप से गेमर्स के लिए डिज़ाइन किया गया है।"
       },
-      "Salad is a website that offers users the opportunity to mine wallet and buy gift cards and many more using their computer's processing power.": {
-        "es": "Salad es un sitio web que ofrece a los usuarios la oportunidad de minar billeteras y comprar tarjetas de regalo y mucho más utilizando la potencia de procesamiento de su computadora.",
-        "tr": "Salad, kullanıcılara cüzdan madenciliği yapma ve bilgisayarlarının işlem gücünü kullanarak hediye kartları ve daha fazlasını satın alma fırsatı sunan bir web sitesidir.",
-        "pt": "Salad é um site que permite aos usuários minerar carteiras, comprar cartões-presente e muito mais usando o poder de processamento do computador.",
-        "hi": "Salad एक वेबसाइट है जो उपयोगकर्ताओं को अपने कंप्यूटर की प्रोसेसिंग पावर का उपयोग करके वॉलेट खनन और गिफ्टकार्ड्स खरीदने और बहुत कुछ करने का अवसर प्रदान करती है।"
+      "Salad.com is a platform for earning through PC mining, offering mining optimization and rewards in the form of cryptocurrency, games, and gift cards.": {
+        "es": "Salad.com es una plataforma para ganar dinero minando con una PC, que ofrece optimización y recompensas en criptomonedas, juegos y tarjetas de regalo.",
+        "tr": "Salad.com, PC madenciliği yoluyla kazanç sağlayan, madencilik optimizasyonu ve kripto para birimi, oyunlar ve hediye kartları şeklinde ödüller sunan bir platformdur.",
+        "pt": "Salad.com é uma plataforma para ganhar dinheiro minerando com um PC, oferecendo otimização e recompensas em criptomoedas, jogos e cartões de presente.",
+        "hi": "Salad.com एक ऐसा प्लेटफ़ॉर्म है जो पीसी माइनिंग के माध्यम से कमाई और क्रिप्टोकरेंसी, गेम्स और गिफ्ट कार्ड्स के रूप में पुरस्कार प्रदान करता है।"
       },
       "Earnweb is a GPT site from the owners of Gamehag, offering earnings through gaming tasks, and stands out with its simple interface.": {
         "es": "Earnweb es un sitio GPT de los propietarios de Gamehag, que ofrece ganancias a través de tareas de juegos y se destaca por su interfaz simple.",
