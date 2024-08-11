@@ -72,8 +72,10 @@ body{
     line-height: 1.2 !important;
     margin-bottom: 0 !important;
 }
-a {
+a, p {
     color: var(--white);
+    font-weight: 500;
+    font-size: 16px;
 }
 header {
     position: fixed;
