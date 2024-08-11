@@ -522,17 +522,17 @@ function translateURLsIfNeeded() {
         "pt": "O RustChance está em operação desde 2017 e oferece vários jogos populares, incluindo Jackpot, Roleta, Cara ou Coroa, Queda e Campo Minado.",
         "hi": "RustChance 2017 से संचालित हो रहा है और जैकपॉट, व्हील, कॉइनफ्लिप, क्रैश और लैंडमाइंस समेत कई लोकप्रिय खेल प्रदान करता है।"
       },
-      "The website has a decent number of survey providers and offerwall partners to choose from, and there are plenty of options for withdrawing earnings.": {
-        "es": "El sitio web cuenta con varios proveedores de encuestas y socios de ofertas para elegir, y ofrece múltiples opciones para retirar las ganancias.",
-        "tr": "Web sitesi, seçilebilecek makul sayıda anket sağlayıcısı ve teklif duvarı ortağına sahiptir ve kazançları çekmek için birçok seçenek vardır.",
-        "pt": "O site possui um número razoável de provedores de pesquisas e parceiros de oferta para escolher, e há muitas opções para sacar os ganhos.",
-        "hi": "वेबसाइट पर उचित संख्या में सर्वेक्षण प्रदाता और ऑफरवॉल साझेदार हैं जिन्हें चुना जा सकता है, और कमाई को निकासी के लिए कई विकल्प हैं।"
+      "Gamehag is a GPT platform that rewards users for gaming tasks with the ability to exchange rewards for real prizes.": {
+        "es": "Gamehag es una plataforma GPT que recompensa a los usuarios por completar tareas de juegos, pudiendo canjear las recompensas por premios reales.",
+        "tr": "Gamehag, kullanıcıları oyun görevleri için ödüllendiren ve ödülleri gerçek ödüllerle değiştirme imkanı sunan bir GPT platformudur.",
+        "pt": "Gamehag é uma plataforma GPT que recompensa os usuários por tarefas de jogos, com a possibilidade de trocar as recompensas por prêmios reais.",
+        "hi": "Gamehag एक GPT प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को गेमिंग कार्यों के लिए पुरस्कृत करता है, जिसमें पुरस्कारों को वास्तविक पुरस्कारों में बदलने की सुविधा है।"
       },
-      "SkinSwap is an online platform that allows players to trade and sell skins from popular games such as CS2 and Rust. Owned and operated by RustySell.": {
-        "es": "SkinSwap es una plataforma en línea para intercambiar y vender skins de juegos populares como CS2 y Rust. Propiedad de RustySell.",
-        "tr": "SkinSwap, CS2 ve Rust gibi popüler oyunlardan skinleri ticaret yapmanıza ve satmanıza izin veren bir çevrimiçi platformdur.",
-        "pt": "O SkinSwap é uma plataforma online para negociar e vender skins de jogos populares como CS2 e Rust, pertencente à RustySell.",
-        "hi": "एक ऑनलाइन प्लेटफ़ॉर्म है जो खिलाड़ियों को CS: GO और Rust जैसे प्रसिद्ध खेलों के स्किन को विनिमय और बेचने की अनुमति देता है। RustySell द्वारा स्वामित्व और संचालित होता है।"
+      "SkinSwap - a convenient and reliable platform for trading and quickly selling items from CS2 and Rust with instant payouts.": {
+        "es": "SkinSwap - una plataforma conveniente y confiable para intercambiar y vender rápidamente artículos de CS2 y Rust con pagos instantáneos.",
+        "tr": "SkinSwap - CS2 ve Rust'tan öğeleri takas etmek ve hızlıca satmak için kullanışlı ve güvenilir bir platform, anında ödeme ile.",
+        "pt": "SkinSwap - uma plataforma conveniente e confiável para trocar e vender rapidamente itens de CS2 e Rust com pagamentos instantâneos.",
+        "hi": "SkinSwap - CS2 और Rust से आइटमों के व्यापार और त्वरित बिक्री के लिए एक सुविधाजनक और विश्वसनीय मंच, त्वरित भुगतान के साथ।"
       },
       "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.": {
         "es": "CSGOSelly es un sitio web que permite a los usuarios convertir sus skins de CSGO en dinero a través de varios métodos de pago. Fue fundado en 2021.",
