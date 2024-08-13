@@ -6549,26 +6549,23 @@ label:active,
     user-select: none;
     z-index: 2;
 }
-.main-infobox-content-text ul {
+.main-infobox-content-text p {
     color: rgba(255, 255, 255, .7);
+    font-weight: 400;
+    font-size: 14px;
+    transition: color .1s ease-in-out;
+}
+.main-infobox-content-block {
     background-color: var(--darkgray);
     border-radius: 5px;
     margin: 8px;
     padding: 12px;
-    font-weight: 400;
-    font-size: 15px;
-    transition: color .1s ease-in-out;
 }
+
 .main-infobox-content-text ul li {
     display: block;
 }
-.main-infobox-content-text ul li p {
-    color: rgba(255, 255, 255, .7);
-    transition: color .15s ease-in-out;
-    font-weight: 400;
-    font-size: 14px;
-}
-.main-infobox-content-text ul li p:nth-child(2) {
+.main-infobox-content-text p:nth-child(2) {
     margin-top: 10px;
 }
 .main-infobox-mascotte {
