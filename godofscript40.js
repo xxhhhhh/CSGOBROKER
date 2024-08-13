@@ -1978,7 +1978,7 @@ $(document).ready(function() {
 
   if ($('.main-infobox').length > 0) {
     var mainInfobox = $('.main-infobox');
-    sliderContainer.insertBefore(mainInfobox);
+    sliderContainer.insertAfter(mainInfobox);
 } else if (path.includes('/reviews/') || path.includes('/mirrors/')) {
     var sitealternates = $('.sitealternates');
     sliderContainer.insertAfter(sitealternates);

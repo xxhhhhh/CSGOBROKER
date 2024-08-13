@@ -6676,6 +6676,7 @@ label:active,
         flex-direction: column;
         align-items: center;
         margin-top: 4px;
+        order: 1;
     }
     .main-infobox-content {
         width: 100%;
@@ -6896,6 +6897,12 @@ label:active,
     .box .content {
         transition: .15s transform ease-in-out !important;
     }
+    .newest-boxes .box .content {
+        display: none;
+    }
+    .newest-boxes .box:hover .logobg {
+        filter: unset;
+    }
     .rating-case-single {
         background: rgb(18, 18, 18);
     }
@@ -7051,6 +7058,8 @@ label:active,
     }
     .ssiodox {
         background: unset;
+        display: flex;
+        flex-direction: column;
     }
     nav {
         width: 92%;
@@ -7697,6 +7706,7 @@ label:active,
     }
     footer {
         margin-top: 15px;
+        order: 2;
     }
 }
 @media screen and (max-width: 405px) {
@@ -8084,7 +8094,7 @@ label:active,
     .newest-boxes .box .logobg {
         height: 100% !important;
     }
-    .newest-boxes .content button {
+    .newest-boxes .content button.copy {
         display: none;
     }
     .newest-boxes .box .logobg img {

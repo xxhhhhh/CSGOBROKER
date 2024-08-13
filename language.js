@@ -390,11 +390,11 @@ function translateURLsIfNeeded() {
         "pt": "Uma plataforma online que permite aos usuários abrir caixas para CS2 e Dota 2 desde 2017, oferecendo várias funcionalidades.",
         "hi": "एक ऑनलाइन प्लेटफॉर्म है जो उपयोगकर्ताओं को CS2 और Dota 2 के लिए केस खोलने की अनुमति देता है। 2017 में शुरू किए जाने के बाद, वेबसाइट विभिन्न सुविधाएं प्रदान करता है।"
       },
-      "KNIFEX is a CS2 gambling site that offers a range of game modes, including case opening, case battles, coinflip, crash, clash and many more!": {
-        "es": "KNIFEX es un sitio de apuestas de CS2 con múltiples modos de juego, incluyendo apertura y batallas de estuches, coinflip, crash, clash y más.",
-        "tr": "KNIFEX, kasa açma, kasa savaşları, coinflip, crash, çatışma gibi bir dizi oyun modu sunan bir CS2 kumar sitesidir!",
-        "pt": "Um site de apostas de CS2 com uma variedade de modos de jogo, incluindo abertura de caixas, batalhas de caixas, coinflip, crash, clash e muito mais!",
-        "hi": "KNIFEX एक CS2 जुआ साइट है जो केस खोलने, केस युद्ध, कॉइनफ्लिप, क्रैश, क्लैश और बहुत कुछ जैसे खेल मोड्स की विभिन्नता प्रदान करता है!"
+      "KNIFEX is a CS2 gambling site that offers various game modes, including betting, slots, coinflip, crash, case openings, and more!": {
+        "es": "KNIFEX es un sitio de apuestas de CS2 que ofrece varios modos de juego, incluyendo apuestas, tragamonedas, apertura de cajas y mucho más.",
+        "tr": "KNIFEX, bahisler, slotlar, kasa açma ve daha fazlasını içeren çeşitli oyun modları sunan bir CS2 kumar sitesidir!",
+        "pt": "KNIFEX é um site de apostas de CS2 que oferece vários modos de jogo, incluindo apostas, slots, abertura de caixas e muito mais!",
+        "hi": "KNIFEX एक CS2 जुआ साइट है जो विभिन्न गेम मोड्स प्रदान करता है, जिसमें सट्टेबाजी, स्लॉट्स, केस ओपनिंग और बहुत कुछ शामिल है!"
       },
       "DatDrop is a website that specializes in opening cases that contain skins from CS2. Its most prominent feature is the case-opening battles.": {
         "es": "DatDrop es un sitio web especializado en abrir estuches que contienen skins de CS2. Su característica más destacada son las batallas de apertura de estuches.",
@@ -546,11 +546,11 @@ function translateURLsIfNeeded() {
         "pt": "Um site único onde você pode ganhar dinheiro ganhando jogos em várias disciplinas cibernéticas de jogos móveis. Também possui muitos offerwalls.",
         "hi": "एक अद्वितीय साइट जहां आप विभिन्न मोबाइल गेमिंग साइबर विषयों में खेल जीतकर पैसे कमा सकते हैं। इसके अलावा कई ऑफरवॉल्स भी हैं।"
       },
-      "RustMoment is a gambling site for Rust skin enthusiasts with six games, bonuses, and a rakeback system. It accepts standard and cryptocurrency payments.": {
-        "es": "RustMoment: sitio de apuestas de skins de Rust. 6 juegos, bonificaciones y sistema de rakeback. Acepta pagos estándar y criptomonedas.",
-        "tr": "RustMoment, altı oyun, bonuslar ve rakeback sistemiyle Rust skin hayranları için bir bahis sitesidir. Standart ve kripto para ödemelerini kabul eder.",
-        "pt": "RustMoment é um site de apostas para entusiastas de skins do Rust com seis jogos, bônus e pagamentos em moeda padrão e criptomoeda.",
-        "hi": "RustMoment एक रस्ट स्किन प्रशंसकों के लिए एक जुआ साइट है जिसमें छह खेल, बोनस और एक रेकबैक सिस्टम होता है। इसमें मानक और क्रिप्टोकरेंसी भुगतान स्वीकार किए जाते हैं।"
+      "RustMoment is a Rust skin gambling platform offering unique modes and bonuses, including rakeback and a daily case.": {
+        "es": "RustMoment es una plataforma de juegos de azar con skins de Rust que ofrece modos únicos y bonificaciones, incluyendo rakeback y un caso diario.",
+        "tr": "RustMoment, Rust skinleriyle bahis yapma platformudur ve rakeback ile günlük kasa dahil olmak üzere benzersiz modlar ve bonuslar sunar.",
+        "pt": "RustMoment é uma plataforma de apostas com skins de Rust que oferece modos e bônus exclusivos, incluindo rakeback e um caso diário.",
+        "hi": "RustMoment एक Rust स्किन जुआ प्लेटफार्म है, जो अद्वितीय मोड और बोनस प्रदान करता है, जिसमें रेकबैक और दैनिक केस शामिल हैं।"
       },
       "Freeward is a platform for earning through surveys, watching videos, and games, featuring an achievements system and a wide variety of withdrawal methods.": {
         "es": "Freeward es una plataforma para ganar a través de encuestas, ver videos y juegos, con un sistema de logros y una amplia variedad de métodos de retiro.",
