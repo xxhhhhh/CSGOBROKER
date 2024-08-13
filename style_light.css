@@ -169,6 +169,11 @@ h3  {
     color: #1a1a1a;
 }
 
+.main-infobox-content-text ul li p {
+    color: #1a1a1a;
+    font-weight: 400;
+}
+
 .logobg .rating-case-single .rating-summ, 
 .logobg .vpn, 
 .sitealternatesboxes .box .rating-case-single .rating-summ, 
@@ -323,7 +328,9 @@ h3  {
 .crafting-table-step,
 .crafting-table-step:hover,
 #notexist .category-box .category-box-logo,
-.topic-nav-box {
+.topic-nav-box,
+.main-infobox-content-text ul,
+.main-infobox-mascotte::after {
     background: #f2f2f2;
 }
 
@@ -610,4 +617,17 @@ ul .submenu li .nonredir,
 .category-selector .category-box:active .category-box-logo {
     color: #1a1a1a !important;
     background-color: rgb(242 242 242) !important;
+}
+
+.main-infobox-mascotte::after,
+.main-infobox-content-text ul,
+.box .content,
+#rec-box-content,
+.boxreview .plusminus .criteria,
+.box-skins .skin {
+    box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .4);
+}
+
+.main-infobox-content-text ul li p {
+    font-weight: 500;
 }

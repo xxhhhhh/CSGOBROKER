@@ -341,6 +341,9 @@ document.addEventListener('DOMContentLoaded', function() {
     !window.location.pathname.includes("/mirrors/") &&
     !window.location.pathname.includes("/reviews/") &&
     !window.location.pathname.includes("/topic") &&
+    !window.location.pathname.includes("/privacy-policy") &&
+    !window.location.pathname.includes("/terms-of-service") &&
+    !window.location.pathname.includes("/contact-us") &&
     window.location.pathname !== "/ru" &&
     window.location.pathname !== "/pt" &&
     window.location.pathname !== "/es" &&
@@ -1973,19 +1976,22 @@ $(document).ready(function() {
     sliderContainer.append(createSliderItem(item.href, item.src, item.label));
   });
 
-  if (path.includes('/reviews/') || path.includes('/mirrors/')) {
+  if ($('.main-infobox').length > 0) {
+    var mainInfobox = $('.main-infobox');
+    sliderContainer.insertBefore(mainInfobox);
+} else if (path.includes('/reviews/') || path.includes('/mirrors/')) {
     var sitealternates = $('.sitealternates');
     sliderContainer.insertAfter(sitealternates);
-  } else if (path.includes('/topic/') && $('.boxtopic').length > 0) {
+} else if (path.includes('/topic/') && $('.boxtopic').length > 0) {
     var boxTopic = $('.boxtopic');
     boxTopic.append(sliderContainer);
-  } else if ($('.newest-boxes').length > 0) {
+} else if ($('.newest-boxes').length > 0) {
     var newestBoxes = $('.newest-boxes');
     sliderContainer.insertBefore(newestBoxes);
-  } else {
+} else {
     var footer = $('footer');
     sliderContainer.insertBefore(footer);
-  }
+}
 
   sliderContainer.slick({
     slidesToShow: 1,
