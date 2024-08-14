@@ -89,6 +89,7 @@ var ratings = {
     "RustBounty":3.25,
     "RustReaper":3.625,
     "CobaltLab":3.75,
+    "Splits":3.125,
   };
   
   function addStarRating(boxId, rating) {

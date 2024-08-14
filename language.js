@@ -210,6 +210,12 @@ function translateURLsIfNeeded() {
     var languageTag = extractLanguageTagFromHTML();
     
     var translations = {
+      "Splits is a new gambling site for Rust skins with various game modes, instant skin withdrawals, rakeback, and rewards for activity.": {
+        "es": "Splits es un nuevo sitio de apuestas para skins de Rust con varios modos de juego, retiros instantáneos de skins y diferentes bonificaciones.",
+        "tr": "Splits, çeşitli oyun modları, anlık skin çekme ve çeşitli bonuslarla Rust skinleri için yeni bir kumar sitesidir.",
+        "pt": "Splits é um novo site de apostas para skins de Rust com vários modos de jogo, retiradas instantâneas de skins e diferentes bônus.",
+        "hi": "Splits.gg एक नया जुआ साइट है जहाँ Rust स्किन्स के लिए विभिन्न गेम मोड्स, तुरंत स्किन निकासी और विभिन्न बोनस हैं।"
+      },
       "Cobalt Lab - a popular CIS gambling platform for Rust with a unique design, fast transactions, cashback, and rewards for activity.": {
         "es": "Cobalt Lab - una plataforma de juegos de azar popular para Rust con un diseño único, transacciones rápidas, reembolsos y recompensas por actividad.",
         "tr": "Cobalt Lab - Rust için benzersiz tasarımı, hızlı işlemleri, cashback ve aktivite ödülleri ile popüler bir kumar platformu.",
