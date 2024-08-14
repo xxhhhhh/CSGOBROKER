@@ -6527,6 +6527,13 @@ label:active,
     margin-top: 18px;
     justify-content: center;
 }
+.boxreview .main-infobox {
+    max-width: 100%;
+    margin-top: 9px;
+}
+.boxreview .main-infobox-content {
+    width: 80%;
+}
 .main-infobox-content {
     background-color: var(--darkygray);
     position: relative;
@@ -6677,6 +6684,12 @@ label:active,
     }
     .main-infobox-content {
         width: 100%;
+    }
+    .boxreview .main-infobox {
+        margin-top: 4px;
+    }
+    .boxreview .main-infobox-content {
+        width: 98%;
     }
     .main-infobox-content::before {
         left: 50%;
@@ -7517,6 +7530,7 @@ label:active,
         width: 100%;
         min-height: unset;
         margin: 9px 0 0 0;
+        padding-bottom: 40px;
     }
     .boxreview .plusminus .criteria .par h2 {
         position: static;
