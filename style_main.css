@@ -2570,9 +2570,8 @@ nav #pagename:focus {
     font-weight: 500;
     font-size: 16px;
     width: 95%;
-    display: list-item;
+    display: block;
     position: relative;
-    list-style: none;
 }
 .smallreview p:nth-child(3),
 .smallreview p:nth-child(4),
@@ -4236,7 +4235,6 @@ nav img:active,
     opacity: 1;
     visibility: visible;
 }
-
 
 .boxes-holder .box:hover .rating-case-single,
 .boxes-holder .box:hover .rating-case-single::before,
@@ -8205,7 +8203,7 @@ label:active,
         margin: 8px 4px 0 4px !important;
     }
     .content p:nth-child(2) {
-        width: 80% !important;
+        width: 70% !important;
         height: 75px;
         font-size: 13px;
         margin-top: 10px;

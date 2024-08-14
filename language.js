@@ -396,11 +396,11 @@ function translateURLsIfNeeded() {
         "pt": "KNIFEX é um site de apostas de CS2 que oferece vários modos de jogo, incluindo apostas, slots, abertura de caixas e muito mais!",
         "hi": "KNIFEX एक CS2 जुआ साइट है जो विभिन्न गेम मोड्स प्रदान करता है, जिसमें सट्टेबाजी, स्लॉट्स, केस ओपनिंग और बहुत कुछ शामिल है!"
       },
-      "DatDrop is a website that specializes in opening cases that contain skins from CS2. Its most prominent feature is the case-opening battles.": {
-        "es": "DatDrop es un sitio web especializado en abrir estuches que contienen skins de CS2. Su característica más destacada son las batallas de apertura de estuches.",
-        "tr": "DatDrop, CS2'dan skin içeren estuches açmaya özgü bir web sitesidir. En önemli özelliği estuche açma savaşlarıdır.",
-        "pt": "DatDrop é um site que se especializa em abrir caixas que contêm skins do CS2. Sua característica mais proeminente são as batalhas de abertura de caixas.",
-        "hi": "DatDrop एक वेबसाइट है जो CS2 से स्किन्स शामिल करने वाले केस खोलने पर विशेषाधिकार रखती है। इसकी सबसे प्रमुख विशेषता केस खोलने की युद्ध है।"
+      "DatDrop is a popular site in the CS2 case opening sphere, with a focus on case battles. There is also an upgrader and a fairness verification system.": {
+        "es": "DatDrop es un sitio popular en el ámbito de la apertura de cajas de CS2, con un enfoque en las batallas de cajas. También cuenta con un mejorador.",
+        "tr": "DatDrop, kasa savaşlarına odaklanan popüler bir CS2 kasa açma sitesidir. Ayrıca bir yükseltici ve adalet doğrulama sistemi de bulunmaktadır.",
+        "pt": "DatDrop é um site popular no mundo de abertura de caixas do CS2, com foco em batalhas de caixas. Também possui um aprimorador.",
+        "hi": "DatDrop CS2 केस ओपनिंग के क्षेत्र में एक लोकप्रिय साइट है, जो केस बैटल्स पर ध्यान केंद्रित करता है। इसमें एक अपग्रेडर और ईमानदारी सत्यापन प्रणाली भी है।"
       },
       "DaddySkins is a valid CSGO case opening website that has been in operation since 2017, and it offers Case Openings, Case Battles, and Upgrader.": {
         "es": "DaddySkins es un sitio web de apertura de estuches de CSGO válido desde 2017 que ofrece Apertura de Estuches, Batallas de Estuches y Mejoras.",
