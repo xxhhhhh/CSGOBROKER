@@ -294,11 +294,11 @@ function translateURLsIfNeeded() {
         "pt": "RapidSkins é uma plataforma online criada para fornecer aos jogadores um mercado para comprar, vender e negociar skins para CS2 e Rust.",
         "hi": "RapidSkins एक ऑनलाइन प्लेटफ़ॉर्म है जिसका उद्देश्य गेमर्स को सीएस2 और रस्ट के लिए स्किन खरीदने, बेचने और व्यापार करने के लिए एक बाजार प्रदान करना है।"
       },
-      "RustMagic - a cutting-edge Rust skin betting site, features five distinct game modes, withdrawal in Rust skins, and a daily free case system for users.": {
-        "es": "RustMagic - sitio de apuestas de skins Rust con cinco modos de juego, retiros en skins de Rust y sistema diario de estuches gratuitos.",
-        "tr": "RustMagic - Rust deri bahis sitesi olarak öne çıkar ve beş oyun modu ile Rust derilerinde çekilme ve günlük ücretsiz kasa sistemi sunar.",
-        "pt": "RustMagic - site de apostas de skins Rust com cinco modos de jogo, saques em skins Rust e sistema diário de caixas grátis.",
-        "hi": "RustMagic - एक कटिंग-एज रस्ट स्किन बेटिंग साइट, पाँच विभिन्न गेम मोड, रस्ट स्किन्स में निकासी और उपयोगकर्ताओं के लिए एक दैनिक मुफ्त केस प्रणाली के साथ।"
+      "RustMagic is a gambling site for Rust fans, featuring a variety of games and slots, bonuses, a user-friendly design, and instant payouts.": {
+        "es": "RustMagic es un sitio de apuestas para fanáticos de Rust, que ofrece una variedad de juegos, bonificaciones, un diseño fácil de usar y pagos instantáneos.",
+        "tr": "RustMagic, Rust hayranları için birçok oyun, bonus, kullanıcı dostu tasarım ve anında ödeme sunan bir kumar sitesidir.",
+        "pt": "RustMagic é um site de apostas para fãs de Rust, com uma variedade de jogos, bônus, design amigável e pagamentos instantâneos.",
+        "hi": "रस्टमैजिक रस्ट के प्रशंसकों के लिए एक जुआ साइट है, जिसमें कई गेम, बोनस, उपयोगकर्ता के अनुकूल डिज़ाइन और त्वरित भुगतान शामिल हैं।"
       },
       "SKINFANS - CS2 skin case opening , beautiful animations, provably fair system. Regular giveaways, Battle-pass for newcomers, sleek design.": {
         "es": "SKINFANS - Apertura cajas piel CS2, animaciones impresionantes, sistema justo. Sorteos frecuentes, Pase batalla, diseño elegante.",
