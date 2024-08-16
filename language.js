@@ -240,7 +240,7 @@ function translateURLsIfNeeded() {
         "pt": "GGDROP - uma plataforma conhecida para abrir caixas no CS2. Além disso, há Batalha de Caixas, Contratos, Aperfeiçoador e Promoções Regulares.",
         "hi": "GGDROP - सीएस2 में केस खोलने के लिए एक प्रसिद्ध प्लेटफ़ॉर्म। इसके अलावा, केस बैटल, कॉन्ट्रैक्ट्स, अपग्रेडर, और नियमित प्रस्ताव हैं।"
       },
-      "RustClash, a premier Rust gambling site, offers a variety of popular games such as Roulette, Upgrader, and Cases, alongside daily cases.": {
+      "RustClash - a popular gambling site in the Rust community, with unique modes featuring beautiful animations and plenty of bonuses.": {
         "es": "RustClash ofrece juegos populares como Ruleta, Mejorador y Cajas, además de casos diarios para el disfrute de los jugadores.",
         "tr": "RustClash, Rulet, Yükseltici ve Kutular gibi popüler oyunları içeren üst düzey Rust kumar sitesidir, ayrıca oyuncuların keyfi için günlük kutular da sunmaktadır.",
         "pt": "RustClash é um site popular de apostas em Rust, oferecendo jogos como Roleta, Upgrader e Caixas, além de casos diários para entretenimento dos jogadores.",
@@ -612,11 +612,11 @@ function translateURLsIfNeeded() {
         "pt": "RustCases é um site confiável de apostas em Rust com diversos modos de jogo, uma ampla seleção de cases e opções de retirada de skins.",
         "hi": "RustCases एक भरोसेमंद Rust जुआ साइट है जिसमें विभिन्न खेल मोड, विशाल संख्या में केस, और स्किन निकासी के विकल्प होते हैं। RustChance के मालिकों द्वारा।"
       },
-      "RustClash is a new Rust Gambling site which includes many games like Roulette, Upgrader, Cases and many more!": {
-        "es": "RustClash es un nuevo sitio de apuestas de Rust que incluye muchos juegos como ruleta, upgrader, cajas y ¡muchos más!",
-        "tr": "RustClash, Rulet, Yükseltici, Kutular ve daha birçok oyun gibi birçok oyun içeren yeni bir Rust Kumar sitesidir!",
-        "pt": "RustClash é um novo site de apostas de Rust que inclui muitos jogos como Roleta, Upgrader, Cases e muitos mais!",
-        "hi": "RustClash एक नया Rust जुआ साइट है जिसमें कई खेल शामिल हैं जैसे रूलेट, अपग्रेडर, केस और कई अन्य!"
+      "RustClash - a popular gambling site in the Rust community, with unique modes featuring beautiful animations and plenty of bonuses.": {
+        "es": "RustClash - un sitio de apuestas popular en la comunidad de Rust, con modos únicos que presentan hermosas animaciones y una gran cantidad de bonificaciones.",
+        "tr": "RustClash - Rust topluluğunda popüler bir kumar sitesi, güzel animasyonlarla benzersiz modlar ve bol miktarda bonus sunuyor.",
+        "pt": "RustClash - um site de apostas popular na comunidade de Rust, com modos únicos, animações bonitas e muitos bônus.",
+        "hi": "RustClash - Rust समुदाय में एक लोकप्रिय जुआ साइट, अनोखे मोड्स के साथ सुंदर एनीमेशन और ढेर सारे बोनस।"
       },
       "BC.Game is an online casino and sportsbook that was launched in 2017, offering over 8,000 games including proprietary and probably fair games.": {
         "es": "BC.Game es un casino en línea y casa de apuestas deportivas lanzado en 2017, ofreciendo más de 8,000 juegos, incluyendo juegos propietarios.",

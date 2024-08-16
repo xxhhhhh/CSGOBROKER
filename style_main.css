@@ -3368,7 +3368,31 @@ nav #logo:hover {
     border-radius: 10px;
     text-decoration: none;
     transition: all .15s ease-in-out;
+    position: relative;
+    overflow: hidden;
     order: 1;
+}
+.partner-site::before {
+    content: 'Subsidiary';
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: black;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -30px;
+    top: 10px;
+    width: 150px;
+    height: 18px;
+    transform: rotate(-25deg) translateY(-50px) translateX(-50px);
+    background-color: var(--main-color);
+    transition: all .15s ease-in-out;
+}
+
+.partner-site:hover::before {
+    transform: rotate(-25deg);
 }
 .return-box {
     width: 60px;
@@ -7261,6 +7285,9 @@ label:active,
     }
     .partner-site {
         margin-top: 10px;
+    }
+    .partner-site::before {
+        content: none;
     }
     .mirror-redirect span {
         font-size: 12px;
