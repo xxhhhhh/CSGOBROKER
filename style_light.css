@@ -632,3 +632,7 @@ ul .submenu li .nonredir,
 .sitepage .box.main .content {
     box-shadow: unset;
 }
+
+.instruction code {
+    font-weight: 500;
+}

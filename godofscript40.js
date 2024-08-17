@@ -880,7 +880,6 @@ $(document).ready(function(){
     '<li><a href="/reviews/rustcases">Rustcases</a></li>',
     '<li><a href="/reviews/rustchance">Rustchance</a></li>',
     '<li><a href="/reviews/rustclash">Rustclash</a></li>',
-    '<li><a href="/reviews/dotaclash">Dotaclash</a></li>',
     '<li><a href="/reviews/bounty-stars">Bounty Stars</a></li>',
     '<li><a href="/reviews/rustmoment">Rustmoment</a></li>',
     '<li><a href="/reviews/csgostake">CSGOStake</a></li>',
@@ -905,7 +904,6 @@ $(document).ready(function(){
     '<li><a href="/reviews/bcgame">Bcgame</a></li>',
     '<li><a href="/reviews/bets4pro">Bets4.pro</a></li>',
     '<li><a href="/reviews/bitskins">Bitskins</a></li>',
-    '<li><a href="/reviews/bitskins-p2p">Bitskins p2p</a></li>',
     '<li><a href="/reviews/clashgg">Clashgg</a></li>',
     '<li><a href="/reviews/csmoney">CS.Money</a></li>',
     '<li><a href="/reviews/csdeals">CS.Deals</a></li>',
@@ -918,7 +916,6 @@ $(document).ready(function(){
     '<li><a href="/reviews/csgopolygon">CSGOPolygon</a></li>',
     '<li><a href="/reviews/csgopositive">CSGOPositive</a></li>',
     '<li><a href="/reviews/csgoroll">CSGORoll</a></li>',
-    '<li><a href="/reviews/csgoselly">CSGOSelly</a></li>',
     '<li><a href="/reviews/csgorun">CSGORUN</a></li>',
     '<li><a href="/reviews/csfail">CSFAIL</a></li>',
     '<li><a href="/reviews/csgo-skins">CSGO-Skins</a></li>',
@@ -1553,6 +1550,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
     "gcskins",
     "FarmSkins",
     "RustyPot",
+    "RustChance",
   ];
 
   var boxElements = document.querySelectorAll(".box");
@@ -2232,4 +2230,60 @@ function applyTheme(theme) {
 themeToggleBtn.addEventListener('click', () => {
   currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
   applyTheme(currentTheme);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  let currentPath = window.location.pathname;
+
+  if (!currentPath.includes("/reviews/")) {
+      return;
+  }
+
+  const basePath = "/code-parts/site-infos";
+
+  if (currentPath.endsWith(".html")) {
+      currentPath = currentPath.slice(0, -5);
+  }
+
+  const pageKey = currentPath.split("/").pop();
+  const jsonFilePath = `${basePath}/${pageKey}.json`;
+
+  function loadPageData(filePath) {
+      return fetch(filePath)
+          .then(response => {
+              if (!response.ok) {
+                  return null;
+              }
+              return response.json();
+          })
+          .catch(() => null);
+  }
+
+  function insertHTMLContent(selector, contentArray) {
+      const container = document.querySelector(selector);
+      if (container && contentArray) {
+          container.innerHTML = '';
+          contentArray.forEach(htmlString => {
+              container.insertAdjacentHTML('beforeend', htmlString);
+          });
+      }
+  }
+
+  loadPageData(jsonFilePath).then(data => {
+      if (data) {
+          insertHTMLContent('.gamemodes .featuresbox .typesinside', data.gamemodesContent);
+          insertHTMLContent('.methodlist#first', data.firstMethodContent);
+          insertHTMLContent('.methodlist#second', data.secondMethodContent);
+      }
+
+      if (currentPath.includes("/pl/reviews/")) {
+        return;
+      }
+      else {
+        const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
+        reviewlinks.forEach(link => {
+          updateURLs(link);
+      });
+    }
+  });
 });

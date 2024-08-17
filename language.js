@@ -540,12 +540,6 @@ function translateURLsIfNeeded() {
         "pt": "SkinSwap - uma plataforma conveniente e confiável para trocar e vender rapidamente itens de CS2 e Rust com pagamentos instantâneos.",
         "hi": "SkinSwap - CS2 और Rust से आइटमों के व्यापार और त्वरित बिक्री के लिए एक सुविधाजनक और विश्वसनीय मंच, त्वरित भुगतान के साथ।"
       },
-      "CSGOSelly is a website that allows users to cash out their CSGO skins for money via various payment methods. It was founded in 2021.": {
-        "es": "CSGOSelly es un sitio web que permite a los usuarios convertir sus skins de CSGO en dinero a través de varios métodos de pago. Fue fundado en 2021.",
-        "tr": "CSGOSelly, CSGO skinlerini para olarak çekmek için kullanıcıların çeşitli ödeme yöntemlerini kullanabildiği bir web sitesidir. 2021'de kurulmuştur.",
-        "pt": "CSGOSelly é um site que permite aos usuários converter suas skins de CSGO em dinheiro através de vários métodos de pagamento. Foi fundado em 2021.",
-        "hi": "CSGOSelly एक वेबसाइट है जो उपयोगकर्ताओं को विभिन्न भुगतान विधियों के माध्यम से अपने CSGO स्किन को पैसे में बदलने की अनुमति देती है। इसे 2021 में स्थापित किया गया था।"
-      },
       "Unique site where you can earn money by winning games in various mobile gaming cyber disciplines. Also have many offerwalls.": {
         "es": "Sitio único donde puedes ganar dinero ganando juegos en varias disciplinas cibernéticas de juegos móviles. También tiene muchos muros de ofertas.",
         "tr": "Bu site, çeşitli mobil oyunlarda para kazanmanızı sağlayan birçok teklif duvarı gibi farklı mobil oyun disiplinlerinde gelir elde etmenizi sağlar.",

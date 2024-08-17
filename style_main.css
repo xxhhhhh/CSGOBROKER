@@ -2278,6 +2278,7 @@ nav #pagename:focus {
 }
 .typesinside .upgrader::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/upgrader.webp);
+    transform: scale(.9);
 }
 .typesinside .duels::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/duels.webp);
@@ -2389,6 +2390,7 @@ nav #pagename:focus {
 }
 .methodlist .fkwallet::before {
     background-image: url(/img/minipics/payments/clear-icons/fkwallet.webp);
+    transform: scale(.8);
 }
 .methodlist .gpay::before {
     background-image: url(/img/minipics/payments/clear-icons/gpay.webp);
@@ -3554,7 +3556,8 @@ nav #logo:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 90%;
+    max-width: 650px;
     border-radius: 5px;
     flex-direction: row;
     flex-wrap: wrap;
@@ -4384,11 +4387,11 @@ nav img:active,
 .box .content .bonus-space {
     display: none;
 }
-.bonus-space#first {
+.bonus-space#firstspace {
     width: 65%;
     display: block;
 }
-.sitepage .box .content .bonus-space#first {
+.sitepage .box .content .bonus-space#firstspace {
     margin-top: 5px;
 }
 
@@ -5521,6 +5524,16 @@ footer .centralizer .footer-content {
       transform: translate3d(0, 100%, 0);
     }
   }
+
+  @keyframes elemEntrance {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   .category-selector .submenu,
   .category-selector .submenu2 {
     position: absolute;
@@ -6550,6 +6563,10 @@ label:active,
     height: auto;
     margin-top: 18px;
     justify-content: center;
+    opacity: 0;
+    animation-duration: .25s;
+    animation-fill-mode: both;
+    animation-name: elemEntrance;
 }
 .boxreview .main-infobox {
     max-width: 100%;
@@ -6774,7 +6791,7 @@ label:active,
     .sitealternates .box .content {
         height: 52%;
     }
-    .bonus-space#first {
+    .bonus-space#firstspace {
         width: 50%;
     }
     .sitepage .box .logobg .rating,
@@ -7622,7 +7639,7 @@ label:active,
         margin-left: unset;
     }
     .sitedetails .methodlist {
-        width: 100%;
+        width: 90%;
         padding-bottom: 30px;
     }
     nav img {
