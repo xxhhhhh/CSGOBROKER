@@ -2525,7 +2525,7 @@ nav #pagename:focus {
     background-clip: text;
     z-index: 1;
 }
-/* .ratingthings .ratingway .star_rating {
+/* .ratingsection .ratingway .star_rating {
     color: var(--main-color);
 } */
 .infoblock h1, h2, h3 {
@@ -2596,7 +2596,7 @@ nav #pagename:focus {
     padding: 30px 0px 30px 0px;
     border-radius: 10px;
 }
-.ratingthings {
+.ratingsection {
     width: 95%;
     display: flex;
     height: 80%;
@@ -2605,7 +2605,7 @@ nav #pagename:focus {
     flex-direction: column;
     align-items: center;
 }
-.ratingthings .ratingway {
+.ratingsection .ratingway {
     height: 120px;
     width: 25%;
     display: flex;
@@ -2616,7 +2616,7 @@ nav #pagename:focus {
     align-items: center;
     color: var(--white);
 }
-.ratingthings .ratingway span {
+.ratingsection .ratingway span {
     margin-right: 10px;
 }
 .instruction {
@@ -5911,7 +5911,8 @@ label:active,
 .preview-nav-button:active,
 .site-searcher-box:active,
 .nav-review li:active,
-.mirror-redirect:active span {
+.mirror-redirect:active span,
+.methodlist a:active::before {
     filter: brightness(.3) !important;
     transition: .09s all ease-in-out;
   }
@@ -6721,6 +6722,7 @@ label:active,
         flex-direction: column;
         align-items: center;
         margin-top: 4px;
+        z-index: 2;
         order: 1;
     }
     .main-infobox-content {
@@ -7770,12 +7772,12 @@ label:active,
     }
 }
 @media screen and (max-width: 390px) {
-    .ratingthings .ratingway {
+    .ratingsection .ratingway {
         font-size: 13px;
     }
     .sitedetails .sitepros span,
     .alternates-title,
-    .ratingthings .ratingway {
+    .ratingsection .ratingway {
         transition: all .1s ease-in-out;
     }
 }
@@ -7795,7 +7797,7 @@ label:active,
         margin: 0;
         margin-top: 4px;
     }
-    .ratingthings .ratingway span {
+    .ratingsection .ratingway span {
         width: 130px;
     }
     .gamemodes .featuresbox:after, .gamemodes .featuresbox::before, .gamemodes .featuresbox {
@@ -7895,14 +7897,14 @@ label:active,
         width: 80%;
     }
     .ratingsumm,
-    .ratingthings {
+    .ratingsection {
         align-content: center;
     }
     .ratingsumm {
         height: 200px;
         padding: 2px 0;
     }
-    .ratingthings {
+    .ratingsection {
         flex-wrap: nowrap;
         height: 100%;
         width: 100%;
@@ -7946,7 +7948,7 @@ label:active,
     }
     .sitedetails .sitepros span,
     .alternates-title,
-    .ratingthings .ratingway {
+    .ratingsection .ratingway {
         font-size: 15px;
     }
     .sitealternates {
@@ -7962,17 +7964,17 @@ label:active,
         margin-top: 8px;
         height: auto;
     }
-    .ratingthings .ratingway {
+    .ratingsection .ratingway {
         width: 98%;
         height: 30px;
         flex: 1 1 50%;
         margin: 2px 0;
         background: rgb(11 11 11);
     }
-    .ratingthings .ratingway:first-child {
+    .ratingsection .ratingway:first-child {
         border-radius: 10px 10px 0 0;
     }
-    .ratingthings .ratingway:last-child {
+    .ratingsection .ratingway:last-child {
         border-radius: 0 0 10px 10px;
     }
     .sitedetails .sitepros {

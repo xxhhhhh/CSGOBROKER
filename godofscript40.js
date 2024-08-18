@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   
-    var ratingwayElements = document.querySelectorAll('.ratingthings .ratingway span, .content button, .boxreview .plusminus .criteria .par p, .features .featuresbox .typesinside a, .instruction li');
+    var ratingwayElements = document.querySelectorAll('.ratingsection .ratingway span, .content button, .boxreview .plusminus .criteria .par p, .features .featuresbox .typesinside a, .instruction li');
     for (var j = 0; j < ratingwayElements.length; j++) {
       var text = ratingwayElements[j].textContent.trim();
       if (translations.hasOwnProperty(text)) {
@@ -270,11 +270,12 @@ document.addEventListener('DOMContentLoaded', function() {
       "Payments": "Деп/Вывод",
       "Functional": "Функционал",
       "Playability": "Режимы",
+      "Variety": "Разнообразие",
+      "Convenience": "Удобство",
       "Sign up via Steam": "Залогиньтесь через Steam",
       "Done!": "Готово !",
       "Visit WebSite": "Посетить Сайт"
     };
-    translateTextElements(translations);
   
     const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
 
@@ -306,10 +307,11 @@ document.addEventListener('DOMContentLoaded', function() {
       "Sign up via Steam": "Steam ile Kayıt Ol",
       "Done!": "Keyfini Çıkar!",
       "Playability": "Oynanabilirlik",
+      "Variety": "Çeşitlilik",
+      "Convenience": "Kolaylık",
       "Items Accepts": "Kabul Edilen Eşyalar",
       "Visit WebSite": "Web Sitesini Ziyaret Et"
     };
-    translateTextElements(translations);
 
     const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
 
@@ -331,11 +333,12 @@ document.addEventListener('DOMContentLoaded', function() {
       "Support": "Wsparcie",
       "Payments": "Płatności",
       "Functional": "Funkcjonalność",
+      "Variety": "Różnorodność",
+      "Convenience": "Wygoda",
       "Sign up via Steam": "Zarejestruj się za pomocą Steam",
       "Done!": "Ciesz się!",
       "Visit WebSite": "Odwiedź stronę internetową"
     };
-    translateTextElements(translations);
   }
   
   if (
@@ -672,6 +675,7 @@ if (supportedLanguages.includes(languageTag)) {
 
 $('.sitepros').click(function() {
   $(this).toggleClass("active");
+
   if ($(window).width() >= 1340) {
       var $methodlist = $(this).find('.methodlist');
       var methodlistHeight = $methodlist.outerHeight(true);
@@ -679,6 +683,7 @@ $('.sitepros').click(function() {
       var $parent = $(this).parent('.sitedetails');
       var $otherActiveSitepros = $(this).siblings('.sitepros.active');
       var currentHeight = parseInt($parent.css('height'));
+
       if ($(this).hasClass("active")) {
           if (currentHeight < totalHeight) {
               $parent.css('height', totalHeight + 'px');
@@ -688,6 +693,11 @@ $('.sitepros').click(function() {
       }
   }
 });
+
+$('.sitepros .methodlist').click(function(event) {
+  event.stopPropagation();
+});
+
 
 $(document).ready(function(){
   $('.screens').slick({
@@ -2235,8 +2245,9 @@ themeToggleBtn.addEventListener('click', () => {
 document.addEventListener("DOMContentLoaded", function() {
   let currentPath = window.location.pathname;
 
+  // Проверка на наличие "/reviews/" в пути
   if (!currentPath.includes("/reviews/")) {
-      return;
+      return; // Прекращаем выполнение скрипта, если в пути нет "/reviews/"
   }
 
   const basePath = "/code-parts/site-infos";
@@ -2269,21 +2280,62 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   }
 
+  function generateRatingStars(rating) {
+      const fullStars = Math.floor(rating);
+      const halfStar = rating % 1 !== 0;
+      let starsHTML = '';
+
+      for (let i = 0; i < fullStars; i++) {
+          starsHTML += '<div class="star_rating"><i class="bi bi-star-fill"></i></div>';
+      }
+
+      if (halfStar) {
+          starsHTML += '<div class="star_rating"><i class="bi bi-star-half"></i></div>';
+      }
+
+      for (let i = fullStars + (halfStar ? 1 : 0); i < 5; i++) {
+          starsHTML += '<div class="star_rating"><i class="bi bi-star"></i></div>';
+      }
+
+      return starsHTML;
+  }
+
+  function insertRatings(ratings) {
+      const container = document.querySelector('.ratingsumm');
+      if (container && ratings) {
+          container.innerHTML = '';
+
+          const ratingSection = document.createElement('div');
+          ratingSection.classList.add('ratingsection');
+
+          for (const [category, rating] of Object.entries(ratings)) {
+              const ratingHTML = `
+                  <div class="ratingway">
+                      <span>${category}</span>
+                      ${generateRatingStars(rating)}
+                  </div>
+              `;
+              ratingSection.insertAdjacentHTML('beforeend', ratingHTML);
+          }
+
+          container.appendChild(ratingSection);
+      }
+      translateTextElements(translations);
+  }
+
   loadPageData(jsonFilePath).then(data => {
       if (data) {
           insertHTMLContent('.gamemodes .featuresbox .typesinside', data.gamemodesContent);
           insertHTMLContent('.methodlist#first', data.firstMethodContent);
           insertHTMLContent('.methodlist#second', data.secondMethodContent);
+          insertRatings(data.ratings);
       }
 
-      if (currentPath.includes("/pl/reviews/")) {
-        return;
+      if (!currentPath.includes("/pl/reviews/")) {
+          const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
+          reviewlinks.forEach(link => {
+              updateURLs(link);
+          });
       }
-      else {
-        const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
-        reviewlinks.forEach(link => {
-          updateURLs(link);
-      });
-    }
   });
 });

@@ -133,7 +133,7 @@
 .features .featuresbox .typesinside a,
 .instruction-mirrors h2,
 .alternates-title,
-.ratingthings .ratingway,
+.ratingsection .ratingway,
 .instruction code,
 .site-promo-copy i,
 .newest-boxes .box p:first-child,
@@ -522,7 +522,7 @@ h3  {
     .bonus_info::before {
         content: none;
     }
-    .ratingthings .ratingway {
+    .ratingsection .ratingway {
         background: var(--opacback);
     }
     .sitealternatesboxes .box .rating-case-single .rating-summ {
