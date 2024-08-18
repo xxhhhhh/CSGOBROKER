@@ -6737,7 +6737,8 @@ label:active,
         z-index: 2;
         order: 1;
     }
-    .features {
+    .features,
+    .features.bonused {
         height: auto;
     }
     .main-infobox-content {
