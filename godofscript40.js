@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var categorySelector = document.querySelector('.category-selector');
 
       if (categorySelector) {
-        applyTranslation(categorySelector, languageTag, translations);
+        applyTranslation(categorySelector, languageTag);
       }
 
       var menuToggle = document.querySelector('.menu-toggle');
@@ -229,117 +229,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 });
-
-
-  function translateTextElements(translations) {
-    var siteprosElements = document.querySelectorAll('.sitedetails .sitepros span');
-    for (var i = 0; i < siteprosElements.length; i++) {
-      var text = siteprosElements[i].textContent.trim();
-      if (translations.hasOwnProperty(text)) {
-        siteprosElements[i].innerHTML = translations[text] + ' <i class="bi bi-caret-down-fill"></i>';
-      }
-    }
-  
-    var ratingwayElements = document.querySelectorAll('.ratingsection .ratingway span, .content button, .boxreview .plusminus .criteria .par p, .features .featuresbox .typesinside a, .instruction li');
-    for (var j = 0; j < ratingwayElements.length; j++) {
-      var text = ratingwayElements[j].textContent.trim();
-      if (translations.hasOwnProperty(text)) {
-        ratingwayElements[j].innerHTML = translations[text];
-      }
-    }
-  }
-  
-  if (window.location.pathname.includes('/ru/reviews/') || window.location.pathname.includes('/ru/mirrors/')) {
-    var translations = {
-      "Deposit Methods": "Способы Пополнения",
-      "Withdraw Methods": "Способы Вывода",
-      "Items Accepts": "Принимаются Предметы",
-      "Sign Up Bonus": "Бонус за Регистрацию",
-      "Faucet System": "Система Кранов",
-      "Daily Rewards": "Ежедневные Награды",
-      "Daily Giveaways": "Ежедневные Розыгрыши",
-      "No Bonus": "Нет Бонуса",
-      "Deposit Bonus": "Бонус к Пополнению",
-      "Rain System": "Дожди",
-      "Rakeback System": "Рейкбек",
-      "Pros": "Плюсы",
-      "Price": "Цены",
-      "Cons": "Минусы",
-      "Trust": "Доверие",
-      "Support": "Поддержка",
-      "Payments": "Деп/Вывод",
-      "Functional": "Функционал",
-      "Playability": "Режимы",
-      "Variety": "Разнообразие",
-      "Convenience": "Удобство",
-      "Sign up via Steam": "Залогиньтесь через Steam",
-      "Done!": "Готово !",
-      "Visit WebSite": "Посетить Сайт"
-    };
-  
-    const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
-
-    reviewlinks.forEach(link => {
-        updateURLs(link);
-    });
-
-  }
-  
-  if (window.location.pathname.includes('/tr/reviews/')) {
-    var translations = {
-      "Deposit Methods": "Yatırma Yöntemleri",
-      "Withdraw Methods": "Çekim Yöntemleri",
-      "Sign Up Bonus": "Kayıt Bonusu",
-      "No Bonus": "Bonus Yok",
-      "Faucet System": "Musluk Sistemi",
-      "Daily Rewards": "Günlük Ödüller",
-      "Daily Giveaways": "Günlük Çekilişler",
-      "Deposit Bonus": "Depozit Bonusu",
-      "Rain System": "Yağmur Sistemi",
-      "Rakeback System": "Rakeback Sistemi",
-      "Pros": "Artılar",
-      "Price": "Fiyat",
-      "Cons": "Eksiler",
-      "Trust": "Güven",
-      "Support": "Destek",
-      "Payments": "Ödemeler",
-      "Functional": "Fonksiyonel",
-      "Sign up via Steam": "Steam ile Kayıt Ol",
-      "Done!": "Keyfini Çıkar!",
-      "Playability": "Oynanabilirlik",
-      "Variety": "Çeşitlilik",
-      "Convenience": "Kolaylık",
-      "Items Accepts": "Kabul Edilen Eşyalar",
-      "Visit WebSite": "Web Sitesini Ziyaret Et"
-    };
-
-    const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
-
-    reviewlinks.forEach(link => {
-        updateURLs(link);
-    });
-  }
-
-  if (window.location.pathname.includes('/pl/reviews/')) {
-    var translations = {
-      "Deposit Methods": "Metody Depozytu",
-      "Withdraw Methods": "Metody Wypłaty",
-      "Sign Up Bonus": "Bonus Rejestracyjny",
-      "No Bonus": "Brak Bonusu",
-      "Pros": "Zalety",
-      "Price": "Cena",
-      "Cons": "Wady",
-      "Trust": "Zaufanie",
-      "Support": "Wsparcie",
-      "Payments": "Płatności",
-      "Functional": "Funkcjonalność",
-      "Variety": "Różnorodność",
-      "Convenience": "Wygoda",
-      "Sign up via Steam": "Zarejestruj się za pomocą Steam",
-      "Done!": "Ciesz się!",
-      "Visit WebSite": "Odwiedź stronę internetową"
-    };
-  }
   
   if (
     !window.location.pathname.endsWith("404") &&
@@ -2245,12 +2134,13 @@ themeToggleBtn.addEventListener('click', () => {
 document.addEventListener("DOMContentLoaded", function() {
   let currentPath = window.location.pathname;
 
-  // Проверка на наличие "/reviews/" в пути
   if (!currentPath.includes("/reviews/")) {
-      return; // Прекращаем выполнение скрипта, если в пути нет "/reviews/"
+      return; 
   }
 
   const basePath = "/code-parts/site-infos";
+  const filterSettingsPath = "/code-parts/features.json";
+  const translationsPath = "/code-parts/review-translations.json";
 
   if (currentPath.endsWith(".html")) {
       currentPath = currentPath.slice(0, -5);
@@ -2320,22 +2210,70 @@ document.addEventListener("DOMContentLoaded", function() {
 
           container.appendChild(ratingSection);
       }
-      translateTextElements(translations);
   }
 
-  loadPageData(jsonFilePath).then(data => {
-      if (data) {
-          insertHTMLContent('.gamemodes .featuresbox .typesinside', data.gamemodesContent);
-          insertHTMLContent('.methodlist#first', data.firstMethodContent);
-          insertHTMLContent('.methodlist#second', data.secondMethodContent);
-          insertRatings(data.ratings);
+  function insertFeatures(features, settings) {
+      const featuresContainer = document.querySelector('.boxreview .features');
+      if (featuresContainer) {
+          if (features && features.length > 0) {
+              const featuresBox = document.createElement('div');
+              featuresBox.classList.add('featuresbox');
+
+              const typesInside = document.createElement('div');
+              typesInside.classList.add('typesinside');
+
+              features.forEach(feature => {
+                  if (settings[feature]) {
+                      const featureLink = `<a href="${settings[feature].path}">${settings[feature].name}</a>`;
+                      typesInside.insertAdjacentHTML('beforeend', featureLink);
+                  }
+              });
+
+              featuresBox.appendChild(typesInside);
+              featuresContainer.appendChild(featuresBox);
+              featuresContainer.classList.add('fadein');
+          }
+      }
+  }
+
+  function translateTextElements(translations) {
+      var siteprosElements = document.querySelectorAll('.sitedetails .sitepros span');
+      for (var i = 0; i < siteprosElements.length; i++) {
+          var text = siteprosElements[i].textContent.trim();
+          if (translations.hasOwnProperty(text)) {
+              siteprosElements[i].innerHTML = translations[text] + ' <i class="bi bi-caret-down-fill"></i>';
+          }
       }
 
-      if (!currentPath.includes("/pl/reviews/")) {
+      var ratingwayElements = document.querySelectorAll('.ratingsection .ratingway span, .content button, .boxreview .plusminus .criteria .par p, .features .featuresbox .typesinside a, .instruction li');
+      for (var j = 0; j < ratingwayElements.length; j++) {
+          var text = ratingwayElements[j].textContent.trim();
+          if (translations.hasOwnProperty(text)) {
+              ratingwayElements[j].innerHTML = translations[text];
+          }
+      }
+  }
+
+  Promise.all([loadPageData(jsonFilePath), loadPageData(filterSettingsPath), loadPageData(translationsPath)])
+      .then(([pageData, filterSettings, translations]) => {
+          if (pageData) {
+              insertHTMLContent('.gamemodes .featuresbox .typesinside', pageData.gamemodesContent);
+              insertHTMLContent('.methodlist#first', pageData.firstMethodContent);
+              insertHTMLContent('.methodlist#second', pageData.secondMethodContent);
+              insertRatings(pageData.ratings);
+              insertFeatures(pageData.featuresContent, filterSettings);
+          }
+
+          if (translations) {
+              const languageTag = document.documentElement.lang || 'en';
+              if (translations[languageTag]) {
+                  translateTextElements(translations[languageTag]);
+              }
+          }
+
           const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
           reviewlinks.forEach(link => {
               updateURLs(link);
           });
-      }
-  });
+      });
 });

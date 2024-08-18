@@ -2063,10 +2063,6 @@ nav #pagename:focus {
 .siteleftpannel .navigation-menu ul a {
     text-decoration: none;
 }
-.features {
-    width: 96%;
-    order: -1;
-}
 .features, .gamemodes {
     height: auto;
     display: flex;
@@ -2074,6 +2070,22 @@ nav #pagename:focus {
     flex-wrap: wrap;
     justify-content: space-between;
     border-radius: 5px;
+}
+.features {
+    width: 96%;
+    order: -1;
+    height: auto;
+    transition: all .15s ease-in-out;
+    opacity: 0;
+    /* transform: scale(.9);
+    transform-origin: left; */
+}
+.features.fadein {
+    opacity: 1;
+    /* transform: scale(1); */
+}
+.features.bonused {
+    height: 44px;
 }
 .gamemodes {
     position: absolute;
@@ -6724,6 +6736,9 @@ label:active,
         margin-top: 4px;
         z-index: 2;
         order: 1;
+    }
+    .features {
+        height: auto;
     }
     .main-infobox-content {
         width: 100%;
