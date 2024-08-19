@@ -2139,7 +2139,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   const basePath = "/code-parts/site-infos";
-  const filterSettingsPath = "/code-parts/features.json";
+  const filterSettingsPath = "/code-parts/filter-settings.json";
+  const reviewSettingsPath = "/code-parts/review-settings.json";
   const translationsPath = "/code-parts/review-translations.json";
 
   if (currentPath.endsWith(".html")) {
@@ -2212,7 +2213,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   }
 
-  function insertFeatures(features, settings) {
+  function insertFeatures(features, settings, featureOrder) {
       const featuresContainer = document.querySelector('.boxreview .features');
       if (featuresContainer) {
           if (features && features.length > 0) {
@@ -2221,6 +2222,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
               const typesInside = document.createElement('div');
               typesInside.classList.add('typesinside');
+
+              features.sort((a, b) => {
+                  const indexA = featureOrder.indexOf(a);
+                  const indexB = featureOrder.indexOf(b);
+                  return (indexA === -1 ? featureOrder.length : indexA) - (indexB === -1 ? featureOrder.length : indexB);
+              });
 
               features.forEach(feature => {
                   if (settings[feature]) {
@@ -2233,6 +2240,20 @@ document.addEventListener("DOMContentLoaded", function() {
               featuresContainer.appendChild(featuresBox);
               featuresContainer.classList.add('fadein');
           }
+      }
+  }
+
+  function sortAndInsertContent(content, order, selector) {
+      if (content && content.length > 0) {
+          content.sort((a, b) => {
+              const classA = a.match(/class="([^"]+)"/)?.[1] || '';
+              const classB = b.match(/class="([^"]+)"/)?.[1] || '';
+              const indexA = order.indexOf(classA);
+              const indexB = order.indexOf(classB);
+              return (indexA === -1 ? order.length : indexA) - (indexB === -1 ? order.length : indexB);
+          });
+
+          insertHTMLContent(selector, content);
       }
   }
 
@@ -2254,14 +2275,18 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   }
 
-  Promise.all([loadPageData(jsonFilePath), loadPageData(filterSettingsPath), loadPageData(translationsPath)])
-      .then(([pageData, filterSettings, translations]) => {
-          if (pageData) {
-              insertHTMLContent('.gamemodes .featuresbox .typesinside', pageData.gamemodesContent);
-              insertHTMLContent('.methodlist#first', pageData.firstMethodContent);
-              insertHTMLContent('.methodlist#second', pageData.secondMethodContent);
+  Promise.all([loadPageData(jsonFilePath), loadPageData(filterSettingsPath), loadPageData(reviewSettingsPath), loadPageData(translationsPath)])
+      .then(([pageData, filterSettings, reviewSettings, translations]) => {
+          if (pageData && reviewSettings) {
+              sortAndInsertContent(pageData.gamemodesContent, reviewSettings.gamemodesOrder, '.gamemodes .featuresbox .typesinside');
+
+              const methodOrder = reviewSettings.paymentMethodsOrder;
+              sortAndInsertContent(pageData.firstMethodContent, methodOrder, '.methodlist#first');
+              sortAndInsertContent(pageData.secondMethodContent, methodOrder, '.methodlist#second');
+
+              insertFeatures(pageData.featuresContent, filterSettings, reviewSettings.featureOrder);
+
               insertRatings(pageData.ratings);
-              insertFeatures(pageData.featuresContent, filterSettings);
           }
 
           if (translations) {
