@@ -92,6 +92,35 @@ forcemodsboxes();
     }
   }
 
+  document.addEventListener('DOMContentLoaded', function() {
+    const userAgent = navigator.userAgent;
+  
+    if (userAgent.includes('Googlebot')) {
+        function replaceDomain(url) {
+            return url.replace('csgobroker.cc', 'csgobroker.me');
+        }
+  
+        const elements = document.querySelectorAll('link[rel="canonical"], link[rel="alternate"], meta[property="og:url"]');
+        elements.forEach(element => {
+            let href = element.getAttribute('href');
+            if (href) {
+                const newUrl = replaceDomain(href);
+                element.setAttribute('href', newUrl);
+            }
+        });
+  
+        const metaElements = document.querySelectorAll('meta[property="og:url"]');
+        metaElements.forEach(element => {
+            let content = element.getAttribute('content');
+            if (content) {
+                const newUrl = replaceDomain(content);
+                element.setAttribute('content', newUrl);
+            }
+        });
+    }
+  });
+  
+
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html') && 
     !window.location.pathname.includes("/topic") && 
     !window.location.pathname.includes('/reviews/') && 
