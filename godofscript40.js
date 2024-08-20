@@ -1426,7 +1426,6 @@ if (identifierIndex > 0) {
 
       updateElementContent('div.sitealternates', doc.querySelector('div.sitealternates').innerHTML);
       updateElementContent('.box.main', doc.querySelector('.box.main').innerHTML);
-      updateElementContent('.features', doc.querySelector('.features').innerHTML);
 
       const updateLinks = (selector, path) => {
         const targetLinks = document.querySelectorAll(selector);
@@ -2163,9 +2162,9 @@ themeToggleBtn.addEventListener('click', () => {
 document.addEventListener("DOMContentLoaded", function() {
   let currentPath = window.location.pathname;
 
-  if (!currentPath.includes("/reviews/")) {
-      return; 
-  }
+  if (!currentPath.includes("/reviews/") && !currentPath.includes("/mirrors/")) {
+    return;
+}
 
   const basePath = "/code-parts/site-infos";
   const filterSettingsPath = "/code-parts/filter-settings.json";

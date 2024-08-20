@@ -1706,15 +1706,17 @@ nav #pagename:focus {
     margin-top: 40px;
     padding-left: 24px;
 }
-.boxreview .plusminus .criteria i {
+
+.boxreview .plusminus .criteria::before {
     opacity: 1;
     color: var(--white);
     font-size: 40px;
     width: 40px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
     bottom: 25px;
     right: 30px;
 }
@@ -1731,22 +1733,24 @@ nav #pagename:focus {
     height: 16px;
 }
 
-.boxreview .plusminus .criteria:nth-child(1) .par li::before {
+.boxreview .plusminus .criteria:nth-child(1) .par li::before,
+.boxreview .plusminus .criteria:nth-child(1)::before {
     background-image: url(/img/icons/caret-up-fill.svg);
     content:"";
 }
 
-.boxreview .plusminus .criteria:nth-child(2) .par li::before {
+.boxreview .plusminus .criteria:nth-child(2) .par li::before,
+.boxreview .plusminus .criteria:nth-child(2)::before {
     background-image: url(/img/icons/caret-down-fill.svg);
     content:"";
 }
 
-.boxreview .plusminus .criteria:nth-child(1) i,
+.boxreview .plusminus .criteria:nth-child(1)::before,
 .boxreview .plusminus .criteria:nth-child(1) .par li::before {
     color: var(--green);
     opacity: .9;
 }
-.boxreview .plusminus .criteria:nth-child(2) i,
+.boxreview .plusminus .criteria:nth-child(2)::before,
 .boxreview .plusminus .criteria:nth-child(2) .par li::before {
     color: var(--main-color);
     opacity: .9;
