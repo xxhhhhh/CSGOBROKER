@@ -2232,11 +2232,10 @@ document.addEventListener("DOMContentLoaded", function() {
           }
       });
 
-      if (count === 0) return;  // Если нет доступных категорий, ничего не делаем
+      if (count === 0) return;
 
       let averageRating = sum / count;
 
-      // Округление
       if (averageRating < 4) {
           averageRating = Math.ceil(averageRating * 2) / 2;
       } else {
@@ -2249,8 +2248,8 @@ document.addEventListener("DOMContentLoaded", function() {
           liveratingDiv.classList.add('liverating');
           liveratingDiv.innerHTML = generateRatingStars(averageRating);
 
-          container.appendChild(liveratingDiv);  // Вставка без замены содержимого
-          container.classList.add('fadein');  // Добавляем класс fadein для анимации
+          container.appendChild(liveratingDiv);
+          liveratingDiv.classList.add('fadein');
       }
   }
 
@@ -2274,7 +2273,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
           container.appendChild(ratingSection);
 
-          // Вставка общего рейтинга
           insertOverallRating(ratings);
       }
   }

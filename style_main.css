@@ -2076,8 +2076,8 @@ nav #pagename:focus {
     order: -1;
     height: auto;
     opacity: 0;
-    /* transition: all .15s ease-in-out;
-    transform-origin: left;
+    transition: all .15s ease-in-out;
+    /* transform-origin: left;
     transform: scale(.9); */
 }
 
@@ -3813,8 +3813,10 @@ nav #logo:hover {
     opacity: 0;
 }
 
-.rating.fadein .liverating {
-    opacity: 1;
+.liverating.fadein {
+    animation-duration: .15s;
+    animation-fill-mode: both;
+    animation-name: elemEntrance;
 }
 
 .sitepage .box .logobg .rating::after,
