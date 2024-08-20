@@ -2542,8 +2542,13 @@ nav #pagename:focus {
     background-clip: text;
     z-index: 1;
 }
-.box.main .star_rating {
+.box.main .star_rating,
+.ratingsumm .star_rating:has(i.bi-star) {
     opacity: .5;
+}
+
+.box.main .liverating .star_rating .bi-star {
+    opacity: 0;
 }
 
 .box.main .liverating .star_rating {
