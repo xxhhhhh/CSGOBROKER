@@ -2537,9 +2537,12 @@ nav #pagename:focus {
     -webkit-background-clip: text;
     background-clip: text;
     z-index: 1;
+}
+.box.main .star_rating {
     opacity: .5;
 }
-.liverating .star_rating {
+
+.box.main .liverating .star_rating {
     opacity: 1;
 }
 /* .ratingsection .ratingway .star_rating {
