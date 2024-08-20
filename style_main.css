@@ -3049,6 +3049,7 @@ nav #logo:hover {
     opacity: .7;
     max-height: 60% !important;
     transition: all .15s ease-in-out;
+    filter: drop-shadow(0 0 6px rgb(8 8 8));
 }
 .category-selector ul {
     overflow: visible !important;
@@ -3795,6 +3796,25 @@ nav #logo:hover {
     bottom: 8px;
     background: var(--darkgray);
     padding: 5px 7px;
+}
+
+.liverating {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 18px;
+    position: absolute;
+    background: var(--darkgray);
+    padding: 5px 7px;
+    transition: all .15s ease-in-out;
+    opacity: 0;
+}
+
+.rating.fadein .liverating {
+    opacity: 1;
 }
 
 .sitepage .box .logobg .rating::after,
@@ -5565,7 +5585,6 @@ footer .centralizer .footer-content {
     }
     .category-selector .submenu2 {
         display: none;
-        overflow: hidden !important;
     }
     .submenu .big-category a:hover,
     .submenu li:hover a,
@@ -5626,8 +5645,6 @@ footer .centralizer .footer-content {
         visibility: visible;
         padding-right: 2px;
         padding-bottom: 2px;
-        padding-top: 2px;
-
     }
     ul li .submenu li:first-child{
         border-radius: 5px 0 0 0;

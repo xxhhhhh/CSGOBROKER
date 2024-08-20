@@ -2169,8 +2169,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const basePath = "/code-parts/site-infos";
   const filterSettingsPath = "/code-parts/filter-settings.json";
-  const reviewSettingsPath = "/code-parts/review-settings.json";
-  const translationsPath = "/code-parts/review-translations.json";
+  const reviewSettingsPath = "/code-parts/review-settings.json"; 
+  const translationsPath = "/code-parts/review-translations.json"; 
 
   if (currentPath.endsWith(".html")) {
       currentPath = currentPath.slice(0, -5);
@@ -2220,6 +2220,40 @@ document.addEventListener("DOMContentLoaded", function() {
       return starsHTML;
   }
 
+  function insertOverallRating(ratings) {
+      const possibleRatings = ['Trust', 'Support', 'Payments', 'Functional', 'Price', 'Variety', 'Playability'];
+      let sum = 0;
+      let count = 0;
+
+      possibleRatings.forEach(category => {
+          if (ratings[category]) {
+              sum += ratings[category];
+              count++;
+          }
+      });
+
+      if (count === 0) return;  // Если нет доступных категорий, ничего не делаем
+
+      let averageRating = sum / count;
+
+      // Округление
+      if (averageRating < 4) {
+          averageRating = Math.ceil(averageRating * 2) / 2;
+      } else {
+          averageRating = Math.floor(averageRating * 2) / 2;
+      }
+
+      const container = document.querySelector('.rating');
+      if (container) {
+          const liveratingDiv = document.createElement('div');
+          liveratingDiv.classList.add('liverating');
+          liveratingDiv.innerHTML = generateRatingStars(averageRating);
+
+          container.appendChild(liveratingDiv);  // Вставка без замены содержимого
+          container.classList.add('fadein');  // Добавляем класс fadein для анимации
+      }
+  }
+
   function insertRatings(ratings) {
       const container = document.querySelector('.ratingsumm');
       if (container && ratings) {
@@ -2239,6 +2273,9 @@ document.addEventListener("DOMContentLoaded", function() {
           }
 
           container.appendChild(ratingSection);
+
+          // Вставка общего рейтинга
+          insertOverallRating(ratings);
       }
   }
 
@@ -2308,13 +2345,10 @@ document.addEventListener("DOMContentLoaded", function() {
       .then(([pageData, filterSettings, reviewSettings, translations]) => {
           if (pageData && reviewSettings) {
               sortAndInsertContent(pageData.gamemodesContent, reviewSettings.gamemodesOrder, '.gamemodes .featuresbox .typesinside');
-
               const methodOrder = reviewSettings.paymentMethodsOrder;
               sortAndInsertContent(pageData.firstMethodContent, methodOrder, '.methodlist#first');
               sortAndInsertContent(pageData.secondMethodContent, methodOrder, '.methodlist#second');
-
               insertFeatures(pageData.featuresContent, filterSettings, reviewSettings.featureOrder);
-
               insertRatings(pageData.ratings);
           }
 
