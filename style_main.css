@@ -2537,6 +2537,10 @@ nav #pagename:focus {
     -webkit-background-clip: text;
     background-clip: text;
     z-index: 1;
+    opacity: .5;
+}
+.liverating .star_rating {
+    opacity: 1;
 }
 /* .ratingsection .ratingway .star_rating {
     color: var(--main-color);
@@ -3798,25 +3802,32 @@ nav #logo:hover {
     padding: 5px 7px;
 }
 
+@keyframes elemWidth {
+    from {
+       width: 0;
+    }
+    to {
+       width: 100%;
+    }
+  }
+
 .liverating {
-    width: auto;
+    width: 0;
     height: auto;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: row;
     font-size: 18px;
     position: absolute;
-    background: var(--darkgray);
-    padding: 5px 7px;
     transition: all .15s ease-in-out;
-    opacity: 0;
+    overflow: hidden;
+    left: 7px;
 }
 
 .liverating.fadein {
-    animation-duration: .15s;
+    animation-duration: .8s;
     animation-fill-mode: both;
-    animation-name: elemEntrance;
+    animation-name: elemWidth;
 }
 
 .sitepage .box .logobg .rating::after,
