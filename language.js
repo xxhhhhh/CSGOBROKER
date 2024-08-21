@@ -288,11 +288,11 @@ function translateURLsIfNeeded() {
         "pt": "CSGORUN é uma plataforma líder de apostas virtuais com skins, com diversos modos como Crash, Roleta, PVP e apostas em esportes eletrônicos. É fácil de usar.",
         "hi": "CSGORUN एक प्रमुख आभासी त्वचा जुआ प्लेटफ़ॉर्म है जिसमें क्रैश, रूलेट, PVP, और इस्पोर्ट्स बेटिंग जैसे विभिन्न मोड हैं। यह उपयोगकर्ता-स्वीकृत है।"
       },
-      "RapidSkins is an online platform created to provide gamers with a marketplace for purchasing, selling, and trading skins for CS2 and Rust.": {
-        "es": "RapidSkins es una plataforma en línea creada para proporcionar a los jugadores un mercado para comprar, vender e intercambiar skins para CS2 y Rust.",
-        "tr": "RapidSkins, oyunculara CS:GO ve Rust için derileri satın alabilecekleri, satabilecekleri ve takas edebilecekleri bir çevrimiçi platformdur.",
-        "pt": "RapidSkins é uma plataforma online criada para fornecer aos jogadores um mercado para comprar, vender e negociar skins para CS2 e Rust.",
-        "hi": "RapidSkins एक ऑनलाइन प्लेटफ़ॉर्म है जिसका उद्देश्य गेमर्स को सीएस2 और रस्ट के लिए स्किन खरीदने, बेचने और व्यापार करने के लिए एक बाजार प्रदान करना है।"
+      "RapidSkins is a platform for trading, instant selling, and purchasing CS2 and Rust skins, with support for cryptocurrency transactions.": {
+        "es": "RapidSkins es una plataforma para intercambiar, vender instantáneamente y comprar skins de CS2 y Rust, con soporte para transacciones con criptomonedas.",
+        "tr": "RapidSkins, CS2 ve Rust kaplamalarının takası, anında satışı ve satın alınması için bir platform olup, kripto para işlemlerini destekler.",
+        "pt": "RapidSkins é uma plataforma para troca, venda instantânea e compra de skins de CS2 e Rust, com suporte para transações com criptomoedas.",
+        "hi": "RapidSkins एक प्लेटफ़ॉर्म है जहाँ CS2 और Rust स्किन्स का लेन-देन, तत्काल बिक्री और ख़रीदारी की जा सकती है, और यह क्रिप्टोकरेन्सी लेनदेन का समर्थन करता है।"
       },
       "RustMagic is a gambling site for Rust fans, featuring a variety of games and slots, bonuses, a user-friendly design, and instant payouts.": {
         "es": "RustMagic es un sitio de apuestas para fanáticos de Rust, que ofrece una variedad de juegos, bonificaciones, un diseño fácil de usar y pagos instantáneos.",

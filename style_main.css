@@ -3611,16 +3611,27 @@ nav #logo:hover {
     font-weight: 600;
     top: 0;
 }
-.sitepros i {
+.sitepros span::after {
     margin-left: 10px;
 }
-.sitedetails .sitepros i {
+.sitedetails .sitepros span::after {
     transform: rotate(0deg);
-    transition: transform ease-in-out .6s;
+    transition: all ease-in-out .4s;
 }
-.sitedetails .sitepros.active i {
+.sitedetails .sitepros span::after {
+    background-image: url(/img/icons/caret-down-fill.svg);
+    filter: grayscale(1) brightness(4);
+    content: "";
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+}
+
+.sitedetails .sitepros.active span::after {
     transform: rotate(180deg);
-    transition: transform ease-in-out .6s;
+    filter: none;
 }
 .sitedetails .sitepros:hover.active,
 .sitedetails .sitepros:hover {

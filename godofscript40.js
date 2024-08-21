@@ -2325,7 +2325,7 @@ document.addEventListener("DOMContentLoaded", function() {
       for (var i = 0; i < siteprosElements.length; i++) {
           var text = siteprosElements[i].textContent.trim();
           if (translations.hasOwnProperty(text)) {
-              siteprosElements[i].innerHTML = translations[text] + ' <i class="bi bi-caret-down-fill"></i>';
+              siteprosElements[i].innerHTML = translations[text];
           }
       }
 
