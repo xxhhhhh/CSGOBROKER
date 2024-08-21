@@ -2816,7 +2816,7 @@ nav #pagename:focus {
     font-size: 10px;
     font-weight: 600;
     bottom: 0;
-    right: -110px;
+    margin-left: 40px;
 }
 .site-promo-copy i {
     color: rgb(188, 188, 188);
@@ -6557,7 +6557,7 @@ label:active,
 .copied-title {
     position: absolute;
     bottom: 37px;
-    right: -20px;
+    margin-right: 10px;
     background-color: rgb(32 32 32);
     transition: background .15s ease-in-out;
     pointer-events: none;
