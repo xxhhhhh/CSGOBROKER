@@ -4695,11 +4695,6 @@ a.copy_style {
     color: var(--white);
 }
 
-.icon-changed::after {
-    animation: icon-changed .8s ease-in-out;
-
-}
-
 @keyframes icon-changed {
     0% {content: "\f759";
         opacity: 1;
@@ -4724,7 +4719,18 @@ a.copy_style {
     100% {content: "\f759";
         opacity: 1;
     }
-  }
+}
+
+.icon-changed::after {
+    animation: icon-changed .8s ease-in-out;
+}
+
+.content button:hover.icon-changed,
+.content button:hover.icon-changed::before,
+.box.main .content button:hover.icon-changed,
+.box.main .content button:hover.icon-changed::before {
+    background-color: rgb(32 32 32) !important;
+}
 
 .site-promo-copy::after {
     margin-right: unset;
