@@ -138,6 +138,9 @@ nav .socials {
     margin-right: 15px;
     display: none;
 }
+.vkbutton {
+    display: none;
+}
 nav .socials a img {
     height: 18px;
     width: auto;
@@ -2841,12 +2844,15 @@ nav #pagename:focus {
     transition: all .15s ease-in-out;
 }
 .instruction Code:hover,
-.site-promo-copy:hover {
+.site-promo-copy:hover,
+.site-promo-copy:hover::after {
     color: rgb(188, 188, 188);
 }
-.site-promo-copy:hover i {
-    opacity: 1;
+
+.site-promo-copy::after {
+    transition: all .15s ease-in-out;
 }
+
 .screentable {
     width: 98%;
     display: flex;
@@ -4579,15 +4585,15 @@ nav img:active,
     border: 2px solid #771324 !important;
     transition: .09s all ease-in-out !important;
 }
-.content a.copy_style:hover:active,
-.content a.copy_style:hover:active::before,
-.content a.copy_style:hover:active::after  {
+.content a.copy_style:active,
+.content a.copy_style:active::before,
+.content a.copy_style:active::after  {
     background-color: #5a101c !important;
     transition: .09s all ease-in-out !important;
 }
 
 .content button:active,
-.content button:hover:active::before {
+.content button:active::before {
     background-color: #5a101c !important;
     transition: .09s all ease-in-out !important;
 }
@@ -4680,9 +4686,27 @@ a.copy_style {
     border-radius: 5px 0 0 5px;
 
 }
-.content button.copy i {
-    font-size: 12px;
+
+.box .content button.copy::after,
+.site-promo-copy::after {
+    content: "\f759";
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
     margin-right: 4px;
+    color: var(--white);
+}
+
+.site-promo-copy::after {
+    margin-right: unset;
+    color: rgb(155, 155, 155);
+    font-size: 12px;
 }
 
 .credits {
@@ -7296,8 +7320,7 @@ label:active,
     .navigation-section.second .colors-box {
         margin-top: 3px;
     }
-    .content button:hover:active,
-    .content a:hover:active,
+
     .instruction-mirrors li a:active {
         background-color: #a81d34 !important;
         border: 2px solid #ce203d !important;
