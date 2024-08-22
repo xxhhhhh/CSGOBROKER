@@ -1051,9 +1051,9 @@ nav #pagename:focus {
   }
   .site-searcher-box[data-title]:after {
     border: none;
-    margin-top: -110px;
-    background-color: var(--darkygray);
-    padding: 8px 12px;
+    margin-top: -100px;
+    background-color: unset;
+    padding: 0;
     font-size: 14px;
   }
 .box-topic.sticker .component-box[data-title]:hover:after {
@@ -4658,6 +4658,9 @@ a.copy_style {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.newest-boxes .content button.copy {
+    display: none;
 }
 .content button.copy::before {
     content: '';

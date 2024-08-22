@@ -17,6 +17,9 @@ $(document).ready(function () {
                 <div class="site-searcher-box" id="Lis-Skins" data-title="Search on Lis-Skins">
                     <div class="site-searcher-logo"><img src="/img/lis-skins-logo.svg" draggable="false" alt="Lis-Skins logo"></div>
                 </div>
+                <div class="site-searcher-box" id="Avan.Market" data-title="Search on Avan.Market">
+                    <div class="site-searcher-logo"><img src="/img/avan-market-logo.webp" style="width: 50%" draggable="false" alt="Avan.Market logo"></div>
+                </div>
                 <div class="site-searcher-box" id="Tradeit" data-title="Search on Tradeit">
                     <div class="site-searcher-logo"><img src="/img/tradeit-logo.webp" draggable="false" alt="Tradeit logo"></div>
                 </div>
@@ -200,6 +203,9 @@ if (document.querySelector('.skin') && window.location.pathname.includes('/topic
       if (document.getElementById('Lis-Skins')) {
           document.getElementById('Lis-Skins').dataset.title = 'Искать на Lis-Skins';
       }
+      if (document.getElementById('Avan.Market')) {
+        document.getElementById('Avan.Market').dataset.title = 'Искать на Avan.Market';
+      } 
       if (document.getElementById('Tradeit')) {
           document.getElementById('Tradeit').dataset.title = 'Искать в Tradeit';
       }
@@ -211,7 +217,7 @@ if (document.querySelector('.skin') && window.location.pathname.includes('/topic
       } 
       if (document.getElementById('SkinSwap')) {
         document.getElementById('SkinSwap').dataset.title = 'Искать на SkinSwap';
-    } 
+      } 
       if (document.getElementById('Steam')) {
           document.getElementById('Steam').dataset.title = 'Искать в Steam';
       }
@@ -232,6 +238,9 @@ if (document.querySelector('.skin') && window.location.pathname.includes('/topic
                 break;
             case 'CSMoney':
                 href = `https://cs.money/market/buy/?search=${encodeURIComponent(skinName)}&sort=price&order=asc&utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=market&utm_content=link`;
+                break;
+            case 'Avan.Market':
+                href = `https://avan.market/ru/market/cs?name=${encodeURIComponent(skinName)}&r=csgobroker`;
                 break;
             case 'SkinSwap':
                 href = `https://skinswap.com/buy?r=csgobroker&search=${encodeURIComponent(skinName)}&appid=730`;
