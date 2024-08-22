@@ -1728,39 +1728,41 @@ nav #pagename:focus {
     margin-top: 2px;
     position: absolute;
     left: 0;
-    margin-right: 8px;
-    display: inline-block;
-    background-size: cover;
-    background-position: center;
-    width: 16px;
-    height: 16px;
 }
 
 .boxreview .plusminus .criteria:nth-child(1) .par li::before,
 .boxreview .plusminus .criteria:nth-child(1)::before {
-    background-image: url(/img/icons/caret-up-fill.svg);
-    content:"";
+    content: "\f229";
+    transform: rotate(180deg);
+    color: var(--green);
+    opacity: .9;
 }
 
 .boxreview .plusminus .criteria:nth-child(2) .par li::before,
 .boxreview .plusminus .criteria:nth-child(2)::before {
-    background-image: url(/img/icons/caret-down-fill.svg);
-    content:"";
-}
-
-.boxreview .plusminus .criteria:nth-child(1)::before,
-.boxreview .plusminus .criteria:nth-child(1) .par li::before {
-    color: var(--green);
-    opacity: .9;
-}
-.boxreview .plusminus .criteria:nth-child(2)::before,
-.boxreview .plusminus .criteria:nth-child(2) .par li::before {
+    content: "\f229";
     color: var(--main-color);
     opacity: .9;
 }
-.boxreview .plusminus .criteria i {
-    position: absolute;
+
+.boxreview .plusminus .criteria:nth-child(1) .par li::before,
+.boxreview .plusminus .criteria:nth-child(1)::before,
+.boxreview .plusminus .criteria:nth-child(2) .par li::before,
+.boxreview .plusminus .criteria:nth-child(2)::before,
+.box .content button.copy::after,
+.site-promo-copy::after,
+.sitedetails .sitepros span::after {
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
 }
+
 .boxreview .plusminus .criteria:nth-child(1) {
     /* background: linear-gradient(150deg, rgba(0, 0, 0, 0) 30%, rgba(15, 207, 79, .09) 100%); */
     background: linear-gradient(150deg, rgba(15, 207, 79, 0) 30%, rgba(15, 207, 79, .09) 100%);
@@ -3349,11 +3351,7 @@ nav #logo:hover {
 }
 .nav-review li::before {
     content:"";
-    background-image: url(/img/icons/circle-fill.svg);
     margin-right: 8px;
-    display: inline-block;
-    background-size: cover;
-    background-position: center;
     position: absolute;
     left: 0;
     top: 7px;
@@ -3625,19 +3623,15 @@ nav #logo:hover {
     transition: all ease-in-out .4s;
 }
 .sitedetails .sitepros span::after {
-    background-image: url(/img/icons/caret-down-fill.svg);
-    filter: grayscale(1) brightness(4);
-    content: "";
-    display: inline-block;
-    background-size: cover;
-    background-position: center;
+    color: var(--white);
+    content: "\f229";
     width: 16px;
     height: 16px;
 }
 
 .sitedetails .sitepros.active span::after {
     transform: rotate(180deg);
-    filter: none;
+    color: var(--main-color);
 }
 .sitedetails .sitepros:hover.active,
 .sitedetails .sitepros:hover {
@@ -4536,7 +4530,7 @@ nav img:active,
 
 .sitepage .box:hover .content button.copy,
 .sitepage .box:hover .content button.copy::before {
-    background-color: rgb(32 32 32);
+    /* background-color: rgb(32 32 32); */
     color: var(--white);
 }
 
@@ -4568,6 +4562,13 @@ nav img:active,
 .content a.copy_style:hover::after,
 .content a.copy_style:hover {
     background-color: #a81d34 !important;
+    animation: none !important;
+    filter: unset !important;
+}
+
+.box.main .content button:hover,
+.box.main .content button:hover::before {
+    background-color: #62101d !important;
     animation: none !important;
     filter: unset !important;
 }
@@ -4690,18 +4691,40 @@ a.copy_style {
 .box .content button.copy::after,
 .site-promo-copy::after {
     content: "\f759";
-    display: inline-block;
-    font-family: bootstrap-icons !important;
-    font-style: normal;
-    font-weight: 400 !important;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    vertical-align: -.125em;
-    -webkit-font-smoothing: antialiased;
     margin-right: 4px;
     color: var(--white);
 }
+
+.icon-changed::after {
+    animation: icon-changed .8s ease-in-out;
+
+}
+
+@keyframes icon-changed {
+    0% {content: "\f759";
+        opacity: 1;
+    }
+    5% {content: "\f759";
+        opacity: 0;
+    }
+    10% {content: "\f633";
+        font-size: 16px;
+        opacity: 0;
+    }
+    50% {content: "\f633";
+        opacity: 1;
+    }
+    90% {content: "\f633";
+        font-size: 16px;
+        opacity: 0;
+    }
+    95% {content: "\f759";
+        opacity: 0;
+    }
+    100% {content: "\f759";
+        opacity: 1;
+    }
+  }
 
 .site-promo-copy::after {
     margin-right: unset;
@@ -6603,9 +6626,8 @@ label:active,
     font-weight: 500;
 }
 
-.sitepage .box .copied-title {
-    background-color: #62101d;
-}
+
+
 .gamemodes {
     bottom: -1px;
 }

@@ -2430,24 +2430,30 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function copyToClipboard(text, copyButton) {
-      const tempInput = document.createElement('input');
-      document.body.appendChild(tempInput);
-      tempInput.value = text;
-      tempInput.select();
-      document.execCommand('copy');
-      document.body.removeChild(tempInput);
+    const tempInput = document.createElement('input');
+    document.body.appendChild(tempInput);
+    tempInput.value = text;
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
 
-      const title = document.createElement('div');
-      title.className = 'copied-title';
-      title.textContent = (languageTag === 'ru') ? 'Скопировано' : 'Copied';
+    const title = document.createElement('div');
+    title.className = 'copied-title';
+    title.textContent = (languageTag === 'ru') ? 'Скопировано' : 'Copied';
 
-      copyButton.appendChild(title);
+    copyButton.appendChild(title);
 
-      title.style.display = 'none';
-      $(title).fadeIn(150, function() {
-          $(this).delay(400).fadeOut(150, function() {
-              $(this).remove();
-          });
-      });
-  }
+    copyButton.classList.add('icon-changed');
+
+    title.style.display = 'none';
+    $(title).fadeIn(150, function() {
+        $(this).delay(400).fadeOut(150, function() {
+            $(this).remove();
+        });
+    });
+
+    setTimeout(function() {
+        copyButton.classList.remove('icon-changed');
+    }, 800);
+}
 });

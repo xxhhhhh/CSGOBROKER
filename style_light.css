@@ -164,6 +164,7 @@
 .topic-nav-box span, 
 .topic-nav-menu span,
 .topic-nav-menu .weapon-current i,
+.sitedetails .sitepros span::after,
 h2,
 h3  {
     color: #1a1a1a;
@@ -635,4 +636,10 @@ ul .submenu li .nonredir,
 
 .instruction code {
     font-weight: 500;
+}
+
+.sitepage .box:hover .content button.copy,
+.sitepage .box:hover .content button.copy::before {
+    background-color: rgb(32 32 32);
+    color: var(--white);
 }
