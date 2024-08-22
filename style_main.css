@@ -1751,7 +1751,8 @@ nav #pagename:focus {
 .boxreview .plusminus .criteria:nth-child(2)::before,
 .box .content button.copy::after,
 .site-promo-copy::after,
-.sitedetails .sitepros span::after {
+.sitedetails .sitepros span::after,
+.menu-toggle::before {
     display: inline-block;
     font-family: bootstrap-icons !important;
     font-style: normal;
@@ -3481,7 +3482,6 @@ nav #logo:hover {
 }
 .menu-toggle {
     width: auto;
-    height: 50px;
     display: flex;
     background-color: transparent;
     justify-content: center;
@@ -3489,45 +3489,22 @@ nav #logo:hover {
     flex-direction: column;
     transition: all .15s ease-in-out;
     cursor: pointer;
-    border: none;
-    outline: none;
-    font-family: TTNormsPro;
+    border: unset;
+    font-size: 24px;
+    color: #3a3a3a;
     order: 1;
 }
-.menu-toggle.active {
-    transition: .15s all ease-in-out;
-}
-.menu-toggle:hover .menu-line,
-.menu-toggle.active .menu-line {
-    width: 70%;
-}
-.menu-toggle:hover .menu-line,
-.menu-toggle.active .menu-line {
-    opacity: 1;
-    transition: all .15s ease-in-out;
-    background-color: var(--main-color);
-}
-.menu-toggle:hover span,
-.menu-toggle.active span{
+
+.menu-toggle:hover::before,
+.menu-toggle.active::before {
     color: var(--white);
+}
+
+.menu-toggle::before {
+    content: "\F5D4";
     transition: all .15s ease-in-out;
 }
-.menu-toggle span {
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--white);
-    transition: all .15s ease-in-out;
-    color: rgba(255, 255, 255, .2);
-}
-.menu-toggle .menu-line {
-    margin-top: 1px;
-    height: 3px;
-    width: 55%;
-    background-color: var(--white);
-    transition: all .15s ease-in-out;
-    opacity: .2;
-}
+
 .nav-bar {
     width: 100%;
     height: 0%;
@@ -5803,6 +5780,7 @@ footer .centralizer .footer-content {
         background-color: var(--white);
         transition: all .15s ease-in-out;
         border: 1px var(--white) solid;
+        color: #3a3a3a;
     }
     .lang-menu ul {
         height: 0;
@@ -6001,20 +5979,7 @@ footer .centralizer .footer-content {
     .search-enabler:focus i {
         color: var(--white);
     }
-    .menu-toggle:hover .menu-line {        
-        opacity: 1;
-        transition: all .15s ease-in-out;
-    }
-    .menu-toggle.active .menu-line {        
-        opacity: 1;
-        transition: all .15s ease-in-out;
-        background-color: var(--main-color);
-    }
-.menu-toggle:hover span,
-.menu-toggle.active span{
-    opacity: 1;
-    transition: all .15s ease-in-out;
-}
+
 .menu-toggle:active,
 .search-enabler:active,
 .lang-menu ul li a:active,
@@ -6946,20 +6911,6 @@ label:active,
     }
     .nav-review li:hover {
         transform: unset;
-    }
-    .menu-toggle:hover .menu-line {
-        opacity: .2;
-        background-color: var(--white);
-    }
-    .menu-toggle:hover span{
-        color: rgba(255, 255, 255, .2);
-    }
-    .menu-toggle.active .menu-line {
-        opacity: 1;
-        background-color: var(--main-color);
-    }
-    .menu-toggle.active span{
-        color: var(--white);
     }
     .screentable {
         width: 100%;
