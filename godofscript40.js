@@ -2362,3 +2362,92 @@ document.addEventListener("DOMContentLoaded", function() {
           });
       });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const basePath = "/code-parts/site-infos";
+
+  let currentPath = window.location.pathname;
+
+  if (currentPath.includes("/reviews/") || currentPath.includes("/mirrors/")) {
+      if (currentPath.endsWith(".html")) {
+          currentPath = currentPath.slice(0, -5);
+      }
+
+      const pageKey = currentPath.split("/").pop();
+      const jsonFilePath = `${basePath}/${pageKey}.json`;
+
+      fetch(jsonFilePath)
+          .then(response => response.ok ? response.json() : null)
+          .then(data => {
+              if (!data || !data.code) return;
+
+              const code = data.code;
+
+              const codeElement = document.getElementById('site-code');
+              if (codeElement) {
+                  codeElement.textContent = code;
+              }
+
+              const copyButtons = document.querySelectorAll('.copy');
+
+              copyButtons.forEach(copyButton => {
+                  copyButton.addEventListener('click', function() {
+                      copyToClipboard(code, copyButton);
+                  });
+              });
+          });
+  } else {
+      const boxes = document.querySelectorAll('.box');
+
+      if (boxes.length === 0) return;
+
+      function loadJsonData(filePath) {
+          return fetch(filePath)
+              .then(response => response.ok ? response.json() : null);
+      }
+
+      boxes.forEach(box => {
+          const logoLink = box.querySelector('.logobg a');
+          if (!logoLink) return;
+
+          const path = logoLink.getAttribute('href');
+          const pageKey = path.split('/').pop();
+          const jsonFilePath = `${basePath}/${pageKey}.json`;
+
+          loadJsonData(jsonFilePath).then(data => {
+              if (!data || !data.code) return;
+
+              const code = data.code;
+              const copyButton = box.querySelector('.copy');
+
+              if (copyButton) {
+                  copyButton.addEventListener('click', function() {
+                      copyToClipboard(code, copyButton);
+                  });
+              }
+          });
+      });
+  }
+
+  function copyToClipboard(text, copyButton) {
+      const tempInput = document.createElement('input');
+      document.body.appendChild(tempInput);
+      tempInput.value = text;
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+
+      const title = document.createElement('div');
+      title.className = 'copied-title';
+      title.textContent = (languageTag === 'ru') ? 'Скопировано' : 'Copied';
+
+      copyButton.appendChild(title);
+
+      title.style.display = 'none';
+      $(title).fadeIn(150, function() {
+          $(this).delay(400).fadeOut(150, function() {
+              $(this).remove();
+          });
+      });
+  }
+});
