@@ -1923,7 +1923,7 @@ function loadAndApplyTranslations(languageTag) {
   const cacheKey = `translations_${languageTag}`;
   let translations = JSON.parse(localStorage.getItem(cacheKey));
 
-  if (languageTag === 'en' || languageTag === 'pl') { 
+  if (translations || (languageTag === 'en' || languageTag === 'pl')) {
       applyTranslations(document.body, languageTag, translations);
       translateURLs2(document.body, languageTag);
   } else {
@@ -1962,7 +1962,7 @@ function translateElements(element, languageTag, translations) {
   
   elements.forEach(el => {
     const text = el.textContent.trim();
-
+    
     if (languageTag === 'tr') {
       const lowercaseText = text.toLocaleLowerCase('tr-TR');
       const translatedText = translations[lowercaseText] || translations[text];
@@ -1974,9 +1974,13 @@ function translateElements(element, languageTag, translations) {
     } else if (languageTag === 'en' || languageTag === 'pl') {
       el.classList.add('translated');
     } else if (translations[text]) {
-      if (!el.classList.contains('translated')) {
-        el.innerHTML = translations[text];
-        el.classList.add('translated');
+      if (translations.hasOwnProperty(text)) {
+        if (!el.classList.contains('translated')) {
+            if (!el.classList.contains('translated')) {
+              el.innerHTML = translations[text];
+              el.classList.add('translated');
+            }
+        }
       }
     }
   });
