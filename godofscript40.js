@@ -78,7 +78,7 @@ forcemodsboxes();
         }
   
         const updatedHref = `/${languageTag}${path}${queryString}`;
-
+        
         if (!link.classList.contains('copy_style')) {
           link.setAttribute('href', domain + updatedHref);
         }
@@ -132,132 +132,6 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
 
       updateURLs(sitesList);
 }
-
-
-function applyTranslation(element, languageTag, translations) {
-  translateURLs2(element, languageTag, translations);
-  var observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-        var addedElement = mutation.addedNodes[0];
-        if (addedElement.classList && addedElement.classList.contains('category-selector')) {
-          translateURLs2(addedElement, languageTag, translations);
-        }
-      }
-    });
-  });
-
-  observer.observe(element, { childList: true, subtree: true });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  var navBarContainer = document.createElement('div');
-
-  fetch('/code-parts/nav-bar.html')
-    .then(response => response.text())
-    .then(data => {
-      navBarContainer.innerHTML = data;
-
-      var header = document.querySelector('header');
-
-      if (!header) return;
-
-      header.insertAdjacentElement('afterend', navBarContainer.firstChild);
-
-      var categorySelector = document.querySelector('.category-selector');
-
-      if (categorySelector) {
-        applyTranslation(categorySelector, languageTag);
-      }
-
-      var menuToggle = document.querySelector('.menu-toggle');
-      var navBar = document.querySelector('.nav-bar');
-      var pages = document.querySelector('.pages');
-
-      if (menuToggle && navBar) {
-        menuToggle.addEventListener('click', function () {
-          navBar.classList.toggle('active');
-          menuToggle.classList.toggle('active');
-          pages.classList.toggle('hardhidden');
-        });
-
-        navBar.addEventListener('click', function(event) {
-          if (event.target === categorySelector) {
-              menuToggle.classList.remove('active');
-              navBar.classList.remove('active');
-              pages.classList.remove('hardhidden');
-          }
-      });
-      
-      }
-
-      var bigCategories = document.querySelectorAll('.big-category');
-
-      bigCategories.forEach(function(category) {
-        category.addEventListener('click', function(e) {
-          const submenu2 = category.querySelector(".submenu2");
-          if (submenu2 && window.innerWidth <= 1340 && !e.target.matches('.submenu2 a')) {
-            e.preventDefault();
-          }
-        
-          bigCategories.forEach(function(otherCategory) {
-            if (otherCategory !== category) {
-              otherCategory.classList.remove('active');
-            }
-          });
-          this.classList.toggle('active');
-        });
-      });
-      
-      
-
-      var boxContainerNav = document.querySelector('#notexist');
-      var categorySelector = document.querySelector('.category-selector');
-      if (boxContainerNav) {
-        boxContainerNav.addEventListener("click", (e) => {
-          const targetBox = e.target.closest(".category-box");
-
-          if (targetBox) {
-            const parentListItem = targetBox.closest("li");
-            const submenu = parentListItem.querySelector(".submenu");
-
-            const isTargetBoxNewest = targetBox.classList.contains("newest");
-
-            if (!isTargetBoxNewest && window.innerWidth <= 1340) {
-              e.preventDefault();
-            }
-
-            const allTargetBoxes = document.querySelectorAll(".category-box");
-            allTargetBoxes.forEach((box) => {
-              if (box !== targetBox) {
-                box.classList.remove("current");
-                const parentListItem = box.closest("li");
-                const siblingSubmenu = parentListItem.querySelector(".submenu");
-                if (siblingSubmenu) {
-                  siblingSubmenu.classList.remove("current");
-                }
-              }
-            });
-            boxContainerNav.classList.remove("current");
-
-            targetBox.classList.toggle("current");
-
-            const isActive = Array.from(allTargetBoxes).some((box) =>
-              box.classList.contains("current")
-            );
-
-            if (isActive) {
-              boxContainerNav.classList.add("current");
-            }
-
-            if (submenu) {
-              submenu.classList.toggle("current");
-            }
-          }
-        });
-      }
-    });
-});
   
   if (
     !window.location.pathname.endsWith("404") &&
@@ -318,242 +192,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
   }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    if (
-      !window.location.pathname.includes("/skins/") &&
-      !window.location.pathname.includes("/items/") &&
-      !window.location.pathname.includes("/cases/") &&
-      !window.location.pathname.includes("/sticker-crafts/") &&
-      !window.location.pathname.includes("/reviews") &&
-      !window.location.pathname.includes("/mirrors") &&
-      !window.location.pathname.includes("/privacy-policy") &&
-      !window.location.pathname.includes("/terms-of-service") &&
-      !window.location.pathname.includes("/contact-us")
-    ) {
-      const boxContainer = document.querySelector(".category-selector");
-      const SpaceboxContainer = document.querySelector(".category-space");
-      const buttonsContainer = document.createElement("div");
-      const prevButtonContainer = document.createElement("button");
-      const nextButtonContainer = document.createElement("button");
-      const boxes = boxContainer.querySelectorAll(".category-box");
-      const boxWidth = boxes[0].offsetWidth + 2 * 9;
-      const containerWidth = boxWidth * 4;
-      let scrollPosition = 0;
-      let buttonScrollPosition = 0;
-
-      buttonsContainer.classList.add("buttons-container");
-      prevButtonContainer.classList.add("controls-button");
-      prevButtonContainer.setAttribute("aria-label", "Prev Category");
-      prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left"></i>';
-      nextButtonContainer.classList.add("controls-button");
-      nextButtonContainer.setAttribute("aria-label", "Next Category");
-      nextButtonContainer.innerHTML = '<i class="bi bi-chevron-right"></i>';
-  
-      buttonsContainer.appendChild(prevButtonContainer);
-      buttonsContainer.appendChild(nextButtonContainer);
-  
-      boxContainer.parentNode.insertBefore(buttonsContainer, SpaceboxContainer);
-  
-      boxContainer.style.width = `${containerWidth}px`;
-  
-      prevButtonContainer.addEventListener("click", () => {
-        scrollPosition -= boxWidth;
-        scrollPosition = Math.max(scrollPosition, 0);
-        boxContainer.scroll({ left: scrollPosition, behavior: "smooth" });
-        buttonScrollPosition = scrollPosition;
-      });
-  
-      nextButtonContainer.addEventListener("click", () => {
-        scrollPosition += boxWidth;
-        scrollPosition = Math.min(
-          scrollPosition,
-          boxContainer.scrollWidth - containerWidth
-        );
-        boxContainer.scroll({ left: scrollPosition, behavior: "smooth" });
-        buttonScrollPosition = scrollPosition;
-      });
-
-      let isMouseDown = false;
-      let startX = 0;
-      let scrollLeft = 0;
-
-
-      boxContainer.addEventListener("click", (e) => {
-        const targetBox = e.target.closest(".category-box");
-    
-        if (targetBox) {
-            const parentListItem = targetBox.closest("li");
-            const submenu = parentListItem.querySelector(".submenu");
-            
-            const isTargetBoxNewest = targetBox.classList.contains("newest");
-    
-            if (!isTargetBoxNewest && window.innerWidth <= 1340) {
-                e.preventDefault();
-            }
-    
-            const allTargetBoxes = document.querySelectorAll(".category-box");
-            allTargetBoxes.forEach((box) => {
-                if (box !== targetBox) {
-                    box.classList.remove("current");
-                    const parentListItem = box.closest("li");
-                    const siblingSubmenu = parentListItem.querySelector(".submenu");
-                    if (siblingSubmenu) {
-                        siblingSubmenu.classList.remove("current");
-                    }
-                }
-            });
-            boxContainer.classList.remove("current");
-    
-            targetBox.classList.toggle("current");
-    
-            const isActive = Array.from(allTargetBoxes).some((box) =>
-                box.classList.contains("current")
-            );
-    
-            categorySelector.addEventListener('click', function(event) {
-              if (event.target === categorySelector) {
-                const boxescurrent = boxContainer.querySelectorAll('.category-box.current');
-                const submenucurrent = boxContainer.querySelectorAll('.submenu.current');
-                boxContainer.classList.remove('current');
-            
-                boxescurrent.forEach(function(box) {
-                  box.classList.remove('current');
-                });
-
-                submenucurrent.forEach(function(box) {
-                  box.classList.remove('current');
-                });
-                
-              }
-            });
-
-            if (isActive) {
-                boxContainer.classList.add("current");
-            }
-    
-            if (submenu) {
-                submenu.classList.toggle("current");
-            }
-        }
-    });
-    
-    
-      boxContainer.addEventListener("scroll", () => {
-        if (boxContainer.scrollLeft === 0) {
-          prevButtonContainer.classList.add("disabled");
-        } else {
-          prevButtonContainer.classList.remove("disabled");
-        }
-  
-        const maxScrollLeft =
-          boxContainer.scrollWidth - boxContainer.clientWidth;
-        if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
-          nextButtonContainer.classList.add("disabled");
-        } else {
-          nextButtonContainer.classList.remove("disabled");
-        }
-      });
-  
-      if (boxContainer.scrollLeft === 0) {
-        prevButtonContainer.classList.add("disabled");
-      }
-      const maxScrollLeft = boxContainer.scrollWidth - boxContainer.clientWidth;
-      if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
-        nextButtonContainer.classList.add("disabled");
-      }
-  
-      boxContainer.addEventListener("mousedown", (e) => {
-        e.preventDefault();
-        isMouseDown = true;
-        startX = e.pageX - boxContainer.offsetLeft;
-        scrollLeft = boxContainer.scrollLeft;
-      });
-  
-      boxContainer.addEventListener("mousemove", (e) => {
-        if (!isMouseDown) return;
-        e.preventDefault();
-        const x = e.pageX - boxContainer.offsetLeft;
-        const walk = (x - startX) * 0.6;
-        const newScrollLeft = scrollLeft - walk;
-        boxContainer.scrollLeft = newScrollLeft;
-        buttonScrollPosition = newScrollLeft;
-      });
-  
-      boxContainer.addEventListener("mouseup", () => {
-        isMouseDown = false;
-      });
-  
-      boxContainer.addEventListener("mouseleave", () => {
-        isMouseDown = false;
-      });
-  
-      boxContainer.addEventListener("touchstart", (e) => {
-        const touch = e.touches[0];
-        isMouseDown = true;
-        startX = touch.pageX - boxContainer.offsetLeft;
-        scrollLeft = boxContainer.scrollLeft;
-      });
-  
-      boxContainer.addEventListener("touchmove", (e) => {
-        if (!isMouseDown) return;
-        e.preventDefault();
-        const touch = e.touches[0];
-        const x = touch.pageX - boxContainer.offsetLeft;
-        const walk = (x - startX) * 1.2;
-        const newScrollLeft = scrollLeft - walk;
-        boxContainer.scrollLeft = newScrollLeft;
-        buttonScrollPosition = newScrollLeft;
-      });
-  
-      boxContainer.addEventListener("touchend", () => {
-        isMouseDown = false;
-      });
-  
-      var categorySelector = document.querySelector("div.category-selector");
-      var ulElements = categorySelector.querySelectorAll(
-        "div.category-selector > ul"
-      );
-      var ulArray = Array.from(ulElements);
-  
-      ulArray.sort(function (a, b) {
-        var aIsActive = a
-          .querySelector("li a.category-box, li div.category-box")
-          .classList.contains("active");
-        var bIsActive = b
-          .querySelector("li a.category-box, li div.category-box")
-          .classList.contains("active");
-  
-        if (aIsActive && !bIsActive) {
-          return -1;
-        } else if (!aIsActive && bIsActive) {
-          return 1;
-        } else if (
-          a.querySelector("li a.category-box, li div.category-box").classList.contains("last")
-        ) {
-          return 1;
-        } else if (
-          b.querySelector("li a.category-box, li div.category-box").classList.contains("last")
-        ) {
-          return -1;
-        } else {
-          return Math.random() - 0.5;
-        }
-      });
-  
-      while (categorySelector.firstChild) {
-        categorySelector.removeChild(categorySelector.firstChild);
-      }
-  
-      ulArray.forEach(function (ul) {
-        categorySelector.appendChild(ul);
-      });
-  
-      buttonsContainer.scrollLeft = buttonScrollPosition;
-    }
-  });
-
-  
 
 var ratingsumm = document.querySelector(".ratingsumm");
 var sitealternates = document.querySelector(".sitealternates");
@@ -988,293 +626,6 @@ $(document).ready(function(){
           });
       });
     
-    {        
-        function translateURLs2(parentElement, languageTag) {
-          var links = parentElement.querySelectorAll("a[href]");
-          var supportedLanguages = ["hi", "tr", "pt", "es", "ru"];
-      
-          for (var i = 0; i < links.length; i++) {
-              var href = links[i].getAttribute("href");
-      
-              if (!href) continue;
-      
-              var url = new URL(href, window.location.href);
-              var path = url.pathname;
-              var langIncluded = supportedLanguages.some((lang) => {
-                  var langWithSlashes = "/" + lang + "/";
-                  return path.includes(langWithSlashes);
-              });
-      
-              if (languageTag !== "en") {
-                if ((languageTag === "ru" && path.includes("/topic")) || (!path || path === "/")) {
-                    url.pathname = "/" + languageTag + path;
-                    links[i].setAttribute("href", url.href);
-                } else if (!path.includes("/topic") && !langIncluded && supportedLanguages.includes(languageTag)) {
-                    path = "/" + languageTag + path;
-                    url.pathname = path;
-                    links[i].setAttribute("href", url.href);
-                }
-            }
-            
-          }      
-      
-          var translations = {
-            "ru": {
-              "CS2 Sites List": "Сайты CS2",
-              "Rust Sites List": "Сайты Rust",
-              "Dota 2 Sites List": "Сайты Dota 2",
-              "Crypto Sites List": "Крипто-Сайты",
-              "Newest Sites": "Новые Сайты",
-              "Freebies Only": "Все Бонусы",
-              "Earning Sites": "Заработок",
-              "Steam Sites": "Сайты Steam",
-              "Gambling Sites": "Гемблинг Сайты",
-              "Earn by Play CS2": "Заработок на Игре в CS2",
-              "Others": "Остальное",
-              "Skins By Color": "Скины по Цвету",
-              "Skins By Weapon Types": "Скины по Типу Оружия",
-              "Sticker-Crafts": "Крафты со Стикерами",
-              "All Sites": "Все Сайты",
-              "Match Betting": "Ставки на Матчи",
-              "Case Opening": "Кейсы",
-              "Roulette": "Рулетка",
-              "Coinflip": "Коинфлип",
-              "Crash": "Краш",
-              "Casino": "Казино",
-              "Jackpot": "Джекпот",
-              "Upgrader": "Апгрейдер",
-              "Dice": "Кости",
-              "Bonus Types": "Типы Халявы",
-              "Sign Up Bonuses": "Бонус за Регистрацию",
-              "Deposit Bonuses": "Бонус к Депозиту",
-              "Daily Rewards": "Ежедневный Бонус",
-              "Giveaways": "Розыгрыши",
-              "Offerwall Sites": "Задания",
-              "Earn by Play Sites": "Заработок на Игре",
-              "Buy or Sell Skins": "Купить/Продать Скины",
-              "Buy or Sell Items": "Купить/Продать Предметы",
-              "Marketplaces": "Торговые Площадки",
-              "Instant Sell": "Моментальная Продажа",
-              "Buy Items": "Купить Предметы",
-              "Sell Items": "Продать Предметы",
-              "Trade Items": "Обменять Предметы",
-              "Buy Skins": "Купить Скины",
-              "Sell Skins": "Продать Скины",
-              "Trade Skins": "Обменять Скины",
-              "Steam Level Up": "Увеличить Уровень Steam",
-              "Top Up Steam": "Пополнить Баланс Steam",
-              "Buy Steam Games": "Купить Игры Steam",
-              "Case Battle": "Кейс Батл"
-            },
-            "hi": {
-              "CS2 Sites List": "CS2 साइटों की सूची",
-              "Rust Sites List": "Rust साइटों की सूची",
-              "Dota 2 Sites List": "डोटा 2 साइटों की सूची",
-              "Crypto Sites List": "क्रिप्टो साइटों की सूची",
-              "Newest Sites": "सबसे नई साइटें",
-              "Freebies Only": "केवल मुफ्त आइटम",
-              "Earning Sites": "आमदनी वाली साइटें",
-              "Steam Sites": "स्टीम से संबंधित साइटें",
-              "Gambling Sites": "जुआ खेलने के लिए साइटें",
-              "Earn by Play CS2": "CS2 खेलकर कमाएं",
-              "Others": "अन्य",
-              "Skins By Color": "रंग द्वारा स्किनें",
-              "Skins By Weapon Types": "हथियार के प्रकार द्वारा स्किनें",
-              "Sticker-Crafts": "स्टिकर्स के साथ क्राफ्ट",
-              "All Sites": "सभी साइटें",
-              "Match Betting": "मैच पर शर्त लगाएं",
-              "Case Opening": "केस खोलें",
-              "Roulette": "रूलेट",
-              "Coinflip": "कॉइनफ्लिप",
-              "Crash": "क्रैश",
-              "Casino": "कैसीनो",
-              "Jackpot": "जैकपॉट",
-              "Upgrader": "अपग्रेडर",
-              "Dice": "पासा",
-              "Bonus Types": "बोनस के प्रकार",
-              "Sign Up Bonuses": "साइन अप के बोनस",
-              "Deposit Bonuses": "जमा करने के बोनस",
-              "Daily Rewards": "रोज़ाना की पुरस्कार",
-              "Giveaways": "उपहार",
-              "Offerwall Sites": "ऑफ़रवॉल से संबंधित साइटें",
-              "Earn by Play Sites": "खेलकर कमाने वाली साइटें",
-              "Buy or Sell Skins": "स्किन खरीदें या बेचें",
-              "Buy or Sell Items": "आइटम खरीदें या बेचें",
-              "Marketplaces": "मार्केटप्लेस",
-              "Instant Sell": "तत्काल बेचें",
-              "Buy Items": "आइटम खरीदें",
-              "Sell Items": "आइटम बेचें",
-              "Trade Items": "आइटम विनिमय करें",
-              "Buy Skins": "स्किन खरीदें",
-              "Sell Skins": "स्किन बेचें",
-              "Trade Skins": "स्किन विनिमय करें",
-              "Steam Level Up": "स्टीम स्तर बढ़ाएं",
-              "Top Up Steam": "स्टीम रिचार्ज करें",
-              "Buy Steam Games": "स्टीम गेम्स खरीदें"
-            },
-            "pt": {
-              "CS2 Sites List": "Sites de CS2",
-              "Rust Sites List": "Sites de Rust",
-              "Dota 2 Sites List": "Sites de Dota 2",
-              "Crypto Sites List": "Sites de Crypto",
-              "Newest Sites": "Sites Mais Recentes",
-              "Freebies Only": "Apenas Brindes",
-              "Earning Sites": "Sites para Ganhar",
-              "Steam Sites": "Sites do Steam",
-              "Gambling Sites": "Sites de Jogos de Azar",
-              "Earn by Play CS2": "Ganhe Jogando CS2",
-              "Others": "Outros",
-              "Skins By Color": "Skins por Cor",
-              "Skins By Weapon Types": "Skins por Tipo de Arma",
-              "Sticker-Crafts": "Artesanatos com Stickers",
-              "All Sites": "Todos os Sites",
-              "Match Betting": "Apostas em Jogos",
-              "Case Opening": "Abertura de Caixas",
-              "Roulette": "Roleta",
-              "Coinflip": "Cara ou Coroa",
-              "Crash": "Crash",
-              "Casino": "Cassino",
-              "Jackpot": "Jackpot",
-              "Upgrader": "Upgrader",
-              "Dice": "Dados",
-              "Bonus Types": "Tipos de Bônus",
-              "Sign Up Bonuses": "Bônus de Cadastro",
-              "Deposit Bonuses": "Bônus de Depósito",
-              "Daily Rewards": "Recompensas Diárias",
-              "Giveaways": "Doações",
-              "Offerwall Sites": "Sites de Ofertas",
-              "Earn by Play Sites": "Sites para Ganhar Jogando",
-              "Buy or Sell Skins": "Comprar ou Vender Skins",
-              "Buy or Sell Items": "Comprar ou Vender Itens",
-              "Marketplaces": "Mercados",
-              "Instant Sell": "Venda Imediata",
-              "Buy Items": "Comprar Itens",
-              "Sell Items": "Vender Itens",
-              "Trade Items": "Trocar Itens",
-              "Buy Skins": "Comprar Skins",
-              "Sell Skins": "Vender Skins",
-              "Trade Skins": "Trocar Skins",
-              "Steam Level Up": "Subir de Nível no Steam",
-              "Top Up Steam": "Recarregar Steam",
-              "Buy Steam Games": "Comprar Jogos do Steam"
-            },
-            "tr": {
-              "CS2 Sites List": "CS2 Siteleri Listesi",
-              "Rust Sites List": "Rust Siteleri Listesi",
-              "Dota 2 Sites List": "Dota 2 Siteleri Listesi",
-              "Crypto Sites List": "Kripto Siteleri Listesi",
-              "Newest Sites": "En Yeni Siteler",
-              "Freebies Only": "Sadece Bedava Hediyeler",
-              "Earning Sites": "Para Kazanma Siteleri",
-              "Steam Sites": "Steam Siteleri",
-              "Gambling Sites": " Kumar Siteleri",
-              "Earn by Play CS2": "CS2 Oynayarak Kazan",
-              "Others": "Diğerleri",
-              "Skins By Color": "Renklerine Göre Skinler",
-              "Skins By Weapon Types": "Silah Türlerine Göre Skinler",
-              "Sticker-Crafts": "Stickerlı Craftlar",
-              "All Sites": "Tüm Siteler",
-              "Match Betting": "Maç Bahisleri",
-              "Case Opening": "Kasa Açma",
-              "Roulette": "Rulet",
-              "Coinflip": "Tura-Yazı",
-              "Crash": "Çökme",
-              "Casino": "Kumarhane",
-              "Jackpot": "Jackpot",
-              "Upgrader": "Yükseltici",
-              "Dice": "Zar",
-              "Bonus Types": "Bonus Türleri",
-              "Sign Up Bonuses": "Kayıt Bonusları",
-              "Deposit Bonuses": "Yatırım Bonusları",
-              "Daily Rewards": "Günlük Ödüller",
-              "Giveaways": "Hediyeler",
-              "Offerwall Sites": "Teklif Duvarı Siteleri",
-              "Earn by Play Sites": "Oyun Oynayarak Kazan Siteleri",
-              "Buy or Sell Skins": "Skins Satın Al veya Sat",
-              "Buy or Sell Items": "Eşya Satın Al veya Sat",
-              "Marketplaces": "Pazar Yerleri",
-              "Instant Sell": "Anında Satış",
-              "Buy Items": "Eşya Satın Al",
-              "Sell Items": "Eşya Sat",
-              "Trade Items": "Eşya Takas Et",
-              "Buy Skins": "Skins Satın Al",
-              "Sell Skins": "Skins Sat",
-              "Trade Skins": "Skins Takas Et",
-              "Steam Level Up": "Steam Seviye Atlama",
-              "Top Up Steam": "Steam Bakiye Yükle",
-              "Buy Steam Games": "Steam Oyunları Satın Al"
-            },
-            "es": {
-              "CS2 Sites List": "Lista de sitios de CS2",
-              "Rust Sites List": "Lista de sitios de Rust",
-              "Dota 2 Sites List": "Lista de sitios de Dota 2",
-              "Crypto Sites List": "Lista de sitios de criptomonedas",
-              "Newest Sites": "Sitios Más Nuevos",
-              "Freebies Only": "Solo regalos gratis",
-              "Earning Sites": "Sitios para ganar dinero",
-              "Steam Sites": "Sitios de Steam",
-              "Gambling Sites": "Sitios de apuestas",
-              "Earn by Play CS2": "Gana jugando CS2",
-              "Others": "Otros",
-              "Skins By Color": "Skins por Color",
-              "Skins By Weapon Types": "Skins por Tipo de Arma",
-              "Sticker-Crafts": "Manualidades con Stickers",
-              "All Sites": "Todos los sitios",
-              "Match Betting": "Apuestas de partidos",
-              "Case Opening": "Apertura de estuches",
-              "Roulette": "Ruleta",
-              "Coinflip": "Lanzamiento de moneda",
-              "Crash": "Choque",
-              "Casino": "Casino",
-              "Jackpot": "Bote",
-              "Upgrader": "Actualizador",
-              "Dice": "Dados",
-              "Bonus Types": "Tipos de bonos",
-              "Sign Up Bonuses": "Bonos de registro",
-              "Deposit Bonuses": "Bonos de depósito",
-              "Daily Rewards": "Recompensas diarias",
-              "Giveaways": "Regalos",
-              "Offerwall Sites": "Sitios de oferta",
-              "Earn by Play Sites": "Sitios para ganar jugando",
-              "Buy or Sell Skins": "Comprar o vender skins",
-              "Buy or Sell Items": "Comprar o vender objetos",
-              "Marketplaces": "Mercados",
-              "Instant Sell": "Venta instantánea",
-              "Buy Items": "Comprar objetos",
-              "Sell Items": "Vender objetos",
-              "Trade Items": "Intercambiar objetos",
-              "Buy Skins": "Comprar skins",
-              "Sell Skins": "Vender skins",
-              "Trade Skins": "Intercambiar skins",
-              "Steam Level Up": "Aumentar nivel de Steam",
-              "Top Up Steam": "Recargar Steam",
-              "Buy Steam Games": "Comprar juegos de Steam"
-            },
-          };
-      
-          var elements = document.querySelectorAll('.category-box-content span, ul .submenu li a, ul .submenu li .nonredir');
-          for (var j = 0; j < elements.length; j++) {
-            var text = elements[j].textContent.trim();
-            if (translations[languageTag] && translations[languageTag].hasOwnProperty(text)) {
-              if (!elements[j].classList.contains('translated')) {
-                if (elements[j].innerHTML.includes('<i class="bi bi-caret-right-fill"></i>')) {
-                  elements[j].innerHTML = translations[languageTag][text] + ' <i class="bi bi-caret-right-fill"></i>';
-                } else {
-                  elements[j].innerHTML = translations[languageTag][text];
-                }
-                elements[j].classList.add('translated');
-              }
-            } else if (languageTag === "en" && elements[j].parentNode.classList.contains('category-box-content')) {
-              elements[j].classList.add('translated');
-            }
-          }
-        }
-        
-        var categorySelector = document.querySelector('.category-selector');
-        if (categorySelector !== null) {
-          translateURLs2(categorySelector, languageTag);
-      }
-    }
       window.onload = function () {
         (function () {
             if (
@@ -2456,4 +1807,482 @@ document.addEventListener("DOMContentLoaded", function() {
         copyButton.classList.remove('icon-changed');
     }, 800);
 }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const navBarContainer = document.createElement('div');
+
+  fetch('/code-parts/nav-bar.html')
+    .then(response => response.text())
+    .then(data => {
+      navBarContainer.innerHTML = data;
+
+      const header = document.querySelector('header');
+      if (!header) return;
+
+      header.insertAdjacentElement('afterend', navBarContainer.firstChild);
+
+      const categorySelector = document.querySelector('.category-selector');
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navBar = document.querySelector('.nav-bar');
+      const pages = document.querySelector('.pages');
+
+      if (menuToggle && navBar) {
+        menuToggle.addEventListener('click', () => {
+          navBar.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+          pages.classList.toggle('hardhidden');
+        });
+
+        navBar.addEventListener('click', event => {
+          if (event.target === categorySelector) {
+            menuToggle.classList.remove('active');
+            navBar.classList.remove('active');
+            pages.classList.remove('hardhidden');
+          }
+        });
+      }
+
+      const bigCategories = document.querySelectorAll('.big-category');
+
+      bigCategories.forEach(category => {
+        category.addEventListener('click', function(e) {
+          const submenu2 = category.querySelector(".submenu2");
+          if (submenu2 && window.innerWidth <= 1340 && !e.target.matches('.submenu2 a')) {
+            e.preventDefault();
+          }
+        
+          bigCategories.forEach(otherCategory => {
+            if (otherCategory !== category) {
+              otherCategory.classList.remove('active');
+            }
+          });
+          this.classList.toggle('active');
+        });
+      });
+
+      const boxContainerNav = document.querySelector('#notexist');
+      if (boxContainerNav) {
+        boxContainerNav.addEventListener("click", e => {
+          const targetBox = e.target.closest(".category-box");
+
+          if (targetBox) {
+            const parentListItem = targetBox.closest("div.category");
+            const submenu = parentListItem.querySelector(".submenu");
+
+            const isTargetBoxNewest = targetBox.classList.contains("newest");
+
+            if (!isTargetBoxNewest && window.innerWidth <= 1340) {
+              e.preventDefault();
+            }
+
+            document.querySelectorAll(".category-box").forEach(box => {
+              if (box !== targetBox) {
+                box.classList.remove("current");
+                const siblingSubmenu = box.closest("div.category").querySelector(".submenu");
+                if (siblingSubmenu) {
+                  siblingSubmenu.classList.remove("current");
+                }
+              }
+            });
+            boxContainerNav.classList.remove("current");
+
+            targetBox.classList.toggle("current");
+
+            const isActive = Array.from(document.querySelectorAll(".category-box")).some(box =>
+              box.classList.contains("current")
+            );
+
+            if (isActive) {
+              boxContainerNav.classList.add("current");
+            }
+
+            if (submenu) {
+              submenu.classList.toggle("current");
+            }
+          }
+        });
+      }
+
+      if (languageTag === 'en' || languageTag === 'pl') { 
+        applyTranslations(document.body, languageTag, {});
+        translateURLs2(document.body, languageTag);
+      } else {
+        const translationFile = `/code-parts/category-translations/${languageTag}.json`;
+    
+        fetch(translationFile)
+          .then(response => response.json())
+          .then(translations => {
+            applyTranslations(document.body, languageTag, translations);
+            translateURLs2(document.body, languageTag);
+          });
+      }
+    });
+});
+
+
+function loadAndApplyTranslations(languageTag) {
+  if (languageTag === 'en' || languageTag === 'pl') { 
+    applyTranslations(document.body, languageTag, {});
+    translateURLs2(document.body, languageTag);
+  } else {
+    const translationFile = `/code-parts/category-translations/${languageTag}.json`;
+    fetch(translationFile)
+      .then(response => response.json())
+      .then(translations => {
+        applyTranslations(document.body, languageTag, translations);
+        translateURLs2(document.body, languageTag);
+      });
+  }
+}
+
+function applyTranslations(element, languageTag, translations) {
+  translateElements(element, languageTag, translations);
+
+  const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+      if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+        mutation.addedNodes.forEach(node => {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            translateElements(node, languageTag, translations);
+          }
+        });
+      }
+    });
+  });
+
+  observer.observe(element, { childList: true, subtree: true });
+}
+
+function translateElements(element, languageTag, translations) {
+  const elements = element.querySelectorAll('.category-box-content span, .category .submenu li a, .category .submenu li .nonredir');
+  
+  elements.forEach(el => {
+    const text = el.textContent.trim();
+
+    if (languageTag === 'tr') {
+      const lowercaseText = text.toLocaleLowerCase('tr-TR');
+      const translatedText = translations[lowercaseText] || translations[text];
+
+      if (translatedText && !el.classList.contains('translated')) {
+        el.innerHTML = translatedText;
+        el.classList.add('translated');
+      }
+    } else if (languageTag === 'en' || languageTag === 'pl') {
+      el.classList.add('translated');
+    } else if (translations[text]) {
+      if (!el.classList.contains('translated')) {
+        el.innerHTML = translations[text];
+        el.classList.add('translated');
+      }
+    }
+  });
+}
+
+function translateURLs2(parentElement, languageTag) {
+  if (!parentElement || !languageTag || languageTag.length !== 2) {
+    return;
+  }
+  
+  const links = parentElement.querySelectorAll('.category a[href]');
+  const supportedLanguages = ["hi", "tr", "pt", "es", "ru"];
+  
+  if (!supportedLanguages.includes(languageTag) || languageTag === 'en') {
+    return;
+  }
+
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    const url = new URL(href, window.location.href);
+    let path = url.pathname;
+    const queryString = url.search;
+
+    if (path === '/') {
+      path = `/${languageTag}`;
+    } else if (path.startsWith('/topic')) {
+      if (languageTag === 'ru' && !path.startsWith('/ru/topic')) {
+        path = `/ru${path}`;
+      }
+    } else {
+      const pathSegments = path.split('/').filter(segment => segment);
+      if (pathSegments.length === 0 || pathSegments[0] !== languageTag) {
+        if (!path.startsWith(`/${languageTag}/`)) {
+          path = `/${languageTag}${path}`;
+        }
+      }
+    }
+
+    link.setAttribute('href', url.origin + path + queryString);
+  });
+}
+
+
+function loadCategoryContent(category) {
+  const link = category.querySelector('.category-box');
+  const href = link.getAttribute('href');
+
+  const fileMap = {
+    '/': '/code-parts/category-import/csgo.html',
+    '/rust': '/code-parts/category-import/rust.html',
+    '/crypto': '/code-parts/category-import/crypto.html',
+    '/freebies': '/code-parts/category-import/freebies.html',
+    '/earning': '/code-parts/category-import/earning.html',
+    '/dota': '/code-parts/category-import/dota.html',
+    '/steam': '/code-parts/category-import/steam.html',
+    '/newest': ''
+  };
+
+  const htmlFile = fileMap[href] || '';
+
+  if (htmlFile) {
+    fetch(htmlFile)
+      .then(response => response.text())
+      .then(data => {
+        category.insertAdjacentHTML('beforeend', data);
+        loadAndApplyTranslations(document.documentElement.lang || 'en');
+      });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.category').forEach(category => {
+    loadCategoryContent(category);
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (
+    !window.location.pathname.includes("/skins/") &&
+    !window.location.pathname.includes("/items/") &&
+    !window.location.pathname.includes("/cases/") &&
+    !window.location.pathname.includes("/sticker-crafts/") &&
+    !window.location.pathname.includes("/reviews") &&
+    !window.location.pathname.includes("/mirrors") &&
+    !window.location.pathname.includes("/privacy-policy") &&
+    !window.location.pathname.includes("/terms-of-service") &&
+    !window.location.pathname.includes("/contact-us")
+  ) {
+    const boxContainer = document.querySelector(".category-selector");
+    const SpaceboxContainer = document.querySelector(".category-space");
+    const buttonsContainer = document.createElement("div");
+    const prevButtonContainer = document.createElement("button");
+    const nextButtonContainer = document.createElement("button");
+    const boxes = boxContainer.querySelectorAll(".category-box");
+    const boxWidth = boxes[0].offsetWidth + 2 * 9;
+    const containerWidth = boxWidth * 4;
+    let scrollPosition = 0;
+    let buttonScrollPosition = 0;
+
+    buttonsContainer.classList.add("buttons-container");
+    prevButtonContainer.classList.add("controls-button");
+    prevButtonContainer.setAttribute("aria-label", "Prev Category");
+    prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left"></i>';
+    nextButtonContainer.classList.add("controls-button");
+    nextButtonContainer.setAttribute("aria-label", "Next Category");
+    nextButtonContainer.innerHTML = '<i class="bi bi-chevron-right"></i>';
+
+    buttonsContainer.appendChild(prevButtonContainer);
+    buttonsContainer.appendChild(nextButtonContainer);
+
+    boxContainer.parentNode.insertBefore(buttonsContainer, SpaceboxContainer);
+
+    boxContainer.style.width = `${containerWidth}px`;
+
+    prevButtonContainer.addEventListener("click", () => {
+      scrollPosition -= boxWidth;
+      scrollPosition = Math.max(scrollPosition, 0);
+      boxContainer.scroll({ left: scrollPosition, behavior: "smooth" });
+      buttonScrollPosition = scrollPosition;
+    });
+
+    nextButtonContainer.addEventListener("click", () => {
+      scrollPosition += boxWidth;
+      scrollPosition = Math.min(
+        scrollPosition,
+        boxContainer.scrollWidth - containerWidth
+      );
+      boxContainer.scroll({ left: scrollPosition, behavior: "smooth" });
+      buttonScrollPosition = scrollPosition;
+    });
+
+    let isMouseDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+
+    boxContainer.addEventListener("click", (e) => {
+      const targetBox = e.target.closest(".category-box");
+  
+      if (targetBox) {
+          const parentListItem = targetBox.closest("div.category");
+          const submenu = parentListItem.querySelector(".submenu");
+          
+          const isTargetBoxNewest = targetBox.classList.contains("newest");
+  
+          if (!isTargetBoxNewest && window.innerWidth <= 1340) {
+              e.preventDefault();
+          }
+  
+          const allTargetBoxes = document.querySelectorAll(".category-box");
+          allTargetBoxes.forEach((box) => {
+              if (box !== targetBox) {
+                  box.classList.remove("current");
+                  const parentListItem = box.closest("div.category");
+                  const siblingSubmenu = parentListItem.querySelector(".submenu");
+                  if (siblingSubmenu) {
+                      siblingSubmenu.classList.remove("current");
+                  }
+              }
+          });
+          boxContainer.classList.remove("current");
+  
+          targetBox.classList.toggle("current");
+  
+          const isActive = Array.from(allTargetBoxes).some((box) =>
+              box.classList.contains("current")
+          );
+  
+          categorySelector.addEventListener('click', function(event) {
+            if (event.target === categorySelector) {
+              const boxescurrent = boxContainer.querySelectorAll('.category-box.current');
+              const submenucurrent = boxContainer.querySelectorAll('.submenu.current');
+              boxContainer.classList.remove('current');
+          
+              boxescurrent.forEach(function(box) {
+                box.classList.remove('current');
+              });
+
+              submenucurrent.forEach(function(box) {
+                box.classList.remove('current');
+              });
+              
+            }
+          });
+
+          if (isActive) {
+              boxContainer.classList.add("current");
+          }
+  
+          if (submenu) {
+              submenu.classList.toggle("current");
+          }
+      }
+  });
+  
+  
+    boxContainer.addEventListener("scroll", () => {
+      if (boxContainer.scrollLeft === 0) {
+        prevButtonContainer.classList.add("disabled");
+      } else {
+        prevButtonContainer.classList.remove("disabled");
+      }
+
+      const maxScrollLeft =
+        boxContainer.scrollWidth - boxContainer.clientWidth;
+      if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
+        nextButtonContainer.classList.add("disabled");
+      } else {
+        nextButtonContainer.classList.remove("disabled");
+      }
+    });
+
+    if (boxContainer.scrollLeft === 0) {
+      prevButtonContainer.classList.add("disabled");
+    }
+    const maxScrollLeft = boxContainer.scrollWidth - boxContainer.clientWidth;
+    if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
+      nextButtonContainer.classList.add("disabled");
+    }
+
+    boxContainer.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      isMouseDown = true;
+      startX = e.pageX - boxContainer.offsetLeft;
+      scrollLeft = boxContainer.scrollLeft;
+    });
+
+    boxContainer.addEventListener("mousemove", (e) => {
+      if (!isMouseDown) return;
+      e.preventDefault();
+      const x = e.pageX - boxContainer.offsetLeft;
+      const walk = (x - startX) * 0.6;
+      const newScrollLeft = scrollLeft - walk;
+      boxContainer.scrollLeft = newScrollLeft;
+      buttonScrollPosition = newScrollLeft;
+    });
+
+    boxContainer.addEventListener("mouseup", () => {
+      isMouseDown = false;
+    });
+
+    boxContainer.addEventListener("mouseleave", () => {
+      isMouseDown = false;
+    });
+
+    boxContainer.addEventListener("touchstart", (e) => {
+      const touch = e.touches[0];
+      isMouseDown = true;
+      startX = touch.pageX - boxContainer.offsetLeft;
+      scrollLeft = boxContainer.scrollLeft;
+    });
+
+    boxContainer.addEventListener("touchmove", (e) => {
+      if (!isMouseDown) return;
+      e.preventDefault();
+      const touch = e.touches[0];
+      const x = touch.pageX - boxContainer.offsetLeft;
+      const walk = (x - startX) * 1.2;
+      const newScrollLeft = scrollLeft - walk;
+      boxContainer.scrollLeft = newScrollLeft;
+      buttonScrollPosition = newScrollLeft;
+    });
+
+    boxContainer.addEventListener("touchend", () => {
+      isMouseDown = false;
+    });
+
+    var categorySelector = document.querySelector("div.category-selector");
+    var CategoryElements = categorySelector.querySelectorAll(
+      "div.category-selector > div.category"
+    );
+    var CategoryArray = Array.from(CategoryElements);
+
+    CategoryArray.sort(function (a, b) {
+      var aIsActive = a
+        .querySelector("div.category a.category-box, div.category div.category-box")
+        .classList.contains("active");
+      var bIsActive = b
+        .querySelector("div.category a.category-box, div.category div.category-box")
+        .classList.contains("active");
+
+      if (aIsActive && !bIsActive) {
+        return -1;
+      } else if (!aIsActive && bIsActive) {
+        return 1;
+      } else if (
+        a.querySelector("div.category a.category-box, div.category div.category-box").classList.contains("last")
+      ) {
+        return 1;
+      } else if (
+        b.querySelector("div.category a.category-box, div.category div.category-box").classList.contains("last")
+      ) {
+        return -1;
+      } else {
+        return Math.random() - 0.5;
+      }
+    });
+
+    while (categorySelector.firstChild) {
+      categorySelector.removeChild(categorySelector.firstChild);
+    }
+
+    CategoryArray.forEach(function (ul) {
+      categorySelector.appendChild(ul);
+    });
+
+    buttonsContainer.scrollLeft = buttonScrollPosition;
+  }
 });

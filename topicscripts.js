@@ -427,7 +427,7 @@ $(document).on("click", ".preview-nav-button.right", function () {
                 enabledFiltersState[weaponType] = $(this).hasClass("enabled");
                 updateNavigationReset();
             });
-            translateElements(languageTag)
+            translateTypes(languageTag)
             checkWeaponTypeAvailabilityForItems();
 
             if (languageTag === 'ru') {
@@ -509,8 +509,8 @@ $(document).on("click", ".preview-nav-button.right", function () {
 });
 
 if (window.location.pathname.includes("/topic")) {
-    var elements = document.querySelectorAll('.box-skins-list');
-    elements.forEach(function(element) {
+    var skinslist = document.querySelectorAll('.box-skins-list');
+    skinslist.forEach(function(element) {
         element.classList.add('visible');
     });
 document.addEventListener('DOMContentLoaded', function () {
@@ -522,8 +522,8 @@ document.addEventListener('DOMContentLoaded', function () {
             var bgImage = new Image();
             bgImage.src = "/img/skins/previews/small/example-" + color + ".webp";
             bgImage.onload = function() {
-                var elements = document.querySelectorAll("[data-color='" + color + "']");
-                elements.forEach(function(element) {
+                var skinslist = document.querySelectorAll("[data-color='" + color + "']");
+                skinslist.forEach(function(element) {
                     element.style.backgroundImage = "url(" + bgImage.src + ")";
                     element.classList.add("active");
                 });
@@ -584,9 +584,9 @@ boxSkinsElements.forEach(function(boxSkinsElement) {
       });
     });
     
-    function translateElements(languageTag) {
+    function translateTypes(languageTag) {
       if (languageTag === "ru") {
-          var translations = {
+          var translations_items = {
               "Knives": "Ножи",
               "Gloves": "Перчатки",
               "Pistols": "Пистолеты",
@@ -608,13 +608,13 @@ boxSkinsElements.forEach(function(boxSkinsElement) {
           var elementsToTranslate = document.querySelectorAll('.navigation-weapon-type, .color-box-selection-button');
           elementsToTranslate.forEach(function(element) {
               var originalText = element.textContent.trim();
-              if (translations.hasOwnProperty(originalText)) {
-                  element.textContent = translations[originalText];
+              if (translations_items.hasOwnProperty(originalText)) {
+                  element.textContent = translations_items[originalText];
               }
           });
       }
   }
-  translateElements(languageTag)
+  translateTypes(languageTag)
 }
 
 $(document).ready(function(){
