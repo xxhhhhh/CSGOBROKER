@@ -1841,16 +1841,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
 
-      const bigCategories = document.querySelectorAll('.big-category');
+      const bigCategoriesnav = document.querySelectorAll('#notexist .big-category');
 
-      bigCategories.forEach(category => {
+      bigCategoriesnav.forEach(category => {
         category.addEventListener('click', function(e) {
           const submenu2 = category.querySelector(".submenu2");
           if (submenu2 && window.innerWidth <= 1340 && !e.target.matches('.submenu2 a')) {
             e.preventDefault();
           }
         
-          bigCategories.forEach(otherCategory => {
+          bigCategoriesnav.forEach(otherCategory => {
             if (otherCategory !== category) {
               otherCategory.classList.remove('active');
             }
@@ -2119,22 +2119,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     boxContainer.addEventListener("click", (e) => {
       const targetBox = e.target.closest(".category-box");
-  
+      const bigCategoryLink = e.target.closest(".big-category a");
+      const submenu2 = e.target.closest(".submenu2");
+
+      if (submenu2) {
+          return;
+      }
+
       if (targetBox) {
-          const parentListItem = targetBox.closest("div.category");
+          const parentListItem = targetBox.closest(".category");
           const submenu = parentListItem.querySelector(".submenu");
-          
+
           const isTargetBoxNewest = targetBox.classList.contains("newest");
-  
+
           if (!isTargetBoxNewest && window.innerWidth <= 1340) {
               e.preventDefault();
           }
-  
+
           const allTargetBoxes = document.querySelectorAll(".category-box");
           allTargetBoxes.forEach((box) => {
               if (box !== targetBox) {
                   box.classList.remove("current");
-                  const parentListItem = box.closest("div.category");
+                  const parentListItem = box.closest(".category");
                   const siblingSubmenu = parentListItem.querySelector(".submenu");
                   if (siblingSubmenu) {
                       siblingSubmenu.classList.remove("current");
@@ -2142,39 +2148,85 @@ document.addEventListener("DOMContentLoaded", function () {
               }
           });
           boxContainer.classList.remove("current");
-  
+
           targetBox.classList.toggle("current");
-  
+
           const isActive = Array.from(allTargetBoxes).some((box) =>
               box.classList.contains("current")
           );
-  
-          categorySelector.addEventListener('click', function(event) {
-            if (event.target === categorySelector) {
-              const boxescurrent = boxContainer.querySelectorAll('.category-box.current');
-              const submenucurrent = boxContainer.querySelectorAll('.submenu.current');
-              boxContainer.classList.remove('current');
-          
-              boxescurrent.forEach(function(box) {
-                box.classList.remove('current');
-              });
-
-              submenucurrent.forEach(function(box) {
-                box.classList.remove('current');
-              });
-              
-            }
-          });
 
           if (isActive) {
               boxContainer.classList.add("current");
           }
-  
+
           if (submenu) {
               submenu.classList.toggle("current");
           }
       }
+
+      if (bigCategoryLink) {
+          const bigCategory = bigCategoryLink.closest(".big-category");
+          const hasSubmenu2 = bigCategory.querySelector(".submenu2");
+
+          if (hasSubmenu2 && window.innerWidth <= 1340) {
+              e.preventDefault();
+          }
+
+          const bigCategories = document.querySelectorAll(".big-category");
+          bigCategories.forEach((item) => {
+              item.classList.remove("active");
+              const submenu2 = item.querySelector(".submenu2");
+              if (submenu2) {
+                  submenu2.classList.remove("current");
+              }
+          });
+
+          const targetBigCategory = bigCategory;
+          targetBigCategory.classList.toggle("active");
+
+          if (targetBigCategory.classList.contains("active")) {
+              const submenu2 = targetBigCategory.querySelector(".submenu2");
+              if (submenu2) {
+                  submenu2.classList.add("current");
+              }
+          } else {
+              const submenu2 = targetBigCategory.querySelector(".submenu2");
+              if (submenu2) {
+                  submenu2.classList.remove("current");
+              }
+          }
+      }
+
+      if (e.target.closest(".submenu2 a")) {
+          return;
+      }
   });
+  
+  var categorySelector = document.querySelector('.category-selector');
+    categorySelector.addEventListener('click', function(event) {
+        if (event.target === categorySelector) {
+            const boxescurrent = boxContainer.querySelectorAll('.category-box.current');
+            const submenucurrent = boxContainer.querySelectorAll('.submenu.current');
+            boxContainer.classList.remove('current');
+
+            boxescurrent.forEach(function(box) {
+                box.classList.remove('current');
+            });
+
+            submenucurrent.forEach(function(submenu) {
+                submenu.classList.remove('current');
+            });
+
+            const activeBigCategories = document.querySelectorAll('.big-category.active');
+            activeBigCategories.forEach((item) => {
+                item.classList.remove('active');
+                const submenu2 = item.querySelector(".submenu2");
+                if (submenu2) {
+                    submenu2.classList.remove('current');
+                }
+            });
+        }
+    });
   
   
     boxContainer.addEventListener("scroll", () => {

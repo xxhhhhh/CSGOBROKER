@@ -2961,9 +2961,7 @@ nav #logo:hover {
 .category-space {
     height: 80px;
 }
-.category-selector ul:hover .category-box .category-box-logo img {
-    opacity: 1;
-}
+
 .category-selector .category-box.active .category-box-content,
 .category-selector .category:hover .category-box .category-box-content,
 #notexist .category-box-content {
@@ -4276,7 +4274,7 @@ nav img:active,
 }
 
 
-.category-selector div.category .category-box .category-box-logo,
+.category-selector .category .category-box .category-box-logo,
 .singlemod-box,
 .topic-box .content {
     transition: background .15s ease-in-out;
@@ -4285,7 +4283,7 @@ nav img:active,
 
 .boxes-holder .box:hover .content,
 .topic-box:hover .content,
-.category-selector div.category:hover .category-box .category-box-logo {
+.category-selector .category:hover .category-box .category-box-logo {
     background: rgb(21 21 21);
     transition: transform .15s .05s ease-in-out, color .15s 0s, border .15s 0s, background .15s 0s !important;
 }
@@ -5686,6 +5684,10 @@ footer .centralizer .footer-content {
     }
     .big-category:has(.submenu2) a:not(.submenu2 a)::after {
         content: "\f231";
+    }
+    .submenu li a:empty::after,
+    .submenu2 li a:empty::after {
+        content: unset;
     }
     .category-selector .category:hover .submenu{
     z-index: 90;
@@ -7588,7 +7590,7 @@ label:active,
         width: 70px;
         overflow: hidden;
     }
-    .category-selector div.category .category-box .category-box-logo {
+    .category-selector .category .category-box .category-box-logo {
         width: 100%;
         transform: unset;
     }
