@@ -952,7 +952,6 @@ fetch(newestFragment)
 }
 
 function forcemodsboxes() {
-  const cachedContent = {};
   const importedMods = {};
   const url = cleanUrl(window.location.href);
   const pageType = getPageType(url);
@@ -968,7 +967,7 @@ function forcemodsboxes() {
       break;
     case 'rust':
       if (isMultiBoxPage(url)) {
-        importModsBox("rust-skins");
+        importModsBox("rust-skins");  
         importModsBox("rust");
       } else {
         importModsBox("rust");
@@ -1004,27 +1003,27 @@ function forcemodsboxes() {
 
   function importModsBox(boxId) {
     if (importedMods[boxId]) {
-      return;
+        return;
     }
 
     const existingContainer = document.querySelector('.boxes-holder');
-    const isExistingContentCached = existingContainer && cachedContent[boxId];
+    const cachedContent = localStorage.getItem(`modsBox-${boxId}`);
 
-    if (isExistingContentCached) {
-      insertModsBox(existingContainer, boxId, cachedContent[boxId]);
+    if (cachedContent) {
+        insertModsBox(existingContainer, boxId, cachedContent);
+        importedMods[boxId] = true;
     } else {
-      let fileToFetch = '/code-parts/micro-parts/insert-mods-box.html';
+        let fileToFetch = '/code-parts/micro-parts/insert-mods-box.html';
 
-
-      fetch(fileToFetch)
-        .then(response => response.text())
-        .then(data => {
-          cachedContent[boxId] = data;
-          insertModsBox(existingContainer, boxId, data);
-          importedMods[boxId] = true;
-        });
+        fetch(fileToFetch)
+            .then(response => response.text())
+            .then(data => {
+                localStorage.setItem(`modsBox-${boxId}`, data);
+                insertModsBox(existingContainer, boxId, data);
+                importedMods[boxId] = true;
+            });
     }
-  }
+}
 
   function insertModsBox(container, boxId, data) {
     const tempDiv = document.createElement('div');
@@ -1048,16 +1047,7 @@ function forcemodsboxes() {
       });
     }
 
-    setTimeout(() => {
-      newModsBox.classList.add('fade-in-topic');
-      const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
-      singlemodBoxes.forEach(box => {
-        const link = box.querySelector('a').getAttribute('href');
-        if (url.includes(link)) {
-          box.classList.add('active');
-        }
-      });
-    }, 100);
+
 
     updateURLs(newModsBox);
   }
@@ -2035,7 +2025,7 @@ function loadCategoryContent(category) {
     '/freebies': '/code-parts/category-import/freebies.html',
     '/earning': '/code-parts/category-import/earning.html',
     '/dota': '/code-parts/category-import/dota.html',
-    '/steam': '/code-parts/category-import/steam.html',
+    '/steam/levelup': '/code-parts/category-import/steam.html',
     '/newest': ''
   };
 
