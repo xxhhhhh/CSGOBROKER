@@ -1047,7 +1047,15 @@ function forcemodsboxes() {
       });
     }
 
-
+    setTimeout(() => {
+      const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
+      singlemodBoxes.forEach(box => {
+        const link = box.querySelector('a').getAttribute('href');
+        if (url.includes(link)) {
+          box.classList.add('active');
+        }
+      });
+    });
 
     updateURLs(newModsBox);
   }
@@ -1915,11 +1923,11 @@ function loadAndApplyTranslations(languageTag) {
   const cacheKey = `translations_${languageTag}`;
   let translations = JSON.parse(localStorage.getItem(cacheKey));
 
-  if (translations) {
+  if (languageTag === 'en' || languageTag === 'pl') { 
       applyTranslations(document.body, languageTag, translations);
       translateURLs2(document.body, languageTag);
   } else {
-      const translationFile = `code-parts/category-translations/${languageTag}.json`;
+      const translationFile = `/code-parts/category-translations/${languageTag}.json`;
 
       fetch(translationFile)
           .then(response => response.json())
@@ -2109,7 +2117,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let startX = 0;
     let scrollLeft = 0;
 
-
     boxContainer.addEventListener("click", (e) => {
       const targetBox = e.target.closest(".category-box");
   
@@ -2281,5 +2288,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     buttonsContainer.scrollLeft = buttonScrollPosition;
+    
   }
 });
