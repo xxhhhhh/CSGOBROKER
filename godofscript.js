@@ -1922,17 +1922,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function loadAndApplyTranslations(languageTag) {
-  if (languageTag === 'en' || languageTag === 'pl') { 
-    applyTranslations(document.body, languageTag, {});
-    translateURLs2(document.body, languageTag);
+  const cacheKey = `translations_${languageTag}`;
+  let translations = JSON.parse(localStorage.getItem(cacheKey));
+
+  if (translations) {
+      applyTranslations(document.body, languageTag, translations);
+      translateURLs2(document.body, languageTag);
   } else {
-    const translationFile = `/code-parts/category-translations/${languageTag}.json`;
-    fetch(translationFile)
-      .then(response => response.json())
-      .then(translations => {
-        applyTranslations(document.body, languageTag, translations);
-        translateURLs2(document.body, languageTag);
-      });
+      const translationFile = `code-parts/category-translations/${languageTag}.json`;
+
+      fetch(translationFile)
+          .then(response => response.json())
+          .then(data => {
+              localStorage.setItem(cacheKey, JSON.stringify(data));
+              applyTranslations(document.body, languageTag, data);
+              translateURLs2(document.body, languageTag);
+          });
   }
 }
 
@@ -1940,15 +1945,15 @@ function applyTranslations(element, languageTag, translations) {
   translateElements(element, languageTag, translations);
 
   const observer = new MutationObserver(mutations => {
-    mutations.forEach(mutation => {
-      if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-        mutation.addedNodes.forEach(node => {
-          if (node.nodeType === Node.ELEMENT_NODE) {
-            translateElements(node, languageTag, translations);
+      mutations.forEach(mutation => {
+          if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+              mutation.addedNodes.forEach(node => {
+                  if (node.nodeType === Node.ELEMENT_NODE) {
+                      translateElements(node, languageTag, translations);
+                  }
+              });
           }
-        });
-      }
-    });
+      });
   });
 
   observer.observe(element, { childList: true, subtree: true });
@@ -2048,8 +2053,10 @@ function loadCategoryContent(category) {
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.category').forEach(category => {
-    loadCategoryContent(category);
+      loadCategoryContent(category);
   });
+
+  loadAndApplyTranslations(languageTag);
 });
 
 
