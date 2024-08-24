@@ -51,7 +51,7 @@ forcemodsboxes();
     const regex = /^(https?:\/\/[^/]+)?(\/[a-z]{2}(?:\/|\.html)?\/?.*)(\?.*)?$/;
   
     const languageTag = extractLanguageTagFromHTML();
-    if (!languageTag || languageTag === 'en') {
+    if (!languageTag || languageTag === 'en' || languageTag === 'pl') {
       return;
     }
   
@@ -1706,12 +1706,10 @@ document.addEventListener("DOMContentLoaded", function() {
                   translateTextElements(translations[languageTag]);
               }
           }
-          if (!languageTag === 'pl') { 
           const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
           reviewlinks.forEach(link => {
               updateURLs(link);
           });
-        }
       });
 });
 
