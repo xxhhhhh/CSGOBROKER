@@ -5686,8 +5686,9 @@ footer .centralizer .footer-content {
         content: "\f231";
     }
     .submenu li a:empty::after,
-    .submenu2 li a:empty::after {
-        content: unset;
+    .submenu2 li a:empty::after,
+    .submenu2 a::after {
+        content: unset !important;
     }
     .category-selector .category:hover .submenu{
     z-index: 90;

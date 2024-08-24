@@ -1315,7 +1315,9 @@ $(document).ready(function() {
     return '<a href="' + href + '" class="slider-banner" aria-label="Visit ' + label + '"><img src="' + src + '" alt="' + label + '" draggable="false"></a>';
   }
   const sliderlinks = document.querySelector('.slider-container');
-  updateURLs(sliderlinks);
+  if (!languageTag === 'pl') { 
+    updateURLs(sliderlinks);
+  }
 });
 
 $(document).ready(function() {
@@ -1704,11 +1706,12 @@ document.addEventListener("DOMContentLoaded", function() {
                   translateTextElements(translations[languageTag]);
               }
           }
-
+          if (!languageTag === 'pl') { 
           const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
           reviewlinks.forEach(link => {
               updateURLs(link);
           });
+        }
       });
 });
 
