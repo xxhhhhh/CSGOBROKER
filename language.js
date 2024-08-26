@@ -342,12 +342,6 @@ function translateURLsIfNeeded() {
         "pt": "CSGOPolygon é um site lendário como o CSGODouble, com roleta clássica, mas tem dados, crash, caça-níqueis e até apostas em e-sports!",
         "hi": "CSGOPolygon CSGODouble की तरह एक पुरानी साइट है जिसमें क्लासिक रूलेट है, लेकिन डाइस, क्रैश, स्लॉट्स और इसी साथ ई-स्पोर्ट्स बेटिंग भी है!"
       },
-      "Gamdom Casino offers a variety of in-house games, innovative social engagement, provably fair system, and good reputation in online gaming.": {
-        "es": "Gamdom Casino ofrece juegos internos, participación social innovadora, sistema justo y buena reputación en juegos en línea.",
-        "tr": "Gamdom Casino, birçok içerideki oyun, yenilikçi sosyal etkileşim, ispat edilebilir adil sistem ve çevrimiçi oyunlarda iyi bir üne sahiptir.",
-        "pt": "Gamdom Casino oferece uma variedade de jogos internos, envolvimento social inovador, sistema comprovadamente justo e boa reputação nos jogos online.",
-        "hi": "Gamdom Casino अपने भीतरी खेलों, अभिनव सामाजिक एंगेजमेंट, प्रमाणित निष्पक्ष तंत्र और ऑनलाइन गेमिंग में अच्छी प्रतिष्ठा के साथ विविधता प्रदान करने वाली एक प्लेटफॉर्म है।"
-      },
       "CSGOPositive is a popular betting platform for esports, offering cashback, a user-friendly interface, and multiple payment methods.": {
         "es": "CSGOPositive es una plataforma popular de apuestas en deportes electrónicos, con reembolsos, interfaz fácil de usar y múltiples métodos de pago.",
         "tr": "CSGOPositive, nakit geri ödeme, kullanıcı dostu bir arayüz ve çeşitli ödeme yöntemleri sunan popüler bir e-spor bahis platformudur.",
@@ -564,11 +558,11 @@ function translateURLsIfNeeded() {
         "pt": "Roobet é um popular cripto-cassino. Ele oferece uma variedade de jogos, um programa VIP, apostas e suporte ao cliente de qualidade.",
         "hi": "रूबेट एक लोकप्रिय क्रिप्टो-कैसिनो है। यह विभिन्न प्रकार के खेल, वीआईपी कार्यक्रम, दांव और उच्च गुणवत्ता वाली ग्राहक सहायता प्रदान करता है।"
       },
-      "xplay is a platform that allows CS2 players to earn skins just by playing on their servers. The platform offers various servers and daily challenges.": {
-        "es": "xplay es una plataforma que permite a los jugadores de CS2 ganar skins jugando en sus servidores. Ofrece diversos servidores y desafíos diarios.",
-        "tr": "CS2 oyuncularının sunucularında oynayarak skin kazanmasını sağlayan bir platformdur. Çeşitli sunucular ve günlük meydan okumalar sunar.",
-        "pt": "xplay é uma plataforma que permite aos jogadores de CS2 ganhar skins jogando em seus servidores. Oferece vários servidores e desafios diários.",
-        "hi": "xplay एक प्लेटफ़ॉर्म है जो CS2 खिलाड़ियों को उनके सर्वर पर खेलकर स्किन कमाने की सुविधा प्रदान करता है। प्लेटफ़ॉर्म में विभिन्न सर्वर और दैनिक चुनौतियाँ होती हैं।"
+      "xplay is a platform where CS2 players earn skins by completing in-game tasks on servers, with a battle pass and subscription.": {
+        "es": "xplay es una plataforma donde los jugadores de CS2 ganan skins completando tareas en el juego en servidores, con pase de batalla.",
+        "tr": "xplay, CS2 oyuncularının sunucularda oyun içi görevleri tamamlayarak kaplamalar kazandığı, savaş bileti ve abonelik bulunan bir platformdur.",
+        "pt": "xplay é uma plataforma onde os jogadores de CS2 ganham skins completando tarefas no jogo em servidores, com passe de batalha e assinatura.",
+        "hi": "xplay एक प्लेटफ़ॉर्म है जहाँ CS2 खिलाड़ी सर्वरों पर गेम के कार्यों को पूरा करके स्किन्स कमाते हैं, साथ ही बैटल पास और सब्सक्रिप्शन की सुविधा भी है।"
       },
       "Established in 2018, it offers jackpot, coinflip, and roulette games with enhanced features, provable fairness, and attractive animations.": {
         "es": "Establecido en 2018, ofrece juegos de jackpot, coinflip y ruleta con características mejoradas, equidad demostrable y animaciones atractivas.",
@@ -702,11 +696,11 @@ function translateURLsIfNeeded() {
         "pt": "SkinBaron é uma plataforma online alemã para compra e venda de skins de CS2 com boa reputação.",
         "hi": "SkinBaron जर्मनी में स्थित एक ऑनलाइन प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को उनकी CS2 स्किन खरीदने और बेचने की सुविधा प्रदान करता है। प्लेटफ़ॉर्म को एक अच्छी प्रतिष्ठा हासिल हुई है।"
       },
-      "Gamdom is one of the best CS2 match betting sites. You can play roulette, wheel, crash, slots and many more!": {
-        "es": "Gamdom es uno de los mejores sitios de apuestas en partidas de CS2. ¡Puedes jugar a la ruleta, la rueda, el crash, las tragamonedas y mucho más!",
-        "tr": "Gamdom, en iyi CS2 maç bahis sitelerinden biridir. Rulet, çark, crash, slotlar ve daha birçok oyunu oynayabilirsiniz!",
-        "pt": "A Gamdom é um dos melhores sites de apostas em partidas de CS2. Você pode jogar Roleta, Roda da Sorte, Crash, Caça-níqueis e muitos outros!",
-        "hi": "Gamdom एक बेहतरीन CS2 मैच बेटिंग साइटों में से एक है। आप रूलेट, व्हील, क्रैश, स्लॉट और बहुत कुछ खेल सकते हैं!"
+      "Gamdom, a leader in the world of crypto-casinos, offers a wide variety of games, numerous bonuses, fair play, and social interaction.": {
+        "es": "Gamdom, líder en el mundo de los cripto-casinos, ofrece una gran variedad de juegos, numerosos bonos, juego justo e interacción social.",
+        "tr": "Gamdom, kripto kumarhaneleri dünyasında bir lider olarak, geniş bir oyun yelpazesi, birçok bonus, adil oyun ve sosyal etkileşim sunuyor.",
+        "pt": "Gamdom, líder no mundo dos cripto-casinos, oferece uma grande variedade de jogos, muitos bônus, jogo justo e interação social.",
+        "hi": "Gamdom, क्रिप्टो-कैसीनो की दुनिया में अग्रणी, कई प्रकार के खेल, बड़ी संख्या में बोनस, निष्पक्ष खेल और सामाजिक बातचीत की पेशकश करता है।"
       },
       "Avan.Market is a platform for quickly buying and selling in-game items from CS2, Rust, Dota 2, and TF2, with support for cryptocurrencies and bank cards.": {
         "es": "Avan.Market es una plataforma para la compra y venta rápida de objetos de juego de CS2, Rust, Dota 2 y TF2, con soporte para criptomonedas y tarjetas bancarias.",
