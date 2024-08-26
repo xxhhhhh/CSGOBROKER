@@ -660,11 +660,11 @@ function translateURLsIfNeeded() {
         "pt": "CSGO Market é um mercado P2P online que oferece uma plataforma segura para comprar e vender skins de CS2. Estabelecido em 2015.",
         "hi": "CSGO Market एक ऑनलाइन P2P बाजार है जो CS2 स्किन खरीद और बेचने के लिए एक सुरक्षित और सुरक्षित प्लेटफ़ॉर्म प्रदान करता है। 2015 में स्थापित किया गया।"
       },
-      "Lis-Skins is a popular marketplace for Steam items, especially CS2, Rust and Dota 2 skins and items. The platform was founded in 2020.": {
-        "es": "Lis-Skins es un mercado popular con precios competitivos y la capacidad de vender rápidamente artículos de CS2, Dota 2 y Rust.",
-        "tr": "Lis-Skins, özellikle CS2, Rust ve Dota 2 skinleri ve ürünleri için popüler bir Steam pazarıdır. Platform, 2020 yılında kurulmuştur.",
-        "pt": "Lis-Skins é um mercado popular com preços competitivos e a capacidade de vender rapidamente itens de CS2, Dota 2 e Rust.",
-        "hi": "Lis-Skins एक लोकप्रिय मार्केटप्लेस है जहाँ प्रतिस्पर्धी कीमतों पर CS2, Dota 2 और Rust के आइटमों को जल्दी बेचने की सुविधा है।"
+      "Lis-Skins is a popular platform for buying and quickly selling items from CS2, Rust, and Dota 2, with bonuses and cryptocurrency withdrawals.": {
+        "es": "Lis-Skins es una plataforma popular para comprar y vender rápidamente objetos de CS2, Rust y Dota 2, con bonificaciones y retiros en criptomonedas.",
+        "tr": "Lis-Skins, CS2, Rust ve Dota 2'den öğeler satın almak ve hızlıca satmak için popüler bir platformdur; bonuslar ve kripto para çekme seçenekleri sunar.",
+        "pt": "Lis-Skins é uma plataforma popular para comprar e vender rapidamente itens de CS2, Rust e Dota 2, com bônus e saques em criptomoeda.",
+        "hi": "Lis-Skins CS2, Rust और Dota 2 के आइटम खरीदने और तेजी से बेचने के लिए एक लोकप्रिय प्लेटफ़ॉर्म है, जिसमें बोनस और क्रिप्टोक्यूरेंसी निकासी की सुविधा है।"
       },
       "SkinCashier is an online platform that allows players to Instant Sell their CS2, Rust, Dota 2, and TF2 skins for real money. Operating since 2020.": {
         "es": "SkinCashier es una plataforma en línea que permite vender instantáneamente skins de CS2, Rust, Dota 2 y TF2 por dinero real. Desde 2020.",
@@ -708,11 +708,11 @@ function translateURLsIfNeeded() {
         "pt": "A Gamdom é um dos melhores sites de apostas em partidas de CS2. Você pode jogar Roleta, Roda da Sorte, Crash, Caça-níqueis e muitos outros!",
         "hi": "Gamdom एक बेहतरीन CS2 मैच बेटिंग साइटों में से एक है। आप रूलेट, व्हील, क्रैश, स्लॉट और बहुत कुछ खेल सकते हैं!"
       },
-      "Avan.Market is an online platform that offers users the opportunity to sell gaming skins from popular games like CS2, Dota 2, RUST, and TF2.": {
-        "es": "Avan.Market es una plataforma en línea que ofrece a los usuarios la oportunidad de vender skins de juegos populares como CS2, Dota 2, RUST y TF2.",
-        "tr": "Avan.Market, CS2, Dota 2, RUST ve TF2 gibi popüler oyunlardan oyun skinlerini satma fırsatı sunan bir çevrimiçi platformdur.",
-        "pt": "Avan.Market é uma plataforma online que oferece aos usuários a oportunidade de vender skins de jogos populares como CS2, Dota 2, RUST e TF2.",
-        "hi": "Avan.Market एक ऑनलाइन प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को CS2, Dota 2, RUST और TF2 जैसे प्रसिद्ध खेलों की गेमिंग स्किन बेचने का अवसर प्रदान करता है।"
+      "Avan.Market is a platform for quickly buying and selling in-game items from CS2, Rust, Dota 2, and TF2, with support for cryptocurrencies and bank cards.": {
+        "es": "Avan.Market es una plataforma para la compra y venta rápida de objetos de juego de CS2, Rust, Dota 2 y TF2, con soporte para criptomonedas y tarjetas bancarias.",
+        "tr": "Avan.Market, CS2, Rust, Dota 2 ve TF2'deki oyun içi öğeleri hızlıca satın almak ve satmak için bir platformdur; kripto para birimleri ve banka kartları desteğiyle.",
+        "pt": "Avan.Market é uma plataforma para comprar e vender rapidamente itens de jogos de CS2, Rust, Dota 2 e TF2, com suporte para criptomoeda.",
+        "hi": "Avan.Market CS2, Rust, Dota 2 और TF2 के इन-गेम आइटम को तेजी से खरीदने और बेचने के लिए एक प्लेटफ़ॉर्म है, जो क्रिप्टोकरेंसी और बैंक कार्ड का समर्थन करता है।"
       },
       "Moon.Market - a platform for the quick sale of items from games CS2, Dota 2, Rust, and TF2 at fair prices with fast payouts.": {
         "es": "Moon.Market - una plataforma para la venta rápida de artículos de los juegos CS2, Dota 2, Rust y TF2 a precios justos con pagos rápidos.",
