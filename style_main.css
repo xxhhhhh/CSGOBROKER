@@ -2208,7 +2208,12 @@ nav #pagename:focus {
 
 .features .featuresbox .typesinside a:first-child {
     border-radius: 5px 0 0 5px;
+    padding-left: 15px;
     margin-left: 1px;
+}
+
+.features .featuresbox .typesinside a:last-child {
+    padding-right: 15px;
 }
 
 .features .featuresbox .typesinside a:first-child::before {

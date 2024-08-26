@@ -282,11 +282,11 @@ function translateURLsIfNeeded() {
         "pt": "Rustly - Plataforma de apostas de skins do Rust com 9 modos de jogo, mercado de skins, criptomoedas e parceria com CSGOLuck.",
         "hi": "Rustly - रस्ट स्किन गेम्ब्लिंग प्लेटफ़ॉर्म, नौ गेम मोड, थर्ड-पार्टी स्किन बाजार, क्रिप्टो समर्थन, और CSGOLuck साझेदारी की भरोसेमंदता के लिए।"
       },
-      "CSGORUN is a leading virtual skin gambling platform with diverse modes like Crash, Roulette, PVP, and esports betting. It's user-friendly.": {
-        "es": "CSGORUN es una plataforma líder de apuestas virtuales de skins con diversos modos como Crash, Ruleta, PVP y apuestas de deportes electrónicos. Es fácil de usar.",
-        "tr": "CSGORUN - çeşitli modlar sunan lider sanal deri kumar platformudur; Çökme, Rulet, PVP ve e-spor bahisleri gibi. Kullanıcı dostudur.",
-        "pt": "CSGORUN é uma plataforma líder de apostas virtuais com skins, com diversos modos como Crash, Roleta, PVP e apostas em esportes eletrônicos. É fácil de usar.",
-        "hi": "CSGORUN एक प्रमुख आभासी त्वचा जुआ प्लेटफ़ॉर्म है जिसमें क्रैश, रूलेट, PVP, और इस्पोर्ट्स बेटिंग जैसे विभिन्न मोड हैं। यह उपयोगकर्ता-स्वीकृत है।"
+      "CSGORUN is the leading platform for skin gambling in the CIS, offering Crash, Roulette, Cases, PVP, and esports betting modes.": {
+        "es": "CSGORUN es la plataforma líder para el juego de skins en la CIS, ofreciendo modos de Crash, Ruleta, Cajas, PVP y apuestas en deportes electrónicos.",
+        "tr": "CSGORUN, BDT'de skin bahisleri için önde gelen platform olup Crash, Rulet, Kasalar, PVP ve espor bahis modları sunmaktadır.",
+        "pt": "CSGORUN é a principal plataforma para apostas de skins na CIS, oferecendo modos de Crash, Roleta, Caixas, PVP e apostas em esports.",
+        "hi": "CSGORUN CIS में स्किन जुआ खेलने के लिए अग्रणी प्लेटफ़ॉर्म है, जो क्रैश, रूले, केस, PVP और ईस्पोर्ट्स सट्टेबाजी मोड्स की पेशकश करता है।"
       },
       "RapidSkins is a platform for trading, instant selling, and purchasing CS2 and Rust skins, with support for cryptocurrency transactions.": {
         "es": "RapidSkins es una plataforma para intercambiar, vender instantáneamente y comprar skins de CS2 y Rust, con soporte para transacciones con criptomonedas.",
@@ -414,11 +414,11 @@ function translateURLsIfNeeded() {
         "pt": "Clash.gg é um novo site de apostas de CS2 que oferece uma ampla variedade de jogos emocionantes, como Roleta, Upgrader, Caixas e muito mais!",
         "hi": "Clash.gg एक नया CS2 जुआ साइट है जिसमें रूलेट, अपग्रेडर, केस और बहुत कुछ जैसे बहुत सारे खेल शामिल हैं!"
       },
-      "HellStore is a platform that allows users to participate in CSGO skin betting through game modes like Coinflip, Jackpot, Upgrader, and Wheel.": {
-        "es": "HellStore es una plataforma que permite a los usuarios apostar skins de CSGO en modos de juego como Coinflip, Jackpot, Upgrader y Wheel.",
-        "tr": "HellStore, Coinflip, Jackpot, Upgrader ve Wheel gibi oyun modlarıyla CSGO skin bahislerine katılmanızı sağlayan bir platformdur.",
-        "pt": "HellStore é uma plataforma que permite aos usuários participarem de apostas de skins do CSGO através de modos de jogo como Coinflip, Jackpot e Roleta.",
-        "hi": "HellStore एक प्लेटफॉर्म है जो मुद्रा और व्हील जैसे खेल मोड्स के माध्यम से CSGO स्किन बेटिंग में भाग लेने की सुविधा प्रदान करती है।"
+      "HellStore - a gambling platform from 2016, specializes in CS2 skins, offering Coin Flip, Jackpot, Upgrader, Crash, and Wheel.": {
+        "es": "HellStore - una plataforma de apuestas de 2016, se especializa en skins de CS2, ofrece Moneda, Jackpot, Mejorador, Crash y Rueda.",
+        "tr": "HellStore - 2016 yılında kurulan bir kumar platformu, CS2 skinlerinde uzmanlaşmış, Para Tura, Jackpot, Yükseltici, Crash ve Çark sunar.",
+        "pt": "HellStore - uma plataforma de apostas de 2016, especializada em skins de CS2, oferece Cara ou Coroa, Jackpot, Melhorador, Crash e Roda.",
+        "hi": "HellStore - 2016 का जुआ प्लेटफ़ॉर्म, CS2 स्किन्स में विशेषज्ञता, सिक्का उछाल, जैकपॉट, अपग्रेडर, क्रैश और पहिया प्रदान करता है।"
       },
       "Hellcase is an online platform that allows users to purchase virtual cases filled with skins and items for various games such as CS2, Dota 2, and Rust.": {
         "es": "Hellcase es una plataforma en línea donde puedes comprar estuches virtuales con skins y objetos para juegos como CS2, Dota 2 y Rust.",
@@ -756,11 +756,11 @@ function translateURLsIfNeeded() {
         "pt": "Confiável para negociar skins de Rust. Design intuitivo, bônus de inscrição grátis e recompensas diárias para uma experiência de negociação tranquila.",
         "hi": "iTrade.gg एक विश्वसनीय प्लेटफ़ॉर्म है जहां रस्ट स्किन्स की ट्रेडिंग की जा सकती है। उपयोगकर्ता-मित्रपूर्ण डिज़ाइन, मुफ़्त साइन-अप बोनस और दैनिक पुरस्कार एक सुगठित ट्रेडिंग अनुभव बनाते हैं।"
       },
-      "Shuffle.com is a comprehensive crypto casino with a unique registration process, original games, a VIP program, and plans for future expansion.": {
-        "es": "Shuffle.com es un casino de criptomonedas completo con registro único, juegos originales, programa VIP y planes de expansión futura.",
-        "tr": "Shuffle.com, benzersiz bir kayıt süreci, orijinal oyunlar, bir VIP programı ve gelecekteki genişleme planları olan kapsamlı bir kripto casino'dur.",
-        "pt": "O Shuffle.com é um cassino cripto completo com registro único, jogos originais e programa VIP, com planos de expansão.",
-        "hi": "Shuffle.com एक समग्र क्रिप्टो कैसीनो है जिसमें एक अद्वितीय पंजीकरण प्रक्रिया, मूल खेल, वीआईपी कार्यक्रम और भविष्य के विस्तार के लिए योजनाएं हैं।"
+      "Shuffle is a crypto-casino with unique games, a provably fair system, a VIP program, and an engaging gaming experience.": {
+        "es": "Shuffle es un cripto-casino con juegos únicos, un sistema de verificación de equidad, un programa VIP y una experiencia de juego emocionante.",
+        "tr": "Shuffle, benzersiz oyunlar, doğrulanabilir adil bir sistem, VIP programı ve heyecan verici bir oyun deneyimi sunan bir kripto-kazinosudur.",
+        "pt": "Shuffle é um cripto-cassino com jogos únicos, sistema de verificação de justiça, programa VIP e uma experiência de jogo envolvente.",
+        "hi": "Shuffle एक क्रिप्टो-कैसीनो है जिसमें अनोखे खेल, निष्पक्षता की जांच करने वाली प्रणाली, VIP कार्यक्रम और एक रोमांचक गेमिंग अनुभव है।"
       },
       "Notable online marketplace, vast offerings from games to gift cards, reduced rates, stellar reputation, intuitive interface, up to 98% discounts.": {
         "es": "Destacado mercado en línea, amplia oferta desde juegos hasta tarjetas de regalo, tarifas reducidas, reputación estelar, interfaz intuitiva.",
