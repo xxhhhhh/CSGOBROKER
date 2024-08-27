@@ -24,6 +24,7 @@
     --gray: rgb(145, 145, 145);
     --opacback: rgba(3,3,3,.3);
     --halfback: rgba(0,0,0, .2);
+    --main-theme: rgb(15, 15, 15);
     --darkygray: rgb(12, 12, 12);
     --darkgray: rgb(13, 13, 13);
 }
@@ -654,6 +655,7 @@ nav #pagename:focus {
     cursor: pointer;
     margin: 8px;
     margin-right: unset;
+    position: relative;
 }
 
 .site-searcher-box:last-child {
@@ -1035,19 +1037,24 @@ nav #pagename:focus {
 .site-searcher-box[data-title]:after,
 .navigation-weapon-sort[data-title]:after,
 .component-box[data-title]:after,
-#preview-showcase .skin-alt-info[data-title]:after {
+#preview-showcase .skin-alt-info[data-title]:after,
+.main-mode:after {
     content: '';
     position: absolute;
     color: var(--white);
-    margin-bottom: 12px;
     width: max-content;
     padding: 3px;
     font-size: 12px;
     font-weight: 500;
-    margin-top: -58px;
+    margin-bottom: 20px;
     border-radius: 5px;
-    background-color: #121212;
-    border: 2px solid #141414;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow(0px 0px 1px rgb(22, 22, 22));
     align-items: center;
     pointer-events: none;
     opacity: 0;
@@ -2261,13 +2268,15 @@ nav #pagename:focus {
 }
 /* Gamemodes Images List Start */
 
-.typesinside .cs2::before {                   
+.typesinside .cs2::before,
+.main-mode.betting .main-mode-icon::before {                   
     background-image: url(/img/minipics/gamemodes/clear-icons/esports.webp);
 }
 .typesinside .sport::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/realsport.webp);
 }
-.typesinside .slots::before {
+.typesinside .slots::before,
+.main-mode.casino .main-mode-icon::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/slots.webp);
 }
 .typesinside .slotsduels::before {
@@ -2288,7 +2297,8 @@ nav #pagename:focus {
 .typesinside .wheel::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/wheel.webp);
 }
-.typesinside .roulette::before {
+.typesinside .roulette::before,
+.main-mode.classic .main-mode-icon::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/roulette.webp);
 }
 .typesinside .jackpot::before {
@@ -2300,7 +2310,8 @@ nav #pagename:focus {
 .typesinside .coinflip::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/coinflip.webp);
 }
-.typesinside .cases::before {
+.typesinside .cases::before,
+.main-mode.cases .main-mode-icon::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/cases.webp);
 }
 .typesinside .casebattles::before {
@@ -2328,31 +2339,42 @@ nav #pagename:focus {
 .typesinside .hilo::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/hilo.webp);
 }
-.typesinside .mining::before {
+.typesinside .mining::before,
+.main-mode.mining .main-mode-icon::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/mining.webp);
 }
-.typesinside .offerwalls::before {
+.typesinside .offerwalls::before,
+.main-mode.earning .main-mode-icon::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/earning.webp);
 }
-.typesinside .playing::before {
+.typesinside .playing::before,
+.main-mode.playing .main-mode-icon::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/playing.webp);
 }
-.typesinside .trade-skins::before {
+.typesinside .trade-skins::before,
+.main-mode.trading .main-mode-icon::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/exchanger.webp);
 }
 .typesinside .buy-skins::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/buyingskins.webp);
 }
-.typesinside .sell-skins::before {
+.typesinside .sell-skins::before,
+.main-mode.instant-sell .main-mode-icon::before  {
     background-image: url(/img/minipics/gamemodes/clear-icons/sellingskins.webp);
+}
+.typesinside .marketplace::before,
+.main-mode.marketplace .main-mode-icon::before  {
+    background-image: url(/img/minipics/gamemodes/clear-icons/cart.webp);
 }
 .typesinside .giveaways::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/giveaways_mode.webp);
 }
-.typesinside .steamlvlup::before {
+.typesinside .steamlvlup::before,
+.main-mode.steamlvlup .main-mode-icon::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/steamlvlup.webp);
 }
-.typesinside .steamtopup::before {
+.typesinside .steamtopup::before,
+.main-mode.steamtopup .main-mode-icon::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/steamtopup.webp);
     width: 21px !important;
     height: 21px !important;
@@ -4275,7 +4297,7 @@ nav img:active,
     width: 94%;
     margin-bottom: 10px;
     border-radius: 10px;
-    background: rgb(15 15 15);
+    background: var(--main-theme);
     bottom: 0;
     z-index: 1;
     display: flex;
@@ -5082,7 +5104,7 @@ footer .centralizer .footer-content {
 
 .singlemod-select::before,
 .category-selector .category-box .category-box-logo::before {
-    background: linear-gradient(180deg, rgb(11, 11, 11) 0%, rgb(15 15 15) 100%);
+    background: linear-gradient(180deg, rgb(11, 11, 11) 0%, var(--main-theme) 100%);
     /* background: linear-gradient(180deg, rgb(15, 15, 15) 0%, rgb(43 0 16) 100%); */
     transition: all .15s ease-in-out;
 }
@@ -6736,7 +6758,7 @@ label:active,
     transition: color .1s ease-in-out;
 }
 .main-infobox-content-block {
-    background-color: rgb(15 15 15);
+    background-color: var(--main-theme);
     border-radius: 5px;
     margin: 8px;
     padding: 12px;
@@ -6834,7 +6856,7 @@ label:active,
 }
 @media screen and (max-width: 1340px) {
     :root {
-        --darkgray: rgb(15 15 15);
+        --darkgray: var(--main-theme);
         --opacback: var(--darkygray);
     }
     .lang-menu ul li a i,
@@ -7169,7 +7191,7 @@ label:active,
     }
     .singlemod-select img {
         width: auto;
-        height: 60%;
+        height: 55%;
     }
     div.category:first-child .category-box {
         margin: 8px 4px 0 0 !important;
@@ -8478,3 +8500,145 @@ label:active,
     }
 }
 
+.box .logobg .main-mode {
+    content: '';
+    position: absolute;
+    background: var(--main-theme);
+    transition: all .15s ease-in-out;
+    border-radius: 10px;
+    right: 10px;
+    bottom: 20px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.main-mode-box {
+    position: absolute;
+    background: linear-gradient(180deg, rgb(11, 11, 11) 0%, var(--main-theme) 100%);
+    border-radius: 10px;
+    left: 3px;
+    right: 3px;
+    top: 3px;
+    bottom: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(1);
+}
+
+.main-mode-icon {
+    position: relative;
+}
+
+.main-mode-icon::before {
+    margin: 0 auto;
+    content: '';
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-size: cover;
+    transition: all .15s ease-in-out;
+    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(102%) contrast(250%);
+    margin-top: 4px;
+    opacity: .3;
+}
+
+.box:hover .logobg .main-mode {
+    background: rgb(21 21 21);
+}
+
+.box:hover .logobg:has(div.vpn) .main-mode {
+    bottom: 50px;
+}
+
+.main-mode:hover .main-mode-box {
+    filter: grayscale(0);
+}
+
+.main-mode:hover .main-mode-icon::before {
+    opacity: 1;
+}
+
+.main-mode:hover:after {
+    transition: .15s opacity ease-in-out;
+    opacity: 1;
+}
+
+.main-mode:after {
+    font-size: 13px;
+    margin-bottom: unset;
+    bottom: 50%;
+    left: -155px;
+    transform: translateY(50%);
+    width: 140px;
+    display: flex;
+    justify-content: flex-end;
+    transition: .15s opacity ease-in-out;
+}
+.main-mode-icon {
+    --casino-text: 'Casino';
+    --classic-text: 'Classic Games';
+    --cases-text: 'Case Opening';
+    --betting-text: 'Match Betting';
+    --playing-text: 'Play and Earn';
+    --trading-text: 'Trading';
+    --marketplace-text: 'Marketplace';
+    --instant-sell-text: 'Instant Sell';
+    --steamlvlup-text: 'Steam Level Up';
+    --earning-text: 'Offerwalls';
+}
+
+.lang-ru {
+    --casino-text: 'Казино';
+    --classic-text: 'Классические Игры';
+    --cases-text: 'Открытие Кейсов';
+    --betting-text: 'Ставки на Матчи';
+    --playing-text: 'Играй и Зарабатывай';
+    --trading-text: 'Упор на Обмен';
+    --marketplace-text: 'Торговая Площадка';
+    --instant-sell-text: 'Быстрая Продажа';
+    --steamlvlup-text: 'Повышение Уровня';
+    --earning-text: 'Сайт с Заданиями';
+}
+
+.main-mode.casino::after {
+    content: var(--casino-text);
+}
+
+.main-mode.instant-sell::after {
+    content: var(--instant-sell-text);
+}
+
+.main-mode.marketplace::after {
+    content: var(--marketplace-text);
+}
+
+.main-mode.steamlvlup::after {
+    content: var(--steamlvlup-text);
+}
+
+.main-mode.earning::after {
+    content: var(--earning-text);
+}
+
+.main-mode.trading::after {
+    content: var(--trading-text);
+}
+
+.main-mode.classic::after {
+    content: var(--classic-text);
+}
+
+.main-mode.cases::after {
+    content: var(--cases-text);
+}
+
+.main-mode.betting::after {
+    content: var(--betting-text);
+}
+
+.main-mode.playing::after {
+    content: var(--playing-text);
+}

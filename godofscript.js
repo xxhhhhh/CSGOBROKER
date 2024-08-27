@@ -121,17 +121,23 @@ forcemodsboxes();
   });
   
 
-if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html') && 
-    !window.location.pathname.includes("/topic") && 
-    !window.location.pathname.includes('/reviews/') && 
-    !window.location.pathname.includes('/mirrors/') && 
-    !window.location.pathname.includes("/privacy-policy") &&
-    !window.location.pathname.includes("/terms-of-service") &&
-    !window.location.pathname.includes("/contact-us") &&
-    !document.getElementById('error-404')) {
-
+  const path = window.location.pathname;
+  const excludePaths = [
+      "/topic",
+      "/reviews/",
+      "/mirrors/",
+      "/privacy-policy",
+      "/terms-of-service",
+      "/contact-us"
+  ];
+  
+  const isRuPath = path === '/ru' || path === '/ru.html' || path.startsWith('/ru/');
+  const isExcluded = excludePaths.some(excludedPath => path.includes(excludedPath));
+  const isErrorPage = document.getElementById('error-404');
+  
+  if (isRuPath && !isExcluded && !isErrorPage) {
       updateURLs(sitesList);
-}
+  }
   
   if (
     !window.location.pathname.endsWith("404") &&
@@ -628,46 +634,48 @@ $(document).ready(function(){
     
       window.onload = function () {
         (function () {
-            if (
-                (window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html') &&
-                !window.location.pathname.includes('/ru/reviews') &&
-                !window.location.pathname.includes('/ru/mirrors') &&
-                !window.location.pathname.includes('/ru/topic') &&
-                !window.location.pathname.includes("/privacy-policy") &&
-                !window.location.pathname.includes("/terms-of-service") &&
-                !window.location.pathname.includes("/contact-us")
-            ) {
-                var boxesHolders = document.querySelectorAll('div.buttons-container-page');
+            const pathname = window.location.pathname;
+            const excludedPaths = [
+                '/ru/reviews',
+                '/ru/mirrors',
+                '/ru/topic',
+                '/privacy-policy',
+                '/terms-of-service',
+                '/contact-us'
+            ];
+            const isRuPage = pathname.startsWith('/ru/') || pathname === '/ru' || pathname === '/ru.html';
+            const isExcludedPath = excludedPaths.some(path => pathname.includes(path));
+    
+            if (isRuPage && !isExcludedPath) {
+                const boxesHolders = document.querySelectorAll('div.buttons-container-page');
     
                 if (!document.querySelector('#button-vpn-filter')) {
-                    var button = document.createElement('div');
+                    const button = document.createElement('div');
                     button.className = 'settings-menu';
                     button.innerHTML =
                         '<a class="settings-button" id="button-vpn-filter" data-title="Скрыть сайты требующие VPN"><i id="vpn-icon" class="bi bi-eye"></i></a>';
     
-                    boxesHolders.forEach(function (boxesHolder) {
+                    boxesHolders.forEach(boxesHolder => {
                         boxesHolder.insertBefore(button.cloneNode(true), boxesHolder.firstChild);
                     });
     
-                    var vpnIcon = document.getElementById('vpn-icon');
+                    const vpnIcon = document.getElementById('vpn-icon');
     
                     function toggleVpnBlocks() {
-                        var vpnBlocks = document.querySelectorAll('.box');
-                        vpnBlocks.forEach(function (block) {
-                            var hasVpn = block.querySelector('.vpn');
-                            if (hasVpn) {
+                        const vpnBlocks = document.querySelectorAll('.box');
+                        vpnBlocks.forEach(block => {
+                            if (block.querySelector('.vpn')) {
                                 block.style.display = block.style.display === 'none' ? '' : 'none';
                             }
                         });
                     }
     
-                    var buttonState = localStorage.getItem('vpnButtonState');
-                    var buttonTitle = localStorage.getItem('vpnButtonTitle');
+                    const buttonState = localStorage.getItem('vpnButtonState');
+                    const buttonTitle = localStorage.getItem('vpnButtonTitle');
     
                     if (buttonState === 'hidden') {
                         toggleVpnBlocks();
-                        vpnIcon.classList.remove('bi-eye');
-                        vpnIcon.classList.add('bi-eye-slash');
+                        vpnIcon.classList.replace('bi-eye', 'bi-eye-slash');
                     }
     
                     if (buttonTitle) {
@@ -677,27 +685,24 @@ $(document).ready(function(){
                     document.getElementById('button-vpn-filter').addEventListener('click', function () {
                         toggleVpnBlocks();
     
-                        var buttonState = localStorage.getItem('vpnButtonState') || 'visible';
-    
-                        var newButtonState = buttonState === 'hidden' ? 'visible' : 'hidden';
-                        localStorage.setItem('vpnButtonState', newButtonState);
+                        const currentState = localStorage.getItem('vpnButtonState') || 'visible';
+                        const newState = currentState === 'hidden' ? 'visible' : 'hidden';
+                        localStorage.setItem('vpnButtonState', newState);
     
                         vpnIcon.classList.toggle('bi-eye');
                         vpnIcon.classList.toggle('bi-eye-slash');
     
-                        var button = document.getElementById('button-vpn-filter');
-                        if (vpnIcon.classList.contains('bi-eye')) {
-                              button.dataset.title = 'Скрыть сайты требующие VPN';
-                        } else {
-                            button.dataset.title = 'Показать сайты требующие VPN';
-                        }
+                        const button = document.getElementById('button-vpn-filter');
+                        button.dataset.title = vpnIcon.classList.contains('bi-eye') ?
+                            'Скрыть сайты требующие VPN' : 'Показать сайты требующие VPN';
     
                         localStorage.setItem('vpnButtonTitle', button.dataset.title);
                     });
                 }
             }
-        })(); 
+        })();
     };
+    
     
     document.addEventListener('DOMContentLoaded', function () {
       var replacementHTML = `
@@ -877,79 +882,76 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
   xhr.send();
 }
 
-if (!window.location.pathname.endsWith("newest") &&
-!window.location.pathname.endsWith("newest.html") &&
-window.location.href.indexOf('/reviews/') === -1 &&
-window.location.href.indexOf('/mirrors/') === -1 && 
-!window.location.pathname.includes("/privacy-policy") &&
-!window.location.pathname.includes("/topic") &&
-!window.location.pathname.includes("/terms-of-service") &&
-!window.location.pathname.includes("/contact-us")) {
+const href = window.location.href;
 
-var newestBoxesDiv = document.createElement('div');
-newestBoxesDiv.classList.add('newest-boxes');
+const isExcludedPage = [
+  "newest",
+  "newest.html",
+  "/reviews/",
+  "/mirrors/",
+  "/privacy-policy",
+  "/topic",
+  "/terms-of-service",
+  "/contact-us"
+].some(exclusion => path.endsWith(exclusion) || href.includes(exclusion));
 
-var newestBoxesTitleDiv = document.createElement('div');
-newestBoxesTitleDiv.classList.add('newest-boxes-title');
+if (!isExcludedPage) {
+  const createDiv = (className) => {
+    const div = document.createElement('div');
+    div.classList.add(className);
+    return div;
+  };
 
-var newestBoxesTitleBoxDiv = document.createElement('div');
-newestBoxesTitleBoxDiv.classList.add('newest-boxes-title-box');
-var titleSpan = document.createElement('span');
+  const newestBoxesDiv = createDiv('newest-boxes');
+  const newestBoxesTitleDiv = createDiv('newest-boxes-title');
+  const newestBoxesTitleBoxDiv = createDiv('newest-boxes-title-box');
+  
+  const titleSpan = document.createElement('span');
+  const titles = {
+    ru: 'Новые Сайты',
+    tr: 'Yeni Eklenenler',
+    pt: 'Recentemente Adicionados',
+    es: 'Recientemente Añadidos',
+    hi: 'हाल ही में जोड़ा गया',
+  };
+  titleSpan.textContent = titles[languageTag] || 'Recently Added';
 
-if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
-    titleSpan.textContent = 'Новые Сайты';
-  } else if (languageTag === 'tr') {
-    titleSpan.textContent = 'Yeni Eklenenler';
-} else if (languageTag === 'pt') {
-    titleSpan.textContent = 'Recentemente Adicionados';
-} else if (languageTag === 'es') {
-    titleSpan.textContent = 'Recientemente Añadidos';
-} else if (languageTag === 'hi') {
-    titleSpan.textContent = 'हाल ही में जोड़ा गया';
-} else {
-    titleSpan.textContent = 'Recently Added';
-}
+  newestBoxesTitleBoxDiv.appendChild(titleSpan);
+  newestBoxesTitleDiv.appendChild(newestBoxesTitleBoxDiv);
+  newestBoxesDiv.appendChild(newestBoxesTitleDiv);
 
-newestBoxesTitleBoxDiv.appendChild(titleSpan);
-newestBoxesTitleDiv.appendChild(newestBoxesTitleBoxDiv);
-newestBoxesDiv.appendChild(newestBoxesTitleDiv);
+  const newestFragment = languageTag === 'ru' && !path.startsWith("/rust")
+    ? '/code-parts/newest-ru.html'
+    : '/code-parts/newest.html';
 
-var newestFragment = languageTag === 'ru' && !window.location.pathname.startsWith("/rust") ? '/code-parts/newest-ru.html' : '/code-parts/newest.html';
-
-fetch(newestFragment)
+  fetch(newestFragment)
     .then(response => response.text())
     .then(data => {
-        var tempDiv = document.createElement('div');
-        tempDiv.innerHTML = data;
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = data;
 
-        var existingBoxIds = new Set();
-        document.querySelectorAll('.boxes-holder .box').forEach(box => {
-            existingBoxIds.add(box.id);
-        });
+      const existingBoxIds = new Set(
+        Array.from(document.querySelectorAll('.boxes-holder .box'))
+          .map(box => box.id)
+      );
 
-        var boxes = tempDiv.querySelectorAll('.box');
-        var addedCount = 0;
-        for (var i = 0; i < boxes.length && addedCount < 4; i++) {
-            if (!existingBoxIds.has(boxes[i].id)) {
-                newestBoxesDiv.appendChild(boxes[i].cloneNode(true));
-                addedCount++;
-            }
-        }
+      const boxes = Array.from(tempDiv.querySelectorAll('.box'))
+        .filter(box => !existingBoxIds.has(box.id))
+        .slice(0, 4);
 
-        var footerElement = document.querySelector('footer');
-        var sliderContainer = document.querySelector('.slider-container');
+      boxes.forEach(box => newestBoxesDiv.appendChild(box.cloneNode(true)));
 
-        if (sliderContainer) {
-            sliderContainer.parentNode.insertBefore(newestBoxesDiv, sliderContainer.nextSibling);
-        } else {
-            footerElement.parentNode.insertBefore(newestBoxesDiv, footerElement);
-        }
+      const sliderContainer = document.querySelector('.slider-container');
+      const insertBeforeElement = sliderContainer ? sliderContainer.nextSibling : document.querySelector('footer');
+      
+      insertBeforeElement.parentNode.insertBefore(newestBoxesDiv, insertBeforeElement);
 
-        if (languageTag === 'ru' && !window.location.pathname.startsWith("/rust")) {
-            updateURLs(newestBoxesDiv);
-        }
-    });      
+      if (languageTag === 'ru' && !path.startsWith("/rust")) {
+        updateURLs(newestBoxesDiv);
+      }
+    });
 }
+
 
 function forcemodsboxes() {
   const importedMods = {};
@@ -1715,68 +1717,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
   const basePath = "/code-parts/site-infos";
+  const languageTag = document.documentElement.lang || 'en'; // Получение языкового тега страницы
 
-  let currentPath = window.location.pathname;
-
-  if (currentPath.includes("/reviews/") || currentPath.includes("/mirrors/")) {
-      if (currentPath.endsWith(".html")) {
-          currentPath = currentPath.slice(0, -5);
-      }
-
-      const pageKey = currentPath.split("/").pop();
-      const jsonFilePath = `${basePath}/${pageKey}.json`;
-
-      fetch(jsonFilePath)
-          .then(response => response.ok ? response.json() : null)
+  function loadJsonData(filePath, callback) {
+      fetch(filePath)
+          .then(response => {
+              if (!response.ok) throw new Error('Failed to load JSON data');
+              return response.json();
+          })
           .then(data => {
-              if (!data || !data.code) return;
-
-              const code = data.code;
-
-              const codeElement = document.getElementById('site-code');
-              if (codeElement) {
-                  codeElement.textContent = code;
+              if (data) {
+                  callback(data);
               }
+          })
+          .catch(error => console.error("Error loading JSON data: ", error));
+  }
 
-              const copyButtons = document.querySelectorAll('.copy');
+  function modifyBox(box, mainMode) {
+      const logobg = box.querySelector('.logobg');
+      if (!logobg) return;
 
-              copyButtons.forEach(copyButton => {
-                  copyButton.addEventListener('click', function() {
-                      copyToClipboard(code, copyButton);
-                  });
-              });
-          });
-  } else {
-      const boxes = document.querySelectorAll('.box');
+      const mainModeDiv = document.createElement('div');
+      mainModeDiv.className = `main-mode ${mainMode} lang-${languageTag}`; // Добавление классов к main-mode
+      mainModeDiv.innerHTML = `<div class="main-mode-box"><div class="main-mode-icon"></div></div>`;
 
-      if (boxes.length === 0) return;
-
-      function loadJsonData(filePath) {
-          return fetch(filePath)
-              .then(response => response.ok ? response.json() : null);
-      }
-
-      boxes.forEach(box => {
-          const logoLink = box.querySelector('.logobg a');
-          if (!logoLink) return;
-
-          const path = logoLink.getAttribute('href');
-          const pageKey = path.split('/').pop();
-          const jsonFilePath = `${basePath}/${pageKey}.json`;
-
-          loadJsonData(jsonFilePath).then(data => {
-              if (!data || !data.code) return;
-
-              const code = data.code;
-              const copyButton = box.querySelector('.copy');
-
-              if (copyButton) {
-                  copyButton.addEventListener('click', function() {
-                      copyToClipboard(code, copyButton);
-                  });
-              }
-          });
-      });
+      logobg.appendChild(mainModeDiv);
   }
 
   function copyToClipboard(text, copyButton) {
@@ -1806,7 +1771,67 @@ document.addEventListener("DOMContentLoaded", function() {
         copyButton.classList.remove('icon-changed');
     }, 800);
 }
+
+  let currentPath = window.location.pathname;
+  if (currentPath.includes("/reviews/") || currentPath.includes("/mirrors/")) {
+      if (currentPath.endsWith(".html")) {
+          currentPath = currentPath.slice(0, -5);
+      }
+
+      const pageKey = currentPath.split("/").pop();
+      const mainJsonFilePath = `${basePath}/${pageKey}.json`;
+
+      const mainBoxes = document.querySelectorAll('.box:not(.sitealternatesboxes .box)');
+      mainBoxes.forEach(box => {
+          loadJsonData(mainJsonFilePath, data => {
+              if (data.code) {
+                  const copyButton = box.querySelector('.copy');
+                  copyButton && copyButton.addEventListener('click', () => copyToClipboard(data.code, copyButton));
+              }
+              data["Main Mode"] && modifyBox(box, data["Main Mode"]);
+          });
+      });
+
+      const alternateBoxes = document.querySelectorAll('.sitealternatesboxes .box');
+      alternateBoxes.forEach(box => {
+          const logoLink = box.querySelector('.logobg a');
+          if (logoLink) {
+              const path = logoLink.getAttribute('href');
+              const pageKey = path.split('/').pop();
+              const jsonFilePath = `${basePath}/${pageKey}.json`;
+
+              loadJsonData(jsonFilePath, data => {
+                  if (data.code) {
+                      const copyButton = box.querySelector('.copy');
+                      copyButton && copyButton.addEventListener('click', () => copyToClipboard(data.code, copyButton));
+                  }
+                  data["Main Mode"] && modifyBox(box, data["Main Mode"]);
+              });
+          }
+      });
+  } else {
+      const otherBoxes = document.querySelectorAll('.box');
+      otherBoxes.forEach(box => {
+          const logoLink = box.querySelector('.logobg a');
+          if (logoLink) {
+              const path = logoLink.getAttribute('href');
+              const pageKey = path.split('/').pop();
+              const jsonFilePath = `${basePath}/${pageKey}.json`;
+
+              loadJsonData(jsonFilePath, data => {
+                  if (data.code) {
+                      const copyButton = box.querySelector('.copy');
+                      copyButton && copyButton.addEventListener('click', () => copyToClipboard(data.code, copyButton));
+                  }
+                  data["Main Mode"] && modifyBox(box, data["Main Mode"]);
+              });
+          }
+      });
+  }
 });
+
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
   const navBarContainer = document.createElement('div');

@@ -3,28 +3,20 @@ document.addEventListener('DOMContentLoaded', function() {
   var userChoice = getCookie('languageChoice');
 
   function handleLanguageRedirect() {
-    var currentUrl = window.location.pathname;
-    var newUrl = currentUrl;
-  
-    if (userChoice && userChoice !== 'en') {
-      var parts = currentUrl.split('/');
-  
-      if (parts.length > 1 && isLanguageTag(parts[1])) {
-        parts.splice(1, 1);
+    if (userChoice && userChoice !== 'en' && !window.location.pathname.includes(`/${userChoice}`)) {
+      const parts = window.location.pathname.split('/');
+      if (isLanguageTag(parts[1])) {
+        parts[1] = userChoice;
+      } else {
+        parts.splice(1, 0, userChoice);
       }
-  
-      parts.splice(1, 0, userChoice);
-      newUrl = parts.join('/');
-  
-      if (newUrl !== currentUrl) {
-        window.location.pathname = newUrl;
-        return false;
-      }
+      window.location.pathname = parts.join('/');
     }
   }
   
+  const supportedLanguages = ['ru', 'hi', 'pt', 'es', 'tr'];
   function isLanguageTag(tag) {
-    return tag === 'ru' || tag === 'hi' || tag === 'pt' || tag === 'es' || tag === 'tr';
+    return supportedLanguages.includes(tag);
   }
   
   
@@ -71,17 +63,14 @@ document.addEventListener('DOMContentLoaded', function() {
     return null;
   }
   
-  if (
-    !window.location.pathname.includes("/topic") &&
-    !window.location.pathname.includes("/reviews/") &&
-    !window.location.pathname.includes("/mirrors/") &&
-    !window.location.pathname.includes("/privacy-policy") &&
-    !window.location.pathname.includes("/terms-of-service") &&
-    !window.location.pathname.includes("/contact-us") &&
+  if (![
+    "/topic", "/reviews/", "/mirrors/", "/privacy-policy", 
+    "/terms-of-service", "/contact-us"
+].some(path => window.location.pathname.includes(path)) && 
     !document.getElementById("error-404")
-  ) {
+) {
     handleLanguageRedirect();
-  }
+}
 
 var requests = [
   { url: '/index.html', targetId: 'csgo-best-sites' },
@@ -152,30 +141,117 @@ var requests = [
   { url: '/tf2/trade-items.html', targetId: 'trade-items-tf2' }
 ];
 
+const basePath = "/code-parts/site-infos";
+
+function loadJsonData(filePath, callback) {
+    const cachedData = sessionStorage.getItem(filePath);
+    if (cachedData) {
+        callback(JSON.parse(cachedData));
+    } else {
+        fetch(filePath)
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load JSON data');
+                return response.json();
+            })
+            .then(data => {
+                sessionStorage.setItem(filePath, JSON.stringify(data));
+                callback(data);
+            })
+            .catch(error => console.error("Error loading JSON data: ", error));
+    }
+}
+
+
+function modifyBox(box, mainMode) {
+  const logobg = box.querySelector('.logobg');
+  if (!logobg) return;
+
+  const languageTag = document.documentElement.lang || 'en';
+  const mainModeDiv = document.createElement('div');
+  mainModeDiv.className = 'main-mode';
+  mainModeDiv.innerHTML = `<div class="main-mode-box"><div class="main-mode-icon ${mainMode} lang-${languageTag}"></div></div>`;
+
+  logobg.appendChild(mainModeDiv);
+}
+
+function processBoxes(boxes) {
+  boxes.forEach(box => {
+      const logoLink = box.querySelector('.logobg a');
+      if (logoLink) {
+          const path = logoLink.getAttribute('href');
+          const pageKey = path.split('/').pop();
+          const jsonFilePath = `${basePath}/${pageKey}.json`;
+
+          loadJsonData(jsonFilePath, data => {
+              if (!data) return;
+              if (data["Main Mode"]) {
+                  modifyBox(box, data["Main Mode"]);
+              }
+              if (data.code) {
+                  const copyButton = box.querySelector('.copy');
+                  if (copyButton) {
+                      copyButton.addEventListener('click', () => copyToClipboard(data.code, copyButton));
+                  }
+              }
+          });
+      }
+  });
+}
+
 function sendRequest(url, targetId) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-      var parser = new DOMParser();
-      var doc = parser.parseFromString(xhr.responseText, 'text/html');
-      var boxesHolder = doc.querySelector('.boxes-holder');
-      if (boxesHolder) {
-        var divToImport = document.getElementById(targetId);
-        if (divToImport) {
-          divToImport.innerHTML = boxesHolder.innerHTML;
-          translateURLsIfNeeded(divToImport);
-          addStarRatingToBoxesHolders();
-          forcemodsboxes(); 
+      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(xhr.responseText, 'text/html');
+          var boxesHolder = doc.querySelector('.boxes-holder');
+          if (boxesHolder) {
+              var divToImport = document.getElementById(targetId);
+              if (divToImport) {
+                  divToImport.innerHTML = boxesHolder.innerHTML;
+                  translateURLsIfNeeded(divToImport);
+                  addStarRatingToBoxesHolders();
+                  forcemodsboxes(); 
+                  const importedBoxes = divToImport.querySelectorAll('.box');
+                  processBoxes(importedBoxes);
 
-          if (isPageInTurkish()) {
-            updateURLs(sitesList);
+                  if (isPageInTurkish()) {
+                      updateURLs(sitesList);
+                  }
+              }
           }
-        }
       }
-    }
   };
   xhr.open('GET', url, true);
   xhr.send();
+}
+
+function copyToClipboard(text, copyButton) {
+  const tempInput = document.createElement('input');
+  document.body.appendChild(tempInput);
+  tempInput.value = text;
+  tempInput.select();
+  document.execCommand('copy');
+  document.body.removeChild(tempInput);
+
+  const title = document.createElement('div');
+  title.className = 'copied-title';
+  title.textContent = (languageTag === 'ru') ? 'Скопировано' : 'Copied';
+
+  copyButton.appendChild(title);
+
+  copyButton.classList.add('icon-changed');
+
+  title.style.display = 'none';
+  $(title).fadeIn(150, function() {
+      $(this).delay(400).fadeOut(150, function() {
+          $(this).remove();
+      });
+  });
+
+  setTimeout(function() {
+      copyButton.classList.remove('icon-changed');
+  }, 800);
 }
 
 function isPageInTurkish() {
@@ -1433,6 +1509,7 @@ function translateURLsIfNeeded() {
     }
   }
 }
+
 
 translateURLsIfNeeded();
 });
