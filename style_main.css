@@ -4280,6 +4280,148 @@ nav img:active,
     transform: skewX(20deg);
     border-radius: 0 0 0 5px;
 }
+
+.box .logobg .main-mode {
+    content: '';
+    position: absolute;
+    background: var(--main-theme);
+    transition: all .15s ease-in-out;
+    border-radius: 10px;
+    right: 10px;
+    bottom: 20px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.main-mode-box {
+    position: absolute;
+    background: linear-gradient(180deg, rgb(11, 11, 11) 0%, var(--main-theme) 100%);
+    border-radius: 10px;
+    left: 3px;
+    right: 3px;
+    top: 3px;
+    bottom: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(1);
+}
+
+.main-mode-icon {
+    position: relative;
+}
+
+.main-mode-icon::before {
+    margin: 0 auto;
+    content: '';
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-size: cover;
+    transition: all .15s ease-in-out;
+    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(102%) contrast(250%);
+    margin-top: 4px;
+    opacity: .3;
+}
+
+.box:hover .logobg .main-mode {
+    background: rgb(21 21 21);
+}
+
+.boxes-holder .box:hover .logobg:has(div.vpn) .main-mode {
+    bottom: 50px;
+}
+
+.main-mode:hover .main-mode-box {
+    filter: grayscale(0);
+}
+
+.main-mode:hover .main-mode-icon::before {
+    opacity: 1;
+}
+
+.main-mode:hover:after {
+    transition: .15s opacity ease-in-out;
+    opacity: 1;
+}
+
+.main-mode:after {
+    font-size: 13px;
+    margin-bottom: unset;
+    bottom: 50%;
+    left: -155px;
+    transform: translateY(50%);
+    width: 140px;
+    display: flex;
+    justify-content: flex-end;
+    transition: .15s opacity ease-in-out;
+}
+.main-mode {
+    --casino-text: 'Casino';
+    --classic-text: 'Classic Games';
+    --cases-text: 'Case Opening';
+    --betting-text: 'Match Betting';
+    --playing-text: 'Play and Earn';
+    --trading-text: 'Trading';
+    --marketplace-text: 'Marketplace';
+    --instant-sell-text: 'Instant Sell';
+    --steamlvlup-text: 'Steam Level Up';
+    --earning-text: 'Offerwalls';
+}
+
+.lang-ru {
+    --casino-text: 'Казино';
+    --classic-text: 'Классические Игры';
+    --cases-text: 'Открытие Кейсов';
+    --betting-text: 'Ставки на Матчи';
+    --playing-text: 'Играй и Зарабатывай';
+    --trading-text: 'Упор на Обмен';
+    --marketplace-text: 'Торговая Площадка';
+    --instant-sell-text: 'Быстрая Продажа';
+    --steamlvlup-text: 'Повышение Уровня';
+    --earning-text: 'Сайт с Заданиями';
+}
+.main-mode.casino::after {
+    content: var(--casino-text);
+}
+
+.main-mode.instant-sell::after {
+    content: var(--instant-sell-text);
+}
+
+.main-mode.marketplace::after {
+    content: var(--marketplace-text);
+}
+
+.main-mode.steamlvlup::after {
+    content: var(--steamlvlup-text);
+}
+
+.main-mode.earning::after {
+    content: var(--earning-text);
+}
+
+.main-mode.trading::after {
+    content: var(--trading-text);
+}
+
+.main-mode.classic::after {
+    content: var(--classic-text);
+}
+
+.main-mode.cases::after {
+    content: var(--cases-text);
+}
+
+.main-mode.betting::after {
+    content: var(--betting-text);
+}
+
+.main-mode.playing::after {
+    content: var(--playing-text);
+}
 .box .giveawaysbanner {
     height: 100%;
     width: 100%;
@@ -8498,147 +8640,4 @@ label:active,
     .sitealternates .box .content p:first-child {
         margin-top: 10px;
     }
-}
-
-.box .logobg .main-mode {
-    content: '';
-    position: absolute;
-    background: var(--main-theme);
-    transition: all .15s ease-in-out;
-    border-radius: 10px;
-    right: 10px;
-    bottom: 20px;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    z-index: 1;
-}
-
-.main-mode-box {
-    position: absolute;
-    background: linear-gradient(180deg, rgb(11, 11, 11) 0%, var(--main-theme) 100%);
-    border-radius: 10px;
-    left: 3px;
-    right: 3px;
-    top: 3px;
-    bottom: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    filter: grayscale(1);
-}
-
-.main-mode-icon {
-    position: relative;
-}
-
-.main-mode-icon::before {
-    margin: 0 auto;
-    content: '';
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-size: cover;
-    transition: all .15s ease-in-out;
-    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(102%) contrast(250%);
-    margin-top: 4px;
-    opacity: .3;
-}
-
-.box:hover .logobg .main-mode {
-    background: rgb(21 21 21);
-}
-
-.box:hover .logobg:has(div.vpn) .main-mode {
-    bottom: 50px;
-}
-
-.main-mode:hover .main-mode-box {
-    filter: grayscale(0);
-}
-
-.main-mode:hover .main-mode-icon::before {
-    opacity: 1;
-}
-
-.main-mode:hover:after {
-    transition: .15s opacity ease-in-out;
-    opacity: 1;
-}
-
-.main-mode:after {
-    font-size: 13px;
-    margin-bottom: unset;
-    bottom: 50%;
-    left: -155px;
-    transform: translateY(50%);
-    width: 140px;
-    display: flex;
-    justify-content: flex-end;
-    transition: .15s opacity ease-in-out;
-}
-.main-mode-icon {
-    --casino-text: 'Casino';
-    --classic-text: 'Classic Games';
-    --cases-text: 'Case Opening';
-    --betting-text: 'Match Betting';
-    --playing-text: 'Play and Earn';
-    --trading-text: 'Trading';
-    --marketplace-text: 'Marketplace';
-    --instant-sell-text: 'Instant Sell';
-    --steamlvlup-text: 'Steam Level Up';
-    --earning-text: 'Offerwalls';
-}
-
-.lang-ru {
-    --casino-text: 'Казино';
-    --classic-text: 'Классические Игры';
-    --cases-text: 'Открытие Кейсов';
-    --betting-text: 'Ставки на Матчи';
-    --playing-text: 'Играй и Зарабатывай';
-    --trading-text: 'Упор на Обмен';
-    --marketplace-text: 'Торговая Площадка';
-    --instant-sell-text: 'Быстрая Продажа';
-    --steamlvlup-text: 'Повышение Уровня';
-    --earning-text: 'Сайт с Заданиями';
-}
-
-.main-mode.casino::after {
-    content: var(--casino-text);
-}
-
-.main-mode.instant-sell::after {
-    content: var(--instant-sell-text);
-}
-
-.main-mode.marketplace::after {
-    content: var(--marketplace-text);
-}
-
-.main-mode.steamlvlup::after {
-    content: var(--steamlvlup-text);
-}
-
-.main-mode.earning::after {
-    content: var(--earning-text);
-}
-
-.main-mode.trading::after {
-    content: var(--trading-text);
-}
-
-.main-mode.classic::after {
-    content: var(--classic-text);
-}
-
-.main-mode.cases::after {
-    content: var(--cases-text);
-}
-
-.main-mode.betting::after {
-    content: var(--betting-text);
-}
-
-.main-mode.playing::after {
-    content: var(--playing-text);
 }

@@ -166,10 +166,9 @@ function modifyBox(box, mainMode) {
   const logobg = box.querySelector('.logobg');
   if (!logobg) return;
 
-  const languageTag = document.documentElement.lang || 'en';
   const mainModeDiv = document.createElement('div');
-  mainModeDiv.className = 'main-mode';
-  mainModeDiv.innerHTML = `<div class="main-mode-box"><div class="main-mode-icon ${mainMode} lang-${languageTag}"></div></div>`;
+  mainModeDiv.className = `main-mode ${mainMode} lang-${languageTag}`; // Добавление классов к main-mode
+  mainModeDiv.innerHTML = `<div class="main-mode-box"><div class="main-mode-icon"></div></div>`;
 
   logobg.appendChild(mainModeDiv);
 }

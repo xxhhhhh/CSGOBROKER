@@ -949,6 +949,7 @@ if (!isExcludedPage) {
       if (languageTag === 'ru' && !path.startsWith("/rust")) {
         updateURLs(newestBoxesDiv);
       }
+      updateURLs(sliderContainer);
     });
 }
 
