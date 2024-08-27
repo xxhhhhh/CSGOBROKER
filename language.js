@@ -456,17 +456,17 @@ function translateURLsIfNeeded() {
         "pt": "Bets4.pro é uma plataforma online para apostas em esportes eletrônicos, incluindo CS2, Dota 2, Valorant e mais.",
         "hi": "एक ऑनलाइन प्लेटफ़ॉर्म है जो उपयोगकर्ताओं को इस्पोर्ट्स मैचों पर सट्टे लगाने की क्षमता प्रदान करती है, विशेष रूप से CS2, Dota 2, Valorant और बहुत सारे अन्य मैचों के लिए।"
       },
-      "This site can be called almost legendary among peers due to its high payouts and constant promotions. Include daily bonus!": {
-        "es": "Este sitio puede considerarse casi legendario entre sus pares debido a sus altos pagos y promociones constantes. ¡Incluye bonificación diaria!",
-        "tr": "Bu site, yüksek ödemeleri ve sürekli promosyonları nedeniyle neredeyse efsanevi olarak adlandırılabilir. Günlük bonus dahil!",
-        "pt": "Este site pode ser considerado quase lendário entre os colegas devido aos seus pagamentos elevados e promoções constantes. Inclui bônus diário!",
-        "hi": "इस साइट को अपने समकक्षों के बीच लगभग अपूर्व कहा जा सकता है क्योंकि इसमें उच्च भुगतान और नियमित प्रचार की सुविधा होती है। रोजाना बोनस भी शामिल करें!"
+      "Freecash is one of the best platforms for earning money through tasks, offering high payouts, regular rewards, and a user-friendly interface.": {
+        "es": "Freecash es uno de los mejores servicios para ganar dinero realizando tareas, con altos pagos, recompensas regulares y una interfaz fácil de usar.",
+        "tr": "Freecash, yüksek ödemeler, düzenli ödüller ve kullanıcı dostu bir arayüz sunan görevlerle para kazanmak için en iyi platformlardan biridir.",
+        "pt": "Freecash é um dos melhores serviços para ganhar dinheiro com tarefas, oferecendo pagamentos altos, recompensas regulares e uma interface amigável.",
+        "hi": "Freecash कार्यों के माध्यम से पैसे कमाने के लिए सबसे अच्छे प्लेटफ़ॉर्म में से एक है, जो उच्च भुगतान, नियमित पुरस्कार और एक उपयोगकर्ता-अनुकूल इंटरफेस प्रदान करता है।"
       },
-      "HowlGG is a Rust skin gambling platform that offers a range of games, including jackpot, coinflip, slots, and live casino games.": {
-        "es": "HowlGG es una plataforma de apuestas de skins de Rust que ofrece una variedad de juegos, incluyendo jackpot, coinflip, slots y juegos de casino en vivo.",
-        "tr": "HowlGG, jackpot, coinflip, slots ve canlı casino oyunları dahil olmak üzere çeşitli oyunlar sunan bir Rust skin bahis platformudur.",
-        "pt": "HowlGG é uma plataforma de jogos de apostas de skins do Rust que oferece uma variedade de jogos, incluindo jackpot, coinflip, slots e jogos de cassino.",
-        "hi": "HowlGG एक Rust स्किन जुआ प्लेटफ़ॉर्म है जो जैकपॉट, कॉइनफ्लिप, स्लॉट्स और लाइव कैसीनो खेल समेत विभिन्न खेल प्रदान करता है।"
+      "HowlGG is a Rust gambling platform with a variety of modes, a fairness system, a user-friendly interface, and an active community.": {
+        "es": "HowlGG es una plataforma de apuestas de Rust con una variedad de modos, un sistema de equidad, una interfaz fácil de usar y una comunidad activa.",
+        "tr": "HowlGG, çeşitli modlar, adalet sistemi, kullanıcı dostu arayüzü ve aktif bir topluluğa sahip bir Rust kumar platformudur.",
+        "pt": "HowlGG é uma plataforma de apostas de Rust com uma variedade de modos, sistema de justiça, interface amigável e uma comunidade ativa.",
+        "hi": "HowlGG एक Rust जुआ प्लेटफ़ॉर्म है जिसमें विभिन्न मोड, निष्पक्षता प्रणाली, उपयोगकर्ता-अनुकूल इंटरफेस और एक सक्रिय समुदाय है।"
       },
       "BanditCamp is a Rust skin gambling website that provides several Rust-themed game modes like wheel of fortune, case unboxings, and coinflip.": {
         "es": "BanditCamp es un sitio web de apuestas de skins de Rust que ofrece modos de juego temáticos, como la rueda de la fortuna, la apertura de cajas y el coinflip.",
@@ -624,11 +624,11 @@ function translateURLsIfNeeded() {
         "pt": "Tradeit é um mercado online de skins de jogos, incluindo CS2, onde os jogadores podem trocar, comprar e vender skins. Trabalhando desde 2017.",
         "hi": "Tradeit एक ऑनलाइन व्यापार जगत है जो खिलाड़ियों को अवसर प्रदान करता है खेलों की विभिन्न प्रकारों के लिए स्किन व्यापार, खरीद और बेचने का। 2017 से काम कर रहा है।"
       },
-      "DMarket is a reliable and popular marketplace for Steam items, with a large number of items available and positive reviews on Trustpilot.": {
-        "es": "DMarket es un mercado confiable y popular para artículos de Steam, con una gran cantidad de artículos disponibles y reseñas positivas en Trustpilot.",
-        "tr": "DMarket, geniş bir ürün yelpazesine sahip olan ve Trustpilot'ta olumlu değerlendirmeler alan Steam ürünleri için güvenilir ve popüler bir pazardır.",
-        "pt": "DMarket é um mercado confiável e popular para itens do Steam, com uma grande quantidade de itens disponíveis e avaliações positivas no Trustpilot.",
-        "hi": "DMarket एक विश्वसनीय और लोकप्रिय बाजार है स्टीम आइटमों के लिए, जिसमें बहुत सारे आइटम उपलब्ध हैं और ट्रस्टपायलट पर सकारात्मक समीक्षाएं हैं।"
+      "DMarket is a popular platform for trading CS2, Rust, Dota 2, and Team Fortress 2 items, offering a wide assortment and security.": {
+        "es": "DMarket es una plataforma popular para el comercio de objetos de CS2, Rust, Dota 2 y Team Fortress 2, que ofrece una amplia variedad y seguridad.",
+        "tr": "DMarket, CS2, Rust, Dota 2 ve Team Fortress 2 öğelerinin ticareti için popüler bir platform olup geniş bir ürün yelpazesi ve güvenlik sunmaktadır.",
+        "pt": "DMarket é uma plataforma popular para a troca de itens de CS2, Rust, Dota 2 e Team Fortress 2, oferecendo uma ampla variedade e segurança.",
+        "hi": "DMarket CS2, Rust, Dota 2 और Team Fortress 2 आइटम्स की ट्रेडिंग के लिए एक लोकप्रिय प्लेटफ़ॉर्म है, जो व्यापक विकल्प और सुरक्षा प्रदान करता है।"
       },
       "BitSkins is an online marketplace for in-game skins, particularly for Counter-Strike 2, Dota 2, and Team Fortress 2. Launched in 2015.": {
         "es": "BitSkins es un mercado en línea para skins de juegos, especialmente para Counter-Strike 2, Dota 2 y Team Fortress 2. Lanzado en 2015.",
@@ -684,11 +684,11 @@ function translateURLsIfNeeded() {
         "pt": "SkinBid é um mercado online para skins de CS2 e itens de jogos, oferecendo recursos de compra, venda e leilão com uma interface amigável.",
         "hi": "SkinBid एक ऑनलाइन बाजार है CS2 स्किन और खेल की आइटमों के लिए, जो एक उपयोगकर्ता-मित्रतापूर्ण इंटरफ़ेस के साथ खरीदने, बेचने और नीलामी की सुविधाएं प्रदान करता है।"
       },
-      "LOOT.Farm is an online platform that offers users the ability to Trade virtual items from popular games like CS2, Dota 2, Team Fortress 2, and Rust.": {
-        "es": "LOOT.Farm es una plataforma en línea para intercambiar objetos virtuales de juegos como CS2, Dota 2, Team Fortress 2 y Rust.",
-        "tr": "LOOT.Farm, CS2, Dota 2, Team Fortress 2 ve Rust gibi popüler oyunlardan sanal eşyaları takas etme imkanı sunan bir çevrimiçi platformdur.",
-        "pt": "LOOT.Farm é uma plataforma online para negociação de itens virtuais de jogos populares como CS2, Dota 2, TF2 e Rust.",
-        "hi": "LOOT.Farm एक ऑनलाइन प्लेटफ़ॉर्म है जो CS2, Dota 2, Team Fortress 2 और Rust जैसे लोकप्रिय खेलों के आभासी आइटम व्यापार करने का अवसर प्रदान करता है।"
+      "LOOT.Farm is a popular platform for trading items from CS2, Rust, Dota 2, and TF2 with transparent conditions and an active community.": {
+        "es": "LOOT.Farm es una plataforma popular para intercambiar objetos de CS2, Rust, Dota 2 y TF2 con condiciones transparentes y una comunidad activa.",
+        "tr": "LOOT.Farm, CS2, Rust, Dota 2 ve TF2 öğelerinin takası için şeffaf koşullar ve aktif bir topluluğa sahip popüler bir platformdur.",
+        "pt": "LOOT.Farm é uma plataforma popular para trocar itens de CS2, Rust, Dota 2 e TF2 com condições transparentes e uma comunidade ativa.",
+        "hi": "LOOT.Farm CS2, Rust, Dota 2 और TF2 आइटम्स के लिए एक लोकप्रिय प्लेटफ़ॉर्म है, जिसमें पारदर्शी शर्तें और एक सक्रिय समुदाय है।"
       },
       "SkinBaron is an online platform based in Germany that enables users to buy and sell their CS2 skins. The platform has gained a good reputation.": {
         "es": "SkinBaron es una plataforma en línea alemana para comprar y vender skins de CS2, reconocida por su excelente reputación.",
