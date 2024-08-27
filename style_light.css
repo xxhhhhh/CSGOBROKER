@@ -296,7 +296,8 @@ h3  {
 .newest-boxes .box,
 #rec-box-content,
 .topic-box .content,
-.sitepage.topic-craft .component-box  {
+.sitepage.topic-craft .component-box,
+.singlemod-select::before  {
     background-color: #f2f2f2 !important;
 }
 
@@ -486,12 +487,17 @@ h3  {
 }
 
 @media screen and (max-width: 1340px) {
-
     .boxes-holder .content a.boxtitle,
     .boxes-holder .content p:first-child,
     .content a.boxtitle,
     .box.main .content p:first-child {
         background-color: #a9a9a9;
+    }
+    .category-selector .category-box {
+        background: var(--opacback);
+    }
+    .singlemod-select img {
+        filter: grayscale(1) brightness(1.5);
     }
     .sitealternates .box .content a.boxtitle {
         padding: 0px 2px;
@@ -626,7 +632,9 @@ ul .submenu li .nonredir,
 .box .content,
 #rec-box-content,
 .boxreview .plusminus .criteria,
-.box-skins .skin {
+.box-skins .skin,
+.singlemod-select::before,
+.category-selector .category-box .category-box-logo::before {
     box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .4);
 }
 
@@ -642,4 +650,12 @@ ul .submenu li .nonredir,
 .sitepage .box:hover .content button.copy::before {
     background-color: rgb(32 32 32);
     color: var(--white);
+}
+
+.singlemod-select::before, .category-selector .category-box .category-box-logo::before {
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .1) 100%);
+}
+
+.category-selector .category-box.active .category-box-logo::before, .singlemod-box.active .singlemod-select::before {
+    background: linear-gradient(180deg, transparent 0%, rgba(206, 32, 61, .6) 100%);
 }
