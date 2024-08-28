@@ -998,7 +998,7 @@ function forcemodsboxes() {
         importModsBox("csgo");
       } else if (url.includes("/rust/") || url.endsWith("/rust") || url.endsWith("/rust.html")) {
         importModsBox("rust");
-      } else if (url.includes("/dota/") || url.endsWith("/dota") || url.endsWith("/dota.html")) {
+      } else if (url.includes("/dota/") || url.endsWith("/dota") || url.endsWith("/dota.html")) { 
         importModsBox("dota");
       }
       break;
@@ -1718,7 +1718,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
   const basePath = "/code-parts/site-infos";
-  const languageTag = document.documentElement.lang || 'en'; // Получение языкового тега страницы
 
   function loadJsonData(filePath, callback) {
       fetch(filePath)
@@ -1739,39 +1738,39 @@ document.addEventListener("DOMContentLoaded", function() {
       if (!logobg) return;
 
       const mainModeDiv = document.createElement('div');
-      mainModeDiv.className = `main-mode ${mainMode} lang-${languageTag}`; // Добавление классов к main-mode
+      mainModeDiv.className = `main-mode ${mainMode} lang-${languageTag}`;
       mainModeDiv.innerHTML = `<div class="main-mode-box"><div class="main-mode-icon"></div></div>`;
 
       logobg.appendChild(mainModeDiv);
   }
 
   function copyToClipboard(text, copyButton) {
-    const tempInput = document.createElement('input');
-    document.body.appendChild(tempInput);
-    tempInput.value = text;
-    tempInput.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempInput);
+      const tempInput = document.createElement('input');
+      document.body.appendChild(tempInput);
+      tempInput.value = text;
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
 
-    const title = document.createElement('div');
-    title.className = 'copied-title';
-    title.textContent = (languageTag === 'ru') ? 'Скопировано' : 'Copied';
+      const title = document.createElement('div');
+      title.className = 'copied-title';
+      title.textContent = (languageTag === 'ru') ? 'Скопировано' : 'Copied';
 
-    copyButton.appendChild(title);
+      copyButton.appendChild(title);
 
-    copyButton.classList.add('icon-changed');
+      copyButton.classList.add('icon-changed');
 
-    title.style.display = 'none';
-    $(title).fadeIn(150, function() {
-        $(this).delay(400).fadeOut(150, function() {
-            $(this).remove();
-        });
-    });
+      title.style.display = 'none';
+      $(title).fadeIn(150, function() {
+          $(this).delay(400).fadeOut(150, function() {
+              $(this).remove();
+          });
+      });
 
-    setTimeout(function() {
-        copyButton.classList.remove('icon-changed');
-    }, 800);
-}
+      setTimeout(function() {
+          copyButton.classList.remove('icon-changed');
+      }, 800);
+  }
 
   let currentPath = window.location.pathname;
   if (currentPath.includes("/reviews/") || currentPath.includes("/mirrors/")) {
@@ -1782,33 +1781,25 @@ document.addEventListener("DOMContentLoaded", function() {
       const pageKey = currentPath.split("/").pop();
       const mainJsonFilePath = `${basePath}/${pageKey}.json`;
 
-      const mainBoxes = document.querySelectorAll('.box:not(.sitealternatesboxes .box)');
-      mainBoxes.forEach(box => {
-          loadJsonData(mainJsonFilePath, data => {
-              if (data.code) {
-                  const copyButton = box.querySelector('.copy');
-                  copyButton && copyButton.addEventListener('click', () => copyToClipboard(data.code, copyButton));
+      loadJsonData(mainJsonFilePath, data => {
+          if (data.code) {
+              const siteCodeElement = document.getElementById('site-code');
+              if (siteCodeElement) {
+                  siteCodeElement.textContent = data.code;
               }
-              data["Main Mode"] && modifyBox(box, data["Main Mode"]);
-          });
-      });
 
-      const alternateBoxes = document.querySelectorAll('.sitealternatesboxes .box');
-      alternateBoxes.forEach(box => {
-          const logoLink = box.querySelector('.logobg a');
-          if (logoLink) {
-              const path = logoLink.getAttribute('href');
-              const pageKey = path.split('/').pop();
-              const jsonFilePath = `${basePath}/${pageKey}.json`;
-
-              loadJsonData(jsonFilePath, data => {
-                  if (data.code) {
-                      const copyButton = box.querySelector('.copy');
-                      copyButton && copyButton.addEventListener('click', () => copyToClipboard(data.code, copyButton));
-                  }
-                  data["Main Mode"] && modifyBox(box, data["Main Mode"]);
+              const copyButtons = document.querySelectorAll('.copy');
+              copyButtons.forEach(button => {
+                  button.addEventListener('click', () => copyToClipboard(data.code, button));
               });
           }
+
+          const mainBoxes = document.querySelectorAll('.box:not(.sitealternatesboxes .box)');
+          mainBoxes.forEach(box => {
+              if (data["Main Mode"]) {
+                  modifyBox(box, data["Main Mode"]);
+              }
+          });
       });
   } else {
       const otherBoxes = document.querySelectorAll('.box');
@@ -1821,15 +1812,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
               loadJsonData(jsonFilePath, data => {
                   if (data.code) {
-                      const copyButton = box.querySelector('.copy');
-                      copyButton && copyButton.addEventListener('click', () => copyToClipboard(data.code, copyButton));
+                      const copyButtons = box.querySelectorAll('.copy');
+                      copyButtons.forEach(button => {
+                          button.addEventListener('click', () => copyToClipboard(data.code, button));
+                      });
                   }
-                  data["Main Mode"] && modifyBox(box, data["Main Mode"]);
+                  if (data["Main Mode"]) {
+                      modifyBox(box, data["Main Mode"]);
+                  }
               });
           }
       });
   }
 });
+
 
 
 
