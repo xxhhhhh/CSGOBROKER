@@ -4361,6 +4361,14 @@ nav img:active,
     justify-content: flex-end;
     transition: .15s opacity ease-in-out;
 }
+
+.box.main .main-mode:after {
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 40px;
+    width: unset;
+}
+
 .main-mode {
     --casino-text: 'Casino';
     --classic-text: 'Classic Games';
@@ -4379,7 +4387,7 @@ nav img:active,
     --classic-text: 'Классические Игры';
     --cases-text: 'Открытие Кейсов';
     --betting-text: 'Ставки на Матчи';
-    --playing-text: 'Играй и Зарабатывай';
+    --playing-text: 'Заработок на Игре';
     --trading-text: 'Обменник';
     --marketplace-text: 'Торговая Площадка';
     --instant-sell-text: 'Быстрая Продажа';
@@ -7029,6 +7037,9 @@ label:active,
     }
     .main-infobox-content {
         width: 100%;
+    }
+    .box .logobg .main-mode {
+        right: 50px;
     }
     .boxreview .main-infobox {
         margin-top: 4px;

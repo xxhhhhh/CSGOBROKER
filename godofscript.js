@@ -1794,7 +1794,7 @@ document.addEventListener("DOMContentLoaded", function() {
               });
           }
 
-          const mainBoxes = document.querySelectorAll('.box:not(.sitealternatesboxes .box)');
+          const mainBoxes = document.querySelectorAll('.box:not(.sitealternates .box)');
           mainBoxes.forEach(box => {
               if (data["Main Mode"]) {
                   modifyBox(box, data["Main Mode"]);
