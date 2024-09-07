@@ -210,30 +210,44 @@ if (ratingsumm && sitealternates) {
 }
 
 if (supportedLanguages.includes(languageTag)) {
-  const filePath = `/code-parts/micro-parts/main-infobox/${languageTag}.html`;
+  const cacheKey = `infoboxContent_${languageTag}`;
+  const cachedContent = localStorage.getItem(cacheKey);
 
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', filePath, true);
+  const insertInfobox = (content) => {
+    let insertionPoint;
+    if (window.location.pathname.includes('/reviews/')) {
+      insertionPoint = document.querySelector('.sitealternates');
+    } else {
+      insertionPoint = document.querySelector('.boxes-holder');
+    }
 
-  xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-          const infoboxContent = xhr.responseText;
-
-          let insertionPoint;
-          if (window.location.pathname.includes('/reviews/')) {
-              insertionPoint = document.querySelector('.sitealternates');
-          } else {
-              insertionPoint = document.querySelector('.boxes-holder');
-          }
-
-          if (insertionPoint) {
-              insertionPoint.insertAdjacentHTML('afterend', infoboxContent);
-          }
-      }
+    if (insertionPoint) {
+      insertionPoint.insertAdjacentHTML('afterend', content);
+    }
   };
 
-  xhr.send();
+  if (cachedContent) {
+    insertInfobox(cachedContent);
+  } else {
+    const filePath = `/code-parts/micro-parts/main-infobox/${languageTag}.html`;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', filePath, true);
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        const infoboxContent = xhr.responseText;
+
+        localStorage.setItem(cacheKey, infoboxContent);
+
+        insertInfobox(infoboxContent);
+      }
+    };
+
+    xhr.send();
+  }
 }
+
 
 $('.sitepros').click(function() {
   $(this).toggleClass("active");
