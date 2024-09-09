@@ -319,14 +319,16 @@ $(document).ready(function () {
                     }
                 }
 
-                const rarityToggleState = JSON.parse(localStorage.getItem("RarityToggleState")) || true;
+                const rarityToggleState = getLocalStorageState("RarityToggleState", true);
                 $(".box-skins-list").toggleClass("showrarity", rarityToggleState);
                 $("#Rarity-Toggle").toggleClass("enabled", rarityToggleState);
 
                 $("#Rarity-Toggle").on("click", function () {
                     $(this).toggleClass("enabled");
                     $(".box-skins-list").toggleClass("showrarity");
-                    localStorage.setItem("RarityToggleState", $(this).hasClass("enabled"));
+            
+                    const isEnabled = $(this).hasClass("enabled");
+                    setLocalStorageState("RarityToggleState", isEnabled);
                 });
 
                 $("#Quality-Filter").click(function () {
@@ -606,3 +608,12 @@ $(document).ready(function(){
             });
         });
   }
+
+  function setLocalStorageState(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+}
+
+function getLocalStorageState(key, defaultValue) {
+    const storedValue = localStorage.getItem(key);
+    return storedValue ? JSON.parse(storedValue) : defaultValue;
+}
