@@ -252,7 +252,7 @@ if (supportedLanguages.includes(languageTag)) {
 $('.sitepros').click(function() {
   $(this).toggleClass("active");
 
-  if ($(window).width() >= 1340) {
+  if ($(window).width() >= 1365) {
       var $methodlist = $(this).find('.methodlist');
       var methodlistHeight = $methodlist.outerHeight(true);
       var totalHeight = $(this).height() + methodlistHeight;
@@ -1340,7 +1340,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $(window).on('scroll resize', function() {
       var $pages = $('.pages');
-      if ($pages.length && $(window).width() <= 1340) {
+      if ($pages.length && $(window).width() <= 1365) {
           if ($(window).scrollTop() >= 100) {
               $pages.addClass('hidden');
           } else {
@@ -1452,7 +1452,7 @@ document.addEventListener("DOMContentLoaded", function() {
               if (section.selector === '.sitedetails') {
                   document.querySelectorAll('.sitepros').forEach(sitepros => {
                       sitepros.classList.toggle('active');
-                      if (window.innerWidth >= 1340) {
+                      if (window.innerWidth >= 1365) {
                           const methodlist = sitepros.querySelector('.methodlist');
                           const methodlistHeight = methodlist ? methodlist.offsetHeight : 0;
                           const totalHeight = sitepros.offsetHeight + methodlistHeight;
@@ -1883,7 +1883,7 @@ document.addEventListener('DOMContentLoaded', function() {
       bigCategoriesnav.forEach(category => {
         category.addEventListener('click', function(e) {
           const submenu2 = category.querySelector(".submenu2");
-          if (submenu2 && window.innerWidth <= 1340 && !e.target.matches('.submenu2 a')) {
+          if (submenu2 && window.innerWidth <= 1365 && !e.target.matches('.submenu2 a')) {
             e.preventDefault();
           }
         
@@ -1907,7 +1907,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const isTargetBoxNewest = targetBox.classList.contains("newest");
 
-            if (!isTargetBoxNewest && window.innerWidth <= 1340) {
+            if (!isTargetBoxNewest && window.innerWidth <= 1365) {
               e.preventDefault();
             }
 
@@ -2173,7 +2173,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           const isTargetBoxNewest = targetBox.classList.contains("newest");
 
-          if (!isTargetBoxNewest && window.innerWidth <= 1340) {
+          if (!isTargetBoxNewest && window.innerWidth <= 1365) {
               e.preventDefault();
           }
 
@@ -2209,7 +2209,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const bigCategory = bigCategoryLink.closest(".big-category");
           const hasSubmenu2 = bigCategory.querySelector(".submenu2");
 
-          if (hasSubmenu2 && window.innerWidth <= 1340) {
+          if (hasSubmenu2 && window.innerWidth <= 1365) {
               e.preventDefault();
           }
 

@@ -1,512 +1,368 @@
 $(document).ready(function () {
-    if (window.location.pathname.includes("/topic/items/") || window.location.pathname.includes("/topic/cases/") || window.location.pathname.includes("/topic/skins/") || window.location.pathname.includes("/topic/sticker-crafts/")) {
-    var enabledFiltersState = {};
-    var sortState = 'normal';
+    const currentPath = window.location.pathname;
+    if (currentPath.includes("/topic/items/") || currentPath.includes("/topic/cases/") || currentPath.includes("/topic/skins/") || currentPath.includes("/topic/sticker-crafts/")) {
+        let enabledFiltersState = {};
+        let sortState = 'normal';
 
-    $('.sitepage').prepend(`
-    <div id="preview-window" class="hidden">
-        <div id="preview-showcase">
-            <div class="preview-close-button"><i class="bi bi-x"></i></div>
-            <div class="preview-buttons">
-            <div class="preview-pause-button"><i class="bi bi-pause-fill"></i></div>
-            </div>
-            <div class="preview-nav-button left"><i class="bi bi-chevron-left"></i></div>
-            <div class="preview-nav-button right"><i class="bi bi-chevron-right"></i></div>
-            <div id="preview-content"></div>
-            <div class="site-searcher-buttons">
-                <div class="site-searcher-box" id="Lis-Skins" data-title="Search on Lis-Skins">
-                    <div class="site-searcher-logo"><img src="/img/lis-skins-logo.svg" draggable="false" alt="Lis-Skins logo"></div>
+        const previewWindowHTML = `
+        <div id="preview-window" class="hidden">
+            <div id="preview-showcase">
+                <div class="preview-close-button"><i class="bi bi-x"></i></div>
+                <div class="preview-buttons">
+                    <div class="preview-pause-button"><i class="bi bi-pause-fill"></i></div>
                 </div>
-                <div class="site-searcher-box" id="Avan.Market" data-title="Search on Avan.Market">
-                    <div class="site-searcher-logo"><img src="/img/avan-market-logo.webp" style="width: 50%" draggable="false" alt="Avan.Market logo"></div>
-                </div>
-                <div class="site-searcher-box" id="Tradeit" data-title="Search on Tradeit">
-                    <div class="site-searcher-logo"><img src="/img/tradeit-logo.webp" draggable="false" alt="Tradeit logo"></div>
-                </div>
-                <div class="site-searcher-box" id="BitSkins" data-title="Search on BitSkins">
-                    <div class="site-searcher-logo"><img src="/img/bitskins-logo.webp" draggable="false" alt="BitSkins logo"></div>
-                </div>
-                <div class="site-searcher-box" id="CSMoney" data-title="Search on CSMoney">
-                    <div class="site-searcher-logo"><img src="/img/csmoney-logo.webp" draggable="false" alt="CSMoney logo"></div>
-                </div>
-                <div class="site-searcher-box" id="SkinSwap" data-title="Search on SkinSwap">
-                    <div class="site-searcher-logo"><img src="/img/skinswap-logo.webp" draggable="false" alt="SkinSwap logo"></div>
-                </div>
-                <div class="site-searcher-box" id="Steam" data-title="Search on Steam">
-                    <div class="site-searcher-logo"><img src="/img/steam-logo.png" draggable="false" alt="Steam logo"></div>
+                <div class="preview-nav-button left"><i class="bi bi-chevron-left"></i></div>
+                <div class="preview-nav-button right"><i class="bi bi-chevron-right"></i></div>
+                <div id="preview-content"></div>
+                <div class="site-searcher-buttons">
+                    ${['Lis-Skins', 'Avan.Market', 'Tradeit', 'BitSkins', 'CSMoney', 'SkinSwap', 'Steam'].map(site => `
+                    <div class="site-searcher-box" id="${site}" data-title="${languageTag === 'ru' ? 'Искать в' : 'Search on'} ${site}">
+                        <div class="site-searcher-logo">
+                            <img src="/img/${site.toLowerCase().replace('.', '-')}-logo.webp" draggable="false" alt="${site} logo">
+                        </div>
+                    </div>`).join('')}
                 </div>
             </div>
-        </div>
-    </div>
-`);
+        </div>`;    
+        $('.sitepage').prepend(previewWindowHTML);
 
-$(document).on('click', '.preview-pause-button', function () {
-  const previewContent = $('#preview-content');
-  previewContent.toggleClass('paused');
-  const icon = $(this).find('i');
-  if (previewContent.hasClass('paused')) {
-      icon.removeClass('bi-pause-fill').addClass('bi-play-fill');
-  } else {
-      icon.removeClass('bi-play-fill').addClass('bi-pause-fill');
-  }
-});
+        const previewContent = $('#preview-content');
 
-function insertRandomAdsBox() {
-  var currentPath = window.location.pathname;
-
-  if (currentPath.includes('/topic/skins/') && currentPath.includes('/ru/') 
-  || currentPath.includes('/topic/sticker-crafts/') && currentPath.includes('/ru/') 
-  || currentPath.includes('/topic/cases/') && currentPath.includes('/ru/') 
-  || currentPath.includes('/topic/items/') && currentPath.includes('/ru/')) {
-    var adsFilePath = '/code-parts/topic-ads-ru.html';
-} else if (currentPath.includes('/topic/skins/') || currentPath.includes('/topic/cases/') || currentPath.includes('/topic/sticker-crafts/') || (currentPath.includes('/topic/items/'))) {
-    var adsFilePath = '/code-parts/topic-ads.html';
-} else {
-    return;
-}
-
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', adsFilePath, true);
-
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-        var adsBoxesHtml = xhr.responseText;
-        var adsBoxes = document.createElement('div');
-        adsBoxes.innerHTML = adsBoxesHtml;
-
-        var insertAfterElement = document.querySelector('.box-topic');
-
-        var randomAdsBox = adsBoxes.children[Math.floor(Math.random() * adsBoxes.children.length)];
-
-        insertAfterElement.parentNode.insertBefore(randomAdsBox, insertAfterElement.nextSibling);
-
-        setTimeout(function () {
-            setTimeout(function () {
-                randomAdsBox.classList.add('active');
-            }, 100);
+        $(document).on('click', '.preview-pause-button', function () {
+            previewContent.toggleClass('paused');
+            const icon = $(this).find('i');
+            icon.toggleClass('bi-pause-fill bi-play-fill');
         });
-    }
-};
 
+        function insertRandomAdsBox() {
+            let adsFilePath = currentPath.includes('/ru/') ? '/code-parts/topic-ads-ru.html' : '/code-parts/topic-ads.html';
 
-  xhr.send();
-}
+            fetch(adsFilePath)
+                .then(response => response.text())
+                .then(adsBoxesHtml => {
+                    const adsBoxes = document.createElement('div');
+                    adsBoxes.innerHTML = adsBoxesHtml;
 
-insertRandomAdsBox();
+                    const insertAfterElement = document.querySelector('.box-topic');
+                    const randomAdsBox = adsBoxes.children[Math.floor(Math.random() * adsBoxes.children.length)];
 
+                    insertAfterElement.parentNode.insertBefore(randomAdsBox, insertAfterElement.nextSibling);
 
-if (document.querySelector('.skin') && window.location.pathname.includes('/topic/')) {
-    const skinsOnPage = $('.skin');
-
-    const weaponToSkinIds = {};
-    skinsOnPage.each(function() {
-        const weapon = $(this).attr('weapon');
-        const skinId = $(this).attr('skin-id');
-        if (weapon && skinId) {
-            if (!weaponToSkinIds[weapon]) {
-                weaponToSkinIds[weapon] = [];
-            }
-            weaponToSkinIds[weapon].push(skinId);
-        }
-    });
-
-    const filesToLoad = Object.keys(weaponToSkinIds).map(weapon => `/code-parts/skins-list/${weapon}.html`);
-
-    const fetchPromises = filesToLoad.map(file => fetch(file).then(response => response.text()));
-
-    Promise.all(fetchPromises)
-        .then(dataArray => {
-            const tempContainers = {};
-
-            Object.keys(weaponToSkinIds).forEach((weapon, index) => {
-                const tempContainer = document.createElement('div');
-                tempContainer.innerHTML = dataArray[index];
-                tempContainers[weapon] = tempContainer;
-            });
-
-            Object.keys(weaponToSkinIds).forEach(weapon => {
-                weaponToSkinIds[weapon].forEach(skinId => {
-                    const newSkin = $(tempContainers[weapon]).find(`.skin[skin-id="${skinId}"]`)[0];
-
-                    if (newSkin) {
-                        const existingSkin = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`)[0];
-                        if (existingSkin) {
-                            $(newSkin).attr('weapon', weapon);
-
-                            $(existingSkin).replaceWith(newSkin);
-
-                            const imgs = $(newSkin).find('img');
-                            imgs.each(function() {
-                                this.onload = () => {
-                                    setTimeout(() => {
-                                        $(this).addClass('imported');
-                                    }, 10);
-                                };
-                            });
-                        }
-                    }
+                    setTimeout(() => randomAdsBox.classList.add('active'), 100);
                 });
-            });
-            checkWeaponTypeAvailabilityForItems();
-        });
-}
-
-
-
-
-    function updateNavigationReset() {
-        var enabledFilters = $(".navigation-weapon-type.enabled").length;
-        var sortEnabled = $("#Quality-Filter").hasClass("enabled");
-        if (enabledFilters === 0 && !sortEnabled) {
-            if ($(".topic-centralizer .navigation-reset").length === 0) {
-                $(".topic-centralizer").append('<div class="navigation-reset">Reset Navigation</div>');
-            }
-        } else {
-            $(".topic-centralizer .navigation-reset").remove();
-        }
-    }
-
-    function checkWeaponTypeAvailability() {
-        var weaponTypes = ['knives', 'gloves', 'pistols', 'rifles', 'srifles', 'smgs', 'shotguns', 'mguns'];
-        weaponTypes.forEach(function (type) {
-            var allNotExist = $(".box-skins." + type).toArray().every(function (element) {
-                return $(element).hasClass("notexist");
-            });
-            if (allNotExist) {
-                $(".navigation-weapon-type." + type).removeClass("enabled");
-                $(".box-skins." + type).addClass("disabled");
-            } else {
-                $(".navigation-weapon-type." + type).addClass("enabled");
-                $(".box-skins." + type).removeClass("disabled");
-            }
-        });
-    }
-
-    function checkWeaponTypeAvailabilityForItems() {
-        const skinTypes = ['white', 'lblue', 'blue', 'purple', 'pink', 'red'];
-        skinTypes.forEach(function(type) {
-            const allNotExist = $(`.box-skins-list .skin.${type}, .box-topic .component-interact.${type}`).toArray().every(function(element) {
-                return $(element).hasClass("notexist");
-            });
-
-            if (allNotExist) {
-                $(`.navigation-weapon-type.${type}`).removeClass("enabled");
-                $(`.box-skins-list .skin.${type}, .box-topic .component-interact.${type}`).addClass("disabled");
-            } else {
-                $(`.navigation-weapon-type.${type}`).addClass("enabled");
-                $(`.box-skins-list .skin.${type}, .box-topic .component-interact.${type}`).removeClass("disabled");
-            }
-        });
-    }
-
-    if (languageTag === 'ru') {
-      if (document.getElementById('Lis-Skins')) {
-          document.getElementById('Lis-Skins').dataset.title = 'Искать на Lis-Skins';
-      }
-      if (document.getElementById('Avan.Market')) {
-        document.getElementById('Avan.Market').dataset.title = 'Искать на Avan.Market';
-      } 
-      if (document.getElementById('Tradeit')) {
-          document.getElementById('Tradeit').dataset.title = 'Искать в Tradeit';
-      }
-      if (document.getElementById('BitSkins')) {
-          document.getElementById('BitSkins').dataset.title = 'Искать на BitSkins';
-      }
-      if (document.getElementById('CSMoney')) {
-          document.getElementById('CSMoney').dataset.title = 'Искать на CSMoney';
-      } 
-      if (document.getElementById('SkinSwap')) {
-        document.getElementById('SkinSwap').dataset.title = 'Искать на SkinSwap';
-      } 
-      if (document.getElementById('Steam')) {
-          document.getElementById('Steam').dataset.title = 'Искать в Steam';
-      }
-  }
-
-    function generateSearchUrl(skinName, selectedSite) {
-        let href = '';
-
-        switch (selectedSite) {
-            case 'Tradeit':
-                href = `https://tradeit.gg/csgo/store?search=${encodeURIComponent(skinName)}&aff=csgobroker`;
-                break;
-            case 'BitSkins':
-                href = `https://bitskins.com/market/cs2?search={"order":[{"field":"price","order":"ASC"}],"where":{"skin_name":"${encodeURIComponent(skinName)}"}}&ref_alias=csgobroker`;
-                break;
-            case 'Steam':
-                href = `https://steamcommunity.com/market/search?appid=730&q=${encodeURIComponent(skinName)}`;
-                break;
-            case 'CSMoney':
-                href = `https://cs.money/market/buy/?search=${encodeURIComponent(skinName)}&sort=price&order=asc&utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=market&utm_content=link`;
-                break;
-            case 'Avan.Market':
-                href = `https://avan.market/ru/market/cs?name=${encodeURIComponent(skinName)}&r=csgobroker`;
-                break;
-            case 'SkinSwap':
-                href = `https://skinswap.com/buy?r=csgobroker&search=${encodeURIComponent(skinName)}&appid=730`;
-                break;
-            default:
-                href = `https://lis-skins.ru/market/csgo/?query=${encodeURIComponent(skinName)}&rf=83346597`;
-                break;
         }
 
-        return href;
-    }
+        insertRandomAdsBox();
 
-    function showPreviewWindow(element) {
-        const previewWindow = document.getElementById('preview-window');
-        const previewContent = document.getElementById('preview-content');
-        let skinClasses = [];
-    
-        if ($(element).hasClass('skin')) {
-            skinClasses = $(element).attr("class").split(" ");
-        } else if ($(element).hasClass('component-interact')) {
-            skinClasses = ['component-interact'];
-        }
-    
-        const skinBox = $(element).closest('.box-skins-list, .box-topic');
-        const visibleItems = skinBox.find('.skin:not(.disabled), .component-interact:not(.disabled)');
-        const totalItems = visibleItems.length;
-        const itemName = element.querySelector('.skin-desc-name') ? element.querySelector('.skin-desc-name').textContent.trim() : '';
-    
-        previewWindow.className = 'preview-window';
-        previewContent.innerHTML = element.innerHTML;
-        previewWindow.classList.remove('hidden');
-        previewWindow.setAttribute('data-current-index', visibleItems.index(element));
-        previewWindow.setAttribute('data-total-items', totalItems);
-        previewWindow.setAttribute('data-current-box', skinBox.index('.box-skins-list, .box-topic'));
-    
-        skinClasses.forEach(function (skinClass) {
-            if (skinClass !== "skin" && skinClass !== "component-interact") {
-                previewWindow.classList.add(skinClass);
-            }
-        });
+        if ($('.skin').length && currentPath.includes('/topic/')) {
+            const skinsOnPage = $('.skin');
+            const weaponToSkinIds = {};
 
-        const existingSkinAltInfo = document.querySelector('.skin-alt-info');
-        if (existingSkinAltInfo) {
-            existingSkinAltInfo.remove();
-        }
-        
-        const weapon = element.getAttribute('weapon');
-        const skinAltInfoDiv = document.createElement('a');
-        skinAltInfoDiv.className = 'skin-alt-info';
-        skinAltInfoDiv.setAttribute('href', languageTag === 'ru' ? `/ru/topic/items/${weapon}` : `/topic/items/${weapon}`);
-        skinAltInfoDiv.setAttribute('data-title', languageTag === 'ru' ? `Все Скины на ${weapon}` : `All Skins on ${weapon}`);
-        skinAltInfoDiv.innerHTML = '<i class="bi bi-collection-fill"></i>';        
-        
-        const previewShowcase = document.getElementById('preview-showcase');
-        previewShowcase.appendChild(skinAltInfoDiv);        
-    
-        $(".site-searcher-box").off("click").on("click", function () {
-            const selectedSite = this.id;
-            let searchName = itemName;
-    
-            if ($(element).hasClass('component-interact')) {
-                searchName = $(element).data('title');
-            }
-    
-            const searchUrl = generateSearchUrl(searchName, selectedSite);
-            window.open(searchUrl, '_blank');
-        });
-    }
-
-    function closePreviewWindow() {
-        const previewWindow = document.getElementById('preview-window');
-        previewWindow.classList.add('hidden');
-        
-        const skinAltInfoDiv = document.querySelector('.skin-alt-info');
-        if (skinAltInfoDiv) {
-            skinAltInfoDiv.remove();
-        }
-    }
-
-  function switchSkin(direction) {
-    const previewWindow = $('#preview-window');
-    const currentIndex = parseInt(previewWindow.attr('data-current-index'));
-    const currentBoxIndex = parseInt(previewWindow.attr('data-current-box'));
-    const currentBox = $('.box-skins-list, .box-topic').eq(currentBoxIndex);
-    const visibleItems = currentBox.find('.skin:not(.disabled), .component-interact:not(.disabled)');
-    const totalItems = visibleItems.length;
-    let newIndex = direction === 'left' ? currentIndex - 1 : currentIndex + 1;
-
-    if (newIndex < 0) {
-        newIndex = totalItems - 1;
-    } else if (newIndex >= totalItems) {
-        newIndex = 0;
-    }
-
-    const newSkinElement = visibleItems.eq(newIndex);
-
-    const existingSkinAltInfo = document.querySelector('.skin-alt-info');
-    if (existingSkinAltInfo) {
-        existingSkinAltInfo.remove();
-    }
-
-    showPreviewWindow(newSkinElement[0]);
-    previewWindow.attr('data-current-index', newIndex);
-    previewWindow.attr('data-total-items', totalItems);
-    previewWindow.attr('data-current-box', currentBox.index('.box-skins-list, .box-topic'));
-}
-
-$(document).on("click", ".skin", function () {
-    showPreviewWindow(this);
-});
-
-$(document).on("click", ".component-interact", function () {
-    showPreviewWindow(this);
-});
-
-$(document).on("click", ".preview-close-button", function () {
-    closePreviewWindow();
-});
-
-$(document).on("click", "#preview-window", function (e) {
-    if ($(e.target).is("#preview-window")) {
-        closePreviewWindow();
-    }
-});
-
-$(document).on("click", ".preview-nav-button.left", function () {
-    switchSkin('left');
-});
-
-$(document).on("click", ".preview-nav-button.right", function () {
-    switchSkin('right');
-});
-
-
-    if (window.location.pathname.includes("/skins/")) {
-        $('.close-box-skins').on('click', function () {
-            var parentBoxSkins = $(this).closest(".box-skins");
-            parentBoxSkins.toggleClass("selected");
-            $(".box-skins").not(parentBoxSkins).removeClass("selected");
-            var zoomIcon = $(this).find("i");
-            zoomIcon.toggleClass("bi-zoom-in bi-zoom-out");
-            $(".close-box-skins i").not(zoomIcon).removeClass("bi-zoom-out").addClass("bi-zoom-in");
-        });
-
-        $(".box-skins-name").click(function () {
-            var parentBoxSkins = $(this).closest(".box-skins");
-            parentBoxSkins.toggleClass("selected");
-            $(".box-skins").not(parentBoxSkins).removeClass("selected");
-            var zoomIcon = $(this).siblings(".close-box-skins").find("i");
-            zoomIcon.toggleClass("bi-zoom-in bi-zoom-out");
-            $(".close-box-skins i").not(zoomIcon).removeClass("bi-zoom-out").addClass("bi-zoom-in");
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            var boxSkinsNames = document.querySelectorAll('.box-skins-name');
-            boxSkinsNames.forEach(function (boxSkinsName) {
-                boxSkinsName.classList.add('visible');
-            });
-        });
-
-        $(".navigation-weapon-type").click(function () {
-            var weaponType = $(this).attr("class").split(" ")[1];
-            $(".box-skins." + weaponType).toggleClass("disabled");
-            $(this).toggleClass("enabled");
-            updateNavigationReset();
-        });
-
-        $(".topic-centralizer").on("click", ".navigation-reset", function () {
-            $(".box-skins").removeClass("disabled");
-            $(".navigation-weapon-type").addClass("enabled");
-            $(".box-skins").removeClass("selected");
-            $(".topic-centralizer .navigation-reset").remove();
-            checkWeaponTypeAvailability();
-        });
-
-        checkWeaponTypeAvailability();
-
-    } else if (window.location.pathname.includes("/items/") || window.location.pathname.includes("/cases/")) {
-        $(".box-topic").load("/code-parts/micro-parts/box-topic-items.html", function () {
-            $(".navigation-weapon-type").click(function () {
-                var weaponType = $(this).attr("class").split(" ")[1];
-                $(".skin." + weaponType).toggleClass("disabled");
-                $(this).toggleClass("enabled");
-                enabledFiltersState[weaponType] = $(this).hasClass("enabled");
-                updateNavigationReset();
-            });
-            translateTypes(languageTag)
-            checkWeaponTypeAvailabilityForItems();
-
-            if (languageTag === 'ru') {
-              if (document.getElementById('Quality-Filter') && document.getElementById('Rarity-Toggle')) {
-                  document.getElementById('Quality-Filter').dataset.title = 'Сортировка по Редкости';
-                  document.getElementById('Rarity-Toggle').dataset.title = 'Показать Редкость';
-              }
-          }
-
-          function setLocalStorageState(key, value) {
-            localStorage.setItem(key, JSON.stringify(value));
-          }
-
-          function getLocalStorageState(key, defaultValue) {
-            var storedValue = localStorage.getItem(key);
-            return storedValue ? JSON.parse(storedValue) : defaultValue;
-          }
-
-          var rarityToggleState = getLocalStorageState(
-            "RarityToggleState",
-            true
-          );
-          if (rarityToggleState) {
-            $(".box-skins-list").addClass("showrarity");
-            $("#Rarity-Toggle").addClass("enabled");
-          } else {
-            $(".box-skins-list").removeClass("showrarity");
-            $("#Rarity-Toggle").removeClass("enabled");
-          }
-
-          $("#Rarity-Toggle").on("click", function () {
-            $(".box-skins-list").toggleClass("showrarity");
-            $(this).toggleClass("enabled");
-            var isEnabled = $(this).hasClass("enabled");
-            setLocalStorageState("RarityToggleState", isEnabled);
-          });
-
-          $("#Quality-Filter").click(function () {
-            var enabledFilters = $(".navigation-weapon-type.enabled").length;
-            if (enabledFilters === 0) {
-                return;
-            }
-
-                var skins = $(".box-skins-list .skin").get();
-                skins.sort(function (a, b) {
-                    var aClass = $(a).attr('class').split(' ')[1];
-                    var bClass = $(b).attr('class').split(' ')[1];
-                    var sortOrder = ['white', 'lblue', 'blue', 'purple', 'pink', 'red', 'gold'];
-                    if (sortState === 'none' || sortState === 'reversed') {
-                        return sortOrder.indexOf(aClass) - sortOrder.indexOf(bClass);
-                    } else {
-                        return sortOrder.indexOf(bClass) - sortOrder.indexOf(aClass);
-                    }
-                });
-
-                $(".box-skins-list").html(skins);
-
-                if (sortState === 'none' || sortState === 'reversed') {
-                    sortState = 'enabled';
-                    $(this).removeClass("enabled").addClass("reversed");
-                } else {
-                    sortState = 'reversed';
-                    $(this).removeClass("reversed").addClass("enabled");
+            skinsOnPage.each(function () {
+                const weapon = $(this).attr('weapon');
+                const skinId = $(this).attr('skin-id');
+                if (weapon && skinId) {
+                    weaponToSkinIds[weapon] = weaponToSkinIds[weapon] || [];
+                    weaponToSkinIds[weapon].push(skinId);
                 }
+            });
 
+            const filesToLoad = Object.keys(weaponToSkinIds).map(weapon => `/code-parts/skins-list/${weapon}.html`);
+
+            Promise.all(filesToLoad.map(file => fetch(file).then(response => response.text())))
+                .then(dataArray => {
+                    const tempContainers = {};
+                    Object.keys(weaponToSkinIds).forEach((weapon, index) => {
+                        const tempContainer = document.createElement('div');
+                        tempContainer.innerHTML = dataArray[index];
+                        tempContainers[weapon] = tempContainer;
+                    });
+
+                    Object.keys(weaponToSkinIds).forEach(weapon => {
+                        weaponToSkinIds[weapon].forEach(skinId => {
+                            const newSkin = $(tempContainers[weapon]).find(`.skin[skin-id="${skinId}"]`)[0];
+                            const existingSkin = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`)[0];
+                            if (newSkin && existingSkin) {
+                                $(newSkin).attr('weapon', weapon);
+                                $(existingSkin).replaceWith(newSkin);
+                                $(newSkin).find('img').on('load', function () {
+                                    setTimeout(() => $(this).addClass('imported'), 10);
+                                });
+                            }
+                        });
+                    });
+                    checkWeaponTypeAvailabilityForItems();
+                });
+        }
+
+        function updateNavigationReset() {
+            const enabledFilters = $(".navigation-weapon-type.enabled").length;
+            const sortEnabled = $("#Quality-Filter").hasClass("enabled");
+            const resetExists = $(".topic-centralizer .navigation-reset").length;
+
+            if (enabledFilters === 0 && !sortEnabled && resetExists === 0) {
+                $(".topic-centralizer").append('<div class="navigation-reset">Reset Navigation</div>');
+            } else if (enabledFilters > 0 || sortEnabled) {
+                $(".topic-centralizer .navigation-reset").remove();
+            }
+        }
+
+        function checkWeaponTypeAvailability() {
+            const weaponTypes = ['knives', 'gloves', 'pistols', 'rifles', 'srifles', 'smgs', 'shotguns', 'mguns'];
+            
+            weaponTypes.forEach(type => {
+                const allNotExist = $(`.box-skins.${type}`).toArray().every(element => $(element).hasClass("notexist"));
+                const navigationType = $(`.navigation-weapon-type.${type}`);
+                
+                if (allNotExist) {
+                    navigationType.removeClass("enabled").addClass("notexist");
+                    $(`.box-skins.${type}`).addClass("disabled");
+                } else {
+                    navigationType.addClass("enabled").removeClass("notexist");
+                    $(`.box-skins.${type}`).removeClass("disabled");
+                }
+            });
+        
+            const enabledTypes = $('.navigation-weapon-type.enabled');
+            if (enabledTypes.length === 1) {
+                enabledTypes.addClass('solo-category');
+            } else {
+                enabledTypes.removeClass('solo-category');
+            }
+        }
+        
+        
+
+        function checkWeaponTypeAvailabilityForItems() {
+            const skinTypes = ['white', 'lblue', 'blue', 'purple', 'pink', 'red'];
+        
+            skinTypes.forEach(type => {
+                const allNotExist = $(`.box-skins-list .skin.${type}, .box-topic .component-interact.${type}`)
+                    .toArray().every(element => $(element).hasClass("notexist"));
+                const navigationType = $(`.navigation-weapon-type.${type}`);
+        
+                if (allNotExist) {
+                    navigationType.removeClass("enabled").addClass("notexist");
+                    $(`.box-skins-list .skin.${type}, .box-topic .component-interact.${type}`).addClass("disabled");
+                } else {
+                    navigationType.addClass("enabled").removeClass("notexist");
+                    $(`.box-skins-list .skin.${type}, .box-topic .component-interact.${type}`).removeClass("disabled");
+                }
+            });
+        
+            const enabledTypes = $('.navigation-weapon-type.enabled');
+            if (enabledTypes.length === 1) {
+                enabledTypes.addClass('solo-category');
+            } else {
+                enabledTypes.removeClass('solo-category');
+            }
+        }
+        
+        
+
+        function generateSearchUrl(skinName, selectedSite) {
+            const siteUrls = {
+                'Tradeit': `https://tradeit.gg/csgo/store?search=${encodeURIComponent(skinName)}&aff=csgobroker`,
+                'BitSkins': `https://bitskins.com/market/cs2?search={"order":[{"field":"price","order":"ASC"}],"where":{"skin_name":"${encodeURIComponent(skinName)}"}}&ref_alias=csgobroker`,
+                'Steam': `https://steamcommunity.com/market/search?appid=730&q=${encodeURIComponent(skinName)}`,
+                'CSMoney': `https://cs.money/market/buy/?search=${encodeURIComponent(skinName)}&sort=price&order=asc&utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=market&utm_content=link`,
+                'Avan.Market': `https://avan.market/ru/market/cs?name=${encodeURIComponent(skinName)}&r=csgobroker`,
+                'SkinSwap': `https://skinswap.com/buy?r=csgobroker&search=${encodeURIComponent(skinName)}&appid=730`,
+                'default': `https://lis-skins.ru/market/csgo/?query=${encodeURIComponent(skinName)}&rf=83346597`
+            };
+            return siteUrls[selectedSite] || siteUrls['default'];
+        }
+
+        function showPreviewWindow(element) {
+            const previewWindow = $('#preview-window');
+            const previewContent = $('#preview-content');
+            let skinClasses = [];
+
+            if ($(element).hasClass('skin')) {
+                skinClasses = $(element).attr("class").split(" ");
+            } else if ($(element).hasClass('component-interact')) {
+                skinClasses = ['component-interact'];
+            }
+
+            const skinBox = $(element).closest('.box-skins-list, .box-topic');
+            const visibleItems = skinBox.find('.skin:not(.disabled), .component-interact:not(.disabled)');
+            const totalItems = visibleItems.length;
+            const itemName = element.querySelector('.skin-desc-name') ? element.querySelector('.skin-desc-name').textContent.trim() : '';
+
+            previewWindow.removeClass('hidden').attr({
+                'data-current-index': visibleItems.index(element),
+                'data-total-items': totalItems,
+                'data-current-box': skinBox.index('.box-skins-list, .box-topic')
+            });
+
+            skinClasses.forEach(skinClass => {
+                if (!['skin', 'component-interact'].includes(skinClass)) {
+                    previewWindow.addClass(skinClass);
+                }
+            });
+
+            previewContent.html(element.innerHTML);
+            previewWindow.find('.skin-alt-info').remove();
+
+            const weapon = element.getAttribute('weapon');
+            const skinAltInfoDiv = $('<a>', {
+                class: 'skin-alt-info',
+                href: languageTag === 'ru' ? `/ru/topic/items/${weapon}` : `/topic/items/${weapon}`,
+                'data-title': languageTag === 'ru' ? `Все Скины на ${weapon}` : `All Skins on ${weapon}`,
+                html: '<i class="bi bi-collection-fill"></i>'
+            });
+
+            $('#preview-showcase').append(skinAltInfoDiv);
+
+            $(".site-searcher-box").off("click").on("click", function () {
+                const selectedSite = this.id;
+                const searchName = $(element).hasClass('component-interact') ? $(element).data('title') : itemName;
+                const searchUrl = generateSearchUrl(searchName, selectedSite);
+                window.open(searchUrl, '_blank');
+            });
+        }
+
+        function closePreviewWindow() {
+            const previewWindow = $('#preview-window');
+            previewWindow.addClass('hidden');
+            previewWindow.find('.skin-alt-info').remove();
+        }
+
+        function switchSkin(direction) {
+            const previewWindow = $('#preview-window');
+            const currentIndex = parseInt(previewWindow.attr('data-current-index'), 10);
+            const currentBoxIndex = parseInt(previewWindow.attr('data-current-box'), 10);
+            const currentBox = $('.box-skins-list, .box-topic').eq(currentBoxIndex);
+            const visibleItems = currentBox.find('.skin:not(.disabled), .component-interact:not(.disabled)');
+            const totalItems = visibleItems.length;
+            let newIndex = (direction === 'left') ? currentIndex - 1 : currentIndex + 1;
+
+            if (newIndex < 0) newIndex = totalItems - 1;
+            else if (newIndex >= totalItems) newIndex = 0;
+
+            showPreviewWindow(visibleItems.eq(newIndex)[0]);
+            previewWindow.attr('data-current-index', newIndex);
+        }
+
+        $(document).on("click", ".skin, .component-interact", function () {
+            showPreviewWindow(this);
+        });
+
+        $(document).on("click", ".preview-close-button, #preview-window", function (e) {
+            if (e.target.id === "preview-window" || $(e.target).hasClass("preview-close-button")) {
+                closePreviewWindow();
+            }
+        });
+
+        $(document).on("click", ".preview-nav-button.left", function () {
+            switchSkin('left');
+        });
+
+        $(document).on("click", ".preview-nav-button.right", function () {
+            switchSkin('right');
+        });
+
+        if (currentPath.includes("/skins/")) {
+            $('.close-box-skins').on('click', function () {
+                const parentBoxSkins = $(this).closest(".box-skins");
+                parentBoxSkins.toggleClass("selected");
+                $(".box-skins").not(parentBoxSkins).removeClass("selected");
+                $(this).find("i").toggleClass("bi-zoom-in bi-zoom-out");
+                $(".close-box-skins i").not($(this).find("i")).removeClass("bi-zoom-out").addClass("bi-zoom-in");
+            });
+
+            $(".box-skins-name").click(function () {
+                const parentBoxSkins = $(this).closest(".box-skins");
+                parentBoxSkins.toggleClass("selected");
+                $(".box-skins").not(parentBoxSkins).removeClass("selected");
+                $(this).siblings(".close-box-skins").find("i").toggleClass("bi-zoom-in bi-zoom-out");
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelectorAll('.box-skins-name').forEach(boxSkinsName => boxSkinsName.classList.add('visible'));
+            });
+
+            $(".navigation-weapon-type").click(function () {
+                const weaponType = $(this).attr("class").split(" ")[1];
+                $(`.box-skins.${weaponType}`).toggleClass("disabled");
+                $(this).toggleClass("enabled");
                 updateNavigationReset();
             });
 
             $(".topic-centralizer").on("click", ".navigation-reset", function () {
-                $(".skin").removeClass("disabled");
+                $(".box-skins").removeClass("disabled selected");
                 $(".navigation-weapon-type").addClass("enabled");
                 $(".topic-centralizer .navigation-reset").remove();
-                enabledFiltersState = {};
+                checkWeaponTypeAvailability();
+            });
+
+            checkWeaponTypeAvailability();
+        } else if (currentPath.includes("/items/") || currentPath.includes("/cases/")) {
+            $(".box-topic").load("/code-parts/micro-parts/box-topic-items.html", function () {
+                $(".navigation-weapon-type").click(function () {
+                    const weaponType = $(this).attr("class").split(" ")[1];
+                    $(`.skin.${weaponType}`).toggleClass("disabled");
+                    $(this).toggleClass("enabled");
+                    enabledFiltersState[weaponType] = $(this).hasClass("enabled");
+                    updateNavigationReset();
+                });
+
                 checkWeaponTypeAvailabilityForItems();
-            });   
-        });
+                translateTypes(languageTag)
+
+                if (languageTag === 'ru') {
+                    const qualityFilter = document.getElementById('Quality-Filter');
+                    const rarityToggle = document.getElementById('Rarity-Toggle');
+                    if (qualityFilter && rarityToggle) {
+                        qualityFilter.dataset.title = 'Сортировка по Редкости';
+                        rarityToggle.dataset.title = 'Показать Редкость';
+                    }
+                }
+
+                const rarityToggleState = JSON.parse(localStorage.getItem("RarityToggleState")) || true;
+                $(".box-skins-list").toggleClass("showrarity", rarityToggleState);
+                $("#Rarity-Toggle").toggleClass("enabled", rarityToggleState);
+
+                $("#Rarity-Toggle").on("click", function () {
+                    $(this).toggleClass("enabled");
+                    $(".box-skins-list").toggleClass("showrarity");
+                    localStorage.setItem("RarityToggleState", $(this).hasClass("enabled"));
+                });
+
+                $("#Quality-Filter").click(function () {
+                    const enabledFilters = $(".navigation-weapon-type.enabled").length;
+                    if (enabledFilters === 0) return;
+
+                    const skins = $(".box-skins-list .skin").get();
+                    skins.sort((a, b) => {
+                        const aClass = $(a).attr('class').split(' ')[1];
+                        const bClass = $(b).attr('class').split(' ')[1];
+                        const sortOrder = ['white', 'lblue', 'blue', 'purple', 'pink', 'red', 'gold'];
+
+                        return (sortState === 'none' || sortState === 'reversed')
+                            ? sortOrder.indexOf(aClass) - sortOrder.indexOf(bClass)
+                            : sortOrder.indexOf(bClass) - sortOrder.indexOf(aClass);
+                    });
+
+                    $(".box-skins-list").html(skins);
+
+                    sortState = (sortState === 'none' || sortState === 'reversed') ? 'enabled' : 'reversed';
+                    $(this).toggleClass("enabled reversed");
+                    updateNavigationReset();
+                });
+
+                $(".topic-centralizer").on("click", ".navigation-reset", function () {
+                    $(".skin").removeClass("disabled");
+                    $(".navigation-weapon-type").addClass("enabled");
+                    $(".topic-centralizer .navigation-reset").remove();
+                    enabledFiltersState = {};
+                    checkWeaponTypeAvailabilityForItems();
+                });
+            });
+        }
     }
-  }
 });
+
 
 if (window.location.pathname.includes("/topic")) {
     var skinslist = document.querySelectorAll('.box-skins-list');
@@ -640,30 +496,42 @@ $(document).ready(function(){
     function initializeBoxTopic() {
         var boxtopic = $('.boxtopic');
         if (boxtopic.length) {
-            var urlnav = '/code-parts/micro-parts/nav-topic-box.html';
+            var urlnav = languageTag === 'ru' 
+                ? '/code-parts/micro-parts/nav-topic-box-ru.html' 
+                : '/code-parts/micro-parts/nav-topic-box.html';
+            
             $.get(urlnav, function (data) {
                 boxtopic.append(data);
-
+    
                 boxtopic.on('click.topicNav', '.topic-nav-box', function () {
-                    toggleActiveClass($(this));
+                    var topicNavBox = $(this);
+                    toggleActiveClass(topicNavBox);
+                    
+                    if (topicNavBox.hasClass('active')) {
+                        $('.pages').addClass('hardhidden');
+                    } else {
+                        $('.pages').removeClass('hardhidden');
+                    }
+    
                     toggleActiveClass($('.topic-nav-selector'));
-                    $('.pages').addClass('hardhidden');
                 });
-
+    
                 boxtopic.on('click.topicNav', '.topic-nav-close', function () {
                     toggleActiveClass($('.topic-nav-selector'));
                     $('.pages').removeClass('hardhidden');
+                    $('.topic-nav-box').removeClass('active');
                 });
-
+    
                 boxtopic.on('click.topicNav', '.weapon-container', function () {
                     var clickedContainer = $(this);
                     $('.weapon-container').not(clickedContainer).removeClass('active');
-                    $('.pages').removeClass('hardhidden');
                     toggleActiveClass(clickedContainer);
                 });
             });
         }
     }
+    
+    
 
     function deinitializeBoxTopic() {
         var boxtopic = $('.boxtopic');
@@ -676,7 +544,7 @@ $(document).ready(function(){
     }
 
     function checkWindowSize() {
-        if ($(window).width() < 1340) {
+        if ($(window).width() < 1365) {
             if (isTopicItemsLink() && !$('.boxtopic').data('initialized')) {
                 initializeBoxTopic();
                 $('.boxtopic').data('initialized', true);
