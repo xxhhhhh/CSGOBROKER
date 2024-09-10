@@ -167,7 +167,7 @@ $(document).ready(function () {
                 'Steam': `https://steamcommunity.com/market/search?appid=730&q=${encodeURIComponent(skinName)}`,
                 'CSMoney': `https://cs.money/market/buy/?search=${encodeURIComponent(skinName)}&sort=price&order=asc&utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=market&utm_content=link`,
                 'Avan.Market': `https://avan.market/ru/market/cs?name=${encodeURIComponent(skinName)}&r=csgobroker`,
-                'SkinSwap': `https://skinswap.com/buy?r=csgobroker&search=${encodeURIComponent(skinName)}&appid=730`,
+                'SkinSwap': `https://skinswap.com/buy?search=${encodeURIComponent(skinName)}&r=csgobroker&appid=730`,
                 'default': `https://lis-skins.ru/market/csgo/?query=${encodeURIComponent(skinName)}&rf=83346597`
             };
             return siteUrls[selectedSite] || siteUrls['default'];
@@ -609,7 +609,7 @@ $(document).ready(function(){
         });
   }
 
-  function setLocalStorageState(key, value) {
+function setLocalStorageState(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
 

@@ -4378,9 +4378,10 @@ nav img:active,
 
 .box.main .main-mode:after {
     transform: translateX(-50%);
-    left: 50%;
+    left: 40%;
     bottom: 40px;
     width: unset;
+    text-align: center;
 }
 
 .main-mode {
@@ -4953,16 +4954,19 @@ footer .centralizer {
 footer .centralizer .footer-content {
     display: flex;
     align-items: center;
+    position: relative;
     height: 60px;
 }
 .copyright {
-    width: 50%;
+    width: auto;
+    left: 0;
 }
 .contact {
-    width: 50%;
+    width: auto;
     text-align: end;
     display: flex;
     justify-content: flex-end;
+    right: 0;
 }
 .contact-box {
     height: 30px;
@@ -4976,6 +4980,16 @@ footer .centralizer .footer-content {
     text-decoration: none;
     transition: all .15s ease-in-out;
 }
+
+.contact-content {
+    text-align: end;
+    display: flex;
+    justify-content: flex-end;
+}
+.contact-box span {
+    padding: 0 10px;
+}
+
 .contact-box:hover {
     color: rgba(255, 255, 255, .5);
 }
@@ -4984,6 +4998,7 @@ footer .centralizer .footer-content {
     color: rgba(255, 255, 255, .2);
     font-size: 13px;
     font-weight: 400;
+    position: absolute;
 }
 .newest-boxes-title {
     width: auto;
@@ -5276,11 +5291,21 @@ footer .centralizer .footer-content {
     transition: all .15s ease-in-out;
 }
 
+.mods-box.skins-box .singlemod-select::before {
+    background: linear-gradient(180deg, rgb(11, 11, 11) 0%, rgb(13, 13, 13) 100%);
+}
+
 .category-selector .category-box.active .category-box-logo::before,
 .singlemod-box.active .singlemod-select::before {
     background: linear-gradient(180deg, rgb(11 11 11) 0%, rgba(43, 0, 16, .85) 100%);
     transition: all .15s ease-in-out;
 }
+
+.mods-box.skins-box .singlemod-box.active .singlemod-select::before {
+    background: linear-gradient(180deg, rgb(11 11 11) 0%, rgb(20, 20, 20) 100%);
+    transition: all .15s ease-in-out;
+}
+
 
 .singlemod-select i {
     color: var(--main-color);

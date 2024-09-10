@@ -720,7 +720,7 @@ $(document).ready(function(){
     
     document.addEventListener('DOMContentLoaded', function () {
       var replacementHTML = `
-          <div class="contact">
+          <div class="contact-content">
               <a href="/contact-us" class="contact-box" id="contact">
                   <span>Contact Us</span>
               </a>
