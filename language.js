@@ -549,12 +549,6 @@ function translateURLsIfNeeded() {
         "pt": "BanditCamp é um site de apostas de skins do Rust que oferece vários modos de jogo temáticos do Rust, como roda da fortuna, abertura de caixas e coinflip.",
         "hi": "BanditCamp एक Rust स्किन जुआ वेबसाइट है जो व्हील ऑफ़ फ़ॉर्च्यून, केस अनबॉक्सिंग और कॉइनफ्लिप जैसे कई Rust थीम के खेल मोड प्रदान करती है।"
       },
-      "GCSkins is a well-known mobile app and website that offers CSGO skins and items as rewards for completing online tasks. Available since 2016.": {
-        "es": "GCSkins es una popular aplicación móvil y sitio web que ofrece skins y objetos de CSGO como recompensa por completar tareas en línea. Disponible desde 2016.",
-        "tr": "GCSkins, CSGO skinleri ve eşyalarını ödül olarak sunan popüler bir mobil uygulama ve web sitesidir. 2016'dan beri hizmet vermektedir.",
-        "pt": "GCSkins é um aplicativo móvel e um site bem conhecidos que oferecem skins e itens de CSGO como recompensa por completar tarefas online.",
-        "hi": "GCSkins एक प्रसिद्ध मोबाइल ऐप और वेबसाइट है जो ऑनलाइन कार्यों को पूरा करने के बदले में CSGO स्किन और आइटम प्रदान करती है। 2016 से उपलब्ध है।"
-      },
       "GrindBux is a trusted platform where you can earn some money by completing surveys or play mobile and desktop games.": {
         "es": "GrindBux es una plataforma confiable donde puedes ganar dinero completando encuestas o jugando juegos para dispositivos móviles y de escritorio.",
         "tr": "GrindBux, anketleri tamamlayarak veya mobil ve masaüstü oyunları oynayarak para kazanabileceğiniz güvenilir bir platformdur.",

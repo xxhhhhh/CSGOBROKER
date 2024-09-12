@@ -1,5 +1,6 @@
 var ratings = {
     "csgo500": 4.875,
+    "500 Casino": 4.875,
     "CSGOFast":4,
     "Gamdom": 4.25,
     "CSGOEmpire":4,
@@ -37,7 +38,6 @@ var ratings = {
     "Aim.market":4,
     "SKINBOX":3.5,
     "Moon.Market":3.875,
-    "gcskins":4.125,
     "vvvgamers":3.375,
     "GameTame":2.875,
     "banditcamp":4.125,

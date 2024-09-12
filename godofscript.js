@@ -85,12 +85,7 @@ forcemodsboxes();
       }
     });
   }
-  
-  function addStarRatingToBoxesHolders() {
-    for (var boxId in ratings) {
-      addStarRating(boxId, ratings[boxId]);
-    }
-  }
+
 
   document.addEventListener('DOMContentLoaded', function() {
     const userAgent = navigator.userAgent;
@@ -591,56 +586,6 @@ if (btnfaq) {
   };
 }
 
-const pathSegments = window.location.pathname.split('/');
-const languagePrefix = pathSegments[1] || '';
-const identifierIndex = pathSegments.indexOf('mirrors');
-const isRussianVersion = languagePrefix === 'ru';
-
-if (identifierIndex > 0) {
-  const reviewsPath = `/${isRussianVersion ? languagePrefix + '/' : ''}reviews/${pathSegments[identifierIndex + 1]}`;
-
-  fetch(reviewsPath)
-    .then(response => response.text())
-    .then(htmlContent => {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(htmlContent, 'text/html');
-
-      const updateElementContent = (selector, content) => {
-        const targetElement = document.querySelector(selector);
-        if (targetElement) {
-          targetElement.innerHTML = content;
-        }
-      };
-
-      updateElementContent('div.sitealternates', doc.querySelector('div.sitealternates').innerHTML);
-      updateElementContent('.box.main', doc.querySelector('.box.main').innerHTML);
-
-      const updateLinks = (selector, path) => {
-        const targetLinks = document.querySelectorAll(selector);
-        targetLinks.forEach(link => {
-          link.href = path;
-        });
-      };
-
-      const reviewsPathForLinks = `/${isRussianVersion ? languagePrefix + '/' : ''}reviews/${pathSegments[identifierIndex + 1]}`;
-      updateLinks('.box.main .logobg a', reviewsPathForLinks);
-
-      if (isRussianVersion) {
-        const updateAlternateLinks = () => {
-          const alternateLinks = document.querySelectorAll('div.sitealternates .box .logobg a');
-          alternateLinks.forEach(link => {
-            const currentHref = link.getAttribute('href');
-            const newHref = `/${isRussianVersion ? 'ru' : ''}${currentHref}`;
-            link.href = newHref;
-          });
-        };
-
-        updateAlternateLinks();
-        addStarRatingToBoxesHolders();
-      }
-    });
-}
-
 if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')) {
   
   
@@ -662,7 +607,6 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
     "FlameCases",
     "BCGame",
     "DaddySkins",
-    "gcskins",
     "FarmSkins",
     "RustyPot",
     "RustChance",
@@ -1349,10 +1293,11 @@ document.addEventListener("DOMContentLoaded", function() {
   let currentPath = window.location.pathname;
 
   if (!currentPath.includes("/reviews/") && !currentPath.includes("/mirrors/")) {
-    return;
-}
+      return;
+  }
 
   const basePath = "/code-parts/site-infos";
+  const altSitesPath = `${basePath}/sites-alts/`;
   const filterSettingsPath = "/code-parts/filter-settings.json";
   const reviewSettingsPath = "/code-parts/review-settings.json"; 
   const translationsPath = "/code-parts/review-translations.json"; 
@@ -1524,6 +1469,132 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   }
 
+  function insertAlternatives(alternatives) {
+    let siteAlternates = document.querySelector('.sitealternates');
+    let siteAlternatesBoxes;
+
+    const mainSiteName = document.querySelector('.box.main .content p').textContent.trim();
+
+    let alternatesTitle = '';
+    switch (languageTag) {
+        case 'ru':
+            alternatesTitle = `Лучшие Аналоги ${mainSiteName}`;
+            break;
+        case 'en':
+            alternatesTitle = `Best ${mainSiteName} Alternatives`;
+            break;
+        case 'tr':
+            alternatesTitle = `En İyi ${mainSiteName} Alternatifleri`;
+            break;
+        case 'pl':
+            alternatesTitle = `Najlepsze alternatywy dla ${mainSiteName}`;
+            break;
+        default:
+            alternatesTitle = `Best ${mainSiteName} Alternatives`;
+    }
+
+    if (siteAlternates) {
+        siteAlternates.innerHTML = `<div class="alternates-title">${alternatesTitle}</div><div class="sitealternatesboxes"></div>`;
+    } else {
+        const screentable = document.querySelector('.screentable');
+        siteAlternates = document.createElement('div');
+        siteAlternates.className = 'sitealternates';
+        siteAlternates.innerHTML = `<div class="alternates-title">${alternatesTitle}</div><div class="sitealternatesboxes"></div>`;
+        screentable.insertAdjacentElement('afterend', siteAlternates);
+    }
+
+    siteAlternatesBoxes = siteAlternates.querySelector('.sitealternatesboxes');
+
+    let codeLabel = '';
+    switch (languageTag) {
+        case 'ru':
+            codeLabel = 'Код:';
+            break;
+        case 'tr':
+            codeLabel = 'Kod:';
+            break;
+        case 'pl':
+            codeLabel = 'Kod:';
+            break;
+        default:
+            codeLabel = 'Code:';
+    }
+
+    let visitSiteLabel = '';
+    switch (languageTag) {
+        case 'ru':
+            visitSiteLabel = 'Посетить Сайт';
+            break;
+        case 'tr':
+            visitSiteLabel = 'Siteyi Ziyaret Et';
+            break;
+        case 'pl':
+            visitSiteLabel = 'Odwiedź Stronę';
+            break;
+        default:
+            visitSiteLabel = 'Visit WebSite';
+    }
+
+    alternatives.forEach(alt => {
+        const altJsonPath = `${altSitesPath}${alt}.json`;
+        loadPageData(altJsonPath).then(altData => {
+            const altBox = document.createElement('div');
+            altBox.className = 'box';
+            altBox.id = altData.name;
+
+            let rewardText = altData.reward;
+            if (languageTag === 'ru' && altData.reward_ru) {
+                rewardText = altData.reward_ru;
+            } else if (languageTag === 'tr' && altData.reward_tr) {
+                rewardText = altData.reward_tr;
+            } else if (languageTag === 'pl' && altData.reward_pl) {
+                rewardText = altData.reward_pl;
+            }
+
+            let reviewLink = `/reviews/${alt}`;
+            if (languageTag === 'ru') {
+                reviewLink = `/ru${reviewLink}`;
+            } else if (languageTag === 'tr') {
+                reviewLink = `/tr${reviewLink}`;
+            }
+
+            let linkText = altData.code ? `${codeLabel} ${altData.code}` : visitSiteLabel;
+
+            altBox.innerHTML = `
+                <div class="logobg">
+                    <a href="${reviewLink}"><img src="${altData.logo}" loading="lazy" draggable="false" alt="${altData.name}"></a>
+                </div>
+                <div class="content">
+                    <a class="boxtitle" href="${reviewLink}">${altData.name}</a>
+                    <div class="site-reward">
+                        <p>${rewardText}</p>
+                    </div>
+                    <a aria-label="Visit WebSite" class="copy_style" target="_blank" href='${altData.link}'>${linkText}</a>
+                </div>`;
+
+            siteAlternatesBoxes.appendChild(altBox);
+        });
+    });
+
+    function addStarRatingAlternatives() {
+      for (var boxId in ratings) {
+        addStarRating(boxId, ratings[boxId]);
+      }
+    }
+
+    Promise.all(alternatives.map(alt => loadPageData(`${altSitesPath}${alt}.json`)))
+        .then(() => {
+            for (let i = alternatives.length; i < 4; i++) {
+                const emptyBox = document.createElement('div');
+                emptyBox.className = 'box';
+                siteAlternatesBoxes.appendChild(emptyBox);
+            }
+            addStarRatingAlternatives();
+        });
+}
+
+
+
   Promise.all([loadPageData(jsonFilePath), loadPageData(filterSettingsPath), loadPageData(reviewSettingsPath), loadPageData(translationsPath)])
       .then(([pageData, filterSettings, reviewSettings, translations]) => {
           if (pageData && reviewSettings) {
@@ -1533,6 +1604,10 @@ document.addEventListener("DOMContentLoaded", function() {
               sortAndInsertContent(pageData.secondMethodContent, methodOrder, '.methodlist#second');
               insertFeatures(pageData.featuresContent, filterSettings, reviewSettings.featureOrder);
               insertRatings(pageData.ratings);
+              
+              if (pageData["Sites Alternatives"] && pageData["Sites Alternatives"].length > 0) {
+                  insertAlternatives(pageData["Sites Alternatives"]);
+              }
           }
 
           if (translations) {
