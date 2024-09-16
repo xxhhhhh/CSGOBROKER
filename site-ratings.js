@@ -89,6 +89,7 @@ var ratings = {
     "RustReaper":3.625,
     "CobaltLab":3.75,
     "Splits":3.125,
+    "ChickenGG":3.5,
   };
   
   function addStarRating(boxId, rating) {

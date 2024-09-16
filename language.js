@@ -843,6 +843,12 @@ function translateURLsIfNeeded() {
         "pt": "Notável mercado online, vasta oferta de jogos a cartões-presente, taxas reduzidas, reputação excelente, interface intuitiva.",
         "hi": "महत्वपूर्ण ऑनलाइन बाजार, खेल से उपहार कार्ड तक विशाल विविधता, कम कीमतें, उत्कृष्ट प्रतिष्ठा, सूक्ष्म इंटरफेस, तक 98% छूट."
       },
+      "Chicken.GG is a new platform with CS2 case opening, bonuses, rakeback, a fairness system, and extensive plans for service development.": {
+        "es": "Chicken.GG es una nueva plataforma con apertura de cajas de CS2, bonificaciones, rakeback, un sistema de equidad y planes amplios para el desarrollo del servicio.",
+        "tr": "Chicken.GG, CS2 kasa açma, bonuslar, rakeback, adalet sistemi ve hizmet geliştirme için geniş kapsamlı planlarla yeni bir platformdur.",
+        "pt": "Chicken.GG é uma nova plataforma para abertura de caixas de CS2, com bônus, rakeback, um sistema de justiça e planos para o desenvolvimento do serviço.",
+        "hi": "Chicken.GG एक नया प्लेटफॉर्म है जिसमें CS2 केस ओपनिंग, बोनस, रेकबैक, निष्पक्षता प्रणाली और सेवा के विकास के लिए विस्तृत योजनाएँ हैं।"
+      },
       "Withdraw BTC, ETH, LTC or PayPal!": {
         "es": "¡Retira BTC, ETH, LTC o PayPal!",
         "tr": "BTC, ETH, LTC veya PayPal çekin!",

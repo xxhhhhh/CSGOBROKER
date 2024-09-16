@@ -2496,13 +2496,47 @@ h3 {
     display: flex;
     align-items: center;
     padding: 2px 10px;
+    padding-right: 14px;
     font-weight: 600;
     font-size: 14px;
     color: var(--white);
-    filter: drop-shadow(0 0 0 rgb(35 35 35));
     margin-left: 26px;
     position: relative;
     box-sizing: border-box;
+    z-index: 1;
+}
+
+.features .featuresbox .typesinside a i {
+    color: var(--main-color);
+    margin-right: 10px;
+    transition: all .15s ease-in-out;
+    z-index: 1;
+}
+
+.features .featuresbox .typesinside a:hover i {
+    color: var(--white);
+}
+
+.typesinside i::before {
+    height: unset;
+    width: unset;
+}
+
+.depositbonus i {
+    font-size: 14px;
+}
+
+.dailyrewards i {
+    font-size: 12px;
+}
+
+.rakeback i {
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.rain i {
+    font-size: 16px;
 }
 
 .features .featuresbox .typesinside a,
@@ -2548,7 +2582,6 @@ h3 {
     box-sizing: border-box;
     transform: skewX(-20deg);
     border-radius: 5px;
-    z-index: -1;
     top: 0;
 }
 
@@ -3160,7 +3193,7 @@ h3 {
     justify-content: center;
     counter-increment: item1;
     content: counter(item1, decimal);
-    background-color: rgb(21 21 21);
+    background: rgb(18 18 18);
     color: var(--main-color);
     position: absolute;
     width: 22px;
@@ -3273,23 +3306,43 @@ h3 {
     filter: brightness(1.25);
 }
 
-.instruction li strong {
+.instruction li strong,
+.instruction li a {
     font-weight: 500;
     position: relative;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: rgb(155, 155, 155);
+    transition: all .15s ease-in-out;
+    line-height: 28px;
+    margin: 0 8px;
+    z-index: 1;
 }
 
-.instruction li strong::before {
+.instruction li a {
+    color: var(--main-color);
+}
+
+.instruction li strong::after,
+.instruction li a::after {
     content: '';
-    position: absolute;
+    z-index: -1;
     width: 100%;
-    height: 2px;
-    background: linear-gradient(56deg, rgba(0, 0, 0, 0) 0%, rgba(168, 29, 52, .9) 15%, rgba(168, 29, 52, .9) 85%, rgba(0, 0, 0, 0) 100%);
-    bottom: -3px;
+    padding: 0 7px;
+    height: 25px;
+    left: 50%;
+    top: 50%;
+    border-radius: 5px;
+    transform: translateY(-50%) translateX(-50%);
+    position: absolute;
+    background: rgb(18 18 18);
 }
 
 .site-promo-copy {
-    width: 30px;
-    height: 28px;
+    width: 25px;
+    height: 25px;
     background: rgb(25 25 25);
     border: 2px #191919 solid;
     border-radius: 0 5px 5px 0;
@@ -3316,17 +3369,18 @@ h3 {
 }
 
 .instruction code {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     vertical-align: middle;
-    padding: 0 5px;
-    height: 28px;
+    padding: 0 7px;
+    height: 25px;
     border-radius: 5px 0 0 5px;
     font-weight: 600;
     font-size: 12px;
     margin-left: 3px;
     text-transform: uppercase;
     font-family: TTNormsPro;
-    background: rgb(21 21 21);
+    background: rgb(17 17 17);
     color: rgb(155, 155, 155);
     transition: all .15s ease-in-out;
 }
@@ -3487,6 +3541,7 @@ nav #logo:hover {
     background-color: var(--darkygray);
     cursor: pointer;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
     transition: transform .15s ease-in-out;
     display: flex;
     flex-shrink: 0;
@@ -4372,7 +4427,12 @@ nav #logo:hover {
     justify-content: center;
     background: linear-gradient(180deg, var(--darkygray) 0%, rgb(13 13 13) 100%);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
     transition: all .2s ease-in-out;
+}
+
+.box.main {
+    filter: unset;
 }
 
 .box_vk {
@@ -5012,7 +5072,7 @@ nav img:active,
 
 .box.main .main-mode:after {
     transform: translateX(-50%);
-    left: 40%;
+    left: -20%;
     bottom: 40px;
     width: unset;
     text-align: center;
@@ -5229,15 +5289,6 @@ nav img:active,
     position: relative;
 }
 
-.instruction li a {
-    color: transparent;
-    background: linear-gradient(to right, rgb(141, 21, 41), var(--main-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    font-weight: 600;
-    transition: all .15s ease-in-out;
-}
-
 .content strong {
     color: rgba(255, 255, 255, .8);
     font-weight: 500;
@@ -5245,11 +5296,7 @@ nav img:active,
 }
 
 .box .content strong {
-    color: transparent;
-    background: linear-gradient(to right, rgb(141, 21, 41), var(--main-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    font-weight: 600;
+    color: var(--main-color);
 }
 
 .content span#bonus,
@@ -6555,6 +6602,7 @@ a[data-title]:after {
 
 .slick-dotted.slick-slider {
     margin-bottom: 0 !important;
+    filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
 }
 
 .slick-dots li {
@@ -7223,7 +7271,6 @@ div#results {
 }
 
 .site-item:hover a {
-    transform: scale(1.03);
     color: var(--white);
 }
 
@@ -7901,6 +7948,7 @@ div#results {
     height: auto;
     margin-top: 18px;
     justify-content: center;
+    filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
 }
 
 .boxreview .main-infobox {
@@ -10121,36 +10169,4 @@ div#results {
     .sitealternates .box .content p:first-child {
         margin-top: 10px;
     }
-}
-
-.features .featuresbox .typesinside a i {
-    color: var(--main-color);
-    margin-right: 10px;
-    transition: all .15s ease-in-out;
-}
-
-.features .featuresbox .typesinside a:hover i {
-    color: var(--white);
-}
-
-.typesinside i::before {
-    height: unset;
-    width: unset;
-}
-
-.depositbonus i {
-    font-size: 14px;
-}
-
-.dailyrewards i {
-    font-size: 12px;
-}
-
-.rakeback i {
-    font-size: 16px;
-    margin-top: 2px;
-}
-
-.rain i {
-    font-size: 16px;
 }
