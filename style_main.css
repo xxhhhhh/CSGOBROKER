@@ -2014,7 +2014,8 @@ h3 {
 .box .content button.copy::after,
 .site-promo-copy::after,
 .sitedetails .sitepros span::after,
-.menu-toggle::before {
+.menu-toggle::before,
+.singlemod-icon::before  {
     display: inline-block;
     font-family: bootstrap-icons !important;
     font-style: normal;
@@ -2608,7 +2609,7 @@ h3 {
 }
 
 .gamemodes .featuresbox .typesinside a:hover::before {
-    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(102%) contrast(250%);
+    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(98%) contrast(250%);
 }
 
 .sitedetails .methodlist a::before {
@@ -2698,6 +2699,18 @@ h3 {
     background-image: url(/img/minipics/gamemodes/clear-icons/dice.webp);
 }
 
+.singlemod-icon.dailyrewards::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/daily-calendar.svg);
+}
+
+.singlemod-icon.depositbonuses::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/plus-hexagon.svg);
+
+}
+.singlemod-icon.giveaways::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/hand-present.svg);
+}
+
 .typesinside .towers::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/towers.webp);
 }
@@ -2726,26 +2739,36 @@ h3 {
 }
 
 .typesinside .trade-skins::before,
-.main-mode.trading .main-mode-icon::before {
+.main-mode.trading .main-mode-icon::before,
+.singlemod-icon.trade-skins::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/exchanger.webp);
 }
 
-.typesinside .buy-skins::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/buyingskins.webp);
+.typesinside .buy-skins::before,
+.singlemod-icon.buy-skins::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/cart-buy.svg);
+}
+
+.main-mode.instant-sell .main-mode-icon::before,
+.singlemod-icon.instant-sell::before,
+.typesinside .instant-sell::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/cart-fast.svg);
 }
 
 .typesinside .sell-skins::before,
-.main-mode.instant-sell .main-mode-icon::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/sellingskins.webp);
+.singlemod-icon.sell-skins::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/selling.svg);
 }
 
 .typesinside .marketplace::before,
-.main-mode.marketplace .main-mode-icon::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/cart.webp);
+.main-mode.marketplace .main-mode-icon::before,
+.singlemod-icon.marketplaces::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/marketplace.svg);
 }
 
-.gamemodes .typesinside .giveaways::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/giveaways_mode.webp);
+.gamemodes .typesinside .giveaways::before,
+.singlemod-icon.signupbonus::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/gift.svg);
 }
 
 .typesinside .steamlvlup::before,
@@ -5032,7 +5055,7 @@ nav img:active,
     display: inline-block;
     background-size: cover;
     transition: all .15s ease-in-out;
-    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(102%) contrast(250%);
+    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(98%) contrast(250%);
     margin-top: 4px;
     opacity: .3;
 }
@@ -5985,11 +6008,9 @@ footer .centralizer .footer-content {
     margin-bottom: -6px;
 }
 
+.singlemod-box:hover span,
 .singlemod-box.active span {
-    opacity: 1;
-}
-
-.singlemod-box:hover span {
+    color: var(--white);
     opacity: 1;
 }
 
@@ -6021,9 +6042,9 @@ footer .centralizer .footer-content {
     text-transform: uppercase;
     font-weight: 500;
     font-size: 14px;
-    opacity: .3;
+    color: rgba(255, 255, 255, .2);
     font-weight: 600;
-    transition: opacity .15s ease-in-out;
+    transition: all .15s ease-in-out;
     z-index: 1;
 }
 
@@ -6104,11 +6125,72 @@ footer .centralizer .footer-content {
 
 
 .singlemod-select i {
-    color: var(--main-color);
     transition: all .15s ease-in-out;
     filter: grayscale(1);
     font-weight: 600;
     font-size: 22px;
+}
+
+.singlemod-box:hover  .singlemod-icon {
+    background: #111111;
+}
+
+.singlemod-box:hover .singlemod-icon::before,
+.singlemod-box.active  .singlemod-icon::before  {
+    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(98%) contrast(250%);
+    opacity: 1;
+}
+
+.skins-box .singlemod-select {
+    justify-content: flex-start;
+}
+
+.mods-box.skins-box .singlemod-select::before {
+    content: unset;
+}
+
+.mods-box.skins-box .singlemod-box {
+    width: auto;
+}
+
+.singlemod-select span {
+    margin: 0 5px;
+}
+
+.singlemod-icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-left: 4px;
+    height: 35px;
+    width: 35px;
+    background: linear-gradient(180deg, rgb(11, 11, 11) 0%, var(--main-theme) 100%);
+    transition: all .15s ease-in-out;
+}
+
+.singlemod-box.active .singlemod-icon {
+    background: linear-gradient(180deg, rgb(11 11 11) 0%, rgba(43, 0, 16, .85) 100%);
+}
+
+.singlemod-icon::before {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    background-size: 55%;
+    filter: drop-shadow(0 0 3px black);
+    transition: filter .15s ease-in-out;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .2;
+}
+
+.singlemod-icon::before {
+    content: '';
 }
 
 .topic-nav-box {
@@ -8520,6 +8602,11 @@ div#results {
         margin: 3px !important;
         height: 40px;
         width: auto;
+    }
+
+    .singlemod-icon {
+        height: 32px;
+        width: 32px;
     }
 
     .singlemod-box {

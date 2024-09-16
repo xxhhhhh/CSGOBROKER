@@ -38,7 +38,6 @@
 .bonus_info::before,
 .settings-menu,
 #back-to-top-btn,
-.singlemod-box,
 .main-mode {
     background: var(--opacback) !important;
 }
@@ -92,8 +91,20 @@
     background: var(--opacback);
 }
 
-.category-selector .category-box .category-box-logo {
-    background: rgb(27 27 27);
+.category-selector .category-box .category-box-logo,
+.singlemod-icon {
+    background: rgb(130 130 130);
+}
+
+.singlemod-select span,
+.category-selector .category-box .category-box-content {
+    opacity: .5;
+    color: var(--white);
+}
+
+.singlemod-icon::before {
+    color: black;
+    opacity: 1 !important;
 }
 
 .sitepage .box .logobg {
@@ -170,7 +181,6 @@
 .introduce-craft p,
 .crafting-table-step,
 .infoblock h1,
-.singlemod-select span,
 .navigation-weapon-sort i,
 .topic-nav-box span,
 .topic-nav-menu span,
@@ -278,7 +288,8 @@ h3 {
 .box .logobg .best::before,
 .newest-boxes-title-box,
 .newest-boxes-title-box::after,
-.newest-boxes-title-box::before {
+.newest-boxes-title-box::before,
+.singlemod-box {
     background-color: #0a0a0a;
 }
 
@@ -559,10 +570,6 @@ h3 {
     filter: brightness(1.1);
 }
 
-.singlemod-select span {
-    opacity: .6;
-}
-
 .methodlist a[aria-label]:hover:after {
     color: #272727;
     filter: unset;
@@ -582,7 +589,7 @@ ul .submenu li .nonredir,
     background-color: rgb(225 225 225) !important;
 }
 
-
+.submenu .big-category a,
 .submenu .big-category a:hover,
 .submenu .big-category:hover a,
 .submenu .big-category .nonredir:hover,
@@ -596,13 +603,20 @@ ul .submenu li .nonredir,
     mask-image: unset;
 }
 
-.submenu .big-category:active a,
-.submenu .big-category:hover a {
+.submenu .big-category a {
     background-color: rgb(242 242 242) !important;
 }
 
+
+.submenu .big-category:active a,
+.submenu .big-category:hover a {
+    filter: brightness(.9);
+}
+
+
 .category-selector ul .category-box .category-box-logo:hover,
-.category-selector .category-box:active .category-box-logo {
+.category-selector .category:active .category-box-logo,
+.category-selector .category:hover .category-box-logo {
     color: #1a1a1a !important;
     background-color: rgb(242 242 242) !important;
 }
@@ -680,6 +694,16 @@ ul .submenu li .nonredir,
 .box.main:hover .content button.copy,
 .box .logobg .best {
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
+}
+
+/* .singlemod-icon {
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .1) 100%);
+    color: black !important;
+    box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .4);
+} */
+
+.singlemod-box:hover  .singlemod-icon {
+    background: rgb(242 242 242);
 }
 
 @media screen and (max-width: 1365px) {
