@@ -1,34 +1,42 @@
 {
     "SignUpBonus": {
         "name": "Sign Up Bonus",
-        "path": "/freebies/sign-up-bonuses"
+        "path": "/freebies/sign-up-bonuses",
+        "icon": "bi bi-gift"
     },
     "DepositBonus": {
         "name": "Deposit Bonus",
-        "path": "/freebies/deposit-bonuses"
+        "path": "/freebies/deposit-bonuses",
+        "icon": "bi-plus-circle"
     },
     "DailyRewards": {
         "name": "Daily Rewards",
-        "path": "/freebies/daily-rewards"
+        "path": "/freebies/daily-rewards",
+        "icon": "bi-calendar-event"
     },
     "Faucet": {
         "name": "Faucet System",
-        "path": "/freebies"
+        "path": "/freebies",
+        "icon": "bi bi-droplet"
     },
     "Rakeback": {
         "name": "Rakeback System",
-        "path": "/freebies"
+        "path": "/freebies",
+        "icon": "bi-arrow-clockwise"
     },
     "Giveaways": {
         "name": "Giveaways",
-        "path": "/freebies/giveaways"
+        "path": "/freebies/giveaways",
+        "icon": "bi-calendar-heart"
     },
     "Rain": {
         "name": "Rain System",
-        "path": "/freebies"
+        "path": "/freebies",
+        "icon": "bi-cloud-rain"
     },
     "BonustoSale": {
         "name": "Bonus to Sale",
-        "path": "/freebies"
+        "path": "/freebies",
+        "icon": "bi bi-bag-plus"
     }
 }

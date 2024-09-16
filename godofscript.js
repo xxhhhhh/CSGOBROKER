@@ -1407,35 +1407,45 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   }
 
-  function insertFeatures(features, settings, featureOrder) {
-      const featuresContainer = document.querySelector('.boxreview .features');
-      if (featuresContainer) {
-          if (features && features.length > 0) {
-              const featuresBox = document.createElement('div');
-              featuresBox.classList.add('featuresbox');
+function insertFeatures(features, settings, featureOrder) {
+    const featuresContainer = document.querySelector('.boxreview .features');
+    if (featuresContainer) {
+        if (features && features.length > 0) {
+            const featuresBox = document.createElement('div');
+            featuresBox.classList.add('featuresbox');
 
-              const typesInside = document.createElement('div');
-              typesInside.classList.add('typesinside');
+            const typesInside = document.createElement('div');
+            typesInside.classList.add('typesinside');
 
-              features.sort((a, b) => {
-                  const indexA = featureOrder.indexOf(a);
-                  const indexB = featureOrder.indexOf(b);
-                  return (indexA === -1 ? featureOrder.length : indexA) - (indexB === -1 ? featureOrder.length : indexB);
-              });
+            features.sort((a, b) => {
+                const indexA = featureOrder.indexOf(a);
+                const indexB = featureOrder.indexOf(b);
+                return (indexA === -1 ? featureOrder.length : indexA) - (indexB === -1 ? featureOrder.length : indexB);
+            });
 
-              features.forEach(feature => {
-                  if (settings[feature]) {
-                      const featureLink = `<a href="${settings[feature].path}">${settings[feature].name}</a>`;
-                      typesInside.insertAdjacentHTML('beforeend', featureLink);
-                  }
-              });
+            features.forEach(feature => {
+                if (settings[feature]) {
+                    const featureName = settings[feature].name || feature;
+                    const featurePath = settings[feature].path || '#';
+                    const featureClass = feature.toLowerCase().replace(/\s+/g, '-');
+                    const featureIcon = settings[feature].icon || ''; 
 
-              featuresBox.appendChild(typesInside);
-              featuresContainer.appendChild(featuresBox);
-              featuresContainer.classList.add('fadein');
-          }
-      }
-  }
+                    const featureLink = `
+                        <a href="${featurePath}" class="${featureClass}">
+                            ${featureIcon ? `<i class="${featureIcon}"></i>` : ''} ${featureName}
+                        </a>
+                    `;
+                    typesInside.insertAdjacentHTML('beforeend', featureLink);
+                }
+            });
+
+            featuresBox.appendChild(typesInside);
+            featuresContainer.appendChild(featuresBox);
+            featuresContainer.classList.add('fadein');
+        }
+    }
+}
+
 
   function sortAndInsertContent(content, order, selector) {
       if (content && content.length > 0) {
@@ -1452,22 +1462,36 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function translateTextElements(translations) {
-      var siteprosElements = document.querySelectorAll('.sitedetails .sitepros span');
-      for (var i = 0; i < siteprosElements.length; i++) {
-          var text = siteprosElements[i].textContent.trim();
-          if (translations.hasOwnProperty(text)) {
-              siteprosElements[i].innerHTML = translations[text];
-          }
-      }
+    var siteprosElements = document.querySelectorAll('.sitedetails .sitepros span');
+    for (var i = 0; i < siteprosElements.length; i++) {
+        var element = siteprosElements[i];
+        var originalText = element.textContent.trim();
+        
+        if (translations.hasOwnProperty(originalText)) {
+            element.childNodes.forEach(node => {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    node.textContent = node.textContent.replace(originalText, translations[originalText]);
+                }
+            });
+        }
+    }
 
-      var ratingwayElements = document.querySelectorAll('.ratingsection .ratingway span, .content button, .boxreview .plusminus .criteria .par p, .features .featuresbox .typesinside a, .instruction li');
-      for (var j = 0; j < ratingwayElements.length; j++) {
-          var text = ratingwayElements[j].textContent.trim();
-          if (translations.hasOwnProperty(text)) {
-              ratingwayElements[j].innerHTML = translations[text];
-          }
-      }
-  }
+    var ratingwayElements = document.querySelectorAll('.ratingsection .ratingway span, .content button, .boxreview .plusminus .criteria .par p, .features .featuresbox .typesinside a, .instruction li');
+    for (var j = 0; j < ratingwayElements.length; j++) {
+        var element = ratingwayElements[j];
+        var originalText = element.textContent.trim();
+
+        if (translations.hasOwnProperty(originalText)) {
+            element.childNodes.forEach(node => {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    node.textContent = node.textContent.replace(originalText, translations[originalText]);
+                }
+            });
+        }
+    }
+}
+
+
 
   function insertAlternatives(alternatives) {
     let siteAlternates = document.querySelector('.sitealternates');

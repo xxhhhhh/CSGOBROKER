@@ -197,6 +197,8 @@ function processBoxes(boxes) {
   });
 }
 
+
+
 function sendRequest(url, targetId) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
@@ -209,7 +211,11 @@ function sendRequest(url, targetId) {
               if (divToImport) {
                   divToImport.innerHTML = boxesHolder.innerHTML;
                   translateURLsIfNeeded(divToImport);
-                  addStarRatingToBoxesHolders();
+
+                  for (var boxId in ratings) {
+                    addStarRating(boxId, ratings[boxId]);
+                  }
+                  
                   forcemodsboxes(); 
                   const importedBoxes = divToImport.querySelectorAll('.box');
                   processBoxes(importedBoxes);
