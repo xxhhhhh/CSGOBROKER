@@ -320,7 +320,7 @@ nav #pagename:focus {
     bottom: 17px;
     padding: 4px 8px;
     transition: all .2s ease-in-out;
-    background-color: rgb(32 32 32);
+    background-color: rgb(26 26 26);
     border: 2px #222222 solid;
     cursor: pointer;
     margin-left: 10px;
@@ -341,7 +341,7 @@ nav #pagename:focus {
     margin: 18px 9px 0 9px;
     border-radius: 10px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
-    transition: transform .15s ease-in-out, opacity .25s !important;
+    transition: all .15s ease-in-out, opacity .25s !important;
     margin: 0 !important;
     display: flex;
     flex-direction: column;
@@ -782,7 +782,7 @@ nav #pagename:focus {
 }
 
 .navigation-weapon-sort i {
-    transition: transform .15s ease-in-out;
+    transition: all .15s ease-in-out;
 }
 
 #Rarity-Toggle {
@@ -1778,16 +1778,11 @@ nav #pagename:focus {
     font-size: 60px;
     font-weight: 500;
     color: rgb(8 8 8);
-    /* transition: color .15s ease-in-out; */
 }
 
-/* .box-skins-list .skins-not-exist:hover span {
-    color: var(--darkygray);
-} */
 .box-skins-name {
     width: 35px;
     height: 100%;
-    /* background-color: none; */
     display: flex;
     justify-content: center;
     align-content: center;
@@ -2015,7 +2010,7 @@ h3 {
 .site-promo-copy::after,
 .sitedetails .sitepros span::after,
 .menu-toggle::before,
-.singlemod-icon::before  {
+.singlemod-icon::before {
     display: inline-block;
     font-family: bootstrap-icons !important;
     font-style: normal;
@@ -2308,13 +2303,13 @@ h3 {
 .navigation-menu .navigation-title i {
     margin-left: 10px;
     transform: rotate(0deg);
-    transition: transform ease-in-out .6s;
+    transition: all ease-in-out .6s;
 }
 
 .navigation-menu.active .navigation-title i {
     margin-left: 10px;
     transform: rotate(180deg);
-    transition: transform ease-in-out .6s;
+    transition: all ease-in-out .6s;
 }
 
 .navigation-menu:hover.active {
@@ -2544,7 +2539,7 @@ h3 {
 .features .featuresbox .typesinside a::after,
 .features .featuresbox .typesinside a::before {
     transition: all .15s ease-in-out;
-    background-color: rgb(17 17 17);
+    background-color: rgb(15 15 15);
 }
 
 .boxreview#mirror .features .featuresbox .typesinside a:last-child {
@@ -2707,12 +2702,13 @@ h3 {
     background-image: url(/img/minipics/gamemodes/clear-icons/plus-hexagon.svg);
 
 }
+
 .singlemod-icon.giveaways::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/hand-present.svg);
 }
 
 .typesinside .towers::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/towers.webp);
+    background-image: url(/img/minipics/gamemodes/clear-icons/towers.svg);
 }
 
 .typesinside .mines::before {
@@ -3522,7 +3518,7 @@ nav img {
 
 nav #logo {
     transform: scale(1);
-    transition: transform .15s ease-in-out;
+    transition: all .15s ease-in-out;
 }
 
 nav #logo:hover {
@@ -3545,6 +3541,7 @@ nav #logo:hover {
     min-width: 66.5%;
     overflow: hidden;
     justify-content: flex-start;
+    transition: all .15s ease-in-out;
     position: absolute;
     left: 0;
     right: 0;
@@ -3565,7 +3562,7 @@ nav #logo:hover {
     cursor: pointer;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
-    transition: transform .15s ease-in-out;
+    transition: all .15s ease-in-out;
     display: flex;
     flex-shrink: 0;
     text-decoration: none;
@@ -4002,7 +3999,7 @@ nav #logo:hover {
     background: linear-gradient(to right, rgb(141, 21, 41), var(--main-color));
     -webkit-background-clip: text;
     background-clip: initial;
-    border-radius: 50%;
+    border-radius: 30%;
 }
 
 .navmark {
@@ -4083,7 +4080,7 @@ nav #logo:hover {
     margin-top: 9px;
     border-radius: 5px;
     text-decoration: none;
-    transition: transform .2s ease-in-out;
+    transition: all .2s ease-in-out;
     font-size: 26px;
     font-weight: 500;
     color: rgba(255, 255, 255, .3);
@@ -4235,7 +4232,7 @@ nav #logo:hover {
 
 .sitedetails .methodlist a:hover {
     transform: scale(1);
-    transition: transform ease-in-out .2s;
+    transition: all ease-in-out .2s;
     filter: grayscale(0) brightness(110%);
 }
 
@@ -4363,11 +4360,11 @@ nav #logo:hover {
 
 .topic-box .logobg:hover img {
     transform: scale(1.05) rotate(3deg) !important;
-    transition: transform .15s ease-in-out !important;
+    transition: all .15s ease-in-out !important;
 }
 
 .topic-box .logobg img {
-    transition: transform .15s ease-in-out;
+    transition: all .15s ease-in-out;
     height: 84%;
     width: auto;
 }
@@ -4399,7 +4396,7 @@ nav #logo:hover {
     transform: scale(1.05);
     opacity: 0;
     visibility: visible;
-    transition: transform .3s ease-in-out, opacity .4s;
+    transition: all .3s ease-in-out, opacity .4s;
 }
 
 .topic-boxes-holder .logobg.skincolors {
@@ -4471,12 +4468,16 @@ nav #logo:hover {
 
 .sitepage .box {
     height: 400px !important;
-    background: linear-gradient(180deg, rgba(0, 0, 0, .0) 0%, rgba(0, 0, 0, .35) 100%);
+    background: rgb(11 11 11);
+}
+
+.sitepage .box.main:hover {
+    background: rgb(11 11 11) !important;
 }
 
 .sitepage .box .logobg {
     height: 55%;
-    background: linear-gradient(360deg, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .35) 100%);
+    background: unset;
 }
 
 .sitepage .box .content {
@@ -4578,7 +4579,7 @@ nav #logo:hover {
     border-radius: 0 0 5px 0;
     position: absolute;
     left: 50%;
-    top: 0px;
+    top: -2px;
     transform: translateX(-50%);
     padding: 0 24px;
     user-select: none;
@@ -4704,13 +4705,13 @@ nav #logo:hover {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 110%;
+    width: 105%;
     height: 100%;
-    background: var(--darkygray);
-    border-radius: 5px;
-    filter: blur(1px);
+    border-radius: 10px;
+    background: linear-gradient(180deg, var(--darkygray) 0%, rgb(13 13 13) 100%);
     z-index: 1;
 }
+
 
 .sitealternates .site-reward p {
     margin-top: unset !important;
@@ -4953,7 +4954,7 @@ nav img:active,
     bottom: 0;
     border-radius: 0 10px 0 0;
     transform: translateY(50px);
-    transition: transform .15s .05s ease-in-out, background .15s .05s, color .15s .05s;
+    transition: all .15s .05s ease-in-out, background .15s .05s, color .15s .05s;
     position: absolute;
     width: auto;
     padding: 0 10px 0 3px;
@@ -5060,7 +5061,7 @@ nav img:active,
     opacity: .3;
 }
 
-.box:hover .logobg .main-mode {
+.boxes-holder .box:hover .logobg .main-mode {
     background: rgb(21 21 21);
 }
 
@@ -5205,7 +5206,7 @@ nav img:active,
 .boxes-holder .box:hover .content,
 .topic-box:hover .content {
     background: rgb(21 21 21);
-    transition: transform .15s .05s ease-in-out, color .15s 0s, border .15s 0s, background .15s 0s !important;
+    transition: all .15s .05s ease-in-out, color .15s 0s, border .15s 0s, background .15s 0s !important;
 }
 
 .category-selector .category:hover .category-box .category-box-logo::before,
@@ -5225,6 +5226,10 @@ nav img:active,
     visibility: hidden;
     opacity: 0;
     background: linear-gradient(180deg, transparent 0%, rgb(19, 19, 19) 100%);
+}
+
+.box.main .content::before {
+    content: unset;
 }
 
 .boxes-holder .box:hover .content::before {
@@ -5318,10 +5323,6 @@ nav img:active,
     background: unset;
 }
 
-.box .content strong {
-    color: var(--main-color);
-}
-
 .content span#bonus,
 .sitealternates .site-reward p {
     display: block;
@@ -5343,14 +5344,15 @@ nav img:active,
     width: 110%;
     height: 100%;
     background: var(--darkygray);
-    border-radius: 5px;
-    filter: blur(1px);
+    background: linear-gradient(180deg, var(--darkygray) 0%, rgb(13 13 13) 100%);
+    border-radius: 10px;
+    /* filter: blur(1px); */
     z-index: 1;
 }
 
 .bonus-space {
     height: 2px;
-    background: linear-gradient(56deg, rgba(0, 0, 0, 0) 0%, rgba(168, 29, 52, .8) 50%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(56deg, rgba(0, 0, 0, 0) 0%, rgba(168, 29, 52, .65) 50%, rgba(0, 0, 0, 0) 100%);
     width: 55%;
     right: 0;
 }
@@ -5406,7 +5408,7 @@ nav img:active,
 .sitealternates .box .content a.copy_style,
 .sitealternates .box .content a.copy_style::before,
 .sitealternates .box .content a.copy_style::after {
-    background-color: rgb(30 30 30);
+    background-color: rgb(26 26 26);
 }
 
 /* .rec-box .content a,
@@ -5454,7 +5456,7 @@ nav img:active,
 
 .sitepage .box:hover .content button.copy,
 .sitepage .box:hover .content button.copy::before {
-    /* background-color: rgb(32 32 32); */
+    /* background-color: rgb(26 26 26); */
     color: var(--white);
 }
 
@@ -5533,6 +5535,7 @@ a.copy_style {
 .sitepage .content button.copy,
 .sitepage .content button.copy::before {
     bottom: 18.6px;
+    background-color: rgb(18 18 18);
 }
 
 .sitepage.closed .features,
@@ -5570,7 +5573,7 @@ a.copy_style {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: -15px;
+    top: -12px;
     left: -10px;
     z-index: -1;
     padding: 10px;
@@ -5587,7 +5590,7 @@ a.copy_style {
     top: unset;
     padding: unset;
     bottom: 13px;
-    background-color: rgb(32 32 32);
+    background-color: rgb(26 26 26);
     filter: unset;
     border: unset;
     display: flex;
@@ -5604,7 +5607,7 @@ a.copy_style {
     position: absolute;
     width: 20px;
     height: 100%;
-    background-color: rgb(32 32 32);
+    background-color: rgb(26 26 26);
     transition: ease-in-out all .15s;
     box-sizing: border-box;
     transform: skewX(20deg);
@@ -6131,12 +6134,12 @@ footer .centralizer .footer-content {
     font-size: 22px;
 }
 
-.singlemod-box:hover  .singlemod-icon {
+.singlemod-box:hover .singlemod-icon {
     background: #111111;
 }
 
 .singlemod-box:hover .singlemod-icon::before,
-.singlemod-box.active  .singlemod-icon::before  {
+.singlemod-box.active .singlemod-icon::before {
     filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(98%) contrast(250%);
     opacity: 1;
 }
@@ -7473,7 +7476,7 @@ div#results {
     align-items: center;
     justify-content: flex-start;
     color: var(--main-color);
-    transition: transform .15s .05s ease-in-out, background .15s .0s;
+    transition: all .15s .05s ease-in-out, background .15s .0s;
     background: var(--darkgray);
     position: absolute;
     transform: translateY(50px);
@@ -7495,7 +7498,7 @@ div#results {
     right: -10px;
     transform: skewX(20deg);
     border-radius: 0 5px 0 0;
-    transition: transform .15s .05s ease-in-out, background .15s .0s;
+    transition: all .15s .05s ease-in-out, background .15s .0s;
     background: inherit;
     width: 20px;
     height: 100%;
@@ -7655,7 +7658,7 @@ div#results {
     height: auto;
     max-width: 70%;
     transform: rotate(8deg);
-    transition: transform .15s ease-in-out;
+    transition: all .15s ease-in-out;
     margin: auto 0;
 }
 
@@ -7967,7 +7970,7 @@ div#results {
     position: absolute;
     bottom: 37px;
     margin-right: 10px;
-    background-color: rgb(32 32 32);
+    background-color: rgb(26 26 26);
     transition: background .15s ease-in-out;
     pointer-events: none;
     color: var(--white);
@@ -8075,9 +8078,22 @@ div#results {
 
 .main-infobox-content-block {
     background-color: var(--main-theme);
+    position: relative;
     border-radius: 5px;
     margin: 8px;
     padding: 12px;
+    z-index: 2;
+}
+
+.main-infobox-content-block::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(160deg, rgb(12 12 12) 0%, var(--main-theme) 100%);
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .main-infobox-content-text ul li {
@@ -8282,6 +8298,10 @@ div#results {
     .nav-review li::before {
         left: -20px;
         top: 8px;
+    }
+
+    .bonus_info::before {
+        display: none;
     }
 
     .sitealternates .box .content a.copy_style {
@@ -8866,6 +8886,10 @@ div#results {
         display: none;
     }
 
+    .box .content strong {
+        color: var(--main-color);
+    }
+
     .infoblock h1,
     h2,
     h2 {
@@ -9018,7 +9042,20 @@ div#results {
     }
 
     .submenu li {
-        background: rgb(18, 18, 18);
+        background: var(--darkygray);
+    }
+
+    .big-category.active a,
+    .submenu .big-category a:hover,
+    .submenu li:hover a {
+        background-color: rgb(18 18 18);
+    }
+
+    .submenu li a,
+    .submenu li .nonredir {
+        box-shadow: 0 0 8px 0 rgba(0, 0, 0, .6);
+        background-color: rgb(23 23 23);
+        margin: 2px;
     }
 
     .category-selector .submenu,
@@ -9065,12 +9102,6 @@ div#results {
 
     .submenu .big-category.active .submenu2 a {
         color: var(--white);
-    }
-
-    .submenu li a,
-    .submenu li .nonredir {
-        box-shadow: 0 0 8px 0 rgba(0, 0, 0, .6);
-        margin: 2px;
     }
 
     .submenu .big-category.active a i {
@@ -9161,12 +9192,6 @@ div#results {
 
     .big-category.active .nonredir {
         color: var(--main-color);
-    }
-
-    .big-category.active a,
-    .submenu .big-category a:hover,
-    .submenu li:hover a {
-        background: var(--darkygray);
     }
 
     .nav-bar {
@@ -9621,17 +9646,27 @@ div#results {
         content: none;
     }
 
+    .features .featuresbox .typesinside a i {
+        width: 16px;
+    }
+
     .features .featuresbox .typesinside a {
         margin: 5px !important;
         border-radius: 10px !important;
+        padding-right: 10px;
+        flex-grow: 1;
+    }
+
+    .features .featuresbox .typesinside a:first-child {
+        padding-left: 10px;
+    }
+
+    .features .featuresbox .typesinside a:last-child {
+        padding-right: 10px;
     }
 
     .boxreview .smallreview {
         padding: 10px 0px 0px 0px;
-    }
-
-    .features .featuresbox .typesinside a:first-child {
-        margin-left: unset !important;
     }
 
     .site-searcher-logo img {

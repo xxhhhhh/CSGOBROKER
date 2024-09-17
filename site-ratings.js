@@ -24,7 +24,7 @@ var ratings = {
     "SKINFANS":3,
     "csgo-skins":3,
     "CSGORoll":4,
-    "Clash":4,
+    "ClashGG":4,
     "FlameCases":3.375,
     "DaddySkins":3.5,
     "Duelbits":4.125,
