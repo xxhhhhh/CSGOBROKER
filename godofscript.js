@@ -1799,7 +1799,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (submenu2 && window.innerWidth <= 1365 && !e.target.matches('.submenu2 a')) {
             e.preventDefault();
           }
-        
+
           bigCategoriesnav.forEach(otherCategory => {
             if (otherCategory !== category) {
               otherCategory.classList.remove('active');
@@ -1852,12 +1852,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
 
-      if (languageTag === 'en' || languageTag === 'pl') { 
+      if (languageTag === 'en' || languageTag === 'pl') {
         applyTranslations(document.body, languageTag, {});
         translateURLs2(document.body, languageTag);
       } else {
         const translationFile = `/code-parts/category-translations/${languageTag}.json`;
-    
+
         fetch(translationFile)
           .then(response => response.json())
           .then(translations => {
@@ -1867,6 +1867,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 });
+
 
 
 function loadAndApplyTranslations(languageTag) {
@@ -2115,6 +2116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (submenu) {
               submenu.classList.toggle("current");
+              centerSubmenu(submenu);
           }
       }
 
@@ -2181,7 +2183,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     });
-  
   
     boxContainer.addEventListener("scroll", () => {
       if (boxContainer.scrollLeft === 0) {
@@ -2294,6 +2295,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     buttonsContainer.scrollLeft = buttonScrollPosition;
-    
+
+    // Функция для центрирования подменю
+    function centerSubmenu(submenu) {
+      const screenWidth = window.innerWidth;
+      const submenuWidth = submenu.offsetWidth;
+      const scrollLeft = boxContainer.scrollLeft;
+
+      // Центрирование подменю с учетом текущей позиции прокрутки контейнера
+      const offsetX = (screenWidth - submenuWidth) / 2 + scrollLeft;
+      submenu.style.left = `${offsetX}px`;
+    }
   }
 });

@@ -3477,6 +3477,7 @@ label:hover {
     width: 100%;
     height: 0px;
     transition: all .6s ease-in-out, margin .25s .45s;
+    transform: translateZ(0);
     overflow: hidden;
     margin: 0;
     bottom: 0;
@@ -7021,7 +7022,7 @@ ul .big-category:hover .submenu2 {
     overflow: hidden;
     display: flex;
     position: absolute;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateZ(0);
     left: 50%;
     width: fit-content;
     border-radius: 5px;
@@ -8005,7 +8006,7 @@ div#results {
     position: absolute;
     width: 20px;
     height: 100%;
-    transition: ease-in-out all .15s;
+    transition: all .15s ease-in-out;
     box-sizing: border-box;
     transform: skewX(-20deg);
     z-index: -1;
@@ -8199,6 +8200,22 @@ div#results {
         --darkgray: var(--main-theme);
         --opacback: var(--darkygray);
     }
+
+    .sitepros,
+    #FAQ,
+    .pages,
+    .category-selector,
+    #notexist,
+    .box {
+        transform: translateZ(0);
+    }
+
+    /* .main-nav-content,
+    .category-selector .category,
+    nav,
+    .boxreview .plusminus .criteria .par li {
+        transform: unset;
+    } */
 
     .lang-menu ul li a i,
     .lang-menu ul li a {
@@ -9000,6 +9017,7 @@ div#results {
     .category-selector.current {
         height: 100%;
         background-color: rgba(12, 12, 12, .9);
+        transform: translateZ(0);
         z-index: 10;
         position: fixed;
         max-width: 100%;
@@ -9025,8 +9043,8 @@ div#results {
     .category-selector.current .category .submenu.current {
         display: block;
         visibility: visible;
-        max-height: 410px;
-        overflow: auto !important;
+        max-height: 400px;
+        overflow-y: scroll !important;
     }
 
     .category-selector.current .category .submenu.current::-webkit-scrollbar {
@@ -9035,10 +9053,16 @@ div#results {
 
     .category-selector .category .submenu {
         margin-left: unset;
+        position: absolute;
         left: 50%;
-        transform: translateX(-50%);
+        transform: unset;
         width: 90%;
     }
+
+    #notexist .category .submenu {
+        transform: translateX(-50%);
+    }
+    
 
     .submenu li {
         background: var(--darkygray);
@@ -9097,6 +9121,7 @@ div#results {
     .submenu .big-category.active a {
         color: var(--main-color);
         box-shadow: unset;
+        transition: unset !important;
     }
 
     .submenu .big-category.active .submenu2 a {
@@ -9533,6 +9558,10 @@ div#results {
 
     nav .pages a {
         margin-left: 18px;
+    }
+
+    #FAQ {
+        transition: all .6s ease-in-out;
     }
 
     #FAQ #PageSubt {

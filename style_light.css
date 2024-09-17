@@ -287,8 +287,7 @@ h3 {
 .box .logobg .best::before,
 .newest-boxes-title-box,
 .newest-boxes-title-box::after,
-.newest-boxes-title-box::before,
-.singlemod-box {
+.newest-boxes-title-box::before {
     background-color: #0a0a0a;
 }
 
@@ -371,7 +370,8 @@ h3 {
 .features .featuresbox .typesinside a,
 .features .featuresbox .typesinside a::after,
 .features .featuresbox .typesinside a::before,
-.instruction-mirrors li a {
+.instruction-mirrors li a,
+.singlemod-box {
     background-color: rgb(225 225 225);
 }
 
@@ -541,8 +541,10 @@ h3 {
 .features .featuresbox .typesinside a::after,
 .features .featuresbox .typesinside a,
 .nav-review,
-.box .logobg .best {
-    transition: none !important;
+.box .logobg .best,
+.boxes-holder .rating-case-single::before,
+.rating-case-single {
+    transition: unset !important;
 }
 
 .features .featuresbox .typesinside a::before,
