@@ -1757,10 +1757,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
   const navBarContainer = document.createElement('div');
 

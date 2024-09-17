@@ -8504,10 +8504,9 @@ div#results {
     .box .logobg .vpn,
     .box .logobg .vpn::before,
     .boxes-holder .box .content,
-    .box,
     .content a.boxtitle,
     .box .content {
-        transition: .15s transform ease-in-out !important;
+        transition: .15s all ease-in-out;
     }
 
     .newest-boxes .box .content {

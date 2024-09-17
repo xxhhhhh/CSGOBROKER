@@ -167,7 +167,7 @@ function modifyBox(box, mainMode) {
   if (!logobg) return;
 
   const mainModeDiv = document.createElement('div');
-  mainModeDiv.className = `main-mode ${mainMode} lang-${languageTag}`; // Добавление классов к main-mode
+  mainModeDiv.className = `main-mode ${mainMode} lang-${languageTag}`;
   mainModeDiv.innerHTML = `<div class="main-mode-box"><div class="main-mode-icon"></div></div>`;
 
   logobg.appendChild(mainModeDiv);
@@ -1385,25 +1385,27 @@ function translateURLsIfNeeded() {
         }
       }
     };
-  
-    var elements = document.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
-    
-    elements.forEach(element => {
-      var text = element.textContent.trim();
 
-      if (translations.texts[text] && translations.texts[text][languageTag]) {
-        element.innerHTML = translations.texts[text][languageTag];
-      } else {
-        for (const [pattern, langs] of Object.entries(translations.patterns)) {
-          let regex = new RegExp(pattern);
-          let match = regex.exec(text);
-          if (match) {
-            element.innerHTML = langs[languageTag].replace('xote', match[1]);
-            break;
+    if (languageTag !== 'en') {
+      var elements = document.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
+    
+      elements.forEach(element => {
+        var text = element.textContent.trim();
+  
+        if (translations.texts[text] && translations.texts[text][languageTag]) {
+          element.innerHTML = translations.texts[text][languageTag];
+        } else {
+          for (const [pattern, langs] of Object.entries(translations.patterns)) {
+            let regex = new RegExp(pattern);
+            let match = regex.exec(text);
+            if (match) {
+              element.innerHTML = langs[languageTag].replace('xote', match[1]);
+              break;
+            }
           }
         }
-      }
-    });
+      });
+    }
   }
 }
 
