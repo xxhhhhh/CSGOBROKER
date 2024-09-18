@@ -2296,13 +2296,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     buttonsContainer.scrollLeft = buttonScrollPosition;
 
-    // Функция для центрирования подменю
     function centerSubmenu(submenu) {
       const screenWidth = window.innerWidth;
       const submenuWidth = submenu.offsetWidth;
       const scrollLeft = boxContainer.scrollLeft;
 
-      // Центрирование подменю с учетом текущей позиции прокрутки контейнера
       const offsetX = (screenWidth - submenuWidth) / 2 + scrollLeft;
       submenu.style.left = `${offsetX}px`;
     }
