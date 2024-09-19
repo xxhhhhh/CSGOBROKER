@@ -8414,6 +8414,15 @@ div#results {
         opacity: .25;
     }
 
+    .preview-nav-button {
+        top: 40%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     #preview-showcase .skin-alt-info {
         bottom: 175px;
     }
