@@ -247,9 +247,13 @@ $(document).ready(function () {
         $(document).on("click", ".skin, .component-interact", function () {
             showPreviewWindow(this);
         });
+        
+        $(document).on("click", ".preview-close-button", function () {
+            closePreviewWindow();
+        });
 
-        $(document).on("click", ".preview-close-button, #preview-window", function (e) {
-            if (e.target.id === "preview-window" || $(e.target).hasClass("preview-close-button")) {
+        $(document).on("click", "#preview-window", function (e) {
+            if ($(e.target).closest("#preview-showcase").length === 0) {
                 closePreviewWindow();
             }
         });

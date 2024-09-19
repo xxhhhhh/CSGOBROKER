@@ -9684,9 +9684,10 @@ div#results {
     }
 
     .site-searcher-logo img {
-        height: auto;
-        width: 80%;
+        width: auto;
+        max-width: 60%;
         max-height: 30px;
+        height: auto;
     }
 
     #preview-content {
