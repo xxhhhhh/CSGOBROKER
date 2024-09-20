@@ -4452,6 +4452,10 @@ nav #logo:hover {
     transition: all .2s ease-in-out;
 }
 
+.box.hidden {
+    display: none;
+}
+
 .box.main {
     filter: unset;
 }

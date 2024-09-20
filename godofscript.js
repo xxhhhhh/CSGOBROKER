@@ -684,7 +684,7 @@ if (!isExcludedPage) {
   
   const titleSpan = document.createElement('span');
   const titles = {
-    ru: 'Новые Сайты',
+    ru: 'Недавно Добавленные',
     tr: 'Yeni Eklenenler',
     pt: 'Recentemente Adicionados',
     es: 'Recientemente Añadidos',
@@ -706,15 +706,7 @@ if (!isExcludedPage) {
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = data;
 
-      const existingBoxIds = new Set(
-        Array.from(document.querySelectorAll('.boxes-holder .box'))
-          .map(box => box.id)
-      );
-
-      const boxes = Array.from(tempDiv.querySelectorAll('.box'))
-        .filter(box => !existingBoxIds.has(box.id))
-        .slice(0, 4);
-
+      const boxes = Array.from(tempDiv.querySelectorAll('.box'));
       boxes.forEach(box => newestBoxesDiv.appendChild(box.cloneNode(true)));
 
       const sliderContainer = document.querySelector('.slider-container');
