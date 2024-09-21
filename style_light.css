@@ -713,6 +713,10 @@ ul .submenu li .nonredir,
     transition: opacity .15s ease-in-out !important;
 }
 
+.content .review-button {
+    filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
+}
+
 @media screen and (max-width: 1365px) {
 
     .boxes-holder .content a.boxtitle,
