@@ -79,7 +79,7 @@ forcemodsboxes();
   
         const updatedHref = `/${languageTag}${path}${queryString}`;
         
-        if (!link.classList.contains('copy_style')) {
+        if (!link.classList.contains('copy_style'), !link.classList.contains('visit')) {
           link.setAttribute('href', domain + updatedHref);
         }
       }
