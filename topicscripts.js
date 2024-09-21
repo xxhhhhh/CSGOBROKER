@@ -15,7 +15,7 @@ $(document).ready(function () {
                 <div class="preview-nav-button right"><i class="bi bi-chevron-right"></i></div>
                 <div id="preview-content"></div>
                 <div class="site-searcher-buttons">
-                    ${['Lis-Skins', 'Avan.Market', 'Tradeit', 'BitSkins', 'CSMoney', 'SkinSwap', 'Steam'].map(site => `
+                    ${['Lis-Skins', 'Avan.Market', 'Tradeit', 'CSMoney', 'BitSkins',  'SkinSwap', 'Steam'].map(site => `
                     <div class="site-searcher-box" id="${site}" data-title="${languageTag === 'ru' ? 'Искать в' : 'Search on'} ${site}">
                         <div class="site-searcher-logo">
                             <img src="/img/${site.toLowerCase().replace('.', '-')}-logo.webp" draggable="false" alt="${site} logo">

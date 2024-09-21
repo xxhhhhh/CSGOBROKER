@@ -709,6 +709,10 @@ ul .submenu li .nonredir,
     background: rgb(242 242 242);
 }
 
+.newest-boxes .box .content {
+    transition: opacity .15s ease-in-out !important;
+}
+
 @media screen and (max-width: 1365px) {
 
     .boxes-holder .content a.boxtitle,
