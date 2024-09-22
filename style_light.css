@@ -287,7 +287,8 @@ h3 {
 .box .logobg .best::before,
 .newest-boxes-title-box,
 .newest-boxes-title-box::after,
-.newest-boxes-title-box::before {
+.newest-boxes-title-box::before,
+.singlemod-box {
     background-color: #0a0a0a;
 }
 
@@ -370,8 +371,7 @@ h3 {
 .features .featuresbox .typesinside a,
 .features .featuresbox .typesinside a::after,
 .features .featuresbox .typesinside a::before,
-.instruction-mirrors li a,
-.singlemod-box {
+.instruction-mirrors li a {
     background-color: rgb(225 225 225);
 }
 
@@ -717,6 +717,10 @@ ul .submenu li .nonredir,
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
 }
 
+.sitealternatesboxes .content-buttons {
+    margin-top: unset;
+}
+
 @media screen and (max-width: 1365px) {
 
     .boxes-holder .content a.boxtitle,
@@ -738,6 +742,7 @@ ul .submenu li .nonredir,
         padding: 0px 2px;
         background: unset;
         color: #272727;
+        filter: unset;
     }
 
     .rating-case-single {

@@ -40,7 +40,7 @@ var ratings = {
     "Moon.Market":3.875,
     "vvvgamers":3.375,
     "GameTame":2.875,
-    "banditcamp":4.125,
+    "bandit.camp":4.125,
     "GrindBux":3.5,
     "Earnweb":3.25,
     "RustClash":4,

@@ -25,6 +25,7 @@ function copyToClipboard(selector) {
 forcemodsboxes(); 
 
   const sitesList = document.querySelector('.boxes-holder');
+  const reviewBox = document.querySelector('.box.main .content');
   const modsboxes = document.querySelector('.mods-main-box');
   const supportedLanguages = ["en", "es", "hi", "pt", "ru", "tr"];
 
@@ -1438,7 +1439,6 @@ function insertFeatures(features, settings, featureOrder) {
     }
 }
 
-
   function sortAndInsertContent(content, order, selector) {
       if (content && content.length > 0) {
           content.sort((a, b) => {
@@ -1521,36 +1521,6 @@ function insertFeatures(features, settings, featureOrder) {
 
     siteAlternatesBoxes = siteAlternates.querySelector('.sitealternatesboxes');
 
-    let codeLabel = '';
-    switch (languageTag) {
-        case 'ru':
-            codeLabel = 'Код:';
-            break;
-        case 'tr':
-            codeLabel = 'Kod:';
-            break;
-        case 'pl':
-            codeLabel = 'Kod:';
-            break;
-        default:
-            codeLabel = 'Code:';
-    }
-
-    let visitSiteLabel = '';
-    switch (languageTag) {
-        case 'ru':
-            visitSiteLabel = 'Посетить Сайт';
-            break;
-        case 'tr':
-            visitSiteLabel = 'Siteyi Ziyaret Et';
-            break;
-        case 'pl':
-            visitSiteLabel = 'Odwiedź Stronę';
-            break;
-        default:
-            visitSiteLabel = 'Visit WebSite';
-    }
-
     alternatives.forEach(alt => {
         const altJsonPath = `${altSitesPath}${alt}.json`;
         loadPageData(altJsonPath).then(altData => {
@@ -1568,13 +1538,6 @@ function insertFeatures(features, settings, featureOrder) {
             }
 
             let reviewLink = `/reviews/${alt}`;
-            if (languageTag === 'ru') {
-                reviewLink = `/ru${reviewLink}`;
-            } else if (languageTag === 'tr') {
-                reviewLink = `/tr${reviewLink}`;
-            }
-
-            let linkText = altData.code ? `${codeLabel} ${altData.code}` : visitSiteLabel;
 
             altBox.innerHTML = `
                 <div class="logobg">
@@ -1585,7 +1548,10 @@ function insertFeatures(features, settings, featureOrder) {
                     <div class="site-reward">
                         <p>${rewardText}</p>
                     </div>
-                    <a aria-label="Visit WebSite" class="copy_style" target="_blank" href='${altData.link}'>${linkText}</a>
+                <div class="content-buttons">
+                    <a href="${reviewLink}" aria-label="Read Review" class="review-button"></a>
+                    <a href='${altData.link}' aria-label="Visit WebSite" target="_blank" class="review-button visit"></a>
+                </div>
                 </div>`;
 
             siteAlternatesBoxes.appendChild(altBox);
@@ -1606,10 +1572,9 @@ function insertFeatures(features, settings, featureOrder) {
                 siteAlternatesBoxes.appendChild(emptyBox);
             }
             addStarRatingAlternatives();
+            updateURLs(siteAlternatesBoxes);
         });
 }
-
-
 
   Promise.all([loadPageData(jsonFilePath), loadPageData(filterSettingsPath), loadPageData(reviewSettingsPath), loadPageData(translationsPath)])
       .then(([pageData, filterSettings, reviewSettings, translations]) => {
@@ -1695,6 +1660,60 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 800);
   }
 
+function loadReviewSettings(callback) {
+  fetch('/code-parts/review-settings.json')
+      .then(response => response.json())
+      .then(data => callback(data))
+      .catch(error => console.error("Error loading review settings: ", error));
+}
+
+window.updateReviewButtons = updateReviewButtons;
+
+function updateReviewButtons(box, data, pageKey, reviewSettings) {
+  const reviewButton = box.querySelector('.content-buttons a.review-button');
+  const visitButton = box.querySelector('.content-buttons a.review-button.visit');
+
+  const translations = {
+      "similarSites": {
+          "en": `Similar Sites of ${data.name}`,
+          "ru": `Альтернативы ${data.name}`
+      },
+      "readReview": {
+          "en": `Read Review ${data.name}`,
+          "ru": `Смотреть Обзор ${data.name}`
+      },
+      "visitSite": {
+          "en": `Visit ${data.name}`,
+          "ru": `Перейти на ${data.name}`
+      }
+  };
+
+  function getTranslation(key) {
+      return translations[key][languageTag] || translations[key]['en'];
+  }
+
+  if (reviewButton) {
+      if (window.location.pathname.includes("/reviews/") || window.location.pathname.includes("/mirrors/")) {
+          if (data["Main Mode"] && reviewSettings) {
+              const mainModePath = reviewSettings.mainModeLinks[data["Main Mode"]];
+              if (mainModePath) {
+                  reviewButton.href = mainModePath;
+                  reviewButton.setAttribute('aria-label', getTranslation('similarSites'));
+              }
+          }
+      } else {
+          reviewButton.href = `/reviews/${pageKey}`;
+          reviewButton.setAttribute('aria-label', getTranslation('readReview'));
+      }
+  }
+
+  if (visitButton && data.link) {
+      visitButton.href = data.link;
+      visitButton.setAttribute('aria-label', getTranslation('visitSite'));
+  }
+}
+
+
   let currentPath = window.location.pathname;
   if (currentPath.includes("/reviews/") || currentPath.includes("/mirrors/")) {
       if (currentPath.endsWith(".html")) {
@@ -1704,26 +1723,31 @@ document.addEventListener("DOMContentLoaded", function() {
       const pageKey = currentPath.split("/").pop();
       const mainJsonFilePath = `${basePath}/${pageKey}.json`;
 
-      loadJsonData(mainJsonFilePath, data => {
-          if (data.code) {
-              const siteCodeElement = document.getElementById('site-code');
-              if (siteCodeElement) {
-                  siteCodeElement.textContent = data.code;
-              }
-
-              const copyButtons = document.querySelectorAll('.copy');
-              copyButtons.forEach(button => {
-                  button.addEventListener('click', () => copyToClipboard(data.code, button));
-              });
-          }
-
-          const mainBoxes = document.querySelectorAll('.box:not(.sitealternates .box)');
-          mainBoxes.forEach(box => {
-              if (data["Main Mode"]) {
-                  modifyBox(box, data["Main Mode"]);
-              }
-          });
-      });
+      loadReviewSettings(reviewSettings => {
+        loadJsonData(mainJsonFilePath, data => {
+            if (data.code) {
+                const siteCodeElement = document.getElementById('site-code');
+                if (siteCodeElement) {
+                    siteCodeElement.textContent = data.code;
+                }
+    
+                const copyButtons = document.querySelectorAll('.copy');
+                copyButtons.forEach(button => {
+                    button.addEventListener('click', () => copyToClipboard(data.code, button));
+                });
+            }
+    
+            const mainBoxes = document.querySelectorAll('.box:not(.sitealternates .box)');
+            mainBoxes.forEach(box => {
+                if (data["Main Mode"]) {
+                    modifyBox(box, data["Main Mode"]);
+                }
+                updateReviewButtons(box, data, pageKey, reviewSettings);
+                updateURLs(reviewBox);   
+            });
+        });
+    });
+    
   } else {
       const otherBoxes = document.querySelectorAll('.box');
       otherBoxes.forEach(box => {
@@ -1734,17 +1758,19 @@ document.addEventListener("DOMContentLoaded", function() {
               const jsonFilePath = `${basePath}/${pageKey}.json`;
 
               loadJsonData(jsonFilePath, data => {
-                  if (data.code) {
-                      const copyButtons = box.querySelectorAll('.copy');
-                      copyButtons.forEach(button => {
-                          button.addEventListener('click', () => copyToClipboard(data.code, button));
-                      });
-                  }
-                  if (data["Main Mode"]) {
-                      modifyBox(box, data["Main Mode"]);
-                  }
-              });
-          }
+                if (data.code) {
+                    const copyButtons = box.querySelectorAll('.copy');
+                    copyButtons.forEach(button => {
+                        button.addEventListener('click', () => copyToClipboard(data.code, button));
+                    });
+                }
+                if (data["Main Mode"]) {
+                    modifyBox(box, data["Main Mode"]);
+                }
+                updateReviewButtons(box, data, pageKey);  
+                updateURLs(sitesList);   
+            });         
+          }  
       });
   }
 });

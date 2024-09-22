@@ -125,6 +125,7 @@ var requests = [
   { url: '/rust/sell-skins.html', targetId: 'sell-skins-rust' },
   { url: '/rust/trade-skins.html', targetId: 'trade-skins-rust' },
   { url: '/rust/upgrader.html', targetId: 'upgrader-rust' },
+  { url: '/rust/casino.html', targetId: 'casino-rust' },
   { url: '/dota/buy-items.html', targetId: 'buy-skins-dota' },
   { url: '/dota/caseopening.html', targetId: 'caseopening-dota' },
   { url: '/dota/marketplaces.html', targetId: 'marketplaces-dota' },
@@ -192,6 +193,7 @@ function processBoxes(boxes) {
                       copyButton.addEventListener('click', () => copyToClipboard(data.code, copyButton));
                   }
               }
+              updateReviewButtons(box, data, pageKey);  
           });
       }
   });
@@ -1408,6 +1410,4 @@ function translateURLsIfNeeded() {
     }
   }
 }
-
-translateURLsIfNeeded();
 });

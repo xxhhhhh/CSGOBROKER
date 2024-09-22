@@ -3368,8 +3368,10 @@ h3 {
     position: relative;
     margin-left: -3px;
     transition: all .15s ease-in-out;
-    display: inline-block;
+    display: inline-flex;
     vertical-align: middle;
+    align-items: center;
+    justify-content: center;
 }
 
 .site-promo-copy .copied-title {
@@ -3697,6 +3699,7 @@ nav #logo:hover {
     color: rgba(255, 255, 255, .2);
     transition: color .15s ease-in-out;
     padding-left: 10px;
+    margin-right: 20px;
 }
 
 .boxes-holder,
@@ -4926,6 +4929,7 @@ nav img:active,
     padding: 0 8px 0 5px;
     height: 30px;
     background-color: var(--main-color);
+    filter: drop-shadow(1px 1px 4px rgb(10 10 10)) blur(0);
     border-radius: 0px 5px 5px 5px;
     display: flex;
     align-items: center;
@@ -5383,7 +5387,7 @@ nav img:active,
     font-family: TTNormsPro;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 11px;
     padding: 10px 2px;
     transition: all .15s ease-in-out;
     color: white;
@@ -5395,15 +5399,11 @@ nav img:active,
 .box .content a.copy_style,
 .box .content button.copy,
 .rec-box .content a.copy_style {
-    filter: drop-shadow(0 1px 4px rgb(10 10 10)) blur(0);
+    filter: drop-shadow(0 1px 2px rgb(10 10 10)) blur(0);
 }
 
-.box:hover .content button.copy {
+.boxes-holder .box:hover .content button.copy {
     filter: drop-shadow(0 1px 4px rgb(15 15 15)) blur(0);
-}
-
-.box.main:hover .content button.copy {
-    filter: drop-shadow(0 1px 4px rgb(10 10 10)) blur(0);
 }
 
 .content button,
@@ -5412,7 +5412,8 @@ nav img:active,
 .content a.copy_style::before,
 .sitealternates .box .content a.copy_style,
 .sitealternates .box .content a.copy_style::before,
-.sitealternates .box .content a.copy_style::after {
+.sitealternates .box .content a.copy_style::after,
+.content button.copy::before {
     background-color: rgb(26 26 26);
 }
 
@@ -5499,7 +5500,7 @@ nav img:active,
 
 .box.main .content button:hover,
 .box.main .content button:hover::before {
-    background-color: #62101d !important;
+    background-color: rgb(22 22 22) !important;
     animation: none !important;
     filter: unset !important;
 }
@@ -5589,18 +5590,23 @@ a.copy_style {
 .content button.copy {
     height: 28px;
     width: 28px;
-    right: 20px;
+    right: 12px;
     border-radius: 5px;
     position: absolute;
-    top: unset;
+    top: 12px;
     padding: unset;
-    bottom: 13px;
-    background-color: rgb(26 26 26);
+    bottom: unset;
     filter: unset;
     border: unset;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.box.main .content button.copy {
+    bottom: unset;
+    top: 12px;
+    right: 12px;
 }
 
 .newest-boxes .content button.copy {
@@ -5612,7 +5618,6 @@ a.copy_style {
     position: absolute;
     width: 20px;
     height: 100%;
-    background-color: rgb(26 26 26);
     transition: ease-in-out all .15s;
     box-sizing: border-box;
     transform: skewX(20deg);
@@ -5686,7 +5691,7 @@ a.copy_style {
 .site-promo-copy::after {
     margin-right: unset;
     color: rgb(155, 155, 155);
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .credits {
@@ -5866,8 +5871,27 @@ footer .centralizer .footer-content {
     filter: unset;
 }
 
+.content-buttons {
+    display: flex;
+    margin-top: 6px;
+}
+
+.sitealternatesboxes .content-buttons {
+    margin-top: 4px;
+}
+
+.box.main .content-buttons {
+    margin-top: 9px;
+    order: 1;
+}
+
+/* .boxes-holder .box button.copy {
+    display: none;
+    visibility: hidden;
+} */
+
 .content .review-button {
-    background-color: rgb(30 30 30);
+    background-color: rgb(26 26 26);
     filter: drop-shadow(0 1px 4px rgb(10 10 10)) blur(0);
     border-radius: 5px;
     position: relative;
@@ -5889,6 +5913,10 @@ footer .centralizer .footer-content {
     cursor: pointer;
 }
 
+.boxes-holder .box:hover .content .review-button {
+    filter: drop-shadow(0 1px 4px rgb(15 15 15)) blur(0);
+}
+
 .content .review-button.visit {
     background-color: var(--main-color);
     filter: drop-shadow(0 0 1px var(--main-color));
@@ -5904,37 +5932,126 @@ footer .centralizer .footer-content {
 .content .review-button::before {
     content: '';
     position: absolute;
+    transform: skewX(-20deg);
     width: 20px;
     height: 100%;
-    transition: ease-in-out all .15s;
-    background-color: inherit;
-    box-sizing: border-box;
-    transform: skewX(-20deg);
     z-index: -1;
+    transition: all .15s ease-in-out;
+    background-color: rgb(26 26 26);
+    box-sizing: border-box;
     top: 0;
 }
 
-.content .review-button::before {
-    content: unset;
+.sitepage .content .review-button:first-child,
+.sitepage .content .review-button:first-child::after,
+.sitepage .content .review-button:first-child::before {
+    background-color: rgb(18 18 18);
 }
 
-.content .review-button::after {
+.sitepage .content .review-button:hover:first-child,
+.sitepage .content .review-button:hover:first-child::after,
+.sitepage .content .review-button:hover:first-child::before {
+    background-color: rgb(22 22 22);
+}
+
+.content .review-button.visit::after,
+.content .review-button.visit::before {
+    background-color: var(--main-color);
+}
+
+.review-button {
+    --read-more-text: 'Read More';
+    --visit-text: 'Visit';
+    --simillar-text: 'Simillar';
+}
+
+.lang-ru .review-button {
+    --read-more-text: 'Подробнее';
+    --visit-text: 'Посетить';
+    --simillar-text: 'Похожие';
+}
+
+.lang-es .review-button {
+    --read-more-text: 'Leer más';
+    --visit-text: 'Visitar';
+    --simillar-text: 'Similares';
+}
+
+.lang-pt .review-button {
+    --read-more-text: 'Ler mais';
+    --visit-text: 'Visitar';
+    --simillar-text: 'Semelhantes';
+}
+
+.lang-tr .review-button {
+    --read-more-text: 'Daha fazla oku';
+    --visit-text: 'Ziyaret Et';
+    --simillar-text: 'Benzer';
+}
+
+.lang-hi .review-button {
+    --read-more-text: 'और पढ़ें';
+    --visit-text: 'दौरा करें';
+    --simillar-text: 'समान';
+}
+
+
+.content .review-button::before {
+    content: var(--read-more-text);
+    position: relative;
+    transform: unset;
+    width: auto;
+    height: auto;
+    z-index: 1;
+}
+
+.box.main .content .review-button::before {
+    content: var(--simillar-text);
+}
+
+.content .review-button:first-child:after {
     right: -5px;
     border-radius: 0 5px 5px 0;
 }
 
-.content .review-button.visit::before {
+.content .review-button.visit::before,
+.box.main .content .review-button.visit::before {
     content: '';
     left: -5px;
+    position: absolute;
+    transform: skewX(-20deg);
+    width: 20px;
+    height: 100%;
+    z-index: -1;
     border-radius: 5px 0 0 5px;
 }
 
 .content .review-button.visit::after {
-    content: unset;
+    content: var(--visit-text);
+    background-color: unset;
+    position: relative;
+    transform: unset;
+    width: auto;
+    height: auto;
+    z-index: 1;
 }
 
 .content .review-button:hover {
     transform: scale(1.05);
+}
+
+
+.boxes-holder .box .content .review-button:first-child:hover,
+.boxes-holder .box .content .review-button:first-child:hover::before,
+.boxes-holder .box .content .review-button:first-child:hover::after {
+    background-color: rgb(32 32 32);
+}
+
+.content .review-button:active,
+.content .review-button:active::before,
+.content .review-button:active::after {
+    background-color: #5a101c !important;
+    transition: all .09s ease-in-out;
 }
 
 .newest-boxes .box .content {
@@ -5959,10 +6076,6 @@ footer .centralizer .footer-content {
 .newest-boxes .box .logobg .main-mode {
     display: none;
 }
-
-/* .newest-boxes:hover .newest-boxes-title {
-    transform: translateX(-220px);
-} */
 
 .newest-boxes .box .logobg img {
     transform: scale(.95);
@@ -8281,13 +8394,6 @@ div#results {
         transform: translateZ(0);
     }
 
-    /* .main-nav-content,
-    .category-selector .category,
-    nav,
-    .boxreview .plusminus .criteria .par li {
-        transform: unset;
-    } */
-
     .lang-menu ul li a i,
     .lang-menu ul li a {
         opacity: 1;
@@ -8421,6 +8527,18 @@ div#results {
     .sitepage .box .content a.copy_style::after,
     .sitepage .box .content a.copy_style::before {
         bottom: 12px;
+    }
+
+    .sitealternatesboxes .content .review-button {
+        height: 25px;
+        padding: 0 5px;
+        padding-right: 3px;
+        font-size: 11px;
+    }
+
+    .sitealternatesboxes .content .review-button.visit {
+        padding-right: 5px;
+        padding-left: 3px;
     }
 
     .submenu2 li:hover,
@@ -10412,14 +10530,4 @@ div#results {
     .sitealternates .box .content p:first-child {
         margin-top: 10px;
     }
-}
-
-.content-buttons {
-    display: flex;
-    margin-top: 6px;
-}
-
-.boxes-holder .box button.copy {
-    display: none;
-    visibility: hidden;
 }
