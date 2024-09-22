@@ -4479,12 +4479,7 @@ nav #logo:hover {
 }
 
 .sitepage .box {
-    height: 400px !important;
     background: rgb(11 11 11);
-}
-
-.sitepage .box.main:hover {
-    background: rgb(11 11 11) !important;
 }
 
 .sitepage .box .logobg {
@@ -4730,7 +4725,7 @@ nav #logo:hover {
     font-size: 14px !important;
 }
 
-.box:hover,
+.boxes-holder .box:hover,
 .box_vk:hover,
 .topic-box:hover,
 .box-topic.sticker:hover {
@@ -4741,11 +4736,6 @@ nav #logo:hover {
 .box.skin-navigator:hover {
     background: linear-gradient(180deg, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .2) 100%) !important;
     transform: unset;
-}
-
-.sitepage .box:hover {
-    background: linear-gradient(180deg, rgba(0, 0, 0, .0) 0%, rgba(0, 0, 0, .35) 100%) !important;
-    transform: none;
 }
 
 .box .logobg {
@@ -4923,7 +4913,6 @@ nav img:active,
 .box .logobg .best {
     top: -8px;
     right: -8px;
-    border-radius: 10px 10px 0 10px;
     position: absolute;
     width: auto;
     padding: 0 8px 0 5px;
@@ -4939,6 +4928,7 @@ nav img:active,
     font-size: 12px;
     color: white;
     transition: all .15s ease-in-out;
+    backface-visibility: hidden;
     user-select: none;
     z-index: 2;
 }
@@ -5338,7 +5328,7 @@ nav img:active,
 .sitealternates .site-reward p {
     display: block;
     font-weight: 500 !important;
-    font-size: 16px;
+    font-size: 15px;
     color: var(--gray);
     text-align: center;
     height: auto;
@@ -5967,7 +5957,7 @@ footer .centralizer .footer-content {
 
 .lang-ru .review-button {
     --read-more-text: 'Подробнее';
-    --visit-text: 'Посетить';
+    --visit-text: 'Перейти';
     --simillar-text: 'Похожие';
 }
 
@@ -7433,8 +7423,7 @@ label:active,
 .site-searcher-box:active,
 .nav-review li:active,
 .mirror-redirect:active span,
-.methodlist a:active::before,
-.newest-boxes .box .content a:active {
+.methodlist a:active::before {
     filter: brightness(.3) !important;
     transition: .09s all ease-in-out;
 }
@@ -10531,3 +10520,22 @@ div#results {
         margin-top: 10px;
     }
 }
+
+/* .box.main .content button.copy {
+    width: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--darkygray);
+    right: unset;
+    top: unset;
+    bottom: 12px;
+}
+
+.box.main .content button.copy::after {
+    margin-right: unset;
+    content: 'CSGOBROKER';
+}
+
+.box.main .content button.copy::before {
+    content: unset;
+} */

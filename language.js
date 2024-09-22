@@ -194,6 +194,10 @@ function processBoxes(boxes) {
                   }
               }
               updateReviewButtons(box, data, pageKey);  
+
+              if (isPageInTurkish()) {
+                updateURLs(sitesList);
+              }
           });
       }
   });
