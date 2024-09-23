@@ -60,11 +60,11 @@ forcemodsboxes();
       if (link.closest('div.instruction')) {
         return;
       }
-
+  
       if (languageTag === 'tr' && link.classList.contains('mirror-redirect')) {
         return;
-    }
-
+      }
+  
       const href = link.getAttribute('href');
       const match = href.match(regex);
   
@@ -74,19 +74,22 @@ forcemodsboxes();
         const queryString = match[3] || '';
   
         const pathSegments = path.split('/');
-        if (pathSegments.length > 1 && pathSegments[1].length === 2) {
+        if (path === '/') {
+          path = `/${languageTag}/`;
+        } else if (pathSegments.length > 1 && pathSegments[1].length === 2) {
           return;
+        } else {
+          path = `/${languageTag}${path}`;
         }
   
-        const updatedHref = `/${languageTag}${path}${queryString}`;
-        
-        if (!link.classList.contains('copy_style'), !link.classList.contains('visit')) {
-          link.setAttribute('href', domain + updatedHref);
+        const updatedHref = `${domain}${path}${queryString}`;
+  
+        if (!link.classList.contains('copy_style') && !link.classList.contains('visit')) {
+          link.setAttribute('href', updatedHref);
         }
       }
     });
   }
-
 
   document.addEventListener('DOMContentLoaded', function() {
     const userAgent = navigator.userAgent;
@@ -1234,6 +1237,8 @@ document.addEventListener("DOMContentLoaded", function() {
   } else if (mainBox) {
       mainBox.insertAdjacentElement('afterend', navReview);
   }
+
+  
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -1749,8 +1754,8 @@ function updateReviewButtons(box, data, pageKey, reviewSettings) {
     });
     
   } else {
-      const otherBoxes = document.querySelectorAll('.box');
-      otherBoxes.forEach(box => {
+      const holderBoxes = document.querySelectorAll('.boxes-holder .box');
+      holderBoxes.forEach(box => {
           const logoLink = box.querySelector('.logobg a');
           if (logoLink) {
               const path = logoLink.getAttribute('href');
@@ -1885,8 +1890,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 });
-
-
 
 function loadAndApplyTranslations(languageTag) {
   const cacheKey = `translations_${languageTag}`;

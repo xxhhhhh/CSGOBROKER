@@ -3154,7 +3154,8 @@ h3 {
 .instruction {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-left: 46px;
     padding: 15px 0px 20px 0px;
 }
 
@@ -3167,13 +3168,16 @@ h3 {
 }
 
 .instruction.double {
-    width: 49%;
-    justify-content: flex-end;
+    width: 48.5%;
+    justify-content: flex-start;
+    margin-left: 45px;
 }
 
 .instruction.notmain {
-    opacity: .3;
-    transition: opacity .15s ease-in-out;
+    width: 47%;
+    transition: all .15s ease-in-out;
+    margin-left: unset;
+    opacity: .35;
 }
 
 .instruction.notmain:hover {
@@ -3184,6 +3188,7 @@ h3 {
 .instruction h3 {
     height: auto;
     margin-bottom: 30px !important;
+    margin-left: -20px;
     text-align: start;
 }
 
@@ -3379,7 +3384,7 @@ h3 {
     font-size: 10px;
     font-weight: 600;
     bottom: 0;
-    margin-left: 40px;
+    margin-left: 150px;
 }
 
 .site-promo-copy i {
@@ -6063,10 +6068,6 @@ footer .centralizer .footer-content {
     height: 100%;
 }
 
-.newest-boxes .box .logobg .main-mode {
-    display: none;
-}
-
 .newest-boxes .box .logobg img {
     transform: scale(.95);
     margin-top: unset;
@@ -8626,8 +8627,8 @@ div#results {
     }
 
     .instruction.double {
-        width: 98%;
-        justify-content: center;
+        width: 96%;
+        margin-left: 26px;
     }
 
     .instruction.notmain {
@@ -8805,10 +8806,6 @@ div#results {
 
     .instruction.double h3 {
         font-size: 18px !important;
-    }
-
-    .instruction.notmain {
-        opacity: 1;
     }
 
     .singlemod-select span {
@@ -9534,6 +9531,16 @@ div#results {
         width: 96%;
     }
 
+    .instruction {
+        margin-left: 26px;
+    }
+
+    .instruction.notmain {
+        opacity: 1;
+        filter: unset;
+        margin-left: 26px;
+    }
+
     .screens.slick-slider {
         width: 95% !important;
         margin-top: 10px;
@@ -10175,6 +10182,11 @@ div#results {
     .instruction h2,
     .instruction h3 {
         font-size: 20px !important;
+    }
+
+    .instruction h2,
+    .instruction h3 {
+        margin-left: -8px;
     }
 
     .newest-boxes {
