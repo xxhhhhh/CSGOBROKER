@@ -288,53 +288,130 @@ $(document).ready(function(){
     dots: true
   });
 });
+  
+window.onload = function () {
+  (function () {
+    const pathname = window.location.pathname;
+    const excludedPaths = [
+      '/ru/reviews',
+      '/ru/mirrors',
+      '/ru/topic',
+      '/privacy-policy',
+      '/terms-of-service',
+      '/contact-us'
+    ];
+    const isRuPage = pathname.startsWith('/ru/') || pathname === '/ru' || pathname === '/ru.html';
+    const isExcludedPath = excludedPaths.some(path => pathname.includes(path));
 
-  const backToTopButton = document.querySelector("#back-to-top-btn");
-  
-  window.addEventListener("scroll", scrollFunction);
-  
-  function scrollFunction() {
-    if (window.pageYOffset > 300) {
-      if(!backToTopButton.classList.contains("btnEntrance")) {
-        backToTopButton.classList.remove("btnExit");
-        backToTopButton.classList.add("btnEntrance");
+    let buttonsContainer = document.querySelector('.buttons-container-page');
+
+    if (!buttonsContainer) {
+      buttonsContainer = document.createElement('div');
+      buttonsContainer.className = 'buttons-container-page';
+      document.body.appendChild(buttonsContainer);
+    }
+
+    if (isRuPage && !isExcludedPath && !document.querySelector('#button-vpn-filter')) {
+      const vpnButtonContainer = document.createElement('div');
+      vpnButtonContainer.className = 'settings-menu';
+      vpnButtonContainer.innerHTML =
+        '<div class="settings-button" id="button-vpn-filter" data-title="Скрыть сайты требующие VPN"><i id="vpn-icon" class="officon eye"></i></div>';
+      
+      buttonsContainer.appendChild(vpnButtonContainer);
+
+      const vpnIcon = document.getElementById('vpn-icon');
+
+      function toggleVpnBlocks() {
+        const vpnBlocks = document.querySelectorAll('.box');
+        vpnBlocks.forEach(block => {
+          if (block.querySelector('.vpn')) {
+            block.style.display = block.style.display === 'none' ? '' : 'none';
+          }
+        });
+      }
+
+      const buttonState = localStorage.getItem('vpnButtonState');
+      const buttonTitle = localStorage.getItem('vpnButtonTitle');
+
+      if (buttonState === 'hidden') {
+        toggleVpnBlocks();
+        vpnIcon.classList.replace('eye', 'eye-slash');
+      }
+
+      if (buttonTitle) {
+        document.getElementById('button-vpn-filter').dataset.title = buttonTitle;
+      }
+
+      document.getElementById('button-vpn-filter').addEventListener('click', function () {
+        toggleVpnBlocks();
+
+        const currentState = localStorage.getItem('vpnButtonState') || 'visible';
+        const newState = currentState === 'hidden' ? 'visible' : 'hidden';
+        localStorage.setItem('vpnButtonState', newState);
+
+        vpnIcon.classList.toggle('eye');
+        vpnIcon.classList.toggle('eye-slash');
+
+        const button = document.getElementById('button-vpn-filter');
+        button.dataset.title = vpnIcon.classList.contains('eye') ?
+          'Скрыть сайты требующие VPN' : 'Показать сайты требующие VPN';
+
+        localStorage.setItem('vpnButtonTitle', button.dataset.title);
+      });
+    }
+
+    if (!document.querySelector('#back-to-top-btn')) {
+      const backToTopButton = document.createElement('button');
+      backToTopButton.id = 'back-to-top-btn';
+      backToTopButton.setAttribute('aria-label', 'Back to Top Button');
+      backToTopButton.className = 'btnExit';
+      buttonsContainer.appendChild(backToTopButton);
+
+      window.addEventListener("scroll", scrollFunction);
+
+      function scrollFunction() {
+        if (window.pageYOffset > 300) {
+          if (!backToTopButton.classList.contains("btnEntrance")) {
+            backToTopButton.classList.remove("btnExit");
+            backToTopButton.classList.add("btnEntrance");
+          }
+        } else {
+          if (backToTopButton.classList.contains("btnEntrance")) {
+            backToTopButton.classList.remove("btnEntrance");
+            backToTopButton.classList.add("btnExit");
+          }
+        }
+      }
+
+      backToTopButton.addEventListener("click", smoothScrollBackToTop);
+
+      function smoothScrollBackToTop() {
+        const targetPosition = 0;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = 750;
+        let start = null;
+
+        window.requestAnimationFrame(step);
+
+        function step(timestamp) {
+          if (!start) start = timestamp;
+          const progress = timestamp - start;
+          window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+          if (progress < duration) window.requestAnimationFrame(step);
+        }
+      }
+
+      function easeInOutCubic(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t * t + b;
+        t -= 2;
+        return c / 2 * (t * t * t + 2) + b;
       }
     }
-    else { 
-      if(backToTopButton.classList.contains("btnEntrance")) {
-        backToTopButton.classList.remove("btnEntrance");
-        backToTopButton.classList.add("btnExit");
-      }
-    }
-  }
-  
-  
-  backToTopButton.addEventListener("click", smoothScrollBackToTop);
-  
-  function smoothScrollBackToTop() {
-    const targetPosition = 0;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    const duration = 750;
-    let start = null;
-  
-    window.requestAnimationFrame(step);
-  
-    function step(timestamp) {
-      if (!start) start = timestamp;
-      const progress = timestamp - start;
-      window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
-      if (progress < duration) window.requestAnimationFrame(step);
-    }
-  }
-  
-  function easeInOutCubic(t, b, c, d) {
-    t /= d/2;
-    if (t < 1) return c/2*t*t*t + b;
-    t -= 2;
-    return c/2*(t*t*t + 2) + b;
-  }
-  
+  })();
+};
+
   const siteList = document.getElementById('site-list');
   const searchInput = document.getElementById('search-input');
   
@@ -461,80 +538,7 @@ $(document).ready(function(){
       document.querySelector('.search-container').classList.add('expanded');
     });
   });
-  
-
-      window.onload = function () {
-        (function () {
-            const pathname = window.location.pathname;
-            const excludedPaths = [
-                '/ru/reviews',
-                '/ru/mirrors',
-                '/ru/topic',
-                '/privacy-policy',
-                '/terms-of-service',
-                '/contact-us'
-            ];
-            const isRuPage = pathname.startsWith('/ru/') || pathname === '/ru' || pathname === '/ru.html';
-            const isExcludedPath = excludedPaths.some(path => pathname.includes(path));
-    
-            if (isRuPage && !isExcludedPath) {
-                const boxesHolders = document.querySelectorAll('div.buttons-container-page');
-    
-                if (!document.querySelector('#button-vpn-filter')) {
-                    const button = document.createElement('div');
-                    button.className = 'settings-menu';
-                    button.innerHTML =
-                        '<a class="settings-button" id="button-vpn-filter" data-title="Скрыть сайты требующие VPN"><i id="vpn-icon" class="bi bi-eye"></i></a>';
-    
-                    boxesHolders.forEach(boxesHolder => {
-                        boxesHolder.insertBefore(button.cloneNode(true), boxesHolder.firstChild);
-                    });
-    
-                    const vpnIcon = document.getElementById('vpn-icon');
-    
-                    function toggleVpnBlocks() {
-                        const vpnBlocks = document.querySelectorAll('.box');
-                        vpnBlocks.forEach(block => {
-                            if (block.querySelector('.vpn')) {
-                                block.style.display = block.style.display === 'none' ? '' : 'none';
-                            }
-                        });
-                    }
-    
-                    const buttonState = localStorage.getItem('vpnButtonState');
-                    const buttonTitle = localStorage.getItem('vpnButtonTitle');
-    
-                    if (buttonState === 'hidden') {
-                        toggleVpnBlocks();
-                        vpnIcon.classList.replace('bi-eye', 'bi-eye-slash');
-                    }
-    
-                    if (buttonTitle) {
-                        document.getElementById('button-vpn-filter').dataset.title = buttonTitle;
-                    }
-    
-                    document.getElementById('button-vpn-filter').addEventListener('click', function () {
-                        toggleVpnBlocks();
-    
-                        const currentState = localStorage.getItem('vpnButtonState') || 'visible';
-                        const newState = currentState === 'hidden' ? 'visible' : 'hidden';
-                        localStorage.setItem('vpnButtonState', newState);
-    
-                        vpnIcon.classList.toggle('bi-eye');
-                        vpnIcon.classList.toggle('bi-eye-slash');
-    
-                        const button = document.getElementById('button-vpn-filter');
-                        button.dataset.title = vpnIcon.classList.contains('bi-eye') ?
-                            'Скрыть сайты требующие VPN' : 'Показать сайты требующие VPN';
-    
-                        localStorage.setItem('vpnButtonTitle', button.dataset.title);
-                    });
-                }
-            }
-        })();
-    };
-    
-    
+      
     document.addEventListener('DOMContentLoaded', function () {
       var replacementHTML = `
           <div class="contact-content">
@@ -562,7 +566,7 @@ $(document).ready(function(){
       }
   });
   
-const btnfaq = document.getElementById("toggle");
+const btnfaq = document.getElementById("btnfaq");
 
 if (btnfaq) {
   btnfaq.onclick = function () {
@@ -1273,11 +1277,11 @@ function applyTheme(theme) {
   if (theme === 'light') {
     themeStyleLink.href = '/style_light.css';
     themeStyleLink.disabled = false;
-    themeIcon.classList.replace('bi-lightbulb-off', 'bi-lightbulb-fill');
+    themeIcon.classList.replace('lightbulb-off', 'lightbulb-on');
   } else {
     themeStyleLink.href = '';
     themeStyleLink.disabled = true;
-    themeIcon.classList.replace('bi-lightbulb-fill', 'bi-lightbulb-off');
+    themeIcon.classList.replace('lightbulb-on', 'lightbulb-off');
   }
   localStorage.setItem('theme', theme);
 }
