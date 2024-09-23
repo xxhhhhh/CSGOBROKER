@@ -721,6 +721,16 @@ ul .submenu li .nonredir,
     margin-top: unset;
 }
 
+.officon.eye::before,
+#back-to-top-btn::before,
+.big-category:has(.submenu2) a:not(.submenu2 a)::after,
+.sitedetails .sitepros span::after,
+.singlemod-icon::before,
+.star_rating::before {
+    filter: brightness(.2);
+    opacity: 1;
+}
+
 @media screen and (max-width: 1365px) {
 
     .boxes-holder .content a.boxtitle,

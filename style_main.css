@@ -6683,7 +6683,6 @@ a[data-title]:after,
     align-items: center;
     justify-content: center;
     background-size: 100%;
-    filter: drop-shadow(0 0 3px black);
     transition: all .15s ease-in-out;
     background-position: center;
     background-repeat: no-repeat;
@@ -6801,6 +6800,22 @@ a[data-title]:after,
 .boxreview .plusminus .criteria:nth-child(2)::before {
     height: 40px;
     width: 40px;
+}
+
+.big-category:has(.submenu2) a:not(.submenu2 a)::after {
+    background-image: url(/img/minipics/gamemodes/clear-icons/caret-right.svg);
+    height: 16px;
+    width: 16px;
+}
+
+.big-category:hover:has(.submenu2) a:not(.submenu2 a)::after {
+    opacity: 1;
+}
+
+.submenu li a:empty::after,
+.submenu2 li a:empty::after,
+.submenu2 a::after {
+    content: unset !important;
 }
 
 #theme-toggle:hover i::before,
@@ -7080,23 +7095,12 @@ li.slick-active button:hover {
 }
 
 .submenu .big-category a:hover,
-.submenu .big-category .nonredir:hover {
-    color: var(--main-color);
+.submenu .big-category .nonredir:hover {    
     background-color: rgb(18 18 18);
 }
 
 .submenu .big-category:nth-child(1) {
     margin-top: 18px;
-}
-
-.big-category:has(.submenu2) a:not(.submenu2 a)::after {
-    content: "\f231";
-}
-
-.submenu li a:empty::after,
-.submenu2 li a:empty::after,
-.submenu2 a::after {
-    content: unset !important;
 }
 
 .category-selector .category:hover .submenu {
