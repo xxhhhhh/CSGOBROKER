@@ -283,8 +283,8 @@ $(document).ready(function(){
     autoplaySpeed: 5500,
     pauseOnHover: true,
     pauseOnDotsHover: true,
-    prevArrow: '<button aria-label="Prev Slide" class="prev-button"><i class="bi bi-chevron-left"></i></button>',
-    nextArrow: '<button aria-label="Next Slide" class="next-button"><i class="bi bi-chevron-right"></i></button>',
+    prevArrow: '<button aria-label="Prev Slide" class="prev-button"><i class="officon chevron left"></i></button>',
+    nextArrow: '<button aria-label="Next Slide" class="next-button"><i class="officon chevron right"></i></button>',
     dots: true
   });
 });
@@ -364,7 +364,7 @@ window.onload = function () {
       const backToTopButton = document.createElement('button');
       backToTopButton.id = 'back-to-top-btn';
       backToTopButton.setAttribute('aria-label', 'Back to Top Button');
-      backToTopButton.className = 'btnExit';
+      backToTopButton.className = 'officon chevron btnExit';
       buttonsContainer.appendChild(backToTopButton);
 
       window.addEventListener("scroll", scrollFunction);
@@ -601,12 +601,8 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   newDiv.className = "vpn";
   newDiv.textContent = "Нужен VPN";
 
-//   if (window.innerWidth < 1000) {
-//     newDiv.textContent = "VPN";
-// }
-
   var allowedIds = [
-    "Clash",
+    "ClashGG",
     "CSGORoll",
     "DMarket",
     "Rollbit",
@@ -1082,8 +1078,8 @@ $(document).ready(function() {
     autoplaySpeed: 6000,
     pauseOnHover: true,
     pauseOnDotsHover: true,
-    prevArrow: '<button aria-label="Prev Slide" class="prev-button"><i class="bi bi-chevron-left"></i></button>',
-    nextArrow: '<button aria-label="Next Slide" class="next-button"><i class="bi bi-chevron-right"></i></button>',
+    prevArrow: '<button aria-label="Prev Slide" class="prev-button"><i class="officon chevron left"></i></button>',
+    nextArrow: '<button aria-label="Next Slide" class="next-button"><i class="officon chevron right"></i></button>',
     dots: true,
     customPaging: function(slider, i) {
       return '<button class="slider-dot">' + (i + 1) + '</button>';
@@ -1338,15 +1334,15 @@ document.addEventListener("DOMContentLoaded", function() {
       let starsHTML = '';
 
       for (let i = 0; i < fullStars; i++) {
-          starsHTML += '<div class="star_rating"><i class="bi bi-star-fill"></i></div>';
+          starsHTML += '<div class="officon star_rating full"></div>';
       }
 
       if (halfStar) {
-          starsHTML += '<div class="star_rating"><i class="bi bi-star-half"></i></div>';
+          starsHTML += '<div class="officon star_rating half"></div>';
       }
 
       for (let i = fullStars + (halfStar ? 1 : 0); i < 5; i++) {
-          starsHTML += '<div class="star_rating"><i class="bi bi-star"></i></div>';
+          starsHTML += '<div class="officon star_rating empty"></div>';
       }
 
       return starsHTML;
@@ -2064,10 +2060,10 @@ document.addEventListener("DOMContentLoaded", function () {
     buttonsContainer.classList.add("buttons-container");
     prevButtonContainer.classList.add("controls-button");
     prevButtonContainer.setAttribute("aria-label", "Prev Category");
-    prevButtonContainer.innerHTML = '<i class="bi bi-chevron-left"></i>';
+    prevButtonContainer.innerHTML = '<i class="officon chevron left"></i>';
     nextButtonContainer.classList.add("controls-button");
     nextButtonContainer.setAttribute("aria-label", "Next Category");
-    nextButtonContainer.innerHTML = '<i class="bi bi-chevron-right"></i>';
+    nextButtonContainer.innerHTML = '<i class="officon chevron right"></i>';
 
     buttonsContainer.appendChild(prevButtonContainer);
     buttonsContainer.appendChild(nextButtonContainer);

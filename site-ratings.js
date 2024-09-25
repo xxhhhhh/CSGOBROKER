@@ -96,7 +96,7 @@ var ratings = {
     var boxElement = document.getElementById(boxId);
     if (boxElement) {
         var starRatingHTML = '<div class="rating-case-single">';
-        starRatingHTML += '<div class="star_rating"></div>';
+        starRatingHTML += '<div class="star_rating officon"></div>';
         starRatingHTML += '<div class="rating-summ">' + rating.toFixed(2) + '</div>';
         starRatingHTML += '</div>';
         var logobgElement = boxElement.querySelector('.logobg');

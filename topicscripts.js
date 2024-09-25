@@ -7,12 +7,12 @@ $(document).ready(function () {
         const previewWindowHTML = `
         <div id="preview-window" class="hidden">
             <div id="preview-showcase">
-                <div class="preview-close-button"><i class="bi bi-x"></i></div>
                 <div class="preview-buttons">
-                    <div class="preview-pause-button"><i class="bi bi-pause-fill"></i></div>
+                    <div class="preview-close-button"><i class="officon cross"></i></div>
+                    <div class="preview-pause-button"><i class="officon pause"></i></div>
                 </div>
-                <div class="preview-nav-button left"><i class="bi bi-chevron-left"></i></div>
-                <div class="preview-nav-button right"><i class="bi bi-chevron-right"></i></div>
+                <div class="preview-nav-button left"><i class="officon chevron left"></i></div>
+                <div class="preview-nav-button right"><i class="officon chevron right"></i></div>
                 <div id="preview-content"></div>
                 <div class="site-searcher-buttons">
                     ${['Lis-Skins', 'Avan.Market', 'Tradeit', 'CSMoney', 'BitSkins',  'SkinSwap', 'Steam'].map(site => `
@@ -31,7 +31,7 @@ $(document).ready(function () {
         $(document).on('click', '.preview-pause-button', function () {
             previewContent.toggleClass('paused');
             const icon = $(this).find('i');
-            icon.toggleClass('bi-pause-fill bi-play-fill');
+            icon.toggleClass('pause play');
         });
 
         function insertRandomAdsBox() {
@@ -209,7 +209,7 @@ $(document).ready(function () {
                 class: 'skin-alt-info',
                 href: languageTag === 'ru' ? `/ru/topic/items/${weapon}` : `/topic/items/${weapon}`,
                 'data-title': languageTag === 'ru' ? `Все Скины на ${weapon}` : `All Skins on ${weapon}`,
-                html: '<i class="bi bi-collection-fill"></i>'
+                html: '<i class="officon library"></i>'
             });
 
             $('#preview-showcase').append(skinAltInfoDiv);
@@ -271,15 +271,15 @@ $(document).ready(function () {
                 const parentBoxSkins = $(this).closest(".box-skins");
                 parentBoxSkins.toggleClass("selected");
                 $(".box-skins").not(parentBoxSkins).removeClass("selected");
-                $(this).find("i").toggleClass("bi-zoom-in bi-zoom-out");
-                $(".close-box-skins i").not($(this).find("i")).removeClass("bi-zoom-out").addClass("bi-zoom-in");
+                $(this).find("i").toggleClass("zoom-in zoom-out");
+                $(".close-box-skins i").not($(this).find("i")).removeClass("zoom-out").addClass("zoom-in");
             });
 
             $(".box-skins-name").click(function () {
                 const parentBoxSkins = $(this).closest(".box-skins");
                 parentBoxSkins.toggleClass("selected");
                 $(".box-skins").not(parentBoxSkins).removeClass("selected");
-                $(this).siblings(".close-box-skins").find("i").toggleClass("bi-zoom-in bi-zoom-out");
+                $(this).siblings(".close-box-skins").find("i").toggleClass("zoom-in zoom-out");
             });
 
             document.addEventListener("DOMContentLoaded", () => {
@@ -402,8 +402,8 @@ boxSkinsElements.forEach(function(boxSkinsElement) {
         const boxSkinsControl = document.createElement('div');
         boxSkinsControl.className = 'box-skins-control';
         boxSkinsControl.innerHTML = `
-        <div class="box-skins-button left hidden"><i class="bi bi-chevron-left"></i></div>
-        <div class="box-skins-button right hidden"><i class="bi bi-chevron-right"></i></div>
+        <div class="box-skins-button left hidden"><i class="officon chevron left"></i></div>
+        <div class="box-skins-button right hidden"><i class="officon chevron right"></i></div>
         `;
         boxSkinsElement.appendChild(boxSkinsControl);
 

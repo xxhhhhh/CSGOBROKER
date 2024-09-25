@@ -726,9 +726,19 @@ ul .submenu li .nonredir,
 .big-category:has(.submenu2) a:not(.submenu2 a)::after,
 .sitedetails .sitepros span::after,
 .singlemod-icon::before,
-.star_rating::before {
+.officon.zoom-in::before,
+.officon.zoom-out::before {
     filter: brightness(.2);
     opacity: 1;
+}
+
+.features .typesinside i::before {
+    filter: brightness(0) saturate(100%) invert(16%) sepia(69%) saturate(4202%) hue-rotate(339deg) brightness(99%) contrast(90%);
+    opacity: 1;
+}
+
+.features .typesinside a:hover .officon::before {
+    filter: brightness(.15);
 }
 
 @media screen and (max-width: 1365px) {

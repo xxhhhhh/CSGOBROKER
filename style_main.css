@@ -745,7 +745,7 @@ nav #pagename:focus {
 }
 
 .navigation-weapon-sort i {
-    transition: all .15s ease-in-out;
+    transition: transform .15s ease-in-out;
 }
 
 #Rarity-Toggle {
@@ -760,8 +760,8 @@ nav #pagename:focus {
     transform: scale(1.15);
 }
 
-.navigation-weapon-sort.enabled i,
-.navigation-weapon-sort.reversed i {
+.navigation-weapon-sort.enabled i::before,
+.navigation-weapon-sort.reversed i::before {
     opacity: .8;
 }
 
@@ -891,10 +891,6 @@ nav #pagename:focus {
 }
 
 #preview-showcase .skin-alt-info {
-    color: var(--white);
-    font-weight: 500;
-    font-size: 20px;
-    opacity: .25;
     display: block;
     position: absolute;
     transition: opacity .15s ease-in-out;
@@ -916,7 +912,8 @@ nav #pagename:focus {
     border: unset !important;
     height: unset !important;
     text-transform: unset !important;
-    top: unset !important;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
     display: unset !important;
     min-width: 200px;
 }
@@ -1047,21 +1044,19 @@ nav #pagename:focus {
 }
 
 .preview-close-button,
-.preview-pause-button,
+.preview-pause-button{
+    cursor: pointer;
+    transition: all .15s ease-in-out;
+    z-index: 100;
+}
+
 .preview-nav-button {
     position: absolute;
     top: 3px;
     right: 5px;
-    height: 50px;
     cursor: pointer;
-    font-size: 50px;
-    color: var(--white);
     transition: all .15s ease-in-out;
-    z-index: 1000;
-}
-
-.preview-close-button {
-    opacity: .25;
+    z-index: 100;
 }
 
 .preview-buttons {
@@ -1069,19 +1064,14 @@ nav #pagename:focus {
     width: auto;
     height: auto;
     right: 15px;
-    top: 55px;
+    top: 15px;
     align-items: center;
     transition: all .15s ease-in-out;
-    display: none;
-    opacity: .25;
     z-index: 99;
-}
-
-#preview-showcase .preview-buttons {
     display: flex;
+    flex-direction: column;
 }
 
-#preview-showcase:hover .preview-buttons,
 #preview-showcase:hover .preview-nav-button {
     opacity: .25;
 }
@@ -1093,7 +1083,10 @@ nav #pagename:focus {
     width: auto;
     height: auto;
     position: relative;
-    font-size: 30px;
+}
+
+.preview-pause-button {
+    margin-top: 8px;
 }
 
 .preview-nav-button {
@@ -1220,6 +1213,10 @@ nav #pagename:focus {
     transform: scale(1.05);
     background-color: #181818;
     color: var(--white);
+}
+
+.navigation-weapon-sort:hover i:before {
+    opacity: .8;
 }
 
 .box-skins.selected {
@@ -1707,7 +1704,7 @@ nav #pagename:focus {
     width: 40px;
     height: 40px;
     background-color: #0b0b0b;
-    border: 2px solid rgb(16 16 16);
+    border: 3px solid rgb(16 16 16);
     position: absolute;
     right: 0;
     z-index: 1000;
@@ -1723,8 +1720,8 @@ nav #pagename:focus {
     z-index: 1001;
 }
 
-.close-box-skins:hover {
-    color: var(--white);
+.close-box-skins:hover i::before {
+    opacity: 1;
 }
 
 .box-skins-list .skins-not-exist {
@@ -1802,8 +1799,8 @@ nav #pagename:focus {
     display: none;
 }
 
-.box-skins-button:hover {
-    color: var(--white);
+.box-skins-button:hover i::before {
+    opacity: 1;
 }
 
 .box-skins-button.left {
@@ -1982,9 +1979,8 @@ h3 {
 }
 
 .site-attention i {
-    color: var(--main-color);
+    margin-left: 1px;
     margin-right: 15px;
-    font-size: 18px;
 }
 
 .site-attention:hover {
@@ -2401,57 +2397,6 @@ h3 {
     z-index: 1;
 }
 
-.features .featuresbox .typesinside a {
-    margin: 12px 0 0 9px;
-    height: 32px;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding: 2px 10px;
-    padding-right: 14px;
-    font-weight: 600;
-    font-size: 14px;
-    color: var(--white);
-    margin-left: 26px;
-    position: relative;
-    box-sizing: border-box;
-    z-index: 1;
-}
-
-.features .featuresbox .typesinside a i {
-    color: var(--main-color);
-    margin-right: 10px;
-    transition: all .15s ease-in-out;
-    z-index: 1;
-}
-
-.features .featuresbox .typesinside a:hover i {
-    color: var(--white);
-}
-
-.typesinside i::before {
-    height: unset;
-    width: unset;
-}
-
-.depositbonus i {
-    font-size: 14px;
-}
-
-.dailyrewards i {
-    font-size: 12px;
-}
-
-.rakeback i {
-    font-size: 16px;
-    margin-top: 2px;
-}
-
-.rain i {
-    font-size: 16px;
-}
-
 .features .featuresbox .typesinside a,
 .features .featuresbox .typesinside a::after,
 .features .featuresbox .typesinside a::before {
@@ -2482,452 +2427,6 @@ h3 {
     padding-right: 15px;
 }
 
-.features .featuresbox .typesinside a:first-child::before {
-    content: unset;
-}
-
-.features .featuresbox .typesinside a::after,
-.features .featuresbox .typesinside a::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 100%;
-    box-sizing: border-box;
-    transform: skewX(-20deg);
-    border-radius: 5px;
-    top: 0;
-}
-
-.features .featuresbox .typesinside a::before {
-    left: -9px;
-
-}
-
-.features .featuresbox .typesinside a::after {
-    right: -9px;
-}
-
-.typesinside a:first-child {
-    margin: 12px 0 12px 0;
-}
-
-.gamemodes .featuresbox .typesinside a::before {
-    content: '';
-    height: 22px;
-    width: 22px;
-    filter: drop-shadow(0 0 3px black);
-    transition: filter .15s ease-in-out;
-    border-radius: unset;
-}
-
-.gamemodes .featuresbox .typesinside a:hover::before {
-    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(98%) contrast(250%);
-}
-
-.sitedetails .methodlist a::before {
-    content: '';
-}
-
-/* Gamemodes Images List Start */
-
-.typesinside .cs2::before,
-.main-mode.betting .main-mode-icon::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/esports.webp);
-}
-
-.typesinside .sport::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/realsport.webp);
-}
-
-.typesinside .slots::before,
-.main-mode.casino .main-mode-icon::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/slots.webp);
-}
-
-.typesinside .slotsduels::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/slotsduels.webp);
-}
-
-.typesinside .livedealer::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/livedealer.webp);
-}
-
-.typesinside .poker::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/poker.webp);
-}
-
-.typesinside .blackjack::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/blackjack.webp);
-}
-
-.typesinside .baccarat::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/baccarat.webp);
-}
-
-.typesinside .wheel::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/wheel.webp);
-}
-
-.typesinside .roulette::before,
-.main-mode.classic .main-mode-icon::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/roulette.webp);
-}
-
-.typesinside .jackpot::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/jackpot.webp);
-}
-
-.typesinside .crash::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/crash.webp);
-}
-
-.typesinside .coinflip::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/coinflip.webp);
-}
-
-.typesinside .cases::before,
-.main-mode.cases .main-mode-icon::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/cases.webp);
-}
-
-.typesinside .casebattles::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/casebattles.webp);
-}
-
-.typesinside .upgrader::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/upgrader.webp);
-    transform: scale(.9);
-}
-
-.typesinside .duels::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/duels.webp);
-}
-
-.typesinside .plinko::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/plinko.webp);
-}
-
-.typesinside .dice::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/dice.webp);
-}
-
-.singlemod-icon.dailyrewards::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/daily-calendar.svg);
-}
-
-.singlemod-icon.depositbonuses::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/plus-hexagon.svg);
-
-}
-
-.singlemod-icon.giveaways::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/hand-present.svg);
-}
-
-.typesinside .towers::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/towers.svg);
-}
-
-.typesinside .mines::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/mines.webp);
-}
-
-.typesinside .hilo::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/hilo.webp);
-}
-
-.typesinside .mining::before,
-.main-mode.mining .main-mode-icon::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/mining.webp);
-}
-
-.typesinside .offerwalls::before,
-.main-mode.earning .main-mode-icon::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/earning.webp);
-}
-
-.typesinside .playing::before,
-.main-mode.playing .main-mode-icon::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/playing.webp);
-}
-
-.typesinside .trade-skins::before,
-.main-mode.trading .main-mode-icon::before,
-.singlemod-icon.trade-skins::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/exchanger.webp);
-}
-
-.typesinside .buy-skins::before,
-.singlemod-icon.buy-skins::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/cart-buy.svg);
-}
-
-.main-mode.instant-sell .main-mode-icon::before,
-.singlemod-icon.instant-sell::before,
-.typesinside .instant-sell::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/cart-fast.svg);
-}
-
-.typesinside .sell-skins::before,
-.singlemod-icon.sell-skins::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/selling.svg);
-}
-
-.typesinside .marketplace::before,
-.main-mode.marketplace .main-mode-icon::before,
-.singlemod-icon.marketplaces::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/marketplace.svg);
-}
-
-.gamemodes .typesinside .giveaways::before,
-.singlemod-icon.signupbonus::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/gift.svg);
-}
-
-.typesinside .steamlvlup::before,
-.main-mode.steamlvlup .main-mode-icon::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/steamlvlup.webp);
-}
-
-.typesinside .steamtopup::before,
-.main-mode.steamtopup .main-mode-icon::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/steamtopup.webp);
-    width: 21px !important;
-    height: 21px !important;
-}
-
-.typesinside .rental::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/rental.webp);
-}
-
-.typesinside .buy-games::before,
-.methodlist .games::before {
-    background-image: url(/img/minipics/gamemodes/clear-icons/games.webp);
-}
-
-/* Gamemodes Images List End */
-
-/* Payment Methods Start */
-
-.methodlist .cs2::before {
-    background-image: url(/img/minipics/payments/clear-icons/cs2.webp);
-    transform: scale(.9);
-}
-
-.methodlist .dota::before {
-    background-image: url(/img/minipics/payments/clear-icons/dota.webp);
-    transform: scale(.9);
-}
-
-.methodlist .rust::before {
-    background-image: url(/img/minipics/payments/clear-icons/rust.webp);
-    transform: scale(.9);
-}
-
-.methodlist .tf2::before {
-    background-image: url(/img/minipics/payments/clear-icons/tf2.webp);
-}
-
-.methodlist .visa::before {
-    background-image: url(/img/minipics/payments/clear-icons/visa.webp);
-}
-
-.methodlist .mastercard::before {
-    background-image: url(/img/minipics/payments/clear-icons/mastercard.webp);
-}
-
-.methodlist .paypal::before {
-    background-image: url(/img/minipics/payments/clear-icons/paypal.webp);
-}
-
-.methodlist .paysafe::before {
-    background-image: url(/img/minipics/payments/clear-icons/paysafe.webp);
-    transform: scale(.9);
-}
-
-.methodlist .skrill::before {
-    background-image: url(/img/minipics/payments/clear-icons/skrill.webp);
-}
-
-.methodlist .qiwi::before {
-    background-image: url(/img/minipics/payments/clear-icons/qiwi.webp);
-}
-
-.methodlist .piastrix::before {
-    background-image: url(/img/minipics/payments/clear-icons/piastrix.webp);
-}
-
-.methodlist .webmoney::before {
-    background-image: url(/img/minipics/payments/clear-icons/webmoney.webp);
-}
-
-.methodlist .yumoney::before {
-    background-image: url(/img/minipics/payments/clear-icons/yumoney.webp);
-}
-
-.methodlist .bank-transfer::before {
-    background-image: url(/img/minipics/payments/clear-icons/bank-transfer.webp);
-}
-
-.methodlist .sbp::before {
-    background-image: url(/img/minipics/payments/clear-icons/sbp.webp);
-}
-
-.methodlist .fkwallet::before {
-    background-image: url(/img/minipics/payments/clear-icons/fkwallet.webp);
-    transform: scale(.8);
-}
-
-.methodlist .gpay::before {
-    background-image: url(/img/minipics/payments/clear-icons/gpay.webp);
-}
-
-.methodlist .h1z1::before {
-    background-image: url(/img/minipics/payments/clear-icons/h1z1.webp);
-}
-
-.methodlist .apay::before {
-    background-image: url(/img/minipics/payments/clear-icons/apay.webp);
-}
-
-.methodlist .unionpay::before {
-    background-image: url(/img/minipics/payments/clear-icons/unionpay.webp);
-}
-
-.methodlist .g2apay::before {
-    background-image: url(/img/minipics/payments/clear-icons/g2apay.webp);
-}
-
-.methodlist .jeton::before {
-    background-image: url(/img/minipics/payments/clear-icons/jeton.webp);
-    transform: scale(.95);
-}
-
-.methodlist .btc::before {
-    background-image: url(/img/minipics/payments/clear-icons/btc.webp);
-}
-
-.methodlist .btcc::before {
-    background-image: url(/img/minipics/payments/clear-icons/btc.webp);
-}
-
-.methodlist .usdt::before {
-    background-image: url(/img/minipics/payments/clear-icons/usdt.webp);
-}
-
-.methodlist .usdc::before {
-    background-image: url(/img/minipics/payments/clear-icons/usdc.webp);
-}
-
-.methodlist .eth::before {
-    background-image: url(/img/minipics/payments/clear-icons/eth.webp);
-}
-
-.methodlist .ltc::before {
-    background-image: url(/img/minipics/payments/clear-icons/ltc.webp);
-}
-
-.methodlist .bnb::before {
-    background-image: url(/img/minipics/payments/clear-icons/bnb.webp);
-}
-
-.methodlist .bnbpay::before {
-    background-image: url(/img/minipics/payments/clear-icons/bnb.webp);
-}
-
-.methodlist .ripple::before {
-    background-image: url(/img/minipics/payments/clear-icons/ripple.webp);
-    transform: scale(.9);
-}
-
-.methodlist .tron::before {
-    background-image: url(/img/minipics/payments/clear-icons/tron.webp);
-    transform: scale(.9);
-}
-
-.methodlist .doge::before {
-    background-image: url(/img/minipics/payments/clear-icons/doge.webp);
-}
-
-.methodlist .polygon::before {
-    background-image: url(/img/minipics/payments/clear-icons/polygon.webp);
-    transform: scale(.9);
-}
-
-.methodlist .avalanche::before {
-    background-image: url(/img/minipics/payments/clear-icons/avalanche.webp);
-}
-
-.methodlist .cardano::before {
-    background-image: url(/img/minipics/payments/clear-icons/cardano.webp);
-}
-
-.methodlist .solana::before {
-    background-image: url(/img/minipics/payments/clear-icons/solana.webp);
-}
-
-.methodlist .stellar::before {
-    background-image: url(/img/minipics/payments/clear-icons/stellar.webp);
-}
-
-.methodlist .eos::before {
-    background-image: url(/img/minipics/payments/clear-icons/eos.webp);
-}
-
-.methodlist .giftcard::before {
-    background-image: url(/img/minipics/payments/clear-icons/giftcard.webp);
-}
-
-.methodlist .lol::before {
-    background-image: url(/img/minipics/payments/clear-icons/lol.webp);
-}
-
-.methodlist .fortnite::before {
-    background-image: url(/img/minipics/payments/clear-icons/fortnite.webp);
-}
-
-.methodlist .valorant::before {
-    background-image: url(/img/minipics/payments/clear-icons/valorant.webp);
-    transform: scale(.9);
-}
-
-.methodlist .roblox::before {
-    background-image: url(/img/minipics/payments/clear-icons/roblox.webp);
-}
-
-.methodlist .skinsback::before {
-    background-image: url(/img/minipics/payments/clear-icons/skinsback.webp);
-}
-
-.methodlist .skinpay::before {
-    background-image: url(/img/minipics/payments/clear-icons/skinpay.webp);
-}
-
-.methodlist .tradingcards::before {
-    background-image: url(/img/minipics/payments/clear-icons/tradingcards.webp);
-}
-
-.methodlist .kinguingiftcards::before {
-    background-image: url(/img/minipics/payments/clear-icons/kinguin.webp);
-}
-
-.methodlist .waxpeer::before {
-    background-image: url(/img/minipics/payments/clear-icons/waxpeer.webp);
-}
-
-.methodlist .gamemoney::before {
-    background-image: url(/img/minipics/payments/clear-icons/gamemoney.webp);
-}
-
-/* Payment Methods Ends */
-.typesinside ::before,
-.methodlist ::before {
-    display: inline-block;
-    background-size: cover;
-    height: 28px;
-    width: 28px;
-}
-
 .methodlist a {
     margin: 2px;
     height: 32px;
@@ -2945,11 +2444,6 @@ h3 {
     -webkit-background-clip: text;
     background-clip: text;
     z-index: 1;
-}
-
-.box.main .star_rating,
-.ratingsumm .star_rating:has(i.bi-star) {
-    opacity: .5;
 }
 
 .box.main .liverating .star_rating .bi-star {
@@ -4049,15 +3543,13 @@ nav #logo:hover {
     flex-direction: column;
     transition: all .15s ease-in-out;
     cursor: pointer;
-    border: unset;
+    border: transparent;
     font-size: 24px;
-    color: #3a3a3a;
     order: 1;
 }
 
-.menu-toggle::before {
-    content: "\F5D4";
-    transition: all .15s ease-in-out;
+.menu-toggle.active::before {
+    opacity: 1;
 }
 
 .nav-bar {
@@ -4184,29 +3676,6 @@ nav #logo:hover {
     margin: 0 !important;
     border-radius: 10px;
     overflow: hidden;
-}
-
-.sitepage .box .content button#code_style {
-    border: var(--main-color) 1px dashed;
-    position: absolute;
-    background-color: transparent;
-    bottom: 17px;
-    padding: 8px 20px;
-}
-
-.sitepage .box .content a.copy_style,
-.sitepage .box .content a.copy_style::after,
-.sitepage .box .content a.copy_style::before {
-    position: absolute;
-    background-color: #a81d34;
-    color: var(--white);
-    bottom: 15px;
-}
-
-.sitepage .box .content button.code_style:hover,
-.box .content button.copy:hover {
-    color: var(--white);
-    opacity: 1;
 }
 
 .topic-box {
@@ -5352,13 +4821,6 @@ nav img:active,
     color: var(--white);
 }
 
-.box:hover .content button.copy_style,
-.box:hover .content a.copy_style,
-.box:hover .content a.copy_style::after,
-.box:hover .content a.copy_style::before,
-.sitealternates .box:hover .content a.copy_style,
-.sitealternates .box:hover .content a.copy_style::before,
-.sitealternates .box:hover .content a.copy_style::after,
 .features .featuresbox .typesinside a:hover,
 .features .featuresbox .typesinside a:hover::before,
 .features .featuresbox .typesinside a:hover::after {
@@ -5372,16 +4834,6 @@ nav img:active,
 .boxes-holder .box:hover .content button.copy,
 .newest-boxes .box:hover .content button.copy {
     transform: scale(1);
-}
-
-.content button:hover,
-.content button:hover::before,
-.content a.copy_style:hover::before,
-.content a.copy_style:hover::after,
-.content a.copy_style:hover {
-    background-color: #a81d34 !important;
-    animation: none !important;
-    filter: unset !important;
 }
 
 .box.main .content button:hover,
@@ -6247,8 +5699,8 @@ footer .centralizer .footer-content {
     align-items: center;
     justify-content: center;
     background-size: 55%;
-    filter: drop-shadow(0 0 3px black);
-    transition: filter .15s ease-in-out;
+    filter: drop-shadow(0 0 3px black) grayscale(1); 
+    transition: filter .15s ease-in-out !important;
     background-position: center;
     background-repeat: no-repeat;
     opacity: .2;
@@ -6435,8 +5887,8 @@ input {
     color: white;
     background-color: transparent;
     border: none;
-    height: 50px;
-    width: 50px;
+    height: auto;
+    width: auto;
     z-index: 20;
     font-size: 32px;
     cursor: pointer;
@@ -6470,15 +5922,9 @@ input {
     opacity: .1;
 }
 
-.slider-container button i {
-    transition: all .15s ease-in-out, opacity .5s;
-    opacity: 0;
-}
-
 .screens button:hover i,
 .slider-container button:hover i {
-    font-size: 40px !important;
-    opacity: 1 !important;
+    opacity: 1;
 }
 
 .prev-button {
@@ -6659,10 +6105,486 @@ a[data-title]:after,
     height: 24px;
 }
 
+.features .featuresbox .typesinside a {
+    margin: 12px 0 0 9px;
+    height: 32px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 2px 10px;
+    padding-right: 14px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--white);
+    margin-left: 26px;
+    position: relative;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.typesinside i::before {
+    height: 16px;
+    width: 16px;
+}
+
+.features .featuresbox .typesinside a:first-child::before {
+    content: unset;
+}
+
+.features .featuresbox .typesinside a::after,
+.features .featuresbox .typesinside a::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    box-sizing: border-box;
+    transform: skewX(-20deg);
+    border-radius: 5px;
+    top: 0;
+}
+
+.features .featuresbox .typesinside a::before {
+    left: -9px;
+}
+
+.features .featuresbox .typesinside a::after {
+    right: -9px;
+}
+
+.typesinside a:first-child {
+    margin: 12px 0 12px 0;
+}
+
+.gamemodes .featuresbox .typesinside a::before {
+    content: '';
+    height: 22px;
+    width: 22px;
+    filter: drop-shadow(0 0 3px black);
+    transition: filter .15s ease-in-out;
+    border-radius: unset;
+}
+
+.sitedetails .methodlist a::before {
+    content: '';
+}
+
+/* Gamemodes Images List Start */
+
+.typesinside .cs2::before,
+.main-mode.betting .main-mode-icon::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/esports.webp);
+}
+
+.typesinside .sport::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/realsport.webp);
+}
+
+.typesinside .slots::before,
+.main-mode.casino .main-mode-icon::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/slots.webp);
+}
+
+.typesinside .slotsduels::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/slotsduels.webp);
+}
+
+.typesinside .livedealer::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/livedealer.webp);
+}
+
+.typesinside .poker::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/poker.webp);
+}
+
+.typesinside .blackjack::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/blackjack.webp);
+}
+
+.typesinside .baccarat::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/baccarat.webp);
+}
+
+.typesinside .wheel::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/wheel.webp);
+}
+
+.typesinside .roulette::before,
+.main-mode.classic .main-mode-icon::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/roulette.webp);
+}
+
+.typesinside .jackpot::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/jackpot.webp);
+}
+
+.typesinside .crash::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/crash.webp);
+}
+
+.typesinside .coinflip::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/coinflip.webp);
+}
+
+.typesinside .cases::before,
+.main-mode.cases .main-mode-icon::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/cases.webp);
+}
+
+.typesinside .casebattles::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/casebattles.webp);
+}
+
+.typesinside .upgrader::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/upgrader.webp);
+    transform: scale(.9);
+}
+
+.typesinside .duels::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/duels.webp);
+}
+
+.typesinside .plinko::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/plinko.webp);
+}
+
+.typesinside .dice::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/dice.webp);
+}
+
+.officon.dailyrewards::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/daily-calendar.svg);
+}
+
+.officon.rakeback::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/refund-alt.svg);
+}
+
+.officon.salebonus::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/badge-percent.svg);
+}
+
+.officon.faucet::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/faucet.svg);
+}
+
+.officon.rain::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/raindrops.svg);
+}
+
+.officon.depositbonuses::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/plus-hexagon.svg);
+}
+
+.officon.giveaways::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/hand-present.svg);
+}
+
+.typesinside .towers::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/towers.svg);
+}
+
+.typesinside .mines::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/mines.webp);
+}
+
+.typesinside .hilo::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/hilo.webp);
+}
+
+.typesinside .mining::before,
+.main-mode.mining .main-mode-icon::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/mining.webp);
+}
+
+.typesinside .offerwalls::before,
+.main-mode.earning .main-mode-icon::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/earning.webp);
+}
+
+.typesinside .playing::before,
+.main-mode.playing .main-mode-icon::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/playing.webp);
+}
+
+.typesinside .trade-skins::before,
+.main-mode.trading .main-mode-icon::before,
+.officon.trade-skins::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/exchanger.webp);
+}
+
+.typesinside .buy-skins::before,
+.officon.buy-skins::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/cart-buy.svg);
+}
+
+.main-mode.instant-sell .main-mode-icon::before,
+.officon.instant-sell::before,
+.typesinside .instant-sell::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/cart-fast.svg);
+}
+
+.typesinside .sell-skins::before,
+.officon.sell-skins::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/selling.svg);
+}
+
+.typesinside .marketplace::before,
+.main-mode.marketplace .main-mode-icon::before,
+.officon.marketplaces::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/marketplace.svg);
+}
+
+.gamemodes .typesinside .giveaways::before,
+.officon.signupbonus::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/gift.svg);
+}
+
+.typesinside .steamlvlup::before,
+.main-mode.steamlvlup .main-mode-icon::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/steamlvlup.webp);
+}
+
+.typesinside .steamtopup::before,
+.main-mode.steamtopup .main-mode-icon::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/steamtopup.webp);
+    width: 21px !important;
+    height: 21px !important;
+}
+
+.typesinside .rental::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/rental.webp);
+}
+
+.typesinside .buy-games::before,
+.methodlist .games::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/games.webp);
+}
+
+/* Gamemodes Images List End */
+
+/* Payment Methods Start */
+
+.methodlist .cs2::before {
+    background-image: url(/img/minipics/payments/clear-icons/cs2.webp);
+    transform: scale(.9);
+}
+
+.methodlist .dota::before {
+    background-image: url(/img/minipics/payments/clear-icons/dota.webp);
+    transform: scale(.9);
+}
+
+.methodlist .rust::before {
+    background-image: url(/img/minipics/payments/clear-icons/rust.webp);
+    transform: scale(.9);
+}
+
+.methodlist .tf2::before {
+    background-image: url(/img/minipics/payments/clear-icons/tf2.webp);
+}
+
+.methodlist .visa::before {
+    background-image: url(/img/minipics/payments/clear-icons/visa.webp);
+}
+
+.methodlist .mastercard::before {
+    background-image: url(/img/minipics/payments/clear-icons/mastercard.webp);
+}
+
+.methodlist .paypal::before {
+    background-image: url(/img/minipics/payments/clear-icons/paypal.webp);
+}
+
+.methodlist .paysafe::before {
+    background-image: url(/img/minipics/payments/clear-icons/paysafe.webp);
+    transform: scale(.9);
+}
+
+.methodlist .skrill::before {
+    background-image: url(/img/minipics/payments/clear-icons/skrill.webp);
+}
+
+.methodlist .qiwi::before {
+    background-image: url(/img/minipics/payments/clear-icons/qiwi.webp);
+}
+
+.methodlist .piastrix::before {
+    background-image: url(/img/minipics/payments/clear-icons/piastrix.webp);
+}
+
+.methodlist .webmoney::before {
+    background-image: url(/img/minipics/payments/clear-icons/webmoney.webp);
+}
+
+.methodlist .yumoney::before {
+    background-image: url(/img/minipics/payments/clear-icons/yumoney.webp);
+}
+
+.methodlist .bank-transfer::before {
+    background-image: url(/img/minipics/payments/clear-icons/bank-transfer.webp);
+}
+
+.methodlist .sbp::before {
+    background-image: url(/img/minipics/payments/clear-icons/sbp.webp);
+}
+
+.methodlist .fkwallet::before {
+    background-image: url(/img/minipics/payments/clear-icons/fkwallet.webp);
+    transform: scale(.8);
+}
+
+.methodlist .gpay::before {
+    background-image: url(/img/minipics/payments/clear-icons/gpay.webp);
+}
+
+.methodlist .h1z1::before {
+    background-image: url(/img/minipics/payments/clear-icons/h1z1.webp);
+}
+
+.methodlist .apay::before {
+    background-image: url(/img/minipics/payments/clear-icons/apay.webp);
+}
+
+.methodlist .unionpay::before {
+    background-image: url(/img/minipics/payments/clear-icons/unionpay.webp);
+}
+
+.methodlist .g2apay::before {
+    background-image: url(/img/minipics/payments/clear-icons/g2apay.webp);
+}
+
+.methodlist .jeton::before {
+    background-image: url(/img/minipics/payments/clear-icons/jeton.webp);
+    transform: scale(.95);
+}
+
+.methodlist .btc::before {
+    background-image: url(/img/minipics/payments/clear-icons/btc.webp);
+}
+
+.methodlist .btcc::before {
+    background-image: url(/img/minipics/payments/clear-icons/btc.webp);
+}
+
+.methodlist .usdt::before {
+    background-image: url(/img/minipics/payments/clear-icons/usdt.webp);
+}
+
+.methodlist .usdc::before {
+    background-image: url(/img/minipics/payments/clear-icons/usdc.webp);
+}
+
+.methodlist .eth::before {
+    background-image: url(/img/minipics/payments/clear-icons/eth.webp);
+}
+
+.methodlist .ltc::before {
+    background-image: url(/img/minipics/payments/clear-icons/ltc.webp);
+}
+
+.methodlist .bnb::before {
+    background-image: url(/img/minipics/payments/clear-icons/bnb.webp);
+}
+
+.methodlist .bnbpay::before {
+    background-image: url(/img/minipics/payments/clear-icons/bnb.webp);
+}
+
+.methodlist .ripple::before {
+    background-image: url(/img/minipics/payments/clear-icons/ripple.webp);
+    transform: scale(.9);
+}
+
+.methodlist .tron::before {
+    background-image: url(/img/minipics/payments/clear-icons/tron.webp);
+    transform: scale(.9);
+}
+
+.methodlist .doge::before {
+    background-image: url(/img/minipics/payments/clear-icons/doge.webp);
+}
+
+.methodlist .polygon::before {
+    background-image: url(/img/minipics/payments/clear-icons/polygon.webp);
+    transform: scale(.9);
+}
+
+.methodlist .avalanche::before {
+    background-image: url(/img/minipics/payments/clear-icons/avalanche.webp);
+}
+
+.methodlist .cardano::before {
+    background-image: url(/img/minipics/payments/clear-icons/cardano.webp);
+}
+
+.methodlist .solana::before {
+    background-image: url(/img/minipics/payments/clear-icons/solana.webp);
+}
+
+.methodlist .stellar::before {
+    background-image: url(/img/minipics/payments/clear-icons/stellar.webp);
+}
+
+.methodlist .eos::before {
+    background-image: url(/img/minipics/payments/clear-icons/eos.webp);
+}
+
+.methodlist .giftcard::before {
+    background-image: url(/img/minipics/payments/clear-icons/giftcard.webp);
+}
+
+.methodlist .lol::before {
+    background-image: url(/img/minipics/payments/clear-icons/lol.webp);
+}
+
+.methodlist .fortnite::before {
+    background-image: url(/img/minipics/payments/clear-icons/fortnite.webp);
+}
+
+.methodlist .valorant::before {
+    background-image: url(/img/minipics/payments/clear-icons/valorant.webp);
+    transform: scale(.9);
+}
+
+.methodlist .roblox::before {
+    background-image: url(/img/minipics/payments/clear-icons/roblox.webp);
+}
+
+.methodlist .skinsback::before {
+    background-image: url(/img/minipics/payments/clear-icons/skinsback.webp);
+}
+
+.methodlist .skinpay::before {
+    background-image: url(/img/minipics/payments/clear-icons/skinpay.webp);
+}
+
+.methodlist .tradingcards::before {
+    background-image: url(/img/minipics/payments/clear-icons/tradingcards.webp);
+}
+
+.methodlist .kinguingiftcards::before {
+    background-image: url(/img/minipics/payments/clear-icons/kinguin.webp);
+}
+
+.methodlist .waxpeer::before {
+    background-image: url(/img/minipics/payments/clear-icons/waxpeer.webp);
+}
+
+.methodlist .gamemoney::before {
+    background-image: url(/img/minipics/payments/clear-icons/gamemoney.webp);
+}
+
+/* Payment Methods Ends */
+.typesinside ::before,
+.methodlist ::before {
+    display: inline-block;
+    background-size: cover;
+    height: 28px;
+    width: 28px;
+}
+
 .officon::before,
-.menu-toggle::before,
-#back-to-top-btn::before,
-#btnfaq::before,
 .boxreview .plusminus .criteria:nth-child(1) .par li::before,
 .boxreview .plusminus .criteria:nth-child(1)::before,
 .boxreview .plusminus .criteria:nth-child(2) .par li::before,
@@ -6671,10 +6593,8 @@ a[data-title]:after,
 .box .content button.copy::after,
 .site-promo-copy::after,
 .sitedetails .sitepros span::after,
-.singlemod-icon::before,
 .email-copy button::before, 
-.skin-copy button::before,
-.star_rating::before {
+.skin-copy button::before {
     content: '';
     height: 22px;
     width: 22px;
@@ -6686,10 +6606,32 @@ a[data-title]:after,
     transition: all .15s ease-in-out;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: .3;
+    opacity: .2;
+} 
+
+.features .typesinside i {
+    margin-right: 10px;
+    z-index: 1;
 }
 
-.sitedetails .sitepros span::after {
+.officon:hover::before {
+    opacity: 1;
+}
+
+#btnfaq.active::before,
+.gamemodes .featuresbox .typesinside a:hover::before,
+.features .typesinside i::before,
+.officon.exclamation::before {
+    filter: brightness(0) saturate(100%) invert(16%) sepia(69%) saturate(4202%) hue-rotate(339deg) brightness(95%) contrast(90%);
+    opacity: 1;
+}
+
+.features .typesinside a:hover .officon::before {
+    filter: grayscale(1);
+}
+
+.sitedetails .sitepros span::after,
+.officon.oldcarret {
     background-image: url(/img/minipics/gamemodes/clear-icons/caret-down.svg);
     transition: all .4s ease-in-out;
     filter: grayscale(1) brightness(5);
@@ -6708,16 +6650,33 @@ a[data-title]:after,
     mask-size: 100%;
 }
 
+.star_rating.full::before {
+    mask-image: url(/img/minipics/gamemodes/clear-icons/star-fill.svg);
+}
+
+.star_rating.half::before {
+    mask-image: url(/img/minipics/gamemodes/clear-icons/star-half.svg);
+}
+
+.star_rating.empty::before {
+    mask-image: url(/img/minipics/gamemodes/clear-icons/star.svg);
+}
+
+.box.main .star_rating,
+.ratingsumm .star_rating.empty {
+    opacity: .5;
+}
+
+.ratingsumm .star_rating::before {
+    width: 16px;
+    height: 16px;
+}
+
 .rating-case-single .star_rating::before {
     mask-image: url(/img/minipics/gamemodes/clear-icons/star-fill.svg);
     width: 14px;
     height: 14px;
     margin-bottom: 1px;
-}
-
-.liverating .star_rating::before,
-.ratingway  .star_rating::before {
-    content: unset;
 }
 
 .box .content button.copy::after,
@@ -6750,6 +6709,7 @@ a[data-title]:after,
     background-image: url(/img/minipics/gamemodes/clear-icons/map-marker-question.svg);
     height: 20px;
     width: 20px;
+    filter: grayscale(1);
 }
 
 .lightbulb-off::before {
@@ -6768,10 +6728,85 @@ a[data-title]:after,
     background-image: url(/img/minipics/gamemodes/clear-icons/eye-crossed.svg);
 }
 
-#back-to-top-btn::before {
+.officon.zoom-in::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/zoom-in.svg);
+    height: 18px;
+    width: 18px;
+}
+
+.officon.zoom-out::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/zoom-out.svg);
+    height: 18px;
+    width: 18px;
+}
+
+.officon.cross::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/cross-small.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.officon.pause::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/pause.svg);
+    height: 16px;
+    width: 16px;
+}
+
+.officon.play::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/play.svg);
+    height: 16px;
+    width: 16px;
+}
+
+.officon.library::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/apps.svg);
+}
+
+.officon.diamond::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/diamond.svg);
+    height: 16px;
+    width: 16px;
+}
+
+.officon.sort::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/sort-alt.svg);
+    height: 16px;
+    width: 16px;
+}
+
+.officon.chevron::before {
     background-image: url(/img/minipics/gamemodes/clear-icons/angle-small-up.svg);
     height: 32px;
     width: 32px;
+}
+
+.buttons-container .officon.chevron::before {
+    height: 25px;
+    width: 25px;
+}
+
+.slick-slider .officon.chevron::before {
+    height: 45px;
+    width: 45px;
+}
+
+.preview-nav-button .officon.chevron::before {
+    height: 50px;
+    width: 50px;
+}
+
+.officon.exclamation::before {
+    background-image: url(/img/minipics/gamemodes/clear-icons/triangle-warning.svg);
+    height: 18px;
+    width: 18px;
+}
+
+.officon.chevron.right::before {
+    transform: rotate(90deg);
+}
+
+.officon.chevron.left::before {
+    transform: rotate(-90deg);
 }
 
 .search::before {
@@ -6812,39 +6847,20 @@ a[data-title]:after,
     opacity: 1;
 }
 
+.box .content button.copy:hover::after {
+    opacity: 1;
+}
+
 .submenu li a:empty::after,
 .submenu2 li a:empty::after,
 .submenu2 a::after {
     content: unset !important;
 }
 
-#theme-toggle:hover i::before,
-.menu-toggle:hover::before,
-.menu-toggle.active::before,
-.search-enabler:hover i::before,
-.search-enabler:focus i::before,
-.settings-button:hover i::before,
-#back-to-top-btn:hover::before,
-.infoblock button:hover::before,
-.pages button:hover::before,
-#btnfaq:hover:before,
-.box .content button.copy:hover::after,
-.site-promo-copy:hover::after,
-.email-copy button:hover::before, 
-.skin-copy button:hover::before {
-    opacity: 1;
-}
-
-#btnfaq.active::before {
-    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(98%) contrast(250%);
-    opacity: 1;
-}
-
 .methodlist a[aria-label]:hover:after,
 .gamemodes .featuresbox .typesinside a[aria-label]:hover:after {
     content: attr(aria-label);
     opacity: 1;
-
 }
 
 .methodlist a[aria-label]:after,
@@ -7216,8 +7232,8 @@ ul .big-category:hover .submenu2 {
     position: relative;
     align-items: center;
     font-size: 15px;
-    color: #545454;
-    border: 1px #545454 solid;
+    color: #3d3d3d;
+    border: 1px #3d3d3d solid;
     transition: all .15s ease-in-out;
 }
 
@@ -7457,8 +7473,7 @@ label:active,
 .email-copy button:active i,
 .skin-copy button:active,
 .skin-copy button:active i,
-.settings-button:active i,
-#back-to-top-btn:active::before {
+.officon:active::before {
     filter: brightness(.3) !important;
     transition: all .09s ease-in-out;
 }
@@ -8613,7 +8628,7 @@ div#results {
 
     .site-attention.blocked {
         background: unset;
-        padding: 30px;
+        padding: 30px 10px;
         margin: 0 auto;
     }
 
@@ -8637,8 +8652,9 @@ div#results {
     }
 
     .preview-buttons,
-    .preview-nav-button {
-        opacity: .25;
+    .preview-nav-button,
+    #preview-showcase:hover .preview-nav-button {
+        opacity: 1;
     }
 
     .preview-nav-button {
