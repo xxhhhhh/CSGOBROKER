@@ -180,7 +180,6 @@
 .sitepage.topic-craft .box-topic,
 .introduce-craft p,
 .crafting-table-step,
-.infoblock h1,
 .navigation-weapon-sort i,
 .topic-nav-box span,
 .topic-nav-menu span,
@@ -288,8 +287,7 @@ h3 {
 .box .logobg .best::before,
 .newest-boxes-title-box,
 .newest-boxes-title-box::after,
-.newest-boxes-title-box::before,
-.singlemod-box {
+.newest-boxes-title-box::before {
     background-color: #0a0a0a;
 }
 
@@ -600,7 +598,8 @@ ul .submenu li .nonredir,
 .submenu .big-category:hover a,
 .submenu .big-category .nonredir:hover,
 .item-box-topic,
-.submenu2 a:hover {
+.submenu2 a:hover,
+.singlemod-box {
     color: #1a1a1a;
     background-color: rgb(242 242 242);
 }
@@ -744,12 +743,7 @@ ul .submenu li .nonredir,
 
 @media screen and (max-width: 1365px) {
 
-    .boxes-holder .content a.boxtitle,
-    .boxes-holder .content p:first-child,
-    .content a.boxtitle,
-    .box.main .content p:first-child {
-        background-color: #a9a9a9;
-    }
+
 
     .category-selector .category-box {
         background: var(--opacback);
