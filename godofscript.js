@@ -782,7 +782,7 @@ function forcemodsboxes() {
     }
 
     const existingContainer = document.querySelector('.boxes-holder');
-    const cachedContent = localStorage.getItem(`modsBox-${boxId}`);
+    const cachedContent = localStorage.getItem(`modsBox-v2-${boxId}`);
 
     if (cachedContent) {
         insertModsBox(existingContainer, boxId, cachedContent);
@@ -793,7 +793,7 @@ function forcemodsboxes() {
         fetch(fileToFetch)
             .then(response => response.text())
             .then(data => {
-                localStorage.setItem(`modsBox-${boxId}`, data);
+                localStorage.setItem(`modsBox-v2-${boxId}`, data);
                 insertModsBox(existingContainer, boxId, data);
                 importedMods[boxId] = true;
             });
@@ -2047,6 +2047,7 @@ document.addEventListener("DOMContentLoaded", function () {
     !window.location.pathname.includes("/contact-us")
   ) {
     const boxContainer = document.querySelector(".category-selector");
+    const pages = document.querySelector(".pages");
     const SpaceboxContainer = document.querySelector(".category-space");
     const buttonsContainer = document.createElement("div");
     const prevButtonContainer = document.createElement("button");
@@ -2133,6 +2134,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (isActive) {
               boxContainer.classList.add("current");
+              pages.classList.add("hardplaced");
           }
 
           if (submenu) {
@@ -2142,37 +2144,33 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (bigCategoryLink) {
-          const bigCategory = bigCategoryLink.closest(".big-category");
-          const hasSubmenu2 = bigCategory.querySelector(".submenu2");
-
-          if (hasSubmenu2 && window.innerWidth <= 1365) {
-              e.preventDefault();
-          }
-
-          const bigCategories = document.querySelectorAll(".big-category");
-          bigCategories.forEach((item) => {
-              item.classList.remove("active");
-              const submenu2 = item.querySelector(".submenu2");
-              if (submenu2) {
-                  submenu2.classList.remove("current");
-              }
-          });
-
-          const targetBigCategory = bigCategory;
-          targetBigCategory.classList.toggle("active");
-
-          if (targetBigCategory.classList.contains("active")) {
-              const submenu2 = targetBigCategory.querySelector(".submenu2");
-              if (submenu2) {
-                  submenu2.classList.add("current");
-              }
-          } else {
-              const submenu2 = targetBigCategory.querySelector(".submenu2");
-              if (submenu2) {
-                  submenu2.classList.remove("current");
-              }
-          }
-      }
+        const bigCategory = bigCategoryLink.closest(".big-category");
+        const hasSubmenu2 = bigCategory.querySelector(".submenu2");
+    
+        if (hasSubmenu2 && window.innerWidth <= 1365) {
+            e.preventDefault();
+        }
+    
+        const isActive = bigCategory.classList.contains("active");
+    
+        const bigCategories = document.querySelectorAll(".big-category.active");
+        bigCategories.forEach((item) => {
+            item.classList.remove("active");
+            const submenu2 = item.querySelector(".submenu2");
+            if (submenu2) {
+                submenu2.classList.remove("current");
+            }
+        });
+    
+        if (!isActive) {
+            bigCategory.classList.add("active");
+            const submenu2 = bigCategory.querySelector(".submenu2");
+            if (submenu2) {
+                submenu2.classList.add("current");
+            }
+        }
+    }
+    
 
       if (e.target.closest(".submenu2 a")) {
           return;
@@ -2185,6 +2183,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const boxescurrent = boxContainer.querySelectorAll('.category-box.current');
             const submenucurrent = boxContainer.querySelectorAll('.submenu.current');
             boxContainer.classList.remove('current');
+            pages.classList.remove("hardplaced");
 
             boxescurrent.forEach(function(box) {
                 box.classList.remove('current');
@@ -2259,22 +2258,31 @@ document.addEventListener("DOMContentLoaded", function () {
       isMouseDown = true;
       startX = touch.pageX - boxContainer.offsetLeft;
       scrollLeft = boxContainer.scrollLeft;
-    });
-
-    boxContainer.addEventListener("touchmove", (e) => {
+      startY = touch.pageY;
+  });
+  
+  boxContainer.addEventListener("touchmove", (e) => {
       if (!isMouseDown) return;
-      e.preventDefault();
+  
       const touch = e.touches[0];
       const x = touch.pageX - boxContainer.offsetLeft;
-      const walk = (x - startX) * 1.2;
-      const newScrollLeft = scrollLeft - walk;
-      boxContainer.scrollLeft = newScrollLeft;
-      buttonScrollPosition = newScrollLeft;
-    });
-
-    boxContainer.addEventListener("touchend", () => {
+      const y = touch.pageY;
+  
+      const horizontalMove = Math.abs(x - startX);
+      const verticalMove = Math.abs(y - startY);
+  
+      if (horizontalMove > verticalMove) {
+          const walk = (x - startX) * 1.2;
+          const newScrollLeft = scrollLeft - walk;
+          boxContainer.scrollLeft = newScrollLeft;
+          buttonScrollPosition = newScrollLeft;
+      }
+  });
+  
+  boxContainer.addEventListener("touchend", () => {
       isMouseDown = false;
-    });
+  });
+  
 
     var categorySelector = document.querySelector("div.category-selector");
     var CategoryElements = categorySelector.querySelectorAll(
