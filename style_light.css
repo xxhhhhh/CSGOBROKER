@@ -274,7 +274,8 @@ h3 {
 }
 
 .category-selector .category-box.active .category-box-logo img,
-.main-mode:after {
+.main-mode:after,
+.box.main .main-mode:after {
     filter: unset;
 }
 

@@ -49,9 +49,8 @@ forcemodsboxes();
     }
   
     const links = parentElement.querySelectorAll('a[href]');
-    const regex = /^(https?:\/\/[^/]+)?(\/[a-z]{2}(?:\/|\.html)?\/?.*)(\?.*)?$/;
-  
     const languageTag = extractLanguageTagFromHTML();
+  
     if (!languageTag || languageTag === 'en' || languageTag === 'pl') {
       return;
     }
@@ -65,31 +64,30 @@ forcemodsboxes();
         return;
       }
   
-      const href = link.getAttribute('href');
-      const match = href.match(regex);
+      let href = link.getAttribute('href');
   
-      if (match) {
-        const domain = match[1] || '';
-        let path = match[2];
-        const queryString = match[3] || '';
-  
-        const pathSegments = path.split('/');
-        if (path === '/') {
-          path = `/${languageTag}/`;
-        } else if (pathSegments.length > 1 && pathSegments[1].length === 2) {
+      if (href === '/') {
+        href = `/${languageTag}/`;
+      } else {
+        const pathSegments = href.split('/');
+        
+        if (pathSegments.length > 1 && pathSegments[1].length === 2) {
           return;
+        }
+        
+        if (href.startsWith('/')) {
+          href = `/${languageTag}${href}`;
         } else {
-          path = `/${languageTag}${path}`;
+          href = `/${languageTag}/${href}`;
         }
+      }
   
-        const updatedHref = `${domain}${path}${queryString}`;
-  
-        if (!link.classList.contains('copy_style') && !link.classList.contains('visit')) {
-          link.setAttribute('href', updatedHref);
-        }
+      if (!link.classList.contains('copy_style') && !link.classList.contains('visit')) {
+        link.setAttribute('href', href);
       }
     });
   }
+  
 
   document.addEventListener('DOMContentLoaded', function() {
     const userAgent = navigator.userAgent;

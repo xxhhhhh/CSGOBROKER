@@ -1,21 +1,25 @@
 {
     "gamemodesContent": [
-        "<a href=\"/rust/trade-skins\" aria-label=\"Trade Skins\" class=\"trade-skins\"></a>"
+        "<a href=\"/csgo/trade-skins\" aria-label=\"Trade Skins\" class=\"trade-skins\"></a>"
     ],
     "firstMethodContent": [
+        "<a href=\"/\" aria-label=\"CS2 Items\" class=\"cs2\"></a>",
         "<a href=\"/rust\" aria-label=\"Rust Items\" class=\"rust\"></a>"
     ],
     "secondMethodContent": [
+        "<a href=\"/\" aria-label=\"CS2 Items\" class=\"cs2\"></a>",
         "<a href=\"/rust\" aria-label=\"Rust Items\" class=\"rust\"></a>"
     ],
     "ratings": {
         "Trust": 3,
         "Support": 3,
-        "Payments": 2.5,
-        "Price": 4
+        "Payments": 3.5,
+        "Price": 4.5
     },
     "name": "iTradeGG",
     "Main Mode": "trading",
-    "link": "https://itrade.gg/r/csgobroker",
+    "link": "https://itrade.gg?ref=broker",
+    "featuresContent": ["SignUpBonus", "DailyRewards"],
+    "code": "broker",
     "Sites Alternatives"  : ["tradeit", "csmoney", "swapgg", "skinswap"]
 }

@@ -867,11 +867,11 @@ function translateURLsIfNeeded() {
           "pt": "O RustStake é uma plataforma de apostas de skins de Rust com jogos como jackpot e coinflip. Fácil entrada e retirada de itens.",
           "hi": "RustStake एक Rust स्किन जुआ प्लेटफ़ॉर्म है जो जैकपॉट और कॉइनफ्लिप समेत विभिन्न खेल प्रदान करता है। आसानी से खेलों से आइटम को दाखिल और निकाल सकते हैं।"
         },
-        "iTrade.gg is a Trusted platform for trading rust skins. User-friendly design, free sign-up bonus, and daily rewards create a seamless trading experience.": {
-          "es": "iTrade.gg es una plataforma confiable para el comercio de skins de Rust. Su diseño intuitivo, bono de registro gratuito y recompensas diarias crean una experiencia de comercio fluida.",
-          "tr": "iTrade.gg, rostoların ticaretini yapmak için güvenilir bir platformdur. Kullanıcı dostu tasarım, ücretsiz kayıt bonusu ve günlük ödüller sorunsuz bir ticaret deneyimi sağlar.",
-          "pt": "Confiável para negociar skins de Rust. Design intuitivo, bônus de inscrição grátis e recompensas diárias para uma experiência de negociação tranquila.",
-          "hi": "iTrade.gg एक विश्वसनीय प्लेटफ़ॉर्म है जहां रस्ट स्किन्स की ट्रेडिंग की जा सकती है। उपयोगकर्ता-मित्रपूर्ण डिज़ाइन, मुफ़्त साइन-अप बोनस और दैनिक पुरस्कार एक सुगठित ट्रेडिंग अनुभव बनाते हैं।"
+        "iTrade.gg - a CS2 and Rust skin exchange platform with low fees, support for low-value items, bonuses, and extra payouts for stickers.": {
+          "es": "iTrade.gg: una plataforma de intercambio de skins de CS2 y Rust con comisiones bajas, soporte para artículos de bajo valor, bonificaciones y pagos adicionales por pegatinas.",
+          "tr": "iTrade.gg - düşük komisyonlar, düşük değerli eşyalar için destek, bonuslar ve etiketler için ekstra ödeme sunan bir CS2 ve Rust takas platformu.",
+          "pt": "iTrade.gg - uma plataforma de troca de skins de CS2 e Rust com taxas baixas, suporte para itens de baixo valor, bônus e pagamentos extras por adesivos.",
+          "hi": "iTrade.gg - कम शुल्क, सस्ते आइटम्स के लिए समर्थन, बोनस और स्टिकर्स के लिए अतिरिक्त भुगतान वाली CS2 और Rust स्किन एक्सचेंज प्लेटफ़ॉर्म।"
         },
         "Shuffle is a crypto-casino with unique games, a provably fair system, a VIP program, and an engaging gaming experience.": {
           "es": "Shuffle es un cripto-casino con juegos únicos, un sistema de verificación de equidad, un programa VIP y una experiencia de juego emocionante.",
@@ -926,12 +926,6 @@ function translateURLsIfNeeded() {
           "tr": "CS2, Dota 2, TF2 veya Rust Eşyalarını Çekin!",
           "pt": "Retirar Itens do CS2, Dota 2, TF2 ou Rust!",
           "hi": "वापसी करें CS2, Dota 2, TF2 या Rust आइटम!"
-        },
-        "Withdraw CS2 Skins, Crypto or Game Keys!": {
-          "es": "Retira skins de CS2, criptomonedas o juegos.",
-          "tr": "CS2 Skinleri, Kripto veya Oyun Anahtarları Çekin!",
-          "pt": "Retirar Skins do CS2, Criptomoedas ou Jogos!",
-          "hi": "वापसी करें CS2 स्किन, क्रिप्टो या गेम कुंजी!"
         },
         "Withdraw CS2 Skins, Crypto or PayPal!": {
           "es": "Retira Skins de CS2, criptomonedas o PayPal!",
@@ -1029,11 +1023,11 @@ function translateURLsIfNeeded() {
           "pt": "Levantar Criptomoedas e Cartões de Presente!",
           "hi": "क्रिप्टो और गिफ्ट कार्ड निकालें!"
         },
-        "Withdraw CS2 Skins or Items!": {
-          "es": "Retira Skins o items de CS2!",
-          "tr": "CS2 Skins veya eşyalar çekin!",
-          "pt": "Levantar Skins ou Itens de CS2!",
-          "hi": "स्किन या आइटम निकालें!"
+        "Withdraw CS2 Skins and Items!": {
+          "es": "Retira Skins e items de CS2!",
+          "tr": "CS2 Skins ve eşyalar çekin!",
+          "pt": "Retirar Skins e Itens do CS2!",
+          "hi": "वापसी करें CS2 स्किन और आइटम!"
         },
         "Withdraw Games, GiftCards or Dota2 & TF2 Items!": {
           "es": "Retira juegos, tarjetas de regalo o items de Dota2 y TF2!",
@@ -1095,17 +1089,17 @@ function translateURLsIfNeeded() {
           "pt": "Retirar Skins do CS2 ou Criptomoedas!",
           "hi": "वापसी करें CS2 स्किन या क्रिप्टो!"
         },
+        "Withdraw CS2 and Rust Skins!": {
+          "es": "¡Retira Skins de CS2 y Rust!",
+          "tr": "CS2 ve Rust Skins çekin!",
+          "pt": "Retirar Skins do CS2 e Rust!",
+          "hi": "वापसी करें CS2 और Rust स्किन!"
+        },
         "Withdraw Money, Crypto or PayPal!": {
           "es": "Retira dinero, criptomonedas o PayPal!",
           "tr": "Para, kripto para veya PayPal çekin!",
           "pt": "Retirar Dinheiro, Criptomoedas ou PayPal!",
           "hi": "वापसी करें धन, क्रिप्टो या PayPal!"
-        },
-        "Withdraw with P2P CS2 Skins.": {
-          "es": "RETIRA CON SKINS P2P DE CS2.",
-          "tr": "P2P CS2 SKINS ile çekin.",
-          "pt": "Retirar com Skins do CS2 P2P.",
-          "hi": "P2P CS2 स्किन के साथ वापसी करें।"
         },
         "Withdraw Real Money or Crypto!": {
           "es": "Retira dinero real o criptomonedas!",
@@ -1124,12 +1118,6 @@ function translateURLsIfNeeded() {
           "tr": "CS2 Skins veya PayPal çekin!",
           "pt": "Retirar Skins do CS2 ou PayPal!",
           "hi": "वापसी करें CS2 स्किन या PayPal!"
-        },
-        "Withdraw CS2 Skins and Items!": {
-          "es": "Retira Skins e items de CS2!",
-          "tr": "CS2 Skins ve eşyalar çekin!",
-          "pt": "Retirar Skins e Itens do CS2!",
-          "hi": "वापसी करें CS2 स्किन और आइटम!"
         },
         "Withdraw Steam Trading cards.": {
           "es": "Retira cartas de intercambio de Steam!",

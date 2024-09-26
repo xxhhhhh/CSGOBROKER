@@ -4262,8 +4262,8 @@ nav img:active,
 
 .box .logobg img {
     width: auto;
-    max-width: 250px !important;
-    max-height: 90px !important;
+    max-width: 250px;
+    max-height: 90px;
     height: auto;
     transition: all .2s ease-in-out;
 }
@@ -4462,11 +4462,14 @@ nav img:active,
 }
 
 .box.main .main-mode:after {
-    transform: translateX(-50%);
-    left: -20%;
-    bottom: 40px;
+    transform: unset;
+    right: 0;
+    left: unset;
+    bottom: 50px;
     width: unset;
-    text-align: center;
+    text-align: end;
+    filter: drop-shadow(0px 0px 3px rgb(0, 0, 0));
+    text-wrap: nowrap;
 }
 
 .main-mode {
@@ -5402,7 +5405,8 @@ footer .centralizer .footer-content {
     transform: scale(.95);
     margin-top: unset;
     transition: all .15s ease-in-out;
-    max-width: 90% !important;
+    max-width: 90%;
+    max-height: 60%;
 }
 
 .newest-boxes .box .best {
