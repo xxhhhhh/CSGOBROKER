@@ -597,6 +597,10 @@ ul .submenu li .nonredir,
     background-color: rgb(242 242 242);
 }
 
+.singlemod-box {
+    color: var(--white);
+}
+
 .item-box-topic .logobg {
     mask-image: unset;
 }
