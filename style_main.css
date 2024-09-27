@@ -4777,7 +4777,6 @@ footer .centralizer .footer-content {
 
 .copyright,
 .contact {
-    color: rgba(255, 255, 255, .2);
     font-size: 13px;
     font-weight: 400;
     position: absolute;
@@ -4792,7 +4791,7 @@ footer .centralizer .footer-content {
     display: flex;
     justify-content: flex-start;
     position: absolute;
-    transition: all .2s ease-in-out;
+    transition: all .15s ease-in-out;
     user-select: none;
     left: 0;
     bottom: 0;
@@ -6235,7 +6234,9 @@ a[data-title]:after,
 
 .category-selector .category-box .category-box-content span,
 .selected-lang,
-.contact-box span {
+.contact-box span,
+.copyright, 
+.contact {
     color: rgba(255, 255, 255, .25);
     transition: all .15s ease-in-out;
 }
