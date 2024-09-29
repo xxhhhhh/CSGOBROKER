@@ -82,9 +82,16 @@ forcemodsboxes();
         }
       }
   
-      if (!link.classList.contains('copy_style') && !link.classList.contains('visit')) {
-        link.setAttribute('href', href);
+      if (!link.classList.contains('visit') && !link.classList.contains('notupdt')) {
+        if (languageTag === 'es' || languageTag === 'pt' || languageTag === 'hi') {
+          if (!link.classList.contains('review-button') && !link.classList.contains('boxtitle')) {
+            link.setAttribute('href', href);
+          }
+        } else {
+          link.setAttribute('href', href);
+        }
       }
+      
     });
   }
   
@@ -764,7 +771,7 @@ function forcemodsboxes() {
       importModsBox("crypto");
       break;
     default:
-      if (url.includes("/csgo/") || url.endsWith("/ru") || url.endsWith("/es") || url.endsWith("/tr") || url.endsWith("/pt") || url.endsWith("/hi") || url.endsWith("/") || url.endsWith("index.html") || url.endsWith("/ru.html") || url.endsWith("/es.html") || url.endsWith("/tr.html") || url.endsWith("/pt.html") || url.endsWith("/hi.html")) {
+      if (url.includes("/csgo/") || url.endsWith("/cs2") || url.endsWith("/cs2.html") || url.endsWith("/ru") || url.endsWith("/es") || url.endsWith("/tr") || url.endsWith("/pt") || url.endsWith("/hi") || url.endsWith("/") || url.endsWith("index.html") || url.endsWith("/ru.html") || url.endsWith("/es.html") || url.endsWith("/tr.html") || url.endsWith("/pt.html") || url.endsWith("/hi.html")) {
         importModsBox("csgo");
       } else if (url.includes("/rust/") || url.endsWith("/rust") || url.endsWith("/rust.html")) {
         importModsBox("rust");
@@ -853,137 +860,174 @@ function forcemodsboxes() {
     return cleanUrlValue.endsWith("/buy-skins") || cleanUrlValue.endsWith("/buy-items") || cleanUrlValue.endsWith("/sell-items") || cleanUrlValue.endsWith("/trade-items") || cleanUrlValue.endsWith("/sell-skins") || cleanUrlValue.endsWith("/trade-skins") || cleanUrlValue.endsWith("/instant-sell") || cleanUrlValue.endsWith("/marketplaces") || cleanUrlValue.endsWith("/buy-skins.html") || cleanUrlValue.endsWith("/buy-items.html") || cleanUrlValue.endsWith("/sell-items.html") || cleanUrlValue.endsWith("/trade-items.html") || cleanUrlValue.endsWith("/sell-skins.html") || cleanUrlValue.endsWith("/trade-skins.html") || cleanUrlValue.endsWith("/marketplaces.html") || cleanUrlValue.endsWith("/instant-sell.html");
   }
 
+  window.translateElement = translateElement;
+
   function translateElement(element, languageTag) {
     const translations = {
-      'Buy Skins': {
-        'ru': 'Купить скины',
-        'tr': 'Skinler Satın Al',
-        'pt': 'Comprar Skins',
-        'hi': 'स्किन्स खरीदें',
-        'es': 'Comprar Skins'
+      "Buy Skins": {
+        ru: "Купить скины",
+        tr: "Skinler Satın Al",
+        pt: "Comprar Skins",
+        hi: "स्किन्स खरीदें",
+        es: "Comprar Skins",
       },
-      'Sell Skins': {
-        'ru': 'Продать скины',
-        'tr': 'Skinler Sat',
-        'pt': 'Vender Skins',
-        'hi': 'स्किन्स बेचें',
-        'es': 'Vender Skins'
+      "Sell Skins": {
+        ru: "Продать скины",
+        tr: "Skinler Sat",
+        pt: "Vender Skins",
+        hi: "स्किन्स बेचें",
+        es: "Vender Skins",
       },
-      'Trade Skins': {
-        'ru': 'Обменять скины',
-        'tr': 'Skinler Takas Et',
-        'pt': 'Negociar Skins',
-        'hi': 'स्किन्स विनिमय',
-        'es': 'Intercambiar Skins'
+      "Trade Skins": {
+        ru: "Обменять скины",
+        tr: "Skinler Takas Et",
+        pt: "Negociar Skins",
+        hi: "स्किन्स विनिमय",
+        es: "Intercambiar Skins",
       },
-      'Buy Items': {
-        'ru': 'Купить предметы',
-        'tr': 'Eşyalar Satın Al',
-        'pt': 'Comprar Itens',
-        'hi': 'वस्तुएँ खरीदें',
-        'es': 'Comprar Ítems'
+      "Buy Items": {
+        ru: "Купить предметы",
+        tr: "Eşyalar Satın Al",
+        pt: "Comprar Itens",
+        hi: "वस्तुएँ खरीदें",
+        es: "Comprar Ítems",
       },
-      'Sell Items': {
-        'ru': 'Продать предметы',
-        'tr': 'Eşyalar Sat',
-        'pt': 'Vender Itens',
-        'hi': 'वस्तुएँ बेचें',
-        'es': 'Vender Ítems'
+      "Sell Items": {
+        ru: "Продать предметы",
+        tr: "Eşyalar Sat",
+        pt: "Vender Itens",
+        hi: "वस्तुएँ बेचें",
+        es: "Vender Ítems",
       },
-      'Trade Items': {
-        'ru': 'Обменять предметы',
-        'tr': 'Eşyalar Takas Et',
-        'pt': 'Negociar Itens',
-        'hi': 'वस्तुएँ विनिमय',
-        'es': 'Intercambiar Ítems'
+      "Trade Items": {
+        ru: "Обменять предметы",
+        tr: "Eşyalar Takas Et",
+        pt: "Negociar Itens",
+        hi: "वस्तुएँ विनिमय",
+        es: "Intercambiar Ítems",
       },
-      'Instant Sell': {
-        'ru': 'Моментальная продажа',
-        'tr': 'Anlık Satış',
-        'pt': 'Venda Imediata',
-        'hi': 'त्वरित बेचें',
-        'es': 'Venta Instantánea'
+      "Instant Sell": {
+        ru: "Моментальная продажа",
+        tr: "Anlık Satış",
+        pt: "Venda Imediata",
+        hi: "त्वरित बेचें",
+        es: "Venta Instantánea",
       },
-      'Marketplaces': {
-        'ru': 'Торговые Площадки',
-        'tr': 'Pazarlar',
-        'pt': 'Mercados',
-        'hi': 'बाजार',
-        'es': 'Mercados'
+      Marketplaces: {
+        ru: "Торговые Площадки",
+        tr: "Pazarlar",
+        pt: "Mercados",
+        hi: "बाजार",
+        es: "Mercados",
       },
-      'Daily Rewards': {
-        'ru': 'Ежедневные Награды',
-        'tr': 'Günlük Ödüller',
-        'pt': 'Recompensas Diárias',
-        'hi': 'दैनिक पुरस्कार',
-        'es': 'Recompensas Diarias'
+      "Daily Rewards": {
+        ru: "Ежедневные Награды",
+        tr: "Günlük Ödüller",
+        pt: "Recompensas Diárias",
+        hi: "दैनिक पुरस्कार",
+        es: "Recompensas Diarias",
       },
-      'Deposit Bonuses': {
-        'ru': 'Бонусы к Пополнению',
-        'tr': 'Yatırım Bonusları',
-        'pt': 'Bônus de Depósito',
-        'hi': 'जमा बोनस',
-        'es': 'Bonos de Depósito'
+      "Deposit Bonuses": {
+        ru: "Бонусы к Пополнению",
+        tr: "Yatırım Bonusları",
+        pt: "Bônus de Depósito",
+        hi: "जमा बोनस",
+        es: "Bonos de Depósito",
       },
-      'Giveaways': {
-        'ru': 'Розыгрыши',
-        'tr': 'Çekilişler',
-        'pt': 'Sorteios',
-        'hi': 'गिफ्ट वे',
-        'es': 'Sorteos'
+      Giveaways: {
+        ru: "Розыгрыши",
+        tr: "Çekilişler",
+        pt: "Sorteios",
+        hi: "गिफ्ट वे",
+        es: "Sorteos",
       },
-      'Sign Up Bonuses': {
-        'ru': 'Бонусы за Регистрацию',
-        'tr': 'Kayıt Bonusları',
-        'pt': 'Bônus de Inscrição',
-        'hi': 'साइन अप बोनस',
-        'es': 'Bonos de Registro'
+      "Sign Up Bonuses": {
+        ru: "Бонусы за Регистрацию",
+        tr: "Kayıt Bonusları",
+        pt: "Bônus de Inscrição",
+        hi: "साइन अप बोनस",
+        es: "Bonos de Registro",
       },
-      'Match Betting': {
-        'ru': 'Ставки на Матчи',
-        'tr': 'Maç Bahisleri',
-        'pt': 'Apostas em Partidas',
-        'hi': 'मैच सट्टेबाजी',
-        'es': 'Apuestas en Partidos'
+      "Match Betting": {
+        ru: "Ставки на Матчи",
+        tr: "Maç Bahisleri",
+        pt: "Apostas em Partidas",
+        hi: "मैच सट्टेबाजी",
+        es: "Apuestas en Partidos",
       },
-    'Roulette': {
-        'ru': 'Рулетка',
-        'tr': 'Rulet',
-        'pt': 'Roleta',
-        'hi': 'रूले',
-        'es': 'Ruleta'
+      Roulette: {
+        ru: "Рулетка",
+        tr: "Rulet",
+        pt: "Roleta",
+        hi: "रूले",
+        es: "Ruleta",
       },
-    'Case Opening': {
-        'ru': 'Открытие Кейсов',
-        'tr': 'Kasa Açma',
-        'pt': 'Abertura de Caixas',
-        'hi': 'केस खोलना',
-        'es': 'Apertura de Cajas'
+      "Case Opening": {
+        ru: "Открытие Кейсов",
+        tr: "Kasa Açma",
+        pt: "Abertura de Caixas",
+        hi: "केस खोलना",
+        es: "Apertura de Cajas",
       },
-    'Crash': {
-        'ru': 'Краш',
-        'tr': 'Çöküş',
-        'pt': 'Queda',
-        'hi': 'क्रैश',
-        'es': 'Choque'
+      Crash: {
+        ru: "Краш",
+        tr: "Çöküş",
+        pt: "Queda",
+        hi: "क्रैश",
+        es: "Choque",
       },
-    'Jackpot': {
-        'ru': 'Джекпот',
-        'tr': 'Büyük İkramiye',
-        'pt': 'Jackpot',
-        'hi': 'जैकपॉट',
-        'es': 'Jackpot'
+      Jackpot: {
+        ru: "Джекпот",
+        tr: "Büyük İkramiye",
+        pt: "Jackpot",
+        hi: "जैकपॉट",
+        es: "Jackpot",
       },
-    'Coinflip': {
-        'ru': 'Монетка',
-        'tr': 'Yazı Tura',
-        'pt': 'Cara ou Coroa',
-        'hi': 'सिक्का उछालना',
-        'es': 'Lanzamiento de Moneda'
-      }
+      Coinflip: {
+        ru: "Монетка",
+        tr: "Yazı Tura",
+        pt: "Cara ou Coroa",
+        hi: "सिक्का उछालना",
+        es: "Lanzamiento de Moneda",
+      },
+      "Popular CS2 Gambling Sites": {
+        ru: "",
+        tr: "Popüler CS2 Kumar Siteleri",
+        pt: "Sites Populares de Apostas CS2",
+        hi: "लोकप्रिय CS2 जुआ साइटें",
+        es: "Sitios de Apuestas Populares de CS2",
+      },
+      "Popular Rust Gambling Sites": {
+        ru: "",
+        tr: "Popüler Rust Kumar Siteleri",
+        pt: "Sites Populares de Apostas Rust",
+        hi: "लोकप्रिय Rust जुआ साइटें",
+        es: "Sitios de Apuestas Populares de Rust",
+      },
+      "Popular CS2 Trading Sites": {
+        ru: "",
+        tr: "Popüler CS2 Takas Siteleri",
+        pt: "Sites Populares de Troca CS2",
+        hi: "लोकप्रिय CS2 विनिमय साइटें",
+        es: "Sitios de Intercambio Populares de CS2",
+      },
+      "Instant Sell Platforms": {
+        ru: "",
+        tr: "Hızlı Satış Hizmetleri",
+        pt: "Serviços de Venda Rápida",
+        hi: "त्वरित बिक्री सेवाएं",
+        es: "Servicios de Venta Rápida",
+      },
+      "Best Task Services": {
+        ru: "",
+        tr: "En İyi Görev Hizmetleri",
+        pt: "Melhores Serviços de Tarefas",
+        hi: "सर्वश्रेष्ठ कार्य सेवाएं",
+        es: "Mejores Servicios de Tareas",
+      },
     };
 
-    const textElement = element.querySelector('.singlemod-select span');
+    const textElement = element.querySelector('.singlemod-select span, .boxes-holder-name h3');
     if (textElement) {
         const text = textElement.innerText.trim();
 
@@ -995,8 +1039,13 @@ function forcemodsboxes() {
         };
 
         const key = Object.keys(translations).find(key => normalizeText(key, languageTag) === normalizeText(text, languageTag));
+
         if (key && translations[key][languageTag]) {
-            textElement.innerText = translations[key][languageTag];
+            textElement.childNodes.forEach(node => {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    node.textContent = translations[key][languageTag];
+                }
+            });
         }
     }
 
@@ -2332,4 +2381,23 @@ document.addEventListener("DOMContentLoaded", function () {
       submenu.style.left = `${offsetX}px`;
     }
   }
+});
+
+$(document).ready(function(){
+  var res = $(window).width();
+
+  $('.main-mode-selection').slick({
+    slidesToShow: res < 600 ? 2 : 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    infinite: true,
+    speed: 450,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    prevArrow: '<button aria-label="Prev Slide" class="prev-button controls-button"><i class="officon chevron left"></i></button>',
+    nextArrow: '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
+    dots: false
+  });
+  const modesslider = document.querySelector('.main-mode-selection');
+  updateURLs(modesslider);
 });

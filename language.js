@@ -73,7 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 var requests = [
-  { url: '/index.html', targetId: 'csgo-best-sites' },
+  { url: '/index.html', targetId: 'main-page' },
+  { url: '/cs2.html', targetId: 'csgo-best-sites' },
   { url: '/freebies.html', targetId: 'freebies-sites' },
   { url: '/earning.html', targetId: 'earning-sites' },
   { url: '/rust.html', targetId: 'rust-sites' },
@@ -207,33 +208,59 @@ function processBoxes(boxes) {
 
 function sendRequest(url, targetId) {
   var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-          var parser = new DOMParser();
-          var doc = parser.parseFromString(xhr.responseText, 'text/html');
-          var boxesHolder = doc.querySelector('.boxes-holder');
-          if (boxesHolder) {
-              var divToImport = document.getElementById(targetId);
-              if (divToImport) {
-                  divToImport.innerHTML = boxesHolder.innerHTML;
-                  translateURLsIfNeeded(divToImport);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(xhr.responseText, "text/html");
+      var boxesHolder = doc.querySelector(".boxes-holder");
+      if (boxesHolder) {
+        var divToImport = document.getElementById(targetId);
+        if (divToImport) {
+          divToImport.innerHTML = boxesHolder.innerHTML;
+          translateURLsIfNeeded(divToImport);
 
-                  for (var boxId in ratings) {
-                    addStarRating(boxId, ratings[boxId]);
-                  }
-                  
-                  forcemodsboxes(); 
-                  const importedBoxes = divToImport.querySelectorAll('.box');
-                  processBoxes(importedBoxes);
-
-                  if (isPageInTurkish()) {
-                      updateURLs(sitesList);
-                  }
-              }
+          for (var boxId in ratings) {
+            addStarRating(boxId, ratings[boxId]);
           }
+
+          forcemodsboxes();
+          const importedBoxes = divToImport.querySelectorAll(".box");
+          processBoxes(importedBoxes);
+
+          const singlemodBoxes = document.querySelectorAll(".singlemod-box, .boxes-holder-section");
+          singlemodBoxes.forEach((box) => {
+            translateElement(box, languageTag);
+          });
+
+          var boxes = document.querySelectorAll(".box:not(.main)");
+
+          boxes.forEach(function (box) {
+            var logoLink = box.querySelector(".logobg a");
+            if (logoLink) {
+              var href = logoLink.getAttribute("href");
+
+              var firstParagraph = box.querySelector(".content p:first-child");
+              if (firstParagraph) {
+                var newLink = document.createElement("a");
+                newLink.href = href;
+                newLink.textContent = firstParagraph.textContent;
+                newLink.classList.add("boxtitle");
+
+                firstParagraph.replaceWith(newLink);
+              }
+            }
+          });
+
+          updateURLs(sitesList);
+
+          if (isPageInTurkish()) {
+            updateURLs(sitesList);
+          }
+        }
       }
+    }
   };
-  xhr.open('GET', url, true);
+  xhr.open("GET", url, true);
   xhr.send();
 }
 
