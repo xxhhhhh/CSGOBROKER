@@ -10297,6 +10297,7 @@ div#results {
 }
 
 .main-mode-selection {
+    margin: 0 auto;
     margin-top: 15px;
     width: 1282px;
     padding: 0 5px;
@@ -10370,7 +10371,6 @@ div#results {
     width: 20px;
     height: 100%;
     background-color: inherit;
-    transition: ease-in-out all .15s;
     box-sizing: border-box;
     transform: skewX(20deg);
     z-index: -1;
@@ -10385,7 +10385,6 @@ div#results {
     width: 20px;
     height: 100%;
     background-color: inherit;
-    transition: ease-in-out all .15s;
     box-sizing: border-box;
     transform: skewX(-20deg);
     z-index: -1;
@@ -10476,7 +10475,7 @@ div#results {
     text-transform: uppercase;
     font-size: 11px;
     font-weight: 600;
-    background-color: rgb(12 12 12);
+    background-color: var(--darkygray);
     text-decoration: none;
     border-radius: 10px 10px 0 0;
     position: relative;
