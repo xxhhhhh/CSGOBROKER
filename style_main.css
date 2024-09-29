@@ -10554,7 +10554,7 @@ div#results {
 }
 
 .main-page .rating-case-single,
-.boxes-holder .box:hover .rating-case-single {
+.main-page .box:hover .rating-case-single {
     transform: translateY(0);
     padding-bottom: unset;
     background: unset;
@@ -10570,7 +10570,7 @@ div#results {
     bottom: 10px;
 }
 
-.boxes-holder .rating-case-single::before {
+.main-page .rating-case-single::before {
     content: none;
 }
 
