@@ -2050,7 +2050,7 @@ function loadCategoryContent(category) {
   const href = link.getAttribute('href');
 
   const fileMap = {
-    '/': '/code-parts/category-import/csgo.html',
+    '/cs2': '/code-parts/category-import/csgo.html',
     '/rust': '/code-parts/category-import/rust.html',
     '/crypto': '/code-parts/category-import/crypto.html',
     '/freebies': '/code-parts/category-import/freebies.html',
