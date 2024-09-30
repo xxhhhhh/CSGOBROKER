@@ -737,7 +737,7 @@ function forcemodsboxes() {
   const pageType = getPageType(url);
 
   switch (pageType) {
-    case 'csgo':
+    case "csgo":
       if (isMultiBoxPage(url)) {
         importModsBox("csgo-skins");
         importModsBox("csgo");
@@ -745,15 +745,15 @@ function forcemodsboxes() {
         importModsBox("csgo");
       }
       break;
-    case 'rust':
+    case "rust":
       if (isMultiBoxPage(url)) {
-        importModsBox("rust-skins");  
+        importModsBox("rust-skins");
         importModsBox("rust");
       } else {
         importModsBox("rust");
       }
       break;
-    case 'dota':
+    case "dota":
       if (isMultiBoxPage(url)) {
         importModsBox("dota-items");
         importModsBox("dota");
@@ -761,21 +761,45 @@ function forcemodsboxes() {
         importModsBox("dota");
       }
       break;
-    case 'tf2':
+    case "tf2":
       importModsBox("tf2-items");
       break;
-    case 'freebies':
+    case "freebies":
       importModsBox("freebies");
       break;
-    case 'crypto':
+    case "crypto":
       importModsBox("crypto");
       break;
     default:
-      if (url.includes("/csgo/") || url.endsWith("/cs2") || url.endsWith("/cs2.html") || url.endsWith("/ru") || url.endsWith("/es") || url.endsWith("/tr") || url.endsWith("/pt") || url.endsWith("/hi") || url.endsWith("/") || url.endsWith("index.html") || url.endsWith("/ru.html") || url.endsWith("/es.html") || url.endsWith("/tr.html") || url.endsWith("/pt.html") || url.endsWith("/hi.html")) {
+      if (
+        url.includes("/csgo/") ||
+        url.endsWith("/cs2") ||
+        url.endsWith("/cs2.html") ||
+        url.endsWith("/ru") ||
+        url.endsWith("/es") ||
+        url.endsWith("/tr") ||
+        url.endsWith("/pt") ||
+        url.endsWith("/hi") ||
+        url.endsWith("/") ||
+        url.endsWith("index.html") ||
+        url.endsWith("/ru.html") ||
+        url.endsWith("/es.html") ||
+        url.endsWith("/tr.html") ||
+        url.endsWith("/pt.html") ||
+        url.endsWith("/hi.html")
+      ) {
         importModsBox("csgo");
-      } else if (url.includes("/rust/") || url.endsWith("/rust") || url.endsWith("/rust.html")) {
+      } else if (
+        url.includes("/rust/") ||
+        url.endsWith("/rust") ||
+        url.endsWith("/rust.html")
+      ) {
         importModsBox("rust");
-      } else if (url.includes("/dota/") || url.endsWith("/dota") || url.endsWith("/dota.html")) { 
+      } else if (
+        url.includes("/dota/") ||
+        url.endsWith("/dota") ||
+        url.endsWith("/dota.html")
+      ) {
         importModsBox("dota");
       }
       break;
@@ -783,35 +807,37 @@ function forcemodsboxes() {
 
   function importModsBox(boxId) {
     if (importedMods[boxId]) {
-        return;
+      return;
     }
 
-    const existingContainer = document.querySelector('.boxes-holder');
+    const existingContainer = document.querySelector(".boxes-holder");
     const cachedContent = localStorage.getItem(`modsBox-v2-${boxId}`);
 
     if (cachedContent) {
-        insertModsBox(existingContainer, boxId, cachedContent);
-        importedMods[boxId] = true;
+      insertModsBox(existingContainer, boxId, cachedContent);
+      importedMods[boxId] = true;
     } else {
-        let fileToFetch = '/code-parts/micro-parts/insert-mods-box.html';
+      let fileToFetch = "/code-parts/micro-parts/insert-mods-box.html";
 
-        fetch(fileToFetch)
-            .then(response => response.text())
-            .then(data => {
-                localStorage.setItem(`modsBox-v2-${boxId}`, data);
-                insertModsBox(existingContainer, boxId, data);
-                importedMods[boxId] = true;
-            });
+      fetch(fileToFetch)
+        .then((response) => response.text())
+        .then((data) => {
+          localStorage.setItem(`modsBox-v2-${boxId}`, data);
+          insertModsBox(existingContainer, boxId, data);
+          importedMods[boxId] = true;
+        });
     }
-}
+  }
 
   function insertModsBox(container, boxId, data) {
-    const tempDiv = document.createElement('div');
+    const tempDiv = document.createElement("div");
     tempDiv.innerHTML = data;
 
     const newModsBox = tempDiv.querySelector(`[data-box-id="${boxId}"]`);
-    const existingModsBoxes = container.querySelectorAll('.mods-box');
-    const existingBox = Array.from(existingModsBoxes).find(box => box.getAttribute('data-box-id') === boxId);
+    const existingModsBoxes = container.querySelectorAll(".mods-box");
+    const existingBox = Array.from(existingModsBoxes).find(
+      (box) => box.getAttribute("data-box-id") === boxId
+    );
 
     if (existingBox) {
       container.replaceChild(newModsBox, existingBox);
@@ -820,19 +846,19 @@ function forcemodsboxes() {
     }
 
     const languageTag = extractLanguageTagFromHTML();
-    if (languageTag && ['ru', 'tr', 'pt', 'hi', 'es'].includes(languageTag)) {
-      const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
-      singlemodBoxes.forEach(box => {
+    if (languageTag && ["ru", "tr", "pt", "hi", "es"].includes(languageTag)) {
+      const singlemodBoxes = newModsBox.querySelectorAll(".singlemod-box");
+      singlemodBoxes.forEach((box) => {
         translateElement(box, languageTag);
       });
     }
 
     setTimeout(() => {
-      const singlemodBoxes = newModsBox.querySelectorAll('.singlemod-box');
-      singlemodBoxes.forEach(box => {
-        const link = box.querySelector('a').getAttribute('href');
+      const singlemodBoxes = newModsBox.querySelectorAll(".singlemod-box");
+      singlemodBoxes.forEach((box) => {
+        const link = box.querySelector("a").getAttribute("href");
         if (url.includes(link)) {
-          box.classList.add('active');
+          box.classList.add("active");
         }
       });
     });
@@ -841,23 +867,44 @@ function forcemodsboxes() {
   }
 
   function getPageType(url) {
-    const pageTypes = ['csgo', 'rust', 'dota', 'tf2', 'freebies', 'crypto'];
+    const pageTypes = ["csgo", "rust", "dota", "tf2", "freebies", "crypto"];
     for (const type of pageTypes) {
-      if (url.includes(`/${type}/`) || url.endsWith(`/${type}`) || url.endsWith(`/${type}.html`)) {
+      if (
+        url.includes(`/${type}/`) ||
+        url.endsWith(`/${type}`) ||
+        url.endsWith(`/${type}.html`)
+      ) {
         return type;
       }
     }
-    return 'other';
+    return "other";
   }
 
   function cleanUrl(url) {
-    return url.split('?')[0].toLowerCase();
+    return url.split("?")[0].toLowerCase();
   }
 
   function isMultiBoxPage(url) {
     const cleanUrlValue = cleanUrl(url);
 
-    return cleanUrlValue.endsWith("/buy-skins") || cleanUrlValue.endsWith("/buy-items") || cleanUrlValue.endsWith("/sell-items") || cleanUrlValue.endsWith("/trade-items") || cleanUrlValue.endsWith("/sell-skins") || cleanUrlValue.endsWith("/trade-skins") || cleanUrlValue.endsWith("/instant-sell") || cleanUrlValue.endsWith("/marketplaces") || cleanUrlValue.endsWith("/buy-skins.html") || cleanUrlValue.endsWith("/buy-items.html") || cleanUrlValue.endsWith("/sell-items.html") || cleanUrlValue.endsWith("/trade-items.html") || cleanUrlValue.endsWith("/sell-skins.html") || cleanUrlValue.endsWith("/trade-skins.html") || cleanUrlValue.endsWith("/marketplaces.html") || cleanUrlValue.endsWith("/instant-sell.html");
+    return (
+      cleanUrlValue.endsWith("/buy-skins") ||
+      cleanUrlValue.endsWith("/buy-items") ||
+      cleanUrlValue.endsWith("/sell-items") ||
+      cleanUrlValue.endsWith("/trade-items") ||
+      cleanUrlValue.endsWith("/sell-skins") ||
+      cleanUrlValue.endsWith("/trade-skins") ||
+      cleanUrlValue.endsWith("/instant-sell") ||
+      cleanUrlValue.endsWith("/marketplaces") ||
+      cleanUrlValue.endsWith("/buy-skins.html") ||
+      cleanUrlValue.endsWith("/buy-items.html") ||
+      cleanUrlValue.endsWith("/sell-items.html") ||
+      cleanUrlValue.endsWith("/trade-items.html") ||
+      cleanUrlValue.endsWith("/sell-skins.html") ||
+      cleanUrlValue.endsWith("/trade-skins.html") ||
+      cleanUrlValue.endsWith("/marketplaces.html") ||
+      cleanUrlValue.endsWith("/instant-sell.html")
+    );
   }
 
   window.translateElement = translateElement;
@@ -990,6 +1037,28 @@ function forcemodsboxes() {
         hi: "सिक्का उछालना",
         es: "Lanzamiento de Moneda",
       },
+      "Case Battle": {
+        ru: "",
+        tr: "Kasa Savaşı",
+        pt: "Batalha de Caixas",
+        hi: "केस बैटल",
+        es: "Batalla de Cajas",
+      },
+      Casino: {
+        ru: "",
+        tr: "Kumarhane",
+        pt: "Cassino",
+        hi: "कैसिनो",
+        es: "Casino",
+      },
+      More: {
+        ru: "",
+        tr: "Daha Fazla",
+        pt: "Mais",
+        hi: "अधिक",
+        es: "Más",
+      },
+      
       "Popular CS2 Gambling Sites": {
         ru: "",
         tr: "Popüler CS2 Kumar Siteleri",
@@ -1027,43 +1096,80 @@ function forcemodsboxes() {
       },
     };
 
-    const textElement = element.querySelector('.singlemod-select span, .boxes-holder-name h3');
+    const textElement = element.querySelector(
+      ".mods-box.skins-box .singlemod-select span, .boxes-holder-name h3"
+    );
     if (textElement) {
-        const text = textElement.innerText.trim();
+      const text = textElement.innerText.trim();
 
-        const normalizeText = (text, lang) => {
-            if (lang === 'tr') {
-                return text.toLocaleLowerCase('tr-TR');
-            }
-            return text.toLowerCase();
-        };
-
-        const key = Object.keys(translations).find(key => normalizeText(key, languageTag) === normalizeText(text, languageTag));
-
-        if (key && translations[key][languageTag]) {
-            textElement.childNodes.forEach(node => {
-                if (node.nodeType === Node.TEXT_NODE) {
-                    node.textContent = translations[key][languageTag];
-                }
-            });
+      const normalizeText = (text, lang) => {
+        if (lang === "tr") {
+          return text.toLocaleLowerCase("tr-TR");
         }
+        return text.toLowerCase();
+      };
+
+      const key = Object.keys(translations).find(
+        (key) =>
+          normalizeText(key, languageTag) === normalizeText(text, languageTag)
+      );
+
+      if (key && translations[key][languageTag]) {
+        textElement.childNodes.forEach((node) => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            node.textContent = translations[key][languageTag];
+          }
+        });
+      }
     }
 
-    const dataTitle = element.getAttribute('data-title');
+    const boxesHolderModesElements = element.querySelectorAll(
+      ".boxes-holder-modes, .boxes-holder-more"
+    );
+
+    boxesHolderModesElements.forEach((textElement) => {
+      const text = textElement.innerText.trim();
+
+      const normalizeText = (text, lang) => {
+        if (lang === "tr") {
+          return text.toLocaleLowerCase("tr-TR");
+        }
+        return text.toLowerCase();
+      };
+
+      const key = Object.keys(translations).find(
+        (key) =>
+          normalizeText(key, languageTag) === normalizeText(text, languageTag)
+      );
+
+      if (key && translations[key][languageTag]) {
+        textElement.childNodes.forEach((node) => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            node.textContent = translations[key][languageTag];
+          }
+        });
+      }
+    });
+
+    const dataTitle = element.getAttribute("data-title");
     if (dataTitle) {
-        const normalizeText = (text, lang) => {
-            if (lang === 'tr') {
-                return text.toLocaleLowerCase('tr-TR');
-            }
-            return text.toLowerCase();
-        };
-
-        const key = Object.keys(translations).find(key => normalizeText(key, languageTag) === normalizeText(dataTitle, languageTag));
-        if (key && translations[key][languageTag]) {
-            element.setAttribute('data-title', translations[key][languageTag]);
+      const normalizeText = (text, lang) => {
+        if (lang === "tr") {
+          return text.toLocaleLowerCase("tr-TR");
         }
+        return text.toLowerCase();
+      };
+
+      const key = Object.keys(translations).find(
+        (key) =>
+          normalizeText(key, languageTag) ===
+          normalizeText(dataTitle, languageTag)
+      );
+      if (key && translations[key][languageTag]) {
+        element.setAttribute("data-title", translations[key][languageTag]);
+      }
     }
-}
+  }
 }
 
 
@@ -2392,7 +2498,7 @@ $(document).ready(function(){
     autoplay: true,
     infinite: true,
     speed: 450,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 5500,
     pauseOnHover: true,
     prevArrow: '<button aria-label="Prev Slide" class="prev-button controls-button"><i class="officon chevron left"></i></button>',
     nextArrow: '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',

@@ -993,7 +993,7 @@ nav .pages {
 .skin-alt-info[data-title]:after,
 .main-mode:after,
 .infoicon::after,
-.main-page .best .officon::after {
+.main-page .best::after {
     content: '';
     position: absolute;
     width: max-content;
@@ -7174,6 +7174,14 @@ label:active,
     transition: all .09s ease-in-out;
 }
 
+.boxes-holder-name a:active,
+.singlemod-box:active,
+.main-mode-unit:active,
+.category-box:active {
+    filter: brightness(.7) !important;
+    transition: all .09s ease-in-out;
+}
+
 form input {
     opacity: 1;
 }
@@ -10104,7 +10112,7 @@ div#results {
     }
 
     .box .logobg .best {
-        font-size: 12px !important;
+        font-size: 12px;
         top: -4px;
         right: -4px;
     }
@@ -10267,6 +10275,8 @@ div#results {
 .main-mode-unit {
     background-color: var(--darkygray);
     height: 250px;
+    width: 300px;
+    min-width: 300px;
     border-radius: 10px;
     margin: 0 8px;
     position: relative;
@@ -10286,7 +10296,6 @@ div#results {
     position: absolute;
     width: 100%;
     height: 100%;
-    /* background-image: url(/img/icons/main-modes/cs2-logo.png); */
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -10299,23 +10308,32 @@ div#results {
 .main-mode-selection {
     margin: 0 auto;
     margin-top: 15px;
-    width: 1282px;
-    padding: 0 5px;
+    width: 1272px;
+    padding: 0;
     height: 250px;
     position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    overflow: hidden;
 }
 
 .main-page .mods-box {
     left: 16px;
+    display: none;
+}
+
+.main-page .mods-box.skins-box {
+    display: flex;
 }
 
 .main-mode-selection button,
 .main-mode-selection .controls-button:hover,
 .main-mode-selection .controls-button:first-child {
     transform: unset;
+    margin: unset;
+    bottom: 20px;
+    top: unset;
 }
 
 
@@ -10361,6 +10379,7 @@ div#results {
     align-items: center;
     color: rgba(255, 255, 255, .25);
     transition: all .15s ease-in-out;
+    text-wrap: nowrap;
     user-select: none;
     position: relative;
 }
@@ -10376,20 +10395,6 @@ div#results {
     z-index: -1;
     right: -8px;
     border-radius: 0 5px 0 0;
-    top: 0;
-}
-
-.boxes-holder-name a::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 100%;
-    background-color: inherit;
-    box-sizing: border-box;
-    transform: skewX(-20deg);
-    z-index: -1;
-    left: -8px;
-    border-radius: 5px 0 0 0;
     top: 0;
 }
 
@@ -10427,12 +10432,12 @@ div#results {
 }
 
 .infoicon:hover::after,
-.main-page .best .officon:hover::after {
+.main-page .best:hover::after {
     opacity: 1;
 }
 
 .infoicon::after,
-.main-page .best .officon::after {
+.main-page.lang-ru .best::after {
     content: 'Not an Advertisement';
     margin-bottom: unset;
     top: 50%;
@@ -10441,6 +10446,13 @@ div#results {
     text-transform: none;
     left: unset;
     margin-left: 45px; 
+}
+
+.main-page .best .officon::before {
+    opacity: 1;
+    margin-right: 3px;
+    height: 20px;
+    width: 20px;
 }
 
 .lang-ru .infoicon::after {
@@ -10459,7 +10471,7 @@ div#results {
     content: 'यह विज्ञापन नहीं है';
 }
 
-.main-page .best .officon::after {
+.main-page.lang-ru .best::after {
     content: 'Бонус за Регистрацию';
     top: -25px;
     left: 50%;
@@ -10467,19 +10479,83 @@ div#results {
     margin-left: unset;
 }
 
-.boxes-holder-name a {
+.boxes-holder-name .boxes-holder-more,
+.boxes-holder-modes {
     text-align: start;
     width: auto;
-    padding: 10px;
+    padding: 9px;
     padding-right: 15px;
     text-transform: uppercase;
     font-size: 11px;
     font-weight: 600;
     background-color: var(--darkygray);
     text-decoration: none;
-    border-radius: 10px 10px 0 0;
+    border-radius: 5px;
+    right: 0;
     position: relative;
+    margin-left: 20px;
+    margin-bottom: 4px;
+    text-wrap: nowrap;
     z-index: 1;
+}
+
+.boxes-holder-name .boxes-holder-more {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.boxes-holder-name .boxes-holder-more::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    background-color: inherit;
+    box-sizing: border-box;
+    transform: skewX(20deg);
+    z-index: -1;
+    left: -8px;
+    border-radius: 5px 0 0 5px;
+    top: 0;
+}
+
+.boxes-holder-modes {
+    position: relative;
+    right: unset;
+    margin-left: 20px;
+    color: rgba(255, 255, 255, .25);
+    padding-right: 10px;
+}
+
+.boxes-holder-name .boxes-holder-modes::before,
+.boxes-holder-name .boxes-holder-modes::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    background-color: inherit;
+    box-sizing: border-box;
+    transform: skewX(-20deg);
+    z-index: -1;
+    left: -8px;
+    border-radius: 5px;
+    top: 0;
+}
+
+.boxes-holder-name .boxes-holder-modes:nth-child(2n)::before {
+    transform: skewX(20deg);
+    left: -8px;
+}
+
+.boxes-holder-name .boxes-holder-modes:nth-child(2n):after {
+    transform: skewX(-20deg);
+    right: -8px;
+    left: unset;
+}
+
+.boxes-holder-name .boxes-holder-modes::after {
+    transform: skewX(20deg);
+    right: -8px;
+    left: unset;
 }
 
 .boxes-holder-name a:hover {
@@ -10492,7 +10568,9 @@ div#results {
     width: 100%;
     top: -35px;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: flex-start;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
     left: 0;
 }
 
@@ -10574,14 +10652,10 @@ div#results {
     content: none;
 }
 
-.main-page .best .officon::before {
-    opacity: 1;
-    margin-right: 3px;
-    height: 20px;
-    width: 20px;
-}
-
 @media screen and (max-width: 1365px) {
+    .boxes-holder-modes {
+        display: none;
+    }
     .main-page {
         max-width: 100%;
         margin-top: 11px;
@@ -10590,6 +10664,7 @@ div#results {
     }
     .main-page .mods-box {
         left: unset;
+        display: flex;
     }
     .main-mode-selection {
         height: auto;
@@ -10598,6 +10673,15 @@ div#results {
     }
     .boxes-holder .main-mode-selection {
         margin-top: 5px;
+        opacity: 0;
+    }
+    .boxes-holder .main-mode-selection.slick-slider {
+        opacity: 1;
+        padding: 0;
+    }
+    .main-mode-unit {
+        margin: 0 4px;
+        min-width: unset;
     }
     .main-mode-unit img {
         width: 100%;
@@ -10608,9 +10692,6 @@ div#results {
     .main-page .mods-box.mods-box.skins-box {
         width: 100%;
         order: -1;
-    }
-    .main-mode-unit {
-        margin: 0 4px;
     }
     .boxes-holder-section, 
     .boxes-holder-section.big {
