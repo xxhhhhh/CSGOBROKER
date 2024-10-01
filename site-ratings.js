@@ -77,7 +77,7 @@ var ratings = {
     "WhiteMarket":3.5,
     "SkinBid":3.125,
     "iTrade.GG":3.5,
-    "Avan.Market":4,
+    "Avan.Market":4.125,
     "LootBear":3.375,
     "Skins.Cash":2.625,
     "RustCases":3.375,

@@ -411,11 +411,11 @@ if (languageTag !== 'ru') {
             "pt": "DaddySkins é um site válido de Batalha de Caixas de CSGO que está em operação desde 2017 e oferece Batalhas de Caixas, Batalhas de Caixas e Upgrader.",
             "hi": "डैडी स्किन्स एक मान्य सीएसजीओ केस बैटल वेबसाइट है जो 2017 से कार्यान्वित है, और यह केस बैटल्स, केस बैटल्स, और अपग्रेडर प्रदान करता है।"
           },
-          "Aim.Market - CS2, Dota 2, Rust Instant-sell and skin purchasing service with a user-friendly interface. Sell any amount with no minimum.": {
-            "es": "Aim.Market - ofrece un servicio de compra y venta de skins instantáneo para CS2, Dota 2 y Rust, sin requisitos mínimos y con una interfaz fácil de usar.",
-            "tr": "Aim.Market - CS2, Dota 2 ve Rust için anında satış ve cilt satın alma hizmeti sunar. Herhangi bir minimum miktar gerekmez.",
-            "pt": "Aim.Market - Venda instantânea e compra de skins de CS2, Dota 2 e Rust com interface amigável. Sem mínimo de quantidade.",
-            "hi": "एम.मार्केट - सीएस2, डोटा 2, रस्ट तत्काल बिक्री और त्वचा खरीदी सेवा जिसमें एक उपयोगकर्ता मित्रपूर्ण इंटरफ़ेस होता है। कोई न्यूनतम नहीं, किसी भी मात्रा को बेचें।"
+          "Aim.Market - a convenient platform for quick sale and purchase of CS2 and Dota 2 skins with low fees and support for cheap skins.": {
+            "es": "Aim.Market - una plataforma conveniente para la compra y venta rápida de skins de CS2 y Dota 2, con comisiones bajas y soporte para skins baratos.",
+            "tr": "Aim.Market - düşük komisyonlarla ve ucuz skin desteğiyle CS2 ve Dota 2 skinlerini hızlı bir şekilde alıp satmak için kullanışlı bir platform.",
+            "pt": "Aim.Market - uma plataforma conveniente para compra e venda rápida de skins de CS2 e Dota 2, com baixas taxas e suporte para skins baratas.",
+            "hi": "Aim.Market - कम शुल्क और सस्ते स्किन्स के समर्थन के साथ CS2 और Dota 2 स्किन्स की तेज़ बिक्री और खरीद के लिए एक सुविधाजनक प्लेटफ़ॉर्म।"
           },
           "Swap.gg is a website that allows users to buy, sell, and trade CS2, Rust , TF2 and other virtual items from various games. Working since 2017.": {
             "es": "Swap.gg es un sitio web para comprar, vender e intercambiar objetos virtuales de varios juegos, como CS2, Rust y TF2. Funciona desde 2017.",

@@ -3818,6 +3818,7 @@ nav #logo:hover {
     height: 304px !important;
     background-color: unset;
     background: rgb(11 11 11);
+    box-shadow: unset;
     margin-left: 9px !important;
     border-radius: 10px;
 }
@@ -7988,9 +7989,9 @@ div#results {
 }
 
 .main-infobox-content-text p {
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, .8);
     font-weight: 400;
-    font-size: 13px;
+    font-size: 14px;
     transition: color .1s ease-in-out;
 }
 
