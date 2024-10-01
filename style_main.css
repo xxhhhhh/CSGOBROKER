@@ -7990,7 +7990,7 @@ div#results {
 .main-infobox-content-text p {
     color: rgba(255, 255, 255, .7);
     font-weight: 400;
-    font-size: 14px;
+    font-size: 13px;
     transition: color .1s ease-in-out;
 }
 
@@ -10275,8 +10275,8 @@ div#results {
 .main-mode-unit {
     background-color: var(--darkygray);
     height: 250px;
-    width: 300px;
-    min-width: 300px;
+    width: 302px;
+    min-width: 302px;
     border-radius: 10px;
     margin: 0 8px;
     position: relative;
@@ -10301,7 +10301,7 @@ div#results {
 }
 
 .main-mode-unit img {
-    width: 301px;
+    width: 100%;
     transition: all .15s ease-in-out;
 }
 
@@ -10362,9 +10362,14 @@ div#results {
 .boxes-holder-section.big {
     max-width: 1252px;
     margin: 8px 0;
-    margin-top: 55px;
+    margin-top: 45px;
     height: auto;
 }
+
+.main-page .boxes-holder-section:nth-child(4) {
+    margin-top: 55px;
+}
+
 
 .boxes-holder-name h3 {
     text-align: start;
@@ -10486,7 +10491,7 @@ div#results {
     justify-content: center;
     text-align: center;
     width: auto;
-    height: 100%;
+    height: 80%;
     padding-right: 15px;
     text-transform: uppercase;
     font-size: 11px;
@@ -10525,7 +10530,7 @@ div#results {
     content: '';
     position: absolute;
     width: 20px;
-    height: 31px;
+    height: 28px;
     background-color: inherit;
     box-sizing: border-box;
     transform: skewX(-20deg);
@@ -10702,6 +10707,9 @@ div#results {
     }
     .boxes-holder-section.big {
         margin: 8px;
+        margin-top: 40px;
+    }
+    .main-page .boxes-holder-section:nth-child(4) {
         margin-top: 45px;
     }
     .main-page .box .logobg,
