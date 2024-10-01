@@ -10350,7 +10350,7 @@ div#results {
     padding: 0 8px 15px 8px;
     display: flex;
     justify-content: center;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 5px 10px 10px;
     background-color: var(--darkygray);
     flex-wrap: wrap;
     position: relative;
@@ -10481,9 +10481,12 @@ div#results {
 
 .boxes-holder-name .boxes-holder-more,
 .boxes-holder-modes {
-    text-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     width: auto;
-    padding: 9px;
+    height: 100%;
     padding-right: 15px;
     text-transform: uppercase;
     font-size: 11px;
@@ -10496,49 +10499,45 @@ div#results {
     margin-left: 20px;
     margin-bottom: 4px;
     text-wrap: nowrap;
+    padding: 0 10px;
     z-index: 1;
+}
+
+.boxes-holder-name {
+    height: 35px;
 }
 
 .boxes-holder-name .boxes-holder-more {
     flex-grow: 1;
     text-align: center;
-}
-
-.boxes-holder-name .boxes-holder-more::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 100%;
-    background-color: inherit;
-    box-sizing: border-box;
-    transform: skewX(20deg);
-    z-index: -1;
-    left: -8px;
-    border-radius: 5px 0 0 5px;
-    top: 0;
+    padding-left: unset;
 }
 
 .boxes-holder-modes {
-    position: relative;
     right: unset;
     margin-left: 20px;
     color: rgba(255, 255, 255, .25);
-    padding-right: 10px;
 }
 
 .boxes-holder-name .boxes-holder-modes::before,
+.boxes-holder-name .boxes-holder-more::before,
 .boxes-holder-name .boxes-holder-modes::after {
     content: '';
     position: absolute;
     width: 20px;
-    height: 100%;
+    height: 31px;
     background-color: inherit;
     box-sizing: border-box;
     transform: skewX(-20deg);
     z-index: -1;
     left: -8px;
     border-radius: 5px;
-    top: 0;
+    bottom: 0;
+}
+
+.boxes-holder-name .boxes-holder-more::before {
+    transform: skewX(20deg);
+    border-radius: 5px 0 0 5px;
 }
 
 .boxes-holder-name .boxes-holder-modes:nth-child(2n)::before {
