@@ -2437,44 +2437,34 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   
 
-    var categorySelector = document.querySelector("div.category-selector");
-    var CategoryElements = categorySelector.querySelectorAll(
-      "div.category-selector > div.category"
-    );
-    var CategoryArray = Array.from(CategoryElements);
-
-    CategoryArray.sort(function (a, b) {
-      var aIsActive = a
-        .querySelector("div.category a.category-box, div.category div.category-box")
-        .classList.contains("active");
-      var bIsActive = b
-        .querySelector("div.category a.category-box, div.category div.category-box")
-        .classList.contains("active");
-
-      if (aIsActive && !bIsActive) {
-        return -1;
-      } else if (!aIsActive && bIsActive) {
-        return 1;
-      } else if (
-        a.querySelector("div.category a.category-box, div.category div.category-box").classList.contains("last")
-      ) {
-        return 1;
-      } else if (
-        b.querySelector("div.category a.category-box, div.category div.category-box").classList.contains("last")
-      ) {
-        return -1;
-      } else {
-        return Math.random() - 0.5;
-      }
-    });
-
-    while (categorySelector.firstChild) {
-      categorySelector.removeChild(categorySelector.firstChild);
+  var categorySelector = document.querySelector("div.category-selector");
+  var categoryElements = Array.from(
+    categorySelector.querySelectorAll("div.category-selector > div.category")
+  );
+  
+  categoryElements.sort(function (a, b) {
+    var aCategoryBox = a.querySelector("a.category-box, div.category-box");
+    var bCategoryBox = b.querySelector("a.category-box, div.category-box");
+  
+    var aWeight = (aCategoryBox.classList.contains("active") ? -2 : 0) +
+                  (aCategoryBox.classList.contains("last") ? 1 : 0);
+    var bWeight = (bCategoryBox.classList.contains("active") ? -2 : 0) +
+                  (bCategoryBox.classList.contains("last") ? 1 : 0);
+  
+    if (aWeight !== bWeight) {
+      return aWeight - bWeight;
     }
-
-    CategoryArray.forEach(function (ul) {
-      categorySelector.appendChild(ul);
-    });
+  
+    return Math.random() - 0.5;
+  });
+  
+  categorySelector.innerHTML = "";
+  
+  categoryElements.forEach(function (element) {
+    categorySelector.appendChild(element);
+  });
+  
+  
 
     buttonsContainer.scrollLeft = buttonScrollPosition;
 
