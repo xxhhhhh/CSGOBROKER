@@ -635,38 +635,6 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   });
 }
 
-if (window.location.pathname.includes("/items/") || window.location.pathname.includes("/cases/")) {
-  var xhr = new XMLHttpRequest();
-
-  xhr.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-          var sitetoppannel = document.querySelector("div.sitetoppannel");
-          var alltopic = document.querySelector("div.sitepage");
-
-          if (sitetoppannel) {
-              sitetoppannel.innerHTML = "";
-              sitetoppannel.innerHTML = this.responseText;
-
-              if (languageTag === 'ru') {
-                var navBarLinks = document.querySelectorAll('div.sitetoppannel a');
-                navBarLinks.forEach(function(link) {
-                  var href = link.getAttribute('href');
-                  if (href && href.indexOf('/ru/') !== 0) {
-                    link.setAttribute('href', '/ru' + href);
-                  }
-                });
-              }
-          }
-
-          if (alltopic) {
-              alltopic.classList.add("fade-in-topic");
-          }
-      }
-  };
-  xhr.open("GET", "/code-parts/nav-bar-items.html", true);
-  xhr.send();
-}
-
 const href = window.location.href;
 
 const isExcludedPage = [
@@ -2192,6 +2160,7 @@ document.addEventListener("DOMContentLoaded", function () {
     !window.location.pathname.includes("/skins/") &&
     !window.location.pathname.includes("/items/") &&
     !window.location.pathname.includes("/cases/") &&
+    !window.location.pathname.includes("/collections/") &&
     !window.location.pathname.includes("/sticker-crafts/") &&
     !window.location.pathname.includes("/reviews") &&
     !window.location.pathname.includes("/mirrors") &&
