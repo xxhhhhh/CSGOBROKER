@@ -1059,7 +1059,7 @@ nav .pages {
 .navigation-weapon-sort::before,
 .navigation-reset::before {
     content: '';
-    background: linear-gradient(180deg, rgb(21 21 21) 0%, var(--main-theme) 100%);
+    background: linear-gradient(180deg, rgb(26 26 26) 0%, var(--main-theme) 100%);
     position: absolute;
     left: 2px;
     top: 2px;
@@ -8283,6 +8283,10 @@ div#results {
 
     .screentable {
         width: 100%;
+    }
+
+    .navigation-section {
+        max-width: 90%;
     }
 
     .weapon-selection-unite {

@@ -84,7 +84,7 @@ forcemodsboxes();
   
       if (!link.classList.contains('visit') && !link.classList.contains('notupdt')) {
         if (languageTag === 'es' || languageTag === 'pt' || languageTag === 'hi') {
-          if (!link.classList.contains('review-button') && !link.classList.contains('boxtitle')) {
+          if (!link.classList.contains('review-button') && !link.classList.contains('boxtitle') && !link.closest('.box')) {
             link.setAttribute('href', href);
           }
         } else {
