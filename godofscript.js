@@ -56,7 +56,7 @@ forcemodsboxes();
     }
   
     links.forEach(link => {
-      if (link.closest('div.instruction')) {
+      if (link.closest('div.instruction') || link.closest('div.instruction-mirrors')) {
         return;
       }
   
