@@ -313,7 +313,7 @@ nav .pages {
 .boxreview,
 .boxtopic {
     position: relative;
-    left: 154px;
+    left: 8px;
     height: auto;
     width: 1022px;
     border-radius: 10px;
@@ -3048,8 +3048,10 @@ nav #logo:hover {
 }
 
 .sitepage {
-    justify-content: center;
     display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-top: 9px;
 }
 
@@ -3063,7 +3065,8 @@ nav #logo:hover {
 
 .siteleftpannel {
     position: relative;
-    left: -154px;
+    height: auto;
+    width: 300px;
 }
 
 .sitepage.items .siteleftpannel {
@@ -5176,7 +5179,7 @@ footer .centralizer .footer-content {
 }
 
 .singlemod-box:hover {
-    transform: scale(1.1) !important;
+    transform: scale(1.1);
 }
 
 .singlemod-box.active .singlemod-select img {
@@ -5188,7 +5191,7 @@ footer .centralizer .footer-content {
 }
 
 .mods-box.skins-box .singlemod-box:hover {
-    transform: scale(1.04) !important;
+    transform: scale(1.04);
 }
 
 .mods-box.skins-box .singlemod-box.active {
@@ -6293,6 +6296,11 @@ a[data-title]:after,
     background-position: center;
     background-repeat: no-repeat;
     opacity: .25;
+}
+
+.singlemod-icon.officon::before {
+    height: 18px;
+    width: 18px;
 }
 
 .features .typesinside i {
@@ -9336,13 +9344,12 @@ div#results {
     }
 
     .sitepage {
-        height: auto;
         width: 100%;
         justify-content: flex-start;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: unset;
+        padding-top: 30px;
     }
 
     .sitedetails .sitepros {
@@ -9538,6 +9545,10 @@ div#results {
     .box-skins .skin {
         max-width: unset;
         flex-grow: 1;
+    }
+
+    .mods-box.skins-box .singlemod-box:hover {
+        transform: scale(1.01);
     }
 
     .box-skins .skin .skin-desc,
@@ -10773,3 +10784,22 @@ div#results {
         font-size: 18px;
     }
 }
+
+/* .shortinfo {
+    width: 100%;
+    height: 60px;
+    background-color: rgb(11 11 11);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    order: -100;
+    margin-top: -80px;
+}
+
+.shortinfo .features {
+    margin-left: 14px;
+    margin-top: 2px;
+}
+
+.boxreview {
+    margin-top: 72px;
+} */
