@@ -1069,7 +1069,7 @@ nav .pages {
 .navigation-weapon-sort::before,
 .navigation-reset::before {
     content: '';
-    background: linear-gradient(180deg, rgb(30 30 30) 0%, rgb(16 16 16) 100%);
+    background: linear-gradient(180deg, rgb(26 26 26) 0%, rgb(16 16 16) 100%);
     position: absolute;
     left: 2px;
     top: 2px;
@@ -2495,6 +2495,7 @@ h3 {
     text-align: center;
     height: auto;
     margin-bottom: 30px !important;
+    color: var(--white);
 }
 
 .instruction-mirrors {
@@ -4038,7 +4039,7 @@ nav #logo:hover {
 }
 
 .box .logobg a:active img,
-.category-selector .category-box:active .category-box-logo img,
+.category-selector .category:active .category-box-logo img,
 .singlemod-select:active img,
 #rec-box-logobg a:active img {
     filter: brightness(.5) grayscale(0) !important;
@@ -4046,7 +4047,7 @@ nav #logo:hover {
 }
 
 nav img:active,
-.category-selector .category-box:active .category-box-content {
+.category-selector .category:active .category-box-content {
     filter: brightness(.75);
     transition: all .09s ease-in-out;
 }
@@ -7991,7 +7992,7 @@ div#results {
 }
 
 .main-infobox-content-text p {
-    color: rgba(255, 255, 255, .8);
+    color: rgba(255, 255, 255, .6);
     font-weight: 400;
     font-size: 14px;
     transition: color .1s ease-in-out;
@@ -10362,21 +10363,20 @@ div#results {
     flex-wrap: wrap;
     position: relative;
     margin: 8px;
-    margin-top: 45px;
+    margin-top: 40px;
     align-content: flex-start;
 }
 
 .boxes-holder-section.big {
     max-width: 1252px;
     margin: 8px 0;
-    margin-top: 45px;
+    margin-top: 40px;
     height: auto;
 }
 
 .main-page .boxes-holder-section:nth-child(4) {
-    margin-top: 55px;
+    margin-top: 50px;
 }
-
 
 .boxes-holder-name h3 {
     text-align: start;
