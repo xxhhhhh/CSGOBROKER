@@ -183,6 +183,21 @@ forcemodsboxes();
         return translations[key][languageTag] || translations[key]['en'];
     }
   
+    if (visitButton && data.link) {
+      if (window.location.pathname.includes("/marketplaces") && data["marketplaces"]) {
+          visitButton.href = data["marketplaces"];
+      } else if (window.location.pathname.includes("/instant-sell") && data["instant-sell"]) {
+          visitButton.href = data["instant-sell"];
+      } else if (window.location.pathname.includes("/buy-skins") && data["buy-skins"]) {
+          visitButton.href = data["buy-skins"];
+      } else if (window.location.pathname.includes("/sell-skins") && data["sell-skins"]) {
+          visitButton.href = data["sell-skins"];
+      } else {
+          visitButton.href = data.link;
+      }
+      visitButton.setAttribute('aria-label', getTranslation('visitSite'));
+  }
+
     if (reviewButton) {
         if (window.location.pathname.includes("/reviews/") || window.location.pathname.includes("/mirrors/")) {
             if (data["Main Mode"] && reviewSettings) {
@@ -196,11 +211,6 @@ forcemodsboxes();
             reviewButton.href = `/reviews/${pageKey}`;
             reviewButton.setAttribute('aria-label', getTranslation('readReview'));
         }
-    }
-  
-    if (visitButton && data.link) {
-        visitButton.href = data.link;
-        visitButton.setAttribute('aria-label', getTranslation('visitSite'));
     }
   }
   
