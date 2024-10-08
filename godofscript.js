@@ -2475,3 +2475,203 @@ $(document).ready(function(){
   const modesslider = document.querySelector('.main-mode-selection');
   updateURLs(modesslider);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const basePath = "/code-parts/site-infos";
+  const boxes = document.querySelectorAll(".boxes-holder .box");
+  const paymentContainers = document.querySelectorAll(".payment-container");
+
+  if (paymentContainers.length === 0) {
+    return;
+  }
+
+  let depositList, withdrawalList, depositInput, withdrawalInput;
+
+  if (paymentContainers.length >= 1) {
+    const paymentContainer1 = paymentContainers[0];
+    depositList = paymentContainer1.querySelector("#payment-form .payment-list");
+    depositInput = paymentContainer1.querySelector("#filter-input");
+  }
+
+  if (paymentContainers.length === 2) {
+    const paymentContainer2 = paymentContainers[1];
+    withdrawalList = paymentContainer2.querySelector("#withdrawal-form .payment-list");
+    withdrawalInput = paymentContainer2.querySelector("#withdrawal-filter-input");
+  }
+
+  let depositMethods = [];
+  let withdrawalMethods = [];
+  const depositSet = new Set();
+  const withdrawalSet = new Set();
+
+  function loadPaymentMethods(filePath) {
+    return fetch(filePath)
+      .then(response => response.json())
+      .catch(error => console.error("Error loading JSON:", error));
+  }
+
+  function transformLinkToDiv(htmlString) {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = htmlString.trim();
+    const linkElement = tempDiv.querySelector("a");
+
+    if (linkElement) {
+      const ariaLabel = linkElement.getAttribute("aria-label") || "";
+      const className = linkElement.className || "";
+
+      const newDivElement = document.createElement("div");
+      newDivElement.className = `payment-method ${className}`;
+      newDivElement.textContent = ariaLabel;
+
+      return newDivElement.outerHTML;
+    }
+    return htmlString;
+  }
+
+  function addMethodWithoutDuplicates(methodArray, set, htmlString) {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = htmlString.trim();
+    const linkElement = tempDiv.querySelector("a");
+
+    if (linkElement) {
+      const ariaLabel = linkElement.getAttribute("aria-label") || "";
+      if (!set.has(ariaLabel)) {
+        methodArray.push(htmlString);
+        set.add(ariaLabel);
+      }
+    }
+  }
+
+  function populatePaymentList(listElement, methodsArray) {
+    listElement.innerHTML = '';
+    methodsArray.forEach(htmlString => {
+      const transformedHtml = transformLinkToDiv(htmlString);
+      listElement.insertAdjacentHTML('beforeend', transformedHtml);
+    });
+  }
+
+  function filterMethodList(inputElement, listElement) {
+    const filterValue = inputElement.value.toLowerCase();
+    const methodItems = listElement.querySelectorAll("div.payment-method");
+
+    methodItems.forEach(item => {
+      const methodName = item.textContent.toLowerCase();
+      if (methodName.includes(filterValue)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+
+  function filterBoxesByMethod(selectedMethod, type) {
+    const selectedMethodLowerCase = selectedMethod.toLowerCase();
+
+    boxes.forEach(box => {
+      const logoLink = box.querySelector('.logobg a');
+      if (logoLink) {
+        const path = logoLink.getAttribute('href');
+        const pageKey = path.split('/').pop();
+        const jsonFilePath = `${basePath}/${pageKey}.json`;
+
+        loadPaymentMethods(jsonFilePath).then(data => {
+          if (data) {
+            let boxMethods = [];
+            if (type === 'deposit' && data.firstMethodContent) {
+              boxMethods = data.firstMethodContent.map(method => {
+                const tempDiv = document.createElement("div");
+                tempDiv.innerHTML = method.trim();
+                const linkElement = tempDiv.querySelector("a");
+                return linkElement ? linkElement.getAttribute("aria-label").toLowerCase() : '';
+              });
+            } else if (type === 'withdrawal' && data.secondMethodContent) {
+              boxMethods = data.secondMethodContent.map(method => {
+                const tempDiv = document.createElement("div");
+                tempDiv.innerHTML = method.trim();
+                const linkElement = tempDiv.querySelector("a");
+                return linkElement ? linkElement.getAttribute("aria-label").toLowerCase() : '';
+              });
+            }
+
+            const hasMethod = boxMethods.includes(selectedMethodLowerCase);
+            if (!hasMethod) {
+              box.classList.add("hidden");
+            } else {
+              box.classList.remove("hidden");
+            }
+          }
+        });
+      }
+    });
+  }
+
+  if (depositInput) {
+    depositInput.addEventListener("click", function () {
+      depositList.classList.toggle("visible");
+    });
+  }
+
+  if (withdrawalInput) {
+    withdrawalInput.addEventListener("click", function () {
+      withdrawalList.classList.toggle("visible");
+    });
+  }
+
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("payment-method")) {
+      const selectedMethod = e.target.textContent;
+      const inputElement = e.target.closest("form").querySelector("input");
+
+      inputElement.value = selectedMethod;
+
+      e.target.closest(".payment-list").classList.remove("visible");
+
+      if (inputElement.id === "filter-input") {
+        filterBoxesByMethod(selectedMethod, 'deposit');
+      } else if (inputElement.id === "withdrawal-filter-input") {
+        filterBoxesByMethod(selectedMethod, 'withdrawal');
+      }
+    }
+  });
+
+  if (depositInput) {
+    depositInput.addEventListener("input", function () {
+      filterMethodList(depositInput, depositList);
+    });
+  }
+
+  if (withdrawalInput) {
+    withdrawalInput.addEventListener("input", function () {
+      filterMethodList(withdrawalInput, withdrawalList);
+    });
+  }
+
+  boxes.forEach(box => {
+    const logoLink = box.querySelector('.logobg a');
+    if (logoLink) {
+      const path = logoLink.getAttribute('href');
+      const pageKey = path.split('/').pop();
+      const jsonFilePath = `${basePath}/${pageKey}.json`;
+
+      loadPaymentMethods(jsonFilePath).then(data => {
+        if (data) {
+          (data.firstMethodContent || []).forEach(method => {
+            addMethodWithoutDuplicates(depositMethods, depositSet, method);
+          });
+
+          (data.secondMethodContent || []).forEach(method => {
+            addMethodWithoutDuplicates(withdrawalMethods, withdrawalSet, method);
+          });
+
+          if (depositList) {
+            populatePaymentList(depositList, depositMethods);
+          }
+
+          if (withdrawalList) {
+            populatePaymentList(withdrawalList, withdrawalMethods);
+          }
+        }
+      });
+    }
+  });
+});
