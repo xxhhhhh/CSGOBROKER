@@ -4385,7 +4385,7 @@ nav img:active,
 .boxes-holder .box:hover .content,
 .topic-box:hover .content {
     background: rgb(21 21 21);
-    transition: all .15s .05s ease-in-out, color .15s 0s, border .15s 0s, background .15s 0s !important;
+    transition: all .15s .05s ease-in-out, color .15s 0s, border .15s 0s, background .15s 0s;
 }
 
 .category-selector .category:hover .category-box .category-box-logo::before,
@@ -6292,6 +6292,10 @@ a[data-title]:after,
     transition: all .15s ease-in-out;
 }
 
+.boxes-holder-name a {
+    transition: all .1s ease-in-out;
+}
+
 .officon::before,
 .boxreview .plusminus .criteria:nth-child(1) .par li::before,
 .boxreview .plusminus .criteria:nth-child(1)::before,
@@ -6949,6 +6953,7 @@ ul .big-category.active .submenu2 {
 .vpn:hover,
 .site-item:hover a,
 .payment-list .payment-method:hover,
+.payment-list .payment-method.selected,
 .lang-menu ul li:hover a {
     color: var(--white);
 }
@@ -7315,7 +7320,8 @@ div#results {
 }
 
 .site-item:hover,
-.payment-list .payment-method:hover {
+.payment-list .payment-method:hover,
+.payment-list .payment-method.selected {
     background-color: #0e0e0e;
 }
 
@@ -8502,6 +8508,10 @@ div#results {
         top: unset;
         width: 100%;
         height: 60px;
+        order: -2;
+    }
+    .mods-box.skins-box {
+        order: -1;
     }
 
     .siteleftpannel .mods-box.topic {
@@ -10420,7 +10430,7 @@ div#results {
     display: flex;
     align-items: center;
     color: rgba(255, 255, 255, .25);
-    transition: all .15s ease-in-out;
+    transition: all .1s ease-in-out;
     text-wrap: nowrap;
     user-select: none;
     position: relative;
@@ -10639,11 +10649,16 @@ div#results {
 }
 
 .main-page .logobg,
-.main-page .content {
+.main-page .content,
+.main-page .boxes-holder .box:hover .content {
     position: absolute;
     width: 100%;
     height: 100%;
     transition: all .15s ease-in-out;
+}
+
+.main-page .logobg {
+    transition: unset;
 }
 
 .main-page .logobg {
@@ -10827,6 +10842,10 @@ div#results {
     margin: 3px;
 }
 
+.payments-block.visible .payments-button::before {
+    content: none;
+}
+
 .payments-button::before {
     content: '';
     position: absolute;
@@ -10937,6 +10956,14 @@ div#results {
     width: 16px;
     min-width: 16px;
     margin-right: 8px;
+    transition: all .1s ease-in-out;
+    filter: brightness(0) saturate(100%) invert(16%) sepia(69%) saturate(4202%) hue-rotate(339deg) brightness(95%) contrast(90%);
+    opacity: .3;
+}
+
+.payment-list .payment-method:hover::before,
+.payment-list .payment-method.selected::before {
+    opacity: 1;
 }
 
 .payment-container {
@@ -10955,7 +10982,7 @@ div#results {
     margin-bottom: unset;
     margin-left: unset;
     cursor: text;
-    width: 150px;
+    width: 100%;
     height: 30px;
     color: rgba(255, 255, 255, .3);
     background-color: rgb(16 16 16);
@@ -10968,6 +10995,11 @@ div#results {
     transition: all .15s ease-in-out;
     outline: none !important;
     cursor: pointer;
+}
+
+.payment-container input.active,
+.payment-container input:hover {
+    background-color: rgb(21 21 21);
 }
 
 .payment-container input::placeholder {
@@ -11026,6 +11058,88 @@ div#results {
 @media screen and (max-width: 1365px) {
     .payments-block,
     .payments-button {
-        display: none;
+        position: relative;
+        right: unset;
+        top: unset;
+    }
+    .payments-block .payments-button,
+    .payments-button {
+        margin: unset;
+
+    }
+
+    .payments-block {
+        margin-top: 4px;
+    }
+
+    .payments-button,
+    .payments-block {
+        width: 96%;
+        max-width: 1050px;
+    }
+
+    .payments-block.visible .payments-block-separate:nth-child(1)::before {
+        content: unset;
+    }
+
+    .payments-button:hover {
+        transform: unset;
+    }
+
+    .payments-block.visible .payments-block-separate:nth-child(2) {
+        display: flex;
+        justify-content: center;
+    }
+
+    .payment-container {
+        margin: 5px;
+    }
+
+    .payments-button:hover::after {
+        transform: unset;
+        filter: grayscale(1);
+    }
+
+    .payments-block.visible .payments-button::after {
+        transform: unset;
+        filter: grayscale(0);
+    }
+
+    .payments-block {
+        order: 0;
+    }
+
+    .payments-block-separate {
+        width: 100%;
+    }
+
+    .payments-block .payments-button {
+        width: 100%;
+    }
+    
+    .payment-list .payment-method,
+    .methodlist .payment-method::before {
+        color: var(--white);
+        opacity: 1;
+    }
+    .payments-block.visible .payments-button::before {
+        content: '';
+        position: absolute;
+        top: 4px;
+        bottom: 4px;
+        left: 4px;
+        right: 4px;
+        border-radius: 10px;
+        background: linear-gradient(180deg, rgb(11, 11, 11) 0%, var(--main-theme) 100%);
+        transition: all .15s ease-in-out;
+        box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
+    }
+
+    .payments-button:hover::before {
+        filter: none !important;
+    }
+
+    .payment-list .payment-method {
+        padding: 10px 10px;
     }
 }
