@@ -8442,6 +8442,14 @@ div#results {
         max-height: unset;
     }
 
+    .box.main .content p:first-child {
+        margin-top: 5px;
+    }
+
+    .box.main .content-buttons {
+        margin-top: unset;
+    }
+
     .rating-case-single {
         transform: translateY(0) !important;
     }
@@ -8905,7 +8913,7 @@ div#results {
     .mirror-redirect {
         position: absolute;
         z-index: 100;
-        top: 343px;
+        top: 335px;
         left: 50%;
         transform: translateX(-50%);
         padding: 0;
@@ -9456,6 +9464,10 @@ div#results {
         background: linear-gradient(180deg, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .3) 100%);
         width: 24%;
         min-width: 223px;
+    }
+
+    .box.main {
+        height: 350px;
     }
 
     nav #pagename {
@@ -10338,6 +10350,12 @@ div#results {
     z-index: 1;
 }
 
+@media screen and (max-width: 460px) {
+    .main-mode-unit {
+        width: 200px;
+    }
+}
+
 .main-mode-unit:hover img {
     filter: brightness(1.05);
     transform: scale(1.03);
@@ -10795,6 +10813,9 @@ div#results {
     .boxes-holder-section .boxes-holder-name h3 {
         text-wrap: nowrap;
     }
+    .main-mode-selection {
+        height: 150px;
+    }
 }
 
 @media screen and (max-width: 460px) {
@@ -11070,6 +11091,7 @@ div#results {
 
     .payments-block {
         margin-top: 4px;
+        margin-bottom: 2px;
     }
 
     .payments-button,
