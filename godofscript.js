@@ -1360,6 +1360,9 @@ $(document).ready(function() {
 } else if (path.includes('/reviews/') || path.includes('/mirrors/')) {
     var sitealternates = $('.sitealternates');
     sliderContainer.insertAfter(sitealternates);
+} else if (path.includes('/topic/') && $('.box-skins.solo').length > 0) {
+  var boxSolo = $('.box-skins.solo');
+  boxSolo.append(sliderContainer);
 } else if (path.includes('/topic/') && $('.boxtopic').length > 0) {
     var boxTopic = $('.boxtopic');
     boxTopic.append(sliderContainer);

@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
   
-if (languageTag !== 'ru') {
   var requests = [
     { url: '/index.html', targetId: 'main-page' },
     { url: '/cs2.html', targetId: 'csgo-best-sites' },
@@ -1358,5 +1357,4 @@ if (languageTag !== 'ru') {
       }
     }
   }
-}
 });
