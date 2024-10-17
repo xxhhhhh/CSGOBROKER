@@ -182,7 +182,9 @@ h2,
 h3,
 .boxes-holder-name h3,
 .boxes-holder-section:hover .boxes-holder-name h3,
-.boxes-holder-name a {
+.boxes-holder-name a,
+.newest-boxes-title-box span,
+.newest-boxes:hover .newest-boxes-title-box span {
     color: #1a1a1a;
 }
 
@@ -288,10 +290,7 @@ h3,
 .singlemod-box[data-title]:after,
 .controls-button,
 .box .logobg .best,
-.box .logobg .best::before,
-.newest-boxes-title-box,
-.newest-boxes-title-box::after,
-.newest-boxes-title-box::before {
+.box .logobg .best::before {
     background-color: #0a0a0a;
 }
 
@@ -741,7 +740,8 @@ ul .submenu li .nonredir,
 
 .boxes-holder-section:hover .boxes-holder-name .singlemod-icon.trade-skins::before,
 .boxes-holder-section:hover .boxes-holder-name .singlemod-icon.instant-sell::before,
-.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.earning::before {
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.earning::before,
+.newest-boxes:hover .singlemod-icon::before {
     filter: grayscale(1) brightness(.25);
 }
 

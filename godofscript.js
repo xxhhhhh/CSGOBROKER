@@ -829,15 +829,16 @@ const isExcludedPage = [
 ].some(exclusion => path.endsWith(exclusion) || href.includes(exclusion));
 
 if (!isExcludedPage) {
-  const createDiv = (className) => {
-    const div = document.createElement('div');
-    div.classList.add(className);
-    return div;
-  };
-
-  const newestBoxesDiv = createDiv('newest-boxes');
-  const newestBoxesTitleDiv = createDiv('newest-boxes-title');
-  const newestBoxesTitleBoxDiv = createDiv('newest-boxes-title-box');
+  function createElement(tag, className) {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    return element;
+  }
+  
+  const newestBoxesDiv = createElement('div', 'newest-boxes');
+  const newestBoxesTitleDiv = createElement('div', 'newest-boxes-title');
+  const newestBoxesIconDiv = createElement('div', 'singlemod-icon officon newest');
+  const newestBoxesTitleBoxDiv = createElement('div', 'newest-boxes-title-box');
   
   const titleSpan = document.createElement('span');
   const titles = {
@@ -848,9 +849,13 @@ if (!isExcludedPage) {
     hi: 'हाल ही में जोड़ा गया',
   };
   titleSpan.textContent = titles[languageTag] || 'Recently Added';
-
-  newestBoxesTitleBoxDiv.appendChild(titleSpan);
-  newestBoxesTitleDiv.appendChild(newestBoxesTitleBoxDiv);
+  
+  const newestBoxesMoreLink = createElement('a', 'newest-boxes-more');
+  newestBoxesMoreLink.href = languageTag === 'ru' ? '/ru/newest' : '/newest';
+  newestBoxesMoreLink.textContent = languageTag === 'ru' ? 'Больше' : 'More';
+  
+  newestBoxesTitleBoxDiv.append(newestBoxesIconDiv, titleSpan);
+  newestBoxesTitleDiv.append(newestBoxesTitleBoxDiv, newestBoxesMoreLink);
   newestBoxesDiv.appendChild(newestBoxesTitleDiv);
 
   const newestFragment = languageTag === 'ru' && !path.startsWith("/rust")
