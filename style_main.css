@@ -30,7 +30,7 @@
     --opacback: rgba(3, 3, 3, .3);
     --halfback: rgba(0, 0, 0, .2);
     --main-theme: rgb(15, 15, 15);
-    --darkygray: rgb(12, 12, 12);
+    --darkygray: rgb(11, 11, 11);
     --darkgray: rgb(13, 13, 13);
 }
 
@@ -281,7 +281,7 @@ nav .pages {
     margin: 0 auto;
     margin-bottom: 10px;
     border-radius: 10px;
-    background: linear-gradient(180deg, rgb(11 11 11) 0%, rgb(12 12 12) 100%);
+    background: linear-gradient(180deg, var(--darkygray) 0%, rgb(12 12 12) 100%);
     border: 2px solid rgb(12 12 12);
     height: 70%;
     display: flex;
@@ -321,7 +321,7 @@ nav .pages {
     justify-content: center;
     flex-wrap: wrap;
     align-content: flex-start;
-    background: linear-gradient(180deg, rgb(11 11 11) 50%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(180deg, var(--darkygray) 50%, rgba(0, 0, 0, 0) 100%);
     min-height: 600px;
     padding-top: 10px;
 }
@@ -2165,7 +2165,7 @@ h3 {
 .shortinfo {
     width: 100%;
     height: 48px;
-    background-color: rgb(11 11 11);
+    background-color: var(--darkygray);
     border-radius: 10px;
     margin-top: -66px;
     order: -2;
@@ -2376,7 +2376,7 @@ h3 {
 .ratingsumm {
     width: 98%;
     height: 100px;
-    background: rgb(11 11 11);
+    background: var(--darkygray);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -3197,7 +3197,7 @@ nav #logo:hover {
     height: auto;
     padding: 15px 0;
     position: relative;
-    background-color: rgb(11 11 11);
+    background-color: var(--darkygray);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     display: flex;
     align-items: center;
@@ -3270,7 +3270,7 @@ nav #logo:hover {
 
     50% {
         filter: brightness(120%);
-        background-color: rgb(11, 11, 11);
+        background-color: var(--darkygray);
         border-radius: 10px;
     }
 
@@ -3285,7 +3285,7 @@ nav #logo:hover {
 .partner-site {
     width: 300px;
     height: 60px;
-    background-color: rgb(11 11 11);
+    background-color: var(--darkygray);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     display: flex;
     align-items: center;
@@ -3437,7 +3437,7 @@ nav #logo:hover {
     width: 100%;
     height: 60px;
     min-height: 60px;
-    background: rgb(11 11 11);
+    background: var(--darkygray);
     cursor: pointer;
     border-radius: 10px;
     position: relative;
@@ -3629,7 +3629,7 @@ nav #logo:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(11 11 11);
+    background: var(--darkygray);
     z-index: 10;
     position: relative;
 }
@@ -3676,7 +3676,7 @@ nav #logo:hover {
 }
 
 .sitepage .box {
-    background: rgb(11 11 11);
+    background: var(--darkygray);
 }
 
 .sitepage .box .logobg {
@@ -3847,7 +3847,7 @@ nav #logo:hover {
     width: 244px;
     height: 304px !important;
     background-color: unset;
-    background: rgb(11 11 11);
+    background: var(--darkygray);
     box-shadow: unset;
     margin-left: 9px !important;
     border-radius: 10px;
@@ -4210,7 +4210,7 @@ nav img:active,
 
 .main-mode-box {
     position: absolute;
-    background: linear-gradient(180deg, rgb(11, 11, 11) 0%, var(--main-theme) 100%);
+    background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%);
     border-radius: 10px;
     left: 3px;
     right: 3px;
@@ -5344,22 +5344,22 @@ footer .centralizer .footer-content {
 
 .singlemod-select::before,
 .category-selector .category-box .category-box-logo::before {
-    background: linear-gradient(180deg, rgb(11, 11, 11) 0%, var(--main-theme) 100%);
+    background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%);
     transition: all .15s ease-in-out;
 }
 
 .mods-box.skins-box .singlemod-select::before {
-    background: linear-gradient(180deg, rgb(11, 11, 11) 0%, rgb(13, 13, 13) 100%);
+    background: linear-gradient(180deg, var(--darkygray) 0%, rgb(13, 13, 13) 100%);
 }
 
 .category-selector .category-box.active .category-box-logo::before,
 .singlemod-box.active .singlemod-select::before {
-    background: linear-gradient(180deg, rgb(11 11 11) 0%, rgba(43, 0, 16, .85) 100%);
+    background: linear-gradient(180deg, var(--darkygray) 0%, rgba(43, 0, 16, .85) 100%);
     transition: all .15s ease-in-out;
 }
 
 .mods-box.skins-box .singlemod-box.active .singlemod-select::before {
-    background: linear-gradient(180deg, rgb(11 11 11) 0%, rgba(20, 20, 20, .5) 100%);
+    background: linear-gradient(180deg, var(--darkygray) 0%, rgba(20, 20, 20, .5) 100%);
     transition: all .15s ease-in-out;
 }
 
@@ -5406,12 +5406,12 @@ footer .centralizer .footer-content {
     margin-left: 4px;
     height: 35px;
     width: 35px;
-    background: linear-gradient(180deg, rgb(11, 11, 11) 0%, var(--main-theme) 100%);
+    background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%);
     transition: all .15s ease-in-out;
 }
 
 .singlemod-box.active .singlemod-icon {
-    background: linear-gradient(180deg, rgb(11 11 11) 0%, rgba(43, 0, 16, .85) 100%);
+    background: linear-gradient(180deg, var(--darkygray) 0%, rgba(43, 0, 16, .85) 100%);
 }
 
 .singlemod-icon::before {
@@ -5697,7 +5697,7 @@ input:checked+label+.slide+input+label::after {
     font-size: 24px;
     width: 40px;
     height: 40px;
-    background-color: rgb(11 11 11);
+    background-color: var(--darkygray);
     cursor: pointer;
     outline: none;
     border: 0px solid transparent;
@@ -7454,7 +7454,7 @@ div#results {
 }
 
 .sitealternates .box:hover {
-    background: rgb(11 11 11) !important;
+    background: var(--darkygray) !important;
     transition: all .2s ease-in-out;
     background-color: none;
 }
@@ -8005,15 +8005,15 @@ div#results {
     display: flex;
     margin: 0 auto;
     width: auto;
-    max-width: 75%;
+    max-width: 55%;
     height: auto;
-    margin-top: 18px;
+    margin-top: 10px;
     justify-content: center;
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
 }
 
 .boxreview .main-infobox {
-    max-width: 100%;
+    max-width: 98%;
     margin-top: 9px;
 }
 
@@ -8026,7 +8026,7 @@ div#results {
     position: relative;
     width: 50%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -8039,21 +8039,24 @@ div#results {
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
     user-select: none;
     z-index: 2;
 }
 
 .main-infobox-content-text p {
-    color: rgba(255, 255, 255, .6);
+    color: rgba(255, 255, 255, .3);
     font-weight: 400;
     font-size: 14px;
-    transition: color .1s ease-in-out;
+    transition: color .25s ease-in-out;
+}
+
+.main-infobox:hover .main-infobox-content-text p {
+    color: rgba(255, 255, 255, .8);
 }
 
 .main-infobox-content-block {
-    background-color: var(--main-theme);
+    background-color: var(--darkygray);
     position: relative;
     border-radius: 5px;
     margin: 8px;
@@ -8077,6 +8080,7 @@ div#results {
     border-radius: 50%;
     margin-right: 40px;
     width: 125px;
+    min-width: 125px;
     height: 125px;
     overflow: hidden;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
@@ -8106,11 +8110,21 @@ div#results {
     position: absolute;
     display: block;
     background-size: contain;
-    background-color: var(--darkgray);
+    background-color: var(--darkygray);
     top: 6px;
     left: 6px;
     overflow: hidden;
     border-radius: 50%;
+}
+
+.main-infobox-content.second {
+    margin-left: -20px;
+    height: fit-content;
+}
+
+.main-infobox-content.second::before,
+.main-infobox-content.second::after {
+    content: none;
 }
 
 .main-infobox-content::before {
@@ -8219,6 +8233,7 @@ div#results {
 
     .boxreview .main-infobox {
         margin-top: 4px;
+        max-width: 100%;
     }
 
     .boxreview .main-infobox-content {
@@ -8239,6 +8254,7 @@ div#results {
     .main-infobox-mascotte {
         height: 65px;
         width: 65px;
+        min-width: unset;
         margin-right: unset;
         right: unset;
         left: 50%;
@@ -8246,6 +8262,11 @@ div#results {
         position: absolute;
         z-index: 3;
         top: -40px;
+    }
+
+    .main-infobox-content.second {
+        margin-left: unset;
+        margin-top: -30px;
     }
 
     .main-infobox-mascotte::after,
@@ -8555,7 +8576,7 @@ div#results {
         margin: unset;
         margin-bottom: 4px;
         border-radius: 0;
-        background-color: rgb(11 11 11);
+        background-color: var(--darkygray);
     }
 
     .singlemod-box[data-title]:hover:after {
@@ -8920,7 +8941,7 @@ div#results {
         padding: 5px 0;
         margin: 0 auto;
         box-shadow: unset;
-        background-color: rgb(11 11 11);
+        background-color: var(--darkygray);
         border-radius: unset !important;
     }
 
@@ -9451,7 +9472,7 @@ div#results {
 
     .siteleftpannel .box.main,
     .sitepage .box:hover {
-        background: rgb(11 11 11) !important;
+        background: var(--darkygray) !important;
     }
 
     .box .logobg a {
@@ -9470,7 +9491,7 @@ div#results {
 
     .siteblock {
         position: relative;
-        background: rgb(11 11 11);
+        background: var(--darkygray);
     }
 
     .box {
@@ -9847,7 +9868,7 @@ div#results {
         height: 30px;
         flex: 1 1 50%;
         margin: 2px 0;
-        background: rgb(11 11 11);
+        background: var(--darkygray);
     }
 
     .ratingsection .ratingway:first-child {
@@ -9859,7 +9880,7 @@ div#results {
     }
 
     .sitedetails .sitepros {
-        background: rgb(11 11 11);
+        background: var(--darkygray);
     }
 
     .ratingsumm {
@@ -10907,7 +10928,7 @@ div#results {
     left: 4px;
     right: 4px;
     border-radius: 10px;
-    background: linear-gradient(180deg, rgb(11, 11, 11) 0%, var(--main-theme) 100%);
+    background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%);
     transition: all .15s ease-in-out;
     box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
 }
@@ -11184,7 +11205,7 @@ div#results {
         left: 4px;
         right: 4px;
         border-radius: 10px;
-        background: linear-gradient(180deg, rgb(11, 11, 11) 0%, var(--main-theme) 100%);
+        background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%);
         transition: all .15s ease-in-out;
         box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
     }
