@@ -536,114 +536,247 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
     xhr.send();
   }
 
-if (window.location.pathname.includes("/topic")) {
+  if (window.location.pathname.includes("/topic")) {
     var skinslist = document.querySelectorAll('.box-skins-list');
     skinslist.forEach(function(element) {
         element.classList.add('visible');
     });
-document.addEventListener('DOMContentLoaded', function () {
-
-    if (window.location.pathname.includes("/topic/skins")) {
-        var colorList = ["white", "gray", "black", "brown", "red", "orange", "golden", "silver", "yellow", "green", "cyan", "blue", "purple", "pink"];
-  
-        colorList.forEach(function(color) {
-            var bgImage = new Image();
-            bgImage.src = "/img/skins/previews/small/example-" + color + ".webp";
-            bgImage.onload = function() {
-                var skinslist = document.querySelectorAll("[data-color='" + color + "']");
-                skinslist.forEach(function(element) {
-                    element.style.backgroundImage = "url(" + bgImage.src + ")";
-                    element.classList.add("active");
-                });
-            };
-        });
-    }
     
-const boxSkinsElements = document.querySelectorAll('.box-skins');
-
-boxSkinsElements.forEach(function(boxSkinsElement) {
-    const boxSkinsList = boxSkinsElement.querySelector('.box-skins-list');
-
-    if (boxSkinsList.scrollWidth > boxSkinsList.clientWidth) {
-        const boxSkinsControl = document.createElement('div');
-        boxSkinsControl.className = 'box-skins-control';
-        boxSkinsControl.innerHTML = `
-        <div class="box-skins-button left hidden"><i class="officon chevron left"></i></div>
-        <div class="box-skins-button right hidden"><i class="officon chevron right"></i></div>
-        `;
-        boxSkinsElement.appendChild(boxSkinsControl);
-
-        const leftButton = boxSkinsControl.querySelector('.box-skins-button.left');
-        const rightButton = boxSkinsControl.querySelector('.box-skins-button.right');
-
-        leftButton.addEventListener('click', function () {
-            boxSkinsList.scrollBy({
-                left: -boxSkinsList.querySelector('.skin').offsetWidth - 10,
-                behavior: 'smooth'
+    document.addEventListener('DOMContentLoaded', function () {
+        if (window.location.pathname.includes("/topic/skins")) {
+            var colorList = ["white", "gray", "black", "brown", "red", "orange", "golden", "silver", "yellow", "green", "cyan", "blue", "purple", "pink"];
+        
+            colorList.forEach(function(color) {
+                var bgImage = new Image();
+                bgImage.src = "/img/skins/previews/small/example-" + color + ".webp";
+                bgImage.onload = function() {
+                    var skinslist = document.querySelectorAll("[data-color='" + color + "']");
+                    skinslist.forEach(function(element) {
+                        element.style.backgroundImage = "url(" + bgImage.src + ")";
+                        element.classList.add("active");
+                    });
+                };
             });
+        }
+
+        const boxSkinsElements = document.querySelectorAll('.box-skins');
+        boxSkinsElements.forEach(function(boxSkinsElement) {
+            const boxSkinsList = boxSkinsElement.querySelector('.box-skins-list');
+
+            if (boxSkinsList.scrollWidth > boxSkinsList.clientWidth) {
+                const boxSkinsControl = document.createElement('div');
+                boxSkinsControl.className = 'box-skins-control';
+                boxSkinsControl.innerHTML = `
+                <div class="box-skins-button left hidden"><i class="officon chevron left"></i></div>
+                <div class="box-skins-button right hidden"><i class="officon chevron right"></i></div>
+                `;
+                boxSkinsElement.appendChild(boxSkinsControl);
+
+                const leftButton = boxSkinsControl.querySelector('.box-skins-button.left');
+                const rightButton = boxSkinsControl.querySelector('.box-skins-button.right');
+
+                leftButton.addEventListener('click', function () {
+                    boxSkinsList.scrollBy({
+                        left: -boxSkinsList.querySelector('.skin').offsetWidth - 10,
+                        behavior: 'smooth'
+                    });
+                });
+
+                rightButton.addEventListener('click', function () {
+                    boxSkinsList.scrollBy({
+                        left: boxSkinsList.querySelector('.skin').offsetWidth + 10,
+                        behavior: 'smooth'
+                    });
+                });
+
+                boxSkinsList.addEventListener('scroll', function () {
+                    leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft <= boxSkinsList.querySelector('.skin').offsetWidth);
+                    rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
+                });
+
+                leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft <= boxSkinsList.querySelector('.skin').offsetWidth);
+                rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
+            }
         });
 
-        rightButton.addEventListener('click', function () {
-            boxSkinsList.scrollBy({
-                left: boxSkinsList.querySelector('.skin').offsetWidth + 10,
-                behavior: 'smooth'
+        function enableMouseDragScroll(container) {
+          let isDown = false;
+          let startX;
+          let scrollLeft;
+        
+          container.addEventListener('mousedown', (e) => {
+              isDown = true;
+              container.classList.add('active');
+              startX = e.pageX - container.offsetLeft;
+              scrollLeft = container.scrollLeft;
+          });
+        
+          container.addEventListener('mouseleave', () => {
+              isDown = false;
+              container.classList.remove('active');
+          });
+        
+          container.addEventListener('mouseup', () => {
+              isDown = false;
+              container.classList.remove('active');
+          });
+        
+          container.addEventListener('mousemove', (e) => {
+              if (!isDown) return;
+              e.preventDefault();
+              const x = e.pageX - container.offsetLeft;
+              const walk = (x - startX) * 1;
+              container.scrollLeft = scrollLeft - walk;
+          });
+        }
+        
+        boxSkinsElements.forEach(function(boxSkinsElement) {
+          const boxSkinsList = boxSkinsElement.querySelector('.box-skins-list');
+          enableMouseDragScroll(boxSkinsList);
+        });
+        
+        const boxSkinsNav = document.querySelector('.box-skins-nav');
+        const weaponNames = [
+          "Gloves", "Knives", "Перчатки", "Ножи", "AWP", "AK-47", "M4A4", "M4A1-S", "SSG 08", "Desert Eagle", "P250", 
+          "Glock-18", "USP-S", "P2000", "CZ75-Auto", "Dual Berettas", "Five-SeveN", "Tec-9", 
+          "R8 Revolver", "Zeus x27", "MP9", "MAC-10", "MP7", "MP5-SD", "UMP-45", "P90", "PP-Bizon", "Galil AR", 
+          "FAMAS", "SG 553", "AUG", "Nova", "XM1014", "MAG-7", "Sawed-Off", "SCAR-20", "G3SG1", 
+          "Negev", "M249"
+        ];
+        
+        function populateNavList(navList) {
+          weaponNames.forEach(function(weapon) {
+              const boxSkins = document.querySelectorAll('.box-skins');
+              let isWeaponExist = false;
+        
+              boxSkins.forEach(function(box) {
+                  const skinNameSpan = box.querySelector('.box-skins-name span');
+                  if (skinNameSpan && skinNameSpan.textContent.trim() === weapon && !box.classList.contains('notexist')) {
+                      isWeaponExist = true;
+                  }
+              });
+        
+              if (isWeaponExist) {
+                  const navItem = document.createElement('div');
+                  navItem.className = 'navigation-weapon-name';
+                  navItem.textContent = weapon;
+                  navList.appendChild(navItem);
+        
+                  navItem.addEventListener('click', function() {
+                      scrollToBoxSkins(weapon);
+                  });
+              }
+          });
+        }
+        
+        let scrollOffset = 115;
+
+        function scrollToBoxSkins(weaponName) {
+            const boxSkins = document.querySelectorAll('.box-skins');
+            boxSkins.forEach(function(box) {
+                const skinNameSpan = box.querySelector('.box-skins-name span');
+                if (skinNameSpan && skinNameSpan.textContent.trim() === weaponName && !box.classList.contains('notexist')) {
+                    const boxPosition = box.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({
+                        top: boxPosition - scrollOffset,
+                        behavior: 'smooth'
+                    });
+                }
             });
-        });
+        }
+        
+        const navList = document.querySelector('.box-skins-nav-list');
+        if (navList) {
+          populateNavList(navList);
+        }
 
-        boxSkinsList.addEventListener('scroll', function () {
-            leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft <= boxSkinsList.querySelector('.skin').offsetWidth);
-            rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
-        });
+        enableMouseDragScroll(navList);
 
-        leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft <= boxSkinsList.querySelector('.skin').offsetWidth);
+        const navItems = navList.querySelectorAll('.navigation-weapon-name');
+        const itemsToScroll = 5;
 
-        rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
-    }
-});
-});
+        if (navItems.length > itemsToScroll) {
+            const navControl = document.createElement('div');
+            navControl.className = 'box-skins-nav-control';
+            navControl.innerHTML = `
+            <div class="box-skins-button left hidden"><i class="officon chevron left"></i></div>
+            <div class="box-skins-button right"><i class="officon chevron right"></i></div>
+            `;
+            boxSkinsNav.appendChild(navControl);
+
+            const leftNavButton = navControl.querySelector('.box-skins-button.left');
+            const rightNavButton = navControl.querySelector('.box-skins-button.right');
+
+            const itemWidth = navItems[0].offsetWidth + 10;
+
+            leftNavButton.addEventListener('click', function () {
+                navList.scrollBy({
+                    left: -(itemWidth * itemsToScroll),
+                    behavior: 'smooth'
+                });
+            });
+
+            rightNavButton.addEventListener('click', function () {
+                navList.scrollBy({
+                    left: itemWidth * itemsToScroll,
+                    behavior: 'smooth'
+                });
+            });
+
+            navList.addEventListener('scroll', function () {
+                leftNavButton.classList.toggle('hidden', navList.scrollLeft <= itemWidth);
+                rightNavButton.classList.toggle('hidden', navList.scrollLeft + navList.clientWidth >= navList.scrollWidth);
+            });
+
+            leftNavButton.classList.toggle('hidden', navList.scrollLeft <= itemWidth);
+            rightNavButton.classList.toggle('hidden', navList.scrollLeft + navList.clientWidth >= navList.scrollWidth);
+        }
+    });
 
     const colorBoxes = document.querySelectorAll('.color-box-selection-button');
     const colorList = document.getElementById('color-list');
-  
+    
     colorBoxes.forEach(box => {
-      box.addEventListener('click', () => {
-        box.classList.toggle('clicked');
-        colorList.classList.toggle('active');
-      });
+        box.addEventListener('click', () => {
+            box.classList.toggle('clicked');
+            colorList.classList.toggle('active');
+        });
     });
     
     function translateTypes(languageTag) {
-      if (languageTag === "ru") {
-          var translations_items = {
-              "Knives": "Ножи",
-              "Gloves": "Перчатки",
-              "Pistols": "Пистолеты",
-              "Rifles": "Винтовки",
-              "Sniper Rifles": "Снайперские винтовки",
-              "SMGs": "ПП",
-              "Shotguns": "Дробовики",
-              "Machine guns": "Пулеметы",
-              "Consumer Grade": "Ширпотреб",
-              "Industrial Grade": "Промышленное",
-              "Mil-Spec": "Армейское",
-              "Restricted": "Запрещенное",
-              "Classified": "Засекреченное",
-              "Covert": "Тайное",
-              "Contraband": "Контрабанда",
-              "Change Color": "Сменить Цвет"
-          };
-  
-          var elementsToTranslate = document.querySelectorAll('.navigation-weapon-type, .color-box-selection-button');
-          elementsToTranslate.forEach(function(element) {
-              var originalText = element.textContent.trim();
-              if (translations_items.hasOwnProperty(originalText)) {
-                  element.textContent = translations_items[originalText];
-              }
-          });
-      }
-  }
-  translateTypes(languageTag)
+        if (languageTag === "ru") {
+            var translations_items = {
+                "Knives": "Ножи",
+                "Gloves": "Перчатки",
+                "Pistols": "Пистолеты",
+                "Rifles": "Винтовки",
+                "Sniper Rifles": "Снайперские винтовки",
+                "SMGs": "ПП",
+                "Shotguns": "Дробовики",
+                "Machine guns": "Пулеметы",
+                "Consumer Grade": "Ширпотреб",
+                "Industrial Grade": "Промышленное",
+                "Mil-Spec": "Армейское",
+                "Restricted": "Запрещенное",
+                "Classified": "Засекреченное",
+                "Covert": "Тайное",
+                "Contraband": "Контрабанда",
+                "Change Color": "Сменить Цвет"
+            };
+
+            var elementsToTranslate = document.querySelectorAll('.navigation-weapon-type, .color-box-selection-button, .navigation-weapon-name, .box-skins-name span');
+            elementsToTranslate.forEach(function(element) {
+                var originalText = element.textContent.trim();
+                if (translations_items.hasOwnProperty(originalText)) {
+                    element.textContent = translations_items[originalText];
+                }
+            });
+        }
+    }
+
+    translateTypes(languageTag)
 }
+
 
 $(document).ready(function(){
     $('.crafting-table-step').click(function(){
