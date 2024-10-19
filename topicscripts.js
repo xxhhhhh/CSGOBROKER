@@ -600,6 +600,9 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
         });
 
         function enableMouseDragScroll(container) {
+
+          if (!container) return;
+
           let isDown = false;
           let startX;
           let scrollLeft;
@@ -686,51 +689,53 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
         }
         
         const navList = document.querySelector('.box-skins-nav-list');
+
         if (navList) {
-          populateNavList(navList);
-        }
-
-        enableMouseDragScroll(navList);
-
-        const navItems = navList.querySelectorAll('.navigation-weapon-name');
-        const itemsToScroll = 5;
-
-        if (navItems.length > itemsToScroll) {
-            const navControl = document.createElement('div');
-            navControl.className = 'box-skins-nav-control';
-            navControl.innerHTML = `
-            <div class="box-skins-button left hidden"><i class="officon chevron left"></i></div>
-            <div class="box-skins-button right"><i class="officon chevron right"></i></div>
-            `;
-            boxSkinsNav.appendChild(navControl);
-
-            const leftNavButton = navControl.querySelector('.box-skins-button.left');
-            const rightNavButton = navControl.querySelector('.box-skins-button.right');
-
-            const itemWidth = navItems[0].offsetWidth + 10;
-
-            leftNavButton.addEventListener('click', function () {
-                navList.scrollBy({
-                    left: -(itemWidth * itemsToScroll),
-                    behavior: 'smooth'
+            populateNavList(navList);
+        
+            enableMouseDragScroll(navList);
+        
+            const navItems = navList.querySelectorAll('.navigation-weapon-name');
+            const itemsToScroll = 5;
+        
+            if (navItems.length > itemsToScroll) {
+                const navControl = document.createElement('div');
+                navControl.className = 'box-skins-nav-control';
+                navControl.innerHTML = `
+                    <div class="box-skins-button left hidden"><i class="officon chevron left"></i></div>
+                    <div class="box-skins-button right"><i class="officon chevron right"></i></div>
+                `;
+                boxSkinsNav.appendChild(navControl);
+        
+                const leftNavButton = navControl.querySelector('.box-skins-button.left');
+                const rightNavButton = navControl.querySelector('.box-skins-button.right');
+        
+                const itemWidth = navItems[0].offsetWidth + 10;
+        
+                leftNavButton.addEventListener('click', function () {
+                    navList.scrollBy({
+                        left: -(itemWidth * itemsToScroll),
+                        behavior: 'smooth'
+                    });
                 });
-            });
-
-            rightNavButton.addEventListener('click', function () {
-                navList.scrollBy({
-                    left: itemWidth * itemsToScroll,
-                    behavior: 'smooth'
+        
+                rightNavButton.addEventListener('click', function () {
+                    navList.scrollBy({
+                        left: itemWidth * itemsToScroll,
+                        behavior: 'smooth'
+                    });
                 });
-            });
-
-            navList.addEventListener('scroll', function () {
+        
+                navList.addEventListener('scroll', function () {
+                    leftNavButton.classList.toggle('hidden', navList.scrollLeft <= itemWidth);
+                    rightNavButton.classList.toggle('hidden', navList.scrollLeft + navList.clientWidth >= navList.scrollWidth);
+                });
+        
                 leftNavButton.classList.toggle('hidden', navList.scrollLeft <= itemWidth);
                 rightNavButton.classList.toggle('hidden', navList.scrollLeft + navList.clientWidth >= navList.scrollWidth);
-            });
-
-            leftNavButton.classList.toggle('hidden', navList.scrollLeft <= itemWidth);
-            rightNavButton.classList.toggle('hidden', navList.scrollLeft + navList.clientWidth >= navList.scrollWidth);
-        }
+            }
+        }        
+      
     });
 
     const colorBoxes = document.querySelectorAll('.color-box-selection-button');

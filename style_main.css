@@ -1099,6 +1099,7 @@ nav .pages {
 }
 
 .navigation-weapon-type::before,
+.navigation-weapon-name::before,
 .color-box-selection-button::before,
 .navigation-weapon-sort::before,
 .navigation-reset::before {
@@ -1315,7 +1316,7 @@ nav .pages {
 
 .box-skins-list::-webkit-scrollbar-thumb,
 .box-skins-nav-list::-webkit-scrollbar-thumb {
-    background: #2e2e2e;
+    background: rgb(35 35 35);
     border-radius: 5px;
 }
 
@@ -1330,11 +1331,10 @@ nav .pages {
 
 .box-skins .skin {
     height: 95%;
-    width: 157px;
-    min-width: 157px;
-    max-width: 157px;
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
     margin-left: 5px;
-    background-color: #0b0b0b;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -1371,10 +1371,6 @@ nav .pages {
 
 .box-skins.selected:nth-child(2) .skin:first-child {
     padding-left: unset;
-}
-
-.box-skins .skin:first-child {
-    padding-left: 10px;
 }
 
 .box-skins.mac10 .skin {
@@ -1461,7 +1457,7 @@ nav .pages {
 }
 
 .sitepage.items .box-skins .skin {
-    background-color: var(--darkygray) !important;
+    background-color: var(--darkygray);
 }
 
 .box-skins.solo .skin::before {
@@ -1534,17 +1530,20 @@ nav .pages {
     font-size: 12px;
 }
 
+.box-skins.knives .skin,
+.box-skins.gloves .skin,
 .box-skins.gloves .skin {
-    min-width: 95px;
+    min-width: 90px;
 }
 
-.box-skins.knives .skin {
-    min-width: 100px;
+.box-skins.smgs .skin,
+.box-skins.smgs:hover .skin {
+    min-width: 125px;
 }
 
 .box-skins .skin:hover {
-    width: 157px;
-    min-width: 157px;
+    width: 150px;
+    min-width: 150px;
 }
 
 .box-skins .skin:hover img {
@@ -6716,6 +6715,12 @@ a[data-title]:after,
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
 }
 
+.boxtopic .slider-container {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 8px;
+}
+
 .slick-dots li {
     width: auto !important;
     height: auto !important;
@@ -8639,6 +8644,11 @@ div#results {
         width: 85%;
     }
 
+    .boxtopic .slider-container {
+        width: 98%;
+        margin: 4px;
+    }
+
     .slick-dots {
         top: 5px !important;
     }
@@ -9662,10 +9672,6 @@ div#results {
 }
 
 @media screen and (max-width: 850px) {
-    .box-skins .skin {
-        max-width: unset;
-        flex-grow: 1;
-    }
 
     .mods-box.skins-box .singlemod-box:hover {
         transform: scale(1.01);
