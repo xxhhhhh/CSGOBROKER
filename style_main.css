@@ -1096,6 +1096,7 @@ nav .pages {
 .box-skins-nav .navigation-weapon-name {
     margin: 8px 5px;
     text-wrap: nowrap;
+    color: rgb(255, 255, 255, .25);
     opacity: 1;
 }
 
@@ -1139,6 +1140,7 @@ nav .pages {
     filter: drop-shadow(0 0 1px rgb(50 50 50));
     transition: .15s all ease-in-out;
     transform: scale(1.05);
+    color: var(--white);
 }
 
 .navigation-weapon-sort:hover i:before {
@@ -1684,9 +1686,9 @@ nav .pages {
 
 .box-skins-name span {
     transform: rotate(90deg);
-    color: rgb(40 40 40);
+    color: rgba(255, 255, 255, .25);
+    font-size: 12px;
     text-transform: uppercase;
-    font-size: 14px;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -3709,13 +3711,30 @@ nav #logo:hover {
     background: linear-gradient(180deg, var(--darkygray) 0%, rgb(13 13 13) 100%);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
-    transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out, overflow .2s .2s ease-in-out;
 }
 
 .box.hidden,
 .box.hidden-deposit,
 .box.hidden-withdrawal {
-    display: none;
+    width: 0;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.box .logobg,
+.box .content {
+    opacity: 1;
+    transition: all .8s ease-in-out;
+}
+
+.box.hidden-deposit .logobg,
+.box.hidden-withdrawal .logobg,
+.box.hidden-deposit .content,
+.box.hidden-withdrawal .content {
+    opacity: 0;
+    transition: all .1s ease-in-out;
 }
 
 .box.main {
@@ -4892,7 +4911,7 @@ footer .centralizer .footer-content {
     text-transform: uppercase;
     font-size: 12px;
     background-color: var(--darkygray);
-    border-radius: 0 0 0 10px;
+    border-radius: 10px 0 10px 10px;
     z-index: 3;
     display: flex;
     align-items: center;
@@ -4923,7 +4942,7 @@ footer .centralizer .footer-content {
     transform: skewX(-20deg);
     z-index: -1;
     right: -10px;
-    border-radius: 0 0 5px 0;
+    border-radius: 0 5px 5px 0;
     top: 0;
 }
 
@@ -4940,12 +4959,11 @@ footer .centralizer .footer-content {
     display: flex;
     justify-content: center;
     border-radius: 10px 10px 10px 0;
-    background-color: var(--darkygray);
     flex-wrap: wrap;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 15px;
+    margin-top: 5px;
     align-content: flex-start;
 }
 
@@ -4961,7 +4979,6 @@ footer .centralizer .footer-content {
     background: var(--darkygray);
     filter: unset;
     margin: 9px;
-    background: linear-gradient(180deg, rgb(13 13 13) 0%, rgb(14 14 14) 100%);
 }
 
 .content-buttons {
@@ -7286,7 +7303,7 @@ label:active,
 }
 
 .boxes-holder-name a:active,
-.singlemod-box:active,
+.singlemod-box:active a,
 .main-mode-unit:active,
 .category-box:active,
 .payments-button:active,
@@ -8747,6 +8764,7 @@ div#results {
         left: unset;
         transform: unset;
         border-radius: 0 10px 10px 10px;
+        background-color: var(--darkygray);
     }
 
     .newest-boxes-title-box {

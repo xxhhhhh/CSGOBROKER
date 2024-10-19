@@ -751,6 +751,10 @@ ul .submenu li .nonredir,
     background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .1) 100%);
 }
 
+.box-skins-name::before {
+    background: linear-gradient(150deg, rgb(255 255 255) 0%, rgb(242 242 242) 100%);
+}
+
 @media screen and (max-width: 1365px) {
 
 
