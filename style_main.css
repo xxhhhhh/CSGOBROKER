@@ -1056,6 +1056,7 @@ nav .pages {
     z-index: 11;
     background: var(--main-theme);
     filter: drop-shadow(0 0 1px rgb(35 35 35));
+    position: relative;
     border-radius: 5px;
     font-weight: 500;
     font-size: 12px;
@@ -1102,7 +1103,8 @@ nav .pages {
 .navigation-weapon-name::before,
 .color-box-selection-button::before,
 .navigation-weapon-sort::before,
-.navigation-reset::before {
+.navigation-reset::before,
+.box-skins-name::before {
     content: '';
     background: linear-gradient(180deg, rgb(22 22 22) 0%, rgb(16 16 16) 100%);
     position: absolute;
@@ -1112,6 +1114,14 @@ nav .pages {
     right: 2px;
     border-radius: 5px;
     z-index: -1;
+}
+
+.box-skins-name::before {
+    top: 4px;
+    left: 4px;
+    bottom: 4px;
+    right: 4px;
+    background: linear-gradient(150deg, rgb(15 15 15 ) 0%, rgb(12 12 12) 100%);
 }
 
 .navigation-weapon-type.notexist,
@@ -1316,7 +1326,7 @@ nav .pages {
 
 .box-skins-list::-webkit-scrollbar-thumb,
 .box-skins-nav-list::-webkit-scrollbar-thumb {
-    background: rgb(35 35 35);
+    background: rgb(20 20 20);
     border-radius: 5px;
 }
 
@@ -1326,7 +1336,7 @@ nav .pages {
 
 
 .box-skins-list::-webkit-scrollbar-thumb:hover {
-    background: #414141;
+    background: rgb(30 30 30);
 }
 
 .box-skins .skin {
@@ -1674,17 +1684,17 @@ nav .pages {
 
 .box-skins-name span {
     transform: rotate(90deg);
-    color: #212121;
+    color: rgb(40 40 40);
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 500;
     display: flex;
     align-items: center;
-    height: 30px;
+    height: 33px;
     min-width: 120px;
     justify-content: center;
     transition: .2s all ease-in-out;
-    margin-left: 5px;
+    margin-left: 2px;
 }
 
 .box-skins.selected .box-skins-control,
@@ -7419,6 +7429,7 @@ div#results {
     transition: .15s all ease-in-out;
     text-align: center;
     user-select: none;
+    position: relative;
 }
 
 .color-box-selection-button.clicked {
@@ -8052,7 +8063,7 @@ div#results {
     width: auto;
     max-width: 55%;
     height: auto;
-    margin-top: 10px;
+    margin-top: 15px;
     justify-content: center;
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
 }
@@ -8477,7 +8488,7 @@ div#results {
     }
 
     #preview-showcase .skin-alt-info {
-        bottom: 175px;
+        bottom: 130px;
     }
 
     .topic-box.maestro {
@@ -9790,6 +9801,12 @@ div#results {
         position: relative;
     }
 
+    #preview-showcase .skin-alt-info[data-title]:after {
+        content: attr(data-title);
+        transition: .1s opacity ease-in-out;
+        opacity: .25;
+    }
+
     #preview-showcase {
         top: 15%;
         left: unset;
@@ -10497,6 +10514,10 @@ div#results {
     margin: 8px;
     margin-top: 40px;
     align-content: flex-start;
+}
+
+.boxes-holder-section:last-of-type {
+    margin-bottom: 0;
 }
 
 .boxes-holder-section.big {
