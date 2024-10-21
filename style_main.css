@@ -1003,8 +1003,7 @@ nav .pages {
 .component-box[data-title]:after,
 .skin-alt-info[data-title]:after,
 .main-mode:after,
-.infoicon::after,
-.main-page .best::after {
+.infoicon::after  {
     content: '';
     position: absolute;
     width: max-content;
@@ -5195,11 +5194,6 @@ footer .centralizer .footer-content {
     z-index: 11;
 }
 
-.newest-boxes .box .logobg .best {
-    transition: opacity .15s ease-in-out;
-    opacity: 1;
-}
-
 .newest-boxes .box:hover .logobg img {
     opacity: .2;
 }
@@ -6119,7 +6113,8 @@ a[data-title]:after,
     background-image: url(/img/icons/gamemodes/gift.svg);
 }
 
-.main-page .officon.signupbonus::before {
+.main-page .best::after,
+.newest-boxes .best::after {
     background-image: url(/img/icons/gamemodes/freebies.webp);
 }
 
@@ -10413,7 +10408,6 @@ div#results {
     max-width: 75%;
     width: 100%;
     border-radius: 5px;
-    min-height: unset;
     margin: 0 auto;
     justify-content: center;
     display: flex;
@@ -10429,7 +10423,8 @@ div#results {
     z-index: 3;
     filter: unset;
     min-width: unset;
-    background: linear-gradient(180deg, rgb(13 13 13) 0%, rgb(14 14 14) 100%);
+    /* background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%); */
+    background: radial-gradient(75% 50% at 50% 0%, var(--main-theme), rgb(13 13 13) 100%);
 }
 
 .main-page .mods-box.mods-box.skins-box {
@@ -10621,47 +10616,37 @@ div#results {
     opacity: 1;
 }
 
-.infoicon::after,
-.main-page.lang-ru .best::after {
-    content: 'Not an Advertisement';
-    margin-bottom: unset;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all .15s ease-in-out;
-    text-transform: none;
-    left: unset;
-    margin-left: 45px; 
-}
-
-.main-page .best .officon::before {
+.main-page .best::after,
+.newest-boxes .best::after {
+    content: '';
     opacity: 1;
     margin-right: 3px;
     height: 20px;
     width: 20px;
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    background-size: 100%;
+    transition: all .15s ease-in-out;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.lang-ru .infoicon::after {
-    content: 'Не Является Рекламой';
-}
-.lang-tr .infoicon::after {
-    content: 'Reklam Değildir';
-}
-.lang-pt .infoicon::after {
-    content: 'Não é Publicidade';
-}
-.lang-es .infoicon::after {
-    content: 'No es Publicidad';
-}
-.lang-hi .infoicon::after {
-    content: 'यह विज्ञापन नहीं है';
+.main-page .box .logobg .best,
+.newest-boxes .box .logobg .best {
+    font-size: 0;
 }
 
-.main-page.lang-ru .best::after {
-    content: 'Бонус за Регистрацию';
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-left: unset;
+.main-page .box .logobg .best:hover,
+.newest-boxes .box .logobg .best:hover {
+    font-size: 11px;
+}
+
+.main-page .box .logobg .best:hover::after,
+.newest-boxes .box .logobg .best:hover::after {
+    margin-left: 8px;
 }
 
 .boxes-holder-name .boxes-holder-more,
@@ -11228,7 +11213,8 @@ div#results {
 
     }
 
-    .payments-block {
+    .payments-block,
+    .payments-button {
         margin-top: 4px;
         margin-bottom: 2px;
     }
