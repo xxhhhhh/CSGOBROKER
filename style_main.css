@@ -11026,6 +11026,7 @@ div#results {
 .payments-block-separate {
     width: fit-content;
     border-radius: 10px 10px 0 0;
+    transition: all .2s ease-in-out;
     position: relative;
     z-index: 1;
 }
@@ -11068,6 +11069,8 @@ div#results {
     cursor: pointer;
     margin-right: 5px;
     display: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .payment-close-button.visible {
@@ -11081,15 +11084,15 @@ div#results {
 
 .payments-block .payments-block-separate:nth-child(2) {
     width: auto;
+    height: 0;
     border-radius: 0 10px 10px 10px;
     padding-bottom: 10px;
     padding-top: 5px;
     margin-top: -10px;
-    display: none;
 }
 
 .payments-block.visible .payments-block-separate:nth-child(2) {
-    display: block;
+    height: 85px;
 }
 
 .methodlist .payment-method::before {
@@ -11137,9 +11140,20 @@ div#results {
     font-family: 'TTNormsPro';
     font-weight: 500;
     text-align: center;
-    transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out, opacity .1s ease-in-out;
+    opacity: 0;
+    transform: scale(.8);
     outline: none !important;
+    pointer-events: none;
     cursor: pointer;
+}
+
+.visible .payment-container input,
+.visible .payment-close-button {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+    transition: all .15s ease-in-out, opacity .35s ease-in-out;
 }
 
 .payment-container input.active,
@@ -11240,6 +11254,11 @@ div#results {
 
     .payment-container {
         margin: 5px;
+        display: none;
+    }
+
+    .visible .payment-container {
+        display: flex;
     }
 
     .payments-button:hover::after {
@@ -11258,6 +11277,15 @@ div#results {
 
     .payments-block-separate {
         width: 100%;
+    }
+
+    .payments-block .payments-block-separate:nth-child(2) {
+        padding-top: 0;
+    }
+
+    .payments-block.visible .payments-block-separate:nth-child(2) {
+        padding-top: 5px;
+        height: 55px;
     }
 
     .payments-block .payments-button {
