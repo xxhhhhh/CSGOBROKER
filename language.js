@@ -132,8 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  
-  
   function sendRequest(url, targetId) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
