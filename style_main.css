@@ -7834,6 +7834,7 @@ div#results {
 
 .transparent .preview-craft-unit {
     opacity: .8;
+    background-color: unset;
 }
 
 .preview-craft-unit:first-child {
@@ -7848,12 +7849,21 @@ div#results {
     opacity: 1;
 }
 
+.preview-craft:has(.preview-craft-unit.preview) {
+    min-height: 333px;
+    /* background-color: #0e0e0e; */
+}
+
 .preview-craft-unit.preview {
     opacity: 1;
     width: 100%;
-    min-width: 100%;
+    /* min-width: 100%; */
     z-index: 100;
     filter: drop-shadow(2px 4px 12px black);
+}
+
+.transparent .preview-craft-unit.preview {
+    filter: unset;
 }
 
 .preview-craft img {
