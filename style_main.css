@@ -4180,16 +4180,28 @@ nav img:active,
     z-index: 2;
 }
 
-.box .logobg .upd {
-    top: 0;
-    left: -22px;
-    transform: rotate(-20deg);
+.bonuses-block {
+    top: -8px;
+    right: -8px;
     position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.box .logobg .bonuses-block .best {
+    top: unset;
+    right: unset;
+    position: relative;
+}
+
+.box .logobg .upd {
+    position: relative;
     width: auto;
-    padding: 5px 10px;
+    padding: 0 5px;
+    margin-right: 16px;
     height: 30px;
-    background-color: var(--green);
-    color: black;
+    background-color: #2066ce;
     filter: drop-shadow(1px 1px 4px rgb(10 10 10)) blur(0);
     border-radius: 5px;
     display: flex;
@@ -4204,16 +4216,25 @@ nav img:active,
     z-index: 2;
 }
 
-.boxes-holder-section .box .logobg .upd {
-    transform: rotate(20deg);
-    left: unset;
-    top: 16px;
-    right: -16px;
+.box .logobg .upd::after,
+.box .logobg .upd::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -6px;
+    transform: skewX(20deg);
+    background-color: inherit !important;
+    border-radius: 0 5px 5px 0;
+    width: 20px;
+    height: 100%;
+    z-index: -1;
 }
 
-.boxes-holder-section .box:hover .upd {
-    opacity: 0;
-    pointer-events: none;
+
+.box .logobg .upd::before {
+    right: unset;
+    left: -6px;
+    border-radius: 5px 0 0 5px;
 }
 
 .box .logobg .best::before {
@@ -10328,7 +10349,8 @@ div#results {
         width: 95%;
     }
 
-    .box .logobg .best {
+    .box .logobg .best,
+    .bonuses-block {
         font-size: 12px;
         top: -4px;
         right: -4px;
@@ -11007,13 +11029,23 @@ div#results {
     .main-page .box .content p:nth-child(2) {
         width: 90% !important;
         font-size: 12px;
+        margin-top: 15px;
         height: auto;
+        max-height: 85px;
     }
-    .content .review-button {
+    .main-page .content .review-button,
+    .sitealternatesboxes .content .review-button {
         font-size: 10px;
     }
     .main-page .box .content a.boxtitle {
         font-size: 18px;
+        display: none;
+    }
+
+    .content-buttons {
+        margin-top: unset;
+        position: absolute;
+        bottom: 8px;
     }
 }
 
