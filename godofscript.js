@@ -738,10 +738,8 @@ window.onload = function () {
               </a>
           </div>
       `;
-  
-      var isRussianPage = window.location.href.match(/\/ru(?:\.html)?(?:\/|$)/);
-  
-      if (isRussianPage) {
+    
+      if (languageTag === 'ru') {
           replacementHTML = replacementHTML.replace(/href="\/(.*?)"/g, 'href="/ru/$1"');
       }
   

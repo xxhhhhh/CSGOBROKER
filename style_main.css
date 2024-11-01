@@ -2596,7 +2596,7 @@ h3 {
     border: 2px #181818 solid;
     transition: ease-in-out all .2s;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
     font-weight: 600;
     font-size: 14px;
     width: 100%;
@@ -2608,9 +2608,9 @@ h3 {
     content: url(/img/icons/fire.svg);
     width: 26px;
     height: 26px;
-    border-radius: 5px;
-    background: #4e0d18;
-    border: 2px solid #62101d;
+    border-radius: 50%;
+    background: #ce203d;
+    border: 2px solid #b52c42;
     right: -10px;
     top: -10px;
     display: flex;
@@ -3748,6 +3748,7 @@ nav #logo:hover {
 .sitepage .box .logobg {
     height: 55%;
     background: unset;
+    z-index: 1;
 }
 
 .sitepage .box .content {
@@ -3768,6 +3769,34 @@ nav #logo:hover {
     bottom: 8px;
     background: var(--darkgray);
     padding: 5px 7px;
+    z-index: -1;
+}
+
+.siteblock.mirror .box.main .logobg .star_rating {
+    display: none;
+    color: var(--white);
+}
+
+.siteblock.mirror .box.main .logobg .star_rating:first-child {
+    display: flex;
+}
+
+.siteblock.mirror .box.main .logobg .star_rating::before {
+    content: 'Read Review';
+    width: auto;
+    height: 21px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 1;
+    mask-image: unset;
+    mask-repeat: unset;
+    background: unset;
+    mask-size: unset;
+}
+
+.sitepage.lang-ru .siteblock.mirror .box.main .logobg .star_rating::before {
+    content: 'Читать Обзор';
 }
 
 @keyframes elemWidth {
