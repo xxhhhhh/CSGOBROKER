@@ -2189,7 +2189,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ) {
     const boxContainer = document.querySelector(".category-selector");
     const pages = document.querySelector(".pages");
-    const SpaceboxContainer = document.querySelector(".category-space");
+    const SpaceboxContainer = document.querySelector(".spaceblock");
     const buttonsContainer = document.createElement("div");
     const prevButtonContainer = document.createElement("button");
     const nextButtonContainer = document.createElement("button");
