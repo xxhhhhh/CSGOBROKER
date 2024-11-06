@@ -155,7 +155,8 @@ nav .pages {
     padding-left: 25px;
 }
 
-#theme-toggle {
+#theme-toggle,
+#particles-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1308,7 +1309,7 @@ nav .pages {
 
 .box-skins {
     border-radius: 10px;
-    background: linear-gradient(15deg, rgba(0, 0, 0, .3) 30%, rgba(0, 0, 0, .15) 100%);
+    background: var(--darkygray);
     height: 130px;
     margin: 8px 0 0 0;
     width: 100%;
@@ -1611,7 +1612,6 @@ nav .pages {
     justify-content: flex-start;
     align-items: center;
     overflow-x: scroll;
-    background-color: rgba(0, 0, 0, .1);
     border-radius: 5px;
     opacity: 0;
     user-select: none;
@@ -1712,7 +1712,7 @@ nav .pages {
 
 .box-skins-button {
     position: absolute;
-    background-color: rgba(9, 9, 9, .9);
+    background-color: rgba(9, 9, 9, .5);
     height: 100%;
     width: 40px;
     color: rgba(255, 255, 255, .25);
@@ -6618,6 +6618,16 @@ a[data-title]:after,
     background-image: url(/img/icons/gamemodes/lightbulb-off.svg);
 }
 
+.effect-on::before {
+    background-image: url(/img/icons/gamemodes/effect-fill.png);
+    width: 23px;
+}
+
+.effect-off::before {
+    background-image: url(/img/icons/gamemodes/effect.png);
+    width: 23px;
+}
+
 .lightbulb-on::before {
     background-image: url(/img/icons/gamemodes/lightbulb-on.svg);
 }
@@ -8366,9 +8376,14 @@ div#results {
         order: -1;
     }
 
-    #theme-toggle {
+    #theme-toggle,
+    #particles-toggle {
         font-size: 16px;
         order: -1;
+    }
+
+    #particles-toggle {
+        display: none;
     }
 
     .main-infobox {
@@ -11687,4 +11702,5 @@ div#results {
     z-index: -1;
     width: 35px;
     height: 35px;
+    filter: grayscale(1);
   }

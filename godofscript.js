@@ -2819,156 +2819,183 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// let particleflakes = [];
+let particleflakes = [];
 
-// let browserWidth;
-// let browserHeight;
+let browserWidth;
+let browserHeight;
 
-// let numberOfParticleflakes = 35;
+let numberOfParticleflakes = 38;
 
-// let resetPosition = false;
+let resetPosition = false;
 
-// let enableAnimations = false;
-// let reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
+let enableAnimations = false;
+let reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
 
-// function setAccessibilityState() {
-//   enableAnimations = !reduceMotionQuery.matches;
-// }
-// setAccessibilityState();
+let particlesEnabled = localStorage.getItem("particlesEnabled") === "true";
+if (localStorage.getItem("particlesEnabled") === null) {
+  particlesEnabled = true;
+  localStorage.setItem("particlesEnabled", "true");
+}
+updateToggleIcon();
+setAccessibilityState();
 
-// reduceMotionQuery.addListener(setAccessibilityState);
+function setAccessibilityState() {
+  enableAnimations = !reduceMotionQuery.matches && particlesEnabled;
+}
+reduceMotionQuery.addListener(setAccessibilityState);
 
-// function setup() {
-//   // Проверяем ширину экрана перед запуском анимации
-//   if (enableAnimations && window.innerWidth > 1365) {
-//     window.addEventListener("DOMContentLoaded", generateParticleflakes, false);
-//     window.addEventListener("resize", handleResize, false);
-//   }
-// }
-// setup();
+function setup() {
+  if (enableAnimations && window.innerWidth > 1365) {
+    window.addEventListener("DOMContentLoaded", generateParticleflakes, false);
+    window.addEventListener("resize", handleResize, false);
+  }
+}
+setup();
 
-// class Particleflake {
-//   constructor(element, speed, xPos, yPos) {
-//     this.element = element;
-//     this.speed = speed;
-//     this.xPos = xPos;
-//     this.yPos = yPos;
-//     this.scale = 1;
+class Particleflake {
+  constructor(element, speed, xPos, yPos) {
+    this.element = element;
+    this.speed = speed;
+    this.xPos = xPos;
+    this.yPos = yPos;
+    this.scale = 1;
 
-//     this.counter = 0;
-//     this.sign = Math.random() < 0.5 ? 1 : -1;
+    this.counter = 0;
+    this.sign = Math.random() < 0.5 ? 1 : -1;
 
-//     this.element.style.opacity = (0.1 + Math.random()) / 3;
-//   }
+    this.element.style.opacity = (0.1 + Math.random()) / 3;
+  }
 
-//   update(delta) {
-//     this.counter += (this.speed / 5000) * delta;
-//     this.xPos += (this.sign * delta * this.speed * Math.cos(this.counter)) / 40;
-//     this.yPos += Math.sin(this.counter) / 40 + (this.speed * delta) / 30;
-//     this.scale = 0.5 + Math.abs((10 * Math.cos(this.counter)) / 20);
+  update(delta) {
+    this.counter += (this.speed / 5000) * delta;
+    this.xPos += (this.sign * delta * this.speed * Math.cos(this.counter)) / 40;
+    this.yPos += Math.sin(this.counter) / 40 + (this.speed * delta) / 30;
+    this.scale = 0.5 + Math.abs((10 * Math.cos(this.counter)) / 20);
 
-//     setTransform(
-//       Math.round(this.xPos),
-//       Math.round(this.yPos),
-//       this.scale,
-//       this.element
-//     );
+    setTransform(
+      Math.round(this.xPos),
+      Math.round(this.yPos),
+      this.scale,
+      this.element
+    );
 
-//     if (this.yPos > browserHeight) {
-//       this.yPos = -50;
-//     }
-//   }
-// }
+    if (this.yPos > browserHeight) {
+      this.yPos = -50;
+    }
+  }
+}
 
-// function setTransform(xPos, yPos, scale, el) {
-//   el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) scale(${scale}, ${scale})`;
-// }
+function setTransform(xPos, yPos, scale, el) {
+  el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) scale(${scale}, ${scale})`;
+}
 
-// function generateParticleflakes() {
-//   const originalParticleflake = document.querySelector(".particleflake");
-//   const particleflakeContainer = originalParticleflake.parentNode;
-//   particleflakeContainer.style.display = "block";
+function generateParticleflakes() {
+  const originalParticleflake = document.querySelector(".particleflake");
+  const particleflakeContainer = originalParticleflake.parentNode;
+  particleflakeContainer.style.display = "block";
 
-//   browserWidth = document.documentElement.clientWidth;
-//   browserHeight = document.documentElement.clientHeight;
+  browserWidth = document.documentElement.clientWidth;
+  browserHeight = document.documentElement.clientHeight;
 
-//   const backgrounds = [
-//     "url(/img/icons/main-modes/rust-logo.png)",
-//     "url(/img/icons/main-modes/cs2-logo.png)",
-//     "url(/img/icons/main-modes/dota2-logo.png)",
-//     "url(/img/icons/main-modes/freebies.png)",
-//     "url(/img/icons/main-modes/steam.png)"
-//   ];
+  const backgrounds = [
+    "url(/img/icons/main-modes/rust-logo.png)",
+    "url(/img/icons/main-modes/cs2-logo.png)",
+    "url(/img/icons/main-modes/dota2-logo.png)",
+    // "url(/img/icons/main-modes/freebies.png)",
+    "url(/img/icons/main-modes/steam.png)"
+  ];
 
-//   for (let i = 0; i < numberOfParticleflakes; i++) {
-//     const particleflakeClone = originalParticleflake.cloneNode(true);
-//     particleflakeContainer.appendChild(particleflakeClone);
+  for (let i = 0; i < numberOfParticleflakes; i++) {
+    const particleflakeClone = originalParticleflake.cloneNode(true);
+    particleflakeContainer.appendChild(particleflakeClone);
 
-//     const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-//     particleflakeClone.style.backgroundImage = randomBackground;
+    const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    particleflakeClone.style.backgroundImage = randomBackground;
 
-//     const initialXPos = getPosition(50, browserWidth);
-//     const initialYPos = getPosition(50, browserHeight);
-//     const speed = (5 + Math.random() * 40) * delta;
+    const initialXPos = getPosition(50, browserWidth);
+    const initialYPos = getPosition(50, browserHeight);
+    const speed = (5 + Math.random() * 40) * delta;
 
-//     const particleflakeObject = new Particleflake(
-//       particleflakeClone,
-//       speed,
-//       initialXPos,
-//       initialYPos
-//     );
-//     particleflakes.push(particleflakeObject);
-//   }
+    const particleflakeObject = new Particleflake(
+      particleflakeClone,
+      speed,
+      initialXPos,
+      initialYPos
+    );
+    particleflakes.push(particleflakeObject);
+  }
 
-//   particleflakeContainer.removeChild(originalParticleflake);
-//   requestAnimationFrame(moveParticleflakes);
-// }
+  particleflakeContainer.removeChild(originalParticleflake);
+  requestAnimationFrame(moveParticleflakes);
+}
 
-// let frames_per_second = 60;
-// let frame_interval = 1900 / frames_per_second;
+let frames_per_second = 60;
+let frame_interval = 1900 / frames_per_second;
 
-// let previousTime = performance.now();
-// let delta = 1;
+let previousTime = performance.now();
+let delta = 1;
 
-// function moveParticleflakes(currentTime) {
-//   delta = (currentTime - previousTime) / frame_interval;
+function moveParticleflakes(currentTime) {
+  delta = (currentTime - previousTime) / frame_interval;
 
-//   if (enableAnimations) {
-//     for (const particleflake of particleflakes) {
-//       particleflake.update(delta);
-//     }
-//   }
+  if (enableAnimations) {
+    for (const particleflake of particleflakes) {
+      particleflake.update(delta);
+    }
+  }
 
-//   previousTime = currentTime;
+  previousTime = currentTime;
 
-//   if (resetPosition) {
-//     browserWidth = document.documentElement.clientWidth;
-//     browserHeight = document.documentElement.clientHeight;
+  if (resetPosition) {
+    browserWidth = document.documentElement.clientWidth;
+    browserHeight = document.documentElement.clientHeight;
 
-//     for (const particleflake of particleflakes) {
-//       particleflake.xPos = getPosition(50, browserWidth);
-//       particleflake.yPos = getPosition(50, browserHeight);
-//     }
+    for (const particleflake of particleflakes) {
+      particleflake.xPos = getPosition(50, browserWidth);
+      particleflake.yPos = getPosition(50, browserHeight);
+    }
 
-//     resetPosition = false;
-//   }
+    resetPosition = false;
+  }
 
-//   requestAnimationFrame(moveParticleflakes);
-// }
+  requestAnimationFrame(moveParticleflakes);
+}
 
-// function getPosition(offset, size) {
-//   return Math.round(-1 * offset + Math.random() * (size + 2 * offset));
-// }
+function getPosition(offset, size) {
+  return Math.round(-1 * offset + Math.random() * (size + 2 * offset));
+}
 
-// function handleResize() {
-//   if (window.innerWidth <= 1365) {
-//     resetPosition = true;
-//   } else {
-//     if (!enableAnimations) return;
-//     resetPosition = false;
-//   }
-// }
+function handleResize() {
+  if (window.innerWidth <= 1365) {
+    resetPosition = true;
+  } else if (particlesEnabled) {
+    resetPosition = false;
+  }
+}
 
-// function setResetFlag(e) {
-//   resetPosition = true;
-// }
+function toggleParticles() {
+  particlesEnabled = !particlesEnabled;
+  localStorage.setItem("particlesEnabled", particlesEnabled);
+
+  updateToggleIcon();
+  if (particlesEnabled) {
+    setup();
+  } else {
+    particleflakes.forEach((particleflake) => {
+      particleflake.element.remove();
+    });
+    particleflakes = [];
+  }
+}
+
+function updateToggleIcon() {
+  const toggleIcon = document.querySelector("#particles-toggle .officon");
+  toggleIcon.classList.toggle("effect-on", particlesEnabled);
+  toggleIcon.classList.toggle("effect-off", !particlesEnabled);
+}
+
+document.querySelector("#particles-toggle").addEventListener("click", toggleParticles);
+
+function setResetFlag(e) {
+  resetPosition = true;
+}
