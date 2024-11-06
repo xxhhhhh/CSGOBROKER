@@ -500,7 +500,7 @@ window.onload = function () {
       const vpnButtonContainer = document.createElement('div');
       vpnButtonContainer.className = 'settings-menu';
       vpnButtonContainer.innerHTML =
-        '<div class="settings-button" id="button-vpn-filter" data-title="Скрыть сайты требующие VPN"><i id="vpn-icon" class="officon eye"></i></div>';
+        '<div class="settings-button" id="button-vpn-filter" data-title="Скрыть сайты требующие VPN"><i id="vpn-icon" class="officon vpn-shield"></i></div>';
       
       buttonsContainer.appendChild(vpnButtonContainer);
 
@@ -510,7 +510,7 @@ window.onload = function () {
         const vpnBlocks = document.querySelectorAll('.box');
         vpnBlocks.forEach(block => {
           if (block.querySelector('.vpn')) {
-            block.style.display = block.style.display === 'none' ? '' : 'none';
+            block.classList.toggle('hidden-vpn');
           }
         });
       }
@@ -520,7 +520,7 @@ window.onload = function () {
 
       if (buttonState === 'hidden') {
         toggleVpnBlocks();
-        vpnIcon.classList.replace('eye', 'eye-slash');
+        vpnIcon.classList.replace('vpn-shield', 'vpn-shield-slash');
       }
 
       if (buttonTitle) {
@@ -534,11 +534,11 @@ window.onload = function () {
         const newState = currentState === 'hidden' ? 'visible' : 'hidden';
         localStorage.setItem('vpnButtonState', newState);
 
-        vpnIcon.classList.toggle('eye');
-        vpnIcon.classList.toggle('eye-slash');
+        vpnIcon.classList.toggle('vpn-shield');
+        vpnIcon.classList.toggle('vpn-shield-slash');
 
         const button = document.getElementById('button-vpn-filter');
-        button.dataset.title = vpnIcon.classList.contains('eye') ?
+        button.dataset.title = vpnIcon.classList.contains('vpn-shield') ?
           'Скрыть сайты требующие VPN' : 'Показать сайты требующие VPN';
 
         localStorage.setItem('vpnButtonTitle', button.dataset.title);
@@ -2819,3 +2819,156 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// let particleflakes = [];
+
+// let browserWidth;
+// let browserHeight;
+
+// let numberOfParticleflakes = 35;
+
+// let resetPosition = false;
+
+// let enableAnimations = false;
+// let reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
+
+// function setAccessibilityState() {
+//   enableAnimations = !reduceMotionQuery.matches;
+// }
+// setAccessibilityState();
+
+// reduceMotionQuery.addListener(setAccessibilityState);
+
+// function setup() {
+//   // Проверяем ширину экрана перед запуском анимации
+//   if (enableAnimations && window.innerWidth > 1365) {
+//     window.addEventListener("DOMContentLoaded", generateParticleflakes, false);
+//     window.addEventListener("resize", handleResize, false);
+//   }
+// }
+// setup();
+
+// class Particleflake {
+//   constructor(element, speed, xPos, yPos) {
+//     this.element = element;
+//     this.speed = speed;
+//     this.xPos = xPos;
+//     this.yPos = yPos;
+//     this.scale = 1;
+
+//     this.counter = 0;
+//     this.sign = Math.random() < 0.5 ? 1 : -1;
+
+//     this.element.style.opacity = (0.1 + Math.random()) / 3;
+//   }
+
+//   update(delta) {
+//     this.counter += (this.speed / 5000) * delta;
+//     this.xPos += (this.sign * delta * this.speed * Math.cos(this.counter)) / 40;
+//     this.yPos += Math.sin(this.counter) / 40 + (this.speed * delta) / 30;
+//     this.scale = 0.5 + Math.abs((10 * Math.cos(this.counter)) / 20);
+
+//     setTransform(
+//       Math.round(this.xPos),
+//       Math.round(this.yPos),
+//       this.scale,
+//       this.element
+//     );
+
+//     if (this.yPos > browserHeight) {
+//       this.yPos = -50;
+//     }
+//   }
+// }
+
+// function setTransform(xPos, yPos, scale, el) {
+//   el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) scale(${scale}, ${scale})`;
+// }
+
+// function generateParticleflakes() {
+//   const originalParticleflake = document.querySelector(".particleflake");
+//   const particleflakeContainer = originalParticleflake.parentNode;
+//   particleflakeContainer.style.display = "block";
+
+//   browserWidth = document.documentElement.clientWidth;
+//   browserHeight = document.documentElement.clientHeight;
+
+//   const backgrounds = [
+//     "url(/img/icons/main-modes/rust-logo.png)",
+//     "url(/img/icons/main-modes/cs2-logo.png)",
+//     "url(/img/icons/main-modes/dota2-logo.png)",
+//     "url(/img/icons/main-modes/freebies.png)",
+//     "url(/img/icons/main-modes/steam.png)"
+//   ];
+
+//   for (let i = 0; i < numberOfParticleflakes; i++) {
+//     const particleflakeClone = originalParticleflake.cloneNode(true);
+//     particleflakeContainer.appendChild(particleflakeClone);
+
+//     const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+//     particleflakeClone.style.backgroundImage = randomBackground;
+
+//     const initialXPos = getPosition(50, browserWidth);
+//     const initialYPos = getPosition(50, browserHeight);
+//     const speed = (5 + Math.random() * 40) * delta;
+
+//     const particleflakeObject = new Particleflake(
+//       particleflakeClone,
+//       speed,
+//       initialXPos,
+//       initialYPos
+//     );
+//     particleflakes.push(particleflakeObject);
+//   }
+
+//   particleflakeContainer.removeChild(originalParticleflake);
+//   requestAnimationFrame(moveParticleflakes);
+// }
+
+// let frames_per_second = 60;
+// let frame_interval = 1900 / frames_per_second;
+
+// let previousTime = performance.now();
+// let delta = 1;
+
+// function moveParticleflakes(currentTime) {
+//   delta = (currentTime - previousTime) / frame_interval;
+
+//   if (enableAnimations) {
+//     for (const particleflake of particleflakes) {
+//       particleflake.update(delta);
+//     }
+//   }
+
+//   previousTime = currentTime;
+
+//   if (resetPosition) {
+//     browserWidth = document.documentElement.clientWidth;
+//     browserHeight = document.documentElement.clientHeight;
+
+//     for (const particleflake of particleflakes) {
+//       particleflake.xPos = getPosition(50, browserWidth);
+//       particleflake.yPos = getPosition(50, browserHeight);
+//     }
+
+//     resetPosition = false;
+//   }
+
+//   requestAnimationFrame(moveParticleflakes);
+// }
+
+// function getPosition(offset, size) {
+//   return Math.round(-1 * offset + Math.random() * (size + 2 * offset));
+// }
+
+// function handleResize() {
+//   if (window.innerWidth <= 1365) {
+//     resetPosition = true;
+//   } else {
+//     if (!enableAnimations) return;
+//     resetPosition = false;
+//   }
+// }
+
+// function setResetFlag(e) {
+//   resetPosition = true;
+// }

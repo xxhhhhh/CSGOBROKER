@@ -56,7 +56,8 @@ body {
 .ssiodox {
     background: #0f0f0f;
     background: url(/img/body_bg2.png) center top no-repeat #0f0f0f;
-
+    position: relative;
+    z-index: 1;
 }
 
 ::-webkit-scrollbar {
@@ -232,7 +233,7 @@ nav .pages {
 
 .rec-box {
     top: 24px;
-    background: var(--opacback);
+    background: var(--darkygray);
     position: relative;
     width: 300px;
     height: 220px;
@@ -504,7 +505,7 @@ nav .pages {
 
 .box-topic {
     top: 16px;
-    background: var(--opacback);
+    background: var(--darkygray);
     position: relative;
     width: 300px;
     min-height: 250px;
@@ -3151,8 +3152,7 @@ nav #logo:hover {
     flex-direction: column;
     margin-left: 8px;
     margin-top: 8px;
-    background: linear-gradient(15deg, rgba(0, 0, 0, .3) 30%, rgba(0, 0, 0, .15) 100%);
-    background-color: rgba(0, 0, 0, .1);
+    background: rgba(0, 0, 0, .3);
 }
 
 .sitepage.items .box-skins.solo .box-skins-list {
@@ -3725,7 +3725,8 @@ nav #logo:hover {
 
 .box.hidden,
 .box.hidden-deposit,
-.box.hidden-withdrawal {
+.box.hidden-withdrawal,
+.box.hidden-vpn {
     width: 0;
     height: 0;
     margin: 0;
@@ -3740,8 +3741,10 @@ nav #logo:hover {
 
 .box.hidden-deposit .logobg,
 .box.hidden-withdrawal .logobg,
+.box.hidden-vpn .logobg,
 .box.hidden-deposit .content,
-.box.hidden-withdrawal .content {
+.box.hidden-withdrawal .content,
+.box.hidden-vpn .content {
     opacity: 0;
     transition: all .1s ease-in-out;
 }
@@ -6511,7 +6514,8 @@ a[data-title]:after,
     z-index: 1;
 }
 
-.officon:hover::before {
+.officon:hover::before,
+.settings-button:hover .officon::before {
     opacity: 1;
 }
 
@@ -6618,12 +6622,12 @@ a[data-title]:after,
     background-image: url(/img/icons/gamemodes/lightbulb-on.svg);
 }
 
-.eye::before {
-    background-image: url(/img/icons/gamemodes/eye.svg);
+.vpn-shield::before {
+    background-image: url(/img/icons/gamemodes/vpn-shield.svg);
 }
 
-.eye-slash::before {
-    background-image: url(/img/icons/gamemodes/eye-crossed.svg);
+.vpn-shield-slash::before {
+    background-image: url(/img/icons/gamemodes/vpn-shield-slash.svg);
 }
 
 .officon.zoom-in::before {
@@ -7390,7 +7394,8 @@ label:active,
 .email-copy button:active i,
 .skin-copy button:active,
 .skin-copy button:active i,
-.officon:active::before {
+.officon:active::before,
+.settings-button:active .officon::before {
     filter: brightness(.3) !important;
     transition: all .09s ease-in-out;
 }
@@ -10533,6 +10538,7 @@ div#results {
 
 .main-mode-unit {
     background-color: var(--darkygray);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     height: 250px;
     width: 302px;
     min-width: 302px;
@@ -11656,4 +11662,29 @@ div#results {
     .blog .nav-review ol {
         max-height: 120px;
     }
+    #particleflakeContainer {
+        display: none !important;
+    }
 }
+
+#particleflakeContainer {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: none;
+  }
+
+  .particleflake {
+    position: fixed;
+    background-color: var(--darkygray);
+    background-image: url(/img/icons/payments/rust.webp);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: -1;
+    width: 35px;
+    height: 35px;
+  }

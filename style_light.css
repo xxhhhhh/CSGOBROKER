@@ -735,7 +735,8 @@ ul .submenu li .nonredir,
     margin-top: unset;
 }
 
-.officon.eye::before,
+.officon.vpn-shield::before,
+.officon.vpn-shield-slash::before,
 #back-to-top-btn::before,
 .big-category:has(.submenu2) a:not(.submenu2 a)::after,
 .sitedetails .sitepros span::after,
@@ -851,4 +852,8 @@ ul .submenu li .nonredir,
     .submenu li:hover a {
         background: rgb(242 242 242);
     }
+}
+
+.particleflake {
+    filter: grayscale(1);
 }
