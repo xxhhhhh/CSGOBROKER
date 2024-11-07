@@ -6362,6 +6362,10 @@ a[data-title]:after,
     background-image: url(/img/icons/payments/ltc.webp);
 }
 
+.methodlist .ton::before {
+    background-image: url(/img/icons/payments/ton.webp);
+}
+
 .methodlist .bnb::before {
     background-image: url(/img/icons/payments/bnb.webp);
 }
