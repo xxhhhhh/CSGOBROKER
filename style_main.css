@@ -1061,7 +1061,7 @@ nav .pages {
     padding: 5px 8px;
     margin: 3px;
     z-index: 11;
-    background: var(--main-theme);
+    /* background: var(--main-theme); */
     filter: drop-shadow(0 0 1px rgb(35 35 35));
     position: relative;
     border-radius: 5px;
@@ -1108,7 +1108,7 @@ nav .pages {
 }
 
 .navigation-weapon-type::before,
-.navigation-weapon-name::before,
+/* .navigation-weapon-name::before, */
 .color-box-selection-button::before,
 .navigation-weapon-sort::before,
 .navigation-reset::before,
@@ -1129,7 +1129,7 @@ nav .pages {
     left: 4px;
     bottom: 4px;
     right: 4px;
-    background: linear-gradient(150deg, rgb(15 15 15 ) 0%, rgb(12 12 12) 100%);
+    background: linear-gradient(150deg, var(--darkgray) 0%, var(--darkygray) 100%);
 }
 
 .navigation-weapon-type.notexist,
