@@ -8395,7 +8395,7 @@ div#results {
         flex-direction: column;
         align-items: center;
         margin-top: 8px;
-        z-index: 2;
+        z-index: 10;
         order: 1;
     }
 
@@ -11709,3 +11709,13 @@ div#results {
     height: 35px;
     filter: grayscale(1);
   }
+
+  .content .review-button.visit::after,
+  .box .logobg .best, .topic-box .best {
+    text-shadow: 1px 1px 3px rgb(100 100 100);
+  }
+
+  .main-page .best::after, 
+  .newest-boxes .best::after {
+    filter: drop-shadow(1px 1px 3px rgb(100 100 100));
+}
