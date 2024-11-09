@@ -8900,8 +8900,16 @@ div#results {
         width: 182px !important;
     }
 
-    .newest-boxes .box .logobg .best {
+    .box .logobg .best::after {
         display: none;
+    }
+
+    .main-page .box .logobg .best, .newest-boxes .box .logobg .best {
+        font-size: 12px !important;
+    }
+
+    .main-page .box:hover .logobg .best {
+        opacity: 0;
     }
 
     .sitetoppannel {
@@ -9739,7 +9747,7 @@ div#results {
     }
 
     .category-selector {
-        top: 135px;
+        top: 133px;
     }
 
     nav .pages.hidden,
@@ -10974,10 +10982,6 @@ div#results {
         margin-top: 11px;
         flex-direction: column;
         flex-wrap: nowrap;
-    }
-    .main-page .mods-box {
-        left: unset;
-        display: flex;
     }
     .main-mode-selection {
         height: auto;
