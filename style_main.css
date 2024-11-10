@@ -3586,7 +3586,7 @@ nav #logo:hover {
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     transition: all .15s ease-in-out;
     text-decoration: none;
-    background: linear-gradient(180deg, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .2) 100%);
+    background: var(--darkygray);
 }
 
 .box-topic.sticker .topic-box {
@@ -3686,9 +3686,18 @@ nav #logo:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--darkygray);
+    background: linear-gradient(180deg, transparent, var(--darkygray));
+    transition: all .15s ease-in-out;
     z-index: 10;
     position: relative;
+}
+
+.topic-box:hover .content {
+    background: linear-gradient(180deg, transparent, var(--darkgray));
+}
+
+.topic-box.maestro:hover .content {
+    background: linear-gradient(180deg, transparent, var(--darkygray));
 }
 
 .topic-box .content span {
@@ -4550,8 +4559,7 @@ nav img:active,
     border-radius: 10px;
 }
 
-.boxes-holder .box:hover .content,
-.topic-box:hover .content {
+.boxes-holder .box:hover .content {
     background: rgb(21 21 21);
     transition: all .15s .05s ease-in-out, color .15s 0s, border .15s 0s, background .15s 0s;
 }
@@ -7876,11 +7884,11 @@ div#results {
     background-position: center;
     background-size: cover;
     filter: brightness(1.1);
-    opacity: .5;
+    opacity: 1;
     z-index: 1;
 }
 
-.topic-box.maestro:nth-child(1) .content,
+/* .topic-box.maestro:nth-child(1) .content,
 .topic-box.maestro:nth-child(4) .content {
     background-image: url(/img/skins/previews/topic-backplate-1.webp);
 }
@@ -7893,17 +7901,17 @@ div#results {
 .topic-box.maestro:nth-child(3) .content,
 .topic-box.maestro:nth-child(6) .content {
     background-image: url(/img/skins/previews/topic-backplate-3.webp);
-}
+} */
 
 .topic-box.maestro .logobg img {
     width: 100%;
     height: auto;
 }
 
-.topic-box.maestro:hover .content {
+/* .topic-box.maestro:hover .content {
     filter: brightness(1.2);
     opacity: .75;
-}
+} */
 
 .topic-box.maestro .logobg:hover img {
     transform: scale(1.03) !important;

@@ -44,12 +44,12 @@
 
 .box-topic .topic-box,
 .box-topic .topic-box:hover {
-    background: rgb(11 11 11);
-    border-radius: 0;
+    background: rgb(242 242 242) !important;
 }
 
-.box-topic .topic-box:hover {
-    background-color: rgb(11 11 11) !important;
+.box-topic .topic-box .logobg {
+    background-color: unset !important;
+    filter: drop-shadow(0px 0px 3px rgb(100 100 100));
 }
 
 .navigation-weapon-sort i {
@@ -185,8 +185,21 @@ h3,
 .boxes-holder-section:hover .boxes-holder-name h3,
 .boxes-holder-name a,
 .newest-boxes-title-box span,
-.newest-boxes:hover .newest-boxes-title-box span {
+.newest-boxes:hover .newest-boxes-title-box span,
+.box-skins-nav .navigation-weapon-name,
+.box-skins-nav .navigation-weapon-name:hover,
+.box-skins-nav:hover .box-skins-name span,
+.navigation-weapon-type.enabled:hover {
     color: #1a1a1a;
+}
+
+.navigation-weapon-type, .navigation-weapon-name {
+    background: rgb(242 242 242);
+    color: #1a1a1a;
+}
+
+.box-skins-nav .navigation-weapon-name {
+    filter: none;
 }
 
 .main-mode-unit {
@@ -286,7 +299,6 @@ h3,
 }
 
 .boxes-holder .box .content,
-.topic-box .content,
 .category-selector .category-box,
 .singlemod-box[data-title]:after,
 .controls-button,
@@ -319,12 +331,15 @@ h3,
 .box .content,
 .newest-boxes .box,
 #rec-box-content,
-.topic-box .content,
 .sitepage.topic-craft .component-box,
 .singlemod-select::before,
 .box .logobg .main-mode-box {
     background-color: #f2f2f2 !important;
     background: unset;
+}
+
+.topic-box:hover .content {
+    background: linear-gradient(180deg, transparent, rgb(242 242 242));
 }
 
 #rec-box-content,
@@ -439,10 +454,6 @@ h3,
 
 .box-skins-list {
     background-color: unset;
-}
-
-.box-topic .topic-box .logobg {
-    background-color: unset !important;
 }
 
 .weapon-selection-unite img {
@@ -744,7 +755,8 @@ ul .submenu li .nonredir,
 .officon.zoom-in::before,
 .officon.zoom-out::before,
 .site-promo-copy::after,
-.infoicon::before {
+.infoicon::before,
+.box-skins .officon.chevron {
     filter: brightness(.2);
     opacity: 1;
 }
@@ -771,7 +783,7 @@ ul .submenu li .nonredir,
 
 .navigation-weapon-type::before, .color-box-selection-button::before {
     box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .4);
-    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .1) 100%);
+    background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, .1) 100%);
 }
 
 .box-skins-name::before {
