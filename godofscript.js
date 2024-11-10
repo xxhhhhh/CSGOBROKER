@@ -151,69 +151,69 @@ forcemodsboxes();
         }, 800);
     }
   
-  function loadReviewSettings(callback) {
-    fetch('/code-parts/review-settings.json')
-        .then(response => response.json())
-        .then(data => callback(data))
-        .catch(error => console.error("Error loading review settings: ", error));
-  }
-  
-  window.updateReviewButtons = updateReviewButtons;
-  
-  function updateReviewButtons(box, data, pageKey, reviewSettings) {
-    const reviewButton = box.querySelector('.content-buttons a.review-button');
-    const visitButton = box.querySelector('.content-buttons a.review-button.visit');
-  
-    const translations = {
-        "similarSites": {
-            "en": `Similar Sites of ${data.name}`,
-            "ru": `Альтернативы ${data.name}`
-        },
-        "readReview": {
-            "en": `Read Review ${data.name}`,
-            "ru": `Смотреть Обзор ${data.name}`
-        },
-        "visitSite": {
-            "en": `Visit ${data.name}`,
-            "ru": `Перейти на ${data.name}`
-        }
-    };
-  
-    function getTranslation(key) {
-        return translations[key][languageTag] || translations[key]['en'];
+    function loadReviewSettings(callback) {
+        fetch('/code-parts/review-settings.json')
+            .then(response => response.json())
+            .then(data => callback(data))
+            .catch(error => console.error("Error loading review settings: ", error));
     }
   
-    if (visitButton && data.link) {
-      if (window.location.pathname.includes("/marketplaces") && data["marketplaces"]) {
-          visitButton.href = data["marketplaces"];
-      } else if (window.location.pathname.includes("/instant-sell") && data["instant-sell"]) {
-          visitButton.href = data["instant-sell"];
-      } else if (window.location.pathname.includes("/buy-skins") && data["buy-skins"]) {
-          visitButton.href = data["buy-skins"];
-      } else if (window.location.pathname.includes("/sell-skins") && data["sell-skins"]) {
-          visitButton.href = data["sell-skins"];
-      } else {
-          visitButton.href = data.link;
-      }
-      visitButton.setAttribute('aria-label', getTranslation('visitSite'));
-  }
-
-    if (reviewButton) {
-        if (window.location.pathname.includes("/reviews/") || window.location.pathname.includes("/mirrors/")) {
-            if (data["Main Mode"] && reviewSettings) {
-                const mainModePath = reviewSettings.mainModeLinks[data["Main Mode"]];
-                if (mainModePath) {
-                    reviewButton.href = mainModePath;
-                    reviewButton.setAttribute('aria-label', getTranslation('similarSites'));
-                }
+    window.updateReviewButtons = updateReviewButtons;
+  
+    function updateReviewButtons(box, data, pageKey, reviewSettings) {
+        const reviewButton = box.querySelector('.content-buttons a.review-button');
+        const visitButton = box.querySelector('.content-buttons a.review-button.visit');
+  
+        const translations = {
+            "similarSites": {
+                "en": `Similar Sites of ${data.name}`,
+                "ru": `Альтернативы ${data.name}`
+            },
+            "readReview": {
+                "en": `Read Review ${data.name}`,
+                "ru": `Смотреть Обзор ${data.name}`
+            },
+            "visitSite": {
+                "en": `Visit ${data.name}`,
+                "ru": `Перейти на ${data.name}`
             }
-        } else {
-            reviewButton.href = `/reviews/${pageKey}`;
-            reviewButton.setAttribute('aria-label', getTranslation('readReview'));
-        }
-    }
-  }
+        };
   
+        function getTranslation(key) {
+            return translations[key][languageTag] || translations[key]['en'];
+        }
+  
+        if (visitButton && data.link) {
+            if (window.location.pathname.includes("/marketplaces") && data["marketplaces"]) {
+                visitButton.href = data["marketplaces"];
+            } else if (window.location.pathname.includes("/instant-sell") && data["instant-sell"]) {
+                visitButton.href = data["instant-sell"];
+            } else if (window.location.pathname.includes("/buy-skins") && data["buy-skins"]) {
+                visitButton.href = data["buy-skins"];
+            } else if (window.location.pathname.includes("/sell-skins") && data["sell-skins"]) {
+                visitButton.href = data["sell-skins"];
+            } else {
+                visitButton.href = data.link;
+            }
+            visitButton.setAttribute('aria-label', getTranslation('visitSite'));
+        }
+  
+        if (reviewButton) {
+            if (window.location.pathname.includes("/reviews/") || window.location.pathname.includes("/mirrors/")) {
+                if (data["Main Mode"] && reviewSettings) {
+                    const mainModePath = reviewSettings.mainModeLinks[data["Main Mode"]];
+                    if (mainModePath) {
+                        reviewButton.href = mainModePath;
+                        reviewButton.setAttribute('aria-label', getTranslation('similarSites'));
+                    }
+                }
+            } else {
+                reviewButton.href = `/reviews/${pageKey}`;
+                reviewButton.setAttribute('aria-label', getTranslation('readReview'));
+            }
+        }
+
+    }
   
     let currentPath = window.location.pathname;
     if (currentPath.includes("/reviews/") || currentPath.includes("/mirrors/")) {
@@ -225,30 +225,30 @@ forcemodsboxes();
         const mainJsonFilePath = `${basePath}/${pageKey}.json`;
   
         loadReviewSettings(reviewSettings => {
-          loadJsonData(mainJsonFilePath, data => {
-              if (data.code) {
-                  const siteCodeElement = document.getElementById('site-code');
-                  if (siteCodeElement) {
-                      siteCodeElement.textContent = data.code;
-                  }
-      
-                  const copyButtons = document.querySelectorAll('.copy');
-                  copyButtons.forEach(button => {
-                      button.addEventListener('click', () => copyToClipboard(data.code, button));
-                  });
-              }
-      
-              const mainBoxes = document.querySelectorAll('.box:not(.sitealternates .box)');
-              mainBoxes.forEach(box => {
-                  if (data["Main Mode"]) {
-                      modifyBox(box, data["Main Mode"]);
-                  }
-                  updateReviewButtons(box, data, pageKey, reviewSettings);
-                  updateURLs(reviewBox);   
-              });
-          });
-      });
-      
+            loadJsonData(mainJsonFilePath, data => {
+                if (data.code) {
+                    const siteCodeElement = document.getElementById('site-code');
+                    if (siteCodeElement) {
+                        siteCodeElement.textContent = data.code;
+                    }
+        
+                    const copyButtons = document.querySelectorAll('.copy');
+                    copyButtons.forEach(button => {
+                        button.addEventListener('click', () => copyToClipboard(data.code, button));
+                    });
+                }
+        
+                const mainBoxes = document.querySelectorAll('.box:not(.sitealternates .box)');
+                mainBoxes.forEach(box => {
+                    if (data["Main Mode"]) {
+                        modifyBox(box, data["Main Mode"]);
+                    }
+                    updateReviewButtons(box, data, pageKey, reviewSettings);
+                    updateURLs(reviewBox);
+                });
+            });
+        });
+        
     } else {
         const holderBoxes = document.querySelectorAll('.boxes-holder .box');
         holderBoxes.forEach(box => {
@@ -259,21 +259,344 @@ forcemodsboxes();
                 const jsonFilePath = `${basePath}/${pageKey}.json`;
   
                 loadJsonData(jsonFilePath, data => {
-                  if (data.code) {
-                      const copyButtons = box.querySelectorAll('.copy');
-                      copyButtons.forEach(button => {
-                          button.addEventListener('click', () => copyToClipboard(data.code, button));
-                      });
-                  }
-                  if (data["Main Mode"]) {
-                      modifyBox(box, data["Main Mode"]);
-                  }
-                  updateReviewButtons(box, data, pageKey);  
-                  updateURLs(sitesList);   
-              });         
+                    if (data.code) {
+                        const copyButtons = box.querySelectorAll('.copy');
+                        copyButtons.forEach(button => {
+                            button.addEventListener('click', () => copyToClipboard(data.code, button));
+                        });
+                    }
+                    if (data["Main Mode"]) {
+                        modifyBox(box, data["Main Mode"]);
+                    }
+                    updateReviewButtons(box, data, pageKey);  
+                    updateURLs(sitesList);   
+                });         
             }  
         });
     }
+});
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    let currentPath = window.location.pathname;
+  
+    if (!currentPath.includes("/reviews/") && !currentPath.includes("/mirrors/")) {
+        return;
+    }
+  
+    const basePath = "/code-parts/site-infos";
+    const altSitesPath = `${basePath}/sites-alts/`;
+    const filterSettingsPath = "/code-parts/filter-settings.json";
+    const reviewSettingsPath = "/code-parts/review-settings.json"; 
+    const translationsPath = "/code-parts/review-translations.json"; 
+  
+    if (currentPath.endsWith(".html")) {
+        currentPath = currentPath.slice(0, -5);
+    }
+  
+    const pageKey = currentPath.split("/").pop();
+    const jsonFilePath = `${basePath}/${pageKey}.json`;
+  
+    function loadPageData(filePath) {
+        return fetch(filePath)
+            .then(response => {
+                if (!response.ok) {
+                    return null;
+                }
+                return response.json();
+            })
+            .catch(() => null);
+    }
+  
+    function insertHTMLContent(selector, contentArray) {
+        const container = document.querySelector(selector);
+        if (container && contentArray) {
+            container.innerHTML = '';
+            contentArray.forEach(htmlString => {
+                container.insertAdjacentHTML('beforeend', htmlString);
+            });
+        }
+    }
+  
+    function generateRatingStars(rating) {
+        const fullStars = Math.floor(rating);
+        const halfStar = rating % 1 !== 0;
+        let starsHTML = '';
+  
+        for (let i = 0; i < fullStars; i++) {
+            starsHTML += '<div class="officon star_rating full"></div>';
+        }
+  
+        if (halfStar) {
+            starsHTML += '<div class="officon star_rating half"></div>';
+        }
+  
+        for (let i = fullStars + (halfStar ? 1 : 0); i < 5; i++) {
+            starsHTML += '<div class="officon star_rating empty"></div>';
+        }
+  
+        return starsHTML;
+    }
+  
+    function insertOverallRating(ratings) {
+        const possibleRatings = ['Trust', 'Support', 'Payments', 'Functional', 'Price', 'Variety', 'Playability'];
+        let sum = 0;
+        let count = 0;
+  
+        possibleRatings.forEach(category => {
+            if (ratings[category]) {
+                sum += ratings[category];
+                count++;
+            }
+        });
+  
+        if (count === 0) return;
+  
+        let averageRating = sum / count;
+  
+        if (averageRating < 4) {
+            averageRating = Math.ceil(averageRating * 2) / 2;
+        } else {
+            averageRating = Math.floor(averageRating * 2) / 2;
+        }
+  
+        const container = document.querySelector('.rating');
+        if (container) {
+            const liveratingDiv = document.createElement('div');
+            liveratingDiv.classList.add('liverating');
+            liveratingDiv.innerHTML = generateRatingStars(averageRating);
+  
+            container.appendChild(liveratingDiv);
+            liveratingDiv.classList.add('fadein');
+        }
+    }
+  
+    function insertRatings(ratings) {
+        const container = document.querySelector('.ratingsumm');
+        if (container && ratings) {
+            container.innerHTML = '';
+  
+            const ratingSection = document.createElement('div');
+            ratingSection.classList.add('ratingsection');
+  
+            for (const [category, rating] of Object.entries(ratings)) {
+                const ratingHTML = `
+                    <div class="ratingway">
+                        <span>${category}</span>
+                        ${generateRatingStars(rating)}
+                    </div>
+                `;
+                ratingSection.insertAdjacentHTML('beforeend', ratingHTML);
+            }
+  
+            container.appendChild(ratingSection);
+  
+            insertOverallRating(ratings);
+        }
+    }
+  
+  function insertFeatures(features, settings, featureOrder) {
+      const featuresContainer = document.querySelector('.boxreview .features');
+      if (featuresContainer) {
+          if (features && features.length > 0) {
+              const featuresBox = document.createElement('div');
+              featuresBox.classList.add('featuresbox');
+  
+              const typesInside = document.createElement('div');
+              typesInside.classList.add('typesinside');
+  
+              features.sort((a, b) => {
+                  const indexA = featureOrder.indexOf(a);
+                  const indexB = featureOrder.indexOf(b);
+                  return (indexA === -1 ? featureOrder.length : indexA) - (indexB === -1 ? featureOrder.length : indexB);
+              });
+  
+              features.forEach(feature => {
+                  if (settings[feature]) {
+                      const featureName = settings[feature].name || feature;
+                      const featurePath = settings[feature].path || '#';
+                      const featureClass = feature.toLowerCase().replace(/\s+/g, '-');
+                      const featureIcon = settings[feature].icon || ''; 
+  
+                      const featureLink = `
+                          <a href="${featurePath}" class="${featureClass}">
+                              ${featureIcon ? `<i class="${featureIcon}"></i>` : ''} ${featureName}
+                          </a>
+                      `;
+                      typesInside.insertAdjacentHTML('beforeend', featureLink);
+                  }
+              });
+  
+              featuresBox.appendChild(typesInside);
+              featuresContainer.appendChild(featuresBox);
+              featuresContainer.classList.add('fadein');
+          }
+      }
+  }
+  
+    function sortAndInsertContent(content, order, selector) {
+        if (content && content.length > 0) {
+            content.sort((a, b) => {
+                const classA = a.match(/class="([^"]+)"/)?.[1] || '';
+                const classB = b.match(/class="([^"]+)"/)?.[1] || '';
+                const indexA = order.indexOf(classA);
+                const indexB = order.indexOf(classB);
+                return (indexA === -1 ? order.length : indexA) - (indexB === -1 ? order.length : indexB);
+            });
+  
+            insertHTMLContent(selector, content);
+        }
+    }
+  
+    function translateTextElements(translations) {
+      var siteprosElements = document.querySelectorAll('.sitedetails .sitepros span');
+      for (var i = 0; i < siteprosElements.length; i++) {
+          var element = siteprosElements[i];
+          var originalText = element.textContent.trim();
+          
+          if (translations.hasOwnProperty(originalText)) {
+              element.childNodes.forEach(node => {
+                  if (node.nodeType === Node.TEXT_NODE) {
+                      node.textContent = node.textContent.replace(originalText, translations[originalText]);
+                  }
+              });
+          }
+      }
+  
+      var ratingwayElements = document.querySelectorAll('.ratingsection .ratingway span, .content button, .boxreview .plusminus .criteria .par p, .features .featuresbox .typesinside a, .instruction li');
+      for (var j = 0; j < ratingwayElements.length; j++) {
+          var element = ratingwayElements[j];
+          var originalText = element.textContent.trim();
+  
+          if (translations.hasOwnProperty(originalText)) {
+              element.childNodes.forEach(node => {
+                  if (node.nodeType === Node.TEXT_NODE) {
+                      node.textContent = node.textContent.replace(originalText, translations[originalText]);
+                  }
+              });
+          }
+      }
+  }
+  
+  
+  
+    function insertAlternatives(alternatives) {
+      let siteAlternates = document.querySelector('.sitealternates');
+      let siteAlternatesBoxes;
+  
+      const mainSiteName = document.querySelector('.box.main .content p').textContent.trim();
+  
+      let alternatesTitle = '';
+      switch (languageTag) {
+          case 'ru':
+              alternatesTitle = `Лучшие Аналоги ${mainSiteName}`;
+              break;
+          case 'en':
+              alternatesTitle = `Best ${mainSiteName} Alternatives`;
+              break;
+          case 'tr':
+              alternatesTitle = `En İyi ${mainSiteName} Alternatifleri`;
+              break;
+          case 'pl':
+              alternatesTitle = `Najlepsze alternatywy dla ${mainSiteName}`;
+              break;
+          default:
+              alternatesTitle = `Best ${mainSiteName} Alternatives`;
+      }
+  
+      if (siteAlternates) {
+          siteAlternates.innerHTML = `<div class="alternates-title">${alternatesTitle}</div><div class="sitealternatesboxes"></div>`;
+      } else {
+          const screentable = document.querySelector('.screentable');
+          siteAlternates = document.createElement('div');
+          siteAlternates.className = 'sitealternates';
+          siteAlternates.innerHTML = `<div class="alternates-title">${alternatesTitle}</div><div class="sitealternatesboxes"></div>`;
+          screentable.insertAdjacentElement('afterend', siteAlternates);
+      }
+  
+      siteAlternatesBoxes = siteAlternates.querySelector('.sitealternatesboxes');
+  
+      alternatives.forEach(alt => {
+          const altJsonPath = `${altSitesPath}${alt}.json`;
+          loadPageData(altJsonPath).then(altData => {
+              const altBox = document.createElement('div');
+              altBox.className = 'box';
+              altBox.id = altData.name;
+  
+              let rewardText = altData.reward;
+              if (languageTag === 'ru' && altData.reward_ru) {
+                  rewardText = altData.reward_ru;
+              } else if (languageTag === 'tr' && altData.reward_tr) {
+                  rewardText = altData.reward_tr;
+              } else if (languageTag === 'pl' && altData.reward_pl) {
+                  rewardText = altData.reward_pl;
+              }
+  
+              let reviewLink = `/reviews/${alt}`;
+  
+              altBox.innerHTML = `
+                  <div class="logobg">
+                      <a href="${reviewLink}"><img src="${altData.logo}" loading="lazy" draggable="false" alt="${altData.name}"></a>
+                  </div>
+                  <div class="content">
+                      <a class="boxtitle" href="${reviewLink}">${altData.name}</a>
+                      <div class="site-reward">
+                          <p>${rewardText}</p>
+                      </div>
+                  <div class="content-buttons">
+                      <a href="${reviewLink}" aria-label="Read Review" class="review-button"></a>
+                      <a href='${altData.link}' aria-label="Visit WebSite" target="_blank" class="review-button visit"></a>
+                  </div>
+                  </div>`;
+  
+              siteAlternatesBoxes.appendChild(altBox);
+          });
+      });
+  
+      function addStarRatingAlternatives() {
+        for (var boxId in ratings) {
+          addStarRating(boxId, ratings[boxId]);
+        }
+      }
+  
+      Promise.all(alternatives.map(alt => loadPageData(`${altSitesPath}${alt}.json`)))
+          .then(() => {
+              for (let i = alternatives.length; i < 4; i++) {
+                  const emptyBox = document.createElement('div');
+                  emptyBox.className = 'box';
+                  siteAlternatesBoxes.appendChild(emptyBox);
+              }
+              addStarRatingAlternatives();
+              updateURLs(siteAlternatesBoxes);
+          });
+  }
+  
+    Promise.all([loadPageData(jsonFilePath), loadPageData(filterSettingsPath), loadPageData(reviewSettingsPath), loadPageData(translationsPath)])
+        .then(([pageData, filterSettings, reviewSettings, translations]) => {
+            if (pageData && reviewSettings) {
+                sortAndInsertContent(pageData.gamemodesContent, reviewSettings.gamemodesOrder, '.gamemodes .featuresbox .typesinside');
+                const methodOrder = reviewSettings.paymentMethodsOrder;
+                sortAndInsertContent(pageData.firstMethodContent, methodOrder, '.methodlist#first');
+                sortAndInsertContent(pageData.secondMethodContent, methodOrder, '.methodlist#second');
+                insertFeatures(pageData.featuresContent, filterSettings, reviewSettings.featureOrder);
+                insertRatings(pageData.ratings);
+                
+                if (pageData["Sites Alternatives"] && pageData["Sites Alternatives"].length > 0) {
+                    insertAlternatives(pageData["Sites Alternatives"]);
+                }
+            }
+  
+            if (translations) {
+                const languageTag = document.documentElement.lang || 'en';
+                if (translations[languageTag]) {
+                    translateTextElements(translations[languageTag]);
+                }
+            }
+            const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
+            reviewlinks.forEach(link => {
+                updateURLs(link);
+            });
+        });
   });
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -1596,328 +1919,6 @@ function applyTheme(theme) {
 themeToggleBtn.addEventListener('click', () => {
   currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
   applyTheme(currentTheme);
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-  let currentPath = window.location.pathname;
-
-  if (!currentPath.includes("/reviews/") && !currentPath.includes("/mirrors/")) {
-      return;
-  }
-
-  const basePath = "/code-parts/site-infos";
-  const altSitesPath = `${basePath}/sites-alts/`;
-  const filterSettingsPath = "/code-parts/filter-settings.json";
-  const reviewSettingsPath = "/code-parts/review-settings.json"; 
-  const translationsPath = "/code-parts/review-translations.json"; 
-
-  if (currentPath.endsWith(".html")) {
-      currentPath = currentPath.slice(0, -5);
-  }
-
-  const pageKey = currentPath.split("/").pop();
-  const jsonFilePath = `${basePath}/${pageKey}.json`;
-
-  function loadPageData(filePath) {
-      return fetch(filePath)
-          .then(response => {
-              if (!response.ok) {
-                  return null;
-              }
-              return response.json();
-          })
-          .catch(() => null);
-  }
-
-  function insertHTMLContent(selector, contentArray) {
-      const container = document.querySelector(selector);
-      if (container && contentArray) {
-          container.innerHTML = '';
-          contentArray.forEach(htmlString => {
-              container.insertAdjacentHTML('beforeend', htmlString);
-          });
-      }
-  }
-
-  function generateRatingStars(rating) {
-      const fullStars = Math.floor(rating);
-      const halfStar = rating % 1 !== 0;
-      let starsHTML = '';
-
-      for (let i = 0; i < fullStars; i++) {
-          starsHTML += '<div class="officon star_rating full"></div>';
-      }
-
-      if (halfStar) {
-          starsHTML += '<div class="officon star_rating half"></div>';
-      }
-
-      for (let i = fullStars + (halfStar ? 1 : 0); i < 5; i++) {
-          starsHTML += '<div class="officon star_rating empty"></div>';
-      }
-
-      return starsHTML;
-  }
-
-  function insertOverallRating(ratings) {
-      const possibleRatings = ['Trust', 'Support', 'Payments', 'Functional', 'Price', 'Variety', 'Playability'];
-      let sum = 0;
-      let count = 0;
-
-      possibleRatings.forEach(category => {
-          if (ratings[category]) {
-              sum += ratings[category];
-              count++;
-          }
-      });
-
-      if (count === 0) return;
-
-      let averageRating = sum / count;
-
-      if (averageRating < 4) {
-          averageRating = Math.ceil(averageRating * 2) / 2;
-      } else {
-          averageRating = Math.floor(averageRating * 2) / 2;
-      }
-
-      const container = document.querySelector('.rating');
-      if (container) {
-          const liveratingDiv = document.createElement('div');
-          liveratingDiv.classList.add('liverating');
-          liveratingDiv.innerHTML = generateRatingStars(averageRating);
-
-          container.appendChild(liveratingDiv);
-          liveratingDiv.classList.add('fadein');
-      }
-  }
-
-  function insertRatings(ratings) {
-      const container = document.querySelector('.ratingsumm');
-      if (container && ratings) {
-          container.innerHTML = '';
-
-          const ratingSection = document.createElement('div');
-          ratingSection.classList.add('ratingsection');
-
-          for (const [category, rating] of Object.entries(ratings)) {
-              const ratingHTML = `
-                  <div class="ratingway">
-                      <span>${category}</span>
-                      ${generateRatingStars(rating)}
-                  </div>
-              `;
-              ratingSection.insertAdjacentHTML('beforeend', ratingHTML);
-          }
-
-          container.appendChild(ratingSection);
-
-          insertOverallRating(ratings);
-      }
-  }
-
-function insertFeatures(features, settings, featureOrder) {
-    const featuresContainer = document.querySelector('.boxreview .features');
-    if (featuresContainer) {
-        if (features && features.length > 0) {
-            const featuresBox = document.createElement('div');
-            featuresBox.classList.add('featuresbox');
-
-            const typesInside = document.createElement('div');
-            typesInside.classList.add('typesinside');
-
-            features.sort((a, b) => {
-                const indexA = featureOrder.indexOf(a);
-                const indexB = featureOrder.indexOf(b);
-                return (indexA === -1 ? featureOrder.length : indexA) - (indexB === -1 ? featureOrder.length : indexB);
-            });
-
-            features.forEach(feature => {
-                if (settings[feature]) {
-                    const featureName = settings[feature].name || feature;
-                    const featurePath = settings[feature].path || '#';
-                    const featureClass = feature.toLowerCase().replace(/\s+/g, '-');
-                    const featureIcon = settings[feature].icon || ''; 
-
-                    const featureLink = `
-                        <a href="${featurePath}" class="${featureClass}">
-                            ${featureIcon ? `<i class="${featureIcon}"></i>` : ''} ${featureName}
-                        </a>
-                    `;
-                    typesInside.insertAdjacentHTML('beforeend', featureLink);
-                }
-            });
-
-            featuresBox.appendChild(typesInside);
-            featuresContainer.appendChild(featuresBox);
-            featuresContainer.classList.add('fadein');
-        }
-    }
-}
-
-  function sortAndInsertContent(content, order, selector) {
-      if (content && content.length > 0) {
-          content.sort((a, b) => {
-              const classA = a.match(/class="([^"]+)"/)?.[1] || '';
-              const classB = b.match(/class="([^"]+)"/)?.[1] || '';
-              const indexA = order.indexOf(classA);
-              const indexB = order.indexOf(classB);
-              return (indexA === -1 ? order.length : indexA) - (indexB === -1 ? order.length : indexB);
-          });
-
-          insertHTMLContent(selector, content);
-      }
-  }
-
-  function translateTextElements(translations) {
-    var siteprosElements = document.querySelectorAll('.sitedetails .sitepros span');
-    for (var i = 0; i < siteprosElements.length; i++) {
-        var element = siteprosElements[i];
-        var originalText = element.textContent.trim();
-        
-        if (translations.hasOwnProperty(originalText)) {
-            element.childNodes.forEach(node => {
-                if (node.nodeType === Node.TEXT_NODE) {
-                    node.textContent = node.textContent.replace(originalText, translations[originalText]);
-                }
-            });
-        }
-    }
-
-    var ratingwayElements = document.querySelectorAll('.ratingsection .ratingway span, .content button, .boxreview .plusminus .criteria .par p, .features .featuresbox .typesinside a, .instruction li');
-    for (var j = 0; j < ratingwayElements.length; j++) {
-        var element = ratingwayElements[j];
-        var originalText = element.textContent.trim();
-
-        if (translations.hasOwnProperty(originalText)) {
-            element.childNodes.forEach(node => {
-                if (node.nodeType === Node.TEXT_NODE) {
-                    node.textContent = node.textContent.replace(originalText, translations[originalText]);
-                }
-            });
-        }
-    }
-}
-
-
-
-  function insertAlternatives(alternatives) {
-    let siteAlternates = document.querySelector('.sitealternates');
-    let siteAlternatesBoxes;
-
-    const mainSiteName = document.querySelector('.box.main .content p').textContent.trim();
-
-    let alternatesTitle = '';
-    switch (languageTag) {
-        case 'ru':
-            alternatesTitle = `Лучшие Аналоги ${mainSiteName}`;
-            break;
-        case 'en':
-            alternatesTitle = `Best ${mainSiteName} Alternatives`;
-            break;
-        case 'tr':
-            alternatesTitle = `En İyi ${mainSiteName} Alternatifleri`;
-            break;
-        case 'pl':
-            alternatesTitle = `Najlepsze alternatywy dla ${mainSiteName}`;
-            break;
-        default:
-            alternatesTitle = `Best ${mainSiteName} Alternatives`;
-    }
-
-    if (siteAlternates) {
-        siteAlternates.innerHTML = `<div class="alternates-title">${alternatesTitle}</div><div class="sitealternatesboxes"></div>`;
-    } else {
-        const screentable = document.querySelector('.screentable');
-        siteAlternates = document.createElement('div');
-        siteAlternates.className = 'sitealternates';
-        siteAlternates.innerHTML = `<div class="alternates-title">${alternatesTitle}</div><div class="sitealternatesboxes"></div>`;
-        screentable.insertAdjacentElement('afterend', siteAlternates);
-    }
-
-    siteAlternatesBoxes = siteAlternates.querySelector('.sitealternatesboxes');
-
-    alternatives.forEach(alt => {
-        const altJsonPath = `${altSitesPath}${alt}.json`;
-        loadPageData(altJsonPath).then(altData => {
-            const altBox = document.createElement('div');
-            altBox.className = 'box';
-            altBox.id = altData.name;
-
-            let rewardText = altData.reward;
-            if (languageTag === 'ru' && altData.reward_ru) {
-                rewardText = altData.reward_ru;
-            } else if (languageTag === 'tr' && altData.reward_tr) {
-                rewardText = altData.reward_tr;
-            } else if (languageTag === 'pl' && altData.reward_pl) {
-                rewardText = altData.reward_pl;
-            }
-
-            let reviewLink = `/reviews/${alt}`;
-
-            altBox.innerHTML = `
-                <div class="logobg">
-                    <a href="${reviewLink}"><img src="${altData.logo}" loading="lazy" draggable="false" alt="${altData.name}"></a>
-                </div>
-                <div class="content">
-                    <a class="boxtitle" href="${reviewLink}">${altData.name}</a>
-                    <div class="site-reward">
-                        <p>${rewardText}</p>
-                    </div>
-                <div class="content-buttons">
-                    <a href="${reviewLink}" aria-label="Read Review" class="review-button"></a>
-                    <a href='${altData.link}' aria-label="Visit WebSite" target="_blank" class="review-button visit"></a>
-                </div>
-                </div>`;
-
-            siteAlternatesBoxes.appendChild(altBox);
-        });
-    });
-
-    function addStarRatingAlternatives() {
-      for (var boxId in ratings) {
-        addStarRating(boxId, ratings[boxId]);
-      }
-    }
-
-    Promise.all(alternatives.map(alt => loadPageData(`${altSitesPath}${alt}.json`)))
-        .then(() => {
-            for (let i = alternatives.length; i < 4; i++) {
-                const emptyBox = document.createElement('div');
-                emptyBox.className = 'box';
-                siteAlternatesBoxes.appendChild(emptyBox);
-            }
-            addStarRatingAlternatives();
-            updateURLs(siteAlternatesBoxes);
-        });
-}
-
-  Promise.all([loadPageData(jsonFilePath), loadPageData(filterSettingsPath), loadPageData(reviewSettingsPath), loadPageData(translationsPath)])
-      .then(([pageData, filterSettings, reviewSettings, translations]) => {
-          if (pageData && reviewSettings) {
-              sortAndInsertContent(pageData.gamemodesContent, reviewSettings.gamemodesOrder, '.gamemodes .featuresbox .typesinside');
-              const methodOrder = reviewSettings.paymentMethodsOrder;
-              sortAndInsertContent(pageData.firstMethodContent, methodOrder, '.methodlist#first');
-              sortAndInsertContent(pageData.secondMethodContent, methodOrder, '.methodlist#second');
-              insertFeatures(pageData.featuresContent, filterSettings, reviewSettings.featureOrder);
-              insertRatings(pageData.ratings);
-              
-              if (pageData["Sites Alternatives"] && pageData["Sites Alternatives"].length > 0) {
-                  insertAlternatives(pageData["Sites Alternatives"]);
-              }
-          }
-
-          if (translations) {
-              const languageTag = document.documentElement.lang || 'en';
-              if (translations[languageTag]) {
-                  translateTextElements(translations[languageTag]);
-              }
-          }
-          const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
-          reviewlinks.forEach(link => {
-              updateURLs(link);
-          });
-      });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
