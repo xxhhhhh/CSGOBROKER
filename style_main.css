@@ -4748,9 +4748,9 @@ nav img:active,
 
 .box.main .content button:hover,
 .box.main .content button:hover::before {
-    background-color: rgb(22 22 22) !important;
-    animation: none !important;
-    filter: unset !important;
+    background-color: rgb(22 22 22);
+    animation: none;
+    filter: unset;
 }
 
 .instruction-mirrors li a:active {
@@ -4761,8 +4761,8 @@ nav img:active,
 
 .content button:active,
 .content button:active::before {
-    background-color: #5a101c !important;
-    transition: .09s all ease-in-out !important;
+    background-color: #5a101c;
+    transition: .09s all ease-in-out;
 }
 
 .sitepage .content button.copy,
@@ -4842,16 +4842,25 @@ nav img:active,
     position: absolute;
     width: 20px;
     height: 100%;
-    transition: ease-in-out all .15s;
+    transition: all .15s ease-in-out;
     box-sizing: border-box;
     transform: skewX(20deg);
     z-index: -1;
+    left: -6px;
+    border-radius: 5px 0 0 5px;
     top: 0;
 }
 
-.content button.copy::before {
-    left: -6px;
-    border-radius: 5px 0 0 5px;
+.main-page .content button.copy::before {
+    left: unset;
+    right: -6px;
+    transform: skewX(-20deg);
+    border-radius: 0 5px 5px 0;
+}
+
+.main-page .box .content button.copy::after {
+    margin-left: 4px;
+    margin-right: unset;
 }
 
 @keyframes icon-changed {
@@ -5045,7 +5054,7 @@ footer .centralizer .footer-content {
     width: 20px;
     height: 100%;
     background-color: inherit;
-    transition: ease-in-out all .15s;
+    transition: all .15s ease-in-out;
     box-sizing: border-box;
     transform: skewX(-20deg);
     z-index: -1;
@@ -8147,6 +8156,11 @@ div#results {
     font-weight: 500;
 }
 
+.main-page .copied-title {
+    margin-right: unset;
+    margin-left: 10px;
+}
+
 .gamemodes {
     bottom: -1px;
 }
@@ -10535,9 +10549,27 @@ div#results {
     }
 }
 
-.main-page .content p:nth-child(3),
-.main-page .content button.copy {
+.main-page .content p:nth-child(3) {
     display: none;
+}
+
+.main-page .content button.copy {
+    left: -1px;
+    right: unset;
+    top: -1px;
+}
+
+.main-page .content button, 
+.main-page .content button.copy::before {
+    background-color: rgb(11 11 11);
+}
+
+.main-page .box .content button.copy::after {
+    opacity: .25;
+}
+
+.main-page .box .content button.copy:hover::after {
+    opacity: 1;
 }
 
 .main-page {
@@ -10771,6 +10803,7 @@ div#results {
     position: relative;
     background-position: center;
     background-repeat: no-repeat;
+    opacity: .5;
 }
 
 .main-page .box .logobg .best,
@@ -10778,6 +10811,7 @@ div#results {
     font-size: 0;
     background-color: var(--darkygray);
     filter: grayscale(1);
+    height: 35px;
 }
 
 .main-page .box .logobg .best:hover,
@@ -10785,6 +10819,11 @@ div#results {
     font-size: 11px;
     filter: grayscale(0);
 }
+
+/* .main-page .box:hover .logobg .best,
+.newest-boxes .box:hover .logobg .best {
+    filter: grayscale(0);
+} */
 
 .main-page .box .logobg .best:hover::after,
 .newest-boxes .box .logobg .best:hover::after {
@@ -11720,12 +11759,8 @@ div#results {
     text-shadow: 1px 1px 3px rgb(100 100 100);
   }
 
-  .main-page .best::after, 
-  .newest-boxes .best::after {
-    opacity: .5;
-}
-
 @media screen and (max-width: 1365px) {
+
     .blog .boxtopic {
         width: 100%;
     }
