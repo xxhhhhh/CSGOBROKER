@@ -111,11 +111,11 @@
 } */
 
 .boxreview .plusminus .criteria:nth-child(1) {
-    background: linear-gradient(150deg, rgb(225 225 225) 30%, rgba(15, 207, 79, .4) 100%);
+    background: linear-gradient(320deg, rgb(225 225 225) 30%, rgba(15, 207, 79, .4) 100%);
 }
 
 .boxreview .plusminus .criteria:nth-child(2) {
-    background: linear-gradient(150deg, rgb(225 225 225) 30%, rgba(207, 15, 49, .4) 100%);
+    background: linear-gradient(320deg, rgb(225 225 225) 30%, rgba(207, 15, 49, .4) 100%);
 }
 
 .boxreview .plusminus .criteria:nth-child(1) p::before {
@@ -189,7 +189,8 @@ h3,
 .box-skins-nav .navigation-weapon-name,
 .box-skins-nav .navigation-weapon-name:hover,
 .box-skins-nav:hover .box-skins-name span,
-.navigation-weapon-type.enabled:hover {
+.navigation-weapon-type.enabled:hover,
+.box .logobg .best {
     color: #1a1a1a;
 }
 
@@ -305,6 +306,11 @@ h3,
 .box .logobg .best,
 .box .logobg .best::before {
     background-color: #0a0a0a;
+    text-shadow: none;
+}
+
+.main-page .best::after, .newest-boxes .best::after {
+    filter: brightness(.15);
 }
 
 .box .logobg a img,
@@ -646,7 +652,6 @@ ul .submenu li .nonredir,
 .main-infobox-content-text ul,
 .box .content,
 #rec-box-content,
-.boxreview .plusminus .criteria,
 .box-skins .skin,
 .singlemod-select::before,
 .category-selector .category-box .category-box-logo::before,
@@ -654,6 +659,10 @@ ul .submenu li .nonredir,
 .main-mode,
 .payments-button::before {
     box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .4);
+}
+
+.boxreview .plusminus .criteria {
+    box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .3);
 }
 
 .box.main .content {
