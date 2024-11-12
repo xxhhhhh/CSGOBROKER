@@ -10749,7 +10749,8 @@ div#results {
 }
 
 .infoicon:hover::after,
-.main-page .best:hover::after {
+.main-page .best:hover::after,
+.newest-boxes .best:hover::after {
     opacity: 1;
 }
 
