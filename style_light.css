@@ -302,11 +302,19 @@ h3,
 .boxes-holder .box .content,
 .category-selector .category-box,
 .singlemod-box[data-title]:after,
-.controls-button,
-.box .logobg .best,
-.box .logobg .best::before {
+.controls-button {
     background-color: #0a0a0a;
     text-shadow: none;
+}
+
+.box .logobg .best,
+.box .logobg .best::before {
+    background-color: rgb(242 242 242);
+    text-shadow: none;
+}
+
+.box .logobg .best {
+    filter: drop-shadow(0 1px 2px rgb(120 120 120)) blur(0);
 }
 
 .main-page .best::after, .newest-boxes .best::after {
@@ -734,8 +742,7 @@ ul .submenu li .nonredir,
 .box .content button.copy,
 .content a.boxtitle,
 .box:hover .content button.copy,
-.box.main:hover .content button.copy,
-.box .logobg .best {
+.box.main:hover .content button.copy {
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
 }
 
