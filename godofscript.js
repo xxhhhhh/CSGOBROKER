@@ -2825,7 +2825,7 @@ let particleflakes = [];
 let browserWidth;
 let browserHeight;
 
-let numberOfParticleflakes = 38;
+let numberOfParticleflakes = 45;
 
 let resetPosition = false;
 
