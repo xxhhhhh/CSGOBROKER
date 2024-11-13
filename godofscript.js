@@ -2435,11 +2435,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var aCategoryBox = a.querySelector("a.category-box, div.category-box");
     var bCategoryBox = b.querySelector("a.category-box, div.category-box");
   
-    var aWeight = (aCategoryBox.classList.contains("active") ? -2 : 0) +
-                  (aCategoryBox.classList.contains("last") ? 1 : 0);
-    var bWeight = (bCategoryBox.classList.contains("active") ? -2 : 0) +
-                  (bCategoryBox.classList.contains("last") ? 1 : 0);
-  
+    var aWeight = (aCategoryBox.classList.contains("active") || aCategoryBox.classList.contains("locked") ? -2 : 0) +
+    (aCategoryBox.classList.contains("last") ? 1 : 0);
+    var bWeight = (bCategoryBox.classList.contains("active") || bCategoryBox.classList.contains("locked") ? -2 : 0) +
+    (bCategoryBox.classList.contains("last") ? 1 : 0);
+
     if (aWeight !== bWeight) {
       return aWeight - bWeight;
     }
