@@ -178,7 +178,7 @@ h3,
 .newest-boxes-more,
 .boxes-holder-name h3,
 .boxes-holder-section:hover .boxes-holder-name h3,
-.boxes-holder-name a,
+.boxes-holder-name .boxes-holder-more,
 .newest-boxes-title-box span,
 .newest-boxes:hover .newest-boxes-title-box span,
 .box-skins-nav .navigation-weapon-name,
@@ -287,6 +287,7 @@ h3,
 
 .category-selector .category-box .category-box-logo img {
     filter: grayscale(1) brightness(0);
+    opacity: .8;
 }
 
 .singlemod-select img {
