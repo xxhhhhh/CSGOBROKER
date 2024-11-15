@@ -5520,12 +5520,12 @@ footer .centralizer .footer-content {
 
 .singlemod-select::before,
 .category-selector .category-box .category-box-logo::before {
-    background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%);
+    background: radial-gradient(815% 120% at 0% 0%, var(--darkygray), var(--main-theme));
     transition: all .15s ease-in-out;
 }
 
 .mods-box.skins-box .singlemod-select::before {
-    background: linear-gradient(180deg, var(--darkygray) 0%, rgb(13, 13, 13) 100%);
+    background: radial-gradient(815% 120% at 0% 0%, var(--darkygray), var(--main-theme));
 }
 
 .category-selector .category-box.active .category-box-logo::before,
@@ -7478,6 +7478,7 @@ div#results {
         margin-top: 10px;
     }
 }
+
 
 @keyframes searchExit {
     0% {
@@ -10627,9 +10628,86 @@ div#results {
     }
 }
 
-.main-mode-unit:hover img {
-    filter: brightness(1.05);
-    transform: scale(1.03);
+.main-mode-unit a {
+    z-index: 1;
+    position: relative;
+}
+
+.main-mode-unit a::before {
+    transition: all .3s ease-in-out;
+    z-index: -1;
+}
+
+.main-mode-unit .overflow {
+    position: absolute;
+    z-index: 1;
+}
+
+.main-mode-unit a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: .85;
+}
+
+.main-mode-unit.cs2 a::before {
+    background-image: url(img/main-modes/best-cs-2.webp);
+}
+
+.main-mode-unit.rust a::before {
+    background-image: url(img/main-modes/best-rust.webp);
+}
+
+.main-mode-unit.earning a::before {
+    background-image: url(img/main-modes/best-earning.webp);
+}
+
+.main-mode-unit.trade-skins a::before {
+    background-image: url(img/main-modes/best-trading-sites.webp);
+}
+
+.main-mode-unit.topic-skins a::before {
+    background-image: url(img/main-modes/skins-by-color.webp);
+}
+
+.main-mode-unit.topic-items a::before {
+    background-image: url(img/main-modes/skins-by-type.webp);
+}
+
+.main-mode-unit.levelup a::before {
+    background-image: url(img/main-modes/best-steam-sites.webp);
+}
+
+.main-mode-unit.instant-sell a::before {
+    background-image: url(img/main-modes/best-instant-selling.webp);
+}
+
+.main-mode-unit:hover a::before {
+    transform: scale(1.1) rotate(3deg);
+    opacity: 1;
+}
+
+.main-mode-unit img {
+    transition: all .25s ease-in-out;
+}
+
+.main-mode-unit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(815% 120% at 0% 0%, transparent, var(--main-color));
+    transition: opacity .2s ease-in-out;
+    opacity: .2;
+}
+
+.main-mode-unit:hover::before {
+    opacity: 0;
 }
 
 .main-mode-unit::before{

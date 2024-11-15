@@ -1,3 +1,16 @@
+function extractLanguageTagFromHTML() {
+  const htmlElement = document.querySelector('html');
+  if (htmlElement) {
+    const langAttribute = htmlElement.getAttribute('lang');
+    if (langAttribute) {
+      return langAttribute.split('-')[0];
+    }
+  }
+  return null;
+}
+
+var languageTag = extractLanguageTagFromHTML();
+
 $(document).ready(function () {
     const currentPath = window.location.pathname;
     if (

@@ -2650,7 +2650,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   
-  // Скрываем все открытые списки
   function hideAllPaymentLists() {
     if (depositList) depositList.classList.remove("visible");
     if (withdrawalList) withdrawalList.classList.remove("visible");
