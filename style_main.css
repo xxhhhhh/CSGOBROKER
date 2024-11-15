@@ -10631,6 +10631,7 @@ div#results {
 .main-mode-unit a {
     z-index: 1;
     position: relative;
+    display: block;
 }
 
 .main-mode-unit a::before {
@@ -11195,7 +11196,7 @@ div#results {
         text-wrap: nowrap;
     }
     .main-mode-selection {
-        height: 150px;
+        height: 160px;
     }
 }
 
