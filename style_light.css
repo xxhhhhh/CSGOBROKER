@@ -86,6 +86,7 @@
 .category-selector .category-box .category-box-logo,
 .singlemod-icon {
     background: rgb(242 242 242);
+    box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .4);
 }
 
 .singlemod-icon::before {
@@ -179,6 +180,7 @@ h3,
 .boxes-holder-name h3,
 .boxes-holder-section:hover .boxes-holder-name h3,
 .boxes-holder-name .boxes-holder-more,
+.boxes-holder-name a,
 .newest-boxes-title-box span,
 .newest-boxes:hover .newest-boxes-title-box span,
 .box-skins-nav .navigation-weapon-name,
@@ -246,7 +248,6 @@ h3,
 
 .main-page .logobg {
     background: rgb(242 242 242);
-    box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .4);
 }
 
 .boxes-holder .content a.boxtitle,
