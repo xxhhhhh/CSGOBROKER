@@ -9211,8 +9211,8 @@ div#results {
         opacity: 1;
     }
 
-    .rating-case-single .star_rating {
-        filter: brightness(1.45);
+    .boxes-holder .rating-case-single .star_rating {
+        filter: none;
     }
     
     .mods-box.topic .singlemod-select img {
