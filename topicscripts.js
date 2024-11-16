@@ -938,3 +938,40 @@ function getLocalStorageState(key, defaultValue) {
     const storedValue = localStorage.getItem(key);
     return storedValue ? JSON.parse(storedValue) : defaultValue;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (!window.location.pathname.includes('/topic/')) return;
+
+  const navReview = document.querySelector('.nav-review.blog');
+  if (!navReview) return;
+
+  const navItems = navReview.querySelectorAll('li');
+  const textColInfos = document.querySelectorAll('.text-col-info');
+
+  if (navItems.length !== textColInfos.length) {
+      return;
+  }
+
+  navItems.forEach((li, index) => {
+      const targetElement = textColInfos[index];
+
+      li.addEventListener('click', () => {
+          const rect = targetElement.getBoundingClientRect();
+          const offsetTop = window.scrollY + rect.top - 150;
+
+          window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+          });
+
+          targetElement.classList.remove('navmark');
+          void targetElement.offsetWidth;
+          targetElement.classList.add('navmark');
+
+          targetElement.addEventListener('animationend', function handler() {
+              targetElement.classList.remove('navmark');
+              targetElement.removeEventListener('animationend', handler);
+          });
+      });
+  });
+});

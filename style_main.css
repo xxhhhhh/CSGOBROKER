@@ -9286,6 +9286,17 @@ div#results {
 
 .blog .instruction li {
     width: 80%;
+    line-height: 25px;
+}
+
+.blog .instruction li a {
+    color: #616161;
+    line-height: 25px;
+}
+
+.blog .instruction li a:hover {
+    color: var(--main-color);
+    filter: none;
 }
 
 .blog .instruction.points ol li:before {
@@ -9418,7 +9429,7 @@ div#results {
 .table-unit .mpercent {
     margin-left: 3px;
     color: rgba(255, 255, 255, .3);
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .table-credits {
