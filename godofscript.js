@@ -65,6 +65,10 @@ forcemodsboxes();
       }
   
       let href = link.getAttribute('href');
+
+      if (href.includes('/topic') && languageTag !== 'ru') {
+        return;
+      }
   
       if (href === '/') {
         href = `/${languageTag}/`;
@@ -1938,6 +1942,8 @@ themeToggleBtn.addEventListener('click', () => {
   applyTheme(currentTheme);
 });
 
+const categorySelector = document.querySelector('.category-selector');
+
 document.addEventListener('DOMContentLoaded', function() {
   const navBarContainer = document.createElement('div');
 
@@ -1951,7 +1957,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
       header.insertAdjacentElement('afterend', navBarContainer.firstChild);
 
-      const categorySelector = document.querySelector('.category-selector');
       const menuToggle = document.querySelector('.menu-toggle');
       const navBar = document.querySelector('.nav-bar');
       const pages = document.querySelector('.pages');
@@ -2035,7 +2040,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (languageTag === 'en' || languageTag === 'pl') {
         applyTranslations(document.body, languageTag, {});
-        translateURLs2(document.body, languageTag);
+        updateURLs(categorySelector);
       } else {
         const translationFile = `/code-parts/category-translations/${languageTag}.json`;
 
@@ -2043,7 +2048,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .then(response => response.json())
           .then(translations => {
             applyTranslations(document.body, languageTag, translations);
-            translateURLs2(document.body, languageTag);
+            updateURLs(categorySelector);
           });
       }
     });
@@ -2055,7 +2060,7 @@ function loadAndApplyTranslations(languageTag) {
 
   if (translations || (languageTag === 'en' || languageTag === 'pl')) {
       applyTranslations(document.body, languageTag, translations);
-      translateURLs2(document.body, languageTag);
+      updateURLs(categorySelector);
   } else {
       const translationFile = `/code-parts/category-translations/${languageTag}.json`;
 
@@ -2064,7 +2069,7 @@ function loadAndApplyTranslations(languageTag) {
           .then(data => {
               localStorage.setItem(cacheKey, JSON.stringify(data));
               applyTranslations(document.body, languageTag, data);
-              translateURLs2(document.body, languageTag);
+              updateURLs(categorySelector);
           });
   }
 }
@@ -2115,46 +2120,6 @@ function translateElements(element, languageTag, translations) {
     }
   });
 }
-
-function translateURLs2(parentElement, languageTag) {
-  if (!parentElement || !languageTag || languageTag.length !== 2) {
-    return;
-  }
-  
-  const links = parentElement.querySelectorAll('.category a[href]');
-  const supportedLanguages = ["hi", "tr", "pt", "es", "ru"];
-  
-  if (!supportedLanguages.includes(languageTag) || languageTag === 'en') {
-    return;
-  }
-
-  links.forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href) return;
-
-    const url = new URL(href, window.location.href);
-    let path = url.pathname;
-    const queryString = url.search;
-
-    if (path === '/') {
-      path = `/${languageTag}`;
-    } else if (path.startsWith('/topic')) {
-      if (languageTag === 'ru' && !path.startsWith('/ru/topic')) {
-        path = `/ru${path}`;
-      }
-    } else {
-      const pathSegments = path.split('/').filter(segment => segment);
-      if (pathSegments.length === 0 || pathSegments[0] !== languageTag) {
-        if (!path.startsWith(`/${languageTag}/`)) {
-          path = `/${languageTag}${path}`;
-        }
-      }
-    }
-
-    link.setAttribute('href', url.origin + path + queryString);
-  });
-}
-
 
 function loadCategoryContent(category) {
   const link = category.querySelector('.category-box');
@@ -2505,7 +2470,7 @@ $(document).ready(function(){
   updateURLs(modesslider);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+window.initPayments = function () {
   const basePath = "/code-parts/site-infos";
   const boxes = document.querySelectorAll(".boxes-holder .box");
   const paymentsButton = document.querySelector(".payments-button");
@@ -2713,6 +2678,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function toggleMainModeSelection() {
+    const mainModeSelection = document.querySelector(".main-mode-selection");
+    if (!mainModeSelection) return;
+  
+    const hasHiddenClass = Array.from(boxes).some((box) => 
+      box.classList.contains("hidden-deposit") || box.classList.contains("hidden-withdrawal")
+    );
+  
+    if (hasHiddenClass) {
+      mainModeSelection.classList.add("hidden");
+    } else {
+      mainModeSelection.classList.remove("hidden");
+    }
+  }
+  
+  boxes.forEach((box) => {
+    const observer = new MutationObserver(toggleMainModeSelection);
+    observer.observe(box, { attributes: true, attributeFilter: ["class"] });
+  });
+  
+  toggleMainModeSelection();
+
   function checkCloseButtonVisibility(closeButton, inputElement, hiddenClass) {
     const isInputEmpty = inputElement.value === "";
     const hasBoxesFiltered = Array.from(boxes).some((box) => box.classList.contains(hiddenClass));
@@ -2835,7 +2822,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-});
+};
+
+window.initPayments();
 
 let particleflakes = [];
 
