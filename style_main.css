@@ -8556,7 +8556,9 @@ div#results {
 }
 
 .main-mode-unit img {
-    transition: all .25s ease-in-out;
+    width: 100%;
+    transition: all .15s ease-in-out;
+    display: block;
 }
 
 .main-mode-unit::before {
@@ -8581,11 +8583,6 @@ div#results {
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
-}
-
-.main-mode-unit img {
-    width: 100%;
-    transition: all .15s ease-in-out;
 }
 
 .main-mode-selection {
@@ -9210,11 +9207,6 @@ div#results {
     justify-content: flex-start;
 }
 
-.langimprt .payments-block,
-.langimprt .payments-button {
-    display: none;
-}
-
 .blog .main-col-info {
     border-radius: 10px;
 }
@@ -9514,6 +9506,61 @@ div#results {
   .content .review-button.visit::after,
   .box .logobg .best, .topic-box .best {
     text-shadow: 1px 1px 3px rgb(100 100 100);
+  }
+
+  .langimprt .payments-block,
+  .langimprt .payments-button {
+      display: none;
+  }
+
+  .boxes-holder.langimprt .box .logobg,
+  .boxes-holder.langimprt .box .content {
+      animation-duration: .35s;
+      animation-delay: .15s;
+      animation-fill-mode: both;
+      animation-name: langelementr;
+  }
+  
+  .boxes-holder.langimprt .box .rating-case-single {
+      animation-delay: .7s;
+      animation-fill-mode: both;
+      animation-name: langelementr;
+  }
+  
+  .boxes-holder.langimprt .box .logobg,
+  .boxes-holder.langimprt .box .content {
+      opacity: 0;
+  }
+  
+  .boxes-holder.langimprt:has(.box) .box {
+      animation-duration: .4s;
+      animation-fill-mode: both;
+      animation-name: langentr;
+  }
+  
+  @keyframes langentr {
+  
+      from {
+          height: 0;
+          overflow: hidden;
+      }
+  
+      to {
+          height: 400px;
+          overflow: unset;
+      }
+  }
+  
+  
+  @keyframes langelementr {
+  
+      from {
+          opacity: 0;
+      }
+  
+      to {
+          opacity: 1;
+      }
   }
 
 @media (display-mode: standalone) {
