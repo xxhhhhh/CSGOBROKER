@@ -9555,8 +9555,8 @@ div#results {
     overflow: hidden !important;
 }
 
-.box .logobg,
-.box .content {
+.boxes-holder:not(.main-page) .box .logobg,
+.boxes-holder:not(.main-page) .box .content {
     opacity: 1;
     transition: all .8s ease-in-out;
 }
