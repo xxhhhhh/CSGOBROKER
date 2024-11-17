@@ -9489,11 +9489,6 @@ div#results {
     text-shadow: 1px 1px 3px rgb(100 100 100);
 }
 
-/* .langimprt .payments-block,
-.langimprt .payments-button {
-    display: none;
-} */
-
 .boxes-holder.langimprt .box .rating-case-single {
     animation-delay: .7s;
     animation-fill-mode: both;
@@ -9545,6 +9540,12 @@ div#results {
     animation: none;
 }
 
+.boxes-holder:not(.main-page) .box .logobg,
+.boxes-holder:not(.main-page) .box .content {
+    opacity: 1;
+    transition: all .8s ease-in-out;
+}
+
 .box.hidden,
 .box.hidden-deposit,
 .box.hidden-withdrawal,
@@ -9555,12 +9556,6 @@ div#results {
     overflow: hidden !important;
 }
 
-.boxes-holder:not(.main-page) .box .logobg,
-.boxes-holder:not(.main-page) .box .content {
-    opacity: 1;
-    transition: all .8s ease-in-out;
-}
-
 .box.hidden-deposit .logobg,
 .box.hidden-withdrawal .logobg,
 .box.hidden-vpn .logobg,
@@ -9568,7 +9563,7 @@ div#results {
 .box.hidden-withdrawal .content,
 .box.hidden-vpn .content {
     opacity: 0 !important;
-    transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out !important;
     animation: none !important;
 }
 
