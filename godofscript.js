@@ -718,7 +718,9 @@ if (ratingsumm && sitealternates) {
 
 if (supportedLanguages.includes(languageTag)) {
   const cacheKey = `infoboxContent_${languageTag}`;
+  const cacheMetaKey = `${cacheKey}_meta`;
   const cachedContent = localStorage.getItem(cacheKey);
+  const cachedMeta = JSON.parse(localStorage.getItem(cacheMetaKey) || "{}");
 
   const insertInfobox = (content) => {
     let insertionPoint;
@@ -733,9 +735,13 @@ if (supportedLanguages.includes(languageTag)) {
     }
   };
 
-  if (cachedContent) {
-    insertInfobox(cachedContent);
-  } else {
+  const updateCacheAndInsert = (content, meta) => {
+    localStorage.setItem(cacheKey, content);
+    localStorage.setItem(cacheMetaKey, JSON.stringify(meta));
+    insertInfobox(content);
+  };
+
+  const fetchInfobox = () => {
     const filePath = `/code-parts/micro-parts/main-infobox/${languageTag}.html`;
 
     const xhr = new XMLHttpRequest();
@@ -744,17 +750,28 @@ if (supportedLanguages.includes(languageTag)) {
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
         const infoboxContent = xhr.responseText;
+        const newMeta = { updatedAt: Date.now() };
 
-        localStorage.setItem(cacheKey, infoboxContent);
-
-        insertInfobox(infoboxContent);
+        updateCacheAndInsert(infoboxContent, newMeta);
       }
     };
 
     xhr.send();
+  };
+
+  if (cachedContent && cachedMeta.updatedAt) {
+    const maxCacheAge = 24 * 60 * 60 * 1000;
+    const isCacheValid = Date.now() - cachedMeta.updatedAt < maxCacheAge;
+
+    if (isCacheValid) {
+      insertInfobox(cachedContent);
+    } else {
+      fetchInfobox();
+    }
+  } else {
+    fetchInfobox();
   }
 }
-
 
 $('.sitepros').click(function() {
   $(this).toggleClass("active");

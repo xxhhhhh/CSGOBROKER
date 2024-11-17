@@ -10117,11 +10117,11 @@ div#results {
     .singlemod-select img {
         width: auto;
         height: 55%;
-        filter: grayscale(1) brightness(2.15) drop-shadow(0 0 6px rgb(8 8 8));
+        filter: grayscale(1) brightness(1.7) drop-shadow(0 0 6px rgb(8 8 8));
     }
     
     .payments-button::after {
-        filter: grayscale(1) brightness(2.15) drop-shadow(0 0 6px rgb(8 8 8));
+        filter: grayscale(1) brightness(1.7) drop-shadow(0 0 6px rgb(8 8 8));
     }
 
     div.category:first-child .category-box {
@@ -10730,10 +10730,13 @@ div#results {
 
     .category-selector .category .category-box .category-box-logo::before {
         content: '';
-        position: absolute;
-        width: 88%;
-        height: 88%;
+        width: unset;
+        height: unset;
         border-radius: 10px;
+        top: 5px;
+        left: 5px;
+        bottom: 5px;
+        right: 5px;
     }
 
     .category-selector .category-box .category-box-content {
@@ -11055,7 +11058,7 @@ div#results {
     }
 
     nav .pages h1 {
-        width: 85%;
+        width: 78%;
     }
 
     .pages button.active {
@@ -11888,6 +11891,7 @@ div#results {
         height: auto;
         width: 98%;
         margin-top: 20px;
+        max-height: 200px;
     }
     .boxes-holder .main-mode-selection {
         margin-top: 5px;
@@ -11965,7 +11969,7 @@ div#results {
         text-wrap: nowrap;
     }
     .main-mode-selection {
-        height: 160px;
+        height: 155px;
     }
 }
 
