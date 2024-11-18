@@ -2262,7 +2262,7 @@ document.addEventListener("DOMContentLoaded", function () {
               pages.classList.add("hardplaced");
           }
 
-          if (submenu) {
+          if (submenu && window.innerWidth <= 1365) {
               submenu.classList.toggle("current");
               centerSubmenu(submenu);
           }
