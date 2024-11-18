@@ -9502,20 +9502,13 @@ div#results {
 }
 
 .boxes-holder.langimprt .box .logobg,
-.boxes-holder.langimprt .box .content {
+.boxes-holder.langimprt .box .content,
+.main-page.langimprt  {
     animation-duration: .35s;
     animation-delay: .15s;
-    animation-fill-mode: both;
+    animation-fill-mode: backwards;
     animation-name: langelementr;
     backface-visibility: hidden;
-}
-
-.main-page.langimprt {
-    animation-duration: .35s;
-    animation-delay: 0s;
-    animation-fill-mode: both;
-    animation-name: langelementr;
-
 }
 
 .boxes-holder.langimprt:has(.box) .box {
