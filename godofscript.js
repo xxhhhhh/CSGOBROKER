@@ -2452,22 +2452,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 $(document).ready(function(){
-  var res = $(window).width();
 
-  $('.main-mode-selection').slick({
-    slidesToShow: res < 600 ? 2 : 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    infinite: true,
-    speed: 450,
-    autoplaySpeed: 5500,
-    pauseOnHover: true,
-    prevArrow: '<button aria-label="Prev Slide" class="prev-button controls-button"><i class="officon chevron left"></i></button>',
-    nextArrow: '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
-    dots: false
-  });
-  const modesslider = document.querySelector('.main-mode-selection');
-  updateURLs(modesslider);
+  if ($('.main-mode-selection').length && !$('.main-mode-selection').hasClass('slick-slider')) {
+
+    var res = $(window).width();
+  
+    $('.main-mode-selection').slick({
+      slidesToShow: res < 600 ? 2 : 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      infinite: true,
+      speed: 450,
+      autoplaySpeed: 5500,
+      pauseOnHover: true,
+      prevArrow: '<button aria-label="Prev Slide" class="prev-button controls-button"><i class="officon chevron left"></i></button>',
+      nextArrow: '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
+      dots: false
+    });
+    const modesslider = document.querySelector('.main-mode-selection');
+    updateURLs(modesslider);
+  }
+  
 });
 
 window.initPayments = function () {
