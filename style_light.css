@@ -322,13 +322,38 @@ h3,
 }
 
 .box .logobg .best,
-.box .logobg .best::before {
+.box .logobg .best::before,
+.main-page .box .logobg .best:hover, 
+.newest-boxes .box .logobg .best:hover {
     background-color: var(--main-theme);
     text-shadow: none;
 }
 
-.box .logobg .best {
+.box .logobg .best,
+.main-page .box .logobg .best:hover, 
+.newest-boxes .box .logobg .best:hover {
     filter: drop-shadow(0 1px 2px rgb(120 120 120)) blur(0);
+}
+
+.main-page .box .logobg .best {
+    filter: none;
+}
+
+.main-page .content button, 
+.main-page .content button.copy::before,
+.boxes-holder .box:hover .content button.copy {
+    background: var(--darkygray);
+    filter: none;
+}
+
+.main-page .box .content button.copy::after {
+    opacity: .4;
+    filter: brightness(.2);
+}
+
+.main-page .box .logobg .best:hover::after, 
+.newest-boxes .box .logobg .best:hover::after {
+    filter: brightness(.2);
 }
 
 .main-page .best::after, .newest-boxes .best::after {
@@ -753,9 +778,7 @@ ul .submenu li .nonredir,
     content: unset;
 }
 
-.boxes-holder .box .content button.copy,
-.content a.boxtitle,
-.boxes-holder .box:hover .content button.copy {
+.content a.boxtitle {
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
 }
 
@@ -818,6 +841,10 @@ ul .submenu li .nonredir,
 .boxes-holder-section:hover .boxes-holder-name .singlemod-icon.earning::before,
 .newest-boxes:hover .singlemod-icon::before {
     filter: grayscale(1) brightness(.25);
+}
+
+.boxes-holder-section {
+    background: radial-gradient(300% 100% at 0% 0%, var(--darkygray), var(--main-theme) 100%);
 }
 
 .navigation-weapon-type::before, .color-box-selection-button::before {
