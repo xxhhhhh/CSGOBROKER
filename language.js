@@ -538,7 +538,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "pt": "Freecash é um dos melhores serviços para ganhar dinheiro com tarefas, oferecendo pagamentos altos, recompensas regulares e uma interface amigável.",
             "hi": "Freecash कार्यों के माध्यम से पैसे कमाने के लिए सबसे अच्छे प्लेटफ़ॉर्म में से एक है, जो उच्च भुगतान, नियमित पुरस्कार और एक उपयोगकर्ता-अनुकूल इंटरफेस प्रदान करता है।"
           },
-          "HowlGG is a Rust gambling platform with a variety of modes, a fairness system, a user-friendly interface, and an active community.": {
+          "HowlGG is a CS2 and Rust gambling platform with a variety of modes, a fairness system, a user-friendly interface, and an active community.": {
             "es": "HowlGG es una plataforma de apuestas de Rust con una variedad de modos, un sistema de equidad, una interfaz fácil de usar y una comunidad activa.",
             "tr": "HowlGG, çeşitli modlar, adalet sistemi, kullanıcı dostu arayüzü ve aktif bir topluluğa sahip bir Rust kumar platformudur.",
             "pt": "HowlGG é uma plataforma de apostas de Rust com uma variedade de modos, sistema de justiça, interface amigável e uma comunidade ativa.",
