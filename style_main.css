@@ -328,7 +328,7 @@ nav .pages {
     justify-content: center;
     flex-wrap: wrap;
     align-content: flex-start;
-    background: linear-gradient(180deg, var(--darkygray) 50%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(180deg, var(--darkygray) 30%, rgba(0, 0, 0, 0) 100%);
     min-height: 600px;
     padding-top: 10px;
 }
@@ -8611,7 +8611,7 @@ div#results {
     display: flex;
     justify-content: center;
     border-radius: 0 5px 10px 10px;
-    background-color: var(--darkygray);
+    background: radial-gradient(425% 100% at 100% 0%, var(--darkygray), transparent 100%);
     flex-wrap: wrap;
     position: relative;
     margin: 8px;
@@ -8731,7 +8731,7 @@ div#results {
 .newest-boxes .box .logobg .best {
     font-size: 0;
     background-color: var(--darkygray);
-    filter: grayscale(1);
+    /* filter: grayscale(1); */
     height: 35px;
 }
 
@@ -9509,6 +9509,12 @@ div#results {
     animation-fill-mode: backwards;
     animation-name: langelementr;
     backface-visibility: hidden;
+}
+
+.main-page.langimprt  {
+    transition: all .15s ease-in-out;
+    animation-delay: .2s;
+    animation-fill-mode: both;
 }
 
 .boxes-holder.langimprt:has(.box) .box {
@@ -11255,6 +11261,10 @@ div#results {
 }
 
 @media screen and (max-width: 850px) {
+
+    .boxes-holder-section {
+        background: var(--darkygray);
+    }
 
     .mods-box.skins-box .singlemod-box:hover {
         transform: scale(1.01);
