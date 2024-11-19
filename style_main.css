@@ -9501,7 +9501,7 @@ div#results {
 
 .boxes-holder.langimprt .box .logobg,
 .boxes-holder.langimprt .box .content,
-.main-page.langimprt  {
+.main-page.langimprt:has(.main-mode-selection)  {
     animation-duration: .35s;
     animation-delay: .15s;
     animation-fill-mode: backwards;
@@ -9509,9 +9509,7 @@ div#results {
     backface-visibility: hidden;
 }
 
-.main-page.langimprt  {
-    transition: all .15s ease-in-out;
-    animation-delay: .2s;
+.main-page.langimprt:has(.main-mode-selection)  {
     animation-fill-mode: both;
 }
 
