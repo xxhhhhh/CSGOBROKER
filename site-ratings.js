@@ -54,7 +54,6 @@ var ratings = {
     "RustChance":3.5,
     "CSGOPolygon":3.375,
     "Skinbet":3.375,
-    "RUSTMOMENT":2.75,
     "Idle-Empire":4.5,
     "BCGame":4.5,
     "Freeward":3.375,

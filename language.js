@@ -610,12 +610,6 @@ document.addEventListener('DOMContentLoaded', function() {
             "pt": "Um site único onde você pode ganhar dinheiro ganhando jogos em várias disciplinas cibernéticas de jogos móveis. Também possui muitos offerwalls.",
             "hi": "एक अद्वितीय साइट जहां आप विभिन्न मोबाइल गेमिंग साइबर विषयों में खेल जीतकर पैसे कमा सकते हैं। इसके अलावा कई ऑफरवॉल्स भी हैं।"
           },
-          "RustMoment is a Rust skin gambling platform offering unique modes and bonuses, including rakeback and a daily case.": {
-            "es": "RustMoment es una plataforma de juegos de azar con skins de Rust que ofrece modos únicos y bonificaciones, incluyendo rakeback y un caso diario.",
-            "tr": "RustMoment, Rust skinleriyle bahis yapma platformudur ve rakeback ile günlük kasa dahil olmak üzere benzersiz modlar ve bonuslar sunar.",
-            "pt": "RustMoment é uma plataforma de apostas com skins de Rust que oferece modos e bônus exclusivos, incluindo rakeback e um caso diário.",
-            "hi": "RustMoment एक Rust स्किन जुआ प्लेटफार्म है, जो अद्वितीय मोड और बोनस प्रदान करता है, जिसमें रेकबैक और दैनिक केस शामिल हैं।"
-          },
           "Freeward is a platform for earning through surveys, watching videos, and games, featuring an achievements system and a wide variety of withdrawal methods.": {
             "es": "Freeward es una plataforma para ganar a través de encuestas, ver videos y juegos, con un sistema de logros y una amplia variedad de métodos de retiro.",
             "tr": "Freeward, anketler, video izleme ve oyunlar yoluyla kazanç sağlama platformudur; başarı sistemi ve geniş bir çekilme yöntemleri yelpazesi sunar.",
