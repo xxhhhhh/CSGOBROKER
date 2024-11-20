@@ -2169,7 +2169,9 @@ document.addEventListener("DOMContentLoaded", function () {
     !window.location.pathname.includes("/mirrors") &&
     !window.location.pathname.includes("/privacy-policy") &&
     !window.location.pathname.includes("/terms-of-service") &&
-    !window.location.pathname.includes("/contact-us")
+    !window.location.pathname.includes("/contact-us") &&
+    !isErrorPage
+    
   ) {
     const boxContainer = document.querySelector(".category-selector");
     const pages = document.querySelector(".pages");
