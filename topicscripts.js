@@ -576,7 +576,7 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
         boxSkinsElements.forEach(function(boxSkinsElement) {
             const boxSkinsList = boxSkinsElement.querySelector('.box-skins-list');
 
-            if (boxSkinsList.scrollWidth > boxSkinsList.clientWidth) {
+            if (boxSkinsList && boxSkinsList.scrollWidth > boxSkinsList.clientWidth) {
                 const boxSkinsControl = document.createElement('div');
                 boxSkinsControl.className = 'box-skins-control';
                 boxSkinsControl.innerHTML = `
