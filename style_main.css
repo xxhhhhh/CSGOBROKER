@@ -5282,14 +5282,51 @@ footer .centralizer .footer-content {
     z-index: 1;
 }
 
+.content .review-button.mirror.visit {
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 4px 0px;
+    position: absolute;
+    background-color: rgb(26 26 26);
+    right: 10px;
+}
+
+.main-page .content .review-button.mirror.visit {
+    right: 15px;
+    backface-visibility: unset;
+}
+
+.boxes-holder .box .content .review-button.mirror {
+    filter: none;
+}
+
+.content .review-button.mirror.visit::before {
+    content: unset;
+}
+
+.content .review-button.mirror.visit::after {
+    content: url('/img/icons/gamemodes/mirror.svg');
+    height: 15px;
+    width: 15px;
+}
+
+@media screen and (max-width: 1900px) {
+    .content .review-button.mirror.visit {
+        display: none;
+    }
+}
+
 .content .review-button:hover {
     transform: scale(1.05);
 }
 
 
-.boxes-holder .box .content .review-button:first-child:hover,
-.boxes-holder .box .content .review-button:first-child:hover::before,
-.boxes-holder .box .content .review-button:first-child:hover::after {
+.boxes-holder .box .content .review-button:not(.visit):hover,
+.boxes-holder .box .content .review-button:not(.visit):hover::before,
+.boxes-holder .box .content .review-button:not(.visit):hover::after,
+.boxes-holder .box .content .review-button.mirror:hover,
+.boxes-holder .box .content .review-button.mirror:hover::before,
+.boxes-holder .box .content .review-button.mirror:hover::after {
     background-color: rgb(32 32 32);
 }
 
@@ -8461,12 +8498,6 @@ div#results {
     cursor: pointer;
     transition: all .15s ease-in-out;
     z-index: 1;
-}
-
-@media screen and (max-width: 460px) {
-    .main-mode-unit {
-        width: 200px;
-    }
 }
 
 .main-mode-unit a {
@@ -11851,6 +11882,15 @@ div#results {
             height: 350px;
             overflow: unset;
         }
+    }
+
+    .main-mode-unit {
+        width: 200px;
+    }
+    .content .review-button.mirror.visit {
+        display: flex;
+        backface-visibility: visible;
+        right: -30px;
     }
 
     .boxes-holder {
