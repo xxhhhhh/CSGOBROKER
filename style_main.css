@@ -11887,6 +11887,11 @@ div#results {
     .main-mode-unit {
         width: 200px;
     }
+
+    .main-page .content .review-button.mirror.visit {
+        display: none;
+    }
+
     .content .review-button.mirror.visit {
         display: flex;
         backface-visibility: visible;
