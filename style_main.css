@@ -2633,6 +2633,30 @@ h3 {
     justify-content: center;
 }
 
+.mini-info {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: -20px;
+}
+
+.mini-info .actual {
+    position: relative;
+    width: fit-content;
+    margin: 0 5px;
+}
+
+.mini-info .actual::before {
+    width: 22px;
+    height: 22px;
+    right: 0;
+    top: 0;
+    position: relative;
+}
+
 .smallreview p a {
     font-weight: 500;
     text-decoration: none;
@@ -4349,6 +4373,10 @@ nav img:active,
     user-select: none;
     font-size: 12px;
     z-index: 1;
+}
+
+.main-page .box .logobg .vpn {
+    display: none;
 }
 
 .box .logobg .vpn::before {
@@ -9674,6 +9702,12 @@ div#results {
 
     .topic-box .content span {
         opacity: 1;
+    }
+
+    .mini-info {
+        display: ruby;
+        width: 85%;
+        margin-bottom: 10px;
     }
 
     .boxes-holder .rating-case-single .star_rating {
