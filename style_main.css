@@ -1941,6 +1941,10 @@ h3 {
     border-radius: 5px;
 }
 
+.boxreview:has(.info-block) .smallreview {
+    padding-top: 20px;
+}
+
 .sitetoppannel {
     position: relative;
     border-radius: 5px;
@@ -11391,7 +11395,8 @@ div#results {
         padding-right: 10px;
     }
 
-    .boxreview .smallreview {
+    .boxreview .smallreview,
+    .boxreview:has(.info-block) .smallreview {
         padding: 10px 0px 0px 0px;
     }
 
