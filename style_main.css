@@ -5296,12 +5296,12 @@ footer .centralizer .footer-content {
     backface-visibility: unset;
 }
 
-.boxes-holder .box .content .review-button.mirror {
-    filter: none;
+.box .content .review-button.mirror {
+    filter: none !important;
 }
 
 .content .review-button.mirror.visit::before {
-    content: unset;
+    content: unset !important;
 }
 
 .content .review-button.mirror.visit::after {
