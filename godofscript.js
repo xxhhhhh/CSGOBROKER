@@ -2673,12 +2673,19 @@ window.initPayments = function () {
   function clearFilter(inputElement, hiddenClass) {
     inputElement.value = "";
     boxes.forEach((box) => {
-      box.classList.remove(hiddenClass);
+      if (box.classList.contains(hiddenClass)) {
+        box.classList.remove(hiddenClass);
+        box.classList.add("filter-applying");
+  
+        setTimeout(() => {
+          box.classList.remove("filter-applying");
+        }, 1000);
+      }
     });
-
+  
     const closeButton = inputElement.closest("form").querySelector(".payment-close-button");
     checkCloseButtonVisibility(closeButton, inputElement, hiddenClass);
-
+  
     const selectedMethod = inputElement.closest("form").querySelector(".selected");
     if (selectedMethod) {
       selectedMethod.classList.remove("selected");

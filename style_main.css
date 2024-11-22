@@ -9595,6 +9595,15 @@ div#results {
     animation: none !important;
 }
 
+.box.filter-applying .logobg,
+.box.filter-applying .content {
+    transition: all .8s ease-in-out;
+}
+
+.box.filter-applying .logobg .rating-case-single {
+    opacity: 0;
+}
+
 @keyframes langentr {
 
     from {
@@ -12244,11 +12253,16 @@ div#results {
 
     .payment-container {
         margin: 5px;
-        display: none;
+        display: flex;
+        opacity: 0;
+        transition: all 0s ease-in-out;
+        pointer-events: none;
     }
 
     .visible .payment-container {
-        display: flex;
+        opacity: 1;
+        transition: all .15s ease-in-out;
+        pointer-events: all;
     }
 
     .payments-button:hover::after {
