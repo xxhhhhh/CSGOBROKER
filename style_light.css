@@ -204,8 +204,15 @@ h3,
 .table-unit .mpercent,
 .blog .instruction li,
 .mini-info,
-.siteblock.mirror .box.main .logobg .star_rating::before  {
+.siteblock.mirror .box.main .logobg .star_rating::before,
+.boxes-holder-name a:hover, 
+.newest-boxes-more:hover  {
     color: #1a1a1a;
+}
+
+.boxes-holder-name a:hover, 
+.newest-boxes-more:hover {
+    filter: brightness(1.1);
 }
 
 .siteblock.mirror .box.main .logobg .star_rating::before {
@@ -358,12 +365,18 @@ h3,
     filter: brightness(.2);
 }
 
+.boxes-holder-name a .officon::before {
+    opacity: 1;
+    filter: brightness(.35);
+}
+
 .main-page .box .logobg .best:hover::after, 
 .newest-boxes .box .logobg .best:hover::after {
     filter: brightness(.2);
 }
 
-.main-page .best::after, .newest-boxes .best::after {
+.main-page .best::after, .newest-boxes .best::after,
+.boxes-holder-name a .officon::before  {
     filter: brightness(.15);
 }
 

@@ -6166,7 +6166,8 @@ a[data-title]:after,
 /* Gamemodes Images List Start */
 
 .typesinside .cs2::before,
-.main-mode.betting .main-mode-icon::before {
+.main-mode.betting .main-mode-icon::before,
+.boxes-holder-modes.esports .officon::before {
     background-image: url(/img/icons/gamemodes/esports.webp);
 }
 
@@ -6175,7 +6176,8 @@ a[data-title]:after,
 }
 
 .typesinside .slots::before,
-.main-mode.casino .main-mode-icon::before {
+.main-mode.casino .main-mode-icon::before,
+.boxes-holder-modes.slots .officon::before  {
     background-image: url(/img/icons/gamemodes/slots.webp);
 }
 
@@ -6204,28 +6206,34 @@ a[data-title]:after,
 }
 
 .typesinside .roulette::before,
-.main-mode.classic .main-mode-icon::before {
+.main-mode.classic .main-mode-icon::before,
+.boxes-holder-modes.roulette .officon::before {
     background-image: url(/img/icons/gamemodes/roulette.webp);
 }
 
-.typesinside .jackpot::before {
+.typesinside .jackpot::before,
+.boxes-holder-modes.jackpot .officon::before {
     background-image: url(/img/icons/gamemodes/jackpot.webp);
 }
 
-.typesinside .crash::before {
+.typesinside .crash::before,
+.boxes-holder-modes.crash .officon::before {
     background-image: url(/img/icons/gamemodes/crash.webp);
 }
 
-.typesinside .coinflip::before {
+.typesinside .coinflip::before,
+.boxes-holder-modes.coinflip .officon::before {
     background-image: url(/img/icons/gamemodes/coinflip.webp);
 }
 
 .typesinside .cases::before,
-.main-mode.cases .main-mode-icon::before {
+.main-mode.cases .main-mode-icon::before,
+.boxes-holder-modes.cases .officon::before {
     background-image: url(/img/icons/gamemodes/cases.webp);
 }
 
-.typesinside .casebattles::before {
+.typesinside .casebattles::before,
+.boxes-holder-modes.casebattles .officon::before {
     background-image: url(/img/icons/gamemodes/casebattles.webp);
 }
 
@@ -8935,6 +8943,10 @@ div#results {
 .boxes-holder-name a:hover,
 .newest-boxes-more:hover {
     color: var(--white);
+}
+
+.boxes-holder-name a:hover .officon::before {
+    opacity: 1;
 }
 
 .boxes-holder-name {
@@ -12529,17 +12541,8 @@ div#results {
 }
 
 .boxes-holder-modes .officon::before {
-    background-image: url(/img/icons/gamemodes/esports.webp);
     margin-right: 7px;
     margin-left: -3px;
     height: 12px;
     width: 12px;
-}
-
-.boxes-holder-modes:nth-child(3) .officon::before {
-    background-image: url(/img/icons/gamemodes/roulette.webp);
-}
-
-.boxes-holder-modes:nth-child(4) .officon::before {
-    background-image: url(/img/icons/gamemodes/cases.webp);
 }
