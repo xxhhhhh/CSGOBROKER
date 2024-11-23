@@ -1126,9 +1126,10 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   
   var newDiv = document.createElement("div");
   newDiv.className = "vpn";
-  newDiv.textContent = "Требуется VPN";
+  newDiv.textContent = "Нужен VPN";
 
   var allowedIds = [
+    "HowlGG",
     "csgo500",
     "ClashGG",
     "CSGORoll",

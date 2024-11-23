@@ -4384,7 +4384,7 @@ nav img:active,
     position: absolute;
     top: unset;
     bottom: 0;
-    left: -8px;
+    left: -10px;
     transform: skewX(-20deg);
     border-radius: 5px 0 0 0;
     right: unset;
@@ -4472,6 +4472,10 @@ nav img:active,
 
 .boxes-holder .box:hover .logobg:has(div.vpn) .main-mode {
     bottom: 50px;
+}
+
+.boxes-holder.main-page .box:hover .logobg:has(div.vpn) .main-mode {
+    bottom: 10px;
 }
 
 .main-mode:hover .main-mode-box {
