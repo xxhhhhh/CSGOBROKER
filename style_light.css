@@ -202,11 +202,18 @@ h3,
 .table-credits,
 .table-unit,
 .table-unit .mpercent,
-.blog .instruction li  {
+.blog .instruction li,
+.mini-info,
+.siteblock.mirror .box.main .logobg .star_rating::before  {
     color: #1a1a1a;
 }
 
-#notexist .category-box .category-box-content span {
+.siteblock.mirror .box.main .logobg .star_rating::before {
+    opacity: 1;
+}
+
+#notexist .category-box .category-box-content span,
+.instruction-mirrors li a:hover {
     color: var(--white);
 }
 

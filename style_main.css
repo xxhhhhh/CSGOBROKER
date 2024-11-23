@@ -2646,7 +2646,7 @@ h3 {
 .mini-info .actual {
     position: relative;
     width: fit-content;
-    margin: 0 5px;
+    margin-left: 5px;
 }
 
 .mini-info .actual::before {
@@ -4780,7 +4780,8 @@ nav img:active,
 }
 
 .content button,
-.content button.copy::before {
+.content button.copy::before,
+.content .review-button.visit.mirror::before {
     background-color: rgb(26 26 26);
 }
 
@@ -4790,7 +4791,8 @@ nav img:active,
     background-color: #a81d34;
 }
 
-.content button.copy:hover {
+.content button.copy:hover,
+.content .review-button.visit.mirror:hover {
     transform: scale(1.09) !important;
 }
 
@@ -4800,7 +4802,9 @@ nav img:active,
 }
 
 .box.main .content button:hover,
-.box.main .content button:hover::before {
+.box.main .content button:hover::before,
+.box.main .content .review-button.visit.mirror:hover,
+.box.main .content .review-button.visit.mirror:hover::before {
     background-color: rgb(22 22 22);
     animation: none;
     filter: unset;
@@ -4819,7 +4823,9 @@ nav img:active,
 }
 
 .sitepage .content button.copy,
-.sitepage .content button.copy::before {
+.sitepage .content button.copy::before,
+.box.main .content .review-button.visit.mirror,
+.box.main .content .review-button.visit.mirror::before {
     background-color: var(--darkygray);
 }
 
@@ -4890,7 +4896,9 @@ nav img:active,
     display: none;
 }
 
-.content button.copy::before {
+.content button.copy::before,
+.content .review-button.visit.mirror::before,
+.box.main .content .review-button.visit.mirror::before {
     content: '';
     position: absolute;
     width: 20px;
@@ -4904,7 +4912,16 @@ nav img:active,
     top: 0;
 }
 
-.main-page .content button.copy::before {
+.content .review-button.visit.mirror::before,
+.box.main .content .review-button.visit.mirror::before {
+    transform: skewX(-20deg);
+    border-radius: 0 5px 5px 0;
+    left: unset;
+    right: -6px;
+}
+
+.main-page .content button.copy::before,
+.content .review-button.mirror::before {
     left: unset;
     right: -6px;
     transform: skewX(-20deg);
@@ -5315,12 +5332,14 @@ footer .centralizer .footer-content {
 }
 
 .content .review-button.mirror.visit {
-    padding-left: 8px;
-    padding-right: 8px;
+    height: 28px;
+    width: 28px;
     margin: 4px 0px;
     position: absolute;
     background-color: rgb(26 26 26);
-    right: 10px;
+    left: 12px;
+    top: 12px;
+    margin: 0;
 }
 
 .main-page .content .review-button.mirror.visit {
@@ -5328,18 +5347,24 @@ footer .centralizer .footer-content {
     backface-visibility: unset;
 }
 
-.box .content .review-button.mirror {
-    filter: none !important;
+.main-page .content .review-button.visit.mirror {
+    left: -2px;
+    top: 32px;
 }
 
-.content .review-button.mirror.visit::before {
-    content: unset !important;
+.box .content .review-button.mirror,
+.boxes-holder .box:hover .content .review-button.mirror {
+    filter: drop-shadow(0 1px 4px rgb(15 15 15)) blur(0);
 }
 
 .content .review-button.mirror.visit::after {
     content: url('/img/icons/gamemodes/mirror.svg');
     height: 15px;
     width: 15px;
+    opacity: .35;
+    position: absolute;
+    top: unset;
+    left: 10px;
 }
 
 @media screen and (max-width: 1900px) {
@@ -5358,7 +5383,9 @@ footer .centralizer .footer-content {
 .boxes-holder .box .content .review-button:not(.visit):hover::after,
 .boxes-holder .box .content .review-button.mirror:hover,
 .boxes-holder .box .content .review-button.mirror:hover::before,
-.boxes-holder .box .content .review-button.mirror:hover::after {
+.boxes-holder .box .content .review-button.mirror:hover::after,
+.boxes-holder .box .content button.copy:hover,
+.boxes-holder .box .content button.copy:hover::before {
     background-color: rgb(32 32 32);
 }
 
@@ -5366,7 +5393,7 @@ footer .centralizer .footer-content {
 .content .review-button:active::before,
 .content .review-button:active::after {
     background-color: #5a101c !important;
-    transition: all .09s ease-in-out;
+    transition: all .09s ease-in-out !important;
 }
 
 .newest-boxes .box .content {
@@ -5424,10 +5451,10 @@ footer .centralizer .footer-content {
 .mods-box {
     width: auto;
     height: auto;
-    position: absolute;
+    position: fixed;
     transition: opacity .15s ease-in-out;
-    left: -31px;
-    top: 13px;
+    left: 256px;
+    top: 163px;
     z-index: 2;
 }
 
@@ -6871,7 +6898,8 @@ a[data-title]:after,
     opacity: 1;
 }
 
-.box .content button.copy:hover::after {
+.box .content button.copy:hover::after,
+.box .content .review-button.mirror:hover::after {
     opacity: 1;
 }
 
@@ -8473,7 +8501,9 @@ div#results {
 }
 
 .main-page .content button,
-.main-page .content button.copy::before {
+.main-page .content button.copy::before,
+.main-page .content .review-button.visit.mirror,
+.main-page .content .review-button.visit.mirror::before {
     background-color: rgb(11 11 11);
 }
 
@@ -9761,8 +9791,11 @@ div#results {
     }
 
     .content button,
-    .content button.copy::before {
+    .content button.copy::before,
+    .content .review-button.mirror.visit,
+    .content .review-button.mirror.visit::before {
         background-color: rgb(11 11 11);
+        filter: none;
     }
 
     .boxes-holder .box .rating-case-single,
@@ -11936,14 +11969,32 @@ div#results {
         width: 200px;
     }
 
-    .main-page .content .review-button.mirror.visit {
-        display: none;
+    .main-page .content .review-button.visit.mirror {
+        top: -30px;
+        left: -8px;
     }
 
     .content .review-button.mirror.visit {
         display: flex;
         backface-visibility: visible;
         right: -30px;
+    }
+
+    .content .review-button.mirror.visit {
+        left: unset;
+        right: -55px;
+        top: 5px;
+    }
+
+    .content .review-button.visit.mirror::before {
+        left: -6px;
+        right: unset;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .content .review-button.mirror.visit::after {
+        left: unset;
+        right: 7px;
     }
 
     .boxes-holder {
@@ -12137,6 +12188,10 @@ div#results {
 
     .main-page .mods-box {
         order: -2;
+    }
+
+    .box.main .review-button.mirror {
+        display: none;
     }
 
     .main-page .mods-box.mods-box.skins-box {
@@ -12471,4 +12526,20 @@ div#results {
 
 .navigation-section.character {
     width: 90%;
+}
+
+.boxes-holder-modes .officon::before {
+    background-image: url(/img/icons/gamemodes/esports.webp);
+    margin-right: 7px;
+    margin-left: -3px;
+    height: 12px;
+    width: 12px;
+}
+
+.boxes-holder-modes:nth-child(3) .officon::before {
+    background-image: url(/img/icons/gamemodes/roulette.webp);
+}
+
+.boxes-holder-modes:nth-child(4) .officon::before {
+    background-image: url(/img/icons/gamemodes/cases.webp);
 }

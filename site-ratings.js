@@ -89,6 +89,7 @@ var ratings = {
     "CobaltLab":3.75,
     "Splits":3.125,
     "ChickenGG":3.5,
+    "Salad":3.75,
   };
   
   function addStarRating(boxId, rating) {
