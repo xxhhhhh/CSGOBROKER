@@ -1126,7 +1126,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   
   var newDiv = document.createElement("div");
   newDiv.className = "vpn";
-  newDiv.textContent = "Возможен VPN";
+  newDiv.textContent = "Требуется VPN";
 
   var allowedIds = [
     "csgo500",
@@ -1540,12 +1540,12 @@ function forcemodsboxes() {
         hi: "केस बैटल",
         es: "Batalla de Cajas",
       },
-      Casino: {
+      Slots: {
         ru: "",
         tr: "Kumarhane",
         pt: "Cassino",
         hi: "कैसिनो",
-        es: "Casino",
+        es: "Slots",
       },
       More: {
         ru: "",
