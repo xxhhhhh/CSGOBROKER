@@ -2640,7 +2640,8 @@ h3 {
     align-items: center;
     font-weight: 500;
     font-size: 15px;
-    margin-top: -20px;
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
 
 .mini-info .actual {
@@ -9753,7 +9754,7 @@ div#results {
     .mini-info {
         display: ruby;
         width: 85%;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     .boxes-holder .rating-case-single .star_rating {
