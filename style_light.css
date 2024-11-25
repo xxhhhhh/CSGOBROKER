@@ -206,7 +206,8 @@ h3,
 .mini-info,
 .siteblock.mirror .box.main .logobg .star_rating::before,
 .boxes-holder-name a:hover, 
-.newest-boxes-more:hover  {
+.newest-boxes-more:hover,
+.main-col-info .theme-col-info h3  {
     color: #1a1a1a;
 }
 
@@ -466,6 +467,10 @@ h3,
     background-color: rgb(225 225 225);
 }
 
+.email-copy button, .skin-copy button {
+    background-color: rgb(125, 125, 125);
+}
+
 .instruction-mirrors li a {
     border: 2px rgb(215 215 215) solid;
 }
@@ -675,9 +680,11 @@ ul .submenu li .nonredir,
 .submenu2 a:hover,
 .singlemod-box,
 .shortinfo,
-.payments-button {
+.payments-button,
+.main-col-info {
     color: #1a1a1a;
-    background-color: var(--main-theme);
+    background-color: unset;
+    background: var(--main-theme);
 }
 
 .mods-box.skins-box .singlemod-box {

@@ -350,7 +350,7 @@ nav .pages {
     height: auto;
     width: 95%;
     background: linear-gradient(15deg, var(--darkygray) 30%, rgba(0, 0, 0, .15) 100%);
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 10px;
     padding: 30px;
 }
@@ -393,7 +393,7 @@ nav .pages {
 }
 
 .main-col-info-upd p {
-    padding: 5px 5px 0 24px;
+    padding: 5px 5px 0 18px;
     color: rgba(255, 255, 255, .7);
     font-weight: 400;
     font-size: 15px;
@@ -401,7 +401,7 @@ nav .pages {
 }
 
 .text-col-info ul {
-    padding: 5px 5px 0 24px;
+    padding: 5px 5px 0 18px;
     color: rgba(255, 255, 255, .7);
     font-weight: 400;
     font-size: 15px;
@@ -2243,6 +2243,10 @@ h3 {
 
 .boxreview:has(.features.bonused) {
     margin-top: 56px;
+}
+
+.boxreview#mirror {
+    min-height: 725px;
 }
 
 .gamemodes {
@@ -9311,7 +9315,7 @@ div#results {
 }
 
 .blog .text-col-info ul {
-    padding: 5px 0;
+    padding: 5px 5px 0 8px;
 }
 
 .blog .topic-screenshot {
@@ -9418,6 +9422,11 @@ div#results {
 
 .text-col-info-theme {
     position: relative;
+    margin-left: 10px;
+}
+
+.blog .text-col-info-theme {
+    margin-left: 0;
 }
 
 .instruction h3::before,
@@ -11123,6 +11132,10 @@ div#results {
         padding-top: 0;
     }
 
+    .sitepage:has(.boxdefaultpage) {
+        margin-top: 68px;
+    }
+
     .sitepage.topic-craft {
         padding-top: 7px;
     }
@@ -11299,7 +11312,8 @@ div#results {
         order: 2;
     }
 
-    .text-col-info-theme {
+    .text-col-info-theme,
+    .blog .text-col-info-theme {
         margin-left: 30px;
         margin-bottom: 5px;
     }
@@ -11391,6 +11405,10 @@ div#results {
 
     .boxes-holder-section {
         background: var(--darkygray);
+    }
+
+    .table-unit .mpercent {
+        display: none;
     }
 
     .mods-box.skins-box .singlemod-box:hover {
