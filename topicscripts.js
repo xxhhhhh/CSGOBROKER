@@ -18,6 +18,7 @@ $(document).ready(function () {
       currentPath.includes("/topic/cases/") ||
       currentPath.includes("/topic/collections/") ||
       currentPath.includes("/topic/skins/") ||
+      currentPath.includes("/topic/guides/") ||
       currentPath.includes("/topic/sticker-crafts/")
     ) {
       let enabledFiltersState = {};
