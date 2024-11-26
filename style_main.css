@@ -9863,7 +9863,9 @@ div#results {
     }
 
     .info-block {
-        order: -1;
+        order: -2;
+        width: 90%;
+        margin-top: -10px;
     }
 
     #theme-toggle,
