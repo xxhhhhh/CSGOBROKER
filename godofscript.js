@@ -196,6 +196,10 @@ forcemodsboxes();
                 visitButton.href = data["buy-skins"];
             } else if (window.location.pathname.includes("/sell-skins") && data["sell-skins"]) {
                 visitButton.href = data["sell-skins"];
+            } else if (window.location.pathname.includes("/ru/earning/earn-by-play") || window.location.pathname.includes("/ru/csgo/earn-by-play-csgo") && data["earn-by-play"]) {
+                visitButton.href = data["earn-by-play"];
+            } else if (window.location.pathname.includes("/earn-by-play") && data["earn-by-play-en"]) {
+              visitButton.href = data["earn-by-play-en"];
             } else {
                 visitButton.href = data.link;
             }
