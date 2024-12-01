@@ -7988,9 +7988,12 @@ div#results {
     margin: auto 0;
 }
 
-.sitepage.topic-craft .topic-box .logobg.zoomed img,
-.box-topic.sticker .topic-box .logobg.zoome img {
+.sitepage.topic-craft .topic-box .logobg.zoomed img {
     max-height: 155%;
+}
+
+.box-topic.sticker .topic-box .logobg.zoomed img {
+    max-height: 65%;
 }
 
 .box-topic.sticker .topic-box .logobg img {
