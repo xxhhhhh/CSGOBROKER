@@ -39,7 +39,8 @@
 .bonus_info::before,
 .settings-menu,
 #back-to-top-btn,
-.main-mode {
+.main-mode,
+.mini-info {
     background: var(--opacback) !important;
 }
 
@@ -350,7 +351,8 @@ h3,
     filter: drop-shadow(0 1px 2px rgb(120 120 120)) blur(0);
 }
 
-.main-page .box .logobg .best {
+.main-page .box .logobg .best,
+.newest-boxes .box .logobg .best {
     filter: none;
 }
 
@@ -471,7 +473,8 @@ h3,
     background-color: rgb(125, 125, 125);
 }
 
-.instruction-mirrors li a {
+.instruction-mirrors li a,
+.mini-info {
     border: 2px rgb(215 215 215) solid;
 }
 
@@ -810,12 +813,14 @@ ul .submenu li .nonredir,
 }
 
 .sitepage .content button.copy, .sitepage .content button.copy::before,
-.box.main .content button:hover, .box.main .content button:hover::before {
+.box.main .content button:hover, .box.main .content button:hover::before,
+.box .content .review-button.mirror {
     background-color: rgb(225 225 225);
     filter: none;
 }
 
-.box.main .content button.copy::after {
+.box.main .content button.copy::after,
+.content .review-button.mirror.visit::after {
     filter: brightness(.1);
 }
 

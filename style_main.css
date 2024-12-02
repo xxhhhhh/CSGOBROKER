@@ -2638,7 +2638,6 @@ h3 {
 }
 
 .mini-info {
-    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2646,6 +2645,23 @@ h3 {
     font-size: 15px;
     margin-top: -10px;
     margin-bottom: 10px;
+    background-color: rgb(21 21 21);
+    border: 2px #181818 solid;
+    padding: 15px 30px;
+    border-radius: 10px;
+    width: auto;
+}
+
+.mini-info .stronged {
+    margin-left: 3px;
+    text-decoration: none;
+    color: rgb(155, 155, 155);
+    font-weight: 600;
+    transition: all .15s ease-in-out;
+}
+
+.mini-info a:hover {
+    color: var(--main-color);
 }
 
 .mini-info .actual {
@@ -10062,7 +10078,7 @@ div#results {
     }
 
     .instruction-mirrors li {
-        width: 75%;
+        width: 85%;
     }
 
     .instruction-mirrors {
