@@ -2572,8 +2572,10 @@ h3 {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
-    align-items: center;
     width: 98%;
+    height: 300px;
+    align-content: center;
+    align-items: center;
 }
 
 .instruction-mirrors h2 {
@@ -2596,9 +2598,9 @@ h3 {
 }
 
 .instruction-mirrors li {
-    padding: 10px 5px;
+    padding: 8px;
     display: flex;
-    width: 60%;
+    width: 350px;
 }
 
 .instruction-mirrors li a:hover {
@@ -2609,10 +2611,10 @@ h3 {
 }
 
 .instruction-mirrors li a {
-    padding: 15px 10px;
+    padding: 15px 50px;
     background-color: rgb(21 21 21);
     border: 2px #181818 solid;
-    transition: ease-in-out all .2s;
+    transition: ease-in-out all .15s;
     text-align: center;
     border-radius: 10px;
     font-weight: 600;
@@ -9772,6 +9774,11 @@ div#results {
         border: 1px rgba(255, 255, 255, .45) solid;
     }
 
+    .instruction-mirrors ol {
+        height: auto;
+        flex-wrap: nowrap;
+    }
+
     .selected-lang {
         color: rgba(255, 255, 255, .45);
     }
@@ -11495,7 +11502,7 @@ div#results {
     }
 
     .features {
-        width: 95%;
+        width: 85%;
         margin-top: 14px;
     }
 
