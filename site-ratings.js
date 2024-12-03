@@ -14,7 +14,7 @@ var ratings = {
     "HellStore":2.875,
     "CSGOStake":2.875,
     "CSGOPOSITIVE":3.875,
-    "Hellcase":3.375,
+    "Hellcase":3.625,
     "Bounty Stars":3,
     "CSGOBIG":3.125,
     "KNIFEX":3,
