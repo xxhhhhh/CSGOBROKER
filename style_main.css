@@ -9792,9 +9792,16 @@ div#results {
     }
 
     .mini-info {
-        display: ruby;
-        width: 85%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 90%;
         margin-bottom: 20px;
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .mini-info .stronged {
+        font-size: 13px;
     }
 
     .boxes-holder .rating-case-single .star_rating {
@@ -12040,6 +12047,7 @@ div#results {
     .main-page .content .review-button.visit.mirror {
         top: -30px;
         left: -8px;
+        display: none;
     }
 
     .content .review-button.mirror.visit {
