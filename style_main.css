@@ -1042,7 +1042,7 @@ nav .pages {
 
 .site-searcher-box[data-title]:after {
     border: none;
-    margin-top: -100px;
+    margin-top: -90px;
     background-color: unset;
     padding: 0;
     font-size: 14px;
@@ -8131,6 +8131,9 @@ div#results {
     transition: all .2s ease-in-out;
     background-color: #0e0e0e;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .transparent .preview-craft-unit {
@@ -8170,7 +8173,8 @@ div#results {
 }
 
 .preview-craft img {
-    width: 100%;
+    width: auto;
+    height: 100%;
     border-radius: 5px;
 }
 
@@ -10210,6 +10214,10 @@ div#results {
         bottom: 50px;
     }
 
+    .main-page .box .logobg:has(div.vpn) .main-mode {
+        bottom: 10px;
+    }
+
     .boxes-holder .box .logobg .vpn,
     .boxes-holder .box .logobg .vpn::before {
         background: rgb(17 17 17);
@@ -10487,17 +10495,17 @@ div#results {
     }
 
     .box-topic.sticker {
-        border-radius: 5px;
         width: 48%;
         margin: 6px 3px 0 3px !important;
         height: 190px;
-        overflow: hidden;
+        min-height: unset;
         padding-bottom: 10px;
     }
 
     .box-topic.sticker .navigation-section.first span {
         font-size: 11px;
         white-space: nowrap;
+        text-transform: none;
     }
 
     .box-topic.sticker .navigation-section.first,
@@ -10518,7 +10526,7 @@ div#results {
 
     .box-topic.sticker .topic-box {
         position: relative;
-        height: 100px;
+        height: 90px;
     }
 
     .box-topic.sticker .navigation-section.second span {
@@ -10564,7 +10572,7 @@ div#results {
 
     .introduce-craft p {
         width: 90%;
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .topic-boxes-holder {
@@ -12351,7 +12359,7 @@ div#results {
     }
 
     .main-page .box .content p:nth-child(2) {
-        width: 90% !important;
+        width: 75% !important;
         font-size: 12px;
         margin-top: 15px;
         height: auto;
