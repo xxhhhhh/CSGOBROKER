@@ -505,6 +505,9 @@ forcemodsboxes();
           case 'tr':
               alternatesTitle = `En İyi ${mainSiteName} Alternatifleri`;
               break;
+          case 'es':
+              alternatesTitle = `Mejores Alternativas a ${mainSiteName}`;
+              break;
           case 'pl':
               alternatesTitle = `Najlepsze alternatywy dla ${mainSiteName}`;
               break;
@@ -692,7 +695,7 @@ forcemodsboxes();
     }
     
     function createLanguageListItem(lang, path) {
-        return '<li><a href="' + path + '" class="lang-switch" data-lang="' + lang + '"><i class="flagbox flag-' + lang + '"></i>' + getLanguageName(lang) + '</a></li>';
+        return '<li><a href="' + path + '" class="lang-switch lang-' + lang + '" data-lang="' + lang + '"><i class="flagbox"></i>' + '</a></li>';
     }
     
     function checkAndAddLanguage(lang) {
@@ -1795,6 +1798,12 @@ document.addEventListener("DOMContentLoaded", function() {
           sitedetails: 'Ödeme Yöntemleri',
           sitealternates: 'Benzer Siteler'
       },
+      es: {
+        plusminus: 'Pros y Contras',
+        screentable: 'Capturas de Pantalla y Modos',
+        sitedetails: 'Métodos de Pago',
+        sitealternates: 'Sitios Similares'
+      },    
       pl: {
         plusminus: 'Pros and Cons',
         screentable: 'Screenshots and Modes',

@@ -7438,32 +7438,60 @@ i.flagbox {
     margin-right: 6px;
 }
 
-i.flag-ru {
+.lang-switch.lang-ru i {
     background-image: url(/img/icons/flags/ru.svg);
 }
 
-i.flag-en {
+.lang-switch.lang-en i {
     background-image: url(/img/icons/flags/uk.svg);
 }
 
-i.flag-pt {
+.lang-switch.lang-pt i {
     background-image: url(/img/icons/flags/pt.svg);
 }
 
-i.flag-es {
+.lang-switch.lang-es i {
     background-image: url(/img/icons/flags/es.svg);
 }
 
-i.flag-tr {
+.lang-switch.lang-tr i {
     background-image: url(/img/icons/flags/tr.svg);
 }
 
-i.flag-hi {
+.lang-switch.lang-hi i {
     background-image: url(/img/icons/flags/hi.svg);
 }
 
-i.flag-pl {
+.lang-switch.lang-pl i {
     background-image: url(/img/icons/flags/pl.svg);
+}
+
+.lang-switch.lang-ru::after {
+    content: 'Русский';
+}
+
+.lang-switch.lang-en::after {
+    content: 'English';
+}
+
+.lang-switch.lang-pt::after {
+    content: 'Português';
+}
+
+.lang-switch.lang-es::after {
+    content: 'Español';
+}
+
+.lang-switch.lang-tr::after {
+    content: 'Türkçe';
+}
+
+.lang-switch.lang-hi::after {
+    content: 'हिन्दी';
+}
+
+.lang-switch.lang-pl::after {
+    content: 'Polski';
 }
 
 .site-list li a {
