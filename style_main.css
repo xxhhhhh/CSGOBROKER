@@ -6177,6 +6177,10 @@ a[data-title]:after,
     right: -9px;
 }
 
+.features .featuresbox .typesinside a:last-child::after {
+    transform: none;
+}
+
 .gamemodes .featuresbox .typesinside a::before {
     content: '';
     height: 22px;

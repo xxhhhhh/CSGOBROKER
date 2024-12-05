@@ -1539,7 +1539,7 @@ function forcemodsboxes() {
         hi: "साइन अप बोनस",
         es: "Bonos de Registro",
       },
-      Betting: {
+      "Match Betting": {
         ru: "Ставки на Матчи",
         tr: "Maç Bahisleri",
         pt: "Apostas em Partidas",
