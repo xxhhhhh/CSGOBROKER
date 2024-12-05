@@ -716,7 +716,45 @@ forcemodsboxes();
     supportedLanguages.forEach(function(lang) {
         checkAndAddLanguage(lang);
     });
-    
+  }
+
+  if (
+    window.location.pathname.includes("/mirrors/") ||
+    window.location.pathname.includes("/reviews/") ||
+    window.location.pathname.includes("/topic")
+  ) {
+    const langMenuDiv = document.querySelector(".lang-menu");
+  
+    function updateLangSwitches() {
+      const langSwitches = langMenuDiv.querySelectorAll(".lang-switch");
+  
+      langSwitches.forEach((switchEl) => {
+        const lang = switchEl.dataset.lang;
+        const path =
+          lang === "en"
+            ? window.location.pathname.replace(/^\/[a-z]{2}\//, "/")
+            : "/" + lang + window.location.pathname.replace(/^\/[a-z]{2}\//, "/");
+  
+        if (!switchEl.href || switchEl.href !== path) {
+          switchEl.href = path;
+        }
+  
+        if (!switchEl.classList.contains(`lang-${lang}`)) {
+          switchEl.classList.add(`lang-${lang}`);
+        }
+  
+        if (!switchEl.querySelector("i.flagbox")) {
+          const flagBox = document.createElement("i");
+          flagBox.classList.add("flagbox");
+          switchEl.appendChild(flagBox);
+        }
+      });
+    }
+  
+    const selectedLangDiv = document.querySelector(".selected-lang");
+    langMenuDiv.prepend(selectedLangDiv);
+  
+    updateLangSwitches();
   }
 
 var ratingsumm = document.querySelector(".ratingsumm");
