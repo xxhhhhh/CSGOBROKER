@@ -539,6 +539,8 @@ forcemodsboxes();
                   rewardText = altData.reward_ru;
               } else if (languageTag === 'tr' && altData.reward_tr) {
                   rewardText = altData.reward_tr;
+              } else if (languageTag === 'es' && altData.reward_es) {
+                  rewardText = altData.reward_es;
               } else if (languageTag === 'pl' && altData.reward_pl) {
                   rewardText = altData.reward_pl;
               }
