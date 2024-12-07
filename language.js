@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 updateReviewButtons(box, data, pageKey);  
   
-                if (isPageInTurkish()) {
+                if (isPageInAvaliable()) {
                   updateURLs(sitesList);
                 }
             });
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
             updateURLs(sitesList);
   
-            if (isPageInTurkish()) {
+            if (isPageInAvaliable()) {
               updateURLs(sitesList);
             }
           }
@@ -218,9 +218,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 800);
   }
   
-  function isPageInTurkish() {
+  function isPageInAvaliable() {
     var path = window.location.pathname;
-    return path.startsWith('/tr/') || path.endsWith('/tr') || path.endsWith('/tr.html');
+    return path.startsWith('/tr/') || path.endsWith('/tr') || path.endsWith('/tr.html') || path.startsWith('/es/') || path.endsWith('/es') || path.endsWith('/es.html');
   }
   
   var boxesHolderElement = document.querySelector('.boxes-holder');

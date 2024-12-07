@@ -60,7 +60,7 @@ forcemodsboxes();
         return;
       }
   
-      if (languageTag === 'tr' && link.classList.contains('mirror-redirect')) {
+      if (languageTag === 'tr' && link.classList.contains('mirror-redirect') || languageTag === 'es' && link.classList.contains('mirror-redirect')) {
         return;
       }
   
@@ -87,7 +87,7 @@ forcemodsboxes();
       }
   
       if (!link.classList.contains('visit') && !link.classList.contains('notupdt')) {
-        if (languageTag === 'es' || languageTag === 'pt' || languageTag === 'hi') {
+        if (languageTag === 'pt' || languageTag === 'hi') {
           if (!link.classList.contains('review-button') && !link.classList.contains('boxtitle') && !link.closest('.box')) {
             link.setAttribute('href', href);
           }
@@ -729,6 +729,16 @@ forcemodsboxes();
       const langSwitches = langMenuDiv.querySelectorAll(".lang-switch");
   
       langSwitches.forEach((switchEl) => {
+
+        if (switchEl.classList.contains("lang-pl")) {
+          if (!switchEl.querySelector("i.flagbox")) {
+            const flagBox = document.createElement("i");
+            flagBox.classList.add("flagbox");
+            switchEl.appendChild(flagBox);
+          }
+          return;
+        }
+
         const lang = switchEl.dataset.lang;
         const path =
           lang === "en"
@@ -1177,7 +1187,6 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
 
   var allowedIds = [
     "HowlGG",
-    "csgo500",
     "ClashGG",
     "CSGORoll",
     "DMarket",
