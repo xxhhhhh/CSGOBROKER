@@ -1195,7 +1195,6 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
     "Primedice",
     "Duelbits",
     "FlameCases",
-    "BCGame",
     "DaddySkins",
     "FarmSkins",
     "RustyPot",
