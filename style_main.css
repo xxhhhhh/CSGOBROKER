@@ -3471,6 +3471,14 @@ nav #logo:hover {
     transition: all .15s ease-in-out;
 }
 
+.lang-ru .partner-site::before {
+    content: 'Партнер';
+}
+
+.lang-es .partner-site::before {
+    content: 'Filial';
+}
+
 .partner-site:hover::before {
     transform: rotate(-25deg);
 }
@@ -12543,7 +12551,7 @@ div#results {
     display: flex;
     justify-content: center;
     background-color: rgb(9 9 9);
-    margin: 94px 0;
+    margin: 6px 4px;
     border-radius: 10px;
     height: auto;
 }
@@ -12557,7 +12565,7 @@ div#results {
 }
 
 .character-items-list {
-    position: absolute;
+    position: relative;
     display: flex;
     height: 800px;
     width: auto;
@@ -12566,18 +12574,22 @@ div#results {
     flex-wrap: wrap;
     flex-grow: 1;
     max-height: -webkit-fill-available;
-    bottom: 90px;
-    top: 90px;
+}
+
+.sitepage.topic-craft .box-skins.character .slick-slider {
+    margin-top: 2px;
 }
 
 .character-items-list.left {
     left: 0;
     width: 276px;
+    margin: 2px 0;
 }
 
 .character-items-list.right {
     right: 0;
     width: 276px;
+    margin: 2px 0;
 }
 
 .character-items-list.top {

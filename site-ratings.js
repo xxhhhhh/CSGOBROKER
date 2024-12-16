@@ -50,7 +50,7 @@ var ratings = {
     "Shuffle":3.625,
     "RustyPot":3.5,
     "RustBet":3,
-    "Rustyloot":3.5,
+    "Rustyloot":3.75,
     "RustChance":3.5,
     "CSGOPolygon":3.375,
     "Skinbet":3.375,
