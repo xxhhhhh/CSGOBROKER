@@ -45,11 +45,17 @@
 }
 
 .box-topic .topic-box,
-.box-topic .topic-box:hover {
+.box-topic .topic-box:hover,
+#color-list {
     background: var(--main-theme) !important;
 }
 
-.box-topic .topic-box .logobg {
+#color-list li {
+    background: unset
+}
+
+.box-topic .topic-box .logobg,
+.box-topic .skin img {
     background-color: unset !important;
     filter: drop-shadow(0px 0px 3px rgb(100 100 100));
 }
@@ -208,7 +214,10 @@ h3,
 .siteblock.mirror .box.main .logobg .star_rating::before,
 .boxes-holder-name a:hover, 
 .newest-boxes-more:hover,
-.main-col-info .theme-col-info h3  {
+.main-col-info .theme-col-info h3,
+.color-box-selection-button,
+.color-box-selection-button:hover,
+.color-box-selection-button.clicked  {
     color: #1a1a1a;
 }
 
@@ -403,9 +412,10 @@ h3,
 .box .content,
 .newest-boxes .box,
 #rec-box-content,
-.sitepage.topic-craft .component-box,
+.box-topic .skin,
 .singlemod-select::before,
-.box .logobg .main-mode-box {
+.box .logobg .main-mode-box,
+.box-topic::after {
     background-color: #f2f2f2 !important;
     background: unset;
 }
@@ -415,9 +425,11 @@ h3,
 }
 
 #rec-box-content,
-.box-topic.sticker .component-box,
-.sitepage.topic-craft .component-box {
+.box-topic .skin,
+.box-topic::after,
+#color-list.active {
     filter: drop-shadow(0 0 1px rgb(200 200 200));
+    box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
     border: unset;
 }
 
@@ -440,7 +452,7 @@ h3,
 .gamemodes .featuresbox::before,
 .gamemodes .featuresbox,
 .alternates-title,
-.box-topic.sticker .component-box,
+.box-topic.sticker .skin,
 .crafting-table-step,
 .crafting-table-step:hover,
 #notexist .category-box .category-box-logo,
@@ -467,6 +479,10 @@ h3,
 
 .email-copy button, .skin-copy button {
     background-color: rgb(125, 125, 125);
+}
+
+.color-box-selection-button {
+    background: linear-gradient(180deg, var(--opacback) 0%, var(--main-theme) 100%);
 }
 
 .instruction-mirrors li a,
@@ -589,6 +605,14 @@ h3,
 
 .preview-craft-unit {
     opacity: .8;
+}
+
+.transparent .preview-craft-unit {
+    opacity: .9;
+}
+
+.preview-craft-unit:hover {
+    opacity: 1;
 }
 
 .methodlist ::before {

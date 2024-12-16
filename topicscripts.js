@@ -19,7 +19,9 @@ $(document).ready(function () {
       currentPath.includes("/topic/collections/") ||
       currentPath.includes("/topic/skins/") ||
       currentPath.includes("/topic/guides/") ||
-      currentPath.includes("/topic/sticker-crafts/")
+      currentPath.includes("/topic/sticker-crafts/") ||
+      currentPath.endsWith("sticker-crafts.html") ||
+      currentPath.endsWith("sticker-crafts")
     ) {
       let enabledFiltersState = {};
       let sortState = "normal";
@@ -105,7 +107,6 @@ $(document).ready(function () {
         const skinsOnPage = $(".skin");
         const weaponToSkinIds = {};
     
-        // Собираем информацию о скинах
         skinsOnPage.each(function () {
             const weapon = $(this).attr("weapon");
             const skinId = $(this).attr("skin-id");
@@ -129,13 +130,13 @@ $(document).ready(function () {
                                 <img src="${skinData.image}" draggable="false" alt="${skinData.name}">
                                 <div class="skin-desc-name">${skinData.name}</div>
                             </div>`;
-                        const existingSkin = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`)[0];
-                        if (existingSkin) {
-                            $(existingSkin).replaceWith(newSkinHTML);
-                        }
-                    }
-                });
-            }));
+                            
+                            $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function() {
+                              $(this).replaceWith(newSkinHTML);
+                          });
+                      }
+                  });
+              }));
     
             $(".skin img").each(function () {
               if (this.complete) {
@@ -208,7 +209,7 @@ $(document).ready(function () {
 
         skinTypes.forEach((type) => {
           const allNotExist = $(
-            `.box-skins-list .skin.${type}, .box-topic .component-interact.${type}`
+            `.box-skins-list .skin.${type}`
           )
             .toArray()
             .every((element) => $(element).hasClass("notexist"));
@@ -217,12 +218,12 @@ $(document).ready(function () {
           if (allNotExist) {
             navigationType.removeClass("enabled").addClass("notexist");
             $(
-              `.box-skins-list .skin.${type}, .box-topic .component-interact.${type}`
+              `.box-skins-list .skin.${type}`
             ).addClass("disabled");
           } else {
             navigationType.addClass("enabled").removeClass("notexist");
             $(
-              `.box-skins-list .skin.${type}, .box-topic .component-interact.${type}`
+              `.box-skins-list .skin.${type}`
             ).removeClass("disabled");
           }
         });
@@ -271,13 +272,11 @@ $(document).ready(function () {
 
         if ($(element).hasClass("skin")) {
           skinClasses = $(element).attr("class").split(" ");
-        } else if ($(element).hasClass("component-interact")) {
-          skinClasses = ["component-interact"];
         }
 
         const skinBox = $(element).closest(".box-skins-list, .box-topic");
         const visibleItems = skinBox.find(
-          ".skin:not(.disabled), .component-interact:not(.disabled)"
+          ".skin:not(.disabled)"
         );
         const totalItems = visibleItems.length;
         const itemName = element.querySelector(".skin-desc-name")
@@ -291,7 +290,7 @@ $(document).ready(function () {
         });
 
         skinClasses.forEach((skinClass) => {
-          if (!["skin", "component-interact"].includes(skinClass)) {
+          if (!["skin"].includes(skinClass)) {
             previewWindow.addClass(skinClass);
           }
         });
@@ -319,9 +318,7 @@ $(document).ready(function () {
           .off("click")
           .on("click", function () {
             const selectedSite = this.id;
-            const searchName = $(element).hasClass("component-interact")
-              ? $(element).data("title")
-              : itemName;
+            const searchName = itemName;
             const searchUrl = generateSearchUrl(searchName, selectedSite);
             window.open(searchUrl, "_blank");
           });
@@ -346,7 +343,7 @@ $(document).ready(function () {
         );
         const currentBox = $(".box-skins-list, .box-topic").eq(currentBoxIndex);
         const visibleItems = currentBox.find(
-          ".skin:not(.disabled), .component-interact:not(.disabled)"
+          ".skin:not(.disabled)"
         );
         const totalItems = visibleItems.length;
         let newIndex =
@@ -359,7 +356,7 @@ $(document).ready(function () {
         previewWindow.attr("data-current-index", newIndex);
       }
 
-      $(document).on("click", ".skin, .component-interact", function () {
+      $(document).on("click", ".skin", function () {
         showPreviewWindow(this);
       });
 
