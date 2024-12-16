@@ -1186,7 +1186,7 @@ if ((window.location.pathname.startsWith('/ru/') || window.location.pathname ===
   newDiv.textContent = "Нужен VPN";
 
   var allowedIds = [
-    "csgo500",
+    "Shuffle",
     "HowlGG",
     "ClashGG",
     "CSGORoll",

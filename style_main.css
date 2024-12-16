@@ -8124,7 +8124,7 @@ div#results {
 
 .box-topic.sticker {
     background: var(--darkygray);
-    margin: 18px 9px 0 9px !important;
+    margin: 18px 9px 0 9px;
     cursor: pointer;
     text-decoration: none !important;
     top: 0;
@@ -10523,7 +10523,7 @@ div#results {
 
     .box-topic.sticker {
         width: 48%;
-        margin: 6px 3px 0 3px !important;
+        margin: 6px 3px 0 3px;
         height: 190px;
         min-height: unset;
         padding-bottom: 10px;
@@ -12648,4 +12648,71 @@ div#results {
     margin-left: -3px;
     height: 12px;
     width: 12px;
+}
+
+.sticker-crafts-list {
+    display: flex;
+    position: relative;
+    margin-bottom: 8px;
+    height: 0;
+    transition: all .15s ease-in-out;
+    width: 100%;
+}
+
+.sticker-crafts-list.imported {
+    height: 110px;
+}
+
+.sitepage.topic-craft .sticker-crafts-list .box-topic {
+    top: unset;
+    margin: 0 4px;
+    width: 25%;
+    height: 110px;
+    min-height: unset;
+}
+
+.sitepage.topic-craft .sticker-crafts-list .box-topic:first-child {
+    margin-left: unset;
+}
+
+.sitepage.topic-craft .sticker-crafts-list .box-topic:last-child {
+    margin-right: unset;
+}
+
+.sticker-crafts-list .box-topic .navigation-section.first,
+.sticker-crafts-list .box-topic .navigation-section.second,
+.sticker-crafts-list .box-topic .navigation-section.third {
+    display: none;
+}
+
+.sticker-crafts-list .box-topic.sticker .topic-box .logobg.zoomed img,
+.sticker-crafts-list .box-topic.sticker .topic-box .logobg img {
+    max-height: 55%;
+}
+
+.sticker-crafts-list .box-topic.sticker:hover {
+    transform: scale(1) translateZ(0);
+}
+
+.sitepage.topic-craft .sticker-crafts-list .box-topic .topic-box {
+    width: 100%;
+}
+
+@media screen and (max-width: 1365px) {
+    .sitepage.topic-craft .sticker-crafts-list .box-topic {
+        margin: 0 2px;
+        height: 80px;
+    }
+
+    .sticker-crafts-list {
+        margin-bottom: 4px;
+    }
+
+    .sticker-crafts-list.imported {
+        height: 80px;
+    }
+
+    .sitepage.topic-craft .sticker-crafts-list .box-topic:nth-child(5) {
+        display: none;
+    }
 }

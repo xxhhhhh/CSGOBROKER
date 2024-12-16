@@ -976,3 +976,77 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 });
+
+if (window.location.pathname.includes('/sticker-crafts/')) {
+  const languageTag = document.documentElement.lang || 'en';
+  const topicUrl = languageTag === 'ru' 
+      ? '/ru/topic/sticker-crafts.html' 
+      : '/topic/sticker-crafts.html';
+
+  async function importStickerCrafts() {
+      try {
+          const response = await fetch(topicUrl);
+          if (!response.ok) {
+              return;
+          }
+
+          const text = await response.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(text, 'text/html');
+
+          const topicBoxesHolder = doc.querySelector('.topic-boxes-holder');
+          if (!topicBoxesHolder) {
+              return;
+          }
+
+          const boxTopics = Array.from(topicBoxesHolder.querySelectorAll('.box-topic'));
+          if (boxTopics.length === 0) {
+              return;
+          }
+
+          const currentPageSpan = document.querySelector('.siteblock .box-topic .navigation-section.first span');
+          const currentPageText = currentPageSpan ? currentPageSpan.textContent.trim() : '';
+
+          const filteredTopics = boxTopics.filter(box => {
+              const span = box.querySelector('.navigation-section.first span');
+              const spanText = span ? span.textContent.trim() : '';
+              return spanText !== currentPageText;
+          });
+
+          if (filteredTopics.length === 0) {
+              return;
+          }
+
+          const randomTopics = filteredTopics.sort(() => 0.5 - Math.random()).slice(0, 5);
+
+          const skinInspectPlaceholder = document.querySelector('.skininspect-placeholder');
+          const craftingTable = document.querySelector('.crafting-table');
+
+          if (!craftingTable) {
+              return;
+          }
+
+          const stickerCraftsList = document.createElement('div');
+          stickerCraftsList.classList.add('sticker-crafts-list');
+
+          randomTopics.forEach(box => {
+              stickerCraftsList.appendChild(box.cloneNode(true));
+          });
+
+          if (skinInspectPlaceholder) {
+              skinInspectPlaceholder.insertAdjacentElement('afterend', stickerCraftsList);
+          } else {
+              craftingTable.insertAdjacentElement('afterend', stickerCraftsList);
+          }
+
+          setTimeout(() => {
+              stickerCraftsList.classList.add('imported');
+          }, 150);
+
+      } catch (error) {
+          return;
+      }
+  }
+
+  importStickerCrafts();
+}
