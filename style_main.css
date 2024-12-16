@@ -3213,7 +3213,8 @@ nav #logo:hover {
     overflow: hidden;
     margin-top: 4px;
     padding: 0 4px;
-    padding-bottom: 4px
+    padding-bottom: 4px;
+    min-height: 500px;
 }
 
 .item-box-topic {
@@ -11702,6 +11703,7 @@ div#results {
         padding-left: 0;
         margin-top: unset;
         padding: 0;
+        min-height: 300px;
     }
 
     .menu-toggle {
@@ -11920,6 +11922,7 @@ div#results {
 
     .sitepage.items .skin.disabled {
         width: 0 !important;
+        flex-grow: 0;
     }
 
     .box-skins.solo:nth-child(2) .skin img {

@@ -104,54 +104,55 @@ $(document).ready(function () {
       if ($(".skin").length && currentPath.includes("/topic/")) {
         const skinsOnPage = $(".skin");
         const weaponToSkinIds = {};
-
+    
+        // Собираем информацию о скинах
         skinsOnPage.each(function () {
-          const weapon = $(this).attr("weapon");
-          const skinId = $(this).attr("skin-id");
-          if (weapon && skinId) {
-            weaponToSkinIds[weapon] = weaponToSkinIds[weapon] || [];
-            weaponToSkinIds[weapon].push(skinId);
-          }
+            const weapon = $(this).attr("weapon");
+            const skinId = $(this).attr("skin-id");
+            if (weapon && skinId) {
+                weaponToSkinIds[weapon] = weaponToSkinIds[weapon] || [];
+                weaponToSkinIds[weapon].push(skinId);
+            }
         });
-
-        const filesToLoad = Object.keys(weaponToSkinIds).map(
-          (weapon) => `/code-parts/skins-list/${weapon}.html`
-        );
-
-        Promise.all(
-          filesToLoad.map((file) =>
-            fetch(file).then((response) => response.text())
-          )
-        ).then((dataArray) => {
-          const tempContainers = {};
-          Object.keys(weaponToSkinIds).forEach((weapon, index) => {
-            const tempContainer = document.createElement("div");
-            tempContainer.innerHTML = dataArray[index];
-            tempContainers[weapon] = tempContainer;
-          });
-
-          Object.keys(weaponToSkinIds).forEach((weapon) => {
-            weaponToSkinIds[weapon].forEach((skinId) => {
-              const newSkin = $(tempContainers[weapon]).find(
-                `.skin[skin-id="${skinId}"]`
-              )[0];
-              const existingSkin = $(
-                `.skin[weapon="${weapon}"][skin-id="${skinId}"]`
-              )[0];
-              if (newSkin && existingSkin) {
-                $(newSkin).attr("weapon", weapon);
-                $(existingSkin).replaceWith(newSkin);
-                $(newSkin)
-                  .find("img")
-                  .on("load", function () {
-                    setTimeout(() => $(this).addClass("imported"), 10);
+    
+        const loadSkinsData = async () => {
+            await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
+                const response = await fetch(`/code-parts/skins-list/${weapon}.json`);
+                const skinsData = await response.json();
+    
+                const skinsForWeapon = skinsData || {};
+                weaponToSkinIds[weapon].forEach((skinId) => {
+                    const skinData = skinsForWeapon[skinId];
+                    if (skinData) {
+                        const newSkinHTML = `
+                            <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
+                                <img src="${skinData.image}" draggable="false" alt="${skinData.name}">
+                                <div class="skin-desc-name">${skinData.name}</div>
+                            </div>`;
+                        const existingSkin = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`)[0];
+                        if (existingSkin) {
+                            $(existingSkin).replaceWith(newSkinHTML);
+                        }
+                    }
+                });
+            }));
+    
+            $(".skin img").each(function () {
+              if (this.complete) {
+                  $(this).addClass("imported");
+              } else {
+                  $(this).on("load", function () {
+                      $(this).addClass("imported");
                   });
               }
-            });
           });
-          checkWeaponTypeAvailabilityForItems();
-        });
-      }
+          
+    
+            checkWeaponTypeAvailabilityForItems();
+        };
+    
+        loadSkinsData();
+    }
 
       function updateNavigationReset() {
         const enabledFilters = $(".navigation-weapon-type.enabled").length;
