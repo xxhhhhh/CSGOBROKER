@@ -2573,6 +2573,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 $(document).ready(function() {
+  const modesslider = document.querySelector('.main-mode-selection');
   if ($('.main-mode-selection').length && !$('.main-mode-selection').hasClass('slick-slider')) {
 
     var res = $(window).width();
@@ -2589,7 +2590,6 @@ $(document).ready(function() {
       nextArrow: '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
       dots: false
     });
-    const modesslider = document.querySelector('.main-mode-selection');
     updateURLs(modesslider);
   }
 
@@ -2620,6 +2620,7 @@ $(document).ready(function() {
             dots: false
           });
         }
+        updateURLs(modesslider);
       });
     }
   });
