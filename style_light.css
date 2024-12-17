@@ -217,7 +217,8 @@ h3,
 .main-col-info .theme-col-info h3,
 .color-box-selection-button,
 .color-box-selection-button:hover,
-.color-box-selection-button.clicked  {
+.color-box-selection-button.clicked,
+.singlemod-box[data-title]:after  {
     color: #1a1a1a;
 }
 
@@ -824,14 +825,20 @@ ul .submenu li .nonredir,
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
 }
 
+.content button.copy, .content button.copy::before,
 .sitepage .content button.copy, .sitepage .content button.copy::before,
 .box.main .content button:hover, .box.main .content button:hover::before,
-.box .content .review-button.mirror {
-    background-color: rgb(225 225 225);
-    filter: none;
+.box .content .review-button.mirror,
+.content .review-button.visit.mirror::before {
+    background-color: rgb(225 225 225) !important;
+    filter: none !important;
 }
 
-.box.main .content button.copy::after,
+.box:hover .vpn-semi {
+    background: var(--main-theme);
+}
+
+.content button.copy::after,
 .content .review-button.mirror.visit::after {
     filter: brightness(.1);
 }

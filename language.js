@@ -1330,7 +1330,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if ($('.main-mode-selection').length && !$('.main-mode-selection').hasClass('slick-slider')) {
 
         var res = $(window).width();
-
+    
         $('.main-mode-selection').slick({
           slidesToShow: res < 600 ? 2 : 4,
           slidesToScroll: 1,
@@ -1343,10 +1343,42 @@ document.addEventListener('DOMContentLoaded', function() {
           nextArrow: '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
           dots: false
         });
-      
         const modesslider = document.querySelector('.main-mode-selection');
         updateURLs(modesslider);
-      }      
+      }
+    
+      $('.boxes-holder').each(function() {
+        const $boxesHolder = $(this);
+    
+        if (!$boxesHolder.closest('.main-page').length && $boxesHolder.find('.box').length >= 8) {
+          const importPath = languageTag === 'ru' 
+            ? '/code-parts/micro-parts/main-mode-import-ru.html'
+            : '/code-parts/micro-parts/main-mode-import.html';
+    
+          $.get(importPath, function(data) {
+            const $boxes = $boxesHolder.find('.box').slice(0, 12);
+            const $importedContent = $(data);
+            $boxes.last().after($importedContent);
+    
+            if (!$importedContent.hasClass('slick-slider')) {
+              $importedContent.slick({
+                slidesToShow: res < 600 ? 2 : 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                infinite: true,
+                speed: 450,
+                autoplaySpeed: 5500,
+                pauseOnHover: true,
+                prevArrow: '<button aria-label="Prev Slide" class="prev-button controls-button"><i class="officon chevron left"></i></button>',
+                nextArrow: '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
+                dots: false
+              });
+            }
+            const modesslider = document.querySelector('.main-mode-selection');
+            updateURLs(modesslider);
+          });
+        }
+      });     
 
       window.initPayments();
 

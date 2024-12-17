@@ -1028,7 +1028,8 @@ nav .pages {
 .box-topic .skin .skin-desc-name,
 .skin-alt-info[data-title]:after,
 .main-mode:after,
-.infoicon::after {
+.infoicon::after,
+.vpn-semi::before {
     content: '';
     position: absolute;
     width: max-content;
@@ -4479,7 +4480,7 @@ nav img:active,
     bottom: 20px;
     width: 36px;
     height: 36px;
-    cursor: pointer;
+    cursor: help;
     z-index: 1;
 }
 
@@ -4543,9 +4544,11 @@ nav img:active,
     font-size: 13px;
     margin-bottom: unset;
     bottom: 50%;
-    left: -155px;
+    left: unset;
+    right: 45px;
     transform: translateY(50%);
-    width: 140px;
+    width: auto;
+    text-wrap: nowrap;
     display: flex;
     justify-content: flex-end;
     transition: .15s opacity ease-in-out;
@@ -9759,6 +9762,10 @@ div#results {
     animation: none !important;
 }
 
+.box.hidden-hard {
+    transition: none !important;
+}
+
 .box.filter-applying .logobg,
 .box.filter-applying .content {
     transition: all .8s ease-in-out;
@@ -12180,7 +12187,7 @@ div#results {
         font-size: 11px;
     }
 
-    .box .logobg .main-mode {
+    .box.main .logobg .main-mode {
         right: 50px;
     }
 }
@@ -12719,21 +12726,101 @@ div#results {
     width: 100%;
 }
 
+.vpn-semi {
+    right: 10px;
+    bottom: 65px;
+    position: absolute;
+    background: var(--main-theme);
+    transition: all .15s ease-in-out;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: help;
+    z-index: 1;
+    opacity: 1;
+    font-size: 9px;
+    font-weight: 600;
+    color: #303030;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box:hover .vpn-semi {
+    background: rgb(21 21 21);
+}
+
+.main-page .vpn-semi {
+    right: 10px;
+    bottom: 10px;
+    opacity: 0;
+}
+
+.main-page .box:hover .vpn-semi {
+    opacity: 1;
+}
+.box .vpn-semi:hover {
+    color: var(--main-color);
+}
+
+.vpn-semi::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%);
+    border-radius: 50%;
+    left: 3px;
+    right: 3px;
+    top: 3px;
+    bottom: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(1);
+    z-index: -1;
+}
+
+.vpn-semi::before {
+    content: 'Может потребоваться VPN';
+    color: var(--white);
+    font-size: 13px;
+    margin-bottom: unset;
+    bottom: 50%;
+    text-wrap: nowrap;
+    left: unset;
+    right: 45px;
+    transform: translateY(50%);
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+    transition: .15s opacity ease-in-out;
+    padding: 10px;
+    filter: drop-shadow(0px 0px 3px rgb(22 22 22)) drop-shadow(0px 0px 3px rgb(22 22 22));
+}
+
+.main-page .vpn-semi::before {
+    background-color: var(--darkgray);
+    padding: 10px;
+    right: 40px;
+}
+.vpn-semi:hover::before {
+    opacity: 1;
+}
+
 @media screen and (max-width: 1365px) {
-    .sitepage.topic-craft .sticker-crafts-list .box-topic {
-        margin: 0 2px;
-        height: 80px;
-    }
-
-    .sticker-crafts-list {
-        margin-bottom: 4px;
-    }
-
-    .sticker-crafts-list.imported {
-        height: 80px;
-    }
-
-    .sitepage.topic-craft .sticker-crafts-list .box-topic:nth-child(5) {
+    .main-page .vpn-semi,
+    .main-page .vpn-semi::before,
+    .main-page .vpn-semi::after {
         display: none;
+        content: none;
+    }
+    .box .vpn-semi {
+        background: rgb(21 21 21);
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .box .logobg .main-mode,
+    .box .vpn-semi {
+        right: 15px;
     }
 }

@@ -566,12 +566,6 @@ forcemodsboxes();
           });
       });
   
-      function addStarRatingAlternatives() {
-        for (var boxId in ratings) {
-          addStarRating(boxId, ratings[boxId]);
-        }
-      }
-  
       Promise.all(alternatives.map(alt => loadPageData(`${altSitesPath}${alt}.json`)))
           .then(() => {
               for (let i = alternatives.length; i < 4; i++) {
@@ -579,7 +573,9 @@ forcemodsboxes();
                   emptyBox.className = 'box';
                   siteAlternatesBoxes.appendChild(emptyBox);
               }
-              addStarRatingAlternatives();
+              for (var boxId in ratings) {
+                addStarRating(boxId, ratings[boxId]);
+              }
               updateURLs(siteAlternatesBoxes);
           });
   }
@@ -902,11 +898,11 @@ window.onload = function () {
       vpnButtonContainer.className = 'settings-menu';
       vpnButtonContainer.innerHTML =
         '<div class="settings-button" id="button-vpn-filter" data-title="Скрыть сайты требующие VPN"><i id="vpn-icon" class="officon vpn-shield"></i></div>';
-      
+    
       buttonsContainer.appendChild(vpnButtonContainer);
-
+    
       const vpnIcon = document.getElementById('vpn-icon');
-
+    
       function toggleVpnBlocks() {
         const vpnBlocks = document.querySelectorAll('.box');
         vpnBlocks.forEach(block => {
@@ -915,36 +911,54 @@ window.onload = function () {
           }
         });
       }
-
-      const buttonState = localStorage.getItem('vpnButtonState');
-      const buttonTitle = localStorage.getItem('vpnButtonTitle');
-
-      if (buttonState === 'hidden') {
-        toggleVpnBlocks();
-        vpnIcon.classList.replace('vpn-shield', 'vpn-shield-slash');
+    
+      function initializeVpnState() {
+        const buttonState = localStorage.getItem('vpnButtonState');
+        if (buttonState === 'hidden') {
+          toggleVpnBlocks();
+          vpnIcon.classList.replace('vpn-shield', 'vpn-shield-slash');
+        }
+    
+        const buttonTitle = localStorage.getItem('vpnButtonTitle');
+        if (buttonTitle) {
+          document.getElementById('button-vpn-filter').dataset.title = buttonTitle;
+        }
       }
-
-      if (buttonTitle) {
-        document.getElementById('button-vpn-filter').dataset.title = buttonTitle;
-      }
-
+    
+      const observer = new MutationObserver(() => {
+        const buttonState = localStorage.getItem('vpnButtonState');
+        if (buttonState === 'hidden') {
+          const vpnBlocks = document.querySelectorAll('.box');
+          vpnBlocks.forEach(block => {
+            if (block.querySelector('.vpn')) {
+              block.classList.add('hidden-vpn');
+            }
+          });
+        }
+      });
+    
+      observer.observe(document.body, { childList: true, subtree: true });
+    
       document.getElementById('button-vpn-filter').addEventListener('click', function () {
         toggleVpnBlocks();
-
+    
         const currentState = localStorage.getItem('vpnButtonState') || 'visible';
         const newState = currentState === 'hidden' ? 'visible' : 'hidden';
         localStorage.setItem('vpnButtonState', newState);
-
+    
         vpnIcon.classList.toggle('vpn-shield');
         vpnIcon.classList.toggle('vpn-shield-slash');
-
+    
         const button = document.getElementById('button-vpn-filter');
         button.dataset.title = vpnIcon.classList.contains('vpn-shield') ?
           'Скрыть сайты требующие VPN' : 'Показать сайты требующие VPN';
-
+    
         localStorage.setItem('vpnButtonTitle', button.dataset.title);
       });
+    
+      initializeVpnState();
     }
+    
 
     if (!document.querySelector('#back-to-top-btn')) {
       const backToTopButton = document.createElement('button');
@@ -1178,42 +1192,83 @@ if (btnfaq) {
   };
 }
 
-if ((window.location.pathname.startsWith('/ru/') || window.location.pathname === '/ru' || window.location.pathname === '/ru.html')) {
-  
-  
-  var newDiv = document.createElement("div");
-  newDiv.className = "vpn";
-  newDiv.textContent = "Нужен VPN";
+let ratings = {};
 
-  var allowedIds = [
-    "Shuffle",
-    "HowlGG",
-    "ClashGG",
-    "CSGORoll",
-    "DMarket",
-    "Rollbit",
-    "Primedice",
-    "Duelbits",
-    "FlameCases",
-    "DaddySkins",
-    "FarmSkins",
-    "RustyPot",
-    "RustChance",
-  ];
-
-  var boxElements = document.querySelectorAll(".box");
-
-  boxElements.forEach(function(boxElement) {
-      var boxId = boxElement.id;
-      if (allowedIds.includes(boxId)) {
-          var logobgElement = boxElement.querySelector(".logobg");
-          if (logobgElement) {
-              var clonedDiv = newDiv.cloneNode(true);
-              logobgElement.appendChild(clonedDiv);
-          }
-      }
-  });
+function addStarRating(boxId, rating) {
+  const boxElement = document.getElementById(boxId);
+  if (boxElement) {
+    const starRatingHTML = `
+      <div class="rating-case-single">
+        <div class="star_rating officon"></div>
+        <div class="rating-summ">${rating.toFixed(2)}</div>
+      </div>
+    `;
+    const logobgElement = boxElement.querySelector('.logobg');
+    if (logobgElement) {
+      logobgElement.innerHTML += starRatingHTML;
+    }
+  }
 }
+
+fetch('/code-parts/sites-settings.json')
+  .then(response => response.json())
+  .then(settings => {
+    ratings = settings.ratings;
+    const requiredVPN = settings.RequiredVPN;
+    const maybeVPN = settings.MaybeVPN;
+
+    const boxesHolder = document.querySelector('.boxes-holder, .sitealternatesboxes');
+    if (boxesHolder) {
+      for (const boxId in ratings) {
+        addStarRating(boxId, ratings[boxId]);
+      }
+    }
+
+    if (
+      window.location.pathname.startsWith('/ru/') ||
+      window.location.pathname === '/ru' ||
+      window.location.pathname === '/ru.html'
+    ) {
+      const vpnMessageDiv = document.createElement('div');
+      vpnMessageDiv.className = 'vpn';
+      vpnMessageDiv.textContent = 'Нужен VPN';
+    
+      const vpnSemiMessageDiv = document.createElement('div');
+      vpnSemiMessageDiv.className = 'vpn-semi';
+      vpnSemiMessageDiv.textContent = 'VPN';
+    
+      const boxElements = document.querySelectorAll('.box');
+    
+      boxElements.forEach(boxElement => {
+        const boxId = boxElement.id;
+    
+        if (requiredVPN.includes(boxId)) {
+          if (boxElement.closest('.boxes-holder-section')) {
+            const clonedDiv = vpnMessageDiv.cloneNode(true);
+            boxElement.appendChild(clonedDiv);
+          } else {
+            const logobgElement = boxElement.querySelector('.logobg');
+            if (logobgElement) {
+              const clonedDiv = vpnMessageDiv.cloneNode(true);
+              logobgElement.appendChild(clonedDiv);
+            }
+          }
+        } else if (maybeVPN.includes(boxId)) {
+          if (boxElement.closest('.boxes-holder-section')) {
+            const clonedDiv = vpnSemiMessageDiv.cloneNode(true);
+            boxElement.appendChild(clonedDiv);
+          } else {
+            const logobgElement = boxElement.querySelector('.logobg');
+            if (logobgElement) {
+              const clonedDiv = vpnSemiMessageDiv.cloneNode(true);
+              logobgElement.appendChild(clonedDiv);
+            }
+          }
+        }
+      });
+    }
+    
+  })
 
 const href = window.location.href;
 
@@ -2517,12 +2572,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-$(document).ready(function(){
-
+$(document).ready(function() {
   if ($('.main-mode-selection').length && !$('.main-mode-selection').hasClass('slick-slider')) {
 
     var res = $(window).width();
-  
+
     $('.main-mode-selection').slick({
       slidesToShow: res < 600 ? 2 : 4,
       slidesToScroll: 1,
@@ -2538,7 +2592,37 @@ $(document).ready(function(){
     const modesslider = document.querySelector('.main-mode-selection');
     updateURLs(modesslider);
   }
-  
+
+  $('.boxes-holder').each(function() {
+    const $boxesHolder = $(this);
+
+    if (!$boxesHolder.closest('.main-page').length && $boxesHolder.find('.box').length >= 8) {
+      const importPath = languageTag === 'ru' 
+        ? '/code-parts/micro-parts/main-mode-import-ru.html'
+        : '/code-parts/micro-parts/main-mode-import.html';
+
+      $.get(importPath, function(data) {
+        const $boxes = $boxesHolder.find('.box').slice(0, 12);
+        const $importedContent = $(data);
+        $boxes.last().after($importedContent);
+
+        if (!$importedContent.hasClass('slick-slider')) {
+          $importedContent.slick({
+            slidesToShow: res < 600 ? 2 : 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            infinite: true,
+            speed: 450,
+            autoplaySpeed: 5500,
+            pauseOnHover: true,
+            prevArrow: '<button aria-label="Prev Slide" class="prev-button controls-button"><i class="officon chevron left"></i></button>',
+            nextArrow: '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
+            dots: false
+          });
+        }
+      });
+    }
+  });
 });
 
 window.initPayments = function () {
