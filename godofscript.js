@@ -723,7 +723,6 @@ forcemodsboxes();
       const langMenuDiv = document.querySelector(".lang-menu");
       const basePath = "/code-parts/site-infos";
       const currentPath = window.location.pathname;
-      const languageTag = currentPath.match(/^\/([a-z]{2})\//)?.[1] || "en";
     
       if (!langMenuDiv) return;
     

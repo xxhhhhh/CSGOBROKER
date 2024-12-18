@@ -1347,370 +1347,42 @@ document.addEventListener('DOMContentLoaded', function() {
         updateURLs(modesslider);
       }
     
-      $('.boxes-holder').each(function() {
-        const $boxesHolder = $(this);
-    
-        if (!$boxesHolder.closest('.main-page').length && $boxesHolder.find('.box').length >= 8) {
-          const importPath = languageTag === 'ru' 
-            ? '/code-parts/micro-parts/main-mode-import-ru.html'
-            : '/code-parts/micro-parts/main-mode-import.html';
-    
-          $.get(importPath, function(data) {
-            const $boxes = $boxesHolder.find('.box').slice(0, 12);
-            const $importedContent = $(data);
-            $boxes.last().after($importedContent);
-    
-            if (!$importedContent.hasClass('slick-slider')) {
-              $importedContent.slick({
-                slidesToShow: res < 600 ? 2 : 4,
-                slidesToScroll: 1,
-                autoplay: true,
-                infinite: true,
-                speed: 450,
-                autoplaySpeed: 5500,
-                pauseOnHover: true,
-                prevArrow: '<button aria-label="Prev Slide" class="prev-button controls-button"><i class="officon chevron left"></i></button>',
-                nextArrow: '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
-                dots: false
-              });
-            }
-            const modesslider = document.querySelector('.main-mode-selection');
-            updateURLs(modesslider);
-          });
-        }
-      });     
-
       window.initPayments();
 
-      // const basePath = "/code-parts/site-infos";
-      // const boxes = document.querySelectorAll(".boxes-holder .box");
-      // const paymentsButton = document.querySelector(".payments-button");
-      // const boxesHolder = document.querySelector(".boxes-holder");
-    
-      // if (!paymentsButton || !boxesHolder) {
-      //   return;
-      // }
-    
-      // let depositList, withdrawalList, depositInput, withdrawalInput;
-      // let paymentContainersLoaded = false;
-    
-      // function loadPaymentMethods(filePath) {
-      //   return fetch(filePath).then((response) => response.json());
-      // }
-    
-      // function transformLinkToDiv(htmlString) {
-      //   const tempDiv = document.createElement("div");
-      //   tempDiv.innerHTML = htmlString.trim();
-      //   const linkElement = tempDiv.querySelector("a");
-    
-      //   if (linkElement) {
-      //     const ariaLabel = linkElement.getAttribute("aria-label") || "";
-      //     const className = linkElement.className || "";
-    
-      //     const newDivElement = document.createElement("div");
-      //     newDivElement.className = `payment-method ${className}`;
-      //     newDivElement.textContent = ariaLabel;
-    
-      //     return newDivElement.outerHTML;
-      //   }
-      //   return htmlString;
-      // }
-    
-      // function addMethodWithoutDuplicates(methodArray, set, htmlString) {
-      //   const tempDiv = document.createElement("div");
-      //   tempDiv.innerHTML = htmlString.trim();
-      //   const linkElement = tempDiv.querySelector("a");
-    
-      //   if (linkElement) {
-      //     const ariaLabel = linkElement.getAttribute("aria-label") || "";
-      //     if (!set.has(ariaLabel)) {
-      //       methodArray.push(htmlString);
-      //       set.add(ariaLabel);
-      //     }
-      //   }
-      // }
-    
-      // function populatePaymentList(listElement, methodsArray) {
-      //   listElement.innerHTML = "";
-      //   methodsArray.forEach((htmlString) => {
-      //     const transformedHtml = transformLinkToDiv(htmlString);
-      //     listElement.insertAdjacentHTML("beforeend", transformedHtml);
-      //   });
-      // }
-    
-      // const paymentsBlock = document.createElement("div");
-      // paymentsBlock.className = "payments-block";
-    
-      // const paymentsBlockSeparate1 = document.createElement("div");
-      // paymentsBlockSeparate1.className = "payments-block-separate";
-      // paymentsBlockSeparate1.appendChild(paymentsButton);
-      // paymentsBlock.appendChild(paymentsBlockSeparate1);
-    
-      // const paymentsBlockSeparate2 = document.createElement("div");
-      // paymentsBlockSeparate2.className = "payments-block-separate";
-      // paymentsBlock.appendChild(paymentsBlockSeparate2);
-    
-      // const depositContainer = document.createElement("div");
-      // depositContainer.className = "payment-container";
-      // depositContainer.innerHTML = `
-      //   <form id="payment-form">
-      //       <input type="text" id="filter-input" aria-label="Payment Filter" autocomplete="off" readonly>
-      //       <div class="methodlist payment-list"></div>
-      //       <div class="payment-close-button"><i class="officon cross"></i></div>
-      //   </form>
-      // `;
-      // paymentsBlockSeparate2.appendChild(depositContainer);
-    
-      // const withdrawalContainer = document.createElement("div");
-      // withdrawalContainer.className = "payment-container";
-      // withdrawalContainer.innerHTML = `
-      //   <form id="withdrawal-form">
-      //       <input type="text" id="withdrawal-filter-input" aria-label="Withdrawal Filter" autocomplete="off" readonly>
-      //       <div class="methodlist payment-list" id="withdrawal-payment-list"></div>
-      //       <div class="payment-close-button"><i class="officon cross"></i></div>
-      //   </form>
-      // `;
-      // paymentsBlockSeparate2.appendChild(withdrawalContainer);
-    
-      // boxesHolder.insertBefore(paymentsBlock, boxesHolder.firstChild);
-    
-      // const translations2 = {
-      //   deposit: {
-      //     en: "Deposit",
-      //     ru: "Пополнение",
-      //     es: "Depósito",
-      //     tr: "Yatırma",
-      //     pt: "Depósito",
-      //     hi: "जमा करें"
-      //   },
-      //   withdraw: {
-      //     en: "Withdraw",
-      //     ru: "Вывод",
-      //     es: "Retiro",
-      //     tr: "Çekme",
-      //     pt: "Retirada",
-      //     hi: "निकासी"
-      //   }
-      // };
+      if (!$('.main-mode-selection').length) {
+        $('.boxes-holder').each(function() {
+          const $boxesHolder = $(this);
       
-      // function getTranslation(key) {
-      //   return translations2[key][languageTag] || translations2[key]['en'];
-      // }
+          if (!$boxesHolder.closest('.main-page').length && $boxesHolder.find('.box').length >= 8) {
+            const importPath = languageTag === 'ru' 
+              ? '/code-parts/micro-parts/main-mode-import-ru.html'
+              : '/code-parts/micro-parts/main-mode-import.html';
       
-      // function applytranslations2() {
-      //   if (depositInput) {
-      //     depositInput.setAttribute("placeholder", getTranslation('deposit'));
-      //   }
-      //   if (withdrawalInput) {
-      //     withdrawalInput.setAttribute("placeholder", getTranslation('withdraw'));
-      //   }
-      // }
-    
-      // depositList = depositContainer.querySelector(".payment-list");
-      // depositInput = depositContainer.querySelector("#filter-input");
-      // withdrawalList = withdrawalContainer.querySelector(".payment-list");
-      // withdrawalInput = withdrawalContainer.querySelector("#withdrawal-filter-input");
-    
-      // applytranslations2();
-    
-      // paymentsButton.addEventListener("click", function () {
-      //   paymentsBlock.classList.toggle("visible");
-    
-      //   if (!paymentContainersLoaded) {
-      //     setupInputClickEvents();
-      //     setupCloseButtons();
-      //     loadPaymentMethodsOnDemand(depositList, withdrawalList);
-      //     paymentContainersLoaded = true;
-      //   }
-      // });
-    
-      // function setupInputClickEvents() {
-      //   if (depositInput) {
-      //     depositInput.addEventListener("click", function (event) {
-      //       event.stopPropagation();
-      //       hideAllPaymentLists();
-      //       depositList.classList.toggle("visible");
-      //       depositInput.classList.toggle("active");
-      //     });
-      //   }
+            $.get(importPath, function(data) {
+              const $boxes = $boxesHolder.find('.box').slice(0, 12);
+              const $importedContent = $(data);
+              $boxes.last().after($importedContent);
       
-      //   if (withdrawalInput) {
-      //     withdrawalInput.addEventListener("click", function (event) {
-      //       event.stopPropagation();
-      //       hideAllPaymentLists();
-      //       withdrawalList.classList.toggle("visible");
-      //       withdrawalInput.classList.toggle("active");
-      //     });
-      //   }
-      // }
-      
-      // function hideAllPaymentLists() {
-      //   if (depositList) depositList.classList.remove("visible");
-      //   if (withdrawalList) withdrawalList.classList.remove("visible");
-      //   if (depositInput) depositInput.classList.remove("active");
-      //   if (withdrawalInput) withdrawalInput.classList.remove("active");
-      // }
-      
-    
-      // function setupCloseButtons() {
-      //   const depositCloseButton = document.querySelector("#payment-form .payment-close-button");
-      //   const withdrawalCloseButton = document.querySelector("#withdrawal-form .payment-close-button");
-    
-      //   if (depositCloseButton) {
-      //     depositCloseButton.addEventListener("click", function () {
-      //       clearFilter(depositInput, "hidden-deposit");
-      //       checkCloseButtonVisibility(depositCloseButton, depositInput, "hidden-deposit");
-      //     });
-      //   }
-    
-      //   if (withdrawalCloseButton) {
-      //     withdrawalCloseButton.addEventListener("click", function () {
-      //       clearFilter(withdrawalInput, "hidden-withdrawal");
-      //       checkCloseButtonVisibility(withdrawalCloseButton, withdrawalInput, "hidden-withdrawal");
-      //     });
-      //   }
-    
-      //   checkCloseButtonVisibility(depositCloseButton, depositInput, "hidden-deposit");
-      //   checkCloseButtonVisibility(withdrawalCloseButton, withdrawalInput, "hidden-withdrawal");
-      // }
-    
-      // function clearFilter(inputElement, hiddenClass) {
-      //   inputElement.value = "";
-      //   boxes.forEach((box) => {
-      //     box.classList.remove(hiddenClass);
-      //   });
-    
-      //   const closeButton = inputElement.closest("form").querySelector(".payment-close-button");
-      //   checkCloseButtonVisibility(closeButton, inputElement, hiddenClass);
-    
-      //   const selectedMethod = inputElement.closest("form").querySelector(".selected");
-      //   if (selectedMethod) {
-      //     selectedMethod.classList.remove("selected");
-      //   }
-      // }
-    
-      // function checkCloseButtonVisibility(closeButton, inputElement, hiddenClass) {
-      //   const isInputEmpty = inputElement.value === "";
-      //   const hasBoxesFiltered = Array.from(boxes).some((box) => box.classList.contains(hiddenClass));
-    
-      //   if (!isInputEmpty || hasBoxesFiltered) {
-      //     closeButton.classList.add("visible");
-      //   } else {
-      //     closeButton.classList.remove("visible");
-      //   }
-      // }
-    
-      // document.addEventListener("click", function (e) {
-      //   if (e.target.classList.contains("payment-method")) {
-      //     const selectedMethod = e.target.textContent;
-      //     const inputElement = e.target.closest("form").querySelector("input");
-    
-      //     inputElement.value = selectedMethod;
-      //     e.target.closest(".payment-list").classList.remove("visible");
-    
-      //     const previouslySelected = e.target.closest(".payment-list").querySelector(".selected");
-      //     if (previouslySelected) {
-      //       previouslySelected.classList.remove("selected");
-      //     }
-    
-      //     e.target.classList.add("selected");
-    
-      //     if (inputElement.id === "filter-input") {
-      //       filterBoxesByMethod(selectedMethod, "deposit");
-      //       checkCloseButtonVisibility(document.querySelector("#payment-form .payment-close-button"), inputElement, "hidden-deposit");
-      //     } else if (inputElement.id === "withdrawal-filter-input") {
-      //       filterBoxesByMethod(selectedMethod, "withdrawal");
-      //       checkCloseButtonVisibility(document.querySelector("#withdrawal-form .payment-close-button"), inputElement, "hidden-withdrawal");
-      //     }
-      //   } else {
-      //     hideAllPaymentLists();
-      //   }
-      // });
-    
-      // function filterBoxesByMethod(selectedMethod, type) {
-      //   const selectedMethodLowerCase = selectedMethod.toLowerCase();
-    
-      //   boxes.forEach((box) => {
-      //     const logoLink = box.querySelector(".logobg a");
-      //     if (logoLink) {
-      //       const path = logoLink.getAttribute("href");
-      //       const pageKey = path.split("/").pop();
-      //       const jsonFilePath = `${basePath}/${pageKey}.json`;
-    
-      //       loadPaymentMethods(jsonFilePath).then((data) => {
-      //         if (data) {
-      //           let boxMethods = [];
-      //           if (type === "deposit" && data.firstMethodContent) {
-      //             boxMethods = data.firstMethodContent.map((method) => {
-      //               const tempDiv = document.createElement("div");
-      //               tempDiv.innerHTML = method.trim();
-      //               const linkElement = tempDiv.querySelector("a");
-      //               return linkElement ? linkElement.getAttribute("aria-label").toLowerCase() : "";
-      //             });
-      //           } else if (type === "withdrawal" && data.secondMethodContent) {
-      //             boxMethods = data.secondMethodContent.map((method) => {
-      //               const tempDiv = document.createElement("div");
-      //               tempDiv.innerHTML = method.trim();
-      //               const linkElement = tempDiv.querySelector("a");
-      //               return linkElement ? linkElement.getAttribute("aria-label").toLowerCase() : "";
-      //             });
-      //           }
-    
-      //           const hasMethod = boxMethods.includes(selectedMethodLowerCase);
-      //           if (!hasMethod) {
-      //             if (type === "deposit") {
-      //               box.classList.add("hidden-deposit");
-      //             } else if (type === "withdrawal") {
-      //               box.classList.add("hidden-withdrawal");
-      //             }
-      //           } else {
-      //             if (type === "deposit") {
-      //               box.classList.remove("hidden-deposit");
-      //             } else if (type === "withdrawal") {
-      //               box.classList.remove("hidden-withdrawal");
-      //             }
-      //           }
-      //         }
-      //       });
-      //     }
-      //   });
-      // }
-    
-      // function loadPaymentMethodsOnDemand(depositList, withdrawalList) {
-      //   let depositMethods = [];
-      //   let withdrawalMethods = [];
-      //   const depositSet = new Set();
-      //   const withdrawalSet = new Set();
-    
-      //   boxes.forEach((box) => {
-      //     const logoLink = box.querySelector(".logobg a");
-      //     if (logoLink) {
-      //       const path = logoLink.getAttribute("href");
-      //       const pageKey = path.split("/").pop();
-      //       const jsonFilePath = `${basePath}/${pageKey}.json`;
-    
-      //       loadPaymentMethods(jsonFilePath).then((data) => {
-      //         if (data) {
-      //           (data.firstMethodContent || []).forEach((method) => {
-      //             addMethodWithoutDuplicates(depositMethods, depositSet, method);
-      //           });
-    
-      //           (data.secondMethodContent || []).forEach((method) => {
-      //             addMethodWithoutDuplicates(withdrawalMethods, withdrawalSet, method);
-      //           });
-    
-      //           if (depositList) {
-      //             populatePaymentList(depositList, depositMethods);
-      //           }
-    
-      //           if (withdrawalList) {
-      //             populatePaymentList(withdrawalList, withdrawalMethods);
-      //           }
-      //         }
-      //       });
-      //     }
-      //   });
-      // }
+              if (!$importedContent.hasClass('slick-slider')) {
+                $importedContent.slick({
+                  slidesToShow: res < 600 ? 2 : 4,
+                  slidesToScroll: 1,
+                  autoplay: true,
+                  infinite: true,
+                  speed: 450,
+                  autoplaySpeed: 5500,
+                  pauseOnHover: true,
+                  prevArrow: '<button aria-label="Prev Slide" class="prev-button controls-button"><i class="officon chevron left"></i></button>',
+                  nextArrow: '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
+                  dots: false
+                });
+              }
+              const modesslider = document.querySelector('.main-mode-selection');
+              updateURLs(modesslider);
+            });
+          }
+        }); 
+      }  
   
       if (languageTag !== 'en') {
         var elements = document.querySelectorAll(".box .content p, .box .logobg .best, .box .content button");
