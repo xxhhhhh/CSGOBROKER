@@ -719,48 +719,72 @@ forcemodsboxes();
     window.location.pathname.includes("/reviews/") ||
     window.location.pathname.includes("/topic")
   ) {
-    const langMenuDiv = document.querySelector(".lang-menu");
-  
-    function updateLangSwitches() {
-      const langSwitches = langMenuDiv.querySelectorAll(".lang-switch");
-  
-      langSwitches.forEach((switchEl) => {
-
-        if (switchEl.classList.contains("lang-pl")) {
-          if (!switchEl.querySelector("i.flagbox")) {
-            const flagBox = document.createElement("i");
-            flagBox.classList.add("flagbox");
-            switchEl.appendChild(flagBox);
-          }
-          return;
+    document.addEventListener("DOMContentLoaded", () => {
+      const langMenuDiv = document.querySelector(".lang-menu");
+      const basePath = "/code-parts/site-infos";
+      const currentPath = window.location.pathname;
+      const languageTag = currentPath.match(/^\/([a-z]{2})\//)?.[1] || "en";
+    
+      if (!langMenuDiv) return;
+    
+      async function fetchSiteLanguages() {
+        const siteKey = currentPath.split("/").pop().replace(".html", "") || "index";
+        const jsonFilePath = `${basePath}/${siteKey}.json`;
+    
+        try {
+          const response = await fetch(jsonFilePath);
+          if (!response.ok) return [];
+          const siteInfo = await response.json();
+          return siteInfo.languages ? siteInfo.languages.split(",").map((lang) => lang.trim()) : [];
+        } catch {
+          return [];
         }
-
-        const lang = switchEl.dataset.lang;
-        const path =
-          lang === "en"
-            ? window.location.pathname.replace(/^\/[a-z]{2}\//, "/")
-            : "/" + lang + window.location.pathname.replace(/^\/[a-z]{2}\//, "/");
-  
-        if (!switchEl.href || switchEl.href !== path) {
+      }
+    
+      async function populateLangList() {
+        const languages = await fetchSiteLanguages();
+    
+        if (languages.length === 0) return;
+    
+        const existingLangList = langMenuDiv.querySelector("ul");
+        if (existingLangList) existingLangList.remove();
+    
+        const langList = document.createElement("ul");
+        langMenuDiv.appendChild(langList);
+    
+        const languageOrder = ["en", "ru", "es", "tr", "pl"];
+        const sortedLanguages = languages.sort((a, b) => {
+          return languageOrder.indexOf(a) - languageOrder.indexOf(b);
+        });
+    
+        sortedLanguages.forEach((lang) => {
+          if (lang === languageTag) return;
+    
+          const listItem = document.createElement("li");
+          const switchEl = document.createElement("a");
+    
+          switchEl.classList.add("lang-switch", `lang-${lang}`);
+          switchEl.dataset.lang = lang;
+    
+          const path =
+            lang === "en"
+              ? currentPath.replace(/^\/[a-z]{2}\//, "/")
+              : `/${lang}${currentPath.replace(/^\/[a-z]{2}\//, "/")}`;
+    
           switchEl.href = path;
-        }
-  
-        if (!switchEl.classList.contains(`lang-${lang}`)) {
-          switchEl.classList.add(`lang-${lang}`);
-        }
-  
-        if (!switchEl.querySelector("i.flagbox")) {
+    
           const flagBox = document.createElement("i");
           flagBox.classList.add("flagbox");
           switchEl.appendChild(flagBox);
-        }
-      });
-    }
-  
-    const selectedLangDiv = document.querySelector(".selected-lang");
-    langMenuDiv.prepend(selectedLangDiv);
-  
-    updateLangSwitches();
+    
+          listItem.appendChild(switchEl);
+          langList.appendChild(listItem);
+        });
+      }
+    
+      populateLangList();
+    });
+    
   }
 
 var ratingsumm = document.querySelector(".ratingsumm");
