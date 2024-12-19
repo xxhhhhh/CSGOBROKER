@@ -99,70 +99,107 @@ forcemodsboxes();
     });
   }
   
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     const basePath = "/code-parts/site-infos";
   
-    function loadJsonData(filePath, callback) {
+    function loadCachedData(key) {
+      const cachedData = localStorage.getItem(key);
+      return cachedData ? JSON.parse(cachedData) : null;
+    }
+  
+    function saveToCache(key, data) {
+      localStorage.setItem(key, JSON.stringify(data));
+    }
+  
+    function computeHash(data) {
+      return btoa(JSON.stringify(data));
+    }
+  
+    function loadJsonData(filePath, cacheKey, callback) {
+      const cachedData = loadCachedData(cacheKey);
+      const cachedHash = localStorage.getItem(`${cacheKey}_hash`);
+  
+      if (cachedData) {
+        callback(cachedData);
+  
         fetch(filePath)
-            .then(response => {
-                if (!response.ok) throw new Error('Failed to load JSON data');
-                return response.json();
-            })
-            .then(data => {
-                if (data) {
-                    callback(data);
-                }
-            })
-            .catch(error => console.error("Error loading JSON data: ", error));
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            const newHash = computeHash(data);
+            if (newHash !== cachedHash) {
+              saveToCache(cacheKey, data);
+              localStorage.setItem(`${cacheKey}_hash`, newHash);
+              callback(data);
+            }
+          })
+      } else {
+        fetch(filePath)
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            const newHash = computeHash(data);
+            saveToCache(cacheKey, data);
+            localStorage.setItem(`${cacheKey}_hash`, newHash);
+            callback(data);
+          })
+      }
     }
   
     function modifyBox(box, mainMode) {
-        const logobg = box.querySelector('.logobg');
-        if (!logobg) return;
+      const logobg = box.querySelector(".logobg");
+      if (!logobg) return;
   
-        const mainModeDiv = document.createElement('div');
-        mainModeDiv.className = `main-mode ${mainMode} lang-${languageTag}`;
-        mainModeDiv.innerHTML = `<div class="main-mode-box"><div class="main-mode-icon"></div></div>`;
+      const mainModeDiv = document.createElement("div");
+      mainModeDiv.className = `main-mode ${mainMode} lang-${languageTag}`;
+      mainModeDiv.innerHTML = `
+        <div class="main-mode-box">
+          <div class="main-mode-icon"></div>
+        </div>
+      `;
   
-        logobg.appendChild(mainModeDiv);
+      logobg.appendChild(mainModeDiv);
     }
   
     function copyToClipboard(text, copyButton) {
-        const tempInput = document.createElement('input');
-        document.body.appendChild(tempInput);
-        tempInput.value = text;
-        tempInput.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempInput);
+      const tempInput = document.createElement("input");
+      document.body.appendChild(tempInput);
+      tempInput.value = text;
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
   
-        const title = document.createElement('div');
-        title.className = 'copied-title';
-        title.textContent = (languageTag === 'ru') ? 'Скопировано' : 'Copied';
+      const title = document.createElement("div");
+      title.className = "copied-title";
+      title.textContent = languageTag === "ru" ? "Скопировано" : "Copied";
   
-        copyButton.appendChild(title);
+      copyButton.appendChild(title);
   
-        copyButton.classList.add('icon-changed');
+      copyButton.classList.add("icon-changed");
   
-        title.style.display = 'none';
-        $(title).fadeIn(150, function() {
-            $(this).delay(400).fadeOut(150, function() {
-                $(this).remove();
-            });
-        });
+      title.style.display = "none";
+      $(title).fadeIn(150, function () {
+        $(this)
+          .delay(400)
+          .fadeOut(150, function () {
+            $(this).remove();
+          });
+      });
   
-        setTimeout(function() {
-            copyButton.classList.remove('icon-changed');
-        }, 800);
+      setTimeout(function () {
+        copyButton.classList.remove("icon-changed");
+      }, 800);
     }
-  
+
     function loadReviewSettings(callback) {
-        fetch('/code-parts/review-settings.json')
-            .then(response => response.json())
-            .then(data => callback(data))
-            .catch(error => console.error("Error loading review settings: ", error));
-    }
-  
-    window.updateReviewButtons = updateReviewButtons;
+      fetch('/code-parts/review-settings.json')
+          .then(response => response.json())
+          .then(data => callback(data))
+  }
+
+  window.updateReviewButtons = updateReviewButtons;
   
     function updateReviewButtons(box, data, pageKey, reviewSettings) {
         const reviewButton = box.querySelector('.content-buttons a.review-button');
@@ -224,65 +261,69 @@ forcemodsboxes();
     }
   
     let currentPath = window.location.pathname;
+
     if (currentPath.includes("/reviews/") || currentPath.includes("/mirrors/")) {
-        if (currentPath.endsWith(".html")) {
-            currentPath = currentPath.slice(0, -5);
-        }
+      if (currentPath.endsWith(".html")) {
+        currentPath = currentPath.slice(0, -5);
+      }
   
-        const pageKey = currentPath.split("/").pop();
-        const mainJsonFilePath = `${basePath}/${pageKey}.json`;
+      const pageKey = currentPath.split("/").pop();
+      const mainJsonFilePath = `${basePath}/${pageKey}.json`;
   
-        loadReviewSettings(reviewSettings => {
-            loadJsonData(mainJsonFilePath, data => {
-                if (data.code) {
-                    const siteCodeElement = document.getElementById('site-code');
-                    if (siteCodeElement) {
-                        siteCodeElement.textContent = data.code;
-                    }
-        
-                    const copyButtons = document.querySelectorAll('.copy');
-                    copyButtons.forEach(button => {
-                        button.addEventListener('click', () => copyToClipboard(data.code, button));
-                    });
-                }
-        
-                const mainBoxes = document.querySelectorAll('.box:not(.sitealternates .box)');
-                mainBoxes.forEach(box => {
-                    if (data["Main Mode"]) {
-                        modifyBox(box, data["Main Mode"]);
-                    }
-                    updateReviewButtons(box, data, pageKey, reviewSettings);
-                    updateURLs(reviewBox);
-                });
+      loadReviewSettings((reviewSettings) => {
+        loadJsonData(mainJsonFilePath, `mainMode_${pageKey}`, (data) => {
+          if (data.code) {
+            const siteCodeElement = document.getElementById("site-code");
+            if (siteCodeElement) {
+              siteCodeElement.textContent = data.code;
+            }
+  
+            const copyButtons = document.querySelectorAll(".copy");
+            copyButtons.forEach((button) => {
+              button.addEventListener("click", () =>
+                copyToClipboard(data.code, button)
+              );
             });
-        });
-        
-    } else {
-        const holderBoxes = document.querySelectorAll('.boxes-holder .box');
-        holderBoxes.forEach(box => {
-            const logoLink = box.querySelector('.logobg a');
-            if (logoLink) {
-                const path = logoLink.getAttribute('href');
-                const pageKey = path.split('/').pop();
-                const jsonFilePath = `${basePath}/${pageKey}.json`;
+          }
   
-                loadJsonData(jsonFilePath, data => {
-                    if (data.code) {
-                        const copyButtons = box.querySelectorAll('.copy');
-                        copyButtons.forEach(button => {
-                            button.addEventListener('click', () => copyToClipboard(data.code, button));
-                        });
-                    }
-                    if (data["Main Mode"]) {
-                        modifyBox(box, data["Main Mode"]);
-                    }
-                    updateReviewButtons(box, data, pageKey);  
-                    updateURLs(sitesList);   
-                });         
-            }  
+          const mainBoxes = document.querySelectorAll(".box:not(.sitealternates .box)");
+          mainBoxes.forEach((box) => {
+            if (data["Main Mode"]) {
+              modifyBox(box, data["Main Mode"]);
+            }
+            updateReviewButtons(box, data, pageKey, reviewSettings);
+            updateURLs(reviewBox);
+          });
         });
+      });
+    } else {
+      const holderBoxes = document.querySelectorAll(".boxes-holder .box");
+      holderBoxes.forEach((box) => {
+        const logoLink = box.querySelector(".logobg a");
+        if (logoLink) {
+          const path = logoLink.getAttribute("href");
+          const pageKey = path.split("/").pop();
+          const jsonFilePath = `${basePath}/${pageKey}.json`;
+  
+          loadJsonData(jsonFilePath, `mainMode_${pageKey}`, (data) => {
+            if (data.code) {
+              const copyButtons = box.querySelectorAll(".copy");
+              copyButtons.forEach((button) => {
+                button.addEventListener("click", () =>
+                  copyToClipboard(data.code, button)
+                );
+              });
+            }
+            if (data["Main Mode"]) {
+              modifyBox(box, data["Main Mode"]);
+            }
+            updateReviewButtons(box, data, pageKey);
+            updateURLs(sitesList);
+          });
+        }
+      });
     }
-});
+  });
 
 
   document.addEventListener("DOMContentLoaded", function() {
@@ -1216,6 +1257,8 @@ if (btnfaq) {
 }
 
 let ratings = {};
+let requiredVPN = [];
+let maybeVPN = [];
 
 function addStarRating(boxId, rating) {
   const boxElement = document.getElementById(boxId);
@@ -1233,65 +1276,99 @@ function addStarRating(boxId, rating) {
   }
 }
 
+function handleVPNDisplay(boxElements) {
+  const vpnMessageDiv = document.createElement('div');
+  vpnMessageDiv.className = 'vpn';
+  vpnMessageDiv.textContent = 'Нужен VPN';
+
+  const vpnSemiMessageDiv = document.createElement('div');
+  vpnSemiMessageDiv.className = 'vpn-semi';
+  vpnSemiMessageDiv.textContent = 'VPN';
+
+  boxElements.forEach(boxElement => {
+    const boxId = boxElement.id;
+
+    if (requiredVPN.includes(boxId)) {
+      const target = boxElement.closest('.boxes-holder-section') || boxElement.querySelector('.logobg');
+      if (target) {
+        const clonedDiv = vpnMessageDiv.cloneNode(true);
+        target.appendChild(clonedDiv);
+      }
+    } else if (maybeVPN.includes(boxId)) {
+      const target = boxElement.closest('.boxes-holder-section') || boxElement.querySelector('.logobg');
+      if (target) {
+        const clonedDiv = vpnSemiMessageDiv.cloneNode(true);
+        target.appendChild(clonedDiv);
+      }
+    }
+  });
+}
+
+function loadCachedData() {
+  const cachedRatings = localStorage.getItem('ratings');
+  const cachedRequiredVPN = localStorage.getItem('requiredVPN');
+  const cachedMaybeVPN = localStorage.getItem('maybeVPN');
+
+  if (cachedRatings) {
+    ratings = JSON.parse(cachedRatings);
+  }
+  if (cachedRequiredVPN) {
+    requiredVPN = JSON.parse(cachedRequiredVPN);
+  }
+  if (cachedMaybeVPN) {
+    maybeVPN = JSON.parse(cachedMaybeVPN);
+  }
+}
+
+function saveToCache(data) {
+  localStorage.setItem('ratings', JSON.stringify(data.ratings));
+  localStorage.setItem('requiredVPN', JSON.stringify(data.RequiredVPN));
+  localStorage.setItem('maybeVPN', JSON.stringify(data.MaybeVPN));
+  localStorage.setItem('settingsHash', data.hash);
+}
+
+function computeHash(data) {
+  return btoa(JSON.stringify(data));
+}
+
+function renderData() {
+  const boxesHolder = document.querySelector('.boxes-holder, .sitealternatesboxes');
+  if (boxesHolder) {
+    for (const boxId in ratings) {
+      addStarRating(boxId, ratings[boxId]);
+    }
+  }
+
+  if (
+    window.location.pathname.startsWith('/ru/') ||
+    window.location.pathname === '/ru' ||
+    window.location.pathname === '/ru.html'
+  ) {
+    const boxElements = document.querySelectorAll('.box');
+    handleVPNDisplay(boxElements);
+  }
+}
+
+loadCachedData();
+renderData();
+
 fetch('/code-parts/sites-settings.json')
   .then(response => response.json())
   .then(settings => {
-    ratings = settings.ratings;
-    const requiredVPN = settings.RequiredVPN;
-    const maybeVPN = settings.MaybeVPN;
+    const currentHash = computeHash(settings);
+    const cachedHash = localStorage.getItem('settingsHash');
 
-    const boxesHolder = document.querySelector('.boxes-holder, .sitealternatesboxes');
-    if (boxesHolder) {
-      for (const boxId in ratings) {
-        addStarRating(boxId, ratings[boxId]);
-      }
-    }
+    if (currentHash !== cachedHash) {
+      ratings = settings.ratings;
+      requiredVPN = settings.RequiredVPN;
+      maybeVPN = settings.MaybeVPN;
 
-    if (
-      window.location.pathname.startsWith('/ru/') ||
-      window.location.pathname === '/ru' ||
-      window.location.pathname === '/ru.html'
-    ) {
-      const vpnMessageDiv = document.createElement('div');
-      vpnMessageDiv.className = 'vpn';
-      vpnMessageDiv.textContent = 'Нужен VPN';
-    
-      const vpnSemiMessageDiv = document.createElement('div');
-      vpnSemiMessageDiv.className = 'vpn-semi';
-      vpnSemiMessageDiv.textContent = 'VPN';
-    
-      const boxElements = document.querySelectorAll('.box');
-    
-      boxElements.forEach(boxElement => {
-        const boxId = boxElement.id;
-    
-        if (requiredVPN.includes(boxId)) {
-          if (boxElement.closest('.boxes-holder-section')) {
-            const clonedDiv = vpnMessageDiv.cloneNode(true);
-            boxElement.appendChild(clonedDiv);
-          } else {
-            const logobgElement = boxElement.querySelector('.logobg');
-            if (logobgElement) {
-              const clonedDiv = vpnMessageDiv.cloneNode(true);
-              logobgElement.appendChild(clonedDiv);
-            }
-          }
-        } else if (maybeVPN.includes(boxId)) {
-          if (boxElement.closest('.boxes-holder-section')) {
-            const clonedDiv = vpnSemiMessageDiv.cloneNode(true);
-            boxElement.appendChild(clonedDiv);
-          } else {
-            const logobgElement = boxElement.querySelector('.logobg');
-            if (logobgElement) {
-              const clonedDiv = vpnSemiMessageDiv.cloneNode(true);
-              logobgElement.appendChild(clonedDiv);
-            }
-          }
-        }
-      });
+      saveToCache({ ...settings, hash: currentHash });
+
+      renderData();
     }
-    
-  })
+  });
+
 
 const href = window.location.href;
 
@@ -3094,7 +3171,7 @@ function generateParticleflakes() {
     "url(/img/icons/main-modes/rust-logo.png)",
     "url(/img/icons/main-modes/cs2-logo.png)",
     "url(/img/icons/main-modes/dota2-logo.png)",
-    // "url(/img/icons/main-modes/freebies.png)",
+    "url(/img/icons/main-modes/freebies.png)",
     "url(/img/icons/main-modes/steam.png)"
   ];
 
