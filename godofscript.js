@@ -637,7 +637,6 @@ forcemodsboxes();
             }
   
             if (translations) {
-                const languageTag = document.documentElement.lang || 'en';
                 if (translations[languageTag]) {
                     translateTextElements(translations[languageTag]);
                 }
@@ -688,11 +687,10 @@ forcemodsboxes();
       "/contact-us"
   ];
   
-  const isRuPath = path === '/ru' || path === '/ru.html' || path.startsWith('/ru/');
   const isExcluded = excludePaths.some(excludedPath => path.includes(excludedPath));
   const isErrorPage = document.getElementById('error-404');
   
-  if (isRuPath && !isExcluded && !isErrorPage) {
+  if (languageTag === 'ru' && !isExcluded && !isErrorPage) {
       updateURLs(sitesList);
   }
   
@@ -2673,7 +2671,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 $(document).ready(function() {
-  const modesslider = document.querySelector('.main-mode-selection');
   if ($('.main-mode-selection').length && !$('.main-mode-selection').hasClass('slick-slider')) {
 
     var res = $(window).width();
@@ -2690,6 +2687,7 @@ $(document).ready(function() {
       nextArrow: '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
       dots: false
     });
+    const modesslider = document.querySelector('.main-mode-selection');
     updateURLs(modesslider);
   }
 
@@ -2719,8 +2717,9 @@ $(document).ready(function() {
             nextArrow: '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
             dots: false
           });
+          const modesslider = document.querySelector('.main-mode-selection');
+          updateURLs(modesslider);
         }
-        updateURLs(modesslider);
       });
     }
   });
