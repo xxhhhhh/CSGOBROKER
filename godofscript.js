@@ -3160,6 +3160,8 @@ function setTransform(xPos, yPos, scale, el) {
 
 function generateParticleflakes() {
   const originalParticleflake = document.querySelector(".particleflake");
+  if (!originalParticleflake) return; 
+
   const particleflakeContainer = originalParticleflake.parentNode;
   particleflakeContainer.style.display = "block";
 
@@ -3174,6 +3176,11 @@ function generateParticleflakes() {
     "url(/img/icons/main-modes/steam.png)"
   ];
 
+  particleflakes.forEach((particleflake) => {
+    particleflake.element.remove();
+  });
+  particleflakes = [];
+
   for (let i = 0; i < numberOfParticleflakes; i++) {
     const particleflakeClone = originalParticleflake.cloneNode(true);
     particleflakeContainer.appendChild(particleflakeClone);
@@ -3183,7 +3190,8 @@ function generateParticleflakes() {
 
     const initialXPos = getPosition(50, browserWidth);
     const initialYPos = getPosition(50, browserHeight);
-    const speed = (5 + Math.random() * 40) * delta;
+
+    const speed = 5 + Math.random() * 40;
 
     const particleflakeObject = new Particleflake(
       particleflakeClone,
@@ -3247,13 +3255,29 @@ function toggleParticles() {
   localStorage.setItem("particlesEnabled", particlesEnabled);
 
   updateToggleIcon();
+
+  const particleflakeContainer = document.querySelector("#particleflakeContainer");
+
   if (particlesEnabled) {
-    setup();
+    setAccessibilityState();
+
+    if (!document.querySelector(".particleflake")) {
+      const originalParticleflake = document.createElement("div");
+      originalParticleflake.className = "particleflake";
+
+      particleflakeContainer.appendChild(originalParticleflake);
+    }
+
+    if (enableAnimations) {
+      generateParticleflakes();
+      window.addEventListener("resize", handleResize, false);
+    }
   } else {
     particleflakes.forEach((particleflake) => {
       particleflake.element.remove();
     });
     particleflakes = [];
+    window.removeEventListener("resize", handleResize, false);
   }
 }
 
