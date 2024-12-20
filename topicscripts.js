@@ -76,6 +76,11 @@ $(document).ready(function () {
       });
 
       function insertRandomAdsBox() {
+
+        if (href.endsWith("sticker-crafts") || href.endsWith("sticker-crafts.html")) {
+          return;
+        }
+
         let adsFilePath = currentPath.includes("/ru/")
           ? "/code-parts/topic-ads-ru.html"
           : "/code-parts/topic-ads.html";
