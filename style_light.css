@@ -883,15 +883,13 @@ ul .submenu li .nonredir,
     filter: brightness(.15);
 }
 
-.boxes-holder-section:hover .boxes-holder-name .singlemod-icon::before {
-    filter: grayscale(1);
-}
-
-.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.trade-skins::before,
-.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.instant-sell::before,
-.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.earning::before,
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.cs2::before,
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.rust::before,
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.trade-skins,
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.instant-sell,
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.earning,
 .newest-boxes:hover .singlemod-icon::before {
-    filter: grayscale(1) brightness(.25);
+    filter: grayscale(1);
 }
 
 .boxes-holder-section {

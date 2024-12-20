@@ -1293,10 +1293,15 @@ function handleVPNDisplay(boxElements) {
         target.appendChild(clonedDiv);
       }
     } else if (maybeVPN.includes(boxId)) {
-      const target = boxElement.closest('.boxes-holder-section') || boxElement.querySelector('.logobg');
-      if (target) {
+      if (boxElement.closest('.boxes-holder-section')) {
         const clonedDiv = vpnSemiMessageDiv.cloneNode(true);
-        target.appendChild(clonedDiv);
+        boxElement.appendChild(clonedDiv);
+      } else {
+        const logobgElement = boxElement.querySelector('.logobg');
+        if (logobgElement) {
+          const clonedDiv = vpnSemiMessageDiv.cloneNode(true);
+          logobgElement.appendChild(clonedDiv);
+        }
       }
     }
   });

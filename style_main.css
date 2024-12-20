@@ -8862,22 +8862,30 @@ div#results {
 .boxes-holder-name .singlemod-icon.instant-sell::before,
 .boxes-holder-name .singlemod-icon.earning::before,
 .newest-boxes .singlemod-icon::before {
-    filter: grayscale(1) brightness(.25);
+    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(95%) contrast(250%);
 }
 
 .newest-boxes-title-box .singlemod-icon::before {
     opacity: 1;
 }
 
-.boxes-holder-section:hover .boxes-holder-name .singlemod-icon::before {
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.cs2::before, 
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.rust::before {
     filter: grayscale(0);
 }
 
-.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.trade-skins::before,
-.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.instant-sell::before,
-.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.earning::before,
-.newest-boxes:hover .singlemod-icon::before {
-    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(98%) contrast(250%);
+.boxes-holder-section .boxes-holder-name .singlemod-icon.trade-skins,
+.boxes-holder-section .boxes-holder-name .singlemod-icon.instant-sell,
+.boxes-holder-section .boxes-holder-name .singlemod-icon.earning,
+.newest-boxes .singlemod-icon {
+    filter: grayscale(1);
+}
+
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.trade-skins,
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.instant-sell,
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.earning,
+.newest-boxes:hover .singlemod-icon {
+    filter: grayscale(0);
 }
 
 /* .infoicon {
@@ -12802,7 +12810,7 @@ div#results {
 
 .main-page .vpn-semi::before {
     background-color: var(--darkgray);
-    padding: 10px;
+    padding: 9px 15px;
     right: 40px;
 }
 .vpn-semi:hover::before {
