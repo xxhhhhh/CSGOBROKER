@@ -755,8 +755,7 @@ forcemodsboxes();
 
   if (
     window.location.pathname.includes("/mirrors/") ||
-    window.location.pathname.includes("/reviews/") ||
-    window.location.pathname.includes("/topic")
+    window.location.pathname.includes("/reviews/")
   ) {
     document.addEventListener("DOMContentLoaded", () => {
       const langMenuDiv = document.querySelector(".lang-menu");
