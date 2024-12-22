@@ -1286,10 +1286,15 @@ function handleVPNDisplay(boxElements) {
     const boxId = boxElement.id;
 
     if (requiredVPN.includes(boxId)) {
-      const target = boxElement.closest('.boxes-holder-section') || boxElement.querySelector('.logobg');
-      if (target) {
-        const clonedDiv = vpnMessageDiv.cloneNode(true);
-        target.appendChild(clonedDiv);
+      if (boxElement.closest('.boxes-holder-section')) {
+        const clonedDiv = vpnSemiMessageDiv.cloneNode(true);
+        boxElement.appendChild(clonedDiv);
+      } else {
+        const logobgElement = boxElement.querySelector('.logobg');
+        if (logobgElement) {
+          const clonedDiv = vpnMessageDiv.cloneNode(true);
+          logobgElement.appendChild(clonedDiv);
+        }
       }
     } else if (maybeVPN.includes(boxId)) {
       if (boxElement.closest('.boxes-holder-section')) {

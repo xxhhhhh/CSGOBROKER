@@ -9744,8 +9744,8 @@ div#results {
     animation: none;
 }
 
-.boxes-holder:not(.main-page) .box .logobg,
-.boxes-holder:not(.main-page) .box .content {
+.boxes-holder:not(.main-page).langimprt .box .logobg,
+.boxes-holder:not(.main-page).langimprt .box .content {
     opacity: 1 !important;
     animation: none !important;
     backface-visibility: unset !important;
@@ -9779,7 +9779,7 @@ div#results {
 
 .box.filter-applying .logobg,
 .box.filter-applying .content {
-    transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out !important;
 }
 
 .box.filter-applying .logobg .rating-case-single {
