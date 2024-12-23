@@ -7773,7 +7773,7 @@ div#results {
     filter: drop-shadow(0 0 1px rgb(35 35 35));
     border-radius: 5px;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
     cursor: pointer;
     transition: .15s all ease-in-out;
@@ -12834,4 +12834,119 @@ div#results {
     .box .vpn-semi {
         right: 15px;
     }
+}
+/* 
+.boxes-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1300px;
+    height: 670px;
+    justify-content: center;
+    align-content: flex-start;
+    position: relative;
+}
+
+.boxes-holder-section.expandable .boxes-list {
+    height: 230px;
+    overflow: hidden;
+    mask-image: linear-gradient(#000 65%, transparent);
+}
+
+.boxes-holder-section.expandable .boxes-list::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(180deg, transparent 0%, rgb(19, 19, 19) 100%);
+    z-index: 10;
+    user-select: none;
+    pointer-events: none;
+} */
+
+.switch {
+    --_switch-easing: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+    color: var(--white);
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-radius: 6px;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    position: relative;
+    isolation: isolate;
+}
+
+.sitepage.topic-craft .navigation-section.second.character span, 
+.box-topic.sticker .navigation-section.second.character span {
+    opacity: 1;
+}
+
+label.switch:hover {
+    transform: none !important;
+}
+
+label.switch:active {
+    filter: none !important;
+}
+
+.switch input[type="checkbox"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.switch span {
+    display: grid;
+    place-content: center;
+    transition: opacity .3s ease-in-out 0s;
+    padding: 13px 20px;
+    text-shadow: 1px 1px 3px rgb(100 100 100);
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.switch::before,
+.switch::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    transition: inset .15s ease-in-out;
+}
+
+.switch::before {
+    background: linear-gradient(180deg, rgb(22 22 22) 0%, rgb(16 16 16) 100%);
+    inset: 4px 50% 4px 4px;
+    transition: inset .5s var(--_switch-easing), background-color .5s ease-in-out;
+    /* filter: drop-shadow(0 0 1px rgb(9 9 9)); */
+    z-index: -1;
+}
+
+.switch::after {
+    background: linear-gradient(180deg, rgb(13, 13, 13) 0%, var(--main-theme) 100%);
+    filter: drop-shadow(0 0 1px rgb(35 35 35));
+    inset: 0;
+    z-index: -2;
+}
+
+.switch:has(input:checked):hover::before {
+    inset: 4px 4px 4px 45%;
+}
+
+.switch:has(input:not(:checked)):hover::before {
+    inset: 4px 45% 4px 4px;
+}
+
+.switch:has(input:checked)::before {
+    background: var(--main-color);
+    inset: 4px 4px 4px 50%;
 }
