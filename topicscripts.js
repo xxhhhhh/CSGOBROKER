@@ -346,7 +346,7 @@ $(document).ready(function () {
           previewWindow.attr("data-current-box"),
           10
         );
-        const currentBox = $(".box-skins-list, .box-topic").eq(currentBoxIndex);
+        const currentBox = $(".box-skins-list, .box-topic, .character-box").eq(currentBoxIndex);
         const visibleItems = currentBox.find(
           ".skin:not(.disabled)"
         );
