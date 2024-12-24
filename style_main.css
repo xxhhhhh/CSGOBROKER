@@ -771,6 +771,7 @@ nav .pages {
 #preview-content .skin-desc-name {
     font-weight: 500;
     position: absolute;
+    cursor: auto;
     z-index: 10;
     left: 65px;
     top: 21px;
@@ -1134,7 +1135,7 @@ nav .pages {
 .navigation-reset::before,
 .box-skins-name::before {
     content: '';
-    background: linear-gradient(180deg, rgb(22 22 22) 0%, rgb(16 16 16) 100%);
+    background: linear-gradient(180deg, rgb(26 26 26) 0%, rgb(18 18 18) 100%);
     position: absolute;
     left: 2px;
     top: 2px;
