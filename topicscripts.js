@@ -783,10 +783,11 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
                 "Classified": "Засекреченное",
                 "Covert": "Тайное",
                 "Contraband": "Контрабанда",
-                "Change Color": "Сменить Цвет"
+                "Change Color": "Сменить Цвет",
+                "All Skins": "Все Скины"
             };
 
-            var elementsToTranslate = document.querySelectorAll('.navigation-weapon-type, .color-box-selection-button, .navigation-weapon-name, .box-skins-name span');
+            var elementsToTranslate = document.querySelectorAll('.navigation-weapon-type, .color-box-selection-button, .color-box-overview-button, .navigation-weapon-name, .box-skins-name span');
             elementsToTranslate.forEach(function(element) {
                 var originalText = element.textContent.trim();
                 if (translations_items.hasOwnProperty(originalText)) {

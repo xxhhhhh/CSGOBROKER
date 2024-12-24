@@ -1129,6 +1129,7 @@ nav .pages {
 .navigation-weapon-type::before,
 /* .navigation-weapon-name::before, */
 .color-box-selection-button::before,
+.color-box-overview-button::before,
 .navigation-weapon-sort::before,
 .navigation-reset::before,
 .box-skins-name::before {
@@ -1159,6 +1160,7 @@ nav .pages {
 .navigation-weapon-type.enabled:hover,
 .color-box-selection-button:hover,
 .color-box-selection-button.clicked,
+.color-box-overview-button:hover,
 .navigation-weapon-sort:hover,
 .navigation-weapon-sort.enabled,
 .navigation-weapon-sort.reversed,
@@ -4182,18 +4184,6 @@ nav #logo:hover {
     align-content: center;
     align-items: center;
     justify-content: center;
-}
-
-.box.skin-navigator .colors-list-unit,
-.navigation-section.second .colors-list-unit {
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-    margin: 5px;
-    /* margin-left: 10px; */
-    transition: all .2s ease-in-out;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .3);
-    border: 1px solid rgba(255, 255, 255, .15);
 }
 
 .box.skin-navigator .colors-list-unit:hover,
@@ -7522,7 +7512,6 @@ i.flagbox {
     font-size: 14px;
     font-weight: 500;
     color: rgba(255, 255, 255, .25);
-    padding: 10px;
     width: 100%;
     text-wrap: nowrap;
     margin: auto;
@@ -7766,9 +7755,10 @@ div#results {
     justify-content: center;
 }
 
-.color-box-selection-button {
-    width: 100%;
-    padding: 8px 6px;
+.color-box-selection-button,
+.color-box-overview-button {
+    width: auto;
+    padding: 8px 20px;
     background: linear-gradient(180deg, rgb(13, 13, 13) 0%, var(--main-theme) 100%);
     filter: drop-shadow(0 0 1px rgb(35 35 35));
     border-radius: 5px;
@@ -7782,17 +7772,21 @@ div#results {
     position: relative;
 }
 
+.color-box-overview-button {
+    text-decoration: none;
+    margin: 0 10px;
+    margin-top: 10px;
+}
+
 .color-box-selection-button.clicked {
     background-color: #191919;
 }
 
 .color-item,
 .colors-list-unit {
-    height: 20px !important;
-    width: 20px !important;
     background-color: #1a1a1a;
-    padding: 7px;
     border-bottom: 2px solid rgba(0, 0, 0, .1);
+    padding: 7px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7800,12 +7794,10 @@ div#results {
 
 #color-list li {
     display: flex;
-    height: 30px;
-    width: 16%;
+    height: auto;
+    width: auto;
     align-items: center;
-    background-color: rgba(18, 18, 18, .5);
     justify-content: center !important;
-    margin: 1px;
     border-radius: 5px;
 }
 
@@ -7845,6 +7837,16 @@ div#results {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#color-list li .colors-list-unit {
+    width: 22px;
+    height: 22px;
+    margin: 4px;
+    border-radius: 6px;
+    transition: all .2s ease-in-out;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .3);
+    border: 1px solid rgba(255, 255, 255, .15);
 }
 
 .controls {
@@ -12446,7 +12448,10 @@ div#results {
 }
 
 @media screen and (max-width: 1365px) {
-
+    .color-box-overview-button {
+        margin-top: unset;
+        margin-left: 8px;
+    }
     .payments-block,
     .payments-button {
         position: relative;
