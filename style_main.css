@@ -12673,6 +12673,31 @@ div#results {
     display: none;
 }
 
+.box-skins.character .skin.notexist::after {
+    display: flex;
+    content: 'Not Exist' !important;
+    font-weight: 600;
+    font-size: 12px;
+    transform: rotate(8deg);
+    text-transform: uppercase;
+    position: absolute;
+    margin: 0 auto;
+    background: none;
+    z-index: 10;
+    width: auto;
+    height: auto;
+    left: unset;
+    top: unset;
+    opacity: .2;
+}
+.box-skins.character .skin.notexist img {
+    opacity: .1;
+}
+
+.box-skins.character .skin.notexist .skin-desc-name {
+    display: none;
+}
+
 .box-skins.character .skin .skin-desc-name {
     height: 30px;
     max-width: 80%;
