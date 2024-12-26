@@ -1054,3 +1054,65 @@ if (window.location.pathname.includes('/sticker-crafts/')) {
 
   importStickerCrafts();
 }
+
+function updateURLs(parentElement) {
+  if (!parentElement) {
+    return;
+  }
+
+  const links = parentElement.querySelectorAll('a[href]');
+  const languageTag = extractLanguageTagFromHTML();
+
+  if (!languageTag || languageTag === 'en' || languageTag === 'pl') {
+    return;
+  }
+
+  links.forEach(link => {
+    if (link.closest('div.instruction') || link.closest('div.instruction-mirrors') || link.closest('div.site-attention')) {
+      return;
+    }
+
+    if (languageTag === 'tr' && link.classList.contains('mirror-redirect') || languageTag === 'es' && link.classList.contains('mirror-redirect')) {
+      return;
+    }
+
+    let href = link.getAttribute('href');
+
+    if (href.includes('/topic') && languageTag !== 'ru') {
+      return;
+    }
+
+    if (href === '/') {
+      href = `/${languageTag}/`;
+    } else {
+      const pathSegments = href.split('/');
+      
+      if (pathSegments.length > 1 && pathSegments[1].length === 2) {
+        return;
+      }
+      
+      if (href.startsWith('/')) {
+        href = `/${languageTag}${href}`;
+      } else {
+        href = `/${languageTag}/${href}`;
+      }
+    }
+
+    if (!link.classList.contains('visit') && !link.classList.contains('notupdt')) {
+      if (languageTag === 'pt' || languageTag === 'hi') {
+        if (!link.classList.contains('review-button') && !link.classList.contains('boxtitle') && !link.closest('.box')) {
+          link.setAttribute('href', href);
+        }
+      } else {
+        link.setAttribute('href', href);
+      }
+    }
+    
+  });
+}
+
+const allskinsListbutton = document.querySelector('.navigation-section.second')
+
+if (languageTag === 'ru') {
+  updateURLs(allskinsListbutton);
+}
