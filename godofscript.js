@@ -763,16 +763,24 @@ forcemodsboxes();
       const currentPath = window.location.pathname;
     
       if (!langMenuDiv) return;
-    
+
       async function fetchSiteLanguages() {
         const siteKey = currentPath.split("/").pop().replace(".html", "") || "index";
         const jsonFilePath = `${basePath}/${siteKey}.json`;
-    
+  
         try {
           const response = await fetch(jsonFilePath);
           if (!response.ok) return [];
           const siteInfo = await response.json();
-          return siteInfo.languages ? siteInfo.languages.split(",").map((lang) => lang.trim()) : [];
+          let languages = siteInfo.languages
+            ? siteInfo.languages.split(",").map((lang) => lang.trim())
+            : [];
+          
+          if (currentPath.includes("/mirrors/")) {
+            languages = languages.filter((lang) => ["ru", "en"].includes(lang));
+          }
+  
+          return languages;
         } catch {
           return [];
         }
