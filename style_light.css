@@ -1028,3 +1028,8 @@ ul .submenu li .nonredir,
 .particleflake {
     filter: grayscale(1);
 }
+
+.box-skins .skin .skin-desc-name {
+    filter: none;
+    font-weight: 600;
+}

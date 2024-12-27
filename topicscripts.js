@@ -754,16 +754,6 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
         }        
       
     });
-
-    const colorBoxes = document.querySelectorAll('.color-box-selection-button');
-    const colorList = document.getElementById('color-list');
-    
-    colorBoxes.forEach(box => {
-        box.addEventListener('click', () => {
-            box.classList.toggle('clicked');
-            colorList.classList.toggle('active');
-        });
-    });
     
     function translateTypes(languageTag) {
         if (languageTag === "ru") {
@@ -784,10 +774,12 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
                 "Covert": "Тайное",
                 "Contraband": "Контрабанда",
                 "Change Color": "Сменить Цвет",
+                "Expensive": "Дорого",
+                "Cheap": "Дешево",
                 "All Skins": "Все Скины"
             };
 
-            var elementsToTranslate = document.querySelectorAll('.navigation-weapon-type, .color-box-selection-button, .color-box-overview-button, .navigation-weapon-name, .box-skins-name span');
+            var elementsToTranslate = document.querySelectorAll('.navigation-weapon-type, .category-switch, .color-box-selection-button, .color-box-overview-button, .navigation-weapon-name, .box-skins-name span');
             elementsToTranslate.forEach(function(element) {
                 var originalText = element.textContent.trim();
                 if (translations_items.hasOwnProperty(originalText)) {
@@ -1111,8 +1103,112 @@ function updateURLs(parentElement) {
   });
 }
 
-const allskinsListbutton = document.querySelector('.navigation-section.second')
+// Проверяем, что скрипт выполняется только на страницах с "/topic/skins/"
+if (window.location.pathname.includes('/topic/skins/')) {
+  document.addEventListener('DOMContentLoaded', () => {
+    const colorsBox = document.querySelector('.colors-box-selection');
 
-if (languageTag === 'ru') {
-  updateURLs(allskinsListbutton);
+    // Если элемент .colors-box-selection существует
+    if (colorsBox) {
+      // Проверяем, есть ли внутри <ul id="color-list"> и удаляем, если есть
+      const existingColorList = colorsBox.querySelector('#color-list');
+      if (existingColorList) {
+        existingColorList.remove();
+      }
+
+      // Определяем, какой файл нужно импортировать
+      const pathAfterSkins = window.location.pathname.split('/topic/skins/')[1];
+      let fileName = 'skins-color-list.html'; // По умолчанию
+
+      if (pathAfterSkins.startsWith('cheapest')) {
+        fileName = 'cheap-skins-color-list.html';
+      } else if (pathAfterSkins.startsWith('best')) {
+        fileName = 'expensive-skins-color-list.html';
+      }
+
+      // Создаем элемент <link> для импорта HTML
+      const importUrl = `/code-parts/micro-parts/topic-color-lists/${fileName}`;
+      fetch(importUrl)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Failed to load ${fileName}: ${response.statusText}`);
+          }
+          return response.text();
+        })
+        .then(htmlContent => {
+          const container = document.createElement('div');
+          container.innerHTML = htmlContent;
+          const importedContent = container.querySelector('#color-list');
+
+          // Убедимся, что <ul id="color-list"> присутствует в импортированном файле
+          if (importedContent) {
+            colorsBox.appendChild(importedContent);
+          } else {
+            console.error(`No <ul id="color-list"> found in ${fileName}`);
+          }
+          const colorBoxes = document.querySelectorAll(
+            ".color-box-selection-button"
+          );
+
+          colorBoxes.forEach((box) => {
+            box.addEventListener("click", () => {
+              box.classList.toggle("clicked");
+              importedContent.classList.toggle("active");
+            });
+          });
+
+          const allskinsListbutton = document.querySelector(
+            ".navigation-section.second"
+          );
+
+          if (languageTag === "ru") {
+            updateURLs(allskinsListbutton);
+          }
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+
+    // Расширенная логика для .topic-box и .skins-category-switch
+    const topicBox = document.querySelector('.topic-box');
+    if (topicBox) {
+      const logoBg = topicBox.querySelector('.logobg');
+      const dataColor = logoBg ? logoBg.getAttribute('data-color') : null;
+
+      if (dataColor) {
+        // Работа с .skins-category-switch
+        const categorySwitchContainer = document.querySelector('.skins-category-switch');
+        if (categorySwitchContainer) {
+          const categorySwitches = categorySwitchContainer.querySelectorAll('div.category-switch');
+          categorySwitches.forEach((switchElement, index) => {
+            const hrefBase = index === 0
+              ? `/topic/skins/cheapest-${dataColor}-skins`
+              : `/topic/skins/best-${dataColor}-skins`;
+
+            // Меняем div на a
+            const anchor = document.createElement('a');
+            anchor.textContent = switchElement.textContent;
+            anchor.href = hrefBase;
+            anchor.className = switchElement.className;
+
+            // Добавляем обработчик клика для добавления класса "clicked"
+            anchor.addEventListener('click', (e) => {
+              e.preventDefault();
+              categorySwitchContainer.querySelectorAll('a').forEach(el => el.classList.remove('clicked'));
+              anchor.classList.add('clicked');
+            });
+
+            switchElement.replaceWith(anchor);
+          });
+        }
+
+        // Работа с .color-box-overview-button
+        const overviewButton = document.querySelector('.color-box-overview-button');
+        if (overviewButton) {
+          overviewButton.href = `/topic/skins/${dataColor}-skins`;
+        }
+      }
+    }
+  });
 }
