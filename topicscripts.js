@@ -1103,22 +1103,18 @@ function updateURLs(parentElement) {
   });
 }
 
-// Проверяем, что скрипт выполняется только на страницах с "/topic/skins/"
 if (window.location.pathname.includes('/topic/skins/')) {
   document.addEventListener('DOMContentLoaded', () => {
     const colorsBox = document.querySelector('.colors-box-selection');
 
-    // Если элемент .colors-box-selection существует
     if (colorsBox) {
-      // Проверяем, есть ли внутри <ul id="color-list"> и удаляем, если есть
       const existingColorList = colorsBox.querySelector('#color-list');
       if (existingColorList) {
         existingColorList.remove();
       }
 
-      // Определяем, какой файл нужно импортировать
       const pathAfterSkins = window.location.pathname.split('/topic/skins/')[1];
-      let fileName = 'skins-color-list.html'; // По умолчанию
+      let fileName = 'skins-color-list.html';
 
       if (pathAfterSkins.startsWith('cheapest')) {
         fileName = 'cheap-skins-color-list.html';
@@ -1126,7 +1122,6 @@ if (window.location.pathname.includes('/topic/skins/')) {
         fileName = 'expensive-skins-color-list.html';
       }
 
-      // Создаем элемент <link> для импорта HTML
       const importUrl = `/code-parts/micro-parts/topic-color-lists/${fileName}`;
       fetch(importUrl)
         .then(response => {
@@ -1140,12 +1135,10 @@ if (window.location.pathname.includes('/topic/skins/')) {
           container.innerHTML = htmlContent;
           const importedContent = container.querySelector('#color-list');
 
-          // Убедимся, что <ul id="color-list"> присутствует в импортированном файле
           if (importedContent) {
             colorsBox.appendChild(importedContent);
-          } else {
-            console.error(`No <ul id="color-list"> found in ${fileName}`);
           }
+
           const colorBoxes = document.querySelectorAll(
             ".color-box-selection-button"
           );
@@ -1170,14 +1163,12 @@ if (window.location.pathname.includes('/topic/skins/')) {
         });
     }
 
-    // Расширенная логика для .topic-box и .skins-category-switch
     const topicBox = document.querySelector('.topic-box');
     if (topicBox) {
       const logoBg = topicBox.querySelector('.logobg');
       const dataColor = logoBg ? logoBg.getAttribute('data-color') : null;
 
       if (dataColor) {
-        // Работа с .skins-category-switch
         const categorySwitchContainer = document.querySelector('.skins-category-switch');
         if (categorySwitchContainer) {
           const categorySwitches = categorySwitchContainer.querySelectorAll('div.category-switch');
@@ -1186,15 +1177,12 @@ if (window.location.pathname.includes('/topic/skins/')) {
               ? `/topic/skins/cheapest-${dataColor}-skins`
               : `/topic/skins/best-${dataColor}-skins`;
 
-            // Меняем div на a
             const anchor = document.createElement('a');
             anchor.textContent = switchElement.textContent;
             anchor.href = hrefBase;
             anchor.className = switchElement.className;
 
-            // Добавляем обработчик клика для добавления класса "clicked"
             anchor.addEventListener('click', (e) => {
-              e.preventDefault();
               categorySwitchContainer.querySelectorAll('a').forEach(el => el.classList.remove('clicked'));
               anchor.classList.add('clicked');
             });
@@ -1203,7 +1191,6 @@ if (window.location.pathname.includes('/topic/skins/')) {
           });
         }
 
-        // Работа с .color-box-overview-button
         const overviewButton = document.querySelector('.color-box-overview-button');
         if (overviewButton) {
           overviewButton.href = `/topic/skins/${dataColor}-skins`;
