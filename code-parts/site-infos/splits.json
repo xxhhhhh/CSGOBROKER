@@ -1,10 +1,9 @@
 {
     "gamemodesContent": [
-        "<a href=\"/rust/casino\" aria-label=\"Poker\" class=\"poker\"></a>",
-        "<a href=\"/rust/casino\" aria-label=\"Blackjack\" class=\"blackjack\"></a>",
         "<a href=\"/rust/roulette\" aria-label=\"Wheel of Fortune\" class=\"wheel\"></a>",
         "<a href=\"/rust\" aria-label=\"Mines\" class=\"mines\"></a>",
         "<a href=\"/rust\" aria-label=\"Plinko\" class=\"plinko\"></a>",
+        "<a href=\"/csgo/case-battle\" aria-label=\"Case Battles\" class=\"casebattles\"></a>",
         "<a href=\"/rust\" aria-label=\"Hilo\" class=\"hilo\"></a>",
         "<a href=\"/rust/upgrader\" aria-label=\"Upgrader\" class=\"upgrader\"></a>",
         "<a href=\"/rust\" aria-label=\"Duels\" class=\"duels\"></a>",
@@ -34,7 +33,7 @@
         "<a href=\"/crypto\" aria-label=\"Litecoin\" class=\"ltc\"></a>"
     ],
     "ratings": {
-        "Trust": 2.5,
+        "Trust": 3,
         "Support": 3.5,
         "Payments": 3,
         "Playability": 3.5
@@ -44,6 +43,6 @@
     "link": "https://splits.gg/r/BROKER",
     "code": "broker",
     "Main Mode": "classic",
-    "featuresContent": ["DepositBonus", "Rakeback", "Faucet", "Rain"],
+    "featuresContent": ["SignUpBonus", "DepositBonus", "Rakeback", "Faucet", "Rain"],
     "Sites Alternatives"  : ["howlgg", "banditcamp", "rustmagic", "rustyloot"]
 }
