@@ -5628,10 +5628,6 @@ footer .centralizer .footer-content {
     top: 102px;
 }
 
-.siteleftpannel .mods-box.mods-moveitems {
-    left: 5.5%;
-}
-
 .singlemod-select {
     cursor: pointer;
     position: relative;
@@ -10246,8 +10242,6 @@ div#results {
 
     .topic-box .logobg {
         background-color: rgba(0, 0, 0, .15);
-        mask-image: unset;
-        -webkit-mask-image: unset;
         height: 115px;
         width: 100%;
     }
@@ -12913,10 +12907,6 @@ div#results {
     margin-bottom: 10px;
 }
 
-.navigation-section.second .skins-category-switch {
-    margin-top: -7px;
-}
-
 .sitepage.topic-craft .navigation-section.second.character span, 
 .box-topic.sticker .navigation-section.second.character span {
     opacity: 1;
@@ -13003,14 +12993,14 @@ label.skins-category-switch:active {
 }
 
 .skins-category-switch {
-    margin-top: 16px !important;
+    margin-top: 15px;
 }
 
 .skins-category-switch::before {
     content: 'Inventory by Color';
     display: flex;
     position: absolute;
-    top: -22px;
+    top: -21px;
     height: 20px;
     background: linear-gradient(150deg, var(--darkgray) 0%, var(--darkygray) 100%);
     width: 100%;

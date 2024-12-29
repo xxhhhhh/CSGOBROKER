@@ -1033,3 +1033,26 @@ ul .submenu li .nonredir,
     filter: none;
     font-weight: 600;
 }
+
+.skins-category-switch::after {
+    background: linear-gradient(180deg, var(--opacback) 0%, var(--main-theme) 100%);
+}
+
+.skins-category-switch.cheap .category-switch:nth-child(2)::before, 
+.skins-category-switch.expensive .category-switch:nth-child(3)::before, 
+.skins-category-switch .category-switch:hover:nth-child(2)::before,
+.skins-category-switch .category-switch:hover:nth-child(3)::before {
+    background: linear-gradient(180deg, var(--main-theme) 0%, var(--main-theme) 100%);
+}
+
+.skins-category-switch.cheap .category-switch:nth-child(2), 
+.skins-category-switch.expensive .category-switch:nth-child(3), 
+.skins-category-switch .category-switch:hover:nth-child(3), 
+.skins-category-switch .category-switch:hover:nth-child(2),
+.skins-category-switch::before {
+    color: #1a1a1a;
+}
+
+.skins-category-switch::before {
+    background: linear-gradient(180deg, var(--main-theme) 0%, var(--main-theme) 100%);
+}
