@@ -774,8 +774,8 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
                 "Covert": "Тайное",
                 "Contraband": "Контрабанда",
                 "Change Color": "Сменить Цвет",
-                "Expensive": "Дорого",
-                "Cheap": "Дешево",
+                "Expensive": "Дорогой",
+                "Cheap": "Дешевый",
                 "All Skins": "Все Скины"
             };
 
