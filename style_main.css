@@ -1015,6 +1015,11 @@ nav .pages {
     bottom: 0;
 }
 
+.notexist .site-searcher-buttons,
+.notexist .skin-desc-name {
+    display: none;
+}
+
 .site-searcher-box[data-title]:hover:after,
 .navigation-weapon-sort[data-title]:hover:after,
 .box-topic .skin:hover .skin-desc-name,
@@ -8880,7 +8885,7 @@ div#results {
 .boxes-holder-section .boxes-holder-name .singlemod-icon.instant-sell,
 .boxes-holder-section .boxes-holder-name .singlemod-icon.earning,
 .newest-boxes .singlemod-icon {
-    filter: grayscale(1);
+    filter: grayscale(1) brightness(.8);
 }
 
 .boxes-holder-section:hover .boxes-holder-name .singlemod-icon.trade-skins,
@@ -9706,12 +9711,6 @@ div#results {
 
 .boxes-holder.langimprt .box .logobg,
 .boxes-holder.langimprt .box .content,
-.main-page.langimprt {
-    opacity: 0;
-}
-
-.boxes-holder.langimprt .box .logobg,
-.boxes-holder.langimprt .box .content,
 .main-page.langimprt:has(.main-mode-selection)  {
     animation-duration: .35s;
     animation-delay: .15s;
@@ -9746,13 +9745,13 @@ div#results {
     animation: none;
 }
 
-.boxes-holder:not(.main-page).langimprt .box .logobg,
+/* .boxes-holder:not(.main-page).langimprt .box .logobg,
 .boxes-holder:not(.main-page).langimprt .box .content {
     opacity: 1 !important;
     animation: none !important;
     backface-visibility: unset !important;
     z-index: 10 !important;
-}
+} */
 
 .box.hidden,
 .box.hidden-deposit,
