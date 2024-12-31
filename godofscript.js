@@ -695,7 +695,7 @@ forcemodsboxes();
   }
   
   if (
-    !window.location.pathname.endsWith("404") &&
+    !isErrorPage &&
     !window.location.pathname.includes("/mirrors/") &&
     !window.location.pathname.includes("/reviews/") &&
     !window.location.pathname.includes("/topic") &&
@@ -712,7 +712,6 @@ forcemodsboxes();
     !window.location.pathname.endsWith("/es.html") &&
     !window.location.pathname.endsWith("/tr.html") &&
     !window.location.pathname.endsWith("/hi.html") &&
-    !window.location.pathname.endsWith("/404.html") &&
     !window.location.pathname.endsWith("/index.html") &&
     !window.location.pathname.endsWith("/")
   ) {
