@@ -3283,6 +3283,7 @@ nav #logo:hover {
     min-height: unset;
     transition: unset;
     border-radius: 0 0 10px 10px;
+    z-index: 10;
 }
 
 .sitepage.cases .box-topic {
@@ -3715,6 +3716,7 @@ nav #logo:hover {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
     transition: all .15s ease-in-out;
     text-decoration: none;
     background: var(--darkygray);
@@ -3756,16 +3758,6 @@ nav #logo:hover {
     transition: all .2s ease-in-out;
 }
 
-.topic-box:hover .logobg,
-.item-box-topic:hover .logobg {
-    transform: scale(1.03) !important;
-}
-
-.topic-box .logobg:hover img {
-    transform: scale(1.05) rotate(3deg) !important;
-    transition: all .15s ease-in-out !important;
-}
-
 .topic-box .logobg img {
     transition: all .15s ease-in-out;
     height: 84%;
@@ -3800,6 +3792,24 @@ nav #logo:hover {
     opacity: 0;
     visibility: visible;
     transition: all .3s ease-in-out, opacity .4s;
+    background-color: var(--darkgray);
+    margin: 8px;
+}
+
+.topic-box .logobg {
+    transform: scale(1);
+    position: relative;
+    margin-top: 6px;
+    opacity: 1;
+    border-radius: 10px;
+    /* background: linear-gradient(0deg, var(--darkygray) 50%, var(--darkgray) 100%); */
+    background: linear-gradient(-45deg, var(--darkygray) 50%, var(--darkgray) 100%);
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 8px;
+    width: auto;
 }
 
 .topic-boxes-holder .logobg.skincolors {
@@ -3809,6 +3819,23 @@ nav #logo:hover {
 .topic-box .logobg.skincolors.active {
     transform: scale(1);
     opacity: 1;
+}
+
+
+.topic-boxes-holder .topic-box:hover .logobg,
+.item-box-topic:hover .logobg,
+.topic-box.maestro:hover .logobg {
+    transform: scale(1.03) !important;
+    margin: 7px 8px 9px 8px !important;
+}
+
+.item-box-topic:hover .logobg {
+    margin: unset !important;
+}
+
+.topic-boxes-holder .topic-box .logobg:hover img {
+    transform: scale(1.05) rotate(3deg) !important;
+    transition: all .15s ease-in-out !important;
 }
 
 .topic-box .content {
@@ -5671,12 +5698,12 @@ footer .centralizer .footer-content {
 
 .singlemod-select::before,
 .category-selector .category-box .category-box-logo::before {
-    background: radial-gradient(815% 120% at 0% 0%, var(--darkygray), var(--main-theme));
+    background: radial-gradient(815% 120% at 0% 0%, var(--darkygray), var(--darkgray));
     transition: all .15s ease-in-out;
 }
 
 .mods-box.skins-box .singlemod-select::before {
-    background: radial-gradient(815% 120% at 0% 0%, var(--darkygray), var(--main-theme));
+    background: radial-gradient(815% 120% at 0% 0%, var(--darkygray), var(--darkgray));
 }
 
 .category-selector .category-box.active .category-box-logo::before,
@@ -10242,7 +10269,6 @@ div#results {
     .topic-box .logobg {
         background-color: rgba(0, 0, 0, .15);
         height: 115px;
-        width: 100%;
     }
 
     .topic-box .content {

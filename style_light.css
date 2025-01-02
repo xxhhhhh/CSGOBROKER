@@ -44,17 +44,39 @@
     background: var(--opacback) !important;
 }
 
-.box-topic .topic-box,
-.box-topic .topic-box:hover,
+.box-topic .topic-box .logobg,
+.box-topic .topic-box:hover .logobg,
 #color-list {
-    background: var(--main-theme) !important;
+    background-color: var(--main-theme) !important;
+
+}
+
+.topic-box .logobg img,
+.box-skins .skin img {
+    filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
+}
+
+.topic-box .logobg,
+.topic-box .logobg.skincolors.active,
+.topic-box.maestro .logobg {
+    background: linear-gradient(-45deg, var(--darkygray) 50%, var(--main-theme) 100%);
+    box-shadow: 0 -1px 2px 0 rgba(50, 50, 50, .4);
+}
+
+.topic-box.maestro .logobg {
+    box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .4);
+}
+
+.topic-box .logobg, .topic-box .logobg.skincolors.active {
+    background-color: var(--main-theme) ;
+    background-position: center;
+    background-size: cover;
 }
 
 #color-list li {
     background: unset
 }
 
-.box-topic .topic-box .logobg,
 .box-topic .skin img {
     background-color: unset !important;
     filter: drop-shadow(0px 0px 3px rgb(100 100 100));
@@ -587,10 +609,6 @@ h3,
 
 .box-skins .skin.gold::before {
     background: radial-gradient(50% 65% at 50% 100%, rgba(228, 174, 57, .4), transparent 100%);
-}
-
-.box-skins.solo .skin img {
-    filter: drop-shadow(0 0 1px black);
 }
 
 .topic-box.maestro .content,
