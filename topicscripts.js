@@ -325,9 +325,15 @@ $(document).ready(function () {
           $("#preview-showcase").append(previewExtras);
         }
       
-        previewExtras.append(skinAltInfoDiv);
+        previewExtras.prepend(skinAltInfoDiv);
 
-        previewExtras.find(".skin-color-info").remove();
+        let skinColorInfo = previewExtras.find(".skin-color-info");
+        if (skinColorInfo.length === 0) {
+          skinColorInfo = $("<div>", { class: "skin-color-info" });
+          previewExtras.append(skinColorInfo);
+        }
+      
+        skinColorInfo.empty();
       
         const skinId = element.getAttribute("skin-id");
         fetch(`/code-parts/skins-list/${weapon}.json`)
@@ -335,7 +341,6 @@ $(document).ready(function () {
           .then((skinsData) => {
             const skinData = skinsData[skinId];
             if (skinData && skinData.color) {
-              const skinColorInfo = $("<div>", { class: "skin-color-info" });
               skinData.color.forEach((color) => {
                 const colorLink = $("<a>", {
                   class: `skin-color ${color.toLowerCase()}`,
@@ -346,7 +351,6 @@ $(document).ready(function () {
                 });
                 skinColorInfo.append(colorLink);
               });
-              previewExtras.append(skinColorInfo);
             }
           });
       
@@ -385,7 +389,10 @@ $(document).ready(function () {
       
         const previewExtras = $("#preview-showcase .preview-extras");
         if (previewExtras.length > 0) {
-          previewExtras.find(".skin-color-info").remove();
+          const skinColorInfo = previewExtras.find(".skin-color-info");
+          if (skinColorInfo.length > 0) {
+            skinColorInfo.empty();
+          }
         }
       
         showPreviewWindow(visibleItems.eq(newIndex)[0]);
