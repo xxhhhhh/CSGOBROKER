@@ -272,37 +272,39 @@ $(document).ready(function () {
         const previewWindow = $("#preview-window");
         const previewContent = $("#preview-content");
         let skinClasses = [];
-
+      
         previewWindow.attr("class", "hidden");
-
+      
         if ($(element).hasClass("skin")) {
           skinClasses = $(element).attr("class").split(" ");
         }
-
+      
         const skinBox = $(element).closest(".box-skins-list, .box-topic");
-        const visibleItems = skinBox.find(
-          ".skin:not(.disabled)"
-        );
+        const visibleItems = skinBox.find(".skin:not(.disabled)");
         const totalItems = visibleItems.length;
         const itemName = element.querySelector(".skin-desc-name")
           ? element.querySelector(".skin-desc-name").textContent.trim()
           : "";
 
+          const weaponName = itemName.includes("|")
+          ? itemName.split("|")[0].trim()
+          : itemName;
+      
         previewWindow.removeClass("hidden").attr({
           "data-current-index": visibleItems.index(element),
           "data-total-items": totalItems,
           "data-current-box": skinBox.index(".box-skins-list, .box-topic"),
         });
-
+      
         skinClasses.forEach((skinClass) => {
           if (!["skin"].includes(skinClass)) {
             previewWindow.addClass(skinClass);
           }
         });
-
+      
         previewContent.html(element.innerHTML);
         previewWindow.find(".skin-alt-info").remove();
-
+      
         const weapon = element.getAttribute("weapon");
         const skinAltInfoDiv = $("<a>", {
           class: "skin-alt-info",
@@ -312,13 +314,42 @@ $(document).ready(function () {
               : `/topic/items/${weapon}`,
           "data-title":
             languageTag === "ru"
-              ? `Все Скины на ${weapon}`
-              : `All Skins on ${weapon}`,
+              ? `Все Скины на ${weaponName}`
+              : `All Skins on ${weaponName}`,
           html: '<i class="officon library"></i>',
         });
+      
+        let previewExtras = $("#preview-showcase .preview-extras");
+        if (previewExtras.length === 0) {
+          previewExtras = $("<div>", { class: "preview-extras" });
+          $("#preview-showcase").append(previewExtras);
+        }
+      
+        previewExtras.append(skinAltInfoDiv);
 
-        $("#preview-showcase").append(skinAltInfoDiv);
-
+        previewExtras.find(".skin-color-info").remove();
+      
+        const skinId = element.getAttribute("skin-id");
+        fetch(`/code-parts/skins-list/${weapon}.json`)
+          .then((response) => response.json())
+          .then((skinsData) => {
+            const skinData = skinsData[skinId];
+            if (skinData && skinData.color) {
+              const skinColorInfo = $("<div>", { class: "skin-color-info" });
+              skinData.color.forEach((color) => {
+                const colorLink = $("<a>", {
+                  class: `skin-color ${color.toLowerCase()}`,
+                  href:
+                    languageTag === "ru"
+                      ? `/ru/topic/skins/${color.toLowerCase()}-skins`
+                      : `/topic/skins/${color.toLowerCase()}-skins`,
+                });
+                skinColorInfo.append(colorLink);
+              });
+              previewExtras.append(skinColorInfo);
+            }
+          });
+      
         $(".site-searcher-box")
           .off("click")
           .on("click", function () {
@@ -328,38 +359,40 @@ $(document).ready(function () {
             window.open(searchUrl, "_blank");
           });
       }
-
+      
       function closePreviewWindow() {
         const previewWindow = $("#preview-window");
         previewWindow.addClass("hidden");
         previewWindow.attr("class", "hidden");
         previewWindow.find(".skin-alt-info").remove();
+        $("#preview-showcase .preview-extras").remove();
       }
+      
 
       function switchSkin(direction) {
         const previewWindow = $("#preview-window");
-        const currentIndex = parseInt(
-          previewWindow.attr("data-current-index"),
-          10
+        const currentIndex = parseInt(previewWindow.attr("data-current-index"), 10);
+        const currentBoxIndex = parseInt(previewWindow.attr("data-current-box"), 10);
+        const currentBox = $(".box-skins-list, .box-topic, .character-box").eq(
+          currentBoxIndex
         );
-        const currentBoxIndex = parseInt(
-          previewWindow.attr("data-current-box"),
-          10
-        );
-        const currentBox = $(".box-skins-list, .box-topic, .character-box").eq(currentBoxIndex);
-        const visibleItems = currentBox.find(
-          ".skin:not(.disabled)"
-        );
+        const visibleItems = currentBox.find(".skin:not(.disabled)");
         const totalItems = visibleItems.length;
-        let newIndex =
-          direction === "left" ? currentIndex - 1 : currentIndex + 1;
-
+        let newIndex = direction === "left" ? currentIndex - 1 : currentIndex + 1;
+      
         if (newIndex < 0) newIndex = totalItems - 1;
         else if (newIndex >= totalItems) newIndex = 0;
-
+      
+        const previewExtras = $("#preview-showcase .preview-extras");
+        if (previewExtras.length > 0) {
+          previewExtras.find(".skin-color-info").remove();
+        }
+      
         showPreviewWindow(visibleItems.eq(newIndex)[0]);
+      
         previewWindow.attr("data-current-index", newIndex);
       }
+      
 
       $(document).on("click", ".skin", function () {
         showPreviewWindow(this);
