@@ -2129,25 +2129,23 @@ document.addEventListener("DOMContentLoaded", function() {
   
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  var boxes = document.querySelectorAll('.box:not(.main)');
+const boxes = Array.from(document.querySelectorAll('.box:not(.main)'));
 
-  boxes.forEach(function (box) {
-      var logoLink = box.querySelector('.logobg a');
-      if (logoLink) {
-          var href = logoLink.getAttribute('href');
+boxes.forEach(function (box) {
+    var logoLink = box.querySelector('.logobg a');
+    if (logoLink) {
+        var href = logoLink.getAttribute('href');
 
-          var firstParagraph = box.querySelector('.content p:first-child');
-          if (firstParagraph) {
-              var newLink = document.createElement('a');
-              newLink.href = href;
-              newLink.textContent = firstParagraph.textContent;
-              newLink.classList.add('boxtitle');
+        var firstParagraph = box.querySelector('.content p:first-child');
+        if (firstParagraph) {
+            var newLink = document.createElement('a');
+            newLink.href = href;
+            newLink.textContent = firstParagraph.textContent;
+            newLink.classList.add('boxtitle');
 
-              firstParagraph.replaceWith(newLink);
-          }
-      }
-  });
+            firstParagraph.replaceWith(newLink);
+        }
+    }
 });
 
 const themeToggleBtn = document.getElementById('theme-toggle');
