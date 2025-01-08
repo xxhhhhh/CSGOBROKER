@@ -5571,13 +5571,13 @@ footer .centralizer .footer-content {
 .boxes-holder .box .content .review-button.mirror:hover::after,
 .boxes-holder .box .content button.copy:hover,
 .boxes-holder .box .content button.copy:hover::before {
-    background-color: rgb(32 32 32);
+    background: linear-gradient(180deg, rgb(32 32 32) 0%, rgb(24 24 24) 100%);
 }
 
 .content .review-button:active,
 .content .review-button:active::before,
 .content .review-button:active::after {
-    background-color: #5a101c !important;
+    background: #5a101c !important;
     transition: all .09s ease-in-out !important;
 }
 
