@@ -1944,12 +1944,12 @@ h3 {
 }
 
 .boxreview .plusminus .criteria p::before {
-    background: linear-gradient(to right, rgb(141, 21, 41), var(--main-color));
+    background: linear-gradient(to top, rgb(141, 21, 41), var(--main-color));
     background-clip: inherit;
 }
 
 .boxreview .plusminus .criteria:nth-child(1) p::before {
-    background: linear-gradient(to right, rgb(21, 141, 51), var(--green));
+    background: linear-gradient(to top, rgb(21, 141, 51), var(--green));
     background-clip: inherit;
 }
 
@@ -9082,7 +9082,7 @@ div#results {
 .main-page .box .logobg .best,
 .newest-boxes .box .logobg .best {
     font-size: 0;
-    background-color: var(--darkygray);
+    background: var(--darkygray);
     cursor: help;
     height: 30px;
 }
@@ -9091,7 +9091,7 @@ div#results {
 .newest-boxes .box .logobg .best:hover {
     font-size: 12px;
     filter: grayscale(0);
-    background-color: var(--main-color);
+    background: var(--main-color);
 }
 
 .main-page .box:hover .logobg .best::after,
