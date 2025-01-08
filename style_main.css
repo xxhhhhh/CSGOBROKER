@@ -816,10 +816,12 @@ nav .pages {
 
 .skin-color.golden {
     background: #e4c82e;
+    background: linear-gradient(180deg, #FEDB37 30%, #FDB931 100%);
 }
 
 .skin-color.silver {
     background: #E8E8E8;
+    background: linear-gradient(180deg, #E8E8E8 30%, #afafaf 100%);
 }
 
 .skin-color.brown {
@@ -829,46 +831,57 @@ nav .pages {
 
 .skin-color.white {
     background: #FFFFFF;
+    background: linear-gradient(180deg, #FFFFFF 30%, #dfdfdf 100%);
 }
 
 .skin-color.red {
     background: #be2424;
+    background: linear-gradient(180deg, #be2424 30%, #881a1a 100%);
 }
 
 .skin-color.yellow {
     background: #FFE600;
+    background: linear-gradient(180deg, #FFE600 30%, #ccb800 100%);
 }
 
 .skin-color.orange {
     background: #FFA726;
+    background: linear-gradient(180deg, #FFA726 30%, #cf891f 100%);
 }
 
 .skin-color.cyan {
     background: #00eeff;
+    background: linear-gradient(180deg, #00eeff 30%, #00c1cf 100%);
 }
 
 .skin-color.purple {
     background: #6635b4;
+    background: linear-gradient(180deg, #6635b4 30%, #4f298d 100%);
 }
 
 .skin-color.pink {
     background: #f05ea7;
+    background: linear-gradient(180deg, #f05ea7 30%, #c54d89 100%);
 }
 
 .skin-color.green {
     background: #30c530;
+    background: linear-gradient(180deg, #30c530 30%, #249224 100%);
 }
 
 .skin-color.blue {
     background: #3374ff;
+    background: linear-gradient(180deg, #3374ff 30%, #295ccc 100%);
 }
 
 .skin-color.black {
     background: #1f1f1f;
+    background: linear-gradient(180deg, #1f1f1f 30%, #141414 100%);
 }
 
 .skin-color.gray {
     background: #858585;
+    background: linear-gradient(180deg, #858585 30%, #5a5a5a 100%);
 }
 
 
@@ -4431,7 +4444,7 @@ nav img:active,
     width: auto;
     padding: 0 8px 0 5px;
     height: 30px;
-    background-color: var(--main-color);
+    background: linear-gradient(180deg, var(--main-color) 0%, #a81931 100%);
     filter: drop-shadow(1px 1px 4px rgb(10 10 10)) blur(0);
     border-radius: 0px 5px 5px 5px;
     display: flex;
@@ -4510,7 +4523,7 @@ nav img:active,
     top: 0;
     left: -6px;
     transform: skewX(20deg);
-    background-color: inherit !important;
+    background: inherit !important;
     border-radius: 5px 0 0 5px;
     width: 20px;
     height: 100%;
@@ -4946,7 +4959,7 @@ nav img:active,
 .content button,
 .content button.copy::before,
 .content .review-button.visit.mirror::before {
-    background-color: rgb(26 26 26);
+    background: rgb(26 26 26);
 }
 
 .features .featuresbox .typesinside a:hover,
@@ -5347,7 +5360,7 @@ footer .centralizer .footer-content {
 }
 
 .content .review-button {
-    background-color: rgb(26 26 26);
+    background: linear-gradient(180deg, rgb(26 26 26) 0%, rgb(21 21 21) 100%);
     filter: drop-shadow(0 1px 4px rgb(10 10 10)) blur(0);
     border-radius: 5px;
     position: relative;
@@ -5375,6 +5388,7 @@ footer .centralizer .footer-content {
 .content .review-button.visit {
     background-color: var(--main-color);
     filter: drop-shadow(0 0 1px var(--main-color));
+    background: linear-gradient(180deg, var(--main-color) 0%, #a81931 100%);
     padding-left: 6px;
     padding-right: 10px;
 }
@@ -5392,7 +5406,7 @@ footer .centralizer .footer-content {
     height: 100%;
     z-index: -1;
     transition: all .15s ease-in-out;
-    background-color: rgb(26 26 26);
+    background: linear-gradient(180deg, rgb(26 26 26) 0%, rgb(21 21 21) 100%);
     text-wrap: nowrap;
     box-sizing: border-box;
     top: 0;
@@ -5416,6 +5430,13 @@ footer .centralizer .footer-content {
 .content .review-button.visit::after,
 .content .review-button.visit::before {
     background-color: var(--main-color);
+    background: linear-gradient(180deg, var(--main-color) 0%, #a81931 100%);
+}
+
+.content .review-button.mirror::after,
+.content .review-button.mirror::before {
+    background-color: unset;
+    background: unset;
 }
 
 .review-button {
@@ -5500,7 +5521,7 @@ footer .centralizer .footer-content {
     width: 28px;
     margin: 4px 0px;
     position: absolute;
-    background-color: rgb(26 26 26);
+    background: rgb(26 26 26);
     left: 12px;
     top: 12px;
     margin: 0;
@@ -9315,7 +9336,7 @@ div#results {
     left: 4px;
     right: 4px;
     border-radius: 10px;
-    background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%);
+    background: radial-gradient(815% 120% at 0% 0%, var(--darkygray), var(--darkgray));
     transition: all .15s ease-in-out;
     box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
 }

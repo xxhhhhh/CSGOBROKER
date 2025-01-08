@@ -240,7 +240,8 @@ h3,
 .color-box-selection-button,
 .color-box-selection-button:hover,
 .color-box-selection-button.clicked,
-.singlemod-box[data-title]:after  {
+.singlemod-box[data-title]:after,
+.main-infobox:hover .main-infobox-content-text p  {
     color: #1a1a1a;
 }
 
@@ -369,7 +370,7 @@ h3,
 .box .logobg .best::before,
 .main-page .box .logobg .best:hover, 
 .newest-boxes .box .logobg .best:hover {
-    background-color: var(--main-theme);
+    background: var(--main-theme);
     text-shadow: none;
 }
 
@@ -415,7 +416,7 @@ h3,
 #rec-box-logobg img {
     /* padding: 10px;
     border-radius: 10px; */
-    filter: drop-shadow(1px 1px 0 rgb(100 100 100));
+    filter: drop-shadow(0 1px 0 rgb(100 100 100)) drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
 }
 
 .boxreview .plusminus .criteria i,
