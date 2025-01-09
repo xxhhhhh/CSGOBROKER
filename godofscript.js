@@ -882,9 +882,46 @@ forcemodsboxes();
     
       populateLangList();
     });
-    
-    
   }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const existingLangSwitches = document.querySelectorAll(".lang-switch");
+  
+    function getLanguageName(lang) {
+      switch (lang) {
+        case "en": return "English";
+        case "ru": return "Русский";
+        case "es": return "Español";
+        case "tr": return "Türkçe";
+        case "pt": return "Português";
+        case "hi": return "हिन्दी";
+        default: return lang.charAt(0).toUpperCase() + lang.slice(1).toLowerCase();
+      }
+    }
+  
+    function getLocalizedSwitchText(lang) {
+      const languageName = getLanguageName(lang);
+      switch (languageTag) {
+        case "en": return "Switch language to " + languageName;
+        case "ru": return "Сменить язык на " + languageName;
+        case "es": return "Cambiar idioma a " + languageName;
+        case "tr": return "Dili değiştir " + languageName;
+        case "pt": return "Mudar idioma para " + languageName;
+        case "hi": return "भाषा बदलें " + languageName;
+        default: return "Switch language to " + languageName;
+      }
+    }
+  
+    existingLangSwitches.forEach((switchEl) => {
+      const lang = switchEl.dataset.lang;
+  
+      if (!lang || lang === languageTag) return;
+  
+      const ariaLabelText = getLocalizedSwitchText(lang);
+      switchEl.setAttribute("aria-label", ariaLabelText);
+    });
+  });
+  
 
 var ratingsumm = document.querySelector(".ratingsumm");
 var sitealternates = document.querySelector(".sitealternates");
