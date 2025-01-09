@@ -103,6 +103,12 @@
     background-color: unset !important;
 }
 
+.sitepage.topic-craft .box-topic,
+.topic-box {
+    filter: unset;
+    box-shadow: unset;
+}
+
 .category-selector ul .category-box .category-box-logo:hover,
 .category-selector .category-box:active .category-box-logo,
 .category-selector ul .category-box:hover .category-box-logo,
@@ -152,6 +158,7 @@
     background: var(--main-color) !important;
 }
 
+a, p,
 .content p,
 .content p:nth-child(3),
 .smallreview p,
@@ -204,6 +211,7 @@
 .main-mode:after,
 .ratingway span,
 .sitedetails .sitepros span,
+.main-col-info-upd p,
 h2,
 h3,
 .newest-boxes-more,
@@ -950,7 +958,8 @@ ul .submenu li .nonredir,
 .text-col-info ul li p,
 .table-credits,
 .table-unit,
-.table-unit .mpercent {
+.table-unit .mpercent,
+.main-col-info-upd p {
     font-weight: 500;
 }
 
