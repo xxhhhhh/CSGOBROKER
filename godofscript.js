@@ -729,13 +729,37 @@ forcemodsboxes();
             default: return lang.charAt(0).toUpperCase() + lang.slice(1).toLowerCase();
         }
     }
-    
-    function createLanguageListItem(lang, path) {
-        return '<li><a href="' + path + '" class="lang-switch lang-' + lang + '" data-lang="' + lang + '"><i class="flagbox"></i>' + '</a></li>';
-    }
+
+    function getLocalizedSwitchText(lang) {
+      var languageName = getLanguageName(lang);
+      switch (currentLanguage) {
+          case "en": return "Switch language to " + languageName;
+          case "ru": return "Сменить язык на " + languageName;
+          case "pt": return "Mudar idioma para " + languageName;
+          case "es": return "Cambiar idioma a " + languageName;
+          case "tr": return "Dili değiştir " + languageName;
+          case "hi": return "भाषा बदलें " + languageName;
+          default: return "Switch language to " + languageName;
+      }
+  }
+  
+  function createLanguageListItem(lang, path) {
+      var ariaLabelText = getLocalizedSwitchText(lang);
+      return `
+          <li>
+              <a href="${path}" 
+                 class="lang-switch lang-${lang}" 
+                 data-lang="${lang}" 
+                 aria-label="${ariaLabelText}">
+                  <i class="flagbox"></i>
+              </a>
+          </li>`;
+  }
     
     function checkAndAddLanguage(lang) {
-        var path = lang === "en" ? window.location.pathname.replace(/^\/[a-z]{2}\//, "/") : "/" + lang + window.location.pathname.replace(/^\/[a-z]{2}\//, "/");
+        var path = lang === "en" 
+            ? window.location.pathname.replace(/^\/[a-z]{2}\//, "/") 
+            : "/" + lang + window.location.pathname.replace(/^\/[a-z]{2}\//, "/");
     
         fetch(path, { method: 'HEAD' }).then(function(response) {
             if (response.ok && currentLanguage !== lang) {
@@ -744,12 +768,17 @@ forcemodsboxes();
         });
     }
     
-    var newContent = '<div class="selected-lang">' + currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1).toLowerCase() + '</div><ul>';
+    var newContent = `
+        <div class="selected-lang">
+            ${getLanguageName(currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1).toLowerCase())}
+        </div>
+        <ul></ul>`;
     langMenuDiv.innerHTML = newContent;
     
     supportedLanguages.forEach(function(lang) {
         checkAndAddLanguage(lang);
     });
+    
   }
 
   if (
@@ -762,11 +791,34 @@ forcemodsboxes();
       const currentPath = window.location.pathname;
     
       if (!langMenuDiv) return;
-
+    
+      function getLanguageName(lang) {
+        switch (lang) {
+          case "en": return "English";
+          case "ru": return "Русский";
+          case "es": return "Español";
+          case "tr": return "Türkçe";
+          case "pl": return "Polski";
+          default: return lang.charAt(0).toUpperCase() + lang.slice(1).toLowerCase();
+        }
+      }
+    
+      function getLocalizedSwitchText(lang) {
+        const languageName = getLanguageName(lang);
+        switch (languageTag) {
+          case "en": return "Switch language to " + languageName;
+          case "ru": return "Сменить язык на " + languageName;
+          case "es": return "Cambiar idioma a " + languageName;
+          case "tr": return "Dili değiştir " + languageName;
+          case "pl": return "Zmień język na " + languageName;
+          default: return "Switch language to " + languageName;
+        }
+      }
+    
       async function fetchSiteLanguages() {
         const siteKey = currentPath.split("/").pop().replace(".html", "") || "index";
         const jsonFilePath = `${basePath}/${siteKey}.json`;
-  
+    
         try {
           const response = await fetch(jsonFilePath);
           if (!response.ok) return [];
@@ -774,11 +826,11 @@ forcemodsboxes();
           let languages = siteInfo.languages
             ? siteInfo.languages.split(",").map((lang) => lang.trim())
             : [];
-          
+    
           if (currentPath.includes("/mirrors/")) {
             languages = languages.filter((lang) => ["ru", "en"].includes(lang));
           }
-  
+    
           return languages;
         } catch {
           return [];
@@ -817,6 +869,8 @@ forcemodsboxes();
     
           switchEl.href = path;
     
+          switchEl.setAttribute("aria-label", getLocalizedSwitchText(lang));
+    
           const flagBox = document.createElement("i");
           flagBox.classList.add("flagbox");
           switchEl.appendChild(flagBox);
@@ -828,6 +882,7 @@ forcemodsboxes();
     
       populateLangList();
     });
+    
     
   }
 
