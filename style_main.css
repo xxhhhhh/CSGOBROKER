@@ -30,10 +30,12 @@
     --gray: rgb(145, 145, 145);
     --opacback: rgba(3, 3, 3, .3);
     --halfback: rgba(0, 0, 0, .2);
-    --main-theme: rgb(15, 15, 15);
     --darkygray: rgb(11, 11, 11);
     --darkgray: rgb(13, 13, 13);
+    --main-theme: rgb(15, 15, 15);
     --buttonbg: linear-gradient(180deg, var(--main-color) 0%, #9a172d 100%);
+    --defbuttonbg: linear-gradient(180deg, rgb(32 32 32) 0%, rgb(24 24 24) 100%);
+    --icongradient: linear-gradient(-45deg, var(--darkygray), var(--main-theme));
 }
 
 head,
@@ -3114,7 +3116,7 @@ nav #logo:hover {
 
 .category-selector .category:hover .category-box .category-box-logo {
     filter: grayscale(0);
-    transition: all .2s ease-in-out;
+    transition: all .15s ease-in-out;
 }
 
 .category-selector .category-box .category-box-logo {
@@ -4610,7 +4612,7 @@ nav img:active,
 
 .main-mode-box {
     position: absolute;
-    background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%);
+    background: var(--icongradient);
     border-radius: 10px;
     left: 3px;
     right: 3px;
@@ -5565,7 +5567,7 @@ footer .centralizer .footer-content {
 .boxes-holder .box .content .review-button.mirror:hover::before,
 .boxes-holder .box .content button.copy:hover,
 .boxes-holder .box .content button.copy:hover::before {
-    background: linear-gradient(180deg, rgb(32 32 32) 0%, rgb(24 24 24) 100%);
+    background: var(--defbuttonbg);
 }
 
 /* .content .review-button:active,
@@ -5813,12 +5815,12 @@ footer .centralizer .footer-content {
 
 .singlemod-select::before,
 .category-selector .category-box .category-box-logo::before {
-    background: radial-gradient(815% 120% at 0% 0%, var(--darkygray), var(--darkgray));
+    background: var(--icongradient);
     transition: all .15s ease-in-out;
 }
 
 .mods-box.skins-box .singlemod-select::before {
-    background: radial-gradient(815% 120% at 0% 0%, var(--darkygray), var(--darkgray));
+    background: var(--icongradient);
 }
 
 .category-selector .category-box.active .category-box-logo::before,
@@ -5874,12 +5876,12 @@ footer .centralizer .footer-content {
     margin-left: 4px;
     height: 35px;
     width: 35px;
-    background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%);
+    background: var(--icongradient);
     transition: all .15s ease-in-out;
 }
 
 .singlemod-box.active .singlemod-icon {
-    background: linear-gradient(180deg, var(--darkygray) 0%, rgba(43, 0, 16, .85) 100%);
+    background: linear-gradient(-45deg, var(--darkygray) 0%, rgba(43, 0, 16, .85) 100%);
 }
 
 .singlemod-icon::before {
@@ -8785,7 +8787,7 @@ div#results {
     z-index: 3;
     filter: unset;
     min-width: unset;
-    /* background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%); */
+    /* background: var(--icongradient); */
     background: radial-gradient(75% 50% at 50% 0%, var(--main-theme), rgb(13 13 13) 100%);
 }
 
@@ -9334,7 +9336,7 @@ div#results {
     left: 4px;
     right: 4px;
     border-radius: 10px;
-    background: radial-gradient(815% 120% at 0% 0%, var(--darkygray), var(--darkgray));
+    background: var(--icongradient);
     transition: all .15s ease-in-out;
     box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
 }
@@ -12698,7 +12700,7 @@ div#results {
         left: 4px;
         right: 4px;
         border-radius: 10px;
-        background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%);
+        background: var(--icongradient);
         transition: all .15s ease-in-out;
         box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
     }
@@ -12950,7 +12952,7 @@ div#results {
 .vpn-semi::after {
     content: '';
     position: absolute;
-    background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%);
+    background: var(--icongradient);
     border-radius: 50%;
     left: 3px;
     right: 3px;
