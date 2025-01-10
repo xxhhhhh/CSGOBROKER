@@ -1,7 +1,7 @@
 :root {
-    --darkygray: rgb(215 215 215);
-    --main-theme: rgb(242, 242, 242);
-    --darkgray: rgb(165, 165, 165);
+    --darkygray: rgb(220 220 220);
+    --main-theme: rgb(245 245 245);
+    --darkgray: rgb(190 190 190);
     --opacback: rgb(225 225 225);
 }
 
@@ -46,7 +46,8 @@
 
 .box-topic .topic-box .logobg,
 .box-topic .topic-box:hover .logobg,
-#color-list {
+#color-list,
+.boxes-holder-name a {
     background-color: var(--main-theme) !important;
 
 }
@@ -120,7 +121,7 @@
 }
 
 .category-selector .category-box .category-box-logo,
-.singlemod-icon {
+.singlemod-box .singlemod-icon {
     background: var(--main-theme);
     box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .4);
 }
@@ -255,7 +256,7 @@ h3,
 
 .boxes-holder-name a:hover, 
 .newest-boxes-more:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.1) drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
 }
 
 .siteblock.mirror .box.main .logobg .star_rating::before {
@@ -277,7 +278,20 @@ h3,
 }
 
 .main-mode-unit {
-    background-color: rgb(12 12 12);
+    background-color: var(--main-theme);
+}
+
+.main-mode-unit img {
+    filter: drop-shadow(0 0 3px rgb(175 175 175));
+}
+
+.main-mode-unit::before {
+    opacity: 1;
+    background: radial-gradient(815% 120% at 0% 0%, transparent, var(--darkygray));
+}
+
+.main-mode-unit a::before {
+    filter: grayscale(1) brightness(.1);
 }
 
 .main-infobox-content-text p,
@@ -395,10 +409,16 @@ h3,
 
 .main-page .content button, 
 .main-page .content button.copy::before,
-.boxes-holder .box:hover .content button.copy {
+.boxes-holder .box:hover .content button.copy,
+.boxes-holder .box .content button.copy:hover::before,
+.boxes-holder .box .content .review-button.mirror:hover, 
+.boxes-holder .box .content .review-button.mirror:hover::before,
+.boxes-holder-name {
     background: var(--darkygray);
     filter: none;
 }
+
+
 
 .main-page .box .content button.copy::after {
     opacity: .4;
@@ -418,6 +438,11 @@ h3,
 .main-page .best::after, .newest-boxes .best::after,
 .boxes-holder-name a .officon::before  {
     filter: brightness(.15);
+}
+
+.main-page .best::after, .newest-boxes .best::after,
+.main-page .box:hover .logobg .best::after, .newest-boxes .box:hover .logobg .best::after {
+    opacity: .75;
 }
 
 .box .logobg a img,
@@ -737,7 +762,7 @@ ul .submenu li .nonredir,
 }
 
 .mods-box.skins-box .singlemod-box {
-    background-color: rgb(215 215 215);
+    background-color: var(--darkygray);
 }
 
 .singlemod-box::after {
@@ -780,16 +805,13 @@ ul .submenu li .nonredir,
 .category-selector .category-box .category-box-logo::before,
 .main-mode-box,
 .main-mode,
-.payments-button::before {
+.payments-button::before,
+.box {
     box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .4);
 }
 
 .boxreview .plusminus .criteria {
     box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .3);
-}
-
-.box.main .content {
-    box-shadow: unset;
 }
 
 .instruction code {
@@ -888,6 +910,10 @@ ul .submenu li .nonredir,
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
 }
 
+.boxes-holder-name a {
+    filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
+}
+
 .sitealternatesboxes .content-buttons {
     margin-top: unset;
 }
@@ -920,9 +946,12 @@ ul .submenu li .nonredir,
 .boxes-holder-section:hover .boxes-holder-name .singlemod-icon.rust::before,
 .boxes-holder-section:hover .boxes-holder-name .singlemod-icon.trade-skins,
 .boxes-holder-section:hover .boxes-holder-name .singlemod-icon.instant-sell,
-.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.earning,
-.newest-boxes:hover .singlemod-icon::before {
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.earning {
     filter: grayscale(1);
+}
+
+.newest-boxes:hover .singlemod-icon {
+    filter: grayscale(1) brightness(.8);
 }
 
 .boxes-holder-section {
@@ -974,6 +1003,17 @@ ul .submenu li .nonredir,
 
 .blog .item-box-topic .logobg img {
     opacity: 1;
+}
+
+@media screen and (min-width: 1365px) {
+    .boxes-holder-name {
+        top: -25px;
+    }
+    
+    .boxes-holder-section.big,
+    .boxes-holder-section {
+        margin-top: 30px;
+    }
 }
 
 @media screen and (max-width: 1365px) {
@@ -1083,4 +1123,13 @@ ul .submenu li .nonredir,
 
 .skins-category-switch::before {
     background: linear-gradient(180deg, var(--main-theme) 0%, var(--main-theme) 100%);
+}
+
+.content .review-button::after, 
+.content .review-button::before {
+    color: white;
+}
+
+.boxes-holder .box:hover .content .review-button {
+    filter: none;
 }
