@@ -361,7 +361,8 @@ h3,
     width: auto;
 }
 
-.category-selector .category-box .category-box-logo img {
+.category-selector .category-box .category-box-logo img,
+.singlemod-box:hover .singlemod-icon::before {
     filter: grayscale(1) brightness(0);
     opacity: .8;
 }
@@ -436,7 +437,8 @@ h3,
 }
 
 .main-page .best::after, .newest-boxes .best::after,
-.boxes-holder-name a .officon::before  {
+.boxes-holder-name a .officon::before,
+.boxes-holder-name a:hover .officon::before  {
     filter: brightness(.15);
 }
 
@@ -447,8 +449,6 @@ h3,
 
 .box .logobg a img,
 #rec-box-logobg img {
-    /* padding: 10px;
-    border-radius: 10px; */
     filter: drop-shadow(0 1px 0 rgb(100 100 100)) drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
 }
 
@@ -456,7 +456,6 @@ h3,
 .boxreview .plusminus .criteria .par li::before {
     filter: drop-shadow(0 0 1px rgb(135 135 135));
 }
-
 
 .box .content::before {
     content: none
