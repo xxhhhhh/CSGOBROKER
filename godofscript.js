@@ -60,7 +60,11 @@ forcemodsboxes();
         return;
       }
   
-      if (languageTag === 'tr' && link.classList.contains('mirror-redirect') || languageTag === 'es' && link.classList.contains('mirror-redirect')) {
+      if ((languageTag === 'tr' || languageTag === 'es') && link.classList.contains('mirror-redirect')) {
+        return;
+      }
+
+      if (languageTag !== 'ru' && link.classList.contains('mirror-visit')) {
         return;
       }
   
@@ -123,9 +127,7 @@ forcemodsboxes();
         callback(cachedData);
   
         fetch(filePath)
-          .then((response) => {
-            return response.json();
-          })
+          .then((response) => response.json())
           .then((data) => {
             const newHash = computeHash(data);
             if (newHash !== cachedHash) {
@@ -133,18 +135,16 @@ forcemodsboxes();
               localStorage.setItem(`${cacheKey}_hash`, newHash);
               callback(data);
             }
-          })
+          });
       } else {
         fetch(filePath)
-          .then((response) => {
-            return response.json();
-          })
+          .then((response) => response.json())
           .then((data) => {
             const newHash = computeHash(data);
             saveToCache(cacheKey, data);
             localStorage.setItem(`${cacheKey}_hash`, newHash);
             callback(data);
-          })
+          });
       }
     }
   
@@ -197,6 +197,29 @@ forcemodsboxes();
       fetch('/code-parts/review-settings.json')
           .then(response => response.json())
           .then(data => callback(data))
+  }
+
+  function addMirrorButton(box, pageKey, data) {
+    const visitButton = box.querySelector(".content-buttons a.review-button.visit");
+
+    const translations = {
+      "checkMirrors": {
+        "en": `Check Mirrors list of ${data.name}`,
+        "ru": `Смотреть список Зеркал ${data.name}`,
+      },
+    };
+  
+    function getTranslation(key) {
+      return translations[key][languageTag] || translations[key]['en'];
+    }
+
+    if (visitButton && data.mirror) {
+      const mirrorButton = document.createElement("a");
+      mirrorButton.href = `/mirrors/${pageKey}`;
+      mirrorButton.className = "review-button mirror-visit";
+      mirrorButton.setAttribute("aria-label", getTranslation("checkMirrors"));
+      visitButton.insertAdjacentElement("afterend", mirrorButton);
+    }
   }
 
   window.updateReviewButtons = updateReviewButtons;
@@ -256,6 +279,10 @@ forcemodsboxes();
                 reviewButton.href = `/reviews/${pageKey}`;
                 reviewButton.setAttribute('aria-label', getTranslation('readReview'));
             }
+        }
+
+        if (data.mirror) {
+          addMirrorButton(box, pageKey, data);
         }
 
     }

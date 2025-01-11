@@ -4953,7 +4953,7 @@ nav img:active,
 
 .content button,
 .content button.copy::before,
-.content .review-button.visit.mirror::before {
+.content .review-button.mirror-visit::before {
     background: rgb(26 26 26);
 }
 
@@ -4964,7 +4964,7 @@ nav img:active,
 }
 
 .content button.copy:hover,
-.content .review-button.visit.mirror:hover {
+.content .review-button.mirror-visit:hover {
     transform: scale(1.09) !important;
 }
 
@@ -4975,8 +4975,8 @@ nav img:active,
 
 .box.main .content button:hover,
 .box.main .content button:hover::before,
-.box.main .content .review-button.visit.mirror:hover,
-.box.main .content .review-button.visit.mirror:hover::before {
+.box.main .content .review-button.mirror-visit:hover,
+.box.main .content .review-button.mirror-visit:hover::before {
     background-color: rgb(22 22 22);
     animation: none;
     filter: unset;
@@ -4996,8 +4996,8 @@ nav img:active,
 
 .sitepage .content button.copy,
 .sitepage .content button.copy::before,
-.box.main .content .review-button.visit.mirror,
-.box.main .content .review-button.visit.mirror::before {
+.box.main .content .review-button.mirror-visit,
+.box.main .content .review-button.mirror-visit::before {
     background-color: var(--darkygray);
 }
 
@@ -5069,8 +5069,8 @@ nav img:active,
 }
 
 .content button.copy::before,
-.content .review-button.visit.mirror::before,
-.box.main .content .review-button.visit.mirror::before {
+.content .review-button.mirror-visit::before,
+.box.main .content .review-button.mirror-visit::before {
     content: '';
     position: absolute;
     width: 20px;
@@ -5084,8 +5084,8 @@ nav img:active,
     top: 0;
 }
 
-.content .review-button.visit.mirror::before,
-.box.main .content .review-button.visit.mirror::before {
+.content .review-button.mirror-visit::before,
+.box.main .content .review-button.mirror-visit::before {
     transform: skewX(-20deg);
     border-radius: 0 5px 5px 0;
     left: unset;
@@ -5093,7 +5093,7 @@ nav img:active,
 }
 
 .main-page .content button.copy::before,
-.content .review-button.mirror::before {
+.content .review-button.mirror-visit::before {
     left: unset;
     right: -6px;
     transform: skewX(-20deg);
@@ -5428,12 +5428,6 @@ footer .centralizer .footer-content {
     background: var(--buttonbg);
 }
 
-.content .review-button.mirror::after,
-.content .review-button.mirror::before {
-    background-color: unset;
-    background: unset;
-}
-
 .review-button {
     --read-more-text: 'Read More';
     --visit-text: 'Visit';
@@ -5513,7 +5507,7 @@ footer .centralizer .footer-content {
     z-index: 1;
 }
 
-.content .review-button.mirror.visit {
+.content .review-button.mirror-visit {
     height: 28px;
     width: 28px;
     margin: 4px 0px;
@@ -5524,12 +5518,12 @@ footer .centralizer .footer-content {
     margin: 0;
 }
 
-.main-page .content .review-button.mirror.visit {
+.main-page .content .review-button.mirror-visit {
     right: 15px;
     backface-visibility: unset;
 }
 
-.main-page .content .review-button.visit.mirror {
+.main-page .content .review-button.mirror-visit {
     left: -2px;
     top: 32px;
 }
@@ -5539,7 +5533,7 @@ footer .centralizer .footer-content {
     filter: drop-shadow(0 1px 4px rgb(15 15 15)) blur(0);
 }
 
-.content .review-button.mirror.visit::after {
+.content .review-button.mirror-visit::after {
     content: url('/img/icons/gamemodes/mirror.svg');
     height: 15px;
     width: 15px;
@@ -5547,10 +5541,11 @@ footer .centralizer .footer-content {
     position: absolute;
     top: unset;
     left: 10px;
+    transform: none;
 }
 
 @media screen and (max-width: 1900px) {
-    .content .review-button.mirror.visit {
+    .content .review-button.mirror-visit {
         display: none;
     }
 }
@@ -5563,8 +5558,8 @@ footer .centralizer .footer-content {
 .boxes-holder .box .content .review-button:not(.visit):hover,
 .boxes-holder .box .content .review-button:not(.visit):hover::before,
 .boxes-holder .box .content .review-button:not(.visit):hover::after,
-.boxes-holder .box .content .review-button.mirror:hover,
-.boxes-holder .box .content .review-button.mirror:hover::before,
+.boxes-holder .box .content .review-button.mirror-visit:hover,
+.boxes-holder .box .content .review-button.mirror-visit:hover::before,
 .boxes-holder .box .content button.copy:hover,
 .boxes-holder .box .content button.copy:hover::before {
     background: var(--defbuttonbg);
@@ -7104,7 +7099,7 @@ a[data-title]:after,
 }
 
 .box .content button.copy:hover::after,
-.box .content .review-button.mirror:hover::after {
+.box .content .review-button.mirror-visit:hover::after {
     opacity: 1;
 }
 
@@ -8763,8 +8758,8 @@ div#results {
 
 .main-page .content button,
 .main-page .content button.copy::before,
-.main-page .content .review-button.visit.mirror,
-.main-page .content .review-button.visit.mirror::before {
+.main-page .content .review-button.mirror-visit,
+.main-page .content .review-button.mirror-visit::before {
     background-color: rgb(11 11 11);
 }
 
@@ -10091,8 +10086,8 @@ div#results {
 
     .content button,
     .content button.copy::before,
-    .content .review-button.mirror.visit,
-    .content .review-button.mirror.visit::before {
+    .content .review-button.mirror-visit,
+    .content .review-button.mirror-visit::before {
         background-color: rgb(11 11 11);
         filter: none;
     }
@@ -12268,31 +12263,31 @@ div#results {
         width: 200px;
     }
 
-    .main-page .content .review-button.visit.mirror {
+    .main-page .content .review-button.mirror-visit {
         top: -30px;
         left: -8px;
         display: none;
     }
 
-    .content .review-button.mirror.visit {
+    .content .review-button.mirror-visit {
         display: flex;
         backface-visibility: visible;
         right: -30px;
     }
 
-    .content .review-button.mirror.visit {
+    .content .review-button.mirror-visit {
         left: unset;
         right: -55px;
         top: 5px;
     }
 
-    .content .review-button.visit.mirror::before {
+    .content .review-button.mirror-visit::before {
         left: -6px;
         right: unset;
         border-radius: 5px 0 0 5px;
     }
 
-    .content .review-button.mirror.visit::after {
+    .content .review-button.mirror-visit::after {
         left: unset;
         right: 7px;
     }
