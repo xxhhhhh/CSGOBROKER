@@ -363,9 +363,11 @@ h3,
 
 .category-selector .category-box .category-box-logo img,
 .singlemod-box:hover .singlemod-icon::before {
-    filter: grayscale(1) brightness(0);
+    filter: grayscale(0) brightness(0);
     opacity: .8;
 }
+
+
 
 .singlemod-select img {
     filter: grayscale(1) brightness(0);
@@ -839,13 +841,13 @@ ul .submenu li .nonredir,
 .singlemod-select::before,
 .category-selector .category-box .category-box-logo::before,
 .payments-button::before {
-    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .1) 100%);
+    background: linear-gradient(-45deg, transparent 0%, rgba(0, 0, 0, .1) 100%);
 }
 
 .category-selector .category-box.active .category-box-logo::before,
 .singlemod-box.active .singlemod-select::before,
-.singlemod-box.active .singlemod-icon {
-    background: linear-gradient(180deg, transparent 0%, rgba(206, 32, 61, .6) 100%);
+.singlemod-box.active .singlemod-icon::after {
+    background: linear-gradient(-45deg, transparent 0%, rgba(206, 32, 61, .6) 100%);
 }
 
 .category-box.current .category-box-logo img {

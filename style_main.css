@@ -1947,12 +1947,12 @@ h3 {
 }
 
 .boxreview .plusminus .criteria p::before {
-    background: linear-gradient(to top, rgb(141, 21, 41), var(--main-color));
+    background: linear-gradient(-45deg, rgb(141, 21, 41), var(--main-color));
     background-clip: inherit;
 }
 
 .boxreview .plusminus .criteria:nth-child(1) p::before {
-    background: linear-gradient(to top, rgb(21, 141, 51), var(--green));
+    background: linear-gradient(-45deg, rgb(21, 141, 51), var(--green));
     background-clip: inherit;
 }
 
@@ -5513,6 +5513,7 @@ footer .centralizer .footer-content {
     margin: 4px 0px;
     position: absolute;
     background: rgb(26 26 26);
+    filter: none;
     left: 12px;
     top: 12px;
     margin: 0;
@@ -5656,6 +5657,7 @@ footer .centralizer .footer-content {
     margin: 5px;
     border-radius: 10px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    flex-grow: 1;
     position: relative;
 }
 
@@ -5715,7 +5717,7 @@ footer .centralizer .footer-content {
     position: relative;
     left: unset;
     top: unset;
-    width: 100%;
+    width: 93.7%;
     height: 56px;
     margin-top: 4px;
     margin-bottom: -6px;
@@ -6322,9 +6324,13 @@ a[data-title]:after,
     height: 100%;
     box-sizing: border-box;
     transform: skewX(-20deg);
-    background: inherit;
     border-radius: 5px;
     top: 0;
+}
+
+.skin-color-info .skin-color::after,
+.skin-color-info .skin-color::before {
+    background: inherit;
 }
 
 .features .featuresbox .typesinside a::before,
@@ -8687,7 +8693,7 @@ div#results {
     position: absolute;
     display: block;
     background-size: contain;
-    background-color: var(--darkygray);
+    background: var(--icongradient);
     top: 6px;
     left: 6px;
     overflow: hidden;
@@ -8761,6 +8767,10 @@ div#results {
 .main-page .content .review-button.mirror-visit,
 .main-page .content .review-button.mirror-visit::before {
     background-color: rgb(11 11 11);
+}
+
+.siteblock.mirror .mirror-visit {
+    display: none;
 }
 
 .main-page .box .content button.copy::after {
@@ -9352,9 +9362,9 @@ div#results {
 }
 
 .payments-block {
-    position: absolute;
-    right: -143px;
-    top: 15px;
+    position: fixed;
+    right: 144px;
+    top: 163px;
     width: 170px;
     display: flex;
     flex-direction: column;
