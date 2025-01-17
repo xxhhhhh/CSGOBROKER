@@ -3978,7 +3978,7 @@ nav #logo:hover {
     background: linear-gradient(180deg, var(--darkygray) 0%, rgb(13 13 13) 100%);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
-    transition: all .2s ease-in-out, overflow .2s .2s ease-in-out;
+    transition: all .15s ease-in-out, overflow .15s .15s ease-in-out;
     z-index: 10;
 }
 
@@ -4635,7 +4635,7 @@ nav img:active,
     display: inline-block;
     background-size: cover;
     transition: all .15s ease-in-out;
-    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(98%) contrast(250%);
+    filter: brightness(0) saturate(100%) invert(16%) sepia(69%) saturate(4202%) hue-rotate(339deg) brightness(95%) contrast(90%);
     margin-top: 4px;
     opacity: .3;
 }
@@ -4781,6 +4781,7 @@ nav img:active,
     flex-direction: column;
     transition: all .15s ease-in-out;
     align-items: center;
+    transform: translateZ(0);
 }
 
 
@@ -5841,7 +5842,7 @@ footer .centralizer .footer-content {
 .singlemod-box:hover .singlemod-icon::before,
 .singlemod-box.active .singlemod-icon::before,
 .boxes-holder-name a:hover .officon::before {
-    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(98%) contrast(250%);
+    filter: brightness(0) saturate(100%) invert(16%) sepia(69%) saturate(4202%) hue-rotate(339deg) brightness(95%) contrast(90%);
     opacity: 1;
 }
 
@@ -8800,8 +8801,8 @@ div#results {
     z-index: 3;
     filter: unset;
     min-width: unset;
-    /* background: var(--icongradient); */
-    background: radial-gradient(75% 50% at 50% 0%, var(--main-theme), rgb(13 13 13) 100%);
+    /* background: radial-gradient(75% 50% at 50% 0%, var(--main-theme), rgb(13 13 13) 100%); */
+    background: linear-gradient(-45deg, transparent, var(--main-theme));
 }
 
 .main-page .mods-box.mods-box.skins-box {
@@ -9084,7 +9085,7 @@ div#results {
     justify-content: center;
     background-size: 100%;
     transition: all .15s ease-in-out, filter 0s ease-in-out;
-    filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(98%) contrast(250%);
+    filter: brightness(0) saturate(100%) invert(16%) sepia(69%) saturate(4202%) hue-rotate(339deg) brightness(95%) contrast(90%);
     position: relative;
     background-position: center;
     background-repeat: no-repeat;
@@ -10060,7 +10061,7 @@ div#results {
     .boxes-holder-section .boxes-holder-name .singlemod-icon.instant-sell::before,
     .boxes-holder-section .boxes-holder-name .singlemod-icon.earning::before,
     .newest-boxes .singlemod-icon::before {
-        filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(98%) contrast(250%);
+        filter: brightness(0) saturate(100%) invert(16%) sepia(69%) saturate(4202%) hue-rotate(339deg) brightness(95%) contrast(90%);
         opacity: .8;
     }
 
@@ -12569,7 +12570,7 @@ div#results {
     }
 
     .main-mode-selection {
-        height: 155px;
+        height: 160px;
     }
 }
 
