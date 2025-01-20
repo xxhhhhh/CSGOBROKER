@@ -3420,6 +3420,7 @@ nav #logo:hover {
     position: fixed;
     display: flex;
     flex-direction: column;
+    z-index: 1;
 }
 
 .bonusincludes {
@@ -10738,6 +10739,7 @@ div#results {
         height: 190px;
         min-height: unset;
         padding-bottom: 10px;
+        z-index: unset;
     }
 
     .box-topic.sticker .navigation-section.first span {
@@ -10765,6 +10767,7 @@ div#results {
     .box-topic.sticker .topic-box {
         position: relative;
         height: 90px;
+        z-index: 10;
     }
 
     .box-topic.sticker .navigation-section.second span {
