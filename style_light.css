@@ -263,11 +263,6 @@ h3,
     opacity: 1;
 }
 
-#notexist .category-box .category-box-content span,
-.instruction-mirrors li a:hover {
-    color: var(--white);
-}
-
 .navigation-weapon-type, .navigation-weapon-name {
     background: var(--main-theme);
     color: #1a1a1a;
@@ -1127,7 +1122,10 @@ ul .submenu li .nonredir,
 }
 
 .content .review-button::after, 
-.content .review-button::before {
+.content .review-button::before,
+#notexist .category-box .category-box-content span,
+.instruction-mirrors li a:hover,
+.crafting-table-screen-description p {
     color: white;
 }
 
