@@ -3840,6 +3840,10 @@ nav #logo:hover {
     height: 150px;
 }
 
+.sticker-crafts-list .box-topic.sticker .topic-box {
+    height: 100%;
+}
+
 .box-topic .topic-box .logobg {
     height: 100%;
 }
@@ -3854,21 +3858,6 @@ nav #logo:hover {
 
 .topic-box:hover {
     transform: scale(1.03);
-}
-
-.topic-box .logobg {
-    transition: all .2s ease-in-out;
-    top: 0;
-    width: 100%;
-    height: 160px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
-    -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .topic-box .logobg img {
@@ -3896,6 +3885,14 @@ nav #logo:hover {
 }
 
 .topic-box .logobg {
+    transition: all .2s ease-in-out;
+    top: 0;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+    -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     transform: scale(1);
     position: relative;
     margin-top: 6px;
@@ -10806,6 +10803,15 @@ div#results {
 
     .sitepage.topic-craft .crafting-table {
         margin-bottom: 4px;
+        padding-top: 40px;
+    }
+
+    .crafting-table-screens {
+        overflow: unset;
+    }
+
+    .crafting-table-nav {
+        margin-top: -40px;
     }
 
     .crafting-table-screen-description {
@@ -11509,7 +11515,7 @@ div#results {
 
     .siteleftpannel .mods-box.topic {
         margin-left: 11px;
-        top: 72px;
+        top: 66px;
         z-index: 111;
         width: 57px;
         position: relative;
@@ -12901,6 +12907,10 @@ div#results {
     content: unset;
 }
 
+.sticker-crafts-list .box-topic {
+    overflow: hidden;
+}
+
 .sitepage.topic-craft .sticker-crafts-list .box-topic {
     top: unset;
     margin: 0 4px;
@@ -12926,7 +12936,16 @@ div#results {
 .sticker-crafts-list .box-topic.sticker .topic-box .logobg.zoomed img,
 .sticker-crafts-list .box-topic.sticker .topic-box .logobg img {
     max-height: 50%;
+    max-width: 90%;
     transform: rotate(8deg) translateZ(0);
+}
+
+.sticker-crafts-list .box-topic.sticker .topic-box .logobg.zoomed img {
+    max-height: 65%;
+}
+
+.sticker-crafts-list .box-topic.sticker .topic-box:hover .logobg img {
+    transform: scale(1.05) rotate(8deg) translateZ(0);
 }
 
 .sticker-crafts-list .box-topic.sticker:hover {
@@ -12936,6 +12955,8 @@ div#results {
 .sitepage.topic-craft .sticker-crafts-list .box-topic .topic-box {
     width: 100%;
 }
+
+.sticker-crafts-list
 
 .vpn-semi {
     right: 10px;
@@ -13022,6 +13043,20 @@ div#results {
         margin: 0 65px;
         margin-bottom: 10px;
     }
+
+    .sticker-crafts-list.imported,
+    .sitepage.topic-craft .sticker-crafts-list .box-topic {
+        height: 80px;
+    }
+
+    .sitepage.topic-craft .sticker-crafts-list .box-topic:nth-child(4) {
+        display: none;
+    }
+
+    .sitepage.topic-craft .box-topic.sticker .topic-box .logobg img {
+        margin-top: 10px !important;
+    }
+
     .main-page .vpn-semi,
     .main-page .vpn-semi::before,
     .main-page .vpn-semi::after {
