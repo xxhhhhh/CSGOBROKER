@@ -8409,8 +8409,8 @@ div#results {
     position: relative;
     height: auto;
     margin-top: 9px;
-    background-color: var(--opacback);
-    border-radius: 5px;
+    background: linear-gradient(360deg, var(--darkygray) 50%, var(--darkgray) 100%);
+    border-radius: 10px;
     margin-bottom: 9px;
     display: flex;
 }
@@ -8430,7 +8430,7 @@ div#results {
     width: 20%;
     height: 40px;
     background-color: var(--darkygray);
-    border-right: 2px solid rgb(16, 16, 16);
+    border-bottom: 2px solid rgb(16, 16, 16);
     transition: all .15s ease-in-out;
     display: flex;
     justify-content: center;
@@ -8471,10 +8471,30 @@ div#results {
     position: relative;
     border-radius: 10px;
     aspect-ratio: 16 / 9;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.crafting-table-screens.object {
+    background-image: url(/img/skins/previews/stickers-crafts/background.jpg);
 }
 
 .crafting-table-screens img {
     width: 100%;
+    user-select: none;
+    pointer-events: none;
+}
+
+.crafting-table-screens.object img {
+    width: auto;
+    height: auto;
+    max-height: 55%;
+    max-width: 90%;
+    margin-top: 40px;
+    filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(6px 4px 6px rgba(0, 0, 0, .5));
 }
 
 .crafting-table-screen {
@@ -8484,6 +8504,9 @@ div#results {
     height: 100%;
     opacity: 0;
     visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .crafting-table-screen.active {
@@ -11835,6 +11858,10 @@ div#results {
 
     .preview-craft {
         margin: unset;
+    }
+
+    .preview-craft:has(.preview-craft-unit.preview) {
+        min-height: 133px;
     }
 
     .boxreview .plusminus .criteria .par {

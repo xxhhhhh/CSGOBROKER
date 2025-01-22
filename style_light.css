@@ -243,6 +243,8 @@ h3,
 .blog .instruction li,
 .mini-info,
 .siteblock.mirror .box.main .logobg .star_rating::before,
+.sitepage.topic-craft .navigation-section.second span, 
+.box-topic.sticker .navigation-section.second span, 
 .boxes-holder-name a:hover, 
 .newest-boxes-more:hover,
 .main-col-info .theme-col-info h3,
@@ -513,10 +515,6 @@ h3,
 .main-infobox-content-block,
 .main-infobox-mascotte::after {
     background: #f2f2f2;
-}
-
-.crafting-table-step {
-    border-right: 2px solid var(--opacback);
 }
 
 .bonus_info::before {
@@ -1131,4 +1129,8 @@ ul .submenu li .nonredir,
 
 .boxes-holder .box:hover .content .review-button {
     filter: none;
+}
+
+.sitepage.topic-craft .crafting-table {
+    background: rgb(13 13 13);
 }
