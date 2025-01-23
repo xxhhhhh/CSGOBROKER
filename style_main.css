@@ -747,6 +747,10 @@ nav .pages {
     overflow: hidden;
 }
 
+.hidden #preview-showcase {
+    height: 0;
+}
+
 #preview-content {
     width: 100%;
     height: 400px;
@@ -8156,8 +8160,9 @@ div#results {
     text-align: center;
 }
 
-.lang-ru .box-topic .navigation-section.first::after {
-    content: 'Необходимые Компоненты' !important;
+.topic-boxes-holder.lang-ru .box-topic.sticker .navigation-section.first::after,
+.sitepage.topic-craft.lang-ru .box-topic .navigation-section.first::after {
+    content: 'Необходимые Компоненты';
 }
 
 .sitepage.topic-craft .navigation-section.third,
@@ -8241,22 +8246,37 @@ div#results {
 .topic-boxes-holder .box-topic.sticker .topic-box .logobg img {
     max-height: 55%;
     height: auto;
-    max-width: 70%;
+    max-width: 75%;
     transform: rotate(8deg);
     transition: all .15s ease-in-out;
     margin: auto 0;
 }
 
-.sitepage.topic-craft .topic-box .logobg.zoomed img {
+.sitepage.topic-craft .siteleftpannel .topic-box .logobg.zoomed img {
     max-height: 155%;
 }
 
 .topic-boxes-holder .box-topic.sticker .topic-box .logobg.zoomed img {
-    max-height: 65%;
+    max-height: 60%;
 }
 
+.sticker-crafts-list .box-topic.sticker .topic-box .logobg img {
+    transform: unset;
+    max-height: 45%;
+    max-width: 80%;
+}
+
+.sticker-crafts-list .box-topic.sticker .topic-box .logobg.zoomed img {
+    max-height: 55%;
+}
+
+.sitepage.topic-craft .sticker-crafts-list .topic-box:hover .logobg img {
+    transform: scale(1.1) rotate(6deg);
+}
+
+
 .topic-boxes-holder .box-topic.sticker .topic-box .logobg img {
-    max-height: 50%;
+    max-height: 47%;
 }
 
 .sitepage.topic-craft .topic-box:hover .logobg,
@@ -8449,7 +8469,7 @@ div#results {
     width: 20%;
     height: 40px;
     background-color: var(--darkygray);
-    border-bottom: 2px solid rgb(16, 16, 16);
+    border-bottom: 2px solid var(--darkgray);
     transition: all .15s ease-in-out;
     display: flex;
     justify-content: center;

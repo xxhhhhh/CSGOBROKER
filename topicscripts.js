@@ -1239,3 +1239,9 @@ if (window.location.pathname.includes('/topic/skins/')) {
     }
   });
 }
+
+const backbutton = document.querySelector(".topic-craft .singlemod-box");
+
+if (languageTag === "ru") {
+  updateURLs(backbutton);
+}
