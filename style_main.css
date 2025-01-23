@@ -3195,6 +3195,10 @@ nav #logo:hover {
     position: relative;
 }
 
+.topic-boxes-holder {
+    min-height: 870px;
+}
+
 .boxes-holder.langimprt {
     min-height: 800px;
 }
@@ -4461,6 +4465,10 @@ nav img:active,
     backface-visibility: hidden;
     user-select: none;
     z-index: 2;
+}
+
+.topic-box .best {
+    top: -16px;
 }
 
 .bonuses-block {
@@ -5795,6 +5803,7 @@ footer .centralizer .footer-content {
     transition: all .15s ease-in-out;
     height: 100%;
     width: 100%;
+    z-index: 1;
 }
 
 .singlemod-select:hover img,
@@ -5811,7 +5820,8 @@ footer .centralizer .footer-content {
     height: auto;
 }
 
-.singlemod-select::before {
+.singlemod-select::before,
+.pagination-button::before {
     content: '';
     position: absolute;
     top: 4px;
@@ -5819,10 +5829,12 @@ footer .centralizer .footer-content {
     left: 4px;
     right: 4px;
     border-radius: 10px;
+    z-index: -1;
 }
 
 .singlemod-select::before,
-.category-selector .category-box .category-box-logo::before {
+.category-selector .category-box .category-box-logo::before,
+.pagination-button::before {
     background: var(--icongradient);
     transition: all .15s ease-in-out;
 }
@@ -11914,6 +11926,8 @@ div#results {
 
     .topic-boxes-holder {
         margin-top: 8px;
+        min-height: unset;
+        padding-bottom: 55px;
     }
 
     .topic-box.maestro {
@@ -13027,6 +13041,49 @@ div#results {
     width: 100%;
 }
 
+.pagination-holder {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+}
+
+.pagination-button {
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    border: unset;
+    background-color: var(--darkygray);
+    color: rgba(255, 255, 255, .25);
+    font-family: TTNormsPro;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all .15s ease-in-out;
+}
+
+.pagination-button:hover {
+    filter: brightness(1.1);
+    transform: scale(1.1);
+    color: var(--gray);
+}
+
+.pagination-button.active {
+    color: var(--main-color);
+    transform: scale(1.1);
+}
+
+.pagination-button.active::before {
+    background: linear-gradient(-45deg, var(--darkygray) 0%, rgba(43, 0, 16, .85) 100%);
+}
+
+.box-topic.hidden {
+    display: none;
+}
+
 .vpn-semi {
     right: 10px;
     bottom: 65px;
@@ -13112,7 +13169,11 @@ div#results {
         margin: 0 65px;
         margin-bottom: 10px;
     }
-
+    
+    .topic-box .best {
+        top: -12px;
+    }
+    
     .sticker-crafts-list.imported,
     .sitepage.topic-craft .sticker-crafts-list .box-topic {
         height: 80px;

@@ -1245,3 +1245,57 @@ const backbutton = document.querySelector(".topic-craft .singlemod-box");
 if (languageTag === "ru") {
   updateURLs(backbutton);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const itemsPerPage = 12;
+  const topicBoxesHolder = document.querySelector(".topic-boxes-holder");
+  const boxTopics = Array.from(topicBoxesHolder.querySelectorAll(".box-topic.sticker"));
+
+  if (!boxTopics.length) return;
+
+  const paginationHolder = document.createElement("div");
+  paginationHolder.classList.add("pagination-holder");
+  topicBoxesHolder.appendChild(paginationHolder);
+
+  const totalPages = Math.ceil(boxTopics.length / itemsPerPage);
+
+  function showPage(page) {
+      const start = (page - 1) * itemsPerPage;
+      const end = page * itemsPerPage;
+
+      boxTopics.forEach((box, index) => {
+          if (index >= start && index < end) {
+              box.classList.remove("hidden");
+          } else {
+              box.classList.add("hidden");
+          }
+      });
+
+      updatePaginationButtons(page);
+  }
+
+  function createPaginationButtons() {
+      paginationHolder.innerHTML = "";
+      for (let i = 1; i <= totalPages; i++) {
+          const button = document.createElement("button");
+          button.textContent = i;
+          button.classList.add("pagination-button");
+          button.dataset.page = i;
+          button.addEventListener("click", () => showPage(i));
+          paginationHolder.appendChild(button);
+      }
+  }
+
+  function updatePaginationButtons(activePage) {
+      document.querySelectorAll(".pagination-button").forEach((button) => {
+          button.classList.toggle("active", parseInt(button.dataset.page, 10) === activePage);
+      });
+  }
+
+  function initPagination() {
+      createPaginationButtons();
+      showPage(1);
+  }
+
+  initPagination();
+});
