@@ -3195,8 +3195,8 @@ nav #logo:hover {
     position: relative;
 }
 
-.topic-boxes-holder {
-    min-height: 870px;
+.topic-boxes-holder.sticker-crafts {
+    min-height: 812px;
 }
 
 .boxes-holder.langimprt {
@@ -3836,6 +3836,7 @@ nav #logo:hover {
 .topic-boxes-holder .box-topic.sticker .topic-box {
     box-shadow: unset;
     overflow: unset;
+    height: 128px;
 }
 
 .box-topic .topic-box:hover {
@@ -8139,7 +8140,8 @@ div#results {
 
 .sitepage.topic-craft .box-topic,
 .topic-boxes-holder .box-topic.sticker {
-    height: 240px;
+    height: 230px;
+    min-height: 230px;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 14px;
@@ -8269,7 +8271,7 @@ div#results {
 }
 
 .topic-boxes-holder .box-topic.sticker .topic-box .logobg.zoomed img {
-    max-height: 60%;
+    max-height: 70%;
 }
 
 .sticker-crafts-list .box-topic.sticker .topic-box .logobg img {
@@ -10810,7 +10812,7 @@ div#results {
         height: 190px;
         min-height: unset;
         padding-bottom: 10px;
-        z-index: unset;
+        z-index: 2;
     }
 
     .topic-boxes-holder .box-topic.sticker .navigation-section.first span {
@@ -13084,6 +13086,41 @@ div#results {
     display: none;
 }
 
+.topic-boxes-holder .box-topic.sticker {
+    opacity: 0;
+}
+
+/* @keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.box-topic.fade-out {
+    animation: fadeOut 0 ease-in-out forwards;
+} */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(1.06);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.box-topic.fade-in {
+    animation: fadeIn .2s ease-in-out forwards;
+}
+
+
 .vpn-semi {
     right: 10px;
     bottom: 65px;
@@ -13168,6 +13205,19 @@ div#results {
     .skins-category-switch {
         margin: 0 65px;
         margin-bottom: 10px;
+    }
+
+    .topic-boxes-holder .box-topic.sticker {
+        opacity: 1;
+    }
+
+    .box-topic.fade-in,
+    .box-topic.fade-out {
+        animation: none;
+    }
+
+    .box-topic.fade-out {
+        display: none;
     }
     
     .topic-box .best {

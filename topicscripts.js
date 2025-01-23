@@ -1247,6 +1247,11 @@ if (languageTag === "ru") {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Проверяем, что скрипт запускается только на нужной странице
+  const path = window.location.pathname;
+
+  if (!/\/sticker-crafts(\.html)?$/.test(path)) return;
+
   const itemsPerPage = 12;
   const topicBoxesHolder = document.querySelector(".topic-boxes-holder");
   const boxTopics = Array.from(topicBoxesHolder.querySelectorAll(".box-topic.sticker"));
@@ -1265,9 +1270,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       boxTopics.forEach((box, index) => {
           if (index >= start && index < end) {
+              const delay = ((index % itemsPerPage) + 1) * 0.05; 
+              box.style.animationDelay = `${delay}s`;
               box.classList.remove("hidden");
+              box.classList.add("fade-in");
           } else {
               box.classList.add("hidden");
+              box.classList.remove("fade-in");
           }
       });
 
