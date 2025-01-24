@@ -1,7 +1,7 @@
 :root {
     --darkygray: rgb(220 220 220);
     --main-theme: rgb(245 245 245);
-    --darkgray: rgb(190 190 190);
+    --darkgray: rgb(255 255 255);
     --opacback: rgb(225 225 225);
 }
 
@@ -72,7 +72,6 @@
 }
 
 .topic-box .logobg, .topic-box .logobg.skincolors.active {
-    background-color: var(--main-theme) ;
     background-position: center;
     background-size: cover;
 }
@@ -418,6 +417,8 @@ h3,
 
 .main-page .content button, 
 .main-page .content button.copy::before,
+.boxes-holder .box .content .review-button:not(.visit):hover,
+.boxes-holder .box .content .review-button:not(.visit):hover::before,
 .boxes-holder .box:hover .content button.copy,
 .boxes-holder .box .content button.copy:hover::before,
 .boxes-holder .box .content .review-button.mirror:hover, 
@@ -429,7 +430,8 @@ h3,
 
 
 
-.main-page .box .content button.copy::after {
+.main-page .box .content button.copy::after,
+.content .review-button.mirror-visit::after {
     opacity: .4;
     filter: brightness(.2);
 }
@@ -685,7 +687,7 @@ h3,
     filter: invert(1) hue-rotate(190deg);
 } */
 
-.box .logobg .best::before,
+/* .box .logobg .best::before,
 .sitepage .box .logobg .rating::before,
 .sitepage .box .logobg .rating::after,
 .box .content,
@@ -700,7 +702,7 @@ h3,
 .boxes-holder .rating-case-single::before,
 .rating-case-single {
     transition: unset !important;
-}
+} */
 
 .features .featuresbox .typesinside a::before,
 .features .featuresbox .typesinside a::after,
@@ -884,12 +886,18 @@ ul .submenu li .nonredir,
 }
 
 .content button.copy, .content button.copy::before,
+.content .review-button.mirror-visit::before,
+.content .review-button.mirror-visit,
 .sitepage .content button.copy, .sitepage .content button.copy::before,
 .box.main .content button:hover, .box.main .content button:hover::before,
 .box .content .review-button.mirror,
 .content .review-button.visit.mirror::before {
     background-color: rgb(225 225 225) !important;
     filter: none !important;
+}
+
+.content .review-button.mirror-visit::after {
+    background: unset;
 }
 
 .box:hover .vpn-semi {
@@ -1012,7 +1020,8 @@ ul .submenu li .nonredir,
     .boxes-holder-name {
         top: -25px;
     }
-    
+
+
     .boxes-holder-section.big,
     .boxes-holder-section {
         margin-top: 30px;
@@ -1020,9 +1029,14 @@ ul .submenu li .nonredir,
 }
 
 @media screen and (max-width: 1365px) {
+    .topic-box .content {
+        background-color: unset;
+    }
+
     .payments-block.visible .payments-button::before {
         background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%);
     }
+
     .category-selector .category-box {
         background: var(--opacback);
     }
@@ -1032,7 +1046,8 @@ ul .submenu li .nonredir,
         filter: unset;
     }
 
-    .singlemod-select img {
+    .singlemod-select img,
+    .mods-box.topic .singlemod-select img {
         filter: grayscale(1) brightness(1.5);
     }
 

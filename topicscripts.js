@@ -609,7 +609,7 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
                 bgImage.onload = function() {
                     var skinslist = document.querySelectorAll("[data-color='" + color + "']");
                     skinslist.forEach(function(element) {
-                        element.style.backgroundImage = "url(" + bgImage.src + ")";
+                        element.style.backgroundImage = "url(" + bgImage.src + "), linear-gradient(-45deg, var(--darkygray) 50%, var(--darkgray) 100%)";
                         element.classList.add("active");
                     });
                 };
@@ -1248,7 +1248,9 @@ if (languageTag === "ru") {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  const itemsPerPage = 12;
+  var res = $(window).width();
+
+  const itemsPerPage = res < 1365 ? 6 : 12;
   const topicBoxesHolder = document.querySelector(".topic-boxes-holder");
 
   if (!topicBoxesHolder) return;

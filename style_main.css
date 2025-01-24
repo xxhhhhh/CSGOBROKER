@@ -5586,7 +5586,6 @@ footer .centralizer .footer-content {
 
 .boxes-holder .box .content .review-button:not(.visit):hover,
 .boxes-holder .box .content .review-button:not(.visit):hover::before,
-.boxes-holder .box .content .review-button:not(.visit):hover::after,
 .boxes-holder .box .content .review-button.mirror-visit:hover,
 .boxes-holder .box .content .review-button.mirror-visit:hover::before,
 .boxes-holder .box .content button.copy:hover,
@@ -10498,9 +10497,15 @@ div#results {
         top: 380px;
     }
 
-    .topic-box .logobg {
+    .topic-box .logobg,
+    .topic-box .logobg.skincolors,
+    .topic-box.items .logobg {
         background-color: rgba(0, 0, 0, .15);
         height: 115px;
+    }
+
+    .topic-box .logobg img {
+        height: 100%;
     }
 
     .topic-box .content {
@@ -10679,6 +10684,10 @@ div#results {
         flex-direction: row;
         width: 98%;
         margin: 0 auto !important;
+    }
+    
+    .topic .mods-main-box {
+        width: 100%;
     }
 
     .mods-box.skins-box .singlemod-box {
@@ -10914,6 +10923,7 @@ div#results {
 
     .topic-boxes-holder {
         max-width: 100%;
+        width: 100%;
         min-height: 400px;
         margin-top: 8px;
     }
@@ -13241,6 +13251,16 @@ div#results {
     .skins-category-switch {
         margin: 0 65px;
         margin-bottom: 10px;
+    }
+
+    .singlemod-box:has(.back-button):hover {
+        transform: scale(1.01);
+    }
+
+    .topic-boxes-holder .topic-box:hover .logobg, 
+    .item-topic-grandbox:hover .logobg, 
+    .topic-box.maestro:hover .logobg {
+        margin: 5px !important;
     }
 
     .topic-boxes-holder:not(.sticker-crafts) .topic-box.fade-in {
