@@ -91,7 +91,7 @@ $(document).ready(function () {
             const adsBoxes = document.createElement("div");
             adsBoxes.innerHTML = adsBoxesHtml;
 
-            const insertAfterElement = document.querySelector(".box-topic");
+            const insertAfterElement = document.querySelector(".topic-grandbox");
             const randomAdsBox =
               adsBoxes.children[
                 Math.floor(Math.random() * adsBoxes.children.length)
@@ -279,7 +279,7 @@ $(document).ready(function () {
           skinClasses = $(element).attr("class").split(" ");
         }
       
-        const skinBox = $(element).closest(".box-skins-list, .box-topic");
+        const skinBox = $(element).closest(".box-skins-list, .topic-grandbox");
         const visibleItems = skinBox.find(".skin:not(.disabled)");
         const totalItems = visibleItems.length;
         const itemName = element.querySelector(".skin-desc-name")
@@ -293,7 +293,7 @@ $(document).ready(function () {
         previewWindow.removeClass("hidden").attr({
           "data-current-index": visibleItems.index(element),
           "data-total-items": totalItems,
-          "data-current-box": skinBox.index(".box-skins-list, .box-topic"),
+          "data-current-box": skinBox.index(".box-skins-list, .topic-grandbox"),
         });
       
         skinClasses.forEach((skinClass) => {
@@ -377,7 +377,7 @@ $(document).ready(function () {
         const previewWindow = $("#preview-window");
         const currentIndex = parseInt(previewWindow.attr("data-current-index"), 10);
         const currentBoxIndex = parseInt(previewWindow.attr("data-current-box"), 10);
-        const currentBox = $(".box-skins-list, .box-topic, .character-box").eq(
+        const currentBox = $(".box-skins-list, .topic-grandbox, .character-box").eq(
           currentBoxIndex
         );
         const visibleItems = currentBox.find(".skin:not(.disabled)");
@@ -471,8 +471,8 @@ $(document).ready(function () {
         currentPath.includes("/cases/") ||
         currentPath.includes("/collections/")
       ) {
-        $(".box-topic").load(
-          "/code-parts/micro-parts/box-topic-items.html",
+        $(".topic-grandbox").load(
+          "/code-parts/micro-parts/topic-grandbox-items.html",
           function () {
             $(".navigation-weapon-type").click(function () {
               const weaponType = $(this).attr("class").split(" ")[1];
@@ -854,16 +854,16 @@ $(document).ready(function(){
 
   $(document).ready(function () {
     function initializeBoxTopic() {
-        var boxtopic = $('.boxtopic');
-        if (boxtopic.length) {
+        var topicpage = $('.topicpage');
+        if (topicpage.length) {
             var urlnav = languageTag === 'ru' 
                 ? '/code-parts/micro-parts/nav-topic-box-ru.html' 
                 : '/code-parts/micro-parts/nav-topic-box.html';
             
             $.get(urlnav, function (data) {
-                boxtopic.append(data);
+                topicpage.append(data);
     
-                boxtopic.on('click.topicNav', '.topic-nav-box', function () {
+                topicpage.on('click.topicNav', '.topic-nav-box', function () {
                     var topicNavBox = $(this);
                     toggleActiveClass(topicNavBox);
                     
@@ -876,13 +876,13 @@ $(document).ready(function(){
                     toggleActiveClass($('.topic-nav-selector'));
                 });
     
-                boxtopic.on('click.topicNav', '.topic-nav-close', function () {
+                topicpage.on('click.topicNav', '.topic-nav-close', function () {
                     toggleActiveClass($('.topic-nav-selector'));
                     $('.pages').removeClass('hardhidden');
                     $('.topic-nav-box').removeClass('active');
                 });
     
-                boxtopic.on('click.topicNav', '.weapon-container', function () {
+                topicpage.on('click.topicNav', '.weapon-container', function () {
                     var clickedContainer = $(this);
                     $('.weapon-container').not(clickedContainer).removeClass('active');
                     toggleActiveClass(clickedContainer);
@@ -894,20 +894,20 @@ $(document).ready(function(){
     
 
     function deinitializeBoxTopic() {
-        var boxtopic = $('.boxtopic');
-        if (boxtopic.length) {
-            boxtopic.off('.topicNav');
+        var topicpage = $('.topicpage');
+        if (topicpage.length) {
+            topicpage.off('.topicNav');
             $('.topic-nav-selector').remove();
             $('.topic-nav-box').removeClass('active');
-            boxtopic.data('initialized', false);
+            topicpage.data('initialized', false);
         }
     }
 
     function checkWindowSize() {
         if ($(window).width() < 1365) {
-            if (isTopicItemsLink() && !$('.boxtopic').data('initialized')) {
+            if (isTopicItemsLink() && !$('.topicpage').data('initialized')) {
                 initializeBoxTopic();
-                $('.boxtopic').data('initialized', true);
+                $('.topicpage').data('initialized', true);
             }
         } else {
             deinitializeBoxTopic();
@@ -1035,12 +1035,12 @@ if (window.location.pathname.includes('/sticker-crafts/')) {
               return;
           }
 
-          const boxTopics = Array.from(topicBoxesHolder.querySelectorAll('.box-topic'));
+          const boxTopics = Array.from(topicBoxesHolder.querySelectorAll('.topic-grandbox'));
           if (boxTopics.length === 0) {
               return;
           }
 
-          const currentPageSpan = document.querySelector('.siteblock .box-topic .navigation-section.first span');
+          const currentPageSpan = document.querySelector('.siteblock .topic-grandbox .navigation-section.first span');
           const currentPageText = currentPageSpan ? currentPageSpan.textContent.trim() : '';
 
           const filteredTopics = boxTopics.filter(box => {
@@ -1247,14 +1247,16 @@ if (languageTag === "ru") {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Проверяем, что скрипт запускается только на нужной странице
-  const path = window.location.pathname;
-
-  if (!/\/sticker-crafts(\.html)?$/.test(path)) return;
 
   const itemsPerPage = 12;
   const topicBoxesHolder = document.querySelector(".topic-boxes-holder");
-  const boxTopics = Array.from(topicBoxesHolder.querySelectorAll(".box-topic.sticker"));
+
+  if (!topicBoxesHolder) return;
+
+  const useGrandBox = topicBoxesHolder.classList.contains("sticker-crafts");
+  const boxTopics = useGrandBox
+      ? Array.from(topicBoxesHolder.querySelectorAll(".topic-grandbox"))
+      : Array.from(topicBoxesHolder.querySelectorAll(".topic-box"));
 
   if (!boxTopics.length) return;
 
@@ -1270,7 +1272,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       boxTopics.forEach((box, index) => {
           if (index >= start && index < end) {
-              const delay = ((index % itemsPerPage) + 1) * 0.05; 
+              const delay = ((index % itemsPerPage) + 1) * 0.05;
               box.style.animationDelay = `${delay}s`;
               box.classList.remove("hidden");
               box.classList.add("fade-in");
@@ -1283,8 +1285,9 @@ document.addEventListener("DOMContentLoaded", function () {
       updatePaginationButtons(page);
   }
 
+
   function createPaginationButtons() {
-      paginationHolder.innerHTML = "";
+      paginationHolder.innerHTML = ""; 
       for (let i = 1; i <= totalPages; i++) {
           const button = document.createElement("button");
           button.textContent = i;

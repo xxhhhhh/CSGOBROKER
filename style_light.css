@@ -44,12 +44,15 @@
     background: var(--opacback) !important;
 }
 
-.box-topic .topic-box .logobg,
-.box-topic .topic-box:hover .logobg,
+.topic-grandbox .topic-box .logobg,
+.topic-grandbox .topic-box:hover .logobg,
 #color-list,
 .boxes-holder-name a {
-    background-color: var(--main-theme) !important;
+    background: var(--main-theme);
+}
 
+.topic-boxes-holder .topic-grandbox .topic-box .logobg {
+    background: var(--main-theme) !important;
 }
 
 .topic-box .logobg img,
@@ -78,9 +81,13 @@
     background: unset
 }
 
-.box-topic .skin img {
+.topic-grandbox .skin img {
     background-color: unset !important;
     filter: drop-shadow(0px 0px 3px rgb(100 100 100));
+}
+
+.topic-grandbox .skin.sticker img {
+    filter: unset;
 }
 
 .navigation-weapon-sort i {
@@ -96,15 +103,15 @@
     background-color: #ffffff;
 }
 
-.box-topic.sticker .topic-box,
-.box-topic.sticker .topic-box:hover,
-.sitepage.topic-craft .box-topic .topic-box,
-.sitepage.topic-craft .box-topic .topic-box:hover {
+.topic-grandbox.sticker .topic-box,
+.topic-grandbox.sticker .topic-box:hover,
+.sitepage.topic-craft .topic-grandbox .topic-box,
+.sitepage.topic-craft .topic-grandbox .topic-box:hover {
     background: unset !important;
     background-color: unset !important;
 }
 
-.sitepage.topic-craft .box-topic,
+.sitepage.topic-craft .topic-grandbox,
 .topic-box {
     filter: unset;
     box-shadow: unset;
@@ -116,7 +123,7 @@
 .category-selector .category-box:active .category-box-logo,
 .category-selector .category-box.active .category-box-logo,
 .category-selector ul:hover .category-box .category-box-logo,
-.box-topic.sticker {
+.topic-grandbox.sticker {
     background: var(--opacback);
 }
 
@@ -198,10 +205,10 @@ a, p,
 .box-skins:hover .box-skins-name span,
 .box .logobg .vpn,
 .topic-box .content span,
-.box-topic.sticker span,
+.topic-grandbox.sticker span,
 .box-skins-button,
 .introduce-craft span,
-.sitepage.topic-craft .box-topic span,
+.sitepage.topic-craft .topic-grandbox span,
 .introduce-craft p,
 .crafting-table-step span,
 .navigation-weapon-sort i,
@@ -215,6 +222,7 @@ a, p,
 .main-col-info-upd p,
 h2,
 h3,
+.topic-grandbox.sticker .navigation-section.first::after,
 .newest-boxes-more,
 .boxes-holder-name h3,
 .boxes-holder-section:hover .boxes-holder-name h3,
@@ -244,7 +252,7 @@ h3,
 .mini-info,
 .siteblock.mirror .box.main .logobg .star_rating::before,
 .sitepage.topic-craft .navigation-section.second span, 
-.box-topic.sticker .navigation-section.second span, 
+.topic-grandbox.sticker .navigation-section.second span, 
 .boxes-holder-name a:hover, 
 .newest-boxes-more:hover,
 .main-col-info .theme-col-info h3,
@@ -345,7 +353,8 @@ h3,
     background-color: #181818;
 }
 
-.sitealternates .content a.boxtitle:hover {
+.sitealternates .content a.boxtitle:hover,
+.pagination-button {
     color: rgb(188, 188, 188);
 }
 
@@ -460,17 +469,17 @@ h3,
     content: none
 }
 
-.sitepage.topic-craft .boxtopic {
+.sitepage.topic-craft .topicpage {
     background: #f2f2f2
 }
 
 .box .content,
 .newest-boxes .box,
 #rec-box-content,
-.box-topic .skin,
+.topic-grandbox .skin,
 .singlemod-select::before,
 .box .logobg .main-mode-box,
-.box-topic::after {
+.topic-grandbox::after {
     background-color: #f2f2f2 !important;
     background: unset;
 }
@@ -480,8 +489,8 @@ h3,
 }
 
 #rec-box-content,
-.box-topic .skin,
-.box-topic::after,
+.topic-grandbox .skin,
+.topic-grandbox::after,
 #color-list.active {
     filter: drop-shadow(0 0 1px rgb(200 200 200));
     box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
@@ -507,7 +516,7 @@ h3,
 .gamemodes .featuresbox::before,
 .gamemodes .featuresbox,
 .alternates-title,
-.box-topic.sticker .skin,
+.topic-grandbox.sticker .skin,
 .crafting-table-step,
 .crafting-table-step:hover,
 #notexist .category-box .category-box-logo,
@@ -744,7 +753,7 @@ ul .submenu li .nonredir,
 .submenu .big-category a:hover,
 .submenu .big-category:hover a,
 .submenu .big-category .nonredir:hover,
-.item-box-topic,
+.item-topic-grandbox,
 .submenu2 a:hover,
 .singlemod-box,
 .shortinfo,
@@ -763,7 +772,7 @@ ul .submenu li .nonredir,
     color: var(--white);
 }
 
-.item-box-topic .logobg {
+.item-topic-grandbox .logobg {
     mask-image: unset;
 }
 
@@ -995,7 +1004,7 @@ ul .submenu li .nonredir,
     box-shadow: unset;
 }
 
-.blog .item-box-topic .logobg img {
+.blog .item-topic-grandbox .logobg img {
     opacity: 1;
 }
 
