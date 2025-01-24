@@ -472,7 +472,7 @@ $(document).ready(function () {
         currentPath.includes("/collections/")
       ) {
         $(".topic-grandbox").load(
-          "/code-parts/micro-parts/topic-grandbox-items.html",
+          "/code-parts/micro-parts/box-topic-items.html",
           function () {
             $(".navigation-weapon-type").click(function () {
               const weaponType = $(this).attr("class").split(" ")[1];
