@@ -7819,7 +7819,8 @@ label:active,
 .main-mode-unit:active,
 .category-box:active,
 .payments-button:active,
-.newest-boxes-more:active {
+.newest-boxes-more:active,
+.pagination-button:active {
     filter: brightness(.7) !important;
     transition: all .09s ease-in-out;
 }
@@ -8149,7 +8150,6 @@ div#results {
 .topic-boxes-holder .topic-grandbox.sticker {
     height: 230px;
     min-height: 230px;
-    text-transform: uppercase;
     font-weight: 500;
     font-size: 14px;
     top: 8px;
@@ -8198,7 +8198,7 @@ div#results {
     height: 40px;
     margin: 5px;
     background-color: #121212;
-    border: 2px solid #141414;
+    border: 2px solid #131313;
     transition: all .15s ease-in-out;
     border-radius: 5px;
     display: flex;
