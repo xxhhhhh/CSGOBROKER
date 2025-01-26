@@ -1080,45 +1080,45 @@ window.onload = function () {
       document.body.appendChild(buttonsContainer);
     }
 
-    if (isRuPage && !isExcludedPath && !document.querySelector('#button-vpn-filter')) {
-      const vpnButtonContainer = document.createElement('div');
-      vpnButtonContainer.className = 'settings-menu';
-      vpnButtonContainer.innerHTML =
-        '<div class="settings-button" id="button-vpn-filter" data-title="Скрыть сайты требующие VPN"><i id="vpn-icon" class="officon vpn-shield"></i></div>';
+    if (isRuPage && !isExcludedPath && !document.querySelector('#button-route-filter')) {
+      const routeButtonContainer = document.createElement('div');
+      routeButtonContainer.className = 'settings-menu';
+      routeButtonContainer.innerHTML =
+        '<div class="settings-button" id="button-route-filter" data-title="Скрыть сайты с Ограниченным Доступом"><i id="globe-icon" class="officon route-shield"></i></div>';
     
-      buttonsContainer.appendChild(vpnButtonContainer);
+      buttonsContainer.appendChild(routeButtonContainer);
     
-      const vpnIcon = document.getElementById('vpn-icon');
+      const routeIcon = document.getElementById('globe-icon');
     
-      function toggleVpnBlocks() {
-        const vpnBlocks = document.querySelectorAll('.box');
-        vpnBlocks.forEach(block => {
-          if (block.querySelector('.vpn')) {
-            block.classList.toggle('hidden-vpn');
+      function toggleRouteBlocks() {
+        const routeBlocks = document.querySelectorAll('.box');
+        routeBlocks.forEach(block => {
+          if (block.querySelector('.route')) {
+            block.classList.toggle('hidden-route');
           }
         });
       }
     
-      function initializeVpnState() {
-        const buttonState = localStorage.getItem('vpnButtonState');
+      function initializeRouteState() {
+        const buttonState = localStorage.getItem('routeButtonState');
         if (buttonState === 'hidden') {
-          toggleVpnBlocks();
-          vpnIcon.classList.replace('vpn-shield', 'vpn-shield-slash');
+          toggleRouteBlocks();
+          routeIcon.classList.replace('route-shield', 'route-shield-slash');
         }
     
-        const buttonTitle = localStorage.getItem('vpnButtonTitle');
+        const buttonTitle = localStorage.getItem('routeButtonTitle');
         if (buttonTitle) {
-          document.getElementById('button-vpn-filter').dataset.title = buttonTitle;
+          document.getElementById('button-route-filter').dataset.title = buttonTitle;
         }
       }
     
       const observer = new MutationObserver(() => {
-        const buttonState = localStorage.getItem('vpnButtonState');
+        const buttonState = localStorage.getItem('routeButtonState');
         if (buttonState === 'hidden') {
-          const vpnBlocks = document.querySelectorAll('.box');
-          vpnBlocks.forEach(block => {
-            if (block.querySelector('.vpn')) {
-              block.classList.add('hidden-vpn');
+          const routeBlocks = document.querySelectorAll('.box');
+          routeBlocks.forEach(block => {
+            if (block.querySelector('.route')) {
+              block.classList.add('hidden-route');
             }
           });
         }
@@ -1126,24 +1126,24 @@ window.onload = function () {
     
       observer.observe(document.body, { childList: true, subtree: true });
     
-      document.getElementById('button-vpn-filter').addEventListener('click', function () {
-        toggleVpnBlocks();
+      document.getElementById('button-route-filter').addEventListener('click', function () {
+        toggleRouteBlocks();
     
-        const currentState = localStorage.getItem('vpnButtonState') || 'visible';
+        const currentState = localStorage.getItem('routeButtonState') || 'visible';
         const newState = currentState === 'hidden' ? 'visible' : 'hidden';
-        localStorage.setItem('vpnButtonState', newState);
+        localStorage.setItem('routeButtonState', newState);
     
-        vpnIcon.classList.toggle('vpn-shield');
-        vpnIcon.classList.toggle('vpn-shield-slash');
+        routeIcon.classList.toggle('route-shield');
+        routeIcon.classList.toggle('route-shield-slash');
     
-        const button = document.getElementById('button-vpn-filter');
-        button.dataset.title = vpnIcon.classList.contains('vpn-shield') ?
-          'Скрыть сайты требующие VPN' : 'Показать сайты требующие VPN';
+        const button = document.getElementById('button-route-filter');
+        button.dataset.title = routeIcon.classList.contains('route-shield') ?
+          'Скрыть сайты с Ограниченным Доступом' : 'Показать сайты с Ограниченным Доступом';
     
-        localStorage.setItem('vpnButtonTitle', button.dataset.title);
+        localStorage.setItem('routeButtonTitle', button.dataset.title);
       });
     
-      initializeVpnState();
+      initializeRouteState();
     }
     
 
@@ -1380,8 +1380,8 @@ if (btnfaq) {
 }
 
 let ratings = {};
-let requiredVPN = [];
-let maybeVPN = [];
+let requiredRoute = [];
+let maybeRoute = [];
 
 function addStarRating(boxId, rating) {
   const boxElement = document.getElementById(boxId);
@@ -1399,37 +1399,40 @@ function addStarRating(boxId, rating) {
   }
 }
 
-function handleVPNDisplay(boxElements) {
-  const vpnMessageDiv = document.createElement('div');
-  vpnMessageDiv.className = 'vpn';
-  vpnMessageDiv.textContent = 'Нужен VPN';
+function handleRouteDisplay(boxElements) {
+  const routeMessageDiv = document.createElement('div');
+  routeMessageDiv.className = 'route';
+  routeMessageDiv.textContent = 'Доступ ограничен';
 
-  const vpnSemiMessageDiv = document.createElement('div');
-  vpnSemiMessageDiv.className = 'vpn-semi';
-  vpnSemiMessageDiv.textContent = 'VPN';
+  const routeSemiMessageDiv = document.createElement('div');
+  routeSemiMessageDiv.className = 'route-semi';
+
+  const routeMessageIcon = document.createElement('div');
+  routeMessageIcon.className = 'officon globe';
+  routeSemiMessageDiv.appendChild(routeMessageIcon);
 
   boxElements.forEach(boxElement => {
     const boxId = boxElement.id;
 
-    if (requiredVPN.includes(boxId)) {
+    if (requiredRoute.includes(boxId)) {
       if (boxElement.closest('.boxes-holder-section')) {
-        const clonedDiv = vpnSemiMessageDiv.cloneNode(true);
+        const clonedDiv = routeSemiMessageDiv.cloneNode(true);
         boxElement.appendChild(clonedDiv);
       } else {
         const logobgElement = boxElement.querySelector('.logobg');
         if (logobgElement) {
-          const clonedDiv = vpnMessageDiv.cloneNode(true);
+          const clonedDiv = routeMessageDiv.cloneNode(true);
           logobgElement.appendChild(clonedDiv);
         }
       }
-    } else if (maybeVPN.includes(boxId)) {
+    } else if (maybeRoute.includes(boxId)) {
       if (boxElement.closest('.boxes-holder-section')) {
-        const clonedDiv = vpnSemiMessageDiv.cloneNode(true);
+        const clonedDiv = routeSemiMessageDiv.cloneNode(true);
         boxElement.appendChild(clonedDiv);
       } else {
         const logobgElement = boxElement.querySelector('.logobg');
         if (logobgElement) {
-          const clonedDiv = vpnSemiMessageDiv.cloneNode(true);
+          const clonedDiv = routeSemiMessageDiv.cloneNode(true);
           logobgElement.appendChild(clonedDiv);
         }
       }
@@ -1439,24 +1442,24 @@ function handleVPNDisplay(boxElements) {
 
 function loadCachedData() {
   const cachedRatings = localStorage.getItem('ratings');
-  const cachedRequiredVPN = localStorage.getItem('requiredVPN');
-  const cachedMaybeVPN = localStorage.getItem('maybeVPN');
+  const cachedRequiredRoute = localStorage.getItem('requiredRoute');
+  const cachedMaybeRoute = localStorage.getItem('maybeRoute');
 
   if (cachedRatings) {
     ratings = JSON.parse(cachedRatings);
   }
-  if (cachedRequiredVPN) {
-    requiredVPN = JSON.parse(cachedRequiredVPN);
+  if (cachedRequiredRoute) {
+    requiredRoute = JSON.parse(cachedRequiredRoute);
   }
-  if (cachedMaybeVPN) {
-    maybeVPN = JSON.parse(cachedMaybeVPN);
+  if (cachedMaybeRoute) {
+    maybeRoute = JSON.parse(cachedMaybeRoute);
   }
 }
 
 function saveToCache(data) {
   localStorage.setItem('ratings', JSON.stringify(data.ratings));
-  localStorage.setItem('requiredVPN', JSON.stringify(data.RequiredVPN));
-  localStorage.setItem('maybeVPN', JSON.stringify(data.MaybeVPN));
+  localStorage.setItem('requiredRoute', JSON.stringify(data.RequiredRoute));
+  localStorage.setItem('maybeRoute', JSON.stringify(data.MaybeRoute));
   localStorage.setItem('settingsHash', data.hash);
 }
 
@@ -1478,7 +1481,7 @@ function renderData() {
     window.location.pathname === '/ru.html'
   ) {
     const boxElements = document.querySelectorAll('.box');
-    handleVPNDisplay(boxElements);
+    handleRouteDisplay(boxElements);
   }
 }
 
@@ -1493,8 +1496,8 @@ fetch('/code-parts/sites-settings.json')
 
     if (currentHash !== cachedHash) {
       ratings = settings.ratings;
-      requiredVPN = settings.RequiredVPN;
-      maybeVPN = settings.MaybeVPN;
+      requiredRoute = settings.RequiredRoute;
+      maybeRoute = settings.MaybeRoute;
 
       saveToCache({ ...settings, hash: currentHash });
 
@@ -2826,6 +2829,8 @@ $(document).ready(function() {
 
   $('.boxes-holder').each(function() {
     const $boxesHolder = $(this);
+
+    var res = $(window).width();
 
     if (!$boxesHolder.closest('.main-page').length && $boxesHolder.find('.box').length >= 8) {
       const importPath = languageTag === 'ru' 

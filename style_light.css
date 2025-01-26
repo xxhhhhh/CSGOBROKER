@@ -174,9 +174,9 @@ a, p,
 .site-attention span,
 .rating-case-single .rating-summ,
 .logobg:hover .rating-case-single .rating-summ,
-.logobg:hover .vpn,
+.logobg:hover .route,
 .sitealternatesboxes .box:hover .rating-case-single .rating-summ,
-.sitealternatesboxes .box:hover .vpn,
+.sitealternatesboxes .box:hover .route,
 .sitedetails .sitepros,
 .mirror-redirect span,
 .partner-site span,
@@ -197,12 +197,11 @@ a, p,
 .settings-button:hover i,
 #back-to-top-btn,
 #back-to-top-btn:hover,
-#button-vpn-filter[data-title]:after,
 .box-skins .skin .skin-desc-name,
 .weapon-selection-redir span,
 .box-skins-name span,
 .box-skins:hover .box-skins-name span,
-.box .logobg .vpn,
+.box .logobg .route,
 .topic-box .content span,
 .topic-grandbox.sticker span,
 .box-skins-button,
@@ -243,6 +242,7 @@ h3,
 .category-box:hover .category-box-content span,
 .category-selector .category-box .category-box-content span,
 .text-col-info ul li p,
+.route-semi::before,  
 .text-col-info-theme,
 .table-credits,
 .table-unit,
@@ -309,9 +309,9 @@ h3,
 }
 
 .logobg .rating-case-single .rating-summ,
-.logobg .vpn,
+.logobg .route,
 .sitealternatesboxes .box .rating-case-single .rating-summ,
-.sitealternatesboxes .box .vpn {
+.sitealternatesboxes .box .route {
     opacity: 1 !important;
 }
 
@@ -384,8 +384,19 @@ h3,
 
 .category-selector .category-box.active .category-box-logo img,
 .main-mode:after,
-.box.main .main-mode:after {
+.box.main .main-mode:after,
+.route-semi::before {
     filter: unset;
+}
+
+.route-semi::before {
+    filter:drop-shadow(0px 0px 8px rgb(225 225 225)) 
+    drop-shadow(0px 0px 8px rgb(225 225 225)) 
+    drop-shadow(0px 0px 8px rgb(225 225 225)) 
+    drop-shadow(0px 0px 8px rgb(225 225 225))
+    drop-shadow(0px 0px 8px rgb(225 225 225)) 
+    drop-shadow(0px 0px 8px rgb(225 225 225)) 
+    drop-shadow(0px 0px 8px rgb(225 225 225));
 }
 
 .boxes-holder .box .content,
@@ -417,8 +428,6 @@ h3,
 
 .main-page .content button, 
 .main-page .content button.copy::before,
-.boxes-holder .box .content .review-button:not(.visit):hover,
-.boxes-holder .box .content .review-button:not(.visit):hover::before,
 .boxes-holder .box:hover .content button.copy,
 .boxes-holder .box .content button.copy:hover::before,
 .boxes-holder .box .content .review-button.mirror:hover, 
@@ -501,10 +510,10 @@ h3,
 
 .boxes-holder .box:hover .rating-case-single,
 .boxes-holder .box:hover .rating-case-single::before,
-.boxes-holder .box:hover .logobg .vpn,
-.boxes-holder .box:hover .logobg .vpn::before,
-.box .logobg .vpn,
-.box .logobg .vpn::before,
+.boxes-holder .box:hover .logobg .route,
+.boxes-holder .box:hover .logobg .route::before,
+.box .logobg .route,
+.box .logobg .route::before,
 .rating-case-single,
 .boxes-holder .rating-case-single::before,
 .sitepage .box .logobg .rating,
@@ -704,12 +713,6 @@ h3,
     transition: unset !important;
 } */
 
-.features .featuresbox .typesinside a::before,
-.features .featuresbox .typesinside a::after,
-.features .featuresbox .typesinside a {
-    transition: transform .15s ease-in-out !important;
-
-}
 
 .sitedetails .sitepros:hover.active,
 .sitedetails .sitepros:hover {
@@ -863,7 +866,8 @@ ul .submenu li .nonredir,
     filter: none !important;
 }
 
-.main-mode-icon::before {
+.main-mode-icon::before,
+.officon.globe::before {
     opacity: 1;
 }
 
@@ -900,7 +904,7 @@ ul .submenu li .nonredir,
     background: unset;
 }
 
-.box:hover .vpn-semi {
+.box:hover .route-semi {
     background: var(--main-theme);
 }
 
@@ -929,8 +933,8 @@ ul .submenu li .nonredir,
     margin-top: unset;
 }
 
-.officon.vpn-shield::before,
-.officon.vpn-shield-slash::before,
+.officon.route-shield::before,
+.officon.route-shield-slash::before,
 #back-to-top-btn::before,
 .big-category:has(.submenu2) a:not(.submenu2 a)::after,
 .sitedetails .sitepros span::after,
@@ -944,13 +948,12 @@ ul .submenu li .nonredir,
     opacity: 1;
 }
 
-.features .typesinside i::before {
-    filter: brightness(0) saturate(100%) invert(16%) sepia(69%) saturate(4202%) hue-rotate(339deg) brightness(99%) contrast(90%);
-    opacity: 1;
+.features .typesinside a .officon {
+    transition: all .15s ease-in-out;
 }
 
-.features .typesinside a:hover .officon::before {
-    filter: brightness(.15);
+.features .typesinside a:hover .officon {
+    filter: grayscale(1) brightness(.5);
 }
 
 .boxes-holder-section:hover .boxes-holder-name .singlemod-icon.cs2::before,

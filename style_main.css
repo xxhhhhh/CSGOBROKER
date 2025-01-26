@@ -1136,22 +1136,13 @@ nav .pages {
     display: none;
 }
 
-.site-searcher-box[data-title]:hover:after,
-.navigation-weapon-sort[data-title]:hover:after,
-.topic-grandbox .skin:hover .skin-desc-name,
-#preview-showcase .skin-alt-info[data-title]:hover:after {
-    content: attr(data-title);
-    transition: .1s opacity ease-in-out;
-    opacity: 1;
-}
-
 .site-searcher-box[data-title]:after,
 .navigation-weapon-sort[data-title]:after,
 .topic-grandbox .skin .skin-desc-name,
 .skin-alt-info[data-title]:after,
 .main-mode:after,
 .infoicon::after,
-.vpn-semi::before {
+.route-semi::before {
     content: '';
     position: absolute;
     width: max-content;
@@ -1165,11 +1156,21 @@ nav .pages {
     justify-content: center;
     user-select: none;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(10px);
     filter: drop-shadow(0px 0px 1px rgb(22, 22, 22));
+    transition: all .15s ease-in-out;
     align-items: center;
     pointer-events: none;
     opacity: 0;
+}
+
+.site-searcher-box[data-title]:hover:after,
+.navigation-weapon-sort[data-title]:hover:after,
+.topic-grandbox .skin:hover .skin-desc-name,
+#preview-showcase .skin-alt-info[data-title]:hover:after {
+    content: attr(data-title);
+    transform: translateX(-50%);
+    opacity: 1;
 }
 
 .navigation-weapon-sort[data-title]:after {
@@ -2784,7 +2785,7 @@ h3 {
 
 .mini-info {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     font-weight: 500;
     font-size: 15px;
@@ -2812,7 +2813,7 @@ h3 {
 .mini-info .actual {
     position: relative;
     width: fit-content;
-    margin-left: 5px;
+    margin: 0 5px;
 }
 
 .mini-info .actual::before {
@@ -4551,7 +4552,7 @@ nav img:active,
     z-index: -1;
 }
 
-.box .logobg .vpn {
+.box .logobg .route {
     background: rgb(14 14 14);
     color: rgba(255, 255, 255, .3);
     top: unset;
@@ -4572,15 +4573,15 @@ nav img:active,
     font-weight: 600;
     text-transform: uppercase;
     user-select: none;
-    font-size: 12px;
+    font-size: 11px;
     z-index: 1;
 }
 
-.main-page .box .logobg .vpn {
+.main-page .box .logobg .route {
     display: none;
 }
 
-.box .logobg .vpn::before {
+.box .logobg .route::before {
     content: '';
     position: absolute;
     top: unset;
@@ -4596,17 +4597,17 @@ nav img:active,
     z-index: -1;
 }
 
-.box:hover .logobg .vpn,
-.box:hover .logobg .vpn::before {
+.box:hover .logobg .route,
+.box:hover .logobg .route::before {
     transform: translateY(0);
     background: rgb(14 14 14);
 }
 
-.box:hover .logobg .vpn::before {
+.box:hover .logobg .route::before {
     transform: translateY(0) skewX(-20deg);
 }
 
-.sitealternates .box .logobg .vpn {
+.sitealternates .box .logobg .route {
     transform: unset;
     transition: all .15s ease-in-out;
     bottom: unset;
@@ -4616,7 +4617,7 @@ nav img:active,
     display: none;
 }
 
-.sitealternates .box .logobg .vpn::before {
+.sitealternates .box .logobg .route::before {
     transition: all .15s ease-in-out;
     transform: skewX(20deg);
     border-radius: 0 0 0 5px;
@@ -4654,7 +4655,8 @@ nav img:active,
     position: relative;
 }
 
-.main-mode-icon::before {
+.main-mode-icon::before,
+.officon.globe::before {
     margin: 0 auto;
     content: '';
     width: 16px;
@@ -4667,19 +4669,35 @@ nav img:active,
     opacity: .3;
 }
 
+.officon.globe::before {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) saturate(100%) invert(16%) sepia(69%) saturate(4202%) hue-rotate(339deg) brightness(95%) contrast(90%);
+    margin-top: 2px;
+}
+
+.officon.globe:active::before {
+    filter: brightness(0) saturate(100%) invert(16%) sepia(69%) saturate(4202%) hue-rotate(339deg) brightness(95%) contrast(90%) !important;
+}
+
+.route-semi:hover .officon::before {
+    opacity: 1;
+}
+
 .boxes-holder .box:hover .main-mode {
     background: rgb(21 21 21);
 }
 
-.boxes-holder .box:hover .logobg:has(div.vpn) .main-mode {
+.boxes-holder .box:hover .logobg:has(div.route) .main-mode {
     bottom: 50px;
 }
 
-.boxes-holder.main-page .box:hover .logobg:has(div.vpn) .main-mode {
+.boxes-holder.main-page .box:hover .logobg:has(div.route) .main-mode {
     bottom: 10px;
 }
 
-.main-mode:hover .main-mode-box {
+.main-mode:hover .main-mode-box,
+.box .route-semi:hover {
     filter: grayscale(0);
 }
 
@@ -4688,8 +4706,8 @@ nav img:active,
 }
 
 .main-mode:hover:after {
-    transition: .15s opacity ease-in-out;
     opacity: 1;
+    transform: translateY(50%);
 }
 
 .main-mode:after {
@@ -4698,12 +4716,12 @@ nav img:active,
     bottom: 50%;
     left: unset;
     right: 45px;
-    transform: translateY(50%);
+    transform: translateY(50%) translateX(10px);
     width: auto;
     text-wrap: nowrap;
     display: flex;
     justify-content: flex-end;
-    transition: .15s opacity ease-in-out;
+    transition: all .15s ease-in-out;
 }
 
 .box.main .main-mode:after {
@@ -4856,8 +4874,8 @@ nav img:active,
 
 .boxes-holder .box:hover .rating-case-single,
 .boxes-holder .box:hover .rating-case-single::before,
-.boxes-holder .box:hover .logobg .vpn,
-.boxes-holder .box:hover .logobg .vpn::before {
+.boxes-holder .box:hover .logobg .route,
+.boxes-holder .box:hover .logobg .route::before {
     background: rgb(17 17 17);
 }
 
@@ -6210,7 +6228,6 @@ input:checked+label+.slide+input+label::after {
     transition: .2s all ease-in-out;
     border-radius: 50%;
     z-index: 10000;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6218,6 +6235,7 @@ input:checked+label+.slide+input+label::after {
 
 #back-to-top-btn {
     height: 0;
+    overflow: hidden;
 }
 
 #back-to-top-btn.btnEntrance {
@@ -6254,6 +6272,7 @@ input:checked+label+.slide+input+label::after {
     transition: .2s all ease-in-out;
     border-radius: 5px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    position: relative;
 }
 
 #back-to-top-btn.btnEntrance,
@@ -6271,18 +6290,8 @@ input:checked+label+.slide+input+label::after {
     opacity: 1;
 }
 
-#button-vpn-filter[data-title]:hover:after {
-    content: attr(data-title);
-    opacity: 1;
-}
-
-[data-title]:hover:after {
-    content: attr(data-title);
-    opacity: 1;
-}
-
 a[data-title]:after,
-#button-vpn-filter[data-title]:after {
+#button-route-filter[data-title]:after {
     content: '';
     opacity: 0;
     width: 150px;
@@ -6303,20 +6312,29 @@ a[data-title]:after,
     user-select: none;
 }
 
-#button-vpn-filter[data-title]:after {
-    content: '';
+#button-route-filter[data-title]:after {
+    content: attr(data-title);
     top: unset;
-    margin-bottom: 12px;
-    width: 240px;
-    font-size: 12px;
+    width: auto;
+    font-size: 11px;
     font-weight: 500;
-    left: -255px;
-    margin-top: 15px;
-    background-color: var(--opacback);
-    border: 2px rgb(0, 0, 0, .05) solid;
-    transition: opacity .2s ease-in-out;
+    transition: all .15s ease-in-out;
     align-items: center;
-    height: 24px;
+    top: 50%;
+    transform: translateY(-50%) translateX(5%);
+    border-radius: 10px;
+    left: unset;
+    right: 55px;
+}
+
+#button-route-filter[data-title]:hover:after {
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+[data-title]:hover:after {
+    content: attr(data-title);
+    opacity: 1;
 }
 
 .features .featuresbox .typesinside a {
@@ -6509,6 +6527,10 @@ a[data-title]:after,
 
 .officon.giveaways::before {
     background-image: url(/img/icons/gamemodes/hand-present.svg);
+}
+
+.officon.globe::before {
+    background-image: url(/img/icons/gamemodes/globe.svg);
 }
 
 .typesinside .towers::before {
@@ -6901,8 +6923,12 @@ a[data-title]:after,
     opacity: 1;
 }
 
-.features .typesinside a:hover .officon::before {
-    filter: grayscale(1);
+.features .typesinside a .officon {
+    transition: all .15s ease-in-out;
+}
+
+.features .typesinside a:hover .officon {
+    filter: grayscale(1) brightness(5);
 }
 
 .sitedetails .sitepros span::after,
@@ -7006,12 +7032,12 @@ a[data-title]:after,
     background-image: url(/img/icons/gamemodes/lightbulb-on.svg);
 }
 
-.vpn-shield::before {
-    background-image: url(/img/icons/gamemodes/vpn-shield.svg);
+.route-shield::before {
+    background-image: url(/img/icons/gamemodes/route-shield.svg);
 }
 
-.vpn-shield-slash::before {
-    background-image: url(/img/icons/gamemodes/vpn-shield-slash.svg);
+.route-shield-slash::before {
+    background-image: url(/img/icons/gamemodes/route-shield-slash.svg);
 }
 
 .officon.zoom-in::before {
@@ -7149,6 +7175,7 @@ a[data-title]:after,
 .methodlist a[aria-label]:hover:after,
 .gamemodes .featuresbox .typesinside a[aria-label]:hover:after {
     content: attr(aria-label);
+    transform: translateX(-50%);
     opacity: 1;
 }
 
@@ -7162,7 +7189,7 @@ a[data-title]:after,
     text-transform: uppercase;
     font-weight: 500;
     font-size: 12px;
-    transition: opacity .15s ease-in-out;
+    transition: all .15s ease-in-out;
     filter: drop-shadow(0px 0px 1px rgb(22, 22, 22));
     white-space: nowrap;
     pointer-events: none;
@@ -7172,7 +7199,7 @@ a[data-title]:after,
     justify-content: center;
     user-select: none;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(10px);
 }
 
 .gamemodes .featuresbox .typesinside a[aria-label]:after,
@@ -7525,7 +7552,7 @@ ul .big-category.active .submenu2 {
 .siteleftpannel .navigation-menu li:hover::marker,
 .category:hover .category-box-content span,
 .category-box.active .category-box-content span,
-.vpn:hover,
+.route:hover,
 .site-item:hover a,
 .payment-list .payment-method:hover,
 .payment-list .payment-method.selected,
@@ -8102,9 +8129,9 @@ div#results {
 }
 
 .logobg:hover .rating-case-single .rating-summ,
-.logobg:hover .vpn,
+.logobg:hover .route,
 .sitealternatesboxes .box:hover .rating-case-single .rating-summ,
-.sitealternatesboxes .box:hover .vpn {
+.sitealternatesboxes .box:hover .route {
     opacity: 1;
     color: var(--white);
 }
@@ -9055,7 +9082,6 @@ div#results {
     width: auto;
     height: auto;
     max-width: 618px;
-    height: 185px;
     padding: 0 8px 15px 8px;
     display: flex;
     justify-content: center;
@@ -9191,7 +9217,7 @@ div#results {
 .newest-boxes .box .logobg .best:hover {
     font-size: 12px;
     filter: grayscale(0);
-    background: var(--main-color);
+    background: var(--buttonbg);
 }
 
 .main-page .box:hover .logobg .best::after,
@@ -10005,7 +10031,7 @@ div#results {
 .box.hidden,
 .box.hidden-deposit,
 .box.hidden-withdrawal,
-.box.hidden-vpn {
+.box.hidden-route {
     width: 0 !important;
     height: 0 !important;
     margin: 0 !important;
@@ -10014,10 +10040,10 @@ div#results {
 
 .box.hidden-deposit .logobg,
 .box.hidden-withdrawal .logobg,
-.box.hidden-vpn .logobg,
+.box.hidden-route .logobg,
 .box.hidden-deposit .content,
 .box.hidden-withdrawal .content,
-.box.hidden-vpn .content {
+.box.hidden-route .content {
     opacity: 0 !important;
     transition: all .1s ease-in-out !important;
     animation: none !important;
@@ -10193,10 +10219,10 @@ div#results {
     .boxes-holder .box .rating-case-single::before,
     .boxes-holder .box:hover .rating-case-single,
     .boxes-holder .box:hover .rating-case-single::before,
-    .boxes-holder .box .logobg .vpn,
-    .boxes-holder .box .logobg .vpn::before,
-    .boxes-holder .box:hover .logobg .vpn,
-    .boxes-holder .box:hover .logobg .vpn::before {
+    .boxes-holder .box .logobg .route,
+    .boxes-holder .box .logobg .route::before,
+    .boxes-holder .box:hover .logobg .route,
+    .boxes-holder .box:hover .logobg .route::before {
         background: rgb(19 19 19);
     }
 
@@ -10534,23 +10560,23 @@ div#results {
         transform: translateY(0) !important;
     }
 
-    .boxes-holder .box .logobg:has(div.vpn) .main-mode {
+    .boxes-holder .box .logobg:has(div.route) .main-mode {
         bottom: 50px;
     }
 
-    .main-page .box .logobg:has(div.vpn) .main-mode {
+    .main-page .box .logobg:has(div.route) .main-mode {
         bottom: 10px;
     }
 
-    .boxes-holder .box .logobg .vpn,
-    .boxes-holder .box .logobg .vpn::before {
+    .boxes-holder .box .logobg .route,
+    .boxes-holder .box .logobg .route::before {
         background: rgb(17 17 17);
     }
 
     .rating-case-single,
     .boxes-holder .rating-case-single::before,
-    .box .logobg .vpn,
-    .box .logobg .vpn::before,
+    .box .logobg .route,
+    .box .logobg .route::before,
     .boxes-holder .box .content {
         background: rgb(21 21 21);
     }
@@ -10562,15 +10588,15 @@ div#results {
 
     .rating-case-single,
     .boxes-holder .rating-case-single::before,
-    .box .logobg .vpn,
-    .box .logobg .vpn::before {
+    .box .logobg .route,
+    .box .logobg .route::before {
         background: inherit;
     }
 
     .rating-case-single,
     .boxes-holder .rating-case-single::before,
-    .box .logobg .vpn,
-    .box .logobg .vpn::before,
+    .box .logobg .route,
+    .box .logobg .route::before,
     .boxes-holder .box .content,
     .content a.boxtitle,
     .box .content {
@@ -11844,7 +11870,7 @@ div#results {
     }
 
     .sitealternatesboxes .box .rating-case-single .rating-summ,
-    .sitealternatesboxes .box .vpn {
+    .sitealternatesboxes .box .route {
         opacity: 1 !important;
         color: var(--white);
     }
@@ -12306,15 +12332,15 @@ div#results {
         max-height: 70px;
     }
 
-    .box .logobg .vpn {
-        font-size: 12px;
+    .box .logobg .route {
+        font-size: 11px;
         color: rgba(255, 255, 255, .3);
-        transform: translateY(0);
+        transform: unset;
         top: unset;
         left: unset;
     }
 
-    .box .logobg .vpn::before {
+    .box .logobg .route::before {
         top: unset;
         bottom: 0;
         left: -8px;
@@ -13167,7 +13193,7 @@ div#results {
 }
 
 
-.vpn-semi {
+.route-semi {
     right: 10px;
     bottom: 65px;
     position: absolute;
@@ -13181,30 +13207,27 @@ div#results {
     opacity: 1;
     font-size: 9px;
     font-weight: 600;
-    color: #303030;
     display: flex;
     align-items: center;
     justify-content: center;
+    filter: grayscale(1);
 }
 
-.box:hover .vpn-semi {
+.box:hover .route-semi {
     background: rgb(21 21 21);
 }
 
-.main-page .vpn-semi {
+.main-page .route-semi {
     right: 10px;
     bottom: 10px;
     opacity: 0;
 }
 
-.main-page .box:hover .vpn-semi {
+.main-page .box:hover .route-semi {
     opacity: 1;
 }
-.box .vpn-semi:hover {
-    color: var(--main-color);
-}
 
-.vpn-semi::after {
+.route-semi::after {
     content: '';
     position: absolute;
     background: var(--icongradient);
@@ -13220,8 +13243,8 @@ div#results {
     z-index: -1;
 }
 
-.vpn-semi::before {
-    content: 'Может потребоваться VPN';
+.route-semi::before {
+    content: 'Ограниченный Доступ';
     color: var(--white);
     font-size: 13px;
     margin-bottom: unset;
@@ -13229,22 +13252,20 @@ div#results {
     text-wrap: nowrap;
     left: unset;
     right: 45px;
-    transform: translateY(50%);
     width: auto;
     display: flex;
     justify-content: flex-end;
-    transition: .15s opacity ease-in-out;
-    padding: 10px;
-    filter: drop-shadow(0px 0px 3px rgb(22 22 22)) drop-shadow(0px 0px 3px rgb(22 22 22));
+    transition: all .15s ease-in-out;
+    filter: drop-shadow(0px 0px 8px rgb(11 11 11)) 
+    drop-shadow(0px 0px 8px rgb(11 11 11)) 
+    drop-shadow(0px 0px 8px rgb(11 11 11)) 
+    drop-shadow(0px 0px 8px rgb(11 11 11));
+    transform: translateY(50%) translateX(10px);
 }
 
-.main-page .vpn-semi::before {
-    background-color: var(--darkgray);
-    padding: 9px 15px;
-    right: 40px;
-}
-.vpn-semi:hover::before {
+.route-semi:hover::before {
     opacity: 1;
+    transform: translateY(50%);
 }
 
 @media screen and (max-width: 1365px) {
@@ -13303,13 +13324,13 @@ div#results {
         margin-top: 10px !important;
     }
 
-    .main-page .vpn-semi,
-    .main-page .vpn-semi::before,
-    .main-page .vpn-semi::after {
+    .main-page .route-semi,
+    .main-page .route-semi::before,
+    .main-page .route-semi::after {
         display: none;
         content: none;
     }
-    .box .vpn-semi {
+    .box .route-semi {
         background: rgb(21 21 21);
     }
     .character-items-list {
@@ -13338,7 +13359,7 @@ div#results {
 
 @media screen and (max-width: 460px) {
     .box .main-mode,
-    .box .vpn-semi {
+    .box .route-semi {
         right: 15px;
     }
 }
