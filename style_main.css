@@ -1158,7 +1158,7 @@ nav .pages {
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     filter: drop-shadow(0px 0px 1px rgb(22, 22, 22));
-    transition: all .15s ease-in-out;
+    transition: all .05s ease-in-out;
     align-items: center;
     pointer-events: none;
     opacity: 0;
@@ -1170,6 +1170,7 @@ nav .pages {
 #preview-showcase .skin-alt-info[data-title]:hover:after {
     content: attr(data-title);
     transform: translateX(-50%);
+    transition: all .15s ease-in-out;
     opacity: 1;
 }
 
@@ -8286,8 +8287,7 @@ div#results {
 }
 
 .topic-grandbox .skin img {
-    height: 100%;
-    transform: scale(.87) translateZ(0);
+    height: 94%;
 }
 
 .sitepage.topic-craft .topic-box .logobg img,
