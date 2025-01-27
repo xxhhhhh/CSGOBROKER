@@ -130,35 +130,38 @@ $(document).ready(function () {
                 weaponToSkinIds[weapon].forEach((skinId) => {
                     const skinData = skinsForWeapon[skinId];
                     if (skinData) {
+                        const isInNavigation = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).closest('.navigation-section').length > 0;
+                        const imageUrl = isInNavigation ? skinData.imageOG : skinData.image;
+    
                         const newSkinHTML = `
                             <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
-                                <img src="${skinData.image}" draggable="false" alt="${skinData.name}">
+                                <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
                                 <div class="skin-desc-name">${skinData.name}</div>
                             </div>`;
                             
-                            $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function() {
-                              $(this).replaceWith(newSkinHTML);
-                          });
-                      }
-                  });
-              }));
+                        $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function() {
+                            $(this).replaceWith(newSkinHTML);
+                        });
+                    }
+                });
+            }));
     
             $(".skin img").each(function () {
-              if (this.complete) {
-                  $(this).addClass("imported");
-              } else {
-                  $(this).on("load", function () {
-                      $(this).addClass("imported");
-                  });
-              }
-          });
-          
+                if (this.complete) {
+                    $(this).addClass("imported");
+                } else {
+                    $(this).on("load", function () {
+                        $(this).addClass("imported");
+                    });
+                }
+            });
     
             checkWeaponTypeAvailabilityForItems();
         };
     
         loadSkinsData();
     }
+    
 
       function updateNavigationReset() {
         const enabledFilters = $(".navigation-weapon-type.enabled").length;
@@ -279,7 +282,7 @@ $(document).ready(function () {
           skinClasses = $(element).attr("class").split(" ");
         }
       
-        const skinBox = $(element).closest(".box-skins-list, .topic-grandbox");
+        const skinBox = $(element).closest(".box-skins-list, .topic-grandbox, .introduce-craft p");
         const visibleItems = skinBox.find(".skin:not(.disabled)");
         const totalItems = visibleItems.length;
         const itemName = element.querySelector(".skin-desc-name")
@@ -293,7 +296,7 @@ $(document).ready(function () {
         previewWindow.removeClass("hidden").attr({
           "data-current-index": visibleItems.index(element),
           "data-total-items": totalItems,
-          "data-current-box": skinBox.index(".box-skins-list, .topic-grandbox"),
+          "data-current-box": skinBox.index(".box-skins-list, .topic-grandbox, .introduce-craft p"),
         });
       
         skinClasses.forEach((skinClass) => {
@@ -340,17 +343,27 @@ $(document).ready(function () {
           .then((response) => response.json())
           .then((skinsData) => {
             const skinData = skinsData[skinId];
-            if (skinData && skinData.color) {
-              skinData.color.forEach((color) => {
-                const colorLink = $("<a>", {
-                  class: `skin-color ${color.toLowerCase()}`,
-                  href:
-                    languageTag === "ru"
-                      ? `/ru/topic/skins/${color.toLowerCase()}-skins`
-                      : `/topic/skins/${color.toLowerCase()}-skins`,
+            if (skinData) {
+              if (skinData.imageOG) {
+                const imageUrl = skinData.image;
+                previewContent.html(`
+                      <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
+                      <div class="skin-desc-name">${skinData.name}</div>
+                `);
+              }
+      
+              if (skinData.color) {
+                skinData.color.forEach((color) => {
+                  const colorLink = $("<a>", {
+                    class: `skin-color ${color.toLowerCase()}`,
+                    href:
+                      languageTag === "ru"
+                        ? `/ru/topic/skins/${color.toLowerCase()}-skins`
+                        : `/topic/skins/${color.toLowerCase()}-skins`,
+                  });
+                  skinColorInfo.append(colorLink);
                 });
-                skinColorInfo.append(colorLink);
-              });
+              }
             }
           });
       
@@ -369,6 +382,7 @@ $(document).ready(function () {
         previewWindow.addClass("hidden");
         previewWindow.attr("class", "hidden");
         previewWindow.find(".skin-alt-info").remove();
+
         $("#preview-showcase .preview-extras").remove();
       }
       
@@ -377,7 +391,7 @@ $(document).ready(function () {
         const previewWindow = $("#preview-window");
         const currentIndex = parseInt(previewWindow.attr("data-current-index"), 10);
         const currentBoxIndex = parseInt(previewWindow.attr("data-current-box"), 10);
-        const currentBox = $(".box-skins-list, .topic-grandbox, .character-box").eq(
+        const currentBox = $(".box-skins-list, .topic-grandbox, .introduce-craft p, .character-box").eq(
           currentBoxIndex
         );
         const visibleItems = currentBox.find(".skin:not(.disabled)");
@@ -605,7 +619,7 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
         
             colorList.forEach(function(color) {
                 var bgImage = new Image();
-                bgImage.src = "/img/skins/previews/small/example-" + color + ".webp";
+                bgImage.src = "/img/skins/topics/small/example-" + color + ".webp";
                 bgImage.onload = function() {
                     var skinslist = document.querySelectorAll("[data-color='" + color + "']");
                     skinslist.forEach(function(element) {
