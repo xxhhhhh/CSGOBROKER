@@ -1073,12 +1073,18 @@ window.onload = function () {
     const isExcludedPath = excludedPaths.some(path => pathname.includes(path));
 
     let buttonsContainer = document.querySelector('.buttons-container-page');
-
+    let parentElement = document.querySelector('.ssiodox');
+    
     if (!buttonsContainer) {
       buttonsContainer = document.createElement('div');
       buttonsContainer.className = 'buttons-container-page';
-      document.body.appendChild(buttonsContainer);
+    
+      if (parentElement) {
+        parentElement.appendChild(buttonsContainer);
+      } else {
+      }
     }
+    
 
     if (isRuPage && !isExcludedPath && !document.querySelector('#button-route-filter')) {
       const routeButtonContainer = document.createElement('div');
@@ -2033,15 +2039,15 @@ $(document).ready(function() {
 
   var sliderItems = [
     { href: '/', src: '/img/best-gambling-sites-slide-2024.png', label: 'Best Gambling Sites' },
-    { href: '/earning/offerwalls', src: '/img/earn-skins-slider-2024.png', label: 'Best Offerwall Sites' },
-    { href: '/rust', src: '/img/best-rust-sites-slide-2024.png', label: 'Best Rust Sites' }
+    { href: '/rust', src: '/img/best-rust-sites-slide-2024.png', label: 'Best Rust Sites' },
+    { href: '/earning/offerwalls', src: '/img/earn-skins-slider-2024.png', label: 'Best Offerwall Sites' }
   ];
 
   if (languageTag === 'ru') {
     sliderItems = [
       { href: '/ru', src: '/img/best-gambling-sites-slide-2024-ru.png', label: 'Лучшие Гемблинг Сайты CS2' },
-      { href: '/ru/earning/offerwalls', src: '/img/earn-skins-slider-2024-ru.png', label: 'Лучшие Сайты с Заданиями' },
-      { href: '/ru/rust', src: '/img/best-rust-sites-slide-2024-ru.png', label: 'Лучшие Сайты Rust' }
+      { href: '/ru/rust', src: '/img/best-rust-sites-slide-2024-ru.png', label: 'Лучшие Сайты Rust' },
+      { href: '/ru/earning/offerwalls', src: '/img/earn-skins-slider-2024-ru.png', label: 'Лучшие Сайты с Заданиями' }
     ];
   }
 

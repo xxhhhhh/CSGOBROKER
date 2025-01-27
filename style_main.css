@@ -914,6 +914,7 @@ nav .pages {
 
 #preview-showcase .skin-alt-info[data-title]:after {
     left: -3px;
+    content: attr(data-title);
     margin-top: -15px !important;
     font-size: 14px !important;
     background-color: unset !important;
@@ -921,8 +922,16 @@ nav .pages {
     height: unset !important;
     text-transform: unset !important;
     top: 0;
-    transform: translateY(-50%);
+    transform: translateY(-35%);
+    transition: all .05s ease-in-out;
     display: unset !important;
+}
+
+#preview-showcase .skin-alt-info[data-title]:hover:after {
+
+    transform: translateY(-50%);
+    transition: all .15s ease-in-out;
+    opacity: 1;
 }
 
 #preview-showcase #preview-content::before {
@@ -1166,8 +1175,7 @@ nav .pages {
 
 .site-searcher-box[data-title]:hover:after,
 .navigation-weapon-sort[data-title]:hover:after,
-.topic-grandbox .skin:hover .skin-desc-name,
-#preview-showcase .skin-alt-info[data-title]:hover:after {
+.topic-grandbox .skin:hover .skin-desc-name {
     content: attr(data-title);
     transform: translateX(-50%);
     transition: all .15s ease-in-out;
@@ -8779,7 +8787,6 @@ div#results {
     width: 125px;
     min-width: 125px;
     height: 125px;
-    overflow: hidden;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
 }
 
@@ -8795,7 +8802,7 @@ div#results {
     top: 6px;
     left: 6px;
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 0 0 50% 50%;
     z-index: 1;
 }
 
@@ -13470,7 +13477,7 @@ label.skins-category-switch:active {
     content: 'Inventory by Color';
     display: flex;
     position: absolute;
-    top: -21px;
+    top: -20px;
     height: 20px;
     background: linear-gradient(150deg, var(--darkgray) 0%, var(--darkygray) 100%);
     width: 100%;

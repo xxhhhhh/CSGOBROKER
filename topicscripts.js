@@ -277,6 +277,10 @@ $(document).ready(function () {
         let skinClasses = [];
       
         previewWindow.attr("class", "hidden");
+
+        if ($(element).hasClass("skin none")) {
+          return
+        }
       
         if ($(element).hasClass("skin")) {
           skinClasses = $(element).attr("class").split(" ");
@@ -394,7 +398,7 @@ $(document).ready(function () {
         const currentBox = $(".box-skins-list, .topic-grandbox, .introduce-craft p, .character-box").eq(
           currentBoxIndex
         );
-        const visibleItems = currentBox.find(".skin:not(.disabled)");
+        const visibleItems = currentBox.find(".skin:not(.disabled):not(.none)");
         const totalItems = visibleItems.length;
         let newIndex = direction === "left" ? currentIndex - 1 : currentIndex + 1;
       
