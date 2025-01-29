@@ -5814,6 +5814,7 @@ footer .centralizer .footer-content {
     color: rgba(255, 255, 255, .25);
     font-weight: 600;
     transition: all .15s ease-in-out;
+    text-wrap: nowrap;
     z-index: 1;
 }
 
@@ -8994,6 +8995,10 @@ div#results {
 
 .main-mode-unit.topic-skins a::before {
     background-image: url(img/main-modes/skins-by-color.webp);
+}
+
+.main-mode-unit.topics a::before {
+    background-image: url(img/main-modes/topics.webp);
 }
 
 .main-mode-unit.topic-items a::before {
