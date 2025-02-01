@@ -2835,20 +2835,19 @@ $(document).ready(function() {
 
   $('.boxes-holder').each(function() {
     const $boxesHolder = $(this);
-
-    var res = $(window).width();
-
-    if (!$boxesHolder.closest('.main-page').length && $boxesHolder.find('.box').length >= 8) {
+    const $boxes = $boxesHolder.children('.box');
+  
+    if (!$boxesHolder.closest('.main-page').length && $boxes.length >= 12) {
       const importPath = languageTag === 'ru' 
         ? '/code-parts/micro-parts/main-mode-import-ru.html'
         : '/code-parts/micro-parts/main-mode-import.html';
-
+  
       $.get(importPath, function(data) {
-        const $boxes = $boxesHolder.find('.box').slice(0, 12);
         const $importedContent = $(data);
-        $boxes.last().after($importedContent);
-
+        $boxes.eq(11).after($importedContent);
+  
         if (!$importedContent.hasClass('slick-slider')) {
+          const res = $(window).width();
           $importedContent.slick({
             slidesToShow: res < 600 ? 2 : 4,
             slidesToScroll: 1,
@@ -2867,6 +2866,7 @@ $(document).ready(function() {
       });
     }
   });
+  
 });
 
 window.initPayments = function () {
