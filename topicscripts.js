@@ -1291,19 +1291,32 @@ document.addEventListener("DOMContentLoaded", function () {
       const end = page * itemsPerPage;
 
       boxTopics.forEach((box, index) => {
-          if (index >= start && index < end) {
-              const delay = ((index % itemsPerPage) + 1) * 0.05;
-              box.style.animationDelay = `${delay}s`;
-              box.classList.remove("hidden");
-              box.classList.add("fade-in");
-          } else {
-              box.classList.add("hidden");
-              box.classList.remove("fade-in");
-          }
-      });
+        if (index >= start && index < end) {
+            const delay = ((index % itemsPerPage) + 1) * 0.05;
+            box.style.animationDelay = `${delay}s`;
+            box.classList.remove("hidden");
+            box.classList.add("fade-in");
+    
+            box.addEventListener("animationend", () => {
+                box.classList.remove("fade-in");
+                box.classList.add("visible");
+            }, { once: true }); // { once: true } гарантирует, что обработчик выполнится только 1 раз
+        } else {
+            box.classList.add("hidden");
+            box.classList.remove("fade-in", "visible");
+        }
+    });
+    
 
       updatePaginationButtons(page);
   }
+
+  boxTopics.forEach((box) => {
+    box.addEventListener("animationend", () => {
+        box.style.opacity = ""; // Убираем инлайн-стиль opacity
+    });
+});
+
 
 
   function createPaginationButtons() {
