@@ -2224,25 +2224,34 @@ document.addEventListener("DOMContentLoaded", function() {
               }
 
               if (section.selector === '.sitedetails') {
-                  document.querySelectorAll('.sitepros').forEach(sitepros => {
-                      sitepros.classList.toggle('active');
-                      if (window.innerWidth >= 1365) {
-                          const methodlist = sitepros.querySelector('.methodlist');
-                          const methodlistHeight = methodlist ? methodlist.offsetHeight : 0;
-                          const totalHeight = sitepros.offsetHeight + methodlistHeight;
-                          const parent = sitepros.closest('.sitedetails');
-                          const otherActiveSitepros = Array.from(sitepros.parentNode.children).filter(child => child !== sitepros && child.classList.contains('active'));
-                          const currentHeight = parseInt(window.getComputedStyle(parent).height);
-                          if (sitepros.classList.contains('active')) {
-                              if (currentHeight < totalHeight) {
-                                  parent.style.height = totalHeight + 'px';
-                              }
-                          } else if (otherActiveSitepros.length === 0) {
-                              parent.style.height = '';
-                          }
-                      }
-                  });
-              }
+                document.querySelectorAll('.sitepros').forEach(sitepros => {
+                    sitepros.classList.toggle('active');
+                    if (window.innerWidth >= 1365) {
+                        const parent = sitepros.closest('.sitedetails');
+                        const allSitepros = Array.from(parent.querySelectorAll('.sitepros'));
+                        const activeSitepros = allSitepros.filter(sp => sp.classList.contains('active'));
+                        
+                        let maxMethodlistHeight = 0;
+                        allSitepros.forEach(sp => {
+                            const methodlist = sp.querySelector('.methodlist');
+                            if (methodlist) {
+                                maxMethodlistHeight = Math.max(maxMethodlistHeight, methodlist.offsetHeight);
+                            }
+                        });
+                        
+                        const totalHeight = sitepros.offsetHeight + maxMethodlistHeight;
+                        const currentHeight = parseInt(window.getComputedStyle(parent).height);
+                        
+                        if (sitepros.classList.contains('active')) {
+                            if (currentHeight < totalHeight) {
+                                parent.style.height = totalHeight + 'px';
+                            }
+                        } else if (activeSitepros.length === 0) {
+                            parent.style.height = '';
+                        }
+                    }
+                });
+            }
           });
           ol.appendChild(li);
       }

@@ -4715,7 +4715,8 @@ nav img:active,
     opacity: 1;
 }
 
-.main-mode:hover:after {
+.main-mode:hover:after,
+.box.main .main-mode:hover:after {
     opacity: 1;
     transform: translateY(50%);
 }
@@ -4735,13 +4736,12 @@ nav img:active,
 }
 
 .box.main .main-mode:after {
-    transform: unset;
+    transform: translateY(70%);
     right: 0;
     left: unset;
     bottom: 50px;
     width: unset;
     text-align: end;
-    filter: drop-shadow(0px 0px 3px rgb(0, 0, 0));
     text-wrap: nowrap;
 }
 
@@ -11615,6 +11615,7 @@ div#results {
     .siteleftpannel .box.main,
     .sitepage .box:hover {
         background: var(--darkygray) !important;
+        box-shadow: unset;
     }
 
     .box .logobg a {

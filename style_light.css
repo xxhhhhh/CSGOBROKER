@@ -847,6 +847,7 @@ ul .submenu li .nonredir,
 
 .singlemod-select::before,
 .category-selector .category-box .category-box-logo::before,
+.singlemod-icon::after,
 .payments-button::before {
     background: linear-gradient(-45deg, transparent 0%, rgba(0, 0, 0, .1) 100%);
 }
@@ -1115,7 +1116,8 @@ ul .submenu li .nonredir,
 }
 
 .particleflake {
-    filter: grayscale(1);
+    filter: grayscale(1) brightness(1.5);
+    background-color: unset;
 }
 
 .box-skins .skin .skin-desc-name {
