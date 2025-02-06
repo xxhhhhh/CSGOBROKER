@@ -5057,17 +5057,29 @@ nav img:active,
     background-color: var(--darkygray);
 }
 
-.sitepage.closed .features,
+
 .sitepage.closed .plusminus,
 .sitepage.closed .smallreview,
 .sitepage.closed .instruction,
 .sitepage.closed .sitedetails,
-.sitepage.closed .ratingsumm,
+/* .sitepage.closed .ratingsumm, */
 .sitepage.closed .box.main .logobg .rating,
 .sitepage.closed .box.main .content,
 .sitepage.closed h2,
 .sitepage.closed h3 {
     display: none;
+}
+
+.sitepage.closed .info-block {
+    width: 98%;
+}
+
+.sitepage.closed .site-attention.blocked {
+    /* padding-left: 0; */
+    background-color: rgb(15 15 15);
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 0;
 }
 
 .sitepage.closed .box.main {
@@ -10271,10 +10283,23 @@ div#results {
         color: var(--white);
     }
 
-    .info-block {
+    .info-block,
+    .sitepage.closed .info-block {
         order: -2;
         width: 90%;
         margin-top: -10px;
+    }
+
+    .sitepage.closed .boxreview:has(.features.bonused) {
+        margin-top: 0;
+    }
+
+    .sitepage.closed .shortinfo {
+        display: none;
+    }
+
+    .sitepage.closed .info-block {
+        margin-top: 6px;
     }
 
     #theme-toggle,
