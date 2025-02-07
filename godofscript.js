@@ -565,7 +565,14 @@ forcemodsboxes();
         const ratingsumm = document.querySelector('.ratingsumm');
         if (ratingsumm) {
             ratingsumm.insertAdjacentElement('afterend', siteAlternates);
-        } else {
+        } 
+      //   if (window.location.pathname.includes('/mirrors/')) {
+      //     const boxReview = document.querySelector('.boxreview');
+          
+      //       boxReview.insertAdjacentElement('beforeend', siteAlternates);
+      //       return;
+      // }
+      else {
         }
     
     siteAlternatesBoxes = siteAlternates.querySelector('.sitealternatesboxes');

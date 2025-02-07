@@ -4104,6 +4104,10 @@ nav #logo:hover {
     left: 7px;
 }
 
+.mirror .liverating {
+    display: none;
+}
+
 .liverating.fadein {
     animation-duration: .8s;
     animation-fill-mode: both;
