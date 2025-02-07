@@ -7460,11 +7460,6 @@ li.slick-active button:hover {
     display: none;
 }
 
-.submenu .big-category a:hover,
-.submenu .big-category .nonredir:hover {
-    background-color: rgb(18 18 18);
-}
-
 .submenu .big-category:nth-child(1) {
     margin-top: 18px;
 }
@@ -7537,7 +7532,35 @@ ul .big-category.active .submenu2 {
     border-radius: 5px;
     margin-bottom: unset;
     color: rgba(255, 255, 255, .35);
-    transition: color .1s ease-in-out !important;
+    transition: all .1s ease-in-out !important;
+    position: relative;
+    z-index: 1;
+}
+
+.big-category a::before,
+.big-category .nonredir::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    background: var(--icongradient);
+    z-index: -1;
+    border-radius: inherit;
+    transition: all .1s ease-in-out;
+    opacity: 0;
+}
+
+.submenu .big-category:hover .submenu2 a::before {
+    opacity: 0;
+}
+
+.submenu .big-category a:hover::before, 
+.submenu .big-category .nonredir:hover::before,
+.submenu .big-category:hover a::before,
+.submenu .big-category .submenu2 a:hover::before {
+    opacity: 1;
 }
 
 .submenu2 li a {
@@ -7554,11 +7577,16 @@ ul .big-category.active .submenu2 {
     color: rgba(255, 255, 255, .35);
 }
 
+/* .submenu .big-category a:hover,
+.submenu .big-category .nonredir:hover {
+    background-color: rgb(18 18 18);
+}
+
 .submenu li:hover a,
 .submenu li a:active,
 .submenu li a:hover {
     background-color: #0e0e0e;
-}
+} */
 
 .submenu .big-category:hover a,
 .submenu .big-category .nonredir:hover,
@@ -7660,7 +7688,8 @@ ul .big-category.active .submenu2 {
 .lang-menu ul li a {
     text-decoration: none;
     text-align: center;
-    padding: 8px;
+    margin: 4px;
+    padding: 4px;
     display: flex;
     flex-direction: row;
     color: rgba(255, 255, 255, .25);
@@ -7668,6 +7697,7 @@ ul .big-category.active .submenu2 {
     font-weight: 500;
     font-size: 15px;
     width: 100%;
+    border-radius: 5px;
 }
 
 .lang-menu ul li i {
@@ -7675,12 +7705,13 @@ ul .big-category.active .submenu2 {
     transition: all .15s ease-in-out;
 }
 
-.lang-menu ul li a:hover i {
+.lang-menu ul li:hover a i {
     opacity: 1;
 }
 
-.lang-menu ul li:hover {
-    background-color: #0e0e0e;
+.lang-menu ul li:hover a {
+
+    background: var(--icongradient);
 }
 
 .lang-menu ul li:hover a {
@@ -10128,6 +10159,11 @@ div#results {
 }
 
 @media screen and (max-width: 1365px) {
+    .big-category a::before, 
+    .big-category .nonredir::before {
+        content: unset;
+    }
+
     #preview-showcase {
         filter: unset;
     }
