@@ -447,30 +447,6 @@ forcemodsboxes();
         }
     }
   
-    function insertRatings(ratings) {
-        const container = document.querySelector('.ratingsumm');
-        if (container && ratings) {
-            container.innerHTML = '';
-  
-            const ratingSection = document.createElement('div');
-            ratingSection.classList.add('ratingsection');
-  
-            for (const [category, rating] of Object.entries(ratings)) {
-                const ratingHTML = `
-                    <div class="ratingway">
-                        <span>${category}</span>
-                        ${generateRatingStars(rating)}
-                    </div>
-                `;
-                ratingSection.insertAdjacentHTML('beforeend', ratingHTML);
-            }
-  
-            container.appendChild(ratingSection);
-  
-            insertOverallRating(ratings);
-        }
-    }
-  
   function insertFeatures(features, settings, featureOrder) {
       const featuresContainer = document.querySelector('.boxreview .features');
       if (featuresContainer) {
@@ -554,125 +530,225 @@ forcemodsboxes();
       }
   }
   
+  function insertAlternatives(alternatives) {
+
+    const mainSiteName = document.querySelector('.box.main .content p').textContent.trim();
+
+    let alternatesTitle = '';
+    switch (languageTag) {
+        case 'ru':
+            alternatesTitle = `Лучшие Аналоги ${mainSiteName}`;
+            break;
+        case 'en':
+            alternatesTitle = `Best ${mainSiteName} Alternatives`;
+            break;
+        case 'tr':
+            alternatesTitle = `En İyi ${mainSiteName} Alternatifleri`;
+            break;
+        case 'es':
+            alternatesTitle = `Mejores Alternativas a ${mainSiteName}`;
+            break;
+        case 'pl':
+            alternatesTitle = `Najlepsze alternatywy dla ${mainSiteName}`;
+            break;
+        default:
+            alternatesTitle = `Best ${mainSiteName} Alternatives`;
+    }
+
+        siteAlternates = document.createElement('div');
+        siteAlternates.className = 'sitealternates';
+        siteAlternates.innerHTML = `
+            <div class="alternates-title">${alternatesTitle}</div>
+            <div class="sitealternatesboxes"></div>
+        `;
+
+        const ratingsumm = document.querySelector('.ratingsumm');
+        if (ratingsumm) {
+            ratingsumm.insertAdjacentElement('afterend', siteAlternates);
+        } else {
+        }
+    
+    siteAlternatesBoxes = siteAlternates.querySelector('.sitealternatesboxes');
+
+    alternatives.forEach(alt => {
+        const altJsonPath = `${altSitesPath}${alt}.json`;
+        loadPageData(altJsonPath).then(altData => {
+            const altBox = document.createElement('div');
+            altBox.className = 'box';
+            altBox.id = altData.name;
+
+            let rewardText = altData.reward;
+            if (languageTag === 'ru' && altData.reward_ru) {
+                rewardText = altData.reward_ru;
+            } else if (languageTag === 'tr' && altData.reward_tr) {
+                rewardText = altData.reward_tr;
+            } else if (languageTag === 'es' && altData.reward_es) {
+                rewardText = altData.reward_es;
+            } else if (languageTag === 'pl' && altData.reward_pl) {
+                rewardText = altData.reward_pl;
+            }
+
+            let reviewLink = `/reviews/${alt}`;
+
+            altBox.innerHTML = `
+                <div class="logobg">
+                    <a href="${reviewLink}"><img src="${altData.logo}" loading="lazy" draggable="false" alt="${altData.name}"></a>
+                </div>
+                <div class="content">
+                    <a class="boxtitle" href="${reviewLink}">${altData.name}</a>
+                    <div class="site-reward">
+                        <p>${rewardText}</p>
+                    </div>
+                <div class="content-buttons">
+                    <a href="${reviewLink}" aria-label="Read Review" class="review-button"></a>
+                    <a href='${altData.link}' aria-label="Visit WebSite" target="_blank" class="review-button visit"></a>
+                </div>
+                </div>`;
+
+            siteAlternatesBoxes.appendChild(altBox);
+        });
+    });
+
+    Promise.all(alternatives.map(alt => loadPageData(`${altSitesPath}${alt}.json`)))
+        .then(() => {
+            for (let i = alternatives.length; i < 4; i++) {
+                const emptyBox = document.createElement('div');
+                emptyBox.className = 'box';
+                siteAlternatesBoxes.appendChild(emptyBox);
+            }
+            for (var boxId in ratings) {
+                addStarRating(boxId, ratings[boxId]);
+            }
+            updateURLs(siteAlternatesBoxes);
+        });
+}
+
   
+    Promise.all([loadPageData(jsonFilePath), loadPageData(filterSettingsPath), loadPageData(reviewSettingsPath), loadPageData(translationsPath)])
+    .then(([pageData, filterSettings, reviewSettings, translations]) => {
+      if (pageData && reviewSettings) {
+          sortAndInsertContent(pageData.gamemodesContent, reviewSettings.gamemodesOrder, '.gamemodes .featuresbox .typesinside');
+          insertFeatures(pageData.featuresContent, filterSettings, reviewSettings.featureOrder);
   
-    function insertAlternatives(alternatives) {
-      let siteAlternates = document.querySelector('.sitealternates');
-      let siteAlternatesBoxes;
-  
-      const mainSiteName = document.querySelector('.box.main .content p').textContent.trim();
-  
-      let alternatesTitle = '';
-      switch (languageTag) {
-          case 'ru':
-              alternatesTitle = `Лучшие Аналоги ${mainSiteName}`;
-              break;
-          case 'en':
-              alternatesTitle = `Best ${mainSiteName} Alternatives`;
-              break;
-          case 'tr':
-              alternatesTitle = `En İyi ${mainSiteName} Alternatifleri`;
-              break;
-          case 'es':
-              alternatesTitle = `Mejores Alternativas a ${mainSiteName}`;
-              break;
-          case 'pl':
-              alternatesTitle = `Najlepsze alternatywy dla ${mainSiteName}`;
-              break;
-          default:
-              alternatesTitle = `Best ${mainSiteName} Alternatives`;
-      }
-  
-      if (siteAlternates) {
-          siteAlternates.innerHTML = `<div class="alternates-title">${alternatesTitle}</div><div class="sitealternatesboxes"></div>`;
-      } else {
-          const screentable = document.querySelector('.screentable');
-          siteAlternates = document.createElement('div');
-          siteAlternates.className = 'sitealternates';
-          siteAlternates.innerHTML = `<div class="alternates-title">${alternatesTitle}</div><div class="sitealternatesboxes"></div>`;
-          screentable.insertAdjacentElement('afterend', siteAlternates);
-      }
-  
-      siteAlternatesBoxes = siteAlternates.querySelector('.sitealternatesboxes');
-  
-      alternatives.forEach(alt => {
-          const altJsonPath = `${altSitesPath}${alt}.json`;
-          loadPageData(altJsonPath).then(altData => {
-              const altBox = document.createElement('div');
-              altBox.className = 'box';
-              altBox.id = altData.name;
-  
-              let rewardText = altData.reward;
-              if (languageTag === 'ru' && altData.reward_ru) {
-                  rewardText = altData.reward_ru;
-              } else if (languageTag === 'tr' && altData.reward_tr) {
-                  rewardText = altData.reward_tr;
-              } else if (languageTag === 'es' && altData.reward_es) {
-                  rewardText = altData.reward_es;
-              } else if (languageTag === 'pl' && altData.reward_pl) {
-                  rewardText = altData.reward_pl;
+          const sitedetailsContainer = document.querySelector('.sitedetails');
+          if (sitedetailsContainer) {
+              sitedetailsContainer.innerHTML = '';
+          }
+          
+          if (pageData.firstMethodContent || pageData.secondMethodContent) {
+              const sitedetails = document.createElement('div');
+              sitedetails.classList.add('sitedetails');
+              
+              if (pageData.firstMethodContent) {
+                  const depositMethods = document.createElement('div');
+                  depositMethods.classList.add('sitepros');
+                  depositMethods.innerHTML = `
+                      <span>Deposit Methods</span>
+                      <div class="methodlist" id="first"></div>
+                  `;
+                  sitedetails.appendChild(depositMethods);
               }
   
-              let reviewLink = `/reviews/${alt}`;
+              if (pageData.secondMethodContent) {
+                  const withdrawMethods = document.createElement('div');
+                  withdrawMethods.classList.add('sitepros');
+                  withdrawMethods.innerHTML = `
+                      <span>Withdraw Methods</span>
+                      <div class="methodlist" id="second"></div>
+                  `;
+                  sitedetails.appendChild(withdrawMethods);
+              }
+              
+              const screenTable = document.querySelector('.screentable');
+              if (screenTable) {
+                  screenTable.insertAdjacentElement('afterend', sitedetails);
+              }
+              insertRatings(pageData.ratings);
+
+              if (pageData["Sites Alternatives"] && pageData["Sites Alternatives"].length > 0) {
+                insertAlternatives(pageData["Sites Alternatives"]);
+            }
+          }
   
-              altBox.innerHTML = `
-                  <div class="logobg">
-                      <a href="${reviewLink}"><img src="${altData.logo}" loading="lazy" draggable="false" alt="${altData.name}"></a>
-                  </div>
-                  <div class="content">
-                      <a class="boxtitle" href="${reviewLink}">${altData.name}</a>
-                      <div class="site-reward">
-                          <p>${rewardText}</p>
-                      </div>
-                  <div class="content-buttons">
-                      <a href="${reviewLink}" aria-label="Read Review" class="review-button"></a>
-                      <a href='${altData.link}' aria-label="Visit WebSite" target="_blank" class="review-button visit"></a>
-                  </div>
-                  </div>`;
+          const methodOrder = reviewSettings.paymentMethodsOrder;
+          sortAndInsertContent(pageData.firstMethodContent, methodOrder, '.methodlist#first');
+          sortAndInsertContent(pageData.secondMethodContent, methodOrder, '.methodlist#second');
+      }
   
-              siteAlternatesBoxes.appendChild(altBox);
+      if (translations) {
+          if (translations[languageTag]) {
+              translateTextElements(translations[languageTag]);
+          }
+      }
+  
+      const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
+      reviewlinks.forEach(link => {
+          updateURLs(link);
+      });
+  
+      $(document).ready(function() {
+          $('.sitepros').click(function() {
+              $(this).toggleClass("active");
+      
+              if ($(window).width() >= 1365) {
+                  var $methodlist = $(this).find('.methodlist');
+                  var methodlistHeight = $methodlist.outerHeight(true);
+                  var totalHeight = $(this).height() + methodlistHeight;
+                  var $parent = $(this).parent('.sitedetails');
+                  var $otherActiveSitepros = $(this).siblings('.sitepros.active');
+                  var currentHeight = parseInt($parent.css('height'));
+      
+                  if ($(this).hasClass("active")) {
+                      if (currentHeight < totalHeight) {
+                          $parent.css('height', totalHeight + 'px');
+                      }
+                  } else if ($otherActiveSitepros.length === 0) {
+                      $parent.css('height', '');
+                  }
+              }
+          });
+      
+          $('.sitepros .methodlist').click(function(event) {
+              event.stopPropagation();
           });
       });
   
-      Promise.all(alternatives.map(alt => loadPageData(`${altSitesPath}${alt}.json`)))
-          .then(() => {
-              for (let i = alternatives.length; i < 4; i++) {
-                  const emptyBox = document.createElement('div');
-                  emptyBox.className = 'box';
-                  siteAlternatesBoxes.appendChild(emptyBox);
+      function insertRatings(ratings) {
+          if (ratings) {
+              let container = document.querySelector('.ratingsumm');
+              if (!container) {
+                  container = document.createElement('div');
+                  container.classList.add('ratingsumm');
+                  const sitedetails = document.querySelector('.sitedetails');
+                  if (sitedetails) {
+                      sitedetails.insertAdjacentElement('afterend', container);
+                  }
               }
-              for (var boxId in ratings) {
-                addStarRating(boxId, ratings[boxId]);
+              
+              container.innerHTML = '';
+    
+              const ratingSection = document.createElement('div');
+              ratingSection.classList.add('ratingsection');
+    
+              for (const [category, rating] of Object.entries(ratings)) {
+                  const ratingHTML = `
+                      <div class="ratingway">
+                          <span>${category}</span>
+                          ${generateRatingStars(rating)}
+                      </div>
+                  `;
+                  ratingSection.insertAdjacentHTML('beforeend', ratingHTML);
               }
-              updateURLs(siteAlternatesBoxes);
-          });
-  }
+    
+              container.appendChild(ratingSection);
+    
+              insertOverallRating(ratings);
+          }
+      }
+  });
   
-    Promise.all([loadPageData(jsonFilePath), loadPageData(filterSettingsPath), loadPageData(reviewSettingsPath), loadPageData(translationsPath)])
-        .then(([pageData, filterSettings, reviewSettings, translations]) => {
-            if (pageData && reviewSettings) {
-                sortAndInsertContent(pageData.gamemodesContent, reviewSettings.gamemodesOrder, '.gamemodes .featuresbox .typesinside');
-                const methodOrder = reviewSettings.paymentMethodsOrder;
-                sortAndInsertContent(pageData.firstMethodContent, methodOrder, '.methodlist#first');
-                sortAndInsertContent(pageData.secondMethodContent, methodOrder, '.methodlist#second');
-                insertFeatures(pageData.featuresContent, filterSettings, reviewSettings.featureOrder);
-                insertRatings(pageData.ratings);
-                
-                if (pageData["Sites Alternatives"] && pageData["Sites Alternatives"].length > 0) {
-                    insertAlternatives(pageData["Sites Alternatives"]);
-                }
-            }
   
-            if (translations) {
-                if (translations[languageTag]) {
-                    translateTextElements(translations[languageTag]);
-                }
-            }
-            const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
-            reviewlinks.forEach(link => {
-                updateURLs(link);
-            });
-        });
+  
   });
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -948,17 +1024,6 @@ forcemodsboxes();
       switchEl.setAttribute("aria-label", ariaLabelText);
     });
   });
-  
-
-var ratingsumm = document.querySelector(".ratingsumm");
-var sitealternates = document.querySelector(".sitealternates");
-
-if (ratingsumm && sitealternates) {
-  ratingsumm.parentNode.insertBefore(
-    sitealternates,
-    ratingsumm.nextSibling
-  );
-}
 
 if (supportedLanguages.includes(languageTag)) {
   const cacheKey = `infoboxContent_${languageTag}`;
@@ -969,15 +1034,19 @@ if (supportedLanguages.includes(languageTag)) {
   const insertInfobox = (content) => {
     let insertionPoint;
     if (window.location.pathname.includes('/reviews/')) {
-      insertionPoint = document.querySelector('.sitealternates');
-    } else {
-      insertionPoint = document.querySelector('.boxes-holder');
+        const boxReview = document.querySelector('.boxreview');
+        if (boxReview) {
+          boxReview.insertAdjacentHTML('beforeend', content);
+          return;
+      }
     }
-
+    
+    insertionPoint = document.querySelector('.boxes-holder');
     if (insertionPoint) {
-      insertionPoint.insertAdjacentHTML('afterend', content);
+        insertionPoint.insertAdjacentHTML('afterend', content);
     }
-  };
+};
+
 
   const updateCacheAndInsert = (content, meta) => {
     localStorage.setItem(cacheKey, content);
@@ -1016,32 +1085,6 @@ if (supportedLanguages.includes(languageTag)) {
     fetchInfobox();
   }
 }
-
-$('.sitepros').click(function() {
-  $(this).toggleClass("active");
-
-  if ($(window).width() >= 1365) {
-      var $methodlist = $(this).find('.methodlist');
-      var methodlistHeight = $methodlist.outerHeight(true);
-      var totalHeight = $(this).height() + methodlistHeight;
-      var $parent = $(this).parent('.sitedetails');
-      var $otherActiveSitepros = $(this).siblings('.sitepros.active');
-      var currentHeight = parseInt($parent.css('height'));
-
-      if ($(this).hasClass("active")) {
-          if (currentHeight < totalHeight) {
-              $parent.css('height', totalHeight + 'px');
-          }
-      } else if ($otherActiveSitepros.length === 0) {
-          $parent.css('height', '');
-      }
-  }
-});
-
-$('.sitepros .methodlist').click(function(event) {
-  event.stopPropagation();
-});
-
 
 $(document).ready(function(){
   $('.screens').slick({
@@ -2063,8 +2106,8 @@ $(document).ready(function() {
     var mainInfobox = $('.main-infobox');
     sliderContainer.insertBefore(mainInfobox);
 } else if (path.includes('/reviews/') || path.includes('/mirrors/')) {
-    var sitealternates = $('.sitealternates');
-    sliderContainer.insertAfter(sitealternates);
+    var boxReview = $('.boxreview');
+    boxReview.append(sliderContainer);
 } else if (path.includes('/topic/') && $('.box-skins.solo').length > 0) {
     var boxSolo = $('.box-skins.solo');
     boxSolo.append(sliderContainer);
@@ -2168,16 +2211,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const ol = document.createElement('ol');
   navReview.appendChild(ol);
-
+  
   const sections = [
       { selector: '.plusminus', text: t.plusminus },
       { selector: 'h2', text: document.querySelector('h2')?.textContent },
       { selector: 'h3', text: document.querySelector('h3')?.textContent },
       { selector: '.screentable', text: t.screentable },
-      { selector: '.sitedetails', text: t.sitedetails },
-      { selector: '.sitealternates', text: t.sitealternates }
+      { selector: '.sitedetails', text: t.sitedetails }
   ];
-
+  
   function isElementInViewport(el) {
       const rect = el.getBoundingClientRect();
       return (
@@ -2187,75 +2229,108 @@ document.addEventListener("DOMContentLoaded", function() {
           rect.right <= (window.innerWidth || document.documentElement.clientWidth)
       );
   }
-
-  sections.forEach(section => {
-      const element = document.querySelector(section.selector);
-      if (element && window.getComputedStyle(element).display !== 'none') {
-          const li = document.createElement('li');
-          li.textContent = section.text;
-          li.addEventListener('click', () => {
-              if (!isElementInViewport(element)) {
-                  const rect = element.getBoundingClientRect();
-                  const offsetTop = window.scrollY + rect.top - 150;
-                  window.scrollTo({
-                      top: offsetTop,
-                      behavior: 'smooth'
-                  });
-              }
-
-              let targetElement = element;
-              if (section.selector === 'h2') {
-                  targetElement = document.querySelector('.smallreview');
-              } else if (section.selector === 'h3') {
-                  targetElement = document.querySelector('.instruction');
-              }
-
-              if (targetElement) {
-                  targetElement.classList.remove('navmark');
-
-                  void targetElement.offsetWidth;
-
-                  targetElement.classList.add('navmark');
-
-                  targetElement.addEventListener('animationend', function handler() {
+  
+  function updateNav() {
+      ol.innerHTML = ''; 
+  
+      sections.forEach(section => {
+          const element = document.querySelector(section.selector);
+          if (element && window.getComputedStyle(element).display !== 'none') {
+              const li = document.createElement('li');
+              li.textContent = section.text;
+              li.addEventListener('click', () => {
+                  if (!isElementInViewport(element)) {
+                      const rect = element.getBoundingClientRect();
+                      const offsetTop = window.scrollY + rect.top - 150;
+                      window.scrollTo({
+                          top: offsetTop,
+                          behavior: 'smooth'
+                      });
+                  }
+  
+                  let targetElement = element;
+                  if (section.selector === 'h2') {
+                      targetElement = document.querySelector('.smallreview');
+                  } else if (section.selector === 'h3') {
+                      targetElement = document.querySelector('.instruction');
+                  }
+  
+                  if (targetElement) {
                       targetElement.classList.remove('navmark');
-                      targetElement.removeEventListener('animationend', handler);
-                  });
-              }
-
-              if (section.selector === '.sitedetails') {
-                document.querySelectorAll('.sitepros').forEach(sitepros => {
-                    sitepros.classList.toggle('active');
-                    if (window.innerWidth >= 1365) {
-                        const parent = sitepros.closest('.sitedetails');
-                        const allSitepros = Array.from(parent.querySelectorAll('.sitepros'));
-                        const activeSitepros = allSitepros.filter(sp => sp.classList.contains('active'));
-                        
-                        let maxMethodlistHeight = 0;
-                        allSitepros.forEach(sp => {
-                            const methodlist = sp.querySelector('.methodlist');
-                            if (methodlist) {
-                                maxMethodlistHeight = Math.max(maxMethodlistHeight, methodlist.offsetHeight);
+  
+                      void targetElement.offsetWidth;
+  
+                      targetElement.classList.add('navmark');
+  
+                      targetElement.addEventListener('animationend', function handler() {
+                          targetElement.classList.remove('navmark');
+                          targetElement.removeEventListener('animationend', handler);
+                      });
+                  }
+                  if (section.selector === '.sitedetails') {
+                    document.querySelectorAll('.sitepros').forEach(sitepros => {
+                        sitepros.classList.toggle('active');
+                        if (window.innerWidth >= 1365) {
+                            const parent = sitepros.closest('.sitedetails');
+                            const allSitepros = Array.from(parent.querySelectorAll('.sitepros'));
+                            const activeSitepros = allSitepros.filter(sp => sp.classList.contains('active'));
+                            
+                            let maxMethodlistHeight = 0;
+                            allSitepros.forEach(sp => {
+                                const methodlist = sp.querySelector('.methodlist');
+                                if (methodlist) {
+                                    maxMethodlistHeight = Math.max(maxMethodlistHeight, methodlist.offsetHeight);
+                                }
+                            });
+                            
+                            const totalHeight = sitepros.offsetHeight + maxMethodlistHeight;
+                            const currentHeight = parseInt(window.getComputedStyle(parent).height);
+                            
+                            if (sitepros.classList.contains('active')) {
+                                if (currentHeight < totalHeight) {
+                                    parent.style.height = totalHeight + 'px';
+                                }
+                            } else if (activeSitepros.length === 0) {
+                                parent.style.height = '';
                             }
-                        });
-                        
-                        const totalHeight = sitepros.offsetHeight + maxMethodlistHeight;
-                        const currentHeight = parseInt(window.getComputedStyle(parent).height);
-                        
-                        if (sitepros.classList.contains('active')) {
-                            if (currentHeight < totalHeight) {
-                                parent.style.height = totalHeight + 'px';
-                            }
-                        } else if (activeSitepros.length === 0) {
-                            parent.style.height = '';
                         }
-                    }
-                });
-            }
-          });
-          ol.appendChild(li);
+                    });
+                }
+              });
+              ol.appendChild(li);
+          }
+      });
+  }
+  
+  const observer = new MutationObserver(mutations => {
+      let shouldUpdate = false;
+  
+      mutations.forEach(mutation => {
+          if ([...mutation.addedNodes].some(node => 
+              node.matches?.('.sitedetails, .sitealternates')
+          )) {
+              shouldUpdate = true;
+          }
+      });
+  
+      if (shouldUpdate) {
+          // if (!sections.find(s => s.selector === '.ratingsumm')) {
+          //     sections.push({ selector: '.ratingsumm', text: 'Rating Summary' });
+          // }
+          if (!sections.find(s => s.selector === '.sitealternates')) {
+              sections.push({ selector: '.sitealternates', text: t.sitealternates });
+          }
+          if (!sections.find(s => s.selector === '.sitedetails')) {
+            sections.push({ selector: '.sitedetails', text: t.sitedetails });
+          }
+          updateNav();
       }
   });
+  
+  observer.observe(document.body, { childList: true, subtree: true });
+  
+  updateNav();
+
 
   if (mirrorRedirect) {
       mirrorRedirect.insertAdjacentElement('afterend', navReview);
