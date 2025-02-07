@@ -421,6 +421,10 @@ h3,
     filter: drop-shadow(0 1px 2px rgb(120 120 120)) blur(0);
 }
 
+.smallreview::after {
+    background: linear-gradient(56deg, rgba(0, 0, 0, .35) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
 .main-page .box .logobg .best,
 .newest-boxes .box .logobg .best {
     filter: none;

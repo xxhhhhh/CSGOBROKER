@@ -2083,6 +2083,7 @@ h3 {
 .boxreview .smallreview,
 .instruction {
     width: 100%;
+    position: relative;
     height: auto;
     background-color: transparent;
     display: flex;
@@ -2328,12 +2329,15 @@ h3 {
     margin: 10px auto;
 }
 
-.title-space {
+.smallreview::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 12px;
+    margin-left: 2px;
     height: 1px;
-    background: linear-gradient(56deg, rgba(255, 255, 255, .05) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(56deg, rgba(255, 255, 255, .05) 0%, rgba(0, 0, 0, 0) 70%);
     width: 95%;
-    margin: 40px auto 0px auto;
-    display: none;
 }
 
 .siteleftpannel .navigation-menu li {
@@ -5629,7 +5633,7 @@ footer .centralizer .footer-content {
 
 
 .boxes-holder .box .content .review-button:not(.visit):hover,
-.boxes-holder .box .content .review-button:not(.visit):hover::before,
+.boxes-holder .box .content .review-button:not(.visit):hover::after,
 .boxes-holder .box .content .review-button.mirror-visit:hover,
 .boxes-holder .box .content .review-button.mirror-visit:hover::before,
 .boxes-holder .box .content button.copy:hover,
@@ -5732,35 +5736,34 @@ footer .centralizer .footer-content {
     position: relative;
 }
 
-.singlemod-box[data-title]:hover:after {
-    content: attr(data-title);
-    padding: 0 20px;
-    transition: padding .15s ease-in-out;
-    width: max-content;
-}
-
 .singlemod-box[data-title]:after {
     content: attr(data-title);
     position: absolute;
     padding: 0;
     display: flex;
-    height: 40px;
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
-    border-radius: 10px;
-    background-color: var(--darkygray);
     align-items: center;
     justify-content: center;
     pointer-events: none;
-    opacity: 1;
+    opacity: 0;
     bottom: 50%;
-    transform: translateY(50%);
-    overflow: hidden;
+    transform: translateY(50%) translateX(10%);
+    padding: 12px;
+    background-color: var(--darkygray);
+    border-radius: 10px;
+    transition: all .15s ease-in-out;
     top: unset;
     left: unset;
     right: 60px;
-    width: 0px;
+    width: auto;
+    text-wrap: nowrap;
+}
+
+.singlemod-box[data-title]:hover:after {
+    opacity: 1;
+    transform: translateY(50%);
 }
 
 .singlemod-box:hover,
@@ -11540,6 +11543,10 @@ div#results {
 
     .boxreview .smallreview {
         margin-top: 9px;
+    }
+
+    .smallreview::after {
+        bottom: -15px;
     }
 
     .boxreview .smallreview,
