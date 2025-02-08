@@ -805,6 +805,7 @@ nav .pages {
 .skin-color-info {
     display: flex;
     align-items: center;
+    margin-left: 10px;
 }
 
 .skin-color-info:empty {
@@ -827,6 +828,7 @@ nav .pages {
 }
 
 .skin-color-info .skin-color:first-child {
+    margin-left: 0;
     width: 42px;
 }
 
@@ -1104,7 +1106,7 @@ nav .pages {
 }
 
 .preview-pause-button {
-    margin-top: 8px;
+    padding: 11px;
 }
 
 .preview-nav-button {
@@ -6945,6 +6947,7 @@ a[data-title]:after,
 }
 
 .officon:hover::before,
+.preview-pause-button:hover .officon::before,
 .settings-button:hover .officon::before {
     opacity: 1;
 }
@@ -7094,8 +7097,8 @@ a[data-title]:after,
 
 .officon.pause::before {
     background-image: url(/img/icons/gamemodes/pause.svg);
-    height: 16px;
-    width: 16px;
+    height: 18px;
+    width: 18px;
 }
 
 .officon.play::before {
@@ -7901,8 +7904,9 @@ label:active,
 .skin-copy button:active i,
 .officon:active::before,
 .settings-button:active .officon::before,
-.skins-category-switch .category-switch:active::before {
-    filter: brightness(.3) !important;
+.skins-category-switch .category-switch:active::before,
+.preview-pause-button:active .officon::before {
+    filter: brightness(.4) !important;
     transition: all .09s ease-in-out;
 }
 
