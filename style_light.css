@@ -991,6 +991,11 @@ ul .submenu li .nonredir,
     opacity: .8;
 }
 
+#preview-showcase .officon.chevron::before {
+    filter: unset;
+    opacity: 1;
+}
+
 .blog .main-col-info {
     background: linear-gradient(200deg, var(--main-theme) 30%, rgba(255, 255, 255, .85) 100%);
 }

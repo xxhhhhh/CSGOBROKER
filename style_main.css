@@ -1184,8 +1184,8 @@ nav .pages {
 
 .navigation-weapon-sort[data-title]:after {
     padding: 5px;
-    background-color: #0a0a0a;
-    filter: unset;
+    filter: drop-shadow(0px 0px 8px rgb(0 0 0)) drop-shadow(0px 0px 8px rgb(0 0 0)) drop-shadow(0px 0px 8px rgb(0 0 0));
+    /* filter: unset; */
     margin-top: -65px;
 }
 
