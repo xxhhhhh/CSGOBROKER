@@ -842,8 +842,8 @@ nav .pages {
 
 .skin-color.brown {
     background: #836953;
+    background: linear-gradient(180deg, #836953 30%, #64503f 100%);
 }
-
 
 .skin-color.white {
     background: #FFFFFF;
@@ -6427,7 +6427,7 @@ a[data-title]:after,
 }
 
 .features .featuresbox .typesinside a:last-child::after,
-.skin-color-info .skin-color:last-child:after {
+.skin-color-info .skin-color:not(:first-child):last-child:after {
     transform: none;
 }
 
