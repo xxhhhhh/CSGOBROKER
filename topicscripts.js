@@ -1300,7 +1300,7 @@ document.addEventListener("DOMContentLoaded", function () {
             box.addEventListener("animationend", () => {
                 box.classList.remove("fade-in");
                 box.classList.add("visible");
-            }, { once: true }); // { once: true } гарантирует, что обработчик выполнится только 1 раз
+            }, { once: true });
         } else {
             box.classList.add("hidden");
             box.classList.remove("fade-in", "visible");
@@ -1313,7 +1313,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   boxTopics.forEach((box) => {
     box.addEventListener("animationend", () => {
-        box.style.opacity = ""; // Убираем инлайн-стиль opacity
+        box.style.opacity = "";
     });
 });
 

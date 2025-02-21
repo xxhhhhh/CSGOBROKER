@@ -259,7 +259,8 @@ h3,
 .color-box-selection-button:hover,
 .color-box-selection-button.clicked,
 .singlemod-box[data-title]:after,
-.main-infobox:hover .main-infobox-content-text p  {
+.main-infobox:hover .main-infobox-content-text p,
+.sitepage.topic-craft .topic-grandbox .navigation-section.first::after  {
     color: #1a1a1a;
 }
 

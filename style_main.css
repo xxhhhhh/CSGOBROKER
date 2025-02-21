@@ -3885,6 +3885,11 @@ nav #logo:hover {
     height: 100%;
 }
 
+.sticker-crafts-list .topic-grandbox .topic-box .logobg {
+    margin: 0;
+    background: unset;
+}
+
 .topic-grandbox .topic-box:hover {
     transform: scale(1);
 }
@@ -8252,7 +8257,7 @@ div#results {
 
 .sitepage.topic-craft .navigation-section.first span,
 .topic-boxes-holder .topic-grandbox.sticker .navigation-section.first span {
-    padding: 8px 8px 2px 8px;
+    padding: 8px 8px 0px 8px;
 }
 
 .sitepage.topic-craft .navigation-section.second span,
@@ -8643,7 +8648,7 @@ div#results {
 .crafting-table-screens.object img {
     width: auto;
     height: auto;
-    max-height: 55%;
+    max-height: 70%;
     max-width: 90%;
     margin-top: 40px;
     filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
@@ -8676,6 +8681,7 @@ div#results {
     align-items: center;
     height: 36px;
     width: 100%;
+    z-index: 1;
     bottom: 0;
     left: 0;
 }
@@ -13124,14 +13130,16 @@ div#results {
 .sticker-crafts-list {
     display: flex;
     position: relative;
-    margin-bottom: 8px;
-    height: 0;
+    overflow: hidden;
     transition: all .15s ease-in-out;
+    margin: 0;
+    height: 0;
     width: 100%;
 }
 
 .sticker-crafts-list.imported {
     height: 110px;
+    margin-bottom: 9px;
 }
 
 .sticker-crafts-list .topic-grandbox::after {
@@ -13418,6 +13426,15 @@ div#results {
     .sticker-crafts-list.imported,
     .sitepage.topic-craft .sticker-crafts-list .topic-grandbox {
         height: 80px;
+    }
+
+    .sticker-crafts-list.imported {
+        margin-top: 1px;
+        margin-bottom: 4px;
+    }
+
+    .sitepage.topic-craft .sticker-crafts-list .topic-grandbox {
+        margin: 0 2px;
     }
 
     .sitepage.topic-craft .sticker-crafts-list .topic-grandbox:nth-child(4) {
