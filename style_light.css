@@ -82,7 +82,7 @@
 
 .topic-grandbox .skin img {
     background-color: unset !important;
-    filter: drop-shadow(0px 0px 3px rgb(100 100 100));
+    filter: drop-shadow(0px 0px 1px rgb(100 100 100));
 }
 
 .topic-grandbox .skin.sticker img {
@@ -492,10 +492,14 @@ h3,
 .box .content,
 .newest-boxes .box,
 #rec-box-content,
-.topic-grandbox .skin,
 .singlemod-select::before,
 .topic-grandbox::after {
-    background-color: #f2f2f2 !important;
+    background-color: var(--main-theme) !important;
+    background: unset;
+}
+
+.topic-grandbox .skin {
+    background-color: var(--darkygray) !important;
     background: unset;
 }
 
@@ -1174,8 +1178,4 @@ ul .submenu li .nonredir,
 
 .boxes-holder .box:hover .content .review-button {
     filter: none;
-}
-
-.sitepage.topic-craft .crafting-table {
-    background: rgb(13 13 13);
 }

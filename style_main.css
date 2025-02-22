@@ -3910,8 +3910,6 @@ nav #logo:hover {
 
 .topic-box.items .logobg,
 .topic-box .logobg.skincolors {
-    mask-image: unset;
-    -webkit-mask-image: unset;
     height: 150px;
 }
 
@@ -8255,6 +8253,11 @@ div#results {
     top: 8px;
 }
 
+.sitepage.topic-craft.loadout .topic-grandbox,
+.topic-boxes-holder.loadout .topic-grandbox.sticker {
+    height: auto;
+}
+
 .sitepage.topic-craft .navigation-section.first span,
 .topic-boxes-holder .topic-grandbox.sticker .navigation-section.first span {
     padding: 8px 8px 0px 8px;
@@ -8618,7 +8621,7 @@ div#results {
 
 .crafting-table-step span {
     opacity: .35;
-    transition: all .15s ease-in-out;
+    transition: all .1s ease-in-out;
     user-select: none;
 }
 
@@ -8633,10 +8636,6 @@ div#results {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.crafting-table-screens.object {
-    background-image: url(/img/skins/topics/stickers-crafts/background.jpg);
 }
 
 .crafting-table-screens img {
@@ -8665,6 +8664,7 @@ div#results {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .crafting-table-screen.active {
@@ -8696,6 +8696,32 @@ div#results {
     text-align: center;
     margin-top: 10px;
 }
+
+.crafting-table-screens.object {
+    background-image: url(/img/skins/topics/stickers-crafts/background.png);
+    background-position: 0 30px;
+    background-size: 85%;
+    background-position: center 60px;
+    background-repeat: no-repeat;
+}
+
+/* .object .crafting-table-screen::before {
+    content: "";
+    position: absolute;
+    top: 140px;
+    height: 70%;
+    width: 90%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: var(--bg-topic);
+    filter: blur(115px);
+    opacity: .5;
+} */
+
+/* .object .crafting-table-screen.active::before {
+    animation: skinblur 3s infinite;
+} */
 
 .sitepage.topic-craft .rec-box {
     top: 17px;
@@ -10176,6 +10202,10 @@ div#results {
         content: unset;
     }
 
+    .object .crafting-table-screen::before {
+        top: unset;
+    }
+
     #preview-showcase {
         filter: unset;
     }
@@ -10625,6 +10655,16 @@ div#results {
         height: 115px;
     }
 
+    .sitepage .topic-box .logobg,
+    .sitepage .topic-box .logobg.skincolors,
+    .sitepage .topic-box.items .logobg {
+        height: 160px;
+    }
+
+    .sitepage .sticker-crafts-list .topic-box .logobg {
+        height: 100%;
+    }
+
     .topic-box .logobg img {
         height: 100%;
     }
@@ -11028,6 +11068,14 @@ div#results {
     .sitepage.topic-craft .crafting-table {
         margin-bottom: 4px;
         padding-top: 40px;
+    }
+
+    .crafting-table-screens.object img {
+        margin-top: unset;
+    }
+
+    .crafting-table-screens.object {
+        background-position: center;
     }
 
     .crafting-table-screens {

@@ -1344,3 +1344,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   initPagination();
 });
+
+// document.querySelectorAll(".crafting-table-screen").forEach(el => {
+//   const img = el.querySelector("img");
+//   if (img) {
+//       el.style.setProperty("--bg-topic", `url(${img.src})`);
+//   }
+// });
