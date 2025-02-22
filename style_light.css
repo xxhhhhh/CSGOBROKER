@@ -510,8 +510,10 @@ h3,
 #rec-box-content,
 .topic-grandbox .skin,
 .topic-grandbox::after,
-#color-list.active {
-    filter: drop-shadow(0 0 1px rgb(200 200 200));
+#color-list.active,
+.crafting-table,
+.sitepage.topic-craft .sticker-crafts-list .topic-grandbox {
+    /* filter: drop-shadow(0 0 1px rgb(200 200 200)); */
     box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
     border: unset;
 }
@@ -1032,6 +1034,10 @@ ul .submenu li .nonredir,
 
 .blog .item-topic-grandbox .logobg img {
     opacity: 1;
+}
+
+.sitepage.topic-craft .crafting-table {
+    background: linear-gradient(360deg, var(--darkygray) 50%, var(--darkgray) 100%);
 }
 
 @media screen and (min-width: 1365px) {
