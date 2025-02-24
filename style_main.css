@@ -6614,6 +6614,14 @@ a[data-title]:after,
     background-image: url(/img/icons/gamemodes/cart-buy.svg);
 }
 
+.officon.stickers::before {
+    background-image: url(/img/icons/gamemodes/stickers.svg);
+}
+
+.officon.ak47::before {
+    background-image: url(/img/icons/gamemodes/ak47.svg);
+}
+
 .officon.cs2::before {
     background-image: url(/img/icons/main-modes/cs2-logo.png);
 }
@@ -8383,6 +8391,10 @@ div#results {
     max-height: 70%;
 }
 
+.topic-boxes-holder .topic-grandbox.sticker .topic-box .logobg.unzoomed img {
+    max-height: 42%;
+}
+
 .sticker-crafts-list .topic-grandbox.sticker .topic-box .logobg img {
     transform: unset;
     max-height: 45%;
@@ -8397,6 +8409,29 @@ div#results {
     transform: scale(1.1) rotate(6deg);
 }
 
+.topic-box .best.cheap::after {
+    content: 'Cheap';
+}
+
+.topic-box .best.mid::after {
+    content: 'Affordable';
+}
+
+.topic-box .best.exp::after {
+    content: 'Expensive';
+}
+
+.lang-ru .topic-box .best.cheap::after {
+    content: 'Дешево';
+}
+
+.lang-ru .topic-box .best.mid::after {
+    content: 'Доступно';
+}
+
+.lang-ru .topic-box .best.exp::after {
+    content: 'Дорого';
+}
 
 .topic-boxes-holder .topic-grandbox.sticker .topic-box .logobg img {
     max-height: 47%;
@@ -9553,7 +9588,7 @@ div#results {
     position: relative;
     right: unset;
     top: unset;
-    margin: 3px;
+    margin: 0;
 }
 
 .payments-block.visible .payments-button::before {
@@ -9583,8 +9618,8 @@ div#results {
 
 .payments-block {
     position: fixed;
-    right: 144px;
-    top: 163px;
+    right: 141px;
+    top: 168px;
     width: 170px;
     display: flex;
     flex-direction: column;
@@ -9592,16 +9627,65 @@ div#results {
     z-index: 2;
 }
 
+.payments-block.visible .payments-button:hover {
+    transform: unset;
+}
+
+.payments-block.stickers {
+    right: unset;
+    left: 161px;
+    top: 228px;
+    z-index: -1;
+}
+
+.payments-block.stickers .payment-container {
+    width: 138px;
+}
+
+.payments-block.stickers .simplefilter-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: var(--darkygray);
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    width: 45px;
+    right: 0;
+    top: 0;
+}
+
+.simplefilter-icon::before {
+    height: 30px;
+    width: 30px;
+    transform: rotate(8deg);
+    margin-bottom: 4px;
+    margin-right: 6px;
+}
+
+.payments-block.stickers .payments-block-separate:nth-child(1) {
+    height: 35px;
+}
+
+.payments-block.visible.stickers .payments-block-separate:nth-child(1)::before {
+    right: 21px;
+    transform: skewX(-20deg);
+    border-radius: 10px 0 0 0;
+    width: 30px;
+}
+
+.payments-block.stickers .payments-block-separate,
+.payments-block.stickers.visible .payments-block-separate {
+    pointer-events: none;
+    width: 100%;
+}
+
 .payments-block-separate {
     width: fit-content;
     border-radius: 10px 10px 0 0;
-    transition: all .2s ease-in-out;
+    transition: all .15s ease-in-out, padding 0s ease-in-out;
     position: relative;
     z-index: 1;
-}
-
-.payments-block.visible .payments-block-separate {
-    background-color: var(--darkygray);
 }
 
 .payments-block.visible .payments-block-separate:nth-child(1)::before {
@@ -9610,7 +9694,7 @@ div#results {
     top: 0;
     right: -10px;
     transform: skewX(20deg);
-    background-color: inherit;
+    background-color: var(--darkygray);
     border-radius: 0 10px 0 0;
     width: 40px;
     height: 100%;
@@ -9655,13 +9739,24 @@ div#results {
     width: auto;
     height: 0;
     border-radius: 0 10px 10px 10px;
-    padding-bottom: 10px;
-    padding-top: 5px;
+    background-color: var(--darkygray);
+    overflow: hidden;
+    padding: 0;
     margin-top: -10px;
 }
 
 .payments-block.visible .payments-block-separate:nth-child(2) {
-    height: 85px;
+    overflow: unset;
+}
+
+.payments-block .payments-block-separate:nth-child(2) .payment-container:nth-child(2) {
+    padding-bottom: 10px;
+    margin-top: 6px;
+}
+
+.payments-block.visible .payments-block-separate:nth-child(2) {
+    height: auto;
+    padding: 6px 0;
 }
 
 .methodlist .payment-method::before {
@@ -9691,8 +9786,7 @@ div#results {
     z-index: 1;
     transition: all .15s ease-in-out, z-index 0s ease;
     margin: 0 auto;
-    margin-top: 5px;
-    width: 150px;
+    width: 158px;
 }
 
 .payment-container input {
@@ -10204,6 +10298,10 @@ div#results {
     .big-category a::before, 
     .big-category .nonredir::before {
         content: unset;
+    }
+
+    .payments-block.stickers {
+        display: none;
     }
 
     .object .crafting-table-screen::before {
@@ -12127,11 +12225,14 @@ div#results {
         width: 90%;
     }
 
-    .topic-boxes-holder,
-    .topic-boxes-holder.sticker-crafts {
+    .topic-boxes-holder {
         margin-top: 8px;
         min-height: unset;
         padding-bottom: 55px;
+    }
+
+    .topic-boxes-holder.sticker-crafts {
+        min-height: 699px;
     }
 
     .topic-box.maestro {

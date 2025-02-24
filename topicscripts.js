@@ -1265,85 +1265,156 @@ if (languageTag === "ru") {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-
   var res = $(window).width();
-
   const itemsPerPage = res < 1365 ? 6 : 12;
-  const topicBoxesHolder = document.querySelector(".topic-boxes-holder");
-
+  const topicBoxesHolder = document.querySelector(".topic-boxes-holder.sticker-crafts");
   if (!topicBoxesHolder) return;
+  
+  fetch("/code-parts/skins-list/sticker-crafts.json")
+      .then(response => response.json())
+      .then(data => {
+          if (!Array.isArray(data)) return;
 
-  const useGrandBox = topicBoxesHolder.classList.contains("sticker-crafts");
-  const boxTopics = useGrandBox
-      ? Array.from(topicBoxesHolder.querySelectorAll(".topic-grandbox"))
-      : Array.from(topicBoxesHolder.querySelectorAll(".topic-box"));
+          data.forEach(sticker => {
+                const topic = document.createElement("a");
+                topic.classList.add("topic-grandbox", "sticker");
+                topic.href = `/topic/sticker-crafts/${sticker.id}`;
 
-  if (!boxTopics.length) return;
+                const extraClass = sticker.extra ? ` ${sticker.extra}` : "";
 
-  const paginationHolder = document.createElement("div");
-  paginationHolder.classList.add("pagination-holder");
-  topicBoxesHolder.appendChild(paginationHolder);
+                topic.innerHTML = `
+                <div class="topic-box">
+                    <div class="best ${sticker.range}"></div>
+                    <div class="logobg${extraClass}">
+                        <img src="${sticker.img}" alt="${sticker.title}" draggable="false">
+                    </div>
+                </div>
+                <div class="navigation-section first">
+                    <span>${sticker.title}</span>
+                </div>
+                <div class="navigation-section third">
+                    ${sticker.skins.map(skin => 
+                        `<div class="skin" weapon="${skin.weapon}" skin-id="${skin.skin_id}"></div>`
+                    ).join('')}
+                </div>
+                `;
+              topicBoxesHolder.appendChild(topic);
+          });
+          
+          setupPagination();
 
-  const totalPages = Math.ceil(boxTopics.length / itemsPerPage);
-
-  function showPage(page) {
-      const start = (page - 1) * itemsPerPage;
-      const end = page * itemsPerPage;
-
-      boxTopics.forEach((box, index) => {
-        if (index >= start && index < end) {
-            const delay = ((index % itemsPerPage) + 1) * 0.05;
-            box.style.animationDelay = `${delay}s`;
-            box.classList.remove("hidden");
-            box.classList.add("fade-in");
-    
-            box.addEventListener("animationend", () => {
-                box.classList.remove("fade-in");
-                box.classList.add("visible");
-            }, { once: true });
-        } else {
-            box.classList.add("hidden");
-            box.classList.remove("fade-in", "visible");
-        }
-    });
-    
-
-      updatePaginationButtons(page);
-  }
-
-  boxTopics.forEach((box) => {
-    box.addEventListener("animationend", () => {
-        box.style.opacity = "";
-    });
-});
-
-
-
-  function createPaginationButtons() {
-      paginationHolder.innerHTML = ""; 
-      for (let i = 1; i <= totalPages; i++) {
-          const button = document.createElement("button");
-          button.textContent = i;
-          button.classList.add("pagination-button");
-          button.dataset.page = i;
-          button.addEventListener("click", () => showPage(i));
-          paginationHolder.appendChild(button);
-      }
-  }
-
-  function updatePaginationButtons(activePage) {
-      document.querySelectorAll(".pagination-button").forEach((button) => {
-          button.classList.toggle("active", parseInt(button.dataset.page, 10) === activePage);
+          if (languageTag === "ru") {
+            updateURLs(topicBoxesHolder);
+          }
       });
-  }
+  
+  function setupPagination() {
+      const boxTopics = Array.from(topicBoxesHolder.querySelectorAll(".topic-grandbox"));
+      if (!boxTopics.length) return;
 
-  function initPagination() {
-      createPaginationButtons();
-      showPage(1);
-  }
+      const paginationHolder = document.createElement("div");
+      paginationHolder.classList.add("pagination-holder");
+      topicBoxesHolder.appendChild(paginationHolder);
 
-  initPagination();
+      const totalPages = Math.ceil(boxTopics.length / itemsPerPage);
+
+      function showPage(page) {
+          const start = (page - 1) * itemsPerPage;
+          const end = page * itemsPerPage;
+
+          boxTopics.forEach((box, index) => {
+              if (index >= start && index < end) {
+                  const delay = ((index % itemsPerPage) + 1) * 0.05;
+                  box.style.animationDelay = `${delay}s`;
+                  box.classList.remove("hidden");
+                  box.classList.add("fade-in");
+                  
+                  box.addEventListener("animationend", () => {
+                      box.classList.remove("fade-in");
+                      box.classList.add("visible");
+                  }, { once: true });
+              } else {
+                  box.classList.add("hidden");
+                  box.classList.remove("fade-in", "visible");
+              }
+          });
+          
+          updatePaginationButtons(page);
+      }
+
+      function createPaginationButtons() {
+          paginationHolder.innerHTML = "";
+          for (let i = 1; i <= totalPages; i++) {
+              const button = document.createElement("button");
+              button.textContent = i;
+              button.classList.add("pagination-button");
+              button.dataset.page = i;
+              button.addEventListener("click", () => showPage(i));
+              paginationHolder.appendChild(button);
+          }
+      }
+
+      function updatePaginationButtons(activePage) {
+          document.querySelectorAll(".pagination-button").forEach((button) => {
+              button.classList.toggle("active", parseInt(button.dataset.page, 10) === activePage);
+          });
+      }
+
+      const skinsOnPage = $(".skin");
+      const weaponToSkinIds = {};
+  
+      skinsOnPage.each(function () {
+          const weapon = $(this).attr("weapon");
+          const skinId = $(this).attr("skin-id");
+          if (weapon && skinId) {
+              weaponToSkinIds[weapon] = weaponToSkinIds[weapon] || [];
+              weaponToSkinIds[weapon].push(skinId);
+          }
+      });
+  
+      const loadSkinsData = async () => {
+          await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
+              const response = await fetch(`/code-parts/skins-list/${weapon}.json`);
+              const skinsData = await response.json();
+  
+              const skinsForWeapon = skinsData || {};
+              weaponToSkinIds[weapon].forEach((skinId) => {
+                  const skinData = skinsForWeapon[skinId];
+                  if (skinData) {
+                      const isInNavigation = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).closest('.navigation-section').length > 0;
+                      const imageUrl = isInNavigation ? skinData.imageOG : skinData.image;
+  
+                      const newSkinHTML = `
+                          <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
+                              <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
+                          </div>`;
+                          
+                      $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function() {
+                          $(this).replaceWith(newSkinHTML);
+                      });
+                  }
+              });
+          }));
+  
+          $(".skin img").each(function () {
+              if (this.complete) {
+                  $(this).addClass("imported");
+              } else {
+                  $(this).on("load", function () {
+                      $(this).addClass("imported");
+                  });
+              }
+          });
+  
+      };
+
+      loadSkinsData();
+
+        createPaginationButtons();
+        showPage(1);
+  }
 });
+
 
 // document.querySelectorAll(".crafting-table-screen").forEach(el => {
 //   const img = el.querySelector("img");
