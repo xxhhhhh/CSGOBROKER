@@ -8021,7 +8021,7 @@ div#results {
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, .6);
     display: flex;
     justify-content: center;
-    transition: all .15s ease-in-out;
+    transition: all .1s ease-in-out;
     align-items: center;
 }
 
@@ -8547,7 +8547,6 @@ div#results {
     aspect-ratio: 16 / 9;
     opacity: .4;
     transition: all .15s ease-in-out;
-    background-color: #0e0e0e;
     cursor: pointer;
     display: flex;
     justify-content: center;

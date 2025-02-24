@@ -1040,6 +1040,10 @@ ul .submenu li .nonredir,
     background: linear-gradient(360deg, var(--darkygray) 50%, var(--darkgray) 100%);
 }
 
+.lang-menu ul li:hover a {
+    color: black;
+}
+
 @media screen and (min-width: 1365px) {
     .boxes-holder-name {
         top: -25px;
