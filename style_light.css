@@ -1044,6 +1044,10 @@ ul .submenu li .nonredir,
     color: black;
 }
 
+.crafting-table-step.active {
+    background: #f2f2f2;
+}
+
 @media screen and (min-width: 1365px) {
     .boxes-holder-name {
         top: -25px;
