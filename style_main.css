@@ -554,7 +554,9 @@ nav .pages {
     height: 70%;
 }
 
-
+.topic-grandbox.sticker::after {
+    content: unset;
+}
 
 .navigation-reset {
     position: absolute;
@@ -3938,7 +3940,6 @@ nav #logo:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-
     transform: scale(1);
     position: relative;
     margin-top: 6px;
@@ -3954,6 +3955,10 @@ nav #logo:hover {
     width: auto;
 }
 
+.sticker .topic-box .logobg {
+    margin: 8px 8px 0 8px;
+}
+
 .topic-boxes-holder .logobg.skincolors {
     transform: unset;
 }
@@ -3965,10 +3970,15 @@ nav #logo:hover {
 
 
 .topic-boxes-holder .topic-box:hover .logobg,
+.topic-boxes-holder .topic-grandbox:hover .topic-box .logobg,
 .item-topic-grandbox:hover .logobg,
 .topic-box.maestro:hover .logobg {
     transform: scale(1.03) !important;
-    margin: 7px 8px 9px 8px !important;
+    margin: 6px 8px 9px 8px !important;
+}
+
+.topic-box.maestro:hover .logobg {
+    margin: 4px !important;
 }
 
 .item-topic-grandbox:hover .logobg {
@@ -4310,6 +4320,10 @@ nav #logo:hover {
     transform: scale(1.04);
     backface-visibility: hidden;
     /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(50, 50, 50, 0.25) 50%, rgba(255, 255, 255, 0) 100%) !important; */
+}
+
+.topic-box.maestro:hover {
+    backface-visibility: unset;
 }
 
 .box.skin-navigator:hover {
@@ -13763,3 +13777,44 @@ label.skins-category-switch:active {
 .lang-ru .skins-category-switch::before {
     content: 'Инвентарь по Цвету';
 }
+
+/* .topic-boxes-holder .topic-grandbox.sticker .topic-box {
+    height: 120px;
+} */
+
+/* .topic-grandbox.sticker .navigation-section {
+    justify-content: flex-start;
+
+} */
+
+/* .topic-boxes-holder .topic-grandbox.sticker .navigation-section.first span {
+    padding: 5px;
+    padding-right: 8px;
+    padding-left: 10px;
+    margin-left: 8px;
+    background-color: rgb(21 21 21);
+    position: relative;
+    border-radius: 5px;
+    z-index: 1;
+} */
+
+/* .topic-boxes-holder .topic-grandbox.sticker .navigation-section.first span::after,
+.topic-boxes-holder .topic-grandbox.sticker .navigation-section.first span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -4px;
+    transform: skewX(-20deg);
+    background: inherit !important;
+    border-radius: 0 5px 5px 0;
+    width: 20px;
+    height: 100%;
+    z-index: -1;
+}
+
+.topic-boxes-holder .topic-grandbox.sticker .navigation-section.first span::before {
+    right: unset;
+    left: -4px;
+    transform: skewX(20deg);
+    border-radius: 5px 0 0 5px;
+} */
