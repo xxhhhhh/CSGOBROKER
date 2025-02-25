@@ -8711,6 +8711,10 @@ div#results {
     transition: opacity .5s ease-in-out, visibility 0s 0s;
 }
 
+.object .crafting-table-screen.active {
+    transition: opacity .25s ease-in-out, visibility 0s 0s;
+}
+
 .crafting-table-screen-description {
     position: absolute;
     background-color: rgba(16, 16, 16, .85);
@@ -8737,9 +8741,8 @@ div#results {
 
 .crafting-table-screens.object {
     background-image: url(/img/skins/topics/stickers-crafts/background.png);
-    background-position: 0 30px;
-    background-size: 85%;
-    background-position: center 60px;
+    background-size: 75%;
+    background-position: center 70px;
     background-repeat: no-repeat;
 }
 
@@ -11893,7 +11896,7 @@ div#results {
     }
 
     .siteleftpannel .mods-box.topic {
-        margin-left: 11px;
+        margin-left: 13px;
         top: 66px;
         z-index: 111;
         width: 57px;
