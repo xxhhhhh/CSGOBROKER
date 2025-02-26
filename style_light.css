@@ -122,7 +122,8 @@
 .category-selector .category-box:active .category-box-logo,
 .category-selector .category-box.active .category-box-logo,
 .category-selector ul:hover .category-box .category-box-logo,
-.topic-grandbox.sticker {
+.topic-grandbox.sticker,
+.topic-boxes-holder .topic-grandbox.sticker {
     background: var(--opacback);
 }
 
@@ -498,9 +499,8 @@ h3,
     background: unset;
 }
 
-.topic-grandbox .skin {
-    background-color: var(--darkygray) !important;
-    background: unset;
+.topic-grandbox::after {
+    content: '';
 }
 
 .topic-box:hover .content {
@@ -543,7 +543,8 @@ h3,
 #notexist .category-box .category-box-logo,
 .topic-nav-box,
 .main-infobox-content-block,
-.main-infobox-mascotte::after {
+.main-infobox-mascotte::after,
+.topic-grandbox .skin {
     background: #f2f2f2;
 }
 

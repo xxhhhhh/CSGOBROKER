@@ -541,7 +541,7 @@ nav .pages {
 } */
 
 .topic-grandbox::after {
-    content: '';
+    content: unset;
     position: absolute;
     bottom: 0;
     z-index: -1;
@@ -3162,6 +3162,7 @@ nav #logo:hover {
     justify-content: center;
     align-items: center;
     filter: grayscale(1);
+    min-width: 50px;
     position: relative;
     overflow: hidden;
     margin: 5px;
@@ -3955,9 +3956,14 @@ nav #logo:hover {
     width: auto;
 }
 
-.sticker .topic-box .logobg {
+/* .sticker .topic-box .logobg,
+.topic-craft:not(.loadout) .topic-grandbox .topic-box .logobg {
     margin: 8px 8px 0 8px;
-}
+    background: var(--icongradient);
+    background: linear-gradient(-45deg, var(--darkygray) 50%, var(--darkgray) 100%);
+    mask-image: unset;
+    -webkit-mask-image: unset;
+} */
 
 .topic-boxes-holder .logobg.skincolors {
     transform: unset;
@@ -4324,6 +4330,10 @@ nav #logo:hover {
 
 .topic-box.maestro:hover {
     backface-visibility: unset;
+}
+
+.topic-grandbox .topic-box {
+    filter: unset;
 }
 
 .box.skin-navigator:hover {
@@ -8286,7 +8296,7 @@ div#results {
 
 .sitepage.topic-craft .navigation-section.first span,
 .topic-boxes-holder .topic-grandbox.sticker .navigation-section.first span {
-    padding: 8px 8px 0px 8px;
+    margin-top: 8px;
 }
 
 .sitepage.topic-craft .navigation-section.second span,
@@ -8301,7 +8311,7 @@ div#results {
 .sitepage.topic-craft .topic-grandbox .navigation-section.first::after {
     content: 'Required Components';
     position: relative;
-    font-size: 14px;
+    font-size: 13px;
     color: rgba(255, 255, 255, .6);
     font-weight: 400;
     text-transform: none;
@@ -8326,8 +8336,8 @@ div#results {
     width: 40px;
     height: 40px;
     margin: 5px;
-    background-color: #121212;
-    border: 2px solid #131313;
+    background: var(--icongradient);
+    border: 2px solid var(--darkgray);
     transition: all .15s ease-in-out;
     border-radius: 5px;
     display: flex;
@@ -8393,7 +8403,7 @@ div#results {
 
 .sitepage.topic-craft .topic-box .logobg img,
 .topic-boxes-holder .topic-grandbox.sticker .topic-box .logobg img {
-    max-height: 55%;
+    max-height: 47%;
     height: auto;
     max-width: 75%;
     transform: rotate(8deg);
@@ -8449,10 +8459,6 @@ div#results {
 
 .lang-ru .topic-box .best.exp::after {
     content: 'Дорого';
-}
-
-.topic-boxes-holder .topic-grandbox.sticker .topic-box .logobg img {
-    max-height: 47%;
 }
 
 .sitepage.topic-craft .topic-box:hover .logobg,
@@ -8626,7 +8632,7 @@ div#results {
 }
 
 .crafting-table-nav {
-    width: 99.1%;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
@@ -8700,8 +8706,8 @@ div#results {
 .crafting-table-screens.object img {
     width: auto;
     height: auto;
-    max-height: 70%;
-    max-width: 90%;
+    max-height: 60%;
+    max-width: 85%;
     margin-top: 43px;
     /* filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2)); */
     filter: drop-shadow(6px 4px 6px rgba(6, 6, 6, .5));
