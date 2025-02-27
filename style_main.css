@@ -349,7 +349,7 @@ nav .pages {
 .boxdefaultpage {
     position: relative;
     height: auto;
-    width: 1200px;
+    width: 1150px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -8374,15 +8374,13 @@ div#results {
 
 .introduce-craft {
     margin-top: 20px;
-    margin-left: 15px;
-    padding-bottom: 15px;
 }
 
 .introduce-craft h2 {
     font-weight: 600;
     font-size: 20px;
     position: relative;
-    margin-left: 18px;
+    margin-left: 36px;
 }
 
 .introduce-craft p {
@@ -8393,7 +8391,7 @@ div#results {
     display: list-item;
     list-style: none;
     color: rgba(255, 255, 255, .7);
-    margin-left: 18px;
+    margin-left: 19px;
     margin-top: 6px;
 }
 
@@ -8575,7 +8573,7 @@ div#results {
 }
 
 .preview-craft {
-    width: 100%;
+    width: 96.3%;
     height: auto;
     margin: auto;
     overflow: hidden;
@@ -8654,7 +8652,7 @@ div#results {
 }
 
 .crafting-table-nav {
-    width: 100%;
+    width: 99.5%;
     height: auto;
     display: flex;
     flex-direction: row;
@@ -8662,6 +8660,10 @@ div#results {
     align-items: center;
     position: absolute;
     top: 0;
+}
+
+.object .crafting-table-nav {
+    width: 96.5%;
 }
 
 .crafting-table-step {
