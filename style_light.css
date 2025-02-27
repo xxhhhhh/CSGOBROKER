@@ -255,6 +255,7 @@ h3,
 .topic-grandbox.sticker .navigation-section.second span, 
 .boxes-holder-name a:hover, 
 .newest-boxes-more:hover,
+.skininspect-placeholder:hover span,
 .main-col-info .theme-col-info h3,
 .color-box-selection-button,
 .color-box-selection-button:hover,
@@ -516,6 +517,11 @@ h3,
     /* filter: drop-shadow(0 0 1px rgb(200 200 200)); */
     box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
     border: unset;
+}
+
+.email-placeholder .email-text,
+.skininspect-placeholder .skin-text {
+    background-color: var(--darkgray);
 }
 
 .boxes-holder .box:hover .rating-case-single,

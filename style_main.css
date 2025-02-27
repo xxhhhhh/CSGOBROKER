@@ -349,7 +349,7 @@ nav .pages {
 .boxdefaultpage {
     position: relative;
     height: auto;
-    width: 1100px;
+    width: 1200px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -363,6 +363,7 @@ nav .pages {
     height: auto;
     width: 95%;
     background: linear-gradient(15deg, var(--darkygray) 30%, rgba(0, 0, 0, .15) 100%);
+    /* background: var(--darkygray); */
     border-radius: 10px;
     margin-top: 10px;
     padding: 30px;
@@ -448,6 +449,10 @@ nav .pages {
 }
 
 .skininspect-placeholder {
+    height: 50px;
+}
+
+.skininspect-placeholder {
     width: 100%;
     margin-bottom: 9px;
 }
@@ -455,12 +460,13 @@ nav .pages {
 .email-placeholder .email-text,
 .skininspect-placeholder .skin-text {
     width: 300px;
-    border-radius: 3px 0 0 3px;
-    background-color: rgba(0, 0, 0, .3);
+    border-radius: 5px 0 0 5px;
+    background-color: rgb(9 9 9);
 }
 
 .skininspect-placeholder .skin-text {
-    width: 94%;
+    width: 95%;
+    background-color: var(--darkygray);
 }
 
 .email-placeholder .email-text span,
@@ -472,25 +478,28 @@ nav .pages {
     justify-content: center;
     align-items: center;
     font-weight: 500;
-    transition: color .2s ease-in-out;
+    transition: color .15s ease-in-out;
     font-size: 22px;
 }
 
 .skininspect-placeholder .skin-text span {
-    font-size: 16px;
+    font-size: 15px;
     white-space: nowrap;
     justify-content: flex-start;
+    color: rgb(40 40 40);
     padding-left: 20px;
     overflow: hidden;
-    max-width: 97.5%;
+    max-width: 99%;
 }
 
 .email-placeholder .email-copy,
 .skininspect-placeholder .skin-copy {
     width: 60px;
     height: 100%;
-    border-radius: 0 3px 3px 0;
-    overflow: hidden;
+}
+
+.skininspect-placeholder .skin-copy {
+    width: 50px;
 }
 
 .email-copy button,
@@ -499,14 +508,20 @@ nav .pages {
     height: 100%;
     background-size: cover;
     border: none;
-    background-color: #ffffff05;
+    background-color: var(--darkygray);
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 0 5px 5px 0;
+    position: relative;
 }
 
-.email-copy button:hover::before,
-.skin-copy button:hover::before {
+.email-copy button {
+    background-color: rgb(8 8 8);
+}
+
+.email-copy button:hover::after,
+.skin-copy button:hover::after {
     opacity: 1;
 }
 
@@ -5255,10 +5270,8 @@ nav img:active,
     animation: icon-changed .8s ease-in-out;
 }
 
-.content button:hover.icon-changed,
-.content button:hover.icon-changed::before,
-.box.main .content button:hover.icon-changed,
-.box.main .content button:hover.icon-changed::before {
+.box button:hover.icon-changed,
+.box button:hover.icon-changed::before {
     background-color: rgb(32 32 32) !important;
 }
 
@@ -6957,8 +6970,8 @@ a[data-title]:after,
 .box .content button.copy::after,
 .site-promo-copy::after,
 .sitedetails .sitepros span::after,
-.email-copy button::before,
-.skin-copy button::before,
+.email-copy button::after,
+.skin-copy button::after,
 .payments-button::after {
     content: '';
     height: 22px;
@@ -7057,18 +7070,27 @@ a[data-title]:after,
 
 .box .content button.copy::after,
 .site-promo-copy::after,
-.email-copy button::before,
-.skin-copy button::before {
+.email-copy button::after,
+.skin-copy button::after {
     background-image: url(/img/icons/gamemodes/copy_bold.svg);
     opacity: .35;
     height: 12px;
     width: 12px;
 }
 
-.email-copy button::before,
-.skin-copy button::before {
-    height: 25px;
-    width: 25px;
+.email-copy button::after,
+.skin-copy button::after {
+    opacity: .15;
+}
+
+.email-copy button::after {
+    height: 21px;
+    width: 21px;
+}
+
+.skin-copy button::after {
+    height: 18px;
+    width: 18px;
 }
 
 .box .content button.copy::after {
@@ -8309,7 +8331,7 @@ div#results {
 
 .topic-grandbox.sticker .navigation-section.first::after,
 .sitepage.topic-craft .topic-grandbox .navigation-section.first::after {
-    content: 'Required Components';
+    content: 'Required Stickers';
     position: relative;
     font-size: 13px;
     color: rgba(255, 255, 255, .6);
@@ -8322,7 +8344,7 @@ div#results {
 
 .topic-boxes-holder.lang-ru .topic-grandbox.sticker .navigation-section.first::after,
 .sitepage.topic-craft.lang-ru .topic-grandbox .navigation-section.first::after {
-    content: 'Необходимые Компоненты';
+    content: 'Необходимые Стикеры';
 }
 
 .sitepage.topic-craft .navigation-section.third,
@@ -8625,7 +8647,7 @@ div#results {
     height: auto;
     margin-top: 9px;
     /* background: rgb(9 9 9); */
-    background: linear-gradient(180deg, var(--darkygray) 50%, rgb(9 9 9) 100%);
+    background: var(--darkygray);
     border-radius: 10px;
     margin-bottom: 9px;
     display: flex;
@@ -8809,6 +8831,13 @@ div#results {
     border-radius: 5px;
     font-size: 10px;
     font-weight: 500;
+}
+
+.skin-copy .copied-title,
+.email-copy .copied-title {
+    margin-right: unset;
+    bottom: unset;
+    top: -30px;
 }
 
 .main-page .copied-title {

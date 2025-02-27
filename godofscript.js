@@ -1,4 +1,4 @@
-function copyToClipboard(selector) {
+function copyToClipboard(selector, copyButton) {
   var $element = $(selector);
 
   var $temp = $("<input>");
@@ -8,19 +8,25 @@ function copyToClipboard(selector) {
   $temp.remove();
 
   var copiedMessage = (languageTag === 'ru') ? 'Скопировано' : 'Copied';
-
   var $title = $("<div class='copied-title'>" + copiedMessage + "</div>");
 
-  $element.siblings('.copy').append($title);
+  var $copyButton = $(copyButton);
 
-  $title.hide();
+  $copyButton.append($title);
+  $copyButton.addClass("icon-changed");
 
-  $title.fadeIn(150, function() {
-      $(this).delay(400).fadeOut(150, function() {
-          $(this).remove();
-      });
+  $title.hide().fadeIn(150, function () {
+    $(this).delay(400).fadeOut(150, function () {
+      $(this).remove();
+    });
   });
+
+  setTimeout(function () {
+    $copyButton.removeClass("icon-changed");
+  }, 800);
 }
+
+
 
 forcemodsboxes(); 
 
