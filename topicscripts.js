@@ -49,7 +49,7 @@ $(document).ready(function () {
                       .map(
                         (site) => `
                     <div class="site-searcher-box" id="${site}" data-title="${
-                          languageTag === "ru" ? "Искать в" : "Search on"
+                          languageTag === "ru" ? "Искать на" : "Search on"
                         } ${site}">
                         <div class="site-searcher-logo">
                             <img src="/img/${site
