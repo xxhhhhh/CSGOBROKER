@@ -13131,7 +13131,6 @@ div#results {
     .payments-block,
     .payments-button {
         margin-top: 4px;
-        margin-bottom: 2px;
     }
 
     .payments-button,
@@ -13180,6 +13179,11 @@ div#results {
     .payments-block {
         order: 0;
         z-index: 100;
+        height: 50px;
+    }
+
+    .payments-block.visible {
+        height: auto;
     }
 
     .payments-block-separate {
