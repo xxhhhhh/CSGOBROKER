@@ -76,35 +76,37 @@ $(document).ready(function () {
       });
 
       function insertRandomAdsBox() {
-
         if (href.endsWith("sticker-crafts") || href.endsWith("sticker-crafts.html")) {
           return;
         }
-
+      
         let adsFilePath = currentPath.includes("/ru/")
           ? "/code-parts/topic-ads-ru.html"
           : "/code-parts/topic-ads.html";
-
+      
+        let adsCount = 2;
+      
         fetch(adsFilePath)
           .then((response) => response.text())
           .then((adsBoxesHtml) => {
             const adsBoxes = document.createElement("div");
             adsBoxes.innerHTML = adsBoxesHtml;
-
+      
             const insertAfterElement = document.querySelector(".topic-grandbox");
-            const randomAdsBox =
-              adsBoxes.children[
-                Math.floor(Math.random() * adsBoxes.children.length)
-              ];
-
-            insertAfterElement.parentNode.insertBefore(
-              randomAdsBox,
-              insertAfterElement.nextSibling
-            );
-
-            setTimeout(() => randomAdsBox.classList.add("active"), 100);
+            
+            for (let i = 0; i < adsCount; i++) {
+              if (adsBoxes.children.length === 0) break;
+              const randomIndex = Math.floor(Math.random() * adsBoxes.children.length);
+              const randomAdsBox = adsBoxes.children[randomIndex];
+              insertAfterElement.parentNode.insertBefore(
+                randomAdsBox,
+                insertAfterElement.nextSibling
+              );
+              setTimeout(() => randomAdsBox.classList.add("active"), 100);
+            }
           });
       }
+      
 
       insertRandomAdsBox();
 
@@ -260,7 +262,7 @@ $(document).ready(function () {
           )}&sort=price&order=asc&utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=market&utm_content=link`,
           "Avan.Market": `https://avan.market/ru/market/cs?name=${encodeURIComponent(
             skinName
-          )}&r=csgobroker`,
+          )}&r=broker`,
           SkinSwap: `https://skinswap.com/buy?search=${encodeURIComponent(
             skinName
           )}&r=csgobroker&appid=730`,

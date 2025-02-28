@@ -262,7 +262,8 @@ h3,
 .color-box-selection-button.clicked,
 .singlemod-box[data-title]:after,
 .main-infobox:hover .main-infobox-content-text p,
-.sitepage.topic-craft .topic-grandbox .navigation-section.first::after  {
+.sitepage.topic-craft .topic-grandbox .navigation-section.first::after,
+.rec-box .content p  {
     color: #1a1a1a;
 }
 
@@ -474,7 +475,8 @@ h3,
 }
 
 .box .logobg a img,
-#rec-box-logobg img {
+#rec-box-logobg img,
+.rec-box .logobg a img {
     filter: drop-shadow(0 1px 0 rgb(100 100 100)) drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
 }
 
@@ -522,6 +524,11 @@ h3,
 .email-placeholder .email-text,
 .skininspect-placeholder .skin-text {
     background-color: var(--darkgray);
+}
+
+.rec-box .content {
+    background: var(--darkgray);
+    padding-top: 10px;
 }
 
 .boxes-holder .box:hover .rating-case-single,
