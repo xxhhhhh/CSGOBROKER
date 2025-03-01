@@ -289,7 +289,7 @@ $(document).ready(function () {
       async function fetchSkinPrices() {
         try {
           const response = await fetch(
-            "https://lisskins.csgobroker.workers.dev/"
+            '/code-parts/skinprices.json'
           );
           const skins = await response.json();
           return skins;
