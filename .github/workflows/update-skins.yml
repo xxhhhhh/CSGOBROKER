@@ -1,0 +1,24 @@
+name: Update Skins JSON
+
+on:
+  schedule:
+    - cron: "0 */3 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout репозиторий
+        uses: actions/checkout@v3
+
+      - name: Запрос данных из lis-skins.com
+        run: curl -sL "https://lis-skins.com/market_export_json/csgo.json" -o skins.json
+
+      - name: Проверка изменений
+        run: |
+          git diff --exit-code skins.json || (git config --global user.email "github-actions@github.com" && \
+          git config --global user.name "GitHub Actions" && \
+          git add skins.json && \
+          git commit -m "Обновлен JSON с ценами" && \
+          git push)
