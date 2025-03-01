@@ -531,6 +531,7 @@ $(document).ready(function () {
       } else if (
         currentPath.includes("/items/") ||
         currentPath.includes("/cases/") ||
+        currentPath.includes("/skins/") ||
         currentPath.includes("/collections/")
       ) {
         $(".topic-grandbox").load(
@@ -603,6 +604,24 @@ $(document).ready(function () {
                   ? "enabled"
                   : "reversed";
               $(this).toggleClass("enabled reversed");
+              updateNavigationReset();
+            });
+
+            $("#Price-Filter").on("click", function () {
+              $(this).toggleClass("enabled");
+
+              const skins = $(".box-skins-list .skin").get();
+              skins.sort((a, b) => {
+                const priceA = parseFloat($(a).find(".skin-price-info").text().split(" - ")[0].replace("$", "")) || 0;
+                const priceB = parseFloat($(b).find(".skin-price-info").text().split(" - ")[0].replace("$", "")) || 0;
+
+                return sortState === "none" || sortState === "reversed" ? priceA - priceB : priceB - priceA;
+              });
+
+              $(".box-skins-list").html(skins);
+
+              sortState = sortState === "none" || sortState === "reversed" ? "enabled" : "reversed";
+              $(this).toggleClass("reversed", sortState === "reversed");
               updateNavigationReset();
             });
 
