@@ -867,6 +867,43 @@ nav .pages {
     margin-left: 10px;
 }
 
+.skin-price-info {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 500;
+    position: absolute;
+    text-wrap: nowrap;
+    transition: all .15s ease-in-out;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+
+    /* padding: 7px;
+    background-color: var(--darkygray);
+    border-radius: 10px; */
+}
+
+.box-skins.solo .box-skins-list .skin .skin-price-info {
+    top: 12px;
+    opacity: .75;
+}
+
+.skin:hover .skin-price-info,
+.box-skins.solo .box-skins-list .skin:hover .skin-price-info {
+    opacity: 1;
+}
+
+#preview-content .skin-price-info {
+    transform: unset;
+    font-size: 14px;
+    opacity: 1;
+    width: 200px;
+    left: 25px;
+    top: 45px;
+}
+
 .skin-color-info:empty {
     display: none;
 }
@@ -1761,7 +1798,9 @@ nav .pages {
 }
 
 .box-skins.selected .skin .skin-desc-name,
-.box-skins.solo .skin .skin-desc-name {
+.box-skins.solo .skin .skin-desc-name,
+.box-skins.selected .skin .skin-price-info,
+.box-skins.solo .skin .skin-price-info {
     font-size: 12px;
 }
 
@@ -8454,7 +8493,9 @@ div#results {
 }
 
 .introduce-craft strong img,
-.introduce-craft p img {
+.introduce-craft p img,
+.introduce-craft p .skin-price-info,
+.navigation-section .skin-price-info {
     display: none;
 }
 
@@ -10393,6 +10434,14 @@ div#results {
     .big-category a::before, 
     .big-category .nonredir::before {
         content: unset;
+    }
+
+    .box-skins.solo .box-skins-list .skin .skin-price-info {
+        margin-left: 14px;
+    }
+
+    .preview-extras .skin-price-info {
+        top: -260px;
     }
 
     .payments-block.stickers {

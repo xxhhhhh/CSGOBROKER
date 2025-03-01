@@ -124,6 +124,8 @@ $(document).ready(function () {
         });
     
         const loadSkinsData = async () => {
+            const skinPrices = await fetchSkinPrices();
+    
             await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
                 const response = await fetch(`/code-parts/skins-list/${weapon}.json`);
                 const skinsData = await response.json();
@@ -135,13 +137,23 @@ $(document).ready(function () {
                         const isInNavigation = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).closest('.navigation-section').length > 0;
                         const imageUrl = isInNavigation ? skinData.imageOG : skinData.image;
     
+                        const matchedSkins = skinPrices.filter(skin => skin.name.includes(skinData.name));
+                        let priceInfo = "";
+    
+                        if (matchedSkins.length > 0) {
+                            const prices = matchedSkins.map(skin => skin.price).sort((a, b) => a - b);
+                            priceInfo = `${prices[0].toFixed(2)}$ - ${prices[prices.length - 1].toFixed(2)}$`;
+                        }
+    
                         const newSkinHTML = `
                             <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
                                 <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
                                 <div class="skin-desc-name">${skinData.name}</div>
-                            </div>`;
-                            
-                        $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function() {
+                                ${priceInfo ? `<div class="skin-price-info">${priceInfo}</div>` : ""}
+                            </div>
+                        `;
+    
+                        $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function () {
                             $(this).replaceWith(newSkinHTML);
                         });
                     }
@@ -163,6 +175,7 @@ $(document).ready(function () {
     
         loadSkinsData();
     }
+    
     
 
       function updateNavigationReset() {
@@ -273,115 +286,144 @@ $(document).ready(function () {
         return siteUrls[selectedSite] || siteUrls["default"];
       }
 
-      function showPreviewWindow(element) {
-        const previewWindow = $("#preview-window");
-        const previewContent = $("#preview-content");
-        let skinClasses = [];
-      
-        previewWindow.attr("class", "hidden");
-
-        if ($(element).hasClass("skin none")) {
-          return
+      async function fetchSkinPrices() {
+        try {
+          const response = await fetch(
+            "https://lisskins.csgobroker.workers.dev/"
+          );
+          const skins = await response.json();
+          return skins;
+        } catch (error) {
+          return [];
         }
-      
-        if ($(element).hasClass("skin")) {
+      }
+  
+  async function showPreviewWindow(element) {
+      const previewWindow = $("#preview-window");
+      const previewContent = $("#preview-content");
+      let skinClasses = [];
+  
+      previewWindow.attr("class", "hidden");
+  
+      if ($(element).hasClass("skin none")) {
+          return;
+      }
+  
+      if ($(element).hasClass("skin")) {
           skinClasses = $(element).attr("class").split(" ");
-        }
-      
-        const skinBox = $(element).closest(".box-skins-list, .topic-grandbox, .introduce-craft p");
-        const visibleItems = skinBox.find(".skin:not(.disabled)");
-        const totalItems = visibleItems.length;
-        const itemName = element.querySelector(".skin-desc-name")
+      }
+  
+      const skinBox = $(element).closest(".box-skins-list, .topic-grandbox, .introduce-craft p");
+      const visibleItems = skinBox.find(".skin:not(.disabled)");
+      const totalItems = visibleItems.length;
+      const itemName = element.querySelector(".skin-desc-name")
           ? element.querySelector(".skin-desc-name").textContent.trim()
           : "";
-
-          const weaponName = itemName.includes("|")
-          ? itemName.split("|")[0].trim()
-          : itemName;
-      
-        previewWindow.removeClass("hidden").attr({
+  
+      const wearConditions = ["Factory New", "Minimal Wear", "Field-Tested", "Well-Worn", "Battle-Scarred"];
+      const baseName = wearConditions.reduce((name, condition) => name.replace(`(${condition})`, "").trim(), itemName);
+  
+      previewWindow.removeClass("hidden").attr({
           "data-current-index": visibleItems.index(element),
           "data-total-items": totalItems,
           "data-current-box": skinBox.index(".box-skins-list, .topic-grandbox, .introduce-craft p"),
-        });
-      
-        skinClasses.forEach((skinClass) => {
+      });
+  
+      skinClasses.forEach((skinClass) => {
           if (!["skin"].includes(skinClass)) {
-            previewWindow.addClass(skinClass);
+              previewWindow.addClass(skinClass);
           }
-        });
-      
-        previewContent.html(element.innerHTML);
-        previewWindow.find(".skin-alt-info").remove();
-      
-        const weapon = element.getAttribute("weapon");
-        const skinAltInfoDiv = $("<a>", {
+      });
+  
+      previewContent.html(element.innerHTML);
+      previewWindow.find(".skin-alt-info").remove();
+  
+      const weapon = element.getAttribute("weapon");
+      const skinAltInfoDiv = $("<a>", {
           class: "skin-alt-info",
           href:
-            languageTag === "ru"
-              ? `/ru/topic/items/${weapon}`
-              : `/topic/items/${weapon}`,
+              languageTag === "ru"
+                  ? `/ru/topic/items/${weapon}`
+                  : `/topic/items/${weapon}`,
           "data-title":
-            languageTag === "ru"
-              ? `Все Скины на ${weaponName}`
-              : `All Skins on ${weaponName}`,
+              languageTag === "ru"
+                  ? `Все Скины на ${baseName}`
+                  : `All Skins on ${baseName}`,
           html: '<i class="officon library"></i>',
-        });
-      
-        let previewExtras = $("#preview-showcase .preview-extras");
-        if (previewExtras.length === 0) {
+      });
+  
+      let previewExtras = $("#preview-showcase .preview-extras");
+      if (previewExtras.length === 0) {
           previewExtras = $("<div>", { class: "preview-extras" });
           $("#preview-showcase").append(previewExtras);
-        }
-      
-        previewExtras.prepend(skinAltInfoDiv);
-
-        let skinColorInfo = previewExtras.find(".skin-color-info");
-        if (skinColorInfo.length === 0) {
+      }
+  
+      previewExtras.prepend(skinAltInfoDiv);
+  
+      let skinColorInfo = previewExtras.find(".skin-color-info");
+      if (skinColorInfo.length === 0) {
           skinColorInfo = $("<div>", { class: "skin-color-info" });
           previewExtras.append(skinColorInfo);
-        }
-      
-        skinColorInfo.empty();
-      
-        const skinId = element.getAttribute("skin-id");
-        fetch(`/code-parts/skins-list/${weapon}.json`)
+      }
+  
+      skinColorInfo.empty();
+  
+      // const skinsData = await fetchSkinPrices();
+      // const matchedSkins = skinsData.filter(skin => skin.name.includes(baseName));
+  
+      // if (matchedSkins.length > 0) {
+      //     const prices = matchedSkins.map(skin => skin.price).sort((a, b) => a - b);
+      //     const minPrice = prices[0].toFixed(2);
+      //     const maxPrice = prices[prices.length - 1].toFixed(2);
+  
+      //     const priceDiv = $("<div>", {
+      //         class: "skin-price-info",
+      //         text: `${minPrice}$ - ${maxPrice}$`
+      //     });
+  
+      //     previewExtras.append(priceDiv);
+      // } else {
+      // }
+
+      const skinId = element.getAttribute("skin-id");
+      fetch(`/code-parts/skins-list/${weapon}.json`)
           .then((response) => response.json())
           .then((skinsData) => {
-            const skinData = skinsData[skinId];
-            if (skinData) {
-              if (skinData.imageOG) {
-                const imageUrl = skinData.image;
-                previewContent.html(`
-                      <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
-                      <div class="skin-desc-name">${skinData.name}</div>
-                `);
+              const skinData = skinsData[skinId];
+              if (skinData) {
+                  if (skinData.imageOG) {
+                      const imageUrl = skinData.image;
+                      previewContent.html(`
+                          <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
+                          <div class="skin-desc-name">${skinData.name}</div>
+                      `);
+                  }
+  
+                  if (skinData.color) {
+                      skinData.color.forEach((color) => {
+                          const colorLink = $("<a>", {
+                              class: `skin-color ${color.toLowerCase()}`,
+                              href: languageTag === "ru"
+                                  ? `/ru/topic/skins/${color.toLowerCase()}-skins`
+                                  : `/topic/skins/${color.toLowerCase()}-skins`,
+                          });
+                          skinColorInfo.append(colorLink);
+                      });
+                  }
               }
-      
-              if (skinData.color) {
-                skinData.color.forEach((color) => {
-                  const colorLink = $("<a>", {
-                    class: `skin-color ${color.toLowerCase()}`,
-                    href:
-                      languageTag === "ru"
-                        ? `/ru/topic/skins/${color.toLowerCase()}-skins`
-                        : `/topic/skins/${color.toLowerCase()}-skins`,
-                  });
-                  skinColorInfo.append(colorLink);
-                });
-              }
-            }
           });
-      
-        $(".site-searcher-box")
+  
+      $(".site-searcher-box")
           .off("click")
           .on("click", function () {
-            const selectedSite = this.id;
-            const searchName = itemName;
-            const searchUrl = generateSearchUrl(searchName, selectedSite);
-            window.open(searchUrl, "_blank");
+              const selectedSite = this.id;
+              const searchName = itemName;
+              const searchUrl = generateSearchUrl(searchName, selectedSite);
+              window.open(searchUrl, "_blank");
           });
-      }
+  }
+  
+  
       
       function closePreviewWindow() {
         const previewWindow = $("#preview-window");
