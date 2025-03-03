@@ -551,8 +551,10 @@ $(document).ready(function () {
             if (languageTag === "ru") {
               const qualityFilter = document.getElementById("Quality-Filter");
               const rarityToggle = document.getElementById("Rarity-Toggle");
-              if (qualityFilter && rarityToggle) {
-                qualityFilter.dataset.title = "Сортировка по Редкости";
+              const priceFilter = document.getElementById("Price-Filter");
+              if (qualityFilter && rarityToggle && priceFilter) {
+                qualityFilter.dataset.title = "Сорт по Редкости";
+                priceFilter.dataset.title = "Сорт по Цене";
                 rarityToggle.dataset.title = "Показать Редкость";
               }
             }
