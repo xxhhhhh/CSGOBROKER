@@ -317,40 +317,47 @@ $(document).ready(function () {
       const visibleItems = skinBox.find(".skin:not(.disabled)");
       const totalItems = visibleItems.length;
       const itemName = element.querySelector(".skin-desc-name")
-          ? element.querySelector(".skin-desc-name").textContent.trim()
-          : "";
+      ? element.querySelector(".skin-desc-name").textContent.trim()
+      : "";
   
-      const wearConditions = ["Factory New", "Minimal Wear", "Field-Tested", "Well-Worn", "Battle-Scarred"];
-      const baseName = wearConditions.reduce((name, condition) => name.replace(`(${condition})`, "").trim(), itemName);
+      // const wearConditions = ["Factory New", "Minimal Wear", "Field-Tested", "Well-Worn", "Battle-Scarred"];
+      // const baseName = wearConditions.reduce((name, condition) => name.replace(`(${condition})`, "").trim(), itemName);
+      const weaponName = itemName.split("|")[0].trim();
   
       previewWindow.removeClass("hidden").attr({
-          "data-current-index": visibleItems.index(element),
-          "data-total-items": totalItems,
-          "data-current-box": skinBox.index(".box-skins-list, .topic-grandbox, .introduce-craft p"),
+        "data-current-index": visibleItems.index(element),
+        "data-total-items": totalItems,
+        "data-current-box": skinBox.index(".box-skins-list, .topic-grandbox, .introduce-craft p"),
       });
   
       skinClasses.forEach((skinClass) => {
-          if (!["skin"].includes(skinClass)) {
-              previewWindow.addClass(skinClass);
-          }
+        if (!["skin"].includes(skinClass)) {
+            previewWindow.addClass(skinClass);
+        }
       });
   
       previewContent.html(element.innerHTML);
       previewWindow.find(".skin-alt-info").remove();
   
       const weapon = element.getAttribute("weapon");
+      const isSticker = weapon.startsWith("sticker");
+  
       const skinAltInfoDiv = $("<a>", {
-          class: "skin-alt-info",
-          href:
-              languageTag === "ru"
-                  ? `/ru/topic/items/${weapon}`
-                  : `/topic/items/${weapon}`,
-          "data-title":
-              languageTag === "ru"
-                  ? `Все Скины на ${baseName}`
-                  : `All Skins on ${baseName}`,
-          html: '<i class="officon library"></i>',
-      });
+        class: "skin-alt-info",
+        href:
+            languageTag === "ru"
+                ? `/ru/topic/items/${weapon}`
+                : `/topic/items/${weapon}`,
+        "data-title":
+            languageTag === "ru"
+                ? isSticker
+                    ? "Вся Коллекция"
+                    : `Все Скины на ${weaponName}`
+                : isSticker
+                    ? "All Stickers"
+                    : `All Skins on ${weaponName}`,
+        html: '<i class="officon library"></i>',
+    });
   
       let previewExtras = $("#preview-showcase .preview-extras");
       if (previewExtras.length === 0) {
