@@ -855,6 +855,7 @@ nav .pages {
 .preview-extras {
     display: flex;
     position: absolute;
+    align-items: center;
     left: 25px;
     bottom: 90px;
     z-index: 10;
@@ -905,7 +906,7 @@ nav .pages {
     opacity: 1;
     width: 200px;
     left: 25px;
-    top: 45px;
+    top: 47px;
 }
 
 .skin-color-info:empty {
@@ -1208,6 +1209,7 @@ nav .pages {
 
 .preview-pause-button {
     padding: 11px;
+    padding-top: 5px;
 }
 
 .preview-nav-button {
@@ -7251,6 +7253,8 @@ a[data-title]:after,
 
 .officon.library::before {
     background-image: url(/img/icons/gamemodes/apps.svg);
+    height: 20px;
+    width: 20px;
 }
 
 .officon.diamond::before {
