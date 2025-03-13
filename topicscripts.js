@@ -19,7 +19,8 @@ $(document).ready(function () {
       currentPath.includes("/topic/collections/") ||
       currentPath.includes("/topic/skins/") ||
       currentPath.includes("/topic/guides/") ||
-      currentPath.includes("/topic/sticker-crafts/") ||
+      currentPath.includes("/topic/sticker-crafts/") &&
+      !currentPath.includes("/topic/sticker-crafts/skin/") ||
       currentPath.endsWith("sticker-crafts.html") ||
       currentPath.endsWith("sticker-crafts")
     ) {
@@ -81,8 +82,8 @@ $(document).ready(function () {
         }
       
         let adsFilePath = currentPath.includes("/ru/")
-          ? "/code-parts/topic-ads-ru.html"
-          : "/code-parts/topic-ads.html";
+          ? "/code-parts/topics/topic-ads-ru.html"
+          : "/code-parts/topics/topic-ads.html";
       
         let adsCount = 2;
       
@@ -127,7 +128,7 @@ $(document).ready(function () {
           const skinPrices = await fetchSkinPrices();
       
           await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
-              const response = await fetch(`/code-parts/skins-list/${weapon}.json`);
+              const response = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
               const skinsData = await response.json();
       
               const skinsForWeapon = skinsData || {};
@@ -395,7 +396,7 @@ $(document).ready(function () {
       // }
 
       const skinId = element.getAttribute("skin-id");
-      fetch(`/code-parts/skins-list/${weapon}.json`)
+      fetch(`/code-parts/topics/skins-list/${weapon}.json`)
           .then((response) => response.json())
           .then((skinsData) => {
               const skinData = skinsData[skinId];
@@ -551,7 +552,7 @@ $(document).ready(function () {
         currentPath.includes("/collections/")
       ) {
         $(".topic-grandbox").load(
-          "/code-parts/micro-parts/box-topic-items.html",
+          "/code-parts/topics/box-topic-items.html",
           function () {
             $(".navigation-weapon-type").click(function () {
               const weaponType = $(this).attr("class").split(" ")[1];
@@ -688,7 +689,7 @@ if (window.location.pathname.includes("/items/") || window.location.pathname.inc
             }
         }
     };
-    xhr.open("GET", "/code-parts/nav-bar-items.html", true);
+    xhr.open("GET", "/code-parts/topics/nav-bar-items.html", true);
     xhr.send();
   }
 
@@ -956,8 +957,8 @@ $(document).ready(function(){
         var topicpage = $('.topicpage');
         if (topicpage.length) {
             var urlnav = languageTag === 'ru' 
-                ? '/code-parts/micro-parts/nav-topic-box-ru.html' 
-                : '/code-parts/micro-parts/nav-topic-box.html';
+                ? '/code-parts/topics/nav-topic-box-ru.html' 
+                : '/code-parts/topics/nav-topic-box.html';
             
             $.get(urlnav, function (data) {
                 topicpage.append(data);
@@ -1120,7 +1121,7 @@ if (window.location.pathname.includes('/sticker-crafts/')) {
 
       async function importStickerCrafts() {
         try {
-            const response = await fetch("/code-parts/skins-list/sticker-crafts.json");
+            const response = await fetch("/code-parts/topics/sticker-crafts.json");
             if (!response.ok) return;
     
             const data = await response.json();
@@ -1258,7 +1259,7 @@ if (window.location.pathname.includes('/topic/skins/')) {
         fileName = 'expensive-skins-color-list.html';
       }
 
-      const importUrl = `/code-parts/micro-parts/topic-color-lists/${fileName}`;
+      const importUrl = `/code-parts/topics/topic-color-lists/${fileName}`;
       fetch(importUrl)
         .then(response => {
           if (!response.ok) {
@@ -1348,7 +1349,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const topicBoxesHolder = document.querySelector(".topic-boxes-holder.sticker-crafts");
   if (!topicBoxesHolder) return;
   
-  fetch("/code-parts/skins-list/sticker-crafts.json")
+  fetch("/code-parts/topics/sticker-crafts.json")
       .then(response => response.json())
       .then(data => {
           if (!Array.isArray(data)) return;
@@ -1452,7 +1453,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
       const loadSkinsData = async () => {
           await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
-              const response = await fetch(`/code-parts/skins-list/${weapon}.json`);
+              const response = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
               const skinsData = await response.json();
   
               const skinsForWeapon = skinsData || {};
