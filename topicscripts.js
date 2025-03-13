@@ -1173,6 +1173,10 @@ if (window.location.pathname.includes('/sticker-crafts/')) {
             } else {
                 craftingTable.insertAdjacentElement('afterend', stickerCraftsList);
             }
+
+            if (languageTag === "ru") {
+              updateURLs(stickerCraftsList);
+            }
     
             setTimeout(() => {
                 stickerCraftsList.classList.add('imported');
@@ -1343,49 +1347,69 @@ if (languageTag === "ru") {
   updateURLs(backbutton);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   var res = $(window).width();
   const itemsPerPage = res < 1365 ? 6 : 12;
   const topicBoxesHolder = document.querySelector(".topic-boxes-holder.sticker-crafts");
   if (!topicBoxesHolder) return;
   
+  const currentPath = window.location.pathname;
+  const isStickerCraftsPage = /\/sticker-crafts\/skin\//.test(currentPath);
+  
+  let skinBindMap = {};
+  
+  try {
+      const bindsResponse = await fetch("/code-parts/topics/sticker-crafts-binds.json");
+      const bindsData = await bindsResponse.json();
+      skinBindMap = bindsData || {};
+  } catch (error) {
+  }
+  
+  const pageKey = currentPath.split("/").pop().replace(".html", "");
+  const matchedSkinName = skinBindMap[pageKey];
+  
+    
   fetch("/code-parts/topics/sticker-crafts.json")
-      .then(response => response.json())
-      .then(data => {
-          if (!Array.isArray(data)) return;
+  .then(response => response.json())
+  .then(data => {
+      if (!Array.isArray(data)) return;
 
-          data.forEach(sticker => {
-                const topic = document.createElement("a");
-                topic.classList.add("topic-grandbox", "sticker");
-                topic.href = `/topic/sticker-crafts/${sticker.id}`;
+      const filteredData = isStickerCraftsPage && matchedSkinName 
+          ? data.filter(sticker => sticker.skin === matchedSkinName)
+          : data;
 
-                const extraClass = sticker.extra ? ` ${sticker.extra}` : "";
+      filteredData.forEach(sticker => {
+          const topic = document.createElement("a");
+          topic.classList.add("topic-grandbox", "sticker");
+          topic.href = `/topic/sticker-crafts/${sticker.id}`;
 
-                topic.innerHTML = `
-                <div class="topic-box">
-                    <div class="best ${sticker.range}"></div>
-                    <div class="logobg${extraClass}">
-                        <img src="${sticker.img}" alt="${sticker.title}" draggable="false">
-                    </div>
-                </div>
-                <div class="navigation-section first">
-                    <span>${sticker.title}</span>
-                </div>
-                <div class="navigation-section third">
-                    ${sticker.skins.map(skin => 
-                        `<div class="skin" weapon="${skin.weapon}" skin-id="${skin.skin_id}"></div>`
-                    ).join('')}
-                </div>
-                `;
-              topicBoxesHolder.appendChild(topic);
-          });
-          
-          setupPagination();
+          const extraClass = sticker.extra ? ` ${sticker.extra}` : "";
 
-          if (languageTag === "ru") {
-            updateURLs(topicBoxesHolder);
-          }
+          topic.innerHTML = `
+          <div class="topic-box">
+              <div class="best ${sticker.range}"></div>
+              <div class="logobg${extraClass}">
+                  <img src="${sticker.img}" alt="${sticker.title}" draggable="false">
+              </div>
+          </div>
+          <div class="navigation-section first">
+              <span>${sticker.title}</span>
+          </div>
+          <div class="navigation-section third">
+              ${sticker.skins.map(skin => 
+                  `<div class="skin" weapon="${skin.weapon}" skin-id="${skin.skin_id}"></div>`
+              ).join('')}
+          </div>
+          `;
+          topicBoxesHolder.appendChild(topic);
       });
+
+      setupPagination();
+
+      if (languageTag === "ru") {
+          updateURLs(topicBoxesHolder);
+      }
+  });
   
   function setupPagination() {
       const boxTopics = Array.from(topicBoxesHolder.querySelectorAll(".topic-grandbox"));
