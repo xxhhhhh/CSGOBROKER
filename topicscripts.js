@@ -124,54 +124,56 @@ $(document).ready(function () {
         });
     
         const loadSkinsData = async () => {
-            const skinPrices = await fetchSkinPrices();
-    
-            await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
-                const response = await fetch(`/code-parts/skins-list/${weapon}.json`);
-                const skinsData = await response.json();
-    
-                const skinsForWeapon = skinsData || {};
-                weaponToSkinIds[weapon].forEach((skinId) => {
-                    const skinData = skinsForWeapon[skinId];
-                    if (skinData) {
-                        const isInNavigation = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).closest('.navigation-section').length > 0;
-                        const imageUrl = isInNavigation ? skinData.imageOG : skinData.image;
-    
-                        const matchedSkins = skinPrices.filter(skin => skin.name.includes(skinData.name));
-                        let priceInfo = "";
-    
-                        if (matchedSkins.length > 0) {
-                            const prices = matchedSkins.map(skin => skin.price).sort((a, b) => a - b);
-                            priceInfo = `${prices[0].toFixed(2)}$ - ${prices[prices.length - 1].toFixed(2)}$`;
-                        }
-    
-                        const newSkinHTML = `
-                            <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
-                                <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
-                                <div class="skin-desc-name">${skinData.name}</div>
-                                ${priceInfo ? `<div class="skin-price-info">${priceInfo}</div>` : ""}
-                            </div>
-                        `;
-    
-                        $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function () {
-                            $(this).replaceWith(newSkinHTML);
-                        });
-                    }
-                });
-            }));
-    
-            $(".skin img").each(function () {
-                if (this.complete) {
-                    $(this).addClass("imported");
-                } else {
-                    $(this).on("load", function () {
-                        $(this).addClass("imported");
-                    });
-                }
-            });
-    
-            checkWeaponTypeAvailabilityForItems();
-        };
+          const skinPrices = await fetchSkinPrices();
+      
+          await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
+              const response = await fetch(`/code-parts/skins-list/${weapon}.json`);
+              const skinsData = await response.json();
+      
+              const skinsForWeapon = skinsData || {};
+              weaponToSkinIds[weapon].forEach((skinId) => {
+                  const skinData = skinsForWeapon[skinId];
+                  if (skinData) {
+                      const isInNavigation = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).closest('.navigation-section').length > 0;
+                      const imageUrl = isInNavigation ? skinData.imageOG : skinData.image;
+      
+                      const matchedSkins = skinPrices.filter(skin => skin.name.includes(skinData.name));
+                      let priceInfo = "";
+      
+                      if (matchedSkins.length > 0) {
+                          const prices = matchedSkins.map(skin => skin.price).sort((a, b) => a - b);
+                          priceInfo = prices[0] === prices[prices.length - 1] 
+                              ? `${prices[0].toFixed(2)}$ ~` 
+                              : `${prices[0].toFixed(2)}$ - ${prices[prices.length - 1].toFixed(2)}$`;
+                      }
+      
+                      const newSkinHTML = `
+                          <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
+                              <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
+                              <div class="skin-desc-name">${skinData.name}</div>
+                              ${priceInfo ? `<div class="skin-price-info">${priceInfo}</div>` : ""}
+                          </div>
+                      `;
+      
+                      $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function () {
+                          $(this).replaceWith(newSkinHTML);
+                      });
+                  }
+              });
+          }));
+      
+          $(".skin img").each(function () {
+              if (this.complete) {
+                  $(this).addClass("imported");
+              } else {
+                  $(this).on("load", function () {
+                      $(this).addClass("imported");
+                  });
+              }
+          });
+      
+          checkWeaponTypeAvailabilityForItems();
+      };
     
         loadSkinsData();
     }
@@ -398,13 +400,20 @@ $(document).ready(function () {
           .then((skinsData) => {
               const skinData = skinsData[skinId];
               if (skinData) {
-                  if (skinData.imageOG) {
-                      const imageUrl = skinData.image;
-                      previewContent.html(`
+                if (skinData.imageOG) {
+                  const imageUrl = skinData.image;
+                  const imgElement = previewContent.find("img");
+          
+                  if (imgElement.length) {
+                      imgElement.attr("src", imageUrl);
+                      
+                  } else {
+                      previewContent.append(`
                           <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
                           <div class="skin-desc-name">${skinData.name}</div>
                       `);
                   }
+              }
   
                   if (skinData.color) {
                       skinData.color.forEach((color) => {
@@ -1109,70 +1118,67 @@ if (window.location.pathname.includes('/sticker-crafts/')) {
       ? '/ru/topic/sticker-crafts.html' 
       : '/topic/sticker-crafts.html';
 
-  async function importStickerCrafts() {
-      try {
-          const response = await fetch(topicUrl);
-          if (!response.ok) {
-              return;
-          }
-
-          const text = await response.text();
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(text, 'text/html');
-
-          const topicBoxesHolder = doc.querySelector('.topic-boxes-holder');
-          if (!topicBoxesHolder) {
-              return;
-          }
-
-          const boxTopics = Array.from(topicBoxesHolder.querySelectorAll('.topic-grandbox'));
-          if (boxTopics.length === 0) {
-              return;
-          }
-
-          const currentPageSpan = document.querySelector('.siteblock .topic-grandbox .navigation-section.first span');
-          const currentPageText = currentPageSpan ? currentPageSpan.textContent.trim() : '';
-
-          const filteredTopics = boxTopics.filter(box => {
-              const span = box.querySelector('.navigation-section.first span');
-              const spanText = span ? span.textContent.trim() : '';
-              return spanText !== currentPageText;
-          });
-
-          if (filteredTopics.length === 0) {
-              return;
-          }
-
-          const randomTopics = filteredTopics.sort(() => 0.5 - Math.random()).slice(0, 5);
-
-          const skinInspectPlaceholder = document.querySelector('.skininspect-placeholder');
-          const craftingTable = document.querySelector('.crafting-table');
-
-          if (!craftingTable) {
-              return;
-          }
-
-          const stickerCraftsList = document.createElement('div');
-          stickerCraftsList.classList.add('sticker-crafts-list');
-
-          randomTopics.forEach(box => {
-              stickerCraftsList.appendChild(box.cloneNode(true));
-          });
-
-          if (skinInspectPlaceholder) {
-              skinInspectPlaceholder.insertAdjacentElement('afterend', stickerCraftsList);
-          } else {
-              craftingTable.insertAdjacentElement('afterend', stickerCraftsList);
-          }
-
-          setTimeout(() => {
-              stickerCraftsList.classList.add('imported');
-          }, 150);
-
-      } catch (error) {
-          return;
-      }
-  }
+      async function importStickerCrafts() {
+        try {
+            const response = await fetch("/code-parts/skins-list/sticker-crafts.json");
+            if (!response.ok) return;
+    
+            const data = await response.json();
+            if (!Array.isArray(data) || data.length === 0) return;
+    
+            const currentPageSpan = document.querySelector('.siteblock .topic-grandbox .navigation-section.first span');
+            const currentPageText = currentPageSpan ? currentPageSpan.textContent.trim() : '';
+    
+            const filteredTopics = data.filter(sticker => sticker.title.trim() !== currentPageText);
+            if (filteredTopics.length === 0) return;
+    
+            const randomTopics = filteredTopics.sort(() => 0.5 - Math.random()).slice(0, 5);
+    
+            const skinInspectPlaceholder = document.querySelector('.skininspect-placeholder');
+            const craftingTable = document.querySelector('.crafting-table');
+            if (!craftingTable) return;
+    
+            const stickerCraftsList = document.createElement('div');
+            stickerCraftsList.classList.add('sticker-crafts-list');
+    
+            randomTopics.forEach(sticker => {
+                const topic = document.createElement("a");
+                topic.classList.add("topic-grandbox", "sticker");
+                topic.href = `/topic/sticker-crafts/${sticker.id}`;
+                
+                const extraClass = sticker.extra ? ` ${sticker.extra}` : "";
+                
+                topic.innerHTML = `
+                    <div class="topic-box">
+                        <div class="best ${sticker.range}"></div>
+                        <div class="logobg${extraClass}">
+                            <img src="${sticker.img}" alt="${sticker.title}" draggable="false">
+                        </div>
+                    </div>
+                    <div class="navigation-section first">
+                        <span>${sticker.title}</span>
+                    </div>
+                    <div class="navigation-section third">
+                        ${sticker.skins.map(skin => 
+                            `<div class="skin" weapon="${skin.weapon}" skin-id="${skin.skin_id}"></div>`
+                        ).join('')}
+                    </div>
+                `;
+                stickerCraftsList.appendChild(topic);
+            });
+    
+            if (skinInspectPlaceholder) {
+                skinInspectPlaceholder.insertAdjacentElement('afterend', stickerCraftsList);
+            } else {
+                craftingTable.insertAdjacentElement('afterend', stickerCraftsList);
+            }
+    
+            setTimeout(() => {
+                stickerCraftsList.classList.add('imported');
+            }, 150);
+        } catch (error) {
+        }
+    }
 
   importStickerCrafts();
 }

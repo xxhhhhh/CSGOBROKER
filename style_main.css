@@ -485,6 +485,7 @@ nav .pages {
     border-radius: 5px;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .skininspect-placeholder {
@@ -504,7 +505,7 @@ nav .pages {
 }
 
 .skininspect-placeholder .skin-text {
-    width: 95%;
+    width: 100%;
     background-color: var(--darkygray);
 }
 
@@ -538,7 +539,9 @@ nav .pages {
 }
 
 .skininspect-placeholder .skin-copy {
+    position: absolute;
     width: 50px;
+    right: 0;
 }
 
 .email-copy button,
@@ -8540,7 +8543,7 @@ div#results {
 
 .sticker-crafts-list .topic-grandbox.sticker .topic-box .logobg img {
     transform: unset;
-    max-height: 45%;
+    max-height: 40%;
     max-width: 80%;
 }
 
@@ -13167,6 +13170,7 @@ div#results {
         margin-top: unset;
         margin-left: 8px;
     }
+
     .payments-block,
     .payments-button {
         position: relative;
@@ -13512,6 +13516,10 @@ div#results {
     bottom: 0;
 }
 
+.sticker-crafts .pagination-holder {
+    bottom: 8px;
+}
+
 .pagination-button {
     height: 40px;
     width: 40px;
@@ -13696,6 +13704,14 @@ div#results {
         margin-bottom: 10px;
     }
 
+    .skininspect-placeholder {
+        margin-bottom: unset;
+    }
+
+    .sticker-crafts .pagination-holder {
+        bottom: 0;
+    }
+
     .singlemod-box:has(.back-button):hover {
         transform: scale(1.01);
     }
@@ -13739,8 +13755,7 @@ div#results {
     }
 
     .sticker-crafts-list.imported {
-        margin-top: 1px;
-        margin-bottom: 4px;
+        margin: 4px 0;
     }
 
     .sitepage.topic-craft .sticker-crafts-list .topic-grandbox {
