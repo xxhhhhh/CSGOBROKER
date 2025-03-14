@@ -1114,11 +1114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 if (window.location.pathname.includes('/sticker-crafts/')) {
-  const languageTag = document.documentElement.lang || 'en';
-  const topicUrl = languageTag === 'ru' 
-      ? '/ru/topic/sticker-crafts.html' 
-      : '/topic/sticker-crafts.html';
-
+  
       async function importStickerCrafts() {
         try {
             const response = await fetch("/code-parts/topics/sticker-crafts.json");
@@ -1403,6 +1399,10 @@ document.addEventListener("DOMContentLoaded", async function () {
           `;
           topicBoxesHolder.appendChild(topic);
       });
+
+      if (filteredData.length > 12) {
+        topicBoxesHolder.classList.add("pagination");
+      }
 
       setupPagination();
 

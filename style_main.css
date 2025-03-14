@@ -3329,7 +3329,7 @@ nav #logo:hover {
     min-height: 738px;
 }
 
-.topic-boxes-holder.sticker-crafts {
+.topic-boxes-holder.sticker-crafts.pagination {
     min-height: 812px;
 }
 
@@ -12387,7 +12387,8 @@ div#results {
         padding-bottom: 55px;
     }
 
-    .topic-boxes-holder.sticker-crafts {
+    .topic-boxes-holder.sticker-crafts,
+    .topic-boxes-holder.sticker-crafts.pagination {
         min-height: 699px;
     }
 
