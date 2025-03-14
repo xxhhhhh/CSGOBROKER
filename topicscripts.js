@@ -301,82 +301,80 @@ $(document).ready(function () {
         }
       }
   
-  async function showPreviewWindow(element) {
-      const previewWindow = $("#preview-window");
-      const previewContent = $("#preview-content");
-      let skinClasses = [];
-  
-      previewWindow.attr("class", "hidden");
-  
-      if ($(element).hasClass("skin none")) {
-          return;
-      }
-  
-      if ($(element).hasClass("skin")) {
-          skinClasses = $(element).attr("class").split(" ");
-      }
-  
-      const skinBox = $(element).closest(".box-skins-list, .topic-grandbox, .introduce-craft p");
-      const visibleItems = skinBox.find(".skin:not(.disabled)");
-      const totalItems = visibleItems.length;
-      const itemName = element.querySelector(".skin-desc-name")
-      ? element.querySelector(".skin-desc-name").textContent.trim()
-      : "";
-  
-      // const wearConditions = ["Factory New", "Minimal Wear", "Field-Tested", "Well-Worn", "Battle-Scarred"];
-      // const baseName = wearConditions.reduce((name, condition) => name.replace(`(${condition})`, "").trim(), itemName);
-      const weaponName = itemName.split("|")[0].trim();
-  
-      previewWindow.removeClass("hidden").attr({
-        "data-current-index": visibleItems.index(element),
-        "data-total-items": totalItems,
-        "data-current-box": skinBox.index(".box-skins-list, .topic-grandbox, .introduce-craft p"),
-      });
-  
-      skinClasses.forEach((skinClass) => {
-        if (!["skin"].includes(skinClass)) {
-            previewWindow.addClass(skinClass);
+      async function showPreviewWindow(element) {
+        const previewWindow = $("#preview-window");
+        const previewContent = $("#preview-content");
+        let skinClasses = [];
+    
+        previewWindow.attr("class", "hidden");
+    
+        if ($(element).hasClass("skin none")) {
+            return;
         }
-      });
-  
-      previewContent.html(element.innerHTML);
-      previewWindow.find(".skin-alt-info").remove();
-  
-      const weapon = element.getAttribute("weapon");
-      const isSticker = weapon.startsWith("sticker");
-  
-      const skinAltInfoDiv = $("<a>", {
-        class: "skin-alt-info",
-        href:
-            languageTag === "ru"
-                ? `/ru/topic/items/${weapon}`
-                : `/topic/items/${weapon}`,
-        "data-title":
-            languageTag === "ru"
-                ? isSticker
-                    ? "Вся Коллекция"
-                    : `Все Скины на ${weaponName}`
-                : isSticker
-                    ? "All Stickers"
-                    : `All Skins on ${weaponName}`,
-        html: '<i class="officon library"></i>',
-    });
-  
-      let previewExtras = $("#preview-showcase .preview-extras");
-      if (previewExtras.length === 0) {
-          previewExtras = $("<div>", { class: "preview-extras" });
-          $("#preview-showcase").append(previewExtras);
-      }
-  
-      previewExtras.prepend(skinAltInfoDiv);
-  
-      let skinColorInfo = previewExtras.find(".skin-color-info");
-      if (skinColorInfo.length === 0) {
-          skinColorInfo = $("<div>", { class: "skin-color-info" });
-          previewExtras.append(skinColorInfo);
-      }
-  
-      skinColorInfo.empty();
+    
+        if ($(element).hasClass("skin")) {
+            skinClasses = $(element).attr("class").split(" ");
+        }
+    
+        const skinBox = $(element).closest(".box-skins-list, .topic-grandbox, .introduce-craft p");
+        const visibleItems = skinBox.find(".skin:not(.disabled)");
+        const totalItems = visibleItems.length;
+        const itemName = element.querySelector(".skin-desc-name")
+            ? element.querySelector(".skin-desc-name").textContent.trim()
+            : "";
+    
+        const weaponName = itemName.split("|")[0].trim();
+    
+        previewWindow.removeClass("hidden").attr({
+            "data-current-index": visibleItems.index(element),
+            "data-total-items": totalItems,
+            "data-current-box": skinBox.index(".box-skins-list, .topic-grandbox, .introduce-craft p"),
+        });
+    
+        skinClasses.forEach((skinClass) => {
+            if (!["skin"].includes(skinClass)) {
+                previewWindow.addClass(skinClass);
+            }
+        });
+    
+        previewContent.html(element.innerHTML);
+        previewWindow.find(".skin-alt-info, .skin-craft-info").remove();
+    
+        const weapon = element.getAttribute("weapon");
+        const isSticker = weapon.startsWith("sticker");
+    
+        const skinAltInfoDiv = $("<a>", {
+            class: "skin-alt-info titled",
+            href:
+                languageTag === "ru"
+                    ? `/ru/topic/items/${weapon}`
+                    : `/topic/items/${weapon}`,
+            "data-title":
+                languageTag === "ru"
+                    ? isSticker
+                        ? "Вся Коллекция"
+                        : `Все Скины на ${weaponName}`
+                    : isSticker
+                        ? "All Stickers"
+                        : `All Skins on ${weaponName}`,
+            html: '<i class="officon library"></i>',
+        });
+    
+        let previewExtras = $("#preview-showcase .preview-extras");
+        if (previewExtras.length === 0) {
+            previewExtras = $("<div>", { class: "preview-extras" });
+            $("#preview-showcase").append(previewExtras);
+        }
+    
+        previewExtras.prepend(skinAltInfoDiv);
+    
+        let skinColorInfo = previewExtras.find(".skin-color-info");
+        if (skinColorInfo.length === 0) {
+            skinColorInfo = $("<div>", { class: "skin-color-info" });
+            previewExtras.append(skinColorInfo);
+        }
+    
+        skinColorInfo.empty();
   
       // const skinsData = await fetchSkinPrices();
       // const matchedSkins = skinsData.filter(skin => skin.name.includes(baseName));
@@ -429,6 +427,26 @@ $(document).ready(function () {
                   }
               }
           });
+
+          fetch("/code-parts/topics/sticker-crafts-binds.json")
+          .then((response) => response.json())
+          .then((bindsData) => {
+              const pageKey = Object.keys(bindsData).find(key => bindsData[key] === itemName);
+              if (pageKey) {
+                  const skinCraftInfoDiv = $("<a>", {
+                      class: "skin-craft-info titled",
+                      href:
+                      languageTag === "ru"
+                          ? `/ru/topic/sticker-crafts/skin/${pageKey}`
+                          : `/topic/sticker-crafts/skin/${pageKey}`,
+                      "data-title": languageTag === "ru"
+                          ? `Все Стикер-Крафты для ${itemName}`
+                          : `All Sticker-Crafts for ${itemName}`,
+                      html: '<i class="officon stickers"></i>',
+                  });
+                  previewExtras.prepend(skinCraftInfoDiv);
+              }
+          });
   
       $(".site-searcher-box")
           .off("click")
@@ -447,6 +465,7 @@ $(document).ready(function () {
         previewWindow.addClass("hidden");
         previewWindow.attr("class", "hidden");
         previewWindow.find(".skin-alt-info").remove();
+        previewWindow.find(".skin-craft-info").remove();
 
         $("#preview-showcase .preview-extras").remove();
       }

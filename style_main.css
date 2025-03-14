@@ -999,7 +999,7 @@ nav .pages {
 
 .skin-color.black {
     background: #1f1f1f;
-    background: linear-gradient(180deg, #1f1f1f 30%, #141414 100%);
+    background: linear-gradient(180deg, #181818 30%, #141414 100%);
 }
 
 .skin-color.gray {
@@ -1015,11 +1015,15 @@ nav .pages {
     z-index: 1;
 }
 
+.skin-craft-info {
+    margin-right: 8px;
+}
+
 #preview-showcase .skin-alt-info:hover {
     opacity: 1;
 }
 
-#preview-showcase .skin-alt-info[data-title]:after {
+#preview-showcase .titled[data-title]:after {
     left: -3px;
     content: attr(data-title);
     margin-top: -15px !important;
@@ -1034,7 +1038,7 @@ nav .pages {
     display: unset !important;
 }
 
-#preview-showcase .skin-alt-info[data-title]:hover:after {
+#preview-showcase .titled[data-title]:hover:after {
 
     transform: translateY(-50%);
     transition: all .15s ease-in-out;
@@ -6744,6 +6748,8 @@ a[data-title]:after,
 
 .officon.stickers::before {
     background-image: url(/img/icons/gamemodes/stickers.svg);
+    height: 20px;
+    width: 20px;
 }
 
 .officon.ak47::before {
