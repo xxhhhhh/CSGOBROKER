@@ -696,6 +696,7 @@ nav .pages {
 .navigation-weapon-sort {
     height: 40px;
     width: 40%;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8528,10 +8529,12 @@ div#results {
 .sitepage.topic-craft .topic-box .logobg img,
 .topic-boxes-holder .topic-grandbox.sticker .topic-box .logobg img {
     max-height: 47%;
+    width: auto;
     height: auto;
     max-width: 75%;
     transform: rotate(8deg);
     transition: all .15s ease-in-out;
+    object-fit: contain;
     margin: auto 0;
 }
 
@@ -12731,7 +12734,7 @@ div#results {
 
     .boxes-holder {
         width: 100%;
-        margin-top: 9px;
+        margin-top: 7px;
         justify-content: space-evenly;
     }
 
@@ -12881,7 +12884,7 @@ div#results {
     }
 
     .boxes-holder {
-        margin-top: 11px;
+        margin-top: 7px;
         justify-content: center !important;
     }
 
@@ -13037,7 +13040,7 @@ div#results {
 
     .main-page {
         max-width: 100%;
-        margin-top: 11px;
+        margin-top: 9px;
         flex-direction: column;
         flex-wrap: nowrap;
     }
@@ -13092,8 +13095,12 @@ div#results {
     }
 
     .boxes-holder-section.big {
-        margin: 8px;
+        margin: 4px;
         margin-top: 35px;
+    }
+
+    .boxes-holder-section {
+        margin: 4px;
     }
 
     .boxes-holder-section.firstelem {

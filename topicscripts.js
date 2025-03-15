@@ -77,7 +77,6 @@ $(document).ready(function () {
       });
 
       async function addMoreCraftsLink() {
-        const currentPath = window.location.pathname.replace(/\.html$/, "");
             
         if (currentPath.includes("/topic/sticker-crafts/") && !currentPath.includes("/topic/sticker-crafts/skin/")) {
             try {
@@ -106,7 +105,7 @@ $(document).ready(function () {
                     }
                 }
         
-                if (!correctId) return; // Если не нашли соответствующий ID, выходим
+                if (!correctId) return; 
     
                 const relatedCrafts = craftsData.filter(item => item.skin === skinName);
                 if (new Set(relatedCrafts.map(item => item.id)).size < 2) return;
@@ -132,8 +131,6 @@ $(document).ready(function () {
     }
     
     addMoreCraftsLink();
-    
-    
     
 
       function insertRandomAdsBox() {
