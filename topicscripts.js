@@ -76,6 +76,66 @@ $(document).ready(function () {
         icon.toggleClass("pause play");
       });
 
+      async function addMoreCraftsLink() {
+        const currentPath = window.location.pathname.replace(/\.html$/, "");
+            
+        if (currentPath.includes("/topic/sticker-crafts/") && !currentPath.includes("/topic/sticker-crafts/skin/")) {
+            try {
+                const [craftsResponse, bindsResponse] = await Promise.all([
+                    fetch("/code-parts/topics/sticker-crafts.json"),
+                    fetch("/code-parts/topics/sticker-crafts-binds.json")
+                ]);
+    
+                const craftsData = await craftsResponse.json();
+                const bindsData = await bindsResponse.json();
+    
+                if (!Array.isArray(craftsData) || typeof bindsData !== "object") return;
+    
+                let currentId = currentPath.split("/").pop().replace(/\.html$/, "");
+                const currentCraft = craftsData.find(item => item.id === currentId);
+                if (!currentCraft) return;
+    
+                const skinName = bindsData[currentId] || currentCraft.skin;
+                if (!skinName) return;
+
+                let correctId = null;
+                for (const [key, value] of Object.entries(bindsData)) {
+                    if (value === skinName) {
+                        correctId = key;
+                        break;
+                    }
+                }
+        
+                if (!correctId) return; // Если не нашли соответствующий ID, выходим
+    
+                const relatedCrafts = craftsData.filter(item => item.skin === skinName);
+                if (new Set(relatedCrafts.map(item => item.id)).size < 2) return;
+
+                const moreCraftsHref = `${languageTag === "ru" ? "/ru" : ""}/topic/sticker-crafts/skin/${correctId}`;
+    
+                const boxExtraLinks = document.createElement("div");
+                boxExtraLinks.classList.add("box-extra-links");
+    
+                const moreCraftsLink = document.createElement("a");
+                moreCraftsLink.classList.add("more-crafts", "extra-abox");
+                moreCraftsLink.href = moreCraftsHref;
+                moreCraftsLink.innerHTML = `<span>${languageTag === "ru" ? `Больше Крафтов с ${skinName}` : `More Sticker Crafts for ${skinName}`}</span>`;
+    
+                boxExtraLinks.appendChild(moreCraftsLink);
+    
+                const topicGrandbox = document.querySelector(".topic-grandbox");
+                if (topicGrandbox) {
+                    topicGrandbox.insertAdjacentElement("afterend", boxExtraLinks);
+                }
+            } catch {}
+        }
+    }
+    
+    addMoreCraftsLink();
+    
+    
+    
+
       function insertRandomAdsBox() {
         if (href.endsWith("sticker-crafts") || href.endsWith("sticker-crafts.html")) {
           return;
@@ -458,8 +518,6 @@ $(document).ready(function () {
           });
   }
   
-  
-      
       function closePreviewWindow() {
         const previewWindow = $("#preview-window");
         previewWindow.addClass("hidden");

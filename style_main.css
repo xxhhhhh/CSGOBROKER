@@ -3713,8 +3713,7 @@ nav #logo:hover {
     }
 }
 
-.mirror-redirect,
-.partner-site {
+.extra-abox {
     width: 300px;
     height: 60px;
     background-color: var(--darkygray);
@@ -3788,16 +3787,21 @@ nav #logo:hover {
     height: auto;
 }
 
-.mirror-redirect:hover,
-.partner-site:hover {
+.extra-abox:hover {
     transform: scale(1.02);
 }
 
-.mirror-redirect span,
-.partner-site span {
+.extra-abox span {
     font-size: 16px;
     font-weight: 500;
     transition: all .15s ease-in-out;
+}
+
+.more-crafts span {
+    font-size: 14px;
+    text-align: center;
+    text-wrap-style: pretty;
+    width: 85%;
 }
 
 .bonusdesc {
@@ -8051,7 +8055,7 @@ label:active,
 .preview-nav-button:active,
 .site-searcher-box:active,
 .nav-review li:active,
-.mirror-redirect:active span,
+.extra-abox:active span,
 .methodlist a:active::before,
 .email-copy button:active,
 .email-copy button:active i,
@@ -10450,6 +10454,16 @@ div#results {
         content: unset;
     }
 
+    .box-extra-links:has(.more-crafts) {
+        bottom: 7px;
+        z-index: 3;
+    }
+    
+    .more-crafts span {
+        font-size: 12px;
+        color: var(--gray);
+    }
+
     .box-skins.solo .box-skins-list .skin .skin-price-info {
         margin-left: 14px;
     }
@@ -11453,8 +11467,7 @@ div#results {
         padding-top: 10px;
     }
 
-    .mirror-redirect,
-    .partner-site {
+    .extra-abox {
         width: max-content;
         height: auto;
         padding: 5px 0;
