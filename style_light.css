@@ -969,7 +969,8 @@ ul .submenu li .nonredir,
 .officon.zoom-out::before,
 .site-promo-copy::after,
 .infoicon::before,
-.box-skins .officon.chevron {
+.box-skins .officon.chevron,
+.site-attention.event::after {
     filter: brightness(.2);
     opacity: 1;
 }

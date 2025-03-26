@@ -2151,6 +2151,43 @@ h3 {
     order: -2;
 }
 
+.site-attention.event {
+    overflow: hidden;
+}
+
+/* .site-attention.event::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 35px;
+    width: 40px;
+    background: rgba(0, 0, 0, .1);
+    border-radius: 0 0 10px 0;
+}
+
+.site-attention.event::after {
+    background-image: url(/img/icons/gamemodes/cake-birthday.svg);
+    transform: rotate(-5deg);
+    position: absolute;
+    left: 11px;
+    top: 7px;
+    height: 18px !important;
+    width: 18px !important;
+} */
+
+
+.site-attention.event::after {
+    background-image: url(/img/icons/gamemodes/party-horn.svg);
+    transform: rotate(-5deg);
+    position: absolute;
+    left: 11px;
+    top: 20px;
+    height: 150px !important;
+    width: 150px !important;
+    opacity: .1 !important;
+}
+
 .info-block {
     width: 96%;
     display: flex;
@@ -4650,6 +4687,7 @@ nav img:active,
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    transition: all .15s ease-in-out;
 }
 
 .box .logobg .bonuses-block .best {
@@ -6708,6 +6746,13 @@ a[data-title]:after,
     background-image: url(/img/icons/gamemodes/globe.svg);
 }
 
+.officon.cake::before {
+    background-image: url(/img/icons/gamemodes/party-horn.svg);
+    height: 18px;
+    width: 18px;
+    opacity: 1;
+}
+
 .typesinside .towers::before {
     background-image: url(/img/icons/gamemodes/towers.svg);
 }
@@ -7070,7 +7115,8 @@ a[data-title]:after,
 .sitedetails .sitepros span::after,
 .email-copy button::after,
 .skin-copy button::after,
-.payments-button::after {
+.payments-button::after,
+.site-attention.event::after {
     content: '';
     height: 22px;
     width: 22px;
@@ -11222,7 +11268,8 @@ div#results {
         filter: unset;
     }
 
-    .main-page .box:hover .logobg .best {
+    .main-page .box:hover .logobg .best,
+    .main-page .box:hover .logobg .bonuses-block {
         opacity: 0;
     }
 
@@ -12212,6 +12259,7 @@ div#results {
     }
 
     .boxes-holder-section .box .logobg .best,
+    .boxes-holder-section .box .logobg .upd,
     .boxes-holder-sectio .bonuses-block {
         top: -4px;
         right: -4px;
