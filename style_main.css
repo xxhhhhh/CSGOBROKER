@@ -2151,41 +2151,95 @@ h3 {
     order: -2;
 }
 
+/* CSFAIL BLOCK */
+
 .site-attention.event {
     overflow: hidden;
+    line-height: 22px;
 }
 
-/* .site-attention.event::before {
+.site-attention.event span {
+    user-select: auto;
+    z-index: 1;
+}
+
+.site-attention.event strong.styled {
+    position: relative;
+    z-index: 1;
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.site-attention.event strong.code {
+    font-weight: 500;
+    background: rgb(21 21 21); 
+    padding: 3px 5px; 
+    border-radius: 5px;
+}
+
+.site-attention.event strong.item {
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+}
+
+.site-attention.event strong.item::after {
+    display: none;
+}
+
+.site-attention.event span.main-line {
+    width: 100%;
+    position: relative;
+    display: block;
+}
+
+.box .upd.csfail {
+    cursor: pointer;
+}
+
+.box .upd.csfail a {
     content: '';
     position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 35px;
-    width: 40px;
-    background: rgba(0, 0, 0, .1);
-    border-radius: 0 0 10px 0;
+    bottom: 0;
+    width: 125px;
+    height: 135px;
+    background-repeat: no-repeat;
+    /* aspect-ratio: 1 / 1; */
+    background-image: url(/img/csfail-event.jpg);
+    background-size: contain;
+    transition: all .15s ease-in-out;
+    display: block;
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+    border-radius: 5px;
+}
+
+.box .upd.csfail:hover a {
+    user-select: auto;
+    pointer-events: all;
+    opacity: 1;
+    margin-bottom: 30px;
+}
+
+.box .upd.csfail a:hover {
+    transform: scale(1.05);
 }
 
 .site-attention.event::after {
-    background-image: url(/img/icons/gamemodes/cake-birthday.svg);
-    transform: rotate(-5deg);
-    position: absolute;
-    left: 11px;
-    top: 7px;
-    height: 18px !important;
-    width: 18px !important;
-} */
-
-
-.site-attention.event::after {
-    background-image: url(/img/icons/gamemodes/party-horn.svg);
+    /* background-image: url(/img/icons/gamemodes/party-horn.svg); */
+    background-image: unset;
+    mask-image: url(/img/icons/gamemodes/party-horn.svg);
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    background-color: var(--main-color);
     transform: rotate(-5deg);
     position: absolute;
     left: 11px;
     top: 20px;
     height: 150px !important;
     width: 150px !important;
-    opacity: .1 !important;
+    opacity: .12 !important;
 }
 
 .info-block {
@@ -3024,7 +3078,8 @@ h3 {
 }
 
 .instruction li strong::after,
-.instruction li a::after {
+.instruction li a::after,
+.site-attention.event strong.item::after {
     content: '';
     z-index: -1;
     width: 100%;

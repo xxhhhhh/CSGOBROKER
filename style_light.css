@@ -263,7 +263,8 @@ h3,
 .singlemod-box[data-title]:after,
 .main-infobox:hover .main-infobox-content-text p,
 .sitepage.topic-craft .topic-grandbox .navigation-section.first::after,
-.rec-box .content p  {
+.rec-box .content p,
+.site-attention.event strong.item  {
     color: #1a1a1a;
 }
 
