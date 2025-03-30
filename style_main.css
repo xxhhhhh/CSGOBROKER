@@ -2034,12 +2034,15 @@ h3 {
     min-height: 230px;
     overflow: hidden;
     border-radius: 10px;
+    position: relative;
+    transition: all .15s ease-in-out;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     background-color: rgba(255, 255, 255, .05);
     position: relative;
-    padding-bottom: 40px
+    padding-bottom: 40px;
+    z-index: 1;
 }
 
 .boxreview .plusminus .criteria p,
