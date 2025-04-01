@@ -1,308 +1,467 @@
 {
-    "Crossfade": {
-      "class": "blue",
-      "image": "/img/skins/ak-47/crossfade.webp",
-      "name": "AK-47 | Crossfade",
-      "color": []
-    },
-    "Searing Rage": {
-      "class": "pink",
-      "image": "/img/skins/ak-47/searing-rage.webp",
-      "name": "AK-47 | Searing Rage",
-      "color": ["Orange"]
-    },
-    "The Outsiders": {
-      "class": "pink",
-      "image": "/img/skins/ak-47/the-outsiders.webp",
-      "name": "AK-47 | The Outsiders",
-      "color": ["Green"]
-    },
-    "Inheritance": {
-      "class": "red",
-      "image": "/img/skins/ak-47/inheritance.webp",
-      "name": "AK-47 | Inheritance",
-      "color": ["Blue", "White"]
-    },
-    "B the Monster": {
-      "class": "red",
-      "image": "/img/skins/ak-47/b-the-monster.webp",
-      "name": "AK-47 | B the Monster",
-      "color": ["Purple"]
-    },
-    "Vulcan": {
-      "class": "red",
-      "image": "/img/skins/ak-47/vulcan.webp",
-      "name": "AK-47 | Vulcan",
-      "color": ["Black", "Blue", "White"]
-    },
-    "Asiimov": {
-      "class": "red",
-      "image": "/img/skins/ak-47/asiimov.webp",
-      "name": "AK-47 | Asiimov",
-      "color": ["Black", "Orange", "White"]
-    },
-    "Head Shot": {
-      "class": "red",
-      "image": "/img/skins/ak-47/head-shot.webp",
-      "name": "AK-47 | Head Shot",
-      "color": ["White"]
-    },
-    "Leet Museo": {
-      "class": "red",
-      "image": "/img/skins/ak-47/leet-museo.webp",
-      "name": "AK-47 | Leet Museo",
-      "color": []
-    },
-    "Wasteland Rebel": {
-      "class": "red",
-      "image": "/img/skins/ak-47/wasteland-rebel.webp",
-      "name": "AK-47 | Wasteland Rebel",
-      "color": ["Black", "Brown", "White"]
-    },
-    "Cartel": {
-      "class": "pink",
-      "image": "/img/skins/ak-47/cartel.webp",
-      "name": "AK-47 | Cartel",
-      "color": ["Black", "Gray", "Silver"]
-    },
-    "Emerald Pinstripe": {
-      "class": "purple",
-      "image": "/img/skins/ak-47/emerald-pinstripe.webp",
-      "name": "AK-47 | Emerald Pinstripe",
-      "color": ["Green"]
-    },
-    "Baroque Purple": {
-      "class": "lblue",
-      "image": "/img/skins/ak-47/baroque-purple.webp",
-      "name": "AK-47 | Baroque Purple",
-      "color": ["Black", "Gray"]
-    },
-    "Black Laminate": {
-      "class": "blue",
-      "image": "/img/skins/ak-47/black-laminate.webp",
-      "name": "AK-47 | Black Laminate",
-      "color": ["Black", "Gray"]
-    },
-    "Elite Build": {
-      "class": "blue",
-      "image": "/img/skins/ak-47/elite-build.webp",
-      "name": "AK-47 | Elite Build",
-      "color": ["Black", "Gray", "Orange"]
-    },
-    "Steel Delta": {
-      "class": "blue",
-      "image": "/img/skins/ak-47/steel-delta.webp",
-      "name": "AK-47 | Steel Delta",
-      "color": ["Gray"]
-    },
-    "Slate": {
-      "class": "purple",
-      "image": "/img/skins/ak-47/slate.webp",
-      "name": "AK-47 | Slate",
-      "color": ["Black"]
-    },
-    "Uncharted": {
-      "class": "blue",
-      "image": "/img/skins/ak-47/uncharted.webp",
-      "name": "AK-47 | Uncharted",
-      "color": ["Brown"]
-    },
-    "Legion of Anubis": {
-      "class": "red",
-      "image": "/img/skins/ak-47/legion-of-anubis.webp",
-      "name": "AK-47 | Legion of Anubis",
-      "color": ["Black", "Yellow", "Orange", "Brown"]
-    },
-    "Predator": {
-      "class": "lblue",
-      "image": "/img/skins/ak-47/predator.webp",
-      "name": "AK-47 | Predator",
-      "color": ["Green", "Brown"]
-    },
-    "Safari Mesh": {
-      "class": "lblue",
-      "image": "/img/skins/ak-47/safari-mesh.webp",
-      "name": "AK-47 | Safari Mesh",
-      "color": []
-    },
-    "Jaguar": {
-      "class": "red",
-      "image": "/img/skins/ak-47/jaguar.webp",
-      "name": "AK-47 | Jaguar",
-      "color": ["Green", "Brown"]
-    },
-    "Panthera onca": {
-      "class": "pink",
-      "image": "/img/skins/ak-47/panthera-onca.webp",
-      "name": "AK-47 | Panthera onca",
-      "color": ["Yellow", "Brown"]
-    },
-    "Jet Set": {
-      "class": "pink",
-      "image": "/img/skins/ak-47/jet-set.webp",
-      "name": "AK-47 | Jet Set",
-      "color": ["Brown"]
-    },
-    "Bloodsport": {
-      "class": "red",
-      "image": "/img/skins/ak-47/bloodsport.webp",
-      "name": "AK-47 | Bloodsport",
-      "color": ["Red", "White"]
-    },
-    "The Empress": {
-      "class": "red",
-      "image": "/img/skins/ak-47/the-empress.webp",
-      "name": "AK-47 | The Empress",
-      "color": ["Red", "Yellow"]
-    },
-    "Orbit Mk01": {
-      "class": "purple",
-      "image": "/img/skins/ak-47/orbit-mk.webp",
-      "name": "AK-47 | Orbit Mk01",
-      "color": ["Black", "Red"]
-    },
-    "Red Laminate": {
-      "class": "pink",
-      "image": "/img/skins/ak-47/red-laminate.webp",
-      "name": "AK-47 | Red Laminate",
-      "color": ["Red"]
-    },
-    "Redline": {
-      "class": "pink",
-      "image": "/img/skins/ak-47/redline.webp",
-      "name": "AK-47 | Redline",
-      "color": ["Black", "Red"]
-    },
-    "X-Ray": {
-      "class": "red",
-      "image": "/img/skins/ak-47/x-ray.webp",
-      "name": "AK-47 | X-Ray",
-      "color": ["Red"]
-    },
-    "Point Disarray": {
-      "class": "pink",
-      "image": "/img/skins/ak-47/point-disarray.webp",
-      "name": "AK-47 | Point Disarray",
-      "color": ["Blue", "Pink", "Red"]
-    },
-    "Safety Net": {
-      "class": "purple",
-      "image": "/img/skins/ak-47/safety-net.webp",
-      "name": "AK-47 | Safety Net",
-      "color": ["Orange", "White"]
-    },
-    "Phantom Disruptor": {
-      "class": "pink",
-      "image": "/img/skins/ak-47/phantom-disruptor.webp",
-      "name": "AK-47 | Phantom Disruptor",
-      "color": ["Black", "Yellow"]
-    },
-    "Fuel Injector": {
-      "class": "red",
-      "image": "/img/skins/ak-47/fuel-injector.webp",
-      "name": "AK-47 | Fuel Injector",
-      "color": ["Yellow"]
-    },
-    "Gold Arabesque": {
-      "class": "red",
-      "image": "/img/skins/ak-47/gold-arabesque.webp",
-      "name": "AK-47 | Gold Arabesque",
-      "color": ["Golden", "Yellow"]
-    },
-    "Case Hardened": {
-      "class": "pink",
-      "image": "/img/skins/ak-47/case-hardened.webp",
-      "name": "AK-47 | Case Hardened",
-      "color": []
-    },
-    "Fire Serpent": {
-      "class": "red",
-      "image": "/img/skins/ak-47/fire-serpent.webp",
-      "name": "AK-47 | Fire Serpent",
-      "color": ["Green"]
-    },
-    "First Class": {
-      "class": "purple",
-      "image": "/img/skins/ak-47/first-class.webp",
-      "name": "AK-47 | First Class",
-      "color": ["Green"]
-    },
-    "Green Laminate": {
-      "class": "blue",
-      "image": "/img/skins/ak-47/green-laminate.webp",
-      "name": "AK-47 | Green Laminate",
-      "color": ["Green"]
-    },
-    "Jungle Spray": {
-      "class": "lblue",
-      "image": "/img/skins/ak-47/jungle-spray.webp",
-      "name": "AK-47 | Jungle Spray",
-      "color": ["Green"]
-    },
-    "Wild Lotus": {
-      "class": "red",
-      "image": "/img/skins/ak-47/wild-lotus.webp",
-      "name": "AK-47 | Wild Lotus",
-      "color": ["Green", "Pink"]
-    },
-    "Hydroponic": {
-      "class": "pink",
-      "image": "/img/skins/ak-47/hydroponic.webp",
-      "name": "AK-47 | Hydroponic",
-      "color": ["Green", "White"]
-    },
-    "Rat Rod": {
-      "class": "purple",
-      "image": "/img/skins/ak-47/rat-rod.webp",
-      "name": "AK-47 | Rat Rod",
-      "color": ["Cyan"]
-    },
-    "Aquamarine Revenge": {
-      "class": "red",
-      "image": "/img/skins/ak-47/aquamarine-revenge.webp",
-      "name": "AK-47 | Aquamarine Revenge",
-      "color": ["Cyan", "Orange"]
-    },
-    "Ice Coaled": {
-      "class": "pink",
-      "image": "/img/skins/ak-47/ice-coaled.webp",
-      "name": "AK-47 | Ice Coaled",
-      "color": ["Blue", "Cyan", "Green"]
-    },
-    "Frontside Misty": {
-      "class": "pink",
-      "image": "/img/skins/ak-47/frontside-misty.webp",
-      "name": "AK-47 | Frontside Misty",
-      "color": ["Cyan", "White"]
-    },
-    "Blue Laminate": {
-      "class": "purple",
-      "image": "/img/skins/ak-47/blue-laminate.webp",
-      "name": "AK-47 | Blue Laminate",
-      "color": ["Blue"]
-    },
-    "Nightwish": {
-      "class": "red",
-      "image": "/img/skins/ak-47/nightwish.webp",
-      "name": "AK-47 | Nightwish",
-      "color": ["Pink", "Purple"]
-    },
-    "Neon Rider": {
-      "class": "red",
-      "image": "/img/skins/ak-47/neon-rider.webp",
-      "name": "AK-47 | Neon Rider",
-      "color": ["Cyan", "Pink", "Purple"]
-    },
-    "Neon Revolution": {
-      "class": "red",
-      "image": "/img/skins/ak-47/neon-revolution.webp",
-      "name": "AK-47 | Neon Revolution",
-      "color": ["Green", "Pink"]
-    },
-    "Olive Polycam": {
-      "class": "lblue",
-      "image": "/img/skins/ak-47/olive-polycam.webp",
-      "name": "AK-47 | Olive Polycam",
-      "color": ["Green"]
-    }
+  "Crossfade": {
+    "class": "blue",
+    "image": "/img/skins/ak-47/crossfade.webp",
+    "name": "AK-47 | Crossfade",
+    "color": []
+  },
+  "Searing Rage": {
+    "class": "pink",
+    "image": "/img/skins/ak-47/searing-rage.webp",
+    "name": "AK-47 | Searing Rage",
+    "color": [
+      "Orange"
+    ]
+  },
+  "The Outsiders": {
+    "class": "pink",
+    "image": "/img/skins/ak-47/the-outsiders.webp",
+    "name": "AK-47 | The Outsiders",
+    "color": [
+      "Green"
+    ]
+  },
+  "Inheritance": {
+    "class": "red",
+    "image": "/img/skins/ak-47/inheritance.webp",
+    "name": "AK-47 | Inheritance",
+    "color": [
+      "Blue",
+      "White"
+    ]
+  },
+  "B the Monster": {
+    "class": "red",
+    "image": "/img/skins/ak-47/b-the-monster.webp",
+    "name": "AK-47 | B the Monster",
+    "color": [
+      "Purple"
+    ]
+  },
+  "Vulcan": {
+    "class": "red",
+    "image": "/img/skins/ak-47/vulcan.webp",
+    "name": "AK-47 | Vulcan",
+    "color": [
+      "Black",
+      "Blue",
+      "White"
+    ]
+  },
+  "Asiimov": {
+    "class": "red",
+    "image": "/img/skins/ak-47/asiimov.webp",
+    "name": "AK-47 | Asiimov",
+    "color": [
+      "Black",
+      "Orange",
+      "White"
+    ]
+  },
+  "Head Shot": {
+    "class": "red",
+    "image": "/img/skins/ak-47/head-shot.webp",
+    "name": "AK-47 | Head Shot",
+    "color": [
+      "White"
+    ]
+  },
+  "Leet Museo": {
+    "class": "red",
+    "image": "/img/skins/ak-47/leet-museo.webp",
+    "name": "AK-47 | Leet Museo",
+    "color": []
+  },
+  "Wasteland Rebel": {
+    "class": "red",
+    "image": "/img/skins/ak-47/wasteland-rebel.webp",
+    "name": "AK-47 | Wasteland Rebel",
+    "color": [
+      "Black",
+      "Brown",
+      "White"
+    ]
+  },
+  "Cartel": {
+    "class": "pink",
+    "image": "/img/skins/ak-47/cartel.webp",
+    "name": "AK-47 | Cartel",
+    "color": [
+      "Black",
+      "Gray",
+      "Silver"
+    ]
+  },
+  "Emerald Pinstripe": {
+    "class": "purple",
+    "image": "/img/skins/ak-47/emerald-pinstripe.webp",
+    "name": "AK-47 | Emerald Pinstripe",
+    "color": [
+      "Green"
+    ]
+  },
+  "Baroque Purple": {
+    "class": "lblue",
+    "image": "/img/skins/ak-47/baroque-purple.webp",
+    "name": "AK-47 | Baroque Purple",
+    "color": [
+      "Black",
+      "Gray"
+    ]
+  },
+  "Black Laminate": {
+    "class": "blue",
+    "image": "/img/skins/ak-47/black-laminate.webp",
+    "name": "AK-47 | Black Laminate",
+    "color": [
+      "Black",
+      "Gray"
+    ]
+  },
+  "Elite Build": {
+    "class": "blue",
+    "image": "/img/skins/ak-47/elite-build.webp",
+    "name": "AK-47 | Elite Build",
+    "color": [
+      "Black",
+      "Gray",
+      "Orange"
+    ]
+  },
+  "Steel Delta": {
+    "class": "blue",
+    "image": "/img/skins/ak-47/steel-delta.webp",
+    "name": "AK-47 | Steel Delta",
+    "color": [
+      "Gray"
+    ]
+  },
+  "Slate": {
+    "class": "purple",
+    "image": "/img/skins/ak-47/slate.webp",
+    "name": "AK-47 | Slate",
+    "color": [
+      "Black"
+    ]
+  },
+  "Uncharted": {
+    "class": "blue",
+    "image": "/img/skins/ak-47/uncharted.webp",
+    "name": "AK-47 | Uncharted",
+    "color": [
+      "Brown"
+    ]
+  },
+  "Legion of Anubis": {
+    "class": "red",
+    "image": "/img/skins/ak-47/legion-of-anubis.webp",
+    "name": "AK-47 | Legion of Anubis",
+    "color": [
+      "Black",
+      "Yellow",
+      "Orange",
+      "Brown"
+    ]
+  },
+  "Predator": {
+    "class": "lblue",
+    "image": "/img/skins/ak-47/predator.webp",
+    "name": "AK-47 | Predator",
+    "color": [
+      "Green",
+      "Brown"
+    ]
+  },
+  "Safari Mesh": {
+    "class": "lblue",
+    "image": "/img/skins/ak-47/safari-mesh.webp",
+    "name": "AK-47 | Safari Mesh",
+    "color": []
+  },
+  "Jaguar": {
+    "class": "red",
+    "image": "/img/skins/ak-47/jaguar.webp",
+    "name": "AK-47 | Jaguar",
+    "color": [
+      "Green",
+      "Brown"
+    ]
+  },
+  "Panthera onca": {
+    "class": "pink",
+    "image": "/img/skins/ak-47/panthera-onca.webp",
+    "name": "AK-47 | Panthera onca",
+    "color": [
+      "Yellow",
+      "Brown"
+    ]
+  },
+  "Jet Set": {
+    "class": "pink",
+    "image": "/img/skins/ak-47/jet-set.webp",
+    "name": "AK-47 | Jet Set",
+    "color": [
+      "Brown"
+    ]
+  },
+  "Bloodsport": {
+    "class": "red",
+    "image": "/img/skins/ak-47/bloodsport.webp",
+    "name": "AK-47 | Bloodsport",
+    "color": [
+      "Red",
+      "White"
+    ]
+  },
+  "The Empress": {
+    "class": "red",
+    "image": "/img/skins/ak-47/the-empress.webp",
+    "name": "AK-47 | The Empress",
+    "color": [
+      "Red",
+      "Yellow"
+    ]
+  },
+  "Orbit Mk01": {
+    "class": "purple",
+    "image": "/img/skins/ak-47/orbit-mk.webp",
+    "name": "AK-47 | Orbit Mk01",
+    "color": [
+      "Black",
+      "Red"
+    ]
+  },
+  "Red Laminate": {
+    "class": "pink",
+    "image": "/img/skins/ak-47/red-laminate.webp",
+    "name": "AK-47 | Red Laminate",
+    "color": [
+      "Red"
+    ]
+  },
+  "Redline": {
+    "class": "pink",
+    "image": "/img/skins/ak-47/redline.webp",
+    "name": "AK-47 | Redline",
+    "color": [
+      "Black",
+      "Red"
+    ]
+  },
+  "X-Ray": {
+    "class": "red",
+    "image": "/img/skins/ak-47/x-ray.webp",
+    "name": "AK-47 | X-Ray",
+    "color": [
+      "Red"
+    ]
+  },
+  "Point Disarray": {
+    "class": "pink",
+    "image": "/img/skins/ak-47/point-disarray.webp",
+    "name": "AK-47 | Point Disarray",
+    "color": [
+      "Blue",
+      "Pink",
+      "Red"
+    ]
+  },
+  "Safety Net": {
+    "class": "purple",
+    "image": "/img/skins/ak-47/safety-net.webp",
+    "name": "AK-47 | Safety Net",
+    "color": [
+      "Orange",
+      "White"
+    ]
+  },
+  "Phantom Disruptor": {
+    "class": "pink",
+    "image": "/img/skins/ak-47/phantom-disruptor.webp",
+    "name": "AK-47 | Phantom Disruptor",
+    "color": [
+      "Black",
+      "Yellow"
+    ]
+  },
+  "Fuel Injector": {
+    "class": "red",
+    "image": "/img/skins/ak-47/fuel-injector.webp",
+    "name": "AK-47 | Fuel Injector",
+    "color": [
+      "Yellow"
+    ]
+  },
+  "Gold Arabesque": {
+    "class": "red",
+    "image": "/img/skins/ak-47/gold-arabesque.webp",
+    "name": "AK-47 | Gold Arabesque",
+    "color": [
+      "Golden",
+      "Yellow"
+    ]
+  },
+  "Case Hardened": {
+    "class": "pink",
+    "image": "/img/skins/ak-47/case-hardened.webp",
+    "name": "AK-47 | Case Hardened",
+    "color": []
+  },
+  "Fire Serpent": {
+    "class": "red",
+    "image": "/img/skins/ak-47/fire-serpent.webp",
+    "name": "AK-47 | Fire Serpent",
+    "color": [
+      "Green"
+    ]
+  },
+  "First Class": {
+    "class": "purple",
+    "image": "/img/skins/ak-47/first-class.webp",
+    "name": "AK-47 | First Class",
+    "color": [
+      "Green"
+    ]
+  },
+  "Green Laminate": {
+    "class": "blue",
+    "image": "/img/skins/ak-47/green-laminate.webp",
+    "name": "AK-47 | Green Laminate",
+    "color": [
+      "Green"
+    ]
+  },
+  "Jungle Spray": {
+    "class": "lblue",
+    "image": "/img/skins/ak-47/jungle-spray.webp",
+    "name": "AK-47 | Jungle Spray",
+    "color": [
+      "Green"
+    ]
+  },
+  "Wild Lotus": {
+    "class": "red",
+    "image": "/img/skins/ak-47/wild-lotus.webp",
+    "name": "AK-47 | Wild Lotus",
+    "color": [
+      "Green",
+      "Pink"
+    ]
+  },
+  "Hydroponic": {
+    "class": "pink",
+    "image": "/img/skins/ak-47/hydroponic.webp",
+    "name": "AK-47 | Hydroponic",
+    "color": [
+      "Green",
+      "White"
+    ]
+  },
+  "Rat Rod": {
+    "class": "purple",
+    "image": "/img/skins/ak-47/rat-rod.webp",
+    "name": "AK-47 | Rat Rod",
+    "color": [
+      "Cyan"
+    ]
+  },
+  "Aquamarine Revenge": {
+    "class": "red",
+    "image": "/img/skins/ak-47/aquamarine-revenge.webp",
+    "name": "AK-47 | Aquamarine Revenge",
+    "color": [
+      "Cyan",
+      "Orange"
+    ]
+  },
+  "Ice Coaled": {
+    "class": "pink",
+    "image": "/img/skins/ak-47/ice-coaled.webp",
+    "name": "AK-47 | Ice Coaled",
+    "color": [
+      "Blue",
+      "Cyan",
+      "Green"
+    ]
+  },
+  "Frontside Misty": {
+    "class": "pink",
+    "image": "/img/skins/ak-47/frontside-misty.webp",
+    "name": "AK-47 | Frontside Misty",
+    "color": [
+      "Cyan",
+      "White"
+    ]
+  },
+  "Blue Laminate": {
+    "class": "purple",
+    "image": "/img/skins/ak-47/blue-laminate.webp",
+    "name": "AK-47 | Blue Laminate",
+    "color": [
+      "Blue"
+    ]
+  },
+  "Nightwish": {
+    "class": "red",
+    "image": "/img/skins/ak-47/nightwish.webp",
+    "name": "AK-47 | Nightwish",
+    "color": [
+      "Pink",
+      "Purple"
+    ]
+  },
+  "Neon Rider": {
+    "class": "red",
+    "image": "/img/skins/ak-47/neon-rider.webp",
+    "name": "AK-47 | Neon Rider",
+    "color": [
+      "Cyan",
+      "Pink",
+      "Purple"
+    ]
+  },
+  "Neon Revolution": {
+    "class": "red",
+    "image": "/img/skins/ak-47/neon-revolution.webp",
+    "name": "AK-47 | Neon Revolution",
+    "color": [
+      "Green",
+      "Pink"
+    ]
+  },
+  "Olive Polycam": {
+    "class": "lblue",
+    "image": "/img/skins/ak-47/olive-polycam.webp",
+    "name": "AK-47 | Olive Polycam",
+    "color": [
+      "Green"
+    ]
+  },
+  "Midnight Laminate": {
+    "class": "purple",
+    "image": "/img/skins/ak-47/midnight-laminate.webp",
+    "name": "AK-47 | Midnight Laminate",
+    "color": []
+  },
+  "Nouveau Rouge": {
+    "class": "pink",
+    "image": "/img/skins/ak-47/nouveau-rouge.webp",
+    "name": "AK-47 | Nouveau Rouge",
+    "color": [
+      "Red",
+      "White"
+    ]
+  },
+  "Wintergreen": {
+    "class": "blue",
+    "image": "/img/skins/ak-47/wintergreen.webp",
+    "name": "AK-47 | Wintergreen",
+    "color": []
+  },
+  "VariCamo Grey": {
+    "class": "lblue",
+    "image": "/img/skins/ak-47/varicamo-grey.webp",
+    "name": "AK-47 | VariCamo Grey",
+    "color": []
   }
+}
