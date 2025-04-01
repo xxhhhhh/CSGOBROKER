@@ -4213,9 +4213,9 @@ nav #logo:hover {
     position: relative;
 }
 
-.topic-box:hover .content {
+/* .topic-box:hover .content {
     background: linear-gradient(180deg, transparent, var(--darkgray));
-}
+} */
 
 .topic-box.maestro:hover .content {
     background: linear-gradient(180deg, transparent, var(--darkygray));
