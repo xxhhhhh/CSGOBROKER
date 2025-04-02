@@ -5215,6 +5215,11 @@ nav img:active,
     background: unset;
 }
 
+.content strong.code {
+    color: var(--white);
+    font-weight: 600;
+}
+
 .content span#bonus,
 .sitealternates .site-reward p {
     display: block;
