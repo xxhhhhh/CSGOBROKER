@@ -586,45 +586,47 @@ $(document).ready(function () {
           const parentBoxSkins = $(this).closest(".box-skins");
           parentBoxSkins.toggleClass("selected");
           $(".box-skins").not(parentBoxSkins).removeClass("selected");
-          $(this).find("i").toggleClass("zoom-in zoom-out");
-          $(".close-box-skins i")
-            .not($(this).find("i"))
+          
+          $(this).toggleClass("zoom-in zoom-out");
+          $(".close-box-skins")
+            .not($(this))
             .removeClass("zoom-out")
             .addClass("zoom-in");
         });
-
+      
         $(".box-skins-name").click(function () {
           const parentBoxSkins = $(this).closest(".box-skins");
           parentBoxSkins.toggleClass("selected");
           $(".box-skins").not(parentBoxSkins).removeClass("selected");
+          
           $(this)
             .siblings(".close-box-skins")
-            .find("i")
             .toggleClass("zoom-in zoom-out");
         });
-
+      
         document.addEventListener("DOMContentLoaded", () => {
           document
             .querySelectorAll(".box-skins-name")
             .forEach((boxSkinsName) => boxSkinsName.classList.add("visible"));
         });
-
+      
         $(".navigation-weapon-type").click(function () {
           const weaponType = $(this).attr("class").split(" ")[1];
           $(`.box-skins.${weaponType}`).toggleClass("disabled");
           $(this).toggleClass("enabled");
           updateNavigationReset();
         });
-
+      
         $(".topic-centralizer").on("click", ".navigation-reset", function () {
           $(".box-skins").removeClass("disabled selected");
           $(".navigation-weapon-type").addClass("enabled");
           $(".topic-centralizer .navigation-reset").remove();
           checkWeaponTypeAvailability();
         });
-
+      
         checkWeaponTypeAvailability();
-      } else if (
+      }
+       else if (
         currentPath.includes("/items/") ||
         currentPath.includes("/cases/") ||
         currentPath.includes("/skins/") ||
