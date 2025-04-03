@@ -3125,7 +3125,8 @@ h3 {
     opacity: .4;
 }
 
-.instruction code {
+.instruction code,
+.promo-box code {
     display: inline-flex;
     align-items: center;
     vertical-align: middle;
@@ -3142,10 +3143,15 @@ h3 {
     transition: all .15s ease-in-out;
 }
 
-.instruction Code:hover,
+.instruction code:hover,
+.promo-box:hover code,
 .site-promo-copy:hover,
 .site-promo-copy:hover::after {
     color: rgb(188, 188, 188);
+}
+
+.promo-box code:hover {
+    color: var(--white);
 }
 
 .site-promo-copy::after {
@@ -3814,6 +3820,7 @@ nav #logo:hover {
     height: 60px;
     background-color: var(--darkygray);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3824,6 +3831,118 @@ nav #logo:hover {
     position: relative;
     overflow: hidden;
     order: 1;
+}
+
+.promo-box {
+    height: 80px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--white);
+    text-transform: uppercase;
+    filter: grayscale(1);
+}
+
+.promo-box:hover {
+    filter: grayscale(0);
+}
+
+.promo-box .logobg,
+.promo-box .content {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    height: 100%;
+    z-index: 1;
+}
+
+.promo-box .logobg {
+    left: 0;
+    width: 30%;
+    background: rgba(0, 0, 0, .125);
+    background: var(--darkgray);
+    margin-left: 5px;
+    height: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.promo-box .content {
+    right: 0;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.promo-box.extra-abox .logobg span {
+    font-size: 22px;
+    color: rgba(168, 29, 52, .7);
+    user-select: none;
+}
+
+.promo-box.extra-abox .logobg::after {
+    content: '';
+    z-index: -1;
+    height: 8px;
+    width: 100%;
+    font-weight: 600;
+    color: var(--darkygray);
+    position: absolute;
+    font-size: 9px;
+    padding-bottom: 4px;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(56deg, rgba(0, 0, 0, 0) 0%, rgba(168, 29, 52, .65) 50%, rgba(0, 0, 0, 0) 100%);
+    bottom: 0;
+}
+
+.promo-box.extra-abox.deposit-bonus .logobg::after {
+    content: 'Deposit Bonus';
+}
+
+.promo-box.extra-abox.welcome-bonus .logobg::after {
+    content: 'Welcome Bonus';
+}
+
+.promo-box.extra-abox .logobg::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -12px;
+    left: -10px;
+    z-index: -1;
+    padding: 10px;
+    transition: all .15s ease-in-out;
+    background: radial-gradient(50% 100% at 50% 100%, rgba(172, 26, 50, .1), transparent 100%);
+    filter: blur(15px);
+    opacity: 0;
+}
+
+.promo-box:hover .logobg::before {
+    opacity: 1;
+}
+
+.promo-box.extra-abox span {
+    font-size: 12px;
+    font-weight: 600;
+    width: 80%;
+    color: var(--gray);
+}
+
+.promo-box p,
+.promo-box .content p:first-child {
+    margin-top: 5px;
+    font-size: 16px;
+    color: var(--gray);
+    user-select: none;
+    width: auto;
+}
+
+.promo-box code {
+    font-size: 16px;
+    border-radius: 5px;
+    margin: unset;
 }
 
 .partner-site::before {
@@ -5383,6 +5502,10 @@ nav img:active,
     bottom: unset;
     top: 12px;
     right: 12px;
+}
+
+.box.main .content button.hidden {
+    display: none;
 }
 
 .newest-boxes .content button.copy {
@@ -8165,7 +8288,7 @@ label:active,
 .preview-nav-button:active,
 .site-searcher-box:active,
 .nav-review li:active,
-.extra-abox:active span,
+a.extra-abox:active span,
 .methodlist a:active::before,
 .email-copy button:active,
 .email-copy button:active i,
@@ -9265,7 +9388,11 @@ div#results {
 .box-skins .skin,
 .singlemod-select::before,
 .main-infobox-content-block,
-.character-model {
+.character-model,
+.promo-box .logobg,
+.instruction code, 
+.promo-box code,
+.site-promo-copy {
     box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
 }
 
@@ -11588,6 +11715,48 @@ div#results {
         box-shadow: unset;
         background-color: var(--darkygray);
         border-radius: unset !important;
+    }
+
+    .promo-box {
+        height: 80px;
+        width: 80%;
+        filter: grayscale(0);
+    }
+
+    .promo-box .logobg,
+    .promo-box .content {
+        background: unset;
+        width: unset;
+        left: unset;
+        right: unset;
+        position: relative;
+        margin: 0 10px;
+    }
+
+    .promo-box .logobg {
+        width: 100px;
+    }
+
+    .promo-box .content button.copy {
+        top: 67%;
+        transform: translateY(-50%);
+        bottom: unset;
+        right: -30px;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+    }
+
+    .promo-box .content button.copy:hover {
+        transform: scale(1.09) translateY(-50%) !important;
+    }
+
+    .promo-box .content button.copy::before {
+        content: unset;
+    }
+
+    .extra-abox.promo-box:hover {
+        transform: unset;
     }
 
     .mirror-redirect {

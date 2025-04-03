@@ -264,7 +264,8 @@ h3,
 .main-infobox:hover .main-infobox-content-text p,
 .sitepage.topic-craft .topic-grandbox .navigation-section.first::after,
 .rec-box .content p,
-.site-attention.event strong.item  {
+.site-attention.event strong.item,
+.promo-box code:hover  {
     color: #1a1a1a;
 }
 
@@ -280,6 +281,10 @@ h3,
 .navigation-weapon-type, .navigation-weapon-name {
     background: var(--main-theme);
     color: #1a1a1a;
+}
+
+.promo-box.extra-abox .logobg::after {
+    background: var(--main-color);
 }
 
 .box-skins-nav .navigation-weapon-name {
