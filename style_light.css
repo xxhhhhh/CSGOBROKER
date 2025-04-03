@@ -1089,6 +1089,10 @@ ul .submenu li .nonredir,
         background-color: unset;
     }
 
+    .box-extra-links:has(.promo-box) {
+        background: var(--main-theme);
+    }
+
     .payments-block.visible .payments-button::before {
         background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%);
     }
