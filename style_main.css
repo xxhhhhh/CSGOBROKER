@@ -3680,6 +3680,8 @@ nav #logo:hover {
 
 .box-extra-links {
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .nav-review {
@@ -3841,6 +3843,7 @@ nav #logo:hover {
     text-transform: uppercase;
     filter: grayscale(1);
     border: 2px dashed rgb(15 15 15);
+    order: -1;
 }
 
 .promo-box:hover {
@@ -3912,6 +3915,15 @@ nav #logo:hover {
 
 .promo-box.extra-abox.welcome-bonus .logobg::after {
     content: 'Free Bonus';
+}
+
+.promo-box.extra-abox.else-bonus .logobg::after {
+    content: 'Free Bonus';
+}
+
+.promo-box.extra-abox.else-bonus .logobg span {
+    font-size: 13px;
+    margin-bottom: 8px;
 }
 
 .promo-box.extra-abox .logobg::before {
@@ -10725,6 +10737,14 @@ div#results {
     .box-extra-links:has(.more-crafts) {
         bottom: 7px;
         z-index: 3;
+    }
+
+    .box-extra-links .promo-box {
+        display: none;
+    }
+
+    .box-extra-links .promo-box.counter-1 {
+        display: flex;
     }
     
     .more-crafts span {

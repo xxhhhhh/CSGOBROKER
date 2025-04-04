@@ -1,30 +1,30 @@
-function copyToClipboard(selector, copyButton) {
-  var $element = $(selector);
+function copyToClipboard(element, copyButton) {
+  const text = element.textContent.trim();
 
-  var $temp = $("<input>");
+  const $temp = $("<input>");
   $("body").append($temp);
-  $temp.val($element.text()).select();
+  $temp.val(text).select();
   document.execCommand("copy");
   $temp.remove();
 
-  var copiedMessage = (languageTag === 'ru') ? 'Скопировано' : 'Copied';
-  var $title = $("<div class='copied-title'>" + copiedMessage + "</div>");
-
-  var $copyButton = $(copyButton);
+  const copiedMessage = (languageTag === 'ru') ? 'Скопировано' : 'Copied';
+  const $title = $("<div class='copied-title'>" + copiedMessage + "</div>");
+  const $copyButton = $(copyButton);
 
   $copyButton.append($title);
   $copyButton.addClass("icon-changed");
 
   $title.hide().fadeIn(150, function () {
-    $(this).delay(400).fadeOut(150, function () {
-      $(this).remove();
-    });
+      $(this).delay(400).fadeOut(150, function () {
+          $(this).remove();
+      });
   });
 
   setTimeout(function () {
-    $copyButton.removeClass("icon-changed");
+      $copyButton.removeClass("icon-changed");
   }, 800);
 }
+
 
 
 
@@ -636,17 +636,72 @@ forcemodsboxes();
         });
 }
 
+function insertReviewLinks(codes, codeValue, codesBinding) {
+  if (!codes || Object.keys(codes).length === 0 || !codeValue) return;
+
+  let reviewLinksContainer = document.querySelector(".box-extra-links");
+
+  if (!reviewLinksContainer) {
+    reviewLinksContainer = document.createElement("div");
+    reviewLinksContainer.className = "box-extra-links";
+
+    const siteBlock = document.querySelector(".siteblock");
+    const mainBox = siteBlock ? siteBlock.querySelector(".box.main") : null;
+
+    if (mainBox && siteBlock) {
+      mainBox.insertAdjacentElement("afterend", reviewLinksContainer);
+    } else {
+      return;
+    }
+  }
+
+  let reviewHTML = "";
+  let index = 1;
+
+  Object.entries(codes).forEach(([codeName, codeDisplay]) => {
+      const className = codesBinding[codeName] || "default-bonus";
+      const counterClass = `counter-${index}`;
+      const promoText = languageTag === "ru" ? "Промокод" : "Promo";
+
+      reviewHTML += `
+          <div class="promo-box extra-abox ${className} ${counterClass}">
+              <div class="logobg">
+                  <span>${codeDisplay}</span>
+              </div>
+              <div class="content">
+                  <p>${promoText}</p>
+                  <code class="promo-code">${codeValue}</code>
+                  <button class="copy site-promo-copy" aria-label="Copy Code"></button>
+              </div>
+          </div>
+      `;
+      index++;
+  });
+
+  reviewLinksContainer.insertAdjacentHTML("beforeend", reviewHTML);
+}
+
   
     Promise.all([loadPageData(jsonFilePath), loadPageData(filterSettingsPath), loadPageData(reviewSettingsPath), loadPageData(translationsPath)])
     .then(([pageData, filterSettings, reviewSettings, translations]) => {
       if (pageData && reviewSettings) {
           sortAndInsertContent(pageData.gamemodesContent, reviewSettings.gamemodesOrder, '.gamemodes .featuresbox .typesinside');
           insertFeatures(pageData.featuresContent, filterSettings, reviewSettings.featureOrder);
+          insertReviewLinks(pageData.codes, pageData.code, reviewSettings.codesBinding || {});
   
           const sitedetailsContainer = document.querySelector('.sitedetails');
           if (sitedetailsContainer) {
               sitedetailsContainer.innerHTML = '';
           }
+
+          if (pageData.code) {
+            const copyButtons = document.querySelectorAll(".box-extra-links .copy");
+            copyButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    copyToClipboard(button.previousElementSibling, button);
+                });
+            });
+        }
           
           if (pageData.firstMethodContent || pageData.secondMethodContent) {
               const sitedetails = document.createElement('div');
