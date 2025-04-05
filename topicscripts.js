@@ -15,6 +15,7 @@ $(document).ready(function () {
     const currentPath = window.location.pathname;
     if (
       currentPath.includes("/topic/items/") ||
+      currentPath.includes("/topic/stickers/") ||
       currentPath.includes("/topic/cases/") ||
       currentPath.includes("/topic/collections/") ||
       currentPath.includes("/topic/skins/") ||
@@ -437,23 +438,6 @@ $(document).ready(function () {
         }
     
         skinColorInfo.empty();
-  
-      // const skinsData = await fetchSkinPrices();
-      // const matchedSkins = skinsData.filter(skin => skin.name.includes(baseName));
-  
-      // if (matchedSkins.length > 0) {
-      //     const prices = matchedSkins.map(skin => skin.price).sort((a, b) => a - b);
-      //     const minPrice = prices[0].toFixed(2);
-      //     const maxPrice = prices[prices.length - 1].toFixed(2);
-  
-      //     const priceDiv = $("<div>", {
-      //         class: "skin-price-info",
-      //         text: `${minPrice}$ - ${maxPrice}$`
-      //     });
-  
-      //     previewExtras.append(priceDiv);
-      // } else {
-      // }
 
       const skinId = element.getAttribute("skin-id");
       fetch(`/code-parts/topics/skins-list/${weapon}.json`)
@@ -628,6 +612,7 @@ $(document).ready(function () {
       }
        else if (
         currentPath.includes("/items/") ||
+        currentPath.includes("/stickers/") ||
         currentPath.includes("/cases/") ||
         currentPath.includes("/skins/") ||
         currentPath.includes("/collections/")
@@ -739,10 +724,86 @@ $(document).ready(function () {
           }
         );
       }
+      (async function autoImportFullJsonIfNeeded() {
+        const currentPath = window.location.pathname;
+        const validPrefixes = ["/topic/items/", "/topic/stickers/"];
+        const shouldProcess = validPrefixes.some(prefix => currentPath.includes(prefix));
+        if (!shouldProcess) return;
+      
+        // Получаем ID страницы без .html
+        const topicId = currentPath.split("/").pop().replace(/\.html$/, "");
+      
+        try {
+          // Загружаем настройки
+          const settingsRes = await fetch("/code-parts/topics/skins-settings.json");
+          const settings = await settingsRes.json();
+      
+          // Проверка: импорт разрешён?
+          if (!settings[topicId]) return;
+      
+          // Загружаем нужный JSON файл с предметами
+          const jsonPath = `/code-parts/topics/skins-list/${topicId}.json`;
+          const dataRes = await fetch(jsonPath);
+          if (!dataRes.ok) throw new Error(`Не удалось загрузить: ${jsonPath}`);
+          const fullData = await dataRes.json();
+      
+          // Загружаем цены
+          const prices = await fetchSkinPrices();
+      
+          const box = $(".box-skins-list");
+          if (!box.length) return;
+      
+          let html = "";
+      
+          for (const [id, skinData] of Object.entries(fullData)) {
+            const matched = Array.isArray(prices) ? prices.filter(p => p.name.includes(skinData.name)) : [];
+            let priceInfo = "";
+      
+            if (matched.length > 0) {
+              const sortedPrices = matched.map(p => p.price).sort((a, b) => a - b);
+              priceInfo = sortedPrices[0] === sortedPrices[sortedPrices.length - 1]
+                ? `${sortedPrices[0].toFixed(2)}$`
+                : `${sortedPrices[0].toFixed(2)}$ - ${sortedPrices[sortedPrices.length - 1].toFixed(2)}$`;
+            }
+      
+            const imageUrl = skinData.image;
+            html += `
+              <div class="skin ${skinData.class}" skin-id="${id}" weapon="${topicId}">
+                <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
+                <div class="skin-desc-name">${skinData.name}</div>
+                ${priceInfo ? `<div class="skin-price-info">${priceInfo}</div>` : ""}
+              </div>
+            `;
+          }
+      
+          box.html(html);
+      
+          checkWeaponTypeAvailabilityForItems();
+
+          const qualityFilterBtn = document.getElementById("Quality-Filter");
+          if (qualityFilterBtn && !qualityFilterBtn.classList.contains("enabled")) {
+            qualityFilterBtn.click();
+          }
+
+          $(".skin img").each(function () {
+            if (this.complete) {
+              $(this).addClass("imported");
+            } else {
+              $(this).on("load", function () {
+                $(this).addClass("imported");
+              });
+            }
+          });
+
+        } catch (err) {
+        }
+      })();
+      
     }
+
 });
 
-if (window.location.pathname.includes("/items/") || window.location.pathname.includes("/cases/") || window.location.pathname.includes("/collections/")) {
+if (window.location.pathname.includes("/items/") || window.location.pathname.includes("/cases/") || window.location.pathname.includes("/stickers/") || window.location.pathname.includes("/collections/")) {
     var xhr = new XMLHttpRequest();
   
     xhr.onreadystatechange = function() {
@@ -1105,7 +1166,12 @@ $(document).ready(function(){
   }
   
   function isTopicItemsLink() {
-    return window.location.href.includes('/topic/items/') || window.location.href.includes('/topic/cases/') || window.location.href.includes('/topic/collections/');
+    return (
+      window.location.href.includes("/topic/items/") ||
+      window.location.href.includes("/topic/cases/") ||
+      window.location.pathname.includes("/topic/stickers/") ||
+      window.location.href.includes("/topic/collections/")
+    );
   }
   
   function loadExternalContent(url, targetElement) {

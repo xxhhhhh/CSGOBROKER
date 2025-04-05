@@ -2673,6 +2673,7 @@ document.addEventListener("DOMContentLoaded", function () {
     !window.location.pathname.includes("/skins/") &&
     !window.location.pathname.includes("/items/") &&
     !window.location.pathname.includes("/cases/") &&
+    !window.location.pathname.includes("/stickers/") &&
     !window.location.pathname.includes("/collections/") &&
     !window.location.pathname.includes("/guides/") &&
     !window.location.pathname.includes("/sticker-crafts/") &&
