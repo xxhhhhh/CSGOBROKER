@@ -51,7 +51,7 @@ $(document).ready(function () {
                       .map(
                         (site) => `
                     <div class="site-searcher-box" id="${site}" data-title="${
-                          languageTag === "ru" ? "Искать на/в" : "Search on"
+                          languageTag === "ru" ? "Искать в" : "Search on"
                         } ${site}">
                         <div class="site-searcher-logo">
                             <img src="/img/${site
@@ -724,67 +724,67 @@ $(document).ready(function () {
           }
         );
       }
-      (async function autoImportFullJsonIfNeeded() {
-        const currentPath = window.location.pathname;
-        const validPrefixes = ["/topic/items/", "/topic/stickers/"];
-        const shouldProcess = validPrefixes.some(prefix => currentPath.includes(prefix));
-        if (!shouldProcess) return;
-      
-        // Получаем ID страницы без .html
-        const topicId = currentPath.split("/").pop().replace(/\.html$/, "");
-      
-        try {
-          // Загружаем настройки
-          const settingsRes = await fetch("/code-parts/topics/skins-settings.json");
-          const settings = await settingsRes.json();
-      
-          // Проверка: импорт разрешён?
-          if (!settings[topicId]) return;
-      
-          // Загружаем нужный JSON файл с предметами
+    (async function autoImportFullJsonIfNeeded() {
+      const currentPath = window.location.pathname;
+      const validPrefixes = [
+        "/topic/items/",
+        "/topic/collections/",
+        "/topic/stickers/",
+      ];
+      const shouldProcess = validPrefixes.some((prefix) =>
+        currentPath.includes(prefix)
+      );
+      if (!shouldProcess) return;
+      const topicId = currentPath
+        .split("/")
+        .pop()
+        .replace(/\.html$/, "");
+      try {
+        const settingsRes = await fetch("/code-parts/topics/skins-settings.json");
+        const settings = await settingsRes.json();
+        const mode = settings[topicId];
+        if (!mode) return;
+        const box = $(".box-skins-list");
+        if (!box.length) return;
+        const prices = await fetchSkinPrices();
+        let html = "";
+        if (mode === 1) {
           const jsonPath = `/code-parts/topics/skins-list/${topicId}.json`;
           const dataRes = await fetch(jsonPath);
           if (!dataRes.ok) throw new Error(`Не удалось загрузить: ${jsonPath}`);
           const fullData = await dataRes.json();
-      
-          // Загружаем цены
-          const prices = await fetchSkinPrices();
-      
-          const box = $(".box-skins-list");
-          if (!box.length) return;
-      
-          let html = "";
-      
           for (const [id, skinData] of Object.entries(fullData)) {
-            const matched = Array.isArray(prices) ? prices.filter(p => p.name.includes(skinData.name)) : [];
-            let priceInfo = "";
-      
-            if (matched.length > 0) {
-              const sortedPrices = matched.map(p => p.price).sort((a, b) => a - b);
-              priceInfo = sortedPrices[0] === sortedPrices[sortedPrices.length - 1]
-                ? `${sortedPrices[0].toFixed(2)}$`
-                : `${sortedPrices[0].toFixed(2)}$ - ${sortedPrices[sortedPrices.length - 1].toFixed(2)}$`;
+            html += renderSkinHTML(id, topicId, skinData, prices);
+          }
+        } else if (mode === 2) {
+          const presetPath = `/code-parts/topics/skins-list/presets/${topicId}.json`;
+          const presetRes = await fetch(presetPath);
+          if (!presetRes.ok) throw new Error(`Не удалось загрузить: ${presetPath}`);
+          const presetItems = await presetRes.json();
+          const weaponCache = {};
+          for (const item of presetItems) {
+            const { weapon, ["skin-id"]: skinId } = item;
+            if (!weaponCache[weapon]) {
+              const weaponRes = await fetch(
+                `/code-parts/topics/skins-list/${weapon}.json`
+              );
+              if (!weaponRes.ok) continue;
+              weaponCache[weapon] = await weaponRes.json();
             }
-      
-            const imageUrl = skinData.image;
-            html += `
-              <div class="skin ${skinData.class}" skin-id="${id}" weapon="${topicId}">
-                <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
-                <div class="skin-desc-name">${skinData.name}</div>
-                ${priceInfo ? `<div class="skin-price-info">${priceInfo}</div>` : ""}
-              </div>
-            `;
+            const weaponData = weaponCache[weapon];
+            const skinData = weaponData[skinId];
+            if (skinData) {
+              html += renderSkinHTML(skinId, weapon, skinData, prices);
+            }
           }
-      
-          box.html(html);
-      
-          checkWeaponTypeAvailabilityForItems();
-
-          const qualityFilterBtn = document.getElementById("Quality-Filter");
-          if (qualityFilterBtn && !qualityFilterBtn.classList.contains("enabled")) {
-            qualityFilterBtn.click();
-          }
-
+        }
+        box.html(html);
+        checkWeaponTypeAvailabilityForItems();
+        const qualityFilterBtn = document.getElementById("Quality-Filter");
+        if (qualityFilterBtn && !qualityFilterBtn.classList.contains("enabled")) {
+          qualityFilterBtn.click();
+        }
+        setTimeout(() => {
           $(".skin img").each(function () {
             if (this.complete) {
               $(this).addClass("imported");
@@ -794,11 +794,44 @@ $(document).ready(function () {
               });
             }
           });
-
-        } catch (err) {
+        }, 0);
+      } catch (err) {
+        console.error("Ошибка при автоимпорте:", err);
+      }
+      function renderSkinHTML(id, weapon, skinData, prices) {
+        const matched = Array.isArray(prices)
+          ? prices.filter((p) => p.name.includes(skinData.name))
+          : [];
+        let priceInfo = "";
+        if (matched.length > 0) {
+          const sortedPrices = matched.map((p) => p.price).sort((a, b) => a - b);
+          priceInfo =
+            sortedPrices[0] === sortedPrices[sortedPrices.length - 1]
+              ? `${sortedPrices[0].toFixed(2)}$`
+              : `${sortedPrices[0].toFixed(2)}$ - ${sortedPrices[
+                  sortedPrices.length - 1
+                ].toFixed(2)}$`;
         }
-      })();
-      
+        const imageUrl = skinData.image;
+        return ` <div class="skin ${
+          skinData.class
+        }" skin-id="${id}" weapon="${weapon}"> <img src="${imageUrl}" draggable="false" alt="${
+          skinData.name
+        }"> <div class="skin-desc-name">${skinData.name}</div> ${
+          priceInfo ? `<div class="skin-price-info">${priceInfo}</div>` : ""
+        } </div> `;
+      }
+      async function fetchSkinPrices() {
+        try {
+          const res = await fetch("https://cs2broker.cc/");
+          if (!res.ok) throw new Error("Не удалось загрузить цены скинов");
+          return await res.json();
+        } catch (err) {
+          console.error("Ошибка при загрузке цен скинов:", err);
+          return [];
+        }
+      }
+    })();
     }
 
 });
