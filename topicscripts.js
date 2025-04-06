@@ -751,7 +751,7 @@ $(document).ready(function () {
         if (mode === 1) {
           const jsonPath = `/code-parts/topics/skins-list/${topicId}.json`;
           const dataRes = await fetch(jsonPath);
-          if (!dataRes.ok) throw new Error(`Не удалось загрузить: ${jsonPath}`);
+          if (!dataRes.ok) return;
           const fullData = await dataRes.json();
           for (const [id, skinData] of Object.entries(fullData)) {
             html += renderSkinHTML(id, topicId, skinData, prices);
@@ -759,19 +759,27 @@ $(document).ready(function () {
         } else if (mode === 2) {
           const presetPath = `/code-parts/topics/skins-list/presets/${topicId}.json`;
           const presetRes = await fetch(presetPath);
-          if (!presetRes.ok) throw new Error(`Не удалось загрузить: ${presetPath}`);
+          if (!presetRes.ok) return;
           const presetItems = await presetRes.json();
+          const uniqueWeapons = [
+            ...new Set(presetItems.map((item) => item.weapon)),
+          ];
           const weaponCache = {};
+          await Promise.all(
+            uniqueWeapons.map(async (weapon) => {
+              try {
+                const res = await fetch(
+                  `/code-parts/topics/skins-list/${weapon}.json`
+                );
+                if (!res.ok) return;
+                weaponCache[weapon] = await res.json();
+              } catch {}
+            })
+          );
           for (const item of presetItems) {
             const { weapon, ["skin-id"]: skinId } = item;
-            if (!weaponCache[weapon]) {
-              const weaponRes = await fetch(
-                `/code-parts/topics/skins-list/${weapon}.json`
-              );
-              if (!weaponRes.ok) continue;
-              weaponCache[weapon] = await weaponRes.json();
-            }
             const weaponData = weaponCache[weapon];
+            if (!weaponData) continue;
             const skinData = weaponData[skinId];
             if (skinData) {
               html += renderSkinHTML(skinId, weapon, skinData, prices);
@@ -795,9 +803,7 @@ $(document).ready(function () {
             }
           });
         }, 0);
-      } catch (err) {
-        console.error("Ошибка при автоимпорте:", err);
-      }
+      } catch {}
       function renderSkinHTML(id, weapon, skinData, prices) {
         const matched = Array.isArray(prices)
           ? prices.filter((p) => p.name.includes(skinData.name))
@@ -821,17 +827,7 @@ $(document).ready(function () {
           priceInfo ? `<div class="skin-price-info">${priceInfo}</div>` : ""
         } </div> `;
       }
-      async function fetchSkinPrices() {
-        try {
-          const res = await fetch("https://cs2broker.cc/");
-          if (!res.ok) throw new Error("Не удалось загрузить цены скинов");
-          return await res.json();
-        } catch (err) {
-          console.error("Ошибка при загрузке цен скинов:", err);
-          return [];
-        }
-      }
-    })();
+    })(); 
     }
 
 });
