@@ -1666,12 +1666,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 
-// document.querySelectorAll(".crafting-table-screen").forEach(el => {
-//   const img = el.querySelector("img");
-//   if (img) {
-//       el.style.setProperty("--bg-topic", `url(${img.src})`);
-//   }
-// });
+const topicBoxesHolder = document.querySelector(".topic-boxes-holder");
+
+if (languageTag === "ru") {
+    updateURLs(topicBoxesHolder);
+}
 
 
 document.addEventListener("DOMContentLoaded", function () {

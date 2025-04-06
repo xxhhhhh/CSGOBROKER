@@ -4302,8 +4302,8 @@ nav #logo:hover {
 .topic-box .logobg {
     transition: all .2s ease-in-out;
     top: 0;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
-    -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+    /* mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+    -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0)); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -4312,7 +4312,6 @@ nav #logo:hover {
     margin-top: 6px;
     opacity: 1;
     border-radius: 10px;
-    /* background: linear-gradient(0deg, var(--darkygray) 50%, var(--darkgray) 100%); */
     background: linear-gradient(-45deg, var(--darkygray) 50%, var(--darkgray) 100%);
     overflow: hidden;
     background-position: center;
