@@ -724,110 +724,131 @@ $(document).ready(function () {
           }
         );
       }
-    (async function autoImportFullJsonIfNeeded() {
-      const currentPath = window.location.pathname;
-      const validPrefixes = [
-        "/topic/items/",
-        "/topic/collections/",
-        "/topic/stickers/",
-      ];
-      const shouldProcess = validPrefixes.some((prefix) =>
-        currentPath.includes(prefix)
-      );
-      if (!shouldProcess) return;
-      const topicId = currentPath
-        .split("/")
-        .pop()
-        .replace(/\.html$/, "");
-      try {
-        const settingsRes = await fetch("/code-parts/topics/skins-settings.json");
-        const settings = await settingsRes.json();
-        const mode = settings[topicId];
-        if (!mode) return;
-        const box = $(".box-skins-list");
-        if (!box.length) return;
-        const prices = await fetchSkinPrices();
-        let html = "";
-        if (mode === 1) {
-          const jsonPath = `/code-parts/topics/skins-list/${topicId}.json`;
-          const dataRes = await fetch(jsonPath);
-          if (!dataRes.ok) return;
-          const fullData = await dataRes.json();
-          for (const [id, skinData] of Object.entries(fullData)) {
-            html += renderSkinHTML(id, topicId, skinData, prices);
+      (async function autoImportFullJsonIfNeeded() {
+        const currentPath = window.location.pathname;
+        const validPrefixes = ["/topic/items/", "/topic/collections/", "/topic/stickers/"];
+        const shouldProcess = validPrefixes.some(prefix => currentPath.includes(prefix));
+        if (!shouldProcess) return;
+      
+        const topicId = currentPath.split("/").pop().replace(/\.html$/, "");
+        const isCollection = currentPath.includes("/topic/collections/");
+        const isSticker = currentPath.includes("/topic/stickers/");
+      
+        try {
+          // Получаем режим обработки из настроек
+          let mode;
+          const settingsRes = await fetch("/code-parts/topics/skins-settings.json");
+          if (settingsRes.ok) {
+            const settings = await settingsRes.json();
+            mode = settings[topicId];
           }
-        } else if (mode === 2) {
-          const presetPath = `/code-parts/topics/skins-list/presets/${topicId}.json`;
-          const presetRes = await fetch(presetPath);
-          if (!presetRes.ok) return;
-          const presetItems = await presetRes.json();
-          const uniqueWeapons = [
-            ...new Set(presetItems.map((item) => item.weapon)),
-          ];
-          const weaponCache = {};
-          await Promise.all(
-            uniqueWeapons.map(async (weapon) => {
+      
+          // Значения по умолчанию
+          if (!mode) {
+            if (isCollection) mode = 2;
+            if (isSticker) mode = 1;
+          }
+      
+          if (!mode) return;
+      
+          const box = $(".box-skins-list");
+          if (!box.length) return;
+      
+          const prices = await fetchSkinPrices();
+          let html = "";
+      
+          // Полная загрузка JSON
+          if (mode === 1) {
+            const jsonPath = `/code-parts/topics/skins-list/${topicId}.json`;
+            const dataRes = await fetch(jsonPath);
+            if (!dataRes.ok) return;
+      
+            const fullData = await dataRes.json();
+            for (const [id, skinData] of Object.entries(fullData)) {
+              html += renderSkinHTML(id, topicId, skinData, prices);
+            }
+      
+          // Загрузка по пресету
+          } else if (mode === 2) {
+            const presetPath = `/code-parts/topics/skins-list/presets/${topicId}.json`;
+            const presetRes = await fetch(presetPath);
+            if (!presetRes.ok) return;
+      
+            const presetItems = await presetRes.json();
+            const uniqueWeapons = [...new Set(presetItems.map(item => item.weapon))];
+      
+            const weaponCache = {};
+            await Promise.all(uniqueWeapons.map(async (weapon) => {
               try {
-                const res = await fetch(
-                  `/code-parts/topics/skins-list/${weapon}.json`
-                );
-                if (!res.ok) return;
-                weaponCache[weapon] = await res.json();
+                const res = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
+                if (res.ok) {
+                  weaponCache[weapon] = await res.json();
+                }
               } catch {}
-            })
-          );
-          for (const item of presetItems) {
-            const { weapon, ["skin-id"]: skinId } = item;
-            const weaponData = weaponCache[weapon];
-            if (!weaponData) continue;
-            const skinData = weaponData[skinId];
-            if (skinData) {
-              html += renderSkinHTML(skinId, weapon, skinData, prices);
+            }));
+      
+            for (const item of presetItems) {
+              const { weapon, ["skin-id"]: skinId } = item;
+              const weaponData = weaponCache[weapon];
+              if (!weaponData) continue;
+      
+              const skinData = weaponData[skinId];
+              if (skinData) {
+                html += renderSkinHTML(skinId, weapon, skinData, prices);
+              }
             }
           }
-        }
-        box.html(html);
-        checkWeaponTypeAvailabilityForItems();
-        const qualityFilterBtn = document.getElementById("Quality-Filter");
-        if (qualityFilterBtn && !qualityFilterBtn.classList.contains("enabled")) {
-          qualityFilterBtn.click();
-        }
-        setTimeout(() => {
-          $(".skin img").each(function () {
-            if (this.complete) {
-              $(this).addClass("imported");
-            } else {
-              $(this).on("load", function () {
+      
+          // Вставляем HTML и активируем фильтры
+          box.html(html);
+          checkWeaponTypeAvailabilityForItems();
+      
+          const qualityFilterBtn = document.getElementById("Quality-Filter");
+          if (qualityFilterBtn && !qualityFilterBtn.classList.contains("enabled")) {
+            qualityFilterBtn.click();
+          }
+      
+          // Отмечаем загруженные изображения
+          setTimeout(() => {
+            $(".skin img").each(function () {
+              if (this.complete) {
                 $(this).addClass("imported");
-              });
-            }
-          });
-        }, 0);
-      } catch {}
-      function renderSkinHTML(id, weapon, skinData, prices) {
-        const matched = Array.isArray(prices)
-          ? prices.filter((p) => p.name.includes(skinData.name))
-          : [];
-        let priceInfo = "";
-        if (matched.length > 0) {
-          const sortedPrices = matched.map((p) => p.price).sort((a, b) => a - b);
-          priceInfo =
-            sortedPrices[0] === sortedPrices[sortedPrices.length - 1]
-              ? `${sortedPrices[0].toFixed(2)}$`
-              : `${sortedPrices[0].toFixed(2)}$ - ${sortedPrices[
-                  sortedPrices.length - 1
-                ].toFixed(2)}$`;
+              } else {
+                $(this).on("load", function () {
+                  $(this).addClass("imported");
+                });
+              }
+            });
+          }, 0);
+      
+        } catch (err) {
+          console.error("Error in autoImportFullJsonIfNeeded:", err);
         }
-        const imageUrl = skinData.image;
-        return ` <div class="skin ${
-          skinData.class
-        }" skin-id="${id}" weapon="${weapon}"> <img src="${imageUrl}" draggable="false" alt="${
-          skinData.name
-        }"> <div class="skin-desc-name">${skinData.name}</div> ${
-          priceInfo ? `<div class="skin-price-info">${priceInfo}</div>` : ""
-        } </div> `;
-      }
-    })(); 
+      
+        // Функция отрисовки скина
+        function renderSkinHTML(id, weapon, skinData, prices) {
+          const matched = Array.isArray(prices)
+            ? prices.filter(p => p.name.includes(skinData.name))
+            : [];
+      
+          let priceInfo = "";
+          if (matched.length > 0) {
+            const sortedPrices = matched.map(p => p.price).sort((a, b) => a - b);
+            priceInfo = sortedPrices[0] === sortedPrices[sortedPrices.length - 1]
+              ? `${sortedPrices[0].toFixed(2)}$`
+              : `${sortedPrices[0].toFixed(2)}$ - ${sortedPrices[sortedPrices.length - 1].toFixed(2)}$`;
+          }
+      
+          const imageUrl = skinData.image;
+          return `
+            <div class="skin ${skinData.class}" skin-id="${id}" weapon="${weapon}">
+              <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
+              <div class="skin-desc-name">${skinData.name}</div>
+              ${priceInfo ? `<div class="skin-price-info">${priceInfo}</div>` : ""}
+            </div>
+          `;
+        }
+      })();      
     }
 
 });

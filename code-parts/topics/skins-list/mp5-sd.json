@@ -9,7 +9,8 @@
     "class": "purple",
     "image": "/img/skins/mp5-sd/kitbash.webp",
     "name": "MP5-SD | Kitbash",
-    "color": []
+    "color": [],
+    "case": "Fracture Case"
   },
   "Gauss": {
     "class": "purple",
@@ -17,7 +18,8 @@
     "name": "MP5-SD | Gauss",
     "color": [
       "Gray"
-    ]
+    ],
+    "case": "Prisma Case"
   },
   "Desert Strike": {
     "class": "blue",
@@ -25,7 +27,8 @@
     "name": "MP5-SD | Desert Strike",
     "color": [
       "Black"
-    ]
+    ],
+    "case": "Prisma 2 Case"
   },
   "Statics": {
     "class": "blue",
@@ -33,7 +36,8 @@
     "name": "MP5-SD | Statics",
     "color": [
       "Blue"
-    ]
+    ],
+    "case": "Gallery Case"
   },
   "Dirt Drop": {
     "class": "white",
@@ -41,13 +45,16 @@
     "name": "MP5-SD | Dirt Drop",
     "color": [
       "Brown"
-    ]
+    ],
+    "souvenir": true
   },
   "Lab Rats": {
     "class": "purple",
     "image": "/img/skins/mp5-sd/lab-rats.webp",
     "name": "MP5-SD | Lab Rats",
-    "color": []
+    "color": [],
+    "souvenir": true,
+    "collection": "The Blacksite Collection"
   },
   "Autumn Twilly": {
     "class": "purple",
@@ -55,7 +62,8 @@
     "name": "MP5-SD | Autumn Twilly",
     "color": [
       "Red"
-    ]
+    ],
+    "collection": "The 2021 Train Collection"
   },
   "Oxide Oasis": {
     "class": "pink",
@@ -63,7 +71,8 @@
     "name": "MP5-SD | Oxide Oasis",
     "color": [
       "Orange"
-    ]
+    ],
+    "souvenir": true
   },
   "Nitro": {
     "class": "lblue",
@@ -72,13 +81,15 @@
     "color": [
       "Black",
       "Orange"
-    ]
+    ],
+    "collection": "The Control Collection"
   },
   "Necro Jr.": {
     "class": "blue",
     "image": "/img/skins/mp5-sd/necro-jr.webp",
     "name": "MP5-SD | Necro Jr.",
-    "color": []
+    "color": [],
+    "case": "Dreams & Nightmares Case"
   },
   "Phosphor": {
     "class": "pink",
@@ -87,13 +98,15 @@
     "color": [
       "Blue",
       "Green"
-    ]
+    ],
+    "case": "Danger Zone Case"
   },
   "Bamboo Garden": {
     "class": "white",
     "image": "/img/skins/mp5-sd/bamboo-garden.webp",
     "name": "MP5-SD | Bamboo Garden",
-    "color": []
+    "color": [],
+    "collection": "The St. Marc Collection"
   },
   "Co-Processor": {
     "class": "blue",
@@ -101,7 +114,8 @@
     "name": "MP5-SD | Co-Processor",
     "color": [
       "Blue"
-    ]
+    ],
+    "souvenir": true
   },
   "Condition Zero": {
     "class": "blue",
@@ -110,13 +124,15 @@
     "color": [
       "Blue",
       "Yellow"
-    ]
+    ],
+    "case": "Operation Broken Fang Case"
   },
   "Acid Wash": {
     "class": "blue",
     "image": "/img/skins/mp5-sd/acid-wash.webp",
     "name": "MP5-SD | Acid Wash",
-    "color": []
+    "color": [],
+    "case": "Shattered Web Case"
   },
   "Agent": {
     "class": "purple",
@@ -125,7 +141,8 @@
     "color": [
       "Blue",
       "Yellow"
-    ]
+    ],
+    "case": "CS20 Case"
   },
   "Liquidation": {
     "class": "blue",
@@ -133,7 +150,8 @@
     "name": "MP5-SD | Liquidation",
     "color": [
       "Blue"
-    ]
+    ],
+    "case": "Revolution Case"
   },
   "Neon Squeezer": {
     "class": "lblue",
