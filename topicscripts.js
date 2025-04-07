@@ -1541,179 +1541,412 @@ if (languageTag === "ru") {
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
-  var res = $(window).width();
+  const res = $(window).width();
   const itemsPerPage = res < 1365 ? 6 : 12;
-  const topicBoxesHolder = document.querySelector(".topic-boxes-holder.sticker-crafts");
+  const path = window.location.pathname;
+
+  const topicBoxesHolder = document.querySelector(".topic-boxes-holder.sticker-crafts") ||
+                           document.querySelector(".topic-boxes-holder.items-type");
   if (!topicBoxesHolder) return;
+
+  const isStickerCraftsSkinPage = /\/sticker-crafts\/skin\//.test(path);
+  const isStickerCraftsListPage = /\/topic\/sticker-crafts(?:\.html)?$/.test(path);
+  const isStickerCraftsPage = isStickerCraftsSkinPage || isStickerCraftsListPage;
   
-  const currentPath = window.location.pathname;
-  const isStickerCraftsPage = /\/sticker-crafts\/skin\//.test(currentPath);
-  
+  const itemTypeMatch = path.match(/\/topic\/(?:items-type\/)?(cases|collections|sticker-capsules|autograph-capsules)(?:\.html)?$/);
+
+  const isItemsTypePage = !!itemTypeMatch;
+  const itemType = itemTypeMatch ? itemTypeMatch[1] : null;
+
+  let pageData = [];
   let skinBindMap = {};
-  
-  try {
+
+  // === STICKER CRAFTS ===
+  if (isStickerCraftsPage) {
+    const pageKey = isStickerCraftsSkinPage ? path.split("/").pop().replace(".html", "") : null;
+    try {
       const bindsResponse = await fetch("/code-parts/topics/sticker-crafts-binds.json");
       const bindsData = await bindsResponse.json();
       skinBindMap = bindsData || {};
-  } catch (error) {
+    } catch (error) {}
+
+    const matchedSkinName = skinBindMap[pageKey];
+
+    try {
+      const response = await fetch("/code-parts/topics/sticker-crafts.json");
+      const data = await response.json();
+      pageData = (isStickerCraftsSkinPage && matchedSkinName)
+      ? data.filter(sticker => sticker.skin === matchedSkinName)
+      : data;
+    } catch (e) {
+      console.error("Sticker crafts JSON load error:", e);
+      return;
+    }
+
+    pageData.forEach(sticker => {
+      const topic = document.createElement("a");
+      topic.classList.add("topic-grandbox", "sticker");
+      topic.href = `/topic/sticker-crafts/${sticker.id}`;
+      const extraClass = sticker.extra ? ` ${sticker.extra}` : "";
+
+      topic.innerHTML = `
+        <div class="topic-box">
+          <div class="best ${sticker.range}"></div>
+          <div class="logobg${extraClass}">
+            <img src="${sticker.img}" alt="${sticker.title}" draggable="false">
+          </div>
+        </div>
+        <div class="navigation-section first">
+          <span>${sticker.title}</span>
+        </div>
+        <div class="navigation-section third">
+          ${sticker.skins.map(skin =>
+            `<div class="skin" weapon="${skin.weapon}" skin-id="${skin.skin_id}"></div>`
+          ).join("")}
+        </div>
+      `;
+
+      topicBoxesHolder.appendChild(topic);
+    });
+
+  // === ITEMS-TYPE ===
+} else if (isItemsTypePage && itemType) {
+  try {
+    const response = await fetch(`/code-parts/topics/${itemType}.json`);
+    const rawData = await response.json();
+
+    const customPath = rawData.customPath || itemType;
+    pageData = rawData.items || rawData;
+
+    // === СОРТИРОВКА ПО ДАТЕ ===
+    const hasDates = pageData.some(item => item.date);
+    if (hasDates) {
+      pageData.sort((a, b) => {
+        const parseDate = (str) => {
+          const [d, m, y] = str.split(".");
+          return new Date(`20${y}`, m - 1, d);
+        };
+        const dateA = a.date ? parseDate(a.date) : new Date(0);
+        const dateB = b.date ? parseDate(b.date) : new Date(0);
+        return dateB - dateA;
+      });
+    }
+
+    pageData.forEach(item => {
+      const el = document.createElement("a");
+      el.classList.add("topic-box", "items");
+      el.href = `/topic/${customPath}/${item.id}`;
+      el.innerHTML = `
+        <div class="logobg">
+          <img src="${item.img}" draggable="false" alt="${item.title}">
+        </div>
+        <div class="content">
+          <span>${item.title}</span>
+        </div>
+      `;
+      topicBoxesHolder.appendChild(el);
+    });
+  } catch (e) {
+    console.error("Items-type JSON load error:", e);
+    return;
   }
-  
-  const pageKey = currentPath.split("/").pop().replace(".html", "");
-  const matchedSkinName = skinBindMap[pageKey];
-  
-    
-  fetch("/code-parts/topics/sticker-crafts.json")
-  .then(response => response.json())
-  .then(data => {
-      if (!Array.isArray(data)) return;
+}
 
-      const filteredData = isStickerCraftsPage && matchedSkinName 
-          ? data.filter(sticker => sticker.skin === matchedSkinName)
-          : data;
+  if (pageData.length > itemsPerPage) {
+    topicBoxesHolder.classList.add("pagination");
+  }
 
-      filteredData.forEach(sticker => {
-          const topic = document.createElement("a");
-          topic.classList.add("topic-grandbox", "sticker");
-          topic.href = `/topic/sticker-crafts/${sticker.id}`;
+  setupPagination();
 
-          const extraClass = sticker.extra ? ` ${sticker.extra}` : "";
+  if (typeof languageTag !== "undefined" && languageTag === "ru") {
+    updateURLs(topicBoxesHolder);
+  }
 
-          topic.innerHTML = `
-          <div class="topic-box">
-              <div class="best ${sticker.range}"></div>
-              <div class="logobg${extraClass}">
-                  <img src="${sticker.img}" alt="${sticker.title}" draggable="false">
-              </div>
-          </div>
-          <div class="navigation-section first">
-              <span>${sticker.title}</span>
-          </div>
-          <div class="navigation-section third">
-              ${sticker.skins.map(skin => 
-                  `<div class="skin" weapon="${skin.weapon}" skin-id="${skin.skin_id}"></div>`
-              ).join('')}
-          </div>
-          `;
-          topicBoxesHolder.appendChild(topic);
+  // === PAGINATION ===
+  function setupPagination() {
+    const isSticker = isStickerCraftsPage;
+    const itemSelector = isSticker ? ".topic-grandbox.sticker" : ".topic-box.items";
+    const boxTopics = Array.from(topicBoxesHolder.querySelectorAll(itemSelector));
+    if (!boxTopics.length) return;
+
+    const paginationHolder = document.createElement("div");
+    paginationHolder.classList.add("pagination-holder");
+    topicBoxesHolder.appendChild(paginationHolder);
+
+    const totalPages = Math.ceil(boxTopics.length / itemsPerPage);
+
+    function showPage(page) {
+      const start = (page - 1) * itemsPerPage;
+      const end = page * itemsPerPage;
+
+      boxTopics.forEach((box, index) => {
+        if (index >= start && index < end) {
+          const delay = ((index % itemsPerPage) + 1) * 0.05;
+          box.style.animationDelay = `${delay}s`;
+          box.classList.remove("hidden");
+          box.classList.add("fade-in");
+          box.addEventListener("animationend", () => {
+            box.classList.remove("fade-in");
+            box.classList.add("visible");
+          }, { once: true });
+        } else {
+          box.classList.add("hidden");
+          box.classList.remove("fade-in", "visible");
+        }
       });
 
-      if (filteredData.length > 12) {
-        topicBoxesHolder.classList.add("pagination");
+      updatePaginationButtons(page);
+    }
+
+    function createPaginationButtons() {
+      paginationHolder.innerHTML = "";
+      for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement("button");
+        button.textContent = i;
+        button.classList.add("pagination-button");
+        button.dataset.page = i;
+        button.addEventListener("click", () => showPage(i));
+        paginationHolder.appendChild(button);
       }
+    }
 
-      setupPagination();
+    function updatePaginationButtons(activePage) {
+      document.querySelectorAll(".pagination-button").forEach((button) => {
+        button.classList.toggle("active", parseInt(button.dataset.page, 10) === activePage);
+      });
+    }
 
-      if (languageTag === "ru") {
-          updateURLs(topicBoxesHolder);
-      }
-  });
-  
-  function setupPagination() {
-      const boxTopics = Array.from(topicBoxesHolder.querySelectorAll(".topic-grandbox"));
-      if (!boxTopics.length) return;
+    createPaginationButtons();
+    showPage(1);
 
-      const paginationHolder = document.createElement("div");
-      paginationHolder.classList.add("pagination-holder");
-      topicBoxesHolder.appendChild(paginationHolder);
-
-      const totalPages = Math.ceil(boxTopics.length / itemsPerPage);
-
-      function showPage(page) {
-          const start = (page - 1) * itemsPerPage;
-          const end = page * itemsPerPage;
-
-          boxTopics.forEach((box, index) => {
-              if (index >= start && index < end) {
-                  const delay = ((index % itemsPerPage) + 1) * 0.05;
-                  box.style.animationDelay = `${delay}s`;
-                  box.classList.remove("hidden");
-                  box.classList.add("fade-in");
-                  
-                  box.addEventListener("animationend", () => {
-                      box.classList.remove("fade-in");
-                      box.classList.add("visible");
-                  }, { once: true });
-              } else {
-                  box.classList.add("hidden");
-                  box.classList.remove("fade-in", "visible");
-              }
-          });
-          
-          updatePaginationButtons(page);
-      }
-
-      function createPaginationButtons() {
-          paginationHolder.innerHTML = "";
-          for (let i = 1; i <= totalPages; i++) {
-              const button = document.createElement("button");
-              button.textContent = i;
-              button.classList.add("pagination-button");
-              button.dataset.page = i;
-              button.addEventListener("click", () => showPage(i));
-              paginationHolder.appendChild(button);
-          }
-      }
-
-      function updatePaginationButtons(activePage) {
-          document.querySelectorAll(".pagination-button").forEach((button) => {
-              button.classList.toggle("active", parseInt(button.dataset.page, 10) === activePage);
-          });
-      }
-
+    // === Extra: если sticker-crafts, грузим обложки скинов ===
+    if (isSticker) {
       const skinsOnPage = $(".skin");
       const weaponToSkinIds = {};
-  
+
       skinsOnPage.each(function () {
-          const weapon = $(this).attr("weapon");
-          const skinId = $(this).attr("skin-id");
-          if (weapon && skinId) {
-              weaponToSkinIds[weapon] = weaponToSkinIds[weapon] || [];
-              weaponToSkinIds[weapon].push(skinId);
-          }
+        const weapon = $(this).attr("weapon");
+        const skinId = $(this).attr("skin-id");
+        if (weapon && skinId) {
+          weaponToSkinIds[weapon] = weaponToSkinIds[weapon] || [];
+          weaponToSkinIds[weapon].push(skinId);
+        }
       });
-  
+
       const loadSkinsData = async () => {
-          await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
-              const response = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
-              const skinsData = await response.json();
-  
-              const skinsForWeapon = skinsData || {};
-              weaponToSkinIds[weapon].forEach((skinId) => {
-                  const skinData = skinsForWeapon[skinId];
-                  if (skinData) {
-                      const isInNavigation = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).closest('.navigation-section').length > 0;
-                      const imageUrl = isInNavigation ? skinData.imageOG : skinData.image;
-  
-                      const newSkinHTML = `
-                          <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
-                              <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
-                          </div>`;
-                          
-                      $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function() {
-                          $(this).replaceWith(newSkinHTML);
-                      });
-                  }
+        await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
+          const response = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
+          const skinsData = await response.json();
+          const skinsForWeapon = skinsData || {};
+          weaponToSkinIds[weapon].forEach((skinId) => {
+            const skinData = skinsForWeapon[skinId];
+            if (skinData) {
+              const isInNavigation = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).closest('.navigation-section').length > 0;
+              const imageUrl = isInNavigation ? skinData.imageOG : skinData.image;
+
+              const newSkinHTML = `
+                <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
+                  <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
+                </div>`;
+
+              $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function () {
+                $(this).replaceWith(newSkinHTML);
               });
-          }));
-  
-          $(".skin img").each(function () {
-              if (this.complete) {
-                  $(this).addClass("imported");
-              } else {
-                  $(this).on("load", function () {
-                      $(this).addClass("imported");
-                  });
-              }
+            }
           });
-  
+        }));
+
+        $(".skin img").each(function () {
+          if (this.complete) {
+            $(this).addClass("imported");
+          } else {
+            $(this).on("load", function () {
+              $(this).addClass("imported");
+            });
+          }
+        });
       };
 
       loadSkinsData();
-
-        createPaginationButtons();
-        showPage(1);
+    }
   }
 });
+
+
+// document.addEventListener("DOMContentLoaded", async function () {
+//   var res = $(window).width();
+//   const itemsPerPage = res < 1365 ? 6 : 12;
+//   const topicBoxesHolder = document.querySelector(".topic-boxes-holder.sticker-crafts");
+//   if (!topicBoxesHolder) return;
+  
+//   const currentPath = window.location.pathname;
+//   const isStickerCraftsPage = /\/sticker-crafts\/skin\//.test(currentPath);
+  
+//   let skinBindMap = {};
+  
+//   try {
+//       const bindsResponse = await fetch("/code-parts/topics/sticker-crafts-binds.json");
+//       const bindsData = await bindsResponse.json();
+//       skinBindMap = bindsData || {};
+//   } catch (error) {
+//   }
+  
+//   const pageKey = currentPath.split("/").pop().replace(".html", "");
+//   const matchedSkinName = skinBindMap[pageKey];
+  
+    
+//   fetch("/code-parts/topics/sticker-crafts.json")
+//   .then(response => response.json())
+//   .then(data => {
+//       if (!Array.isArray(data)) return;
+
+//       const filteredData = isStickerCraftsPage && matchedSkinName 
+//           ? data.filter(sticker => sticker.skin === matchedSkinName)
+//           : data;
+
+//       filteredData.forEach(sticker => {
+//           const topic = document.createElement("a");
+//           topic.classList.add("topic-grandbox", "sticker");
+//           topic.href = `/topic/sticker-crafts/${sticker.id}`;
+
+//           const extraClass = sticker.extra ? ` ${sticker.extra}` : "";
+
+//           topic.innerHTML = `
+//           <div class="topic-box">
+//               <div class="best ${sticker.range}"></div>
+//               <div class="logobg${extraClass}">
+//                   <img src="${sticker.img}" alt="${sticker.title}" draggable="false">
+//               </div>
+//           </div>
+//           <div class="navigation-section first">
+//               <span>${sticker.title}</span>
+//           </div>
+//           <div class="navigation-section third">
+//               ${sticker.skins.map(skin => 
+//                   `<div class="skin" weapon="${skin.weapon}" skin-id="${skin.skin_id}"></div>`
+//               ).join('')}
+//           </div>
+//           `;
+//           topicBoxesHolder.appendChild(topic);
+//       });
+
+//       if (filteredData.length > 12) {
+//         topicBoxesHolder.classList.add("pagination");
+//       }
+
+//       setupPagination();
+
+//       if (languageTag === "ru") {
+//           updateURLs(topicBoxesHolder);
+//       }
+//   });
+  
+//   function setupPagination() {
+//       const boxTopics = Array.from(topicBoxesHolder.querySelectorAll(".topic-grandbox"));
+//       if (!boxTopics.length) return;
+
+//       const paginationHolder = document.createElement("div");
+//       paginationHolder.classList.add("pagination-holder");
+//       topicBoxesHolder.appendChild(paginationHolder);
+
+//       const totalPages = Math.ceil(boxTopics.length / itemsPerPage);
+
+//       function showPage(page) {
+//           const start = (page - 1) * itemsPerPage;
+//           const end = page * itemsPerPage;
+
+//           boxTopics.forEach((box, index) => {
+//               if (index >= start && index < end) {
+//                   const delay = ((index % itemsPerPage) + 1) * 0.05;
+//                   box.style.animationDelay = `${delay}s`;
+//                   box.classList.remove("hidden");
+//                   box.classList.add("fade-in");
+                  
+//                   box.addEventListener("animationend", () => {
+//                       box.classList.remove("fade-in");
+//                       box.classList.add("visible");
+//                   }, { once: true });
+//               } else {
+//                   box.classList.add("hidden");
+//                   box.classList.remove("fade-in", "visible");
+//               }
+//           });
+          
+//           updatePaginationButtons(page);
+//       }
+
+//       function createPaginationButtons() {
+//           paginationHolder.innerHTML = "";
+//           for (let i = 1; i <= totalPages; i++) {
+//               const button = document.createElement("button");
+//               button.textContent = i;
+//               button.classList.add("pagination-button");
+//               button.dataset.page = i;
+//               button.addEventListener("click", () => showPage(i));
+//               paginationHolder.appendChild(button);
+//           }
+//       }
+
+//       function updatePaginationButtons(activePage) {
+//           document.querySelectorAll(".pagination-button").forEach((button) => {
+//               button.classList.toggle("active", parseInt(button.dataset.page, 10) === activePage);
+//           });
+//       }
+
+//       const skinsOnPage = $(".skin");
+//       const weaponToSkinIds = {};
+  
+//       skinsOnPage.each(function () {
+//           const weapon = $(this).attr("weapon");
+//           const skinId = $(this).attr("skin-id");
+//           if (weapon && skinId) {
+//               weaponToSkinIds[weapon] = weaponToSkinIds[weapon] || [];
+//               weaponToSkinIds[weapon].push(skinId);
+//           }
+//       });
+  
+//       const loadSkinsData = async () => {
+//           await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
+//               const response = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
+//               const skinsData = await response.json();
+  
+//               const skinsForWeapon = skinsData || {};
+//               weaponToSkinIds[weapon].forEach((skinId) => {
+//                   const skinData = skinsForWeapon[skinId];
+//                   if (skinData) {
+//                       const isInNavigation = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).closest('.navigation-section').length > 0;
+//                       const imageUrl = isInNavigation ? skinData.imageOG : skinData.image;
+  
+//                       const newSkinHTML = `
+//                           <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
+//                               <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
+//                           </div>`;
+                          
+//                       $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function() {
+//                           $(this).replaceWith(newSkinHTML);
+//                       });
+//                   }
+//               });
+//           }));
+  
+//           $(".skin img").each(function () {
+//               if (this.complete) {
+//                   $(this).addClass("imported");
+//               } else {
+//                   $(this).on("load", function () {
+//                       $(this).addClass("imported");
+//                   });
+//               }
+//           });
+  
+//       };
+
+//       loadSkinsData();
+
+//         createPaginationButtons();
+//         showPage(1);
+//   }
+// });
 
 
 const topicBoxesHolder = document.querySelector(".topic-boxes-holder");
