@@ -1165,7 +1165,8 @@ nav .pages {
 
 #preview-showcase #preview-content img {
     z-index: 10;
-    height: 84%;
+    max-height: 84%;
+    height: auto;
     width: auto;
     filter: drop-shadow(6px 4px 6px rgba(0, 0, 0, .4));
     transition: all .15s ease-in-out;
