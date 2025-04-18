@@ -8796,7 +8796,8 @@ div#results {
 }
 
 .topic-grandbox .skin img {
-    height: 94%;
+    height: auto;
+    max-height: 95%;
 }
 
 .sitepage.topic-craft .topic-box .logobg img,
