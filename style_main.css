@@ -10705,6 +10705,53 @@ div#results {
     opacity: 0;
 }
 
+.pagination-button {
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    border: unset;
+    background-color: var(--darkygray);
+    color: rgba(255, 255, 255, .25);
+    font-family: TTNormsPro;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all .15s ease-in-out;
+}
+
+.pagination-holder:has(.pagination-button:last-child:nth-child(1)) {
+    display: none;
+}
+
+.pagination-button:matches()
+
+.pagination-button:hover {
+    filter: brightness(1.1);
+    transform: scale(1.1);
+    color: var(--gray);
+}
+
+.pagination-button.active {
+    color: var(--main-color);
+    transform: scale(1.1);
+}
+
+/* .pagination-button.active::before {
+    background: linear-gradient(-45deg, var(--darkygray) 0%, rgba(43, 0, 16, .85) 100%);
+} */
+
+.topic-grandbox.hidden, 
+.topic-box.hidden {
+    display: none;
+}
+
+.topic-boxes-holder .topic-grandbox.sticker {
+    opacity: 0;
+}
+
 @keyframes langentr {
 
     from {
@@ -12610,7 +12657,13 @@ div#results {
 }
 
 @media screen and (max-width: 850px) {
-
+    .pagination-button {
+        height: 30px;
+        width: 30px;
+        margin: 5px 3px;
+        font-size: 14px;
+    }
+    
     .boxes-holder-section {
         background: var(--darkygray);
     }
@@ -12770,12 +12823,12 @@ div#results {
     .topic-boxes-holder {
         margin-top: 8px;
         min-height: unset;
-        padding-bottom: 55px;
+        padding-bottom: 45px;
     }
 
     .topic-boxes-holder.sticker-crafts,
     .topic-boxes-holder.sticker-crafts.pagination {
-        min-height: 699px;
+        min-height: 689px;
     }
 
     .topic-box.maestro {
@@ -13909,53 +13962,6 @@ div#results {
 
 .sticker-crafts .pagination-holder {
     bottom: 8px;
-}
-
-.pagination-button {
-    height: 40px;
-    width: 40px;
-    margin: 5px;
-    border-radius: 10px;
-    position: relative;
-    z-index: 1;
-    border: unset;
-    background-color: var(--darkygray);
-    color: rgba(255, 255, 255, .25);
-    font-family: TTNormsPro;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all .15s ease-in-out;
-}
-
-.pagination-holder:has(.pagination-button:last-child:nth-child(1)) {
-    display: none;
-}
-
-.pagination-button:matches()
-
-.pagination-button:hover {
-    filter: brightness(1.1);
-    transform: scale(1.1);
-    color: var(--gray);
-}
-
-.pagination-button.active {
-    color: var(--main-color);
-    transform: scale(1.1);
-}
-
-/* .pagination-button.active::before {
-    background: linear-gradient(-45deg, var(--darkygray) 0%, rgba(43, 0, 16, .85) 100%);
-} */
-
-.topic-grandbox.hidden, 
-.topic-box.hidden {
-    display: none;
-}
-
-.topic-boxes-holder .topic-grandbox.sticker {
-    opacity: 0;
 }
 
 /* @keyframes fadeOut {
