@@ -6412,10 +6412,17 @@ footer .centralizer .footer-content {
     cursor: pointer;
 }
 
-.topic-nav-box span {
+.topic-nav-box::before {
+    content: 'Change Items';
+    z-index: 1;
+    position: relative;
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
+}
+
+.lang-ru .topic-nav-box::before {
+    content: 'Сменить Предмет';
 }
 
 .topic-nav-selector {
@@ -12328,6 +12335,14 @@ div#results {
 
     .sitepage.topic-craft,
     .sitepage.topic {
+        padding-top: 10px;
+    }
+
+    .sitepage.topic.items {
+        padding-top: unset;
+    }
+
+    .sitepage.topic.items .topic-centralizer {
         padding-top: 10px;
     }
 
