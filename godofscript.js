@@ -614,7 +614,7 @@ forcemodsboxes();
                     </div>
                 <div class="content-buttons">
                     <a href="${reviewLink}" aria-label="Read Review" class="review-button"></a>
-                    <a href='${altData.link}' aria-label="Visit WebSite" target="_blank" class="review-button visit"></a>
+                    <a href='${altData.link}' aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
                 </div>
                 </div>`;
 

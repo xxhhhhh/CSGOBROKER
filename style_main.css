@@ -3436,12 +3436,46 @@ nav #logo:hover {
     min-height: 738px;
 }
 
+.topic-boxes-holder:has(.topic-filter):has(.pagination-holder) {
+    min-height: 787px;
+}
+
 .topic-boxes-holder.sticker-crafts.pagination {
     min-height: 812px;
 }
 
 .boxes-holder.langimprt {
     min-height: 800px;
+}
+
+.topic-filter {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: 1;
+    width: 93.7%;
+    height: 56px;
+    margin-top: 10px;
+    margin-bottom: -17px;
+}
+
+.topic-filter .singlemod-box:first-child {
+    margin-left: 0;
+}
+
+.topic-filter .singlemod-box {
+    flex-grow: unset;
+    margin: 0 5px;
+    height: 45px;
+    width: 45px;
+}
+
+.singlemod-box.topic-filter-tab {
+    width: 220px;
+}
+
+.singlemod-box.topic-filter-tab:hover {
+    transform: scale(1.03);
 }
 
 .category-centralizer {

@@ -1545,8 +1545,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const itemsPerPage = res < 1365 ? 6 : 12;
   const path = window.location.pathname;
 
-  const topicBoxesHolder = document.querySelector(".topic-boxes-holder.sticker-crafts") ||
-                           document.querySelector(".topic-boxes-holder.items-type");
+  const topicBoxesHolder = document.querySelector(".topic-boxes-holder")
   if (!topicBoxesHolder) return;
 
   const isStickerCraftsSkinPage = /\/sticker-crafts\/skin\//.test(path);
@@ -1665,7 +1664,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   // === PAGINATION ===
   function setupPagination() {
     const isSticker = isStickerCraftsPage;
-    const itemSelector = isSticker ? ".topic-grandbox.sticker" : ".topic-box.items";
+    const itemSelector = isSticker ? ".topic-grandbox.sticker" : ".topic-box";
     const boxTopics = Array.from(topicBoxesHolder.querySelectorAll(itemSelector));
     if (!boxTopics.length) return;
 
@@ -1956,80 +1955,80 @@ if (languageTag === "ru") {
 }
 
 
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
 
-  var res = $(window).width();
+//   var res = $(window).width();
 
-  const itemsPerPage = res < 1365 ? 6 : 12;
-  const topicBoxesHolder = document.querySelector(".topic-boxes-holder");
+//   const itemsPerPage = res < 1365 ? 6 : 12;
+//   const topicBoxesHolder = document.querySelector(".topic-boxes-holder:has(.topic-box.maestro)");
 
-  if (!topicBoxesHolder) return;
+//   if (!topicBoxesHolder) return;
 
-  const boxTopics = Array.from(topicBoxesHolder.querySelectorAll(".topic-box"));
+//   const boxTopics = Array.from(topicBoxesHolder.querySelectorAll(".topic-box"));
 
-  if (!boxTopics.length) return;
+//   if (!boxTopics.length) return;
 
-  const paginationHolder = document.createElement("div");
-  paginationHolder.classList.add("pagination-holder");
-  topicBoxesHolder.appendChild(paginationHolder);
+//   const paginationHolder = document.createElement("div");
+//   paginationHolder.classList.add("pagination-holder");
+//   topicBoxesHolder.appendChild(paginationHolder);
 
-  const totalPages = Math.ceil(boxTopics.length / itemsPerPage);
+//   const totalPages = Math.ceil(boxTopics.length / itemsPerPage);
 
-  function showPage(page) {
-      const start = (page - 1) * itemsPerPage;
-      const end = page * itemsPerPage;
+//   function showPage(page) {
+//       const start = (page - 1) * itemsPerPage;
+//       const end = page * itemsPerPage;
 
-      boxTopics.forEach((box, index) => {
-        if (index >= start && index < end) {
-            const delay = ((index % itemsPerPage) + 1) * 0.05;
-            box.style.animationDelay = `${delay}s`;
-            box.classList.remove("hidden");
-            box.classList.add("fade-in");
+//       boxTopics.forEach((box, index) => {
+//         if (index >= start && index < end) {
+//             const delay = ((index % itemsPerPage) + 1) * 0.05;
+//             box.style.animationDelay = `${delay}s`;
+//             box.classList.remove("hidden");
+//             box.classList.add("fade-in");
     
-            box.addEventListener("animationend", () => {
-                box.classList.remove("fade-in");
-                box.classList.add("visible");
-            }, { once: true });
-        } else {
-            box.classList.add("hidden");
-            box.classList.remove("fade-in", "visible");
-        }
-    });
+//             box.addEventListener("animationend", () => {
+//                 box.classList.remove("fade-in");
+//                 box.classList.add("visible");
+//             }, { once: true });
+//         } else {
+//             box.classList.add("hidden");
+//             box.classList.remove("fade-in", "visible");
+//         }
+//     });
     
 
-      updatePaginationButtons(page);
-  }
+//       updatePaginationButtons(page);
+//   }
 
-  boxTopics.forEach((box) => {
-    box.addEventListener("animationend", () => {
-        box.style.opacity = "";
-    });
-});
+//   boxTopics.forEach((box) => {
+//     box.addEventListener("animationend", () => {
+//         box.style.opacity = "";
+//     });
+// });
 
 
 
-  function createPaginationButtons() {
-      paginationHolder.innerHTML = ""; 
-      for (let i = 1; i <= totalPages; i++) {
-          const button = document.createElement("button");
-          button.textContent = i;
-          button.classList.add("pagination-button");
-          button.dataset.page = i;
-          button.addEventListener("click", () => showPage(i));
-          paginationHolder.appendChild(button);
-      }
-  }
+//   function createPaginationButtons() {
+//       paginationHolder.innerHTML = ""; 
+//       for (let i = 1; i <= totalPages; i++) {
+//           const button = document.createElement("button");
+//           button.textContent = i;
+//           button.classList.add("pagination-button");
+//           button.dataset.page = i;
+//           button.addEventListener("click", () => showPage(i));
+//           paginationHolder.appendChild(button);
+//       }
+//   }
 
-  function updatePaginationButtons(activePage) {
-      document.querySelectorAll(".pagination-button").forEach((button) => {
-          button.classList.toggle("active", parseInt(button.dataset.page, 10) === activePage);
-      });
-  }
+//   function updatePaginationButtons(activePage) {
+//       document.querySelectorAll(".pagination-button").forEach((button) => {
+//           button.classList.toggle("active", parseInt(button.dataset.page, 10) === activePage);
+//       });
+//   }
 
-  function initPagination() {
-      createPaginationButtons();
-      showPage(1);
-  }
+//   function initPagination() {
+//       createPaginationButtons();
+//       showPage(1);
+//   }
 
-  initPagination();
-});
+//   initPagination();
+// });
