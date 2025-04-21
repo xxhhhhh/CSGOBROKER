@@ -382,12 +382,17 @@ h3,
 }
 
 .category-selector .category-box .category-box-logo img,
-.singlemod-box:hover .singlemod-icon::before {
+.singlemod-box:hover .singlemod-icon::before,
+.topic-filter .singlemod-select img {
     filter: grayscale(0) brightness(0);
     opacity: .8;
 }
 
-
+.topic-filter .singlemod-select:hover img,
+.topic-filter .active .singlemod-select img {
+    opacity: 1;
+    filter: none;
+}
 
 .singlemod-select img {
     filter: grayscale(1) brightness(0);
@@ -428,6 +433,10 @@ h3,
 .newest-boxes .box .logobg .best:hover {
     background: var(--main-theme);
     text-shadow: none;
+}
+
+.topic-filter .singlemod-box[data-title]::after {
+    filter: drop-shadow(0px 0px 1px rgb(22, 22, 22));
 }
 
 .box .logobg .best,
@@ -1072,6 +1081,15 @@ ul .submenu li .nonredir,
 
 .crafting-table-step.active {
     background: #f2f2f2;
+}
+
+.topic-filter input.singlemod-box {
+    color: rgba(0, 0, 0, .75);
+}
+
+.topic-filter input.singlemod-box::placeholder {
+    color: rgba(0, 0, 0, .25);
+    font-size: 14px;
 }
 
 @media screen and (min-width: 1365px) {

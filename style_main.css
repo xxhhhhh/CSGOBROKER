@@ -1263,6 +1263,7 @@ nav .pages {
 .navigation-weapon-sort[data-title]:after,
 .topic-grandbox .skin .skin-desc-name,
 .skin-alt-info[data-title]:after,
+.topic-filter .singlemod-box[data-title]:after,
 .main-mode:after,
 .infoicon::after,
 .route-semi::before {
@@ -3444,6 +3445,10 @@ nav #logo:hover {
     min-height: 812px;
 }
 
+.topic-boxes-holder.sticker-crafts.pagination:has(.topic-filter) {
+    min-height: 861px;
+}
+
 .boxes-holder.langimprt {
     min-height: 800px;
 }
@@ -3468,6 +3473,42 @@ nav #logo:hover {
     margin: 0 5px;
     height: 45px;
     width: 45px;
+}
+
+.topic-filter .singlemod-box:hover {
+    z-index: 2;
+}
+
+.topic-filter input.singlemod-box {
+    opacity: 1;
+    border: unset;
+    outline: unset;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(255, 255, 255, .75);
+    text-align: center;
+    cursor: text;
+}
+
+.topic-filter input.singlemod-box::placeholder {
+    color: rgba(255, 255, 255, .25);
+    font-size: 14px;
+}
+
+.topic-filter .singlemod-box[data-title]::after {
+    bottom: -50%;
+    filter: none;
+    padding: 5px 8px;
+    font-weight: 600;
+    font-size: 11px;
+}
+
+.topic-filter .singlemod-box[data-title]:hover::after {
+    content: attr(data-title);
+    transform: translateX(-50%) translateY(100%);
+    transition: all .15s ease-in-out;
+    margin-top: 0px;
+    opacity: 1;
 }
 
 .singlemod-box.topic-filter-tab {
@@ -10818,6 +10859,10 @@ div#results {
 }
 
 @media screen and (max-width: 1365px) {
+    .topic-filter {
+        display: none;
+    }
+    
     .big-category a::before, 
     .big-category .nonredir::before {
         content: unset;
@@ -12854,14 +12899,16 @@ div#results {
         width: 90%;
     }
 
-    .topic-boxes-holder {
+    .topic-boxes-holder,
+    .topic-boxes-holder:has(.topic-filter):has(.pagination-holder) {
         margin-top: 8px;
         min-height: unset;
         padding-bottom: 45px;
     }
 
     .topic-boxes-holder.sticker-crafts,
-    .topic-boxes-holder.sticker-crafts.pagination {
+    .topic-boxes-holder.sticker-crafts.pagination,
+    .topic-boxes-holder.sticker-crafts.pagination:has(.topic-filter) {
         min-height: 689px;
     }
 
@@ -14044,7 +14091,9 @@ div#results {
 }
 
 .topic-boxes-holder .topic-grandbox.visible,
-.topic-boxes-holder:not(.sticker-crafts) .topic-box.visible {
+.topic-boxes-holder .topic-grandbox.visible_sort,
+.topic-boxes-holder:not(.sticker-crafts) .topic-box.visible,
+.topic-boxes-holder:not(.sticker-crafts) .topic-box.visible_sort {
     opacity: 1;
 }
 

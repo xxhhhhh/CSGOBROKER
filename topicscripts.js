@@ -1645,11 +1645,154 @@ document.addEventListener("DOMContentLoaded", async function () {
       `;
       topicBoxesHolder.appendChild(el);
     });
+    
   } catch (e) {
     console.error("Items-type JSON load error:", e);
     return;
   }
 }
+
+(function () {
+  const topicBoxesHolder = document.querySelector(".topic-boxes-holder.items-type") ||
+    (["skins", "items", "sticker-crafts"].includes(location.pathname.split("/").pop().replace(".html", "")) &&
+      document.querySelector(".topic-boxes-holder"));
+
+  if (!topicBoxesHolder) return;
+
+  const isStickerCrafts = location.pathname.includes("sticker-crafts");
+  const cacheKey = "topics-nav-cache";
+  const cacheTTL = 1000 * 60 * 60 * 3;
+  const now = Date.now();
+
+  const topicFilterContainer = document.createElement("div");
+  topicFilterContainer.className = "topic-filter";
+
+  const filterInput = document.createElement("input");
+  filterInput.className = "singlemod-box topic-filter-tab";
+  filterInput.type = "text";
+  filterInput.placeholder = "";
+  filterInput.setAttribute("aria-label", "Filter Topic");
+  filterInput.setAttribute("autocomplete", "off");
+  topicFilterContainer.appendChild(filterInput);
+
+  async function fetchNavButtons() {
+    const res = await fetch("/code-parts/topics/topics-nav.json");
+    return res.json();
+  }
+
+  async function getCachedNavButtons() {
+    const cached = localStorage.getItem(cacheKey);
+    let parsedCache = cached ? JSON.parse(cached) : null;
+
+    try {
+      const freshData = await fetchNavButtons();
+
+      // Сравниваем с кэшем
+      const isEqual = JSON.stringify(freshData) === JSON.stringify(parsedCache?.data);
+
+      if (!parsedCache || now - parsedCache.timestamp > cacheTTL || !isEqual) {
+        localStorage.setItem(cacheKey, JSON.stringify({ timestamp: now, data: freshData }));
+        return freshData;
+      }
+
+      return parsedCache.data;
+    } catch (err) {
+      console.error("Ошибка загрузки topics-nav.json:", err);
+      return parsedCache?.data || [];
+    }
+  }
+
+  getCachedNavButtons().then((navButtons) => {
+    const currentHref = location.pathname.replace(/\.html$/, "");
+    const bestMatch = navButtons.reduce((acc, btn) => {
+      return currentHref.includes(btn.href) && btn.href.length > acc.length ? btn.href : acc;
+    }, "");
+
+    navButtons.forEach(btn => {
+      const box = document.createElement("div");
+      box.className = "singlemod-box";
+    
+      const title = languageTag === "ru" ? btn["data-title-ru"] || btn.alt : btn.alt;
+      box.setAttribute("data-title", title || "");
+    
+      const link = document.createElement("a");
+      link.href = btn.href;
+      link.className = "singlemod-select";
+    
+      const img = document.createElement("img");
+      img.src = btn.img;
+      img.alt = btn.alt || "";
+    
+      link.appendChild(img);
+      box.appendChild(link);
+    
+      // Только для самого точного совпадения
+      if (currentHref.includes(btn.href) && btn.href === bestMatch) {
+        box.classList.add("active");
+      }
+    
+      topicFilterContainer.appendChild(box);
+    });
+
+    topicBoxesHolder.insertBefore(topicFilterContainer, topicBoxesHolder.firstChild);
+    
+    if (languageTag === "ru") {
+      updateURLs(topicFilterContainer);
+    }
+  });
+
+  // === ФИЛЬТРАЦИЯ ===
+  filterInput.addEventListener("input", () => {
+    const value = filterInput.value.trim().toLowerCase();
+    const itemSelector = isStickerCrafts ? ".topic-grandbox.sticker" : ".topic-box";
+    const allBoxes = Array.from(topicBoxesHolder.querySelectorAll(itemSelector));
+    const paginationHolder = document.querySelector(".pagination-holder");
+
+    if (value !== "") {
+      topicBoxesHolder.classList.remove("pagination");
+      paginationHolder?.remove();
+
+      allBoxes.forEach((box) => {
+        const spanText = isStickerCrafts
+          ? box.querySelector(".navigation-section.first span")?.textContent.toLowerCase() || ""
+          : box.querySelector("span")?.textContent.toLowerCase() || "";
+
+        const isMatch = spanText.includes(value);
+
+        box.classList.remove("hidden", "fade-in", "visible");
+        box.style.animationDelay = "0s";
+        box.style.display = isMatch ? "" : "none";
+
+        if (isMatch) {
+          box.classList.add("visible_sort");
+        } else {
+          box.classList.remove("visible_sort");
+        }
+      });
+    } else {
+      allBoxes.forEach((box) => {
+        box.style.display = "";
+        box.classList.add("hidden");
+        box.classList.remove("fade-in", "visible", "visible_sort");
+      });
+
+      topicBoxesHolder.classList.add("pagination");
+
+      if (!document.querySelector(".pagination-holder")) {
+        const newPagination = document.createElement("div");
+        newPagination.className = "pagination-holder";
+        topicBoxesHolder.appendChild(newPagination);
+      }
+
+      if (typeof setupPagination === "function") {
+        setupPagination();
+      }
+    }
+  });
+})();
+
+
+
 
   if (pageData.length > itemsPerPage) {
     topicBoxesHolder.classList.add("pagination");
