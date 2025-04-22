@@ -853,37 +853,157 @@ $(document).ready(function () {
 
 });
 
-if (window.location.pathname.includes("/items/") || window.location.pathname.includes("/cases/") || window.location.pathname.includes("/stickers/") || window.location.pathname.includes("/collections/")) {
-    var xhr = new XMLHttpRequest();
-  
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var sitetoppannel = document.querySelector("div.sitetoppannel");
-            var alltopic = document.querySelector("div.sitepage");
-  
-            if (sitetoppannel) {
-                sitetoppannel.innerHTML = "";
-                sitetoppannel.innerHTML = this.responseText;
-  
-                if (languageTag === 'ru') {
-                  var navBarLinks = document.querySelectorAll('div.sitetoppannel a');
-                  navBarLinks.forEach(function(link) {
-                    var href = link.getAttribute('href');
-                    if (href && href.indexOf('/ru/') !== 0) {
-                      link.setAttribute('href', '/ru' + href);
-                    }
-                  });
-                }
-            }
-  
-            if (alltopic) {
-                alltopic.classList.add("fade-in-topic");
-            }
-        }
-    };
-    xhr.open("GET", "/code-parts/topics/nav-bar-items.html", true);
-    xhr.send();
+if (
+  window.location.pathname.includes("/items/") ||
+  window.location.pathname.includes("/cases/") ||
+  window.location.pathname.includes("/stickers/") ||
+  window.location.pathname.includes("/collections/")
+) {
+  const languageTag = document.documentElement.lang || "en";
+
+  async function loadNavDataWithCache() {
+    const cacheKey = "topicNavCache";
+    const cacheTimeKey = "topicNavCache-time";
+    const cached = localStorage.getItem(cacheKey);
+    const cachedTime = localStorage.getItem(cacheTimeKey);
+    const maxAge = 1000 * 60 * 60 * 24;
+
+    if (cached && cachedTime && (Date.now() - cachedTime < maxAge)) {
+      return JSON.parse(cached);
+    }
+
+    const response = await fetch("/code-parts/topics/topics-nav-items.json");
+    const data = await response.json();
+    localStorage.setItem(cacheKey, JSON.stringify(data));
+    localStorage.setItem(cacheTimeKey, Date.now().toString());
+    return data;
   }
+
+  function createCategoryDOM(category, isMobileView) {
+    const container = document.createElement("div");
+    container.classList.add("weapon-container");
+
+    const current = document.createElement("div");
+    current.classList.add("weapon-current");
+
+    const currentName = isMobileView && languageTag === "ru" ? category["name-ru"] || category.name : category.name;
+
+    current.innerHTML = isMobileView
+      ? `<span>${currentName}</span><i class="officon oldcarret"></i>`
+      : `<img src="${category.image}" draggable="false" alt="${category.alt}">`;
+
+    const list = document.createElement("ul");
+    list.classList.add("weapon-selection");
+
+    category.items.forEach(item => {
+      const localizedHref = languageTag === "ru" && !item.link.startsWith("/ru/")
+        ? `/ru${item.link}`
+        : item.link;
+
+      list.innerHTML += `
+        <li class="weapon-selection-unite">
+          <a href="${localizedHref}" class="weapon-selection-redir">
+            <img src="${item.image}" draggable="false" alt="${item.name}">
+            <span>${item.name}</span>
+          </a>
+        </li>
+      `;
+    });
+
+    container.appendChild(current);
+    container.appendChild(list);
+    return container;
+  }
+
+  loadNavDataWithCache().then(async data => {
+    const topicTopPanel = document.querySelector("div.sitetoppannel");
+    const topicPage = document.querySelector("div.topicpage");
+    const isMobileView = window.innerWidth < 1365;
+
+    if (!topicTopPanel || !topicPage) return;
+
+    const navElements = [];
+
+    for (const category of data) {
+      if (category["import-items"]) {
+        try {
+          const importedData = await (await fetch(`/code-parts/topics/${category["import-items"]}.json`)).json();
+          const importedItems = importedData.items || [];
+          importedItems.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+
+          const importType = category["import-items"];
+          const pathType = ["autograph-capsules", "sticker-capsules"].includes(importType) ? "stickers" : importType;
+
+          category.items = importedItems.map(item => ({
+            name: item.title,
+            image: item.img,
+            link: `/topic/${pathType}/${item.id}`
+          }));
+        } catch (e) {
+          console.error("Failed to import items from", category["import-items"], e);
+          category.items = [];
+        }
+      }
+
+      navElements.push(createCategoryDOM(category, isMobileView));
+    }
+
+    if (isMobileView) {
+      const navMenu = document.createElement("div");
+      navMenu.classList.add("topic-nav-menu");
+
+      navElements.forEach(el => navMenu.appendChild(el));
+      navMenu.appendChild(document.createElement("div")).className = "topic-nav-close";
+
+      const navWrapper = document.createElement("div");
+      navWrapper.classList.add("topic-nav-selector");
+      navWrapper.appendChild(navMenu);
+
+      topicPage.appendChild(navWrapper);
+
+      // Навигация (открытие / закрытие)
+      topicPage.addEventListener("click", function (e) {
+        if (e.target.closest(".weapon-current")) {
+          const container = e.target.closest(".weapon-container");
+          const isActive = container.classList.contains("active");
+
+          document.querySelectorAll(".weapon-container").forEach(c => c.classList.remove("active"));
+
+          if (!isActive) {
+            container.classList.add("active");
+          }
+        }
+
+        if (e.target.closest(".topic-nav-close")) {
+          document.querySelector(".topic-nav-selector").classList.remove("active");
+          document.querySelectorAll(".weapon-container").forEach(c => c.classList.remove("active"));
+          document.querySelector(".topic-nav-box")?.classList.remove("active");
+          document.querySelector(".pages")?.classList.remove("hardhidden");
+        }
+
+        if (e.target.closest(".topic-nav-box")) {
+          const navBox = e.target.closest(".topic-nav-box");
+          const navSelector = document.querySelector(".topic-nav-selector");
+
+          const isActive = navBox.classList.contains("active");
+
+          navBox.classList.toggle("active", !isActive);
+          navSelector.classList.toggle("active", !isActive);
+
+          document.querySelector(".pages")?.classList.toggle("hardhidden", !isActive);
+        }
+      });
+
+    } else {
+      topicTopPanel.innerHTML = "";
+      navElements.forEach(el => topicTopPanel.appendChild(el));
+      topicPage.classList.add("fade-in-topic");
+    }
+  });
+}
+
+
+
 
   if (window.location.pathname.includes("/topic")) {
     var skinslist = document.querySelectorAll('.box-skins-list');
@@ -1144,125 +1264,6 @@ $(document).ready(function(){
     });
   });
 
-  $(document).ready(function () {
-    function initializeBoxTopic() {
-        var topicpage = $('.topicpage');
-        if (topicpage.length) {
-            var urlnav = languageTag === 'ru' 
-                ? '/code-parts/topics/nav-topic-box-ru.html' 
-                : '/code-parts/topics/nav-topic-box.html';
-            
-            $.get(urlnav, function (data) {
-                topicpage.append(data);
-    
-                topicpage.on('click.topicNav', '.topic-nav-box', function () {
-                    var topicNavBox = $(this);
-                    toggleActiveClass(topicNavBox);
-                    
-                    if (topicNavBox.hasClass('active')) {
-                        $('.pages').addClass('hardhidden');
-                    } else {
-                        $('.pages').removeClass('hardhidden');
-                    }
-    
-                    toggleActiveClass($('.topic-nav-selector'));
-                });
-    
-                topicpage.on('click.topicNav', '.topic-nav-close', function () {
-                    toggleActiveClass($('.topic-nav-selector'));
-                    $('.pages').removeClass('hardhidden');
-                    $('.topic-nav-box').removeClass('active');
-                });
-    
-                topicpage.on('click.topicNav', '.weapon-container', function () {
-                    var clickedContainer = $(this);
-                    $('.weapon-container').not(clickedContainer).removeClass('active');
-                    toggleActiveClass(clickedContainer);
-                });
-            });
-        }
-    }
-    
-    
-
-    function deinitializeBoxTopic() {
-        var topicpage = $('.topicpage');
-        if (topicpage.length) {
-            topicpage.off('.topicNav');
-            $('.topic-nav-selector').remove();
-            $('.topic-nav-box').removeClass('active');
-            topicpage.data('initialized', false);
-        }
-    }
-
-    function checkWindowSize() {
-        if ($(window).width() < 1365) {
-            if (isTopicItemsLink() && !$('.topicpage').data('initialized')) {
-                initializeBoxTopic();
-                $('.topicpage').data('initialized', true);
-            }
-        } else {
-            deinitializeBoxTopic();
-        }
-    }
-
-    $(window).on('resize', checkWindowSize);
-    checkWindowSize();
-});
-
-  
-  function toggleActiveClass(element) {
-    element.toggleClass('active');
-  }
-  
-  function isTopicItemsLink() {
-    return (
-      window.location.href.includes("/topic/items/") ||
-      window.location.href.includes("/topic/cases/") ||
-      window.location.pathname.includes("/topic/stickers/") ||
-      window.location.href.includes("/topic/collections/")
-    );
-  }
-  
-  function loadExternalContent(url, targetElement) {
-    if (!isTopicItemsLink()) return;
-  
-    fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(data => {
-            targetElement.innerHTML = data + targetElement.innerHTML;
-  
-            const topicNavBox = document.querySelector('.topic-nav-box');
-            const topicNavSelector = document.querySelector('.topic-nav-selector');
-            const weaponContainers = document.querySelectorAll('.weapon-container');
-            const topicNavClose = document.querySelector('.topic-nav-close');
-  
-            topicNavBox.addEventListener('click', function () {
-                toggleActiveClass(topicNavBox);
-                toggleActiveClass(topicNavSelector);
-            });
-  
-            topicNavClose.addEventListener('click', function () {
-                toggleActiveClass(topicNavSelector);
-            });
-  
-            weaponContainers.forEach(function (container) {
-                container.addEventListener('click', function () {
-                    weaponContainers.forEach(function (otherContainer) {
-                        if (otherContainer !== container) {
-                            otherContainer.classList.remove('active');
-                        }
-                    });
-                    toggleActiveClass(container);
-                });
-            });
-        });
-  }
 
 function setLocalStorageState(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
@@ -1661,7 +1662,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   const isStickerCrafts = location.pathname.includes("sticker-crafts");
   const cacheKey = "topics-nav-cache";
-  const cacheTTL = 1000 * 60 * 60 * 3;
+  const cacheTTL = 1000 * 60 * 60 * 24;
   const now = Date.now();
 
   const topicFilterContainer = document.createElement("div");

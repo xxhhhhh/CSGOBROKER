@@ -1676,7 +1676,12 @@ nav .pages {
 .box-skins .skin:hover .skin-desc-name,
 .box-skins .skin:hover::after,
 .box-skins-list.showrarity .skin:hover::before,
-.box-skins-list.showrarity .skin::after {
+.box-skins-list.showrarity .skin.red::after,
+.box-skins-list.showrarity .skin.pink::after,
+.box-skins-list.showrarity .skin.purple::after,
+.box-skins-list.showrarity .skin.blue::after,
+.box-skins-list.showrarity .skin.lblue::after,
+.box-skins-list.showrarity .skin.white::after {
     opacity: 1;
 }
 
@@ -2330,6 +2335,7 @@ h3 {
     width: max-content;
     min-width: 136px;
     max-height: 624px;
+    max-width: 300px;
     margin-top: 78px;
     padding-top: 2px;
     overflow-y: scroll;
@@ -2390,7 +2396,7 @@ h3 {
 }
 
 .weapon-container:hover {
-    background-color: rgba(255, 255, 255, .015);
+    background: var(--darkgray);
     border-radius: 5px;
     transition: background .15s ease-in-out;
 }
@@ -2433,7 +2439,7 @@ h3 {
 
 .weapon-current img {
     width: auto;
-    height: 60px;
+    height: 50px;
 }
 
 .weapon-selection-unite {
@@ -2480,7 +2486,7 @@ h3 {
 .sitepage.items .topicpage {
     left: unset;
     justify-content: center;
-    opacity: 0;
+    /* opacity: 0; */
     width: 84%;
 }
 
@@ -6590,6 +6596,7 @@ footer .centralizer .footer-content {
 .topic-nav-menu .weapon-container.active .weapon-selection {
     opacity: 1 !important;
     visibility: visible !important;
+    max-width: unset;
     position: absolute;
     margin-top: 40px;
     display: block;
@@ -6626,11 +6633,19 @@ footer .centralizer .footer-content {
     margin: 0 auto;
     margin-top: 15px;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.topic-nav-close::after {
+    content: 'Close';
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    z-index: 1;
 }
 
 input {

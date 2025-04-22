@@ -266,7 +266,9 @@ h3,
 .rec-box .content p,
 .site-attention.event strong.item,
 .promo-box code:hover,
-.skin-price-info  {
+.skin-price-info,
+.topic-nav-box::before,
+.topic-nav-close::after  {
     color: #1a1a1a;
 }
 
