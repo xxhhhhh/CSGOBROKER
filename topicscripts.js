@@ -929,7 +929,15 @@ if (
         try {
           const importedData = await (await fetch(`/code-parts/topics/${category["import-items"]}.json`)).json();
           const importedItems = importedData.items || [];
-          importedItems.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+          importedItems.sort((a, b) => {
+            const parseDate = (str) => {
+              const [d, m, y] = str.split(".");
+              return new Date(`20${y}`, m - 1, d);
+            };
+            const dateA = a.date ? parseDate(a.date) : new Date(0);
+            const dateB = b.date ? parseDate(b.date) : new Date(0);
+            return dateB - dateA;
+          });      
 
           const importType = category["import-items"];
           const pathType = ["autograph-capsules", "sticker-capsules"].includes(importType) ? "stickers" : importType;

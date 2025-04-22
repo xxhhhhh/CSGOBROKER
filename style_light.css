@@ -1021,7 +1021,7 @@ ul .submenu li .nonredir,
     background: radial-gradient(300% 100% at 0% 0%, var(--darkygray), var(--main-theme) 100%);
 }
 
-.navigation-weapon-type::before, .color-box-selection-button::before {
+.navigation-weapon-type::after, .color-box-selection-button::before {
     box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .4);
     background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, .1) 100%);
 }

@@ -1100,43 +1100,50 @@ nav .pages {
 
 .white #preview-content::before,
 .white #preview-content::after,
-.skin.white::after {
+.skin.white::after,
+.navigation-weapon-type.white::before{
     background: rgb(176, 195, 217);
 }
 
 .lblue #preview-content::before,
 .lblue #preview-content::after,
-.skin.lblue::after {
+.skin.lblue::after,
+.navigation-weapon-type.lblue::before{
     background: rgb(94, 152, 217);
 }
 
 .blue #preview-content::before,
 .blue #preview-content::after,
-.skin.blue::after {
+.skin.blue::after,
+.navigation-weapon-type.blue::before{
     background: rgb(75, 105, 255);
 }
 
 .purple #preview-content::before,
 .purple #preview-content::after,
-.skin.purple::after {
+.skin.purple::after,
+.navigation-weapon-type.purple::before{
     background: rgb(136, 71, 255);
 }
 
 .pink #preview-content::before,
 .pink #preview-content::after,
-.skin.pink::after {
+.skin.pink::after,
+.navigation-weapon-type.pink::before{
     background: rgb(211, 44, 230);
 }
 
 .red #preview-content::before,
 .red #preview-content::after,
-.skin.red::after {
+.skin.red::after,
+.navigation-weapon-type.red::before{
     background: rgb(235, 75, 75);
 }
 
 .gold #preview-content::before,
 .gold #preview-content::after,
-.skin.gold::after {
+.skin.gold::after,
+.navigation-weapon-type.gold::before{
     background: rgb(228, 174, 57);
 }
 
@@ -1329,9 +1336,11 @@ nav .pages {
     padding: 5px 8px;
     margin: 3px;
     z-index: 11;
+    position: relative;
     /* background: var(--main-theme); */
     filter: drop-shadow(0 0 1px rgb(35 35 35));
-    position: relative;
+    display: flex;
+    align-items: center;
     border-radius: 5px;
     font-weight: 500;
     font-size: 12px;
@@ -1340,6 +1349,22 @@ nav .pages {
     transition: .15s all ease-in-out;
     user-select: none;
     opacity: .3;
+}
+
+.navigation-weapon-type {
+    /* font-size: 0; */
+    font-size: 11px;
+}
+
+.navigation-weapon-type::before {
+    content: '';
+    position: relative;
+    display: block;
+    z-index: 1;
+    width: 8px;
+    height: 8px;
+    border-radius: 5px;
+    margin-right: 6px;
 }
 
 .box-skins-nav {
@@ -1375,7 +1400,7 @@ nav .pages {
     opacity: 1;
 }
 
-.navigation-weapon-type::before,
+.navigation-weapon-type::after,
 /* .navigation-weapon-name::before, */
 .color-box-selection-button::before,
 .color-box-overview-button::before,
@@ -2334,19 +2359,21 @@ h3 {
 .weapon-selection {
     width: max-content;
     min-width: 136px;
-    max-height: 624px;
+    max-height: 560px;
     max-width: 300px;
     margin-top: 78px;
     padding-top: 2px;
     overflow-y: scroll;
     overflow-x: hidden;
-    display: none;
     position: absolute;
-    z-index: 1000;
+    display: block;
+    z-index: 3;
     border-radius: 5px;
     visibility: hidden;
+    opacity: 0;
     background-color: var(--darkygray);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+    transition: all .08s ease-in-out;
     padding-left: 3px;
 }
 
@@ -2377,8 +2404,7 @@ h3 {
 
 .weapon-container:hover .weapon-selection {
     visibility: visible;
-    display: block;
-
+    opacity: 1;
 }
 
 .weapon-selection-redir {
@@ -2388,6 +2414,7 @@ h3 {
     display: flex;
     align-items: center;
     text-decoration: none;
+    position: relative;
 }
 
 .weapon-selection-unite:hover a,
@@ -2444,6 +2471,7 @@ h3 {
 
 .weapon-selection-unite {
     height: 40px;
+    min-height: 40px;
     width: 100%;
     border-radius: 5px;
     border-bottom: 2px solid rgba(0, 0, 0, .1);
@@ -6573,7 +6601,7 @@ footer .centralizer .footer-content {
 }
 
 .topic-nav-menu .weapon-container.active {
-    z-index: 1;
+    z-index: 2;
 }
 
 .topic-nav-menu .weapon-container .weapon-selection {
