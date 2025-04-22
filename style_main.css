@@ -1356,7 +1356,13 @@ nav .pages {
     font-size: 11px;
 }
 
-.navigation-weapon-type::before {
+.navigation-weapon-type.white::before,
+.navigation-weapon-type.lblue::before,
+.navigation-weapon-type.blue::before,
+.navigation-weapon-type.purple::before,
+.navigation-weapon-type.pink::before,
+.navigation-weapon-type.red::before,
+.navigation-weapon-type.gold::before {
     content: '';
     position: relative;
     display: block;
