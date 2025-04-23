@@ -67,8 +67,6 @@ themeToggleBtn.addEventListener('click', () => {
 });
 
 
-
-
 function copyToClipboard(element, copyButton) {
   const text = element.textContent.trim();
 

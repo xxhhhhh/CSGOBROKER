@@ -115,6 +115,7 @@
 
 .boxreview .smallreview {
     margin: 0 10px;
+    margin-top: 8px;
 }
 
 .instruction {
@@ -135,12 +136,12 @@
 }
 
 .site-attention.blocked {
-    margin-bottom: 8px;
+    margin-bottom: 0;
     width: 100%;
 }
 
 .site-attention {
-    margin-bottom: 8px;
+    margin-bottom: 0;
     width: 98%;
 }
 
