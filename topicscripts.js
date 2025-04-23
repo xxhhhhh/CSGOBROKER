@@ -1849,25 +1849,67 @@ document.addEventListener("DOMContentLoaded", async function () {
       updatePaginationButtons(page);
     }
 
-    function createPaginationButtons() {
+    // function createPaginationButtons() {
+    //   paginationHolder.innerHTML = "";
+    //   for (let i = 1; i <= totalPages; i++) {
+    //     const button = document.createElement("button");
+    //     button.textContent = i;
+    //     button.classList.add("pagination-button");
+    //     button.dataset.page = i;
+    //     button.addEventListener("click", () => showPage(i));
+    //     paginationHolder.appendChild(button);
+    //   }
+    // }
+
+    function updatePaginationButtons(activePage) {
       paginationHolder.innerHTML = "";
-      for (let i = 1; i <= totalPages; i++) {
+    
+      // === Кнопка "влево"
+      const prevButton = document.createElement("button");
+      prevButton.classList.add("pagination-button", "arrow");
+      prevButton.innerHTML = `<i class="officon chevron left"></i>`;
+      if (activePage === 1) {
+        prevButton.classList.add("disabled");
+      } else {
+        prevButton.addEventListener("click", () => showPage(activePage - 1));
+      }
+      paginationHolder.appendChild(prevButton);
+    
+      // === Цифровые кнопки (максимум 3: текущая и по бокам)
+      let startPage = Math.max(1, activePage - 1);
+      let endPage = Math.min(totalPages, startPage + 2);
+      // Корректируем, если в конце
+      if (endPage - startPage < 2 && startPage > 1) {
+        startPage = Math.max(1, endPage - 2);
+      }
+    
+      for (let i = startPage; i <= endPage; i++) {
         const button = document.createElement("button");
         button.textContent = i;
         button.classList.add("pagination-button");
-        button.dataset.page = i;
-        button.addEventListener("click", () => showPage(i));
+        if (i === activePage) {
+          button.classList.add("active");
+        } else {
+          button.addEventListener("click", () => showPage(i));
+        }
         paginationHolder.appendChild(button);
       }
+    
+      // === Кнопка "вправо"
+      const nextButton = document.createElement("button");
+      nextButton.classList.add("pagination-button", "arrow");
+      nextButton.innerHTML = `<i class="officon chevron right"></i>`;
+      if (activePage === totalPages) {
+        nextButton.classList.add("disabled");
+      } else {
+        nextButton.addEventListener("click", () => showPage(activePage + 1));
+      }
+      paginationHolder.appendChild(nextButton);
     }
+    
+    
 
-    function updatePaginationButtons(activePage) {
-      document.querySelectorAll(".pagination-button").forEach((button) => {
-        button.classList.toggle("active", parseInt(button.dataset.page, 10) === activePage);
-      });
-    }
-
-    createPaginationButtons();
+    // createPaginationButtons();
     showPage(1);
 
     // === Extra: если sticker-crafts, грузим обложки скинов ===
@@ -1924,263 +1966,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 
-// document.addEventListener("DOMContentLoaded", async function () {
-//   var res = $(window).width();
-//   const itemsPerPage = res < 1365 ? 6 : 12;
-//   const topicBoxesHolder = document.querySelector(".topic-boxes-holder.sticker-crafts");
-//   if (!topicBoxesHolder) return;
-  
-//   const currentPath = window.location.pathname;
-//   const isStickerCraftsPage = /\/sticker-crafts\/skin\//.test(currentPath);
-  
-//   let skinBindMap = {};
-  
-//   try {
-//       const bindsResponse = await fetch("/code-parts/topics/sticker-crafts-binds.json");
-//       const bindsData = await bindsResponse.json();
-//       skinBindMap = bindsData || {};
-//   } catch (error) {
-//   }
-  
-//   const pageKey = currentPath.split("/").pop().replace(".html", "");
-//   const matchedSkinName = skinBindMap[pageKey];
-  
-    
-//   fetch("/code-parts/topics/sticker-crafts.json")
-//   .then(response => response.json())
-//   .then(data => {
-//       if (!Array.isArray(data)) return;
-
-//       const filteredData = isStickerCraftsPage && matchedSkinName 
-//           ? data.filter(sticker => sticker.skin === matchedSkinName)
-//           : data;
-
-//       filteredData.forEach(sticker => {
-//           const topic = document.createElement("a");
-//           topic.classList.add("topic-grandbox", "sticker");
-//           topic.href = `/topic/sticker-crafts/${sticker.id}`;
-
-//           const extraClass = sticker.extra ? ` ${sticker.extra}` : "";
-
-//           topic.innerHTML = `
-//           <div class="topic-box">
-//               <div class="best ${sticker.range}"></div>
-//               <div class="logobg${extraClass}">
-//                   <img src="${sticker.img}" alt="${sticker.title}" draggable="false">
-//               </div>
-//           </div>
-//           <div class="navigation-section first">
-//               <span>${sticker.title}</span>
-//           </div>
-//           <div class="navigation-section third">
-//               ${sticker.skins.map(skin => 
-//                   `<div class="skin" weapon="${skin.weapon}" skin-id="${skin.skin_id}"></div>`
-//               ).join('')}
-//           </div>
-//           `;
-//           topicBoxesHolder.appendChild(topic);
-//       });
-
-//       if (filteredData.length > 12) {
-//         topicBoxesHolder.classList.add("pagination");
-//       }
-
-//       setupPagination();
-
-//       if (languageTag === "ru") {
-//           updateURLs(topicBoxesHolder);
-//       }
-//   });
-  
-//   function setupPagination() {
-//       const boxTopics = Array.from(topicBoxesHolder.querySelectorAll(".topic-grandbox"));
-//       if (!boxTopics.length) return;
-
-//       const paginationHolder = document.createElement("div");
-//       paginationHolder.classList.add("pagination-holder");
-//       topicBoxesHolder.appendChild(paginationHolder);
-
-//       const totalPages = Math.ceil(boxTopics.length / itemsPerPage);
-
-//       function showPage(page) {
-//           const start = (page - 1) * itemsPerPage;
-//           const end = page * itemsPerPage;
-
-//           boxTopics.forEach((box, index) => {
-//               if (index >= start && index < end) {
-//                   const delay = ((index % itemsPerPage) + 1) * 0.05;
-//                   box.style.animationDelay = `${delay}s`;
-//                   box.classList.remove("hidden");
-//                   box.classList.add("fade-in");
-                  
-//                   box.addEventListener("animationend", () => {
-//                       box.classList.remove("fade-in");
-//                       box.classList.add("visible");
-//                   }, { once: true });
-//               } else {
-//                   box.classList.add("hidden");
-//                   box.classList.remove("fade-in", "visible");
-//               }
-//           });
-          
-//           updatePaginationButtons(page);
-//       }
-
-//       function createPaginationButtons() {
-//           paginationHolder.innerHTML = "";
-//           for (let i = 1; i <= totalPages; i++) {
-//               const button = document.createElement("button");
-//               button.textContent = i;
-//               button.classList.add("pagination-button");
-//               button.dataset.page = i;
-//               button.addEventListener("click", () => showPage(i));
-//               paginationHolder.appendChild(button);
-//           }
-//       }
-
-//       function updatePaginationButtons(activePage) {
-//           document.querySelectorAll(".pagination-button").forEach((button) => {
-//               button.classList.toggle("active", parseInt(button.dataset.page, 10) === activePage);
-//           });
-//       }
-
-//       const skinsOnPage = $(".skin");
-//       const weaponToSkinIds = {};
-  
-//       skinsOnPage.each(function () {
-//           const weapon = $(this).attr("weapon");
-//           const skinId = $(this).attr("skin-id");
-//           if (weapon && skinId) {
-//               weaponToSkinIds[weapon] = weaponToSkinIds[weapon] || [];
-//               weaponToSkinIds[weapon].push(skinId);
-//           }
-//       });
-  
-//       const loadSkinsData = async () => {
-//           await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
-//               const response = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
-//               const skinsData = await response.json();
-  
-//               const skinsForWeapon = skinsData || {};
-//               weaponToSkinIds[weapon].forEach((skinId) => {
-//                   const skinData = skinsForWeapon[skinId];
-//                   if (skinData) {
-//                       const isInNavigation = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).closest('.navigation-section').length > 0;
-//                       const imageUrl = isInNavigation ? skinData.imageOG : skinData.image;
-  
-//                       const newSkinHTML = `
-//                           <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
-//                               <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
-//                           </div>`;
-                          
-//                       $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function() {
-//                           $(this).replaceWith(newSkinHTML);
-//                       });
-//                   }
-//               });
-//           }));
-  
-//           $(".skin img").each(function () {
-//               if (this.complete) {
-//                   $(this).addClass("imported");
-//               } else {
-//                   $(this).on("load", function () {
-//                       $(this).addClass("imported");
-//                   });
-//               }
-//           });
-  
-//       };
-
-//       loadSkinsData();
-
-//         createPaginationButtons();
-//         showPage(1);
-//   }
-// });
-
-
 const topicBoxesHolder = document.querySelector(".topic-boxes-holder");
 
 if (languageTag === "ru") {
     updateURLs(topicBoxesHolder);
 }
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-
-//   var res = $(window).width();
-
-//   const itemsPerPage = res < 1365 ? 6 : 12;
-//   const topicBoxesHolder = document.querySelector(".topic-boxes-holder:has(.topic-box.maestro)");
-
-//   if (!topicBoxesHolder) return;
-
-//   const boxTopics = Array.from(topicBoxesHolder.querySelectorAll(".topic-box"));
-
-//   if (!boxTopics.length) return;
-
-//   const paginationHolder = document.createElement("div");
-//   paginationHolder.classList.add("pagination-holder");
-//   topicBoxesHolder.appendChild(paginationHolder);
-
-//   const totalPages = Math.ceil(boxTopics.length / itemsPerPage);
-
-//   function showPage(page) {
-//       const start = (page - 1) * itemsPerPage;
-//       const end = page * itemsPerPage;
-
-//       boxTopics.forEach((box, index) => {
-//         if (index >= start && index < end) {
-//             const delay = ((index % itemsPerPage) + 1) * 0.05;
-//             box.style.animationDelay = `${delay}s`;
-//             box.classList.remove("hidden");
-//             box.classList.add("fade-in");
-    
-//             box.addEventListener("animationend", () => {
-//                 box.classList.remove("fade-in");
-//                 box.classList.add("visible");
-//             }, { once: true });
-//         } else {
-//             box.classList.add("hidden");
-//             box.classList.remove("fade-in", "visible");
-//         }
-//     });
-    
-
-//       updatePaginationButtons(page);
-//   }
-
-//   boxTopics.forEach((box) => {
-//     box.addEventListener("animationend", () => {
-//         box.style.opacity = "";
-//     });
-// });
-
-
-
-//   function createPaginationButtons() {
-//       paginationHolder.innerHTML = ""; 
-//       for (let i = 1; i <= totalPages; i++) {
-//           const button = document.createElement("button");
-//           button.textContent = i;
-//           button.classList.add("pagination-button");
-//           button.dataset.page = i;
-//           button.addEventListener("click", () => showPage(i));
-//           paginationHolder.appendChild(button);
-//       }
-//   }
-
-//   function updatePaginationButtons(activePage) {
-//       document.querySelectorAll(".pagination-button").forEach((button) => {
-//           button.classList.toggle("active", parseInt(button.dataset.page, 10) === activePage);
-//       });
-//   }
-
-//   function initPagination() {
-//       createPaginationButtons();
-//       showPage(1);
-//   }
-
-//   initPagination();
-// });

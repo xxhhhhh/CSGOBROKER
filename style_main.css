@@ -1569,15 +1569,16 @@ nav .pages {
 
 @-moz-document url-prefix() {
 
-    .box-skins-list,
-    .box-skins.selected {
-        scrollbar-width: thin;
-        scrollbar-color: #2e2e2e transparent;
-    }
-
     * {
         scrollbar-color: #000000 #0c0c0c;
         scrollbar-width: thin;
+    }
+
+    .box-skins-list,
+    .box-skins.selected,
+    .box-skins-nav-list {
+        scrollbar-width: thin;
+        scrollbar-color: #2e2e2e transparent;
     }
 
     .box-skins {
@@ -10850,6 +10851,35 @@ div#results {
     font-size: 16px;
     font-weight: 600;
     transition: all .15s ease-in-out;
+    opacity: 1;
+}
+
+.pagination-button.arrow {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination-button.arrow::before {
+    border-radius: 8px;
+}
+
+.pagination-button.arrow .officon.chevron::before {
+    height: 24px;
+    width: 24px;
+}
+
+.pagination-button.disabled .officon::before,
+.pagination-button.disabled:active i,
+.pagination-button.disabled {
+    filter: none !important;
+    opacity: .45 !important;
+}
+
+.pagination-button.disabled .officon::before {
+    opacity: .15 !important;
 }
 
 .pagination-holder:has(.pagination-button:last-child:nth-child(1)) {
@@ -14089,6 +14119,7 @@ div#results {
     position: absolute;
     display: flex;
     justify-content: center;
+    align-items: center;
     bottom: 0;
 }
 
