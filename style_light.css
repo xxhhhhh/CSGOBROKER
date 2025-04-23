@@ -384,7 +384,8 @@ h3,
 .sitepage.topic-craft .topic-grandbox .navigation-section.first::after,
 .rec-box .content p,
 .site-attention.event strong.item,
-
+.contact-box:hover span,
+.email-placeholder:hover span,
 .skin-price-info,
 .topic-nav-box::before,
 .topic-nav-close::after,
@@ -438,9 +439,9 @@ h3,
     filter: none;
 }
 
-.main-mode-unit {
+/* .main-mode-unit {
     background-color: var(--main-theme);
-}
+} */
 
 .main-mode-unit img {
     filter: drop-shadow(0 0 3px rgb(175 175 175));

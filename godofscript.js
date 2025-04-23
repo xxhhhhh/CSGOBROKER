@@ -1,3 +1,30 @@
+function copyToClipboard(element, copyButton) {
+  const text = element.textContent.trim();
+
+  const $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val(text).select();
+  document.execCommand("copy");
+  $temp.remove();
+
+  const copiedMessage = (languageTag === 'ru') ? 'Скопировано' : 'Copied';
+  const $title = $("<div class='copied-title'>" + copiedMessage + "</div>");
+  const $copyButton = $(copyButton);
+
+  $copyButton.append($title);
+  $copyButton.addClass("icon-changed");
+
+  $title.hide().fadeIn(150, function () {
+      $(this).delay(400).fadeOut(150, function () {
+          $(this).remove();
+      });
+  });
+
+  setTimeout(function () {
+      $copyButton.removeClass("icon-changed");
+  }, 800);
+}
+
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = themeToggleBtn.querySelector('i');
 let currentTheme = localStorage.getItem('theme') || getSystemPreferredTheme();
@@ -65,37 +92,6 @@ themeToggleBtn.addEventListener('click', () => {
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
   applyTheme(newTheme, true);
 });
-
-
-function copyToClipboard(element, copyButton) {
-  const text = element.textContent.trim();
-
-  const $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val(text).select();
-  document.execCommand("copy");
-  $temp.remove();
-
-  const copiedMessage = (languageTag === 'ru') ? 'Скопировано' : 'Copied';
-  const $title = $("<div class='copied-title'>" + copiedMessage + "</div>");
-  const $copyButton = $(copyButton);
-
-  $copyButton.append($title);
-  $copyButton.addClass("icon-changed");
-
-  $title.hide().fadeIn(150, function () {
-      $(this).delay(400).fadeOut(150, function () {
-          $(this).remove();
-      });
-  });
-
-  setTimeout(function () {
-      $copyButton.removeClass("icon-changed");
-  }, 800);
-}
-
-
-
 
 forcemodsboxes(); 
 
@@ -238,7 +234,7 @@ forcemodsboxes();
       logobg.appendChild(mainModeDiv);
     }
   
-    function copyToClipboard(text, copyButton) {
+    function copyToClipboard_review(text, copyButton) {
       const tempInput = document.createElement("input");
       document.body.appendChild(tempInput);
       tempInput.value = text;
@@ -383,7 +379,7 @@ forcemodsboxes();
             const copyButtons = document.querySelectorAll(".copy");
             copyButtons.forEach((button) => {
               button.addEventListener("click", () =>
-                copyToClipboard(data.code, button)
+                copyToClipboard_review(data.code, button)
               );
             });
           }
@@ -412,7 +408,7 @@ forcemodsboxes();
               const copyButtons = box.querySelectorAll(".copy");
               copyButtons.forEach((button) => {
                 button.addEventListener("click", () =>
-                  copyToClipboard(data.code, button)
+                  copyToClipboard_review(data.code, button)
                 );
               });
             }
