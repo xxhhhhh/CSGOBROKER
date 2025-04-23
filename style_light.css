@@ -1289,10 +1289,13 @@ ul .submenu li .nonredir,
         background: var(--main-theme);
     }
 
-    .main-page .rating-case-single,
     .boxes-holder.main-page .box .rating-case-single,
     .boxes-holder.main-page .box .rating-case-single::before {
         background: var(--darkgray);
+    }
+
+    .main-page .rating-case-single {
+        background: unset !important;
     }
 
     .sitealternates .site-reward p {

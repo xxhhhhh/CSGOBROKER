@@ -2074,7 +2074,7 @@ h3 {
 }
 
 .boxreview .plusminus .criteria {
-    width: 49.5%;
+    width: 49.6%;
     min-height: 230px;
     overflow: hidden;
     border-radius: 10px;
@@ -2083,7 +2083,6 @@ h3 {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: rgba(255, 255, 255, .05);
     position: relative;
     padding-bottom: 40px;
     z-index: 1;
@@ -8021,7 +8020,7 @@ li.slick-active button:hover {
 .category-selector .submenu,
 .category-selector .submenu2 {
     position: absolute;
-    width: 318px;
+    width: 314px;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 100px;
@@ -8062,7 +8061,7 @@ ul .big-category.active .submenu2 {
     z-index: 90;
     opacity: 1;
     margin-top: 0;
-    margin-left: 316px;
+    margin-left: 313px;
     transition: opacity ease-in-out .15s;
     display: block;
     visibility: visible;
@@ -12793,6 +12792,9 @@ div#results {
 }
 
 @media screen and (max-width: 850px) {
+    .topic-nav-menu .weapon-container .weapon-selection {
+        position: absolute;
+    }
     .pagination-button {
         height: 30px;
         width: 30px;
@@ -13655,7 +13657,7 @@ div#results {
     }
 
     .boxes-holder-section.firstelem {
-        margin-top: 43px;
+        margin-top: 41px;
     }
 
     .boxes-holder-section:last-child {
