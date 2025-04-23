@@ -12,7 +12,31 @@
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
     <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
-    <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.19">
+    <script>
+        (function () {
+          try {
+            let theme = localStorage.getItem('theme');
+            if (!theme) {
+              const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+              theme = prefersLight ? 'light' : 'dark';
+            }
+      
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.classList.add('transitions-disabled');
+      
+            const link = document.getElementById('theme-style');
+            if (theme === 'light' && link) {
+              link.href = '/style_light.css';
+              link.disabled = false;
+            } else if (link) {
+              link.href = '';
+              link.disabled = true;
+            }
+          } catch (e) {
+          }
+        })();
+    </script>     
+    <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.20">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/mirrors/csgoempire">
     <meta name="description" content="Explore the full list of CSGOEmpire Mirror Sites, which serve as legitimate alternatives to the official site, guaranteeing seamless gaming experiences.">
@@ -129,7 +153,12 @@
                 <h2>Actual Mirrors of CSGOEmpire</h2>
                 <ol>
                 <li><a target="_blank" rel="noopener" href="https://csgoempire.com/r/csgobroker">Main Domain</a></li>
-                <li><a target="_blank" rel="noopener" href="https://csgoempire.io/r/csgobroker">csgoempire.io</a></li>
+                <li><a target="_blank" rel="noopener" class="actual" href="https://csgoempire88.com/r/csgobroker">csgoempire88.com</a></li>
+                <li><a target="_blank" rel="noopener" href="https://csgoempire.biz/r/csgobroker">csgoempire.biz</a></li>
+                <li><a target="_blank" rel="noopener" href="https://csgoempire.fun/r/csgobroker">csgoempire.fun</a></li>
+                <li><a target="_blank" rel="noopener" class="actual" href="https://csgoempire.io/r/csgobroker">csgoempire.io</a></li>
+                <li><a target="_blank" rel="noopener" href="https://csgoempire.cam/r/csgobroker">csgoempire.cam</a></li>
+                <li><a target="_blank" rel="noopener" href="https://csgoempiretr.com/r/csgobroker">csgoempiretr.com</a></li>
                 </ol>
             </div>
        </div>
@@ -146,7 +175,7 @@
 </div>
     
 </body>
-<script defer src="/godofscript.js?v=1.12"></script>
+<script defer src="/godofscript.js?v=1.13"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   
 <script type="text/javascript">

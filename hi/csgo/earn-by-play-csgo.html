@@ -12,7 +12,31 @@
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
     <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
-    <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.19">
+    <script>
+        (function () {
+          try {
+            let theme = localStorage.getItem('theme');
+            if (!theme) {
+              const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+              theme = prefersLight ? 'light' : 'dark';
+            }
+      
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.classList.add('transitions-disabled');
+      
+            const link = document.getElementById('theme-style');
+            if (theme === 'light' && link) {
+              link.href = '/style_light.css';
+              link.disabled = false;
+            } else if (link) {
+              link.href = '';
+              link.disabled = true;
+            }
+          } catch (e) {
+          }
+        })();
+    </script>     
+    <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.20">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/hi/csgo/earn-by-play-csgo">
     <meta name="description" content="CS2 के खिलाड़ी इन साइटों पर दिए गए Earn By Play प्रोग्राम का उपयोग करके पैसे कमाने का अवसर प्राप्त कर सकते हैं। इस प्रोग्राम के माध्यम से गेमर्स अपने इन-गेम कौशल को टूर्नामेंट में दिखाकर गेमिंग समुदायों में कैश पुरस्कार जीत सकते हैं।">
@@ -175,7 +199,7 @@
     </footer>
 </div>
 </body>
-<script defer src="/godofscript.js?v=1.12"></script>
+<script defer src="/godofscript.js?v=1.13"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
   

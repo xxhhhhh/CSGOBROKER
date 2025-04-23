@@ -1,3 +1,74 @@
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = themeToggleBtn.querySelector('i');
+let currentTheme = localStorage.getItem('theme') || getSystemPreferredTheme();
+
+applyTheme(currentTheme, false);
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (document.documentElement.classList.contains('transitions-disabled')) {
+    replaceTransitionClass();
+  }
+});
+
+function getSystemPreferredTheme() {
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+function replaceTransitionClass() {
+  const html = document.documentElement;
+
+  setTimeout(() => {
+    html.classList.remove('transitions-disabled');
+    html.classList.add('transitions-enabled');
+
+    setTimeout(() => {
+      html.classList.remove('transitions-enabled');
+    }, 200);
+  }, 100);
+}
+
+function temporarilyDisableTransitions() {
+  const html = document.documentElement;
+
+  html.classList.remove('transitions-enabled');
+  html.classList.add('transitions-disabled');
+
+  replaceTransitionClass();
+}
+
+function applyTheme(theme, withTransition = true) {
+  if (withTransition) temporarilyDisableTransitions();
+
+  currentTheme = theme;
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+
+  const link = document.getElementById('theme-style');
+
+  if (theme === 'light') {
+    if (link) {
+      link.href = '/style_light.css';
+      link.disabled = false;
+    }
+    themeIcon.classList.replace('lightbulb-off', 'lightbulb-on');
+  } else {
+    if (link) {
+      link.disabled = true;
+      link.href = '';
+    }
+    themeIcon.classList.replace('lightbulb-on', 'lightbulb-off');
+  }
+}
+
+
+themeToggleBtn.addEventListener('click', () => {
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  applyTheme(newTheme, true);
+});
+
+
+
+
 function copyToClipboard(element, copyButton) {
   const text = element.textContent.trim();
 
@@ -2426,31 +2497,6 @@ boxes.forEach(function (box) {
             firstParagraph.replaceWith(newLink);
         }
     }
-});
-
-const themeToggleBtn = document.getElementById('theme-toggle');
-const themeIcon = themeToggleBtn.querySelector('i');
-const themeStyleLink = document.getElementById('theme-style');
-
-let currentTheme = localStorage.getItem('theme') || 'dark';
-applyTheme(currentTheme);
-
-function applyTheme(theme) {
-  if (theme === 'light') {
-    themeStyleLink.href = '/style_light.css';
-    themeStyleLink.disabled = false;
-    themeIcon.classList.replace('lightbulb-off', 'lightbulb-on');
-  } else {
-    themeStyleLink.href = '';
-    themeStyleLink.disabled = true;
-    themeIcon.classList.replace('lightbulb-on', 'lightbulb-off');
-  }
-  localStorage.setItem('theme', theme);
-}
-
-themeToggleBtn.addEventListener('click', () => {
-  currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  applyTheme(currentTheme);
 });
 
 const categorySelector = document.querySelector('.category-selector');

@@ -38,6 +38,13 @@
     --icongradient: linear-gradient(-45deg, var(--darkygray), var(--main-theme));
 }
 
+html.transitions-disabled *,
+html.transitions-disabled *::before,
+html.transitions-disabled *::after {
+    transition: none !important;
+  }
+  
+
 head,
 script {
     display: none;
@@ -246,7 +253,7 @@ nav .pages {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
-    transition: all .15s ease-in-out, opacity .25s !important;
+    transition: all .15s ease-in-out, opacity .25s;
     margin: 0;
     margin-top: 9px;
     display: flex;
@@ -1352,7 +1359,6 @@ nav .pages {
 }
 
 .navigation-weapon-type {
-    /* font-size: 0; */
     font-size: 11px;
 }
 
@@ -2057,13 +2063,13 @@ h3 {
 }
 
 .boxreview .plusminus {
-    width: 96%;
+    width: 98%;
     height: auto;
     display: flex;
     align-content: center;
     align-items: flex-start;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 0px;
     order: -2;
 }
 
@@ -2379,7 +2385,6 @@ h3 {
     opacity: 0;
     background-color: var(--darkygray);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
-    transition: all .08s ease-in-out;
     padding-left: 3px;
 }
 
@@ -2395,7 +2400,8 @@ h3 {
     width: 4px;
 }
 
-.weapon-selection::-webkit-scrollbar-track {
+.weapon-selection::-webkit-scrollbar-track,
+.box-skins-nav-list::-webkit-scrollbar-track {
     background: transparent;
 }
 
@@ -2453,7 +2459,7 @@ h3 {
 
 .weapon-container {
     margin: 0 4px;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 15%;
     background: var(--darkygray);
     cursor: pointer;
@@ -3435,6 +3441,7 @@ nav #logo:hover {
     max-height: 60% !important;
     transition: all .15s ease-in-out;
     filter: drop-shadow(0 0 6px rgb(8 8 8));
+    z-index: 1;
 }
 
 .category-selector .category-box#active .category-box-logo,
@@ -6466,7 +6473,7 @@ footer .centralizer .footer-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-left: 4px;
     height: 35px;
     width: 35px;
@@ -6479,7 +6486,7 @@ footer .centralizer .footer-content {
     position: absolute;
     height: 100%;
     width: 100%;
-    border-radius: 5px;
+    border-radius: inherit;
     z-index: -1;
     background: var(--icongradient);
     transition: all .15s ease-in-out;
@@ -12399,6 +12406,7 @@ div#results {
         flex-direction: column;
         align-items: center;
         height: 100%;
+        width: 96%;
         margin-top: unset;
     }
 
@@ -13642,16 +13650,8 @@ div#results {
         max-width: unset;
         justify-content: center;
         padding: 0 8px 8px 8px;
-        margin-top: 35px;
-    }
-
-    .boxes-holder-section.big {
         margin: 4px;
         margin-top: 35px;
-    }
-
-    .boxes-holder-section {
-        margin: 4px;
     }
 
     .boxes-holder-section.firstelem {
