@@ -617,112 +617,107 @@ $(document).ready(function () {
         currentPath.includes("/skins/") ||
         currentPath.includes("/collections/")
       ) {
-        $(".topic-grandbox").load(
-          "/code-parts/topics/box-topic-items.html",
-          function () {
-            $(".navigation-weapon-type").click(function () {
-              const weaponType = $(this).attr("class").split(" ")[1];
-              $(`.skin.${weaponType}`).toggleClass("disabled");
-              $(this).toggleClass("enabled");
-              enabledFiltersState[weaponType] = $(this).hasClass("enabled");
-              updateNavigationReset();
-            });
-
-            checkWeaponTypeAvailabilityForItems();
-            translateTypes(languageTag);
-
-            if (languageTag === "ru") {
-              const qualityFilter = document.getElementById("Quality-Filter");
-              const rarityToggle = document.getElementById("Rarity-Toggle");
-              const priceFilter = document.getElementById("Price-Filter");
-              if (qualityFilter && rarityToggle && priceFilter) {
-                qualityFilter.dataset.title = "Сорт по Редкости";
-                priceFilter.dataset.title = "Сорт по Цене";
-                rarityToggle.dataset.title = "Показать Редкость";
-              }
+        $.getJSON("/code-parts/topics/items-nav.json", function (navData) {
+          const $grandbox = $(".topic-grandbox");
+          const $navSectionFirst = $('<div class="navigation-section first"></div>');
+          const currentPath = window.location.pathname;
+        
+          const stickerTitles = {
+            blue: "High Grade",
+            purple: "Remarkable",
+            pink: "Exotic",
+            red: "Extraordinary"
+          };
+        
+          navData.types.forEach(type => {
+            let title = type.title;
+            if (currentPath.includes("/stickers/") && stickerTitles[type.class]) {
+              title = stickerTitles[type.class];
             }
-
-            const rarityToggleState = getLocalStorageState(
-              "RarityToggleState",
-              true
+        
+            $navSectionFirst.append(
+              `<div class="navigation-weapon-type ${type.class} enabled">${title}</div>`
             );
-            $(".box-skins-list").toggleClass("showrarity", rarityToggleState);
-            $("#Rarity-Toggle").toggleClass("enabled", rarityToggleState);
-
-            $("#Rarity-Toggle").on("click", function () {
-              $(this).toggleClass("enabled");
-              $(".box-skins-list").toggleClass("showrarity");
-
-              const isEnabled = $(this).hasClass("enabled");
-              setLocalStorageState("RarityToggleState", isEnabled);
-            });
-
-            $("#Quality-Filter").click(function () {
-              const enabledFilters = $(
-                ".navigation-weapon-type.enabled"
-              ).length;
-              if (enabledFilters === 0) return;
-
-              const skins = $(".box-skins-list .skin").get();
-              skins.sort((a, b) => {
-                const aClass = $(a).attr("class").split(" ")[1];
-                const bClass = $(b).attr("class").split(" ")[1];
-                const sortOrder = [
-                  "white",
-                  "lblue",
-                  "blue",
-                  "purple",
-                  "pink",
-                  "red",
-                  "gold",
-                ];
-
-                return sortState === "none" || sortState === "reversed"
-                  ? sortOrder.indexOf(aClass) - sortOrder.indexOf(bClass)
-                  : sortOrder.indexOf(bClass) - sortOrder.indexOf(aClass);
-              });
-
-              $(".box-skins-list").html(skins);
-
-              sortState =
-                sortState === "none" || sortState === "reversed"
-                  ? "enabled"
-                  : "reversed";
-              $(this).toggleClass("enabled reversed");
-              updateNavigationReset();
-            });
-
-            $("#Price-Filter").on("click", function () {
-              $(this).toggleClass("enabled");
-
-              const skins = $(".box-skins-list .skin").get();
-              skins.sort((a, b) => {
-                const priceA = parseFloat($(a).find(".skin-price-info").text().split(" - ")[0].replace("$", "")) || 0;
-                const priceB = parseFloat($(b).find(".skin-price-info").text().split(" - ")[0].replace("$", "")) || 0;
-
-                return sortState === "none" || sortState === "reversed" ? priceA - priceB : priceB - priceA;
-              });
-
-              $(".box-skins-list").html(skins);
-
-              sortState = sortState === "none" || sortState === "reversed" ? "enabled" : "reversed";
-              $(this).toggleClass("reversed", sortState === "reversed");
-              updateNavigationReset();
-            });
-
-            $(".topic-centralizer").on(
-              "click",
-              ".navigation-reset",
-              function () {
-                $(".skin").removeClass("disabled");
-                $(".navigation-weapon-type").addClass("enabled");
-                $(".topic-centralizer .navigation-reset").remove();
-                enabledFiltersState = {};
-                checkWeaponTypeAvailabilityForItems();
-              }
+          });
+        
+          const $navSearchers = $('<div class="navigation-section searchers"></div>');
+          navData.filters.forEach(filter => {
+            const title = languageTag === "ru" ? filter.title_ru : filter.title_en;
+            $navSearchers.append(
+              `<div class="navigation-weapon-sort" data-title="${title}" id="${filter.id}">
+                 <i class="officon ${filter.icon}"></i>
+               </div>`
             );
-          }
-        );
+          });
+        
+          $grandbox.prepend($navSectionFirst, $navSearchers);
+        
+          // Остальная логика (как в предыдущем ответе, без изменений)
+          $(".navigation-weapon-type").click(function () {
+            const weaponType = $(this).attr("class").split(" ")[1];
+            $(`.skin.${weaponType}`).toggleClass("disabled");
+            $(this).toggleClass("enabled");
+            enabledFiltersState[weaponType] = $(this).hasClass("enabled");
+            updateNavigationReset();
+          });
+        
+          checkWeaponTypeAvailabilityForItems();
+          translateTypes(languageTag);
+        
+          const rarityToggleState = getLocalStorageState("RarityToggleState", true);
+          $(".box-skins-list").toggleClass("showrarity", rarityToggleState);
+          $("#Rarity-Toggle").toggleClass("enabled", rarityToggleState);
+        
+          $("#Rarity-Toggle").on("click", function () {
+            $(this).toggleClass("enabled");
+            $(".box-skins-list").toggleClass("showrarity");
+            setLocalStorageState("RarityToggleState", $(this).hasClass("enabled"));
+          });
+        
+          $("#Quality-Filter").click(function () {
+            const enabledFilters = $(".navigation-weapon-type.enabled").length;
+            if (enabledFilters === 0) return;
+        
+            const skins = $(".box-skins-list .skin").get();
+            skins.sort((a, b) => {
+              const aClass = $(a).attr("class").split(" ")[1];
+              const bClass = $(b).attr("class").split(" ")[1];
+              const sortOrder = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];
+              return sortState === "none" || sortState === "reversed"
+                ? sortOrder.indexOf(aClass) - sortOrder.indexOf(bClass)
+                : sortOrder.indexOf(bClass) - sortOrder.indexOf(aClass);
+            });
+        
+            $(".box-skins-list").html(skins);
+            sortState = sortState === "none" || sortState === "reversed" ? "enabled" : "reversed";
+            $(this).toggleClass("enabled reversed");
+            updateNavigationReset();
+          });
+        
+          $("#Price-Filter").on("click", function () {
+            $(this).toggleClass("enabled");
+            const skins = $(".box-skins-list .skin").get();
+            skins.sort((a, b) => {
+              const priceA = parseFloat($(a).find(".skin-price-info").text().split(" - ")[0].replace("$", "")) || 0;
+              const priceB = parseFloat($(b).find(".skin-price-info").text().split(" - ")[0].replace("$", "")) || 0;
+              return sortState === "none" || sortState === "reversed" ? priceA - priceB : priceB - priceA;
+            });
+        
+            $(".box-skins-list").html(skins);
+            sortState = sortState === "none" || sortState === "reversed" ? "enabled" : "reversed";
+            $(this).toggleClass("reversed", sortState === "reversed");
+            updateNavigationReset();
+          });
+        
+          $(".topic-centralizer").on("click", ".navigation-reset", function () {
+            $(".skin").removeClass("disabled");
+            $(".navigation-weapon-type").addClass("enabled");
+            $(".topic-centralizer .navigation-reset").remove();
+            enabledFiltersState = {};
+            checkWeaponTypeAvailabilityForItems();
+          });
+        });
+            
       }
       (async function autoImportFullJsonIfNeeded() {
         const currentPath = window.location.pathname;

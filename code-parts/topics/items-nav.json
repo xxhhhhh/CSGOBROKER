@@ -1,0 +1,16 @@
+{
+    "types": [
+      { "class": "white", "title": "Consumer Grade" },
+      { "class": "lblue", "title": "Industrial Grade" },
+      { "class": "blue", "title": "Mil-Spec" },
+      { "class": "purple", "title": "Restricted" },
+      { "class": "pink", "title": "Classified" },
+      { "class": "red", "title": "Covert" }
+    ],
+    "filters": [
+      { "id": "Quality-Filter", "icon": "sort", "title_en": "Sort By Quality", "title_ru": "Сорт по Редкости" },
+      { "id": "Rarity-Toggle", "icon": "diamond", "title_en": "Show Rarity", "title_ru": "Показать Редкость" },
+      { "id": "Price-Filter", "icon": "sort", "title_en": "Sort By Price", "title_ru": "Сорт по Цене" }
+    ]
+  }
+  
