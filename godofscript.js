@@ -190,30 +190,33 @@ forcemodsboxes();
       return btoa(JSON.stringify(data));
     }
   
-    function loadJsonData(filePath, cacheKey, callback) {
-      const cachedData = loadCachedData(cacheKey);
-      const cachedHash = localStorage.getItem(`${cacheKey}_hash`);
+    function loadAllJsonData(filePath, callback) {
+      let allData = loadCachedData('mainMode_all') || { data: {}, hashes: {} };
   
-      if (cachedData) {
-        callback(cachedData);
+      const pageKey = filePath.split('/').pop().replace('.json', '');
+  
+      if (allData.data[pageKey]) {
+        callback(allData.data[pageKey]);
   
         fetch(filePath)
-          .then((response) => response.json())
-          .then((data) => {
+          .then(response => response.json())
+          .then(data => {
             const newHash = computeHash(data);
-            if (newHash !== cachedHash) {
-              saveToCache(cacheKey, data);
-              localStorage.setItem(`${cacheKey}_hash`, newHash);
+            if (newHash !== allData.hashes[pageKey]) {
+              allData.data[pageKey] = data;
+              allData.hashes[pageKey] = newHash;
+              saveToCache('mainMode_all', allData);
               callback(data);
             }
           });
       } else {
         fetch(filePath)
-          .then((response) => response.json())
-          .then((data) => {
+          .then(response => response.json())
+          .then(data => {
             const newHash = computeHash(data);
-            saveToCache(cacheKey, data);
-            localStorage.setItem(`${cacheKey}_hash`, newHash);
+            allData.data[pageKey] = data;
+            allData.hashes[pageKey] = newHash;
+            saveToCache('mainMode_all', allData);
             callback(data);
           });
       }
@@ -247,119 +250,115 @@ forcemodsboxes();
       title.textContent = languageTag === "ru" ? "Скопировано" : "Copied";
   
       copyButton.appendChild(title);
-  
       copyButton.classList.add("icon-changed");
   
       title.style.display = "none";
       $(title).fadeIn(150, function () {
-        $(this)
-          .delay(400)
-          .fadeOut(150, function () {
-            $(this).remove();
-          });
+        $(this).delay(400).fadeOut(150, function () {
+          $(this).remove();
+        });
       });
   
       setTimeout(function () {
         copyButton.classList.remove("icon-changed");
       }, 800);
     }
-
+  
     function loadReviewSettings(callback) {
       fetch('/code-parts/review-settings.json')
-          .then(response => response.json())
-          .then(data => callback(data))
-  }
-
-  function addMirrorButton(box, pageKey, data) {
-    const visitButton = box.querySelector(".content-buttons a.review-button.visit");
-
-    const translations = {
-      "checkMirrors": {
-        "en": `Check Mirrors list of ${data.name}`,
-        "ru": `Смотреть список Зеркал ${data.name}`,
-      },
-    };
+        .then(response => response.json())
+        .then(data => callback(data));
+    }
   
-    function getTranslation(key) {
-      return translations[key][languageTag] || translations[key]['en'];
+    function addMirrorButton(box, pageKey, data) {
+      const visitButton = box.querySelector(".content-buttons a.review-button.visit");
+  
+      const translations = {
+        "checkMirrors": {
+          "en": `Check Mirrors list of ${data.name}`,
+          "ru": `Смотреть список Зеркал ${data.name}`,
+        },
+      };
+  
+      function getTranslation(key) {
+        return translations[key][languageTag] || translations[key]['en'];
+      }
+  
+      if (visitButton && data.mirror) {
+        const mirrorButton = document.createElement("a");
+        mirrorButton.href = `/mirrors/${pageKey}`;
+        mirrorButton.className = "review-button mirror-visit";
+        mirrorButton.setAttribute("aria-label", getTranslation("checkMirrors"));
+        visitButton.insertAdjacentElement("afterend", mirrorButton);
+      }
     }
-
-    if (visitButton && data.mirror) {
-      const mirrorButton = document.createElement("a");
-      mirrorButton.href = `/mirrors/${pageKey}`;
-      mirrorButton.className = "review-button mirror-visit";
-      mirrorButton.setAttribute("aria-label", getTranslation("checkMirrors"));
-      visitButton.insertAdjacentElement("afterend", mirrorButton);
-    }
-  }
-
-  window.updateReviewButtons = updateReviewButtons;
+  
+    window.updateReviewButtons = updateReviewButtons;
   
     function updateReviewButtons(box, data, pageKey, reviewSettings) {
-        const reviewButton = box.querySelector('.content-buttons a.review-button');
-        const visitButton = box.querySelector('.content-buttons a.review-button.visit');
+      const reviewButton = box.querySelector('.content-buttons a.review-button');
+      const visitButton = box.querySelector('.content-buttons a.review-button.visit');
   
-        const translations = {
-            "similarSites": {
-                "en": `Similar Sites of ${data.name}`,
-                "ru": `Альтернативы ${data.name}`
-            },
-            "readReview": {
-                "en": `Read Review ${data.name}`,
-                "ru": `Смотреть Обзор ${data.name}`
-            },
-            "visitSite": {
-                "en": `Visit ${data.name}`,
-                "ru": `Перейти на ${data.name}`
+      const translations = {
+        "similarSites": {
+          "en": `Similar Sites of ${data.name}`,
+          "ru": `Альтернативы ${data.name}`
+        },
+        "readReview": {
+          "en": `Read Review ${data.name}`,
+          "ru": `Смотреть Обзор ${data.name}`
+        },
+        "visitSite": {
+          "en": `Visit ${data.name}`,
+          "ru": `Перейти на ${data.name}`
+        }
+      };
+  
+      function getTranslation(key) {
+        return translations[key][languageTag] || translations[key]['en'];
+      }
+  
+      if (visitButton && data.link) {
+        if (window.location.pathname.includes("/marketplaces") && data["marketplaces"]) {
+          visitButton.href = data["marketplaces"];
+        } else if (window.location.pathname.includes("/instant-sell") && data["instant-sell"]) {
+          visitButton.href = data["instant-sell"];
+        } else if (window.location.pathname.includes("/buy-skins") && data["buy-skins"]) {
+          visitButton.href = data["buy-skins"];
+        } else if (window.location.pathname.includes("/sell-skins") && data["sell-skins"]) {
+          visitButton.href = data["sell-skins"];
+        } else if ((window.location.pathname.includes("/ru/earning/earn-by-play") || window.location.pathname.includes("/ru/csgo/earn-by-play-csgo")) && data["earn-by-play"]) {
+          visitButton.href = data["earn-by-play"];
+        } else if (window.location.pathname.includes("/earn-by-play") && data["earn-by-play-en"]) {
+          visitButton.href = data["earn-by-play-en"];
+        } else {
+          visitButton.href = data.link;
+        }
+        visitButton.setAttribute('aria-label', getTranslation('visitSite'));
+      }
+  
+      if (reviewButton) {
+        if (window.location.pathname.includes("/reviews/") || window.location.pathname.includes("/mirrors/")) {
+          if (data["Main Mode"] && reviewSettings) {
+            const mainModePath = reviewSettings.mainModeLinks[data["Main Mode"]];
+            if (mainModePath) {
+              reviewButton.href = mainModePath;
+              reviewButton.setAttribute('aria-label', getTranslation('similarSites'));
             }
-        };
+          }
+        } else {
+          reviewButton.href = `/reviews/${pageKey}`;
+          reviewButton.setAttribute('aria-label', getTranslation('readReview'));
+        }
+      }
   
-        function getTranslation(key) {
-            return translations[key][languageTag] || translations[key]['en'];
-        }
-  
-        if (visitButton && data.link) {
-            if (window.location.pathname.includes("/marketplaces") && data["marketplaces"]) {
-                visitButton.href = data["marketplaces"];
-            } else if (window.location.pathname.includes("/instant-sell") && data["instant-sell"]) {
-                visitButton.href = data["instant-sell"];
-            } else if (window.location.pathname.includes("/buy-skins") && data["buy-skins"]) {
-                visitButton.href = data["buy-skins"];
-            } else if (window.location.pathname.includes("/sell-skins") && data["sell-skins"]) {
-                visitButton.href = data["sell-skins"];
-            } else if (window.location.pathname.includes("/ru/earning/earn-by-play") || window.location.pathname.includes("/ru/csgo/earn-by-play-csgo") && data["earn-by-play"]) {
-                visitButton.href = data["earn-by-play"];
-            } else if (window.location.pathname.includes("/earn-by-play") && data["earn-by-play-en"]) {
-              visitButton.href = data["earn-by-play-en"];
-            } else {
-                visitButton.href = data.link;
-            }
-            visitButton.setAttribute('aria-label', getTranslation('visitSite'));
-        }
-  
-        if (reviewButton) {
-            if (window.location.pathname.includes("/reviews/") || window.location.pathname.includes("/mirrors/")) {
-                if (data["Main Mode"] && reviewSettings) {
-                    const mainModePath = reviewSettings.mainModeLinks[data["Main Mode"]];
-                    if (mainModePath) {
-                        reviewButton.href = mainModePath;
-                        reviewButton.setAttribute('aria-label', getTranslation('similarSites'));
-                    }
-                }
-            } else {
-                reviewButton.href = `/reviews/${pageKey}`;
-                reviewButton.setAttribute('aria-label', getTranslation('readReview'));
-            }
-        }
-
-        if (data.mirror) {
-          addMirrorButton(box, pageKey, data);
-        }
-
+      if (data.mirror) {
+        addMirrorButton(box, pageKey, data);
+      }
     }
   
     let currentPath = window.location.pathname;
-
+  
     if (currentPath.includes("/reviews/") || currentPath.includes("/mirrors/")) {
       if (currentPath.endsWith(".html")) {
         currentPath = currentPath.slice(0, -5);
@@ -369,7 +368,7 @@ forcemodsboxes();
       const mainJsonFilePath = `${basePath}/${pageKey}.json`;
   
       loadReviewSettings((reviewSettings) => {
-        loadJsonData(mainJsonFilePath, `mainMode_${pageKey}`, (data) => {
+        loadAllJsonData(mainJsonFilePath, (data) => {
           if (data.code) {
             const siteCodeElement = document.getElementById("site-code");
             if (siteCodeElement) {
@@ -403,7 +402,7 @@ forcemodsboxes();
           const pageKey = path.split("/").pop();
           const jsonFilePath = `${basePath}/${pageKey}.json`;
   
-          loadJsonData(jsonFilePath, `mainMode_${pageKey}`, (data) => {
+          loadAllJsonData(jsonFilePath, (data) => {
             if (data.code) {
               const copyButtons = box.querySelectorAll(".copy");
               copyButtons.forEach((button) => {
@@ -422,6 +421,7 @@ forcemodsboxes();
       });
     }
   });
+  
 
 
   document.addEventListener("DOMContentLoaded", function() {

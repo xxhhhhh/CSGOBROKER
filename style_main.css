@@ -867,10 +867,40 @@ nav .pages {
     display: flex;
     position: absolute;
     align-items: center;
+    flex-wrap: wrap;
+    width: 35%;
+    min-height: 24px;
     left: 25px;
     bottom: 90px;
     z-index: 10;
+}
+
+.skin-extra-info {
+    order: -1;
+    margin-bottom: 6px;
+    margin-left: -4px;
     height: 24px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    transition: all .15s ease-in-out;
+    opacity: .9;
+}
+
+.skin-extra-info:hover {
+    opacity: 1;
+}
+
+.skin-extra-info img {
+    height: 100%;
+    width: auto;
+}
+
+.skin-extra-info span {
+    margin-left: 4px;
+    font-size: 14px;
 }
 
 .sticker .preview-extras {
@@ -1024,11 +1054,17 @@ nav .pages {
 }
 
 .skin-craft-info {
+    position: relative;
     margin-right: 8px;
 }
 
 #preview-showcase .skin-alt-info:hover {
     opacity: 1;
+}
+
+.skin-alt-info.hidden {
+    display: none;
+    visibility: hidden;
 }
 
 #preview-showcase .titled[data-title]:after {
@@ -1047,8 +1083,7 @@ nav .pages {
 }
 
 #preview-showcase .titled[data-title]:hover:after {
-
-    transform: translateY(-50%);
+    transform: translateY(-250%);
     transition: all .15s ease-in-out;
     opacity: 1;
 }
@@ -1276,7 +1311,6 @@ nav .pages {
 .site-searcher-box[data-title]:after,
 .navigation-weapon-sort[data-title]:after,
 .topic-grandbox .skin .skin-desc-name,
-.skin-alt-info[data-title]:after,
 .topic-filter .singlemod-box[data-title]:after,
 .main-mode:after,
 .infoicon::after,
@@ -11441,6 +11475,11 @@ div#results {
 
     #preview-showcase .preview-extras {
         bottom: 130px;
+        width: 80%;
+    }
+
+    .skin-extra-info {
+        opacity: 1;
     }
 
     .topic-box.maestro {
