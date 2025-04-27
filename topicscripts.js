@@ -400,8 +400,8 @@ $(document).ready(function () {
   
       const weapon = element.getAttribute("weapon");
       const isSticker = weapon.includes("sticker") || weapon.includes("capsule");
-
-        const skinAltInfoDiv = $("<a>", {
+  
+      const skinAltInfoDiv = $("<a>", {
           class: "skin-alt-info titled" + (isSticker ? " hidden" : ""),
           href: languageTag === "ru"
               ? `/ru/topic/items/${weapon}`
@@ -418,16 +418,35 @@ $(document).ready(function () {
           $("#preview-showcase").append(previewExtras);
       }
   
-      previewExtras.prepend(skinAltInfoDiv);
-  
+      // Ищем блоки или создаем
       let skinColorInfo = previewExtras.find(".skin-color-info");
       if (skinColorInfo.length === 0) {
-          skinColorInfo = $("<div>", { class: "skin-color-info" });
+          skinColorInfo = $("<div>", { class: "skin-color-info" }).css({ display: "flex", opacity: 0 });
           previewExtras.append(skinColorInfo);
       }
   
-      skinColorInfo.empty();
+      let skinExtraInfo = previewExtras.find(".skin-extra-info");
+      if (skinExtraInfo.length === 0) {
+          skinExtraInfo = $("<div>", { class: "skin-extra-info" }).css({ display: "flex", opacity: 0 });
+          previewExtras.append(skinExtraInfo);
+      }
 
+      previewExtras.prepend(skinAltInfoDiv);
+  
+      // Сразу останавливаем текущие анимации
+      skinColorInfo.stop(true, true).animate({ opacity: 0 }, 100);
+      skinExtraInfo.stop(true, true).animate({ opacity: 0 }, 100);
+  
+      // Дожидаемся окончания исчезновения перед очисткой
+      await Promise.all([
+          skinColorInfo.promise(),
+          skinExtraInfo.promise()
+      ]);
+  
+      skinColorInfo.empty();
+      skinExtraInfo.empty();
+
+  
       const bindsDataResponse = await fetch("/code-parts/topics/sticker-crafts-binds.json");
       const bindsData = await bindsDataResponse.json();
       const pageKey = Object.keys(bindsData).find(key => bindsData[key] === itemName);
@@ -445,25 +464,25 @@ $(document).ready(function () {
           });
           previewExtras.prepend(skinCraftInfoDiv);
       }
-    
+  
       const skinId = element.getAttribute("skin-id");
       const skinsDataResponse = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
       const skinsData = await skinsDataResponse.json();
       const skinData = skinsData[skinId];
   
       if (skinData) {
-          if (skinData.imageOG) {
-              const imageUrl = skinData.image;
-              const imgElement = previewContent.find("img");
-  
-              if (imgElement.length) {
-                  imgElement.attr("src", imageUrl);
-              } else {
-                  previewContent.append(`
-                      <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
-                      <div class="skin-desc-name">${skinData.name}</div>
-                  `);
-              }
+          // Плавная смена картинки
+          const imgElement = previewContent.find("img");
+          if (skinData.imageOG && imgElement.length) {
+              imgElement.stop(true, true).fadeOut(150, function () {
+                  imgElement.attr("src", skinData.image);
+                  imgElement.fadeIn(150);
+              });
+          } else if (skinData.imageOG) {
+              previewContent.append(`
+                  <img src="${skinData.image}" draggable="false" alt="${skinData.name}">
+                  <div class="skin-desc-name">${skinData.name}</div>
+              `);
           }
   
           if (skinData.color) {
@@ -478,7 +497,6 @@ $(document).ready(function () {
               });
           }
   
-          // Новый код: обработка коллекций и кейсов
           async function handleCollectionOrCase(type) {
               const file = type === "collection" ? "collections" : "cases";
               const searchTitle = skinData[type];
@@ -490,7 +508,6 @@ $(document).ready(function () {
   
               if (match) {
                   const link = $("<a>", {
-                      class: "skin-extra-info",
                       href: `/topic/${file}/${match.id}`,
                   });
   
@@ -502,50 +519,51 @@ $(document).ready(function () {
                   const span = $("<span>").text(match.title);
   
                   link.append(img).append(span);
-                  previewExtras.append(link);
+                  skinExtraInfo.append(link);
               }
           }
-
+  
           async function handleStickerOrCapsule() {
-            if (!weapon.includes("sticker") && !weapon.includes("capsule")) return;
-        
-            const filesToCheck = [
-                "/code-parts/topics/sticker-capsules.json",
-                "/code-parts/topics/autograph-capsules.json"
-            ];
-        
-            for (const filePath of filesToCheck) {
-                const response = await fetch(filePath);
-                const data = await response.json();
-        
-                const match = data.items.find(item => item.id === weapon);
-        
-                if (match) {
-                    const link = $("<a>", {
-                        class: "skin-extra-info",
-                        href: `/topic/stickers/${match.id}`,
-                    });
-        
-                    const img = $("<img>", {
-                        src: match.img,
-                        alt: match.title,
-                    });
-        
-                    const span = $("<span>").text(match.title);
-        
-                    link.append(img).append(span);
-                    previewExtras.append(link);
-                    break; // нашли - остановились
-                }
-            }
-        }
-        
-
-        
-        await handleCollectionOrCase("collection");
-        await handleCollectionOrCase("case");
-        await handleStickerOrCapsule();
+              if (!weapon.includes("sticker") && !weapon.includes("capsule")) return;
+  
+              const filesToCheck = [
+                  "/code-parts/topics/sticker-capsules.json",
+                  "/code-parts/topics/autograph-capsules.json"
+              ];
+  
+              for (const filePath of filesToCheck) {
+                  const response = await fetch(filePath);
+                  const data = await response.json();
+  
+                  const match = data.items.find(item => item.id === weapon);
+  
+                  if (match) {
+                      const link = $("<a>", {
+                          href: `/topic/stickers/${match.id}`,
+                      });
+  
+                      const img = $("<img>", {
+                          src: match.img,
+                          alt: match.title,
+                      });
+  
+                      const span = $("<span>").text(match.title);
+  
+                      link.append(img).append(span);
+                      skinExtraInfo.append(link);
+                      break;
+                  }
+              }
+          }
+  
+          await handleCollectionOrCase("collection");
+          await handleCollectionOrCase("case");
+          await handleStickerOrCapsule();
       }
+  
+      // Плавное появление
+      skinColorInfo.css({ display: "flex" }).stop(true, true).animate({ opacity: 1 }, 100);
+      skinExtraInfo.css({ display: "flex" }).stop(true, true).animate({ opacity: 1 }, 100);
   
       $(".site-searcher-box")
           .off("click")
@@ -555,46 +573,50 @@ $(document).ready(function () {
               const searchUrl = generateSearchUrl(searchName, selectedSite);
               window.open(searchUrl, "_blank");
           });
-
-          const PreviewButtons = document.querySelector(".preview-extras");
-
-          if (languageTag === "ru") {
-            updateURLs(PreviewButtons);
+  
+      const PreviewButtons = document.querySelector(".preview-extras");
+  
+      if (languageTag === "ru") {
+          updateURLs(PreviewButtons);
       }
   }
   
-      function closePreviewWindow() {
-          const previewWindow = $("#preview-window");
-          previewWindow.addClass("hidden");
-          previewWindow.attr("class", "hidden");
-          previewWindow.find(".skin-alt-info, .skin-craft-info, .skin-extra-info").remove();
-          $("#preview-showcase .preview-extras").remove();
+  function closePreviewWindow() {
+      const previewWindow = $("#preview-window");
+      previewWindow.addClass("hidden");
+      previewWindow.attr("class", "hidden");
+  
+      previewWindow.find(".skin-alt-info, .skin-craft-info").remove();
+  
+      const previewExtras = $("#preview-showcase .preview-extras");
+      if (previewExtras.length > 0) {
+          previewExtras.find(".skin-color-info, .skin-extra-info").stop(true, true).fadeOut(150, function() {
+              $(this).empty();
+          });
+      }
+  }
+  
+  function switchSkin(direction) {
+      const previewWindow = $("#preview-window");
+      const currentIndex = parseInt(previewWindow.attr("data-current-index"), 10);
+      const currentBoxIndex = parseInt(previewWindow.attr("data-current-box"), 10);
+      const currentBox = $(".box-skins-list, .topic-grandbox, .introduce-craft p, .character-box").eq(currentBoxIndex);
+      const visibleItems = currentBox.find(".skin:not(.disabled):not(.none)");
+      const totalItems = visibleItems.length;
+      let newIndex = direction === "left" ? currentIndex - 1 : currentIndex + 1;
+  
+      if (newIndex < 0) newIndex = totalItems - 1;
+      else if (newIndex >= totalItems) newIndex = 0;
+  
+      const previewExtras = $("#preview-showcase .preview-extras");
+      if (previewExtras.length > 0) {
+          previewExtras.find(".skin-color-info, .skin-extra-info").stop(true, true).animate({ opacity: 0 }, 100);
       }
   
-      
-
-      function switchSkin(direction) {
-        const previewWindow = $("#preview-window");
-        const currentIndex = parseInt(previewWindow.attr("data-current-index"), 10);
-        const currentBoxIndex = parseInt(previewWindow.attr("data-current-box"), 10);
-        const currentBox = $(".box-skins-list, .topic-grandbox, .introduce-craft p, .character-box").eq(currentBoxIndex);
-        const visibleItems = currentBox.find(".skin:not(.disabled):not(.none)");
-        const totalItems = visibleItems.length;
-        let newIndex = direction === "left" ? currentIndex - 1 : currentIndex + 1;
-      
-        if (newIndex < 0) newIndex = totalItems - 1;
-        else if (newIndex >= totalItems) newIndex = 0;
-      
-        const previewExtras = $("#preview-showcase .preview-extras");
-        if (previewExtras.length > 0) {
-          previewExtras.find(".skin-color-info").empty();
-          previewExtras.find(".skin-extra-info").remove();
-        }
-      
-        showPreviewWindow(visibleItems.eq(newIndex)[0]);
-      
-        previewWindow.attr("data-current-index", newIndex);
-      }
+      showPreviewWindow(visibleItems.eq(newIndex)[0]);
+      previewWindow.attr("data-current-index", newIndex);
+  }
+  
   
       
 
