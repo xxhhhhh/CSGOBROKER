@@ -480,26 +480,36 @@ $(document).ready(function () {
         skinColorInfo.stop(true, true);
         skinExtraInfo.stop(true, true);
 
-        // Если видно - тогда анимировать скрытие
+        // Если видно - скрыть через анимацию
         const hideAnimations = [];
 
-        if (skinColorInfo.css("opacity") > 0) {
-            hideAnimations.push(skinColorInfo.animate({ opacity: 0 }, 100).promise());
+        if (parseFloat(skinColorInfo.css("opacity")) > 0) {
+            hideAnimations.push(
+                skinColorInfo.animate({ opacity: 0 }, 100).promise().then(() => {
+                    skinColorInfo.css({ display: "none" });
+                })
+            );
         }
-        if (skinExtraInfo.css("opacity") > 0) {
-            hideAnimations.push(skinExtraInfo.animate({ opacity: 0 }, 100).promise());
+        if (parseFloat(skinExtraInfo.css("opacity")) > 0) {
+            hideAnimations.push(
+                skinExtraInfo.animate({ opacity: 0 }, 100).promise().then(() => {
+                    skinExtraInfo.css({ display: "none" });
+                })
+            );
         }
 
-        // Дождаться всех анимаций, если были
+        // Ждём все скрытия
         await Promise.all(hideAnimations);
 
-        // Очищаем содержимое
+        // Очищаем старый контент
         skinColorInfo.empty();
         skinExtraInfo.empty();
 
-        // После загрузки нового контента плавно показываем
-        skinColorInfo.css({ display: "flex" }).animate({ opacity: 1 }, 100);
-        skinExtraInfo.css({ display: "flex" }).animate({ opacity: 1 }, 100);
+        // Добавляем новый контент
+        // Теперь правильно показываем: сначала display: flex и opacity: 0
+        skinColorInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
+        skinExtraInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
+
 
     
         const bindsDataResponse = await fetch("/code-parts/topics/sticker-crafts-binds.json");
@@ -599,10 +609,6 @@ $(document).ready(function () {
             await handleCollectionOrCase("case");
             await handleStickerOrCapsule();
         }
-    
-        // Плавное появление нового контента
-        skinColorInfo.stop(true, true).animate({ opacity: 1 }, 100);
-        skinExtraInfo.stop(true, true).animate({ opacity: 1 }, 100);
     
         $(".site-searcher-box")
             .off("click")
