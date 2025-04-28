@@ -571,6 +571,21 @@ $(document).ready(function () {
             updateURLs(PreviewButtons);
         }
     }
+
+      function closePreviewWindow() {
+        const previewWindow = $("#preview-window");
+        previewWindow.addClass("hidden");
+        previewWindow.attr("class", "hidden");
+    
+        previewWindow.find(".skin-alt-info, .skin-craft-info").remove();
+    
+        const previewExtras = $("#preview-showcase .preview-extras");
+        if (previewExtras.length > 0) {
+            previewExtras.find(".skin-color-info, .skin-extra-info").stop(true, true).fadeOut(100, function() {
+                $(this).empty();
+            });
+        }
+    }
     
     async function switchSkin(direction) {
         if (switchLock) return; // уже переключаем
