@@ -476,23 +476,31 @@ $(document).ready(function () {
             previewExtras.append(skinExtraInfo);
         }
     
-        // Скрыть сразу, чтобы не моргали
-        skinColorInfo.css({ display: "flex", opacity: 0 });
-        skinExtraInfo.css({ display: "flex", opacity: 0 });
-
-        // Остановить текущую анимацию и скрыть
+        // Остановить текущие анимации
         skinColorInfo.stop(true, true);
         skinExtraInfo.stop(true, true);
 
-        // Дожидаемся окончания предыдущих анимаций
-        await Promise.all([
-            skinColorInfo.animate({ opacity: 0 }, 100).promise(),
-            skinExtraInfo.animate({ opacity: 0 }, 100).promise(),
-        ]);
+        // Если видно - тогда анимировать скрытие
+        const hideAnimations = [];
+
+        if (skinColorInfo.css("opacity") > 0) {
+            hideAnimations.push(skinColorInfo.animate({ opacity: 0 }, 100).promise());
+        }
+        if (skinExtraInfo.css("opacity") > 0) {
+            hideAnimations.push(skinExtraInfo.animate({ opacity: 0 }, 100).promise());
+        }
+
+        // Дождаться всех анимаций, если были
+        await Promise.all(hideAnimations);
 
         // Очищаем содержимое
         skinColorInfo.empty();
         skinExtraInfo.empty();
+
+        // После загрузки нового контента плавно показываем
+        skinColorInfo.css({ display: "flex" }).animate({ opacity: 1 }, 100);
+        skinExtraInfo.css({ display: "flex" }).animate({ opacity: 1 }, 100);
+
     
         const bindsDataResponse = await fetch("/code-parts/topics/sticker-crafts-binds.json");
         const bindsData = await bindsDataResponse.json();
