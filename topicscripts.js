@@ -364,262 +364,236 @@ $(document).ready(function () {
         }
     }
   
+    let switchLock = false; // блокировка спама
+
     async function showPreviewWindow(element) {
-      const previewWindow = $("#preview-window");
-      const previewContent = $("#preview-content");
-      let skinClasses = [];
-  
-      previewWindow.attr("class", "hidden");
-  
-      if ($(element).hasClass("skin none")) return;
-  
-      if ($(element).hasClass("skin")) {
-          skinClasses = $(element).attr("class").split(" ");
-      }
-  
-      const skinBox = $(element).closest(".box-skins-list, .topic-grandbox, .introduce-craft p");
-      const visibleItems = skinBox.find(".skin:not(.disabled)");
-      const totalItems = visibleItems.length;
-      const itemName = element.querySelector(".skin-desc-name")?.textContent.trim() || "";
-      const weaponName = itemName.split("|")[0].trim();
-  
-      previewWindow.removeClass("hidden").attr({
-          "data-current-index": visibleItems.index(element),
-          "data-total-items": totalItems,
-          "data-current-box": skinBox.index(".box-skins-list, .topic-grandbox, .introduce-craft p"),
-      });
-  
-      skinClasses.forEach((skinClass) => {
-          if (skinClass !== "skin") {
-              previewWindow.addClass(skinClass);
-          }
-      });
-  
-      previewContent.html(element.innerHTML);
-      previewWindow.find(".skin-alt-info, .skin-craft-info").remove();
-  
-      const weapon = element.getAttribute("weapon");
-      const isSticker = weapon.includes("sticker") || weapon.includes("capsule");
-  
-      const skinAltInfoDiv = $("<a>", {
-          class: "skin-alt-info titled" + (isSticker ? " hidden" : ""),
-          href: languageTag === "ru"
-              ? `/ru/topic/items/${weapon}`
-              : `/topic/items/${weapon}`,
-          "data-title": languageTag === "ru"
-              ? `Все Скины на ${weaponName}`
-              : `All Skins on ${weaponName}`,
-          html: '<i class="officon library"></i>',
-      });
-  
-      let previewExtras = $("#preview-showcase .preview-extras");
-      if (previewExtras.length === 0) {
-          previewExtras = $("<div>", { class: "preview-extras" });
-          $("#preview-showcase").append(previewExtras);
-      }
-  
-      // Ищем блоки или создаем
-      let skinColorInfo = previewExtras.find(".skin-color-info");
-      if (skinColorInfo.length === 0) {
-          skinColorInfo = $("<div>", { class: "skin-color-info" }).css({ display: "flex", opacity: 0 });
-          previewExtras.append(skinColorInfo);
-      }
-  
-      let skinExtraInfo = previewExtras.find(".skin-extra-info");
-      if (skinExtraInfo.length === 0) {
-          skinExtraInfo = $("<div>", { class: "skin-extra-info" }).css({ display: "flex", opacity: 0 });
-          previewExtras.append(skinExtraInfo);
-      }
+        const previewWindow = $("#preview-window");
+        const previewContent = $("#preview-content");
+        let skinClasses = [];
+    
+        previewWindow.attr("class", "hidden");
+    
+        if ($(element).hasClass("skin none")) return;
+    
+        if ($(element).hasClass("skin")) {
+            skinClasses = $(element).attr("class").split(" ");
+        }
+    
+        const skinBox = $(element).closest(".box-skins-list, .topic-grandbox, .introduce-craft p");
+        const visibleItems = skinBox.find(".skin:not(.disabled)");
+        const totalItems = visibleItems.length;
+        const itemName = element.querySelector(".skin-desc-name")?.textContent.trim() || "";
+        const weaponName = itemName.split("|")[0].trim();
+    
+        previewWindow.removeClass("hidden").attr({
+            "data-current-index": visibleItems.index(element),
+            "data-total-items": totalItems,
+            "data-current-box": skinBox.index(".box-skins-list, .topic-grandbox, .introduce-craft p"),
+        });
+    
+        skinClasses.forEach((skinClass) => {
+            if (skinClass !== "skin") {
+                previewWindow.addClass(skinClass);
+            }
+        });
+    
+        previewContent.html(element.innerHTML);
+    
+        let previewExtras = $("#preview-showcase .preview-extras");
+        if (previewExtras.length === 0) {
+            previewExtras = $("<div>", { class: "preview-extras" });
+            $("#preview-showcase").append(previewExtras);
+        }
+    
+        // Очищаем только alt/craft info (не весь extras)
+        previewExtras.find(".skin-alt-info, .skin-craft-info").remove();
 
-      previewExtras.prepend(skinAltInfoDiv);
+        const weapon = element.getAttribute("weapon");
+        const isSticker = weapon.includes("sticker") || weapon.includes("capsule");
+    
+        // ALT info
+        let skinAltInfoDiv = previewExtras.find(".skin-alt-info");
+        if (skinAltInfoDiv.length === 0) {
+            skinAltInfoDiv = $("<a>", {
+                class: "skin-alt-info titled",
+                html: '<i class="officon library"></i>',
+            });
+            previewExtras.prepend(skinAltInfoDiv);
+        }
+        skinAltInfoDiv.attr({
+            href: languageTag === "ru"
+                ? `/ru/topic/items/${weapon}`
+                : `/topic/items/${weapon}`,
+            "data-title": languageTag === "ru"
+                ? `Все Скины на ${weaponName}`
+                : `All Skins on ${weaponName}`,
+        }).toggleClass("hidden", isSticker);
+    
+        let skinColorInfo = previewExtras.find(".skin-color-info");
+        if (skinColorInfo.length === 0) {
+            skinColorInfo = $("<div>", { class: "skin-color-info" }).css({ display: "flex", opacity: 0 });
+            previewExtras.append(skinColorInfo);
+        }
+    
+        let skinExtraInfo = previewExtras.find(".skin-extra-info");
+        if (skinExtraInfo.length === 0) {
+            skinExtraInfo = $("<div>", { class: "skin-extra-info" }).css({ display: "flex", opacity: 0 });
+            previewExtras.append(skinExtraInfo);
+        }
+    
+        // Сразу останавливаем анимации
+        skinColorInfo.stop(true, true);
+        skinExtraInfo.stop(true, true);
+    
+        // Плавное исчезновение
+        await Promise.all([
+            skinColorInfo.animate({ opacity: 0 }, 100).promise(),
+            skinExtraInfo.animate({ opacity: 0 }, 100).promise(),
+        ]);
+    
+        // После исчезновения — чистим содержимое
+        skinColorInfo.empty();
+        skinExtraInfo.empty();
+    
+        const bindsDataResponse = await fetch("/code-parts/topics/sticker-crafts-binds.json");
+        const bindsData = await bindsDataResponse.json();
+        const pageKey = Object.keys(bindsData).find(key => bindsData[key] === itemName);
+    
+        if (pageKey) {
+            const skinCraftInfoDiv = $("<a>", {
+                class: "skin-craft-info titled",
+                href: languageTag === "ru"
+                    ? `/ru/topic/sticker-crafts/skin/${pageKey}`
+                    : `/topic/sticker-crafts/skin/${pageKey}`,
+                "data-title": languageTag === "ru"
+                    ? `Все Стикер-Крафты для ${itemName}`
+                    : `All Sticker-Crafts for ${itemName}`,
+                html: '<i class="officon stickers"></i>',
+            });
+            previewExtras.prepend(skinCraftInfoDiv);
+        }
+    
+        const skinId = element.getAttribute("skin-id");
+        const skinsDataResponse = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
+        const skinsData = await skinsDataResponse.json();
+        const skinData = skinsData[skinId];
+    
+        if (skinData) {
+            const imgElement = previewContent.find("img");
+            if (skinData.imageOG && imgElement.length) {
+                imgElement.stop(true, true).fadeOut(150, function () {
+                    imgElement.attr("src", skinData.image).fadeIn(150);
+                });
+            } else if (skinData.imageOG) {
+                previewContent.append(`
+                    <img src="${skinData.image}" draggable="false" alt="${skinData.name}">
+                    <div class="skin-desc-name">${skinData.name}</div>
+                `);
+            }
+    
+            if (skinData.color) {
+                skinData.color.forEach((color) => {
+                    const colorLink = $("<a>", {
+                        class: `skin-color ${color.toLowerCase()}`,
+                        href: languageTag === "ru"
+                            ? `/ru/topic/skins/${color.toLowerCase()}-skins`
+                            : `/topic/skins/${color.toLowerCase()}-skins`,
+                    });
+                    skinColorInfo.append(colorLink);
+                });
+            }
+    
+            async function handleCollectionOrCase(type) {
+                const file = type === "collection" ? "collections" : "cases";
+                const searchTitle = skinData[type];
+                if (!searchTitle) return;
+    
+                const response = await fetch(`/code-parts/topics/${file}.json`);
+                const data = await response.json();
+                const match = data.items.find(item => item.title === searchTitle);
+    
+                if (match) {
+                    const link = $("<a>", {
+                        href: `/topic/${file}/${match.id}`,
+                    }).append(
+                        $("<img>", { src: match.img, alt: match.title }),
+                        $("<span>").text(match.title)
+                    );
+                    skinExtraInfo.append(link);
+                }
+            }
+    
+            async function handleStickerOrCapsule() {
+                if (!weapon.includes("sticker") && !weapon.includes("capsule")) return;
+    
+                const filesToCheck = [
+                    "/code-parts/topics/sticker-capsules.json",
+                    "/code-parts/topics/autograph-capsules.json"
+                ];
+    
+                for (const filePath of filesToCheck) {
+                    const response = await fetch(filePath);
+                    const data = await response.json();
+                    const match = data.items.find(item => item.id === weapon);
+                    if (match) {
+                        const link = $("<a>", {
+                            href: `/topic/stickers/${match.id}`,
+                        }).append(
+                            $("<img>", { src: match.img, alt: match.title }),
+                            $("<span>").text(match.title)
+                        );
+                        skinExtraInfo.append(link);
+                        break;
+                    }
+                }
+            }
+    
+            await handleCollectionOrCase("collection");
+            await handleCollectionOrCase("case");
+            await handleStickerOrCapsule();
+        }
+    
+        // Плавное появление нового контента
+        skinColorInfo.css({ display: "flex" }).stop(true, true).animate({ opacity: 1 }, 100);
+        skinExtraInfo.css({ display: "flex" }).stop(true, true).animate({ opacity: 1 }, 100);
+    
+        $(".site-searcher-box")
+            .off("click")
+            .on("click", function () {
+                const selectedSite = this.id;
+                const searchName = itemName;
+                const searchUrl = generateSearchUrl(searchName, selectedSite);
+                window.open(searchUrl, "_blank");
+            });
+    
+        const PreviewButtons = document.querySelector(".preview-extras");
+        if (languageTag === "ru") {
+            updateURLs(PreviewButtons);
+        }
+    }
+    
+    async function switchSkin(direction) {
+        if (switchLock) return; // уже переключаем
+        switchLock = true;
+    
+        const previewWindow = $("#preview-window");
+        const currentIndex = parseInt(previewWindow.attr("data-current-index"), 10);
+        const currentBoxIndex = parseInt(previewWindow.attr("data-current-box"), 10);
+        const currentBox = $(".box-skins-list, .topic-grandbox, .introduce-craft p, .character-box").eq(currentBoxIndex);
+        const visibleItems = currentBox.find(".skin:not(.disabled):not(.none)");
+        const totalItems = visibleItems.length;
+        let newIndex = direction === "left" ? currentIndex - 1 : currentIndex + 1;
+    
+        if (newIndex < 0) newIndex = totalItems - 1;
+        else if (newIndex >= totalItems) newIndex = 0;
+    
+        await showPreviewWindow(visibleItems.eq(newIndex)[0]);
+        previewWindow.attr("data-current-index", newIndex);
+    
+        switchLock = false;
+    }
+    
   
-      // Сразу останавливаем текущие анимации
-      skinColorInfo.stop(true, true).animate({ opacity: 0 }, 100);
-      skinExtraInfo.stop(true, true).animate({ opacity: 0 }, 100);
-  
-      // Дожидаемся окончания исчезновения перед очисткой
-      await Promise.all([
-          skinColorInfo.promise(),
-          skinExtraInfo.promise()
-      ]);
-  
-      skinColorInfo.empty();
-      skinExtraInfo.empty();
-
-  
-      const bindsDataResponse = await fetch("/code-parts/topics/sticker-crafts-binds.json");
-      const bindsData = await bindsDataResponse.json();
-      const pageKey = Object.keys(bindsData).find(key => bindsData[key] === itemName);
-  
-      if (pageKey) {
-          const skinCraftInfoDiv = $("<a>", {
-              class: "skin-craft-info titled",
-              href: languageTag === "ru"
-                  ? `/ru/topic/sticker-crafts/skin/${pageKey}`
-                  : `/topic/sticker-crafts/skin/${pageKey}`,
-              "data-title": languageTag === "ru"
-                  ? `Все Стикер-Крафты для ${itemName}`
-                  : `All Sticker-Crafts for ${itemName}`,
-              html: '<i class="officon stickers"></i>',
-          });
-          previewExtras.prepend(skinCraftInfoDiv);
-      }
-  
-      const skinId = element.getAttribute("skin-id");
-      const skinsDataResponse = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
-      const skinsData = await skinsDataResponse.json();
-      const skinData = skinsData[skinId];
-  
-      if (skinData) {
-          // Плавная смена картинки
-          const imgElement = previewContent.find("img");
-          if (skinData.imageOG && imgElement.length) {
-              imgElement.stop(true, true).fadeOut(150, function () {
-                  imgElement.attr("src", skinData.image);
-                  imgElement.fadeIn(150);
-              });
-          } else if (skinData.imageOG) {
-              previewContent.append(`
-                  <img src="${skinData.image}" draggable="false" alt="${skinData.name}">
-                  <div class="skin-desc-name">${skinData.name}</div>
-              `);
-          }
-  
-          if (skinData.color) {
-              skinData.color.forEach((color) => {
-                  const colorLink = $("<a>", {
-                      class: `skin-color ${color.toLowerCase()}`,
-                      href: languageTag === "ru"
-                          ? `/ru/topic/skins/${color.toLowerCase()}-skins`
-                          : `/topic/skins/${color.toLowerCase()}-skins`,
-                  });
-                  skinColorInfo.append(colorLink);
-              });
-          }
-  
-          async function handleCollectionOrCase(type) {
-              const file = type === "collection" ? "collections" : "cases";
-              const searchTitle = skinData[type];
-              if (!searchTitle) return;
-  
-              const response = await fetch(`/code-parts/topics/${file}.json`);
-              const data = await response.json();
-              const match = data.items.find(item => item.title === searchTitle);
-  
-              if (match) {
-                  const link = $("<a>", {
-                      href: `/topic/${file}/${match.id}`,
-                  });
-  
-                  const img = $("<img>", {
-                      src: match.img,
-                      alt: match.title,
-                  });
-  
-                  const span = $("<span>").text(match.title);
-  
-                  link.append(img).append(span);
-                  skinExtraInfo.append(link);
-              }
-          }
-  
-          async function handleStickerOrCapsule() {
-              if (!weapon.includes("sticker") && !weapon.includes("capsule")) return;
-  
-              const filesToCheck = [
-                  "/code-parts/topics/sticker-capsules.json",
-                  "/code-parts/topics/autograph-capsules.json"
-              ];
-  
-              for (const filePath of filesToCheck) {
-                  const response = await fetch(filePath);
-                  const data = await response.json();
-  
-                  const match = data.items.find(item => item.id === weapon);
-  
-                  if (match) {
-                      const link = $("<a>", {
-                          href: `/topic/stickers/${match.id}`,
-                      });
-  
-                      const img = $("<img>", {
-                          src: match.img,
-                          alt: match.title,
-                      });
-  
-                      const span = $("<span>").text(match.title);
-  
-                      link.append(img).append(span);
-                      skinExtraInfo.append(link);
-                      break;
-                  }
-              }
-          }
-  
-          await handleCollectionOrCase("collection");
-          await handleCollectionOrCase("case");
-          await handleStickerOrCapsule();
-      }
-  
-      // Плавное появление
-      skinColorInfo.css({ display: "flex" }).stop(true, true).animate({ opacity: 1 }, 100);
-      skinExtraInfo.css({ display: "flex" }).stop(true, true).animate({ opacity: 1 }, 100);
-  
-      $(".site-searcher-box")
-          .off("click")
-          .on("click", function () {
-              const selectedSite = this.id;
-              const searchName = itemName;
-              const searchUrl = generateSearchUrl(searchName, selectedSite);
-              window.open(searchUrl, "_blank");
-          });
-  
-      const PreviewButtons = document.querySelector(".preview-extras");
-  
-      if (languageTag === "ru") {
-          updateURLs(PreviewButtons);
-      }
-  }
-  
-  function closePreviewWindow() {
-      const previewWindow = $("#preview-window");
-      previewWindow.addClass("hidden");
-      previewWindow.attr("class", "hidden");
-  
-      previewWindow.find(".skin-alt-info, .skin-craft-info").remove();
-  
-      const previewExtras = $("#preview-showcase .preview-extras");
-      if (previewExtras.length > 0) {
-          previewExtras.find(".skin-color-info, .skin-extra-info").stop(true, true).fadeOut(150, function() {
-              $(this).empty();
-          });
-      }
-  }
-  
-  function switchSkin(direction) {
-      const previewWindow = $("#preview-window");
-      const currentIndex = parseInt(previewWindow.attr("data-current-index"), 10);
-      const currentBoxIndex = parseInt(previewWindow.attr("data-current-box"), 10);
-      const currentBox = $(".box-skins-list, .topic-grandbox, .introduce-craft p, .character-box").eq(currentBoxIndex);
-      const visibleItems = currentBox.find(".skin:not(.disabled):not(.none)");
-      const totalItems = visibleItems.length;
-      let newIndex = direction === "left" ? currentIndex - 1 : currentIndex + 1;
-  
-      if (newIndex < 0) newIndex = totalItems - 1;
-      else if (newIndex >= totalItems) newIndex = 0;
-  
-      const previewExtras = $("#preview-showcase .preview-extras");
-      if (previewExtras.length > 0) {
-          previewExtras.find(".skin-color-info, .skin-extra-info").stop(true, true).animate({ opacity: 0 }, 100);
-      }
-  
-      showPreviewWindow(visibleItems.eq(newIndex)[0]);
-      previewWindow.attr("data-current-index", newIndex);
-  }
-  
-  
-      
-
       $(document).on("click", ".skin", function () {
         showPreviewWindow(this);
       });
