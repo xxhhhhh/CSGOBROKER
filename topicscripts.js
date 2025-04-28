@@ -505,13 +505,6 @@ $(document).ready(function () {
         skinColorInfo.empty();
         skinExtraInfo.empty();
 
-        // Добавляем новый контент
-        // Теперь правильно показываем: сначала display: flex и opacity: 0
-        skinColorInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
-        skinExtraInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
-
-
-    
         const bindsDataResponse = await fetch("/code-parts/topics/sticker-crafts-binds.json");
         const bindsData = await bindsDataResponse.json();
         const pageKey = Object.keys(bindsData).find(key => bindsData[key] === itemName);
@@ -609,6 +602,11 @@ $(document).ready(function () {
             await handleCollectionOrCase("case");
             await handleStickerOrCapsule();
         }
+
+        // Добавляем новый контент
+        // Теперь правильно показываем: сначала display: flex и opacity: 0
+        skinColorInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
+        skinExtraInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
     
         $(".site-searcher-box")
             .off("click")
