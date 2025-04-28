@@ -1972,18 +1972,6 @@ document.addEventListener("DOMContentLoaded", async function () {
       updatePaginationButtons(page);
     }
 
-    // function createPaginationButtons() {
-    //   paginationHolder.innerHTML = "";
-    //   for (let i = 1; i <= totalPages; i++) {
-    //     const button = document.createElement("button");
-    //     button.textContent = i;
-    //     button.classList.add("pagination-button");
-    //     button.dataset.page = i;
-    //     button.addEventListener("click", () => showPage(i));
-    //     paginationHolder.appendChild(button);
-    //   }
-    // }
-
     function updatePaginationButtons(activePage) {
       paginationHolder.innerHTML = "";
     
@@ -2029,8 +2017,10 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
       paginationHolder.appendChild(nextButton);
     }
-    
-    
+
+      if (languageTag === "ru") {
+          updateURLs(topicBoxesHolder);
+      }
 
     // createPaginationButtons();
     showPage(1);
