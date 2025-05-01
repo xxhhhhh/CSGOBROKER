@@ -9341,6 +9341,13 @@ div#results {
     filter: drop-shadow(6px 4px 6px rgba(6, 6, 6, .5));
 }
 
+.crafting-table-screens.object.combined img {
+    max-height: unset;
+    max-width: unset;
+    margin-left: 450px;
+    margin-top: 200px;
+}
+
 .crafting-table-screen {
     position: absolute;
     transition: opacity .5s ease-in-out, visibility 0s .5s;
