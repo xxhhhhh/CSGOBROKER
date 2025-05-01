@@ -1789,7 +1789,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 }
 
 (function () {
-  const topicBoxesHolder = document.querySelector(".topic-boxes-holder.items-type") ||
+  const topicBoxesHolder = document.querySelector(".topic-boxes-holder.items-type, .topic-boxes-holder.sticker-crafts") ||
     (["skins", "items", "sticker-crafts"].includes(location.pathname.split("/").pop().replace(".html", "")) &&
       document.querySelector(".topic-boxes-holder"));
 
