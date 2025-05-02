@@ -1980,7 +1980,7 @@ function forcemodsboxes() {
         es: "Intercambiar Ítems",
       },
       "Instant Sell": {
-        ru: "Моментальная продажа",
+        ru: "Быстрая Продажа",
         tr: "Anlık Satış",
         pt: "Venda Imediata",
         hi: "त्वरित बेचें",
