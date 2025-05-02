@@ -108,7 +108,8 @@ h2,
 h3,
 h4,
 h6,
-p {
+p,
+.introduce-craft span {
     line-height: 1.2 !important;
     margin-bottom: 0 !important;
 }
@@ -8974,42 +8975,68 @@ div#results {
     margin-left: 36px;
 }
 
-.introduce-craft p {
+.introduce-craft p,
+.introduce-craft span {
     height: auto;
     font-weight: 500;
     font-size: 16px;
     width: 95%;
-    display: list-item;
+    display: block;
     list-style: none;
     color: rgba(255, 255, 255, .7);
     margin-left: 19px;
-    margin-top: 6px;
 }
 
 .introduce-craft a {
     text-decoration: none;
 }
 
-.introduce-craft p:first-of-type {
+.craft-components-list {
+    display: contents;
+    color: rgba(255, 255, 255, .7);
+}
+
+.introduce-craft span:first-of-type {
     margin-top: 12px;
 }
 
 .introduce-craft strong,
-.introduce-craft p .skin-desc-name {
+.introduce-craft p .skin-desc-name,
+.introduce-craft span .skin-desc-name {
     font-weight: 500;
 }
 
-.introduce-craft p .skin-desc-name {
+.introduce-craft span .skin-desc-name {
     cursor: pointer;
+    transition: all .15s ease-in-out;
 }
 
-.introduce-craft p .skin {
-    display: inline-block;
+.introduce-craft span .skin {
+    display: inline-flex;
+    align-items: baseline;
+    position: relative;
+    margin: unset;
+    width: auto;
+    gap: unset;
 }
 
-.introduce-craft strong img,
-.introduce-craft p img,
-.introduce-craft p .skin-price-info,
+.introduce-craft span .skin:hover .skin-desc-name {
+    filter: brightness(.9);
+}
+
+.introduce-craft .skin span {
+    margin: unset;
+    margin-right: 4px;
+    color: var(--white);
+    width: auto;
+}
+
+#preview-content span {
+    display: none;
+}
+
+.introduce-craft span img,
+.introduce-craft span .skin-price-info,
 .navigation-section .skin-price-info {
     display: none;
 }
@@ -12005,9 +12032,11 @@ div#results {
         height: 50px;
     }
 
-    .introduce-craft p {
+    .introduce-craft p,
+    .introduce-craft span {
         width: 90%;
         font-size: 15px;
+        margin-top: 8px;
     }
 
     .topic-boxes-holder {

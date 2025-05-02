@@ -172,115 +172,195 @@ $(document).ready(function () {
       if ($(".skin").length) {
         const skinsOnPage = $(".skin");
         const weaponToSkinIds = {};
-    
+      
         skinsOnPage.each(function () {
-            const weapon = $(this).attr("weapon");
-            const skinId = $(this).attr("skin-id");
-            if (weapon && skinId) {
-                weaponToSkinIds[weapon] = weaponToSkinIds[weapon] || [];
-                weaponToSkinIds[weapon].push(skinId);
-            }
+          const weapon = $(this).attr("weapon");
+          const skinId = $(this).attr("skin-id");
+          if (weapon && skinId) {
+            weaponToSkinIds[weapon] = weaponToSkinIds[weapon] || [];
+            weaponToSkinIds[weapon].push(skinId);
+          }
         });
-    
+      
+        const fetchSkinPrices = async () => {
+          try {
+            const res = await fetch("https://lisskins.csgobroker.workers.dev/");
+            if (!res.ok) throw new Error("Не удалось загрузить цены скинов");
+            return await res.json();
+          } catch (e) {
+            console.error(e);
+            return [];
+          }
+        };
+      
         const loadSkinsData = async () => {
           try {
-              const skinPrices = await fetchSkinPrices();
+            const skinPrices = await fetchSkinPrices();
       
-              await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
-                  try {
-                      const response = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
-                      if (!response.ok) throw new Error(`Не удалось загрузить ${weapon}.json`);
-                      const skinsData = await response.json();
+            await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
+              try {
+                const response = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
+                if (!response.ok) throw new Error(`Не удалось загрузить ${weapon}.json`);
+                const skinsData = await response.json();
       
-                      const skinsForWeapon = skinsData || {};
-                      weaponToSkinIds[weapon].forEach((skinId) => {
-                          const skinData = skinsForWeapon[skinId];
-                          if (skinData) {
-                              const isInNavigation = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).closest('.navigation-section').length > 0;
-                              const imageUrl = isInNavigation ? skinData.imageOG : skinData.image;
+                const skinsForWeapon = skinsData || {};
+                weaponToSkinIds[weapon].forEach((skinId) => {
+                  const skinData = skinsForWeapon[skinId];
+                  if (skinData) {
+                    const imageUrl = skinData.image;
       
-                              let priceInfoContent = "";
+                    let priceInfoContent = "";
       
-                              if (Array.isArray(skinPrices)) {
-                                  // Определяем, это наклейка или нет
-                                  const isSticker = skinData.name.startsWith("Sticker |");
+                    if (Array.isArray(skinPrices)) {
+                      const isSticker = skinData.name.startsWith("Sticker |");
       
-                                  const matchedSkins = skinPrices.filter(skin => {
-                                    if (isSticker) {
-                                      // Для стикеров — точное совпадение имени
-                                      return skin.name === skinData.name;
-                                    } else {
-                                      // Для остальных — по вхождению
-                                      return skin.name.includes(skinData.name);
-                                    }
-                                  });
-      
-                                  const normalPrices = matchedSkins
-                                      .filter(skin => !skin.name.startsWith("Souvenir"))
-                                      .map(skin => skin.price);
-      
-                                  const souvenirPrices = matchedSkins
-                                      .filter(skin => skin.name.startsWith("Souvenir"))
-                                      .map(skin => skin.price);
-      
-                                  if (normalPrices.length > 0) {
-                                      normalPrices.sort((a, b) => a - b);
-                                      const normalPriceText = normalPrices[0] === normalPrices[normalPrices.length - 1]
-                                          ? `${normalPrices[0].toFixed(2)}$`
-                                          : `${normalPrices[0].toFixed(2)}$ - ${normalPrices[normalPrices.length - 1].toFixed(2)}$`;
-                                      priceInfoContent += `${normalPriceText}`;
-                                  }
-      
-                                  if (souvenirPrices.length > 0) {
-                                      souvenirPrices.sort((a, b) => a - b);
-                                      const souvenirPriceText = souvenirPrices[0] === souvenirPrices[souvenirPrices.length - 1]
-                                          ? `${souvenirPrices[0].toFixed(2)}$`
-                                          : `${souvenirPrices[0].toFixed(2)}$ - ${souvenirPrices[souvenirPrices.length - 1].toFixed(2)}$`;
-                                      priceInfoContent += `<div class="souvenir-price-info">${souvenirPriceText}</div>`;
-                                  }
-                              }
-      
-                              const newSkinHTML = `
-                                  <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
-                                      <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
-                                      <div class="skin-desc-name">${skinData.name}</div>
-                                      ${priceInfoContent ? `<div class="skin-price-info">${priceInfoContent}</div>` : ""}
-                                  </div>
-                              `;
-      
-                              $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function () {
-                                  $(this).replaceWith(newSkinHTML);
-                              });
-                          }
+                      const matchedSkins = skinPrices.filter(skin => {
+                        return isSticker
+                          ? skin.name === skinData.name
+                          : skin.name.includes(skinData.name);
                       });
-                  } catch (error) {
-                      console.error(error);
-                  }
-              }));
       
-              $(".skin img").each(function () {
-                  if (this.complete) {
-                      $(this).addClass("imported");
-                  } else {
-                      $(this).on("load", function () {
-                          $(this).addClass("imported");
-                      });
-                  }
-              });
+                      const normalPrices = matchedSkins
+                        .filter(skin => !skin.name.startsWith("Souvenir"))
+                        .map(skin => skin.price);
       
-              checkWeaponTypeAvailabilityForItems();
+                      const souvenirPrices = matchedSkins
+                        .filter(skin => skin.name.startsWith("Souvenir"))
+                        .map(skin => skin.price);
+      
+                      if (normalPrices.length > 0) {
+                        normalPrices.sort((a, b) => a - b);
+                        const text = normalPrices[0] === normalPrices[normalPrices.length - 1]
+                          ? `${normalPrices[0].toFixed(2)}$`
+                          : `${normalPrices[0].toFixed(2)}$ - ${normalPrices[normalPrices.length - 1].toFixed(2)}$`;
+                        priceInfoContent += `${text}`;
+                      }
+      
+                      if (souvenirPrices.length > 0) {
+                        souvenirPrices.sort((a, b) => a - b);
+                        const text = souvenirPrices[0] === souvenirPrices[souvenirPrices.length - 1]
+                          ? `${souvenirPrices[0].toFixed(2)}$`
+                          : `${souvenirPrices[0].toFixed(2)}$ - ${souvenirPrices[souvenirPrices.length - 1].toFixed(2)}$`;
+                        priceInfoContent += `<div class="souvenir-price-info">${text}</div>`;
+                      }
+                    }
+      
+                    const newSkinHTML = `
+                      <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
+                          <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
+                          <div class="skin-desc-name">${skinData.name}</div>
+                          ${priceInfoContent ? `<div class="skin-price-info">${priceInfoContent}</div>` : ""}
+                      </div>
+                    `;
+      
+                    $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function () {
+                      $(this).replaceWith(newSkinHTML);
+                    });
+                  }
+                });
+              } catch (error) {
+                console.error(error);
+              }
+            }));
+      
+            $(".skin img").each(function () {
+              if (this.complete) {
+                $(this).addClass("imported");
+              } else {
+                $(this).on("load", function () {
+                  $(this).addClass("imported");
+                });
+              }
+            });
+      
+            checkWeaponTypeAvailabilityForItems();
+      
+            if (location.pathname.includes("/topic/sticker-crafts/")) {
+              updateCraftComponentList();
+            }
           } catch (error) {
-              console.error(error);
+            console.error(error);
           }
-      };
+        };
       
+        const updateCraftComponentList = () => {
+          const boxes = document.querySelectorAll('.siteblock .topic-grandbox');
+        
+          boxes.forEach(box => {
+            const thirdSection = box.querySelector('.navigation-section.third');
+            const introduceCraftList = document.querySelector('.introduce-craft .craft-components-list');
+        
+            if (!thirdSection || !introduceCraftList) return;
+        
+            const stickerElements = Array.from(thirdSection.querySelectorAll('.skin'));
+        
+            const map = new Map();
+            stickerElements.forEach(skin => {
+              const nameAttr = skin.getAttribute("skin-id");
+              if (!nameAttr) return;
+              const cleanedName = nameAttr.replace(/^Sticker\s\|\s/, '');
+        
+              if (!map.has(cleanedName)) {
+                map.set(cleanedName, { count: 1, original: skin });
+              } else {
+                map.get(cleanedName).count++;
+              }
+            });
+        
+            introduceCraftList.innerHTML = '';
+        
+            Array.from(map.entries()).forEach(([name, { count, original }], index, arr) => {
+              const spanSkin = document.createElement('span');
+              spanSkin.className = original.className; // сохраняем классы
+              spanSkin.classList.add('skin');
+              spanSkin.setAttribute('skin-id', original.getAttribute('skin-id') || '');
+              spanSkin.setAttribute('weapon', original.getAttribute('weapon') || '');
+        
+              // добавляем img
+              const img = original.querySelector('img');
+              if (img) {
+                const newImg = img.cloneNode(true);
+                spanSkin.appendChild(newImg);
+              }
+        
+              // создаём имя скина
+              const nameDiv = original.querySelector('.skin-desc-name');
+              if (nameDiv) {
+                const newName = document.createElement('div');
+                newName.className = 'skin-desc-name';
+                newName.textContent = nameDiv.textContent.replace(/^Sticker\s\|\s/, '').trim();
+        
+                if (count > 1) {
+                  const prefix = document.createElement('span');
+                  prefix.textContent = `x${count} `;
+                  spanSkin.appendChild(prefix);
+                }
+        
+                spanSkin.appendChild(newName);
+              }
+        
+              // цена (если есть)
+              const priceInfo = original.querySelector('.skin-price-info');
+              if (priceInfo) {
+                spanSkin.appendChild(priceInfo.cloneNode(true));
+              }
+        
+              introduceCraftList.appendChild(spanSkin);
+        
+              if (index < arr.length - 1) {
+                introduceCraftList.appendChild(document.createTextNode(', '));
+              }
+            });
+          });
+        };
+        
       
-    
+        window.loadSkinsData = loadSkinsData;
+      
         loadSkinsData();
-    }
+      }
+      
     
-    
-
       function updateNavigationReset() {
         const enabledFilters = $(".navigation-weapon-type.enabled").length;
         const sortEnabled = $("#Quality-Filter").hasClass("enabled");
@@ -414,7 +494,7 @@ $(document).ready(function () {
             skinClasses = $(element).attr("class").split(" ");
         }
     
-        const skinBox = $(element).closest(".box-skins-list, .topic-grandbox, .introduce-craft p");
+        const skinBox = $(element).closest(".box-skins-list, .topic-grandbox, .introduce-craft");
         const visibleItems = skinBox.find(".skin:not(.disabled)");
         const totalItems = visibleItems.length;
         const itemName = element.querySelector(".skin-desc-name")?.textContent.trim() || "";
@@ -423,7 +503,7 @@ $(document).ready(function () {
         previewWindow.removeClass("hidden").attr({
             "data-current-index": visibleItems.index(element),
             "data-total-items": totalItems,
-            "data-current-box": skinBox.index(".box-skins-list, .topic-grandbox, .introduce-craft p"),
+            "data-current-box": skinBox.index(".box-skins-list, .topic-grandbox, .introduce-craft"),
         });
     
         skinClasses.forEach((skinClass) => {
@@ -645,7 +725,7 @@ $(document).ready(function () {
         const previewWindow = $("#preview-window");
         const currentIndex = parseInt(previewWindow.attr("data-current-index"), 10);
         const currentBoxIndex = parseInt(previewWindow.attr("data-current-box"), 10);
-        const currentBox = $(".box-skins-list, .topic-grandbox, .introduce-craft p, .character-box").eq(currentBoxIndex);
+        const currentBox = $(".box-skins-list, .topic-grandbox, .introduce-craft, .character-box").eq(currentBoxIndex);
         const visibleItems = currentBox.find(".skin:not(.disabled):not(.none)");
         const totalItems = visibleItems.length;
         let newIndex = direction === "left" ? currentIndex - 1 : currentIndex + 1;
