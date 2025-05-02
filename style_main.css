@@ -343,7 +343,7 @@ nav .pages {
 }
 
 .rec-box .content {
-    width: 95%;
+    width: calc(100% - 16px);
     margin: 0 auto;
     padding: 6px 0;
     margin-bottom: 8px;
@@ -610,9 +610,9 @@ nav .pages {
     position: absolute;
     bottom: 0;
     z-index: -1;
-    width: 94%;
+    width: calc(100% - 18px);
     margin: 0 auto;
-    margin-bottom: 10px;
+    margin-bottom: 9px;
     border-radius: 10px;
     background: linear-gradient(180deg, var(--darkygray) 0%, rgb(12 12 12) 100%);
     box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
@@ -3208,8 +3208,8 @@ h3 {
     content: '';
     z-index: -1;
     width: 100%;
-    padding: 0 7px;
-    height: 25px;
+    height: 100%;
+    padding: 0px 7px;
     left: 50%;
     top: 50%;
     border-radius: 5px;
@@ -3218,6 +3218,10 @@ h3 {
     background: rgb(18 18 18);
 }
 
+.blog .instruction {
+    filter: none;
+}
+ 
 .site-promo-copy {
     width: 25px;
     height: 25px;
@@ -5434,7 +5438,7 @@ nav img:active,
 .box .content {
     position: absolute;
     height: 50%;
-    width: 94%;
+    width: calc(100% - 18px);
     margin-bottom: 10px;
     border-radius: 10px;
     background: var(--main-theme);
@@ -11810,7 +11814,8 @@ div#results {
 
     .singlemod-select img {
         width: auto;
-        height: 55%;
+        max-height: 50%;
+        max-width: 60%;
         filter: grayscale(1) brightness(1.7) drop-shadow(0 0 6px rgb(8 8 8));
     }
 
@@ -13647,7 +13652,6 @@ div#results {
 
     .boxes-holder .box .content {
         height: 60%;
-        width: 95%;
     }
 
     .box .logobg .best,

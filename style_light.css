@@ -70,7 +70,8 @@
 .topic-box,
 .box-skins,
 .newest-boxes-more,
-.crafting-table-step  {
+.crafting-table-step,
+.blog .main-col-info  {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
     box-shadow: unset;
 }
@@ -1296,6 +1297,17 @@ ul .submenu li .nonredir,
 .topic-filter input.singlemod-box::placeholder {
     color: rgba(0, 0, 0, .25);
     font-size: 14px;
+}
+
+.blog .topicpage {
+    background: linear-gradient(180deg, var(--opacback) 50%, rgba(0, 0, 0, 0) 90%);
+}
+
+.blog .main-col-info {
+    background: var(--darkgray);
+    border-radius: 10px;
+    width: calc(100% - 20px);
+    margin: 10px;
 }
 
 @-moz-document url-prefix() {
