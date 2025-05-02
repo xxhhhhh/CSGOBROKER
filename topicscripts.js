@@ -182,17 +182,6 @@ $(document).ready(function () {
           }
         });
       
-        const fetchSkinPrices = async () => {
-          try {
-            const res = await fetch("https://lisskins.csgobroker.workers.dev/");
-            if (!res.ok) throw new Error("Не удалось загрузить цены скинов");
-            return await res.json();
-          } catch (e) {
-            console.error(e);
-            return [];
-          }
-        };
-      
         const loadSkinsData = async () => {
           try {
             const skinPrices = await fetchSkinPrices();
