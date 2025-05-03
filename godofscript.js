@@ -2296,183 +2296,245 @@ $(document).ready(function() {
   $(window).trigger('scroll');
 });
   
-document.addEventListener("DOMContentLoaded", function() {
-  if (!window.location.pathname.includes('/reviews/')) {
-      return;
-  }
+document.addEventListener("DOMContentLoaded", function () {
+  const path = window.location.pathname;
 
-  const translations = {
+  // REVIEW PAGE
+  if (path.includes('/reviews/')) {
+    const translations = {
       en: {
-          plusminus: 'Pros and Cons',
-          screentable: 'Screenshots and Modes',
-          sitedetails: 'Payment Methods',
-          sitealternates: 'Similar Sites'
+        plusminus: 'Pros and Cons',
+        screentable: 'Screenshots and Modes',
+        sitedetails: 'Payment Methods',
+        sitealternates: 'Similar Sites'
       },
       ru: {
-          plusminus: 'Плюсы и Минусы Сайта',
-          screentable: 'Скриншоты и Режимы',
-          sitedetails: 'Платежные Способы',
-          sitealternates: 'Похожие Сайты'
+        plusminus: 'Плюсы и Минусы Сайта',
+        screentable: 'Скриншоты и Режимы',
+        sitedetails: 'Платежные Способы',
+        sitealternates: 'Похожие Сайты'
       },
       tr: {
-          plusminus: 'Artılar ve Eksiler',
-          screentable: 'Ekran Görüntüleri ve Modlar',
-          sitedetails: 'Ödeme Yöntemleri',
-          sitealternates: 'Benzer Siteler'
+        plusminus: 'Artılar ve Eksiler',
+        screentable: 'Ekran Görüntüleri ve Modlar',
+        sitedetails: 'Ödeme Yöntemleri',
+        sitealternates: 'Benzer Siteler'
       },
       es: {
         plusminus: 'Pros y Contras',
         screentable: 'Capturas de Pantalla y Modos',
         sitedetails: 'Métodos de Pago',
         sitealternates: 'Sitios Similares'
-      },    
+      },
       pl: {
         plusminus: 'Pros and Cons',
         screentable: 'Screenshots and Modes',
         sitedetails: 'Payment Methods',
         sitealternates: 'Similar Sites'
-    },
-  };
+      }
+    };
 
-  const t = translations[languageTag];
+    const t = translations[languageTag];
+    const mainBox = document.querySelector('.box.main');
+    const mirrorRedirect = document.querySelector('.mirror-redirect, .partner-site');
 
-  const mainBox = document.querySelector('.box.main');
-  const mirrorRedirect = document.querySelector('.mirror-redirect, .partner-site');
+    const navReview = document.createElement('div');
+    navReview.classList.add('nav-review');
 
-  const navReview = document.createElement('div');
-  navReview.classList.add('nav-review');
+    const ol = document.createElement('ol');
+    navReview.appendChild(ol);
 
-  const ol = document.createElement('ol');
-  navReview.appendChild(ol);
-  
-  const sections = [
+    const sections = [
       { selector: '.plusminus', text: t.plusminus },
       { selector: 'h2', text: document.querySelector('h2')?.textContent },
       { selector: 'h3', text: document.querySelector('h3')?.textContent },
       { selector: '.screentable', text: t.screentable },
       { selector: '.sitedetails', text: t.sitedetails }
-  ];
-  
-  function isElementInViewport(el) {
+    ];
+
+    function isElementInViewport(el) {
       const rect = el.getBoundingClientRect();
       return (
-          rect.top >= 0 &&
-          rect.left >= 0 &&
-          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) - 120 &&
-          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) - 120 &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
       );
-  }
-  
-  function updateNav() {
-      ol.innerHTML = ''; 
-  
+    }
+
+    function updateNav() {
+      ol.innerHTML = '';
+      let firstLiSet = false;
+
       sections.forEach(section => {
-          const element = document.querySelector(section.selector);
-          if (element && window.getComputedStyle(element).display !== 'none') {
-              const li = document.createElement('li');
-              li.textContent = section.text;
-              li.addEventListener('click', () => {
-                  if (!isElementInViewport(element)) {
-                      const rect = element.getBoundingClientRect();
-                      const offsetTop = window.scrollY + rect.top - 150;
-                      window.scrollTo({
-                          top: offsetTop,
-                          behavior: 'smooth'
-                      });
+        const element = document.querySelector(section.selector);
+        if (element && window.getComputedStyle(element).display !== 'none') {
+          const li = document.createElement('li');
+          li.textContent = section.text;
+          li.addEventListener('click', () => {
+            if (!isElementInViewport(element)) {
+              const rect = element.getBoundingClientRect();
+              const offsetTop = window.scrollY + rect.top - 150;
+              window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+            }
+
+            let targetElement = element;
+            if (section.selector === 'h2') {
+              targetElement = document.querySelector('.smallreview');
+            } else if (section.selector === 'h3') {
+              targetElement = document.querySelector('.instruction');
+            }
+
+            if (targetElement) {
+              targetElement.classList.remove('navmark');
+              void targetElement.offsetWidth;
+              targetElement.classList.add('navmark');
+              targetElement.addEventListener('animationend', function handler() {
+                targetElement.classList.remove('navmark');
+                targetElement.removeEventListener('animationend', handler);
+              });
+            }
+
+            if (section.selector === '.sitedetails') {
+              document.querySelectorAll('.sitepros').forEach(sitepros => {
+                sitepros.classList.toggle('active');
+                if (window.innerWidth >= 1365) {
+                  const parent = sitepros.closest('.sitedetails');
+                  const allSitepros = Array.from(parent.querySelectorAll('.sitepros'));
+                  const activeSitepros = allSitepros.filter(sp => sp.classList.contains('active'));
+
+                  let maxMethodlistHeight = 0;
+                  allSitepros.forEach(sp => {
+                    const methodlist = sp.querySelector('.methodlist');
+                    if (methodlist) {
+                      maxMethodlistHeight = Math.max(maxMethodlistHeight, methodlist.offsetHeight);
+                    }
+                  });
+
+                  const totalHeight = sitepros.offsetHeight + maxMethodlistHeight;
+                  const currentHeight = parseInt(window.getComputedStyle(parent).height);
+
+                  if (sitepros.classList.contains('active')) {
+                    if (currentHeight < totalHeight) {
+                      parent.style.height = totalHeight + 'px';
+                    }
+                  } else if (activeSitepros.length === 0) {
+                    parent.style.height = '';
                   }
-  
-                  let targetElement = element;
-                  if (section.selector === 'h2') {
-                      targetElement = document.querySelector('.smallreview');
-                  } else if (section.selector === 'h3') {
-                      targetElement = document.querySelector('.instruction');
-                  }
-  
-                  if (targetElement) {
-                      targetElement.classList.remove('navmark');
-  
-                      void targetElement.offsetWidth;
-  
-                      targetElement.classList.add('navmark');
-  
-                      targetElement.addEventListener('animationend', function handler() {
-                          targetElement.classList.remove('navmark');
-                          targetElement.removeEventListener('animationend', handler);
-                      });
-                  }
-                  if (section.selector === '.sitedetails') {
-                    document.querySelectorAll('.sitepros').forEach(sitepros => {
-                        sitepros.classList.toggle('active');
-                        if (window.innerWidth >= 1365) {
-                            const parent = sitepros.closest('.sitedetails');
-                            const allSitepros = Array.from(parent.querySelectorAll('.sitepros'));
-                            const activeSitepros = allSitepros.filter(sp => sp.classList.contains('active'));
-                            
-                            let maxMethodlistHeight = 0;
-                            allSitepros.forEach(sp => {
-                                const methodlist = sp.querySelector('.methodlist');
-                                if (methodlist) {
-                                    maxMethodlistHeight = Math.max(maxMethodlistHeight, methodlist.offsetHeight);
-                                }
-                            });
-                            
-                            const totalHeight = sitepros.offsetHeight + maxMethodlistHeight;
-                            const currentHeight = parseInt(window.getComputedStyle(parent).height);
-                            
-                            if (sitepros.classList.contains('active')) {
-                                if (currentHeight < totalHeight) {
-                                    parent.style.height = totalHeight + 'px';
-                                }
-                            } else if (activeSitepros.length === 0) {
-                                parent.style.height = '';
-                            }
-                        }
-                    });
                 }
               });
-              ol.appendChild(li);
+            }
+          });
+
+          ol.appendChild(li);
+          if (!firstLiSet) {
+            li.classList.add('current');
+            firstLiSet = true;
           }
+        }
       });
-  }
-  
-  const observer = new MutationObserver(mutations => {
+    }
+
+    function highlightCurrentSection() {
+      const threshold = 300;
+      const sectionElements = Array.from(ol.querySelectorAll('li')).map((li, index) => {
+        const section = sections[index];
+        const element = document.querySelector(section.selector);
+        return { li, element };
+      }).filter(({ element }) => element);
+
+      let currentIndex = -1;
+      sectionElements.forEach(({ element }, index) => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top - threshold <= 0) {
+          currentIndex = index;
+        }
+      });
+
+      if (currentIndex === -1) currentIndex = 0;
+      sectionElements.forEach(({ li }, index) => {
+        li.classList.toggle('current', index === currentIndex);
+      });
+    }
+
+    const observer = new MutationObserver(mutations => {
       let shouldUpdate = false;
-  
       mutations.forEach(mutation => {
-          if ([...mutation.addedNodes].some(node => 
-              node.matches?.('.sitedetails, .sitealternates')
-          )) {
-              shouldUpdate = true;
-          }
+        if ([...mutation.addedNodes].some(node => node.matches?.('.sitedetails, .sitealternates'))) {
+          shouldUpdate = true;
+        }
       });
-  
       if (shouldUpdate) {
-          // if (!sections.find(s => s.selector === '.ratingsumm')) {
-          //     sections.push({ selector: '.ratingsumm', text: 'Rating Summary' });
-          // }
-          if (!sections.find(s => s.selector === '.sitealternates')) {
-              sections.push({ selector: '.sitealternates', text: t.sitealternates });
-          }
-          if (!sections.find(s => s.selector === '.sitedetails')) {
-            sections.push({ selector: '.sitedetails', text: t.sitedetails });
-          }
-          updateNav();
+        if (!sections.find(s => s.selector === '.sitealternates')) {
+          sections.push({ selector: '.sitealternates', text: t.sitealternates });
+        }
+        if (!sections.find(s => s.selector === '.sitedetails')) {
+          sections.push({ selector: '.sitedetails', text: t.sitedetails });
+        }
+        updateNav();
       }
-  });
-  
-  observer.observe(document.body, { childList: true, subtree: true });
-  
-  updateNav();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
 
+    updateNav();
+    highlightCurrentSection();
+    window.addEventListener('scroll', highlightCurrentSection);
+    window.addEventListener('resize', highlightCurrentSection);
 
-  if (mirrorRedirect) {
+    if (mirrorRedirect) {
       mirrorRedirect.insertAdjacentElement('afterend', navReview);
-  } else if (mainBox) {
+    } else if (mainBox) {
       mainBox.insertAdjacentElement('afterend', navReview);
-  }
+    }
 
-  
+  // TOPIC PAGE
+  } else if (path.includes('/topic/')) {
+    const navReview = document.querySelector('.nav-review.blog');
+    if (!navReview) return;
+
+    const navItems = navReview.querySelectorAll('li');
+    const textColInfos = document.querySelectorAll('.text-col-info');
+
+    if (navItems.length !== textColInfos.length) return;
+
+    const threshold = 220;
+    navItems.forEach((li, index) => {
+      const targetElement = textColInfos[index];
+      li.addEventListener('click', () => {
+        const rect = targetElement.getBoundingClientRect();
+        const offsetTop = window.scrollY + rect.top - 150;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+
+        targetElement.classList.remove('navmark');
+        void targetElement.offsetWidth;
+        targetElement.classList.add('navmark');
+        targetElement.addEventListener('animationend', function handler() {
+          targetElement.classList.remove('navmark');
+          targetElement.removeEventListener('animationend', handler);
+        });
+      });
+    });
+
+    function highlightTopicSection() {
+      let currentIndex = -1;
+      textColInfos.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top - threshold <= 0) {
+          currentIndex = index;
+        }
+      });
+      if (currentIndex === -1) currentIndex = 0;
+      navItems.forEach((li, index) => {
+        li.classList.toggle('current', index === currentIndex);
+      });
+    }
+
+    highlightTopicSection();
+    window.addEventListener('scroll', highlightTopicSection);
+    window.addEventListener('resize', highlightTopicSection);
+  }
 });
+
 
 const boxes = Array.from(document.querySelectorAll('.box:not(.main)'));
 

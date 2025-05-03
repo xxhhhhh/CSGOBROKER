@@ -72,7 +72,8 @@
 .newest-boxes-more,
 .crafting-table-step,
 .blog .main-col-info,
-.crafting-table-screen .skin  {
+.crafting-table-screen .skin,
+.nav-review li.current   {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
     box-shadow: unset;
 }
@@ -420,7 +421,8 @@ h3,
 .skin-price-info,
 .topic-nav-box::before,
 .topic-nav-close::after,
-#button-route-filter[data-title]:after  {
+#button-route-filter[data-title]:after,
+.more-crafts span  {
     color: #1a1a1a;
 }
 

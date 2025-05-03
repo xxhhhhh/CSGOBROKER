@@ -3888,7 +3888,6 @@ nav #logo:hover {
 .nav-review {
     width: 300px;
     height: auto;
-    padding: 15px 0;
     position: relative;
     background-color: var(--darkygray);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
@@ -3903,8 +3902,8 @@ nav #logo:hover {
 }
 
 .nav-review ol {
-    width: 80%;
-
+    margin: 9px 0;
+    width: calc(100% - 18px);
     counter-reset: item1;
 }
 
@@ -3919,17 +3918,34 @@ nav #logo:hover {
     line-height: 24px;
     transition: all .15s ease-in-out;
     cursor: pointer;
-    padding-left: 20px;
     user-select: none;
-    margin: 8px 0;
+    border-radius: 10px;
+    padding: 4px 0;
+    margin: 2px 0;
+    padding-left: 30px;
+}
+
+.nav-review.blog li {
+    padding-left: 35px;
+}
+
+.nav-review li:first-child {
+    margin-top: unset;
+}
+
+.nav-review li:last-child {
+    margin-bottom: unset;
+}
+
+.nav-review li.current {
+    background: var(--darkgray);
 }
 
 .nav-review li::before {
     content: "";
-    margin-right: 8px;
     position: absolute;
-    left: 0;
-    top: 7px;
+    left: 12px;
+    top: 11px;
     width: 8px;
     height: 8px;
     font-size: 24px;
@@ -3963,8 +3979,8 @@ nav #logo:hover {
 .nav-review.blog li::before {
     counter-increment: item1;
     content: counter(item1, decimal);
-    left: -10px;
-    top: 0;
+    left: 5px;
+    top: 5px;
 }
 
 .text-col-info-box .text-col-info:nth-child(2) .text-col-info-theme::before {
@@ -11465,7 +11481,8 @@ div#results {
         box-shadow: unset;
     }
 
-    .nav-review li {
+    .nav-review li,
+    .nav-review.blog li  {
         line-height: 24px;
         text-align: start;
         padding-left: unset;
@@ -11473,9 +11490,12 @@ div#results {
         width: 40%;
     }
 
+    .nav-review li.current {
+        background: unset;
+    }
+
     .nav-review li::before {
         left: -20px;
-        top: 8px;
     }
 
     .bonus_info::before {
@@ -12852,7 +12872,6 @@ div#results {
 
     .box {
         margin: 8px 4px 0 4px;
-        background: linear-gradient(180deg, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .3) 100%);
         width: 24%;
         min-width: 223px;
         filter: none;
@@ -13645,7 +13664,6 @@ div#results {
         width: 96%;
         margin: 8px 0px 0 0px;
         height: 350px;
-        background: var(--darkygray);
     }
 
     @keyframes langentr {
@@ -13998,6 +14016,12 @@ div#results {
     .color-box-overview-button {
         margin-top: unset;
         margin-left: 8px;
+    }
+
+    .payments-block,
+    .payments-button {
+        display: none;
+        visibility: hidden;
     }
 
     .payments-block,
