@@ -3923,6 +3923,7 @@ nav #logo:hover {
     padding: 4px 0;
     margin: 2px 0;
     padding-left: 30px;
+    color: var(--gray);
 }
 
 .nav-review.blog li {
@@ -3939,6 +3940,7 @@ nav #logo:hover {
 
 .nav-review li.current {
     background: var(--darkgray);
+    color: var(--white);
 }
 
 .nav-review li::before {
@@ -4004,9 +4006,9 @@ nav #logo:hover {
 }
 
 .nav-review li:hover {
-    transform: scale(1.04);
+    transform: scale(1.02);
+    color: var(--white);
 }
-
 
 .navmark {
     animation: navmark-animation .6s ease-in-out;
@@ -4053,14 +4055,22 @@ nav #logo:hover {
 }
 
 .promo-box {
-    height: 80px;
+    height: 0;
     font-size: 15px;
     font-weight: 500;
     color: var(--white);
     text-transform: uppercase;
     filter: grayscale(1);
+    border: 0 solid transparent;
+    margin-top: 0;
+    order: 1;
+}
+
+.promo-box.show {
+    height: 80px;
+    margin-top: 9px;
     border: 2px dashed rgb(15 15 15);
-    order: -1;
+    animation: fadeIn .2s ease-in-out forwards;
 }
 
 .promo-box:hover {
@@ -4172,7 +4182,7 @@ nav #logo:hover {
 .promo-box p,
 .promo-box .content p:first-child {
     margin: 0;
-    font-size: 16px;
+    font-size: 14px;
     color: rgb(46 46 46);
     transition: all .15s ease-in-out;
     user-select: none;
@@ -12235,6 +12245,12 @@ div#results {
         filter: grayscale(0);
         background-color: unset;
         border: unset;
+    }
+
+    .promo-box.show {
+        margin: 0 auto;
+        border: unset;
+        animation: unset;
     }
 
     .promo-box .logobg,

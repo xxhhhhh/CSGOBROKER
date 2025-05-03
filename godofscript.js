@@ -637,12 +637,6 @@ forcemodsboxes();
         if (ratingsumm) {
             ratingsumm.insertAdjacentElement('afterend', siteAlternates);
         } 
-      //   if (window.location.pathname.includes('/mirrors/')) {
-      //     const boxReview = document.querySelector('.boxreview');
-          
-      //       boxReview.insertAdjacentElement('beforeend', siteAlternates);
-      //       return;
-      // }
       else {
         }
     
@@ -720,31 +714,47 @@ function insertReviewLinks(codes, codeValue, codesBinding) {
     }
   }
 
-  let reviewHTML = "";
+  const fragment = document.createDocumentFragment();
+  const promoBoxes = [];
   let index = 1;
 
   Object.entries(codes).forEach(([codeName, codeDisplay]) => {
-      const className = codesBinding[codeName] || "default-bonus";
-      const counterClass = `counter-${index}`;
-      const promoText = languageTag === "ru" ? "Промокод" : "Promo";
+    const className = codesBinding[codeName] || "default-bonus";
+    const counterClass = `counter-${index}`;
+    const promoText = languageTag === "ru" ? "Промокод" : "Promo";
 
-      reviewHTML += `
-          <div class="promo-box extra-abox ${className} ${counterClass}">
-              <div class="logobg">
-                  <span>${codeDisplay}</span>
-              </div>
-              <div class="content">
-                  <p>${promoText}</p>
-                  <code class="promo-code">${codeValue}</code>
-                  <button class="copy site-promo-copy" aria-label="Copy Code"></button>
-              </div>
-          </div>
-      `;
-      index++;
+    const box = document.createElement("div");
+    box.className = `promo-box extra-abox ${className} ${counterClass}`;
+
+    box.innerHTML = `
+      <div class="logobg">
+        <span>${codeDisplay}</span>
+      </div>
+      <div class="content">
+        <p>${promoText}</p>
+        <code class="promo-code">${codeValue}</code>
+        <button class="copy site-promo-copy" aria-label="Copy Code"></button>
+      </div>
+    `;
+
+    fragment.appendChild(box);
+    promoBoxes.push(box);
+    index++;
   });
 
-  reviewLinksContainer.insertAdjacentHTML("beforeend", reviewHTML);
+  reviewLinksContainer.appendChild(fragment);
+
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      promoBoxes.forEach((box, i) => {
+        setTimeout(() => {
+          box.classList.add("show");
+        }, i * 150); // постепенное появление
+      });
+    }, 50); // короткая задержка после первой отрисовки
+  });
 }
+
 
   
     Promise.all([loadPageData(jsonFilePath), loadPageData(filterSettingsPath), loadPageData(reviewSettingsPath), loadPageData(translationsPath)])
@@ -2481,11 +2491,15 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', highlightCurrentSection);
     window.addEventListener('resize', highlightCurrentSection);
 
-    if (mirrorRedirect) {
-      mirrorRedirect.insertAdjacentElement('afterend', navReview);
+    const extraLinksBox = document.querySelector('.box-extra-links');
+    if (extraLinksBox) {
+      extraLinksBox.appendChild(navReview);
     } else if (mainBox) {
-      mainBox.insertAdjacentElement('afterend', navReview);
-    }
+      const newBox = document.createElement('div');
+      newBox.className = 'box-extra-links';
+      newBox.appendChild(navReview);
+      mainBox.insertAdjacentElement('afterend', newBox);
+    }    
 
   // TOPIC PAGE
   } else if (path.includes('/topic/')) {

@@ -330,9 +330,7 @@ a, p,
 .sitealternatesboxes .box:hover .rating-case-single .rating-summ,
 .sitealternatesboxes .box:hover .route,
 .sitedetails .sitepros,
-.mirror-redirect span,
 .partner-site span,
-.nav-review li,
 .content span#bonus,
 .sitealternates .site-reward p,
 .features .featuresbox .typesinside a,
@@ -422,8 +420,14 @@ h3,
 .topic-nav-box::before,
 .topic-nav-close::after,
 #button-route-filter[data-title]:after,
-.more-crafts span  {
+.more-crafts span,
+.nav-review li.current  {
     color: #1a1a1a;
+}
+
+.nav-review li,
+.mirror-redirect span {
+    color: rgb(80 80 80);
 }
 
 .boxes-holder-name a:hover, 
@@ -805,6 +809,10 @@ h3,
 }
 
 .promo-box {
+    border: 2px dashed rgb(245 245 245);
+}
+
+.promo-box.show {
     border: 2px dashed rgb(245 245 245);
 }
 
@@ -1447,6 +1455,10 @@ ul .submenu li .nonredir,
     .promo-box code {
         color: var(--main-color);
         background: var(--darkygray);
+    }
+
+    .promo-box.show {
+        border: unset;
     }
 
     .instruction,
