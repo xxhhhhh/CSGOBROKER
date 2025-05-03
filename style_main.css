@@ -9403,6 +9403,41 @@ div#results {
     transition: opacity .25s ease-in-out, visibility 0s 0s;
 }
 
+.crafting-table-screen .skin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    background: linear-gradient(150deg, rgb(15 15 15) 0%, rgb(13 13 13) 100%);
+    box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
+    transition: all .15s ease-in-out;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.crafting-table-screen .skin:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+.crafting-table-screen .skin .skin-desc-name,
+.crafting-table-screen .skin .skin-price-info {
+    display: none;
+}
+
+.crafting-table-screen .skin img {
+    margin: unset !important;
+    height: 80%;
+    width: auto;
+    max-width: unset;
+    max-height: unset;
+}
+
 .crafting-table-screen-description {
     position: absolute;
     background-color: rgba(16, 16, 16, .85);
@@ -11083,6 +11118,17 @@ div#results {
         opacity: .6;
     }
 
+    .crafting-table-screen .skin {
+        width: 60px;
+        height: 60px;
+        left: 9px;
+        bottom: 9px;
+    }
+
+    .crafting-table-screen:has(.crafting-table-screen-description) .skin {
+        z-index: 1;
+    }
+    
     .topic-filter {
         width: 99%;
         margin-top: 6px;
@@ -13306,10 +13352,6 @@ div#results {
         width: 100%;
     }
 
-    .mods-box.skins-box .mods-main-box {
-        flex-wrap: wrap;
-    }
-
     .buttons-container-page {
         bottom: 10px !important;
         right: 10px !important;
@@ -13800,6 +13842,10 @@ div#results {
         margin-left: 22px;
         margin-top: 2px;
         flex-grow: 1;
+    }
+
+    .mods-box.skins-box .mods-main-box {
+        flex-wrap: wrap;
     }
 
     .newest-boxes-more::before {

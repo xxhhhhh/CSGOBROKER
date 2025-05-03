@@ -71,7 +71,8 @@
 .box-skins,
 .newest-boxes-more,
 .crafting-table-step,
-.blog .main-col-info  {
+.blog .main-col-info,
+.crafting-table-screen .skin  {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
     box-shadow: unset;
 }
@@ -777,6 +778,7 @@ h3,
 .alternates-title,
 .topic-grandbox.sticker .skin,
 .crafting-table-step,
+.crafting-table-screen .skin,
 .crafting-table-step:hover,
 #notexist .category-box .category-box-logo,
 .topic-nav-box,
@@ -1336,6 +1338,11 @@ ul .submenu li .nonredir,
 .box-skins-nav-list::-webkit-scrollbar-thumb:hover {
     background: rgb(150 150 150);
 }
+
+.crafting-table-screen .skin:hover {
+    filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
+}
+
 
 @media screen and (min-width: 1365px) {
 

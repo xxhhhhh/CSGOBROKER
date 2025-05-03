@@ -278,11 +278,13 @@ $(document).ready(function () {
           boxes.forEach(box => {
             const thirdSection = box.querySelector('.navigation-section.third');
             const introduceCraftList = document.querySelector('.introduce-craft .craft-components-list');
+            const craftingTable = document.querySelector('.crafting-table-screens');
         
             if (!thirdSection || !introduceCraftList) return;
         
             const stickerElements = Array.from(thirdSection.querySelectorAll('.skin'));
         
+            // === ДОБАВЛЕНИЕ В СПИСОК КОМПОНЕНТОВ КРАФТА ===
             const map = new Map();
             stickerElements.forEach(skin => {
               const nameAttr = skin.getAttribute("skin-id");
@@ -300,19 +302,17 @@ $(document).ready(function () {
         
             Array.from(map.entries()).forEach(([name, { count, original }], index, arr) => {
               const spanSkin = document.createElement('span');
-              spanSkin.className = original.className; // сохраняем классы
+              spanSkin.className = original.className;
               spanSkin.classList.add('skin');
               spanSkin.setAttribute('skin-id', original.getAttribute('skin-id') || '');
               spanSkin.setAttribute('weapon', original.getAttribute('weapon') || '');
         
-              // добавляем img
               const img = original.querySelector('img');
               if (img) {
                 const newImg = img.cloneNode(true);
                 spanSkin.appendChild(newImg);
               }
         
-              // создаём имя скина
               const nameDiv = original.querySelector('.skin-desc-name');
               if (nameDiv) {
                 const newName = document.createElement('div');
@@ -328,7 +328,6 @@ $(document).ready(function () {
                 spanSkin.appendChild(newName);
               }
         
-              // цена (если есть)
               const priceInfo = original.querySelector('.skin-price-info');
               if (priceInfo) {
                 spanSkin.appendChild(priceInfo.cloneNode(true));
@@ -340,8 +339,20 @@ $(document).ready(function () {
                 introduceCraftList.appendChild(document.createTextNode(', '));
               }
             });
+        
+            // === ДОБАВЛЕНИЕ В КАЖДЫЙ .crafting-table-screen ===
+            if (craftingTable) {
+              const screenElements = craftingTable.querySelectorAll('.crafting-table-screen');
+              stickerElements.forEach((skin, i) => {
+                if (i < screenElements.length) {
+                  const clonedSkin = skin.cloneNode(true);
+                  screenElements[i].prepend(clonedSkin);
+                }
+              });
+            }
           });
         };
+        
         
       
         window.loadSkinsData = loadSkinsData;
