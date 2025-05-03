@@ -9377,6 +9377,7 @@ div#results {
     max-width: unset;
     margin-left: 450px;
     margin-top: 200px;
+    object-fit: contain;
 }
 
 .crafting-table-screen {
@@ -12021,6 +12022,12 @@ div#results {
         margin-top: unset;
     }
 
+    .crafting-table-screens.object.combined img {
+        margin-left: 350px;
+        margin-top: 190px;
+        max-width: 260%;
+    }
+
     .crafting-table-screens.object {
         background-position: center;
     }
@@ -12034,7 +12041,11 @@ div#results {
     }
 
     .crafting-table-screen-description {
-        height: 50px;
+        height: auto;
+    }
+
+    .crafting-table-screen-description p {
+        margin: unset;
     }
 
     .introduce-craft p,
