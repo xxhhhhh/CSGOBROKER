@@ -1771,176 +1771,156 @@ function forcemodsboxes() {
   const importedMods = {};
   const url = cleanUrl(window.location.href);
   const pageType = getPageType(url);
+  const isMulti = isMultiBoxPage(url);
 
-  switch (pageType) {
-    case "csgo":
-      if (isMultiBoxPage(url)) {
-        importModsBox("csgo-skins");
-        importModsBox("csgo");
-      } else {
-        importModsBox("csgo");
-      }
-      break;
-    case "rust":
-      if (isMultiBoxPage(url)) {
-        importModsBox("rust-skins");
-        importModsBox("rust");
-      } else {
-        importModsBox("rust");
-      }
-      break;
-    case "dota":
-      if (isMultiBoxPage(url)) {
-        importModsBox("dota-items");
-        importModsBox("dota");
-      } else {
-        importModsBox("dota");
-      }
-      break;
-    case "tf2":
-      importModsBox("tf2-items");
-      break;
-    case "freebies":
-      importModsBox("freebies");
-      break;
-    case "crypto":
-      importModsBox("crypto");
-      break;
-    default:
-      if (
-        url.includes("/csgo/") ||
-        url.endsWith("/cs2") ||
-        url.endsWith("/cs2.html") ||
-        url.endsWith("/ru") ||
-        url.endsWith("/es") ||
-        url.endsWith("/tr") ||
-        url.endsWith("/pt") ||
-        url.endsWith("/hi") ||
-        url.endsWith("/") ||
-        url.endsWith("index.html") ||
-        url.endsWith("/ru.html") ||
-        url.endsWith("/es.html") ||
-        url.endsWith("/tr.html") ||
-        url.endsWith("/pt.html") ||
-        url.endsWith("/hi.html")
-      ) {
-        importModsBox("csgo");
-      } else if (
-        url.includes("/rust/") ||
-        url.endsWith("/rust") ||
-        url.endsWith("/rust.html")
-      ) {
-        importModsBox("rust");
-      } else if (
-        url.includes("/dota/") ||
-        url.endsWith("/dota") ||
-        url.endsWith("/dota.html")
-      ) {
-        importModsBox("dota");
-      }
-      break;
+  loadModsJSON().then((modsData) => {
+    const boxesToLoad = getBoxesToLoad(pageType, isMulti, url);
+    boxesToLoad.forEach(box => loadBox(box, modsData));
+  });
+
+  // --------- HELPERS ---------
+
+  function getBoxesToLoad(type, isMulti, url) {
+    const multiBoxes = {
+      csgo: ["csgo-skins", "csgo"],
+      rust: ["rust-skins", "rust"],
+      dota: ["dota-items", "dota"]
+    };
+
+    const singleBoxes = {
+      csgo: ["csgo"],
+      rust: ["rust"],
+      dota: ["dota"],
+      tf2: ["tf2-items"],
+      freebies: ["freebies"],
+      crypto: ["crypto"]
+    };
+
+    if (multiBoxes[type] && isMulti) return multiBoxes[type];
+    if (singleBoxes[type]) return singleBoxes[type];
+
+    // fallback logic
+    if (url.includes("/csgo/") || url.endsWith("/cs2") || url.endsWith("/cs2.html") || url.endsWith("/") || url.endsWith("index.html")) {
+      return ["csgo"];
+    } else if (url.includes("/rust/") || url.endsWith("/rust")) {
+      return ["rust"];
+    } else if (url.includes("/dota/") || url.endsWith("/dota")) {
+      return ["dota"];
+    }
+
+    return [];
   }
 
-  function importModsBox(boxId) {
-    if (importedMods[boxId]) {
-      return;
+  function loadModsJSON() {
+    const cacheKey = "modsBox-v3-all";
+    const cached = localStorage.getItem(cacheKey);
+
+    if (cached) {
+      try {
+        return Promise.resolve(JSON.parse(cached));
+      } catch {
+        console.warn("Invalid JSON cache, re-fetching.");
+      }
     }
 
-    const existingContainer = document.querySelector(".boxes-holder");
-    const cachedContent = localStorage.getItem(`modsBox-v2-${boxId}`);
-
-    if (cachedContent) {
-      insertModsBox(existingContainer, boxId, cachedContent);
-      importedMods[boxId] = true;
-    } else {
-      let fileToFetch = "/code-parts/micro-parts/insert-mods-box.html";
-
-      fetch(fileToFetch)
-        .then((response) => response.text())
-        .then((data) => {
-          localStorage.setItem(`modsBox-v2-${boxId}`, data);
-          insertModsBox(existingContainer, boxId, data);
-          importedMods[boxId] = true;
-        });
-    }
-  }
-
-  function insertModsBox(container, boxId, data) {
-    const tempDiv = document.createElement("div");
-    tempDiv.innerHTML = data;
-
-    const newModsBox = tempDiv.querySelector(`[data-box-id="${boxId}"]`);
-    const existingModsBoxes = container.querySelectorAll(".mods-box");
-    const existingBox = Array.from(existingModsBoxes).find(
-      (box) => box.getAttribute("data-box-id") === boxId
-    );
-
-    if (existingBox) {
-      container.replaceChild(newModsBox, existingBox);
-    } else {
-      container.insertBefore(newModsBox, container.firstChild);
-    }
-
-    const languageTag = extractLanguageTagFromHTML();
-    if (languageTag && ["ru", "tr", "pt", "hi", "es"].includes(languageTag)) {
-      const singlemodBoxes = newModsBox.querySelectorAll(".singlemod-box");
-      singlemodBoxes.forEach((box) => {
-        translateElement(box, languageTag);
+    return fetch("/code-parts/micro-parts/insert-mods-box.json")
+      .then(res => res.json())
+      .then(data => {
+        localStorage.setItem(cacheKey, JSON.stringify(data));
+        return data;
       });
+  }
+
+  function loadBox(boxId, modsData) {
+    if (importedMods[boxId] || !modsData[boxId]) return;
+
+    const container = document.querySelector(".boxes-holder");
+    insertModsBox(container, boxId, modsData[boxId]);
+    importedMods[boxId] = true;
+  }
+
+  function insertModsBox(container, boxId, boxData) {
+    const items = Array.isArray(boxData.items) ? boxData.items : boxData;
+    if (!Array.isArray(items)) return;
+
+    const box = document.createElement("div");
+    box.className = "mods-box";
+    box.dataset.boxId = boxId;
+    if (boxData.horizontal) box.classList.add("skins-box");
+
+    const main = document.createElement("div");
+    main.className = "mods-main-box";
+
+    items.forEach((item) => {
+      const itemBox = document.createElement("div");
+      itemBox.className = "singlemod-box";
+      const a = document.createElement("a");
+      a.className = "singlemod-select";
+      a.href = item.href;
+
+      if (item.img) {
+        const img = document.createElement("img");
+        img.src = item.img.src;
+        img.alt = item.img.alt;
+        a.appendChild(img);
+      } else if (item.icon) {
+        const icon = document.createElement("div");
+        icon.className = `singlemod-icon officon ${item.icon}`;
+        a.appendChild(icon);
+      }
+
+      if (boxData.horizontal) {
+        const span = document.createElement("span");
+        span.textContent = item.title;
+        a.appendChild(span);
+      } else {
+        itemBox.dataset.title = item.title;
+      }
+
+      itemBox.appendChild(a);
+      main.appendChild(itemBox);
+    });
+
+    box.appendChild(main);
+
+    const existing = container.querySelector(`[data-box-id="${boxId}"]`);
+    existing ? container.replaceChild(box, existing) : container.prepend(box);
+
+    const lang = extractLanguageTagFromHTML();
+    if (lang && ["ru", "tr", "pt", "hi", "es"].includes(lang)) {
+      box.querySelectorAll(".singlemod-box").forEach(el => translateElement(el, lang));
     }
 
     setTimeout(() => {
-      const singlemodBoxes = newModsBox.querySelectorAll(".singlemod-box");
-      singlemodBoxes.forEach((box) => {
-        const link = box.querySelector("a").getAttribute("href");
-        if (url.includes(link)) {
-          box.classList.add("active");
+      box.querySelectorAll(".singlemod-box").forEach(el => {
+        const link = el.querySelector("a").href;
+        if (cleanUrl(window.location.href).includes(link)) {
+          el.classList.add("active");
         }
       });
     });
 
-    updateURLs(newModsBox);
-  }
-
-  function getPageType(url) {
-    const pageTypes = ["csgo", "rust", "dota", "tf2", "freebies", "crypto"];
-    for (const type of pageTypes) {
-      if (
-        url.includes(`/${type}/`) ||
-        url.endsWith(`/${type}`) ||
-        url.endsWith(`/${type}.html`)
-      ) {
-        return type;
-      }
-    }
-    return "other";
+    updateURLs(box);
   }
 
   function cleanUrl(url) {
     return url.split("?")[0].toLowerCase();
   }
 
-  function isMultiBoxPage(url) {
-    const cleanUrlValue = cleanUrl(url);
+  function getPageType(url) {
+    const types = ["csgo", "rust", "dota", "tf2", "freebies", "crypto"];
+    return types.find(type =>
+      url.includes(`/${type}/`) || url.endsWith(`/${type}`) || url.endsWith(`/${type}.html`)
+    ) || "other";
+  }
 
-    return (
-      cleanUrlValue.endsWith("/buy-skins") ||
-      cleanUrlValue.endsWith("/buy-items") ||
-      cleanUrlValue.endsWith("/sell-items") ||
-      cleanUrlValue.endsWith("/trade-items") ||
-      cleanUrlValue.endsWith("/sell-skins") ||
-      cleanUrlValue.endsWith("/trade-skins") ||
-      cleanUrlValue.endsWith("/instant-sell") ||
-      cleanUrlValue.endsWith("/marketplaces") ||
-      cleanUrlValue.endsWith("/buy-skins.html") ||
-      cleanUrlValue.endsWith("/buy-items.html") ||
-      cleanUrlValue.endsWith("/sell-items.html") ||
-      cleanUrlValue.endsWith("/trade-items.html") ||
-      cleanUrlValue.endsWith("/sell-skins.html") ||
-      cleanUrlValue.endsWith("/trade-skins.html") ||
-      cleanUrlValue.endsWith("/marketplaces.html") ||
-      cleanUrlValue.endsWith("/instant-sell.html")
-    );
+  function isMultiBoxPage(url) {
+    const patterns = [
+      "buy-skins", "buy-items", "sell-items", "trade-items",
+      "sell-skins", "trade-skins", "instant-sell", "marketplaces"
+    ];
+    const u = cleanUrl(url);
+    return patterns.some(p => u.endsWith(`/${p}`) || u.endsWith(`/${p}.html`));
   }
 
   window.translateElement = translateElement;
@@ -2132,32 +2112,45 @@ function forcemodsboxes() {
       },
     };
 
-    const textElement = element.querySelector(
-      ".mods-box.skins-box .singlemod-select span, .boxes-holder-name h3"
-    );
-    if (textElement) {
-      const text = textElement.innerText.trim();
+    let textElement = element.querySelector(".singlemod-select span");
 
+    if (!textElement) {
+      const dataTitle = element.getAttribute("data-title");
+      if (dataTitle) {
+        textElement = {
+          nodeType: Node.TEXT_NODE,
+          textContent: dataTitle,
+          update: (text) => element.setAttribute("data-title", text)
+        };
+      }
+    }
+    
+    
+    if (textElement && typeof textElement.textContent === "string") {
+      const text = textElement.textContent.trim();
+    
       const normalizeText = (text, lang) => {
-        if (lang === "tr") {
-          return text.toLocaleLowerCase("tr-TR");
-        }
-        return text.toLowerCase();
+        return lang === "tr" ? text.toLocaleLowerCase("tr-TR") : text.toLowerCase();
       };
-
+    
       const key = Object.keys(translations).find(
         (key) =>
           normalizeText(key, languageTag) === normalizeText(text, languageTag)
       );
-
+    
       if (key && translations[key][languageTag]) {
-        textElement.childNodes.forEach((node) => {
-          if (node.nodeType === Node.TEXT_NODE) {
-            node.textContent = translations[key][languageTag];
-          }
-        });
+        if (textElement.update) {
+          textElement.update(translations[key][languageTag]);
+        } else {
+          textElement.childNodes.forEach((node) => {
+            if (node.nodeType === Node.TEXT_NODE) {
+              node.textContent = translations[key][languageTag];
+            }
+          });
+        }
       }
     }
+    
 
     const boxesHolderModesElements = element.querySelectorAll(
       ".boxes-holder-modes, .boxes-holder-more"
@@ -2207,6 +2200,7 @@ function forcemodsboxes() {
     }
   }
 }
+
 
 
 $(document).ready(function() {
