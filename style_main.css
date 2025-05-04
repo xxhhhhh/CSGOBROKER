@@ -259,7 +259,6 @@ nav .pages {
     margin-top: 9px;
     display: flex;
     flex-direction: column;
-    transform: scale(1.03);
     opacity: 0;
 }
 
@@ -272,8 +271,7 @@ nav .pages {
 }
 
 .rec-box.active {
-    transform: scale(1);
-    opacity: 1;
+    animation: fadeIn .2s ease-in-out forwards;
 }
 
 .rec-box .logobg {
@@ -593,7 +591,7 @@ nav .pages {
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
 }
 
 .sitepage .topic-grandbox {
@@ -8933,6 +8931,14 @@ div#results {
     margin-top: 8px;
 }
 
+.sitepage.topic-craft .box-extra-links {
+    order: 1;
+}
+
+.sitepage.topic-craft .rec-box {
+    order: 2;
+}
+
 .sitepage.topic-craft.loadout .topic-grandbox,
 .topic-boxes-holder.loadout .topic-grandbox.sticker {
     height: auto;
@@ -11852,6 +11858,7 @@ div#results {
     .mods-box.mods-box.skins-box {
         margin-top: unset;
         margin-bottom: unset;
+        min-height: 46px;
         height: auto;
     }
 
@@ -13062,6 +13069,12 @@ div#results {
     } */
 }
 
+@media screen and (max-width: 555px) {
+    .mods-box.mods-box.skins-box {
+        min-height: 138px;
+    }
+}
+
 @media screen and (max-width: 405px) {
     .sitepros i {
         margin-left: 5px;
@@ -13673,117 +13686,27 @@ div#results {
     .box .logobg .best {
         font-size: 11px;
     }
-}
-
-@media screen and (max-width: 460px) {
-    .box {
-        width: 96%;
-        margin: 8px 0px 0 0px;
-        height: 350px;
+    .boxes-holder-section.big .box,
+    .boxes-holder-section .box {
+        width: 40%;
     }
 
-    @keyframes langentr {
-
-        from {
-            height: 0;
-            overflow: hidden;
-        }
-
-        to {
-            height: 350px;
-            overflow: unset;
-        }
+    .boxes-holder-section,
+    .boxes-holder-section.big {
+        justify-content: space-between;
     }
 
-    .main-mode-unit {
-        width: 200px;
+    .main-page .box .logobg img {
+        max-width: 82%;
+        max-height: 60px;
     }
 
-    .main-page .content .review-button.mirror-visit {
-        top: -30px;
-        left: -8px;
-        display: none;
+    .boxes-holder-section .boxes-holder-name h3 {
+        text-wrap: nowrap;
     }
 
-    .content .review-button.mirror-visit {
-        display: flex;
-        backface-visibility: visible;
-        right: -30px;
-    }
-
-    .content .review-button.mirror-visit {
-        left: unset;
-        right: -55px;
-        top: 5px;
-    }
-
-    .content .review-button.mirror-visit::before {
-        left: -6px;
-        right: unset;
-        border-radius: 5px 0 0 5px;
-    }
-
-    .content .review-button.mirror-visit::after {
-        left: unset;
-        right: 7px;
-    }
-
-    .boxes-holder {
-        margin-top: 7px;
-        justify-content: center !important;
-    }
-
-    .boxes-holder .box .logobg {
-        height: 40%;
-    }
-
-    .boxes-holder .box .content {
-        height: 60%;
-    }
-
-    .box .logobg .best,
-    .bonuses-block {
-        font-size: 12px;
-        top: -4px;
-        right: -4px;
-    }
-
-    .rating-case-single .rating-summ {
-        font-size: 15px;
-    }
-
-    .content button {
-        font-size: 12px;
-    }
-
-    .content button.copy {
-        display: flex;
-        bottom: 16px;
-        right: 30px;
-    }
-
-    .category-selector .category-box {
-        margin: 8px 4px 0 4px !important;
-    }
-
-    .content p:nth-child(2) {
-        width: 70% !important;
-        height: 75px;
-        font-size: 13px;
-        margin-top: 10px;
-    }
-
-    .content p {
-        margin-top: 0px;
-    }
-
-    .content p:nth-child(3) {
-        width: 55%;
-        font-size: 11px;
-    }
-
-    .box.main .main-mode {
-        right: 50px;
+    .main-mode-selection {
+        height: 160px;
     }
 }
 
@@ -13972,29 +13895,115 @@ div#results {
     }
 }
 
-@media screen and (max-width: 695px) {
-
-    .boxes-holder-section.big .box,
-    .boxes-holder-section .box {
-        width: 40%;
+@media screen and (max-width: 460px) {
+    .box {
+        width: 96%;
+        margin: 8px 0px 0 0px;
+        height: 350px;
     }
 
-    .boxes-holder-section,
-    .boxes-holder-section.big {
-        justify-content: space-between;
+    @keyframes langentr {
+
+        from {
+            height: 0;
+            overflow: hidden;
+        }
+
+        to {
+            height: 350px;
+            overflow: unset;
+        }
     }
 
-    .main-page .box .logobg img {
-        max-width: 82%;
-        max-height: 60px;
+    .main-mode-unit {
+        width: 200px;
     }
 
-    .boxes-holder-section .boxes-holder-name h3 {
-        text-wrap: nowrap;
+    .main-page .content .review-button.mirror-visit {
+        top: -30px;
+        left: -8px;
+        display: none;
     }
 
-    .main-mode-selection {
-        height: 160px;
+    .content .review-button.mirror-visit {
+        display: flex;
+        backface-visibility: visible;
+        right: -30px;
+    }
+
+    .content .review-button.mirror-visit {
+        left: unset;
+        right: -55px;
+        top: 5px;
+    }
+
+    .content .review-button.mirror-visit::before {
+        left: -6px;
+        right: unset;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .content .review-button.mirror-visit::after {
+        left: unset;
+        right: 7px;
+    }
+
+    .boxes-holder {
+        margin-top: 7px;
+        justify-content: center !important;
+    }
+
+    .boxes-holder .box .logobg {
+        height: 40%;
+    }
+
+    .boxes-holder .box .content {
+        height: 60%;
+    }
+
+    .box .logobg .best,
+    .bonuses-block {
+        font-size: 12px;
+        top: -4px;
+        right: -4px;
+    }
+
+    .rating-case-single .rating-summ {
+        font-size: 15px;
+    }
+
+    .content button {
+        font-size: 12px;
+    }
+
+    .content button.copy {
+        display: flex;
+        bottom: 16px;
+        right: 30px;
+    }
+
+    .category-selector .category-box {
+        margin: 8px 4px 0 4px !important;
+    }
+
+    .content p:nth-child(2) {
+        width: 70% !important;
+        height: 75px;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    .content p {
+        margin-top: 0px;
+    }
+
+    .content p:nth-child(3) {
+        width: 55%;
+        font-size: 11px;
+    }
+
+    .box.main .main-mode {
+        right: 50px;
     }
 }
 
@@ -14420,15 +14429,20 @@ div#results {
 } */
 
 @keyframes fadeIn {
-    from {
+    0% {
         opacity: 0;
         transform: translateY(-10px) scale(1.06);
         z-index: 10;
     }
-    to {
+    99% {
         opacity: 1;
         transform: translateY(0) scale(1);
         z-index: 10;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        z-index: 1;
     }
 }
 
