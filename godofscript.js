@@ -306,7 +306,7 @@ forcemodsboxes();
         },
         "readReview": {
           "en": `Read Review ${data.name}`,
-          "ru": `Смотреть Обзор ${data.name}`
+          "ru": `Читать Обзор ${data.name}`
         },
         "visitSite": {
           "en": `Visit ${data.name}`,
