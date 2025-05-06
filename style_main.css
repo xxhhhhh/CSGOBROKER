@@ -3681,7 +3681,7 @@ nav #logo:hover {
     font-weight: 500;
 }
 
-.category-selector.notfound {
+.category-selector#notexist {
     overflow-y: unset !important;
 }
 
@@ -9524,7 +9524,7 @@ div#results {
 }
 
 .category-box-content span.translated,
-.category-selector.notfound .category-box-content span {
+.category-selector#notexist .category-box-content span {
     opacity: 1;
 }
 
@@ -12943,8 +12943,7 @@ div#results {
         top: 133px;
     }
 
-    nav .pages.hidden,
-    nav .pages.hardhidden {
+    nav .pages.hidden {
         height: 0;
         visibility: hidden;
         transition: all .15s ease-in-out, visibility 0s .15s;
@@ -12954,6 +12953,12 @@ div#results {
         height: 64px;
         transition: all .15s ease-in-out, visibility 0s 0s;
         visibility: visible;
+    }
+
+    nav .pages.hardhidden {
+        height: 0;
+        visibility: hidden;
+        transition: all .15s ease-in-out, visibility 0s .15s;
     }
 
     nav .pages button {

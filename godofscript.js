@@ -2565,116 +2565,6 @@ boxes.forEach(function (box) {
 
 const categorySelector = document.querySelector('.category-selector');
 
-document.addEventListener('DOMContentLoaded', function() {
-  const navBarContainer = document.createElement('div');
-
-  fetch('/code-parts/nav-bar.html')
-    .then(response => response.text())
-    .then(data => {
-      navBarContainer.innerHTML = data;
-
-      const header = document.querySelector('header');
-      if (!header) return;
-
-      header.insertAdjacentElement('afterend', navBarContainer.firstChild);
-
-      const menuToggle = document.querySelector('.menu-toggle');
-      const navBar = document.querySelector('.nav-bar');
-      const pages = document.querySelector('.pages');
-
-      if (menuToggle && navBar) {
-        menuToggle.addEventListener('click', () => {
-          navBar.classList.toggle('active');
-          menuToggle.classList.toggle('active');
-          pages.classList.toggle('hardhidden');
-        });
-
-        navBar.addEventListener('click', event => {
-          if (event.target === categorySelector) {
-            menuToggle.classList.remove('active');
-            navBar.classList.remove('active');
-            pages.classList.remove('hardhidden');
-          }
-        });
-      }
-
-      const bigCategoriesnav = document.querySelectorAll('#notexist .big-category');
-
-      bigCategoriesnav.forEach(category => {
-        category.addEventListener('click', function(e) {
-          const submenu2 = category.querySelector(".submenu2");
-          if (submenu2 && window.innerWidth <= 1365 && !e.target.matches('.submenu2 a')) {
-            e.preventDefault();
-          }
-
-          bigCategoriesnav.forEach(otherCategory => {
-            if (otherCategory !== category) {
-              otherCategory.classList.remove('active');
-            }
-          });
-          this.classList.toggle('active');
-        });
-      });
-
-      const boxContainerNav = document.querySelector('#notexist');
-      if (boxContainerNav) {
-        boxContainerNav.addEventListener("click", e => {
-          const targetBox = e.target.closest(".category-box");
-
-          if (targetBox) {
-            const parentListItem = targetBox.closest("div.category");
-            const submenu = parentListItem.querySelector(".submenu");
-
-            const isTargetBoxNewest = targetBox.classList.contains("newest");
-
-            if (!isTargetBoxNewest && window.innerWidth <= 1365) {
-              e.preventDefault();
-            }
-
-            document.querySelectorAll(".category-box").forEach(box => {
-              if (box !== targetBox) {
-                box.classList.remove("current");
-                const siblingSubmenu = box.closest("div.category").querySelector(".submenu");
-                if (siblingSubmenu) {
-                  siblingSubmenu.classList.remove("current");
-                }
-              }
-            });
-            boxContainerNav.classList.remove("current");
-
-            targetBox.classList.toggle("current");
-
-            const isActive = Array.from(document.querySelectorAll(".category-box")).some(box =>
-              box.classList.contains("current")
-            );
-
-            if (isActive) {
-              boxContainerNav.classList.add("current");
-            }
-
-            if (submenu) {
-              submenu.classList.toggle("current");
-            }
-          }
-        });
-      }
-
-      if (languageTag === 'en' || languageTag === 'pl') {
-        applyTranslations(document.body, languageTag, {});
-        updateURLs(categorySelector);
-      } else {
-        const translationFile = `/code-parts/category-translations/${languageTag}.json`;
-
-        fetch(translationFile)
-          .then(response => response.json())
-          .then(translations => {
-            applyTranslations(document.body, languageTag, translations);
-            updateURLs(categorySelector);
-          });
-      }
-    });
-});
-
 function loadAndApplyTranslations(languageTag) {
   const cacheKey = `translations_${languageTag}`;
   let translations = JSON.parse(localStorage.getItem(cacheKey));
@@ -2745,6 +2635,182 @@ function translateElements(element, languageTag, translations) {
 const categoryContentURL = '/code-parts/category-import/category-contents.json';
 let cachedCategoryContent = null;
 
+const builderURL = '/code-parts/category-import/category-builder.json';
+
+function createCategoryStructureFromBuilder(data) {
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('category-selector');
+  wrapper.id = 'notexist';
+
+  data.categories.forEach(category => {
+    const categoryDiv = document.createElement('div');
+    categoryDiv.classList.add('category');
+
+    const box = document.createElement('a');
+    box.classList.add('category-box');
+    box.href = category.href;
+
+    if (category.classes) {
+      category.classes.forEach(cls => box.classList.add(cls));
+    }
+
+    const logoWrapper = document.createElement('div');
+    logoWrapper.classList.add('category-box-logo');
+
+    const img = document.createElement('img');
+    img.src = category.logo;
+    img.alt = category.label;
+    logoWrapper.appendChild(img);
+
+    const contentWrapper = document.createElement('div');
+    contentWrapper.classList.add('category-box-content');
+
+    const span = document.createElement('span');
+    span.textContent = category.label;
+    contentWrapper.appendChild(span);
+
+    box.appendChild(logoWrapper);
+    box.appendChild(contentWrapper);
+    categoryDiv.appendChild(box);
+    wrapper.appendChild(categoryDiv);
+  });
+
+  // Навесить логику событий
+  setupCategorySelectorLogic(wrapper);
+
+  return wrapper;
+}
+
+function setupCategorySelectorLogic(boxContainer) {
+  const pages = document.querySelector('.pages');
+
+  boxContainer.addEventListener("click", (e) => {
+    const targetBox = e.target.closest(".category-box");
+    const bigCategoryLink = e.target.closest(".big-category a");
+
+    if (targetBox) {
+      const parentListItem = targetBox.closest(".category");
+      const submenu = parentListItem.querySelector(".submenu");
+      const isNewest = targetBox.classList.contains("newest");
+
+      if (!isNewest && window.innerWidth <= 1365) {
+        e.preventDefault();
+      }
+
+      const allBoxes = boxContainer.querySelectorAll(".category-box");
+      allBoxes.forEach(box => {
+        if (box !== targetBox) {
+          box.classList.remove("current");
+          const li = box.closest(".category");
+          const sm = li.querySelector(".submenu");
+          sm?.classList.remove("current");
+        }
+      });
+
+      targetBox.classList.toggle("current");
+
+      const anyActive = [...allBoxes].some(box => box.classList.contains("current"));
+      boxContainer.classList.toggle("current", anyActive);
+      pages?.classList.toggle("hardplaced", anyActive);
+
+      if (submenu && window.innerWidth <= 1365) {
+        submenu.classList.toggle("current");
+      }
+    }
+
+    if (bigCategoryLink) {
+      const bigCategory = bigCategoryLink.closest(".big-category");
+      const submenu2 = bigCategory.querySelector(".submenu2");
+      const isActive = bigCategory.classList.contains("active");
+
+      if (submenu2 && window.innerWidth <= 1365) {
+        e.preventDefault();
+      }
+
+      boxContainer.querySelectorAll(".big-category.active").forEach(item => {
+        item.classList.remove("active");
+        item.querySelector(".submenu2")?.classList.remove("current");
+      });
+
+      if (!isActive) {
+        bigCategory.classList.add("active");
+        submenu2?.classList.add("current");
+      }
+    }
+  });
+  boxContainer.addEventListener("click", (e) => {
+    // Проверяем, что клик был непосредственно по самому элементу #notexist
+    if (e.target === boxContainer) {
+      const navBar = document.querySelector('.nav-bar');
+      const menuToggle = document.querySelector('.menu-toggle');
+      const pages = document.querySelector('.pages');
+
+      // Убираем классы active
+      navBar.classList.remove('active');
+      menuToggle.classList.remove('active');
+
+      // Убираем hardhidden, если он был установлен
+      if (navBar.classList.contains('active')) {
+        pages.classList.remove('hardhidden');
+      }
+    }
+  });
+}
+
+
+
+function insertNotExistSelector(builderData) {
+  const ssiodox = document.querySelector('.ssiodox');
+  if (!ssiodox) return;
+
+  const navBar = document.createElement('div');
+  navBar.className = 'nav-bar';
+
+  const centralizer = document.createElement('div');
+  centralizer.className = 'category-centralizer nav';
+
+  const categorySelector = createCategoryStructureFromBuilder(builderData);
+  centralizer.appendChild(categorySelector);
+  navBar.appendChild(centralizer);
+  ssiodox.appendChild(navBar);
+
+  setTimeout(() => updateURLs(categorySelector), 250);
+
+  document.querySelectorAll('#notexist .category').forEach(category => {
+    loadCategoryContent(category);
+  });
+}
+
+
+function loadSecondarySelector() {
+  fetch(builderURL)
+    .then(res => res.json())
+    .then(builderData => {
+      insertNotExistSelector(builderData);
+    })
+    .catch(err => console.error('Failed to load category builder:', err));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector(".menu-toggle").addEventListener("click", () => {
+    const navBar = document.querySelector(".nav-bar");
+    const pages = document.querySelector(".pages");
+  
+    navBar.classList.toggle("active");
+    document.querySelector(".menu-toggle").classList.toggle("active");
+  
+    // 👉 Добавляем или убираем hardhidden
+    if (navBar.classList.contains("active")) {
+      pages.classList.add("hardhidden");
+    } else {
+      pages.classList.remove("hardhidden");
+    }
+  });  
+
+  loadSecondarySelector();
+});
+
+
 function loadCategoryContent(category) {
   const link = category.querySelector('.category-box');
   const href = link?.getAttribute('href');
@@ -2758,7 +2824,7 @@ function loadCategoryContent(category) {
 
     const htmlContent = generateCategoryHTML(categoryData.items);
     category.insertAdjacentHTML('beforeend', htmlContent);
-    loadAndApplyTranslations(document.documentElement.lang || 'en');
+    loadAndApplyTranslations(languageTag);
   };
 
   if (cachedCategoryContent) {
