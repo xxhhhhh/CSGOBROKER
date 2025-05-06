@@ -2742,32 +2742,63 @@ function translateElements(element, languageTag, translations) {
   });
 }
 
+const categoryContentURL = '/code-parts/category-import/category-contents.json';
+let cachedCategoryContent = null;
+
 function loadCategoryContent(category) {
   const link = category.querySelector('.category-box');
-  const href = link.getAttribute('href');
+  const href = link?.getAttribute('href');
 
-  const fileMap = {
-    '/cs2': '/code-parts/category-import/csgo.html',
-    '/rust': '/code-parts/category-import/rust.html',
-    '/crypto': '/code-parts/category-import/crypto.html',
-    '/freebies': '/code-parts/category-import/freebies.html',
-    '/earning': '/code-parts/category-import/earning.html',
-    '/dota': '/code-parts/category-import/dota.html',
-    '/steam/levelup': '/code-parts/category-import/steam.html',
-    '/newest': ''
+  if (!href) return;
+  const categoryKey = href.replace(/^\/+/, '').split('/')[0];
+
+  const insertCategoryContent = (data) => {
+    const categoryData = data.categories?.[categoryKey];
+    if (!categoryData || !categoryData.items) return;
+
+    const htmlContent = generateCategoryHTML(categoryData.items);
+    category.insertAdjacentHTML('beforeend', htmlContent);
+    loadAndApplyTranslations(document.documentElement.lang || 'en');
   };
 
-  const htmlFile = fileMap[href] || '';
-
-  if (htmlFile) {
-    fetch(htmlFile)
-      .then(response => response.text())
+  if (cachedCategoryContent) {
+    insertCategoryContent(cachedCategoryContent);
+  } else {
+    fetch(categoryContentURL)
+      .then(res => res.json())
       .then(data => {
-        category.insertAdjacentHTML('beforeend', data);
-        loadAndApplyTranslations(document.documentElement.lang || 'en');
-      });
+        cachedCategoryContent = data;
+        insertCategoryContent(data);
+      })
+      .catch(err => console.error('Failed to load category content:', err));
   }
 }
+
+function generateCategoryHTML(items) {
+  return `
+    <ul class="submenu">
+      ${items.map(item => `
+        <li class="big-category">
+          <a href="${item.url}">${item.title}</a>
+          ${item.children ? `
+            <ul class="submenu2">
+              ${item.children.map(child => `<li><a href="${child.url}">${child.title}</a></li>`).join('')}
+            </ul>
+          ` : ''}
+        </li>
+      `).join('')}
+    </ul>
+  `;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.category').forEach(category => {
+    loadCategoryContent(category);
+  });
+
+  loadAndApplyTranslations(languageTag);
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.category').forEach(category => {
