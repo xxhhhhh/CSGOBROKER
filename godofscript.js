@@ -2800,15 +2800,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.category').forEach(category => {
-      loadCategoryContent(category);
-  });
-
-  loadAndApplyTranslations(languageTag);
-});
-
-
 document.addEventListener("DOMContentLoaded", function () {
   if (
     !window.location.pathname.includes("/skins/") &&

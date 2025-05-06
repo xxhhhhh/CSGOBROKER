@@ -4521,6 +4521,8 @@ nav #logo:hover {
     visibility: visible;
     transition: all .15s ease-in-out, opacity .4s;
     background-color: var(--darkgray);
+    background-size: contain;
+    background-repeat: no-repeat;
     margin: 8px;
 }
 
