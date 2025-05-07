@@ -949,10 +949,6 @@ nav .pages {
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-
-    /* padding: 7px;
-    background-color: var(--darkygray);
-    border-radius: 10px; */
 }
 
 .skin-price-info .souvenir-price-info {
@@ -11143,6 +11139,13 @@ div#results {
         width: 41%;
     }
 
+    .skin-price-info {
+        font-size: 12px;
+    }
+    .navigation-weapon-type {
+        font-size: 12px;
+    }
+
     .singlemod-select.back-button::before {
         opacity: .6;
     }
@@ -13483,7 +13486,6 @@ div#results {
 
     .topic-box.maestro {
         width: 45%;
-        flex-grow: 1;
         max-width: 300px;
         border-radius: 10px;
     }
@@ -13952,7 +13954,8 @@ div#results {
         font-size: 18px;
     }
 
-    .topic-box {
+    .topic-box,
+    .topic-box.maestro {
         width: 48%;
         margin: 6px 3px 0 3px;
     }
