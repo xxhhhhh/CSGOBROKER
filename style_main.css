@@ -13482,7 +13482,9 @@ div#results {
     }
 
     .topic-box.maestro {
-        width: 48%;
+        width: 45%;
+        flex-grow: 1;
+        max-width: 300px;
         border-radius: 10px;
     }
 
@@ -13641,14 +13643,6 @@ div#results {
 
     .site-searcher-buttons {
         flex-wrap: wrap;
-    }
-
-    .topic-box.maestro {
-        width: 97%;
-    }
-
-    .topic-box.maestro:first-child {
-        margin-top: 4px;
     }
 
     .topic-box.maestro .content {

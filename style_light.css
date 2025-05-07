@@ -1322,6 +1322,10 @@ ul .submenu li .nonredir,
     margin: 10px;
 }
 
+.category-centralizer.nav .category-box {
+    background: var(--darkygray);
+}
+
 @-moz-document url-prefix() {
 
     * {
@@ -1559,7 +1563,6 @@ ul .submenu li .nonredir,
 
 .content .review-button::after, 
 .content .review-button::before,
-#notexist .category-box .category-box-content span,
 .instruction-mirrors li a:hover,
 .crafting-table-screen-description p {
     color: white;
