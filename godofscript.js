@@ -1,3 +1,8 @@
+if (localStorage.getItem('version') !== '1.0') {
+  localStorage.clear();
+  localStorage.setItem('version', '1.0');
+}
+
 function copyToClipboard(element, copyButton) {
   const text = element.textContent.trim();
 
@@ -2564,172 +2569,131 @@ boxes.forEach(function (box) {
 });
 
 const categorySelector = document.querySelector('.category-selector');
+const categoryContentURL = '/code-parts/category-import/category-contents.json';
+const builderURL = '/code-parts/category-import/category-builder.json';
+let cachedCategoryContent = null;
+let pendingCategories = [];
 
 function loadAndApplyTranslations(languageTag) {
   const cacheKey = `translations_${languageTag}`;
-  let translations = JSON.parse(localStorage.getItem(cacheKey));
+  const translations = JSON.parse(localStorage.getItem(cacheKey));
 
-  if (translations || (languageTag === 'en' || languageTag === 'pl')) {
-      applyTranslations(document.body, languageTag, translations);
-      updateURLs(categorySelector);
+  if (translations || languageTag === 'en' || languageTag === 'pl') {
+    applyTranslations(document.body, languageTag, translations);
+    updateURLs(categorySelector);
   } else {
-      const translationFile = `/code-parts/category-translations/${languageTag}.json`;
-
-      fetch(translationFile)
-          .then(response => response.json())
-          .then(data => {
-              localStorage.setItem(cacheKey, JSON.stringify(data));
-              applyTranslations(document.body, languageTag, data);
-              updateURLs(categorySelector);
-          });
+    fetch(`/code-parts/category-translations/${languageTag}.json`)
+      .then(res => res.json())
+      .then(data => {
+        localStorage.setItem(cacheKey, JSON.stringify(data));
+        applyTranslations(document.body, languageTag, data);
+        updateURLs(categorySelector);
+      });
   }
 }
 
 function applyTranslations(element, languageTag, translations) {
   translateElements(element, languageTag, translations);
 
-  const observer = new MutationObserver(mutations => {
-      mutations.forEach(mutation => {
-          if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-              mutation.addedNodes.forEach(node => {
-                  if (node.nodeType === Node.ELEMENT_NODE) {
-                      translateElements(node, languageTag, translations);
-                  }
-              });
-          }
+  new MutationObserver(mutations => {
+    mutations.forEach(m => {
+      m.addedNodes.forEach(node => {
+        if (node.nodeType === Node.ELEMENT_NODE) {
+          translateElements(node, languageTag, translations);
+        }
       });
-  });
-
-  observer.observe(element, { childList: true, subtree: true });
+    });
+  }).observe(element, { childList: true, subtree: true });
 }
 
 function translateElements(element, languageTag, translations) {
-  const elements = element.querySelectorAll('.category-box-content span, .category .submenu li a, .category .submenu li .nonredir');
-  
-  elements.forEach(el => {
+  element.querySelectorAll('.category-box-content span, .category .submenu li a, .category .submenu li .nonredir').forEach(el => {
     const text = el.textContent.trim();
-    
-    if (languageTag === 'tr') {
-      const lowercaseText = text.toLocaleLowerCase('tr-TR');
-      const translatedText = translations[lowercaseText] || translations[text];
+    if (el.classList.contains('translated')) return;
 
-      if (translatedText && !el.classList.contains('translated')) {
-        el.innerHTML = translatedText;
-        el.classList.add('translated');
-      }
-    } else if (languageTag === 'en' || languageTag === 'pl') {
-      el.classList.add('translated');
-    } else if (translations[text]) {
-      if (translations.hasOwnProperty(text)) {
-        if (!el.classList.contains('translated')) {
-            if (!el.classList.contains('translated')) {
-              el.innerHTML = translations[text];
-              el.classList.add('translated');
-            }
-        }
-      }
+    if (languageTag === 'tr') {
+      const key = text.toLocaleLowerCase('tr-TR');
+      el.innerHTML = translations[key] || translations[text] || text;
+    } else if (languageTag !== 'en' && languageTag !== 'pl' && translations[text]) {
+      el.innerHTML = translations[text];
     }
+    el.classList.add('translated');
   });
 }
-
-const categoryContentURL = '/code-parts/category-import/category-contents.json';
-let cachedCategoryContent = null;
-
-const builderURL = '/code-parts/category-import/category-builder.json';
 
 function createCategoryStructureFromBuilder(data) {
   const wrapper = document.createElement('div');
   wrapper.classList.add('category-selector');
   wrapper.id = 'notexist';
 
-  data.categories.forEach(category => {
-    const categoryDiv = document.createElement('div');
-    categoryDiv.classList.add('category');
+  data.categories.forEach(cat => {
+    const category = document.createElement('div');
+    category.classList.add('category');
 
     const box = document.createElement('a');
     box.classList.add('category-box');
-    box.href = category.href;
+    box.href = cat.href;
+    cat.classes?.forEach(cls => box.classList.add(cls));
 
-    if (category.classes) {
-      category.classes.forEach(cls => box.classList.add(cls));
-    }
+    const logo = document.createElement('div');
+    logo.classList.add('category-box-logo');
+    logo.innerHTML = `<img src="${cat.logo}" alt="${cat.label}">`;
 
-    const logoWrapper = document.createElement('div');
-    logoWrapper.classList.add('category-box-logo');
+    const content = document.createElement('div');
+    content.classList.add('category-box-content');
+    content.innerHTML = `<span>${cat.label}</span>`;
 
-    const img = document.createElement('img');
-    img.src = category.logo;
-    img.alt = category.label;
-    logoWrapper.appendChild(img);
-
-    const contentWrapper = document.createElement('div');
-    contentWrapper.classList.add('category-box-content');
-
-    const span = document.createElement('span');
-    span.textContent = category.label;
-    contentWrapper.appendChild(span);
-
-    box.appendChild(logoWrapper);
-    box.appendChild(contentWrapper);
-    categoryDiv.appendChild(box);
-    wrapper.appendChild(categoryDiv);
+    box.append(logo, content);
+    category.appendChild(box);
+    wrapper.appendChild(category);
   });
 
-  // Навесить логику событий
   setupCategorySelectorLogic(wrapper);
-
   return wrapper;
 }
 
 function setupCategorySelectorLogic(boxContainer) {
   const pages = document.querySelector('.pages');
 
-  boxContainer.addEventListener("click", (e) => {
+  boxContainer.addEventListener("click", e => {
     const targetBox = e.target.closest(".category-box");
-    const bigCategoryLink = e.target.closest(".big-category a");
+    const bigLink = e.target.closest(".big-category a");
+
+    if (e.target.closest(".submenu2 a")) {
+      return;
+    }
 
     if (targetBox) {
-      const parentListItem = targetBox.closest(".category");
-      const submenu = parentListItem.querySelector(".submenu");
+      const category = targetBox.closest(".category");
+      const submenu = category.querySelector(".submenu");
       const isNewest = targetBox.classList.contains("newest");
 
-      if (!isNewest && window.innerWidth <= 1365) {
-        e.preventDefault();
-      }
+      if (!isNewest && window.innerWidth <= 1365) e.preventDefault();
 
-      const allBoxes = boxContainer.querySelectorAll(".category-box");
-      allBoxes.forEach(box => {
+      boxContainer.querySelectorAll(".category-box").forEach(box => {
         if (box !== targetBox) {
           box.classList.remove("current");
-          const li = box.closest(".category");
-          const sm = li.querySelector(".submenu");
-          sm?.classList.remove("current");
+          box.closest(".category")?.querySelector(".submenu")?.classList.remove("current");
         }
       });
 
       targetBox.classList.toggle("current");
-
-      const anyActive = [...allBoxes].some(box => box.classList.contains("current"));
+      const anyActive = [...boxContainer.querySelectorAll(".category-box")].some(b => b.classList.contains("current"));
       boxContainer.classList.toggle("current", anyActive);
       pages?.classList.toggle("hardplaced", anyActive);
-
-      if (submenu && window.innerWidth <= 1365) {
-        submenu.classList.toggle("current");
-      }
+      if (submenu && window.innerWidth <= 1365) submenu.classList.toggle("current");
     }
 
-    if (bigCategoryLink) {
-      const bigCategory = bigCategoryLink.closest(".big-category");
+    if (bigLink) {
+      const bigCategory = bigLink.closest(".big-category");
       const submenu2 = bigCategory.querySelector(".submenu2");
       const isActive = bigCategory.classList.contains("active");
 
-      if (submenu2 && window.innerWidth <= 1365) {
-        e.preventDefault();
-      }
+      if (submenu2 && window.innerWidth <= 1365) e.preventDefault();
 
-      boxContainer.querySelectorAll(".big-category.active").forEach(item => {
-        item.classList.remove("active");
-        item.querySelector(".submenu2")?.classList.remove("current");
+      boxContainer.querySelectorAll(".big-category.active").forEach(el => {
+        el.classList.remove("active");
+        el.querySelector(".submenu2")?.classList.remove("current");
       });
 
       if (!isActive) {
@@ -2737,27 +2701,17 @@ function setupCategorySelectorLogic(boxContainer) {
         submenu2?.classList.add("current");
       }
     }
-  });
-  boxContainer.addEventListener("click", (e) => {
-    // Проверяем, что клик был непосредственно по самому элементу #notexist
+
     if (e.target === boxContainer) {
       const navBar = document.querySelector('.nav-bar');
       const menuToggle = document.querySelector('.menu-toggle');
       const pages = document.querySelector('.pages');
-
-      // Убираем классы active
       navBar.classList.remove('active');
       menuToggle.classList.remove('active');
-
-      // Убираем hardhidden, если он был установлен
-      if (navBar.classList.contains('active')) {
-        pages.classList.remove('hardhidden');
-      }
+      pages?.classList.remove('hardhidden');
     }
   });
 }
-
-
 
 function insertNotExistSelector(builderData) {
   const ssiodox = document.querySelector('.ssiodox');
@@ -2769,74 +2723,55 @@ function insertNotExistSelector(builderData) {
   const centralizer = document.createElement('div');
   centralizer.className = 'category-centralizer nav';
 
-  const categorySelector = createCategoryStructureFromBuilder(builderData);
-  centralizer.appendChild(categorySelector);
+  const selector = createCategoryStructureFromBuilder(builderData);
+  centralizer.appendChild(selector);
   navBar.appendChild(centralizer);
   ssiodox.appendChild(navBar);
 
-  setTimeout(() => updateURLs(categorySelector), 250);
+  setTimeout(() => updateURLs(selector), 250);
 
-  document.querySelectorAll('#notexist .category').forEach(category => {
-    loadCategoryContent(category);
-  });
+  document.querySelectorAll('#notexist .category').forEach(loadCategoryContent);
 }
-
 
 function loadSecondarySelector() {
   fetch(builderURL)
     .then(res => res.json())
-    .then(builderData => {
-      insertNotExistSelector(builderData);
-    })
+    .then(insertNotExistSelector)
     .catch(err => console.error('Failed to load category builder:', err));
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector(".menu-toggle").addEventListener("click", () => {
-    const navBar = document.querySelector(".nav-bar");
-    const pages = document.querySelector(".pages");
-  
-    navBar.classList.toggle("active");
-    document.querySelector(".menu-toggle").classList.toggle("active");
-  
-    // 👉 Добавляем или убираем hardhidden
-    if (navBar.classList.contains("active")) {
-      pages.classList.add("hardhidden");
-    } else {
-      pages.classList.remove("hardhidden");
-    }
-  });  
-
-  loadSecondarySelector();
-});
-
 
 function loadCategoryContent(category) {
   const link = category.querySelector('.category-box');
   const href = link?.getAttribute('href');
-
   if (!href) return;
+
   const categoryKey = href.replace(/^\/+/, '').split('/')[0];
 
   const insertCategoryContent = (data) => {
-    const categoryData = data.categories?.[categoryKey];
-    if (!categoryData || !categoryData.items) return;
-
-    const htmlContent = generateCategoryHTML(categoryData.items);
-    category.insertAdjacentHTML('beforeend', htmlContent);
+    const catData = data.categories?.[categoryKey];
+    if (!catData?.items) return;
+    category.insertAdjacentHTML('beforeend', generateCategoryHTML(catData.items));
     loadAndApplyTranslations(languageTag);
   };
 
   if (cachedCategoryContent) {
     insertCategoryContent(cachedCategoryContent);
   } else {
-    fetch(categoryContentURL)
-      .then(res => res.json())
-      .then(data => {
-        cachedCategoryContent = data;
-        insertCategoryContent(data);
-      })
-      .catch(err => console.error('Failed to load category content:', err));
+    pendingCategories.push({ insertCategoryContent });
+
+    if (pendingCategories.length === 1) {
+      fetch(categoryContentURL)
+        .then(res => res.json())
+        .then(data => {
+          cachedCategoryContent = data;
+          pendingCategories.forEach(({ insertCategoryContent }) => insertCategoryContent(data));
+          pendingCategories = [];
+        })
+        .catch(err => {
+          console.error('Failed to load category content:', err);
+          pendingCategories = [];
+        });
+    }
   }
 }
 
@@ -2858,10 +2793,16 @@ function generateCategoryHTML(items) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.category').forEach(category => {
-    loadCategoryContent(category);
+  document.querySelector(".menu-toggle")?.addEventListener("click", () => {
+    const navBar = document.querySelector(".nav-bar");
+    const pages = document.querySelector(".pages");
+    navBar.classList.toggle("active");
+    document.querySelector(".menu-toggle").classList.toggle("active");
+    pages?.classList.toggle("hardhidden", navBar.classList.contains("active"));
   });
 
+  loadSecondarySelector();
+  document.querySelectorAll('.category').forEach(loadCategoryContent);
   loadAndApplyTranslations(languageTag);
 });
 

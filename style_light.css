@@ -933,6 +933,10 @@ h3,
     background: unset !important;
 }
 
+.topic-box.maestro .logobg img {
+    filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2)) drop-shadow(0 1px 1px rgb(115 115 115));
+}
+
 .topic-box .content span {
     opacity: .6;
 }
