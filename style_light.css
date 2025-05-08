@@ -482,7 +482,8 @@ h3,
 } */
 
 .main-mode-unit img {
-    filter: drop-shadow(0 0 3px rgb(175 175 175));
+    /* filter: drop-shadow(0 0 3px rgb(175 175 175)); */
+    filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2)) drop-shadow(0 1px 1px rgb(140 140 140));
 }
 
 .main-mode-unit::before {
@@ -1207,7 +1208,8 @@ ul .submenu li .nonredir,
 .box-skins .officon.chevron,
 .site-attention.event::after,
 .payment-close-button .officon::before,
-.pagination-button.arrow .officon.chevron::before {
+.pagination-button.arrow .officon.chevron::before,
+.main-mode-selection button .officon.chevron::before {
     filter: brightness(.2);
     opacity: 1;
 }
@@ -1298,7 +1300,8 @@ ul .submenu li .nonredir,
     background: linear-gradient(360deg, var(--darkygray) 50%, var(--darkgray) 100%);
 }
 
-.lang-menu ul li:hover a {
+.lang-menu ul li:hover a::after,
+.site-list li a:hover {
     color: black;
 }
 

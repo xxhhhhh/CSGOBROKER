@@ -8392,10 +8392,6 @@ ul .big-category.active .submenu2 {
     background: var(--icongradient);
 }
 
-.lang-menu ul li:hover a {
-    transition: all .15s ease-in-out;
-}
-
 i.flagbox {
     width: 18px;
     border-radius: 2px;
@@ -8406,6 +8402,8 @@ i.flagbox {
     margin: auto 0;
     margin-right: 6px;
 }
+
+
 
 .lang-switch.lang-ru i {
     background-image: url(/img/icons/flags/ru.svg);
@@ -8468,10 +8466,34 @@ i.flagbox {
     font-size: 14px;
     font-weight: 500;
     color: rgba(255, 255, 255, .25);
+    position: relative;
     width: 100%;
     text-wrap: nowrap;
     margin: auto;
-    padding: 0 10px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    transition: all .15s ease-in-out;
+    z-index: 1;
+}
+
+.site-list li a::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    background: var(--icongradient);
+    transition: all .15s ease-in-out;
+    border-radius: 5px;
+    opacity: 0;
+    z-index: -1;
+}
+
+.site-list li a:hover::before {
+    opacity: 1;
 }
 
 #search-input {
@@ -8677,7 +8699,7 @@ div#results {
 }
 
 .site-item {
-    height: 33px;
+    height: auto;
     background-color: #0a0a0a;
     border-radius: 5px;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, .6);
@@ -8695,14 +8717,9 @@ div#results {
     display: flex;
 }
 
-.site-item:hover,
 .payment-list .payment-method:hover,
 .payment-list .payment-method.selected {
     background-color: #0e0e0e;
-}
-
-.site-item a {
-    transition: all .15s ease-in-out;
 }
 
 .sub-site-list {
@@ -9920,21 +9937,14 @@ div#results {
     height: 100%;
     width: 100%;
     background: radial-gradient(815% 120% at 0% 0%, transparent, var(--main-color));
+    background-position: center;
+    background-repeat: no-repeat;
     transition: opacity .2s ease-in-out;
-    opacity: .2;
+    opacity: .1;
 }
 
 .main-mode-unit:hover::before {
     opacity: 0;
-}
-
-.main-mode-unit::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .main-mode-selection {
