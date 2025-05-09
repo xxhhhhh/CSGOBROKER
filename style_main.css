@@ -701,7 +701,7 @@ nav .pages {
 
 .navigation-weapon-sort {
     height: 40px;
-    width: 40%;
+    width: 50px;
     position: relative;
     display: flex;
     align-items: center;
@@ -718,14 +718,6 @@ nav .pages {
 
 .navigation-weapon-sort i {
     transition: transform .15s ease-in-out;
-}
-
-#Rarity-Toggle {
-    width: 20%;
-}
-
-#Price-Filter {
-    width: 20%;
 }
 
 .site-searcher-box:hover .site-searcher-logo {
@@ -957,11 +949,14 @@ nav .pages {
 
 .box-skins.solo .box-skins-list .skin .skin-price-info {
     top: 12px;
+}
+
+.box-skins.solo .box-skins-list.showprice .skin .skin-price-info {
     opacity: .75;
 }
 
 .skin:hover .skin-price-info,
-.box-skins.solo .box-skins-list .skin:hover .skin-price-info {
+.box-skins.solo .box-skins-list.showprice .skin:hover .skin-price-info {
     opacity: 1;
 }
 
@@ -1607,14 +1602,16 @@ nav .pages {
     transition: all .2s ease-in-out !important;
 }
 
+.sitepage.items .skin {
+    transition: all .35s ease-in-out !important;
+}
+
 .sitepage.items .skin.disabled {
-    height: 0 !important;
-    transition: all .2s ease-in-out;
+    height: 0;
     width: 0 !important;
-    padding-left: unset !important;
-    margin: unset !important;
-    overflow: hidden;
-    min-width: unset !important;
+    min-width: 0;
+    margin: 0;
+    animation: fadeOut .2s ease-in-out forwards;
 }
 
 .sitepage.items .skin.disabled img {
@@ -3134,6 +3131,8 @@ h3 {
     padding: 15px 30px;
     border-radius: 10px;
     width: auto;
+
+    display: none;
 }
 
 .mini-info .stronged {
@@ -7785,6 +7784,12 @@ a[data-title]:after,
 
 .officon.diamond::before {
     background-image: url(/img/icons/gamemodes/diamond.svg);
+    height: 16px;
+    width: 16px;
+}
+
+.officon.price::before {
+    background-image: url(/img/icons/gamemodes/price.svg);
     height: 16px;
     width: 16px;
 }
@@ -14392,35 +14397,6 @@ div#results {
     bottom: 8px;
 }
 
-/* @keyframes fadeOut {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-}
-
-.topic-grandbox.fade-out {
-    animation: fadeOut 0 ease-in-out forwards;
-} */
-
-/* @keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(-10px) scale(1.06) translateZ(0);
-    }
-    99% {
-        opacity: 1;
-        transform: translateY(0) scale(1) translateZ(0);
-    }
-    100% {
-        transform: unset;
-    }
-} */
-
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -14438,6 +14414,23 @@ div#results {
         z-index: 1;
     }
 }
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        z-index: 1;
+    }
+    1% {
+        z-index: 10;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0);
+        z-index: 10;
+    }
+}
+
 
 .topic-boxes-holder .topic-grandbox,
 .topic-boxes-holder:not(.sticker-crafts) .topic-box {
