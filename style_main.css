@@ -772,6 +772,9 @@ nav .pages {
     transition: opacity .15s .0s ease-in-out, visibility .15s 0s;
     cursor: default;
     opacity: 1;
+    display: flex
+    ;
+        justify-content: center;
 }
 
 #preview-window.hidden {
@@ -801,13 +804,11 @@ nav .pages {
 #preview-showcase {
     position: relative;
     top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     background-color: rgba(10, 10, 10, .9);
     filter: drop-shadow(6px 4px 6px rgba(0, 0, 0, .5));
     border-radius: 10px;
-    height: auto;
+    height: fit-content;
     width: 800px;
     z-index: 1000;
     display: flex;
@@ -1238,6 +1239,41 @@ nav .pages {
 .red #preview-content,
 .gold #preview-content {
     background: unset;
+}
+
+.inspect-craft #preview-content {
+    height: 500px;
+    background-image: url(/img/Inferno.webp);
+    background-size: cover;
+}
+
+.inspect-craft #preview-showcase .officon::before {
+    filter: brightness(.2);
+    opacity: .7;
+}
+
+.inspect-craft .preview-nav-button {
+    opacity: .25;
+}
+
+.inspect-craft #preview-showcase {
+    width: 890px;
+}
+
+.inspect-craft .site-searcher-buttons,
+.inspect-craft .preview-pause-button {
+    display: none;
+}
+
+.inspect-craft #preview-content::before,
+.inspect-craft #preview-content::after {
+    content: unset;
+}
+
+.inspect-craft #preview-showcase #preview-content img {
+    animation: unset;
+    max-height: 100%;
+    filter: unset;
 }
 
 #preview-showcase #preview-content img {
@@ -6807,7 +6843,7 @@ input {
     position: absolute;
     background-color: transparent;
     border: none;
-    height: auto;
+    height: 60%;
     width: auto;
     z-index: 20;
     font-size: 32px;
@@ -7960,7 +7996,8 @@ a[data-title]:after,
     height: 0;
 }
 
-.slick-dotted.slick-slider {
+.screens:not(.crafting-table-screens).slick-dotted.slick-slider,
+.slider-container.slick-dotted.slick-slider {
     margin-bottom: 0 !important;
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
 }
@@ -7977,14 +8014,13 @@ a[data-title]:after,
     margin: 0 6px !important;
 }
 
-.slider-dot,
-.slick-dots button {
+.slick-dots li button {
     width: 15px !important;
     height: 15px !important;
     font-size: 15px !important;
     border: solid 2px rgba(255, 255, 255, 0.4) !important;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, .3) !important;
+    background-color: rgba(0, 0, 0, .3);
     z-index: 2;
     cursor: pointer;
     box-shadow: 0 0 10px 0 rgba(.3, .3, .3, .6);
@@ -7996,20 +8032,17 @@ a[data-title]:after,
     display: none;
 }
 
-li.slick-active button {
+.screens:not(.crafting-table-screens) li.slick-active button,
+.slider-container li.slick-active button {
     background-color: rgba(255, 255, 255, .5) !important;
     border: solid 2px white !important;
     transform: scale(1.2) !important;
 }
 
-li.slick-active button:hover {
+.screens:not(.crafting-table-screens) li.slick-active button:hover,
+.slider-container li.slick-active button:hover {
     background-color: rgba(255, 255, 255, .5) !important;
     transform: scale(1.3) !important;
-}
-
-.screens .slick-dots li {
-    width: 15px;
-    height: 15px;
 }
 
 .slick-dots li {
@@ -8028,7 +8061,8 @@ li.slick-active button:hover {
     transform: translateX(0);
 }
 
-.slider-dot:hover {
+.screens:not(.crafting-table-screens) .slick-dots li button:hover,
+.slider-container .slick-dots li button:hover {
     border: solid 2px white !important;
 }
 
@@ -9334,76 +9368,18 @@ div#results {
     border-radius: 10px;
     margin-bottom: 9px;
     display: flex;
-}
-
-.crafting-table-nav {
-    width: 99.5%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    position: absolute;
-    top: 0;
-}
-
-.object .crafting-table-nav {
-    width: 96.5%;
-}
-
-.crafting-table-step {
-    width: 100%;
-    height: 40px;
-    /* background-color: var(--darkgray); */
-    background: linear-gradient(150deg, rgb(15 15 15) 0%, rgb(13 13 13) 100%);
-    border-radius: 5px;
-    margin: 0 3px;
-    margin-top: 6px;
-    transition: all .15s ease-in-out;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    opacity: .85;
-}
-
-.crafting-table-step:last-child {
-    border-right: unset;
-}
-
-.crafting-table-step:hover {
-    opacity: 1;
-}
-
-.crafting-table-step.active {
-    opacity: 1;
-    background: linear-gradient(150deg, rgb(20 20 20) 0%, rgb(18 18 18) 100%);
-}
-
-.crafting-table-step:hover span,
-.crafting-table-step.active span {
-    opacity: 1;
-}
-
-.crafting-table-step span {
-    opacity: .35;
-    transition: all .1s ease-in-out;
-    user-select: none;
 }
 
 .crafting-table-screens {
-    width: 100%;
+    width: 100% !important;
     height: 100%;
     overflow: hidden;
     position: relative;
     border-radius: 10px;
     aspect-ratio: 16 / 9;
     background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 0 !important;
 }
 
 .crafting-table-screens img {
@@ -9432,25 +9408,79 @@ div#results {
 
 .crafting-table-screen {
     position: absolute;
-    transition: opacity .5s ease-in-out, visibility 0s .5s;
+    transition: opacity .5s ease-in-out;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    visibility: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
 
-.crafting-table-screen.active {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity .5s ease-in-out, visibility 0s 0s;
+.slick-initialized .slick-slide.crafting-table-screen {
+    display: flex;
 }
 
-.object .crafting-table-screen.active {
-    transition: opacity .25s ease-in-out, visibility 0s 0s;
+.crafting-table-screens .slick-list,
+.crafting-table-screens .slick-track {
+    height: 100%;
+}
+
+.crafting-table-screens .slick-dots button {
+    width: 100% !important;
+    height: 40px !important;
+    background-color: unset;
+    background: linear-gradient(150deg, rgb(15 15 15) 0%, rgb(13 13 13) 100%);
+    border-radius: 5px;
+    margin-top: 4px;
+    transition: all .15s ease-in-out;
+    box-shadow: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: unset !important;
+    cursor: pointer;
+    opacity: .85;
+}
+
+.crafting-table-screens li {
+    width: 100% !important;
+    margin: 0 3px !important;
+    max-width: 25%;
+}
+
+.crafting-table-screens .slick-dots {
+    width: 98%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    z-index: 100;
+}
+
+.crafting-table-screens .slick-dots button:hover {
+    opacity: 1;
+}
+
+.crafting-table-screens .slick-active button {
+    opacity: 1;
+    background: linear-gradient(150deg, rgb(20 20 20) 0%, rgb(18 18 18) 100%);
+}
+
+.crafting-table-screens button:hover span,
+.crafting-table-screens .slick-active button span {
+    opacity: 1;
+}
+
+.crafting-table-screens button span {
+    opacity: .35;
+    transition: all .1s ease-in-out;
+    font-size: 14px;
+    font-weight: 500;
+    user-select: none;
+    font-family: TTNormsPro;
 }
 
 .crafting-table-screen .skin {
@@ -11656,6 +11686,10 @@ div#results {
         justify-content: center;
     }
 
+    .inspect-craft .preview-nav-button {
+        top: 50%;
+    }
+
     #preview-showcase .preview-extras {
         bottom: 130px;
         width: 80%;
@@ -11847,6 +11881,10 @@ div#results {
     .topicpage .slider-container {
         width: 98%;
         margin: 4px;
+    }
+
+    .crafting-table-screens .slick-dots {
+        top: -30px !important;
     }
 
     .slick-dots {
@@ -12134,10 +12172,6 @@ div#results {
 
     .crafting-table-screens {
         overflow: unset;
-    }
-
-    .crafting-table-nav {
-        margin-top: -40px;
     }
 
     .crafting-table-screen-description {
@@ -13440,6 +13474,10 @@ div#results {
         height: 350px;
     }
 
+    .inspect-craft #preview-content {
+        height: auto;
+    }
+
     .topic-boxes-holder .topic-grandbox.sticker .skin {
         width: 30px;
         height: 30px;
@@ -13452,6 +13490,11 @@ div#results {
         max-height: 70%;
     }
 
+    .inspect-craft #preview-showcase #preview-content img {
+        max-width: unset;
+        width: 100%;
+    }
+
     .site-searcher-buttons {
         position: relative;
     }
@@ -13460,13 +13503,15 @@ div#results {
         transition: .1s opacity ease-in-out;
     }
 
-    #preview-showcase {
+    #preview-showcase,
+    .inspect-craft #preview-showcase {
         top: 15%;
         left: unset;
-        height: auto;
         width: 96%;
-        left: 50%;
-        transform: translateX(-50%) translateZ(0);
+    }
+
+    .inspect-craft #preview-showcase {
+        top: 30%;
     }
 
     .introduce-craft {
@@ -13710,13 +13755,13 @@ div#results {
         margin-top: unset;
     }
 
-    .slick-dots li {
+    .screens:not(.crafting-table-screens) .slick-dots li {
         width: 15px !important;
         height: 15px !important;
         margin: 0 5px !important;
     }
 
-    .slider-dot {
+    .slick-dots li button {
         padding: 3px !important;
     }
 

@@ -1235,7 +1235,7 @@ if (supportedLanguages.includes(languageTag)) {
 }
 
 $(document).ready(function(){
-  $('.screens').slick({
+  $('.screentable .screens').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,

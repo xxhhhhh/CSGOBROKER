@@ -70,7 +70,7 @@
 .topic-box,
 .box-skins,
 .newest-boxes-more,
-.crafting-table-step,
+.crafting-table-screens .slick-dots button,
 .blog .main-col-info,
 .crafting-table-screen .skin,
 .nav-review li.current,
@@ -359,7 +359,7 @@ a, p,
 .introduce-craft span,
 .sitepage.topic-craft .topic-grandbox span,
 .introduce-craft p,
-.crafting-table-step span,
+.crafting-table-screens button span,
 .navigation-weapon-sort i,
 .topic-nav-box span,
 .topic-nav-menu span,
@@ -785,9 +785,9 @@ h3,
 .gamemodes .featuresbox,
 .alternates-title,
 .topic-grandbox.sticker .skin,
-.crafting-table-step,
+.crafting-table-screens .slick-dots button,
 .crafting-table-screen .skin,
-.crafting-table-step:hover,
+.crafting-table-screens .slick-dots button:hover,
 #notexist .category-box .category-box-logo,
 .topic-nav-box,
 .main-infobox-content-block,
@@ -1306,7 +1306,7 @@ ul .submenu li .nonredir,
     color: black;
 }
 
-.crafting-table-step.active {
+.crafting-table-screens .slick-active button {
     background: #f2f2f2;
 }
 

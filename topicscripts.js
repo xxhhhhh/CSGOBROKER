@@ -481,6 +481,91 @@ $(document).ready(function () {
   
     let switchLock = false;
 
+    $('.crafting-table-screens').on('init', function (event, slick) {
+      const $slides = slick.$slides;
+      const total = $slides.length;
+      let resultIndex = total - 1;
+    
+      if ($($slides[total - 1]).hasClass('alternative')) {
+        resultIndex = total - 2;
+      }
+    
+      setTimeout(function () {
+        $('.crafting-table-screens').slick('slickGoTo', resultIndex, true);
+      }, 0);
+    });
+    
+    $('.crafting-table-screens').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: false,
+      speed: 450,
+      autoplaySpeed: 5500,
+      pauseOnHover: true,
+      pauseOnDotsHover: true,
+      fade: true,
+      cssEase: 'linear',
+      prevArrow: '<button aria-label="Prev Slide" class="prev-button"><i class="officon chevron left"></i></button>',
+      nextArrow: '<button aria-label="Next Slide" class="next-button"><i class="officon chevron right"></i></button>',
+      dots: true,
+      customPaging: function (slider, i) {
+        const $slides = slider.$slides;
+        const $currentSlide = $($slides[i]);
+        const total = $slides.length;
+    
+        let label = `Step ${i + 1}`;
+        const isAltLast = $($slides[total - 1]).hasClass('alternative');
+    
+        if ($currentSlide.hasClass('alternative') && i === total - 1) {
+          label = 'Alternative';
+        } else if (i === total - 2 && isAltLast) {
+          label = 'Result';
+        } else if (i === total - 1) {
+          label = 'Result';
+        } else if ($currentSlide.hasClass('alternative')) {
+          label = 'Alternative';
+        }
+    
+        if (typeof languageTag !== 'undefined' && languageTag === 'ru') {
+          if (label.startsWith('Step')) {
+            const stepNum = label.match(/\d+/);
+            label = `Шаг ${stepNum ? stepNum[0] : ''}`;
+          } else if (label === 'Result') {
+            label = 'Результат';
+          } else if (label === 'Alternative') {
+            label = 'Вариант 2';
+          }
+        }
+    
+        return `<button type="button" role="tab"><span>${label}</span></button>`;
+      }
+    });
+    
+
+    async function showCraftPreviewWindow(unitElement) {
+      const previewWindow = $("#preview-window");
+      const previewContent = $("#preview-content");
+      const $unit = $(unitElement);
+      const parentCraft = $unit.closest(".preview-craft");
+      const units = parentCraft.find(".preview-craft-unit");
+  
+      previewContent.empty();
+  
+      const img = $unit.find("img").clone();
+      previewContent.append(img);
+  
+      previewWindow
+          .removeClass("hidden")
+          .addClass("inspect-craft")
+          .attr({
+              "data-current-index": units.index(unitElement),
+              "data-total-items": units.length,
+              "data-current-box": $(".preview-craft").index(parentCraft),
+          });
+  }
+  
+  
+
     async function showPreviewWindow(element) {
         const previewWindow = $("#preview-window");
         const previewContent = $("#preview-content");
@@ -497,7 +582,7 @@ $(document).ready(function () {
         const skinBox = $(element).closest(".box-skins-list, .topic-grandbox, .introduce-craft");
         const visibleItems = skinBox.find(".skin:not(.disabled)");
         const totalItems = visibleItems.length;
-        const itemName = element.querySelector(".skin-desc-name")?.textContent.trim() || "";
+        const itemName = element?.querySelector(".skin-desc-name")?.textContent.trim() || "";
         const weaponName = itemName.split("|")[0].trim();
     
         previewWindow.removeClass("hidden").attr({
@@ -520,13 +605,11 @@ $(document).ready(function () {
             $("#preview-showcase").append(previewExtras);
         }
     
-        // Очищаем только alt/craft info (не весь extras)
         previewExtras.find(".skin-alt-info, .skin-craft-info").remove();
 
         const weapon = element.getAttribute("weapon");
         const isSticker = weapon.includes("sticker") || weapon.includes("capsule");
     
-        // ALT info
         let skinAltInfoDiv = previewExtras.find(".skin-alt-info");
         if (skinAltInfoDiv.length === 0) {
             skinAltInfoDiv = $("<a>", {
@@ -556,11 +639,9 @@ $(document).ready(function () {
             previewExtras.append(skinExtraInfo);
         }
     
-        // Остановить текущие анимации
         skinColorInfo.stop(true, true);
         skinExtraInfo.stop(true, true);
 
-        // Если видно - скрыть через анимацию
         const hideAnimations = [];
 
         if (parseFloat(skinColorInfo.css("opacity")) > 0) {
@@ -578,10 +659,8 @@ $(document).ready(function () {
             );
         }
 
-        // Ждём все скрытия
         await Promise.all(hideAnimations);
 
-        // Очищаем старый контент
         skinColorInfo.empty();
         skinExtraInfo.empty();
 
@@ -683,8 +762,6 @@ $(document).ready(function () {
             await handleStickerOrCapsule();
         }
 
-        // Добавляем новый контент
-        // Теперь правильно показываем: сначала display: flex и opacity: 0
         skinColorInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
         skinExtraInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
     
@@ -703,42 +780,69 @@ $(document).ready(function () {
         }
     }
 
-      function closePreviewWindow() {
-        const previewWindow = $("#preview-window");
-        previewWindow.addClass("hidden");
-        previewWindow.attr("class", "hidden");
-    
-        previewWindow.find(".skin-alt-info, .skin-craft-info").remove();
-    
-        const previewExtras = $("#preview-showcase .preview-extras");
-        if (previewExtras.length > 0) {
-            previewExtras.find(".skin-color-info, .skin-extra-info").stop(true, true).fadeOut(100, function() {
-                $(this).empty();
-            });
+    function closePreviewWindow() {
+      const previewWindow = $("#preview-window");
+      previewWindow.removeAttr("class").addClass("hidden");
+  
+      previewWindow.find(".skin-alt-info, .skin-craft-info").remove();
+  
+      const previewExtras = $("#preview-showcase .preview-extras");
+      if (previewExtras.length > 0) {
+          previewExtras.find(".skin-color-info, .skin-extra-info").stop(true, true).fadeOut(100, function() {
+              $(this).empty();
+          });
+      }
+  }
+  
+  
+  async function switchSkin(direction) {
+    if (switchLock) return;
+    switchLock = true;
+
+    const $previewWindow = $("#preview-window");
+    const isCraftMode = $previewWindow.hasClass("inspect-craft");
+
+    try {
+        if (isCraftMode) {
+            const currentBox = $(".preview-craft").eq(+$previewWindow.data("current-box"));
+            const units = currentBox.find(".preview-craft-unit");
+            const total = units.length;
+            const currentIndex = +$previewWindow.data("current-index");
+
+            const newIndex = (direction === "left")
+                ? (currentIndex - 1 + total) % total
+                : (currentIndex + 1) % total;
+
+            const newUnit = units.get(newIndex);
+            if (newUnit) {
+                await showCraftPreviewWindow(newUnit);
+                $previewWindow.data("current-index", newIndex);
+            }
+        } else {
+            const currentBox = $(".box-skins-list, .topic-grandbox, .introduce-craft, .character-box")
+                .eq(+$previewWindow.data("current-box"));
+            const visibleItems = currentBox.find(".skin:not(.disabled):not(.none)");
+            const total = visibleItems.length;
+            const currentIndex = +$previewWindow.data("current-index");
+
+            const newIndex = (direction === "left")
+                ? (currentIndex - 1 + total) % total
+                : (currentIndex + 1) % total;
+
+            const newSkin = visibleItems.get(newIndex);
+            if (newSkin) {
+                await showPreviewWindow(newSkin);
+                $previewWindow.data("current-index", newIndex);
+            }
         }
+    } catch (err) {
+        console.error("Ошибка при переключении:", err);
     }
-    
-    async function switchSkin(direction) {
-      if (switchLock) return;
-      switchLock = true;
-    
-      const $previewWindow = $("#preview-window");
-      const currentIndex = +$previewWindow.data("current-index");
-      const currentBox = $(".box-skins-list, .topic-grandbox, .introduce-craft, .character-box")
-        .eq(+$previewWindow.data("current-box"));
-    
-      const visibleItems = currentBox.find(".skin:not(.disabled):not(.none)");
-      const total = visibleItems.length;
-    
-      const newIndex = (direction === "left")
-        ? (currentIndex - 1 + total) % total
-        : (currentIndex + 1) % total;
-    
-      await showPreviewWindow(visibleItems.eq(newIndex)[0]);
-      $previewWindow.data("current-index", newIndex);
-    
-      switchLock = false;
-    }
+
+    switchLock = false;
+}
+
+  
     
       $(document).on("click", ".skin", function () {
         showPreviewWindow(this);
@@ -761,6 +865,10 @@ $(document).ready(function () {
       $(document).on("click", ".preview-nav-button.right", function () {
         switchSkin("right");
       });
+
+      $(document).on("click", ".preview-craft-unit", function () {
+        showCraftPreviewWindow(this);
+    });
 
       if (currentPath.includes("/skins/")) {
         $(".close-box-skins").on("click", function () {
@@ -1535,15 +1643,7 @@ $(document).ready(function(){
         var index = $(this).index();
         $('.crafting-table-screen').eq(index).addClass('active');
     });
-  
-    $('.preview-craft-unit').click(function(){
-        if ($(this).hasClass('preview')) {
-            $('.preview-craft-unit').removeClass('preview');
-        } else {
-            $('.preview-craft-unit').removeClass('preview');
-            $(this).addClass('preview');
-        }
-    });
+
   });
 
 
