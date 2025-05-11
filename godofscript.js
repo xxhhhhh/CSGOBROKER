@@ -1442,8 +1442,8 @@ function prepareFuseData() {
 }
 
 Promise.all([
-  loadCachedDataSearch('site_config', '/code-parts/search-config/config.json'),
-  loadCachedDataSearch('site_translations', '/code-parts/search-config/translations.json')
+  loadCachedDataSearch('search_config', '/code-parts/search-config/config.json'),
+  loadCachedDataSearch('search_translations', '/code-parts/search-config/translations.json')
 ]).then(([configData, translationData]) => {
   sites = configData.sites;
   siteTranslations = translationData;
