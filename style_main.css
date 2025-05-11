@@ -8497,7 +8497,7 @@ i.flagbox {
     content: 'Polski';
 }
 
-.site-list li a {
+.site-item a {
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -8514,14 +8514,14 @@ i.flagbox {
     z-index: 1;
 }
 
-.site-list li .site-icon {
+.site-item .site-icon {
     max-width: 30px;
     width: auto;
     height: 100%;
     margin-right: 6px;
 }
 
-.site-list li a::before {
+.site-item a::after {
     content: '';
     position: absolute;
     top: 4px;
@@ -8535,7 +8535,7 @@ i.flagbox {
     z-index: -1;
 }
 
-.site-list li a:hover::before {
+.site-item a:hover::after {
     opacity: 1;
 }
 
@@ -8762,6 +8762,53 @@ div#results {
 
 .site-item.show {
     display: flex;
+}
+
+.site-item.gambling a::before,
+.site-item.topic a::before,
+.site-item.skins a::before,
+.site-item.steam a::before,
+.site-item.earning a::before,
+.site-item.review a::before {
+    content: "" !important;
+    min-width: 20px;
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-right: 6px;
+    border-radius: 4px;
+    filter: grayscale(1);
+    transition: all .15s ease-in-out;
+}
+
+.site-item:hover a::before {
+    filter: grayscale(0);
+}
+
+.site-item.skins a::before {
+    background-image: url(code-parts/search-config/icons/skins-icon.png);
+}
+
+.site-item.topic a::before {
+    background-image: url(code-parts/search-config/icons/wiki-icon.png);
+}
+
+.site-item.steam a::before {
+    background-image: url(code-parts/search-config/icons/steam-icon.png);
+}
+
+.site-item.gambling a::before {
+    background-image: url(code-parts/search-config/icons/gambling-icon.png);
+}
+
+.site-item.earning a::before {
+    background-image: url(code-parts/search-config/icons/offerwalls-icon.png);
+}
+
+.site-item.review a::before {
+    background-image: url(code-parts/search-config/icons/review-icon.png);
 }
 
 .payment-list .payment-method:hover,
@@ -13385,7 +13432,6 @@ div#results {
 
     .site-list li a {
         color: rgba(255, 255, 255, .45);
-        justify-content: center;
     }
 
     .topic-nav-menu .weapon-container .weapon-selection {

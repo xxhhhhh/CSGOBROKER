@@ -1450,13 +1450,27 @@ Promise.all([
   prepareFuseData();
 });
 
+function getPathClass(path) {
+  const pathLower = path.toLowerCase();
+
+  const isSkins = /(trade-skins|sell-skins|trade-items|sell-items|buy-skins|buy-items|instant-sell|marketplaces)(\/|$)/.test(pathLower);
+  if (isSkins) return 'skins';
+
+  if (/topic(\/|$)/.test(pathLower)) return 'topic';
+  if (pathLower.includes('/steam/')) return 'steam';
+  if (pathLower.includes('/reviews/')) return 'review';
+  if (/earning(\/|$)/.test(pathLower)) return 'earning';
+
+  return 'gambling';
+}
+
 function createSiteItem(path) {
   const trans = siteTranslations[path] || {};
   const label = trans.og || (languageTag === 'ru' ? trans.ru || trans.en : trans.en || trans.ru) || path;
   const icon = trans.icon;
 
   const li = document.createElement('li');
-  li.className = 'site-item show';
+  li.className = `site-item show ${getPathClass(path)}`;
 
   const link = document.createElement('a');
   link.href = languageTag === 'ru' ? '/ru' + path : path;
@@ -1473,6 +1487,7 @@ function createSiteItem(path) {
   li.appendChild(link);
   return li;
 }
+
 
 function handleSearchInput() {
   const searchTerm = searchInput.value.toLowerCase();
