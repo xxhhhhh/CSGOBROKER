@@ -1396,132 +1396,167 @@ window.onload = function () {
   })();
 };
 
-  const siteList = document.getElementById('site-list');
-  const searchInput = document.getElementById('search-input');
-  
-  let sites = [];
-  let siteTranslations = {};
-  
-  fetch('/code-parts/search-config/config.json')
-    .then(response => response.json())
-    .then(data => {
-      sites = data.sites;
-      return fetch('/code-parts/search-config/translations.json');
-    })
-    .then(response => response.json())
-    .then(data => {
-      siteTranslations = data;
-      updateSiteList();
-    });
-  
-  function getTranslation(path) {
-    if (!siteTranslations[path]) {
-      return path;
-    }
-    
-    const translations = siteTranslations[path];
-    
-    if (translations.og) {
-      return translations.og;
-    }
-  
-    return languageTag === 'ru' ? translations.ru || translations.en : translations.en || translations.ru;
+const siteList = document.getElementById('site-list');
+const searchInput = document.getElementById('search-input');
+
+let sites = [];
+let siteTranslations = {};
+let fuse = null;
+
+function loadCachedDataSearch(key, url) {
+  const cached = localStorage.getItem(key);
+  const expiry = localStorage.getItem(key + '_expiry');
+  const now = Date.now();
+
+  if (cached && expiry && now < parseInt(expiry)) {
+    return Promise.resolve(JSON.parse(cached));
   }
-  
-  function updateSiteList() {
-    siteList.innerHTML = '';
-    const fragment = document.createDocumentFragment();
-    sites.forEach(path => {
-      const li = document.createElement('li');
-      li.className = 'site-item hidden';
-  
-      const link = document.createElement('a');
-      link.href = path;
-      link.textContent = getTranslation(path);
-  
-      if (languageTag === 'ru') {
-        link.href = '/ru' + path;
-      }
-  
-      li.appendChild(link);
+
+  return fetch(url).then(res => res.json()).then(data => {
+    localStorage.setItem(key, JSON.stringify(data));
+    localStorage.setItem(key + '_expiry', now + 1000 * 60 * 60); // 1 час
+    return data;
+  });
+}
+
+function prepareFuseData() {
+  const list = sites.map(path => {
+    const trans = siteTranslations[path] || {};
+    return {
+      path,
+      label: trans.og || trans.en || trans.ru || path,
+      en: trans.en || '',
+      ru: trans.ru || '',
+      og: trans.og || '',
+      keywords: (trans.keywords || []).join(' '),
+      icon: trans.icon || ''
+    };
+  });
+
+  fuse = new Fuse(list, {
+    keys: ['label', 'en', 'ru', 'og', 'keywords'],
+    threshold: 0.4,
+    minMatchCharLength: 2,
+    ignoreLocation: true
+  });
+}
+
+Promise.all([
+  loadCachedDataSearch('site_config', '/code-parts/search-config/config.json'),
+  loadCachedDataSearch('site_translations', '/code-parts/search-config/translations.json')
+]).then(([configData, translationData]) => {
+  sites = configData.sites;
+  siteTranslations = translationData;
+  prepareFuseData();
+});
+
+function createSiteItem(path) {
+  const trans = siteTranslations[path] || {};
+  const label = trans.og || (languageTag === 'ru' ? trans.ru || trans.en : trans.en || trans.ru) || path;
+  const icon = trans.icon;
+
+  const li = document.createElement('li');
+  li.className = 'site-item show';
+
+  const link = document.createElement('a');
+  link.href = languageTag === 'ru' ? '/ru' + path : path;
+
+  if (icon) {
+    const img = document.createElement('img');
+    img.src = icon;
+    img.alt = '';
+    img.className = 'site-icon';
+    link.appendChild(img);
+  }
+
+  link.appendChild(document.createTextNode(label));
+  li.appendChild(link);
+  return li;
+}
+
+function handleSearchInput() {
+  const searchTerm = searchInput.value.toLowerCase();
+  siteList.innerHTML = '';
+
+  const closeButton = document.querySelector('#search-form .close-button');
+  if (searchTerm === '') {
+    if (closeButton) closeButton.classList.remove('visible');
+    siteList.classList.remove('show');
+    siteList.classList.add('hidden');
+    return;
+  } else {
+    if (closeButton) closeButton.classList.add('visible');
+  }
+
+  const fragment = document.createDocumentFragment();
+  const results = fuse.search(searchTerm, { limit: 50 });
+
+  if (results.length > 0) {
+    results.forEach(({ item }) => {
+      const li = createSiteItem(item.path);
       fragment.appendChild(li);
     });
+    siteList.classList.remove('hidden');
+    siteList.classList.add('show');
     siteList.appendChild(fragment);
+  } else {
+    siteList.classList.remove('show');
+    siteList.classList.add('hidden');
   }
-  
-  
-  function hideAllSites(siteItems) {
-    Array.from(siteItems).forEach(hideSite);
+}
+
+searchInput.addEventListener('input', handleSearchInput);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const paymentForm = document.getElementById('search-form');
+
+  let closeButton = paymentForm.querySelector('.close-button');
+  if (!closeButton) {
+    closeButton = document.createElement('div');
+    closeButton.className = 'close-button';
+    closeButton.innerHTML = '<i class="officon cross"></i>';
+    paymentForm.appendChild(closeButton);
   }
-  
-  function hideSite(siteItem) {
-    siteItem.classList.remove('show');
-    siteItem.classList.add('hidden');
-  }
-  
-  function showSite(siteItem) {
-    siteItem.classList.remove('hidden');
-    siteItem.classList.add('show');
-  }
-  
-  function handleSearchInput() {
-    const searchTerm = searchInput.value.toLowerCase();
-    const siteItems = siteList.getElementsByClassName('site-item');
-  
-    if (searchTerm === '') {
-      hideAllSites(siteItems);
-      siteList.classList.remove('show');
-      siteList.classList.add('hidden');
-      return;
-    }
-  
-    let hasVisibleItems = false;
-  
-    Array.from(siteItems).forEach(siteItem => {
-      const siteName = siteItem.textContent.toLowerCase();
-      if (siteName.includes(searchTerm)) {
-        showSite(siteItem);
-        hasVisibleItems = true;
-      } else {
-        hideSite(siteItem);
-      }
-    });
-  
-    if (hasVisibleItems) {
-      siteList.classList.remove('hidden');
-      siteList.classList.add('show');
-    } else {
-      siteList.classList.remove('show');
-      siteList.classList.add('hidden');
-    }
-  }
-  
-  searchInput.addEventListener('input', handleSearchInput);
-  
+
+  closeButton.addEventListener('click', () => {
+    searchInput.value = '';
+    closeButton.classList.remove('visible');
+    siteList.innerHTML = '';
+    siteList.classList.remove('show');
+    siteList.classList.add('hidden');
+    searchInput.focus();
+  });
+
   searchInput.addEventListener('focus', () => {
-    if (searchInput.value === '') {
-      siteList.classList.remove('show');
-      siteList.classList.add('hidden');
-    } else {
+    if (searchInput.value !== '') {
+      closeButton.classList.add('visible');
       siteList.classList.remove('hidden');
       siteList.classList.add('show');
+    } else {
+      closeButton.classList.remove('visible');
+      siteList.classList.remove('show');
+      siteList.classList.add('hidden');
     }
   });
-  
+
   searchInput.addEventListener('blur', () => {
     setTimeout(() => {
       siteList.classList.remove('show');
       siteList.classList.add('hidden');
     }, 150);
   });
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('.search-enabler').addEventListener('click', () => {
-      document.querySelector('#search-input').classList.add('active');
-      document.querySelector('.search-enabler').classList.add('disabled');
+
+  const searchEnabler = document.querySelector('.search-enabler');
+  if (searchEnabler) {
+    searchEnabler.addEventListener('click', () => {
+      searchInput.classList.add('active');
+      searchEnabler.classList.add('disabled');
       document.querySelector('.search-container').classList.add('expanded');
     });
-  });
+  }
+});
+
+
       
     document.addEventListener('DOMContentLoaded', function () {
       var replacementHTML = `

@@ -1634,19 +1634,6 @@ if (
     translateTypes(languageTag)
 }
 
-
-$(document).ready(function(){
-    $('.crafting-table-step').click(function(){
-        $('.crafting-table-step').removeClass('active');
-        $('.crafting-table-screen').removeClass('active');
-        $(this).addClass('active');
-        var index = $(this).index();
-        $('.crafting-table-screen').eq(index).addClass('active');
-    });
-
-  });
-
-
 function setLocalStorageState(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }

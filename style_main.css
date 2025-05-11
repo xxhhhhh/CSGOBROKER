@@ -1243,7 +1243,7 @@ nav .pages {
 
 .inspect-craft #preview-content {
     height: 500px;
-    background-image: url(/img/Inferno.webp);
+    background-image: url(/img/inferno.webp);
     background-size: cover;
 }
 
@@ -3640,6 +3640,7 @@ nav #logo:hover {
     font-weight: 600;
     font-size: 14px;
     color: rgba(255, 255, 255, .75);
+    font-family: TTNormsPro;
     text-align: center;
     cursor: text;
 }
@@ -8517,6 +8518,13 @@ i.flagbox {
     z-index: 1;
 }
 
+.site-list li .site-icon {
+    max-width: 30px;
+    width: auto;
+    height: 100%;
+    margin-right: 6px;
+}
+
 .site-list li a::before {
     content: '';
     position: absolute;
@@ -8573,7 +8581,7 @@ i.flagbox {
     display: flex;
     position: relative;
     margin-right: 15px;
-    z-index: 10000;
+    z-index: 100;
     overflow: hidden;
     transition: all .15s ease-in-out;
 }
@@ -8719,7 +8727,9 @@ div#results {
     position: absolute;
     transform: translateX(-50%);
     top: 25px;
-    width: 170px;
+    width: fit-content;
+    min-width: 170px;
+    max-width: 250px;
     border-radius: 5px;
     margin-top: 10px;
     left: 50%;
@@ -8746,6 +8756,7 @@ div#results {
     justify-content: center;
     transition: all .1s ease-in-out;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .site-item.hidden {
@@ -10514,7 +10525,8 @@ div#results {
     z-index: -1;
 }
 
-.payment-close-button {
+.payment-close-button,
+.close-button {
     position: absolute;
     right: 0;
     height: 100%;
@@ -10525,13 +10537,26 @@ div#results {
     display: none;
     opacity: 0;
     pointer-events: none;
+    transition: all .115s ease-in-out;
+}
+
+.close-button {
+    opacity: 0;
+    display: flex;
+    height: 30px;
+}
+
+.close-button.visible {
+    opacity: 1;
+    pointer-events: all;
 }
 
 .payment-close-button.visible {
     display: flex;
 }
 
-.payment-close-button .officon::before {
+.payment-close-button .officon::before,
+.close-button .officon::before {
     height: 22px;
     width: 22px;
 }
