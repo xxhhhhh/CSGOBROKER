@@ -152,8 +152,9 @@ button {
 }
 
 .nav-content {
-    width: 270px;
+    width: auto;
     justify-content: flex-end;
+    gap: 15px;
 }
 
 nav #logo {
@@ -178,10 +179,13 @@ nav .pages {
     border: none;
     outline: none;
     cursor: pointer;
-    margin-right: 15px;
     margin-bottom: 2px;
     z-index: 10;
     order: 0;
+}
+
+#particles-toggle {
+    margin-bottom: unset;
 }
 
 .spaceblock {
@@ -8069,7 +8073,6 @@ a[data-title]:after,
 
 @media(max-width: 1080px) {
     .nav-content {
-        width: auto;
         padding-left: 20px;
     }
 
@@ -8336,7 +8339,6 @@ ul .big-category.active .submenu2 {
 .lang-menu {
     width: auto;
     height: 20px;
-    margin-right: 15px;
     border-radius: 4px;
     font-weight: 600;
     position: relative;
@@ -8539,7 +8541,8 @@ i.flagbox {
     opacity: 1;
 }
 
-#search-input {
+#search-input,
+.payment-container input {
     margin-bottom: unset;
     margin-left: unset;
     cursor: text;
@@ -8547,13 +8550,12 @@ i.flagbox {
     height: 30px;
     color: rgba(255, 255, 255, .3);
     background-color: rgb(16 16 16);
-    border: 1px solid rgba(255, 255, 255, .3);
     border-radius: 5px;
     border: none;
     font-size: 16px;
     font-family: 'TTNormsPro';
     font-weight: 500;
-    text-align: center;
+    padding: 0 30px;
     opacity: 0;
     outline: none !important;
     transition: all .15s ease-in-out;
@@ -8572,11 +8574,10 @@ i.flagbox {
 }
 
 .search-container {
-    width: auto;
+    width: 18px;
     height: 30px;
     display: flex;
     position: relative;
-    margin-right: 15px;
     z-index: 100;
     overflow: hidden;
     transition: all .15s ease-in-out;
@@ -8589,17 +8590,15 @@ form#search-form {
 
 .search-container.expanded {
     width: 150px;
-    min-width: 150px;
     overflow: visible;
 }
 
 .search-enabler {
     height: 100%;
-    width: 100%;
+    width: 18px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    ;
+    justify-content: center;;
     border: none;
     outline: none;
     background-color: transparent;
@@ -8609,14 +8608,17 @@ form#search-form {
 }
 
 .search-enabler.disabled {
-    width: 0;
-    opacity: 0;
+    margin-left: 6px;
     pointer-events: none;
+}
+
+.search-enabler.disabled .search::before {
+    height: 14px;
+    width: 14px;
 }
 
 .search-enabler i {
     transition: all .15s ease-in-out;
-    font-size: 18px;
 }
 
 .menu-toggle:active,
@@ -10660,23 +10662,10 @@ div#results {
 }
 
 .payment-container input {
-    margin-bottom: unset;
-    margin-left: unset;
-    cursor: text;
-    width: 100%;
-    height: 30px;
-    color: rgba(255, 255, 255, .3);
-    background-color: rgb(16 16 16);
-    border-radius: 5px;
-    border: none;
     font-size: 14px;
-    font-family: 'TTNormsPro';
-    font-weight: 500;
-    text-align: center;
     transition: all .15s ease-in-out, opacity .1s ease-in-out;
     opacity: 0;
     transform: scale(.8);
-    outline: none !important;
     pointer-events: none;
     cursor: pointer;
 }
@@ -13426,8 +13415,10 @@ div#results {
 
     .search-container.expanded {
         width: 100px;
-        min-width: 100px;
-        overflow: visible;
+    }
+
+    #search-input {
+        font-size: 14px;
     }
 
     .site-list li a {
@@ -13927,7 +13918,6 @@ div#results {
 
     .nav-content .lang-menu {
         order: -2;
-        margin-right: 15px;
     }
 
     .language-box {

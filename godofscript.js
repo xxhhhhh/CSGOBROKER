@@ -1,6 +1,6 @@
-if (localStorage.getItem('version') !== '1.0') {
+if (localStorage.getItem('version') !== '1.01') {
   localStorage.clear();
-  localStorage.setItem('version', '1.0');
+  localStorage.setItem('version', '1.01');
 }
 
 function copyToClipboard(element, copyButton) {
@@ -427,7 +427,6 @@ forcemodsboxes();
     }
   });
   
-
 
   document.addEventListener("DOMContentLoaded", function() {
     let currentPath = window.location.pathname;
@@ -1173,66 +1172,76 @@ function insertReviewLinks(codes, codeValue, codesBinding) {
     });
   });
 
-if (supportedLanguages.includes(languageTag)) {
-  const cacheKey = `infoboxContent_${languageTag}`;
-  const cacheMetaKey = `${cacheKey}_meta`;
-  const cachedContent = localStorage.getItem(cacheKey);
-  const cachedMeta = JSON.parse(localStorage.getItem(cacheMetaKey) || "{}");
-
-  const insertInfobox = (content) => {
-    let insertionPoint;
-    if (window.location.pathname.includes('/reviews/')) {
-        const boxReview = document.querySelector('.boxreview');
-        if (boxReview) {
-          boxReview.insertAdjacentHTML('beforeend', content);
-          return;
-      }
-    }
-    
-    insertionPoint = document.querySelector('.boxes-holder');
-    if (insertionPoint) {
-        insertionPoint.insertAdjacentHTML('afterend', content);
-    }
-};
-
-
-  const updateCacheAndInsert = (content, meta) => {
-    localStorage.setItem(cacheKey, content);
-    localStorage.setItem(cacheMetaKey, JSON.stringify(meta));
-    insertInfobox(content);
-  };
-
-  const fetchInfobox = () => {
-    const filePath = `/code-parts/micro-parts/main-infobox/${languageTag}.html`;
-
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', filePath, true);
-
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        const infoboxContent = xhr.responseText;
-        const newMeta = { updatedAt: Date.now() };
-
-        updateCacheAndInsert(infoboxContent, newMeta);
+  const fallbackLang = 'en';
+  
+  if (supportedLanguages.includes(languageTag)) {
+    const cacheKey = 'infobox_translations';
+    const cacheExpiryKey = `${cacheKey}_expiry`;
+    const maxCacheAge = 24 * 60 * 60 * 1000
+  
+    const cachedDataRaw = localStorage.getItem(cacheKey);
+    const cachedExpiry = parseInt(localStorage.getItem(cacheExpiryKey), 10);
+  
+    const insertInfobox = (texts) => {
+      const html = `
+        <div class="main-infobox">
+          <div class="main-infobox-mascotte"></div>
+          <div class="main-infobox-content">
+            <div class="main-infobox-content-text">
+              <div class="main-infobox-content-block">
+                <p>${texts.p1}</p>
+                <p>${texts.p2}</p>
+              </div>
+            </div>
+          </div>
+          <div class="main-infobox-content second">
+            <div class="main-infobox-content-text">
+              <div class="main-infobox-content-block">
+                <p>${texts.p3}</p>
+                <p>${texts.p4}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+  
+      const boxReview = document.querySelector('.boxreview');
+      if (window.location.pathname.includes('/reviews/') && boxReview) {
+        boxReview.insertAdjacentHTML('beforeend', html);
+      } else {
+        const insertionPoint = document.querySelector('.boxes-holder');
+        if (insertionPoint) {
+          insertionPoint.insertAdjacentHTML('afterend', html);
+        }
       }
     };
-
-    xhr.send();
-  };
-
-  if (cachedContent && cachedMeta.updatedAt) {
-    const maxCacheAge = 24 * 60 * 60 * 1000;
-    const isCacheValid = Date.now() - cachedMeta.updatedAt < maxCacheAge;
-
-    if (isCacheValid) {
-      insertInfobox(cachedContent);
+  
+    const fetchAndInsert = () => {
+      fetch('/code-parts/micro-parts/main-infobox/infobox-translations.json')
+        .then(response => response.json())
+        .then(allTranslations => {
+          localStorage.setItem(cacheKey, JSON.stringify(allTranslations));
+          localStorage.setItem(cacheExpiryKey, (Date.now() + maxCacheAge).toString());
+  
+          const texts = allTranslations[languageTag] || allTranslations[fallbackLang];
+          insertInfobox(texts);
+        })
+        .catch(err => console.error('Failed to fetch infobox translations:', err));
+    };
+  
+    if (cachedDataRaw && cachedExpiry && Date.now() < cachedExpiry) {
+      try {
+        const allTranslations = JSON.parse(cachedDataRaw);
+        const texts = allTranslations[languageTag] || allTranslations[fallbackLang];
+        insertInfobox(texts);
+      } catch (e) {
+        fetchAndInsert(); // corrupted data
+      }
     } else {
-      fetchInfobox();
+      fetchAndInsert();
     }
-  } else {
-    fetchInfobox();
   }
-}
+  
 
 $(document).ready(function(){
   $('.screentable .screens').slick({
@@ -1403,19 +1412,34 @@ let sites = [];
 let siteTranslations = {};
 let fuse = null;
 
-function loadCachedDataSearch(key, url) {
-  const cached = localStorage.getItem(key);
-  const expiry = localStorage.getItem(key + '_expiry');
+const CACHE_KEY = 'search_data';
+const CACHE_DURATION_MS = 1000 * 60 * 60; // 1 час
+
+function loadCombinedSearchData() {
+  const cached = localStorage.getItem(CACHE_KEY);
   const now = Date.now();
 
-  if (cached && expiry && now < parseInt(expiry)) {
-    return Promise.resolve(JSON.parse(cached));
+  if (cached) {
+    try {
+      const parsed = JSON.parse(cached);
+      const { configData, translationData, expiry } = parsed;
+
+      if (expiry && now < expiry) {
+        return Promise.resolve({ configData, translationData });
+      }
+    } catch (e) {
+      console.warn('Ошибка чтения кэша:', e);
+    }
   }
 
-  return fetch(url).then(res => res.json()).then(data => {
-    localStorage.setItem(key, JSON.stringify(data));
-    localStorage.setItem(key + '_expiry', now + 1000 * 60 * 60); // 1 час
-    return data;
+  return Promise.all([
+    fetch('/code-parts/search-config/config.json').then(res => res.json()),
+    fetch('/code-parts/search-config/translations.json').then(res => res.json())
+  ]).then(([configData, translationData]) => {
+    const expiry = now + CACHE_DURATION_MS;
+    const cacheObject = { configData, translationData, expiry };
+    localStorage.setItem(CACHE_KEY, JSON.stringify(cacheObject));
+    return { configData, translationData };
   });
 }
 
@@ -1441,10 +1465,7 @@ function prepareFuseData() {
   });
 }
 
-Promise.all([
-  loadCachedDataSearch('search_config', '/code-parts/search-config/config.json'),
-  loadCachedDataSearch('search_translations', '/code-parts/search-config/translations.json')
-]).then(([configData, translationData]) => {
+loadCombinedSearchData().then(({ configData, translationData }) => {
   sites = configData.sites;
   siteTranslations = translationData;
   prepareFuseData();
@@ -1487,7 +1508,6 @@ function createSiteItem(path) {
   li.appendChild(link);
   return li;
 }
-
 
 function handleSearchInput() {
   const searchTerm = searchInput.value.toLowerCase();
@@ -1688,26 +1708,27 @@ function handleRouteDisplay(boxElements) {
 }
 
 function loadCachedData() {
-  const cachedRatings = localStorage.getItem('ratings');
-  const cachedRequiredRoute = localStorage.getItem('requiredRoute');
-  const cachedMaybeRoute = localStorage.getItem('maybeRoute');
-
-  if (cachedRatings) {
-    ratings = JSON.parse(cachedRatings);
-  }
-  if (cachedRequiredRoute) {
-    requiredRoute = JSON.parse(cachedRequiredRoute);
-  }
-  if (cachedMaybeRoute) {
-    maybeRoute = JSON.parse(cachedMaybeRoute);
+  const cachedData = localStorage.getItem('sites_info');
+  if (cachedData) {
+    try {
+      const parsed = JSON.parse(cachedData);
+      ratings = parsed.ratings || {};
+      requiredRoute = parsed.RequiredRoute || [];
+      maybeRoute = parsed.MaybeRoute || [];
+    } catch (e) {
+      console.error('Ошибка при разборе sites_info:', e);
+    }
   }
 }
 
 function saveToCache(data) {
-  localStorage.setItem('ratings', JSON.stringify(data.ratings));
-  localStorage.setItem('requiredRoute', JSON.stringify(data.RequiredRoute));
-  localStorage.setItem('maybeRoute', JSON.stringify(data.MaybeRoute));
-  localStorage.setItem('settingsHash', data.hash);
+  const fullData = {
+    ratings: data.ratings,
+    RequiredRoute: data.RequiredRoute,
+    MaybeRoute: data.MaybeRoute,
+    hash: data.hash
+  };
+  localStorage.setItem('sites_info', JSON.stringify(fullData));
 }
 
 function computeHash(data) {
@@ -1739,7 +1760,17 @@ fetch('/code-parts/sites-settings.json')
   .then(response => response.json())
   .then(settings => {
     const currentHash = computeHash(settings);
-    const cachedHash = localStorage.getItem('settingsHash');
+    const cachedData = localStorage.getItem('sites_info');
+    let cachedHash = null;
+
+    if (cachedData) {
+      try {
+        const parsed = JSON.parse(cachedData);
+        cachedHash = parsed.hash;
+      } catch (e) {
+        console.error('Ошибка при разборе хэша из sites_info:', e);
+      }
+    }
 
     if (currentHash !== cachedHash) {
       ratings = settings.ratings;
@@ -1751,6 +1782,7 @@ fetch('/code-parts/sites-settings.json')
       renderData();
     }
   });
+
 
 
 const href = window.location.href;
@@ -2625,22 +2657,25 @@ let cachedCategoryContent = null;
 let pendingCategories = [];
 
 function loadAndApplyTranslations(languageTag) {
-  const cacheKey = `translations_${languageTag}`;
-  const translations = JSON.parse(localStorage.getItem(cacheKey));
+  const cacheKey = `category_translations`;
+  const cachedTranslations = JSON.parse(localStorage.getItem(cacheKey));
 
-  if (translations || languageTag === 'en' || languageTag === 'pl') {
+  if (cachedTranslations) {
+    const translations = cachedTranslations[languageTag];
     applyTranslations(document.body, languageTag, translations);
     updateURLs(categorySelector);
   } else {
-    fetch(`/code-parts/category-translations/${languageTag}.json`)
+    fetch(`/code-parts/category-import/category-translations.json`)
       .then(res => res.json())
-      .then(data => {
-        localStorage.setItem(cacheKey, JSON.stringify(data));
-        applyTranslations(document.body, languageTag, data);
+      .then(allTranslations => {
+        localStorage.setItem(cacheKey, JSON.stringify(allTranslations));
+        const translations = allTranslations[languageTag];
+        applyTranslations(document.body, languageTag, translations);
         updateURLs(categorySelector);
       });
   }
 }
+
 
 function applyTranslations(element, languageTag, translations) {
   translateElements(element, languageTag, translations);
@@ -2657,6 +2692,8 @@ function applyTranslations(element, languageTag, translations) {
 }
 
 function translateElements(element, languageTag, translations) {
+  if (!translations) return;
+
   element.querySelectorAll('.category-box-content span, .category .submenu li a, .category .submenu li .nonredir').forEach(el => {
     const text = el.textContent.trim();
     if (el.classList.contains('translated')) return;
@@ -2670,6 +2707,7 @@ function translateElements(element, languageTag, translations) {
     el.classList.add('translated');
   });
 }
+
 
 function createCategoryStructureFromBuilder(data) {
   const wrapper = document.createElement('div');
