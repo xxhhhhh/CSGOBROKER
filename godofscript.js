@@ -1,7 +1,65 @@
-if (localStorage.getItem('version') !== '1.01') {
-  localStorage.clear();
-  localStorage.setItem('version', '1.01');
-}
+
+// StorageHelper: централизованная обёртка для localStorage
+const StorageHelper = {
+  get(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  },
+
+  set(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch {}
+  },
+
+  getJSON(key) {
+    try {
+      const val = localStorage.getItem(key);
+      return val ? JSON.parse(val) : null;
+    } catch {
+      return null;
+    }
+  },
+
+  setJSON(key, obj) {
+    try {
+      localStorage.setItem(key, JSON.stringify(obj));
+    } catch {}
+  },
+
+  setWithExpiry(key, value, durationMs) {
+    const now = Date.now();
+    const data = {
+      value,
+      expiry: now + durationMs,
+    };
+    this.setJSON(key, data);
+  },
+
+  getWithExpiry(key) {
+    const item = this.getJSON(key);
+    if (!item) return null;
+    if (Date.now() > item.expiry) {
+      localStorage.removeItem(key);
+      return null;
+    }
+    return item.value;
+  },
+
+  initVersion({ versionKey = 'version', currentVersion }) {
+    const savedVersion = localStorage.getItem(versionKey);
+    if (savedVersion !== currentVersion) {
+      localStorage.clear();
+      localStorage.setItem(versionKey, currentVersion);
+    }
+  },
+};
+
+
+StorageHelper.initVersion({ currentVersion: '1.03' });
 
 function copyToClipboard(element, copyButton) {
   const text = element.textContent.trim();
@@ -32,7 +90,7 @@ function copyToClipboard(element, copyButton) {
 
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = themeToggleBtn.querySelector('i');
-let currentTheme = localStorage.getItem('theme') || getSystemPreferredTheme();
+let currentTheme = (StorageHelper.getJSON('theme_settings') || {}).theme || getSystemPreferredTheme() || getSystemPreferredTheme();
 
 applyTheme(currentTheme, false);
 
@@ -73,7 +131,7 @@ function applyTheme(theme, withTransition = true) {
 
   currentTheme = theme;
   document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
+  StorageHelper.setJSON('theme_settings', { ...(StorageHelper.getJSON('theme_settings') || {}), theme });
 
   const link = document.getElementById('theme-style');
 
@@ -196,7 +254,7 @@ forcemodsboxes();
     }
   
     function loadAllJsonData(filePath, callback) {
-      let allData = loadCachedData('mainMode_all') || { data: {}, hashes: {} };
+      let allData = loadCachedData('sites_load') || { data: {}, hashes: {} };
   
       const pageKey = filePath.split('/').pop().replace('.json', '');
   
@@ -210,7 +268,7 @@ forcemodsboxes();
             if (newHash !== allData.hashes[pageKey]) {
               allData.data[pageKey] = data;
               allData.hashes[pageKey] = newHash;
-              saveToCache('mainMode_all', allData);
+              saveToCache('sites_load', allData);
               callback(data);
             }
           });
@@ -221,7 +279,7 @@ forcemodsboxes();
             const newHash = computeHash(data);
             allData.data[pageKey] = data;
             allData.hashes[pageKey] = newHash;
-            saveToCache('mainMode_all', allData);
+            saveToCache('sites_load', allData);
             callback(data);
           });
       }
@@ -761,8 +819,21 @@ function insertReviewLinks(codes, codeValue, codesBinding) {
 
 
   
-    Promise.all([loadPageData(jsonFilePath), loadPageData(filterSettingsPath), loadPageData(reviewSettingsPath), loadPageData(translationsPath)])
-    .then(([pageData, filterSettings, reviewSettings, translations]) => {
+      Promise.all([
+        loadPageData(jsonFilePath),
+        StorageHelper.getJSON('reviews_preset') || Promise.all([
+          loadPageData(filterSettingsPath),
+          loadPageData(reviewSettingsPath),
+          loadPageData(translationsPath)
+        ]).then(([f, r, t]) => {
+          const preset = { filter: f, review: r, translation: t };
+          StorageHelper.setJSON('reviews_preset', preset);
+          return preset;
+        })
+      ]).then(([pageData, reviewsPreset]) => {
+        const filterSettings = reviewsPreset.filter;
+        const reviewSettings = reviewsPreset.review;
+        const translations = reviewsPreset.translation
       if (pageData && reviewSettings) {
           sortAndInsertContent(pageData.gamemodesContent, reviewSettings.gamemodesOrder, '.gamemodes .featuresbox .typesinside');
           insertFeatures(pageData.featuresContent, filterSettings, reviewSettings.featureOrder);
@@ -1179,7 +1250,7 @@ function insertReviewLinks(codes, codeValue, codesBinding) {
     const cacheExpiryKey = `${cacheKey}_expiry`;
     const maxCacheAge = 24 * 60 * 60 * 1000
   
-    const cachedDataRaw = localStorage.getItem(cacheKey);
+    const cachedDataRaw = StorageHelper.get(cacheKey);
     const cachedExpiry = parseInt(localStorage.getItem(cacheExpiryKey), 10);
   
     const insertInfobox = (texts) => {
@@ -1220,8 +1291,8 @@ function insertReviewLinks(codes, codeValue, codesBinding) {
       fetch('/code-parts/micro-parts/main-infobox/infobox-translations.json')
         .then(response => response.json())
         .then(allTranslations => {
-          localStorage.setItem(cacheKey, JSON.stringify(allTranslations));
-          localStorage.setItem(cacheExpiryKey, (Date.now() + maxCacheAge).toString());
+          StorageHelper.set(cacheKey, JSON.stringify(allTranslations));
+          StorageHelper.set(cacheExpiryKey, (Date.now() + maxCacheAge).toString());
   
           const texts = allTranslations[languageTag] || allTranslations[fallbackLang];
           insertInfobox(texts);
@@ -1306,20 +1377,20 @@ window.onload = function () {
       }
     
       function initializeRouteState() {
-        const buttonState = localStorage.getItem('routeButtonState');
+        const buttonState = StorageHelper.get('routeButtonState');
         if (buttonState === 'hidden') {
           toggleRouteBlocks();
           routeIcon.classList.replace('route-shield', 'route-shield-slash');
         }
     
-        const buttonTitle = localStorage.getItem('routeButtonTitle');
+        const buttonTitle = StorageHelper.get('routeButtonTitle');
         if (buttonTitle) {
           document.getElementById('button-route-filter').dataset.title = buttonTitle;
         }
       }
     
       const observer = new MutationObserver(() => {
-        const buttonState = localStorage.getItem('routeButtonState');
+        const buttonState = StorageHelper.get('routeButtonState');
         if (buttonState === 'hidden') {
           const routeBlocks = document.querySelectorAll('.box');
           routeBlocks.forEach(block => {
@@ -1335,9 +1406,9 @@ window.onload = function () {
       document.getElementById('button-route-filter').addEventListener('click', function () {
         toggleRouteBlocks();
     
-        const currentState = localStorage.getItem('routeButtonState') || 'visible';
+        const currentState = StorageHelper.get('routeButtonState') || 'visible';
         const newState = currentState === 'hidden' ? 'visible' : 'hidden';
-        localStorage.setItem('routeButtonState', newState);
+        StorageHelper.set('routeButtonState', newState);
     
         routeIcon.classList.toggle('route-shield');
         routeIcon.classList.toggle('route-shield-slash');
@@ -1346,7 +1417,7 @@ window.onload = function () {
         button.dataset.title = routeIcon.classList.contains('route-shield') ?
           'Скрыть сайты с Ограниченным Доступом' : 'Показать сайты с Ограниченным Доступом';
     
-        localStorage.setItem('routeButtonTitle', button.dataset.title);
+        StorageHelper.set('routeButtonTitle', button.dataset.title);
       });
     
       initializeRouteState();
@@ -1416,7 +1487,7 @@ const CACHE_KEY = 'search_data';
 const CACHE_DURATION_MS = 1000 * 60 * 60; // 1 час
 
 function loadCombinedSearchData() {
-  const cached = localStorage.getItem(CACHE_KEY);
+  const cached = StorageHelper.get(CACHE_KEY);
   const now = Date.now();
 
   if (cached) {
@@ -1438,7 +1509,7 @@ function loadCombinedSearchData() {
   ]).then(([configData, translationData]) => {
     const expiry = now + CACHE_DURATION_MS;
     const cacheObject = { configData, translationData, expiry };
-    localStorage.setItem(CACHE_KEY, JSON.stringify(cacheObject));
+    StorageHelper.set(CACHE_KEY, JSON.stringify(cacheObject));
     return { configData, translationData };
   });
 }
@@ -1708,7 +1779,7 @@ function handleRouteDisplay(boxElements) {
 }
 
 function loadCachedData() {
-  const cachedData = localStorage.getItem('sites_info');
+  const cachedData = StorageHelper.get('sites_info');
   if (cachedData) {
     try {
       const parsed = JSON.parse(cachedData);
@@ -1728,7 +1799,7 @@ function saveToCache(data) {
     MaybeRoute: data.MaybeRoute,
     hash: data.hash
   };
-  localStorage.setItem('sites_info', JSON.stringify(fullData));
+  StorageHelper.setJSON('sites_info', JSON.stringify(fullData));
 }
 
 function computeHash(data) {
@@ -1760,7 +1831,7 @@ fetch('/code-parts/sites-settings.json')
   .then(response => response.json())
   .then(settings => {
     const currentHash = computeHash(settings);
-    const cachedData = localStorage.getItem('sites_info');
+    const cachedData = StorageHelper.get('sites_info');
     let cachedHash = null;
 
     if (cachedData) {
@@ -1900,7 +1971,7 @@ function forcemodsboxes() {
 
   function loadModsJSON() {
     const cacheKey = "modsBox-v3-all";
-    const cached = localStorage.getItem(cacheKey);
+    const cached = StorageHelper.get(cacheKey);
 
     if (cached) {
       try {
@@ -1913,7 +1984,7 @@ function forcemodsboxes() {
     return fetch("/code-parts/micro-parts/insert-mods-box.json")
       .then(res => res.json())
       .then(data => {
-        localStorage.setItem(cacheKey, JSON.stringify(data));
+        StorageHelper.set(cacheKey, JSON.stringify(data));
         return data;
       });
   }
@@ -2658,7 +2729,7 @@ let pendingCategories = [];
 
 function loadAndApplyTranslations(languageTag) {
   const cacheKey = `category_translations`;
-  const cachedTranslations = JSON.parse(localStorage.getItem(cacheKey));
+  const cachedTranslations = JSON.parse(StorageHelper.get(cacheKey));
 
   if (cachedTranslations) {
     const translations = cachedTranslations[languageTag];
@@ -2668,7 +2739,7 @@ function loadAndApplyTranslations(languageTag) {
     fetch(`/code-parts/category-import/category-translations.json`)
       .then(res => res.json())
       .then(allTranslations => {
-        localStorage.setItem(cacheKey, JSON.stringify(allTranslations));
+        StorageHelper.set(cacheKey, JSON.stringify(allTranslations));
         const translations = allTranslations[languageTag];
         applyTranslations(document.body, languageTag, translations);
         updateURLs(categorySelector);
@@ -3624,16 +3695,16 @@ let resetPosition = false;
 let enableAnimations = false;
 let reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
 
-let particlesEnabled = localStorage.getItem("particlesEnabled") === "true";
-if (localStorage.getItem("particlesEnabled") === null) {
-  particlesEnabled = true;
-  localStorage.setItem("particlesEnabled", "true");
+let particles = localStorage.getItem("particles") === "true";
+if (localStorage.getItem("particles") === null) {
+  particles = true;
+  localStorage.setItem("particles", "true");
 }
 updateToggleIcon();
 setAccessibilityState();
 
 function setAccessibilityState() {
-  enableAnimations = !reduceMotionQuery.matches && particlesEnabled;
+  enableAnimations = !reduceMotionQuery.matches && particles;
 }
 reduceMotionQuery.addListener(setAccessibilityState);
 
@@ -3769,20 +3840,20 @@ function getPosition(offset, size) {
 function handleResize() {
   if (window.innerWidth <= 1365) {
     resetPosition = true;
-  } else if (particlesEnabled) {
+  } else if (particles) {
     resetPosition = false;
   }
 }
 
 function toggleParticles() {
-  particlesEnabled = !particlesEnabled;
-  localStorage.setItem("particlesEnabled", particlesEnabled);
+  particles = !particles;
+  localStorage.setItem("particles", particles);
 
   updateToggleIcon();
 
   const particleflakeContainer = document.querySelector("#particleflakeContainer");
 
-  if (particlesEnabled) {
+  if (particles) {
     setAccessibilityState();
 
     if (!document.querySelector(".particleflake")) {
@@ -3807,8 +3878,8 @@ function toggleParticles() {
 
 function updateToggleIcon() {
   const toggleIcon = document.querySelector("#particles-toggle .officon");
-  toggleIcon.classList.toggle("effect-on", particlesEnabled);
-  toggleIcon.classList.toggle("effect-off", !particlesEnabled);
+  toggleIcon.classList.toggle("effect-on", particles);
+  toggleIcon.classList.toggle("effect-off", !particles);
 }
 
 document.querySelector("#particles-toggle").addEventListener("click", toggleParticles);

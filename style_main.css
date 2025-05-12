@@ -13413,6 +13413,14 @@ div#results {
 
 @media screen and (max-width: 850px) {
 
+    .sitepage.items .navigation-section.first {
+        min-height: 60px;
+    }
+    
+    .sitepage.items .navigation-section.first:has(.solo-category) {
+        min-height: unset;
+    }
+
     .search-container.expanded {
         width: 100px;
     }
@@ -14883,44 +14891,3 @@ label.skins-category-switch:active {
 .lang-ru .skins-category-switch::before {
     content: 'Инвентарь по Цвету';
 }
-
-/* .topic-boxes-holder .topic-grandbox.sticker .topic-box {
-    height: 120px;
-} */
-
-/* .topic-grandbox.sticker .navigation-section {
-    justify-content: flex-start;
-
-} */
-
-/* .topic-boxes-holder .topic-grandbox.sticker .navigation-section.first span {
-    padding: 5px;
-    padding-right: 8px;
-    padding-left: 10px;
-    margin-left: 8px;
-    background-color: rgb(21 21 21);
-    position: relative;
-    border-radius: 5px;
-    z-index: 1;
-} */
-
-/* .topic-boxes-holder .topic-grandbox.sticker .navigation-section.first span::after,
-.topic-boxes-holder .topic-grandbox.sticker .navigation-section.first span::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: -4px;
-    transform: skewX(-20deg);
-    background: inherit !important;
-    border-radius: 0 5px 5px 0;
-    width: 20px;
-    height: 100%;
-    z-index: -1;
-}
-
-.topic-boxes-holder .topic-grandbox.sticker .navigation-section.first span::before {
-    right: unset;
-    left: -4px;
-    transform: skewX(20deg);
-    border-radius: 5px 0 0 5px;
-} */
