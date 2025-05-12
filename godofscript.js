@@ -1664,30 +1664,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
       
-    document.addEventListener('DOMContentLoaded', function () {
-      var replacementHTML = `
-          <div class="contact-content">
-              <a href="/contact-us" class="contact-box" id="contact">
-                  <span>Contact Us</span>
-              </a>
-              <a href="/terms-of-service" class="contact-box" id="tos">
-                  <span>Terms of Service</span>
-              </a>
-              <a href="/privacy-policy" class="contact-box" id="privacy">
-                  <span>Privacy Policy</span>
-              </a>
-          </div>
-      `;
-    
-      if (languageTag === 'ru') {
-          replacementHTML = replacementHTML.replace(/href="\/(.*?)"/g, 'href="/ru/$1"');
-      }
-  
-      var contactElement = document.querySelector('.contact');
-      if (contactElement) {
-          contactElement.innerHTML = replacementHTML;
-      }
-  });
+document.addEventListener('DOMContentLoaded', function () {
+  var replacementHTML = `
+      <div class="contact-content">
+          <a href="/contact-us" class="contact-box" id="contact">
+              <span>Contact Us</span>
+          </a>
+          <a href="/terms-of-service" class="contact-box" id="tos">
+              <span>Terms of Service</span>
+          </a>
+          <a href="/privacy-policy" class="contact-box" id="privacy">
+              <span>Privacy Policy</span>
+          </a>
+      </div>
+  `;
+
+  if (languageTag === 'ru') {
+      replacementHTML = replacementHTML.replace(/href="\/(.*?)"/g, 'href="/ru/$1"');
+  }
+
+  var contactElement = document.querySelector('.contact');
+  if (contactElement) {
+      contactElement.innerHTML = replacementHTML;
+  }
+});
   
 const btnfaq = document.getElementById("btnfaq");
 
@@ -1827,33 +1827,25 @@ function renderData() {
 loadCachedData();
 renderData();
 
-fetch('/code-parts/sites-settings.json')
-  .then(response => response.json())
-  .then(settings => {
-    const currentHash = computeHash(settings);
-    const cachedData = StorageHelper.get('sites_info');
-    let cachedHash = null;
+const cachedSettings = StorageHelper.getWithExpiry('sites_info');
 
-    if (cachedData) {
-      try {
-        const parsed = JSON.parse(cachedData);
-        cachedHash = parsed.hash;
-      } catch (e) {
-        console.error('Ошибка при разборе хэша из sites_info:', e);
-      }
-    }
+if (cachedSettings) {
+  useSettings(cachedSettings);
+} else {
+  fetch('/code-parts/sites-settings.json')
+    .then(response => response.json())
+    .then(settings => {
+      StorageHelper.setWithExpiry('sites_info', settings, 1000 * 60 * 60); // 1 час
+      useSettings(settings);
+    });
+}
 
-    if (currentHash !== cachedHash) {
-      ratings = settings.ratings;
-      requiredRoute = settings.RequiredRoute;
-      maybeRoute = settings.MaybeRoute;
-
-      saveToCache({ ...settings, hash: currentHash });
-
-      renderData();
-    }
-  });
-
+function useSettings(settings) {
+  ratings = settings.ratings;
+  requiredRoute = settings.RequiredRoute;
+  maybeRoute = settings.MaybeRoute;
+  renderData();
+}
 
 
 const href = window.location.href;
