@@ -9547,6 +9547,10 @@ div#results {
     opacity: 0;
 }
 
+:lang(en) .category-box-content span {
+    opacity: 1;
+}
+
 .category-box-content span.translated,
 .category-selector#notexist .category-box-content span {
     opacity: 1;
