@@ -382,7 +382,6 @@ nav .pages {
 .boxreview,
 .topicpage {
     position: relative;
-    left: 8px;
     height: auto;
     width: 1022px;
     border-radius: 10px;
@@ -393,6 +392,10 @@ nav .pages {
     background: linear-gradient(180deg, var(--darkygray) 30%, rgba(0, 0, 0, 0) 100%);
     min-height: 600px;
     padding-top: 10px;
+}
+
+.boxreview {
+    margin-left: 8px;
 }
 
 .boxdefaultpage {
@@ -582,6 +585,7 @@ nav .pages {
     padding-top: 0;
     background: unset;
     justify-content: flex-start;
+    margin-left: 8px;
 }
 
 .topic-grandbox {
@@ -1585,12 +1589,6 @@ nav .pages {
     margin: unset;
 }
 
-.box-skins.solo .slick-slider {
-    width: 98.8%;
-    margin-bottom: 8px !important;
-    margin-top: unset;
-}
-
 .box-skins.solo .box-skins-list {
     flex-wrap: wrap;
     align-content: flex-start;
@@ -1611,11 +1609,11 @@ nav .pages {
 
 .box-skins.solo .box-skins-list .skin {
     height: 200px;
-    width: 197px;
+    width: 200px;
     min-width: 157px;
-    max-width: 197px;
+    aspect-ratio: 1 / 1;
     transition: unset;
-    margin: 4px;
+    margin: 0;
 }
 
 .sitepage.items .box-skins .skin:hover {
@@ -1631,11 +1629,11 @@ nav .pages {
     transition: background .15s ease-in-out !important;
 }
 
-.sitepage.items .skin {
-    transition: all .2s ease-in-out !important;
-    width: 16.02% !important;
-    max-width: unset !important;
-    padding-left: unset !important;
+.sitepage.items .box-skins.solo .box-skins-list .skin {
+    transition: all .2s ease-in-out ;
+    width: 16.02%;
+    max-width: unset;
+    padding-left: unset;
 }
 
 .sitepage.items .skin img {
@@ -1651,7 +1649,26 @@ nav .pages {
     width: 0 !important;
     min-width: 0;
     margin: 0;
-    animation: fadeOut .2s ease-in-out forwards;
+    animation: fadeOut_items .3s ease-in-out forwards;
+}
+
+@keyframes fadeOut_items {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        z-index: 1;
+    }
+    1% {
+        z-index: 10;
+    }
+    99% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0);
+        z-index: 10;
+    }
+    100% {
+        display: none;
+    }
 }
 
 .sitepage.items .skin.disabled img {
@@ -1709,7 +1726,7 @@ nav .pages {
 }
 
 .topic-centralizer {
-    width: 98%;
+    width: 100%;
     min-height: 600px;
 }
 
@@ -1717,6 +1734,7 @@ nav .pages {
     display: flex;
     min-height: 500px;
     justify-content: flex-start;
+    flex-direction: column;
 }
 
 .box-skins {
@@ -2303,97 +2321,6 @@ h3 {
     order: -2;
 }
 
-/* CSFAIL BLOCK */
-
-.site-attention.event {
-    overflow: hidden;
-    line-height: 22px;
-}
-
-.site-attention.event span {
-    user-select: auto;
-    z-index: 1;
-}
-
-.site-attention.event strong.styled {
-    position: relative;
-    z-index: 1;
-    color: var(--main-color);
-    font-weight: 600;
-}
-
-.site-attention.event strong.code {
-    font-weight: 500;
-    background: rgb(21 21 21); 
-    padding: 3px 5px; 
-    border-radius: 5px;
-}
-
-.site-attention.event strong.item {
-    position: relative;
-    z-index: 1;
-    font-weight: 600;
-}
-
-.site-attention.event strong.item::after {
-    display: none;
-}
-
-.site-attention.event span.main-line {
-    width: 100%;
-    position: relative;
-    display: block;
-}
-
-.box .upd.csfail {
-    cursor: pointer;
-}
-
-.box .upd.csfail a {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 125px;
-    height: 135px;
-    background-repeat: no-repeat;
-    /* aspect-ratio: 1 / 1; */
-    background-image: url(/img/csfail-event.jpg);
-    background-size: contain;
-    transition: all .15s ease-in-out;
-    display: block;
-    opacity: 0;
-    user-select: none;
-    pointer-events: none;
-    border-radius: 5px;
-}
-
-.box .upd.csfail:hover a {
-    user-select: auto;
-    pointer-events: all;
-    opacity: 1;
-    margin-bottom: 30px;
-}
-
-.box .upd.csfail a:hover {
-    transform: scale(1.05);
-}
-
-.site-attention.event::after {
-    /* background-image: url(/img/icons/gamemodes/party-horn.svg); */
-    background-image: unset;
-    mask-image: url(/img/icons/gamemodes/party-horn.svg);
-    mask-repeat: no-repeat;
-    mask-size: 100%;
-    background-color: var(--main-color);
-    transform: rotate(-5deg);
-    position: absolute;
-    left: 11px;
-    top: 20px;
-    height: 150px !important;
-    width: 150px !important;
-    opacity: .12 !important;
-}
-
 .info-block {
     width: 96%;
     display: flex;
@@ -2621,18 +2548,6 @@ h3 {
     height: auto;
     filter: drop-shadow(0px 0px 4px black);
     margin-left: 10px;
-}
-
-.sitepage.items {
-    flex-direction: column;
-    align-items: center;
-}
-
-.sitepage.items .topicpage {
-    left: unset;
-    justify-content: center;
-    /* opacity: 0; */
-    width: 84%;
 }
 
 .siteleftpannel .navigation-menu {
@@ -3810,10 +3725,8 @@ nav #logo:hover {
 }
 
 .sitepage.items .box-skins {
-    width: 80%;
     justify-content: flex-start;
     flex-direction: column;
-    margin-left: 8px;
     margin-top: 8px;
     background: rgba(0, 0, 0, .3);
 }
@@ -3821,10 +3734,16 @@ nav #logo:hover {
 .sitepage.items .box-skins.solo .box-skins-list {
     justify-content: flex-start;
     overflow: hidden;
+    margin: 0 auto;
     margin-top: 4px;
-    padding: 0 4px;
+    width: calc(100% - 16px);
     padding-bottom: 4px;
     min-height: 500px;
+    gap: 8px;
+}
+
+.sitepage.items .topicpage {
+    width: 65.715%;
 }
 
 .item-topic-grandbox {
@@ -11966,6 +11885,7 @@ div#results {
     .sitepage.items .slider-container {
         left: unset;
         margin-bottom: 5px !important;
+        width: 98%;
     }
 
     .mods-box.mods-box.skins-box {
@@ -12304,6 +12224,7 @@ div#results {
         width: 98%;
         padding-left: unset;
         background-color: unset;
+        margin: unset !important;
     }
 
     .settings-menu {
@@ -12322,12 +12243,6 @@ div#results {
     .buttons-container {
         display: none;
     }
-/* 
-    label {
-        width: 11px !important;
-        height: 11px !important;
-        border-radius: 3px !important;
-    } */
 
     .slider-placer.topic {
         left: unset;
@@ -12931,7 +12846,7 @@ div#results {
     }
 
     .sitepage.topic.items .topic-centralizer {
-        padding-top: 10px;
+        padding-top: 4px;
     }
 
     .sitedetails .sitepros {
@@ -13686,10 +13601,11 @@ div#results {
 
     .sitepage.items .box-skins.solo .box-skins-list {
         justify-content: center;
-        padding-left: 0;
+        width: 100%;
         margin-top: unset;
-        padding: 0;
         min-height: 300px;
+        padding: unset;
+        gap: 4px;
     }
 
     .menu-toggle {
@@ -13887,10 +13803,10 @@ div#results {
         display: none;
     }
 
-    .box-skins.solo .box-skins-list .skin {
+    .sitepage.items .box-skins.solo .box-skins-list .skin {
         height: 120px;
-        margin: 2px;
-        width: 30% !important;
+        width: 30%;
+        max-width: 200px;
         flex-grow: 1;
     }
 
@@ -14891,3 +14807,17 @@ label.skins-category-switch:active {
 .lang-ru .skins-category-switch::before {
     content: 'Инвентарь по Цвету';
 }
+/* 
+header {
+    width: 65.6%;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 0 10px 10px;
+    background: var(--darkygray);
+  }
+
+  nav {
+    width: 96%;
+  }
+ */

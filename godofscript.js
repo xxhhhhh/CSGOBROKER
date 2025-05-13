@@ -2395,10 +2395,7 @@ $(document).ready(function() {
 } else if (path.includes('/reviews/') || path.includes('/mirrors/')) {
     var boxReview = $('.boxreview');
     boxReview.append(sliderContainer);
-} else if (path.includes('/topic/') && $('.box-skins.solo').length > 0) {
-    var boxSolo = $('.box-skins.solo');
-    boxSolo.append(sliderContainer);
-} else if (path.includes('/topic/') && $('.topicpage').length > 0) {
+}  else if (path.includes('/topic/') && $('.topicpage').length > 0) {
     var boxTopic = $('.topicpage');
     boxTopic.append(sliderContainer);
 } else if ($('.newest-boxes').length > 0) {
