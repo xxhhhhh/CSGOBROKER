@@ -3311,139 +3311,199 @@ $(document).ready(function() {
 
 window.initPayments = function () {
   const basePath = "/code-parts/site-infos";
-  const boxes = document.querySelectorAll(".boxes-holder .box");
-  const paymentsButton = document.querySelector(".payments-button");
   const boxesHolder = document.querySelector(".boxes-holder");
+  const boxes = Array.from(boxesHolder.querySelectorAll(".box"));
+  const paymentsButton = document.querySelector(".payments-button");
 
-  if (!paymentsButton || !boxesHolder) {
-    return;
-  }
+  if (!paymentsButton || !boxesHolder) return;
 
   let depositList, withdrawalList, depositInput, withdrawalInput;
   let paymentContainersLoaded = false;
 
+  const originalOrder = boxes.slice();
+
   function loadPaymentMethods(filePath) {
-    return fetch(filePath).then((response) => response.json());
+    return fetch(filePath).then(res => res.json());
   }
 
   function transformLinkToDiv(htmlString) {
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = htmlString.trim();
-    const linkElement = tempDiv.querySelector("a");
+    const link = tempDiv.querySelector("a");
+    if (!link) return htmlString;
 
-    if (linkElement) {
-      const ariaLabel = linkElement.getAttribute("aria-label") || "";
-      const className = linkElement.className || "";
-
-      const newDivElement = document.createElement("div");
-      newDivElement.className = `payment-method ${className}`;
-      newDivElement.textContent = ariaLabel;
-
-      return newDivElement.outerHTML;
-    }
-    return htmlString;
+    const aria = link.getAttribute("aria-label") || "";
+    const className = link.className || "";
+    const div = document.createElement("div");
+    div.className = `payment-method ${className}`;
+    div.textContent = aria;
+    return div.outerHTML;
   }
 
-  function addMethodWithoutDuplicates(methodArray, set, htmlString) {
+  function addMethodWithoutDuplicates(arr, set, html) {
     const tempDiv = document.createElement("div");
-    tempDiv.innerHTML = htmlString.trim();
-    const linkElement = tempDiv.querySelector("a");
+    tempDiv.innerHTML = html.trim();
+    const link = tempDiv.querySelector("a");
+    if (!link) return;
 
-    if (linkElement) {
-      const ariaLabel = linkElement.getAttribute("aria-label") || "";
-      if (!set.has(ariaLabel)) {
-        methodArray.push(htmlString);
-        set.add(ariaLabel);
-      }
+    const label = link.getAttribute("aria-label") || "";
+    if (!set.has(label)) {
+      arr.push(html);
+      set.add(label);
     }
   }
 
-  function populatePaymentList(listElement, methodsArray) {
-    listElement.innerHTML = "";
-    methodsArray.forEach((htmlString) => {
-      const transformedHtml = transformLinkToDiv(htmlString);
-      listElement.insertAdjacentHTML("beforeend", transformedHtml);
+  function populatePaymentList(container, list) {
+    container.innerHTML = "";
+    list.forEach(html => container.insertAdjacentHTML("beforeend", transformLinkToDiv(html)));
+  }
+
+  function reorderBoxesToFront() {
+    const visible = boxes.filter(box => !box.classList.contains("hidden-deposit") && !box.classList.contains("hidden-withdrawal"));
+    const sortedVisible = originalOrder.filter(b => visible.includes(b));
+    const hidden = originalOrder.filter(b => !visible.includes(b));
+    [...sortedVisible, ...hidden].forEach(box => boxesHolder.appendChild(box));
+  }
+
+  function restoreOriginalBoxOrder() {
+    originalOrder.forEach(box => boxesHolder.appendChild(box));
+  }
+
+  function allFiltersCleared() {
+    return boxes.every(box => !box.classList.contains("hidden-deposit") && !box.classList.contains("hidden-withdrawal"));
+  }
+
+  function animateBoxesSequentially(visibleBoxes) {
+    visibleBoxes.forEach((box, index) => {
+      const delay = (index + 1) * 0.15;
+      box.style.animationDelay = `${delay}s`;
+      box.classList.add("animate-in");
+      box.addEventListener("animationend", () => {
+        box.classList.remove("animate-in");
+        box.style.animationDelay = "";
+        box.classList.remove("was-hidden");
+      }, { once: true });
     });
+  }
+
+  function clearFilter(input, hiddenClass) {
+    input.value = "";
+    const visibleBoxes = [];
+    boxes.forEach(box => {
+      if (box.classList.contains(hiddenClass)) {
+        box.classList.remove(hiddenClass);
+        if (!box.classList.contains("hidden-deposit") && !box.classList.contains("hidden-withdrawal")) {
+          box.classList.add("was-hidden");
+          visibleBoxes.push(box);
+        }
+      }
+    });
+    animateBoxesSequentially(visibleBoxes);
+    if (allFiltersCleared()) restoreOriginalBoxOrder();
+    else reorderBoxesToFront();
+    const closeButton = input.closest("form").querySelector(".payment-close-button");
+    checkCloseButtonVisibility(closeButton, input, hiddenClass);
+    input.closest("form").querySelector(".selected")?.classList.remove("selected");
+  }
+
+  function filterBoxesByMethod(method, type) {
+    const methodLC = method.toLowerCase();
+    const hiddenClass = type === "deposit" ? "hidden-deposit" : "hidden-withdrawal";
+
+    const promises = boxes.map(box => {
+      const link = box.querySelector(".logobg a");
+      if (!link) return Promise.resolve();
+      const path = link.getAttribute("href").split("/").pop();
+      const filePath = `${basePath}/${path}.json`;
+      return fetch(filePath)
+        .then(res => res.json())
+        .then(data => {
+          const methods = (type === "deposit" ? data.firstMethodContent : data.secondMethodContent) || [];
+          const hasMethod = methods.some(html => {
+            const temp = document.createElement("div");
+            temp.innerHTML = html.trim();
+            const a = temp.querySelector("a");
+            return a && a.getAttribute("aria-label").toLowerCase() === methodLC;
+          });
+          if (hasMethod) {
+            box.classList.remove(hiddenClass);
+            if (!box.classList.contains("hidden-deposit") && !box.classList.contains("hidden-withdrawal")) {
+              box.classList.add("was-hidden");
+            }
+          } else {
+            box.classList.add(hiddenClass);
+          }
+        });
+    });
+
+    Promise.all(promises).then(() => {
+      const reveal = boxes.filter(b => b.classList.contains("was-hidden") && !b.classList.contains("hidden-deposit") && !b.classList.contains("hidden-withdrawal"));
+      animateBoxesSequentially(reveal);
+      if (allFiltersCleared()) restoreOriginalBoxOrder();
+      else reorderBoxesToFront();
+    });
+  }
+
+  function checkCloseButtonVisibility(btn, input, hiddenClass) {
+    const hasFilter = input.value !== "" || Array.from(boxes).some(b => b.classList.contains(hiddenClass));
+    btn.classList.toggle("visible", hasFilter);
   }
 
   const paymentsBlock = document.createElement("div");
   paymentsBlock.className = "payments-block";
 
-  const paymentsBlockSeparate1 = document.createElement("div");
-  paymentsBlockSeparate1.className = "payments-block-separate";
-  paymentsBlockSeparate1.appendChild(paymentsButton);
-  paymentsBlock.appendChild(paymentsBlockSeparate1);
+  const block1 = document.createElement("div");
+  block1.className = "payments-block-separate";
+  block1.appendChild(paymentsButton);
 
-  const paymentsBlockSeparate2 = document.createElement("div");
-  paymentsBlockSeparate2.className = "payments-block-separate";
-  paymentsBlock.appendChild(paymentsBlockSeparate2);
+  const block2 = document.createElement("div");
+  block2.className = "payments-block-separate";
+  paymentsBlock.append(block1, block2);
+  boxesHolder.insertBefore(paymentsBlock, boxesHolder.firstChild);
 
   const depositContainer = document.createElement("div");
   depositContainer.className = "payment-container";
   depositContainer.innerHTML = `
     <form id="payment-form">
-        <input type="text" id="filter-input" aria-label="Payment Filter" autocomplete="off" readonly>
-        <div class="methodlist payment-list"></div>
-        <div class="payment-close-button"><i class="officon cross"></i></div>
-    </form>
-  `;
-  paymentsBlockSeparate2.appendChild(depositContainer);
+      <input type="text" id="filter-input" autocomplete="off" readonly>
+      <div class="methodlist payment-list"></div>
+      <div class="payment-close-button"><i class="officon cross"></i></div>
+    </form>`;
 
   const withdrawalContainer = document.createElement("div");
   withdrawalContainer.className = "payment-container";
   withdrawalContainer.innerHTML = `
     <form id="withdrawal-form">
-        <input type="text" id="withdrawal-filter-input" aria-label="Withdrawal Filter" autocomplete="off" readonly>
-        <div class="methodlist payment-list" id="withdrawal-payment-list"></div>
-        <div class="payment-close-button"><i class="officon cross"></i></div>
-    </form>
-  `;
-  paymentsBlockSeparate2.appendChild(withdrawalContainer);
+      <input type="text" id="withdrawal-filter-input" autocomplete="off" readonly>
+      <div class="methodlist payment-list" id="withdrawal-payment-list"></div>
+      <div class="payment-close-button"><i class="officon cross"></i></div>
+    </form>`;
 
-  boxesHolder.insertBefore(paymentsBlock, boxesHolder.firstChild);
-
-  const translations = {
-    deposit: {
-      en: "Deposit",
-      ru: "Пополнение",
-      es: "Depósito",
-      tr: "Yatırma",
-      pt: "Depósito",
-      hi: "जमा करें"
-    },
-    withdraw: {
-      en: "Withdraw",
-      ru: "Вывод",
-      es: "Retiro",
-      tr: "Çekme",
-      pt: "Retirada",
-      hi: "निकासी"
-    }
-  };
-  
-  function getTranslation(key) {
-    return translations[key][languageTag] || translations[key]['en'];
-  }
-  
-  function applyTranslations() {
-    if (depositInput) {
-      depositInput.setAttribute("placeholder", getTranslation('deposit'));
-    }
-    if (withdrawalInput) {
-      withdrawalInput.setAttribute("placeholder", getTranslation('withdraw'));
-    }
-  }
+  block2.append(depositContainer, withdrawalContainer);
 
   depositList = depositContainer.querySelector(".payment-list");
   depositInput = depositContainer.querySelector("#filter-input");
   withdrawalList = withdrawalContainer.querySelector(".payment-list");
   withdrawalInput = withdrawalContainer.querySelector("#withdrawal-filter-input");
 
+  const translations = {
+    deposit: { en: "Deposit", ru: "Пополнение" },
+    withdraw: { en: "Withdraw", ru: "Вывод" }
+  };
+
+  function getTranslation(key) {
+    return translations[key][languageTag] || translations[key].en;
+  }
+
+  function applyTranslations() {
+    depositInput.setAttribute("placeholder", getTranslation("deposit"));
+    withdrawalInput.setAttribute("placeholder", getTranslation("withdraw"));
+  }
+
   applyTranslations();
 
-  paymentsButton.addEventListener("click", function () {
+  paymentsButton.addEventListener("click", () => {
     paymentsBlock.classList.toggle("visible");
-
     if (!paymentContainersLoaded) {
       setupInputClickEvents();
       setupCloseButtons();
@@ -3453,222 +3513,72 @@ window.initPayments = function () {
   });
 
   function setupInputClickEvents() {
-    if (depositInput) {
-      depositInput.addEventListener("click", function (event) {
-        event.stopPropagation();
-        hideAllPaymentLists();
-        depositList.classList.toggle("visible");
-        depositInput.classList.toggle("active");
-      });
-    }
-  
-    if (withdrawalInput) {
-      withdrawalInput.addEventListener("click", function (event) {
-        event.stopPropagation();
-        hideAllPaymentLists();
-        withdrawalList.classList.toggle("visible");
-        withdrawalInput.classList.toggle("active");
-      });
-    }
+    depositInput.addEventListener("click", e => {
+      e.stopPropagation();
+      hideAllPaymentLists();
+      depositList.classList.toggle("visible");
+      depositInput.classList.toggle("active");
+    });
+    withdrawalInput.addEventListener("click", e => {
+      e.stopPropagation();
+      hideAllPaymentLists();
+      withdrawalList.classList.toggle("visible");
+      withdrawalInput.classList.toggle("active");
+    });
   }
-  
+
   function hideAllPaymentLists() {
-    if (depositList) depositList.classList.remove("visible");
-    if (withdrawalList) withdrawalList.classList.remove("visible");
-    if (depositInput) depositInput.classList.remove("active");
-    if (withdrawalInput) withdrawalInput.classList.remove("active");
+    depositList.classList.remove("visible");
+    withdrawalList.classList.remove("visible");
+    depositInput.classList.remove("active");
+    withdrawalInput.classList.remove("active");
   }
-  
 
   function setupCloseButtons() {
-    const depositCloseButton = document.querySelector("#payment-form .payment-close-button");
-    const withdrawalCloseButton = document.querySelector("#withdrawal-form .payment-close-button");
-
-    if (depositCloseButton) {
-      depositCloseButton.addEventListener("click", function () {
-        clearFilter(depositInput, "hidden-deposit");
-        checkCloseButtonVisibility(depositCloseButton, depositInput, "hidden-deposit");
-      });
-    }
-
-    if (withdrawalCloseButton) {
-      withdrawalCloseButton.addEventListener("click", function () {
-        clearFilter(withdrawalInput, "hidden-withdrawal");
-        checkCloseButtonVisibility(withdrawalCloseButton, withdrawalInput, "hidden-withdrawal");
-      });
-    }
-
-    checkCloseButtonVisibility(depositCloseButton, depositInput, "hidden-deposit");
-    checkCloseButtonVisibility(withdrawalCloseButton, withdrawalInput, "hidden-withdrawal");
+    document.querySelector("#payment-form .payment-close-button")?.addEventListener("click", () => clearFilter(depositInput, "hidden-deposit"));
+    document.querySelector("#withdrawal-form .payment-close-button")?.addEventListener("click", () => clearFilter(withdrawalInput, "hidden-withdrawal"));
   }
 
-  function clearFilter(inputElement, hiddenClass) {
-    inputElement.value = "";
-    boxes.forEach((box) => {
-      if (box.classList.contains(hiddenClass)) {
-        box.classList.remove(hiddenClass);
-        box.classList.add("filter-applying");
-  
-        setTimeout(() => {
-          box.classList.remove("filter-applying");
-        }, 1000);
-      }
+  function loadPaymentMethodsOnDemand(depositList, withdrawalList) {
+    let depArr = [], withArr = [], depSet = new Set(), withSet = new Set();
+
+    boxes.forEach(box => {
+      const link = box.querySelector(".logobg a");
+      if (!link) return;
+
+      const path = link.getAttribute("href").split("/").pop();
+      const filePath = `${basePath}/${path}.json`;
+
+      loadPaymentMethods(filePath).then(data => {
+        (data.firstMethodContent || []).forEach(html => addMethodWithoutDuplicates(depArr, depSet, html));
+        (data.secondMethodContent || []).forEach(html => addMethodWithoutDuplicates(withArr, withSet, html));
+
+        populatePaymentList(depositList, depArr);
+        populatePaymentList(withdrawalList, withArr);
+      });
     });
-  
-    const closeButton = inputElement.closest("form").querySelector(".payment-close-button");
-    checkCloseButtonVisibility(closeButton, inputElement, hiddenClass);
-  
-    const selectedMethod = inputElement.closest("form").querySelector(".selected");
-    if (selectedMethod) {
-      selectedMethod.classList.remove("selected");
-    }
   }
 
-  function toggleMainModeSelection() {
-    const mainModeSelection = document.querySelector(".main-mode-selection");
-    if (!mainModeSelection) return;
-  
-    const hasHiddenClass = Array.from(boxes).some((box) => 
-      box.classList.contains("hidden-deposit") || box.classList.contains("hidden-withdrawal")
-    );
-  
-    if (hasHiddenClass) {
-      mainModeSelection.classList.add("hidden");
-    } else {
-      mainModeSelection.classList.remove("hidden");
-    }
-  }
-  
-  boxes.forEach((box) => {
-    const observer = new MutationObserver(toggleMainModeSelection);
-    observer.observe(box, { attributes: true, attributeFilter: ["class"] });
-  });
-  
-  toggleMainModeSelection();
-
-  function checkCloseButtonVisibility(closeButton, inputElement, hiddenClass) {
-    const isInputEmpty = inputElement.value === "";
-    const hasBoxesFiltered = Array.from(boxes).some((box) => box.classList.contains(hiddenClass));
-
-    if (!isInputEmpty || hasBoxesFiltered) {
-      closeButton.classList.add("visible");
-    } else {
-      closeButton.classList.remove("visible");
-    }
-  }
-
-  document.addEventListener("click", function (e) {
+  document.addEventListener("click", e => {
     if (e.target.classList.contains("payment-method")) {
-      const selectedMethod = e.target.textContent;
-      const inputElement = e.target.closest("form").querySelector("input");
-
-      inputElement.value = selectedMethod;
-      e.target.closest(".payment-list").classList.remove("visible");
-
-      const previouslySelected = e.target.closest(".payment-list").querySelector(".selected");
-      if (previouslySelected) {
-        previouslySelected.classList.remove("selected");
-      }
-
+      const method = e.target.textContent;
+      const form = e.target.closest("form");
+      const input = form.querySelector("input");
+      input.value = method;
+      form.querySelector(".payment-list").classList.remove("visible");
+      form.querySelector(".selected")?.classList.remove("selected");
       e.target.classList.add("selected");
 
-      if (inputElement.id === "filter-input") {
-        filterBoxesByMethod(selectedMethod, "deposit");
-        checkCloseButtonVisibility(document.querySelector("#payment-form .payment-close-button"), inputElement, "hidden-deposit");
-      } else if (inputElement.id === "withdrawal-filter-input") {
-        filterBoxesByMethod(selectedMethod, "withdrawal");
-        checkCloseButtonVisibility(document.querySelector("#withdrawal-form .payment-close-button"), inputElement, "hidden-withdrawal");
-      }
+      const type = input.id.includes("withdrawal") ? "withdrawal" : "deposit";
+      filterBoxesByMethod(method, type);
+      const btn = form.querySelector(".payment-close-button");
+      checkCloseButtonVisibility(btn, input, type === "withdrawal" ? "hidden-withdrawal" : "hidden-deposit");
     } else {
       hideAllPaymentLists();
     }
   });
-
-  function filterBoxesByMethod(selectedMethod, type) {
-    const selectedMethodLowerCase = selectedMethod.toLowerCase();
-
-    boxes.forEach((box) => {
-      const logoLink = box.querySelector(".logobg a");
-      if (logoLink) {
-        const path = logoLink.getAttribute("href");
-        const pageKey = path.split("/").pop();
-        const jsonFilePath = `${basePath}/${pageKey}.json`;
-
-        loadPaymentMethods(jsonFilePath).then((data) => {
-          if (data) {
-            let boxMethods = [];
-            if (type === "deposit" && data.firstMethodContent) {
-              boxMethods = data.firstMethodContent.map((method) => {
-                const tempDiv = document.createElement("div");
-                tempDiv.innerHTML = method.trim();
-                const linkElement = tempDiv.querySelector("a");
-                return linkElement ? linkElement.getAttribute("aria-label").toLowerCase() : "";
-              });
-            } else if (type === "withdrawal" && data.secondMethodContent) {
-              boxMethods = data.secondMethodContent.map((method) => {
-                const tempDiv = document.createElement("div");
-                tempDiv.innerHTML = method.trim();
-                const linkElement = tempDiv.querySelector("a");
-                return linkElement ? linkElement.getAttribute("aria-label").toLowerCase() : "";
-              });
-            }
-
-            const hasMethod = boxMethods.includes(selectedMethodLowerCase);
-            if (!hasMethod) {
-              if (type === "deposit") {
-                box.classList.add("hidden-deposit");
-              } else if (type === "withdrawal") {
-                box.classList.add("hidden-withdrawal");
-              }
-            } else {
-              if (type === "deposit") {
-                box.classList.remove("hidden-deposit");
-              } else if (type === "withdrawal") {
-                box.classList.remove("hidden-withdrawal");
-              }
-            }
-          }
-        });
-      }
-    });
-  }
-
-  function loadPaymentMethodsOnDemand(depositList, withdrawalList) {
-    let depositMethods = [];
-    let withdrawalMethods = [];
-    const depositSet = new Set();
-    const withdrawalSet = new Set();
-
-    boxes.forEach((box) => {
-      const logoLink = box.querySelector(".logobg a");
-      if (logoLink) {
-        const path = logoLink.getAttribute("href");
-        const pageKey = path.split("/").pop();
-        const jsonFilePath = `${basePath}/${pageKey}.json`;
-
-        loadPaymentMethods(jsonFilePath).then((data) => {
-          if (data) {
-            (data.firstMethodContent || []).forEach((method) => {
-              addMethodWithoutDuplicates(depositMethods, depositSet, method);
-            });
-
-            (data.secondMethodContent || []).forEach((method) => {
-              addMethodWithoutDuplicates(withdrawalMethods, withdrawalSet, method);
-            });
-
-            if (depositList) {
-              populatePaymentList(depositList, depositMethods);
-            }
-
-            if (withdrawalList) {
-              populatePaymentList(withdrawalList, withdrawalMethods);
-            }
-          }
-        });
-      }
-    });
-  }
 };
+
 
 window.initPayments();
 

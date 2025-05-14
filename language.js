@@ -138,54 +138,72 @@ document.addEventListener('DOMContentLoaded', function() {
     try {
       const response = await fetch(url);
       if (!response.ok) throw new Error(`Failed to fetch content from ${url}`);
-      
+
       const text = await response.text();
       const parser = new DOMParser();
       const doc = parser.parseFromString(text, "text/html");
-  
+
       const boxesHolder = doc.querySelector(".boxes-holder");
       if (!boxesHolder) return;
-  
+
       const targetElement = document.getElementById(targetId);
       if (!targetElement) return;
-  
+
+      // Insert the contents only into the existing target boxes-holder
       targetElement.innerHTML = boxesHolder.innerHTML;
-  
+
+      // Mark current boxes-holder as imported
+      targetElement.classList.add('imported');
+
+      // If not main-page, add animation-delay and animate-in class to child boxes
+      if (!targetElement.classList.contains('main-page')) {
+        const boxElements = targetElement.querySelectorAll('.box');
+        boxElements.forEach((box, index) => {
+          const delay = (index * 0.15).toFixed(2) + 's';
+          box.style.animationDelay = delay;
+          box.classList.add('animate-in');
+        });
+
+        setTimeout(() => {
+          boxElements.forEach((box) => {
+            box.style.animationDelay = '';
+            box.classList.remove('animate-in');
+          });
+        }, 5000);
+      }
+
       translateURLsIfNeeded(targetElement);
-  
+      window.initPayments();
+
       for (const boxId in ratings) {
         addStarRating(boxId, ratings[boxId]);
       }
 
       const boxes = Array.from(document.querySelectorAll('.box:not(.main)'));
-
       boxes.forEach(function (box) {
         var logoLink = box.querySelector(".logobg a");
         if (logoLink) {
           var href = logoLink.getAttribute("href");
-      
           var firstParagraph = box.querySelector(".content p:first-child");
           if (firstParagraph) {
             var newLink = document.createElement("a");
             newLink.href = href;
             newLink.textContent = firstParagraph.textContent;
             newLink.classList.add("boxtitle");
-      
             firstParagraph.replaceWith(newLink);
           }
         }
       });
-      
-  
+
       forcemodsboxes();
       const importedBoxes = targetElement.querySelectorAll(".box");
       await processBoxes(importedBoxes);
-  
+
       const elementsToTranslate = document.querySelectorAll(".singlemod-box, .boxes-holder-section");
       elementsToTranslate.forEach((box) => {
         translateElement(box, languageTag);
       });
-  
+
       if (isPageInAvaliable()) {
         updateURLs(sitesList);
       }

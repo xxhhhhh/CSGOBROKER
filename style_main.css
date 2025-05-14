@@ -9525,24 +9525,6 @@ div#results {
     background-repeat: no-repeat;
 }
 
-/* .object .crafting-table-screen::before {
-    content: "";
-    position: absolute;
-    top: 140px;
-    height: 70%;
-    width: 90%;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: var(--bg-topic);
-    filter: blur(115px);
-    opacity: .5;
-} */
-
-/* .object .crafting-table-screen.active::before {
-    animation: skinblur 3s infinite;
-} */
-
 .category-box-content span {
     opacity: 0;
 }
@@ -10961,15 +10943,17 @@ div#results {
     text-shadow: 1px 1px 3px rgb(100 100 100);
 }
 
-.boxes-holder.langimprt .box .rating-case-single {
-    animation-delay: .7s;
-    animation-fill-mode: both;
-    animation-name: langelementr;
+.boxes-holder:not(.main-page).langimprt .box {
+    opacity: 0;
 }
 
-.boxes-holder.langimprt .box .logobg,
-.boxes-holder.langimprt .box .content,
-.main-page.langimprt:has(.main-mode-selection)  {
+.boxes-holder.main-page.langimprt .box .logobg,
+.boxes-holder.langimprt .box:not(.animate-in),
+.boxes-holder.main-page.langimprt .box:hover .content {
+    opacity: 1;
+}
+
+.main-page.langimprt:has(.main-mode-selection) {
     animation-duration: .35s;
     animation-delay: .15s;
     animation-fill-mode: backwards;
@@ -10977,72 +10961,94 @@ div#results {
     backface-visibility: hidden;
 }
 
-.main-page.langimprt:has(.main-mode-selection)  {
-    animation-fill-mode: both;
-}
+@keyframes langelementr {
 
-.boxes-holder.langimprt:has(.box) .box {
-    animation-duration: .4s;
-    animation-fill-mode: both;
-    animation-name: langentr;
-    backface-visibility: hidden;
-}
+    from {
+        opacity: 0;
+    }
 
-.boxes-holder.main-page.langimprt .box .logobg {
-    opacity: 1;
+    to {
+        opacity: 1;
+    }
 }
-
-.boxes-holder.main-page.langimprt .box:hover .content {
-    opacity: 1;
-}
-
-.boxes-holder.main-page.langimprt .box .logobg,
-.boxes-holder.main-page.langimprt .box .content,
-.boxes-holder.main-page.langimprt .box .rating-case-single,
-.boxes-holder.main-page.langimprt:has(.box) .box {
-    animation: none;
-}
-
-/* .boxes-holder:not(.main-page).langimprt .box .logobg,
-.boxes-holder:not(.main-page).langimprt .box .content {
-    opacity: 1 !important;
-    animation: none !important;
-    backface-visibility: unset !important;
-    z-index: 10 !important;
-} */
 
 .box.hidden,
 .box.hidden-deposit,
-.box.hidden-withdrawal,
-.box.hidden-route {
-    width: 0 !important;
-    height: 0 !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-}
-
-.box.hidden-deposit .logobg,
-.box.hidden-withdrawal .logobg,
-.box.hidden-route .logobg,
-.box.hidden-deposit .content,
-.box.hidden-withdrawal .content,
-.box.hidden-route .content {
-    opacity: 0 !important;
-    transition: all .1s ease-in-out !important;
-    animation: none !important;
-}
-
-.box.hidden-hard {
-    transition: none !important;
-}
-
-.box.filter-applying .logobg,
-.box.filter-applying .content {
-    transition: all .8s ease-in-out !important;
-}
-
-.box.filter-applying .logobg .rating-case-single {
+.box.hidden-withdrawal {
     opacity: 0;
+    transform: translateY(-10px) scale(0);
+    width: 0;
+    height: 0;
+    margin: 0;
+    transition: all .4s ease-in-out, transform .3s ease-in-out;
+    display: none;
+}
+
+.box.animate-in {
+    animation: fadeInBoxes .4s ease-in-out forwards;
+}
+
+.box.hidden-route {
+    display: none;
+    visibility: hidden;
+    animation: none;
+}
+
+.boxes-holder:has(.box.animate-in),
+.boxes-holder:has(.box.hidden-deposit),
+.boxes-holder:has(.box.hidden-withdrawal) {
+    justify-content: flex-start;
+    padding-left: 33px;
+}
+
+.boxes-holder:has(.box.hidden-withdrawal) .main-mode-selection,
+.boxes-holder:has(.payments-block .payment-method) .main-mode-selection {
+    display: none;
+}
+
+.box.hidden-withdrawal .logobg,
+.box.hidden-withdrawal .content,
+.box.hidden-deposit .logobg,
+.box.hidden-deposit .content,
+.box.hidden-route .logobg,
+.box.hidden-route .content {
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    transform: scale(.5);
+}
+
+.box.was-hidden {
+    opacity: 0;
+    transition: none;
+}
+
+.box.animate-in .logobg .rating-case-single {
+    opacity: 1;
+}
+
+@keyframes fadeInBoxes {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0);
+        width: 0;
+        height: 0;
+        margin: 0;
+    }
+    99% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        width: 300px;
+        height: 400px;
+        margin: 18px 9px 0 9px;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        z-index: 1;
+        width: 300px;
+        height: 400px;
+        margin: 18px 9px 0 9px;
+    }
 }
 
 .pagination-button {
@@ -11117,31 +11123,6 @@ div#results {
 
 .topic-boxes-holder .topic-grandbox.sticker {
     opacity: 0;
-}
-
-@keyframes langentr {
-
-    from {
-        height: 0;
-        overflow: hidden;
-    }
-
-    to {
-        height: 400px;
-        overflow: unset;
-    }
-}
-
-
-@keyframes langelementr {
-
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }
 
 @media (display-mode: standalone) {
@@ -11258,10 +11239,6 @@ div#results {
     .topic-box .logobg,
     .topic-box .logobg.skincolors {
         margin: 5px;
-    }
-
-    .boxes-holder.langimprt .box .rating-case-single {
-        animation: none1;
     }
 
     .boxes-holder-name h3,
@@ -13831,16 +13808,34 @@ div#results {
         min-width: unset;
     }
 
-    @keyframes langentr {
+    .boxes-holder:has(.box.animate-in), 
+    .boxes-holder:has(.box.hidden-deposit), 
+    .boxes-holder:has(.box.hidden-withdrawal) {
+        padding-left: 2px;
+    }
 
-        from {
+    @keyframes fadeInBoxes {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px) scale(0);
+            width: 0;
             height: 0;
-            overflow: hidden;
+            margin: 0;
         }
-
-        to {
+        99% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            width: 48.94%;  
+            margin: 4px 2px 2px;
             height: 320px;
-            overflow: unset;
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            z-index: 1;
+            width: 48.94%;  
+            margin: 4px 2px 2px;
+            height: 320px;
         }
     }
 
@@ -14075,16 +14070,34 @@ div#results {
         height: 350px;
     }
 
-    @keyframes langentr {
-
-        from {
+    .boxes-holder:has(.box.animate-in), 
+    .boxes-holder:has(.box.hidden-deposit), 
+    .boxes-holder:has(.box.hidden-withdrawal) {
+        padding: unset;
+    }
+    
+    @keyframes fadeInBoxes {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px) scale(0);
+            width: 96%;
             height: 0;
-            overflow: hidden;
+            margin: 0;
         }
-
-        to {
+        99% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            width: 96%;
+            margin: 8px 0px 0 0px;
             height: 350px;
-            overflow: unset;
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            z-index: 1;
+            width: 96%;
+            margin: 8px 0px 0 0px;
+            height: 350px;
         }
     }
 
