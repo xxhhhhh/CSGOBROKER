@@ -170,6 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       translateURLsIfNeeded(targetElement);
+      forcemodsboxes();
       window.initPayments();
 
       for (const boxId in ratings) {
@@ -192,7 +193,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
 
-      forcemodsboxes();
       const importedBoxes = targetElement.querySelectorAll(".box");
       await processBoxes(importedBoxes);
 
