@@ -149,13 +149,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const targetElement = document.getElementById(targetId);
       if (!targetElement) return;
 
-      // Insert the contents only into the existing target boxes-holder
       targetElement.innerHTML = boxesHolder.innerHTML;
 
-      // Mark current boxes-holder as imported
       targetElement.classList.add('imported');
 
-      // If not main-page, add animation-delay and animate-in class to child boxes
       if (!targetElement.classList.contains('main-page')) {
         const boxElements = targetElement.querySelectorAll('.box');
         boxElements.forEach((box, index) => {

@@ -11001,9 +11001,17 @@ div#results {
     padding-left: 33px;
 }
 
+.boxes-holder:has(.box.hidden-deposit) .main-mode-selection,
 .boxes-holder:has(.box.hidden-withdrawal) .main-mode-selection,
 .boxes-holder:has(.payments-block .payment-method) .main-mode-selection {
     display: none;
+}
+
+.boxes-holder:has(.box.hidden-deposit) .mods-box.mods-box.skins-box,
+.boxes-holder:has(.box.hidden-withdrawal) .mods-box.mods-box.skins-box,
+.boxes-holder:has(.box.animate-in) .mods-box.mods-box.skins-box {
+    margin-left: 9px;
+    width: 96.1%;
 }
 
 .box.hidden-withdrawal .logobg,
@@ -11870,11 +11878,18 @@ div#results {
     }
 
     .mods-box.mods-box.skins-box {
-        margin-top: unset;
-        margin-bottom: unset;
+        margin-bottom: -2px;
         min-height: 46px;
         height: auto;
     }
+
+    .boxes-holder:has(.box.hidden-deposit) .mods-box.mods-box.skins-box,
+    .boxes-holder:has(.box.hidden-withdrawal) .mods-box.mods-box.skins-box,
+    .boxes-holder:has(.box.animate-in) .mods-box.mods-box.skins-box {
+        margin-left: unset;
+        width: 100%;
+    }
+
 
     .instruction.double h3 {
         font-size: 18px !important;
@@ -12903,6 +12918,7 @@ div#results {
         width: 24%;
         min-width: 223px;
         filter: none;
+        flex-grow: 1;
     }
 
     .box.main {
@@ -14075,7 +14091,7 @@ div#results {
     .boxes-holder:has(.box.hidden-withdrawal) {
         padding: unset;
     }
-    
+
     @keyframes fadeInBoxes {
         0% {
             opacity: 0;
