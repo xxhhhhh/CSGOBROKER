@@ -1,16 +1,3 @@
-function extractLanguageTagFromHTML() {
-  const htmlElement = document.querySelector('html');
-  if (htmlElement) {
-    const langAttribute = htmlElement.getAttribute('lang');
-    if (langAttribute) {
-      return langAttribute.split('-')[0];
-    }
-  }
-  return null;
-}
-
-var languageTag = extractLanguageTagFromHTML();
-
 $(document).ready(function () {
     const currentPath = window.location.pathname;
     if (
@@ -968,22 +955,11 @@ $(document).ready(function () {
           translateTypes(languageTag);
         
           function getSkinsToggleState() {
-            const stored = localStorage.getItem("SkinsToggleState");
-            if (stored) {
-              try {
-                return JSON.parse(stored);
-              } catch {
-                return { showprice: true, showrarity: true };
-              }
-            } else {
-              const defaultState = { showprice: true, showrarity: true };
-              localStorage.setItem("SkinsToggleState", JSON.stringify(defaultState));
-              return defaultState;
-            }
+            return getLocalStorageState("SkinsToggleState", { showprice: true, showrarity: true });
           }
           
           function setSkinsToggleState(newState) {
-            localStorage.setItem("SkinsToggleState", JSON.stringify(newState));
+            setLocalStorageState("SkinsToggleState", newState);
           }
           
           const toggleState = getSkinsToggleState();
@@ -1241,23 +1217,22 @@ if (
   window.location.pathname.includes("/stickers/") ||
   window.location.pathname.includes("/collections/")
 ) {
-  const languageTag = document.documentElement.lang || "en";
 
   async function loadNavDataWithCache() {
     const cacheKey = "topicNavCache";
     const cacheTimeKey = "topicNavCache-time";
-    const cached = localStorage.getItem(cacheKey);
-    const cachedTime = localStorage.getItem(cacheTimeKey);
+    const cached = StorageHelper.get(cacheKey);
+    const cachedTime = StorageHelper.get(cacheTimeKey);
     const maxAge = 1000 * 60 * 60 * 24;
 
-    if (cached && cachedTime && (Date.now() - cachedTime < maxAge)) {
+    if (cached && cachedTime && Date.now() - +cachedTime < maxAge) {
       return JSON.parse(cached);
     }
 
     const response = await fetch("/code-parts/topics/topics-nav-items.json");
     const data = await response.json();
-    localStorage.setItem(cacheKey, JSON.stringify(data));
-    localStorage.setItem(cacheTimeKey, Date.now().toString());
+    StorageHelper.set(cacheKey, JSON.stringify(data));
+    StorageHelper.set(cacheTimeKey, Date.now().toString());
     return data;
   }
 
@@ -1635,12 +1610,12 @@ if (
 }
 
 function setLocalStorageState(key, value) {
-    localStorage.setItem(key, JSON.stringify(value));
+  StorageHelper.setJSON(key, value);
 }
 
 function getLocalStorageState(key, defaultValue) {
-    const storedValue = localStorage.getItem(key);
-    return storedValue ? JSON.parse(storedValue) : defaultValue;
+  const storedValue = StorageHelper.getJSON(key);
+  return storedValue != null ? storedValue : defaultValue;
 }
 
 if (window.location.pathname.includes('/sticker-crafts/')) {
@@ -1712,62 +1687,6 @@ if (window.location.pathname.includes('/sticker-crafts/')) {
     }
 
   importStickerCrafts();
-}
-
-function updateURLs(parentElement) {
-  if (!parentElement) {
-    return;
-  }
-
-  const links = parentElement.querySelectorAll('a[href]');
-  const languageTag = extractLanguageTagFromHTML();
-
-  if (!languageTag || languageTag === 'en' || languageTag === 'pl') {
-    return;
-  }
-
-  links.forEach(link => {
-    if (link.closest('div.instruction') || link.closest('div.instruction-mirrors') || link.closest('div.site-attention')) {
-      return;
-    }
-
-    if (languageTag === 'tr' && link.classList.contains('mirror-redirect') || languageTag === 'es' && link.classList.contains('mirror-redirect')) {
-      return;
-    }
-
-    let href = link.getAttribute('href');
-
-    if (href.includes('/topic') && languageTag !== 'ru') {
-      return;
-    }
-
-    if (href === '/') {
-      href = `/${languageTag}/`;
-    } else {
-      const pathSegments = href.split('/');
-      
-      if (pathSegments.length > 1 && pathSegments[1].length === 2) {
-        return;
-      }
-      
-      if (href.startsWith('/')) {
-        href = `/${languageTag}${href}`;
-      } else {
-        href = `/${languageTag}/${href}`;
-      }
-    }
-
-    if (!link.classList.contains('visit') && !link.classList.contains('notupdt')) {
-      if (languageTag === 'pt' || languageTag === 'hi') {
-        if (!link.classList.contains('review-button') && !link.classList.contains('boxtitle') && !link.closest('.box')) {
-          link.setAttribute('href', href);
-        }
-      } else {
-        link.setAttribute('href', href);
-      }
-    }
-    
-  });
 }
 
 if (window.location.pathname.includes('/topic/skins/')) {
@@ -2007,27 +1926,26 @@ document.addEventListener("DOMContentLoaded", async function () {
     return res.json();
   }
 
-  async function getCachedNavButtons() {
-    const cached = localStorage.getItem(cacheKey);
-    let parsedCache = cached ? JSON.parse(cached) : null;
+    async function getCachedNavButtons() {
+        const cached = StorageHelper.getJSON(cacheKey);
+        let parsedCache = cached;
 
-    try {
-      const freshData = await fetchNavButtons();
+        try {
+          const freshData = await fetchNavButtons();
 
-      // Сравниваем с кэшем
-      const isEqual = JSON.stringify(freshData) === JSON.stringify(parsedCache?.data);
+          const isEqual = JSON.stringify(freshData) === JSON.stringify(parsedCache?.data);
 
-      if (!parsedCache || now - parsedCache.timestamp > cacheTTL || !isEqual) {
-        localStorage.setItem(cacheKey, JSON.stringify({ timestamp: now, data: freshData }));
-        return freshData;
+          if (!parsedCache || now - parsedCache.timestamp > cacheTTL || !isEqual) {
+            StorageHelper.setJSON(cacheKey, { timestamp: now, data: freshData });
+            return freshData;
+          }
+
+          return parsedCache.data;
+        } catch (err) {
+          console.error("Ошибка загрузки topics-nav.json:", err);
+          return parsedCache?.data || [];
+        }
       }
-
-      return parsedCache.data;
-    } catch (err) {
-      console.error("Ошибка загрузки topics-nav.json:", err);
-      return parsedCache?.data || [];
-    }
-  }
 
   getCachedNavButtons().then((navButtons) => {
     const currentHref = location.pathname.replace(/\.html$/, "");
@@ -2038,37 +1956,35 @@ document.addEventListener("DOMContentLoaded", async function () {
     navButtons.forEach(btn => {
       const box = document.createElement("div");
       box.className = "singlemod-box";
-    
+
       const title = languageTag === "ru" ? btn["data-title-ru"] || btn.alt : btn.alt;
       box.setAttribute("data-title", title || "");
-    
+
       const link = document.createElement("a");
       link.href = btn.href;
       link.className = "singlemod-select";
-    
+
       const img = document.createElement("img");
       img.src = btn.img;
       img.alt = btn.alt || "";
-    
+
       link.appendChild(img);
       box.appendChild(link);
-    
-      // Только для самого точного совпадения
+
       if (currentHref.includes(btn.href) && btn.href === bestMatch) {
         box.classList.add("active");
       }
-    
+
       topicFilterContainer.appendChild(box);
     });
 
     topicBoxesHolder.insertBefore(topicFilterContainer, topicBoxesHolder.firstChild);
-    
+
     if (languageTag === "ru") {
       updateURLs(topicFilterContainer);
     }
   });
 
-  // === ФИЛЬТРАЦИЯ ===
   filterInput.addEventListener("input", () => {
     const value = filterInput.value.trim().toLowerCase();
     const itemSelector = isStickerCrafts ? ".topic-grandbox.sticker" : ".topic-box";
@@ -2117,6 +2033,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   });
 })();
+
 
 
 

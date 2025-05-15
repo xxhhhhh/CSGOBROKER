@@ -1,5 +1,3 @@
-
-// StorageHelper: централизованная обёртка для localStorage
 const StorageHelper = {
   get(key) {
     try {
@@ -59,7 +57,13 @@ const StorageHelper = {
 };
 
 
-StorageHelper.initVersion({ currentVersion: '1.03' });
+StorageHelper.initVersion({ currentVersion: '1.05' });
+
+function isRuPage(pathname) {
+  return pathname.startsWith('/ru/') || pathname === '/ru' || pathname === '/ru.html';
+}
+
+
 
 function copyToClipboard(element, copyButton) {
   const text = element.textContent.trim();
@@ -183,7 +187,6 @@ forcemodsboxes();
     }
   
     const links = parentElement.querySelectorAll('a[href]');
-    const languageTag = extractLanguageTagFromHTML();
   
     if (!languageTag || languageTag === 'en' || languageTag === 'pl') {
       return;
@@ -239,15 +242,6 @@ forcemodsboxes();
   
   document.addEventListener("DOMContentLoaded", function () {
     const basePath = "/code-parts/site-infos";
-  
-    function loadCachedData(key) {
-      const cachedData = localStorage.getItem(key);
-      return cachedData ? JSON.parse(cachedData) : null;
-    }
-  
-    function saveToCache(key, data) {
-      localStorage.setItem(key, JSON.stringify(data));
-    }
   
     function computeHash(data) {
       return btoa(JSON.stringify(data));
@@ -1251,7 +1245,7 @@ function insertReviewLinks(codes, codeValue, codesBinding) {
     const maxCacheAge = 24 * 60 * 60 * 1000
   
     const cachedDataRaw = StorageHelper.get(cacheKey);
-    const cachedExpiry = parseInt(localStorage.getItem(cacheExpiryKey), 10);
+    const cachedExpiry = parseInt(StorageHelper.get(cacheExpiryKey), 10);
   
     const insertInfobox = (texts) => {
       const html = `
@@ -1340,7 +1334,6 @@ window.onload = function () {
       '/terms-of-service',
       '/contact-us'
     ];
-    const isRuPage = pathname.startsWith('/ru/') || pathname === '/ru' || pathname === '/ru.html';
     const isExcludedPath = excludedPaths.some(path => pathname.includes(path));
 
     let buttonsContainer = document.querySelector('.buttons-container-page');
@@ -1356,7 +1349,6 @@ window.onload = function () {
       }
     }
     
-
     if (isRuPage && !isExcludedPath && !document.querySelector('#button-route-filter')) {
       const routeButtonContainer = document.createElement('div');
       routeButtonContainer.className = 'settings-menu';
@@ -1789,34 +1781,6 @@ function handleRouteDisplay(boxElements) {
   });
 }
 
-function loadCachedData() {
-  const cachedData = StorageHelper.get('sites_info');
-  if (cachedData) {
-    try {
-      const parsed = JSON.parse(cachedData);
-      ratings = parsed.ratings || {};
-      requiredRoute = parsed.RequiredRoute || [];
-      maybeRoute = parsed.MaybeRoute || [];
-    } catch (e) {
-      console.error('Ошибка при разборе sites_info:', e);
-    }
-  }
-}
-
-function saveToCache(data) {
-  const fullData = {
-    ratings: data.ratings,
-    RequiredRoute: data.RequiredRoute,
-    MaybeRoute: data.MaybeRoute,
-    hash: data.hash
-  };
-  StorageHelper.setJSON('sites_info', JSON.stringify(fullData));
-}
-
-function computeHash(data) {
-  return btoa(JSON.stringify(data));
-}
-
 function renderData() {
   const boxesHolder = document.querySelector('.boxes-holder, .sitealternatesboxes');
   if (boxesHolder) {
@@ -1835,7 +1799,6 @@ function renderData() {
   }
 }
 
-loadCachedData();
 renderData();
 
 const cachedSettings = StorageHelper.getWithExpiry('sites_info');
@@ -3622,90 +3585,13 @@ window.initPayments = function () {
   });
 };
 
-
 window.initPayments();
 
-let particleflakes = [];
 
-let browserWidth;
-let browserHeight;
-
-let numberOfParticleflakes = 45;
-
-let resetPosition = false;
-
-let enableAnimations = false;
-let reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
-
-let particles = localStorage.getItem("particles") === "true";
-if (localStorage.getItem("particles") === null) {
-  particles = true;
-  localStorage.setItem("particles", "true");
-}
-updateToggleIcon();
-setAccessibilityState();
-
-function setAccessibilityState() {
-  enableAnimations = !reduceMotionQuery.matches && particles;
-}
-reduceMotionQuery.addListener(setAccessibilityState);
-
-function setup() {
-  if (enableAnimations && window.innerWidth > 1365) {
-    window.addEventListener("DOMContentLoaded", generateParticleflakes, false);
-    window.addEventListener("resize", handleResize, false);
-  }
-}
-setup();
-
-class Particleflake {
-  constructor(element, speed, xPos, yPos) {
-    this.element = element;
-    this.speed = speed;
-    this.xPos = xPos;
-    this.yPos = yPos;
-    this.scale = 1;
-
-    this.counter = 0;
-    this.sign = Math.random() < 0.5 ? 1 : -1;
-
-    this.element.style.opacity = (0.1 + Math.random()) / 3;
-  }
-
-  update(delta) {
-    this.counter += (this.speed / 5000) * delta;
-    this.xPos += (this.sign * delta * this.speed * Math.cos(this.counter)) / 40;
-    this.yPos += Math.sin(this.counter) / 40 + (this.speed * delta) / 30;
-    this.scale = 0.5 + Math.abs((10 * Math.cos(this.counter)) / 20);
-
-    setTransform(
-      Math.round(this.xPos),
-      Math.round(this.yPos),
-      this.scale,
-      this.element
-    );
-
-    if (this.yPos > browserHeight) {
-      this.yPos = -50;
-    }
-  }
-}
-
-function setTransform(xPos, yPos, scale, el) {
-  el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) scale(${scale}, ${scale})`;
-}
-
-function generateParticleflakes() {
-  const originalParticleflake = document.querySelector(".particleflake");
-  if (!originalParticleflake) return; 
-
-  const particleflakeContainer = originalParticleflake.parentNode;
-  particleflakeContainer.style.display = "block";
-
-  browserWidth = document.documentElement.clientWidth;
-  browserHeight = document.documentElement.clientHeight;
-
-  const backgrounds = [
+(() => {
+  const PARTICLE_COUNT = 45;
+  const FRAME_INTERVAL = 1900 / 60;
+  const BACKGROUNDS = [
     "url(/img/icons/main-modes/rust-logo.png)",
     "url(/img/icons/main-modes/cs2-logo.png)",
     "url(/img/icons/main-modes/dota2-logo.png)",
@@ -3713,119 +3599,223 @@ function generateParticleflakes() {
     "url(/img/icons/main-modes/steam.png)"
   ];
 
-  particleflakes.forEach((particleflake) => {
-    particleflake.element.remove();
-  });
-  particleflakes = [];
+  let particleflakes = [];
+  let previousTime = performance.now();
+  let resetPosition = false;
+  let enableAnimations = false;
 
-  for (let i = 0; i < numberOfParticleflakes; i++) {
-    const particleflakeClone = originalParticleflake.cloneNode(true);
-    particleflakeContainer.appendChild(particleflakeClone);
-
-    const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-    particleflakeClone.style.backgroundImage = randomBackground;
-
-    const initialXPos = getPosition(50, browserWidth);
-    const initialYPos = getPosition(50, browserHeight);
-
-    const speed = 5 + Math.random() * 40;
-
-    const particleflakeObject = new Particleflake(
-      particleflakeClone,
-      speed,
-      initialXPos,
-      initialYPos
-    );
-    particleflakes.push(particleflakeObject);
-  }
-
-  particleflakeContainer.removeChild(originalParticleflake);
-  requestAnimationFrame(moveParticleflakes);
-}
-
-let frames_per_second = 60;
-let frame_interval = 1900 / frames_per_second;
-
-let previousTime = performance.now();
-let delta = 1;
-
-function moveParticleflakes(currentTime) {
-  delta = (currentTime - previousTime) / frame_interval;
-
-  if (enableAnimations) {
-    for (const particleflake of particleflakes) {
-      particleflake.update(delta);
-    }
-  }
-
-  previousTime = currentTime;
-
-  if (resetPosition) {
-    browserWidth = document.documentElement.clientWidth;
-    browserHeight = document.documentElement.clientHeight;
-
-    for (const particleflake of particleflakes) {
-      particleflake.xPos = getPosition(50, browserWidth);
-      particleflake.yPos = getPosition(50, browserHeight);
-    }
-
-    resetPosition = false;
-  }
-
-  requestAnimationFrame(moveParticleflakes);
-}
-
-function getPosition(offset, size) {
-  return Math.round(-1 * offset + Math.random() * (size + 2 * offset));
-}
-
-function handleResize() {
-  if (window.innerWidth <= 1365) {
-    resetPosition = true;
-  } else if (particles) {
-    resetPosition = false;
-  }
-}
-
-function toggleParticles() {
-  particles = !particles;
-  localStorage.setItem("particles", particles);
-
-  updateToggleIcon();
+  const reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
+  let particles = StorageHelper.get("particles") !== "false";
+  StorageHelper.set("particles", particles);
 
   const particleflakeContainer = document.querySelector("#particleflakeContainer");
 
-  if (particles) {
-    setAccessibilityState();
+  class Particleflake {
+    constructor(element, speed, xPos, yPos) {
+      this.element = element;
+      this.speed = speed;
+      this.xPos = xPos;
+      this.yPos = yPos;
+      this.scale = 1;
+      this.counter = 0;
+      this.sign = Math.random() < 0.5 ? 1 : -1;
 
-    if (!document.querySelector(".particleflake")) {
-      const originalParticleflake = document.createElement("div");
-      originalParticleflake.className = "particleflake";
-
-      particleflakeContainer.appendChild(originalParticleflake);
+      this.element.style.opacity = (0.1 + Math.random()) / 3;
     }
+
+    update(delta, width, height) {
+      this.counter += (this.speed / 5000) * delta;
+      this.xPos += (this.sign * delta * this.speed * Math.cos(this.counter)) / 40;
+      this.yPos += Math.sin(this.counter) / 40 + (this.speed * delta) / 30;
+      this.scale = 0.5 + Math.abs((10 * Math.cos(this.counter)) / 20);
+
+      this.element.style.transform = `translate3d(${Math.round(this.xPos)}px, ${Math.round(this.yPos)}px, 0) scale(${this.scale})`;
+
+      if (this.yPos > height) {
+        this.yPos = -50;
+      }
+    }
+  }
+
+  function init() {
+    updateToggleIcon();
+    setAccessibilityState();
+    reduceMotionQuery.addListener(setAccessibilityState);
+
+    document.querySelector("#particles-toggle").addEventListener("click", toggleParticles);
+
+    if (enableAnimations && window.innerWidth > 1365) {
+      window.addEventListener("DOMContentLoaded", generateParticleflakes);
+      window.addEventListener("resize", handleResize);
+    }
+  }
+
+  function setAccessibilityState() {
+    enableAnimations = !reduceMotionQuery.matches && particles;
+  }
+
+  function getRandomPosition(offset, size) {
+    return Math.round(-offset + Math.random() * (size + offset * 2));
+  }
+
+  function generateParticleflakes() {
+    const template = document.querySelector(".particleflake");
+    if (!template) return;
+
+    const width = document.documentElement.clientWidth;
+    const height = document.documentElement.clientHeight;
+
+    particleflakeContainer.style.display = "block";
+
+    // Remove existing
+    particleflakes.forEach(p => p.element.remove());
+    particleflakes = [];
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const clone = template.cloneNode(true);
+      clone.style.backgroundImage = BACKGROUNDS[Math.floor(Math.random() * BACKGROUNDS.length)];
+      particleflakeContainer.appendChild(clone);
+
+      const x = getRandomPosition(50, width);
+      const y = getRandomPosition(50, height);
+      const speed = 5 + Math.random() * 40;
+
+      particleflakes.push(new Particleflake(clone, speed, x, y));
+    }
+
+    template.remove();
+    requestAnimationFrame(animate);
+  }
+
+  function animate(currentTime) {
+    const delta = (currentTime - previousTime) / FRAME_INTERVAL;
+    previousTime = currentTime;
+
+    const width = document.documentElement.clientWidth;
+    const height = document.documentElement.clientHeight;
 
     if (enableAnimations) {
-      generateParticleflakes();
-      window.addEventListener("resize", handleResize, false);
+      for (const particle of particleflakes) {
+        if (resetPosition) {
+          particle.xPos = getRandomPosition(50, width);
+          particle.yPos = getRandomPosition(50, height);
+        } else {
+          particle.update(delta, width, height);
+        }
+      }
     }
-  } else {
-    particleflakes.forEach((particleflake) => {
-      particleflake.element.remove();
+
+    resetPosition = false;
+    requestAnimationFrame(animate);
+  }
+
+  function handleResize() {
+    if (window.innerWidth <= 1365) {
+      resetPosition = true;
+    } else if (particles) {
+      resetPosition = false;
+    }
+  }
+
+  function toggleParticles() {
+    particles = !particles;
+    StorageHelper.set("particles", particles);
+    updateToggleIcon();
+
+    if (particles) {
+      setAccessibilityState();
+
+      if (!document.querySelector(".particleflake")) {
+        const el = document.createElement("div");
+        el.className = "particleflake";
+        particleflakeContainer.appendChild(el);
+      }
+
+      if (enableAnimations) {
+        generateParticleflakes();
+        window.addEventListener("resize", handleResize);
+      }
+    } else {
+      particleflakes.forEach(p => p.element.remove());
+      particleflakes = [];
+      window.removeEventListener("resize", handleResize);
+    }
+  }
+
+  function updateToggleIcon() {
+    const icon = document.querySelector("#particles-toggle .officon");
+    icon.classList.toggle("effect-on", particles);
+    icon.classList.toggle("effect-off", !particles);
+  }
+
+  init();
+})();
+
+function loadCachedData(key) {
+  return StorageHelper.getJSON(key);
+}
+
+function saveToCache(key, data) {
+  StorageHelper.setJSON(key, data);
+}
+
+function loadCombinedSearchData() {
+  const cached = StorageHelper.getJSON(CACHE_KEY);
+  const now = Date.now();
+
+  if (cached) {
+    const { configData, translationData, expiry } = cached;
+    if (expiry && now < expiry) {
+      return Promise.resolve({ configData, translationData });
+    }
+  }
+
+  return Promise.all([
+    fetch('/code-parts/search-config/config.json').then(res => res.json()),
+    fetch('/code-parts/search-config/translations.json').then(res => res.json())
+  ]).then(([configData, translationData]) => {
+    const expiry = now + CACHE_DURATION_MS;
+    const cacheObject = { configData, translationData, expiry };
+    StorageHelper.setJSON(CACHE_KEY, cacheObject);
+    return { configData, translationData };
+  });
+}
+
+function loadModsJSON() {
+  const cacheKey = "modsBox-v3-all";
+  const cached = StorageHelper.getJSON(cacheKey);
+
+  if (cached) {
+    return Promise.resolve(cached);
+  }
+
+  return fetch("/code-parts/micro-parts/insert-mods-box.json")
+    .then(res => res.json())
+    .then(data => {
+      StorageHelper.setJSON(cacheKey, data);
+      return data;
     });
-    particleflakes = [];
-    window.removeEventListener("resize", handleResize, false);
+}
+
+function loadCachedData_sitesInfo() {
+  const cachedData = StorageHelper.getJSON('sites_info');
+  if (cachedData) {
+    try {
+      ratings = cachedData.ratings || {};
+      requiredRoute = cachedData.RequiredRoute || [];
+      maybeRoute = cachedData.MaybeRoute || [];
+    } catch (e) {
+      console.error('Ошибка при разборе sites_info:', e);
+    }
   }
 }
 
-function updateToggleIcon() {
-  const toggleIcon = document.querySelector("#particles-toggle .officon");
-  toggleIcon.classList.toggle("effect-on", particles);
-  toggleIcon.classList.toggle("effect-off", !particles);
-}
-
-document.querySelector("#particles-toggle").addEventListener("click", toggleParticles);
-
-function setResetFlag(e) {
-  resetPosition = true;
+function saveToCache_sitesInfo(data) {
+  const fullData = {
+    ratings: data.ratings,
+    RequiredRoute: data.RequiredRoute,
+    MaybeRoute: data.MaybeRoute,
+    hash: data.hash
+  };
+  StorageHelper.setJSON('sites_info', fullData);
 }
