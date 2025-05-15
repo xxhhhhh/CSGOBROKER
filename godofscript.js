@@ -279,7 +279,11 @@ forcemodsboxes();
     function modifyBox(box, mainMode) {
       const logobg = box.querySelector(".logobg");
       if (!logobg) return;
-  
+
+      // Удаляем уже существующий .main-mode, если есть
+      const existingMainMode = logobg.querySelector(".main-mode");
+      if (existingMainMode) existingMainMode.remove();
+
       const mainModeDiv = document.createElement("div");
       mainModeDiv.className = `main-mode ${mainMode} lang-${languageTag}`;
       mainModeDiv.innerHTML = `
@@ -287,9 +291,10 @@ forcemodsboxes();
           <div class="main-mode-icon"></div>
         </div>
       `;
-  
+
       logobg.appendChild(mainModeDiv);
     }
+
   
     function copyToClipboard_review(text, copyButton) {
       const tempInput = document.createElement("input");
@@ -437,14 +442,14 @@ forcemodsboxes();
             });
           }
   
-          const mainBoxes = document.querySelectorAll(".box:not(.sitealternates .box)");
-          mainBoxes.forEach((box) => {
+          const mainBox = document.querySelector(".box.main");
+          if (mainBox) {
             if (data["Main Mode"]) {
-              modifyBox(box, data["Main Mode"]);
+              modifyBox(mainBox, data["Main Mode"]);
             }
-            updateReviewButtons(box, data, pageKey, reviewSettings);
+            updateReviewButtons(mainBox, data, pageKey, reviewSettings);
             updateURLs(reviewBox);
-          });
+          }
         });
       });
     } else {

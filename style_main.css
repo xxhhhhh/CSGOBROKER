@@ -2740,23 +2740,17 @@ h3 {
 }
 
 .gamemodes .featuresbox .typesinside a {
-    transform: scale(0.8);
     transition: ease-in-out all .2s;
     position: relative;
-}
-
-.gamemodes .featuresbox .typesinside a {
     height: auto;
     width: auto;
-}
-
-.gamemodes .featuresbox .typesinside a {
-    margin: 0 2px !important;
+    margin: 0 2px;
+    padding: 2px;
     border-radius: 5px;
 }
 
 .gamemodes .featuresbox .typesinside a:hover {
-    transform: scale(.9);
+    transform: scale(1.1);
     filter: grayscale(0) brightness(110%);
     z-index: 1;
 }
@@ -7058,8 +7052,8 @@ a[data-title]:after,
 
 .gamemodes .featuresbox .typesinside a::before {
     content: '';
-    height: 22px;
-    width: 22px;
+    height: 18px;
+    width: 18px;
     filter: drop-shadow(0 0 3px black);
     transition: filter .15s ease-in-out;
     border-radius: unset;
@@ -8904,7 +8898,7 @@ div#results {
     transform: translateY(50px);
     user-select: none;
     bottom: 0px;
-    left: 3%;
+    left: 10px;
     border-radius: 10px 0 0 0;
     z-index: 1;
 }
@@ -10056,6 +10050,7 @@ div#results {
     text-wrap: nowrap;
     user-select: none;
     position: relative;
+    flex-grow: 1;
 }
 
 .boxes-holder-name h3::after {
@@ -10207,6 +10202,8 @@ div#results {
     flex-grow: 1;
     text-align: center;
     padding-left: unset;
+    max-width: 200px;
+    width: 100%;
 }
 
 .boxes-holder-modes {
@@ -11488,7 +11485,7 @@ div#results {
     }
 
     .boxreview .main-infobox {
-        margin-top: 4px;
+        margin-top: 5px;
         max-width: 100%;
     }
 
@@ -11841,7 +11838,6 @@ div#results {
         top: unset;
         width: 100%;
         height: 60px;
-        margin-bottom: -4px;
         order: -2;
     }
 
@@ -11913,9 +11909,14 @@ div#results {
         width: 98%;
     }
 
-    .mods-box.mods-box.skins-box {
-        margin-bottom: -2px;
-        min-height: 46px;
+    .boxes-holder .mods-box {
+        margin-bottom: -8px;
+    }
+
+    .boxes-holder .mods-box.skins-box {
+        margin-bottom: unset;
+        margin-top: 1px;
+        min-height: 40px;
         height: auto;
     }
 
@@ -11937,16 +11938,18 @@ div#results {
 
     .mods-main-box {
         flex-direction: row;
-        width: 98%;
         margin: 0 auto !important;
+        gap: 6px;
     }
     
     .topic .mods-main-box {
         width: 100%;
     }
 
-    .mods-box.skins-box .singlemod-box {
-        margin: 3px !important;
+    .mods-box.skins-box .singlemod-box,
+    .mods-box.skins-box .singlemod-box:first-child,
+    .mods-box.skins-box .singlemod-box:last-child {
+        margin: 0;
         height: 40px;
         width: auto;
     }
@@ -11958,7 +11961,7 @@ div#results {
 
     .singlemod-box {
         flex-grow: 1;
-        margin: 5px 4px;
+        margin: 5px 0;
     }
 
     .singlemod-select img {
@@ -12414,14 +12417,15 @@ div#results {
     }
 
     .boxes-holder {
-        max-width: 100%;
+        max-width: 98%;
         margin: 0 auto;
         width: auto;
         height: 100%;
         justify-content: center;
         display: flex;
         flex-wrap: wrap;
-        margin-top: 9px;
+        margin-top: 4px;
+        gap: 8px;
     }
 
     .category-selector {
@@ -12950,7 +12954,7 @@ div#results {
     }
 
     .box {
-        margin: 8px 4px 0 4px;
+        margin: unset;
         width: 24%;
         min-width: 223px;
         filter: none;
@@ -13132,6 +13136,12 @@ div#results {
         margin-left: 22px;
         margin-top: 2px;
         flex-grow: 1;
+        max-width: 200px;
+        width: 100%;    
+    }
+
+    .newest-boxes-title-box {
+        flex-grow: 1;
     }
 
     .mods-box.skins-box .mods-main-box {
@@ -13143,7 +13153,8 @@ div#results {
     }
 
     .boxes-holder.main-page {
-        max-width: 100%;
+        max-width: 98%;
+        width: 98%;
         margin-top: 8px;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -13151,14 +13162,18 @@ div#results {
 
     .main-mode-selection {
         height: auto;
-        width: 98%;
+        width: 100%;
         margin-top: 20px;
         max-height: 200px;
     }
 
     .boxes-holder .main-mode-selection {
-        margin-top: 5px;
+        margin: unset;
         opacity: 0;
+    }
+
+    .boxes-holder.main-page .main-mode-selection {
+        margin: 0 0 -1px 0;
     }
 
     .boxes-holder .main-mode-selection.slick-slider {
@@ -13167,7 +13182,7 @@ div#results {
     }
 
     .main-mode-unit {
-        margin: 0 4px;
+        margin: 0 3px;
         min-width: unset;
     }
 
@@ -13184,6 +13199,7 @@ div#results {
     }
 
     .main-page .mods-box.mods-box.skins-box {
+        margin-top: 1px;
         margin-bottom: 0;
         width: 100%;
         order: -1;
@@ -13195,12 +13211,12 @@ div#results {
         max-width: unset;
         justify-content: center;
         padding: 0 8px 8px 8px;
-        margin: 4px;
-        margin-top: 35px;
+        margin: 4px 0;
+        margin-top: 29px;
     }
 
     .boxes-holder-section.firstelem {
-        margin-top: 41px;
+        margin-top: 35px;
     }
 
     .boxes-holder-section:last-child {
@@ -13413,8 +13429,16 @@ div#results {
         margin-top: 4px;
     }
 
+    .gamemodes .featuresbox .typesinside a::before {
+        height: 13px;
+        width: 13px;
+    }
+
     .ratingsection .ratingway span {
-        width: 130px;
+        width: 100%;
+        text-align: center;
+        margin: unset;
+        margin-bottom: 4px;
     }
 
     .gamemodes .featuresbox:after,
@@ -13582,20 +13606,17 @@ div#results {
         width: 80%;
     }
 
-    .ratingsumm,
-    .ratingsection {
-        align-content: center;
-    }
-
     .ratingsumm {
-        height: 200px;
-        padding: 2px 0;
+        height: auto;
+        padding: unset;
+        margin: 4px 0;
     }
 
     .ratingsection {
-        flex-wrap: nowrap;
-        height: 100%;
+        flex-direction: row;
         width: 100%;
+        height: 100%;
+        gap: 4px;
     }
 
     .text-col-info ul {
@@ -13668,19 +13689,14 @@ div#results {
     }
 
     .ratingsection .ratingway {
-        width: 98%;
-        height: 30px;
-        flex: 1 1 50%;
-        margin: 2px 0;
+        width: 40%;
+        height: auto;
+        flex-grow: 1;
+        margin: 0;
+        padding: 20px 10px;
         background: var(--darkygray);
-    }
-
-    .ratingsection .ratingway:first-child {
-        border-radius: 10px 10px 0 0;
-    }
-
-    .ratingsection .ratingway:last-child {
-        border-radius: 0 0 10px 10px;
+        border-radius: 10px;
+        flex-wrap: wrap;
     }
 
     .sitedetails .sitepros {
@@ -13760,7 +13776,7 @@ div#results {
 
     .box .logobg img {
         max-width: 70%;
-        max-height: 90px;
+        max-height: 70px;
     }
 
     .box.main .logobg img {
@@ -13780,7 +13796,7 @@ div#results {
     }
 
     .boxreview .slider-container {
-        margin-top: unset;
+        margin-top: 4px;
     }
 
     .screens:not(.crafting-table-screens) .slick-dots li {
@@ -13854,8 +13870,8 @@ div#results {
     }
 
     .box {
-        width: 48.94%;
-        margin: 4px 2px 2px;
+        width: 40%;
+        margin: unset;
         height: 320px;
         min-width: unset;
     }
@@ -13901,9 +13917,12 @@ div#results {
     }
 
     .boxes-holder {
-        width: 100%;
-        margin-top: 7px;
-        justify-content: space-evenly;
+        width: 96%;
+        gap: 6px;
+    }
+
+    .boxes-holder .mods-box {
+        margin-bottom: -6px;
     }
 
     .boxes-holder .box .logobg {
@@ -14101,7 +14120,7 @@ div#results {
 
 @media screen and (max-width: 555px) {
     .mods-box.mods-box.skins-box {
-        min-height: 138px;
+        min-height: 132px;
     }
     .site-list {
         max-height: 100%;
@@ -14116,9 +14135,14 @@ div#results {
 }
 
 @media screen and (max-width: 460px) {
+
+    .box .logobg img {
+        max-width: 70%;
+        max-height: 90px;
+    }
+
     .box {
         width: 96%;
-        margin: 8px 0px 0 0px;
         height: 350px;
     }
 
@@ -14184,11 +14208,6 @@ div#results {
     .content .review-button.mirror-visit::after {
         left: unset;
         right: 7px;
-    }
-
-    .boxes-holder {
-        margin-top: 7px;
-        justify-content: center !important;
     }
 
     .boxes-holder .box .logobg {
