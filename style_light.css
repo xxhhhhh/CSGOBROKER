@@ -7,26 +7,6 @@
     --buttonbg:linear-gradient(180deg, var(--main-color) 0%, rgb(204, 21, 52) 100%);
 }
 
-@keyframes navmark-animation {
-    0% {
-        filter: brightness(100%);
-        background-color: transparent;
-        border-radius: 10px;
-    }
-
-    50% {
-        filter: brightness(120%);
-        background-color: rgb(200, 200, 200);
-        border-radius: 10px;
-    }
-
-    100% {
-        filter: brightness(100%);
-        background-color: transparent;
-        border-radius: 10px;
-    }
-}
-
 .ssiodox {
     /* background: linear-gradient(180deg, var(--main-theme), rgb(235 235 235)); */
     background: var(--main-theme);
@@ -73,11 +53,17 @@
 .crafting-table-screens .slick-dots button,
 .blog .main-col-info,
 .crafting-table-screen .skin,
-.nav-review li.current,
-.topic-box .best {
+.topic-box .best,
+.mirror-redirect .mirror {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
     box-shadow: unset;
 }
+
+.sitepage .box .content {
+    background: var(--darkgray);
+}
+
+
 
 .main-mode-box {
     box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .4);
@@ -422,7 +408,8 @@ h3,
 .topic-nav-close::after,
 #button-route-filter[data-title]:after,
 .more-crafts span,
-.nav-review li.current  {
+.nav-review li.current,
+.nav-review li:hover  {
     color: #1a1a1a;
 }
 
@@ -808,14 +795,6 @@ h3,
 
 .instruction-mirrors li a {
     background-color: var(--darkygray);
-}
-
-.promo-box {
-    border: 2px dashed rgb(245 245 245);
-}
-
-.promo-box.show {
-    border: 2px dashed rgb(245 245 245);
 }
 
 .gamemodes .featuresbox .typesinside a[aria-label]:after {
@@ -1215,6 +1194,11 @@ ul .submenu li .nonredir,
     opacity: 1;
 }
 
+.officon.mirror::before {
+    filter: brightness(.2);
+    opacity: .5;
+}
+
 .features .typesinside a .officon {
     transition: all .15s ease-in-out;
 }
@@ -1439,9 +1423,10 @@ ul .submenu li .nonredir,
         background: #f2f2f2;
     }
 
-    /* .category-selector .category-box .category-box-logo img {
-        filter: grayscale(1);
-    } */
+    .mirror-redirect .mirror,
+    .extra-abox {
+        filter: unset;
+    }
 
     .category-selector .category-box:hover .category-box-logo img,
     .category-selector .category-box.current .category-box-logo img {

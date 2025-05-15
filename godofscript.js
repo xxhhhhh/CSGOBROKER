@@ -334,7 +334,7 @@ forcemodsboxes();
     }
   
     function addMirrorButton(box, pageKey, data) {
-      const visitButton = box.querySelector(".content-buttons a.review-button.visit");
+      const visitButton = box.querySelector(".box:not(.main) .content-buttons a.review-button.visit");
   
       const translations = {
         "checkMirrors": {
@@ -1556,6 +1556,17 @@ function getPathClass(path) {
   return 'gambling';
 }
 
+function shouldPrefixPath(path, language) {
+  const isTopic = /\/topic(\/|$)/.test(path);
+  const isMirrors = /\/mirrors\//.test(path);
+  const isReviews = /\/reviews\//.test(path);
+
+  if (isTopic || isMirrors) return language === 'ru';
+  if (isReviews) return ['ru', 'es', 'tr'].includes(language);
+
+  return ['ru', 'es', 'tr', 'pt', 'hi'].includes(language);
+}
+
 function createSiteItem(path) {
   const trans = siteTranslations[path] || {};
   const label = trans.og || (languageTag === 'ru' ? trans.ru || trans.en : trans.en || trans.ru) || path;
@@ -1565,7 +1576,7 @@ function createSiteItem(path) {
   li.className = `site-item show ${getPathClass(path)}`;
 
   const link = document.createElement('a');
-  link.href = languageTag === 'ru' ? '/ru' + path : path;
+  link.href = shouldPrefixPath(path, languageTag) ? `/${languageTag}${path}` : path;
 
   if (icon) {
     const img = document.createElement('img');
@@ -1909,9 +1920,7 @@ if (!isExcludedPage) {
       
       insertBeforeElement.parentNode.insertBefore(newestBoxesDiv, insertBeforeElement);
 
-      if (languageTag === 'ru' && !path.startsWith("/rust")) {
-        updateURLs(newestBoxesDiv);
-      }
+      updateURLs(newestBoxesDiv);
       updateURLs(sliderContainer);
     });
 }
@@ -2066,7 +2075,7 @@ function forcemodsboxes() {
 
   function isMultiBoxPage(url) {
     const patterns = [
-      "buy-skins", "buy-items", "sell-items", "trade-items",
+      "buy-skins",  "buy-items", "sell-items", "trade-items",
       "sell-skins", "trade-skins", "instant-sell", "marketplaces"
     ];
     const u = cleanUrl(url);
@@ -2487,7 +2496,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const t = translations[languageTag];
     const mainBox = document.querySelector('.box.main');
-    const mirrorRedirect = document.querySelector('.mirror-redirect, .partner-site');
+
+    function bindRatingClick() {
+      const ratingTrigger = mainBox.querySelector('.rating');
+      const ratingTarget = document.querySelector('.ratingsumm');
+
+      if (!ratingTrigger || !ratingTarget) return;
+
+      ratingTrigger.style.cursor = 'pointer';
+      ratingTrigger.addEventListener('click', () => {
+        const rect = ratingTarget.getBoundingClientRect();
+        const offsetTop = window.scrollY + rect.top - 200;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+
+        ratingTarget.classList.remove('navmark');
+        void ratingTarget.offsetWidth;
+        ratingTarget.classList.add('navmark');
+        ratingTarget.addEventListener('animationend', function handler() {
+          ratingTarget.classList.remove('navmark');
+          ratingTarget.removeEventListener('animationend', handler);
+        });
+      });
+    }
+
+    bindRatingClick();
+
+    const ratingObserver = new MutationObserver(() => {
+      if (document.querySelector('.ratingsumm')) {
+        bindRatingClick();
+        ratingObserver.disconnect();
+      }
+    });
+
+    ratingObserver.observe(document.body, { childList: true, subtree: true });
+
 
     const navReview = document.createElement('div');
     navReview.classList.add('nav-review');
@@ -3312,10 +3354,11 @@ $(document).ready(function() {
 window.initPayments = function () {
   const basePath = "/code-parts/site-infos";
   const boxesHolder = document.querySelector(".boxes-holder");
-  const boxes = Array.from(boxesHolder.querySelectorAll(".box"));
   const paymentsButton = document.querySelector(".payments-button");
 
   if (!paymentsButton || !boxesHolder) return;
+
+  const boxes = Array.from(boxesHolder.querySelectorAll(".box"));
 
   let depositList, withdrawalList, depositInput, withdrawalInput;
   let paymentContainersLoaded = false;

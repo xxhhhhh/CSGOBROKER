@@ -36,6 +36,7 @@
     --buttonbg: linear-gradient(180deg, var(--main-color) 0%, #b11d35 100%);
     --defbuttonbg: linear-gradient(180deg, rgb(32 32 32) 0%, rgb(24 24 24) 100%);
     --icongradient: linear-gradient(-45deg, var(--darkygray), var(--main-theme));
+    --icongradient2: linear-gradient(-45deg, var(--darkygray), var(--darkgray));
 }
 
 html.transitions-disabled *,
@@ -2066,11 +2067,6 @@ nav .pages {
     opacity: 1 !important;
 }
 
-.mods-box.fade-in-topic {
-    opacity: 1 !important;
-    visibility: visible;
-}
-
 .box-skins-list.visible {
     opacity: 1;
 }
@@ -2235,6 +2231,8 @@ h3 {
     left: 0;
     z-index: 1;
     justify-content: center !important;
+    pointer-events: none;
+    user-select: none;
     font-weight: 600;
     opacity: .9;
 }
@@ -2308,8 +2306,8 @@ h3 {
 }
 
 .site-attention {
-    width: 96%;
-    border-radius: 5px;
+    width: 98%;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2322,7 +2320,7 @@ h3 {
 }
 
 .info-block {
-    width: 96%;
+    width: 98%;
     display: flex;
 }
 
@@ -3892,7 +3890,7 @@ nav #logo:hover {
 }
 
 .nav-review li.current {
-    background: var(--darkgray);
+    background: var(--icongradient2);
     color: var(--white);
 }
 
@@ -3966,25 +3964,21 @@ nav #logo:hover {
 .navmark {
     animation: navmark-animation .6s ease-in-out;
     animation-iteration-count: 2;
-
 }
 
 @keyframes navmark-animation {
     0% {
-        filter: brightness(100%);
-        background-color: transparent;
+        opacity: 1;
         border-radius: 10px;
     }
 
     50% {
-        filter: brightness(120%);
-        background-color: var(--darkygray);
+        opacity: .8;
         border-radius: 10px;
     }
 
     100% {
-        filter: brightness(100%);
-        background-color: transparent;
+        opacity: 1;
         border-radius: 10px;
     }
 }
@@ -4022,7 +4016,6 @@ nav #logo:hover {
 .promo-box.show {
     height: 80px;
     margin-top: 9px;
-    border: 2px dashed rgb(15 15 15);
     animation: fadeIn .2s ease-in-out forwards;
 }
 
@@ -4045,9 +4038,9 @@ nav #logo:hover {
     left: 0;
     width: 30%;
     background: rgba(0, 0, 0, .125);
-    background: var(--darkgray);
-    margin-left: 5px;
-    height: 90%;
+    background: var(--icongradient);
+    margin-left: 6px;
+    height: calc(100% - 12px);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -4075,7 +4068,7 @@ nav #logo:hover {
     font-size: 9px;
     padding-bottom: 5px;
     color: rgb(46 46 46);
-    transition: all .15s ease-in-out;
+    transition: all .2s ease-in-out;
     background: rgba(168, 29, 52, .085);
     bottom: 0;
 }
@@ -4111,10 +4104,7 @@ nav #logo:hover {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: -12px;
-    left: -10px;
     z-index: -1;
-    padding: 10px;
     transition: all .15s ease-in-out;
     background: radial-gradient(50% 100% at 50% 100%, rgba(172, 26, 50, .3), transparent 100%);
     filter: blur(15px);
@@ -4231,6 +4221,33 @@ nav #logo:hover {
     font-size: 16px;
     font-weight: 500;
     transition: all .15s ease-in-out;
+}
+
+.mirror-redirect {
+    justify-content: flex-start;
+}
+
+.mirror-redirect .mirror {
+    border-radius: 10px;
+    height: calc(100% - 12px);
+    width: auto;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 6px;
+    margin-right: 18px;
+    background: var(--icongradient);
+    box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
+    transition: all .15s ease-in-out;
+}
+
+.mirror-redirect .mirror::before {
+    background-size: 90%;
+}
+
+.extra-abox:hover .officon::before {
+    opacity: .6;
 }
 
 .more-crafts span {
@@ -4608,8 +4625,7 @@ nav #logo:hover {
 
 .sitepage .box .content {
     height: 45%;
-    background: var(--darkgray);
-
+    background: var(--icongradient2);
 }
 
 .sitepage .box .logobg .rating {
@@ -4624,7 +4640,7 @@ nav #logo:hover {
     bottom: 8px;
     background: var(--darkgray);
     padding: 5px 7px;
-    z-index: -1;
+    z-index: 1;
 }
 
 .siteblock.mirror .box.main .logobg .star_rating {
@@ -5445,7 +5461,8 @@ nav img:active,
 .category-selector .category:hover .category-box .category-box-logo::before,
 .singlemod-select:hover::before,
 .payments-button:hover::before,
-.singlemod-box:hover .singlemod-icon:after {
+.singlemod-box:hover .singlemod-icon:after,
+.mirror-redirect:hover .mirror {
     filter: brightness(1.1) !important;
     transition: all .15s ease-in-out;
 }
@@ -7568,7 +7585,8 @@ a[data-title]:after,
 
 .officon:hover::before,
 .preview-pause-button:hover .officon::before,
-.settings-button:hover .officon::before {
+.settings-button:hover .officon::before,
+.extra-abox .officon:hover::before {
     opacity: 1;
 }
 
@@ -7764,6 +7782,10 @@ a[data-title]:after,
     background-image: url(/img/icons/gamemodes/angle-small-up.svg);
     height: 32px;
     width: 32px;
+}
+
+.officon.mirror::before {
+    background-image: url(/img/icons/gamemodes/mirror.svg);
 }
 
 .slick-slider .officon.chevron::before {
@@ -8555,7 +8577,6 @@ label:active,
 .preview-nav-button:active,
 .site-searcher-box:active,
 .nav-review li:active,
-a.extra-abox:active span,
 .methodlist a:active::before,
 .email-copy button:active,
 .email-copy button:active i,
@@ -8564,18 +8585,19 @@ a.extra-abox:active span,
 .officon:active::before,
 .settings-button:active .officon::before,
 .skins-category-switch .category-switch:active::before,
-.preview-pause-button:active .officon::before {
+.preview-pause-button:active .officon::before,
+a.extra-abox:active span {
     filter: brightness(.4) !important;
     transition: all .09s ease-in-out;
 }
-
 .boxes-holder-name a:active,
 .singlemod-box:active a,
 .main-mode-unit:active,
 .category-box:active,
 .payments-button:active,
 .newest-boxes-more:active,
-.pagination-button:active {
+.pagination-button:active,
+a.extra-abox:active .officon {
     filter: brightness(.7) !important;
     transition: all .09s ease-in-out;
 }
@@ -11140,6 +11162,16 @@ div#results {
 }
 
 @media screen and (max-width: 1365px) {
+    .mirror-redirect .mirror {
+        margin: unset;
+        margin-right: -4px;
+        aspect-ratio: unset;
+        background: unset;
+    }
+
+    .mirror-redirect .mirror::before {
+        background-size: 74%;
+    }
 
     .topic-filter .singlemod-box:first-child {
         margin-left: 2px;
