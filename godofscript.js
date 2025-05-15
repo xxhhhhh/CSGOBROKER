@@ -57,7 +57,7 @@ const StorageHelper = {
 };
 
 
-StorageHelper.initVersion({ currentVersion: '1.05' });
+StorageHelper.initVersion({ currentVersion: '1.06' });
 
 function isRuPage(pathname) {
   return pathname.startsWith('/ru/') || pathname === '/ru' || pathname === '/ru.html';
@@ -247,38 +247,35 @@ forcemodsboxes();
       return btoa(JSON.stringify(data));
     }
   
+    const allDataCache = loadCachedData('sites_load') || { data: {}, hashes: {} };
+
+    const jsonLoadPromises = {};
+
     function loadAllJsonData(filePath, callback) {
-      let allData = loadCachedData('sites_load') || { data: {}, hashes: {} };
-  
       const pageKey = filePath.split('/').pop().replace('.json', '');
-  
-      if (allData.data[pageKey]) {
-        callback(allData.data[pageKey]);
-  
-        fetch(filePath)
+
+      if (allDataCache.data[pageKey]) {
+        callback(allDataCache.data[pageKey]);
+      }
+
+      if (!jsonLoadPromises[pageKey]) {
+        jsonLoadPromises[pageKey] = fetch(filePath)
           .then(response => response.json())
           .then(data => {
             const newHash = computeHash(data);
-            if (newHash !== allData.hashes[pageKey]) {
-              allData.data[pageKey] = data;
-              allData.hashes[pageKey] = newHash;
-              saveToCache('sites_load', allData);
-              callback(data);
+            if (newHash !== allDataCache.hashes[pageKey]) {
+              allDataCache.data[pageKey] = data;
+              allDataCache.hashes[pageKey] = newHash;
+              saveToCache('sites_load', allDataCache);
             }
-          });
-      } else {
-        fetch(filePath)
-          .then(response => response.json())
-          .then(data => {
-            const newHash = computeHash(data);
-            allData.data[pageKey] = data;
-            allData.hashes[pageKey] = newHash;
-            saveToCache('sites_load', allData);
-            callback(data);
+            return data;
           });
       }
+
+      jsonLoadPromises[pageKey].then(callback);
     }
-  
+
+
     function modifyBox(box, mainMode) {
       const logobg = box.querySelector(".logobg");
       if (!logobg) return;
@@ -1931,26 +1928,6 @@ function forcemodsboxes() {
     }
 
     return [];
-  }
-
-  function loadModsJSON() {
-    const cacheKey = "modsBox-v3-all";
-    const cached = StorageHelper.get(cacheKey);
-
-    if (cached) {
-      try {
-        return Promise.resolve(JSON.parse(cached));
-      } catch {
-        console.warn("Invalid JSON cache, re-fetching.");
-      }
-    }
-
-    return fetch("/code-parts/micro-parts/insert-mods-box.json")
-      .then(res => res.json())
-      .then(data => {
-        StorageHelper.set(cacheKey, JSON.stringify(data));
-        return data;
-      });
   }
 
   function loadBox(boxId, modsData) {
@@ -3782,7 +3759,7 @@ function loadCombinedSearchData() {
 }
 
 function loadModsJSON() {
-  const cacheKey = "modsBox-v3-all";
+  const cacheKey = "modsBoxes";
   const cached = StorageHelper.getJSON(cacheKey);
 
   if (cached) {

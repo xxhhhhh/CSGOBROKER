@@ -4643,6 +4643,10 @@ nav #logo:hover {
     z-index: 1;
 }
 
+.siteblock.mirror .box .logobg .rating {
+    z-index: -1;
+}
+
 .siteblock.mirror .box.main .logobg .star_rating {
     display: none;
     color: var(--white);
