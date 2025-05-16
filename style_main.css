@@ -264,7 +264,7 @@ nav .pages {
     margin-top: 9px;
     display: flex;
     flex-direction: column;
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 .topic-boxes-holder .rec-box {
@@ -275,9 +275,9 @@ nav .pages {
     left: 0;
 }
 
-.rec-box.active {
+/* .rec-box.active {
     animation: fadeIn .2s ease-in-out forwards;
-}
+} */
 
 .rec-box .logobg {
     width: 100%;
@@ -1809,6 +1809,7 @@ nav .pages {
 .box-skins .skin img.imported {
     opacity: 1;
     transform: scale(1);
+    transition: all .15s ease-in-out;
 }
 
 .box-skins.selected .skin:first-child {
@@ -8979,7 +8980,7 @@ div#results {
 }
 
 .sitepage.topic-craft .box-extra-links {
-    order: 1;
+    order: 3;
 }
 
 .sitepage.topic-craft .rec-box {

@@ -13,7 +13,6 @@ $(document).ready(function () {
       currentPath.endsWith("sticker-crafts")
     ) {
       let enabledFiltersState = {};
-      let sortState = "normal";
 
       const previewWindowHTML = `
         <div id="preview-window" class="hidden">
@@ -119,42 +118,94 @@ $(document).ready(function () {
     }
     
     addMoreCraftsLink();
-    
 
-      function insertRandomAdsBox() {
-        if (href.endsWith("sticker-crafts") || href.endsWith("sticker-crafts.html")) {
-          return;
-        }
-      
-        let adsFilePath = currentPath.includes("/ru/")
-          ? "/code-parts/topics/topic-ads-ru.html"
-          : "/code-parts/topics/topic-ads.html";
-      
-        let adsCount = 2;
-      
-        fetch(adsFilePath)
-          .then((response) => response.text())
-          .then((adsBoxesHtml) => {
-            const adsBoxes = document.createElement("div");
-            adsBoxes.innerHTML = adsBoxesHtml;
-      
-            const insertAfterElement = document.querySelector(".topic-grandbox");
-            
-            for (let i = 0; i < adsCount; i++) {
-              if (adsBoxes.children.length === 0) break;
-              const randomIndex = Math.floor(Math.random() * adsBoxes.children.length);
-              const randomAdsBox = adsBoxes.children[randomIndex];
-              insertAfterElement.parentNode.insertBefore(
-                randomAdsBox,
-                insertAfterElement.nextSibling
-              );
-              setTimeout(() => randomAdsBox.classList.add("active"), 100);
-            }
-          });
+const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
+
+function insertRandomRecBox() {
+  if (location.href.endsWith("sticker-crafts") || location.href.endsWith("sticker-crafts.html")) {
+    return;
+  }
+
+  const lang = typeof languageTag !== 'undefined' ? languageTag : 'en';
+  const recCount = 2;
+  const cacheKey = `rec-boxes`; // unified cache key
+  const cacheDuration = 24 * 60 * 60 * 1000; // 24h
+  const usedIds = new Set();
+
+  const applyRecBoxes = (recData) => {
+    const insertAfterElement = document.querySelector(".topic-grandbox");
+    if (!insertAfterElement || !recData.length) return;
+
+    let available = recData.slice();
+
+    for (let i = 0; i < recCount; i++) {
+      available = available.filter(box => !usedIds.has(box.id));
+      if (!available.length) break;
+
+      const randomIndex = Math.floor(Math.random() * available.length);
+      const box = available[randomIndex];
+      usedIds.add(box.id);
+
+      const recBox = document.createElement("div");
+      recBox.className = "rec-box";
+      recBox.setAttribute("data-box-id", box.id);
+
+      const description = lang === 'ru' && box.description_ru ? box.description_ru : box.description;
+      const alt = lang === 'ru' ? `Логотип ${box.site}` : `${box.site} logo`;
+
+      let reviewHref = box.reviewHref;
+      if (lang === 'ru' && reviewHref.startsWith('/')) {
+        reviewHref = `/ru${reviewHref}`;
       }
-      
 
-      insertRandomAdsBox();
+      recBox.innerHTML = `
+        <div class="logobg">
+          <a href="${reviewHref}">
+            <img src="${box.logoSrc}" loading="lazy" draggable="false" alt="${alt}">
+          </a>
+        </div>
+        <div class="content">
+          <p>${description}</p>
+          <div class="content-buttons">
+            <a href="${reviewHref}" class="review-button"></a>
+            <a href="${box.visitHref}" target="_blank" rel="noopener" class="review-button visit"></a>
+          </div>
+        </div>
+      `;
+
+      const reviewBtn = recBox.querySelector(".review-button:not(.visit)");
+      const visitBtn = recBox.querySelector(".review-button.visit");
+
+      const reviewLabel = lang === 'ru' ? `Читать Обзор ${box.site}` : `Read Review ${box.site}`;
+      const visitLabel = lang === 'ru' ? `Перейти на ${box.site}` : `Visit ${box.site}`;
+
+      if (reviewBtn) {
+        reviewBtn.setAttribute("aria-label", reviewLabel);
+      }
+      if (visitBtn) {
+        visitBtn.setAttribute("aria-label", visitLabel);
+      }
+
+      insertAfterElement.parentNode.insertBefore(recBox, insertAfterElement.nextSibling);
+      setTimeout(() => recBox.classList.add("active"), 100);
+    }
+  };
+
+  const cached = StorageHelper.getWithExpiry(cacheKey);
+  if (cached) {
+    applyRecBoxes(cached);
+  } else {
+    fetch(REC_JSON_PATH)
+      .then((res) => res.json())
+      .then((json) => {
+        StorageHelper.setWithExpiry(cacheKey, json, cacheDuration);
+        applyRecBoxes(json);
+      })
+      .catch(console.error);
+  }
+}
+
+insertRandomRecBox();
 
       if ($(".skin").length) {
         const skinsOnPage = $(".skin");
@@ -1223,7 +1274,7 @@ if (
     const cacheTimeKey = "topicNavCache-time";
     const cached = StorageHelper.get(cacheKey);
     const cachedTime = StorageHelper.get(cacheTimeKey);
-    const maxAge = 1000 * 60 * 60 * 24;
+    const maxAge = 24 * 60 * 60 * 1000;
 
     if (cached && cachedTime && Date.now() - +cachedTime < maxAge) {
       return JSON.parse(cached);
@@ -1907,7 +1958,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   const isStickerCrafts = location.pathname.includes("sticker-crafts");
   const cacheKey = "topics-nav-cache";
-  const cacheTTL = 1000 * 60 * 60 * 24;
+  const cacheTTL = 24 * 60 * 60 * 1000;
   const now = Date.now();
 
   const topicFilterContainer = document.createElement("div");
