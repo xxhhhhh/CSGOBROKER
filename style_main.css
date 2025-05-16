@@ -111,7 +111,7 @@ h4,
 h6,
 p,
 .introduce-craft span {
-    line-height: 1.2 !important;
+    line-height: 1.2;
     margin-bottom: 0 !important;
 }
 
@@ -275,9 +275,9 @@ nav .pages {
     left: 0;
 }
 
-/* .rec-box.active {
+.rec-box.active {
     animation: fadeIn .2s ease-in-out forwards;
-} */
+}
 
 .rec-box .logobg {
     width: 100%;
@@ -481,6 +481,7 @@ nav .pages {
     color: rgba(255, 255, 255, .7);
     font-weight: 400;
     font-size: 15px;
+    line-height: 1.4;
 }
 
 .text-col-info ul li {
@@ -2270,6 +2271,7 @@ h3 {
     font-weight: 500;
     margin-top: 10px;
     width: 90%;
+    line-height: 1.3;
 }
 
 .boxreview .plusminus .criteria .par {
@@ -2854,6 +2856,7 @@ h3 {
     width: 95%;
     display: block;
     position: relative;
+    line-height: 1.5;
 }
 
 .smallreview p:nth-child(3),
@@ -3924,6 +3927,12 @@ nav #logo:hover {
     top: -2px;
 }
 
+.blog .instruction ol li:before,
+.text-col-info-theme::before {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .nav-review.blog li::before {
     counter-increment: item1;
     content: counter(item1, decimal);
@@ -4845,7 +4854,6 @@ nav #logo:hover {
 }
 
 .sitealternates .box .content h2,
-.sitealternates .box .content p:first-child,
 .sitealternates .box .content a.boxtitle {
     font-size: 18px;
 }
@@ -4871,12 +4879,6 @@ nav #logo:hover {
     border-radius: 10px;
     background: var(--darkygray);
     z-index: 1;
-}
-
-.sitealternates .site-reward p {
-    margin-top: unset !important;
-    text-transform: none !important;
-    font-size: 14px !important;
 }
 
 .boxes-holder .box:hover,
@@ -5588,6 +5590,13 @@ nav img:active,
     height: auto;
     width: 100%;
     z-index: 2;
+    line-height: 1.3;
+}
+
+.sitealternates .site-reward p {
+    margin-top: unset;
+    text-transform: none;
+    font-size: 14px ;
 }
 
 .bonus_info::before {
@@ -8980,7 +8989,7 @@ div#results {
 }
 
 .sitepage.topic-craft .box-extra-links {
-    order: 3;
+    order: 1;
 }
 
 .sitepage.topic-craft .rec-box {
@@ -9675,6 +9684,7 @@ div#results {
     font-weight: 400;
     font-size: 14px;
     transition: color .25s ease-in-out;
+    line-height: 1.3;
 }
 
 .main-infobox:hover .main-infobox-content-text p {
@@ -13986,6 +13996,7 @@ div#results {
     .boxreview .plusminus .criteria .par li,
     .instruction li {
         font-size: 15px !important;
+        line-height: 1.4;
     }
 
     .sitealternatesboxes .box .logobg img {
@@ -14269,6 +14280,7 @@ div#results {
         margin-top: 15px;
         height: auto;
         max-height: 85px;
+        text-align: start;
     }
 
     .main-page .content .review-button,

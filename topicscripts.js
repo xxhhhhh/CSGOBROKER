@@ -187,7 +187,7 @@ function insertRandomRecBox() {
       }
 
       insertAfterElement.parentNode.insertBefore(recBox, insertAfterElement.nextSibling);
-      setTimeout(() => recBox.classList.add("active"), 100);
+      setTimeout(() => recBox.classList.add("active"), 20);
     }
   };
 
