@@ -7272,6 +7272,10 @@ a[data-title]:after,
     background-image: url(/img/icons/main-modes/crypto-logo.png);
 }
 
+.officon.steam::before {
+    background-image: url(/img/icons/main-modes/steam.png);
+}
+
 .main-mode.instant-sell .main-mode-icon::before,
 .officon.instant-sell::before,
 .typesinside .instant-sell::before {
@@ -10045,10 +10049,6 @@ div#results {
     align-content: flex-start;
 }
 
-.boxes-holder-section:last-of-type {
-    margin-bottom: 0;
-}
-
 .boxes-holder-section.big {
     max-width: 1252px;
     margin: 6px 0;
@@ -10104,7 +10104,9 @@ div#results {
 }
 
 .boxes-holder-section:hover .boxes-holder-name .singlemod-icon.cs2::before, 
-.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.rust::before {
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.rust::before,
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.crypto::before,
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.steam::before {
     filter: grayscale(0);
 }
 
@@ -13429,8 +13431,12 @@ div#results {
         order: 3;
     }
 
-    .boxes-holder-section.earning {
+    .boxes-holder-section.lvlup {
         order: 4;
+    }
+
+    .boxes-holder-section.earning {
+        order: 5;
     }
 
     .sitepage.items .navigation-section.first {
@@ -14174,9 +14180,6 @@ div#results {
 }
 
 @media screen and (max-width: 555px) {
-    .mods-box.mods-box.skins-box {
-        min-height: 132px;
-    }
     .site-list {
         max-height: 100%;
         top: 58px;
@@ -14190,6 +14193,10 @@ div#results {
 }
 
 @media screen and (max-width: 460px) {
+
+    .mods-box.mods-box.skins-box {
+        min-height: 132px;
+    }
 
     .box .logobg img {
         max-width: 70%;
