@@ -57,7 +57,7 @@ const StorageHelper = {
 };
 
 
-StorageHelper.initVersion({ currentVersion: '1.08' });
+StorageHelper.initVersion({ currentVersion: '1.09' });
 
 function isRuPage(pathname) {
   return pathname.startsWith('/ru/') || pathname === '/ru' || pathname === '/ru.html';
@@ -1843,13 +1843,11 @@ if (!isExcludedPage) {
     if (className) element.className = className;
     return element;
   }
-  
-  const newestBoxesDiv = createElement('div', 'newest-boxes');
-  const newestBoxesTitleDiv = createElement('div', 'newest-boxes-title');
-  const newestBoxesIconDiv = createElement('div', 'singlemod-icon officon newest');
-  const newestBoxesTitleBoxDiv = createElement('div', 'newest-boxes-title-box');
-  
-  const titleSpan = document.createElement('span');
+
+  const lang = typeof languageTag !== 'undefined' ? languageTag : 'en';
+  const cacheKey = 'newest-boxes-json';
+  const cacheDuration = 12 * 60 * 60 * 1000; // 12h
+
   const titles = {
     ru: 'Недавно Добавленные',
     tr: 'Yeni Eklenenler',
@@ -1857,38 +1855,84 @@ if (!isExcludedPage) {
     es: 'Recientemente Añadidos',
     hi: 'हाल ही में जोड़ा गया',
   };
-  titleSpan.textContent = titles[languageTag] || 'Recently Added';
-  
-  const newestBoxesMoreLink = createElement('a', 'newest-boxes-more');
-  newestBoxesMoreLink.href = languageTag === 'ru' ? '/ru/newest' : '/newest';
-  newestBoxesMoreLink.textContent = languageTag === 'ru' ? 'Больше' : 'More';
-  
-  newestBoxesTitleBoxDiv.append(newestBoxesIconDiv, titleSpan);
-  newestBoxesTitleDiv.append(newestBoxesTitleBoxDiv, newestBoxesMoreLink);
-  newestBoxesDiv.appendChild(newestBoxesTitleDiv);
 
-  const newestFragment = languageTag === 'ru' && !path.startsWith("/rust")
-    ? '/code-parts/newest-ru.html'
-    : '/code-parts/newest.html';
+  const moreText = lang === 'ru' ? 'Больше' : 'More';
+  const moreHref = lang === 'ru' ? '/ru/newest' : '/newest';
 
-  fetch(newestFragment)
-    .then(response => response.text())
-    .then(data => {
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = data;
+  const buildBox = (entry) => {
+  const reviewHref = lang === 'ru' ? `/ru${entry.reviewHref}` : entry.reviewHref;
+  const visitHref = entry.visitHref;
+  const bonus = lang === 'ru' ? entry.bonus_ru : entry.bonus;
+  const alt = lang === 'ru' ? `Логотип ${entry.site}` : `${entry.site} logo`;
+  const labelReview = lang === 'ru' ? `Читать Обзор ${entry.site}` : `Read Review ${entry.site}`;
+  const labelVisit = lang === 'ru' ? `Перейти на ${entry.site}` : `Visit ${entry.site}`;
 
-      const boxes = Array.from(tempDiv.querySelectorAll('.box'));
-      boxes.forEach(box => newestBoxesDiv.appendChild(box.cloneNode(true)));
+  const box = document.createElement('div');
+  box.className = 'box';
+  box.id = entry.site;
 
-      const sliderContainer = document.querySelector('.slider-container');
-      const insertBeforeElement = sliderContainer ? sliderContainer.nextSibling : document.querySelector('footer');
-      
-      insertBeforeElement.parentNode.insertBefore(newestBoxesDiv, insertBeforeElement);
+  const bonusHTML = bonus ? `<div class="best">${bonus}</div>` : '';
 
-      updateURLs(newestBoxesDiv);
-      updateURLs(sliderContainer);
+  box.innerHTML = `
+    <div class="logobg">
+      <a href="${reviewHref}"><img src="${entry.logoSrc}" loading="lazy" draggable="false" alt="${alt}"></a>
+      ${bonusHTML}
+    </div>
+    <div class="content">
+      <a href="${reviewHref}" class="review-button" aria-label="${labelReview}"></a>
+      <a href="${visitHref}" aria-label="${labelVisit}" target="_blank" rel="noopener" class="review-button visit"></a>
+    </div>
+  `;
+
+  return box;
+  };
+
+
+
+  const applyBoxes = (json) => {
+    const newestBoxesDiv = createElement('div', 'newest-boxes');
+    if (lang === 'ru') newestBoxesDiv.classList.add('lang-ru');
+    const newestBoxesTitleDiv = createElement('div', 'newest-boxes-title');
+    const newestBoxesIconDiv = createElement('div', 'singlemod-icon officon newest');
+    const newestBoxesTitleBoxDiv = createElement('div', 'newest-boxes-title-box');
+
+    const titleSpan = document.createElement('span');
+    titleSpan.textContent = titles[lang] || 'Recently Added';
+
+    const newestBoxesMoreLink = createElement('a', 'newest-boxes-more');
+    newestBoxesMoreLink.href = moreHref;
+    newestBoxesMoreLink.textContent = moreText;
+
+    newestBoxesTitleBoxDiv.append(newestBoxesIconDiv, titleSpan);
+    newestBoxesTitleDiv.appendChild(newestBoxesTitleBoxDiv);
+    newestBoxesTitleDiv.appendChild(newestBoxesMoreLink);
+    newestBoxesDiv.appendChild(newestBoxesTitleDiv);
+
+    json.forEach(entry => {
+      newestBoxesDiv.appendChild(buildBox(entry));
     });
+
+    const sliderContainer = document.querySelector('.slider-container');
+    const insertBeforeElement = sliderContainer ? sliderContainer.nextSibling : document.querySelector('footer');
+    insertBeforeElement.parentNode.insertBefore(newestBoxesDiv, insertBeforeElement);
+  };
+
+  const cached = StorageHelper.getWithExpiry(cacheKey);
+  if (cached) {
+    applyBoxes(cached);
+  } else {
+    const jsonPath = '/code-parts/newest-boxes.json';
+
+    fetch(jsonPath)
+      .then((res) => res.json())
+      .then((json) => {
+        StorageHelper.setWithExpiry(cacheKey, json, cacheDuration);
+        applyBoxes(json);
+      })
+      .catch(console.error);
+  }
 }
+
 
 
 function forcemodsboxes() {
