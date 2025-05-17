@@ -138,8 +138,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    top: 0;
-    left: 0;
 }
 
 button {
@@ -150,19 +148,24 @@ button {
 .nav-content {
     display: flex;
     align-items: center;
+    height: 100%;
 }
 
 .nav-content {
     width: auto;
     justify-content: flex-end;
-    gap: 15px;
+    gap: 12px;
+}
+
+nav .logospace {
+    height: 100%;
 }
 
 nav #logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: 100%;
 }
 
 nav .pages {
@@ -2819,10 +2822,10 @@ h3 {
     /* color: var(--main-color); */
 }
 
-.pages #PageTitle,
+.pages h1,
 #PageSubt {
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
 }
 
@@ -7265,6 +7268,10 @@ a[data-title]:after,
     background-image: url(/img/icons/main-modes/rust-logo.png);
 }
 
+.officon.crypto::before {
+    background-image: url(/img/icons/main-modes/crypto-logo.png);
+}
+
 .main-mode.instant-sell .main-mode-icon::before,
 .officon.instant-sell::before,
 .typesinside .instant-sell::before {
@@ -7553,6 +7560,7 @@ a[data-title]:after,
 
 .boxes-holder-name a {
     transition: all .1s ease-in-out;
+    flex-grow: 1;
 }
 
 .officon::before,
@@ -10064,7 +10072,6 @@ div#results {
     text-wrap: nowrap;
     user-select: none;
     position: relative;
-    flex-grow: 1;
 }
 
 .boxes-holder-name h3::after {
@@ -10245,6 +10252,15 @@ div#results {
 
 .boxes-holder-name .boxes-holder-more::before {
     transform: skewX(20deg);
+    border-radius: 5px 0 0 5px;
+}
+
+.boxes-holder-name .boxes-holder-more:nth-child(7) {
+    max-width: 100px;
+}
+
+.boxes-holder-name .boxes-holder-more:nth-child(7):before {
+    transform: skewX(-20deg);
     border-radius: 5px 0 0 5px;
 }
 
@@ -11303,6 +11319,10 @@ div#results {
         color: rgb(255, 255, 255, .8);
     }
 
+    .boxes-holder-name h3 {
+        flex-grow: 1;
+    }
+
     .singlemod-select span,
     .boxes-holder-name .boxes-holder-more,
     .main-page .box .logobg .best,
@@ -11357,12 +11377,19 @@ div#results {
         filter: grayscale(0);
     }
 
+    .boxes-holder-section .boxes-holder-name .singlemod-icon.trade-skins,
+    .boxes-holder-section .boxes-holder-name .singlemod-icon.instant-sell,
+    .boxes-holder-section .boxes-holder-name .singlemod-icon.earning,
+    .newest-boxes .singlemod-icon {
+        filter: unset;
+    }
+
     .boxes-holder-section .boxes-holder-name .singlemod-icon.trade-skins::before,
     .boxes-holder-section .boxes-holder-name .singlemod-icon.instant-sell::before,
     .boxes-holder-section .boxes-holder-name .singlemod-icon.earning::before,
     .newest-boxes .singlemod-icon::before {
         filter: brightness(0) saturate(100%) invert(16%) sepia(69%) saturate(4202%) hue-rotate(339deg) brightness(95%) contrast(90%);
-        opacity: .8;
+        opacity: 1;
     }
 
     .officon::before {
@@ -12709,7 +12736,7 @@ div#results {
         justify-content: center;
     }
 
-    .pages #PageTitle,
+    .pages h1,
     #PageSubt {
         font-size: 16px;
         text-align: center;
@@ -13390,6 +13417,22 @@ div#results {
 
 @media screen and (max-width: 850px) {
 
+    .boxes-holder-section.trade-skins {
+        order: 1;
+    }
+
+    .boxes-holder-section.rust {
+        order: 2;
+    }
+
+    .boxes-holder-section.crypto {
+        order: 3;
+    }
+
+    .boxes-holder-section.earning {
+        order: 4;
+    }
+
     .sitepage.items .navigation-section.first {
         min-height: 60px;
     }
@@ -14064,7 +14107,7 @@ div#results {
         width: 130px;
     }
 
-    .pages #PageTitle,
+    .pages h1,
     #PageSubt {
         font-size: 13px;
     }
@@ -14102,10 +14145,6 @@ div#results {
     .topic-box .content span {
         font-size: 13px;
         text-align: center;
-    }
-
-    nav #logo {
-        height: auto;
     }
 
     .instruction ol {
@@ -14926,3 +14965,27 @@ header {
     width: 96%;
   }
  */
+
+ /* .main-nav-content {
+    width: 100%;
+ }
+
+nav .pages {
+    margin-left: 20px;
+    padding: unset;
+    flex-wrap: wrap;
+    align-items: start;
+    flex-direction: column;
+}
+
+.pages h1 {
+    font-size: 15px;
+}
+
+.pages h2 {
+    margin-top: 2px;
+    font-size: 13px;
+    color: var(--gray);
+    text-transform: uppercase;
+    width: unset;
+} */
