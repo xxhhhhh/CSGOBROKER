@@ -264,7 +264,7 @@ nav .pages {
     margin-top: 9px;
     display: flex;
     flex-direction: column;
-    /* opacity: 0; */
+    opacity: 0;
 }
 
 .topic-boxes-holder .rec-box {
@@ -1633,8 +1633,9 @@ nav .pages {
 
 .sitepage.items .box-skins.solo .box-skins-list .skin {
     transition: all .2s ease-in-out ;
-    width: 16.02%;
-    max-width: unset;
+    width: 16%;
+    flex-grow: 1;
+    max-width: 201px;
     padding-left: unset;
 }
 
@@ -2856,7 +2857,7 @@ h3 {
     width: 95%;
     display: block;
     position: relative;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .smallreview p:nth-child(3),
@@ -3152,7 +3153,7 @@ h3 {
     content: '';
     z-index: -1;
     width: 100%;
-    height: 100%;
+    height: 80%;
     padding: 0px 7px;
     left: 50%;
     top: 50%;
@@ -5454,7 +5455,7 @@ nav img:active,
     border-radius: 10px;
 }
 
-.boxes-holder .box:hover .content {
+.boxes-holder:not(.main-page) .box:hover .content {
     background: rgb(21 21 21);
     transition: all .15s .05s ease-in-out, color .15s 0s, border .15s 0s, background .15s 0s;
 }
@@ -10803,7 +10804,6 @@ div#results {
 .smallreview h2::before,
 .introduce-craft h2::before {
     content: "";
-    margin-right: 8px;
     position: absolute;
     left: -17px;
     top: 50%;
