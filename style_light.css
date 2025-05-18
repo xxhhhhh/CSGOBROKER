@@ -1220,7 +1220,7 @@ ul .submenu li .nonredir,
     filter: grayscale(1) brightness(.8);
 }
 
-.boxes-holder-section {
+.boxes-holder-list {
     background: radial-gradient(300% 100% at 0% 0%, var(--darkygray), var(--main-theme) 100%);
 }
 
@@ -1348,19 +1348,6 @@ ul .submenu li .nonredir,
 
 .crafting-table-screen .skin:hover {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
-}
-
-
-@media screen and (min-width: 1365px) {
-
-    .boxes-holder-name {
-        top: -25px;
-    }
-
-    .boxes-holder-section.big,
-    .boxes-holder-section {
-        margin-top: 30px;
-    }
 }
 
 @media screen and (max-width: 1365px) {
