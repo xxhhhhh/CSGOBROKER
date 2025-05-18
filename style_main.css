@@ -14069,8 +14069,8 @@ div#results {
 
     .boxes-holder-section.big .box,
     .boxes-holder-section .box {
-        width: 49%;
-        flex-grow: 0;
+        width: 48%;
+        flex-grow: 1;
     }
 
     .boxes-holder-list {
@@ -14080,13 +14080,7 @@ div#results {
     .mods-box.skins-box .mods-main-box {
         gap: 6px;
     }
-
-    /* .boxes-holder-section.big .box,
-    .boxes-holder-section .box {
-        width: 40%;
-        background: linear-gradient(-45deg, var(--darkygray), rgb(13 13 13));
-    } */
-
+    
     .boxes-holder-section,
     .boxes-holder-section.big {
         justify-content: space-between;
