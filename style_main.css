@@ -4832,6 +4832,7 @@ nav #logo:hover {
 
 .sitealternates .box {
     width: 244px;
+    min-width: unset;
     height: 304px !important;
     background-color: unset;
     background: var(--darkygray);
