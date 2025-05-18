@@ -9870,6 +9870,10 @@ div#results {
     background: linear-gradient(-45deg, transparent, var(--main-theme));
 }
 
+.main-page .box:hover {
+    z-index: 4;
+}
+
 .main-mode-unit {
     background-color: var(--darkygray);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
@@ -10250,6 +10254,7 @@ div#results {
     display: flex;
     position: relative;
     width: 100%;
+    max-width: 1240px;
     align-items: flex-end;
     justify-content: flex-start;
     border-radius: 10px 10px 0 0;
