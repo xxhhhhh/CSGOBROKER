@@ -6419,6 +6419,7 @@ footer .centralizer .footer-content {
     height: auto;
     min-height: 45px;
     z-index: 1;
+    margin: -6px 0;
 }
 
 .main-page .mods-box:not(.skins-box) {
@@ -6426,7 +6427,7 @@ footer .centralizer .footer-content {
 }
 
 .main-page .skins-box {
-    margin: 0 8px;
+    margin: -6px 8px;
 }
 
 .singlemod-box:hover span,
