@@ -265,7 +265,6 @@ nav .pages {
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     transition: all .15s ease-in-out, opacity .25s;
     margin: 0;
-    margin-top: 9px;
     display: flex;
     flex-direction: column;
     opacity: 0;
@@ -3770,6 +3769,7 @@ nav #logo:hover {
     height: auto;
     min-height: unset;
     transition: unset;
+    margin-top: -8px;
     border-radius: 0 0 10px 10px;
     z-index: 10;
 }
@@ -3807,6 +3807,7 @@ nav #logo:hover {
     display: flex;
     flex-direction: column;
     z-index: 1;
+    gap: 8px;
 }
 
 .topic .siteblock {
@@ -3814,7 +3815,7 @@ nav #logo:hover {
 }
 
 .bonusincludes {
-    margin-top: 9px;
+    margin-top: 8px;
 }
 
 .box-extra-links {
@@ -3832,7 +3833,7 @@ nav #logo:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 9px;
+    margin-top: 8px;
     border-radius: 10px;
     text-decoration: none;
     transition: all .15s ease-in-out;
@@ -3985,7 +3986,6 @@ nav #logo:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 9px;
     border-radius: 10px;
     text-decoration: none;
     transition: all .15s ease-in-out;
@@ -4008,7 +4008,7 @@ nav #logo:hover {
 
 .promo-box.show {
     height: 80px;
-    margin-top: 9px;
+    margin-top: 8px;
     animation: fadeIn .2s ease-in-out forwards;
 }
 
@@ -4787,6 +4787,7 @@ nav #logo:hover {
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: flex-start;
+    gap: 8px;
 }
 
 .sitealternates .rating-case-single {
@@ -4813,16 +4814,11 @@ nav #logo:hover {
 .sitealternates .box {
     width: 244px;
     min-width: unset;
-    height: 304px !important;
+    height: 304px;
     background-color: unset;
     background: var(--darkygray);
     box-shadow: unset;
-    margin-left: 9px !important;
     border-radius: 10px;
-}
-
-.sitealternates .box:first-child {
-    margin-left: unset !important;
 }
 
 .sitealternates .box .logobg {
@@ -11285,6 +11281,11 @@ div#results {
         margin: 5px;
     }
 
+    .topic-grandbox::after {
+        width: calc(100% - 10px);
+        margin-bottom: 6px;
+    }
+
     .boxes-holder-name h3,
     .newest-boxes-more,
     .newest-boxes-title-box span,
@@ -11862,7 +11863,6 @@ div#results {
 
     .siteleftpannel .mods-box.topic .singlemod-box {
         margin: unset;
-        margin-bottom: 4px;
     }
 
     .singlemod-box[data-title]:hover:after {
@@ -12220,7 +12220,6 @@ div#results {
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        width: 98%;
         margin: 0 auto;
         border-radius: 10px;
     }
@@ -12383,7 +12382,7 @@ div#results {
     .mirror-redirect {
         position: absolute;
         z-index: 10;
-        top: -14px;
+        top: -22px;
         left: 50%;
         transform: translateX(-50%);
         padding: 0;
@@ -12731,10 +12730,13 @@ div#results {
         display: none;
     }
 
+    .sitealternatesboxes {
+        gap: 6px;
+    }
+
     .sitealternates .box {
-        width: 24.5% !important;
-        margin-left: unset !important;
-        margin-top: 4px !important;
+        width: 24.5%;
+        height: 250px;
     }
 
     .navigation-menu {
@@ -12882,11 +12884,6 @@ div#results {
         margin-top: 68px;
     }
 
-    .sitepage.topic-craft,
-    .sitepage.topic {
-        padding-top: 10px;
-    }
-
     .sitepage.topic.items {
         padding-top: unset;
     }
@@ -12938,6 +12935,11 @@ div#results {
         top: 0 !important;
     }
 
+    .topic .siteleftpannel {
+        width: 98%;
+        margin-top: 66px;
+    }
+
     .siteleftpannel .box.main,
     .sitepage .box:hover {
         background: var(--darkygray) !important;
@@ -12984,11 +12986,12 @@ div#results {
     }
 
     .siteleftpannel .mods-box.topic {
-        margin-left: 13px;
-        top: 66px;
-        z-index: 111;
-        width: 57px;
-        position: relative;
+        margin: unset;
+        left: 4px;
+        top: 4px;
+        z-index: 100;
+        width: 50px;
+        position: absolute;
     }
 
     nav .pages {
@@ -13660,12 +13663,11 @@ div#results {
     }
 
     .sitealternates {
-        margin-top: -4px;
+        margin-top: 0;
     }
 
     .alternates-title {
-        margin-top: 4px;
-        width: 75%;
+        width: 65%;
     }
 
     .sitealternates .site-reward {
@@ -14108,19 +14110,20 @@ div#results {
     }
 
     .sitealternatesboxes {
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: wrap;
         padding-top: 0px;
         display: flex;
-        flex-wrap: wrap;
-        height: 512px;
-        justify-content: flex-start;
-        align-content: space-between;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
     }
 
     .sitealternates .box {
-        width: 49.5% !important;
-        height: 250px !important;
+        width: 49%;
+        height: 250px;
+        flex-grow: 1;
     }
 
     .sitealternates .box .content p:first-child {
