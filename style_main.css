@@ -598,7 +598,6 @@ nav .pages {
     background: var(--darkygray);
     position: relative;
     width: 300px;
-    margin: 18px 9px 0 9px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     transition: all .15s ease-in-out;
     border-radius: 10px;
@@ -3542,6 +3541,7 @@ nav #logo:hover {
     width: 100%;
     height: 45px;
     gap: 9px;
+    margin: -6px 0;
 }
 
 .topic-filter .singlemod-box:first-child {
@@ -3566,7 +3566,8 @@ nav #logo:hover {
     font-size: 14px;
     color: rgba(255, 255, 255, .75);
     font-family: TTNormsPro;
-    text-align: center;
+    text-align: start;
+    padding-left: 20px;
     cursor: text;
 }
 
@@ -4506,7 +4507,8 @@ nav #logo:hover {
     visibility: visible;
     transition: all .15s ease-in-out, opacity .4s;
     background-color: var(--darkgray);
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     margin: 8px;
 }
@@ -11231,6 +11233,7 @@ div#results {
         flex-wrap: wrap;
         justify-content: center;
         gap: 8px;
+        margin: unset;
     }
 
     .topic-box,
@@ -11870,6 +11873,10 @@ div#results {
         order: -2;
     }
 
+    .mods-box:has(.back-button) {
+        margin-top: 4px;
+    }
+
     .mods-box.skins-box {
         order: -1;
     }
@@ -11892,8 +11899,6 @@ div#results {
 
     .mods-box.topic .singlemod-box {
         width: 100%;
-        height: 53px;
-        margin: 3px 5px 0 5px;
     }
 
     .mods-box.topic .singlemod-select img {
@@ -12112,10 +12117,10 @@ div#results {
 
     .topic-boxes-holder .topic-grandbox.sticker {
         width: 48%;
-        margin: 6px 3px 0 3px;
         height: 190px;
         min-height: unset;
         padding-bottom: 10px;
+        flex-grow: 1;
         z-index: 2;
     }
 
@@ -12226,7 +12231,7 @@ div#results {
     }
 
     .topic-boxes-holder {
-        max-width: 98%;
+        max-width: 96%;
         min-height: 400px;
         width: 100%;
     }
@@ -13394,26 +13399,6 @@ div#results {
 
 @media screen and (max-width: 850px) {
 
-    .boxes-holder-section.trade-skins {
-        order: 1;
-    }
-
-    .boxes-holder-section.rust {
-        order: 2;
-    }
-
-    .boxes-holder-section.crypto {
-        order: 3;
-    }
-
-    .boxes-holder-section.lvlup {
-        order: 4;
-    }
-
-    .boxes-holder-section.earning {
-        order: 5;
-    }
-
     .sitepage.items .navigation-section.first {
         min-height: 60px;
     }
@@ -13821,7 +13806,7 @@ div#results {
 
     .slider-container {
         width: 96%;
-        margin-top: 6px;
+        margin-top: 2px;
         margin-bottom: -1px !important;
     }
 
