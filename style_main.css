@@ -34,7 +34,8 @@
     --darkgray: rgb(13, 13, 13);
     --main-theme: rgb(15, 15, 15);
     --buttonbg: linear-gradient(180deg, var(--main-color) 0%, #b11d35 100%);
-    --defbuttonbg: linear-gradient(180deg, rgb(32 32 32) 0%, rgb(24 24 24) 100%);
+    --defbuttonbg: linear-gradient(180deg, rgb(25 25 25) 0%, rgb(21 21 21) 100%);
+    --defbuttonbg_hover: linear-gradient(180deg, rgb(30 30 30) 0%, rgb(24 24 24) 100%);
     --icongradient: linear-gradient(-45deg, var(--darkygray), var(--main-theme));
     --icongradient2: linear-gradient(-45deg, var(--darkygray), var(--darkgray));
     --centralized: 66.528%;
@@ -637,7 +638,7 @@ nav .pages {
     transform: scale(1.05) translateX(-50%);
 }
 
-.navigation-section {
+.section {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -647,18 +648,18 @@ nav .pages {
     top: -20px;
 }
 
-.navigation-section.second {
+.section.second {
     width: 100%;
     margin-top: 13px;
 }
 
-.sitepage.topic-craft .navigation-section.second,
-.topic-boxes-holder .topic-grandbox.sticker .navigation-section.second {
+.sitepage.topic-craft .section.second,
+.topic-boxes-holder .topic-grandbox.sticker .section.second {
     margin-top: unset;
     margin-bottom: 10px;
 }
 
-.navigation-section.second .colors-box {
+.section.second .colors-box {
     width: 70%;
     display: flex;
     height: 100%;
@@ -2715,18 +2716,6 @@ h3 {
     margin: 12px 0 12px 22px;
 }
 
-.features .featuresbox .typesinside a:hover {
-    transform: scale(1.03);
-    filter: drop-shadow(0 0 1px #c91f3b) !important;
-}
-
-.features .featuresbox .typesinside a:active,
-.features .featuresbox .typesinside a:active::after,
-.features .featuresbox .typesinside a:active::before {
-    background-color: #5a101c !important;
-    transition: .09s all ease-in-out;
-}
-
 .gamemodes .featuresbox .typesinside a {
     transition: ease-in-out all .2s;
     position: relative;
@@ -2747,8 +2736,35 @@ h3 {
 .features .featuresbox .typesinside a::after,
 .features .featuresbox .typesinside a::before {
     transition: all .15s ease-in-out;
-    background-color: rgb(15 15 15);
+    background-color: var(--main-theme);
 }
+
+.features .featuresbox .typesinside a:hover,
+.features .featuresbox .typesinside a:hover::before,
+.features .featuresbox .typesinside a:hover::after {
+    background-color: rgb(20 20 20);
+}
+
+.features .featuresbox .typesinside a:hover {
+    transform: scale(1.03);
+}
+
+/*
+
+.features .featuresbox .typesinside a:active,
+.features .featuresbox .typesinside a:active::after,
+.features .featuresbox .typesinside a:active::before {
+    background-color: #5a101c;
+    transition: .09s all ease-in-out;
+}
+
+.features .typesinside a .officon {
+    transition: all .15s ease-in-out;
+}
+
+.features .typesinside a:hover .officon {
+    filter: grayscale(1) brightness(5);
+} */
 
 .boxreview#mirror .features .featuresbox .typesinside a:last-child {
     border-radius: 0 5px 5px 0;
@@ -3147,6 +3163,11 @@ h3 {
     background: rgb(18 18 18);
 }
 
+.blog .instruction li strong::after,
+.blog .instruction li a::after {
+    padding: 2px 7px;
+}
+
 .blog .instruction {
     filter: none;
 }
@@ -3290,6 +3311,7 @@ label:hover {
     justify-content: center;
     text-transform: none;
     padding: 15px 0;
+    line-height: 1.4;
 }
 
 #FAQ.active #PageSubt {
@@ -3778,25 +3800,25 @@ nav #logo:hover {
     border-radius: 0 0 5px 5px;
 }
 
-.sitepage.items .topic-grandbox .navigation-section {
+.sitepage.items .topic-grandbox .section {
     top: unset;
     border-radius: 5px;
     top: -20px;
     width: 90%;
 }
 
-.sitepage.items .navigation-section {
+.sitepage.items .section {
     margin-top: 10px;
     height: auto;
 }
 
-.sitepage.items .navigation-section.searchers {
+.sitepage.items .section.searchers {
     height: 30%;
     align-content: flex-start;
     margin-bottom: 11px;
 }
 
-.sitepage.cases .navigation-section.searchers {
+.sitepage.cases .section.searchers {
     margin-top: 10px;
     z-index: 100;
     height: auto;
@@ -4942,13 +4964,13 @@ nav #logo:hover {
 }
 
 .box.skin-navigator .colors-list-unit:hover,
-.navigation-section.second .colors-list-unit:hover {
+.section.second .colors-list-unit:hover {
     transform: scale(1.15);
     transition: all .2s ease-in-out;
 }
 
 .box.skin-navigator .colors-list-unit:active,
-.navigation-section.second .colors-list-unit:active {
+.section.second .colors-list-unit:active {
     filter: brightness(.75);
     transition: all .09s ease-in-out;
 }
@@ -5616,13 +5638,23 @@ nav img:active,
 .content button,
 .content button.copy::before,
 .content .review-button.mirror-visit::before {
-    background: rgb(26 26 26);
+    background: var(--defbuttonbg);
 }
 
-.features .featuresbox .typesinside a:hover,
-.features .featuresbox .typesinside a:hover::before,
-.features .featuresbox .typesinside a:hover::after {
-    background-color: #a81d34;
+.box .content .review-button:not(.visit):hover,
+.box .content .review-button:not(.visit):hover::after,
+.box .content .review-button.mirror-visit:hover,
+.box .content .review-button.mirror-visit:hover::before,
+.box .content button.copy:hover,
+.box .content button.copy:hover::before {
+    background: var(--defbuttonbg_hover);
+}
+
+.sitepage .content button.copy,
+.sitepage .content button.copy::before,
+.box.main .content .review-button.mirror-visit,
+.box.main .content .review-button.mirror-visit::before {
+    background: var(--darkygray);
 }
 
 .content button.copy:hover,
@@ -5656,19 +5688,11 @@ nav img:active,
     transition: .09s all ease-in-out;
 }
 
-.sitepage .content button.copy,
-.sitepage .content button.copy::before,
-.box.main .content .review-button.mirror-visit,
-.box.main .content .review-button.mirror-visit::before {
-    background-color: var(--darkygray);
-}
-
 
 .sitepage.closed .plusminus,
 .sitepage.closed .smallreview,
 .sitepage.closed .instruction,
 .sitepage.closed .sitedetails,
-/* .sitepage.closed .ratingsumm, */
 .sitepage.closed .box.main .logobg .rating,
 .sitepage.closed .box.main .content,
 .sitepage.closed h2,
@@ -6032,7 +6056,7 @@ footer .centralizer .footer-content {
 }
 
 .content .review-button {
-    background: linear-gradient(180deg, rgb(26 26 26) 0%, rgb(21 21 21) 100%);
+    background: var(--defbuttonbg);
     filter: drop-shadow(0 1px 4px rgb(10 10 10)) blur(0);
     border-radius: 5px;
     position: relative;
@@ -6078,7 +6102,7 @@ footer .centralizer .footer-content {
     height: 100%;
     z-index: -1;
     transition: all .15s ease-in-out;
-    background: linear-gradient(180deg, rgb(26 26 26) 0%, rgb(21 21 21) 100%);
+    background: var(--defbuttonbg);
     text-wrap: nowrap;
     box-sizing: border-box;
     top: 0;
@@ -6189,7 +6213,7 @@ footer .centralizer .footer-content {
     width: 28px;
     margin: 4px 0px;
     position: absolute;
-    background: rgb(26 26 26);
+    background: var(--defbuttonbg);
     filter: none;
     left: 12px;
     top: 12px;
@@ -6232,26 +6256,10 @@ footer .centralizer .footer-content {
     transform: scale(1.05);
 }
 
-
-.boxes-holder .box .content .review-button:not(.visit):hover,
-.boxes-holder .box .content .review-button:not(.visit):hover::after,
-.boxes-holder .box .content .review-button.mirror-visit:hover,
-.boxes-holder .box .content .review-button.mirror-visit:hover::before,
-.boxes-holder .box .content button.copy:hover,
-.boxes-holder .box .content button.copy:hover::before {
-    background: var(--defbuttonbg);
-}
-
-/* .content .review-button:active,
-.content .review-button:active::before,
-.content .review-button:active::after {
-    background: #5a101c !important;
-    transition: all .09s ease-in-out !important;
-} */
-
-.content .review-button:active {
-    filter: brightness(.75) !important;
-    transition: all .09s ease-in-out !important;
+.content .review-button:active,
+.content button.copy:active {
+    filter: brightness(.75) drop-shadow(0 1px 4px rgb(15 15 15)) blur(0);
+    transition: all .09s ease-in-out;
 }
 
 .newest-boxes .box .content {
@@ -7599,14 +7607,6 @@ a[data-title]:after,
     opacity: 1;
 }
 
-.features .typesinside a .officon {
-    transition: all .15s ease-in-out;
-}
-
-.features .typesinside a:hover .officon {
-    filter: grayscale(1) brightness(5);
-}
-
 .sitedetails .sitepros span::after,
 .officon.oldcarret {
     background-image: url(/img/icons/gamemodes/caret-down.svg);
@@ -8599,7 +8599,8 @@ a.extra-abox:active span {
 .payments-button:active,
 .newest-boxes-more:active,
 .pagination-button:active,
-a.extra-abox:active .officon {
+a.extra-abox:active .officon,
+.features .featuresbox .typesinside a:active {
     filter: brightness(.7) !important;
     transition: all .09s ease-in-out;
 }
@@ -8995,21 +8996,21 @@ div#results {
     height: auto;
 }
 
-.sitepage.topic-craft .navigation-section.first span,
-.topic-boxes-holder .topic-grandbox.sticker .navigation-section.first span {
+.sitepage.topic-craft .section.first span,
+.topic-boxes-holder .topic-grandbox.sticker .section.first span {
     margin-top: 8px;
 }
 
-.sitepage.topic-craft .navigation-section.second span,
-.topic-boxes-holder .topic-grandbox.sticker .navigation-section.second span {
+.sitepage.topic-craft .section.second span,
+.topic-boxes-holder .topic-grandbox.sticker .section.second span {
     font-size: 14px;
     color: rgba(255, 255, 255, .6);
     font-weight: 400;
     text-transform: none;
 }
 
-.topic-grandbox.sticker .navigation-section.first::after,
-.sitepage.topic-craft .topic-grandbox .navigation-section.first::after {
+.topic-grandbox.sticker .section.first::after,
+.sitepage.topic-craft .topic-grandbox .section.first::after {
     content: 'Required Stickers';
     position: relative;
     font-size: 13px;
@@ -9021,13 +9022,13 @@ div#results {
     text-align: center;
 }
 
-.topic-boxes-holder.lang-ru .topic-grandbox.sticker .navigation-section.first::after,
-.sitepage.topic-craft.lang-ru .topic-grandbox .navigation-section.first::after {
+.topic-boxes-holder.lang-ru .topic-grandbox.sticker .section.first::after,
+.sitepage.topic-craft.lang-ru .topic-grandbox .section.first::after {
     content: 'Необходимые Стикеры';
 }
 
-.sitepage.topic-craft .navigation-section.third,
-.topic-boxes-holder .topic-grandbox.sticker .navigation-section.third {
+.sitepage.topic-craft .section.third,
+.topic-boxes-holder .topic-grandbox.sticker .section.third {
     display: flex;
     justify-content: center;
     position: relative;
@@ -9126,7 +9127,7 @@ div#results {
 
 .introduce-craft span img,
 .introduce-craft span .skin-price-info,
-.navigation-section .skin-price-info {
+.section .skin-price-info {
     display: none;
 }
 
@@ -10732,12 +10733,11 @@ div#results {
 
 .blog .instruction li {
     width: 80%;
-    line-height: 25px;
+    line-height: 1.4;
 }
 
 .blog .instruction li a {
     color: #616161;
-    line-height: 25px;
 }
 
 .blog .instruction li a:hover {
@@ -10840,7 +10840,7 @@ div#results {
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .upperline-table,
@@ -11634,7 +11634,7 @@ div#results {
         width: 100%;
     }
 
-    .navigation-section {
+    .section {
         max-width: 90%;
     }
 
@@ -12087,7 +12087,7 @@ div#results {
         top: 0;
     }
 
-    .navigation-section.second {
+    .section.second {
         width: 100%;
         margin-top: 17px;
     }
@@ -12101,24 +12101,24 @@ div#results {
         z-index: 2;
     }
 
-    .topic-boxes-holder .topic-grandbox.sticker .navigation-section.first span {
+    .topic-boxes-holder .topic-grandbox.sticker .section.first span {
         font-size: 11px;
         white-space: nowrap;
         text-transform: none;
     }
 
-    .topic-boxes-holder .topic-grandbox.sticker .navigation-section.first,
-    .topic-boxes-holder .topic-grandbox.sticker .navigation-section.second,
-    .topic-boxes-holder .topic-grandbox.sticker .navigation-section.third {
+    .topic-boxes-holder .topic-grandbox.sticker .section.first,
+    .topic-boxes-holder .topic-grandbox.sticker .section.second,
+    .topic-boxes-holder .topic-grandbox.sticker .section.third {
         top: unset;
         padding: 3px 0;
     }
 
-    .topic-boxes-holder .topic-grandbox.sticker .navigation-section.second {
+    .topic-boxes-holder .topic-grandbox.sticker .section.second {
         padding-top: 0;
     }
 
-    .topic-boxes-holder .topic-grandbox.sticker .navigation-section.third {
+    .topic-boxes-holder .topic-grandbox.sticker .section.third {
         flex-wrap: nowrap;
         height: 40px;
         width: 90%;
@@ -12130,16 +12130,16 @@ div#results {
         z-index: 10;
     }
 
-    .topic-boxes-holder .topic-grandbox.sticker .navigation-section.second span,
-    .topic-boxes-holder .topic-grandbox.sticker .navigation-section.first::after,
-    .sitepage.topic-craft .topic-grandbox .navigation-section.first::after {
+    .topic-boxes-holder .topic-grandbox.sticker .section.second span,
+    .topic-boxes-holder .topic-grandbox.sticker .section.first::after,
+    .sitepage.topic-craft .topic-grandbox .section.first::after {
         text-align: center;
         width: 95%;
         font-size: 10px;
         margin-bottom: unset;
     }
 
-    .sitepage.topic-craft .topic-grandbox .navigation-section.first::after {
+    .sitepage.topic-craft .topic-grandbox .section.first::after {
         font-size: 14px;
     }
 
@@ -12159,12 +12159,12 @@ div#results {
         width: 100%;
     }
 
-    .sitepage.topic-craft .navigation-section.third {
+    .sitepage.topic-craft .section.third {
         height: auto;
         top: -10px;
     }
 
-    .sitepage.topic-craft .navigation-section.second {
+    .sitepage.topic-craft .section.second {
         width: 100%;
         margin-bottom: 0;
     }
@@ -12228,7 +12228,7 @@ div#results {
         width: 100%;
     }
 
-    .navigation-section.second .colors-box {
+    .section.second .colors-box {
         margin-top: 3px;
     }
 
@@ -12927,17 +12927,21 @@ div#results {
 
     .siteleftpannel {
         position: relative;
-        min-width: unset !important;
-        height: unset !important;
+        min-width: unset;
+        height: unset;
         width: 100%;
         margin-right: 0;
-        left: 0 !important;
-        top: 0 !important;
+        left: 0;
+        top: 0;
     }
 
     .topic .siteleftpannel {
         width: 98%;
         margin-top: 66px;
+    }
+
+    .blog .siteleftpannel {
+        margin-top: 63px;
     }
 
     .siteleftpannel .box.main,
@@ -13375,11 +13379,11 @@ div#results {
 
 @media screen and (max-width: 850px) {
 
-    .sitepage.items .navigation-section.first {
+    .sitepage.items .section.first {
         min-height: 60px;
     }
 
-    .sitepage.items .navigation-section.first:has(.solo-category) {
+    .sitepage.items .section.first:has(.solo-category) {
         min-height: unset;
     }
 
@@ -14458,7 +14462,7 @@ div#results {
     font-size: 11px;
 }
 
-.sitepage.topic-craft .navigation-section.second.character {
+.sitepage.topic-craft .section.second.character {
     width: 90%;
     margin-bottom: 0;
 }
@@ -14514,9 +14518,9 @@ div#results {
     margin-right: unset;
 }
 
-.sticker-crafts-list .topic-grandbox .navigation-section.first,
-.sticker-crafts-list .topic-grandbox .navigation-section.second,
-.sticker-crafts-list .topic-grandbox .navigation-section.third {
+.sticker-crafts-list .topic-grandbox .section.first,
+.sticker-crafts-list .topic-grandbox .section.second,
+.sticker-crafts-list .topic-grandbox .section.third {
     display: none;
 }
 
@@ -14816,8 +14820,8 @@ div#results {
     margin-bottom: 10px;
 }
 
-.sitepage.topic-craft .navigation-section.second.character span,
-.topic-boxes-holder .topic-grandbox.sticker .navigation-section.second.character span {
+.sitepage.topic-craft .section.second.character span,
+.topic-boxes-holder .topic-grandbox.sticker .section.second.character span {
     opacity: 1;
 }
 

@@ -57,7 +57,7 @@ const StorageHelper = {
 };
 
 
-StorageHelper.initVersion({ currentVersion: '1.09' });
+StorageHelper.initVersion({ currentVersion: '1.1' });
 
 function isRuPage(pathname) {
   return pathname.startsWith('/ru/') || pathname === '/ru' || pathname === '/ru.html';
@@ -343,13 +343,17 @@ forcemodsboxes();
         return translations[key][languageTag] || translations[key]['en'];
       }
   
-      if (visitButton && data.mirror) {
+      if (
+        visitButton &&
+        data.mirror &&
+        !document.querySelector(".mirror-visit")
+      ) {
         const mirrorButton = document.createElement("a");
         mirrorButton.href = `/mirrors/${pageKey}`;
         mirrorButton.className = "review-button mirror-visit";
         mirrorButton.setAttribute("aria-label", getTranslation("checkMirrors"));
         visitButton.insertAdjacentElement("afterend", mirrorButton);
-      }
+      }      
     }
   
     window.updateReviewButtons = updateReviewButtons;
@@ -1845,7 +1849,7 @@ if (!isExcludedPage) {
   }
 
   const lang = typeof languageTag !== 'undefined' ? languageTag : 'en';
-  const cacheKey = 'newest-boxes-json';
+  const cacheKey = 'newest_boxes_json';
   const cacheDuration = 12 * 60 * 60 * 1000; // 12h
 
   const titles = {
@@ -3808,7 +3812,7 @@ function loadCombinedSearchData() {
 }
 
 function loadModsJSON() {
-  const cacheKey = "modsBoxes";
+  const cacheKey = "mods_boxes";
   const cached = StorageHelper.getJSON(cacheKey);
 
   if (cached) {

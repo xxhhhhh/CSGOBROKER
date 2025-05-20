@@ -364,7 +364,7 @@ a, p,
 .main-col-info-upd p,
 h2,
 h3,
-.topic-grandbox.sticker .navigation-section.first::after,
+.topic-grandbox.sticker .section.first::after,
 .newest-boxes-more,
 .boxes-holder-name h3,
 .boxes-holder-section:hover .boxes-holder-name h3,
@@ -394,8 +394,8 @@ h3,
 .blog .instruction li,
 .mini-info,
 .siteblock.mirror .box.main .logobg .star_rating::before,
-.sitepage.topic-craft .navigation-section.second span, 
-.topic-grandbox.sticker .navigation-section.second span, 
+.sitepage.topic-craft .section.second span, 
+.topic-grandbox.sticker .section.second span, 
 .boxes-holder-name a:hover, 
 .newest-boxes-more:hover,
 .skininspect-placeholder:hover span,
@@ -405,7 +405,7 @@ h3,
 .color-box-selection-button.clicked,
 .singlemod-box[data-title]:after,
 .main-infobox:hover .main-infobox-content-text p,
-.sitepage.topic-craft .topic-grandbox .navigation-section.first::after,
+.sitepage.topic-craft .topic-grandbox .section.first::after,
 .rec-box .content p,
 .site-attention.event strong.item,
 .contact-box:hover span,
@@ -788,9 +788,16 @@ h3,
 
 .features .featuresbox .typesinside a,
 .features .featuresbox .typesinside a::after,
-.features .featuresbox .typesinside a::before {
-    background-color: var(--darkgray);
+.features .featuresbox .typesinside a::before,
+.features .featuresbox .typesinside a:hover,
+.features .featuresbox .typesinside a:hover::before,
+.features .featuresbox .typesinside a:hover::after {
+    background: var(--darkgray);
 }
+
+/* .features .typesinside a:hover .officon {
+    filter: grayscale(1) brightness(.5);
+} */
 
 .instruction-mirrors li a {
     background-color: var(--darkygray);
@@ -1131,8 +1138,8 @@ ul .submenu li .nonredir,
 .box.main .content button:hover, .box.main .content button:hover::before,
 .box .content .review-button.mirror,
 .content .review-button.visit.mirror::before {
-    background-color: var(--opacback) !important;
-    filter: none !important;
+    background: var(--opacback);
+    filter: none;
 }
 
 .content .review-button.mirror-visit::before,
@@ -1170,6 +1177,10 @@ ul .submenu li .nonredir,
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
 }
 
+.content .review-button:active {
+    filter: brightness(.7) drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
+}
+
 .boxes-holder-name a {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
 }
@@ -1204,10 +1215,6 @@ ul .submenu li .nonredir,
 
 .features .typesinside a .officon {
     transition: all .15s ease-in-out;
-}
-
-.features .typesinside a:hover .officon {
-    filter: grayscale(1) brightness(.5);
 }
 
 .boxes-holder-section:hover .boxes-holder-name .singlemod-icon.cs2::before,

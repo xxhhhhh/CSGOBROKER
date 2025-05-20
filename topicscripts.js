@@ -128,7 +128,7 @@ function insertRandomRecBox() {
 
   const lang = typeof languageTag !== 'undefined' ? languageTag : 'en';
   const recCount = 2;
-  const cacheKey = `rec-boxes`; // unified cache key
+  const cacheKey = `rec_boxes`; // unified cache key
   const cacheDuration = 24 * 60 * 60 * 1000; // 24h
   const usedIds = new Set();
 
@@ -314,7 +314,7 @@ insertRandomRecBox();
           const boxes = document.querySelectorAll('.siteblock .topic-grandbox');
         
           boxes.forEach(box => {
-            const thirdSection = box.querySelector('.navigation-section.third');
+            const thirdSection = box.querySelector('.section.third');
             const introduceCraftList = document.querySelector('.introduce-craft .craft-components-list');
             const craftingTable = document.querySelector('.crafting-table-screens');
         
@@ -962,7 +962,7 @@ insertRandomRecBox();
       ) {
         $.getJSON("/code-parts/topics/items-nav.json", function (navData) {
           const $grandbox = $(".topic-grandbox");
-          const $navSectionFirst = $('<div class="navigation-section first"></div>');
+          const $navSectionFirst = $('<div class="section first"></div>');
         
           const stickerTitles = {
             blue: "High Grade",
@@ -982,7 +982,7 @@ insertRandomRecBox();
             );
           });
         
-          const $navSearchers = $('<div class="navigation-section searchers"></div>');
+          const $navSearchers = $('<div class="section searchers"></div>');
           navData.filters.forEach(filter => {
             const title = languageTag === "ru" ? filter.title_ru : filter.title_en;
             $navSearchers.append(
@@ -1679,7 +1679,7 @@ if (window.location.pathname.includes('/sticker-crafts/')) {
             const data = await response.json();
             if (!Array.isArray(data) || data.length === 0) return;
     
-            const currentPageSpan = document.querySelector('.siteblock .topic-grandbox .navigation-section.first span');
+            const currentPageSpan = document.querySelector('.siteblock .topic-grandbox .section.first span');
             const currentPageText = currentPageSpan ? currentPageSpan.textContent.trim() : '';
     
             const filteredTopics = data.filter(sticker => sticker.title.trim() !== currentPageText);
@@ -1708,10 +1708,10 @@ if (window.location.pathname.includes('/sticker-crafts/')) {
                             <img src="${sticker.img}" alt="${sticker.title}" draggable="false">
                         </div>
                     </div>
-                    <div class="navigation-section first">
+                    <div class="section first">
                         <span>${sticker.title}</span>
                     </div>
-                    <div class="navigation-section third">
+                    <div class="section third">
                         ${sticker.skins.map(skin => 
                             `<div class="skin" weapon="${skin.weapon}" skin-id="${skin.skin_id}"></div>`
                         ).join('')}
@@ -1788,7 +1788,7 @@ if (window.location.pathname.includes('/topic/skins/')) {
           });
 
           const allskinsListbutton = document.querySelector(
-            ".navigation-section.second"
+            ".section.second"
           );
 
           if (languageTag === "ru") {
@@ -1892,10 +1892,10 @@ document.addEventListener("DOMContentLoaded", async function () {
             <img src="${sticker.img}" alt="${sticker.title}" draggable="false">
           </div>
         </div>
-        <div class="navigation-section first">
+        <div class="section first">
           <span>${sticker.title}</span>
         </div>
-        <div class="navigation-section third">
+        <div class="section third">
           ${sticker.skins.map(skin =>
             `<div class="skin" weapon="${skin.weapon}" skin-id="${skin.skin_id}"></div>`
           ).join("")}
@@ -1957,7 +1957,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   if (!topicBoxesHolder) return;
 
   const isStickerCrafts = location.pathname.includes("sticker-crafts");
-  const cacheKey = "topics-nav-cache";
+  const cacheKey = "topics_nav_cache";
   const cacheTTL = 24 * 60 * 60 * 1000;
   const now = Date.now();
 
@@ -2048,7 +2048,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       allBoxes.forEach((box) => {
         const spanText = isStickerCrafts
-          ? box.querySelector(".navigation-section.first span")?.textContent.toLowerCase() || ""
+          ? box.querySelector(".section.first span")?.textContent.toLowerCase() || ""
           : box.querySelector("span")?.textContent.toLowerCase() || "";
 
         const isMatch = spanText.includes(value);
@@ -2206,7 +2206,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           weaponToSkinIds[weapon].forEach((skinId) => {
             const skinData = skinsForWeapon[skinId];
             if (skinData) {
-              const isInNavigation = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).closest('.navigation-section').length > 0;
+              const isInNavigation = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).closest('.section').length > 0;
               const imageUrl = isInNavigation ? skinData.imageOG : skinData.image;
 
               const newSkinHTML = `
