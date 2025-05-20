@@ -2054,31 +2054,40 @@ document.addEventListener("DOMContentLoaded", async function () {
       topicBoxesHolder.classList.remove("pagination");
       paginationHolder?.remove();
 
-      // Собираем данные для Fuse
       const fuseData = allBoxes.map((box, idx) => {
-        const spans = Array.from(box.querySelectorAll(".section.first span"));
-        const spanTexts = spans
-          .map((s) => s.textContent.trim())
-          .filter(Boolean);
+        if (isStickerCrafts) {
+          // --- Сбор данных для sticker-crafts ---
+          const spans = Array.from(box.querySelectorAll(".section.first span"));
+          const spanTexts = spans
+            .map((s) => s.textContent.trim())
+            .filter(Boolean);
 
-        const skinElements = Array.from(
-          box.querySelectorAll(".section.third .skin")
-        );
-        const skinIds = skinElements
-          .map((el) => el.getAttribute("skin-id") || "")
-          .filter(Boolean);
+          const skinElements = Array.from(
+            box.querySelectorAll(".section.third .skin")
+          );
+          const skinIds = skinElements
+            .map((el) => el.getAttribute("skin-id") || "")
+            .filter(Boolean);
 
-        return {
-          idx,
-          spanTexts,
-          skinIds,
-        };
+          return {
+            idx,
+            spanTexts,
+            skinIds,
+          };
+        } else {
+          // --- Сбор данных для обычных предметов ---
+          const text = box.querySelector("span")?.textContent.trim() || "";
+          return {
+            idx,
+            text,
+          };
+        }
       });
 
       const fuse = new Fuse(fuseData, {
-        keys: ["spanTexts", "skinIds"],
+        keys: isStickerCrafts ? ["spanTexts", "skinIds"] : ["text"],
         threshold: 0.4,
-        minMatchCharLength: 2,
+        minMatchCharLength: 1,
       });
 
       const results = fuse.search(value);
@@ -2117,6 +2126,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
     }
   });
+  
   
   
 })();
