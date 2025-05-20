@@ -9001,6 +9001,11 @@ div#results {
     margin-top: 8px;
 }
 
+.sitepage.topic-craft .section.first .craft-name,
+.topic-boxes-holder .topic-grandbox.sticker .section.first .craft-name {
+    margin-right: 4px;
+}
+
 .sitepage.topic-craft .section.second span,
 .topic-boxes-holder .topic-grandbox.sticker .section.second span {
     font-size: 14px;
@@ -9020,6 +9025,7 @@ div#results {
     margin-bottom: 10px;
     width: 80%;
     text-align: center;
+    text-wrap: nowrap;
 }
 
 .topic-boxes-holder.lang-ru .topic-grandbox.sticker .section.first::after,
@@ -12112,6 +12118,18 @@ div#results {
     .topic-boxes-holder .topic-grandbox.sticker .section.third {
         top: unset;
         padding: 3px 0;
+    }
+
+    .sticker .section.first {
+        gap: 2px;
+        margin-top: 6px;
+        flex-direction: column;
+    }
+
+    .sitepage.topic-craft .section.first span,
+    .topic-boxes-holder .topic-grandbox.sticker .section.first span,
+    .topic-boxes-holder .topic-grandbox.sticker .section.first .craft-name {
+        margin: unset;
     }
 
     .topic-boxes-holder .topic-grandbox.sticker .section.second {

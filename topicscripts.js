@@ -1893,12 +1893,16 @@ document.addEventListener("DOMContentLoaded", async function () {
           </div>
         </div>
         <div class="section first">
-          <span>${sticker.title}</span>
+          <span class="craft-name">${sticker.skin}</span>
+          <span>(${sticker.title})</span>
         </div>
         <div class="section third">
-          ${sticker.skins.map(skin =>
-            `<div class="skin" weapon="${skin.weapon}" skin-id="${skin.skin_id}"></div>`
-          ).join("")}
+          ${sticker.skins
+            .map(
+              (skin) =>
+                `<div class="skin" weapon="${skin.weapon}" skin-id="${skin.skin_id}"></div>`
+            )
+            .join("")}
         </div>
       `;
 
@@ -2038,20 +2042,50 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   filterInput.addEventListener("input", () => {
     const value = filterInput.value.trim().toLowerCase();
-    const itemSelector = isStickerCrafts ? ".topic-grandbox.sticker" : ".topic-box";
-    const allBoxes = Array.from(topicBoxesHolder.querySelectorAll(itemSelector));
+    const itemSelector = isStickerCrafts
+      ? ".topic-grandbox.sticker"
+      : ".topic-box";
+    const allBoxes = Array.from(
+      topicBoxesHolder.querySelectorAll(itemSelector)
+    );
     const paginationHolder = document.querySelector(".pagination-holder");
 
     if (value !== "") {
       topicBoxesHolder.classList.remove("pagination");
       paginationHolder?.remove();
 
-      allBoxes.forEach((box) => {
-        const spanText = isStickerCrafts
-          ? box.querySelector(".section.first span")?.textContent.toLowerCase() || ""
-          : box.querySelector("span")?.textContent.toLowerCase() || "";
+      // Собираем данные для Fuse
+      const fuseData = allBoxes.map((box, idx) => {
+        const spans = Array.from(box.querySelectorAll(".section.first span"));
+        const spanTexts = spans
+          .map((s) => s.textContent.trim())
+          .filter(Boolean);
 
-        const isMatch = spanText.includes(value);
+        const skinElements = Array.from(
+          box.querySelectorAll(".section.third .skin")
+        );
+        const skinIds = skinElements
+          .map((el) => el.getAttribute("skin-id") || "")
+          .filter(Boolean);
+
+        return {
+          idx,
+          spanTexts,
+          skinIds,
+        };
+      });
+
+      const fuse = new Fuse(fuseData, {
+        keys: ["spanTexts", "skinIds"],
+        threshold: 0.4,
+        minMatchCharLength: 2,
+      });
+
+      const results = fuse.search(value);
+      const matchedIdx = new Set(results.map((r) => r.item.idx));
+
+      allBoxes.forEach((box, idx) => {
+        const isMatch = matchedIdx.has(idx);
 
         box.classList.remove("hidden", "fade-in", "visible");
         box.style.animationDelay = "0s";
@@ -2083,6 +2117,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
     }
   });
+  
+  
 })();
 
 
