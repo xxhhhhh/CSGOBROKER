@@ -4030,8 +4030,12 @@ nav #logo:hover {
 
 .promo-box.show {
     height: 80px;
-    margin-top: 8px;
     animation: fadeIn .2s ease-in-out forwards;
+}
+
+.box-extra-links:has(.mirror-redirect) .promo-box.show,
+.box-extra-links:has(.partner-site) .promo-box.show {
+    margin-top: 8px;
 }
 
 .promo-box:hover {
@@ -9060,7 +9064,7 @@ div#results {
 
 .introduce-craft {
     margin-top: 20px;
-    min-height: 100px;
+    min-height: 110px;
 }
 
 .introduce-craft h2 {
@@ -12334,7 +12338,9 @@ div#results {
         border: unset;
     }
 
-    .promo-box.show {
+    .promo-box.show,
+    .box-extra-links:has(.mirror-redirect) .promo-box.show,
+    .box-extra-links:has(.partner-site) .promo-box.show {
         margin: 0 auto;
         border: unset;
         animation: unset;
