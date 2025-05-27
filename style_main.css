@@ -3842,6 +3842,7 @@ nav #logo:hover {
     position: relative;
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .nav-review {
@@ -3853,7 +3854,6 @@ nav #logo:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 8px;
     border-radius: 10px;
     text-decoration: none;
     transition: all .15s ease-in-out;
@@ -4029,11 +4029,6 @@ nav #logo:hover {
 .promo-box.show {
     height: 80px;
     animation: fadeIn .2s ease-in-out forwards;
-}
-
-.box-extra-links:has(.mirror-redirect) .promo-box.show,
-.box-extra-links:has(.partner-site) .promo-box.show {
-    margin-top: 8px;
 }
 
 .promo-box:hover {
@@ -6228,7 +6223,7 @@ footer .centralizer .footer-content {
 }
 
 .main-page .content .review-button.mirror-visit {
-    left: -2px;
+    left: -1px;
     top: 32px;
 }
 
