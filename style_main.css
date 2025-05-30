@@ -24,12 +24,10 @@
 
 :root {
     --white: rgb(249, 249, 249);
-    --lightwhite: rgb(215, 215, 215);
     --main-color: #ce203d;
     --green: #20ce45;
     --gray: rgb(145, 145, 145);
     --opacback: rgba(3, 3, 3, .3);
-    --halfback: rgba(0, 0, 0, .2);
     --darkygray: rgb(11, 11, 11);
     --darkgray: rgb(13, 13, 13);
     --main-theme: rgb(15, 15, 15);
@@ -1062,7 +1060,7 @@ nav .pages {
 
 #preview-showcase .skin-alt-info {
     position: relative;
-    transition: opacity .15s ease-in-out;
+    transition: all .15s ease-in-out;
     cursor: pointer;
     z-index: 1;
     height: 24px;
@@ -2504,6 +2502,7 @@ h3 {
     width: 100%;
     border-radius: 5px;
     border-bottom: 2px solid rgba(0, 0, 0, .1);
+    transition: all .15s ease-in-out;
     display: flex;
     justify-content: center !important;
     align-items: center;
@@ -3319,7 +3318,7 @@ label:hover {
 
 nav img {
     height: auto;
-    width: 140px;
+    width: 130px;
     transition: all .2s ease-in-out;
 }
 
@@ -8560,8 +8559,6 @@ form#search-form {
     transition: all .15s ease-in-out;
 }
 
-.menu-toggle:active,
-.search-enabler:active,
 .lang-menu ul li a:active,
 .pages button:active,
 .controls-button:active,
@@ -8573,7 +8570,6 @@ label:active,
 .preview-close-button:active,
 .preview-pause-button:active,
 .preview-nav-button:active,
-.site-searcher-box:active,
 .nav-review li:active,
 .methodlist a:active::before,
 .email-copy button:active,
@@ -8598,8 +8594,61 @@ a.extra-abox:active span {
 .pagination-button:active,
 a.extra-abox:active .officon,
 .features .featuresbox .typesinside a:active {
-    filter: brightness(.7) !important;
+    filter: brightness(.85) !important;
     transition: all .09s ease-in-out;
+}
+
+.singlemod-box:active,
+.review-button:active,
+.copy:active,
+.controls-button:active,
+.featuresbox .typesinside a:active,
+.sitedetails .methodlist a:active,
+#theme-toggle:active,
+#particles-toggle:active,
+.search-enabler:active,
+.menu-toggle:active,
+.box .logobg a:active img,
+.mirror-redirect:active,
+.partner-site:active,
+.lang-switch:active,
+.site-item:active,
+.liverating:active,
+.navigation-weapon-type:active,
+.navigation-weapon-name:active,
+.close-box-skins:active::before,
+.rec-box .logobg:active img,
+.color-box-selection-button:active,
+.colors-list-unit:active,
+.site-searcher-box:active,
+.skin-color:active,
+.skin-alt-info:active,
+.skin-extra-info a:active,
+.box-skins-button:active i,
+.settings-menu:active,
+#back-to-top-btn:active,
+.contact-content a:active,
+.skin:active img,
+.weapon-selection-unite:active,
+.navigation-weapon-sort:not(.enabled):active,
+.pagination-holder button:not(.active):active,
+.screens button:active i::before,
+.slider-container button:active i::before,
+.boxes-holder-modes:active,
+.boxes-holder-more:active,
+.newest-boxes-more:active,
+.instruction li a:active,
+nav img:active {
+    scale: .9;
+    transition: all .1s ease-in-out;
+}
+
+.category-box:active,
+.topic-boxes-holder .topic-box:active,
+.topic-boxes-holder .topic-grandbox:active,
+.main-mode-unit:active {
+    scale: .96;
+    transition: all .1s ease-in-out;
 }
 
 form input {
@@ -11108,8 +11157,8 @@ div#results {
 }
 
 .pagination-button.arrow .officon.chevron::before {
-    height: 24px;
-    width: 24px;
+    height: 20px;
+    width: 20px;
 }
 
 .pagination-button.disabled .officon::before,

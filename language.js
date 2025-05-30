@@ -254,23 +254,10 @@ document.addEventListener('DOMContentLoaded', function() {
     sendRequest(url, neededTargetId);
   }
   
-  function extractLanguageTagFromHTML() {
-    const htmlElement = document.querySelector('html');
-    if (htmlElement) {
-      const langAttribute = htmlElement.getAttribute('lang');
-      if (langAttribute) {
-        return langAttribute.split('-')[0];
-      }
-    }
-    return null;
-  }
-  
   async function translateURLsIfNeeded() {
     if (!window.location.pathname.includes('/reviews/') && 
-        !window.location.pathname.includes('/ru/') && 
         !window.location.pathname.includes('/mirrors/')) {
   
-      const languageTag = extractLanguageTagFromHTML();
       if (languageTag === 'en') return;
   
       try {
@@ -297,6 +284,10 @@ document.addEventListener('DOMContentLoaded', function() {
       } catch (error) {
       }
       initializeSliderIfNeeded();
+
+      document.addEventListener("boxesInserted", () => {
+        translateURLsIfNeeded().catch(console.error);
+      });
     }
   }
   

@@ -92,6 +92,35 @@ function copyToClipboard(element, copyButton) {
   }, 800);
 }
 
+function copyToClipboard_review(text, copyButton) {
+  const tempInput = document.createElement("input");
+  document.body.appendChild(tempInput);
+  tempInput.value = text;
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+
+  const title = document.createElement("div");
+  title.className = "copied-title";
+  title.textContent = languageTag === "ru" ? "Скопировано" : "Copied";
+
+  copyButton.appendChild(title);
+  copyButton.classList.add("icon-changed");
+
+  title.style.display = "none";
+  $(title).fadeIn(150, function () {
+    $(this)
+      .delay(400)
+      .fadeOut(150, function () {
+        $(this).remove();
+      });
+  });
+
+  setTimeout(function () {
+    copyButton.classList.remove("icon-changed");
+  }, 800);
+}
+
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = themeToggleBtn.querySelector('i');
 let currentTheme = (StorageHelper.getJSON('theme_settings') || {}).theme || getSystemPreferredTheme() || getSystemPreferredTheme();
@@ -295,33 +324,7 @@ forcemodsboxes();
       logobg.appendChild(mainModeDiv);
     }
 
-  
-    function copyToClipboard_review(text, copyButton) {
-      const tempInput = document.createElement("input");
-      document.body.appendChild(tempInput);
-      tempInput.value = text;
-      tempInput.select();
-      document.execCommand("copy");
-      document.body.removeChild(tempInput);
-  
-      const title = document.createElement("div");
-      title.className = "copied-title";
-      title.textContent = languageTag === "ru" ? "Скопировано" : "Copied";
-  
-      copyButton.appendChild(title);
-      copyButton.classList.add("icon-changed");
-  
-      title.style.display = "none";
-      $(title).fadeIn(150, function () {
-        $(this).delay(400).fadeOut(150, function () {
-          $(this).remove();
-        });
-      });
-  
-      setTimeout(function () {
-        copyButton.classList.remove("icon-changed");
-      }, 800);
-    }
+
   
     function loadReviewSettings(callback) {
       fetch('/code-parts/review-settings.json')
@@ -419,7 +422,58 @@ forcemodsboxes();
         addMirrorButton(box, pageKey, data);
       }
     }
-  
+
+    document.addEventListener("boxesInserted", () => {
+      const holderBoxes = document.querySelectorAll(".boxes-holder .box");
+
+      holderBoxes.forEach((box) => {
+        const logoLink = box.querySelector(".logobg a");
+        if (!logoLink) return;
+
+        const path = logoLink.getAttribute("href");
+        const pageKey = path.split("/").pop();
+        const jsonFilePath = `/code-parts/site-infos/${pageKey}.json`;
+
+        const boxId = box.id?.trim();
+        if (!boxId) return;
+
+        loadAllJsonData(jsonFilePath, (data) => {
+          if (data.code) {
+            const copyButtons = box.querySelectorAll(".copy");
+            copyButtons.forEach((button) => {
+              button.addEventListener("click", () =>
+                copyToClipboard_review(data.code, button)
+              );
+            });
+          }
+
+          if (data["Main Mode"]) {
+            modifyBox(box, data["Main Mode"]);
+          }
+
+          updateReviewButtons(box, data, pageKey);
+          updateURLs(document.querySelector(".boxes-holder"));
+        });
+
+        // ✅ Правильное сравнение по ID, как в JSON
+        const ratings = window.ratings || {};
+        if (ratings[boxId] !== undefined) {
+          addStarRating(boxId, ratings[boxId]);
+        }
+
+        if (languageTag === 'ru') {
+          const required = window.requiredRoute || [];
+          const maybe = window.maybeRoute || [];
+
+          if (required.includes(boxId) || maybe.includes(boxId)) {
+            handleRouteDisplay([box], required, maybe);
+          }
+        }
+      });
+    });
+    
+    
+
     let currentPath = window.location.pathname;
   
     if (currentPath.includes("/reviews/") || currentPath.includes("/mirrors/")) {
@@ -1726,10 +1780,6 @@ if (btnfaq) {
   };
 }
 
-let ratings = {};
-let requiredRoute = [];
-let maybeRoute = [];
-
 function addStarRating(boxId, rating) {
   const boxElement = document.getElementById(boxId);
   if (boxElement) {
@@ -1747,6 +1797,9 @@ function addStarRating(boxId, rating) {
 }
 
 function handleRouteDisplay(boxElements) {
+  const requiredRoute = window.requiredRoute || [];
+  const maybeRoute = window.maybeRoute || [];
+
   const routeMessageDiv = document.createElement('div');
   routeMessageDiv.className = 'route';
   routeMessageDiv.textContent = 'Доступ ограничен';
@@ -1788,22 +1841,25 @@ function handleRouteDisplay(boxElements) {
 }
 
 function renderData() {
-  const boxesHolder = document.querySelector('.boxes-holder, .sitealternatesboxes');
-  if (boxesHolder) {
-    for (const boxId in ratings) {
-      addStarRating(boxId, ratings[boxId]);
+  const boxesHolder = document.querySelector(
+    ".boxes-holder, .sitealternatesboxes"
+  );
+  if (boxesHolder && window.ratings) {
+    for (const boxId in window.ratings) {
+      addStarRating(boxId, window.ratings[boxId]);
     }
   }
 
   if (
-    window.location.pathname.startsWith('/ru/') ||
-    window.location.pathname === '/ru' ||
-    window.location.pathname === '/ru.html'
+    window.location.pathname.startsWith("/ru/") ||
+    window.location.pathname === "/ru" ||
+    window.location.pathname === "/ru.html"
   ) {
-    const boxElements = document.querySelectorAll('.box');
+    const boxElements = document.querySelectorAll(".box");
     handleRouteDisplay(boxElements);
   }
 }
+
 
 renderData();
 
@@ -1821,11 +1877,17 @@ if (cachedSettings) {
 }
 
 function useSettings(settings) {
-  ratings = settings.ratings;
-  requiredRoute = settings.RequiredRoute;
-  maybeRoute = settings.MaybeRoute;
+  window.ratings = settings.ratings;
+  window.requiredRoute = settings.RequiredRoute;
+  window.maybeRoute = settings.MaybeRoute;
+
+  const ratings = window.ratings;
+  const requiredRoute = window.requiredRoute;
+  const maybeRoute = window.maybeRoute;
+
   renderData();
 }
+
 
 
 const href = window.location.href;
@@ -3617,6 +3679,151 @@ window.initPayments = function () {
 
 window.initPayments();
 
+window.initFreebiesBoxes = function () {
+  const rawPath = window.location.pathname.replace(/\/index\.html$/, "/");
+  const currentPath = rawPath.replace(/\.html$/, "");
+
+  const languageMatch = currentPath.match(/^\/([a-z]{2})\b/);
+  const languageTag = languageMatch ? languageMatch[1] : null;
+
+  if (!currentPath.includes("/freebies")) return;
+
+  const pagesToLoad = [
+    "/cs2.html",
+    "/rust.html",
+    "/crypto.html",
+    "/earning.html",
+    "/steam/levelup.html",
+  ].map((p) => (languageTag === "ru" ? `/${languageTag}${p}` : p));
+
+  const boxesHolder = document.querySelector(".boxes-holder");
+  if (!boxesHolder) return;
+
+  const bonusTypeByPath = {
+    "sign-up-bonuses": "SignUpBonus",
+    "daily-rewards": "DailyRewards",
+    "deposit-bonuses": "DepositBonus",
+    "giveaways": "Giveaways",
+  };
+
+  const targetBonus =
+    Object.entries(bonusTypeByPath).find(([key]) =>
+      currentPath.includes(key)
+    )?.[1] || null;
+  
+  const isGeneralPage = !targetBonus;
+  let featureOrder = [];
+
+  function extractBoxesFromHTML(htmlText) {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = htmlText;
+    return Array.from(tempDiv.querySelectorAll(".box"));
+  }
+
+  function loadPageAndFilterBoxes(pageUrl) {
+    return fetch(pageUrl)
+      .then(res => {
+        if (!res.ok) throw new Error(`Failed to fetch ${pageUrl}`);
+        return res.text();
+      })
+      .then(html => extractBoxesFromHTML(html))
+      .catch(err => {
+        console.warn(err.message);
+        return [];
+      });
+  }
+
+  function fetchBoxJSON(box) {
+    const link = box.querySelector(".logobg a");
+    if (!link) return Promise.resolve(null);
+    const path = link.getAttribute("href").split("/").pop();
+    const jsonPath = `/code-parts/site-infos/${path}.json`;
+    return fetch(jsonPath)
+      .then(res => res.ok ? res.json() : null)
+      .then(data => ({ box, data, pageKey: path }))
+      .catch(() => null);
+  }
+
+  fetch("/code-parts/review-settings.json")
+    .then(res => res.json())
+    .then(settings => {
+      featureOrder = settings.featureOrder || [];
+
+      Promise.all(pagesToLoad.map(loadPageAndFilterBoxes)).then(results => {
+        const seenTitles = new Set();
+        const flatBoxes = results.flat();
+        const uniqueBoxes = flatBoxes.filter(box => {
+          const titleEl = box.querySelector(".boxtitle") || box.querySelector(".content p:first-child");
+          if (!titleEl) return false;
+          const title = titleEl.textContent.trim();
+          if (seenTitles.has(title)) return false;
+          seenTitles.add(title);
+          return true;
+        });
+
+        Promise.all(uniqueBoxes.map(fetchBoxJSON)).then(results => {
+          const validBoxes = results.filter(entry => {
+            if (!entry || !entry.data || !entry.data.featuresContent || !entry.data.featuresContent.length) return false;
+            if (!targetBonus) return true;
+            return entry.data.featuresContent.includes(targetBonus);
+          });
+
+          if (isGeneralPage && featureOrder.length > 0) {
+            validBoxes.sort((a, b) => {
+              const aIndex = featureOrder.findIndex(f => (a.data.featuresContent || []).includes(f));
+              const bIndex = featureOrder.findIndex(f => (b.data.featuresContent || []).includes(f));
+              return (aIndex === -1 ? Infinity : aIndex) - (bIndex === -1 ? Infinity : bIndex);
+            });
+          }
+
+          validBoxes.forEach(({ box }) => {
+            box.classList.add("was-hidden");
+            boxesHolder.appendChild(box);
+          });
+          
+
+          requestAnimationFrame(() => {
+            validBoxes.forEach(({ box }, i) => {
+              const delay = (i + 1) * 0.15;
+              box.style.animationDelay = `${delay}s`;
+              box.classList.add("animate-in");
+              box.addEventListener("animationend", () => {
+                box.classList.remove("animate-in", "was-hidden");
+                box.style.animationDelay = "";
+              }, { once: true });
+            });
+
+            document.dispatchEvent(new CustomEvent("boxesInserted"));
+
+            const boxes = Array.from(
+              document.querySelectorAll(".box:not(.main)")
+            );
+
+            boxes.forEach(function (box) {
+              var logoLink = box.querySelector(".logobg a");
+              if (logoLink) {
+                var href = logoLink.getAttribute("href");
+
+                var firstParagraph = box.querySelector(
+                  ".content p:first-child"
+                );
+                if (firstParagraph) {
+                  var newLink = document.createElement("a");
+                  newLink.href = href;
+                  newLink.textContent = firstParagraph.textContent;
+                  newLink.classList.add("boxtitle");
+
+                  firstParagraph.replaceWith(newLink);
+                }
+              }
+            });
+          });
+        });
+      });
+    });
+};
+
+window.initFreebiesBoxes();
 
 (() => {
   const PARTICLE_COUNT = 45;
@@ -3827,25 +4034,25 @@ function loadModsJSON() {
     });
 }
 
-function loadCachedData_sitesInfo() {
-  const cachedData = StorageHelper.getJSON('sites_info');
-  if (cachedData) {
-    try {
-      ratings = cachedData.ratings || {};
-      requiredRoute = cachedData.RequiredRoute || [];
-      maybeRoute = cachedData.MaybeRoute || [];
-    } catch (e) {
-      console.error('Ошибка при разборе sites_info:', e);
-    }
-  }
-}
+// function loadCachedData_sitesInfo() {
+//   const cachedData = StorageHelper.getJSON('sites_info');
+//   if (cachedData) {
+//     try {
+//       ratings = cachedData.ratings || {};
+//       requiredRoute = cachedData.RequiredRoute || [];
+//       maybeRoute = cachedData.MaybeRoute || [];
+//     } catch (e) {
+//       console.error('Ошибка при разборе sites_info:', e);
+//     }
+//   }
+// }
 
-function saveToCache_sitesInfo(data) {
-  const fullData = {
-    ratings: data.ratings,
-    RequiredRoute: data.RequiredRoute,
-    MaybeRoute: data.MaybeRoute,
-    hash: data.hash
-  };
-  StorageHelper.setJSON('sites_info', fullData);
-}
+// function saveToCache_sitesInfo(data) {
+//   const fullData = {
+//     ratings: data.ratings,
+//     RequiredRoute: data.RequiredRoute,
+//     MaybeRoute: data.MaybeRoute,
+//     hash: data.hash
+//   };
+//   StorageHelper.setJSON('sites_info', fullData);
+// }
