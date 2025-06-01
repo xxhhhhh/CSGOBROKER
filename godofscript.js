@@ -1132,11 +1132,11 @@ function insertReviewLinks(codes, codeValue, codesBinding) {
   }
     
     function checkAndAddLanguage(lang) {
-        var path = lang === "en" 
-            ? window.location.pathname.replace(/^\/[a-z]{2}\//, "/") 
+        const path = lang === "en"
+            ? window.location.pathname.replace(/^\/[a-z]{2}\//, "/")
             : "/" + lang + window.location.pathname.replace(/^\/[a-z]{2}\//, "/");
-    
-        fetch(path, { method: 'HEAD' }).then(function(response) {
+
+        fetch(path, { method: 'HEAD' }).then(response => {
             if (response.ok && currentLanguage !== lang) {
                 langMenuDiv.querySelector("ul").innerHTML += createLanguageListItem(lang, path);
             }
@@ -3684,7 +3684,7 @@ window.initFreebiesBoxes = function () {
   const currentPath = rawPath.replace(/\.html$/, "");
 
   const languageMatch = currentPath.match(/^\/([a-z]{2})\b/);
-  const languageTag = languageMatch ? languageMatch[1] : null;
+  const languageTag = languageMatch && languageMatch[1] === "ru" ? "ru" : "def";
 
   if (!currentPath.includes("/freebies")) return;
 
@@ -3694,7 +3694,7 @@ window.initFreebiesBoxes = function () {
     "/crypto.html",
     "/earning.html",
     "/steam/levelup.html",
-  ].map((p) => (languageTag === "ru" ? `/${languageTag}${p}` : p));
+  ].map((p) => (languageTag === "ru" ? `/${languageMatch[1]}${p}` : p));
 
   const boxesHolder = document.querySelector(".boxes-holder");
   if (!boxesHolder) return;
@@ -3703,14 +3703,25 @@ window.initFreebiesBoxes = function () {
     "sign-up-bonuses": "SignUpBonus",
     "daily-rewards": "DailyRewards",
     "deposit-bonuses": "DepositBonus",
-    "giveaways": "Giveaways",
+    giveaways: "Giveaways",
+  };
+
+  const featureLabels = {
+    SignUpBonus: { def: "Sign Up Bonus", ru: "Бонус за Регистрацию" },
+    DepositBonus: { def: "Deposit Bonus", ru: "Бонус к Пополнению" },
+    DailyRewards: { def: "Daily Rewards", ru: "Ежедневные Награды" },
+    Rakeback: { def: "Rakeback", ru: "Рейкбек" },
+    Giveaways: { def: "Giveaways", ru: "Розыгрыши" },
+    BonustoSale: { def: "Bonus to Sale", ru: "Бонус к Продаже" },
+    Faucet: { def: "Faucet", ru: "Система Кранов" },
+    Rain: { def: "Rain", ru: "Система Дождей" },
   };
 
   const targetBonus =
     Object.entries(bonusTypeByPath).find(([key]) =>
       currentPath.includes(key)
     )?.[1] || null;
-  
+
   const isGeneralPage = !targetBonus;
   let featureOrder = [];
 
@@ -3722,12 +3733,12 @@ window.initFreebiesBoxes = function () {
 
   function loadPageAndFilterBoxes(pageUrl) {
     return fetch(pageUrl)
-      .then(res => {
+      .then((res) => {
         if (!res.ok) throw new Error(`Failed to fetch ${pageUrl}`);
         return res.text();
       })
-      .then(html => extractBoxesFromHTML(html))
-      .catch(err => {
+      .then((html) => extractBoxesFromHTML(html))
+      .catch((err) => {
         console.warn(err.message);
         return [];
       });
@@ -3739,21 +3750,23 @@ window.initFreebiesBoxes = function () {
     const path = link.getAttribute("href").split("/").pop();
     const jsonPath = `/code-parts/site-infos/${path}.json`;
     return fetch(jsonPath)
-      .then(res => res.ok ? res.json() : null)
-      .then(data => ({ box, data, pageKey: path }))
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => ({ box, data, pageKey: path }))
       .catch(() => null);
   }
 
   fetch("/code-parts/review-settings.json")
-    .then(res => res.json())
-    .then(settings => {
+    .then((res) => res.json())
+    .then((settings) => {
       featureOrder = settings.featureOrder || [];
 
-      Promise.all(pagesToLoad.map(loadPageAndFilterBoxes)).then(results => {
+      Promise.all(pagesToLoad.map(loadPageAndFilterBoxes)).then((results) => {
         const seenTitles = new Set();
         const flatBoxes = results.flat();
-        const uniqueBoxes = flatBoxes.filter(box => {
-          const titleEl = box.querySelector(".boxtitle") || box.querySelector(".content p:first-child");
+        const uniqueBoxes = flatBoxes.filter((box) => {
+          const titleEl =
+            box.querySelector(".boxtitle") ||
+            box.querySelector(".content p:first-child");
           if (!titleEl) return false;
           const title = titleEl.textContent.trim();
           if (seenTitles.has(title)) return false;
@@ -3761,36 +3774,92 @@ window.initFreebiesBoxes = function () {
           return true;
         });
 
-        Promise.all(uniqueBoxes.map(fetchBoxJSON)).then(results => {
-          const validBoxes = results.filter(entry => {
-            if (!entry || !entry.data || !entry.data.featuresContent || !entry.data.featuresContent.length) return false;
+        Promise.all(uniqueBoxes.map(fetchBoxJSON)).then((results) => {
+          const validBoxes = results.filter((entry) => {
+            if (
+              !entry ||
+              !entry.data ||
+              !entry.data.featuresContent ||
+              !entry.data.featuresContent.length
+            )
+              return false;
             if (!targetBonus) return true;
             return entry.data.featuresContent.includes(targetBonus);
           });
 
           if (isGeneralPage && featureOrder.length > 0) {
             validBoxes.sort((a, b) => {
-              const aIndex = featureOrder.findIndex(f => (a.data.featuresContent || []).includes(f));
-              const bIndex = featureOrder.findIndex(f => (b.data.featuresContent || []).includes(f));
-              return (aIndex === -1 ? Infinity : aIndex) - (bIndex === -1 ? Infinity : bIndex);
+              const aIndex = featureOrder.findIndex((f) =>
+                (a.data.featuresContent || []).includes(f)
+              );
+              const bIndex = featureOrder.findIndex((f) =>
+                (b.data.featuresContent || []).includes(f)
+              );
+              return (
+                (aIndex === -1 ? Infinity : aIndex) -
+                (bIndex === -1 ? Infinity : bIndex)
+              );
             });
           }
 
-          validBoxes.forEach(({ box }) => {
+          validBoxes.forEach(({ box, data }) => {
+            const logobg = box.querySelector(".logobg");
+            if (logobg && !logobg.querySelector(".best")) {
+              const bestDiv = document.createElement("div");
+              bestDiv.className = "best";
+
+              // 💡 Выбираем приоритетную фичу
+              const selectedFeature =
+                targetBonus ||
+                featureOrder.find((feature) =>
+                  (data.featuresContent || []).includes(feature)
+                );
+
+              let text = "";
+
+              // 1. Пробуем кастомный текст из site-infos
+              if (
+                selectedFeature &&
+                data[selectedFeature] &&
+                Array.isArray(data[selectedFeature])
+              ) {
+                text =
+                  languageTag === "ru"
+                    ? data[selectedFeature][1]
+                    : data[selectedFeature][0];
+              }
+              // 2. Если нет — стандарт из featureLabels
+              else if (
+                selectedFeature &&
+                featureLabels[selectedFeature] &&
+                featureLabels[selectedFeature][languageTag]
+              ) {
+                text = featureLabels[selectedFeature][languageTag];
+              }
+
+              if (text) {
+                bestDiv.textContent = text;
+                logobg.appendChild(bestDiv);
+              }
+            }
+
             box.classList.add("was-hidden");
             boxesHolder.appendChild(box);
           });
-          
 
           requestAnimationFrame(() => {
             validBoxes.forEach(({ box }, i) => {
               const delay = (i + 1) * 0.15;
               box.style.animationDelay = `${delay}s`;
               box.classList.add("animate-in");
-              box.addEventListener("animationend", () => {
-                box.classList.remove("animate-in", "was-hidden");
-                box.style.animationDelay = "";
-              }, { once: true });
+              box.addEventListener(
+                "animationend",
+                () => {
+                  box.classList.remove("animate-in", "was-hidden");
+                  box.style.animationDelay = "";
+                },
+                { once: true }
+              );
             });
 
             document.dispatchEvent(new CustomEvent("boxesInserted"));
@@ -3823,7 +3892,11 @@ window.initFreebiesBoxes = function () {
     });
 };
 
-window.initFreebiesBoxes();
+
+
+if (path.includes("/freebies")) {
+  window.initFreebiesBoxes();
+}
 
 (() => {
   const PARTICLE_COUNT = 45;
