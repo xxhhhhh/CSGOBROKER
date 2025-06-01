@@ -3709,8 +3709,10 @@ window.initFreebiesBoxes = function () {
   const featureLabels = {
     SignUpBonus: { def: "Sign Up Bonus", ru: "Бонус за Регистрацию" },
     DepositBonus: { def: "Deposit Bonus", ru: "Бонус к Пополнению" },
+    ProgressiveRewards: { def: "Progressive Rewards", ru: "Награды за Уровень" },
     DailyRewards: { def: "Daily Rewards", ru: "Ежедневные Награды" },
     Rakeback: { def: "Rakeback", ru: "Рейкбек" },
+    RakebackBoost: { def: "Rakeback Boost", ru: "Буст Рейкбека" },
     Giveaways: { def: "Giveaways", ru: "Розыгрыши" },
     BonustoSale: { def: "Bonus to Sale", ru: "Бонус к Продаже" },
     Faucet: { def: "Faucet", ru: "Система Кранов" },

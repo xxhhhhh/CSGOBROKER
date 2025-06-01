@@ -3901,6 +3901,10 @@ nav #logo:hover {
     color: var(--white);
 }
 
+.nav-review li.current::before {
+    opacity: 1;
+}
+
 .nav-review li::before {
     content: "";
     position: absolute;
@@ -3915,6 +3919,7 @@ nav #logo:hover {
     background-clip: initial;
     transition: all .15s ease-in-out;
     border-radius: 30%;
+    opacity: .5;
 }
 
 .text-col-info-theme::before,
@@ -8570,7 +8575,7 @@ label:active,
 .preview-close-button:active,
 .preview-pause-button:active,
 .preview-nav-button:active,
-.nav-review li:active,
+
 .methodlist a:active::before,
 .email-copy button:active,
 .email-copy button:active i,
@@ -8632,6 +8637,7 @@ a.extra-abox:active .officon,
 .pagination-holder button:not(.active):active,
 .screens button:active i::before,
 .slider-container button:active i::before,
+.nav-review li:not(.current):active,
 .boxes-holder-modes:active,
 .boxes-holder-more:active,
 .newest-boxes-more:active,
@@ -11623,6 +11629,7 @@ div#results {
 
     .nav-review li::before {
         left: -20px;
+        opacity: 1;
     }
 
     .bonus_info::before {
