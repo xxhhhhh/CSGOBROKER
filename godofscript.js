@@ -273,8 +273,13 @@ forcemodsboxes();
     const basePath = "/code-parts/site-infos";
   
     function computeHash(data) {
-      return btoa(JSON.stringify(data));
-    }
+      const str = JSON.stringify(data);
+      const utf8Bytes = new TextEncoder().encode(str);
+      const binary = Array.from(utf8Bytes)
+        .map((b) => String.fromCharCode(b))
+        .join("");
+      return btoa(binary);
+    }    
   
     const allDataCache = loadCachedData('sites_load') || { data: {}, hashes: {} };
 
@@ -309,7 +314,6 @@ forcemodsboxes();
       const logobg = box.querySelector(".logobg");
       if (!logobg) return;
 
-      // Удаляем уже существующий .main-mode, если есть
       const existingMainMode = logobg.querySelector(".main-mode");
       if (existingMainMode) existingMainMode.remove();
 
@@ -3701,8 +3705,10 @@ window.initFreebiesBoxes = function () {
 
   const bonusTypeByPath = {
     "sign-up-bonuses": "SignUpBonus",
+    "progressive-rewards": "ProgressiveRewards",
     "daily-rewards": "DailyRewards",
     "deposit-bonuses": "DepositBonus",
+    "faucet-system": "Faucet",
     giveaways: "Giveaways",
   };
 
@@ -3810,7 +3816,6 @@ window.initFreebiesBoxes = function () {
               const bestDiv = document.createElement("div");
               bestDiv.className = "best";
 
-              // 💡 Выбираем приоритетную фичу
               const selectedFeature =
                 targetBonus ||
                 featureOrder.find((feature) =>
@@ -3819,7 +3824,6 @@ window.initFreebiesBoxes = function () {
 
               let text = "";
 
-              // 1. Пробуем кастомный текст из site-infos
               if (
                 selectedFeature &&
                 data[selectedFeature] &&
@@ -3830,7 +3834,6 @@ window.initFreebiesBoxes = function () {
                     ? data[selectedFeature][1]
                     : data[selectedFeature][0];
               }
-              // 2. Если нет — стандарт из featureLabels
               else if (
                 selectedFeature &&
                 featureLabels[selectedFeature] &&
