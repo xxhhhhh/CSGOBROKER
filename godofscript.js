@@ -2229,6 +2229,13 @@ function forcemodsboxes() {
         hi: "साइन अप बोनस",
         es: "Bonos de Registro",
       },
+      "Bonuses to Sale": {
+        ru: "Бонусы к Продаже",
+        tr: "Satışa Ek Bonuslar",
+        pt: "Bônus na Venda",
+        hi: "बिक्री के लिए बोनस",
+        es: "Bonos para la Venta",
+      },
       "Match Betting": {
         ru: "Ставки на Матчи",
         tr: "Maç Bahisleri",
@@ -2292,7 +2299,7 @@ function forcemodsboxes() {
         hi: "अधिक",
         es: "Más",
       },
-      
+
       "Popular CS2 Gambling Sites": {
         ru: "",
         tr: "Popüler CS2 Kumar Siteleri",
@@ -3694,6 +3701,8 @@ window.initFreebiesBoxes = function () {
 
   const pagesToLoad = [
     "/cs2.html",
+    "/csgo/sell-skins.html",
+    "/csgo/trade-skins.html",
     "/rust.html",
     "/crypto.html",
     "/earning.html",
@@ -3708,7 +3717,10 @@ window.initFreebiesBoxes = function () {
     "progressive-rewards": "ProgressiveRewards",
     "daily-rewards": "DailyRewards",
     "deposit-bonuses": "DepositBonus",
+    "bonuses-to-sale": "BonustoSale",
+    "rakeback-system": "Rakeback",
     "faucet-system": "Faucet",
+    "rain-system": "Rain",
     giveaways: "Giveaways",
   };
 
