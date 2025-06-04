@@ -2883,6 +2883,12 @@ h3 {
     mask-repeat: no-repeat;
     background: linear-gradient(to right, rgb(141, 21, 41), var(--main-color));
     mask-size: 100%;
+    filter: grayscale(1);
+    transition: all .15s ease-in-out;
+}
+
+.smallreview.criteria:hover h3::before {
+    filter: grayscale(0);
 }
 
 .smallreview.criteria p {
@@ -2893,7 +2899,7 @@ h3 {
 }
 
 .smallreview.criteria:hover p {
-    color: var(--white);
+    color: var(--lightgray);
 }
 
 .smallreview.criteria::after {
@@ -11283,6 +11289,10 @@ div#results {
         gap: 4px;
         margin-top: 0;
         flex-direction: column;
+    }
+
+    .smallreview.criteria h3::before {
+        filter: grayscale(0);
     }
 
     .boxreview .smallreview.criteria {
