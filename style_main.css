@@ -27,6 +27,7 @@
     --main-color: #ce203d;
     --green: #20ce45;
     --gray: rgb(145, 145, 145);
+    --lightgray: rgb(206, 206, 206);
     --opacback: rgba(3, 3, 3, .3);
     --darkygray: rgb(11, 11, 11);
     --darkgray: rgb(13, 13, 13);
@@ -112,7 +113,7 @@ h6,
 p,
 .introduce-craft span {
     line-height: 1.2;
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
 }
 
 a,
@@ -2829,13 +2830,15 @@ h3 {
     justify-content: center;
 }
 
-.smallreview h2 {
+.smallreview h2,
+.smallreview h3 {
     height: auto;
-    margin-bottom: 30px !important;
+    margin-bottom: 30px;
     text-align: start;
 }
 
 .smallreview h2,
+.smallreview h3,
 .instruction h2,
 .instruction h3 {
     font-size: 20px;
@@ -2855,6 +2858,61 @@ h3 {
     display: block;
     position: relative;
     line-height: 1.4;
+}
+
+.criteria-descriptions {
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+    gap: 8px;
+    flex-wrap: wrap;
+    width: 98%;
+}
+
+.smallreview.criteria h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    user-select: none;
+}
+
+.smallreview.criteria h3::before {
+    left: -23px;
+    width: 16px;
+    height: 16px;
+    mask-image: url(/img/icons/gamemodes/star-fill.svg);
+    mask-repeat: no-repeat;
+    background: linear-gradient(to right, rgb(141, 21, 41), var(--main-color));
+    mask-size: 100%;
+}
+
+.smallreview.criteria p {
+    color: var(--gray);
+    transition: all .15s ease-in-out;
+    font-size: 14px;
+    user-select: none;
+}
+
+.smallreview.criteria:hover p {
+    color: var(--white);
+}
+
+.smallreview.criteria::after {
+    content: unset;
+}
+
+/* .smallreview.criteria h3 {
+    margin-bottom: 15px;
+} */
+
+.boxreview .smallreview.criteria {
+    background: var(--darkygray);
+    width: 45%;
+    margin: 0 auto;
+    padding: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    filter: drop-shadow(0 0 1px rgb(10 10 10)) blur(0);
+    flex-grow: 1;
 }
 
 .smallreview p:nth-child(3),
@@ -2943,7 +3001,7 @@ h3 {
 .instruction h2,
 .instruction h3 {
     height: auto;
-    margin-bottom: 30px !important;
+    margin-bottom: 25px;
     margin-left: 0;
     text-align: start;
 }
@@ -4350,14 +4408,14 @@ nav #logo:hover {
     width: 100%;
     height: 60px;
     min-height: 60px;
-    background: var(--darkygray);
+    background: var(--darkgray);
     cursor: pointer;
     border-radius: 10px;
     position: relative;
     font-weight: 500;
     display: flex;
     align-items: center;
-    transition: .2s all ease-in-out;
+    transition: .15s all ease-in-out;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     overflow: hidden;
     flex-direction: column;
@@ -4422,9 +4480,9 @@ nav #logo:hover {
     filter: none;
 }
 
-.sitedetails .sitepros:hover.active,
+.sitedetails .sitepros.active,
 .sitedetails .sitepros:hover {
-    background: linear-gradient(150deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 10%, rgba(65, 65, 65, 0.2) 50%, rgba(255, 255, 255, 0) 100%) !important;
+    background: rgb(15 15 15);
 }
 
 .sitepage .box {
@@ -4768,12 +4826,12 @@ nav #logo:hover {
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    font-size: 15px;
-    border-radius: 0 0 5px 0;
+    font-size: 14px;
     position: absolute;
     left: 50%;
     top: -2px;
     transform: translateX(-50%);
+    color: var(--gray);
     padding: 0 24px;
     user-select: none;
     z-index: 100;
@@ -5579,7 +5637,7 @@ nav img:active,
 }
 
 .content strong {
-    color: rgba(255, 255, 255, .8);
+    color: var(--lightgray);
     font-weight: 500;
     background: unset;
 }
@@ -8616,7 +8674,6 @@ a.extra-abox:active .officon,
 .box .logobg a:active img,
 .lang-switch:active,
 .site-item:active,
-.liverating:active,
 .navigation-weapon-type:active,
 .navigation-weapon-name:active,
 .close-box-skins:active::before,
@@ -8644,6 +8701,7 @@ a.extra-abox:active .officon,
 .instruction li a:active,
 nav img:active {
     scale: .9;
+    transform-origin: center center;
     transition: all .1s ease-in-out;
 }
 
@@ -8653,8 +8711,10 @@ nav img:active {
 .topic-boxes-holder .topic-grandbox:active,
 .mirror-redirect:active,
 .partner-site:active,
+.logobg .rating:active,
 .main-mode-unit:active {
     scale: .96;
+    transform-origin: center center;
     transition: all .1s ease-in-out;
 }
 
@@ -9736,15 +9796,15 @@ div#results {
 }
 
 .main-infobox-content-text p {
-    color: rgba(255, 255, 255, .3);
-    font-weight: 400;
+    color: rgb(85 85 85);
+    font-weight: 500;
     font-size: 14px;
     transition: color .25s ease-in-out;
     line-height: 1.3;
 }
 
 .main-infobox:hover .main-infobox-content-text p {
-    color: rgba(255, 255, 255, .8);
+    color: var(--lightgray);
 }
 
 .main-infobox-content-block {
@@ -10849,6 +10909,7 @@ div#results {
 
 .instruction h3::before,
 .smallreview h2::before,
+.smallreview h3::before,
 .introduce-craft h2::before {
     content: "";
     position: absolute;
@@ -11218,6 +11279,21 @@ div#results {
         order: 1;   
     }
 
+    .criteria-descriptions {
+        gap: 4px;
+        margin-top: 0;
+        flex-direction: column;
+    }
+
+    .boxreview .smallreview.criteria {
+        padding: 20px 10px;
+        width: 100%;
+    }
+
+    .smallreview.criteria h3 {
+        margin-left: 37px; 
+    }
+
     .mirror-redirect .mirror {
         margin: unset;
         margin-right: -4px;
@@ -11350,7 +11426,7 @@ div#results {
     .newest-boxes-title-box span,
     .main-infobox-content-text p,
     .topic-box .content span {
-        color: rgb(255, 255, 255, .8);
+        color: var(--lightgray);
     }
 
     .boxes-holder-name h3 {
@@ -11591,7 +11667,7 @@ div#results {
 
     .main-infobox-content.second {
         margin-left: unset;
-        margin-top: -30px;
+        margin-top: -20px;
     }
 
     .main-infobox-mascotte::after,
@@ -13041,6 +13117,7 @@ div#results {
     .siteblock {
         position: relative;
         background: var(--darkygray);
+        gap: unset;
     }
 
     .box {
@@ -13741,11 +13818,11 @@ div#results {
     }
 
     .sitealternates {
-        margin-top: 0;
+        margin-top: 4px;
     }
 
     .alternates-title {
-        width: 65%;
+        width: 75%;
     }
 
     .sitealternates .site-reward {
@@ -13888,6 +13965,7 @@ div#results {
     }
 
     .smallreview h2,
+    .smallreview:not(.criteria) h3,
     .instruction h2,
     .instruction h3 {
         font-size: 20px !important;
@@ -14070,7 +14148,7 @@ div#results {
         margin-left: 0;
     }
 
-    .smallreview p,
+    .smallreview:not(.criteria) p,
     .boxreview .plusminus .criteria .par li,
     .instruction li {
         font-size: 15px !important;

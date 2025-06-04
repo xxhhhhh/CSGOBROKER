@@ -606,7 +606,7 @@ forcemodsboxes();
     }
   
     function insertOverallRating(ratings) {
-        const possibleRatings = ['Trust', 'Support', 'Payments', 'Functional', 'Price', 'Variety', 'Playability'];
+        const possibleRatings = ['Trust', 'Support', 'Payments', 'Functional', 'Pricing', 'Variety', 'Playability'];
         let sum = 0;
         let count = 0;
   
@@ -692,7 +692,7 @@ forcemodsboxes();
     }
   
     function translateTextElements(translations) {
-      var siteprosElements = document.querySelectorAll('.sitedetails .sitepros span');
+      var siteprosElements = document.querySelectorAll(".sitedetails .sitepros span, .smallreview.criteria h3");
       for (var i = 0; i < siteprosElements.length; i++) {
           var element = siteprosElements[i];
           var originalText = element.textContent.trim();
@@ -753,8 +753,13 @@ forcemodsboxes();
             <div class="sitealternatesboxes"></div>
         `;
 
+        const criterias = document.querySelector('.criteria-descriptions');
         const ratingsumm = document.querySelector('.ratingsumm');
-        if (ratingsumm) {
+        
+        if (criterias) {
+            criterias.insertAdjacentElement('afterend', siteAlternates);
+        } 
+        else if (ratingsumm) {
             ratingsumm.insertAdjacentElement('afterend', siteAlternates);
         } 
       else {

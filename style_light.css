@@ -24,7 +24,7 @@
 .box.main,
 .extra-abox,
 .nav-review,
-.screentable,
+.screentable .screens:not(.crafting-table-screens).slick-dotted.slick-slider,
 .buttons-container-page,
 .instruction-mirrors li a,
 .sitepage .box .content,
@@ -59,7 +59,9 @@
 .skininspect-placeholder,
 .box-skins-nav .navigation-weapon-name,
 .box-skins-name::before,
-.close-box-skins {
+.close-box-skins,
+.boxreview .smallreview.criteria,
+.instruction ol li:before {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
     box-shadow: unset;
 }
@@ -416,7 +418,8 @@ h3,
 #button-route-filter[data-title]:after,
 .more-crafts span,
 .nav-review li.current,
-.nav-review li:hover  {
+.nav-review li:hover,
+.boxreview .smallreview.criteria:hover p {
     color: #1a1a1a;
 }
 
@@ -778,7 +781,8 @@ h3,
 .topic-nav-box,
 .main-infobox-content-block,
 .main-infobox-mascotte::after,
-.topic-grandbox .skin {
+.topic-grandbox .skin,
+.boxreview .smallreview.criteria {
     background: var(--darkgray);
 }
 
@@ -954,8 +958,7 @@ h3,
 
 .sitedetails .sitepros:hover.active,
 .sitedetails .sitepros:hover {
-    background: #f2f2f2 !important;
-    filter: brightness(1.1);
+    background: #f2f2f2;
 }
 
 .bonus_info::before {
@@ -1360,6 +1363,10 @@ ul .submenu li .nonredir,
 }
 
 @media screen and (max-width: 1365px) {
+
+    .boxreview .smallreview.criteria p {
+        color: #1a1a1a;
+    }
 
     .singlemod-select.back-button::before {
         opacity: 1;
