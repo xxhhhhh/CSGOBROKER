@@ -1976,33 +1976,10 @@ document.addEventListener("DOMContentLoaded", async function () {
   filterInput.setAttribute("autocomplete", "off");
   topicFilterContainer.appendChild(filterInput);
 
-  async function fetchNavButtons() {
-    const res = await fetch("/code-parts/topics/topics-nav.json");
-    return res.json();
-  }
+  function renderNavButtons(navButtons) {
+    topicFilterContainer.innerHTML = '';
+    topicFilterContainer.appendChild(filterInput);
 
-    async function getCachedNavButtons() {
-        const cached = StorageHelper.getJSON(cacheKey);
-        let parsedCache = cached;
-
-        try {
-          const freshData = await fetchNavButtons();
-
-          const isEqual = JSON.stringify(freshData) === JSON.stringify(parsedCache?.data);
-
-          if (!parsedCache || now - parsedCache.timestamp > cacheTTL || !isEqual) {
-            StorageHelper.setJSON(cacheKey, { timestamp: now, data: freshData });
-            return freshData;
-          }
-
-          return parsedCache.data;
-        } catch (err) {
-          console.error("Ошибка загрузки topics-nav.json:", err);
-          return parsedCache?.data || [];
-        }
-      }
-
-  getCachedNavButtons().then((navButtons) => {
     const currentHref = location.pathname.replace(/\.html$/, "");
     const bestMatch = navButtons.reduce((acc, btn) => {
       return currentHref.includes(btn.href) && btn.href.length > acc.length ? btn.href : acc;
@@ -2038,16 +2015,40 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (languageTag === "ru") {
       updateURLs(topicFilterContainer);
     }
-  });
+  }
+
+  async function fetchNavButtons() {
+    const res = await fetch("/code-parts/topics/topics-nav.json");
+    return res.json();
+  }
+
+  async function getCachedNavButtons() {
+    const cached = StorageHelper.getJSON(cacheKey);
+
+    if (cached?.data) {
+      renderNavButtons(cached.data);
+    }
+
+    try {
+      const freshData = await fetchNavButtons();
+      const isEqual = JSON.stringify(freshData) === JSON.stringify(cached?.data);
+
+      if (!cached || now - cached.timestamp > cacheTTL || !isEqual) {
+        StorageHelper.setJSON(cacheKey, { timestamp: now, data: freshData });
+        renderNavButtons(freshData);
+        return;
+      }
+    } catch (err) {
+      console.error("Ошибка загрузки topics-nav.json:", err);
+    }
+  }
+
+  getCachedNavButtons();
 
   filterInput.addEventListener("input", () => {
     const value = filterInput.value.trim().toLowerCase();
-    const itemSelector = isStickerCrafts
-      ? ".topic-grandbox.sticker"
-      : ".topic-box";
-    const allBoxes = Array.from(
-      topicBoxesHolder.querySelectorAll(itemSelector)
-    );
+    const itemSelector = isStickerCrafts ? ".topic-grandbox.sticker" : ".topic-box";
+    const allBoxes = Array.from(topicBoxesHolder.querySelectorAll(itemSelector));
     const paginationHolder = document.querySelector(".pagination-holder");
 
     if (value !== "") {
@@ -2056,31 +2057,16 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const fuseData = allBoxes.map((box, idx) => {
         if (isStickerCrafts) {
-          // --- Сбор данных для sticker-crafts ---
           const spans = Array.from(box.querySelectorAll(".section.first span"));
-          const spanTexts = spans
-            .map((s) => s.textContent.trim())
-            .filter(Boolean);
+          const spanTexts = spans.map(s => s.textContent.trim()).filter(Boolean);
 
-          const skinElements = Array.from(
-            box.querySelectorAll(".section.third .skin")
-          );
-          const skinIds = skinElements
-            .map((el) => el.getAttribute("skin-id") || "")
-            .filter(Boolean);
+          const skinElements = Array.from(box.querySelectorAll(".section.third .skin"));
+          const skinIds = skinElements.map(el => el.getAttribute("skin-id") || "").filter(Boolean);
 
-          return {
-            idx,
-            spanTexts,
-            skinIds,
-          };
+          return { idx, spanTexts, skinIds };
         } else {
-          // --- Сбор данных для обычных предметов ---
           const text = box.querySelector("span")?.textContent.trim() || "";
-          return {
-            idx,
-            text,
-          };
+          return { idx, text };
         }
       });
 
@@ -2091,20 +2077,14 @@ document.addEventListener("DOMContentLoaded", async function () {
       });
 
       const results = fuse.search(value);
-      const matchedIdx = new Set(results.map((r) => r.item.idx));
+      const matchedIdx = new Set(results.map(r => r.item.idx));
 
       allBoxes.forEach((box, idx) => {
         const isMatch = matchedIdx.has(idx);
-
         box.classList.remove("hidden", "fade-in", "visible");
         box.style.animationDelay = "0s";
         box.style.display = isMatch ? "" : "none";
-
-        if (isMatch) {
-          box.classList.add("visible_sort");
-        } else {
-          box.classList.remove("visible_sort");
-        }
+        box.classList.toggle("visible_sort", isMatch);
       });
     } else {
       allBoxes.forEach((box) => {
@@ -2126,10 +2106,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
     }
   });
-  
-  
-  
 })();
+
 
 
 
