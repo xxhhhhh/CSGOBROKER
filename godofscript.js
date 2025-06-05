@@ -728,7 +728,7 @@ forcemodsboxes();
     let alternatesTitle = '';
     switch (languageTag) {
         case 'ru':
-            alternatesTitle = `Лучшие Аналоги ${mainSiteName}`;
+            alternatesTitle = `Похожие Сайты на ${mainSiteName}`;
             break;
         case 'en':
             alternatesTitle = `Best ${mainSiteName} Alternatives`;

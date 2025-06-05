@@ -375,6 +375,12 @@ nav .pages {
 
 .boxreview {
     margin-left: 8px;
+    padding-top: unset;
+    background: unset;
+}
+
+.boxreview:has(.features.bonused) {
+    margin-top: 56px;
 }
 
 .boxdefaultpage {
@@ -418,7 +424,7 @@ nav .pages {
 }
 
 .text-col-info-box {
-    width: 93%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -429,6 +435,13 @@ nav .pages {
     font-size: 16px;
     font-weight: 500;
     padding: 12px 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-col-info .newest-boxes {
+    width: 100%;
 }
 
 .text-col-info::marker {
@@ -452,6 +465,7 @@ nav .pages {
     font-size: 15px;
     transition: color .1s ease-in-out;
     list-style-type: none;
+    width: 93%;
 }
 
 .text-col-info ul li p {
@@ -462,9 +476,7 @@ nav .pages {
     line-height: 1.4;
 }
 
-.text-col-info ul li {
-    flex-direction: column;
-}
+
 
 .text-col-info ul li p:first-child {
     margin-top: unset;
@@ -2168,18 +2180,20 @@ h3 {
 }
 
 .boxreview .plusminus {
-    width: 98%;
+    width: 100%;
     height: auto;
     display: flex;
     align-content: center;
     align-items: flex-start;
     justify-content: space-between;
     margin-top: 0px;
+    gap: 8px;
     order: -2;
 }
 
 .boxreview .plusminus .criteria {
-    width: 49.6%;
+    width: 50%;
+    height: 100%;
     min-height: 230px;
     overflow: hidden;
     border-radius: 10px;
@@ -2263,7 +2277,6 @@ h3 {
     left: 20px;
     height: 70%;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     margin-top: 40px;
     padding-left: 24px;
@@ -2283,42 +2296,41 @@ h3 {
 
 .boxreview .plusminus .criteria:nth-child(1) {
     background: linear-gradient(320deg, rgba(15, 207, 79, 0) 30%, rgba(15, 207, 79, .09) 100%);
-    background-color: transparent;
+    background-color: var(--darkygray);
 }
 
 .boxreview .plusminus .criteria:nth-child(2) {
     background: linear-gradient(320deg, rgba(207, 15, 49, 0) 30%, rgba(207, 15, 49, .09) 100%);
-    background-color: transparent;
+    background-color: var(--darkygray);
 }
 
 .site-attention {
-    width: 98%;
+    width: 100%;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px 0;
     transition: all .15s ease-in-out;
-    background: linear-gradient(15deg, rgba(255, 255, 255, .006) 30%, rgba(0, 0, 0, 0) 100%);
+    background: var(--darkygray);
     position: relative;
-    margin-top: 10px;
+    margin-top: 8px;
     order: -2;
 }
 
 .info-block {
-    width: 98%;
+    width: 100%;
     display: flex;
 }
 
 .site-attention.blocked {
     width: auto;
     justify-content: flex-start;
-    background: none;
-    height: 40px;
+    height: 48px;
     padding: 0 20px;
     padding-left: 14px;
+    width: 100%;
     order: -1;
-    left: 0;
 }
 
 .site-attention i {
@@ -2326,9 +2338,9 @@ h3 {
     margin-right: 15px;
 }
 
-.site-attention:hover {
-    background-color: rgba(255, 255, 255, .006);
-}
+/* .site-attention:hover {
+    background-color: var(--darkgray);
+} */
 
 .site-attention span {
     font-weight: 500;
@@ -2340,6 +2352,7 @@ h3 {
 
 .site-attention.blocked span {
     width: 100%;
+    text-align: start;
 }
 
 .site-attention span a {
@@ -2361,7 +2374,9 @@ h3 {
     flex-wrap: wrap;
     align-content: flex-start;
     padding: 30px 0;
-    border-radius: 5px;
+    background: var(--darkygray);
+    border-radius: 10px;
+    margin-top: 8px;
 }
 
 .boxreview:has(.info-block) .smallreview {
@@ -2591,17 +2606,6 @@ h3 {
     margin: 10px auto;
 }
 
-.smallreview::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 12px;
-    margin-left: 2px;
-    height: 1px;
-    background: linear-gradient(56deg, rgba(255, 255, 255, .05) 0%, rgba(0, 0, 0, 0) 70%);
-    width: 95%;
-}
-
 .siteleftpannel .navigation-menu li {
     color: rgb(255, 255, 255, .3);
     text-align: left;
@@ -2645,23 +2649,22 @@ h3 {
 .shortinfo {
     width: 100%;
     height: 48px;
-    background-color: var(--darkygray);
+    /* background-color: var(--darkygray); */
     border-radius: 10px;
-    margin-top: -66px;
+    margin-top: -56px;
     order: -2;
     display: none;
 }
 
 .shortinfo .features {
-    margin-left: 8px;
+    padding-left: 8px;
+    background-color: var(--darkygray);
+    padding-right: 17px;
+    border-radius: 10px;
 }
 
 .shortinfo:has(.features.bonused) {
     display: flex;
-}
-
-.boxreview:has(.features.bonused) {
-    margin-top: 56px;
 }
 
 .boxreview#mirror {
@@ -2734,7 +2737,7 @@ h3 {
 .features .featuresbox .typesinside a::after,
 .features .featuresbox .typesinside a::before {
     transition: all .15s ease-in-out;
-    background-color: var(--main-theme);
+    /* background-color: var(--main-theme); */
 }
 
 .features .featuresbox .typesinside a:hover,
@@ -2746,23 +2749,6 @@ h3 {
 .features .featuresbox .typesinside a:hover {
     transform: scale(1.03);
 }
-
-/*
-
-.features .featuresbox .typesinside a:active,
-.features .featuresbox .typesinside a:active::after,
-.features .featuresbox .typesinside a:active::before {
-    background-color: #5a101c;
-    transition: .09s all ease-in-out;
-}
-
-.features .typesinside a .officon {
-    transition: all .15s ease-in-out;
-}
-
-.features .typesinside a:hover .officon {
-    filter: grayscale(1) brightness(5);
-} */
 
 .boxreview#mirror .features .featuresbox .typesinside a:last-child {
     border-radius: 0 5px 5px 0;
@@ -2831,19 +2817,22 @@ h3 {
 }
 
 .smallreview h2,
-.smallreview h3 {
+.smallreview h3,
+.instruction h2,
+.instruction h3 {
     height: auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: start;
 }
 
 .smallreview h2,
 .smallreview h3,
 .instruction h2,
-.instruction h3 {
+.instruction h3,
+.introduce-craft h2 {
     font-size: 20px;
     position: relative;
-    margin-left: 35px;
+    display: flex;
 }
 
 .smallreview p {
@@ -2858,6 +2847,7 @@ h3 {
     display: block;
     position: relative;
     line-height: 1.4;
+    color: var(--lightgray);
 }
 
 .criteria-descriptions {
@@ -2866,17 +2856,17 @@ h3 {
     margin-top: 8px;
     gap: 8px;
     flex-wrap: wrap;
-    width: 98%;
+    width: 100%;
 }
 
 .smallreview.criteria h3 {
+    width: auto;
     font-size: 16px;
     margin-bottom: 15px;
     user-select: none;
 }
 
 .smallreview.criteria h3::before {
-    left: -23px;
     width: 16px;
     height: 16px;
     mask-image: url(/img/icons/gamemodes/star-fill.svg);
@@ -2885,6 +2875,7 @@ h3 {
     mask-size: 100%;
     filter: grayscale(1);
     transition: all .15s ease-in-out;
+    top: unset;
 }
 
 .smallreview.criteria:hover h3::before {
@@ -2894,6 +2885,7 @@ h3 {
 .smallreview.criteria p {
     color: var(--gray);
     transition: all .15s ease-in-out;
+    width: 100%;
     font-size: 14px;
     user-select: none;
 }
@@ -2914,10 +2906,11 @@ h3 {
     background: var(--darkygray);
     width: 45%;
     margin: 0 auto;
-    padding: 20px 10px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     filter: drop-shadow(0 0 1px rgb(10 10 10)) blur(0);
+    justify-content: flex-start;
     flex-grow: 1;
 }
 
@@ -2928,11 +2921,11 @@ h3 {
 .smallreview p:nth-child(7),
 .smallreview p:nth-child(8),
 .smallreview p:nth-child(9) {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .ratingsumm {
-    width: 98%;
+    width: 100%;
     height: 100px;
     background: var(--darkygray);
     display: flex;
@@ -2970,15 +2963,6 @@ h3 {
     margin-right: 10px;
 }
 
-.instruction {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-left: 46px;
-    padding: unset;
-    padding-bottom: 20px;
-}
-
 .instruction:nth-child(2) {
     filter: grayscale(1);
 }
@@ -2988,32 +2972,23 @@ h3 {
 }
 
 .instruction.double {
-    width: 48.5%;
-    justify-content: flex-start;
-    margin-left: 45px;
+    width: 50%;
+    padding-left: 14px;
+    border-radius: 10px 0 0 10px;
 }
 
 .instruction.notmain {
-    width: 47%;
+    width: 50%;
     transition: all .15s ease-in-out;
-    margin-left: unset;
-    opacity: .35;
+    border-radius: 0 10px 10px 0;
 }
 
 .instruction.notmain:hover {
     opacity: 1;
 }
 
-.instruction h2,
-.instruction h3 {
-    height: auto;
-    margin-bottom: 25px;
-    margin-left: 0;
-    text-align: start;
-}
-
 .instruction ol {
-    width: 91%;
+    width: 96%;
     counter-reset: item1;
 }
 
@@ -3024,28 +2999,26 @@ h3 {
     display: block;
     list-style: none;
     position: relative;
-    line-height: 30px;
-    padding: 3px;
-    width: 65%;
-    margin-left: 6px;
+    line-height: 35px;
+    color: var(--lightgray);
+    width: 70%;
 }
 
 .instruction ol li:before {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     counter-increment: item1;
     content: counter(item1, decimal);
     background: rgb(18 18 18);
     color: var(--main-color);
-    position: absolute;
+    position: relative;
+    margin-right: 10px;
     width: 22px;
     height: 22px;
     border-radius: 30%;
     font-weight: 600;
     font-size: 15px;
-    left: -30px;
-    top: 7px;
 }
 
 .instruction li a {
@@ -3085,8 +3058,10 @@ h3 {
     flex-wrap: wrap;
     align-content: flex-start;
     border-radius: 0 0 5px 5px;
-    width: 98%;
+    width: 100%;
     height: auto;
+    background: var(--darkygray);
+    border-radius: 10px;
 }
 
 .instruction-mirrors li {
@@ -3200,7 +3175,7 @@ h3 {
     color: rgb(155, 155, 155);
     transition: all .15s ease-in-out;
     line-height: 28px;
-    margin: 0 8px;
+    margin: 0 12px;
     z-index: 1;
 }
 
@@ -3214,7 +3189,7 @@ h3 {
     content: '';
     z-index: -1;
     width: 100%;
-    height: 80%;
+    height: 85%;
     padding: 0px 7px;
     left: 50%;
     top: 50%;
@@ -3296,7 +3271,7 @@ h3 {
 }
 
 .screentable {
-    width: 98%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3934,8 +3909,6 @@ nav #logo:hover {
     font-size: 16px;
     font-weight: 500;
     display: flex;
-    align-items: center;
-    vertical-align: baseline;
     position: relative;
     line-height: 24px;
     transition: all .15s ease-in-out;
@@ -3944,12 +3917,12 @@ nav #logo:hover {
     border-radius: 10px;
     padding: 4px 0;
     margin: 2px 0;
-    padding-left: 30px;
+    padding-left: 12px;
     color: var(--gray);
 }
 
 .nav-review.blog li {
-    padding-left: 35px;
+    padding-left: 5px;
 }
 
 .nav-review li:first-child {
@@ -3971,11 +3944,10 @@ nav #logo:hover {
 
 .nav-review li::before {
     content: "";
-    position: absolute;
-    left: 12px;
-    top: 11px;
+    position: relative;
     width: 8px;
     height: 8px;
+    min-width: 8px;
     font-size: 24px;
     color: transparent;
     background: linear-gradient(to right, rgb(141, 21, 41), var(--main-color));
@@ -3983,6 +3955,8 @@ nav #logo:hover {
     background-clip: initial;
     transition: all .15s ease-in-out;
     border-radius: 30%;
+    margin-right: 10px;
+    top: 8px;
     opacity: .5;
 }
 
@@ -3993,29 +3967,19 @@ nav #logo:hover {
     justify-content: center;
     content: '1';
     background: rgb(18 18 18);
-    /* color: rgba(255, 255, 255, .3); */
     color: var(--main-color);
-    position: absolute;
     width: 22px;
     height: 22px;
     border-radius: 30%;
+    margin-right: 10px;
     font-weight: 600;
     font-size: 15px;
-    left: -30px;
-    top: -2px;
-}
-
-.blog .instruction ol li:before,
-.text-col-info-theme::before {
-    top: 50%;
-    transform: translateY(-50%);
+    top: unset;
 }
 
 .nav-review.blog li::before {
     counter-increment: item1;
     content: counter(item1, decimal);
-    left: 5px;
-    top: 5px;
 }
 
 .text-col-info-box .text-col-info:nth-child(2) .text-col-info-theme::before {
@@ -4347,9 +4311,9 @@ nav #logo:hover {
 .sitedetails {
     z-index: 1;
     position: relative;
-    width: 98%;
+    width: 100%;
     display: flex;
-    margin: 9px 0;
+    margin: 8px 0;
     height: 60px;
     transition: .25s all ease-in-out;
 }
@@ -4414,7 +4378,6 @@ nav #logo:hover {
     width: 100%;
     height: 60px;
     min-height: 60px;
-    background: var(--darkgray);
     cursor: pointer;
     border-radius: 10px;
     position: relative;
@@ -4426,6 +4389,12 @@ nav #logo:hover {
     overflow: hidden;
     flex-direction: column;
     justify-content: flex-start;
+    background: var(--darkygray);
+}
+
+.sitedetails .sitepros.active,
+.sitedetails .sitepros:hover {
+    background: var(--darkgray);
 }
 
 .sitedetails .sitepros:first-child {
@@ -4484,11 +4453,6 @@ nav #logo:hover {
 .sitedetails .sitepros.active span::after {
     transform: rotate(180deg);
     filter: none;
-}
-
-.sitedetails .sitepros.active,
-.sitedetails .sitepros:hover {
-    background: rgb(15 15 15);
 }
 
 .sitepage .box {
@@ -4822,23 +4786,24 @@ nav #logo:hover {
 .sitealternates {
     position: relative;
     margin-top: 9px;
-    width: 98%;
+    width: 100%;
 }
 
 .alternates-title {
     width: auto;
-    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 12px;
+    text-transform: uppercase;
     position: absolute;
     left: 50%;
     top: -2px;
     transform: translateX(-50%);
     color: var(--gray);
-    padding: 0 24px;
+    height: 30px;
+    padding: 0 12px;
     user-select: none;
     z-index: 100;
 }
@@ -4899,7 +4864,7 @@ nav #logo:hover {
 }
 
 .sitealternates .box {
-    width: 244px;
+    width: 25%;
     min-width: unset;
     height: 304px;
     background-color: unset;
@@ -5766,7 +5731,7 @@ nav img:active,
 }
 
 .sitepage.closed .info-block {
-    width: 98%;
+    width: 100%;
 }
 
 .sitepage.closed .site-attention.blocked {
@@ -5943,7 +5908,7 @@ nav img:active,
 }
 
 .boxreview .slider-container {
-    width: 98%;
+    width: 100%;
     margin-top: 9px;
 }
 
@@ -9178,15 +9143,9 @@ div#results {
 }
 
 .introduce-craft {
+    margin: 0 20px;
     margin-top: 20px;
     min-height: 110px;
-}
-
-.introduce-craft h2 {
-    font-weight: 600;
-    font-size: 20px;
-    position: relative;
-    margin-left: 36px;
 }
 
 .introduce-craft p,
@@ -9194,11 +9153,10 @@ div#results {
     height: auto;
     font-weight: 500;
     font-size: 16px;
-    width: 95%;
+    width: 100%;
     display: block;
     list-style: none;
     color: rgba(255, 255, 255, .7);
-    margin-left: 19px;
     line-height: 1.4;
 }
 
@@ -9770,7 +9728,7 @@ div#results {
 }
 
 .boxreview .main-infobox {
-    max-width: 98%;
+    max-width: 100%;
     margin-top: 9px;
 }
 
@@ -9922,7 +9880,14 @@ div#results {
 .promo-box .logobg,
 .instruction code,
 .promo-box code,
-.site-promo-copy {
+.site-promo-copy,
+.smallreview,
+.instruction,
+.screentable,
+.sitepros,
+.ratingsumm,
+.boxreview .smallreview.criteria,
+.shortinfo .feature {
     box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
 }
 
@@ -10835,9 +10800,9 @@ div#results {
 }
 
 .blog .instruction {
-    padding-bottom: unset;
-    margin-left: 25px;
-    margin-top: 15px;
+    padding: unset;
+    margin-top: 10px;
+    background: unset;
 }
 
 .blog .instruction li {
@@ -10857,8 +10822,8 @@ div#results {
 }
 
 .blog .instruction li {
-    width: 80%;
-    line-height: 1.4;
+    width: 100%;
+    line-height: 30px;
 }
 
 .blog .instruction li a {
@@ -10874,13 +10839,8 @@ div#results {
     width: 8px;
     height: 8px;
     color: transparent;
-    background: linear-gradient(to right, rgb(141, 21, 41), var(--main-color));
-    -webkit-background-clip: text;
-    background-clip: initial;
-    transition: all .15s ease-in-out;
-    border-radius: 30%;
-    left: -15px;
-    top: 14px;
+    background: linear-gradient(90deg, rgb(141, 21, 41), var(--main-color));
+    transition: all .15s ease-in-out
 }
 
 .blog .item-topic-grandbox .logobg img {
@@ -10907,6 +10867,10 @@ div#results {
 .text-col-info-theme {
     position: relative;
     margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
 }
 
 .blog .text-col-info-theme {
@@ -10918,19 +10882,19 @@ div#results {
 .smallreview h3::before,
 .introduce-craft h2::before {
     content: "";
-    position: absolute;
-    left: -17px;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+    display: block;
+    margin-right: 10px;
     width: 8px;
     height: 8px;
     font-size: 24px;
     color: transparent;
-    background: linear-gradient(to right, rgb(141, 21, 41), var(--main-color));
+    background: linear-gradient(90deg, rgb(141, 21, 41), var(--main-color));
     -webkit-background-clip: text;
     background-clip: initial;
     transition: all .15s ease-in-out;
     border-radius: 30%;
+    top: 8px;
 }
 
 .blog .main-infobox-mascotte {
@@ -11286,7 +11250,7 @@ div#results {
     }
 
     .criteria-descriptions {
-        gap: 4px;
+        gap: 6px;
         margin-top: 0;
         flex-direction: column;
     }
@@ -11628,6 +11592,9 @@ div#results {
         height: auto;
         border-radius: unset;
         justify-content: center;
+        background: var(--darkygray);
+        margin-top: 8px;
+        padding-bottom: 16px;
     }
 
     .shortinfo .features {
@@ -11640,11 +11607,6 @@ div#results {
 
     .box .main-mode {
         right: 10px;
-    }
-
-    .boxreview .main-infobox {
-        margin-top: 6px;
-        width: 100%;
     }
 
     .boxreview .main-infobox-content {
@@ -11714,7 +11676,6 @@ div#results {
     }
 
     .nav-review li::before {
-        left: -20px;
         opacity: 1;
     }
 
@@ -11764,20 +11725,15 @@ div#results {
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-around;
-        align-items: flex-start;
+        align-items: center;
         flex-direction: column;
         height: auto;
         width: 80%;
         max-height: 250px;
-        margin-left: 70px;
     }
 
     .nav-review li:hover {
         transform: unset;
-    }
-
-    .screentable {
-        width: 100%;
     }
 
     .section {
@@ -11864,7 +11820,9 @@ div#results {
 
     .instruction.double {
         width: 96%;
-        margin-left: 26px;
+        margin-left: unset;
+        padding: 30px 0;
+        border-radius: 10px;
     }
 
     .instruction.notmain {
@@ -12360,7 +12318,6 @@ div#results {
 
     .introduce-craft p,
     .introduce-craft span {
-        width: 90%;
         font-size: 15px;
         margin-top: 8px;
     }
@@ -12542,7 +12499,7 @@ div#results {
     .mirror-redirect {
         position: absolute;
         z-index: 10;
-        top: -22px;
+        top: -15px;
         left: 50%;
         transform: translateX(-50%);
         padding: 0;
@@ -12921,7 +12878,13 @@ div#results {
 
     .boxreview {
         border-radius: 0;
+        background: linear-gradient(180deg, var(--darkygray) 30%, rgba(0, 0, 0, 0) 100%);
+        padding-top: unset;
     }
+
+    .boxreview:has(.features.bonused) {
+        margin-top: unset;
+    }       
 
     .sitepage.topic-craft .topicpage {
         margin-top: 4px;
@@ -12934,14 +12897,12 @@ div#results {
         flex-direction: column;
         align-items: center;
         height: 100%;
-        width: 96%;
         margin-top: unset;
     }
 
     .boxreview .plusminus .criteria {
         width: 100%;
         min-height: unset;
-        margin: 9px 0 0 0;
         padding-bottom: 40px;
     }
 
@@ -12958,24 +12919,29 @@ div#results {
     }
 
     .boxreview .smallreview,
-    .instruction {
+    .instruction,
+    .boxreview .plusminus,
+    .screentable,
+    .sitedetails,
+    .ratingsumm,
+    .criteria-descriptions,
+    .sitealternates,
+    .boxreview .slider-container {
         width: 96%;
     }
 
-    .instruction {
-        margin-left: 26px;
-        margin-top: 30px;
+    .boxreview .main-infobox {
+        margin-top: 6px;
+        width: 98%;
     }
 
     .instruction.notmain {
         opacity: 1;
         filter: unset;
-        margin-left: 26px;
-    }
-
-    .screens.slick-slider {
-        width: 95% !important;
-        margin-top: 10px;
+        width: 96%;
+        margin-left: unset;
+        padding: 30px 0;
+        border-radius: 10px;
     }
 
     .screens .next-button,
@@ -13022,13 +12988,9 @@ div#results {
     }
 
     .instruction li {
-        font-size: 16px !important;
+        font-size: 16px;
         width: 100%;
-        line-height: 24px;
-    }
-
-    .instruction ol li:before {
-        top: 5px;
+        line-height: 30px;
     }
 
     .sitepage {
@@ -13038,6 +13000,14 @@ div#results {
         flex-direction: column;
         align-items: center;
         padding-top: 0;
+    }
+
+    .sitepage.topic-craft {
+        margin-top: 67px;
+    }
+
+    .sitepage.topic-craft .siteleftpannel {
+        width: 98%;
     }
 
     .sitepage:has(.boxdefaultpage) {
@@ -13063,7 +13033,7 @@ div#results {
     }
 
     .sitedetails .sitepros:last-child {
-        margin-top: 4px;
+        margin-top: 6px;
         margin-left: unset;
     }
 
@@ -13239,8 +13209,8 @@ div#results {
 
     .text-col-info-theme,
     .blog .text-col-info-theme {
-        margin-left: 30px;
         margin-bottom: 5px;
+        width: 96%;
     }
 
     .blog .instruction {
@@ -13248,16 +13218,11 @@ div#results {
     }
 
     .blog .instruction li {
-        width: 90%;
+        width: 100%;
     }
 
     .blog .instruction ol {
         width: 100%;
-        padding-left: 12px;
-    }
-
-    .nav-review.blog li::before {
-        left: -30px;
     }
 
     .blog .topicpage {
@@ -13275,11 +13240,6 @@ div#results {
 
     #particleflakeContainer {
         display: none !important;
-    }
-
-    .text-col-info-theme::before {
-        top: 50%;
-        transform: translateY(-50%);
     }
 
     .blog .newest-boxes {
@@ -13586,7 +13546,7 @@ div#results {
 
     .sitedetails {
         margin: 0;
-        margin-top: 4px;
+        margin-top: 6px;
     }
 
     .gamemodes .featuresbox .typesinside a::before {
@@ -13642,7 +13602,6 @@ div#results {
 
     .features {
         width: 85%;
-        margin-top: 14px;
     }
 
     .features .featuresbox .typesinside a::after,
@@ -13658,7 +13617,6 @@ div#results {
         margin: 5px !important;
         border-radius: 10px !important;
         padding-right: 10px;
-        flex-grow: 1;
     }
 
     .features .featuresbox .typesinside a:first-child {
@@ -13725,11 +13683,6 @@ div#results {
         top: 30%;
     }
 
-    .introduce-craft {
-        margin-left: unset;
-        width: 94%;
-    }
-
     .preview-craft {
         margin: unset;
     }
@@ -13768,14 +13721,14 @@ div#results {
     .ratingsumm {
         height: auto;
         padding: unset;
-        margin: 4px 0;
+        margin: 6px 0;
     }
 
     .ratingsection {
         flex-direction: row;
         width: 100%;
         height: 100%;
-        gap: 4px;
+        gap: 6px;
     }
 
     .text-col-info ul {
@@ -13822,7 +13775,6 @@ div#results {
     }
 
     .sitedetails .sitepros span,
-    .alternates-title,
     .ratingsection .ratingway {
         font-size: 15px;
     }
@@ -13832,7 +13784,8 @@ div#results {
     }
 
     .alternates-title {
-        width: 75%;
+        width: auto;
+        text-wrap: nowrap;
     }
 
     .sitealternates .site-reward {
@@ -13917,11 +13870,7 @@ div#results {
     .main-col-info {
         width: 100%;
         margin-top: 6px;
-        padding: 25px;
-    }
-
-    .text-col-info-box {
-        width: 95%;
+        padding: 15px;
     }
 
     .boxdefaultpage {
@@ -14161,7 +14110,11 @@ div#results {
     .smallreview:not(.criteria) p,
     .boxreview .plusminus .criteria .par li,
     .instruction li {
-        font-size: 15px !important;
+        font-size: 15px;
+    }
+
+    .smallreview:not(.criteria) p,
+    .boxreview .plusminus .criteria .par li {
         line-height: 1.4;
     }
 
@@ -14268,11 +14221,6 @@ div#results {
     .topic-box,
     .topic-box.maestro {
         width: 48%;
-    }
-
-    .instruction ol {
-        width: 92%;
-        padding-left: 12px;
     }
 
     .sitealternatesboxes {
