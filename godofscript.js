@@ -65,34 +65,9 @@ function isRuPage(pathname) {
 
 
 
-function copyToClipboard(element, copyButton) {
-  const text = element.textContent.trim();
+function copyToClipboard(source, copyButton) {
+  const text = typeof source === "string" ? source : source.textContent.trim();
 
-  const $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val(text).select();
-  document.execCommand("copy");
-  $temp.remove();
-
-  const copiedMessage = (languageTag === 'ru') ? 'Скопировано' : 'Copied';
-  const $title = $("<div class='copied-title'>" + copiedMessage + "</div>");
-  const $copyButton = $(copyButton);
-
-  $copyButton.append($title);
-  $copyButton.addClass("icon-changed");
-
-  $title.hide().fadeIn(150, function () {
-      $(this).delay(400).fadeOut(150, function () {
-          $(this).remove();
-      });
-  });
-
-  setTimeout(function () {
-      $copyButton.removeClass("icon-changed");
-  }, 800);
-}
-
-function copyToClipboard_review(text, copyButton) {
   const tempInput = document.createElement("input");
   document.body.appendChild(tempInput);
   tempInput.value = text;
@@ -123,7 +98,7 @@ function copyToClipboard_review(text, copyButton) {
 
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = themeToggleBtn.querySelector('i');
-let currentTheme = (StorageHelper.getJSON('theme_settings') || {}).theme || getSystemPreferredTheme() || getSystemPreferredTheme();
+let currentTheme = (StorageHelper.getJSON('theme_settings') || {}).theme || getSystemPreferredTheme();
 
 applyTheme(currentTheme, false);
 
@@ -446,7 +421,7 @@ forcemodsboxes();
             const copyButtons = box.querySelectorAll(".copy");
             copyButtons.forEach((button) => {
               button.addEventListener("click", () =>
-                copyToClipboard_review(data.code, button)
+                copyToClipboard(data.code, button)
               );
             });
           }
@@ -499,7 +474,7 @@ forcemodsboxes();
             const copyButtons = document.querySelectorAll(".copy");
             copyButtons.forEach((button) => {
               button.addEventListener("click", () =>
-                copyToClipboard_review(data.code, button)
+                copyToClipboard(data.code, button)
               );
             });
           }
@@ -528,7 +503,7 @@ forcemodsboxes();
               const copyButtons = box.querySelectorAll(".copy");
               copyButtons.forEach((button) => {
                 button.addEventListener("click", () =>
-                  copyToClipboard_review(data.code, button)
+                  copyToClipboard(data.code, button)
                 );
               });
             }
@@ -1369,7 +1344,7 @@ function insertReviewLinks(codes, codeValue, codesBinding) {
         const texts = allTranslations[languageTag] || allTranslations[fallbackLang];
         insertInfobox(texts);
       } catch (e) {
-        fetchAndInsert(); // corrupted data
+        fetchAndInsert();
       }
     } else {
       fetchAndInsert();

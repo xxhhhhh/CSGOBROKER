@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
         translateElement(box, languageTag);
       });
 
-      if (isPageInAvaliable()) {
+      if (isPageAvailable()) {
         updateURLs(sitesList);
       }
     } catch (error) {
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 800);
   }
   
-  function isPageInAvaliable() {
+  function isPageAvailable() {
     var path = window.location.pathname;
     return path.startsWith('/tr/') || path.endsWith('/tr') || path.endsWith('/tr.html') || path.startsWith('/es/') || path.endsWith('/es') || path.endsWith('/es.html');
   }
