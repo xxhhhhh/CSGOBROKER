@@ -220,95 +220,96 @@ insertRandomRecBox();
           }
         });
       
-        const loadSkinsData = async () => {
-          try {
-            const skinPrices = await fetchSkinPrices();
-      
-            await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
-              try {
-                const response = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
-                if (!response.ok) throw new Error(`Не удалось загрузить ${weapon}.json`);
-                const skinsData = await response.json();
-      
-                const skinsForWeapon = skinsData || {};
-                weaponToSkinIds[weapon].forEach((skinId) => {
-                  const skinData = skinsForWeapon[skinId];
-                  if (skinData) {
-                    const imageUrl = skinData.image;
-      
-                    let priceInfoContent = "";
-      
-                    if (Array.isArray(skinPrices)) {
-                      const isSticker = skinData.name.startsWith("Sticker |");
-      
-                      const matchedSkins = skinPrices.filter(skin => {
-                        return isSticker
-                          ? skin.name === skinData.name
-                          : skin.name.includes(skinData.name);
-                      });
-      
-                      const normalPrices = matchedSkins
-                        .filter(skin => !skin.name.startsWith("Souvenir"))
-                        .map(skin => skin.price);
-      
-                      const souvenirPrices = matchedSkins
-                        .filter(skin => skin.name.startsWith("Souvenir"))
-                        .map(skin => skin.price);
-      
-                      if (normalPrices.length > 0) {
-                        normalPrices.sort((a, b) => a - b);
-                        const text = normalPrices[0] === normalPrices[normalPrices.length - 1]
-                          ? `${normalPrices[0].toFixed(2)}$`
-                          : `${normalPrices[0].toFixed(2)}$ - ${normalPrices[normalPrices.length - 1].toFixed(2)}$`;
-                        priceInfoContent += `${text}`;
-                      }
-      
-                      if (souvenirPrices.length > 0) {
-                        souvenirPrices.sort((a, b) => a - b);
-                        const text = souvenirPrices[0] === souvenirPrices[souvenirPrices.length - 1]
-                          ? `${souvenirPrices[0].toFixed(2)}$`
-                          : `${souvenirPrices[0].toFixed(2)}$ - ${souvenirPrices[souvenirPrices.length - 1].toFixed(2)}$`;
-                        priceInfoContent += `<div class="souvenir-price-info">${text}</div>`;
-                      }
-                    }
-      
-                    const newSkinHTML = `
-                      <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
-                          <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
-                          <div class="skin-desc-name">${skinData.name}</div>
-                          ${priceInfoContent ? `<div class="skin-price-info">${priceInfoContent}</div>` : ""}
-                      </div>
-                    `;
-      
-                    $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function () {
-                      $(this).replaceWith(newSkinHTML);
-                    });
-                  }
-                });
-              } catch (error) {
-                console.error(error);
-              }
-            }));
-      
-            $(".skin img").each(function () {
-              if (this.complete) {
-                $(this).addClass("imported");
-              } else {
-                $(this).on("load", function () {
-                  $(this).addClass("imported");
-                });
-              }
+  const loadSkinsData = async () => {
+    const skinPricesPromise = fetchSkinPrices(); // запускаем без await
+
+    await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
+      try {
+        const response = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
+        if (!response.ok) throw new Error(`Не удалось загрузить ${weapon}.json`);
+        const skinsData = await response.json();
+
+        const skinsForWeapon = skinsData || {};
+        weaponToSkinIds[weapon].forEach((skinId) => {
+          const skinData = skinsForWeapon[skinId];
+          if (skinData) {
+            const imageUrl = skinData.image;
+            const newSkinHTML = `
+              <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
+                  <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
+                  <div class="skin-desc-name">${skinData.name}</div>
+                  <div class="skin-price-info loading"></div>
+              </div>
+            `;
+
+            $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function () {
+              $(this).replaceWith(newSkinHTML);
             });
-      
-            checkWeaponTypeAvailabilityForItems();
-      
-            if (location.pathname.includes("/topic/sticker-crafts/")) {
-              updateCraftComponentList();
-            }
-          } catch (error) {
-            console.error(error);
           }
-        };
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    }));
+
+    skinPricesPromise.then((skinPrices) => {
+      Object.keys(weaponToSkinIds).forEach((weapon) => {
+        weaponToSkinIds[weapon].forEach((skinId) => {
+          const $skinEl = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`);
+          const name = $skinEl.find(".skin-desc-name").text();
+
+          const isSticker = name.startsWith("Sticker |");
+          const matchedSkins = skinPrices.filter((skin) => {
+            return isSticker ? skin.name === name : skin.name.includes(name);
+          });
+
+          const normalPrices = matchedSkins.filter(s => !s.name.startsWith("Souvenir")).map(s => s.price);
+          const souvenirPrices = matchedSkins.filter(s => s.name.startsWith("Souvenir")).map(s => s.price);
+
+          let priceInfoContent = "";
+
+          if (normalPrices.length > 0) {
+            normalPrices.sort((a, b) => a - b);
+            const text = normalPrices[0] === normalPrices[normalPrices.length - 1]
+              ? `${normalPrices[0].toFixed(2)}$`
+              : `${normalPrices[0].toFixed(2)}$ - ${normalPrices[normalPrices.length - 1].toFixed(2)}$`;
+            priceInfoContent += `${text}`;
+          }
+
+          if (souvenirPrices.length > 0) {
+            souvenirPrices.sort((a, b) => a - b);
+            const text = souvenirPrices[0] === souvenirPrices[souvenirPrices.length - 1]
+              ? `${souvenirPrices[0].toFixed(2)}$`
+              : `${souvenirPrices[0].toFixed(2)}$ - ${souvenirPrices[souvenirPrices.length - 1].toFixed(2)}$`;
+            priceInfoContent += `<div class="souvenir-price-info">${text}</div>`;
+          }
+
+          if (priceInfoContent) {
+            $skinEl.find(".skin-price-info")
+              .removeClass("loading")
+              .html(priceInfoContent);
+          }
+        });
+      });
+    });
+
+    $(".skin img").each(function () {
+      if (this.complete) {
+        $(this).addClass("imported");
+      } else {
+        $(this).on("load", function () {
+          $(this).addClass("imported");
+        });
+      }
+    });
+
+    checkWeaponTypeAvailabilityForItems();
+
+    if (location.pathname.includes("/topic/sticker-crafts/")) {
+      updateCraftComponentList();
+    }
+  };
+
       
         const updateCraftComponentList = () => {
           const boxes = document.querySelectorAll('.siteblock .topic-grandbox');
@@ -1114,149 +1115,149 @@ insertRandomRecBox();
         });
             
       }
-      (async function autoImportFullJsonIfNeeded() {
-        const currentPath = window.location.pathname;
-        const validPrefixes = ["/topic/items/", "/topic/collections/", "/topic/stickers/"];
-        const shouldProcess = validPrefixes.some(prefix => currentPath.includes(prefix));
-        if (!shouldProcess) return;
-      
-        const topicId = currentPath.split("/").pop().replace(/\.html$/, "");
-        const isCollection = currentPath.includes("/topic/collections/");
-        const isSticker = currentPath.includes("/topic/stickers/");
-      
-        try {
-          let mode;
-          const settingsRes = await fetch("/code-parts/topics/skins-settings.json");
-          if (settingsRes.ok) {
-            const settings = await settingsRes.json();
-            mode = settings[topicId];
-          }
-      
-          if (!mode) {
-            if (isCollection) mode = 2;
-            if (isSticker) mode = 1;
-          }
-          if (!mode) return;
-      
-          const box = $(".box-skins-list");
-          if (!box.length) return;
-      
-          const prices = await fetchSkinPrices();
-          let html = "";
-      
-          if (mode === 1) {
-            const jsonPath = `/code-parts/topics/skins-list/${topicId}.json`;
-            const dataRes = await fetch(jsonPath);
-            if (!dataRes.ok) return;
-      
-            const fullData = await dataRes.json();
-            for (const [id, skinData] of Object.entries(fullData)) {
-              html += renderSkinHTML(id, topicId, skinData, prices);
-            }
-      
-          } else if (mode === 2) {
-            const presetPath = `/code-parts/topics/skins-list/presets/${topicId}.json`;
-            const presetRes = await fetch(presetPath);
-            if (!presetRes.ok) return;
-      
-            const presetItems = await presetRes.json();
-            const uniqueWeapons = [...new Set(presetItems.map(item => item.weapon))];
-      
-            const weaponCache = {};
-            await Promise.all(uniqueWeapons.map(async (weapon) => {
-              try {
-                const res = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
-                if (res.ok) {
-                  weaponCache[weapon] = await res.json();
-                }
-              } catch {}
-            }));
-      
-            for (const item of presetItems) {
-              const { weapon, ["skin-id"]: skinId } = item;
-              const weaponData = weaponCache[weapon];
-              if (!weaponData) continue;
-      
-              const skinData = weaponData[skinId];
-              if (skinData) {
-                html += renderSkinHTML(skinId, weapon, skinData, prices);
-              }
-            }
-          }
-      
-          box.html(html);
-          checkWeaponTypeAvailabilityForItems();
-      
-          const qualityFilterBtn = document.getElementById("Quality-Filter");
-          if (qualityFilterBtn && !qualityFilterBtn.classList.contains("enabled")) {
-            qualityFilterBtn.click();
-          }
-      
-          setTimeout(() => {
-            $(".skin img").each(function () {
-              if (this.complete) {
-                $(this).addClass("imported");
-              } else {
-                $(this).on("load", function () {
-                  $(this).addClass("imported");
-                });
-              }
-            });
-          }, 0);
-      
-        } catch (err) {
-          console.error("Error in autoImportFullJsonIfNeeded:", err);
+    (async function autoImportFullJsonIfNeeded() {
+      const currentPath = window.location.pathname;
+      const validPrefixes = ["/topic/items/", "/topic/collections/", "/topic/stickers/"];
+      const shouldProcess = validPrefixes.some(prefix => currentPath.includes(prefix));
+      if (!shouldProcess) return;
+
+      const topicId = currentPath.split("/").pop().replace(/\.html$/, "");
+      const isCollection = currentPath.includes("/topic/collections/");
+      const isSticker = currentPath.includes("/topic/stickers/");
+
+      try {
+        let mode;
+        const settingsRes = await fetch("/code-parts/topics/skins-settings.json");
+        if (settingsRes.ok) {
+          const settings = await settingsRes.json();
+          mode = settings[topicId];
         }
-      
-        function renderSkinHTML(id, weapon, skinData, prices) {
-          let priceInfoContent = "";
-      
-          if (Array.isArray(prices)) {
-            const isSticker = skinData.name.startsWith("Sticker |");
-      
-            const matchedSkins = prices.filter(skin => {
-              if (isSticker) {
-                return skin.name === skinData.name; 
-              } else {
-                return skin.name.includes(skinData.name);
+
+        if (!mode) {
+          if (isCollection) mode = 2;
+          if (isSticker) mode = 1;
+        }
+        if (!mode) return;
+
+        const box = $(".box-skins-list");
+        if (!box.length) return;
+
+        const pricesPromise = fetchSkinPrices();
+        let html = "";
+
+        if (mode === 1) {
+          const jsonPath = `/code-parts/topics/skins-list/${topicId}.json`;
+          const dataRes = await fetch(jsonPath);
+          if (!dataRes.ok) return;
+
+          const fullData = await dataRes.json();
+          for (const [id, skinData] of Object.entries(fullData)) {
+            html += renderSkinHTML(id, topicId, skinData);
+          }
+
+        } else if (mode === 2) {
+          const presetPath = `/code-parts/topics/skins-list/presets/${topicId}.json`;
+          const presetRes = await fetch(presetPath);
+          if (!presetRes.ok) return;
+
+          const presetItems = await presetRes.json();
+          const uniqueWeapons = [...new Set(presetItems.map(item => item.weapon))];
+
+          const weaponCache = {};
+          await Promise.all(uniqueWeapons.map(async (weapon) => {
+            try {
+              const res = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
+              if (res.ok) {
+                weaponCache[weapon] = await res.json();
               }
+            } catch {}
+          }));
+
+          for (const item of presetItems) {
+            const { weapon, ["skin-id"]: skinId } = item;
+            const weaponData = weaponCache[weapon];
+            if (!weaponData) continue;
+
+            const skinData = weaponData[skinId];
+            if (skinData) {
+              html += renderSkinHTML(skinId, weapon, skinData);
+            }
+          }
+        }
+
+        box.html(html);
+        checkWeaponTypeAvailabilityForItems();
+
+        const qualityFilterBtn = document.getElementById("Quality-Filter");
+        if (qualityFilterBtn && !qualityFilterBtn.classList.contains("enabled")) {
+          qualityFilterBtn.click();
+        }
+
+        setTimeout(() => {
+          $(".skin img").each(function () {
+            if (this.complete) {
+              $(this).addClass("imported");
+            } else {
+              $(this).on("load", function () {
+                $(this).addClass("imported");
+              });
+            }
+          });
+        }, 0);
+
+        pricesPromise.then((prices) => {
+          $(".skin").each(function () {
+            const $skin = $(this);
+            const name = $skin.find(".skin-desc-name").text();
+            const isSticker = name.startsWith("Sticker |");
+
+            const matchedSkins = prices.filter(skin => {
+              return isSticker ? skin.name === name : skin.name.includes(name);
             });
-      
-            const normalPrices = matchedSkins
-              .filter(skin => !skin.name.startsWith("Souvenir"))
-              .map(skin => skin.price);
-      
-            const souvenirPrices = matchedSkins
-              .filter(skin => skin.name.startsWith("Souvenir"))
-              .map(skin => skin.price);
-      
+
+            const normalPrices = matchedSkins.filter(s => !s.name.startsWith("Souvenir")).map(s => s.price);
+            const souvenirPrices = matchedSkins.filter(s => s.name.startsWith("Souvenir")).map(s => s.price);
+
+            let priceInfoContent = "";
             if (normalPrices.length > 0) {
               normalPrices.sort((a, b) => a - b);
-              const normalPriceText = normalPrices[0] === normalPrices[normalPrices.length - 1]
+              const text = normalPrices[0] === normalPrices[normalPrices.length - 1]
                 ? `${normalPrices[0].toFixed(2)}$`
                 : `${normalPrices[0].toFixed(2)}$ - ${normalPrices[normalPrices.length - 1].toFixed(2)}$`;
-              priceInfoContent += `${normalPriceText}`;
+              priceInfoContent += `${text}`;
             }
-      
             if (souvenirPrices.length > 0) {
               souvenirPrices.sort((a, b) => a - b);
-              const souvenirPriceText = souvenirPrices[0] === souvenirPrices[souvenirPrices.length - 1]
+              const text = souvenirPrices[0] === souvenirPrices[souvenirPrices.length - 1]
                 ? `${souvenirPrices[0].toFixed(2)}$`
                 : `${souvenirPrices[0].toFixed(2)}$ - ${souvenirPrices[souvenirPrices.length - 1].toFixed(2)}$`;
-              priceInfoContent += `<div class="souvenir-price-info">${souvenirPriceText}</div>`;
+              priceInfoContent += `<div class="souvenir-price-info">${text}</div>`;
             }
-          }
-      
-          const imageUrl = skinData.image;
-          return `
-            <div class="skin ${skinData.class}" skin-id="${id}" weapon="${weapon}">
-              <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
-              <div class="skin-desc-name">${skinData.name}</div>
-              ${priceInfoContent ? `<div class="skin-price-info">${priceInfoContent}</div>` : ""}
-            </div>
-          `;
-        }
-      })();
+
+            if (priceInfoContent) {
+              const priceEl = $skin.find(".skin-price-info");
+              if (priceEl.length) priceEl.html(priceInfoContent);
+              else $skin.append(`<div class="skin-price-info">${priceInfoContent}</div>`);
+            }
+          });
+        });
+
+      } catch (err) {
+        console.error("Error in autoImportFullJsonIfNeeded:", err);
+      }
+
+      function renderSkinHTML(id, weapon, skinData) {
+        const imageUrl = skinData.image;
+        return `
+          <div class="skin ${skinData.class}" skin-id="${id}" weapon="${weapon}">
+            <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
+            <div class="skin-desc-name">${skinData.name}</div>
+            <div class="skin-price-info loading"></div>
+          </div>
+        `;
+      }
+    })();
+
           
     }
 
