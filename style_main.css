@@ -2859,23 +2859,46 @@ h3 {
     width: 100%;
 }
 
+.ssiodox:not(:has(.boxreview)) .criteria-descriptions {
+    width: 55%;
+    margin: 0 auto;
+    margin-top: 18px;
+    
+}
+
+.ssiodox:not(:has(.boxreview)) .criteria-descriptions .smallreview {
+    margin: unset;
+    background: none;
+    filter: unset;
+    box-shadow: unset;
+    padding: 10px;
+    max-width: 50%;
+}
+
 .smallreview.criteria h3 {
     width: auto;
     font-size: 16px;
     margin-bottom: 15px;
     user-select: none;
+    align-items: center;
 }
 
 .smallreview.criteria h3::before {
-    width: 16px;
-    height: 16px;
-    mask-image: url(/img/icons/gamemodes/star-fill.svg);
+    width: 18px;
+    height: 18px;
+    mask-image: url(/img/icons/gamemodes/map-marker-question.svg);
     mask-repeat: no-repeat;
     background: linear-gradient(to right, rgb(141, 21, 41), var(--main-color));
     mask-size: 100%;
     filter: grayscale(1);
     transition: all .15s ease-in-out;
     top: unset;
+}
+
+.boxreview .smallreview.criteria h3::before {
+    width: 16px;
+    height: 16px;
+    mask-image: url(/img/icons/gamemodes/star-fill.svg);
 }
 
 .smallreview.criteria:hover h3::before {
@@ -2902,7 +2925,8 @@ h3 {
     margin-bottom: 15px;
 } */
 
-.boxreview .smallreview.criteria {
+.boxreview .smallreview.criteria,
+.smallreview.criteria {
     background: var(--darkygray);
     width: 45%;
     margin: 0 auto;
@@ -5989,7 +6013,7 @@ footer .centralizer .footer-content {
     user-select: none;
     z-index: 10;
     left: 0;
-    bottom: -34px;
+    bottom: 0;
 }
 
 .newest-boxes-title-box {
@@ -6054,6 +6078,7 @@ footer .centralizer .footer-content {
     margin-top: 5px;
     align-content: flex-start;
     gap: 16px;
+    padding-bottom: 42px;
 }
 
 .newest-boxes.topic {
@@ -9759,7 +9784,7 @@ div#results {
 }
 
 .main-infobox-content-text p {
-    color: rgb(85 85 85);
+    color: var(--gray);
     font-weight: 500;
     font-size: 14px;
     transition: color .25s ease-in-out;
@@ -11264,10 +11289,6 @@ div#results {
         padding-bottom: 45px;
     }
 
-    .boxes-holder:not(.main-page) .main-mode-selection {
-        order: 1;   
-    }
-
     .criteria-descriptions {
         gap: 6px;
         margin-top: 0;
@@ -11278,8 +11299,18 @@ div#results {
         filter: grayscale(0);
     }
 
-    .boxreview .smallreview.criteria {
+    .boxreview .smallreview.criteria,
+    .smallreview.criteria {
         width: 100%;
+    }
+
+    .ssiodox:not(:has(.boxreview)) .criteria-descriptions .smallreview {
+        padding: 5px 15px;
+        max-width: 100%;
+    }
+
+    .ssiodox:not(:has(.boxreview)) .criteria-descriptions .smallreview p {
+        color: var(--lightgray);
     }
 
     .mirror-redirect .mirror {
@@ -11704,7 +11735,7 @@ div#results {
     }
 
     .main-infobox-content-text p {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .sitealternates .box .content {
@@ -12123,6 +12154,7 @@ div#results {
         transform: unset;
         border-radius: 0 10px 10px 10px;
         background-color: var(--darkygray);
+        padding-bottom: 8px;
     }
 
     .newest-boxes-title-box {
@@ -12947,6 +12979,11 @@ div#results {
     .boxreview .main-infobox {
         margin-top: 6px;
         width: 98%;
+    }
+
+    .ssiodox:not(:has(.boxreview)) .criteria-descriptions {
+        width: 100%;
+        margin-top: 8px;
     }
 
     .instruction.notmain {

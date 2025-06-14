@@ -1,7 +1,3 @@
-RewriteEngine On
 RewriteBase /
-
-RewriteCond %{REQUEST_URI} ^/cdn-cgi/rum
-RewriteRule .* - [L]
 
 ErrorDocument 404 /404.html
