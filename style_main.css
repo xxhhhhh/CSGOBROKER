@@ -11777,7 +11777,8 @@ div#results {
         padding-left: unset;
         padding-left: unset;
         color: var(--white);
-        width: 40%;
+        width: 100%;
+        break-inside: avoid;
     }
 
     .nav-review li.current {
@@ -11830,15 +11831,11 @@ div#results {
     }
 
     .nav-review ol {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
+        display: block;
         height: auto;
         width: 80%;
-        max-height: 250px;
+        column-count: 2;
+        margin-left: 20px;
     }
 
     .nav-review li:hover {
