@@ -2848,6 +2848,7 @@ h3 {
     position: relative;
     line-height: 1.4;
     color: var(--lightgray);
+    text-wrap-style: pretty;
 }
 
 .criteria-descriptions {
@@ -2860,7 +2861,9 @@ h3 {
 }
 
 .ssiodox:not(:has(.boxreview)) .criteria-descriptions {
-    width: 55%;
+    display: block;
+    column-count: 2;
+    width: 60%;
     margin: 0 auto;
     margin-top: 18px;
     
@@ -2872,7 +2875,8 @@ h3 {
     filter: unset;
     box-shadow: unset;
     padding: 10px;
-    max-width: 50%;
+    break-inside: avoid;
+    width: 100%;
 }
 
 .smallreview.criteria h3 {
@@ -2905,16 +2909,59 @@ h3 {
     filter: grayscale(0);
 }
 
-.smallreview.criteria p {
+.smallreview.criteria p,
+.smallreview.criteria ol li {
     color: var(--gray);
     transition: all .15s ease-in-out;
     width: 100%;
     font-size: 14px;
+    font-weight: 500;
     user-select: none;
 }
 
-.smallreview.criteria:hover p {
+.smallreview.criteria ol li strong {
+    color: var(--gray);
+}
+
+.smallreview.criteria:hover p,
+.smallreview.criteria:hover ol li {
     color: var(--lightgray);
+}
+
+.smallreview.criteria:hover ol li::before  {
+    color: var(--main-color);
+}
+
+.smallreview.criteria ol {
+    list-style: none;
+    counter-reset: item1;
+    line-height: 1.4;
+    margin-top: 15px;
+}
+
+.smallreview.criteria ol li::before {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    counter-increment: item1;
+    content: counter(item1, decimal);
+    transition: all .15s ease-in-out;
+    background: rgb(18 18 18);
+    color: var(--gray);
+    position: relative;
+    margin-right: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 30%;
+    font-weight: 600;
+}
+
+.smallreview.criteria ol li strong {
+    transition: all .15s ease-in-out;
+}
+
+.smallreview.criteria:hover ol li strong {
+    color: var(--white);
 }
 
 .smallreview.criteria::after {
@@ -3224,6 +3271,7 @@ h3 {
 }
 
 .blog .instruction li strong::after,
+.smallreview.criteria li strong::after,
 .blog .instruction li a::after {
     padding: 2px 7px;
 }
@@ -9971,7 +10019,6 @@ div#results {
 }
 
 .main-mode-unit {
-    background-color: var(--darkygray);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     height: 250px;
     width: 302px;
@@ -9982,6 +10029,9 @@ div#results {
     overflow: hidden;
     cursor: pointer;
     transition: all .15s ease-in-out;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, .3);
     z-index: 1;
 }
 
@@ -10840,7 +10890,8 @@ div#results {
     font-weight: 400;
 }
 
-.blog .instruction li strong {
+.blog .instruction li strong,
+.smallreview.criteria li strong {
     color: var(--white);
     font-weight: 500;
     text-transform: none;
@@ -11311,11 +11362,19 @@ div#results {
 
     .ssiodox:not(:has(.boxreview)) .criteria-descriptions .smallreview {
         padding: 5px 15px;
-        max-width: 100%;
     }
 
-    .ssiodox:not(:has(.boxreview)) .criteria-descriptions .smallreview p {
+    .ssiodox:not(:has(.boxreview)) .criteria-descriptions .smallreview p,
+    .ssiodox:not(:has(.boxreview)) .criteria-descriptions .smallreview ol li {
         color: var(--lightgray);
+    }
+
+    .ssiodox:not(:has(.boxreview)) .criteria-descriptions .smallreview ol li strong {
+        color: var(--white);
+    }
+
+    .ssiodox:not(:has(.boxreview)) .criteria-descriptions .smallreview ol li::before {
+        color: var(--main-color);
     }
 
     .mirror-redirect .mirror {
@@ -12989,6 +13048,7 @@ div#results {
     .ssiodox:not(:has(.boxreview)) .criteria-descriptions {
         width: 100%;
         margin-top: 8px;
+        column-count: 1;
     }
 
     .instruction.notmain {
@@ -13371,6 +13431,7 @@ div#results {
     .main-mode-unit {
         margin: 0 3px;
         min-width: unset;
+        background: var(--darkygray);
     }
 
     .main-mode-unit img {

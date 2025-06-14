@@ -393,8 +393,14 @@ h3,
 .nav-review li.current,
 .nav-review li:hover,
 .boxreview .smallreview.criteria:hover p,
-.smallreview.criteria:hover p {
+.smallreview.criteria:hover p,
+.smallreview.criteria:hover ol li,
+.smallreview.criteria:hover ol li strong {
     color: #1a1a1a;
+}
+
+.smallreview.criteria ol li strong {
+    font-weight: 600;
 }
 
 .nav-review li,
@@ -446,9 +452,9 @@ h3,
 }
 
 
-/* .main-mode-unit {
-    background-color: var(--main-theme);
-} */
+.main-mode-unit {
+    background-color: var(--darkygray);
+}
 
 .main-mode-unit img {
     /* filter: drop-shadow(0 0 3px rgb(175 175 175)); */
