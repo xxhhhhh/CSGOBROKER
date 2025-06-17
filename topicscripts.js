@@ -133,10 +133,19 @@ function insertRandomRecBox() {
   const usedIds = new Set();
 
   const applyRecBoxes = (recData) => {
+    if (!recData.length) return;
+
+    const isMobile = window.innerWidth < 1365;
+    const topicPage = document.querySelector(".topicpage");
     const insertAfterElement = document.querySelector(".topic-grandbox");
-    if (!insertAfterElement || !recData.length) return;
+    if (!insertAfterElement && !topicPage) return;
 
     let available = recData.slice();
+
+    // Если мобильное и есть topicpage — создаём wrapper
+    const useWrapper = isMobile && topicPage;
+    const wrapper = useWrapper ? document.createElement("div") : null;
+    if (wrapper) wrapper.className = "rec-boxes";
 
     for (let i = 0; i < recCount; i++) {
       available = available.filter(box => !usedIds.has(box.id));
@@ -179,15 +188,23 @@ function insertRandomRecBox() {
       const reviewLabel = lang === 'ru' ? `Читать Обзор ${box.site}` : `Read Review ${box.site}`;
       const visitLabel = lang === 'ru' ? `Перейти на ${box.site}` : `Visit ${box.site}`;
 
-      if (reviewBtn) {
-        reviewBtn.setAttribute("aria-label", reviewLabel);
-      }
-      if (visitBtn) {
-        visitBtn.setAttribute("aria-label", visitLabel);
-      }
+      if (reviewBtn) reviewBtn.setAttribute("aria-label", reviewLabel);
+      if (visitBtn) visitBtn.setAttribute("aria-label", visitLabel);
 
-      insertAfterElement.parentNode.insertBefore(recBox, insertAfterElement.nextSibling);
-      setTimeout(() => recBox.classList.add("active"), 20);
+      if (useWrapper) {
+        wrapper.appendChild(recBox);
+      } else if (insertAfterElement) {
+        insertAfterElement.parentNode.insertBefore(recBox, insertAfterElement.nextSibling);
+        setTimeout(() => recBox.classList.add("active"), 20);
+      }
+    }
+
+    // Вставка wrapper если использовался
+    if (useWrapper && wrapper.children.length > 0) {
+      topicPage.appendChild(wrapper);
+      setTimeout(() => {
+        wrapper.querySelectorAll(".rec-box").forEach(el => el.classList.add("active"));
+      }, 20);
     }
   };
 
@@ -204,6 +221,7 @@ function insertRandomRecBox() {
       .catch(console.error);
   }
 }
+
 
 insertRandomRecBox();
 

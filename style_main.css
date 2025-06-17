@@ -11887,14 +11887,16 @@ div#results {
         background: unset;
     }
 
-    .sitealternatesboxes .content .review-button {
+    .sitealternatesboxes .content .review-button,
+    .rec-box .content .review-button {
         height: 25px;
         padding: 0 5px;
         padding-right: 3px;
         font-size: 11px;
     }
 
-    .sitealternatesboxes .content .review-button.visit {
+    .sitealternatesboxes .content .review-button.visit,
+    .rec-box .content .review-button.visit {
         padding-right: 5px;
         padding-left: 3px;
     }
@@ -12169,6 +12171,7 @@ div#results {
 
     .slider-container {
         width: 85%;
+        order: 1;
     }
 
     .topicpage .slider-container {
@@ -12536,17 +12539,59 @@ div#results {
 
     .rec-box,
     .sitepage.topic-craft .rec-box {
-        width: 100%;
+        width: 49%;
         border-radius: 10px;
-        visibility: hidden;
-        display: none;
-        top: 0;
+        opacity: 1;
+        z-index: 1;
+        flex-grow: 1;
+    }
+
+    .rec-box .logobg a {
+        /* width: 80%; */
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .rec-box .logobg {
+    }
+
+    .rec-box .content {
+        padding-top: 6px;
+        padding-bottom: unset;
+    }
+
+    .rec-box .content p {
+        width: 90%;
+        font-size: 13px !important;
+    }
+
+    .rec-boxes {
+        display: flex;
+        position: relative;
+        width: 98%;
+        gap: 4px;
+        margin-top: 4px;
+    }
+
+    .sitepage.topic-craft .slick-slider {
+        margin-top: 4px;
+    }
+
+    .rec-box.active {
+        animation: unset;
     }
 
     .box-skins {
         margin: 4px 0 0 0 !important;
         width: 98%;
         background: var(--opacback);
+    }
+
+    .box-skins.character {
+        width: 100%;
+        margin: unset !important;
     }
 
     .box-skins-nav {
@@ -12565,7 +12610,7 @@ div#results {
         display: none;
     }
 
-    .box .content strong {
+    .box.main .content strong {
         color: var(--main-color);
     }
 
@@ -14036,7 +14081,6 @@ div#results {
 
     .site-searcher-box {
         height: 45px;
-        flex-grow: 1;
         margin: 4px !important;
         position: static;
     }
@@ -14434,10 +14478,6 @@ div#results {
         height: 250px;
         flex-grow: 1;
     }
-
-    .sitealternates .box .content p:first-child {
-        margin-top: 10px;
-    }
 }
 
 @media screen and (max-width: 555px) {
@@ -14597,8 +14637,7 @@ div#results {
         text-align: start;
     }
 
-    .main-page .content .review-button,
-    .sitealternatesboxes .content .review-button {
+    .main-page .content .review-button {
         font-size: 10px;
     }
 
@@ -14607,10 +14646,8 @@ div#results {
         display: none;
     }
 
-    .content-buttons {
-        margin-top: unset;
-        position: absolute;
-        bottom: 8px;
+    .boxes-holder .content-buttons {
+        margin-top: 10px;
     }
 }
 
@@ -15039,7 +15076,8 @@ div#results {
     }
 
     .sticker-crafts-list.imported {
-        margin: 4px 0;
+        margin-top: 4px;
+        margin-bottom: unset;
     }
 
     .sitepage.topic-craft .sticker-crafts-list .topic-grandbox {
@@ -15069,10 +15107,15 @@ div#results {
         align-content: flex-start;
         max-height: unset;
         flex-grow: unset;
+        bottom: unset !important;
+        top: unset !important;
+        gap: 4px;
     }
 
     .box-skins.character .skin {
-        margin: 2px;
+        margin: unset;
+        background: var(--darkygray);
+        width: auto;
     }
 
     .character-box {
@@ -15080,12 +15123,13 @@ div#results {
         justify-content: flex-start;
         flex-wrap: nowrap;
         margin-top: 2px;
+        gap: 4px;
     }
 
     .character-items-list.left,
     .character-items-list.right {
         width: 100%;
-        margin: 1px 0;
+        margin: unset;
     }
 
     .character-model {
