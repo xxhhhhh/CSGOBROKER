@@ -12171,8 +12171,18 @@ div#results {
 
     .slider-container {
         width: 85%;
+    }
+
+    .sitepage.topic .slider-container {
         order: 1;
     }
+
+    .rec-box::before {
+        left: 6px;
+        right: 6px;
+        top: 6px;
+        bottom: 6px;
+    }   
 
     .topicpage .slider-container {
         width: 98%;
@@ -13337,6 +13347,8 @@ div#results {
         filter: none;
         flex-grow: 1;
         background: linear-gradient(180deg, var(--darkygray) 0%, rgb(13 13 13) 100%);
+        backdrop-filter: unset;
+       -webkit-backdrop-filter: unset;
     }
 
     .box.main {
