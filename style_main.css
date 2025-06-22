@@ -27,16 +27,17 @@
     --main-color: #ce203d;
     --green: #20ce45;
     --gray: rgb(145, 145, 145);
+    --darkgray: rgba(255, 255, 255, .25);
     --lightgray: rgb(206, 206, 206);
     --opacback: rgba(3, 3, 3, .3);
-    --darkygray: rgb(11, 11, 11);
-    --darkgray: rgb(13, 13, 13);
+    --lightblack: rgb(11, 11, 11);
+    --lightlyblack: rgb(13, 13, 13);
     --main-theme: rgb(15, 15, 15);
     --buttonbg: linear-gradient(180deg, var(--main-color) 0%, #b11d35 100%);
     --defbuttonbg: linear-gradient(180deg, rgb(25 25 25) 0%, rgb(21 21 21) 100%);
     --defbuttonbg_hover: linear-gradient(180deg, rgb(30 30 30) 0%, rgb(24 24 24) 100%);
-    --icongradient: linear-gradient(-45deg, var(--darkygray), var(--main-theme));
-    --icongradient2: linear-gradient(-45deg, var(--darkygray), var(--darkgray));
+    --icongradient: linear-gradient(-45deg, var(--lightblack), var(--main-theme));
+    --icongradient2: linear-gradient(-45deg, var(--lightblack), var(--lightlyblack));
     --centralized: 66.528%;
 }
 
@@ -256,7 +257,7 @@ nav .pages {
 }
 
 .rec-box {
-    background: var(--darkygray);
+    background: var(--lightblack);
     position: relative;
     width: 300px;
     /* height: 220px; */
@@ -279,7 +280,7 @@ nav .pages {
     right: 8px;
     top: 8px;
     bottom: 8px;
-    background: linear-gradient(-45deg, var(--darkygray) 50%, var(--darkgray) 100%);
+    background: linear-gradient(-45deg, var(--lightblack) 50%, var(--lightlyblack) 100%);
     border-radius: 10px;
 }
 
@@ -368,7 +369,7 @@ nav .pages {
     justify-content: center;
     flex-wrap: wrap;
     align-content: flex-start;
-    background: linear-gradient(180deg, var(--darkygray) 30%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(180deg, var(--lightblack) 30%, rgba(0, 0, 0, 0) 100%);
     min-height: 600px;
     padding-top: 10px;
 }
@@ -399,8 +400,8 @@ nav .pages {
 .main-col-info {
     height: auto;
     width: 95%;
-    background: linear-gradient(15deg, var(--darkygray) 30%, rgba(0, 0, 0, .15) 100%);
-    /* background: var(--darkygray); */
+    background: linear-gradient(15deg, var(--lightblack) 30%, rgba(0, 0, 0, .15) 100%);
+    /* background: var(--lightblack); */
     border-radius: 10px;
     margin-top: 10px;
     padding: 30px;
@@ -511,7 +512,7 @@ nav .pages {
 
 .skininspect-placeholder .skin-text {
     width: 100%;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     border-radius: 5px;
 }
 
@@ -556,7 +557,7 @@ nav .pages {
     height: 100%;
     background-size: cover;
     border: none;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -582,7 +583,7 @@ nav .pages {
 }
 
 .topic-grandbox {
-    background: var(--darkygray);
+    background: var(--lightblack);
     position: relative;
     width: 300px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
@@ -612,7 +613,7 @@ nav .pages {
     margin: 0 auto;
     margin-bottom: 9px;
     border-radius: 10px;
-    background: linear-gradient(180deg, var(--darkygray) 0%, rgb(12 12 12) 100%);
+    background: linear-gradient(180deg, var(--lightblack) 0%, rgb(12 12 12) 100%);
     box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
     height: 70%;
 }
@@ -685,7 +686,7 @@ nav .pages {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     border-radius: 5px;
     transition: .15s all ease-in-out;
     z-index: 100;
@@ -1481,7 +1482,7 @@ nav .pages {
 .box-skins-nav {
     border-radius: 10px;
     /* background: linear-gradient(15deg, rgba(0, 0, 0, .3) 30%, rgba(0, 0, 0, .15) 100%); */
-    background: var(--darkygray);
+    background: var(--lightblack);
     height: 55px;
     overflow: hidden;
     margin: 8px 0 0 0;
@@ -1534,7 +1535,7 @@ nav .pages {
     left: 4px;
     bottom: 4px;
     right: 4px;
-    background: linear-gradient(150deg, var(--darkgray) 0%, var(--darkygray) 100%);
+    background: linear-gradient(150deg, var(--lightlyblack) 0%, var(--lightblack) 100%);
 }
 
 .navigation-weapon-type.notexist,
@@ -1618,7 +1619,7 @@ nav .pages {
 }
 
 .sitepage.items .box-skins .skin:hover {
-    background-color: var(--darkygray) !important;
+    background-color: var(--lightblack) !important;
     transition: background .15s ease-in-out !important;
 }
 
@@ -1736,7 +1737,7 @@ nav .pages {
 
 .box-skins {
     border-radius: 10px;
-    background: var(--darkygray);
+    background: var(--lightblack);
     height: 130px;
     margin: 8px 0 0 0;
     width: 100%;
@@ -1910,7 +1911,7 @@ nav .pages {
 }
 
 .sitepage.items .box-skins .skin {
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
 }
 
 .box-skins.solo .skin::before {
@@ -2123,7 +2124,7 @@ nav .pages {
 
 .box-skins-name span {
     transform: rotate(90deg);
-    color: rgba(255, 255, 255, .25);
+    color: var(--darkgray);
     font-size: 12px;
     text-transform: uppercase;
     font-weight: 500;
@@ -2146,7 +2147,7 @@ nav .pages {
     background-color: rgba(9, 9, 9, .5);
     height: 100%;
     width: 40px;
-    color: rgba(255, 255, 255, .25);
+    color: var(--darkgray);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -2296,12 +2297,12 @@ h3 {
 
 .boxreview .plusminus .criteria:nth-child(1) {
     background: linear-gradient(320deg, rgba(15, 207, 79, 0) 30%, rgba(15, 207, 79, .09) 100%);
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
 }
 
 .boxreview .plusminus .criteria:nth-child(2) {
     background: linear-gradient(320deg, rgba(207, 15, 49, 0) 30%, rgba(207, 15, 49, .09) 100%);
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
 }
 
 .site-attention {
@@ -2312,7 +2313,7 @@ h3 {
     align-items: center;
     padding: 20px 0;
     transition: all .15s ease-in-out;
-    background: var(--darkygray);
+    background: var(--lightblack);
     position: relative;
     margin-top: 8px;
     order: -2;
@@ -2339,7 +2340,7 @@ h3 {
 }
 
 /* .site-attention:hover {
-    background-color: var(--darkgray);
+    background-color: var(--lightlyblack);
 } */
 
 .site-attention span {
@@ -2374,7 +2375,7 @@ h3 {
     flex-wrap: wrap;
     align-content: flex-start;
     padding: 30px 0;
-    background: var(--darkygray);
+    background: var(--lightblack);
     border-radius: 10px;
     margin-top: 8px;
 }
@@ -2414,7 +2415,7 @@ h3 {
     border-radius: 5px;
     visibility: hidden;
     opacity: 0;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
     padding-left: 3px;
 }
@@ -2466,7 +2467,7 @@ h3 {
 }
 
 .weapon-container:hover {
-    background: var(--darkgray);
+    background: var(--lightlyblack);
     border-radius: 5px;
     transition: background .15s ease-in-out;
 }
@@ -2492,7 +2493,7 @@ h3 {
     margin: 0 4px;
     border-radius: 10px;
     width: 15%;
-    background: var(--darkygray);
+    background: var(--lightblack);
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -2649,7 +2650,7 @@ h3 {
 .shortinfo {
     width: 100%;
     height: 48px;
-    /* background-color: var(--darkygray); */
+    /* background-color: var(--lightblack); */
     border-radius: 10px;
     margin-top: -56px;
     order: -2;
@@ -2658,7 +2659,7 @@ h3 {
 
 .shortinfo .features {
     padding-left: 8px;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     padding-right: 17px;
     border-radius: 10px;
 }
@@ -2974,7 +2975,7 @@ h3 {
 
 .boxreview .smallreview.criteria,
 .smallreview.criteria {
-    background: var(--darkygray);
+    background: var(--lightblack);
     width: 45%;
     margin: 0 auto;
     padding: 25px;
@@ -2998,7 +2999,7 @@ h3 {
 .ratingsumm {
     width: 100%;
     height: 100px;
-    background: var(--darkygray);
+    background: var(--lightblack);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -3131,7 +3132,7 @@ h3 {
     border-radius: 0 0 5px 5px;
     width: 100%;
     height: auto;
-    background: var(--darkygray);
+    background: var(--lightblack);
     border-radius: 10px;
 }
 
@@ -3469,7 +3470,7 @@ nav #logo:hover {
     margin: 0 9px;
     scroll-snap-align: start;
     border-radius: 10px;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     cursor: pointer;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     filter: drop-shadow(0 0 1px rgb(10 10 10)) blur(0);
@@ -3496,7 +3497,7 @@ nav #logo:hover {
     width: 25px;
     height: 40px;
     border-radius: 5px;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
 }
 
 .controls-button:first-child {
@@ -3679,7 +3680,7 @@ nav #logo:hover {
 }
 
 .topic-filter input.singlemod-box::placeholder {
-    color: rgba(255, 255, 255, .25);
+    color: var(--darkgray);
     font-size: 14px;
 }
 
@@ -3788,7 +3789,7 @@ nav #logo:hover {
     justify-content: center;
     font-weight: 600;
     font-size: 18px;
-    color: rgba(255, 255, 255, .25);
+    color: var(--darkgray);
     z-index: 1;
 }
 
@@ -3959,7 +3960,7 @@ nav #logo:hover {
     width: 300px;
     height: auto;
     position: relative;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     display: flex;
     align-items: center;
@@ -4104,7 +4105,7 @@ nav #logo:hover {
 .extra-abox {
     width: 300px;
     height: 60px;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     position: relative;
     display: flex;
@@ -4191,7 +4192,7 @@ nav #logo:hover {
 
 .promo-box.extra-abox:hover .logobg::after {
     background: rgba(168, 29, 52, .6);
-    color: var(--darkygray);
+    color: var(--lightblack);
 }
 
 .promo-box.extra-abox.deposit-bonus .logobg::after {
@@ -4461,12 +4462,12 @@ nav #logo:hover {
     overflow: hidden;
     flex-direction: column;
     justify-content: flex-start;
-    background: var(--darkygray);
+    background: var(--lightblack);
 }
 
 .sitedetails .sitepros.active,
 .sitedetails .sitepros:hover {
-    background: var(--darkgray);
+    background: var(--lightlyblack);
 }
 
 .sitedetails .sitepros:first-child {
@@ -4543,7 +4544,7 @@ nav #logo:hover {
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
     transition: all .15s ease-in-out;
     text-decoration: none;
-    background: var(--darkygray);
+    background: var(--lightblack);
 }
 
 .topic-boxes-holder .topic-grandbox.sticker .topic-box {
@@ -4607,7 +4608,7 @@ nav #logo:hover {
     opacity: 0;
     visibility: visible;
     transition: all .15s ease-in-out, opacity .4s;
-    background-color: var(--darkgray);
+    background-color: var(--lightlyblack);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -4627,7 +4628,7 @@ nav #logo:hover {
     margin-top: 6px;
     opacity: 1;
     border-radius: 10px;
-    background: linear-gradient(-45deg, var(--darkygray) 50%, var(--darkgray) 100%);
+    background: linear-gradient(-45deg, var(--lightblack) 50%, var(--lightlyblack) 100%);
     overflow: hidden;
     margin: 8px;
     width: auto;
@@ -4637,7 +4638,7 @@ nav #logo:hover {
 .topic-craft:not(.loadout) .topic-grandbox .topic-box .logobg {
     margin: 8px 8px 0 8px;
     background: var(--icongradient);
-    background: linear-gradient(-45deg, var(--darkygray) 50%, var(--darkgray) 100%);
+    background: linear-gradient(-45deg, var(--lightblack) 50%, var(--lightlyblack) 100%);
     mask-image: unset;
     -webkit-mask-image: unset;
 } */
@@ -4678,18 +4679,18 @@ nav #logo:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(180deg, transparent, var(--darkygray));
+    background: linear-gradient(180deg, transparent, var(--lightblack));
     transition: all .15s ease-in-out;
     z-index: 10;
     position: relative;
 }
 
 /* .topic-box:hover .content {
-    background: linear-gradient(180deg, transparent, var(--darkgray));
+    background: linear-gradient(180deg, transparent, var(--lightlyblack));
 } */
 
 .topic-box.maestro:hover .content {
-    background: linear-gradient(180deg, transparent, var(--darkygray));
+    background: linear-gradient(180deg, transparent, var(--lightblack));
 }
 
 .topic-box .content span {
@@ -4718,7 +4719,7 @@ nav #logo:hover {
     border-radius: 10px;
     display: flex;
     justify-content: center;
-    /* background: linear-gradient(180deg, var(--darkygray) 0%, rgb(13 13 13) 100%); */
+    /* background: linear-gradient(180deg, var(--lightblack) 0%, rgb(13 13 13) 100%); */
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -4733,7 +4734,7 @@ nav #logo:hover {
 }
 
 .sitepage .box {
-    background: var(--darkygray);
+    background: var(--lightblack);
 } */
 
 .sitepage .box .logobg {
@@ -4757,7 +4758,7 @@ nav #logo:hover {
     font-size: 18px;
     position: absolute;
     bottom: 8px;
-    background: var(--darkgray);
+    background: var(--lightlyblack);
     padding: 5px 7px;
     z-index: 1;
 }
@@ -4834,7 +4835,7 @@ nav #logo:hover {
     position: absolute;
     width: 20px;
     height: 100%;
-    background: var(--darkgray);
+    background: var(--lightlyblack);
     box-sizing: border-box;
     transform: skewX(20deg);
     top: 0;
@@ -4883,7 +4884,7 @@ nav #logo:hover {
 }
 
 .alternates-title {
-    background: var(--darkgray);
+    background: var(--lightlyblack);
 }
 
 .alternates-title::after,
@@ -4942,7 +4943,7 @@ nav #logo:hover {
     min-width: unset;
     height: 304px;
     background-color: unset;
-    background: var(--darkygray);
+    background: var(--lightblack);
     box-shadow: unset;
     border-radius: 10px;
 }
@@ -4989,7 +4990,7 @@ nav #logo:hover {
     width: 105%;
     height: 100%;
     border-radius: 10px;
-    background: var(--darkygray);
+    background: var(--lightblack);
     z-index: 1;
 }
 
@@ -5719,7 +5720,7 @@ nav img:active,
     transform: translateX(-50%);
     width: 110%;
     height: 100%;
-    background: var(--darkygray);
+    background: var(--lightblack);
     box-shadow: 0 1px 2px 0 rgba(7, 7, 7, .7);
     border-radius: 10px;
     z-index: 1;
@@ -5758,7 +5759,7 @@ nav img:active,
 .sitepage .content button.copy::before,
 .box.main .content .review-button.mirror-visit,
 .box.main .content .review-button.mirror-visit::before {
-    background: var(--darkygray);
+    background: var(--lightblack);
 }
 
 .content button.copy:hover,
@@ -6073,7 +6074,7 @@ footer .centralizer .footer-content {
     padding: 10px;
     text-transform: uppercase;
     font-size: 12px;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     border-radius: 10px 0 10px 10px;
     z-index: 3;
     display: flex;
@@ -6089,7 +6090,7 @@ footer .centralizer .footer-content {
 }
 
 .newest-boxes-title-box span {
-    color: rgba(255, 255, 255, .25);
+    color: var(--darkgray);
     transition: all .1s ease-in-out;
 }
 
@@ -6142,7 +6143,7 @@ footer .centralizer .footer-content {
     height: 100px;
     width: 240px;
     min-width: unset;
-    background: var(--darkygray);
+    background: var(--lightblack);
     filter: unset;
 }
 
@@ -6441,7 +6442,7 @@ footer .centralizer .footer-content {
 .singlemod-box {
     width: 50px;
     height: 50px;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     transition: all .15s ease-in-out;
     border-radius: 10px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
@@ -6464,7 +6465,7 @@ footer .centralizer .footer-content {
     bottom: 50%;
     transform: translateY(50%) translateX(10%);
     padding: 12px;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     border-radius: 10px;
     transition: all .15s ease-in-out;
     top: unset;
@@ -6541,7 +6542,7 @@ footer .centralizer .footer-content {
     padding: 0 10px;
     text-transform: uppercase;
     font-size: 14px;
-    color: rgba(255, 255, 255, .25);
+    color: var(--darkgray);
     font-weight: 600;
     transition: all .15s ease-in-out;
     text-wrap: nowrap;
@@ -6611,12 +6612,12 @@ footer .centralizer .footer-content {
 
 .category-selector .category-box.active .category-box-logo::before,
 .singlemod-box.active .singlemod-select::before {
-    background: linear-gradient(-45deg, var(--darkygray) 0%, rgba(43, 0, 16, .85) 100%);
+    background: linear-gradient(-45deg, var(--lightblack) 0%, rgba(43, 0, 16, .85) 100%);
     transition: all .15s ease-in-out;
 }
 
 .mods-box.skins-box .singlemod-box.active .singlemod-select::before {
-    background: linear-gradient(-45deg, var(--darkygray) 0%, rgba(20, 20, 20, .5) 100%);
+    background: linear-gradient(-45deg, var(--lightblack) 0%, rgba(20, 20, 20, .5) 100%);
     transition: all .15s ease-in-out;
 }
 
@@ -6679,7 +6680,7 @@ footer .centralizer .footer-content {
 }
 
 .singlemod-box.active .singlemod-icon::after {
-    background: linear-gradient(-45deg, var(--darkygray) 0%, rgba(43, 0, 16, .85) 100%);
+    background: linear-gradient(-45deg, var(--lightblack) 0%, rgba(43, 0, 16, .85) 100%);
 }
 
 .singlemod-icon::before {
@@ -6790,7 +6791,7 @@ footer .centralizer .footer-content {
     width: 100%;
     height: 40px;
     margin: 2px 0;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     border-radius: 5px;
     transition: all .15s ease-in-out;
 }
@@ -6850,7 +6851,7 @@ footer .centralizer .footer-content {
 }
 
 .topic-nav-close {
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     height: 40px;
     width: 30%;
     margin: 0 auto;
@@ -6981,7 +6982,7 @@ input:checked+label+.slide+input+label::after {
     font-size: 24px;
     width: 40px;
     height: 40px;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     cursor: pointer;
     outline: none;
     border: 0px solid transparent;
@@ -7651,7 +7652,7 @@ a[data-title]:after,
 .contact,
 .boxes-holder-name a,
 .newest-boxes-more {
-    color: rgba(255, 255, 255, .25);
+    color: var(--darkgray);
     transition: all .15s ease-in-out;
 }
 
@@ -8391,7 +8392,7 @@ ul .big-category.active .submenu2 {
     position: relative;
     align-items: center;
     font-size: 15px;
-    border: 1px rgba(255, 255, 255, .25) solid;
+    border: 1px var(--darkgray) solid;
     transition: all .15s ease-in-out;
 }
 
@@ -8455,7 +8456,7 @@ ul .big-category.active .submenu2 {
     padding: 4px;
     display: flex;
     flex-direction: row;
-    color: rgba(255, 255, 255, .25);
+    color: var(--darkgray);
     transition: all .15s ease-in-out;
     font-weight: 500;
     font-size: 15px;
@@ -8550,7 +8551,7 @@ i.flagbox {
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    color: rgba(255, 255, 255, .25);
+    color: var(--darkgray);
     position: relative;
     width: 100%;
     text-wrap: nowrap;
@@ -9115,7 +9116,7 @@ div#results {
 }
 
 .sitealternates .box:hover {
-    background: var(--darkygray) !important;
+    background: var(--lightblack) !important;
     transition: all .2s ease-in-out;
     background-color: none;
 }
@@ -9130,7 +9131,7 @@ div#results {
     justify-content: flex-start;
     color: var(--main-color);
     transition: all .15s .05s ease-in-out, background .15s .0s;
-    background: var(--darkgray);
+    background: var(--lightlyblack);
     position: absolute;
     transform: translateY(50px);
     user-select: none;
@@ -9198,7 +9199,7 @@ div#results {
 }
 
 .sitepage.topic-craft .topicpage {
-    background: linear-gradient(180deg, var(--darkygray) 50%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(180deg, var(--lightblack) 50%, rgba(0, 0, 0, 0) 100%);
     width: 1000px;
     padding-bottom: 9px;
 }
@@ -9277,7 +9278,7 @@ div#results {
     height: 40px;
     margin: 5px;
     background: var(--icongradient);
-    border: 2px solid var(--darkgray);
+    border: 2px solid var(--lightlyblack);
     transition: all .15s ease-in-out;
     border-radius: 5px;
     display: flex;
@@ -9508,7 +9509,7 @@ div#results {
 }
 
 .topic-boxes-holder .topic-grandbox.sticker {
-    background: var(--darkygray);
+    background: var(--lightblack);
     cursor: pointer;
     text-decoration: none !important;
     top: 0;
@@ -9598,7 +9599,7 @@ div#results {
     height: auto;
     margin-top: 9px;
     /* background: rgb(9 9 9); */
-    background: var(--darkygray);
+    background: var(--lightblack);
     border-radius: 10px;
     margin-bottom: 9px;
     display: flex;
@@ -9835,7 +9836,7 @@ div#results {
 .gamemodes .featuresbox:after,
 .gamemodes .featuresbox::before,
 .gamemodes .featuresbox {
-    background: var(--darkgray);
+    background: var(--lightlyblack);
 }
 
 .gamemodes .featuresbox:after,
@@ -9885,7 +9886,7 @@ div#results {
 }
 
 .main-infobox-content {
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     position: relative;
     width: 50%;
     height: 100%;
@@ -9908,11 +9909,15 @@ div#results {
 }
 
 .main-infobox-content-text p {
-    color: var(--gray);
+    color: var(--darkgray);
     font-weight: 500;
     font-size: 14px;
     transition: color .25s ease-in-out;
     line-height: 1.3;
+}
+
+.sitepage .main-infobox-content-text p {
+    color: var(--gray);
 }
 
 .main-infobox:hover .main-infobox-content-text p {
@@ -9920,7 +9925,7 @@ div#results {
 }
 
 .main-infobox-content-block {
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     position: relative;
     border-radius: 5px;
     margin: 8px;
@@ -9937,7 +9942,7 @@ div#results {
 }
 
 .main-infobox-mascotte {
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     position: relative;
     right: 0;
     top: 5px;
@@ -10253,12 +10258,12 @@ div#results {
     padding: 10px;
     text-transform: uppercase;
     font-size: 12px;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     border-radius: 10px 10px 0 0;
     z-index: 3;
     display: flex;
     align-items: center;
-    color: rgba(255, 255, 255, .25);
+    color: var(--darkgray);
     transition: all .1s ease-in-out;
     text-wrap: nowrap;
     user-select: none;
@@ -10339,7 +10344,7 @@ div#results {
 .main-page .box .logobg .best,
 .newest-boxes .box .logobg .best {
     font-size: 0;
-    background: var(--darkygray);
+    background: var(--lightblack);
     cursor: help;
     height: 30px;
 }
@@ -10375,7 +10380,7 @@ div#results {
     text-transform: uppercase;
     font-size: 11px;
     font-weight: 600;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     text-decoration: none;
     border-radius: 5px;
     right: 0;
@@ -10410,7 +10415,7 @@ div#results {
 .boxes-holder-modes {
     right: unset;
     margin-left: 20px;
-    color: rgba(255, 255, 255, .25);
+    color: var(--darkgray);
 }
 
 .boxes-holder-name .boxes-holder-modes::before,
@@ -10421,7 +10426,7 @@ div#results {
     position: absolute;
     width: 20px;
     height: 28px;
-    background-color: inherit;
+    background: inherit;
     box-sizing: border-box;
     transform: skewX(-20deg);
     z-index: -1;
@@ -10503,10 +10508,10 @@ div#results {
     flex-wrap: wrap;
     gap: 8px;
     border-radius: 0 5px 10px 10px;
-    /* background: radial-gradient(300% 100% at 0% 0%, var(--darkygray), rgba(11, 11, 11, .3) 100%); */
-    /* box-shadow: inset 0 0 5px 1px var(--darkygray); */
-    /* background: var(--darkygray); */
-    background: radial-gradient(150% 150% at 50% 0%, var(--darkygray), transparent 100%);
+    /* background: radial-gradient(300% 100% at 0% 0%, var(--lightblack), rgba(11, 11, 11, .3) 100%); */
+    /* box-shadow: inset 0 0 5px 1px var(--lightblack); */
+    /* background: var(--lightblack); */
+    background: radial-gradient(150% 150% at 50% 0%, var(--lightblack), transparent 100%);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     width: calc(294px* 2 + 8px* 2);
@@ -10608,7 +10613,7 @@ div#results {
     top: -3px;
     width: 50px;
     height: 50px;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     transition: all .15s ease-in-out;
     margin: 5px;
     border-radius: 10px;
@@ -10679,7 +10684,7 @@ div#results {
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     border-radius: 10px 10px 0 0;
     position: absolute;
     width: 45px;
@@ -10726,7 +10731,7 @@ div#results {
     top: 0;
     right: -10px;
     transform: skewX(20deg);
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     border-radius: 0 10px 0 0;
     width: 40px;
     height: 100%;
@@ -10785,7 +10790,7 @@ div#results {
     width: auto;
     height: 0;
     border-radius: 0 10px 10px 10px;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     overflow: hidden;
     padding: 0;
     margin-top: -10px;
@@ -10892,7 +10897,7 @@ div#results {
 .payment-list .payment-method {
     font-size: 14px;
     font-weight: 500;
-    color: rgba(255, 255, 255, .25);
+    color: var(--darkgray);
     background-color: #0c0c0c;
     border-radius: 5px;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, .4);
@@ -10942,7 +10947,7 @@ div#results {
 
 .blog .main-col-info {
     width: 100%;
-    background: linear-gradient(200deg, var(--darkygray) 30%, rgba(0, 0, 0, .15) 100%);
+    background: linear-gradient(200deg, var(--lightblack) 30%, rgba(0, 0, 0, .15) 100%);
 }
 
 .blog .topic-grandbox {
@@ -11191,7 +11196,7 @@ div#results {
 
 .particleflake {
     position: fixed;
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
     background-image: url(/img/icons/payments/rust.webp);
     background-size: 60%;
     background-position: center;
@@ -11326,8 +11331,8 @@ div#results {
     position: relative;
     z-index: 1;
     border: unset;
-    background-color: var(--darkygray);
-    color: rgba(255, 255, 255, .25);
+    background-color: var(--lightblack);
+    color: var(--darkgray);
     font-family: TTNormsPro;
     cursor: pointer;
     font-size: 16px;
@@ -11380,7 +11385,7 @@ div#results {
 }
 
 /* .pagination-button.active::before {
-    background: linear-gradient(-45deg, var(--darkygray) 0%, rgba(43, 0, 16, .85) 100%);
+    background: linear-gradient(-45deg, var(--lightblack) 0%, rgba(43, 0, 16, .85) 100%);
 } */
 
 .topic-grandbox.hidden,
@@ -11714,7 +11719,7 @@ div#results {
 
     :root {
         --darkgray: var(--main-theme);
-        --opacback: var(--darkygray);
+        --opacback: var(--lightblack);
     }
 
     .sitepros,
@@ -11775,7 +11780,7 @@ div#results {
         height: auto;
         border-radius: unset;
         justify-content: center;
-        background: var(--darkygray);
+        background: var(--lightblack);
         margin-top: 8px;
         padding-bottom: 16px;
     }
@@ -12301,7 +12306,7 @@ div#results {
         left: unset;
         transform: unset;
         border-radius: 0 10px 10px 10px;
-        background-color: var(--darkygray);
+        background-color: var(--lightblack);
         padding-bottom: 8px;
     }
 
@@ -12652,7 +12657,7 @@ div#results {
         padding: 5px 0;
         margin: 0 auto;
         box-shadow: unset;
-        background-color: var(--darkygray);
+        background-color: var(--lightblack);
         border-radius: unset !important;
     }
 
@@ -12858,7 +12863,7 @@ div#results {
 
 
     .submenu li {
-        background: var(--darkygray);
+        background: var(--lightblack);
     }
 
     .big-category.active a,
@@ -12974,7 +12979,7 @@ div#results {
     }
 
     .category-centralizer.nav .category:hover .category-box.current {
-        background: var(--darkygray) !important;
+        background: var(--lightblack) !important;
     }
 
     .category-centralizer.nav .category-box-logo {
@@ -13111,7 +13116,7 @@ div#results {
 
     .boxreview {
         border-radius: 0;
-        background: linear-gradient(180deg, var(--darkygray) 30%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(180deg, var(--lightblack) 30%, rgba(0, 0, 0, 0) 100%);
         padding-top: unset;
     }
 
@@ -13264,7 +13269,7 @@ div#results {
     .sitedetails .sitepros {
         width: auto;
         min-width: 49.6%;
-        background: var(--darkgray);
+        background: var(--lightlyblack);
     }
 
     .sitedetails .sitepros:first-child {
@@ -13316,7 +13321,7 @@ div#results {
 
     .siteleftpannel .box.main,
     .sitepage .box:hover {
-        background: var(--darkygray) !important;
+        background: var(--lightblack) !important;
         box-shadow: unset;
     }
 
@@ -13336,7 +13341,7 @@ div#results {
 
     .siteblock {
         position: relative;
-        background: var(--darkygray);
+        background: var(--lightblack);
         gap: unset;
     }
 
@@ -13346,7 +13351,7 @@ div#results {
         min-width: 223px;
         filter: none;
         flex-grow: 1;
-        background: linear-gradient(180deg, var(--darkygray) 0%, rgb(13 13 13) 100%);
+        background: linear-gradient(180deg, var(--lightblack) 0%, rgb(13 13 13) 100%);
         backdrop-filter: unset;
        -webkit-backdrop-filter: unset;
     }
@@ -13557,7 +13562,7 @@ div#results {
     .main-mode-unit {
         margin: 0 3px;
         min-width: unset;
-        background: var(--darkygray);
+        background: var(--lightblack);
     }
 
     .main-mode-unit img {
@@ -13819,7 +13824,7 @@ div#results {
     .gamemodes .featuresbox:after,
     .gamemodes .featuresbox::before,
     .gamemodes .featuresbox {
-        background: var(--darkygray);
+        background: var(--lightblack);
     }
 
     .gamemodes .featuresbox:after,
@@ -14050,13 +14055,13 @@ div#results {
         flex-grow: 1;
         margin: 0;
         padding: 20px 10px;
-        background: var(--darkygray);
+        background: var(--lightblack);
         border-radius: 10px;
         flex-wrap: wrap;
     }
 
     .sitedetails .sitepros {
-        background: var(--darkygray);
+        background: var(--lightblack);
     }
 
     .ratingsumm {
@@ -14401,7 +14406,7 @@ div#results {
     }
 
     .boxes-holder-list {
-        background: var(--darkygray);
+        background: var(--lightblack);
     }
 
     .mods-box.skins-box .mods-main-box {
@@ -15123,7 +15128,7 @@ div#results {
 
     .box-skins.character .skin {
         margin: unset;
-        background: var(--darkygray);
+        background: var(--lightblack);
         width: auto;
     }
 
@@ -15263,7 +15268,7 @@ label.skins-category-switch:active {
     position: absolute;
     top: -20px;
     height: 20px;
-    background: linear-gradient(150deg, var(--darkgray) 0%, var(--darkygray) 100%);
+    background: linear-gradient(150deg, var(--lightlyblack) 0%, var(--lightblack) 100%);
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -15285,7 +15290,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     border-radius: 0 0 10px 10px;
-    background: var(--darkygray);
+    background: var(--lightblack);
   }
 
   nav {

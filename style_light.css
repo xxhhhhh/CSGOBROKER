@@ -1,9 +1,9 @@
 :root {
-    --darkygray: rgb(225 225 225);
+    --lightblack: rgb(225 225 225);
     --main-theme: rgb(245 245 245);
-    --darkgray: rgb(255 255 255);
+    --lightlyblack: rgb(255 255 255);
     --opacback: rgb(225 225 225);
-    --icongradient: linear-gradient(-45deg, var(--main-theme), var(--darkgray));
+    --icongradient: linear-gradient(-45deg, var(--main-theme), var(--lightlyblack));
     --buttonbg:linear-gradient(180deg, var(--main-color) 0%, rgb(204, 21, 52) 100%);
 }
 
@@ -67,7 +67,7 @@
 }
 
 .sitepage .box .content {
-    background: var(--darkgray);
+    background: var(--lightlyblack);
 }
 
 .main-mode-box {
@@ -111,7 +111,7 @@
 .site-attention,
 .boxreview .smallreview,
 .instruction {
-    background: var(--darkgray);
+    background: var(--lightlyblack);
     border-radius: 10px;
 }
 
@@ -121,7 +121,7 @@
 }
 
 .shortinfo .features {
-    background: var(--darkygray);
+    background: var(--lightblack);
 }
 
 .site-attention.blocked,
@@ -142,7 +142,7 @@
 
 .promo-box code {
     color: var(--gray);
-    background: var(--darkgray);
+    background: var(--lightlyblack);
 }
 
 .promo-box:hover code {
@@ -160,7 +160,7 @@
 }
 
 .instruction-mirrors {
-    background: var(--darkgray);
+    background: var(--lightlyblack);
     border-radius: 10px;
 }
 
@@ -177,7 +177,7 @@
 #back-to-top-btn,
 .main-mode,
 .mini-info {
-    background: var(--darkygray) !important;
+    background: var(--lightblack) !important;
 }
 
 .topic-grandbox .topic-box .logobg,
@@ -211,7 +211,7 @@
 .topic-box .logobg,
 .topic-box .logobg.skincolors.active,
 .topic-box.maestro .logobg {
-    background: linear-gradient(-45deg, var(--darkygray) 50%, var(--main-theme) 100%);
+    background: linear-gradient(-45deg, var(--lightblack) 50%, var(--main-theme) 100%);
     box-shadow: 0 -1px 2px 0 rgba(155, 155, 155, .4);
 }
 
@@ -410,8 +410,8 @@ h3,
 
 .boxes-holder-name a:hover, 
 .newest-boxes-more:hover {
-    /* filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);1 */
-    background: var(--darkgray);
+    filter: brightness(.95) drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
+    /* background-color: var(--lightlyblack); */
 }
 
 .siteblock.mirror .box.main .logobg .star_rating::before {
@@ -426,7 +426,7 @@ h3,
 }
 
 .promo-box.extra-abox .logobg::after {
-    background: var(--darkygray);
+    background: var(--lightblack);
 }
 
 .promo-box.extra-abox .logobg span {
@@ -453,7 +453,7 @@ h3,
 
 
 .main-mode-unit {
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
 }
 
 .main-mode-unit img {
@@ -463,7 +463,7 @@ h3,
 
 .main-mode-unit::before {
     opacity: 1;
-    background: radial-gradient(815% 120% at 0% 0%, transparent, var(--darkygray));
+    background: radial-gradient(815% 120% at 0% 0%, transparent, var(--lightblack));
 }
 
 .main-mode-unit a::before {
@@ -512,7 +512,7 @@ h3,
 }
 
 .main-page .logobg {
-    background: var(--darkgray);
+    background: var(--lightlyblack);
 }
 
 .boxes-holder .content a.boxtitle,
@@ -625,7 +625,7 @@ h3,
 .box .logobg .best::before,
 .main-page .box .logobg .best:hover, 
 .newest-boxes .box .logobg .best:hover {
-    background: var(--darkgray);
+    background: var(--lightlyblack);
     text-shadow: none;
 }
 
@@ -650,7 +650,7 @@ h3,
 .boxes-holder .box .content .review-button.mirror:hover, 
 .boxes-holder .box .content .review-button.mirror:hover::before,
 .boxes-holder-name {
-    background: var(--darkygray);
+    background: var(--lightblack);
     filter: none;
 }
 
@@ -708,7 +708,7 @@ h3,
 .box .content,
 .newest-boxes .box,
 #rec-box-content {
-    background-color: var(--darkgray) !important;
+    background-color: var(--lightlyblack) !important;
     background: unset;
 }
 
@@ -733,7 +733,7 @@ h3,
 
 .email-placeholder .email-text,
 .skininspect-placeholder .skin-text {
-    background-color: var(--darkgray);
+    background-color: var(--lightlyblack);
 }
 
 .boxes-holder .box:hover .rating-case-single,
@@ -766,7 +766,7 @@ h3,
 .topic-grandbox .skin,
 .boxreview .smallreview.criteria,
 .smallreview.criteria {
-    background: var(--darkgray);
+    background: var(--lightlyblack);
 }
 
 .bonus_info::before {
@@ -776,19 +776,19 @@ h3,
 .features .featuresbox .typesinside a:hover,
 .features .featuresbox .typesinside a:hover::before,
 .features .featuresbox .typesinside a:hover::after {
-    background: var(--darkgray);
+    background: var(--lightlyblack);
 }
 
 .instruction-mirrors li a {
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
 }
 
 .gamemodes .featuresbox .typesinside a[aria-label]:after {
-    color: var(--darkgray);
+    color: var(--lightlyblack);
 }
 
 .skin-copy button {
-    background: var(--darkygray);
+    background: var(--lightblack);
 }
 
 .skin-copy button::after {
@@ -971,7 +971,7 @@ ul .submenu li .nonredir,
 }
 
 .mods-box.skins-box .singlemod-box {
-    background-color: var(--darkygray);
+    background-color: var(--lightblack);
 }
 
 .singlemod-box::after {
@@ -1116,7 +1116,7 @@ ul .submenu li .nonredir,
 
 .content .review-button.mirror-visit::before,
 .content .review-button.mirror-visit {
-    background-color: var(--darkgray) !important;
+    background-color: var(--lightlyblack) !important;
 }
 
 .sitepage .content button.copy, 
@@ -1202,7 +1202,7 @@ ul .submenu li .nonredir,
 }
 
 .boxes-holder-list {
-    background: radial-gradient(300% 100% at 0% 0%, var(--darkygray), var(--main-theme) 100%);
+    background: radial-gradient(300% 100% at 0% 0%, var(--lightblack), var(--main-theme) 100%);
 }
 
 .navigation-weapon-type::after, 
@@ -1264,7 +1264,7 @@ ul .submenu li .nonredir,
 }
 
 .sitepage.topic-craft .crafting-table {
-    background: linear-gradient(360deg, var(--darkygray) 50%, var(--darkgray) 100%);
+    background: linear-gradient(360deg, var(--lightblack) 50%, var(--lightlyblack) 100%);
 }
 
 .lang-menu ul li:hover a::after,
@@ -1290,14 +1290,14 @@ ul .submenu li .nonredir,
 }
 
 .blog .main-col-info {
-    background: var(--darkgray);
+    background: var(--lightlyblack);
     border-radius: 10px;
     width: calc(100% - 20px);
     margin: 10px;
 }
 
 .category-centralizer.nav .category-box {
-    background: var(--darkygray);
+    background: var(--lightblack);
 }
 
 @-moz-document url-prefix() {
@@ -1351,7 +1351,7 @@ ul .submenu li .nonredir,
     }
 
     .ssiodox {
-        background: var(--darkgray);
+        background: var(--lightlyblack);
     }
 
     .topic-box .content {
@@ -1359,7 +1359,7 @@ ul .submenu li .nonredir,
     }
 
     .payments-block.visible .payments-button::before {
-        background: linear-gradient(180deg, var(--darkygray) 0%, var(--main-theme) 100%);
+        background: linear-gradient(180deg, var(--lightblack) 0%, var(--main-theme) 100%);
     }
 
     .category-selector .category-box {
@@ -1389,7 +1389,7 @@ ul .submenu li .nonredir,
 
     .boxes-holder.main-page .box .rating-case-single,
     .boxes-holder.main-page .box .rating-case-single::before {
-        background: var(--darkgray);
+        background: var(--lightlyblack);
     }
 
     .main-page .rating-case-single {
@@ -1416,7 +1416,7 @@ ul .submenu li .nonredir,
     }
 
     .boxreview {
-        background: linear-gradient(180deg, var(--darkgray) 70%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(180deg, var(--lightlyblack) 70%, rgba(0, 0, 0, 0) 100%);
     }
 
     .nav-review,
@@ -1424,7 +1424,7 @@ ul .submenu li .nonredir,
     .sitepage .box:hover,
     .box-extra-links:has(.promo-box),
     .shortinfo {
-        background: var(--darkgray) !important;
+        background: var(--lightlyblack) !important;
     }
 
     .promo-box {
@@ -1433,7 +1433,7 @@ ul .submenu li .nonredir,
 
     .promo-box code {
         color: var(--main-color);
-        background: var(--darkygray);
+        background: var(--lightblack);
     }
 
     .promo-box.show {
@@ -1457,7 +1457,7 @@ ul .submenu li .nonredir,
     }
 
     .features .featuresbox .typesinside a {
-        background: var(--darkygray);
+        background: var(--lightblack);
     }
 
     .mirror-redirect {
@@ -1469,7 +1469,7 @@ ul .submenu li .nonredir,
     }
 
     .ratingsection .ratingway {
-        background: var(--darkgray);
+        background: var(--lightlyblack);
     }
 
     .sitealternatesboxes .box .rating-case-single .rating-summ {

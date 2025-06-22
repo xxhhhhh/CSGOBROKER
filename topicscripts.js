@@ -1460,7 +1460,7 @@ if (
                 bgImage.onload = function() {
                     var skinslist = document.querySelectorAll("[data-color='" + color + "']");
                     skinslist.forEach(function(element) {
-                        element.style.backgroundImage = "url(" + bgImage.src + "), linear-gradient(-45deg, var(--darkygray) 50%, var(--darkgray) 100%)";
+                        element.style.backgroundImage = "url(" + bgImage.src + "), linear-gradient(-45deg, var(--lightblack) 50%, var(--lightlyblack) 100%)";
                         element.classList.add("active");
                     });
                 };
