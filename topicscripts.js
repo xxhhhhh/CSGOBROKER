@@ -597,7 +597,37 @@ insertRandomRecBox();
         return `<button type="button" role="tab"><span>${label}</span></button>`;
       }
     });
-    
+
+
+$(document).ready(function () {
+  const isWideScreen = window.innerWidth >= 1365;
+  const isLoadoutPage = $(".sitepage.loadout").length > 0;
+
+  if (!isWideScreen || !isLoadoutPage) return;
+
+  const $characterModel = $(".character-model");
+  if (!$characterModel.length) return;
+
+  // Создание preview-item
+  let $previewItem = $characterModel.find(".preview-item");
+  if (!$previewItem.length) {
+    $previewItem = $("<div class='preview-item'></div>");
+    $characterModel.append($previewItem);
+  }
+
+  // Наведение на .skin
+  $(document).on("mouseenter", ".loadout .skin", function () {
+    const skinClass = $(this).attr("class");
+    $previewItem.stop(true, true).attr("class", skinClass + " preview-item").html($(this).html()).css("opacity", 1);
+  });
+
+  $(document).on("mouseleave", ".loadout .skin", function () {
+    $previewItem.stop(true, true).animate({ opacity: 0 }, 1500, function () {
+      $previewItem.attr("class", "preview-item").empty();
+    });
+  });
+});
+
 
 async function showCraftPreviewWindow(element) {
   const previewWindow = $("#preview-window");
@@ -1460,7 +1490,7 @@ if (
                 bgImage.onload = function() {
                     var skinslist = document.querySelectorAll("[data-color='" + color + "']");
                     skinslist.forEach(function(element) {
-                        element.style.backgroundImage = "url(" + bgImage.src + "), linear-gradient(-45deg, var(--lightblack) 50%, var(--lightlyblack) 100%)";
+                        element.style.backgroundImage = "url(" + bgImage.src + "), linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%)";
                         element.classList.add("active");
                     });
                 };
