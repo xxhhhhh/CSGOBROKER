@@ -1802,6 +1802,7 @@ if (window.location.pathname.includes('/topic/skins/')) {
               importedContent.classList.toggle("active");
             });
           });
+          updateURLs(colorsBox);
         })
         .catch(console.error);
     }
