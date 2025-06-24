@@ -1371,11 +1371,6 @@ nav .pages {
     bottom: 0;
 }
 
-.notexist .site-searcher-buttons,
-.notexist .skin-desc-name {
-    display: none;
-}
-
 .site-searcher-box[data-title]:after,
 .navigation-weapon-sort[data-title]:after,
 .topic-grandbox .skin .skin-desc-name,
@@ -14707,6 +14702,7 @@ div#results {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    min-height: 696px;
     gap: 8px;
 }
 
@@ -14726,7 +14722,7 @@ div#results {
     position: absolute;
     bottom: 0;
     border-radius: 10px;
-    transition: all .15s ease-in-out;
+    transition: unset;
     z-index: 1;
 }
 
@@ -14786,11 +14782,18 @@ div#results {
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .25);
 } */
 
-.character-model img {
+.character-model::before {
+    content: '';
+    background-image: url(/img/skins/topics/sas.png);
+    position: relative;
+    display: block;
     filter: grayscale(1) brightness(.2);
     pointer-events: none;
-    height: 442px;
-    margin: 39px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 45%;
 }
 
 .sitepage.topic-craft.loadout .topicpage {
@@ -14886,8 +14889,8 @@ div#results {
     opacity: .1;
 }
 
-.box-skins.character .skin.notexist .skin-desc-name {
-    display: none;
+.skin.notexist {
+    pointer-events: none;
 }
 
 .box-skins.character .preview-item.skin::after {
