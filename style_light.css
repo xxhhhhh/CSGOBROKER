@@ -63,7 +63,8 @@
 .instruction ol li:before,
 .shortinfo .features,
 .box-skins.character .skin,
-.character-model {
+.character-model,
+.promo-box.extra-abox {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
     box-shadow: unset;
 }
@@ -78,10 +79,6 @@
 
 .submenu li a, .submenu li .nonredir {
     box-shadow: 0 0 4px 0 rgb(145 145 145);
-}
-
-.promo-box.extra-abox {
-    filter: none;
 }
 
 .box .content,
@@ -385,7 +382,7 @@ h3,
 .main-infobox:hover .main-infobox-content-text p,
 .sitepage.topic-craft .topic-grandbox .section.first::after,
 .rec-box .content p,
-.site-attention.event strong.item,
+.site-attention strong.item,
 .contact-box:hover span,
 .email-placeholder:hover span,
 .skin-price-info,
@@ -1177,7 +1174,7 @@ ul .submenu li .nonredir,
 .site-promo-copy::after,
 .infoicon::before,
 .box-skins .officon.chevron,
-.site-attention.event::after,
+.site-attention::after,
 .payment-close-button .officon::before,
 .pagination-button.arrow .officon.chevron::before,
 .main-mode-selection button .officon.chevron::before {
