@@ -3674,7 +3674,18 @@ window.initPayments = function () {
   });
 };
 
-window.initPayments();
+document.addEventListener("boxesInserted", function () {
+  if (typeof window.initPayments === "function") {
+    window.initPayments();
+  }
+});
+
+if (!window.location.pathname.includes("/freebies")) {
+  if (typeof window.initPayments === "function") {
+    window.initPayments();
+  }
+}
+
 
 window.initFreebiesBoxes = function () {
   const rawPath = window.location.pathname.replace(/\/index\.html$/, "/");
@@ -3894,8 +3905,6 @@ window.initFreebiesBoxes = function () {
       });
     });
 };
-
-
 
 if (path.includes("/freebies")) {
   window.initFreebiesBoxes();

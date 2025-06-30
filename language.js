@@ -171,7 +171,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
       translateURLsIfNeeded(targetElement);
       forcemodsboxes();
-      window.initPayments();
+
+      if (!window.location.pathname.includes("/freebies")) {
+        if (typeof window.initPayments === "function") {
+          window.initPayments();
+        }
+      }
 
       for (const boxId in ratings) {
         addStarRating(boxId, ratings[boxId]);
