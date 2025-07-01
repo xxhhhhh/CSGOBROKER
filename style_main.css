@@ -4263,6 +4263,10 @@ nav #logo:hover {
     content: 'Sell Bonus';
 }
 
+.promo-box.extra-abox.trade-bonus .logobg::after {
+    content: 'Trade Bonus';
+}
+
 .promo-box.extra-abox.welcome-bonus .logobg::after {
     content: 'Free Bonus';
 }
@@ -10574,6 +10578,7 @@ div#results {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     width: calc(294px* 2 + 8px* 2);
+    z-index: 3;
 }
 
 .big .boxes-holder-list {
