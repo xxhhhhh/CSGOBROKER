@@ -2840,13 +2840,40 @@ h3 {
     position: relative;
 }
 
-.star_rating {
-    padding: 0 2px;
-    color: transparent;
+.star_rating,
+.sitepage .ratingsumm .rating::before {
+    width: 108px;
+    height: 18px;
     background: linear-gradient(to right, rgb(141, 21, 41), var(--main-color));
-    -webkit-background-clip: text;
-    background-clip: text;
+    mask-image: url(/img/icons/gamemodes/star.svg);
+    mask-repeat: repeat-x;
+    mask-size: 21px 18px;
+    mask-position: left center;
+    -webkit-mask-image: url(/img/icons/gamemodes/star.svg);
+    -webkit-mask-repeat: repeat-x;
+    -webkit-mask-size: 22px 18px;
+    -webkit-mask-position: left center;
     z-index: 1;
+}
+
+.sitepage .ratingsumm .rating::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    opacity: .5;
+}
+
+.sitepage .ratingsumm .rating::before,
+.sitepage .ratingsumm .rating .star_rating {
+    mask-size: 20px 16px;
+    -webkit-mask-size: 20px 16px;
+    width: 98px;
+    height: 18px;
+}
+
+.liverating .star_rating,
+.sitepage .ratingsumm .rating .star_rating {
+    mask-image: url(/img/icons/gamemodes/star-fill.svg);
 }
 
 .box.main .liverating .star_rating .bi-star {
@@ -4812,19 +4839,29 @@ nav #logo:hover {
     background: var(--icongradient2);
 }
 
-.sitepage .box .logobg .rating {
-    width: auto;
-    height: auto;
+.sitepage .box .logobg .rating,
+.sitepage .ratingsumm .rating {
+    width: 122px;
+    height: 32px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: row;
     font-size: 18px;
     position: absolute;
     bottom: 8px;
     background: var(--darkygray);
-    padding: 5px 7px;
+    padding: 7px;
     z-index: 1;
+}
+
+.sitepage .ratingsumm .rating {
+    position: relative;
+    width: 98px;
+    height: 18px;
+    background: unset;
+    padding: unset;
+    bottom: unset;
 }
 
 .siteblock.mirror .box .logobg .rating {
@@ -4870,6 +4907,7 @@ nav #logo:hover {
 
 .liverating {
     width: 0;
+    max-width: 108px;
     height: auto;
     display: flex;
     align-items: center;
@@ -7797,20 +7835,7 @@ a[data-title]:after,
     mask-size: 100%;
 }
 
-.star_rating.full::before {
-    mask-image: url(/img/icons/gamemodes/star-fill.svg);
-}
-
-.star_rating.half::before {
-    mask-image: url(/img/icons/gamemodes/star-half.svg);
-}
-
-.star_rating.empty::before {
-    mask-image: url(/img/icons/gamemodes/star.svg);
-}
-
-.box.main .star_rating,
-.ratingsumm .star_rating.empty {
+.box.main .star_rating {
     opacity: .5;
 }
 
@@ -7820,10 +7845,7 @@ a[data-title]:after,
 }
 
 .rating-case-single .star_rating::before {
-    mask-image: url(/img/icons/gamemodes/star-fill.svg);
-    width: 14px;
-    height: 14px;
-    margin-bottom: 1px;
+    content: unset;
 }
 
 .box .content button.copy::after,
@@ -9239,7 +9261,11 @@ div#results {
     margin-left: 10px;
     filter: grayscale(1);
     transition: all .15s ease-in-out;
-    font-size: 14px;
+    mask-image: url(/img/icons/gamemodes/star-fill.svg);
+    mask-size: 18px 14px;
+    -webkit-mask-size: 18px 14px;
+    width: 18px;
+    height: 14px;
 }
 
 .rating-case-single .rating-summ {

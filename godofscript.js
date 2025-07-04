@@ -560,58 +560,42 @@ forcemodsboxes();
         }
     }
   
-    function generateRatingStars(rating) {
-        const fullStars = Math.floor(rating);
-        const halfStar = rating % 1 !== 0;
-        let starsHTML = '';
-  
-        for (let i = 0; i < fullStars; i++) {
-            starsHTML += '<div class="officon star_rating full"></div>';
+// Маска из 5 звёзд, ширина 108px
+function generateRatingStars(rating) {
+    const percentage = (rating / 5) * 100;
+
+    return `
+        <div class="star_rating" style="width: ${percentage}%;"></div>
+    `;
+}
+
+function insertOverallRating(ratings) {
+    const possibleRatings = ['Trust', 'Support', 'Payments', 'Functional', 'Pricing', 'Variety', 'Playability'];
+    let sum = 0;
+    let count = 0;
+
+    possibleRatings.forEach(category => {
+        if (ratings[category]) {
+            sum += ratings[category];
+            count++;
         }
-  
-        if (halfStar) {
-            starsHTML += '<div class="officon star_rating half"></div>';
-        }
-  
-        for (let i = fullStars + (halfStar ? 1 : 0); i < 5; i++) {
-            starsHTML += '<div class="officon star_rating empty"></div>';
-        }
-  
-        return starsHTML;
+    });
+
+    if (count === 0) return;
+
+    const averageRating = sum / count; // precise value without rounding
+
+    const container = document.querySelector('.rating');
+    if (container) {
+        const liveratingDiv = document.createElement('div');
+        liveratingDiv.classList.add('liverating');
+        liveratingDiv.innerHTML = generateRatingStars(averageRating);
+
+        container.appendChild(liveratingDiv);
+        liveratingDiv.classList.add('fadein');
     }
-  
-    function insertOverallRating(ratings) {
-        const possibleRatings = ['Trust', 'Support', 'Payments', 'Functional', 'Pricing', 'Variety', 'Playability'];
-        let sum = 0;
-        let count = 0;
-  
-        possibleRatings.forEach(category => {
-            if (ratings[category]) {
-                sum += ratings[category];
-                count++;
-            }
-        });
-  
-        if (count === 0) return;
-  
-        let averageRating = sum / count;
-  
-        if (averageRating < 4) {
-            averageRating = Math.ceil(averageRating * 2) / 2;
-        } else {
-            averageRating = Math.floor(averageRating * 2) / 2;
-        }
-  
-        const container = document.querySelector('.rating');
-        if (container) {
-            const liveratingDiv = document.createElement('div');
-            liveratingDiv.classList.add('liverating');
-            liveratingDiv.innerHTML = generateRatingStars(averageRating);
-  
-            container.appendChild(liveratingDiv);
-            liveratingDiv.classList.add('fadein');
-        }
-    }
+}
+
   
   function insertFeatures(features, settings, featureOrder) {
       const featuresContainer = document.querySelector('.boxreview .features');
@@ -969,38 +953,41 @@ function insertReviewLinks(codes, codeValue, codesBinding) {
           });
       });
   
-      function insertRatings(ratings) {
-          if (ratings) {
-              let container = document.querySelector('.ratingsumm');
-              if (!container) {
-                  container = document.createElement('div');
-                  container.classList.add('ratingsumm');
-                  const sitedetails = document.querySelector('.sitedetails');
-                  if (sitedetails) {
-                      sitedetails.insertAdjacentElement('afterend', container);
-                  }
-              }
-              
-              container.innerHTML = '';
-    
-              const ratingSection = document.createElement('div');
-              ratingSection.classList.add('ratingsection');
-    
-              for (const [category, rating] of Object.entries(ratings)) {
-                  const ratingHTML = `
-                      <div class="ratingway">
-                          <span>${category}</span>
-                          ${generateRatingStars(rating)}
-                      </div>
-                  `;
-                  ratingSection.insertAdjacentHTML('beforeend', ratingHTML);
-              }
-    
-              container.appendChild(ratingSection);
-    
-              insertOverallRating(ratings);
-          }
-      }
+    function insertRatings(ratings) {
+        if (ratings) {
+            let container = document.querySelector('.ratingsumm');
+            if (!container) {
+                container = document.createElement('div');
+                container.classList.add('ratingsumm');
+                const sitedetails = document.querySelector('.sitedetails');
+                if (sitedetails) {
+                    sitedetails.insertAdjacentElement('afterend', container);
+                }
+            }
+
+            container.innerHTML = '';
+
+            const ratingSection = document.createElement('div');
+            ratingSection.classList.add('ratingsection');
+
+            for (const [category, rating] of Object.entries(ratings)) {
+                const percentage = (rating / 5) * 100;
+                const ratingHTML = `
+                    <div class="ratingway">
+                        <span>${category}</span>
+                        <div class="rating">
+                            <div class="star_rating" style="width: ${percentage}%;"></div>
+                        </div>
+                    </div>
+                `;
+                ratingSection.insertAdjacentHTML('beforeend', ratingHTML);
+            }
+
+            container.appendChild(ratingSection);
+
+            insertOverallRating(ratings);
+        }
+    }
   });
   
   
