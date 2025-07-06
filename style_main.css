@@ -34,8 +34,8 @@
     --darkygray: rgb(13, 13, 13);
     --main-theme: rgb(15, 15, 15);
     --buttonbg: linear-gradient(180deg, var(--main-color) 0%, #b11d35 100%);
-    --defbuttonbg: linear-gradient(180deg, rgb(25 25 25) 0%, rgb(21 21 21) 100%);
-    --defbuttonbg_hover: linear-gradient(180deg, rgb(30 30 30) 0%, rgb(24 24 24) 100%);
+    --defbuttonbg: linear-gradient(180deg, rgb(23 23 23) 0%, rgb(21 21 21) 100%);
+    --defbuttonbg_hover: linear-gradient(180deg, rgb(27 27 27) 0%, rgb(24 24 24) 100%);
     --icongradient: linear-gradient(-45deg, var(--darkgray), var(--main-theme));
     --icongradient2: linear-gradient(-45deg, var(--darkgray), var(--darkygray));
     --centralized: 66.528%;
@@ -3693,7 +3693,7 @@ nav #logo:hover {
 
 .boxes-holder,
 .topic-boxes-holder {
-    gap: 18px;
+    gap: 18px 9px;
     max-width: var(--centralized);
     padding: 0 9px;
     margin: 0 auto;
@@ -4619,12 +4619,6 @@ nav #logo:hover {
     filter: none;
 }
 
-.sitepage .box {
-    margin: 0 !important;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
 .topic-box {
     position: relative;
     width: 300px;
@@ -4811,7 +4805,7 @@ nav #logo:hover {
     display: flex;
     justify-content: center;
     /* background: linear-gradient(180deg, var(--darkgray) 0%, rgb(13 13 13) 100%); */
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, .2);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
@@ -4820,13 +4814,15 @@ nav #logo:hover {
     z-index: 10;
 }
 
-/* .box.main {
-    filter: unset;
+.box.main {
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--darkgray);
+    backdrop-filter: unset;
+    -webkit-backdrop-filter: unset;
 }
 
-.sitepage .box {
-    background: var(--darkgray);
-} */
 
 .sitepage .box .logobg {
     height: 55%;
@@ -4838,6 +4834,17 @@ nav #logo:hover {
     height: 45%;
     background: var(--icongradient2);
 }
+
+
+
+/* .box.main {
+    filter: unset;
+}
+
+.sitepage .box {
+    background: var(--darkgray);
+} */
+
 
 .sitepage .box .logobg .rating,
 .sitepage .ratingsumm .rating {
@@ -5934,6 +5941,7 @@ nav img:active,
 .box.main .content p:first-child {
     width: auto;
     position: relative;
+    user-select: none;
 }
 
 .box.main .content p:first-child::before {
@@ -10603,7 +10611,7 @@ div#results {
     background: radial-gradient(150% 150% at 50% 0%, var(--darkgray), transparent 100%);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    width: calc(294px* 2 + 8px* 2);
+    width: calc(299.5px * 2 + 8px * 2);
     z-index: 3;
 }
 
@@ -10624,7 +10632,7 @@ div#results {
 }
 
 .boxes-holder-list .box {
-    width: 290px;
+    width: 295.5px;
 }
 
 .main-page .mods-box.skins-box .singlemod-box {
@@ -12100,6 +12108,9 @@ div#results {
 
     .topic-box.maestro {
         border-radius: 10px;
+    }
+
+    .topic-boxes-holder:has(.topic-box.maestro) {
         margin-top: 4px;
     }
 
@@ -12621,7 +12632,7 @@ div#results {
     }
 
     .topic-boxes-holder {
-        max-width: 96%;
+        max-width: 98%;
         min-height: 400px;
         width: 100%;
     }
