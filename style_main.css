@@ -3720,10 +3720,6 @@ nav #logo:hover {
     min-height: 812px;
 }
 
-.topic-boxes-holder.sticker-crafts.pagination:has(.topic-filter) {
-    min-height: 861px;
-}
-
 .boxes-holder.langimprt {
     min-height: 800px;
 }
@@ -11824,7 +11820,6 @@ div#results {
     }
 
     :root {
-        --text-darkgray: var(--main-theme);
         --opacback: var(--darkgray);
     }
 
@@ -14000,6 +13995,10 @@ div#results {
     .boxreview .smallreview,
     .boxreview:has(.info-block) .smallreview {
         padding: 10px 0px 0px 0px;
+    }
+
+    .boxreview .smallreview.criteria {
+        padding: 20px;
     }
 
     .site-searcher-logo img {
