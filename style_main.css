@@ -3693,7 +3693,7 @@ nav #logo:hover {
 
 .boxes-holder,
 .topic-boxes-holder {
-    gap: 18px 9px;
+    gap: 18px;
     max-width: var(--centralized);
     padding: 0 9px;
     margin: 0 auto;
@@ -3710,6 +3710,7 @@ nav #logo:hover {
 
 .topic-boxes-holder {
     min-height: 738px;
+    gap: 18px 9px;
 }
 
 .topic-boxes-holder:has(.pagination-holder) {
