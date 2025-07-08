@@ -6248,7 +6248,11 @@ footer .centralizer .footer-content {
     margin-top: 5px;
     align-content: flex-start;
     gap: 16px;
-    /* padding-bottom: 42px; */
+    padding-bottom: 42px;
+}
+
+.blog .newest-boxes {
+    padding: 8px;
 }
 
 .newest-boxes.topic {
