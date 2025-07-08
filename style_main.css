@@ -3151,6 +3151,12 @@ h3 {
     counter-reset: item1;
 }
 
+.blog .instruction ol {
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
 .instruction li {
     text-align: left;
     font-size: 16px;
@@ -3362,6 +3368,11 @@ h3 {
 .smallreview.criteria li strong::after,
 .blog .instruction li a::after {
     padding: 2px 7px;
+}
+
+.blog .instruction li strong::after,
+.blog .instruction li a::after {
+    padding: 0 7px;
 }
 
 .blog .instruction {
@@ -6237,7 +6248,7 @@ footer .centralizer .footer-content {
     margin-top: 5px;
     align-content: flex-start;
     gap: 16px;
-    padding-bottom: 42px;
+    /* padding-bottom: 42px; */
 }
 
 .newest-boxes.topic {
@@ -11061,6 +11072,7 @@ div#results {
 .blog .instruction li {
     color: rgba(255, 255, 255, .7);
     font-weight: 400;
+    font-size: 15px;
 }
 
 .blog .instruction li strong,
@@ -11071,13 +11083,17 @@ div#results {
     font-size: inherit;
 }
 
+.blog .instruction li strong {
+    margin: 0 8px;
+}
+
 .blog .instruction:nth-child(2) {
     filter: none;
 }
 
 .blog .instruction li {
     width: 100%;
-    line-height: 30px;
+    line-height: 1.4;
 }
 
 .blog .instruction li a {
@@ -13857,6 +13873,19 @@ div#results {
 
     .sitepage.items .section.first {
         min-height: 60px;
+    }
+
+    .blog .instruction li strong {
+        margin: unset;
+        margin-right: 4px;
+    }
+
+    .blog .instruction li strong {
+        display: unset;
+    }
+
+    .blog .instruction li strong::after {
+        content: unset;
     }
 
     .sitepage.items .section.first:has(.solo-category) {
