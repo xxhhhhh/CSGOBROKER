@@ -3372,7 +3372,7 @@ h3 {
 
 .blog .instruction li strong::after,
 .blog .instruction li a::after {
-    padding: 0 7px;
+    padding: 0 5px;
     height: 100%;
 }
 
@@ -11093,7 +11093,8 @@ div#results {
 }
 
 .blog .instruction li strong {
-    margin: 0 8px;
+    margin: unset;
+    margin-right: 8px;
     line-height: unset;
 }
 

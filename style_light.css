@@ -83,7 +83,9 @@
 
 .box .content,
 .box .logobg .upd,
-.sitepage .content button.copy {
+.sitepage .content button.copy,
+.nav-review.blog,
+.newest-boxes .box .content {
     filter: unset;
     box-shadow: unset;
 }
@@ -1263,7 +1265,8 @@ ul .submenu li .nonredir,
 
 .blog .newest-boxes .box {
     background-color: unset !important;
-    box-shadow: unset;
+    box-shadow: unset !important;
+    filter: unset !important;
 }
 
 .blog .item-topic-grandbox .logobg img {
@@ -1301,6 +1304,15 @@ ul .submenu li .nonredir,
     border-radius: 10px;
     width: calc(100% - 20px);
     margin: 10px;
+    filter: unset;
+}
+
+.blog .instruction li strong {
+    color: #1a1a1a;
+}
+
+.blog .instruction li strong::after {
+    background: var(--darkgray);
 }
 
 .category-centralizer.nav .category-box {
