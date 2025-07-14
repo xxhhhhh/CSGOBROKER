@@ -3373,6 +3373,11 @@ h3 {
 .blog .instruction li strong::after,
 .blog .instruction li a::after {
     padding: 0 7px;
+    height: 100%;
+}
+
+.blog .instruction li a::after {
+    height: 140%;
 }
 
 .blog .instruction {
@@ -11029,11 +11034,11 @@ div#results {
 } */
 
 .blog .siteleftpannel .mods-box {
-    left: 11.4%;
+    left: 14.65%;
 }
 
 .blog .text-col-info ul {
-    padding: 5px 5px 0 8px;
+    padding: 5px 5px 0 5px;
 }
 
 .blog .topic-screenshot {
@@ -11089,6 +11094,7 @@ div#results {
 
 .blog .instruction li strong {
     margin: 0 8px;
+    line-height: unset;
 }
 
 .blog .instruction:nth-child(2) {
@@ -11102,6 +11108,7 @@ div#results {
 
 .blog .instruction li a {
     color: #616161;
+    line-height: unset;
 }
 
 .blog .instruction li a:hover {
