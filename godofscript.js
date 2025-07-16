@@ -315,30 +315,36 @@ forcemodsboxes();
   
     function addMirrorButton(box, pageKey, data) {
       const visitButton = box.querySelector(".box:not(.main) .content-buttons a.review-button.visit");
-  
+
       const translations = {
         "checkMirrors": {
-          "en": `Check Mirrors list of ${data.name}`,
-          "ru": `Смотреть список Зеркал ${data.name}`,
-        },
+          "en": "Mirrors",
+          "ru": "Зеркала"
+        }
       };
-  
+
       function getTranslation(key) {
         return translations[key][languageTag] || translations[key]['en'];
       }
-  
+
       if (
         visitButton &&
         data.mirror &&
-        !document.querySelector(".mirror-visit")
+        !box.querySelector(".mirror-visit")
       ) {
         const mirrorButton = document.createElement("a");
         mirrorButton.href = `/mirrors/${pageKey}`;
         mirrorButton.className = "review-button mirror-visit";
         mirrorButton.setAttribute("aria-label", getTranslation("checkMirrors"));
+
+        const span = document.createElement("span");
+        span.textContent = getTranslation("checkMirrors");
+        mirrorButton.appendChild(span);
+
         visitButton.insertAdjacentElement("afterend", mirrorButton);
-      }      
+      }
     }
+
 
     function addTGButton(box, data) {
       const visitButton = box.querySelector(".box .content-buttons a.review-button.visit");

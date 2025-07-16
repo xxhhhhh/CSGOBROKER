@@ -1378,7 +1378,8 @@ nav .pages {
 .main-mode:after,
 .infoicon::after,
 .route-semi::before,
-.tg-app span {
+.defbutton span,
+.mirror-visit span {
     content: '';
     position: absolute;
     width: max-content;
@@ -1403,20 +1404,24 @@ nav .pages {
 .site-searcher-box[data-title]:hover:after,
 .navigation-weapon-sort[data-title]:hover:after,
 .topic-grandbox .skin:hover .skin-desc-name,
-.tg-app:hover span {
+.defbutton:hover span,
+.mirror-visit:hover span {
     content: attr(data-title);
     transform: translateX(-50%);
     transition: all .15s ease-in-out;
     opacity: 1;
 }
 
-.tg-app span {
+.defbutton span,
+.mirror-visit span {
     font-size: 11px;
     transform: translateX(-50%) translateY(0);
     margin-left: 6px;
+    text-transform: none;
 }
 
-.tg-app:hover span {
+.defbutton:hover span,
+.mirror-visit:hover span {
     transform: translateX(-50%) translateY(-15px);
     font-size: 11px;
 }
@@ -6490,6 +6495,19 @@ footer .centralizer .footer-content {
     left: 12px;
     top: 12px;
     margin: 0;
+}
+
+.boxes-holder:not(.main-page) .box .content:has(.review-button.mirror-visit) .tg-app {
+    top: -36px;
+}
+
+.boxes-holder:not(.main-page) .box:hover .content:has(.review-button.mirror-visit) .tg-app {
+    top: -66px;
+}
+
+.boxes-holder:not(.main-page) .box .content:has(.review-button.mirror-visit) .tg-app.defbutton::before {
+    transform: skewX(20deg);
+    border-radius: 0 5px 5px 0;
 }
 
 .main-page .content .review-button.mirror-visit {
@@ -11590,6 +11608,14 @@ div#results {
     .topic-boxes-holder:has(.pagination-holder) {
         min-height: unset;
         padding-bottom: 45px;
+    }
+
+    .boxes-holder:not(.main-page) .box .content:has(.review-button.mirror-visit) .tg-app {
+        top: 12px;
+    }
+
+    .boxes-holder:not(.main-page) .box:hover .content:has(.review-button.mirror-visit) .tg-app {
+        top: 12px;
     }
 
     .site-attention {
