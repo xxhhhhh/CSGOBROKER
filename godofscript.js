@@ -376,6 +376,8 @@ forcemodsboxes();
           visitButton.href = data["earn-by-play"];
         } else if (window.location.pathname.includes("/earn-by-play") && data["earn-by-play-en"]) {
           visitButton.href = data["earn-by-play-en"];
+        } else if (languageTag === 'en' && data["link-en"]) {
+          visitButton.href = data["link-en"];
         } else {
           visitButton.href = data.link;
         }
