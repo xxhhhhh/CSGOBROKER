@@ -211,6 +211,8 @@ forcemodsboxes();
   
       let href = link.getAttribute('href');
 
+      if (/^(https?:|mailto:|tel:)/i.test(href)) return;
+
       if (href.includes('/topic') && languageTag !== 'ru') {
         return;
       }
@@ -337,6 +339,26 @@ forcemodsboxes();
         visitButton.insertAdjacentElement("afterend", mirrorButton);
       }      
     }
+
+    function addTGButton(box, data) {
+      const visitButton = box.querySelector(".box .content-buttons a.review-button.visit");
+
+      const tgHref = (languageTag === 'en' && data["tg-app-en"]) ? data["tg-app-en"] : data["tg-app"];
+
+      if (visitButton && tgHref && !document.querySelector(".tg-app")) {
+        const tgButton = document.createElement("a");
+        tgButton.href = tgHref;
+        tgButton.className = "tg-app defbutton";
+        tgButton.target = "_blank";
+        tgButton.rel = "noopener";
+
+        const labelSpan = document.createElement("span");
+        labelSpan.textContent = languageTag === 'ru' ? 'Telegram Приложение' : 'Telegram App';
+        tgButton.appendChild(labelSpan);
+
+        visitButton.insertAdjacentElement("afterend", tgButton);
+      }
+    }
   
     window.updateReviewButtons = updateReviewButtons;
   
@@ -401,6 +423,10 @@ forcemodsboxes();
   
       if (data.mirror) {
         addMirrorButton(box, pageKey, data);
+      }
+
+      if (data["tg-app"] || data["tg-app-en"]) {
+        addTGButton(box, data);
       }
     }
 

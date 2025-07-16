@@ -1377,7 +1377,8 @@ nav .pages {
 .topic-filter .singlemod-box[data-title]:after,
 .main-mode:after,
 .infoicon::after,
-.route-semi::before {
+.route-semi::before,
+.tg-app span {
     content: '';
     position: absolute;
     width: max-content;
@@ -1401,11 +1402,22 @@ nav .pages {
 
 .site-searcher-box[data-title]:hover:after,
 .navigation-weapon-sort[data-title]:hover:after,
-.topic-grandbox .skin:hover .skin-desc-name {
+.topic-grandbox .skin:hover .skin-desc-name,
+.tg-app:hover span {
     content: attr(data-title);
     transform: translateX(-50%);
     transition: all .15s ease-in-out;
     opacity: 1;
+}
+
+.tg-app span {
+    font-size: 11px;
+    margin-left: 6px;
+}
+
+.tg-app:hover span {
+    transform: translateX(-50%) translateY(-15px);
+    font-size: 11px;
 }
 
 .navigation-weapon-sort[data-title]:after {
@@ -4830,7 +4842,7 @@ nav #logo:hover {
 .box.main {
     margin: 0;
     border-radius: 10px;
-    overflow: hidden;
+    /* overflow: hidden; */
     background: var(--darkgray);
     backdrop-filter: unset;
     -webkit-backdrop-filter: unset;
@@ -5858,12 +5870,12 @@ nav img:active,
     bottom: -5px;
 }
 
-.boxes-holder .box:hover .content button.copy {
+.boxes-holder .box:hover .content .defbutton {
     filter: drop-shadow(0 1px 4px rgb(15 15 15)) blur(0);
 }
 
-.content button,
-.content button.copy::before,
+.content .defbutton,
+.content .defbutton::before,
 .content .review-button.mirror-visit::before {
     background: var(--defbuttonbg);
 }
@@ -5872,25 +5884,36 @@ nav img:active,
 .box .content .review-button:not(.visit):hover::after,
 .box .content .review-button.mirror-visit:hover,
 .box .content .review-button.mirror-visit:hover::before,
-.box .content button.copy:hover,
-.box .content button.copy:hover::before {
+.box .content .defbutton:hover,
+.box .content .defbutton:hover::before {
     background: var(--defbuttonbg_hover);
 }
 
-.sitepage .content button.copy,
-.sitepage .content button.copy::before,
+.box .content .tg-app:hover {
+    filter: drop-shadow(0 0 1px #1c93e3);
+}
+
+.box .content .tg-app:hover,
+.box .content .tg-app:hover::before {
+    /* background: #1c93e3; */
+    background: linear-gradient(180deg, #1c93e3 0%, #1a88d1 100%);
+    transition: all .07s ease-in-out;
+}
+
+.sitepage .content .defbutton,
+.sitepage .content .defbutton::before,
 .box.main .content .review-button.mirror-visit,
 .box.main .content .review-button.mirror-visit::before {
     background: var(--darkgray);
 }
 
-.content button.copy:hover,
+.content .defbutton:hover,
 .content .review-button.mirror-visit:hover {
     transform: scale(1.09) !important;
 }
 
-.boxes-holder .box:hover .content button.copy,
-.newest-boxes .box:hover .content button.copy {
+.boxes-holder .box:hover .content .defbutton,
+.newest-boxes .box:hover .content .defbutton {
     transform: scale(1);
 }
 
@@ -5970,7 +5993,7 @@ nav img:active,
     filter: blur(5px);
 }
 
-.content button.copy {
+.content .defbutton {
     height: 28px;
     width: 28px;
     right: 12px;
@@ -5984,7 +6007,26 @@ nav img:active,
     transition: all .15s ease-in-out;
 }
 
-.box.main .content button.copy {
+.content .tg-app {
+    right: unset;
+    /* background: #1c93e3; */
+    left: 12px;
+}
+
+.content .tg-app.defbutton::before {
+    left: unset;
+    right: -6px;
+    transform: skewX(-20deg);
+    border-radius: 0 5px 5px 0;
+    /* background: #1c93e3; */
+}
+
+.content .tg-app.defbutton::after {
+    margin-right: unset;
+    margin-left: 4px;
+}
+
+.box.main .content .defbutton {
     bottom: unset;
     top: 12px;
     right: 12px;
@@ -5994,11 +6036,11 @@ nav img:active,
     display: none;
 }
 
-.newest-boxes .content button.copy {
+.newest-boxes .content .defbutton {
     display: none;
 }
 
-.content button.copy::before,
+.content .defbutton::before,
 .content .review-button.mirror-visit::before,
 .box.main .content .review-button.mirror-visit::before {
     content: '';
@@ -6022,7 +6064,7 @@ nav img:active,
     right: -6px;
 }
 
-.main-page .content button.copy::before,
+.main-page .content .defbutton::before,
 .content .review-button.mirror-visit::before {
     left: unset;
     right: -6px;
@@ -6030,7 +6072,7 @@ nav img:active,
     border-radius: 0 5px 5px 0;
 }
 
-.main-page .box .content button.copy::after {
+.main-page .box .content .defbutton::after {
     margin-left: 4px;
     margin-right: unset;
 }
@@ -6490,7 +6532,7 @@ footer .centralizer .footer-content {
 }
 
 .content .review-button:active,
-.content button.copy:active {
+.content .defbutton:active {
     filter: brightness(.75) drop-shadow(0 1px 4px rgb(15 15 15)) blur(0);
     transition: all .09s ease-in-out;
 }
@@ -7794,7 +7836,7 @@ a[data-title]:after,
 .boxreview .plusminus .criteria:nth-child(2) .par li::before,
 .boxreview .plusminus .criteria:nth-child(2)::before,
 .big-category:has(.submenu2) a:not(.submenu2 a)::after,
-.box .content button.copy::after,
+.box .content .defbutton::after,
 .site-promo-copy::after,
 .sitedetails .sitepros span::after,
 .email-copy button::after,
@@ -7873,7 +7915,7 @@ a[data-title]:after,
     content: unset;
 }
 
-.box .content button.copy::after,
+.box .content .defbutton::after,
 .site-promo-copy::after,
 .email-copy button::after,
 .skin-copy button::after {
@@ -7881,6 +7923,12 @@ a[data-title]:after,
     opacity: .35;
     height: 12px;
     width: 12px;
+}
+
+.box .content .tg-app::after {
+    background-image: url(/img/icons/gamemodes/telegram.svg);
+    height: 16px;
+    width: 16px;
 }
 
 .email-copy button::after,
@@ -7898,7 +7946,7 @@ a[data-title]:after,
     width: 18px;
 }
 
-.box .content button.copy::after {
+.content .defbutton::after {
     margin-right: 4px;
 }
 
@@ -8075,7 +8123,7 @@ a[data-title]:after,
     opacity: 1;
 }
 
-.box .content button.copy:hover::after,
+.box .content .defbutton:hover::after,
 .box .content .review-button.mirror-visit:hover::after {
     opacity: 1;
 }
@@ -10166,14 +10214,14 @@ div#results {
     display: none;
 }
 
-.main-page .content button.copy {
+.main-page .content .defbutton {
     left: -1px;
     right: unset;
     top: -1px;
 }
 
 .main-page .content button,
-.main-page .content button.copy::before,
+.main-page .content .defbutton::before,
 .main-page .content .review-button.mirror-visit,
 .main-page .content .review-button.mirror-visit::before {
     background-color: rgb(11 11 11);
@@ -10183,11 +10231,11 @@ div#results {
     display: none;
 }
 
-.main-page .box .content button.copy::after {
+.main-page .box .content .defbutton::after {
     opacity: .25;
 }
 
-.main-page .box .content button.copy:hover::after {
+.main-page .box .content .defbutton:hover::after {
     opacity: 1;
 }
 
@@ -11818,12 +11866,12 @@ div#results {
         background: rgb(21 21 21);
     }
 
-    .boxes-holder .box:hover .content button.copy {
+    .boxes-holder .box:hover .content .defbutton {
         filter: none;
     }
 
     .content button,
-    .content button.copy::before,
+    .content .defbutton::before,
     .content .review-button.mirror-visit,
     .content .review-button.mirror-visit::before {
         background-color: rgb(11 11 11);
@@ -12829,7 +12877,7 @@ div#results {
         display: none;
     }
 
-    .promo-box .content button.copy {
+    .promo-box .content .defbutton {
         top: 67%;
         transform: translateY(-50%);
         bottom: unset;
@@ -12839,11 +12887,11 @@ div#results {
         border-radius: 5px;
     }
 
-    .promo-box .content button.copy:hover {
+    .promo-box .content .defbutton:hover {
         transform: scale(1.09) translateY(-50%) !important;
     }
 
-    .promo-box .content button.copy::before {
+    .promo-box .content .defbutton::before {
         content: unset;
     }
 
@@ -12897,8 +12945,12 @@ div#results {
         color: var(--gray);
     }
 
-    .content button.copy {
+    .content .defbutton {
         display: none;
+    }
+
+    .box.main .content a.tg-app {
+        left: 70px;
     }
 
     .partner-site img {
@@ -14472,7 +14524,7 @@ div#results {
         height: 100% !important;
     }
 
-    .newest-boxes .content button.copy {
+    .newest-boxes .content .defbutton {
         display: none;
     }
 
@@ -14763,10 +14815,15 @@ div#results {
         font-size: 12px;
     }
 
-    .content button.copy {
+    .content .defbutton {
         display: flex;
         bottom: 16px;
         right: 30px;
+    }
+
+    .content .tg-app {
+        right: unset;
+        left: 30px;
     }
 
     .content p:nth-child(2) {
