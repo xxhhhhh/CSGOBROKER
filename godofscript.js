@@ -845,7 +845,7 @@ function insertReviewLinks(codes, codeValue, codesBinding) {
       <div class="content">
         <p>${promoText}</p>
         <code class="promo-code">${codeValue}</code>
-        <button class="copy site-promo-copy" aria-label="Copy Code"></button>
+        <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
       </div>
     `;
 

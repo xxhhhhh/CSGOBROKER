@@ -1412,6 +1412,7 @@ nav .pages {
 
 .tg-app span {
     font-size: 11px;
+    transform: translateX(-50%) translateY(0);
     margin-left: 6px;
 }
 
@@ -5889,10 +5890,6 @@ nav img:active,
     background: var(--defbuttonbg_hover);
 }
 
-.box .content .tg-app:hover {
-    filter: drop-shadow(0 0 1px #1c93e3);
-}
-
 .box .content .tg-app:hover,
 .box .content .tg-app:hover::before {
     /* background: #1c93e3; */
@@ -6678,7 +6675,7 @@ footer .centralizer .footer-content {
     height: auto;
     min-height: 45px;
     z-index: 1;
-    margin: -6px 0;
+    margin: -3px 0;
 }
 
 .main-page .mods-box:not(.skins-box) {
@@ -6686,7 +6683,7 @@ footer .centralizer .footer-content {
 }
 
 .main-page .skins-box {
-    margin: -6px 8px;
+    margin: -3px 8px;
 }
 
 .singlemod-box:hover span,
@@ -6698,7 +6695,7 @@ footer .centralizer .footer-content {
 .mods-box.skins-box .mods-main-box {
     flex-direction: row;
     height: auto;
-    /* gap: 16px; */
+    gap: 12px;
 }
 
 .mods-box.skins-box .singlemod-box {
