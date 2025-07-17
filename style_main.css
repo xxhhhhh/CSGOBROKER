@@ -4902,6 +4902,34 @@ nav #logo:hover {
     bottom: unset;
 }
 
+@keyframes elemWidth {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.liverating {
+    width: 0;
+    max-width: 108px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-size: 18px;
+    position: absolute;
+    transition: all .15s ease-in-out;
+    overflow: hidden;
+    left: 7px;
+}
+
+/* .mirror .liverating {
+    display: none;
+}
+
 .siteblock.mirror .box .logobg .rating {
     z-index: -1;
 }
@@ -4931,35 +4959,7 @@ nav #logo:hover {
 
 .sitepage.lang-ru .siteblock.mirror .box.main .logobg .star_rating::before {
     content: 'Читать Обзор';
-}
-
-@keyframes elemWidth {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
-}
-
-.liverating {
-    width: 0;
-    max-width: 108px;
-    height: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    font-size: 18px;
-    position: absolute;
-    transition: all .15s ease-in-out;
-    overflow: hidden;
-    left: 7px;
-}
-
-.mirror .liverating {
-    display: none;
-}
+} */
 
 .liverating.fadein {
     animation-duration: .8s;
