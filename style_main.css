@@ -6294,10 +6294,10 @@ footer .centralizer .footer-content {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 5px;
     align-content: flex-start;
-    gap: 16px;
-    padding-bottom: 42px;
+    gap: 18px;
+    margin-top: 10px;
+    padding-bottom: 53px;
 }
 
 .blog .newest-boxes {
@@ -10048,7 +10048,7 @@ div#results {
     width: auto;
     max-width: 1050px;
     height: auto;
-    margin-top: 15px;
+    margin-top: 18px;
     justify-content: center;
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
 }
