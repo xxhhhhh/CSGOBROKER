@@ -83,7 +83,7 @@
 
 .box .content,
 .box .logobg .upd,
-.sitepage .content button.copy,
+.sitepage .content .defbutton,
 .nav-review.blog,
 .newest-boxes .box .content {
     filter: unset;
@@ -646,9 +646,9 @@ h3,
 }
 
 .main-page .content button, 
-.main-page .content button.copy::before,
-.boxes-holder .box:hover .content button.copy,
-.boxes-holder .box .content button.copy:hover::before,
+.main-page .content .defbutton::before,
+.boxes-holder .box:hover .content .defbutton,
+.boxes-holder .box .content .defbutton:hover::before,
 .boxes-holder .box .content .review-button.mirror:hover, 
 .boxes-holder .box .content .review-button.mirror:hover::before,
 .boxes-holder-name {
@@ -658,7 +658,7 @@ h3,
 
 
 
-.main-page .box .content button.copy::after,
+.main-page .box .content .defbutton::after,
 .content .review-button.mirror-visit::after {
     opacity: .4;
     filter: brightness(.2);
@@ -1108,7 +1108,7 @@ ul .submenu li .nonredir,
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
 }
 
-.content button.copy, .content button.copy::before,
+.content .defbutton, .content .defbutton::before,
 .content .review-button.mirror-visit::before,
 .content .review-button.mirror-visit,
 .box.main .content button:hover, .box.main .content button:hover::before,
@@ -1123,8 +1123,8 @@ ul .submenu li .nonredir,
     background-color: var(--darkygray) !important;
 }
 
-.sitepage .content button.copy, 
-.sitepage .content button.copy::before {
+.sitepage .content .defbutton, 
+.sitepage .content .defbutton::before {
     background-color: unset !important;
 }
 
@@ -1136,7 +1136,7 @@ ul .submenu li .nonredir,
     background: var(--main-theme);
 }
 
-.content button.copy::after,
+.content .defbutton::after,
 .content .review-button.mirror.visit::after {
     filter: brightness(.1);
 }

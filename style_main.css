@@ -5496,7 +5496,8 @@ nav img:active,
 .box .main-mode {
     content: '';
     position: absolute;
-    background: var(--main-theme);
+    /* background: var(--main-theme); */
+    background: var(--darkygray);
     transition: all .15s ease-in-out;
     border-radius: 10px;
     right: 10px;
@@ -5555,7 +5556,7 @@ nav img:active,
 }
 
 .boxes-holder .box:hover .main-mode {
-    background: rgb(21 21 21);
+    background: rgb(17 17 17);
 }
 
 .boxes-holder .box:hover .logobg:has(div.route) .main-mode {
@@ -5690,6 +5691,7 @@ nav img:active,
     margin-bottom: 10px;
     border-radius: 10px;
     background: var(--main-theme);
+    background: linear-gradient(-45deg, var(--darkygray), var(--main-theme));
     bottom: 0;
     z-index: 1;
     display: flex;
@@ -5707,10 +5709,11 @@ nav img:active,
     border-radius: 10px;
 }
 
-.boxes-holder:not(.main-page) .box:hover .content {
+/* .boxes-holder:not(.main-page) .box:hover .content {
     background: rgb(21 21 21);
     transition: all .15s .05s ease-in-out, color .15s 0s, border .15s 0s, background .15s 0s;
-}
+} */
+
 
 .category-selector .category:hover .category-box .category-box-logo::before,
 .singlemod-select:hover::before,
@@ -5729,9 +5732,10 @@ nav img:active,
     z-index: -1;
     border-radius: 10px;
     transition: all .15s ease-in-out;
-    visibility: hidden;
+    user-select: none;
+    pointer-events: none;
     opacity: 0;
-    background: linear-gradient(180deg, transparent 0%, rgb(19, 19, 19) 100%);
+    background: linear-gradient(-45deg, transparent 0%, rgb(19, 19, 19) 100%);
 }
 
 .box.main .content::before {
@@ -5740,14 +5744,14 @@ nav img:active,
 
 .boxes-holder .box:hover .content::before {
     opacity: 1;
-    visibility: visible;
+
 }
 
 .boxes-holder .box:hover .rating-case-single,
 .boxes-holder .box:hover .rating-case-single::before,
 .boxes-holder .box:hover .logobg .route,
 .boxes-holder .box:hover .logobg .route::before {
-    background: rgb(17 17 17);
+    background: var(--main-theme);
 }
 
 .content p,
@@ -12292,13 +12296,13 @@ div#results {
         background: rgb(17 17 17);
     }
 
-    .rating-case-single,
+    /* .rating-case-single,
     .boxes-holder .rating-case-single::before,
     .box .logobg .route,
     .box .logobg .route::before,
     .boxes-holder .box .content {
         background: rgb(21 21 21);
-    }
+    } */
 
     .boxes-holder .box .content::before {
         opacity: 1;
