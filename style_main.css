@@ -12,7 +12,7 @@
     --main-color: #ce203d;
     --green: #20ce45;
     --gray: rgb(145, 145, 145);
-    --text-darkgray: rgba(255, 255, 255, .25);
+    --text-darkgray: rgba(255, 255, 255, .3);
     --text-lightgray: rgb(206, 206, 206);
     --opacback: rgba(3, 3, 3, .3);
     --darkgray: rgb(11, 11, 11);
@@ -5790,10 +5790,11 @@ nav img:active,
 .content p:nth-child(2) {
     height: 55px;
     user-select: none;
+    color: var(--text-lightgray);
 }
 
 .content p:nth-child(3) {
-    color: rgba(255, 255, 255, .9);
+    color: var(--text-lightgray);
     font-weight: 600;
     font-size: 11px;
     width: 180px;
@@ -5802,6 +5803,7 @@ nav img:active,
     text-transform: uppercase;
     user-select: none;
     display: flex;
+    margin-top: 10px;
     align-items: center;
 }
 

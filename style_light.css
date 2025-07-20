@@ -397,7 +397,8 @@ h3,
 .boxreview .smallreview.criteria:hover p,
 .smallreview.criteria:hover p,
 .smallreview.criteria:hover ol li,
-.smallreview.criteria:hover ol li strong {
+.smallreview.criteria:hover ol li strong,
+.content p:nth-child(2) {
     color: #1a1a1a;
 }
 
