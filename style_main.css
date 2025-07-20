@@ -1444,7 +1444,7 @@ nav .pages {
     margin: 3px;
     z-index: 11;
     position: relative;
-    /* background: var(--main-theme); */
+    background: var(--main-theme);
     filter: drop-shadow(0 0 1px rgb(35 35 35));
     display: flex;
     align-items: center;
@@ -1509,6 +1509,8 @@ nav .pages {
     margin: 8px 5px;
     text-wrap: nowrap;
     color: rgb(255, 255, 255, .25);
+    background: unset;
+    filter: unset;
     opacity: 1;
 }
 
@@ -1555,6 +1557,10 @@ nav .pages {
     transition: .15s all ease-in-out;
     transform: scale(1.05);
     color: var(--white);
+}
+
+.box-skins-nav-list .navigation-weapon-name:hover {
+    filter: unset;
 }
 
 .navigation-weapon-sort:hover i:before {
@@ -1698,10 +1704,6 @@ nav .pages {
     .box-skins-nav-list {
         scrollbar-width: thin;
         scrollbar-color: #2e2e2e transparent;
-    }
-
-    .box-skins {
-        transition: unset !important;
     }
 }
 
@@ -5540,7 +5542,8 @@ nav img:active,
     opacity: 1;
 }
 
-.boxes-holder .box:hover .main-mode {
+.boxes-holder .box:hover .main-mode,
+.boxes-holder .box:hover .route-semi {
     background: rgb(17 17 17);
 }
 
@@ -15304,10 +15307,6 @@ div#results {
     filter: grayscale(1);
 }
 
-.box:hover .route-semi {
-    background: rgb(21 21 21);
-}
-
 .main-page .route-semi {
     right: 10px;
     bottom: 10px;
@@ -15485,7 +15484,6 @@ div#results {
     display: flex;
     justify-content: center;
     position: relative;
-    cursor: pointer;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     position: relative;
@@ -15565,10 +15563,11 @@ label.skins-category-switch:active {
 }
 
 .skins-category-switch::after {
-    background: linear-gradient(180deg, rgb(13, 13, 13) 0%, var(--main-theme) 100%);
-    filter: drop-shadow(0 0 1px rgb(35 35 35));
     inset: 0;
     z-index: -2;
+    filter: unset;
+    background: var(--darkgray);
+    filter: drop-shadow(0 0 1px rgb(35 35 35));
 }
 
 .skins-category-switch.expensive:hover .category-switch:nth-child(3)::before {
@@ -15590,6 +15589,7 @@ label.skins-category-switch:active {
     top: -20px;
     height: 20px;
     background: linear-gradient(150deg, var(--darkygray) 0%, var(--darkgray) 100%);
+    background: linear-gradient(180deg, rgb(26 26 26) 0%, rgb(18 18 18) 100%);
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -15598,6 +15598,7 @@ label.skins-category-switch:active {
     font-weight: 500;
     border-radius: 5px 5px 0 0;
     filter: drop-shadow(0 0 1px rgb(35 35 35));
+    box-shadow: inset 0px 0px 0px 2px var(--main-theme);
 }
 
 .lang-ru .skins-category-switch::before {

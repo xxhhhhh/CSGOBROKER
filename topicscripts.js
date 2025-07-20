@@ -1765,6 +1765,7 @@ if (window.location.pathname.includes('/sticker-crafts/')) {
 if (window.location.pathname.includes('/topic/skins/')) {
   document.addEventListener('DOMContentLoaded', () => {
     const colorsBox = document.querySelector('.colors-box-selection');
+    const grandBox = document.querySelector('.topic-grandbox');
 
     if (colorsBox) {
       const existingColorList = colorsBox.querySelector('#color-list');
@@ -1829,12 +1830,12 @@ if (window.location.pathname.includes('/topic/skins/')) {
           });
         }
 
-        updateURLs(categorySwitchContainer);
-
         const overviewButton = document.querySelector('.color-box-overview-button');
         if (overviewButton) {
           overviewButton.href = `/topic/skins/${dataColor}-skins`;
         }
+
+        updateURLs(grandBox);
       }
     }
 
