@@ -1028,33 +1028,67 @@ function insertReviewLinks(codes, codeValue, codesBinding) {
   
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
+
+
+  document.addEventListener('DOMContentLoaded', function () {
     const userAgent = navigator.userAgent;
-  
+
     if (userAgent.includes('Googlebot')) {
-        function replaceDomain(url) {
-            return url.replace('csgobroker.cc', 'csgobroker.me');
+      function replaceDomain(url) {
+        return url.replace('csgobroker.cc', 'csgobroker.me');
+      }
+
+      const elements = document.querySelectorAll(
+        'link[rel="canonical"], link[rel="alternate"], meta[property="og:url"]'
+      );
+
+      elements.forEach(element => {
+        let href = element.getAttribute('href');
+        if (href) {
+          element.setAttribute('href', replaceDomain(href));
         }
-  
-        const elements = document.querySelectorAll('link[rel="canonical"], link[rel="alternate"], meta[property="og:url"]');
-        elements.forEach(element => {
-            let href = element.getAttribute('href');
-            if (href) {
-                const newUrl = replaceDomain(href);
-                element.setAttribute('href', newUrl);
-            }
-        });
-  
-        const metaElements = document.querySelectorAll('meta[property="og:url"]');
-        metaElements.forEach(element => {
-            let content = element.getAttribute('content');
-            if (content) {
-                const newUrl = replaceDomain(content);
-                element.setAttribute('content', newUrl);
-            }
-        });
+      });
+
+      const metaElements = document.querySelectorAll('meta[property="og:url"]');
+      metaElements.forEach(element => {
+        let content = element.getAttribute('content');
+        if (content) {
+          element.setAttribute('content', replaceDomain(content));
+        }
+      });
     }
   });
+
+  (function () {
+    const userAgent = navigator.userAgent;
+    if (!userAgent.includes('Googlebot')) return;
+
+    function replaceDomainInJson(json) {
+      if (typeof json === 'string') {
+        return json.replace('csgobroker.cc', 'csgobroker.me');
+      } else if (Array.isArray(json)) {
+        return json.map(replaceDomainInJson);
+      } else if (typeof json === 'object' && json !== null) {
+        const newObj = {};
+        for (let key in json) {
+          newObj[key] = replaceDomainInJson(json[key]);
+        }
+        return newObj;
+      }
+      return json;
+    }
+
+    const ldJsonScripts = document.querySelectorAll('script[type="application/ld+json"]');
+    ldJsonScripts.forEach(script => {
+      try {
+        const data = JSON.parse(script.textContent);
+        const updatedData = replaceDomainInJson(data);
+        script.textContent = JSON.stringify(updatedData);
+      } catch (e) {
+      }
+    });
+  })();
+
   
 
   const path = window.location.pathname;
