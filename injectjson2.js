@@ -40,6 +40,18 @@ function getPublishedDate(filePath) {
   return '2023-07-01T00:00:00+00:00';
 }
 
+function stripDateModified(json) {
+  try {
+    const obj = JSON.parse(json);
+    if (obj['@graph'] && obj['@graph'][0]) {
+      delete obj['@graph'][0]['dateModified'];
+    }
+    return JSON.stringify(obj);
+  } catch {
+    return '';
+  }
+}
+
 function injectSchema(filePath) {
   let html = fs.readFileSync(filePath, 'utf-8');
   const name = html.match(/<title>(.*?)<\/title>/i)?.[1]?.trim() || '';
@@ -51,8 +63,9 @@ function injectSchema(filePath) {
   const lang = detectLanguageFromContent(html);
   const datePublished = getPublishedDate(filePath);
 
-  const url = filePath.replace(/\\/g, '/').replace(HTML_BASE_DIR.replace(/\\/g, ''), '').replace(/\/index\.html$/, '/').replace(/\.html$/, '');
-  const pageUrl = `https://csgobroker.cc${url}`;
+  const relativePath = path.relative(HTML_BASE_DIR, filePath).replace(/\\/g, '/');
+  const pagePath = '/' + relativePath.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+  const pageUrl = `https://csgobroker.cc${pagePath}`;
 
   const baseJsonLd = {
     "@context": "https://schema.org",
@@ -140,30 +153,24 @@ function injectSchema(filePath) {
     ]
   };
 
-  const strippedJson = obj => JSON.stringify(obj).replace(/\s+/g, '');
-
   const existingMatch = html.match(/<script type="application\/ld\+json" class="yoast-schema-graph">([\s\S]*?)<\/script>/);
   const currentBlock = existingMatch ? existingMatch[1].trim() : '';
-  const currentStripped = currentBlock ? currentBlock.replace(/\s+/g, '') : '';
-  const newStripped = strippedJson(baseJsonLd);
+  const isSame = stripDateModified(currentBlock) === JSON.stringify(baseJsonLd);
 
-  if (existingMatch && currentStripped === newStripped) {
-    console.log(`⏩ Skipped (no change): ${filePath}`);
-    return;
-  }
-
-  baseJsonLd["@graph"][0]["dateModified"] = isoDateModified;
-  const updatedJson = JSON.stringify(baseJsonLd, null, 2);
-
-  if (existingMatch) {
-    html = html.replace(existingMatch[0], `<script type="application/ld+json" class="yoast-schema-graph">\n${updatedJson}\n</script>`);
-    console.log(`✅ Schema updated in ${filePath}`);
+  if (!isSame) {
+    baseJsonLd["@graph"][0]["dateModified"] = isoDateModified;
+    const updatedJson = JSON.stringify(baseJsonLd, null, 2);
+    if (existingMatch) {
+      html = html.replace(existingMatch[0], `<script type="application/ld+json" class="yoast-schema-graph">\n${updatedJson}\n</script>`);
+      console.log(`✅ Schema updated in ${filePath}`);
+    } else {
+      html = html.replace(/(\s*)<\/head>/, `\n<script type="application/ld+json" class="yoast-schema-graph">\n${updatedJson}\n</script>\n$1</head>`);
+      console.log(`✅ Schema inserted in ${filePath}`);
+    }
+    fs.writeFileSync(filePath, html, 'utf-8');
   } else {
-    html = html.replace(/(\s*)<\/head>/, `\n<script type="application/ld+json" class="yoast-schema-graph">\n${updatedJson}\n</script>\n$1</head>`);
-    console.log(`✅ Schema inserted in ${filePath}`);
+    console.log(`⏩ Skipped (no change): ${filePath}`);
   }
-
-  fs.writeFileSync(filePath, html, 'utf-8');
 }
 
 function walk(dir) {
