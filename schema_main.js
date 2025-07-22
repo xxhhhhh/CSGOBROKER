@@ -4,8 +4,6 @@ const path = require('path');
 
 const HTML_BASE_DIR = path.resolve('.');
 const languageDirs = ['.', 'ru', 'tr', 'es', 'pt', 'hi'];
-const now = new Date();
-const isoDateModified = now.toISOString();
 
 const EXCLUDE_DIRS = ['code-parts', 'img', 'fonts', 'sitemaps_me'];
 
@@ -30,6 +28,15 @@ function detectLanguageFromContent(html) {
     case 'pt': return 'pt-PT';
     case 'hi': return 'hi-IN';
     default: return 'en-US';
+  }
+}
+
+function getModifiedDate(filePath) {
+  try {
+    const stats = fs.statSync(filePath);
+    return stats.mtime.toISOString();
+  } catch {
+    return new Date().toISOString(); // fallback
   }
 }
 
@@ -274,7 +281,8 @@ function injectSchema(filePath) {
   const isSame = stripDateModified(currentBlock) === JSON.stringify(baseJsonLd);
 
   if (!isSame) {
-    baseJsonLd["@graph"][0]["dateModified"] = getModifiedDate(filePath);
+    const modified = getModifiedDate(filePath);
+    baseJsonLd["@graph"][0]["dateModified"] = modified;
     const updatedJson = JSON.stringify(baseJsonLd, null, 2);
     if (existingMatch) {
       html = html.replace(existingMatch[0], `<script type="application/ld+json" class="yoast-schema-graph">\n${updatedJson}\n</script>`);
