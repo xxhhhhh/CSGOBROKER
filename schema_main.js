@@ -44,6 +44,16 @@ function getPublishedDate(filePath) {
   return '2023-07-01T00:00:00+00:00';
 }
 
+function getModifiedDate(filePath) {
+  try {
+    const stats = fs.statSync(filePath);
+    return stats.mtime.toISOString();
+  } catch {
+    return new Date().toISOString();
+  }
+}
+
+
 function fileExistsForPath(pathArray) {
   const flatHtml = path.join(HTML_BASE_DIR, ...pathArray) + '.html';
   const indexHtml = path.join(HTML_BASE_DIR, ...pathArray, 'index.html');
@@ -264,7 +274,7 @@ function injectSchema(filePath) {
   const isSame = stripDateModified(currentBlock) === JSON.stringify(baseJsonLd);
 
   if (!isSame) {
-    baseJsonLd["@graph"][0]["dateModified"] = isoDateModified;
+    baseJsonLd["@graph"][0]["dateModified"] = getModifiedDate(filePath);
     const updatedJson = JSON.stringify(baseJsonLd, null, 2);
     if (existingMatch) {
       html = html.replace(existingMatch[0], `<script type="application/ld+json" class="yoast-schema-graph">\n${updatedJson}\n</script>`);
