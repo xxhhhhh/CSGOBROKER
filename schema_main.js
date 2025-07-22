@@ -1,0 +1,302 @@
+// injectjson2.js
+const fs = require('fs');
+const path = require('path');
+
+const HTML_BASE_DIR = path.resolve('.');
+const languageDirs = ['.', 'ru', 'tr', 'es', 'pt', 'hi'];
+const now = new Date();
+const isoDateModified = now.toISOString();
+
+const EXCLUDE_DIRS = ['code-parts', 'img', 'fonts', 'sitemaps_me'];
+
+function extractMeta(html, key) {
+  const regex = new RegExp(`<meta\\s+[^>]*\\b(?:name|property)=["']${key}["'][^>]*>`, 'i');
+  const match = html.match(regex);
+  if (match) {
+    const contentMatch = match[0].match(/\bcontent=(["'])(.*?)\1/i);
+    return contentMatch ? contentMatch[2] : null;
+  }
+  return null;
+}
+
+function detectLanguageFromContent(html) {
+  const match = html.match(/<html[^>]*lang=["']([^"'>]+)["']/i);
+  if (!match) return 'en-US';
+  const lang = match[1].toLowerCase();
+  switch (lang) {
+    case 'ru': return 'ru-RU';
+    case 'tr': return 'tr-TR';
+    case 'es': return 'es-ES';
+    case 'pt': return 'pt-PT';
+    case 'hi': return 'hi-IN';
+    default: return 'en-US';
+  }
+}
+
+function getPublishedDate(filePath) {
+  try {
+    const stats = fs.statSync(filePath);
+    const created = stats.birthtime;
+    if (created && created.getTime() !== stats.mtime.getTime()) {
+      return created.toISOString();
+    }
+  } catch {}
+  return '2023-07-01T00:00:00+00:00';
+}
+
+function fileExistsForPath(pathArray) {
+  const flatHtml = path.join(HTML_BASE_DIR, ...pathArray) + '.html';
+  const indexHtml = path.join(HTML_BASE_DIR, ...pathArray, 'index.html');
+
+  if (fs.existsSync(flatHtml)) return flatHtml;
+  if (fs.existsSync(indexHtml)) return indexHtml;
+  return null;
+}
+
+function generateBreadcrumbList(pageUrl, alt, urlParts, langCode) {
+  const items = [];
+  const isDefaultLang = langCode === 'en';
+  const base = isDefaultLang ? 'https://csgobroker.cc' : `https://csgobroker.cc/${langCode}`;
+  const homeName = langCode === 'ru' ? 'CSGOBroker Главная Страница' : 'CSGOBroker Main Page';
+
+  items.push({
+    "@type": "ListItem",
+    position: 1,
+    name: homeName,
+    item: base
+  });
+
+  const parts = (!isDefaultLang && urlParts[0] === langCode) ? urlParts.slice(1) : urlParts;
+  const addedPaths = new Set();
+  let breadcrumbPos = 2;
+
+  if (parts[0] === 'csgo') {
+    const cs2PathParts = isDefaultLang ? ['cs2'] : [langCode, 'cs2'];
+    const cs2File = fileExistsForPath(cs2PathParts);
+    if (cs2File) {
+      const html = fs.readFileSync(cs2File, 'utf-8');
+      const cs2Name = extractMeta(html, 'og:image:alt') || 'CS2 Gambling Sites';
+      const cs2Url = `https://csgobroker.cc/${isDefaultLang ? '' : langCode + '/'}cs2`;
+      items.push({
+        "@type": "ListItem",
+        position: breadcrumbPos++,
+        name: cs2Name,
+        item: cs2Url
+      });
+    }
+  }
+
+  for (let i = 0; i < parts.length; i++) {
+    const currentParts = parts.slice(0, i + 1);
+    const current = currentParts[i];
+    const prev = currentParts[i - 1] || '';
+    const isLast = i === parts.length - 1;
+
+    if (["reviews", "steam", "mirrors", "tf2"].includes(current)) continue;
+
+    if (parts[0] === 'topic' && ['cases', 'collections'].includes(parts[1]) && parts.length >= 3) {
+      insertItemFromPath(['topic']);
+      insertItemFromPath(['topic', 'items']);
+      insertItemFromPath(['topic', 'items-type', parts[1]]);
+      insertItemFromPath(parts);
+      return items;
+    }
+
+    if (currentParts[0] === 'topic' && current === 'skin' && prev === 'sticker-crafts' && isLast) {
+      insertItemFromPath(['topic', 'sticker-crafts']);
+      insertItemFromPath(currentParts);
+      continue;
+    }
+
+    if (["stickers", "items-type", "collection", "cases", "collections"].includes(current)) {
+      insertItemFromPath(currentParts.slice(0, i).concat(['items']));
+    }
+
+    if (current === 'skin' && prev === 'sticker-crafts') {
+      insertItemFromPath(currentParts.slice(0, i));
+    }
+
+    if (current === 'guides' && i > 0) {
+      insertItemFromPath(currentParts.slice(0, i));
+    }
+
+    insertItemFromPath(currentParts);
+  }
+
+  function insertItemFromPath(labelParts) {
+    const key = labelParts.join('/');
+    if (addedPaths.has(key)) return;
+    addedPaths.add(key);
+
+    const fullPath = isDefaultLang ? labelParts : [langCode, ...labelParts];
+    const skipMissing = ['csgo', 'tf2', 'steam', 'mirrors', 'reviews', 'stickers', 'cases', 'collections'];
+    const filePath = fileExistsForPath(fullPath);
+    if (!filePath) {
+      if (skipMissing.includes(labelParts[labelParts.length - 1])) return;
+      return;
+    }
+
+    const html = fs.readFileSync(filePath, 'utf-8');
+    const name = extractMeta(html, 'og:image:alt') || labelParts[labelParts.length - 1];
+    const itemUrl = `https://csgobroker.cc/${(isDefaultLang ? '' : langCode + '/')}${labelParts.join('/')}`;
+
+    items.push({
+      "@type": "ListItem",
+      position: breadcrumbPos++,
+      name,
+      item: itemUrl
+    });
+  }
+
+  return items;
+}
+
+function stripDateModified(json) {
+  try {
+    const obj = JSON.parse(json);
+    if (obj['@graph'] && obj['@graph'][0]) {
+      delete obj['@graph'][0]['dateModified'];
+    }
+    return JSON.stringify(obj);
+  } catch {
+    return '';
+  }
+}
+
+function injectSchema(filePath) {
+  let html = fs.readFileSync(filePath, 'utf-8');
+  const name = html.match(/<title>(.*?)<\/title>/i)?.[1]?.trim() || '';
+  const description = extractMeta(html, 'description');
+  const image = extractMeta(html, 'og:image');
+  const imageWidth = extractMeta(html, 'og:image:width');
+  const imageHeight = extractMeta(html, 'og:image:height');
+  const imageAlt = extractMeta(html, 'og:image:alt');
+  const langFull = detectLanguageFromContent(html);
+  const langCode = langFull.split('-')[0];
+  const datePublished = getPublishedDate(filePath);
+
+  const relativePath = path.relative(HTML_BASE_DIR, filePath).replace(/\\/g, '/');
+
+  if (/(^|\/)topic\/guides\//.test(relativePath)) {
+    console.log(`⏭️ Skipped guide page: ${relativePath}`);
+    return;
+  }
+
+  const pagePath = '/' + relativePath.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+  const pageUrl = `https://csgobroker.cc${pagePath}`;
+  const urlParts = pagePath.split('/').filter(Boolean);
+
+  const breadcrumbItems = generateBreadcrumbList(pageUrl, imageAlt || name, urlParts, langCode);
+  if (!breadcrumbItems.length) {
+    console.log(`⚠️  No breadcrumbs generated for ${filePath}`);
+    return;
+  }
+
+  const baseJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": pageUrl,
+        "url": pageUrl,
+        "name": name,
+        "isPartOf": { "@id": "https://csgobroker.cc/#website" },
+        "primaryImageOfPage": { "@id": `${pageUrl}/#primaryimage` },
+        "image": { "@id": `${pageUrl}/#primaryimage` },
+        "thumbnailUrl": image,
+        "datePublished": datePublished,
+        "description": description,
+        "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` },
+        "inLanguage": langFull,
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [`${pageUrl}/`]
+          }
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "inLanguage": langFull,
+        "@id": `${pageUrl}/#primaryimage`,
+        "url": image,
+        "contentUrl": image,
+        "width": parseInt(imageWidth) || 0,
+        "height": parseInt(imageHeight) || 0,
+        "caption": imageAlt
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        "itemListElement": breadcrumbItems
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://csgobroker.cc/#website",
+        "url": "https://csgobroker.cc",
+        "name": "CSGOBroker",
+        "description": "We conduct thorough hands-on testing of each site before publishing a review, ensuring accuracy and fairness. Our evaluations are regularly updated to reflect any changes, focusing on reliability and user trust.",
+        "publisher": { "@id": "https://csgobroker.cc/#organization" },
+        "inLanguage": langFull
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://csgobroker.cc/#organization",
+        "name": "CSGOBroker",
+        "url": "https://csgobroker.cc",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": langFull,
+          "@id": "https://csgobroker.cc/#/schema/logo/image/",
+          "url": "https://csgobroker.cc/img/logo.svg",
+          "contentUrl": "https://csgobroker.cc/img/logo.svg",
+          "width": 515,
+          "height": 100,
+          "caption": "CSGOBroker"
+        },
+        "image": { "@id": "https://csgobroker.cc/#/schema/logo/image/" }
+      }
+    ]
+  };
+
+  const existingMatch = html.match(/<script type="application\/ld\+json" class="yoast-schema-graph">([\s\S]*?)<\/script>/);
+  const currentBlock = existingMatch ? existingMatch[1].trim() : '';
+  const isSame = stripDateModified(currentBlock) === JSON.stringify(baseJsonLd);
+
+  if (!isSame) {
+    baseJsonLd["@graph"][0]["dateModified"] = isoDateModified;
+    const updatedJson = JSON.stringify(baseJsonLd, null, 2);
+    if (existingMatch) {
+      html = html.replace(existingMatch[0], `<script type="application/ld+json" class="yoast-schema-graph">\n${updatedJson}\n</script>`);
+      console.log(`✅ Schema updated in ${filePath}`);
+    } else {
+      html = html.replace(/(\s*)<\/head>/, `\n<script type="application/ld+json" class="yoast-schema-graph">\n${updatedJson}\n</script>\n$1</head>`);
+      console.log(`✅ Schema inserted in ${filePath}`);
+    }
+    fs.writeFileSync(filePath, html, 'utf-8');
+  }
+}
+
+const visitedPaths = new Set();
+
+function walk(dir) {
+  const abs = path.resolve(dir);
+  if (visitedPaths.has(abs)) return;
+  visitedPaths.add(abs);
+
+  if (!fs.existsSync(dir)) return;
+
+  fs.readdirSync(dir, { withFileTypes: true }).forEach(entry => {
+    const fullPath = path.join(dir, entry.name);
+    const relative = path.relative(HTML_BASE_DIR, fullPath);
+    if (EXCLUDE_DIRS.some(ex => relative.startsWith(ex))) return;
+
+    if (entry.isFile() && entry.name.endsWith('.html')) {
+      injectSchema(fullPath);
+    } else if (entry.isDirectory()) {
+      walk(fullPath);
+    }
+  });
+}
+
+languageDirs.forEach(dir => walk(path.join(HTML_BASE_DIR, dir)));

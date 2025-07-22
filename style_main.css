@@ -148,7 +148,7 @@ nav .logospace {
     height: 100%;
 }
 
-nav #logo {
+#logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3542,12 +3542,12 @@ nav img {
     transition: all .2s ease-in-out;
 }
 
-nav #logo {
+#logo {
     transform: scale(1);
     transition: all .15s ease-in-out;
 }
 
-nav #logo:hover {
+#logo:hover {
     transform: scale(1.05);
     transition: all .15s ease-in-out;
 }
@@ -5293,7 +5293,8 @@ nav #logo:hover {
 }
 
 nav img:active,
-.category-selector .category:active .category-box-content {
+.category-selector .category:active .category-box-content,
+.copyright a img:active {
     filter: brightness(.75);
     transition: all .09s ease-in-out;
 }
@@ -6119,25 +6120,6 @@ nav img:active,
     background-color: rgb(32 32 32) !important;
 }
 
-.credits {
-    width: 180px;
-    height: 60px;
-    text-transform: uppercase;
-    position: absolute;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    left: 0;
-    right: 0;
-}
-
-.credits img {
-    opacity: .5;
-    height: 100%;
-    width: 100%;
-    transition: all .2s ease-in-out;
-}
-
 .credits img:hover {
     transform: scale(1.1);
     opacity: 1;
@@ -6168,8 +6150,11 @@ footer .centralizer .footer-content {
 }
 
 .copyright {
-    width: auto;
-    left: 0;
+    width: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    transition: all .15s ease-in-out;
 }
 
 .contact {
@@ -6177,17 +6162,14 @@ footer .centralizer .footer-content {
     text-align: end;
     display: flex;
     justify-content: flex-end;
-    right: 0;
+    margin-left: auto;
 }
 
 .contact-box {
     height: 30px;
-    font-size: 14px;
-    font-weight: 400;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 10px;
     text-decoration: none;
     transition: all .15s ease-in-out;
 }
@@ -6196,22 +6178,77 @@ footer .centralizer .footer-content {
     text-align: end;
     display: flex;
     justify-content: flex-end;
+    gap: 10px;
 }
 
 .contact-box span {
-    padding: 0 10px;
-}
-
-.contact-box:hover span {
-    color: rgba(255, 255, 255, .5);
+    padding: 0 5px;
 }
 
 .copyright,
-.contact {
+.contact-box {
     font-size: 13px;
     font-weight: 400;
-    position: absolute;
+
+    /* font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase; */
 }
+
+.credits {
+    width: auto;
+    height: auto;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 18px;
+}
+
+.credits img {
+    opacity: .25;
+    height: auto;
+    max-height: 40px;
+    width: auto;
+    transition: all .2s ease-in-out;
+}
+
+.copyright #logo {
+    justify-content: flex-start;
+}
+
+.copyright #logo:hover {
+    transform: unset;
+}
+
+.copyright:hover {
+    transform: scale(1.05);
+}
+
+.copyright img {
+    height: auto;
+    width: 130px;
+    transition: all .15s ease-in-out;
+    opacity: .25;
+    filter: grayscale(1) brightness(5);
+}
+
+.copyright span {
+    font-size: 11px;
+    text-align: center;
+    user-select: none;
+}
+
+.copyright:hover img {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+.copyright:hover span,
+.contact-box:hover span {
+    color: var(--white);
+}
+
 
 .newest-boxes-title {
     width: auto;
@@ -7826,7 +7863,7 @@ a[data-title]:after,
 .category-selector .category-box .category-box-content span,
 .selected-lang,
 .contact-box span,
-.copyright,
+.copyright span,
 .contact,
 .boxes-holder-name a,
 .newest-boxes-more {
@@ -8914,7 +8951,8 @@ a.extra-abox:active .officon,
 .boxes-holder-more:active,
 .newest-boxes-more:active,
 .instruction li a:active,
-nav img:active {
+nav img:active,
+.copyright a img:active {
     scale: .9;
     transform-origin: center center;
     transition: all .1s ease-in-out;
