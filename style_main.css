@@ -6150,7 +6150,7 @@ footer .centralizer .footer-content {
 }
 
 .copyright {
-    width: 110px;
+    width: 100px;
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -6196,7 +6196,7 @@ footer .centralizer .footer-content {
 }
 
 .credits {
-    width: auto;
+    width: 100px;
     height: auto;
     text-transform: uppercase;
     display: flex;
@@ -6209,8 +6209,8 @@ footer .centralizer .footer-content {
     opacity: .25;
     height: auto;
     max-height: 40px;
-    width: auto;
-    transition: all .2s ease-in-out;
+    width: 100%;
+    transition: all .15s ease-in-out;
 }
 
 .copyright #logo {
@@ -13445,15 +13445,14 @@ div#results {
 
     .credits {
         position: relative;
-        margin-top: 10px;
-        height: 12px;
-        order: 1;
     }
 
     .contact {
         width: 100%;
         position: relative;
         justify-content: center;
+        order: -1;
+        margin-bottom: 10px;
     }
 
     .contact .contact-box {
@@ -13465,7 +13464,10 @@ div#results {
     }
 
     footer .centralizer .footer-content {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: unset;
     }
 
     .sitedetails .sitepros.active {
@@ -13685,10 +13687,6 @@ div#results {
 
     footer#review .centralizer .footer-content a {
         left: 0 !important;
-    }
-
-    .copyright {
-        display: none;
     }
 
     footer {

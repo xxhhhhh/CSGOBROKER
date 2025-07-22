@@ -398,7 +398,8 @@ h3,
 .smallreview.criteria:hover p,
 .smallreview.criteria:hover ol li,
 .smallreview.criteria:hover ol li strong,
-.content p:nth-child(2) {
+.content p:nth-child(2),
+.copyright:hover span {
     color: #1a1a1a;
 }
 
@@ -445,15 +446,22 @@ h3,
 }
 
 .copyright, 
-.contact-box span {
+.contact-box span,
+.copyright span {
     color: var(--gray);
 }
 
-.credits img {
-    opacity: 1;
-    filter: brightness(.1);
+.credits img,
+.copyright img,
+.copyright:hover img {
+    filter: brightness(.01);
 }
 
+
+.credits img:hover,
+.copyright:hover img {
+    opacity: .7;
+}
 
 .main-mode-unit {
     background-color: var(--darkgray);
