@@ -1770,33 +1770,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
-      
-// document.addEventListener('DOMContentLoaded', function () {
-//   var replacementHTML = `
-//       <div class="contact-content">
-//           <a href="/contact-us" class="contact-box" id="contact">
-//               <span>Contact Us</span>
-//           </a>
-//           <a href="/terms-of-service" class="contact-box" id="tos">
-//               <span>Terms of Service</span>
-//           </a>
-//           <a href="/privacy-policy" class="contact-box" id="privacy">
-//               <span>Privacy Policy</span>
-//           </a>
-//       </div>
-//   `;
-
-//   if (languageTag === 'ru') {
-//       replacementHTML = replacementHTML.replace(/href="\/(.*?)"/g, 'href="/ru/$1"');
-//   }
-
-//   var contactElement = document.querySelector('.contact');
-//   if (contactElement) {
-//       contactElement.innerHTML = replacementHTML;
-//   }
-// });
-  
 const btnfaq = document.getElementById("btnfaq");
 
 if (btnfaq) {

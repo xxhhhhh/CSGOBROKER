@@ -126,7 +126,7 @@ function injectSchemaForGuide(htmlPath, slug) {
         "@type": "WebPage",
         "@id": pageUrl,
         "url": pageUrl,
-        "name": `${headline} - CSGOBroker`,
+        "name": `${headline} | CSGOBROKER`,
         "isPartOf": { "@id": "https://csgobroker.cc/#website" },
         "primaryImageOfPage": { "@id": `${pageUrl}#primaryimage` },
         "image": { "@id": `${pageUrl}#primaryimage` },
