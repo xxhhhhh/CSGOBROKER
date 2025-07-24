@@ -254,7 +254,21 @@ function injectSchema(filePath) {
         "name": "CSGOBroker",
         "description": "We conduct thorough hands-on testing of each site before publishing a review, ensuring accuracy and fairness. Our evaluations are regularly updated to reflect any changes, focusing on reliability and user trust.",
         "publisher": { "@id": "https://csgobroker.cc/#organization" },
-        "inLanguage": langFull
+        "inLanguage": langFull,
+        "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://csgobroker.cc/?s={search_term_string}"
+          },
+          "query-input": {
+            "@type": "PropertyValueSpecification",
+            "valueRequired": true,
+            "valueName": "search_term_string"
+          }
+        }
+      ],
       },
       {
         "@type": "Organization",

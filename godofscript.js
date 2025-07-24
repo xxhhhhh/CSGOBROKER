@@ -1581,7 +1581,7 @@ let siteTranslations = {};
 let fuse = null;
 
 const CACHE_KEY = 'search_data';
-const CACHE_DURATION_MS = 1000 * 60 * 60; // 1 час
+const CACHE_DURATION_MS = 1000 * 60 * 60;
 
 function loadCombinedSearchData() {
   const cached = StorageHelper.get(CACHE_KEY);
@@ -1761,12 +1761,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const searchEnabler = document.querySelector('.search-enabler');
+  const searchContainer = document.querySelector('.search-container');
+
   if (searchEnabler) {
-    searchEnabler.addEventListener('click', () => {
+    const activateSearchUI = () => {
       searchInput.classList.add('active');
       searchEnabler.classList.add('disabled');
-      document.querySelector('.search-container').classList.add('expanded');
-    });
+      searchContainer.classList.add('expanded');
+    };
+
+    searchEnabler.addEventListener('click', activateSearchUI);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('s');
+    if (query) {
+      activateSearchUI();
+      searchInput.value = query;
+      setTimeout(() => {
+        searchInput.dispatchEvent(new Event('input'));
+      }, 50);
+    }
   }
 });
 
@@ -4107,28 +4121,6 @@ function loadCachedData(key) {
 
 function saveToCache(key, data) {
   StorageHelper.setJSON(key, data);
-}
-
-function loadCombinedSearchData() {
-  const cached = StorageHelper.getJSON(CACHE_KEY);
-  const now = Date.now();
-
-  if (cached) {
-    const { configData, translationData, expiry } = cached;
-    if (expiry && now < expiry) {
-      return Promise.resolve({ configData, translationData });
-    }
-  }
-
-  return Promise.all([
-    fetch('/code-parts/search-config/config.json').then(res => res.json()),
-    fetch('/code-parts/search-config/translations.json').then(res => res.json())
-  ]).then(([configData, translationData]) => {
-    const expiry = now + CACHE_DURATION_MS;
-    const cacheObject = { configData, translationData, expiry };
-    StorageHelper.setJSON(CACHE_KEY, cacheObject);
-    return { configData, translationData };
-  });
 }
 
 function loadModsJSON() {
