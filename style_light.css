@@ -28,10 +28,10 @@
 .buttons-container-page,
 .instruction-mirrors li a,
 .sitepage .box .content,
-.box-skins .skin,
+.box-skins.solo .skin,
 .instruction-mirrors,
 .weapon-container,
-.box-skins .skin, .sitepage.items .box-skins .skin,
+.sitepage.items .box-skins .skin,
 .sitedetails .sitepros,
 .main-infobox-mascotte::after,
 .main-infobox-content-text ul,
@@ -85,7 +85,8 @@
 .box .logobg .upd,
 .sitepage .content .defbutton,
 .nav-review.blog,
-.newest-boxes .box .content {
+.newest-boxes .box .content,
+.box-skins .skin {
     filter: unset;
     box-shadow: unset;
 }

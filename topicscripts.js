@@ -27,7 +27,7 @@ $(document).ready(function () {
                 <div class="site-searcher-buttons">
                     ${[
                       "Lis-Skins",
-                      "Avan.Market",
+                      "AvanMarket",
                       "Tradeit",
                       "CSMoney",
                       "BitSkins",
@@ -431,7 +431,7 @@ insertRandomRecBox();
           CSMoney: `https://cs.money/market/buy/?search=${encodeURIComponent(
             skinName
           )}&sort=price&order=asc&utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=market&utm_content=link`,
-          "Avan.Market": `https://avan.market/ru/market/cs?name=${encodeURIComponent(
+          "AvanMarket": `https://avan.market/ru/market/cs?name=${encodeURIComponent(
             skinName
           )}&r=broker`,
           SkinSwap: `https://skinswap.com/buy?search=${encodeURIComponent(
