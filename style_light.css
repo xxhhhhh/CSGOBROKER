@@ -200,8 +200,12 @@
     background: var(--main-theme) !important;
 }
 
+.box-skins .skin img {
+    filter: drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, 0.15));
+}
+
 .topic-box .logobg img,
-.box-skins .skin img,
+.box-skins.solo .skin img,
 .weapon-current img,
 .box-skins.character .preview-item.skin img  {
     filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
@@ -319,7 +323,6 @@ a, p,
 .settings-button:hover i,
 #back-to-top-btn,
 #back-to-top-btn:hover,
-.box-skins .skin .skin-desc-name,
 .weapon-selection-redir span,
 .box-skins-name span,
 .box-skins:hover .box-skins-name span,
@@ -388,7 +391,6 @@ h3,
 .site-attention strong.item,
 .contact-box:hover span,
 .email-placeholder:hover span,
-.skin-price-info,
 .topic-nav-box::before,
 .topic-nav-close::after,
 #button-route-filter[data-title]:after,
@@ -402,6 +404,11 @@ h3,
 .content p:nth-child(2),
 .copyright:hover span {
     color: #1a1a1a;
+}
+
+.box-skins .skin .skin-desc-name,
+.skin-price-info {
+    color: rgb(40 40 40);
 }
 
 .smallreview.criteria ol li strong {

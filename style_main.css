@@ -1441,7 +1441,6 @@ nav .pages {
 .navigation-weapon-type,
 .navigation-weapon-name {
     padding: 5px 8px;
-    margin: 3px;
     z-index: 11;
     position: relative;
     background: var(--main-theme);
@@ -1456,6 +1455,12 @@ nav .pages {
     transition: .15s all ease-in-out;
     user-select: none;
     opacity: .3;
+}
+
+.section:has(.navigation-weapon-name),
+.section:has(.navigation-weapon-type) {
+    gap: 6px;
+    margin-bottom: 3px;
 }
 
 .navigation-weapon-type {
@@ -15527,6 +15532,7 @@ div#results {
     position: relative;
     isolation: isolate;
     margin-bottom: 10px;
+    width: 60%;
 }
 
 .sitepage.topic-craft .section.second.character span,
