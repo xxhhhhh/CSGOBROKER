@@ -647,6 +647,8 @@ nav .pages {
 .section.second {
     width: 100%;
     margin-top: 13px;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .sitepage.topic-craft .section.second,
