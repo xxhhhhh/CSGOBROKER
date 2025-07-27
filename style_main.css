@@ -642,6 +642,7 @@ nav .pages {
     align-content: center;
     position: relative;
     top: -20px;
+    max-width: 90%;
 }
 
 .section.second {
@@ -4025,7 +4026,6 @@ nav img {
     top: unset;
     border-radius: 5px;
     top: -20px;
-    width: 90%;
 }
 
 .sitepage.items .section {
@@ -15534,7 +15534,7 @@ div#results {
     position: relative;
     isolation: isolate;
     margin-bottom: 10px;
-    width: 60%;
+    width: 70%;
 }
 
 .sitepage.topic-craft .section.second.character span,
