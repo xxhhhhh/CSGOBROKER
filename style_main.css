@@ -645,7 +645,7 @@ nav .pages {
     max-width: 90%;
 }
 
-.section.second {
+.section.second:not(.character) {
     width: 100%;
     margin-top: 13px;
     flex-direction: column;
