@@ -10468,7 +10468,8 @@ div#results {
     height: auto;
 }
 
-.boxes-holder-name h3 {
+.boxes-holder-name h3,
+.boxes-holder-name h2 {
     text-align: start;
     width: auto;
     padding: 10px;
@@ -10486,7 +10487,8 @@ div#results {
     position: relative;
 }
 
-.boxes-holder-name h3::after {
+.boxes-holder-name h3::after,
+.boxes-holder-name h2::after {
     content: '';
     position: absolute;
     width: 20px;
