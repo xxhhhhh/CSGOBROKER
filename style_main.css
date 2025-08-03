@@ -132,7 +132,8 @@ header {
     width: 83%;
 }
 
-.review header {
+.review header,
+.nondef:has(.topic-craft) header {
     width: 70.6%;
 }
 
@@ -6813,6 +6814,10 @@ footer .centralizer .footer-content {
     top: 18px;
 }
 
+.nondef:has(.topic-craft) .siteleftpannel .mods-box:has(.back-button) {
+    margin-left: -79px;
+}
+
 .singlemod-select {
     cursor: pointer;
     position: relative;
@@ -9458,10 +9463,6 @@ div#results {
     min-height: 230px;
     font-weight: 500;
     font-size: 14px;
-}
-
-.sitepage.topic-craft .siteblock {
-    margin-top: 8px;
 }
 
 .sitepage.topic-craft .box-extra-links {
@@ -13374,7 +13375,6 @@ header {
     .sitepage .box.main {
         border-radius: 0 !important;
         width: 100% !important;
-        margin-top: 30px !important;
     }
 
     .box.skin-navigator {
@@ -13544,10 +13544,6 @@ header {
         padding-top: 0;
     }
 
-    .sitepage.topic-craft {
-        margin-top: 67px;
-    }
-
     .sitepage.topic-craft .siteleftpannel {
         width: 98%;
     }
@@ -13690,7 +13686,8 @@ header {
 
     header,
     .nondef header,
-    .review header {
+    .review header,
+    .nondef:has(.topic-craft) header {
         width: calc(100% - 8px);
         margin-top: 4px; 
     }
@@ -15146,6 +15143,7 @@ header {
 
 .sitepage.topic-craft.loadout .topicpage {
     background: unset;
+    min-height: 1000px;
 }
 
 .character-items-list {
