@@ -1,5 +1,5 @@
 :root {
-    --darkgray: rgb(225 225 225);
+    --darkgray: rgb(215 215 215);
     --main-theme: rgb(245 245 245);
     --darkygray: rgb(255 255 255);
     --opacback: rgb(225 225 225);
@@ -37,7 +37,6 @@
 .main-infobox-content-text ul,
 #rec-box-content,
 .singlemod-select::before,
-.category-selector .category-box .category-box-logo::before,
 .payments-button::before,
 .route-semi,
 .route-semi::after,
@@ -402,7 +401,8 @@ h3,
 .smallreview.criteria:hover ol li,
 .smallreview.criteria:hover ol li strong,
 .content p:nth-child(2),
-.copyright:hover span {
+.copyright:hover span,
+.boxes-holder-name h2 {
     color: #1a1a1a;
 }
 
@@ -709,6 +709,10 @@ h3,
 .box .logobg a:active img, 
 .rec-box .logobg a:active img  {
     filter: drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2)) !important;
+}
+
+.newest-boxes .box .logobg a img {
+        filter: drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, 0.2)) !important;
 }
 
 .boxreview .plusminus .criteria i,
@@ -1149,7 +1153,7 @@ ul .submenu li .nonredir,
     background: unset;
 }
 
-.box:hover .route-semi {
+.boxes-holder .box:hover .route-semi {
     background: var(--main-theme);
 }
 

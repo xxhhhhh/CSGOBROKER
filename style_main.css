@@ -113,14 +113,31 @@ header {
     position: fixed;
     display: flex;
     justify-content: center;
-    background-color: #0a0a0a;
+    background-color: rgb(10, 10, 10);
+    backdrop-filter: blur(5px);
+    background: rgba(10, 10, 10, .9);
     width: 100%;
     height: 70px;
     z-index: 10001;
+    width: 65.69%;
+    width: 66.69%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all .15s ease-in-out;
+    border-radius: 10px;
+    margin-top: 8px;
+}
+
+.nondef header {
+    width: 83%;
+}
+
+.review header {
+    width: 70.6%;
 }
 
 nav {
-    width: 66%;
+    width: 95%;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -180,11 +197,11 @@ nav .pages {
 }
 
 .spaceblock {
-    height: 148px;
+    height: 156px;
 }
 
 .nondef .spaceblock {
-    height: 70px;
+    height: 78px;
 }
 
 .cookie-widget {
@@ -561,7 +578,7 @@ nav .pages {
 }
 
 .topicpage {
-    width: 65%;
+    width: 65.715%;
     padding-top: 0;
     background: unset;
     justify-content: flex-start;
@@ -3571,7 +3588,7 @@ nav img {
     left: 0;
     right: 0;
     margin: 0 auto;
-    top: 88px;
+    top: 96px;
     height: 650px;
     display: flex;
 }
@@ -3599,7 +3616,7 @@ nav img {
 .buttons-container {
     width: 70%;
     position: relative;
-    top: 118px;
+    top: 126px;
     margin: 0 auto;
 }
 
@@ -4055,7 +4072,7 @@ nav img {
 }
 
 .topic .siteblock {
-    margin-top: 16px;
+    margin-top: 8px;
 }
 
 .bonusincludes {
@@ -5784,6 +5801,7 @@ nav img:active,
 
 h4:has(.boxtitle) {
     margin-top: 15px;
+    transition: all .15s ease-in-out;
 }
 
 .sitealternates .content .boxtitle {
@@ -6655,7 +6673,7 @@ footer .centralizer .footer-content {
     position: fixed;
     transition: opacity .15s ease-in-out;
     left: 261px;
-    top: 168px;
+    top: 174px;
     z-index: 2;
 }
 
@@ -6783,11 +6801,16 @@ footer .centralizer .footer-content {
     width: 50%;
 }
 
-.siteleftpannel .mods-box {
+.mods-box:has(.back-button) {
+    top: 18px;
+    left: 270px;
+}
+
+.siteleftpannel .mods-box:has(.back-button) {
     left: unset;
-    margin-left: -63px;
+    margin-left: -69px;
     position: fixed;
-    top: 102px;
+    top: 18px;
 }
 
 .singlemod-select {
@@ -8900,7 +8923,6 @@ label:active,
 .preview-close-button:active,
 .preview-pause-button:active,
 .preview-nav-button:active,
-
 .methodlist a:active::before,
 .email-copy button:active,
 .email-copy button:active i,
@@ -8910,7 +8932,8 @@ label:active,
 .settings-button:active .officon::before,
 .skins-category-switch .category-switch:active::before,
 .preview-pause-button:active .officon::before,
-a.extra-abox:active span {
+a.extra-abox:active span,
+h4:active .boxtitle {
     filter: brightness(.4) !important;
     transition: all .09s ease-in-out;
 }
@@ -8980,7 +9003,8 @@ nav img:active,
 .mirror-redirect:active,
 .partner-site:active,
 .logobg .rating:active,
-.main-mode-unit:active {
+.main-mode-unit:active,
+h4:has(.boxtitle):active {
     scale: .96;
     transform-origin: center center;
     transition: all .1s ease-in-out;
@@ -10264,7 +10288,8 @@ div#results {
 .sitepros,
 .ratingsumm,
 .boxreview .smallreview.criteria,
-.shortinfo .feature {
+.shortinfo .feature,
+header {
     box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
 }
 
@@ -10841,7 +10866,7 @@ div#results {
 .payments-button {
     position: absolute;
     right: -64px;
-    top: -3px;
+    top: -5px;
     width: 50px;
     height: 50px;
     background-color: var(--darkgray);
@@ -10891,7 +10916,7 @@ div#results {
 .payments-block {
     position: fixed;
     right: 141px;
-    top: 168px;
+    top: 174px;
     width: 170px;
     display: flex;
     flex-direction: column;
@@ -12402,7 +12427,8 @@ div#results {
     }
 
     .mods-box:has(.back-button) {
-        margin-top: 4px;
+        top: unset;
+        left: unset;
     }
 
     .mods-box.skins-box {
@@ -12624,6 +12650,10 @@ div#results {
         flex-direction: column;
     }
 
+    .ssiodox.nondef {
+        background: linear-gradient(180deg, var(--darkgray), transparent 300px);
+    }
+
     nav {
         width: 92%;
     }
@@ -12794,6 +12824,11 @@ div#results {
         align-items: center;
         margin: 0 auto;
         border-radius: 10px;
+    }
+
+    .sitepage.topic .siteblock,
+    .sitepage.topic-craft .siteblock {
+        padding-top: 50px;
     }
 
     .topic-centralizer {
@@ -13039,7 +13074,7 @@ div#results {
     .topic-boxes-holder {
         padding: unset;
         gap: 8px;
-        margin-top: unset;
+        margin-top: 4px;
     }
 
     .boxes-holder {
@@ -13054,7 +13089,7 @@ div#results {
     }
 
     .category-selector {
-        max-width: 98%;
+        max-width: 96%;
         width: unset !important;
         justify-content: center;
         height: 80px;
@@ -13294,7 +13329,7 @@ div#results {
     }
 
     .spaceblock {
-        height: 213px;
+        height: 202px;
     }
 
     .category-selector .category-box {
@@ -13575,11 +13610,6 @@ div#results {
 
     .topic .siteleftpannel {
         width: 98%;
-        margin-top: 66px;
-    }
-
-    .blog .siteleftpannel {
-        margin-top: 63px;
     }
 
     .siteleftpannel .box.main,
@@ -13635,6 +13665,7 @@ div#results {
         margin: unset;
         left: 4px;
         top: 4px;
+        top: 48px;
         z-index: 100;
         width: 50px;
         position: absolute;
@@ -13642,22 +13673,34 @@ div#results {
 
     nav .pages {
         padding-left: unset;
-        margin: unset !important;
+        margin-top: -4px;
         width: 100%;
         justify-content: center;
         position: absolute;
         top: 69px;
         left: 0;
-        height: 64px;
+        height: 50px;
         background-color: rgba(12, 12, 12, .9);
         transition: all .15s ease-in-out, visibility 0s 0s;
         visibility: visible;
         overflow: hidden;
+        border-radius: 0 0 10px 10px;
         opacity: 1;
     }
 
+    header,
+    .nondef header,
+    .review header {
+        width: calc(100% - 8px);
+        margin-top: 4px; 
+    }
+
     .category-selector {
-        top: 133px;
+        top: 122px;
+    }
+
+    .category-selector.current {
+        top: 120px;
     }
 
     nav .pages.hidden {
@@ -13667,9 +13710,17 @@ div#results {
     }
 
     nav .pages.hardplaced {
-        height: 64px;
+        height: 50px;
         transition: all .15s ease-in-out, visibility 0s 0s;
+        width: 104%;
+        border-radius: 0;
         visibility: visible;
+    }
+
+    header:has(.pages.hardplaced) {
+        margin: unset;
+        width: 100%;
+        border-radius: 0;
     }
 
     nav .pages.hardhidden {
@@ -13698,6 +13749,10 @@ div#results {
 
     #FAQ {
         transition: all .6s ease-in-out;
+    }
+
+    #FAQ.active {
+        margin: unset;
     }
 
     #FAQ #PageSubt {
@@ -14054,6 +14109,7 @@ div#results {
     .topic-boxes-holder:has(.pagination-holder) {
         margin: 0 auto;
         padding-bottom: unset;
+        margin-top: 4px;
     }
 
     .pagination-button {
@@ -14724,11 +14780,12 @@ div#results {
     }
 
     nav .pages {
-        padding-left: unset;
-        margin-left: 15px;
-        margin-right: 15px;
-        width: 100%;
+        width: 96%;
+        left: 50%;
         justify-content: center;
+        transform: translateX(-50%);
+        margin-top: 1px;
+        height: 50px;
     }
 
     .main-nav-content {
@@ -14787,6 +14844,11 @@ div#results {
 
     .mods-box.mods-box.skins-box {
         min-height: 132px;
+    }
+
+    #btnfaq::before, .infoicon::before {
+        height: 18px;
+        width: 18px;
     }
 
     .box .logobg img {
