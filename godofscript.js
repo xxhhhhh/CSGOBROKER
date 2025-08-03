@@ -716,7 +716,7 @@ function insertOverallRating(ratings) {
   
   function insertAlternatives(alternatives) {
 
-    const mainSiteName = document.querySelector('.box.main .content p').textContent.trim();
+    const mainSiteName = document.querySelector('.box.main .content h4').textContent.trim();
 
     let alternatesTitle = '';
     switch (languageTag) {
@@ -2829,22 +2829,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const boxes = Array.from(document.querySelectorAll('.box:not(.main)'));
 
-boxes.forEach(function (box) {
-    var logoLink = box.querySelector('.logobg a');
-    if (logoLink) {
-        var href = logoLink.getAttribute('href');
+boxes.forEach((box) => {
+  const logoLink = box.querySelector('.logobg a[href]');
+  if (!logoLink) return;
 
-        var firstParagraph = box.querySelector('.content p:first-child');
-        if (firstParagraph) {
-            var newLink = document.createElement('a');
-            newLink.href = href;
-            newLink.textContent = firstParagraph.textContent;
-            newLink.classList.add('boxtitle');
+  const href = logoLink.getAttribute('href');
+  const h4 = box.querySelector('.content h4:first-child');
+  if (!h4) return;
 
-            firstParagraph.replaceWith(newLink);
-        }
-    }
+  // Если в h4 уже есть ссылка — выходим, чтобы не делать вложенные <a>
+  if (h4.querySelector('a')) return;
+
+  const a = document.createElement('a');
+  a.href = href;
+  a.classList.add('boxtitle');
+
+  // Переносим ВСЁ текущее содержимое h4 внутрь ссылки (сохраняет разметку/иконки и т.п.)
+  while (h4.firstChild) {
+    a.appendChild(h4.firstChild);
+  }
+
+  h4.appendChild(a);
 });
+
 
 const categorySelector = document.querySelector('.category-selector');
 const categoryContentURL = '/code-parts/category-import/category-contents.json';

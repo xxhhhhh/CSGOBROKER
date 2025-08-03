@@ -334,7 +334,7 @@ nav .pages {
     text-transform: none !important;
 }
 
-.rec-box .content a.boxtitle {
+.rec-box .content .boxtitle {
     font-weight: 600;
     font-size: 18px;
     padding: 0 4px;
@@ -1921,7 +1921,8 @@ nav .pages {
 }
 
 .sitepage.items .box-skins .skin {
-    background: linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%);
+    /* background: linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%); */
+    background: var(--darkgray);
 }
 
 .box-skins.solo .skin::before {
@@ -2016,13 +2017,13 @@ nav .pages {
     transform: scale(1.1) rotate(3deg);
 }
 
-.box-skins.knives .skin:hover img {
+/* .box-skins.knives .skin:hover img {
     transform: scale(1.2) rotate(3deg);
 }
 
 .box-skins.gloves .skin:hover img {
     transform: scale(1.25) rotate(3deg);
-}
+} */
 
 .box-skins.selected .skin:hover img,
 .box-skins.solo .skin:hover img {
@@ -5101,7 +5102,7 @@ nav img {
 }
 
 .sitealternates .box .content h2,
-.sitealternates .box .content a.boxtitle {
+.sitealternates .box .content .boxtitle {
     font-size: 18px;
 }
 
@@ -5751,7 +5752,7 @@ nav img:active,
 }
 
 .content p,
-.content a.boxtitle {
+.content .boxtitle {
     font-weight: 500;
     font-size: 12px;
     margin-top: 13px;
@@ -5762,6 +5763,7 @@ nav img:active,
 
 .nav-review li,
 .content p,
+.content h4,
 .instruction li,
 .boxreview .plusminus .criteria .par li,
 .nav-review li {
@@ -5770,8 +5772,9 @@ nav img:active,
 
 
 .content h2,
+.content h4,
 .content p:first-child,
-.content a.boxtitle {
+.content .boxtitle {
     font-weight: 600;
     font-size: 22px;
     margin-top: 15px;
@@ -5779,19 +5782,24 @@ nav img:active,
     text-align: center;
 }
 
-.sitealternates .content a.boxtitle {
+h4:has(.boxtitle) {
+    margin-top: 15px;
+}
+
+.sitealternates .content .boxtitle {
     margin-top: 12px;
 }
 
-.content a.boxtitle {
+.content .boxtitle {
     transition: all .15s ease-in-out;
+    line-height: 1.2;
     padding: 0 10px;
     width: auto;
 }
 
-.boxes-holder .content a.boxtitle:hover,
-.sitealternates .content a.boxtitle:hover,
-.rec-box .content a.boxtitle:hover {
+.boxes-holder .content .boxtitle:hover,
+.sitealternates .content .boxtitle:hover,
+.rec-box .content .boxtitle:hover {
     color: rgb(188, 188, 188);
 }
 
@@ -5868,7 +5876,7 @@ nav img:active,
     z-index: 1;
 }
 
-.box.main .content p:first-child::after {
+.box.main .content h4::after {
     content: '';
     height: 2px;
     background: linear-gradient(56deg, rgba(0, 0, 0, 0) 0%, rgba(168, 29, 52, .65) 50%, rgba(0, 0, 0, 0) 100%);
@@ -5978,13 +5986,13 @@ nav img:active,
     pointer-events: none;
 }
 
-.box.main .content p:first-child {
+.box.main .content h4 {
     width: auto;
     position: relative;
     user-select: none;
 }
 
-.box.main .content p:first-child::before {
+.box.main .content h4::before {
     content: '';
     width: 100%;
     height: 100%;
@@ -10800,7 +10808,11 @@ div#results {
     margin-top: 3px;
 }
 
-.main-page .content a.boxtitle {
+.main-page .content p:first-child {
+    margin-top: 13px;
+}
+
+.main-page .content h4:has(.boxtitle) {
     margin-top: 13px;
 }
 
@@ -12308,7 +12320,7 @@ div#results {
         max-height: unset;
     }
 
-    .box.main .content p:first-child {
+    .box.main .content h4 {
         margin-top: 5px;
     }
 
@@ -12358,7 +12370,7 @@ div#results {
     .box .logobg .route,
     .box .logobg .route::before,
     .boxes-holder .box .content,
-    .content a.boxtitle,
+    .content .boxtitle,
     .box .content {
         transition: .15s all ease-in-out;
     }
@@ -12872,9 +12884,8 @@ div#results {
         color: var(--main-color);
     }
 
-    h2,
     h2 {
-        font-size: 18px !important;
+        font-size: 18px;
     }
 
     .buttons-container {
@@ -14902,6 +14913,7 @@ div#results {
     .content p:nth-child(3) {
         width: 55%;
         font-size: 11px;
+        margin-top: 5px;
     }
 
     .box.main .main-mode {
@@ -14925,7 +14937,8 @@ div#results {
         font-size: 10px;
     }
 
-    .main-page .box .content a.boxtitle {
+    .main-page .box .content .boxtitle,
+    .main-page .box .content h4 {
         font-size: 18px;
         display: none;
     }
