@@ -3828,7 +3828,7 @@ window.initFreebiesBoxes = function () {
         const uniqueBoxes = flatBoxes.filter((box) => {
           const titleEl =
             box.querySelector(".boxtitle") ||
-            box.querySelector(".content p:first-child");
+            box.querySelector("h4");
           if (!titleEl) return false;
           const title = titleEl.textContent.trim();
           if (seenTitles.has(title)) return false;
