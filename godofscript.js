@@ -1,5 +1,5 @@
 const StorageHelper = {
-  get(key) {
+  get: (key) => {
     try {
       return localStorage.getItem(key);
     } catch {
@@ -7,13 +7,13 @@ const StorageHelper = {
     }
   },
 
-  set(key, value) {
+  set: (key, value) => {
     try {
       localStorage.setItem(key, value);
     } catch {}
   },
 
-  getJSON(key) {
+  getJSON: (key) => {
     try {
       const val = localStorage.getItem(key);
       return val ? JSON.parse(val) : null;
@@ -22,40 +22,35 @@ const StorageHelper = {
     }
   },
 
-  setJSON(key, obj) {
+  setJSON: (key, obj) => {
     try {
       localStorage.setItem(key, JSON.stringify(obj));
     } catch {}
   },
 
-  setWithExpiry(key, value, durationMs) {
+  setWithExpiry: (key, value, durationMs) => {
     const now = Date.now();
-    const data = {
-      value,
-      expiry: now + durationMs,
-    };
-    this.setJSON(key, data);
+    const data = { value, expiry: now + durationMs };
+    StorageHelper.setJSON(key, data);
   },
 
-  getWithExpiry(key) {
-    const item = this.getJSON(key);
-    if (!item) return null;
-    if (Date.now() > item.expiry) {
+  getWithExpiry: (key) => {
+    const item = StorageHelper.getJSON(key);
+    if (!item || Date.now() > item.expiry) {
       localStorage.removeItem(key);
       return null;
     }
     return item.value;
   },
 
-  initVersion({ versionKey = 'version', currentVersion }) {
+  initVersion: ({ versionKey = 'version', currentVersion }) => {
     const savedVersion = localStorage.getItem(versionKey);
     if (savedVersion !== currentVersion) {
       localStorage.clear();
       localStorage.setItem(versionKey, currentVersion);
     }
-  },
+  }
 };
-
 
 StorageHelper.initVersion({ currentVersion: '1.1' });
 
@@ -67,33 +62,34 @@ function isRuPage(pathname) {
 
 function copyToClipboard(source, copyButton) {
   const text = typeof source === "string" ? source : source.textContent.trim();
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(() => showCopied(copyButton));
+  } else {
+    const tempInput = document.createElement("input");
+    document.body.appendChild(tempInput);
+    tempInput.value = text;
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    showCopied(copyButton);
+  }
+}
 
-  const tempInput = document.createElement("input");
-  document.body.appendChild(tempInput);
-  tempInput.value = text;
-  tempInput.select();
-  document.execCommand("copy");
-  document.body.removeChild(tempInput);
-
+function showCopied(copyButton) {
   const title = document.createElement("div");
   title.className = "copied-title";
   title.textContent = languageTag === "ru" ? "Скопировано" : "Copied";
-
   copyButton.appendChild(title);
   copyButton.classList.add("icon-changed");
 
   title.style.display = "none";
   $(title).fadeIn(150, function () {
-    $(this)
-      .delay(400)
-      .fadeOut(150, function () {
-        $(this).remove();
-      });
+    $(this).delay(400).fadeOut(150, function () {
+      $(this).remove();
+    });
   });
 
-  setTimeout(function () {
-    copyButton.classList.remove("icon-changed");
-  }, 800);
+  setTimeout(() => copyButton.classList.remove("icon-changed"), 800);
 }
 
 const themeToggleBtn = document.getElementById('theme-toggle');

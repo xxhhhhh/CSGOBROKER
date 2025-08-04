@@ -137,6 +137,14 @@ header {
     width: 70.6%;
 }
 
+.nondef:has(.boxdefaultpage) header {
+    width: 58%;
+}
+
+.nondef:has(.blog) header {
+    width: 71.8%;
+}
+
 nav {
     width: 95%;
     height: 100%;
@@ -5153,6 +5161,10 @@ nav img {
     transform: scale(1.04);
     backface-visibility: hidden;
     /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(50, 50, 50, 0.25) 50%, rgba(255, 255, 255, 0) 100%) !important; */
+}
+
+.boxes-holder.main-page .box:hover {
+    transform: scale(1.03);
 }
 
 .topic-boxes-holder .topic-grandbox.sticker:hover {
@@ -10823,7 +10835,7 @@ header {
 
 .main-page .box:hover .content {
     opacity: 1;
-    background: rgba(17, 17, 17, .9)
+    background: rgba(17, 17, 17, .95)
 }
 
 .main-page .content {
@@ -11333,7 +11345,6 @@ header {
 }
 
 .blog .item-topic-grandbox {
-    top: 8px;
     border-radius: 10px;
 }
 
@@ -13549,7 +13560,7 @@ header {
     }
 
     .sitepage:has(.boxdefaultpage) {
-        margin-top: 68px;
+        padding-top: 50px;
     }
 
     .sitepage.topic.items {
@@ -13687,7 +13698,9 @@ header {
     header,
     .nondef header,
     .review header,
-    .nondef:has(.topic-craft) header {
+    .nondef:has(.topic-craft) header,
+    .nondef:has(.boxdefaultpage) header,
+    .nondef:has(.blog) header {
         width: calc(100% - 8px);
         margin-top: 4px; 
     }
