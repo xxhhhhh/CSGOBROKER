@@ -3,7 +3,7 @@
     --main-theme: rgb(245 245 245);
     --darkygray: rgb(255 255 255);
     --opacback: rgb(225 225 225);
-    --text-darkgray: rgba(35 35 35);
+    --text-darkgray: rgb(89 89 89);
     --text-lightgray: rgb(60 60 60);
     --icongradient: linear-gradient(-45deg, var(--main-theme), var(--darkygray));
     --buttonbg:linear-gradient(180deg, var(--main-color) 0%, rgb(204, 21, 52) 100%);
@@ -453,6 +453,10 @@ h3,
 
 .promo-box.extra-abox:hover .logobg::after {
     background: var(--main-color);
+}
+
+.site-item a {
+    font-weight: 600;
 }
 
 .copyright, 
