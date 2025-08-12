@@ -3955,168 +3955,168 @@ if (path.includes("/freebies")) {
   window.initFreebiesBoxes();
 }
 
-// (() => {
-//   const PARTICLE_COUNT = 45;
-//   const FRAME_INTERVAL = 1900 / 60;
-//   const BACKGROUNDS = [
-//     "url(/img/icons/main-modes/rust-logo.png)",
-//     "url(/img/icons/main-modes/cs2-logo.png)",
-//     "url(/img/icons/main-modes/dota2-logo.png)",
-//     "url(/img/icons/main-modes/freebies.png)",
-//     "url(/img/icons/main-modes/steam.png)"
-//   ];
+(() => {
+  const PARTICLE_COUNT = 45;
+  const FRAME_INTERVAL = 1900 / 60;
+  const BACKGROUNDS = [
+    "url(/img/icons/main-modes/rust-logo.png)",
+    "url(/img/icons/main-modes/cs2-logo.png)",
+    "url(/img/icons/main-modes/dota2-logo.png)",
+    "url(/img/icons/main-modes/freebies.png)",
+    "url(/img/icons/main-modes/steam.png)"
+  ];
 
-//   let particleflakes = [];
-//   let previousTime = performance.now();
-//   let resetPosition = false;
-//   let enableAnimations = false;
+  let particleflakes = [];
+  let previousTime = performance.now();
+  let resetPosition = false;
+  let enableAnimations = false;
 
-//   const reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
-//   let particles = StorageHelper.get("particles") !== "false";
-//   StorageHelper.set("particles", particles);
+  const reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
+  let particles = StorageHelper.get("particles") !== "false";
+  StorageHelper.set("particles", particles);
 
-//   const particleflakeContainer = document.querySelector("#particleflakeContainer");
+  const particleflakeContainer = document.querySelector("#particleflakeContainer");
 
-//   class Particleflake {
-//     constructor(element, speed, xPos, yPos) {
-//       this.element = element;
-//       this.speed = speed;
-//       this.xPos = xPos;
-//       this.yPos = yPos;
-//       this.scale = 1;
-//       this.counter = 0;
-//       this.sign = Math.random() < 0.5 ? 1 : -1;
+  class Particleflake {
+    constructor(element, speed, xPos, yPos) {
+      this.element = element;
+      this.speed = speed;
+      this.xPos = xPos;
+      this.yPos = yPos;
+      this.scale = 1;
+      this.counter = 0;
+      this.sign = Math.random() < 0.5 ? 1 : -1;
 
-//       this.element.style.opacity = (0.1 + Math.random()) / 3;
-//     }
+      this.element.style.opacity = (0.1 + Math.random()) / 3;
+    }
 
-//     update(delta, width, height) {
-//       this.counter += (this.speed / 5000) * delta;
-//       this.xPos += (this.sign * delta * this.speed * Math.cos(this.counter)) / 40;
-//       this.yPos += Math.sin(this.counter) / 40 + (this.speed * delta) / 30;
-//       this.scale = 0.5 + Math.abs((10 * Math.cos(this.counter)) / 20);
+    update(delta, width, height) {
+      this.counter += (this.speed / 5000) * delta;
+      this.xPos += (this.sign * delta * this.speed * Math.cos(this.counter)) / 40;
+      this.yPos += Math.sin(this.counter) / 40 + (this.speed * delta) / 30;
+      this.scale = 0.5 + Math.abs((10 * Math.cos(this.counter)) / 20);
 
-//       this.element.style.transform = `translate3d(${Math.round(this.xPos)}px, ${Math.round(this.yPos)}px, 0) scale(${this.scale})`;
+      this.element.style.transform = `translate3d(${Math.round(this.xPos)}px, ${Math.round(this.yPos)}px, 0) scale(${this.scale})`;
 
-//       if (this.yPos > height) {
-//         this.yPos = -50;
-//       }
-//     }
-//   }
+      if (this.yPos > height) {
+        this.yPos = -50;
+      }
+    }
+  }
 
-//   function init() {
-//     updateToggleIcon();
-//     setAccessibilityState();
-//     reduceMotionQuery.addListener(setAccessibilityState);
+  function init() {
+    updateToggleIcon();
+    setAccessibilityState();
+    reduceMotionQuery.addListener(setAccessibilityState);
 
-//     document.querySelector("#particles-toggle").addEventListener("click", toggleParticles);
+    document.querySelector("#particles-toggle").addEventListener("click", toggleParticles);
 
-//     if (enableAnimations && window.innerWidth > 1365) {
-//       window.addEventListener("DOMContentLoaded", generateParticleflakes);
-//       window.addEventListener("resize", handleResize);
-//     }
-//   }
+    if (enableAnimations && window.innerWidth > 1365) {
+      window.addEventListener("DOMContentLoaded", generateParticleflakes);
+      window.addEventListener("resize", handleResize);
+    }
+  }
 
-//   function setAccessibilityState() {
-//     enableAnimations = !reduceMotionQuery.matches && particles;
-//   }
+  function setAccessibilityState() {
+    enableAnimations = !reduceMotionQuery.matches && particles;
+  }
 
-//   function getRandomPosition(offset, size) {
-//     return Math.round(-offset + Math.random() * (size + offset * 2));
-//   }
+  function getRandomPosition(offset, size) {
+    return Math.round(-offset + Math.random() * (size + offset * 2));
+  }
 
-//   function generateParticleflakes() {
-//     const template = document.querySelector(".particleflake");
-//     if (!template) return;
+  function generateParticleflakes() {
+    const template = document.querySelector(".particleflake");
+    if (!template) return;
 
-//     const width = document.documentElement.clientWidth;
-//     const height = document.documentElement.clientHeight;
+    const width = document.documentElement.clientWidth;
+    const height = document.documentElement.clientHeight;
 
-//     particleflakeContainer.style.display = "block";
+    particleflakeContainer.style.display = "block";
 
-//     // Remove existing
-//     particleflakes.forEach(p => p.element.remove());
-//     particleflakes = [];
+    // Remove existing
+    particleflakes.forEach(p => p.element.remove());
+    particleflakes = [];
 
-//     for (let i = 0; i < PARTICLE_COUNT; i++) {
-//       const clone = template.cloneNode(true);
-//       clone.style.backgroundImage = BACKGROUNDS[Math.floor(Math.random() * BACKGROUNDS.length)];
-//       particleflakeContainer.appendChild(clone);
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const clone = template.cloneNode(true);
+      clone.style.backgroundImage = BACKGROUNDS[Math.floor(Math.random() * BACKGROUNDS.length)];
+      particleflakeContainer.appendChild(clone);
 
-//       const x = getRandomPosition(50, width);
-//       const y = getRandomPosition(50, height);
-//       const speed = 5 + Math.random() * 40;
+      const x = getRandomPosition(50, width);
+      const y = getRandomPosition(50, height);
+      const speed = 5 + Math.random() * 40;
 
-//       particleflakes.push(new Particleflake(clone, speed, x, y));
-//     }
+      particleflakes.push(new Particleflake(clone, speed, x, y));
+    }
 
-//     template.remove();
-//     requestAnimationFrame(animate);
-//   }
+    template.remove();
+    requestAnimationFrame(animate);
+  }
 
-//   function animate(currentTime) {
-//     const delta = (currentTime - previousTime) / FRAME_INTERVAL;
-//     previousTime = currentTime;
+  function animate(currentTime) {
+    const delta = (currentTime - previousTime) / FRAME_INTERVAL;
+    previousTime = currentTime;
 
-//     const width = document.documentElement.clientWidth;
-//     const height = document.documentElement.clientHeight;
+    const width = document.documentElement.clientWidth;
+    const height = document.documentElement.clientHeight;
 
-//     if (enableAnimations) {
-//       for (const particle of particleflakes) {
-//         if (resetPosition) {
-//           particle.xPos = getRandomPosition(50, width);
-//           particle.yPos = getRandomPosition(50, height);
-//         } else {
-//           particle.update(delta, width, height);
-//         }
-//       }
-//     }
+    if (enableAnimations) {
+      for (const particle of particleflakes) {
+        if (resetPosition) {
+          particle.xPos = getRandomPosition(50, width);
+          particle.yPos = getRandomPosition(50, height);
+        } else {
+          particle.update(delta, width, height);
+        }
+      }
+    }
 
-//     resetPosition = false;
-//     requestAnimationFrame(animate);
-//   }
+    resetPosition = false;
+    requestAnimationFrame(animate);
+  }
 
-//   function handleResize() {
-//     if (window.innerWidth <= 1365) {
-//       resetPosition = true;
-//     } else if (particles) {
-//       resetPosition = false;
-//     }
-//   }
+  function handleResize() {
+    if (window.innerWidth <= 1365) {
+      resetPosition = true;
+    } else if (particles) {
+      resetPosition = false;
+    }
+  }
 
-//   function toggleParticles() {
-//     particles = !particles;
-//     StorageHelper.set("particles", particles);
-//     updateToggleIcon();
+  function toggleParticles() {
+    particles = !particles;
+    StorageHelper.set("particles", particles);
+    updateToggleIcon();
 
-//     if (particles) {
-//       setAccessibilityState();
+    if (particles) {
+      setAccessibilityState();
 
-//       if (!document.querySelector(".particleflake")) {
-//         const el = document.createElement("div");
-//         el.className = "particleflake";
-//         particleflakeContainer.appendChild(el);
-//       }
+      if (!document.querySelector(".particleflake")) {
+        const el = document.createElement("div");
+        el.className = "particleflake";
+        particleflakeContainer.appendChild(el);
+      }
 
-//       if (enableAnimations) {
-//         generateParticleflakes();
-//         window.addEventListener("resize", handleResize);
-//       }
-//     } else {
-//       particleflakes.forEach(p => p.element.remove());
-//       particleflakes = [];
-//       window.removeEventListener("resize", handleResize);
-//     }
-//   }
+      if (enableAnimations) {
+        generateParticleflakes();
+        window.addEventListener("resize", handleResize);
+      }
+    } else {
+      particleflakes.forEach(p => p.element.remove());
+      particleflakes = [];
+      window.removeEventListener("resize", handleResize);
+    }
+  }
 
-//   function updateToggleIcon() {
-//     const icon = document.querySelector("#particles-toggle .officon");
-//     icon.classList.toggle("effect-on", particles);
-//     icon.classList.toggle("effect-off", !particles);
-//   }
+  function updateToggleIcon() {
+    const icon = document.querySelector("#particles-toggle .officon");
+    icon.classList.toggle("effect-on", particles);
+    icon.classList.toggle("effect-off", !particles);
+  }
 
-//   init();
-// })();
+  init();
+})();
 
 function loadCachedData(key) {
   return StorageHelper.getJSON(key);
