@@ -15467,19 +15467,21 @@ header {
 }
 
 .route-semi::before {
-    content: 'Ограниченный Доступ';
+    content: 'Могут быть проблемы с Доступом';
     color: var(--white);
     font-size: 13px;
     margin-bottom: unset;
     bottom: 50%;
-    text-wrap: nowrap;
+    /* text-wrap: nowrap; */
     left: unset;
     right: 45px;
-    width: auto;
+    width: 140px;
+    text-align: center;
+    /* text-wrap: auto; */
     display: flex;
     justify-content: flex-end;
     transition: all .15s ease-in-out;
-    filter: drop-shadow(0px 0px 8px rgb(11 11 11)) drop-shadow(0px 0px 8px rgb(11 11 11)) drop-shadow(0px 0px 8px rgb(11 11 11)) drop-shadow(0px 0px 8px rgb(11 11 11));
+    filter: drop-shadow(0px 0px 6px var(--darkgray)) drop-shadow(0px 0px 6px var(--darkgray)) drop-shadow(0px 0px 6px var(--darkgray));
     transform: translateY(50%) translateX(10px);
 }
 
