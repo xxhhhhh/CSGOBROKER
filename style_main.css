@@ -4875,6 +4875,13 @@ nav img {
     -webkit-backdrop-filter: unset;
 }
 
+.box.crypto-choice {
+    opacity: .55;
+}
+
+.box.crypto-choice:hover {
+    opacity: 1;
+}
 
 .sitepage .box .logobg {
     height: 55%;
@@ -5354,7 +5361,8 @@ nav img:active,
 }
 
 .box .logobg .best,
-.topic-box .best {
+.topic-box .best,
+.box.crypto-choice .logobg:after {
     top: -8px;
     right: -8px;
     position: absolute;
@@ -5374,6 +5382,19 @@ nav img:active,
     backface-visibility: hidden;
     user-select: none;
     z-index: 2;
+}
+
+.box.crypto-choice .logobg:after {
+    content: 'Cryptocurrency';
+    background: #2066ce;
+    text-shadow: 1px 1px 3px rgb(100 100 100);
+    border-radius: 5px;
+    padding: 0 8px;
+    top: 30px;
+}
+
+.lang-ru .box.crypto-choice .logobg:after {
+    content: 'Криптовалюта';
 }
 
 .bonuses-block {
@@ -11700,6 +11721,10 @@ header {
         padding-bottom: 45px;
     }
 
+    .box.crypto-choice {
+        opacity: 1;
+    }
+
     .boxes-holder:not(.main-page) .box .content:has(.review-button.mirror-visit) .tg-app {
         top: 12px;
     }
@@ -14737,7 +14762,8 @@ header {
         margin-top: 10px;
     }
 
-    .box .logobg .best {
+    .box .logobg .best,
+    .box.crypto-choice .logobg:after {
         font-size: 11px;
     }
 
@@ -14946,10 +14972,15 @@ header {
     }
 
     .box .logobg .best,
-    .bonuses-block {
+    .bonuses-block,
+    .box.crypto-choice .logobg:after {
         font-size: 12px;
         top: -4px;
         right: -4px;
+    }
+
+    .box.crypto-choice .logobg:after {
+        top: 32px;
     }
 
     .rating-case-single .rating-summ {
