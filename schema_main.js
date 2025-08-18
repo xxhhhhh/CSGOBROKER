@@ -74,7 +74,7 @@ function generateBreadcrumbList(pageUrl, alt, urlParts, langCode) {
   const items = [];
   const isDefaultLang = langCode === 'en';
   const base = isDefaultLang ? 'https://csgobroker.cc' : `https://csgobroker.cc/${langCode}`;
-  const homeName = langCode === 'ru' ? 'CSGOBroker Главная Страница' : 'CSGOBroker Main Page';
+  const homeName = langCode === 'ru' ? 'Главная' : 'Main Page';
 
   items.push({
     "@type": "ListItem",
