@@ -13798,19 +13798,22 @@ header {
 
     nav .pages {
         padding-left: unset;
-        margin-top: -4px;
-        width: 100%;
         justify-content: center;
         position: absolute;
         top: 69px;
-        left: 0;
-        height: 50px;
         background-color: rgba(12, 12, 12, .9);
         transition: all .15s ease-in-out, visibility 0s 0s;
         visibility: visible;
         overflow: hidden;
         border-radius: 0 0 10px 10px;
         opacity: 1;
+
+        width: 96%;
+        left: 50%;
+        justify-content: center;
+        transform: translateX(-50%);
+        margin-top: 1px;
+        height: 50px;
     }
 
     header,
@@ -14908,14 +14911,6 @@ header {
         font-size: 13px;
     }
 
-    nav .pages {
-        width: 96%;
-        left: 50%;
-        justify-content: center;
-        transform: translateX(-50%);
-        margin-top: 1px;
-        height: 50px;
-    }
 
     .main-nav-content {
         width: 84%;
