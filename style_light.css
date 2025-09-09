@@ -94,14 +94,14 @@ nav .logospace {
     margin-left: -23px;
 }
 
-#logo {
+header #logo {
     background: linear-gradient(-45deg, var(--main-color) 0%, rgba(226, 24, 58, .8) 100%);
     height: calc(100% - 18px);
     padding: 0 10px;
     border-radius: 10px;
 }
 
-#logo:hover {
+header #logo:hover {
     transform: none;
     filter: grayscale(0) brightness(.9);
 }
@@ -161,7 +161,7 @@ nav .pages {
 
 .category-selector .category-box .category-box-logo,
 .singlemod-box .singlemod-icon,
-#logo {
+header #logo {
     box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .3);
 }
 
