@@ -172,6 +172,8 @@ button {
 
 nav .logospace {
     height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 #logo {
@@ -3595,7 +3597,6 @@ nav img {
 
 #logo:hover {
     transform: scale(1.05);
-    transition: all .15s ease-in-out;
 }
 
 .category-selector {
@@ -10013,7 +10014,7 @@ div#results {
     max-height: 75%;
     max-width: 85%;
     margin-top: 43px;
-    /* filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2)); */
+    /* filter: drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, 0.2)); */
     filter: drop-shadow(6px 4px 6px rgba(6, 6, 6, .5));
 }
 
@@ -10933,7 +10934,7 @@ header {
 .main-page .box .logobg img {
     max-width: 75%;
     max-height: 50%;
-    filter: drop-shadow(0 1px 0 rgb(0 0 0)) drop-shadow(0 1px 0 rgb(0 0 0)) drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 1px 0 rgb(0 0 0)) drop-shadow(0 1px 0 rgb(0 0 0)) drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, 0.2));
 }
 
 .main-page .logobg,

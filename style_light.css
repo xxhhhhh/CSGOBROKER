@@ -66,10 +66,76 @@
 .box-skins.character .skin,
 .character-model,
 .promo-box.extra-abox,
-.box.crypto-choice .logobg:after {
+.box.crypto-choice .logobg:after,
+header {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
     box-shadow: unset;
 }
+
+header {
+    background: rgba(215, 215, 215, .9);
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    border-radius: 10px;
+    z-index: -1;
+    background: var(--icongradient);
+    filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
+    box-shadow: unset;
+}
+
+nav .logospace {
+    margin-left: -23px;
+}
+
+#logo {
+    background: linear-gradient(-45deg, var(--main-color) 0%, rgba(226, 24, 58, .8) 100%);
+    height: calc(100% - 18px);
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+#logo:hover {
+    transform: none;
+    filter: grayscale(0) brightness(.9);
+}
+
+nav img {
+    filter: grayscale(1) brightness(5);
+    /* filter: drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, .2)); */
+}
+
+nav .pages {
+    padding-left: 15px;
+}
+
+.effect-on::before,
+.lightbulb-on::before,
+.lightbulb-off::before,
+.search-enabler .search::before,
+.menu-toggle::before,
+#btnfaq::before {
+    filter: brightness(.2);
+    opacity: .9;
+}
+
+#search-input, 
+.payment-container input,
+#search-input:hover,
+.site-item,
+.site-list  {
+    background: var(--darkgray);
+}
+
+/* #search-input:hover {
+    background-color: rgb(19 19 19);
+} */
 
 .sitepage .box .content {
     background: var(--darkygray);
@@ -94,7 +160,8 @@
 }
 
 .category-selector .category-box .category-box-logo,
-.singlemod-box .singlemod-icon {
+.singlemod-box .singlemod-icon,
+#logo {
     box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .3);
 }
 
@@ -210,7 +277,7 @@
 .box-skins.solo .skin img,
 .weapon-current img,
 .box-skins.character .preview-item.skin img  {
-    filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, 0.2));
 }
 
 .box-skins .skin-price-info .souvenir-price-info {
@@ -406,8 +473,21 @@ h3,
 .smallreview.criteria:hover ol li strong,
 .content p:nth-child(2),
 .copyright:hover span,
-.boxes-holder-name h2 {
-    color: #1a1a1a;
+.boxes-holder-name h2,
+.pages h1,
+#PageSubt,
+.selected-lang,
+#search-input {
+    color: #1f1f1f;
+}
+
+.lang-menu,
+.lang-menu:hover {
+    border: 1px #1f1f1f solid;
+}
+
+.close-button .officon::before {
+    filter: brightness(.1);
 }
 
 .box-skins .skin .skin-desc-name,
@@ -485,7 +565,7 @@ h3,
 
 .main-mode-unit img {
     /* filter: drop-shadow(0 0 3px rgb(175 175 175)); */
-    filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2)) drop-shadow(0 1px 1px rgb(140 140 140));
+    filter: drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, 0.2)) drop-shadow(0 1px 1px rgb(140 140 140));
 }
 
 .main-mode-unit::before {
@@ -614,7 +694,6 @@ h3,
     filter: grayscale(1) brightness(.5);
 }
 
-#PageSubt,
 #preview-content .skin-price-info,
 #preview-showcase *[data-title]:after {
     color: var(--white);
@@ -716,7 +795,7 @@ h3,
 .main-page .box .logobg img,
 .box .logobg a:active img, 
 .rec-box .logobg a:active img  {
-    filter: drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2)) !important;
+    filter: drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, 0.2)) !important;
 }
 
 .newest-boxes .box .logobg a img {
@@ -937,7 +1016,7 @@ h3,
 }
 
 .topic-box.maestro .logobg img {
-    filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2)) drop-shadow(0 1px 1px rgb(115 115 115));
+    filter: drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, 0.2)) drop-shadow(0 1px 1px rgb(115 115 115));
 }
 
 .topic-box .content span {
@@ -1133,9 +1212,9 @@ ul .submenu li .nonredir,
     content: unset;
 }
 
-.content .boxtitle {
+/* .content .boxtitle {
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0);
-}
+} */
 
 .content .defbutton, .content .defbutton::before,
 .content .review-button.mirror-visit::before,
@@ -1381,6 +1460,10 @@ ul .submenu li .nonredir,
 
 @media screen and (max-width: 1365px) {
 
+    nav .logospace {
+        margin: unset;
+    }
+
     .ratingsumm {
         filter: unset;
     }
@@ -1528,7 +1611,7 @@ ul .submenu li .nonredir,
     }
 
     nav .pages {
-        background-color: rgba(11, 11, 11, .9);
+        background-color: rgba(215, 215, 215, .9);
     }
 
     .submenu2 li a {

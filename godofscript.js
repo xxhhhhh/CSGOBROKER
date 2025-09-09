@@ -52,7 +52,7 @@ const StorageHelper = {
   }
 };
 
-StorageHelper.initVersion({ currentVersion: '1.1' });
+StorageHelper.initVersion({ currentVersion: '1.11' });
 
 function isRuPage(pathname) {
   return pathname.startsWith('/ru/') || pathname === '/ru' || pathname === '/ru.html';
