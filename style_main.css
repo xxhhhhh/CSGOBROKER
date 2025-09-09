@@ -292,6 +292,7 @@ nav .pages {
     top: 8px;
     bottom: 8px;
     background: linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%);
+    opacity: .8;
     border-radius: 10px;
 }
 
@@ -1129,8 +1130,18 @@ nav .pages {
     display: unset !important;
 }
 
+#preview-showcase:has(.skin-extra-info a) .titled[data-title]:after {
+    transform: translateY(-150%);
+}
+
+#preview-showcase:has(.skin-extra-info a) .titled[data-title]:hover:after {
+    transform: translateY(-225%);
+    transition: all .15s ease-in-out;
+    opacity: 1;
+}
+
 #preview-showcase .titled[data-title]:hover:after {
-    transform: translateY(-250%);
+    transform: translateY(-35%);
     transition: all .15s ease-in-out;
     opacity: 1;
 }
@@ -7787,8 +7798,8 @@ a[data-title]:after,
 .typesinside .steamtopup::before,
 .main-mode.steamtopup .main-mode-icon::before {
     background-image: url(/img/icons/gamemodes/steamtopup.webp);
-    width: 21px !important;
-    height: 21px !important;
+    width: 18px;
+    height: 18px;
 }
 
 .typesinside .rental::before {
