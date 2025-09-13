@@ -783,7 +783,8 @@ nav .pages {
 #preview-window {
     width: 100%;
     height: 100%;
-    top: 5%;
+    top: 0;
+    padding-top: 3%;
     position: fixed;
     background-color: rgba(12, 12, 12, .9);
     z-index: 10000;
@@ -852,26 +853,31 @@ nav .pages {
 
 }
 
-#preview-content::after,
-.box-skins.character .preview-item.skin::after {
+#preview-content .skin-desc-name::before,
+.box-skins.character .preview-item.skin .skin-desc-name::before {
     content: '';
     opacity: 1;
     width: 26px;
     height: 12px;
     display: block;
     border-radius: 12px;
-    position: absolute;
-    left: 25px;
-    top: 25px;
+    position: relative;
+    margin-right: 14px;
 }
-
 #preview-content .skin-desc-name {
     font-weight: 500;
     position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     cursor: auto;
     z-index: 10;
-    left: 65px;
-    top: 21px;
+    left: 12px;
+    top: 16px;
+    padding: 4px 12px;
+    background: rgba(11, 11, 11, .7);
+    border-radius: 10px;
+    border: 1px solid rgba(13, 13, 13, .6);
 }
 
 .preview-extras {
@@ -986,12 +992,16 @@ nav .pages {
     transform: unset;
     font-size: 14px;
     opacity: 1;
-    width: 200px;
-    left: 25px;
-    top: 47px;
+    width: auto;
+    left: 12px;
+    top: 42px;
     align-items: flex-start;
     justify-content: space-between;
-    height: 35px;
+    height: auto;
+    padding: 4px 12px;
+    background: rgba(11, 11, 11, .7);
+    border-radius: 10px;
+    border: 1px solid rgba(13, 13, 13, .6);
 }
 
 /* .skin-color-info:empty,
@@ -1201,56 +1211,63 @@ nav .pages {
 
 
 .white #preview-content::before,
-.white #preview-content::after,
+.white #preview-content .skin-desc-name::before,
 .skin.white::after,
+.skin.white .skin-desc-name::before,
 .navigation-weapon-type.white::before {
     background: rgb(176, 195, 217);
 }
 
 .lblue #preview-content::before,
-.lblue #preview-content::after,
+.lblue #preview-content .skin-desc-name::before,
 .skin.lblue::after,
+.skin.lblue .skin-desc-name::before,
 .navigation-weapon-type.lblue::before {
     background: rgb(94, 152, 217);
 }
 
 .blue #preview-content::before,
-.blue #preview-content::after,
+.blue #preview-content .skin-desc-name::before,
 .skin.blue::after,
+.skin.blue .skin-desc-name::before,
 .navigation-weapon-type.blue::before {
     background: rgb(75, 105, 255);
 }
 
 .purple #preview-content::before,
-.purple #preview-content::after,
+.purple #preview-content .skin-desc-name::before,
 .skin.purple::after,
+.skin.purple .skin-desc-name::before,
 .navigation-weapon-type.purple::before {
     background: rgb(136, 71, 255);
 }
 
 .pink #preview-content::before,
-.pink #preview-content::after,
+.pink #preview-content .skin-desc-name::before,
 .skin.pink::after,
+.skin.pink .skin-desc-name::before,
 .navigation-weapon-type.pink::before {
     background: rgb(211, 44, 230);
 }
 
 .red #preview-content::before,
-.red #preview-content::after,
+.red #preview-content .skin-desc-name::before,
 .skin.red::after,
+.skin.red .skin-desc-name::before,
 .navigation-weapon-type.red::before {
     background: rgb(235, 75, 75);
 }
 
 .gold #preview-content::before,
-.gold #preview-content::after,
+.gold #preview-content .skin-desc-name::before,
 .skin.gold::after,
+.skin.gold .skin-desc-name::before,
 .navigation-weapon-type.gold::before {
     background: rgb(228, 174, 57);
 }
 
 .sticker #preview-content::before,
-.sticker #preview-content::after,
+.sticker #preview-content .skin-desc-name::before,
 .skin.sticker::after {
     background: rgb(90 90 90);
 }
@@ -1297,7 +1314,7 @@ nav .pages {
 }
 
 .inspect-craft #preview-content::before,
-.inspect-craft #preview-content::after {
+.inspect-craft #preview-content .skin-desc-name::before {
     content: unset;
 }
 
@@ -4414,6 +4431,7 @@ nav img {
     border-radius: 5px;
     color: rgb(46 46 46);
     margin: unset;
+    margin-top: 4px;
 }
 
 .promo-box .site-promo-copy::after {
@@ -15242,7 +15260,7 @@ header {
 .box-skins.character .preview-item.skin .skin-desc-name,
 .box-skins.character .preview-item.skin .skin-price-info {
     opacity: 1;
-    display: block;
+    display: flex;
 }
 
 .box-skins.character .preview-item.skin::before {
@@ -15383,11 +15401,10 @@ header {
     pointer-events: none;
 }
 
-.box-skins.character .preview-item.skin::after {
+.box-skins.character .preview-item.skin .skin-desc-name::before {
     display: block;
     width: 18px;
     height: 8px;
-    left: 20px;
 }
 
 .box-skins.character .skin .skin-desc-name,
@@ -15396,9 +15413,13 @@ header {
     bottom: unset;
     width: auto;
     z-index: 10;
-    left: 50px;
+    left: 20px;
     top: 20px;
     font-size: 16px;
+}
+
+.box-skins.character .skin .skin-desc-name {
+    filter: drop-shadow(0px 0px 3px black);
 }
 
 .box-skins.character .skin .skin-price-info {

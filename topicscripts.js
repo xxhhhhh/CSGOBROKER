@@ -2011,7 +2011,7 @@ if (window.location.pathname.includes('/topic/skins/')) {
                 });
 
                 $(document).on("mouseleave", ".loadout .skin", function () {
-                  $previewItem.stop(true, true).animate({ opacity: 0 }, 1000, function () {
+                  $previewItem.stop(true, true).animate({ opacity: 0 }, 1500, function () {
                     $previewItem.attr("class", "preview-item").empty();
                   });
                 });
