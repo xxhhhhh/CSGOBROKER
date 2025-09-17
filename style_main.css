@@ -872,12 +872,11 @@ nav .pages {
     align-items: center;
     cursor: auto;
     z-index: 10;
-    left: 12px;
-    top: 16px;
+    left: 13px;
+    top: 17px;
     padding: 4px 12px;
     background: rgba(11, 11, 11, .7);
     border-radius: 10px;
-    border: 1px solid rgba(13, 13, 13, .6);
 }
 
 .preview-extras {
@@ -993,15 +992,14 @@ nav .pages {
     font-size: 14px;
     opacity: 1;
     width: auto;
-    left: 12px;
-    top: 42px;
+    left: 13px;
+    top: 43px;
     align-items: flex-start;
     justify-content: space-between;
     height: auto;
     padding: 4px 12px;
     background: rgba(11, 11, 11, .7);
     border-radius: 10px;
-    border: 1px solid rgba(13, 13, 13, .6);
 }
 
 /* .skin-color-info:empty,
