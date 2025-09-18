@@ -4920,6 +4920,7 @@ nav img {
     z-index: 10;
     width: 100%;
     justify-content: center;
+    order: 1;
 
 }
 
@@ -11841,6 +11842,10 @@ header {
         padding-bottom: 45px;
     }
 
+    .more-content {
+        margin-bottom: 4px;
+    }
+
     .box.crypto-choice {
         opacity: 1;
     }
@@ -12709,8 +12714,8 @@ header {
         width: 32px;
     }
 
-    .singlemod-box {
-        flex-grow: 1;
+    .mods-box:not(.skins-box) .singlemod-box {
+        flex-grow: 0;
     }
 
     .singlemod-select img {
