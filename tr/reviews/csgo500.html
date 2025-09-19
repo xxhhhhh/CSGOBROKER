@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/tr/reviews/csgo500">
@@ -229,16 +229,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
         <div class="selected-lang">
             Tr
         </div>
     </div>
 </div>
-    </nav>    
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -252,26 +252,67 @@
                 <a href="https://play500.games/r/CSGOBROKER"><img src="/img/csgo500-logo.webp" alt="500 Casino" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 97.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode casino lang-tr">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>500 Casino</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/tr/csgo/casino" aria-label="Similar Sites of 500 Casino" class="review-button"></a>
+                  <a href="https://play500.games/r/CSGOBROKER" aria-label="Visit 500 Casino" class="review-button visit" target="_blank" rel="noopener"></a>
+                  <a href="/tr/mirrors/csgo500" class="review-button mirror-visit" aria-label="Mirrors"><span>Mirrors</span></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">İlk Depozitonuzda <strong>%300 Bonus ve 50 Ücretsiz</strong> Dönüş Kazanın</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="csgobroker"></button>
             </div>
         </div>
         <div class="box-extra-links">
-            <a href="/mirrors/csgo500" class="mirror-redirect extra-abox">
-                <div class="officon mirror"></div><span>Siteye Erişemiyor musunuz?</span></a>
+          <div class="promo-box extra-abox deposit-bonus counter-1">
+            <div class="logobg"><span>+300%</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">csgobroker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <a href="/tr/mirrors/csgo500" class="mirror-redirect extra-abox">
+            <div class="officon mirror"></div>
+            <span>Siteye erişemiyor musun?</span>
+          </a>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Artılar ve Eksiler</li>
+              <li data-target=".smallreview">500 Casino İncelemesi</li>
+              <li data-target=".instruction">500 Casino Bonuslarını Nasıl Talep Edebilirsiniz</li>
+              <li data-target=".screentable">Ekran Görüntüleri ve Modlar</li>
+              <li data-target=".sitedetails">Ödeme Yöntемleri</li>
+              <li data-target=".sitealternates">Benzer Siteler</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-    <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/tr/freebies/deposit-bonuses" class="depositbonus"><i class="officon depositbonuses"></i> Depozit Bonusu</a>
+                  <a href="/tr/freebies/progressive-rewards" class="progressiverewards"><i class="officon signupbonus"></i> Kademeli Ödüller</a>
+                  <a href="/tr/freebies/daily-rewards" class="dailyrewards"><i class="officon dailyrewards"></i> Günlük Ödüller</a>
+                  <a href="/tr/freebies/rakeback-system" class="rakeback"><i class="officon rakeback"></i> Rakeback Sistemi</a>
+                  <a href="/tr/freebies/rain-system" class="rain"><i class="officon rain"></i> Yağmur Sistemi</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="info-block">
                 <div class="site-attention blocked">
                     <i class="officon exclamation"></i><span>Site bazı ülkelerde erişilemeyebilir</span>
@@ -316,17 +357,34 @@
                 <li>Sağlanan bağlantıyı kullanarak <a target="_blank" rel="noopener" href="https://play500.games/r/CSGOBROKER">500 Casino</a>'ye gidi</li>
                 <li>Herhangi bir yöntemle kayıt olun</li>
                 <li>Profil Resminize ve ardından Ödüller'e tıklayın</li>
-                <li>Kod Girin: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                <li>Kod Girin: <code id="site-code">csgobroker</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                 <li>$25 veya daha fazla yatırarak %300 Bonus ve 50 Ücretsiz Dönüş kazanın!</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/tr/csgo/matchbetting" aria-label="Esports Betting" class="cs2"></a>
+                    <a href="/tr/csgo/casino" aria-label="Slots" class="slots"></a>
+                    <a href="/tr/csgo/matchbetting" aria-label="Sport Betting" class="sport"></a>
+                    <a href="/tr/csgo/casino" aria-label="Live Dealer" class="livedealer"></a>
+                    <a href="/tr/csgo/casino" aria-label="Poker" class="poker"></a>
+                    <a href="/tr/csgo/casino" aria-label="Blackjack" class="blackjack"></a>
+                    <a href="/tr/csgo/casino" aria-label="Baccarat" class="baccarat"></a>
+                    <a href="/tr/csgo/caseopening" aria-label="Case Opening" class="cases"></a>
+                    <a href="/tr/csgo/case-battle" aria-label="Case Battles" class="casebattles"></a>
+                    <a href="/tr/csgo/roulette" aria-label="Roulette" class="roulette"></a>
+                    <a href="/tr/csgo/roulette" aria-label="Wheel of Fortune" class="wheel"></a>
+                    <a href="/tr/csgo/crash" aria-label="Crash" class="crash"></a>
+                    <a href="/tr/csgo/plinko" aria-label="Plinko" class="plinko"></a>
+                    <a href="/tr/csgo/mines" aria-label="Mines" class="mines"></a>
+                    <a href="/tr" aria-label="Duels" class="duels"></a>
+                    <a href="/tr/csgo/dice" aria-label="Dice" class="dice"></a>
+                    <a href="/tr" aria-label="Towers" class="towers"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgo500_1.png" alt="500 Casino Main Page ScreenShot"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgo500_2.png" alt="500 Casino Wheel of Fortune ScreenShot"></div>
@@ -335,9 +393,84 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgo500_5.png" alt="500 Casino Casino Page ScreenShot"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Yatırma Yöntemleri</span>
+                <div class="methodlist" id="first">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/tr/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/tr/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/tr/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/tr/crypto" aria-label="Binance Coin" class="bnb"></a>
+                  <a href="/tr/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/tr/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/tr/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/tr/crypto" aria-label="Ripple" class="ripple"></a>
+                  <a href="/tr/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/tr/crypto" aria-label="Stellar" class="stellar"></a>
+                  <a href="/tr/crypto" aria-label="EOS" class="eos"></a>
+                  <a href="/tr/crypto" aria-label="Cardano" class="cardano"></a>
+                  <a href="/tr/crypto" aria-label="Polygon (Matic)" class="polygon"></a>
+                  <a href="/tr/crypto" aria-label="Avalanche" class="avalanche"></a>
+                  <a href="/tr" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/tr" aria-label="Skrill" class="skrill"></a>
+                  <a href="/tr" aria-label="Google Pay" class="gpay"></a>
+                  <a href="/tr" aria-label="Apple Pay" class="apay"></a>
+                  <a href="/tr" aria-label="Jeton" class="jeton"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/tr/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/tr/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/tr/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/tr/crypto" aria-label="Binance Coin" class="bnb"></a>
+                  <a href="/tr/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/tr/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/tr/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/tr/crypto" aria-label="Ripple" class="ripple"></a>
+                  <a href="/tr/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/tr/crypto" aria-label="Stellar" class="stellar"></a>
+                  <a href="/tr/crypto" aria-label="EOS" class="eos"></a>
+                  <a href="/tr/crypto" aria-label="Cardano" class="cardano"></a>
+                  <a href="/tr/crypto" aria-label="Polygon (Matic)" class="polygon"></a>
+                  <a href="/tr/crypto" aria-label="Avalanche" class="avalanche"></a>
+                  <a href="/tr" aria-label="Jeton" class="jeton"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Güven</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Destek</span>
+                  <div class="rating"><div class="star_rating" style="width: 100%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Ödemeler</span>
+                  <div class="rating"><div class="star_rating" style="width: 100%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Oynanabilirlik</span>
+                  <div class="rating"><div class="star_rating" style="width: 100%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 97.5%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
-                    <h3>Trust</h3>
+                    <h3>Güven</h3>
                     <p>500 Casino, 2016 yılından beri faaliyet göstermekte olup kendini istikrarlı ve güvenilir bir platform olarak
                         kanıtlamıştır.
                         Casino, Perfect Storm B.V tarafından işletilmekte ve Curaçao lisansına sahiptir, bu da temel bir yasal
@@ -348,7 +481,7 @@
                         kullanıcıları için güvenilir kılar.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Support</h3>
+                    <h3>Destek</h3>
                     <p>500 Casino, çevrim içi casinolarda en etkili destek sistemlerinden birine sahiptir. Sitede 7/24 canlı sohbet
                         bulunur
                         ve onlarca aktif moderatör sayesinde yanıtlar neredeyse anında gelir.
@@ -357,7 +490,7 @@
                         Hızlı yanıt süresi ve yetkin personel sayesinde destek deneyimi son derece kullanıcı dostudur.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Payments</h3>
+                    <h3>Ödemeler</h3>
                     <p>500 Casino, banka kartlarıyla doğrudan yerel para birimi yatırımlarını desteklemez. Bunun yerine,
                         kullanıcılar üçüncü taraf iş ortaklarından hediye kartları satın alarak bunları sitede aktive edebilir.
                         Platformun odağı kripto paralardadır; Bitcoin, Ethereum ve USDT dahil olmak üzere 15’ten fazla dijital
@@ -366,7 +499,7 @@
                         sistemi piyasadaki en iyilerden biri yapar.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Playability</h3>
+                    <h3>Oynanabilirlik</h3>
                     <p>500 Casino, klasik slotlardan canlı krupiyeli masa oyunlarına ve kripto odaklı özel formatlara kadar
                         etkileyici bir oyun çeşitliliği sunar.
                         Popüler modlar arasında crash, PvP düelloları, rulet ve BTC ödüllü "Şans Çarkı" bulunur. Düzenli turnuvalar,
@@ -374,6 +507,83 @@
                         Mobil versiyon neredeyse tüm işlevselliği korur ve tüm cihazlarda rahat bir oyun deneyimi sunar.
                         Bu da platformu modern ve zengin bir oyun deneyimi haline getirir.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best 500 Casino Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="HowlGG">
+                  <div class="logobg">
+                    <a href="/tr/reviews/howlgg"><img src="/img/howlgg-logo.webp" loading="lazy" draggable="false" alt="HowlGG"></a>
+                    <div class="main-mode casino lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/howlgg">HowlGG</a>
+                    <div class="site-reward"><p><strong>%25 Bonus</strong> Rakeback alın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/howlgg" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://howly.gg/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Gamdom">
+                  <div class="logobg">
+                    <a href="/tr/reviews/gamdom"><img src="/img/gamdom-logo.webp" loading="lazy" draggable="false" alt="Gamdom"></a>
+                    <div class="main-mode casino lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/gamdom">Gamdom</a>
+                    <div class="site-reward"><p><strong>Rakeback</strong> sistemini anında etkinleştirin</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/gamdom" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://gamdom.one/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Roobet">
+                  <div class="logobg">
+                    <a href="/tr/reviews/roobet"><img src="/img/roobet-logo.png" loading="lazy" draggable="false" alt="Roobet"></a>
+                    <div class="main-mode casino lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/roobet">Roobet</a>
+                    <div class="site-reward"><p><strong>Rakeback</strong> sistemini anında etkinleştirin</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/roobet" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://roobet.party/?ref=csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Rainbet">
+                  <div class="logobg">
+                    <a href="/tr/reviews/rainbet"><img src="/img/rainbet-logo.webp" loading="lazy" draggable="false" alt="Rainbet"></a>
+                    <div class="main-mode casino lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/rainbet">Rainbet</a>
+                    <div class="site-reward"><p>İlk Depozitonuzda <strong>%100 Bonus</strong> Dönüş Kazanın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/rainbet" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://rainbet.com/?r=broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -409,14 +619,14 @@
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

@@ -393,10 +393,11 @@ nav .pages {
     margin-left: 8px;
     padding-top: unset;
     background: unset;
+    margin-top: 56px;
 }
 
-.boxreview:has(.features.bonused) {
-    margin-top: 56px;
+.boxreview:has(.shortinfo.empty) {
+    margin-top: 0;
 }
 
 .boxdefaultpage {
@@ -2767,12 +2768,7 @@ h3 {
     width: auto;
     order: -1;
     height: auto;
-    opacity: 0;
     transition: all .15s ease-in-out;
-}
-
-.features.fadein {
-    opacity: 1;
 }
 
 .shortinfo {
@@ -2781,8 +2777,8 @@ h3 {
     /* background-color: var(--darkgray); */
     border-radius: 10px;
     margin-top: -56px;
+    display: flex;
     order: -2;
-    display: none;
 }
 
 .shortinfo .features {
@@ -2790,10 +2786,11 @@ h3 {
     background-color: var(--darkgray);
     padding-right: 17px;
     border-radius: 10px;
+    display: flex;
 }
 
-.shortinfo:has(.features.bonused) {
-    display: flex;
+.shortinfo.empty {
+    display: none;
 }
 
 .boxreview#mirror {
@@ -4286,7 +4283,8 @@ nav img {
 }
 
 .promo-box {
-    height: 0;
+    height: 80px;
+    animation: fadeIn .2s ease-in-out forwards;
     font-size: 15px;
     font-weight: 500;
     color: var(--white);
@@ -4295,11 +4293,6 @@ nav img {
     border: 0 solid transparent;
     margin-top: 0;
     order: 1;
-}
-
-.promo-box.show {
-    height: 80px;
-    animation: fadeIn .2s ease-in-out forwards;
 }
 
 .promo-box:hover {
@@ -5635,7 +5628,7 @@ nav img:active,
     width: 36px;
     height: 36px;
     cursor: help;
-    z-index: 1;
+    z-index: 2;
 }
 
 .main-mode-box {
@@ -6179,7 +6172,7 @@ h4:has(.boxtitle) {
     right: 12px;
 }
 
-.box.main .content button.hidden {
+.box.main .content .copy {
     display: none;
 }
 
@@ -12186,7 +12179,7 @@ header {
         margin-top: -10px;
     }
 
-    .sitepage.closed .boxreview:has(.features.bonused) {
+    .sitepage.closed .boxreview:has(.features) {
         margin-top: 0;
     }
 
@@ -13578,7 +13571,7 @@ header {
         padding-top: unset;
     }
 
-    .boxreview:has(.features.bonused) {
+    .boxreview:has(.features) {
         margin-top: unset;
     }       
 

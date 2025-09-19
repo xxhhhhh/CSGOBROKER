@@ -52,24 +52,42 @@ const StorageHelper = {
   }
 };
 
-StorageHelper.initVersion({ currentVersion: '1.11' });
+StorageHelper.initVersion({ currentVersion: '1.2' });
 
 function isRuPage(pathname) {
   return pathname.startsWith('/ru/') || pathname === '/ru' || pathname === '/ru.html';
 }
 
-
-
+/**
+ * Копирует текст в буфер обмена. Показывает визуальный отклик через showCopied.
+ * @param {string|Element} source - Строка или DOM-узел, из которого берётся текст.
+ * @param {Element} copyButton - Кнопка-источник для showCopied.
+ */
 function copyToClipboard(source, copyButton) {
-  const text = typeof source === "string" ? source : source.textContent.trim();
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(text).then(() => showCopied(copyButton));
+  const text = typeof source === "string" ? source : (source?.textContent || "").trim();
+  if (!text) return;
+
+  if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => showCopied(copyButton))
+      .catch(() => {
+        const tempInput = document.createElement("textarea");
+        tempInput.value = text;
+        tempInput.style.position = "fixed";
+        tempInput.style.opacity = "0";
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        try { document.execCommand("copy"); } catch {}
+        document.body.removeChild(tempInput);
+        showCopied(copyButton);
+      });
   } else {
     const tempInput = document.createElement("input");
     document.body.appendChild(tempInput);
     tempInput.value = text;
     tempInput.select();
-    document.execCommand("copy");
+    try { document.execCommand("copy"); } catch {}
     document.body.removeChild(tempInput);
     showCopied(copyButton);
   }
@@ -78,7 +96,7 @@ function copyToClipboard(source, copyButton) {
 function showCopied(copyButton) {
   const title = document.createElement("div");
   title.className = "copied-title";
-  title.textContent = languageTag === "ru" ? "Скопировано" : "Copied";
+  title.textContent = (typeof languageTag !== "undefined" && languageTag === "ru") ? "Скопировано" : "Copied";
   copyButton.appendChild(title);
   copyButton.classList.add("icon-changed");
 
@@ -91,6 +109,107 @@ function showCopied(copyButton) {
 
   setTimeout(() => copyButton.classList.remove("icon-changed"), 800);
 }
+
+(function () {
+  function getTextFromTarget(btn) {
+    const explicit = btn.getAttribute("data-copy-text");
+    if (explicit) return explicit;
+
+    const codeAttr = btn.getAttribute("code") || btn.getAttribute("data-code");
+    if (codeAttr) return String(codeAttr);
+
+    const targetSel = btn.getAttribute("data-copy-target");
+    if (targetSel) {
+      const el = document.querySelector(targetSel);
+      if (el) {
+        const val = "value" in el ? el.value : (el.textContent || "");
+        const trimmed = (val ?? "").toString().trim();
+        if (trimmed) return trimmed;
+      }
+    }
+
+    const prev = btn.previousElementSibling;
+    if (prev) {
+      if (prev.tagName === "CODE") return prev.textContent.trim();
+      if (prev.tagName === "PRE") {
+        const innerCode = prev.querySelector("code");
+        if (innerCode) return innerCode.textContent.trim();
+      }
+    }
+
+    const siteCode = document.getElementById("site-code");
+    if (siteCode) {
+      const sc = (siteCode.value ?? siteCode.textContent ?? "").toString().trim();
+      if (sc) return sc;
+    }
+
+    return "";
+  }
+
+  function onClick(e) {
+    const btn = e.target.closest("[data-copy], .copy, .site-promo-copy");
+    if (!btn) return;
+
+    e.preventDefault();
+
+    const text = getTextFromTarget(btn);
+    if (!text) return;
+
+    copyToClipboard(text, btn);
+  }
+
+  document.addEventListener("click", onClick, { passive: false });
+})();
+
+
+(function(){
+  function updateContainerHeight(container){
+    if (window.innerWidth < 1365){
+      container.style.height = '';
+      return;
+    }
+    const actives = container.querySelectorAll('.sitepros.active');
+    if (!actives.length){
+      container.style.height = '';
+      return;
+    }
+    let max = 0;
+    actives.forEach(sp=>{
+      const method = sp.querySelector('.methodlist');
+      const total = sp.offsetHeight + (method ? method.offsetHeight : 0);
+      if (total > max) max = total;
+    });
+    const cur = parseInt(container.style.height || '0', 10) || 0;
+    if (max > cur) container.style.height = max + 'px';
+  }
+
+  function onSiteprosClick(e){
+    const sp = e.currentTarget;
+    sp.classList.toggle('active');
+    const container = sp.closest('.sitedetails');
+    if (container) requestAnimationFrame(()=>updateContainerHeight(container));
+  }
+
+  function stop(e){ e.stopPropagation(); }
+
+  function init(){
+    document.querySelectorAll('.sitedetails .sitepros .methodlist')
+      .forEach(el=>el.addEventListener('click', stop));
+
+    document.querySelectorAll('.sitedetails .sitepros')
+      .forEach(el=>el.addEventListener('click', onSiteprosClick));
+
+    window.addEventListener('resize', ()=>{
+      document.querySelectorAll('.sitedetails').forEach(updateContainerHeight);
+    });
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
 
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = themeToggleBtn.querySelector('i');
@@ -241,790 +360,6 @@ forcemodsboxes();
       
     });
   }
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    const basePath = "/code-parts/site-infos";
-  
-    function computeHash(data) {
-      const str = JSON.stringify(data);
-      const utf8Bytes = new TextEncoder().encode(str);
-      const binary = Array.from(utf8Bytes)
-        .map((b) => String.fromCharCode(b))
-        .join("");
-      return btoa(binary);
-    }    
-  
-    const allDataCache = loadCachedData('sites_load') || { data: {}, hashes: {} };
-
-    const jsonLoadPromises = {};
-
-    function loadAllJsonData(filePath, callback) {
-      const pageKey = filePath.split('/').pop().replace('.json', '');
-
-      if (allDataCache.data[pageKey]) {
-        callback(allDataCache.data[pageKey]);
-      }
-
-      if (!jsonLoadPromises[pageKey]) {
-        jsonLoadPromises[pageKey] = fetch(filePath)
-          .then(response => response.json())
-          .then(data => {
-            const newHash = computeHash(data);
-            if (newHash !== allDataCache.hashes[pageKey]) {
-              allDataCache.data[pageKey] = data;
-              allDataCache.hashes[pageKey] = newHash;
-              saveToCache('sites_load', allDataCache);
-            }
-            return data;
-          });
-      }
-
-      jsonLoadPromises[pageKey].then(callback);
-    }
-
-
-    function modifyBox(box, mainMode) {
-      const logobg = box.querySelector(".logobg");
-      if (!logobg) return;
-
-      const existingMainMode = logobg.querySelector(".main-mode");
-      if (existingMainMode) existingMainMode.remove();
-
-      const mainModeDiv = document.createElement("div");
-      mainModeDiv.className = `main-mode ${mainMode} lang-${languageTag}`;
-      mainModeDiv.innerHTML = `
-        <div class="main-mode-box">
-          <div class="main-mode-icon"></div>
-        </div>
-      `;
-
-      logobg.appendChild(mainModeDiv);
-    }
-
-
-  
-    function loadReviewSettings(callback) {
-      fetch('/code-parts/review-settings.json')
-        .then(response => response.json())
-        .then(data => callback(data));
-    }
-  
-    function addMirrorButton(box, pageKey, data) {
-      const visitButton = box.querySelector(".box:not(.main) .content-buttons a.review-button.visit");
-
-      const translations = {
-        "checkMirrors": {
-          "en": "Mirrors",
-          "ru": "Зеркала"
-        }
-      };
-
-      function getTranslation(key) {
-        return translations[key][languageTag] || translations[key]['en'];
-      }
-
-      if (
-        visitButton &&
-        data.mirror &&
-        !box.querySelector(".mirror-visit")
-      ) {
-        const mirrorButton = document.createElement("a");
-        mirrorButton.href = `/mirrors/${pageKey}`;
-        mirrorButton.className = "review-button mirror-visit";
-        mirrorButton.setAttribute("aria-label", getTranslation("checkMirrors"));
-
-        const span = document.createElement("span");
-        span.textContent = getTranslation("checkMirrors");
-        mirrorButton.appendChild(span);
-
-        visitButton.insertAdjacentElement("afterend", mirrorButton);
-      }
-    }
-
-
-    function addTGButton(box, data) {
-      const visitButton = box.querySelector(".box .content-buttons a.review-button.visit");
-
-      const tgHref = (languageTag === 'en' && data["tg-app-en"]) ? data["tg-app-en"] : data["tg-app"];
-
-      if (visitButton && tgHref && !document.querySelector(".tg-app")) {
-        const tgButton = document.createElement("a");
-        tgButton.href = tgHref;
-        tgButton.className = "tg-app defbutton";
-        tgButton.target = "_blank";
-        tgButton.rel = "noopener";
-
-        const labelSpan = document.createElement("span");
-        labelSpan.textContent = languageTag === 'ru' ? 'Telegram Приложение' : 'Telegram App';
-        tgButton.appendChild(labelSpan);
-
-        visitButton.insertAdjacentElement("afterend", tgButton);
-      }
-    }
-  
-    window.updateReviewButtons = updateReviewButtons;
-  
-    function updateReviewButtons(box, data, pageKey, reviewSettings) {
-      const reviewButton = box.querySelector('.content-buttons a.review-button');
-      const visitButton = box.querySelector('.content-buttons a.review-button.visit');
-  
-      const translations = {
-        "similarSites": {
-          "en": `Similar Sites of ${data.name}`,
-          "ru": `Альтернативы ${data.name}`
-        },
-        "readReview": {
-          "en": `Read Review ${data.name}`,
-          "ru": `Читать Обзор ${data.name}`
-        },
-        "visitSite": {
-          "en": `Visit ${data.name}`,
-          "ru": `Перейти на ${data.name}`
-        }
-      };
-  
-      function getTranslation(key) {
-        return translations[key][languageTag] || translations[key]['en'];
-      }
-  
-      if (visitButton && data.link) {
-        if (window.location.pathname.includes("/marketplaces") && data["marketplaces"]) {
-          visitButton.href = data["marketplaces"];
-        } else if (window.location.pathname.includes("/instant-sell") && data["instant-sell"]) {
-          visitButton.href = data["instant-sell"];
-        } else if (window.location.pathname.includes("/buy-skins") && data["buy-skins"]) {
-          visitButton.href = data["buy-skins"];
-        } else if (window.location.pathname.includes("/sell-skins") && data["sell-skins"]) {
-          visitButton.href = data["sell-skins"];
-        } else if ((window.location.pathname.includes("/ru/earning/earn-by-play") || window.location.pathname.includes("/ru/csgo/earn-by-play-csgo")) && data["earn-by-play"]) {
-          visitButton.href = data["earn-by-play"];
-        } else if (window.location.pathname.includes("/earn-by-play") && data["earn-by-play-en"]) {
-          visitButton.href = data["earn-by-play-en"];
-        } else if (languageTag === 'en' && data["link-en"]) {
-          visitButton.href = data["link-en"];
-        } else {
-          visitButton.href = data.link;
-        }
-        visitButton.setAttribute('aria-label', getTranslation('visitSite'));
-      }
-  
-      if (reviewButton) {
-        if (window.location.pathname.includes("/reviews/") || window.location.pathname.includes("/mirrors/")) {
-          if (data["Main Mode"] && reviewSettings) {
-            const mainModePath = reviewSettings.mainModeLinks[data["Main Mode"]];
-            if (mainModePath) {
-              reviewButton.href = mainModePath;
-              reviewButton.setAttribute('aria-label', getTranslation('similarSites'));
-            }
-          }
-        } else {
-          reviewButton.href = `/reviews/${pageKey}`;
-          reviewButton.setAttribute('aria-label', getTranslation('readReview'));
-        }
-      }
-  
-      if (data.mirror) {
-        addMirrorButton(box, pageKey, data);
-      }
-
-      if (data["tg-app"] || data["tg-app-en"]) {
-        addTGButton(box, data);
-      }
-    }
-
-    document.addEventListener("boxesInserted", () => {
-      const holderBoxes = document.querySelectorAll(".boxes-holder .box");
-
-      holderBoxes.forEach((box) => {
-        const logoLink = box.querySelector(".logobg a");
-        if (!logoLink) return;
-
-        const path = logoLink.getAttribute("href");
-        const pageKey = path.split("/").pop();
-        const jsonFilePath = `/code-parts/site-infos/${pageKey}.json`;
-
-        const boxId = box.id?.trim();
-        if (!boxId) return;
-
-        loadAllJsonData(jsonFilePath, (data) => {
-          if (data.code) {
-            const copyButtons = box.querySelectorAll(".copy");
-            copyButtons.forEach((button) => {
-              button.addEventListener("click", () =>
-                copyToClipboard(data.code, button)
-              );
-            });
-          }
-
-          if (data["Main Mode"]) {
-            modifyBox(box, data["Main Mode"]);
-          }
-
-          updateReviewButtons(box, data, pageKey);
-          updateURLs(document.querySelector(".boxes-holder"));
-        });
-
-        // ✅ Правильное сравнение по ID, как в JSON
-        const ratings = window.ratings || {};
-        if (ratings[boxId] !== undefined) {
-          addStarRating(boxId, ratings[boxId]);
-        }
-
-        if (languageTag === 'ru') {
-          const required = window.requiredRoute || [];
-          const maybe = window.maybeRoute || [];
-
-          if (required.includes(boxId) || maybe.includes(boxId)) {
-            handleRouteDisplay([box], required, maybe);
-          }
-        }
-      });
-    });
-    
-    
-
-    let currentPath = window.location.pathname;
-  
-    if (currentPath.includes("/reviews/") || currentPath.includes("/mirrors/")) {
-      if (currentPath.endsWith(".html")) {
-        currentPath = currentPath.slice(0, -5);
-      }
-  
-      const pageKey = currentPath.split("/").pop();
-      const mainJsonFilePath = `${basePath}/${pageKey}.json`;
-  
-      loadReviewSettings((reviewSettings) => {
-        loadAllJsonData(mainJsonFilePath, (data) => {
-          if (data.code) {
-            const siteCodeElement = document.getElementById("site-code");
-            if (siteCodeElement) {
-              siteCodeElement.textContent = data.code;
-            }
-  
-            const copyButtons = document.querySelectorAll(".copy");
-            copyButtons.forEach((button) => {
-              button.addEventListener("click", () =>
-                copyToClipboard(data.code, button)
-              );
-            });
-          }
-  
-          const mainBox = document.querySelector(".box.main");
-          if (mainBox) {
-            if (data["Main Mode"]) {
-              modifyBox(mainBox, data["Main Mode"]);
-            }
-            updateReviewButtons(mainBox, data, pageKey, reviewSettings);
-            updateURLs(reviewBox);
-          }
-        });
-      });
-    } else {
-      const holderBoxes = document.querySelectorAll(".boxes-holder .box");
-      holderBoxes.forEach((box) => {
-        const logoLink = box.querySelector(".logobg a");
-        if (logoLink) {
-          const path = logoLink.getAttribute("href");
-          const pageKey = path.split("/").pop();
-          const jsonFilePath = `${basePath}/${pageKey}.json`;
-  
-          loadAllJsonData(jsonFilePath, (data) => {
-            if (data.code) {
-              const copyButtons = box.querySelectorAll(".copy");
-              copyButtons.forEach((button) => {
-                button.addEventListener("click", () =>
-                  copyToClipboard(data.code, button)
-                );
-              });
-            }
-            if (data["Main Mode"]) {
-              modifyBox(box, data["Main Mode"]);
-            }
-            updateReviewButtons(box, data, pageKey);
-            updateURLs(sitesList);
-          });
-        }
-      });
-    }
-  });
-  
-
-  document.addEventListener("DOMContentLoaded", function() {
-    let currentPath = window.location.pathname;
-  
-    if (!currentPath.includes("/reviews/") && !currentPath.includes("/mirrors/")) {
-        return;
-    }
-  
-    const basePath = "/code-parts/site-infos";
-    const altSitesPath = `${basePath}/sites-alts/`;
-    const filterSettingsPath = "/code-parts/filter-settings.json";
-    const reviewSettingsPath = "/code-parts/review-settings.json"; 
-    const translationsPath = "/code-parts/review-translations.json"; 
-  
-    if (currentPath.endsWith(".html")) {
-        currentPath = currentPath.slice(0, -5);
-    }
-  
-    const pageKey = currentPath.split("/").pop();
-    const jsonFilePath = `${basePath}/${pageKey}.json`;
-  
-    function loadPageData(filePath) {
-        return fetch(filePath)
-            .then(response => {
-                if (!response.ok) {
-                    return null;
-                }
-                return response.json();
-            })
-            .catch(() => null);
-    }
-  
-    function insertHTMLContent(selector, contentArray) {
-        const container = document.querySelector(selector);
-        if (container && contentArray) {
-            container.innerHTML = '';
-            contentArray.forEach(htmlString => {
-                container.insertAdjacentHTML('beforeend', htmlString);
-            });
-        }
-    }
-  
-// Маска из 5 звёзд, ширина 108px
-function generateRatingStars(rating) {
-    const percentage = (rating / 5) * 100;
-
-    return `
-        <div class="star_rating" style="width: ${percentage}%;"></div>
-    `;
-}
-
-function insertOverallRating(ratings) {
-    const possibleRatings = ['Trust', 'Support', 'Payments', 'Functional', 'Pricing', 'Variety', 'Playability'];
-    let sum = 0;
-    let count = 0;
-
-    possibleRatings.forEach(category => {
-        if (ratings[category]) {
-            sum += ratings[category];
-            count++;
-        }
-    });
-
-    if (count === 0) return;
-
-    const averageRating = sum / count; // precise value without rounding
-
-    const container = document.querySelector('.rating');
-    if (container) {
-        const liveratingDiv = document.createElement('div');
-        liveratingDiv.classList.add('liverating');
-        liveratingDiv.innerHTML = generateRatingStars(averageRating);
-
-        container.appendChild(liveratingDiv);
-        liveratingDiv.classList.add('fadein');
-    }
-}
-
-  
-  function insertFeatures(features, settings, featureOrder) {
-      const featuresContainer = document.querySelector('.boxreview .features');
-      if (featuresContainer) {
-          if (features && features.length > 0) {
-              const featuresBox = document.createElement('div');
-              featuresBox.classList.add('featuresbox');
-  
-              const typesInside = document.createElement('div');
-              typesInside.classList.add('typesinside');
-  
-              features.sort((a, b) => {
-                  const indexA = featureOrder.indexOf(a);
-                  const indexB = featureOrder.indexOf(b);
-                  return (indexA === -1 ? featureOrder.length : indexA) - (indexB === -1 ? featureOrder.length : indexB);
-              });
-  
-              features.forEach(feature => {
-                  if (settings[feature]) {
-                      const featureName = settings[feature].name || feature;
-                      const featurePath = settings[feature].path || '#';
-                      const featureClass = feature.toLowerCase().replace(/\s+/g, '-');
-                      const featureIcon = settings[feature].icon || ''; 
-  
-                      const featureLink = `
-                          <a href="${featurePath}" class="${featureClass}">
-                              ${featureIcon ? `<i class="${featureIcon}"></i>` : ''} ${featureName}
-                          </a>
-                      `;
-                      typesInside.insertAdjacentHTML('beforeend', featureLink);
-                  }
-              });
-  
-              featuresBox.appendChild(typesInside);
-              featuresContainer.appendChild(featuresBox);
-              featuresContainer.classList.add('fadein');
-          }
-      }
-  }
-  
-    function sortAndInsertContent(content, order, selector) {
-        if (content && content.length > 0) {
-            content.sort((a, b) => {
-                const classA = a.match(/class="([^"]+)"/)?.[1] || '';
-                const classB = b.match(/class="([^"]+)"/)?.[1] || '';
-                const indexA = order.indexOf(classA);
-                const indexB = order.indexOf(classB);
-                return (indexA === -1 ? order.length : indexA) - (indexB === -1 ? order.length : indexB);
-            });
-  
-            insertHTMLContent(selector, content);
-        }
-    }
-  
-    function translateTextElements(translations) {
-      var siteprosElements = document.querySelectorAll(".sitedetails .sitepros span, .smallreview.criteria h3");
-      for (var i = 0; i < siteprosElements.length; i++) {
-          var element = siteprosElements[i];
-          var originalText = element.textContent.trim();
-          
-          if (translations.hasOwnProperty(originalText)) {
-              element.childNodes.forEach(node => {
-                  if (node.nodeType === Node.TEXT_NODE) {
-                      node.textContent = node.textContent.replace(originalText, translations[originalText]);
-                  }
-              });
-          }
-      }
-  
-      var ratingwayElements = document.querySelectorAll('.ratingsection .ratingway span, .content button, .boxreview .plusminus .criteria .par p, .features .featuresbox .typesinside a, .instruction li');
-      for (var j = 0; j < ratingwayElements.length; j++) {
-          var element = ratingwayElements[j];
-          var originalText = element.textContent.trim();
-  
-          if (translations.hasOwnProperty(originalText)) {
-              element.childNodes.forEach(node => {
-                  if (node.nodeType === Node.TEXT_NODE) {
-                      node.textContent = node.textContent.replace(originalText, translations[originalText]);
-                  }
-              });
-          }
-      }
-  }
-  
-  function insertAlternatives(alternatives) {
-
-    const mainSiteName = document.querySelector('.box.main .content h4').textContent.trim();
-
-    let alternatesTitle = '';
-    switch (languageTag) {
-        case 'ru':
-            alternatesTitle = `Похожие Сайты на ${mainSiteName}`;
-            break;
-        case 'en':
-            alternatesTitle = `Best ${mainSiteName} Alternatives`;
-            break;
-        case 'tr':
-            alternatesTitle = `En İyi ${mainSiteName} Alternatifleri`;
-            break;
-        case 'es':
-            alternatesTitle = `Mejores Alternativas a ${mainSiteName}`;
-            break;
-        case 'pl':
-            alternatesTitle = `Najlepsze alternatywy dla ${mainSiteName}`;
-            break;
-        default:
-            alternatesTitle = `Best ${mainSiteName} Alternatives`;
-    }
-
-        siteAlternates = document.createElement('div');
-        siteAlternates.className = 'sitealternates';
-        siteAlternates.innerHTML = `
-            <div class="alternates-title">${alternatesTitle}</div>
-            <div class="sitealternatesboxes"></div>
-        `;
-
-        const criterias = document.querySelector('.criteria-descriptions');
-        const ratingsumm = document.querySelector('.ratingsumm');
-        
-        if (criterias) {
-            criterias.insertAdjacentElement('afterend', siteAlternates);
-        } 
-        else if (ratingsumm) {
-            ratingsumm.insertAdjacentElement('afterend', siteAlternates);
-        } 
-      else {
-        }
-    
-    siteAlternatesBoxes = siteAlternates.querySelector('.sitealternatesboxes');
-
-    alternatives.forEach(alt => {
-        const altJsonPath = `${altSitesPath}${alt}.json`;
-        loadPageData(altJsonPath).then(altData => {
-            const altBox = document.createElement('div');
-            altBox.className = 'box';
-            altBox.id = altData.name;
-
-            let rewardText = altData.reward;
-            if (languageTag === 'ru' && altData.reward_ru) {
-                rewardText = altData.reward_ru;
-            } else if (languageTag === 'tr' && altData.reward_tr) {
-                rewardText = altData.reward_tr;
-            } else if (languageTag === 'es' && altData.reward_es) {
-                rewardText = altData.reward_es;
-            } else if (languageTag === 'pl' && altData.reward_pl) {
-                rewardText = altData.reward_pl;
-            }
-
-            let reviewLink = `/reviews/${alt}`;
-
-            altBox.innerHTML = `
-                <div class="logobg">
-                    <a href="${reviewLink}"><img src="${altData.logo}" loading="lazy" draggable="false" alt="${altData.name}"></a>
-                </div>
-                <div class="content">
-                    <a class="boxtitle" href="${reviewLink}">${altData.name}</a>
-                    <div class="site-reward">
-                        <p>${rewardText}</p>
-                    </div>
-                <div class="content-buttons">
-                    <a href="${reviewLink}" aria-label="Read Review" class="review-button"></a>
-                    <a href='${altData.link}' aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
-                </div>
-                </div>`;
-
-            siteAlternatesBoxes.appendChild(altBox);
-        });
-    });
-
-    Promise.all(alternatives.map(alt => loadPageData(`${altSitesPath}${alt}.json`)))
-        .then(() => {
-            for (let i = alternatives.length; i < 4; i++) {
-                const emptyBox = document.createElement('div');
-                emptyBox.className = 'box';
-                siteAlternatesBoxes.appendChild(emptyBox);
-            }
-            for (var boxId in ratings) {
-                addStarRating(boxId, ratings[boxId]);
-            }
-            updateURLs(siteAlternatesBoxes);
-        });
-}
-
-function insertReviewLinks(codes, codeValue, codesBinding) {
-  if (!codes || Object.keys(codes).length === 0 || !codeValue) return;
-
-  let reviewLinksContainer = document.querySelector(".box-extra-links");
-
-  if (!reviewLinksContainer) {
-    reviewLinksContainer = document.createElement("div");
-    reviewLinksContainer.className = "box-extra-links";
-
-    const siteBlock = document.querySelector(".siteblock");
-    const mainBox = siteBlock ? siteBlock.querySelector(".box.main") : null;
-
-    if (mainBox && siteBlock) {
-      mainBox.insertAdjacentElement("afterend", reviewLinksContainer);
-    } else {
-      return;
-    }
-  }
-
-  const fragment = document.createDocumentFragment();
-  const promoBoxes = [];
-  let index = 1;
-
-  Object.entries(codes).forEach(([codeName, codeDisplay]) => {
-    const className = codesBinding[codeName] || "default-bonus";
-    const counterClass = `counter-${index}`;
-    const promoText = languageTag === "ru" ? "Промокод" : "Promo";
-
-    const box = document.createElement("div");
-    box.className = `promo-box extra-abox ${className} ${counterClass}`;
-
-    box.innerHTML = `
-      <div class="logobg">
-        <span>${codeDisplay}</span>
-      </div>
-      <div class="content">
-        <p>${promoText}</p>
-        <code class="promo-code">${codeValue}</code>
-        <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
-      </div>
-    `;
-
-    fragment.appendChild(box);
-    promoBoxes.push(box);
-    index++;
-  });
-
-  reviewLinksContainer.appendChild(fragment);
-
-  requestAnimationFrame(() => {
-    setTimeout(() => {
-      promoBoxes.forEach((box, i) => {
-        setTimeout(() => {
-          box.classList.add("show");
-        }, i * 150); // постепенное появление
-      });
-    }, 50); // короткая задержка после первой отрисовки
-  });
-}
-
-
-  
-      Promise.all([
-        loadPageData(jsonFilePath),
-        StorageHelper.getJSON('reviews_preset') || Promise.all([
-          loadPageData(filterSettingsPath),
-          loadPageData(reviewSettingsPath),
-          loadPageData(translationsPath)
-        ]).then(([f, r, t]) => {
-          const preset = { filter: f, review: r, translation: t };
-          StorageHelper.setJSON('reviews_preset', preset);
-          return preset;
-        })
-      ]).then(([pageData, reviewsPreset]) => {
-        const filterSettings = reviewsPreset.filter;
-        const reviewSettings = reviewsPreset.review;
-        const translations = reviewsPreset.translation
-      if (pageData && reviewSettings) {
-          sortAndInsertContent(pageData.gamemodesContent, reviewSettings.gamemodesOrder, '.gamemodes .featuresbox .typesinside');
-          insertFeatures(pageData.featuresContent, filterSettings, reviewSettings.featureOrder);
-          insertReviewLinks(pageData.codes, pageData.code, reviewSettings.codesBinding || {});
-  
-          const sitedetailsContainer = document.querySelector('.sitedetails');
-          if (sitedetailsContainer) {
-              sitedetailsContainer.innerHTML = '';
-          }
-
-          if (pageData.code) {
-            const copyButtons = document.querySelectorAll(".box-extra-links .copy");
-            copyButtons.forEach((button) => {
-                button.addEventListener("click", () => {
-                    copyToClipboard(button.previousElementSibling, button);
-                });
-            });
-        }
-          
-          if (pageData.firstMethodContent || pageData.secondMethodContent) {
-              const sitedetails = document.createElement('div');
-              sitedetails.classList.add('sitedetails');
-              
-              if (pageData.firstMethodContent) {
-                  const depositMethods = document.createElement('div');
-                  depositMethods.classList.add('sitepros');
-                  depositMethods.innerHTML = `
-                      <span>Deposit Methods</span>
-                      <div class="methodlist" id="first"></div>
-                  `;
-                  sitedetails.appendChild(depositMethods);
-              }
-  
-              if (pageData.secondMethodContent) {
-                  const withdrawMethods = document.createElement('div');
-                  withdrawMethods.classList.add('sitepros');
-                  withdrawMethods.innerHTML = `
-                      <span>Withdraw Methods</span>
-                      <div class="methodlist" id="second"></div>
-                  `;
-                  sitedetails.appendChild(withdrawMethods);
-              }
-              
-              const screenTable = document.querySelector('.screentable');
-              if (screenTable) {
-                  screenTable.insertAdjacentElement('afterend', sitedetails);
-              }
-              insertRatings(pageData.ratings);
-
-              if (pageData["Sites Alternatives"] && pageData["Sites Alternatives"].length > 0) {
-                insertAlternatives(pageData["Sites Alternatives"]);
-            }
-          }
-  
-          const methodOrder = reviewSettings.paymentMethodsOrder;
-          sortAndInsertContent(pageData.firstMethodContent, methodOrder, '.methodlist#first');
-          sortAndInsertContent(pageData.secondMethodContent, methodOrder, '.methodlist#second');
-      }
-  
-      if (translations) {
-          if (translations[languageTag]) {
-              translateTextElements(translations[languageTag]);
-          }
-      }
-  
-      const reviewlinks = document.querySelectorAll('.boxreview, .box-extra-links');
-      reviewlinks.forEach(link => {
-          updateURLs(link);
-      });
-  
-      $(document).ready(function() {
-          $('.sitepros').click(function() {
-              $(this).toggleClass("active");
-      
-              if ($(window).width() >= 1365) {
-                  var $methodlist = $(this).find('.methodlist');
-                  var methodlistHeight = $methodlist.outerHeight(true);
-                  var totalHeight = $(this).height() + methodlistHeight;
-                  var $parent = $(this).parent('.sitedetails');
-                  var $otherActiveSitepros = $(this).siblings('.sitepros.active');
-                  var currentHeight = parseInt($parent.css('height'));
-      
-                  if ($(this).hasClass("active")) {
-                      if (currentHeight < totalHeight) {
-                          $parent.css('height', totalHeight + 'px');
-                      }
-                  } else if ($otherActiveSitepros.length === 0) {
-                      $parent.css('height', '');
-                  }
-              }
-          });
-      
-          $('.sitepros .methodlist').click(function(event) {
-              event.stopPropagation();
-          });
-      });
-  
-    function insertRatings(ratings) {
-        if (ratings) {
-            let container = document.querySelector('.ratingsumm');
-            if (!container) {
-                container = document.createElement('div');
-                container.classList.add('ratingsumm');
-                const sitedetails = document.querySelector('.sitedetails');
-                if (sitedetails) {
-                    sitedetails.insertAdjacentElement('afterend', container);
-                }
-            }
-
-            container.innerHTML = '';
-
-            const ratingSection = document.createElement('div');
-            ratingSection.classList.add('ratingsection');
-
-            for (const [category, rating] of Object.entries(ratings)) {
-                const percentage = (rating / 5) * 100;
-                const ratingHTML = `
-                    <div class="ratingway">
-                        <span>${category}</span>
-                        <div class="rating">
-                            <div class="star_rating" style="width: ${percentage}%;"></div>
-                        </div>
-                    </div>
-                `;
-                ratingSection.insertAdjacentHTML('beforeend', ratingHTML);
-            }
-
-            container.appendChild(ratingSection);
-
-            insertOverallRating(ratings);
-        }
-    }
-  });
-  
-  
-  
-  });
-
-
 
   document.addEventListener('DOMContentLoaded', function () {
     const userAgent = navigator.userAgent;
@@ -1366,12 +701,12 @@ if (supportedLanguages.includes(languageTag)) {
     `;
 
     const criteriaDescriptions = document.querySelector('.criteria-descriptions');
-    if (criteriaDescriptions) {
-      criteriaDescriptions.insertAdjacentHTML('afterend', html);
-    } else if (window.location.pathname.includes('/reviews/')) {
+    if (window.location.pathname.includes('/reviews/')) {
       const boxReview = document.querySelector('.boxreview');
       if (boxReview) {
         boxReview.insertAdjacentHTML('beforeend', html);
+    } else if (criteriaDescriptions) {
+      criteriaDescriptions.insertAdjacentHTML('afterend', html);
       }
     } else {
       const insertionPoint = document.querySelector('.boxes-holder');
@@ -2545,243 +1880,91 @@ $(document).ready(function() {
 
   $(window).trigger('scroll');
 });
-  
-document.addEventListener("DOMContentLoaded", function () {
+
+/* eslint-disable */
+(function(){
   const path = window.location.pathname;
 
-  // REVIEW PAGE
+  // REVIEW PAGE: навешиваем клики на уже сгенерированный оффлайн-блок
   if (path.includes('/reviews/')) {
-    const translations = {
-      en: {
-        plusminus: 'Pros and Cons',
-        screentable: 'Screenshots and Modes',
-        sitedetails: 'Payment Methods',
-        sitealternates: 'Similar Sites'
-      },
-      ru: {
-        plusminus: 'Плюсы и Минусы Сайта',
-        screentable: 'Скриншоты и Режимы',
-        sitedetails: 'Платежные Способы',
-        sitealternates: 'Похожие Сайты'
-      },
-      tr: {
-        plusminus: 'Artılar ve Eksiler',
-        screentable: 'Ekran Görüntüleri ve Modlar',
-        sitedetails: 'Ödeme Yöntemleri',
-        sitealternates: 'Benzer Siteler'
-      },
-      es: {
-        plusminus: 'Pros y Contras',
-        screentable: 'Capturas de Pantalla y Modos',
-        sitedetails: 'Métodos de Pago',
-        sitealternates: 'Sitios Similares'
-      },
-      pl: {
-        plusminus: 'Pros and Cons',
-        screentable: 'Screenshots and Modes',
-        sitedetails: 'Payment Methods',
-        sitealternates: 'Similar Sites'
-      }
-    };
+    function highlight(targetEl){
+      if (!targetEl) return;
+      targetEl.classList.remove('navmark');
+      void targetEl.offsetWidth;
+      targetEl.classList.add('navmark');
+      targetEl.addEventListener('animationend', function h(){ targetEl.classList.remove('navmark'); targetEl.removeEventListener('animationend', h); });
+    }
+    function scrollToEl(el, offset){
+      const rect = el.getBoundingClientRect();
+      const top = window.scrollY + rect.top - (offset||150);
+      window.scrollTo({ top, behavior:'smooth' });
+    }
 
-    const t = translations[languageTag];
-    const mainBox = document.querySelector('.box.main');
-
-    function bindRatingClick() {
-      const ratingTrigger = mainBox.querySelector('.rating');
-      const ratingTarget = document.querySelector('.ratingsumm');
-
+    // rating click → прокрутка к .ratingsumm (без cursor: pointer)
+    (function bindRating(){
+      const ratingTrigger = document.querySelector('.box.main .rating');
+      const ratingTarget  = document.querySelector('.ratingsumm');
       if (!ratingTrigger || !ratingTarget) return;
+      ratingTrigger.addEventListener('click', ()=>{ scrollToEl(ratingTarget, 200); highlight(ratingTarget); });
+    })();
 
-      ratingTrigger.style.cursor = 'pointer';
-      ratingTrigger.addEventListener('click', () => {
-        const rect = ratingTarget.getBoundingClientRect();
-        const offsetTop = window.scrollY + rect.top - 200;
-        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    // nav-review clicks
+    const nav = document.querySelector('.box-extra-links .nav-review');
+    if (nav){
+      const lis = Array.from(nav.querySelectorAll('li'));
+      lis.forEach(li=>{
+        li.addEventListener('click', ()=>{
+          const sel = li.getAttribute('data-target');
+          const el  = sel ? document.querySelector(sel) : null;
+          if (el){ scrollToEl(el, 150); }
+          if (sel==='.smallreview') highlight(document.querySelector('.smallreview'));
+          else if (sel==='.instruction') highlight(document.querySelector('.instruction'));
+          else if (el) highlight(el);
 
-        ratingTarget.classList.remove('navmark');
-        void ratingTarget.offsetWidth;
-        ratingTarget.classList.add('navmark');
-        ratingTarget.addEventListener('animationend', function handler() {
-          ratingTarget.classList.remove('navmark');
-          ratingTarget.removeEventListener('animationend', handler);
+          if (sel==='.sitedetails'){
+            document.querySelectorAll('.sitedetails .sitepros').forEach(sp=>sp.classList.toggle('active'));
+            if (window.innerWidth >= 1365){
+              const parent = document.querySelector('.sitedetails');
+              if (parent){
+                let max=0;
+                parent.querySelectorAll('.sitepros .methodlist').forEach(m=>{ max = Math.max(max, m.offsetHeight || 0); });
+                const one = parent.querySelector('.sitepros');
+                const total = (one ? one.offsetHeight : 0) + max;
+                const cur = parseInt(window.getComputedStyle(parent).height) || 0;
+                if (parent.querySelectorAll('.sitepros.active').length){ if (cur < total) parent.style.height = total+'px'; }
+                else { parent.style.height = ''; }
+              }
+            }
+          }
         });
       });
-    }
 
-    bindRatingClick();
-
-    const ratingObserver = new MutationObserver(() => {
-      if (document.querySelector('.ratingsumm')) {
-        bindRatingClick();
-        ratingObserver.disconnect();
+      // подсветка активного пункта при скролле
+      function highlightCurrent(){
+        const threshold = 300;
+        let current = -1;
+        lis.forEach((li, idx)=>{
+          const sel = li.getAttribute('data-target');
+          const el  = sel ? document.querySelector(sel) : null;
+          if (!el) return;
+          const rect = el.getBoundingClientRect();
+          if (rect.top - threshold <= 0) current = idx;
+        });
+        if (current === -1) current = 0;
+        lis.forEach((li,i)=> li.classList.toggle('current', i===current));
       }
-    });
-
-    ratingObserver.observe(document.body, { childList: true, subtree: true });
-
-
-    const navReview = document.createElement('div');
-    navReview.classList.add('nav-review');
-
-    const ol = document.createElement('ol');
-    navReview.appendChild(ol);
-
-    const sections = [
-      { selector: '.plusminus', text: t.plusminus },
-      { selector: 'h2', text: document.querySelector('h2')?.textContent },
-      { selector: 'h3', text: document.querySelector('h3')?.textContent },
-      { selector: '.screentable', text: t.screentable },
-      { selector: '.sitedetails', text: t.sitedetails }
-    ];
-
-    function isElementInViewport(el) {
-      const rect = el.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) - 120 &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
+      highlightCurrent();
+      window.addEventListener('scroll', highlightCurrent);
+      window.addEventListener('resize', highlightCurrent);
     }
 
-    function updateNav() {
-      ol.innerHTML = '';
-      let firstLiSet = false;
-
-      sections.forEach(section => {
-        const element = document.querySelector(section.selector);
-        if (element && window.getComputedStyle(element).display !== 'none') {
-          const li = document.createElement('li');
-          li.textContent = section.text;
-          li.addEventListener('click', () => {
-            if (!isElementInViewport(element)) {
-              const rect = element.getBoundingClientRect();
-              const offsetTop = window.scrollY + rect.top - 150;
-              window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-            }
-
-            let targetElement = element;
-            if (section.selector === 'h2') {
-              targetElement = document.querySelector('.smallreview');
-            } else if (section.selector === 'h3') {
-              targetElement = document.querySelector('.instruction');
-            }
-
-            if (targetElement) {
-              targetElement.classList.remove('navmark');
-              void targetElement.offsetWidth;
-              targetElement.classList.add('navmark');
-              targetElement.addEventListener('animationend', function handler() {
-                targetElement.classList.remove('navmark');
-                targetElement.removeEventListener('animationend', handler);
-              });
-            }
-
-            if (section.selector === '.sitedetails') {
-              document.querySelectorAll('.sitepros').forEach(sitepros => {
-                sitepros.classList.toggle('active');
-                if (window.innerWidth >= 1365) {
-                  const parent = sitepros.closest('.sitedetails');
-                  const allSitepros = Array.from(parent.querySelectorAll('.sitepros'));
-                  const activeSitepros = allSitepros.filter(sp => sp.classList.contains('active'));
-
-                  let maxMethodlistHeight = 0;
-                  allSitepros.forEach(sp => {
-                    const methodlist = sp.querySelector('.methodlist');
-                    if (methodlist) {
-                      maxMethodlistHeight = Math.max(maxMethodlistHeight, methodlist.offsetHeight);
-                    }
-                  });
-
-                  const totalHeight = sitepros.offsetHeight + maxMethodlistHeight;
-                  const currentHeight = parseInt(window.getComputedStyle(parent).height);
-
-                  if (sitepros.classList.contains('active')) {
-                    if (currentHeight < totalHeight) {
-                      parent.style.height = totalHeight + 'px';
-                    }
-                  } else if (activeSitepros.length === 0) {
-                    parent.style.height = '';
-                  }
-                }
-              });
-            }
-          });
-
-          ol.appendChild(li);
-          if (!firstLiSet) {
-            li.classList.add('current');
-            firstLiSet = true;
-          }
-        }
-      });
-    }
-
-    function highlightCurrentSection() {
-      const threshold = 300;
-      const sectionElements = Array.from(ol.querySelectorAll('li')).map((li, index) => {
-        const section = sections[index];
-        const element = document.querySelector(section.selector);
-        return { li, element };
-      }).filter(({ element }) => element);
-
-      let currentIndex = -1;
-      sectionElements.forEach(({ element }, index) => {
-        const rect = element.getBoundingClientRect();
-        if (rect.top - threshold <= 0) {
-          currentIndex = index;
-        }
-      });
-
-      if (currentIndex === -1) currentIndex = 0;
-      sectionElements.forEach(({ li }, index) => {
-        li.classList.toggle('current', index === currentIndex);
-      });
-    }
-
-    const observer = new MutationObserver(mutations => {
-      let shouldUpdate = false;
-      mutations.forEach(mutation => {
-        if ([...mutation.addedNodes].some(node => node.matches?.('.sitedetails, .sitealternates'))) {
-          shouldUpdate = true;
-        }
-      });
-      if (shouldUpdate) {
-        if (!sections.find(s => s.selector === '.sitealternates')) {
-          sections.push({ selector: '.sitealternates', text: t.sitealternates });
-        }
-        if (!sections.find(s => s.selector === '.sitedetails')) {
-          sections.push({ selector: '.sitedetails', text: t.sitedetails });
-        }
-        updateNav();
-      }
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    updateNav();
-    highlightCurrentSection();
-    window.addEventListener('scroll', highlightCurrentSection);
-    window.addEventListener('resize', highlightCurrentSection);
-
-    const extraLinksBox = document.querySelector('.box-extra-links');
-    if (extraLinksBox) {
-      extraLinksBox.appendChild(navReview);
-    } else if (mainBox) {
-      const newBox = document.createElement('div');
-      newBox.className = 'box-extra-links';
-      newBox.appendChild(navReview);
-      mainBox.insertAdjacentElement('afterend', newBox);
-    }    
-
-  // TOPIC PAGE
+  // TOPIC PAGE: оставляем кликабельность как была
   } else if (path.includes('/topic/')) {
     const navReview = document.querySelector('.nav-review.blog');
     if (!navReview) return;
 
     const navItems = navReview.querySelectorAll('li');
     const textColInfos = document.querySelectorAll('.text-col-info');
-
     if (navItems.length !== textColInfos.length) return;
 
     const threshold = 220;
@@ -2791,9 +1974,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const rect = targetElement.getBoundingClientRect();
         const offsetTop = window.scrollY + rect.top - 150;
         window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-
-        targetElement.classList.remove('navmark');
-        void targetElement.offsetWidth;
+        targetElement.classList.remove('navmark'); void targetElement.offsetWidth;
         targetElement.classList.add('navmark');
         targetElement.addEventListener('animationend', function handler() {
           targetElement.classList.remove('navmark');
@@ -2806,22 +1987,16 @@ document.addEventListener("DOMContentLoaded", function () {
       let currentIndex = -1;
       textColInfos.forEach((section, index) => {
         const rect = section.getBoundingClientRect();
-        if (rect.top - threshold <= 0) {
-          currentIndex = index;
-        }
+        if (rect.top - threshold <= 0) currentIndex = index;
       });
       if (currentIndex === -1) currentIndex = 0;
-      navItems.forEach((li, index) => {
-        li.classList.toggle('current', index === currentIndex);
-      });
+      navItems.forEach((li, index) => { li.classList.toggle('current', index === currentIndex); });
     }
-
     highlightTopicSection();
     window.addEventListener('scroll', highlightTopicSection);
     window.addEventListener('resize', highlightTopicSection);
   }
-});
-
+})();
 
 const boxes = Array.from(document.querySelectorAll('.box:not(.main)'));
 

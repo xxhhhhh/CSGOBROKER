@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/reviews/gamdom">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 En
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,26 +251,65 @@
                 <a href="https://gamdom.one/r/csgobroker"><img src="/img/gamdom-logo.webp" alt="Gamdom logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 85%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode casino lang-en">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>Gamdom</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/csgo/casino" aria-label="Similar Sites of Gamdom" class="review-button"></a>
+                  <a href="https://gamdom.one/r/csgobroker" aria-label="Visit Gamdom" class="review-button visit" target="_blank" rel="noopener"></a>
+                  <a href="/mirrors/gamdom" class="review-button mirror-visit" aria-label="Mirrors"><span>Mirrors</span></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Instantly Unlock <strong>Rakeback</strong> System</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="csgobroker"></button>
             </div>
         </div>
         <div class="box-extra-links">
-            <a href="/mirrors/gamdom" class="mirror-redirect extra-abox">
-                <div class="officon mirror"></div><span>Can't Access the Site?</span></a>
+          <div class="promo-box extra-abox else-bonus counter-1">
+            <div class="logobg"><span>Unlock Rakeback</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">csgobroker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <a href="/mirrors/gamdom" class="mirror-redirect extra-abox">
+            <div class="officon mirror"></div>
+            <span>Can't Access the Site?</span>
+          </a>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Pros and Cons</li>
+              <li data-target=".smallreview">Review of Gamdom</li>
+              <li data-target=".instruction">How to Claim Gamdom Bonuses</li>
+              <li data-target=".screentable">Screenshots and Modes</li>
+              <li data-target=".sitedetails">Payment Methods</li>
+              <li data-target=".sitealternates">Similar Sites</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/freebies/progressive-rewards" class="progressiverewards"><i class="officon signupbonus"></i> Progressive Rewards</a>
+                  <a href="/freebies/rakeback-system" class="rakeback"><i class="officon rakeback"></i> Rakeback System</a>
+                  <a href="/freebies/rain-system" class="rain"><i class="officon rain"></i> Rain System</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Pros</p>
@@ -307,17 +346,30 @@
                 <li>Go to <a target="_blank" rel="noopener" href="https://gamdom.one/r/csgobroker">Gamdom</a> using our provided link</li>
                 <li>Register using any method</li>
                 <li>Click on <strong>Claim Free Reward</strong> in the top menu</li>
-                <li>Enter Code: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                <li>Enter Code: <code id="site-code">csgobroker</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                 <li>Done!</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/csgo/matchbetting" aria-label="Esports Betting" class="cs2"></a>
+                    <a href="/csgo/casino" aria-label="Slots" class="slots"></a>
+                    <a href="/csgo/matchbetting" aria-label="Sport Betting" class="sport"></a>
+                    <a href="/csgo/casino" aria-label="Live Dealer" class="livedealer"></a>
+                    <a href="/csgo/casino" aria-label="Poker" class="poker"></a>
+                    <a href="/csgo/casino" aria-label="Blackjack" class="blackjack"></a>
+                    <a href="/csgo/casino" aria-label="Baccarat" class="baccarat"></a>
+                    <a href="/csgo/roulette" aria-label="Roulette" class="roulette"></a>
+                    <a href="/csgo/crash" aria-label="Crash" class="crash"></a>
+                    <a href="/csgo/plinko" aria-label="Plinko" class="plinko"></a>
+                    <a href="/csgo/mines" aria-label="Mines" class="mines"></a>
+                    <a href="/csgo/dice" aria-label="Dice" class="dice"></a>
+                    <a href="/" aria-label="Hilo" class="hilo"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/gamdom_1.png" alt="Gamdom ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/gamdom_2.png" alt="Gamdom ScreenShot 2"></div>
@@ -326,6 +378,57 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/gamdom_5.png" alt="Gamdom ScreenShot 5"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/gamdom_6.png" alt="Gamdom ScreenShot 6"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Deposit Methods</span>
+                <div class="methodlist" id="first">
+                  <a href="/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/crypto" aria-label="Ripple" class="ripple"></a>
+                  <a href="/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/" aria-label="Skinpay" class="skinpay"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/crypto" aria-label="Ripple" class="ripple"></a>
+                  <a href="/crypto" aria-label="Solana" class="solana"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Trust</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Support</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Payments</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Playability</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 85%;"></div></div>
             </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
@@ -337,7 +440,7 @@
                         Support for SSL encryption and two-factor authentication enhances the security of accounts and transactions.
                         Thanks to its stability and transparency, Gamdom enjoys a high level of trust among players.</p>
                 </div>
-            
+
                 <div class="smallreview criteria">
                     <h3>Support</h3>
                     <p>Gamdom’s support operates 24/7 via live chat and email. Chat responses are generally quick, while email
@@ -346,7 +449,7 @@
                         social media to keep users informed, which helps resolve common questions and technical issues efficiently.
                     </p>
                 </div>
-            
+
                 <div class="smallreview criteria">
                     <h3>Payments</h3>
                     <p>Gamdom supports over 20 deposit and withdrawal methods, including BTC, ETH, USDT, SOL, and fiat options via
@@ -357,7 +460,7 @@
                         The lack of skin deposit support may disappoint some users, but overall, Gamdom offers one of the most
                         robust financial systems in the industry.</p>
                 </div>
-            
+
                 <div class="smallreview criteria">
                     <h3>Playability</h3>
                     <p>Gamdom offers a wide variety of gaming modes: thousands of slots, live casino games, and classics like Crash,
@@ -367,6 +470,83 @@
                         However, the absence of skin economy and its crypto-centric focus make the platform less versatile than some
                         CS2-focused competitors.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best Gamdom Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="500 Casino">
+                  <div class="logobg">
+                    <a href="/reviews/csgo500"><img src="/img/csgo500-logo.webp" loading="lazy" draggable="false" alt="500 Casino"></a>
+                    <div class="main-mode casino lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/csgo500">500 Casino</a>
+                    <div class="site-reward"><p>Get <strong>+300% Bonus</strong> on your First Deposit</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/csgo500" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://play500.games/r/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="CSGOPolygon">
+                  <div class="logobg">
+                    <a href="/reviews/csgopolygon"><img src="/img/csgopolygon-logo.webp" loading="lazy" draggable="false" alt="CSGOPolygon"></a>
+                    <div class="main-mode casino lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/csgopolygon">CSGOPolygon</a>
+                    <div class="site-reward"><p>Receive <strong>$1.00</strong> for Free</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/csgopolygon" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://playplg.com/ref/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="CSGOLuck">
+                  <div class="logobg">
+                    <a href="/reviews/csgoluck"><img src="/img/csgoluck-logo.webp" loading="lazy" draggable="false" alt="CSGOLuck"></a>
+                    <div class="main-mode casino lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/csgoluck">CSGOLuck</a>
+                    <div class="site-reward"><p>Receive <strong>5 Free Cases</strong> and <strong>+100% Bonus</strong> on Deposit</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/csgoluck" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://csgoluck.com/r/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="HowlGG">
+                  <div class="logobg">
+                    <a href="/reviews/howlgg"><img src="/img/howlgg-logo.webp" loading="lazy" draggable="false" alt="HowlGG"></a>
+                    <div class="main-mode casino lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/howlgg">HowlGG</a>
+                    <div class="site-reward"><p>Receive a <strong>Bonus +25%</strong> to Rakeback</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/howlgg" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://howly.gg/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -399,18 +579,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

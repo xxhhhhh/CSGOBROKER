@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/tr/reviews/flamecases">
@@ -229,16 +229,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Tr
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -252,22 +252,59 @@
                 <a href="https://flamecases.com/promo/broker"><img src="/img/flamecases-logo.webp" alt="FlameCases logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 67.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode cases lang-tr">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>FlameCases</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/tr/csgo/caseopening" aria-label="Similar Sites of FlameCases" class="review-button"></a>
+                  <a href="https://flamecases.com/promo/broker" aria-label="Visit FlameCases" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus"><strong>Ücretsiz $1.00</strong> Alın</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="broker"></button>
             </div>
+        </div>
+        <div class="box-extra-links">
+          <div class="promo-box extra-abox welcome-bonus counter-1">
+            <div class="logobg"><span>1.00$</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">broker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Artılar ve Eksiler</li>
+              <li data-target=".smallreview">FlameCases İncelemesi</li>
+              <li data-target=".instruction">FlameCases Bonuslarını Nasıl Alınır</li>
+              <li data-target=".screentable">Ekran Görüntüleri ve Modlar</li>
+              <li data-target=".sitedetails">Ödeme Yöntемleri</li>
+              <li data-target=".sitealternates">Benzer Siteler</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/tr/freebies/sign-up-bonuses" class="signupbonus"><i class="officon signupbonus"></i> Kayıt Bonusu</a>
+                  <a href="/tr/freebies/giveaways" class="giveaways"><i class="officon giveaways"></i> Ücretsiz Çekilişler</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Artılar</p>
@@ -306,17 +343,20 @@
                 <li>Sağlanan bağlantıyı kullanarak <a target="_blank" rel="noopener" href="https://flamecases.com/promo/broker">FlameCases</a>'e gidin</li>
                 <li>Herhangi bir yöntemle kayıt olun</li>
                 <li><strong>Avatar</strong>ın yanındaki <strong>+ ile para simgesine</strong> tıklayın</li>
-                <li>Kod Girin: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                <li>Kod Girin: <code id="site-code">broker</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                 <li>Keyfini Çıkar!</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/tr/csgo/caseopening" aria-label="Case Opening" class="cases"></a>
+                    <a href="/tr/csgo/case-battle" aria-label="Case Battles" class="casebattles"></a>
+                    <a href="/tr/csgo/upgrader" aria-label="Upgrader" class="upgrader"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/flamecases_1.png" alt="FlameCases ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/flamecases_2.png" alt="FlameCases ScreenShot 2"></div>
@@ -325,40 +365,161 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/flamecases_5.png" alt="FlameCases ScreenShot 5"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Yatırma Yöntemleri</span>
+                <div class="methodlist" id="first">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr" aria-label="VISA" class="visa"></a>
+                  <a href="/tr" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/tr" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/tr" aria-label="Skrill" class="skrill"></a>
+                  <a href="/tr" aria-label="Google Pay" class="gpay"></a>
+                  <a href="/tr" aria-label="UnionPay" class="unionpay"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/tr/crypto" aria-label="Ethereum" class="eth"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Güven</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Destek</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Ödemeler</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Oynanabilirlik</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 67.5%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
-                    <h3>Trust</h3>
+                    <h3>Güven</h3>
                     <p>FlameCases 2017’den beri faaliyet göstermekte ve her oyunun adilliğini doğrulamak için Provably Fair sistemi
                         kullanmaktadır. Site resmi bir lisansa sahip olmasa da, SSL şifreleme ve 2FA gibi güçlü teknik güvenlik
                         önlemleri sunmaktadır. Ancak büyük kazançlardan sonra hesapların engellenmesine dair şikayetler ve bağımsız
                         RNG denetiminin olmaması, bazı kullanıcıların güvenini azaltmaktadır. Öte yandan, olumlu kullanıcı yorumları
                         ve sitenin istikrarlı çalışması meşruiyetini desteklemektedir.</p>
                 </div>
-            
+
                 <div class="smallreview criteria">
-                    <h3>Support</h3>
+                    <h3>Destek</h3>
                     <p>FlameCases desteği canlı sohbet ve e-posta üzerinden sağlanmaktadır, ancak 7/24 değildir. Canlı sohbette
                         ortalama yanıt süresi 2–5 dakikadır. E-postalara genellikle 24 saat içinde yanıt verilmektedir. Ayrıca
                         Discord ve X (Twitter) üzerinden duyurular ve etkinlik bilgileri paylaşılmaktadır. Karmaşık durumlarda
                         şablon yanıtlar verilebilse de, genel destek seviyesi tatmin edicidir.</p>
                 </div>
-            
+
                 <div class="smallreview criteria">
-                    <h3>Payments</h3>
+                    <h3>Ödemeler</h3>
                     <p>Platform; skin, kripto para (BTC, USDT) ve banka kartlarıyla para yatırmayı desteklemektedir. Çekim işlemleri
                         Steam skinleri veya kripto para yoluyla yapılabilir. Para çekmeden önce bir depozito yapılması
                         gerekmektedir. P2P işlemlerinde %5’e kadar komisyon uygulanabilir. Yöntemler yeterli olsa da, bu
                         sınırlamaların önceden bilinmesi önemlidir.</p>
                 </div>
-            
+
                 <div class="smallreview criteria">
-                    <h3>Playability</h3>
+                    <h3>Oynanabilirlik</h3>
                     <p>FlameCases, kasa açma üzerine odaklanmıştır ve CS2 ile Dota 2 için geniş bir kasa yelpazesi sunar. Özel
                         etkinlikler ve sezonluk koleksiyonlar da mevcuttur. Upgrade, Case Battles ve Crash gibi modlar da %95 ve
                         üzeri RTP ile sunulmaktadır. Kaliteli animasyonlar, şeffaf Provably Fair sistemi ve düzenli çekilişlerle
                         oyun deneyimi dinamik ve etkilidir. Platform, özellikle kasa içeriği çeşitliliğiyle rakiplerinden
                         ayrılmaktadır.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best FlameCases Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="GGDROP">
+                  <div class="logobg">
+                    <a href="/tr/reviews/ggdrop"><img src="/img/ggdrop-logo.webp" loading="lazy" draggable="false" alt="GGDROP"></a>
+                    <div class="main-mode cases lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/ggdrop">GGDROP</a>
+                    <div class="site-reward"><p><strong>Ücretsiz çark çevirme</strong> ve tüm yatırımlara <strong>%11 Bonus</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/ggdrop" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://ggband.gg/referral/broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Key-Drop">
+                  <div class="logobg">
+                    <a href="/tr/reviews/key-drop"><img src="/img/key-drop-logo.webp" loading="lazy" draggable="false" alt="Key-Drop"></a>
+                    <div class="main-mode cases lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/key-drop">Key-Drop</a>
+                    <div class="site-reward"><p><strong>$0.50</strong> Bedava Alın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/key-drop" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://keydrop.com/?code=broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="SKINBOX">
+                  <div class="logobg">
+                    <a href="/tr/reviews/skinbox"><img src="/img/skinbox-logo.webp" loading="lazy" draggable="false" alt="SKINBOX"></a>
+                    <div class="main-mode cases lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/skinbox">SKINBOX</a>
+                    <div class="site-reward"><p>İlk Yatırımınızda <strong>Özel Ücretsiz Kasa</strong> ve <strong>+20% Bonus</strong> Alın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/skinbox" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://skinbox.live/" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="DatDrop">
+                  <div class="logobg">
+                    <a href="/tr/reviews/datdrop"><img src="/img/datdrop-logo.webp" loading="lazy" draggable="false" alt="DatDrop"></a>
+                    <div class="main-mode cases lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/datdrop">DatDrop</a>
+                    <div class="site-reward"><p>Tüm Yatırımlarda <strong>+5% Bonus</strong> mevcut</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/datdrop" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://datdrop.app/p/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -391,18 +552,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

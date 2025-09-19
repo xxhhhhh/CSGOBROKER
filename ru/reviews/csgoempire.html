@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/ru/reviews/csgoempire">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Ru
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,26 +251,66 @@
                 <a href="https://csgoempire.io/r/csgobroker"><img src="/img/csgoempire-logo.webp" alt="CSGOEmpire logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 87.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode classic lang-ru">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>CSGOEmpire</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/ru/cs2" aria-label="Альтернативы CSGOEmpire" class="review-button"></a>
+                  <a href="https://csgoempire.io/r/csgobroker" aria-label="Перейти на CSGOEmpire" class="review-button visit" target="_blank" rel="noopener"></a>
+                  <a href="/ru/mirrors/csgoempire" class="review-button mirror-visit" aria-label="Зеркала"><span>Зеркала</span></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Получи <strong>Бесплатный Кейс</strong> с шансом выиграть до <strong>1.500$</strong></span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="csgobroker"></button>
             </div>
         </div>
         <div class="box-extra-links">
-            <a href="/mirrors/csgoempire" class="mirror-redirect extra-abox">
-                <div class="officon mirror"></div><span>Не переходит на сайт?</span></a>
+          <div class="promo-box extra-abox else-bonus counter-1">
+            <div class="logobg"><span>Welcome Case</span></div>
+            <div class="content">
+              <p>Промокод</p>
+              <code class="promo-code">csgobroker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <a href="/ru/mirrors/csgoempire" class="mirror-redirect extra-abox">
+            <div class="officon mirror"></div>
+            <span>Не переходит на сайт?</span>
+          </a>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Плюсы и Минусы Сайта</li>
+              <li data-target=".smallreview">Обзор на CSGOEmpire</li>
+              <li data-target=".instruction">Как получить Бонусы на CSGOEmpire</li>
+              <li data-target=".screentable">Скриншоты и Режимы</li>
+              <li data-target=".sitedetails">Платежные Способы</li>
+              <li data-target=".sitealternates">Похожие Сайты</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/ru/freebies/sign-up-bonuses" class="signupbonus"><i class="officon signupbonus"></i> Бонус за Регистрацию</a>
+                  <a href="/ru/freebies/progressive-rewards" class="progressiverewards"><i class="officon signupbonus"></i> Награды за Уровень</a>
+                  <a href="/ru/freebies/daily-rewards" class="dailyrewards"><i class="officon dailyrewards"></i> Ежедневные Награды</a>
+                  <a href="/ru/freebies/rakeback-system" class="rakeback"><i class="officon rakeback"></i> Рейкбек</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Плюсы</p>
@@ -313,17 +353,24 @@
                 <li>Перейдите на <a target="_blank" rel="noopener" href="https://csgoempire.io/r/csgobroker">CSGOEmpire</a> используя нашу ссылку</li>
                 <li>Зарегистрируйтесь любым способом </li>
                 <li>Нажмите на <strong>Free Case</strong> в верхнем меню</li>
-                <li>Введите код: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                <li>Введите код: <code id="site-code">csgobroker</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                 <li>Наслаждайтесь своим <strong>Бесплатным Кейсом</strong> !</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/ru/csgo/matchbetting" aria-label="Esports Betting" class="cs2"></a>
+                    <a href="/ru/csgo/caseopening" aria-label="Case Opening" class="cases"></a>
+                    <a href="/ru/csgo/case-battle" aria-label="Case Battles" class="casebattles"></a>
+                    <a href="/ru/csgo/roulette" aria-label="Roulette" class="roulette"></a>
+                    <a href="/ru/csgo/coinflip" aria-label="Coinflip" class="coinflip"></a>
+                    <a href="/ru/csgo/buy-skins" aria-label="Buy Skins" class="buy-skins"></a>
+                    <a href="/ru/csgo/sell-skins" aria-label="Sell Skins" class="sell-skins"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgoempire_1.png" alt="CSGOEmpire ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgoempire_2.png" alt="CSGOEmpire ScreenShot 2"></div>
@@ -331,6 +378,63 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgoempire_4.png" alt="CSGOEmpire ScreenShot 4"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgoempire_5.png" alt="CSGOEmpire ScreenShot 5"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Способы Пополнения</span>
+                <div class="methodlist" id="first">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru/crypto" aria-label="Binance Coin" class="bnb"></a>
+                  <a href="/ru/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/ru/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/ru/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/ru/crypto" aria-label="Ripple" class="ripple"></a>
+                  <a href="/ru/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/ru" aria-label="Skrill" class="skrill"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Способы Вывода</span>
+                <div class="methodlist" id="second">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru/crypto" aria-label="Binance Coin" class="bnb"></a>
+                  <a href="/ru/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/ru/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/ru/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/ru/crypto" aria-label="Solana" class="solana"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Доверие</span>
+                  <div class="rating"><div class="star_rating" style="width: 100%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Поддержка</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Деп/Вывод</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Режимы</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 87.5%;"></div></div>
             </div>
             <div class="criteria-descriptions">
               <div class="smallreview criteria">
@@ -342,7 +446,7 @@
                   протоколами. Устойчивый срок работы и наличие активного пользовательского сообщества подтверждают базовый уровень
                   доверия к платформе.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Поддержка</h3>
                 <p>Служба поддержки CSGOEmpire функционирует через круглосуточный онлайн-чат. Ответы на обращения предоставляются,
@@ -351,7 +455,7 @@
                   большинства пользователей, в отдельных случаях может не хватать персонализированного подхода при решении
                   нестандартных проблем.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Деп/Вывод</h3>
                 <p>Платформа поддерживает депозиты и вывод через криптовалюты, а также P2P-обмен с использованием внутриигровых
@@ -360,7 +464,7 @@
                   сетевых сборов криптовалют. Формат P2P-вывода делает процесс гибким, но может зависеть от доступности предложений
                   на маркетплейсе.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Режимы</h3>
                 <p>CSGOEmpire предлагает ограниченное число игровых режимов, включая рулетку, coinflip, кейс-батлы, открытие кейсов
@@ -368,6 +472,83 @@
                   пользовательский опыт. Система ежедневных бонусов, включая бесплатные кейсы, стимулирует регулярную активность.
                   Интерфейс сайта оптимизирован под мобильные устройства, а внутриигровой чат способствует взаимодействию между
                   участниками платформы.</p>
+              </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Похожие Сайты на CSGOEmpire</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="500 Casino">
+                  <div class="logobg">
+                    <a href="/ru/reviews/csgo500"><img src="/img/csgo500-logo.webp" loading="lazy" draggable="false" alt="500 Casino"></a>
+                    <div class="main-mode classic lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/csgo500">500 Casino</a>
+                    <div class="site-reward"><p>Получите <strong>+300% Бонус</strong> к Первому Пополнению</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/csgo500" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://play500.games/r/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="CSGOFast">
+                  <div class="logobg">
+                    <a href="/ru/reviews/csgofast"><img src="/img/csgofast-logo.webp" loading="lazy" draggable="false" alt="CSGOFast"></a>
+                    <div class="main-mode classic lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/csgofast">CSGOFast</a>
+                    <div class="site-reward"><p>Получите <strong>+10% к Депозиту</strong> и <strong>Бесплатный Кейс</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/csgofast" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://xcsgofast.com/?ref=broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="CSGOPolygon">
+                  <div class="logobg">
+                    <a href="/ru/reviews/csgopolygon"><img src="/img/csgopolygon-logo.webp" loading="lazy" draggable="false" alt="CSGOPolygon"></a>
+                    <div class="main-mode classic lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/csgopolygon">CSGOPolygon</a>
+                    <div class="site-reward"><p>Получите <strong>1.00$ на Баланс</strong> при регистрации</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/csgopolygon" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://playplg.com/ref/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Gamdom">
+                  <div class="logobg">
+                    <a href="/ru/reviews/gamdom"><img src="/img/gamdom-logo.webp" loading="lazy" draggable="false" alt="Gamdom"></a>
+                    <div class="main-mode classic lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/gamdom">Gamdom</a>
+                    <div class="site-reward"><p>Мгновенно разблокируйте систему <strong>Рейкбека</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/gamdom" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://gamdom.one/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
        </div>
@@ -401,18 +582,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

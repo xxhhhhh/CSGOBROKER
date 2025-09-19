@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/reviews/daddyskins">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 En
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,22 +251,59 @@
                 <a href="https://daddyskins.com/promo-code/CSGOBROKER"><img src="/img/daddyskins-logo.webp" alt="DaddySkins logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 70%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode cases lang-en">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>DaddySkins</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/csgo/caseopening" aria-label="Similar Sites of DaddySkins" class="review-button"></a>
+                  <a href="https://daddyskins.com/promo-code/CSGOBROKER" aria-label="Visit DaddySkins" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Get <strong>+5% Bonus</strong> on all your Deposits</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="csgobroker"></button>
             </div>
+        </div>
+        <div class="box-extra-links">
+          <div class="promo-box extra-abox deposit-bonus counter-1">
+            <div class="logobg"><span>+5%</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">csgobroker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Pros and Cons</li>
+              <li data-target=".smallreview">Review of DaddySkins</li>
+              <li data-target=".instruction">How to Claim DaddySkins Deposit Bonus</li>
+              <li data-target=".screentable">Screenshots and Modes</li>
+              <li data-target=".sitedetails">Payment Methods</li>
+              <li data-target=".sitealternates">Similar Sites</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/freebies/deposit-bonuses" class="depositbonus"><i class="officon depositbonuses"></i> Deposit Bonus</a>
+                  <a href="/freebies/giveaways" class="giveaways"><i class="officon giveaways"></i> Giveaways</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Pros</p>
@@ -305,17 +342,20 @@
                 <li>Go to <a target="_blank" rel="noopener" href="https://daddyskins.com/promo-code/CSGOBROKER">DaddySkins</a> using our provided link</li>
                 <li>Register using any method</li>
                 <li>Click on the <strong>Deposit Icon</strong> and find <strong>Promo Code</strong></li>
-                <li>Enter Code: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                <li>Enter Code: <code id="site-code">csgobroker</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                 <li>Done!</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/csgo/caseopening" aria-label="Case Opening" class="cases"></a>
+                    <a href="/csgo/case-battle" aria-label="Case Battles" class="casebattles"></a>
+                    <a href="/csgo/upgrader" aria-label="Upgrader" class="upgrader"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/daddyskins_1.png" alt="DaddySkins ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/daddyskins_2.png" alt="DaddySkins ScreenShot 2"></div>
@@ -323,6 +363,57 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/daddyskins_4.png" alt="DaddySkins ScreenShot 4"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/daddyskins_5.png" alt="DaddySkins ScreenShot 5"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Deposit Methods</span>
+                <div class="methodlist" id="first">
+                  <a href="/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/" aria-label="VISA" class="visa"></a>
+                  <a href="/" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/crypto" aria-label="Ripple" class="ripple"></a>
+                  <a href="/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/" aria-label="Skrill" class="skrill"></a>
+                  <a href="/" aria-label="Google Pay" class="gpay"></a>
+                  <a href="/" aria-label="Apple Pay" class="apay"></a>
+                  <a href="/" aria-label="UnionPay" class="unionpay"></a>
+                  <a href="/" aria-label="PaySafeCard" class="paysafe"></a>
+                  <a href="/" aria-label="PayPal" class="paypal"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Trust</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Support</span>
+                  <div class="rating"><div class="star_rating" style="width: 50%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Payments</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Playability</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 70%;"></div></div>
             </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
@@ -334,7 +425,7 @@
                         lacking an official license, DaddySkins is considered one of the most reliable case sites by the community.
                     </p>
                 </div>
-            
+
                 <div class="smallreview criteria">
                     <h3>Support</h3>
                     <p>Customer support on DaddySkins is available via a ticket system and email. Most queries are answered within
@@ -342,7 +433,7 @@
                         updates and announcements are published on Discord and X (Twitter). Despite the limited communication
                         channels, user issues are generally resolved in a reasonable time.</p>
                 </div>
-            
+
                 <div class="smallreview criteria">
                     <h3>Payments</h3>
                     <p>The platform accepts deposits via CS:GO/CS2 skins, bank cards, and cryptocurrency. Withdrawals are processed
@@ -351,7 +442,7 @@
                         user-friendly. Deposit and withdrawal conditions are clearly described on the site to help avoid confusion
                         for new users.</p>
                 </div>
-            
+
                 <div class="smallreview criteria">
                     <h3>Playability</h3>
                     <p>DaddySkins focuses on case content and offers a wide selection of cases — from basic to premium series, with
@@ -360,6 +451,83 @@
                         visual design is clean and mobile-friendly. The platform also hosts large giveaways, jackpots, and
                         time-limited promotions, adding a competitive and engaging element.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best DaddySkins Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="GGDROP">
+                  <div class="logobg">
+                    <a href="/reviews/ggdrop"><img src="/img/ggdrop-logo.webp" loading="lazy" draggable="false" alt="GGDROP"></a>
+                    <div class="main-mode cases lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/ggdrop">GGDROP</a>
+                    <div class="site-reward"><p>Get a <strong>free spin of the wheel</strong> and <strong>+11% Bonus</strong> on Deposits</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/ggdrop" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://ggband.gg/referral/broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Key-Drop">
+                  <div class="logobg">
+                    <a href="/reviews/key-drop"><img src="/img/key-drop-logo.webp" loading="lazy" draggable="false" alt="Key-Drop"></a>
+                    <div class="main-mode cases lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/key-drop">Key-Drop</a>
+                    <div class="site-reward"><p>Receive <strong>$0.50</strong> for Free</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/key-drop" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://keydrop.com/?code=broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="SKINBOX">
+                  <div class="logobg">
+                    <a href="/reviews/skinbox"><img src="/img/skinbox-logo.webp" loading="lazy" draggable="false" alt="SKINBOX"></a>
+                    <div class="main-mode cases lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/skinbox">SKINBOX</a>
+                    <div class="site-reward"><p>Receive <strong>Unique Free Case</strong> and <strong>+20%</strong> on first Deposit</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/skinbox" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://skinbox.live/" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="DatDrop">
+                  <div class="logobg">
+                    <a href="/reviews/datdrop"><img src="/img/datdrop-logo.webp" loading="lazy" draggable="false" alt="DatDrop"></a>
+                    <div class="main-mode cases lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/datdrop">DatDrop</a>
+                    <div class="site-reward"><p>There is <strong>+5% Bonus</strong> on all Deposits</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/datdrop" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://datdrop.app/p/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -392,18 +560,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

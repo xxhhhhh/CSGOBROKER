@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/ru/reviews/lis-skins">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Ru
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,21 +251,49 @@
                 <a href="https://lis-skins.com/?rf=83346597"><img src="/img/lis-skins-logo.svg" draggable="false" alt="Lis-Skins logo"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 77.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode instant-sell lang-ru">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>Lis-Skins</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/ru/csgo/instant-sell" aria-label="Альтернативы Lis-Skins" class="review-button"></a>
+                  <a href="https://lis-skins.com/?rf=83346597" aria-label="Перейти на Lis-Skins" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus"><strong>Получите до 5.00$</strong> за Продажу Скинов</span></div>
             </div>
         </div>
+        <div class="box-extra-links">
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Плюсы и Минусы Сайта</li>
+              <li data-target=".smallreview">Обзор на Lis-Skins</li>
+              <li data-target=".instruction">Как Получить Бонус на сайте Lis-Skins</li>
+              <li data-target=".screentable">Скриншоты и Режимы</li>
+              <li data-target=".sitedetails">Платежные Способы</li>
+              <li data-target=".sitealternates">Похожие Сайты</li>
+            </ol>
+          </div>
+        </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/ru/freebies/bonuses-to-sale" class="bonustosale"><i class="officon salebonus"></i> Бонус к Продаже</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Плюсы</p>
@@ -304,12 +332,14 @@
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/ru/csgo/instant-sell" aria-label="Instant Sell Skins" class="instant-sell"></a>
+                    <a href="/ru/csgo/buy-skins" aria-label="Buy Skins" class="buy-skins"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/lis-skins_1.jpg" alt="Lis-Skins ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/lis-skins_2.jpg" alt="Lis-Skins ScreenShot 2"></div>
@@ -317,6 +347,63 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/lis-skins_4.jpg" alt="Lis-Skins ScreenShot 4"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/lis-skins_5.jpg" alt="Lis-Skins ScreenShot 5"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Способы Пополнения</span>
+                <div class="methodlist" id="first">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/ru/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/ru" aria-label="VISA" class="visa"></a>
+                  <a href="/ru" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru/crypto" aria-label="Binance Coin" class="bnb"></a>
+                  <a href="/ru/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/ru/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/ru" aria-label="SBP" class="sbp"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Способы Вывода</span>
+                <div class="methodlist" id="second">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/ru/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/ru" aria-label="VISA" class="visa"></a>
+                  <a href="/ru" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/ru" aria-label="SBP" class="sbp"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Доверие</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Поддержка</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Деп/Вывод</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Цены</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 77.5%;"></div></div>
             </div>
             <div class="criteria-descriptions">
               <div class="smallreview criteria">
@@ -327,7 +414,7 @@
                   стоит учитывать, что комиссия за продажу может быть выше средней, а вывод на банковские карты доступен только для
                   стран СНГ, что ограничивает международную доступность.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Поддержка</h3>
                 <p>Служба поддержки Lis-Skins включает круглосуточный live-чат, Telegram-бота и активные каналы в социальных сетях.
@@ -335,7 +422,7 @@
                   ответы. Хотя при сложных запросах может ощущаться формальный подход, в целом уровень клиентской поддержки остаётся
                   высоким благодаря доступности и скорости отклика.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Деп/Вывод</h3>
                 <p>Платформа поддерживает множество способов пополнения и вывода средств, включая банковские карты, криптовалюты,
@@ -343,13 +430,90 @@
                   доступен только пользователям из стран СНГ. Комиссии зависят от выбранного метода и отображаются заранее, а
                   участие в бонусной программе позволяет компенсировать часть затрат, особенно при регулярных операциях.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Цены</h3>
                 <p>Lis-Skins предлагает автоматизированную систему торговли скинами с прозрачными условиями и возможностью продажи
                   даже недорогих предметов. Комиссия может достигать 40–50% по сравнению с рыночной ценой Steam, однако это
                   компенсируется удобством, скоростью операций и бонусами за регистрацию и активность. Для пользователей,
                   заинтересованных в моментальной продаже без задержек и сложностей, платформа остаётся привлекательным выбором.</p>
+              </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Похожие Сайты на Lis-Skins</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="Avan.Market">
+                  <div class="logobg">
+                    <a href="/ru/reviews/avanmarket"><img src="/img/avanmarket-logo.webp" loading="lazy" draggable="false" alt="Avan.Market"></a>
+                    <div class="main-mode instant-sell lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/avanmarket">Avan.Market</a>
+                    <div class="site-reward"><p><strong>Получите до 5.00$</strong> за Продажу Скинов</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/avanmarket" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://avan.market/?r=broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Moon.Market">
+                  <div class="logobg">
+                    <a href="/ru/reviews/moonmarket"><img src="/img/moonmarket-logo.webp" loading="lazy" draggable="false" alt="Moon.Market"></a>
+                    <div class="main-mode instant-sell lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/moonmarket">Moon.Market</a>
+                    <div class="site-reward"><p>На сайте нет Бонуса за Регистрацию</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/moonmarket" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://moonmarket.org/?r=DTQBM8816d89c" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Aim.market">
+                  <div class="logobg">
+                    <a href="/ru/reviews/aimmarket"><img src="/img/aimmarket-logo.webp" loading="lazy" draggable="false" alt="Aim.market"></a>
+                    <div class="main-mode instant-sell lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/aimmarket">Aim.market</a>
+                    <div class="site-reward"><p><strong>Получите до 5.00$</strong> за Продажу Скинов</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/aimmarket" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://aim.market/p/broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Tradeit">
+                  <div class="logobg">
+                    <a href="/ru/reviews/tradeit"><img src="/img/tradeit-logo.webp" loading="lazy" draggable="false" alt="Tradeit"></a>
+                    <div class="main-mode instant-sell lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/tradeit">Tradeit</a>
+                    <div class="site-reward"><p>Получите <strong>+35% к Депозиту</strong>, Так же <strong>Получите до 5.00$ на Обмен</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/tradeit" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://tradeit.gg/?aff=csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
        </div>
@@ -383,18 +547,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

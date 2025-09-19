@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/ru/mirrors/hellcase">
@@ -203,16 +203,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Ru
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -226,22 +226,52 @@
                 <a href="/ru/reviews/hellcase"><img src="/img/hellcase-logo.webp" alt="Hellcase logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 72.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode cases lang-ru">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>Hellcase</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/ru/csgo/caseopening" aria-label="Альтернативы Hellcase" class="review-button"></a>
+                  <a href="https://hellcase.org/fSifa" aria-label="Перейти на Hellcase" class="review-button visit" target="_blank" rel="noopener"></a>
+                  <a href="/ru/mirrors/hellcase" class="review-button mirror-visit" aria-label="Зеркала"><span>Зеркала</span></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Получите <strong>0.40$</strong> Бесплатно</span></div>
-                <button class="copy defbutton" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="sifa"></button>
             </div>
+        </div>
+        <div class="box-extra-links">
+          <div class="promo-box extra-abox welcome-bonus counter-1">
+            <div class="logobg"><span>0.40$</span></div>
+            <div class="content">
+              <p>Промокод</p>
+              <code class="promo-code">sifa</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview" id="mirror">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/ru/freebies/sign-up-bonuses" class="signupbonus"><i class="officon signupbonus"></i> Бонус за Регистрацию</a>
+                  <a href="/ru/freebies/deposit-bonuses" class="depositbonus"><i class="officon depositbonuses"></i> Бонус к Пополнению</a>
+                  <a href="/ru/freebies/daily-rewards" class="dailyrewards"><i class="officon dailyrewards"></i> Ежедневные Награды</a>
+                  <a href="/ru/freebies/giveaways" class="giveaways"><i class="officon giveaways"></i> Розыгрыши</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="instruction-mirrors">
                 <h2>Актуальные Зеркала Hellcase</h2>
                 <ol>
@@ -280,18 +310,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

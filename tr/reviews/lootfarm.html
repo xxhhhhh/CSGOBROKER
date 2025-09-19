@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/tr/reviews/lootfarm">
@@ -229,16 +229,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Tr
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -252,21 +252,48 @@
                 <a href="https://loot.farm/"><img src="/img/lootfarm-logo.webp" draggable="false" alt="LOOT.Farm logo"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 70%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode trading lang-tr">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>LOOT.Farm</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/tr/csgo/trade-skins" aria-label="Similar Sites of LOOT.Farm" class="review-button"></a>
+                  <a href="https://loot.farm/" aria-label="Visit LOOT.Farm" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Kayıt Bonusu Yok</span></div>
             </div>
         </div>
+        <div class="box-extra-links">
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Artılar ve Eksiler</li>
+              <li data-target=".smallreview">LOOT.Farm İncelemesi</li>
+              <li data-target=".instruction">LOOT.Farm'a Kullanmaya nasıl başlanır</li>
+              <li data-target=".screentable">Ekran Görüntüleri ve Modlar</li>
+              <li data-target=".sitedetails">Ödeme Yöntемleri</li>
+              <li data-target=".sitealternates">Benzer Siteler</li>
+            </ol>
+          </div>
+        </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features"></div></div>
+          <div class="shortinfo empty">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Artılar</p>
@@ -306,12 +333,14 @@
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/tr/csgo/trade-skins" aria-label="Trade Skins" class="trade-skins"></a>
+                    <a href="/tr/csgo/buy-skins" aria-label="Buy Skins" class="buy-skins"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/lootfarm_1.png" alt="LOOT.Farm ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/lootfarm_2.png" alt="LOOT.Farm ScreenShot 2"></div>
@@ -319,9 +348,68 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/lootfarm_4.png" alt="LOOT.Farm ScreenShot 4"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Yatırma Yöntemleri</span>
+                <div class="methodlist" id="first">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/tr/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/tr" aria-label="Team Fortress 2 Items" class="tf2"></a>
+                  <a href="/tr" aria-label="VISA" class="visa"></a>
+                  <a href="/tr" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/tr/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/tr/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/tr/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/tr/crypto" aria-label="Binance Coin" class="bnb"></a>
+                  <a href="/tr/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/tr/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/tr/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/tr/crypto" aria-label="Ripple" class="ripple"></a>
+                  <a href="/tr/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/tr/crypto" aria-label="Stellar" class="stellar"></a>
+                  <a href="/tr/crypto" aria-label="Cardano" class="cardano"></a>
+                  <a href="/tr/crypto" aria-label="Polygon (Matic)" class="polygon"></a>
+                  <a href="/tr" aria-label="Skrill" class="skrill"></a>
+                  <a href="/tr" aria-label="UnionPay" class="unionpay"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/tr/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/tr" aria-label="Team Fortress 2 Items" class="tf2"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Güven</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Destek</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Ödemeler</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Fiyat</span>
+                  <div class="rating"><div class="star_rating" style="width: 50%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 70%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
-                    <h3>Trust</h3>
+                    <h3>Güven</h3>
                     <p>LOOT.Farm, 2017 yılından beri faaliyet göstermektedir ve otomatik oyun eşyası takası için en istikrarlı
                         platformlardan biri olarak kabul edilir. Platform tam şeffaflık sağlar: her bot halka açık olarak
                         gösterilir, bu da kullanıcıların eşyaların konumunu tam olarak takip etmesini sağlar. Yüksek kullanıcı
@@ -329,26 +417,103 @@
                         güveni pekiştirir.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Support</h3>
+                    <h3>Destek</h3>
                     <p>LOOT.Farm teknik desteği geri bildirim formu ve e-posta yoluyla sunulmaktadır. Kullanıcılar, özellikle yoğun
                         saatlerde yanıtların gecikebildiğini belirtmektedir. Ancak bilgi tabanı ve platform içi ipuçları, çoğu
                         sorunun destekle iletişime geçmeden çözülmesine yardımcı olur. Premium abonelik, öncelikli destek sunar ve
                         aktif traderlar için faydalı olabilir.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Payments</h3>
+                    <h3>Ödemeler</h3>
                     <p>LOOT.Farm’ın finansal sistemi sınırlıdır: bakiye yalnızca üçüncü taraf ödeme sağlayıcıları ile yüklenebilir,
                         ancak fiat veya kripto para çekme seçenekleri yoktur. Tüm fonlar platformda kalır ve yalnızca eşya satın
                         almak için kullanılabilir. Bu yapı takaslar için uygun olsa da, gerçek para çekmek isteyen kullanıcılar için
                         uygun değildir.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Pricing</h3>
+                    <h3>Fiyat</h3>
                     <p>LOOT.Farm’ın en büyük dezavantajı, rakiplerine kıyasla dezavantajlı fiyatlandırmasıdır. Komisyon oranı %3–5
                         civarında makul olsa da, dahili değerlendirme sistemi genellikle eşyaların değerini düşük belirler ve alış
                         fiyatları piyasanın oldukça üzerinde olabilir. Cashback ve bonuslara rağmen platform, fiyat açısından
                         diğerlerine göre zayıf kalmaktadır.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best LOOT.Farm Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="Tradeit">
+                  <div class="logobg">
+                    <a href="/tr/reviews/tradeit"><img src="/img/tradeit-logo.webp" loading="lazy" draggable="false" alt="Tradeit"></a>
+                    <div class="main-mode trading lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/tradeit">Tradeit</a>
+                    <div class="site-reward"><p><strong>%35 Mağaza bonusu</strong> alın. Ayrıca <strong>+5,00 $</strong> kazanın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/tradeit" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://tradeit.gg/?aff=csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="CSMoney">
+                  <div class="logobg">
+                    <a href="/tr/reviews/csmoney"><img src="/img/csmoney-logo.webp" loading="lazy" draggable="false" alt="CSMoney"></a>
+                    <div class="main-mode trading lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/csmoney">CSMoney</a>
+                    <div class="site-reward"><p>Sitede Kayıt Bonusu yok</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/csmoney" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://cs.money/?utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=trade&utm_content=link" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Swap.gg">
+                  <div class="logobg">
+                    <a href="/tr/reviews/swapgg"><img src="/img/swapgg-logo.webp" loading="lazy" draggable="false" alt="Swap.gg"></a>
+                    <div class="main-mode trading lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/swapgg">Swap.gg</a>
+                    <div class="site-reward"><p>Tüm Yatırımlarda <strong>+30% Bonus</strong> mevcut</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/swapgg" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://swap.gg/?r=V7qjm4NE6t2WBF-Rbk4pY" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="SkinSwap">
+                  <div class="logobg">
+                    <a href="/tr/reviews/skinswap"><img src="/img/skinswap-logo.webp" loading="lazy" draggable="false" alt="SkinSwap"></a>
+                    <div class="main-mode trading lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/skinswap">SkinSwap</a>
+                    <div class="site-reward"><p><strong>50,00$'a kadar Ücretsiz Skin</strong> kazanın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/skinswap" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://skinswap.com/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -381,18 +546,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

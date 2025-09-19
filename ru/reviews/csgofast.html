@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/ru/reviews/csgofast">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Ru
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,26 +251,63 @@
                 <a href="https://xcsgofast.com/?ref=broker"><img src="/img/csgofast-logo.webp" alt="CSGOFast" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 75%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode classic lang-ru">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>CSGOFast</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/ru/cs2" aria-label="Альтернативы CSGOFast" class="review-button"></a>
+                  <a href="https://xcsgofast.com/?ref=broker" aria-label="Перейти на CSGOFast" class="review-button visit" target="_blank" rel="noopener"></a>
+                  <a href="/ru/mirrors/csgofast" class="review-button mirror-visit" aria-label="Зеркала"><span>Зеркала</span></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Получите <strong>+10% к Депозиту</strong> и <strong>Бесплатный Кейс</strong></span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="broker"></button>
             </div>
         </div>
         <div class="box-extra-links">
-            <a href="/mirrors/csgofast" class="mirror-redirect extra-abox">
-                <div class="officon mirror"></div><span>Не переходит на сайт?</span></a>
+          <div class="promo-box extra-abox deposit-bonus counter-1">
+            <div class="logobg"><span>+10%</span></div>
+            <div class="content">
+              <p>Промокод</p>
+              <code class="promo-code">broker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <a href="/ru/mirrors/csgofast" class="mirror-redirect extra-abox">
+            <div class="officon mirror"></div>
+            <span>Не переходит на сайт?</span>
+          </a>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Плюсы и Минусы Сайта</li>
+              <li data-target=".smallreview">Обзор на CSGOFast</li>
+              <li data-target=".instruction">Как получить Бонусы на сайте CSGOFast</li>
+              <li data-target=".screentable">Скриншоты и Режимы</li>
+              <li data-target=".sitedetails">Платежные Способы</li>
+              <li data-target=".sitealternates">Похожие Сайты</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/ru/freebies/deposit-bonuses" class="depositbonus"><i class="officon depositbonuses"></i> Бонус к Пополнению</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Плюсы</p>
@@ -310,17 +347,29 @@
                 <li>Перейдите на <a target="_blank" rel="noopener" href="https://xcsgofast.com/?ref=broker">CSGOFast</a> используя нашу ссылку</li>
                 <li>Зарегистрируйтесь любым способом </li>
                 <li>Нажмите на <strong>Иконку Подарка</strong> сверху</li>
-                <li>Введите код: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                <li>Введите код: <code id="site-code">broker</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                 <li>Наслаждайтесь своей наградой !</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/ru/csgo/casino" aria-label="Slots" class="slots"></a>
+                    <a href="/ru/csgo/casino" aria-label="Baccarat" class="baccarat"></a>
+                    <a href="/ru/csgo/caseopening" aria-label="Case Opening" class="cases"></a>
+                    <a href="/ru/csgo/case-battle" aria-label="Case Battles" class="casebattles"></a>
+                    <a href="/ru/csgo/roulette" aria-label="Roulette" class="roulette"></a>
+                    <a href="/ru/csgo/roulette" aria-label="Wheel of Fortune" class="wheel"></a>
+                    <a href="/ru/csgo/crash" aria-label="Crash" class="crash"></a>
+                    <a href="/ru" aria-label="Duels" class="duels"></a>
+                    <a href="/ru" aria-label="Towers" class="towers"></a>
+                    <a href="/ru/csgo/jackpot" aria-label="Jackpot" class="jackpot"></a>
+                    <a href="/ru" aria-label="Hilo" class="hilo"></a>
+                    <a href="/ru/csgo/upgrader" aria-label="Upgrader" class="upgrader"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgofast_1.jpg" alt="CSGOFast ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgofast_2.jpg" alt="CSGOFast ScreenShot 2"></div>
@@ -331,6 +380,68 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgofast_7.jpg" alt="CSGOFast ScreenShot 7"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Способы Пополнения</span>
+                <div class="methodlist" id="first">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru" aria-label="VISA" class="visa"></a>
+                  <a href="/ru" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru/crypto" aria-label="Binance Coin" class="bnb"></a>
+                  <a href="/ru/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/ru/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/ru/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/ru/crypto" aria-label="TON Coin" class="ton"></a>
+                  <a href="/ru/crypto" aria-label="Ripple" class="ripple"></a>
+                  <a href="/ru/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/ru/crypto" aria-label="Cardano" class="cardano"></a>
+                  <a href="/ru/crypto" aria-label="Polygon (Matic)" class="polygon"></a>
+                  <a href="/ru" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/ru" aria-label="Skrill" class="skrill"></a>
+                  <a href="/ru" aria-label="UnionPay" class="unionpay"></a>
+                  <a href="/ru" aria-label="YUMoney" class="yumoney"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Способы Вывода</span>
+                <div class="methodlist" id="second">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/ru/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/ru" aria-label="Skrill" class="skrill"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Доверие</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Поддержка</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Деп/Вывод</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Режимы</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 75%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
               <div class="smallreview criteria">
                 <h3>Доверие</h3>
@@ -340,7 +451,7 @@
                   Однако лицензия Кюрасао относится к менее регулируемым, а отдельные пользователи сообщают о задержках при выводе
                   крупных сумм, особенно при отсутствии верификации, что может повлиять на уровень доверия.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Поддержка</h3>
                 <p>Техническая поддержка реализована исключительно через live-чат на сайте. Операторы, как правило, отвечают в
@@ -348,7 +459,7 @@
                   усложнить решение нестандартных ситуаций. Для повседневных вопросов и помощи по функционалу сайта такой формат
                   остаётся эффективным.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Деп/Вывод</h3>
                 <p>Платформа поддерживает пополнение и вывод через CS2-скины, криптовалюты (BTC, ETH, USDT), банковские карты и
@@ -356,7 +467,7 @@
                   предполагают комиссии до 5%, особенно при использовании посредников. Также возможна задержка при выводе крупных
                   сумм без предварительной верификации, что важно учитывать при работе с большими балансами.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Режимы</h3>
                 <p>CSGOFast предлагает более 10 игровых режимов, включая Jackpot, Roulette, Crash, Case Battles, Towers и слоты.
@@ -364,6 +475,83 @@
                   перегруженность интерфейса, игровой процесс остаётся стабильным. Дополнительные функции, такие как бонусы за
                   активность и ежедневные миссии, способствуют удержанию пользователей. Платформа подойдёт тем, кто ищет широкий
                   выбор форматов в рамках одного сайта.</p>
+              </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Похожие Сайты на CSGOFast</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="500 Casino">
+                  <div class="logobg">
+                    <a href="/ru/reviews/csgo500"><img src="/img/csgo500-logo.webp" loading="lazy" draggable="false" alt="500 Casino"></a>
+                    <div class="main-mode classic lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/csgo500">500 Casino</a>
+                    <div class="site-reward"><p>Получите <strong>+300% Бонус</strong> к Первому Пополнению</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/csgo500" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://play500.games/r/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="CSGOPolygon">
+                  <div class="logobg">
+                    <a href="/ru/reviews/csgopolygon"><img src="/img/csgopolygon-logo.webp" loading="lazy" draggable="false" alt="CSGOPolygon"></a>
+                    <div class="main-mode classic lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/csgopolygon">CSGOPolygon</a>
+                    <div class="site-reward"><p>Получите <strong>1.00$ на Баланс</strong> при регистрации</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/csgopolygon" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://playplg.com/ref/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Gamdom">
+                  <div class="logobg">
+                    <a href="/ru/reviews/gamdom"><img src="/img/gamdom-logo.webp" loading="lazy" draggable="false" alt="Gamdom"></a>
+                    <div class="main-mode classic lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/gamdom">Gamdom</a>
+                    <div class="site-reward"><p>Мгновенно разблокируйте систему <strong>Рейкбека</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/gamdom" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://gamdom.one/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="HowlGG">
+                  <div class="logobg">
+                    <a href="/ru/reviews/howlgg"><img src="/img/howlgg-logo.webp" loading="lazy" draggable="false" alt="HowlGG"></a>
+                    <div class="main-mode classic lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/howlgg">HowlGG</a>
+                    <div class="site-reward"><p>Получите <strong>Бонус +25%</strong> к Рейкбеку</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/howlgg" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://howly.gg/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
        </div>
@@ -397,18 +585,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

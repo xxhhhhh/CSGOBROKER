@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/tr/reviews/roobet">
@@ -229,16 +229,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Tr
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -252,26 +252,65 @@
                 <a href="https://roobet.party/?ref=csgobroker"><img src="/img/roobet-logo.png" alt="Roobet logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 92.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode casino lang-tr">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>Roobet</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/tr/csgo/casino" aria-label="Similar Sites of Roobet" class="review-button"></a>
+                  <a href="https://roobet.party/?ref=csgobroker" aria-label="Visit Roobet" class="review-button visit" target="_blank" rel="noopener"></a>
+                  <a href="/tr/mirrors/roobet" class="review-button mirror-visit" aria-label="Mirrors"><span>Mirrors</span></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Rakeback için <strong>+20% Bonus</strong> alın</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="csgobroker"></button>
             </div>
         </div>
         <div class="box-extra-links">
-            <a href="/mirrors/roobet" class="mirror-redirect extra-abox">
-                <div class="officon mirror"></div><span>Siteye Erişemiyor musunuz?</span></a>
+          <div class="promo-box extra-abox else-bonus counter-1">
+            <div class="logobg"><span>Rakeback Boost</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">csgobroker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <a href="/tr/mirrors/roobet" class="mirror-redirect extra-abox">
+            <div class="officon mirror"></div>
+            <span>Siteye erişemiyor musun?</span>
+          </a>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Artılar ve Eksiler</li>
+              <li data-target=".smallreview">Roobet İncelemesi</li>
+              <li data-target=".instruction">Roobet'te +%20 Rakeback Nasıl Alınır</li>
+              <li data-target=".screentable">Ekran Görüntüleri ve Modlar</li>
+              <li data-target=".sitedetails">Ödeme Yöntемleri</li>
+              <li data-target=".sitealternates">Benzer Siteler</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-    <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/tr/freebies/progressive-rewards" class="progressiverewards"><i class="officon signupbonus"></i> Kademeli Ödüller</a>
+                  <a href="/tr/freebies/rakeback-system" class="rakeback"><i class="officon rakeback"></i> Rakeback Sistemi</a>
+                  <a href="/tr/freebies/rain-system" class="rain"><i class="officon rain"></i> Yağmur Sistemi</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="info-block">
                 <div class="site-attention blocked">
                     <i class="officon exclamation"></i><span>Site bazı ülkelerde erişilemeyebilir</span>
@@ -313,17 +352,31 @@
                     <li>Bağlantımızı kullanarak <a target="_blank" rel="noopener" href="https://roobet.party/?ref=csgobroker">Roobet</a> sitesine gidin</li>
                     <li>Sağ üst köşedeki <strong>Register</strong> (Kayıt Ol) butonuna tıklayın</li>
                     <li>Şifre alanının altındaki <strong>Code</strong> (Kod) seçeneğine tıklayın</li>
-                    <li>Kodu girin: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Kodu Kopyala"></button></li>
+                    <li>Kodu girin: <code id="site-code">csgobroker</code><button class="copy site-promo-copy" aria-label="Kodu Kopyala"></button></li>
                     <li>Tamamlandı!</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/tr/crypto/matchbetting" aria-label="Esports Betting" class="cs2"></a>
+                    <a href="/tr/crypto/casino" aria-label="Slots" class="slots"></a>
+                    <a href="/tr/crypto/matchbetting" aria-label="Sport Betting" class="sport"></a>
+                    <a href="/tr/crypto/casino" aria-label="Live Dealer" class="livedealer"></a>
+                    <a href="/tr/crypto/casino" aria-label="Poker" class="poker"></a>
+                    <a href="/tr/crypto/casino" aria-label="Blackjack" class="blackjack"></a>
+                    <a href="/tr/crypto/casino" aria-label="Baccarat" class="baccarat"></a>
+                    <a href="/tr/crypto/roulette" aria-label="Roulette" class="roulette"></a>
+                    <a href="/tr/crypto/crash" aria-label="Crash" class="crash"></a>
+                    <a href="/tr/crypto/coinflip" aria-label="Coinflip" class="coinflip"></a>
+                    <a href="/tr/crypto" aria-label="Plinko" class="plinko"></a>
+                    <a href="/tr/crypto" aria-label="Mines" class="mines"></a>
+                    <a href="/tr/crypto" aria-label="Dice" class="dice"></a>
+                    <a href="/tr/crypto" aria-label="Towers" class="towers"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/roobet_1.jpg" alt="Roobet Main Page ScreenShot"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/roobet_2.jpg" alt="Roobet Slots List ScreenShot"></div>
@@ -333,9 +386,58 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/roobet_6.jpg" alt="Roobet Mission Uncrossable ScreenShot"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Yatırma Yöntemleri</span>
+                <div class="methodlist" id="first">
+                  <a href="/tr/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/tr/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/tr/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/tr/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/tr/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/tr/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/tr/crypto" aria-label="Ripple" class="ripple"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/tr/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/tr/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/tr/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/tr/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/tr/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/tr/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/tr/crypto" aria-label="Ripple" class="ripple"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Güven</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Destek</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Ödemeler</span>
+                  <div class="rating"><div class="star_rating" style="width: 100%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Oynanabilirlik</span>
+                  <div class="rating"><div class="star_rating" style="width: 100%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 92.5%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
-                    <h3>Trust</h3>
+                    <h3>Güven</h3>
                     <p>Roobet, Raw Entertainment B.V. tarafından işletilmekte olup Curaçao lisansı ile çalışmaktadır
                         (OGL/2024/687/0427). Site SSL şifreleme, iki faktörlü kimlik doğrulama ve Provably Fair sistemini
                         kullanmaktadır.
@@ -343,32 +445,109 @@
                         yasal olarak kabul edilmektedir.
                         Oyuncu aktivitelerinin yüksekliği ve şeffaf bonus sistemi de bu güveni desteklemektedir.</p>
                 </div>
-            
+
                 <div class="smallreview criteria">
-                    <h3>Support</h3>
+                    <h3>Destek</h3>
                     <p>Roobet destek ekibi 7/24 canlı sohbet hizmeti sunmaktadır ve yanıt süresi genellikle 2–5 dakikadır. Ayrıca
                         e-posta ve sosyal medya (Telegram, Discord, Twitter) üzerinden iletişim mümkündür.
                         Kullanıcılar, özellikle VIP programı kapsamında, ekibin hızlı ve profesyonel geri dönüşlerinden memnun
                         kalmaktadır.
                         Büyük işlemlerle ilgili sorunlar nadir görülür ve çoğunlukla KYC süreciyle ilgilidir.</p>
                 </div>
-            
+
                 <div class="smallreview criteria">
-                    <h3>Payments</h3>
+                    <h3>Ödemeler</h3>
                     <p>Roobet, BTC, ETH, USDT, LTC, XRP, DOGE gibi birçok kripto para birimini ve banka kartları, banka havalesi,
                         AstroPay gibi fiat yöntemleri desteklemektedir.
                         Para çekme işlemleri 5 ila 60 dakika içinde gerçekleştirilir ve çoğu işlem gecikme olmadan tamamlanır.
                         Finansal işlemlerde güvenilirliği, anında ödemeleri ve şeffaf ücret yapısı ile öne çıkmaktadır.</p>
                 </div>
-            
+
                 <div class="smallreview criteria">
-                    <h3>Playability</h3>
+                    <h3>Oynanabilirlik</h3>
                     <p>Roobet; Crash, Towers, Mines gibi özgün modların yanı sıra klasik casino oyunları (slotlar, canlı krupiyeler)
                         ve tam kapsamlı spor ile e-spor bahisleri dahil 5.000’den fazla oyun sunar.
                         Ayrıca Lootably platformu ile yatırımsız kazanç imkanı ve offline etkinlikler içeren özel bir VIP programı
                         da mevcuttur.
                         Roobet, kripto bahis piyasasında en geniş ve kaliteli oyun deneyimlerinden birini sunmaktadır.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best Roobet Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="500 Casino">
+                  <div class="logobg">
+                    <a href="/tr/reviews/csgo500"><img src="/img/csgo500-logo.webp" loading="lazy" draggable="false" alt="500 Casino"></a>
+                    <div class="main-mode casino lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/csgo500">500 Casino</a>
+                    <div class="site-reward"><p>İlk Depozitonuzda <strong>%300 Bonus</strong> Dönüş Kazanın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/csgo500" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://play500.games/r/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Gamdom">
+                  <div class="logobg">
+                    <a href="/tr/reviews/gamdom"><img src="/img/gamdom-logo.webp" loading="lazy" draggable="false" alt="Gamdom"></a>
+                    <div class="main-mode casino lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/gamdom">Gamdom</a>
+                    <div class="site-reward"><p><strong>Rakeback</strong> sistemini anında etkinleştirin</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/gamdom" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://gamdom.one/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Duelbits">
+                  <div class="logobg">
+                    <a href="/tr/reviews/duelbits"><img src="/img/duelbits-logo.webp" loading="lazy" draggable="false" alt="Duelbits"></a>
+                    <div class="main-mode casino lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/duelbits">Duelbits</a>
+                    <div class="site-reward"><p><strong>Rakeback</strong> sistemini anında etkinleştirin</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/duelbits" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://duelbits.com/?a=broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="BCGame">
+                  <div class="logobg">
+                    <a href="/tr/reviews/bcgame"><img src="/img/bcgame-logo.webp" loading="lazy" draggable="false" alt="BCGame"></a>
+                    <div class="main-mode casino lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/bcgame">BCGame</a>
+                    <div class="site-reward"><p>İlk Dört Yatırımınızda Toplamda <strong>+120%</strong> Bonus Alın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/bcgame" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://bcgame33.com/i-csgobroker-n/" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -404,14 +583,14 @@
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/es/reviews/bounty-stars">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
         <div class="selected-lang">
             Es
         </div>
     </div>
 </div>
-    </nav>    
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,22 +251,68 @@
                 <a href="https://bountystars.com/?r=csgobroker"><img src="/img/bounty-stars-logo.webp" alt="Bounty Stars logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 60%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode classic lang-es">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>Bounty Stars</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/es/cs2" aria-label="Similar Sites of Bounty Stars" class="review-button"></a>
+                  <a href="https://bountystars.com/?r=csgobroker" aria-label="Visit Bounty Stars" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Obtén <strong>0.50$</strong> y <strong>+100% en Depósitos</strong> Gratis</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="csgobroker"></button>
             </div>
+        </div>
+        <div class="box-extra-links">
+          <div class="promo-box extra-abox welcome-bonus counter-1">
+            <div class="logobg"><span>0.50$</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">csgobroker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="promo-box extra-abox deposit-bonus counter-2">
+            <div class="logobg"><span>+100%</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">csgobroker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Pros y Contras</li>
+              <li data-target=".smallreview">Reseña de Bounty Stars</li>
+              <li data-target=".instruction">¿Cómo obtener Bonos en Bounty Stars?</li>
+              <li data-target=".screentable">Capturas y Modos</li>
+              <li data-target=".sitedetails">Métodos de Pago</li>
+              <li data-target=".sitealternates">Sitios Similares</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/es/freebies/sign-up-bonuses" class="signupbonus"><i class="officon signupbonus"></i> Bono de Registro</a>
+                  <a href="/es/freebies/deposit-bonuses" class="depositbonus"><i class="officon depositbonuses"></i> Bono de Depósito</a>
+                  <a href="/es/freebies/progressive-rewards" class="progressiverewards"><i class="officon signupbonus"></i> Recompensas Progresivas</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Pros</p>
@@ -303,17 +349,27 @@
                 <li>Visita <a target="_blank" rel="noopener" href="https://bountystars.com/?r=csgobroker">Bounty Stars</a> usando nuestro enlace</li>
                 <li>Regístrate utilizando cualquiera de los métodos disponibles</li>
                 <li>Haz clic en <strong>Promo code</strong> a la izquierda de tu <strong>Avatar</strong></li>
-                <li>Ingresa el código: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copiar Código"></button></li>
+                <li>Ingresa el código: <code id="site-code">csgobroker</code><button class="copy site-promo-copy" aria-label="Copiar Código"></button></li>
                 <li>¡Listo!</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/es/csgo/caseopening" aria-label="Case Opening" class="cases"></a>
+                    <a href="/es/csgo/case-battle" aria-label="Case Battles" class="casebattles"></a>
+                    <a href="/es/rust/roulette" aria-label="Wheel of Fortune" class="wheel"></a>
+                    <a href="/es/csgo/crash" aria-label="Crash" class="crash"></a>
+                    <a href="/es/csgo/coinflip" aria-label="Coinflip" class="coinflip"></a>
+                    <a href="/es/csgo/plinko" aria-label="Plinko" class="plinko"></a>
+                    <a href="/es/rust" aria-label="Dice" class="dice"></a>
+                    <a href="/es" aria-label="Dice" class="dice"></a>
+                    <a href="/es" aria-label="Towers" class="towers"></a>
+                    <a href="/es/csgo/upgrader" aria-label="Upgrader" class="upgrader"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/bounty-stars_1.png" alt="Bounty Stars Main Page ScreenShot"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/bounty-stars_2.png" alt="Bounty Stars Cases ScreenShot"></div>
@@ -324,9 +380,55 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/bounty-stars_7.png" alt="Bounty Stars Plinko ScreenShot"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Métodos de Depósito</span>
+                <div class="methodlist" id="first">
+                  <a href="/es/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/es" aria-label="VISA" class="visa"></a>
+                  <a href="/es" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/es/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/es/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/es/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/es/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/es/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/es" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/es" aria-label="SkinsBack" class="skinsback"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/es/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/es/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/es/dota" aria-label="Dota 2 Items" class="dota"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Confianza</span>
+                  <div class="rating"><div class="star_rating" style="width: 50%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Soporte</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Pagos</span>
+                  <div class="rating"><div class="star_rating" style="width: 50%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Modos de Juego</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 60%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
-                    <h3>Trust</h3>
+                    <h3>Confianza</h3>
                     <p>Bounty Stars, anteriormente conocido como Rustix, es operado por Reponex LTD sin una licencia oficial de
                         juego. La plataforma utiliza un sistema Provably Fair basado en el algoritmo SHA-2, que permite verificar
                         cada resultado del juego. Sin embargo, la falta de licencia, auditoría independiente y la anonimidad de los
@@ -335,7 +437,7 @@
                         sobre sus gráficos y animaciones.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Support</h3>
+                    <h3>Soporte</h3>
                     <p>El soporte está disponible 24/7 a través de chat en vivo, correo electrónico y redes sociales (Telegram,
                         Discord, X). El tiempo promedio de respuesta en el chat es de 2 a 5 minutos. Los usuarios destacan la
                         actividad del equipo y la disponibilidad de un chat en ruso. En situaciones no estándar (como retiros
@@ -343,7 +445,7 @@
                         nivel de compromiso.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Payments</h3>
+                    <h3>Pagos</h3>
                     <p>Los depósitos y retiros en Bounty Stars se realizan principalmente mediante mercados P2P de terceros y
                         servicios de intercambio instantáneo. Se admiten skins de CS2 y Rust, además de criptomonedas (BTC, ETH,
                         LTC, etc.). Aunque las operaciones se procesan rápidamente (hasta 60 minutos), suelen implicar comisiones
@@ -352,13 +454,90 @@
                         límites dependen de la actividad de la cuenta.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Playability</h3>
+                    <h3>Modos de Juego</h3>
                     <p>Bounty Stars ofrece siete modos de juego: cajas, batallas de cajas, Crash, Upgrade, Minas, ruleta y cara o
                         cruz. La interfaz es minimalista e intuitiva, con animaciones suaves y bien diseñadas. Hay tablas de
                         clasificación, cajas gratis, recompensas por niveles y rakeback diario. Aunque no tiene slots ni apuestas
                         deportivas, la plataforma se enfoca en el PvP y en el juego con skins, siendo atractiva para los fans de
                         modos rápidos y centrados en cajas.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best Bounty Stars Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="HowlGG">
+                  <div class="logobg">
+                    <a href="/es/reviews/howlgg"><img src="/img/howlgg-logo.webp" loading="lazy" draggable="false" alt="HowlGG"></a>
+                    <div class="main-mode classic lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/howlgg">HowlGG</a>
+                    <div class="site-reward"><p>Receive a <strong>Bonus +25%</strong> to Rakeback</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/howlgg" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://howly.gg/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="500 Casino">
+                  <div class="logobg">
+                    <a href="/es/reviews/csgo500"><img src="/img/csgo500-logo.webp" loading="lazy" draggable="false" alt="500 Casino"></a>
+                    <div class="main-mode classic lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/csgo500">500 Casino</a>
+                    <div class="site-reward"><p>Get <strong>+300% Bonus</strong> on your First Deposit</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/csgo500" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://play500.games/r/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="CSGOPolygon">
+                  <div class="logobg">
+                    <a href="/es/reviews/csgopolygon"><img src="/img/csgopolygon-logo.webp" loading="lazy" draggable="false" alt="CSGOPolygon"></a>
+                    <div class="main-mode classic lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/csgopolygon">CSGOPolygon</a>
+                    <div class="site-reward"><p>Receive <strong>$1.00</strong> for Free</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/csgopolygon" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://playplg.com/ref/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Rustyloot">
+                  <div class="logobg">
+                    <a href="/es/reviews/rustyloot"><img src="/img/rustyloot-logo.webp" loading="lazy" draggable="false" alt="Rustyloot"></a>
+                    <div class="main-mode classic lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/rustyloot">Rustyloot</a>
+                    <div class="site-reward"><p>Receive <strong>$2.00</strong> for Free</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/rustyloot" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://rustyloot.gg/r/broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -391,18 +570,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

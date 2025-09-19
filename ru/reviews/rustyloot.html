@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/ru/reviews/rustyloot">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Ru
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,22 +251,69 @@
                 <a href=" https://rustyloot.gg/r/broker"><img src="/img/rustyloot-logo.webp" alt="Rustyloot logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 75%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode classic lang-ru">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>Rustyloot</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/ru/cs2" aria-label="Альтернативы Rustyloot" class="review-button"></a>
+                  <a href="https://rustyloot.gg/r/broker" aria-label="Перейти на Rustyloot" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Получите <strong>2.00$</strong> Бесплатно</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="broker"></button>
             </div>
+        </div>
+        <div class="box-extra-links">
+          <div class="promo-box extra-abox welcome-bonus counter-1">
+            <div class="logobg"><span>2.00$</span></div>
+            <div class="content">
+              <p>Промокод</p>
+              <code class="promo-code">broker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="promo-box extra-abox else-bonus counter-2">
+            <div class="logobg"><span>3 Free Cases</span></div>
+            <div class="content">
+              <p>Промокод</p>
+              <code class="promo-code">broker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Плюсы и Минусы Сайта</li>
+              <li data-target=".smallreview">Обзор RustyLoot</li>
+              <li data-target=".instruction">Как получить Бонус на сайте Rustyloot</li>
+              <li data-target=".screentable">Скриншоты и Режимы</li>
+              <li data-target=".sitedetails">Платежные Способы</li>
+              <li data-target=".sitealternates">Похожие Сайты</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/ru/freebies/sign-up-bonuses" class="signupbonus"><i class="officon signupbonus"></i> Бонус за Регистрацию</a>
+                  <a href="/ru/freebies/progressive-rewards" class="progressiverewards"><i class="officon signupbonus"></i> Награды за Уровень</a>
+                  <a href="/ru/freebies/daily-rewards" class="dailyrewards"><i class="officon dailyrewards"></i> Ежедневные Награды</a>
+                  <a href="/ru/freebies/rakeback-system" class="rakeback"><i class="officon rakeback"></i> Рейкбек</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Плюсы</p>
@@ -303,17 +350,25 @@
                 <li>Перейдите на <a target="_blank" rel="noopener" href=" https://rustyloot.gg/r/broker">Rustyloot</a> используя нашу ссылку</li>
                 <li>Залогиньтесь через Steam</li>
                 <li>Нажмите на <strong>Free Coins</strong> по центру сверху</li>
-                <li>Введите код: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                <li>Введите код: <code id="site-code">broker</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                 <li>Готово !</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/ru/rust/caseopening" aria-label="Case Opening" class="cases"></a>
+                    <a href="/ru/rust/case-battle" aria-label="Case Battles" class="casebattles"></a>
+                    <a href="/ru/rust/roulette" aria-label="Wheel of Fortune" class="wheel"></a>
+                    <a href="/ru/rust/coinflip" aria-label="Coinflip" class="coinflip"></a>
+                    <a href="/ru/rust" aria-label="Plinko" class="plinko"></a>
+                    <a href="/ru/rust" aria-label="Mines" class="mines"></a>
+                    <a href="/ru/rust" aria-label="Duels" class="duels"></a>
+                    <a href="/ru/rust/upgrader" aria-label="Upgrader" class="upgrader"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rustyloot_1.jpg" alt="Rustyloot ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rustyloot_2.jpg" alt="Rustyloot ScreenShot 2"></div>
@@ -322,6 +377,63 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rustyloot_5.jpg" alt="Rustyloot ScreenShot 5"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rustyloot_6.jpg" alt="Rustyloot ScreenShot 6"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Способы Пополнения</span>
+                <div class="methodlist" id="first">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/ru/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/ru" aria-label="Team Fortress 2 Items" class="tf2"></a>
+                  <a href="/ru" aria-label="VISA" class="visa"></a>
+                  <a href="/ru" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/ru/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/ru/crypto" aria-label="TON Coin" class="ton"></a>
+                  <a href="/ru/crypto" aria-label="Ripple" class="ripple"></a>
+                  <a href="/ru/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/ru" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/ru" aria-label="Skrill" class="skrill"></a>
+                  <a href="/ru" aria-label="UnionPay" class="unionpay"></a>
+                  <a href="/ru" aria-label="WebMoney" class="webmoney"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Способы Вывода</span>
+                <div class="methodlist" id="second">
+                  <a href="/ru/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Доверие</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Поддержка</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Деп/Вывод</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Режимы</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 75%;"></div></div>
             </div>
             <div class="criteria-descriptions">
               <div class="smallreview criteria">
@@ -332,14 +444,14 @@
                   прозрачную бонусную систему, последовательную работу и открытую политику, что делает его надёжным выбором среди
                   нишевых Rust-платформ, особенно для опытных пользователей, знакомых с особенностями скин-гемблинга.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Поддержка</h3>
                 <p>Служба поддержки представлена круглосуточным live-чатом и активным Discord-сообществом. Ответы поступают
                   оперативно, а сама команда активно участвует в жизни проекта. Такой формат особенно эффективен при текущем объёме
                   игроков и делает взаимодействие с платформой удобным как для новых, так и для опытных пользователей.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Деп/Вывод</h3>
                 <p>RustyLoot принимает депозиты в виде Rust-, CS2- и Dota 2-скинов, криптовалют (BTC, ETH, LTC), а также через
@@ -348,7 +460,7 @@
                   усложнить доступ к выводу для новичков. Тем не менее, для активных Rust-игроков система остаётся понятной и
                   стабильной.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Режимы</h3>
                 <p>Платформа предлагает широкий выбор режимов: рулетка, Coinflip, Crash, Minesweeper, Upgrader, Case Battles и
@@ -356,6 +468,83 @@
                   призами до $250,000 повышают вовлечённость, а интерфейс в стиле Rust создаёт атмосферу, близкую к оригинальной
                   игре. Комбинация геймификации и активного сообщества делает RustyLoot одним из самых насыщенных проектов в
                   сегменте.</p>
+              </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Похожие Сайты на Rustyloot</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="HowlGG">
+                  <div class="logobg">
+                    <a href="/ru/reviews/howlgg"><img src="/img/howlgg-logo.webp" loading="lazy" draggable="false" alt="HowlGG"></a>
+                    <div class="main-mode classic lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/howlgg">HowlGG</a>
+                    <div class="site-reward"><p>Получите <strong>Бонус +25%</strong> к Рейкбеку</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/howlgg" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://howly.gg/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="bandit.camp">
+                  <div class="logobg">
+                    <a href="/ru/reviews/banditcamp"><img src="/img/banditcamp-logo.webp" loading="lazy" draggable="false" alt="bandit.camp"></a>
+                    <div class="main-mode classic lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/banditcamp">bandit.camp</a>
+                    <div class="site-reward"><p>Получите <strong>0.15$ на Баланс</strong> при регистрации</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/banditcamp" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://bandit.camp/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="RustMagic">
+                  <div class="logobg">
+                    <a href="/ru/reviews/rustmagic"><img src="/img/rustmagic-logo.webp" loading="lazy" draggable="false" alt="RustMagic"></a>
+                    <div class="main-mode classic lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/rustmagic">RustMagic</a>
+                    <div class="site-reward"><p>Получите <strong>+3% Бонус</strong> ко всем вашим Депозитам</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/rustmagic" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://rustmagic.com/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="RustClash">
+                  <div class="logobg">
+                    <a href="/ru/reviews/rustclash"><img src="/img/rustclash-logo.webp" loading="lazy" draggable="false" alt="RustClash"></a>
+                    <div class="main-mode classic lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/rustclash">RustClash</a>
+                    <div class="site-reward"><p>Получите <strong>+5% Бонус</strong> ко всем вашим Депозитам</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/rustclash" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://rustclash.com/r/BROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
        </div>
@@ -389,18 +578,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

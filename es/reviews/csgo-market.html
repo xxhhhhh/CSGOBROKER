@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/es/reviews/csgo-market">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Es
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,21 +251,48 @@
                 <a href="https://market.csgo.com/"><img src="/img/csgo-market-logo.webp" draggable="false" alt="CSGO Market logo"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 77.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode marketplace lang-es">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>CSGO Market</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/es/csgo/marketplaces" aria-label="Similar Sites of CSGO-MARKET" class="review-button"></a>
+                  <a href="https://market.csgo.com/" aria-label="Visit CSGO-MARKET" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">No hay bono de registro disponible en la plataforma</span></div>
             </div>
         </div>
+        <div class="box-extra-links">
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Pros y Contras</li>
+              <li data-target=".smallreview">Reseña de CSGO Market</li>
+              <li data-target=".instruction">¿Cómo empezar a usar CSGO Market</li>
+              <li data-target=".screentable">Capturas y Modos</li>
+              <li data-target=".sitedetails">Métodos de Pago</li>
+              <li data-target=".sitealternates">Sitios Similares</li>
+            </ol>
+          </div>
+        </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features"></div></div>
+          <div class="shortinfo empty">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Pros</p>
@@ -312,12 +339,14 @@
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/es/csgo/sell-skins" aria-label="Sell Skins" class="sell-skins"></a>
+                    <a href="/es/csgo/buy-skins" aria-label="Buy Skins" class="buy-skins"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgo-market_1.png" alt="CSGO Market ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgo-market_2.png" alt="CSGO Market ScreenShot 2"></div>
@@ -327,9 +356,60 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgo-market_6.png" alt="CSGO Market ScreenShot 6"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Métodos de Depósito</span>
+                <div class="methodlist" id="first">
+                  <a href="/es/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/es/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/es" aria-label="Team Fortress 2 Items" class="tf2"></a>
+                  <a href="/es" aria-label="VISA" class="visa"></a>
+                  <a href="/es" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/es" aria-label="Google Pay" class="gpay"></a>
+                  <a href="/es" aria-label="Apple Pay" class="apay"></a>
+                  <a href="/es" aria-label="SkinsBack" class="skinsback"></a>
+                  <a href="/es" aria-label="Skinpay" class="skinpay"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/es/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/es/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/es" aria-label="Team Fortress 2 Items" class="tf2"></a>
+                  <a href="/es" aria-label="VISA" class="visa"></a>
+                  <a href="/es" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/es/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/es/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/es/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/es/crypto" aria-label="Tron" class="tron"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Confianza</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Soporte</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Pagos</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Precios</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 77.5%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
-                    <h3>Trust</h3>
+                    <h3>Confianza</h3>
                     <p>CSGO Market opera desde 2015 y se reconoce como una de las plataformas P2P más antiguas y confiables para el
                         comercio de skins de CS2. Tiene una alta calificación de usuarios (4.8/5 en Trustpilot) y ha demostrado
                         estar dispuesto a compensar pérdidas, como lo hizo tras el hackeo de 2022. A pesar de algunas reseñas
@@ -337,25 +417,102 @@
                         segura y ha funcionado de manera estable durante casi una década.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Support</h3>
+                    <h3>Soporte</h3>
                     <p>El soporte de CSGO Market está disponible mediante sistema de tickets en el sitio web y correo electrónico,
                         aunque su efectividad recibe opiniones divididas. Algunos usuarios informan de largas esperas o problemas
                         sin resolver. No obstante, en situaciones graves, la plataforma ha respondido de forma rápida en el pasado y
                         ha compensado pérdidas.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Payments</h3>
+                    <h3>Pagos</h3>
                     <p>CSGO Market admite múltiples métodos de depósito y retiro, incluyendo tarjetas, criptomonedas y sistemas de
                         pago locales. Se aceptan Bitcoin, Ethereum, Tether, SBP, YooMoney y tarjetas bancarias. Las retiradas tienen
                         una comisión adicional del 3% al 5%, dependiendo del método, y se procesan en un máximo de 3 días hábiles,
                         lo que está dentro del estándar del sector.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Pricing</h3>
+                    <h3>Precios</h3>
                     <p>La plataforma ofrece condiciones comerciales favorables: la comisión estándar es solo del 5%. También permite
                         crear órdenes de compra para conseguir mejores precios. A pesar de la competencia, CSGO Market sigue siendo
                         un jugador fuerte, especialmente en el mercado de la CEI.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best CSGO Market Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="Lis-Skins">
+                  <div class="logobg">
+                    <a href="/es/reviews/lis-skins"><img src="/img/lis-skins-logo.svg" loading="lazy" draggable="false" alt="Lis-Skins"></a>
+                    <div class="main-mode marketplace lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/lis-skins">Lis-Skins</a>
+                    <div class="site-reward"><p><strong>Get up to 5.00$</strong> for selling skins</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/lis-skins" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://lis-skins.com/?rf=83346597" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="DMarket">
+                  <div class="logobg">
+                    <a href="/es/reviews/dmarket"><img src="/img/dmarket-logo.webp" loading="lazy" draggable="false" alt="DMarket"></a>
+                    <div class="main-mode marketplace lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/dmarket">DMarket</a>
+                    <div class="site-reward"><p>No hay bono de registro</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/dmarket" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://dmarket.com/?ref=g7qiVABi4O" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="BitSkins">
+                  <div class="logobg">
+                    <a href="/es/reviews/bitskins"><img src="/img/bitskins-logo.webp" loading="lazy" draggable="false" alt="BitSkins"></a>
+                    <div class="main-mode marketplace lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/bitskins">BitSkins</a>
+                    <div class="site-reward"><p>No hay bono de registro</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/bitskins" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://bitskins.com/?ref_alias=csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Avan.Market">
+                  <div class="logobg">
+                    <a href="/es/reviews/avanmarket"><img src="/img/avanmarket-logo.webp" loading="lazy" draggable="false" alt="Avan.Market"></a>
+                    <div class="main-mode marketplace lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/avanmarket">Avan.Market</a>
+                    <div class="site-reward"><p><strong>Get up to 5.00$</strong> for selling skins</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/avanmarket" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://avan.market/?r=broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -388,18 +545,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/es/reviews/idle-empire">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Es
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,22 +251,59 @@
                 <a href="https://www.idle-empire.com?r=csgobroker"><img src="/img/idle-empire-logo.png" alt="Idle-Empire logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 90%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode earning lang-es">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>Idle-Empire</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/es/earning" aria-label="Similar Sites of Idle-Empire" class="review-button"></a>
+                  <a href="https://www.idle-empire.com/?r=csgobroker" aria-label="Visit Idle-Empire" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Obtén <strong>500 Monedas</strong> Gratis</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="csgobroker"></button>
             </div>
+        </div>
+        <div class="box-extra-links">
+          <div class="promo-box extra-abox else-bonus counter-1">
+            <div class="logobg"><span>500 coins</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">csgobroker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Pros y Contras</li>
+              <li data-target=".smallreview">Reseña de Idle-Empire</li>
+              <li data-target=".instruction">¿Cómo obtener Bonos en Idle-Empire</li>
+              <li data-target=".screentable">Capturas y Modos</li>
+              <li data-target=".sitedetails">Métodos de Pago</li>
+              <li data-target=".sitealternates">Sitios Similares</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-    <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/es/freebies/sign-up-bonuses" class="signupbonus"><i class="officon signupbonus"></i> Bono de Registro</a>
+                  <a href="/es/freebies/daily-rewards" class="dailyrewards"><i class="officon dailyrewards"></i> Recompensas Diarias</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="info-block">
                 <div class="site-attention blocked">
                     <i class="officon exclamation"></i><span>Prohibido estrictamente el uso de VPN en la plataforma</span>
@@ -310,12 +347,13 @@
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/es/earning/offerwalls" aria-label="Offerwalls" class="offerwalls"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/idle-empire_1.png" alt="Idle-Empire ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/idle-empire_2.png" alt="Idle-Empire ScreenShot 2"></div>
@@ -324,9 +362,46 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/idle-empire_5.png" alt="Idle-Empire ScreenShot 5"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Métodos de Retiro</span>
+                <div class="methodlist" id="second">
+                  <a href="/es/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/es" aria-label="VISA" class="visa"></a>
+                  <a href="/es/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/es/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/es/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/es/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/es/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/es" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/es" aria-label="Games" class="games"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Confianza</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Soporte</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Pagos</span>
+                  <div class="rating"><div class="star_rating" style="width: 100%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Variedad</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 90%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
-                    <h3>Trust</h3>
+                    <h3>Confianza</h3>
                     <p>Idle-Empire existe desde 2015 y se ha ganado la reputación de ser una plataforma estable y honesta. Los
                         usuarios destacan los pagos regulares, reglas claras y navegación sencilla. Con más de medio millón de
                         usuarios a nivel mundial y múltiples métodos de retiro, mantiene un alto nivel de confianza. A pesar de
@@ -334,14 +409,14 @@
                         historial sin incidentes graves.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Support</h3>
+                    <h3>Soporte</h3>
                     <p>La plataforma ofrece soporte amplio: email, tickets, base de conocimiento y comunidades activas en Discord y
                         redes sociales. Los usuarios reciben respuestas detalladas y rápidas. Hay soporte en varios idiomas,
                         incluyendo ruso. Aunque no cuenta con chat en vivo, el sistema de ayuda bien organizado y el compromiso del
                         equipo garantizan una atención eficiente, especialmente para nuevos usuarios.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Payments</h3>
+                    <h3>Pagos</h3>
                     <p>Una de las principales ventajas de Idle-Empire es su sistema de retiro cómodo y flexible. Se puede retirar
                         desde solo $0.10 mediante criptomonedas, Payeer, Perfect Money o tarjetas de regalo. También se aceptan
                         PayPal, skins de CS2 y transferencias bancarias. La mayoría de los pagos se procesan en 1–2 horas,
@@ -349,12 +424,72 @@
                         financieramente.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Variety</h3>
+                    <h3>Variedad</h3>
                     <p>Idle-Empire ofrece una gran variedad de tareas: encuestas, ofertas, ver videos, instalar apps y participar en
                         concursos. También hay sistema de bonificaciones y tareas de creación de contenido. A pesar de esto, muchas
                         actividades están dirigidas a usuarios angloparlantes, y la disponibilidad depende de la región. En general,
                         ofrece un catálogo equilibrado y estable, sin depender demasiado de un solo tipo de tarea.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best Idle-Empire Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="Freecash">
+                  <div class="logobg">
+                    <a href="/es/reviews/freecash"><img src="/img/freecash-logo.webp" loading="lazy" draggable="false" alt="Freecash"></a>
+                    <div class="main-mode earning lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/freecash">Freecash</a>
+                    <div class="site-reward"><p>Receive <strong>Free Case</strong> with chance to <strong>win 250$</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/freecash" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://freecash.com/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="GrindBux">
+                  <div class="logobg">
+                    <a href="/es/reviews/grindbux"><img src="/img/grindbux-logo.png" loading="lazy" draggable="false" alt="GrindBux"></a>
+                    <div class="main-mode earning lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/grindbux">GrindBux</a>
+                    <div class="site-reward"><p>Receive <strong>$0.10</strong> for Free</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/grindbux" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://grindbux.com/ref/broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Freeward">
+                  <div class="logobg">
+                    <a href="/es/reviews/freeward"><img src="/img/freeward-logo.webp" loading="lazy" draggable="false" alt="Freeward"></a>
+                    <div class="main-mode earning lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/freeward">Freeward</a>
+                    <div class="site-reward"><p>Receive <strong>$0.10</strong> for Free</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/freeward" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://freeward.net/ref/v2vod" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box"></div>
+              </div>
             </div>
        </div>
   </div>
@@ -387,18 +522,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

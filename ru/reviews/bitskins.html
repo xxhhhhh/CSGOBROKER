@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/ru/reviews/bitskins">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Ru
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,21 +251,48 @@
                 <a href="https://bitskins.com/?ref_alias=csgobroker"><img src="/img/bitskins-logo.webp" draggable="false" alt="BitSkins"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 80%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode marketplace lang-ru">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>BitSkins</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/ru/csgo/marketplaces" aria-label="Альтернативы BitSkins" class="review-button"></a>
+                  <a href="https://bitskins.com/?ref_alias=csgobroker" aria-label="Перейти на BitSkins" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">На сайте нет Бонуса за Регистрацию</span></div>
             </div>
         </div>
+        <div class="box-extra-links">
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Плюсы и Минусы Сайта</li>
+              <li data-target=".smallreview">Обзор на BitSkins</li>
+              <li data-target=".instruction">Как начать пользоваться сайтом BitSkins</li>
+              <li data-target=".screentable">Скриншоты и Режимы</li>
+              <li data-target=".sitedetails">Платежные Способы</li>
+              <li data-target=".sitealternates">Похожие Сайты</li>
+            </ol>
+          </div>
+        </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features"></div></div>
+          <div class="shortinfo empty">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Плюсы</p>
@@ -307,18 +334,69 @@
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/ru/csgo/sell-skins" aria-label="Sell Skins" class="sell-skins"></a>
+                    <a href="/ru/csgo/buy-skins" aria-label="Buy Skins" class="buy-skins"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/bitskins_1_new.png" alt="BitSkins ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/bitskins_2_new.png" alt="BitSkins ScreenShot 2"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/bitskins_3_new.png" alt="BitSkins ScreenShot 3"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/bitskins_4_new.png" alt="BitSkins ScreenShot 4"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Способы Пополнения</span>
+                <div class="methodlist" id="first">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/ru" aria-label="VISA" class="visa"></a>
+                  <a href="/ru" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru/crypto" aria-label="Binance Coin" class="bnb"></a>
+                  <a href="/ru" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/ru" aria-label="Skrill" class="skrill"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Способы Вывода</span>
+                <div class="methodlist" id="second">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/ru" aria-label="VISA" class="visa"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru/crypto" aria-label="Binance Coin" class="bnb"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Доверие</span>
+                  <div class="rating"><div class="star_rating" style="width: 100%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Поддержка</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Деп/Вывод</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Цены</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 80%;"></div></div>
             </div>
             <div class="criteria-descriptions">
               <div class="smallreview criteria">
@@ -328,14 +406,14 @@
                   безопасности сделок. Согласно данным Trustpilot, рейтинг составляет 4.7 из 5, а за годы работы было обработано
                   множество транзакций. Эти факты позволяют говорить о высоком уровне доверия к платформе среди пользователей.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Поддержка</h3>
                 <p>Служба поддержки BitSkins доступна через тикет-систему. Также реализована интеграция с Discord и Telegram для
                   получения уведомлений об изменениях в аккаунте. Несмотря на отсутствие полноценного live-чата, обратная связь
                   осуществляется в установленные сроки, а модерация споров проводится при наличии верифицированного аккаунта.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Деп/Вывод</h3>
                 <p>Для вывода средств на платформе требуется прохождение KYC-проверки, особенно при превышении установленных
@@ -344,13 +422,90 @@
                   этом комиссии на вывод могут достигать 4%. Фиатные переводы могут иметь ограничения для некоторых регионов,
                   например, пользователям из США и Канады недоступны карточные переводы.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Цены</h3>
                 <p>Платформа предлагает широкий ассортимент скинов, при этом комиссия на продажу варьируется от 4.75% до 10% в
                   зависимости от активности аккаунта и уровня верификации. Встроенная система сравнения цен позволяет пользователям
                   оценивать предложения на рынке. Новым пользователям рекомендуется внимательно ознакомиться с комиссионной
                   политикой перед началом торговли.</p>
+              </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Похожие Сайты на BitSkins</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="Lis-Skins">
+                  <div class="logobg">
+                    <a href="/ru/reviews/lis-skins"><img src="/img/lis-skins-logo.svg" loading="lazy" draggable="false" alt="Lis-Skins"></a>
+                    <div class="main-mode marketplace lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/lis-skins">Lis-Skins</a>
+                    <div class="site-reward"><p><strong>Получите до 5.00$</strong> за Продажу Скинов</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/lis-skins" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://lis-skins.com/?rf=83346597" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="DMarket">
+                  <div class="logobg">
+                    <a href="/ru/reviews/dmarket"><img src="/img/dmarket-logo.webp" loading="lazy" draggable="false" alt="DMarket"></a>
+                    <div class="main-mode marketplace lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/dmarket">DMarket</a>
+                    <div class="site-reward"><p>На сайте нет Бонуса за Регистрацию</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/dmarket" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://dmarket.com/?ref=g7qiVABi4O" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Avan.Market">
+                  <div class="logobg">
+                    <a href="/ru/reviews/avanmarket"><img src="/img/avanmarket-logo.webp" loading="lazy" draggable="false" alt="Avan.Market"></a>
+                    <div class="main-mode marketplace lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/avanmarket">Avan.Market</a>
+                    <div class="site-reward"><p><strong>Получите до 5.00$</strong> за Продажу Скинов</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/avanmarket" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://avan.market/?r=broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="CSMoney">
+                  <div class="logobg">
+                    <a href="/ru/reviews/csmoney"><img src="/img/csmoney-logo.webp" loading="lazy" draggable="false" alt="CSMoney"></a>
+                    <div class="main-mode marketplace lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/csmoney">CSMoney</a>
+                    <div class="site-reward"><p>На сайте нет Бонуса за Регистрацию</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/csmoney" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://cs.money/?utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=trade&utm_content=link" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
        </div>
@@ -384,18 +539,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png">  
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/ru/reviews/rainbet">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
         <div class="selected-lang">
             Ru
         </div>
     </div>
 </div>
-    </nav>    
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,22 +251,69 @@
                 <a href="https://rainbet.com/?r=broker"><img src="/img/rainbet-logo.webp" alt="rainbet" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 82.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode casino lang-ru">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>Rainbet</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="https://rainbet.com/?r=broker" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/ru/csgo/casino" aria-label="Альтернативы Rainbet" class="review-button"></a>
+                  <a href="https://rainbet.com/?r=broker" aria-label="Перейти на Rainbet" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Получите <strong>+100% Бонус</strong> к Первому Пополнению</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="broker"></button>
             </div>
+        </div>
+        <div class="box-extra-links">
+          <div class="promo-box extra-abox else-bonus counter-1">
+            <div class="logobg"><span>Rakeback Boost</span></div>
+            <div class="content">
+              <p>Промокод</p>
+              <code class="promo-code">broker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="promo-box extra-abox deposit-bonus counter-2">
+            <div class="logobg"><span>+100%</span></div>
+            <div class="content">
+              <p>Промокод</p>
+              <code class="promo-code">broker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Плюсы и Минусы Сайта</li>
+              <li data-target=".smallreview">Обзор сайта Rainbet</li>
+              <li data-target=".instruction">Как получить Бонусы на сайте Rainbet</li>
+              <li data-target=".screentable">Скриншоты и Режимы</li>
+              <li data-target=".sitedetails">Платежные Способы</li>
+              <li data-target=".sitealternates">Похожие Сайты</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/ru/freebies/deposit-bonuses" class="depositbonus"><i class="officon depositbonuses"></i> Бонус к Пополнению</a>
+                  <a href="/ru/freebies/progressive-rewards" class="progressiverewards"><i class="officon signupbonus"></i> Награды за Уровень</a>
+                  <a href="/ru/freebies/daily-rewards" class="dailyrewards"><i class="officon dailyrewards"></i> Ежедневные Награды</a>
+                  <a href="/ru/freebies/rakeback-system" class="rakeback"><i class="officon rakeback"></i> Рейкбек</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Плюсы</p>
@@ -307,17 +354,30 @@
                         нашу ссылку</li>
                     <li>Зарегистрируйтесь или войдите через <strong>Steam</strong></li>
                     <li>Нажмите сверху на <strong>Wallet</strong> и затем на <strong>Зеленую Кнопку</strong></li>
-                    <li>Введите код: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                    <li>Введите код: <code id="site-code">broker</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                     <li>Готово! Теперь доступны <a target="_blank" rel="noopener" href="https://rainbet.com/promotions?r=broker">Бонусы</a>, а так же <strong>+20% к Рейкбеку на 72 часа !</strong></li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/ru/csgo/matchbetting" aria-label="Esports Betting" class="cs2"></a>
+                    <a href="/ru/csgo/casino" aria-label="Slots" class="slots"></a>
+                    <a href="/ru/csgo/matchbetting" aria-label="Sport Betting" class="sport"></a>
+                    <a href="/ru/csgo/casino" aria-label="Live Dealer" class="livedealer"></a>
+                    <a href="/ru/csgo/casino" aria-label="Poker" class="poker"></a>
+                    <a href="/ru/csgo/casino" aria-label="Blackjack" class="blackjack"></a>
+                    <a href="/ru/csgo/casino" aria-label="Baccarat" class="baccarat"></a>
+                    <a href="/ru/csgo/caseopening" aria-label="Case Opening" class="cases"></a>
+                    <a href="/ru/csgo/case-battle" aria-label="Case Battles" class="casebattles"></a>
+                    <a href="/ru/csgo/plinko" aria-label="Plinko" class="plinko"></a>
+                    <a href="/ru/csgo/mines" aria-label="Mines" class="mines"></a>
+                    <a href="/ru/csgo/dice" aria-label="Dice" class="dice"></a>
+                    <a href="/ru" aria-label="Towers" class="towers"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rainbet_1.png" alt="Rainbet Main Page ScreenShot"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rainbet_2.png" alt="Rainbet Sportsbook ScreenShot"></div>
@@ -326,6 +386,67 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rainbet_5.png" alt="Rainbet Cases List ScreenShot"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rainbet_6.png" alt="Rainbet Case ScreenShot"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Способы Пополнения</span>
+                <div class="methodlist" id="first">
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru/crypto" aria-label="Binance Coin" class="bnb"></a>
+                  <a href="/ru/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/ru/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/ru/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/ru/crypto" aria-label="TON Coin" class="ton"></a>
+                  <a href="/ru/crypto" aria-label="Ripple" class="ripple"></a>
+                  <a href="/ru/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/ru/crypto" aria-label="Stellar" class="stellar"></a>
+                  <a href="/ru/crypto" aria-label="Cardano" class="cardano"></a>
+                  <a href="/ru/crypto" aria-label="Polygon (Matic)" class="polygon"></a>
+                  <a href="/ru" aria-label="Gift Cards" class="giftcard"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Способы Вывода</span>
+                <div class="methodlist" id="second">
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru/crypto" aria-label="Binance Coin" class="bnb"></a>
+                  <a href="/ru/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/ru/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/ru/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/ru/crypto" aria-label="Ripple" class="ripple"></a>
+                  <a href="/ru/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/ru/crypto" aria-label="Stellar" class="stellar"></a>
+                  <a href="/ru/crypto" aria-label="Cardano" class="cardano"></a>
+                  <a href="/ru/crypto" aria-label="Polygon (Matic)" class="polygon"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Доверие</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Поддержка</span>
+                  <div class="rating"><div class="star_rating" style="width: 100%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Деп/Вывод</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Режимы</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 82.5%;"></div></div>
             </div>
             <div class="criteria-descriptions">
               <div class="smallreview criteria">
@@ -336,7 +457,7 @@
                   технических механизмов прозрачности, ограниченная известность за пределами криптосообщества и узкая специализация
                   на цифровых активах могут сдерживать восприятие доверия со стороны широкой аудитории.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Поддержка</h3>
                 <p>Служба поддержки Rainbet доступна 24/7 через live-чат, email и центр помощи с поисковой навигацией. Среднее время
@@ -345,7 +466,7 @@
                   маркетинговых запросов. Пользователи в целом отмечают высокий уровень клиентского обслуживания и вовлечённость
                   команды.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Деп/Вывод</h3>
                 <p>Платформа работает исключительно с криптовалютами и поддерживает BTC, ETH, USDT, LTC, SOL и другие токены. Вывод
@@ -354,7 +475,7 @@
                   подход соответствует интересам криптоориентированной аудитории, но может оказаться менее удобным для пользователей
                   без опыта работы с цифровыми активами.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Режимы</h3>
                 <p>Rainbet предлагает более 3,000 игр от лицензированных провайдеров, включая слоты, live-казино, настольные игры,
@@ -362,6 +483,83 @@
                   командой Ninjas in Pyjamas. Реализована система турниров, кэшбэков, бонусных миссий и лидербордов. Несмотря на
                   разнообразие, оригинальных собственных игровых механик немного, и основной акцент сделан на проверенные форматы.
                 </p>
+              </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Похожие Сайты на Rainbet</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="500 Casino">
+                  <div class="logobg">
+                    <a href="/ru/reviews/csgo500"><img src="/img/csgo500-logo.webp" loading="lazy" draggable="false" alt="500 Casino"></a>
+                    <div class="main-mode casino lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/csgo500">500 Casino</a>
+                    <div class="site-reward"><p>Получите <strong>+300% Бонус</strong> к Первому Пополнению</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/csgo500" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://play500.games/r/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="HowlGG">
+                  <div class="logobg">
+                    <a href="/ru/reviews/howlgg"><img src="/img/howlgg-logo.webp" loading="lazy" draggable="false" alt="HowlGG"></a>
+                    <div class="main-mode casino lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/howlgg">HowlGG</a>
+                    <div class="site-reward"><p>Получите <strong>Бонус +25%</strong> к Рейкбеку</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/howlgg" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://howly.gg/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Gamdom">
+                  <div class="logobg">
+                    <a href="/ru/reviews/gamdom"><img src="/img/gamdom-logo.webp" loading="lazy" draggable="false" alt="Gamdom"></a>
+                    <div class="main-mode casino lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/gamdom">Gamdom</a>
+                    <div class="site-reward"><p>Мгновенно разблокируйте систему <strong>Рейкбека</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/gamdom" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://gamdom.one/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Roobet">
+                  <div class="logobg">
+                    <a href="/ru/reviews/roobet"><img src="/img/roobet-logo.png" loading="lazy" draggable="false" alt="Roobet"></a>
+                    <div class="main-mode casino lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/roobet">Roobet</a>
+                    <div class="site-reward"><p>Мгновенно разблокируйте систему <strong>Рейкбека</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/roobet" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://roobet.party/?ref=csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
        </div>
@@ -395,18 +593,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

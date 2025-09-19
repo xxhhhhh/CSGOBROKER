@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/tr/reviews/bounty-stars">
@@ -229,16 +229,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
         <div class="selected-lang">
             Tr
         </div>
     </div>
 </div>
-    </nav>    
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -252,22 +252,68 @@
                 <a href="https://bountystars.com/?r=csgobroker"><img src="/img/bounty-stars-logo.webp" alt="Bounty Stars logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 60%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode classic lang-tr">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>Bounty Stars</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/tr/cs2" aria-label="Similar Sites of Bounty Stars" class="review-button"></a>
+                  <a href="https://bountystars.com/?r=csgobroker" aria-label="Visit Bounty Stars" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus"><strong>0,50$</strong> ve <strong>%100 Yatırım Bonusu</strong> Kazanın</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="csgobroker"></button>
             </div>
+        </div>
+        <div class="box-extra-links">
+          <div class="promo-box extra-abox welcome-bonus counter-1">
+            <div class="logobg"><span>0.50$</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">csgobroker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="promo-box extra-abox deposit-bonus counter-2">
+            <div class="logobg"><span>+100%</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">csgobroker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Artılar ve Eksiler</li>
+              <li data-target=".smallreview">Bounty Stars İncelemesi</li>
+              <li data-target=".instruction">Bounty Stars Bonusları Nasıl Talep Edilir</li>
+              <li data-target=".screentable">Ekran Görüntüleri ve Modlar</li>
+              <li data-target=".sitedetails">Ödeme Yöntемleri</li>
+              <li data-target=".sitealternates">Benzer Siteler</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/tr/freebies/sign-up-bonuses" class="signupbonus"><i class="officon signupbonus"></i> Kayıt Bonusu</a>
+                  <a href="/tr/freebies/deposit-bonuses" class="depositbonus"><i class="officon depositbonuses"></i> Depozit Bonusu</a>
+                  <a href="/tr/freebies/progressive-rewards" class="progressiverewards"><i class="officon signupbonus"></i> Kademeli Ödüller</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Artılar</p>
@@ -304,17 +350,27 @@
                 <li>Sağlanan bağlantıyı kullanarak <a target="_blank" rel="noopener" href="https://bountystars.com/?r=csgobroker">Bounty Stars</a>'e gidin</li>
                 <li>Steam ile Kayıt Ol</li>
                 <li><strong>Avatar</strong>'ınızın yanındaki <strong>Promokod</strong>'unuza tıklayın</li>
-                <li>Kod Girin: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                <li>Kod Girin: <code id="site-code">csgobroker</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                 <li>Keyfini Çıkar!</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/tr/csgo/caseopening" aria-label="Case Opening" class="cases"></a>
+                    <a href="/tr/csgo/case-battle" aria-label="Case Battles" class="casebattles"></a>
+                    <a href="/tr/rust/roulette" aria-label="Wheel of Fortune" class="wheel"></a>
+                    <a href="/tr/csgo/crash" aria-label="Crash" class="crash"></a>
+                    <a href="/tr/csgo/coinflip" aria-label="Coinflip" class="coinflip"></a>
+                    <a href="/tr/csgo/plinko" aria-label="Plinko" class="plinko"></a>
+                    <a href="/tr/rust" aria-label="Dice" class="dice"></a>
+                    <a href="/tr" aria-label="Dice" class="dice"></a>
+                    <a href="/tr" aria-label="Towers" class="towers"></a>
+                    <a href="/tr/csgo/upgrader" aria-label="Upgrader" class="upgrader"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/bounty-stars_1.png" alt="Bounty Stars Main Page ScreenShot"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/bounty-stars_2.png" alt="Bounty Stars Cases ScreenShot"></div>
@@ -325,9 +381,55 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/bounty-stars_7.png" alt="Bounty Stars Plinko ScreenShot"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Yatırma Yöntemleri</span>
+                <div class="methodlist" id="first">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr" aria-label="VISA" class="visa"></a>
+                  <a href="/tr" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/tr/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/tr/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/tr/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/tr" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/tr" aria-label="SkinsBack" class="skinsback"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/tr/dota" aria-label="Dota 2 Items" class="dota"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Güven</span>
+                  <div class="rating"><div class="star_rating" style="width: 50%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Destek</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Ödemeler</span>
+                  <div class="rating"><div class="star_rating" style="width: 50%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Oynanabilirlik</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 60%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
-                    <h3>Trust</h3>
+                    <h3>Güven</h3>
                     <p>Bounty Stars, daha önce Rustix olarak bilinen platform, Reponex LTD tarafından lisanssız olarak
                         işletilmektedir. Platform, oyun sonuçlarını doğrulamak için SHA-2 algoritmasına dayalı Provably Fair sistemi
                         kullanır. Ancak lisans eksikliği, bağımsız denetim olmaması ve sahiplerin anonimliği şeffaflığı azaltır.
@@ -336,14 +438,14 @@
                         bildirimler almaktadır.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Support</h3>
+                    <h3>Destek</h3>
                     <p>Destek hizmeti 7/24 canlı sohbet, e-posta ve sosyal medya (Telegram, Discord, X) üzerinden sunulmaktadır.
                         Canlı sohbette ortalama yanıt süresi 2–5 dakikadır. Kullanıcılar, ekibin aktifliğini ve Rusça sohbet
                         desteğini olumlu olarak değerlendirmektedir. Ancak yüksek meblağlı işlemlerde otomatik cevaplar ve
                         gecikmeler yaşanabilir. Genel olarak destek ekibi istikrarlı ve yeterince ilgili görünmektedir.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Payments</h3>
+                    <h3>Ödemeler</h3>
                     <p>Bounty Stars'ta para yatırma ve çekme işlemleri genellikle üçüncü taraf P2P pazar yerleri ve hızlı takas
                         servisleri aracılığıyla yapılır. CS2 ve Rust skinleri ile BTC, ETH, LTC gibi kripto paralar
                         desteklenmektedir. İşlemler genellikle 60 dakika içinde tamamlanır ancak özellikle item dönüştürme sırasında
@@ -352,12 +454,89 @@
                         aktivitesine göre değişir.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Playability</h3>
+                    <h3>Oynanabilirlik</h3>
                     <p>Bounty Stars yedi oyun modu sunar: kasalar, kasa savaşları, Crash, Upgrade, Mayınlar, rulet ve yazı-tura.
                         Arayüz sade ve kullanıcı dostudur, animasyonlar akıcı ve özenlidir. Lider tabloları, ücretsiz kasalar,
                         seviye ödülleri ve günlük rakeback mevcuttur. Slotlar ve spor bahisleri olmasa da PvP ve skin odaklı
                         oynanışa odaklanarak kasa modlarını seven oyunculara hitap etmektedir.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best Bounty Stars Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="HowlGG">
+                  <div class="logobg">
+                    <a href="/tr/reviews/howlgg"><img src="/img/howlgg-logo.webp" loading="lazy" draggable="false" alt="HowlGG"></a>
+                    <div class="main-mode classic lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/howlgg">HowlGG</a>
+                    <div class="site-reward"><p><strong>%25 Bonus</strong> Rakeback alın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/howlgg" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://howly.gg/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="500 Casino">
+                  <div class="logobg">
+                    <a href="/tr/reviews/csgo500"><img src="/img/csgo500-logo.webp" loading="lazy" draggable="false" alt="500 Casino"></a>
+                    <div class="main-mode classic lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/csgo500">500 Casino</a>
+                    <div class="site-reward"><p>İlk Depozitonuzda <strong>%300 Bonus</strong> Dönüş Kazanın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/csgo500" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://play500.games/r/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="CSGOPolygon">
+                  <div class="logobg">
+                    <a href="/tr/reviews/csgopolygon"><img src="/img/csgopolygon-logo.webp" loading="lazy" draggable="false" alt="CSGOPolygon"></a>
+                    <div class="main-mode classic lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/csgopolygon">CSGOPolygon</a>
+                    <div class="site-reward"><p>Ücretsiz <strong>$1.00</strong> alın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/csgopolygon" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://playplg.com/ref/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Rustyloot">
+                  <div class="logobg">
+                    <a href="/tr/reviews/rustyloot"><img src="/img/rustyloot-logo.webp" loading="lazy" draggable="false" alt="Rustyloot"></a>
+                    <div class="main-mode classic lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/rustyloot">Rustyloot</a>
+                    <div class="site-reward"><p><strong>$2.00</strong> Bedava Alın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/rustyloot" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://rustyloot.gg/r/broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -393,14 +572,14 @@
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

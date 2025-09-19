@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/tr/reviews/whitemarket">
@@ -229,16 +229,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Tr
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -252,21 +252,48 @@
                 <a href="https://white.market/invite/7b94f28706d45d48"><img src="/img/whitemarket-logo.webp" draggable="false" alt="White.Market logo"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 70%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode marketplace lang-tr">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>White.Market</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/tr/csgo/marketplaces" aria-label="Similar Sites of white.market" class="review-button"></a>
+                  <a href="https://white.market/invite/7b94f28706d45d48" aria-label="Visit white.market" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Kayıt Bonusu Yok</span></div>
             </div>
         </div>
+        <div class="box-extra-links">
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Artılar ve Eksiler</li>
+              <li data-target=".smallreview">White.Market İncelemesi</li>
+              <li data-target=".instruction">White.Market'a Kullanmaya nasıl başlanır</li>
+              <li data-target=".screentable">Ekran Görüntüleri ve Modlar</li>
+              <li data-target=".sitedetails">Ödeme Yöntемleri</li>
+              <li data-target=".sitealternates">Benzer Siteler</li>
+            </ol>
+          </div>
+        </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features"></div></div>
+          <div class="shortinfo empty">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Artılar</p>
@@ -306,12 +333,14 @@
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/tr/csgo/sell-skins" aria-label="Sell Skins" class="sell-skins"></a>
+                    <a href="/tr/csgo/buy-skins" aria-label="Buy Skins" class="buy-skins"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/whitemarket_1.jpg" alt="White.Market Main Page ScreenShot"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/whitemarket_2.jpg" alt="White.Market Skins Selection ScreenShot"></div>
@@ -319,9 +348,57 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/whitemarket_4.jpg" alt="White.Market Faceit Collaboration ScreenShot"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Yatırma Yöntemleri</span>
+                <div class="methodlist" id="first">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr" aria-label="VISA" class="visa"></a>
+                  <a href="/tr" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/tr/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/tr/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/tr" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/tr" aria-label="Skrill" class="skrill"></a>
+                  <a href="/tr" aria-label="SkinsBack" class="skinsback"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr" aria-label="VISA" class="visa"></a>
+                  <a href="/tr" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/tr/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/tr/crypto" aria-label="Ethereum" class="eth"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Güven</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Destek</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Ödemeler</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Fiyat</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 70%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
-                    <h3>Trust</h3>
+                    <h3>Güven</h3>
                     <p>White.Market, platformayı yöneten ve yasal geçerlilik ile temel güvenliği sağlayan WhiteBIT kripto para
                         borsasının itibarı üzerine kuruludur. FACEIT, NAVI ve ESL ile yapılan iş birlikleri sayesinde, platform
                         büyük ve tanınmış bir ekosistemin parçası olarak algılanıyor. Ancak platformun görece yeniliği, sahiplerinin
@@ -329,25 +406,102 @@
                     </p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Support</h3>
+                    <h3>Destek</h3>
                     <p>Platform, destek sistemi olarak bilet (ticket) sistemi ve SSS (FAQ) sunmaktadır. İşlem başarı oranlarının
                         yüksekliği ve sorunların hızlı çözümü iddialarına rağmen, kullanıcılar kişisel hizmet eksikliği ve canlı
                         sohbetin olmamasından şikayetçi. Destek hizmeti işlevsel, ancak bu kadar iddialı bir platformdan daha
                         kapsamlı ve erişilebilir bir destek beklenirdi.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Payments</h3>
+                    <h3>Ödemeler</h3>
                     <p>White.Market, kripto paralar (USDT, BTC, ETH), banka kartları ve Skinsback hizmeti üzerinden oyun içi eşyalar
                         ile para yatırma ve çekme işlemlerini destekler. WhiteBIT ve Tether kullanıldığında komisyonsuz işlem
                         yapılabilmesi avantajdır. Ancak tarayıcı eklentisi zorunluluğu, WhiteBIT üzerinden doğrulama ve konum
                         kısıtlamaları bazı kullanıcılar için sorun yaratabilir.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Pricing</h3>
+                    <h3>Fiyat</h3>
                     <p>White.Market, kullanıcılar arası doğrudan işlem modeli ve alıcılar için %0 komisyon sayesinde cazip fiyatlar
                         sunar. Satıcılar için %5 komisyon oranı sektörde ortalamadır. Limitli emirler ve kişisel mağazalar gibi
                         özellikler de kullanıcıların ticaret olanaklarını genişletmektedir.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best White.Market Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="Lis-Skins">
+                  <div class="logobg">
+                    <a href="/tr/reviews/lis-skins"><img src="/img/lis-skins-logo.svg" loading="lazy" draggable="false" alt="Lis-Skins"></a>
+                    <div class="main-mode marketplace lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/lis-skins">Lis-Skins</a>
+                    <div class="site-reward"><p><strong>Skin satarak 5,00 $'a kadar kazanın</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/lis-skins" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://lis-skins.com/?rf=83346597" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="DMarket">
+                  <div class="logobg">
+                    <a href="/tr/reviews/dmarket"><img src="/img/dmarket-logo.webp" loading="lazy" draggable="false" alt="DMarket"></a>
+                    <div class="main-mode marketplace lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/dmarket">DMarket</a>
+                    <div class="site-reward"><p>Sitede Kayıt Bonusu yok</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/dmarket" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://dmarket.com/?ref=g7qiVABi4O" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="BitSkins">
+                  <div class="logobg">
+                    <a href="/tr/reviews/bitskins"><img src="/img/bitskins-logo.webp" loading="lazy" draggable="false" alt="BitSkins"></a>
+                    <div class="main-mode marketplace lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/bitskins">BitSkins</a>
+                    <div class="site-reward"><p>Sitede Kayıt Bonusu yok</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/bitskins" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://bitskins.com/?ref_alias=csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Avan.Market">
+                  <div class="logobg">
+                    <a href="/tr/reviews/avanmarket"><img src="/img/avanmarket-logo.webp" loading="lazy" draggable="false" alt="Avan.Market"></a>
+                    <div class="main-mode marketplace lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/avanmarket">Avan.Market</a>
+                    <div class="site-reward"><p><strong>Skin satarak 5,00 $'a kadar kazanın</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/avanmarket" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://avan.market/?r=broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -380,18 +534,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

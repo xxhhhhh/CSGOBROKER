@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/ru/reviews/rapidskins">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Ru
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,21 +251,50 @@
                 <a href="https://rapidskins.com/a/broker "><img src="/img/rapidskins-logo.webp" draggable="false" alt="RAPIDSKINS"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 65%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode instant-sell lang-ru">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>RAPIDSKINS</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/ru/csgo/instant-sell" aria-label="Альтернативы RAPIDSKINS" class="review-button"></a>
+                  <a href="https://rapidskins.com/a/broker " aria-label="Перейти на RAPIDSKINS" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
+                  <button class="copy defbutton" aria-label="Copy Code" code="broker"></button>
                 <div class="bonus_info"><span id="bonus">Получите <strong>+1% Бонус</strong> на все ваши продажи</span></div>
             </div>
+        </div>
+        <div class="box-extra-links">
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Плюсы и Минусы Сайта</li>
+              <li data-target=".smallreview">Обзор RAPIDSKINS</li>
+              <li data-target=".instruction">Как получить Бонус к продаже на сайте RAPIDSKINS</li>
+              <li data-target=".screentable">Скриншоты и Режимы</li>
+              <li data-target=".sitedetails">Платежные Способы</li>
+              <li data-target=".sitealternates">Похожие Сайты</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
 <div class="boxreview">
-    <div class="shortinfo"><div class="features bonused"></div></div>
+  <div class="shortinfo">
+    <div class="features">
+      <div class="featuresbox">
+        <div class="typesinside">
+          <a href="/ru/freebies/bonuses-to-sale" class="bonustosale"><i class="officon salebonus"></i> Бонус к Продаже</a>
+        </div>
+      </div>
+    </div>
+  </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Плюсы</p>
@@ -305,17 +334,20 @@
                 <li>Перейдите на <a target="_blank" rel="noopener" href="https://rapidskins.com/a/broker ">RAPIDSKINS</a> используя нашу ссылку</li>
                 <li>Залогиньтесь через Steam</li>
                 <li>Нажмите на вашу <strong>Аватарку</strong>, затем нажмите на <strong>Use Code</strong></li>
-                <li>Введите Код: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                <li>Введите Код: <code id="site-code">broker</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                 <li>Готово !</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/ru/csgo/instant-sell" aria-label="Instant Sell Skins" class="instant-sell"></a>
+                    <a href="/ru/csgo/trade-skins" aria-label="Trade Skins" class="trade-skins"></a>
+                    <a href="/ru/csgo/buy-skins" aria-label="Buy Skins" class="buy-skins"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rapidskins_1.jpg" alt="RAPIDSKINS ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rapidskins_2.png" alt="RAPIDSKINS ScreenShot 2"></div>
@@ -323,6 +355,55 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rapidskins_4.png" alt="RAPIDSKINS ScreenShot 4"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rapidskins_5.png" alt="RAPIDSKINS ScreenShot 5"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Способы Пополнения</span>
+                <div class="methodlist" id="first">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/ru/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/ru/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/ru" aria-label="Gift Cards" class="giftcard"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Способы Вывода</span>
+                <div class="methodlist" id="second">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru" aria-label="PayPal" class="paypal"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Доверие</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Поддержка</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Деп/Вывод</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Цены</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 65%;"></div></div>
             </div>
         <div class="criteria-descriptions">
           <div class="smallreview criteria">
@@ -333,7 +414,7 @@
               Наличие базовой правовой инфраструктуры и прозрачных условий работы позволяет оценивать уровень доверия как
               умеренно высокий, несмотря на сравнительно небольшой срок присутствия на рынке.</p>
           </div>
-        
+
           <div class="smallreview criteria">
             <h3>Поддержка</h3>
             <p>Поддержка пользователей реализована через круглосуточный live-чат, email и форму обратной связи. Среднее время
@@ -341,7 +422,7 @@
               подробная база знаний или раздел FAQ, оперативность поддержки и наличие нескольких каналов коммуникации
               обеспечивают достаточный уровень помощи при стандартных пользовательских запросах.</p>
           </div>
-        
+
           <div class="smallreview criteria">
             <h3>Деп/Вывод</h3>
             <p>RapidSkins поддерживает только криптовалютные транзакции: USDT, BTC, LTC и ETH. Минимальный порог вывода
@@ -349,7 +430,7 @@
               выбранной монеты. Отсутствие фиатных способов оплаты ограничивает доступность для менее опытных пользователей.
               Платформа ориентирована преимущественно на криптоаудиторию и опытных трейдеров.</p>
           </div>
-        
+
           <div class="smallreview criteria">
             <h3>Цены</h3>
             <p>Платформа предлагает 1% бонус на продажу предметов, что может быть выгодно при крупных операциях. Однако уровень
@@ -357,6 +438,83 @@
               инструментов сортировки, ограниченный ассортимент и ориентированность на ограниченное число игр (например, Rust)
               делают торговлю менее удобной для широкой аудитории. Подходит скорее для точечных операций, чем для регулярной
               торговли.</p>
+          </div>
+        </div>
+        <div class="sitealternates">
+          <div class="alternates-title">Похожие Сайты на RAPIDSKINS</div>
+          <div class="sitealternatesboxes">
+            <div class="box" id="Lis-Skins">
+              <div class="logobg">
+                <a href="/ru/reviews/lis-skins"><img src="/img/lis-skins-logo.svg" loading="lazy" draggable="false" alt="Lis-Skins"></a>
+                <div class="main-mode instant-sell lang-ru">
+                  <div class="main-mode-box">
+                    <div class="main-mode-icon"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <a class="boxtitle" href="/ru/reviews/lis-skins">Lis-Skins</a>
+                <div class="site-reward"><p><strong>Получите до 5.00$</strong> за Продажу Скинов</p></div>
+                <div class="content-buttons">
+                  <a href="/ru/reviews/lis-skins" aria-label="Read Review" class="review-button"></a>
+                  <a href="https://lis-skins.com/?rf=83346597" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                </div>
+              </div>
+            </div>
+            <div class="box" id="Avan.Market">
+              <div class="logobg">
+                <a href="/ru/reviews/avanmarket"><img src="/img/avanmarket-logo.webp" loading="lazy" draggable="false" alt="Avan.Market"></a>
+                <div class="main-mode instant-sell lang-ru">
+                  <div class="main-mode-box">
+                    <div class="main-mode-icon"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <a class="boxtitle" href="/ru/reviews/avanmarket">Avan.Market</a>
+                <div class="site-reward"><p><strong>Получите до 5.00$</strong> за Продажу Скинов</p></div>
+                <div class="content-buttons">
+                  <a href="/ru/reviews/avanmarket" aria-label="Read Review" class="review-button"></a>
+                  <a href="https://avan.market/?r=broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                </div>
+              </div>
+            </div>
+            <div class="box" id="Moon.Market">
+              <div class="logobg">
+                <a href="/ru/reviews/moonmarket"><img src="/img/moonmarket-logo.webp" loading="lazy" draggable="false" alt="Moon.Market"></a>
+                <div class="main-mode instant-sell lang-ru">
+                  <div class="main-mode-box">
+                    <div class="main-mode-icon"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <a class="boxtitle" href="/ru/reviews/moonmarket">Moon.Market</a>
+                <div class="site-reward"><p>На сайте нет Бонуса за Регистрацию</p></div>
+                <div class="content-buttons">
+                  <a href="/ru/reviews/moonmarket" aria-label="Read Review" class="review-button"></a>
+                  <a href="https://moonmarket.org/?r=DTQBM8816d89c" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                </div>
+              </div>
+            </div>
+            <div class="box" id="Aim.market">
+              <div class="logobg">
+                <a href="/ru/reviews/aimmarket"><img src="/img/aimmarket-logo.webp" loading="lazy" draggable="false" alt="Aim.market"></a>
+                <div class="main-mode instant-sell lang-ru">
+                  <div class="main-mode-box">
+                    <div class="main-mode-icon"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <a class="boxtitle" href="/ru/reviews/aimmarket">Aim.market</a>
+                <div class="site-reward"><p><strong>Получите до 5.00$</strong> за Продажу Скинов</p></div>
+                <div class="content-buttons">
+                  <a href="/ru/reviews/aimmarket" aria-label="Read Review" class="review-button"></a>
+                  <a href="https://aim.market/p/broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
        </div>
@@ -390,18 +548,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

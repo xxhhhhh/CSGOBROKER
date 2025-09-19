@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/es/reviews/skinbox">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Es
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,22 +251,67 @@
                 <a href="https://skinbox.live/"><img src="/img/skinbox-logo.webp" alt="SKINBOX logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 70%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode cases lang-es">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>SKINBOX</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/es/csgo/caseopening" aria-label="Similar Sites of SKINBOX" class="review-button"></a>
+                  <a href="https://skinbox.live/" aria-label="Visit SKINBOX" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Obtén <strong>Caja Gratis</strong> y un <strong>+20% de Bono</strong> en Depósitos</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="BROKER777"></button>
             </div>
+        </div>
+        <div class="box-extra-links">
+          <div class="promo-box extra-abox deposit-bonus counter-1">
+            <div class="logobg"><span>+20%</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">BROKER777</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="promo-box extra-abox else-bonus counter-2">
+            <div class="logobg"><span>Welcome Case</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">BROKER777</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Pros y Contras</li>
+              <li data-target=".smallreview">Reseña de SKINBOX</li>
+              <li data-target=".instruction">¿Cómo obtener el Bono de Depósito en SKINBOX?</li>
+              <li data-target=".screentable">Capturas y Modos</li>
+              <li data-target=".sitedetails">Métodos de Pago</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/es/freebies/deposit-bonuses" class="depositbonus"><i class="officon depositbonuses"></i> Bono de Depósito</a>
+                  <a href="/es/freebies/daily-rewards" class="dailyrewards"><i class="officon dailyrewards"></i> Recompensas Diarias</a>
+                  <a href="/es/freebies/giveaways" class="giveaways"><i class="officon giveaways"></i> Sorteos</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Pros</p>
@@ -303,17 +348,19 @@
                 <li>Visita <a target="_blank" rel="noopener" href="https://skinbox.live/">SKINBOX</a> usando nuestro enlace</li>
                 <li>Regístrate con Steam</li>
                 <li>Haz clic en <strong>Cartera</strong> junto a tu <strong>Avatar</strong></li>
-                <li>Ingresa el código: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                <li>Ingresa el código: <code id="site-code">BROKER777</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                 <li>¡Listo!</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/es/csgo/caseopening" aria-label="Case Opening" class="cases"></a>
+                    <a href="/es/csgo/upgrader" aria-label="Upgrader" class="upgrader"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/skinbox_1.png" alt="SKINBOX ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/skinbox_2.png" alt="SKINBOX ScreenShot 2"></div>
@@ -321,6 +368,61 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/skinbox_4.png" alt="SKINBOX ScreenShot 4"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/skinbox_5.png" alt="SKINBOX ScreenShot 5"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Métodos de Depósito</span>
+                <div class="methodlist" id="first">
+                  <a href="/es/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/es/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/es/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/es" aria-label="Team Fortress 2 Items" class="tf2"></a>
+                  <a href="/es" aria-label="VISA" class="visa"></a>
+                  <a href="/es" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/es/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/es/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/es/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/es/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/es/crypto" aria-label="Binance Coin" class="bnb"></a>
+                  <a href="/es/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/es/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/es/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/es/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/es/crypto" aria-label="TON Coin" class="ton"></a>
+                  <a href="/es/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/es/crypto" aria-label="Polygon (Matic)" class="polygon"></a>
+                  <a href="/es" aria-label="YUMoney" class="yumoney"></a>
+                  <a href="/es" aria-label="FK Wallet" class="fkwallet"></a>
+                  <a href="/es" aria-label="SBP" class="sbp"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/es/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Confianza</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Soporte</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Pagos</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Modos de Juego</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 70%;"></div></div>
             </div>
        </div>
   </div>
@@ -353,18 +455,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

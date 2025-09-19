@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/tr/reviews/steamlevelu">
@@ -229,16 +229,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Tr
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -252,21 +252,49 @@
                 <a href="https://steamlevelu.com/p/83346597"><img src="/img/steamlevelu-logo.png" draggable="false" alt="SteamLevelU"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 80%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode steamlvlup lang-tr">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>SteamLevelU</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/tr/steam/levelup" aria-label="Similar Sites of STEAMLEVELU" class="review-button"></a>
+                  <a href="https://steamlevelu.com/p/83346597" aria-label="Visit STEAMLEVELU" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus"><strong>Ücretsiz $0.05</strong> Kazanın</span></div>
             </div>
         </div>
+        <div class="box-extra-links">
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Artılar ve Eksiler</li>
+              <li data-target=".smallreview">SteamLevelU İncelemesi</li>
+              <li data-target=".instruction">SteamLevelU Bonusları Nasıl Alınır</li>
+              <li data-target=".screentable">Ekran Görüntüleri ve Modlar</li>
+              <li data-target=".sitedetails">Ödeme Yöntемleri</li>
+              <li data-target=".sitealternates">Benzer Siteler</li>
+            </ol>
+          </div>
+        </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/tr/freebies/sign-up-bonuses" class="signupbonus"><i class="officon signupbonus"></i> Kayıt Bonusu</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Artılar</p>
@@ -304,12 +332,14 @@
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/tr/steam/levelup" aria-label="Steam Level Up" class="steamlvlup"></a>
+                    <a href="/tr/steam/topup" aria-label="Steam Top Up" class="steamtopup"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/steamlevelu_1.png" alt="SteamLevelU ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/steamlevelu_2.png" alt="SteamLevelU ScreenShot 2"></div>
@@ -318,9 +348,62 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/steamlevelu_5.png" alt="SteamLevelU ScreenShot 5"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Yatırma Yöntemleri</span>
+                <div class="methodlist" id="first">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/tr/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/tr" aria-label="VISA" class="visa"></a>
+                  <a href="/tr" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/tr/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/tr/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/tr/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/tr/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/tr/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/tr/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/tr/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/tr/crypto" aria-label="Polygon (Matic)" class="polygon"></a>
+                  <a href="/tr" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/tr" aria-label="SkinsBack" class="skinsback"></a>
+                  <a href="/tr" aria-label="SBP" class="sbp"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/tr" aria-label="Steam Trading Cards" class="tradingcards"></a>
+                  <a href="/tr" aria-label="Buy Games" class="games"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Güven</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Destek</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Ödemeler</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Fonksiyonel</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 80%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
-                    <h3>Trust</h3>
+                    <h3>Güven</h3>
                     <p>SteamLevelU 2020 yılından beri hizmet vermektedir ve istikrarlı performansı, şeffaf koşulları ve resmi Steam
                         API aracılığıyla yetkilendirme özelliğiyle kullanıcıların güvenini kazanmıştır. Onaylı SH Level Up bot
                         ağıyla bağlantısı ve herhangi bir ciddi olay yaşanmamış olması platforma olan güveni artırmaktadır. Site
@@ -328,18 +411,18 @@
                         sağlar. Yapılan bireysel analiz doğrultusunda, platform tutarlılığı, sağlamlığı ve uzun vadeli odaklı
                         yapısıyla yüksek puanı hak etmektedir.</p>
                 </div>
-            
+
                 <div class="smallreview criteria">
-                    <h3>Support</h3>
+                    <h3>Destek</h3>
                     <p>SteamLevelU’da destek yalnızca e-posta yoluyla sağlanmaktadır. Bu yöntem temel sorunların çözümünde yeterli
                         olsa da, canlı sohbet veya hızlı iletişim kanallarının olmaması desteği daha yavaş hale getirir. Özellikle
                         kişisel taleplerin işlenmesi, canlı destek sunan hizmetlere kıyasla daha uzun sürebilir. Yine de aktif bir
                         e-posta adresine sahip olunması ve sosyal medya üzerinden iletişime açık olunması, ekibin geri bildirime
                         açık olduğunu gösterir; her ne kadar en kullanışlı formatlar olmasa da.</p>
                 </div>
-            
+
                 <div class="smallreview criteria">
-                    <h3>Payments</h3>
+                    <h3>Ödemeler</h3>
                     <p>SteamLevelU geniş bir ödeme seçeneği sunar: banka kartları, PayPal, kripto paralar (USDT dahil), CS:GO/TF2
                         anahtar ve skin’leri, ayrıca Steam Gems. İşlemler hızlıdır, zorunlu doğrulama gerekmez ve komisyon oranları
                         segmentin en düşüğü arasındadır. Özellikle, kullanıcıların Steam bakiyelerini doğrudan platform üzerinden
@@ -347,15 +430,58 @@
                         Güvenilirlik, hız ve esneklik açısından platformun finansal özellikleri piyasadaki en iyi seçenekler
                         arasında yer alır.</p>
                 </div>
-            
+
                 <div class="smallreview criteria">
-                    <h3>Functional</h3>
+                    <h3>Fonksiyonel</h3>
                     <p>SteamLevelU, Steam seviyesini artırmak için gerekli tüm işlevleri sunar: entegre seviye hesaplayıcı, hazır
                         kart setleri satın alma, anahtarlar, mücevherler ve oyun içi eşyalarla yükseltme imkanı. Ayrıca platform,
                         kart düşürmek için ucuz oyun satın almayı destekler ve promosyon kodları ile referans programı içeren bir
                         bonus sistemi sunar. Ekstra olarak, Steam bakiyesini doğrudan siteden yükleme imkanı, ödeme yöntemleri
                         sınırlı ülkeler için büyük bir avantaj sağlar. Arayüz sezgisel olup, modern cihazlara tam uyumludur.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best SteamLevelU Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="SteamLvlUp">
+                  <div class="logobg">
+                    <a href="/tr/reviews/steamlvlup"><img src="/img/steamlvlup-logo.webp" loading="lazy" draggable="false" alt="SteamLvlUp"></a>
+                    <div class="main-mode steamlvlup lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/steamlvlup">SteamLvlUp</a>
+                    <div class="site-reward"><p><strong>100 Gems</strong> Bedava Alın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/steamlvlup" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://slvlup.com/r/jt6p95" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="SteamLevels">
+                  <div class="logobg">
+                    <a href="/tr/reviews/steamlevels"><img src="/img/steamlevels-logo.svg" loading="lazy" draggable="false" alt="SteamLevels"></a>
+                    <div class="main-mode steamlvlup lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/steamlevels">SteamLevels</a>
+                    <div class="site-reward"><p>Sitede Kayıt Bonusu yok</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/steamlevels" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://steamlevels.com/" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box"></div>
+                <div class="box"></div>
+              </div>
             </div>
        </div>
   </div>
@@ -388,18 +514,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

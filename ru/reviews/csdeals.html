@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/ru/reviews/csdeals">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Ru
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,21 +251,48 @@
                 <a href="https://csdeals.com/new/?ref=mzyxowy"><img src="/img/csdeals-logo.webp" draggable="false" alt="CS.Deals"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 72.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode trading lang-ru">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>CS.Deals</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/ru/csgo/trade-skins" aria-label="Альтернативы CSDeals" class="review-button"></a>
+                  <a href="https://csdeals.com/new/?ref=mzyxowy" aria-label="Перейти на CSDeals" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">На сайте нет Бонуса за Регистрацию</span></div>
             </div>
         </div>
+        <div class="box-extra-links">
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Плюсы и Минусы Сайта</li>
+              <li data-target=".smallreview">Обзор на CS.Deals</li>
+              <li data-target=".instruction">Как начать пользоваться сайтом CS.Deals</li>
+              <li data-target=".screentable">Скриншоты и Режимы</li>
+              <li data-target=".sitedetails">Платежные Способы</li>
+              <li data-target=".sitealternates">Похожие Сайты</li>
+            </ol>
+          </div>
+        </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features"></div></div>
+          <div class="shortinfo empty">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Плюсы</p>
@@ -311,12 +338,14 @@
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/ru/csgo/sell-skins" aria-label="Sell Skins" class="sell-skins"></a>
+                    <a href="/ru/csgo/buy-skins" aria-label="Buy Skins" class="buy-skins"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csdeals_1.jpg" alt="CS.Deals Main Page ScreenShot"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csdeals_2.jpg" alt="CS.Deals CS2 Skins ScreenShot"></div>
@@ -324,6 +353,53 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csdeals_4.jpg" alt="CS.Deals Dota 2 Items ScreenShot"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csdeals_5.jpg" alt="CS.Deals Team Fortress 2 ScreenShot"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Способы Пополнения</span>
+                <div class="methodlist" id="first">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/ru/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/ru" aria-label="Team Fortress 2 Items" class="tf2"></a>
+                  <a href="/ru" aria-label="VISA" class="visa"></a>
+                  <a href="/ru" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Способы Вывода</span>
+                <div class="methodlist" id="second">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/ru/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/ru" aria-label="Team Fortress 2 Items" class="tf2"></a>
+                  <a href="/ru" aria-label="VISA" class="visa"></a>
+                  <a href="/ru" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Доверие</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Поддержка</span>
+                  <div class="rating"><div class="star_rating" style="width: 50%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Деп/Вывод</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Цены</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 72.5%;"></div></div>
             </div>
             <div class="criteria-descriptions">
               <div class="smallreview criteria">
@@ -334,7 +410,7 @@
                   отдельных случаях возникали сложности с торговыми ботами. В целом, многолетняя активность и техническая
                   стабильность позволяют говорить о базовом уровне доверия со стороны аудитории.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Поддержка</h3>
                 <p>Техническая поддержка осуществляется через тикет-систему, электронную почту и социальные сети (включая
@@ -343,7 +419,7 @@
                   транзакциям и проблемы с предметами. Отсутствие оперативного канала связи может снижать удобство использования
                   платформы в случае срочных запросов.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Деп/Вывод</h3>
                 <p>CS.Deals предлагает несколько способов пополнения: банковские карты (Visa, Mastercard), криптовалюты, PayPal,
@@ -352,7 +428,7 @@
                   зависимости от выбранного способа. Отсутствие моментального вывода и ограниченная поддержка локальных методов
                   могут повлиять на удобство для части пользователей.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Цены</h3>
                 <p>CS.Deals предлагает конкурентоспособную модель комиссий: базовая ставка за продажу составляет около 2%. Платформа
@@ -360,6 +436,83 @@
                   инструменты анализа цен. Эти возможности делают торговлю более удобной и структурированной. Тем не менее, уровень
                   выгоды зависит от объёма операций и условий конкретных сделок, поэтому рекомендуется предварительно ознакомиться с
                   тарифами и правилами.</p>
+              </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Похожие Сайты на CS.Deals</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="Lis-Skins">
+                  <div class="logobg">
+                    <a href="/ru/reviews/lis-skins"><img src="/img/lis-skins-logo.svg" loading="lazy" draggable="false" alt="Lis-Skins"></a>
+                    <div class="main-mode trading lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/lis-skins">Lis-Skins</a>
+                    <div class="site-reward"><p><strong>Получите до 5.00$</strong> за Продажу Скинов</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/lis-skins" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://lis-skins.com/?rf=83346597" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="DMarket">
+                  <div class="logobg">
+                    <a href="/ru/reviews/dmarket"><img src="/img/dmarket-logo.webp" loading="lazy" draggable="false" alt="DMarket"></a>
+                    <div class="main-mode trading lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/dmarket">DMarket</a>
+                    <div class="site-reward"><p>На сайте нет Бонуса за Регистрацию</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/dmarket" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://dmarket.com/?ref=g7qiVABi4O" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="BitSkins">
+                  <div class="logobg">
+                    <a href="/ru/reviews/bitskins"><img src="/img/bitskins-logo.webp" loading="lazy" draggable="false" alt="BitSkins"></a>
+                    <div class="main-mode trading lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/bitskins">BitSkins</a>
+                    <div class="site-reward"><p>На сайте нет Бонуса за Регистрацию</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/bitskins" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://bitskins.com/?ref_alias=csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Avan.Market">
+                  <div class="logobg">
+                    <a href="/ru/reviews/avanmarket"><img src="/img/avanmarket-logo.webp" loading="lazy" draggable="false" alt="Avan.Market"></a>
+                    <div class="main-mode trading lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/avanmarket">Avan.Market</a>
+                    <div class="site-reward"><p><strong>Получите до 5.00$</strong> за Продажу Скинов</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/avanmarket" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://avan.market/?r=broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
        </div>
@@ -393,18 +546,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

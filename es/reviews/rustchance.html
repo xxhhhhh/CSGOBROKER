@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/es/reviews/rustchance">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Es
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,22 +251,60 @@
                 <a href="https://rustchance.org/"><img src="/img/rustchance-logo.webp" alt="RustChance logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 70%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode classic lang-es">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>RustChance</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/es/cs2" aria-label="Similar Sites of RustChance" class="review-button"></a>
+                  <a href="https://rustchance.org/" aria-label="Visit RustChance" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Obtén <strong>0.50$</strong> Gratis</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="broker"></button>
             </div>
+        </div>
+        <div class="box-extra-links">
+          <div class="promo-box extra-abox welcome-bonus counter-1">
+            <div class="logobg"><span>0.50$</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">broker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Pros y Contras</li>
+              <li data-target=".smallreview">Reseña de RustChance</li>
+              <li data-target=".instruction">¿Cómo obtener un Bono en RustChance?</li>
+              <li data-target=".screentable">Capturas y Modos</li>
+              <li data-target=".sitedetails">Métodos de Pago</li>
+              <li data-target=".sitealternates">Sitios Similares</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/es/freebies/sign-up-bonuses" class="signupbonus"><i class="officon signupbonus"></i> Bono de Registro</a>
+                  <a href="/es/freebies/faucet-system" class="faucet"><i class="officon faucet"></i> Sistema de Grifos</a>
+                  <a href="/es/freebies/rain-system" class="rain"><i class="officon rain"></i> Sistema de Lluvia</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Pros</p>
@@ -308,17 +346,22 @@
                 <li>Visita <a target="_blank" rel="noopener" href="https://rustchance.org/">RustChance</a> usando nuestro enlace</li>
                 <li>Regístrate utilizando cualquiera de los métodos disponibles</li>
                 <li>Haz clic en <strong>Redeem Code</strong> en la parte superior</li>
-                <li>Introduce el código: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copiar código"></button></li>
+                <li>Introduce el código: <code id="site-code">broker</code><button class="copy site-promo-copy" aria-label="Copiar código"></button></li>
                 <li>¡Listo!</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/es/rust/roulette" aria-label="Roulette" class="roulette"></a>
+                    <a href="/es/rust/crash" aria-label="Crash" class="crash"></a>
+                    <a href="/es/rust/coinflip" aria-label="Coinflip" class="coinflip"></a>
+                    <a href="/es/rust" aria-label="Mines" class="mines"></a>
+                    <a href="/es/rust/jackpot" aria-label="Jackpot" class="jackpot"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rustchance_1.png" alt="RustChance ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rustchance_2.png" alt="RustChance ScreenShot 2"></div>
@@ -329,16 +372,53 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rustchance_7.png" alt="RustChance ScreenShot 7"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Métodos de Depósito</span>
+                <div class="methodlist" id="first">
+                  <a href="/es/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/es/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/es/dota" aria-label="Dota 2 Items" class="dota"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/es/rust" aria-label="Rust Skins" class="rust"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Confianza</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Soporte</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Pagos</span>
+                  <div class="rating"><div class="star_rating" style="width: 50%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Modos de Juego</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 70%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
-                    <h3>Trust</h3>
+                    <h3>Confianza</h3>
                     <p>RustChance opera desde 2017 y no ha estado involucrado en escándalos ni ha sido acusado de fraude. La
                         plataforma utiliza un sistema Provably Fair, conexión segura y mantiene una actividad de usuarios estable.
                         Aunque carece de licencia y tiene valoraciones mixtas en plataformas independientes, su larga trayectoria y
                         la transparencia en las mecánicas de juego generan un nivel de confianza moderadamente alto.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Support</h3>
+                    <h3>Soporte</h3>
                     <p>El soporte en RustChance se ofrece mediante un sistema de tickets en el sitio web. Aunque el equipo promete
                         responder en 24 horas, la falta de chat en vivo y las opciones de contacto limitadas pueden ser incómodas en
                         casos urgentes. El chat interno entre jugadores mejora la participación, pero no reemplaza un soporte
@@ -346,7 +426,7 @@
                         accesibilidad.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Payments</h3>
+                    <h3>Pagos</h3>
                     <p>RustChance solo acepta skins de Rust, CS2 y Dota 2 para depósitos y retiros. No se admiten criptomonedas ni
                         otros métodos de pago. Los retiros solo pueden realizarse mediante la tienda interna en forma de skins de
                         Rust, lo que limita la flexibilidad del usuario. Las altas comisiones por depósito y retiro, así como los
@@ -354,13 +434,90 @@
                         plataforma.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Playability</h3>
+                    <h3>Modos de Juego</h3>
                     <p>RustChance ofrece modos de juego populares como Jackpot, Rueda, Cara o Cruz, Crash, Minas y batallas PvP.
                         Todos los modos usan un sistema Provably Fair y su variedad de formatos se adapta tanto a principiantes como
                         a jugadores experimentados. También cuenta con sistema de niveles, bonos, códigos promocionales y tablas de
                         clasificación para mantener el interés a largo plazo. La interfaz es sencilla, pero necesita una
                         actualización visual.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best RustChance Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="HowlGG">
+                  <div class="logobg">
+                    <a href="/es/reviews/howlgg"><img src="/img/howlgg-logo.webp" loading="lazy" draggable="false" alt="HowlGG"></a>
+                    <div class="main-mode classic lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/howlgg">HowlGG</a>
+                    <div class="site-reward"><p>Receive a <strong>Bonus +25%</strong> to Rakeback</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/howlgg" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://howly.gg/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="bandit.camp">
+                  <div class="logobg">
+                    <a href="/es/reviews/banditcamp"><img src="/img/banditcamp-logo.webp" loading="lazy" draggable="false" alt="bandit.camp"></a>
+                    <div class="main-mode classic lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/banditcamp">bandit.camp</a>
+                    <div class="site-reward"><p>Receive <strong>$0.15</strong> for Free</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/banditcamp" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://bandit.camp/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="RustMagic">
+                  <div class="logobg">
+                    <a href="/es/reviews/rustmagic"><img src="/img/rustmagic-logo.webp" loading="lazy" draggable="false" alt="RustMagic"></a>
+                    <div class="main-mode classic lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/rustmagic">RustMagic</a>
+                    <div class="site-reward"><p>There is <strong>+3% Bonus</strong> on all Deposits</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/rustmagic" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://rustmagic.com/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Rustyloot">
+                  <div class="logobg">
+                    <a href="/es/reviews/rustyloot"><img src="/img/rustyloot-logo.webp" loading="lazy" draggable="false" alt="Rustyloot"></a>
+                    <div class="main-mode classic lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/rustyloot">Rustyloot</a>
+                    <div class="site-reward"><p>Receive <strong>$2.00</strong> for Free</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/rustyloot" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://rustyloot.gg/r/broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -393,18 +550,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

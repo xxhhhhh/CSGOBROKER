@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/tr/reviews/rapidskins">
@@ -229,16 +229,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Tr
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -252,21 +252,50 @@
                 <a href="https://rapidskins.com/a/broker "><img src="/img/rapidskins-logo.webp" draggable="false" alt="RAPIDSKINS"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 65%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode instant-sell lang-tr">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>RAPIDSKINS</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/tr/csgo/instant-sell" aria-label="Similar Sites of RAPIDSKINS" class="review-button"></a>
+                  <a href="https://rapidskins.com/a/broker " aria-label="Visit RAPIDSKINS" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
+                  <button class="copy defbutton" aria-label="Copy Code" code="broker"></button>
                 <div class="bonus_info"><span id="bonus">Tüm Satışlarınızda <strong>+%1 Bonus</strong> Kazanın</span></div>
             </div>
+        </div>
+        <div class="box-extra-links">
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Artılar ve Eksiler</li>
+              <li data-target=".smallreview">RAPIDSKINS İncelemesi</li>
+              <li data-target=".instruction">RAPIDSKINS'te Bonus Alma Adımları</li>
+              <li data-target=".screentable">Ekran Görüntüleri ve Modlar</li>
+              <li data-target=".sitedetails">Ödeme Yöntемleri</li>
+              <li data-target=".sitealternates">Benzer Siteler</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/tr/freebies/bonuses-to-sale" class="bonustosale"><i class="officon salebonus"></i> Satış Bonusu</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Artılar</p>
@@ -306,17 +335,20 @@
                 <li>Sağlanan bağlantıyı kullanarak <a target="_blank" rel="noopener" href="https://rapidskins.com/a/broker ">RAPIDSKINS</a>'e gidin</li>
                 <li>Steam ile Kayıt Ol</li>
                 <li><strong>Avatar</strong>ınıza tıklayın, ardından <strong>Kod Kullan</strong> tıklayın</li>
-                <li>Kod Girin: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                <li>Kod Girin: <code id="site-code">broker</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                 <li>Keyfini Çıkar!</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/tr/csgo/instant-sell" aria-label="Instant Sell Skins" class="instant-sell"></a>
+                    <a href="/tr/csgo/trade-skins" aria-label="Trade Skins" class="trade-skins"></a>
+                    <a href="/tr/csgo/buy-skins" aria-label="Buy Skins" class="buy-skins"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rapidskins_1.jpg" alt="RAPIDSKINS ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rapidskins_2.png" alt="RAPIDSKINS ScreenShot 2"></div>
@@ -325,34 +357,160 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rapidskins_5.png" alt="RAPIDSKINS ScreenShot 5"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Yatırma Yöntemleri</span>
+                <div class="methodlist" id="first">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/tr/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/tr/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/tr/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/tr/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/tr/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/tr" aria-label="Gift Cards" class="giftcard"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/tr/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/tr/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/tr/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/tr" aria-label="PayPal" class="paypal"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Güven</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Destek</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Ödemeler</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Fiyat</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 65%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
-                    <h3>Trust</h3>
+                    <h3>Güven</h3>
                     <p>RapidSkins, Birleşik Krallık'ta resmi olarak kayıtlı ve geçerli mali raporlama yapan bir platformdur, bu da
                         yasal statüsünü doğrular. Hizmet SSL şifreleme ve iki faktörlü kimlik doğrulama dahil standart güvenlik
                         önlemleri sunar. Açık alan adı, şeffaf şirket bilgileri ve net kullanım koşulları sayesinde platform, orta
                         derecede yüksek bir güven düzeyi kazanmaktadır.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Support</h3>
+                    <h3>Destek</h3>
                     <p>RapidSkins desteği canlı sohbet aracılığıyla sunulur ve bu da kullanıcı sorularının hızlı çözülmesini sağlar.
                         Ayrıca iletişim formu ve e-posta desteği de mevcuttur. Geniş kapsamlı bir bilgi tabanı olmasa da 7/24 sohbet
                         ve zamanında yanıtlar, destek sistemini günlük kullanım için işlevsel ve verimli kılar.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Payments</h3>
+                    <h3>Ödemeler</h3>
                     <p>RapidSkins üzerindeki tüm finansal işlemler yalnızca kripto para ile yapılmaktadır: USDT, BTC, LTC ve ETH
                         desteklenmektedir. Bu, dijital varlıklara alışkın kullanıcılar için uygundur ancak genel kitle için
                         erişilebilirliği sınırlar. Minimum çekim miktarı yalnızca 0,50$ olup kullanışlıdır, ancak tüm işlemler
                         komisyona tabidir ve bu da kârlılığı azaltır.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Pricing</h3>
+                    <h3>Fiyat</h3>
                     <p>Platformdaki fiyatlar her zaman rekabetçi değildir. RapidSkins satışlarda %1 bonus ve Rust skinleri için
                         cazip koşullar sunar, ancak genel ürün yelpazesi sınırlıdır ve bazı öğeler hiç kabul edilmemektedir.
                         Gelişmiş filtreleme sisteminin olmaması ve sınırlı seçenek, çoğu kullanıcı için ticaret verimliliğini
                         olumsuz etkiler.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best RAPIDSKINS Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="Lis-Skins">
+                  <div class="logobg">
+                    <a href="/tr/reviews/lis-skins"><img src="/img/lis-skins-logo.svg" loading="lazy" draggable="false" alt="Lis-Skins"></a>
+                    <div class="main-mode instant-sell lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/lis-skins">Lis-Skins</a>
+                    <div class="site-reward"><p><strong>Skin satarak 5,00 $'a kadar kazanın</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/lis-skins" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://lis-skins.com/?rf=83346597" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Avan.Market">
+                  <div class="logobg">
+                    <a href="/tr/reviews/avanmarket"><img src="/img/avanmarket-logo.webp" loading="lazy" draggable="false" alt="Avan.Market"></a>
+                    <div class="main-mode instant-sell lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/avanmarket">Avan.Market</a>
+                    <div class="site-reward"><p><strong>Skin satarak 5,00 $'a kadar kazanın</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/avanmarket" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://avan.market/?r=broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Moon.Market">
+                  <div class="logobg">
+                    <a href="/tr/reviews/moonmarket"><img src="/img/moonmarket-logo.webp" loading="lazy" draggable="false" alt="Moon.Market"></a>
+                    <div class="main-mode instant-sell lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/moonmarket">Moon.Market</a>
+                    <div class="site-reward"><p>Sitede Kayıt Bonusu yok</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/moonmarket" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://moonmarket.org/?r=DTQBM8816d89c" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Aim.market">
+                  <div class="logobg">
+                    <a href="/tr/reviews/aimmarket"><img src="/img/aimmarket-logo.webp" loading="lazy" draggable="false" alt="Aim.market"></a>
+                    <div class="main-mode instant-sell lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/aimmarket">Aim.market</a>
+                    <div class="site-reward"><p><strong>Skin satarak 5,00 $'a kadar kazanın</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/aimmarket" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://aim.market/p/broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -385,18 +543,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

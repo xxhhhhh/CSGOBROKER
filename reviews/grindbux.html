@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/reviews/grindbux">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 En
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,22 +251,59 @@
                 <a href="https://grindbux.com/ref/broker"><img src="/img/grindbux-logo.png" draggable="false" alt="GrindBux logo"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 70%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode earning lang-en">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>GrindBux</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/earning" aria-label="Similar Sites of Grindbux" class="review-button"></a>
+                  <a href="https://grindbux.com/ref/broker" aria-label="Visit Grindbux" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Receive Free <strong>0.10$</strong></span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="broker"></button>
             </div>
+        </div>
+        <div class="box-extra-links">
+          <div class="promo-box extra-abox welcome-bonus counter-1">
+            <div class="logobg"><span>0.10$</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">broker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Pros and Cons</li>
+              <li data-target=".smallreview">Review of GrindBux</li>
+              <li data-target=".instruction">How to Claim 100 Diamonds on GrindBux</li>
+              <li data-target=".screentable">Screenshots and Modes</li>
+              <li data-target=".sitedetails">Payment Methods</li>
+              <li data-target=".sitealternates">Similar Sites</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-    <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/freebies/sign-up-bonuses" class="signupbonus"><i class="officon signupbonus"></i> Sign Up Bonus</a>
+                  <a href="/freebies/daily-rewards" class="dailyrewards"><i class="officon dailyrewards"></i> Daily Rewards</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="info-block">
                 <div class="site-attention blocked">
                     <i class="officon exclamation"></i><span>Using VPN on the website is strictly prohibited</span>
@@ -307,22 +344,57 @@
                 <li>Register using any method</li>
                 <li>Click on <strong>Earn</strong> in the top menu</li>
                 <li>Then click <strong>GrindBux Rewards</strong> last button</li>
-                <li>Enter Code: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                <li>Enter Code: <code id="site-code">broker</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                 <li>Enjoy your bonus !</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/earning/offerwalls" aria-label="Offerwalls" class="offerwalls"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/grindbux_1.png" alt="GrindBux ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/grindbux_2.png" alt="GrindBux ScreenShot 2"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/grindbux_3.png" alt="GrindBux ScreenShot 3"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/" aria-label="VISA" class="visa"></a>
+                  <a href="/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/" aria-label="PayPal" class="paypal"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Trust</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Support</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Payments</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Variety</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 70%;"></div></div>
             </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
@@ -356,6 +428,66 @@
                         platform’s key strengths.</p>
                 </div>
             </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best GrindBux Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="Freecash">
+                  <div class="logobg">
+                    <a href="/reviews/freecash"><img src="/img/freecash-logo.webp" loading="lazy" draggable="false" alt="Freecash"></a>
+                    <div class="main-mode earning lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/freecash">Freecash</a>
+                    <div class="site-reward"><p>Receive <strong>Free Case</strong> with chance to <strong>win 250$</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/freecash" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://freecash.com/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Idle-Empire">
+                  <div class="logobg">
+                    <a href="/reviews/idle-empire"><img src="/img/idle-empire-logo.png" loading="lazy" draggable="false" alt="Idle-Empire"></a>
+                    <div class="main-mode earning lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/idle-empire">Idle-Empire</a>
+                    <div class="site-reward"><p>Receive <strong>Free 500 Coins</strong> for Free</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/idle-empire" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://www.idle-empire.com/?r=csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Freeward">
+                  <div class="logobg">
+                    <a href="/reviews/freeward"><img src="/img/freeward-logo.webp" loading="lazy" draggable="false" alt="Freeward"></a>
+                    <div class="main-mode earning lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/freeward">Freeward</a>
+                    <div class="site-reward"><p>Receive <strong>$0.10</strong> for Free</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/freeward" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://freeward.net/ref/v2vod" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box"></div>
+              </div>
+            </div>
        </div>
   </div>
     <footer>
@@ -387,18 +519,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

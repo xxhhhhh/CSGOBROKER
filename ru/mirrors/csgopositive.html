@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/ru/mirrors/csgopositive">
@@ -203,16 +203,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Ru
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -226,21 +226,42 @@
                 <a href="/ru/reviews/csgopositive"><img src="/img/csgopositive-logo.webp" alt="csgopositive logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 72.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode betting lang-ru">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>CSGOPOSITIVE</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/ru/csgo/matchbetting" aria-label="Альтернативы CSGOPositive" class="review-button"></a>
+                  <a href="https://csgopositive.gg/p/csgobroker/" aria-label="Перейти на CSGOPositive" class="review-button visit" target="_blank" rel="noopener"></a>
+                  <a href="/ru/mirrors/csgopositive" class="review-button mirror-visit" aria-label="Зеркала"><span>Зеркала</span></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">На сайте есть <strong>Ежедневный Розыгрыш</strong> и <strong>Кешбек Система</strong></span></div>
             </div>
         </div>
+        <div class="box-extra-links">
+        </div>
     </div>
 </div>
         <div class="boxreview" id="mirror">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/ru/freebies/rakeback-system" class="rakeback"><i class="officon rakeback"></i> Рейкбек</a>
+                  <a href="/ru/freebies/giveaways" class="giveaways"><i class="officon giveaways"></i> Розыгрыши</a>
+                  <a href="/ru/freebies/rain-system" class="rain"><i class="officon rain"></i> Дожди</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="instruction-mirrors">
                 <h2>Актуальные Зеркала CSGOPositive</h2>
                 <ol>
@@ -281,18 +302,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/ru/reviews/dmarket">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Ru
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,21 +251,48 @@
                 <a href="https://dmarket.com?ref=g7qiVABi4O"><img src="/img/dmarket-logo.webp" draggable="false" alt="DMarket logo"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 92.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode marketplace lang-ru">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>DMarket</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/ru/csgo/marketplaces" aria-label="Альтернативы DMarket" class="review-button"></a>
+                  <a href="https://dmarket.com/?ref=g7qiVABi4O" aria-label="Перейти на DMarket" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">На сайте нет Бонуса за Регистрацию</span></div>
             </div>
         </div>
+        <div class="box-extra-links">
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Плюсы и Минусы Сайта</li>
+              <li data-target=".smallreview">Обзор на DMarket</li>
+              <li data-target=".instruction">Как начать пользоваться сайтом DMarket</li>
+              <li data-target=".screentable">Скриншоты и Режимы</li>
+              <li data-target=".sitedetails">Платежные Способы</li>
+              <li data-target=".sitealternates">Похожие Сайты</li>
+            </ol>
+          </div>
+        </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features"></div></div>
+          <div class="shortinfo empty">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="info-block">
                 <div class="site-attention blocked">
                     <i class="officon exclamation"></i><span>Использование сайта не рекомендуется в регионе Россия</span>
@@ -314,12 +341,16 @@
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/ru/csgo/trade-skins" aria-label="Trade Skins" class="trade-skins"></a>
+                    <a href="/ru/csgo/sell-skins" aria-label="Sell Skins" class="sell-skins"></a>
+                    <a href="/ru/csgo/instant-sell" aria-label="Instant Sell Skins" class="instant-sell"></a>
+                    <a href="/ru/csgo/buy-skins" aria-label="Buy Skins" class="buy-skins"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/dmarket_1.jpg" alt="DMarket ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/dmarket_2.png" alt="DMarket ScreenShot 2"></div>
@@ -328,6 +359,63 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/dmarket_5.png" alt="DMarket ScreenShot 5"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/dmarket_6.png" alt="DMarket ScreenShot 6"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Способы Пополнения</span>
+                <div class="methodlist" id="first">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/ru/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/ru" aria-label="Team Fortress 2 Items" class="tf2"></a>
+                  <a href="/ru" aria-label="VISA" class="visa"></a>
+                  <a href="/ru" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/ru/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/ru/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/ru" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/ru" aria-label="Skrill" class="skrill"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Способы Вывода</span>
+                <div class="methodlist" id="second">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/ru/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/ru" aria-label="Team Fortress 2 Items" class="tf2"></a>
+                  <a href="/ru" aria-label="VISA" class="visa"></a>
+                  <a href="/ru" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/ru" aria-label="Skrill" class="skrill"></a>
+                  <a href="/ru" aria-label="PayPal" class="paypal"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Доверие</span>
+                  <div class="rating"><div class="star_rating" style="width: 100%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Поддержка</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Деп/Вывод</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Цены</span>
+                  <div class="rating"><div class="star_rating" style="width: 100%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 92.5%;"></div></div>
             </div>
             <div class="criteria-descriptions">
               <div class="smallreview criteria">
@@ -338,7 +426,7 @@
                   приложения, что указывает на зрелую инфраструктуру и высокий уровень доверия со стороны сообщества. Платформа
                   официально зарегистрирована, использует шифрование данных и соответствует стандартам безопасности.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Поддержка</h3>
                 <p>Служба поддержки DMarket доступна через тикет-систему, email и подробный справочный центр. Большинство базовых
@@ -347,7 +435,7 @@
                   трудности при несоответствии документов или нестандартных кейсах. Тем не менее, для стандартных запросов уровень
                   поддержки оценивается как удовлетворительный.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Деп/Вывод</h3>
                 <p>DMarket предлагает широкий спектр методов пополнения — более 60 вариантов, включая банковские карты, электронные
@@ -356,13 +444,90 @@
                   до нескольких рабочих дней. Верификация запрашивается выборочно, особенно при транзакциях с высоким приоритетом
                   или из нестандартных регионов.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Цены</h3>
                 <p>Комиссия на продажу в DMarket составляет 2%, что значительно ниже, чем у большинства конкурентов, включая Steam.
                   Платформа предлагает гибкое ценообразование, режим "быстрой продажи" и фильтры по скидкам, упрощающие выгодные
                   сделки. Возможность торговать предметами из четырёх популярных игр делает платформу привлекательной как для
                   трейдеров, так и для игроков, заинтересованных в стабильных и прозрачных условиях торговли.</p>
+              </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Похожие Сайты на DMarket</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="Tradeit">
+                  <div class="logobg">
+                    <a href="/ru/reviews/tradeit"><img src="/img/tradeit-logo.webp" loading="lazy" draggable="false" alt="Tradeit"></a>
+                    <div class="main-mode marketplace lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/tradeit">Tradeit</a>
+                    <div class="site-reward"><p>Получите <strong>+35% к Депозиту</strong>, Так же <strong>Получите до 5.00$ на Обмен</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/tradeit" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://tradeit.gg/?aff=csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="CSMoney">
+                  <div class="logobg">
+                    <a href="/ru/reviews/csmoney"><img src="/img/csmoney-logo.webp" loading="lazy" draggable="false" alt="CSMoney"></a>
+                    <div class="main-mode marketplace lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/csmoney">CSMoney</a>
+                    <div class="site-reward"><p>На сайте нет Бонуса за Регистрацию</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/csmoney" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://cs.money/?utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=trade&utm_content=link" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="SkinSwap">
+                  <div class="logobg">
+                    <a href="/ru/reviews/skinswap"><img src="/img/skinswap-logo.webp" loading="lazy" draggable="false" alt="SkinSwap"></a>
+                    <div class="main-mode marketplace lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/skinswap">SkinSwap</a>
+                    <div class="site-reward"><p>Получите <strong>Бесплатный Скин Стоимостью до 50$</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/skinswap" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://skinswap.com/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Swap.gg">
+                  <div class="logobg">
+                    <a href="/ru/reviews/swapgg"><img src="/img/swapgg-logo.webp" loading="lazy" draggable="false" alt="Swap.gg"></a>
+                    <div class="main-mode marketplace lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/swapgg">Swap.gg</a>
+                    <div class="site-reward"><p>Получите <strong>+30% Бонус</strong> ко всем вашим Депозитам</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/swapgg" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://swap.gg/?r=V7qjm4NE6t2WBF-Rbk4pY" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
        </div>
@@ -396,18 +561,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

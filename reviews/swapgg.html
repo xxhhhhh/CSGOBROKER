@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/reviews/swapgg">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 En
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,21 +251,49 @@
                 <a href="https://swap.gg/?r=V7qjm4NE6t2WBF-Rbk4pY"><img src="/img/swapgg-logo.webp" draggable="false" alt="Swap.gg logo"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 77.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode trading lang-en">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>Swap.GG</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/csgo/trade-skins" aria-label="Similar Sites of Swap.gg" class="review-button"></a>
+                  <a href="https://swap.gg/?r=V7qjm4NE6t2WBF-Rbk4pY" aria-label="Visit Swap.gg" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Get a <strong>+30% Deposit Bonus</strong> on all of your Deposits</span></div>
             </div>
         </div>
+        <div class="box-extra-links">
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Pros and Cons</li>
+              <li data-target=".smallreview">Review of Swap.gg</li>
+              <li data-target=".instruction">How to Receive Deposit Bonus on Swap.gg</li>
+              <li data-target=".screentable">Screenshots and Modes</li>
+              <li data-target=".sitedetails">Payment Methods</li>
+              <li data-target=".sitealternates">Similar Sites</li>
+            </ol>
+          </div>
+        </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/freebies/deposit-bonuses" class="depositbonus"><i class="officon depositbonuses"></i> Deposit Bonus</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Pros</p>
@@ -308,12 +336,14 @@
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/csgo/trade-skins" aria-label="Trade Skins" class="trade-skins"></a>
+                    <a href="/csgo/instant-sell" aria-label="Instant Sell Skins" class="instant-sell"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/swapgg_1.jpg" alt="Swap.gg ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/swapgg_2.jpg" alt="Swap.gg ScreenShot 2"></div>
@@ -321,6 +351,59 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/swapgg_4.jpg" alt="Swap.gg ScreenShot 4"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/swapgg_5.jpg" alt="Swap.gg ScreenShot 5"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Deposit Methods</span>
+                <div class="methodlist" id="first">
+                  <a href="/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/" aria-label="Team Fortress 2 Items" class="tf2"></a>
+                  <a href="/" aria-label="VISA" class="visa"></a>
+                  <a href="/" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/crypto" aria-label="Ripple" class="ripple"></a>
+                  <a href="/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/" aria-label="Skrill" class="skrill"></a>
+                  <a href="/" aria-label="PayPal" class="paypal"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/" aria-label="Team Fortress 2 Items" class="tf2"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Trust</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Support</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Payments</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Pricing</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 77.5%;"></div></div>
             </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
@@ -350,6 +433,83 @@
                         top-up bonus improves the price-to-value ratio. Overall, the pricing policy is balanced and favorable for
                         most use cases.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best Swap.GG Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="Tradeit">
+                  <div class="logobg">
+                    <a href="/reviews/tradeit"><img src="/img/tradeit-logo.webp" loading="lazy" draggable="false" alt="Tradeit"></a>
+                    <div class="main-mode trading lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/tradeit">Tradeit</a>
+                    <div class="site-reward"><p>Get <strong>35% Store bonus</strong>. Also <strong>get +$5.00</strong> for your trade</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/tradeit" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://tradeit.gg/?aff=csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="CSMoney">
+                  <div class="logobg">
+                    <a href="/reviews/csmoney"><img src="/img/csmoney-logo.webp" loading="lazy" draggable="false" alt="CSMoney"></a>
+                    <div class="main-mode trading lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/csmoney">CSMoney</a>
+                    <div class="site-reward"><p>There is no Registration Bonus</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/csmoney" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://cs.money/?utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=trade&utm_content=link" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="SkinSwap">
+                  <div class="logobg">
+                    <a href="/reviews/skinswap"><img src="/img/skinswap-logo.webp" loading="lazy" draggable="false" alt="SkinSwap"></a>
+                    <div class="main-mode trading lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/skinswap">SkinSwap</a>
+                    <div class="site-reward"><p>Receive <strong>Skin up to $50.00</strong> for Free</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/skinswap" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://skinswap.com/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="DMarket">
+                  <div class="logobg">
+                    <a href="/reviews/dmarket"><img src="/img/dmarket-logo.webp" loading="lazy" draggable="false" alt="DMarket"></a>
+                    <div class="main-mode trading lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/dmarket">DMarket</a>
+                    <div class="site-reward"><p>There is no Registration Bonus</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/dmarket" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://dmarket.com/?ref=g7qiVABi4O" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -382,18 +542,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

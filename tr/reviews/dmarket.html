@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/tr/reviews/dmarket">
@@ -229,16 +229,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Tr
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -252,21 +252,48 @@
                 <a href="https://dmarket.com?ref=g7qiVABi4O"><img src="/img/dmarket-logo.webp" draggable="false" alt="DMarket logo"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 92.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode marketplace lang-tr">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>DMarket</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/tr/csgo/marketplaces" aria-label="Similar Sites of DMarket" class="review-button"></a>
+                  <a href="https://dmarket.com/?ref=g7qiVABi4O" aria-label="Visit DMarket" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Kayıt Bonusu Yok</span></div>
             </div>
         </div>
+        <div class="box-extra-links">
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Artılar ve Eksiler</li>
+              <li data-target=".smallreview">DMarket İncelemesi</li>
+              <li data-target=".instruction">DMarket'e Kullanmaya nasıl başlanır</li>
+              <li data-target=".screentable">Ekran Görüntüleri ve Modlar</li>
+              <li data-target=".sitedetails">Ödeme Yöntемleri</li>
+              <li data-target=".sitealternates">Benzer Siteler</li>
+            </ol>
+          </div>
+        </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features"></div></div>
+          <div class="shortinfo empty">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Artılar</p>
@@ -309,12 +336,16 @@
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/tr/csgo/trade-skins" aria-label="Trade Skins" class="trade-skins"></a>
+                    <a href="/tr/csgo/sell-skins" aria-label="Sell Skins" class="sell-skins"></a>
+                    <a href="/tr/csgo/instant-sell" aria-label="Instant Sell Skins" class="instant-sell"></a>
+                    <a href="/tr/csgo/buy-skins" aria-label="Buy Skins" class="buy-skins"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/dmarket_1.jpg" alt="DMarket ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/dmarket_2.png" alt="DMarket ScreenShot 2"></div>
@@ -324,9 +355,66 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/dmarket_6.png" alt="DMarket ScreenShot 6"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Yatırma Yöntemleri</span>
+                <div class="methodlist" id="first">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/tr/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/tr" aria-label="Team Fortress 2 Items" class="tf2"></a>
+                  <a href="/tr" aria-label="VISA" class="visa"></a>
+                  <a href="/tr" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/tr/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/tr/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/tr/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/tr/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/tr/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/tr/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/tr" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/tr" aria-label="Skrill" class="skrill"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/tr/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/tr" aria-label="Team Fortress 2 Items" class="tf2"></a>
+                  <a href="/tr" aria-label="VISA" class="visa"></a>
+                  <a href="/tr" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/tr" aria-label="Skrill" class="skrill"></a>
+                  <a href="/tr" aria-label="PayPal" class="paypal"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Güven</span>
+                  <div class="rating"><div class="star_rating" style="width: 100%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Destek</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Ödemeler</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Fiyat</span>
+                  <div class="rating"><div class="star_rating" style="width: 100%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 92.5%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
-                    <h3>Trust</h3>
+                    <h3>Güven</h3>
                     <p>DMarket, dijital eşya pazarındaki en bilinen platformlardan biridir. 2017'den bu yana faaliyet göstermekte
                         olup, güvenli ve sağlam bir pazar yeri olarak itibar kazanmıştır. Aylık milyonlarca işlem gerçekleştirir ve
                         CS2, Dota 2, Rust ve TF2 eşyalarını destekler. Dünya çapında 2 milyondan fazla kullanıcıya sahiptir, mobil
@@ -334,14 +422,14 @@
                         gösterir.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Support</h3>
+                    <h3>Destek</h3>
                     <p>DMarket, destek hizmetini bilet sistemi, e-posta ve kapsamlı bir Yardım Merkezi üzerinden sunar. Gerekli tüm
                         belgeler mevcut olsa da, kullanıcılar genellikle yavaş yanıtlar ve belirsiz açıklamalardan şikayet eder.
                         Doğrulama ve para çekme sırasında — özellikle anlaşmazlıklarda — sorunlar yaşanabilir. Ancak çoğu işlem için
                         destek yeterlidir.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Payments</h3>
+                    <h3>Ödemeler</h3>
                     <p>DMarket, banka kartları, e-cüzdanlar, PayPal ve mobil ödemeler dahil olmak üzere 60'tan fazla ödeme yöntemi
                         destekler. Ancak kripto para ile çekim yapılması mümkün değildir, bu da bazı kullanıcılar için sınırlayıcı
                         olabilir. Payoneer, banka kartları, SEPA ve diğer sistemler aracılığıyla çekim yapılabilir, işlem süreleri
@@ -349,13 +437,90 @@
                         talep edilebilir.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Pricing</h3>
+                    <h3>Fiyat</h3>
                     <p>DMarket’in en büyük avantajlarından biri rekabetçi fiyatlandırma politikasıdır. Satış komisyonu yalnızca
                         %2’dir — bu, Steam ve birçok diğer platformdan çok daha düşüktür. İndirim filtreleri, hızlı takas
                         özellikleri ve adil “hızlı satış” fiyatları hem alıcılar hem satıcılar için cazip hale getirir. Dört popüler
                         oyunun eşyalarının ticaretine olanak sağlaması, hem yatırımcılar hem oyuncular için geniş bir seçenek
                         yelpazesi sunar.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best DMarket Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="Tradeit">
+                  <div class="logobg">
+                    <a href="/tr/reviews/tradeit"><img src="/img/tradeit-logo.webp" loading="lazy" draggable="false" alt="Tradeit"></a>
+                    <div class="main-mode marketplace lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/tradeit">Tradeit</a>
+                    <div class="site-reward"><p><strong>%35 Mağaza bonusu</strong> alın. Ayrıca <strong>+5,00 $</strong> kazanın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/tradeit" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://tradeit.gg/?aff=csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="CSMoney">
+                  <div class="logobg">
+                    <a href="/tr/reviews/csmoney"><img src="/img/csmoney-logo.webp" loading="lazy" draggable="false" alt="CSMoney"></a>
+                    <div class="main-mode marketplace lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/csmoney">CSMoney</a>
+                    <div class="site-reward"><p>Sitede Kayıt Bonusu yok</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/csmoney" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://cs.money/?utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=trade&utm_content=link" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="SkinSwap">
+                  <div class="logobg">
+                    <a href="/tr/reviews/skinswap"><img src="/img/skinswap-logo.webp" loading="lazy" draggable="false" alt="SkinSwap"></a>
+                    <div class="main-mode marketplace lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/skinswap">SkinSwap</a>
+                    <div class="site-reward"><p><strong>50,00$'a kadar Ücretsiz Skin</strong> kazanın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/skinswap" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://skinswap.com/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Swap.gg">
+                  <div class="logobg">
+                    <a href="/tr/reviews/swapgg"><img src="/img/swapgg-logo.webp" loading="lazy" draggable="false" alt="Swap.gg"></a>
+                    <div class="main-mode marketplace lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/swapgg">Swap.gg</a>
+                    <div class="site-reward"><p>Tüm Yatırımlarda <strong>+30% Bonus</strong> mevcut</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/swapgg" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://swap.gg/?r=V7qjm4NE6t2WBF-Rbk4pY" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -388,18 +553,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

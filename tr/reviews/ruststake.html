@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/tr/reviews/ruststake">
@@ -229,16 +229,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Tr
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -252,25 +252,62 @@
                 <a href="https://ruststake.com/r/csgobroker"><img src="/img/ruststake-logo.webp" alt="RustStake logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 67.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode classic lang-tr">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>RustStake</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/tr/cs2" aria-label="Similar Sites of RustStake" class="review-button"></a>
+                  <a href="https://ruststake.com/r/csgobroker" aria-label="Visit RustStake" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus"><strong>$1400.00</strong> Değerinde Ücretsiz Skin Kazanın</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="csgobroker"></button>
             </div>
         </div>
         <div class="box-extra-links">
-            <a href="/reviews/csgostake" class="partner-site extra-abox"><img src="/img/csgostake-logo.webp" alt="CSGOStake Logo"></a>
+          <div class="promo-box extra-abox else-bonus counter-1">
+            <div class="logobg"><span>Welcome Case</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">csgobroker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Artılar ve Eksiler</li>
+              <li data-target=".smallreview">RustStake İncelemesi</li>
+              <li data-target=".instruction">RustStake Bonuslarını Nasıl Alabilirsiniz</li>
+              <li data-target=".screentable">Ekran Görüntüleri ve Modlar</li>
+              <li data-target=".sitedetails">Ödeme Yöntемleri</li>
+              <li data-target=".sitealternates">Benzer Siteler</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/tr/freebies/sign-up-bonuses" class="signupbonus"><i class="officon signupbonus"></i> Kayıt Bonusu</a>
+                  <a href="/tr/freebies/deposit-bonuses" class="depositbonus"><i class="officon depositbonuses"></i> Depozit Bonusu</a>
+                  <a href="/tr/freebies/progressive-rewards" class="progressiverewards"><i class="officon signupbonus"></i> Kademeli Ödüller</a>
+                  <a href="/tr/freebies/rakeback-system" class="rakeback"><i class="officon rakeback"></i> Rakeback Sistemi</a>
+                  <a href="/tr/freebies/faucet-system" class="faucet"><i class="officon faucet"></i> Musluk Sistemi</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Artılar</p>
@@ -313,17 +350,24 @@
                 <li>Sağlanan bağlantıyı kullanarak <a target="_blank" rel="noopener" href="https://ruststake.com/r/csgobroker">RustStake</a>'e gidin</li>
                 <li>Herhangi bir yöntemle kayıt olun</li>
                 <li>Sol menüdeki <strong>Ücretsiz Kasa</strong> butonuna tıklayın</li>
-                <li>Kod Girin: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                <li>Kod Girin: <code id="site-code">csgobroker</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                 <li>Keyfini Çıkar!</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/tr/rust/caseopening" aria-label="Case Opening" class="cases"></a>
+                    <a href="/tr/rust/case-battle" aria-label="Case Battles" class="casebattles"></a>
+                    <a href="/tr/rust/roulette" aria-label="Wheel of Fortune" class="wheel"></a>
+                    <a href="/tr/rust/coinflip" aria-label="Coinflip" class="coinflip"></a>
+                    <a href="/tr/rust" aria-label="Mines" class="mines"></a>
+                    <a href="/tr/rust/jackpot" aria-label="Jackpot" class="jackpot"></a>
+                    <a href="/tr/rust/upgrader" aria-label="Upgrader" class="upgrader"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/ruststake_1.png" alt="Rust Stake ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/ruststake_2.png" alt="Rust Stake ScreenShot 2"></div>
@@ -334,9 +378,68 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/ruststake_7.png" alt="Rust Stake ScreenShot 7"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Yatırma Yöntemleri</span>
+                <div class="methodlist" id="first">
+                  <a href="/tr/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/tr/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/tr/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/tr" aria-label="Team Fortress 2 Items" class="tf2"></a>
+                  <a href="/tr" aria-label="VISA" class="visa"></a>
+                  <a href="/tr" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/tr/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/tr/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/tr/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/tr/crypto" aria-label="Binance Coin" class="bnb"></a>
+                  <a href="/tr/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/tr/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/tr/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/tr" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/tr" aria-label="Skrill" class="skrill"></a>
+                  <a href="/tr" aria-label="Google Pay" class="gpay"></a>
+                  <a href="/tr" aria-label="Apple Pay" class="apay"></a>
+                  <a href="/tr" aria-label="UnionPay" class="unionpay"></a>
+                  <a href="/tr" aria-label="PaySafeCard" class="paysafe"></a>
+                  <a href="/tr" aria-label="PayPal" class="paypal"></a>
+                  <a href="/tr" aria-label="WebMoney" class="webmoney"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/tr/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/tr/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/tr/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/tr/crypto" aria-label="Litecoin" class="ltc"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Güven</span>
+                  <div class="rating"><div class="star_rating" style="width: 20%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Destek</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Ödemeler</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Oynanabilirlik</span>
+                  <div class="rating"><div class="star_rating" style="width: 90%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 67.5%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
-                    <h3>Trust</h3>
+                    <h3>Güven</h3>
                     <p>RustStake, 2021 yılından beri faaliyet göstermektedir ve Rust skin bahis topluluğunda adil oyunlar ve
                         istikrarlı bir itibar ile kendini kanıtlamıştır. Platform, her sonucu manuel olarak doğrulamaya olanak
                         tanıyan EOS blokzinciri tabanlı bir Provably Fair sistemi kullanmaktadır. Lisansın ve şirket istikrarına
@@ -345,7 +448,7 @@
                     </p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Support</h3>
+                    <h3>Destek</h3>
                     <p>RustStake, Discord üzerinden hızlı destek sunar; burada kullanıcılar bir destek talebi oluşturarak
                         moderatörlerden yanıt alabilir. Geleneksel bir canlı sohbet sistemi olmasa da, aktif topluluk ve hızlı
                         yanıtlar sayesinde yardım süreci oldukça rahattır. Destek ayrıca sosyal medya ve Steam grubu aracılığıyla da
@@ -353,7 +456,7 @@
                         kullanıcılar için uygundur.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Payments</h3>
+                    <h3>Ödemeler</h3>
                     <p>Platform; Rust, CS2, Dota 2 ve TF2 skinleri, kripto paralar (BTC, ETH, LTC) ve üçüncü taraf ödeme servisleri
                         ile para yatırmayı desteklemektedir. Ancak para çekme işlemleri yalnızca Rust skinleri ve kripto paralar ile
                         sınırlıdır. İşlemler hızlı ve sorunsuz gerçekleştirilir; dahili para birimi olan “taşlar” (gems) ise
@@ -361,13 +464,90 @@
                         seçeneklerinin olmamasıdır.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Playability</h3>
+                    <h3>Oynanabilirlik</h3>
                     <p>RustStake, Rusty Time, Kasa Savaşları, Yükseltici, Mayınlar ve Yazı-Tura dahil olmak üzere geniş bir özgün
                         oyun modu yelpazesi sunar. Tüm modlar hem PC hem de mobil için iyi optimize edilmiştir. Rusty Time, atış
                         poligonu, plinko ve yazı-tura gibi mini oyunların benzersiz bir birleşimi olarak öne çıkar. Tüm oyunlar
                         Provably Fair sistemine dayanır ve entegre "envanter" sistemi, kullanıcıların Steam üzerinden sürekli takas
                         yapmasına gerek kalmadan etkileşimi kolaylaştırır.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best RustStake Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="HowlGG">
+                  <div class="logobg">
+                    <a href="/tr/reviews/howlgg"><img src="/img/howlgg-logo.webp" loading="lazy" draggable="false" alt="HowlGG"></a>
+                    <div class="main-mode classic lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/howlgg">HowlGG</a>
+                    <div class="site-reward"><p><strong>%25 Bonus</strong> Rakeback alın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/howlgg" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://howly.gg/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="bandit.camp">
+                  <div class="logobg">
+                    <a href="/tr/reviews/banditcamp"><img src="/img/banditcamp-logo.webp" loading="lazy" draggable="false" alt="bandit.camp"></a>
+                    <div class="main-mode classic lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/banditcamp">bandit.camp</a>
+                    <div class="site-reward"><p><strong>$0.15</strong> Bedava Alın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/banditcamp" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://bandit.camp/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="RustMagic">
+                  <div class="logobg">
+                    <a href="/tr/reviews/rustmagic"><img src="/img/rustmagic-logo.webp" loading="lazy" draggable="false" alt="RustMagic"></a>
+                    <div class="main-mode classic lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/rustmagic">RustMagic</a>
+                    <div class="site-reward"><p>Tüm Yatırımlarda <strong>+3% Bonus</strong> mevcut</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/rustmagic" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://rustmagic.com/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Rustyloot">
+                  <div class="logobg">
+                    <a href="/tr/reviews/rustyloot"><img src="/img/rustyloot-logo.webp" loading="lazy" draggable="false" alt="Rustyloot"></a>
+                    <div class="main-mode classic lang-tr">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/tr/reviews/rustyloot">Rustyloot</a>
+                    <div class="site-reward"><p><strong>$2.00</strong> Bedava Alın</p></div>
+                    <div class="content-buttons">
+                      <a href="/tr/reviews/rustyloot" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://rustyloot.gg/r/broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -403,14 +583,14 @@
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

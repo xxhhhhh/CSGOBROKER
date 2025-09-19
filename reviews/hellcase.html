@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/reviews/hellcase">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 En
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,26 +251,66 @@
                 <a href="https://hellcase.org/fSifa"><img src="/img/hellcase-logo.webp" alt="Hellcase logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 72.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode cases lang-en">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>Hellcase</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/csgo/caseopening" aria-label="Similar Sites of Hellcase" class="review-button"></a>
+                  <a href="https://hellcase.org/fSifa" aria-label="Visit Hellcase" class="review-button visit" target="_blank" rel="noopener"></a>
+                  <a href="/mirrors/hellcase" class="review-button mirror-visit" aria-label="Mirrors"><span>Mirrors</span></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Receive <strong>$0.40</strong> for Free</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="sifa"></button>
             </div>
         </div>
         <div class="box-extra-links">
-        <a href="/mirrors/hellcase" class="mirror-redirect extra-abox">
-                <div class="officon mirror"></div><span>Can't Access the Site?</span></a>
+          <div class="promo-box extra-abox welcome-bonus counter-1">
+            <div class="logobg"><span>0.40$</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">sifa</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <a href="/mirrors/hellcase" class="mirror-redirect extra-abox">
+            <div class="officon mirror"></div>
+            <span>Can't Access the Site?</span>
+          </a>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Pros and Cons</li>
+              <li data-target=".smallreview">Review of Hellcase</li>
+              <li data-target=".instruction">How to Claim Hellcase Bonuses</li>
+              <li data-target=".screentable">Screenshots and Modes</li>
+              <li data-target=".sitedetails">Payment Methods</li>
+              <li data-target=".sitealternates">Similar Sites</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/freebies/sign-up-bonuses" class="signupbonus"><i class="officon signupbonus"></i> Sign Up Bonus</a>
+                  <a href="/freebies/deposit-bonuses" class="depositbonus"><i class="officon depositbonuses"></i> Deposit Bonus</a>
+                  <a href="/freebies/daily-rewards" class="dailyrewards"><i class="officon dailyrewards"></i> Daily Rewards</a>
+                  <a href="/freebies/giveaways" class="giveaways"><i class="officon giveaways"></i> Giveaways</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Pros</p>
@@ -306,17 +346,20 @@
                     <li>Go to <a target="_blank" rel="noopener" href="https://hellcase.org/fSifa">Hellcase</a> using our provided link</li>
                     <li>Register using any method</li>
                     <li>Click on <strong>Promocode</strong> in the top-right of the screen</li>
-                    <li>Enter Code: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                    <li>Enter Code: <code id="site-code">sifa</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                     <li>Enjoy your 0.40$ !</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/csgo/caseopening" aria-label="Case Opening" class="cases"></a>
+                    <a href="/csgo/case-battle" aria-label="Case Battles" class="casebattles"></a>
+                    <a href="/csgo/upgrader" aria-label="Upgrader" class="upgrader"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/hellcase_1.png" alt="Hellcase ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/hellcase_2.png" alt="Hellcase ScreenShot 2"></div>
@@ -324,6 +367,61 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/hellcase_4.png" alt="Hellcase ScreenShot 4"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/hellcase_5.png" alt="Hellcase ScreenShot 5"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Deposit Methods</span>
+                <div class="methodlist" id="first">
+                  <a href="/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/" aria-label="VISA" class="visa"></a>
+                  <a href="/" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/crypto" aria-label="Ripple" class="ripple"></a>
+                  <a href="/" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/" aria-label="Skrill" class="skrill"></a>
+                  <a href="/" aria-label="Google Pay" class="gpay"></a>
+                  <a href="/" aria-label="UnionPay" class="unionpay"></a>
+                  <a href="/" aria-label="FK Wallet" class="fkwallet"></a>
+                  <a href="/" aria-label="Skinpay" class="skinpay"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/dota" aria-label="Dota 2 Items" class="dota"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Trust</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Support</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Payments</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Playability</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 72.5%;"></div></div>
             </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
@@ -357,6 +455,83 @@
                         tailored for collectors and skin market enthusiasts rather than classic casino game fans.</p>
                 </div>
             </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best Hellcase Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="GGDROP">
+                  <div class="logobg">
+                    <a href="/reviews/ggdrop"><img src="/img/ggdrop-logo.webp" loading="lazy" draggable="false" alt="GGDROP"></a>
+                    <div class="main-mode cases lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/ggdrop">GGDROP</a>
+                    <div class="site-reward"><p>Get a <strong>free spin of the wheel</strong> and <strong>+11% Bonus</strong> on Deposits</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/ggdrop" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://ggband.gg/referral/broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Key-Drop">
+                  <div class="logobg">
+                    <a href="/reviews/key-drop"><img src="/img/key-drop-logo.webp" loading="lazy" draggable="false" alt="Key-Drop"></a>
+                    <div class="main-mode cases lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/key-drop">Key-Drop</a>
+                    <div class="site-reward"><p>Receive <strong>$0.50</strong> for Free</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/key-drop" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://keydrop.com/?code=broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="SKINBOX">
+                  <div class="logobg">
+                    <a href="/reviews/skinbox"><img src="/img/skinbox-logo.webp" loading="lazy" draggable="false" alt="SKINBOX"></a>
+                    <div class="main-mode cases lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/skinbox">SKINBOX</a>
+                    <div class="site-reward"><p>Receive <strong>Unique Free Case</strong> and <strong>+20%</strong> on first Deposit</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/skinbox" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://skinbox.live/" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="DatDrop">
+                  <div class="logobg">
+                    <a href="/reviews/datdrop"><img src="/img/datdrop-logo.webp" loading="lazy" draggable="false" alt="DatDrop"></a>
+                    <div class="main-mode cases lang-en">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/reviews/datdrop">DatDrop</a>
+                    <div class="site-reward"><p>There is <strong>+5% Bonus</strong> on all Deposits</p></div>
+                    <div class="content-buttons">
+                      <a href="/reviews/datdrop" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://datdrop.app/p/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
        </div>
   </div>
     <footer>
@@ -388,18 +563,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

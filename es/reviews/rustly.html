@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/es/reviews/rustly">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Es
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,25 +251,70 @@
                 <a href="https://rustly.com/r/BROKER"><img src="/img/rustly-logo.svg" alt="Rustly" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 72.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode classic lang-es">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>Rustly</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/es/cs2" aria-label="Similar Sites of Rustly" class="review-button"></a>
+                  <a href="https://rustly.com/r/BROKER" aria-label="Visit Rustly" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Obtén <strong>5 Cajas Únicas</strong> y un <strong>Bono del 100%</strong> en tu primer depósito</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="broker"></button>
             </div>
         </div>
         <div class="box-extra-links">
-            <a href="/reviews/csgoluck" class="partner-site extra-abox"><img src="/img/csgoluck-logo.webp" alt="CSGOLuck Logo"></a>
+          <div class="promo-box extra-abox else-bonus counter-1">
+            <div class="logobg"><span>5 Free Cases</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">broker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="promo-box extra-abox deposit-bonus counter-2">
+            <div class="logobg"><span>+100%</span></div>
+            <div class="content">
+              <p>Promo</p>
+              <code class="promo-code">broker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Pros y Contras</li>
+              <li data-target=".smallreview">Reseña de Rustly</li>
+              <li data-target=".instruction">¿Cómo obtener Bonos en Rustly?</li>
+              <li data-target=".screentable">Capturas y Modos</li>
+              <li data-target=".sitedetails">Métodos de Pago</li>
+              <li data-target=".sitealternates">Sitios Similares</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/es/freebies/sign-up-bonuses" class="signupbonus"><i class="officon signupbonus"></i> Bono de Registro</a>
+                  <a href="/es/freebies/deposit-bonuses" class="depositbonus"><i class="officon depositbonuses"></i> Bono de Depósito</a>
+                  <a href="/es/freebies/progressive-rewards" class="progressiverewards"><i class="officon signupbonus"></i> Recompensas Progresivas</a>
+                  <a href="/es/freebies/daily-rewards" class="dailyrewards"><i class="officon dailyrewards"></i> Recompensas Diarias</a>
+                  <a href="/es/freebies/rain-system" class="rain"><i class="officon rain"></i> Sistema de Lluvia</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Pros</p>
@@ -306,17 +351,24 @@
                 <li>Visita <a target="_blank" rel="noopener" href="https://rustly.com/r/BROKER">Rustly</a> usando nuestro enlace</li>
                 <li>Inicia sesión con tu cuenta de Steam</li>
                 <li>Pasa el cursor sobre <strong>Rewards</strong> en la parte superior y haz clic en <strong>Promotions</strong></li>
-                <li>Introduce el código: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                <li>Introduce el código: <code id="site-code">broker</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                 <li>¡Obtén <strong>Cajas Gratuitas y un Bono de Depósito</strong>!</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/es/rust/caseopening" aria-label="Case Opening" class="cases"></a>
+                    <a href="/es/rust/case-battle" aria-label="Case Battles" class="casebattles"></a>
+                    <a href="/es/rust/roulette" aria-label="Roulette" class="roulette"></a>
+                    <a href="/es/rust/crash" aria-label="Crash" class="crash"></a>
+                    <a href="/es/rust/coinflip" aria-label="Coinflip" class="coinflip"></a>
+                    <a href="/es/rust" aria-label="Mines" class="mines"></a>
+                    <a href="/es/rust" aria-label="Towers" class="towers"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rustly_1.png" alt="Rustly ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rustly_2.png" alt="Rustly ScreenShot 2"></div>
@@ -325,9 +377,56 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/rustly_5.png" alt="Rustly ScreenShot 5"></div>
                 </div>
             </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Métodos de Depósito</span>
+                <div class="methodlist" id="first">
+                  <a href="/es/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/es" aria-label="VISA" class="visa"></a>
+                  <a href="/es" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/es/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/es/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/es/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/es/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/es/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/es" aria-label="Gift Cards" class="giftcard"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Withdraw Methods</span>
+                <div class="methodlist" id="second">
+                  <a href="/es/rust" aria-label="Rust Skins" class="rust"></a>
+                  <a href="/es/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/es/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/es/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/es/crypto" aria-label="Litecoin" class="ltc"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Confianza</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Soporte</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Pagos</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Modos de Juego</span>
+                  <div class="rating"><div class="star_rating" style="width: 80%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 72.5%;"></div></div>
+            </div>
             <div class="criteria-descriptions">
                 <div class="smallreview criteria">
-                    <h3>Trust</h3>
+                    <h3>Confianza</h3>
                     <p>Rustly es una plataforma lanzada en 2023 y está asociada con la conocida marca CSGOLuck, lo que le da
                         credibilidad ante los usuarios. Aun así, la falta de una licencia de juego y la juventud del proyecto
                         generan ciertas dudas. La plataforma utiliza un sistema Provably Fair, opera mediante una conexión segura y
@@ -335,14 +434,14 @@
                         bien los términos y comenzar con cantidades pequeñas.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Support</h3>
+                    <h3>Soporte</h3>
                     <p>Rustly ofrece soporte a través de chat en vivo y correo electrónico, brindando asistencia rápida sobre
                         cuentas, bonos y problemas técnicos. El equipo de soporte responde de forma rápida y detallada, y la sección
                         de FAQ en el sitio permite resolver la mayoría de dudas comunes sin necesidad de contactar al soporte. El
                         nivel del servicio es superior al promedio, especialmente para una plataforma nueva.</p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Payments</h3>
+                    <h3>Pagos</h3>
                     <p>Rustly acepta depósitos con skins de Rust, criptomonedas, tarjetas bancarias y tarjetas de regalo, lo que
                         garantiza una alta accesibilidad. Sin embargo, los retiros de skins se procesan mediante mercados externos,
                         a menudo con comisiones elevadas y tasas desfavorables. Tampoco existe la opción de retiro directo en fiat.
@@ -350,13 +449,90 @@
                     </p>
                 </div>
                 <div class="smallreview criteria">
-                    <h3>Playability</h3>
+                    <h3>Modos de Juego</h3>
                     <p>La plataforma ofrece 9 modos de juego, incluyendo Batallas de Cajas, Torres, Crash y Multiplicador. Todos los
                         juegos están ambientados en el universo de Rust y utilizan el sistema Provably Fair. Su estilo visual único,
                         inspirado en Rust, hace que la experiencia sea más inmersiva. Aunque no ofrece mecánicas completamente
                         nuevas, la alta calidad de ejecución y su enfoque en los fans del juego hacen que Rustly destaque entre sus
                         competidores.</p>
                 </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Best Rustly Alternatives</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="HowlGG">
+                  <div class="logobg">
+                    <a href="/es/reviews/howlgg"><img src="/img/howlgg-logo.webp" loading="lazy" draggable="false" alt="HowlGG"></a>
+                    <div class="main-mode classic lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/howlgg">HowlGG</a>
+                    <div class="site-reward"><p>Receive a <strong>Bonus +25%</strong> to Rakeback</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/howlgg" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://howly.gg/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="bandit.camp">
+                  <div class="logobg">
+                    <a href="/es/reviews/banditcamp"><img src="/img/banditcamp-logo.webp" loading="lazy" draggable="false" alt="bandit.camp"></a>
+                    <div class="main-mode classic lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/banditcamp">bandit.camp</a>
+                    <div class="site-reward"><p>Receive <strong>$0.15</strong> for Free</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/banditcamp" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://bandit.camp/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="RustMagic">
+                  <div class="logobg">
+                    <a href="/es/reviews/rustmagic"><img src="/img/rustmagic-logo.webp" loading="lazy" draggable="false" alt="RustMagic"></a>
+                    <div class="main-mode classic lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/rustmagic">RustMagic</a>
+                    <div class="site-reward"><p>There is <strong>+3% Bonus</strong> on all Deposits</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/rustmagic" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://rustmagic.com/r/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="CSGOLuck">
+                  <div class="logobg">
+                    <a href="/es/reviews/csgoluck"><img src="/img/csgoluck-logo.webp" loading="lazy" draggable="false" alt="CSGOLuck"></a>
+                    <div class="main-mode classic lang-es">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/es/reviews/csgoluck">CSGOLuck</a>
+                    <div class="site-reward"><p>Receive <strong>5 Free Cases</strong> and <strong>+100% Bonus</strong> on Deposit</p></div>
+                    <div class="content-buttons">
+                      <a href="/es/reviews/csgoluck" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://csgoluck.com/r/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
        </div>
   </div>
@@ -392,14 +568,14 @@
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/ru/reviews/csgorun">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Ru
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,21 +251,51 @@
                 <a href="https://cs2run.vip/ref/ebdcjh"><img src="/img/csgorun-logo.webp" alt="CSGORUN" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 70%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode classic lang-ru">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>CSGORUN</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/ru/cs2" aria-label="Альтернативы CSGORUN" class="review-button"></a>
+                  <a href="https://cs2run.vip/ref/ebdcjh" aria-label="Перейти на CSGORUN" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Получите <strong>+5% Бонус</strong> на все Пополнения</span></div>
             </div>
         </div>
+        <div class="box-extra-links">
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Плюсы и Минусы Сайта</li>
+              <li data-target=".smallreview">Обзор на CSGORUN</li>
+              <li data-target=".instruction">Как получить +5% к Депозиту на сайте CSGORUN</li>
+              <li data-target=".screentable">Скриншоты и Режимы</li>
+              <li data-target=".sitedetails">Платежные Способы</li>
+              <li data-target=".sitealternates">Похожие Сайты</li>
+            </ol>
+          </div>
+        </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/ru/freebies/deposit-bonuses" class="depositbonus"><i class="officon depositbonuses"></i> Бонус к Пополнению</a>
+                  <a href="/ru/freebies/daily-rewards" class="dailyrewards"><i class="officon dailyrewards"></i> Ежедневные Награды</a>
+                  <a href="/ru/freebies/giveaways" class="giveaways"><i class="officon giveaways"></i> Розыгрыши</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Плюсы</p>
@@ -308,18 +338,76 @@
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/ru/csgo/matchbetting" aria-label="Esports Betting" class="cs2"></a>
+                    <a href="/ru/csgo/matchbetting" aria-label="Sport Betting" class="sport"></a>
+                    <a href="/ru/csgo/caseopening" aria-label="Case Opening" class="cases"></a>
+                    <a href="/ru/csgo/case-battle" aria-label="Case Battles" class="casebattles"></a>
+                    <a href="/ru/csgo/roulette" aria-label="Roulette" class="roulette"></a>
+                    <a href="/ru/csgo/crash" aria-label="Crash" class="crash"></a>
+                    <a href="/ru" aria-label="Duels" class="duels"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgorun_1.png" alt="CSGORUN ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgorun_2.png" alt="CSGORUN ScreenShot 2"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgorun_3.png" alt="CSGORUN ScreenShot 3"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgorun_4.png" alt="CSGORUN ScreenShot 4"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Способы Пополнения</span>
+                <div class="methodlist" id="first">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/ru" aria-label="VISA" class="visa"></a>
+                  <a href="/ru" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru/crypto" aria-label="Binance Coin" class="bnb"></a>
+                  <a href="/ru/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/ru/crypto" aria-label="TON Coin" class="ton"></a>
+                  <a href="/ru" aria-label="FK Wallet" class="fkwallet"></a>
+                  <a href="/ru" aria-label="SBP" class="sbp"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Способы Вывода</span>
+                <div class="methodlist" id="second">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru/dota" aria-label="Dota 2 Items" class="dota"></a>
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/ru/crypto" aria-label="TON Coin" class="ton"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Доверие</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Поддержка</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Деп/Вывод</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Режимы</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 70%;"></div></div>
             </div>
         <div class="criteria-descriptions">
           <div class="smallreview criteria">
@@ -330,7 +418,7 @@
               крупных выводах вызывают у некоторых пользователей вопросы. Тем не менее, благодаря стабильной работе и широкой
               узнаваемости в СНГ, сайт сохраняет сильные позиции в своём сегменте.</p>
           </div>
-        
+
           <div class="smallreview criteria">
             <h3>Поддержка</h3>
             <p>Служба поддержки CSGORUN доступна через live-чат, email и активные сообщества в Telegram и Discord. В большинстве
@@ -338,7 +426,7 @@
               иногда сталкиваются с шаблонными ответами или длительным ожиданием. В целом, поддержка справляется с базовыми
               задачами, но может быть ограниченной при рассмотрении сложных обращений.</p>
           </div>
-        
+
           <div class="smallreview criteria">
             <h3>Деп/Вывод</h3>
             <p>Финансовая система платформы включает широкий выбор методов: CS2-скины, криптовалюты (BTC, USDT и др.),
@@ -347,7 +435,7 @@
               метода, особенно при фиатных операциях. Система надёжна для большинства транзакций, но при работе с крупными
               суммами может возникнуть дополнительная задержка.</p>
           </div>
-        
+
           <div class="smallreview criteria">
             <h3>Режимы</h3>
             <p>CSGORUN предлагает популярные режимы: Crash, Mines, Roulette, Case Battles и ставки на киберспорт. Все игры
@@ -355,6 +443,83 @@
               работает стабильно даже при высокой нагрузке, а графика — базовая, но функциональная. Дополнительные механики,
               такие как Rain-бонусы, челленджи и акции, расширяют игровой опыт. Однако в сравнении с более крупными платформами,
               выбор режимов может показаться ограниченным.</p>
+          </div>
+        </div>
+        <div class="sitealternates">
+          <div class="alternates-title">Похожие Сайты на CSGORUN</div>
+          <div class="sitealternatesboxes">
+            <div class="box" id="500 Casino">
+              <div class="logobg">
+                <a href="/ru/reviews/csgo500"><img src="/img/csgo500-logo.webp" loading="lazy" draggable="false" alt="500 Casino"></a>
+                <div class="main-mode classic lang-ru">
+                  <div class="main-mode-box">
+                    <div class="main-mode-icon"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <a class="boxtitle" href="/ru/reviews/csgo500">500 Casino</a>
+                <div class="site-reward"><p>Получите <strong>+300% Бонус</strong> к Первому Пополнению</p></div>
+                <div class="content-buttons">
+                  <a href="/ru/reviews/csgo500" aria-label="Read Review" class="review-button"></a>
+                  <a href="https://play500.games/r/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                </div>
+              </div>
+            </div>
+            <div class="box" id="CSGOPolygon">
+              <div class="logobg">
+                <a href="/ru/reviews/csgopolygon"><img src="/img/csgopolygon-logo.webp" loading="lazy" draggable="false" alt="CSGOPolygon"></a>
+                <div class="main-mode classic lang-ru">
+                  <div class="main-mode-box">
+                    <div class="main-mode-icon"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <a class="boxtitle" href="/ru/reviews/csgopolygon">CSGOPolygon</a>
+                <div class="site-reward"><p>Получите <strong>1.00$ на Баланс</strong> при регистрации</p></div>
+                <div class="content-buttons">
+                  <a href="/ru/reviews/csgopolygon" aria-label="Read Review" class="review-button"></a>
+                  <a href="https://playplg.com/ref/CSGOBROKER" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                </div>
+              </div>
+            </div>
+            <div class="box" id="CSGOFast">
+              <div class="logobg">
+                <a href="/ru/reviews/csgofast"><img src="/img/csgofast-logo.webp" loading="lazy" draggable="false" alt="CSGOFast"></a>
+                <div class="main-mode classic lang-ru">
+                  <div class="main-mode-box">
+                    <div class="main-mode-icon"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <a class="boxtitle" href="/ru/reviews/csgofast">CSGOFast</a>
+                <div class="site-reward"><p>Получите <strong>+10% к Депозиту</strong> и <strong>Бесплатный Кейс</strong></p></div>
+                <div class="content-buttons">
+                  <a href="/ru/reviews/csgofast" aria-label="Read Review" class="review-button"></a>
+                  <a href="https://xcsgofast.com/?ref=broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                </div>
+              </div>
+            </div>
+            <div class="box" id="CSFAIL">
+              <div class="logobg">
+                <a href="/ru/reviews/csfail"><img src="/img/csfail-logo.webp" loading="lazy" draggable="false" alt="CSFAIL"></a>
+                <div class="main-mode classic lang-ru">
+                  <div class="main-mode-box">
+                    <div class="main-mode-icon"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <a class="boxtitle" href="/ru/reviews/csfail">CSFAIL</a>
+                <div class="site-reward"><p>Получите <strong>+7% Бонус</strong> ко всем вашим Депозитам</p></div>
+                <div class="content-buttons">
+                  <a href="/ru/reviews/csfail" aria-label="Read Review" class="review-button"></a>
+                  <a href="https://ggband.gg/referral/brokerfail" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
        </div>
@@ -388,18 +553,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,

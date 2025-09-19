@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/img/favicon180px.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/img/favicon192px.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/img/favicon192px.png">
-    <meta name="msapplication-TileImage" content="/img/favicon192px.png"> 
+    <meta name="msapplication-TileImage" content="/img/favicon192px.png">
     <script>
         (function () {
           try {
@@ -20,10 +20,10 @@
               const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
               theme = prefersLight ? 'light' : 'dark';
             }
-      
+
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.classList.add('transitions-disabled');
-      
+
             const link = document.getElementById('theme-style');
             if (theme === 'light' && link) {
               link.href = '/style_light.css';
@@ -35,7 +35,7 @@
           } catch (e) {
           }
         })();
-    </script>     
+    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css?v=1.25">
     <link id="theme-style" rel="stylesheet" href="" disabled>
     <link rel="canonical" href="https://csgobroker.cc/ru/reviews/csgo-skins">
@@ -228,16 +228,16 @@
                 <form id="search-form">
                     <input type="text" id="search-input" aria-label="Search" spellcheck="false" autocomplete="off">
                     <div id="site-list" class="site-list">
-                    </div>              
+                    </div>
                 </form>
-            </div> 
+            </div>
         <div class="lang-menu">
             <div class="selected-lang">
                 Ru
             </div>
         </div>
         </div>
-    </nav>   
+    </nav>
     </header>
     <div class="spaceblock"></div>
     <div id="particleflakeContainer">
@@ -251,22 +251,60 @@
                 <a href="https://csgo-skins.com/"><img src="/img/csgo-skins-logo.webp" alt="CSGO-SKINS logo" draggable="false" loading="lazy"></a>
                 <div class="rating">
                     <div class="star_rating"></div>
+                  <div class="liverating fadein">
+                    <div class="star_rating" style="width: 67.5%;"></div>
+                  </div>
                 </div>
+              <div class="main-mode cases lang-ru">
+                <div class="main-mode-box">
+                  <div class="main-mode-icon"></div>
+                </div>
+              </div>
             </div>
             <div class="content">
                 <h4>CSGO-SKINS</h4>
                 <div class="content-buttons">
-                    <a href="" aria-label="Read Review" class="review-button"></a>
-                    <a href="" aria-label="Visit WebSite" target="_blank" rel="noopener" class="review-button visit"></a>
+                  <a href="/ru/csgo/caseopening" aria-label="Альтернативы CSGO-SKINS" class="review-button"></a>
+                  <a href="https://csgo-skins.com/" aria-label="Перейти на CSGO-SKINS" class="review-button visit" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="bonus_info"><span id="bonus">Получите <strong>0.50$</strong> Бесплатно</span></div>
-                <button class="copy hidden" aria-label="Copy Code"></button>
+                <button class="copy defbutton" aria-label="Copy Code" code="csgobroker"></button>
             </div>
+        </div>
+        <div class="box-extra-links">
+          <div class="promo-box extra-abox welcome-bonus counter-1">
+            <div class="logobg"><span>0.50$</span></div>
+            <div class="content">
+              <p>Промокод</p>
+              <code class="promo-code">csgobroker</code>
+              <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>
+            </div>
+          </div>
+          <div class="nav-review">
+            <ol>
+              <li class="current" data-target=".plusminus">Плюсы и Минусы Сайта</li>
+              <li data-target=".smallreview">Обзор на CSGO-SKINS</li>
+              <li data-target=".instruction">Как получить Бонусы на сайте CSGO-SKINS</li>
+              <li data-target=".screentable">Скриншоты и Режимы</li>
+              <li data-target=".sitedetails">Платежные Способы</li>
+              <li data-target=".sitealternates">Похожие Сайты</li>
+            </ol>
+          </div>
         </div>
     </div>
 </div>
         <div class="boxreview">
-            <div class="shortinfo"><div class="features bonused"></div></div>
+          <div class="shortinfo">
+            <div class="features">
+              <div class="featuresbox">
+                <div class="typesinside">
+                  <a href="/ru/freebies/sign-up-bonuses" class="signupbonus"><i class="officon signupbonus"></i> Бонус за Регистрацию</a>
+                  <a href="/ru/freebies/deposit-bonuses" class="depositbonus"><i class="officon depositbonuses"></i> Бонус к Пополнению</a>
+                  <a href="/ru/freebies/daily-rewards" class="dailyrewards"><i class="officon dailyrewards"></i> Ежедневные Награды</a>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plusminus">
                 <div class="criteria">
                     <p>Плюсы</p>
@@ -307,17 +345,20 @@
                 <li>Перейдите на <a target="_blank" rel="noopener" href="https://csgo-skins.com/">CSGO-SKINS</a> используя нашу ссылку</li>
                 <li>Зарегистрируйтесь любым способом</li>
                 <li>Нажмите на <strong>Add Funds</strong> возле вашей аватарки</li>
-                <li>Введите код: <code id="site-code"></code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
+                <li>Введите код: <code id="site-code">csgobroker</code><button class="copy site-promo-copy" aria-label="Copy Code"></button></li>
                 <li>Наслаждайтесь своими 0.50$ и Бонусом к Депозиту !</li>
                 </ol>
             </div>
             <div class="screentable">
-                <div class="gamemodes">
-                    <div class="featuresbox">
-                        <div class="typesinside">
-                        </div>
-                    </div>
+              <div class="gamemodes">
+                <div class="featuresbox">
+                  <div class="typesinside">
+                    <a href="/ru/rust/caseopening" aria-label="Case Opening" class="cases"></a>
+                    <a href="/ru/rust/case-battle" aria-label="Case Battles" class="casebattles"></a>
+                    <a href="/ru/rust/upgrader" aria-label="Upgrader" class="upgrader"></a>
+                  </div>
                 </div>
+              </div>
                 <div class="screens">
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgo-skins_1.png" alt="CSGO-SKINS ScreenShot 1"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgo-skins_2.png" alt="CSGO-SKINS ScreenShot 2"></div>
@@ -325,6 +366,59 @@
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgo-skins_4.png" alt="CSGO-SKINS ScreenShot 4"></div>
                     <div class="slide"><img draggable="false" loading="lazy" src="/img/screens/csgo-skins_5.png" alt="CSGO-SKINS ScreenShot 5"></div>
                 </div>
+            </div>
+            <div class="sitedetails">
+              <div class="sitepros">
+                <span>Способы Пополнения</span>
+                <div class="methodlist" id="first">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                  <a href="/ru" aria-label="VISA" class="visa"></a>
+                  <a href="/ru" aria-label="MasterCard" class="mastercard"></a>
+                  <a href="/ru/crypto" aria-label="USDT" class="usdt"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin" class="btc"></a>
+                  <a href="/ru/crypto" aria-label="Ethereum" class="eth"></a>
+                  <a href="/ru/crypto" aria-label="Litecoin" class="ltc"></a>
+                  <a href="/ru/crypto" aria-label="Binance Coin" class="bnb"></a>
+                  <a href="/ru/crypto" aria-label="Tron" class="tron"></a>
+                  <a href="/ru/crypto" aria-label="USDC" class="usdc"></a>
+                  <a href="/ru/crypto" aria-label="Bitcoin Cash" class="btcc"></a>
+                  <a href="/ru/crypto" aria-label="DOGE" class="doge"></a>
+                  <a href="/ru/crypto" aria-label="Solana" class="solana"></a>
+                  <a href="/ru/crypto" aria-label="Polygon (Matic)" class="polygon"></a>
+                  <a href="/ru/crypto" aria-label="Avalanche" class="avalanche"></a>
+                  <a href="/ru" aria-label="Gift Cards" class="giftcard"></a>
+                  <a href="/ru" aria-label="Skrill" class="skrill"></a>
+                  <a href="/ru" aria-label="Google Pay" class="gpay"></a>
+                  <a href="/ru" aria-label="Apple Pay" class="apay"></a>
+                </div>
+              </div>
+              <div class="sitepros">
+                <span>Способы Вывода</span>
+                <div class="methodlist" id="second">
+                  <a href="/ru/cs2" aria-label="CS2 Skins" class="cs2"></a>
+                </div>
+              </div>
+            </div>
+            <div class="ratingsumm">
+              <div class="ratingsection">
+                <div class="ratingway">
+                  <span>Доверие</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Поддержка</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Деп/Вывод</span>
+                  <div class="rating"><div class="star_rating" style="width: 60%;"></div></div>
+                </div>
+                <div class="ratingway">
+                  <span>Режимы</span>
+                  <div class="rating"><div class="star_rating" style="width: 70%;"></div></div>
+                </div>
+              </div>
+              <div class="liverating"><div class="star_rating" style="width: 67.5%;"></div></div>
             </div>
             <div class="criteria-descriptions">
               <div class="smallreview criteria">
@@ -336,7 +430,7 @@
                   временных блокировках аккаунтов после выигрышей. Эти факторы могут снижать уровень прозрачности и доверия,
                   особенно среди новых пользователей.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Поддержка</h3>
                 <p>Служба поддержки CSGO-SKINS доступна через круглосуточный live-чат и электронную почту. Дополнительно
@@ -346,7 +440,7 @@
                   оценивается как удовлетворительный, но в нестандартных сценариях может потребоваться дополнительное время на
                   решение.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Деп/Вывод</h3>
                 <p>Платформа поддерживает пополнение через скины, банковские карты, криптовалюты и сторонние платёжные сервисы.
@@ -355,7 +449,7 @@
                   активации функции вывода может потребоваться предварительный депозит, что рекомендуется учитывать перед началом
                   торговли.</p>
               </div>
-            
+
               <div class="smallreview criteria">
                 <h3>Режимы</h3>
                 <p>На CSGO-SKINS представлены игровые режимы, такие как открытие кейсов, Case Battles и Upgrade. Все игры работают
@@ -364,6 +458,83 @@
                   определённой вероятностью. Платформа также проводит внутриигровые мероприятия, включая бонусы, бесплатные кейсы и
                   раздачи, ориентированные на повышение активности пользователей. Участникам рекомендуется учитывать риски,
                   связанные с игровыми механиками.</p>
+              </div>
+            </div>
+            <div class="sitealternates">
+              <div class="alternates-title">Похожие Сайты на CSGO-SKINS</div>
+              <div class="sitealternatesboxes">
+                <div class="box" id="GGDROP">
+                  <div class="logobg">
+                    <a href="/ru/reviews/ggdrop"><img src="/img/ggdrop-logo.webp" loading="lazy" draggable="false" alt="GGDROP"></a>
+                    <div class="main-mode cases lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/ggdrop">GGDROP</a>
+                    <div class="site-reward"><p>Получите <strong>Бесплатное Колесо</strong> и <strong>Бонус +11%</strong></p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/ggdrop" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://ggband.gg/referral/broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="Key-Drop">
+                  <div class="logobg">
+                    <a href="/ru/reviews/key-drop"><img src="/img/key-drop-logo.webp" loading="lazy" draggable="false" alt="Key-Drop"></a>
+                    <div class="main-mode cases lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/key-drop">Key-Drop</a>
+                    <div class="site-reward"><p>Получите <strong>0.50$ на Баланс</strong> при регистрации</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/key-drop" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://keydrop.com/?code=broker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="SKINBOX">
+                  <div class="logobg">
+                    <a href="/ru/reviews/skinbox"><img src="/img/skinbox-logo.webp" loading="lazy" draggable="false" alt="SKINBOX"></a>
+                    <div class="main-mode cases lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/skinbox">SKINBOX</a>
+                    <div class="site-reward"><p>Получите <strong>Бесплатный Кейс</strong> и <strong>+20%</strong> к Пополнению</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/skinbox" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://skinbox.live/" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="DatDrop">
+                  <div class="logobg">
+                    <a href="/ru/reviews/datdrop"><img src="/img/datdrop-logo.webp" loading="lazy" draggable="false" alt="DatDrop"></a>
+                    <div class="main-mode cases lang-ru">
+                      <div class="main-mode-box">
+                        <div class="main-mode-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <a class="boxtitle" href="/ru/reviews/datdrop">DatDrop</a>
+                    <div class="site-reward"><p>Получите <strong>+5% Бонус</strong> ко всем вашим Депозитам</p></div>
+                    <div class="content-buttons">
+                      <a href="/ru/reviews/datdrop" aria-label="Read Review" class="review-button"></a>
+                      <a href="https://datdrop.app/p/csgobroker" aria-label="Visit WebSite" class="review-button visit" target="_blank" rel="noopener"></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
        </div>
@@ -397,18 +568,17 @@
     </div>
 </footer>
 </div>
-    
 
 <script defer src="/godofscript.js?v=1.19"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(93265864, "init", {
          clickmap:true,
          trackLinks:true,
