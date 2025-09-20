@@ -161,55 +161,32 @@ function showCopied(copyButton) {
   document.addEventListener("click", onClick, { passive: false });
 })();
 
-
-(function(){
-  function updateContainerHeight(container){
-    if (window.innerWidth < 1365){
-      container.style.height = '';
-      return;
-    }
-    const actives = container.querySelectorAll('.sitepros.active');
-    if (!actives.length){
-      container.style.height = '';
-      return;
-    }
-    let max = 0;
-    actives.forEach(sp=>{
-      const method = sp.querySelector('.methodlist');
-      const total = sp.offsetHeight + (method ? method.offsetHeight : 0);
-      if (total > max) max = total;
-    });
-    const cur = parseInt(container.style.height || '0', 10) || 0;
-    if (max > cur) container.style.height = max + 'px';
-  }
-
-  function onSiteprosClick(e){
-    const sp = e.currentTarget;
-    sp.classList.toggle('active');
-    const container = sp.closest('.sitedetails');
-    if (container) requestAnimationFrame(()=>updateContainerHeight(container));
-  }
-
-  function stop(e){ e.stopPropagation(); }
-
-  function init(){
-    document.querySelectorAll('.sitedetails .sitepros .methodlist')
-      .forEach(el=>el.addEventListener('click', stop));
-
-    document.querySelectorAll('.sitedetails .sitepros')
-      .forEach(el=>el.addEventListener('click', onSiteprosClick));
-
-    window.addEventListener('resize', ()=>{
-      document.querySelectorAll('.sitedetails').forEach(updateContainerHeight);
-    });
-  }
-
-  if (document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
+  $(document).ready(function() {
+      $('.sitepros').click(function() {
+          $(this).toggleClass("active");
+  
+          if ($(window).width() >= 1365) {
+              var $methodlist = $(this).find('.methodlist');
+              var methodlistHeight = $methodlist.outerHeight(true);
+              var totalHeight = $(this).height() + methodlistHeight;
+              var $parent = $(this).parent('.sitedetails');
+              var $otherActiveSitepros = $(this).siblings('.sitepros.active');
+              var currentHeight = parseInt($parent.css('height'));
+  
+              if ($(this).hasClass("active")) {
+                  if (currentHeight < totalHeight) {
+                      $parent.css('height', totalHeight + 'px');
+                  }
+              } else if ($otherActiveSitepros.length === 0) {
+                  $parent.css('height', '');
+              }
+          }
+      });
+  
+      $('.sitepros .methodlist').click(function(event) {
+          event.stopPropagation();
+      });
+  });
 
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = themeToggleBtn.querySelector('i');
