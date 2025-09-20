@@ -193,6 +193,110 @@ function joinBeforeCloseKeepIndent(before, block, after, nl){
   return left + block + nl + indent + after;
 }
 
+// --- ADD: resolver для ссылок "На сайт" с учётом альт-страниц ---
+function resolveVisitLink(data = {}, urlPath = "", lang = "en"){
+  const p = String(urlPath || "").toLowerCase();
+
+  // 1) Специализированные разделы
+  if (p.includes("/marketplaces") && data["marketplaces"]) {
+    return String(data["marketplaces"]);
+  }
+  if (p.includes("/instant-sell") && data["instant-sell"]) {
+    return String(data["instant-sell"]);
+  }
+  if (p.includes("/buy-skins") && data["buy-skins"]) {
+    return String(data["buy-skins"]);
+  }
+  if (p.includes("/sell-skins") && data["sell-skins"]) {
+    return String(data["sell-skins"]);
+  }
+
+  // 2) Earn by Play (RU-роуты)
+  if ((p.includes("/ru/earning/earn-by-play") || p.includes("/ru/csgo/earn-by-play-csgo")) && data["earn-by-play"]) {
+    return String(data["earn-by-play"]);
+  }
+
+  // 3) Earn by Play (EN-роут)
+  if (p.includes("/earn-by-play") && data["earn-by-play-en"]) {
+    return String(data["earn-by-play-en"]);
+  }
+
+  // 4) Английская ссылка, если язык страницы en
+  if (String(lang).toLowerCase() === "en" && data["link-en"]) {
+    return String(data["link-en"]);
+  }
+
+  // 5) Базовая ссылка по умолчанию
+  return String(data.link || "");
+}
+
+/* --- helper: апдейт visit-ссылок в куске .box HTML --- */
+function updateVisitLinkInBoxHtml(boxHtml, linkValue, nl){
+  if (!linkValue) return boxHtml; // нет нового значения
+  const masked = maskSegments(boxHtml);
+  const content = findFirstByClass(masked, "content");
+  if (!content) return boxHtml;
+
+  const cOpenEnd = content.openEnd;
+  const cCloseStart = content.closeStart;
+  let segment = boxHtml.slice(cOpenEnd, cCloseStart);
+
+  const segMasked = maskSegments(segment);
+  const cb = findFirstByClass(segMasked, "content-buttons");
+  if (!cb) return boxHtml;
+
+  // область только внутри .content-buttons
+  const regionStart = cb.openEnd;
+  const regionEnd   = cb.closeStart;
+  const before = segment.slice(0, regionStart);
+  const region = segment.slice(regionStart, regionEnd);
+  const after  = segment.slice(regionEnd);
+
+  // переписываем все <a ... class*="visit" ...>
+  const newRegion = region.replace(/<a\b[^>]*>([\s\S]*?)<\/a>/gi, (full)=>{
+    const open = full.match(/^<a\b[^>]*>/i)?.[0]; if (!open) return full;
+    const clsMatch = open.match(/\bclass\s*=\s*(["'])([^"']*)\1/i);
+    const classes = new Set((clsMatch ? clsMatch[2] : "").split(/\s+/).filter(Boolean));
+    if (!Array.from(classes).some(c=>c.toLowerCase()==="visit" || c.toLowerCase()==="review-button" && classes.has("visit"))) return full;
+
+    let newOpen = upsertAttrInTag(open, "href", String(linkValue));
+    if (isExternal(linkValue)) {
+      newOpen = upsertAttrInTag(newOpen, "target", "_blank");
+      newOpen = upsertAttrInTag(newOpen, "rel", "noopener");
+    }
+    return newOpen + full.slice(open.length);
+  });
+
+  if (newRegion === region) return boxHtml;
+
+  const rebuiltSegment = before + newRegion + after;
+  return boxHtml.slice(0, cOpenEnd) + rebuiltSegment + boxHtml.slice(cCloseStart);
+}
+
+/* --- helper: апдейт visit-ссылки в ГЛАВНОМ боксе страницы (review/mirrors) --- */
+function ensureVisitLinkInMainBox(html, linkValue, nl){
+  if (!linkValue) return html;
+  let out = html;
+
+  const masked = maskSegments(out);
+  const boxes = findAllDivByClass(masked, "box");
+  if (!boxes.length) return out;
+
+  for (const b of boxes){
+    const open = readTag(out, b.openStart);
+    const cls = parseClassAttr(open.attrs);
+    if (!cls.has("main")) continue;
+
+    const boxHtml = out.slice(b.openStart, b.closeEnd);
+    const updated = updateVisitLinkInBoxHtml(boxHtml, linkValue, nl);
+    if (updated !== boxHtml){
+      out = out.slice(0, b.openStart) + updated + out.slice(b.closeEnd);
+    }
+    break; // только первый главный
+  }
+  return out;
+}
+
 /* --------- SMALL HELPERS --------- */
 function getPageKeyFromHref(hrefRaw){
   if (!hrefRaw) return null;
@@ -240,6 +344,9 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl){
         const rebuilt = rebuildMainModeInMainBox(boxHtml, logobg, data["Main Mode"], lang, nl);
         if (collapseWS(rebuilt) !== collapseWS(boxHtml)) boxHtml = rebuilt;
       }
+
+      const visitHref = resolveVisitLink(data, urlPath, lang);
+      boxHtml = updateVisitLinkInBoxHtml(boxHtml, visitHref, nl);
 
       // NEW: ensure copy button for every .box in listings (uses site's code)
       boxHtml = ensureCopyButtonInBoxHtml(boxHtml, data.code ?? "", nl);
@@ -292,6 +399,10 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
 
   // Extra (promo + mirror + nav) — на /mirrors/* нет nav-review и mirror-redirect
   out = upsertPromoBoxesInSitepage(out, urlPath, lang, pageKey, data, presets.review, nl);
+
+  // NEW: синхронизировать visit-ссылку главного бокса с data.link
+  const resolvedMainVisit = resolveVisitLink(data, urlPath, lang);
+  out = ensureVisitLinkInMainBox(out, resolvedMainVisit, nl);
 
   /* NEW: локализация ссылок по языку */
   out = localizeLanguageLinks(out, lang);
