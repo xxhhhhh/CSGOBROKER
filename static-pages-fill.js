@@ -348,6 +348,9 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl){
       const visitHref = resolveVisitLink(data, urlPath, lang);
       boxHtml = updateVisitLinkInBoxHtml(boxHtml, visitHref, nl);
 
+      // NEW: TG-кнопка после visit
+      boxHtml = ensureTGButtonInBoxHtml(boxHtml, data, lang, nl);
+
       // NEW: ensure copy button for every .box in listings (uses site's code)
       boxHtml = ensureCopyButtonInBoxHtml(boxHtml, data.code ?? "", nl);
 
@@ -400,9 +403,15 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
   // Extra (promo + mirror + nav) — на /mirrors/* нет nav-review и mirror-redirect
   out = upsertPromoBoxesInSitepage(out, urlPath, lang, pageKey, data, presets.review, nl);
 
-  // NEW: синхронизировать visit-ссылку главного бокса с data.link
+  // NEW: синхронизировать visit-ссылку главного бокса с data/link(+alts)
   const resolvedMainVisit = resolveVisitLink(data, urlPath, lang);
   out = ensureVisitLinkInMainBox(out, resolvedMainVisit, nl);
+
+  // NEW: TG-кнопка после visit в главном боксе
+  out = ensureTGButtonInMainBox(out, data, lang, nl);
+
+  // NEW: liverating в главном боксе из data.ratings (во .logobg)
+  out = ensureMainBoxLiverating(out, data.ratings || {}, nl);
 
   /* NEW: локализация ссылок по языку */
   out = localizeLanguageLinks(out, lang);
@@ -1012,7 +1021,12 @@ async function renderAlternatesBlock(indent, nl, root, lang, mainName, alts, rat
 function applyReviewTranslations(html, lang, map, nl){
   let out = html;
 
-  out = out.replace(/(<div\b[^>]*class\s*=\s*["'][^"']*\bsitedetails\b[^"']*["'][\s\S]*?<span>)([^<]+)(<\/span>)/gi,
+// Переводит <span> в КАЖДОМ .sitepros (и первом, и втором)
+  out = out.replace(/(<div\b[^>]*class\s*=\s*["'][^"']*\bsitepros\b[^"']*["'][\s\S]*?<span>)([^<]+)(<\/span>)/gi,
+    (m, a, txt, c) => a + (map[txt.trim()] ?? txt) + c);
+
+  // СТАЛО — переводит <p> в КАЖДОЙ .criteria (и Pros, и Cons)
+  out = out.replace(/(<div\b[^>]*class\s*=\s*["'][^"']*\bcriteria\b[^"']*["'][\s\S]*?<p>)([^<]+)(<\/p>)/gi,
     (m, a, txt, c) => a + (map[txt.trim()] ?? txt) + c);
 
   out = out.replace(/(<div\b[^>]*class\s*=\s*["'][^"']*\bsmallreview\b[^"']*\bcriteria\b[^"']*["'][\s\S]*?<h3>)([^<]+)(<\/h3>)/gi,
@@ -1382,6 +1396,205 @@ function ensureCopyButtonInMainBox(html, codeValue, nl){
     break; // только главный
   }
 
+  return out;
+}
+
+/* ---- NEW: TG button (Telegram App) вставка/апдейт ---- */
+function ensureTGButtonInBoxHtml(boxHtml, data, lang, nl){
+  const tgHref = (String(lang).toLowerCase() === "en" && data && data["tg-app-en"])
+    ? String(data["tg-app-en"])
+    : (data && data["tg-app"] ? String(data["tg-app"]) : "");
+
+  if (!tgHref) return boxHtml;
+
+  const masked = maskSegments(boxHtml);
+  const content = findFirstByClass(masked, "content");
+  if (!content) return boxHtml;
+
+  const cOpenEnd = content.openEnd, cCloseStart = content.closeStart;
+  let segment = boxHtml.slice(cOpenEnd, cCloseStart);
+
+  const cm = maskSegments(segment);
+  const cb = findFirstByClass(cm, "content-buttons");
+  if (!cb) return boxHtml;
+
+  const regionStart = cb.openEnd, regionEnd = cb.closeStart;
+  const before = segment.slice(0, regionStart);
+  let   region = segment.slice(regionStart, regionEnd);
+  const after  = segment.slice(regionEnd);
+
+  // Обновим, если уже есть .tg-app
+  region = region.replace(
+    /<a\b([^>]*\bclass\s*=\s*["'][^"']*\btg-app\b[^"']*["'][^>]*)>([\s\S]*?)<\/a>/i,
+    (m, pre, inner)=>{
+      let open = `<a${pre}>`;
+      open = upsertAttrInTag(open, "href", tgHref);
+      open = upsertAttrInTag(open, "target", "_blank");
+      open = upsertAttrInTag(open, "rel", "noopener");
+      const label = String(lang).toLowerCase()==="ru" ? "Telegram Приложение" : "Telegram App";
+      const body  = `<span>${escapeHtml(label)}</span>`;
+      return open + body + `</a>`;
+    }
+  );
+
+  if (/<a\b[^>]*\btg-app\b/i.test(region)) {
+    return boxHtml.slice(0, cOpenEnd) + before + region + after + boxHtml.slice(cCloseStart);
+  }
+
+  // Вставим после visit
+  const visitRe = /<a\b[^>]*\bclass\s*=\s*["'][^"']*\breview-button\b[^"']*\bvisit\b[^"']*["'][^>]*>[\s\S]*?<\/a>/i;
+  const match = visitRe.exec(region);
+  if (!match) return boxHtml;
+
+  const insAt = match.index + match[0].length;
+  const indent = (()=>{
+    const ln = region.lastIndexOf(nl, match.index);
+    const lineStart = ln === -1 ? 0 : ln + nl.length;
+    return region.slice(lineStart, match.index).match(/^[\t ]*/)?.[0] ?? "";
+  })();
+
+  const label = String(lang).toLowerCase()==="ru" ? "Telegram Приложение" : "Telegram App";
+  const tgBtn = `<a href="${escapeAttr(tgHref)}" class="tg-app defbutton" target="_blank" rel="noopener"><span>${escapeHtml(label)}</span></a>`;
+
+  const newRegion = region.slice(0, insAt) + nl + indent + tgBtn + region.slice(insAt);
+  segment = before + newRegion + after;
+  return boxHtml.slice(0, cOpenEnd) + segment + boxHtml.slice(cCloseStart);
+}
+function ensureTGButtonInMainBox(html, data, lang, nl){
+  let out = html;
+  const masked = maskSegments(out);
+  const boxes = findAllDivByClass(masked, "box");
+  if (!boxes.length) return out;
+
+  for (const b of boxes){
+    const open = readTag(out, b.openStart);
+    const cls = parseClassAttr(open.attrs);
+    if (!cls.has("main")) continue;
+
+    const boxHtml = out.slice(b.openStart, b.closeEnd);
+    const updated = ensureTGButtonInBoxHtml(boxHtml, data, lang, nl);
+    if (updated !== boxHtml){
+      out = out.slice(0, b.openStart) + updated + out.slice(b.closeEnd);
+    }
+    break;
+  }
+  return out;
+}
+
+/* ---- NEW: liverating в .box.main ИМЕННО ВНУТРИ .logobg ---- */
+function computeLiveratingPercent(ratings){
+  if (!ratings || typeof ratings !== "object") return null;
+  const nums = Object.values(ratings).map(Number).filter(n => Number.isFinite(n));
+  if (!nums.length) return null;
+  const take = nums.slice(0, 4);
+  const avg  = take.reduce((a,b)=>a+b,0) / take.length;
+  const pct  = Math.max(0, Math.min(100, (avg / 5) * 100));
+  return Math.round(pct * 100) / 100;
+}
+function upsertWidthInOpenTag(tagOpen, percent){
+  const pct = String(percent).replace(/%$/,"");
+  if (!/style\s*=/.test(tagOpen)) {
+    return tagOpen.replace(/>$/, ` style="width: ${pct}%;">`);
+  }
+  return tagOpen.replace(/style\s*=\s*(["'])(.*?)\1/i, (m,q,css)=>{
+    const noWidth = css.replace(/(^|;)\s*width\s*:[^;]*;?/gi, '$1').replace(/;;+/g,';').replace(/^\s*;\s*|\s*;\s*$/g,'');
+    const merged = (noWidth ? noWidth + '; ' : '') + `width: ${pct}%;`;
+    return `style=${q}${merged}${q}`;
+  });
+}
+function ensureMainBoxLiverating(html, ratings, nl){
+  const percent = computeLiveratingPercent(ratings);
+  if (percent == null) return html;
+
+  let out = html;
+  const masked = maskSegments(out);
+  const boxes = findAllDivByClass(masked, "box");
+  if (!boxes.length) return out;
+
+  for (const b of boxes){
+    const open = readTag(out, b.openStart);
+    const cls = parseClassAttr(open.attrs);
+    if (!cls.has("main")) continue;
+
+    const boxSeg = out.slice(b.openStart, b.closeEnd);
+    const bm = maskSegments(boxSeg);
+    const logobg = findFirstByClass(bm, "logobg");
+    if (!logobg) return out;
+
+    const lbAbsOpenEnd   = b.openStart + logobg.openEnd;
+    const lbAbsCloseStart= b.openStart + logobg.closeStart;
+    let logSeg = out.slice(lbAbsOpenEnd, lbAbsCloseStart);
+
+    const lm = maskSegments(logSeg);
+    const rating = findFirstByClass(lm, "rating");
+
+    if (rating){
+      // Обновление существующего .rating в .logobg
+      const rOpen = rating.openEnd, rClose = rating.closeStart;
+      let rBody = logSeg.slice(rOpen, rClose);
+
+      const rm = maskSegments(rBody);
+      const lv = findFirstByClass(rm, "liverating");
+
+      if (lv){
+        const lvOpen = lv.openEnd, lvClose = lv.closeStart;
+        let lvBody = rBody.slice(lvOpen, lvClose);
+
+        const m = lvBody.match(/<div\b([^>]*\bclass\s*=\s*["'][^"']*\bstar_rating\b[^"']*["'][^>]*)>/i);
+        if (m){
+          const start = m.index;
+          const openTag = m[0];
+          const updatedOpen = upsertWidthInOpenTag(openTag, percent);
+          if (updatedOpen !== openTag){
+            lvBody = lvBody.slice(0, start) + updatedOpen + lvBody.slice(start + openTag.length);
+            rBody  = rBody.slice(0, lvOpen) + lvBody + rBody.slice(lvClose);
+            logSeg = logSeg.slice(0, rOpen) + rBody + logSeg.slice(rClose);
+            out    = out.slice(0, lbAbsOpenEnd) + logSeg + out.slice(lbAbsCloseStart);
+          }
+          return out;
+        } else {
+          // Нет star_rating внутри liverating — создаём
+          const baseIndent = indentBefore(logSeg, rOpen, nl) + "    ";
+          const inject = `${baseIndent}<div class="star_rating" style="width: ${percent}%;"></div>`;
+          const before = logSeg.slice(0, rOpen + lvOpen);
+          const after  = logSeg.slice(rOpen + lvOpen);
+          logSeg = before + inject + nl + after;
+          out = out.slice(0, lbAbsOpenEnd) + logSeg + out.slice(lbAbsCloseStart);
+          return out;
+        }
+      } else {
+        // Нет .liverating — пересоберём тело .rating
+        const indent = indentBefore(logSeg, rOpen, nl) + "  ";
+        const block =
+          `${indent}<div class="star_rating"></div>${nl}` +
+          `${indent}<div class="liverating fadein">${nl}` +
+          `${indent}  <div class="star_rating" style="width: ${percent}%;"></div>${nl}` +
+          `${indent}</div>`;
+        logSeg = logSeg.slice(0, rOpen) + block + logSeg.slice(rClose);
+        out = out.slice(0, lbAbsOpenEnd) + logSeg + out.slice(lbAbsCloseStart);
+        return out;
+      }
+    }
+
+    // Вставка .rating после первого <a> внутри .logobg
+    const aMatch = /<a\b[^>]*>[\s\S]*?<\/a>/i.exec(logSeg);
+    const insPos = aMatch ? (aMatch.index + aMatch[0].length) : 0;
+    const baseIndent = indentBefore(logSeg, insPos, nl) + "  ";
+    const block = [
+      `${baseIndent}<div class="rating">`,
+      `${baseIndent}  <div class="star_rating"></div>`,
+      `${baseIndent}  <div class="liverating fadein">`,
+      `${baseIndent}    <div class="star_rating" style="width: ${percent}%;"></div>`,
+      `${baseIndent}  </div>`,
+      `${baseIndent}</div>`
+    ].join(nl);
+
+    const before = logSeg.slice(0, insPos);
+    const after  = logSeg.slice(insPos);
+    const newLogSeg = joinBlocksNoBlank(before, block, after, nl);
+    out = out.slice(0, lbAbsOpenEnd) + newLogSeg + out.slice(lbAbsCloseStart);
+    return out;
+  }
   return out;
 }
 

@@ -2828,6 +2828,7 @@ h3 {
     align-content: flex-start;
     justify-content: flex-start;
     position: relative;
+    flex-wrap: nowrap;
 }
 
 .gamemodes .featuresbox .typesinside {
@@ -6667,6 +6668,10 @@ footer .centralizer .footer-content {
     left: 12px;
     top: 12px;
     margin: 0;
+}
+
+.box.main .content .review-button.mirror-visit {
+    display: none;
 }
 
 .boxes-holder:not(.main-page) .box .content:has(.review-button.mirror-visit) .tg-app {
@@ -13511,6 +13516,7 @@ header {
     .features .featuresbox .typesinside,
     .gamemodes .featuresbox .typesinside {
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .pages h1,
