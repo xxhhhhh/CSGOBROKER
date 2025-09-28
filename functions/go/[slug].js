@@ -1,4 +1,4 @@
-import LINKS from "../../data/links.json" assert { type: "json" };
+import LINKS from "../../code-parts/sites-links.json" assert { type: "json" };
 
 export async function onRequest(context) {
   const reqUrl = new URL(context.request.url);
