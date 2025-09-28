@@ -193,46 +193,47 @@ function joinBeforeCloseKeepIndent(before, block, after, nl){
   return left + block + nl + indent + after;
 }
 
-// --- ADD: resolver для ссылок "На сайт" с учётом альт-страниц ---
-function resolveVisitLink(data = {}, urlPath = "", lang = "en"){
+// REPLACE computeGoKey with this version
+function computeGoKey(baseKey, urlPath = "", lang = "en", data = {}) {
   const p = String(urlPath || "").toLowerCase();
+  const base = String(baseKey || "").trim();
+  if (!base) return "";
 
-  // 1) Специализированные разделы
-  if (p.includes("/marketplaces") && data["marketplaces"]) {
-    return String(data["marketplaces"]);
-  }
-  if (p.includes("/instant-sell") && data["instant-sell"]) {
-    return String(data["instant-sell"]);
-  }
-  if (p.includes("/buy-skins") && data["buy-skins"]) {
-    return String(data["buy-skins"]);
-  }
-  if (p.includes("/sell-skins") && data["sell-skins"]) {
-    return String(data["sell-skins"]);
-  }
+  const hasPlain = (k) => k && typeof data === "object" && Object.prototype.hasOwnProperty.call(data, k) && !!data[k];
+  const hasSeg = (seg) => new RegExp(`(?:^|/)${seg}(?:/|$)`).test(p);
 
-  // 2) Earn by Play (RU-роуты)
-  if ((p.includes("/ru/earning/earn-by-play") || p.includes("/ru/csgo/earn-by-play-csgo")) && data["earn-by-play"]) {
-    return String(data["earn-by-play"]);
-  }
+  // Плоские альт-ключи (если есть в JSON) -> /go/<base>/<alt>
+  if (hasSeg("marketplaces") && hasPlain("marketplaces")) return `${base}-marketplaces`;
+  if (hasSeg("instant-sell") && hasPlain("instant-sell")) return `${base}-instant-sell`;
+  if (hasSeg("buy-skins")    && hasPlain("buy-skins"))    return `${base}-buy-skins`;
+  if (hasSeg("sell-skins")   && hasPlain("sell-skins"))   return `${base}-sell-skins`;
 
-  // 3) Earn by Play (EN-роут)
-  if (p.includes("/earn-by-play") && data["earn-by-play-en"]) {
-    return String(data["earn-by-play-en"]);
+  // Earn by Play (RU маршруты)
+  if ((/\/ru(?:\/|$)/.test(p)) && (p.includes("/earning/earn-by-play") || p.includes("/csgo/earn-by-play-csgo")) && hasPlain("earn-by-play")) {
+    return `${base}-earn-by-play`;
+  }
+  // Earn by Play (EN маршрут)
+  if (hasSeg("earn-by-play") && hasPlain("earn-by-play-en")) {
+    return `${base}-earn-by-play-en`;
   }
 
-  // 4) Английская ссылка, если язык страницы en
-  if (String(lang).toLowerCase() === "en" && data["link-en"]) {
-    return String(data["link-en"]);
+  // EN-версия (если есть base-en или link-en)
+  if (String(lang).toLowerCase() === "en") {
+    if (hasPlain(`${base}-en`)) return `${base}-en`;     // поддержка старых json-ключей
+    if (hasPlain("link-en"))    return `${base}/en`;     // плоский суффикс /en
   }
 
-  // 5) Базовая ссылка по умолчанию
-  return String(data.link || "");
+  // По умолчанию /go/<base>
+  return base;
 }
 
-/* --- helper: апдейт visit-ссылок в куске .box HTML --- */
-function updateVisitLinkInBoxHtml(boxHtml, linkValue, nl){
-  if (!linkValue) return boxHtml; // нет нового значения
+/* ======================================================================= */
+
+// REPLACE entire updateVisitLinkInBoxHtml(...)
+function updateVisitLinkInBoxHtml(boxHtml, goKey, nl){
+  if (!goKey) return boxHtml;
+  const hrefValue = (`/go/${goKey}`).replace(/\/{2,}/g, "/");
+
   const masked = maskSegments(boxHtml);
   const content = findFirstByClass(masked, "content");
   if (!content) return boxHtml;
@@ -245,25 +246,21 @@ function updateVisitLinkInBoxHtml(boxHtml, linkValue, nl){
   const cb = findFirstByClass(segMasked, "content-buttons");
   if (!cb) return boxHtml;
 
-  // область только внутри .content-buttons
   const regionStart = cb.openEnd;
   const regionEnd   = cb.closeStart;
   const before = segment.slice(0, regionStart);
   const region = segment.slice(regionStart, regionEnd);
   const after  = segment.slice(regionEnd);
 
-  // переписываем все <a ... class*="visit" ...>
-  const newRegion = region.replace(/<a\b[^>]*>([\s\S]*?)<\/a>/gi, (full)=>{
+  const newRegion = region.replace(/<a\b[^>]*>([\s\S]*?)<\/a>/gi, (full) => {
     const open = full.match(/^<a\b[^>]*>/i)?.[0]; if (!open) return full;
     const clsMatch = open.match(/\bclass\s*=\s*(["'])([^"']*)\1/i);
     const classes = new Set((clsMatch ? clsMatch[2] : "").split(/\s+/).filter(Boolean));
-    if (!Array.from(classes).some(c=>c.toLowerCase()==="visit" || c.toLowerCase()==="review-button" && classes.has("visit"))) return full;
+    if (!classes.has("visit")) return full;
 
-    let newOpen = upsertAttrInTag(open, "href", String(linkValue));
-    if (isExternal(linkValue)) {
-      newOpen = upsertAttrInTag(newOpen, "target", "_blank");
-      newOpen = upsertAttrInTag(newOpen, "rel", "noopener");
-    }
+    let newOpen = upsertAttrInTag(open, "href", hrefValue);
+    newOpen = removeAttrInTag(newOpen, "target");
+    newOpen = removeAttrInTag(newOpen, "rel");
     return newOpen + full.slice(open.length);
   });
 
@@ -273,9 +270,10 @@ function updateVisitLinkInBoxHtml(boxHtml, linkValue, nl){
   return boxHtml.slice(0, cOpenEnd) + rebuiltSegment + boxHtml.slice(cCloseStart);
 }
 
-/* --- helper: апдейт visit-ссылки в ГЛАВНОМ боксе страницы (review/mirrors) --- */
-function ensureVisitLinkInMainBox(html, linkValue, nl){
-  if (!linkValue) return html;
+
+// REPLACE entire ensureVisitLinkInMainBox(...)
+function ensureVisitLinkInMainBox(html, goKey, nl){
+  if (!goKey) return html;
   let out = html;
 
   const masked = maskSegments(out);
@@ -288,14 +286,16 @@ function ensureVisitLinkInMainBox(html, linkValue, nl){
     if (!cls.has("main")) continue;
 
     const boxHtml = out.slice(b.openStart, b.closeEnd);
-    const updated = updateVisitLinkInBoxHtml(boxHtml, linkValue, nl);
+    const updated = updateVisitLinkInBoxHtml(boxHtml, goKey, nl);
     if (updated !== boxHtml){
       out = out.slice(0, b.openStart) + updated + out.slice(b.closeEnd);
     }
-    break; // только первый главный
+    break;
   }
   return out;
 }
+
+/* ======================================================================= */
 
 /* --------- SMALL HELPERS --------- */
 function getPageKeyFromHref(hrefRaw){
@@ -345,8 +345,8 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl){
         if (collapseWS(rebuilt) !== collapseWS(boxHtml)) boxHtml = rebuilt;
       }
 
-      const visitHref = resolveVisitLink(data, urlPath, lang);
-      boxHtml = updateVisitLinkInBoxHtml(boxHtml, visitHref, nl);
+      const goKey = computeGoKey(key, urlPath, lang, data);
+      boxHtml = updateVisitLinkInBoxHtml(boxHtml, goKey, nl);
 
       // NEW: TG-кнопка после visit
       boxHtml = ensureTGButtonInBoxHtml(boxHtml, data, lang, nl);
@@ -404,8 +404,8 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
   out = upsertPromoBoxesInSitepage(out, urlPath, lang, pageKey, data, presets.review, nl);
 
   // NEW: синхронизировать visit-ссылку главного бокса с data/link(+alts)
-  const resolvedMainVisit = resolveVisitLink(data, urlPath, lang);
-  out = ensureVisitLinkInMainBox(out, resolvedMainVisit, nl);
+  const goKeyMain = computeGoKey(pageKey, urlPath, lang, data);
+  out = ensureVisitLinkInMainBox(out, goKeyMain, nl);
 
   // NEW: TG-кнопка после visit в главном боксе
   out = ensureTGButtonInMainBox(out, data, lang, nl);
@@ -1596,6 +1596,11 @@ function ensureMainBoxLiverating(html, ratings, nl){
     return out;
   }
   return out;
+}
+
+function removeAttrInTag(tagText, name){
+  const re = new RegExp(`\\s+${name}\\s*=\\s*(['"]).*?\\1`, 'i');
+  return tagText.replace(re, '');
 }
 
 function upsertAttrInTag(tagText, name, value){
