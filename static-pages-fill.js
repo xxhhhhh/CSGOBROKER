@@ -220,7 +220,7 @@ function computeGoKey(baseKey, urlPath = "", lang = "en", data = {}) {
   // EN-версия (если есть base-en или link-en)
   if (String(lang).toLowerCase() === "en") {
     if (hasPlain(`${base}-en`)) return `${base}-en`;     // поддержка старых json-ключей
-    if (hasPlain("link-en"))    return `${base}/en`;     // плоский суффикс /en
+    if (hasPlain("link-en"))    return `${base}-en`;     // плоский суффикс /en
   }
 
   // По умолчанию /go/<base>
@@ -229,7 +229,7 @@ function computeGoKey(baseKey, urlPath = "", lang = "en", data = {}) {
 
 /* ======================================================================= */
 
-// REPLACE entire updateVisitLinkInBoxHtml(...)
+// REPLACE entire updateVisitLinkInBoxHtml(...) with this version
 function updateVisitLinkInBoxHtml(boxHtml, goKey, nl){
   if (!goKey) return boxHtml;
   const hrefValue = (`/go/${goKey}`).replace(/\/{2,}/g, "/");
@@ -254,13 +254,14 @@ function updateVisitLinkInBoxHtml(boxHtml, goKey, nl){
 
   const newRegion = region.replace(/<a\b[^>]*>([\s\S]*?)<\/a>/gi, (full) => {
     const open = full.match(/^<a\b[^>]*>/i)?.[0]; if (!open) return full;
+
     const clsMatch = open.match(/\bclass\s*=\s*(["'])([^"']*)\1/i);
     const classes = new Set((clsMatch ? clsMatch[2] : "").split(/\s+/).filter(Boolean));
-    if (!classes.has("visit")) return full;
+    if (!classes.has("visit")) return full; // только visit
 
     let newOpen = upsertAttrInTag(open, "href", hrefValue);
-    newOpen = removeAttrInTag(newOpen, "target");
-    newOpen = removeAttrInTag(newOpen, "rel");
+    newOpen = upsertAttrInTag(newOpen, "target", "_blank");
+    newOpen = upsertAttrInTag(newOpen, "rel", "noopener");
     return newOpen + full.slice(open.length);
   });
 
@@ -269,6 +270,7 @@ function updateVisitLinkInBoxHtml(boxHtml, goKey, nl){
   const rebuiltSegment = before + newRegion + after;
   return boxHtml.slice(0, cOpenEnd) + rebuiltSegment + boxHtml.slice(cCloseStart);
 }
+
 
 
 // REPLACE entire ensureVisitLinkInMainBox(...)
