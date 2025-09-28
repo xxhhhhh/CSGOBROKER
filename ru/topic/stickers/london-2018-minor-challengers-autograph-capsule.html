@@ -13,29 +13,22 @@
     <link href="/img/favicon192px.png" rel="apple-touch-icon">
     <meta content="/img/favicon192px.png" name="msapplication-TileImage"> 
     <script>
-        (function () {
-          try {
-            let theme = localStorage.getItem('theme');
-            if (!theme) {
-              const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-              theme = prefersLight ? 'light' : 'dark';
-            }
-      
-            document.documentElement.setAttribute('data-theme', theme);
-            document.documentElement.classList.add('transitions-disabled');
-      
-            const link = document.getElementById('theme-style');
-            if (theme === 'light' && link) {
-              link.href = '/style_light.css';
-              link.disabled = false;
-            } else if (link) {
-              link.href = '';
-              link.disabled = true;
-            }
-          } catch (e) {
-          }
-        })();
-    </script>     
+    (function () {
+      try {
+        let theme = localStorage.getItem('theme');
+        if (!theme) { theme = 'dark'; }
+
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.classList.add('transitions-disabled');
+
+        const link = document.getElementById('theme-style');
+        if (link) {
+          if (theme === 'light') { link.href = '/style_light.css'; link.disabled = false; }
+          else { link.href = ''; link.disabled = true; }
+        }
+      } catch (e) {}
+    })();
+    </script>    
     <link href="/style_main.css?v=1.25" id="main-style" rel="stylesheet">
     <link disabled href="" id="theme-style" rel="stylesheet">
     <link href="https://csgobroker.cc/ru/topic/stickers/london-2018-minor-challengers-autograph-capsule" rel="canonical">

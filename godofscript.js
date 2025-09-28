@@ -231,25 +231,20 @@ function applyTheme(theme, withTransition = true) {
 
   currentTheme = theme;
   document.documentElement.setAttribute('data-theme', theme);
+
   StorageHelper.setJSON('theme_settings', { ...(StorageHelper.getJSON('theme_settings') || {}), theme });
+  localStorage.setItem('theme', theme);
 
   const link = document.getElementById('theme-style');
 
   if (theme === 'light') {
-    if (link) {
-      link.href = '/style_light.css';
-      link.disabled = false;
-    }
+    if (link) { link.href = '/style_light.css'; link.disabled = false; }
     themeIcon.classList.replace('lightbulb-off', 'lightbulb-on');
   } else {
-    if (link) {
-      link.disabled = true;
-      link.href = '';
-    }
+    if (link) { link.disabled = true; link.href = ''; }
     themeIcon.classList.replace('lightbulb-on', 'lightbulb-off');
   }
 }
-
 
 themeToggleBtn.addEventListener('click', () => {
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
