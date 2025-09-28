@@ -350,6 +350,10 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl){
       const goKey = computeGoKey(key, urlPath, lang, data);
       boxHtml = updateVisitLinkInBoxHtml(boxHtml, goKey, nl);
 
+      const firstOpen = readTag(boxHtml, 0);
+      const isMain = parseClassAttr(firstOpen.attrs).has("main");
+      if (isMain) boxHtml = updateLogobgAnchorInBoxHtml(boxHtml, goKey, nl);
+
       // NEW: TG-кнопка после visit
       boxHtml = ensureTGButtonInBoxHtml(boxHtml, data, lang, nl);
 
@@ -389,7 +393,7 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
     out = upsertRatings(out, boxreview, data, nl);
     boxreview = findFirstByClass(maskSegments(out), "boxreview"); if (!boxreview) return out;
 
-    out = await upsertAlternatives(out, boxreview, root, lang, data["Sites Alternatives"] || [], ratingsMap, nl, { forceAfterCriteria: true });
+    out = await upsertAlternatives(out, boxreview, root, lang, urlPath, data["Sites Alternatives"] || [], ratingsMap, nl, { forceAfterCriteria: true });
   }
 
   if (presets.translation && presets.translation[lang]) {
@@ -408,6 +412,9 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
   // NEW: синхронизировать visit-ссылку главного бокса с data/link(+alts)
   const goKeyMain = computeGoKey(pageKey, urlPath, lang, data);
   out = ensureVisitLinkInMainBox(out, goKeyMain, nl);
+
+  out = ensureMainLogobgLink(out, goKeyMain, nl);      // .box.main .logobg a
+  out = upsertInstructionSiteLinks(out, goKeyMain);     // .instruction .site-link
 
   // NEW: TG-кнопка после visit в главном боксе
   out = ensureTGButtonInMainBox(out, data, lang, nl);
@@ -955,7 +962,7 @@ function renderRatingsBlock(indent, nl, ratings){
 }
 
 /* ---- Alternatives ---- */
-async function upsertAlternatives(html, boxreview, root, lang, alts, ratingsMap, nl, opt={}) {
+async function upsertAlternatives(html, boxreview, root, lang, urlPath, alts, ratingsMap, nl, opt={}) {
   const { inner } = sliceBoxreviewInner(html, boxreview);
 
   let content = removeNestedBoxreview(inner);
@@ -973,14 +980,14 @@ async function upsertAlternatives(html, boxreview, root, lang, alts, ratingsMap,
 
   const insertPos = anchor.closeEnd;
   const localIndent = indentBefore(content, insertPos, nl);
-  const expected = await renderAlternatesBlock(localIndent, nl, root, lang, mainName, alts, ratingsMap);
+  const expected = await renderAlternatesBlock(localIndent, nl, root, lang, urlPath, mainName, alts, ratingsMap);
 
   const before = content.slice(0, insertPos);
   const after  = content.slice(insertPos);
   const newInner = joinBlocksNoBlank(before, expected, after, nl);
   return replaceBoxreviewInner(html, boxreview, newInner);
 }
-async function renderAlternatesBlock(indent, nl, root, lang, mainName, alts, ratingsMap){
+async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, alts, ratingsMap){
   const title = (lang==="ru" ? `Похожие Сайты на ${mainName}` : `Best ${mainName} Alternatives`);
   const lines=[];
   lines.push(`${indent}<div class="sitealternates">`);
@@ -1006,9 +1013,9 @@ async function renderAlternatesBlock(indent, nl, root, lang, mainName, alts, rat
     lines.push(`${indent}        <div class="site-reward"><p>${reward}</p></div>`);
     lines.push(`${indent}        <div class="content-buttons">`);
     lines.push(`${indent}          <a href="${reviewLink}" aria-label="Read Review" class="review-button"></a>`);
-    const ext = isExternal(aj.link||"");
-    const target = ext ? ` target="_blank" rel="noopener"` : "";
-    lines.push(`${indent}          <a href="${escapeAttr(aj.link || "#")}" aria-label="Visit WebSite" class="review-button visit"${target}></a>`);
+    const goKey = computeGoKey(alt, urlPath, lang, aj);
+    const visitHref = `/go/${goKey}`.replace(/\/{2,}/g, "/");
+    lines.push(`${indent}          <a href="${escapeAttr(visitHref)}" aria-label="Visit ${escapeHtml(aj.name)}" class="review-button visit" target="_blank" rel="noopener"></a>`);
     lines.push(`${indent}        </div>`);
     lines.push(`${indent}      </div>`);
     lines.push(`${indent}    </div>`);
@@ -1612,3 +1619,86 @@ function upsertAttrInTag(tagText, name, value){
   }
   return tagText.replace(/>$/, ` ${name}="${escapeAttr(value)}">`);
 }
+
+function updateLogobgAnchorInBoxHtml(boxHtml, goKey, nl){
+  if (!goKey) return boxHtml;
+  const hrefValue = (`/go/${goKey}`).replace(/\/{2,}/g, "/");
+
+  const masked = maskSegments(boxHtml);
+  const lb = findFirstByClass(masked, "logobg");
+  if (!lb) return boxHtml;
+
+  const regionStart = lb.openEnd;
+  const regionEnd   = lb.closeStart;
+  const before = boxHtml.slice(0, regionStart);
+  const region = boxHtml.slice(regionStart, regionEnd);
+  const after  = boxHtml.slice(regionEnd);
+
+  const aIdx = region.search(/<a\b/i);
+  if (aIdx === -1) return boxHtml;
+
+  const { end: aEnd, tagText: aOpen } = readTag(region, aIdx);
+  let newOpen = upsertAttrInTag(aOpen, "href", hrefValue);
+  newOpen = upsertAttrInTag(newOpen, "target", "_blank");
+  newOpen = upsertAttrInTag(newOpen, "rel", "noopener");
+
+  const newRegion = region.slice(0, aIdx) + newOpen + region.slice(aEnd);
+  return before + newRegion + after;
+}
+
+function ensureMainLogobgLink(html, goKey, nl){
+  if (!goKey) return html;
+  let out = html;
+
+  const masked = maskSegments(out);
+  const boxes = findAllDivByClass(masked, "box");
+  if (!boxes.length) return out;
+
+  for (const b of boxes){
+    const open = readTag(out, b.openStart);
+    const cls = parseClassAttr(open.attrs);
+    if (!cls.has("main")) continue;
+
+    const boxHtml = out.slice(b.openStart, b.closeEnd);
+    const updated = updateLogobgAnchorInBoxHtml(boxHtml, goKey, nl);
+    if (updated !== boxHtml){
+      out = out.slice(0, b.openStart) + updated + out.slice(b.closeEnd);
+    }
+    break; // только первый .box.main
+  }
+  return out;
+}
+
+function upsertInstructionSiteLinks(html, goKey){
+  if (!goKey) return html;
+  const hrefValue = (`/go/${goKey}`).replace(/\/{2,}/g, "/");
+
+  let out = html;
+  const masked = maskSegments(out);
+  const blocks = findAllDivByClass(masked, "instruction");
+  if (!blocks.length) return out;
+
+  let shift = 0;
+  for (const b of blocks){
+    const openEnd  = b.openEnd  + shift;
+    const closePos = b.closeStart + shift;
+    const region = out.slice(openEnd, closePos);
+
+    const newRegion = region.replace(/<a\b[^>]*>/gi, (open) => {
+      const m = open.match(/\bclass\s*=\s*(["'])([^"']*)\1/i);
+      const classes = new Set((m ? m[2] : "").split(/\s+/).filter(Boolean));
+      if (!classes.has("site-link")) return open;
+      let tag = upsertAttrInTag(open, "href", hrefValue);
+      tag = upsertAttrInTag(tag, "target", "_blank");
+      tag = upsertAttrInTag(tag, "rel", "noopener");
+      return tag;
+    });
+
+    if (newRegion !== region){
+      out = out.slice(0, openEnd) + newRegion + out.slice(closePos);
+      shift += newRegion.length - region.length;
+    }
+  }
+  return out;
+}
+
