@@ -631,8 +631,7 @@ function renderPromoNavMirrorBlock(fullHtmlAfterSections, urlPath, lang, pageKey
 
   // Mirror redirect: отключён на /mirrors/*
   if (!isMirrors && truthy(data.mirror)){
-    const lp = lang==="en" ? "" : `/${lang}`;
-    const href = `${lp}/mirrors/${pageKey}`.replace(/\/{2,}/g,"/");
+    const href = (`${lang==="ru" ? "/ru" : ""}/mirrors/${pageKey}`).replace(/\/{2,}/g,"/");
     const span = (lang==="ru") ? "Не переходит на сайт?"
               : (lang==="tr") ? "Siteye erişemiyor musun?"
               : (lang==="es") ? "¿No puedes acceder al sitio?"
