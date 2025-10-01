@@ -3794,10 +3794,6 @@ nav img {
     min-height: 812px;
 }
 
-.boxes-holder.langimprt {
-    min-height: 800px;
-}
-
 .topic-filter {
     display: flex;
     flex-direction: row;
@@ -11625,24 +11621,6 @@ header {
 .box .logobg .best,
 .topic-box .best {
     text-shadow: 1px 1px 3px rgb(100 100 100);
-}
-
-.boxes-holder:not(.main-page).langimprt .box {
-    opacity: 0;
-}
-
-.boxes-holder.main-page.langimprt .box .logobg,
-.boxes-holder.langimprt .box:not(.animate-in),
-.boxes-holder.main-page.langimprt .box:hover .content {
-    opacity: 1;
-}
-
-.main-page.langimprt:has(.main-mode-selection) {
-    animation-duration: .35s;
-    animation-delay: .15s;
-    animation-fill-mode: backwards;
-    animation-name: langelementr;
-    backface-visibility: hidden;
 }
 
 @keyframes langelementr {

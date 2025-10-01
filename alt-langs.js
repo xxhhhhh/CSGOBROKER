@@ -1,79 +1,96 @@
 // ============================================================================
-// File: scripts/localized-boxes-fill.js
-// Usage: node scripts/localized-boxes-fill.js [--root PATH] [--dry-run] [--verbose]
-// Task : Copy anchors (.payments-button, .mods-box with data-box-id) and all .box
-//        from prototype (EN) page into localized targets under /pt, /hi, /es, /tr,
-//        insert BEFORE .more-content (keep it intact), keep tidy indentation,
-//        and localize internal links offline (prefix /{lang}) like static-pages-fill.
+// File: scripts/alt-langs.js
+// Usage examples:
+//   node scripts/alt-langs.js --debug-one /pt/csgo/roulette.html --verbose
+//   node scripts/alt-langs.js --debug-one /es.html --verbose
+//   node scripts/alt-langs.js --verbose
+// Options:
+//   --root <path>     проект (по умолчанию: cwd)
+//   --dry-run         не писать на диск
+//   --verbose         подробный лог
+//   --limit N         обработать только первые N целей
+//   --debug-one <rel> обработать один файл (например: /pt.html, /tr/dota/roulette.html)
 // ============================================================================
 
 const fs = require("fs/promises");
 const path = require("path");
 
-/* ---------------- CLI ---------------- */
+/* ---------- CLI ---------- */
 function parseArgs(argv){
-  const get = f => { const i = argv.indexOf(f); return i>=0 ? argv[i+1] : null; };
+  const get=f=>{const i=argv.indexOf(f); return i>=0? argv[i+1]: null;};
   const root = path.resolve(get("--root") ?? process.cwd());
-  return { root, dry: argv.includes("--dry-run"), verbose: argv.includes("--verbose") };
+  const langs = (get("--langs") || "pt,hi,es,tr").split(",").map(s=>s.trim()).filter(Boolean);
+  return {
+    root, langs,
+    dry: argv.includes("--dry-run"),
+    verbose: argv.includes("--verbose"),
+    debugOne: get("--debug-one") || "",
+    limit: Number(get("--limit") || 0) || 0
+  };
 }
 async function exists(p){ try { await fs.access(p); return true; } catch { return false; } }
-async function readUtf8(p){ return await fs.readFile(p, "utf8"); }
-function abs(root, p){ return p && p.startsWith("/") ? path.join(root, "."+p) : path.join(root, p); }
+async function readUtf8(p){ return fs.readFile(p, "utf8"); }
+function abs(root, p){ return p.startsWith("/") ? path.join(root, "."+p) : path.join(root, p); }
 
-/* ---------------- Scan (FIXED) ---------------- */
-async function listHtmlFilesUnder(root, langs){
+/* ---------- scan ---------- */
+const KNOWN_LANGS = new Set(["ru","en","es","pt","tr","hi"]);
+const EXCLUDE_DIRS = new Set(["reviews",".git","node_modules",".next","dist","build","out"]);
+async function listLocalizedHtmlFiles(root, langs){
   const out=[];
-  async function walk(d){
-    const entries = await fs.readdir(d, { withFileTypes:true }).catch(()=>[]);
-    for (const e of entries){
-      const p = path.join(d, e.name);
-      const rel = path.relative(root, p).split(path.sep).join("/");
-      if (e.isDirectory()){
-        await walk(p); // recurse regardless; filter only files
-        continue;
+  for (const lang of langs){
+    const base = path.join(root, lang);
+    if (!(await exists(base))) continue;
+    await walk(base);
+    async function walk(dir){
+      let ents; try { ents = await fs.readdir(dir, {withFileTypes:true}); } catch { return; }
+      for (const e of ents){
+        const p = path.join(dir, e.name);
+        if (e.isDirectory()){
+          if (EXCLUDE_DIRS.has(e.name)) continue;
+          await walk(p);
+        } else if (e.isFile() && /\.html?$/i.test(e.name)){
+          out.push("/" + path.relative(root, p).split(path.sep).join("/"));
+        }
       }
-      if (!e.isFile()) continue;
-      if (!e.name.toLowerCase().endsWith(".html")) continue;
-      if (rel.includes("/reviews/")) continue;
-      const firstSeg = (rel.split("/")[0]||"").toLowerCase();
-      if (!langs.includes(firstSeg)) continue;
-      out.push("/" + rel);
     }
   }
-  await walk(root);
+  // локализованные главные
+  for (const rel of ["/es.html","/pt.html","/hi.html","/tr.html"]){
+    if (await exists(abs(root, rel))) out.push(rel);
+  }
   return out;
 }
-
-/* ---------------- Lang & URL ---------------- */
-const KNOWN_LANGS = new Set(["ru","en","es","pt","tr","hi","de","fr","pl","it","ua","uk","ar","id","th","vi","nl","sv","fi","no","da","ro","cs","sk","sr","bg","el","hu","he","ko","ja","zh","zh-cn","zh-tw"]);
-const PREFIX_LANGS = new Set(["ru","es","pt","tr","hi"]);
-function detectNL(s){ return s.includes("\r\n") ? "\r\n" : "\n"; }
-function detectLangFromRel(rel){ const seg=(rel.split("/").filter(Boolean)[0]||"").toLowerCase(); return KNOWN_LANGS.has(seg)? seg : "en"; }
-function prototypePathFromLocalized(rel){
+function isLocalizedHome(rel){ return ["/es.html","/pt.html","/hi.html","/tr.html"].includes(rel); }
+function protoFromLocalized(rel){
+  if (isLocalizedHome(rel)) return "/index.html";
   const segs = rel.split("/").filter(Boolean);
-  if (!segs.length) return rel;
-  const first = segs[0].toLowerCase();
-  if (KNOWN_LANGS.has(first)) segs.shift();
+  if (segs.length && KNOWN_LANGS.has(segs[0])) segs.shift();
   return "/" + segs.join("/");
 }
+function detectNL(s){ return s.includes("\r\n") ? "\r\n" : "\n"; }
+function langFromRel(rel){
+  if (isLocalizedHome(rel)) return rel.slice(1,3);
+  const seg=(rel.split("/").filter(Boolean)[0]||"").toLowerCase();
+  return KNOWN_LANGS.has(seg)? seg : "en";
+}
 
-/* ---------------- DOM-ish helpers ---------------- */
+/* ---------- light DOM helpers ---------- */
 function maskSegments(s){
   return s
-    .replace(/<!--[\s\S]*?-->/g, m => " ".repeat(m.length))
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, m => " ".repeat(m.length))
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,  m => " ".repeat(m.length));
+    .replace(/<!--[\s\S]*?-->/g, m=>" ".repeat(m.length))
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, m=>" ".repeat(m.length))
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,  m=>" ".repeat(m.length));
 }
-function readTag(s, start){
-  let i=start,inS=false,inD=false;
+function readTag(s,start){
+  let i=start, inS=false, inD=false;
   while(i<s.length){
     const ch=s[i];
     if (ch==="'" && !inD) inS=!inS; else if (ch==="\"" && !inS) inD=!inD;
     if (ch===">" && !inS && !inD){ i++; break; }
     i++;
   }
-  const tagText = s.slice(start,i);
-  const attrs = tagText.replace(/^<\w+\s*|\s*>$/g,"");
+  const tagText=s.slice(start,i);
+  const attrs=tagText.replace(/^<\w+\s*|\s*>$/g,"");
   return { end:i, attrs, tagText };
 }
 function parseClassAttr(attrs){
@@ -85,411 +102,378 @@ function findMatchingClose(masked, from, tag){
   const openRe=new RegExp(`<${tag}\\b`,"gi"), closeRe=new RegExp(`</${tag}\\s*>`,"gi");
   let depth=1, i=from;
   while(i<masked.length){
-    const nOpen=masked.slice(i).search(openRe), nClose=masked.slice(i).search(closeRe);
+    const s=masked.slice(i);
+    const nOpen=s.search(openRe), nClose=s.search(closeRe);
     if (nClose===-1) return -1;
-    if (nOpen!==-1 && nOpen<nClose){ const abs=i+nOpen; const {end}=readTag(masked,abs); depth++; i=end; continue; }
-    const cabs=i+nClose; depth--; if (depth===0) return cabs; i=cabs+(`</${tag}>`).length;
-  } return -1;
-}
-function findAllDivByClass(masked, clsName, from=0, to=masked.length){
-  const out=[]; let idx=from;
-  while(true){
-    const pos=masked.indexOf("<div", idx); if (pos===-1 || pos>=to) break;
-    const { end, attrs }=readTag(masked,pos);
-    const cls=parseClassAttr(attrs);
-    if (cls.has(clsName)){
-      const closeStart=findMatchingClose(masked,end,"div"); if (closeStart===-1) break;
-      out.push({ openStart:pos, openEnd:end, closeStart, closeEnd:closeStart + "</div>".length });
-      idx=closeStart+6;
-    } else idx=end;
+    if (nOpen!==-1 && nOpen<nClose){ const abs=i+nOpen; const { end }=readTag(masked, abs); depth++; i=end; continue; }
+    const cabs=i+nClose; const { end:ce }=readTag(masked, cabs);
+    depth--; if (depth===0) return cabs; i=ce;
   }
-  return out;
+  return -1;
 }
 function findFirstByClass(masked, clsName, from=0, to=masked.length){
-  const arr = findAllDivByClass(masked, clsName, from, to);
-  return arr.length ? arr[0] : null;
-}
-function indentBefore(s, idx, nl){
-  const ls = s.lastIndexOf(nl, idx - 1);
-  const lineStart = ls === -1 ? 0 : ls + nl.length;
-  const m = s.slice(lineStart, idx).match(/^[ \t]*/);
-  return m ? m[0] : "";
-}
-
-/* ---------------- Formatting ---------------- */
-function trimBlankEdges(block){
-  block = block.replace(/\r\n/g,"\n");
-  block = block.replace(/^[ \t]*\n+/g,"");
-  block = block.replace(/\n+[ \t]*$/g,"");
-  return block;
-}
-function rstripToSingleNL(s, nl){
-  let i=s.length;
+  const openRe = /<div\b/gi;
+  let i=from;
   while(true){
-    const k = s.lastIndexOf(nl, i - nl.length);
-    if (k===-1) break;
-    const line = s.slice(k+nl.length, i);
-    if (/^[ \t]*$/.test(line)){ i=k; continue; }
-    break;
-  }
-  s = s.slice(0, i).replace(/[ \t]+$/g,"");
-  if (s && !s.endsWith(nl)) s += nl;
-  return s;
-}
-function lstripLeadingBlanks(s,nl){
-  let i=0;
-  while(true){
-    const j=s.indexOf(nl, i);
-    if (j===-1) break;
-    const line=s.slice(i,j);
-    if (/^[ \t]*$/.test(line)){ i=j+nl.length; continue; }
-    break;
-  }
-  return s.slice(i);
-}
-function prettyReindentBlock(html, holderIndent, childStep, nl){
-  const voids = new Set(["area","base","br","col","embed","hr","img","input","link","meta","param","source","track","wbr"]);
-  const lines = trimBlankEdges(html).split(/\r?\n/);
-  let depth = 0;
-  const childBase = holderIndent + childStep;
-  const step = childStep;
-  const out = [];
-  for (let raw of lines){
-    const line = raw.replace(/^[ \t]*/,"").replace(/[ \t]+$/,"");
-    if (!line){ out.push(""); continue; }
-    const startsClosing = /^<\s*\/\s*[\w:-]+/i.test(line);
-    const level = Math.max(0, depth - (startsClosing ? 1 : 0));
-    const indent = childBase + step.repeat(level);
-    out.push(indent + line);
-    const stripped = line.replace(/<!--[\s\S]*?-->/g,"");
-    const tags = stripped.match(/<\s*\/?\s*[\w:-]+[^>]*>/g) || [];
-    for (const t of tags){
-      const isClose = /^<\s*\//.test(t);
-      const name = (t.match(/^<\s*\/?\s*([\w:-]+)/)||[,""])[1].toLowerCase();
-      const selfClose = /\/\s*>$/.test(t) || voids.has(name);
-      if (!isClose && !selfClose) depth++;
-      if (isClose) depth = Math.max(0, depth - 1);
+    const pos = masked.slice(i, to).search(openRe);
+    if (pos === -1) return null;
+    const abs = i + pos;
+    const { end, attrs } = readTag(masked, abs);
+    const cls = parseClassAttr(attrs);
+    if (cls.has(clsName)){
+      const closeStart = findMatchingClose(masked, end, "div");
+      if (closeStart === -1) return null;
+      return { openStart: abs, openEnd: end, closeStart, closeEnd: closeStart + "</div>".length };
     }
+    i = end;
   }
-  return out.join(nl);
+}
+function extractHolder(html){
+  const h = findFirstByClass(maskSegments(html), "boxes-holder");
+  if (!h) return null;
+  return { ...h, inner: html.slice(h.openEnd, h.closeStart) };
+}
+function withHolderInner(html, fn){
+  const h = findFirstByClass(maskSegments(html), "boxes-holder");
+  if (!h) return html;
+  const inner = html.slice(h.openEnd, h.closeStart);
+  const repl = fn(inner);
+  if (repl === inner) return html;
+  return html.slice(0, h.openEnd) + repl + html.slice(h.closeStart);
 }
 
-/* ---------------- Extract from prototype ---------------- */
-function extractFromPrototype(prototypeHtml){
-  const masked = maskSegments(prototypeHtml);
-  const holder = findFirstByClass(masked, "boxes-holder");
-  if (!holder) return { anchors:[], boxes:[] };
-
-  const inner = prototypeHtml.slice(holder.openEnd, holder.closeStart);
-  const im = maskSegments(inner);
-
-  const anchors = [];
-  // payments-button (all in order)
-  const pbs = findAllDivByClass(im, "payments-button");
-  for (const b of pbs) anchors.push(inner.slice(b.openStart, b.closeEnd));
-
-  // mods-box with data-box-id present
-  const mbs = findAllDivByClass(im, "mods-box");
-  for (const b of mbs){
-    const openTag = readTag(inner, b.openStart).tagText;
-    if (/\bdata-box-id\s*=/.test(openTag)) anchors.push(inner.slice(b.openStart, b.closeEnd));
-  }
-
-  const boxes = findAllDivByClass(im, "box").map(b => inner.slice(b.openStart, b.closeEnd));
-  return { anchors, boxes };
-}
-
-/* ---------------- Clean target pre-region ---------------- */
-function removeAllByClass(inner, className){
-  let out = inner;
-  while(true){
-    const m = maskSegments(out);
-    const b = findFirstByClass(m, className);
-    if (!b) break;
-    out = out.slice(0, b.openStart) + out.slice(b.closeEnd);
-  }
-  return out;
-}
-function removeAllBoxes(inner){ return removeAllByClass(inner, "box"); }
-function removeAllPaymentsAndMods(inner){
-  let out = inner;
-  out = removeAllByClass(out, "payments-button");
-  out = removeAllByClass(out, "mods-box");
-  return out;
-}
-function detectChildIndent(innerHtml, holderIndent, nl){
-  const im = maskSegments(innerHtml);
-  const anchors = ["payments-button","mods-box"]
-    .flatMap(cls => findAllDivByClass(im, cls))
-    .sort((a,b)=>a.openStart-b.openStart);
-  if (!anchors.length) return " ";
-  const lastAnchor = anchors[anchors.length-1];
-  const anchorIndent = indentBefore(innerHtml, lastAnchor.openStart, nl);
-  const stepLen = Math.max(1, anchorIndent.length - holderIndent.length);
-  return " ".repeat(stepLen);
-}
-
-/* ---------------- Offline link localization ---------------- */
+/* ---------- link utils ---------- */
+const PREFIX_LANGS = new Set(["es","pt","tr","hi"]);
 function isExternal(href){ return /^https?:\/\//i.test(href); }
-function escapeHtml(s=""){ return s.replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
-function escapeAttr(s=""){ return escapeHtml(s).replace(/'/g,"&#39;"); }
 function addLangPrefixToHref(href, lang){
   if (!href) return href;
-  if (isExternal(href)) return href;
-  if (/^#/.test(href)) return href;
-
-  const clean = href.replace(/\/{2,}/g, "/");
-  const pathOnly = clean.split("#")[0].split("?")[0];
-  const suffix   = clean.slice(pathOnly.length);
-  const firstSeg = (pathOnly.split("/").filter(Boolean)[0] || "").toLowerCase();
-
-  if (firstSeg === lang) {
-    if (pathOnly === `/${lang}/`) return `/${lang}${suffix}`;
-    return href;
-  }
-  if (pathOnly === "/") {
-    if (!PREFIX_LANGS.has(lang)) return href;
-    return `/${lang}${suffix}`;
-  }
-  if (KNOWN_LANGS.has(firstSeg)) return href;
   if (!PREFIX_LANGS.has(lang)) return href;
-
+  if (isExternal(href) || /^#/.test(href)) return href;
+  const clean = href.replace(/\/{2,}/g,"/");
+  const pathOnly = clean.split("#")[0].split("?")[0];
+  const first = (pathOnly.split("/").filter(Boolean)[0]||"").toLowerCase();
+  if (first === lang || KNOWN_LANGS.has(first)) return clean; // уже локализовано / другой язык
   const withSlash = pathOnly.startsWith("/") ? pathOnly : `/${pathOnly}`;
-  if (withSlash === "/") return `/${lang}${suffix}`;
-  const normalized = (`/${lang}${withSlash}`).replace(/\/{2,}/g,"/");
-  if (normalized === `/${lang}/`) return `/${lang}${suffix}`;
-  return normalized + suffix;
+  const pref = (`/${lang}${withSlash}`).replace(/\/{2,}/g,"/");
+  const suffix = clean.slice(pathOnly.length);
+  return pref + suffix;
 }
-function containsBlock(parent, child){ return parent.openStart <= child.openStart && parent.closeEnd >= child.closeEnd; }
-function rewriteAnchorsInRegion(region, lang){
-  return region.replace(/<a\b([^>]*?)href\s*=\s*(["'])([^"']+)\2([^>]*)>/gi, (m, pre, q, href, post)=>{
-    const newHref = addLangPrefixToHref(href, lang);
-    if (newHref === href) return m;
-    return `<a${pre}href=${q}${escapeAttr(newHref)}${q}${post}>`;
-  });
+function upsertAttr(openTag, name, value){
+  const re = new RegExp(`\\b${name}\\s*=\\s*(["'])(.*?)\\1`, "i");
+  if (re.test(openTag)) return openTag.replace(re, (_m,q)=>`${name}=${q}${value}${q}`);
+  return openTag.replace(/>$/, ` ${name}="${value}">`);
 }
-function localizeTypesinsideFeatureLinks(html, lang){
-  if (!PREFIX_LANGS.has(lang)) return html;
-  let out = html;
-  const masked = maskSegments(out);
-  const types = findAllDivByClass(masked, "typesinside");
-  if (!types.length) return out;
-  const shorts = findAllDivByClass(masked, "shortinfo");
-  const gms    = findAllDivByClass(masked, "gamemodes");
 
-  let shift = 0;
-  for (const tb of types){
-    const tBlock = { openStart: tb.openStart + shift, openEnd: tb.openEnd + shift, closeStart: tb.closeStart + shift, closeEnd: tb.closeEnd + shift };
-    const inShort = shorts.some(p=> containsBlock(p, {openStart:tBlock.openStart, closeEnd:tBlock.closeEnd}));
-    const inGm    = gms.some(p=> containsBlock(p, {openStart:tBlock.openStart, closeEnd:tBlock.closeEnd}));
-    if (!inShort || inGm) continue;
-    const region = out.slice(tBlock.openEnd, tBlock.closeStart);
-    const newRegion = rewriteAnchorsInRegion(region, lang);
-    if (newRegion !== region){
-      out = out.slice(0, tBlock.openEnd) + newRegion + out.slice(tBlock.closeStart);
-      shift += newRegion.length - region.length;
-    }
+/* ---------- link localization blocks ---------- */
+function localizeLogobgAnchors(inner, lang){
+  let out=inner, shift=0;
+  const masked = maskSegments(out);
+  const logobgs = [];
+  let pos=0;
+  while(true){
+    const b = findFirstByClass(masked, "logobg", pos);
+    if (!b) break; logobgs.push(b); pos = b.closeEnd;
+  }
+  for (const b of logobgs){
+    const s=b.openEnd+shift, e=b.closeStart+shift;
+    const region=out.slice(s,e);
+    const idx = region.search(/<a\b/i);
+    if (idx === -1) continue;
+    const { end: aEnd, tagText } = readTag(region, idx);
+    const href = (tagText.match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2]) || "";
+    const nh = addLangPrefixToHref(href, lang);
+    if (nh === href) continue;
+    const newOpen = upsertAttr(tagText, "href", nh);
+    const newRegion = region.slice(0, idx) + newOpen + region.slice(aEnd);
+    out = out.slice(0, s) + newRegion + out.slice(e);
+    shift += newRegion.length - region.length;
   }
   return out;
 }
-function localizeGamemodesTypesinsideLinks(html, lang){
-  if (!PREFIX_LANGS.has(lang)) return html;
-  let out = html;
+function localizeReviewButtons(inner, lang){
+  let out=inner, shift=0;
   const masked = maskSegments(out);
-  const types = findAllDivByClass(masked, "typesinside");
-  if (!types.length) return out;
-  const gms = findAllDivByClass(masked, "gamemodes");
-  const fbx = findAllDivByClass(masked, "featuresbox");
-
-  let shift = 0;
-  for (const tb of types){
-    const tBlock = { openStart: tb.openStart + shift, openEnd: tb.openEnd + shift, closeStart: tb.closeStart + shift, closeEnd: tb.closeEnd + shift };
-    const inGm = gms.some(p=> containsBlock(p, {openStart:tBlock.openStart, closeEnd:tBlock.closeEnd}));
-    const inFb = fbx.some(p=> containsBlock(p, {openStart:tBlock.openStart, closeEnd:tBlock.closeEnd}));
-    if (!inGm || !inFb) continue;
-    const region = out.slice(tBlock.openEnd, tBlock.closeStart);
-    const newRegion = rewriteAnchorsInRegion(region, lang);
-    if (newRegion !== region){
-      out = out.slice(0, tBlock.openEnd) + newRegion + out.slice(tBlock.closeStart);
-      shift += newRegion.length - region.length;
+  let pos=0;
+  while(true){
+    const block = findFirstByClass(masked, "content-buttons", pos);
+    if (!block) break;
+    const s=block.openEnd+shift, e=block.closeStart+shift;
+    let region = out.slice(s,e);
+    region = region.replace(/<a\b[^>]*>/gi, (open)=>{
+      const clsM = open.match(/\bclass\s*=\s*(["'])([^"']*)\1/i);
+      const cls = new Set((clsM ? clsM[2] : "").split(/\s+/).filter(Boolean));
+      if (!cls.has("review-button")) return open;
+      if (cls.has("visit") || cls.has("mirror-visit")) return open;
+      const href = (open.match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2]) || "";
+      const nh = addLangPrefixToHref(href, lang);
+      if (nh === href) return open;
+      return upsertAttr(open, "href", nh);
+    });
+    const old = out.slice(s,e);
+    if (region !== old){
+      out = out.slice(0,s) + region + out.slice(e);
+      shift += region.length - old.length;
     }
+    pos = block.closeEnd;
   }
   return out;
 }
-function localizeMainBoxContentButtons(html, lang){
-  if (!PREFIX_LANGS.has(lang)) return html;
-  let out = html;
-
+function localizeMoreContent(inner, lang){
+  let out=inner, shift=0;
   const masked = maskSegments(out);
-  const boxes = findAllDivByClass(masked, "box");
-  if (!boxes.length) return out;
+  let pos=0;
+  while(true){
+    const block = findFirstByClass(masked, "more-content", pos);
+    if (!block) break;
+    const s=block.openEnd+shift, e=block.closeStart+shift;
+    let region = out.slice(s,e);
+    region = region.replace(/<a\b[^>]*>/gi, (open)=>{
+      const href = (open.match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2]) || "";
+      const nh = addLangPrefixToHref(href, lang);
+      if (nh === href) return open;
+      return upsertAttr(open, "href", nh);
+    });
+    const old = out.slice(s,e);
+    if (region !== old){
+      out = out.slice(0,s) + region + out.slice(e);
+      shift += region.length - old.length;
+    }
+    pos = block.closeEnd;
+  }
+  return out;
+}
 
-  let shiftBoxes = 0;
-  for (const b of boxes){
-    const bOpen = b.openStart + shiftBoxes;
-    const bEnd  = b.closeEnd + shiftBoxes;
-    const openTag = readTag(out, bOpen);
-    const cls = parseClassAttr(openTag.attrs);
-    if (!cls.has("main")) continue;
+/* ---------- main-page specific ---------- */
+// Обновляем только href в каждом .main-mode-unit, КРОМЕ .main-mode-unit.topics.
+// src картинок НЕ меняем.
+function localizeMainModeSelection(inner, lang){
+  if (!PREFIX_LANGS.has(lang)) return inner;
+  return inner.replace(
+    /(<div\b[^>]*class\s*=\s*["'][^"']*\bmain-mode-selection\b[^"']*["'][^>]*>)([\s\S]*?)(<\/div>)/i,
+    (m, open, body, close) => {
+      let region = body.replace(
+        /(<div\b[^>]*class\s*=\s*["']([^"']*\bmain-mode-unit\b[^"']*)["'][^>]*>)([\s\S]*?)(<\/div>)/gi,
+        (_m, unitOpen, clsStr, unitBody, unitClose) => {
+          if (/\btopics\b/i.test(clsStr)) return _m; // пропускаем topics
+          // найти <a> и локализовать href
+          const outBody = unitBody.replace(/<a\b[^>]*>/i, (aOpen) => {
+            const href = (aOpen.match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2]) || "";
+            const nh = addLangPrefixToHref(href, lang);
+            if (nh === href) return aOpen;
+            return upsertAttr(aOpen, "href", nh);
+          });
+          return unitOpen + outBody + unitClose;
+        }
+      );
+      return open + region + close;
+    }
+  );
+}
 
-    const innerStart = b.openEnd + shiftBoxes;
-    const innerEnd   = b.closeStart + shiftBoxes;
-    let inner = out.slice(innerStart, innerEnd);
+function localizeBoxesHolderNameNav(inner, lang){
+  if (!PREFIX_LANGS.has(lang)) return inner;
+  let out=inner, shift=0;
+  const masked=maskSegments(out);
+  let pos=0;
+  while(true){
+    const block = findFirstByClass(masked, "boxes-holder-name", pos);
+    if (!block) break;
+    const s=block.openEnd+shift, e=block.closeStart+shift;
+    let region = out.slice(s,e);
+    region = region.replace(/<a\b([^>]*\bclass\s*=\s*["'][^"']*\bboxes-holder-(?:modes|more)\b[^"']*["'][^>]*)>/gi, (open, attrs)=>{
+      const href = (open.match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2]) || "";
+      const nh = addLangPrefixToHref(href, lang);
+      if (nh === href) return open;
+      return upsertAttr(open, "href", nh);
+    });
+    const old = out.slice(s,e);
+    if (region !== old){
+      out = out.slice(0,s) + region + out.slice(e);
+      shift += region.length - old.length;
+    }
+    pos = block.closeEnd;
+  }
+  return out;
+}
+function localizeModsBox(inner, lang){
+  if (!PREFIX_LANGS.has(lang)) return inner;
+  let out=inner, shift=0;
+  const masked = maskSegments(out);
+  let pos=0;
+  while(true){
+    const block = findFirstByClass(masked, "mods-box", pos);
+    if (!block) break;
+    const s=block.openEnd+shift, e=block.closeStart+shift;
+    let region = out.slice(s,e);
+    region = region.replace(/<a\b[^>]*>/gi, (open)=>{
+      const href = (open.match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2]) || "";
+      const nh = addLangPrefixToHref(href, lang);
+      if (nh === href) return open;
+      return upsertAttr(open, "href", nh);
+    });
+    const old = out.slice(s,e);
+    if (region !== old){
+      out = out.slice(0,s) + region + out.slice(e);
+      shift += region.length - old.length;
+    }
+    pos = block.closeEnd;
+  }
+  return out;
+}
 
-    const im = maskSegments(inner);
-    const cbs = findAllDivByClass(im, "content-buttons");
-    if (!cbs.length) continue;
+/* ---------- translations (FIXED) ---------- */
+const trCache = new Map();
 
-    let is = 0;
-    for (const cb of cbs){
-      const s = cb.openEnd + is;
-      const e = cb.closeStart + is;
-      const region = inner.slice(s, e);
+async function loadTranslations(root, lang){
+  if (trCache.has(lang)) return trCache.get(lang);
+  const p = abs(root, `/code-parts/main-translations/${lang}.json`);
+  try {
+    const json = JSON.parse(await fs.readFile(p, "utf8"));
+    trCache.set(lang, json);
+    return json;
+  } catch {
+    trCache.set(lang, null);
+    return null;
+  }
+}
 
-      const newRegion = region.replace(/<a\b([^>]*?)href\s*=\s*(["'])([^"']+)\2([^>]*)>/gi, (m, pre, q, href, post)=>{
-        const clsMatch = (pre+post).match(/\bclass\s*=\s*(["'])([^"']+)\1/i);
-        const classes = new Set((clsMatch ? (clsMatch[2]||"") : "").split(/\s+/).filter(Boolean));
-        if (classes.has("visit")) return m;
-        const newHref = addLangPrefixToHref(href, lang);
-        if (newHref === href) return m;
-        return `<a${pre}href=${q}${escapeAttr(newHref)}${q}${post}>`;
+function stripHtml(s){ return String(s).replace(/<[^>]*>/g, ""); }
+function normalizeText(s){
+  // как textContent в браузере: NBSP -> пробел, все пробельные -> один пробел
+  return String(s).replace(/\u00A0/g, " ").replace(/\s+/g, " ").trim();
+}
+
+/** Готовит быстрый переводчик с нормализованными ключами */
+function makeTranslator(dict){
+  if (!dict) return (orig)=>({found:false, value:orig});
+  const map = new Map();
+  if (dict.texts){
+    for (const [k, v] of Object.entries(dict.texts)){
+      map.set(normalizeText(k), v);
+    }
+  }
+  const patterns = [];
+  if (dict.patterns){
+    for (const [pat, repl] of Object.entries(dict.patterns)){
+      try { patterns.push([new RegExp(pat), repl]); } catch {}
+    }
+  }
+  return (origHtml) => {
+    const plain = normalizeText(stripHtml(origHtml));
+    if (!plain) return {found:false, value:origHtml};
+
+    if (map.has(plain)) return {found:true, value:map.get(plain)};
+
+    for (const [re, repl] of patterns){
+      const m = re.exec(plain);
+      if (m){
+        return {found:true, value: String(repl).replace("xote", m[1] ?? "")};
+      }
+    }
+    return {found:false, value:origHtml};
+  };
+}
+
+/** Переводит тексты в .best, .content p и .content button (включая главную) */
+function applyBoxTranslations(inner, lang, dict){
+  const translate = makeTranslator(dict);
+  let out = inner;
+
+  // 1) Перевод всех .best (глобально, не завязываясь на .logobg)
+  out = out.replace(
+    /(<div\b[^>]*class\s*=\s*["'][^"']*\bbest\b[^"']*["'][^>]*>)([\s\S]*?)(<\/div>)/gi,
+    (m, open, txt, close) => {
+      const res = translate(txt);
+      return open + (res.found ? res.value : txt) + close;
+    }
+  );
+
+  // 2) Перевод всех <p> и <button> внутри .content
+  out = out.replace(
+    /(<div\b[^>]*class\s*=\s*["'][^"']*\bcontent\b[^"']*["'][^>]*>)([\s\S]*?)(<\/div>)/gi,
+    (m, open, body, close) => {
+      let region = body.replace(/(<p\b[^>]*>)([\s\S]*?)(<\/p>)/gi, (_m, pOpen, txt, pClose) => {
+        const res = translate(txt);
+        return pOpen + (res.found ? res.value : txt) + pClose;
       });
-
-      if (newRegion !== region){
-        inner = inner.slice(0, s) + newRegion + inner.slice(e);
-        is += newRegion.length - region.length;
-      }
+      region = region.replace(/(<button\b[^>]*>)([\s\S]*?)(<\/button>)/gi, (_m, bOpen, txt, bClose) => {
+        const res = translate(txt);
+        return bOpen + (res.found ? res.value : txt) + bClose;
+      });
+      return open + region + close;
     }
+  );
 
-    const newOut = out.slice(0, innerStart) + inner + out.slice(innerEnd);
-    shiftBoxes += newOut.length - out.length;
-    out = newOut;
-  }
-  return out;
-}
-function localizeSitedetailsLinks(html, lang){
-  if (!PREFIX_LANGS.has(lang)) return html;
-  let out = html;
-
-  const masked = maskSegments(out);
-  const sds = findAllDivByClass(masked, "sitedetails");
-  if (!sds.length) return out;
-
-  let shift = 0;
-  for (const sd of sds){
-    const open = sd.openEnd + shift;
-    const close= sd.closeStart + shift;
-    let region = out.slice(open, close);
-
-    const rm = maskSegments(region);
-    const lists = findAllDivByClass(rm, "methodlist");
-    if (!lists.length) continue;
-
-    let innerShift = 0;
-    for (const ml of lists){
-      const s = ml.openEnd + innerShift;
-      const e = ml.closeStart + innerShift;
-      const chunk = region.slice(s,e);
-      const newChunk = rewriteAnchorsInRegion(chunk, lang);
-      if (newChunk !== chunk){
-        region = region.slice(0, s) + newChunk + region.slice(e);
-        innerShift += newChunk.length - chunk.length;
-      }
-    }
-
-    if (region !== out.slice(open, close)){
-      out = out.slice(0, open) + region + out.slice(close);
-      shift += region.length - (close - open);
-    }
-  }
-  return out;
-}
-function localizeLanguageLinks(html, lang){
-  let out = html;
-  out = localizeTypesinsideFeatureLinks(out, lang);
-  out = localizeGamemodesTypesinsideLinks(out, lang);
-  out = localizeSitedetailsLinks(out, lang);
-  out = localizeMainBoxContentButtons(out, lang);
   return out;
 }
 
-/* ---------------- Main ---------------- */
+
+/* ---------- main ---------- */
 (async function main(){
-  const { root, dry, verbose } = parseArgs(process.argv.slice(2));
-  const TARGET_LANGS = ["pt","hi","es","tr"];
+  const { root, langs, dry, verbose, debugOne, limit } = parseArgs(process.argv.slice(2));
 
-  const targets = await listHtmlFilesUnder(root, TARGET_LANGS);
-  if (!targets.length){
-    console.error("No localized targets found under /pt, /hi, /es, /tr.");
-    process.exit(2);
-  }
+  let targets = debugOne ? [debugOne] : await listLocalizedHtmlFiles(root, langs);
+  if (limit > 0) targets = targets.slice(0, limit);
+  if (!targets.length){ console.error("No localized targets found."); process.exit(2); }
 
+  console.log(`Found ${targets.length} localized HTML files`);
   let updated=0, skipped=0;
 
   for (const rel of targets){
-    const lang = detectLangFromRel(rel);
-    const protoRel = prototypePathFromLocalized(rel);
+    const lang = langFromRel(rel);
+    const protoRel = protoFromLocalized(rel);
+    const [protoFull, targetFull] = [abs(root, protoRel), abs(root, rel)];
+    if (!(await exists(protoFull))){ if (verbose) console.log(`[MISS PROTO] ${protoRel}`); skipped++; continue; }
 
-    const targetFull = abs(root, rel);
-    const protoFull  = abs(root, protoRel);
+    const [protoHtml, targetHtml] = await Promise.all([readUtf8(protoFull), readUtf8(targetFull).catch(()=>"" )]);
+    if (!targetHtml){ if (verbose) console.log(`[MISS TARGET] ${rel}`); skipped++; continue; }
 
-    if (!(await exists(targetFull))) { if (verbose) console.warn(`[MISS] target ${rel}`); skipped++; continue; }
-    if (!(await exists(protoFull)))  { if (verbose) console.warn(`[MISS] proto ${protoRel} for ${rel}`); skipped++; continue; }
+    const protoH = extractHolder(protoHtml);
+    const targetH = extractHolder(targetHtml);
+    if (!protoH || !targetH){ if (verbose) console.log(`[NO HOLDER] ${!protoH?protoRel:rel}`); skipped++; continue; }
 
-    const targetHtml = await readUtf8(targetFull);
-    const protoHtml  = await readUtf8(protoFull);
+    // 1) копируем inner 1:1
+    let newHtml = targetHtml.slice(0, targetH.openEnd) + protoH.inner + targetHtml.slice(targetH.closeStart);
 
-    const tMasked = maskSegments(targetHtml);
-    const tHolder = findFirstByClass(tMasked, "boxes-holder");
-    if (!tHolder){ if (verbose) console.log(`[SKIP] no .boxes-holder in ${rel}`); skipped++; continue; }
+    // 2) локализация ссылок по правилам
+    newHtml = withHolderInner(newHtml, (inner) => {
+      let out = inner;
+      // обычные страницы
+      if (lang === "es" || lang === "tr"){
+        out = localizeLogobgAnchors(out, lang);
+        out = localizeReviewButtons(out, lang);
+      }
+      if (lang === "es" || lang === "tr" || lang === "pt" || lang === "hi"){
+        out = localizeMoreContent(out, lang);
+      }
+      // главная
+      if (isLocalizedHome(rel)){
+        out = localizeMainModeSelection(out, lang);   // только href, кроме .topics; картинки не трогаем
+        out = localizeBoxesHolderNameNav(out, lang);  // моды + More
+        out = localizeModsBox(out, lang);             // кнопки в модульных боксах
+      }
+      return out;
+    });
 
-    const { anchors, boxes } = extractFromPrototype(protoHtml);
-    if (!anchors.length && !boxes.length){ if (verbose) console.log(`[SKIP] prototype has no anchors/boxes: ${protoRel}`); skipped++; continue; }
-
-    const nl = detectNL(targetHtml);
-    const holderIndent = indentBefore(targetHtml, tHolder.openStart, nl);
-
-    const tInner = targetHtml.slice(tHolder.openEnd, tHolder.closeStart);
-    const im = maskSegments(tInner);
-    const more = findFirstByClass(im, "more-content");
-    const insertAt = more ? more.openStart : tInner.length;
-
-    const preRaw  = tInner.slice(0, insertAt);
-    const postRaw = tInner.slice(insertAt); // keep as is (includes .more-content)
-
-    let preClean = removeAllBoxes(preRaw);
-    preClean = removeAllPaymentsAndMods(preClean);
-
-    const childStep = detectChildIndent(tInner, holderIndent, nl);
-
-    const anchorsPretty = anchors.map(b => prettyReindentBlock(b, holderIndent, childStep, nl));
-    const boxesPretty   = boxes.map  (b => prettyReindentBlock(b, holderIndent, childStep, nl));
-
-    const midParts = [];
-    if (anchorsPretty.length) midParts.push(anchorsPretty.join(nl));
-    if (boxesPretty.length)   midParts.push(boxesPretty.join(nl));
-    const mid = midParts.join(nl) + (midParts.length ? nl : "");
-
-    const left  = rstripToSingleNL(preClean, nl);
-    const right = lstripLeadingBlanks(postRaw, nl);
-    const newInner = (left ?? "") + mid + (right ?? "");
-
-    let newHtml =
-      targetHtml.slice(0, tHolder.openEnd) +
-      newInner +
-      targetHtml.slice(tHolder.closeStart);
-
-    newHtml = localizeLanguageLinks(newHtml, lang);
+    // 3) переводы текста (как в клиентском скрипте)
+    if (lang !== "en"){
+      const dict = await loadTranslations(root, lang);
+      if (dict){
+        newHtml = withHolderInner(newHtml, (inner) => applyBoxTranslations(inner, lang, dict));
+      } else if (verbose){
+        console.log(`[NO TRANSLATIONS] /code-parts/main-translations/${lang}.json`);
+      }
+    }
 
     if (newHtml !== targetHtml){
       if (!dry) await fs.writeFile(targetFull, newHtml, "utf8");
-      console.log(`${dry ? "[DRY]" : "[OK] "} ${rel}`);
+      console.log(`[OK] ${rel}  ←  ${protoRel}`);
       updated++;
     } else {
-      if (verbose) console.log(`[SKIP] no changes: ${rel}`);
+      if (verbose) console.log(`[UNCHANGED] ${rel}`);
       skipped++;
     }
   }
 
-  console.log(`\nDone. Updated: ${updated}, skipped: ${skipped}, targets: ${targets.length}`);
-})().catch(e => { console.error(e); process.exit(1); });
+  console.log(`\nDone. Updated: ${updated}, skipped: ${skipped}, processed: ${targets.length}`);
+})().catch(e=>{ console.error(e); process.exit(1); });

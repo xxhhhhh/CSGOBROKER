@@ -1,129 +1,175 @@
 // ============================================================================
-// File: scripts/localized-boxes-fill.js
-// Usage: node scripts/localized-boxes-fill.js [--root PATH] [--dry-run] [--verbose]
-// Task : Copy anchors (.payments-button, .mods-box with data-box-id) and all .box
-//        from EN prototype into localized targets under /pt, /hi, /es, /tr (except
-//        */reviews/*). Insert BEFORE .more-content, keep formatting tidy, and
-//        offline-localize internal links like static-pages-fill.js.
+// File: scripts/fill-freebies-offline.js
+// Usage: node scripts/fill-freebies-offline.js [--root PATH] [--dry-run] [--verbose]
 // ============================================================================
 
 const fs = require("fs/promises");
 const path = require("path");
 
 /* ---------------- CLI ---------------- */
-function parseArgs(argv){
-  const get = f => { const i = argv.indexOf(f); return i>=0 ? argv[i+1] : null; };
+function parseArgs(argv) {
+  const get = (f) => { const i = argv.indexOf(f); return i >= 0 ? argv[i + 1] : null; };
   const root = path.resolve(get("--root") ?? process.cwd());
   return { root, dry: argv.includes("--dry-run"), verbose: argv.includes("--verbose") };
 }
-async function exists(p){ try { await fs.access(p); return true; } catch { return false; } }
-async function readUtf8(p){ return await fs.readFile(p, "utf8"); }
-function abs(root, p){ return p && p.startsWith("/") ? path.join(root, "."+p) : path.join(root, p); }
+async function exists(p) { try { await fs.access(p); return true; } catch { return false; } }
+async function readUtf8(p) { return await fs.readFile(p, "utf8"); }
+function abs(root, p) { return path.join(root, p.replace(/^\/+/, "")); }
 
-/* ---------------- Scan: only /pt, /hi, /es, /tr ---------------- */
-const EXCLUDE_DIRS = new Set([
-  "reviews",".git","node_modules","dist","build",".next","out","coverage",
-  "assets","static","public","images","img","fonts"
-]);
-
-async function listLocalizedHtmlFiles(root, langs){
-  const out = [];
-  for (const lang of langs){
-    const base = path.join(root, lang);
-    if (!(await exists(base))) continue;
-    await walk(base);
-    async function walk(dir){
-      let entries;
-      try { entries = await fs.readdir(dir, { withFileTypes:true }); }
-      catch { return; }
-      for (const e of entries){
-        if (e.isDirectory()){
-          if (EXCLUDE_DIRS.has(e.name)) continue;      // why: прыжок по тяжёлым папкам
-          await walk(path.join(dir, e.name));
-        } else if (e.isFile() && /\.html?$/i.test(e.name)){
-          const rel = "/" + path.relative(root, path.join(dir, e.name)).split(path.sep).join("/");
-          out.push(rel);
-        }
-      }
-    }
-  }
-  return out;
+/* --------------- Lang & newline --------------- */
+function detectLangByFsPath(p) {
+  const rel = p.split(path.sep).join("/");
+  return rel.startsWith("ru/") || rel.includes("/ru/") ? "ru" : "en";
 }
-
-/* ---------------- Lang & URL ---------------- */
-const KNOWN_LANGS = new Set(["ru","en","es","pt","tr","hi","de","fr","pl","it","ua","uk","ar","id","th","vi","nl","sv","fi","no","da","ro","cs","sk","sr","bg","el","hu","he","ko","ja","zh","zh-cn","zh-tw"]);
-const PREFIX_LANGS = new Set(["ru","es","pt","tr","hi"]);
 function detectNL(s){ return s.includes("\r\n") ? "\r\n" : "\n"; }
-function detectLangFromRel(rel){ const seg=(rel.split("/").filter(Boolean)[0]||"").toLowerCase(); return KNOWN_LANGS.has(seg)? seg : "en"; }
-function prototypePathFromLocalized(rel){
-  const segs = rel.split("/").filter(Boolean);
-  if (!segs.length) return rel;
-  const first = segs[0].toLowerCase();
-  if (KNOWN_LANGS.has(first)) segs.shift();
-  return "/" + segs.join("/");
-}
 
-/* ---------------- String-DOM helpers ---------------- */
-function maskSegments(s){
+/* --------------- DOM-ish helpers (string) --------------- */
+function maskSegments(s) {
   return s
-    .replace(/<!--[\s\S]*?-->/g, m => " ".repeat(m.length))
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, m => " ".repeat(m.length))
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,  m => " ".repeat(m.length));
+    .replace(/<!--[\s\S]*?-->/g, (m) => " ".repeat(m.length))
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, (m) => " ".repeat(m.length))
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, (m) => " ".repeat(m.length));
 }
-function readTag(s, start){
-  let i=start,inS=false,inD=false;
-  while(i<s.length){
-    const ch=s[i];
-    if (ch==="'" && !inD) inS=!inS; else if (ch==="\"" && !inS) inD=!inD;
-    if (ch===">" && !inS && !inD){ i++; break; }
+function readTag(s, start) {
+  let i = start, inS = false, inD = false;
+  while (i < s.length) {
+    const ch = s[i];
+    if (ch === "'" && !inD) inS = !inS;
+    else if (ch === '"' && !inS) inD = !inD;
+    if (ch === ">" && !inS && !inD) { i++; break; }
     i++;
   }
-  const tagText = s.slice(start,i);
-  const attrs = tagText.replace(/^<\w+\s*|\s*>$/g,"");
-  return { end:i, attrs, tagText };
+  const tagText = s.slice(start, i);
+  const attrs = tagText.replace(/^<\w+\s*|\s*>$/g, "");
+  return { end: i, attrs, tagText };
 }
-function parseClassAttr(attrs){
+function parseClassAttr(attrs) {
   const m = attrs.match(/\bclass\s*=\s*(?:"([^"]*)"|'([^']*)')/i);
   const val = m ? (m[1] ?? m[2] ?? "") : "";
   return new Set(val.split(/\s+/).filter(Boolean));
 }
-function findMatchingClose(masked, from, tag){
-  const openRe=new RegExp(`<${tag}\\b`,"gi"), closeRe=new RegExp(`</${tag}\\s*>`,"gi");
-  let depth=1, i=from;
-  while(i<masked.length){
-    const nOpen=masked.slice(i).search(openRe), nClose=masked.slice(i).search(closeRe);
-    if (nClose===-1) return -1;
-    if (nOpen!==-1 && nOpen<nClose){ const abs=i+nOpen; const {end}=readTag(masked,abs); depth++; i=end; continue; }
-    const cabs=i+nClose; depth--; if (depth===0) return cabs; i=cabs+(`</${tag}>`).length;
-  } return -1;
+function findMatchingClose(masked, from, tag) {
+  const openRe = new RegExp(`<${tag}\\b`, "gi"), closeRe = new RegExp(`</${tag}\\s*>`, "gi");
+  let depth = 1, i = from;
+  while (i < masked.length) {
+    const nOpen = masked.slice(i).search(openRe), nClose = masked.slice(i).search(closeRe);
+    if (nClose === -1) return -1;
+    if (nOpen !== -1 && nOpen < nClose) { const abs = i + nOpen; const { end } = readTag(masked, abs); depth++; i = end; continue; }
+    const cabs = i + nClose; depth--; if (depth === 0) return cabs; i = cabs + (`</${tag}>`).length;
+  }
+  return -1;
 }
-function findAllDivByClass(masked, clsName, from=0, to=masked.length){
-  const out=[]; let idx=from;
-  while(true){
-    const pos=masked.indexOf("<div", idx); if (pos===-1 || pos>=to) break;
-    const { end, attrs }=readTag(masked,pos);
-    const cls=parseClassAttr(attrs);
-    if (cls.has(clsName)){
-      const closeStart=findMatchingClose(masked,end,"div"); if (closeStart===-1) break;
-      out.push({ openStart:pos, openEnd:end, closeStart, closeEnd:closeStart + "</div>".length });
-      idx=closeStart+6;
-    } else idx=end;
+function findAllDivByClass(masked, clsName, from=0, to=masked.length) {
+  const out = []; let idx = from;
+  while (true) {
+    const pos = masked.indexOf("<div", idx); if (pos === -1 || pos >= to) break;
+    const { end, attrs } = readTag(masked, pos);
+    const cls = parseClassAttr(attrs);
+    if (cls.has(clsName)) {
+      const closeStart = findMatchingClose(masked, end, "div"); if (closeStart === -1) break;
+      out.push({ openStart: pos, openEnd: end, closeStart, closeEnd: closeStart + "</div>".length });
+      idx = closeStart + 6;
+    } else idx = end;
   }
   return out;
 }
-function findFirstByClass(masked, clsName, from=0, to=masked.length){
+function findFirstByClass(masked, clsName, from=0, to=masked.length) {
   const arr = findAllDivByClass(masked, clsName, from, to);
   return arr.length ? arr[0] : null;
 }
-function indentBefore(s, idx, nl){
+function indentBefore(s, idx, nl) {
   const ls = s.lastIndexOf(nl, idx - 1);
   const lineStart = ls === -1 ? 0 : ls + nl.length;
   const m = s.slice(lineStart, idx).match(/^[ \t]*/);
   return m ? m[0] : "";
 }
 
-/* ---------------- Formatting ---------------- */
-function trimBlankEdges(block){
+/* --------------- Extraction from sources --------------- */
+function extractBoxesFromHolder(html) {
+  const masked = maskSegments(html);
+  const holder = findFirstByClass(masked, "boxes-holder");
+  if (!holder) return [];
+  const inner = html.slice(holder.openEnd, holder.closeStart);
+  const im = maskSegments(inner);
+  const boxes = findAllDivByClass(im, "box").map(b => inner.slice(b.openStart, b.closeEnd));
+  return boxes;
+}
+function getBoxId(html) {
+  const m = html.match(/<div\b[^>]*\bbox\b[^>]*\bid\s*=\s*(["'])(.*?)\1/i);
+  return m ? m[2].trim() : "";
+}
+function getBoxHrefKey(html) {
+  const m = maskSegments(html);
+  const lb = findFirstByClass(m, "logobg"); if (!lb) return "";
+  const region = html.slice(lb.openEnd, lb.closeStart);
+  const aIdx = region.search(/<a\b/i); if (aIdx === -1) return "";
+  const open = readTag(region, aIdx).tagText;
+  const href = open.match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2] || "";
+  const clean = href.split("#")[0].split("?")[0].replace(/\/+$/,"");
+  const segs = clean.split("/").filter(Boolean);
+  return segs[segs.length-1] || "";
+}
+function dedupeBoxes(boxes) {
+  const out = [], seen = new Set();
+  for (const b of boxes) {
+    const key = getBoxId(b) || getBoxHrefKey(b);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    out.push(b);
+  }
+  return out;
+}
+
+/* --------------- Category filter by JSON --------------- */
+const bonusTypeByPath = {
+  "sign-up-bonuses": "SignUpBonus",
+  "progressive-rewards": "ProgressiveRewards",
+  "daily-rewards": "DailyRewards",
+  "deposit-bonuses": "DepositBonus",
+  "bonuses-to-sale": "BonustoSale",
+  "rakeback-system": "Rakeback",
+  "faucet-system": "Faucet",
+  "rain-system": "Rain",
+  "giveaways": "Giveaways",
+};
+function detectTargetBonus(relPath) {
+  for (const [slug, type] of Object.entries(bonusTypeByPath)) {
+    if (relPath.includes(slug)) return type;
+  }
+  return null;
+}
+async function readBoxJSON(root, boxHtml) {
+  const slug = getBoxHrefKey(boxHtml);
+  if (!slug) return null;
+  const p = abs(root, `/code-parts/site-infos/${slug}.json`);
+  if (!(await exists(p))) return null;
+  try { return JSON.parse(await readUtf8(p)); } catch { return null; }
+}
+
+/* --------------- featureLabels + review-settings --------------- */
+const featureLabels = {
+  SignUpBonus:       { def: "Sign Up Bonus",       ru: "Бонус за Регистрацию" },
+  DepositBonus:      { def: "Deposit Bonus",       ru: "Бонус к Пополнению" },
+  ProgressiveRewards:{ def: "Progressive Rewards", ru: "Награды за Уровень" },
+  DailyRewards:      { def: "Daily Rewards",       ru: "Ежедневные Награды" },
+  Rakeback:          { def: "Rakeback",            ru: "Рейкбек" },
+  RakebackBoost:     { def: "Rakeback Boost",      ru: "Буст Рейкбека" },
+  Giveaways:         { def: "Giveaways",           ru: "Розыгрыши" },
+  BonustoSale:       { def: "Bonus to Sale",       ru: "Бонус к Продаже" },
+  Faucet:            { def: "Faucet",              ru: "Система Кранов" },
+  Rain:              { def: "Rain",                ru: "Система Дождей" },
+};
+async function readFeatureOrder(root) {
+  const p = abs(root, "/code-parts/review-settings.json");
+  if (!(await exists(p))) return [];
+  try {
+    const json = JSON.parse(await readUtf8(p));
+    return Array.isArray(json.featureOrder) ? json.featureOrder : [];
+  } catch { return []; }
+}
+
+/* --------------- Formatting helpers --------------- */
+function trimBlankEdges(block) {
   block = block.replace(/\r\n/g,"\n");
   block = block.replace(/^[ \t]*\n+/g,"");
   block = block.replace(/\n+[ \t]*$/g,"");
@@ -131,47 +177,65 @@ function trimBlankEdges(block){
 }
 function rstripToSingleNL(s, nl){
   let i=s.length;
-  while(true){
+  while (true) {
     const k = s.lastIndexOf(nl, i - nl.length);
-    if (k===-1) break;
+    if (k === -1) break;
     const line = s.slice(k+nl.length, i);
-    if (/^[ \t]*$/.test(line)){ i=k; continue; }
+    if (/^[ \t]*$/.test(line)) { i = k; continue; }
     break;
   }
   s = s.slice(0, i).replace(/[ \t]+$/g,"");
   if (s && !s.endsWith(nl)) s += nl;
   return s;
 }
-function lstripLeadingBlanks(s,nl){
+function lstripLeadingBlanks(s, nl){
   let i=0;
-  while(true){
-    const j=s.indexOf(nl, i);
+  while (true) {
+    const j = s.indexOf(nl, i);
     if (j===-1) break;
-    const line=s.slice(i, j);
-    if (/^[ \t]*$/.test(line)){ i=j+nl.length; continue; }
+    const line = s.slice(i, j);
+    if (/^[ \t]*$/.test(line)) { i=j+nl.length; continue; }
     break;
   }
   return s.slice(i);
 }
-function prettyReindentBlock(html, holderIndent, childStep, nl){
+function removeAllBoxes(inner) {
+  let out = inner;
+  while (true) {
+    const m = maskSegments(out);
+    const b = findFirstByClass(m, "box");
+    if (!b) break;
+    out = out.slice(0, b.openStart) + out.slice(b.closeEnd);
+  }
+  return out;
+}
+
+// Always 1 space per level relative to parent (as requested)
+const ONE_STEP = " ";
+
+// Pretty reindent .box with strict 1-space nesting
+function prettyReindentBox(boxHtml, holderIndent, nl) {
   const voids = new Set(["area","base","br","col","embed","hr","img","input","link","meta","param","source","track","wbr"]);
-  const lines = trimBlankEdges(html).split(/\r?\n/);
+  const lines = trimBlankEdges(boxHtml).split(/\r?\n/);
   let depth = 0;
-  const childBase = holderIndent + childStep;
-  const step = childStep;
+  const childBase = holderIndent + ONE_STEP;
+  const step = ONE_STEP;
+
   const out = [];
-  for (let raw of lines){
+  for (let raw of lines) {
     const line = raw.replace(/^[ \t]*/,"").replace(/[ \t]+$/,"");
-    if (!line){ out.push(""); continue; }
+    if (!line) { out.push(""); continue; }
+
     const startsClosing = /^<\s*\/\s*[\w:-]+/i.test(line);
     const level = Math.max(0, depth - (startsClosing ? 1 : 0));
     const indent = childBase + step.repeat(level);
     out.push(indent + line);
-    const stripped = line.replace(/<!--[\s\S]*?-->/g,"");
+
+    const stripped = line.replace(/<!--[\s\S]*?-->/g, "");
     const tags = stripped.match(/<\s*\/?\s*[\w:-]+[^>]*>/g) || [];
-    for (const t of tags){
+    for (const t of tags) {
       const isClose = /^<\s*\//.test(t);
-      const name = (t.match(/^<\s*\/?\s*([\w:-]+)/)||[,""])[1].toLowerCase();
+      const name = (t.match(/^<\s*\/?\s*([\w:-]+)/) || [,""])[1].toLowerCase();
       const selfClose = /\/\s*>$/.test(t) || voids.has(name);
       if (!isClose && !selfClose) depth++;
       if (isClose) depth = Math.max(0, depth - 1);
@@ -179,331 +243,189 @@ function prettyReindentBlock(html, holderIndent, childStep, nl){
   }
   return out.join(nl);
 }
-
-/* ---------------- Extract from prototype ---------------- */
-function extractFromPrototype(prototypeHtml){
-  const masked = maskSegments(prototypeHtml);
-  const holder = findFirstByClass(masked, "boxes-holder");
-  if (!holder) return { anchors:[], boxes:[] };
-
-  const inner = prototypeHtml.slice(holder.openEnd, holder.closeStart);
-  const im = maskSegments(inner);
-
-  const anchors = [];
-  // payments-button (все)
-  for (const b of findAllDivByClass(im, "payments-button")){
-    anchors.push(inner.slice(b.openStart, b.closeEnd));
+function upsertHolderLangClass(html, holder, lang) {
+  const { openStart } = holder;
+  const { end: openEnd, tagText } = readTag(html, openStart);
+  const re = /\bclass\s*=\s*(["'])([^"']*)\1/i;
+  const wantRu = lang === "ru";
+  let newOpen = tagText;
+  if (re.test(tagText)) {
+    const m = re.exec(tagText);
+    const classes = new Set((m?.[2] || "").split(/\s+/).filter(Boolean));
+    if (wantRu) classes.add("lang-ru"); else classes.delete("lang-ru");
+    const val = Array.from(classes).join(" ");
+    newOpen = tagText.slice(0, m.index) + `class=${m[1]}${val}${m[1]}` + tagText.slice(m.index + m[0].length);
+  } else if (wantRu) {
+    newOpen = tagText.replace(/>$/, ` class="lang-ru">`);
   }
-  // mods-box (только с data-box-id)
-  for (const b of findAllDivByClass(im, "mods-box")){
-    const openTag = readTag(inner, b.openStart).tagText;
-    if (/\bdata-box-id\s*=/.test(openTag)) anchors.push(inner.slice(b.openStart, b.closeEnd));
+  if (newOpen !== tagText) return html.slice(0, openStart) + newOpen + html.slice(openEnd);
+  return html;
+}
+
+/* --------------- Bonus selection + .best injection --------------- */
+function pickSelectedFeature(data, targetBonus, featureOrder) {
+  const list = Array.isArray(data?.featuresContent) ? data.featuresContent : [];
+  if (!list.length) return null;
+  if (targetBonus && list.includes(targetBonus)) return targetBonus;
+  for (const f of featureOrder) if (list.includes(f)) return f;
+  return list[0] || null;
+}
+function labelForFeature(data, feature, lang) {
+  if (!feature) return "";
+  // Prefer data[feature] = [en, ru]
+  const arr = data && Array.isArray(data[feature]) ? data[feature] : null;
+  if (arr && arr.length) {
+    if (lang === "ru" && arr[1]) return String(arr[1]).trim();
+    if (arr[0]) return String(arr[0]).trim();
   }
-  // все .box
-  const boxes = findAllDivByClass(im, "box").map(b => inner.slice(b.openStart, b.closeEnd));
-  return { anchors, boxes };
+  // Fallback to static map
+  const map = featureLabels[feature];
+  if (!map) return "";
+  return (lang === "ru" ? map.ru : map.def) || "";
+}
+function ensureBestInBox(boxHtml, bestText) {
+  if (!bestText) return boxHtml;
+  const masked = maskSegments(boxHtml);
+  const logobg = findFirstByClass(masked, "logobg");
+  if (!logobg) return boxHtml;
+
+  // If `.best` already exists under .logobg -> keep as is
+  const innerMasked = maskSegments(boxHtml.slice(logobg.openEnd, logobg.closeStart));
+  const hasBest = /<div\b[^>]*\bclass\s*=\s*["'][^"']*\bbest\b[^"']*["'][^>]*>/i.test(innerMasked);
+  if (hasBest) return boxHtml;
+
+  // Insert before closing </div> of .logobg (single line, reindent later)
+  const toInsert = `<div class="best">${bestText}</div>`;
+  const inserted =
+    boxHtml.slice(0, logobg.closeStart) +
+    toInsert +
+    boxHtml.slice(logobg.closeStart);
+  return inserted;
 }
 
-/* ---------------- Remove in target pre-region ---------------- */
-function removeAllByClass(inner, className){
-  let out = inner;
-  while(true){
-    const m = maskSegments(out);
-    const b = findFirstByClass(m, className);
-    if (!b) break;
-    out = out.slice(0, b.openStart) + out.slice(b.closeEnd);
-  }
-  return out;
-}
-const removeAllBoxes  = (s)=> removeAllByClass(s, "box");
-function removeAllPaymentsAndMods(inner){
-  let out = inner;
-  out = removeAllByClass(out, "payments-button");
-  out = removeAllByClass(out, "mods-box");
-  return out;
-}
-function detectChildIndent(innerHtml, holderIndent, nl){
-  const im = maskSegments(innerHtml);
-  const anchors = ["payments-button","mods-box"]
-    .flatMap(cls => findAllDivByClass(im, cls))
-    .sort((a,b)=>a.openStart-b.openStart);
-  if (!anchors.length) return " ";
-  const lastAnchor = anchors[anchors.length-1];
-  const anchorIndent = indentBefore(innerHtml, lastAnchor.openStart, nl);
-  const stepLen = Math.max(1, anchorIndent.length - holderIndent.length);
-  return " ".repeat(stepLen);
-}
-
-/* ---------------- Offline link localization (subset) ---------------- */
-function isExternal(href){ return /^https?:\/\//i.test(href); }
-function escapeHtml(s=""){ return s.replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
-function escapeAttr(s=""){ return escapeHtml(s).replace(/'/g,"&#39;"); }
-function addLangPrefixToHref(href, lang){
-  if (!href) return href;
-  if (isExternal(href)) return href;
-  if (/^#/.test(href)) return href;
-
-  const clean = href.replace(/\/{2,}/g, "/");
-  const pathOnly = clean.split("#")[0].split("?")[0];
-  const suffix   = clean.slice(pathOnly.length);
-  const firstSeg = (pathOnly.split("/").filter(Boolean)[0] || "").toLowerCase();
-
-  if (firstSeg === lang) {
-    if (pathOnly === `/${lang}/`) return `/${lang}${suffix}`;
-    return href;
-  }
-  if (pathOnly === "/") {
-    if (!PREFIX_LANGS.has(lang)) return href;
-    return `/${lang}${suffix}`;
-  }
-  if (KNOWN_LANGS.has(firstSeg)) return href;
-  if (!PREFIX_LANGS.has(lang)) return href;
-
-  const withSlash = pathOnly.startsWith("/") ? pathOnly : `/${pathOnly}`;
-  if (withSlash === "/") return `/${lang}${suffix}`;
-  const normalized = (`/${lang}${withSlash}`).replace(/\/{2,}/g,"/");
-  if (normalized === `/${lang}/`) return `/${lang}${suffix}`;
-  return normalized + suffix;
-}
-function containsBlock(parent, child){ return parent.openStart <= child.openStart && parent.closeEnd >= child.closeEnd; }
-function rewriteAnchorsInRegion(region, lang){
-  return region.replace(/<a\b([^>]*?)href\s*=\s*(["'])([^"']+)\2([^>]*)>/gi, (m, pre, q, href, post)=>{
-    const newHref = addLangPrefixToHref(href, lang);
-    if (newHref === href) return m;
-    return `<a${pre}href=${q}${escapeAttr(newHref)}${q}${post}>`;
-  });
-}
-function localizeTypesinsideFeatureLinks(html, lang){
-  if (!PREFIX_LANGS.has(lang)) return html;
-  let out = html;
-  const masked = maskSegments(out);
-  const types = findAllDivByClass(masked, "typesinside");
-  if (!types.length) return out;
-  const shorts = findAllDivByClass(masked, "shortinfo");
-  const gms    = findAllDivByClass(masked, "gamemodes");
-
-  let shift = 0;
-  for (const tb of types){
-    const tBlock = { openStart: tb.openStart + shift, openEnd: tb.openEnd + shift, closeStart: tb.closeStart + shift, closeEnd: tb.closeEnd + shift };
-    const inShort = shorts.some(p=> containsBlock(p, {openStart:tBlock.openStart, closeEnd:tBlock.closeEnd}));
-    const inGm    = gms.some(p=> containsBlock(p, {openStart:tBlock.openStart, closeEnd:tBlock.closeEnd}));
-    if (!inShort || inGm) continue;
-    const region = out.slice(tBlock.openEnd, tBlock.closeStart);
-    const newRegion = rewriteAnchorsInRegion(region, lang);
-    if (newRegion !== region){
-      out = out.slice(0, tBlock.openEnd) + newRegion + out.slice(tBlock.closeStart);
-      shift += newRegion.length - region.length;
-    }
-  }
-  return out;
-}
-function localizeGamemodesTypesinsideLinks(html, lang){
-  if (!PREFIX_LANGS.has(lang)) return html;
-  let out = html;
-  const masked = maskSegments(out);
-  const types = findAllDivByClass(masked, "typesinside");
-  if (!types.length) return out;
-  const gms = findAllDivByClass(masked, "gamemodes");
-  const fbx = findAllDivByClass(masked, "featuresbox");
-
-  let shift = 0;
-  for (const tb of types){
-    const tBlock = { openStart: tb.openStart + shift, openEnd: tb.openEnd + shift, closeStart: tb.closeStart + shift, closeEnd: tb.closeEnd + shift };
-    const inGm = gms.some(p=> containsBlock(p, {openStart:tBlock.openStart, closeEnd:tBlock.closeEnd}));
-    const inFb = fbx.some(p=> containsBlock(p, {openStart:tBlock.openStart, closeEnd:tBlock.closeEnd}));
-    if (!inGm || !inFb) continue;
-    const region = out.slice(tBlock.openEnd, tBlock.closeStart);
-    const newRegion = rewriteAnchorsInRegion(region, lang);
-    if (newRegion !== region){
-      out = out.slice(0, tBlock.openEnd) + newRegion + out.slice(tBlock.closeStart);
-      shift += newRegion.length - region.length;
-    }
-  }
-  return out;
-}
-function localizeMainBoxContentButtons(html, lang){
-  if (!PREFIX_LANGS.has(lang)) return html;
-  let out = html;
-
-  const masked = maskSegments(out);
-  const boxes = findAllDivByClass(masked, "box");
-  if (!boxes.length) return out;
-
-  let shiftBoxes = 0;
-  for (const b of boxes){
-    const bOpen = b.openStart + shiftBoxes;
-    const bEnd  = b.closeEnd + shiftBoxes;
-    const openTag = readTag(out, bOpen);
-    const cls = parseClassAttr(openTag.attrs);
-    if (!cls.has("main")) continue;
-
-    const innerStart = b.openEnd + shiftBoxes;
-    const innerEnd   = b.closeStart + shiftBoxes;
-    let inner = out.slice(innerStart, innerEnd);
-
-    const im = maskSegments(inner);
-    const cbs = findAllDivByClass(im, "content-buttons");
-    if (!cbs.length) continue;
-
-    let is = 0;
-    for (const cb of cbs){
-      const s = cb.openEnd + is;
-      const e = cb.closeStart + is;
-      const region = inner.slice(s, e);
-
-      const newRegion = region.replace(/<a\b([^>]*?)href\s*=\s*(["'])([^"']+)\2([^>]*)>/gi, (m, pre, q, href, post)=>{
-        const clsMatch = (pre+post).match(/\bclass\s*=\s*(["'])([^"']+)\1/i);
-        const classes = new Set((clsMatch ? (clsMatch[2]||"") : "").split(/\s+/).filter(Boolean));
-        if (classes.has("visit")) return m;
-        const newHref = addLangPrefixToHref(href, lang);
-        if (newHref === href) return m;
-        return `<a${pre}href=${q}${escapeAttr(newHref)}${q}${post}>`;
-      });
-
-      if (newRegion !== region){
-        inner = inner.slice(0, s) + newRegion + inner.slice(e);
-        is += newRegion.length - region.length;
-      }
-    }
-
-    const newOut = out.slice(0, innerStart) + inner + out.slice(innerEnd);
-    shiftBoxes += newOut.length - out.length;
-    out = newOut;
-  }
-  return out;
-}
-function localizeSitedetailsLinks(html, lang){
-  if (!PREFIX_LANGS.has(lang)) return html;
-  let out = html;
-
-  const masked = maskSegments(out);
-  const sds = findAllDivByClass(masked, "sitedetails");
-  if (!sds.length) return out;
-
-  let shift = 0;
-  for (const sd of sds){
-    const open = sd.openEnd + shift;
-    const close= sd.closeStart + shift;
-    let region = out.slice(open, close);
-
-    const rm = maskSegments(region);
-    const lists = findAllDivByClass(rm, "methodlist");
-    if (!lists.length) continue;
-
-    let innerShift = 0;
-    for (const ml of lists){
-      const s = ml.openEnd + innerShift;
-      const e = ml.closeStart + innerShift;
-      const chunk = region.slice(s,e);
-      const newChunk = rewriteAnchorsInRegion(chunk, lang);
-      if (newChunk !== chunk){
-        region = region.slice(0, s) + newChunk + region.slice(e);
-        innerShift += newChunk.length - chunk.length;
-      }
-    }
-
-    if (region !== out.slice(open, close)){
-      out = out.slice(0, open) + region + out.slice(close);
-      shift += region.length - (close - open);
-    }
-  }
-  return out;
-}
-function localizeLanguageLinks(html, lang){
-  let out = html;
-  out = localizeTypesinsideFeatureLinks(out, lang);
-  out = localizeGamemodesTypesinsideLinks(out, lang);
-  out = localizeSitedetailsLinks(out, lang);
-  out = localizeMainBoxContentButtons(out, lang);
-  return out;
-}
-
-/* ---------------- Main ---------------- */
-(async function main(){
+/* --------------- Main --------------- */
+(async function main() {
   const { root, dry, verbose } = parseArgs(process.argv.slice(2));
-  const TARGET_LANGS = ["pt","hi","es","tr"];
 
-  console.log(`Scanning ${TARGET_LANGS.map(s=>"/"+s).join(", ")} under: ${root}`);
-  const targets = await listLocalizedHtmlFiles(root, TARGET_LANGS);
-
-  if (!targets.length){
-    console.error("No localized targets found under /pt, /hi, /es, /tr.");
-    process.exit(2);
+  // targets: freebies roots + any html in /freebies and /ru/freebies
+  const candidates = ["/freebies.html", "/ru/freebies.html"];
+  for (const dir of ["/freebies", "/ru/freebies"]) {
+    const fullDir = abs(root, dir);
+    if (!(await exists(fullDir))) continue;
+    const names = await fs.readdir(fullDir).catch(()=>[]);
+    for (const n of names) if (/\.html?$/i.test(n)) candidates.push(path.posix.join(dir, n));
   }
+  const targets = [];
+  for (const rel of candidates) { const full = abs(root, rel); if (await exists(full)) targets.push({ rel, full }); }
+  if (!targets.length) { console.error("No freebies targets found."); process.exit(2); }
 
-  const perLang = new Map();
-  for (const rel of targets){
-    const l = detectLangFromRel(rel);
-    perLang.set(l, (perLang.get(l)||0)+1);
-  }
-  console.log(`Found ${targets.length} localized HTML files${verbose ? ":\n" + [...perLang.entries()].map(([l,c])=>`  - ${l}: ${c}`).join("\n") : ""}`);
+  // sources
+  const SOURCE_PAGES = [
+    "/cs2.html",
+    "/csgo/sell-skins.html",
+    "/csgo/trade-skins.html",
+    "/rust.html",
+    "/crypto.html",
+    "/earning.html",
+    "/steam/levelup.html",
+  ];
 
-  let updated=0, skipped=0, processed=0;
+  const featureOrder = await readFeatureOrder(root);
 
-  for (const rel of targets){
-    processed++;
-    if (verbose && processed % 25 === 0) console.log(`[PROGRESS] ${processed}/${targets.length}`);
+  let updated = 0, skipped = 0;
 
-    const lang = detectLangFromRel(rel);
-    const protoRel = prototypePathFromLocalized(rel);
+  for (const t of targets) {
+    const html = await readUtf8(t.full);
+    const nl = detectNL(html);
+    const lang = detectLangByFsPath(path.relative(root, t.full));
+    const masked = maskSegments(html);
+    const holder = findFirstByClass(masked, "boxes-holder");
+    if (!holder) { if (verbose) console.log(`[SKIP] no .boxes-holder in ${t.rel}`); skipped++; continue; }
 
-    const targetFull = abs(root, rel);
-    const protoFull  = abs(root, protoRel);
+    // lang sources
+    const prefix = lang === "ru" ? "/ru" : "";
+    const pages = SOURCE_PAGES.map(p => (prefix + p).replace(/\/{2,}/g,"/"));
 
-    if (!(await exists(protoFull)))  { if (verbose) console.warn(`[MISS] proto ${protoRel} for ${rel}`); skipped++; continue; }
+    // collect boxes
+    let collected = [];
+    for (const p of pages) {
+      const full = abs(root, p);
+      const src = await readUtf8(full).catch(() => null);
+      if (!src) { if (verbose) console.warn(`[MISS] ${p}`); continue; }
+      const boxes = extractBoxesFromHolder(src);
+      if (!boxes.length && verbose) console.warn(`[WARN] no boxes in ${p}`);
+      collected.push(...boxes);
+    }
+    if (!collected.length) { if (verbose) console.log(`[SKIP] nothing to copy for ${t.rel}`); skipped++; continue; }
+    let unique = dedupeBoxes(collected);
 
-    const targetHtml = await readUtf8(targetFull);
-    const protoHtml  = await readUtf8(protoFull);
+    // JSON join + filter: keep only boxes with any bonuses; category page narrows by targetBonus
+    const targetBonus = detectTargetBonus(t.rel);
+    const prepared = [];
+    for (const box of unique) {
+      const data = await readBoxJSON(root, box);
+      const feats = Array.isArray(data?.featuresContent) ? data.featuresContent : [];
+      if (!feats.length) continue; // <-- DROP boxes with no bonuses at all
 
-    const tMasked = maskSegments(targetHtml);
-    const tHolder = findFirstByClass(tMasked, "boxes-holder");
-    if (!tHolder){ if (verbose) console.log(`[SKIP] no .boxes-holder in ${rel}`); skipped++; continue; }
+      if (targetBonus && !feats.includes(targetBonus)) continue;
 
-    const { anchors, boxes } = extractFromPrototype(protoHtml);
-    if (!anchors.length && !boxes.length){ if (verbose) console.log(`[SKIP] prototype has no anchors/boxes: ${protoRel}`); skipped++; continue; }
+      // decide selectedFeature and label
+      const selected = pickSelectedFeature(data, targetBonus, featureOrder);
+      const text = labelForFeature(data, selected, lang);
 
-    const nl = detectNL(targetHtml);
-    const holderIndent = indentBefore(targetHtml, tHolder.openStart, nl);
+      // inject .best if missing (only if we have any bonuses)
+      const withBest = ensureBestInBox(box, text);
 
-    const tInner = targetHtml.slice(tHolder.openEnd, tHolder.closeStart);
-    const im = maskSegments(tInner);
-    const more = findFirstByClass(im, "more-content");
-    const insertAt = more ? more.openStart : tInner.length;
+      prepared.push(withBest);
+    }
 
-    const preRaw  = tInner.slice(0, insertAt);
-    const postRaw = tInner.slice(insertAt); // keep as-is (incl. .more-content)
+    if (!prepared.length) { if (verbose) console.log(`[SKIP] no valid boxes (bonuses) for ${t.rel}`); skipped++; continue; }
 
-    let preClean = removeAllBoxes(preRaw);
-    preClean = removeAllPaymentsAndMods(preClean);
+    // holder context
+    const holderIndent = indentBefore(html, holder.openStart, nl);
+    const inner = html.slice(holder.openEnd, holder.closeStart);
 
-    const childStep = detectChildIndent(tInner, holderIndent, nl);
+    // anchors position to insert after
+    const im = maskSegments(inner);
+    let lastAnchorClose = 0;
+    for (const cname of ["payments-button", "mods-box"]) {
+      const blocks = findAllDivByClass(im, cname);
+      if (blocks.length) lastAnchorClose = Math.max(lastAnchorClose, blocks[blocks.length - 1].closeEnd);
+    }
+    const insertAt = lastAnchorClose;
 
-    const anchorsPretty = anchors.map(b => prettyReindentBlock(b, holderIndent, childStep, nl));
-    const boxesPretty   = boxes.map  (b => prettyReindentBlock(b, holderIndent, childStep, nl));
+    // clean previous boxes
+    const preRaw  = inner.slice(0, insertAt);
+    const postRaw = inner.slice(insertAt);
+    const preClean  = removeAllBoxes(preRaw);
+    const postClean = removeAllBoxes(postRaw);
 
-    const midParts = [];
-    if (anchorsPretty.length) midParts.push(anchorsPretty.join(nl));
-    if (boxesPretty.length)   midParts.push(boxesPretty.join(nl));
-    const mid = midParts.join(nl) + (midParts.length ? nl : "");
+    // pretty reindent (strict 1-space hierarchy)
+    const boxesPretty = prepared.map(b => prettyReindentBox(b, holderIndent, nl));
+    const mid = boxesPretty.join(nl) + (boxesPretty.length ? nl : "");
 
     const left  = rstripToSingleNL(preClean, nl);
-    const right = lstripLeadingBlanks(postRaw, nl);
-    let newHtml =
-      targetHtml.slice(0, tHolder.openEnd) +
-      (left ?? "") + mid + (right ?? "") +
-      targetHtml.slice(tHolder.closeStart);
+    const right = lstripLeadingBlanks(postClean, nl);
 
-    newHtml = localizeLanguageLinks(newHtml, lang);
+    const newInner = (left ?? "") + mid + (right ?? "");
 
-    if (newHtml !== targetHtml){
-      if (!dry) await fs.writeFile(targetFull, newHtml, "utf8");
-      console.log(`${dry ? "[DRY]" : "[OK] "} ${rel}  ←  ${protoRel}`);
+    // sync lang-ru on holder
+    let htmlLangFixed = upsertHolderLangClass(html, holder, lang);
+
+    // splice back
+    const m2 = maskSegments(htmlLangFixed);
+    const h2 = findFirstByClass(m2, "boxes-holder");
+    const finalHtml = htmlLangFixed.slice(0, h2.openEnd) + newInner + htmlLangFixed.slice(h2.closeStart);
+
+    if (finalHtml !== html) {
+      if (!dry) await fs.writeFile(t.full, finalHtml, "utf8");
+      console.log(`${dry ? "[DRY] " : "[OK]  "} ${t.rel}`);
       updated++;
     } else {
-      if (verbose) console.log(`[SKIP] no changes: ${rel}`);
+      if (verbose) console.log(`[SKIP] no changes: ${t.rel}`);
       skipped++;
     }
   }
 
-  console.log(`\nDone. Updated: ${updated}, skipped: ${skipped}, processed: ${targets.length}`);
-})().catch(e => { console.error(e); process.exit(1); });
+  console.log(`\nDone. Updated: ${updated}, skipped: ${skipped}, targets: ${targets.length}`);
+})().catch((e) => { console.error(e); process.exit(1); });
