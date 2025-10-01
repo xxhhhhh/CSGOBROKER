@@ -3,8 +3,14 @@ const fs = require('fs');
 const path = require('path');
 const { parseStringPromise, Builder } = require('xml2js');
 
-const ROOT_DIR = __dirname;
-const SITEMAPS_DIRS = [ROOT_DIR, path.join(ROOT_DIR, 'sitemaps_me')];
+// Переходим на 2 уровня выше от /code-parts/offline-scripts/
+const ROOT_DIR = path.resolve(__dirname, '../../'); 
+
+const SITEMAPS_DIRS = [
+  ROOT_DIR,
+  path.join(ROOT_DIR, 'sitemaps_me')
+];
+
 const SITEMAP_NAMES = [
   'sitemap_main_ru.xml',
   'sitemap_main.xml',
@@ -15,8 +21,7 @@ const SITEMAP_NAMES = [
 ];
 
 function urlToFilePath(url) {
-  const origin = new URL(url).origin;
-  const pathname = new URL(url).pathname;
+  const { origin, pathname } = new URL(url);
   const file = pathname === '/' ? 'index.html' : pathname.slice(1) + '.html';
   return path.join(ROOT_DIR, file);
 }
@@ -36,7 +41,7 @@ async function updateSitemap(filePath) {
       const lastmod = stats.mtime.toISOString();
       entry.lastmod = [lastmod];
     } catch (err) {
-      console.warn(`File not found for URL ${url} → ${htmlPath}`);
+      console.warn(`⚠️ File not found for URL ${url} → ${htmlPath}`);
     }
   }
 
