@@ -2,9 +2,9 @@
 // File: scripts/localized-boxes-fill.js
 // Usage: node scripts/localized-boxes-fill.js [--root PATH] [--dry-run] [--verbose]
 // Task : Copy anchors (.payments-button, .mods-box with data-box-id) and all .box
-//        from EN prototype into localized targets under /pt, /hi, /es, /tr (except
-//        */reviews/*). Insert BEFORE .more-content, keep formatting tidy, and
-//        offline-localize internal links like static-pages-fill.js.
+//        from prototype (EN) page into localized targets under /pt, /hi, /es, /tr,
+//        insert BEFORE .more-content (keep it intact), keep tidy indentation,
+//        and localize internal links offline (prefix /{lang}) like static-pages-fill.
 // ============================================================================
 
 const fs = require("fs/promises");
@@ -20,33 +20,27 @@ async function exists(p){ try { await fs.access(p); return true; } catch { retur
 async function readUtf8(p){ return await fs.readFile(p, "utf8"); }
 function abs(root, p){ return p && p.startsWith("/") ? path.join(root, "."+p) : path.join(root, p); }
 
-/* ---------------- Scan: only /pt, /hi, /es, /tr ---------------- */
-const EXCLUDE_DIRS = new Set([
-  "reviews",".git","node_modules","dist","build",".next","out","coverage",
-  "assets","static","public","images","img","fonts"
-]);
-
-async function listLocalizedHtmlFiles(root, langs){
-  const out = [];
-  for (const lang of langs){
-    const base = path.join(root, lang);
-    if (!(await exists(base))) continue;
-    await walk(base);
-    async function walk(dir){
-      let entries;
-      try { entries = await fs.readdir(dir, { withFileTypes:true }); }
-      catch { return; }
-      for (const e of entries){
-        if (e.isDirectory()){
-          if (EXCLUDE_DIRS.has(e.name)) continue;      // why: прыжок по тяжёлым папкам
-          await walk(path.join(dir, e.name));
-        } else if (e.isFile() && /\.html?$/i.test(e.name)){
-          const rel = "/" + path.relative(root, path.join(dir, e.name)).split(path.sep).join("/");
-          out.push(rel);
-        }
+/* ---------------- Scan (FIXED) ---------------- */
+async function listHtmlFilesUnder(root, langs){
+  const out=[];
+  async function walk(d){
+    const entries = await fs.readdir(d, { withFileTypes:true }).catch(()=>[]);
+    for (const e of entries){
+      const p = path.join(d, e.name);
+      const rel = path.relative(root, p).split(path.sep).join("/");
+      if (e.isDirectory()){
+        await walk(p); // recurse regardless; filter only files
+        continue;
       }
+      if (!e.isFile()) continue;
+      if (!e.name.toLowerCase().endsWith(".html")) continue;
+      if (rel.includes("/reviews/")) continue;
+      const firstSeg = (rel.split("/")[0]||"").toLowerCase();
+      if (!langs.includes(firstSeg)) continue;
+      out.push("/" + rel);
     }
   }
+  await walk(root);
   return out;
 }
 
@@ -63,7 +57,7 @@ function prototypePathFromLocalized(rel){
   return "/" + segs.join("/");
 }
 
-/* ---------------- String-DOM helpers ---------------- */
+/* ---------------- DOM-ish helpers ---------------- */
 function maskSegments(s){
   return s
     .replace(/<!--[\s\S]*?-->/g, m => " ".repeat(m.length))
@@ -147,7 +141,7 @@ function lstripLeadingBlanks(s,nl){
   while(true){
     const j=s.indexOf(nl, i);
     if (j===-1) break;
-    const line=s.slice(i, j);
+    const line=s.slice(i,j);
     if (/^[ \t]*$/.test(line)){ i=j+nl.length; continue; }
     break;
   }
@@ -190,21 +184,22 @@ function extractFromPrototype(prototypeHtml){
   const im = maskSegments(inner);
 
   const anchors = [];
-  // payments-button (все)
-  for (const b of findAllDivByClass(im, "payments-button")){
-    anchors.push(inner.slice(b.openStart, b.closeEnd));
-  }
-  // mods-box (только с data-box-id)
-  for (const b of findAllDivByClass(im, "mods-box")){
+  // payments-button (all in order)
+  const pbs = findAllDivByClass(im, "payments-button");
+  for (const b of pbs) anchors.push(inner.slice(b.openStart, b.closeEnd));
+
+  // mods-box with data-box-id present
+  const mbs = findAllDivByClass(im, "mods-box");
+  for (const b of mbs){
     const openTag = readTag(inner, b.openStart).tagText;
     if (/\bdata-box-id\s*=/.test(openTag)) anchors.push(inner.slice(b.openStart, b.closeEnd));
   }
-  // все .box
+
   const boxes = findAllDivByClass(im, "box").map(b => inner.slice(b.openStart, b.closeEnd));
   return { anchors, boxes };
 }
 
-/* ---------------- Remove in target pre-region ---------------- */
+/* ---------------- Clean target pre-region ---------------- */
 function removeAllByClass(inner, className){
   let out = inner;
   while(true){
@@ -215,7 +210,7 @@ function removeAllByClass(inner, className){
   }
   return out;
 }
-const removeAllBoxes  = (s)=> removeAllByClass(s, "box");
+function removeAllBoxes(inner){ return removeAllByClass(inner, "box"); }
 function removeAllPaymentsAndMods(inner){
   let out = inner;
   out = removeAllByClass(out, "payments-button");
@@ -234,7 +229,7 @@ function detectChildIndent(innerHtml, holderIndent, nl){
   return " ".repeat(stepLen);
 }
 
-/* ---------------- Offline link localization (subset) ---------------- */
+/* ---------------- Offline link localization ---------------- */
 function isExternal(href){ return /^https?:\/\//i.test(href); }
 function escapeHtml(s=""){ return s.replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
 function escapeAttr(s=""){ return escapeHtml(s).replace(/'/g,"&#39;"); }
@@ -423,33 +418,22 @@ function localizeLanguageLinks(html, lang){
   const { root, dry, verbose } = parseArgs(process.argv.slice(2));
   const TARGET_LANGS = ["pt","hi","es","tr"];
 
-  console.log(`Scanning ${TARGET_LANGS.map(s=>"/"+s).join(", ")} under: ${root}`);
-  const targets = await listLocalizedHtmlFiles(root, TARGET_LANGS);
-
+  const targets = await listHtmlFilesUnder(root, TARGET_LANGS);
   if (!targets.length){
     console.error("No localized targets found under /pt, /hi, /es, /tr.");
     process.exit(2);
   }
 
-  const perLang = new Map();
-  for (const rel of targets){
-    const l = detectLangFromRel(rel);
-    perLang.set(l, (perLang.get(l)||0)+1);
-  }
-  console.log(`Found ${targets.length} localized HTML files${verbose ? ":\n" + [...perLang.entries()].map(([l,c])=>`  - ${l}: ${c}`).join("\n") : ""}`);
-
-  let updated=0, skipped=0, processed=0;
+  let updated=0, skipped=0;
 
   for (const rel of targets){
-    processed++;
-    if (verbose && processed % 25 === 0) console.log(`[PROGRESS] ${processed}/${targets.length}`);
-
     const lang = detectLangFromRel(rel);
     const protoRel = prototypePathFromLocalized(rel);
 
     const targetFull = abs(root, rel);
     const protoFull  = abs(root, protoRel);
 
+    if (!(await exists(targetFull))) { if (verbose) console.warn(`[MISS] target ${rel}`); skipped++; continue; }
     if (!(await exists(protoFull)))  { if (verbose) console.warn(`[MISS] proto ${protoRel} for ${rel}`); skipped++; continue; }
 
     const targetHtml = await readUtf8(targetFull);
@@ -471,7 +455,7 @@ function localizeLanguageLinks(html, lang){
     const insertAt = more ? more.openStart : tInner.length;
 
     const preRaw  = tInner.slice(0, insertAt);
-    const postRaw = tInner.slice(insertAt); // keep as-is (incl. .more-content)
+    const postRaw = tInner.slice(insertAt); // keep as is (includes .more-content)
 
     let preClean = removeAllBoxes(preRaw);
     preClean = removeAllPaymentsAndMods(preClean);
@@ -488,16 +472,18 @@ function localizeLanguageLinks(html, lang){
 
     const left  = rstripToSingleNL(preClean, nl);
     const right = lstripLeadingBlanks(postRaw, nl);
+    const newInner = (left ?? "") + mid + (right ?? "");
+
     let newHtml =
       targetHtml.slice(0, tHolder.openEnd) +
-      (left ?? "") + mid + (right ?? "") +
+      newInner +
       targetHtml.slice(tHolder.closeStart);
 
     newHtml = localizeLanguageLinks(newHtml, lang);
 
     if (newHtml !== targetHtml){
       if (!dry) await fs.writeFile(targetFull, newHtml, "utf8");
-      console.log(`${dry ? "[DRY]" : "[OK] "} ${rel}  ←  ${protoRel}`);
+      console.log(`${dry ? "[DRY]" : "[OK] "} ${rel}`);
       updated++;
     } else {
       if (verbose) console.log(`[SKIP] no changes: ${rel}`);
@@ -505,5 +491,5 @@ function localizeLanguageLinks(html, lang){
     }
   }
 
-  console.log(`\nDone. Updated: ${updated}, skipped: ${skipped}, processed: ${targets.length}`);
+  console.log(`\nDone. Updated: ${updated}, skipped: ${skipped}, targets: ${targets.length}`);
 })().catch(e => { console.error(e); process.exit(1); });
