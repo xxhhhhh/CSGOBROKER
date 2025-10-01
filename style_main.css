@@ -873,11 +873,8 @@ nav .pages {
     align-items: center;
     cursor: auto;
     z-index: 10;
-    left: 13px;
-    top: 17px;
-    padding: 4px 12px;
-    background: rgba(11, 11, 11, .7);
-    border-radius: 10px;
+    left: 25px;
+    top: 21px;
 }
 
 .preview-extras {
@@ -993,14 +990,11 @@ nav .pages {
     font-size: 14px;
     opacity: 1;
     width: auto;
-    left: 13px;
-    top: 43px;
+    left: 25px;
+    top: 47px;
     align-items: flex-start;
     justify-content: space-between;
     height: auto;
-    padding: 4px 12px;
-    background: rgba(11, 11, 11, .7);
-    border-radius: 10px;
 }
 
 /* .skin-color-info:empty,
