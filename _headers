@@ -1,0 +1,23 @@
+/*                 # по умолчанию
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: interest-cohort=()
+
+/index.html
+  Cache-Control: no-store, must-revalidate
+
+/*.html
+  Cache-Control: no-store, must-revalidate
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/code-parts/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/code-parts/*.json
+  Cache-Control: public, max-age=60, stale-while-revalidate=300

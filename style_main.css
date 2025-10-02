@@ -7141,14 +7141,18 @@ footer .centralizer .footer-content {
     z-index: 1000;
     backdrop-filter: blur(5px);
     height: 0%;
+    opacity: 0;
     visibility: hidden;
-    transition: all .2s ease-in-out;
+    top: 78px;
+    transition: none;
 }
 
 .topic-nav-selector.active {
     height: 100%;
     visibility: visible;
-    top: 78px;
+    transform: unset;
+    opacity: 1;
+    transition: all .15s ease-in-out;
 }
 
 .topicpage:has(.topic-nav-selector.active) {
