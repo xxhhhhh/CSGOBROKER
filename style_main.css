@@ -126,7 +126,20 @@ header {
     transition: all .15s ease-in-out;
     border-radius: 10px;
     margin-top: 8px;
+    will-change: transform;
+    backface-visibility: hidden;
 }
+
+  header.is-hidden {
+    transform: translate(-50%, -120%);
+    opacity: 0;               /* чтобы не мигал hover */
+    pointer-events: none;     /* клики не ловит, пока скрыт */
+  }
+
+  /* header.is-pinned {
+    position: fixed;
+  } */
+
 
 .nondef header {
     width: 83%;
@@ -1542,7 +1555,7 @@ nav .pages {
     background: var(--darkgray);
     height: 55px;
     overflow: hidden;
-    margin: 8px 0 0 0;
+    margin: 9px 0 0 0;
     padding-right: 8px;
     width: 100%;
     position: relative;
@@ -4096,12 +4109,14 @@ nav img {
     position: fixed;
     display: flex;
     flex-direction: column;
+    transition: all .2s ease-in-out;
+    top: 87px;
     z-index: 1;
     gap: 8px;
 }
 
-.topic .siteblock {
-    margin-top: 8px;
+.ssiodox:has(header.is-hidden) .siteblock {
+    top: 9px;
 }
 
 .bonusincludes {
@@ -13781,7 +13796,12 @@ header {
     .siteblock {
         position: relative;
         background: var(--darkgray);
+        top: unset;
         gap: unset;
+    }
+
+    .ssiodox:has(header.is-hidden) .siteblock {
+        top: unset;
     }
 
     .box {

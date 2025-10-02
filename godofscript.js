@@ -3057,6 +3057,76 @@ function loadModsJSON() {
     });
 }
 
+(() => {
+  const header = document.querySelector('header');
+  if (!header) return;
+
+  const cfg = {
+    upVelocityReveal: 0.6,  // px/ms — "резкость" апа (≈600 px/s)
+    upDeltaReveal: 80,      // px — альт. порог рывка вверх
+    ignoreDelta: 2,         // px — игнор шума
+    minLockMs: 400,         // ms — защита от мгновенного скрытия
+    hideAfter: () => headerH + 12
+  };
+
+  let headerH = header.offsetHeight;
+  let lastY = Math.max(0, window.scrollY || 0);
+  let lastT = performance.now();
+  let ticking = false;
+  let lockUntil = 0;
+  let hidden = false;
+
+  const hide = () => {
+    if (!hidden) { header.classList.add('is-hidden'); hidden = true; }
+  };
+  const show = (lock = false) => {
+    if (hidden) { header.classList.remove('is-hidden'); hidden = false; }
+    if (lock) lockUntil = performance.now() + cfg.minLockMs; // почему: не прячем сразу после резкого апа
+  };
+
+  const update = () => {
+    ticking = false;
+
+    const now = performance.now();
+    const y = Math.max(0, window.scrollY || 0);  // почему: iOS bounce
+    const dy = y - lastY;
+    const dt = Math.max(16, now - lastT);
+    const v = dy / dt;
+
+    headerH = header.offsetHeight;
+
+    if (y <= 0) { show(false); lastY = y; lastT = now; return; }
+    if (Math.abs(dy) <= cfg.ignoreDelta) { lastY = y; lastT = now; return; }
+
+    const fastUp = dy < 0 && ((-v) >= cfg.upVelocityReveal || (-dy) >= cfg.upDeltaReveal);
+
+    if (fastUp) {
+      show(true);
+    } else if (dy > 0 && y > cfg.hideAfter() && now >= lockUntil) {
+      hide();
+    } else if (dy < 0) {
+      show(false);
+    }
+
+    lastY = y;
+    lastT = now;
+  };
+
+  const onScroll = () => {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', () => { headerH = header.offsetHeight; }, { passive: true });
+  document.addEventListener('visibilitychange', () => {
+    // почему: при возврате на вкладку устраняем "рывок" из-за устаревших lastY/lastT
+    lastY = Math.max(0, window.scrollY || 0);
+    lastT = performance.now();
+  });
+
+  update();
+})();
+
 // function loadCachedData_sitesInfo() {
 //   const cachedData = StorageHelper.getJSON('sites_info');
 //   if (cachedData) {
