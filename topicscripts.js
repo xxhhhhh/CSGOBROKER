@@ -1272,6 +1272,9 @@ async function switchSkin(direction) {
 
 });
 
+// /assets/js/topic-nav-fix.js
+
+// Гейт по путям
 if (
   window.location.pathname.includes("/items/") ||
   window.location.pathname.includes("/cases/") ||
@@ -1279,24 +1282,38 @@ if (
   window.location.pathname.includes("/collections/")
 ) {
 
+  // --- КЭШ ЗАГРУЗКИ ДАННЫХ ---
   async function loadNavDataWithCache() {
     const cacheKey = "topicNavCache";
     const cacheTimeKey = "topicNavCache-time";
-    const cached = StorageHelper.get(cacheKey);
-    const cachedTime = StorageHelper.get(cacheTimeKey);
     const maxAge = 24 * 60 * 60 * 1000;
 
-    if (cached && cachedTime && Date.now() - +cachedTime < maxAge) {
-      return JSON.parse(cached);
+    try {
+      const cached = StorageHelper?.get?.(cacheKey);
+      const cachedTime = StorageHelper?.get?.(cacheTimeKey);
+
+      if (cached && cachedTime && Date.now() - +cachedTime < maxAge) {
+        return JSON.parse(cached);
+      }
+    } catch (e) {
+      console.warn("[topic-nav] cache read failed", e);
     }
 
-    const response = await fetch("/code-parts/topics/topics-nav-items.json");
+    const response = await fetch("/code-parts/topics/topics-nav-items.json", { credentials: "same-origin" });
+    if (!response.ok) throw new Error(`topics-nav-items.json ${response.status}`);
     const data = await response.json();
-    StorageHelper.set(cacheKey, JSON.stringify(data));
-    StorageHelper.set(cacheTimeKey, Date.now().toString());
+
+    try {
+      StorageHelper?.set?.(cacheKey, JSON.stringify(data));
+      StorageHelper?.set?.(cacheTimeKey, Date.now().toString());
+    } catch (e) {
+      console.warn("[topic-nav] cache write failed", e);
+    }
+
     return data;
   }
 
+  // --- DOM Сборка категории ---
   function createCategoryDOM(category, isMobileView) {
     const container = document.createElement("div");
     container.classList.add("weapon-container");
@@ -1304,7 +1321,8 @@ if (
     const current = document.createElement("div");
     current.classList.add("weapon-current");
 
-    const currentName = isMobileView && languageTag === "ru" ? category["name-ru"] || category.name : category.name;
+    const currentName =
+      isMobileView && languageTag === "ru" ? category["name-ru"] || category.name : category.name;
 
     current.innerHTML = isMobileView
       ? `<span>${currentName}</span><i class="officon oldcarret"></i>`
@@ -1313,19 +1331,19 @@ if (
     const list = document.createElement("ul");
     list.classList.add("weapon-selection");
 
-    category.items.forEach(item => {
-      const localizedHref = languageTag === "ru" && !item.link.startsWith("/ru/")
-        ? `/ru${item.link}`
-        : item.link;
+    (category.items || []).forEach((item) => {
+      const localizedHref =
+        languageTag === "ru" && !item.link.startsWith("/ru/") ? `/ru${item.link}` : item.link;
 
-      list.innerHTML += `
-        <li class="weapon-selection-unite">
+      list.insertAdjacentHTML(
+        "beforeend",
+        `<li class="weapon-selection-unite">
           <a href="${localizedHref}" class="weapon-selection-redir">
             <img src="${item.image}" draggable="false" alt="${item.name}">
             <span>${item.name}</span>
           </a>
-        </li>
-      `;
+        </li>`
+      );
     });
 
     container.appendChild(current);
@@ -1333,99 +1351,160 @@ if (
     return container;
   }
 
-  loadNavDataWithCache().then(async data => {
-    const topicTopPanel = document.querySelector("div.sitetoppannel");
-    const topicPage = document.querySelector("div.topicpage");
-    const isMobileView = window.innerWidth < 1365;
+  // --- Привязка обработчиков (делегирование на документ) ---
+  function bindTopicNavEvents() {
+    // Уже привязан? не дублируем
+    if (document.__topicNavBound) return;
+    document.__topicNavBound = true;
 
-    if (!topicTopPanel || !topicPage) return;
+    const mq = window.matchMedia("(max-width: 1364px)");
 
-    const navElements = [];
+    document.addEventListener("click", (e) => {
+      // работаем только в мобильном виде
+      if (!mq.matches) return;
 
-    for (const category of data) {
-      if (category["import-items"]) {
-        try {
-          const importedData = await (await fetch(`/code-parts/topics/${category["import-items"]}.json`)).json();
-          const importedItems = importedData.items || [];
-          importedItems.sort((a, b) => {
-            const parseDate = (str) => {
-              const [d, m, y] = str.split(".");
-              return new Date(`20${y}`, m - 1, d);
-            };
-            const dateA = a.date ? parseDate(a.date) : new Date(0);
-            const dateB = b.date ? parseDate(b.date) : new Date(0);
-            return dateB - dateA;
-          });      
+      // Открыть/закрыть конкретную категорию
+      const currentBtn = e.target.closest(".weapon-current");
+      if (currentBtn) {
+        const container = currentBtn.closest(".weapon-container");
+        if (!container) return;
 
-          const importType = category["import-items"];
-          const pathType = ["autograph-capsules", "sticker-capsules"].includes(importType) ? "stickers" : importType;
-
-          category.items = importedItems.map(item => ({
-            name: item.title,
-            image: item.img,
-            link: `/topic/${pathType}/${item.id}`
-          }));
-        } catch (e) {
-          console.error("Failed to import items from", category["import-items"], e);
-          category.items = [];
-        }
+        const isActive = container.classList.contains("active");
+        document.querySelectorAll(".weapon-container.active").forEach((c) => c.classList.remove("active"));
+        if (!isActive) container.classList.add("active");
+        return;
       }
 
-      navElements.push(createCategoryDOM(category, isMobileView));
+      // Закрыть всё
+      if (e.target.closest(".topic-nav-close")) {
+        document.querySelector(".topic-nav-selector")?.classList.remove("active");
+        document.querySelectorAll(".weapon-container.active").forEach((c) => c.classList.remove("active"));
+        document.querySelector(".topic-nav-box")?.classList.remove("active");
+        document.querySelector(".pages")?.classList.remove("hardhidden");
+        return;
+      }
+
+      // Тоггл основного меню (ВАЖНО: .topic-nav-box находится вне .topicpage)
+      const navBox = e.target.closest(".topic-nav-box");
+      if (navBox) {
+        const navSelector = document.querySelector(".topic-nav-selector");
+        // Почему: из-за рефакторинга DOM navBox может жить в .siteleftpannel, а не в .topicpage
+        const nowActive = !navBox.classList.contains("active");
+
+        navBox.classList.toggle("active", nowActive);
+        navSelector?.classList.toggle("active", nowActive);
+        document.querySelector(".pages")?.classList.toggle("hardhidden", nowActive);
+
+        if (!nowActive) {
+          document.querySelectorAll(".weapon-container.active").forEach((c) => c.classList.remove("active"));
+        }
+      }
+    });
+  }
+
+  // --- Построение меню + события ---
+  (async function initTopicNav() {
+    const topicTopPanel = document.querySelector("div.sitetoppannel");
+    const topicPage = document.querySelector("div.topicpage");
+    if (!topicTopPanel || !topicPage) {
+      bindTopicNavEvents(); // всё равно вешаем обработчики — вдруг HTML уже отрендерен сервером
+      return;
     }
 
-    if (isMobileView) {
-      const navMenu = document.createElement("div");
-      navMenu.classList.add("topic-nav-menu");
+    const isMobileView = window.innerWidth < 1365;
 
-      navElements.forEach(el => navMenu.appendChild(el));
-      navMenu.appendChild(document.createElement("div")).className = "topic-nav-close";
+    // Сначала события (чтобы клики работали даже если загрузка упадёт)
+    bindTopicNavEvents();
 
-      const navWrapper = document.createElement("div");
-      navWrapper.classList.add("topic-nav-selector");
-      navWrapper.appendChild(navMenu);
+    try {
+      const data = await loadNavDataWithCache();
 
-      topicPage.appendChild(navWrapper);
+      const navElements = [];
+      for (const category of data) {
+        if (category["import-items"]) {
+          try {
+            const resp = await fetch(`/code-parts/topics/${category["import-items"]}.json`, { credentials: "same-origin" });
+            if (!resp.ok) throw new Error(`${category["import-items"]}.json ${resp.status}`);
+            const importedData = await resp.json();
+            const importedItems = Array.isArray(importedData.items) ? [...importedData.items] : [];
 
-      topicPage.addEventListener("click", function (e) {
-        if (e.target.closest(".weapon-current")) {
-          const container = e.target.closest(".weapon-container");
-          const isActive = container.classList.contains("active");
+            importedItems.sort((a, b) => {
+              const parseDate = (str) => {
+                const [d, m, y] = String(str).split(".");
+                return new Date(`20${y}`, Number(m) - 1 || 0, Number(d) || 1);
+              };
+              const dateA = a?.date ? parseDate(a.date) : new Date(0);
+              const dateB = b?.date ? parseDate(b.date) : new Date(0);
+              return dateB - dateA;
+            });
 
-          document.querySelectorAll(".weapon-container").forEach(c => c.classList.remove("active"));
+            const importType = category["import-items"];
+            const pathType = ["autograph-capsules", "sticker-capsules"].includes(importType) ? "stickers" : importType;
 
-          if (!isActive) {
-            container.classList.add("active");
+            category.items = importedItems.map((item) => ({
+              name: item.title,
+              image: item.img,
+              link: `/topic/${pathType}/${item.id}`,
+            }));
+          } catch (e) {
+            console.error("Failed to import items from", category["import-items"], e);
+            category.items = [];
           }
         }
 
-        if (e.target.closest(".topic-nav-close")) {
-          document.querySelector(".topic-nav-selector").classList.remove("active");
-          document.querySelectorAll(".weapon-container").forEach(c => c.classList.remove("active"));
-          document.querySelector(".topic-nav-box")?.classList.remove("active");
-          document.querySelector(".pages")?.classList.remove("hardhidden");
+        navElements.push(createCategoryDOM(category, isMobileView));
+      }
+
+      if (isMobileView) {
+        // Мобильный селектор
+        let navWrapper = document.querySelector(".topic-nav-selector");
+        let navMenu;
+
+        if (!navWrapper) {
+          navMenu = document.createElement("div");
+          navMenu.classList.add("topic-nav-menu");
+          navWrapper = document.createElement("div");
+          navWrapper.classList.add("topic-nav-selector");
+          navWrapper.appendChild(navMenu);
+          topicPage.appendChild(navWrapper);
+        } else {
+          navMenu = navWrapper.querySelector(".topic-nav-menu") || (() => {
+            const m = document.createElement("div");
+            m.classList.add("topic-nav-menu");
+            navWrapper.appendChild(m);
+            return m;
+          })();
+          navMenu.innerHTML = "";
         }
 
-        if (e.target.closest(".topic-nav-box")) {
-          const navBox = e.target.closest(".topic-nav-box");
-          const navSelector = document.querySelector(".topic-nav-selector");
+        navElements.forEach((el) => navMenu.appendChild(el));
+        const closeEl = document.createElement("div");
+        closeEl.className = "topic-nav-close";
+        navMenu.appendChild(closeEl);
+      } else {
+        // Десктоп — в топ-панель
+        topicTopPanel.innerHTML = "";
+        navElements.forEach((el) => topicTopPanel.appendChild(el));
+        topicPage.classList.add("fade-in-topic");
+      }
+    } catch (e) {
+      console.error("[topic-nav] init failed:", e);
+      // обработчики уже привязаны — меню, если отрендерено в HTML, будет работать
+    }
+  })();
 
-          const isActive = navBox.classList.contains("active");
-
-          navBox.classList.toggle("active", !isActive);
-          navSelector.classList.toggle("active", !isActive);
-
-          document.querySelector(".pages")?.classList.toggle("hardhidden", !isActive);
-        }
-      });
-
-    } else {
-      topicTopPanel.innerHTML = "";
-      navElements.forEach(el => topicTopPanel.appendChild(el));
-      topicPage.classList.add("fade-in-topic");
+  // Перепривязка при ресайзе (смена режима)
+  window.addEventListener("resize", () => {
+    // делегирование уже есть; здесь можно дополнительно закрыть меню, чтобы избежать висящих состояний
+    if (window.innerWidth >= 1365) {
+      document.querySelector(".topic-nav-selector")?.classList.remove("active");
+      document.querySelector(".topic-nav-box")?.classList.remove("active");
+      document.querySelector(".pages")?.classList.remove("hardhidden");
+      document.querySelectorAll(".weapon-container.active").forEach((c) => c.classList.remove("active"));
     }
   });
 }
+
 
 
 

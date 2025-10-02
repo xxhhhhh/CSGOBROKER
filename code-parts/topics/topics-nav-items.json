@@ -2,8 +2,8 @@
   {
     "name": "Knives",
     "name-ru": "Ножи",
-    "alt": "Butterfly Knife | Vanilla",
-    "image": "/img/skins/knives/butterfly-vanilla.webp",
+    "alt": "Knife Icon",
+    "image": "/img/icons/gamemodes/knives-category.svg",
     "items": [
       {
         "name": "Bayonet",
@@ -110,8 +110,8 @@
   {
     "name": "Gloves",
     "name-ru": "Перчатки",
-    "alt": "Sport Gloves | Nocts",
-    "image": "/img/skins/gloves/nocts.webp",
+    "alt": "Gloves Icon",
+    "image": "/img/icons/gamemodes/gloves-category.svg",
     "items": [
       {
         "name": "Bloodhound Gloves",
@@ -158,8 +158,8 @@
   {
     "name": "Pistols",
     "name-ru": "Пистолеты",
-    "alt": "USP-S",
-    "image": "/img/skins/usp-s/vanilla.webp",
+    "alt": "Pistol Icon",
+    "image": "/img/icons/gamemodes/pistols-category.svg",
     "items": [
       {
         "name": "CZ75-Auto",
@@ -221,8 +221,8 @@
   {
     "name": "SMGs",
     "name-ru": "Пистолеты-Пулеметы",
-    "alt": "MP9",
-    "image": "/img/skins/mp9/vanilla.webp",
+    "alt": "SMG Icon",
+    "image": "/img/icons/gamemodes/smgs-category.svg",
     "items": [
       {
         "name": "MAC-10",
@@ -264,8 +264,8 @@
   {
     "name": "Shotguns",
     "name-ru": "Дробовики",
-    "alt": "MAG-7",
-    "image": "/img/skins/mag-7/vanilla.webp",
+    "alt": "Shotgun Icon",
+    "image": "/img/icons/gamemodes/shotguns-category.svg",
     "items": [
       {
         "name": "MAG-7",
@@ -292,8 +292,8 @@
   {
     "name": "Machineguns",
     "name-ru": "Пулеметы",
-    "alt": "Negev",
-    "image": "/img/skins/negev/vanilla.webp",
+    "alt": "MachineGun Icon",
+    "image": "/img/icons/gamemodes/mguns-category.svg",
     "items": [
       {
         "name": "M249",
@@ -310,8 +310,8 @@
   {
     "name": "Rifles",
     "name-ru": "Винтовки",
-    "alt": "M4A4",
-    "image": "/img/skins/m4a4/vanilla.webp",
+    "alt": "Rifle Icon",
+    "image": "/img/icons/gamemodes/rifles-category.png",
     "items": [
       {
         "name": "AK-47",
@@ -353,8 +353,8 @@
   {
     "name": "Sniper Rifles",
     "name-ru": "Снайперские Винтовки",
-    "alt": "AWP",
-    "image": "/img/skins/awp/vanilla.webp",
+    "alt": "Sniper Rifle Icon",
+    "image": "/img/icons/gamemodes/snipers-category.svg",
     "items": [
       {
         "name": "AWP",
@@ -381,36 +381,36 @@
   {
     "name": "Sticker Capsules",
     "name-ru": "Капсулы со Стикерами",
-    "alt": "Sticker Capsule",
-    "image": "/img/skins/sticker-capsules/sticker-capsule.webp",
+    "alt": "Sticker Capsule Icon",
+    "image": "/img/icons/gamemodes/capsule-category.png",
     "import-items": "sticker-capsules"
   },
   {
     "name": "Autograph Capsules",
     "name-ru": "Капсулы с Автографами",
-    "alt": "London 2018 Legends",
-    "image": "/img/skins/sticker-capsules/london-2018-legends-autograph-capsule.webp",
+    "alt": "Autograph Capsule Icon",
+    "image": "/img/icons/gamemodes/capsule-category.png",
     "import-items": "autograph-capsules"
   },
   {
     "name": "Collections",
     "name-ru": "Коллекции",
-    "alt": "The Radiant Collection",
-    "image": "/img/skins/collections/the-radiant-collection.webp",
+    "alt": "Collection Icon",
+    "image": "/img/icons/gamemodes/collections.webp",
     "import-items": "collections"
   },
   {
     "name": "Cases",
     "name-ru": "Кейсы",
-    "alt": "Fever Case",
-    "image": "/img/skins/cases/fever-case.webp",
+    "alt": "Case Icon",
+    "image": "/img/icons/gamemodes/mods-box/cases.webp",
     "import-items": "cases"
   },
   {
     "name": "Agents",
     "name-ru": "Агенты",
-    "alt": "Dragomir | Sabre",
-    "image": "/img/skins/agents/sabre/dragomir.webp",
+    "alt": "Agent Icon",
+    "image": "/img/icons/gamemodes/agents.webp",
     "items": [
       {
         "name": "All Agents",
