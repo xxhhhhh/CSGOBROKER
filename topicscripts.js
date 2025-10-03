@@ -2401,7 +2401,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       boxTopics.forEach((box, index) => {
         if (index >= start && index < end) {
-          const delay = ((index % itemsPerPage) + 1) * 0.05;
+          const delay = ((index % itemsPerPage) + 1) * 0.025;
           box.style.animationDelay = `${delay}s`;
           box.classList.remove("hidden");
           box.classList.add("fade-in");

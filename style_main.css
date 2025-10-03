@@ -133,11 +133,11 @@ header {
     backface-visibility: hidden;
 }
 
-  header.is-hidden {
-    transform: translate(-50%, -120%);
-    opacity: 0;               /* чтобы не мигал hover */
-    pointer-events: none;     /* клики не ловит, пока скрыт */
-  }
+.ssiodox:not(.nondef) header.is-hidden {
+transform: translate(-50%, -120%);
+opacity: 0;               /* чтобы не мигал hover */
+pointer-events: none;     /* клики не ловит, пока скрыт */
+}
 
   /* header.is-pinned {
     position: fixed;
@@ -1558,7 +1558,6 @@ nav .pages {
     background: var(--darkgray);
     height: 55px;
     overflow: hidden;
-    margin: 9px 0 0 0;
     padding-right: 8px;
     width: 100%;
     position: relative;
@@ -3995,10 +3994,6 @@ nav img {
     padding-top: 9px;
 }
 
-.sitepage.topic {
-    padding-top: unset;
-}
-
 .sitedetails {
     position: absolute;
 }
@@ -4113,13 +4108,8 @@ nav img {
     display: flex;
     flex-direction: column;
     transition: all .2s ease-in-out;
-    top: 87px;
     z-index: 1;
     gap: 8px;
-}
-
-.ssiodox:has(header.is-hidden) .siteblock {
-    top: 9px;
 }
 
 .bonusincludes {
