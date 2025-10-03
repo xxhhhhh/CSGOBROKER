@@ -72,7 +72,7 @@ function injectReviewSchema(filePath) {
     "author": {
       "@type": "Person",
       "name": "CSGOBroker",
-      "url": "https://csgobroker.cc/"
+      "url": "https://csgobroker.cc"
     },
     "reviewRating": {
       "@type": "Rating",

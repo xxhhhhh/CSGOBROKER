@@ -94,7 +94,7 @@ function injectSchemaForGuide(htmlPath, slug) {
 
   const caption = `${title} - Guide by ${jsonData.author.name}`;
   const breadcrumb = [
-    { "@type": "ListItem", position: 1, name: "CSGOBroker", item: "https://csgobroker.cc/" },
+    { "@type": "ListItem", position: 1, name: "CSGOBroker", item: "https://csgobroker.cc" },
     { "@type": "ListItem", position: 2, name: "Guides", item: "https://csgobroker.cc/topic/guides/" },
     { "@type": "ListItem", position: 3, name: title }
   ];
@@ -157,7 +157,7 @@ function injectSchemaForGuide(htmlPath, slug) {
       {
         "@type": "WebSite",
         "@id": "https://csgobroker.cc/#website",
-        "url": "https://csgobroker.cc/",
+        "url": "https://csgobroker.cc",
         "name": "CSGOBroker",
         "description": websiteDescription,
         "publisher": { "@id": "https://csgobroker.cc/#organization" },
@@ -167,7 +167,7 @@ function injectSchemaForGuide(htmlPath, slug) {
         "@type": "Organization",
         "@id": "https://csgobroker.cc/#organization",
         "name": "CSGOBroker",
-        "url": "https://csgobroker.cc/",
+        "url": "https://csgobroker.cc",
         "logo": {
           "@type": "ImageObject",
           "inLanguage": langFull,
