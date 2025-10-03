@@ -27,6 +27,7 @@ const ORDER = [
   "freebies-fill.js",
   "alt-langs.js",
   "static-pages-fill.js",
+  "build-search-config.js",
   "sitemap-updater.js",
 ];
 
