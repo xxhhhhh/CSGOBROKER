@@ -111,7 +111,7 @@ function generateBreadcrumbList(pageUrl, alt, urlParts, langCode) {
 
     if (["reviews", "steam", "mirrors", "tf2"].includes(current)) continue;
 
-    if (parts[0] === 'topic' && ['cases', 'collections'].includes(parts[1]) && parts.length >= 3) {
+    if (parts[0] === 'topic' && ['cases', 'charms', 'collections'].includes(parts[1]) && parts.length >= 3) {
       insertItemFromPath(['topic']);
       insertItemFromPath(['topic', 'items']);
       insertItemFromPath(['topic', 'items-type', parts[1]]);
@@ -125,7 +125,7 @@ function generateBreadcrumbList(pageUrl, alt, urlParts, langCode) {
       continue;
     }
 
-    if (["stickers", "items-type", "collection", "cases", "collections"].includes(current)) {
+    if (["stickers", "items-type", "collection", "cases", "charms", "collections"].includes(current)) {
       insertItemFromPath(currentParts.slice(0, i).concat(['items']));
     }
 
@@ -146,7 +146,7 @@ function generateBreadcrumbList(pageUrl, alt, urlParts, langCode) {
     addedPaths.add(key);
 
     const fullPath = isDefaultLang ? labelParts : [langCode, ...labelParts];
-    const skipMissing = ['csgo', 'tf2', 'steam', 'mirrors', 'reviews', 'stickers', 'cases', 'collections'];
+    const skipMissing = ['csgo', 'tf2', 'steam', 'mirrors', 'reviews', 'stickers', 'cases', 'charms', 'collections'];
     const filePath = fileExistsForPath(fullPath);
     if (!filePath) {
       if (skipMissing.includes(labelParts[labelParts.length - 1])) return;
