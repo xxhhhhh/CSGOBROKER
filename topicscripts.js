@@ -4,6 +4,7 @@ $(document).ready(function () {
       currentPath.includes("/topic/items/") ||
       currentPath.includes("/topic/stickers/") ||
       currentPath.includes("/topic/cases/") ||
+      currentPath.includes("/topic/charms/") ||
       currentPath.includes("/topic/collections/") ||
       currentPath.includes("/topic/skins/") ||
       currentPath.includes("/topic/guides/") ||
@@ -438,7 +439,7 @@ insertRandomRecBox();
       
         if (!hasActiveFilters) {
           if ($resetButton.length === 0) {
-            $(".topic-centralizer").append('<div class="navigation-reset">Reset Navigation</div>');
+            $(".topic-centralizer").append('<div class="navigation-reset">Reset Sort</div>');
           }
         } else {
           $resetButton.remove();
@@ -967,6 +968,7 @@ async function switchSkin(direction) {
         currentPath.includes("/items/") ||
         currentPath.includes("/stickers/") ||
         currentPath.includes("/cases/") ||
+        currentPath.includes("/charms/") ||
         currentPath.includes("/skins/") ||
         currentPath.includes("/collections/")
       ) {
@@ -1126,13 +1128,14 @@ async function switchSkin(direction) {
       }
     (async function autoImportFullJsonIfNeeded() {
       const currentPath = window.location.pathname;
-      const validPrefixes = ["/topic/items/", "/topic/collections/", "/topic/stickers/"];
+      const validPrefixes = ["/topic/items/", "/topic/collections/", "/topic/stickers/", "/topic/charms/"];
       const shouldProcess = validPrefixes.some(prefix => currentPath.includes(prefix));
       if (!shouldProcess) return;
 
       const topicId = currentPath.split("/").pop().replace(/\.html$/, "");
       const isCollection = currentPath.includes("/topic/collections/");
       const isSticker = currentPath.includes("/topic/stickers/");
+      const isCharm = currentPath.includes("/topic/charms/");
 
       try {
         let mode;
@@ -1145,6 +1148,7 @@ async function switchSkin(direction) {
         if (!mode) {
           if (isCollection) mode = 2;
           if (isSticker) mode = 1;
+          if (isCharm) mode = 1;
         }
         if (!mode) return;
 
@@ -1278,6 +1282,7 @@ async function switchSkin(direction) {
 if (
   window.location.pathname.includes("/items/") ||
   window.location.pathname.includes("/cases/") ||
+  window.location.pathname.includes("/charms/") ||
   window.location.pathname.includes("/stickers/") ||
   window.location.pathname.includes("/collections/")
 ) {
@@ -2107,7 +2112,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const isStickerCraftsListPage = /\/topic\/sticker-crafts(?:\.html)?$/.test(path);
   const isStickerCraftsPage = isStickerCraftsSkinPage || isStickerCraftsListPage;
   
-  const itemTypeMatch = path.match(/\/topic\/(?:items-type\/)?(cases|collections|sticker-capsules|autograph-capsules)(?:\.html)?$/);
+  const itemTypeMatch = path.match(/\/topic\/(?:items-type\/)?(cases|charms|collections|sticker-capsules|autograph-capsules)(?:\.html)?$/);
 
   const isItemsTypePage = !!itemTypeMatch;
   const itemType = itemTypeMatch ? itemTypeMatch[1] : null;

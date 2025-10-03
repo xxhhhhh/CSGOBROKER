@@ -656,7 +656,7 @@ nav .pages {
     display: flex;
     height: 50px;
     top: 230px;
-    left: 58%;
+    left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
     padding: 0 15px;
@@ -4109,7 +4109,7 @@ nav img {
     position: fixed;
     display: flex;
     flex-direction: column;
-    transition: all .25s ease-in-out;
+    transition: all .2s ease-in-out;
     top: 87px;
     z-index: 1;
     gap: 8px;
