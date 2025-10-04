@@ -28,7 +28,7 @@ const ORDER = [
   "alt-langs.js",
   "static-pages-fill.js",
   "build-search-config.js",
-  "sitemap-updater.js",
+  "meta-and-sitemap.js",
 ];
 
 const HELP_TEXT = `
