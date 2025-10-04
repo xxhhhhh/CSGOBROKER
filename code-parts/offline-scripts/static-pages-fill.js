@@ -212,15 +212,16 @@ function computeGoKey(baseKey, urlPath = "", lang = "en", data = {}) {
   if ((/\/ru(?:\/|$)/.test(p)) && (p.includes("/earning/earn-by-play") || p.includes("/csgo/earn-by-play-csgo")) && hasPlain("earn-by-play")) {
     return `${base}-earn-by-play`;
   }
-  // Earn by Play (EN маршрут)
-  if (hasSeg("earn-by-play") && hasPlain("earn-by-play-en")) {
+
+  // Earn by Play (все остальные языки, кроме ru)
+  if (!/\/ru(?:\/|$)/.test(p) && hasSeg("earn-by-play") && hasPlain("earn-by-play-en")) {
     return `${base}-earn-by-play-en`;
   }
 
-  // EN-версия (если есть base-en или link-en)
-  if (String(lang).toLowerCase() === "en") {
-    if (hasPlain(`${base}-en`)) return `${base}-en`;     // поддержка старых json-ключей
-    if (hasPlain("link-en"))    return `${base}-en`;     // плоский суффикс /en
+  // Все НЕ-RU языки считаются EN-версией
+  if (String(lang).toLowerCase() !== "ru") {
+    if (hasPlain(`${base}-en`)) return `${base}-en`;   // поддержка старых json-ключей
+    if (hasPlain("link-en"))    return `${base}-en`;   // плоский суффикс /en
   }
 
   // По умолчанию /go/<base>
@@ -1409,7 +1410,10 @@ function ensureCopyButtonInMainBox(html, codeValue, nl){
 
 /* ---- NEW: TG button (Telegram App) вставка/апдейт ---- */
 function ensureTGButtonInBoxHtml(boxHtml, data, lang, nl){
-  const tgHref = (String(lang).toLowerCase() === "en" && data && data["tg-app-en"])
+  const langNorm = String(lang || "").toLowerCase();
+
+  // en = все, что не ru
+  const tgHref = (langNorm !== "ru" && data && data["tg-app-en"])
     ? String(data["tg-app-en"])
     : (data && data["tg-app"] ? String(data["tg-app"]) : "");
 
@@ -1439,7 +1443,7 @@ function ensureTGButtonInBoxHtml(boxHtml, data, lang, nl){
       open = upsertAttrInTag(open, "href", tgHref);
       open = upsertAttrInTag(open, "target", "_blank");
       open = upsertAttrInTag(open, "rel", "noopener");
-      const label = String(lang).toLowerCase()==="ru" ? "Telegram Приложение" : "Telegram App";
+      const label = langNorm === "ru" ? "Telegram Приложение" : "Telegram App";
       const body  = `<span>${escapeHtml(label)}</span>`;
       return open + body + `</a>`;
     }
@@ -1461,13 +1465,14 @@ function ensureTGButtonInBoxHtml(boxHtml, data, lang, nl){
     return region.slice(lineStart, match.index).match(/^[\t ]*/)?.[0] ?? "";
   })();
 
-  const label = String(lang).toLowerCase()==="ru" ? "Telegram Приложение" : "Telegram App";
+  const label = langNorm === "ru" ? "Telegram Приложение" : "Telegram App";
   const tgBtn = `<a href="${escapeAttr(tgHref)}" class="tg-app defbutton" target="_blank" rel="noopener"><span>${escapeHtml(label)}</span></a>`;
 
   const newRegion = region.slice(0, insAt) + nl + indent + tgBtn + region.slice(insAt);
   segment = before + newRegion + after;
   return boxHtml.slice(0, cOpenEnd) + segment + boxHtml.slice(cCloseStart);
 }
+
 function ensureTGButtonInMainBox(html, data, lang, nl){
   let out = html;
   const masked = maskSegments(out);

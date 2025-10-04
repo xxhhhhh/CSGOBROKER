@@ -93,6 +93,24 @@ function readTag(s,start){
   const attrs=tagText.replace(/^<\w+\s*|\s*>$/g,"");
   return { end:i, attrs, tagText };
 }
+// ЗАМЕНИ ЭТУ функцию на более строгую
+function fixMainModeLangClasses(html, lang) {
+  // Меняем только теги, у которых class содержит ТОКЕН "main-mode"
+  return html.replace(
+    /<([a-z]+)\b([^>]*\bclass\s*=\s*["'])([^"']*)(["'][^>]*>)/gi,
+    (whole, tag, pre, clsStr, post) => {
+      const tokens = clsStr.split(/\s+/).filter(Boolean);
+      if (!tokens.includes("main-mode")) return whole;            // не наш элемент
+      const withoutLang = tokens.filter(t => !/^lang-[a-z]{2}$/i.test(t));
+      if (!withoutLang.includes(`lang-${lang}`)) {
+        withoutLang.push(`lang-${lang}`);
+      }
+      const newCls = withoutLang.join(" ");
+      return `<${tag}${pre}${newCls}${post}`;
+    }
+  );
+}
+
 function parseClassAttr(attrs){
   const m = attrs.match(/\bclass\s*=\s*(?:"([^"]*)"|'([^']*)')/i);
   const val = m ? (m[1] ?? m[2] ?? "") : "";
@@ -464,6 +482,10 @@ function applyBoxTranslations(inner, lang, dict){
         console.log(`[NO TRANSLATIONS] /code-parts/main-translations/${lang}.json`);
       }
     }
+
+    // 3b) проставляем lang-* на .main-mode
+    newHtml = withHolderInner(newHtml, (inner) => fixMainModeLangClasses(inner, lang));
+
 
     if (newHtml !== targetHtml){
       if (!dry) await fs.writeFile(targetFull, newHtml, "utf8");
