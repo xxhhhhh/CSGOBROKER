@@ -1,12 +1,5 @@
 // /code-parts/offline-scripts/refreshMetaAndSitemaps.js
 /* eslint-disable no-console */
-/**
- * Обновляет head (canonical, og:url, og:locale, alternate, html[lang]) и пересобирает сайтмапы.
- * - alternate вставляется ПОСЛЕ последнего <link rel="stylesheet"> в <head>, иначе в конец <head>.
- * - Полная зачистка всех существующих <link rel="alternate"> в <head> перед вставкой.
- * - Корневой URL всегда без слеша: https://csgobroker.cc
- * - noindex-страницы учитываются для alternate и обновления head, но исключаются из sitemap.
- */
 
 const fs = require('fs');
 const path = require('path');
@@ -18,11 +11,18 @@ const BASE_ORIGIN = 'https://csgobroker.cc';
 const LANGS = ['en', 'ru', 'pt', 'es', 'hi', 'tr'];
 const ALT_ORDER = ['en', 'ru', 'pt', 'es', 'hi', 'tr'];
 
-// ---------- FS ----------
+// ---------- FS utils ----------
 const readFile = (fp) => fs.readFileSync(fp, 'utf-8');
-const writeFile = (fp, s) => fs.writeFileSync(fp, s);
 const ensureDir = (d) => { if (!fs.existsSync(d)) fs.mkdirSync(d, { recursive: true }); };
+function writeFileIfChanged(fp, next, label) {
+  const prev = fs.existsSync(fp) ? readFile(fp) : null;
+  if (prev === next) return false;
+  fs.writeFileSync(fp, next);
+  if (label) console.log(label);
+  return true;
+}
 
+// ---------- scan ----------
 const IGNORE_DIRS = new Set([
   'node_modules', '.git', '.next', '.vercel', '.cache',
   'dist', 'build', 'out', 'tmp', 'temp',
@@ -33,8 +33,7 @@ function collectHtmlFiles(dir) {
   const stack = [dir], res = [];
   while (stack.length) {
     const cur = stack.pop();
-    let entries;
-    try { entries = fs.readdirSync(cur, { withFileTypes: true }); } catch { continue; }
+    let entries; try { entries = fs.readdirSync(cur, { withFileTypes: true }); } catch { continue; }
     for (const e of entries) {
       const full = path.join(cur, e.name);
       if (e.isDirectory()) {
@@ -49,7 +48,7 @@ function collectHtmlFiles(dir) {
   return res;
 }
 
-// ---------- URL & LANG ----------
+// ---------- url/lang ----------
 function relToUrlPath(rel) {
   rel = rel.split(path.sep).join('/');
   if (rel === 'index.html') return '/';
@@ -78,7 +77,7 @@ function absoluteUrlNormalized(urlPath) {
   return urlPath === '/' ? BASE_ORIGIN : (BASE_ORIGIN + urlPath);
 }
 
-// ---------- noindex detector ----------
+// ---------- noindex ----------
 function hasNoindex(html) {
   if (!html) return false;
   const metas = html.match(/<meta\b[^>]*>/gi) || [];
@@ -94,7 +93,7 @@ function hasNoindex(html) {
   return fb.test(html);
 }
 
-// ---------- HEAD helpers ----------
+// ---------- head helpers ----------
 function ensureHtmlLang(doc, lang) {
   return doc.replace(/<html\b([^>]*)>/i, (m, attrs) => {
     let a = attrs || '';
@@ -108,8 +107,12 @@ function upsertTagInHead(html, tagHtml, findRe) {
   if (/<\/head>/i.test(html)) return html.replace(/<\/head>/i, `${tagHtml}\n</head>`);
   return html + `\n${tagHtml}\n`;
 }
+
+// remove <link rel="alternate"> ПОСТРОЧНО (не трогаем отступ следующей строки)
 function removeAlternatesFromHeadInner(headInner) {
-  return headInner.replace(/\s*<link\b[^>]*\brel\s*=\s*["']alternate["'][^>]*>\s*/gi, '');
+  return headInner
+    .replace(/^[ \t]*<link\b[^>]*\brel\s*=\s*["']alternate["'][^>]*>[ \t]*\r?\n?/gmi, '')
+    .replace(/\n{3,}/g, '\n\n'); // косметика: схлопнуть тройные переносы
 }
 function findLastStylesheet(headInner) {
   const re = /<link\b[^>]*\brel\s*=\s*["']stylesheet["'][^>]*>/gmi;
@@ -133,13 +136,12 @@ function buildAlternateLines(keyNoLocale, presentLangs) {
   }
   return lines;
 }
-
-// FIX: гарантируем перенос строки и до, и после блока alternate — ровно по одному.
+// вставка под последним stylesheet; не ломаем отступ следующей строки
 function insertAlternatesUnderLastStylesheet(html, keyNoLocale, presentLangs) {
   const m = html.match(/(<head\b[^>]*>)([\s\S]*?)(<\/head>)/i);
   if (!m) return html;
-  const open = m[1], inner = m[2], close = m[3];
 
+  const open = m[1], inner = m[2], close = m[3];
   let headInner = removeAlternatesFromHeadInner(inner);
 
   const lastCss = findLastStylesheet(headInner);
@@ -154,17 +156,16 @@ function insertAlternatesUnderLastStylesheet(html, keyNoLocale, presentLangs) {
   const prevIsNl = insertIdx > 0 && headInner[insertIdx - 1] === '\n';
   const nextIsNl = insertIdx < headInner.length && headInner[insertIdx] === '\n';
 
-  const before = prevIsNl ? '' : '\n'; // не склеиваем с предыдущим тегом
-  const after  = nextIsNl ? '' : '\n'; // не склеиваем со следующим тегом
-
-  const block = before + lines.map(l => indent + l).join('\n') + after;
+  const before = prevIsNl ? '' : '\n'; // отделяем от предыдущего тега
+  const after  = nextIsNl ? '' : '\n'; // сохраняем отступ следующей строки
+  const block  = before + lines.map(l => indent + l).join('\n') + after;
 
   headInner = headInner.slice(0, insertIdx) + block + headInner.slice(insertIdx);
 
   return html.replace(/(<head\b[^>]*>)[\s\S]*?(<\/head>)/i, `${open}${headInner}${close}`);
 }
 
-// ---------- Category helpers ----------
+// ---------- category & sitemap ----------
 function isReviewsPath(urlPath) {
   return /^\/(?:[a-z]{2}\/)?reviews\/|^\/(?:[a-z]{2}\/)?mirrors\//i.test(urlPath);
 }
@@ -172,15 +173,12 @@ function isTopicPath(urlPath) {
   return /^\/(?:[a-z]{2}\/)?topic(\/|$)/i.test(urlPath);
 }
 function computePriority(urlPath) {
-  const noLoc = stripLocale(urlPath);
-  const depth = noLoc.split('/').filter(Boolean).length;
-  if (depth <= 1) return '1.0';
-  if (depth === 2) return '0.8';
-  if (depth === 3) return '0.6';
+  const d = stripLocale(urlPath).split('/').filter(Boolean).length;
+  if (d <= 1) return '1.0';
+  if (d === 2) return '0.8';
+  if (d === 3) return '0.6';
   return '0.5';
 }
-
-// ---------- Sitemap ----------
 function buildSitemapXml(entries) {
   const head = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
   const body = entries
@@ -189,14 +187,13 @@ function buildSitemapXml(entries) {
     .join('\n');
   return head + (body ? '\n' + body + '\n' : '\n') + '</urlset>\n';
 }
-function writeIfDir(dir, name, xml) {
+function writeSitemapIfChanged(dir, name, xml) {
   ensureDir(dir);
   const fp = path.join(dir, name);
-  writeFile(fp, xml);
-  console.log(`🧭 sitemap → ${path.relative(ROOT_DIR, fp)} (${(xml.match(/<url>/g) || []).length} urls)`);
+  return writeFileIfChanged(fp, xml, `🧭 sitemap updated → ${path.relative(ROOT_DIR, fp)} (${(xml.match(/<url>/g) || []).length} urls)`);
 }
 
-// ---------- Main ----------
+// ---------- main ----------
 function main() {
   const files = collectHtmlFiles(ROOT_DIR);
 
@@ -219,16 +216,18 @@ function main() {
     pages.push({ filePath: fp, urlPath, lang, key, abs, mtime, noindex: ni });
 
     const set = presentLangsByKey.get(key) || new Set();
-    set.add(lang);
+    set.add(lang); // учитываем даже noindex для правильных alternate
     presentLangsByKey.set(key, set);
   }
 
-  // Step 1: обновляем head (все страницы, включая noindex)
+  // Step 1: обновляем head (все страницы)
+  let changedHtmlCount = 0;
   for (const p of pages) {
     const present = presentLangsByKey.get(p.key) || new Set([p.lang]);
     const canonicalHref = absoluteUrlNormalized(p.urlPath);
 
-    let html = readFile(p.filePath);
+    const before = readFile(p.filePath);
+    let html = before;
 
     html = ensureHtmlLang(html, p.lang);
     html = upsertTagInHead(html, `<link rel="canonical" href="${canonicalHref}">`,
@@ -240,7 +239,10 @@ function main() {
 
     html = insertAlternatesUnderLastStylesheet(html, p.key, present);
 
-    writeFile(p.filePath, html);
+    if (html !== before) {
+      fs.writeFileSync(p.filePath, html);
+      changedHtmlCount++;
+    }
   }
 
   // Step 2: сайтмапы (только индексируемые)
@@ -279,18 +281,27 @@ function main() {
     topics_ru: 'sitemap_topics_ru.xml',
   };
 
+  let changedSitemaps = 0;
+
+  // root sitemaps
   for (const [bucket, name] of Object.entries(rootNames)) {
-    writeFile(path.join(ROOT_DIR, name), buildSitemapXml(buckets[bucket]));
-    console.log(`✅ root ${name} updated.`);
+    const xml = buildSitemapXml(buckets[bucket]);
+    if (writeFileIfChanged(path.join(ROOT_DIR, name), xml, `✅ root ${name} updated.`)) {
+      changedSitemaps++;
+    }
   }
 
-  ensureDir(SITEMAPS_ME_DIR);
+  // sitemaps_me + reviews_es
   for (const [bucket, name] of Object.entries(rootNames)) {
-    writeIfDir(SITEMAPS_ME_DIR, name, buildSitemapXml(buckets[bucket]));
+    const xml = buildSitemapXml(buckets[bucket]);
+    if (writeSitemapIfChanged(SITEMAPS_ME_DIR, name, xml)) changedSitemaps++;
   }
-  writeIfDir(SITEMAPS_ME_DIR, 'sitemap_reviews_es.xml', buildSitemapXml(buckets.reviews_es));
+  {
+    const xmlEs = buildSitemapXml(buckets.reviews_es);
+    if (writeSitemapIfChanged(SITEMAPS_ME_DIR, 'sitemap_reviews_es.xml', xmlEs)) changedSitemaps++;
+  }
 
-  console.log('🏁 Done: head normalized (newline-safe) + sitemaps rebuilt.');
+  console.log(`🏁 Done. HTML changed: ${changedHtmlCount}, sitemaps changed: ${changedSitemaps}.`);
 }
 
 if (require.main === module) main();
