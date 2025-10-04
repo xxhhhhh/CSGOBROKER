@@ -25,7 +25,9 @@ export async function onRequest(context) {
     status: 302,
     headers: {
       Location: outUrl.toString(),
-      "Cache-Control": "no-store"
+      "Cache-Control": "no-store, no-cache, must-revalidate",
+      "Referrer-Policy": "origin-when-cross-origin",
+      Pragma: "no-cache"
     }
   });
 }
