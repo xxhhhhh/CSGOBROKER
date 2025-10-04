@@ -1213,7 +1213,10 @@ function localizeMainBoxContentButtons(html, lang){
       const newRegion = region.replace(/<a\b([^>]*?)href\s*=\s*(["'])([^"']+)\2([^>]*)>/gi, (m, pre, q, href, post)=>{
         const clsMatch = (pre+post).match(/\bclass\s*=\s*(["'])([^"']+)\1/i);
         const classes = new Set((clsMatch ? (clsMatch[2]||"") : "").split(/\s+/).filter(Boolean));
-        if (classes.has("visit")) return m; // do not touch review-button.visit
+
+        // ⬇️ добавили исключение для .mirror-visit
+        if (classes.has("visit") || classes.has("mirror-visit")) return m;
+
         const newHref = addLangPrefixToHref(href, lang);
         if (newHref === href) return m;
         return `<a${pre}href=${q}${escapeAttr(newHref)}${q}${post}>`;
