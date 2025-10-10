@@ -50,6 +50,10 @@ body {
     padding: 0;
 }
 
+button {
+    font-family: TTNormsPro;
+}
+
 img {
     font-size: 0;
 }
@@ -1428,7 +1432,8 @@ nav .pages {
 .infoicon::after,
 .route-semi::before,
 .defbutton span,
-.mirror-visit span {
+.mirror-visit span,
+.content-buttons .copy span {
     content: '';
     position: absolute;
     width: max-content;
@@ -1454,7 +1459,8 @@ nav .pages {
 .navigation-weapon-sort[data-title]:hover:after,
 .topic-grandbox .skin:hover .skin-desc-name,
 .defbutton:hover span,
-.mirror-visit:hover span {
+.mirror-visit:hover span,
+.content-buttons .copy:hover span {
     content: attr(data-title);
     transform: translateX(-50%);
     transition: all .15s ease-in-out;
@@ -1462,17 +1468,31 @@ nav .pages {
 }
 
 .defbutton span,
-.mirror-visit span {
+.mirror-visit span,
+.content-buttons .copy span {
     font-size: 11px;
     transform: translateX(-50%) translateY(0);
+    background-color: rgb(26 26 26);
+    margin-bottom: 34px;
+    filter: unset;
+    padding: 6px;
     margin-left: 6px;
     text-transform: none;
 }
 
+.boxes-holder:not(.main-page) .content-buttons .copy span {
+    margin-left: -6px;
+}
+
 .defbutton:hover span,
-.mirror-visit:hover span {
+.mirror-visit:hover span,
+.content-buttons .copy:hover span {
     transform: translateX(-50%) translateY(-15px);
     font-size: 11px;
+}
+
+.content-buttons .copy.icon-changed span {
+    opacity: 0;
 }
 
 .navigation-weapon-sort[data-title]:after {
@@ -10207,14 +10227,14 @@ div#results {
 
 .copied-title {
     position: absolute;
-    bottom: 37px;
+    bottom: 34px;
     margin-right: 10px;
     background-color: rgb(26 26 26);
     transition: background .15s ease-in-out;
     pointer-events: none;
     padding: 6px;
     border-radius: 5px;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 500;
 }
 

@@ -321,6 +321,7 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl){
   if (!holders.length) return html;
 
   let out = html, shift = 0;
+
   for (const holder of holders){
     const hStart = holder.openEnd + shift, hEnd = holder.closeStart + shift;
     const innerMasked = maskSegments(out.slice(hStart, hEnd));
@@ -351,6 +352,8 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl){
       const goKey = computeGoKey(key, urlPath, lang, data);
       boxHtml = updateVisitLinkInBoxHtml(boxHtml, goKey, nl);
 
+      boxHtml = ensureMirrorVisitButtonInBoxHtml(boxHtml, lang, key, data.mirror, nl);
+
       const firstOpen = readTag(boxHtml, 0);
       const isMain = parseClassAttr(firstOpen.attrs).has("main");
       if (isMain) boxHtml = updateLogobgAnchorInBoxHtml(boxHtml, goKey, nl);
@@ -359,7 +362,7 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl){
       boxHtml = ensureTGButtonInBoxHtml(boxHtml, data, lang, nl);
 
       // NEW: ensure copy button for every .box in listings (uses site's code)
-      boxHtml = ensureCopyButtonInBoxHtml(boxHtml, data.code ?? "", nl);
+      boxHtml = ensureCopyButtonInBoxHtml(boxHtml, data.code ?? "", nl, lang)
 
       if (collapseWS(boxHtml) !== collapseWS(out.slice(absOpen, absClose))) {
         out = replaceWithin(out, absOpen, absClose, boxHtml);
@@ -414,6 +417,24 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
   const goKeyMain = computeGoKey(pageKey, urlPath, lang, data);
   out = ensureVisitLinkInMainBox(out, goKeyMain, nl);
 
+  // span для всех .box на странице review
+  (function normalizeCopyButtonsInAllBoxes(){
+    let masked = maskSegments(out);
+    let boxes = findAllDivByClass(masked, "box");
+    if (!boxes.length) return;
+
+    let shift = 0;
+    for (const b of boxes){
+      const open = b.openStart + shift, close = b.closeEnd + shift;
+      const boxHtml = out.slice(open, close);
+      const upd = ensureCopyButtonInBoxHtml(boxHtml, "", nl, lang); // только спан/нормализация
+      if (upd !== boxHtml){
+        out = out.slice(0, open) + upd + out.slice(close);
+        shift += upd.length - (close - open);
+      }
+    }
+  })();
+
   out = ensureMainLogobgLink(out, goKeyMain, nl);      // .box.main .logobg a
   out = upsertInstructionSiteLinks(out, goKeyMain);     // .instruction .site-link
 
@@ -430,7 +451,7 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
   out = enforceShortinfoEmptyState(out);
 
   // NEW: copy-button под .content-buttons в главном боксе, с code="...".
-  out = ensureCopyButtonInMainBox(out, data.code ?? "", nl);
+  out = ensureCopyButtonInMainBox(out, data.code ?? "", nl, lang);
 
   out = cleanupNestedBoxreview(out);
   out = normalizeIntertagSpaces(out);
@@ -1350,45 +1371,132 @@ function enforceShortinfoEmptyState(html){
   return out;
 }
 
-/* ---- NEW: ensure copy-button under .content-buttons in ANY .box html (snippet) ---- */
-function ensureCopyButtonInBoxHtml(boxHtml, codeValue, nl){
-  if (!codeValue) return boxHtml; // why: нет кода — нечего копировать
-  const masked = maskSegments(boxHtml);
+// ================== FIX 2: ensureMirrorVisitButtonInBoxHtml (без пустых строк) ==================
+function ensureMirrorVisitButtonInBoxHtml(boxHtml, lang, siteKey, mirrorFlag, nl){
+  if (!truthy(mirrorFlag) || !siteKey) return boxHtml;
+
+  const masked  = maskSegments(boxHtml);
   const content = findFirstByClass(masked, "content");
   if (!content) return boxHtml;
 
-  const cOpenEnd = content.openEnd;
+  const cOpenEnd    = content.openEnd;
   const cCloseStart = content.closeStart;
+  let seg = boxHtml.slice(cOpenEnd, cCloseStart);
 
-  let segment = boxHtml.slice(cOpenEnd, cCloseStart);
+  const cm = maskSegments(seg);
+  let cb = findFirstByClass(cm, "content-buttons");
+
+  const href  = (`${lang==="ru" ? "/ru" : ""}/mirrors/${siteKey}`).replace(/\/{2,}/g,"/");
+  const text  = (lang==="ru") ? "Зеркала" : "Mirrors";
+  const label = text;
+
+  // Если нет .content-buttons — создаём (без пустой строки перед </div>)
+  if (!cb){
+    const baseIndent = indentBefore(boxHtml, cOpenEnd, nl) + "  ";
+    const btnIndent  = baseIndent + "  ";
+    const block =
+      `${baseIndent}<div class="content-buttons">` + nl +
+      `${btnIndent}<a href="${escapeAttr(href)}" class="review-button mirror-visit" aria-label="${escapeAttr(label)}"><span>${escapeHtml(text)}</span></a>` + nl +
+      `${baseIndent}</div>`;
+    const before = boxHtml.slice(0, cOpenEnd);
+    const after  = boxHtml.slice(cCloseStart);
+    return joinAfterOpenNoBlank(before, block, after, nl);
+  }
+
+  // Есть .content-buttons
+  const cbOpenStart  = cb.openStart, cbOpenEnd = cb.openEnd, cbCloseStart = cb.closeStart;
+  const before = seg.slice(0, cbOpenEnd);
+  let   region = seg.slice(cbOpenEnd, cbCloseStart);
+  let   after  = seg.slice(cbCloseStart);
+
+  // НОРМАЛИЗАЦИЯ: убрать хвостовые пробелы/пустые строки
+  region = region.replace(/\s+$/,'');
+
+  if (/\breview-button\b[^>]*\bmirror-visit\b/i.test(region)) {
+    // только нормализуем закрытие
+    const baseIndent = indentBefore(seg, cbOpenStart, nl);
+    after = after.replace(/^\s*<\/div>/, nl + baseIndent + "</div>");
+    const rebuilt = before + region + after;
+    return boxHtml.slice(0, cOpenEnd) + rebuilt + boxHtml.slice(cCloseStart);
+  }
+
+  const baseIndent = indentBefore(seg, cbOpenStart, nl);
+  const linkIndent = baseIndent + "  ";
+  const btnLine = `${linkIndent}<a href="${escapeAttr(href)}" class="review-button mirror-visit" aria-label="${escapeAttr(label)}"><span>${escapeHtml(text)}</span></a>`;
+
+  // Добавляем кнопку: если region пуст — вставляем строку, иначе перенос + строка.
+  region = region ? (region + nl + btnLine) : btnLine;
+
+  // Ровно один перевод перед </div>
+  after = after.replace(/^\s*<\/div>/, nl + baseIndent + "</div>");
+
+  const newSeg = before + region + after;
+  return boxHtml.slice(0, cOpenEnd) + newSeg + boxHtml.slice(cCloseStart);
+}
+
+// ================== FIX 1: ensureCopyButtonInBoxHtml (убрать пустую строку) ==================
+function ensureCopyButtonInBoxHtml(boxHtml, codeValue, nl, lang = "en"){
+  const masked  = maskSegments(boxHtml);
+  const content = findFirstByClass(masked, "content");
+  if (!content) return boxHtml;
+
+  const cOpenEnd    = content.openEnd;
+  const cCloseStart = content.closeStart;
+  let segment       = boxHtml.slice(cOpenEnd, cCloseStart);
+
   const segMasked = maskSegments(segment);
   const cb = findFirstByClass(segMasked, "content-buttons");
   if (!cb) return boxHtml;
 
-  const afterCb = segment.slice(cb.closeEnd);
+  const cbOpenStart  = cb.openStart;
+  const cbOpenEnd    = cb.openEnd;
+  const cbCloseStart = cb.closeStart;
 
-  let usedUpdate = false;
-  const afterCbUpd = afterCb.replace(
-    /<button\b[^>]*class\s*=\s*(["'])[^"']*\bcopy\b[^"']*\1[^>]*>/i,
-    (m) => { usedUpdate = true; return upsertAttrInTag(m, "code", String(codeValue)); }
-  );
+  const before = segment.slice(0, cbOpenEnd);
+  let   region = segment.slice(cbOpenEnd, cbCloseStart);
+  let   after  = segment.slice(cbCloseStart);
 
-  if (usedUpdate){
-    segment = segment.slice(0, cb.closeEnd) + afterCbUpd;
-    return boxHtml.slice(0, cOpenEnd) + segment + boxHtml.slice(cCloseStart);
+  // НОРМАЛИЗАЦИЯ: хвост внутри .content-buttons (убираем любые пробелы/пустые строки в конце)
+  region = region.replace(/\s+$/,'');
+
+  // 1) Апдейт существующих .copy
+  let hasCopyBtn = false;
+  region = region.replace(/<button\b([^>]*)>([\s\S]*?)<\/button>/gi, (full, attrs, inner) => {
+    const clsM = attrs.match(/\bclass\s*=\s*(["'])([^"']*)\1/i);
+    const classes = new Set((clsM ? clsM[2] : "").split(/\s+/).filter(Boolean));
+    if (!classes.has("copy") || classes.has("site-promo-copy")) return full;
+
+    hasCopyBtn = true;
+    let open = `<button${attrs}>`;
+    if (codeValue) open = upsertAttrInTag(open, "code", String(codeValue));
+
+    if (/<span\b/i.test(inner)) return open + inner + `</button>`;
+    const label = (String(lang).toLowerCase() === "ru") ? "Промокод" : "Copy Code";
+    return open + `<span>${escapeHtml(label)}</span>` + `</button>`;
+  });
+
+  // 2) Добавить новую .copy, только если её нет и есть codeValue
+  if (!hasCopyBtn && codeValue){
+    const baseIndent = indentBefore(segment, cbOpenStart, nl);
+    const lineIndent = baseIndent + "  ";
+    const label = (String(lang).toLowerCase() === "ru") ? "Промокод" : "Copy Code";
+    const btnLine =
+      `${lineIndent}<button class="copy defbutton" aria-label="Copy Code" code="${escapeAttr(String(codeValue))}"><span>${escapeHtml(label)}</span></button>`;
+    // НЕ добавляем \n после button — перенос добавит "after"
+    region = region ? (region + nl + btnLine) : btnLine;
   }
 
-  const insertPosInBox = cOpenEnd + cb.closeEnd;
-  const indent = indentBefore(boxHtml, insertPosInBox, nl) + "  ";
-  const block = `${indent}<button class="copy defbutton" aria-label="Copy Code" code="${escapeAttr(String(codeValue))}"></button>`;
-  const before = boxHtml.slice(0, insertPosInBox);
-  const after  = boxHtml.slice(insertPosInBox);
-  return joinBlocksNoBlank(before, block, after, nl);
+  // 3) НОРМАЛИЗАЦИЯ закрытия: ровно один перенос и правильный отступ перед </div>
+  const baseIndent = indentBefore(segment, cbOpenStart, nl);
+  after = after.replace(/^\s*<\/div>/, nl + baseIndent + "</div>");
+
+  const newSegment = before + region + after;
+  if (newSegment === segment) return boxHtml;
+  return boxHtml.slice(0, cOpenEnd) + newSegment + boxHtml.slice(cCloseStart);
 }
 
-/* ---- keeps earlier review main-box variant (relies on page data.code) ---- */
-function ensureCopyButtonInMainBox(html, codeValue, nl){
-  if (!codeValue) return html;
+function ensureCopyButtonInMainBox(html, codeValue, nl, lang){
+  if (!codeValue && !lang) return html; // nothing to do if no code and no localization need
   let out = html;
 
   const masked = maskSegments(out);
@@ -1401,13 +1509,12 @@ function ensureCopyButtonInMainBox(html, codeValue, nl){
     if (!cls.has("main")) continue;
 
     const boxHtml = out.slice(b.openStart, b.closeEnd);
-    const updated = ensureCopyButtonInBoxHtml(boxHtml, codeValue, nl);
+    const updated = ensureCopyButtonInBoxHtml(boxHtml, codeValue, nl, lang);
     if (updated !== boxHtml){
       out = out.slice(0, b.openStart) + updated + out.slice(b.closeEnd);
     }
-    break; // только главный
+    break; // only the first .box.main
   }
-
   return out;
 }
 
