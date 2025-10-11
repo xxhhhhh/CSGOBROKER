@@ -36,3 +36,8 @@
   Cache-Control: public, max-age=3600, must-revalidate
 /*.ico
   Cache-Control: public, max-age=3600, must-revalidate
+
+# Прелоады (ускорят FCP; Cloudflare сможет слать 103 Early Hints)
+ /index.html
+  Link: </style_main.css>; rel=preload; as=style
+  Link: </fonts/YourFont.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
