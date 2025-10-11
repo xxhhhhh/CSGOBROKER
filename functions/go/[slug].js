@@ -1,26 +1,30 @@
+// почему: сначала берём из KV (динамично без деплоя), потом fallback на репо JSON
 import LINKS from "../../code-parts/sites-links.json" assert { type: "json" };
 
+/** @param {import('@cloudflare/workers-types').PagesFunctionContext} context */
 export async function onRequest(context) {
-  const reqUrl = new URL(context.request.url);
-  const slugRaw = context.params.slug || "";
-  const slug = slugRaw.toLowerCase(); // нормализуем регистр
+  const { request, env, params } = context;
+  const reqUrl = new URL(request.url);
+  const slug = String(params.slug || "").toLowerCase();
 
-  // 1) Ищем целевой URL в карте
-  let target = LINKS[slug];
+  let target = null;
 
-  // 2) Если не нашли — 404
-  if (!target) {
-    return new Response("Not found", { status: 404 });
+  // KV → приоритетно
+  if (env && env.LINKS_MAP && slug) {
+    try { target = await env.LINKS_MAP.get(slug); } catch { /* почему: не ломаемся при сбоях KV */ }
   }
 
-  // 3) Прокинем входные query-параметры дальше (если нужно)
+  // Fallback: локальная карта
+  if (!target) target = LINKS[slug];
+
+  if (!target) return new Response("Not found", { status: 404 });
+
+  // Проброс входных query (UTM и т.п.)
   const outUrl = new URL(target);
   for (const [k, v] of reqUrl.searchParams) {
-    // Не затираем уже существующие параметры целевого URL
     if (!outUrl.searchParams.has(k)) outUrl.searchParams.set(k, v);
   }
 
-  // 4) Возвращаем 302 + отключаем кэш браузера, чтобы можно было править маршруты
   return new Response(null, {
     status: 302,
     headers: {
