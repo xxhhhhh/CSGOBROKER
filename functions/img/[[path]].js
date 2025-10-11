@@ -1,94 +1,40 @@
-// /functions/[[path]].js  (Cloudflare Pages Functions)
-
-// Ресайзер для /img/* с поддержкой Client Hints и автоформатов
-export async function onRequest(context) {
-  const { request, params } = context;
+// file: functions/img/[[path]].js
+// Edge-ресайз для /img/* с автоформатами и Client Hints
+export async function onRequest({ request }) {
   const url = new URL(request.url);
 
-  // почему: ловим все пути, но обрабатываем только /img/*
-  const rawPath = String(params.path || "");
-  if (!rawPath || !rawPath.startsWith("img/")) {
-    return context.next();
-  }
-
-  // ---- parse & clamp helpers
-  const clampInt = (v, min, max) => {
+  const clamp = (v, min, max) => {
     const n = parseInt(v ?? "", 10);
     if (!Number.isFinite(n)) return undefined;
     return Math.min(Math.max(n, min), max);
   };
-  const get = (k) => url.searchParams.get(k);
 
-  // входные параметры (с разумными лимитами против злоупотреблений)
-  const widthParam  = clampInt(get("width"),   1, 4096);
-  const heightParam = clampInt(get("height"),  1, 4096);
-  const quality     = clampInt(get("quality"), 30, 90) ?? 75;
-  const dprParam    = clampInt(get("dpr"),     1, 4);
-  const fitRaw      = (get("fit") || "").toLowerCase();
-  const formatRaw   = (get("format") || "").toLowerCase();
+  const width   = clamp(url.searchParams.get("width"),   1, 4096) ?? "auto";
+  const height  = clamp(url.searchParams.get("height"),  1, 4096) || undefined;
+  const quality = clamp(url.searchParams.get("quality"), 30, 90)  ?? 75;
+  const dpr     = clamp(url.searchParams.get("dpr"),     1, 4)    ?? "auto";
 
-  // почему: по умолчанию не ухудшаем картинку и не апскейлим
-  const fit = ["scale-down", "contain", "cover", "crop", "pad"].includes(fitRaw)
-    ? fitRaw
-    : "scale-down";
+  const fitRaw = (url.searchParams.get("fit") || "").toLowerCase();
+  const fit = ["scale-down","contain","cover","crop","pad"].includes(fitRaw) ? fitRaw : "scale-down";
 
-  // почему: формат авто для AVIF/WebP, можно принудительно задать через ?format=avif|webp|jpeg|png
-  const allowedFormats = new Set(["auto", "avif", "webp", "jpeg", "png"]);
-  const format = allowedFormats.has(formatRaw) ? formatRaw : "auto";
+  const fmtRaw = (url.searchParams.get("format") || "").toLowerCase();
+  const format = ["auto","avif","webp","jpeg","png"].includes(fmtRaw) ? fmtRaw : "auto";
 
-  // почему: включаем auto-режим, если параметры не заданы (работает с Client Hints)
-  const width = widthParam ?? "auto";
-  const dpr   = dprParam ?? "auto";
-  const height = heightParam || undefined; // не задаём -> сохраняем пропорции
-
-  // исходник (статический ассет Pages)
-  const assetUrl = new URL(`/${rawPath}`, url.origin);
-
-  // ресайз на edge
-  const originResp = await fetch(assetUrl.toString(), {
-    cf: {
-      image: {
-        width,
-        height,
-        dpr,
-        quality,
-        fit,
-        format, // 'auto' подставит AVIF/WebP по Accept
-        // metadata: 'none', // можно включить при желании
-      },
-      // cacheTtlByStatus: { "200-299": 2592000, 404: 1, "500-599": 0 }, // опционально
-    },
-    // почему: передаём условные заголовки для 304
-    headers: {
-      "If-None-Match": request.headers.get("If-None-Match") || "",
-      "If-Modified-Since": request.headers.get("If-Modified-Since") || "",
-    },
+  // Важное: ресайзим текущий request, не собираем новый URL
+  const edgeResp = await fetch(request, {
+    cf: { image: { width, height, dpr, quality, fit, format } }
   });
 
-  // пробрасываем заголовки + настраиваем кэш/вариативность
-  const headers = new Headers(originResp.headers);
+  const h = new Headers(edgeResp.headers);
+  h.set("Cache-Control", "public, max-age=2592000, immutable");
+  const vary = new Set((h.get("Vary") || "").split(",").map(s=>s.trim()).filter(Boolean));
+  ["Accept","DPR","Width","Viewport-Width"].forEach(v=>vary.add(v));
+  h.set("Vary", Array.from(vary).join(", "));
+  h.set("Accept-CH", "DPR, Width, Viewport-Width");
+  h.set("Critical-CH", "DPR, Width");
+  h.set("X-Debug", "functions-hit"); // удалить после проверки
 
-  // длительный кэш, т.к. параметры в URL делают контент уникальным
-  headers.set("Cache-Control", "public, max-age=2592000, immutable"); // 30d
-
-  // почему: корректная вариативность для автоформатов и client hints
-  const varyParts = new Set(
-    (headers.get("Vary") || "")
-      .split(",")
-      .map((s) => s.trim())
-      .filter(Boolean)
-  );
-  ["Accept", "DPR", "Width", "Viewport-Width"].forEach((h) => varyParts.add(h));
-  headers.set("Vary", Array.from(varyParts).join(", "));
-
-  // почему: включаем хинты (лучше также отдать их на HTML-страницах)
-  headers.set("Accept-CH", "DPR, Width, Viewport-Width");
-  headers.set("Critical-CH", "DPR, Width");
-
-  // безопасность (не влияет на PSI, но полезно)
-  headers.set("Cross-Origin-Resource-Policy", "same-origin");
-
-  return new Response(originResp.body, { status: originResp.status, headers });
+  return new Response(edgeResp.body, { status: edgeResp.status, headers: h });
 }
 
 /*
