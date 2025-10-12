@@ -128,7 +128,7 @@ function insertRandomRecBox() {
   }
 
   const lang = typeof languageTag !== 'undefined' ? languageTag : 'en';
-  const recCount = 2;
+  const recCount = 3;
   const cacheKey = `rec_boxes`;
   const cacheDuration = 24 * 60 * 60 * 1000; // 24h
   const usedIds = new Set();
@@ -173,9 +173,9 @@ function insertRandomRecBox() {
           <a href="${reviewHref}">
             <img src="${box.logoSrc}" loading="lazy" draggable="false" alt="${alt}">
           </a>
+          <p>${description}</p>
         </div>
         <div class="content">
-          <p>${description}</p>
           <div class="content-buttons">
             <a href="${reviewHref}" class="review-button"></a>
             <a href="${box.visitHref}" target="_blank" rel="noopener" class="review-button visit"></a>

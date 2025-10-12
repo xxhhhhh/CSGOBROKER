@@ -147,7 +147,8 @@ nav .pages {
     background: var(--darkygray);
 }
 
-.main-mode-box {
+.main-mode-box,
+.rec-box .logobg a::before {
     box-shadow: 0 1px 2px 0 rgba(50, 50, 50, .4);
 }
 
@@ -483,7 +484,8 @@ h3,
 .pages h1,
 #PageSubt,
 .selected-lang,
-#search-input {
+#search-input,
+.rec-box p {
     color: #1f1f1f;
 }
 
@@ -1130,7 +1132,8 @@ ul .submenu li .nonredir,
 }
 
 
-.box .main-mode {
+.box .main-mode,
+.rec-box .logobg a {
     background: var(--main-theme) !important;
 }
 
