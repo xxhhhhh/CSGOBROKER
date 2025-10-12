@@ -287,31 +287,6 @@ function updateVisitLinkInBoxHtml(boxHtml, goKey, nl){
 
 
 
-// REPLACE entire ensureVisitLinkInMainBox(...)
-function ensureVisitLinkInMainBox(html, goKey, nl){
-  if (!goKey) return html;
-  let out = html;
-
-  const masked = maskSegments(out);
-  const boxes = findAllDivByClass(masked, "box");
-  if (!boxes.length) return out;
-
-  for (const b of boxes){
-    const open = readTag(out, b.openStart);
-    const cls = parseClassAttr(open.attrs);
-    if (!cls.has("main")) continue;
-
-    const boxHtml = out.slice(b.openStart, b.closeEnd);
-    const updated = updateVisitLinkInBoxHtml(boxHtml, goKey, nl);
-    if (updated !== boxHtml){
-      out = out.slice(0, b.openStart) + updated + out.slice(b.closeEnd);
-    }
-    break;
-  }
-  return out;
-}
-
-// REPLACE ensureNumericRatingInLogobg with this version
 function ensureNumericRatingInLogobg(boxHtml, ratingValue, nl){
   if (ratingValue == null) return boxHtml;
 
@@ -358,46 +333,99 @@ function ensureNumericRatingInLogobg(boxHtml, ratingValue, nl){
   return before + region + nl + block + nl + closeIndent + after;
 }
 
-/* --- [ADD] ensure: маршрутные метки для одного .box --- */
-function upsertRouteForBoxHtml(boxHtml, type /* 'required'|'maybe' */, inSection, nl){
-  const hasRoute = /<div\b[^>]*class\s*=\s*["'][^"']*\broute(-semi)?\b/i.test(boxHtml);
-  if (hasRoute) return boxHtml; // идемпотентность
 
-  if (inSection){
-    // Добавить в конец .box <div class="route-semi"><div class="officon globe"></div></div>
-    const closeIdx = boxHtml.lastIndexOf("</div>");
-    if (closeIdx === -1) return boxHtml;
-    const before = boxHtml.slice(0, closeIdx);
-    const after  = boxHtml.slice(closeIdx);
-    const baseIndent = indentBefore(boxHtml, closeIdx, nl) + "  ";
-    const block = [
-      `${baseIndent}<div class="route-semi">`,
-      `${baseIndent}  <div class="officon globe"></div>`,
-      `${baseIndent}</div>`
-    ].join(nl);
-    return joinBlocksNoBlank(before, block, after, nl);
-  }
+function ensureNumericRatingInLogobg(boxHtml, ratingValue, nl){
+  if (ratingValue == null) return boxHtml;
 
-  // Иначе — внутрь .logobg
   const masked = maskSegments(boxHtml);
   const lb = findFirstByClass(masked, "logobg");
   if (!lb) return boxHtml;
 
   const before = boxHtml.slice(0, lb.openEnd);
-  const region = boxHtml.slice(lb.openEnd, lb.closeStart);
+  let   region = boxHtml.slice(lb.openEnd, lb.closeStart);
   const after  = boxHtml.slice(lb.closeStart);
 
+  const fmt = (n) => (Number.isFinite(n) ? (Math.round(n*100)/100).toFixed(2) : "0.00");
+
+  // уже есть блок — обновим только .rating-summ
+  if (/<div\b[^>]*class\s*=\s*["'][^"']*\brating-case-single\b/i.test(region)){
+    const newRegion = region.replace(
+      /(<div\b[^>]*class\s*=\s*["'][^"']*\brating-summ\b[^"']*["'][^>]*>)[\s\S]*?(<\/div>)/i,
+      (_, a, c) => a + fmt(ratingValue) + c
+    );
+    return before + newRegion + after;
+  }
+
+  // вставка блока в конец .logobg
   const baseIndent = indentBefore(boxHtml, lb.closeStart, nl) + "  ";
-  const block = (type === "required")
-    ? `${baseIndent}<div class="route">Доступ ограничен</div>`
-    : [
-        `${baseIndent}<div class="route-semi">`,
-        `${baseIndent}  <div class="officon globe"></div>`,
-        `${baseIndent}</div>`
-      ].join(nl);
+  const block = [
+    `${baseIndent}<div class="rating-case-single">`,
+    `${baseIndent}  <div class="star_rating officon"></div>`,
+    `${baseIndent}  <div class="rating-summ">${fmt(ratingValue)}</div>`,
+    `${baseIndent}</div>`
+  ].join(nl);
 
   return joinBeforeCloseKeepIndent(before, block, after, nl);
 }
+
+/* --- [ADD] ensure: маршрутные метки для одного .box --- */
+// REPLACE: upsertRouteForBoxHtml
+function upsertRouteForBoxHtml(boxHtml, type /* 'required'|'maybe' */, inSection, nl){
+  // если уже есть нужный блок — выходим
+  const classToFind = type === "required" ? "route" : "route-semi";
+  if (new RegExp(`<div\\b[^>]*class\\s*=\\s*["'][^"']*\\b${classToFind}\\b`, "i").test(boxHtml)) {
+    return boxHtml;
+  }
+
+  // Вариант 1: внутри секции — вставляем перед последним </div> бокса
+  if (inSection){
+    const closeIdx = boxHtml.lastIndexOf("</div>");
+    if (closeIdx === -1) return boxHtml;
+
+    const before = boxHtml.slice(0, closeIdx);
+    const after  = boxHtml.slice(closeIdx);
+
+    const closeIndent = indentBefore(boxHtml, closeIdx, nl);
+    const lineIndent  = closeIndent + "  ";
+
+    const block = (type === "required")
+      ? `${lineIndent}<div class="route">Доступ ограничен</div>`
+      : [
+          `${lineIndent}<div class="route-semi">`,
+          `${lineIndent}  <div class="officon globe"></div>`,
+          `${lineIndent}</div>`
+        ].join(nl);
+
+    const beforeNorm = rstripBlankLinesToOne(before, nl);
+    return beforeNorm + block + nl + closeIndent + after;
+  }
+
+  // Вариант 2: обычный .box — вставляем внутрь .logobg, не трогая содержимое
+  const masked = maskSegments(boxHtml);
+  const lb = findFirstByClass(masked, "logobg");
+  if (!lb) return boxHtml;
+
+  const before = boxHtml.slice(0, lb.openEnd);
+  let   region = boxHtml.slice(lb.openEnd, lb.closeStart);
+  const after  = boxHtml.slice(lb.closeStart);
+
+  const closeIndent = indentBefore(boxHtml, lb.closeStart, nl);
+  const lineIndent  = closeIndent + "  ";
+
+  const block = (type === "required")
+    ? `${lineIndent}<div class="route">Доступ ограничен</div>`
+    : [
+        `${lineIndent}<div class="route-semi">`,
+        `${lineIndent}  <div class="officon globe"></div>`,
+        `${lineIndent}</div>`
+      ].join(nl);
+
+  // убираем хвостовые пробелы/пустые строки, чтобы не создавать «пустую» линию
+  region = region.replace(/[ \t]+$/g, "").replace(/(?:\r?\n)+$/g, "");
+
+  return before + region + nl + block + nl + closeIndent + after;
+}
+
 
 /* --- [ADD] pass: маршрутные метки по всей странице (только RU) --- */
 function ensureRouteMarkersForPage(html, lang, siteSettings, nl){
