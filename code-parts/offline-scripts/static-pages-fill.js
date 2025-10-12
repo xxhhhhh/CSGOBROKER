@@ -333,7 +333,30 @@ function ensureNumericRatingInLogobg(boxHtml, ratingValue, nl){
   return before + region + nl + block + nl + closeIndent + after;
 }
 
+function ensureVisitLinkInMainBox(html, goKey, nl){
+  if (!goKey) return html;
+  let out = html;
 
+  const masked = maskSegments(out);
+  const boxes = findAllDivByClass(masked, "box");
+  if (!boxes.length) return out;
+
+  for (const b of boxes){
+    const open = readTag(out, b.openStart);
+    const cls = parseClassAttr(open.attrs);
+    if (!cls.has("main")) continue;
+
+    const boxHtml = out.slice(b.openStart, b.closeEnd);
+    const updated = updateVisitLinkInBoxHtml(boxHtml, goKey, nl);
+    if (updated !== boxHtml){
+      out = out.slice(0, b.openStart) + updated + out.slice(b.closeEnd);
+    }
+    break;
+  }
+  return out;
+}
+
+// REPLACE ensureNumericRatingInLogobg with this version
 function ensureNumericRatingInLogobg(boxHtml, ratingValue, nl){
   if (ratingValue == null) return boxHtml;
 
@@ -347,28 +370,40 @@ function ensureNumericRatingInLogobg(boxHtml, ratingValue, nl){
 
   const fmt = (n) => (Number.isFinite(n) ? (Math.round(n*100)/100).toFixed(2) : "0.00");
 
-  // уже есть блок — обновим только .rating-summ
+  // --- если блок уже есть: обновить число и прибрать пустую строку перед ним
   if (/<div\b[^>]*class\s*=\s*["'][^"']*\brating-case-single\b/i.test(region)){
-    const newRegion = region.replace(
+    // 1) обновляем число
+    region = region.replace(
       /(<div\b[^>]*class\s*=\s*["'][^"']*\brating-summ\b[^"']*["'][^>]*>)[\s\S]*?(<\/div>)/i,
       (_, a, c) => a + fmt(ratingValue) + c
     );
-    return before + newRegion + after;
+
+    // 2) сжимаем пустые строки перед rating-case-single до ровно одной
+    const reNL = new RegExp(`(?:\\r?\\n)[\\t ]*(?:\\r?\\n)+([\\t ]*)(?=<div\\b[^>]*\\brating-case-single\\b)`, "i");
+    region = region.replace(reNL, nl + "$1"); // why: не оставлять «пустую» строку
+
+    return before + region + after;
   }
 
-  // вставка блока в конец .logobg
-  const baseIndent = indentBefore(boxHtml, lb.closeStart, nl) + "  ";
+  // --- вставка нового блока в конец .logobg (без лишней пустой строки)
+  const closeIndent = indentBefore(boxHtml, lb.closeStart, nl); // отступ линии с </div> .logobg
+  const lineIndent  = closeIndent + "  ";
+
+  // убираем ЛЮБЫЕ хвостовые пробелы/пустые строки в конце region
+  region = region.replace(/[ \t]+$/g, "").replace(/(?:\r?\n)+$/g, "");
+
   const block = [
-    `${baseIndent}<div class="rating-case-single">`,
-    `${baseIndent}  <div class="star_rating officon"></div>`,
-    `${baseIndent}  <div class="rating-summ">${fmt(ratingValue)}</div>`,
-    `${baseIndent}</div>`
+    `${lineIndent}<div class="rating-case-single">`,
+    `${lineIndent}  <div class="star_rating officon"></div>`,
+    `${lineIndent}  <div class="rating-summ">${fmt(ratingValue)}</div>`,
+    `${lineIndent}</div>`
   ].join(nl);
 
-  return joinBeforeCloseKeepIndent(before, block, after, nl);
+  // контент + перевод строки + блок + перевод строки + отступ + закрывающий тег
+  return before + region + nl + block + nl + closeIndent + after;
 }
 
-/* --- [ADD] ensure: маршрутные метки для одного .box --- */
+
 // REPLACE: upsertRouteForBoxHtml
 function upsertRouteForBoxHtml(boxHtml, type /* 'required'|'maybe' */, inSection, nl){
   // если уже есть нужный блок — выходим
@@ -425,6 +460,7 @@ function upsertRouteForBoxHtml(boxHtml, type /* 'required'|'maybe' */, inSection
 
   return before + region + nl + block + nl + closeIndent + after;
 }
+
 
 
 /* --- [ADD] pass: маршрутные метки по всей странице (только RU) --- */
