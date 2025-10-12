@@ -1734,7 +1734,7 @@ if (
                 "Classified": "Засекреченное",
                 "Covert": "Тайное",
                 "Contraband": "Контрабанда",
-                "Change Color": "Сменить Цвет",
+                "Change Color": "Другие Цвета",
                 "Expensive": "Дорогой",
                 "Cheap": "Дешевый",
                 "All Skins": "Все Скины"
