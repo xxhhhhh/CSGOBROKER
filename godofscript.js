@@ -52,7 +52,7 @@ const StorageHelper = {
   }
 };
 
-StorageHelper.initVersion({ currentVersion: '1.22' });
+StorageHelper.initVersion({ currentVersion: '1.23' });
 
 function isRuPage(pathname) {
   return pathname.startsWith('/ru/') || pathname === '/ru' || pathname === '/ru.html';
@@ -1053,116 +1053,6 @@ if (btnfaq) {
     }
   };
 }
-
-function addStarRating(boxId, rating) {
-  const boxElement = document.getElementById(boxId);
-  if (boxElement) {
-    const starRatingHTML = `
-      <div class="rating-case-single">
-        <div class="star_rating officon"></div>
-        <div class="rating-summ">${rating.toFixed(2)}</div>
-      </div>
-    `;
-    const logobgElement = boxElement.querySelector('.logobg');
-    if (logobgElement) {
-      logobgElement.innerHTML += starRatingHTML;
-    }
-  }
-}
-
-function handleRouteDisplay(boxElements) {
-  const requiredRoute = window.requiredRoute || [];
-  const maybeRoute = window.maybeRoute || [];
-
-  const routeMessageDiv = document.createElement('div');
-  routeMessageDiv.className = 'route';
-  routeMessageDiv.textContent = 'Доступ ограничен';
-
-  const routeSemiMessageDiv = document.createElement('div');
-  routeSemiMessageDiv.className = 'route-semi';
-
-  const routeMessageIcon = document.createElement('div');
-  routeMessageIcon.className = 'officon globe';
-  routeSemiMessageDiv.appendChild(routeMessageIcon);
-
-  boxElements.forEach(boxElement => {
-    const boxId = boxElement.id;
-
-    if (requiredRoute.includes(boxId)) {
-      if (boxElement.closest('.boxes-holder-section')) {
-        const clonedDiv = routeSemiMessageDiv.cloneNode(true);
-        boxElement.appendChild(clonedDiv);
-      } else {
-        const logobgElement = boxElement.querySelector('.logobg');
-        if (logobgElement) {
-          const clonedDiv = routeMessageDiv.cloneNode(true);
-          logobgElement.appendChild(clonedDiv);
-        }
-      }
-    } else if (maybeRoute.includes(boxId)) {
-      if (boxElement.closest('.boxes-holder-section')) {
-        const clonedDiv = routeSemiMessageDiv.cloneNode(true);
-        boxElement.appendChild(clonedDiv);
-      } else {
-        const logobgElement = boxElement.querySelector('.logobg');
-        if (logobgElement) {
-          const clonedDiv = routeSemiMessageDiv.cloneNode(true);
-          logobgElement.appendChild(clonedDiv);
-        }
-      }
-    }
-  });
-}
-
-function renderData() {
-  const boxesHolder = document.querySelector(
-    ".boxes-holder, .sitealternatesboxes"
-  );
-  if (boxesHolder && window.ratings) {
-    for (const boxId in window.ratings) {
-      addStarRating(boxId, window.ratings[boxId]);
-    }
-  }
-
-  if (
-    window.location.pathname.startsWith("/ru/") ||
-    window.location.pathname === "/ru" ||
-    window.location.pathname === "/ru.html"
-  ) {
-    const boxElements = document.querySelectorAll(".box");
-    handleRouteDisplay(boxElements);
-  }
-}
-
-
-renderData();
-
-const cachedSettings = StorageHelper.getWithExpiry('sites_info');
-
-if (cachedSettings) {
-  useSettings(cachedSettings);
-} else {
-  fetch('/code-parts/sites-settings.json')
-    .then(response => response.json())
-    .then(settings => {
-      StorageHelper.setWithExpiry('sites_info', settings, 1000 * 60 * 60); // 1 час
-      useSettings(settings);
-    });
-}
-
-function useSettings(settings) {
-  window.ratings = settings.ratings;
-  window.requiredRoute = settings.RequiredRoute;
-  window.maybeRoute = settings.MaybeRoute;
-
-  const ratings = window.ratings;
-  const requiredRoute = window.requiredRoute;
-  const maybeRoute = window.maybeRoute;
-
-  renderData();
-}
-
-
 
 const href = window.location.href;
 

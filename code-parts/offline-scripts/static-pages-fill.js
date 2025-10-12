@@ -11,6 +11,7 @@ const SITE_INFOS        = "/code-parts/site-infos";
 const ALT_SITES         = "/code-parts/site-infos/sites-alts";
 const FILTER_SETTINGS   = "/code-parts/filter-settings.json";
 const REVIEW_SETTINGS   = "/code-parts/review-settings.json";
+const SITES_SETTINGS    = "/code-parts/sites-settings.json";
 const TRANSLATIONS_PATH = "/code-parts/review-translations.json";
 const KNOWN_LANGS = new Set(["ru","en","es","pt","tr","hi","de","fr","pl","it","ua","uk","ar","id","th","vi","nl","sv","fi","no","da","ro","cs","sk","sr","bg","el","hu","he","ko","ja","zh","zh-cn","zh-tw"]);
 const PREFIX_LANGS = new Set(["ru","es","pt","tr","hi"]); // языки, где добавляем /{lang}
@@ -20,6 +21,9 @@ const PREFIX_LANGS = new Set(["ru","es","pt","tr","hi"]); // языки, где 
   const { root, dry, ratingsPath, verbose } = parseArgs(process.argv.slice(2));
   const files = await listHtmlFiles(root);
   const presets = await loadPresets(root);
+
+  const siteSettings = await safeJson(abs(root, SITES_SETTINGS)); // <-- NEW
+
   const ratingsMap = ratingsPath ? await safeJson(abs(root, ratingsPath)) : null;
 
   let updated = 0, skipped = 0;
@@ -39,12 +43,12 @@ const PREFIX_LANGS = new Set(["ru","es","pt","tr","hi"]); // языки, где 
     let changed = false;
 
     if (hasBoxesHolder) {
-      const newHtml = await processListingsGlobal(html, urlPath, lang, root, presets, nl);
+      const newHtml = await processListingsGlobal(html, urlPath, lang, root, presets, nl, siteSettings); // <-- pass settings
       if (newHtml !== html) { html = newHtml; changed = true; }
     }
 
     if (isReviewPage) {
-      const res = await processReviewMirrors(html, urlPath, lang, root, presets, ratingsMap, nl, verbose);
+      const res = await processReviewMirrors(html, urlPath, lang, root, presets, ratingsMap, nl, verbose, siteSettings); // <-- pass settings
       if (res !== html) { html = res; changed = true; }
     }
 
@@ -193,6 +197,15 @@ function joinBeforeCloseKeepIndent(before, block, after, nl){
   return left + block + nl + indent + after;
 }
 
+function averageFirstFour(ratings) {
+  if (!ratings || typeof ratings !== "object") return null;
+  const vals = Object.values(ratings).map(Number).filter(Number.isFinite);
+  if (!vals.length) return null;
+  const take = vals.slice(0, 4);
+  const avg = take.reduce((a,b)=>a+b,0) / take.length;
+  return avg; // число 0..5
+}
+
 // REPLACE computeGoKey with this version
 function computeGoKey(baseKey, urlPath = "", lang = "en", data = {}) {
   const p = String(urlPath || "").toLowerCase();
@@ -298,6 +311,136 @@ function ensureVisitLinkInMainBox(html, goKey, nl){
   return out;
 }
 
+// REPLACE ensureNumericRatingInLogobg with this version
+function ensureNumericRatingInLogobg(boxHtml, ratingValue, nl){
+  if (ratingValue == null) return boxHtml;
+
+  const masked = maskSegments(boxHtml);
+  const lb = findFirstByClass(masked, "logobg");
+  if (!lb) return boxHtml;
+
+  const before = boxHtml.slice(0, lb.openEnd);
+  let   region = boxHtml.slice(lb.openEnd, lb.closeStart);
+  const after  = boxHtml.slice(lb.closeStart);
+
+  const fmt = (n) => (Number.isFinite(n) ? (Math.round(n*100)/100).toFixed(2) : "0.00");
+
+  // --- если блок уже есть: обновить число и прибрать пустую строку перед ним
+  if (/<div\b[^>]*class\s*=\s*["'][^"']*\brating-case-single\b/i.test(region)){
+    // 1) обновляем число
+    region = region.replace(
+      /(<div\b[^>]*class\s*=\s*["'][^"']*\brating-summ\b[^"']*["'][^>]*>)[\s\S]*?(<\/div>)/i,
+      (_, a, c) => a + fmt(ratingValue) + c
+    );
+
+    // 2) сжимаем пустые строки перед rating-case-single до ровно одной
+    const reNL = new RegExp(`(?:\\r?\\n)[\\t ]*(?:\\r?\\n)+([\\t ]*)(?=<div\\b[^>]*\\brating-case-single\\b)`, "i");
+    region = region.replace(reNL, nl + "$1"); // why: не оставлять «пустую» строку
+
+    return before + region + after;
+  }
+
+  // --- вставка нового блока в конец .logobg (без лишней пустой строки)
+  const closeIndent = indentBefore(boxHtml, lb.closeStart, nl); // отступ линии с </div> .logobg
+  const lineIndent  = closeIndent + "  ";
+
+  // убираем ЛЮБЫЕ хвостовые пробелы/пустые строки в конце region
+  region = region.replace(/[ \t]+$/g, "").replace(/(?:\r?\n)+$/g, "");
+
+  const block = [
+    `${lineIndent}<div class="rating-case-single">`,
+    `${lineIndent}  <div class="star_rating officon"></div>`,
+    `${lineIndent}  <div class="rating-summ">${fmt(ratingValue)}</div>`,
+    `${lineIndent}</div>`
+  ].join(nl);
+
+  // контент + перевод строки + блок + перевод строки + отступ + закрывающий тег
+  return before + region + nl + block + nl + closeIndent + after;
+}
+
+/* --- [ADD] ensure: маршрутные метки для одного .box --- */
+function upsertRouteForBoxHtml(boxHtml, type /* 'required'|'maybe' */, inSection, nl){
+  const hasRoute = /<div\b[^>]*class\s*=\s*["'][^"']*\broute(-semi)?\b/i.test(boxHtml);
+  if (hasRoute) return boxHtml; // идемпотентность
+
+  if (inSection){
+    // Добавить в конец .box <div class="route-semi"><div class="officon globe"></div></div>
+    const closeIdx = boxHtml.lastIndexOf("</div>");
+    if (closeIdx === -1) return boxHtml;
+    const before = boxHtml.slice(0, closeIdx);
+    const after  = boxHtml.slice(closeIdx);
+    const baseIndent = indentBefore(boxHtml, closeIdx, nl) + "  ";
+    const block = [
+      `${baseIndent}<div class="route-semi">`,
+      `${baseIndent}  <div class="officon globe"></div>`,
+      `${baseIndent}</div>`
+    ].join(nl);
+    return joinBlocksNoBlank(before, block, after, nl);
+  }
+
+  // Иначе — внутрь .logobg
+  const masked = maskSegments(boxHtml);
+  const lb = findFirstByClass(masked, "logobg");
+  if (!lb) return boxHtml;
+
+  const before = boxHtml.slice(0, lb.openEnd);
+  const region = boxHtml.slice(lb.openEnd, lb.closeStart);
+  const after  = boxHtml.slice(lb.closeStart);
+
+  const baseIndent = indentBefore(boxHtml, lb.closeStart, nl) + "  ";
+  const block = (type === "required")
+    ? `${baseIndent}<div class="route">Доступ ограничен</div>`
+    : [
+        `${baseIndent}<div class="route-semi">`,
+        `${baseIndent}  <div class="officon globe"></div>`,
+        `${baseIndent}</div>`
+      ].join(nl);
+
+  return joinBeforeCloseKeepIndent(before, block, after, nl);
+}
+
+/* --- [ADD] pass: маршрутные метки по всей странице (только RU) --- */
+function ensureRouteMarkersForPage(html, lang, siteSettings, nl){
+  if (String(lang).toLowerCase() !== "ru" || !siteSettings) return html;
+  const req = new Set(siteSettings.RequiredRoute || siteSettings.requiredRoute || []);
+  const may = new Set(siteSettings.MaybeRoute    || siteSettings.maybeRoute    || []);
+  if (!req.size && !may.size) return html;
+
+  let out = html;
+  const masked = maskSegments(out);
+  const boxes = findAllDivByClass(masked, "box");
+  if (!boxes.length) return out;
+
+  const sections = findAllDivByClass(masked, "boxes-holder-section");
+
+  let shift = 0;
+  for (const b of boxes){
+    const bOpenAbs  = b.openStart + shift;
+    const bCloseAbs = b.closeEnd   + shift;
+
+    const openTag = readTag(out, bOpenAbs);
+    const idMatch = openTag.tagText.match(/\bid\s*=\s*(["'])([^"']+)\1/i);
+    const boxId = idMatch ? idMatch[2] : "";
+
+    const inSection = sections.some(sec =>
+      (sec.openStart + shift) <= bOpenAbs && (sec.closeEnd + shift) >= bCloseAbs
+    );
+
+    const needReq = boxId && req.has(boxId);
+    const needMay = boxId && may.has(boxId);
+
+    if (!needReq && !needMay) continue;
+
+    const boxHtml = out.slice(bOpenAbs, bCloseAbs);
+    const next = upsertRouteForBoxHtml(boxHtml, needReq ? "required" : "maybe", inSection, nl);
+    if (next !== boxHtml){
+      out = out.slice(0, bOpenAbs) + next + out.slice(bCloseAbs);
+      shift += next.length - (bCloseAbs - bOpenAbs);
+    }
+  }
+  return out;
+}
+
 /* ======================================================================= */
 
 /* --------- SMALL HELPERS --------- */
@@ -315,13 +458,12 @@ async function siteJson(root, key){ return await safeJson(abs(root, `${SITE_INFO
 async function altJson (root, key){ return await safeJson(abs(root, `${ALT_SITES}/${key}.json`)); }
 
 /* --------- LISTINGS --------- */
-async function processListingsGlobal(html, urlPath, lang, root, presets, nl){
+async function processListingsGlobal(html, urlPath, lang, root, presets, nl, siteSettings){
   const masked = maskSegments(html);
   const holders = findAllDivByClass(masked, "boxes-holder");
   if (!holders.length) return html;
 
   let out = html, shift = 0;
-
   for (const holder of holders){
     const hStart = holder.openEnd + shift, hEnd = holder.closeStart + shift;
     const innerMasked = maskSegments(out.slice(hStart, hEnd));
@@ -336,6 +478,7 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl){
       const boxMasked = maskSegments(boxHtml);
       const logobg = findFirstByClass(boxMasked, "logobg"); if (!logobg) continue;
 
+      // извлечь ключ
       const region = boxHtml.slice(logobg.openStart, logobg.closeStart);
       const aIdx = region.indexOf("<a"); if (aIdx===-1) continue;
       const { tagText } = readTag(region, aIdx);
@@ -351,18 +494,21 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl){
 
       const goKey = computeGoKey(key, urlPath, lang, data);
       boxHtml = updateVisitLinkInBoxHtml(boxHtml, goKey, nl);
-
       boxHtml = ensureMirrorVisitButtonInBoxHtml(boxHtml, lang, key, data.mirror, nl);
 
       const firstOpen = readTag(boxHtml, 0);
       const isMain = parseClassAttr(firstOpen.attrs).has("main");
       if (isMain) boxHtml = updateLogobgAnchorInBoxHtml(boxHtml, goKey, nl);
 
-      // NEW: TG-кнопка после visit
+      // TG
       boxHtml = ensureTGButtonInBoxHtml(boxHtml, data, lang, nl);
 
-      // NEW: ensure copy button for every .box in listings (uses site's code)
-      boxHtml = ensureCopyButtonInBoxHtml(boxHtml, data.code ?? "", nl, lang)
+      // COPY
+      boxHtml = ensureCopyButtonInBoxHtml(boxHtml, data.code ?? "", nl, lang);
+
+      // [NEW] RATING: числом из первых 4-х рейтингов
+      const avg = averageFirstFour(data.ratings);
+      boxHtml = ensureNumericRatingInLogobg(boxHtml, avg, nl);
 
       if (collapseWS(boxHtml) !== collapseWS(out.slice(absOpen, absClose))) {
         out = replaceWithin(out, absOpen, absClose, boxHtml);
@@ -371,11 +517,15 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl){
     }
     shift += delta;
   }
+
+  // [NEW] route-марки для RU:
+  out = ensureRouteMarkersForPage(out, lang, siteSettings, nl);
+
   return out;
 }
 
 /* --------- REVIEWS/MIRRORS --------- */
-async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsMap, nl, verbose){
+async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsMap, nl, verbose, siteSettings){
   let out = html;
 
   const masked2 = maskSegments(out);
@@ -1016,17 +1166,21 @@ async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, 
   lines.push(`${indent}  <div class="sitealternatesboxes">`);
   for (const alt of alts) {
     const aj = await altJson(root, alt); if (!aj) continue;
+    const sj = await siteJson(root, alt); // <--- NEW: берём реальные рейтинги если есть
     const reviewLink = `/${lang==="en" ? "" : lang + "/"}reviews/${alt}`.replace(/\/{2,}/g,"/");
     const reward = pickReward(lang, aj) || "";
+
+    // [NEW] вычислить средний рейтинг
+    const avg = averageFirstFour(sj?.ratings) ?? null;
+
     lines.push(`${indent}    <div class="box" id="${escapeAttr(aj.name)}">`);
     lines.push(`${indent}      <div class="logobg">`);
     lines.push(`${indent}        <a href="${reviewLink}"><img src="${escapeAttr(aj.logo)}" loading="lazy" draggable="false" alt="${escapeAttr(aj.name)}"></a>`);
-    const rv = ratingsMap && (ratingsMap[aj.name] ?? ratingsMap[alt]);
-    if (typeof rv === "number") {
+    if (avg != null) {
       lines.push(`${indent}        <div class="rating-case-single">`);
       lines.push(`${indent}          <div class="star_rating officon"></div>`);
-      lines.push(`${indent}          <div class="rating-summ">${(Math.round(rv*100)/100).toFixed(2)}</div>`);
-    lines.push(`${indent}        </div>`);
+      lines.push(`${indent}          <div class="rating-summ">${(Math.round(avg*100)/100).toFixed(2)}</div>`);
+      lines.push(`${indent}        </div>`);
     }
     lines.push(`${indent}      </div>`);
     lines.push(`${indent}      <div class="content">`);
