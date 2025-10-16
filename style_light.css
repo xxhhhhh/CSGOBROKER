@@ -14,6 +14,11 @@
     background: var(--main-theme);
 }
 
+.nav-bar,
+#preview-window {
+    background-color: rgba(11, 11, 11, .35);
+}
+
 .category-selector .category-box,
 .main-mode-unit,
 .main-mode-selection button,
