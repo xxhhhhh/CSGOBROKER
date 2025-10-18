@@ -838,26 +838,33 @@ nav .pages {
 }
 
 .menu-holder {
-    width: 0;
-    height: 0;
+    height: 100%;
+    width: 100%;
     top: 0;
     overflow: hidden;
     padding-top: 3%;
     position: fixed;
     background-color: rgba(11, 11, 11, .9);
+    user-select: none;
+    pointer-events: none;
     z-index: 10000;
     visibility: visible;
-    transition: opacity .15s .0s ease-in-out, visibility .15s 0s;
+    transition: all .15s ease-in-out;
     cursor: default;
-    opacity: 1;
+    opacity: 0;
     display: flex;
     justify-content: center;
     backdrop-filter: blur(2px);
+    transform: translateY(10px);
 }
 
 .menu-holder.active {
-    height: 100%;
-    width: 100%;
+    opacity: 1;
+    user-select: auto;
+    pointer-events: all;
+    transform: unset;
+    /* height: 100%;
+    width: 100%; */
 }
 
 .menu-box {
@@ -866,7 +873,8 @@ nav .pages {
     flex-direction: column;
     position: absolute;
     width: 820px;
-    height: 720px;
+    height: auto;
+    min-height: 400px;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(11, 11, 11, .9);
@@ -880,8 +888,6 @@ nav .pages {
     width: calc(100% - 9px);
     margin-left: 9px;
     margin-top: 10px;
-    background: var(--icongradient);
-    border-radius: 10px 0 0 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -889,8 +895,19 @@ nav .pages {
 }
 
 .menu-search-list {
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 9px;
     max-height: 637px;
     overflow-y: scroll;
+    border-radius: 10px;
+    gap: 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-search-list.hidden {
+    margin: unset;
 }
 
 .menu-search-section .search-field {
@@ -899,6 +916,8 @@ nav .pages {
     display: flex;
     align-items: center;
     position: relative;
+    background: var(--icongradient);
+    border-radius: 10px 0 0 10px;
 }
 
 .menu-search-section span {
@@ -914,7 +933,7 @@ nav .pages {
     gap: 9px;
     margin-top: 9px;
     margin-left: 9px;
-    height: 100%;
+    height: 637px;
     display: flex;
     flex-direction: row;
 }
@@ -927,17 +946,38 @@ nav .pages {
     display: flex;
     align-items: center;
     transition: all .1s ease-in-out;
+    height: 43px;
+    border-radius: 10px;
     cursor: pointer;
     gap: 9px;
     padding: 4px;
     font-size: 15px;
     font-weight: 500;
+    user-select: none;
 }
 
 .menu-nav-item.active,
 .menu-nav-item:hover {
-    border-radius: 5px;
     background: var(--darkygray);
+}
+
+.menu-nav-item span {
+    margin-left: 0;
+    transition: all .1s ease-in-out;
+}
+
+.menu-nav-item.active span.officon::before {
+    filter: unset;
+}
+
+.menu-nav-item.active span.officon::after {
+    background: linear-gradient(-45deg, var(--darkgray) 0%, rgba(43, 0, 16, .85) 100%);
+}
+
+.menu-nav-item span.officon::before {
+    opacity: 1;
+    height: 18px;
+    width: 18px;
 }
 
 .menu-nav-part {
@@ -949,23 +989,29 @@ nav .pages {
     gap: 1px;
 }
 
-.menu-main-part {
+.menu-main-parts {
     width: 67%;
     height: 100%;
+    position: relative;
     border-radius: 10px;
-    background: linear-gradient(250deg, var(--darkgray), var(--main-theme),  var(--darkgray));
+    background: linear-gradient(250deg, var(--darkgray), var(--main-theme), var(--darkgray));
+}
+
+.menu-main-part {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
 }
 
-.menu-main-section-mame {
+.menu-main-section-name {
     width: calc(100% - 18px);
     margin-top: 9px;
 }
 
-.menu-main-section-mame span {
+.menu-main-section-name span {
     padding: 8px 12px;
     background: var(--darkgray);
 
@@ -973,10 +1019,14 @@ nav .pages {
     border-radius: 10px;
     font-size: 14px;
     font-weight: 500;
-    color: rgb(75 75 75);
+    color: rgb(100 100 100);
     height: auto;
     display: flex;
     width: fit-content;
+}
+
+.menu-main-section-name:has(span:empty) {
+    display: none;
 }
 
 .menu-main-solid-list {
@@ -995,7 +1045,7 @@ nav .pages {
     text-decoration: unset;
     font-size: 14px;
     font-weight: 500;
-    color: rgb(75 75 75);
+    color: rgb(100 100 100);
     transition: all .1s ease-in-out;
 }
 
@@ -1011,8 +1061,11 @@ nav .pages {
 }
 
 .menu-main-reviews-item {
-    width: 123px;
-    height: 80px;
+    /* width: 123px;
+    height: 62px; */
+
+    width: 96px;
+    height: 60px;
     background: var(--darkgray);
     cursor: pointer;
     position: relative;
@@ -1023,7 +1076,7 @@ nav .pages {
 
 .menu-main-reviews-item:hover,
 .menu-main-solid-item:hover {
-    background: var(--darkygray);
+    background: rgb(12, 12, 12);
     color: var(--white);
 }
 
@@ -1036,8 +1089,11 @@ nav .pages {
 }
 
 .menu-main-reviews-item .logobg img {
+    /* max-width: 70%;
+    max-height: 55%; */
+
     max-width: 70%;
-    max-height: 40%;
+    max-height: 50%;
 }
 
 .menu-main-reviews-item .content {
@@ -1082,18 +1138,15 @@ nav .pages {
     display: flex;
     justify-content: center;
     backdrop-filter: blur(3px);
+    pointer-events: all;
 }
 
 #preview-window.hidden {
     overflow: hidden;
-    visibility: hidden;
     user-select: none;
+    pointer-events: none;
     z-index: 99;
     opacity: 0;
-}
-
-#preview-window.hidden #preview-content {
-    display: none;
 }
 
 #preview-window.hidden .site-searcher-buttons {
@@ -1122,10 +1175,14 @@ nav .pages {
     justify-content: flex-start;
     flex-direction: column;
     overflow: hidden;
+    transition: all .15s ease-in-out;
+    transform: unset;
+    opacity: 1;
 }
 
-.hidden #preview-showcase {
-    height: 0;
+#preview-window.hidden #preview-showcase {
+    transform: translateY(20px);
+    opacity: 0;
 }
 
 #preview-content {
@@ -4844,24 +4901,6 @@ nav img {
     transition: .25s all ease-in-out;
 }
 
-.menu-toggle {
-    width: auto;
-    display: flex;
-    background-color: transparent;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transition: all .15s ease-in-out;
-    cursor: pointer;
-    border: transparent;
-    font-size: 24px;
-    order: 1;
-}
-
-.menu-toggle.active::before {
-    opacity: 1;
-}
-
 .nav-bar {
     width: 100%;
     height: 0%;
@@ -8032,6 +8071,18 @@ a[data-title]:after,
     background-image: url(/img/icons/gamemodes/earning.webp);
 }
 
+.officon.fire::before {
+    background-image: url(/img/icons/gamemodes/fire.svg);
+}
+
+.officon.wiki::before {
+    background-image: url(/img/icons/gamemodes/wiki.webp);
+}
+
+.menu-nav-item .officon.earning::before {
+    background-image: url(/img/icons/main-modes/earning.png);
+}
+
 .officon.newest::before {
     background-image: url(/img/icons/gamemodes/newest.webp);
 }
@@ -8488,12 +8539,6 @@ a[data-title]:after,
 
 .content .defbutton::after {
     margin-right: 4px;
-}
-
-.menu-toggle::before {
-    background-image: url(/img/icons/gamemodes/bars-staggered.svg);
-    height: 18px;
-    width: 18px;
 }
 
 #btnfaq::before,
@@ -9271,7 +9316,7 @@ i.flagbox {
 }
 
 .site-item a::after {
-    content: '';
+    /* content: ''; */
     position: absolute;
     top: 4px;
     bottom: 4px;
@@ -9335,6 +9380,7 @@ input:not(:placeholder-shown) + .ghost {
     z-index: 100;
     overflow: hidden;
     transition: all .15s ease-in-out;
+    order: 1;
 }
 
 form#search-form {
@@ -9423,10 +9469,8 @@ a.extra-abox:active .officon,
 #theme-toggle:active,
 #particles-toggle:active,
 .search-enabler:active,
-.menu-toggle:active,
 .box .logobg a:active img,
 .lang-switch:active,
-.site-item:active,
 .navigation-weapon-type:active,
 .navigation-weapon-name:active,
 .close-box-skins:active::before,
@@ -9559,15 +9603,18 @@ div#results {
 }
 
 .site-item {
-    height: auto;
-    background-color: #0a0a0a;
-    border-radius: 5px;
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, .6);
+    height: 43px;
+    border-radius: 10px;
+    /* box-shadow: 0 0 8px 0 rgba(0, 0, 0, .6); */
     display: flex;
     justify-content: center;
     transition: all .1s ease-in-out;
     align-items: center;
     justify-content: flex-start;
+}
+
+.site-item:hover {
+    background: var(--darkygray);
 }
 
 .site-item.hidden {
@@ -9585,14 +9632,14 @@ div#results {
 .site-item.earning a::before,
 .site-item.review a::before {
     content: "" !important;
-    min-width: 20px;
-    width: 18px;
-    height: 18px;
+    min-width: 25px;
+    width: 25px;
+    height: 25px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    margin-right: 6px;
-    border-radius: 4px;
+    margin-right: 9px;
+    border-radius: 5px;
     filter: grayscale(1);
     transition: all .15s ease-in-out;
 }
@@ -11001,8 +11048,7 @@ header {
 
 .boxes-holder-name .singlemod-icon.trade-skins::before,
 .boxes-holder-name .singlemod-icon.instant-sell::before,
-.boxes-holder-name .singlemod-icon.earning::before,
-.newest-boxes .singlemod-icon::before {
+.boxes-holder-name .singlemod-icon.earning::before {
     filter: invert(24%) sepia(65%) saturate(6150%) hue-rotate(319deg) brightness(95%) contrast(250%);
 }
 
@@ -11013,7 +11059,8 @@ header {
 .boxes-holder-section:hover .boxes-holder-name .singlemod-icon.cs2::before,
 .boxes-holder-section:hover .boxes-holder-name .singlemod-icon.rust::before,
 .boxes-holder-section:hover .boxes-holder-name .singlemod-icon.crypto::before,
-.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.steam::before {
+.boxes-holder-section:hover .boxes-holder-name .singlemod-icon.steam::before,
+.newest-boxes .singlemod-icon::before {
     filter: grayscale(0);
 }
 
@@ -11502,6 +11549,15 @@ header {
 .close-button .officon::before {
     height: 22px;
     width: 22px;
+}
+
+.close-button .officon::before {
+    height: 26px;
+    width: 26px;
+}
+
+.close-button:hover .officon::before {
+    opacity: .15;
 }
 
 .payments-block .payments-block-separate:nth-child(2) {
@@ -14823,10 +14879,6 @@ header {
         min-height: 300px;
         padding: unset;
         gap: 4px;
-    }
-
-    .menu-toggle {
-        margin-right: 10px;
     }
 
     .sitedetails .sitepros span,

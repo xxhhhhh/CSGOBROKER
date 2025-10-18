@@ -15,8 +15,13 @@
 }
 
 .nav-bar,
-#preview-window {
+#preview-window,
+.menu-holder {
     background-color: rgba(11, 11, 11, .35);
+}
+
+.menu-holder {
+    backdrop-filter: blur(4px);
 }
 
 .category-selector .category-box,
@@ -130,7 +135,6 @@ nav .pages {
 .lightbulb-on::before,
 .lightbulb-off::before,
 .search-enabler .search::before,
-.menu-toggle::before,
 #btnfaq::before {
     filter: brightness(.2);
     opacity: .9;

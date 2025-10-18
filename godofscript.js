@@ -815,216 +815,447 @@ window.onload = function () {
   })();
 };
 
-const siteList = document.getElementById('site-list');
-const searchInput = document.getElementById('search-input');
+(() => {
+  'use strict';
 
-let sites = [];
-let siteTranslations = {};
-let fuse = null;
+  // ===== Config =====
+  const CACHE_KEY = 'search_data';
+  const CACHE_DURATION_MS = 1000 * 60 * 60;
 
-const CACHE_KEY = 'search_data';
-const CACHE_DURATION_MS = 1000 * 60 * 60;
+  const Lang = (window.languageTag || 'en').toLowerCase();
+  const PLACEHOLDER_EN = 'Sites, Modes, Bonuses or Keywords…';
+  const PLACEHOLDER_RU = 'Сайты, Режимы, Бонусы или Ключевые Слова…';
+  const PLACEHOLDER = Lang === 'ru' ? PLACEHOLDER_RU : PLACEHOLDER_EN;
 
-function loadCombinedSearchData() {
-  const cached = StorageHelper.get(CACHE_KEY);
-  const now = Date.now();
+  const Storage = window.StorageHelper || {
+    get: (k) => { try { return localStorage.getItem(k); } catch { return null; } },
+    set: (k, v) => { try { localStorage.setItem(k, v); } catch {} }
+  };
 
-  if (cached) {
-    try {
-      const parsed = JSON.parse(cached);
-      const { configData, translationData, expiry } = parsed;
+  let sites = [];
+  let siteTranslations = {};
+  let fuse = null;
 
-      if (expiry && now < expiry) {
-        return Promise.resolve({ configData, translationData });
+  // ===== CSS =====
+  function injectStyles() {
+    if (document.getElementById('search-menu-ghost-css')) return;
+    const css = `
+      .menu-search-section .search-field { position: relative; }
+      .menu-search-section .search-input {
+        width: 100%;
+        caret-color: currentColor;
+        background: transparent;
+        padding-right: 36px;
       }
-    } catch (e) {
-      console.warn('Ошибка чтения кэша:', e);
+      .menu-search-section .search-field .ghost {
+        position: absolute; left: 3px; right: 44px; top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        transition: opacity .12s linear;
+      }
+      .menu-search-section .search-field .search-input.has-value + .ghost { opacity: 0; }
+
+      .menu-search-section .search-field .close-button {
+        position: absolute; right: 8px; top: 50%;
+        transform: translateY(-50%);
+        display: none; cursor: pointer; line-height: 0;
+      }
+      .menu-search-section .search-field .close-button.visible { display: flex; }
+      .menu-search-section .search-field .close-button i { pointer-events: none; }
+
+      .menu-search-list.hidden { display: none; }
+      .menu-search-list.show { display: flex; }
+
+      .menu-main-section.hidden { display: none; }        /* почему: при вводе прячем весь контент */
+      .menu-main-parts { position: relative; }
+      .menu-main-part { display: none; }
+      .menu-main-part.active { display: flex; }
+    `;
+    document.head.insertAdjacentHTML('beforeend', `<style id="search-menu-ghost-css">${css}</style>`);
+  }
+
+  // ===== HTML-каркас =====
+  function injectMenuHTML(rootEl) {
+    rootEl.insertAdjacentHTML('afterbegin', `
+      <div class="menu-holder" data-search-menu="1">
+        <div class="menu-box">
+          <div class="menu-search-section">
+            <div class="search-field">
+              <input id="search-input"
+                     class="search-input"
+                     type="text"
+                     aria-label="Search"
+                     autocomplete="off"
+                     spellcheck="false"
+                     placeholder=" ">
+              <span class="ghost" aria-hidden="true">${PLACEHOLDER}</span>
+              <div class="close-button" aria-label="Clear search"><i class="officon cross"></i></div>
+            </div>
+            <div id="site-list" class="menu-search-list hidden"></div>
+          </div>
+          <div class="menu-main-section">
+            <div class="menu-nav-part"><!-- генерируется из JSON --></div>
+            <div class="menu-main-parts"><!-- каждый .menu-main-part из JSON --></div>
+          </div>
+        </div>
+      </div>
+    `);
+}
+
+  // ===== HTML skeleton =====
+  function injectMenuHTML(rootEl) {
+    rootEl.insertAdjacentHTML('afterbegin', `
+      <div class="menu-holder" data-search-menu="1">
+        <div class="menu-box">
+          <div class="menu-search-section">
+            <div class="search-field">
+              <input id="search-input"
+                     class="search-input"
+                     type="text"
+                     aria-label="Search"
+                     autocomplete="off"
+                     spellcheck="false"
+                     placeholder=" ">
+              <span class="ghost" aria-hidden="true">${PLACEHOLDER}</span>
+              <div class="close-button" aria-label="Clear search"><i class="officon cross"></i></div>
+            </div>
+            <div id="site-list" class="menu-search-list hidden"></div>
+          </div>
+          <div class="menu-main-section">
+            <div class="menu-nav-part"></div>
+            <div class="menu-main-parts"></div>
+          </div>
+        </div>
+      </div>
+    `);
+  }
+
+  // ===== Search data =====
+  function loadCombinedSearchData() {
+    const cached = Storage.get(CACHE_KEY);
+    const now = Date.now();
+
+    if (cached) {
+      try {
+        const parsed = JSON.parse(cached);
+        if (parsed.expiry && now < parsed.expiry) {
+          return Promise.resolve({ configData: parsed.configData, translationData: parsed.translationData });
+        }
+      } catch (e) { console.warn('Cache parse error:', e); }
     }
-  }
 
-  return Promise.all([
-    fetch('/code-parts/search-config/config.json').then(res => res.json()),
-    fetch('/code-parts/search-config/translations.json').then(res => res.json())
-  ]).then(([configData, translationData]) => {
-    const expiry = now + CACHE_DURATION_MS;
-    const cacheObject = { configData, translationData, expiry };
-    StorageHelper.set(CACHE_KEY, JSON.stringify(cacheObject));
-    return { configData, translationData };
-  });
-}
-
-function prepareFuseData() {
-  const list = sites.map(path => {
-    const trans = siteTranslations[path] || {};
-    return {
-      path,
-      label: trans.og || trans.en || trans.ru || path,
-      en: trans.en || '',
-      ru: trans.ru || '',
-      og: trans.og || '',
-      keywords: (trans.keywords || []).join(' '),
-      icon: trans.icon || ''
-    };
-  });
-
-  fuse = new Fuse(list, {
-    keys: ['label', 'en', 'ru', 'og', 'keywords'],
-    threshold: 0.4,
-    minMatchCharLength: 2,
-    ignoreLocation: true
-  });
-}
-
-loadCombinedSearchData().then(({ configData, translationData }) => {
-  sites = configData.sites;
-  siteTranslations = translationData;
-  prepareFuseData();
-});
-
-function getPathClass(path) {
-  const pathLower = path.toLowerCase();
-
-  const isSkins = /(trade-skins|sell-skins|trade-items|sell-items|buy-skins|buy-items|instant-sell|marketplaces)(\/|$)/.test(pathLower);
-  if (isSkins) return 'skins';
-
-  if (/topic(\/|$)/.test(pathLower)) return 'topic';
-  if (pathLower.includes('/steam/')) return 'steam';
-  if (pathLower.includes('/reviews/')) return 'review';
-  if (/earning(\/|$)/.test(pathLower)) return 'earning';
-
-  return 'gambling';
-}
-
-function shouldPrefixPath(path, language) {
-  const isTopic = /\/topic(\/|$)/.test(path);
-  const isMirrors = /\/mirrors\//.test(path);
-  const isReviews = /\/reviews\//.test(path);
-
-  if (isTopic || isMirrors) return language === 'ru';
-  if (isReviews) return ['ru', 'es', 'tr'].includes(language);
-
-  return ['ru', 'es', 'tr', 'pt', 'hi'].includes(language);
-}
-
-function createSiteItem(path) {
-  const trans = siteTranslations[path] || {};
-  const label = trans.og || (languageTag === 'ru' ? trans.ru || trans.en : trans.en || trans.ru) || path;
-  const icon = trans.icon;
-
-  const li = document.createElement('li');
-  li.className = `site-item show ${getPathClass(path)}`;
-
-  const link = document.createElement('a');
-  link.href = shouldPrefixPath(path, languageTag) ? `/${languageTag}${path}` : path;
-
-  if (icon) {
-    const img = document.createElement('img');
-    img.src = icon;
-    img.alt = '';
-    img.className = 'site-icon';
-    link.appendChild(img);
-  }
-
-  link.appendChild(document.createTextNode(label));
-  li.appendChild(link);
-  return li;
-}
-
-function handleSearchInput() {
-  const searchTerm = searchInput.value.toLowerCase();
-  siteList.innerHTML = '';
-
-  const closeButton = document.querySelector('#search-form .close-button');
-  if (searchTerm === '') {
-    if (closeButton) closeButton.classList.remove('visible');
-    siteList.classList.remove('show');
-    siteList.classList.add('hidden');
-    return;
-  } else {
-    if (closeButton) closeButton.classList.add('visible');
-  }
-
-  const fragment = document.createDocumentFragment();
-  const results = fuse.search(searchTerm, { limit: 50 });
-
-  if (results.length > 0) {
-    results.forEach(({ item }) => {
-      const li = createSiteItem(item.path);
-      fragment.appendChild(li);
+    return Promise.all([
+      fetch('/code-parts/search-config/config.json').then(r => r.json()),
+      fetch('/code-parts/search-config/translations.json').then(r => r.json())
+    ]).then(([configData, translationData]) => {
+      Storage.set(CACHE_KEY, JSON.stringify({ configData, translationData, expiry: Date.now() + CACHE_DURATION_MS }));
+      return { configData, translationData };
     });
-    siteList.classList.remove('hidden');
-    siteList.classList.add('show');
-    siteList.appendChild(fragment);
-  } else {
-    siteList.classList.remove('show');
-    siteList.classList.add('hidden');
-  }
-}
-
-searchInput.addEventListener('input', handleSearchInput);
-
-document.addEventListener('DOMContentLoaded', () => {
-  const paymentForm = document.getElementById('search-form');
-
-  let closeButton = paymentForm.querySelector('.close-button');
-  if (!closeButton) {
-    closeButton = document.createElement('div');
-    closeButton.className = 'close-button';
-    closeButton.innerHTML = '<i class="officon cross"></i>';
-    paymentForm.appendChild(closeButton);
   }
 
-  closeButton.addEventListener('click', () => {
-    searchInput.value = '';
-    closeButton.classList.remove('visible');
-    siteList.innerHTML = '';
-    siteList.classList.remove('show');
-    siteList.classList.add('hidden');
-    searchInput.focus();
-  });
+  function prepareFuseData() {
+    const list = (sites || []).map(path => {
+      const t = siteTranslations[path] || {};
+      return {
+        path,
+        label: t.og || t.en || t.ru || path,
+        en: t.en || '',
+        ru: t.ru || '',
+        og: t.og || '',
+        keywords: (t.keywords || []).join(' '),
+        icon: t.icon || ''
+      };
+    });
 
-  searchInput.addEventListener('focus', () => {
-    if (searchInput.value !== '') {
-      closeButton.classList.add('visible');
-      siteList.classList.remove('hidden');
-      siteList.classList.add('show');
+    if (window.Fuse) {
+      fuse = new Fuse(list, {
+        keys: ['label', 'en', 'ru', 'og', 'keywords'],
+        threshold: 0.4,
+        minMatchCharLength: 2,
+        ignoreLocation: true
+      });
     } else {
-      closeButton.classList.remove('visible');
-      siteList.classList.remove('show');
-      siteList.classList.add('hidden');
-    }
-  });
-
-  searchInput.addEventListener('blur', () => {
-    setTimeout(() => {
-      siteList.classList.remove('show');
-      siteList.classList.add('hidden');
-    }, 150);
-  });
-
-  const searchEnabler = document.querySelector('.search-enabler');
-  const searchContainer = document.querySelector('.search-container');
-
-  if (searchEnabler) {
-    const activateSearchUI = () => {
-      searchInput.classList.add('active');
-      searchEnabler.classList.add('disabled');
-      searchContainer.classList.add('expanded');
-    };
-
-    searchEnabler.addEventListener('click', activateSearchUI);
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const query = urlParams.get('s');
-    if (query) {
-      activateSearchUI();
-      searchInput.value = query;
-      setTimeout(() => {
-        searchInput.dispatchEvent(new Event('input'));
-      }, 50);
+      console.warn('Fuse.js not found. Fallback to basic filter.');
+      fuse = {
+        search(q, { limit = 50 } = {}) {
+          const n = (q || '').toLowerCase();
+          return list
+            .filter(it =>
+              (it.label || '').toLowerCase().includes(n) ||
+              it.en.toLowerCase().includes(n) ||
+              it.ru.toLowerCase().includes(n) ||
+              it.og.toLowerCase().includes(n) ||
+              it.keywords.toLowerCase().includes(n))
+            .slice(0, limit)
+            .map(item => ({ item }));
+        }
+      };
     }
   }
-});
+
+  // ===== Search rendering =====
+  function getPathClass(path) {
+    const p = (path || '').toLowerCase();
+    if (/(trade-skins|sell-skins|trade-items|sell-items|buy-skins|buy-items|instant-sell|marketplaces)(\/|$)/.test(p)) return 'skins';
+    if (/topic(\/|$)/.test(p)) return 'topic';
+    if (p.includes('/steam/')) return 'steam';
+    if (p.includes('/reviews/')) return 'review';
+    if (/earning(\/|$)/.test(p)) return 'earning';
+    return 'gambling';
+  }
+
+  function shouldPrefixPath(path, lang) {
+    const isTopic = /\/topic(\/|$)/.test(path);
+    const isMirrors = /\/mirrors\//.test(path);
+    const isReviews = /\/reviews\//.test(path);
+    if (isTopic || isMirrors) return lang === 'ru';
+    if (isReviews) return ['ru', 'es', 'tr'].includes(lang);
+    return ['ru', 'es', 'tr', 'pt', 'hi'].includes(lang);
+  }
+
+  function createSiteItem(path) {
+    const t = siteTranslations[path] || {};
+    const label = t.og || (Lang === 'ru' ? (t.ru || t.en) : (t.en || t.ru)) || path;
+    const icon = t.icon;
+
+    const el = document.createElement('div');
+    el.className = `site-item show ${getPathClass(path)}`;
+
+    const a = document.createElement('a');
+    a.href = shouldPrefixPath(path, Lang) ? `/${Lang}${path}` : path;
+
+    if (icon) {
+      const img = document.createElement('img');
+      img.src = icon; img.alt = ''; img.className = 'site-icon';
+      a.appendChild(img);
+    }
+    a.appendChild(document.createTextNode(label));
+    el.appendChild(a);
+    return el;
+  }
+
+  // ===== Menu from JSON =====
+  function tPick(obj) {
+    if (!obj || typeof obj !== 'object') return '';
+    return (Lang in obj && obj[Lang]) ? obj[Lang] : (obj.en || obj.def || '');
+  }
+
+  // RU-префикс для относительных ссылок в solid
+  function localizeHref(href) {
+    const url = (href || '').trim();
+    if (!url) return '#';
+    if (Lang !== 'ru') return url;
+    // не трогаем внешние и спец-схемы
+    if (/^(https?:)?\/\//i.test(url) || /^mailto:|^tel:/i.test(url)) return url;
+    // уже с /ru
+    if (/^\/ru(\/|$)/i.test(url)) return url;
+    if (url.startsWith('/')) return '/ru' + url;
+    return '/ru/' + url;
+  }
+
+  function buildNavAndParts(menuData, menuMainSection) {
+    const navPart = menuMainSection.querySelector('.menu-nav-part');
+    const partsHost = menuMainSection.querySelector('.menu-main-parts');
+    navPart.innerHTML = '';
+    partsHost.innerHTML = '';
+
+    const items = (menuData && Array.isArray(menuData.nav)) ? menuData.nav : [];
+    items.forEach((item, idx) => {
+      // nav item
+      const nav = document.createElement('div');
+      nav.className = `menu-nav-item${idx === 0 ? ' active' : ''}`;
+      const iconName = (item && item.icon) ? String(item.icon) : 'cs2';
+      const spanIcon = document.createElement('span');
+      spanIcon.className = `singlemod-icon officon ${iconName}`;
+      nav.appendChild(spanIcon);
+      nav.appendChild(document.createTextNode(' ' + tPick(item?.title)));
+      nav.dataset.index = String(idx);
+      navPart.appendChild(nav);
+
+      // main part
+      const part = document.createElement('div');
+      part.className = `menu-main-part${idx === 0 ? ' active' : ''}`;
+      part.dataset.index = String(idx);
+
+      // groups
+      const groups = Array.isArray(item?.groups) ? item.groups : [];
+      groups.forEach(group => {
+        const sectionName = document.createElement('div');
+        sectionName.className = 'menu-main-section-name menu-main-section-mame';
+        const span = document.createElement('span');
+        span.textContent = tPick(group?.name) || '';
+        sectionName.appendChild(span);
+        part.appendChild(sectionName);
+
+        const reviewsWrap = document.createElement('div');
+        reviewsWrap.className = 'menu-main-reviews';
+
+        // выбрать reviews-ru для RU, иначе reviews
+        const ruArr = group?.['reviews-ru'];
+        const enArr = group?.reviews;
+        const reviewsData =
+          (Lang === 'ru' && Array.isArray(ruArr) && ruArr.length) ? ruArr :
+          (Array.isArray(enArr) ? enArr : []);
+
+        reviewsData.forEach(rv => {
+          const a = document.createElement('a');
+          a.className = 'menu-main-reviews-item';
+          a.href = rv?.href || '#';
+
+          const logo = document.createElement('div');
+          logo.className = 'logobg';
+          const img = document.createElement('img');
+          img.src = rv?.img || '';
+          img.setAttribute('draggable','false');
+          img.alt = rv?.alt || '';
+          logo.appendChild(img);
+
+          const content = document.createElement('div');
+          content.className = 'content';
+
+          a.appendChild(logo);
+          a.appendChild(content);
+          reviewsWrap.appendChild(a);
+        });
+
+        part.appendChild(reviewsWrap);
+      });
+
+      // solid list (href локализуем при RU)
+      const solidList = document.createElement('div');
+      solidList.className = 'menu-main-solid-list';
+      (Array.isArray(item?.solid) ? item.solid : []).forEach(si => {
+        const a = document.createElement('a');
+        a.className = 'menu-main-solid-item';
+        a.href = localizeHref(si?.href || '#');        // <<< ключевое
+        a.textContent = tPick(si?.text) || '';
+        solidList.appendChild(a);
+      });
+      part.appendChild(solidList);
+
+      partsHost.appendChild(part);
+    });
+
+    // switching
+    navPart.addEventListener('click', (e) => {
+      const el = e.target.closest('.menu-nav-item');
+      if (!el) return;
+      const idx = el.dataset.index;
+      navPart.querySelectorAll('.menu-nav-item').forEach(n => n.classList.toggle('active', n.dataset.index === idx));
+      partsHost.querySelectorAll('.menu-main-part').forEach(p => p.classList.toggle('active', p.dataset.index === idx));
+    });
+  }
+
+  // ===== Main =====
+  document.addEventListener('DOMContentLoaded', () => {
+    const root = document.querySelector('.ssiodox');
+    if (!root) { console.warn('Container .ssiodox not found'); return; }
+
+    injectStyles();
+    if (!root.querySelector('.menu-holder[data-search-menu="1"]')) injectMenuHTML(root);
+
+    const menuHolder = root.querySelector('.menu-holder[data-search-menu="1"]');
+    const menuBox = menuHolder.querySelector('.menu-box');
+    const menuMainSection = menuHolder.querySelector('.menu-main-section');
+    const navPart = menuMainSection.querySelector('.menu-nav-part');
+    const partsHost = menuMainSection.querySelector('.menu-main-parts');
+
+    const searchInput = menuHolder.querySelector('#search-input');
+    const closeButton = menuHolder.querySelector('.search-field .close-button');
+    const siteList = menuHolder.querySelector('#site-list');
+    const searchEnabler = document.querySelector('.search-enabler');
+
+    function showSiteList(show) {
+      siteList.classList.toggle('hidden', !show);
+      siteList.classList.toggle('show', !!show);
+    }
+    function syncGhost() {
+      const has = !!searchInput.value.trim();
+      searchInput.classList.toggle('has-value', has);
+      closeButton.classList.toggle('visible', has);
+      if (menuMainSection) menuMainSection.classList.toggle('hidden', has);
+    }
+    function resetSearchUI() {
+      searchInput.value = '';
+      searchInput.classList.remove('has-value');
+      closeButton.classList.remove('visible');
+      showSiteList(false);
+      siteList.innerHTML = '';
+      if (menuMainSection) menuMainSection.classList.remove('hidden');
+      const firstNav = navPart.querySelector('.menu-nav-item[data-index="0"]');
+      const firstPart = partsHost.querySelector('.menu-main-part[data-index="0"]');
+      if (firstNav && firstPart) {
+        navPart.querySelectorAll('.menu-nav-item').forEach(n => n.classList.toggle('active', n === firstNav));
+        partsHost.querySelectorAll('.menu-main-part').forEach(p => p.classList.toggle('active', p === firstPart));
+      }
+    }
+    function renderResults(term) {
+      siteList.innerHTML = '';
+      if (!term) { showSiteList(false); return; }
+      const results = fuse ? fuse.search(term, { limit: 50 }) : [];
+      if (!results.length) { showSiteList(false); return; }
+      const frag = document.createDocumentFragment();
+      results.forEach(({ item }) => frag.appendChild(createSiteItem(item.path)));
+      siteList.appendChild(frag);
+      showSiteList(true);
+    }
+
+    if (searchEnabler) {
+      searchEnabler.addEventListener('click', () => {
+        menuHolder.classList.add('active');
+        searchInput.focus();
+        const len = searchInput.value.length;
+        try { searchInput.setSelectionRange(len, len); } catch {}
+        syncGhost();
+        if (searchInput.value) renderResults(searchInput.value.trim());
+      });
+    }
+    menuHolder.addEventListener('click', (e) => {
+      if (!menuBox.contains(e.target)) {
+        menuHolder.classList.remove('active');
+        resetSearchUI();
+      }
+    });
+    menuBox.addEventListener('click', (e) => e.stopPropagation());
+
+    closeButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      resetSearchUI();
+      searchInput.focus();
+    });
+
+    searchInput.addEventListener('input', () => { syncGhost(); renderResults(searchInput.value.trim()); });
+    searchInput.addEventListener('focus', () => { syncGhost(); showSiteList(!!searchInput.value.trim()); });
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { menuHolder.classList.remove('active'); resetSearchUI(); }
+    });
+
+    Promise.all([
+      loadCombinedSearchData(),
+      fetch('/code-parts/search-config/menu-build.json').then(r => r.json()).catch(() => ({ nav: [] }))
+    ]).then(([{ configData, translationData }, menuData]) => {
+      sites = configData?.sites || [];
+      siteTranslations = translationData || {};
+      prepareFuseData();
+
+      buildNavAndParts(menuData || { nav: [] }, menuMainSection);
+
+      const q = new URLSearchParams(window.location.search).get('s');
+      if (q) {
+        menuHolder.classList.add('active');
+        searchInput.value = q;
+        syncGhost();
+        renderResults(q.trim());
+        searchInput.focus();
+        try { searchInput.setSelectionRange(q.length, q.length); } catch {}
+      } else {
+        syncGhost();
+      }
+    });
+  });
+})();
 
 const btnfaq = document.getElementById("btnfaq");
 
@@ -1851,7 +2082,6 @@ function loadAndApplyTranslations(languageTag) {
   }
 }
 
-
 function applyTranslations(element, languageTag, translations) {
   translateElements(element, languageTag, translations);
 
@@ -1881,126 +2111,6 @@ function translateElements(element, languageTag, translations) {
     }
     el.classList.add('translated');
   });
-}
-
-
-function createCategoryStructureFromBuilder(data) {
-  const wrapper = document.createElement('div');
-  wrapper.classList.add('category-selector');
-  wrapper.id = 'notexist';
-
-  data.categories.forEach(cat => {
-    const category = document.createElement('div');
-    category.classList.add('category');
-
-    const box = document.createElement('a');
-    box.classList.add('category-box');
-    box.href = cat.href;
-    cat.classes?.forEach(cls => box.classList.add(cls));
-
-    const logo = document.createElement('div');
-    logo.classList.add('category-box-logo');
-    logo.innerHTML = `<img src="${cat.logo}" alt="${cat.label}">`;
-
-    const content = document.createElement('div');
-    content.classList.add('category-box-content');
-    content.innerHTML = `<span>${cat.label}</span>`;
-
-    box.append(logo, content);
-    category.appendChild(box);
-    wrapper.appendChild(category);
-  });
-
-  setupCategorySelectorLogic(wrapper);
-  return wrapper;
-}
-
-function setupCategorySelectorLogic(boxContainer) {
-  const pages = document.querySelector('.pages');
-
-  boxContainer.addEventListener("click", e => {
-    const targetBox = e.target.closest(".category-box");
-    const bigLink = e.target.closest(".big-category a");
-
-    if (e.target.closest(".submenu2 a")) {
-      return;
-    }
-
-    if (targetBox) {
-      const category = targetBox.closest(".category");
-      const submenu = category.querySelector(".submenu");
-      const isNewest = targetBox.classList.contains("newest");
-
-      if (!isNewest && window.innerWidth <= 1365) e.preventDefault();
-
-      boxContainer.querySelectorAll(".category-box").forEach(box => {
-        if (box !== targetBox) {
-          box.classList.remove("current");
-          box.closest(".category")?.querySelector(".submenu")?.classList.remove("current");
-        }
-      });
-
-      targetBox.classList.toggle("current");
-      const anyActive = [...boxContainer.querySelectorAll(".category-box")].some(b => b.classList.contains("current"));
-      boxContainer.classList.toggle("current", anyActive);
-      pages?.classList.toggle("hardplaced", anyActive);
-      if (submenu && window.innerWidth <= 1365) submenu.classList.toggle("current");
-    }
-
-    if (bigLink) {
-      const bigCategory = bigLink.closest(".big-category");
-      const submenu2 = bigCategory.querySelector(".submenu2");
-      const isActive = bigCategory.classList.contains("active");
-
-      if (submenu2 && window.innerWidth <= 1365) e.preventDefault();
-
-      boxContainer.querySelectorAll(".big-category.active").forEach(el => {
-        el.classList.remove("active");
-        el.querySelector(".submenu2")?.classList.remove("current");
-      });
-
-      if (!isActive) {
-        bigCategory.classList.add("active");
-        submenu2?.classList.add("current");
-      }
-    }
-
-    if (e.target === boxContainer) {
-      const navBar = document.querySelector('.nav-bar');
-      const menuToggle = document.querySelector('.menu-toggle');
-      const pages = document.querySelector('.pages');
-      navBar.classList.remove('active');
-      menuToggle.classList.remove('active');
-      pages?.classList.remove('hardhidden');
-    }
-  });
-}
-
-function insertNotExistSelector(builderData) {
-  const ssiodox = document.querySelector('.ssiodox');
-  if (!ssiodox) return;
-
-  const navBar = document.createElement('div');
-  navBar.className = 'nav-bar';
-
-  const centralizer = document.createElement('div');
-  centralizer.className = 'category-centralizer nav';
-
-  const selector = createCategoryStructureFromBuilder(builderData);
-  centralizer.appendChild(selector);
-  navBar.appendChild(centralizer);
-  ssiodox.appendChild(navBar);
-
-  setTimeout(() => updateURLs(selector), 250);
-
-  document.querySelectorAll('#notexist .category').forEach(loadCategoryContent);
-}
-
-function loadSecondarySelector() {
-  fetch(builderURL)
-    .then(res => res.json())
-    .then(insertNotExistSelector)
-    .catch(err => console.error('Failed to load category builder:', err));
 }
 
 function loadCategoryContent(category) {
@@ -2056,15 +2166,6 @@ function generateCategoryHTML(items) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector(".menu-toggle")?.addEventListener("click", () => {
-    const navBar = document.querySelector(".nav-bar");
-    const pages = document.querySelector(".pages");
-    navBar.classList.toggle("active");
-    document.querySelector(".menu-toggle").classList.toggle("active");
-    pages?.classList.toggle("hardhidden", navBar.classList.contains("active"));
-  });
-
-  loadSecondarySelector();
   document.querySelectorAll('.category').forEach(loadCategoryContent);
   loadAndApplyTranslations(languageTag);
 });
