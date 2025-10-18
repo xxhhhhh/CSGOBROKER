@@ -164,7 +164,7 @@ header {
 }
 
 nav {
-    width: 95%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -180,6 +180,10 @@ button {
     display: flex;
     align-items: center;
     height: 100%;
+}
+
+.main-nav-content {
+    margin-left: 30px;
 }
 
 .nav-content {
@@ -8462,7 +8466,8 @@ a[data-title]:after,
 .officon:hover::before,
 .preview-pause-button:hover .officon::before,
 .settings-button:hover .officon::before,
-.extra-abox .officon:hover::before {
+.extra-abox .officon:hover::before,
+.search-container:hover .officon::before {
     opacity: 1;
 }
 
@@ -9376,11 +9381,19 @@ input:not(:placeholder-shown) + .ghost {
 
 .search-container {
     order: 1;
+    height: 100%;
+    height: calc(100% - 18px);
+    width: 52px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    background: var(--icongradient);
+    margin-right: 9px;
 }
 
 .search-enabler {
     height: 100%;
-    width: 18px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9423,6 +9436,7 @@ label:active,
 .skin-copy button:active,
 .skin-copy button:active i,
 .officon:active::before,
+.search-container:active .officon::before,
 .settings-button:active .officon::before,
 .skins-category-switch .category-switch:active::before,
 .preview-pause-button:active .officon::before,
@@ -13147,8 +13161,8 @@ header {
         background: linear-gradient(180deg, var(--darkgray), transparent 300px);
     }
 
-    nav {
-        width: 92%;
+    .main-nav-content {
+        margin-left: 20px;
     }
 
     .topic-grandbox,
@@ -15137,10 +15151,6 @@ header {
             margin: 4px 2px 2px;
             height: 320px;
         }
-    }
-
-    .nav-content .lang-menu {
-        order: 1;
     }
 
     .language-box {
