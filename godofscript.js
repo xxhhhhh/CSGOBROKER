@@ -867,7 +867,7 @@ window.onload = function () {
       .menu-search-list.hidden { display: none; }
       .menu-search-list.show { display: flex; }
 
-      .menu-main-section.hidden { display: none; }        /* почему: при вводе прячем весь контент */
+      .menu-main-section.hidden { display: none; }
       .menu-main-parts { position: relative; }
       .menu-main-part { display: none; }
       .menu-main-part.active { display: flex; }
@@ -895,36 +895,8 @@ window.onload = function () {
             <div id="site-list" class="menu-search-list hidden"></div>
           </div>
           <div class="menu-main-section">
-            <div class="menu-nav-part"><!-- генерируется из JSON --></div>
-            <div class="menu-main-parts"><!-- каждый .menu-main-part из JSON --></div>
-          </div>
-        </div>
-      </div>
-    `);
-}
-
-  // ===== HTML skeleton =====
-  function injectMenuHTML(rootEl) {
-    rootEl.insertAdjacentHTML('afterbegin', `
-      <div class="menu-holder" data-search-menu="1">
-        <div class="menu-box">
-          <div class="menu-search-section">
-            <div class="search-field">
-              <input id="search-input"
-                     class="search-input"
-                     type="text"
-                     aria-label="Search"
-                     autocomplete="off"
-                     spellcheck="false"
-                     placeholder=" ">
-              <span class="ghost" aria-hidden="true">${PLACEHOLDER}</span>
-              <div class="close-button" aria-label="Clear search"><i class="officon cross"></i></div>
-            </div>
-            <div id="site-list" class="menu-search-list hidden"></div>
-          </div>
-          <div class="menu-main-section">
-            <div class="menu-nav-part"></div>
-            <div class="menu-main-parts"></div>
+            <div class="menu-nav-part"><!-- из JSON --></div>
+            <div class="menu-main-parts"><!-- из JSON --></div>
           </div>
         </div>
       </div>
@@ -1041,28 +1013,24 @@ window.onload = function () {
     return (Lang in obj && obj[Lang]) ? obj[Lang] : (obj.en || obj.def || '');
   }
 
-  // RU-префикс для относительных ссылок в solid
   function localizeHref(href) {
     const url = (href || '').trim();
     if (!url) return '#';
     if (Lang !== 'ru') return url;
-    // не трогаем внешние и спец-схемы
     if (/^(https?:)?\/\//i.test(url) || /^mailto:|^tel:/i.test(url)) return url;
-    // уже с /ru
     if (/^\/ru(\/|$)/i.test(url)) return url;
     if (url.startsWith('/')) return '/ru' + url;
     return '/ru/' + url;
   }
 
   function buildNavAndParts(menuData, menuMainSection) {
-    const navPart = menuMainSection.querySelector('.menu-nav-part');
+    const navPart   = menuMainSection.querySelector('.menu-nav-part');
     const partsHost = menuMainSection.querySelector('.menu-main-parts');
     navPart.innerHTML = '';
     partsHost.innerHTML = '';
 
     const items = (menuData && Array.isArray(menuData.nav)) ? menuData.nav : [];
     items.forEach((item, idx) => {
-      // nav item
       const nav = document.createElement('div');
       nav.className = `menu-nav-item${idx === 0 ? ' active' : ''}`;
       const iconName = (item && item.icon) ? String(item.icon) : 'cs2';
@@ -1073,12 +1041,10 @@ window.onload = function () {
       nav.dataset.index = String(idx);
       navPart.appendChild(nav);
 
-      // main part
       const part = document.createElement('div');
       part.className = `menu-main-part${idx === 0 ? ' active' : ''}`;
       part.dataset.index = String(idx);
 
-      // groups
       const groups = Array.isArray(item?.groups) ? item.groups : [];
       groups.forEach(group => {
         const sectionName = document.createElement('div');
@@ -1091,7 +1057,6 @@ window.onload = function () {
         const reviewsWrap = document.createElement('div');
         reviewsWrap.className = 'menu-main-reviews';
 
-        // выбрать reviews-ru для RU, иначе reviews
         const ruArr = group?.['reviews-ru'];
         const enArr = group?.reviews;
         const reviewsData =
@@ -1122,13 +1087,12 @@ window.onload = function () {
         part.appendChild(reviewsWrap);
       });
 
-      // solid list (href локализуем при RU)
       const solidList = document.createElement('div');
       solidList.className = 'menu-main-solid-list';
       (Array.isArray(item?.solid) ? item.solid : []).forEach(si => {
         const a = document.createElement('a');
         a.className = 'menu-main-solid-item';
-        a.href = localizeHref(si?.href || '#');        // <<< ключевое
+        a.href = localizeHref(si?.href || '#');
         a.textContent = tPick(si?.text) || '';
         solidList.appendChild(a);
       });
@@ -1137,13 +1101,20 @@ window.onload = function () {
       partsHost.appendChild(part);
     });
 
-    // switching
     navPart.addEventListener('click', (e) => {
       const el = e.target.closest('.menu-nav-item');
       if (!el) return;
       const idx = el.dataset.index;
       navPart.querySelectorAll('.menu-nav-item').forEach(n => n.classList.toggle('active', n.dataset.index === idx));
       partsHost.querySelectorAll('.menu-main-part').forEach(p => p.classList.toggle('active', p.dataset.index === idx));
+    });
+  }
+
+  // ===== Pages visibility =====
+  function setPagesSearchHidden(flag) {
+    const nodes = document.querySelectorAll('.pages');
+    nodes.forEach(n => {
+      n.classList.toggle('search_hidden', !!flag);
     });
   }
 
@@ -1155,16 +1126,16 @@ window.onload = function () {
     injectStyles();
     if (!root.querySelector('.menu-holder[data-search-menu="1"]')) injectMenuHTML(root);
 
-    const menuHolder = root.querySelector('.menu-holder[data-search-menu="1"]');
-    const menuBox = menuHolder.querySelector('.menu-box');
+    const menuHolder      = root.querySelector('.menu-holder[data-search-menu="1"]');
+    const menuBox         = menuHolder.querySelector('.menu-box');
     const menuMainSection = menuHolder.querySelector('.menu-main-section');
-    const navPart = menuMainSection.querySelector('.menu-nav-part');
-    const partsHost = menuMainSection.querySelector('.menu-main-parts');
+    const navPart         = menuMainSection.querySelector('.menu-nav-part');
+    const partsHost       = menuMainSection.querySelector('.menu-main-parts');
 
-    const searchInput = menuHolder.querySelector('#search-input');
-    const closeButton = menuHolder.querySelector('.search-field .close-button');
-    const siteList = menuHolder.querySelector('#site-list');
-    const searchEnabler = document.querySelector('.search-enabler');
+    const searchInput  = menuHolder.querySelector('#search-input');
+    const closeButton  = menuHolder.querySelector('.search-field .close-button');
+    const siteList     = menuHolder.querySelector('#site-list');
+    const searchEnabler= document.querySelector('.search-enabler');
 
     function showSiteList(show) {
       siteList.classList.toggle('hidden', !show);
@@ -1183,7 +1154,7 @@ window.onload = function () {
       showSiteList(false);
       siteList.innerHTML = '';
       if (menuMainSection) menuMainSection.classList.remove('hidden');
-      const firstNav = navPart.querySelector('.menu-nav-item[data-index="0"]');
+      const firstNav  = navPart.querySelector('.menu-nav-item[data-index="0"]');
       const firstPart = partsHost.querySelector('.menu-main-part[data-index="0"]');
       if (firstNav && firstPart) {
         navPart.querySelectorAll('.menu-nav-item').forEach(n => n.classList.toggle('active', n === firstNav));
@@ -1201,24 +1172,39 @@ window.onload = function () {
       showSiteList(true);
     }
 
+    function openSearch() {
+      menuHolder.classList.add('active');
+      setPagesSearchHidden(true);
+      searchInput.focus();
+      const len = searchInput.value.length;
+      try { searchInput.setSelectionRange(len, len); } catch {}
+      syncGhost();
+      if (searchInput.value) renderResults(searchInput.value.trim());
+    }
+    function closeSearch() {
+      menuHolder.classList.remove('active');
+      setPagesSearchHidden(false);
+      resetSearchUI();
+    }
+
+    // toggle по .search-enabler
     if (searchEnabler) {
       searchEnabler.addEventListener('click', () => {
-        menuHolder.classList.add('active');
-        searchInput.focus();
-        const len = searchInput.value.length;
-        try { searchInput.setSelectionRange(len, len); } catch {}
-        syncGhost();
-        if (searchInput.value) renderResults(searchInput.value.trim());
+        if (menuHolder.classList.contains('active')) {
+          closeSearch();        // повторный клик → закрыть и сбросить
+        } else {
+          openSearch();         // первый клик → открыть
+        }
       });
     }
+
+    // клик вне .menu-box → закрыть
     menuHolder.addEventListener('click', (e) => {
-      if (!menuBox.contains(e.target)) {
-        menuHolder.classList.remove('active');
-        resetSearchUI();
-      }
+      if (!menuBox.contains(e.target)) closeSearch();
     });
     menuBox.addEventListener('click', (e) => e.stopPropagation());
 
+    // close button
     closeButton.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -1226,12 +1212,14 @@ window.onload = function () {
       searchInput.focus();
     });
 
+    // input
     searchInput.addEventListener('input', () => { syncGhost(); renderResults(searchInput.value.trim()); });
     searchInput.addEventListener('focus', () => { syncGhost(); showSiteList(!!searchInput.value.trim()); });
     searchInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') { menuHolder.classList.remove('active'); resetSearchUI(); }
+      if (e.key === 'Escape') closeSearch();
     });
 
+    // load data
     Promise.all([
       loadCombinedSearchData(),
       fetch('/code-parts/search-config/menu-build.json').then(r => r.json()).catch(() => ({ nav: [] }))
@@ -1244,7 +1232,7 @@ window.onload = function () {
 
       const q = new URLSearchParams(window.location.search).get('s');
       if (q) {
-        menuHolder.classList.add('active');
+        openSearch();
         searchInput.value = q;
         syncGhost();
         renderResults(q.trim());

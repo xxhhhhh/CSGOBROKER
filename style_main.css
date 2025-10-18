@@ -133,10 +133,12 @@ header {
     backface-visibility: hidden;
 }
 
-.ssiodox:not(.nondef) header.is-hidden {
-transform: translate(-50%, -120%);
-opacity: 0;               /* чтобы не мигал hover */
-pointer-events: none;     /* клики не ловит, пока скрыт */
+@media screen and (min-width: 1365px) {
+    .ssiodox:not(.nondef) header.is-hidden {
+        transform: translate(-50%, -120%);
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
   /* header.is-pinned {
@@ -9373,24 +9375,7 @@ input:not(:placeholder-shown) + .ghost {
 }
 
 .search-container {
-    width: 18px;
-    height: 30px;
-    display: flex;
-    position: relative;
-    z-index: 100;
-    overflow: hidden;
-    transition: all .15s ease-in-out;
     order: 1;
-}
-
-form#search-form {
-    position: absolute;
-    width: 100%;
-}
-
-.search-container.expanded {
-    width: 150px;
-    overflow: visible;
 }
 
 .search-enabler {
@@ -14228,10 +14213,15 @@ header {
         top: 120px;
     }
 
-    nav .pages.hidden {
+    nav .pages.hidden,
+    nav .pages.search_hidden {
         height: 0;
         visibility: hidden;
         transition: all .15s ease-in-out, visibility 0s .15s;
+    }
+
+    nav .pages.search_hidden {
+        transition: none;
     }
 
     nav .pages.hardplaced {
@@ -14588,6 +14578,28 @@ header {
 
 @media screen and (max-width: 850px) {
 
+    .menu-box {
+        width: 100%;
+        height: auto;
+        min-height: unset;
+        left: unset;
+        transform: unset;
+        top: 70px;
+    }
+
+    .menu-main-reviews {
+        gap: 7px;
+    }
+
+    .menu-main-reviews-item {
+        width: 31%;
+        min-width: 60px;
+    }
+
+    .menu-main-parts {
+        overflow-y: scroll;
+    }
+
     .sitepage.items .section.first {
         min-height: 60px;
     }
@@ -14607,10 +14619,6 @@ header {
 
     .sitepage.items .section.first:has(.solo-category) {
         min-height: unset;
-    }
-
-    .search-container.expanded {
-        width: 100px;
     }
 
     #search-input {
@@ -15132,7 +15140,7 @@ header {
     }
 
     .nav-content .lang-menu {
-        order: -2;
+        order: 1;
     }
 
     .language-box {

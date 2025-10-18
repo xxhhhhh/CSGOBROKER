@@ -140,17 +140,10 @@ nav .pages {
     opacity: .9;
 }
 
-#search-input, 
 .payment-container input,
-#search-input:hover,
-.site-item,
 .site-list  {
     background: var(--darkgray);
 }
-
-/* #search-input:hover {
-    background-color: rgb(19 19 19);
-} */
 
 .sitepage .box .content {
     background: var(--darkygray);
@@ -477,6 +470,9 @@ h3,
 .site-attention strong.item,
 .contact-box:hover span,
 .email-placeholder:hover span,
+.site-item:hover a,
+.menu-nav-item.active, 
+.menu-nav-item:hover,
 .topic-nav-box::before,
 .topic-nav-close::after,
 #button-route-filter[data-title]:after,
@@ -1172,7 +1168,8 @@ ul .submenu li .nonredir,
 
 .category-selector .category-box.active .category-box-logo::before,
 .singlemod-box.active .singlemod-select::before,
-.singlemod-box.active .singlemod-icon::after {
+.singlemod-box.active .singlemod-icon::after,
+.menu-nav-item.active span.officon::after {
     background: linear-gradient(-45deg, var(--main-color) 0%, rgba(226, 24, 58, .8) 100%);
 }
 
@@ -1181,7 +1178,8 @@ ul .submenu li .nonredir,
 }
 
 .category-box.active .category-box-logo img,
-.singlemod-box.active .singlemod-select img {
+.singlemod-box.active .singlemod-select img,
+.menu-nav-item.active span.officon::before {
     opacity: 1;
     filter: brightness(10) grayscale(1) !important;
 }
@@ -1190,6 +1188,18 @@ ul .submenu li .nonredir,
 .singlemod-select:hover i, 
 .payments-button:hover::after {
     filter: grayscale(1) brightness(0);
+}
+
+.menu-nav-item span.officon::before {
+    transition: none;
+}
+
+.menu-main-reviews-item {
+    background: rgb(20 20 20);
+}
+
+.menu-search-section span {
+    opacity: 1;
 }
 
 .category .submenu li a,
@@ -1306,7 +1316,7 @@ ul .submenu li .nonredir,
 .payment-close-button .officon::before,
 .pagination-button.arrow .officon.chevron::before,
 .main-mode-selection button .officon.chevron::before {
-    filter: brightness(.2);
+    filter: brightness(.2) grayscale(1);
     opacity: .95;
 }
 
@@ -1647,6 +1657,12 @@ ul .submenu li .nonredir,
     .submenu .big-category a:hover,
     .submenu li:hover a {
         background: var(--main-theme);
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .menu-box {
+        top: 75px;
     }
 }
 
