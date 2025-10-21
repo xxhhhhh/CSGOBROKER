@@ -106,8 +106,8 @@ header::before,
     filter: brightness(1.1) drop-shadow(0 1px 1px rgb(175 175 175)) blur(0) !important;
 }
 
-nav .logospace {
-    margin-left: -23px;
+.main-nav-content {
+    margin-left: 9px;
 }
 
 header #logo {

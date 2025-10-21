@@ -14592,6 +14592,10 @@ header {
 
 @media screen and (max-width: 850px) {
 
+    .menu-search-section .search-field .close-button {
+        right: 18px;
+    }
+
     .menu-box {
         width: 100%;
         height: auto;
