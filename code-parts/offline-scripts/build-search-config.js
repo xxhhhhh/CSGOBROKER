@@ -5,15 +5,12 @@
  *   - /code-parts/search-config/translations.json
  *   - /code-parts/search-config/menu-build.json
  *
- * Ключевые моменты:
- *   - popular.gambling: .cs2 + .crypto (≤15), trading: SELL→TRADE
- *   - reviews-ru: href с префиксом /ru
- *   - SOLID: только "solid" (без "solid-ru"):
- *       popular←freebies, cs2-sites←cs2 (исключая "Wiki"), rust←rust, crypto←crypto, earning←earning
- *   - wiki: solid из code-parts/topics/topics-nav.json (alt→EN, data-title-ru→RU), reviews не нужны
- *   - steam: 3 ОТДЕЛЬНЫЕ группы:
- *       [0] /steam/levelup, [1] /steam/topup, [2] /steam/buy-games (каждая ≤ --limit-steam) + RU версии
- *   - newest: 1 review (≤30) из /newest + RU
+ * Правки:
+ *   1) FIX: ключи больше не сводятся к /reviews/*.
+ *   2) "icon" для /reviews/* и /mirrors/*, приоритет — пользовательский.
+ *   3) noindex: исключаем ключ, если у любой версии страницы есть meta robots noindex;
+ *      вклад из noindex-страниц игнорируется.
+ *   4) ❗️og НЕ заполняем из og:site_name; en/ru приоритетнее og.
  */
 
 const fs = require('fs');
@@ -25,18 +22,12 @@ const CONFIG_PATH = path.join(OUT_DIR, 'config.json');
 const TRANSL_PATH = path.join(OUT_DIR, 'translations.json');
 const MENU_OUT_PATH = path.join(OUT_DIR, 'menu-build.json');
 
-const MENU_TEMPLATE_CANDIDATES = [
-  MENU_OUT_PATH,
-  path.join(OUT_DIR, 'menu-template.json'),
-  path.join(ROOT_DIR, 'menu-build.json'),
-];
-
-// источники SOLID
+// Категории (SOLID)
 const CAT_DIR = path.join(ROOT_DIR, 'code-parts', 'category-import');
 const CAT_CONTENTS_PATH = path.join(CAT_DIR, 'category-contents.json');
 const CAT_TRANSL_PATH   = path.join(CAT_DIR, 'category-translations.json');
 
-// wiki topics
+// Wiki topics (SOLID)
 const TOPICS_NAV_PATH = path.join(ROOT_DIR, 'code-parts', 'topics', 'topics-nav.json');
 
 const argv = new Set(process.argv.slice(2));
@@ -136,6 +127,7 @@ function normalizeKeyNoLocale(urlPath) {
   return '/' + parts.join('/');
 }
 function isReviewsUrl(urlPath) { return /^\/(?:ru\/)?reviews\/[^/]+\/?$/.test(urlPath); }
+function isMirrorsUrl(urlPath) { return /^\/(?:ru\/)?mirrors\/[^/]+\/?$/.test(urlPath); }
 function reviewsSlug(urlPath) { const m = urlPath.match(/^\/(?:ru\/)?reviews\/([^/]+)\/?$/); return m ? m[1] : null; }
 const keyFromSlug = (slug) => `/reviews/${slug}`;
 
@@ -196,20 +188,26 @@ function cleanKeywords(list) {
   return out;
 }
 
-// noindex detector
+// ---------- noindex detector ----------
 function hasNoindex(html) {
   if (!html) return false;
   const metas = html.match(/<meta\b[^>]*>/gi) || [];
   for (const raw of metas) {
-    const lower = raw.toLowerCase();
-    const isRobots = /(name|property|http-equiv)\s*=\s*["']?\s*(robots|googlebot|x-robots-tag)\b/.test(lower);
-    if (!isRobots) continue;
-    const mContent = lower.match(/\bcontent\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))/i);
-    const content = (mContent && (mContent[1] || mContent[2] || mContent[3]) || '').toLowerCase();
-    if (/\bnoindex\b/.test(content) || /\bnone\b/.test(content)) return true;
+    const tag = raw;
+    const who = (getAttrLower(tag, 'name') || getAttrLower(tag, 'property') || getAttrLower(tag, 'http-equiv')) || '';
+    if (!/(robots|googlebot|x-robots-tag)/i.test(who)) continue;
+    const content = (getAttr(tag, 'content') || '').toLowerCase();
+    if (!content) continue;
+    if (/(^|[^a-z0-9_-])(noindex|none)([^a-z0-9_-]|$)/i.test(content)) return true;
   }
-  const fallback = /<meta\b[^>]*\bcontent\s*=\s*["'][^"']*\bnoindex\b[^"']*["'][^>]*\b(?:name|property|http-equiv)\s*=\s*["']?(?:robots|googlebot|x-robots-tag)\b[^>]*>/i;
-  return fallback.test(html);
+  return false;
+
+  function getAttr(src, name) {
+    const re = new RegExp(`${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s"'>]+))`, 'i');
+    const m = src.match(re);
+    return m ? (m[1] || m[2] || m[3] || '').trim() : '';
+  }
+  function getAttrLower(src, name) { return getAttr(src, name).toLowerCase(); }
 }
 
 // ---------- Project scan ----------
@@ -240,6 +238,7 @@ function collectHtmlFiles(dir) {
 // ---------- Merge translations ----------
 function mergeTranslations(base, add) {
   const out = { ...(base || {}) };
+  // приоритет: en, ru, потом og; не перетираем существующие значения
   for (const k of ['en', 'ru', 'og']) if (!out[k] && add[k]) out[k] = add[k];
   if (Array.isArray(add.keywords) && add.keywords.length) {
     out.keywords = Array.from(new Set([...(out.keywords || []), ...add.keywords]));
@@ -250,62 +249,20 @@ function mergeTranslations(base, add) {
   return out;
 }
 
-// ---------- Menu skeleton ----------
-function minimalMenuSkeleton() {
-  return {
-    nav: [
-      { key: 'popular',   icon: 'fire',    title: { en: 'Popular',      ru: 'Популярное' }, groups: [
-        { name: { en: 'Gambling', ru: 'Гемблинг' }, reviews: [] },
-        { name: { en: 'Trading',  ru: 'Трейдинг' }, reviews: [] },
-      ], solid: [] },
-      { key: 'cs2-sites', icon: 'cs2',     title: { en: 'CS2 Sites',     ru: 'Сайты CS2' }, groups: [
-        { name: { en: 'Gambling', ru: 'Гемблинг' }, reviews: [] },
-        { name: { en: 'Trading',  ru: 'Трейдинг' }, reviews: [] },
-      ], solid: [] },
-      { key: 'rust',      icon: 'rust',    title: { en: 'Rust Sites',    ru: 'Сайты Rust' }, groups: [
-        { name: { en: 'Gambling', ru: 'Гемблинг' }, reviews: [] },
-        { name: { en: 'Trading',  ru: 'Трейдинг' }, reviews: [] },
-      ], solid: [] },
-      { key: 'crypto',    icon: 'crypto',  title: { en: 'Crypto Sites',  ru: 'Крипто-сайты' }, groups: [
-        { name: { en: 'All', ru: 'Все' }, reviews: [] },
-      ], solid: [] },
-      { key: 'earning',   icon: 'earning', title: { en: 'Earning Sites', ru: 'Заработок' }, groups: [
-        { reviews: [], 'reviews-ru': [] },
-      ], solid: [] },
-      { key: 'steam',     icon: 'steam',   title: { en: 'Steam Sites',   ru: 'Сайты Steam' }, groups: [
-        { name: { en: 'Increase Level', ru: 'Увеличить Уровень' }, reviews: [], 'reviews-ru': [] },
-        { name: { en: 'Top Up Balance', ru: 'Пополнить Баланс' }, reviews: [], 'reviews-ru': [] },
-        { name: { en: 'Buy Games',      ru: 'Купить Игры'       }, reviews: [], 'reviews-ru': [] },
-      ], solid: [] },
-      { key: 'newest',    icon: 'new',     title: { en: 'Newest',        ru: 'Новое' }, groups: [
-        { reviews: [], 'reviews-ru': [] },
-      ], solid: [] },
-      { key: 'wiki',      icon: 'wiki',    title: { en: 'Skins Wiki',    ru: 'Wiki Скинов' }, groups: [], solid: [] },
-    ],
-  };
+// ---------- Menu helpers ----------
+function minimalNode(key, titleEn, titleRu) {
+  return { key, icon: key, title: { en: titleEn, ru: titleRu }, groups: [], solid: [] };
 }
 function loadMenuBase() {
-  for (const fp of MENU_TEMPLATE_CANDIDATES) {
-    const j = readJsonSafe(fp, null);
-    if (j && typeof j === 'object') return j;
-  }
-  return minimalMenuSkeleton();
+  const cand = [MENU_OUT_PATH, path.join(OUT_DIR, 'menu-template.json'), path.join(ROOT_DIR, 'menu-build.json')];
+  for (const fp of cand) { const j = readJsonSafe(fp, null); if (j && typeof j === 'object') return j; }
+  return { nav: [] };
 }
-function findEntry(menu, key) {
-  if (!menu || !Array.isArray(menu.nav)) return null;
-  return menu.nav.find(n => n && n.key === key) || null;
-}
-function ensureGroups(node, count) {
-  node.groups = Array.isArray(node.groups) ? node.groups : [];
-  while (node.groups.length < count) node.groups.push({ name: {}, reviews: [] });
-}
-
-// ---------- DOM helpers ----------
+function findEntry(menu, key) { return (menu.nav || []).find(n => n && n.key === key) || null; }
+function ensureGroups(node, count) { node.groups = Array.isArray(node.groups) ? node.groups : []; while (node.groups.length < count) node.groups.push({ name: {}, reviews: [] }); }
 function normalizeReviewHref(href) {
   if (!href) return null;
-  href = href.trim();
-  href = href.replace(/^https?:\/\/[^/]+/i, '');
-  href = href.replace(/#.*$/, '').replace(/\?.*$/, '');
+  href = href.trim().replace(/^https?:\/\/[^/]+/i, '').replace(/#.*$/, '').replace(/\?.*$/, '');
   href = href.replace(/^\/ru\/reviews\//, '/reviews/');
   const m = href.match(/^\/reviews\/([^/]+)\/?$/);
   return m ? `/reviews/${m[1]}` : null;
@@ -316,102 +273,59 @@ function normalizeSolidHref(href) {
   if (!href.startsWith('/')) href = '/' + href;
   return href.replace(/\/+$/, '');
 }
-function getAttr(tag, name) {
-  const re = new RegExp(`${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s"'>]+))`, 'i');
-  const m = tag.match(re);
-  return m ? (m[1] || m[2] || m[3] || '').trim() : '';
-}
+function getAttr(tag, name) { const re = new RegExp(`${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s"'>]+))`, 'i'); const m = tag.match(re); return m ? (m[1] || m[2] || m[3] || '').trim() : ''; }
 function findMatchingTagEnd(html, startIndex) {
-  const tagFinder = /<\/?(div|section)\b/gi;
-  tagFinder.lastIndex = startIndex;
-  let depth = 0, m;
+  const tagFinder = /<\/?(div|section)\b/gi; tagFinder.lastIndex = startIndex; let depth = 0, m;
   while ((m = tagFinder.exec(html)) !== null) {
-    const isClose = html[m.index + 1] === '/';
-    const gt = html.indexOf('>', m.index);
-    if (gt === -1) return -1;
-    if (!isClose) depth++; else depth--;
-    if (depth === 0) return gt + 1;
-    tagFinder.lastIndex = gt + 1;
-  }
-  return -1;
+    const isClose = html[m.index + 1] === '/'; const gt = html.indexOf('>', m.index); if (gt === -1) return -1;
+    if (!isClose) depth++; else depth--; if (depth === 0) return gt + 1; tagFinder.lastIndex = gt + 1;
+  } return -1;
 }
 function findSectionBlocks(html, targets) {
   if (!html) return [];
-  const re = /<(div|section)\b[^>]*class\s*=\s*("|\')([^"\']*)\2[^>]*>/gi;
-  const blocks = [];
-  let m;
+  const re = /<(div|section)\b[^>]*class\s*=\s*("|\')([^"\']*)\2[^>]*>/gi; const blocks = []; let m;
   while ((m = re.exec(html)) !== null) {
     const cls = (m[3] || '').split(/\s+/);
     if (!cls.includes('boxes-holder-section')) continue;
     if (!targets.some(t => cls.includes(t))) continue;
-    const end = findMatchingTagEnd(html, m.index);
-    if (end > m.index) blocks.push(html.slice(m.index, end));
-  }
-  return blocks;
+    const end = findMatchingTagEnd(html, m.index); if (end > m.index) blocks.push(html.slice(m.index, end));
+  } return blocks;
 }
 function findBoxesHolderBlocks(html) {
   if (!html) return [];
-  const re = /<(div|section)\b[^>]*class\s*=\s*("|\')([^"\']*)\2[^>]*>/gi;
-  const blocks = [];
-  let m;
+  const re = /<(div|section)\b[^>]*class\s*=\s*("|\')([^"\']*)\2[^>]*>/gi; const blocks = []; let m;
   while ((m = re.exec(html)) !== null) {
     const cls = (m[3] || '').split(/\s+/);
     if (!cls.includes('boxes-holder')) continue;
-    const end = findMatchingTagEnd(html, m.index);
-    if (end > m.index) blocks.push(html.slice(m.index, end));
-  }
-  return blocks;
+    const end = findMatchingTagEnd(html, m.index); if (end > m.index) blocks.push(html.slice(m.index, end));
+  } return blocks;
 }
 function extractCardsFromSectionBlock(blockHtml) {
   const results = [];
-  const reLogoOpen = /<div\b[^>]*class\s*=\s*("|\')([^"\']*\blogobg\b[^"\']*)\1[^>]*>/gi;
-  let m;
+  const reLogoOpen = /<div\b[^>]*class\s*=\s*("|\')([^"\']*\blogobg\b[^"\']*)\1[^>]*>/gi; let m;
   while ((m = reLogoOpen.exec(blockHtml)) !== null) {
-    const start = m.index;
-    const end = findMatchingTagEnd(blockHtml, start);
-    if (end === -1) continue;
+    const start = m.index; const end = findMatchingTagEnd(blockHtml, start); if (end === -1) continue;
     const content = blockHtml.slice(start, end);
-    const aTag = content.match(/<a\b[^>]*>/i);
-    const imgTag = content.match(/<img\b[^>]*>/i);
+    const aTag = content.match(/<a\b[^>]*>/i); const imgTag = content.match(/<img\b[^>]*>/i);
     if (!aTag || !imgTag) continue;
-    const href = normalizeReviewHref(getAttr(aTag[0], 'href'));
-    if (!href) continue;
-    let img = getAttr(imgTag[0], 'src') || '';
-    if (!img.startsWith('/')) img = '/' + img.replace(/^\.?\//, '');
+    const href = normalizeReviewHref(getAttr(aTag[0], 'href')); if (!href) continue;
+    let img = getAttr(imgTag[0], 'src') || ''; if (!img.startsWith('/')) img = '/' + img.replace(/^\.?\//, '');
     let alt = getAttr(imgTag[0], 'alt') || 'logo';
     results.push({ href, img, alt });
   }
   return results;
 }
-function dedupeByHref(list) {
-  const seen = new Set(); const out = [];
-  for (const it of list) {
-    if (!it || !it.href) continue;
-    if (seen.has(it.href)) continue;
-    seen.add(it.href); out.push(it);
-  }
-  return out;
-}
-function capList(list, limit) {
-  if (!limit || limit <= 0) return list.slice();
-  return list.slice(0, limit);
-}
-function localizeHref(list, locale) {
-  if (!Array.isArray(list) || locale !== 'ru') return list;
-  return list.map(item => {
-    if (!item || !item.href) return item;
-    const href = item.href.startsWith('/ru/') ? item.href : `/ru${item.href}`;
-    return { ...item, href };
-  });
-}
+function dedupeByHref(list) { const seen = new Set(); const out = []; for (const it of list) { if (!it || !it.href) continue; if (seen.has(it.href)) continue; seen.add(it.href); out.push(it); } return out; }
+function capList(list, limit) { if (!limit || limit <= 0) return list.slice(); return list.slice(0, limit); }
+function localizeHref(list, locale) { if (!Array.isArray(list) || locale !== 'ru') return list; return list.map(item => (!item || !item.href) ? item : { ...item, href: item.href.startsWith('/ru/') ? item.href : `/ru${item.href}` }); }
 
-// ---------- Build: search config + translations ----------
+// ---------- Build: CONFIG + TRANSLATIONS ----------
 function buildSearchConfigAndTranslations() {
   const files = collectHtmlFiles(ROOT_DIR);
 
-  const keyState = new Map();
-  const drafts = new Map();
-  const reviewLabels = new Map();
+  const keyState = new Map();   // key -> { anyIndexed, anyNoindex }
+  const drafts = new Map();     // key -> partial translation (keywords, en/ru labels, og только вручную)
+  const reviewLabels = new Map(); // slug -> { en?, ru? }
 
   for (const fp of files) {
     const urlPath = filePathToUrlPath(fp);
@@ -421,16 +335,17 @@ function buildSearchConfigAndTranslations() {
     if (!html) continue;
 
     const loc = getLocale(urlPath);
-    if (loc && loc !== 'ru') continue;
+    if (loc && loc !== 'ru') continue; // только '' и 'ru'
 
     const isReview = isReviewsUrl(urlPath);
-    const key = isReviewsUrl ? keyFromSlug(reviewsSlug(urlPath)) : normalizeKeyNoLocale(urlPath);
+    const key = isReview ? keyFromSlug(reviewsSlug(urlPath)) : normalizeKeyNoLocale(urlPath);
 
     const ni = hasNoindex(html);
     const st = keyState.get(key) || { anyIndexed: false, anyNoindex: false };
     if (ni) st.anyNoindex = true; else st.anyIndexed = true;
     keyState.set(key, st);
-    if (ni) continue;
+
+    if (ni) continue; // не учитываем noindex-страницы
 
     const head = section(html, 'head') || html;
 
@@ -444,20 +359,20 @@ function buildSearchConfigAndTranslations() {
       reviewLabels.set(slug, prev);
 
       const rec = drafts.get(key) || {};
-      const siteName = cleanLabel(og(head, 'og:site_name') || '');
-      if (siteName) rec.og = rec.og || siteName;
       const kw = cleanKeywords(keywordsFrom(html));
-      const hints = cleanKeywords([slug, siteName || '', 'обзор', 'review']);
+      const hints = cleanKeywords([slug, 'обзор', 'review']);
       rec.keywords = cleanKeywords([...(rec.keywords || []), ...kw, ...hints]);
 
       if (!FLAGS.forceReviews) {
         if (!rec.en && prev.en) rec.en = prev.en;
         if (!rec.ru && prev.ru) rec.ru = prev.ru;
       }
+
       drafts.set(key, rec);
       continue;
     }
 
+    // обычные страницы
     const rec = drafts.get(key) || {};
     const label = cleanLabel(titleFrom(html) || h1From(html) || '');
     const kw = cleanKeywords(keywordsFrom(html));
@@ -467,6 +382,7 @@ function buildSearchConfigAndTranslations() {
     drafts.set(key, rec);
   }
 
+  // Живые ключи: есть индексируемая версия И нет ни одной noindex-версии
   const aliveKeys = new Set(
     [...keyState.entries()].filter(([, s]) => s.anyIndexed && !s.anyNoindex).map(([k]) => k)
   );
@@ -475,7 +391,7 @@ function buildSearchConfigAndTranslations() {
     const dropped = [...keyState.entries()]
       .filter(([, s]) => !(s.anyIndexed && !s.anyNoindex))
       .map(([k, s]) => `${k}  (indexed:${s.anyIndexed}, noindex:${s.anyNoindex})`);
-    if (dropped.length) console.log('⛔ Excluded:\n' + dropped.join('\n'));
+    if (dropped.length) console.log('⛔ Excluded by noindex/missing indexable:\n' + dropped.join('\n'));
   }
 
   const existingConfig = readJsonSafe(CONFIG_PATH, { sites: [] });
@@ -495,6 +411,7 @@ function buildSearchConfigAndTranslations() {
     const add = drafts.get(k) || {};
     let merged = mergeTranslations(base, add);
 
+    // Спец-обработка /reviews/*
     const m = k.match(/^\/reviews\/([^/]+)$/);
     if (m) {
       const slug = m[1];
@@ -514,6 +431,7 @@ function buildSearchConfigAndTranslations() {
         if (!merged.en) merged.en = merged.ru;
       }
     } else {
+      // обычные страницы
       if (!merged.en && !merged.ru) {
         const label = k === '/' ? 'Home' : k.split('/').filter(Boolean).slice(-1)[0]
           .replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
@@ -524,7 +442,18 @@ function buildSearchConfigAndTranslations() {
       }
     }
 
+    // keywords
     merged.keywords = cleanKeywords(merged.keywords || []);
+
+    // icon для /reviews/* и /mirrors/*; приоритет — base.icon
+    const needsIcon = /^\/(?:reviews|mirrors)\/[^/]+$/.test(k);
+    if (needsIcon) {
+      const baseIcon = (base && typeof base.icon === 'string') ? base.icon.trim() : '';
+      const mergedIcon = (merged.icon && typeof merged.icon === 'string') ? merged.icon.trim() : '';
+      if (baseIcon) merged.icon = baseIcon;
+      else if (!mergedIcon) merged.icon = "";
+    }
+
     mergedTranslations[k] = merged;
   }
 
@@ -532,11 +461,11 @@ function buildSearchConfigAndTranslations() {
   writeJsonPretty(CONFIG_PATH, { sites: mergedSites });
   writeJsonPretty(TRANSL_PATH, mergedTranslations);
 
-  console.log(`✅ Wrote ${path.relative(ROOT_DIR, CONFIG_PATH)} (${mergedSites.length} entries)  [forceReviews=${FLAGS.forceReviews}]`);
+  console.log(`✅ Wrote ${path.relative(ROOT_DIR, CONFIG_PATH)} (${mergedSites.length} sites)  [forceReviews=${FLAGS.forceReviews}]`);
   console.log(`✅ Wrote ${path.relative(ROOT_DIR, TRANSL_PATH)} (${Object.keys(mergedTranslations).length} keys)`);
 }
 
-// ---------- SOLID from categories ----------
+// ---------- SOLID из категорий ----------
 function flattenCategory(items, ruDict, excludeTitles = new Set()) {
   const out = [];
   const push = (title, url) => {
@@ -600,21 +529,44 @@ function applyWikiSolid(menu) {
   node.solid = solid;
 }
 
-// ---------- Build: menu-build.json ----------
+// ---------- Menu build ----------
 function minimalNode(key, titleEn, titleRu) {
   return {
-    key,
-    icon: key,
-    title: { en: titleEn, ru: titleRu },
-    groups: [],
-    solid: [],
+    nav: [
+      { key: 'popular',   icon: 'fire',    title: { en: 'Popular',      ru: 'Популярное' }, groups: [
+        { name: { en: 'Gambling', ru: 'Гемблинг' }, reviews: [], 'reviews-ru': [] },
+        { name: { en: 'Trading',  ru: 'Трейдинг' }, reviews: [], 'reviews-ru': [] },
+      ], solid: [] },
+      { key: 'cs2-sites', icon: 'cs2',     title: { en: 'CS2 Sites',     ru: 'Сайты CS2' }, groups: [
+        { name: { en: 'Gambling', ru: 'Гемблинг' }, reviews: [], 'reviews-ru': [] },
+        { name: { en: 'Trading',  ru: 'Трейдинг' }, reviews: [], 'reviews-ru': [] },
+      ], solid: [] },
+      { key: 'rust',      icon: 'rust',    title: { en: 'Rust Sites',    ru: 'Сайты Rust' }, groups: [
+        { name: { en: 'Gambling', ru: 'Гемблинг' }, reviews: [], 'reviews-ru': [] },
+        { name: { en: 'Trading',  ru: 'Трейдинг' }, reviews: [], 'reviews-ru': [] },
+      ], solid: [] },
+      { key: 'crypto',    icon: 'crypto',  title: { en: 'Crypto Sites',  ru: 'Крипто-сайты' }, groups: [
+        { name: { en: 'All', ru: 'Все' }, reviews: [], 'reviews-ru': [] },
+      ], solid: [] },
+      { key: 'earning',   icon: 'earning', title: { en: 'Earning Sites', ru: 'Заработок' }, groups: [
+        { reviews: [], 'reviews-ru': [] },
+      ], solid: [] },
+      { key: 'steam',     icon: 'steam',   title: { en: 'Steam Sites',   ru: 'Сайты Steam' }, groups: [
+        { name: { en: 'Increase Level', ru: 'Увеличить Уровень' }, reviews: [], 'reviews-ru': [] },
+        { name: { en: 'Top Up Balance', ru: 'Пополнить Баланс' }, reviews: [], 'reviews-ru': [] },
+        { name: { en: 'Buy Games',      ru: 'Купить Игры'       }, reviews: [], 'reviews-ru': [] },
+      ], solid: [] },
+      { key: 'newest',    icon: 'new',     title: { en: 'Newest',        ru: 'Новое' }, groups: [
+        { reviews: [], 'reviews-ru': [] },
+      ], solid: [] },
+      { key: 'wiki',      icon: 'wiki',    title: { en: 'Skins Wiki',    ru: 'Wiki Скинов' }, groups: [], solid: [] },
+    ],
   };
 }
-
 function buildMenu() {
   const menu = loadMenuBase();
 
-  // ---------- Popular ----------
+  // Popular
   const enHtml = readRouteHtml('/index');
   const ruHtml = readRouteHtml('/ru');
 
@@ -662,7 +614,7 @@ function buildMenu() {
   popular.groups[1].reviews = enTrading;
   popular.groups[1]['reviews-ru'] = ruTrading;
 
-  // ---------- CS2 Sites ----------
+  // CS2 Sites
   const cs2EnPage = readRouteHtml('/cs2');
   const cs2RuPage = readRouteHtml('/ru/cs2');
 
@@ -691,7 +643,7 @@ function buildMenu() {
   cs2Node.groups[1].reviews = cs2EnTrading;
   cs2Node.groups[1]['reviews-ru'] = cs2RuTrading;
 
-  // ---------- Rust ----------
+  // Rust
   const rustEnPage = readRouteHtml('/rust');
   const rustRuPage = readRouteHtml('/ru/rust');
 
@@ -720,7 +672,7 @@ function buildMenu() {
   rustNode.groups[1].reviews = rustEnTrading;
   rustNode.groups[1]['reviews-ru'] = rustRuTrading;
 
-  // ---------- Crypto ----------
+  // Crypto
   const cryptoEnPage = readRouteHtml('/crypto');
   const cryptoRuPage = readRouteHtml('/ru/crypto');
 
@@ -739,7 +691,7 @@ function buildMenu() {
   cryptoNode.groups[0].reviews = cryptoEnAll;
   cryptoNode.groups[0]['reviews-ru'] = cryptoRuAll;
 
-  // ---------- Earning ----------
+  // Earning
   const earningEnPage = readRouteHtml('/earning');
   const earningRuPage = readRouteHtml('/ru/earning');
 
@@ -758,7 +710,7 @@ function buildMenu() {
   earningNode.groups[0].reviews = earningEnAll;
   earningNode.groups[0]['reviews-ru'] = earningRuAll;
 
-  // ---------- Steam (3 отдельные группы) ----------
+  // Steam
   let steamNode = findEntry(menu, 'steam');
   if (!steamNode) { steamNode = minimalNode('steam', 'Steam Sites', 'Сайты Steam'); menu.nav.push(steamNode); }
   ensureGroups(steamNode, 3);
@@ -766,60 +718,24 @@ function buildMenu() {
   steamNode.groups[1].name = { en: 'Top Up Balance', ru: 'Пополнить Баланс' };
   steamNode.groups[2].name = { en: 'Buy Games',      ru: 'Купить Игры' };
 
-  // group 0: /steam/levelup
-  const steamLevelUpEN = capList(
-    dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/steam/levelup')).flatMap(extractCardsFromSectionBlock)),
-    LIMITS.steam.list
-  );
-  const steamLevelUpRU = localizeHref(
-    capList(
-      dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/ru/steam/levelup')).flatMap(extractCardsFromSectionBlock)),
-      LIMITS.steam.listRu
-    ),
-    'ru'
-  );
+  const steamLevelUpEN = capList(dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/steam/levelup')).flatMap(extractCardsFromSectionBlock)), LIMITS.steam.list);
+  const steamLevelUpRU = localizeHref(capList(dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/ru/steam/levelup')).flatMap(extractCardsFromSectionBlock)), LIMITS.steam.listRu), 'ru');
   steamNode.groups[0].reviews = steamLevelUpEN;
   steamNode.groups[0]['reviews-ru'] = steamLevelUpRU;
 
-  // group 1: /steam/topup
-  const steamTopUpEN = capList(
-    dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/steam/topup')).flatMap(extractCardsFromSectionBlock)),
-    LIMITS.steam.list
-  );
-  const steamTopUpRU = localizeHref(
-    capList(
-      dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/ru/steam/topup')).flatMap(extractCardsFromSectionBlock)),
-      LIMITS.steam.listRu
-    ),
-    'ru'
-  );
+  const steamTopUpEN = capList(dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/steam/topup')).flatMap(extractCardsFromSectionBlock)), LIMITS.steam.list);
+  const steamTopUpRU = localizeHref(capList(dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/ru/steam/topup')).flatMap(extractCardsFromSectionBlock)), LIMITS.steam.listRu), 'ru');
   steamNode.groups[1].reviews = steamTopUpEN;
   steamNode.groups[1]['reviews-ru'] = steamTopUpRU;
 
-  // group 2: /steam/buy-games
-  const steamBuyGamesEN = capList(
-    dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/steam/buy-games')).flatMap(extractCardsFromSectionBlock)),
-    LIMITS.steam.list
-  );
-  const steamBuyGamesRU = localizeHref(
-    capList(
-      dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/ru/steam/buy-games')).flatMap(extractCardsFromSectionBlock)),
-      LIMITS.steam.listRu
-    ),
-    'ru'
-  );
+  const steamBuyGamesEN = capList(dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/steam/buy-games')).flatMap(extractCardsFromSectionBlock)), LIMITS.steam.list);
+  const steamBuyGamesRU = localizeHref(capList(dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/ru/steam/buy-games')).flatMap(extractCardsFromSectionBlock)), LIMITS.steam.listRu), 'ru');
   steamNode.groups[2].reviews = steamBuyGamesEN;
   steamNode.groups[2]['reviews-ru'] = steamBuyGamesRU;
 
-  // ---------- Newest ----------
-  const newestEN = capList(
-    dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/newest')).flatMap(extractCardsFromSectionBlock)),
-    LIMITS.newest.list
-  );
-  const newestRU = localizeHref(
-    capList(dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/ru/newest')).flatMap(extractCardsFromSectionBlock)), LIMITS.newest.listRu),
-    'ru'
-  );
+  // Newest
+  const newestEN = capList(dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/newest')).flatMap(extractCardsFromSectionBlock)), LIMITS.newest.list);
+  const newestRU = localizeHref(capList(dedupeByHref(findBoxesHolderBlocks(readRouteHtml('/ru/newest')).flatMap(extractCardsFromSectionBlock)), LIMITS.newest.listRu), 'ru');
 
   let newestNode = findEntry(menu, 'newest');
   if (!newestNode) { newestNode = minimalNode('newest', 'Newest', 'Новое'); menu.nav.push(newestNode); }
@@ -827,13 +743,7 @@ function buildMenu() {
   newestNode.groups[0].reviews = newestEN;
   newestNode.groups[0]['reviews-ru'] = newestRU;
 
-  // ---------- SOLID (categories) ----------
-  applySolids(menu);
-
-  // ---------- WIKI (topics) ----------
-  applyWikiSolid(menu);
-
-  // ---------- Save ----------
+  // Save
   ensureDir(OUT_DIR);
   writeJsonPretty(MENU_OUT_PATH, menu);
 

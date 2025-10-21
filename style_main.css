@@ -9316,10 +9316,10 @@ i.flagbox {
 }
 
 .site-item .site-icon {
-    max-width: 30px;
+    max-width: 25px;
     width: auto;
-    height: 100%;
-    margin-right: 6px;
+    height: auto;
+    margin-right: 9px;
 }
 
 .site-item a::after {
@@ -9669,6 +9669,10 @@ div#results {
 
 .site-item.review a::before {
     background-image: url(code-parts/search-config/icons/review-icon.png);
+}
+
+.site-item a:has(.site-icon)::before {
+    content: unset !important;
 }
 
 .payment-list .payment-method:hover,

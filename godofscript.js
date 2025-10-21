@@ -815,6 +815,7 @@ window.onload = function () {
   })();
 };
 
+// file: /code-parts/search.js
 (() => {
   'use strict';
 
@@ -835,6 +836,13 @@ window.onload = function () {
   let sites = [];
   let siteTranslations = {};
   let fuse = null;
+
+  // Prefer page language (en/ru) over og for display
+  function getPreferredLabel(t) {
+    if (!t || typeof t !== 'object') return '';
+    if (Lang === 'ru') return t.ru || t.en || t.og || '';
+    return t.en || t.ru || t.og || '';
+  }
 
   // ===== CSS =====
   function injectStyles() {
@@ -931,7 +939,7 @@ window.onload = function () {
       const t = siteTranslations[path] || {};
       return {
         path,
-        label: t.og || t.en || t.ru || path,
+        label: getPreferredLabel(t) || path,
         en: t.en || '',
         ru: t.ru || '',
         og: t.og || '',
@@ -942,7 +950,13 @@ window.onload = function () {
 
     if (window.Fuse) {
       fuse = new Fuse(list, {
-        keys: ['label', 'en', 'ru', 'og', 'keywords'],
+        keys: [
+          { name: 'en', weight: 0.6 },
+          { name: 'ru', weight: 0.6 },
+          { name: 'label', weight: 0.5 },
+          { name: 'keywords', weight: 0.3 },
+          { name: 'og', weight: 0.2 }
+        ],
         threshold: 0.4,
         minMatchCharLength: 2,
         ignoreLocation: true
@@ -988,7 +1002,8 @@ window.onload = function () {
 
   function createSiteItem(path) {
     const t = siteTranslations[path] || {};
-    const label = t.og || (Lang === 'ru' ? (t.ru || t.en) : (t.en || t.ru)) || path;
+    const preferred = getPreferredLabel(t);
+    const label = preferred || path; // keep final fallback
     const icon = t.icon;
 
     const el = document.createElement('div');
@@ -1187,24 +1202,21 @@ window.onload = function () {
       resetSearchUI();
     }
 
-    // toggle по .search-enabler
     if (searchEnabler) {
       searchEnabler.addEventListener('click', () => {
         if (menuHolder.classList.contains('active')) {
-          closeSearch();        // повторный клик → закрыть и сбросить
+          closeSearch();
         } else {
-          openSearch();         // первый клик → открыть
+          openSearch();
         }
       });
     }
 
-    // клик вне .menu-box → закрыть
     menuHolder.addEventListener('click', (e) => {
       if (!menuBox.contains(e.target)) closeSearch();
     });
     menuBox.addEventListener('click', (e) => e.stopPropagation());
 
-    // close button
     closeButton.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -1212,14 +1224,12 @@ window.onload = function () {
       searchInput.focus();
     });
 
-    // input
     searchInput.addEventListener('input', () => { syncGhost(); renderResults(searchInput.value.trim()); });
     searchInput.addEventListener('focus', () => { syncGhost(); showSiteList(!!searchInput.value.trim()); });
     searchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeSearch();
     });
 
-    // load data
     Promise.all([
       loadCombinedSearchData(),
       fetch('/code-parts/search-config/menu-build.json').then(r => r.json()).catch(() => ({ nav: [] }))
