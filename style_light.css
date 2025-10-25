@@ -95,7 +95,7 @@ header::before,
     bottom: 5px;
     left: 5px;
     right: 5px;
-    border-radius: 10px;
+    border-radius: var(--main-border);
     z-index: -1;
     background: var(--icongradient);
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
@@ -114,7 +114,7 @@ header #logo {
     background: linear-gradient(-45deg, var(--main-color) 0%, rgba(226, 24, 58, .8) 100%);
     height: calc(100% - 18px);
     padding: 0 10px;
-    border-radius: 10px;
+    border-radius: var(--main-border);
 }
 
 header #logo:hover {

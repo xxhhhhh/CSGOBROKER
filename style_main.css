@@ -5785,7 +5785,7 @@ nav img:active,
     position: absolute;
     width: auto;
     padding: 0 12px 0 5px;
-    height: 30px;
+    height: 32px;
     background: var(--buttonbg);
     filter: drop-shadow(1px 1px 4px rgb(10 10 10)) blur(0);
     border-radius: 0px var(--main-border) var(--main-border) var(--main-border);
@@ -6854,7 +6854,7 @@ footer .centralizer .footer-content {
 }
 
 .sitealternatesboxes .content-buttons {
-    margin-top: 4px;
+    margin-top: 2px;
 }
 
 .box.main .content-buttons {
@@ -6867,10 +6867,10 @@ footer .centralizer .footer-content {
     filter: drop-shadow(0 1px 4px rgb(10 10 10)) blur(0);
     border-radius: var(--main-border);
     position: relative;
-    height: 30px;
+    height: 32px;
     width: auto;
     padding: 0 8px;
-    padding-left: 10px;
+    padding-left: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6884,6 +6884,10 @@ footer .centralizer .footer-content {
     cursor: pointer;
 }
 
+.rec-box .content .review-button {
+    height: 30px;
+}
+
 .boxes-holder .box:hover .content .review-button {
     filter: drop-shadow(0 1px 4px rgb(15 15 15)) blur(0);
 }
@@ -6893,13 +6897,13 @@ footer .centralizer .footer-content {
     filter: drop-shadow(0 0 1px var(--main-color));
     background: var(--buttonbg);
     padding-left: 6px;
-    padding-right: 10px;
+    padding-right: 14px;
     border-radius: var(--main-border) var(--main-border) var(--main-border) 0;
 }
 
 .content .review-button {
     backface-visibility: hidden;
-    border-radius: var(--main-border) var(--main-border) 0 var(--main-border);
+    border-radius: var(--main-border) 0 var(--main-border) var(--main-border);
 }
 
 .content .review-button::after,
@@ -10670,7 +10674,7 @@ div#results {
     position: relative;
     width: 50%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: var(--main-border);
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -10707,7 +10711,7 @@ div#results {
 .main-infobox-content-block {
     background-color: var(--darkgray);
     position: relative;
-    border-radius: 5px;
+    border-radius: var(--main-border);
     margin: 8px;
     padding: 12px;
     z-index: 2;
@@ -11386,6 +11390,8 @@ header {
 .main-page .rating-case-single {
     margin-bottom: 5px;
     margin-left: 5px;
+    height: 40px;
+    bottom: 0;
 }
 
 .main-page .main-mode {
@@ -12710,12 +12716,13 @@ header {
         height: 25px;
         padding: 0 5px;
         padding-right: 3px;
+        padding-left: 9px;
         font-size: 11px;
     }
 
     .sitealternatesboxes .content .review-button.visit,
     .rec-box .content .review-button.visit {
-        padding-right: 5px;
+        padding-right: 9px;
         padding-left: 3px;
     }
 
@@ -15574,7 +15581,7 @@ header {
     }
 
     .boxes-holder .content-buttons {
-        margin-top: 10px;
+        margin-top: 6px;
     }
 }
 
