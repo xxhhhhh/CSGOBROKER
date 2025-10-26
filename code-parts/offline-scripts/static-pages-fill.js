@@ -15,6 +15,65 @@ const SITES_SETTINGS    = "/code-parts/sites-settings.json";
 const TRANSLATIONS_PATH = "/code-parts/review-translations.json";
 const KNOWN_LANGS = new Set(["ru","en","es","pt","tr","hi","de","fr","pl","it","ua","uk","ar","id","th","vi","nl","sv","fi","no","da","ro","cs","sk","sr","bg","el","hu","he","ko","ja","zh","zh-cn","zh-tw"]);
 const PREFIX_LANGS = new Set(["ru","es","pt","tr","hi"]); // языки, где добавляем /{lang}
+const REVIEW_PREFIX_LANGS = new Set(["ru","tr","es"]);
+
+/** Разделяет base и хвост (?/ #) */
+function splitHrefParts(href){
+  const clean = String(href || "").replace(/\/{2,}/g, "/");
+  const q = clean.indexOf("?");
+  const h = clean.indexOf("#");
+  const cut = [q === -1 ? clean.length : q, h === -1 ? clean.length : h].reduce((a,b)=>Math.min(a,b), clean.length);
+  const base = clean.slice(0, cut);
+  const tail = clean.slice(cut);
+  return { base, tail };
+}
+
+/** Удалить ЛЮБОЙ языковой префикс из относительного href */
+function stripKnownLangPrefix(href){
+  if (!href) return href;
+  if (isExternal(href) || href.startsWith("#")) return href;
+
+  const { base, tail } = splitHrefParts(href);
+  const path = base.startsWith("/") ? base : "/" + base;
+  const segs = path.split("/").filter(Boolean);
+
+  if (segs.length && KNOWN_LANGS.has(segs[0])) segs.shift();
+
+  const rebuilt = "/" + segs.join("/");
+  return (rebuilt === "/" ? "/" : rebuilt) + (tail || "");
+}
+
+/** Обеспечить нужный языковой префикс; для en — префикс убираем */
+function ensureLangPrefixFor(href, lang){
+  const L = String(lang || "en").toLowerCase();
+  if (L === "en") return stripKnownLangPrefix(href); // en — без тегов
+
+  if (!href) return href;
+  if (isExternal(href) || href.startsWith("#")) return href;
+
+  const { base, tail } = splitHrefParts(href);
+  const path = base.startsWith("/") ? base : "/" + base;
+  const segs = path.split("/").filter(Boolean);
+
+  if (segs.length && KNOWN_LANGS.has(segs[0])) segs.shift();
+  segs.unshift(L);
+
+  const rebuilt = "/" + segs.join("/");
+  return (rebuilt === "/" ? "/" : rebuilt) + (tail || "");
+}
+
+/** Similar: всегда язык, КРОМЕ en (у en — без префикса) */
+function withLangForSimilar(href, lang){
+  return ensureLangPrefixFor(href, lang);
+}
+
+/** Review: язык только для ru|tr|es; иначе (включая en) — без префикса */
+function withLangForReview(href, lang){
+  const L = String(lang || "en").toLowerCase();
+  return REVIEW_PREFIX_LANGS.has(L)
+    ? ensureLangPrefixFor(href, L)
+    : stripKnownLangPrefix(href);
+}
 
 /* --------- MAIN --------- */
 (async function main() {
@@ -243,8 +302,8 @@ function computeGoKey(baseKey, urlPath = "", lang = "en", data = {}) {
 
 /* ======================================================================= */
 
-// REPLACE entire updateVisitLinkInBoxHtml(...) with this version
-function updateVisitLinkInBoxHtml(boxHtml, goKey, nl){
+/* ==== [REPLACE] updateVisitLinkInBoxHtml: добавлен aria-label + lang/siteName ==== */
+function updateVisitLinkInBoxHtml(boxHtml, goKey, nl, siteName = "", lang = "en"){
   if (!goKey) return boxHtml;
   const hrefValue = (`/go/${goKey}`).replace(/\/{2,}/g, "/");
 
@@ -266,16 +325,22 @@ function updateVisitLinkInBoxHtml(boxHtml, goKey, nl){
   const region = segment.slice(regionStart, regionEnd);
   const after  = segment.slice(regionEnd);
 
+  const isRu = String(lang).toLowerCase() === "ru";
+  const visitLabel = siteName
+    ? (isRu ? `Перейти на ${siteName}` : `Visit ${siteName}`)
+    : (isRu ? "Перейти на сайт" : "Visit Site");
+
   const newRegion = region.replace(/<a\b[^>]*>([\s\S]*?)<\/a>/gi, (full) => {
     const open = full.match(/^<a\b[^>]*>/i)?.[0]; if (!open) return full;
 
     const clsMatch = open.match(/\bclass\s*=\s*(["'])([^"']*)\1/i);
     const classes = new Set((clsMatch ? clsMatch[2] : "").split(/\s+/).filter(Boolean));
-    if (!classes.has("visit")) return full; // только visit
+    if (!classes.has("visit")) return full; // только .visit
 
     let newOpen = upsertAttrInTag(open, "href", hrefValue);
     newOpen = upsertAttrInTag(newOpen, "target", "_blank");
     newOpen = upsertAttrInTag(newOpen, "rel", "noopener");
+    newOpen = upsertAttrInTag(newOpen, "aria-label", visitLabel);
     return newOpen + full.slice(open.length);
   });
 
@@ -283,6 +348,194 @@ function updateVisitLinkInBoxHtml(boxHtml, goKey, nl){
 
   const rebuiltSegment = before + newRegion + after;
   return boxHtml.slice(0, cOpenEnd) + rebuiltSegment + boxHtml.slice(cCloseStart);
+}
+
+
+/* ==== [NEW] утилита: href из .logobg a ==== */
+function extractLogobgHref(boxHtml){
+  const m = maskSegments(boxHtml);
+  const lb = findFirstByClass(m, "logobg");
+  if (!lb) return "";
+  const region = boxHtml.slice(lb.openEnd, lb.closeStart);
+  const a = region.match(/<a\b[^>]*href\s*=\s*(["'])(.*?)\1/i);
+  return a ? a[2] : "";
+}
+
+function ensureFirstReviewAnchorInBoxHtml(boxHtml, nl, opts){
+  const { lang = "en", siteName = "", mode = "review", reviewHref = "" } = opts || {};
+  const isRu = String(lang).toLowerCase() === "ru";
+
+  const masked  = maskSegments(boxHtml);
+  const content = findFirstByClass(masked, "content");
+  if (!content) return boxHtml;
+
+  const cOpenEnd = content.openEnd;
+  const cCloseStart = content.closeStart;
+  let segment = boxHtml.slice(cOpenEnd, cCloseStart);
+
+  const segMasked = maskSegments(segment);
+  const cb = findFirstByClass(segMasked, "content-buttons");
+  if (!cb) return boxHtml;
+
+  const regionStart = cb.openEnd;
+  const regionEnd   = cb.closeStart;
+  const before = segment.slice(0, regionStart);
+  let   region = segment.slice(regionStart, regionEnd);
+  let   after  = segment.slice(regionEnd);
+
+  // aria-label
+  const aria = (mode === "similar")
+    ? (isRu ? `Альтернативы ${siteName}` : `Similar Sites of ${siteName}`)
+    : (isRu ? `Читать Обзор ${siteName}` : `Read Review ${siteName}`);
+
+  // raw → apply rule
+  const hrefRaw = reviewHref || extractLogobgHref(boxHtml) || "#";
+  const href = (mode === "similar")
+    ? withLangForSimilar(hrefRaw, lang)   // все языки, но en → без префикса
+    : withLangForReview(hrefRaw, lang);  // только ru|tr|es → префикс; прочие/EN → strip
+
+  // Ищем первую подходящую review-кнопку (без .visit/.mirror-visit)
+  let found = false;
+  region = region.replace(/<a\b([^>]*?)>([\s\S]*?)<\/a>/i, (full, attrs, inner) => {
+    const clsM = String(attrs).match(/\bclass\s*=\s*(["'])([^"']*)\1/i);
+    const classes = new Set((clsM ? clsM[2] : "").split(/\s+/).filter(Boolean));
+    if (!classes.has("review-button") || classes.has("visit") || classes.has("mirror-visit")) {
+      return full;
+    }
+    found = true;
+    let open = `<a${attrs}>`;
+    open = upsertAttrInTag(open, "href", href);
+    open = upsertAttrInTag(open, "aria-label", aria);
+    return open + inner + `</a>`;
+  });
+
+  if (!found){
+    // Вставка первой кнопки
+    const baseIndent = indentBefore(segment, cb.openStart, nl);
+    const linkIndent = baseIndent + "  ";
+    const line = `${linkIndent}<a href="${escapeAttr(href)}" aria-label="${escapeAttr(aria)}" class="review-button"></a>`;
+    region = region ? (line + nl + region) : line;
+  }
+
+  // Нормализуем закрытие
+  const baseIndent = indentBefore(segment, cb.openStart, nl);
+  after = after.replace(/^\s*<\/div>/, nl + baseIndent + "</div>");
+
+  const rebuilt = before + region + after;
+  return boxHtml.slice(0, cOpenEnd) + rebuilt + boxHtml.slice(cCloseStart);
+}
+
+/* ==== [NEW] removeMirrorVisitFromBoxHtml: удалить .mirror-visit в .content-buttons ==== */
+function removeMirrorVisitFromBoxHtml(boxHtml, nl){
+  const masked  = maskSegments(boxHtml);
+  const content = findFirstByClass(masked, "content");
+  if (!content) return boxHtml;
+
+  const cOpenEnd = content.openEnd;
+  const cCloseStart = content.closeStart;
+  let segment = boxHtml.slice(cOpenEnd, cCloseStart);
+
+  const segMasked = maskSegments(segment);
+  const cb = findFirstByClass(segMasked, "content-buttons");
+  if (!cb) return boxHtml;
+
+  const regionStart = cb.openEnd;
+  const regionEnd   = cb.closeStart;
+  const before = segment.slice(0, regionStart);
+  let   region = segment.slice(regionStart, regionEnd);
+  let   after  = segment.slice(regionEnd);
+
+  const old = region;
+  region = region.replace(/<a\b[^>]*\bmirror-visit\b[^>]*>[\s\S]*?<\/a>\s*/gi, "");
+
+  if (region === old) return boxHtml;
+
+  const baseIndent = indentBefore(segment, cb.openStart, nl);
+  after = after.replace(/^\s*<\/div>/, nl + baseIndent + "</div>");
+
+  const rebuilt = before + region + after;
+  return boxHtml.slice(0, cOpenEnd) + rebuilt + boxHtml.slice(cCloseStart);
+}
+
+/* ==== [NEW] ensureVisitAnchorMaybeAdd: создать .visit при отсутствии ==== */
+function ensureVisitAnchorMaybeAdd(boxHtml, nl){
+  const masked  = maskSegments(boxHtml);
+  const content = findFirstByClass(masked, "content");
+  if (!content) return boxHtml;
+
+  const cOpenEnd = content.openEnd;
+  const cCloseStart = content.closeStart;
+  let segment = boxHtml.slice(cOpenEnd, cCloseStart);
+
+  const segMasked = maskSegments(segment);
+  const cb = findFirstByClass(segMasked, "content-buttons");
+  if (!cb) return boxHtml;
+
+  const regionStart = cb.openEnd;
+  const regionEnd   = cb.closeStart;
+  const before = segment.slice(0, regionStart);
+  let   region = segment.slice(regionStart, regionEnd);
+  let   after  = segment.slice(regionEnd);
+
+  if (/\breview-button\b[^>]*\bvisit\b/i.test(region)) return boxHtml; // уже есть
+
+  // вставляем сразу после первой кнопки/в начало
+  const baseIndent = indentBefore(segment, cb.openStart, nl);
+  const linkIndent = baseIndent + "  ";
+  const visitLine = `${linkIndent}<a href="#" aria-label="Visit" class="review-button visit" target="_blank" rel="noopener"></a>`;
+
+  if (/<a\b/i.test(region)){
+    // после первого <a>
+    region = region.replace(/(<a\b[\s\S]*?<\/a>)/i, (_m) => _m + nl + visitLine);
+  } else {
+    region = region ? (visitLine + nl + region) : visitLine;
+  }
+
+  after = after.replace(/^\s*<\/div>/, nl + baseIndent + "</div>");
+  const rebuilt = before + region + after;
+  return boxHtml.slice(0, cOpenEnd) + rebuilt + boxHtml.slice(cCloseStart);
+}
+
+/* ==== [NEW] ensureMainBoxButtonsOnReviewMirrors: сборка состава кнопок для .box.main ==== */
+function ensureMainBoxButtonsOnReviewMirrors(html, lang, data, urlPath, reviewSettings, goKeyMain, nl){
+  if (!data) return html;
+  const isReviewCtx = /\/(reviews|mirrors)\//.test(String(urlPath));
+  if (!isReviewCtx) return html;
+
+  let out = html;
+  const masked = maskSegments(out);
+  const boxes = findAllDivByClass(masked, "box");
+  if (!boxes.length) return out;
+
+  for (const b of boxes){
+    const open = readTag(out, b.openStart);
+    const cls = parseClassAttr(open.attrs);
+    if (!cls.has("main")) continue;
+
+    const boxHtml = out.slice(b.openStart, b.closeEnd);
+
+    // 1) Удаляем mirror-visit (на reviews/mirrors он не нужен)
+    let cur = removeMirrorVisitFromBoxHtml(boxHtml, nl);
+
+    // 2) Кнопка 1: "Альтернативы"/"Similar Sites ..." по Main Mode
+    const mmPath = reviewSettings?.mainModeLinks?.[data["Main Mode"]] || "/csgo/caseopening";
+    cur = ensureFirstReviewAnchorInBoxHtml(cur, nl, {
+      lang, siteName: data.name || "", mode: "similar", reviewHref: mmPath
+    });
+
+    // 3) Кнопка 2: visit (создать при отсутствии)
+    cur = ensureVisitAnchorMaybeAdd(cur, nl);
+    cur = updateVisitLinkInBoxHtml(cur, goKeyMain, nl, data.name || "", lang);
+
+    // 4) Кнопка 4: copy
+    cur = ensureCopyButtonInBoxHtml(cur, data.code ?? "", nl, lang);
+
+    if (cur !== boxHtml){
+      out = out.slice(0, b.openStart) + cur + out.slice(b.closeEnd);
+    }
+    break; // только первый .box.main
+  }
+  return out;
 }
 
 
@@ -333,7 +586,8 @@ function ensureNumericRatingInLogobg(boxHtml, ratingValue, nl){
   return before + region + nl + block + nl + closeIndent + after;
 }
 
-function ensureVisitLinkInMainBox(html, goKey, nl){
+/* ==== [REPLACE] ensureVisitLinkInMainBox: пробрасываем siteName/lang для aria-label ==== */
+function ensureVisitLinkInMainBox(html, goKey, nl, siteName = "", lang = "en"){
   if (!goKey) return html;
   let out = html;
 
@@ -347,7 +601,7 @@ function ensureVisitLinkInMainBox(html, goKey, nl){
     if (!cls.has("main")) continue;
 
     const boxHtml = out.slice(b.openStart, b.closeEnd);
-    const updated = updateVisitLinkInBoxHtml(boxHtml, goKey, nl);
+    const updated = updateVisitLinkInBoxHtml(boxHtml, goKey, nl, siteName, lang);
     if (updated !== boxHtml){
       out = out.slice(0, b.openStart) + updated + out.slice(b.closeEnd);
     }
@@ -542,7 +796,7 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl, sit
       const boxMasked = maskSegments(boxHtml);
       const logobg = findFirstByClass(boxMasked, "logobg"); if (!logobg) continue;
 
-      // извлечь ключ
+      // ключ из .logobg a
       const region = boxHtml.slice(logobg.openStart, logobg.closeStart);
       const aIdx = region.indexOf("<a"); if (aIdx===-1) continue;
       const { tagText } = readTag(region, aIdx);
@@ -557,9 +811,23 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl, sit
       }
 
       const goKey = computeGoKey(key, urlPath, lang, data);
-      boxHtml = updateVisitLinkInBoxHtml(boxHtml, goKey, nl);
+
+      // visit + aria-label
+      boxHtml = updateVisitLinkInBoxHtml(boxHtml, goKey, nl, data.name || "", lang);
+
+      // Review-кнопка (1-я)
+      const reviewHrefBase = extractLogobgHref(boxHtml) || `/reviews/${key}`; // base, без префикса
+      boxHtml = ensureFirstReviewAnchorInBoxHtml(boxHtml, nl, {
+        lang,
+        siteName: data.name || "",
+        mode: "review",
+        reviewHref: reviewHrefBase
+      });
+
+      // mirror
       boxHtml = ensureMirrorVisitButtonInBoxHtml(boxHtml, lang, key, data.mirror, nl);
 
+      // main: обновить .logobg a → go (как было)
       const firstOpen = readTag(boxHtml, 0);
       const isMain = parseClassAttr(firstOpen.attrs).has("main");
       if (isMain) boxHtml = updateLogobgAnchorInBoxHtml(boxHtml, goKey, nl);
@@ -570,7 +838,7 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl, sit
       // COPY
       boxHtml = ensureCopyButtonInBoxHtml(boxHtml, data.code ?? "", nl, lang);
 
-      // [NEW] RATING: числом из первых 4-х рейтингов
+      // RATING
       const avg = averageFirstFour(data.ratings);
       boxHtml = ensureNumericRatingInLogobg(boxHtml, avg, nl);
 
@@ -582,9 +850,8 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl, sit
     shift += delta;
   }
 
-  // [NEW] route-марки для RU:
+  // RU route-маркеры
   out = ensureRouteMarkersForPage(out, lang, siteSettings, nl);
-
   return out;
 }
 
@@ -618,20 +885,16 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
     out = applyReviewTranslations(out, lang, presets.translation[lang], nl);
   }
 
-  // Критично: перенос/создание main-mode в каждом .box
   out = ensureMainModeInLogobg(out, lang, data["Main Mode"] || "", nl);
-
-  // Код сайта
   out = upsertSiteCode(out, data.code ?? "", nl);
-
-  // Extra (promo + mirror + nav) — на /mirrors/* нет nav-review и mirror-redirect
   out = upsertPromoBoxesInSitepage(out, urlPath, lang, pageKey, data, presets.review, nl);
 
-  // NEW: синхронизировать visit-ссылку главного бокса с data/link(+alts)
   const goKeyMain = computeGoKey(pageKey, urlPath, lang, data);
-  out = ensureVisitLinkInMainBox(out, goKeyMain, nl);
 
-  // span для всех .box на странице review
+  // visit в главном боксе + aria-label
+  out = ensureVisitLinkInMainBox(out, goKeyMain, nl, data.name || "", lang);
+
+  // нормализуем .copy у всех боксов
   (function normalizeCopyButtonsInAllBoxes(){
     let masked = maskSegments(out);
     let boxes = findAllDivByClass(masked, "box");
@@ -641,7 +904,7 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
     for (const b of boxes){
       const open = b.openStart + shift, close = b.closeEnd + shift;
       const boxHtml = out.slice(open, close);
-      const upd = ensureCopyButtonInBoxHtml(boxHtml, "", nl, lang); // только спан/нормализация
+      const upd = ensureCopyButtonInBoxHtml(boxHtml, "", nl, lang);
       if (upd !== boxHtml){
         out = out.slice(0, open) + upd + out.slice(close);
         shift += upd.length - (close - open);
@@ -649,22 +912,17 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
     }
   })();
 
-  out = ensureMainLogobgLink(out, goKeyMain, nl);      // .box.main .logobg a
-  out = upsertInstructionSiteLinks(out, goKeyMain);     // .instruction .site-link
-
-  // NEW: TG-кнопка после visit в главном боксе
+  out = ensureMainLogobgLink(out, goKeyMain, nl);
+  out = upsertInstructionSiteLinks(out, goKeyMain);
   out = ensureTGButtonInMainBox(out, data, lang, nl);
-
-  // NEW: liverating в главном боксе из data.ratings (во .logobg)
   out = ensureMainBoxLiverating(out, data.ratings || {}, nl);
 
-  /* NEW: локализация ссылок по языку */
   out = localizeLanguageLinks(out, lang);
-
-  // NEW: авто-класс для пустых shortinfo
   out = enforceShortinfoEmptyState(out);
 
-  // NEW: copy-button под .content-buttons в главном боксе, с code="...".
+  // [NEW] Комплект кнопок в .box.main на /reviews|/mirrors: Similar + Visit (+ Copy), без Mirror
+  out = ensureMainBoxButtonsOnReviewMirrors(out, lang, data, urlPath, presets.review, goKeyMain, nl);
+
   out = ensureCopyButtonInMainBox(out, data.code ?? "", nl, lang);
 
   out = cleanupNestedBoxreview(out);
@@ -1230,11 +1488,11 @@ async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, 
   lines.push(`${indent}  <div class="sitealternatesboxes">`);
   for (const alt of alts) {
     const aj = await altJson(root, alt); if (!aj) continue;
-    const sj = await siteJson(root, alt); // <--- NEW: берём реальные рейтинги если есть
-    const reviewLink = `/${lang==="en" ? "" : lang + "/"}reviews/${alt}`.replace(/\/{2,}/g,"/");
+    const sj = await siteJson(root, alt);
+    const baseReview = `/reviews/${alt}`;
+    const reviewLink = withLangForReview(baseReview, lang); // <-- только ru,tr,es
     const reward = pickReward(lang, aj) || "";
 
-    // [NEW] вычислить средний рейтинг
     const avg = averageFirstFour(sj?.ratings) ?? null;
 
     lines.push(`${indent}    <div class="box" id="${escapeAttr(aj.name)}">`);
@@ -1251,7 +1509,9 @@ async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, 
     lines.push(`${indent}        <a class="boxtitle" href="${reviewLink}">${escapeHtml(aj.name)}</a>`);
     lines.push(`${indent}        <div class="site-reward"><p>${reward}</p></div>`);
     lines.push(`${indent}        <div class="content-buttons">`);
+    // Кнопка обзора
     lines.push(`${indent}          <a href="${reviewLink}" aria-label="Read Review" class="review-button"></a>`);
+    // Visit
     const goKey = computeGoKey(alt, urlPath, lang, aj);
     const visitHref = `/go/${goKey}`.replace(/\/{2,}/g, "/");
     lines.push(`${indent}          <a href="${escapeAttr(visitHref)}" aria-label="Visit ${escapeHtml(aj.name)}" class="review-button visit" target="_blank" rel="noopener"></a>`);
@@ -1652,7 +1912,8 @@ function ensureMirrorVisitButtonInBoxHtml(boxHtml, lang, siteKey, mirrorFlag, nl
   return boxHtml.slice(0, cOpenEnd) + newSeg + boxHtml.slice(cCloseStart);
 }
 
-// ================== FIX 1: ensureCopyButtonInBoxHtml (убрать пустую строку) ==================
+
+/* ==== [REPLACE] ensureCopyButtonInBoxHtml: чинит aria-label и <span> при повторном прогоне ==== */
 function ensureCopyButtonInBoxHtml(boxHtml, codeValue, nl, lang = "en"){
   const masked  = maskSegments(boxHtml);
   const content = findFirstByClass(masked, "content");
@@ -1674,37 +1935,54 @@ function ensureCopyButtonInBoxHtml(boxHtml, codeValue, nl, lang = "en"){
   let   region = segment.slice(cbOpenEnd, cbCloseStart);
   let   after  = segment.slice(cbCloseStart);
 
-  // НОРМАЛИЗАЦИЯ: хвост внутри .content-buttons (убираем любые пробелы/пустые строки в конце)
+  const isRu = String(lang).toLowerCase() === "ru";
+  const spanLabel = isRu ? "Промокод" : "Copy Code";
+  const ariaLabel = "Copy Code"; // единый для всех языков по ТЗ-примеру
+
+  // Убираем хвостовые пробелы/пустые строки
   region = region.replace(/\s+$/,'');
 
-  // 1) Апдейт существующих .copy
   let hasCopyBtn = false;
+
   region = region.replace(/<button\b([^>]*)>([\s\S]*?)<\/button>/gi, (full, attrs, inner) => {
     const clsM = attrs.match(/\bclass\s*=\s*(["'])([^"']*)\1/i);
     const classes = new Set((clsM ? clsM[2] : "").split(/\s+/).filter(Boolean));
     if (!classes.has("copy") || classes.has("site-promo-copy")) return full;
 
     hasCopyBtn = true;
-    let open = `<button${attrs}>`;
-    if (codeValue) open = upsertAttrInTag(open, "code", String(codeValue));
 
-    if (/<span\b/i.test(inner)) return open + inner + `</button>`;
-    const label = (String(lang).toLowerCase() === "ru") ? "Промокод" : "Copy Code";
-    return open + `<span>${escapeHtml(label)}</span>` + `</button>`;
+    // Обновляем/open tag
+    let open = `<button${attrs}>`;
+    // code
+    if (codeValue) open = upsertAttrInTag(open, "code", String(codeValue));
+    // aria-label
+    open = upsertAttrInTag(open, "aria-label", ariaLabel);
+    // class: ensure defbutton
+    if (!classes.has("defbutton")){
+      const newClass = (clsM ? clsM[2] + " defbutton" : "copy defbutton").trim();
+      open = open.replace(/\bclass\s*=\s*(["'])([^"']*)\1/i, (_m, q, v)=>`class=${q}${newClass}${q}`);
+    }
+
+    // span: добавить/исправить текст
+    if (/<span\b/i.test(inner)) {
+      inner = inner.replace(/(<span\b[^>]*>)([\s\S]*?)(<\/span>)/i, (_m,a,_txt,c)=> a + escapeHtml(spanLabel) + c);
+    } else {
+      inner = `<span>${escapeHtml(spanLabel)}</span>`;
+    }
+
+    return open + inner + `</button>`;
   });
 
-  // 2) Добавить новую .copy, только если её нет и есть codeValue
+  // Добавить новую, если нет
   if (!hasCopyBtn && codeValue){
     const baseIndent = indentBefore(segment, cbOpenStart, nl);
     const lineIndent = baseIndent + "  ";
-    const label = (String(lang).toLowerCase() === "ru") ? "Промокод" : "Copy Code";
     const btnLine =
-      `${lineIndent}<button class="copy defbutton" aria-label="Copy Code" code="${escapeAttr(String(codeValue))}"><span>${escapeHtml(label)}</span></button>`;
-    // НЕ добавляем \n после button — перенос добавит "after"
+      `${lineIndent}<button class="copy defbutton" aria-label="${escapeAttr(ariaLabel)}" code="${escapeAttr(String(codeValue))}"><span>${escapeHtml(spanLabel)}</span></button>`;
     region = region ? (region + nl + btnLine) : btnLine;
   }
 
-  // 3) НОРМАЛИЗАЦИЯ закрытия: ровно один перенос и правильный отступ перед </div>
+  // Ровно один перевод перед </div>
   const baseIndent = indentBefore(segment, cbOpenStart, nl);
   after = after.replace(/^\s*<\/div>/, nl + baseIndent + "</div>");
 

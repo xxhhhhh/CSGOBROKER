@@ -2649,7 +2649,7 @@ h3 {
     margin-left: unset;
     position: absolute;
     font-size: 16px;
-    height: 30px;
+    height: 32px;
     width: 90px;
     color: black;
     text-align: center;
@@ -2667,14 +2667,12 @@ h3 {
 .boxreview .plusminus .criteria p::before {
     content: '';
     position: absolute;
-    height: 30px;
+    height: 100%;
     width: 100px;
     top: 0;
-    left: -10px;
-    background-color: var(--main-color);
-    transform: skewX(-20deg);
+    left: -5px;
     z-index: -1;
-    border-radius: 0 0 5px 0;
+    border-radius: 0 0 24px 0;
 }
 
 .boxreview .plusminus .criteria:nth-child(1) p::before {
@@ -4972,7 +4970,7 @@ nav img {
 
 .sitedetails .sitepros.active,
 .sitedetails .sitepros:hover {
-    background: var(--darkygray);
+    background: rgb(9 9 9);
 }
 
 .sitedetails .sitepros:first-child {
