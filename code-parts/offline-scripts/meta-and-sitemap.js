@@ -5,7 +5,6 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT_DIR = path.resolve(__dirname, '../../');
-const SITEMAPS_ME_DIR = path.join(ROOT_DIR, 'sitemaps_me');
 const BASE_ORIGIN = 'https://csgobroker.cc';
 
 const LANGS = ['en', 'ru', 'pt', 'es', 'hi', 'tr'];
@@ -112,7 +111,7 @@ function upsertTagInHead(html, tagHtml, findRe) {
 function removeAlternatesFromHeadInner(headInner) {
   return headInner
     .replace(/^[ \t]*<link\b[^>]*\brel\s*=\s*["']alternate["'][^>]*>[ \t]*\r?\n?/gmi, '')
-    .replace(/\n{3,}/g, '\n\n'); // косметика: схлопнуть тройные переносы
+    .replace(/\n{3,}/g, '\n\n'); // косметика
 }
 function findLastStylesheet(headInner) {
   const re = /<link\b[^>]*\brel\s*=\s*["']stylesheet["'][^>]*>/gmi;
@@ -136,7 +135,7 @@ function buildAlternateLines(keyNoLocale, presentLangs) {
   }
   return lines;
 }
-// вставка под последним stylesheet; не ломаем отступ следующей строки
+// вставка под последним stylesheet
 function insertAlternatesUnderLastStylesheet(html, keyNoLocale, presentLangs) {
   const m = html.match(/(<head\b[^>]*>)([\s\S]*?)(<\/head>)/i);
   if (!m) return html;
@@ -156,13 +155,54 @@ function insertAlternatesUnderLastStylesheet(html, keyNoLocale, presentLangs) {
   const prevIsNl = insertIdx > 0 && headInner[insertIdx - 1] === '\n';
   const nextIsNl = insertIdx < headInner.length && headInner[insertIdx] === '\n';
 
-  const before = prevIsNl ? '' : '\n'; // отделяем от предыдущего тега
-  const after  = nextIsNl ? '' : '\n'; // сохраняем отступ следующей строки
+  const before = prevIsNl ? '' : '\n';
+  const after  = nextIsNl ? '' : '\n';
   const block  = before + lines.map(l => indent + l).join('\n') + after;
 
   headInner = headInner.slice(0, insertIdx) + block + headInner.slice(insertIdx);
 
   return html.replace(/(<head\b[^>]*>)[\s\S]*?(<\/head>)/i, `${open}${headInner}${close}`);
+}
+
+// ---------- sitemap hreflang helpers ----------
+function parseAlternatesFromHead(html) {
+  // Берём только внутри <head>, чтобы не ловить случайные теги
+  const m = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i);
+  const headInner = m ? m[1] : html;
+  const links = headInner.match(/<link\b[^>]*\brel\s*=\s*["']alternate["'][^>]*>/gmi) || [];
+  /** @type {Map<string,string>} */
+  const map = new Map();
+  for (const raw of links) {
+    const hreflangM = raw.match(/\bhreflang\s*=\s*(?:"([^"]+)"|'([^']+)'|([^\s"'>]+))/i);
+    const hrefM = raw.match(/\bhref\s*=\s*(?:"([^"]+)"|'([^']+)'|([^\s"'>]+))/i);
+    const lang = (hreflangM && (hreflangM[1] || hreflangM[2] || hreflangM[3]) || '').trim().toLowerCase();
+    const href = (hrefM && (hrefM[1] || hrefM[2] || hrefM[3]) || '').trim();
+    if (!lang || !href) continue;
+    // Не ухудшаем: берём первые значения
+    if (!map.has(lang)) map.set(lang, href);
+  }
+  // Нормируем порядок: ALT_ORDER, затем x-default, затем остальные
+  const ordered = [];
+  for (const lang of ALT_ORDER) if (map.has(lang)) ordered.push({ lang, href: map.get(lang) });
+  if (map.has('x-default')) ordered.push({ lang: 'x-default', href: map.get('x-default') });
+  for (const [lang, href] of map.entries()) {
+    if (ALT_ORDER.includes(lang) || lang === 'x-default') continue;
+    ordered.push({ lang, href });
+  }
+  return ordered;
+}
+
+function makeFallbackAlternatesForKey(keyNoLocale, presentLangs) {
+  const res = [];
+  for (const lang of ALT_ORDER) {
+    if (!presentLangs.has(lang)) continue;
+    res.push({ lang, href: absoluteUrlNormalized(langUrlForKey(keyNoLocale, lang)) });
+  }
+  return res;
+}
+
+function isNonRuBucket(bucketName) {
+  return !/_ru$/.test(bucketName);
 }
 
 // ---------- category & sitemap ----------
@@ -179,18 +219,29 @@ function computePriority(urlPath) {
   if (d === 3) return '0.6';
   return '0.5';
 }
-function buildSitemapXml(entries) {
-  const head = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+
+function buildSitemapXml(entries, { includeAlternates = false, alternatesByKey = new Map() } = {}) {
+  const ns = includeAlternates ? ' xmlns:xhtml="http://www.w3.org/1999/xhtml"' : '';
+  const head = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"${ns}>`;
+
   const body = entries
+    .slice()
     .sort((a, b) => a.loc.localeCompare(b.loc, 'en'))
-    .map(e => `  <url>\n    <loc>${e.loc}</loc>\n    <lastmod>${e.lastmod}</lastmod>\n    <priority>${e.priority || computePriority(new URL(e.loc).pathname)}</priority>\n  </url>`)
+    .map(e => {
+      const alt = includeAlternates ? (alternatesByKey.get(e.key) || []) : [];
+      const links = alt.map(a => `    <xhtml:link rel="alternate" hreflang="${a.lang}" href="${a.href}" />`).join('\n');
+      return [
+        '  <url>',
+        `    <loc>${e.loc}</loc>`,
+        links || null,
+        `    <lastmod>${e.lastmod}</lastmod>`,
+        `    <priority>${e.priority || computePriority(new URL(e.loc).pathname)}</priority>`,
+        '  </url>',
+      ].filter(Boolean).join('\n');
+    })
     .join('\n');
+
   return head + (body ? '\n' + body + '\n' : '\n') + '</urlset>\n';
-}
-function writeSitemapIfChanged(dir, name, xml) {
-  ensureDir(dir);
-  const fp = path.join(dir, name);
-  return writeFileIfChanged(fp, xml, `🧭 sitemap updated → ${path.relative(ROOT_DIR, fp)} (${(xml.match(/<url>/g) || []).length} urls)`);
 }
 
 // ---------- main ----------
@@ -200,6 +251,7 @@ function main() {
   /** @type {Array<{filePath:string,urlPath:string,lang:string,key:string,abs:string,mtime:string,noindex:boolean}>} */
   const pages = [];
   const presentLangsByKey = new Map(); // все локали (вкл. noindex) для alternate
+  const alternatesByKey = new Map();   // key -> Array<{lang,href}>
 
   for (const fp of files) {
     const urlPath = filePathToUrlPath(fp);
@@ -215,9 +267,34 @@ function main() {
 
     pages.push({ filePath: fp, urlPath, lang, key, abs, mtime, noindex: ni });
 
+    // учитываем локали
     const set = presentLangsByKey.get(key) || new Set();
-    set.add(lang); // учитываем даже noindex для правильных alternate
+    set.add(lang);
     presentLangsByKey.set(key, set);
+
+    // парсим hreflang из HEAD
+    const parsed = parseAlternatesFromHead(html);
+    if (parsed.length) {
+      // why: мерджим из разных версий страницы, не затирая уже собранное
+      const cur = alternatesByKey.get(key) || [];
+      const seen = new Map(cur.map(x => [x.lang, x.href]));
+      for (const a of parsed) if (!seen.has(a.lang)) seen.set(a.lang, a.href);
+      const ordered = [];
+      for (const l of ALT_ORDER) if (seen.has(l)) ordered.push({ lang: l, href: seen.get(l) });
+      if (seen.has('x-default')) ordered.push({ lang: 'x-default', href: seen.get('x-default') });
+      for (const [l, h] of seen.entries()) {
+        if (ALT_ORDER.includes(l) || l === 'x-default') continue;
+        ordered.push({ lang: l, href: h });
+      }
+      alternatesByKey.set(key, ordered);
+    }
+  }
+
+  // Фолбэк для key без альтов
+  for (const [key, langs] of presentLangsByKey.entries()) {
+    if (!alternatesByKey.has(key) || alternatesByKey.get(key).length === 0) {
+      alternatesByKey.set(key, makeFallbackAlternatesForKey(key, langs));
+    }
   }
 
   // Step 1: обновляем head (все страницы)
@@ -250,12 +327,12 @@ function main() {
     main_en: [], main_ru: [],
     reviews_en: [], reviews_ru: [],
     topics_en: [], topics_ru: [],
-    reviews_es: [],
+    reviews_es: [], // вынесем в корень вместо sitemaps_me
   };
 
   for (const p of pages) {
     if (p.noindex) continue;
-    const entry = { loc: p.abs, lastmod: p.mtime, priority: computePriority(p.urlPath) };
+    const entry = { loc: p.abs, lastmod: p.mtime, priority: computePriority(p.urlPath), key: p.key };
 
     if (isTopicPath(p.urlPath)) {
       if (p.lang === 'en') buckets.topics_en.push(entry);
@@ -279,26 +356,18 @@ function main() {
     reviews_ru: 'sitemap_reviews_ru.xml',
     topics_en: 'sitemap_topics.xml',
     topics_ru: 'sitemap_topics_ru.xml',
+    reviews_es: 'sitemap_reviews_es.xml', // сохранено после удаления sitemaps_me
   };
 
   let changedSitemaps = 0;
 
-  // root sitemaps
+  // root sitemaps (с hreflang для non-_ru)
   for (const [bucket, name] of Object.entries(rootNames)) {
-    const xml = buildSitemapXml(buckets[bucket]);
-    if (writeFileIfChanged(path.join(ROOT_DIR, name), xml, `✅ root ${name} updated.`)) {
+    const includeAlternates = isNonRuBucket(bucket);
+    const xml = buildSitemapXml(buckets[bucket], { includeAlternates, alternatesByKey });
+    if (writeFileIfChanged(path.join(ROOT_DIR, name), xml, `✅ ${name} updated.`)) {
       changedSitemaps++;
     }
-  }
-
-  // sitemaps_me + reviews_es
-  for (const [bucket, name] of Object.entries(rootNames)) {
-    const xml = buildSitemapXml(buckets[bucket]);
-    if (writeSitemapIfChanged(SITEMAPS_ME_DIR, name, xml)) changedSitemaps++;
-  }
-  {
-    const xmlEs = buildSitemapXml(buckets.reviews_es);
-    if (writeSitemapIfChanged(SITEMAPS_ME_DIR, 'sitemap_reviews_es.xml', xmlEs)) changedSitemaps++;
   }
 
   console.log(`🏁 Done. HTML changed: ${changedHtmlCount}, sitemaps changed: ${changedSitemaps}.`);

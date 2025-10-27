@@ -1240,6 +1240,10 @@ nav .pages {
     z-index: 10;
 }
 
+.hidden .preview-extras {
+    opacity: 0;
+}
+
 .skin-extra-info {
     order: -1;
     margin-bottom: 6px;
@@ -9511,7 +9515,7 @@ a.extra-abox:active .officon,
 .contact-content a:active,
 .skin:active img,
 .weapon-selection-unite:active,
-.navigation-weapon-sort:not(.enabled):active,
+.navigation-weapon-sort:active,
 .pagination-holder button:not(.active):active,
 .screens button:active i::before,
 .slider-container button:active i::before,
