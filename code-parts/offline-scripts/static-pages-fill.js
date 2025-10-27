@@ -303,9 +303,9 @@ function computeGoKey(baseKey, urlPath = "", lang = "en", data = {}) {
 /* ======================================================================= */
 
 /* ==== [REPLACE] updateVisitLinkInBoxHtml: добавлен aria-label + lang/siteName ==== */
-function updateVisitLinkInBoxHtml(boxHtml, goKey, nl, siteName = "", lang = "en"){
-  if (!goKey) return boxHtml;
-  const hrefValue = (`/go/${goKey}`).replace(/\/{2,}/g, "/");
+function updateVisitLinkInBoxHtml(boxHtml, visitHref, nl, siteName = "", lang = "en"){
+  if (!visitHref) return boxHtml;
+  const hrefValue = String(visitHref).replace(/\/{2,}/g, (m)=> m === "//" ? "//" : "/");
 
   const masked = maskSegments(boxHtml);
   const content = findFirstByClass(masked, "content");
@@ -496,8 +496,7 @@ function ensureVisitAnchorMaybeAdd(boxHtml, nl){
   return boxHtml.slice(0, cOpenEnd) + rebuilt + boxHtml.slice(cCloseStart);
 }
 
-/* ==== [NEW] ensureMainBoxButtonsOnReviewMirrors: сборка состава кнопок для .box.main ==== */
-function ensureMainBoxButtonsOnReviewMirrors(html, lang, data, urlPath, reviewSettings, goKeyMain, nl){
+function ensureMainBoxButtonsOnReviewMirrors(html, lang, data, urlPath, reviewSettings, visitHrefMain, nl){
   if (!data) return html;
   const isReviewCtx = /\/(reviews|mirrors)\//.test(String(urlPath));
   if (!isReviewCtx) return html;
@@ -514,20 +513,20 @@ function ensureMainBoxButtonsOnReviewMirrors(html, lang, data, urlPath, reviewSe
 
     const boxHtml = out.slice(b.openStart, b.closeEnd);
 
-    // 1) Удаляем mirror-visit (на reviews/mirrors он не нужен)
+    // 1) Удаляем mirror-visit
     let cur = removeMirrorVisitFromBoxHtml(boxHtml, nl);
 
-    // 2) Кнопка 1: "Альтернативы"/"Similar Sites ..." по Main Mode
+    // 2) Кнопка 1: "Similar Sites …"
     const mmPath = reviewSettings?.mainModeLinks?.[data["Main Mode"]] || "/csgo/caseopening";
     cur = ensureFirstReviewAnchorInBoxHtml(cur, nl, {
       lang, siteName: data.name || "", mode: "similar", reviewHref: mmPath
     });
 
-    // 3) Кнопка 2: visit (создать при отсутствии)
+    // 3) Кнопка 2: visit (создать при отсутствии) + апдейт href
     cur = ensureVisitAnchorMaybeAdd(cur, nl);
-    cur = updateVisitLinkInBoxHtml(cur, goKeyMain, nl, data.name || "", lang);
+    cur = updateVisitLinkInBoxHtml(cur, visitHrefMain, nl, data.name || "", lang);
 
-    // 4) Кнопка 4: copy
+    // 4) Copy
     cur = ensureCopyButtonInBoxHtml(cur, data.code ?? "", nl, lang);
 
     if (cur !== boxHtml){
@@ -537,8 +536,6 @@ function ensureMainBoxButtonsOnReviewMirrors(html, lang, data, urlPath, reviewSe
   }
   return out;
 }
-
-
 
 function ensureNumericRatingInLogobg(boxHtml, ratingValue, nl){
   if (ratingValue == null) return boxHtml;
@@ -586,9 +583,8 @@ function ensureNumericRatingInLogobg(boxHtml, ratingValue, nl){
   return before + region + nl + block + nl + closeIndent + after;
 }
 
-/* ==== [REPLACE] ensureVisitLinkInMainBox: пробрасываем siteName/lang для aria-label ==== */
-function ensureVisitLinkInMainBox(html, goKey, nl, siteName = "", lang = "en"){
-  if (!goKey) return html;
+function ensureVisitLinkInMainBox(html, visitHref, nl, siteName = "", lang = "en"){
+  if (!visitHref) return html;
   let out = html;
 
   const masked = maskSegments(out);
@@ -601,7 +597,7 @@ function ensureVisitLinkInMainBox(html, goKey, nl, siteName = "", lang = "en"){
     if (!cls.has("main")) continue;
 
     const boxHtml = out.slice(b.openStart, b.closeEnd);
-    const updated = updateVisitLinkInBoxHtml(boxHtml, goKey, nl, siteName, lang);
+    const updated = updateVisitLinkInBoxHtml(boxHtml, visitHref, nl, siteName, lang);
     if (updated !== boxHtml){
       out = out.slice(0, b.openStart) + updated + out.slice(b.closeEnd);
     }
@@ -762,6 +758,33 @@ function ensureRouteMarkersForPage(html, lang, siteSettings, nl){
 /* ======================================================================= */
 
 /* --------- SMALL HELPERS --------- */
+function computeVisitHref(urlPath, lang, baseKey, data = {}) {
+  const p = String(urlPath || "").toLowerCase();
+  const L = String(lang || "en").toLowerCase();
+  const has = (k) => k && Object.prototype.hasOwnProperty.call(data, k) && !!data[k];
+  const seg = (s) => new RegExp(`(?:^|/)${s}(?:/|$)`).test(p);
+
+  // Спец-страницы (cs.money-подобные)
+  if (seg("marketplaces") && has("marketplaces")) return String(data["marketplaces"]);
+  if (seg("instant-sell") && has("instant-sell")) return String(data["instant-sell"]);
+  if (seg("buy-skins")    && has("buy-skins"))    return String(data["buy-skins"]);
+  if (seg("sell-skins")   && has("sell-skins"))   return String(data["sell-skins"]);
+
+  // Earn by Play (поддержка старого маршрута earn-by-play-csgo)
+  const isEarnByPlay = seg("earn-by-play") || p.includes("/csgo/earn-by-play-csgo");
+  if (isEarnByPlay) {
+    if (L === "ru"  && has("earn-by-play"))    return String(data["earn-by-play"]);
+    if (L !== "ru" && has("earn-by-play-en"))  return String(data["earn-by-play-en"]);
+  }
+
+  // Обычные ссылки
+  if (L === "ru"  && has("link"))     return String(data["link"]);
+  if (L !== "ru" && has("link-en"))   return String(data["link-en"]);
+
+  // Фолбэк
+  return String(data["link"] || data["link-en"] || "#");
+}
+
 function getPageKeyFromHref(hrefRaw){
   if (!hrefRaw) return null;
   const href = hrefRaw.split("#")[0].split("?")[0].replace(/\/+$/,"");
@@ -810,13 +833,14 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl, sit
         if (collapseWS(rebuilt) !== collapseWS(boxHtml)) boxHtml = rebuilt;
       }
 
-      const goKey = computeGoKey(key, urlPath, lang, data);
+      // NEW: прямой внешний href
+      const visitHref = computeVisitHref(urlPath, lang, key, data);
 
       // visit + aria-label
-      boxHtml = updateVisitLinkInBoxHtml(boxHtml, goKey, nl, data.name || "", lang);
+      boxHtml = updateVisitLinkInBoxHtml(boxHtml, visitHref, nl, data.name || "", lang);
 
       // Review-кнопка (1-я)
-      const reviewHrefBase = extractLogobgHref(boxHtml) || `/reviews/${key}`; // base, без префикса
+      const reviewHrefBase = extractLogobgHref(boxHtml) || `/reviews/${key}`;
       boxHtml = ensureFirstReviewAnchorInBoxHtml(boxHtml, nl, {
         lang,
         siteName: data.name || "",
@@ -827,10 +851,10 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl, sit
       // mirror
       boxHtml = ensureMirrorVisitButtonInBoxHtml(boxHtml, lang, key, data.mirror, nl);
 
-      // main: обновить .logobg a → go (как было)
+      // main: обновить .logobg a → внешний href
       const firstOpen = readTag(boxHtml, 0);
       const isMain = parseClassAttr(firstOpen.attrs).has("main");
-      if (isMain) boxHtml = updateLogobgAnchorInBoxHtml(boxHtml, goKey, nl);
+      if (isMain) boxHtml = updateLogobgAnchorInBoxHtml(boxHtml, visitHref, nl);
 
       // TG
       boxHtml = ensureTGButtonInBoxHtml(boxHtml, data, lang, nl);
@@ -889,10 +913,11 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
   out = upsertSiteCode(out, data.code ?? "", nl);
   out = upsertPromoBoxesInSitepage(out, urlPath, lang, pageKey, data, presets.review, nl);
 
-  const goKeyMain = computeGoKey(pageKey, urlPath, lang, data);
+  // NEW: прямой внешний href главного сайта
+  const visitHrefMain = computeVisitHref(urlPath, lang, pageKey, data);
 
   // visit в главном боксе + aria-label
-  out = ensureVisitLinkInMainBox(out, goKeyMain, nl, data.name || "", lang);
+  out = ensureVisitLinkInMainBox(out, visitHrefMain, nl, data.name || "", lang);
 
   // нормализуем .copy у всех боксов
   (function normalizeCopyButtonsInAllBoxes(){
@@ -912,16 +937,16 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
     }
   })();
 
-  out = ensureMainLogobgLink(out, goKeyMain, nl);
-  out = upsertInstructionSiteLinks(out, goKeyMain);
+  out = ensureMainLogobgLink(out, visitHrefMain, nl);
+  out = upsertInstructionSiteLinks(out, visitHrefMain);
   out = ensureTGButtonInMainBox(out, data, lang, nl);
   out = ensureMainBoxLiverating(out, data.ratings || {}, nl);
 
   out = localizeLanguageLinks(out, lang);
   out = enforceShortinfoEmptyState(out);
 
-  // [NEW] Комплект кнопок в .box.main на /reviews|/mirrors: Similar + Visit (+ Copy), без Mirror
-  out = ensureMainBoxButtonsOnReviewMirrors(out, lang, data, urlPath, presets.review, goKeyMain, nl);
+  // Комплект кнопок в .box.main на /reviews|/mirrors: Similar + Visit (+ Copy), без Mirror
+  out = ensureMainBoxButtonsOnReviewMirrors(out, lang, data, urlPath, presets.review, visitHrefMain, nl);
 
   out = ensureCopyButtonInMainBox(out, data.code ?? "", nl, lang);
 
@@ -1480,6 +1505,7 @@ async function upsertAlternatives(html, boxreview, root, lang, urlPath, alts, ra
   const newInner = joinBlocksNoBlank(before, expected, after, nl);
   return replaceBoxreviewInner(html, boxreview, newInner);
 }
+
 async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, alts, ratingsMap){
   const title = (lang==="ru" ? `Похожие Сайты на ${mainName}` : `Best ${mainName} Alternatives`);
   const lines=[];
@@ -1490,10 +1516,13 @@ async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, 
     const aj = await altJson(root, alt); if (!aj) continue;
     const sj = await siteJson(root, alt);
     const baseReview = `/reviews/${alt}`;
-    const reviewLink = withLangForReview(baseReview, lang); // <-- только ru,tr,es
+    const reviewLink = withLangForReview(baseReview, lang); // локализация обзора
     const reward = pickReward(lang, aj) || "";
 
     const avg = averageFirstFour(sj?.ratings) ?? null;
+
+    // NEW: прямой внешний href альтернативы
+    const visitHref = computeVisitHref(urlPath, lang, alt, aj);
 
     lines.push(`${indent}    <div class="box" id="${escapeAttr(aj.name)}">`);
     lines.push(`${indent}      <div class="logobg">`);
@@ -1511,9 +1540,7 @@ async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, 
     lines.push(`${indent}        <div class="content-buttons">`);
     // Кнопка обзора
     lines.push(`${indent}          <a href="${reviewLink}" aria-label="Read Review" class="review-button"></a>`);
-    // Visit
-    const goKey = computeGoKey(alt, urlPath, lang, aj);
-    const visitHref = `/go/${goKey}`.replace(/\/{2,}/g, "/");
+    // Visit (внешний)
     lines.push(`${indent}          <a href="${escapeAttr(visitHref)}" aria-label="Visit ${escapeHtml(aj.name)}" class="review-button visit" target="_blank" rel="noopener"></a>`);
     lines.push(`${indent}        </div>`);
     lines.push(`${indent}      </div>`);
@@ -2230,9 +2257,9 @@ function upsertAttrInTag(tagText, name, value){
   return tagText.replace(/>$/, ` ${name}="${escapeAttr(value)}">`);
 }
 
-function updateLogobgAnchorInBoxHtml(boxHtml, goKey, nl){
-  if (!goKey) return boxHtml;
-  const hrefValue = (`/go/${goKey}`).replace(/\/{2,}/g, "/");
+function updateLogobgAnchorInBoxHtml(boxHtml, visitHref, nl){
+  if (!visitHref) return boxHtml;
+  const hrefValue = String(visitHref);
 
   const masked = maskSegments(boxHtml);
   const lb = findFirstByClass(masked, "logobg");
@@ -2256,8 +2283,8 @@ function updateLogobgAnchorInBoxHtml(boxHtml, goKey, nl){
   return before + newRegion + after;
 }
 
-function ensureMainLogobgLink(html, goKey, nl){
-  if (!goKey) return html;
+function ensureMainLogobgLink(html, visitHref, nl){
+  if (!visitHref) return html;
   let out = html;
 
   const masked = maskSegments(out);
@@ -2270,7 +2297,7 @@ function ensureMainLogobgLink(html, goKey, nl){
     if (!cls.has("main")) continue;
 
     const boxHtml = out.slice(b.openStart, b.closeEnd);
-    const updated = updateLogobgAnchorInBoxHtml(boxHtml, goKey, nl);
+    const updated = updateLogobgAnchorInBoxHtml(boxHtml, visitHref, nl);
     if (updated !== boxHtml){
       out = out.slice(0, b.openStart) + updated + out.slice(b.closeEnd);
     }
@@ -2279,9 +2306,9 @@ function ensureMainLogobgLink(html, goKey, nl){
   return out;
 }
 
-function upsertInstructionSiteLinks(html, goKey){
-  if (!goKey) return html;
-  const hrefValue = (`/go/${goKey}`).replace(/\/{2,}/g, "/");
+function upsertInstructionSiteLinks(html, visitHref){
+  if (!visitHref) return html;
+  const hrefValue = String(visitHref);
 
   let out = html;
   const masked = maskSegments(out);
