@@ -274,7 +274,6 @@ function computeGoKey(baseKey, urlPath = "", lang = "en", data = {}) {
   const hasPlain = (k) => k && typeof data === "object" && Object.prototype.hasOwnProperty.call(data, k) && !!data[k];
   const hasSeg = (seg) => new RegExp(`(?:^|/)${seg}(?:/|$)`).test(p);
 
-  // Плоские альт-ключи (если есть в JSON) -> /go/<base>/<alt>
   if (hasSeg("marketplaces") && hasPlain("marketplaces")) return `${base}-marketplaces`;
   if (hasSeg("instant-sell") && hasPlain("instant-sell")) return `${base}-instant-sell`;
   if (hasSeg("buy-skins")    && hasPlain("buy-skins"))    return `${base}-buy-skins`;
@@ -296,7 +295,6 @@ function computeGoKey(baseKey, urlPath = "", lang = "en", data = {}) {
     if (hasPlain("link-en"))    return `${base}-en`;   // плоский суффикс /en
   }
 
-  // По умолчанию /go/<base>
   return base;
 }
 
