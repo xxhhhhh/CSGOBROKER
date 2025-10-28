@@ -4036,18 +4036,18 @@ nav img {
     width: 25px;
     height: 40px;
     border-radius: var(--main-border);
-    background-color: var(--darkgray);
+    background: transparent;
 }
 
 .controls-button:first-child {
-    left: -1px;
+    left: 0;
     transform: translateY(-50%);
     transition: all .2s ease-in-out;
     opacity: 1;
 }
 
 .controls-button:last-child {
-    right: -1px;
+    right: 0;
 }
 
 .controls-button.disabled:first-child {
@@ -4098,7 +4098,7 @@ nav img {
     min-width: 50px;
     position: relative;
     overflow: hidden;
-    margin: 5px;
+    margin: 4px;
 }
 
 .category-selector .category-box .category-box-logo::before {
@@ -5050,7 +5050,6 @@ nav img {
 
 .topic-boxes-holder .topic-grandbox.sticker .topic-box {
     box-shadow: unset;
-    overflow: unset;
     height: 128px;
 }
 
@@ -5617,7 +5616,7 @@ nav img {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px 5px 0 0;
+    border-radius: var(--main-border);
     position: relative;
 }
 
@@ -5782,15 +5781,14 @@ nav img:active,
 .box .logobg .best,
 .topic-box .best,
 .box.crypto-choice .logobg:after {
-    top: -8px;
-    right: -8px;
+    top: 0;
+    right: 0;
     position: absolute;
     width: auto;
-    padding: 0 12px 0 5px;
+    padding: 0 16px;
     height: 32px;
     background: var(--buttonbg);
     filter: drop-shadow(1px 1px 4px rgb(10 10 10)) blur(0);
-    border-radius: 0px var(--main-border) var(--main-border) var(--main-border);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -5801,15 +5799,23 @@ nav img:active,
     backface-visibility: hidden;
     user-select: none;
     z-index: 2;
+
+    border-radius: 0 var(--main-border) 0 var(--main-border);
+}
+
+.topic-box .best {
+    top: 8px;
+    right: 8px;
+    border-radius: 2px var(--main-border) 2px var(--main-border);
 }
 
 .box.crypto-choice .logobg:after {
     content: 'Cryptocurrency';
     background: #2066ce;
+    filter: unset;
     text-shadow: 1px 1px 3px rgb(100 100 100);
-    border-radius: 5px;
-    padding: 0 8px;
-    top: 30px;
+    border-radius: 0 0 0 var(--main-border);
+    top: 32px;
 }
 
 .lang-ru .box.crypto-choice .logobg:after {
@@ -5817,8 +5823,8 @@ nav img:active,
 }
 
 .bonuses-block {
-    top: -8px;
-    right: -8px;
+    top: 0;
+    right: 0;
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -5867,7 +5873,6 @@ nav img:active,
     z-index: -1;
 }
 
-
 .box .logobg .upd::before {
     right: unset;
     left: -6px;
@@ -5890,13 +5895,10 @@ nav img:active,
 
 /* temp */
 
-.box .logobg .best::before {
+.box .logobg .best::before,
+.box .logobg .best::before,
+.topic-box .best::before {
     content: unset;
-}
-
-.box .logobg .best {
-    padding: 0 12px;
-    border-radius: var(--main-border);
 }
 
 /* temp */
@@ -6503,10 +6505,12 @@ h4:has(.boxtitle) {
     align-items: center;
     justify-content: center;
     transition: all .15s ease-in-out;
+    border-radius: 2px var(--main-border) var(--main-border) 2px;
 }
 
 .content .tg-app {
     right: unset;
+    border-radius: var(--main-border) 2px 2px var(--main-border);
     /* background: #1c93e3; */
     left: 12px;
 }
@@ -7029,7 +7033,7 @@ footer .centralizer .footer-content {
     margin: 4px 0px;
     position: absolute;
     background: var(--defbuttonbg);
-    border-radius: 5px;
+    border-radius: var(--main-border) 2px 2px var(--main-border);
     filter: none;
     left: 12px;
     top: 12px;
@@ -7370,6 +7374,14 @@ footer .centralizer .footer-content {
     right: 4px;
     border-radius: var(--main-border);
     z-index: -1;
+}
+
+.pagination-button::before,
+.topic-filter .singlemod-select::before {
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    right: 3px;
 }
 
 .singlemod-select::before,
@@ -7816,6 +7828,16 @@ input:checked+label+.slide+input+label::after {
     border-radius: 5px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     position: relative;
+}
+
+#globe-icon::before {
+    height: 20px;
+    width: 20px;
+}
+
+#back-to-top-btn::before {
+    height: 28px;
+    width: 28px;
 }
 
 #back-to-top-btn.btnEntrance,
@@ -8682,8 +8704,8 @@ a[data-title]:after,
 
 .buttons-container .officon.chevron::before,
 .main-mode-selection .officon.chevron::before {
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
 }
 
 .preview-nav-button .officon.chevron::before {
@@ -10840,6 +10862,7 @@ header {
 }
 
 .main-page .content .defbutton {
+    border-radius: var(--main-border) 2px 2px var(--main-border);
     left: -1px;
     right: unset;
     top: -1px;
@@ -11121,7 +11144,7 @@ header {
     font-size: 18px;
     align-items: center;
     justify-content: center;
-    background-size: 100%;
+    background-size: 90%;
     transition: all .15s ease-in-out, filter 0s ease-in-out;
     filter: brightness(0) saturate(100%) invert(16%) sepia(69%) saturate(4202%) hue-rotate(339deg) brightness(95%) contrast(90%);
     position: relative;
@@ -11138,6 +11161,7 @@ header {
     z-index: 11;
     cursor: help;
     height: 30px;
+    filter: unset;
 }
 
 .main-page .box .logobg .best:hover,
@@ -11503,13 +11527,6 @@ header {
     height: 35px;
 }
 
-.payments-block.visible.stickers .payments-block-separate:nth-child(1)::before {
-    right: 21px;
-    transform: skewX(-20deg);
-    border-radius: var(--main-border) 0 0 0;
-    width: 30px;
-}
-
 .payments-block.stickers .payments-block-separate,
 .payments-block.stickers.visible .payments-block-separate {
     pointer-events: none;
@@ -11522,19 +11539,6 @@ header {
     transition: all .15s ease-in-out, padding 0s ease-in-out;
     position: relative;
     z-index: 1;
-}
-
-.payments-block.visible .payments-block-separate:nth-child(1)::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: -10px;
-    transform: skewX(20deg);
-    background-color: var(--darkgray);
-    border-radius: 0 10px 0 0;
-    width: 40px;
-    height: 100%;
-    z-index: -1;
 }
 
 .payment-container input::before {
@@ -12147,7 +12151,7 @@ header {
 }
 
 .pagination-button.arrow::before {
-    border-radius: 8px;
+    border-radius: var(--main-border);
 }
 
 .pagination-button.arrow .officon.chevron::before {
@@ -14234,15 +14238,15 @@ header {
         transition: all .15s ease-in-out, visibility 0s 0s;
         visibility: visible;
         overflow: hidden;
-        border-radius: 0 0 10px 10px;
+        border-radius: 0 0 var(--main-border) var(--main-border);
         opacity: 1;
 
         width: 96%;
         left: 50%;
         justify-content: center;
         transform: translateX(-50%);
-        margin-top: 1px;
-        height: 50px;
+        margin-top: -4px;
+        height: 55px;
     }
 
     header,
@@ -14532,10 +14536,6 @@ header {
     .payments-block {
         width: 96%;
         max-width: 1050px;
-    }
-
-    .payments-block.visible .payments-block-separate:nth-child(1)::before {
-        content: unset;
     }
 
     .payments-button:hover {
@@ -15208,11 +15208,7 @@ header {
     }
 
     .topic-filter {
-        gap: 4px;
-    }
-
-    .topic-filter .singlemod-box:not(.topic-filter-tab) {
-        flex-grow: 1;
+        gap: 2px;
     }
 
     .boxes-holder .box .logobg {
@@ -15511,8 +15507,6 @@ header {
     .bonuses-block,
     .box.crypto-choice .logobg:after {
         font-size: 12px;
-        top: -4px;
-        right: -4px;
     }
 
     .box.crypto-choice .logobg:after {
@@ -16108,11 +16102,6 @@ header {
         display: none;
     }
 
-    .topic-box .best {
-        top: -4px;
-        right: -4px;
-    }
-
     .sticker-crafts-list.imported,
     .sitepage.topic-craft .sticker-crafts-list .topic-grandbox {
         height: 80px;
@@ -16310,6 +16299,10 @@ label.skins-category-switch:active {
 
 .lang-ru .skins-category-switch::before {
     content: 'Инвентарь по Цвету';
+}
+
+a[href*="/?aff="][target="_blank"] {
+    display: flex !important;
 }
 
 /* 
