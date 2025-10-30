@@ -1,20 +1,18 @@
-// injectjson2.js
+// injectjson2.js — фикс бесконечного перезаписывания dateModified и привязка к mtime файла
 const fs = require('fs');
 const path = require('path');
 
 const HTML_BASE_DIR = path.resolve('.');
 const languageDirs = ['.', 'ru', 'tr', 'es', 'pt', 'hi'];
-
 const EXCLUDE_DIRS = ['code-parts', 'img', 'fonts', 'sitemaps_me'];
 
+// ---------- helpers ----------
 function extractMeta(html, key) {
   const regex = new RegExp(`<meta\\s+[^>]*\\b(?:name|property)=["']${key}["'][^>]*>`, 'i');
   const match = html.match(regex);
-  if (match) {
-    const contentMatch = match[0].match(/\bcontent=(["'])(.*?)\1/i);
-    return contentMatch ? contentMatch[2] : null;
-  }
-  return null;
+  if (!match) return null;
+  const contentMatch = match[0].match(/\bcontent=(["'])(.*?)\1/i);
+  return contentMatch ? contentMatch[2] : null;
 }
 
 function detectLanguageFromContent(html) {
@@ -31,13 +29,10 @@ function detectLanguageFromContent(html) {
   }
 }
 
-function getModifiedDate(filePath) {
-  try {
-    const stats = fs.statSync(filePath);
-    return stats.mtime.toISOString();
-  } catch {
-    return new Date().toISOString(); // fallback
-  }
+function getFileTimes(filePath) {
+  // why: используем ВХОДНОЙ mtime как единственный источник истины и потом его восстанавливаем
+  const st = fs.statSync(filePath);
+  return { atime: st.atime, mtime: st.mtime, mtimeISO: st.mtime.toISOString() };
 }
 
 function getPublishedDate(filePath) {
@@ -51,37 +46,22 @@ function getPublishedDate(filePath) {
   return '2023-07-01T00:00:00+00:00';
 }
 
-function getModifiedDate(filePath) {
-  try {
-    const stats = fs.statSync(filePath);
-    return stats.mtime.toISOString();
-  } catch {
-    return new Date().toISOString();
-  }
-}
-
-
 function fileExistsForPath(pathArray) {
   const flatHtml = path.join(HTML_BASE_DIR, ...pathArray) + '.html';
   const indexHtml = path.join(HTML_BASE_DIR, ...pathArray, 'index.html');
-
   if (fs.existsSync(flatHtml)) return flatHtml;
   if (fs.existsSync(indexHtml)) return indexHtml;
   return null;
 }
 
+// ---------- breadcrumbs (как было) ----------
 function generateBreadcrumbList(pageUrl, alt, urlParts, langCode) {
   const items = [];
   const isDefaultLang = langCode === 'en';
   const base = isDefaultLang ? 'https://csgobroker.cc' : `https://csgobroker.cc/${langCode}`;
   const homeName = langCode === 'ru' ? 'Главная' : 'Main Page';
 
-  items.push({
-    "@type": "ListItem",
-    position: 1,
-    name: homeName,
-    item: base
-  });
+  items.push({ "@type": "ListItem", position: 1, name: homeName, item: base });
 
   const parts = (!isDefaultLang && urlParts[0] === langCode) ? urlParts.slice(1) : urlParts;
   const addedPaths = new Set();
@@ -94,12 +74,7 @@ function generateBreadcrumbList(pageUrl, alt, urlParts, langCode) {
       const html = fs.readFileSync(cs2File, 'utf-8');
       const cs2Name = extractMeta(html, 'og:image:alt') || 'CS2 Gambling Sites';
       const cs2Url = `https://csgobroker.cc/${isDefaultLang ? '' : langCode + '/'}cs2`;
-      items.push({
-        "@type": "ListItem",
-        position: breadcrumbPos++,
-        name: cs2Name,
-        item: cs2Url
-      });
+      items.push({ "@type": "ListItem", position: breadcrumbPos++, name: cs2Name, item: cs2Url });
     }
   }
 
@@ -157,31 +132,46 @@ function generateBreadcrumbList(pageUrl, alt, urlParts, langCode) {
     const name = extractMeta(html, 'og:image:alt') || labelParts[labelParts.length - 1];
     const itemUrl = `https://csgobroker.cc/${(isDefaultLang ? '' : langCode + '/')}${labelParts.join('/')}`;
 
-    items.push({
-      "@type": "ListItem",
-      position: breadcrumbPos++,
-      name,
-      item: itemUrl
-    });
+    items.push({ "@type": "ListItem", position: breadcrumbPos++, name, item: itemUrl });
   }
 
   return items;
 }
 
-function stripDateModified(json) {
+// ---------- JSON-LD utils ----------
+function parseYoastBlock(html) {
+  const m = html.match(/<script type="application\/ld\+json" class="yoast-schema-graph">([\s\S]*?)<\/script>/);
+  if (!m) return { matchHtml: null, jsonRaw: '', jsonObj: null };
+  const raw = (m[1] || '').trim();
   try {
-    const obj = JSON.parse(json);
-    if (obj['@graph'] && obj['@graph'][0]) {
-      delete obj['@graph'][0]['dateModified'];
-    }
-    return JSON.stringify(obj);
+    return { matchHtml: m[0], jsonRaw: raw, jsonObj: JSON.parse(raw) };
   } catch {
-    return '';
+    return { matchHtml: m[0], jsonRaw: raw, jsonObj: null };
   }
 }
 
+function deepClone(x) { return JSON.parse(JSON.stringify(x)); }
+function removeDM(obj) {
+  const c = deepClone(obj);
+  if (c && c['@graph'] && c['@graph'][0]) delete c['@graph'][0]['dateModified'];
+  return c;
+}
+function canonicalize(v) {
+  if (Array.isArray(v)) return v.map(canonicalize);
+  if (v && typeof v === 'object' && !(v instanceof Date)) {
+    const out = {};
+    for (const k of Object.keys(v).sort()) out[k] = canonicalize(v[k]);
+    return out;
+  }
+  return v;
+}
+function stableStringify(o) { return JSON.stringify(canonicalize(o)); }
+
+// ---------- main injection ----------
 function injectSchema(filePath) {
+  const { atime, mtime, mtimeISO } = getFileTimes(filePath); // до любых записей
   let html = fs.readFileSync(filePath, 'utf-8');
+
   const name = html.match(/<title>(.*?)<\/title>/i)?.[1]?.trim() || '';
   const description = extractMeta(html, 'description');
   const image = extractMeta(html, 'og:image');
@@ -193,7 +183,6 @@ function injectSchema(filePath) {
   const datePublished = getPublishedDate(filePath);
 
   const relativePath = path.relative(HTML_BASE_DIR, filePath).replace(/\\/g, '/');
-
   if (/(^|\/)topic\/guides\//.test(relativePath)) {
     console.log(`⏭️ Skipped guide page: ${relativePath}`);
     return;
@@ -225,12 +214,7 @@ function injectSchema(filePath) {
         "description": description,
         "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` },
         "inLanguage": langFull,
-        "potentialAction": [
-          {
-            "@type": "ReadAction",
-            "target": [`${pageUrl}/`]
-          }
-        ]
+        "potentialAction": [{ "@type": "ReadAction", "target": [`${pageUrl}/`] }]
       },
       {
         "@type": "ImageObject",
@@ -256,19 +240,12 @@ function injectSchema(filePath) {
         "publisher": { "@id": "https://csgobroker.cc/#organization" },
         "inLanguage": langFull,
         "potentialAction": [
-        {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://csgobroker.cc/?s={search_term_string}"
-          },
-          "query-input": {
-            "@type": "PropertyValueSpecification",
-            "valueRequired": true,
-            "valueName": "search_term_string"
+          {
+            "@type": "SearchAction",
+            "target": { "@type": "EntryPoint", "urlTemplate": "https://csgobroker.cc/?s={search_term_string}" },
+            "query-input": { "@type": "PropertyValueSpecification", "valueRequired": true, "valueName": "search_term_string" }
           }
-        }
-      ],
+        ],
       },
       {
         "@type": "Organization",
@@ -290,27 +267,54 @@ function injectSchema(filePath) {
     ]
   };
 
-  const existingMatch = html.match(/<script type="application\/ld\+json" class="yoast-schema-graph">([\s\S]*?)<\/script>/);
-  const currentBlock = existingMatch ? existingMatch[1].trim() : '';
-  const isSame = stripDateModified(currentBlock) === JSON.stringify(baseJsonLd);
+  const { matchHtml, jsonObj } = parseYoastBlock(html);
+  const baseNoDM = removeDM(baseJsonLd);
 
-  if (!isSame) {
-    const modified = getModifiedDate(filePath);
-    baseJsonLd["@graph"][0]["dateModified"] = modified;
-    const updatedJson = JSON.stringify(baseJsonLd, null, 2);
-    if (existingMatch) {
-      html = html.replace(existingMatch[0], `<script type="application/ld+json" class="yoast-schema-graph">\n${updatedJson}\n</script>`);
-      console.log(`✅ Schema updated in ${filePath}`);
-    } else {
-      html = html.replace(/(\s*)<\/head>/, `\n<script type="application/ld+json" class="yoast-schema-graph">\n${updatedJson}\n</script>\n$1</head>`);
-      console.log(`✅ Schema inserted in ${filePath}`);
-    }
+  // Нет валидного блока → вставка с dateModified = входной mtime
+  if (!matchHtml || !jsonObj) {
+    const full = deepClone(baseJsonLd);
+    full['@graph'][0]['dateModified'] = mtimeISO;
+    const updatedJson = JSON.stringify(full, null, 2);
+    html = html.replace(/(\s*)<\/head>/i, `\n<script type="application/ld+json" class="yoast-schema-graph">\n${updatedJson}\n</script>\n$1</head>`);
     fs.writeFileSync(filePath, html, 'utf-8');
+    fs.utimesSync(filePath, atime, mtime); // важный шаг: вернуть исходные времена
+    console.log(`✅ Schema inserted in ${filePath}`);
+    return;
   }
+
+  // Есть блок → сравниваем без dateModified (канонично)
+  const existingNoDM = removeDM(jsonObj);
+  const sameWithoutDM = stableStringify(existingNoDM) === stableStringify(baseNoDM);
+
+  const existingDM = jsonObj?.['@graph']?.[0]?.['dateModified'] || null;
+
+  if (sameWithoutDM) {
+    // Меняем только dateModified, если отличается от входного mtime
+    if (existingDM !== mtimeISO) {
+      jsonObj['@graph'][0]['dateModified'] = mtimeISO;
+      const updatedJson = JSON.stringify(jsonObj, null, 2);
+      const newBlock = `<script type="application/ld+json" class="yoast-schema-graph">\n${updatedJson}\n</script>`;
+      html = html.replace(/<script type="application\/ld\+json" class="yoast-schema-graph">[\s\S]*?<\/script>/, newBlock);
+      fs.writeFileSync(filePath, html, 'utf-8');
+      fs.utimesSync(filePath, atime, mtime); // не даём mtime «скакнуть»
+      console.log(`✅ dateModified updated in ${filePath}`);
+    }
+    return;
+  }
+
+  // Содержимое отличается → полная замена с актуальным mtime
+  const full = deepClone(baseJsonLd);
+  full['@graph'][0]['dateModified'] = mtimeISO;
+  const updatedJson = JSON.stringify(full, null, 2);
+  const newBlock = `<script type="application/ld+json" class="yoast-schema-graph">\n${updatedJson}\n</script>`;
+  html = html.replace(/<script type="application\/ld\+json" class="yoast-schema-graph">[\s\S]*?<\/script>/, newBlock);
+  fs.writeFileSync(filePath, html, 'utf-8');
+  fs.utimesSync(filePath, atime, mtime); // сохраняем исходный mtime
+  console.log(`✅ Schema updated in ${filePath}`);
 }
 
+// ---------- walker ----------
 const visitedPaths = new Set();
-
 function walk(dir) {
   const abs = path.resolve(dir);
   if (visitedPaths.has(abs)) return;

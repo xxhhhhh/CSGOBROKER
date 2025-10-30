@@ -109,9 +109,12 @@ function upsertTagInHead(html, tagHtml, findRe) {
 
 // remove <link rel="alternate"> ПОСТРОЧНО (не трогаем отступ следующей строки)
 function removeAlternatesFromHeadInner(headInner) {
-  return headInner
+  let res = headInner
     .replace(/^[ \t]*<link\b[^>]*\brel\s*=\s*["']alternate["'][^>]*>[ \t]*\r?\n?/gmi, '')
-    .replace(/\n{3,}/g, '\n\n'); // косметика
+    .replace(/\n{3,}/g, '\n\n');
+  // why: чистим «висячие» пустые строки/пробелы, которые остаются от прошлых вставок
+  res = res.replace(/(\r?\n)[ \t]+(?=\r?\n)/g, '$1');        // пробелы на пустых строках
+  return res;
 }
 function findLastStylesheet(headInner) {
   const re = /<link\b[^>]*\brel\s*=\s*["']stylesheet["'][^>]*>/gmi;
@@ -135,7 +138,8 @@ function buildAlternateLines(keyNoLocale, presentLangs) {
   }
   return lines;
 }
-// вставка под последним stylesheet
+
+// вставка под последним stylesheet (без накопления пустых строк)
 function insertAlternatesUnderLastStylesheet(html, keyNoLocale, presentLangs) {
   const m = html.match(/(<head\b[^>]*>)([\s\S]*?)(<\/head>)/i);
   if (!m) return html;
@@ -152,21 +156,24 @@ function insertAlternatesUnderLastStylesheet(html, keyNoLocale, presentLangs) {
   const lines = buildAlternateLines(keyNoLocale, presentLangs);
   if (!lines.length) return html;
 
-  const prevIsNl = insertIdx > 0 && headInner[insertIdx - 1] === '\n';
-  const nextIsNl = insertIdx < headInner.length && headInner[insertIdx] === '\n';
+  const nextChar = headInner[insertIdx] || '';
+  const skip = nextChar === '\n' ? 1 : 0; // why: заменяем один существующий \n, чтобы он не оставался «лишним»
 
-  const before = prevIsNl ? '' : '\n';
-  const after  = nextIsNl ? '' : '\n';
-  const block  = before + lines.map(l => indent + l).join('\n') + after;
+  const before = headInner.slice(0, insertIdx);
+  let after = headInner.slice(insertIdx + skip);
 
-  headInner = headInner.slice(0, insertIdx) + block + headInner.slice(insertIdx);
+  // нормализуем начало хвоста: не больше одного пустого ряда
+  after = after.replace(/^(?:[ \t]*\r?\n)+/, '\n');
+
+  const block = '\n' + lines.map(l => indent + l).join('\n') + '\n';
+
+  headInner = before + block + after;
 
   return html.replace(/(<head\b[^>]*>)[\s\S]*?(<\/head>)/i, `${open}${headInner}${close}`);
 }
 
 // ---------- sitemap hreflang helpers ----------
 function parseAlternatesFromHead(html) {
-  // Берём только внутри <head>, чтобы не ловить случайные теги
   const m = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i);
   const headInner = m ? m[1] : html;
   const links = headInner.match(/<link\b[^>]*\brel\s*=\s*["']alternate["'][^>]*>/gmi) || [];
@@ -178,10 +185,8 @@ function parseAlternatesFromHead(html) {
     const lang = (hreflangM && (hreflangM[1] || hreflangM[2] || hreflangM[3]) || '').trim().toLowerCase();
     const href = (hrefM && (hrefM[1] || hrefM[2] || hrefM[3]) || '').trim();
     if (!lang || !href) continue;
-    // Не ухудшаем: берём первые значения
     if (!map.has(lang)) map.set(lang, href);
   }
-  // Нормируем порядок: ALT_ORDER, затем x-default, затем остальные
   const ordered = [];
   for (const lang of ALT_ORDER) if (map.has(lang)) ordered.push({ lang, href: map.get(lang) });
   if (map.has('x-default')) ordered.push({ lang: 'x-default', href: map.get('x-default') });
@@ -275,7 +280,6 @@ function main() {
     // парсим hreflang из HEAD
     const parsed = parseAlternatesFromHead(html);
     if (parsed.length) {
-      // why: мерджим из разных версий страницы, не затирая уже собранное
       const cur = alternatesByKey.get(key) || [];
       const seen = new Map(cur.map(x => [x.lang, x.href]));
       for (const a of parsed) if (!seen.has(a.lang)) seen.set(a.lang, a.href);
@@ -327,7 +331,7 @@ function main() {
     main_en: [], main_ru: [],
     reviews_en: [], reviews_ru: [],
     topics_en: [], topics_ru: [],
-    reviews_es: [], // вынесем в корень вместо sitemaps_me
+    reviews_es: [],
   };
 
   for (const p of pages) {
@@ -356,12 +360,11 @@ function main() {
     reviews_ru: 'sitemap_reviews_ru.xml',
     topics_en: 'sitemap_topics.xml',
     topics_ru: 'sitemap_topics_ru.xml',
-    reviews_es: 'sitemap_reviews_es.xml', // сохранено после удаления sitemaps_me
+    reviews_es: 'sitemap_reviews_es.xml',
   };
 
   let changedSitemaps = 0;
 
-  // root sitemaps (с hreflang для non-_ru)
   for (const [bucket, name] of Object.entries(rootNames)) {
     const includeAlternates = isNonRuBucket(bucket);
     const xml = buildSitemapXml(buckets[bucket], { includeAlternates, alternatesByKey });

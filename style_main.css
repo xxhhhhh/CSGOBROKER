@@ -7376,14 +7376,6 @@ footer .centralizer .footer-content {
     z-index: -1;
 }
 
-.pagination-button::before,
-.topic-filter .singlemod-select::before {
-    top: 3px;
-    bottom: 3px;
-    left: 3px;
-    right: 3px;
-}
-
 .singlemod-select::before,
 .category-selector .category-box .category-box-logo::before,
 .pagination-button::before {
