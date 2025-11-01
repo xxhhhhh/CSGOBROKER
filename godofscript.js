@@ -2986,16 +2986,18 @@ function loadModsJSON() {
     });
 }
 
+// path: /assets/js/header-hide.js
 (() => {
   const header = document.querySelector('header');
   if (!header) return;
 
   const cfg = {
-    upVelocityReveal: 0.6,  // px/ms — "резкость" апа (≈600 px/s)
-    upDeltaReveal: 80,      // px — альт. порог рывка вверх
-    ignoreDelta: 2,         // px — игнор шума
-    minLockMs: 400,         // ms — защита от мгновенного скрытия
-    hideAfter: () => headerH + 12
+    upVelocityReveal: 0.6,   // px/ms — "резкость" апа (≈600 px/s)
+    upDeltaReveal: 80,       // px — альт. порог рывка вверх
+    ignoreDelta: 2,          // px — игнор шума
+    minLockMs: 400,          // ms — защита от мгновенного скрытия
+    hideAfter: () => headerH + 12,
+    scrollHiddenAfter: 100   // px — когда включать "долгую" скрытность
   };
 
   let headerH = header.offsetHeight;
@@ -3003,30 +3005,53 @@ function loadModsJSON() {
   let lastT = performance.now();
   let ticking = false;
   let lockUntil = 0;
-  let hidden = false;
+
+  let hidden = false;        // состояние is-hidden
+  let scrollHidden = false;  // состояние scroll-hidden
 
   const hide = () => {
     if (!hidden) { header.classList.add('is-hidden'); hidden = true; }
   };
+
   const show = (lock = false) => {
     if (hidden) { header.classList.remove('is-hidden'); hidden = false; }
     if (lock) lockUntil = performance.now() + cfg.minLockMs; // почему: не прячем сразу после резкого апа
+  };
+
+  const setScrollHidden = () => {
+    if (!scrollHidden) { header.classList.add('scroll-hidden'); scrollHidden = true; }
+  };
+
+  const clearScrollHidden = () => {
+    if (scrollHidden) { header.classList.remove('scroll-hidden'); scrollHidden = false; }
   };
 
   const update = () => {
     ticking = false;
 
     const now = performance.now();
-    const y = Math.max(0, window.scrollY || 0);  // почему: iOS bounce
+    const y = Math.max(0, window.scrollY || 0); // почему: iOS bounce
     const dy = y - lastY;
     const dt = Math.max(16, now - lastT);
     const v = dy / dt;
 
     headerH = header.offsetHeight;
 
-    if (y <= 0) { show(false); lastY = y; lastT = now; return; }
-    if (Math.abs(dy) <= cfg.ignoreDelta) { lastY = y; lastT = now; return; }
+    // В самом верху всегда полностью показываем и сбрасываем "долгую" скрытность
+    if (y <= 0) {
+      show(false);
+      clearScrollHidden();
+      lastY = y; lastT = now;
+      return;
+    }
 
+    // Микроподвижки игнорируем
+    if (Math.abs(dy) <= cfg.ignoreDelta) {
+      lastY = y; lastT = now;
+      return;
+    }
+
+    // --- Логика is-hidden (как была) ---
     const fastUp = dy < 0 && ((-v) >= cfg.upVelocityReveal || (-dy) >= cfg.upDeltaReveal);
 
     if (fastUp) {
@@ -3035,6 +3060,13 @@ function loadModsJSON() {
       hide();
     } else if (dy < 0) {
       show(false);
+    }
+
+    // --- Логика scroll-hidden (новая) ---
+    // Включаем при движении вниз после условных 100px и больше не трогаем,
+    // чтобы не "возвращался" при апе. Снимется только в блоке y <= 0.
+    if (!scrollHidden && dy > 0 && y >= cfg.scrollHiddenAfter) {
+      setScrollHidden();
     }
 
     lastY = y;
