@@ -191,6 +191,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    margin-left: 4px;
 }
 
 .nav-content {
@@ -220,7 +221,8 @@ nav .pages {
     display: flex;
     align-items: center;
     position: relative;
-    margin-top: 4px;
+    margin-top: 3px;
+    height: 16px;
 }
 
 #theme-toggle,
@@ -4060,6 +4062,20 @@ nav img {
     opacity: 1;
 }
 
+.main-mode-selection .controls-button {
+    width: 40px;
+    background: var(--darkgray);
+    opacity: .85;
+}
+
+.main-mode-selection .controls-button:first-child {
+    left: 28px;
+}
+
+.main-mode-selection .controls-button:last-child {
+    right: 28px;
+}
+
 .controls-button:last-child {
     right: 0;
 }
@@ -5236,8 +5252,8 @@ nav img {
     background: linear-gradient(180deg, var(--darkgray) 0%, rgb(13 13 13) 100%);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     /* background: rgba(0, 0, 0, .2);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     filter: drop-shadow(0 1px 1px rgb(10 10 10)) blur(0); */
     transition: all .15s ease-in-out, overflow .15s .15s ease-in-out;
     z-index: 10;
@@ -7526,7 +7542,7 @@ footer .centralizer .footer-content {
     width: 100%;
     background-color: rgba(0, 0, 0, .8);
     z-index: 1000;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
     height: 0%;
     opacity: 0;
     visibility: hidden;
@@ -10922,8 +10938,8 @@ header {
     overflow: hidden;
     cursor: pointer;
     transition: all .15s ease-in-out;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     background: rgba(0, 0, 0, .3);
     z-index: 1;
 }
@@ -11330,9 +11346,9 @@ header {
     /* background: radial-gradient(300% 100% at 0% 0%, var(--darkgray), rgba(11, 11, 11, .3) 100%); */
     /* box-shadow: inset 0 0 5px 1px var(--darkgray); */
     /* background: var(--darkgray); */
-    background: radial-gradient(150% 150% at 50% 0%, var(--darkgray), transparent 100%);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background: radial-gradient(150% 150% at 50% 0%, var(--darkgray), transparent 70%);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     width: calc(299.5px * 2 + 8px * 2);
     z-index: 3;
 }
@@ -14635,6 +14651,29 @@ header {
 }
 
 @media screen and (max-width: 850px) {
+
+    .main-mode-selection button,
+    .main-mode-selection .controls-button:hover,
+    .main-mode-selection .controls-button:first-child,
+    .main-mode-selection .controls-button:last-child {
+        bottom: 8px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .buttons-container .officon.chevron::before, 
+    .main-mode-selection .officon.chevron::before {
+        height: 22px;
+        width: 22px;
+    }
+
+    .main-mode-selection .controls-button:first-child {
+        left: 8px;
+    }
+
+    .main-mode-selection .controls-button:last-child {
+        right: 8px;
+    }
 
     .menu-search-section .search-field .close-button {
         right: 18px;

@@ -359,7 +359,17 @@ function extractLogobgHref(boxHtml){
   return a ? a[2] : "";
 }
 
-function ensureFirstReviewAnchorInBoxHtml(boxHtml, nl, opts){
+function buildReviewAriaLabel(siteName = "", lang = "en", mode = "review") {
+  const L = String(lang || "en").toLowerCase();
+  const name = String(siteName || "").trim();
+  if (mode === "similar") {
+    return L === "ru" ? `Альтернативы ${name}` : `Similar Sites of ${name}`;
+  }
+  // default: review
+  return L === "ru" ? `Читать Обзор ${name}` : `Read Review ${name}`;
+}
+
+function ensureFirstReviewAnchorInBoxHtml(boxHtml, nl, opts) {
   const { lang = "en", siteName = "", mode = "review", reviewHref = "" } = opts || {};
   const isRu = String(lang).toLowerCase() === "ru";
 
@@ -367,9 +377,9 @@ function ensureFirstReviewAnchorInBoxHtml(boxHtml, nl, opts){
   const content = findFirstByClass(masked, "content");
   if (!content) return boxHtml;
 
-  const cOpenEnd = content.openEnd;
+  const cOpenEnd    = content.openEnd;
   const cCloseStart = content.closeStart;
-  let segment = boxHtml.slice(cOpenEnd, cCloseStart);
+  let   segment     = boxHtml.slice(cOpenEnd, cCloseStart);
 
   const segMasked = maskSegments(segment);
   const cb = findFirstByClass(segMasked, "content-buttons");
@@ -377,45 +387,51 @@ function ensureFirstReviewAnchorInBoxHtml(boxHtml, nl, opts){
 
   const regionStart = cb.openEnd;
   const regionEnd   = cb.closeStart;
-  const before = segment.slice(0, regionStart);
-  let   region = segment.slice(regionStart, regionEnd);
-  let   after  = segment.slice(regionEnd);
+  const before      = segment.slice(0, regionStart);
+  let   region      = segment.slice(regionStart, regionEnd);
+  let   after       = segment.slice(regionEnd);
 
-  // aria-label
-  const aria = (mode === "similar")
-    ? (isRu ? `Альтернативы ${siteName}` : `Similar Sites of ${siteName}`)
-    : (isRu ? `Читать Обзор ${siteName}` : `Read Review ${siteName}`);
-
-  // raw → apply rule
+  // href-источник
   const hrefRaw = reviewHref || extractLogobgHref(boxHtml) || "#";
-  const href = (mode === "similar")
-    ? withLangForSimilar(hrefRaw, lang)   // все языки, но en → без префикса
-    : withLangForReview(hrefRaw, lang);  // только ru|tr|es → префикс; прочие/EN → strip
+  const href    = (mode === "similar")
+    ? withLangForSimilar(hrefRaw, lang)  // все языки, en без префикса
+    : withLangForReview(hrefRaw, lang);  // только ru|tr|es с префиксом; прочие — без
 
-  // Ищем первую подходящую review-кнопку (без .visit/.mirror-visit)
-  let found = false;
-  region = region.replace(/<a\b([^>]*?)>([\s\S]*?)<\/a>/i, (full, attrs, inner) => {
+  // требуемый aria-label
+  const aria = buildReviewAriaLabel(siteName, lang, mode);
+
+  // Нормализуем хвост региона
+  region = region.replace(/\s+$/,'');
+
+  // Глобально проходим по всем <a> и правим ПЕРВУЮ подходящую .review-button (не .visit/.mirror-visit)
+  let patched = false;
+  region = region.replace(/<a\b([^>]*?)>([\s\S]*?)<\/a>/gi, (full, attrs, inner) => {
+    if (patched) return full; // уже починили одну — остальное не трогаем
+
     const clsM = String(attrs).match(/\bclass\s*=\s*(["'])([^"']*)\1/i);
     const classes = new Set((clsM ? clsM[2] : "").split(/\s+/).filter(Boolean));
-    if (!classes.has("review-button") || classes.has("visit") || classes.has("mirror-visit")) {
-      return full;
-    }
-    found = true;
+    const isReviewBtn = classes.has("review-button") && !classes.has("visit") && !classes.has("mirror-visit");
+
+    if (!isReviewBtn) return full;
+
+    // Обновляем открывающий тег
     let open = `<a${attrs}>`;
     open = upsertAttrInTag(open, "href", href);
     open = upsertAttrInTag(open, "aria-label", aria);
+
+    patched = true;
     return open + inner + `</a>`;
   });
 
-  if (!found){
-    // Вставка первой кнопки
+  // Если подходящая кнопка не найдена — создаем в начале .content-buttons
+  if (!patched) {
     const baseIndent = indentBefore(segment, cb.openStart, nl);
     const linkIndent = baseIndent + "  ";
     const line = `${linkIndent}<a href="${escapeAttr(href)}" aria-label="${escapeAttr(aria)}" class="review-button"></a>`;
     region = region ? (line + nl + region) : line;
   }
 
-  // Нормализуем закрытие
+  // Ровно один перевод перед </div>
   const baseIndent = indentBefore(segment, cb.openStart, nl);
   after = after.replace(/^\s*<\/div>/, nl + baseIndent + "</div>");
 
@@ -1519,8 +1535,11 @@ async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, 
 
     const avg = averageFirstFour(sj?.ratings) ?? null;
 
-    // NEW: прямой внешний href альтернативы
+    // Прямой внешний href альтернативы (учитываем маршруты/локаль)
     const visitHref = computeVisitHref(urlPath, lang, alt, aj);
+
+    // aria-label для кнопки обзора
+    const ariaReview = buildReviewAriaLabel(aj.name || "", lang, "review");
 
     lines.push(`${indent}    <div class="box" id="${escapeAttr(aj.name)}">`);
     lines.push(`${indent}      <div class="logobg">`);
@@ -1536,8 +1555,8 @@ async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, 
     lines.push(`${indent}        <a class="boxtitle" href="${reviewLink}">${escapeHtml(aj.name)}</a>`);
     lines.push(`${indent}        <div class="site-reward"><p>${reward}</p></div>`);
     lines.push(`${indent}        <div class="content-buttons">`);
-    // Кнопка обзора
-    lines.push(`${indent}          <a href="${reviewLink}" aria-label="Read Review" class="review-button"></a>`);
+    // Кнопка обзора (исправлено aria-label)
+    lines.push(`${indent}          <a href="${reviewLink}" aria-label="${escapeAttr(ariaReview)}" class="review-button"></a>`);
     // Visit (внешний)
     lines.push(`${indent}          <a href="${escapeAttr(visitHref)}" aria-label="Visit ${escapeHtml(aj.name)}" class="review-button visit" target="_blank" rel="noopener"></a>`);
     lines.push(`${indent}        </div>`);
