@@ -1152,10 +1152,11 @@ function renderPromoNavMirrorBlock(fullHtmlAfterSections, urlPath, lang, pageKey
       const cnt = `counter-${i++}`;
       const promoText = (lang==="ru") ? "Промокод" : "Promo";
       lines.push(`${indent}  <div class="promo-box extra-abox ${cls} ${cnt}">`);
-      lines.push(`${indent}    <div class="logobg"><span>${escapeHtml(String(codeDisplay))}</span></div>`);
       lines.push(`${indent}    <div class="content">`);
       lines.push(`${indent}      <p>${promoText}</p>`);
       lines.push(`${indent}      <code class="promo-code">${escapeHtml(String(codeValue))}</code>`);
+      lines.push(`${indent}      <div class="promo-code-desc"><span>${escapeHtml(String(codeDisplay))}</span></div>`);
+      lines.push(`${indent}      <div class="bonus-type"><i class="officon"></i></div>`);
       lines.push(`${indent}      <button class="copy site-promo-copy defbutton" aria-label="Copy Code"></button>`);
       lines.push(`${indent}    </div>`);
       lines.push(`${indent}  </div>`);

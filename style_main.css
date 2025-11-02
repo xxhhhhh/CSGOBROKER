@@ -324,10 +324,10 @@ nav .pages {
     content: '';
     position: absolute;
     z-index: -1;
-    left: 6px;
-    right: 6px;
-    top: 6px;
-    bottom: 6px;
+    left: 4px;
+    right: 4px;
+    top: 4px;
+    bottom: 4px;
     background: linear-gradient(-45deg, var(--darkgray) 50%, var(--main-theme) 100%);
     opacity: .8;
     border-radius: var(--main-border);
@@ -1970,10 +1970,10 @@ nav .pages {
 }
 
 .box-skins-name::before {
-    top: 6px;
-    left: 6px;
-    bottom: 6px;
-    right: 6px;
+    top: 4px;
+    left: 4px;
+    bottom: 4px;
+    right: 4px;
     background: linear-gradient(150deg, var(--darkygray) 0%, var(--darkgray) 100%);
     border-radius: var(--main-border) 5px 5px var(--main-border);
 }
@@ -3162,9 +3162,8 @@ h3 {
 }
 
 .shortinfo .features {
-    padding-left: 8px;
+    padding: 0 9px;
     background-color: var(--darkgray);
-    padding-right: 17px;
     border-radius: var(--main-border);
     display: flex;
 }
@@ -3211,6 +3210,10 @@ h3 {
     flex-wrap: nowrap;
 }
 
+.features .featuresbox .typesinside {
+    gap: 9px;
+}
+
 .gamemodes .featuresbox .typesinside {
     justify-content: center;
 }
@@ -3241,7 +3244,6 @@ h3 {
 }
 
 .features .featuresbox .typesinside a,
-.features .featuresbox .typesinside a::after,
 .features .featuresbox .typesinside a::before {
     transition: all .15s ease-in-out;
     /* background-color: var(--main-theme); */
@@ -3264,16 +3266,6 @@ h3 {
 
 .boxreview#mirror .features .featuresbox .typesinside a:last-child::after {
     content: unset;
-}
-
-.features .featuresbox .typesinside a:first-child {
-    border-radius: 5px 0 0 5px;
-    padding-left: 15px;
-    margin-left: 1px;
-}
-
-.features .featuresbox .typesinside a:last-child {
-    padding-right: 15px;
 }
 
 .methodlist a {
@@ -4526,8 +4518,8 @@ nav img {
 }
 
 .nav-review ol {
-    margin: 9px 0;
-    width: calc(100% - 18px);
+    margin: 6px 0;
+    width: calc(100% - 12px);
     counter-reset: item1;
 }
 
@@ -4542,8 +4534,7 @@ nav img {
     cursor: pointer;
     user-select: none;
     border-radius: var(--main-border);
-    padding: 4px 0;
-    margin: 2px 0;
+    padding: 6px 0;
     padding-left: 12px;
     color: var(--gray);
 }
@@ -4674,8 +4665,7 @@ nav img {
 }
 
 .promo-box {
-    height: 80px;
-    /* animation: fadeIn .2s ease-in-out forwards; */
+    height: 100px;
     font-size: 15px;
     font-weight: 500;
     color: var(--white);
@@ -4683,36 +4673,84 @@ nav img {
     border: 0 solid transparent;
     margin-top: 0;
     order: 1;
-}
-
-.promo-box .logobg,
-.promo-box .content {
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    display: flex;
-    height: 100%;
     z-index: 1;
 }
 
-.promo-box .logobg {
-    left: 0;
-    width: 30%;
-    background: rgba(0, 0, 0, .125);
-    background: var(--icongradient);
-    margin-left: 6px;
-    height: calc(100% - 12px);
-    border-radius: var(--main-border);
-    /* overflow: hidden; */
-    transition: all .15s ease-in-out;
-}
-
 .promo-box .content {
-    right: 0;
-    width: 70%;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    z-index: 1;
+    width: 100%;
+    padding: 0 20px;
+    gap: 8px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+}
+
+.promo-box .content .defbutton {
+    top: unset;
+    bottom: 20px;
+    right: 21px;
+}
+
+.promo-box .content .promo-code-desc {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+}
+
+.promo-box::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 4px;
+    right: 4px;
+    top: 4px;
+    bottom: 4px;
+    background: linear-gradient(-45deg, var(--darkgray) 50%, var(--main-theme) 100%);
+    opacity: .8;
+    border-radius: var(--main-border);
+}
+
+.promo-box .content .bonus-type {
+    filter: drop-shadow(0 0 1px var(--main-color));
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 15px;
+    z-index: 1;
+}
+
+.promo-box .content .bonus-type::before {
+    content: '';
+    mask-image: url(/img/icons/gamemodes/ribbon.svg);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    background: var(--buttonbg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.promo-box .content .bonus-type i {
+    margin-top: -6px;
+    z-index: 1;
+}
+
+.promo-box .content .bonus-type i::before {
+    height: 18px;
+    width: 18px;
+    opacity: 1;
+    /* filter: brightness(.08); */
 }
 
 .promo-box.extra-abox .logobg span {
@@ -4734,26 +4772,42 @@ nav img {
     background: var(--darkgray);
     bottom: -2px;
 }
-
+/* 
 .promo-box.extra-abox:hover .logobg span,
 .promo-box.extra-abox:hover .logobg::after {
     color: var(--gray);
+} */
+
+.promo-box.deposit-bonus .content .promo-code-desc::before {
+    content: 'Deposit Bonus';
 }
 
-.promo-box.extra-abox.deposit-bonus .logobg::after {
-    content: 'Deposit';
+.lang-ru .promo-box.deposit-bonus .content .promo-code-desc::before {
+    content: 'Бонус к Пополнению';
 }
 
-.promo-box.extra-abox.sell-bonus .logobg::after {
+.promo-box.sell-bonus .content .promo-code-desc::before {
     content: 'Sell Bonus';
 }
 
-.promo-box.extra-abox.trade-bonus .logobg::after {
+.lang-ru .promo-box.sell-bonus .content .promo-code-desc::before {
+    content: 'Бонус к Продаже';
+}
+
+.promo-box.trade-bonus .content .promo-code-desc::before {
     content: 'Trade Bonus';
 }
 
-.promo-box.extra-abox.welcome-bonus .logobg::after {
+.lang-ru .promo-box.trade-bonus .content .promo-code-desc::before {
+    content: 'Бонус к Обмену';
+}
+
+.promo-box.welcome-bonus .content .promo-code-desc::before {
     content: 'Free Bonus';
+}
+
+.lang-ru .promo-box.welcome-bonus .content .promo-code-desc::before {
+    content: 'Бесплатный Бонус';
 }
 
 .promo-box.extra-abox.else-bonus .logobg::after {
@@ -4765,52 +4819,36 @@ nav img {
     margin-bottom: 8px;
 }
 
-/* .promo-box.extra-abox .logobg::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    transition: all .15s ease-in-out;
-    background: radial-gradient(50% 100% at 50% 100%, rgba(172, 26, 50, .3), transparent 100%);
-    filter: blur(15px);
-    opacity: 0;
-}
-
-.promo-box:hover .logobg::before {
-    opacity: 1;
-} */
-
 .promo-box.extra-abox span {
     font-size: 12px;
     font-weight: 600;
-    width: 80%;
+    width: auto;
     color: var(--gray);
+    text-wrap: nowrap;
 }
 
-.promo-box p,
-.promo-box .content p:first-child {
-    margin: 0;
-    font-size: 16px;
-    color: var(--gray);
+.promo-box p, 
+.promo-box .content p:first-child,
+.promo-box .content .promo-code-desc::before {
+    color: var(--text-darkgray);
+    width: auto;
+    height: unset;
+    margin: unset;
+    font-weight: 500;
+    font-size: 11px;
     transition: all .15s ease-in-out;
     user-select: none;
-    width: auto;
-    font-weight: 500;
-    text-transform: none;
+    text-transform: uppercase;
+    text-wrap: nowrap;
 }
 
-/* .promo-box:hover p,
-.promo-box:hover .content p:first-child {
-    color: var(--gray);
-} */
-
 .promo-box code {
-    font-size: 16px;
-    border-radius: 5px;
-    color: rgb(188, 188, 188);
+    padding: unset;
+    background: unset;
+    font-size: 22px;
+    color: var(--white);
     margin: unset;
-    margin-top: 4px;
+    height: 20px;
 }
 
 .promo-box .site-promo-copy::after {
@@ -4898,13 +4936,13 @@ nav img {
 
 .mirror-redirect .mirror {
     border-radius: var(--main-border);
-    height: calc(100% - 12px);
+    height: calc(100% - 8px);
     width: auto;
     aspect-ratio: 1 / 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 6px;
+    margin: 0 4px;
     margin-right: 18px;
     background: var(--icongradient);
     box-shadow: 0 1px 2px 0 rgba(11, 11, 11, .4);
@@ -6205,7 +6243,7 @@ nav img:active,
     position: absolute;
     height: 50%;
     width: calc(100% - 18px);
-    margin-bottom: 10px;
+    margin-bottom: 9px;
     border-radius: var(--main-border);
     background: var(--main-theme);
     background: linear-gradient(-45deg, var(--darkygray), var(--main-theme));
@@ -7941,12 +7979,11 @@ a[data-title]:after,
     display: flex;
     align-items: center;
     padding: 2px 10px;
-    padding-right: 14px;
     font-weight: 600;
     font-size: 14px;
-    margin-left: 26px;
     position: relative;
     box-sizing: border-box;
+    border-radius: var(--main-border);
     z-index: 1;
 }
 
@@ -7959,9 +7996,6 @@ a[data-title]:after,
 .skin-color-info .skin-color:first-child:before {
     content: unset;
 }
-
-.features .featuresbox .typesinside a::after,
-.features .featuresbox .typesinside a::before,
 .skin-color-info .skin-color::after,
 .skin-color-info .skin-color::before {
     content: '';
@@ -7979,12 +8013,10 @@ a[data-title]:after,
     background: inherit;
 }
 
-.features .featuresbox .typesinside a::before,
 .skin-color-info .skin-color::before {
     left: -9px;
 }
 
-.features .featuresbox .typesinside a::after,
 .skin-color-info .skin-color::after {
     right: -9px;
 }
@@ -8106,7 +8138,9 @@ a[data-title]:after,
     background-image: url(/img/icons/gamemodes/refund-alt.svg);
 }
 
-.officon.salebonus::before {
+.sell-bonus .bonus-type i::before,
+.trade-bonus .bonus-type i::before,
+.officon.sell-bonus::before {
     background-image: url(/img/icons/gamemodes/badge-percent.svg);
 }
 
@@ -8118,6 +8152,7 @@ a[data-title]:after,
     background-image: url(/img/icons/gamemodes/raindrops.svg);
 }
 
+.deposit-bonus .bonus-type i::before,
 .officon.depositbonuses::before {
     background-image: url(/img/icons/gamemodes/plus-hexagon.svg);
 }
@@ -8235,6 +8270,8 @@ a[data-title]:after,
     background-image: url(/img/icons/gamemodes/marketplace.svg);
 }
 
+.else-bonus .bonus-type i::before,
+.welcome-bonus .bonus-type i::before,
 .gamemodes .typesinside .giveaways::before,
 .officon.signupbonus::before {
     background-image: url(/img/icons/gamemodes/gift.svg);
@@ -10869,9 +10906,7 @@ div#results {
 .singlemod-select::before,
 .main-infobox-content-block,
 .character-model,
-.promo-box .logobg,
 .instruction code,
-.promo-box code,
 .site-promo-copy,
 .smallreview,
 .instruction,
@@ -12255,6 +12290,10 @@ header {
         padding-bottom: 45px;
     }
 
+    .promo-box::after {
+        content: unset !important;
+    }
+
     .bonus_info {
         display: flex;
         align-items: flex-start;
@@ -12828,14 +12867,6 @@ header {
         order: 1;
         bottom: 0;
         width: 100%;
-    }
-
-    .features .featuresbox .typesinside a:last-child {
-        border-radius: 0 5px 5px 0;
-    }
-
-    .features .featuresbox .typesinside a:last-child::after {
-        content: unset;
     }
 
     .preview-buttons,
@@ -13508,10 +13539,6 @@ header {
         display: none;
     }
 
-    .box.main .content strong {
-        color: var(--main-color);
-    }
-
     h2 {
         font-size: 18px;
     }
@@ -13562,32 +13589,12 @@ header {
         animation: unset;
     }
 
-    .promo-box .logobg,
     .promo-box .content {
-        background: unset;
-        width: unset;
-        left: unset;
-        right: unset;
-        position: relative;
-        margin: 0 10px;
-    }
-
-    .promo-box .logobg {
-        width: 100px;
-    }
-
-    .promo-box .logobg {
-        display: none;
+        width: 85%;
     }
 
     .promo-box .content .defbutton {
-        top: 67%;
-        transform: translateY(-50%);
-        bottom: unset;
-        right: -30px;
-        width: 25px;
-        height: 25px;
-        border-radius: 5px;
+        bottom: 0px;
     }
 
     .promo-box .content .defbutton:hover {
@@ -13598,8 +13605,9 @@ header {
         content: unset;
     }
 
-    .promo-box p,
-    .promo-box .content p:first-child {
+    .promo-box p, 
+    .promo-box .content p:first-child,
+    .promo-box .content .promo-code-desc::before {
         color: var(--gray);
     }
 
@@ -13953,6 +13961,7 @@ header {
     .gamemodes .featuresbox .typesinside {
         justify-content: center;
         flex-wrap: wrap;
+        gap: unset;
     }
 
     .pages h1,
@@ -14848,27 +14857,12 @@ header {
         width: 85%;
     }
 
-    .features .featuresbox .typesinside a::after,
-    .features .featuresbox .typesinside a::before {
-        content: none;
-    }
-
     .features .featuresbox .typesinside a i {
         width: 16px;
     }
 
-    .features .featuresbox .typesinside a {
-        margin: 5px !important;
-        border-radius: var(--main-border) !important;
-        padding-right: 10px;
-    }
-
-    .features .featuresbox .typesinside a:first-child {
-        padding-left: 10px;
-    }
-
-    .features .featuresbox .typesinside a:last-child {
-        padding-right: 10px;
+    .features .featuresbox .typesinside {
+        gap: 9px;
     }
 
     .boxreview .smallreview,
