@@ -1,4 +1,6 @@
-// injectjson2.js — фикс бесконечного перезаписывания dateModified и привязка к mtime файла
+// injectjson2.js — фикс бесконечного перезаписывания dateModified и корректный canonical для index.*
+// Path canonicalization: homepage => https://csgobroker.cc (no trailing slash)
+
 const fs = require('fs');
 const path = require('path');
 
@@ -183,13 +185,26 @@ function injectSchema(filePath) {
   const datePublished = getPublishedDate(filePath);
 
   const relativePath = path.relative(HTML_BASE_DIR, filePath).replace(/\\/g, '/');
+
+  // skip guides
   if (/(^|\/)topic\/guides\//.test(relativePath)) {
     console.log(`⏭️ Skipped guide page: ${relativePath}`);
     return;
   }
 
-  const pagePath = '/' + relativePath.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
-  const pageUrl = `https://csgobroker.cc${pagePath}`;
+  // ----- canonical pagePath & pageUrl (без хвостового / и без /index.html) -----
+  const parsed = path.parse(relativePath);
+  const dirNorm = (parsed.dir || '').replace(/\\/g, '/');
+  let pagePath;
+  if (parsed.name.toLowerCase() === 'index') {
+    pagePath = '/' + dirNorm; // e.g., "ru" or ""
+  } else {
+    pagePath = '/' + [dirNorm, parsed.name].filter(Boolean).join('/');
+  }
+  pagePath = pagePath.replace(/\/+$/g, ''); // no trailing slash
+  if (pagePath === '') pagePath = '/';
+
+  const pageUrl = `https://csgobroker.cc${pagePath === '/' ? '' : pagePath}`;
   const urlParts = pagePath.split('/').filter(Boolean);
 
   const breadcrumbItems = generateBreadcrumbList(pageUrl, imageAlt || name, urlParts, langCode);
@@ -207,19 +222,19 @@ function injectSchema(filePath) {
         "url": pageUrl,
         "name": name,
         "isPartOf": { "@id": "https://csgobroker.cc/#website" },
-        "primaryImageOfPage": { "@id": `${pageUrl}/#primaryimage` },
-        "image": { "@id": `${pageUrl}/#primaryimage` },
+        "primaryImageOfPage": { "@id": `${pageUrl}#primaryimage` }, // why: избегаем "/#"
+        "image": { "@id": `${pageUrl}#primaryimage` },
         "thumbnailUrl": image,
         "datePublished": datePublished,
         "description": description,
-        "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` },
+        "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
         "inLanguage": langFull,
-        "potentialAction": [{ "@type": "ReadAction", "target": [`${pageUrl}/`] }]
+        "potentialAction": [{ "@type": "ReadAction", "target": [pageUrl] }] // why: без хвостового '/'
       },
       {
         "@type": "ImageObject",
         "inLanguage": langFull,
-        "@id": `${pageUrl}/#primaryimage`,
+        "@id": `${pageUrl}#primaryimage`,
         "url": image,
         "contentUrl": image,
         "width": parseInt(imageWidth) || 0,
@@ -228,7 +243,7 @@ function injectSchema(filePath) {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": `${pageUrl}/#breadcrumb`,
+        "@id": `${pageUrl}#breadcrumb`,
         "itemListElement": breadcrumbItems
       },
       {
@@ -245,7 +260,7 @@ function injectSchema(filePath) {
             "target": { "@type": "EntryPoint", "urlTemplate": "https://csgobroker.cc/?s={search_term_string}" },
             "query-input": { "@type": "PropertyValueSpecification", "valueRequired": true, "valueName": "search_term_string" }
           }
-        ],
+        ]
       },
       {
         "@type": "Organization",
