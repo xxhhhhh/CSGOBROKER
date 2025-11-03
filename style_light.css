@@ -20,6 +20,10 @@
     background-color: rgba(11, 11, 11, .35);
 }
 
+.nav-content {
+    background: rgba(230, 230, 230, .6);
+}
+
 .menu-holder {
     backdrop-filter: blur(4px);
 }
@@ -76,7 +80,9 @@
 .box-skins.character .skin,
 .character-model,
 .promo-box.extra-abox,
-.box.crypto-choice .logobg:after {
+.box.crypto-choice .logobg:after,
+.search-container::before,
+.nav-content {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
     box-shadow: unset;
 }
@@ -468,8 +474,16 @@ h3,
 #PageSubt,
 .selected-lang,
 #search-input,
-.rec-box p {
+.rec-box p,
+.content .boxtitle:hover,
+.box.main .content h4:hover,
+.boxes-holder .content .boxtitle:hover {
     color: #1f1f1f;
+}
+
+.content .boxtitle,
+.box.main .content h4 {
+    color: var(--gray);
 }
 
 .lang-menu,
@@ -609,24 +623,10 @@ h3,
     background: var(--darkygray);
 }
 
-.boxes-holder .content .boxtitle,
-.boxes-holder .content p:first-child,
-.content .boxtitle,
-.box.main .content h4 {
-    color: white;
-    background-color: #323232;
-    padding: 2px 10px;
-    border-radius: 5px;
-}
-
 .boxes-holder .box .content .review-button.mirror-visit,
 .boxes-holder .box .content .review-button.mirror-visit::before,
 .boxes-holder .box .content .review-button.mirror-visit::after {
     background: none !important;
-}
-
-.box .content .boxtitle:hover {
-    background-color: #181818;
 }
 
 .content .review-button,
@@ -653,11 +653,6 @@ h3,
 .pagination-button:hover {
     filter: brightness(1);
     color: #1a1a1a;
-}
-
-.content .boxtitle {
-    color: white;
-    border-radius: 5px;
 }
 
 .box .content p:first-child {
@@ -1680,4 +1675,9 @@ ul .submenu li .nonredir,
 
 .boxes-holder .box:hover .content .review-button {
     filter: none;
+}
+
+.pagination-button.disabled .officon::before {
+    opacity: .45 !important;
+    filter: brightness(.2) grayscale(1) !important;
 }
