@@ -122,27 +122,26 @@ header {
     backdrop-filter: blur(3px);
     /* background: rgba(11, 11, 11, .98); */
     background: transparent;
-    height: 66px;
+    height: 68px;
     z-index: 10001;
     width: 65.6%;
     left: 50%;
     transform: translateX(-50%);
     transition: none;
     border-radius: var(--main-border);
-    padding-top: 16px;
+    padding-top: 18px;
     will-change: transform;
     backface-visibility: hidden;
     box-shadow: unset !important;
-    background: transparent;
 }
 
-@media screen and (min-width: 1365px) {
-    /* .ssiodox:not(.nondef) header.is-hidden .main-nav-content {
+/* @media screen and (min-width: 1365px) {
+    .ssiodox:not(.nondef) header.is-hidden .main-nav-content {
         transform: translate(0, -120%);
         opacity: 0;
         pointer-events: none;
-    } */
-}
+    }
+} */
 
   /* header.is-pinned {
     position: fixed;
@@ -195,6 +194,7 @@ button {
 
 .nav-content {
     width: auto;
+    height: 45px;
     justify-content: flex-end;
     gap: 12px;
     border-radius: var(--main-border);
@@ -8679,20 +8679,22 @@ a[data-title]:after,
 
 .lightbulb-off::before {
     background-image: url(/img/icons/gamemodes/lightbulb-off.svg);
-}
-
-.effect-on::before {
-    background-image: url(/img/icons/gamemodes/effect-fill.png);
-    width: 23px;
-}
-
-.effect-off::before {
-    background-image: url(/img/icons/gamemodes/effect.png);
-    width: 23px;
+    width: 21px;
 }
 
 .lightbulb-on::before {
     background-image: url(/img/icons/gamemodes/lightbulb-on.svg);
+    width: 21px;
+}
+
+.effect-on::before {
+    background-image: url(/img/icons/gamemodes/effect-fill.png);
+    width: 20px;
+}
+
+.effect-off::before {
+    background-image: url(/img/icons/gamemodes/effect.png);
+    width: 20px;
 }
 
 .route-shield::before {
