@@ -9753,11 +9753,12 @@ div#results {
     min-width: 25px;
     width: 25px;
     height: 25px;
+    background-color: rgb(21, 21, 21);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: 60%;
     margin-right: 9px;
-    border-radius: 5px;
+    border-radius: 8px;
     filter: grayscale(1);
     transition: all .15s ease-in-out;
 }
@@ -9771,7 +9772,7 @@ div#results {
 }
 
 .site-item.topic a::before {
-    background-image: url(code-parts/search-config/icons/wiki-icon.png);
+    background-image: url(code-parts/search-config/icons/wiki-icon-reversed.png);
 }
 
 .site-item.steam a::before {
