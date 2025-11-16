@@ -426,7 +426,7 @@ insertRandomRecBox();
           CSMoney: `https://cs.money/market/buy/?search=${encodeURIComponent(skinName)}&sort=price&order=asc&utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=market&utm_content=link`,
           "AvanMarket": `https://avan.market/ru/market/cs?name=${encodeURIComponent(skinName)}&r=broker`,
           SkinSwap: `https://skinswap.com/buy?search=${encodeURIComponent(skinName)}&r=csgobroker&appid=730`,
-          "MoonMarket": `https://moonmarket.org/shop/?lang=ru&app_id=730&filters=&search=${encodeURIComponent(skinName)}&sort=price_desc&float_from=&float_to=&price_from=&price_to=&r=DTQBM8816d89c`,
+          "MoonMarket": `https://moon.market/shop/?lang=ru&app_id=730&filters=&search=${encodeURIComponent(skinName)}&sort=price_desc&float_from=&float_to=&price_from=&price_to=&r=DTQBM8816d89c`,
           default: `https://lis-skins.ru/market/csgo/?query=${encodeURIComponent(skinName)}&rf=83346597`,
         };
         return siteUrls[selectedSite] || siteUrls["default"];
