@@ -2468,10 +2468,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 $(document).ready(function() {
+  // Инициализация главного слайдера на странице (если уже на месте)
   if ($('.main-mode-selection').length && !$('.main-mode-selection').hasClass('slick-slider')) {
-
     var res = $(window).width();
-
     $('.main-mode-selection').slick({
       slidesToShow: res < 600 ? 2 : 4,
       slidesToScroll: 1,
@@ -2485,22 +2484,34 @@ $(document).ready(function() {
       dots: false
     });
     const modesslider = document.querySelector('.main-mode-selection');
-    updateURLs(modesslider);
+    if (typeof updateURLs === 'function' && modesslider) updateURLs(modesslider);
   }
 
+  // Вставка селекшна после 12-го ВИДИМОГО бокса
   $('.boxes-holder').each(function() {
     const $boxesHolder = $(this);
-    const $boxes = $boxesHolder.children('.box');
-  
-    if (!$boxesHolder.closest('.main-page').length && $boxes.length >= 12) {
-      const importPath = languageTag === 'ru' 
+    const $allBoxes = $boxesHolder.children('.box');
+    const $visibleBoxes = $allBoxes.filter(':not(.hidden)'); // ключевое изменение
+
+    // Важно: считаем только видимые боксы
+    if (!$boxesHolder.closest('.main-page').length && $visibleBoxes.length >= 12) {
+      const importPath = (typeof languageTag !== 'undefined' && languageTag === 'ru')
         ? '/code-parts/micro-parts/main-mode-import-ru.html'
         : '/code-parts/micro-parts/main-mode-import.html';
-  
+
       $.get(importPath, function(data) {
         const $importedContent = $(data);
-        $boxes.eq(11).after($importedContent);
-  
+
+        // Вставляем сразу за 12-м ВИДИМЫМ боксом, игнорируя .hidden
+        const $anchor = $visibleBoxes.eq(11); // 0-based => 12-й
+        if ($anchor.length) {
+          $anchor.after($importedContent);
+        } else {
+          // На всякий случай: если не нашли якорь — добавим в конец
+          $boxesHolder.append($importedContent);
+        }
+
+        // Инициализация слайдера только если он еще не инициализирован
         if (!$importedContent.hasClass('slick-slider')) {
           const res = $(window).width();
           $importedContent.slick({
@@ -2516,12 +2527,12 @@ $(document).ready(function() {
             dots: false
           });
           const modesslider = document.querySelector('.main-mode-selection');
-          updateURLs(modesslider);
+          // Почему: некоторые страницы подгружают блок слайдера динамически — важно актуализировать ссылки.
+          if (typeof updateURLs === 'function' && modesslider) updateURLs(modesslider);
         }
       });
     }
   });
-  
 });
 
 window.initPayments = function () {
