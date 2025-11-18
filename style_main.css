@@ -245,7 +245,7 @@ nav .pages {
 }
 
 .nondef .spaceblock {
-    height: 66px;
+    height: 84px;
 }
 
 .cookie-widget {
@@ -805,6 +805,7 @@ nav .pages {
     transition: .15s all ease-in-out;
     cursor: pointer;
     color: var(--white);
+    user-select: none;
     z-index: 11;
 }
 
@@ -4368,7 +4369,6 @@ nav img {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-top: 9px;
 }
 
 .sitedetails {
@@ -13419,11 +13419,6 @@ header {
         border-radius: var(--main-border);
     }
 
-    .sitepage.topic .siteblock,
-    .sitepage.topic-craft .siteblock {
-        padding-top: 50px;
-    }
-
     .topic-centralizer {
         width: 100%;
     }
@@ -14128,7 +14123,6 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 0;
     }
 
     .sitepage.topic-craft .siteleftpannel {
