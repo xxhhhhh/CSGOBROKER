@@ -1,4 +1,4 @@
-import LINKS from "../../code-parts/sites-links.json" assert { type: "json" };
+import LINKS from "../../sites-links.json" assert { type: "json" };
 
 /** @param {import('@cloudflare/workers-types').PagesFunctionContext} context */
 export async function onRequest(context) {
