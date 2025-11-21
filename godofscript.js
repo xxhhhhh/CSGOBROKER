@@ -1,11 +1,17 @@
 (function () {
   try {
     var loc = window.location;
-    var host = loc.hostname;
-    var origin = loc.protocol + '//' + host;
+    var host = (loc.hostname || '').replace(/^www\./i, '');
+    var origin = loc.protocol + '//' + loc.host; // сохраняем порт при необходимости
     var path = loc.pathname || '/';
     if (path.length > 1) path = path.replace(/\/+$/, '');
-    var pageUrl = origin + path + loc.search;
+    var pageUrl = origin + path + (loc.search || '');
+
+    var WHITELIST = ['csgobroker.cc', 'cs2freebies.com'];
+    var CLOUDFLARE_TOKENS = {
+      'csgobroker.cc': 'dc243703e5f549b789897d5492ba4571',
+      'cs2freebies.com': 'c533f4bb90114d869fc6228bd576045c'
+    };
 
     function ensureCanonical(url) {
       var el = document.querySelector('link[rel="canonical"]');
@@ -35,40 +41,50 @@
       return /^(https?:)?\/\//i.test(str) || str.startsWith('/');
     }
 
-    function replaceDomainKeepRest(urlStr) {
-      if (typeof urlStr !== 'string') return urlStr;
-      // Absolute URL: replace only if host === csgobroker.cc
-      try {
-        if (/^https?:\/\//i.test(urlStr)) {
-          var u = new URL(urlStr);
-          if (u.hostname.replace(/^www\./, '') === 'csgobroker.cc') {
-            return origin + u.pathname + u.search + u.hash;
-          }
-          return urlStr; // foreign hosts untouched
-        }
-      } catch (_) { /* fallthrough to regex */ }
-
-      // Protocol-relative
-      if (/^\/\/csgobroker\.cc/i.test(urlStr)) {
-        var rest = urlStr.replace(/^\/\/csgobroker\.cc/i, '');
-        return origin + rest;
-      }
-
-      // Any occurrence of http(s)://csgobroker.cc inside text
-      if (/https?:\/\/csgobroker\.cc/i.test(urlStr)) {
-        return urlStr.replace(/https?:\/\/csgobroker\.cc/ig, origin);
-      }
-
-      // Root-relative path stays as-is (already domain-agnostic)
-      return urlStr;
+    function shouldRewrite(urlHost) {
+      if (!urlHost) return false;
+      var h = String(urlHost).replace(/^www\./i, '').toLowerCase();
+      return WHITELIST.indexOf(h) !== -1 && h !== host.toLowerCase();
     }
 
-    // 1) canonical / og:url / twitter:url to pageUrl
+    function rewriteUrlPreservePath(urlStr) {
+      if (typeof urlStr !== 'string') return urlStr;
+
+      // Absolute URL
+      if (/^https?:\/\//i.test(urlStr)) {
+        try {
+          var u = new URL(urlStr);
+          var uHost = u.hostname.replace(/^www\./i, '');
+          if (shouldRewrite(uHost)) {
+            return origin + u.pathname + u.search + u.hash;
+          }
+          return urlStr;
+        } catch (_) { /* fall through */ }
+      }
+
+      // Protocol-relative for whitelisted hosts
+      var protoRelMatch = urlStr.match(/^\/\/([^/]+)(\/.*|)$/);
+      if (protoRelMatch) {
+        var prHost = protoRelMatch[1].replace(/^www\./i, '');
+        if (shouldRewrite(prHost)) {
+          return origin + (protoRelMatch[2] || '');
+        }
+        return urlStr;
+      }
+
+      // Any inline absolute occurrences (fallback, conservative)
+      var replaced = urlStr.replace(/https?:\/\/(www\.)?(csgobroker\.cc|cs2freebies\.com)/ig, origin);
+      if (replaced !== urlStr) return replaced;
+
+      return urlStr; // root-relative или чужие хосты не трогаем
+    }
+
+    // 1) canonical / og:url / twitter:url
     ensureCanonical(pageUrl);
     ensureMeta('og:url', pageUrl, true);
     ensureMeta('twitter:url', pageUrl, false);
 
-    // 2) Bulk replace in head attributes
+    // 2) Массовая замена в <head>
     var head = document.head || document.getElementsByTagName('head')[0];
     if (head) {
       var ATTRS = ['href', 'src', 'content'];
@@ -80,66 +96,51 @@
           if (!node.hasAttribute(attr)) continue;
           var val = node.getAttribute(attr);
           if (!isLikelyUrl(val)) continue;
-          var newVal = replaceDomainKeepRest(val);
+          var newVal = rewriteUrlPreservePath(val);
           if (newVal !== val) node.setAttribute(attr, newVal);
         }
       }
 
-      // 3) Normalize known URL-carrying metas to absolute with current origin if they were absolute to old domain
-      var metaSelectors = [
-        'meta[property^="og:image"]',
-        'meta[name="twitter:image"]',
-        'link[rel="alternate"]',
-        'link[rel="amphtml"]'
-      ];
-      metaSelectors.forEach(function (sel) {
-        head.querySelectorAll(sel).forEach(function (el) {
-          ['href','content'].forEach(function (a) {
-            if (!el.hasAttribute(a)) return;
-            var val = el.getAttribute(a);
-            if (!isLikelyUrl(val)) return;
-            var newVal = replaceDomainKeepRest(val);
-            if (newVal !== val) el.setAttribute(a, newVal);
-          });
-        });
-      });
-
-      // 4) JSON-LD: parse & rewrite URLs
+      // 3) JSON-LD перезапись
       var ldScripts = head.querySelectorAll('script[type*="ld+json"]');
       ldScripts.forEach(function (s) {
         var txt = s.textContent || '';
         if (!txt) return;
 
-        function rewriteInObject(obj) {
+        function deepRewrite(obj) {
           if (obj && typeof obj === 'object') {
             if (Array.isArray(obj)) {
-              for (var k = 0; k < obj.length; k++) obj[k] = rewriteInObject(obj[k]);
+              for (var k = 0; k < obj.length; k++) obj[k] = deepRewrite(obj[k]);
             } else {
-              Object.keys(obj).forEach(function (key) {
-                obj[key] = rewriteInObject(obj[key]);
-              });
+              Object.keys(obj).forEach(function (key) { obj[key] = deepRewrite(obj[key]); });
             }
             return obj;
           }
-          if (typeof obj === 'string') return replaceDomainKeepRest(obj);
+          if (typeof obj === 'string' && isLikelyUrl(obj)) {
+            return rewriteUrlPreservePath(obj);
+          }
           return obj;
         }
 
-        var rewritten = null;
         try {
           var json = JSON.parse(txt);
-          rewritten = JSON.stringify(rewriteInObject(json), null, 2);
+          var rewrittenJson = deepRewrite(json);
+          var out = JSON.stringify(rewrittenJson, null, 2);
+          if (out !== txt) s.textContent = out;
         } catch (e) {
-          // Fallback: regex replacement only on domain part
-          rewritten = txt.replace(/https?:\/\/csgobroker\.cc/ig, origin)
-                         .replace(/\/\/csgobroker\.cc/ig, origin);
+          // Fallback: заменить только whitelisted домены
+          var out2 = txt
+            .replace(/https?:\/\/(www\.)?csgobroker\.cc/ig, origin)
+            .replace(/https?:\/\/(www\.)?cs2freebies\.com/ig, origin)
+            .replace(/\/\/(www\.)?csgobroker\.cc/ig, origin)
+            .replace(/\/\/(www\.)?cs2freebies\.com/ig, origin);
+          if (out2 !== txt) s.textContent = out2;
         }
-        if (rewritten && rewritten !== txt) s.textContent = rewritten;
       });
     }
 
-    // 5) Yandex noindex for cs2freebies.com
-    if (host === 'cs2freebies.com') {
+    // 4) Яндекс noindex только на cs2freebies.com
+    if (host.toLowerCase() === 'cs2freebies.com') {
       var yandexMeta = document.querySelector('meta[name="yandex"]');
       if (!yandexMeta) {
         yandexMeta = document.createElement('meta');
@@ -148,6 +149,42 @@
       }
       yandexMeta.setAttribute('content', 'noindex, nofollow');
     }
+
+    // 5) Cloudflare Insights: установить корректный token по домену
+    (function configureCfBeacon() {
+      var desiredToken = CLOUDFLARE_TOKENS[host.toLowerCase()];
+      // Если домен не в мапе — ничего не делаем
+      if (!desiredToken) return;
+
+      var sel = 'script[src*="static.cloudflareinsights.com/beacon.min.js"]';
+      var beacon = document.querySelector(sel);
+
+      function setToken(el) {
+        // data-cf-beacon — JSON-строка
+        var raw = el.getAttribute('data-cf-beacon');
+        var cfg = {};
+        if (raw) {
+          try { cfg = JSON.parse(raw); } catch (_) { cfg = {}; }
+        }
+        if (cfg.token !== desiredToken) {
+          cfg.token = desiredToken;
+          el.setAttribute('data-cf-beacon', JSON.stringify(cfg));
+        }
+        // гарантируем defer (безопасно)
+        if (!el.defer) el.setAttribute('defer', '');
+      }
+
+      if (beacon) {
+        setToken(beacon);
+      } else {
+        // Создать, если отсутствует
+        var s = document.createElement('script');
+        s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+        s.defer = true;
+        s.setAttribute('data-cf-beacon', JSON.stringify({ token: desiredToken }));
+        document.head.appendChild(s);
+      }
+    })();
   } catch (e) {
     if (window.console && console.warn) console.warn('SEO script error', e);
   }
