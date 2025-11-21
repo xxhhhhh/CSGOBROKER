@@ -6,7 +6,6 @@ const path = require('path');
 
 const ROOT_DIR = path.resolve(__dirname, '../../');
 const BASE_ORIGIN = 'https://csgobroker.cc';
-const ALT_ORIGIN = 'https://cs2freebies.com'; // why: кросс-доменный alternate
 
 const LANGS = ['en', 'ru', 'pt', 'es', 'hi', 'tr'];
 const ALT_ORDER = ['en', 'ru', 'pt', 'es', 'hi', 'tr'];
@@ -76,9 +75,6 @@ function langUrlForKey(keyNoLocale, lang) {
 function absoluteUrlNormalized(urlPath) {
   return urlPath === '/' ? BASE_ORIGIN : (BASE_ORIGIN + urlPath);
 }
-function absoluteUrlWithOrigin(urlPath, origin) {
-  return urlPath === '/' ? origin : (origin + urlPath);
-}
 
 // ---------- noindex ----------
 function hasNoindex(html) {
@@ -111,14 +107,12 @@ function upsertTagInHead(html, tagHtml, findRe) {
   return html + `\n${tagHtml}\n`;
 }
 
-// remove only hreflang alternates (сохраняем кросс-доменный alternate без hreflang)
+// remove <link rel="alternate"> ПОСТРОЧНО (не трогаем отступ следующей строки)
 function removeAlternatesFromHeadInner(headInner) {
   let res = headInner
-    .replace(
-      /^[ \t]*<link\b[^>]*\brel\s*=\s*["']alternate["'][^>]*\bhreflang\s*=\s*["'][^"']*["'][^>]*>[ \t]*\r?\n?/gmi,
-      ''
-    )
+    .replace(/^[ \t]*<link\b[^>]*\brel\s*=\s*["']alternate["'][^>]*>[ \t]*\r?\n?/gmi, '')
     .replace(/\n{3,}/g, '\n\n');
+  // why: чистим «висячие» пустые строки/пробелы, которые остаются от прошлых вставок
   res = res.replace(/(\r?\n)[ \t]+(?=\r?\n)/g, '$1');
   return res;
 }
@@ -163,61 +157,19 @@ function insertAlternatesUnderLastStylesheet(html, keyNoLocale, presentLangs) {
   if (!lines.length) return html;
 
   const nextChar = headInner[insertIdx] || '';
-  const skip = nextChar === '\n' ? 1 : 0; // why: не плодим лишний \n
+  const skip = nextChar === '\n' ? 1 : 0; // why: заменяем один существующий \n, чтобы он не оставался «лишним»
 
   const before = headInner.slice(0, insertIdx);
   let after = headInner.slice(insertIdx + skip);
+
+  // нормализуем начало хвоста: не больше одного пустого ряда
   after = after.replace(/^(?:[ \t]*\r?\n)+/, '\n');
 
   const block = '\n' + lines.map(l => indent + l).join('\n') + '\n';
+
   headInner = before + block + after;
 
   return html.replace(/(<head\b[^>]*>)[\s\S]*?(<\/head>)/i, `${open}${headInner}${close}`);
-}
-
-// ---------- indentation helpers for full HTML ----------
-function computeIndentAt(html, idx, fallback = '  ') {
-  const nl = html.lastIndexOf('\n', idx);
-  const lineStart = nl === -1 ? 0 : nl + 1;
-  const seg = html.slice(lineStart, idx);
-  const m = seg.match(/^[ \t]*/);
-  return (m && m[0] !== undefined) ? m[0] : fallback;
-}
-
-// --- cross-domain alternate (no hreflang) ---
-function upsertCrossDomainAlternate(html, href) {
-  const tag = `<link rel="alternate" href="${href}">`;
-
-  // already present? (only those without hreflang)
-  const reAnyAlt = /<link\b[^>]*\brel\s*=\s*["']alternate["'][^>]*>/gi;
-  for (const m of html.matchAll(reAnyAlt)) {
-    if (!/\bhreflang\s*=/i.test(m[0])) {
-      // replace in place — отступы строки сохранятся
-      return html.replace(m[0], tag);
-    }
-  }
-
-  // insert after canonical with the same indentation
-  const reCanon = /<link\b[^>]*\brel\s*=\s*["']canonical["'][^>]*>/i;
-  const mCanon = html.match(reCanon);
-  if (mCanon) {
-    const canonIdx = html.indexOf(mCanon[0]);
-    const indent = computeIndentAt(html, canonIdx);
-    return html.replace(reCanon, (full) => `${full}\n${indent}${tag}`);
-  }
-
-  // otherwise insert before </head> with indent of that line
-  const mClose = html.match(/<\/head>/i);
-  if (mClose) {
-    const closeIdx = html.indexOf(mClose[0]);
-    const indent = computeIndentAt(html, closeIdx);
-    // нормализуем: не больше одного пустого ряда перед </head>
-    let before = html.slice(0, closeIdx).replace(/\s*$/m, '\n');
-    return before + `${indent}${tag}\n` + html.slice(closeIdx);
-  }
-
-  // fallback: append at the end
-  return html + `\n${tag}\n`;
 }
 
 // ---------- sitemap hreflang helpers ----------
@@ -303,8 +255,8 @@ function main() {
 
   /** @type {Array<{filePath:string,urlPath:string,lang:string,key:string,abs:string,mtime:string,noindex:boolean}>} */
   const pages = [];
-  const presentLangsByKey = new Map();
-  const alternatesByKey = new Map();
+  const presentLangsByKey = new Map(); // все локали (вкл. noindex) для alternate
+  const alternatesByKey = new Map();   // key -> Array<{lang,href}>
 
   for (const fp of files) {
     const urlPath = filePathToUrlPath(fp);
@@ -320,10 +272,12 @@ function main() {
 
     pages.push({ filePath: fp, urlPath, lang, key, abs, mtime, noindex: ni });
 
+    // учитываем локали
     const set = presentLangsByKey.get(key) || new Set();
     set.add(lang);
     presentLangsByKey.set(key, set);
 
+    // парсим hreflang из HEAD
     const parsed = parseAlternatesFromHead(html);
     if (parsed.length) {
       const cur = alternatesByKey.get(key) || [];
@@ -334,7 +288,7 @@ function main() {
       if (seen.has('x-default')) ordered.push({ lang: 'x-default', href: seen.get('x-default') });
       for (const [l, h] of seen.entries()) {
         if (ALT_ORDER.includes(l) || l === 'x-default') continue;
-        ordered.push({ lang: l, href: h });
+        ordered.push({ lang, href: h });
       }
       alternatesByKey.set(key, ordered);
     }
@@ -352,32 +306,18 @@ function main() {
   for (const p of pages) {
     const present = presentLangsByKey.get(p.key) || new Set([p.lang]);
     const canonicalHref = absoluteUrlNormalized(p.urlPath);
-    const crossAltHref = absoluteUrlWithOrigin(p.urlPath, ALT_ORIGIN); // why: alternate на .com
 
     const before = readFile(p.filePath);
     let html = before;
 
     html = ensureHtmlLang(html, p.lang);
-    html = upsertTagInHead(
-      html,
-      `<link rel="canonical" href="${canonicalHref}">`,
-      /<link\b[^>]*\brel\s*=\s*["']canonical["'][^>]*>/i
-    );
-    html = upsertTagInHead(
-      html,
-      `<meta property="og:url" content="${canonicalHref}">`,
-      /<meta\b[^>]*\bproperty\s*=\s*["']og:url["'][^>]*>/i
-    );
-    html = upsertTagInHead(
-      html,
-      `<meta property="og:locale" content="${p.lang}">`,
-      /<meta\b[^>]*\bproperty\s*=\s*["']og:locale["'][^>]*>/i
-    );
+    html = upsertTagInHead(html, `<link rel="canonical" href="${canonicalHref}">`,
+      /<link\b[^>]*\brel\s*=\s*["']canonical["'][^>]*>/i);
+    html = upsertTagInHead(html, `<meta property="og:url" content="${canonicalHref}">`,
+      /<meta\b[^>]*\bproperty\s*=\s*["']og:url["'][^>]*>/i);
+    html = upsertTagInHead(html, `<meta property="og:locale" content="${p.lang}">`,
+      /<meta\b[^>]*\bproperty\s*=\s*["']og:locale["'][^>]*>/i);
 
-    // кросс-доменный alternate (без hreflang) — теперь с корректным отступом
-    html = upsertCrossDomainAlternate(html, crossAltHref);
-
-    // hreflang alternates
     html = insertAlternatesUnderLastStylesheet(html, p.key, present);
 
     if (html !== before) {
@@ -418,7 +358,7 @@ function main() {
     main_ru: 'sitemap_main_ru.xml',
     reviews_en: 'sitemap_reviews.xml',
     reviews_ru: 'sitemap_reviews_ru.xml',
-		topics_en: 'sitemap_topics.xml',
+    topics_en: 'sitemap_topics.xml',
     topics_ru: 'sitemap_topics_ru.xml',
     reviews_es: 'sitemap_reviews_es.xml',
   };

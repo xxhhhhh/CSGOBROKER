@@ -1,3 +1,158 @@
+(function () {
+  try {
+    var loc = window.location;
+    var host = loc.hostname;
+    var origin = loc.protocol + '//' + host;
+    var path = loc.pathname || '/';
+    if (path.length > 1) path = path.replace(/\/+$/, '');
+    var pageUrl = origin + path + loc.search;
+
+    function ensureCanonical(url) {
+      var el = document.querySelector('link[rel="canonical"]');
+      if (!el) {
+        el = document.createElement('link');
+        el.setAttribute('rel', 'canonical');
+        document.head.appendChild(el);
+      }
+      el.setAttribute('href', url);
+    }
+
+    function ensureMeta(nameOrProp, value, isProp) {
+      var selector = isProp ? 'meta[property="' + nameOrProp + '"]'
+                            : 'meta[name="' + nameOrProp + '"]';
+      var el = document.querySelector(selector);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(isProp ? 'property' : 'name', nameOrProp);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', value);
+    }
+
+    function isLikelyUrl(str) {
+      if (typeof str !== 'string' || !str) return false;
+      if (/^(data:|mailto:|tel:|javascript:)/i.test(str)) return false;
+      return /^(https?:)?\/\//i.test(str) || str.startsWith('/');
+    }
+
+    function replaceDomainKeepRest(urlStr) {
+      if (typeof urlStr !== 'string') return urlStr;
+      // Absolute URL: replace only if host === csgobroker.cc
+      try {
+        if (/^https?:\/\//i.test(urlStr)) {
+          var u = new URL(urlStr);
+          if (u.hostname.replace(/^www\./, '') === 'csgobroker.cc') {
+            return origin + u.pathname + u.search + u.hash;
+          }
+          return urlStr; // foreign hosts untouched
+        }
+      } catch (_) { /* fallthrough to regex */ }
+
+      // Protocol-relative
+      if (/^\/\/csgobroker\.cc/i.test(urlStr)) {
+        var rest = urlStr.replace(/^\/\/csgobroker\.cc/i, '');
+        return origin + rest;
+      }
+
+      // Any occurrence of http(s)://csgobroker.cc inside text
+      if (/https?:\/\/csgobroker\.cc/i.test(urlStr)) {
+        return urlStr.replace(/https?:\/\/csgobroker\.cc/ig, origin);
+      }
+
+      // Root-relative path stays as-is (already domain-agnostic)
+      return urlStr;
+    }
+
+    // 1) canonical / og:url / twitter:url to pageUrl
+    ensureCanonical(pageUrl);
+    ensureMeta('og:url', pageUrl, true);
+    ensureMeta('twitter:url', pageUrl, false);
+
+    // 2) Bulk replace in head attributes
+    var head = document.head || document.getElementsByTagName('head')[0];
+    if (head) {
+      var ATTRS = ['href', 'src', 'content'];
+      var nodes = head.querySelectorAll('*');
+      for (var i = 0; i < nodes.length; i++) {
+        var node = nodes[i];
+        for (var j = 0; j < ATTRS.length; j++) {
+          var attr = ATTRS[j];
+          if (!node.hasAttribute(attr)) continue;
+          var val = node.getAttribute(attr);
+          if (!isLikelyUrl(val)) continue;
+          var newVal = replaceDomainKeepRest(val);
+          if (newVal !== val) node.setAttribute(attr, newVal);
+        }
+      }
+
+      // 3) Normalize known URL-carrying metas to absolute with current origin if they were absolute to old domain
+      var metaSelectors = [
+        'meta[property^="og:image"]',
+        'meta[name="twitter:image"]',
+        'link[rel="alternate"]',
+        'link[rel="amphtml"]'
+      ];
+      metaSelectors.forEach(function (sel) {
+        head.querySelectorAll(sel).forEach(function (el) {
+          ['href','content'].forEach(function (a) {
+            if (!el.hasAttribute(a)) return;
+            var val = el.getAttribute(a);
+            if (!isLikelyUrl(val)) return;
+            var newVal = replaceDomainKeepRest(val);
+            if (newVal !== val) el.setAttribute(a, newVal);
+          });
+        });
+      });
+
+      // 4) JSON-LD: parse & rewrite URLs
+      var ldScripts = head.querySelectorAll('script[type*="ld+json"]');
+      ldScripts.forEach(function (s) {
+        var txt = s.textContent || '';
+        if (!txt) return;
+
+        function rewriteInObject(obj) {
+          if (obj && typeof obj === 'object') {
+            if (Array.isArray(obj)) {
+              for (var k = 0; k < obj.length; k++) obj[k] = rewriteInObject(obj[k]);
+            } else {
+              Object.keys(obj).forEach(function (key) {
+                obj[key] = rewriteInObject(obj[key]);
+              });
+            }
+            return obj;
+          }
+          if (typeof obj === 'string') return replaceDomainKeepRest(obj);
+          return obj;
+        }
+
+        var rewritten = null;
+        try {
+          var json = JSON.parse(txt);
+          rewritten = JSON.stringify(rewriteInObject(json), null, 2);
+        } catch (e) {
+          // Fallback: regex replacement only on domain part
+          rewritten = txt.replace(/https?:\/\/csgobroker\.cc/ig, origin)
+                         .replace(/\/\/csgobroker\.cc/ig, origin);
+        }
+        if (rewritten && rewritten !== txt) s.textContent = rewritten;
+      });
+    }
+
+    // 5) Yandex noindex for cs2freebies.com
+    if (host === 'cs2freebies.com') {
+      var yandexMeta = document.querySelector('meta[name="yandex"]');
+      if (!yandexMeta) {
+        yandexMeta = document.createElement('meta');
+        yandexMeta.setAttribute('name', 'yandex');
+        document.head.appendChild(yandexMeta);
+      }
+      yandexMeta.setAttribute('content', 'noindex, nofollow');
+    }
+  } catch (e) {
+    if (window.console && console.warn) console.warn('SEO script error', e);
+  }
+})();
+
 const StorageHelper = {
   get: (key) => {
     try {
