@@ -666,70 +666,118 @@ function ensureNumericRatingInLogobg(boxHtml, ratingValue, nl){
   // контент + перевод строки + блок + перевод строки + отступ + закрывающий тег
   return before + region + nl + block + nl + closeIndent + after;
 }
-
-
 // REPLACE: upsertRouteForBoxHtml
 function upsertRouteForBoxHtml(boxHtml, type /* 'required'|'maybe' */, inSection, nl){
-  // если уже есть нужный блок — выходим
-  const classToFind = type === "required" ? "route" : "route-semi";
-  if (new RegExp(`<div\\b[^>]*class\\s*=\\s*["'][^"']*\\b${classToFind}\\b`, "i").test(boxHtml)) {
-    return boxHtml;
+  if (!boxHtml) return boxHtml;
+
+  // 1) Убираем любые старые route / route-semi
+  let cleaned = boxHtml;
+  cleaned = removeAllBlocksByClass(cleaned, "route");
+  cleaned = removeAllBlocksByClass(cleaned, "route-semi");
+
+  function buildRouteBlock(indent){
+    if (type === "required") {
+      return `${indent}<div class="route">Доступ ограничен</div>`;
+    }
+    return [
+      `${indent}<div class="route-semi">`,
+      `${indent}  <div class="officon globe"></div>`,
+      `${indent}</div>`
+    ].join(nl);
   }
 
-  // Вариант 1: внутри секции — вставляем перед последним </div> бокса
-  if (inSection){
-    const closeIdx = boxHtml.lastIndexOf("</div>");
-    if (closeIdx === -1) return boxHtml;
-
-    const before = boxHtml.slice(0, closeIdx);
-    const after  = boxHtml.slice(closeIdx);
-
-    const closeIndent = indentBefore(boxHtml, closeIdx, nl);
-    const lineIndent  = closeIndent + "  ";
-
-    const block = (type === "required")
-      ? `${lineIndent}<div class="route">Доступ ограничен</div>`
-      : [
-          `${lineIndent}<div class="route-semi">`,
-          `${lineIndent}  <div class="officon globe"></div>`,
-          `${lineIndent}</div>`
-        ].join(nl);
-
-    const beforeNorm = rstripBlankLinesToOne(before, nl);
-    return beforeNorm + block + nl + closeIndent + after;
-  }
-
-  // Вариант 2: обычный .box — вставляем внутрь .logobg, не трогая содержимое
-  const masked = maskSegments(boxHtml);
+  // ---------- СНАЧАЛА пробуем вставить внутрь .logobg ----------
+  const masked = maskSegments(cleaned);
   const lb = findFirstByClass(masked, "logobg");
-  if (!lb) return boxHtml;
+  if (lb) {
+    const lbInnerStart = lb.openEnd;
+    const lbInnerEnd   = lb.closeStart;
 
-  const before = boxHtml.slice(0, lb.openEnd);
-  let   region = boxHtml.slice(lb.openEnd, lb.closeStart);
-  const after  = boxHtml.slice(lb.closeStart);
+    const beforeLB = cleaned.slice(0, lbInnerStart);
+    let   body     = cleaned.slice(lbInnerStart, lbInnerEnd); // содержимое .logobg
+    const afterLB  = cleaned.slice(lbInnerEnd);               // </div> .logobg и дальше
 
-  const closeIndent = indentBefore(boxHtml, lb.closeStart, nl);
-  const lineIndent  = closeIndent + "  ";
+    // локально убираем route/route-semi внутри .logobg (на всякий случай)
+    (function stripLocalRoutes(){
+      while (true){
+        const m1 = maskSegments(body);
+        const r  = findFirstByClass(m1, "route");
+        const rs = findFirstByClass(m1, "route-semi");
+        const b  = r || rs;
+        if (!b) break;
+        body = body.slice(0, b.openStart) + body.slice(b.closeEnd);
+      }
+    })();
 
-  const block = (type === "required")
-    ? `${lineIndent}<div class="route">Доступ ограничен</div>`
-    : [
-        `${lineIndent}<div class="route-semi">`,
-        `${lineIndent}  <div class="officon globe"></div>`,
-        `${lineIndent}</div>`
-      ].join(nl);
+    const bodyMasked = maskSegments(body);
+    const mm = findFirstByClass(bodyMasked, "main-mode");
 
-  // убираем хвостовые пробелы/пустые строки, чтобы не создавать «пустую» линию
-  region = region.replace(/[ \t]+$/g, "").replace(/(?:\r?\n)+$/g, "");
+    let lineStart, before, after, indent;
 
-  return before + region + nl + block + nl + closeIndent + after;
+    if (mm){
+      // начало строки, на которой стоит main-mode (с его отступом)
+      const ls = body.lastIndexOf(nl, mm.openStart);
+      lineStart = (ls === -1) ? 0 : ls + nl.length;
+
+      before = body.slice(0, lineStart);
+      after  = body.slice(lineStart);
+
+      const indentMatch = body.slice(lineStart, mm.openStart).match(/^[\t ]*/);
+      indent = indentMatch ? indentMatch[0] : "";
+    } else {
+      // нет main-mode — кидаем в конец .logobg с отступом последней строки
+      const ls = body.lastIndexOf(nl);
+      lineStart = (ls === -1) ? 0 : ls + nl.length;
+
+      before = body.slice(0, lineStart);
+      after  = body.slice(lineStart);
+
+      const indentMatch = after.match(/^[\t ]*/);
+      indent = indentMatch ? indentMatch[0] : "";
+    }
+
+    const block = buildRouteBlock(indent);
+    const newBody = joinBlocksNoBlank(before, block, after, nl);
+
+    return beforeLB + newBody + afterLB;
+  }
+
+  // ---------- ФОЛЛБЭК: .logobg нет ----------
+
+  // Если бокс внутри секции — вставляем перед последним </div>, сохраняя отступы
+  if (inSection){
+    const closeIdx = cleaned.lastIndexOf("</div>");
+    if (closeIdx === -1) return cleaned;
+
+    const ls = cleaned.lastIndexOf(nl, closeIdx);
+    const lineStart = ls === -1 ? 0 : ls + nl.length;
+
+    const before = cleaned.slice(0, lineStart);
+    const after  = cleaned.slice(lineStart);
+
+    const indentMatch = cleaned.slice(lineStart, closeIdx).match(/^[\t ]*/);
+    const indent = indentMatch ? indentMatch[0] : "";
+
+    const block = buildRouteBlock(indent);
+    return joinBlocksNoBlank(before, block, after, nl);
+  }
+
+  // Вне секции и без .logobg — ничего не вставляем
+  return cleaned;
 }
 
+/* --- [ADD] pass: маршрутные метки по всей странице (только RU)
+      + игнорируем freebies-страницы --- */
+function ensureRouteMarkersForPage(html, lang, siteSettings, nl, urlPath){
+  const L = String(lang || "ru").toLowerCase();
+  if (L !== "ru" || !siteSettings) return html;
 
+  const p = String(urlPath || "").toLowerCase();
 
-/* --- [ADD] pass: маршрутные метки по всей странице (только RU) --- */
-function ensureRouteMarkersForPage(html, lang, siteSettings, nl){
-  if (String(lang).toLowerCase() !== "ru" || !siteSettings) return html;
+  if (p.includes("/freebies/") || /(?:^|\/)freebies$/.test(p)) {
+    return html;
+  }
+
   const req = new Set(siteSettings.RequiredRoute || siteSettings.requiredRoute || []);
   const may = new Set(siteSettings.MaybeRoute    || siteSettings.maybeRoute    || []);
   if (!req.size && !may.size) return html;
@@ -889,7 +937,7 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl, sit
   }
 
   // RU route-маркеры
-  out = ensureRouteMarkersForPage(out, lang, siteSettings, nl);
+  out = ensureRouteMarkersForPage(out, lang, siteSettings, nl, urlPath);
   return out;
 }
 

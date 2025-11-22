@@ -2467,8 +2467,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-$(document).ready(function() {
-  // Инициализация главного слайдера на странице (если уже на месте)
+// /assets/js/main-mode-insert.js
+$(document).ready(function () {
+  // Главный слайдер на странице (если уже на месте и не инициализирован)
   if ($('.main-mode-selection').length && !$('.main-mode-selection').hasClass('slick-slider')) {
     var res = $(window).width();
     $('.main-mode-selection').slick({
@@ -2479,39 +2480,45 @@ $(document).ready(function() {
       speed: 450,
       autoplaySpeed: 5500,
       pauseOnHover: true,
-      prevArrow: '<button aria-label="Prev Slide" class="prev-button controls-button"><i class="officon chevron left"></i></button>',
-      nextArrow: '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
+      prevArrow:
+        '<button aria-label="Prev Slide" class="prev-button controls-button"><i class="officon chevron left"></i></button>',
+      nextArrow:
+        '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
       dots: false
     });
+
     const modesslider = document.querySelector('.main-mode-selection');
-    if (typeof updateURLs === 'function' && modesslider) updateURLs(modesslider);
+    if (typeof updateURLs === 'function' && modesslider) updateURLs(modesslider); // почему: URLs могут быть динамическими
   }
 
-  // Вставка селекшна после 12-го ВИДИМОГО бокса
-  $('.boxes-holder').each(function() {
+  // Вставка селекшна после 12-го ВИДИМОГО бокса (игнорируя .hidden и .hidden-route)
+  $('.boxes-holder').each(function () {
     const $boxesHolder = $(this);
     const $allBoxes = $boxesHolder.children('.box');
-    const $visibleBoxes = $allBoxes.filter(':not(.hidden)'); // ключевое изменение
 
-    // Важно: считаем только видимые боксы
+    // Ключевое изменение: исключаем .hidden и .hidden-route
+    const $visibleBoxes = $allBoxes.filter(':not(.hidden):not(.hidden-route)');
+
+    // Важно: считаем только видимые боксы по нашим правилам
     if (!$boxesHolder.closest('.main-page').length && $visibleBoxes.length >= 12) {
-      const importPath = (typeof languageTag !== 'undefined' && languageTag === 'ru')
-        ? '/code-parts/micro-parts/main-mode-import-ru.html'
-        : '/code-parts/micro-parts/main-mode-import.html';
+      const importPath =
+        typeof languageTag !== 'undefined' && languageTag === 'ru'
+          ? '/code-parts/micro-parts/main-mode-import-ru.html'
+          : '/code-parts/micro-parts/main-mode-import.html';
 
-      $.get(importPath, function(data) {
+      $.get(importPath, function (data) {
         const $importedContent = $(data);
 
-        // Вставляем сразу за 12-м ВИДИМЫМ боксом, игнорируя .hidden
-        const $anchor = $visibleBoxes.eq(11); // 0-based => 12-й
+        // Вставляем сразу за 12-м ВИДИМЫМ боксом (0-based => 11)
+        const $anchor = $visibleBoxes.eq(11);
         if ($anchor.length) {
           $anchor.after($importedContent);
         } else {
-          // На всякий случай: если не нашли якорь — добавим в конец
+          // fallback, если якорь внезапно не найден
           $boxesHolder.append($importedContent);
         }
 
-        // Инициализация слайдера только если он еще не инициализирован
+        // Инициализация слайдера только если не инициализирован ранее
         if (!$importedContent.hasClass('slick-slider')) {
           const res = $(window).width();
           $importedContent.slick({
@@ -2522,13 +2529,15 @@ $(document).ready(function() {
             speed: 450,
             autoplaySpeed: 5500,
             pauseOnHover: true,
-            prevArrow: '<button aria-label="Prev Slide" class="prev-button controls-button"><i class="officon chevron left"></i></button>',
-            nextArrow: '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
+            prevArrow:
+              '<button aria-label="Prev Slide" class="prev-button controls-button"><i class="officon chevron left"></i></button>',
+            nextArrow:
+              '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
             dots: false
           });
+
           const modesslider = document.querySelector('.main-mode-selection');
-          // Почему: некоторые страницы подгружают блок слайдера динамически — важно актуализировать ссылки.
-          if (typeof updateURLs === 'function' && modesslider) updateURLs(modesslider);
+          if (typeof updateURLs === 'function' && modesslider) updateURLs(modesslider); // почему: некоторые страницы подгружают блок динамически
         }
       });
     }

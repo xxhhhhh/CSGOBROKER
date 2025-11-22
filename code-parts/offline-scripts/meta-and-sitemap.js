@@ -16,6 +16,7 @@ const ensureDir = (d) => { if (!fs.existsSync(d)) fs.mkdirSync(d, { recursive: t
 function writeFileIfChanged(fp, next, label) {
   const prev = fs.existsSync(fp) ? readFile(fp) : null;
   if (prev === next) return false;
+  ensureDir(path.dirname(fp));
   fs.writeFileSync(fp, next);
   if (label) console.log(label);
   return true;
@@ -74,6 +75,10 @@ function langUrlForKey(keyNoLocale, lang) {
 }
 function absoluteUrlNormalized(urlPath) {
   return urlPath === '/' ? BASE_ORIGIN : (BASE_ORIGIN + urlPath);
+}
+// variant-safe
+function absoluteUrlWithOrigin(urlPath, origin) {
+  return urlPath === '/' ? origin : (origin + urlPath);
 }
 
 // ---------- noindex ----------
@@ -205,6 +210,14 @@ function makeFallbackAlternatesForKey(keyNoLocale, presentLangs) {
   }
   return res;
 }
+function makeFallbackAlternatesForKeyWithOrigin(keyNoLocale, presentLangs, origin) {
+  const res = [];
+  for (const lang of ALT_ORDER) {
+    if (!presentLangs.has(lang)) continue;
+    res.push({ lang, href: absoluteUrlWithOrigin(langUrlForKey(keyNoLocale, lang), origin) });
+  }
+  return res;
+}
 
 function isNonRuBucket(bucketName) {
   return !/_ru$/.test(bucketName);
@@ -249,6 +262,22 @@ function buildSitemapXml(entries, { includeAlternates = false, alternatesByKey =
   return head + (body ? '\n' + body + '\n' : '\n') + '</urlset>\n';
 }
 
+// ---------- variants helpers ----------
+function remapEntriesOrigin(entries, origin) {
+  return entries.map(e => {
+    const url = new URL(e.loc);
+    const newLoc = absoluteUrlWithOrigin(url.pathname + url.search + url.hash, origin);
+    return { ...e, loc: newLoc };
+  });
+}
+function buildAlternatesByKeyForOrigin(presentLangsByKey, origin) {
+  const map = new Map();
+  for (const [key, langs] of presentLangsByKey.entries()) {
+    map.set(key, makeFallbackAlternatesForKeyWithOrigin(key, langs, origin));
+  }
+  return map;
+}
+
 // ---------- main ----------
 function main() {
   const files = collectHtmlFiles(ROOT_DIR);
@@ -288,7 +317,7 @@ function main() {
       if (seen.has('x-default')) ordered.push({ lang: 'x-default', href: seen.get('x-default') });
       for (const [l, h] of seen.entries()) {
         if (ALT_ORDER.includes(l) || l === 'x-default') continue;
-        ordered.push({ lang, href: h });
+        ordered.push({ lang: l, href: h });
       }
       alternatesByKey.set(key, ordered);
     }
@@ -326,7 +355,7 @@ function main() {
     }
   }
 
-  // Step 2: сайтмапы (только индексируемые)
+  // Step 2: buckets (только индексируемые)
   const buckets = {
     main_en: [], main_ru: [],
     reviews_en: [], reviews_ru: [],
@@ -363,15 +392,33 @@ function main() {
     reviews_es: 'sitemap_reviews_es.xml',
   };
 
-  let changedSitemaps = 0;
+  // Писатель под таргет-оригин/директорию
+  function writeBucketSitemaps(targetDir, origin, opts = {}) {
+    const inRoot = !targetDir;
+    const altByKey = inRoot ? alternatesByKey : buildAlternatesByKeyForOrigin(presentLangsByKey, origin);
+    let changed = 0;
 
-  for (const [bucket, name] of Object.entries(rootNames)) {
-    const includeAlternates = isNonRuBucket(bucket);
-    const xml = buildSitemapXml(buckets[bucket], { includeAlternates, alternatesByKey });
-    if (writeFileIfChanged(path.join(ROOT_DIR, name), xml, `✅ ${name} updated.`)) {
-      changedSitemaps++;
+    for (const [bucket, name] of Object.entries(rootNames)) {
+      const includeAlternates = isNonRuBucket(bucket);
+      const sourceEntries = buckets[bucket] || [];
+      const entries = inRoot ? sourceEntries : remapEntriesOrigin(sourceEntries, origin);
+      const xml = buildSitemapXml(entries, { includeAlternates, alternatesByKey: altByKey });
+      const outPath = inRoot
+        ? path.join(ROOT_DIR, name)
+        : path.join(ROOT_DIR, targetDir, name);
+      const label = `✅ ${inRoot ? '' : `${targetDir}/`}${name} updated.`;
+      if (writeFileIfChanged(outPath, xml, label)) changed++;
     }
+    return changed;
   }
+
+  // Корень (старое поведение)
+  let changedSitemaps = 0;
+  changedSitemaps += writeBucketSitemaps('', BASE_ORIGIN);
+
+  // Новые варианты доменов/директорий
+  changedSitemaps += writeBucketSitemaps('sitemaps_me', 'https://csgobroker.me');
+  changedSitemaps += writeBucketSitemaps('sitemaps_com', 'https://cs2freebies.com');
 
   console.log(`🏁 Done. HTML changed: ${changedHtmlCount}, sitemaps changed: ${changedSitemaps}.`);
 }

@@ -2,15 +2,21 @@
   try {
     var loc = window.location;
     var host = (loc.hostname || '').replace(/^www\./i, '');
-    var origin = loc.protocol + '//' + loc.host; // сохраняем порт при необходимости
+    var origin = loc.protocol + '//' + loc.host; // порт сохраняем
     var path = loc.pathname || '/';
     if (path.length > 1) path = path.replace(/\/+$/, '');
     var pageUrl = origin + path + (loc.search || '');
 
-    var WHITELIST = ['csgobroker.cc', 'cs2freebies.com'];
+    var WHITELIST = ['csgobroker.cc', 'csgobroker.me', 'cs2freebies.com'];
     var CLOUDFLARE_TOKENS = {
       'csgobroker.cc': 'dc243703e5f549b789897d5492ba4571',
+      'csgobroker.me': '5dbdc03b9e994810983628ea14b2de20',
       'cs2freebies.com': 'c533f4bb90114d869fc6228bd576045c'
+    };
+    var SITE_NAMES = {
+      'csgobroker.cc': 'CSGOBROKER',
+      'csgobroker.me': 'CSGOBROKER',
+      'cs2freebies.com': 'CS2Freebies'
     };
 
     function ensureCanonical(url) {
@@ -50,7 +56,7 @@
     function rewriteUrlPreservePath(urlStr) {
       if (typeof urlStr !== 'string') return urlStr;
 
-      // Absolute URL
+      // Абсолютный URL
       if (/^https?:\/\//i.test(urlStr)) {
         try {
           var u = new URL(urlStr);
@@ -59,10 +65,10 @@
             return origin + u.pathname + u.search + u.hash;
           }
           return urlStr;
-        } catch (_) { /* fall through */ }
+        } catch (_) { /* noop */ }
       }
 
-      // Protocol-relative for whitelisted hosts
+      // Протокол-относительный
       var protoRelMatch = urlStr.match(/^\/\/([^/]+)(\/.*|)$/);
       if (protoRelMatch) {
         var prHost = protoRelMatch[1].replace(/^www\./i, '');
@@ -72,19 +78,29 @@
         return urlStr;
       }
 
-      // Any inline absolute occurrences (fallback, conservative)
-      var replaced = urlStr.replace(/https?:\/\/(www\.)?(csgobroker\.cc|cs2freebies\.com)/ig, origin);
+      // Fallback: инлайн-упоминания абсолютных ссылок на whitelisted-хосты
+      var replaced = urlStr.replace(
+        /https?:\/\/(www\.)?(csgobroker\.cc|csgobroker\.me|cs2freebies\.com)/ig,
+        origin
+      );
       if (replaced !== urlStr) return replaced;
 
-      return urlStr; // root-relative или чужие хосты не трогаем
+      return urlStr; // чужие хосты и корневые пути не трогаем
     }
 
-    // 1) canonical / og:url / twitter:url
+    // Canonical / og:url / twitter:url → pageUrl
     ensureCanonical(pageUrl);
     ensureMeta('og:url', pageUrl, true);
     ensureMeta('twitter:url', pageUrl, false);
 
-    // 2) Массовая замена в <head>
+    // og:site_name по домену
+    (function setOgSiteName() {
+      var desired = SITE_NAMES[host.toLowerCase()];
+      if (!desired) return;
+      ensureMeta('og:site_name', desired, true);
+    })();
+
+    // Массовая замена URL в <head>
     var head = document.head || document.getElementsByTagName('head')[0];
     if (head) {
       var ATTRS = ['href', 'src', 'content'];
@@ -101,7 +117,7 @@
         }
       }
 
-      // 3) JSON-LD перезапись
+      // JSON-LD: парс и перепись строк-URL
       var ldScripts = head.querySelectorAll('script[type*="ld+json"]');
       ldScripts.forEach(function (s) {
         var txt = s.textContent || '';
@@ -128,19 +144,23 @@
           var out = JSON.stringify(rewrittenJson, null, 2);
           if (out !== txt) s.textContent = out;
         } catch (e) {
-          // Fallback: заменить только whitelisted домены
+          // Fallback: только whitelisted-домены
           var out2 = txt
             .replace(/https?:\/\/(www\.)?csgobroker\.cc/ig, origin)
+            .replace(/https?:\/\/(www\.)?csgobroker\.me/ig, origin)
             .replace(/https?:\/\/(www\.)?cs2freebies\.com/ig, origin)
             .replace(/\/\/(www\.)?csgobroker\.cc/ig, origin)
+            .replace(/\/\/(www\.)?csgobroker\.me/ig, origin)
             .replace(/\/\/(www\.)?cs2freebies\.com/ig, origin);
           if (out2 !== txt) s.textContent = out2;
         }
       });
     }
 
-    // 4) Яндекс noindex только на cs2freebies.com
-    if (host.toLowerCase() === 'cs2freebies.com') {
+    // Яндекс noindex на cs2freebies.com и csgobroker.me
+    (function setYandexNoindex() {
+      var blockHosts = ['cs2freebies.com', 'csgobroker.me'];
+      if (blockHosts.indexOf(host.toLowerCase()) === -1) return;
       var yandexMeta = document.querySelector('meta[name="yandex"]');
       if (!yandexMeta) {
         yandexMeta = document.createElement('meta');
@@ -148,19 +168,17 @@
         document.head.appendChild(yandexMeta);
       }
       yandexMeta.setAttribute('content', 'noindex, nofollow');
-    }
+    })();
 
-    // 5) Cloudflare Insights: установить корректный token по домену
+    // Cloudflare Insights токен по домену
     (function configureCfBeacon() {
       var desiredToken = CLOUDFLARE_TOKENS[host.toLowerCase()];
-      // Если домен не в мапе — ничего не делаем
       if (!desiredToken) return;
 
       var sel = 'script[src*="static.cloudflareinsights.com/beacon.min.js"]';
       var beacon = document.querySelector(sel);
 
       function setToken(el) {
-        // data-cf-beacon — JSON-строка
         var raw = el.getAttribute('data-cf-beacon');
         var cfg = {};
         if (raw) {
@@ -170,14 +188,12 @@
           cfg.token = desiredToken;
           el.setAttribute('data-cf-beacon', JSON.stringify(cfg));
         }
-        // гарантируем defer (безопасно)
         if (!el.defer) el.setAttribute('defer', '');
       }
 
       if (beacon) {
         setToken(beacon);
       } else {
-        // Создать, если отсутствует
         var s = document.createElement('script');
         s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
         s.defer = true;

@@ -25,8 +25,8 @@ const ORDER = [
   "schema-main.js",
   "schema-review.js",
   "freebies-fill.js",
-  "alt-langs.js",
   "static-pages-fill.js",
+  "alt-langs.js",
   "build-search-config.js",
   "meta-and-sitemap.js",
 ];
