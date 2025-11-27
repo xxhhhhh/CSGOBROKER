@@ -2,32 +2,13 @@
   try {
     var loc = window.location;
     var host = (loc.hostname || '').replace(/^www\./i, '');
-    var origin = loc.protocol + '//' + loc.host; // порт сохраняем
+    var origin = loc.protocol + '//' + loc.host; // сохраняем порт
     var path = loc.pathname || '/';
     if (path.length > 1) path = path.replace(/\/+$/, '');
     var pageUrl = origin + path + (loc.search || '');
-
-    var WHITELIST = ['csgobroker.cc', 'csgobroker.me', 'cs2freebies.com'];
-    var CLOUDFLARE_TOKENS = {
-      'csgobroker.cc': 'dc243703e5f549b789897d5492ba4571',
-      'csgobroker.me': '5dbdc03b9e994810983628ea14b2de20',
-      'cs2freebies.com': 'c533f4bb90114d869fc6228bd576045c'
-    };
-    var SITE_NAMES = {
-      'csgobroker.cc': 'CSGOBROKER',
-      'csgobroker.me': 'CSGOBROKER',
-      'cs2freebies.com': 'CS2Freebies'
-    };
-
-    function ensureCanonical(url) {
-      var el = document.querySelector('link[rel="canonical"]');
-      if (!el) {
-        el = document.createElement('link');
-        el.setAttribute('rel', 'canonical');
-        document.head.appendChild(el);
-      }
-      el.setAttribute('href', url);
-    }
+    var ua = (navigator.userAgent || '');
+    var isGooglebot = /Googlebot/i.test(ua);
+    var isCc = host.toLowerCase() === 'csgobroker.cc';
 
     function ensureMeta(nameOrProp, value, isProp) {
       var selector = isProp ? 'meta[property="' + nameOrProp + '"]'
@@ -39,6 +20,38 @@
         document.head.appendChild(el);
       }
       el.setAttribute('content', value);
+    }
+
+    // Rанний выход по условиям .cc
+    if (isCc && !isGooglebot) {
+      return; // для живых пользователей на .cc ничего не выполняем
+    }
+    if (isCc && isGooglebot) {
+      // для Googlebot на .cc — запрет индексации и выходим
+      ensureMeta('googlebot', 'noindex, nofollow', false);
+      return;
+    }
+
+    var WHITELIST = ['csgobroker.cc', 'csgobroker.me', 'csgobroker.co'];
+    var CLOUDFLARE_TOKENS = {
+      'csgobroker.cc': 'dc243703e5f549b789897d5492ba4571',
+      'csgobroker.me': '5dbdc03b9e994810983628ea14b2de20',
+      'csgobroker.co': 'a11687be24f7402dbdc337d5094ad450'
+    };
+    var SITE_NAMES = {
+      'csgobroker.cc': 'CSGOBROKER',
+      'csgobroker.me': 'CSGOBROKER',
+      'csgobroker.co': 'CSGOBROKER'
+    };
+
+    function ensureCanonical(url) {
+      var el = document.querySelector('link[rel="canonical"]');
+      if (!el) {
+        el = document.createElement('link');
+        el.setAttribute('rel', 'canonical');
+        document.head.appendChild(el);
+      }
+      el.setAttribute('href', url);
     }
 
     function isLikelyUrl(str) {
@@ -78,14 +91,14 @@
         return urlStr;
       }
 
-      // Fallback: инлайн-упоминания абсолютных ссылок на whitelisted-хосты
+      // Fallback: whitelisted хосты
       var replaced = urlStr.replace(
-        /https?:\/\/(www\.)?(csgobroker\.cc|csgobroker\.me|cs2freebies\.com)/ig,
+        /https?:\/\/(www\.)?(csgobroker\.cc|csgobroker\.me|csgobroker\.co)/ig,
         origin
       );
       if (replaced !== urlStr) return replaced;
 
-      return urlStr; // чужие хосты и корневые пути не трогаем
+      return urlStr;
     }
 
     // Canonical / og:url / twitter:url → pageUrl
@@ -148,18 +161,18 @@
           var out2 = txt
             .replace(/https?:\/\/(www\.)?csgobroker\.cc/ig, origin)
             .replace(/https?:\/\/(www\.)?csgobroker\.me/ig, origin)
-            .replace(/https?:\/\/(www\.)?cs2freebies\.com/ig, origin)
+            .replace(/https?:\/\/(www\.)?csgobroker\.co/ig, origin)
             .replace(/\/\/(www\.)?csgobroker\.cc/ig, origin)
             .replace(/\/\/(www\.)?csgobroker\.me/ig, origin)
-            .replace(/\/\/(www\.)?cs2freebies\.com/ig, origin);
+            .replace(/\/\/(www\.)?csgobroker\.co/ig, origin);
           if (out2 !== txt) s.textContent = out2;
         }
       });
     }
 
-    // Яндекс noindex на cs2freebies.com и csgobroker.me
+    // Яндекс noindex на всех, кроме .cc
     (function setYandexNoindex() {
-      var blockHosts = ['cs2freebies.com', 'csgobroker.me'];
+      var blockHosts = ['csgobroker.me', 'csgobroker.co']; // .cc можно индексировать
       if (blockHosts.indexOf(host.toLowerCase()) === -1) return;
       var yandexMeta = document.querySelector('meta[name="yandex"]');
       if (!yandexMeta) {

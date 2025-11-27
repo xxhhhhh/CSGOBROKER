@@ -418,7 +418,8 @@ function main() {
 
   // Новые варианты доменов/директорий
   changedSitemaps += writeBucketSitemaps('sitemaps_me', 'https://csgobroker.me');
-  changedSitemaps += writeBucketSitemaps('sitemaps_com', 'https://cs2freebies.com');
+  // Replaced cs2freebies.com -> csgobroker.co and sitemaps_com -> sitemaps_co
+  changedSitemaps += writeBucketSitemaps('sitemaps_co', 'https://csgobroker.co');
 
   console.log(`🏁 Done. HTML changed: ${changedHtmlCount}, sitemaps changed: ${changedSitemaps}.`);
 }
