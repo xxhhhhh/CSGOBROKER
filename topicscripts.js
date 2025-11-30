@@ -1279,6 +1279,7 @@ async function switchSkin(direction) {
 // /assets/js/topic-nav-fix.js
 
 // Гейт по путям
+// /code-parts/topics/topics-nav.js
 if (
   window.location.pathname.includes("/items/") ||
   window.location.pathname.includes("/cases/") ||
@@ -1286,6 +1287,8 @@ if (
   window.location.pathname.includes("/stickers/") ||
   window.location.pathname.includes("/collections/")
 ) {
+  // --- Утилиты ---
+  const isNonEmpty = (v) => typeof v === "string" && v.trim().length > 0;
 
   // --- КЭШ ЗАГРУЗКИ ДАННЫХ ---
   async function loadNavDataWithCache() {
@@ -1296,7 +1299,6 @@ if (
     try {
       const cached = StorageHelper?.get?.(cacheKey);
       const cachedTime = StorageHelper?.get?.(cacheTimeKey);
-
       if (cached && cachedTime && Date.now() - +cachedTime < maxAge) {
         return JSON.parse(cached);
       }
@@ -1329,28 +1331,68 @@ if (
     const currentName =
       isMobileView && languageTag === "ru" ? category["name-ru"] || category.name : category.name;
 
-    current.innerHTML = isMobileView
-      ? `<span>${currentName}</span><i class="officon oldcarret"></i>`
-      : `<img src="${category.image}" draggable="false" alt="${category.alt}">`;
+    if (isMobileView) {
+      const span = document.createElement("span");
+      span.textContent = currentName;
+      const caret = document.createElement("i");
+      caret.className = "officon oldcarret";
+      current.appendChild(span);
+      current.appendChild(caret);
+    } else {
+      // Показать img только если он есть; иначе — текст
+      if (isNonEmpty(category.image)) {
+        const img = document.createElement("img");
+        img.src = category.image;
+        img.draggable = false;
+        img.alt = category.alt || currentName || "";
+        current.appendChild(img);
+      } else {
+        const span = document.createElement("span");
+        span.textContent = currentName;
+        current.appendChild(span);
+      }
+    }
 
     const list = document.createElement("ul");
     list.classList.add("weapon-selection");
 
+    const frag = document.createDocumentFragment();
     (category.items || []).forEach((item) => {
       const localizedHref =
-        languageTag === "ru" && !item.link.startsWith("/ru/") ? `/ru${item.link}` : item.link;
+        languageTag === "ru" && isNonEmpty(item.link) && !item.link.startsWith("/ru/") ? `/ru${item.link}` : item.link;
 
-      list.insertAdjacentHTML(
-        "beforeend",
-        `<li class="weapon-selection-unite">
-          <a href="${localizedHref}" class="weapon-selection-redir">
-            <img src="${item.image}" draggable="false" alt="${item.name}">
-            <span>${item.name}</span>
-          </a>
-        </li>`
-      );
+      const li = document.createElement("li");
+      li.className = "weapon-selection-unite";
+
+      // ВАЖНО: если item.class задан и непустой, добавляем как класс
+      const itemClass = item?.class;
+      if (isNonEmpty(itemClass)) {
+        // возможны пробелы — оставляем как есть
+        li.className += ` ${itemClass.trim()}`;
+      }
+
+      const a = document.createElement("a");
+      a.href = localizedHref || "#";
+      a.className = "weapon-selection-redir";
+
+      // Добавляем <img> только если есть непустой image
+      if (isNonEmpty(item.image)) {
+        const img = document.createElement("img");
+        img.src = item.image;
+        img.draggable = false;
+        img.alt = item.name || "";
+        a.appendChild(img);
+      }
+
+      const span = document.createElement("span");
+      span.textContent = item.name || "";
+      a.appendChild(span);
+
+      li.appendChild(a);
+      frag.appendChild(li);
     });
 
+    list.appendChild(frag);
     container.appendChild(current);
     container.appendChild(list);
     return container;
@@ -1358,29 +1400,24 @@ if (
 
   // --- Привязка обработчиков (делегирование на документ) ---
   function bindTopicNavEvents() {
-    // Уже привязан? не дублируем
     if (document.__topicNavBound) return;
     document.__topicNavBound = true;
 
     const mq = window.matchMedia("(max-width: 1364px)");
 
     document.addEventListener("click", (e) => {
-      // работаем только в мобильном виде
       if (!mq.matches) return;
 
-      // Открыть/закрыть конкретную категорию
       const currentBtn = e.target.closest(".weapon-current");
       if (currentBtn) {
         const container = currentBtn.closest(".weapon-container");
         if (!container) return;
-
         const isActive = container.classList.contains("active");
         document.querySelectorAll(".weapon-container.active").forEach((c) => c.classList.remove("active"));
         if (!isActive) container.classList.add("active");
         return;
       }
 
-      // Закрыть всё
       if (e.target.closest(".topic-nav-close")) {
         document.querySelector(".topic-nav-selector")?.classList.remove("active");
         document.querySelectorAll(".weapon-container.active").forEach((c) => c.classList.remove("active"));
@@ -1389,11 +1426,9 @@ if (
         return;
       }
 
-      // Тоггл основного меню (ВАЖНО: .topic-nav-box находится вне .topicpage)
       const navBox = e.target.closest(".topic-nav-box");
       if (navBox) {
         const navSelector = document.querySelector(".topic-nav-selector");
-        // Почему: из-за рефакторинга DOM navBox может жить в .siteleftpannel, а не в .topicpage
         const nowActive = !navBox.classList.contains("active");
 
         navBox.classList.toggle("active", nowActive);
@@ -1411,15 +1446,14 @@ if (
   (async function initTopicNav() {
     const topicTopPanel = document.querySelector("div.sitetoppannel");
     const topicPage = document.querySelector("div.topicpage");
+
+    bindTopicNavEvents(); // клики должны жить всегда
+
     if (!topicTopPanel || !topicPage) {
-      bindTopicNavEvents(); // всё равно вешаем обработчики — вдруг HTML уже отрендерен сервером
       return;
     }
 
     const isMobileView = window.innerWidth < 1365;
-
-    // Сначала события (чтобы клики работали даже если загрузка упадёт)
-    bindTopicNavEvents();
 
     try {
       const data = await loadNavDataWithCache();
@@ -1450,6 +1484,7 @@ if (
               name: item.title,
               image: item.img,
               link: `/topic/${pathType}/${item.id}`,
+              // class не импортируем, т.к. в исходных импортерах его нет; оставляем совместимость
             }));
           } catch (e) {
             console.error("Failed to import items from", category["import-items"], e);
@@ -1461,7 +1496,6 @@ if (
       }
 
       if (isMobileView) {
-        // Мобильный селектор
         let navWrapper = document.querySelector(".topic-nav-selector");
         let navMenu;
 
@@ -1473,34 +1507,36 @@ if (
           navWrapper.appendChild(navMenu);
           topicPage.appendChild(navWrapper);
         } else {
-          navMenu = navWrapper.querySelector(".topic-nav-menu") || (() => {
-            const m = document.createElement("div");
-            m.classList.add("topic-nav-menu");
-            navWrapper.appendChild(m);
-            return m;
-          })();
-          navMenu.innerHTML = "";
+          navMenu = navWrapper.querySelector(".topic-nav-menu");
+          if (!navMenu) {
+            navMenu = document.createElement("div");
+            navMenu.classList.add("topic-nav-menu");
+            navWrapper.appendChild(navMenu);
+          }
+          navMenu.textContent = "";
         }
 
-        navElements.forEach((el) => navMenu.appendChild(el));
+        const frag = document.createDocumentFragment();
+        navElements.forEach((el) => frag.appendChild(el));
+        navMenu.appendChild(frag);
+
         const closeEl = document.createElement("div");
         closeEl.className = "topic-nav-close";
         navMenu.appendChild(closeEl);
       } else {
-        // Десктоп — в топ-панель
-        topicTopPanel.innerHTML = "";
-        navElements.forEach((el) => topicTopPanel.appendChild(el));
+        topicTopPanel.textContent = ""; // безопаснее, чем innerHTML = ""
+        const frag = document.createDocumentFragment();
+        navElements.forEach((el) => frag.appendChild(el));
+        topicTopPanel.appendChild(frag);
         topicPage.classList.add("fade-in-topic");
       }
     } catch (e) {
       console.error("[topic-nav] init failed:", e);
-      // обработчики уже привязаны — меню, если отрендерено в HTML, будет работать
     }
   })();
 
   // Перепривязка при ресайзе (смена режима)
   window.addEventListener("resize", () => {
-    // делегирование уже есть; здесь можно дополнительно закрыть меню, чтобы избежать висящих состояний
     if (window.innerWidth >= 1365) {
       document.querySelector(".topic-nav-selector")?.classList.remove("active");
       document.querySelector(".topic-nav-box")?.classList.remove("active");
@@ -1509,10 +1545,6 @@ if (
     }
   });
 }
-
-
-
-
 
   if (window.location.pathname.includes("/topic")) {
     var skinslist = document.querySelectorAll('.box-skins-list');
