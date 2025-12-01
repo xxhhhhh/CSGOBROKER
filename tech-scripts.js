@@ -1,8 +1,49 @@
+// path: public/seo-rewrite.js
 (function () {
   try {
+    // --- ТОГГЛЕР ДОМЕНОВ ----------------------------------------------------
+    /**
+     * Введи индексы доменов (через запятую или пробел), которые надо ВЫКЛЮЧИТЬ.
+     * 1: csgobroker.cc, 2: csgobroker.me, 3: csgobroker.co
+     * По умолчанию отключён "2" (csgobroker.me), как просили.
+     */
+    var DISABLE_IDX = '2'; // ← меняй здесь: '' (ничего), '2', '1 3', '1,2,3', ...
+
+    var DOMAINS = ['csgobroker.cc', 'csgobroker.me', 'csgobroker.co'];
+    var TOKENS = {
+      'csgobroker.cc': 'dc243703e5f549b789897d5492ba4571',
+      'csgobroker.me': '5dbdc03b9e994810983628ea14b2de20',
+      'csgobroker.co': 'a11687be24f7402dbdc337d5094ad450'
+    };
+    var SITE_NAMES = {
+      'csgobroker.cc': 'CSGOBROKER',
+      'csgobroker.me': 'CSGOBROKER',
+      'csgobroker.co': 'CSGOBROKER'
+    };
+
+    // Разбор строки индексов -> Set отключённых
+    var DISABLED = (function (s) {
+      var out = new Set();
+      if (typeof s !== 'string') return out;
+      s.split(/[,\s]+/).forEach(function (x) {
+        if (!x) return;
+        var n = parseInt(x, 10);
+        if (n >= 1 && n <= DOMAINS.length) out.add(String(n));
+      });
+      return out;
+    })(DISABLE_IDX);
+
+    function isEnabledHost(h) {
+      if (!h) return false;
+      var idx = DOMAINS.indexOf(h.toLowerCase().replace(/^www\./i, ''));
+      if (idx === -1) return false;
+      return !DISABLED.has(String(idx + 1));
+    }
+
+    // --- ОСНОВНЫЕ ПЕРЕМЕННЫЕ -------------------------------------------------
     var loc = window.location;
     var host = (loc.hostname || '').replace(/^www\./i, '');
-    var origin = loc.protocol + '//' + loc.host; // сохраняем порт
+    var origin = loc.protocol + '//' + loc.host; // важно: сохраняем порт
     var path = loc.pathname || '/';
     if (path.length > 1) path = path.replace(/\/+$/, '');
     var pageUrl = origin + path + (loc.search || '');
@@ -10,6 +51,12 @@
     var isGooglebot = /Googlebot/i.test(ua);
     var isCc = host.toLowerCase() === 'csgobroker.cc';
 
+    // Если текущий домен отключён — выходим полностью.
+    if (!isEnabledHost(host)) {
+      return; // важно: полностью гасим скрипт на выключенных доменах
+    }
+
+    // --- УТИЛИТЫ -------------------------------------------------------------
     function ensureMeta(nameOrProp, value, isProp) {
       var selector = isProp ? 'meta[property="' + nameOrProp + '"]'
                             : 'meta[name="' + nameOrProp + '"]';
@@ -21,28 +68,6 @@
       }
       el.setAttribute('content', value);
     }
-
-    // Rанний выход по условиям .cc
-    if (isCc && !isGooglebot) {
-      return; // для живых пользователей на .cc ничего не выполняем
-    }
-    if (isCc && isGooglebot) {
-      // для Googlebot на .cc — запрет индексации и выходим
-      ensureMeta('googlebot', 'noindex, nofollow', false);
-      return;
-    }
-
-    var WHITELIST = ['csgobroker.cc', 'csgobroker.me', 'csgobroker.co'];
-    var CLOUDFLARE_TOKENS = {
-      'csgobroker.cc': 'dc243703e5f549b789897d5492ba4571',
-      'csgobroker.me': '5dbdc03b9e994810983628ea14b2de20',
-      'csgobroker.co': 'a11687be24f7402dbdc337d5094ad450'
-    };
-    var SITE_NAMES = {
-      'csgobroker.cc': 'CSGOBROKER',
-      'csgobroker.me': 'CSGOBROKER',
-      'csgobroker.co': 'CSGOBROKER'
-    };
 
     function ensureCanonical(url) {
       var el = document.querySelector('link[rel="canonical"]');
@@ -59,6 +84,15 @@
       if (/^(data:|mailto:|tel:|javascript:)/i.test(str)) return false;
       return /^(https?:)?\/\//i.test(str) || str.startsWith('/');
     }
+
+    // Построить whitelist/мапы только из включённых доменов
+    var WHITELIST = DOMAINS.filter(function (d) { return isEnabledHost(d); });
+    var CLOUDFLARE_TOKENS = {};
+    var SITE_NAMES_ENABLED = {};
+    WHITELIST.forEach(function (d) {
+      CLOUDFLARE_TOKENS[d] = TOKENS[d];
+      SITE_NAMES_ENABLED[d] = SITE_NAMES[d];
+    });
 
     function shouldRewrite(urlHost) {
       if (!urlHost) return false;
@@ -91,29 +125,41 @@
         return urlStr;
       }
 
-      // Fallback: whitelisted хосты
-      var replaced = urlStr.replace(
-        /https?:\/\/(www\.)?(csgobroker\.cc|csgobroker\.me|csgobroker\.co)/ig,
-        origin
-      );
-      if (replaced !== urlStr) return replaced;
-
+      // Fallback: заменить whitelisted хосты (только включённые)
+      if (WHITELIST.length) {
+        var re = new RegExp(
+          'https?:\\/\\/(?:www\\.)?(?:' +
+          WHITELIST.map(function (d) { return d.replace(/\./g, '\\.'); }).join('|') +
+          ')','ig'
+        );
+        var replaced = urlStr.replace(re, origin);
+        if (replaced !== urlStr) return replaced;
+      }
       return urlStr;
     }
 
-    // Canonical / og:url / twitter:url → pageUrl
+    // --- РАННИЕ ВЫХОДЫ ДЛЯ .CC ----------------------------------------------
+    if (isCc && !isGooglebot) {
+      return; // для живых пользователей на .cc ничего не выполняем
+    }
+    if (isCc && isGooglebot) {
+      // для Googlebot на .cc — запрет индексации и выходим
+      ensureMeta('googlebot', 'noindex, nofollow', false);
+      return;
+    }
+
+    // --- CANONICAL / OG / TWITTER -------------------------------------------
     ensureCanonical(pageUrl);
     ensureMeta('og:url', pageUrl, true);
     ensureMeta('twitter:url', pageUrl, false);
 
-    // og:site_name по домену
     (function setOgSiteName() {
-      var desired = SITE_NAMES[host.toLowerCase()];
+      var desired = SITE_NAMES_ENABLED[host.toLowerCase()];
       if (!desired) return;
       ensureMeta('og:site_name', desired, true);
     })();
 
-    // Массовая замена URL в <head>
+    // --- МАССОВАЯ ЗАМЕНА В <head> -------------------------------------------
     var head = document.head || document.getElementsByTagName('head')[0];
     if (head) {
       var ATTRS = ['href', 'src', 'content'];
@@ -130,7 +176,7 @@
         }
       }
 
-      // JSON-LD: парс и перепись строк-URL
+      // JSON-LD: глубокая перепись URL
       var ldScripts = head.querySelectorAll('script[type*="ld+json"]');
       ldScripts.forEach(function (s) {
         var txt = s.textContent || '';
@@ -157,22 +203,25 @@
           var out = JSON.stringify(rewrittenJson, null, 2);
           if (out !== txt) s.textContent = out;
         } catch (e) {
-          // Fallback: только whitelisted-домены
-          var out2 = txt
-            .replace(/https?:\/\/(www\.)?csgobroker\.cc/ig, origin)
-            .replace(/https?:\/\/(www\.)?csgobroker\.me/ig, origin)
-            .replace(/https?:\/\/(www\.)?csgobroker\.co/ig, origin)
-            .replace(/\/\/(www\.)?csgobroker\.cc/ig, origin)
-            .replace(/\/\/(www\.)?csgobroker\.me/ig, origin)
-            .replace(/\/\/(www\.)?csgobroker\.co/ig, origin);
-          if (out2 !== txt) s.textContent = out2;
+          // Fallback: заменяем только включённые домены
+          if (WHITELIST.length) {
+            var re2 = new RegExp(
+              '(https?:\\/\\/|\\/\\/)(?:www\\.)?(?:' +
+              WHITELIST.map(function (d) { return d.replace(/\./g, '\\.'); }).join('|') +
+              ')','ig'
+            );
+            var out2 = txt.replace(re2, origin);
+            if (out2 !== txt) s.textContent = out2;
+          }
         }
       });
     }
 
-    // Яндекс noindex на всех, кроме .cc
+    // --- Яндекс: noindex для включённых, кроме .cc ---------------------------
     (function setYandexNoindex() {
-      var blockHosts = ['csgobroker.me', 'csgobroker.co']; // .cc можно индексировать
+      var blockHosts = DOMAINS.filter(function (d) {
+        return d !== 'csgobroker.cc' && isEnabledHost(d);
+      });
       if (blockHosts.indexOf(host.toLowerCase()) === -1) return;
       var yandexMeta = document.querySelector('meta[name="yandex"]');
       if (!yandexMeta) {
@@ -183,10 +232,10 @@
       yandexMeta.setAttribute('content', 'noindex, nofollow');
     })();
 
-    // Cloudflare Insights токен по домену
+    // --- Cloudflare Insights: токен по включённым доменам --------------------
     (function configureCfBeacon() {
       var desiredToken = CLOUDFLARE_TOKENS[host.toLowerCase()];
-      if (!desiredToken) return;
+      if (!desiredToken) return; // не ставим токен на выключенных
 
       var sel = 'script[src*="static.cloudflareinsights.com/beacon.min.js"]';
       var beacon = document.querySelector(sel);
@@ -201,7 +250,7 @@
           cfg.token = desiredToken;
           el.setAttribute('data-cf-beacon', JSON.stringify(cfg));
         }
-        if (!el.defer) el.setAttribute('defer', '');
+        if (!el.defer) el.setAttribute('defer', ''); // чтобы не мешал
       }
 
       if (beacon) {
@@ -214,10 +263,12 @@
         document.head.appendChild(s);
       }
     })();
+
   } catch (e) {
     if (window.console && console.warn) console.warn('SEO script error', e);
   }
 })();
+
 
 document.addEventListener('DOMContentLoaded', function () {
   var userChoice = getCookie('languageChoice');
