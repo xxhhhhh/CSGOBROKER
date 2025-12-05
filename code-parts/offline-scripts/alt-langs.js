@@ -357,7 +357,6 @@ async function loadTranslations(root, lang){
 
 function stripHtml(s){ return String(s).replace(/<[^>]*>/g, ""); }
 function normalizeText(s){
-  // как textContent в браузере: NBSP -> пробел, все пробельные -> один пробел
   return String(s).replace(/\u00A0/g, " ").replace(/\s+/g, " ").trim();
 }
 
@@ -397,7 +396,7 @@ function applyBoxTranslations(inner, lang, dict){
   const translate = makeTranslator(dict);
   let out = inner;
 
-  // 1) Перевод всех .best (глобально, не завязываясь на .logobg)
+  // 1) Перевод всех .best
   out = out.replace(
     /(<div\b[^>]*class\s*=\s*["'][^"']*\bbest\b[^"']*["'][^>]*>)([\s\S]*?)(<\/div>)/gi,
     (m, open, txt, close) => {
@@ -406,7 +405,7 @@ function applyBoxTranslations(inner, lang, dict){
     }
   );
 
-  // 2) Перевод всех <p> и <button> внутри .content
+  // 2) Перевод <p> и <button> внутри .content
   out = out.replace(
     /(<div\b[^>]*class\s*=\s*["'][^"']*\bcontent\b[^"']*["'][^>]*>)([\s\S]*?)(<\/div>)/gi,
     (m, open, body, close) => {
@@ -425,6 +424,56 @@ function applyBoxTranslations(inner, lang, dict){
   return out;
 }
 
+/* ---------- [NEW] Перевод текстов внутри <a.review-button> на es|pt|tr|hi ---------- */
+// why: переносим боксы с en → локаль; нужно заменить Read More / Visit / Simillar на локальные
+const RB_LABELS = {
+  es: { read: "Leer más", visit: "Visitar", similar: "Similares" },
+  pt: { read: "Ler mais", visit: "Visitar", similar: "Semelhantes" },
+  tr: { read: "Daha fazla oku", visit: "Ziyaret Et", similar: "Benzer" },
+  hi: { read: "और पढ़ें", visit: "दौरा करें", similar: "समान" }
+};
+function getReviewButtonLabel(lang, type){
+  const L = String(lang || "").toLowerCase();
+  const pack = RB_LABELS[L];
+  if (!pack) return null;
+  if (type === "visit") return pack.visit;
+  if (type === "similar") return pack.similar;
+  return pack.read;
+}
+function translateReviewButtonsSpans(inner, lang){
+  if (!RB_LABELS[String(lang).toLowerCase()]) return inner;
+
+  // Нормализатор textContent для сравнения
+  const textify = (html) => normalizeText(stripHtml(html));
+
+  return inner.replace(
+    /(<a\b([^>]*?\bclass\s*=\s*["'][^"']*\breview-button\b[^"']*["'][^>]*?)>)([\s\S]*?)(<\/a>)/gi,
+    (full, openStart, attrsPart, innerHtml, closeTag) => {
+      const clsM = attrsPart.match(/\bclass\s*=\s*(["'])([^"']*)\1/i);
+      const classes = new Set((clsM ? clsM[2] : "").split(/\s+/).filter(Boolean));
+      if (!classes.has("review-button")) return full;
+      if (classes.has("mirror-visit")) return full; // не трогаем "зеркала"
+
+      // Определяем тип
+      let type = "read";
+      if (classes.has("visit")) {
+        type = "visit";
+      } else {
+        const aria = (attrsPart.match(/\baria-label\s*=\s*(["'])(.*?)\1/i)?.[2]) || "";
+        if (/Similar|Альтернатив/i.test(aria)) type = "similar";
+      }
+
+      const label = getReviewButtonLabel(lang, type);
+      if (!label) return full; // нецелевой язык
+
+      // Уже локализовано? — оставляем
+      if (textify(innerHtml) === normalizeText(label)) return full;
+
+      // Вкладываем ровно один <span>...</span>
+      return `${openStart}<span>${label}</span>${closeTag}`;
+    }
+  );
+}
 
 /* ---------- main ---------- */
 (async function main(){
@@ -453,7 +502,7 @@ function applyBoxTranslations(inner, lang, dict){
     // 1) копируем inner 1:1
     let newHtml = targetHtml.slice(0, targetH.openEnd) + protoH.inner + targetHtml.slice(targetH.closeStart);
 
-    // 2) локализация ссылок по правилам
+    // 2) локализация ссылок по правилам + перевод <span> в .review-button
     newHtml = withHolderInner(newHtml, (inner) => {
       let out = inner;
       // обычные страницы
@@ -463,10 +512,12 @@ function applyBoxTranslations(inner, lang, dict){
       }
       if (lang === "es" || lang === "tr" || lang === "pt" || lang === "hi"){
         out = localizeMoreContent(out, lang);
+        // ✨ перевод надписей в <a class="review-button">...</a>
+        out = translateReviewButtonsSpans(out, lang);
       }
       // главная
       if (isLocalizedHome(rel)){
-        out = localizeMainModeSelection(out, lang);   // только href, кроме .topics; картинки не трогаем
+        out = localizeMainModeSelection(out, lang);   // только href, кроме .topics
         out = localizeBoxesHolderNameNav(out, lang);  // моды + More
         out = localizeModsBox(out, lang);             // кнопки в модульных боксах
       }
@@ -486,7 +537,7 @@ function applyBoxTranslations(inner, lang, dict){
     // 3b) проставляем lang-* на .main-mode
     newHtml = withHolderInner(newHtml, (inner) => fixMainModeLangClasses(inner, lang));
 
-
+    // Итог: пишем только при изменениях
     if (newHtml !== targetHtml){
       if (!dry) await fs.writeFile(targetFull, newHtml, "utf8");
       console.log(`[OK] ${rel}  ←  ${protoRel}`);
