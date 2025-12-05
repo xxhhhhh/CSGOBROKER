@@ -6982,6 +6982,10 @@ footer .centralizer .footer-content {
     top: 0;
 }
 
+.content .review-button::before {
+    content: unset;
+}
+
 .sitepage .content .review-button:first-child,
 .sitepage .content .review-button:first-child::after,
 .sitepage .content .review-button:first-child::before {
