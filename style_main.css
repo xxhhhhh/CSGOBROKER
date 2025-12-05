@@ -4610,20 +4610,13 @@ nav img {
     content: counter(item1, decimal);
 }
 
-.text-col-info-box .text-col-info:nth-child(2) .text-col-info-theme::before {
-    content: '2';
+.text-col-info-box {
+    counter-reset: info;
 }
 
-.text-col-info-box .text-col-info:nth-child(3) .text-col-info-theme::before {
-    content: '3';
-}
-
-.text-col-info-box .text-col-info:nth-child(4) .text-col-info-theme::before {
-    content: '4';
-}
-
-.text-col-info-box .text-col-info:nth-child(5) .text-col-info-theme::before {
-    content: '5';
+.text-col-info-box .text-col-info .text-col-info-theme::before {
+    counter-increment: info;
+    content: counter(info);
 }
 
 .boxreview .nav-review li:hover::before {
@@ -7008,57 +7001,6 @@ footer .centralizer .footer-content {
 .content .review-button.visit::before {
     background-color: var(--main-color);
     background: var(--buttonbg);
-}
-
-.review-button {
-    --read-more-text: 'Read More';
-    --visit-text: 'Visit';
-    --simillar-text: 'Simillar';
-}
-
-.lang-ru .review-button {
-    --read-more-text: 'Подробнее';
-    --visit-text: 'Перейти';
-    --simillar-text: 'Похожие';
-}
-
-.lang-es .review-button {
-    --read-more-text: 'Leer más';
-    --visit-text: 'Visitar';
-    --simillar-text: 'Similares';
-}
-
-.lang-pt .review-button {
-    --read-more-text: 'Ler mais';
-    --visit-text: 'Visitar';
-    --simillar-text: 'Semelhantes';
-}
-
-.lang-tr .review-button {
-    --read-more-text: 'Daha fazla oku';
-    --visit-text: 'Ziyaret Et';
-    --simillar-text: 'Benzer';
-}
-
-.lang-hi .review-button {
-    --read-more-text: 'और पढ़ें';
-    --visit-text: 'दौरा करें';
-    --simillar-text: 'समान';
-}
-
-
-.content .review-button::before {
-    content: var(--read-more-text);
-    background: unset;
-    position: relative;
-    transform: unset;
-    width: auto;
-    height: auto;
-    z-index: 1;
-}
-
-.box.main .content .review-button::before {
-    content: var(--simillar-text);
 }
 
 .content .review-button:first-child:after {
@@ -16350,4 +16292,8 @@ label.skins-category-switch:active {
 
 a[href*="/?aff="][target="_blank"] {
     display: flex !important;
+}
+
+.instruction a[href*="/?aff="][target="_blank"] {
+    display: inline-block !important;
 }
