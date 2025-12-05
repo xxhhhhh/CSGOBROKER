@@ -123,34 +123,40 @@ $(document).ready(function () {
 const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
 function insertRandomRecBox() {
-  if (location.href.endsWith("sticker-crafts") || location.href.endsWith("sticker-crafts.html")) {
-    return;
-  }
+  // Skip specific page
+  if (location.href.endsWith("sticker-crafts") || location.href.endsWith("sticker-crafts.html")) return;
 
-  const lang = typeof languageTag !== 'undefined' ? languageTag : 'en';
+  const lang = typeof languageTag !== "undefined" ? languageTag : "en";
   const recCount = 3;
-  const cacheKey = `rec_boxes`;
+
+  // Use a stable string key for cache
+  const cacheKey = "rec_boxes";
   const cacheDuration = 24 * 60 * 60 * 1000; // 24h
+
   const usedIds = new Set();
 
   const applyRecBoxes = (recData) => {
-    if (!recData.length) return;
+    if (!Array.isArray(recData) || recData.length === 0) return;
 
     const isMobile = window.innerWidth < 1365;
     const topicPage = document.querySelector(".topicpage");
     const insertAfterElement = document.querySelector(".topic-grandbox");
     if (!insertAfterElement && !topicPage) return;
 
+    // Fixed button labels inside <span>
+    const labels = lang === "ru"
+      ? { review: "Подробнее", visit: "Перейти" }
+      : { review: "Read More", visit: "Visit" };
+
     let available = recData.slice();
 
-    // Если мобильное и есть topicpage — создаём wrapper
-    const useWrapper = isMobile && topicPage;
+    const useWrapper = isMobile && !!topicPage;
     const wrapper = useWrapper ? document.createElement("div") : null;
     if (wrapper) wrapper.className = "rec-boxes";
 
     for (let i = 0; i < recCount; i++) {
-      available = available.filter(box => !usedIds.has(box.id));
-      if (!available.length) break;
+      available = available.filter((box) => !usedIds.has(box.id));
+      if (available.length === 0) break;
 
       const randomIndex = Math.floor(Math.random() * available.length);
       const box = available[randomIndex];
@@ -158,53 +164,64 @@ function insertRandomRecBox() {
 
       const recBox = document.createElement("div");
       recBox.className = "rec-box";
-      recBox.setAttribute("data-box-id", box.id);
+      recBox.setAttribute("data-box-id", String(box.id));
 
-      const description = lang === 'ru' && box.description_ru ? box.description_ru : box.description;
-      const alt = lang === 'ru' ? `Логотип ${box.site}` : `${box.site} logo`;
+      const description =
+        lang === "ru" && box.description_ru ? box.description_ru : box.description;
 
-      let reviewHref = box.reviewHref;
-      if (lang === 'ru' && reviewHref.startsWith('/')) {
+      const alt =
+        lang === "ru"
+          ? `Логотип ${box.site}`
+          : `${box.site} logo`;
+
+      let reviewHref = box.reviewHref || "#";
+      // Prefix RU locale for internal links
+      if (lang === "ru" && typeof reviewHref === "string" && reviewHref.startsWith("/")) {
         reviewHref = `/ru${reviewHref}`;
       }
 
+      // Build HTML with spans inside the buttons as requested.
       recBox.innerHTML = `
         <div class="logobg">
           <a href="${reviewHref}">
             <img src="${box.logoSrc}" loading="lazy" draggable="false" alt="${alt}">
           </a>
-          <p>${description}</p>
+          <p>${description ?? ""}</p>
         </div>
         <div class="content">
           <div class="content-buttons">
-            <a href="${reviewHref}" class="review-button"></a>
-            <a href="${box.visitHref}" target="_blank" rel="noopener" class="review-button visit"></a>
+            <a href="${reviewHref}" class="review-button"><span>${labels.review}</span></a>
+            <a href="${box.visitHref}" target="_blank" rel="noopener" class="review-button visit"><span>${labels.visit}</span></a>
           </div>
         </div>
       `;
 
+      // A11y labels remain descriptive (site-specific) — intentionally more verbose.
       const reviewBtn = recBox.querySelector(".review-button:not(.visit)");
       const visitBtn = recBox.querySelector(".review-button.visit");
 
-      const reviewLabel = lang === 'ru' ? `Читать Обзор ${box.site}` : `Read Review ${box.site}`;
-      const visitLabel = lang === 'ru' ? `Перейти на ${box.site}` : `Visit ${box.site}`;
+      const reviewLabel =
+        lang === "ru" ? `Читать обзор ${box.site}` : `Read review ${box.site}`;
+      const visitLabel =
+        lang === "ru" ? `Перейти на ${box.site}` : `Visit ${box.site}`;
 
       if (reviewBtn) reviewBtn.setAttribute("aria-label", reviewLabel);
       if (visitBtn) visitBtn.setAttribute("aria-label", visitLabel);
 
-      if (useWrapper) {
+      if (useWrapper && wrapper) {
         wrapper.appendChild(recBox);
-      } else if (insertAfterElement) {
+      } else if (insertAfterElement && insertAfterElement.parentNode) {
         insertAfterElement.parentNode.insertBefore(recBox, insertAfterElement.nextSibling);
+        // Delay for CSS transition
         setTimeout(() => recBox.classList.add("active"), 20);
       }
     }
 
-    // Вставка wrapper если использовался
-    if (useWrapper && wrapper.children.length > 0) {
+    // Mount wrapper for mobile
+    if (useWrapper && wrapper && wrapper.children.length > 0 && topicPage) {
       topicPage.appendChild(wrapper);
       setTimeout(() => {
-        wrapper.querySelectorAll(".rec-box").forEach(el => el.classList.add("active"));
+        wrapper.querySelectorAll(".rec-box").forEach((el) => el.classList.add("active"));
       }, 20);
     }
   };
@@ -219,10 +236,9 @@ function insertRandomRecBox() {
         StorageHelper.setWithExpiry(cacheKey, json, cacheDuration);
         applyRecBoxes(json);
       })
-      .catch(console.error);
+      .catch(console.error); // keep logging only
   }
 }
-
 
 insertRandomRecBox();
 
