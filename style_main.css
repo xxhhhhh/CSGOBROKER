@@ -4187,7 +4187,13 @@ nav img {
 
 .topic-boxes-holder {
     min-height: 718px;
+    max-height: 718px;
     /* gap: 18px 9px; */
+}
+
+.topic-boxes-holder.sticker-crafts {
+    min-height: 818px;
+    max-height: 818px;
 }
 
 .topic-boxes-holder:has(.pagination-holder) {
@@ -15920,9 +15926,7 @@ header {
     }
 }
 
-
-.topic-boxes-holder .topic-grandbox,
-.topic-boxes-holder:not(.sticker-crafts) .topic-box {
+.topic-boxes-holder:not(.sticker-crafts) .topic-box:not(.visible) {
     opacity: 0;
 }
 

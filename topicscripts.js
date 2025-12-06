@@ -1611,7 +1611,6 @@ if (window.location.pathname.includes('/sticker-crafts/')) {
 
         const extraClass = sticker.extra ? ` ${sticker.extra}` : "";
 
-        // ВНИМАНИЕ: без генерации .skin
         topic.innerHTML = `
             <div class="topic-box">
                 <div class="best ${sticker.range}"></div>
@@ -1635,10 +1634,6 @@ if (window.location.pathname.includes('/sticker-crafts/')) {
       if (languageTag === "ru") {
         updateURLs(stickerCraftsList);
       }
-
-      setTimeout(() => {
-        stickerCraftsList.classList.add('imported');
-      }, 150);
     } catch (error) {}
   }
   importStickerCrafts();
@@ -1726,235 +1721,19 @@ if (window.location.pathname.includes('/topic/skins/')) {
   });
 }
 
-// ---------- Построение списков карточек (items-type / sticker-crafts) ----------
 document.addEventListener("DOMContentLoaded", async function () {
   const res = $(window).width();
   const itemsPerPage = res < 1365 ? 6 : 12;
   const path = window.location.pathname;
 
-  const topicBoxesHolder = document.querySelector(".topic-boxes-holder")
+  const topicBoxesHolder = document.querySelector(".topic-boxes-holder");
   if (!topicBoxesHolder) return;
 
   const isStickerCraftsSkinPage = /\/sticker-crafts\/skin\//.test(path);
   const isStickerCraftsListPage = /\/topic\/sticker-crafts(?:\.html)?$/.test(path);
   const isStickerCraftsPage = isStickerCraftsSkinPage || isStickerCraftsListPage;
 
-  const itemTypeMatch = path.match(/\/topic\/(?:items-type\/)?(cases|charms|collections|sticker-capsules|autograph-capsules)(?:\.html)?$/);
-
-  const isItemsTypePage = !!itemTypeMatch;
-  const itemType = itemTypeMatch ? itemTypeMatch[1] : null;
-
   let pageData = [];
-  let skinBindMap = {};
-
-  // === STICKER CRAFTS ===
-  if (isStickerCraftsPage) {
-    // РАНЬШЕ здесь генерировались .topic-grandbox со .skin из JSON — удалено.
-    // Предполагаем статический HTML.
-    // (оставляем только загрузку биндов, чтобы кнопки "More crafts" работали корректно)
-    try {
-      const bindsResponse = await fetch("/code-parts/topics/sticker-crafts-binds.json");
-      const bindsData = await bindsResponse.json();
-      skinBindMap = bindsData || {};
-    } catch (error) {}
-  }
-  // === ITEMS-TYPE ===
-  else if (isItemsTypePage && itemType) {
-    try {
-      const response = await fetch(`/code-parts/topics/${itemType}.json`);
-      const rawData = await response.json();
-
-      const customPath = rawData.customPath || itemType;
-      pageData = rawData.items || rawData;
-
-      const hasDates = pageData.some(item => item.date);
-      if (hasDates) {
-        pageData.sort((a, b) => {
-          const parseDate = (str) => {
-            const [d, m, y] = str.split(".");
-            return new Date(`20${y}`, m - 1, d);
-          };
-          const dateA = a.date ? parseDate(a.date) : new Date(0);
-          const dateB = b.date ? parseDate(b.date) : new Date(0);
-          return dateB - dateA;
-        });
-      }
-
-      pageData.forEach(item => {
-        const el = document.createElement("a");
-        el.classList.add("topic-box", "items");
-        el.href = `/topic/${customPath}/${item.id}`;
-        el.innerHTML = `
-          <div class="logobg">
-            <img src="${item.img}" draggable="false" alt="${item.title}">
-          </div>
-          <div class="content">
-            <span>${item.title}</span>
-          </div>
-        `;
-        topicBoxesHolder.appendChild(el);
-      });
-
-    } catch (e) {
-      console.error("Items-type JSON load error:", e);
-      return;
-    }
-  }
-
-  (function () {
-    const topicBoxesHolder = document.querySelector(".topic-boxes-holder.items-type, .topic-boxes-holder.sticker-crafts") ||
-      (["skins", "items", "sticker-crafts"].includes(location.pathname.split("/").pop().replace(".html", "")) &&
-        document.querySelector(".topic-boxes-holder"));
-
-    if (!topicBoxesHolder) return;
-
-    const isStickerCrafts = location.pathname.includes("sticker-crafts");
-    const cacheKey = "topics_nav_cache";
-    const cacheTTL = 24 * 60 * 60 * 1000;
-    const now = Date.now();
-
-    const topicFilterContainer = document.createElement("div");
-    topicFilterContainer.className = "topic-filter";
-
-    const filterInput = document.createElement("input");
-    filterInput.className = "singlemod-box topic-filter-tab";
-    filterInput.type = "text";
-    filterInput.placeholder = "";
-    filterInput.setAttribute("aria-label", "Filter Topic");
-    filterInput.setAttribute("autocomplete", "off");
-    topicFilterContainer.appendChild(filterInput);
-
-    function renderNavButtons(navButtons) {
-      topicFilterContainer.innerHTML = '';
-      topicFilterContainer.appendChild(filterInput);
-
-      const currentHref = location.pathname.replace(/\.html$/, "");
-      const bestMatch = navButtons.reduce((acc, btn) => {
-        return currentHref.includes(btn.href) && btn.href.length > acc.length ? btn.href : acc;
-      }, "");
-
-      navButtons.forEach(btn => {
-        const box = document.createElement("div");
-        box.className = "singlemod-box";
-
-        const title = languageTag === "ru" ? btn["data-title-ru"] || btn.alt : btn.alt;
-        box.setAttribute("data-title", title || "");
-
-        const link = document.createElement("a");
-        link.href = btn.href;
-        link.className = "singlemod-select";
-
-        const img = document.createElement("img");
-        img.src = btn.img;
-        img.alt = btn.alt || "";
-
-        link.appendChild(img);
-        box.appendChild(link);
-
-        if (currentHref.includes(btn.href) && btn.href === bestMatch) {
-          box.classList.add("active");
-        }
-
-        topicFilterContainer.appendChild(box);
-      });
-
-      topicBoxesHolder.insertBefore(topicFilterContainer, topicBoxesHolder.firstChild);
-
-      if (languageTag === "ru") {
-        updateURLs(topicFilterContainer);
-      }
-    }
-
-    async function fetchNavButtons() {
-      const res = await fetch("/code-parts/topics/topics-nav.json");
-      return res.json();
-    }
-
-    async function getCachedNavButtons() {
-      const cached = StorageHelper.getJSON(cacheKey);
-
-      if (cached?.data) {
-        renderNavButtons(cached.data);
-      }
-
-      try {
-        const freshData = await fetchNavButtons();
-        const isEqual = JSON.stringify(freshData) === JSON.stringify(cached?.data);
-
-        if (!cached || now - cached.timestamp > cacheTTL || !isEqual) {
-          StorageHelper.setJSON(cacheKey, { timestamp: now, data: freshData });
-          renderNavButtons(freshData);
-          return;
-        }
-      } catch (err) {
-        console.error("Ошибка загрузки topics-nav.json:", err);
-      }
-    }
-
-    getCachedNavButtons();
-
-    filterInput.addEventListener("input", () => {
-      const value = filterInput.value.trim().toLowerCase();
-      const itemSelector = isStickerCrafts ? ".topic-grandbox.sticker" : ".topic-box";
-      const allBoxes = Array.from(topicBoxesHolder.querySelectorAll(itemSelector));
-      const paginationHolder = document.querySelector(".pagination-holder");
-
-      if (value !== "") {
-        topicBoxesHolder.classList.remove("pagination");
-        paginationHolder?.remove();
-
-        const fuseData = allBoxes.map((box, idx) => {
-          if (isStickerCrafts) {
-            const spans = Array.from(box.querySelectorAll(".section.first span"));
-            const spanTexts = spans.map(s => s.textContent.trim()).filter(Boolean);
-
-            const skinElements = Array.from(box.querySelectorAll(".section.third .skin"));
-            const skinIds = skinElements.map(el => el.getAttribute("skin-id") || "").filter(Boolean);
-
-            return { idx, spanTexts, skinIds };
-          } else {
-            const text = box.querySelector("span")?.textContent.trim() || "";
-            return { idx, text };
-          }
-        });
-
-        const fuse = new Fuse(fuseData, {
-          keys: isStickerCrafts ? ["spanTexts", "skinIds"] : ["text"],
-          threshold: 0.4,
-          minMatchCharLength: 1,
-        });
-
-        const results = fuse.search(value);
-        const matchedIdx = new Set(results.map(r => r.item.idx));
-
-        allBoxes.forEach((box, idx) => {
-          const isMatch = matchedIdx.has(idx);
-          box.classList.remove("hidden", "fade-in", "visible");
-          box.style.animationDelay = "0s";
-          box.style.display = isMatch ? "" : "none";
-          box.classList.toggle("visible_sort", isMatch);
-        });
-      } else {
-        allBoxes.forEach((box) => {
-          box.style.display = "";
-          box.classList.add("hidden");
-          box.classList.remove("fade-in", "visible", "visible_sort");
-        });
-
-        topicBoxesHolder.classList.add("pagination");
-
-        if (!document.querySelector(".pagination-holder")) {
-          const newPagination = document.createElement("div");
-          newPagination.className = "pagination-holder";
-          topicBoxesHolder.appendChild(newPagination);
-        }
-
-        if (typeof setupPagination === "function") {
-          setupPagination();
-        }
-      }
-    });
-  })();
 
   if (pageData.length > itemsPerPage) {
     topicBoxesHolder.classList.add("pagination");
@@ -1984,10 +1763,14 @@ document.addEventListener("DOMContentLoaded", async function () {
           box.style.animationDelay = `${delay}s`;
           box.classList.remove("hidden");
           box.classList.add("fade-in");
-          box.addEventListener("animationend", () => {
-            box.classList.remove("fade-in");
-            box.classList.add("visible");
-          }, { once: true });
+          box.addEventListener(
+            "animationend",
+            () => {
+              box.classList.remove("fade-in");
+              box.classList.add("visible");
+            },
+            { once: true }
+          );
         } else {
           box.classList.add("hidden");
           box.classList.remove("fade-in", "visible");
@@ -2047,7 +1830,105 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // РАНЬШЕ здесь подгружались обложки .skin для sticker-crafts — удалено.
   }
+
+  // ================================
+  // topic-filter: ввод и фильтрация
+  // ================================
+  (function () {
+    const scopedHolder =
+      document.querySelector(".topic-boxes-holder.items-type, .topic-boxes-holder.sticker-crafts") ||
+      (["skins", "items", "sticker-crafts"].includes(location.pathname.split("/").pop().replace(".html", "")) &&
+        document.querySelector(".topic-boxes-holder"));
+
+    if (!scopedHolder) return;
+
+    const isStickerCrafts = location.pathname.includes("sticker-crafts");
+    const filterInput = scopedHolder.querySelector(".topic-filter .topic-filter-tab");
+    if (!filterInput) return; // topic-filter уже в статике
+
+    filterInput.addEventListener("input", () => {
+      const value = filterInput.value.trim().toLowerCase();
+      const itemSelector = isStickerCrafts ? ".topic-grandbox.sticker" : ".topic-box";
+      const allBoxes = Array.from(scopedHolder.querySelectorAll(itemSelector));
+      const paginationHolder = document.querySelector(".pagination-holder");
+
+      if (value !== "") {
+        // режим поиска: убираем пагинацию, но ограничиваем число результатов itemsPerPage
+        scopedHolder.classList.remove("pagination");
+        paginationHolder?.remove();
+
+        const fuseData = allBoxes.map((box, idx) => {
+          if (isStickerCrafts) {
+            const spans = Array.from(box.querySelectorAll(".section.first span"));
+            const spanTexts = spans.map(s => s.textContent.trim()).filter(Boolean);
+            const skinElements = Array.from(box.querySelectorAll(".section.third .skin"));
+            const skinIds = skinElements.map(el => el.getAttribute("skin-id") || "").filter(Boolean);
+            return { idx, spanTexts, skinIds };
+          } else {
+            const text = box.querySelector("span")?.textContent.trim() || "";
+            return { idx, text };
+          }
+        });
+
+        // Поиск (Fuse если есть, иначе простой includes)
+        let matchedIdx = new Set();
+        if (typeof Fuse !== "undefined") {
+          const fuse = new Fuse(fuseData, {
+            keys: isStickerCrafts ? ["spanTexts", "skinIds"] : ["text"],
+            threshold: 0.4,
+            minMatchCharLength: 1,
+          });
+          const results = fuse.search(value);
+          matchedIdx = new Set(results.map(r => r.item.idx));
+        } else {
+          fuseData.forEach((item) => {
+            const hay = isStickerCrafts
+              ? (item.spanTexts.join(" ") + " " + item.skinIds.join(" "))
+              : item.text;
+            if ((hay || "").toLowerCase().includes(value)) matchedIdx.add(item.idx);
+          });
+        }
+
+        // Показать только первые itemsPerPage совпадений
+        let shown = 0;
+        allBoxes.forEach((box, idx) => {
+          const isMatch = matchedIdx.has(idx);
+          // сброс анима/классов
+          box.classList.remove("hidden", "fade-in", "visible");
+          box.style.animationDelay = "0s";
+          box.classList.toggle("visible_sort", isMatch);
+
+          if (isMatch && shown < itemsPerPage) {
+            box.style.display = "";
+            shown++;
+          } else {
+            box.style.display = "none";
+          }
+        });
+      } else {
+        // режим без поиска: возвращаем дефолт и пагинацию
+        allBoxes.forEach((box) => {
+          box.style.display = "";
+          box.classList.add("hidden");
+          box.classList.remove("fade-in", "visible", "visible_sort");
+        });
+
+        scopedHolder.classList.add("pagination");
+
+        if (!document.querySelector(".pagination-holder")) {
+          const newPagination = document.createElement("div");
+          newPagination.className = "pagination-holder";
+          scopedHolder.appendChild(newPagination);
+        }
+
+        if (typeof setupPagination === "function") {
+          setupPagination();
+        }
+      }
+    });
+  })();
 });
+
 
 // Последние правки ссылок под RU
 const topicBoxesHolder = document.querySelector(".topic-boxes-holder");

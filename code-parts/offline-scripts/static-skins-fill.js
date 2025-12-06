@@ -10,7 +10,11 @@
 //   2) Замена плейсхолдеров <div class="skin" weapon="" skin-id=""></div>
 //   3) Оффлайн loadout для /topic/skins/(cheapest|best)-{color}-skins
 //      (секции top/left/right/bottom + полноценные .skin)
+//   4) Оффлайн-вставка/ремонт <div class="topic-filter"> в .topic-boxes-holder
+//      (чтение /code-parts/topics/topics-nav.json, корректные отступы,
+//       удаление дублей/битых вариантов, локализация ссылок для /ru)
 // ============================================================================
+
 const fs = require("fs/promises");
 const path = require("path");
 
@@ -117,7 +121,6 @@ function joinBlocksNoBlank(before, block, after, nl){
 }
 function escapeHtml(s=""){ return s.replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
 function escapeAttr(s=""){ return escapeHtml(s).replace(/'/g,"&#39;"); }
-
 // --- FIX: entities decode (skin-id="Chantico&#39;s Fire" → "Chantico's Fire") ---
 function decodeHtmlEntities(s=""){
   return String(s)
@@ -141,6 +144,7 @@ const SETTINGS_FILE   = "/code-parts/topics/skins-settings.json";
 const WEAPON_JSON_DIR = "/code-parts/topics/skins-list";
 const PRESETS_DIR     = "/code-parts/topics/skins-list/presets";
 const LOADOUT_DIR     = "/code-parts/topics/topic-color-lists/loadout";
+const TOPIC_NAV_FILE  = "/code-parts/topics/topics-nav.json";
 
 const weaponCache = new Map();
 async function loadWeaponJson(root, weapon){
@@ -189,16 +193,15 @@ function computePriceHtml(name, pricesArr){
   return { html, has: Boolean(normalTxt || souvTxt) };
 }
 
-// ---------------- RENDER (совместимо с renderSkinHTML) ----------------
+// ---------------- RENDER .skin ----------------
 function renderSkinBlock({tag="div", indent, nl, weapon, skinId, skinData, priceHtml, putLoadingClass}){
   const classes = ["skin"];
-  if (skinData.class) classes.push(String(skinData.class)); // why: цвет редкости
+  if (skinData.class) classes.push(String(skinData.class));
   const classAttr = classes.join(" ");
   const innerIndent = indent + "  ";
   const priceCls = putLoadingClass ? "skin-price-info loading" : "skin-price-info";
   const img = skinData.image || "";
   const name = skinData.name || (skinId === "Vanilla" ? "Vanilla" : "");
-  // FIX: НЕ экранируем апостроф ни в skin-id/weapon, ни в alt
   return [
     `${indent}<${tag} class="${classAttr}" skin-id="${escapeAttrDblNoApos(skinId)}" weapon="${escapeAttrDblNoApos(weapon)}">`,
     `${innerIndent}<img src="${escapeAttr(img)}" draggable="false" alt="${escapeAttrDblNoApos(name)}">`,
@@ -277,7 +280,6 @@ async function processSkinPlaceholders({root, html, pricesArr, verbose, file}){
     const openAbs = s.openStart + shift, closeAbs = s.closeEnd + shift;
     const open = readTag(out, openAbs);
     const attrs = open.attrs;
-    // декодируем сущности → корректно читаем апострофы
     const weaponRaw = (attrs.match(/\bweapon\s*=\s*(["'])(.*?)\1/i)?.[2] || "").trim();
     const skinIdRaw = (attrs.match(/\bskin-id\s*=\s*(["'])(.*?)\1/i)?.[2] || "").trim();
     const weapon = decodeHtmlEntities(weaponRaw);
@@ -288,7 +290,6 @@ async function processSkinPlaceholders({root, html, pricesArr, verbose, file}){
     const weaponMap = await loadWeaponJson(root, weapon);
     const skinData = weaponMap?.[skinId] || {};
     const { html: priceHtml, has } = computePriceHtml(String(skinData.name||""), pricesArr);
-    // пересобираем блок целиком (ремонт структуры + правильный класс/название/картинка)
     const newBlock = renderSkinBlock({ tag, indent, nl, weapon, skinId, skinData, priceHtml, putLoadingClass: !has && !pricesArr });
     const next = joinBlocksNoBlank(out.slice(0,openAbs), newBlock, out.slice(closeAbs), nl);
     if (collapseWS(next) !== collapseWS(out)){ anyChange=true; shift += next.length - out.length; out = next; if (verbose) console.log(`[OK] ${path.relative(root,file)} :: <${tag}.skin> ${weapon}/${skinId}`); }
@@ -296,16 +297,124 @@ async function processSkinPlaceholders({root, html, pricesArr, verbose, file}){
   return { html: out, changed:anyChange };
 }
 
+// ---------------- TOPIC-FILTER (topic-boxes-holder) ----------------
+async function loadTopicNav(root){
+  const data = await safeJson(abs(root, TOPIC_NAV_FILE));
+  return Array.isArray(data) ? data : [];
+}
+function localizeHrefForRu(href, isRu){
+  if (!href) return "#";
+  if (isRu && /^\/(?!ru\/)/.test(href)) return "/ru" + href;
+  return href;
+}
+function pickActiveIndex(nav, urlPath, isRu){
+  // Сравниваем по длине совпадения href внутри urlPath
+  let bestIdx = -1, bestLen = -1;
+  nav.forEach((btn, i)=>{
+    const h = localizeHrefForRu(String(btn.href||""), isRu);
+    if (!h) return;
+    if (urlPath.includes(h) && h.length > bestLen){
+      bestLen = h.length; bestIdx = i;
+    }
+  });
+  return bestIdx;
+}
+function renderTopicFilterHtml({nav, indent, nl, urlPath, isRu}){
+  const lines = [];
+  lines.push(`${indent}<div class="topic-filter">`);
+  lines.push(`${indent}  <input class="singlemod-box topic-filter-tab" type="text" placeholder="" aria-label="Filter Topic" autocomplete="off">`);
+  const activeIdx = pickActiveIndex(nav, urlPath, isRu);
+  nav.forEach((btn, i)=>{
+    const boxTitle = isRu && btn["data-title-ru"] ? btn["data-title-ru"] : (btn.alt || "");
+    const href = localizeHrefForRu(String(btn.href||"#"), isRu);
+    const img  = String(btn.img||"");
+    const alt  = String(btn.alt||"");
+    lines.push(`${indent}  <div class="singlemod-box${i===activeIdx ? " active" : ""}" data-title="${escapeAttrDblNoApos(boxTitle)}">`);
+    lines.push(`${indent}    <a href="${escapeAttrDblNoApos(href)}" class="singlemod-select">`);
+    lines.push(`${indent}      <img src="${escapeAttrDblNoApos(img)}" alt="${escapeAttrDblNoApos(alt)}">`);
+    lines.push(`${indent}    </a>`);
+    lines.push(`${indent}  </div>`);
+  });
+  lines.push(`${indent}</div>`);
+  return lines.join(nl);
+}
+async function processTopicFilters({root, file, verbose}){
+  let html = await fs.readFile(file,"utf8");
+  const nl = html.includes("\r\n") ? "\r\n" : "\n";
+  const urlPath = fileToUrlPath(root, file);
+  const masked = maskSegments(html);
+
+  // Ищем все .topic-boxes-holder
+  const holders = findAllTagsByClass(masked, "topic-boxes-holder", ["div","section"]);
+  if (!holders.length) return { html, changed:false };
+
+  const nav = await loadTopicNav(root);
+  if (!nav.length) return { html, changed:false };
+
+  let out = html, shift = 0, changed = false;
+
+  for (const h of holders){
+    const openAbs   = h.openStart + shift;
+    const openEnd   = h.openEnd   + shift;
+    const closeAbs  = h.closeStart+ shift;
+
+    // определяем язык по пути или классу lang-ru
+    const openTag = readTag(out, openAbs);
+    const classes = parseClassAttr(openTag.attrs);
+    const isRu = urlPath.startsWith("/ru/") || classes.has("lang-ru");
+
+    const baseIndent = indentBefore(out, openEnd, nl);
+    const innerIndent = baseIndent + "  ";
+
+    // Найти и вырезать все существующие topic-filter внутри holder
+    const maskedAll = maskSegments(out);
+    const filters = findAllTagsByClass(maskedAll, "topic-filter", ["div"], openEnd, closeAbs);
+    let innerBefore = out.slice(openEnd, closeAbs);
+
+    if (filters.length){
+      // соберём "остаток" без всех topic-filter
+      let parts = [];
+      let cursor = openEnd;
+      for (const f of filters){
+        const fOpen = f.openStart, fClose = f.closeEnd;
+        parts.push(out.slice(cursor, fOpen));
+        cursor = fClose;
+      }
+      parts.push(out.slice(cursor, closeAbs));
+      innerBefore = parts.join("");
+    }
+
+    // убираем ведущие пустые строки/пробелы в начале контента
+    const rest = innerBefore.replace(/^[ \t]*\r?\n+/,"");
+
+    const filterHtml = renderTopicFilterHtml({
+      nav, indent: innerIndent, nl, urlPath, isRu
+    });
+
+    const newInner = filterHtml + (rest.startsWith(nl) ? rest : (rest ? nl + rest : ""));
+
+    const next = out.slice(0, openEnd) + nl + newInner + out.slice(closeAbs);
+    if (collapseWS(next) !== collapseWS(out)){
+      if (verbose) console.log(`[OK] ${path.relative(root,file)} :: topic-filter fixed/inserted`);
+      changed = true;
+      // поправим смещение для последующих проходов
+      shift += next.length - out.length;
+      out = next;
+    }
+  }
+
+  return { html: out, changed };
+}
+
 // ---------------- LOADOUT PAGES ----------------
 function detectLoadoutContext(urlPath){
   const m = urlPath.match(/\/(?:ru\/)?topic\/skins\/(cheapest|best)-([a-z]+)-skins(?:\/|$)/i);
   if (!m) return null;
-  const mode = m[1].toLowerCase(); // 'cheapest'|'best'
+  const mode = m[1].toLowerCase();
   const color = m[2].toLowerCase();
   return { mode, color };
 }
 function pickLoadoutPairsFromValue(value, mode){
-  // JS-поведение: {best:[weapon,skin], cheapest:[weapon,skin]} или "skin" | [best, cheapest]
   if (value && typeof value === "object" && ("best" in value || "cheapest" in value)){
     const pair = mode === "best" ? value.best : value.cheapest;
     const weapon = Array.isArray(pair) ? pair[0] : "";
@@ -325,7 +434,7 @@ async function buildLoadoutHtml(root, ctx, pricesArr, nl, baseIndent){
   const pairs = [];
   for (const [key,value] of Object.entries(data)){
     const picked = pickLoadoutPairsFromValue(value, ctx.mode);
-    const weapon = picked.weapon || key; // если оружие не задано в паре — ключ есть weapon
+    const weapon = picked.weapon || key;
     pairs.push({ weapon, skinId: picked.skinId });
   }
   const top7   = pairs.slice(0, 7);
@@ -370,7 +479,6 @@ async function processLoadoutPages({root, file, pricesArr, verbose}){
   for (const sp of sitepages){
     const open = readTag(html, sp.openStart);
     if (parseClassAttr(open.attrs).has("loadout")){
-      // ищем .character-box внутри
       const regionMasked = maskSegments(html.slice(sp.openEnd, sp.closeStart));
       const charBoxes = findAllTagsByClass(regionMasked, "character-box", ["div","section"]);
       if (charBoxes.length){
@@ -426,6 +534,10 @@ async function processLoadoutPages({root, file, pricesArr, verbose}){
       // 3) одиночные плейсхолдеры .skin (+ ремонт уже записанных блоков)
       const resSkins = await processSkinPlaceholders({root, html, pricesArr, verbose, file});
       html = resSkins.html; changed = changed || resSkins.changed;
+
+      // 4) topic-filter вставка/ремонт + нормализация отступа
+      const resFilter = await processTopicFilters({root, file, verbose});
+      html = resFilter.html; changed = changed || resFilter.changed;
 
       if (changed){
         if (!dry) await fs.writeFile(file, html, "utf8");
