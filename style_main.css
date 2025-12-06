@@ -2235,7 +2235,7 @@ nav .pages {
     user-select: none;
 }
 
-.box-skins .skin img,
+/* .box-skins .skin img,
 .sitepage.items .skin img {
     opacity: 0;
 }
@@ -2246,7 +2246,7 @@ nav .pages {
     opacity: 1;
     transform: scale(1);
     transition: all .15s ease-in-out;
-}
+} */
 
 .box-skins.selected .skin:first-child {
     margin-left: 5px;
