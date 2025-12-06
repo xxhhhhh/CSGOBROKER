@@ -2498,13 +2498,6 @@ nav .pages {
     width: 2px;
 }
 
-.fade-in-topic .sitetoppannel,
-.items.fade-in-topic .topic-grandbox,
-.items.fade-in-topic .topicpage {
-    transition: all .15s ease-in-out;
-    opacity: 1 !important;
-}
-
 .box-skins-list.visible {
     opacity: 1;
 }
@@ -2897,7 +2890,6 @@ h3 {
     justify-content: center;
     background: var(--darkgray);
     padding: 6px 2px 6px 2px;
-    opacity: 0;
 }
 
 .weapon-selection {

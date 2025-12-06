@@ -1,561 +1,503 @@
 $(document).ready(function () {
-    const currentPath = window.location.pathname;
-    if (
-      currentPath.includes("/topic/items/") ||
-      currentPath.includes("/topic/stickers/") ||
-      currentPath.includes("/topic/cases/") ||
-      currentPath.includes("/topic/charms/") ||
-      currentPath.includes("/topic/collections/") ||
-      currentPath.includes("/topic/skins/") ||
-      currentPath.includes("/topic/guides/") ||
-      currentPath.includes("/topic/sticker-crafts/") &&
-      !currentPath.includes("/topic/sticker-crafts/skin/") ||
-      currentPath.endsWith("sticker-crafts.html") ||
-      currentPath.endsWith("sticker-crafts")
-    ) {
-      let enabledFiltersState = {};
+  const currentPath = window.location.pathname;
+  if (
+    currentPath.includes("/topic/items/") ||
+    currentPath.includes("/topic/stickers/") ||
+    currentPath.includes("/topic/cases/") ||
+    currentPath.includes("/topic/charms/") ||
+    currentPath.includes("/topic/collections/") ||
+    currentPath.includes("/topic/skins/") ||
+    currentPath.includes("/topic/guides/") ||
+    currentPath.includes("/topic/sticker-crafts/") &&
+    !currentPath.includes("/topic/sticker-crafts/skin/") ||
+    currentPath.endsWith("sticker-crafts.html") ||
+    currentPath.endsWith("sticker-crafts")
+  ) {
+    let enabledFiltersState = {};
 
-      const previewWindowHTML = `
-        <div id="preview-window" class="hidden">
-            <div id="preview-showcase">
-                <div class="preview-buttons">
-                    <div class="preview-close-button"><i class="officon cross"></i></div>
-                    <div class="preview-pause-button"><i class="officon pause"></i></div>
-                </div>
-                <div class="preview-nav-button left"><i class="officon chevron left"></i></div>
-                <div class="preview-nav-button right"><i class="officon chevron right"></i></div>
-                <div id="preview-content"></div>
-                <div class="site-searcher-buttons">
-                    ${[
-                      "Lis-Skins",
-                      "AvanMarket",
-                      "MoonMarket",
-                      "CSMoney",
-                      "Tradeit",
-                      "BitSkins",
-                      "Steam",
-                    ]
-                      .map(
-                        (site) => `
-                    <div class="site-searcher-box" id="${site}" data-title="${
-                          languageTag === "ru" ? "Искать в" : "Search on"
-                        } ${site}">
-                        <div class="site-searcher-logo">
-                            <img src="/img/${site
-                              .toLowerCase()
-                              .replace(
-                                ".",
-                                "-"
-                              )}-logo.webp" draggable="false" alt="${site} logo">
-                        </div>
-                    </div>`
-                      )
-                      .join("")}
-                </div>
-            </div>
-        </div>`;
-      $(".sitepage").prepend(previewWindowHTML);
+    // ---------- PREVIEW WINDOW (оставляем как есть) ----------
+    const previewWindowHTML = `
+      <div id="preview-window" class="hidden">
+          <div id="preview-showcase">
+              <div class="preview-buttons">
+                  <div class="preview-close-button"><i class="officon cross"></i></div>
+                  <div class="preview-pause-button"><i class="officon pause"></i></div>
+              </div>
+              <div class="preview-nav-button left"><i class="officon chevron left"></i></div>
+              <div class="preview-nav-button right"><i class="officon chevron right"></i></div>
+              <div id="preview-content"></div>
+              <div class="site-searcher-buttons">
+                  ${[
+                    "Lis-Skins",
+                    "AvanMarket",
+                    "MoonMarket",
+                    "CSMoney",
+                    "Tradeit",
+                    "BitSkins",
+                    "Steam",
+                  ]
+                    .map(
+                      (site) => `
+                  <div class="site-searcher-box" id="${site}" data-title="${
+                        languageTag === "ru" ? "Искать в" : "Search on"
+                      } ${site}">
+                      <div class="site-searcher-logo">
+                          <img src="/img/${site
+                            .toLowerCase()
+                            .replace(
+                              ".",
+                              "-"
+                            )}-logo.webp" draggable="false" alt="${site} logo">
+                      </div>
+                  </div>`
+                    )
+                    .join("")}
+              </div>
+          </div>
+      </div>`;
+    $(".sitepage").prepend(previewWindowHTML);
 
-      const previewContent = $("#preview-content");
+    const previewContent = $("#preview-content");
 
-      $(document).on("click", ".preview-pause-button", function () {
-        previewContent.toggleClass("paused");
-        const icon = $(this).find("i");
-        icon.toggleClass("pause play");
-      });
+    $(document).on("click", ".preview-pause-button", function () {
+      previewContent.toggleClass("paused");
+      const icon = $(this).find("i");
+      icon.toggleClass("pause play");
+    });
 
-      async function addMoreCraftsLink() {
-            
-        if (currentPath.includes("/topic/sticker-crafts/") && !currentPath.includes("/topic/sticker-crafts/skin/")) {
-            try {
-                const [craftsResponse, bindsResponse] = await Promise.all([
-                    fetch("/code-parts/topics/sticker-crafts.json"),
-                    fetch("/code-parts/topics/sticker-crafts-binds.json")
-                ]);
-    
-                const craftsData = await craftsResponse.json();
-                const bindsData = await bindsResponse.json();
-    
-                if (!Array.isArray(craftsData) || typeof bindsData !== "object") return;
-    
-                let currentId = currentPath.split("/").pop().replace(/\.html$/, "");
-                const currentCraft = craftsData.find(item => item.id === currentId);
-                if (!currentCraft) return;
-    
-                const skinName = bindsData[currentId] || currentCraft.skin;
-                if (!skinName) return;
+    // ---------- "More crafts" ссылка (оставляем, но без генерации .skin) ----------
+    async function addMoreCraftsLink() {
+      if (currentPath.includes("/topic/sticker-crafts/") && !currentPath.includes("/topic/sticker-crafts/skin/")) {
+        try {
+          const [craftsResponse, bindsResponse] = await Promise.all([
+            fetch("/code-parts/topics/sticker-crafts.json"),
+            fetch("/code-parts/topics/sticker-crafts-binds.json")
+          ]);
 
-                let correctId = null;
-                for (const [key, value] of Object.entries(bindsData)) {
-                    if (value === skinName) {
-                        correctId = key;
-                        break;
-                    }
-                }
-        
-                if (!correctId) return; 
-    
-                const relatedCrafts = craftsData.filter(item => item.skin === skinName);
-                if (new Set(relatedCrafts.map(item => item.id)).size < 2) return;
+          const craftsData = await craftsResponse.json();
+          const bindsData = await bindsResponse.json();
 
-                const moreCraftsHref = `${languageTag === "ru" ? "/ru" : ""}/topic/sticker-crafts/skin/${correctId}`;
-    
-                const boxExtraLinks = document.createElement("div");
-                boxExtraLinks.classList.add("box-extra-links");
-    
-                const moreCraftsLink = document.createElement("a");
-                moreCraftsLink.classList.add("more-crafts", "extra-abox");
-                moreCraftsLink.href = moreCraftsHref;
-                moreCraftsLink.innerHTML = `<span>${languageTag === "ru" ? `Больше Крафтов с ${skinName}` : `More Sticker Crafts for ${skinName}`}</span>`;
-    
-                boxExtraLinks.appendChild(moreCraftsLink);
-    
-                const topicGrandbox = document.querySelector(".topic-grandbox");
-                if (topicGrandbox) {
-                    topicGrandbox.insertAdjacentElement("afterend", boxExtraLinks);
-                }
-            } catch {}
-        }
+          if (!Array.isArray(craftsData) || typeof bindsData !== "object") return;
+
+          let currentId = currentPath.split("/").pop().replace(/\.html$/, "");
+          const currentCraft = craftsData.find(item => item.id === currentId);
+          if (!currentCraft) return;
+
+          const skinName = bindsData[currentId] || currentCraft.skin;
+          if (!skinName) return;
+
+          let correctId = null;
+          for (const [key, value] of Object.entries(bindsData)) {
+            if (value === skinName) {
+              correctId = key;
+              break;
+            }
+          }
+
+          if (!correctId) return;
+
+          const relatedCrafts = craftsData.filter(item => item.skin === skinName);
+          if (new Set(relatedCrafts.map(item => item.id)).size < 2) return;
+
+          const moreCraftsHref = `${languageTag === "ru" ? "/ru" : ""}/topic/sticker-crafts/skin/${correctId}`;
+
+          const boxExtraLinks = document.createElement("div");
+          boxExtraLinks.classList.add("box-extra-links");
+
+          const moreCraftsLink = document.createElement("a");
+          moreCraftsLink.classList.add("more-crafts", "extra-abox");
+          moreCraftsLink.href = moreCraftsHref;
+          moreCraftsLink.innerHTML = `<span>${languageTag === "ru" ? `Больше Крафтов с ${skinName}` : `More Sticker Crafts for ${skinName}`}</span>`;
+
+          boxExtraLinks.appendChild(moreCraftsLink);
+
+          const topicGrandbox = document.querySelector(".topic-grandbox");
+          if (topicGrandbox) {
+            topicGrandbox.insertAdjacentElement("afterend", boxExtraLinks);
+          }
+        } catch {}
+      }
     }
-    
     addMoreCraftsLink();
 
-const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
+    // ---------- Рекомендации (оставляем) ----------
+    const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
+    function insertRandomRecBox() {
+      if (location.href.endsWith("sticker-crafts") || location.href.endsWith("sticker-crafts.html")) return;
 
-function insertRandomRecBox() {
-  // Skip specific page
-  if (location.href.endsWith("sticker-crafts") || location.href.endsWith("sticker-crafts.html")) return;
+      const lang = typeof languageTag !== "undefined" ? languageTag : "en";
+      const recCount = 3;
+      const cacheKey = "rec_boxes";
+      const cacheDuration = 24 * 60 * 60 * 1000;
 
-  const lang = typeof languageTag !== "undefined" ? languageTag : "en";
-  const recCount = 3;
+      const usedIds = new Set();
 
-  // Use a stable string key for cache
-  const cacheKey = "rec_boxes";
-  const cacheDuration = 24 * 60 * 60 * 1000; // 24h
+      const applyRecBoxes = (recData) => {
+        if (!Array.isArray(recData) || recData.length === 0) return;
 
-  const usedIds = new Set();
+        const isMobile = window.innerWidth < 1365;
+        const topicPage = document.querySelector(".topicpage");
+        const insertAfterElement = document.querySelector(".topic-grandbox");
+        if (!insertAfterElement && !topicPage) return;
 
-  const applyRecBoxes = (recData) => {
-    if (!Array.isArray(recData) || recData.length === 0) return;
+        const labels = lang === "ru"
+          ? { review: "Подробнее", visit: "Перейти" }
+          : { review: "Read More", visit: "Visit" };
 
-    const isMobile = window.innerWidth < 1365;
-    const topicPage = document.querySelector(".topicpage");
-    const insertAfterElement = document.querySelector(".topic-grandbox");
-    if (!insertAfterElement && !topicPage) return;
+        let available = recData.slice();
 
-    // Fixed button labels inside <span>
-    const labels = lang === "ru"
-      ? { review: "Подробнее", visit: "Перейти" }
-      : { review: "Read More", visit: "Visit" };
+        const useWrapper = isMobile && !!topicPage;
+        const wrapper = useWrapper ? document.createElement("div") : null;
+        if (wrapper) wrapper.className = "rec-boxes";
 
-    let available = recData.slice();
+        for (let i = 0; i < recCount; i++) {
+          available = available.filter((box) => !usedIds.has(box.id));
+          if (available.length === 0) break;
 
-    const useWrapper = isMobile && !!topicPage;
-    const wrapper = useWrapper ? document.createElement("div") : null;
-    if (wrapper) wrapper.className = "rec-boxes";
+          const randomIndex = Math.floor(Math.random() * available.length);
+          const box = available[randomIndex];
+          usedIds.add(box.id);
 
-    for (let i = 0; i < recCount; i++) {
-      available = available.filter((box) => !usedIds.has(box.id));
-      if (available.length === 0) break;
+          const recBox = document.createElement("div");
+          recBox.className = "rec-box";
+          recBox.setAttribute("data-box-id", String(box.id));
 
-      const randomIndex = Math.floor(Math.random() * available.length);
-      const box = available[randomIndex];
-      usedIds.add(box.id);
+          const description =
+            lang === "ru" && box.description_ru ? box.description_ru : box.description;
 
-      const recBox = document.createElement("div");
-      recBox.className = "rec-box";
-      recBox.setAttribute("data-box-id", String(box.id));
+          const alt =
+            lang === "ru"
+              ? `Логотип ${box.site}`
+              : `${box.site} logo`;
 
-      const description =
-        lang === "ru" && box.description_ru ? box.description_ru : box.description;
-
-      const alt =
-        lang === "ru"
-          ? `Логотип ${box.site}`
-          : `${box.site} logo`;
-
-      let reviewHref = box.reviewHref || "#";
-      // Prefix RU locale for internal links
-      if (lang === "ru" && typeof reviewHref === "string" && reviewHref.startsWith("/")) {
-        reviewHref = `/ru${reviewHref}`;
-      }
-
-      // Build HTML with spans inside the buttons as requested.
-      recBox.innerHTML = `
-        <div class="logobg">
-          <a href="${reviewHref}">
-            <img src="${box.logoSrc}" loading="lazy" draggable="false" alt="${alt}">
-          </a>
-          <p>${description ?? ""}</p>
-        </div>
-        <div class="content">
-          <div class="content-buttons">
-            <a href="${reviewHref}" class="review-button"><span>${labels.review}</span></a>
-            <a href="${box.visitHref}" target="_blank" rel="noopener" class="review-button visit"><span>${labels.visit}</span></a>
-          </div>
-        </div>
-      `;
-
-      // A11y labels remain descriptive (site-specific) — intentionally more verbose.
-      const reviewBtn = recBox.querySelector(".review-button:not(.visit)");
-      const visitBtn = recBox.querySelector(".review-button.visit");
-
-      const reviewLabel =
-        lang === "ru" ? `Читать обзор ${box.site}` : `Read review ${box.site}`;
-      const visitLabel =
-        lang === "ru" ? `Перейти на ${box.site}` : `Visit ${box.site}`;
-
-      if (reviewBtn) reviewBtn.setAttribute("aria-label", reviewLabel);
-      if (visitBtn) visitBtn.setAttribute("aria-label", visitLabel);
-
-      if (useWrapper && wrapper) {
-        wrapper.appendChild(recBox);
-      } else if (insertAfterElement && insertAfterElement.parentNode) {
-        insertAfterElement.parentNode.insertBefore(recBox, insertAfterElement.nextSibling);
-        // Delay for CSS transition
-        setTimeout(() => recBox.classList.add("active"), 20);
-      }
-    }
-
-    // Mount wrapper for mobile
-    if (useWrapper && wrapper && wrapper.children.length > 0 && topicPage) {
-      topicPage.appendChild(wrapper);
-      setTimeout(() => {
-        wrapper.querySelectorAll(".rec-box").forEach((el) => el.classList.add("active"));
-      }, 20);
-    }
-  };
-
-  const cached = StorageHelper.getWithExpiry(cacheKey);
-  if (cached) {
-    applyRecBoxes(cached);
-  } else {
-    fetch(REC_JSON_PATH)
-      .then((res) => res.json())
-      .then((json) => {
-        StorageHelper.setWithExpiry(cacheKey, json, cacheDuration);
-        applyRecBoxes(json);
-      })
-      .catch(console.error); // keep logging only
-  }
-}
-
-insertRandomRecBox();
-
-      if ($(".skin").length) {
-        const skinsOnPage = $(".skin");
-        const weaponToSkinIds = {};
-      
-        skinsOnPage.each(function () {
-          const weapon = $(this).attr("weapon");
-          const skinId = $(this).attr("skin-id");
-          if (weapon && skinId) {
-            weaponToSkinIds[weapon] = weaponToSkinIds[weapon] || [];
-            weaponToSkinIds[weapon].push(skinId);
+          let reviewHref = box.reviewHref || "#";
+          if (lang === "ru" && typeof reviewHref === "string" && reviewHref.startsWith("/")) {
+            reviewHref = `/ru${reviewHref}`;
           }
-        });
-      
-      const loadSkinsData = async () => {
-        const skinPricesPromise = fetchSkinPrices();
 
-        await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
-          try {
-            const response = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
-            if (!response.ok) throw new Error(`Не удалось загрузить ${weapon}.json`);
-            const skinsData = await response.json();
+          recBox.innerHTML = `
+            <div class="logobg">
+              <a href="${reviewHref}">
+                <img src="${box.logoSrc}" loading="lazy" draggable="false" alt="${alt}">
+              </a>
+              <p>${description ?? ""}</p>
+            </div>
+            <div class="content">
+              <div class="content-buttons">
+                <a href="${reviewHref}" class="review-button"><span>${labels.review}</span></a>
+                <a href="${box.visitHref}" target="_blank" rel="noopener" class="review-button visit"><span>${labels.visit}</span></a>
+              </div>
+            </div>
+          `;
 
-            const skinsForWeapon = skinsData || {};
-            weaponToSkinIds[weapon].forEach((skinId) => {
-              const skinData = skinsForWeapon[skinId];
-              if (skinData) {
-                const imageUrl = skinData.image;
-                const newSkinHTML = `
-                  <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
-                      <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
-                      <div class="skin-desc-name">${skinData.name}</div>
-                      <div class="skin-price-info loading"></div>
-                  </div>
-                `;
+          const reviewBtn = recBox.querySelector(".review-button:not(.visit)");
+          const visitBtn = recBox.querySelector(".review-button.visit");
 
-                $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function () {
-                  $(this).replaceWith(newSkinHTML);
-                });
-              }
-            });
-          } catch (error) {
-            console.error(error);
+          const reviewLabel =
+            lang === "ru" ? `Читать обзор ${box.site}` : `Read review ${box.site}`;
+          const visitLabel =
+            lang === "ru" ? `Перейти на ${box.site}` : `Visit ${box.site}`;
+
+          if (reviewBtn) reviewBtn.setAttribute("aria-label", reviewLabel);
+          if (visitBtn) visitBtn.setAttribute("aria-label", visitLabel);
+
+          if (useWrapper && wrapper) {
+            wrapper.appendChild(recBox);
+          } else if (insertAfterElement && insertAfterElement.parentNode) {
+            insertAfterElement.parentNode.insertBefore(recBox, insertAfterElement.nextSibling);
+            setTimeout(() => recBox.classList.add("active"), 20);
           }
-        }));
+        }
 
-        skinPricesPromise.then((skinPrices) => {
-          Object.keys(weaponToSkinIds).forEach((weapon) => {
-            weaponToSkinIds[weapon].forEach((skinId) => {
-              const $skinEl = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`);
-              const name = $skinEl.find(".skin-desc-name").text();
-
-              const isSticker = name.startsWith("Sticker |");
-              const matchedSkins = skinPrices.filter((skin) => {
-                return isSticker ? skin.name === name : skin.name.includes(name);
-              });
-
-              const normalPrices = matchedSkins.filter(s => !s.name.startsWith("Souvenir")).map(s => s.price);
-              const souvenirPrices = matchedSkins.filter(s => s.name.startsWith("Souvenir")).map(s => s.price);
-
-              let priceInfoContent = "";
-
-              if (normalPrices.length > 0) {
-                normalPrices.sort((a, b) => a - b);
-                const text = normalPrices[0] === normalPrices[normalPrices.length - 1]
-                  ? `${normalPrices[0].toFixed(2)}$`
-                  : `${normalPrices[0].toFixed(2)}$ - ${normalPrices[normalPrices.length - 1].toFixed(2)}$`;
-                priceInfoContent += `${text}`;
-              }
-
-              if (souvenirPrices.length > 0) {
-                souvenirPrices.sort((a, b) => a - b);
-                const text = souvenirPrices[0] === souvenirPrices[souvenirPrices.length - 1]
-                  ? `${souvenirPrices[0].toFixed(2)}$`
-                  : `${souvenirPrices[0].toFixed(2)}$ - ${souvenirPrices[souvenirPrices.length - 1].toFixed(2)}$`;
-                priceInfoContent += `<div class="souvenir-price-info">${text}</div>`;
-              }
-
-              if (priceInfoContent) {
-                $skinEl.find(".skin-price-info")
-                  .removeClass("loading")
-                  .html(priceInfoContent);
-              }
-            });
-          });
-        });
-
-        $(".skin img").each(function () {
-          if (this.complete) {
-            $(this).addClass("imported");
-          } else {
-            $(this).on("load", function () {
-              $(this).addClass("imported");
-            });
-          }
-        });
-
-        checkWeaponTypeAvailabilityForItems();
-
-        if (location.pathname.includes("/topic/sticker-crafts/")) {
-          updateCraftComponentList();
+        if (useWrapper && wrapper && wrapper.children.length > 0 && topicPage) {
+          topicPage.appendChild(wrapper);
+          setTimeout(() => {
+            wrapper.querySelectorAll(".rec-box").forEach((el) => el.classList.add("active"));
+          }, 20);
         }
       };
 
-      
-        const updateCraftComponentList = () => {
-          const boxes = document.querySelectorAll('.siteblock .topic-grandbox');
-        
-          boxes.forEach(box => {
-            const thirdSection = box.querySelector('.section.third');
-            const introduceCraftList = document.querySelector('.introduce-craft .craft-components-list');
-            const craftingTable = document.querySelector('.crafting-table-screens');
-        
-            if (!thirdSection || !introduceCraftList) return;
-        
-            const stickerElements = Array.from(thirdSection.querySelectorAll('.skin'));
-        
-            // === ДОБАВЛЕНИЕ В СПИСОК КОМПОНЕНТОВ КРАФТА ===
-            const map = new Map();
-            stickerElements.forEach(skin => {
-              const nameAttr = skin.getAttribute("skin-id");
-              if (!nameAttr) return;
-              const cleanedName = nameAttr.replace(/^Sticker\s\|\s/, '');
-        
-              if (!map.has(cleanedName)) {
-                map.set(cleanedName, { count: 1, original: skin });
-              } else {
-                map.get(cleanedName).count++;
-              }
-            });
-        
-            introduceCraftList.innerHTML = '';
-        
-            Array.from(map.entries()).forEach(([name, { count, original }], index, arr) => {
-              const spanSkin = document.createElement('span');
-              spanSkin.className = original.className;
-              spanSkin.classList.add('skin');
-              spanSkin.setAttribute('skin-id', original.getAttribute('skin-id') || '');
-              spanSkin.setAttribute('weapon', original.getAttribute('weapon') || '');
-        
-              const img = original.querySelector('img');
-              if (img) {
-                const newImg = img.cloneNode(true);
-                spanSkin.appendChild(newImg);
-              }
-        
-              const nameDiv = original.querySelector('.skin-desc-name');
-              if (nameDiv) {
-                const newName = document.createElement('div');
-                newName.className = 'skin-desc-name';
-                newName.textContent = nameDiv.textContent.replace(/^Sticker\s\|\s/, '').trim();
-        
-                if (count > 1) {
-                  const prefix = document.createElement('span');
-                  prefix.textContent = `x${count} `;
-                  spanSkin.appendChild(prefix);
-                }
-        
-                spanSkin.appendChild(newName);
-              }
-        
-              const priceInfo = original.querySelector('.skin-price-info');
-              if (priceInfo) {
-                spanSkin.appendChild(priceInfo.cloneNode(true));
-              }
-        
-              introduceCraftList.appendChild(spanSkin);
-        
-              if (index < arr.length - 1) {
-                introduceCraftList.appendChild(document.createTextNode(', '));
-              }
-            });
-        
-            // === ДОБАВЛЕНИЕ В КАЖДЫЙ .crafting-table-screen ===
-            if (craftingTable) {
-              const screenElements = craftingTable.querySelectorAll('.crafting-table-screen');
-              stickerElements.forEach((skin, i) => {
-                if (i < screenElements.length) {
-                  const clonedSkin = skin.cloneNode(true);
-                  screenElements[i].prepend(clonedSkin);
-                }
-              });
+      const cached = StorageHelper.getWithExpiry(cacheKey);
+      if (cached) {
+        applyRecBoxes(cached);
+      } else {
+        fetch(REC_JSON_PATH)
+          .then((res) => res.json())
+          .then((json) => {
+            StorageHelper.setWithExpiry(cacheKey, json, cacheDuration);
+            applyRecBoxes(json);
+          })
+          .catch(console.error);
+      }
+    }
+    insertRandomRecBox();
+
+    // ---------- ЦЕНЫ ДЛЯ УЖЕ СУЩЕСТВУЮЩИХ .skin (НО НЕ РЕНДЕР .skin) ----------
+    async function fetchSkinPrices() {
+      try {
+        const response = await fetch("https://cs2broker.cc/");
+        const skins = await response.json();
+        return Array.isArray(skins) ? skins : [];
+      } catch {
+        return [];
+      }
+    }
+
+    async function priceSkinsOnPage() {
+      const $skins = $(".skin");
+      if (!$skins.length) return;
+
+      const skinPrices = await fetchSkinPrices();
+
+      $skins.each(function () {
+        const $skinEl = $(this);
+        const name = ($skinEl.find(".skin-desc-name").text() || "").trim();
+        if (!name) return;
+
+        const isSticker = name.startsWith("Sticker |");
+        const matchedSkins = skinPrices.filter((s) => (isSticker ? s.name === name : s.name.includes(name)));
+
+        const normal = matchedSkins.filter(s => !String(s.name).startsWith("Souvenir")).map(s => +s.price).filter(Number.isFinite);
+        const souv   = matchedSkins.filter(s =>  String(s.name).startsWith("Souvenir")).map(s => +s.price).filter(Number.isFinite);
+
+        let html = "";
+
+        if (normal.length) {
+          normal.sort((a,b)=>a-b);
+          html += (normal[0] === normal[normal.length-1])
+            ? `${normal[0].toFixed(2)}$`
+            : `${normal[0].toFixed(2)}$ - ${normal[normal.length-1].toFixed(2)}$`;
+        }
+
+        if (souv.length) {
+          souv.sort((a,b)=>a-b);
+          const t = (souv[0] === souv[souv.length-1])
+            ? `${souv[0].toFixed(2)}$`
+            : `${souv[0].toFixed(2)}$ - ${souv[souv.length-1].toFixed(2)}$`;
+          html += `<div class="souvenir-price-info">${t}</div>`;
+        }
+
+        if (html) {
+          const priceEl = $skinEl.find(".skin-price-info");
+          if (priceEl.length) {
+            priceEl.removeClass("loading").html(html);
+          } else {
+            $skinEl.append(`<div class="skin-price-info">${html}</div>`);
+          }
+        }
+      });
+
+      // img.imported отметка
+      $(".skin img").each(function () {
+        if (this.complete) {
+          $(this).addClass("imported");
+        } else {
+          $(this).on("load", function () {
+            $(this).addClass("imported");
+          });
+        }
+      });
+
+      checkWeaponTypeAvailabilityForItems();
+      if (location.pathname.includes("/topic/sticker-crafts/")) {
+        // список компонентов крафта формируется по уже имеющимся .skin на странице
+        updateCraftComponentList();
+      }
+    }
+
+    // Раньше здесь был блок, который ПЕРЕРИСОВЫВАЛ .skin — он удалён.
+    // Теперь просто считаем цены для того, что уже в HTML:
+    if ($(".skin").length) {
+      priceSkinsOnPage();
+    }
+
+    // ---------- КРАФТЫ: работа только с уже существующими .skin ----------
+    const updateCraftComponentList = () => {
+      const boxes = document.querySelectorAll('.siteblock .topic-grandbox');
+
+      boxes.forEach(box => {
+        const thirdSection = box.querySelector('.section.third');
+        const introduceCraftList = document.querySelector('.introduce-craft .craft-components-list');
+        const craftingTable = document.querySelector('.crafting-table-screens');
+
+        if (!thirdSection || !introduceCraftList) return;
+
+        const stickerElements = Array.from(thirdSection.querySelectorAll('.skin'));
+
+        // === ДОБАВЛЕНИЕ В СПИСОК КОМПОНЕНТОВ КРАФТА ===
+        const map = new Map();
+        stickerElements.forEach(skin => {
+          const nameAttr = skin.getAttribute("skin-id");
+          if (!nameAttr) return;
+          const cleanedName = nameAttr.replace(/^Sticker\s\|\s/, '');
+
+          if (!map.has(cleanedName)) {
+            map.set(cleanedName, { count: 1, original: skin });
+          } else {
+            map.get(cleanedName).count++;
+          }
+        });
+
+        introduceCraftList.innerHTML = '';
+
+        Array.from(map.entries()).forEach(([name, { count, original }], index, arr) => {
+          const spanSkin = document.createElement('span');
+          spanSkin.className = original.className;
+          spanSkin.classList.add('skin');
+          spanSkin.setAttribute('skin-id', original.getAttribute('skin-id') || '');
+          spanSkin.setAttribute('weapon', original.getAttribute('weapon') || '');
+
+          const img = original.querySelector('img');
+          if (img) {
+            const newImg = img.cloneNode(true);
+            spanSkin.appendChild(newImg);
+          }
+
+          const nameDiv = original.querySelector('.skin-desc-name');
+          if (nameDiv) {
+            const newName = document.createElement('div');
+            newName.className = 'skin-desc-name';
+            newName.textContent = nameDiv.textContent.replace(/^Sticker\s\|\s/, '').trim();
+
+            if (count > 1) {
+              const prefix = document.createElement('span');
+              prefix.textContent = `x${count} `;
+              spanSkin.appendChild(prefix);
+            }
+
+            spanSkin.appendChild(newName);
+          }
+
+          const priceInfo = original.querySelector('.skin-price-info');
+          if (priceInfo) {
+            spanSkin.appendChild(priceInfo.cloneNode(true));
+          }
+
+          introduceCraftList.appendChild(spanSkin);
+
+          if (index < arr.length - 1) {
+            introduceCraftList.appendChild(document.createTextNode(', '));
+          }
+        });
+
+        // === ДОБАВЛЕНИЕ В КАЖДЫЙ .crafting-table-screen ===
+        if (craftingTable) {
+          const screenElements = craftingTable.querySelectorAll('.crafting-table-screen');
+          stickerElements.forEach((skin, i) => {
+            if (i < screenElements.length) {
+              const clonedSkin = skin.cloneNode(true);
+              screenElements[i].prepend(clonedSkin);
             }
           });
-        };
-        
-        
-      
-        window.loadSkinsData = loadSkinsData;
-      
-        loadSkinsData();
-      }
-
-      function generateSearchUrl(skinName, selectedSite) {
-        const siteUrls = {
-          Tradeit: `https://tradeit.gg/csgo/store?search=${encodeURIComponent(skinName)}&aff=csgobroker`,
-          BitSkins: `https://bitskins.com/market/cs2?search={"order":[{"field":"price","order":"ASC"}],"where":{"skin_name":"${encodeURIComponent(skinName)}"}}&ref_alias=csgobroker`,
-          Steam: `https://steamcommunity.com/market/search?appid=730&q=${encodeURIComponent(skinName)}`,
-          CSMoney: `https://cs.money/market/buy/?search=${encodeURIComponent(skinName)}&sort=price&order=asc&utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=market&utm_content=link`,
-          "AvanMarket": `https://avan.market/ru/market/cs?name=${encodeURIComponent(skinName)}&r=broker`,
-          SkinSwap: `https://skinswap.com/buy?search=${encodeURIComponent(skinName)}&r=csgobroker&appid=730`,
-          "MoonMarket": `https://moon.market/shop/?lang=ru&app_id=730&filters=&search=${encodeURIComponent(skinName)}&sort=price_desc&float_from=&float_to=&price_from=&price_to=&r=DTQBM8816d89c`,
-          default: `https://lis-skins.ru/market/csgo/?query=${encodeURIComponent(skinName)}&rf=83346597`,
-        };
-        return siteUrls[selectedSite] || siteUrls["default"];
-      }
-      
-    
-      function updateNavigationReset() {
-        const hasActiveFilters = $(".navigation-weapon-type.enabled").length > 0;
-        const $resetButton = $(".topic-centralizer .navigation-reset");
-      
-        if (!hasActiveFilters) {
-          if ($resetButton.length === 0) {
-            $(".topic-centralizer").append('<div class="navigation-reset">Reset Sort</div>');
-          }
-        } else {
-          $resetButton.remove();
         }
-      }
-               
+      });
+    };
 
-      function checkWeaponTypeAvailability() {
-        const weaponTypes = [
-          "knives",
-          "gloves",
-          "pistols",
-          "rifles",
-          "srifles",
-          "smgs",
-          "shotguns",
-          "mguns",
-        ];
-
-        weaponTypes.forEach((type) => {
-          const allNotExist = $(`.box-skins.${type}`)
-            .toArray()
-            .every((element) => $(element).hasClass("notexist"));
-          const navigationType = $(`.navigation-weapon-type.${type}`);
-
-          if (allNotExist) {
-            navigationType.removeClass("enabled").addClass("notexist");
-            $(`.box-skins.${type}`).addClass("disabled");
-          } else {
-            navigationType.addClass("enabled").removeClass("notexist");
-            $(`.box-skins.${type}`).removeClass("disabled");
-          }
-        });
-
-        const enabledTypes = $(".navigation-weapon-type.enabled");
-        if (enabledTypes.length === 1) {
-          enabledTypes.addClass("solo-category");
-        } else {
-          enabledTypes.removeClass("solo-category");
-        }
-      }
-
-      function checkWeaponTypeAvailabilityForItems() {
-        const skinTypes = ["white", "lblue", "blue", "purple", "pink", "red"];
-
-        skinTypes.forEach((type) => {
-          const allNotExist = $(
-            `.box-skins-list .skin.${type}`
-          )
-            .toArray()
-            .every((element) => $(element).hasClass("notexist"));
-          const navigationType = $(`.navigation-weapon-type.${type}`);
-
-          if (allNotExist) {
-            navigationType.removeClass("enabled").addClass("notexist");
-            $(
-              `.box-skins-list .skin.${type}`
-            ).addClass("disabled");
-          } else {
-            navigationType.addClass("enabled").removeClass("notexist");
-            $(
-              `.box-skins-list .skin.${type}`
-            ).removeClass("disabled");
-          }
-        });
-
-        const enabledTypes = $(".navigation-weapon-type.enabled");
-        if (enabledTypes.length === 1) {
-          enabledTypes.addClass("solo-category");
-        } else {
-          enabledTypes.removeClass("solo-category");
-        }
-      }
-
-      async function fetchSkinPrices() {
-        try {
-            const response = await fetch("https://cs2broker.cc/");
-            const skins = await response.json();
-            return Array.isArray(skins) ? skins : [];
-        } catch (error) {
-            return [];
-        }
+    // ---------- Навигация/сервисы/фильтры и т.д. (без изменений) ----------
+    function generateSearchUrl(skinName, selectedSite) {
+      const siteUrls = {
+        Tradeit: `https://tradeit.gg/csgo/store?search=${encodeURIComponent(skinName)}&aff=csgobroker`,
+        BitSkins: `https://bitskins.com/market/cs2?search={"order":[{"field":"price","order":"ASC"}],"where":{"skin_name":"${encodeURIComponent(skinName)}"}}&ref_alias=csgobroker`,
+        Steam: `https://steamcommunity.com/market/search?appid=730&q=${encodeURIComponent(skinName)}`,
+        CSMoney: `https://cs.money/market/buy/?search=${encodeURIComponent(skinName)}&sort=price&order=asc&utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=market&utm_content=link`,
+        "AvanMarket": `https://avan.market/ru/market/cs?name=${encodeURIComponent(skinName)}&r=broker`,
+        SkinSwap: `https://skinswap.com/buy?search=${encodeURIComponent(skinName)}&r=csgobroker&appid=730`,
+        "MoonMarket": `https://moon.market/shop/?lang=ru&app_id=730&filters=&search=${encodeURIComponent(skinName)}&sort=price_desc&float_from=&float_to=&price_from=&price_to=&r=DTQBM8816d89c`,
+        default: `https://lis-skins.ru/market/csgo/?query=${encodeURIComponent(skinName)}&rf=83346597`,
+      };
+      return siteUrls[selectedSite] || siteUrls["default"];
     }
-  
+
+    function updateNavigationReset() {
+      const hasActiveFilters = $(".navigation-weapon-type.enabled").length > 0;
+      const $resetButton = $(".topic-centralizer .navigation-reset");
+
+      if (!hasActiveFilters) {
+        if ($resetButton.length === 0) {
+          $(".topic-centralizer").append('<div class="navigation-reset">Reset Sort</div>');
+        }
+      } else {
+        $resetButton.remove();
+      }
+    }
+
+    function checkWeaponTypeAvailability() {
+      const weaponTypes = [
+        "knives","gloves","pistols","rifles","srifles","smgs","shotguns","mguns",
+      ];
+
+      weaponTypes.forEach((type) => {
+        const allNotExist = $(`.box-skins.${type}`)
+          .toArray()
+          .every((element) => $(element).hasClass("notexist"));
+        const navigationType = $(`.navigation-weapon-type.${type}`);
+
+        if (allNotExist) {
+          navigationType.removeClass("enabled").addClass("notexist");
+          $(`.box-skins.${type}`).addClass("disabled");
+        } else {
+          navigationType.addClass("enabled").removeClass("notexist");
+          $(`.box-skins.${type}`).removeClass("disabled");
+        }
+      });
+
+      const enabledTypes = $(".navigation-weapon-type.enabled");
+      if (enabledTypes.length === 1) {
+        enabledTypes.addClass("solo-category");
+      } else {
+        enabledTypes.removeClass("solo-category");
+      }
+    }
+
+    function checkWeaponTypeAvailabilityForItems() {
+      const skinTypes = ["white", "lblue", "blue", "purple", "pink", "red"];
+
+      skinTypes.forEach((type) => {
+        const allNotExist = $(
+          `.box-skins-list .skin.${type}`
+        )
+          .toArray()
+          .every((element) => $(element).hasClass("notexist"));
+        const navigationType = $(`.navigation-weapon-type.${type}`);
+
+        if (allNotExist) {
+          navigationType.removeClass("enabled").addClass("notexist");
+          $(
+            `.box-skins-list .skin.${type}`
+          ).addClass("disabled");
+        } else {
+          navigationType.addClass("enabled").removeClass("notexist");
+          $(
+            `.box-skins-list .skin.${type}`
+          ).removeClass("disabled");
+        }
+      });
+
+      const enabledTypes = $(".navigation-weapon-type.enabled");
+      if (enabledTypes.length === 1) {
+        enabledTypes.addClass("solo-category");
+      } else {
+        enabledTypes.removeClass("solo-category");
+      }
+    }
+
+    // ---------- Slick слайды для крафта (без изменений) ----------
     let switchLock = false;
 
     $('.crafting-table-screens').on('init', function (event, slick) {
       const $slides = slick.$slides;
       const total = $slides.length;
       let resultIndex = total - 1;
-    
+
       if ($($slides[total - 1]).hasClass('alternative')) {
         resultIndex = total - 2;
       }
-    
+
       setTimeout(function () {
         $('.crafting-table-screens').slick('slickGoTo', resultIndex, true);
       }, 0);
     });
-    
+
     $('.crafting-table-screens').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -573,10 +515,10 @@ insertRandomRecBox();
         const $slides = slider.$slides;
         const $currentSlide = $($slides[i]);
         const total = $slides.length;
-    
+
         let label = `Step ${i + 1}`;
         const isAltLast = $($slides[total - 1]).hasClass('alternative');
-    
+
         if ($currentSlide.hasClass('alternative') && i === total - 1) {
           label = 'Alternative';
         } else if (i === total - 2 && isAltLast) {
@@ -586,7 +528,7 @@ insertRandomRecBox();
         } else if ($currentSlide.hasClass('alternative')) {
           label = 'Alternative';
         }
-    
+
         if (typeof languageTag !== 'undefined' && languageTag === 'ru') {
           if (label.startsWith('Step')) {
             const stepNum = label.match(/\d+/);
@@ -597,705 +539,545 @@ insertRandomRecBox();
             label = 'Вариант 2';
           }
         }
-    
+
         return `<button type="button" role="tab"><span>${label}</span></button>`;
       }
     });
 
-async function showCraftPreviewWindow(element) {
-  const previewWindow = $("#preview-window");
-  const previewContent = $("#preview-content");
+    // ---------- Preview (оставляем) ----------
+    async function showCraftPreviewWindow(element) {
+      const previewWindow = $("#preview-window");
+      const previewContent = $("#preview-content");
 
-  const skinBox = $(element).closest(".preview-craft");
-  const units = skinBox.find(".preview-craft-unit");
-  const boxId = skinBox.attr("data-box-id");
+      const skinBox = $(element).closest(".preview-craft");
+      const units = skinBox.find(".preview-craft-unit");
+      const boxId = skinBox.attr("data-box-id");
 
-  previewWindow.removeClass("hidden").addClass("inspect-craft").attr({
-    "data-current-index": units.index(element),
-    "data-total-items": units.length,
-    "data-current-box-id": boxId,
-    "data-craft-mode": "true"
-  });
+      previewWindow.removeClass("hidden").addClass("inspect-craft").attr({
+        "data-current-index": units.index(element),
+        "data-total-items": units.length,
+        "data-current-box-id": boxId,
+        "data-craft-mode": "true"
+      });
 
-  const content = $(element).html();
-  previewContent.html(content);
-}
-  
-$(document).ready(function () {
-  let boxCounter = 0;
-  $(".box-skins-list, .topic-grandbox, .introduce-craft, .character-box, .preview-craft").each(function () {
-    if (!$(this).attr("data-box-id")) {
-      $(this).attr("data-box-id", `box-${boxCounter++}`);
+      const content = $(element).html();
+      previewContent.html(content);
     }
-  });
-});
 
-async function showPreviewWindow(element) {
-  const previewWindow = $("#preview-window");
-  const previewContent = $("#preview-content");
-  let skinClasses = [];
-
-  previewWindow.attr("class", "hidden");
-
-  if ($(element).hasClass("skin none")) return;
-
-  if ($(element).hasClass("skin")) {
-    skinClasses = $(element).attr("class").split(" ");
-  }
-
-  const skinBox = $(element).closest("[data-box-id]");
-  const visibleItems = skinBox.find(".skin:not(.disabled):not(.none)");
-  const totalItems = visibleItems.length;
-  const itemName = element?.querySelector(".skin-desc-name")?.textContent.trim() || "";
-  const weaponName = itemName.split("|")[0].trim();
-  const boxId = skinBox.attr("data-box-id");
-
-  previewWindow.removeClass("hidden").attr({
-    "data-current-index": visibleItems.index(element),
-    "data-total-items": totalItems,
-    "data-current-box-id": boxId,
-  });
-
-  skinClasses.forEach((skinClass) => {
-    if (skinClass !== "skin") {
-      previewWindow.addClass(skinClass);
-    }
-  });
-
-  previewContent.html(element.innerHTML);
-
-  let previewExtras = $("#preview-showcase .preview-extras");
-  if (previewExtras.length === 0) {
-    previewExtras = $("<div>", { class: "preview-extras" });
-    $("#preview-showcase").append(previewExtras);
-  }
-
-  previewExtras.find(".skin-alt-info, .skin-craft-info").remove();
-
-  const weapon = element.getAttribute("weapon");
-  const isSticker = weapon.includes("sticker") || weapon.includes("capsule");
-
-  let skinAltInfoDiv = previewExtras.find(".skin-alt-info");
-  if (skinAltInfoDiv.length === 0) {
-    skinAltInfoDiv = $("<a>", {
-      class: "skin-alt-info titled",
-      html: '<i class="officon library"></i>',
+    $(document).ready(function () {
+      let boxCounter = 0;
+      $(".box-skins-list, .topic-grandbox, .introduce-craft, .character-box, .preview-craft").each(function () {
+        if (!$(this).attr("data-box-id")) {
+          $(this).attr("data-box-id", `box-${boxCounter++}`);
+        }
+      });
     });
-    previewExtras.prepend(skinAltInfoDiv);
-  }
 
-  skinAltInfoDiv.attr({
-    href: languageTag === "ru" ? `/ru/topic/items/${weapon}` : `/topic/items/${weapon}`,
-    "data-title": languageTag === "ru" ? `Все Скины на ${weaponName}` : `All Skins on ${weaponName}`,
-  }).toggleClass("hidden", isSticker);
+    async function showPreviewWindow(element) {
+      const previewWindow = $("#preview-window");
+      const previewContent = $("#preview-content");
+      let skinClasses = [];
 
-  let skinColorInfo = previewExtras.find(".skin-color-info");
-  if (skinColorInfo.length === 0) {
-    skinColorInfo = $("<div>", { class: "skin-color-info" }).css({ display: "flex", opacity: 0 });
-    previewExtras.append(skinColorInfo);
-  }
+      previewWindow.attr("class", "hidden");
 
-  let skinExtraInfo = previewExtras.find(".skin-extra-info");
-  if (skinExtraInfo.length === 0) {
-    skinExtraInfo = $("<div>", { class: "skin-extra-info" }).css({ display: "flex", opacity: 0 });
-    previewExtras.append(skinExtraInfo);
-  }
+      if ($(element).hasClass("skin none")) return;
 
-  skinColorInfo.stop(true, true);
-  skinExtraInfo.stop(true, true);
+      if ($(element).hasClass("skin")) {
+        skinClasses = $(element).attr("class").split(" ");
+      }
 
-  const hideAnimations = [];
+      const skinBox = $(element).closest("[data-box-id]");
+      const visibleItems = skinBox.find(".skin:not(.disabled):not(.none)");
+      const totalItems = visibleItems.length;
+      const itemName = element?.querySelector(".skin-desc-name")?.textContent.trim() || "";
+      const weaponName = itemName.split("|")[0].trim();
+      const boxId = skinBox.attr("data-box-id");
 
-  if (parseFloat(skinColorInfo.css("opacity")) > 0) {
-    hideAnimations.push(
-      skinColorInfo.animate({ opacity: 0 }, 100).promise().then(() => {
-        skinColorInfo.css({ display: "none" });
-      })
-    );
-  }
-  if (parseFloat(skinExtraInfo.css("opacity")) > 0) {
-    hideAnimations.push(
-      skinExtraInfo.animate({ opacity: 0 }, 100).promise().then(() => {
-        skinExtraInfo.css({ display: "none" });
-      })
-    );
-  }
+      previewWindow.removeClass("hidden").attr({
+        "data-current-index": visibleItems.index(element),
+        "data-total-items": totalItems,
+        "data-current-box-id": boxId,
+      });
 
-  await Promise.all(hideAnimations);
-  skinColorInfo.empty();
-  skinExtraInfo.empty();
-  
+      skinClasses.forEach((skinClass) => {
+        if (skinClass !== "skin") {
+          previewWindow.addClass(skinClass);
+        }
+      });
 
-        const bindsDataResponse = await fetch("/code-parts/topics/sticker-crafts-binds.json");
-        const bindsData = await bindsDataResponse.json();
-        const pageKey = Object.keys(bindsData).find(key => bindsData[key] === itemName);
-    
-        if (pageKey) {
-            const skinCraftInfoDiv = $("<a>", {
-                class: "skin-craft-info titled",
-                href: languageTag === "ru"
-                    ? `/ru/topic/sticker-crafts/skin/${pageKey}`
-                    : `/topic/sticker-crafts/skin/${pageKey}`,
-                "data-title": languageTag === "ru"
-                    ? `Все Стикер-Крафты для ${itemName}`
-                    : `All Sticker-Crafts for ${itemName}`,
-                html: '<i class="officon stickers"></i>',
+      previewContent.html(element.innerHTML);
+
+      let previewExtras = $("#preview-showcase .preview-extras");
+      if (previewExtras.length === 0) {
+        previewExtras = $("<div>", { class: "preview-extras" });
+        $("#preview-showcase").append(previewExtras);
+      }
+
+      previewExtras.find(".skin-alt-info, .skin-craft-info").remove();
+
+      const weapon = element.getAttribute("weapon");
+      const isSticker = weapon.includes("sticker") || weapon.includes("capsule");
+
+      let skinAltInfoDiv = previewExtras.find(".skin-alt-info");
+      if (skinAltInfoDiv.length === 0) {
+        skinAltInfoDiv = $("<a>", {
+          class: "skin-alt-info titled",
+          html: '<i class="officon library"></i>',
+        });
+        previewExtras.prepend(skinAltInfoDiv);
+      }
+
+      skinAltInfoDiv.attr({
+        href: languageTag === "ru" ? `/ru/topic/items/${weapon}` : `/topic/items/${weapon}`,
+        "data-title": languageTag === "ru" ? `Все Скины на ${weaponName}` : `All Skins on ${weaponName}`,
+      }).toggleClass("hidden", isSticker);
+
+      let skinColorInfo = previewExtras.find(".skin-color-info");
+      if (skinColorInfo.length === 0) {
+        skinColorInfo = $("<div>", { class: "skin-color-info" }).css({ display: "flex", opacity: 0 });
+        previewExtras.append(skinColorInfo);
+      }
+
+      let skinExtraInfo = previewExtras.find(".skin-extra-info");
+      if (skinExtraInfo.length === 0) {
+        skinExtraInfo = $("<div>", { class: "skin-extra-info" }).css({ display: "flex", opacity: 0 });
+        previewExtras.append(skinExtraInfo);
+      }
+
+      skinColorInfo.stop(true, true);
+      skinExtraInfo.stop(true, true);
+
+      const hideAnimations = [];
+
+      if (parseFloat(skinColorInfo.css("opacity")) > 0) {
+        hideAnimations.push(
+          skinColorInfo.animate({ opacity: 0 }, 100).promise().then(() => {
+            skinColorInfo.css({ display: "none" });
+          })
+        );
+      }
+      if (parseFloat(skinExtraInfo.css("opacity")) > 0) {
+        hideAnimations.push(
+          skinExtraInfo.animate({ opacity: 0 }, 100).promise().then(() => {
+            skinExtraInfo.css({ display: "none" });
+          })
+        );
+      }
+
+      await Promise.all(hideAnimations);
+      skinColorInfo.empty();
+      skinExtraInfo.empty();
+
+      const bindsDataResponse = await fetch("/code-parts/topics/sticker-crafts-binds.json");
+      const bindsData = await bindsDataResponse.json();
+      const pageKey = Object.keys(bindsData).find(key => bindsData[key] === itemName);
+
+      if (pageKey) {
+        const skinCraftInfoDiv = $("<a>", {
+          class: "skin-craft-info titled",
+          href: languageTag === "ru"
+            ? `/ru/topic/sticker-crafts/skin/${pageKey}`
+            : `/topic/sticker-crafts/skin/${pageKey}`,
+          "data-title": languageTag === "ru"
+            ? `Все Стикер-Крафты для ${itemName}`
+            : `All Sticker-Crafts for ${itemName}`,
+          html: '<i class="officon stickers"></i>',
+        });
+        previewExtras.prepend(skinCraftInfoDiv);
+      }
+
+      const skinId = element.getAttribute("skin-id");
+      const skinsDataResponse = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
+      const skinsData = await skinsDataResponse.json();
+      const skinData = skinsData[skinId];
+
+      if (skinData) {
+        const imgElement = previewContent.find("img");
+        if (skinData.imageOG && imgElement.length) {
+          imgElement.stop(true, true).fadeOut(150, function () {
+            imgElement.attr("src", skinData.image).fadeIn(150);
+          });
+        } else if (skinData.imageOG) {
+          previewContent.append(`
+              <img src="${skinData.image}" draggable="false" alt="${skinData.name}">
+              <div class="skin-desc-name">${skinData.name}</div>
+          `);
+        }
+
+        if (skinData.color) {
+          skinData.color.forEach((color) => {
+            const colorLink = $("<a>", {
+              class: `skin-color ${color.toLowerCase()}`,
+              href: languageTag === "ru"
+                ? `/ru/topic/skins/${color.toLowerCase()}-skins`
+                : `/topic/skins/${color.toLowerCase()}-skins`,
             });
-            previewExtras.prepend(skinCraftInfoDiv);
-        }
-    
-        const skinId = element.getAttribute("skin-id");
-        const skinsDataResponse = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
-        const skinsData = await skinsDataResponse.json();
-        const skinData = skinsData[skinId];
-    
-        if (skinData) {
-            const imgElement = previewContent.find("img");
-            if (skinData.imageOG && imgElement.length) {
-                imgElement.stop(true, true).fadeOut(150, function () {
-                    imgElement.attr("src", skinData.image).fadeIn(150);
-                });
-            } else if (skinData.imageOG) {
-                previewContent.append(`
-                    <img src="${skinData.image}" draggable="false" alt="${skinData.name}">
-                    <div class="skin-desc-name">${skinData.name}</div>
-                `);
-            }
-    
-            if (skinData.color) {
-                skinData.color.forEach((color) => {
-                    const colorLink = $("<a>", {
-                        class: `skin-color ${color.toLowerCase()}`,
-                        href: languageTag === "ru"
-                            ? `/ru/topic/skins/${color.toLowerCase()}-skins`
-                            : `/topic/skins/${color.toLowerCase()}-skins`,
-                    });
-                    skinColorInfo.append(colorLink);
-                });
-            }
-    
-            async function handleCollectionOrCase(type) {
-                const file = type === "collection" ? "collections" : "cases";
-                const searchTitle = skinData[type];
-                if (!searchTitle) return;
-    
-                const response = await fetch(`/code-parts/topics/${file}.json`);
-                const data = await response.json();
-                const match = data.items.find(item => item.title === searchTitle);
-    
-                if (match) {
-                    const link = $("<a>", {
-                        href: `/topic/${file}/${match.id}`,
-                    }).append(
-                        $("<img>", { src: match.img, alt: match.title }),
-                        $("<span>").text(match.title)
-                    );
-                    skinExtraInfo.append(link);
-                }
-            }
-    
-            async function handleStickerOrCapsule() {
-                if (!weapon.includes("sticker") && !weapon.includes("capsule")) return;
-    
-                const filesToCheck = [
-                    "/code-parts/topics/sticker-capsules.json",
-                    "/code-parts/topics/autograph-capsules.json"
-                ];
-    
-                for (const filePath of filesToCheck) {
-                    const response = await fetch(filePath);
-                    const data = await response.json();
-                    const match = data.items.find(item => item.id === weapon);
-                    if (match) {
-                        const link = $("<a>", {
-                            href: `/topic/stickers/${match.id}`,
-                        }).append(
-                            $("<img>", { src: match.img, alt: match.title }),
-                            $("<span>").text(match.title)
-                        );
-                        skinExtraInfo.append(link);
-                        break;
-                    }
-                }
-            }
-    
-            await handleCollectionOrCase("collection");
-            await handleCollectionOrCase("case");
-            await handleStickerOrCapsule();
+            skinColorInfo.append(colorLink);
+          });
         }
 
-        skinColorInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
-        skinExtraInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
-    
-        $(".site-searcher-box")
-            .off("click")
-            .on("click", function () {
-                const selectedSite = this.id;
-                const searchName = itemName;
-                const searchUrl = generateSearchUrl(searchName, selectedSite);
-                window.open(searchUrl, "_blank");
-            });
-    
-        const PreviewButtons = document.querySelector(".preview-extras");
-        if (languageTag === "ru") {
-            updateURLs(PreviewButtons);
+        async function handleCollectionOrCase(type) {
+          const file = type === "collection" ? "collections" : "cases";
+          const searchTitle = skinData[type];
+          if (!searchTitle) return;
+
+          const response = await fetch(`/code-parts/topics/${file}.json`);
+          const data = await response.json();
+          const match = data.items.find(item => item.title === searchTitle);
+
+          if (match) {
+            const link = $("<a>", {
+              href: `/topic/${file}/${match.id}`,
+            }).append(
+              $("<img>", { src: match.img, alt: match.title }),
+              $("<span>").text(match.title)
+            );
+            skinExtraInfo.append(link);
+          }
         }
+
+        async function handleStickerOrCapsule() {
+          if (!weapon.includes("sticker") && !weapon.includes("capsule")) return;
+
+          const filesToCheck = [
+            "/code-parts/topics/sticker-capsules.json",
+            "/code-parts/topics/autograph-capsules.json"
+          ];
+
+          for (const filePath of filesToCheck) {
+            const response = await fetch(filePath);
+            const data = await response.json();
+            const match = data.items.find(item => item.id === weapon);
+            if (match) {
+              const link = $("<a>", {
+                href: `/topic/stickers/${match.id}`,
+              }).append(
+                $("<img>", { src: match.img, alt: match.title }),
+                $("<span>").text(match.title)
+              );
+              skinExtraInfo.append(link);
+              break;
+            }
+          }
+        }
+
+        await handleCollectionOrCase("collection");
+        await handleCollectionOrCase("case");
+        await handleStickerOrCapsule();
+      }
+
+      skinColorInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
+      skinExtraInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
+
+      $(".site-searcher-box")
+        .off("click")
+        .on("click", function () {
+          const selectedSite = this.id;
+          const searchName = itemName;
+          const searchUrl = generateSearchUrl(searchName, selectedSite);
+          window.open(searchUrl, "_blank");
+        });
+
+      const PreviewButtons = document.querySelector(".preview-extras");
+      if (languageTag === "ru") {
+        updateURLs(PreviewButtons);
+      }
     }
 
     function closePreviewWindow() {
       const previewWindow = $("#preview-window");
       previewWindow.removeAttr("class").addClass("hidden");
-  
+
       previewWindow.find(".skin-alt-info, .skin-craft-info").remove();
-  
+
       const previewExtras = $("#preview-showcase .preview-extras");
       if (previewExtras.length > 0) {
           previewExtras.find(".skin-color-info, .skin-extra-info").stop(true, true).fadeOut(100, function() {
               $(this).empty();
           });
       }
-  }
-  
-  
-async function switchSkin(direction) {
-  if (switchLock) return;
-  switchLock = true;
-
-  const $previewWindow = $("#preview-window");
-  const currentBoxId = $previewWindow.attr("data-current-box-id");
-  const isCraftMode = $previewWindow.hasClass("preview-craft") || $("[data-box-id='" + currentBoxId + "']").hasClass("preview-craft");
-
-  try {
-    if (isCraftMode) {
-      const currentBox = $(".preview-craft[data-box-id='" + currentBoxId + "']");
-      const units = currentBox.find(".preview-craft-unit");
-      const total = units.length;
-      const currentIndex = +$previewWindow.attr("data-current-index");
-
-      const newIndex = (direction === "left")
-        ? (currentIndex - 1 + total) % total
-        : (currentIndex + 1) % total;
-
-      const newUnit = units.get(newIndex);
-      if (newUnit) {
-        await showCraftPreviewWindow(newUnit);
-        $previewWindow.attr("data-current-index", newIndex);
-      }
-    } else {
-      const currentBox = $("[data-box-id='" + currentBoxId + "']");
-      const visibleItems = currentBox.find(".skin:not(.disabled):not(.none)");
-      const total = visibleItems.length;
-      const currentIndex = +$previewWindow.attr("data-current-index");
-
-      const newIndex = (direction === "left")
-        ? (currentIndex - 1 + total) % total
-        : (currentIndex + 1) % total;
-
-      const newSkin = visibleItems.get(newIndex);
-      if (newSkin) {
-        await showPreviewWindow(newSkin);
-        $previewWindow.attr("data-current-index", newIndex);
-      }
     }
-  } catch (err) {
-    console.error("Ошибка при переключении:", err);
-  }
 
-  switchLock = false;
-} 
+    async function switchSkin(direction) {
+      if (switchLock) return;
+      switchLock = true;
 
-
-
-
-  
-    
-      $(document).on("click", ".skin", function () {
-        showPreviewWindow(this);
-      });
-
-      $(document).on("click", ".preview-close-button", function () {
-        closePreviewWindow();
-      });
-
-      $(document).on("click", "#preview-window", function (e) {
-        if ($(e.target).closest("#preview-showcase").length === 0) {
-          closePreviewWindow();
-        }
-      });
-
-      $(document).on("click", ".preview-nav-button.left", function () {
-        switchSkin("left");
-      });
-
-      $(document).on("click", ".preview-nav-button.right", function () {
-        switchSkin("right");
-      });
-
-      $(document).on("click", ".preview-craft-unit", function () {
-        showCraftPreviewWindow(this);
-    });
-
-      if (currentPath.includes("/skins/")) {
-        $(".close-box-skins").on("click", function () {
-          const parentBoxSkins = $(this).closest(".box-skins");
-          parentBoxSkins.toggleClass("selected");
-          $(".box-skins").not(parentBoxSkins).removeClass("selected");
-          
-          $(this).toggleClass("zoom-in zoom-out");
-          $(".close-box-skins")
-            .not($(this))
-            .removeClass("zoom-out")
-            .addClass("zoom-in");
-        });
-      
-        $(".box-skins-name").click(function () {
-          const parentBoxSkins = $(this).closest(".box-skins");
-          parentBoxSkins.toggleClass("selected");
-          $(".box-skins").not(parentBoxSkins).removeClass("selected");
-          
-          $(this)
-            .siblings(".close-box-skins")
-            .toggleClass("zoom-in zoom-out");
-        });
-      
-        document.addEventListener("DOMContentLoaded", () => {
-          document
-            .querySelectorAll(".box-skins-name")
-            .forEach((boxSkinsName) => boxSkinsName.classList.add("visible"));
-        });
-      
-        $(".navigation-weapon-type").click(function () {
-          const weaponType = $(this).attr("class").split(" ")[1];
-          $(`.box-skins.${weaponType}`).toggleClass("disabled");
-          $(this).toggleClass("enabled");
-          updateNavigationReset();
-        });
-      
-        $(".topic-centralizer").on("click", ".navigation-reset", function () {
-          $(".box-skins").removeClass("disabled selected");
-          $(".navigation-weapon-type").addClass("enabled");
-          $(".topic-centralizer .navigation-reset").remove();
-          checkWeaponTypeAvailability();
-        });
-      
-        checkWeaponTypeAvailability();
-      }
-       else if (
-        currentPath.includes("/items/") ||
-        currentPath.includes("/stickers/") ||
-        currentPath.includes("/cases/") ||
-        currentPath.includes("/charms/") ||
-        currentPath.includes("/skins/") ||
-        currentPath.includes("/collections/")
-      ) {
-        $.getJSON("/code-parts/topics/items-nav.json", function (navData) {
-          const $grandbox = $(".topic-grandbox");
-          const $navSectionFirst = $('<div class="section first"></div>');
-        
-          const stickerTitles = {
-            blue: "High Grade",
-            purple: "Remarkable",
-            pink: "Exotic",
-            red: "Extraordinary"
-          };
-        
-          navData.types.forEach(type => {
-            let title = type.title;
-            if (currentPath.includes("/stickers/") && stickerTitles[type.class]) {
-              title = stickerTitles[type.class];
-            }
-        
-            $navSectionFirst.append(
-              `<div class="navigation-weapon-type ${type.class} enabled">${title}</div>`
-            );
-          });
-        
-          const $navSearchers = $('<div class="section searchers"></div>');
-          navData.filters.forEach(filter => {
-            const title = languageTag === "ru" ? filter.title_ru : filter.title_en;
-            $navSearchers.append(
-              `<div class="navigation-weapon-sort" data-title="${title}" id="${filter.id}">
-                 <i class="officon ${filter.icon}"></i>
-               </div>`
-            );
-          });
-        
-          $grandbox.prepend($navSectionFirst, $navSearchers);
-        
-          $(".navigation-weapon-type").click(function () {
-            const weaponType = $(this).attr("class").split(" ")[1];
-            $(`.skin.${weaponType}`).toggleClass("disabled");
-            $(this).toggleClass("enabled");
-            enabledFiltersState[weaponType] = $(this).hasClass("enabled");
-            updateNavigationReset();
-          });
-        
-          checkWeaponTypeAvailabilityForItems();
-          translateTypes(languageTag);
-        
-          function getSkinsToggleState() {
-            return getLocalStorageState("SkinsToggleState", { showprice: true, showrarity: true });
-          }
-          
-          function setSkinsToggleState(newState) {
-            setLocalStorageState("SkinsToggleState", newState);
-          }
-          
-          const toggleState = getSkinsToggleState();
-          
-          const $skinBox = $(".box-skins-list");
-          const $priceToggle = $("#Price-Toggle");
-          const $rarityToggle = $("#Rarity-Toggle");
-          
-          $skinBox.toggleClass("showprice", toggleState.showprice);
-          $skinBox.toggleClass("showrarity", toggleState.showrarity);
-          
-          $priceToggle.toggleClass("enabled", toggleState.showprice);
-          $rarityToggle.toggleClass("enabled", toggleState.showrarity);
-          
-          $priceToggle.on("click", function () {
-            toggleState.showprice = !toggleState.showprice;
-            setSkinsToggleState(toggleState);
-          
-            $skinBox.toggleClass("showprice", toggleState.showprice);
-            $(this).toggleClass("enabled", toggleState.showprice);
-          
-          });
-          
-          $rarityToggle.on("click", function () {
-            toggleState.showrarity = !toggleState.showrarity;
-            setSkinsToggleState(toggleState);
-          
-            $skinBox.toggleClass("showrarity", toggleState.showrarity);
-            $(this).toggleClass("enabled", toggleState.showrarity);
-          });
-          
-          function toggleSortFilter($current, $other, sortCallback) {
-            const isEnabled = $current.hasClass("enabled");
-            const isReversed = $current.hasClass("reversed");
-          
-            $other.removeClass("enabled reversed");
-          
-            if (!isEnabled && !isReversed) {
-              $current.addClass("enabled");
-            } else if (isEnabled && !isReversed) {
-              $current.addClass("reversed");
-            } else if (isEnabled && isReversed) {
-              $current.removeClass("reversed");
-            }
-          
-            const sortState = $current.hasClass("enabled") && !$current.hasClass("reversed") ? "desc"
-                           : $current.hasClass("enabled") && $current.hasClass("reversed") ? "asc"
-                           : "none";
-          
-            sortCallback(sortState);
-            updateNavigationReset();
-          }
-          
-        
-          $("#Quality-Filter").click(function () {
-            toggleSortFilter($(this), $("#Price-Filter"), (sortState) => {
-              const skins = $(".box-skins-list .skin").get();
-              const sortOrder = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];
-          
-              if (sortState !== "none") {
-                skins.sort((a, b) => {
-                  const aClass = $(a).attr("class").split(" ")[1];
-                  const bClass = $(b).attr("class").split(" ")[1];
-                  const diff = sortOrder.indexOf(aClass) - sortOrder.indexOf(bClass);
-                  return sortState === "asc" ? diff : -diff;
-                });
-                $(".box-skins-list").html(skins);
-              }
-            });
-          });
-          
-        
-          $("#Price-Filter").click(function () {
-            toggleSortFilter($(this), $("#Quality-Filter"), (sortState) => {
-              const skins = $(".box-skins-list .skin").get();
-          
-              if (sortState !== "none") {
-                skins.sort((a, b) => {
-                  const priceA = parseFloat($(a).find(".skin-price-info").text().replace(/[^0-9.]/g, "")) || 0;
-                  const priceB = parseFloat($(b).find(".skin-price-info").text().replace(/[^0-9.]/g, "")) || 0;
-                  return sortState === "asc" ? priceA - priceB : priceB - priceA;
-                });
-                $(".box-skins-list").html(skins);
-              }
-            });
-          });
-          
-          
-        
-          $(".topic-centralizer").on("click", ".navigation-reset", function () {
-            $(".skin").removeClass("disabled");
-            $(".navigation-weapon-type").addClass("enabled");
-          
-            $("#Quality-Filter, #Price-Filter").removeClass("enabled reversed");
-            $(".topic-centralizer .navigation-reset").remove();
-          
-            enabledFiltersState = {};
-            checkWeaponTypeAvailabilityForItems?.();
-            checkWeaponTypeAvailability?.();
-          });                  
-        });
-            
-      }
-    (async function autoImportFullJsonIfNeeded() {
-      const currentPath = window.location.pathname;
-      const validPrefixes = ["/topic/items/", "/topic/collections/", "/topic/stickers/", "/topic/charms/"];
-      const shouldProcess = validPrefixes.some(prefix => currentPath.includes(prefix));
-      if (!shouldProcess) return;
-
-      const topicId = currentPath.split("/").pop().replace(/\.html$/, "");
-      const isCollection = currentPath.includes("/topic/collections/");
-      const isSticker = currentPath.includes("/topic/stickers/");
-      const isCharm = currentPath.includes("/topic/charms/");
+      const $previewWindow = $("#preview-window");
+      const currentBoxId = $previewWindow.attr("data-current-box-id");
+      const isCraftMode = $previewWindow.hasClass("preview-craft") || $("[data-box-id='" + currentBoxId + "']").hasClass("preview-craft");
 
       try {
-        let mode;
-        const settingsRes = await fetch("/code-parts/topics/skins-settings.json");
-        if (settingsRes.ok) {
-          const settings = await settingsRes.json();
-          mode = settings[topicId];
-        }
+        if (isCraftMode) {
+          const currentBox = $(".preview-craft[data-box-id='" + currentBoxId + "']");
+          const units = currentBox.find(".preview-craft-unit");
+          const total = units.length;
+          const currentIndex = +$previewWindow.attr("data-current-index");
 
-        if (!mode) {
-          if (isCollection) mode = 2;
-          if (isSticker) mode = 1;
-          if (isCharm) mode = 1;
-        }
-        if (!mode) return;
+          const newIndex = (direction === "left")
+            ? (currentIndex - 1 + total) % total
+            : (currentIndex + 1) % total;
 
-        const box = $(".box-skins-list");
-        if (!box.length) return;
-
-        const pricesPromise = fetchSkinPrices();
-        let html = "";
-
-        if (mode === 1) {
-          const jsonPath = `/code-parts/topics/skins-list/${topicId}.json`;
-          const dataRes = await fetch(jsonPath);
-          if (!dataRes.ok) return;
-
-          const fullData = await dataRes.json();
-          for (const [id, skinData] of Object.entries(fullData)) {
-            html += renderSkinHTML(id, topicId, skinData);
+          const newUnit = units.get(newIndex);
+          if (newUnit) {
+            await showCraftPreviewWindow(newUnit);
+            $previewWindow.attr("data-current-index", newIndex);
           }
+        } else {
+          const currentBox = $("[data-box-id='" + currentBoxId + "']");
+          const visibleItems = currentBox.find(".skin:not(.disabled):not(.none)");
+          const total = visibleItems.length;
+          const currentIndex = +$previewWindow.attr("data-current-index");
 
-        } else if (mode === 2) {
-          const presetPath = `/code-parts/topics/skins-list/presets/${topicId}.json`;
-          const presetRes = await fetch(presetPath);
-          if (!presetRes.ok) return;
+          const newIndex = (direction === "left")
+            ? (currentIndex - 1 + total) % total
+            : (currentIndex + 1) % total;
 
-          const presetItems = await presetRes.json();
-          const uniqueWeapons = [...new Set(presetItems.map(item => item.weapon))];
-
-          const weaponCache = {};
-          await Promise.all(uniqueWeapons.map(async (weapon) => {
-            try {
-              const res = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
-              if (res.ok) {
-                weaponCache[weapon] = await res.json();
-              }
-            } catch {}
-          }));
-
-          for (const item of presetItems) {
-            const { weapon, ["skin-id"]: skinId } = item;
-            const weaponData = weaponCache[weapon];
-            if (!weaponData) continue;
-
-            const skinData = weaponData[skinId];
-            if (skinData) {
-              html += renderSkinHTML(skinId, weapon, skinData);
-            }
+          const newSkin = visibleItems.get(newIndex);
+          if (newSkin) {
+            await showPreviewWindow(newSkin);
+            $previewWindow.attr("data-current-index", newIndex);
           }
         }
+      } catch (err) {
+        console.error("Ошибка при переключении:", err);
+      }
 
-        box.html(html);
+      switchLock = false;
+    }
+
+    $(document).on("click", ".skin", function () {
+      showPreviewWindow(this);
+    });
+    $(document).on("click", ".preview-close-button", function () {
+      closePreviewWindow();
+    });
+    $(document).on("click", "#preview-window", function (e) {
+      if ($(e.target).closest("#preview-showcase").length === 0) {
+        closePreviewWindow();
+      }
+    });
+    $(document).on("click", ".preview-nav-button.left", function () {
+      switchSkin("left");
+    });
+    $(document).on("click", ".preview-nav-button.right", function () {
+      switchSkin("right");
+    });
+    $(document).on("click", ".preview-craft-unit", function () {
+      showCraftPreviewWindow(this);
+    });
+
+    // ---------- Страницы /skins/ (UI) ----------
+    if (currentPath.includes("/skins/")) {
+      $(".close-box-skins").on("click", function () {
+        const parentBoxSkins = $(this).closest(".box-skins");
+        parentBoxSkins.toggleClass("selected");
+        $(".box-skins").not(parentBoxSkins).removeClass("selected");
+
+        $(this).toggleClass("zoom-in zoom-out");
+        $(".close-box-skins")
+          .not($(this))
+          .removeClass("zoom-out")
+          .addClass("zoom-in");
+      });
+
+      $(".box-skins-name").click(function () {
+        const parentBoxSkins = $(this).closest(".box-skins");
+        parentBoxSkins.toggleClass("selected");
+        $(".box-skins").not(parentBoxSkins).removeClass("selected");
+
+        $(this)
+          .siblings(".close-box-skins")
+          .toggleClass("zoom-in zoom-out");
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document
+          .querySelectorAll(".box-skins-name")
+          .forEach((boxSkinsName) => boxSkinsName.classList.add("visible"));
+      });
+
+      $(".navigation-weapon-type").click(function () {
+        const weaponType = $(this).attr("class").split(" ")[1];
+        $(`.box-skins.${weaponType}`).toggleClass("disabled");
+        $(this).toggleClass("enabled");
+        updateNavigationReset();
+      });
+
+      $(".topic-centralizer").on("click", ".navigation-reset", function () {
+        $(".box-skins").removeClass("disabled selected");
+        $(".navigation-weapon-type").addClass("enabled");
+        $(".topic-centralizer .navigation-reset").remove();
+        checkWeaponTypeAvailability();
+      });
+
+      checkWeaponTypeAvailability();
+    }
+    // ---------- Навигация внутри items/stickers/cases/charms/skins/collections ----------
+    else if (
+      currentPath.includes("/items/") ||
+      currentPath.includes("/stickers/") ||
+      currentPath.includes("/cases/") ||
+      currentPath.includes("/charms/") ||
+      currentPath.includes("/skins/") ||
+      currentPath.includes("/collections/")
+    ) {
+      $.getJSON("/code-parts/topics/items-nav.json", function (navData) {
+        const $grandbox = $(".topic-grandbox");
+        const $navSectionFirst = $('<div class="section first"></div>');
+
+        const stickerTitles = {
+          blue: "High Grade",
+          purple: "Remarkable",
+          pink: "Exotic",
+          red: "Extraordinary"
+        };
+
+        navData.types.forEach(type => {
+          let title = type.title;
+          if (currentPath.includes("/stickers/") && stickerTitles[type.class]) {
+            title = stickerTitles[type.class];
+          }
+
+          $navSectionFirst.append(
+            `<div class="navigation-weapon-type ${type.class} enabled">${title}</div>`
+          );
+        });
+
+        const $navSearchers = $('<div class="section searchers"></div>');
+        navData.filters.forEach(filter => {
+          const title = languageTag === "ru" ? filter.title_ru : filter.title_en;
+          $navSearchers.append(
+            `<div class="navigation-weapon-sort" data-title="${title}" id="${filter.id}">
+               <i class="officon ${filter.icon}"></i>
+             </div>`
+          );
+        });
+
+        $grandbox.prepend($navSectionFirst, $navSearchers);
+
+        $(".navigation-weapon-type").click(function () {
+          const weaponType = $(this).attr("class").split(" ")[1];
+          $(`.skin.${weaponType}`).toggleClass("disabled");
+          $(this).toggleClass("enabled");
+          enabledFiltersState[weaponType] = $(this).hasClass("enabled");
+          updateNavigationReset();
+        });
+
         checkWeaponTypeAvailabilityForItems();
+        translateTypes(languageTag);
 
-        const qualityFilterBtn = document.getElementById("Quality-Filter");
-        if (qualityFilterBtn && !qualityFilterBtn.classList.contains("enabled")) {
-          qualityFilterBtn.click();
+        function getSkinsToggleState() {
+          return getLocalStorageState("SkinsToggleState", { showprice: true, showrarity: true });
+        }
+        function setSkinsToggleState(newState) {
+          setLocalStorageState("SkinsToggleState", newState);
         }
 
-        setTimeout(() => {
-          $(".skin img").each(function () {
-            if (this.complete) {
-              $(this).addClass("imported");
-            } else {
-              $(this).on("load", function () {
-                $(this).addClass("imported");
+        const toggleState = getSkinsToggleState();
+
+        const $skinBox = $(".box-skins-list");
+        const $priceToggle = $("#Price-Toggle");
+        const $rarityToggle = $("#Rarity-Toggle");
+
+        $skinBox.toggleClass("showprice", toggleState.showprice);
+        $skinBox.toggleClass("showrarity", toggleState.showrarity);
+
+        $priceToggle.toggleClass("enabled", toggleState.showprice);
+        $rarityToggle.toggleClass("enabled", toggleState.showrarity);
+
+        $priceToggle.on("click", function () {
+          toggleState.showprice = !toggleState.showprice;
+          setSkinsToggleState(toggleState);
+
+          $skinBox.toggleClass("showprice", toggleState.showprice);
+          $(this).toggleClass("enabled", toggleState.showprice);
+        });
+
+        $rarityToggle.on("click", function () {
+          toggleState.showrarity = !toggleState.showrarity;
+          setSkinsToggleState(toggleState);
+
+          $skinBox.toggleClass("showrarity", toggleState.showrarity);
+          $(this).toggleClass("enabled", toggleState.showrarity);
+        });
+
+        function toggleSortFilter($current, $other, sortCallback) {
+          const isEnabled = $current.hasClass("enabled");
+          const isReversed = $current.hasClass("reversed");
+
+          $other.removeClass("enabled reversed");
+
+          if (!isEnabled && !isReversed) {
+            $current.addClass("enabled");
+          } else if (isEnabled && !isReversed) {
+            $current.addClass("reversed");
+          } else if (isEnabled && isReversed) {
+            $current.removeClass("reversed");
+          }
+
+          const sortState = $current.hasClass("enabled") && !$current.hasClass("reversed") ? "desc"
+                         : $current.hasClass("enabled") && $current.hasClass("reversed") ? "asc"
+                         : "none";
+
+          sortCallback(sortState);
+          updateNavigationReset();
+        }
+
+        $("#Quality-Filter").click(function () {
+          toggleSortFilter($(this), $("#Price-Filter"), (sortState) => {
+            const skins = $(".box-skins-list .skin").get();
+            const sortOrder = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];
+
+            if (sortState !== "none") {
+              skins.sort((a, b) => {
+                const aClass = $(a).attr("class").split(" ")[1];
+                const bClass = $(b).attr("class").split(" ")[1];
+                const diff = sortOrder.indexOf(aClass) - sortOrder.indexOf(bClass);
+                return sortState === "asc" ? diff : -diff;
               });
-            }
-          });
-        }, 0);
-
-        pricesPromise.then((prices) => {
-          $(".skin").each(function () {
-            const $skin = $(this);
-            const name = $skin.find(".skin-desc-name").text();
-            const isSticker = name.startsWith("Sticker |");
-
-            const matchedSkins = prices.filter(skin => {
-              return isSticker ? skin.name === name : skin.name.includes(name);
-            });
-
-            const normalPrices = matchedSkins.filter(s => !s.name.startsWith("Souvenir")).map(s => s.price);
-            const souvenirPrices = matchedSkins.filter(s => s.name.startsWith("Souvenir")).map(s => s.price);
-
-            let priceInfoContent = "";
-            if (normalPrices.length > 0) {
-              normalPrices.sort((a, b) => a - b);
-              const text = normalPrices[0] === normalPrices[normalPrices.length - 1]
-                ? `${normalPrices[0].toFixed(2)}$`
-                : `${normalPrices[0].toFixed(2)}$ - ${normalPrices[normalPrices.length - 1].toFixed(2)}$`;
-              priceInfoContent += `${text}`;
-            }
-            if (souvenirPrices.length > 0) {
-              souvenirPrices.sort((a, b) => a - b);
-              const text = souvenirPrices[0] === souvenirPrices[souvenirPrices.length - 1]
-                ? `${souvenirPrices[0].toFixed(2)}$`
-                : `${souvenirPrices[0].toFixed(2)}$ - ${souvenirPrices[souvenirPrices.length - 1].toFixed(2)}$`;
-              priceInfoContent += `<div class="souvenir-price-info">${text}</div>`;
-            }
-
-            if (priceInfoContent) {
-              const priceEl = $skin.find(".skin-price-info");
-              if (priceEl.length) priceEl.html(priceInfoContent);
-              else $skin.append(`<div class="skin-price-info">${priceInfoContent}</div>`);
+              $(".box-skins-list").html(skins);
             }
           });
         });
 
-      } catch (err) {
-        console.error("Error in autoImportFullJsonIfNeeded:", err);
-      }
+        $("#Price-Filter").click(function () {
+          toggleSortFilter($(this), $("#Quality-Filter"), (sortState) => {
+            const skins = $(".box-skins-list .skin").get();
 
-      function renderSkinHTML(id, weapon, skinData) {
-        const imageUrl = skinData.image;
-        return `
-          <div class="skin ${skinData.class}" skin-id="${id}" weapon="${weapon}">
-            <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
-            <div class="skin-desc-name">${skinData.name}</div>
-            <div class="skin-price-info loading"></div>
-          </div>
-        `;
-      }
-    })();
+            if (sortState !== "none") {
+              skins.sort((a, b) => {
+                const priceA = parseFloat($(a).find(".skin-price-info").text().replace(/[^0-9.]/g, "")) || 0;
+                const priceB = parseFloat($(b).find(".skin-price-info").text().replace(/[^0-9.]/g, "")) || 0;
+                return sortState === "asc" ? priceA - priceB : priceB - priceA;
+              });
+              $(".box-skins-list").html(skins);
+            }
+          });
+        });
 
-          
+        $(".topic-centralizer").on("click", ".navigation-reset", function () {
+          $(".skin").removeClass("disabled");
+          $(".navigation-weapon-type").addClass("enabled");
+
+          $("#Quality-Filter, #Price-Filter").removeClass("enabled reversed");
+          $(".topic-centralizer .navigation-reset").remove();
+
+          enabledFiltersState = {};
+          checkWeaponTypeAvailabilityForItems?.();
+          checkWeaponTypeAvailability?.();
+        });
+      });
+
     }
 
+    // !!! УДАЛЕНО: авто-импорт .box-skins-list (autoImportFullJsonIfNeeded)
+
+  }
 });
 
-// /assets/js/topic-nav-fix.js
+// ------------------- topics-nav и пр. (без изменений функционала) -------------------
 
-// Гейт по путям
-// /code-parts/topics/topics-nav.js
+// /assets/js/topic-nav-fix.js
 if (
   window.location.pathname.includes("/items/") ||
   window.location.pathname.includes("/cases/") ||
@@ -1303,10 +1085,8 @@ if (
   window.location.pathname.includes("/stickers/") ||
   window.location.pathname.includes("/collections/")
 ) {
-  // --- Утилиты ---
   const isNonEmpty = (v) => typeof v === "string" && v.trim().length > 0;
 
-  // --- КЭШ ЗАГРУЗКИ ДАННЫХ ---
   async function loadNavDataWithCache() {
     const cacheKey = "topicNavCache";
     const cacheTimeKey = "topicNavCache-time";
@@ -1336,7 +1116,6 @@ if (
     return data;
   }
 
-  // --- DOM Сборка категории ---
   function createCategoryDOM(category, isMobileView) {
     const container = document.createElement("div");
     container.classList.add("weapon-container");
@@ -1355,7 +1134,6 @@ if (
       current.appendChild(span);
       current.appendChild(caret);
     } else {
-      // Показать img только если он есть; иначе — текст
       if (isNonEmpty(category.image)) {
         const img = document.createElement("img");
         img.src = category.image;
@@ -1380,10 +1158,8 @@ if (
       const li = document.createElement("li");
       li.className = "weapon-selection-unite";
 
-      // ВАЖНО: если item.class задан и непустой, добавляем как класс
       const itemClass = item?.class;
       if (isNonEmpty(itemClass)) {
-        // возможны пробелы — оставляем как есть
         li.className += ` ${itemClass.trim()}`;
       }
 
@@ -1391,7 +1167,6 @@ if (
       a.href = localizedHref || "#";
       a.className = "weapon-selection-redir";
 
-      // Добавляем <img> только если есть непустой image
       if (isNonEmpty(item.image)) {
         const img = document.createElement("img");
         img.src = item.image;
@@ -1414,7 +1189,6 @@ if (
     return container;
   }
 
-  // --- Привязка обработчиков (делегирование на документ) ---
   function bindTopicNavEvents() {
     if (document.__topicNavBound) return;
     document.__topicNavBound = true;
@@ -1458,12 +1232,11 @@ if (
     });
   }
 
-  // --- Построение меню + события ---
   (async function initTopicNav() {
     const topicTopPanel = document.querySelector("div.sitetoppannel");
     const topicPage = document.querySelector("div.topicpage");
 
-    bindTopicNavEvents(); // клики должны жить всегда
+    bindTopicNavEvents();
 
     if (!topicTopPanel || !topicPage) {
       return;
@@ -1500,7 +1273,6 @@ if (
               name: item.title,
               image: item.img,
               link: `/topic/${pathType}/${item.id}`,
-              // class не импортируем, т.к. в исходных импортерах его нет; оставляем совместимость
             }));
           } catch (e) {
             console.error("Failed to import items from", category["import-items"], e);
@@ -1540,18 +1312,16 @@ if (
         closeEl.className = "topic-nav-close";
         navMenu.appendChild(closeEl);
       } else {
-        topicTopPanel.textContent = ""; // безопаснее, чем innerHTML = ""
+        topicTopPanel.textContent = "";
         const frag = document.createDocumentFragment();
         navElements.forEach((el) => frag.appendChild(el));
         topicTopPanel.appendChild(frag);
-        topicPage.classList.add("fade-in-topic");
       }
     } catch (e) {
       console.error("[topic-nav] init failed:", e);
     }
   })();
 
-  // Перепривязка при ресайзе (смена режима)
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 1365) {
       document.querySelector(".topic-nav-selector")?.classList.remove("active");
@@ -1562,325 +1332,319 @@ if (
   });
 }
 
-  if (window.location.pathname.includes("/topic")) {
-    var skinslist = document.querySelectorAll('.box-skins-list');
-    skinslist.forEach(function(element) {
-        element.classList.add('visible');
-    });
-    
-    document.addEventListener('DOMContentLoaded', function () {
-        if (window.location.pathname.includes("/topic/skins")) {
-            var colorList = ["white", "gray", "black", "brown", "red", "orange", "golden", "silver", "yellow", "green", "cyan", "blue", "purple", "pink"];
-        
-            colorList.forEach(function(color) {
-                var bgImage = new Image();
-                bgImage.src = "/img/skins/topics/small/example-" + color + ".webp";
-                bgImage.onload = function() {
-                    var skinslist = document.querySelectorAll("[data-color='" + color + "']");
-                    skinslist.forEach(function(element) {
-                        element.style.backgroundImage = "url(" + bgImage.src + "), linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%)";
-                        element.classList.add("active");
-                    });
-                };
-            });
-        }
+// ---------- Разное визуальное для /topic ----------
+if (window.location.pathname.includes("/topic")) {
+  var skinslist = document.querySelectorAll('.box-skins-list');
+  skinslist.forEach(function(element) {
+      element.classList.add('visible');
+  });
 
-        const boxSkinsElements = document.querySelectorAll('.box-skins');
-        boxSkinsElements.forEach(function(boxSkinsElement) {
-            const boxSkinsList = boxSkinsElement.querySelector('.box-skins-list');
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.location.pathname.includes("/topic/skins")) {
+      var colorList = ["white", "gray", "black", "brown", "red", "orange", "golden", "silver", "yellow", "green", "cyan", "blue", "purple", "pink"];
 
-            if (boxSkinsList && boxSkinsList.scrollWidth > boxSkinsList.clientWidth) {
-                const boxSkinsControl = document.createElement('div');
-                boxSkinsControl.className = 'box-skins-control';
-                boxSkinsControl.innerHTML = `
-                <div class="box-skins-button left hidden"><i class="officon chevron left"></i></div>
-                <div class="box-skins-button right hidden"><i class="officon chevron right"></i></div>
-                `;
-                boxSkinsElement.appendChild(boxSkinsControl);
-
-                const leftButton = boxSkinsControl.querySelector('.box-skins-button.left');
-                const rightButton = boxSkinsControl.querySelector('.box-skins-button.right');
-
-                leftButton.addEventListener('click', function () {
-                    boxSkinsList.scrollBy({
-                        left: -boxSkinsList.querySelector('.skin').offsetWidth - 10,
-                        behavior: 'smooth'
-                    });
-                });
-
-                rightButton.addEventListener('click', function () {
-                    boxSkinsList.scrollBy({
-                        left: boxSkinsList.querySelector('.skin').offsetWidth + 10,
-                        behavior: 'smooth'
-                    });
-                });
-
-                boxSkinsList.addEventListener('scroll', function () {
-                    leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft <= boxSkinsList.querySelector('.skin').offsetWidth);
-                    rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
-                });
-
-                leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft <= boxSkinsList.querySelector('.skin').offsetWidth);
-                rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
-            }
-        });
-
-        function enableMouseDragScroll(container) {
-
-          if (!container) return;
-
-          let isDown = false;
-          let startX;
-          let scrollLeft;
-        
-          container.addEventListener('mousedown', (e) => {
-              isDown = true;
-              container.classList.add('active');
-              startX = e.pageX - container.offsetLeft;
-              scrollLeft = container.scrollLeft;
+      colorList.forEach(function(color) {
+        var bgImage = new Image();
+        bgImage.src = "/img/skins/topics/small/example-" + color + ".webp";
+        bgImage.onload = function() {
+          var skinslist = document.querySelectorAll("[data-color='" + color + "']");
+          skinslist.forEach(function(element) {
+            element.style.backgroundImage = "url(" + bgImage.src + "), linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%)";
+            element.classList.add("active");
           });
-        
-          container.addEventListener('mouseleave', () => {
-              isDown = false;
-              container.classList.remove('active');
-          });
-        
-          container.addEventListener('mouseup', () => {
-              isDown = false;
-              container.classList.remove('active');
-          });
-        
-          container.addEventListener('mousemove', (e) => {
-              if (!isDown) return;
-              e.preventDefault();
-              const x = e.pageX - container.offsetLeft;
-              const walk = (x - startX) * 1;
-              container.scrollLeft = scrollLeft - walk;
-          });
-        }
-        
-        boxSkinsElements.forEach(function(boxSkinsElement) {
-          const boxSkinsList = boxSkinsElement.querySelector('.box-skins-list');
-          enableMouseDragScroll(boxSkinsList);
-        });
-        
-        const boxSkinsNav = document.querySelector('.box-skins-nav');
-        const weaponNames = [
-          "Gloves", "Knives", "Перчатки", "Ножи", "AWP", "AK-47", "M4A4", "M4A1-S", "SSG 08", "Desert Eagle", "P250", 
-          "Glock-18", "USP-S", "P2000", "CZ75-Auto", "Dual Berettas", "Five-SeveN", "Tec-9", 
-          "R8 Revolver", "Zeus x27", "MP9", "MAC-10", "MP7", "MP5-SD", "UMP-45", "P90", "PP-Bizon", "Galil AR", 
-          "FAMAS", "SG 553", "AUG", "Nova", "XM1014", "MAG-7", "Sawed-Off", "SCAR-20", "G3SG1", 
-          "Negev", "M249"
-        ];
-        
-        function populateNavList(navList) {
-          weaponNames.forEach(function(weapon) {
-              const boxSkins = document.querySelectorAll('.box-skins');
-              let isWeaponExist = false;
-        
-              boxSkins.forEach(function(box) {
-                  const skinNameSpan = box.querySelector('.box-skins-name span');
-                  if (skinNameSpan && skinNameSpan.textContent.trim() === weapon && !box.classList.contains('notexist')) {
-                      isWeaponExist = true;
-                  }
-              });
-        
-              if (isWeaponExist) {
-                  const navItem = document.createElement('div');
-                  navItem.className = 'navigation-weapon-name';
-                  navItem.textContent = weapon;
-                  navList.appendChild(navItem);
-        
-                  navItem.addEventListener('click', function() {
-                      scrollToBoxSkins(weapon);
-                  });
-              }
-          });
-        }
-        
-        let scrollOffset = 115;
-
-        function scrollToBoxSkins(weaponName) {
-            const boxSkins = document.querySelectorAll('.box-skins');
-            boxSkins.forEach(function(box) {
-                const skinNameSpan = box.querySelector('.box-skins-name span');
-                if (skinNameSpan && skinNameSpan.textContent.trim() === weaponName && !box.classList.contains('notexist')) {
-                    const boxPosition = box.getBoundingClientRect().top + window.pageYOffset;
-                    window.scrollTo({
-                        top: boxPosition - scrollOffset,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        }
-        
-        const navList = document.querySelector('.box-skins-nav-list');
-
-        if (navList) {
-            populateNavList(navList);
-        
-            enableMouseDragScroll(navList);
-        
-            const navItems = navList.querySelectorAll('.navigation-weapon-name');
-            const itemsToScroll = 5;
-        
-            if (navItems.length > itemsToScroll) {
-                const navControl = document.createElement('div');
-                navControl.className = 'box-skins-nav-control';
-                navControl.innerHTML = `
-                    <div class="box-skins-button left hidden"><i class="officon chevron left"></i></div>
-                    <div class="box-skins-button right"><i class="officon chevron right"></i></div>
-                `;
-                boxSkinsNav.appendChild(navControl);
-        
-                const leftNavButton = navControl.querySelector('.box-skins-button.left');
-                const rightNavButton = navControl.querySelector('.box-skins-button.right');
-        
-                const itemWidth = navItems[0].offsetWidth + 10;
-        
-                leftNavButton.addEventListener('click', function () {
-                    navList.scrollBy({
-                        left: -(itemWidth * itemsToScroll),
-                        behavior: 'smooth'
-                    });
-                });
-        
-                rightNavButton.addEventListener('click', function () {
-                    navList.scrollBy({
-                        left: itemWidth * itemsToScroll,
-                        behavior: 'smooth'
-                    });
-                });
-        
-                navList.addEventListener('scroll', function () {
-                    leftNavButton.classList.toggle('hidden', navList.scrollLeft <= itemWidth);
-                    rightNavButton.classList.toggle('hidden', navList.scrollLeft + navList.clientWidth >= navList.scrollWidth);
-                });
-        
-                leftNavButton.classList.toggle('hidden', navList.scrollLeft <= itemWidth);
-                rightNavButton.classList.toggle('hidden', navList.scrollLeft + navList.clientWidth >= navList.scrollWidth);
-            }
-        }        
-      
-    });
-    
-    function translateTypes(languageTag) {
-        if (languageTag === "ru") {
-            var translations_items = {
-                "Knives": "Ножи",
-                "Gloves": "Перчатки",
-                "Pistols": "Пистолеты",
-                "Rifles": "Винтовки",
-                "Sniper Rifles": "Снайперские винтовки",
-                "SMGs": "ПП",
-                "Shotguns": "Дробовики",
-                "Machine guns": "Пулеметы",
-                "Consumer Grade": "Ширпотреб",
-                "Industrial Grade": "Промышленное",
-                "Mil-Spec": "Армейское",
-                "Restricted": "Запрещенное",
-                "Classified": "Засекреченное",
-                "Covert": "Тайное",
-                "Contraband": "Контрабанда",
-                "Change Color": "Другие Цвета",
-                "Expensive": "Дорогой",
-                "Cheap": "Дешевый",
-                "All Skins": "Все Скины"
-            };
-
-            var elementsToTranslate = document.querySelectorAll('.navigation-weapon-type, .category-switch, .color-box-selection-button, .color-box-overview-button, .navigation-weapon-name, .box-skins-name span');
-            elementsToTranslate.forEach(function(element) {
-                var originalText = element.textContent.trim();
-                if (translations_items.hasOwnProperty(originalText)) {
-                    element.textContent = translations_items[originalText];
-                }
-            });
-        }
+        };
+      });
     }
 
-    translateTypes(languageTag)
+    const boxSkinsElements = document.querySelectorAll('.box-skins');
+    boxSkinsElements.forEach(function(boxSkinsElement) {
+      const boxSkinsList = boxSkinsElement.querySelector('.box-skins-list');
+
+      if (boxSkinsList && boxSkinsList.scrollWidth > boxSkinsList.clientWidth) {
+        const boxSkinsControl = document.createElement('div');
+        boxSkinsControl.className = 'box-skins-control';
+        boxSkinsControl.innerHTML = `
+        <div class="box-skins-button left hidden"><i class="officon chevron left"></i></div>
+        <div class="box-skins-button right hidden"><i class="officon chevron right"></i></div>
+        `;
+        boxSkinsElement.appendChild(boxSkinsControl);
+
+        const leftButton = boxSkinsControl.querySelector('.box-skins-button.left');
+        const rightButton = boxSkinsControl.querySelector('.box-skins-button.right');
+
+        leftButton.addEventListener('click', function () {
+          boxSkinsList.scrollBy({
+            left: -boxSkinsList.querySelector('.skin').offsetWidth - 10,
+            behavior: 'smooth'
+          });
+        });
+
+        rightButton.addEventListener('click', function () {
+          boxSkinsList.scrollBy({
+            left: boxSkinsList.querySelector('.skin').offsetWidth + 10,
+            behavior: 'smooth'
+          });
+        });
+
+        boxSkinsList.addEventListener('scroll', function () {
+          leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft <= boxSkinsList.querySelector('.skin').offsetWidth);
+          rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
+        });
+
+        leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft <= boxSkinsList.querySelector('.skin').offsetWidth);
+        rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
+      }
+    });
+
+    function enableMouseDragScroll(container) {
+      if (!container) return;
+
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      container.addEventListener('mousedown', (e) => {
+          isDown = true;
+          container.classList.add('active');
+          startX = e.pageX - container.offsetLeft;
+          scrollLeft = container.scrollLeft;
+      });
+
+      container.addEventListener('mouseleave', () => {
+          isDown = false;
+          container.classList.remove('active');
+      });
+
+      container.addEventListener('mouseup', () => {
+          isDown = false;
+          container.classList.remove('active');
+      });
+
+      container.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - container.offsetLeft;
+          const walk = (x - startX) * 1;
+          container.scrollLeft = scrollLeft - walk;
+      });
+    }
+
+    boxSkinsElements.forEach(function(boxSkinsElement) {
+      const boxSkinsList = boxSkinsElement.querySelector('.box-skins-list');
+      enableMouseDragScroll(boxSkinsList);
+    });
+
+    const boxSkinsNav = document.querySelector('.box-skins-nav');
+    const weaponNames = [
+      "Gloves", "Knives", "Перчатки", "Ножи", "AWP", "AK-47", "M4A4", "M4A1-S", "SSG 08", "Desert Eagle", "P250",
+      "Glock-18", "USP-S", "P2000", "CZ75-Auto", "Dual Berettas", "Five-SeveN", "Tec-9",
+      "R8 Revolver", "Zeus x27", "MP9", "MAC-10", "MP7", "MP5-SD", "UMP-45", "P90", "PP-Bizon", "Galil AR",
+      "FAMAS", "SG 553", "AUG", "Nova", "XM1014", "MAG-7", "Sawed-Off", "SCAR-20", "G3SG1",
+      "Negev", "M249"
+    ];
+
+    function populateNavList(navList) {
+      weaponNames.forEach(function(weapon) {
+        const boxSkins = document.querySelectorAll('.box-skins');
+        let isWeaponExist = false;
+
+        boxSkins.forEach(function(box) {
+          const skinNameSpan = box.querySelector('.box-skins-name span');
+          if (skinNameSpan && skinNameSpan.textContent.trim() === weapon && !box.classList.contains('notexist')) {
+            isWeaponExist = true;
+          }
+        });
+
+        if (isWeaponExist) {
+          const navItem = document.createElement('div');
+          navItem.className = 'navigation-weapon-name';
+          navItem.textContent = weapon;
+          navList.appendChild(navItem);
+
+          navItem.addEventListener('click', function() {
+            scrollToBoxSkins(weapon);
+          });
+        }
+      });
+    }
+
+    let scrollOffset = 115;
+
+    function scrollToBoxSkins(weaponName) {
+      const boxSkins = document.querySelectorAll('.box-skins');
+      boxSkins.forEach(function(box) {
+        const skinNameSpan = box.querySelector('.box-skins-name span');
+        if (skinNameSpan && skinNameSpan.textContent.trim() === weaponName && !box.classList.contains('notexist')) {
+          const boxPosition = box.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: boxPosition - scrollOffset,
+            behavior: 'smooth'
+          });
+        }
+      });
+    }
+
+    const navList = document.querySelector('.box-skins-nav-list');
+
+    if (navList) {
+      populateNavList(navList);
+
+      enableMouseDragScroll(navList);
+
+      const navItems = navList.querySelectorAll('.navigation-weapon-name');
+      const itemsToScroll = 5;
+
+      if (navItems.length > itemsToScroll) {
+        const navControl = document.createElement('div');
+        navControl.className = 'box-skins-nav-control';
+        navControl.innerHTML = `
+            <div class="box-skins-button left hidden"><i class="officon chevron left"></i></div>
+            <div class="box-skins-button right"><i class="officon chevron right"></i></div>
+        `;
+        boxSkinsNav.appendChild(navControl);
+
+        const leftNavButton = navControl.querySelector('.box-skins-button.left');
+        const rightNavButton = navControl.querySelector('.box-skins-button.right');
+
+        const itemWidth = navItems[0].offsetWidth + 10;
+
+        leftNavButton.addEventListener('click', function () {
+          navList.scrollBy({
+              left: -(itemWidth * itemsToScroll),
+              behavior: 'smooth'
+          });
+        });
+
+        rightNavButton.addEventListener('click', function () {
+          navList.scrollBy({
+              left: itemWidth * itemsToScroll,
+              behavior: 'smooth'
+          });
+        });
+
+        navList.addEventListener('scroll', function () {
+          leftNavButton.classList.toggle('hidden', navList.scrollLeft <= itemWidth);
+          rightNavButton.classList.toggle('hidden', navList.scrollLeft + navList.clientWidth >= navList.scrollWidth);
+        });
+
+        leftNavButton.classList.toggle('hidden', navList.scrollLeft <= itemWidth);
+        rightNavButton.classList.toggle('hidden', navList.scrollLeft + navList.clientWidth >= navList.scrollWidth);
+      }
+    }
+  });
+
+  function translateTypes(languageTag) {
+    if (languageTag === "ru") {
+      var translations_items = {
+        "Knives": "Ножи",
+        "Gloves": "Перчатки",
+        "Pistols": "Пистолеты",
+        "Rifles": "Винтовки",
+        "Sniper Rifles": "Снайперские винтовки",
+        "SMGs": "ПП",
+        "Shotguns": "Дробовики",
+        "Machine guns": "Пулеметы",
+        "Consumer Grade": "Ширпотреб",
+        "Industrial Grade": "Промышленное",
+        "Mil-Spec": "Армейское",
+        "Restricted": "Запрещенное",
+        "Classified": "Засекреченное",
+        "Covert": "Тайное",
+        "Contraband": "Контрабанда",
+        "Change Color": "Другие Цвета",
+        "Expensive": "Дорогой",
+        "Cheap": "Дешевый",
+        "All Skins": "Все Скины"
+      };
+
+      var elementsToTranslate = document.querySelectorAll('.navigation-weapon-type, .category-switch, .color-box-selection-button, .color-box-overview-button, .navigation-weapon-name, .box-skins-name span');
+      elementsToTranslate.forEach(function(element) {
+        var originalText = element.textContent.trim();
+        if (translations_items.hasOwnProperty(originalText)) {
+          element.textContent = translations_items[originalText];
+        }
+      });
+    }
+  }
+
+  translateTypes(languageTag)
 }
 
+// ---------- misc хранилище ----------
 function setLocalStorageState(key, value) {
   StorageHelper.setJSON(key, value);
 }
-
 function getLocalStorageState(key, defaultValue) {
   const storedValue = StorageHelper.getJSON(key);
   return storedValue != null ? storedValue : defaultValue;
 }
 
+// ---------- Импорт "похожих крафтов" (без .skin внутри) ----------
 if (window.location.pathname.includes('/sticker-crafts/')) {
-  
-      async function importStickerCrafts() {
-        try {
-            const response = await fetch("/code-parts/topics/sticker-crafts.json");
-            if (!response.ok) return;
-    
-            const data = await response.json();
-            if (!Array.isArray(data) || data.length === 0) return;
-    
-            const currentPageSpan = document.querySelector('.siteblock .topic-grandbox .section.first span');
-            const currentPageText = currentPageSpan ? currentPageSpan.textContent.trim() : '';
-    
-            const filteredTopics = data.filter(sticker => sticker.title.trim() !== currentPageText);
-            if (filteredTopics.length === 0) return;
-    
-            const randomTopics = filteredTopics.sort(() => 0.5 - Math.random()).slice(0, 5);
-    
-            const skinInspectPlaceholder = document.querySelector('.skininspect-placeholder');
-            const craftingTable = document.querySelector('.crafting-table');
-            if (!craftingTable) return;
-    
-            const stickerCraftsList = document.createElement('div');
-            stickerCraftsList.classList.add('sticker-crafts-list');
-    
-            randomTopics.forEach(sticker => {
-                const topic = document.createElement("a");
-                topic.classList.add("topic-grandbox", "sticker");
-                topic.href = `/topic/sticker-crafts/${sticker.id}`;
-                
-                const extraClass = sticker.extra ? ` ${sticker.extra}` : "";
-                
-                topic.innerHTML = `
-                    <div class="topic-box">
-                        <div class="best ${sticker.range}"></div>
-                        <div class="logobg${extraClass}">
-                            <img src="${sticker.img}" alt="${sticker.title}" draggable="false">
-                        </div>
-                    </div>
-                    <div class="section first">
-                        <span>${sticker.title}</span>
-                    </div>
-                    <div class="section third">
-                        ${sticker.skins.map(skin => 
-                            `<div class="skin" weapon="${skin.weapon}" skin-id="${skin.skin_id}"></div>`
-                        ).join('')}
-                    </div>
-                `;
-                stickerCraftsList.appendChild(topic);
-            });
-    
-            if (skinInspectPlaceholder) {
-                skinInspectPlaceholder.insertAdjacentElement('afterend', stickerCraftsList);
-            } else {
-                craftingTable.insertAdjacentElement('afterend', stickerCraftsList);
-            }
+  async function importStickerCrafts() {
+    try {
+      const response = await fetch("/code-parts/topics/sticker-crafts.json");
+      if (!response.ok) return;
 
-            if (languageTag === "ru") {
-              updateURLs(stickerCraftsList);
-            }
-    
-            setTimeout(() => {
-                stickerCraftsList.classList.add('imported');
-            }, 150);
-        } catch (error) {
-        }
-    }
+      const data = await response.json();
+      if (!Array.isArray(data) || data.length === 0) return;
 
+      const currentPageSpan = document.querySelector('.siteblock .topic-grandbox .section.first span');
+      const currentPageText = currentPageSpan ? currentPageSpan.textContent.trim() : '';
+
+      const filteredTopics = data.filter(sticker => sticker.title.trim() !== currentPageText);
+      if (filteredTopics.length === 0) return;
+
+      const randomTopics = filteredTopics.sort(() => 0.5 - Math.random()).slice(0, 5);
+
+      const skinInspectPlaceholder = document.querySelector('.skininspect-placeholder');
+      const craftingTable = document.querySelector('.crafting-table');
+      if (!craftingTable) return;
+
+      const stickerCraftsList = document.createElement('div');
+      stickerCraftsList.classList.add('sticker-crafts-list');
+
+      randomTopics.forEach(sticker => {
+        const topic = document.createElement("a");
+        topic.classList.add("topic-grandbox", "sticker");
+        topic.href = `/topic/sticker-crafts/${sticker.id}`;
+
+        const extraClass = sticker.extra ? ` ${sticker.extra}` : "";
+
+        // ВНИМАНИЕ: без генерации .skin
+        topic.innerHTML = `
+            <div class="topic-box">
+                <div class="best ${sticker.range}"></div>
+                <div class="logobg${extraClass}">
+                    <img src="${sticker.img}" alt="${sticker.title}" draggable="false">
+                </div>
+            </div>
+            <div class="section first">
+                <span>${sticker.title}</span>
+            </div>
+        `;
+        stickerCraftsList.appendChild(topic);
+      });
+
+      if (skinInspectPlaceholder) {
+        skinInspectPlaceholder.insertAdjacentElement('afterend', stickerCraftsList);
+      } else {
+        craftingTable.insertAdjacentElement('afterend', stickerCraftsList);
+      }
+
+      if (languageTag === "ru") {
+        updateURLs(stickerCraftsList);
+      }
+
+      setTimeout(() => {
+        stickerCraftsList.classList.add('imported');
+      }, 150);
+    } catch (error) {}
+  }
   importStickerCrafts();
 }
 
+// ---------- Страницы /topic/skins/ (часть с color-list и category-switch оставляем; loadout генерацию УДАЛИЛ) ----------
 if (window.location.pathname.includes('/topic/skins/')) {
   document.addEventListener('DOMContentLoaded', () => {
     const colorsBox = document.querySelector('.colors-box-selection');
@@ -1958,196 +1722,11 @@ if (window.location.pathname.includes('/topic/skins/')) {
       }
     }
 
-
-    const sitepage = document.querySelector('.sitepage.loadout');
-    if (sitepage) {
-      const characterBox = sitepage.querySelector('.character-box');
-      if (!characterBox) return;
-
-      const path = window.location.pathname;
-      const isCheapest = path.includes('cheapest');
-      const isBest = path.includes('best');
-      const matchColor = path.match(/(?:cheapest|best)-([a-z]+)-skins/);
-      if (!matchColor) return;
-
-      const color = matchColor[1];
-      const jsonPath = `/code-parts/topics/topic-color-lists/loadout/${color}.json`;
-
-      fetch(jsonPath)
-        .then(res => res.json())
-        .then(data => {
-          const weaponSkins = Object.entries(data).map(([key, value]) => {
-            if (typeof value === 'object' && ('best' in value || 'cheapest' in value)) {
-              const [weapon, skin] = isBest ? value.best : value.cheapest;
-              const skinId = (!skin || skin.trim() === "") ? "Vanilla" : skin;
-              return { weapon, skinId };
-            }
-            
-            const skins = Array.isArray(value) ? value : [value];
-            const safeSkins = skins.length === 1 ? [skins[0], skins[0]] : skins;
-            let skinId = isCheapest ? safeSkins[1] : safeSkins[0];
-            if (!skinId || skinId.trim() === "") skinId = "Vanilla";
-            return { weapon: key, skinId };
-          });
-
-          const top7 = weaponSkins.slice(0, 7);
-          const left11 = weaponSkins.slice(7, 18);
-          const right11 = weaponSkins.slice(18, 29);
-          const bottom7 = weaponSkins.slice(29, 36);
-
-          const makeSection = (className, list) => {
-            const div = document.createElement('div');
-            div.className = `character-items-list ${className}`;
-            list.forEach(({ weapon, skinId }) => {
-              const skinDiv = document.createElement('div');
-              skinDiv.className = 'skin';
-              skinDiv.setAttribute('weapon', weapon);
-              skinDiv.setAttribute('skin-id', skinId);
-              div.appendChild(skinDiv);
-            });
-            return div;
-          };
-
-          characterBox.innerHTML = '';
-          characterBox.appendChild(makeSection('top', top7));
-          characterBox.appendChild(makeSection('left', left11));
-          characterBox.appendChild(document.createElement('div')).className = 'character-model';
-          characterBox.appendChild(makeSection('right', right11));
-          characterBox.appendChild(makeSection('bottom', bottom7));
-
-          const fetchSkinPrices = async () => {
-            try {
-              const res = await fetch("https://cs2broker.cc/");
-              const data = await res.json();
-              return Array.isArray(data) ? data : [];
-            } catch {
-              return [];
-            }
-          };
-
-          const skinPricesPromise = fetchSkinPrices();
-
-          const loadCharacterBoxSkinsData = async () => {
-            const skinElements = characterBox.querySelectorAll('.skin');
-            const weaponToSkinIds = {};
-
-            skinElements.forEach(el => {
-              const weapon = el.getAttribute('weapon');
-              const skinId = el.getAttribute('skin-id');
-              if (!weapon || !skinId) return;
-              if (!weaponToSkinIds[weapon]) weaponToSkinIds[weapon] = [];
-              weaponToSkinIds[weapon].push(skinId);
-            });
-
-            await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
-              try {
-                const response = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
-                if (!response.ok) return;
-                const skinsData = await response.json();
-
-                weaponToSkinIds[weapon].forEach((skinId) => {
-                  const skinData = skinsData[skinId];
-                  if (!skinData) return;
-
-                  const targetEl = characterBox.querySelector(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`);
-                  if (!targetEl) return;
-
-                  const fullDiv = document.createElement('div');
-                  fullDiv.className = `skin ${skinData.class}`;
-                  fullDiv.setAttribute('weapon', weapon);
-                  fullDiv.setAttribute('skin-id', skinId);
-                  fullDiv.innerHTML = `
-                    <img src="${skinData.image}" draggable="false" alt="${skinData.name}">
-                    <div class="skin-desc-name">${skinData.name}</div>
-                    <div class="skin-price-info loading"></div>
-                  `;
-
-                  targetEl.replaceWith(fullDiv);
-                });
-              } catch (error) {
-                console.error(`Не удалось загрузить /skins-list/${weapon}.json`, error);
-              }
-            }));
-
-            skinPricesPromise.then((skinPrices) => {
-              characterBox.querySelectorAll('.skin').forEach(el => {
-                const nameEl = el.querySelector('.skin-desc-name');
-                if (!nameEl) return;
-                const name = nameEl.textContent;
-
-                const isSticker = name.startsWith('Sticker |');
-                const matches = skinPrices.filter(p => isSticker ? p.name === name : p.name.includes(name));
-
-                const normalPrices = matches.filter(p => !p.name.startsWith('Souvenir')).map(p => p.price);
-                const souvenirPrices = matches.filter(p => p.name.startsWith('Souvenir')).map(p => p.price);
-
-                let priceHtml = '';
-
-                if (normalPrices.length > 0) {
-                  normalPrices.sort((a, b) => a - b);
-                  priceHtml += normalPrices[0] === normalPrices.at(-1)
-                    ? `${normalPrices[0].toFixed(2)}$`
-                    : `${normalPrices[0].toFixed(2)}$ - ${normalPrices.at(-1).toFixed(2)}$`;
-                }
-
-                if (souvenirPrices.length > 0) {
-                  souvenirPrices.sort((a, b) => a - b);
-                  const range = souvenirPrices[0] === souvenirPrices.at(-1)
-                    ? `${souvenirPrices[0].toFixed(2)}$`
-                    : `${souvenirPrices[0].toFixed(2)}$ - ${souvenirPrices.at(-1).toFixed(2)}$`;
-                  priceHtml += `<div class="souvenir-price-info">${range}</div>`;
-                }
-
-                const priceEl = el.querySelector('.skin-price-info');
-                if (priceEl) {
-                  priceEl.classList.remove('loading');
-                  priceEl.innerHTML = priceHtml;
-                }
-              });
-            });
-
-            characterBox.querySelectorAll('.skin img').forEach(img => {
-              if (img.complete) {
-                img.classList.add('imported');
-              } else {
-                img.addEventListener('load', () => img.classList.add('imported'));
-              }
-            });
-
-            // === Hover preview logic for wide screen ===
-            if (window.innerWidth >= 1365) {
-              const $characterModel = $(".character-model");
-              if ($characterModel.length) {
-                let $previewItem = $characterModel.find(".preview-item");
-                if (!$previewItem.length) {
-                  $previewItem = $("<div class='preview-item'></div>");
-                  $characterModel.append($previewItem);
-                }
-
-                $(document).on("mouseenter", ".loadout .skin", function () {
-                  const skinClass = $(this).attr("class");
-                  $previewItem.stop(true, true).attr("class", skinClass + " preview-item").html($(this).html()).css("opacity", 1);
-                });
-
-                $(document).on("mouseleave", ".loadout .skin", function () {
-                  $previewItem.stop(true, true).animate({ opacity: 0 }, 1500, function () {
-                    $previewItem.attr("class", "preview-item").empty();
-                  });
-                });
-              }
-            }
-          };
-
-          loadCharacterBoxSkinsData();
-        })
-        .catch(err => {
-          console.error('Ошибка загрузки .json файла скинов:', err);
-        });
-    }
+    // *** Удалено: динамическая сборка loadout (character-box) и наполнение .skin ***
   });
 }
 
-
+// ---------- Построение списков карточек (items-type / sticker-crafts) ----------
 document.addEventListener("DOMContentLoaded", async function () {
   const res = $(window).width();
   const itemsPerPage = res < 1365 ? 6 : 12;
@@ -2159,7 +1738,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const isStickerCraftsSkinPage = /\/sticker-crafts\/skin\//.test(path);
   const isStickerCraftsListPage = /\/topic\/sticker-crafts(?:\.html)?$/.test(path);
   const isStickerCraftsPage = isStickerCraftsSkinPage || isStickerCraftsListPage;
-  
+
   const itemTypeMatch = path.match(/\/topic\/(?:items-type\/)?(cases|charms|collections|sticker-capsules|autograph-capsules)(?:\.html)?$/);
 
   const isItemsTypePage = !!itemTypeMatch;
@@ -2170,259 +1749,212 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   // === STICKER CRAFTS ===
   if (isStickerCraftsPage) {
-    const pageKey = isStickerCraftsSkinPage ? path.split("/").pop().replace(".html", "") : null;
+    // РАНЬШЕ здесь генерировались .topic-grandbox со .skin из JSON — удалено.
+    // Предполагаем статический HTML.
+    // (оставляем только загрузку биндов, чтобы кнопки "More crafts" работали корректно)
     try {
       const bindsResponse = await fetch("/code-parts/topics/sticker-crafts-binds.json");
       const bindsData = await bindsResponse.json();
       skinBindMap = bindsData || {};
     } catch (error) {}
-
-    const matchedSkinName = skinBindMap[pageKey];
-
+  }
+  // === ITEMS-TYPE ===
+  else if (isItemsTypePage && itemType) {
     try {
-      const response = await fetch("/code-parts/topics/sticker-crafts.json");
-      const data = await response.json();
-      pageData = (isStickerCraftsSkinPage && matchedSkinName)
-      ? data.filter(sticker => sticker.skin === matchedSkinName)
-      : data;
+      const response = await fetch(`/code-parts/topics/${itemType}.json`);
+      const rawData = await response.json();
+
+      const customPath = rawData.customPath || itemType;
+      pageData = rawData.items || rawData;
+
+      const hasDates = pageData.some(item => item.date);
+      if (hasDates) {
+        pageData.sort((a, b) => {
+          const parseDate = (str) => {
+            const [d, m, y] = str.split(".");
+            return new Date(`20${y}`, m - 1, d);
+          };
+          const dateA = a.date ? parseDate(a.date) : new Date(0);
+          const dateB = b.date ? parseDate(b.date) : new Date(0);
+          return dateB - dateA;
+        });
+      }
+
+      pageData.forEach(item => {
+        const el = document.createElement("a");
+        el.classList.add("topic-box", "items");
+        el.href = `/topic/${customPath}/${item.id}`;
+        el.innerHTML = `
+          <div class="logobg">
+            <img src="${item.img}" draggable="false" alt="${item.title}">
+          </div>
+          <div class="content">
+            <span>${item.title}</span>
+          </div>
+        `;
+        topicBoxesHolder.appendChild(el);
+      });
+
     } catch (e) {
-      console.error("Sticker crafts JSON load error:", e);
+      console.error("Items-type JSON load error:", e);
       return;
     }
-
-    pageData.forEach(sticker => {
-      const topic = document.createElement("a");
-      topic.classList.add("topic-grandbox", "sticker");
-      topic.href = `/topic/sticker-crafts/${sticker.id}`;
-      const extraClass = sticker.extra ? ` ${sticker.extra}` : "";
-
-      topic.innerHTML = `
-        <div class="topic-box">
-          <div class="best ${sticker.range}"></div>
-          <div class="logobg${extraClass}">
-            <img src="${sticker.img}" alt="${sticker.title}" draggable="false">
-          </div>
-        </div>
-        <div class="section first">
-          <span class="craft-name">${sticker.skin}</span>
-          <span>(${sticker.title})</span>
-        </div>
-        <div class="section third">
-          ${sticker.skins
-            .map(
-              (skin) =>
-                `<div class="skin" weapon="${skin.weapon}" skin-id="${skin.skin_id}"></div>`
-            )
-            .join("")}
-        </div>
-      `;
-
-      topicBoxesHolder.appendChild(topic);
-    });
-
-  // === ITEMS-TYPE ===
-} else if (isItemsTypePage && itemType) {
-  try {
-    const response = await fetch(`/code-parts/topics/${itemType}.json`);
-    const rawData = await response.json();
-
-    const customPath = rawData.customPath || itemType;
-    pageData = rawData.items || rawData;
-
-    // === СОРТИРОВКА ПО ДАТЕ ===
-    const hasDates = pageData.some(item => item.date);
-    if (hasDates) {
-      pageData.sort((a, b) => {
-        const parseDate = (str) => {
-          const [d, m, y] = str.split(".");
-          return new Date(`20${y}`, m - 1, d);
-        };
-        const dateA = a.date ? parseDate(a.date) : new Date(0);
-        const dateB = b.date ? parseDate(b.date) : new Date(0);
-        return dateB - dateA;
-      });
-    }
-
-    pageData.forEach(item => {
-      const el = document.createElement("a");
-      el.classList.add("topic-box", "items");
-      el.href = `/topic/${customPath}/${item.id}`;
-      el.innerHTML = `
-        <div class="logobg">
-          <img src="${item.img}" draggable="false" alt="${item.title}">
-        </div>
-        <div class="content">
-          <span>${item.title}</span>
-        </div>
-      `;
-      topicBoxesHolder.appendChild(el);
-    });
-    
-  } catch (e) {
-    console.error("Items-type JSON load error:", e);
-    return;
   }
-}
 
-(function () {
-  const topicBoxesHolder = document.querySelector(".topic-boxes-holder.items-type, .topic-boxes-holder.sticker-crafts") ||
-    (["skins", "items", "sticker-crafts"].includes(location.pathname.split("/").pop().replace(".html", "")) &&
-      document.querySelector(".topic-boxes-holder"));
+  (function () {
+    const topicBoxesHolder = document.querySelector(".topic-boxes-holder.items-type, .topic-boxes-holder.sticker-crafts") ||
+      (["skins", "items", "sticker-crafts"].includes(location.pathname.split("/").pop().replace(".html", "")) &&
+        document.querySelector(".topic-boxes-holder"));
 
-  if (!topicBoxesHolder) return;
+    if (!topicBoxesHolder) return;
 
-  const isStickerCrafts = location.pathname.includes("sticker-crafts");
-  const cacheKey = "topics_nav_cache";
-  const cacheTTL = 24 * 60 * 60 * 1000;
-  const now = Date.now();
+    const isStickerCrafts = location.pathname.includes("sticker-crafts");
+    const cacheKey = "topics_nav_cache";
+    const cacheTTL = 24 * 60 * 60 * 1000;
+    const now = Date.now();
 
-  const topicFilterContainer = document.createElement("div");
-  topicFilterContainer.className = "topic-filter";
+    const topicFilterContainer = document.createElement("div");
+    topicFilterContainer.className = "topic-filter";
 
-  const filterInput = document.createElement("input");
-  filterInput.className = "singlemod-box topic-filter-tab";
-  filterInput.type = "text";
-  filterInput.placeholder = "";
-  filterInput.setAttribute("aria-label", "Filter Topic");
-  filterInput.setAttribute("autocomplete", "off");
-  topicFilterContainer.appendChild(filterInput);
-
-  function renderNavButtons(navButtons) {
-    topicFilterContainer.innerHTML = '';
+    const filterInput = document.createElement("input");
+    filterInput.className = "singlemod-box topic-filter-tab";
+    filterInput.type = "text";
+    filterInput.placeholder = "";
+    filterInput.setAttribute("aria-label", "Filter Topic");
+    filterInput.setAttribute("autocomplete", "off");
     topicFilterContainer.appendChild(filterInput);
 
-    const currentHref = location.pathname.replace(/\.html$/, "");
-    const bestMatch = navButtons.reduce((acc, btn) => {
-      return currentHref.includes(btn.href) && btn.href.length > acc.length ? btn.href : acc;
-    }, "");
+    function renderNavButtons(navButtons) {
+      topicFilterContainer.innerHTML = '';
+      topicFilterContainer.appendChild(filterInput);
 
-    navButtons.forEach(btn => {
-      const box = document.createElement("div");
-      box.className = "singlemod-box";
+      const currentHref = location.pathname.replace(/\.html$/, "");
+      const bestMatch = navButtons.reduce((acc, btn) => {
+        return currentHref.includes(btn.href) && btn.href.length > acc.length ? btn.href : acc;
+      }, "");
 
-      const title = languageTag === "ru" ? btn["data-title-ru"] || btn.alt : btn.alt;
-      box.setAttribute("data-title", title || "");
+      navButtons.forEach(btn => {
+        const box = document.createElement("div");
+        box.className = "singlemod-box";
 
-      const link = document.createElement("a");
-      link.href = btn.href;
-      link.className = "singlemod-select";
+        const title = languageTag === "ru" ? btn["data-title-ru"] || btn.alt : btn.alt;
+        box.setAttribute("data-title", title || "");
 
-      const img = document.createElement("img");
-      img.src = btn.img;
-      img.alt = btn.alt || "";
+        const link = document.createElement("a");
+        link.href = btn.href;
+        link.className = "singlemod-select";
 
-      link.appendChild(img);
-      box.appendChild(link);
+        const img = document.createElement("img");
+        img.src = btn.img;
+        img.alt = btn.alt || "";
 
-      if (currentHref.includes(btn.href) && btn.href === bestMatch) {
-        box.classList.add("active");
-      }
+        link.appendChild(img);
+        box.appendChild(link);
 
-      topicFilterContainer.appendChild(box);
-    });
-
-    topicBoxesHolder.insertBefore(topicFilterContainer, topicBoxesHolder.firstChild);
-
-    if (languageTag === "ru") {
-      updateURLs(topicFilterContainer);
-    }
-  }
-
-  async function fetchNavButtons() {
-    const res = await fetch("/code-parts/topics/topics-nav.json");
-    return res.json();
-  }
-
-  async function getCachedNavButtons() {
-    const cached = StorageHelper.getJSON(cacheKey);
-
-    if (cached?.data) {
-      renderNavButtons(cached.data);
-    }
-
-    try {
-      const freshData = await fetchNavButtons();
-      const isEqual = JSON.stringify(freshData) === JSON.stringify(cached?.data);
-
-      if (!cached || now - cached.timestamp > cacheTTL || !isEqual) {
-        StorageHelper.setJSON(cacheKey, { timestamp: now, data: freshData });
-        renderNavButtons(freshData);
-        return;
-      }
-    } catch (err) {
-      console.error("Ошибка загрузки topics-nav.json:", err);
-    }
-  }
-
-  getCachedNavButtons();
-
-  filterInput.addEventListener("input", () => {
-    const value = filterInput.value.trim().toLowerCase();
-    const itemSelector = isStickerCrafts ? ".topic-grandbox.sticker" : ".topic-box";
-    const allBoxes = Array.from(topicBoxesHolder.querySelectorAll(itemSelector));
-    const paginationHolder = document.querySelector(".pagination-holder");
-
-    if (value !== "") {
-      topicBoxesHolder.classList.remove("pagination");
-      paginationHolder?.remove();
-
-      const fuseData = allBoxes.map((box, idx) => {
-        if (isStickerCrafts) {
-          const spans = Array.from(box.querySelectorAll(".section.first span"));
-          const spanTexts = spans.map(s => s.textContent.trim()).filter(Boolean);
-
-          const skinElements = Array.from(box.querySelectorAll(".section.third .skin"));
-          const skinIds = skinElements.map(el => el.getAttribute("skin-id") || "").filter(Boolean);
-
-          return { idx, spanTexts, skinIds };
-        } else {
-          const text = box.querySelector("span")?.textContent.trim() || "";
-          return { idx, text };
+        if (currentHref.includes(btn.href) && btn.href === bestMatch) {
+          box.classList.add("active");
         }
+
+        topicFilterContainer.appendChild(box);
       });
 
-      const fuse = new Fuse(fuseData, {
-        keys: isStickerCrafts ? ["spanTexts", "skinIds"] : ["text"],
-        threshold: 0.4,
-        minMatchCharLength: 1,
-      });
+      topicBoxesHolder.insertBefore(topicFilterContainer, topicBoxesHolder.firstChild);
 
-      const results = fuse.search(value);
-      const matchedIdx = new Set(results.map(r => r.item.idx));
-
-      allBoxes.forEach((box, idx) => {
-        const isMatch = matchedIdx.has(idx);
-        box.classList.remove("hidden", "fade-in", "visible");
-        box.style.animationDelay = "0s";
-        box.style.display = isMatch ? "" : "none";
-        box.classList.toggle("visible_sort", isMatch);
-      });
-    } else {
-      allBoxes.forEach((box) => {
-        box.style.display = "";
-        box.classList.add("hidden");
-        box.classList.remove("fade-in", "visible", "visible_sort");
-      });
-
-      topicBoxesHolder.classList.add("pagination");
-
-      if (!document.querySelector(".pagination-holder")) {
-        const newPagination = document.createElement("div");
-        newPagination.className = "pagination-holder";
-        topicBoxesHolder.appendChild(newPagination);
-      }
-
-      if (typeof setupPagination === "function") {
-        setupPagination();
+      if (languageTag === "ru") {
+        updateURLs(topicFilterContainer);
       }
     }
-  });
-})();
 
+    async function fetchNavButtons() {
+      const res = await fetch("/code-parts/topics/topics-nav.json");
+      return res.json();
+    }
 
+    async function getCachedNavButtons() {
+      const cached = StorageHelper.getJSON(cacheKey);
 
+      if (cached?.data) {
+        renderNavButtons(cached.data);
+      }
 
+      try {
+        const freshData = await fetchNavButtons();
+        const isEqual = JSON.stringify(freshData) === JSON.stringify(cached?.data);
 
+        if (!cached || now - cached.timestamp > cacheTTL || !isEqual) {
+          StorageHelper.setJSON(cacheKey, { timestamp: now, data: freshData });
+          renderNavButtons(freshData);
+          return;
+        }
+      } catch (err) {
+        console.error("Ошибка загрузки topics-nav.json:", err);
+      }
+    }
+
+    getCachedNavButtons();
+
+    filterInput.addEventListener("input", () => {
+      const value = filterInput.value.trim().toLowerCase();
+      const itemSelector = isStickerCrafts ? ".topic-grandbox.sticker" : ".topic-box";
+      const allBoxes = Array.from(topicBoxesHolder.querySelectorAll(itemSelector));
+      const paginationHolder = document.querySelector(".pagination-holder");
+
+      if (value !== "") {
+        topicBoxesHolder.classList.remove("pagination");
+        paginationHolder?.remove();
+
+        const fuseData = allBoxes.map((box, idx) => {
+          if (isStickerCrafts) {
+            const spans = Array.from(box.querySelectorAll(".section.first span"));
+            const spanTexts = spans.map(s => s.textContent.trim()).filter(Boolean);
+
+            const skinElements = Array.from(box.querySelectorAll(".section.third .skin"));
+            const skinIds = skinElements.map(el => el.getAttribute("skin-id") || "").filter(Boolean);
+
+            return { idx, spanTexts, skinIds };
+          } else {
+            const text = box.querySelector("span")?.textContent.trim() || "";
+            return { idx, text };
+          }
+        });
+
+        const fuse = new Fuse(fuseData, {
+          keys: isStickerCrafts ? ["spanTexts", "skinIds"] : ["text"],
+          threshold: 0.4,
+          minMatchCharLength: 1,
+        });
+
+        const results = fuse.search(value);
+        const matchedIdx = new Set(results.map(r => r.item.idx));
+
+        allBoxes.forEach((box, idx) => {
+          const isMatch = matchedIdx.has(idx);
+          box.classList.remove("hidden", "fade-in", "visible");
+          box.style.animationDelay = "0s";
+          box.style.display = isMatch ? "" : "none";
+          box.classList.toggle("visible_sort", isMatch);
+        });
+      } else {
+        allBoxes.forEach((box) => {
+          box.style.display = "";
+          box.classList.add("hidden");
+          box.classList.remove("fade-in", "visible", "visible_sort");
+        });
+
+        topicBoxesHolder.classList.add("pagination");
+
+        if (!document.querySelector(".pagination-holder")) {
+          const newPagination = document.createElement("div");
+          newPagination.className = "pagination-holder";
+          topicBoxesHolder.appendChild(newPagination);
+        }
+
+        if (typeof setupPagination === "function") {
+          setupPagination();
+        }
+      }
+    });
+  })();
 
   if (pageData.length > itemsPerPage) {
     topicBoxesHolder.classList.add("pagination");
@@ -2430,7 +1962,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   setupPagination();
 
-  // === PAGINATION ===
   function setupPagination() {
     const isSticker = isStickerCraftsPage;
     const itemSelector = isSticker ? ".topic-grandbox.sticker" : ".topic-box";
@@ -2468,8 +1999,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     function updatePaginationButtons(activePage) {
       paginationHolder.innerHTML = "";
-    
-      // === Кнопка "влево"
+
       const prevButton = document.createElement("button");
       prevButton.classList.add("pagination-button", "arrow");
       prevButton.innerHTML = `<i class="officon chevron left"></i>`;
@@ -2479,15 +2009,13 @@ document.addEventListener("DOMContentLoaded", async function () {
         prevButton.addEventListener("click", () => showPage(activePage - 1));
       }
       paginationHolder.appendChild(prevButton);
-    
-      // === Цифровые кнопки (максимум 3: текущая и по бокам)
+
       let startPage = Math.max(1, activePage - 1);
       let endPage = Math.min(totalPages, startPage + 2);
-      // Корректируем, если в конце
       if (endPage - startPage < 2 && startPage > 1) {
         startPage = Math.max(1, endPage - 2);
       }
-    
+
       for (let i = startPage; i <= endPage; i++) {
         const button = document.createElement("button");
         button.textContent = i;
@@ -2499,8 +2027,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
         paginationHolder.appendChild(button);
       }
-    
-      // === Кнопка "вправо"
+
       const nextButton = document.createElement("button");
       nextButton.classList.add("pagination-button", "arrow");
       nextButton.innerHTML = `<i class="officon chevron right"></i>`;
@@ -2512,71 +2039,20 @@ document.addEventListener("DOMContentLoaded", async function () {
       paginationHolder.appendChild(nextButton);
     }
 
-      if (languageTag === "ru") {
-          updateURLs(topicBoxesHolder);
-      }
+    if (languageTag === "ru") {
+      updateURLs(topicBoxesHolder);
+    }
 
-    // createPaginationButtons();
     showPage(1);
 
-    // === Extra: если sticker-crafts, грузим обложки скинов ===
-    if (isSticker) {
-      const skinsOnPage = $(".skin");
-      const weaponToSkinIds = {};
-
-      skinsOnPage.each(function () {
-        const weapon = $(this).attr("weapon");
-        const skinId = $(this).attr("skin-id");
-        if (weapon && skinId) {
-          weaponToSkinIds[weapon] = weaponToSkinIds[weapon] || [];
-          weaponToSkinIds[weapon].push(skinId);
-        }
-      });
-
-      const loadSkinsData = async () => {
-        await Promise.all(Object.keys(weaponToSkinIds).map(async (weapon) => {
-          const response = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
-          const skinsData = await response.json();
-          const skinsForWeapon = skinsData || {};
-          weaponToSkinIds[weapon].forEach((skinId) => {
-            const skinData = skinsForWeapon[skinId];
-            if (skinData) {
-              const isInNavigation = $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).closest('.section').length > 0;
-              const imageUrl = isInNavigation ? skinData.imageOG : skinData.image;
-
-              const newSkinHTML = `
-                <div class="skin ${skinData.class}" skin-id="${skinId}" weapon="${weapon}">
-                  <img src="${imageUrl}" draggable="false" alt="${skinData.name}">
-                </div>`;
-
-              $(`.skin[weapon="${weapon}"][skin-id="${skinId}"]`).each(function () {
-                $(this).replaceWith(newSkinHTML);
-              });
-            }
-          });
-        }));
-
-        $(".skin img").each(function () {
-          if (this.complete) {
-            $(this).addClass("imported");
-          } else {
-            $(this).on("load", function () {
-              $(this).addClass("imported");
-            });
-          }
-        });
-      };
-
-      loadSkinsData();
-    }
+    // РАНЬШЕ здесь подгружались обложки .skin для sticker-crafts — удалено.
   }
 });
 
-
+// Последние правки ссылок под RU
 const topicBoxesHolder = document.querySelector(".topic-boxes-holder");
 const backbutton = document.querySelector(".singlemod-box:has(.back-button)");
-
 if (languageTag === "ru") {
-    updateURLs(topicBoxesHolder);
-    updateURLs(backbutton);
+  updateURLs(topicBoxesHolder);
+  updateURLs(backbutton);
 }
