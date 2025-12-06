@@ -232,84 +232,130 @@ $(document).ready(function () {
     }
     insertRandomRecBox();
 
-    // ---------- ЦЕНЫ ДЛЯ УЖЕ СУЩЕСТВУЮЩИХ .skin (НО НЕ РЕНДЕР .skin) ----------
-    async function fetchSkinPrices() {
-      try {
-        const response = await fetch("https://cs2broker.cc/");
-        const skins = await response.json();
-        return Array.isArray(skins) ? skins : [];
-      } catch {
-        return [];
-      }
+// path: /public/js/skin-prices.js
+// Drop-in замена: безопасный fetch из Cloudflare Worker + кэш
+
+(() => {
+  "use strict";
+
+  // Почему относительный путь: same-origin → меньше CORS/редиректов
+  const DATA_URL = "https://cs2broker.cc/api/skins?v=2";
+
+  // Простой кэш на сессию, чтобы не долбить API на каждой перерисовке
+  const _skinCache = { data: null, ts: 0, ttl: 30_000 };
+
+  /**
+   * Получение массива скинов [{ name, price }, ...].
+   * Почему: таймаут и проверка content-type снижают хрупкость на сторонних сбоях.
+   */
+  async function fetchSkinPrices() {
+    const now = Date.now();
+    if (_skinCache.data && now - _skinCache.ts < _skinCache.ttl) return _skinCache.data;
+
+    const ctrl = new AbortController();
+    const to = setTimeout(() => ctrl.abort("timeout"), 12_000);
+
+    try {
+      const res = await fetch(DATA_URL, {
+        method: "GET",
+        signal: ctrl.signal,
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) return [];
+
+      const ct = res.headers.get("content-type") || "";
+      if (!ct.includes("application/json")) return [];
+
+      const skins = await res.json();
+      const data = Array.isArray(skins) ? skins : [];
+
+      _skinCache.data = data;
+      _skinCache.ts = now;
+      return data;
+    } catch {
+      return [];
+    } finally {
+      clearTimeout(to);
     }
+  }
 
-    async function priceSkinsOnPage() {
-      const $skins = $(".skin");
-      if (!$skins.length) return;
+  async function priceSkinsOnPage() {
+    const $skins = $(".skin");
+    if (!$skins.length) return;
 
-      const skinPrices = await fetchSkinPrices();
+    const skinPrices = await fetchSkinPrices();
 
-      $skins.each(function () {
-        const $skinEl = $(this);
-        const name = ($skinEl.find(".skin-desc-name").text() || "").trim();
-        if (!name) return;
+    $skins.each(function () {
+      const $skinEl = $(this);
+      const name = ($skinEl.find(".skin-desc-name").text() || "").trim();
+      if (!name) return;
 
-        const isSticker = name.startsWith("Sticker |");
-        const matchedSkins = skinPrices.filter((s) => (isSticker ? s.name === name : s.name.includes(name)));
-
-        const normal = matchedSkins.filter(s => !String(s.name).startsWith("Souvenir")).map(s => +s.price).filter(Number.isFinite);
-        const souv   = matchedSkins.filter(s =>  String(s.name).startsWith("Souvenir")).map(s => +s.price).filter(Number.isFinite);
-
-        let html = "";
-
-        if (normal.length) {
-          normal.sort((a,b)=>a-b);
-          html += (normal[0] === normal[normal.length-1])
-            ? `${normal[0].toFixed(2)}$`
-            : `${normal[0].toFixed(2)}$ - ${normal[normal.length-1].toFixed(2)}$`;
-        }
-
-        if (souv.length) {
-          souv.sort((a,b)=>a-b);
-          const t = (souv[0] === souv[souv.length-1])
-            ? `${souv[0].toFixed(2)}$`
-            : `${souv[0].toFixed(2)}$ - ${souv[souv.length-1].toFixed(2)}$`;
-          html += `<div class="souvenir-price-info">${t}</div>`;
-        }
-
-        if (html) {
-          const priceEl = $skinEl.find(".skin-price-info");
-          if (priceEl.length) {
-            priceEl.removeClass("loading").html(html);
-          } else {
-            $skinEl.append(`<div class="skin-price-info">${html}</div>`);
-          }
-        }
+      const isSticker = name.startsWith("Sticker |");
+      const matchedSkins = skinPrices.filter((s) => {
+        const n = (s && s.name) ? String(s.name) : "";
+        return isSticker ? n === name : n.includes(name);
       });
 
-      // img.imported отметка
-      $(".skin img").each(function () {
-        if (this.complete) {
-          $(this).addClass("imported");
+      const normal = matchedSkins
+        .filter((s) => !String(s.name).startsWith("Souvenir"))
+        .map((s) => +s.price)
+        .filter(Number.isFinite);
+
+      const souv = matchedSkins
+        .filter((s) => String(s.name).startsWith("Souvenir"))
+        .map((s) => +s.price)
+        .filter(Number.isFinite);
+
+      let html = "";
+
+      if (normal.length) {
+        normal.sort((a, b) => a - b);
+        html += (normal[0] === normal[normal.length - 1])
+          ? `${normal[0].toFixed(2)}$`
+          : `${normal[0].toFixed(2)}$ - ${normal[normal.length - 1].toFixed(2)}$`;
+      }
+
+      if (souv.length) {
+        souv.sort((a, b) => a - b);
+        const t = (souv[0] === souv[souv.length - 1])
+          ? `${souv[0].toFixed(2)}$`
+          : `${souv[0].toFixed(2)}$ - ${souv[souv.length - 1].toFixed(2)}$`;
+        html += `<div class="souvenir-price-info">${t}</div>`;
+      }
+
+      if (html) {
+        const priceEl = $skinEl.find(".skin-price-info");
+        if (priceEl.length) {
+          priceEl.removeClass("loading").html(html);
         } else {
-          $(this).on("load", function () {
-            $(this).addClass("imported");
-          });
+          $skinEl.append(`<div class="skin-price-info">${html}</div>`);
         }
-      });
-
-      checkWeaponTypeAvailabilityForItems();
-      if (location.pathname.includes("/topic/sticker-crafts/")) {
-        // список компонентов крафта формируется по уже имеющимся .skin на странице
-        updateCraftComponentList();
       }
-    }
+    });
 
-    // Раньше здесь был блок, который ПЕРЕРИСОВЫВАЛ .skin — он удалён.
-    // Теперь просто считаем цены для того, что уже в HTML:
-    if ($(".skin").length) {
-      priceSkinsOnPage();
+    // отметка для img.imported
+    $(".skin img").each(function () {
+      if (this.complete) {
+        $(this).addClass("imported");
+      } else {
+        $(this).on("load", function () {
+          $(this).addClass("imported");
+        });
+      }
+    });
+
+    checkWeaponTypeAvailabilityForItems();
+    if (location.pathname.includes("/topic/sticker-crafts/")) {
+      updateCraftComponentList();
     }
+  }
+
+  // Инициализация
+  if ($(".skin").length) {
+    priceSkinsOnPage();
+  }
+})();
+
 
     // ---------- КРАФТЫ: работа только с уже существующими .skin ----------
     const updateCraftComponentList = () => {

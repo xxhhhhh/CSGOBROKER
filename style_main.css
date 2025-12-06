@@ -2429,7 +2429,7 @@ nav .pages {
 .box-skins.knives .skin,
 .box-skins.gloves .skin,
 .box-skins.gloves .skin {
-    min-width: 90px;
+    min-width: 100px;
 }
 
 .box-skins.smgs .skin,
@@ -4446,6 +4446,8 @@ nav img {
     margin-top: 30px;
     width: auto;
     z-index: 10;
+    pointer-events: none;
+    user-select: none;
 }
 
 .sitepage.items .topic-grandbox {
