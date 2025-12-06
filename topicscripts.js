@@ -1334,28 +1334,8 @@ if (
 
 // ---------- Разное визуальное для /topic ----------
 if (window.location.pathname.includes("/topic")) {
-  var skinslist = document.querySelectorAll('.box-skins-list');
-  skinslist.forEach(function(element) {
-      element.classList.add('visible');
-  });
 
   document.addEventListener('DOMContentLoaded', function () {
-    if (window.location.pathname.includes("/topic/skins")) {
-      var colorList = ["white", "gray", "black", "brown", "red", "orange", "golden", "silver", "yellow", "green", "cyan", "blue", "purple", "pink"];
-
-      colorList.forEach(function(color) {
-        var bgImage = new Image();
-        bgImage.src = "/img/skins/topics/small/example-" + color + ".webp";
-        bgImage.onload = function() {
-          var skinslist = document.querySelectorAll("[data-color='" + color + "']");
-          skinslist.forEach(function(element) {
-            element.style.backgroundImage = "url(" + bgImage.src + "), linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%)";
-            element.classList.add("active");
-          });
-        };
-      });
-    }
-
     const boxSkinsElements = document.querySelectorAll('.box-skins');
     boxSkinsElements.forEach(function(boxSkinsElement) {
       const boxSkinsList = boxSkinsElement.querySelector('.box-skins-list');
