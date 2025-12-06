@@ -5668,10 +5668,6 @@ nav img {
     z-index: 3;
 }
 
-.topic-box.maestro:hover {
-    backface-visibility: unset;
-}
-
 .topic-grandbox .topic-box {
     filter: unset;
 }
@@ -10249,7 +10245,7 @@ div#results {
 
 .topic-box.maestro {
     width: 30.3%;
-    height: auto;
+    height: fit-content;
     border-radius: var(--main-border);
     flex-grow: 1;
 }
@@ -10266,42 +10262,10 @@ div#results {
     position: relative;
 }
 
-.topic-box.maestro .content {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    transition: filter .15s ease-in-out, opacity .15s !important;
-    background-position: center;
-    background-size: cover;
-    filter: brightness(1.1);
-    opacity: 1;
-    z-index: 1;
-}
-
-/* .topic-box.maestro:nth-child(1) .content,
-.topic-box.maestro:nth-child(4) .content {
-    background-image: url(/img/skins/topics/topic-backplate-1.webp);
-}
-
-.topic-box.maestro:nth-child(2) .content,
-.topic-box.maestro:nth-child(5) .content {
-    background-image: url(/img/skins/topics/topic-backplate-2.webp);
-}
-
-.topic-box.maestro:nth-child(3) .content,
-.topic-box.maestro:nth-child(6) .content {
-    background-image: url(/img/skins/topics/topic-backplate-3.webp);
-} */
-
 .topic-box.maestro .logobg img {
     width: 100%;
     height: auto;
 }
-
-/* .topic-box.maestro:hover .content {
-    filter: brightness(1.2);
-    opacity: .75;
-} */
 
 .topic-box.maestro .logobg:hover img {
     transform: scale(1.03) !important;
