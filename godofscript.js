@@ -1338,8 +1338,8 @@ if (!isExcludedPage) {
       ${bonusHTML}
     </div>
     <div class="content">
-      <a href="${reviewHref}" class="review-button" aria-label="${labelReview}"></a>
-      <a href="${visitHref}" aria-label="${labelVisit}" target="_blank" rel="noopener" class="review-button visit"></a>
+      <a href="${reviewHref}" class="review-button" aria-label="${labelReview}"><span>Read Review</span></a>
+      <a href="${visitHref}" aria-label="${labelVisit}" target="_blank" rel="noopener" class="review-button visit"><span>Visit</span></a>
     </div>
   `;
 

@@ -4,15 +4,15 @@
 //   node scripts/static-skins-fill.js \
 //     [--root path] [--dry-run] [--verbose] \
 //     [--prices pathOrUrl] [--paths "/topic,/ru/topic"]
-// ----------------------------------------------------------------------------
 // Features:
-//   1) Филл .box-skins-list (mode 1/2) из /code-parts/topics/skins-settings.json
+//   1) .box-skins-list (mode 1/2) из /code-parts/topics/skins-settings.json
+//      mode=1: /skins-list/<topicId>.json
+//      mode=2: /skins-list/presets/<topicId>.json
+//              fallback: derive из всех /skins-list/*.json по collection/case и slug темы
 //   2) Замена плейсхолдеров <div class="skin" weapon="" skin-id=""></div>
+//      + ремонт уже записанных блоков (чинит &#39; → ' и &amp; → &)
 //   3) Оффлайн loadout для /topic/skins/(cheapest|best)-{color}-skins
-//      (секции top/left/right/bottom + полноценные .skin)
-//   4) Оффлайн-вставка/ремонт <div class="topic-filter"> в .topic-boxes-holder
-//      (чтение /code-parts/topics/topics-nav.json, корректные отступы,
-//       удаление дублей/битых вариантов, локализация ссылок для /ru)
+//   4) Оффлайн-вставка/ремонт <div class="topic-filter">
 // ============================================================================
 
 const fs = require("fs/promises");
@@ -41,7 +41,7 @@ async function listHtmlFiles(root){
 }
 function abs(root, p){ return p && p.startsWith("/") ? path.join(root,"."+p) : path.join(root,p); }
 function fileToUrlPath(root, file){
-  const rel = path.relative(root, file).split(path.sep).join("/");
+  const rel = path.relative(root, file).split(path.sep).join("/").replace(/\\/g,"/");
   if (rel.toLowerCase().endsWith("/index.html")) {
     const base = "/" + rel.slice(0, -"/index.html".length);
     return base.endsWith("/")? base: base + "/";
@@ -119,9 +119,9 @@ function joinBlocksNoBlank(before, block, after, nl){
   const right = after.replace(/^[ \t]*\r?\n/g, "");
   return left + block + nl + right;
 }
-function escapeHtml(s=""){ return s.replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
-function escapeAttr(s=""){ return escapeHtml(s).replace(/'/g,"&#39;"); }
-// --- FIX: entities decode (skin-id="Chantico&#39;s Fire" → "Chantico's Fire") ---
+function escapeHtml(s=""){ // текст внутри <div> — НЕ кодируем &
+  return String(s).replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
 function decodeHtmlEntities(s=""){
   return String(s)
     .replace(/&quot;/g, '"').replace(/&#34;/g, '"')
@@ -129,10 +129,9 @@ function decodeHtmlEntities(s=""){
     .replace(/&lt;/g, "<").replace(/&gt;/g, ">")
     .replace(/&amp;/g, "&");
 }
-// --- FIX: safe encode for double-quoted attrs (НЕ экранируем апостроф) ---
+// атрибуты в двойных кавычках: НЕ кодируем & и ' (как просили)
 function escapeAttrDblNoApos(s=""){
   return String(s)
-    .replace(/&/g,"&amp;")
     .replace(/</g,"&lt;")
     .replace(/>/g,"&gt;")
     .replace(/"/g,"&quot;");
@@ -194,21 +193,35 @@ function computePriceHtml(name, pricesArr){
 }
 
 // ---------------- RENDER .skin ----------------
+function normalizeEntitiesInBlock(block){
+  // ремонт существующих блоков: &#39; -> ' и &amp; -> &
+  block = block.replace(
+    /(skin-id|weapon|alt)="([^"]*?)"/g,
+    (_, attr, val) => `${attr}="${val.replace(/&#39;/g, "'").replace(/&amp;/g, "&")}"`
+  );
+  block = block.replace(
+    /(<div class="skin-desc-name">)([\s\S]*?)(<\/div>)/,
+    (_, a, txt, c) => a + txt.replace(/&#39;/g, "'").replace(/&amp;/g, "&") + c
+  );
+  return block;
+}
+
 function renderSkinBlock({tag="div", indent, nl, weapon, skinId, skinData, priceHtml, putLoadingClass}){
   const classes = ["skin"];
   if (skinData.class) classes.push(String(skinData.class));
   const classAttr = classes.join(" ");
   const innerIndent = indent + "  ";
   const priceCls = putLoadingClass ? "skin-price-info loading" : "skin-price-info";
-  const img = skinData.image || "";
-  const name = skinData.name || (skinId === "Vanilla" ? "Vanilla" : "");
-  return [
+  const img  = skinData.image || "";
+  const name = skinData.name  || (skinId === "Vanilla" ? "Vanilla" : "");
+  const block = [
     `${indent}<${tag} class="${classAttr}" skin-id="${escapeAttrDblNoApos(skinId)}" weapon="${escapeAttrDblNoApos(weapon)}">`,
-    `${innerIndent}<img src="${escapeAttr(img)}" draggable="false" alt="${escapeAttrDblNoApos(name)}">`,
+    `${innerIndent}<img src="${escapeAttrDblNoApos(img)}" draggable="false" alt="${escapeAttrDblNoApos(name)}">`,
     `${innerIndent}<div class="skin-desc-name">${escapeHtml(name)}</div>`,
     `${innerIndent}<div class="${priceCls}">${priceHtml || ""}</div>`,
     `${indent}</${tag}>`
   ].join(nl);
+  return normalizeEntitiesInBlock(block);
 }
 
 // ---------------- BOX-SKINS-LIST (mode 1/2) ----------------
@@ -218,27 +231,128 @@ function detectAutoImportContext(urlPath, settings){
   const section = m[1].toLowerCase();
   const topicId = m[2];
   let mode = settings?.[topicId];
-  if (!mode) { if (section==="collections") mode=2; if (section==="stickers"||section==="charms") mode=1; }
+  // дефолты: stickers/charms/items -> 1; collections -> 2
+  if (!mode) {
+    if (section==="collections") mode=2;
+    if (section==="stickers" || section==="charms") mode=1;
+  }
   if (!mode) return null;
   return { section, topicId, mode };
 }
-async function buildSkinsListForTopic(root, ctx, pricesArr){
-  const { topicId, mode } = ctx;
+
+// ---- slug/token helpers (fallback derive) ----
+const STOP = new Set(["the","collection","collections","case","weapon","capsule","autograph","sticker","stickers","charm","charms","pack","bundle","csgo","cs2","of","and"]);
+function toTokens(str){
+  const s = String(str||"").toLowerCase()
+    .replace(/&/g," and ")
+    .replace(/[«»“”‘’"’]/g," ")
+    .replace(/[^a-z0-9]+/g," ")
+    .trim();
+  if (!s) return [];
+  return s.split(/\s+/).filter(t=>!STOP.has(t));
+}
+function dedupe(arr, keyFn){ const seen=new Set(); const out=[]; for(const x of arr){ const k=keyFn(x); if(seen.has(k)) continue; seen.add(k); out.push(x);} return out; }
+function rarityRank(cls){ const order={red:6,pink:5,purple:4,blue:3,lblue:2,white:1,gold:7}; return order[String(cls||"").toLowerCase()]||0; }
+
+async function listWeaponJsonFiles(root){
+  const dir = abs(root, WEAPON_JSON_DIR);
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  return entries
+    .filter(e=>e.isFile() && e.name.toLowerCase().endsWith(".json"))
+    .map(e=>path.join(dir, e.name))
+    .filter(p=>!/[\/\\]presets[\/\\]?/i.test(p));
+}
+
+/**
+ * Fallback для mode=2: собрать пары по совпадению topicId с skin.collection или skin.case по токенам.
+ */
+async function derivePairsByTopicSlug(root, topicId){
+  const topicTokens = toTokens(topicId.replace(/-/g," "));
+  if (!topicTokens.length) return [];
+  const files = await listWeaponJsonFiles(root);
+  const pairs=[];
+  for (const fp of files){
+    const weapon = path.basename(fp, ".json");
+    const m = await safeJson(fp);
+    if (!m || typeof m!=="object") continue;
+    for (const [skinId, skinData] of Object.entries(m)){
+      const cands = [];
+      if (skinData?.collection) cands.push(skinData.collection);
+      if (skinData?.case)       cands.push(skinData.case);
+      let matched = false;
+      for (const cand of cands){
+        const ct = toTokens(cand);
+        if (!ct.length) continue;
+        const set = new Set(ct);
+        matched = topicTokens.every(t=>set.has(t));
+        if (matched) break;
+      }
+      if (matched) pairs.push({ weapon, "skin-id": skinId });
+    }
+  }
+  if (!pairs.length) return [];
+  // Отсортируем: редкость ↓, затем имя
+  const weaponCacheLocal = {};
+  const uniqWeapons = Array.from(new Set(pairs.map(p=>p.weapon)));
+  await Promise.all(uniqWeapons.map(async w=>{ weaponCacheLocal[w] = await loadWeaponJson(root, w) || {}; }));
+  const sorted = pairs.slice().sort((a,b)=>{
+    const ca = weaponCacheLocal[a.weapon]?.[a["skin-id"]]?.class;
+    const cb = weaponCacheLocal[b.weapon]?.[b["skin-id"]]?.class;
+    const r = rarityRank(cb) - rarityRank(ca);
+    if (r!==0) return r;
+    const na = weaponCacheLocal[a.weapon]?.[a["skin-id"]]?.name || a["skin-id"];
+    const nb = weaponCacheLocal[b.weapon]?.[b["skin-id"]]?.name || b["skin-id"];
+    return String(na).localeCompare(String(nb), "en");
+  });
+  return dedupe(sorted, x=>`${x.weapon}::${x["skin-id"]}`);
+}
+
+async function buildSkinsListForTopic(root, ctx, pricesArr, { verbose=false }={}){
+  const { topicId, mode, section } = ctx;
   const items=[];
   if (mode===1){
-    const weaponData = await loadWeaponJson(root, topicId);
-    for (const [skinId, skinData] of Object.entries(weaponData || {})){
+    const p = abs(root, `${WEAPON_JSON_DIR}/${topicId}.json`);
+    const weaponData = await safeJson(p);
+    if (!weaponData || typeof weaponData!=="object" || !Object.keys(weaponData).length){
+      if (verbose) console.warn(`[DATA] ${section}/${topicId}: skins-list missing/empty -> ${path.relative(root,p)}`);
+      return ()=>"";
+    }
+    for (const [skinId, skinData] of Object.entries(weaponData)){
       items.push({ weapon: topicId, skinId, skinData });
     }
   } else if (mode===2){
-    const preset = await safeJson(abs(root, `${PRESETS_DIR}/${topicId}.json`));
-    if (!Array.isArray(preset)) return ()=>"";
-    const uniqueWeapons = Array.from(new Set(preset.map(it=>it.weapon).filter(Boolean)));
-    const cache={}; await Promise.all(uniqueWeapons.map(async w=>{ cache[w] = await loadWeaponJson(root, w); }));
-    for (const it of preset){
-      const w = it.weapon, sid = it["skin-id"];
-      const data = cache[w]?.[sid]; if (data) items.push({ weapon:w, skinId:sid, skinData:data });
+    const presetPath = abs(root, `${PRESETS_DIR}/${topicId}.json`);
+    let preset = await safeJson(presetPath);
+    let src = "preset";
+    if (!Array.isArray(preset) || !preset.length){
+      preset = await derivePairsByTopicSlug(root, topicId);
+      src = "derived";
+      if (!preset.length){
+        if (verbose) console.warn(`[DATA] ${section}/${topicId}: no preset and no derived pairs by topic slug`);
+        return ()=>"";
+      }
     }
+    const uniqueWeapons = Array.from(new Set(preset.map(it=>it.weapon).filter(Boolean)));
+    const cache={}; await Promise.all(uniqueWeapons.map(async w=>{
+      const wp = abs(root, `${WEAPON_JSON_DIR}/${w}.json`);
+      cache[w] = await safeJson(wp) || {};
+      if (!Object.keys(cache[w]).length && verbose){
+        console.warn(`[DATA] ${section}/${topicId}: weapon data missing/empty -> ${path.relative(root,wp)}`);
+      }
+    }));
+    let ok=0, miss=0;
+    for (const it of preset){
+      const w   = it.weapon;
+      const sid = it["skin-id"] ?? it.skin_id ?? it.skinId ?? it["skin id"] ?? "";
+      const data = w ? cache[w]?.[sid] : undefined;
+      if (w && sid && data){ items.push({ weapon:w, skinId:sid, skinData:data }); ok++; }
+      else miss++;
+    }
+    if (!items.length){
+      if (verbose) console.warn(`[DATA] ${section}/${topicId}: unresolved pairs (src=${src}, missing=${miss}/${preset.length})`);
+      return ()=>"";
+    }
+    if (verbose) console.log(`[OK] ${section}/${topicId}: ${items.length} skins (src=${src})`);
   }
   return function render(nl, baseIndent){
     const indent = baseIndent + "  ";
@@ -248,8 +362,8 @@ async function buildSkinsListForTopic(root, ctx, pricesArr){
     }).join(nl);
   };
 }
-async function processBoxSkinsLists({root, file, pricesArr, settings, verbose}){
-  let html = await fs.readFile(file,"utf8");
+
+async function processBoxSkinsLists({root, file, html, pricesArr, settings, verbose}){
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const urlPath = fileToUrlPath(root, file);
   const ctx = detectAutoImportContext(urlPath, settings);
@@ -257,14 +371,23 @@ async function processBoxSkinsLists({root, file, pricesArr, settings, verbose}){
   const masked = maskSegments(html);
   const lists = findAllTagsByClass(masked, "box-skins-list", ["div","ul","section"]);
   if (!lists.length) return { html, changed:false };
-  const renderer = await buildSkinsListForTopic(root, ctx, pricesArr);
-  let out = html, shift=0, changed=false;
+  const renderer = await buildSkinsListForTopic(root, ctx, pricesArr, { verbose });
+  let out = html, shift=0, changed=false, injectedCount=0;
   for (const list of lists){
     const openAbs = list.openEnd + shift, closeAbs = list.closeStart + shift;
     const baseIndent = indentBefore(out, openAbs, nl);
     const block = renderer(nl, baseIndent);
+    if (!block.trim()) continue;
     const next = joinBlocksNoBlank(out.slice(0,openAbs), block, out.slice(closeAbs), nl);
-    if (collapseWS(next) !== collapseWS(out)){ changed=true; shift += next.length - out.length; out = next; if (verbose) console.log(`[OK] ${path.relative(root,file)} :: .box-skins-list (mode=${ctx.mode})`); }
+    if (collapseWS(next) !== collapseWS(out)){
+      changed=true; shift += next.length - out.length; out = next; injectedCount++;
+    }
+  }
+  if (changed && verbose) {
+    console.log(`[OK] ${path.relative(root,file)} :: .box-skins-list (mode=${ctx.mode}), lists=${injectedCount}`);
+  }
+  if (!changed && verbose && lists.length){
+    console.warn(`[WARN] ${path.relative(root,file)} :: .box-skins-list found=${lists.length}, but nothing rendered`);
   }
   return { html: out, changed };
 }
@@ -308,7 +431,6 @@ function localizeHrefForRu(href, isRu){
   return href;
 }
 function pickActiveIndex(nav, urlPath, isRu){
-  // Сравниваем по длине совпадения href внутри urlPath
   let bestIdx = -1, bestLen = -1;
   nav.forEach((btn, i)=>{
     const h = localizeHrefForRu(String(btn.href||""), isRu);
@@ -338,71 +460,42 @@ function renderTopicFilterHtml({nav, indent, nl, urlPath, isRu}){
   lines.push(`${indent}</div>`);
   return lines.join(nl);
 }
-async function processTopicFilters({root, file, verbose}){
-  let html = await fs.readFile(file,"utf8");
+async function processTopicFilters({root, file, html, verbose}){
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const urlPath = fileToUrlPath(root, file);
   const masked = maskSegments(html);
-
-  // Ищем все .topic-boxes-holder
   const holders = findAllTagsByClass(masked, "topic-boxes-holder", ["div","section"]);
   if (!holders.length) return { html, changed:false };
-
   const nav = await loadTopicNav(root);
   if (!nav.length) return { html, changed:false };
-
   let out = html, shift = 0, changed = false;
-
   for (const h of holders){
     const openAbs   = h.openStart + shift;
     const openEnd   = h.openEnd   + shift;
     const closeAbs  = h.closeStart+ shift;
-
-    // определяем язык по пути или классу lang-ru
     const openTag = readTag(out, openAbs);
     const classes = parseClassAttr(openTag.attrs);
     const isRu = urlPath.startsWith("/ru/") || classes.has("lang-ru");
-
     const baseIndent = indentBefore(out, openEnd, nl);
     const innerIndent = baseIndent + "  ";
-
-    // Найти и вырезать все существующие topic-filter внутри holder
     const maskedAll = maskSegments(out);
     const filters = findAllTagsByClass(maskedAll, "topic-filter", ["div"], openEnd, closeAbs);
     let innerBefore = out.slice(openEnd, closeAbs);
-
     if (filters.length){
-      // соберём "остаток" без всех topic-filter
-      let parts = [];
-      let cursor = openEnd;
-      for (const f of filters){
-        const fOpen = f.openStart, fClose = f.closeEnd;
-        parts.push(out.slice(cursor, fOpen));
-        cursor = fClose;
-      }
+      let parts = []; let cursor = openEnd;
+      for (const f of filters){ const fOpen = f.openStart, fClose = f.closeEnd; parts.push(out.slice(cursor, fOpen)); cursor = fClose; }
       parts.push(out.slice(cursor, closeAbs));
       innerBefore = parts.join("");
     }
-
-    // убираем ведущие пустые строки/пробелы в начале контента
     const rest = innerBefore.replace(/^[ \t]*\r?\n+/,"");
-
-    const filterHtml = renderTopicFilterHtml({
-      nav, indent: innerIndent, nl, urlPath, isRu
-    });
-
+    const filterHtml = renderTopicFilterHtml({ nav, indent: innerIndent, nl, urlPath, isRu });
     const newInner = filterHtml + (rest.startsWith(nl) ? rest : (rest ? nl + rest : ""));
-
     const next = out.slice(0, openEnd) + nl + newInner + out.slice(closeAbs);
     if (collapseWS(next) !== collapseWS(out)){
       if (verbose) console.log(`[OK] ${path.relative(root,file)} :: topic-filter fixed/inserted`);
-      changed = true;
-      // поправим смещение для последующих проходов
-      shift += next.length - out.length;
-      out = next;
+      changed = true; shift += next.length - out.length; out = next;
     }
   }
-
   return { html: out, changed };
 }
 
@@ -466,13 +559,11 @@ async function buildLoadoutHtml(root, ctx, pricesArr, nl, baseIndent){
   lines.push(renderSection("bottom", bottom7));
   return lines.join(nl);
 }
-async function processLoadoutPages({root, file, pricesArr, verbose}){
-  let html = await fs.readFile(file,"utf8");
+async function processLoadoutPages({root, file, html, pricesArr, verbose}){
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const urlPath = fileToUrlPath(root, file);
   const ctx = detectLoadoutContext(urlPath);
   if (!ctx) return { html, changed:false };
-
   const masked = maskSegments(html);
   const sitepages = findAllTagsByClass(masked, "sitepage", ["div","section"]);
   let box=null;
@@ -489,15 +580,12 @@ async function processLoadoutPages({root, file, pricesArr, verbose}){
     }
   }
   if (!box) return { html, changed:false };
-
   const baseIndent = indentBefore(html, box.absOpenEnd, nl);
   const built = await buildLoadoutHtml(root, ctx, pricesArr, nl, baseIndent);
   if (!built) return { html, changed:false };
-
   const before = html.slice(0, box.absOpenEnd);
   const after  = html.slice(box.absCloseStart);
   const next   = joinBlocksNoBlank(before, built, after, nl);
-
   if (collapseWS(next) !== collapseWS(html)){
     if (verbose) console.log(`[OK] ${path.relative(root,file)} :: loadout ${ctx.mode}/${ctx.color}`);
     return { html: next, changed:true };
@@ -524,20 +612,20 @@ async function processLoadoutPages({root, file, pricesArr, verbose}){
       let changed = false;
 
       // 1) .box-skins-list
-      const resList = await processBoxSkinsLists({root, file, pricesArr, settings, verbose});
-      html = resList.html; changed = changed || resList.changed;
+      const resList = await processBoxSkinsLists({root, file, html, pricesArr, settings, verbose});
+      if (resList.changed){ html = resList.html; changed = true; }
 
       // 2) loadout pages
-      const resLoad = await processLoadoutPages({root, file, pricesArr, verbose});
-      html = resLoad.html; changed = changed || resLoad.changed;
+      const resLoad = await processLoadoutPages({root, file, html, pricesArr, verbose});
+      if (resLoad.changed){ html = resLoad.html; changed = true; }
 
       // 3) одиночные плейсхолдеры .skin (+ ремонт уже записанных блоков)
       const resSkins = await processSkinPlaceholders({root, html, pricesArr, verbose, file});
-      html = resSkins.html; changed = changed || resSkins.changed;
+      if (resSkins.changed){ html = resSkins.html; changed = true; }
 
-      // 4) topic-filter вставка/ремонт + нормализация отступа
-      const resFilter = await processTopicFilters({root, file, verbose});
-      html = resFilter.html; changed = changed || resFilter.changed;
+      // 4) topic-filter вставка/ремонт
+      const resFilter = await processTopicFilters({root, file, html, verbose});
+      if (resFilter.changed){ html = resFilter.html; changed = true; }
 
       if (changed){
         if (!dry) await fs.writeFile(file, html, "utf8");
