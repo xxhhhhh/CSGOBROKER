@@ -5157,8 +5157,17 @@ nav img {
     width: auto;
 }
 
-.topic-box .logobg.skincolors img {
+.topic-box .logobg.skincolors img,
+.sitepage.topic-craft .topic-box .logobg.skincolors img {
     height: 100%;
+    max-height: unset;
+    max-width: unset;
+    transform: unset;
+}
+
+.topic-box .logobg.skincolors img:hover,
+.sitepage.topic-craft .topic-box .logobg.skincolors img:hover {
+    transform: scale(1.05);
 }
 
 .topic-box.items .logobg,

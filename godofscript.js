@@ -2468,81 +2468,84 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // /assets/js/main-mode-insert.js
-$(document).ready(function () {
-  // Главный слайдер на странице (если уже на месте и не инициализирован)
-  if ($('.main-mode-selection').length && !$('.main-mode-selection').hasClass('slick-slider')) {
-    var res = $(window).width();
-    $('.main-mode-selection').slick({
-      slidesToShow: res < 600 ? 2 : 4,
-      slidesToScroll: 1,
-      autoplay: true,
-      infinite: true,
-      speed: 450,
-      autoplaySpeed: 5500,
-      pauseOnHover: true,
-      prevArrow:
-        '<button aria-label="Prev Slide" class="prev-button controls-button"><i class="officon chevron left"></i></button>',
-      nextArrow:
-        '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
-      dots: false
-    });
+$(function () {
+  // Общие настройки для всех слайдеров
+  const mainSliderOptions = {
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    infinite: true,
+    speed: 450,
+    autoplaySpeed: 5500,
+    pauseOnHover: true,
+    prevArrow:
+      '<button aria-label="Prev Slide" class="prev-button controls-button"><i class="officon chevron left"></i></button>',
+    nextArrow:
+      '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2
+        }
+      }
+    ]
+  };
 
-    const modesslider = document.querySelector('.main-mode-selection');
-    if (typeof updateURLs === 'function' && modesslider) updateURLs(modesslider); // почему: URLs могут быть динамическими
+  function initModesSlider($el) {
+    if (!$el.length || $el.hasClass('slick-initialized')) return;
+
+    $el.slick(mainSliderOptions);
+
+    const sliderEl = $el.get(0);
+    if (typeof updateURLs === 'function' && sliderEl) {
+      updateURLs(sliderEl);
+    }
   }
 
-  // Вставка селекшна после 12-го ВИДИМОГО бокса (игнорируя .hidden и .hidden-route)
+  // 1) Главный слайдер вверху страницы
+  initModesSlider($('.main-mode-selection'));
+
+  // 2) Вставка селекшна после 12-го видимого бокса и инициализация slick
   $('.boxes-holder').each(function () {
     const $boxesHolder = $(this);
     const $allBoxes = $boxesHolder.children('.box');
-
-    // Ключевое изменение: исключаем .hidden и .hidden-route
     const $visibleBoxes = $allBoxes.filter(':not(.hidden):not(.hidden-route)');
 
-    // Важно: считаем только видимые боксы по нашим правилам
     if (!$boxesHolder.closest('.main-page').length && $visibleBoxes.length >= 12) {
       const importPath =
         typeof languageTag !== 'undefined' && languageTag === 'ru'
           ? '/code-parts/micro-parts/main-mode-import-ru.html'
           : '/code-parts/micro-parts/main-mode-import.html';
 
-      $.get(importPath, function (data) {
-        const $importedContent = $(data);
-
-        // Вставляем сразу за 12-м ВИДИМЫМ боксом (0-based => 11)
+      $.get(importPath, function (html) {
+        const $importedContent = $(html);
         const $anchor = $visibleBoxes.eq(11);
+
         if ($anchor.length) {
           $anchor.after($importedContent);
         } else {
-          // fallback, если якорь внезапно не найден
           $boxesHolder.append($importedContent);
         }
 
-        // Инициализация слайдера только если не инициализирован ранее
-        if (!$importedContent.hasClass('slick-slider')) {
-          const res = $(window).width();
-          $importedContent.slick({
-            slidesToShow: res < 600 ? 2 : 4,
-            slidesToScroll: 1,
-            autoplay: true,
-            infinite: true,
-            speed: 450,
-            autoplaySpeed: 5500,
-            pauseOnHover: true,
-            prevArrow:
-              '<button aria-label="Prev Slide" class="prev-button controls-button"><i class="officon chevron left"></i></button>',
-            nextArrow:
-              '<button aria-label="Next Slide" class="next-button controls-button"><i class="officon chevron right"></i></button>',
-            dots: false
-          });
+        // Если внутри импортированного блока есть .main-mode-selection — инициализируем её
+        const $slider = $importedContent.filter('.main-mode-selection').length
+          ? $importedContent.filter('.main-mode-selection')
+          : $importedContent.find('.main-mode-selection');
 
-          const modesslider = document.querySelector('.main-mode-selection');
-          if (typeof updateURLs === 'function' && modesslider) updateURLs(modesslider); // почему: некоторые страницы подгружают блок динамически
-        }
+        initModesSlider($slider);
       });
     }
   });
 });
+
 
 window.initPayments = function () {
   const basePath = "/code-parts/site-infos";
