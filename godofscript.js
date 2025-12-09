@@ -579,81 +579,6 @@ forcemodsboxes();
   });
 
   const fallbackLang = 'en';
-  
-if (supportedLanguages.includes(languageTag)) {
-  const cacheKey = 'infobox_translations';
-  const cacheExpiryKey = `${cacheKey}_expiry`;
-  const maxCacheAge = 24 * 60 * 60 * 1000;
-
-  const cachedDataRaw = StorageHelper.get(cacheKey);
-  const cachedExpiry = parseInt(StorageHelper.get(cacheExpiryKey), 10);
-
-  const insertInfobox = (texts) => {
-    const html = `
-      <div class="main-infobox">
-        <div class="main-infobox-mascotte"></div>
-        <div class="main-infobox-content">
-          <div class="main-infobox-content-text">
-            <div class="main-infobox-content-block">
-              <p>${texts.p1}</p>
-              <p>${texts.p2}</p>
-            </div>
-          </div>
-        </div>
-        <div class="main-infobox-content second">
-          <div class="main-infobox-content-text">
-            <div class="main-infobox-content-block">
-              <p>${texts.p3}</p>
-              <p>${texts.p4}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-
-    const criteriaDescriptions = document.querySelector('.criteria-descriptions');
-    if (window.location.pathname.includes('/reviews/')) {
-      const boxReview = document.querySelector('.boxreview');
-      if (boxReview) {
-        boxReview.insertAdjacentHTML('beforeend', html);
-    } else if (criteriaDescriptions) {
-      criteriaDescriptions.insertAdjacentHTML('afterend', html);
-      }
-    } else {
-      const insertionPoint = document.querySelector('.boxes-holder');
-      if (insertionPoint) {
-        insertionPoint.insertAdjacentHTML('afterend', html);
-      }
-    }
-  };
-
-  const fetchAndInsert = () => {
-    fetch('/code-parts/micro-parts/main-infobox/infobox-translations.json')
-      .then(response => response.json())
-      .then(allTranslations => {
-        StorageHelper.set(cacheKey, JSON.stringify(allTranslations));
-        StorageHelper.set(cacheExpiryKey, (Date.now() + maxCacheAge).toString());
-
-        const texts = allTranslations[languageTag] || allTranslations[fallbackLang];
-        insertInfobox(texts);
-      })
-      .catch(err => console.error('Failed to fetch infobox translations:', err));
-  };
-
-  if (cachedDataRaw && cachedExpiry && Date.now() < cachedExpiry) {
-    try {
-      const allTranslations = JSON.parse(cachedDataRaw);
-      const texts = allTranslations[languageTag] || allTranslations[fallbackLang];
-      insertInfobox(texts);
-    } catch (e) {
-      fetchAndInsert();
-    }
-  } else {
-    fetchAndInsert();
-  }
-}
-
-  
 
 $(document).ready(function(){
   $('.screentable .screens').slick({
@@ -1832,16 +1757,16 @@ $(document).ready(function() {
   }
 
   var sliderItems = [
-    { href: '/', src: '/img/best-gambling-sites-slide-2024.png', label: 'Best Gambling Sites' },
-    { href: '/rust', src: '/img/best-rust-sites-slide-2024.png', label: 'Best Rust Sites' },
-    { href: '/earning/offerwalls', src: '/img/earn-skins-slider-2024.png', label: 'Best Offerwall Sites' }
+    { href: '/', src: '/img/best-gambling-sites-slide-2024.webp', label: 'Best Gambling Sites' },
+    { href: '/rust', src: '/img/best-rust-sites-slide-2024.webp', label: 'Best Rust Sites' },
+    { href: '/earning/offerwalls', src: '/img/earn-skins-slider-2024.webp', label: 'Best Offerwall Sites' }
   ];
 
   if (languageTag === 'ru') {
     sliderItems = [
-      { href: '/ru', src: '/img/best-gambling-sites-slide-2024-ru.png', label: 'Лучшие Гемблинг Сайты CS2' },
-      { href: '/ru/rust', src: '/img/best-rust-sites-slide-2024-ru.png', label: 'Лучшие Сайты Rust' },
-      { href: '/ru/earning/offerwalls', src: '/img/earn-skins-slider-2024-ru.png', label: 'Лучшие Сайты с Заданиями' }
+      { href: '/ru', src: '/img/best-gambling-sites-slide-2024-ru.webp', label: 'Лучшие Гемблинг Сайты CS2' },
+      { href: '/ru/rust', src: '/img/best-rust-sites-slide-2024-ru.webp', label: 'Лучшие Сайты Rust' },
+      { href: '/ru/earning/offerwalls', src: '/img/earn-skins-slider-2024-ru.webp', label: 'Лучшие Сайты с Заданиями' }
     ];
   }
 

@@ -1,6 +1,8 @@
 // ============================================================================
 // File: scripts/static-pages-fill.js
 // Usage: node scripts/static-pages-fill.js [--root path] [--dry-run] [--ratings path] [--verbose]
+// Note: Встроена логика "more-content" с авто-детектом доступных языков + серверная
+//       генерация main-infobox (без client-side JS/localStorage).
 // ============================================================================
 
 const fs = require("fs/promises");
@@ -13,9 +15,20 @@ const FILTER_SETTINGS   = "/code-parts/filter-settings.json";
 const REVIEW_SETTINGS   = "/code-parts/review-settings.json";
 const SITES_SETTINGS    = "/code-parts/sites-settings.json";
 const TRANSLATIONS_PATH = "/code-parts/review-translations.json";
-const KNOWN_LANGS = new Set(["ru","en","es","pt","tr","hi","de","fr","pl","it","ua","uk","ar","id","th","vi","nl","sv","fi","no","da","ro","cs","sk","sr","bg","el","hu","he","ko","ja","zh","zh-cn","zh-tw"]);
+
+// + инфобокс переводы
+const INFOBOX_TRANSLATIONS = "/code-parts/micro-parts/main-infobox/infobox-translations.json";
+
+// NB: Базовый список. Для маршрутизации ссылок в основой логике он остаётся.
+// "More Content" использует динамически обнаруженные языки (см. detectAvailableLangs).
+const KNOWN_LANGS = new Set([
+  "ru","en","es","pt","tr","hi","de","fr","pl","it","ua","uk","ar","id","th","vi","nl","sv","fi","no","da","ro","cs","sk","sr","bg","el","hu","he","ko","ja","zh","zh-cn","zh-tw"
+]);
 const PREFIX_LANGS = new Set(["ru","es","pt","tr","hi"]); // языки, где добавляем /{lang}
 const REVIEW_PREFIX_LANGS = new Set(["ru","tr","es"]);
+
+// Инфобокс показываем только для языков: PREFIX_LANGS + en
+const INFOBOX_LANGS = new Set([...PREFIX_LANGS, "en"]);
 
 /** Разделяет base и хвост (?/ #) */
 function splitHrefParts(href){
@@ -34,8 +47,8 @@ function stripKnownLangPrefix(href){
   if (isExternal(href) || href.startsWith("#")) return href;
 
   const { base, tail } = splitHrefParts(href);
-  const path = base.startsWith("/") ? base : "/" + base;
-  const segs = path.split("/").filter(Boolean);
+  const pathOnly = base.startsWith("/") ? base : "/" + base;
+  const segs = pathOnly.split("/").filter(Boolean);
 
   if (segs.length && KNOWN_LANGS.has(segs[0])) segs.shift();
 
@@ -52,8 +65,8 @@ function ensureLangPrefixFor(href, lang){
   if (isExternal(href) || href.startsWith("#")) return href;
 
   const { base, tail } = splitHrefParts(href);
-  const path = base.startsWith("/") ? base : "/" + base;
-  const segs = path.split("/").filter(Boolean);
+  const pathOnly = base.startsWith("/") ? base : "/" + base;
+  const segs = pathOnly.split("/").filter(Boolean);
 
   if (segs.length && KNOWN_LANGS.has(segs[0])) segs.shift();
   segs.unshift(L);
@@ -80,10 +93,11 @@ function withLangForReview(href, lang){
   const { root, dry, ratingsPath, verbose } = parseArgs(process.argv.slice(2));
   const files = await listHtmlFiles(root);
   const presets = await loadPresets(root);
-
-  const siteSettings = await safeJson(abs(root, SITES_SETTINGS)); // <-- NEW
-
+  const siteSettings = await safeJson(abs(root, SITES_SETTINGS));
   const ratingsMap = ratingsPath ? await safeJson(abs(root, ratingsPath)) : null;
+
+  // Авто-детект доступных языков в проекте для блока "more-content"
+  const AVAILABLE_LANGS = await detectAvailableLangs(root); // Set<string>
 
   let updated = 0, skipped = 0;
   for (const file of files) {
@@ -102,13 +116,29 @@ function withLangForReview(href, lang){
     let changed = false;
 
     if (hasBoxesHolder) {
-      const newHtml = await processListingsGlobal(html, urlPath, lang, root, presets, nl, siteSettings); // <-- pass settings
+      const newHtml = await processListingsGlobal(html, urlPath, lang, root, presets, nl, siteSettings);
       if (newHtml !== html) { html = newHtml; changed = true; }
     }
 
     if (isReviewPage) {
-      const res = await processReviewMirrors(html, urlPath, lang, root, presets, ratingsMap, nl, verbose, siteSettings); // <-- pass settings
+      const res = await processReviewMirrors(html, urlPath, lang, root, presets, ratingsMap, nl, verbose, siteSettings);
       if (res !== html) { html = res; changed = true; }
+    }
+
+    // ----- Integrated "more-content" pass (idempotent), with dynamic languages -----
+    const mcChanged = await applyMoreContentIfNeeded(html, urlPath, lang, nl, root, AVAILABLE_LANGS);
+    if (mcChanged !== null && mcChanged !== html) {
+      html = mcChanged;
+      changed = true;
+    }
+
+    // ----- Integrated "main-infobox" pass (server-side, idempotent) -----
+    if (presets.infobox && INFOBOX_LANGS.has(lang)) {
+      const ibNew = upsertMainInfobox(html, urlPath, lang, nl, presets.infobox);
+      if (ibNew !== null && ibNew !== html) {
+        html = ibNew;
+        changed = true;
+      }
     }
 
     if (changed) {
@@ -133,10 +163,11 @@ async function listHtmlFiles(root){ const out=[]; async function walk(d){ for (c
 }} await walk(root); return out;}
 function abs(root, p){ return p && p.startsWith("/") ? path.join(root,"."+p) : path.join(root,p); }
 async function loadPresets(root){
-  const filter = await safeJson(abs(root, FILTER_SETTINGS));
-  const review = await safeJson(abs(root, REVIEW_SETTINGS));
-  const translation = await safeJson(abs(root, TRANSLATIONS_PATH));
-  return { filter, review, translation };
+  const filter       = await safeJson(abs(root, FILTER_SETTINGS));
+  const review       = await safeJson(abs(root, REVIEW_SETTINGS));
+  const translation  = await safeJson(abs(root, TRANSLATIONS_PATH));
+  const infobox      = await safeJson(abs(root, INFOBOX_TRANSLATIONS));
+  return { filter, review, translation, infobox };
 }
 async function safeJson(p){ try { return JSON.parse(await fs.readFile(p,"utf8")); } catch { return null; } }
 
@@ -262,7 +293,7 @@ function averageFirstFour(ratings) {
   if (!vals.length) return null;
   const take = vals.slice(0, 4);
   const avg = take.reduce((a,b)=>a+b,0) / take.length;
-  return avg; // число 0..5
+  return avg;
 }
 
 // REPLACE computeGoKey with this version
@@ -279,22 +310,17 @@ function computeGoKey(baseKey, urlPath = "", lang = "en", data = {}) {
   if (hasSeg("buy-skins")    && hasPlain("buy-skins"))    return `${base}-buy-skins`;
   if (hasSeg("sell-skins")   && hasPlain("sell-skins"))   return `${base}-sell-skins`;
 
-  // Earn by Play (RU маршруты)
   if ((/\/ru(?:\/|$)/.test(p)) && (p.includes("/earning/earn-by-play") || p.includes("/csgo/earn-by-play-csgo")) && hasPlain("earn-by-play")) {
     return `${base}-earn-by-play`;
   }
-
-  // Earn by Play (все остальные языки, кроме ru)
   if (!/\/ru(?:\/|$)/.test(p) && hasSeg("earn-by-play") && hasPlain("earn-by-play-en")) {
     return `${base}-earn-by-play-en`;
   }
 
-  // Все НЕ-RU языки считаются EN-версией
   if (String(lang).toLowerCase() !== "ru") {
-    if (hasPlain(`${base}-en`)) return `${base}-en`;   // поддержка старых json-ключей
-    if (hasPlain("link-en"))    return `${base}-en`;   // плоский суффикс /en
+    if (hasPlain(`${base}-en`)) return `${base}-en`;
+    if (hasPlain("link-en"))    return `${base}-en`;
   }
-
   return base;
 }
 
@@ -350,7 +376,6 @@ function updateVisitLinkInBoxHtml(boxHtml, visitHref, nl, siteName = "", lang = 
     newOpen = upsertAttrInTag(newOpen, "rel", "noopener");
     newOpen = upsertAttrInTag(newOpen, "aria-label", visitLabel);
 
-    // Для en|ru заменяем внутренность на <span>...</span>
     if (spanHtml) return newOpen + spanHtml + `</a>`;
     return newOpen + full.slice(open.length);
   });
@@ -361,7 +386,6 @@ function updateVisitLinkInBoxHtml(boxHtml, visitHref, nl, siteName = "", lang = 
   return boxHtml.slice(0, cOpenEnd) + rebuiltSegment + boxHtml.slice(cCloseStart);
 }
 
-/* ==== [NEW] утилита: href из .logobg a ==== */
 function extractLogobgHref(boxHtml){
   const m = maskSegments(boxHtml);
   const lb = findFirstByClass(m, "logobg");
@@ -409,7 +433,6 @@ function ensureFirstReviewAnchorInBoxHtml(boxHtml, nl, opts) {
 
   const aria = buildReviewAriaLabel(siteName, lang, mode);
 
-  // ✨ текст для <span> только для en|ru
   const spanTxt = buttonSpanLabel(lang, mode === "similar" ? "similar" : "review");
   const spanHtml = spanTxt ? `<span>${escapeHtml(spanTxt)}</span>` : null;
 
@@ -430,7 +453,6 @@ function ensureFirstReviewAnchorInBoxHtml(boxHtml, nl, opts) {
     open = upsertAttrInTag(open, "aria-label", aria);
 
     patched = true;
-    // только для en|ru генерируем span; для остальных сохраняем как есть
     if (spanHtml) return open + spanHtml + `</a>`;
     return open + inner + `</a>`;
   });
@@ -450,7 +472,6 @@ function ensureFirstReviewAnchorInBoxHtml(boxHtml, nl, opts) {
   return boxHtml.slice(0, cOpenEnd) + rebuilt + boxHtml.slice(cCloseStart);
 }
 
-/* ==== [NEW] removeMirrorVisitFromBoxHtml: удалить .mirror-visit в .content-buttons ==== */
 function removeMirrorVisitFromBoxHtml(boxHtml, nl){
   const masked  = maskSegments(boxHtml);
   const content = findFirstByClass(masked, "content");
@@ -482,7 +503,6 @@ function removeMirrorVisitFromBoxHtml(boxHtml, nl){
   return boxHtml.slice(0, cOpenEnd) + rebuilt + boxHtml.slice(cCloseStart);
 }
 
-/* ==== [NEW] ensureVisitAnchorMaybeAdd: создать .visit при отсутствии ==== */
 function ensureVisitAnchorMaybeAdd(boxHtml, nl){
   const masked  = maskSegments(boxHtml);
   const content = findFirstByClass(masked, "content");
@@ -502,15 +522,13 @@ function ensureVisitAnchorMaybeAdd(boxHtml, nl){
   let   region = segment.slice(regionStart, regionEnd);
   let   after  = segment.slice(regionEnd);
 
-  if (/\breview-button\b[^>]*\bvisit\b/i.test(region)) return boxHtml; // уже есть
+  if (/\breview-button\b[^>]*\bvisit\b/i.test(region)) return boxHtml;
 
-  // вставляем сразу после первой кнопки/в начало
   const baseIndent = indentBefore(segment, cb.openStart, nl);
   const linkIndent = baseIndent + "  ";
   const visitLine = `${linkIndent}<a href="#" aria-label="Visit" class="review-button visit" target="_blank" rel="noopener"></a>`;
 
   if (/<a\b/i.test(region)){
-    // после первого <a>
     region = region.replace(/(<a\b[\s\S]*?<\/a>)/i, (_m) => _m + nl + visitLine);
   } else {
     region = region ? (visitLine + nl + region) : visitLine;
@@ -538,30 +556,27 @@ function ensureMainBoxButtonsOnReviewMirrors(html, lang, data, urlPath, reviewSe
 
     const boxHtml = out.slice(b.openStart, b.closeEnd);
 
-    // 1) Удаляем mirror-visit
     let cur = removeMirrorVisitFromBoxHtml(boxHtml, nl);
 
-    // 2) Кнопка 1: "Similar Sites …"
     const mmPath = reviewSettings?.mainModeLinks?.[data["Main Mode"]] || "/csgo/caseopening";
     cur = ensureFirstReviewAnchorInBoxHtml(cur, nl, {
       lang, siteName: data.name || "", mode: "similar", reviewHref: mmPath
     });
 
-    // 3) Кнопка 2: visit (создать при отсутствии) + апдейт href
     cur = ensureVisitAnchorMaybeAdd(cur, nl);
     cur = updateVisitLinkInBoxHtml(cur, visitHrefMain, nl, data.name || "", lang);
 
-    // 4) Copy
     cur = ensureCopyButtonInBoxHtml(cur, data.code ?? "", nl, lang);
 
     if (cur !== boxHtml){
       out = out.slice(0, b.openStart) + cur + out.slice(b.closeEnd);
     }
-    break; // только первый .box.main
+    break;
   }
   return out;
 }
 
+// REPLACED ensureNumericRatingInLogobg (new version)
 function ensureNumericRatingInLogobg(boxHtml, ratingValue, nl){
   if (ratingValue == null) return boxHtml;
 
@@ -575,26 +590,21 @@ function ensureNumericRatingInLogobg(boxHtml, ratingValue, nl){
 
   const fmt = (n) => (Number.isFinite(n) ? (Math.round(n*100)/100).toFixed(2) : "0.00");
 
-  // --- если блок уже есть: обновить число и прибрать пустую строку перед ним
   if (/<div\b[^>]*class\s*=\s*["'][^"']*\brating-case-single\b/i.test(region)){
-    // 1) обновляем число
     region = region.replace(
       /(<div\b[^>]*class\s*=\s*["'][^"']*\brating-summ\b[^"']*["'][^>]*>)[\s\S]*?(<\/div>)/i,
       (_, a, c) => a + fmt(ratingValue) + c
     );
 
-    // 2) сжимаем пустые строки перед rating-case-single до ровно одной
     const reNL = new RegExp(`(?:\\r?\\n)[\\t ]*(?:\\r?\\n)+([\\t ]*)(?=<div\\b[^>]*\\brating-case-single\\b)`, "i");
-    region = region.replace(reNL, nl + "$1"); // why: не оставлять «пустую» строку
+    region = region.replace(reNL, nl + "$1");
 
     return before + region + after;
   }
 
-  // --- вставка нового блока в конец .logobg (без лишней пустой строки)
-  const closeIndent = indentBefore(boxHtml, lb.closeStart, nl); // отступ линии с </div> .logobg
+  const closeIndent = indentBefore(boxHtml, lb.closeStart, nl);
   const lineIndent  = closeIndent + "  ";
 
-  // убираем ЛЮБЫЕ хвостовые пробелы/пустые строки в конце region
   region = region.replace(/[ \t]+$/g, "").replace(/(?:\r?\n)+$/g, "");
 
   const block = [
@@ -604,7 +614,6 @@ function ensureNumericRatingInLogobg(boxHtml, ratingValue, nl){
     `${lineIndent}</div>`
   ].join(nl);
 
-  // контент + перевод строки + блок + перевод строки + отступ + закрывающий тег
   return before + region + nl + block + nl + closeIndent + after;
 }
 
@@ -631,57 +640,10 @@ function ensureVisitLinkInMainBox(html, visitHref, nl, siteName = "", lang = "en
   return out;
 }
 
-// REPLACE ensureNumericRatingInLogobg with this version
-function ensureNumericRatingInLogobg(boxHtml, ratingValue, nl){
-  if (ratingValue == null) return boxHtml;
-
-  const masked = maskSegments(boxHtml);
-  const lb = findFirstByClass(masked, "logobg");
-  if (!lb) return boxHtml;
-
-  const before = boxHtml.slice(0, lb.openEnd);
-  let   region = boxHtml.slice(lb.openEnd, lb.closeStart);
-  const after  = boxHtml.slice(lb.closeStart);
-
-  const fmt = (n) => (Number.isFinite(n) ? (Math.round(n*100)/100).toFixed(2) : "0.00");
-
-  // --- если блок уже есть: обновить число и прибрать пустую строку перед ним
-  if (/<div\b[^>]*class\s*=\s*["'][^"']*\brating-case-single\b/i.test(region)){
-    // 1) обновляем число
-    region = region.replace(
-      /(<div\b[^>]*class\s*=\s*["'][^"']*\brating-summ\b[^"']*["'][^>]*>)[\s\S]*?(<\/div>)/i,
-      (_, a, c) => a + fmt(ratingValue) + c
-    );
-
-    // 2) сжимаем пустые строки перед rating-case-single до ровно одной
-    const reNL = new RegExp(`(?:\\r?\\n)[\\t ]*(?:\\r?\\n)+([\\t ]*)(?=<div\\b[^>]*\\brating-case-single\\b)`, "i");
-    region = region.replace(reNL, nl + "$1"); // why: не оставлять «пустую» строку
-
-    return before + region + after;
-  }
-
-  // --- вставка нового блока в конец .logobg (без лишней пустой строки)
-  const closeIndent = indentBefore(boxHtml, lb.closeStart, nl); // отступ линии с </div> .logobg
-  const lineIndent  = closeIndent + "  ";
-
-  // убираем ЛЮБЫЕ хвостовые пробелы/пустые строки в конце region
-  region = region.replace(/[ \t]+$/g, "").replace(/(?:\r?\n)+$/g, "");
-
-  const block = [
-    `${lineIndent}<div class="rating-case-single">`,
-    `${lineIndent}  <div class="star_rating officon"></div>`,
-    `${lineIndent}  <div class="rating-summ">${fmt(ratingValue)}</div>`,
-    `${lineIndent}</div>`
-  ].join(nl);
-
-  // контент + перевод строки + блок + перевод строки + отступ + закрывающий тег
-  return before + region + nl + block + nl + closeIndent + after;
-}
 // REPLACE: upsertRouteForBoxHtml
 function upsertRouteForBoxHtml(boxHtml, type /* 'required'|'maybe' */, inSection, nl){
   if (!boxHtml) return boxHtml;
 
-  // 1) Убираем любые старые route / route-semi
   let cleaned = boxHtml;
   cleaned = removeAllBlocksByClass(cleaned, "route");
   cleaned = removeAllBlocksByClass(cleaned, "route-semi");
@@ -697,7 +659,6 @@ function upsertRouteForBoxHtml(boxHtml, type /* 'required'|'maybe' */, inSection
     ].join(nl);
   }
 
-  // ---------- СНАЧАЛА пробуем вставить внутрь .logobg ----------
   const masked = maskSegments(cleaned);
   const lb = findFirstByClass(masked, "logobg");
   if (lb) {
@@ -705,10 +666,9 @@ function upsertRouteForBoxHtml(boxHtml, type /* 'required'|'maybe' */, inSection
     const lbInnerEnd   = lb.closeStart;
 
     const beforeLB = cleaned.slice(0, lbInnerStart);
-    let   body     = cleaned.slice(lbInnerStart, lbInnerEnd); // содержимое .logobg
-    const afterLB  = cleaned.slice(lbInnerEnd);               // </div> .logobg и дальше
+    let   body     = cleaned.slice(lbInnerStart, lbInnerEnd);
+    const afterLB  = cleaned.slice(lbInnerEnd);
 
-    // локально убираем route/route-semi внутри .logobg (на всякий случай)
     (function stripLocalRoutes(){
       while (true){
         const m1 = maskSegments(body);
@@ -726,7 +686,6 @@ function upsertRouteForBoxHtml(boxHtml, type /* 'required'|'maybe' */, inSection
     let lineStart, before, after, indent;
 
     if (mm){
-      // начало строки, на которой стоит main-mode (с его отступом)
       const ls = body.lastIndexOf(nl, mm.openStart);
       lineStart = (ls === -1) ? 0 : ls + nl.length;
 
@@ -736,7 +695,6 @@ function upsertRouteForBoxHtml(boxHtml, type /* 'required'|'maybe' */, inSection
       const indentMatch = body.slice(lineStart, mm.openStart).match(/^[\t ]*/);
       indent = indentMatch ? indentMatch[0] : "";
     } else {
-      // нет main-mode — кидаем в конец .logobg с отступом последней строки
       const ls = body.lastIndexOf(nl);
       lineStart = (ls === -1) ? 0 : ls + nl.length;
 
@@ -753,9 +711,6 @@ function upsertRouteForBoxHtml(boxHtml, type /* 'required'|'maybe' */, inSection
     return beforeLB + newBody + afterLB;
   }
 
-  // ---------- ФОЛЛБЭК: .logobg нет ----------
-
-  // Если бокс внутри секции — вставляем перед последним </div>, сохраняя отступы
   if (inSection){
     const closeIdx = cleaned.lastIndexOf("</div>");
     if (closeIdx === -1) return cleaned;
@@ -773,12 +728,10 @@ function upsertRouteForBoxHtml(boxHtml, type /* 'required'|'maybe' */, inSection
     return joinBlocksNoBlank(before, block, after, nl);
   }
 
-  // Вне секции и без .logobg — ничего не вставляем
   return cleaned;
 }
 
-/* --- [ADD] pass: маршрутные метки по всей странице (только RU)
-      + игнорируем freebies-страницы --- */
+/* --- Маркеры маршрутов по всей странице (только RU), игнор freebies --- */
 function ensureRouteMarkersForPage(html, lang, siteSettings, nl, urlPath){
   const L = String(lang || "ru").toLowerCase();
   if (L !== "ru" || !siteSettings) return html;
@@ -837,24 +790,20 @@ function computeVisitHref(urlPath, lang, baseKey, data = {}) {
   const has = (k) => k && Object.prototype.hasOwnProperty.call(data, k) && !!data[k];
   const seg = (s) => new RegExp(`(?:^|/)${s}(?:/|$)`).test(p);
 
-  // Спец-страницы (cs.money-подобные)
   if (seg("marketplaces") && has("marketplaces")) return String(data["marketplaces"]);
   if (seg("instant-sell") && has("instant-sell")) return String(data["instant-sell"]);
   if (seg("buy-skins")    && has("buy-skins"))    return String(data["buy-skins"]);
   if (seg("sell-skins")   && has("sell-skins"))   return String(data["sell-skins"]);
 
-  // Earn by Play (поддержка старого маршрута earn-by-play-csgo)
   const isEarnByPlay = seg("earn-by-play") || p.includes("/csgo/earn-by-play-csgo");
   if (isEarnByPlay) {
     if (L === "ru"  && has("earn-by-play"))    return String(data["earn-by-play"]);
     if (L !== "ru" && has("earn-by-play-en"))  return String(data["earn-by-play-en"]);
   }
 
-  // Обычные ссылки
   if (L === "ru"  && has("link"))     return String(data["link"]);
   if (L !== "ru" && has("link-en"))   return String(data["link-en"]);
 
-  // Фолбэк
   return String(data["link"] || data["link-en"] || "#");
 }
 
@@ -892,7 +841,6 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl, sit
       const boxMasked = maskSegments(boxHtml);
       const logobg = findFirstByClass(boxMasked, "logobg"); if (!logobg) continue;
 
-      // ключ из .logobg a
       const region = boxHtml.slice(logobg.openStart, logobg.closeStart);
       const aIdx = region.indexOf("<a"); if (aIdx===-1) continue;
       const { tagText } = readTag(region, aIdx);
@@ -906,13 +854,10 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl, sit
         if (collapseWS(rebuilt) !== collapseWS(boxHtml)) boxHtml = rebuilt;
       }
 
-      // NEW: прямой внешний href
       const visitHref = computeVisitHref(urlPath, lang, key, data);
 
-      // visit + aria-label
       boxHtml = updateVisitLinkInBoxHtml(boxHtml, visitHref, nl, data.name || "", lang);
 
-      // Review-кнопка (1-я)
       const reviewHrefBase = extractLogobgHref(boxHtml) || `/reviews/${key}`;
       boxHtml = ensureFirstReviewAnchorInBoxHtml(boxHtml, nl, {
         lang,
@@ -921,21 +866,15 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl, sit
         reviewHref: reviewHrefBase
       });
 
-      // mirror
       boxHtml = ensureMirrorVisitButtonInBoxHtml(boxHtml, lang, key, data.mirror, nl);
 
-      // main: обновить .logobg a → внешний href
       const firstOpen = readTag(boxHtml, 0);
       const isMain = parseClassAttr(firstOpen.attrs).has("main");
       if (isMain) boxHtml = updateLogobgAnchorInBoxHtml(boxHtml, visitHref, nl);
 
-      // TG
       boxHtml = ensureTGButtonInBoxHtml(boxHtml, data, lang, nl);
-
-      // COPY
       boxHtml = ensureCopyButtonInBoxHtml(boxHtml, data.code ?? "", nl, lang);
 
-      // RATING
       const avg = averageFirstFour(data.ratings);
       boxHtml = ensureNumericRatingInLogobg(boxHtml, avg, nl);
 
@@ -947,7 +886,6 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl, sit
     shift += delta;
   }
 
-  // RU route-маркеры
   out = ensureRouteMarkersForPage(out, lang, siteSettings, nl, urlPath);
   return out;
 }
@@ -986,13 +924,10 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
   out = upsertSiteCode(out, data.code ?? "", nl);
   out = upsertPromoBoxesInSitepage(out, urlPath, lang, pageKey, data, presets.review, nl);
 
-  // NEW: прямой внешний href главного сайта
   const visitHrefMain = computeVisitHref(urlPath, lang, pageKey, data);
 
-  // visit в главном боксе + aria-label
   out = ensureVisitLinkInMainBox(out, visitHrefMain, nl, data.name || "", lang);
 
-  // нормализуем .copy у всех боксов
   (function normalizeCopyButtonsInAllBoxes(){
     let masked = maskSegments(out);
     let boxes = findAllDivByClass(masked, "box");
@@ -1018,7 +953,6 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
   out = localizeLanguageLinks(out, lang);
   out = enforceShortinfoEmptyState(out);
 
-  // Комплект кнопок в .box.main на /reviews|/mirrors: Similar + Visit (+ Copy), без Mirror
   out = ensureMainBoxButtonsOnReviewMirrors(out, lang, data, urlPath, presets.review, visitHrefMain, nl);
 
   out = ensureCopyButtonInMainBox(out, data.code ?? "", nl, lang);
@@ -1200,7 +1134,6 @@ function renderPromoNavMirrorBlock(fullHtmlAfterSections, urlPath, lang, pageKey
   const lines = [];
   lines.push(`${indent}<div class="box-extra-links">`);
 
-  // Promo
   const codes = data.codes || {};
   const codeValue = data.code || "";
   const hasCodes = codes && Object.keys(codes).length > 0 && codeValue;
@@ -1222,7 +1155,6 @@ function renderPromoNavMirrorBlock(fullHtmlAfterSections, urlPath, lang, pageKey
     }
   }
 
-  // Mirror redirect: отключён на /mirrors/*
   if (!isMirrors && truthy(data.mirror)){
     const href = (`${lang==="ru" ? "/ru" : ""}/mirrors/${pageKey}`).replace(/\/{2,}/g,"/");
     const span = (lang==="ru") ? "Не переходит на сайт?"
@@ -1235,7 +1167,6 @@ function renderPromoNavMirrorBlock(fullHtmlAfterSections, urlPath, lang, pageKey
     lines.push(`${indent}  </a>`);
   }
 
-  // Nav-review: отключён на /mirrors/*
   if (!isMirrors){
     const nav = renderNavReviewBlock(fullHtmlAfterSections, lang, indent+"  ", nl);
     if (nav) lines.push(nav);
@@ -1262,8 +1193,7 @@ function renderNavReviewBlock(fullHtml, lang, indent, nl){
     tr:{plusminus:'Artılar ve Eksiler', screentable:'Ekran Görüntüleri ve Modlar', sitedetails:'Ödeme Yöntемleri', sitealternates:'Benzer Siteler'},
     es:{plusminus:'Pros y Contras', screentable:'Capturas y Modos', sitedetails:'Métodos de Pago', sitealternates:'Sitios Similares'},
     pl:{plusminus:'Pros and Cons', screentable:'Screenshots and Modes', sitedetails:'Payment Methods', sitealternates:'Similar Sites'}
-  }[lang] || T_en();
-  function T_en(){ return {plusminus:'Pros and Cons', screentable:'Screenshots and Modes', sitedetails:'Payment Methods', sitealternates:'Similar Sites'}; }
+  }[lang] || {plusminus:'Pros and Cons', screentable:'Screenshots and Modes', sitedetails:'Payment Methods', sitealternates:'Similar Sites'};
 
   const entries = [];
   if (hasPlus)    entries.push({text:T.plusminus, target:'.plusminus'});
@@ -1490,7 +1420,7 @@ function renderSitedetailsBlock(indent, nl, lang, data, reviewSettings){
     lines.push(`${indent}    <span>${lang==="ru" ? "Способы Пополнения" : "Deposit Methods"}</span>`);
     lines.push(`${indent}    <div class="methodlist" id="first">`);
     for (const it of sortByOrderHtml(data.firstMethodContent, order)) {
-      const item = rewriteAnchorsInRegion(it.trim(), lang); // why: локализация ссылок
+      const item = rewriteAnchorsInRegion(it.trim(), lang);
       lines.push(indent+"      "+item);
     }
     lines.push(`${indent}    </div>`);
@@ -1501,7 +1431,7 @@ function renderSitedetailsBlock(indent, nl, lang, data, reviewSettings){
     lines.push(`${indent}    <span>${lang==="ru" ? "Способы Вывода" : "Withdraw Methods"}</span>`);
     lines.push(`${indent}    <div class="methodlist" id="second">`);
     for (const it of sortByOrderHtml(data.secondMethodContent, order)) {
-      const item = rewriteAnchorsInRegion(it.trim(), lang); // why: локализация ссылок
+      const item = rewriteAnchorsInRegion(it.trim(), lang);
       lines.push(indent+"      "+item);
     }
     lines.push(`${indent}    </div>`);
@@ -1580,6 +1510,15 @@ async function upsertAlternatives(html, boxreview, root, lang, urlPath, alts, ra
   return replaceBoxreviewInner(html, boxreview, newInner);
 }
 
+function decodeHtmlEntities(s = "") {
+  return String(s)
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, "&");
+}
+
 async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, alts, ratingsMap){
   const title = (lang==="ru" ? `Похожие Сайты на ${mainName}` : `Best ${mainName} Alternatives`);
   const lines=[];
@@ -1587,7 +1526,7 @@ async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, 
   lines.push(`${indent}  <div class="alternates-title">${escapeHtml(title)}</div>`);
   lines.push(`${indent}  <div class="sitealternatesboxes">`);
 
-  // ✨ предрасчёт текстов для en|ru
+  // ✨ precompute button texts for en|ru
   const reviewTxt = buttonSpanLabel(lang, "review");
   const visitTxt  = buttonSpanLabel(lang, "visit");
   const reviewSpan = reviewTxt ? `<span>${escapeHtml(reviewTxt)}</span>` : "";
@@ -1598,9 +1537,12 @@ async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, 
     const sj = await siteJson(root, alt);
     const baseReview = `/reviews/${alt}`;
     const reviewLink = withLangForReview(baseReview, lang);
-    const reward = pickReward(lang, aj) || "";
-    const avg = averageFirstFour(sj?.ratings) ?? null;
 
+    // ✅ reward как HTML, без экранирования
+    const rewardRaw = pickReward(lang, aj) || "";
+    const reward    = decodeHtmlEntities(rewardRaw);
+
+    const avg = averageFirstFour(sj?.ratings) ?? null;
     const visitHref = computeVisitHref(urlPath, lang, alt, aj);
     const ariaReview = buildReviewAriaLabel(aj.name || "", lang, "review");
 
@@ -1616,6 +1558,7 @@ async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, 
     lines.push(`${indent}      </div>`);
     lines.push(`${indent}      <div class="content">`);
     lines.push(`${indent}        <a class="boxtitle" href="${reviewLink}">${escapeHtml(aj.name)}</a>`);
+    // reward вставляем как HTML
     lines.push(`${indent}        <div class="site-reward"><p>${reward}</p></div>`);
     lines.push(`${indent}        <div class="content-buttons">`);
     // Review
@@ -1636,11 +1579,9 @@ async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, 
 function applyReviewTranslations(html, lang, map, nl){
   let out = html;
 
-// Переводит <span> в КАЖДОМ .sitepros (и первом, и втором)
   out = out.replace(/(<div\b[^>]*class\s*=\s*["'][^"']*\bsitepros\b[^"']*["'][\s\S]*?<span>)([^<]+)(<\/span>)/gi,
     (m, a, txt, c) => a + (map[txt.trim()] ?? txt) + c);
 
-  // СТАЛО — переводит <p> в КАЖДОЙ .criteria (и Pros, и Cons)
   out = out.replace(/(<div\b[^>]*class\s*=\s*["'][^"']*\bcriteria\b[^"']*["'][\s\S]*?<p>)([^<]+)(<\/p>)/gi,
     (m, a, txt, c) => a + (map[txt.trim()] ?? txt) + c);
 
@@ -1650,7 +1591,6 @@ function applyReviewTranslations(html, lang, map, nl){
   out = out.replace(/(<div\b[^>]*class\s*=\s*["'][^"']*\bratingway\b[^"']*["'][\s\S]*?<span>)([^<]+)(<\/span>)/gi,
     (m, a, txt, c) => a + (map[txt.trim()] ?? txt) + c);
 
-  // NEW: перевод всех ссылок внутри любого .typesinside (а не только первой)
   out = translateTypesinsideAnchors(out, map);
 
   out = out.replace(/(<div\b[^>]*class\s*=\s*["'][^"']*\binstruction\b[^"']*["'][\s\S]*?<li>)([\s\S]*?)(<\/li>)/gi,
@@ -1664,7 +1604,7 @@ function applyReviewTranslations(html, lang, map, nl){
   return out;
 }
 
-/* ---- NEW: translate all anchors in .typesinside ---- */
+/* ---- translate all anchors in .typesinside ---- */
 function translateTypesinsideAnchors(html, map){
   let out = html;
   const masked = maskSegments(out);
@@ -1693,7 +1633,7 @@ function translateTypesinsideAnchors(html, map){
   return out;
 }
 
-/* ---- NEW: link localization helpers ---- */
+/* ---- link localization helpers ---- */
 function addLangPrefixToHref(href, lang){
   if (!href) return href;
   if (isExternal(href)) return href;
@@ -1786,7 +1726,7 @@ function localizeGamemodesTypesinsideLinks(html, lang){
   return out;
 }
 
-/* Префикс в .box.main .content-buttons a, исключая .review-button.visit */
+/* Префикс в .box.main .content-buttons a, исключая .review-button.visit и .mirror-visit */
 function localizeMainBoxContentButtons(html, lang){
   if (!PREFIX_LANGS.has(lang)) return html;
   let out = html;
@@ -1820,7 +1760,6 @@ function localizeMainBoxContentButtons(html, lang){
         const clsMatch = (pre+post).match(/\bclass\s*=\s*(["'])([^"']+)\1/i);
         const classes = new Set((clsMatch ? (clsMatch[2]||"") : "").split(/\s+/).filter(Boolean));
 
-        // ⬇️ добавили исключение для .mirror-visit
         if (classes.has("visit") || classes.has("mirror-visit")) return m;
 
         const newHref = addLangPrefixToHref(href, lang);
@@ -1956,7 +1895,7 @@ function enforceShortinfoEmptyState(html){
   return out;
 }
 
-// ================== FIX 2: ensureMirrorVisitButtonInBoxHtml (без пустых строк) ==================
+// ================== FIX 2: ensureMirrorVisitButtonInBoxHtml ==================
 function ensureMirrorVisitButtonInBoxHtml(boxHtml, lang, siteKey, mirrorFlag, nl){
   if (!truthy(mirrorFlag) || !siteKey) return boxHtml;
 
@@ -1975,7 +1914,6 @@ function ensureMirrorVisitButtonInBoxHtml(boxHtml, lang, siteKey, mirrorFlag, nl
   const text  = (lang==="ru") ? "Зеркала" : "Mirrors";
   const label = text;
 
-  // Если нет .content-buttons — создаём (без пустой строки перед </div>)
   if (!cb){
     const baseIndent = indentBefore(boxHtml, cOpenEnd, nl) + "  ";
     const btnIndent  = baseIndent + "  ";
@@ -1988,17 +1926,14 @@ function ensureMirrorVisitButtonInBoxHtml(boxHtml, lang, siteKey, mirrorFlag, nl
     return joinAfterOpenNoBlank(before, block, after, nl);
   }
 
-  // Есть .content-buttons
   const cbOpenStart  = cb.openStart, cbOpenEnd = cb.openEnd, cbCloseStart = cb.closeStart;
   const before = seg.slice(0, cbOpenEnd);
   let   region = seg.slice(cbOpenEnd, cbCloseStart);
   let   after  = seg.slice(cbCloseStart);
 
-  // НОРМАЛИЗАЦИЯ: убрать хвостовые пробелы/пустые строки
   region = region.replace(/\s+$/,'');
 
   if (/\breview-button\b[^>]*\bmirror-visit\b/i.test(region)) {
-    // только нормализуем закрытие
     const baseIndent = indentBefore(seg, cbOpenStart, nl);
     after = after.replace(/^\s*<\/div>/, nl + baseIndent + "</div>");
     const rebuilt = before + region + after;
@@ -2009,10 +1944,7 @@ function ensureMirrorVisitButtonInBoxHtml(boxHtml, lang, siteKey, mirrorFlag, nl
   const linkIndent = baseIndent + "  ";
   const btnLine = `${linkIndent}<a href="${escapeAttr(href)}" class="review-button mirror-visit" aria-label="${escapeAttr(label)}"><span>${escapeHtml(text)}</span></a>`;
 
-  // Добавляем кнопку: если region пуст — вставляем строку, иначе перенос + строка.
   region = region ? (region + nl + btnLine) : btnLine;
-
-  // Ровно один перевод перед </div>
   after = after.replace(/^\s*<\/div>/, nl + baseIndent + "</div>");
 
   const newSeg = before + region + after;
@@ -2020,7 +1952,7 @@ function ensureMirrorVisitButtonInBoxHtml(boxHtml, lang, siteKey, mirrorFlag, nl
 }
 
 
-/* ==== [REPLACE] ensureCopyButtonInBoxHtml: чинит aria-label и <span> при повторном прогоне ==== */
+/* ==== REPLACE ensureCopyButtonInBoxHtml ==== */
 function ensureCopyButtonInBoxHtml(boxHtml, codeValue, nl, lang = "en"){
   const masked  = maskSegments(boxHtml);
   const content = findFirstByClass(masked, "content");
@@ -2044,9 +1976,8 @@ function ensureCopyButtonInBoxHtml(boxHtml, codeValue, nl, lang = "en"){
 
   const isRu = String(lang).toLowerCase() === "ru";
   const spanLabel = isRu ? "Промокод" : "Copy Code";
-  const ariaLabel = "Copy Code"; // единый для всех языков по ТЗ-примеру
+  const ariaLabel = "Copy Code";
 
-  // Убираем хвостовые пробелы/пустые строки
   region = region.replace(/\s+$/,'');
 
   let hasCopyBtn = false;
@@ -2058,19 +1989,14 @@ function ensureCopyButtonInBoxHtml(boxHtml, codeValue, nl, lang = "en"){
 
     hasCopyBtn = true;
 
-    // Обновляем/open tag
     let open = `<button${attrs}>`;
-    // code
     if (codeValue) open = upsertAttrInTag(open, "code", String(codeValue));
-    // aria-label
     open = upsertAttrInTag(open, "aria-label", ariaLabel);
-    // class: ensure defbutton
     if (!classes.has("defbutton")){
       const newClass = (clsM ? clsM[2] + " defbutton" : "copy defbutton").trim();
       open = open.replace(/\bclass\s*=\s*(["'])([^"']*)\1/i, (_m, q, v)=>`class=${q}${newClass}${q}`);
     }
 
-    // span: добавить/исправить текст
     if (/<span\b/i.test(inner)) {
       inner = inner.replace(/(<span\b[^>]*>)([\s\S]*?)(<\/span>)/i, (_m,a,_txt,c)=> a + escapeHtml(spanLabel) + c);
     } else {
@@ -2080,7 +2006,6 @@ function ensureCopyButtonInBoxHtml(boxHtml, codeValue, nl, lang = "en"){
     return open + inner + `</button>`;
   });
 
-  // Добавить новую, если нет
   if (!hasCopyBtn && codeValue){
     const baseIndent = indentBefore(segment, cbOpenStart, nl);
     const lineIndent = baseIndent + "  ";
@@ -2089,7 +2014,6 @@ function ensureCopyButtonInBoxHtml(boxHtml, codeValue, nl, lang = "en"){
     region = region ? (region + nl + btnLine) : btnLine;
   }
 
-  // Ровно один перевод перед </div>
   const baseIndent = indentBefore(segment, cbOpenStart, nl);
   after = after.replace(/^\s*<\/div>/, nl + baseIndent + "</div>");
 
@@ -2099,7 +2023,7 @@ function ensureCopyButtonInBoxHtml(boxHtml, codeValue, nl, lang = "en"){
 }
 
 function ensureCopyButtonInMainBox(html, codeValue, nl, lang){
-  if (!codeValue && !lang) return html; // nothing to do if no code and no localization need
+  if (!codeValue && !lang) return html;
   let out = html;
 
   const masked = maskSegments(out);
@@ -2116,16 +2040,15 @@ function ensureCopyButtonInMainBox(html, codeValue, nl, lang){
     if (updated !== boxHtml){
       out = out.slice(0, b.openStart) + updated + out.slice(b.closeEnd);
     }
-    break; // only the first .box.main
+    break;
   }
   return out;
 }
 
-/* ---- NEW: TG button (Telegram App) вставка/апдейт ---- */
+/* ---- TG button ---- */
 function ensureTGButtonInBoxHtml(boxHtml, data, lang, nl){
   const langNorm = String(lang || "").toLowerCase();
 
-  // en = все, что не ru
   const tgHref = (langNorm !== "ru" && data && data["tg-app-en"])
     ? String(data["tg-app-en"])
     : (data && data["tg-app"] ? String(data["tg-app"]) : "");
@@ -2148,7 +2071,6 @@ function ensureTGButtonInBoxHtml(boxHtml, data, lang, nl){
   let   region = segment.slice(regionStart, regionEnd);
   const after  = segment.slice(regionEnd);
 
-  // Обновим, если уже есть .tg-app
   region = region.replace(
     /<a\b([^>]*\bclass\s*=\s*["'][^"']*\btg-app\b[^"']*["'][^>]*)>([\s\S]*?)<\/a>/i,
     (m, pre, inner)=>{
@@ -2166,7 +2088,6 @@ function ensureTGButtonInBoxHtml(boxHtml, data, lang, nl){
     return boxHtml.slice(0, cOpenEnd) + before + region + after + boxHtml.slice(cCloseStart);
   }
 
-  // Вставим после visit
   const visitRe = /<a\b[^>]*\bclass\s*=\s*["'][^"']*\breview-button\b[^"']*\bvisit\b[^"']*["'][^>]*>[\s\S]*?<\/a>/i;
   const match = visitRe.exec(region);
   if (!match) return boxHtml;
@@ -2207,7 +2128,7 @@ function ensureTGButtonInMainBox(html, data, lang, nl){
   return out;
 }
 
-/* ---- NEW: liverating в .box.main ИМЕННО ВНУТРИ .logobg ---- */
+/* ---- liverating в .box.main ---- */
 function computeLiveratingPercent(ratings){
   if (!ratings || typeof ratings !== "object") return null;
   const nums = Object.values(ratings).map(Number).filter(n => Number.isFinite(n));
@@ -2255,7 +2176,6 @@ function ensureMainBoxLiverating(html, ratings, nl){
     const rating = findFirstByClass(lm, "rating");
 
     if (rating){
-      // Обновление существующего .rating в .logobg
       const rOpen = rating.openEnd, rClose = rating.closeStart;
       let rBody = logSeg.slice(rOpen, rClose);
 
@@ -2279,7 +2199,6 @@ function ensureMainBoxLiverating(html, ratings, nl){
           }
           return out;
         } else {
-          // Нет star_rating внутри liverating — создаём
           const baseIndent = indentBefore(logSeg, rOpen, nl) + "    ";
           const inject = `${baseIndent}<div class="star_rating" style="width: ${percent}%;"></div>`;
           const before = logSeg.slice(0, rOpen + lvOpen);
@@ -2289,7 +2208,6 @@ function ensureMainBoxLiverating(html, ratings, nl){
           return out;
         }
       } else {
-        // Нет .liverating — пересоберём тело .rating
         const indent = indentBefore(logSeg, rOpen, nl) + "  ";
         const block =
           `${indent}<div class="star_rating"></div>${nl}` +
@@ -2302,7 +2220,6 @@ function ensureMainBoxLiverating(html, ratings, nl){
       }
     }
 
-    // Вставка .rating после первого <a> внутри .logobg
     const aMatch = /<a\b[^>]*>[\s\S]*?<\/a>/i.exec(logSeg);
     const insPos = aMatch ? (aMatch.index + aMatch[0].length) : 0;
     const baseIndent = indentBefore(logSeg, insPos, nl) + "  ";
@@ -2381,7 +2298,7 @@ function ensureMainLogobgLink(html, visitHref, nl){
     if (updated !== boxHtml){
       out = out.slice(0, b.openStart) + updated + out.slice(b.closeEnd);
     }
-    break; // только первый .box.main
+    break;
   }
   return out;
 }
@@ -2419,3 +2336,395 @@ function upsertInstructionSiteLinks(html, visitHref){
   return out;
 }
 
+/* ========================================================================== */
+/* ===================== INTEGRATED "MORE-CONTENT" PASS ====================== */
+/* ========================================================================== */
+
+const MC_CATEGORIES = ["csgo", "rust", "dota", "crypto"];
+const MC_IMG_SRC = {
+  csgo: "/img/icons/main-modes/cs2-logo.png",
+  rust: "/img/icons/main-modes/rust-logo.png",
+  dota: "/img/icons/main-modes/dota2-logo.png",
+  crypto: "/img/icons/main-modes/crypto-logo.png",
+};
+const MC_IMG_ALT = {
+  csgo: "CS2 logo",
+  rust: "Rust logo",
+  dota: "Dota 2 logo",
+  crypto: "Crypto logo",
+};
+const MC_TITLE_RU = { csgo: "Подобные CS2", rust: "Подобные Rust", dota: "Подобные Dota 2", crypto: "Подобные Крипто" };
+const MC_TITLE_EN = { csgo: "Similar CS2", rust: "Similar Rust", dota: "Similar Dota 2", crypto: "Similar Crypto" };
+
+async function detectAvailableLangs(root){
+  const langs = new Set(["en"]); // en всегда допустим
+  try {
+    const ents = await fs.readdir(root, { withFileTypes: true });
+    for (const e of ents) {
+      if (!e.isDirectory()) continue;
+      const name = e.name.toLowerCase();
+      if (!/^[a-z]{2,3}(?:-[a-z]{2,3})?$/.test(name)) continue;
+      // наличие index.html в папке — бонус; но достаточно папки
+      langs.add(name);
+    }
+  } catch {}
+  return langs;
+}
+
+function mcShouldProcess(urlPath) {
+  const segs = urlPath.split("/").filter(Boolean);
+  return segs.some(s => MC_CATEGORIES.includes(s.toLowerCase())) || /(^|\/)cs2(\.html|\/|$)/i.test(urlPath);
+}
+function mcDetectCategory(urlPath) {
+  const segs = urlPath.toLowerCase().split("/").filter(Boolean);
+  if (segs.includes("cs2")) return "csgo";
+  return MC_CATEGORIES.find(c => segs.includes(c)) || null;
+}
+function mcExtractSuffix(urlPath, category) {
+  const segs = urlPath.split("/").filter(Boolean);
+  const idx = segs.findIndex(s => s.toLowerCase() === category || (category === "csgo" && s.toLowerCase() === "cs2"));
+  if (idx === -1) return "";
+  const tail = segs.slice(idx + 1).join("/");
+  if (!tail) return "";
+  return urlPath.endsWith("/") ? `${tail}/` : tail;
+}
+function mcJoinUrl(...parts) {
+  const joined = parts.join("/").replace(/\/{2,}/g, "/");
+  return joined.startsWith("/") ? joined : "/" + joined;
+}
+function mcBuildPretty(prefix, cat, suffix, keepSlash, allowCs2) {
+  const baseName = (cat === "csgo" && allowCs2 && suffix === "" && !keepSlash) ? "cs2" : cat;
+  const raw = mcJoinUrl(prefix, `${baseName}/${suffix}`);
+  return keepSlash ? (raw.endsWith("/") ? raw : raw + "/") : raw.replace(/\/+$/, "");
+}
+function mcPreferredCsgoCandidates(cat, prefix, suffix, keepSlash) {
+  const base = mcBuildPretty(prefix, cat, suffix, keepSlash, /*allowCs2*/ false);
+  if (cat !== "csgo") return [base];
+
+  const isTopLevelFileStyle = (suffix === "" && !keepSlash);
+  if (isTopLevelFileStyle) {
+    const cs2 = mcJoinUrl(prefix, "cs2");
+    const csgo = mcJoinUrl(prefix, "csgo");
+    return [cs2, csgo];
+  }
+  return [base];
+}
+async function mcResolveTargets(root, prefix, suffix, currentCat, keepSlash) {
+  const urls = [];
+  const currentPretty = mcBuildPretty(prefix, currentCat, suffix, keepSlash, /*allowCs2*/ true);
+  urls.push({ cat: currentCat, href: currentPretty || "/" });
+
+  for (const cat of MC_CATEGORIES) {
+    if (cat === currentCat) continue;
+
+    const candidates = mcPreferredCsgoCandidates(cat, prefix, suffix, keepSlash);
+    let chosen = null;
+    for (const cand of candidates) {
+      if (await mcFileExistsForUrlPath(root, cand)) { chosen = cand; break; }
+    }
+    if (chosen) urls.push({ cat, href: chosen || "/" });
+  }
+  return urls;
+}
+async function mcFileExistsForUrlPath(root, urlPath) {
+  const candidates = [];
+  if (urlPath.endsWith("/")) {
+    candidates.push(path.join(root, "." + urlPath, "index.html"));
+  } else {
+    candidates.push(path.join(root, "." + urlPath + ".html"));
+    candidates.push(path.join(root, "." + urlPath, "index.html"));
+  }
+  for (const f of candidates) {
+    try { await fs.access(f); return true; } catch {}
+  }
+  return false;
+}
+
+function mcFindAllBlocks(innerMasked, className) {
+  const blocks = [];
+  let pos = 0;
+  while (true) {
+    const start = innerMasked.indexOf("<div", pos);
+    if (start === -1) break;
+    const { end: openEnd, attrs } = readTag(innerMasked, start);
+    const cls = parseClassAttr(attrs);
+    if (cls.has(className)) {
+      const closeStart = findMatchingClose(innerMasked, openEnd, "div");
+      if (closeStart === -1) break;
+      blocks.push({ openStart: start, openEnd, closeStart, closeEnd: closeStart + "</div>".length });
+      pos = closeStart + 6;
+    } else {
+      pos = openEnd;
+    }
+  }
+  return blocks;
+}
+function mcRemoveAllMoreContent(inner, innerMasked) {
+  let result = inner;
+  let masked = innerMasked;
+  while (true) {
+    const blocks = mcFindAllBlocks(masked, "more-content");
+    if (!blocks.length) break;
+    const b = blocks[0];
+    result = result.slice(0, b.openStart) + result.slice(b.closeEnd);
+    masked = masked.slice(0, b.openStart) + " ".repeat(b.closeEnd - b.openStart) + masked.slice(b.closeEnd);
+  }
+  return result;
+}
+
+function mcBuildExpectedModel(targets, currentCat, lang) {
+  const titles = (lang === "ru") ? MC_TITLE_RU : MC_TITLE_EN;
+  const model = [];
+  for (const cat of MC_CATEGORIES) {
+    const t = targets.find(x => x.cat === cat);
+    if (!t) continue;
+    model.push({
+      cat,
+      href: t.href === "/" ? "/" : t.href,
+      active: cat === currentCat,
+      title: titles[cat],
+    });
+  }
+  return model;
+}
+function mcAttrValue(tagText, name) {
+  const re = new RegExp(`\\b${name}\\s*=\\s*("([^"]*)"|'([^']*)')`, "i");
+  const m = tagText.match(re);
+  return m ? (m[2] ?? m[3] ?? "") : null;
+}
+function mcCatFromImg(src = "") {
+  if (src.endsWith("/cs2-logo.png")) return "csgo";
+  if (src.endsWith("/rust-logo.png")) return "rust";
+  if (src.endsWith("/dota2-logo.png")) return "dota";
+  if (src.endsWith("/crypto-logo.png")) return "crypto";
+  return null;
+}
+function mcCatFromTitle(title = "") {
+  const t = title.toLowerCase();
+  if (t.includes("cs2")) return "csgo";
+  if (t.includes("rust")) return "rust";
+  if (t.includes("dota")) return "dota";
+  if (t.includes("крипто") || t.includes("crypto")) return "crypto";
+  return null;
+}
+function mcParseMoreContent(blockHtml) {
+  const boxes = [];
+  const reBox = /<div\b[^>]*class\s*=\s*(['"])(?:(?:(?!\1).))*\bsinglemod-box\b(?:(?:(?!\1).))*\1[^>]*>[\s\S]*?<\/div>/gi;
+  let m;
+  while ((m = reBox.exec(blockHtml)) !== null) {
+    const boxStr = m[0];
+
+    const cls = mcAttrValue(boxStr, "class") || "";
+    const active = /\bactive\b/i.test(cls);
+
+    const title = mcAttrValue(boxStr, "data-title") || "";
+
+    const hrefMatch = boxStr.match(/<a\b[^>]*\bhref\s*=\s*(['"])(.*?)\1/i);
+    const href = hrefMatch ? hrefMatch[2] : "";
+
+    const imgSrcMatch = boxStr.match(/<img\b[^>]*\bsrc\s*=\s*(['"])(.*?)\1/i);
+    const img = imgSrcMatch ? imgSrcMatch[2] : "";
+
+    const cat = mcCatFromImg(img) || mcCatFromTitle(title);
+
+    if (cat) {
+      boxes.push({ cat, href, active, title });
+    }
+  }
+  return boxes;
+}
+function mcModelsEqual(parsed, expected) {
+  if (parsed.length !== expected.length) return false;
+  for (let i = 0; i < expected.length; i++) {
+    const a = parsed[i], b = expected[i];
+    if (!a || a.cat !== b.cat) return false;
+    if (normalizeUrl(a.href) !== normalizeUrl(b.href)) return false;
+    if (!!a.active !== !!b.active) return false;
+    if (a.title !== b.title) return false;
+  }
+  return true;
+}
+
+function mcBuildBlockString(targets, currentCat, lang, nl, indent) {
+  const titles = (lang === "ru") ? MC_TITLE_RU : MC_TITLE_EN;
+  const lines = [];
+  lines.push(`${indent}<div class="more-content">`);
+  lines.push(`${indent}  <div class="more-content-list">`);
+  for (const cat of MC_CATEGORIES) {
+    const t = targets.find(x => x.cat === cat);
+    if (!t) continue;
+    const active = (cat === currentCat) ? " active" : "";
+    const title = titles[cat];
+    const href = t.href === "/" ? "/" : t.href;
+    lines.push(`${indent}    <div class="singlemod-box${active}" data-title="${escapeHtml(title)}">`);
+    lines.push(`${indent}      <a href="${escapeAttr(href)}" class="singlemod-select">`);
+    lines.push(`${indent}        <img src="${MC_IMG_SRC[cat]}" alt="${MC_IMG_ALT[cat]}">`);
+    lines.push(`${indent}      </a>`);
+    lines.push(`${indent}    </div>`);
+  }
+  lines.push(`${indent}  </div>`);
+  lines.push(`${indent}</div>`);
+  return lines.join(nl);
+}
+
+async function applyMoreContentIfNeeded(originalHtml, urlPath, lang, nl, root, AVAILABLE_LANGS) {
+  if (!originalHtml) return null;
+  if (!mcShouldProcess(urlPath)) return originalHtml;
+
+  const segs = urlPath.split("/").filter(Boolean);
+  const first = (segs[0] || "").toLowerCase();
+  const prefix = AVAILABLE_LANGS.has(first) ? `/${first}/` : "/";
+
+  const category = mcDetectCategory(urlPath);
+  if (!category) return originalHtml;
+
+  const suffix = mcExtractSuffix(urlPath, category);
+  const keepSlash = urlPath.endsWith("/");
+
+  const targets = await mcResolveTargets(root, prefix, suffix, category, keepSlash);
+  const needInsert = targets.length > 1;
+
+  const masked = maskSegments(originalHtml);
+  const holders = findAllDivByClass(masked, "boxes-holder");
+  if (!holders.length) return originalHtml;
+
+  const h = holders[holders.length - 1];
+  const inner = originalHtml.slice(h.openEnd, h.closeStart);
+  const innerMasked = masked.slice(h.openEnd, h.closeStart);
+
+  const blocks = mcFindAllBlocks(innerMasked, "more-content");
+
+  if (blocks.length === 1) {
+    const b = blocks[0];
+    const existing = inner.slice(b.openStart, b.closeEnd);
+
+    if (needInsert) {
+      const parsed = mcParseMoreContent(existing);
+      const expected = mcBuildExpectedModel(targets, category, lang);
+      if (mcModelsEqual(parsed, expected)) {
+        return originalHtml;
+      }
+    }
+
+    if (!needInsert) {
+      const newInner = inner.slice(0, b.openStart) + inner.slice(b.closeEnd);
+      return originalHtml.slice(0, h.openEnd) + newInner + originalHtml.slice(h.closeStart);
+    }
+
+    const blockIndent = indentBefore(originalHtml, h.openEnd + b.openStart, nl);
+    const expectedStr = mcBuildBlockString(targets, category, lang, nl, blockIndent);
+    const replacedInner = inner.slice(0, b.openStart) + expectedStr + inner.slice(b.closeEnd);
+    return originalHtml.slice(0, h.openEnd) + replacedInner + originalHtml.slice(h.closeStart);
+  }
+
+  const prunedInner = mcRemoveAllMoreContent(inner, innerMasked);
+
+  if (!needInsert) {
+    return originalHtml.slice(0, h.openEnd) + prunedInner + originalHtml.slice(h.closeStart);
+  }
+
+  const baseIndent = indentBefore(originalHtml, h.closeStart, nl);
+  const childIndent = baseIndent + "  ";
+  const block = mcBuildBlockString(targets, category, lang, nl, childIndent);
+
+  const tailMatch = prunedInner.match(/[ \t\r\n]*$/);
+  const tailLen = tailMatch ? tailMatch[0].length : 0;
+  const content = prunedInner.slice(0, prunedInner.length - tailLen);
+  const tail = prunedInner.slice(prunedInner.length - tailLen);
+
+  const needsLeading = !(content.endsWith("\n") || content.endsWith("\r\n"));
+  const prefixStr = needsLeading ? (content + nl + baseIndent) : content;
+
+  const newInner = prefixStr + block + tail;
+  return originalHtml.slice(0, h.openEnd) + newInner + originalHtml.slice(h.closeStart);
+}
+
+/* ========================================================================== */
+/* ======================= SERVER-SIDE MAIN-INFOBOX ========================== */
+/* ========================================================================== */
+
+// Генерация инфобокса на этапе Node, без client-side JS/localStorage.
+// Идемпотентно: перед вставкой вычищаем все существующие .main-infobox.
+
+function buildInfoboxHtml(texts, indent, nl){
+  const t = (v) => decodeHtmlEntities(String(v ?? ""));
+  return [
+    `${indent}<div class="main-infobox">`,
+    `${indent}  <div class="main-infobox-mascotte"></div>`,
+    `${indent}  <div class="main-infobox-content">`,
+    `${indent}    <div class="main-infobox-content-text">`,
+    `${indent}      <div class="main-infobox-content-block">`,
+    `${indent}        <p>${t(texts.p1)}</p>`,
+    `${indent}        <p>${t(texts.p2)}</p>`,
+    `${indent}      </div>`,
+    `${indent}    </div>`,
+    `${indent}  </div>`,
+    `${indent}  <div class="main-infobox-content second">`,
+    `${indent}    <div class="main-infobox-content-text">`,
+    `${indent}      <div class="main-infobox-content-block">`,
+    `${indent}        <p>${t(texts.p3)}</p>`,
+    `${indent}        <p>${t(texts.p4)}</p>`,
+    `${indent}      </div>`,
+    `${indent}    </div>`,
+    `${indent}  </div>`,
+    `${indent}</div>`
+  ].join(nl);
+}
+
+function stripAllInfoboxes(html){
+  return removeAllBlocksByClass(html, "main-infobox");
+}
+
+/**
+ * Вставка/обновление main-infobox.
+ * – /reviews/... и /mirrors/... → внутрь .boxreview, в конец, с верными отступами
+ * – иначе → сразу после первого .boxes-holder
+ * – если .boxreview нет, но есть .criteria-descriptions → после него
+ */
+function upsertMainInfobox(html, urlPath, lang, nl, translations){
+  if (!translations || !INFOBOX_LANGS.has(lang)) return html;
+
+  const texts = translations[lang] || translations["en"];
+  if (!texts) return html;
+
+  let out = stripAllInfoboxes(html);
+  const masked = maskSegments(out);
+  const isReviewLike = /\/(reviews|mirrors)\//.test(String(urlPath));
+
+  if (isReviewLike) {
+    const boxreview = findFirstByClass(masked, "boxreview");
+    if (boxreview){
+      const beforeOpen = out.slice(0, boxreview.openEnd);
+      const inner      = out.slice(boxreview.openEnd, boxreview.closeStart);
+      const after      = out.slice(boxreview.closeStart);
+
+      const cleanedInner = removeAllBlocksByClass(inner, "main-infobox");
+      const indent = indentBefore(out, boxreview.closeStart, nl);
+      const block  = buildInfoboxHtml(texts, indent, nl);
+
+      return joinBeforeCloseKeepIndent(beforeOpen + cleanedInner, block, after, nl);
+    }
+
+    const criteria = findFirstByClass(masked, "criteria-descriptions");
+    if (criteria){
+      const indent = indentBefore(out, criteria.openStart, nl);
+      const block  = buildInfoboxHtml(texts, indent, nl);
+      const before = out.slice(0, criteria.closeEnd);
+      const after  = out.slice(criteria.closeEnd);
+      return joinBlocksNoBlank(before, block, after, nl);
+    }
+    return out;
+  }
+
+  const holders = findAllDivByClass(masked, "boxes-holder");
+  if (holders.length){
+    const h      = holders[0];
+    const indent = indentBefore(out, h.openStart, nl);
+    const block  = buildInfoboxHtml(texts, indent, nl);
+    const before = out.slice(0, h.closeEnd);
+    const after  = out.slice(h.closeEnd);
+    return joinBlocksNoBlank(before, block, after, nl);
+  }
+
+  return out;
+}

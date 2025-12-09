@@ -122,11 +122,13 @@ function joinBlocksNoBlank(before, block, after, nl){
 function escapeHtml(s=""){ // текст внутри <div> — НЕ кодируем &
   return String(s).replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 }
-function decodeHtmlEntities(s=""){
+function decodeHtmlEntities(s = "") {
+  // decode amp last to avoid turning &amp;lt; into < by double-decoding
   return String(s)
-    .replace(/&quot;/g, '"').replace(/&#34;/g, '"')
-    .replace(/&apos;/g, "'").replace(/&#39;/g, "'")
-    .replace(/&lt;/g, "<").replace(/&gt;/g, ">")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
     .replace(/&amp;/g, "&");
 }
 // атрибуты в двойных кавычках: НЕ кодируем & и ' (как просили)
