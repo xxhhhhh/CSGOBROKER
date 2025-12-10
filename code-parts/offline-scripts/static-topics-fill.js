@@ -13,6 +13,9 @@
 //      + ремонт уже записанных блоков (чинит &#39; → ' и &amp; → &)
 //   3) Оффлайн loadout для /topic/skins/(cheapest|best)-{color}-skins
 //   4) Оффлайн-вставка/ремонт <div class="topic-filter">
+// ---------------------------------------------------------------------------
+// NOTE (why): финальный no-op guard предотвращает лишние перезаписи файлов,
+// когда промежуточные шаги временно меняют контент, но итог возвращается к исходному.
 // ============================================================================
 
 const fs = require("fs/promises");
@@ -610,7 +613,9 @@ async function processLoadoutPages({root, file, html, pricesArr, verbose}){
     if (!allowed){ skipped++; continue; }
 
     try{
-      let html = await fs.readFile(file,"utf8");
+      // --- финальный no-op guard начинается здесь ---
+      const origHtml = await fs.readFile(file,"utf8"); // исходник
+      let html = origHtml;
       let changed = false;
 
       // 1) .box-skins-list
@@ -629,10 +634,15 @@ async function processLoadoutPages({root, file, html, pricesArr, verbose}){
       const resFilter = await processTopicFilters({root, file, html, verbose});
       if (resFilter.changed){ html = resFilter.html; changed = true; }
 
-      if (changed){
+      // --- ключ: писать только если ПО-ИТОГУ контент реально изменился ---
+      const finalChanged = html !== origHtml;
+
+      if (finalChanged){
         if (!dry) await fs.writeFile(file, html, "utf8");
         updated++;
-      } else skipped++;
+      } else {
+        skipped++;
+      }
     } catch(e){
       console.error(`[ERR] ${path.relative(root,file)}:`, e.message);
       skipped++;
