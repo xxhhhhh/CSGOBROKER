@@ -3,6 +3,7 @@
 // Usage: node scripts/static-pages-fill.js [--root path] [--dry-run] [--ratings path] [--verbose]
 // Note: Встроена логика "more-content" с авто-детектом доступных языков + серверная
 //       генерация main-infobox (без client-side JS/localStorage).
+//       + ОФФЛАЙН рендер мод-боксов (.mods-box / .skins-box) на основе insert-mods-box.json
 // ============================================================================
 
 const fs = require("fs/promises");
@@ -15,9 +16,10 @@ const FILTER_SETTINGS   = "/code-parts/filter-settings.json";
 const REVIEW_SETTINGS   = "/code-parts/review-settings.json";
 const SITES_SETTINGS    = "/code-parts/sites-settings.json";
 const TRANSLATIONS_PATH = "/code-parts/review-translations.json";
-
 // + инфобокс переводы
 const INFOBOX_TRANSLATIONS = "/code-parts/micro-parts/main-infobox/infobox-translations.json";
+// + mods-boxes JSON (из вашей client-side логики)
+const MODS_BOXES_PATH  = "/code-parts/micro-parts/insert-mods-box.json";
 
 // NB: Базовый список. Для маршрутизации ссылок в основой логике он остаётся.
 // "More Content" использует динамически обнаруженные языки (см. detectAvailableLangs).
@@ -116,8 +118,16 @@ function withLangForReview(href, lang){
     let changed = false;
 
     if (hasBoxesHolder) {
+      // существующая логика
       const newHtml = await processListingsGlobal(html, urlPath, lang, root, presets, nl, siteSettings);
       if (newHtml !== html) { html = newHtml; changed = true; }
+
+      // NEW: серверный оффлайн-вставщик мод-боксов
+      // ⚠ только для ru/en, чтобы не лезть в alt-языки (es/pt/tr/hi и т.д.)
+      if ((lang === "en" || lang === "ru") && presets.modsBoxes) {
+        const mbxHtml = upsertModsBoxesFromJSON(html, urlPath, lang, nl, presets.modsBoxes);
+        if (mbxHtml !== html) { html = mbxHtml; changed = true; }
+      }
     }
 
     if (isReviewPage) {
@@ -167,7 +177,8 @@ async function loadPresets(root){
   const review       = await safeJson(abs(root, REVIEW_SETTINGS));
   const translation  = await safeJson(abs(root, TRANSLATIONS_PATH));
   const infobox      = await safeJson(abs(root, INFOBOX_TRANSLATIONS));
-  return { filter, review, translation, infobox };
+  const modsBoxes    = await safeJson(abs(root, MODS_BOXES_PATH)); // NEW
+  return { filter, review, translation, infobox, modsBoxes };
 }
 async function safeJson(p){ try { return JSON.parse(await fs.readFile(p,"utf8")); } catch { return null; } }
 
@@ -280,13 +291,19 @@ function joinAfterOpenNoBlank(openPart, block, body, nl){
   return left + block + nl + right;
 }
 function joinBeforeCloseKeepIndent(before, block, after, nl){
+  // базовый отступ строки, на которой будет закрытие
   const ls = before.lastIndexOf(nl);
   const lineStart = ls===-1 ? 0 : ls + nl.length;
-  const indent = before.slice(lineStart).match(/^[ \t]*/)?.[0] ?? "";
-  const left = rstripBlankLinesToOne(before, nl);
-  return left + block + nl + indent + after;
-}
+  const indent = before.slice(lineStart).match(/^[\t ]*/)?.[0] ?? "";
 
+  // слева оставляем не больше одной пустой строки
+  const left = rstripBlankLinesToOne(before, nl);
+
+  // справа убираем вообще всё ведущее пустое/пробельное — дадим своё \n + indent
+  const afterClean = after.replace(/^\s+/, "");
+
+  return left + block + nl + indent + afterClean;
+}
 function averageFirstFour(ratings) {
   if (!ratings || typeof ratings !== "object") return null;
   const vals = Object.values(ratings).map(Number).filter(Number.isFinite);
@@ -325,6 +342,268 @@ function computeGoKey(baseKey, urlPath = "", lang = "en", data = {}) {
 }
 
 /* ======================================================================= */
+/* === NEW: ОФФЛАЙН РЕНДЕР МОД-БОКСОВ (перенос client-side forcemodsboxes) === */
+/* ======================================================================= */
+
+function mbxCleanUrl(url){ return String(url||"").split("?")[0].toLowerCase(); }
+function mbxEnds(u, suf){ const x = mbxCleanUrl(u); return x.endsWith(suf.toLowerCase()); }
+function mbxHas(u, seg){ return mbxCleanUrl(u).includes(`/${seg.toLowerCase()}/`); }
+
+function mbxGetPageType(url){
+  const u = mbxCleanUrl(url);
+  const types = ["csgo", "rust", "dota", "tf2", "freebies", "crypto"];
+  for (const t of types){
+    if (u.includes(`/${t}/`) || u.endsWith(`/${t}`) || u.endsWith(`/${t}.html`)) return t;
+  }
+  if (u.endsWith("/cs2") || u.endsWith("/cs2.html")) return "csgo";
+  return "other";
+}
+function mbxIsMulti(url){
+  const patterns = [
+    "buy-skins","buy-items","sell-items","trade-items",
+    "sell-skins","trade-skins","instant-sell","marketplaces"
+  ];
+  const u = mbxCleanUrl(url);
+  return patterns.some(p => u.endsWith(`/${p}`) || u.endsWith(`/${p}.html`));
+}
+function mbxGetBoxesToLoad(type, isMulti, url){
+  const multi = { csgo:["csgo-skins","csgo"], rust:["rust-skins","rust"], dota:["dota-items","dota"] };
+  const single= { csgo:["csgo"], rust:["rust"], dota:["dota"], tf2:["tf2-items"], freebies:["freebies"], crypto:["crypto"] };
+
+  if (multi[type] && isMulti) return multi[type];
+  if (single[type]) return single[type];
+
+  const u = mbxCleanUrl(url);
+  if (u.includes("/csgo/") || u.endsWith("/cs2") || u.endsWith("/cs2.html") || u.endsWith("/") || u.endsWith("index.html")) return ["csgo"];
+  if (u.includes("/rust/") || u.endsWith("/rust")) return ["rust"];
+  if (u.includes("/dota/") || u.endsWith("/dota")) return ["dota"];
+  return [];
+}
+function mbxIsHome(url){
+  const u = mbxCleanUrl(url).replace(/\/+$/,"/");
+  return u === "/" || u === "/ru/" || u === "/ru";
+}
+
+const MBX_TRANSLATIONS = {
+  "Buy Skins": { ru: "Купить скины" },
+  "Sell Skins": { ru: "Продать скины" },
+  "Trade Skins": { ru: "Обменять скины" },
+  "Buy Items": { ru: "Купить предметы" },
+  "Sell Items": { ru: "Продать предметы" },
+  "Trade Items": { ru: "Обменять предметы" },
+  "Instant Sell": { ru: "Быстрая Продажа" },
+  "Marketplaces": { ru: "Торговые Площадки" },
+  "Daily Rewards": { ru: "Ежедневные Награды" },
+  "Deposit Bonuses": { ru: "Бонусы к Пополнению" },
+  "Giveaways": { ru: "Розыгрыши" },
+  "Sign Up Bonuses": { ru: "Бонусы за Регистрацию" },
+  "Bonuses to Sale": { ru: "Бонусы к Продаже" },
+  "Match Betting": { ru: "Ставки на Матчи" },
+  Roulette: { ru: "Рулетка" },
+  "Case Opening": { ru: "Открытие Кейсов" },
+  Crash: { ru: "Краш" },
+  Jackpot: { ru: "Джекпот" },
+  Coinflip: { ru: "Монетка" },
+  "Case Battle": { ru: "" },
+  Slots: { ru: "" },
+  More: { ru: "" },
+  "Popular CS2 Gambling Sites": { ru: "" },
+  "Popular Rust Gambling Sites": { ru: "" },
+  "Popular CS2 Trading Sites": { ru: "" },
+  "Instant Sell Platforms": { ru: "" },
+  "Best Task Services": { ru: "" },
+};
+
+function mbxNormalize(text, lang){
+  if (String(lang).toLowerCase() === "tr") {
+    return String(text || "").toLocaleLowerCase("tr-TR");
+  }
+  return String(text || "").toLowerCase();
+}
+
+function mbxTranslate(title, lang){
+  if (!title) return title;
+  // В основном скрипте теперь переводим только на ru.
+  const L = String(lang || "en").toLowerCase();
+  if (L !== "ru") return title;
+
+  const keys = Object.keys(MBX_TRANSLATIONS);
+  const key = keys.find(k => mbxNormalize(k, L) === mbxNormalize(title, L));
+  const map = key ? MBX_TRANSLATIONS[key] : null;
+  const res = map && map[L];
+  return res || title;
+}
+
+function mbxRenderBox(boxId, boxData, urlPath, lang, indent, nl){
+  const items = Array.isArray(boxData?.items) ? boxData.items : (Array.isArray(boxData) ? boxData : []);
+  if (!Array.isArray(items) || !items.length) return "";
+
+  const lines = [];
+  const classes = ["mods-box"];
+  if (boxData && boxData.horizontal) classes.push("skins-box");
+
+  lines.push(`${indent}<div class="${classes.join(" ")}" data-box-id="${escapeAttr(boxId)}">`);
+  lines.push(`${indent}  <div class="mods-main-box">`);
+
+  const cur = mbxCleanUrl(urlPath);
+  for (const it of items){
+    const href = String(it.href || "#");
+    const active = href ? cur.includes(mbxCleanUrl(href)) : false;
+    const itemCls = active ? 'singlemod-box active' : 'singlemod-box';
+
+    if (boxData.horizontal){
+      const title = mbxTranslate(it.title || "", lang);
+      lines.push(`${indent}    <div class="${itemCls}">`);
+      lines.push(`${indent}      <a class="singlemod-select" href="${escapeAttr(href)}">`);
+      if (it.img){
+        lines.push(`${indent}        <img src="${escapeAttr(it.img.src||"")}" alt="${escapeAttr(it.img.alt||"")}">`);
+      } else if (it.icon){
+        lines.push(`${indent}        <div class="singlemod-icon officon ${escapeAttr(it.icon)}"></div>`);
+      }
+      lines.push(`${indent}        <span>${escapeHtml(title)}</span>`);
+      lines.push(`${indent}      </a>`);
+      lines.push(`${indent}    </div>`);
+    } else {
+      const title = mbxTranslate(it.title || "", lang);
+      lines.push(`${indent}    <div class="${itemCls}" data-title="${escapeAttr(title)}">`);
+      lines.push(`${indent}      <a class="singlemod-select" href="${escapeAttr(href)}">`);
+      if (it.img){
+        lines.push(`${indent}        <img src="${escapeAttr(it.img.src||"")}" alt="${escapeAttr(it.img.alt||"")}">`);
+      } else if (it.icon){
+        lines.push(`${indent}        <div class="singlemod-icon officon ${escapeAttr(it.icon)}"></div>`);
+      }
+      lines.push(`${indent}      </a>`);
+      lines.push(`${indent}    </div>`);
+    }
+  }
+
+  lines.push(`${indent}  </div>`);
+  lines.push(`${indent}</div>`);
+  return lines.join(nl);
+}
+
+function mbxAttr(name, attrsText){
+  const re = new RegExp(`\\b${name}\\s*=\\s*(["'])(.*?)\\1`, "i");
+  const m = re.exec(attrsText||"");
+  return m ? (m[2]||"") : null;
+}
+
+function upsertModsBoxesFromJSON(originalHtml, urlPath, lang, nl, modsData){
+  if (!modsData) return originalHtml;
+
+  const masked = maskSegments(originalHtml);
+  const holders = findAllDivByClass(masked, "boxes-holder");
+  if (!holders.length) return originalHtml;
+
+  // Берём ПЕРВЫЙ .boxes-holder, как в client-side скрипте (querySelector)
+  const holder = holders[0];
+
+  let out = originalHtml;
+  const regionStart = holder.openEnd;
+  const regionEnd   = holder.closeStart;
+
+  let inner = out.slice(regionStart, regionEnd);
+  let innerMasked = maskSegments(inner);
+
+  // index/home спец-вставка: csgo-skins ПОСЛЕ .main-mode-selection
+  const shouldInsertHomeSkins = mbxIsHome(urlPath);
+  if (shouldInsertHomeSkins && modsData["csgo-skins"]){
+    const boxId = "csgo-skins";
+
+    // если уже есть такой data-box-id — заменим
+    // (htmlBox построим ниже уже с корректным отступом)
+    const probeIndent = indentBefore(out, regionStart, nl) + "  ";
+    let htmlBox = mbxRenderBox(boxId, modsData[boxId], urlPath, lang, probeIndent, nl);
+
+    if (htmlBox){
+      const rep = mbxReplaceExistingModsBox(inner, innerMasked, boxId, htmlBox, nl);
+      if (rep.changed){
+        inner = rep.html; innerMasked = maskSegments(inner);
+      } else {
+        // иначе вставим после .main-mode-selection; отступ берём от самого якоря
+        const mms = findFirstByClass(innerMasked, "main-mode-selection");
+        if (mms){
+          const blockIndent = indentBefore(inner, mms.openStart, nl);
+          htmlBox = mbxRenderBox(boxId, modsData[boxId], urlPath, lang, blockIndent, nl);
+
+          const before = inner.slice(0, mms.closeEnd);
+          const after  = inner.slice(mms.closeEnd);
+          inner = joinBlocksNoBlank(before, htmlBox, after, nl);
+        } else {
+          // fallback — просто в конец, с базовым отступом региона
+          const fallbackIndent = indentBefore(out, regionStart, nl) + "  ";
+          htmlBox = mbxRenderBox(boxId, modsData[boxId], urlPath, lang, fallbackIndent, nl);
+          inner = joinBlocksNoBlank(inner, htmlBox, "", nl);
+        }
+        innerMasked = maskSegments(inner);
+      }
+    }
+  }
+
+
+  // Основная логика выбора боксoв для остальных страниц
+  const pageType = mbxGetPageType(urlPath);
+  const isMulti  = mbxIsMulti(urlPath);
+  const boxesToLoad = mbxGetBoxesToLoad(pageType, isMulti, urlPath);
+
+  const inserted = new Set();
+
+  for (const boxId of boxesToLoad){
+    if (inserted.has(boxId)) continue;
+    const data = modsData[boxId]; if (!data) continue;
+
+    const indent = indentBefore(out, regionStart, nl) + "  ";
+    const htmlBox = mbxRenderBox(boxId, data, urlPath, lang, indent, nl);
+    if (!htmlBox) continue;
+
+    // если уже есть — заменить; иначе PREPEND (как в client-side)
+    const rep = mbxReplaceExistingModsBox(inner, innerMasked, boxId, htmlBox, nl);
+    if (rep.changed){
+      inner = rep.html; innerMasked = maskSegments(inner);
+    } else {
+      const openPart = out.slice(0, regionStart);
+      const bodyPart = inner;
+      inner = joinAfterOpenNoBlank(openPart, htmlBox, bodyPart, nl).slice(openPart.length);
+      innerMasked = maskSegments(inner);
+    }
+    inserted.add(boxId);
+  }
+
+  // собрать итог
+  return out.slice(0, regionStart) + inner + out.slice(regionEnd);
+}
+
+function mbxReplaceExistingModsBox(inner, innerMasked, boxId, htmlBox, nl){
+  function reindentTo(block, newIndent, nl){
+    const lines = block.split(nl);
+    if (!lines.length) return block;
+    const curIndent = (lines[0].match(/^[\t ]*/) || [""])[0];
+    if (curIndent === newIndent) return block;
+    const esc = curIndent.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const rx = new RegExp("^" + esc);
+    return lines.map(l => l.replace(rx, newIndent)).join(nl);
+  }
+
+  const modsBlocks = findAllDivByClass(innerMasked, "mods-box");
+  for (const b of modsBlocks){
+    const open = readTag(inner, b.openStart);
+    const id = mbxAttr("data-box-id", open.attrs);
+    if (id === boxId){
+      const beforeRaw = inner.slice(0, b.openStart);
+      const before    = beforeRaw.replace(/[ \t]+$/g, "");
+      const after     = inner.slice(b.closeEnd);
+
+      const desiredIndent = indentBefore(inner, b.openStart, nl);
+      const patched = reindentTo(htmlBox, desiredIndent, nl);
+      return { changed: true, html: before + patched + after };
+    }
+  }
+  return { changed:false, html: inner };
+}
+
+/* ========================================================================== */
+/* =================== ДАЛЕЕ — существующая логика проекта =================== */
+/* ========================================================================== */
 
 function buttonSpanLabel(lang = "en", type = "review") {
   const L = String(lang || "en").toLowerCase();

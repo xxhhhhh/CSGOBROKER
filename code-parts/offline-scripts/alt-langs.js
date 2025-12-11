@@ -339,6 +339,295 @@ function localizeModsBox(inner, lang){
   return out;
 }
 
+/* ---------- MBX переводы для mods-box ---------- */
+
+const MBX_TRANSLATIONS = {
+  "Buy Skins": {
+    ru:"Купить скины",
+    tr:"Skinler Satın Al",
+    pt:"Comprar Skins",
+    hi:"स्किन्स खरीदें",
+    es:"Comprar Skins"
+  },
+  "Sell Skins": {
+    ru:"Продать скины",
+    tr:"Skinler Sat",
+    pt:"Vender Skins",
+    hi:"स्किन्स बेचें",
+    es:"Vender Skins"
+  },
+  "Trade Skins": {
+    ru:"Обменять скины",
+    tr:"Skinler Takas Et",
+    pt:"Negociar Skins",
+    hi:"स्किन्स विनिमय",
+    es:"Intercambiar Skins"
+  },
+  "Buy Items": {
+    ru:"Купить предметы",
+    tr:"Eşyalar Satın Al",
+    pt:"Comprar Itens",
+    hi:"वस्तुएँ खरीदें",
+    es:"Comprar Ítems"
+  },
+  "Sell Items": {
+    ru:"Продать предметы",
+    tr:"Eşyalar Sat",
+    pt:"Vender Itens",
+    hi:"वस्तुएँ बेचें",
+    es:"Vender Ítems"
+  },
+  "Trade Items": {
+    ru:"Обменять предметы",
+    tr:"Eşyalar Takas Et",
+    pt:"Negociar Itens",
+    hi:"वस्तुएँ विनिमय",
+    es:"Intercambiar Ítems"
+  },
+  "Instant Sell": {
+    ru:"Быстрая Продажа",
+    tr:"Anlık Satış",
+    pt:"Venda Imediata",
+    hi:"त्वरित बेचें",
+    es:"Venta Instantánea"
+  },
+  "Marketplaces": {
+    ru:"Торговые Площадки",
+    tr:"Pazarlar",
+    pt:"Mercados",
+    hi:"बाजार",
+    es:"Mercados"
+  },
+  "Daily Rewards": {
+    ru:"Ежедневные Награды",
+    tr:"Günlük Ödüller",
+    pt:"Recompensas Diárias",
+    hi:"दैनिक पुरस्कार",
+    es:"Recompensas Diarias"
+  },
+  "Deposit Bonuses": {
+    ru:"Бонусы к Пополнению",
+    tr:"Yatırım Bonusları",
+    pt:"Bônus de Depósito",
+    hi:"जमा बोनस",
+    es:"Bonos de Depósito"
+  },
+  "Giveaways": {
+    ru:"Розыгрыши",
+    tr:"Çekilişler",
+    pt:"Sorteios",
+    hi:"गिफ्ट वे",
+    es:"Sorteos"
+  },
+  "Sign Up Bonuses": {
+    ru:"Бонусы за Регистрацию",
+    tr:"Kayıt Bonusları",
+    pt:"Bônus de Inscrição",
+    hi:"साइन अप बोनस",
+    es:"Bonos de Registro"
+  },
+  "Bonuses to Sale": {
+    ru:"Бонусы к Продаже",
+    tr:"Satışa Ek Bonuslar",
+    pt:"Bônus na Venda",
+    hi:"बिक्री के लिए बोनस",
+    es:"Bonos para la Venta"
+  },
+  "Match Betting": {
+    ru:"Ставки на Матчи",
+    tr:"Maç Bahisleri",
+    pt:"Apostas em Partidas",
+    hi:"मैच सट्टेबाजी",
+    es:"Apuestas en Partidos"
+  },
+  Roulette: {
+    ru:"Рулетка",
+    tr:"Rulet",
+    pt:"Roleta",
+    hi:"रूले",
+    es:"Ruleta"
+  },
+  "Case Opening": {
+    ru:"Открытие Кейсов",
+    tr:"Kasa Açma",
+    pt:"Abertura de Caixas",
+    hi:"केस खोलना",
+    es:"Apertura de Cajas"
+  },
+  Crash: {
+    ru:"Краш",
+    tr:"Çöküş",
+    pt:"Queda",
+    hi:"क्रैश",
+    es:"Choque"
+  },
+  Jackpot: {
+    ru:"Джекпот",
+    tr:"Büyük İkramiye",
+    pt:"Jackpot",
+    hi:"जैकपॉट",
+    es:"Jackpot"
+  },
+  Coinflip: {
+    ru:"Монетка",
+    tr:"Yazı Tura",
+    pt:"Cara ou Coroa",
+    hi:"सिक्का उछालना",
+    es:"Lanzamiento de Moneda"
+  },
+  "Case Battle": {
+    ru:"",
+    tr:"Kasa Savaşı",
+    pt:"Batalha de Caixas",
+    hi:"केस बैटल",
+    es:"Batalla de Cajas"
+  },
+  Slots: {
+    ru:"",
+    tr:"Kumarhane",
+    pt:"Cassino",
+    hi:"कैसिनो",
+    es:"Slots"
+  },
+  More: {
+    ru:"",
+    tr:"Daha Fazla",
+    pt:"Mais",
+    hi:"अधिक",
+    es:"Más"
+  },
+  "Popular CS2 Gambling Sites": {
+    ru:"",
+    tr:"Popüler CS2 Kumar Siteleri",
+    pt:"Sites Populares de Apostas CS2",
+    hi:"लोकप्रिय CS2 जुआ साइटें",
+    es:"Sitios de Apuestas Populares de CS2"
+  },
+  "Popular Rust Gambling Sites": {
+    ru:"",
+    tr:"Popüler Rust Kumar Siteleri",
+    pt:"Sites Populares de Apostas Rust",
+    hi:"लोकप्रिय Rust जुआ साइटें",
+    es:"Sitios de Apuestas Populares de Rust"
+  },
+  "Popular CS2 Trading Sites": {
+    ru:"",
+    tr:"Popüler CS2 Takas Siteleri",
+    pt:"Sites Populares de Troca CS2",
+    hi:"लोकप्रिय CS2 विनिमय साइटें",
+    es:"Sitios de Intercambio Populares de CS2"
+  },
+  "Instant Sell Platforms": {
+    ru:"",
+    tr:"Hızlı Satış Hizmetleri",
+    pt:"Serviços de Venda Rápida",
+    hi:"त्वरित बिक्री सेवाएं",
+    es:"Servicios de Venta Rápida"
+  },
+  "Best Task Services": {
+    ru:"",
+    tr:"En İyi Görev Hizmetleri",
+    pt:"Melhores Serviços de Tarefas",
+    hi:"सर्वश्रेष्ठ कार्य सेवाएं",
+    es:"Mejores Servicios de Tareas"
+  }
+};
+
+function mbxNormalize(text, lang){
+  if (String(lang).toLowerCase() === "tr") {
+    return String(text || "").toLocaleLowerCase("tr-TR");
+  }
+  return String(text || "").toLowerCase();
+}
+
+function mbxTranslateLabel(title, lang){
+  if (!title) return title;
+  const L = String(lang || "en").toLowerCase();
+  const keys = Object.keys(MBX_TRANSLATIONS);
+  const key = keys.find(k => mbxNormalize(k, L) === mbxNormalize(title, L));
+  const map = key ? MBX_TRANSLATIONS[key] : null;
+  const res = map && map[L];
+  return res || title;
+}
+
+/**
+ * Переводит подписи в .mods-box:
+ * - data-title в <div class="singlemod-box">
+ * - <span>внутри <a class="singlemod-select">
+ * Работает для es/pt/tr/hi.
+ */
+function translateModsBoxTitles(inner, lang){
+  const L = String(lang || "en").toLowerCase();
+  if (!["es","pt","tr","hi"].includes(L)) return inner;
+
+  let out = inner;
+  let shift = 0;
+  const masked = maskSegments(out); // маска по исходному inner
+  let pos = 0;
+
+  while (true) {
+    // Ищем <div class="singlemod-box"> структурно, а не регэкспом
+    const block = findFirstByClass(masked, "singlemod-box", pos);
+    if (!block) break;
+
+    // Координаты блока в реальной строке (учитывая shift)
+    const openStart  = block.openStart + shift;
+    const openEnd    = block.openEnd   + shift;
+    const closeStart = block.closeStart + shift;
+    const closeEnd   = block.closeEnd + shift;
+
+    const openTag  = out.slice(openStart, openEnd);
+    const body     = out.slice(openEnd, closeStart);
+    const closeTag = out.slice(closeStart, closeEnd);
+
+    // 1) Пытаемся взять заголовок из data-title
+    const titleAttr = openTag.match(/\bdata-title\s*=\s*(["'])(.*?)\1/i);
+    let title = titleAttr ? titleAttr[2] : null;
+
+    // 2) Если data-title нет, вытащим текст из <span> внутри блока
+    if (!title) {
+      const spanMatch = body.match(/<span\b[^>]*>([\s\S]*?)<\/span>/i);
+      if (spanMatch) {
+        title = stripHtml(spanMatch[1]).trim();
+      }
+    }
+
+    if (!title) {
+      // Нечего переводить — двигаемся к следующему .singlemod-box
+      pos = block.closeEnd;
+      continue;
+    }
+
+    const translated = mbxTranslateLabel(title, L);
+    if (!translated || translated === title) {
+      // Перевода нет или он совпадает — ничего не меняем
+      pos = block.closeEnd;
+      continue;
+    }
+
+    // 3) Обновляем / добавляем data-title в открывающем div
+    const newOpenTag = upsertAttr(openTag, "data-title", translated);
+
+    // 4) Если есть <span> — заменяем его текст
+    const newBody = body.replace(
+      /(<span\b[^>]*>)([\s\S]*?)(<\/span>)/i,
+      (_m, sOpen, _txt, sClose) => sOpen + translated + sClose
+    );
+
+    const newBlock = newOpenTag + newBody + closeTag;
+
+    // Собираем строку обратно
+    const oldLen = closeEnd - openStart;
+    out = out.slice(0, openStart) + newBlock + out.slice(closeEnd);
+    shift += newBlock.length - oldLen;
+
+    // В masked двигаемся по старым координатам (без shift)
+    pos = block.closeEnd;
+  }
+
+  return out;
+}
+
 /* ---------- translations (FIXED) ---------- */
 const trCache = new Map();
 
@@ -505,24 +794,32 @@ function translateReviewButtonsSpans(inner, lang){
     // 2) локализация ссылок по правилам + перевод <span> в .review-button
     newHtml = withHolderInner(newHtml, (inner) => {
       let out = inner;
+
       // обычные страницы
       if (lang === "es" || lang === "tr"){
         out = localizeLogobgAnchors(out, lang);
         out = localizeReviewButtons(out, lang);
       }
       if (lang === "es" || lang === "tr" || lang === "pt" || lang === "hi"){
+        // more-content: ссылки + префиксы
         out = localizeMoreContent(out, lang);
+        // mods-box: префиксы в href + перевод подписей
+        out = localizeModsBox(out, lang);
+        out = translateModsBoxTitles(out, lang);
+
         // ✨ перевод надписей в <a class="review-button">...</a>
         out = translateReviewButtonsSpans(out, lang);
       }
-      // главная
+
+      // главная — доп. специфичные блоки (main-mode selection, навигация)
       if (isLocalizedHome(rel)){
         out = localizeMainModeSelection(out, lang);   // только href, кроме .topics
         out = localizeBoxesHolderNameNav(out, lang);  // моды + More
-        out = localizeModsBox(out, lang);             // кнопки в модульных боксах
       }
+
       return out;
     });
+
 
     // 3) переводы текста (как в клиентском скрипте)
     if (lang !== "en"){
