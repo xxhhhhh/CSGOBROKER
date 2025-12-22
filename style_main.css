@@ -2771,11 +2771,20 @@ h3 {
     order: -1;
 }
 
-.site-attention strong.styled {
+.site-attention strong.styled,
+.site-attention a.styled {
     position: relative;
     z-index: 1;
     color: var(--main-color);
     font-weight: 600;
+}
+
+.site-attention a.styled:hover {
+    filter: brightness(1.15);
+}
+
+.site-attention a.styled:active {
+    filter: brightness(.8);
 }
 
 .site-attention strong.code {
@@ -12162,7 +12171,8 @@ header {
     z-index: 1;
 }
 
-.site-attention.event strong.styled {
+.site-attention.event strong.styled,
+.site-attention.event a.styled {
     position: relative;
     z-index: 1;
     color: #2988ff;
