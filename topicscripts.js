@@ -238,92 +238,123 @@ $(document).ready(function () {
 (() => {
   "use strict";
 
-  const PRICE_API_URLS = [
-    "https://cs2broker.cc/api/prices?v=2",
-    "https://lisskins.csgobroker.workers.dev/api/prices?v=2",
-  ];
+  // Почему относительный путь: same-origin → меньше CORS/редиректов
+  const DATA_URL = "https://cs2broker.cc/api/skins?v=2";
 
-  async function fetchPricesForNames(names) {
-    for (const url of PRICE_API_URLS) {
-      try {
-        const res = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({ names }),
-        });
+  // Простой кэш на сессию, чтобы не долбить API на каждой перерисовке
+  const _skinCache = { data: null, ts: 0, ttl: 30_000 };
 
-        console.log("[prices]", url, res.status, res.headers.get("content-type"));
+  /**
+   * Получение массива скинов [{ name, price }, ...].
+   * Почему: таймаут и проверка content-type снижают хрупкость на сторонних сбоях.
+   */
+  async function fetchSkinPrices() {
+    const now = Date.now();
+    if (_skinCache.data && now - _skinCache.ts < _skinCache.ttl) return _skinCache.data;
 
-        if (!res.ok) continue;
-        const data = await res.json();
-        if (data && Array.isArray(data.items)) return data.items;
-      } catch (e) {
-        console.warn("[prices] failed", url, e);
-      }
+    const ctrl = new AbortController();
+    const to = setTimeout(() => ctrl.abort("timeout"), 12_000);
+
+    try {
+      const res = await fetch(DATA_URL, {
+        method: "GET",
+        signal: ctrl.signal,
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) return [];
+
+      const ct = res.headers.get("content-type") || "";
+      if (!ct.includes("application/json")) return [];
+
+      const skins = await res.json();
+      const data = Array.isArray(skins) ? skins : [];
+
+      _skinCache.data = data;
+      _skinCache.ts = now;
+      return data;
+    } catch {
+      return [];
+    } finally {
+      clearTimeout(to);
     }
-    return [];
   }
 
   async function priceSkinsOnPage() {
     const $skins = $(".skin");
     if (!$skins.length) return;
 
-    // собираем имена на странице (уникальные)
-    const names = [];
-    const seen = new Set();
-
-    $skins.each(function () {
-      const n = ($(this).find(".skin-desc-name").text() || "").replace(/\u00A0/g, " ").trim();
-      if (!n || seen.has(n)) return;
-      seen.add(n);
-      names.push(n);
-    });
-
-    const items = await fetchPricesForNames(names);
-
-    // делаем map по q
-    const map = new Map(items.map((x) => [x.q, x]));
-
-    let matched = 0;
+    const skinPrices = await fetchSkinPrices();
 
     $skins.each(function () {
       const $skinEl = $(this);
-      const name = ($skinEl.find(".skin-desc-name").text() || "").replace(/\u00A0/g, " ").trim();
-      const r = map.get(name);
-      if (!r) return;
+      const name = ($skinEl.find(".skin-desc-name").text() || "").trim();
+      if (!name) return;
+
+      const isSticker = name.startsWith("Sticker |");
+      const matchedSkins = skinPrices.filter((s) => {
+        const n = (s && s.name) ? String(s.name) : "";
+        return isSticker ? n === name : n.includes(name);
+      });
+
+      const normal = matchedSkins
+        .filter((s) => !String(s.name).startsWith("Souvenir"))
+        .map((s) => +s.price)
+        .filter(Number.isFinite);
+
+      const souv = matchedSkins
+        .filter((s) => String(s.name).startsWith("Souvenir"))
+        .map((s) => +s.price)
+        .filter(Number.isFinite);
 
       let html = "";
-      if (r.normal) html += r.normal;
-      if (r.souvenir) html += `<div class="souvenir-price-info">${r.souvenir}</div>`;
+
+      if (normal.length) {
+        normal.sort((a, b) => a - b);
+        html += (normal[0] === normal[normal.length - 1])
+          ? `${normal[0].toFixed(2)}$`
+          : `${normal[0].toFixed(2)}$ - ${normal[normal.length - 1].toFixed(2)}$`;
+      }
+
+      if (souv.length) {
+        souv.sort((a, b) => a - b);
+        const t = (souv[0] === souv[souv.length - 1])
+          ? `${souv[0].toFixed(2)}$`
+          : `${souv[0].toFixed(2)}$ - ${souv[souv.length - 1].toFixed(2)}$`;
+        html += `<div class="souvenir-price-info">${t}</div>`;
+      }
 
       if (html) {
-        matched++;
         const priceEl = $skinEl.find(".skin-price-info");
-        if (priceEl.length) priceEl.removeClass("loading").html(html);
-        else $skinEl.append(`<div class="skin-price-info">${html}</div>`);
+        if (priceEl.length) {
+          priceEl.removeClass("loading").html(html);
+        } else {
+          $skinEl.append(`<div class="skin-price-info">${html}</div>`);
+        }
       }
     });
 
-    console.log("[prices] matched:", matched);
-
+    // отметка для img.imported
     $(".skin img").each(function () {
-      if (this.complete) $(this).addClass("imported");
-      else $(this).on("load", function () { $(this).addClass("imported"); });
+      if (this.complete) {
+        $(this).addClass("imported");
+      } else {
+        $(this).on("load", function () {
+          $(this).addClass("imported");
+        });
+      }
     });
 
-    if (typeof checkWeaponTypeAvailabilityForItems === "function") checkWeaponTypeAvailabilityForItems();
-    if (location.pathname.includes("/topic/sticker-crafts/") && typeof updateCraftComponentList === "function") {
+    checkWeaponTypeAvailabilityForItems();
+    if (location.pathname.includes("/topic/sticker-crafts/")) {
       updateCraftComponentList();
     }
   }
 
-  if ($(".skin").length) priceSkinsOnPage();
+  // Инициализация
+  if ($(".skin").length) {
+    priceSkinsOnPage();
+  }
 })();
-
-
 
 
     // ---------- КРАФТЫ: работа только с уже существующими .skin ----------
