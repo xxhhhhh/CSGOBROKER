@@ -239,7 +239,10 @@ $(document).ready(function () {
   "use strict";
 
   // Почему относительный путь: same-origin → меньше CORS/редиректов
-  const DATA_URL = "https://cs2broker.cc/api/skins?v=2";
+  const DATA_URLS = [
+    "https://cs2broker.cc/api/skins?v=2",
+    "https://lisskins.csgobroker.workers.dev/api/skins?v=2",
+  ];
 
   // Простой кэш на сессию, чтобы не долбить API на каждой перерисовке
   const _skinCache = { data: null, ts: 0, ttl: 30_000 };
@@ -249,34 +252,21 @@ $(document).ready(function () {
    * Почему: таймаут и проверка content-type снижают хрупкость на сторонних сбоях.
    */
   async function fetchSkinPrices() {
-    const now = Date.now();
-    if (_skinCache.data && now - _skinCache.ts < _skinCache.ttl) return _skinCache.data;
+    for (const url of DATA_URLS) {
+      try {
+        const res = await fetch(url, { headers: { Accept: "application/json" } });
+        console.log("[skins]", res.status, res.headers.get("content-type"));
+        
+        if (!res.ok) continue;
 
-    const ctrl = new AbortController();
-    const to = setTimeout(() => ctrl.abort("timeout"), 12_000);
+        const ct = res.headers.get("content-type") || "";
+        if (!ct.includes("application/json")) continue;
 
-    try {
-      const res = await fetch(DATA_URL, {
-        method: "GET",
-        signal: ctrl.signal,
-        headers: { Accept: "application/json" },
-      });
-      if (!res.ok) return [];
-
-      const ct = res.headers.get("content-type") || "";
-      if (!ct.includes("application/json")) return [];
-
-      const skins = await res.json();
-      const data = Array.isArray(skins) ? skins : [];
-
-      _skinCache.data = data;
-      _skinCache.ts = now;
-      return data;
-    } catch {
-      return [];
-    } finally {
-      clearTimeout(to);
+        const data = await res.json();
+        if (Array.isArray(data) && data.length) return data;
+      } catch {}
     }
+    return [];
   }
 
   async function priceSkinsOnPage() {
