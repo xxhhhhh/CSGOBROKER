@@ -364,43 +364,50 @@ $(document).ready(function () {
     const now = Date.now();
     if (_skinCache.maps && now - _skinCache.ts < _skinCache.ttl) return _skinCache.maps;
 
-    const ctrl = new AbortController();
-    const to = setTimeout(() => ctrl.abort("timeout"), 12_000);
+    // Важно: новый controller на КАЖДЫЙ URL
+    for (const url of DATA_URLS) {
+      const ctrl = new AbortController();
 
-    try {
-      for (const url of DATA_URLS) {
-        try {
-          const res = await fetch(url, {
-            method: "GET",
-            signal: ctrl.signal,
-            headers: { Accept: "application/json" },
-          });
+      // таймаут только на "достучаться" (получить Response/заголовки)
+      const connectTimeoutMs = 12_000;
+      const t = setTimeout(() => ctrl.abort("connect-timeout"), connectTimeoutMs);
 
-          console.log("[skins]", url, res.status, res.headers.get("content-type"));
+      try {
+        const res = await fetch(url, {
+          method: "GET",
+          signal: ctrl.signal,
+          headers: { Accept: "application/json" },
+        });
 
-          if (!res.ok) continue;
+        console.log("[skins]", url, res.status, res.headers.get("content-type"));
 
-          const ct = res.headers.get("content-type") || "";
-          if (!ct.includes("application/json")) continue;
+        // получили Response -> больше НЕ абортим, иначе оборвётся res.json()
+        clearTimeout(t);
 
-          const raw = await res.json();
-          const list = normalizeRaw(raw);
+        if (!res.ok) continue;
 
-          console.log("[skins] normalized length:", list.length, "sample:", list[0]);
+        const ct = res.headers.get("content-type") || "";
+        if (!ct.includes("application/json")) continue;
 
-          const maps = buildMaps(list);
-          _skinCache.maps = maps;
-          _skinCache.ts = now;
-          return maps;
-        } catch (e) {
-          console.warn("[skins] fetch failed for", url, e);
-        }
+        const raw = await res.json();            // теперь не будет падать от abort через 12 сек
+        const list = normalizeRaw(raw);
+
+        console.log("[skins] normalized length:", list.length, "sample:", list[0]);
+
+        const maps = buildMaps(list);
+        _skinCache.maps = maps;
+        _skinCache.ts = now;
+        return maps;
+      } catch (e) {
+        console.warn("[skins] fetch failed for", url, e);
+      } finally {
+        clearTimeout(t);
       }
-      return { normalMap: new Map(), souvenirMap: new Map(), stickerMap: new Map() };
-    } finally {
-      clearTimeout(to);
     }
+
+    return { normalMap: new Map(), souvenirMap: new Map(), stickerMap: new Map() };
   }
+
 
   function fmtRange(arr) {
     if (!arr || !arr.length) return "";
