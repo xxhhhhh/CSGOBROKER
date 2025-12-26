@@ -238,233 +238,82 @@ $(document).ready(function () {
 (() => {
   "use strict";
 
-  // Можно поменять порядок: сначала workers.dev, потом домен
-  const DATA_URLS = [
-    "https://cs2broker.cc/api/skins?v=2",
-    "https://lisskins.csgobroker.workers.dev/api/skins?v=2",
+  const PRICE_API_URLS = [
+    "https://cs2broker.cc/api/prices?v=2",
+    "https://lisskins.csgobroker.workers.dev/api/prices?v=2",
   ];
 
-  const _skinCache = { maps: null, ts: 0, ttl: 30_000 };
-
-  function normText(s) {
-    return String(s ?? "")
-      .replace(/\u00A0/g, " ")     // NBSP
-      .replace(/\s+/g, " ")
-      .trim();
-  }
-
-  function stripPrefixes(name) {
-    let n = normText(name);
-    // порядок важен
-    n = n.replace(/^★\s*/u, "");
-    n = n.replace(/^StatTrak™\s*/u, "");
-    return n;
-  }
-
-  function baseName(name) {
-    // убираем износ в конце: " (...)"
-    return stripPrefixes(name).replace(/\s*\([^)]*\)\s*$/u, "");
-  }
-
-  function toNumber(x) {
-    const s = String(x ?? "").replace(",", ".").trim();
-    const n = Number(s);
-    return Number.isFinite(n) ? n : null;
-  }
-
-  function pickPrice(obj) {
-    if (!obj || typeof obj !== "object") return null;
-    // подстраховка под разные схемы
-    return (
-      toNumber(obj.price) ??
-      toNumber(obj.min_price) ??
-      toNumber(obj.price_min) ??
-      toNumber(obj.usd) ??
-      toNumber(obj.value)
-    );
-  }
-
-  function normalizeRaw(raw) {
-    // приводит что угодно к [{name, price}, ...]
-    if (Array.isArray(raw)) {
-      // формат: [["AK-47 | ...", 1.23], ...]
-      if (raw.length && Array.isArray(raw[0])) {
-        return raw
-          .map((row) => ({ name: row?.[0], price: row?.[1] }))
-          .filter((x) => x.name != null);
-      }
-
-      // формат: [{name, price}, ...]
-      if (raw.length && typeof raw[0] === "object") {
-        return raw
-          .map((o) => ({
-            name: o.name ?? o.market_hash_name ?? o.title,
-            price: o.price ?? o.min_price ?? o.price_min ?? o.usd ?? o.value,
-          }))
-          .filter((x) => x.name != null);
-      }
-
-      return [];
-    }
-
-    if (raw && typeof raw === "object") {
-      // частый формат: { items: [...] } или { data: [...] }
-      if (Array.isArray(raw.items)) return normalizeRaw(raw.items);
-      if (Array.isArray(raw.data)) return normalizeRaw(raw.data);
-
-      // формат: { "AK-47 | ...": 1.23, ... } или { "AK-47 | ...": {price:1.23}, ... }
-      return Object.entries(raw).map(([k, v]) => ({
-        name: k,
-        price: (v && typeof v === "object") ? (v.price ?? v.min_price ?? v.value) : v
-      }));
-    }
-
-    return [];
-  }
-
-  function buildMaps(list) {
-    // normalMap: key -> [prices]
-    // souvenirMap: key -> [prices]
-    // stickerMap: fullName -> [prices] (для точного совпадения)
-    const normalMap = new Map();
-    const souvenirMap = new Map();
-    const stickerMap = new Map();
-
-    for (const item of list) {
-      const rawName = normText(item?.name);
-      if (!rawName) continue;
-
-      const p = toNumber(item?.price) ?? pickPrice(item);
-      if (p == null) continue;
-
-      const isSouvenir = rawName.startsWith("Souvenir ");
-      const isSticker = rawName.startsWith("Sticker |");
-
-      if (isSticker) {
-        const key = normText(rawName);
-        const arr = stickerMap.get(key) || [];
-        arr.push(p);
-        stickerMap.set(key, arr);
-        continue;
-      }
-
-      const nameNoSouvenir = isSouvenir ? rawName.replace(/^Souvenir\s+/u, "") : rawName;
-      const key = baseName(nameNoSouvenir);
-
-      const target = isSouvenir ? souvenirMap : normalMap;
-      const arr = target.get(key) || [];
-      arr.push(p);
-      target.set(key, arr);
-    }
-
-    return { normalMap, souvenirMap, stickerMap };
-  }
-
-  async function fetchSkinMaps() {
-    const now = Date.now();
-    if (_skinCache.maps && now - _skinCache.ts < _skinCache.ttl) return _skinCache.maps;
-
-    // Важно: новый controller на КАЖДЫЙ URL
-    for (const url of DATA_URLS) {
-      const ctrl = new AbortController();
-
-      // таймаут только на "достучаться" (получить Response/заголовки)
-      const connectTimeoutMs = 12_000;
-      const t = setTimeout(() => ctrl.abort("connect-timeout"), connectTimeoutMs);
-
+  async function fetchPricesForNames(names) {
+    for (const url of PRICE_API_URLS) {
       try {
         const res = await fetch(url, {
-          method: "GET",
-          signal: ctrl.signal,
-          headers: { Accept: "application/json" },
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({ names }),
         });
 
-        console.log("[skins]", url, res.status, res.headers.get("content-type"));
-
-        // получили Response -> больше НЕ абортим, иначе оборвётся res.json()
-        clearTimeout(t);
+        console.log("[prices]", url, res.status, res.headers.get("content-type"));
 
         if (!res.ok) continue;
-
-        const ct = res.headers.get("content-type") || "";
-        if (!ct.includes("application/json")) continue;
-
-        const raw = await res.json();            // теперь не будет падать от abort через 12 сек
-        const list = normalizeRaw(raw);
-
-        console.log("[skins] normalized length:", list.length, "sample:", list[0]);
-
-        const maps = buildMaps(list);
-        _skinCache.maps = maps;
-        _skinCache.ts = now;
-        return maps;
+        const data = await res.json();
+        if (data && Array.isArray(data.items)) return data.items;
       } catch (e) {
-        console.warn("[skins] fetch failed for", url, e);
-      } finally {
-        clearTimeout(t);
+        console.warn("[prices] failed", url, e);
       }
     }
-
-    return { normalMap: new Map(), souvenirMap: new Map(), stickerMap: new Map() };
-  }
-
-
-  function fmtRange(arr) {
-    if (!arr || !arr.length) return "";
-    arr.sort((a, b) => a - b);
-    const min = arr[0], max = arr[arr.length - 1];
-    return (min === max) ? `${min.toFixed(2)}$` : `${min.toFixed(2)}$ - ${max.toFixed(2)}$`;
+    return [];
   }
 
   async function priceSkinsOnPage() {
     const $skins = $(".skin");
     if (!$skins.length) return;
 
-    const { normalMap, souvenirMap, stickerMap } = await fetchSkinMaps();
+    // собираем имена на странице (уникальные)
+    const names = [];
+    const seen = new Set();
 
-    let processed = 0;
-    let matchedAny = 0;
+    $skins.each(function () {
+      const n = ($(this).find(".skin-desc-name").text() || "").replace(/\u00A0/g, " ").trim();
+      if (!n || seen.has(n)) return;
+      seen.add(n);
+      names.push(n);
+    });
+
+    const items = await fetchPricesForNames(names);
+
+    // делаем map по q
+    const map = new Map(items.map((x) => [x.q, x]));
+
+    let matched = 0;
 
     $skins.each(function () {
       const $skinEl = $(this);
-      const nameRaw = normText($skinEl.find(".skin-desc-name").text());
-      if (!nameRaw) return;
-
-      processed++;
-
-      const isSticker = nameRaw.startsWith("Sticker |");
-      const key = isSticker ? nameRaw : baseName(nameRaw);
-
-      const normal = isSticker ? (stickerMap.get(key) || []) : (normalMap.get(key) || []);
-      const souv   = isSticker ? [] : (souvenirMap.get(key) || []);
+      const name = ($skinEl.find(".skin-desc-name").text() || "").replace(/\u00A0/g, " ").trim();
+      const r = map.get(name);
+      if (!r) return;
 
       let html = "";
-      const normalHtml = fmtRange(normal);
-      if (normalHtml) html += normalHtml;
-
-      const souvHtml = fmtRange(souv);
-      if (souvHtml) html += `<div class="souvenir-price-info">${souvHtml}</div>`;
+      if (r.normal) html += r.normal;
+      if (r.souvenir) html += `<div class="souvenir-price-info">${r.souvenir}</div>`;
 
       if (html) {
-        matchedAny++;
+        matched++;
         const priceEl = $skinEl.find(".skin-price-info");
-        if (priceEl.length) {
-          priceEl.removeClass("loading").html(html);
-        } else {
-          $skinEl.append(`<div class="skin-price-info">${html}</div>`);
-        }
+        if (priceEl.length) priceEl.removeClass("loading").html(html);
+        else $skinEl.append(`<div class="skin-price-info">${html}</div>`);
       }
     });
 
-    console.log("[skins] processed:", processed, "matched:", matchedAny);
+    console.log("[prices] matched:", matched);
 
-    // отметка для img.imported
     $(".skin img").each(function () {
       if (this.complete) $(this).addClass("imported");
       else $(this).on("load", function () { $(this).addClass("imported"); });
     });
 
-    // аккуратно: если функций нет на странице — не падаем
     if (typeof checkWeaponTypeAvailabilityForItems === "function") checkWeaponTypeAvailabilityForItems();
     if (location.pathname.includes("/topic/sticker-crafts/") && typeof updateCraftComponentList === "function") {
       updateCraftComponentList();
@@ -473,6 +322,7 @@ $(document).ready(function () {
 
   if ($(".skin").length) priceSkinsOnPage();
 })();
+
 
 
 
