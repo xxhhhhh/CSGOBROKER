@@ -239,7 +239,7 @@ $(document).ready(function () {
   "use strict";
 
   // Почему относительный путь: same-origin → меньше CORS/редиректов
-  const DATA_URL = "https://cs2broker.cc/api/skins?v=2";
+  const DATA_URL = new URL("/api/skins?v=2", location.origin).toString();
 
   // Простой кэш на сессию, чтобы не долбить API на каждой перерисовке
   const _skinCache = { data: null, ts: 0, ttl: 30_000 };
