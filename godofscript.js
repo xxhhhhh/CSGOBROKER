@@ -188,68 +188,69 @@ function showCopied(copyButton) {
       });
   });
 
-const themeToggleBtn = document.getElementById('theme-toggle');
-const themeIcon = themeToggleBtn.querySelector('i');
-let currentTheme = (StorageHelper.getJSON('theme_settings') || {}).theme || getSystemPreferredTheme();
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const themeIcon = themeToggleBtn.querySelector('i');
 
-applyTheme(currentTheme, false);
+  let currentTheme =
+    (StorageHelper.getJSON('theme_settings') || {}).theme ||
+    localStorage.getItem('theme') ||
+    'dark';
 
-window.addEventListener('DOMContentLoaded', () => {
-  if (document.documentElement.classList.contains('transitions-disabled')) {
-    replaceTransitionClass();
-  }
-});
+  applyTheme(currentTheme, false);
 
-function getSystemPreferredTheme() {
-  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-}
+  window.addEventListener('DOMContentLoaded', () => {
+    if (document.documentElement.classList.contains('transitions-disabled')) {
+      replaceTransitionClass();
+    }
+  });
 
-function replaceTransitionClass() {
-  const html = document.documentElement;
-
-  setTimeout(() => {
-    html.classList.remove('transitions-disabled');
-    html.classList.add('transitions-enabled');
+  function replaceTransitionClass() {
+    const html = document.documentElement;
 
     setTimeout(() => {
-      html.classList.remove('transitions-enabled');
-    }, 200);
-  }, 100);
-}
+      html.classList.remove('transitions-disabled');
+      html.classList.add('transitions-enabled');
 
-function temporarilyDisableTransitions() {
-  const html = document.documentElement;
-
-  html.classList.remove('transitions-enabled');
-  html.classList.add('transitions-disabled');
-
-  replaceTransitionClass();
-}
-
-function applyTheme(theme, withTransition = true) {
-  if (withTransition) temporarilyDisableTransitions();
-
-  currentTheme = theme;
-  document.documentElement.setAttribute('data-theme', theme);
-
-  StorageHelper.setJSON('theme_settings', { ...(StorageHelper.getJSON('theme_settings') || {}), theme });
-  localStorage.setItem('theme', theme);
-
-  const link = document.getElementById('theme-style');
-
-  if (theme === 'light') {
-    if (link) { link.href = '/style_light.css'; link.disabled = false; }
-    themeIcon.classList.replace('lightbulb-off', 'lightbulb-on');
-  } else {
-    if (link) { link.disabled = true; link.href = ''; }
-    themeIcon.classList.replace('lightbulb-on', 'lightbulb-off');
+      setTimeout(() => {
+        html.classList.remove('transitions-enabled');
+      }, 200);
+    }, 100);
   }
-}
 
-themeToggleBtn.addEventListener('click', () => {
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  applyTheme(newTheme, true);
-});
+  function temporarilyDisableTransitions() {
+    const html = document.documentElement;
+
+    html.classList.remove('transitions-enabled');
+    html.classList.add('transitions-disabled');
+
+    replaceTransitionClass();
+  }
+
+  function applyTheme(theme, withTransition = true) {
+    if (withTransition) temporarilyDisableTransitions();
+
+    currentTheme = theme;
+    document.documentElement.setAttribute('data-theme', theme);
+
+    StorageHelper.setJSON('theme_settings', { ...(StorageHelper.getJSON('theme_settings') || {}), theme });
+    localStorage.setItem('theme', theme);
+
+    const link = document.getElementById('theme-style');
+
+    if (theme === 'light') {
+      if (link) { link.href = '/style_light.css'; link.disabled = false; }
+      themeIcon.classList.replace('lightbulb-off', 'lightbulb-on');
+    } else {
+      if (link) { link.disabled = true; link.href = ''; }
+      themeIcon.classList.replace('lightbulb-on', 'lightbulb-off');
+    }
+  }
+
+  themeToggleBtn.addEventListener('click', () => {
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme, true);
+  });
+
 
   const sitesList = document.querySelector('.boxes-holder');
   const reviewBox = document.querySelector('.box.main .content');
