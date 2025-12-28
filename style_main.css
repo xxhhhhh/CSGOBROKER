@@ -1,5 +1,3 @@
-@import "fonts/TTNormsPro.css";
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -135,7 +133,7 @@ header {
     box-shadow: unset !important;
 }
 
-/* @media screen and (min-width: 1365px) {
+/* @media screen and (min-width: 1280px) {
     .ssiodox:not(.nondef) header.is-hidden .main-nav-content {
         transform: translate(0, -120%);
         opacity: 0;
@@ -4737,8 +4735,8 @@ nav img {
     content: '';
     mask-image: url(/img/icons/gamemodes/ribbon.svg);
     mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: contain;
+    mask-size: 75%;
+    mask-position: top;
     background: var(--buttonbg);
     width: 100%;
     height: 100%;
@@ -4746,7 +4744,7 @@ nav img {
 }
 
 .promo-box .content .bonus-type i {
-    margin-top: -6px;
+    margin-top: -8px;
     z-index: 1;
 }
 
@@ -12370,7 +12368,11 @@ header {
     }
 }
 
-@media screen and (max-width: 1365px) {
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+}
+
+@media screen and (max-width: 1280px) {
     .box-extra-links:has(.mirror-redirect) {
         padding-top: 16px;
     }
@@ -14370,7 +14372,6 @@ header {
         justify-content: center;
         position: absolute;
         top: 69px;
-        background-color: rgba(12, 12, 12, .9);
         transition: all .15s ease-in-out, visibility 0s 0s;
         visibility: visible;
         overflow: hidden;
@@ -14771,6 +14772,14 @@ header {
 }
 
 @media screen and (max-width: 850px) {
+
+    header,
+    .main-mode-unit,
+    .boxes-holder-list,
+    .topic-nav-selector{
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
 
     .site-attention.event::after {
         left: -40px;
@@ -16206,7 +16215,7 @@ header {
     transform: translateY(50%);
 }
 
-@media screen and (max-width: 1365px) {
+@media screen and (max-width: 1280px) {
 
     .skins-category-switch {
         margin: 0 65px;
