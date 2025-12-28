@@ -11388,14 +11388,11 @@ header {
 }
 
 .payments-button {
-    position: absolute;
-    right: -64px;
-    top: 5px;
+    position: relative;
     width: 50px;
     height: 50px;
     background-color: var(--darkgray);
     transition: all .15s ease-in-out;
-    margin: 5px;
     border-radius: var(--main-border);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     display: flex;
@@ -11403,14 +11400,13 @@ header {
     justify-content: center;
     cursor: pointer;
     z-index: 3;
+    visibility: hidden;
 }
 
 .payments-block .payments-button {
-    position: relative;
-    right: unset;
-    top: unset;
-    margin: 0;
+    visibility: visible;
 }
+
 
 .payments-block.visible .payments-button::before {
     content: none;
@@ -11426,13 +11422,18 @@ header {
 
 .payments-block {
     position: fixed;
-    right: 141px;
+    left: calc(100vw - 319px);
     top: 174px;
-    width: 170px;
+    width: 50px;
+    height: 50px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     z-index: 2;
+}
+
+.payments-block.visible {
+    width: 170px;
 }
 
 .payments-block.visible .payments-button:hover {
@@ -12370,6 +12371,87 @@ header {
 
 @media (prefers-reduced-motion: reduce){
   *{ animation: none !important; transition: none !important; }
+}
+
+
+    /* ==========================================================
+   Desktop responsive fix (keeps 1920 layout down to ~1418px)
+   - Keeps 4 cards per row longer by preventing the centered
+     area from shrinking too early.
+   - Gradually increases the relative width up to 90vw.
+   - Repositions the left mods-box and right payments button
+     so they stay visible and aligned with the centered area.
+   ========================================================== */
+
+@media screen and (max-width: 1908px) and (min-width: 1281px) {
+  :root {
+    /* 66.528% of 1920px ≈ 1277px (baseline where 4 cards fit perfectly)
+       - On big screens: behaves like 66.528vw (can grow)
+       - 1920 -> ~1418: stays ~1277px (prevents early shrink)
+       - Below ~1418: becomes 90vw
+    */
+    --centralized: max(66.528vw, min(91vw, 1277px));
+    --buttons-container-w: max(70vw, min(98vw, 1344px));
+
+    /* boxes-holder has padding: 0 9px (total 18px) */
+    --centralized-inner: calc(var(--centralized) - 18px);
+  }
+
+  .buttons-container{
+    width: var(--buttons-container-w);
+    max-width: var(--buttons-container-w);
+    position: relative;
+    top: 114px;
+    margin: 0 auto;
+  }
+
+  .boxes-holder .box {
+    flex-grow: 1;
+  }
+
+  /* lock the central width so it doesn't collapse when the viewport narrows */
+  .boxes-holder,
+  .topic-boxes-holder {
+    width: var(--centralized);
+    max-width: var(--centralized);
+  }
+
+  .category-selector {
+    max-width: var(--centralized);
+    min-width: var(--centralized);
+  }
+
+  /* header aligns with the inner content width (same as cards area inside padding) */
+  header {
+    width: var(--centralized-inner);
+  }
+
+  /* keep other header presets responsive too (they were % based, so they shrank early) */
+  .nondef header {
+    width: max(81.8vw, min(90vw, 1571px)); /* 81.8% of 1920 ≈ 1571px */
+  }
+
+  .review header,
+  .nondef:has(.topic-craft) header {
+    width: max(69.6vw, min(90vw, 1336px)); /* 69.6% of 1920 ≈ 1336px */
+  }
+
+  .nondef:has(.boxdefaultpage) header {
+    width: max(58vw, min(90vw, 1114px)); /* 58% of 1920 ≈ 1114px */
+  }
+
+  .nondef:has(.blog) header {
+    width: max(71.8vw, min(90vw, 1379px)); /* 71.8% of 1920 ≈ 1379px */
+  }
+
+  /* left vertical icons: tie to centered area instead of hard-coded 261px */
+  .mods-box {
+    left: max(6px, calc((100vw - var(--centralized)) / 2 - 60px));
+  }
+
+  .boxes-holder .payments-block  {
+    left: calc((100vw - var(--centralized)) / 2 + var(--centralized) + 2px);
+  }
 }
 
 @media screen and (max-width: 1280px) {
@@ -13810,7 +13892,6 @@ header {
     .category-selector .category {
         height: 80px;
         position: static;
-        flex-grow: 1;
     }
 
     .category-selector#notexist .category {
@@ -14337,7 +14418,7 @@ header {
     .box {
         margin: unset;
         width: 24%;
-        min-width: 223px;
+        min-width: 270px;
         filter: none;
         flex-grow: 1;
         background: linear-gradient(180deg, var(--darkgray) 0%, rgb(13 13 13) 100%);
