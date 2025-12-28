@@ -12458,6 +12458,14 @@ header {
     .box-extra-links:has(.mirror-redirect) {
         padding-top: 16px;
     }
+
+    nav .pages h1 {
+        width: 100%;
+    }
+
+    .main-nav-content {
+        margin-left: 8px;
+    }
     
     .topic-boxes-holder,
     .topic-boxes-holder:has(.pagination-holder) {
@@ -14100,7 +14108,7 @@ header {
     }
 
     .spaceblock {
-        height: 202px;
+        height: 162px;
     }
 
     .nondef .spaceblock {
@@ -14434,10 +14442,6 @@ header {
         font-size: 13px;
     }
 
-    nav img {
-        width: 140px;
-    }
-
     .siteleftpannel .mods-box.topic {
         margin: unset;
         left: 4px;
@@ -14449,7 +14453,7 @@ header {
     }
 
     nav .pages {
-        padding-left: unset;
+        /* padding-left: unset;
         justify-content: center;
         position: absolute;
         top: 69px;
@@ -14463,7 +14467,20 @@ header {
         justify-content: center;
         transform: translateX(-50%);
         margin-top: 5px;
-        height: 50px;
+        height: 50px; */
+
+        height: auto;
+        width: auto;
+    }
+
+    nav .pages h1 {
+        font-size: 13px !important;
+        text-align: start !important;
+        color: var(--text-darkgray);
+    }
+
+    #btnfaq::before {
+        opacity: .25;
     }
 
     header,
@@ -14480,13 +14497,13 @@ header {
     }
 
     .category-selector {
-        top: 122px;
+        top: 82px;
     }
 
     .category-selector.current {
-        top: 120px;
+        top: 80px;
     }
-
+/* 
     nav .pages.hidden,
     nav .pages.search_hidden {
         opacity: 0;
@@ -14494,7 +14511,7 @@ header {
         transition: all .15s ease-in-out, visibility 0s .15s;
         pointer-events: none;
         user-select: none;
-    }
+    } */
 
     nav .pages.search_hidden {
         transition: none;
@@ -14521,13 +14538,10 @@ header {
     }
 
     nav .pages button {
-        padding-left: unset;
         position: absolute;
-        right: 20px;
-    }
-
-    nav .pages h1 {
-        width: 78%;
+        padding: unset;
+        top: -24.5px;
+        left: 140px;
     }
 
     .pages button.active {
@@ -15584,13 +15598,18 @@ header {
 }
 
 @media screen and (max-width: 644px) {
+
+    nav .pages h1 {
+        width: 90%;
+    }
+
+    .main-nav-content {
+        margin-top: 8px;
+    }
+
     .category-selector {
         min-width: unset !important;
         justify-content: flex-start;
-    }
-
-    nav img {
-        width: 130px;
     }
 
     .pages h1,
@@ -15601,10 +15620,6 @@ header {
     .pages h1 {
         font-size: 14px;
         color: var(--white);
-    }
-
-    .main-nav-content {
-        margin-left: 8px;
     }
 
     .pages button {
