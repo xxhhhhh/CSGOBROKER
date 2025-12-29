@@ -1,0 +1,18 @@
+name: IndexNow
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  submit-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: IndexNow
+        uses: jakob-bagterp/index-now-submit-sitemap-urls-action@v1
+        with:
+          host: csgobroker.cc
+          api_key: ${{ secrets.INDEX_NOW_API_KEY }}
+          api_key_location: https://csgobroker.cc/${{ secrets.INDEX_NOW_API_KEY }}.txt
+          endpoint: indexnow
+          sitemap_locations: https://csgobroker.cc/sitemap.xml
