@@ -22,6 +22,7 @@ const EXCLUDED_ROOT_DIRS = new Set([
   'sitemaps_co',
   'sitemaps_com',
   'sitemaps_me',
+  '.github',
   '.codegpt',
   '.tmp',
   'cn',
