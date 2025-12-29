@@ -14673,13 +14673,11 @@ header {
 
     .boxes-holder .main-mode-selection {
         margin: unset;
-        opacity: 0;
+        min-width: unset;
     }
 
     .boxes-holder .main-mode-selection.slick-slider {
         min-width: unset;
-        opacity: 1;
-        padding: 0;
     }
 
     .main-mode-unit {
@@ -16557,4 +16555,58 @@ a[href*="/?aff="][target="_blank"] {
 
 .instruction a[href*="/?aff="][target="_blank"] {
     display: inline-block !important;
+}
+
+/* =========================
+   Main-mode slider: PRE-init layout only (no scroll)
+   ========================= */
+
+@media screen and (max-width: 1280px) {
+
+  /* Важно: у тебя для импортного блока в .boxes-holder мог быть opacity:0/width:0 */
+  .boxes-holder .main-mode-selection {
+    opacity: 1 !important;
+    height: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* ДО slick: показываем 4/3/2 карточки “как слайдер”, но без скролла */
+  .main-mode-selection:not(.slick-initialized) {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;        /* вместо scroll */
+  }
+
+  /* 4 карточки (по умолчанию) */
+  .main-mode-selection:not(.slick-initialized) .main-mode-unit {
+    flex: 0 0 calc((100% - 24px) / 4); /* 4 карточки * (margin 6px) = 24px */
+    width: auto !important;
+    min-width: 0 !important;
+    aspect-ratio: 302 / 252;
+    height: auto !important;
+  }
+
+  .main-mode-unit a { display: block; height: 100%; }
+  .main-mode-unit img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* 3 карточки (breakpoint 1024) */
+@media screen and (max-width: 1024px) {
+  .main-mode-selection:not(.slick-initialized) .main-mode-unit {
+    flex-basis: calc((100% - 18px) / 3); /* 3 * 6px = 18px */
+  }
+}
+
+/* 2 карточки (breakpoint 600) */
+@media screen and (max-width: 600px) {
+  .main-mode-selection:not(.slick-initialized) .main-mode-unit {
+    flex-basis: calc((100% - 11px) / 2); /* 2 * 6px = 12px */
+  }
 }

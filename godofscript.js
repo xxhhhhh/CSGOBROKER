@@ -2012,7 +2012,6 @@ $(function () {
   // 1) Главный слайдер вверху страницы
   initModesSlider($('.main-mode-selection'));
 
-  // 2) Вставка селекшна после 12-го видимого бокса и инициализация slick
   $('.boxes-holder').each(function () {
     const $boxesHolder = $(this);
     const $allBoxes = $boxesHolder.children('.box');
