@@ -1,8 +1,9 @@
 name: IndexNow
 
 on:
-  push:
-    branches: ["main"]
+  workflow_run:
+    workflows: [pages-build-deployment]
+    types: [completed]
 
 jobs:
   submit-sitemap:
@@ -15,4 +16,11 @@ jobs:
           api_key: ${{ secrets.INDEX_NOW_API_KEY }}
           api_key_location: https://csgobroker.cc/${{ secrets.INDEX_NOW_API_KEY }}.txt
           endpoint: indexnow
-          sitemap_locations: https://csgobroker.cc/sitemap.xml
+          sitemap_locations: >
+            https://csgobroker.cc/sitemap_main.xml
+            https://csgobroker.cc/sitemap_main_ru.xml
+            https://csgobroker.cc/sitemap_reviews.xml
+            https://csgobroker.cc/sitemap_reviews_ru.xml
+            https://csgobroker.cc/sitemap_reviews_es.xml
+            https://csgobroker.cc/sitemap_topics.xml
+            https://csgobroker.cc/sitemap_topics_ru.xml
