@@ -3,6 +3,8 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
+const { execSync } = require('child_process');
 
 const HTML_BASE_DIR = path.resolve('.');
 const languageDirs = ['.', 'ru', 'tr', 'es', 'pt', 'hi'];
@@ -151,14 +153,19 @@ function detectHeadEol(html) {
 
 function parseYoastBlock(html) {
   const m = html.match(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*class=["']yoast-schema-graph["'][^>]*>([\s\S]*?)<\/script>/i);
-  if (!m) return { matchHtml: null, jsonRaw: '', jsonObj: null };
+  if (!m) return { matchHtml: null, jsonRaw: '', jsonObj: null, contentHash: null };
+
+  const openTag = (m[0].match(/<script\b[^>]*>/i) || [''])[0];
+  const contentHash = (openTag.match(/\bdata-content-hash=(["'])(.*?)\1/i) || [])[2] || null;
+
   const raw = (m[1] || '').trim();
   try {
-    return { matchHtml: m[0], jsonRaw: raw, jsonObj: JSON.parse(raw) };
+    return { matchHtml: m[0], jsonRaw: raw, jsonObj: JSON.parse(raw), contentHash };
   } catch {
-    return { matchHtml: m[0], jsonRaw: raw, jsonObj: null };
+    return { matchHtml: m[0], jsonRaw: raw, jsonObj: null, contentHash };
   }
 }
+
 
 function deepClone(x) { return JSON.parse(JSON.stringify(x)); }
 function removeDM(obj) {
@@ -177,10 +184,48 @@ function canonicalize(v) {
 }
 function stableStringify(o) { return JSON.stringify(canonicalize(o)); }
 
+function getGitCommitTimeISO(filePath) {
+  // Github Pages: mtime часто меняется из‑за билдов/инъекций, поэтому берём дату коммита файла.
+  try {
+    const out = execSync(`git log -1 --format=%cI -- "${filePath}"`, { stdio: ['ignore', 'pipe', 'ignore'] })
+      .toString()
+      .trim();
+    if (out) return out;
+  } catch {}
+  try { return fs.statSync(filePath).mtime.toISOString(); } catch {}
+  return new Date().toISOString();
+}
+
+function stripTagsToText(html) {
+  return html
+    .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<noscript\b[\s\S]*?<\/noscript>/gi, ' ')
+    .replace(/<!--([\s\S]*?)-->/g, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function computeMeaningfulHash(html) {
+  // Технические правки в <head> (favicon/аналитика/скрипты) не должны менять dateModified/lastmod.
+  // Поэтому хэшируем «значимое»: title + meta description/robots + текст body.
+  const title = (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '';
+  const desc = extractMeta(html, 'description') || '';
+  const robots = extractMeta(html, 'robots') || '';
+  const body = (html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i) || [])[1] || html;
+  const bodyText = stripTagsToText(body);
+  const payload = JSON.stringify({ title: title.trim(), desc: desc.trim(), robots: robots.trim(), bodyText });
+  return crypto.createHash('sha1').update(payload).digest('hex');
+}
+
+
 // ---------- main injection ----------
 function injectSchema(filePath) {
-  const { atime, mtime, mtimeISO } = getFileTimes(filePath); // до любых записей
+  const { atime, mtime } = getFileTimes(filePath); // до любых записей
   let html = fs.readFileSync(filePath, 'utf-8');
+  const meaningfulHash = computeMeaningfulHash(html);
+  const gitISO = getGitCommitTimeISO(filePath);
 
   const eol = detectHeadEol(html);
   const name = html.match(/<title>(.*?)<\/title>/i)?.[1]?.trim() || '';
@@ -296,11 +341,11 @@ function injectSchema(filePath) {
 
   if (!matchHtml || !jsonObj) {
     const full = deepClone(baseJsonLd);
-    full['@graph'][0]['dateModified'] = mtimeISO;
+    full['@graph'][0]['dateModified'] = gitISO;
 
     const updatedJson = JSON.stringify(full, null, 2).replace(/\n/g, eol);
     const newBlock =
-      `<script type="application/ld+json" class="yoast-schema-graph">${eol}` +
+      `<script type="application/ld+json" class="yoast-schema-graph" data-content-hash="${meaningfulHash}">${eol}` +
       `${updatedJson}${eol}</script>`;
 
     html = html.replace(/(\s*)<\/head>/i, `${eol}${newBlock}${eol}$1</head>`);
@@ -317,27 +362,34 @@ function injectSchema(filePath) {
   const existingDM = jsonObj?.['@graph']?.[0]?.['dateModified'] || null;
 
   if (sameWithoutDM) {
-    // Меняем только dateModified, если отличается от входного mtime
-    if (existingDM !== mtimeISO) {
-      jsonObj['@graph'][0]['dateModified'] = mtimeISO;
-      const updatedJson = JSON.stringify(jsonObj, null, 2).replace(/\n/g, eol);
-      const newBlock =
-        `<script type="application/ld+json" class="yoast-schema-graph">${eol}` +
-        `${updatedJson}${eol}</script>`;
-      html = html.replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*class=["']yoast-schema-graph["'][^>]*>[\s\S]*?<\/script>/i, newBlock);
-      fs.writeFileSync(filePath, html, 'utf-8');
-      fs.utimesSync(filePath, atime, mtime); // не даём mtime «скакнуть»
-      console.log(`✅ dateModified updated in ${filePath}`);
+    // Если schema совпадает, обновляем dateModified ТОЛЬКО когда изменилось «значимое» содержимое страницы.
+    // Иначе (технические правки в <head>) — ничего не делаем.
+    const existingHash = (matchHtml && matchHtml.match(/\bdata-content-hash=(["'])(.*?)\1/i) || [])[2] || null;
+
+    if (existingHash && existingHash === meaningfulHash) {
+      return;
     }
+
+    jsonObj['@graph'][0]['dateModified'] = gitISO;
+    const updatedJson = JSON.stringify(jsonObj, null, 2).replace(/\n/g, eol);
+
+    const newBlock =
+      `<script type="application/ld+json" class="yoast-schema-graph" data-content-hash="${meaningfulHash}">${eol}` +
+      `${updatedJson}${eol}</script>`;
+
+    html = html.replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*class=["']yoast-schema-graph["'][^>]*>[\s\S]*?<\/script>/i, newBlock);
+    fs.writeFileSync(filePath, html, 'utf-8');
+    fs.utimesSync(filePath, atime, mtime);
+    console.log(`✅ dateModified updated (meaningful change) in ${filePath}`);
     return;
   }
 
   // Содержимое отличается → полная замена с актуальным mtime
   const full = deepClone(baseJsonLd);
-  full['@graph'][0]['dateModified'] = mtimeISO;
+  full['@graph'][0]['dateModified'] = gitISO;
   const updatedJson = JSON.stringify(full, null, 2).replace(/\n/g, eol);
   const newBlock =
-    `<script type="application/ld+json" class="yoast-schema-graph">${eol}` +
+    `<script type="application/ld+json" class="yoast-schema-graph" data-content-hash="${meaningfulHash}">${eol}` +
     `${updatedJson}${eol}</script>`;
   html = html.replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*class=["']yoast-schema-graph["'][^>]*>[\s\S]*?<\/script>/i, newBlock);
   fs.writeFileSync(filePath, html, 'utf-8');

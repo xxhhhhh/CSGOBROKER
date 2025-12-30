@@ -3,6 +3,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const ROOT_DIR = path.resolve(__dirname, '../../');
 const BASE_ORIGIN = 'https://csgobroker.cc';
@@ -11,6 +12,29 @@ const LANGS = ['en', 'ru', 'pt', 'es', 'hi', 'tr'];
 const ALT_ORDER = ['en', 'ru', 'pt', 'es', 'hi', 'tr'];
 
 // ---------- FS utils ----------
+
+function getGitCommitTimeISO(filePath) {
+  try {
+    const out = execSync(`git log -1 --format=%cI -- "${filePath}"`, { stdio: ['ignore', 'pipe', 'ignore'] })
+      .toString()
+      .trim();
+    if (out) return out;
+  } catch {}
+  try { return fs.statSync(filePath).mtime.toISOString(); } catch {}
+  return new Date().toISOString();
+}
+
+function extractYoastDateModified(html) {
+  const m = html.match(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*class=["']yoast-schema-graph["'][^>]*>([\s\S]*?)<\/script>/i);
+  if (!m) return null;
+  try {
+    const obj = JSON.parse((m[1] || '').trim());
+    return obj?.['@graph']?.[0]?.dateModified || obj?.['@graph']?.[0]?.['dateModified'] || null;
+  } catch {
+    return null;
+  }
+}
+
 const readFile = (fp) => fs.readFileSync(fp, 'utf-8');
 const ensureDir = (d) => { if (!fs.existsSync(d)) fs.mkdirSync(d, { recursive: true }); };
 function writeFileIfChanged(fp, next, label) {
@@ -394,7 +418,7 @@ function buildAlternatesByKeyForOrigin(presentLangsByKey, origin) {
 function main() {
   const files = collectHtmlFiles(ROOT_DIR);
 
-  /** @type {Array<{filePath:string,urlPath:string,lang:string,key:string,abs:string,mtime:string,noindex:boolean}>} */
+  /** @type {Array<{filePath:string,urlPath:string,lang:string,key:string,abs:string,lastmod:string,noindex:boolean}>} */
   const pages = [];
   const presentLangsByKey = new Map(); // все локали (вкл. noindex) для alternate
   const alternatesByKey = new Map();   // key -> Array<{lang,href}>
@@ -409,9 +433,10 @@ function main() {
     const html = readFile(fp);
     const ni = hasNoindex(html);
     const stats = fs.statSync(fp);
-    const mtime = stats.mtime.toISOString();
+    const yoastDM = extractYoastDateModified(html);
+    const lastmod = yoastDM || getGitCommitTimeISO(fp);
 
-    pages.push({ filePath: fp, urlPath, lang, key, abs, mtime, noindex: ni });
+    pages.push({ filePath: fp, urlPath, lang, key, abs, lastmod, noindex: ni });
 
     // учитываем локали
     const set = presentLangsByKey.get(key) || new Set();
@@ -457,7 +482,10 @@ function main() {
     html = insertAlternatesUnderLastStylesheet(html, p.key, present);
 
     if (html !== before) {
+      const st = fs.statSync(p.filePath);
       fs.writeFileSync(p.filePath, html);
+      // технические правки head не должны «освежать» mtime (иначе lastmod по mtime начнёт шуметь)
+      fs.utimesSync(p.filePath, st.atime, st.mtime);
       changedHtmlCount++;
     }
   }
@@ -472,7 +500,7 @@ function main() {
 
   for (const p of pages) {
     if (p.noindex) continue;
-    const entry = { loc: p.abs, lastmod: p.mtime, priority: computePriority(p.urlPath), key: p.key };
+    const entry = { loc: p.abs, lastmod: p.lastmod, priority: computePriority(p.urlPath), key: p.key };
 
     if (isTopicPath(p.urlPath)) {
       if (p.lang === 'en') buckets.topics_en.push(entry);

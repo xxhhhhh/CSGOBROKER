@@ -1,5 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
   var userChoice = getCookie('languageChoice');
+  var botUserAgentRegex = /(googlebot|bingbot|slurp|duckduckbot|baiduspider|yandex(bot)?|sogou|exabot|facebot|ia_archiver|ahrefsbot|semrush|mj12bot|seznambot|petalbot)/i;
+
+  function isLikelySearchBot() {
+      var ua = navigator.userAgent || '';
+      if (botUserAgentRegex.test(ua)) {
+          return true;
+      }
+
+      if (navigator.userAgentData && Array.isArray(navigator.userAgentData.brands)) {
+          var brandString = navigator.userAgentData.brands.map(function (brand) { return brand.brand || ''; }).join(' ').toLowerCase();
+          if (brandString.includes('googlebot') || brandString.includes('bingbot')) {
+              return true;
+          }
+      }
+
+      if (document.visibilityState === 'hidden' && !document.hasFocus()) {
+          return true;
+      }
+
+      return false;
+  }
 
   function handleLanguageRedirect() {
       if (userChoice && userChoice !== 'en') {
@@ -87,8 +108,11 @@ document.addEventListener('DOMContentLoaded', function () {
       return null;
   }
 
+  var shouldAttemptRedirect = Boolean(userChoice && userChoice !== 'en') && !isLikelySearchBot();
+
   if (
       userChoice === 'ru' ||
+      shouldAttemptRedirect &&
       (
           ![
               "/topic",

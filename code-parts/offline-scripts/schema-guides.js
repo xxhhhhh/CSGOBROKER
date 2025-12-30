@@ -1,10 +1,45 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
+const { execSync } = require('child_process');
 const { JSDOM } = require('jsdom');
 
 const HTML_BASE_DIR = path.resolve('.');
 const CODE_PARTS_DIR = path.join(HTML_BASE_DIR, 'code-parts', 'guides-slug');
 const languageDirs = ['.', 'ru', 'tr', 'es', 'pt', 'hi'];
+
+function getGitCommitTimeISO(filePath) {
+  try {
+    const out = execSync(`git log -1 --format=%cI -- "${filePath}"`, { stdio: ['ignore', 'pipe', 'ignore'] })
+      .toString()
+      .trim();
+    if (out) return out;
+  } catch {}
+  try { return fs.statSync(filePath).mtime.toISOString(); } catch {}
+  return new Date().toISOString();
+}
+
+function stripTagsToText(html) {
+  return html
+    .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<noscript\b[\s\S]*?<\/noscript>/gi, ' ')
+    .replace(/<!--([\s\S]*?)-->/g, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function computeMeaningfulHash(html) {
+  const title = (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '';
+  const descMatch = html.match(/<meta\s+[^>]*name=["']description["'][^>]*content=(["'])(.*?)\1/i);
+  const desc = descMatch ? descMatch[2] : '';
+  const body = (html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i) || [])[1] || html;
+  const bodyText = stripTagsToText(body);
+  const payload = JSON.stringify({ title: title.trim(), desc: desc.trim(), bodyText });
+  return crypto.createHash('sha1').update(payload).digest('hex');
+}
+
 
 function extractMeta(html, key) {
   const regex = new RegExp(`<meta\s+([^>]*\b(?:name|property)=["']${key}["'][^>]*)>`, 'i');
@@ -65,7 +100,12 @@ function stripDateModified(json) {
 }
 
 function injectSchemaForGuide(htmlPath, slug) {
+  const st = fs.statSync(htmlPath);
+  const atime = st.atime;
+  const mtime = st.mtime;
   const html = fs.readFileSync(htmlPath, 'utf-8');
+  const meaningfulHash = computeMeaningfulHash(html);
+  const gitISO = getGitCommitTimeISO(htmlPath);
   const langFull = detectLanguageFromContent(html);
   const langCode = langFull.split('-')[0];
 
@@ -200,21 +240,25 @@ function injectSchemaForGuide(htmlPath, slug) {
 
   const newJsonClean = stripDateModified(JSON.stringify(baseSchema));
 
-  const existing = html.match(/<script type="application\/ld\+json" class="yoast-schema-graph">([\s\S]*?)<\/script>/);
+  const existing = html.match(/<script\b[^>]*type=["\']application\/ld\+json["\'][^>]*class=["\']yoast-schema-graph["\'][^>]*>([\s\S]*?)<\/script>/i);
   const currentBlock = existing ? existing[1].trim() : '';
   const isSame = stripDateModified(currentBlock) === newJsonClean;
 
-  if (isSame) return;
+  // Если schema совпадает, а менялись только технические штуки — dateModified не трогаем.
+  const existingHash = existing ? ((existing[0].match(/\bdata-content-hash=(['\"])(.*?)\1/i) || [])[2] || null) : null;
+  if (isSame && existingHash && existingHash === meaningfulHash) return;
+  if (isSame && !existingHash) return; // старые страницы без хэша тоже не «освежаем»
 
-  baseSchema['@graph'][0]['dateModified'] = new Date().toISOString();
+  baseSchema['@graph'][0]['dateModified'] = gitISO;
   const finalJson = JSON.stringify(baseSchema, null, 2);
-  const tagged = `<script type="application/ld+json" class="yoast-schema-graph">\n${finalJson}\n</script>`;
+  const tagged = `<script type="application/ld+json" class="yoast-schema-graph" data-content-hash="${meaningfulHash}">\n${finalJson}\n</script>`;
 
   const updatedHtml = existing
     ? html.replace(existing[0], tagged)
     : html.replace(/(\s*)<\/head>/i, `\n${tagged}\n$1</head>`);
 
   fs.writeFileSync(htmlPath, updatedHtml, 'utf-8');
+  fs.utimesSync(htmlPath, atime, mtime);
   console.log(`✅ Injected schema for: ${htmlPath}`);
 }
 
