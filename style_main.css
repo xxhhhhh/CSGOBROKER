@@ -11543,7 +11543,7 @@ header {
     transition: all .15s ease-in-out;
     border-radius: var(--main-border);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -11553,6 +11553,7 @@ header {
 
 .payments-block .payments-button {
     visibility: visible;
+    display: flex;
 }
 
 
