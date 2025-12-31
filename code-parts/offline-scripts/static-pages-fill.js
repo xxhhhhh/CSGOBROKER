@@ -16,6 +16,10 @@ const FILTER_SETTINGS   = "/code-parts/filter-settings.json";
 const REVIEW_SETTINGS   = "/code-parts/review-settings.json";
 const SITES_SETTINGS    = "/code-parts/sites-settings.json";
 const TRANSLATIONS_PATH = "/code-parts/review-translations.json";
+const CATEGORY_CONTENTS_PATH     = "/code-parts/category-import/category-contents.json";
+const CATEGORY_BUILDER_PATH      = "/code-parts/category-import/category-builder.json";
+const CATEGORY_TRANSLATIONS_PATH = "/code-parts/category-import/category-translations.json";
+
 // + инфобокс переводы
 const INFOBOX_TRANSLATIONS = "/code-parts/micro-parts/main-infobox/infobox-translations.json";
 // + mods-boxes JSON (из вашей client-side логики)
@@ -113,7 +117,13 @@ function withLangForReview(href, lang){
     const hasBoxesHolder = findAllDivByClass(masked, "boxes-holder").length > 0;
     const isReviewPage   = /\/(reviews|mirrors)\//.test(urlPath);
 
-    if (!hasBoxesHolder && !isReviewPage) { skipped++; continue; }
+    const hasCategories = findAllDivByClass(masked, "category").length > 0;
+    const hasCategorySelector = findAllDivByClass(masked, "category-selector").length > 0;
+
+    if (!hasBoxesHolder && !isReviewPage && !hasCategories && !hasCategorySelector) {
+      skipped++;
+      continue;
+    }
 
     let changed = false;
 
@@ -151,6 +161,20 @@ function withLangForReview(href, lang){
       }
     }
 
+    // ✅ ВОТ СЮДА ВСТАВЬ category-pass
+    if (presets.categoryBuilder && presets.categoryContents) {
+      const catNew = upsertCategoryImportOffline(
+        html,
+        urlPath,
+        lang,
+        nl,
+        presets.categoryBuilder,
+        presets.categoryContents,
+        presets.categoryTranslations
+      );
+      if (catNew !== html) { html = catNew; changed = true; }
+    }
+
     if (changed) {
       if (!dry) await fs.writeFile(file, html, "utf8");
       console.log(`${dry ? "[DRY]" : "[OK] "} ${rel}`);
@@ -177,9 +201,19 @@ async function loadPresets(root){
   const review       = await safeJson(abs(root, REVIEW_SETTINGS));
   const translation  = await safeJson(abs(root, TRANSLATIONS_PATH));
   const infobox      = await safeJson(abs(root, INFOBOX_TRANSLATIONS));
-  const modsBoxes    = await safeJson(abs(root, MODS_BOXES_PATH)); // NEW
-  return { filter, review, translation, infobox, modsBoxes };
+  const modsBoxes    = await safeJson(abs(root, MODS_BOXES_PATH));
+
+  // NEW: category import (offline)
+  const categoryBuilder      = await safeJson(abs(root, CATEGORY_BUILDER_PATH));
+  const categoryContents     = await safeJson(abs(root, CATEGORY_CONTENTS_PATH));
+  const categoryTranslations = await safeJson(abs(root, CATEGORY_TRANSLATIONS_PATH));
+
+  return {
+    filter, review, translation, infobox, modsBoxes,
+    categoryBuilder, categoryContents, categoryTranslations
+  };
 }
+
 async function safeJson(p){ try { return JSON.parse(await fs.readFile(p,"utf8")); } catch { return null; } }
 
 /* --------- URL/LANG --------- */
@@ -1251,6 +1285,307 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
   out = compressLooseWhitespace(out);
 
   return out;
+}
+
+/* ======================================================================= */
+/* === NEW: OFFLINE CATEGORY-IMPORT (builder + contents + translations)  === */
+/* ======================================================================= */
+
+function catNormalizeText(text, lang){
+  const L = String(lang || "en").toLowerCase();
+  if (L === "tr") return String(text || "").toLocaleLowerCase("tr-TR");
+  return String(text || "").trim();
+}
+
+function catTranslateText(plain, lang, translationsForLang){
+  if (!translationsForLang) return plain;
+  const L = String(lang || "en").toLowerCase();
+  const txt = String(plain || "").trim();
+  if (!txt) return txt;
+
+  // как в client: tr — через toLocaleLowerCase + fallback
+  if (L === "tr") {
+    const key = txt.toLocaleLowerCase("tr-TR");
+    return translationsForLang[key] ?? translationsForLang[txt] ?? txt;
+  }
+
+  // как в client: en и pl не переводим
+  if (L !== "en" && L !== "pl" && Object.prototype.hasOwnProperty.call(translationsForLang, txt)) {
+    return translationsForLang[txt];
+  }
+  return txt;
+}
+
+function catLocalizeHref(href, lang){
+  if (!href) return href;
+  if (isExternal(href) || href.startsWith("#")) return href;
+
+  const { base, tail } = splitHrefParts(String(href));
+  const cleanBase = stripKnownLangPrefix(base);
+
+  // ✅ Wiki/topic: префикс только для ru, для остальных языков — без префикса
+  if (/^\/topic(?:\/|$)/i.test(cleanBase)) {
+    const L = String(lang || "en").toLowerCase();
+    const localized = (L === "ru")
+      ? addLangPrefixToHref(cleanBase, "ru")
+      : stripKnownLangPrefix(cleanBase);
+    return localized + (tail || "");
+  }
+
+  const localized = addLangPrefixToHref(cleanBase, lang);
+  return localized + (tail || "");
+}
+
+function catCategoryKeyFromHref(href){
+  const clean = stripKnownLangPrefix(String(href||""))
+    .split("#")[0].split("?")[0]
+    .replace(/^\/+/, "");
+  const segs = clean.split("/").filter(Boolean);
+  return segs[0] || null;
+}
+
+function catAltFromHref(href){
+  const key = (catCategoryKeyFromHref(href) || "").toLowerCase();
+
+  // под твой пример (CS2 -> csgocategory)
+  if (key === "cs2" || key === "csgo") return "csgocategory";
+  if (key === "rust") return "rustcategory";
+  if (key === "crypto") return "cryptocategory";
+  if (key === "freebies") return "freebiescategory";
+  if (key === "earning") return "earningcategory";
+  if (key === "dota") return "dotacategory";
+  if (key === "steam") return "steamcategory";
+  if (key === "newest") return "newestcategory";
+
+  return key ? `${key}category` : "category";
+}
+
+function catBuildSubmenuHtml(items, lang, translationsForLang, indent, nl){
+  if (!Array.isArray(items) || !items.length) return "";
+
+  const lines = [];
+  lines.push(`${indent}<ul class="submenu">`);
+
+  for (const item of items){
+    const rawTitle = String(item?.title ?? "");
+    const titlePlain = rawTitle.replace(/<[^>]*>/g, "").trim();
+    const title = catTranslateText(titlePlain, lang, translationsForLang) || titlePlain;
+
+    const href = catLocalizeHref(String(item?.url ?? "#"), lang);
+
+    lines.push(`${indent}  <li class="big-category">`);
+    lines.push(`${indent}    <a href="${escapeAttr(href)}">${escapeHtml(title)}</a>`);
+
+    if (Array.isArray(item?.children) && item.children.length){
+      lines.push(`${indent}    <ul class="submenu2">`);
+      for (const child of item.children){
+        const cRaw = String(child?.title ?? "");
+        const cPlain = cRaw.replace(/<[^>]*>/g, "").trim();
+        const cTitle = catTranslateText(cPlain, lang, translationsForLang) || cPlain;
+
+        const cHref = catLocalizeHref(String(child?.url ?? "#"), lang);
+        lines.push(`${indent}      <li><a href="${escapeAttr(cHref)}">${escapeHtml(cTitle)}</a></li>`);
+      }
+      lines.push(`${indent}    </ul>`);
+    }
+
+    lines.push(`${indent}  </li>`);
+  }
+
+  lines.push(`${indent}</ul>`);
+  return lines.join(nl);
+}
+
+function catBuildCategorySelectorHtml(builder, contents, lang, translationsForLang, urlPath, indent, nl){
+  const cats = Array.isArray(builder?.categories) ? builder.categories : [];
+  if (!cats.length) return "";
+
+  const lines = [];
+  const rootCls = catIs404Page(urlPath) ? "category-selector notexist" : "category-selector";
+  lines.push(`${indent}<div class="${rootCls}">`);
+
+  const innerIndent = indent + "  ";
+
+  for (const c of cats){
+    const hrefRaw = String(c?.href ?? "");
+    if (!hrefRaw) continue;
+
+    const href = catLocalizeHref(hrefRaw, lang);
+    const labelPlain = String(c?.label ?? "").trim();
+    const label = catTranslateText(labelPlain, lang, translationsForLang) || labelPlain;
+
+    const logo = String(c?.logo ?? "").trim();
+    const classes = Array.isArray(c?.classes) ? c.classes.filter(Boolean) : [];
+
+    const currentNorm = catNormalizePathForMatch(urlPath); // текущая страница (без /ru,/es и т.п.)
+    const key = catCategoryKeyFromHref(hrefRaw);
+    const items = key ? contents?.categories?.[key]?.items : null;
+
+    const isActiveBySubmenu = !!currentNorm && catCategoryHasActiveItem(items, currentNorm);
+
+    const clsSet = new Set(["category-box", ...classes]);
+    if (isActiveBySubmenu) clsSet.add("active");
+
+    const aClass = Array.from(clsSet).join(" ").trim();
+
+    // alt: поддержим alt/altLabel если есть в builder, иначе — вычислим как в примере
+    const alt = String(c?.alt || c?.altLabel || catAltFromHref(hrefRaw));
+
+    lines.push(`${innerIndent}<div class="category">`);
+    lines.push(`${innerIndent}  <a class="${escapeAttr(aClass)}" href="${escapeAttr(href)}">`);
+    lines.push(`${innerIndent}    <div class="category-box-logo"><img src="${escapeAttr(logo)}" alt="${escapeAttr(alt)}" draggable="false"></div>`);
+    lines.push(`${innerIndent}    <div class="category-box-content"><span>${escapeHtml(label)}</span></div>`);
+    lines.push(`${innerIndent}  </a>`);
+
+    // submenu из contents по ключу (как в старом client: первый сегмент href)
+    if (Array.isArray(items) && items.length){
+      const submenu = catBuildSubmenuHtml(items, lang, translationsForLang, innerIndent + "  ", nl);
+      if (submenu) lines.push(submenu);
+    }
+
+    lines.push(`${innerIndent}</div>`);
+  }
+
+  lines.push(`${indent}</div>`);
+  return lines.join(nl);
+}
+
+function catIs404Page(urlPath){
+  const p = stripKnownLangPrefix(String(urlPath || ""))
+    .split("#")[0].split("?")[0]
+    .toLowerCase();
+
+  // fileToUrlPath для 404.html даст "/404"
+  // но на всякий — поддержим и "/404.html"
+  return p === "/404" || p === "/404.html";
+}
+
+function catShouldAutoInsert(urlPath, builder){
+  // авто-вставка только на “категорийные/листинговые” урлы:
+  // если первый сегмент совпадает с одним из builder.href (или home)
+  const p = stripKnownLangPrefix(String(urlPath||""))
+    .split("#")[0].split("?")[0]
+    .toLowerCase();
+
+  if (p === "/" || p === "") return true;
+
+  const segs = p.split("/").filter(Boolean);
+  const first = (segs[0] || "").toLowerCase();
+  if (!first) return true;
+
+  const cats = Array.isArray(builder?.categories) ? builder.categories : [];
+  for (const c of cats){
+    const key = (catCategoryKeyFromHref(c?.href) || "").toLowerCase();
+    if (!key) continue;
+
+    // cs2/csgo взаимозаменяемо
+    if ((key === "cs2" && first === "csgo") || (key === "csgo" && first === "cs2")) return true;
+
+    if (first === key) return true;
+  }
+  return false;
+}
+
+function catNormalizePathForMatch(href){
+  if (!href) return null;
+  if (isExternal(href) || href.startsWith("#")) return null;
+
+  const { base } = splitHrefParts(String(href));
+  let p = stripKnownLangPrefix(base);
+
+  // normalize
+  p = p.replace(/\/index\.html$/i, "/").replace(/\.html$/i, "");
+  p = p.replace(/\/+$/, "");
+  if (!p) p = "/";
+
+  if (!p.startsWith("/")) p = "/" + p;
+  return p;
+}
+
+function catCategoryHasActiveItem(items, currentNorm){
+  if (!Array.isArray(items) || !items.length) return false;
+
+  for (const it of items){
+    const u = catNormalizePathForMatch(it?.url);
+    if (u && u === currentNorm) return true;
+
+    const ch = it?.children;
+    if (Array.isArray(ch)){
+      for (const c of ch){
+        const cu = catNormalizePathForMatch(c?.url);
+        if (cu && cu === currentNorm) return true;
+      }
+    }
+  }
+  return false;
+}
+
+function upsertCategoryImportOffline(html, urlPath, lang, nl, builder, contents, allTranslations){
+  if (!html || !builder) return html;
+
+  const translationsForLang = allTranslations?.[lang] || null;
+
+  let out = html;
+  const masked = maskSegments(out);
+
+  const selectors = findAllDivByClass(masked, "category-selector");
+
+  // 1) Если category-selector уже есть — заменяем целиком на ожидаемый (идемпотентно)
+  if (selectors.length){
+    let shift = 0;
+
+    for (const s of selectors){
+      const absOpen  = s.openStart + shift;
+      const absClose = s.closeEnd   + shift;
+
+      // ✅ ВАЖНО: берём начало строки, чтобы удалить старые пробелы/табы перед <div>
+      const ls = out.lastIndexOf(nl, absOpen - 1);
+      const lineStart = (ls === -1) ? 0 : (ls + nl.length);
+
+      // отступ строки (то, что было перед "<div")
+      const indent = (out.slice(lineStart, absOpen).match(/^[\t ]*/)?.[0]) ?? "";
+
+      const expected = catBuildCategorySelectorHtml(
+        builder,
+        contents,
+        lang,
+        translationsForLang,
+        urlPath,
+        indent,
+        nl
+      );
+      if (!expected) continue;
+
+      const current = out.slice(lineStart, absClose);
+      if (collapseWS(current) === collapseWS(expected)) continue;
+
+      out = out.slice(0, lineStart) + expected + out.slice(absClose);
+      shift += expected.length - (absClose - lineStart);
+    }
+
+    return out;
+  }
+
+  // 2) Если нет — можно автогенерировать (чтобы “всё-всё” делал оффлайн)
+  //    Вставляем перед первым .boxes-holder (или внутрь .sitepage если boxes-holder нет)
+  if (!catShouldAutoInsert(urlPath, builder)) return out;
+
+  const m2 = maskSegments(out);
+  const holders = findAllDivByClass(m2, "boxes-holder");
+  const sitepage = findFirstByClass(m2, "sitepage");
+
+  let insertPos = -1;
+  if (holders.length) insertPos = holders[0].openStart;
+  else if (sitepage) insertPos = sitepage.openEnd;
+  else return out;
+
+  const indent = indentBefore(out, insertPos, nl);
+  const expected = catBuildCategorySelectorHtml(builder, contents, lang, translationsForLang, urlPath, indent, nl);
+  if (!expected) return out;
+
+  const before = out.slice(0, insertPos);
+  const after  = out.slice(insertPos);
+  return joinBlocksNoBlank(before, expected, after, nl);
 }
 
 /* --------- RENDER: main-mode для листингов --------- */

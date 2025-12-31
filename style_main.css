@@ -4309,11 +4309,11 @@ nav img {
     font-weight: 500;
 }
 
-.category-selector#notexist {
+.category-selector.notexist {
     overflow-y: unset !important;
 }
 
-#notexist {
+.notexist {
     max-width: 82.5%;
     overflow: unset;
     position: relative;
@@ -4328,12 +4328,12 @@ nav img {
     height: 800px !important;
 }
 
-#notexist::-webkit-scrollbar,
+.notexist::-webkit-scrollbar,
 .topic-nav-menu::-webkit-scrollbar {
     width: 0;
 }
 
-#notexist .category-box {
+.notexist .category-box {
     margin: 8px 8px;
 }
 
@@ -10552,19 +10552,6 @@ div#results {
     background-repeat: no-repeat;
 }
 
-.category-box-content span {
-    opacity: 0;
-}
-
-:lang(en) .category-box-content span {
-    opacity: 1;
-}
-
-.category-box-content span.translated,
-.category-selector#notexist .category-box-content span {
-    opacity: 1;
-}
-
 .copied-title {
     position: absolute;
     bottom: 34px;
@@ -12962,7 +12949,7 @@ header {
     #FAQ,
     .pages,
     .category-selector,
-    #notexist,
+    .notexist,
     .box {
         transform: translateZ(0);
     }
@@ -13520,7 +13507,7 @@ header {
         margin: 8px 4px 0 0 !important;
     }
 
-    #notexist .category-box {
+    .notexist .category-box {
         margin: 8px 4px 0 4px !important;
     }
 
@@ -14041,7 +14028,7 @@ header {
         z-index: 1000;
     }
 
-    #notexist.current {
+    .notexist.current {
         background-color: unset;
         max-height: 100%;
     }
@@ -14051,7 +14038,7 @@ header {
         position: static;
     }
 
-    .category-selector#notexist .category {
+    .category-selector.notexist .category {
         flex-grow: unset;
     }
 
@@ -14081,7 +14068,7 @@ header {
         width: 90%;
     }
 
-    #notexist .category .submenu {
+    .notexist .category .submenu {
         transform: translateX(-50%);
     }
 
@@ -14179,8 +14166,8 @@ header {
         background: linear-gradient(15deg, rgba(255, 255, 255, .6) 30%, rgba(0, 0, 0, 0) 100%);
     }
 
-    #notexist ul li:hover .submenu,
-    #notexist.current .category .submenu {
+    .notexist ul li:hover .submenu,
+    .notexist.current .category .submenu {
         position: absolute;
         left: 50%;
         margin-top: 20px !important;
@@ -14219,7 +14206,7 @@ header {
         margin-right: 2px;
     }
 
-    #notexist .submenu {
+    .notexist .submenu {
         top: 150px;
     }
 
@@ -15387,7 +15374,7 @@ header {
         background: unset;
     }
 
-    #notexist {
+    .notexist {
         max-width: 90%;
     }
 
