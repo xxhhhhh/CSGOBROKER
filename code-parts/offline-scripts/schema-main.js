@@ -9,14 +9,41 @@ const { execSync } = require('child_process');
 const HTML_BASE_DIR = path.resolve('.');
 const languageDirs = ['.', 'ru', 'tr', 'es', 'pt', 'hi'];
 const EXCLUDE_DIRS = ['code-parts', 'img', 'fonts', 'sitemaps_me'];
+const YOAST_RE = /<script\b(?=[^>]*\btype=["']application\/ld\+json["'])(?=[^>]*\bclass=["'][^"']*\byoast-schema-graph\b[^"']*["'])[^>]*>([\s\S]*?)<\/script>/i;
+const YOAST_RE_G = new RegExp(YOAST_RE.source, 'ig'); 
 
 // ---------- helpers ----------
 function extractMeta(html, key) {
-  const regex = new RegExp(`<meta\\s+[^>]*\\b(?:name|property)=["']${key}["'][^>]*>`, 'i');
-  const match = html.match(regex);
-  if (!match) return null;
-  const contentMatch = match[0].match(/\bcontent=(["'])(.*?)\1/i);
-  return contentMatch ? contentMatch[2] : null;
+  const k = String(key).toLowerCase();
+  const metas = html.match(/<meta\b[^>]*>/ig) || [];
+  let fallback = null;
+
+  for (const tag of metas) {
+    const attrs = {};
+    tag.replace(
+      /([^\s=]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+))/g,
+      (_, n, v1, v2, v3) => {
+        attrs[n.toLowerCase()] = (v1 ?? v2 ?? v3 ?? '');
+        return '';
+      }
+    );
+
+    const id = (attrs.name || attrs.property || attrs.itemprop || '').toLowerCase();
+    if (id !== k) continue;
+
+    const content = (attrs.content ?? '').toString();
+    if (content.trim()) return content;  // первый НЕпустой
+    fallback = content;                  // запомним пустой, если других нет
+  }
+
+  return fallback;
+}
+
+
+function extractTitle(html) {
+  const m = html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i);
+  if (!m) return '';
+  return m[1].replace(/\s+/g, ' ').trim();
 }
 
 function detectLanguageFromContent(html) {
@@ -152,19 +179,21 @@ function detectHeadEol(html) {
 }
 
 function parseYoastBlock(html) {
-  const m = html.match(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*class=["']yoast-schema-graph["'][^>]*>([\s\S]*?)<\/script>/i);
+  const m = html.match(YOAST_RE);
   if (!m) return { matchHtml: null, jsonRaw: '', jsonObj: null, contentHash: null };
 
-  const openTag = (m[0].match(/<script\b[^>]*>/i) || [''])[0];
+  const matchHtml = m[0];
+  const openTag = (matchHtml.match(/<script\b[^>]*>/i) || [''])[0];
   const contentHash = (openTag.match(/\bdata-content-hash=(["'])(.*?)\1/i) || [])[2] || null;
 
   const raw = (m[1] || '').trim();
   try {
-    return { matchHtml: m[0], jsonRaw: raw, jsonObj: JSON.parse(raw), contentHash };
+    return { matchHtml, jsonRaw: raw, jsonObj: JSON.parse(raw), contentHash };
   } catch {
-    return { matchHtml: m[0], jsonRaw: raw, jsonObj: null, contentHash };
+    return { matchHtml, jsonRaw: raw, jsonObj: null, contentHash };
   }
 }
+
 
 
 function deepClone(x) { return JSON.parse(JSON.stringify(x)); }
@@ -210,12 +239,29 @@ function stripTagsToText(html) {
 function computeMeaningfulHash(html) {
   // Технические правки в <head> (favicon/аналитика/скрипты) не должны менять dateModified/lastmod.
   // Поэтому хэшируем «значимое»: title + meta description/robots + текст body.
-  const title = (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '';
-  const desc = extractMeta(html, 'description') || '';
+  const title = extractTitle(html);
+  const ogTitle = extractMeta(html, 'og:title') || '';
+  const twTitle = extractMeta(html, 'twitter:title') || '';
+  const ogAlt  = extractMeta(html, 'og:image:alt') || '';
+  const desc =
+    (extractMeta(html, 'description') ||
+    extractMeta(html, 'og:description') ||
+    extractMeta(html, 'twitter:description') ||
+    '');
+  const ogdesc = extractMeta(html, 'description') || '';
   const robots = extractMeta(html, 'robots') || '';
   const body = (html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i) || [])[1] || html;
   const bodyText = stripTagsToText(body);
-  const payload = JSON.stringify({ title: title.trim(), desc: desc.trim(), robots: robots.trim(), bodyText });
+  const payload = JSON.stringify({
+    title: title.trim(),
+    ogTitle: ogTitle.trim(),
+    twTitle: twTitle.trim(),
+    ogAlt: ogAlt.trim(),
+    desc: desc.trim(),
+    ogdesc: ogdesc.trim(),
+    robots: robots.trim(),
+    bodyText
+  });
   return crypto.createHash('sha1').update(payload).digest('hex');
 }
 
@@ -228,12 +274,17 @@ function injectSchema(filePath) {
   const gitISO = getGitCommitTimeISO(filePath);
 
   const eol = detectHeadEol(html);
-  const name = html.match(/<title>(.*?)<\/title>/i)?.[1]?.trim() || '';
-  const description = extractMeta(html, 'description');
+  const description =
+    (extractMeta(html, 'description') ||
+    extractMeta(html, 'og:description') ||
+    extractMeta(html, 'twitter:description') ||
+    '').trim();
+  const imageAlt = extractMeta(html, 'og:image:alt');
+  const name = (extractMeta(html, 'og:title') || extractTitle(html)).trim();
+  const imageCaption = (extractMeta(html, 'og:image:alt') || name).trim();
   const image = extractMeta(html, 'og:image');
   const imageWidth = extractMeta(html, 'og:image:width');
   const imageHeight = extractMeta(html, 'og:image:height');
-  const imageAlt = extractMeta(html, 'og:image:alt');
   const langFull = detectLanguageFromContent(html);
   const langCode = langFull.split('-')[0];
   const datePublished = getPublishedDate(filePath);
@@ -293,7 +344,7 @@ function injectSchema(filePath) {
         "contentUrl": image,
         "width": parseInt(imageWidth) || 0,
         "height": parseInt(imageHeight) || 0,
-        "caption": imageAlt
+        "caption": imageCaption
       },
       {
         "@type": "BreadcrumbList",
@@ -344,11 +395,7 @@ function injectSchema(filePath) {
     full['@graph'][0]['dateModified'] = gitISO;
 
     const updatedJson = JSON.stringify(full, null, 2).replace(/\n/g, eol);
-    const newBlock =
-      `<script type="application/ld+json" class="yoast-schema-graph" data-content-hash="${meaningfulHash}">${eol}` +
-      `${updatedJson}${eol}</script>`;
 
-    html = html.replace(/(\s*)<\/head>/i, `${eol}${newBlock}${eol}$1</head>`);
     fs.writeFileSync(filePath, html, 'utf-8');
     fs.utimesSync(filePath, atime, mtime);
     return;
