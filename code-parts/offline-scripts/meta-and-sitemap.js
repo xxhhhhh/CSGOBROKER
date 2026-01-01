@@ -235,16 +235,16 @@ function upsertCoreSeoHeadTags(html, canonicalHref, lang) {
 
   // вставляем canonical
   lines.splice(baseInsertIdx, 0, `${indentSeo}<link rel="canonical" href="${canonicalHref}">`);
-  const canonicalLineIdx = baseInsertIdx;
-
+  
   // вставляем googlebot — сразу после <meta name="robots"> если он есть, иначе после canonical
-  const robotsIdx = findFirstIndex(lines, /^\s*<meta\b[^>]*\bname\s*=\s*["']?\s*robots\b/i);
-  const gbInsertIdx = (robotsIdx !== -1) ? (robotsIdx + 1) : (canonicalLineIdx + 1);
-  const indentGb = (gbInsertIdx >= 0 && gbInsertIdx < lines.length)
-    ? getLineIndent(lines[gbInsertIdx], indentSeo)
-    : indentSeo;
+  // const canonicalLineIdx = baseInsertIdx;
+  // const robotsIdx = findFirstIndex(lines, /^\s*<meta\b[^>]*\bname\s*=\s*["']?\s*robots\b/i);
+  // const gbInsertIdx = (robotsIdx !== -1) ? (robotsIdx + 1) : (canonicalLineIdx + 1);
+  // const indentGb = (gbInsertIdx >= 0 && gbInsertIdx < lines.length)
+  //   ? getLineIndent(lines[gbInsertIdx], indentSeo)
+  //   : indentSeo;
 
-  lines.splice(gbInsertIdx, 0, `${indentGb}<meta name="googlebot" content="noindex, nofollow">`);
+  // lines.splice(gbInsertIdx, 0, `${indentGb}<meta name="googlebot" content="noindex, nofollow">`);
 
   // 3) OG-блок: og:url + og:locale рядом с остальными OG (после og:type, либо перед первым og:*)
   const ogTypeIdx = findFirstIndex(lines, /^\s*<meta\b[^>]*\bproperty\s*=\s*["']og:type["'][^>]*\/?>\s*$/i);
