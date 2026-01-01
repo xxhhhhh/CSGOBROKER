@@ -5,9 +5,15 @@ const fs = require('fs/promises');
 const fssync = require('fs');
 const path = require('path');
 const crypto = require('crypto');
-const TRANSFORM_VERSION = '2025-12-23-v3-googlebot-to-yandex';
+const TRANSFORM_VERSION = '2026-01-01-v4-optional-googlebot-noindex-insert';
 
 const SCRIPT_DIR = __dirname;
+
+// --- Optional HTML injections ----------------------------------------------
+// 0 = OFF (default), 1 = ON
+const ENABLE_INSERT_GOOGLEBOT_NOINDEX = 0;
+// Will be injected right after <meta name="robots" ...>
+const GOOGLEBOT_NOINDEX_META_LINE = '<meta name="googlebot" content="noindex">';
 
 // default:
 // C:\Users\xh\Documents\GitHub\CSGOBROKER\code-parts\offline-scripts\sync-to-brokerco.js
@@ -146,11 +152,23 @@ function stripYandexMetrica(content) {
   return content.replace(metricaScriptRe, '').replace(metricaNoScriptRe, '');
 }
 
-function rewriteGooglebotMetaToYandex(content) {
-  return content.replace(
-    /(<meta\b[^>]*\bname\s*=\s*)(["']?)googlebot\2/gi,
-    '$1$2yandex$2'
-  );
+function maybeInsertGooglebotNoindexAfterRobots(content) {
+  if (!ENABLE_INSERT_GOOGLEBOT_NOINDEX) return content;
+
+  // If already present, do nothing
+  if (/<meta\b[^>]*\bname\s*=\s*(["']?)googlebot\1\b/i.test(content)) return content;
+
+  // Insert right after the first <meta name="robots" ...>
+  const robotsMetaRe =
+    /(^[ \t]*<meta\b[^>]*\bname\s*=\s*(["']?)robots\2[^>]*>\s*)(\r?\n)?/im;
+
+  if (!robotsMetaRe.test(content)) return content;
+
+  return content.replace(robotsMetaRe, (m, robotsLine, _q, nl) => {
+    const newline = nl || '\n';
+    const indent = (robotsLine.match(/^[ \t]*/) || [''])[0];
+    return `${robotsLine}${newline}${indent}${GOOGLEBOT_NOINDEX_META_LINE}${newline}`;
+  });
 }
 
 function rewriteDomainAndTokensEverywhere(content, relPosix) {
@@ -161,13 +179,12 @@ function rewriteDomainAndTokensEverywhere(content, relPosix) {
 
   const ext = path.extname(relPosix).toLowerCase();
   if (ext === '.html' || ext === '.htm' || ext === '.php') {
-    content = rewriteGooglebotMetaToYandex(content);
+    content = maybeInsertGooglebotNoindexAfterRobots(content);
     content = stripYandexMetrica(content);
   }
 
   return content;
 }
-
 
 function transformSeoRewriteJs(content) {
   // Make it "co-only" and remove any .cc-specific behavior safely.
@@ -323,6 +340,7 @@ async function syncOneFile(absSrc, relPosix, absDest, manifest) {
   const newDestStat = await fs.stat(absDest);
 
   manifest.files[relPosix] = {
+    transformVersion: TRANSFORM_VERSION,
     srcMtimeMs: srcStat.mtimeMs,
     srcSize: srcStat.size,
     outHash,
@@ -452,6 +470,8 @@ const counts = { total: 0, written: 0, skipped: 0 };
     toDomain: TO_DOMAIN,
     cfTokenCc: CF_TOKEN_CC,
     cfTokenCo: CF_TOKEN_CO,
+    enableInsertGooglebotNoindex: ENABLE_INSERT_GOOGLEBOT_NOINDEX,
+    googlebotNoindexMetaLine: GOOGLEBOT_NOINDEX_META_LINE,
     excludedRootDirs: Array.from(EXCLUDED_ROOT_DIRS),
     excludeGit,
     mirror: !!args.mirror,

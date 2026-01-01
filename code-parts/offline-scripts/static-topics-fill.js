@@ -119,9 +119,10 @@ function rstripBlankLinesToOne(s, nl){
 }
 function joinBlocksNoBlank(before, block, after, nl){
   const left  = rstripBlankLinesToOne(before, nl);
-  const right = after.replace(/^[ \t]*\r?\n/g, "");
+  const right = after.replace(/^(?:[ \t]*\r?\n)+/, "");
   return left + block + nl + right;
 }
+
 function escapeHtml(s=""){ // текст внутри <div> — НЕ кодируем &
   return String(s).replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 }
@@ -492,10 +493,17 @@ async function processTopicFilters({root, file, html, verbose}){
       parts.push(out.slice(cursor, closeAbs));
       innerBefore = parts.join("");
     }
-    const rest = innerBefore.replace(/^[ \t]*\r?\n+/,"");
+    // убираем ВСЕ пустые строки (включая "пробелы + \n") в начале контента
+    const rest = innerBefore.replace(/^(?:[ \t]*\r?\n)+/, "");
+
     const filterHtml = renderTopicFilterHtml({ nav, indent: innerIndent, nl, urlPath, isRu });
-    const newInner = filterHtml + (rest.startsWith(nl) ? rest : (rest ? nl + rest : ""));
+
+    // Всегда ровно ОДНА пустая граница между фильтром и остальным контентом
+    const newInner = rest ? (filterHtml + nl + rest) : filterHtml;
+
+    // Ровно один перевод строки сразу после открывающего тега holder'а
     const next = out.slice(0, openEnd) + nl + newInner + out.slice(closeAbs);
+
     if (collapseWS(next) !== collapseWS(out)){
       if (verbose) console.log(`[OK] ${path.relative(root,file)} :: topic-filter fixed/inserted`);
       changed = true; shift += next.length - out.length; out = next;
