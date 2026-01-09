@@ -6783,7 +6783,7 @@ footer .centralizer .footer-content {
 
 .copyright img {
     height: auto;
-    width: 130px;
+    width: auto;
     transition: all .15s ease-in-out;
     opacity: .25;
     filter: grayscale(1) brightness(5);
@@ -13735,6 +13735,7 @@ header {
     .topic-boxes-holder {
         max-width: 98%;
         min-height: 400px;
+        max-height: unset;
         width: 100%;
     }
 
