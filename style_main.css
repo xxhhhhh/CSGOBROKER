@@ -4313,7 +4313,7 @@ nav img {
     overflow-y: unset !important;
 }
 
-.notexist {
+.category-selector.notexist {
     max-width: 82.5%;
     overflow: unset;
     position: relative;
@@ -4328,12 +4328,12 @@ nav img {
     height: 800px !important;
 }
 
-.notexist::-webkit-scrollbar,
+.category-selector.notexist::-webkit-scrollbar,
 .topic-nav-menu::-webkit-scrollbar {
     width: 0;
 }
 
-.notexist .category-box {
+.category-selector.notexist .category-box {
     margin: 8px 8px;
 }
 
