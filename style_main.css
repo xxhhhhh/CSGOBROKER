@@ -6771,6 +6771,7 @@ footer .centralizer .footer-content {
 
 .copyright #logo {
     justify-content: flex-start;
+    position: relative;
 }
 
 .copyright #logo:hover {
@@ -6783,7 +6784,7 @@ footer .centralizer .footer-content {
 
 .copyright img {
     height: auto;
-    width: auto;
+    width: 100%;
     transition: all .15s ease-in-out;
     opacity: .25;
     filter: grayscale(1) brightness(5);
