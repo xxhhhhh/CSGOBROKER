@@ -209,7 +209,7 @@ button {
 }
 
 nav .logospace {
-    height: auto;
+    height: 25.28px;
     display: flex;
     align-items: center;
 }
@@ -332,7 +332,7 @@ nav .pages {
     right: 4px;
     top: 4px;
     bottom: 4px;
-    background: linear-gradient(-45deg, var(--darkgray) 50%, var(--main-theme) 100%);
+    background: linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%);
     opacity: .8;
     border-radius: var(--main-border);
 }
@@ -902,7 +902,7 @@ nav .pages {
     transform: translateX(-50%);
     background: rgba(13, 13, 13, .9);
     border-radius: var(--main-border);
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .3);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .2);
     top: 120px;
 }
 
@@ -1188,7 +1188,7 @@ nav .pages {
     position: relative;
     top: 10%;
     background: rgba(13, 13, 13, .95);
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .3);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .2);
     border-radius: var(--main-border);
     height: fit-content;
     width: 800px;
@@ -2076,7 +2076,8 @@ nav .pages {
     transition: all .2s ease-in-out;
     width: 16%;
     flex-grow: 1;
-    max-width: 201px;
+    min-width: 200px;
+    aspect-ratio: 1 / 1;
     padding-left: unset;
 }
 
@@ -2165,7 +2166,7 @@ nav .pages {
 }
 
 .box-skins::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, .2);
 }
 
 .topic-centralizer {
@@ -2966,7 +2967,7 @@ h3 {
     width: 25px;
     height: 25px;
     border-radius: var(--main-border);
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .3);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
     filter: drop-shadow(0 1px 1px rgb(3 3 3)) blur(0);
     border: 1px solid rgba(255, 255, 255, .15);
     margin-left: 10px;
@@ -4408,7 +4409,7 @@ nav img {
 .sitepage.items .box-skins {
     justify-content: flex-start;
     flex-direction: column;
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, .15);
 }
 
 .sitepage.items .box-skins.solo .box-skins-list {
@@ -4432,7 +4433,7 @@ nav img {
     height: 100px;
     border-radius: var(--main-border) var(--main-border) 0 0;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
-    background-color: rgb(10 10 10);
+    background: var(--darkgray);
     transition: all .15s ease-in-out;
     margin: 0 !important;
     overflow: hidden;
@@ -4722,7 +4723,7 @@ nav img {
     right: 4px;
     top: 4px;
     bottom: 4px;
-    background: linear-gradient(-45deg, var(--darkgray) 50%, var(--main-theme) 100%);
+    background: linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%);
     opacity: .8;
     border-radius: var(--main-border);
 }
@@ -8884,7 +8885,7 @@ a[data-title]:after,
     font-size: 15px !important;
     border: solid 2px rgba(255, 255, 255, 0.4) !important;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, .2);
     z-index: 2;
     cursor: pointer;
     box-shadow: 0 0 10px 0 rgba(.3, .3, .3, .6);
@@ -9806,7 +9807,7 @@ div#results {
     padding: 8px 0;
     margin-top: 41px;
     opacity: 1;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .3);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .2);
 }
 
 #color-list li {
@@ -9827,7 +9828,7 @@ div#results {
     height: 100%;
     border-radius: 7px;
     transition: all .15s ease-in-out;
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .3);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
     filter: drop-shadow(0 1px 1px rgb(3 3 3)) blur(0);
     border: 1px solid rgba(255, 255, 255, .15);
 }
@@ -10873,7 +10874,7 @@ header {
     transition: all .15s ease-in-out;
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, .2);
     z-index: 1;
 }
 
@@ -15299,7 +15300,7 @@ header {
     .box-skins.solo .box-skins-list .skin {
         height: 170px;
         width: 31.5% !important;
-        min-width: 120px;
+        min-width: 120px !important;
     }
 
     .box-skins.selected .box-skins-list .skin {
@@ -15990,7 +15991,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, .2);
     border-radius: var(--main-border);
     margin-bottom: 8px;
 }
