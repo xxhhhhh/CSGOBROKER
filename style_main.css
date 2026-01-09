@@ -21,7 +21,7 @@
     --defbuttonbg_hover: linear-gradient(180deg, rgb(27 27 27) 0%, rgb(24 24 24) 100%);
     --icongradient: linear-gradient(-45deg, var(--darkgray), var(--main-theme));
     --icongradient2: linear-gradient(-45deg, var(--darkgray), var(--darkygray));
-    --centralized: 66.528%;
+    --centralized: 1272px; /* 66.528% */
 
     --main-border: 24px;
     --minor-border: 16px;
@@ -123,6 +123,7 @@ header {
     height: 68px;
     z-index: 10001;
     width: 65.6%;
+    max-width: var(--centralized);
     left: 50%;
     transform: translateX(-50%);
     transition: none;
@@ -148,6 +149,11 @@ header {
 
 .nondef header {
     width: 81.8%;
+    max-width: 2000px;
+}
+
+.nondef.review header {
+    max-width: 1340px;
 }
 
 .review header,
@@ -7150,7 +7156,7 @@ footer .centralizer .footer-content {
     height: auto;
     position: fixed;
     transition: opacity .15s ease-in-out;
-    left: 261px;
+    left: max(6px, calc((100vw - var(--centralized)) / 2 - 60px));
     top: 174px;
     z-index: 2;
 }
@@ -11558,7 +11564,7 @@ header {
 
 .payments-block {
     position: fixed;
-    left: calc(100vw - 319px);
+    left: calc((100vw - var(--centralized)) / 2 + var(--centralized) + 2px);
     top: 174px;
     width: 50px;
     height: 50px;
@@ -12578,15 +12584,6 @@ header {
 
   .nondef:has(.blog) header {
     width: max(71.8vw, min(90vw, 1379px)); /* 71.8% of 1920 ≈ 1379px */
-  }
-
-  /* left vertical icons: tie to centered area instead of hard-coded 261px */
-  .mods-box {
-    left: max(6px, calc((100vw - var(--centralized)) / 2 - 60px));
-  }
-
-  .boxes-holder .payments-block  {
-    left: calc((100vw - var(--centralized)) / 2 + var(--centralized) + 2px);
   }
 }
 
