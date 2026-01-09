@@ -10853,7 +10853,7 @@ header {
     min-width: unset;
     /* background: radial-gradient(75% 50% at 50% 0%, var(--main-theme), rgb(13 13 13) 100%); */
     /* background: var(--icongradient2); */
-    background: linear-gradient(-45deg, transparent, var(--main-theme));
+    background: linear-gradient(-45deg, transparent, var(--darkygray));
 }
 
 .main-page .box:hover {
