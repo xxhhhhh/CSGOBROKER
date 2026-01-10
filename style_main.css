@@ -14625,6 +14625,7 @@ header {
 
     .category-selector {
         top: 82px;
+        min-width: unset;
     }
 
     .category-selector.current {
@@ -15733,7 +15734,6 @@ header {
     }
 
     .category-selector {
-        min-width: unset !important;
         justify-content: flex-start;
     }
 
