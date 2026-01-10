@@ -3406,7 +3406,7 @@ h3 {
 .ssiodox:not(:has(.boxreview)) .criteria-descriptions {
     display: block;
     column-count: 2;
-    width: 60%;
+    width: var(--centralized);
     margin: 0 auto;
     margin-top: 18px;
     
@@ -4324,7 +4324,7 @@ nav img {
 }
 
 .category-selector.notexist {
-    max-width: 82.5%;
+    max-width: var(--centralized);
     overflow: unset;
     position: relative;
     left: unset;
@@ -6218,8 +6218,7 @@ nav img:active,
     width: calc(100% - 18px);
     margin-bottom: 9px;
     border-radius: var(--main-border);
-    background: var(--main-theme);
-    background: linear-gradient(-45deg, var(--darkygray), var(--main-theme));
+    background: linear-gradient(-45deg, var(--darkgray), var(--darkygray));
     bottom: 0;
     z-index: 2;
     display: flex;
@@ -6693,7 +6692,7 @@ footer {
 }
 
 footer .centralizer {
-    width: 65%;
+    width: var(--centralized);
     margin: 0 auto;
     padding-bottom: 30px;
 }
