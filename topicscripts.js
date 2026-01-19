@@ -120,9 +120,48 @@ $(document).ready(function () {
     }
     addMoreCraftsLink();
 
-    // ---------- Рекомендации (оставляем) ----------
-    const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
-    function insertRandomRecBox() {
+const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
+
+(function () {
+  // --- Storage safe wrappers (не даём скрипту падать) ---
+  const SafeStorage = {
+    getWithExpiry(key) {
+      try {
+        return typeof StorageHelper !== "undefined" && StorageHelper.getWithExpiry
+          ? StorageHelper.getWithExpiry(key)
+          : null;
+      } catch {
+        return null;
+      }
+    },
+    setWithExpiry(key, value, ttl) {
+      try {
+        if (typeof StorageHelper !== "undefined" && StorageHelper.setWithExpiry) {
+          StorageHelper.setWithExpiry(key, value, ttl);
+        }
+      } catch {
+        /* ignore */
+      }
+    }
+  };
+
+  function runAfterDomReady(fn) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", fn, { once: true });
+    } else {
+      fn();
+    }
+  }
+
+  function startFadeIn(el) {
+    // Двойной rAF: гарантирует separate paint между вставкой и добавлением класса
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => el.classList.add("active"));
+    });
+  }
+
+  function insertRandomRecBox() {
+    try {
       if (location.href.endsWith("sticker-crafts") || location.href.endsWith("sticker-crafts.html")) return;
 
       const lang = typeof languageTag !== "undefined" ? languageTag : "en";
@@ -149,6 +188,8 @@ $(document).ready(function () {
         const useWrapper = isMobile && !!topicPage;
         const wrapper = useWrapper ? document.createElement("div") : null;
         if (wrapper) wrapper.className = "rec-boxes";
+
+        const createdBoxes = [];
 
         for (let i = 0; i < recCount; i++) {
           available = available.filter((box) => !usedIds.has(box.id));
@@ -193,10 +234,8 @@ $(document).ready(function () {
           const reviewBtn = recBox.querySelector(".review-button:not(.visit)");
           const visitBtn = recBox.querySelector(".review-button.visit");
 
-          const reviewLabel =
-            lang === "ru" ? `Читать обзор ${box.site}` : `Read review ${box.site}`;
-          const visitLabel =
-            lang === "ru" ? `Перейти на ${box.site}` : `Visit ${box.site}`;
+          const reviewLabel = lang === "ru" ? `Читать обзор ${box.site}` : `Read review ${box.site}`;
+          const visitLabel = lang === "ru" ? `Перейти на ${box.site}` : `Visit ${box.site}`;
 
           if (reviewBtn) reviewBtn.setAttribute("aria-label", reviewLabel);
           if (visitBtn) visitBtn.setAttribute("aria-label", visitLabel);
@@ -205,35 +244,44 @@ $(document).ready(function () {
             wrapper.appendChild(recBox);
           } else if (insertAfterElement && insertAfterElement.parentNode) {
             insertAfterElement.parentNode.insertBefore(recBox, insertAfterElement.nextSibling);
-            setTimeout(() => recBox.classList.add("active"), 20);
+            createdBoxes.push(recBox);
           }
         }
 
         if (useWrapper && wrapper && wrapper.children.length > 0 && topicPage) {
           topicPage.appendChild(wrapper);
-          setTimeout(() => {
-            wrapper.querySelectorAll(".rec-box").forEach((el) => el.classList.add("active"));
-          }, 20);
+          wrapper.querySelectorAll(".rec-box").forEach((el) => createdBoxes.push(el));
         }
+
+        // Гарантированный старт анимации после вставки в DOM
+        createdBoxes.forEach(startFadeIn);
       };
 
-      const cached = StorageHelper.getWithExpiry(cacheKey);
+      const cached = SafeStorage.getWithExpiry(cacheKey);
       if (cached) {
         applyRecBoxes(cached);
       } else {
-        fetch(REC_JSON_PATH)
-          .then((res) => res.json())
+        fetch(REC_JSON_PATH, { cache: "force-cache" })
+          .then((res) => {
+            if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
+            return res.json();
+          })
           .then((json) => {
-            StorageHelper.setWithExpiry(cacheKey, json, cacheDuration);
+            SafeStorage.setWithExpiry(cacheKey, json, cacheDuration);
             applyRecBoxes(json);
           })
-          .catch(console.error);
+          .catch((err) => {
+            console.error("insertRandomRecBox error:", err);
+          });
       }
+    } catch (err) {
+      console.error("insertRandomRecBox fatal error:", err);
     }
-    insertRandomRecBox();
+  }
 
-// path: /public/js/skin-prices.js
-// Drop-in замена: безопасный fetch из Cloudflare Worker + кэш
+  runAfterDomReady(insertRandomRecBox);
+})();
+
 
 (() => {
   "use strict";

@@ -2207,6 +2207,7 @@ if (typeof window.initPayments === "function") {
 (() => {
   const PARTICLE_COUNT = 45;
   const FRAME_INTERVAL = 1900 / 60;
+
   const BACKGROUNDS = [
     "url(/img/icons/main-modes/rust-logo.png)",
     "url(/img/icons/main-modes/cs2-logo.png)",
@@ -2215,16 +2216,58 @@ if (typeof window.initPayments === "function") {
     "url(/img/icons/main-modes/steam.png)"
   ];
 
+  // --- Safe storage wrappers ---
+  const SafeStorage = {
+    get(key) {
+      try {
+        return typeof StorageHelper !== "undefined" && StorageHelper.get ? StorageHelper.get(key) : null;
+      } catch {
+        return null;
+      }
+    },
+    set(key, value) {
+      try {
+        if (typeof StorageHelper !== "undefined" && StorageHelper.set) StorageHelper.set(key, value);
+      } catch {
+        /* ignore */
+      }
+    }
+  };
+
+  const reduceMotionQuery = matchMedia("(prefers-reduced-motion: reduce)");
+  const desktopQuery = matchMedia("(min-width: 1366px)");
+
   let particleflakes = [];
   let previousTime = performance.now();
   let resetPosition = false;
   let enableAnimations = false;
 
-  const reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
-  let particles = StorageHelper.get("particles") !== "false";
-  StorageHelper.set("particles", particles);
+  let particles = SafeStorage.get("particles");
+  if (particles === null) particles = true;
+  particles = particles !== "false";
+  SafeStorage.set("particles", particles);
 
-  const particleflakeContainer = document.querySelector("#particleflakeContainer");
+  function runAfterDomReady(fn) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", fn, { once: true });
+    } else {
+      fn();
+    }
+  }
+
+  function onMediaQueryChange(mq, handler) {
+    // Safari legacy fallback
+    if (mq.addEventListener) mq.addEventListener("change", handler);
+    else if (mq.addListener) mq.addListener(handler);
+  }
+
+  function setAccessibilityState() {
+    enableAnimations = particles && !reduceMotionQuery.matches;
+  }
+
+  function getRandomPosition(offset, size) {
+    return Math.round(-offset + Math.random() * (size + offset * 2));
+  }
 
   class Particleflake {
     constructor(element, speed, xPos, yPos) {
@@ -2253,44 +2296,44 @@ if (typeof window.initPayments === "function") {
     }
   }
 
-  function init() {
-    updateToggleIcon();
-    setAccessibilityState();
-    reduceMotionQuery.addListener(setAccessibilityState);
+  function updateToggleIcon(toggleEl) {
+    const icon = toggleEl.querySelector(".officon");
+    if (!icon) return;
+    icon.classList.toggle("effect-on", particles);
+    icon.classList.toggle("effect-off", !particles);
+  }
 
-    document.querySelector("#particles-toggle").addEventListener("click", toggleParticles);
-
-    if (enableAnimations && window.innerWidth > 1365) {
-      window.addEventListener("DOMContentLoaded", generateParticleflakes);
-      window.addEventListener("resize", handleResize);
+  function ensureTemplate(container) {
+    // Нужен "шаблон" для клонирования. Если его нет — создадим.
+    let template = container.querySelector(".particleflake");
+    if (!template) {
+      template = document.createElement("div");
+      template.className = "particleflake";
+      container.appendChild(template);
     }
+    return template;
   }
 
-  function setAccessibilityState() {
-    enableAnimations = !reduceMotionQuery.matches && particles;
+  function clearParticles() {
+    particleflakes.forEach(p => p.element.remove());
+    particleflakes = [];
   }
 
-  function getRandomPosition(offset, size) {
-    return Math.round(-offset + Math.random() * (size + offset * 2));
-  }
-
-  function generateParticleflakes() {
-    const template = document.querySelector(".particleflake");
-    if (!template) return;
+  function generateParticleflakes(container) {
+    const template = ensureTemplate(container);
 
     const width = document.documentElement.clientWidth;
     const height = document.documentElement.clientHeight;
 
-    particleflakeContainer.style.display = "block";
+    container.style.display = "block";
 
-    // Remove existing
-    particleflakes.forEach(p => p.element.remove());
-    particleflakes = [];
+    // Remove existing clones
+    clearParticles();
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       const clone = template.cloneNode(true);
       clone.style.backgroundImage = BACKGROUNDS[Math.floor(Math.random() * BACKGROUNDS.length)];
-      particleflakeContainer.appendChild(clone);
+      container.appendChild(clone);
 
       const x = getRandomPosition(50, width);
       const y = getRandomPosition(50, height);
@@ -2299,7 +2342,10 @@ if (typeof window.initPayments === "function") {
       particleflakes.push(new Particleflake(clone, speed, x, y));
     }
 
+    // Удаляем template, чтобы не оставался лишним элементом (как у вас)
     template.remove();
+
+    previousTime = performance.now();
     requestAnimationFrame(animate);
   }
 
@@ -2326,46 +2372,70 @@ if (typeof window.initPayments === "function") {
   }
 
   function handleResize() {
-    if (window.innerWidth <= 1365) {
+    // Если меньше desktop — просто “перераскидаем” позиции при следующем кадре
+    if (!desktopQuery.matches) {
       resetPosition = true;
     } else if (particles) {
       resetPosition = false;
     }
   }
 
-  function toggleParticles() {
-    particles = !particles;
-    StorageHelper.set("particles", particles);
-    updateToggleIcon();
+  function stop(container) {
+    clearParticles();
+    container.style.display = "none";
+    window.removeEventListener("resize", handleResize);
+  }
 
-    if (particles) {
-      setAccessibilityState();
+  function start(container, toggleEl) {
+    setAccessibilityState();
+    updateToggleIcon(toggleEl);
 
-      if (!document.querySelector(".particleflake")) {
-        const el = document.createElement("div");
-        el.className = "particleflake";
-        particleflakeContainer.appendChild(el);
-      }
+    if (!particles) {
+      stop(container);
+      return;
+    }
 
-      if (enableAnimations) {
-        generateParticleflakes();
-        window.addEventListener("resize", handleResize);
-      }
+    // На мобильном/не-desktop не генерируем
+    if (!desktopQuery.matches) {
+      stop(container);
+      return;
+    }
+
+    if (enableAnimations) {
+      generateParticleflakes(container);
+      window.addEventListener("resize", handleResize);
     } else {
-      particleflakes.forEach(p => p.element.remove());
-      particleflakes = [];
-      window.removeEventListener("resize", handleResize);
+      // prefers-reduced-motion: hide
+      stop(container);
     }
   }
 
-  function updateToggleIcon() {
-    const icon = document.querySelector("#particles-toggle .officon");
-    icon.classList.toggle("effect-on", particles);
-    icon.classList.toggle("effect-off", !particles);
+  function toggleParticles(container, toggleEl) {
+    particles = !particles;
+    SafeStorage.set("particles", particles);
+    start(container, toggleEl);
   }
 
-  init();
+  function init() {
+    const container = document.querySelector("#particleflakeContainer");
+    const toggleEl = document.querySelector("#particles-toggle");
+
+    // Если на странице нет нужных элементов — не падаем
+    if (!container || !toggleEl) return;
+
+    // initial state
+    start(container, toggleEl);
+
+    toggleEl.addEventListener("click", () => toggleParticles(container, toggleEl));
+
+    // Обновляем состояние при изменении reduce motion и desktop breakpoint
+    onMediaQueryChange(reduceMotionQuery, () => start(container, toggleEl));
+    onMediaQueryChange(desktopQuery, () => start(container, toggleEl));
+  }
+
+  runAfterDomReady(init);
 })();
+
 
 function loadCachedData(key) {
   return StorageHelper.getJSON(key);
