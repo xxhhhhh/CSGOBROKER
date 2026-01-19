@@ -346,16 +346,9 @@ nav .pages {
 }
 
 .rec-box.active {
-  opacity: 1; 
-  transform: translateY(0) scale(1);
   animation: fadeIn .2s ease-in-out forwards;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .rec-box.active {
-    animation: none;
-  }
-}
 
 .rec-box .logobg {
     width: 100%;
@@ -12522,11 +12515,6 @@ header {
         background-color: #0d0d0d;
     }
 }
-
-@media (prefers-reduced-motion: reduce){
-  *{ animation: none !important; transition: none !important; }
-}
-
 
     /* ==========================================================
    Desktop responsive fix (keeps 1920 layout down to ~1418px)
