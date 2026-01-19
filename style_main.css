@@ -346,7 +346,15 @@ nav .pages {
 }
 
 .rec-box.active {
-    animation: fadeIn .2s ease-in-out forwards;
+  opacity: 1; 
+  transform: translateY(0) scale(1);
+  animation: fadeIn .2s ease-in-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rec-box.active {
+    animation: none;
+  }
 }
 
 .rec-box .logobg {
