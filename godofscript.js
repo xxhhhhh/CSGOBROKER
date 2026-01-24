@@ -2234,7 +2234,6 @@ if (typeof window.initPayments === "function") {
     }
   };
 
-  const reduceMotionQuery = matchMedia("(prefers-reduced-motion: reduce)");
   const desktopQuery = matchMedia("(min-width: 1366px)");
 
   let particleflakes = [];
@@ -2262,7 +2261,8 @@ if (typeof window.initPayments === "function") {
   }
 
   function setAccessibilityState() {
-    enableAnimations = particles && !reduceMotionQuery.matches;
+    // reduceMotionQuery removed: animations depend only on user toggle
+    enableAnimations = particles;
   }
 
   function getRandomPosition(offset, size) {
@@ -2405,7 +2405,6 @@ if (typeof window.initPayments === "function") {
       generateParticleflakes(container);
       window.addEventListener("resize", handleResize);
     } else {
-      // prefers-reduced-motion: hide
       stop(container);
     }
   }
@@ -2428,8 +2427,7 @@ if (typeof window.initPayments === "function") {
 
     toggleEl.addEventListener("click", () => toggleParticles(container, toggleEl));
 
-    // Обновляем состояние при изменении reduce motion и desktop breakpoint
-    onMediaQueryChange(reduceMotionQuery, () => start(container, toggleEl));
+    // Обновляем состояние при изменении desktop breakpoint
     onMediaQueryChange(desktopQuery, () => start(container, toggleEl));
   }
 
