@@ -5662,6 +5662,7 @@ nav img {
 .topic-boxes-holder .topic-grandbox.sticker:hover {
     transform: scale(1.04);
     backface-visibility: hidden;
+    z-index: 11;
     /* background: linear-gradient(150deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, rgba(50, 50, 50, 0.25) 50%, rgba(255, 255, 255, 0) 100%) !important; */
 }
 
@@ -12417,6 +12418,7 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    z-index: 3;
 }
 
 .box .logobg .bonuses-block .best {
@@ -12426,14 +12428,14 @@ header {
 }
 
 .box .logobg .upd {
-    position: relative;
+    /* position: relative; */
+    margin-top: 2px;
+    height: 28px;
     width: auto;
-    padding: 0 20px;
-    margin-right: 8px;
-    height: 30px;
-    background: linear-gradient(180deg, #6366f1 0%, #4338ca 100%);
+    padding: 0 8px 0 4px;
+    background: var(--buttonbg);
     filter: drop-shadow(1px 1px 4px var(--darkgray)) blur(0);
-    border-radius: 0 0 var(--main-border) var(--main-border);
+    border-radius: var(--main-border);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12444,42 +12446,59 @@ header {
     backface-visibility: hidden;
     text-wrap: nowrap;
     user-select: none;
-    display: none;
+    cursor: pointer;
     z-index: 2;
+    gap: 4px;
+    text-transform: none;
+
+    position: absolute;
+    right: 0;
+    top: 38px;
+    margin-right: 10px;
+}
+
+.box .logobg .upd span {
+    display: flex;
+    filter: drop-shadow(1px 1px 0 rgb(24 24 24)) blur(0);
+    order: -1;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 11px;
+    color: var(--white);
+    font-weight: 600;
+    width: 22px;
+    height: 21px;
+    margin-bottom: 2px;
+    background: rgba(0, 0, 0, .4);
 }
 
 .main-page .box .logobg .upd {
     position: absolute;
     margin: unset;
     right: 60px;
+    top: 0;
     z-index: 10;
 }
 
-.box .logobg .upd.csfail {
-    cursor: pointer;
-    background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%);
-}
-
-.box .logobg .upd.csfail::before {
+.box .logobg .upd::before {
     content: '';
     background-image: url(/img/icons/gamemodes/gift.svg);
     height: 15px;
     width: 15px;
     background-size: 100%;
     transition: all .15s ease-in-out;
-    position: absolute;
     background-position: center;
     background-repeat: no-repeat;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     filter: drop-shadow(1px 1px 4px rgb(24 24 24)) blur(0);
     transition: all .15s ease-in-out;
 }
 
-.box .logobg .upd.csfail:hover::before {
+.box .logobg .upd:hover::before {
     transform: scale(1.1);
 }
 
-.box .logobg .upd.csfail a {
+.box .logobg .upd a {
     position: absolute;
     top: 0;
     width: 125px;
@@ -12491,7 +12510,7 @@ header {
     pointer-events: none;
 }
 
-.box .logobg .upd.csfail a::before {
+.box .logobg .upd a::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -12506,14 +12525,14 @@ header {
     border-radius: var(--minor-border);
 }
 
-.box .logobg .upd.csfail:hover a {
+.box .logobg .upd:hover a {
     user-select: auto;
     pointer-events: all;
     opacity: 1;
     margin-top: 25px;
 }
 
-.box .logobg .upd.csfail a:hover {
+.box .logobg .upd a:hover {
     transform: scale(1.05);
 }
 
