@@ -285,6 +285,170 @@ function escapeHtml(s=""){ return s.replace(/</g,"&lt;").replace(/>/g,"&gt;").re
 function escapeAttr(s=""){ return escapeHtml(s).replace(/'/g,"&#39;"); }
 function collapseWS(s){ return s.replace(/[ \t]+$/gm,"").replace(/\r?\n{3,}/g,"\n\n"); }
 
+/* ======================================================================= */
+/* === NEW: BONUSES-BLOCK (wrap .best + .best-alt from site-infos codes) === */
+/* ======================================================================= */
+
+function setClassAttrInTag(tagText, classesSet){
+  const clsStr = Array.from(classesSet).filter(Boolean).join(" ").trim();
+  const re = /\bclass\s*=\s*(["'])([^"']*)\1/i;
+
+  if (re.test(tagText)){
+    return tagText.replace(re, (_m, q) => `class=${q}${escapeAttr(clsStr)}${q}`);
+  }
+  return tagText.replace(/>$/, ` class="${escapeAttr(clsStr)}">`);
+}
+
+function reindentBlock(block, newIndent, nl){
+  const s = String(block || "");
+  const lines = s.split(nl);
+  if (!lines.length) return s;
+
+  // текущий отступ берём по первой непустой строке (или по первой)
+  const firstNonEmpty = lines.find(l => l.trim().length > 0) ?? lines[0];
+  const curIndent = (firstNonEmpty.match(/^[\t ]*/)?.[0]) ?? "";
+
+  if (curIndent === newIndent) return s;
+
+  const esc = curIndent.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const rx = new RegExp("^" + esc);
+  return lines.map(l => l.replace(rx, newIndent)).join(nl);
+}
+
+function patchBestDivClasses(bestHtml, addClass, removeClasses = []){
+  const open = readTag(bestHtml, 0);
+  const cls = parseClassAttr(open.attrs);
+
+  cls.add("best");
+  if (addClass) cls.add(addClass);
+  for (const r of removeClasses) cls.delete(r);
+
+  const newOpen = setClassAttrInTag(open.tagText, cls);
+  return newOpen + bestHtml.slice(open.end);
+}
+
+function renderBestAltBlock(entries, bindingMap, href, indent, nl){
+  const extra = entries.length - 1;
+  if (extra <= 0) return "";
+
+  const lines = [];
+  lines.push(`${indent}<div class="best-alt"><span>+${extra}</span>`);
+  lines.push(`${indent}  <div class="best-alt-centralizer">`);
+
+  for (const [codeName, codeDisplay] of entries){
+    const bound = (bindingMap && bindingMap[codeName]) ? String(bindingMap[codeName]) : "";
+    const cls = ["best-alt-unit", bound].filter(Boolean).join(" ").trim();
+
+    // делаем ссылкой на review (логично и похоже на твой пример)
+    lines.push(
+      `${indent}    <a class="${escapeAttr(cls)}" href="${escapeAttr(href)}"><span>${escapeHtml(String(codeDisplay || ""))}</span></a>`
+    );
+  }
+
+  lines.push(`${indent}  </div>`);
+  lines.push(`${indent}</div>`);
+  return lines.join(nl);
+}
+
+function lineInfoAt(s, idx, nl){
+  const ls = s.lastIndexOf(nl, idx - 1);
+  const lineStart = (ls === -1) ? 0 : ls + nl.length;
+  const indent = (s.slice(lineStart, idx).match(/^[\t ]*/)?.[0]) ?? "";
+  return { lineStart, indent };
+}
+
+function upsertBonusesBlockInBoxHtml(boxHtml, data, siteKey, lang, reviewSettings, nl){
+  if (!boxHtml || !data || !siteKey) return boxHtml;
+
+  const codesObj = (data && typeof data.codes === "object") ? data.codes : null;
+  const entries = codesObj
+    ? Object.entries(codesObj).filter(([k,v]) => String(v ?? "").trim().length > 0)
+    : [];
+
+  const masked = maskSegments(boxHtml);
+
+  const best = findFirstByClass(masked, "best");
+  if (!best) return boxHtml;
+
+  const bbList = findAllDivByClass(masked, "bonuses-block");
+  const wrapper = bbList.find(bb => bb.openStart <= best.openStart && bb.closeEnd >= best.closeEnd) || null;
+
+  const bindingMap = reviewSettings?.codesBinding || {};
+  const boundClassesAll = Array.from(new Set([
+    ...Object.values(bindingMap).map(String),
+    "default-bonus"
+  ]));
+
+  const reviewHref = withLangForReview(`/reviews/${siteKey}`, lang);
+
+  // ---------------------------
+  // CASE A: codes <= 1 → unwrap
+  // ---------------------------
+  if (entries.length <= 1){
+    if (!wrapper) return boxHtml;
+
+    const wrapInfo = lineInfoAt(boxHtml, wrapper.openStart, nl);
+    const wrapperHtml = boxHtml.slice(wrapper.openStart, wrapper.closeEnd);
+    const wm = maskSegments(wrapperHtml);
+    const bestInside = findFirstByClass(wm, "best");
+    if (!bestInside) return boxHtml;
+
+    let bestHtml = wrapperHtml.slice(bestInside.openStart, bestInside.closeEnd);
+
+    // убрать бонус-классы, если остались
+    bestHtml = patchBestDivClasses(bestHtml, /*addClass*/"", /*remove*/boundClassesAll);
+
+    // выровнять best под отступ строки wrapper (НЕ childIndent)
+    bestHtml = reindentBlock(bestHtml, wrapInfo.indent, nl);
+
+    // ✅ ВАЖНО: заменяем с lineStart, чтобы не копить отступы
+    return boxHtml.slice(0, wrapInfo.lineStart) + bestHtml + boxHtml.slice(wrapper.closeEnd);
+  }
+
+  // ---------------------------
+  // CASE B: codes > 1 → insert/update bonuses-block
+  // ---------------------------
+  const primaryCodeName = entries[0]?.[0] || "";
+  const primaryBound = (bindingMap && bindingMap[primaryCodeName]) ? String(bindingMap[primaryCodeName]) : "default-bonus";
+
+  // берём best (если внутри wrapper — именно внутренний)
+  let bestHtmlRaw = boxHtml.slice(best.openStart, best.closeEnd);
+  if (wrapper){
+    const wrapperHtml = boxHtml.slice(wrapper.openStart, wrapper.closeEnd);
+    const wm = maskSegments(wrapperHtml);
+    const bestInside = findFirstByClass(wm, "best");
+    if (bestInside){
+      bestHtmlRaw = wrapperHtml.slice(bestInside.openStart, bestInside.closeEnd);
+    }
+  }
+
+  // где будем заменять: wrapper если есть, иначе best
+  const anchorOpenStart = wrapper ? wrapper.openStart : best.openStart;
+  const anchorCloseEnd  = wrapper ? wrapper.closeEnd  : best.closeEnd;
+  const info = lineInfoAt(boxHtml, anchorOpenStart, nl);
+
+  const wrapperIndent = info.indent;
+  const childIndent   = wrapperIndent + "  ";
+
+  let bestHtml = patchBestDivClasses(bestHtmlRaw, primaryBound, /*remove*/[]);
+  bestHtml = reindentBlock(bestHtml, childIndent, nl);
+
+  const bestAlt = renderBestAltBlock(entries, bindingMap, reviewHref, childIndent, nl);
+
+  const newWrapper = [
+    `${wrapperIndent}<div class="bonuses-block">`,
+    bestAlt,
+    bestHtml,
+    `${wrapperIndent}</div>`
+  ].filter(Boolean).join(nl);
+
+  // ✅ ВАЖНО: заменяем с начала строки (lineStart), чтобы блок не “уезжал”
+  const oldRegion = boxHtml.slice(info.lineStart, anchorCloseEnd);
+  if (collapseWS(oldRegion) === collapseWS(newWrapper)) return boxHtml;
+
+  return boxHtml.slice(0, info.lineStart) + newWrapper + boxHtml.slice(anchorCloseEnd);
+}
+
 /* --------- WS HELPERS --------- */
 function lstripBlankLines(s, nl){
   let i=0;
@@ -1171,6 +1335,13 @@ async function processListingsGlobal(html, urlPath, lang, root, presets, nl, sit
       const key = getPageKeyFromHref(href); if (!key) continue;
 
       const data = await siteJson(root, key); if (!data) continue;
+
+      if (!/\/(reviews|mirrors)\//.test(String(urlPath))) {
+        const before = boxHtml;
+        boxHtml = upsertBonusesBlockInBoxHtml(boxHtml, data, key, lang, presets.review, nl);
+        if (collapseWS(boxHtml) !== collapseWS(before)) {
+        }
+      }
 
       if (data["Main Mode"]) {
         const rebuilt = rebuildMainModeInMainBox(boxHtml, logobg, data["Main Mode"], lang, nl);

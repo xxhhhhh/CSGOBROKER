@@ -4822,11 +4822,13 @@ nav img {
     color: var(--gray);
 } */
 
-.promo-box.deposit-bonus .content .promo-code-desc::before {
+.promo-box.deposit-bonus .content .promo-code-desc::before,
+.best-alt-unit.deposit-bonus::before {
     content: 'Deposit Bonus';
 }
 
-.lang-ru .promo-box.deposit-bonus .content .promo-code-desc::before {
+.lang-ru .promo-box.deposit-bonus .content .promo-code-desc::before,
+.lang-ru .best-alt-unit.deposit-bonus::before {
     content: 'Бонус к Пополнению';
 }
 
@@ -4846,11 +4848,13 @@ nav img {
     content: 'Бонус к Обмену';
 }
 
-.promo-box.welcome-bonus .content .promo-code-desc::before {
+.promo-box.welcome-bonus .content .promo-code-desc::before,
+.best-alt-unit.welcome-bonus::before {
     content: 'Free Bonus';
 }
 
-.lang-ru .promo-box.welcome-bonus .content .promo-code-desc::before {
+.lang-ru .promo-box.welcome-bonus .content .promo-code-desc::before,
+.lang-ru .best-alt-unit.welcome-bonus::before {
     content: 'Приветственный Бонус';
 }
 
@@ -12613,20 +12617,38 @@ header {
     background: var(--darkgray);
     border-radius: 8px;
     margin-bottom: unset;
-    color: rgba(255, 255, 255, .35);
-    font-size: 14px;
     transition: all .1s ease-in-out;
     user-select: none;
     position: relative;
+    gap: 6px;
     z-index: 1;
 }
 
-.box .logobg .best-alt .best-alt-unit:hover {
+.box .logobg .best-alt .best-alt-unit span,
+.box .logobg .best-alt .best-alt-unit::before {
+    color: rgba(255, 255, 255, .35);
+    font-weight: 500;
+    font-size: 14px;
+    order: 1;
+    display: flex;
+    filter: unset;
+    width: unset;
+    height: unset;
+    border-radius: unset;
+    margin: unset;
+    padding: unset;
+    order: unset;
+    background: unset;
+    transition: all .15s ease-in-out;
+}
+
+.box .logobg .best-alt .best-alt-unit:hover span,
+.box .logobg .best-alt .best-alt-unit:hover::before {
     color: var(--white);
     transform: scale(1.05);
 } 
 
-.box .logobg .best-alt .best-alt-unit::before {
+.box .logobg .best-alt .best-alt-unit::after {
     content: '';
     position: absolute;
     top: 4px;
@@ -12640,7 +12662,7 @@ header {
     opacity: 0;
 }
 
-.box .logobg .best-alt .best-alt-unit:hover::before {
+.box .logobg .best-alt .best-alt-unit:hover::after {
     opacity: 1;
 }
 
