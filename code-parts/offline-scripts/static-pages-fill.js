@@ -2851,29 +2851,40 @@ function ensureTGButtonInMainBox(html, data, lang, nl){
 }
 
 /* ---- liverating в .box.main ---- */
-function computeLiveratingPercent(ratings){
+function formatRating2(n){
+  const x = Number(n);
+  if (!Number.isFinite(x)) return "0.00";
+  return (Math.round(x*100)/100).toFixed(2);
+}
+
+function computeMainBoxRatingMetrics(ratings){
   if (!ratings || typeof ratings !== "object") return null;
-  const nums = Object.values(ratings).map(Number).filter(n => Number.isFinite(n));
+  const nums = Object.values(ratings).map(Number).filter(Number.isFinite);
   if (!nums.length) return null;
+
   const take = nums.slice(0, 4);
-  const avg  = take.reduce((a,b)=>a+b,0) / take.length;
-  const pct  = Math.max(0, Math.min(100, (avg / 5) * 100));
-  return Math.round(pct * 100) / 100;
+  const avg = take.reduce((a,b)=>a+b,0) / take.length;     // рейтинг (sum/4)
+  const pct = Math.max(0, Math.min(100, (avg / 5) * 100));  // % для заливки
+  return { avg, percent: Math.round(pct * 100) / 100 };
 }
-function upsertWidthInOpenTag(tagOpen, percent){
-  const pct = String(percent).replace(/%$/,"");
-  if (!/style\s*=/.test(tagOpen)) {
-    return tagOpen.replace(/>$/, ` style="width: ${pct}%;">`);
-  }
-  return tagOpen.replace(/style\s*=\s*(["'])(.*?)\1/i, (m,q,css)=>{
-    const noWidth = css.replace(/(^|;)\s*width\s*:[^;]*;?/gi, '$1').replace(/;;+/g,';').replace(/^\s*;\s*|\s*;\s*$/g,'');
-    const merged = (noWidth ? noWidth + '; ' : '') + `width: ${pct}%;`;
-    return `style=${q}${merged}${q}`;
-  });
+
+function renderMainBoxRatingBlock(indent, nl, percent, avg){
+  return [
+    `${indent}<div class="rating">`,
+    `${indent}  <div class="star_rating"></div>`,
+    `${indent}  <div class="liverating fadein">`,
+    `${indent}    <div class="star_rating" style="height: ${percent}%;"></div>`,
+    `${indent}  </div>`,
+    `${indent}  <div class="star_total"><span>${formatRating2(avg)}</span></div>`,
+    `${indent}</div>`
+  ].join(nl);
 }
+
 function ensureMainBoxLiverating(html, ratings, nl){
-  const percent = computeLiveratingPercent(ratings);
-  if (percent == null) return html;
+  const m = computeMainBoxRatingMetrics(ratings);
+  if (!m) return html;
+
+  const { percent, avg } = m;
 
   let out = html;
   const masked = maskSegments(out);
@@ -2890,82 +2901,49 @@ function ensureMainBoxLiverating(html, ratings, nl){
     const logobg = findFirstByClass(bm, "logobg");
     if (!logobg) return out;
 
-    const lbAbsOpenEnd   = b.openStart + logobg.openEnd;
-    const lbAbsCloseStart= b.openStart + logobg.closeStart;
+    const lbAbsOpenEnd    = b.openStart + logobg.openEnd;
+    const lbAbsCloseStart = b.openStart + logobg.closeStart;
     let logSeg = out.slice(lbAbsOpenEnd, lbAbsCloseStart);
 
     const lm = maskSegments(logSeg);
     const rating = findFirstByClass(lm, "rating");
 
+    // --- FIX 1: если rating уже есть — заменяем с нормальным lineStart/indent ---
     if (rating){
-      const rOpen = rating.openEnd, rClose = rating.closeStart;
-      let rBody = logSeg.slice(rOpen, rClose);
+      const ls = logSeg.lastIndexOf(nl, rating.openStart - 1);
+      const lineStart = (ls === -1) ? 0 : (ls + nl.length);
+      const indent = (logSeg.slice(lineStart, rating.openStart).match(/^[\t ]*/)?.[0]) ?? "";
 
-      const rm = maskSegments(rBody);
-      const lv = findFirstByClass(rm, "liverating");
+      const block = renderMainBoxRatingBlock(indent, nl, percent, avg);
 
-      if (lv){
-        const lvOpen = lv.openEnd, lvClose = lv.closeStart;
-        let lvBody = rBody.slice(lvOpen, lvClose);
+      const before = logSeg.slice(0, lineStart);
+      const after  = logSeg.slice(rating.closeEnd);
 
-        const m = lvBody.match(/<div\b([^>]*\bclass\s*=\s*["'][^"']*\bstar_rating\b[^"']*["'][^>]*)>/i);
-        if (m){
-          const start = m.index;
-          const openTag = m[0];
-          const updatedOpen = upsertWidthInOpenTag(openTag, percent);
-          if (updatedOpen !== openTag){
-            lvBody = lvBody.slice(0, start) + updatedOpen + lvBody.slice(start + openTag.length);
-            rBody  = rBody.slice(0, lvOpen) + lvBody + rBody.slice(lvClose);
-            logSeg = logSeg.slice(0, rOpen) + rBody + logSeg.slice(rClose);
-            out    = out.slice(0, lbAbsOpenEnd) + logSeg + out.slice(lbAbsCloseStart);
-          }
-          return out;
-        } else {
-          const baseIndent = indentBefore(logSeg, rOpen, nl) + "    ";
-          const inject = `${baseIndent}<div class="star_rating" style="width: ${percent}%;"></div>`;
-          const before = logSeg.slice(0, rOpen + lvOpen);
-          const after  = logSeg.slice(rOpen + lvOpen);
-          logSeg = before + inject + nl + after;
-          out = out.slice(0, lbAbsOpenEnd) + logSeg + out.slice(lbAbsCloseStart);
-          return out;
-        }
-      } else {
-        const indent = indentBefore(logSeg, rOpen, nl) + "  ";
-        const block =
-          `${indent}<div class="star_rating"></div>${nl}` +
-          `${indent}<div class="liverating fadein">${nl}` +
-          `${indent}  <div class="star_rating" style="width: ${percent}%;"></div>${nl}` +
-          `${indent}</div>`;
-        logSeg = logSeg.slice(0, rOpen) + block + logSeg.slice(rClose);
-        out = out.slice(0, lbAbsOpenEnd) + logSeg + out.slice(lbAbsCloseStart);
-        return out;
-      }
+      const newLogSeg = joinBlocksNoBlank(before, block, after, nl);
+      out = out.slice(0, lbAbsOpenEnd) + newLogSeg + out.slice(lbAbsCloseStart);
+      return out;
     }
 
+    // --- FIX 2: если rating нет — вставляем после </a>, но indent берём с ЛИНИИ <a> ---
     const aMatch = /<a\b[^>]*>[\s\S]*?<\/a>/i.exec(logSeg);
     const insPos = aMatch ? (aMatch.index + aMatch[0].length) : 0;
-    const baseIndent = indentBefore(logSeg, insPos, nl) + "  ";
-    const block = [
-      `${baseIndent}<div class="rating">`,
-      `${baseIndent}  <div class="star_rating"></div>`,
-      `${baseIndent}  <div class="liverating fadein">`,
-      `${baseIndent}    <div class="star_rating" style="width: ${percent}%;"></div>`,
-      `${baseIndent}  </div>`,
-      `${baseIndent}</div>`
-    ].join(nl);
+
+    // ✅ ВАЖНО: indent = отступ строки, где начинается <a>, а НЕ от insPos
+    const anchorIndent = aMatch
+      ? indentBefore(logSeg, aMatch.index, nl)
+      : indentBefore(logSeg, insPos, nl);
+
+    const block = renderMainBoxRatingBlock(anchorIndent, nl, percent, avg);
 
     const before = logSeg.slice(0, insPos);
     const after  = logSeg.slice(insPos);
+
     const newLogSeg = joinBlocksNoBlank(before, block, after, nl);
     out = out.slice(0, lbAbsOpenEnd) + newLogSeg + out.slice(lbAbsCloseStart);
     return out;
   }
-  return out;
-}
 
-function removeAttrInTag(tagText, name){
-  const re = new RegExp(`\\s+${name}\\s*=\\s*(['"]).*?\\1`, 'i');
-  return tagText.replace(re, '');
+  return out;
 }
 
 function upsertAttrInTag(tagText, name, value){

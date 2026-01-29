@@ -151,7 +151,8 @@ nav img {
 .sitepage .content .defbutton,
 .nav-review.blog,
 .newest-boxes .box .content,
-.box-skins .skin {
+.box-skins .skin,
+.box .logobg .best-alt {
     filter: unset;
     box-shadow: unset;
 }
@@ -476,7 +477,9 @@ h3,
 .rec-box p,
 .content .boxtitle:hover,
 .box.main .content h4:hover,
-.boxes-holder .content .boxtitle:hover {
+.boxes-holder .content .boxtitle:hover,
+.box .logobg .best-alt .best-alt-unit:hover,
+.box .logobg .best-alt .best-alt-unit {
     color: #1f1f1f;
 }
 
@@ -1458,7 +1461,11 @@ ul .submenu li .nonredir,
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
 }
 
-@media screen and (max-width: 1365px) {
+@media screen and (max-width: 1280px) {
+
+    .nondef .spaceblock {
+        background: var(--darkygray);
+    }
 
     .shortinfo .features::before {
         content: unset;
@@ -1614,10 +1621,6 @@ ul .submenu li .nonredir,
 
     .sitealternatesboxes .box .rating-case-single .rating-summ {
         color: #272727;
-    }
-
-    nav .pages {
-        background-color: rgba(215, 215, 215, .75);
     }
 
     .submenu2 li a {
