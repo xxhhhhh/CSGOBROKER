@@ -181,6 +181,32 @@ function upsertAttr(openTag, name, value){
   if (re.test(openTag)) return openTag.replace(re, (_m,q)=>`${name}=${q}${value}${q}`);
   return openTag.replace(/>$/, ` ${name}="${value}">`);
 }
+function addQueryTagToHref(href, key, value){
+  if (!href) return href;
+  if (/^#/.test(href)) return href;           // якоря не трогаем
+  if (/^mailto:/i.test(href)) return href;
+  if (/^tel:/i.test(href)) return href;
+  if (/^javascript:/i.test(href)) return href;
+
+  // отделяем hash
+  const hashIdx = href.indexOf("#");
+  const hash = hashIdx >= 0 ? href.slice(hashIdx) : "";
+  const base = hashIdx >= 0 ? href.slice(0, hashIdx) : href;
+
+  // отделяем query
+  const qIdx = base.indexOf("?");
+  const path = qIdx >= 0 ? base.slice(0, qIdx) : base;
+  const qs   = qIdx >= 0 ? base.slice(qIdx + 1) : "";
+
+  // уже есть такой ключ? — не дублируем
+  const hasKey = new RegExp(`(?:^|&)${key}=`, "i").test(qs);
+  if (hasKey) return href;
+
+  const add = `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+  const newQs = qs ? `${qs}&${add}` : add;
+
+  return `${path}?${newQs}${hash}`;
+}
 
 /* ---------- link localization blocks ---------- */
 function localizeLogobgAnchors(inner, lang){
@@ -260,6 +286,24 @@ function localizeMoreContent(inner, lang){
   }
   return out;
 }
+
+function localizeBestAltUnitLinks(inner, lang){
+  if (!PREFIX_LANGS.has(lang)) return inner;
+
+  return inner.replace(
+    /<a\b[^>]*\bclass\s*=\s*(["'])([^"']*\bbest-alt-unit\b[^"']*)\1[^>]*>/gi,
+    (openTag) => {
+      const href = (openTag.match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2]) || "";
+      if (!href) return openTag;
+
+      const nh = addLangPrefixToHref(href, lang);
+      if (nh === href) return openTag;
+
+      return upsertAttr(openTag, "href", nh);
+    }
+  );
+}
+
 
 /* ---------- main-page specific ---------- */
 // Обновляем только href в каждом .main-mode-unit, КРОМЕ .main-mode-unit.topics.
@@ -799,6 +843,7 @@ function translateReviewButtonsSpans(inner, lang){
       if (lang === "es" || lang === "tr"){
         out = localizeLogobgAnchors(out, lang);
         out = localizeReviewButtons(out, lang);
+        out = localizeBestAltUnitLinks(out, lang);
       }
       if (lang === "es" || lang === "tr" || lang === "pt" || lang === "hi"){
         // more-content: ссылки + префиксы

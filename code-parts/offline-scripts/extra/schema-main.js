@@ -12,6 +12,8 @@ const EXCLUDE_DIRS = ['code-parts', 'img', 'fonts', 'sitemaps_me'];
 const YOAST_RE = /<script\b(?=[^>]*\btype=["']application\/ld\+json["'])(?=[^>]*\bclass=["'][^"']*\byoast-schema-graph\b[^"']*["'])[^>]*>([\s\S]*?)<\/script>/i;
 const YOAST_RE_G = new RegExp(YOAST_RE.source, 'ig'); 
 
+const publishedCache = new Map();
+
 // ---------- helpers ----------
 function extractMeta(html, key) {
   const k = String(key).toLowerCase();
@@ -60,21 +62,56 @@ function detectLanguageFromContent(html) {
   }
 }
 
+const htmlCache = new Map();
+function readHtmlCached(p) {
+  const v = htmlCache.get(p);
+  if (v != null) return v;
+  const s = fs.readFileSync(p, 'utf-8');
+  htmlCache.set(p, s);
+  return s;
+}
+
 function getFileTimes(filePath) {
   // why: используем ВХОДНОЙ mtime как единственный источник истины и потом его восстанавливаем
   const st = fs.statSync(filePath);
   return { atime: st.atime, mtime: st.mtime, mtimeISO: st.mtime.toISOString() };
 }
 
-function getPublishedDate(filePath) {
+function fastExtractDatePublishedFromYoast(html) {
+  const m = html.match(YOAST_RE);
+  if (!m) return null;
+  const raw = (m[1] || '');
+  const dm = raw.match(/"datePublished"\s*:\s*"([^"]+)"/i);
+  return dm ? dm[1] : null;
+}
+
+function getGitFirstCommitISO(filePath) {
   try {
-    const stats = fs.statSync(filePath);
-    const created = stats.birthtime;
-    if (created && created.getTime() !== stats.mtime.getTime()) {
-      return created.toISOString();
-    }
+    // первый коммит, где файл появился (учитывает переименования)
+    const out = execSync(
+      `git log --follow --diff-filter=A --format=%aI -- "${filePath}"`,
+      { stdio: ['ignore', 'pipe', 'ignore'] }
+    ).toString().trim();
+
+    if (!out) return null;
+
+    // git log вернёт список дат (новые->старые), нам нужна самая ранняя
+    const lines = out.split(/\r?\n/).filter(Boolean);
+    return lines[lines.length - 1] || null;
   } catch {}
-  return '2023-07-01T00:00:00+00:00';
+  return null;
+}
+
+function getPublishedDate(filePath, existingYoastDatePublished = null) {
+  if (existingYoastDatePublished) return existingYoastDatePublished;
+
+  const cached = publishedCache.get(filePath);
+  if (cached) return cached;
+
+  const first = getGitFirstCommitISO(filePath);
+  const val = first || '2023-07-01T00:00:00+00:00';
+  publishedCache.set(filePath, val);
+  return val;
 }
 
 function fileExistsForPath(pathArray) {
@@ -102,7 +139,7 @@ function generateBreadcrumbList(pageUrl, alt, urlParts, langCode) {
     const cs2PathParts = isDefaultLang ? ['cs2'] : [langCode, 'cs2'];
     const cs2File = fileExistsForPath(cs2PathParts);
     if (cs2File) {
-      const html = fs.readFileSync(cs2File, 'utf-8');
+      const html = readHtmlCached(cs2File); // <-- FIX
       const cs2Name = extractMeta(html, 'og:image:alt') || 'CS2 Gambling Sites';
       const cs2Url = `https://csgobroker.cc/${isDefaultLang ? '' : langCode + '/'}cs2`;
       items.push({ "@type": "ListItem", position: breadcrumbPos++, name: cs2Name, item: cs2Url });
@@ -153,13 +190,13 @@ function generateBreadcrumbList(pageUrl, alt, urlParts, langCode) {
 
     const fullPath = isDefaultLang ? labelParts : [langCode, ...labelParts];
     const skipMissing = ['csgo', 'tf2', 'steam', 'mirrors', 'reviews', 'stickers', 'cases', 'charms', 'collections'];
-    const filePath = fileExistsForPath(fullPath);
-    if (!filePath) {
+    const targetFile = fileExistsForPath(fullPath);
+    if (!targetFile) {
       if (skipMissing.includes(labelParts[labelParts.length - 1])) return;
       return;
     }
 
-    const html = fs.readFileSync(filePath, 'utf-8');
+    const html = readHtmlCached(targetFile);
     const name = extractMeta(html, 'og:image:alt') || labelParts[labelParts.length - 1];
     const itemUrl = `https://csgobroker.cc/${(isDefaultLang ? '' : langCode + '/')}${labelParts.join('/')}`;
 
@@ -287,7 +324,10 @@ function injectSchema(filePath) {
   const imageHeight = extractMeta(html, 'og:image:height');
   const langFull = detectLanguageFromContent(html);
   const langCode = langFull.split('-')[0];
-  const datePublished = getPublishedDate(filePath);
+  const existingPublished = fastExtractDatePublishedFromYoast(html); // O(1) regex
+  const datePublished = getPublishedDate(filePath, existingPublished);
+  const { matchHtml, jsonObj } = parseYoastBlock(html); // JSON.parse делаем только когда реально надо
+
 
   const relativePath = path.relative(HTML_BASE_DIR, filePath).replace(/\\/g, '/');
 
@@ -387,7 +427,6 @@ function injectSchema(filePath) {
     ]
   };
 
-  const { matchHtml, jsonObj } = parseYoastBlock(html);
   const baseNoDM = removeDM(baseJsonLd);
 
   if (!matchHtml || !jsonObj) {
@@ -395,12 +434,19 @@ function injectSchema(filePath) {
     full['@graph'][0]['dateModified'] = gitISO;
 
     const updatedJson = JSON.stringify(full, null, 2).replace(/\n/g, eol);
+    const newBlock =
+      `<script type="application/ld+json" class="yoast-schema-graph" data-content-hash="${meaningfulHash}">${eol}` +
+      `${updatedJson}${eol}</script>`;
 
-    fs.writeFileSync(filePath, html, 'utf-8');
+    const updatedHtml = html.includes('</head>')
+      ? html.replace(/(\s*)<\/head>/i, `${eol}${newBlock}${eol}$1</head>`)
+      : html + `${eol}${newBlock}${eol}`;
+
+    fs.writeFileSync(filePath, updatedHtml, 'utf-8');
     fs.utimesSync(filePath, atime, mtime);
+    console.log(`✅ Schema injected (no existing) in ${filePath}`);
     return;
   }
-
 
   // Есть блок → сравниваем без dateModified (канонично)
   const existingNoDM = removeDM(jsonObj);

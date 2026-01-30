@@ -65,15 +65,40 @@ function detectLanguageFromContent(html) {
   }
 }
 
-function getPublishedDate(filePath) {
+function fastExtractDatePublishedFromYoastBlock(scriptInner) {
+  const m = scriptInner.match(/"datePublished"\s*:\s*"([^"]+)"/i);
+  return m ? m[1] : null;
+}
+
+const publishedCache = new Map();
+
+function getGitFirstCommitISO(filePath) {
   try {
-    const stats = fs.statSync(filePath);
-    const created = stats.birthtime;
-    if (created && created.getTime() !== stats.mtime.getTime()) {
-      return created.toISOString();
-    }
+    // Появление файла (A), с учётом переименований (--follow)
+    const out = execSync(
+      `git log --follow --diff-filter=A --format=%aI -- "${filePath}"`,
+      { stdio: ['ignore', 'pipe', 'ignore'] }
+    ).toString().trim();
+
+    if (!out) return null;
+
+    // log идёт от нового к старому -> берём последнюю строку
+    const lines = out.split(/\r?\n/).filter(Boolean);
+    return lines[lines.length - 1] || null;
   } catch {}
-  return '2023-07-01T00:00:00+00:00';
+  return null;
+}
+
+function getPublishedDate(filePath, existingYoastDatePublished = null) {
+  if (existingYoastDatePublished) return existingYoastDatePublished;
+
+  const cached = publishedCache.get(filePath);
+  if (cached) return cached;
+
+  const first = getGitFirstCommitISO(filePath);
+  const val = first || '2023-07-01T00:00:00+00:00';
+  publishedCache.set(filePath, val);
+  return val;
 }
 
 function getWordCountFromOl(html) {
@@ -124,9 +149,26 @@ function injectSchemaForGuide(htmlPath, slug) {
   const keywords = jsonData[`keywords-${langCode}`] || jsonData.keywords;
   const authorDescription = jsonData.author[`description-${langCode}`] || jsonData.author.description;
 
-  const datePublished = getPublishedDate(htmlPath);
-  const pagePath = '/' + path.relative(HTML_BASE_DIR, htmlPath).replace(/\\/g, '/').replace(/\/index\.html$/, '').replace(/\.html$/, '');
-  const pageUrl = `https://csgobroker.cc${pagePath}`;
+  const existing = html.match(/<script\b[^>]*type=["\']application\/ld\+json["\'][^>]*class=["\']yoast-schema-graph["\'][^>]*>([\s\S]*?)<\/script>/i);
+  let existingDatePublished = null;
+
+  if (existing) {
+    existingDatePublished = fastExtractDatePublishedFromYoastBlock(existing[1]);
+  }
+
+  const datePublished = getPublishedDate(htmlPath, existingDatePublished);
+
+  let pagePath = '/' + path
+    .relative(HTML_BASE_DIR, htmlPath)
+    .replace(/\\/g, '/')
+    .replace(/\/index\.html$/i, '')   // убираем /index.html
+    .replace(/\.html$/i, '');         // убираем .html
+
+  pagePath = pagePath.replace(/\/+$/g, ''); // без хвостового /
+  if (pagePath === '') pagePath = '/';
+
+  const pageUrl = `https://csgobroker.cc${pagePath === '/' ? '' : pagePath}`;
+
   const image = extractMeta(html, 'og:image') || jsonData.thumbnail;
   const imageWidth = parseInt(extractMeta(html, 'og:image:width')) || 1728;
   const imageHeight = parseInt(extractMeta(html, 'og:image:height')) || 1080;
@@ -240,7 +282,6 @@ function injectSchemaForGuide(htmlPath, slug) {
 
   const newJsonClean = stripDateModified(JSON.stringify(baseSchema));
 
-  const existing = html.match(/<script\b[^>]*type=["\']application\/ld\+json["\'][^>]*class=["\']yoast-schema-graph["\'][^>]*>([\s\S]*?)<\/script>/i);
   const currentBlock = existing ? existing[1].trim() : '';
   const isSame = stripDateModified(currentBlock) === newJsonClean;
 
@@ -249,7 +290,8 @@ function injectSchemaForGuide(htmlPath, slug) {
   if (isSame && existingHash && existingHash === meaningfulHash) return;
   if (isSame && !existingHash) return; // старые страницы без хэша тоже не «освежаем»
 
-  baseSchema['@graph'][0]['dateModified'] = gitISO;
+  baseSchema['@graph'][0]['dateModified'] = gitISO; // Article
+  baseSchema['@graph'][1]['dateModified'] = gitISO; // WebPage
   const finalJson = JSON.stringify(baseSchema, null, 2);
   const tagged = `<script type="application/ld+json" class="yoast-schema-graph" data-content-hash="${meaningfulHash}">\n${finalJson}\n</script>`;
 

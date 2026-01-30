@@ -21,9 +21,7 @@ const { spawn } = require("child_process");
 
 const ORDER = [
   "static-topics-fill.js",
-  "schema-guides.js",
-  "schema-main.js",
-  "schema-review.js",
+  "schema-inject.js",
   "freebies-fill.js",
   "static-pages-fill.js",
   "alt-langs.js",
