@@ -247,7 +247,6 @@ nav img {
 
 .topic-grandbox .topic-box .logobg,
 .topic-grandbox .topic-box:hover .logobg,
-#color-list,
 .boxes-holder-name a,
 .boxes-holder-name .boxes-holder-more,
 .topic-grandbox::after,
@@ -479,7 +478,8 @@ h3,
 .box.main .content h4:hover,
 .boxes-holder .content .boxtitle:hover,
 .box .logobg .best-alt .best-alt-unit:hover,
-.box .logobg .best-alt .best-alt-unit {
+.box .logobg .best-alt .best-alt-unit,
+.colors-box-selection:hover .color-box-selection-button {
     color: #1f1f1f;
 }
 

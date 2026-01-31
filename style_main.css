@@ -1990,8 +1990,8 @@ nav .pages {
 }
 
 .navigation-weapon-type.enabled:hover,
-.color-box-selection-button:hover,
-.color-box-selection-button.clicked,
+.colors-box-selection:hover .color-box-selection-button,
+.colors-box-selection:has(.clicked),
 .color-box-overview-button:hover,
 .navigation-weapon-sort:hover,
 .navigation-weapon-sort.enabled,
@@ -2508,7 +2508,7 @@ nav .pages {
 .close-box-skins {
     width: 45px;
     height: 45px;
-    background-color: #0b0b0b;
+    background: var(--darkgray);
     border: 4px solid rgb(16 16 16);
     position: absolute;
     right: -3px;
@@ -2580,7 +2580,7 @@ nav .pages {
 
 .box-skins-button {
     position: absolute;
-    background-color: rgba(9, 9, 9, .5);
+    background-color: rgba(11, 11, 11, .5);
     height: 100%;
     width: 40px;
     color: var(--text-darkgray);
@@ -8955,7 +8955,7 @@ a[data-title]:after,
 }
 
 .topicpage .slider-container {
-    width: 85%;
+
     margin: 0 auto;
     margin-top: 8px;
 }
@@ -9832,7 +9832,37 @@ div#results {
     width: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
+    transition: all .15s ease-in-out;
+}
+
+.colors-box-selection:hover::after,
+.colors-box-selection:has(.clicked)::after {
+    opacity: 1;
+    transform: unset;
+}
+
+.colors-box-selection:has(.clicked) {
+    filter: unset;
+}
+
+.colors-box-selection::after {
+    content: '';
+    background-image: url(/img/icons/gamemodes/angle-small-up.svg);
+    position: relative;
+    transform: rotate(180deg);
+    height: 18px;
+    width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 100%;
+    transition: all .15s ease-in-out;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .35;
+    right: 7px;
 }
 
 .color-box-selection-button,
@@ -9850,15 +9880,34 @@ div#results {
     text-align: center;
     user-select: none;
     position: relative;
+    z-index: 11;
+}
+
+.color-box-selection-button {
+    background: unset;
+    filter: unset;
+    color: var(--gray);
+}
+
+.color-box-selection-button::before {
+    content: unset;
+}
+
+.color-box-selection-button.clicked {
+    color: var(--white);
+}
+
+.colors-box-selection:hover .color-box-selection-button {
+    transform: unset;
+}
+
+.colors-box-selection:hover {
+    transform: scale(1.05);
 }
 
 .color-box-overview-button {
     text-decoration: none;
     margin-left: 10px;
-}
-
-.color-box-selection-button.clicked {
-    background-color: #191919;
 }
 
 .color-item,
@@ -9873,9 +9922,10 @@ div#results {
 #color-list {
     overflow: hidden;
     position: absolute;
+    top: -8px;
     width: 196px;
     border-radius: var(--main-border);
-    z-index: 10000;
+    z-index: 10;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -9883,17 +9933,36 @@ div#results {
     justify-content: center;
     height: 0;
     opacity: 0;
-    background: var(--icongradient);
-    transition: .15s margin ease-in-out, .15s opacity ease-in-out;
+    /* background: var(--icongradient); */
+    transition: all .15s ease-in-out;
+    transform: translateY(10px);
+    overflow: hidden;
     gap: 4px;
 }
 
-#color-list.active {
+#color-list.active,
+.colors-box-selection:hover #color-list {
     height: auto;
     padding: 8px 0;
-    margin-top: 41px;
+    padding-top: 50px;
     opacity: 1;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .2);
+    transform: unset;
+}
+
+#color-list.active::before ,
+.colors-box-selection:hover #color-list::before  {
+    background: var(--darkgray);
+}
+
+#color-list::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 64px;
+    width: 100%;
+    border-radius: var(--main-border);
+    background: none;
+    opacity: .8;
 }
 
 #color-list li {
@@ -9912,7 +9981,7 @@ div#results {
     align-items: center;
     width: 100%;
     height: 100%;
-    border-radius: 7px;
+    border-radius: 9px;
     transition: all .15s ease-in-out;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
     filter: drop-shadow(0 1px 1px rgb(3 3 3)) blur(0);
@@ -10877,7 +10946,7 @@ div#results {
 .boxreview .plusminus .criteria,
 .main-infobox-mascotte::after,
 .main-infobox-content-text ul,
-.box-skins .skin,
+.box-skins.solo .skin,
 .singlemod-select::before,
 .main-infobox-content-block,
 .character-model,
@@ -10891,7 +10960,7 @@ div#results {
 .boxreview .smallreview.criteria,
 .shortinfo .feature,
 header {
-    box-shadow: 0 1px 2px 0 rgba(13, 13, 13, .4);
+    box-shadow: 0 1px 2px 0 rgba(15, 15, 15, .4);
 }
 
 .boxreview .plusminus .criteria {
@@ -12735,6 +12804,12 @@ header {
 @media screen and (max-width: 1280px) {
     .box-extra-links:has(.mirror-redirect) {
         padding-top: 25px;
+    }
+
+    .colors-box-selection:hover #color-list:not(.active) {
+        opacity: 0;
+        height: 0;
+        padding: 0;
     }
 
     nav .pages h1 {
