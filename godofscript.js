@@ -339,7 +339,8 @@ function showCopied(copyButton) {
       "/mirrors/",
       "/privacy-policy",
       "/terms-of-service",
-      "/contact-us"
+      "/contact-us",
+      "/responsibility"
   ];
   
   const isExcluded = excludePaths.some(excludedPath => path.includes(excludedPath));
@@ -357,6 +358,7 @@ function showCopied(copyButton) {
     !window.location.pathname.includes("/privacy-policy") &&
     !window.location.pathname.includes("/terms-of-service") &&
     !window.location.pathname.includes("/contact-us") &&
+    !window.location.pathname.includes("/responsibility") &&
     window.location.pathname !== "/ru" &&
     window.location.pathname !== "/pt" &&
     window.location.pathname !== "/es" &&
@@ -603,7 +605,8 @@ window.onload = function () {
       '/ru/topic',
       '/privacy-policy',
       '/terms-of-service',
-      '/contact-us'
+      '/contact-us',
+      '/responsibility'
     ];
     const isExcludedPath = excludedPaths.some(path => pathname.includes(path));
 
@@ -1217,7 +1220,8 @@ const isExcludedPage = [
   "/privacy-policy",
   "/topic",
   "/terms-of-service",
-  "/contact-us"
+  "/contact-us",
+  'responsibility'
 ].some(exclusion => path.endsWith(exclusion) || href.includes(exclusion));
 
 if (!isExcludedPage) {
@@ -1318,7 +1322,7 @@ if (!isExcludedPage) {
 
 $(document).ready(function() {
 
-  var excludedPages = ['/terms-of-service', '/privacy-policy', '/contact-us'];
+  var excludedPages = ['/terms-of-service', '/privacy-policy', '/contact-us', '/responsibility'];
   var path = window.location.pathname;
   var excluded = false;
   excludedPages.forEach(function(excludedPage) {
@@ -1567,6 +1571,7 @@ document.addEventListener("DOMContentLoaded", function () {
     !window.location.pathname.includes("/privacy-policy") &&
     !window.location.pathname.includes("/terms-of-service") &&
     !window.location.pathname.includes("/contact-us") &&
+    !window.location.pathname.includes("/responsibility") &&
     !isErrorPage
     
   ) {
