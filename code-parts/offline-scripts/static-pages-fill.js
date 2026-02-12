@@ -1416,7 +1416,7 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
 
   out = ensureMainModeInLogobg(out, lang, data["Main Mode"] || "", nl);
   out = upsertSiteCodes(out, data, nl);
-  out = upsertPromoBoxesInSitepage(out, urlPath, lang, pageKey, data, presets.review, nl);
+  out = await upsertPromoBoxesInSitepage(out, urlPath, lang, pageKey, data, presets.review, nl, root);
 
   const visitHrefMain = computeVisitHref(urlPath, lang, pageKey, data);
 
@@ -1964,7 +1964,7 @@ function getPromoCodeByIndex(data, idx /* 1..N */){
   return v || base;
 }
 
-function upsertPromoBoxesInSitepage(html, urlPath, lang, pageKey, data, reviewSettings, nl){
+async function upsertPromoBoxesInSitepage(html, urlPath, lang, pageKey, data, reviewSettings, nl, root){
   const sitepage = findFirstByClass(maskSegments(html), "sitepage");
   if (!sitepage) return html;
 
@@ -1992,7 +1992,7 @@ function upsertPromoBoxesInSitepage(html, urlPath, lang, pageKey, data, reviewSe
   }
 
   const localIndent = indentBefore(inner, mainBox ? mainBox.closeEnd : 0, nl);
-  const extraBlock  = renderPromoNavMirrorBlock(inner, urlPath, lang, pageKey, data, reviewSettings, nl, localIndent, isMirrors);
+  const extraBlock = await renderPromoNavMirrorBlock(inner, urlPath, lang, pageKey, data, reviewSettings, nl, localIndent, isMirrors, root);
 
   if (!extraBlock) return html.slice(0, spOpen) + inner + html.slice(spClose);
 
@@ -2009,7 +2009,7 @@ function upsertPromoBoxesInSitepage(html, urlPath, lang, pageKey, data, reviewSe
 }
 function truthy(v){ return v===true || v==="true" || v===1 || v==="1"; }
 
-function renderPromoNavMirrorBlock(fullHtmlAfterSections, urlPath, lang, pageKey, data, reviewSettings, nl, indent, isMirrors){
+async function renderPromoNavMirrorBlock(fullHtmlAfterSections, urlPath, lang, pageKey, data, reviewSettings, nl, indent, isMirrors, root){
   const lines = [];
   lines.push(`${indent}<div class="box-extra-links">`);
 
@@ -2017,57 +2017,55 @@ function renderPromoNavMirrorBlock(fullHtmlAfterSections, urlPath, lang, pageKey
   const basePromoCode = getPromoBaseCode(data);
   const hasCodes = codes && Object.keys(codes).length > 0 && !!basePromoCode;
 
+  const I0 = indent;        // .box-extra-links children level is decided by caller
+  const I1 = indent + "  "; // inside each promo-box
+  const I2 = I1 + "  ";     // inside .content
+
   if (hasCodes){
     let idx = 1;
-
     for (const [codeName, codeDisplay] of Object.entries(codes)){
       const cls = (reviewSettings?.codesBinding || {})[codeName] || "default-bonus";
       const cnt = `counter-${idx}`;
-
-      // ✅ N-й бонус → code / code-2 / code-3 ... (fallback на base code)
       const promoCodeValue = getPromoCodeByIndex(data, idx);
-
       const promoText = (lang==="ru") ? "Промокод" : "Promo";
 
-      lines.push(`${indent}  <div class="promo-box extra-abox ${cls} ${cnt}">`);
-      lines.push(`${indent}    <div class="content">`);
-      lines.push(`${indent}      <p>${promoText}</p>`);
-      lines.push(`${indent}      <code class="promo-code">${escapeHtml(String(promoCodeValue))}</code>`);
-      lines.push(`${indent}      <div class="promo-code-desc"><span>${escapeHtml(String(codeDisplay))}</span></div>`);
-      lines.push(`${indent}      <div class="bonus-type"><i class="officon"></i></div>`);
-
-      // (опционально, но полезно) — кладём код ещё и в атрибут для копирования
-      lines.push(
-        `${indent}      <button class="copy site-promo-copy defbutton" aria-label="Copy Code" code="${escapeAttr(String(promoCodeValue))}"></button>`
-      );
-
-      lines.push(`${indent}    </div>`);
-      lines.push(`${indent}  </div>`);
-
+      lines.push(`${I0}<div class="promo-box extra-abox ${cls} ${cnt}">`);
+      lines.push(`${I1}<div class="content">`);
+      lines.push(`${I2}<p>${escapeHtml(promoText)}</p>`);
+      lines.push(`${I2}<code class="promo-code">${escapeHtml(String(promoCodeValue))}</code>`);
+      lines.push(`${I2}<div class="promo-code-desc"><span>${escapeHtml(String(codeDisplay))}</span></div>`);
+      lines.push(`${I2}<div class="bonus-type"><i class="officon"></i></div>`);
+      lines.push(`${I2}<button class="copy site-promo-copy defbutton" aria-label="Copy Code" code="${escapeAttr(String(promoCodeValue))}"></button>`);
+      lines.push(`${I1}</div>`);
+      lines.push(`${I0}</div>`);
       idx++;
     }
   }
 
+
   if (!isMirrors && truthy(data.mirror)){
     const href = (`${lang==="ru" ? "/ru" : ""}/mirrors/${pageKey}`).replace(/\/{2,}/g,"/");
-    const span = (lang==="ru") ? "Не переходит на сайт?"
-              : (lang==="tr") ? "Siteye erişemiyor musun?"
-              : (lang==="es") ? "¿No puedes acceder al sitio?"
-              : "Can't Access the Site?";
-    lines.push(`${indent}  <a href="${escapeAttr(href)}" class="mirror-redirect extra-abox">`);
-    lines.push(`${indent}    <div class="officon mirror"></div>`);
-    lines.push(`${indent}    <span>${escapeHtml(span)}</span>`);
-    lines.push(`${indent}  </a>`);
+    const span = (lang==="ru") ? "Не переходит на сайт?" : (lang==="tr") ? "Siteye erişemiyor musun?" : (lang==="es") ? "¿No puedes acceder al sitio?" : "Can't Access the Site?";
+    lines.push(`${indent} <a href="${escapeAttr(href)}" class="mirror-redirect extra-abox">`);
+    lines.push(`${indent} <div class="officon mirror"></div>`);
+    lines.push(`${indent} <span>${escapeHtml(span)}</span>`);
+    lines.push(`${indent} </a>`);
   }
 
   if (!isMirrors){
-    const nav = renderNavReviewBlock(fullHtmlAfterSections, lang, indent+"  ", nl);
+    // nav-review
+    const nav = renderNavReviewBlock(fullHtmlAfterSections, lang, indent+" ", nl);
     if (nav) lines.push(nav);
+
+    // ✅ NEW: best-alternates сразу после nav-review
+    const bestAlts = await renderBestAlternatesExtraBlock(root, urlPath, lang, pageKey, data, reviewSettings, nl, indent + "  ");
+    if (bestAlts) lines.push(bestAlts);
   }
 
   lines.push(`${indent}</div>`);
   return lines.join(nl);
 }
+
 
 function renderNavReviewBlock(fullHtml, lang, indent, nl){
   const masked = maskSegments(fullHtml);
@@ -2468,6 +2466,87 @@ async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, 
   return lines.join(nl);
 }
 
+function visitAriaLabel(siteName = "", lang = "en"){
+  const L = String(lang || "en").toLowerCase();
+  const name = String(siteName || "").trim();
+  if (L === "ru") return name ? `Перейти на ${name}` : "Перейти на сайт";
+  return name ? `Visit ${name}` : "Visit Site";
+}
+
+function bestAlternatesTitle(lang="en"){
+  const L = String(lang||"en").toLowerCase();
+  // по примеру нужно "Похожие"
+  if (L === "ru") return "Похожие";
+  if (L === "tr") return "Benzer";
+  if (L === "es") return "Similares";
+  return "Similar";
+}
+
+/**
+ * Рендерит <div class="best-alternates">...</div> на основе data["Sites Alternatives"]
+ * Берёт только первые 2.
+ * Идемпотентность: функция сама НЕ удаляет старые блоки, это делаем выше (removeAllBlocksByClass).
+ */
+async function renderBestAlternatesExtraBlock(root, urlPath, lang, pageKey, data, reviewSettings, nl, indent){
+  if (!root || !data) return "";
+  const alts = Array.isArray(data["Sites Alternatives"]) ? data["Sites Alternatives"] : [];
+  const firstTwo = alts.filter(Boolean).slice(0, 2);
+  if (!firstTwo.length) return "";
+
+  const reviewTxt = buttonSpanLabel(lang, "review") || (lang==="ru" ? "Подробнее" : "Read More");
+  const visitTxt  = buttonSpanLabel(lang, "visit")  || (lang==="ru" ? "Перейти" : "Visit");
+  const titleTxt  = bestAlternatesTitle(lang);
+
+  const I0 = indent;          // best-alternates
+  const I1 = indent + "  ";   // children of best-alternates
+  const I2 = I1 + "  ";       // children of rec-box
+  const I3 = I2 + "  ";       // deeper children
+
+  const lines = [];
+  lines.push(`${I0}<div class="best-alternates">`);
+  lines.push(`${I1}<span class="cent-title">${escapeHtml(titleTxt)}</span>`);
+
+  for (const altKey of firstTwo){
+    const aj = await altJson(root, altKey);
+    if (!aj) continue;
+
+    const baseReview = `/reviews/${altKey}`;
+    const reviewLink = withLangForReview(baseReview, lang);
+
+    const rewardRaw = pickReward(lang, aj) || "";
+    const reward = decodeHtmlEntities(rewardRaw);
+
+    const visitHref = computeVisitHref(urlPath, lang, altKey, aj);
+    const ariaReview = buildReviewAriaLabel(aj.name || "", lang, "review");
+    const ariaVisit = visitAriaLabel(aj.name || "", lang);
+
+    const noBonus = isNoBonusReward(aj, lang);
+    const recBoxClass = noBonus ? "rec-box nobonus" : "rec-box";
+
+    lines.push(`${I1}<div class="${recBoxClass}">`);
+
+    lines.push(`${I2}<div class="logobg">`);
+    lines.push(`${I3}<a href="${escapeAttr(reviewLink)}">`);
+    lines.push(`${I3}  <img src="${escapeAttr(aj.logo)}" loading="lazy" draggable="false" alt="${escapeAttr(`Логотип ${aj.name}`)}">`);
+    lines.push(`${I3}</a>`);
+    lines.push(`${I3}<p>${reward}</p>`);
+    lines.push(`${I3}<a class="boxtitle" href="${escapeAttr(reviewLink)}">${escapeHtml(aj.name)}</a>`);
+    lines.push(`${I2}</div>`);
+
+    lines.push(`${I2}<div class="content">`);
+    lines.push(`${I3}<div class="content-buttons">`);
+    lines.push(`${I3}  <a href="${escapeAttr(reviewLink)}" class="review-button" aria-label="${escapeAttr(ariaReview)}"><span>${escapeHtml(reviewTxt)}</span></a>`);
+    lines.push(`${I3}  <a href="${escapeAttr(visitHref)}" target="_blank" rel="noopener" class="review-button visit" aria-label="${escapeAttr(ariaVisit)}"><span>${escapeHtml(visitTxt)}</span></a>`);
+    lines.push(`${I3}</div>`);
+    lines.push(`${I2}</div>`);
+
+    lines.push(`${I1}</div>`);
+  }
+
+  lines.push(`${I0}</div>`);
+  return lines.join(nl);
+}
+
 /* ---- translations ---- */
 function applyReviewTranslations(html, lang, map, nl){
   let out = html;
@@ -2733,6 +2812,17 @@ function pickReward(lang, aj){
   if (lang==="es" && aj.reward_es) return aj.reward_es;
   if (lang==="pl" && aj.reward_pl) return aj.reward_pl;
   return aj.reward;
+}
+function isNoBonusReward(aj, lang){
+  if (!aj) return false;
+
+  const r = String(aj.reward || "").trim();
+  const rr = String(aj.reward_ru || "").trim();
+
+  if (r === "There is no Registration Bonus") return true;
+  if (rr === "На сайте нет Бонуса за Регистрацию") return true;
+
+  return false;
 }
 
 /* ---- NEW: shortinfo.empty авто-менеджер ---- */

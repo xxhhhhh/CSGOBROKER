@@ -365,7 +365,6 @@ nav .pages {
     height: auto;
     max-height: 60%;
     max-width: 60%;
-    border-radius: var(--main-border);
     transition: all .15s ease-in-out;
     position: relative;
     z-index: 1;
@@ -443,7 +442,7 @@ nav .pages {
     user-select: none;
 }
 
-.rec-box .content .boxtitle {
+.rec-box .boxtitle {
     font-weight: 600;
     font-size: 18px;
     padding: 0 4px;
@@ -451,6 +450,56 @@ nav .pages {
     text-transform: uppercase;
     text-align: center;
     text-decoration: none;
+}
+
+.box-extra-links .rec-box .boxtitle {
+    display: none;
+    margin: 0 16px 0 10px;
+    width: 75%;
+    background: none;
+    font-size: 16px;
+    justify-content: flex-start;
+}
+
+.rec-box .logobg a.boxtitle::before {
+    content: unset;
+}
+
+.box-extra-links .rec-box.nobonus .boxtitle {
+    display: flex;
+}
+
+.box-extra-links .rec-box.nobonus p {
+    display: none;
+}
+
+.box-extra-links .rec-box {
+    z-index: 1;
+    opacity: 1;
+    transform: unset;
+}
+
+.best-alternates {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    gap: 8px;
+    order: 2;
+}
+
+.cent-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 8px 16px;
+    border-radius: var(--main-border);
+    background: var(--darkgray);
+    user-select: none;
+    color: var(--gray);
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .boxreview,
@@ -12759,19 +12808,18 @@ header {
     user-select: none;
 }
 
-.editorial-note:hover p,
-.editorial-note:hover p a {
+.editorial-note:hover p {
     color: var(--text-lightgray);
 }
 
 .editorial-note p a {
-    color: var(--text-lightgray);
+    color: var(--main-color);
     transition: all .15s ease-in-out;
     text-decoration: none;
 }
 
 .editorial-note p a:hover {
-    color: var(--white);
+    filter: brightness(1.1);
 }
 
 @media (display-mode: standalone) {
@@ -12841,6 +12889,31 @@ header {
 }
 
 @media screen and (max-width: 1280px) {
+    .best-alternates {
+        flex-direction: row;
+        justify-content: center;
+        width: 90%;
+        margin: auto;
+        margin-top: 26px;
+    }
+
+    .best-alternates .rec-box .content-buttons {
+        display: none;
+    }
+
+    .box-extra-links .rec-box p {
+        display: none;
+    }
+
+    .box-extra-links .rec-box .boxtitle {
+        display: flex;
+    }
+
+    .best-alternates .cent-title {
+        position: absolute;
+        top: -40px;
+    }
+
     .editorial-note {
         margin: unset;
         margin-bottom: 6px;

@@ -1114,6 +1114,10 @@ ul .submenu li .nonredir,
     background: var(--main-theme) !important;
 }
 
+.box-extra-links .rec-box .logobg a {
+    background: unset !important;
+}
+
 .instruction code {
     font-weight: 500;
 }
