@@ -43,7 +43,6 @@ function redirectHtml(targetUrl) {
 <link id="main-style" rel="stylesheet" href="/style_main.css">
 <link rel="stylesheet" href="/fonts/TTNormsPro.css">
 <title>Redirecting…</title>
-
 </head>
 
 <body>
@@ -53,6 +52,7 @@ function redirectHtml(targetUrl) {
     <div class="spinner" aria-hidden="true"></div>
     <div class="title" data-i18n="title"></div>
     <div class="subtitle" data-i18n="subtitle"></div>
+    <div class="subtitle extra" id="redirectExtra" hidden data-i18n="extra"></div>
   </div>
 </div>
 
@@ -63,11 +63,13 @@ function redirectHtml(targetUrl) {
   const i18n = {
     ru: {
       title: "Перенаправляем…",
-      subtitle: "Пожалуйста, подождите"
+      subtitle: "Пожалуйста, подождите",
+      extra: "Если перенаправление занимает слишком много времени, возможно, сайт недоступен в вашем регионе или доступ к нему ограничен вашим интернет-провайдером."
     },
     en: {
       title: "Redirecting…",
-      subtitle: "Please wait"
+      subtitle: "Please wait",
+      extra: "If the redirect is taking too long, the site may be unavailable in your region or blocked by your internet provider."
     }
   };
 
@@ -85,8 +87,15 @@ function redirectHtml(targetUrl) {
     if (dict[k]) el.textContent = dict[k];
   });
 
-  const el = document.getElementById("redirectLoader");
-  if (el) el.classList.add("is-open");
+  const loaderEl = document.getElementById("redirectLoader");
+  if (loaderEl) loaderEl.classList.add("is-open");
+
+  setTimeout(() => {
+    const extraEl = document.getElementById("redirectExtra");
+    if (!extraEl) return;
+    extraEl.hidden = false;
+    extraEl.classList.add("popOut");
+  }, 1900);
 
   window.location.replace(url);
 })();
@@ -99,7 +108,6 @@ function redirectHtml(targetUrl) {
 </body>
 </html>`;
 }
-
 
 async function listJsonFiles(dir) {
   const out = [];

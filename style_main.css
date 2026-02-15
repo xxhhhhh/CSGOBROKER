@@ -17155,13 +17155,26 @@ a[href*="/?aff="][target="_blank"] {
 .redirect-loader .title {
     color: var(--text-lightgray);
     font-weight: 500;
-    margin-bottom: 4px;
 }
 
 .redirect-loader .subtitle {
     color: var(--gray);
     font-size: 14px;
     font-weight: 500;
+    margin-top: 4px;
+}
+
+.subtitle.extra[hidden] { 
+    display:none !important; 
+}
+
+.subtitle.extra.popOut{
+    display: block;
+    animation: popOut .35s ease both;
+}
+
+.redirect-loader .subtitle.extra {
+    margin-top: 8px;
 }
 
 @keyframes spin {
@@ -17170,14 +17183,14 @@ a[href*="/?aff="][target="_blank"] {
     }
 }
 
-/* плавное “проваливание” перед редиректом */
-.redirect-loader.is-leaving .redirect-card {
-    animation: popOut .22s ease forwards;
-}
-
 @keyframes popOut {
-    to {
+    0% {
+        opacity: 0;
         transform: translateY(6px) scale(.98);
-        opacity: .0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
