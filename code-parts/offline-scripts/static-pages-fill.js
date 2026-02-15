@@ -19,6 +19,7 @@ const TRANSLATIONS_PATH = "/code-parts/review-translations.json";
 const CATEGORY_CONTENTS_PATH     = "/code-parts/category-import/category-contents.json";
 const CATEGORY_BUILDER_PATH      = "/code-parts/category-import/category-builder.json";
 const CATEGORY_TRANSLATIONS_PATH = "/code-parts/category-import/category-translations.json";
+const GO_PREFIX = "/go"; // NEW
 
 // + инфобокс переводы
 const INFOBOX_TRANSLATIONS = "/code-parts/micro-parts/main-infobox/infobox-translations.json";
@@ -511,32 +512,10 @@ function averageFirstFour(ratings) {
   return avg;
 }
 
-// REPLACE computeGoKey with this version
-function computeGoKey(baseKey, urlPath = "", lang = "en", data = {}) {
-  const p = String(urlPath || "").toLowerCase();
-  const base = String(baseKey || "").trim();
-  if (!base) return "";
-
-  const hasPlain = (k) => k && typeof data === "object" && Object.prototype.hasOwnProperty.call(data, k) && !!data[k];
-  const hasSeg = (seg) => new RegExp(`(?:^|/)${seg}(?:/|$)`).test(p);
-
-  if (hasSeg("marketplaces") && hasPlain("marketplaces")) return `${base}-marketplaces`;
-  if (hasSeg("instant-sell") && hasPlain("instant-sell")) return `${base}-instant-sell`;
-  if (hasSeg("buy-skins")    && hasPlain("buy-skins"))    return `${base}-buy-skins`;
-  if (hasSeg("sell-skins")   && hasPlain("sell-skins"))   return `${base}-sell-skins`;
-
-  if ((/\/ru(?:\/|$)/.test(p)) && (p.includes("/earning/earn-by-play") || p.includes("/csgo/earn-by-play-csgo")) && hasPlain("earn-by-play")) {
-    return `${base}-earn-by-play`;
-  }
-  if (!/\/ru(?:\/|$)/.test(p) && hasSeg("earn-by-play") && hasPlain("earn-by-play-en")) {
-    return `${base}-earn-by-play-en`;
-  }
-
-  if (String(lang).toLowerCase() !== "ru") {
-    if (hasPlain(`${base}-en`)) return `${base}-en`;
-    if (hasPlain("link-en"))    return `${base}-en`;
-  }
-  return base;
+function toGoHref(goKey){
+  const k = String(goKey || "").trim();
+  if (!k) return "#";
+  return `${GO_PREFIX}/${k}`.replace(/\/{2,}/g, "/");
 }
 
 /* ======================================================================= */
@@ -544,8 +523,6 @@ function computeGoKey(baseKey, urlPath = "", lang = "en", data = {}) {
 /* ======================================================================= */
 
 function mbxCleanUrl(url){ return String(url||"").split("?")[0].toLowerCase(); }
-function mbxEnds(u, suf){ const x = mbxCleanUrl(u); return x.endsWith(suf.toLowerCase()); }
-function mbxHas(u, seg){ return mbxCleanUrl(u).includes(`/${seg.toLowerCase()}/`); }
 
 function mbxGetPageType(url){
   const u = mbxCleanUrl(url);
@@ -1274,24 +1251,39 @@ function ensureRouteMarkersForPage(html, lang, siteSettings, nl, urlPath){
 function computeVisitHref(urlPath, lang, baseKey, data = {}) {
   const p = String(urlPath || "").toLowerCase();
   const L = String(lang || "en").toLowerCase();
+  const base = String(baseKey || "").trim();
+  if (!base) return "#";
+
+  // helper: поле существует и непустое
   const has = (k) => k && Object.prototype.hasOwnProperty.call(data, k) && !!data[k];
   const seg = (s) => new RegExp(`(?:^|/)${s}(?:/|$)`).test(p);
 
-  if (seg("marketplaces") && has("marketplaces")) return String(data["marketplaces"]);
-  if (seg("instant-sell") && has("instant-sell")) return String(data["instant-sell"]);
-  if (seg("buy-skins")    && has("buy-skins"))    return String(data["buy-skins"]);
-  if (seg("sell-skins")   && has("sell-skins"))   return String(data["sell-skins"]);
+  // 1) page-type (как раньше)
+  if (seg("marketplaces") && has("marketplaces")) return toGoHref(`${base}-marketplaces`);
+  if (seg("instant-sell") && has("instant-sell")) return toGoHref(`${base}-instant-sell`);
+  if (seg("buy-skins")    && has("buy-skins"))    return toGoHref(`${base}-buy-skins`);
+  if (seg("sell-skins")   && has("sell-skins"))   return toGoHref(`${base}-sell-skins`);
 
+  // 2) earn-by-play (как раньше)
   const isEarnByPlay = seg("earn-by-play") || p.includes("/csgo/earn-by-play-csgo");
   if (isEarnByPlay) {
-    if (L === "ru"  && has("earn-by-play"))    return String(data["earn-by-play"]);
-    if (L !== "ru" && has("earn-by-play-en"))  return String(data["earn-by-play-en"]);
+    if (L === "ru"  && has("earn-by-play"))    return toGoHref(`${base}-earn-by-play`);
+    if (L !== "ru" && has("earn-by-play-en"))  return toGoHref(`${base}-earn-by-play-en`);
   }
 
-  if (L === "ru"  && has("link"))     return String(data["link"]);
-  if (L !== "ru" && has("link-en"))   return String(data["link-en"]);
+  // 3) язык (как раньше)
+  if (L !== "ru") {
+    // если есть link-en — используем goKey -en (генератор его сделает)
+    if (has("link-en")) return toGoHref(`${base}-en`);
+  }
 
-  return String(data["link"] || data["link-en"] || "#");
+  // 4) базовый go
+  // (если link отсутствует, но есть link-en — генератор всё равно сделал base -> link-en,
+  //  так что /go/<base> будет работать)
+  if (has("link") || has("link-en")) return toGoHref(base);
+
+  // fallback — если данных нет
+  return "#";
 }
 
 function getPageKeyFromHref(hrefRaw){

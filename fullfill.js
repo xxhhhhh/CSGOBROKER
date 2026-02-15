@@ -23,6 +23,7 @@ const ORDER = [
   "static-topics-fill.js",
   "schema-inject.js",
   "freebies-fill.js",
+  "generate-go-redirects.js",
   "static-pages-fill.js",
   "alt-langs.js",
   "build-search-config.js",

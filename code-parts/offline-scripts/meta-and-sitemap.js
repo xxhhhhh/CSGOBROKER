@@ -51,6 +51,7 @@ const IGNORE_DIRS = new Set([
   'node_modules', '.git', '.next', '.vercel', '.cache',
   'dist', 'build', 'out', 'tmp', 'temp',
   'code-parts', 'sitemaps', 'assets', 'static',
+  'go', // ✅ исключаем /go/
 ]);
 
 function collectHtmlFiles(dir) {
@@ -246,14 +247,17 @@ function upsertCoreSeoHeadTags(html, canonicalHref, lang) {
 
   // lines.splice(gbInsertIdx, 0, `${indentGb}<meta name="googlebot" content="noindex, nofollow">`);
 
-  // 3) OG-блок: og:url + og:locale рядом с остальными OG (после og:type, либо перед первым og:*)
+  // 3) OG-блок: og:url + og:locale рядом с остальными OG (после og:type, либо перед первым og:*),
+  //    иначе — сразу после canonical (который мы вставили в baseInsertIdx)
   const ogTypeIdx = findFirstIndex(lines, /^\s*<meta\b[^>]*\bproperty\s*=\s*["']og:type["'][^>]*\/?>\s*$/i);
   const firstOgIdx = findFirstIndex(lines, /^\s*<meta\b[^>]*\bproperty\s*=\s*["']og:/i);
+
+  const canonicalLineIdx = baseInsertIdx; // canonical мы вставили именно сюда
 
   let ogInsertIdx = -1;
   if (ogTypeIdx !== -1) ogInsertIdx = ogTypeIdx + 1;
   else if (firstOgIdx !== -1) ogInsertIdx = firstOgIdx;
-  else ogInsertIdx = gbInsertIdx + 1;
+  else ogInsertIdx = canonicalLineIdx + 1; // ✅ вместо gbInsertIdx
 
   const indentOg = (ogInsertIdx >= 0 && ogInsertIdx < lines.length)
     ? getLineIndent(lines[ogInsertIdx], indentSeo)
@@ -265,6 +269,7 @@ function upsertCoreSeoHeadTags(html, canonicalHref, lang) {
     `${indentOg}<meta property="og:url" content="${canonicalHref}">`,
     `${indentOg}<meta property="og:locale" content="${lang}">`
   );
+
 
   const nextInner = lines.join(eol);
   return html.replace(/(<head\b[^>]*>)[\s\S]*?(<\/head>)/i, `${open}${nextInner}${close}`);
