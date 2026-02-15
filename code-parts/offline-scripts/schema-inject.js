@@ -981,7 +981,7 @@ function main() {
 
   for (const relPath of relFiles) {
     // hard exclude
-    if (relPath === 'code-parts' || relPath.startsWith('code-parts/')) continue;
+    if (relPath === 'code-parts' || relPath.startsWith('code-parts/') || relPath.startsWith('go/')) continue;
     if (!relPath.endsWith('.html')) continue;
 
     const absPath = toAbs(relPath);
