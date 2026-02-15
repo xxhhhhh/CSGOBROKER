@@ -1,15 +1,65 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <link rel="canonical" href="https://freeward.net/ref/v2vod">
-    <meta name="robots" content="noindex">
-    <title>Redirecting…</title>
-    <script>location.replace("https://freeward.net/ref/v2vod");</script>
-    <noscript>
-        <meta http-equiv="refresh" content="0; url=https://freeward.net/ref/v2vod">
-    </noscript>
+<meta charset="utf-8">
+<link rel="canonical" href="https://freeward.net/ref/v2vod">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link id="main-style" rel="stylesheet" href="/style_main.css">
+<link rel="stylesheet" href="/fonts/TTNormsPro.css">
+<title>Redirecting…</title>
+
 </head>
 
+<body>
+
+<div class="redirect-loader" id="redirectLoader" aria-live="polite" aria-busy="true">
+  <div class="redirect-card">
+    <div class="spinner" aria-hidden="true"></div>
+    <div class="title" data-i18n="title"></div>
+    <div class="subtitle" data-i18n="subtitle"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const url = "https://freeward.net/ref/v2vod";
+
+  const i18n = {
+    ru: {
+      title: "Перенаправляем…",
+      subtitle: "Пожалуйста, подождите"
+    },
+    en: {
+      title: "Redirecting…",
+      subtitle: "Please wait"
+    }
+  };
+
+  function detectLang(){
+    const langs = navigator.languages || [navigator.language || "en"];
+    const l = String(langs[0]).toLowerCase();
+    return l.startsWith("ru") ? "ru" : "en";
+  }
+
+  const lang = detectLang();
+  const dict = i18n[lang] || i18n.en;
+
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k = el.getAttribute("data-i18n");
+    if (dict[k]) el.textContent = dict[k];
+  });
+
+  const el = document.getElementById("redirectLoader");
+  if (el) el.classList.add("is-open");
+
+  window.location.replace(url);
+})();
+</script>
+
+<noscript>
+<meta http-equiv="refresh" content="0; url=https://freeward.net/ref/v2vod">
+</noscript>
+
+</body>
 </html>

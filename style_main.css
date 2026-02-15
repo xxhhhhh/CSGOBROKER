@@ -13704,6 +13704,10 @@ header {
         background-color: rgb(22 22 22);
     }
 
+    .redirect-loader .redirect-card {
+        background-color: rgb(22 22 22);
+    }
+
     .mods-box {
         position: relative;
         left: unset;
@@ -17107,3 +17111,73 @@ a[href*="/?aff="][target="_blank"] {
     border-bottom: unset;
 } */
  
+.redirect-loader {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+    transition: opacity .25s ease;
+    z-index: 9999;
+    /* backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(10, 10, 12, .72); */
+}
+
+.redirect-loader.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.redirect-loader .redirect-card {
+    width: min(360px, calc(100vw - 32px));
+    padding: 20px 18px;
+    border-radius: 16px;
+    background: var(--darkygray);
+    /* background: rgba(255, 255, 255, .08); */
+    /* border: 1px solid rgba(255, 255, 255, .14); */
+    /* box-shadow: 0 12px 40px rgba(0, 0, 0, .35); */
+    text-align: center;
+}
+
+.redirect-loader .spinner {
+    width: 56px;
+    height: 56px;
+    margin: 2px auto 12px;
+    border-radius: 50%;
+    /* “кольцо” как в лоадерах */
+
+    border: 5px solid rgba(255, 255, 255, .15);
+    border-top-color: var(--main-color);
+    animation: spin .9s linear infinite;
+}
+
+.redirect-loader .title {
+    color: var(--text-lightgray);
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.redirect-loader .subtitle {
+    color: var(--gray);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* плавное “проваливание” перед редиректом */
+.redirect-loader.is-leaving .redirect-card {
+    animation: popOut .22s ease forwards;
+}
+
+@keyframes popOut {
+    to {
+        transform: translateY(6px) scale(.98);
+        opacity: .0;
+    }
+}
