@@ -475,7 +475,6 @@ h3,
 #search-input,
 .rec-box p,
 .content .boxtitle:hover,
-.box.main .content h4:hover,
 .boxes-holder .content .boxtitle:hover,
 .box .logobg .best-alt .best-alt-unit:hover,
 .box .logobg .best-alt .best-alt-unit,
@@ -483,8 +482,7 @@ h3,
     color: #1f1f1f;
 }
 
-.content .boxtitle,
-.box.main .content h4 {
+.content .boxtitle {
     color: var(--gray);
 }
 

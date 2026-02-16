@@ -90,12 +90,6 @@ i {
     font-style: normal;
 }
 
-.h1,
-.h2,
-.h2,
-.h3,
-.h4,
-.h6,
 h1,
 h2,
 h2,
@@ -3485,6 +3479,17 @@ h3 {
     display: flex;
 }
 
+.criteria-descriptions h2 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 18px 30px;
+    border-radius: var(--main-border);
+    background: var(--darkgray);
+    user-select: none;
+    font-size: 16px;
+}
+
 .ssiodox:not(:has(.boxreview)) .criteria-descriptions {
     display: block;
     column-count: 2;
@@ -6385,7 +6390,7 @@ nav img:active,
 
 .nav-review li,
 .content p,
-.content h4,
+.content h2,
 .instruction li,
 .boxreview .plusminus .criteria .par li,
 .nav-review li,
@@ -6395,7 +6400,6 @@ nav img:active,
 
 
 .content h2,
-.content h4,
 .content p:first-child,
 .content .boxtitle {
     font-weight: 600;
@@ -6405,7 +6409,7 @@ nav img:active,
     text-align: center;
 }
 
-h4:has(.boxtitle) {
+h2:has(.boxtitle) {
     margin-top: 15px;
     transition: all .15s ease-in-out;
 }
@@ -6501,7 +6505,7 @@ h4:has(.boxtitle) {
     z-index: 1;
 }
 
-.box.main .content h4::after {
+.box.main .content h2::after {
     content: '';
     height: 2px;
     background: linear-gradient(56deg, rgba(0, 0, 0, 0) 0%, rgba(168, 29, 52, .65) 50%, rgba(0, 0, 0, 0) 100%);
@@ -6511,7 +6515,7 @@ h4:has(.boxtitle) {
     bottom: -5px;
 }
 
-.box.main .content h4::before {
+.box.main .content h2::before {
     content: '';
     width: 100%;
     height: 100%;
@@ -6524,8 +6528,8 @@ h4:has(.boxtitle) {
     filter: blur(5px);
 }
 
-.box.main .content h4::after,
-.box.main .content h4::before {
+.box.main .content h2::after,
+.box.main .content h2::before {
     content: unset;
 }
 
@@ -6629,13 +6633,10 @@ h4:has(.boxtitle) {
     pointer-events: none;
 }
 
-.box.main .content h4 {
+.box.main .content h2 {
     width: auto;
     position: relative;
     user-select: none;
-}
-
-.box.main .content h4 {
     display: none;
 }
 
@@ -9637,7 +9638,7 @@ label:active,
 .skins-category-switch .category-switch:active::before,
 .preview-pause-button:active .officon::before,
 a.extra-abox:active span,
-h4:active .boxtitle {
+h2:active .boxtitle {
     filter: brightness(.4) !important;
     transition: all .09s ease-in-out;
 }
@@ -9705,7 +9706,7 @@ nav img:active,
 .mirror-redirect:active,
 .partner-site:active,
 .main-mode-unit:active,
-h4:has(.boxtitle):active {
+h2:has(.boxtitle):active {
     scale: .96;
     transform-origin: center center;
     transition: all .1s ease-in-out;
@@ -11712,7 +11713,7 @@ header {
     margin-top: 13px;
 }
 
-.main-page .content h4:has(.boxtitle) {
+.main-page .content h2:has(.boxtitle) {
     margin-top: 13px;
 }
 
@@ -13631,7 +13632,7 @@ header {
         max-height: unset;
     }
 
-    .box.main .content h4 {
+    .box.main .content h2 {
         margin-top: 5px;
         display: flex;
     }
@@ -16320,7 +16321,7 @@ header {
     }
 
     .main-page .box .content .boxtitle,
-    .main-page .box .content h4 {
+    .main-page .box .content h2 {
         font-size: 18px;
         display: none;
     }

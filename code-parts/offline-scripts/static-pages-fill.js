@@ -2066,9 +2066,23 @@ function renderNavReviewBlock(fullHtml, lang, indent, nl){
   const hasDetails= !!findFirstByClass(masked, "sitedetails");
   const hasAlts   = !!findFirstByClass(masked, "sitealternates");
 
-  const h2m = fullHtml.match(/<h2[^>]*>([\s\S]*?)<\/h2>/i);
-  const h3m = fullHtml.match(/<h3[^>]*>([\s\S]*?)<\/h3>/i);
   const strip = s => String(s||"").replace(/<[^>]*>/g,"").trim();
+
+  // 1) h2m: первый <h2> внутри <div class="smallreview"> (НЕ "smallreview criteria")
+  const smallReviewInner =
+    (fullHtml.match(/<div[^>]*class\s*=\s*"(?:[^"]*\s)?smallreview(?:\s[^"]*)?"[^>]*>([\s\S]*?)<\/div>/i) || [])[1] || "";
+
+  // строго исключим smallreview criteria: берём только class="smallreview" (как в твоём примере)
+  const smallReviewInnerStrict =
+    (fullHtml.match(/<div[^>]*class\s*=\s*"smallreview"[^>]*>([\s\S]*?)<\/div>/i) || [])[1] || smallReviewInner;
+
+  const h2m = (smallReviewInnerStrict.match(/<h2[^>]*>([\s\S]*?)<\/h2>/i) || null);
+
+  // 2) h3m: первый <h2> внутри первого .instruction ...
+  const instructionInner =
+    (fullHtml.match(/<div[^>]*class\s*=\s*"[^"]*\binstruction\b[^"]*"[^>]*>([\s\S]*?)<\/div>/i) || [])[1] || "";
+
+  const h3m = (instructionInner.match(/<h2[^>]*>([\s\S]*?)<\/h2>/i) || null);
 
   const T = {
     en:{plusminus:'Pros and Cons', screentable:'Screenshots and Modes', sitedetails:'Payment Methods', sitealternates:'Similar Sites'},
@@ -2380,7 +2394,7 @@ async function upsertAlternatives(html, boxreview, root, lang, urlPath, alts, ra
   const anchor = criteria || (!opt.forceAfterCriteria && (findFirstByClass(masked, "ratingsumm")));
   if (!anchor) return replaceBoxreviewInner(html, boxreview, content);
 
-  const nameMatch = html.match(/<div\b[^>]*class\s*=\s*["'][^"']*\bbox main\b[\s\S]*?<div\b[^>]*class\s*=\s*["'][^"']*\bcontent\b[\s\S]*?<h4[^>]*>([^<]+)<\/h4>/i);
+  const nameMatch = html.match(/<div\b[^>]*class\s*=\s*["'][^"']*\bbox main\b[\s\S]*?<div\b[^>]*class\s*=\s*["'][^"']*\bcontent\b[\s\S]*?<h2[^>]*>([^<]+)<\/h2>/i);
   const mainName = nameMatch ? nameMatch[1].trim() : "Site";
 
   const insertPos = anchor.closeEnd;

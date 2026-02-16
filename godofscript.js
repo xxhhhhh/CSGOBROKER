@@ -1538,22 +1538,22 @@ boxes.forEach((box) => {
   if (!logoLink) return;
 
   const href = logoLink.getAttribute('href');
-  const h4 = box.querySelector('.content h4:first-child');
-  if (!h4) return;
+  const h2 = box.querySelector('.content h2:first-child');
+  if (!h2) return;
 
-  // Если в h4 уже есть ссылка — выходим, чтобы не делать вложенные <a>
-  if (h4.querySelector('a')) return;
+  // Если в h2 уже есть ссылка — выходим, чтобы не делать вложенные <a>
+  if (h2.querySelector('a')) return;
 
   const a = document.createElement('a');
   a.href = href;
   a.classList.add('boxtitle');
 
-  // Переносим ВСЁ текущее содержимое h4 внутрь ссылки (сохраняет разметку/иконки и т.п.)
-  while (h4.firstChild) {
-    a.appendChild(h4.firstChild);
+  // Переносим ВСЁ текущее содержимое h2 внутрь ссылки (сохраняет разметку/иконки и т.п.)
+  while (h2.firstChild) {
+    a.appendChild(h2.firstChild);
   }
 
-  h4.appendChild(a);
+  h2.appendChild(a);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
