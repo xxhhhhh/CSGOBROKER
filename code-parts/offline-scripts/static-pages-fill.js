@@ -1286,6 +1286,112 @@ function computeVisitHref(urlPath, lang, baseKey, data = {}) {
   return "#";
 }
 
+/* ======================================================================= */
+/* === NEW: EDITORIAL-NOTE (reviews + mirrors) ============================ */
+/* ======================================================================= */
+
+function shouldShowEditorialNote(data){
+  if (!data) return false;
+  const mode = String(data["Main Mode"] || "").toLowerCase();
+  return mode === "betting" || mode === "classic" || mode === "casino";
+}
+
+function editorialNoteContent(lang){
+  const L = String(lang || "en").toLowerCase();
+
+  // href rules:
+  // - ru: /ru/responsibility
+  // - en|tr|es: /responsibility
+  const href = (L === "ru") ? "/ru/responsibility" : "/responsibility";
+
+  if (L === "ru"){
+    return {
+      href,
+      text: "Использование азартных платформ связано с финансовыми рисками. Рекомендуем ознакомиться с нашей",
+      link: "политикой ответственной игры"
+    };
+  }
+
+  if (L === "tr"){
+    return {
+      href,
+      text: "Kumar platformlarını kullanmak finansal riskler içerir. Lütfen",
+      link: "sorumlu oyun politikamızı"
+    };
+  }
+
+  if (L === "es"){
+    return {
+      href,
+      text: "El uso de plataformas de juego conlleva riesgos financieros. Te recomendamos revisar nuestra",
+      link: "política de juego responsable"
+    };
+  }
+
+  // en (default)
+  return {
+    href,
+    text: "Using gambling platforms involves financial risks. We recommend reading our",
+    link: "responsible gaming policy"
+  };
+}
+
+function renderEditorialNoteBlock(indent, nl, lang){
+  const t = editorialNoteContent(lang);
+  return [
+    `${indent}<div class="editorial-note">`,
+    `${indent} <p>${escapeHtml(t.text)} <a href="${escapeAttr(t.href)}">${escapeHtml(t.link)}</a>.</p>`,
+    `${indent}</div>`
+  ].join(nl);
+}
+
+/**
+ * Inserts .editorial-note in boxreview:
+ * - after .criteria-descriptions
+ * - else after .ratingsumm
+ * Idempotent: removes existing editorial-note blocks first.
+ */
+function upsertEditorialNoteInBoxreview(html, boxreview, lang, nl, data, urlPath){
+  if (!html || !boxreview) return html;
+
+  // Only for specific Main Modes
+  if (!shouldShowEditorialNote(data)) return html;
+
+  const isMirrors = /\/mirrors\//.test(String(urlPath));
+
+  const { inner } = sliceBoxreviewInner(html, boxreview);
+  let content = removeNestedBoxreview(inner);
+
+  // remove old notes (idempotent)
+  content = removeAllBlocksByClass(content, "editorial-note");
+
+  const masked = maskSegments(content);
+
+  let anchor = null;
+
+  if (isMirrors){
+    // Mirrors: after .instruction-mirrors
+    anchor = findFirstByClass(masked, "instruction-mirrors");
+  } else {
+    // Reviews: after criteria or ratings
+    const criteria = findFirstByClass(masked, "criteria-descriptions");
+    const ratings = findFirstByClass(masked, "ratingsumm");
+    anchor = criteria || ratings;
+  }
+
+  if (!anchor) return replaceBoxreviewInner(html, boxreview, content);
+
+  const insertPos = anchor.closeEnd;
+  const indent = indentBefore(content, insertPos, nl);
+  const block = renderEditorialNoteBlock(indent, nl, lang);
+
+  const before = content.slice(0, insertPos);
+  const after = content.slice(insertPos);
+
+  const newInner = joinBlocksNoBlank(before, block, after, nl);
+  return replaceBoxreviewInner(html, boxreview, newInner);
+}
+
 function getPageKeyFromHref(hrefRaw){
   if (!hrefRaw) return null;
   const href = hrefRaw.split("#")[0].split("?")[0].replace(/\/+$/,"");
@@ -1397,7 +1503,13 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
     boxreview = findFirstByClass(maskSegments(out), "boxreview"); if (!boxreview) return out;
 
     out = upsertRatings(out, boxreview, data, nl);
-    boxreview = findFirstByClass(maskSegments(out), "boxreview"); if (!boxreview) return out;
+    boxreview = findFirstByClass(maskSegments(out), "boxreview");
+    if (!boxreview) return out;
+
+    // NEW: editorial-note (reviews + mirrors)
+    out = upsertEditorialNoteInBoxreview(out, boxreview, lang, nl, data, urlPath);
+    boxreview = findFirstByClass(maskSegments(out), "boxreview");
+    if (!boxreview) return out;
 
     out = await upsertAlternatives(out, boxreview, root, lang, urlPath, data["Sites Alternatives"] || [], ratingsMap, nl, { forceAfterCriteria: true });
   }
@@ -2045,14 +2157,16 @@ async function renderPromoNavMirrorBlock(fullHtmlAfterSections, urlPath, lang, p
   }
 
   if (!isMirrors){
-    // nav-review
+    // nav-review (only on reviews)
     const nav = renderNavReviewBlock(fullHtmlAfterSections, lang, indent+" ", nl);
     if (nav) lines.push(nav);
-
-    // ✅ NEW: best-alternates сразу после nav-review
-    const bestAlts = await renderBestAlternatesExtraBlock(root, urlPath, lang, pageKey, data, reviewSettings, nl, indent + "  ");
-    if (bestAlts) lines.push(bestAlts);
   }
+
+  // NEW: best-alternates ALWAYS (reviews + mirrors), always last inside .box-extra-links
+  const bestAlts = await renderBestAlternatesExtraBlock(
+    root, urlPath, lang, pageKey, data, reviewSettings, nl, indent + " "
+  );
+  if (bestAlts) lines.push(bestAlts);
 
   lines.push(`${indent}</div>`);
   return lines.join(nl);

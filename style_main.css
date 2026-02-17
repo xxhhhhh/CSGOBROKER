@@ -350,7 +350,7 @@ nav .pages {
     min-height: 40px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 13px;
 }
 
@@ -375,7 +375,12 @@ nav .pages {
     background: var(--icongradient);
     border-radius: var(--main-border);
     margin-left: 11px;
+    transition: all .15s ease-in-out;
     z-index: 1;
+}
+
+.rec-box .logobg a:hover {
+    transform: scale(1.05);
 }
 
 .rec-box .logobg a::before {
@@ -449,11 +454,15 @@ nav .pages {
 .box-extra-links .rec-box .boxtitle {
     display: none;
     margin: 0 16px 0 10px;
-    width: 75%;
+    width: fit-content;
     background: none;
     font-size: 16px;
     justify-content: flex-start;
     color: var(--text-lightgray);
+}
+
+.box-extra-links .rec-box .boxtitle:hover {
+    color: var(--white);
 }
 
 .rec-box .logobg a.boxtitle::before {
@@ -984,7 +993,7 @@ nav .pages {
     display: flex;
     align-items: center;
     position: relative;
-    background: var(--icongradient);
+    background: var(--icongradient2);
     border-radius: var(--main-border) 0 0 var(--main-border);
 }
 
@@ -1062,7 +1071,7 @@ nav .pages {
     height: 100%;
     position: relative;
     border-radius: var(--main-border);
-    background: linear-gradient(250deg, var(--darkgray), var(--main-theme), var(--darkgray));
+    background: linear-gradient(250deg, var(--darkgray), var(--darkygray), var(--darkgray));
 }
 
 .menu-main-part {
@@ -3468,6 +3477,7 @@ h3 {
 
 .criteria-descriptions {
     display: none;
+    position: relative;
     flex-direction: row;
     margin-top: 8px;
     gap: 8px;
@@ -3479,15 +3489,25 @@ h3 {
     display: flex;
 }
 
-.criteria-descriptions h2 {
+.criteria-descriptions h2,
+.alternates-title {
     display: flex;
     align-items: center;
-    width: 100%;
-    padding: 18px 30px;
+    width: fit-content;
+    height: 40px;
+    padding: 0 20px;
     border-radius: var(--main-border);
-    background: var(--darkgray);
+    background: var(--darkygray);
     user-select: none;
     font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    top: -25px;
+    color: var(--gray);
+    z-index: 100;
 }
 
 .ssiodox:not(:has(.boxreview)) .criteria-descriptions {
@@ -3582,7 +3602,7 @@ h3 {
     margin-right: 4px;
     width: 16px;
     height: 16px;
-    border-radius: 30%;
+    border-radius: 40%;
     font-weight: 600;
 }
 
@@ -3627,7 +3647,7 @@ h3 {
 
 .ratingsumm {
     width: 100%;
-    height: 100px;
+    height: 80px;
     background: var(--darkgray);
     display: flex;
     flex-direction: column;
@@ -3635,7 +3655,6 @@ h3 {
     align-content: center;
     justify-content: space-around;
     align-items: center;
-    padding: 30px 0px 30px 0px;
     border-radius: var(--main-border);
 }
 
@@ -3717,15 +3736,16 @@ h3 {
     justify-content: center;
     counter-increment: item1;
     content: counter(item1, decimal);
-    background: rgb(18 18 18);
-    color: var(--main-color);
+    background: var(--icongradient);
+    color: #ce203d;
     position: relative;
     margin-right: 10px;
-    width: 22px;
-    height: 22px;
-    border-radius: 30%;
+    width: 24px;
+    height: 24px;
+    border-radius: var(--main-border);
     font-weight: 600;
     font-size: 15px;
+    border: 1px solid #4c0c16;
 }
 
 .instruction li a {
@@ -4669,18 +4689,18 @@ nav img {
 .nav-review li::before {
     content: "";
     position: relative;
-    width: 8px;
-    height: 8px;
-    min-width: 8px;
+    width: 9px;
+    height: 9px;
+    min-width: 9px;
     font-size: 24px;
     color: transparent;
     background: linear-gradient(to right, rgb(141, 21, 41), var(--main-color));
     -webkit-background-clip: text;
     background-clip: initial;
     transition: all .15s ease-in-out;
-    border-radius: 30%;
+    border-radius: 40%;
     margin-right: 10px;
-    top: 8px;
+    top: 7px;
     opacity: .5;
 }
 
@@ -4690,11 +4710,12 @@ nav img {
     align-items: center;
     justify-content: center;
     content: '1';
-    background: rgb(18 18 18);
+    background: var(--icongradient);
     color: var(--main-color);
-    width: 22px;
-    height: 22px;
-    border-radius: 30%;
+    border: 1px solid #4c0c16;
+    width: 24px;
+    height: 24px;
+    border-radius: var(--main-border);
     margin-right: 10px;
     font-weight: 600;
     font-size: 15px;
@@ -5619,29 +5640,7 @@ nav img {
     width: 100%;
 }
 
-.alternates-title {
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 14px;
-    position: absolute;
-    left: 50%;
-    top: -2px;
-    transform: translateX(-50%);
-    color: var(--gray);
-    height: 30px;
-    padding: 0 12px;
-    user-select: none;
-    z-index: 100;
-}
-
-.alternates-title {
-    background: var(--darkygray);
-}
-
-.alternates-title::after,
+/* .alternates-title::after,
 .alternates-title::before {
     content: '';
     position: absolute;
@@ -5654,14 +5653,14 @@ nav img {
     z-index: -1;
     top: 0;
     right: -10px;
-}
+} */
 
-.alternates-title::before {
+/* .alternates-title::before {
     right: unset;
     left: -10px;
     transform: skewX(20deg);
     border-radius: 0 0 0 5px;
-}
+} */
 
 .sitealternatesboxes {
     display: flex;
@@ -12115,8 +12114,8 @@ header {
 }
 
 .ptype .instruction.points ol li:before {
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
     color: transparent;
     background: linear-gradient(90deg, rgb(141, 21, 41), var(--main-color));
     transition: all .15s ease-in-out
@@ -12157,24 +12156,23 @@ header {
     margin-left: 0;
 }
 
-.instruction h3::before,
+.instruction h2::before,
 .smallreview h2::before,
-.smallreview h3::before,
 .introduce-craft h2::before {
     content: "";
     position: relative;
     display: block;
     margin-right: 10px;
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
     font-size: 24px;
     color: transparent;
     background: linear-gradient(90deg, rgb(141, 21, 41), var(--main-color));
     -webkit-background-clip: text;
     background-clip: initial;
     transition: all .15s ease-in-out;
-    border-radius: 30%;
-    top: 8px;
+    border-radius: 40%;
+    top: 7px;
 }
 
 .ptype .main-infobox-mascotte {
@@ -13525,10 +13523,6 @@ header {
         background: unset;
         padding: 30px 10px;
         margin: 0 auto;
-    }
-
-    .alternates-title {
-        top: 0;
     }
 
     .gamemodes {

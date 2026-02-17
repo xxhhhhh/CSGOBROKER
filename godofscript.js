@@ -1474,7 +1474,7 @@ $(document).ready(function() {
 
       // подсветка активного пункта при скролле
       function highlightCurrent(){
-        const threshold = 300;
+        const threshold = 400;
         let current = -1;
         lis.forEach((li, idx)=>{
           const sel = li.getAttribute('data-target');
