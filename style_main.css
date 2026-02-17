@@ -21,6 +21,7 @@
     --defbuttonbg_hover: linear-gradient(180deg, rgb(27 27 27) 0%, rgb(24 24 24) 100%);
     --icongradient: linear-gradient(-45deg, var(--darkgray), var(--main-theme));
     --icongradient2: linear-gradient(-45deg, var(--darkgray), var(--darkygray));
+    --icongradient3: linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%);
     --centralized: 1272px; /* 66.528% */
     --buttons-container-w: max(50vw, min(98vw, 1344px));
     --centralized-inner: calc(var(--centralized) - 18px);
@@ -326,7 +327,7 @@ nav .pages {
     right: 4px;
     top: 4px;
     bottom: 4px;
-    background: linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%);
+    background: var(--icongradient3);
     opacity: .8;
     border-radius: var(--main-border);
 }
@@ -1008,7 +1009,7 @@ nav .pages {
 .menu-main-section {
     width: calc(100% - 9px);
     gap: 9px;
-    margin-top: 9px;
+    margin-top: 8px;
     margin-left: 9px;
     height: 637px;
     display: flex;
@@ -1085,7 +1086,7 @@ nav .pages {
 
 .menu-main-section-name {
     width: calc(100% - 18px);
-    margin-top: 9px;
+    margin-top: 8px;
 }
 
 .menu-main-section-name span {
@@ -1108,7 +1109,7 @@ nav .pages {
 
 .menu-main-solid-list {
     width: calc(100% - 18px);
-    margin-top: 9px;
+    margin-top: 8px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -1130,7 +1131,7 @@ nav .pages {
     width: calc(100% - 18px);
     gap: 9px;
     height: auto;
-    margin-top: 9px;
+    margin-top: 8px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -2411,7 +2412,7 @@ nav .pages {
 }
 
 .sitepage.items .box-skins .skin {
-    /* background: linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%); */
+    /* background: var(--icongradient3); */
     background: var(--darkgray);
 }
 
@@ -2559,10 +2560,10 @@ nav .pages {
 }
 
 .close-box-skins {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     background: var(--darkgray);
-    border: 4px solid rgb(16 16 16);
+    border: 6px solid rgb(16 16 16);
     position: absolute;
     right: -3px;
     top: -3px;
@@ -3129,7 +3130,7 @@ h3 {
     position: relative;
     width: 300px;
     height: 50px;
-    margin-top: 9px;
+    margin-top: 8px;
     border-radius: var(--main-border);
     background-color: rgba(0, 0, 0, .2);
     padding: 10px 0;
@@ -3237,7 +3238,7 @@ h3 {
     display: none;
 }
 
-.boxreview#mirror {
+.boxreview.mirror {
     min-height: 725px;
 }
 
@@ -3324,12 +3325,12 @@ h3 {
     transform: scale(1.03);
 }
 
-.boxreview#mirror .features .featuresbox .typesinside a:last-child {
+.boxreview.mirror .features .featuresbox .typesinside a:last-child {
     border-radius: 0 5px 5px 0;
     content: '';
 }
 
-.boxreview#mirror .features .featuresbox .typesinside a:last-child::after {
+.boxreview.mirror .features .featuresbox .typesinside a:last-child::after {
     content: unset;
 }
 
@@ -3754,7 +3755,7 @@ h3 {
     text-decoration: none;
 }
 
-.boxreview#mirror .typesinside {
+.boxreview.mirror .typesinside {
     justify-content: center;
     border-radius: 5px 5px 0 0;
 }
@@ -3773,7 +3774,7 @@ h3 {
 .instruction-mirrors h2 {
     text-align: center;
     height: auto;
-    margin-bottom: 30px !important;
+    margin-bottom: 30px;
     color: var(--white);
 }
 
@@ -4831,7 +4832,7 @@ nav img {
     right: 4px;
     top: 4px;
     bottom: 4px;
-    background: linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%);
+    background: var(--icongradient3);
     opacity: .8;
     border-radius: var(--main-border);
 } */
@@ -5017,26 +5018,6 @@ nav img {
 
 .partner-site:hover::before {
     transform: rotate(-25deg);
-}
-
-.return-box {
-    width: 60px;
-    height: 60px;
-    background-color: rgba(0, 0, 0, .35);
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 9px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: all .2s ease-in-out;
-    font-size: 26px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, .3);
-    position: absolute;
-    top: 0;
-    left: -70px;
 }
 
 .partner-site img {
@@ -5315,7 +5296,7 @@ nav img {
     margin-top: 6px;
     opacity: 1;
     border-radius: var(--main-border) var(--main-border) 3px 3px;
-    background: linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%);
+    background: var(--icongradient3);
     overflow: hidden;
     margin: 4px;
     width: auto;
@@ -5325,7 +5306,7 @@ nav img {
 .topic-craft:not(.loadout) .topic-grandbox .topic-box .logobg {
     margin: 8px 8px 0 8px;
     background: var(--icongradient);
-    background: linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%);
+    background: var(--icongradient3);
     mask-image: unset;
     -webkit-mask-image: unset;
 } */
@@ -5636,7 +5617,7 @@ nav img {
 
 .sitealternates {
     position: relative;
-    margin-top: 9px;
+    margin-top: 8px;
     width: 100%;
 }
 
@@ -6808,7 +6789,7 @@ h2:has(.boxtitle) {
 
 .boxreview .slider-container {
     width: 100%;
-    margin-top: 9px;
+    margin-top: 8px;
 }
 
 footer {
@@ -7040,11 +7021,6 @@ footer .centralizer .footer-content {
 
 .sitealternatesboxes .content-buttons {
     margin-top: 2px;
-}
-
-.box.main .content-buttons {
-    margin-top: 9px;
-    order: 1;
 }
 
 .content .review-button {
@@ -10473,7 +10449,7 @@ div#results {
 }
 
 .topic-box.maestro .logobg {
-    height: auto;
+    height: 250px;
     mask-image: unset;
     -webkit-mask-image: unset;
     z-index: 2;
@@ -10582,7 +10558,7 @@ div#results {
     width: 100%;
     position: relative;
     height: auto;
-    margin-top: 9px;
+    margin-top: 8px;
     /* background: rgb(9 9 9); */
     background: var(--darkgray);
     border-radius: var(--main-border);
@@ -10850,7 +10826,7 @@ div#results {
 
 .boxreview .main-infobox {
     max-width: 100%;
-    margin-top: 9px;
+    margin-top: 8px;
 }
 
 .boxreview .main-infobox-content {
@@ -10950,7 +10926,7 @@ div#results {
     position: absolute;
     display: block;
     background-size: contain;
-    background: var(--icongradient);
+    background: var(--icongradient2);
     top: 6px;
     left: 6px;
     overflow: hidden;
@@ -11016,7 +10992,7 @@ header {
 }
 
 .boxreview .plusminus .criteria {
-    box-shadow: 0 1px 2px 0 rgba(7, 7, 7, .7);
+    box-shadow: 0 1px 2px 0 rgba(13, 13, 13, .7);
 }
 
 .main-page .content p:nth-child(3) {
@@ -12158,6 +12134,7 @@ header {
 
 .instruction h2::before,
 .smallreview h2::before,
+.smallreview h3::before,
 .introduce-craft h2::before {
     content: "";
     position: relative;
@@ -12914,12 +12891,22 @@ header {
         top: -40px;
     }
 
+    .mirror .best-alternates .cent-title {
+        top: -30px;
+    }
+
     .editorial-note {
         margin: unset;
-        margin-bottom: 6px;
+        margin-top: 6px;
         height: auto;
         padding: 16px 0;
         width: 96%;
+    }
+
+    .boxreview.mirror .editorial-note {
+        margin: unset;
+        padding: unset;
+        padding-bottom: 24px;
     }
 
     .box-extra-links:has(.mirror-redirect) {
@@ -13515,7 +13502,7 @@ header {
         padding: 15px 0;
     }
 
-    .boxreview#mirror .features {
+    .boxreview.mirror .features {
         order: 1;
     }
 
@@ -14207,6 +14194,14 @@ header {
         font-size: 18px;
     }
 
+    .instruction-mirrors h2 {
+        margin-bottom: 16px;
+    }
+
+    .editorial-note p {
+        font-size: 14px;
+    }
+
     .buttons-container {
         display: none;
     }
@@ -14718,7 +14713,7 @@ header {
     }
 
     .boxreview .smallreview {
-        margin-top: 9px;
+        margin-top: 8px;
     }
 
     .smallreview::after {
@@ -15697,7 +15692,7 @@ header {
     }
 
     .sitealternates {
-        margin-top: 4px;
+        margin-top: 6px;
     }
 
     .alternates-title {
@@ -15812,11 +15807,10 @@ header {
     .slider-container {
         width: 96%;
         margin-top: 2px;
-        margin-bottom: -1px !important;
     }
 
     .boxreview .slider-container {
-        margin-top: 5px;
+        margin-top: 6px;
     }
 
     .main-infobox {
@@ -16133,7 +16127,7 @@ header {
         height: auto;
         justify-content: center;
         align-items: center;
-        gap: 4px;
+        gap: 6px;
     }
 
     .sitealternates .box {
@@ -16441,7 +16435,7 @@ header {
 
 /* 
 .character-model .preview-item:has(.skin) {
-    background: linear-gradient(-45deg, var(--darkgray) 50%, var(--darkygray) 100%);
+    background: var(--icongradient3);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .25);
 } */
 
@@ -16820,6 +16814,10 @@ header {
     .item-topic-grandbox:hover .logobg,
     .topic-box.maestro:hover .logobg {
         margin: 5px !important;
+    }
+
+    .topic-box.maestro .logobg {
+        height: auto;
     }
 
     .topic-boxes-holder:not(.sticker-crafts) .topic-box.fade-in {

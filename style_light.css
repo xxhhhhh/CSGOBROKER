@@ -81,9 +81,21 @@
 .promo-box.extra-abox,
 .box.crypto-choice .logobg:after,
 .search-container::before,
-.nav-content {
+.nav-content,
+.colors-box-selection:hover .color-box-selection-button,
+.instruction li strong,
+.instruction li a,
+.instruction code,
+.site-promo-copy {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
     box-shadow: unset;
+}
+
+.instruction li a:hover, 
+.smallreview p a:hover,
+.instruction code:hover, 
+.site-promo-copy:hover{
+    filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0) brightness(.9);
 }
 
 /* header::before, */
@@ -482,7 +494,13 @@ h3,
 .boxes-holder .content .boxtitle:hover,
 .box .logobg .best-alt .best-alt-unit:hover,
 .box .logobg .best-alt .best-alt-unit,
-.colors-box-selection:hover .color-box-selection-button {
+.colors-box-selection:hover .color-box-selection-button,
+.instruction li strong,
+.instruction li a,
+.instruction code:hover,
+.promo-box:hover code,
+.site-promo-copy:hover,
+.site-promo-copy:hover::after {
     color: #1f1f1f;
 }
 
@@ -909,12 +927,15 @@ h3,
 }
 
 .instruction code,
-.site-promo-copy {
+.site-promo-copy,
+.instruction li strong::after, 
+.instruction li a::after, 
+.site-attention.event strong.item::after {
     background-color: var(--opacback);
 }
 
 .site-promo-copy {
-    border: 1px rgb(200 200 200) solid;
+    border: unset;
 }
 
 .box.main .content h4::before {
@@ -1038,12 +1059,6 @@ h3,
 
 .bonus_info::before {
     content: none;
-}
-
-.instruction Code:hover,
-.site-promo-copy:hover {
-    color: #1a1a1a;
-    filter: brightness(1.1);
 }
 
 .methodlist a[aria-label]:hover:after {
