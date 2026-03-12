@@ -165,6 +165,10 @@ const ITEMS_TYPE_TOPICS_FILES = {
   charms: "/code-parts/topics/charms.json",
   collections: "/code-parts/topics/collections.json",
 };
+const RU_BOX_TITLE_MAP = new Map([
+  ["knives", "Ножи"],
+  ["gloves", "Перчатки"],
+]);
 
 const weaponCache = new Map();
 async function loadWeaponJson(root, weapon){
@@ -284,6 +288,58 @@ async function listWeaponJsonFiles(root){
     .filter(e=>e.isFile() && e.name.toLowerCase().endsWith(".json"))
     .map(e=>path.join(dir, e.name))
     .filter(p=>!/[\/\\]presets[\/\\]?/i.test(p));
+}
+
+function normalizeNl(s, nl = "\n"){
+  return String(s).replace(/\r\n/g, "\n").replace(/\r/g, "\n").replace(/\n/g, nl);
+}
+
+function trimBlankEdges(s){
+  return String(s).replace(/^(?:[ \t]*\r?\n)+/, "").replace(/(?:\r?\n[ \t]*)+$/, "");
+}
+
+function replaceBoxTitleSpan(innerHtml, ruTitle){
+  if (!ruTitle) return innerHtml;
+
+  return innerHtml.replace(
+    /(<div\b[^>]*class\s*=\s*(?:"[^"]*\bbox-skins-name\b[^"]*"|'[^']*\bbox-skins-name\b[^']*')[^>]*>[\s\S]*?<span\b[^>]*>)([\s\S]*?)(<\/span>)/i,
+    (_, a, _old, c) => `${a}${escapeHtml(ruTitle)}${c}`
+  );
+}
+
+function reindentBlock(block, indent, nl){
+  const normalized = trimBlankEdges(normalizeNl(block, "\n"));
+  if (!normalized) return "";
+
+  const lines = normalized.split("\n");
+
+  let minIndent = null;
+  for (const line of lines){
+    if (!line.trim()) continue;
+    const m = line.match(/^[\t ]*/);
+    const len = m ? m[0].length : 0;
+    if (minIndent === null || len < minIndent) minIndent = len;
+  }
+  if (minIndent === null) minIndent = 0;
+
+  return lines
+    .map(line => {
+      if (!line.trim()) return "";
+      return indent + line.slice(minIndent);
+    })
+    .join(nl);
+}
+
+function getClassList(attrs){
+  return [...parseClassAttr(attrs)];
+}
+
+function buildBoxSkinsKey(attrs, index){
+  const classes = getClassList(attrs)
+    .filter(c => c !== "box-skins" && c !== "lang-ru")
+    .sort();
+
+  return classes.length ? classes.join("::") : `__index_${index}`;
 }
 
 /**
@@ -412,6 +468,146 @@ async function processBoxSkinsLists({root, file, html, pricesArr, settings, verb
   if (!changed && verbose && lists.length){
     console.warn(`[WARN] ${path.relative(root,file)} :: .box-skins-list found=${lists.length}, but nothing rendered`);
   }
+  return { html: out, changed };
+}
+
+async function processRuMirrorPages({ root, file, html, urlToFile, verbose }){
+  const urlPath = fileToUrlPath(root, file);
+
+  // Только ru-страницы разделов /topic/skins/* и /topic/items/*
+  const mirrorMatch = urlPath.match(/^\/ru\/topic\/(skins|items)(?:\/([^\/]+))?(?:\/|$)/i);
+  if (!mirrorMatch) {
+    return { html, changed:false };
+  }
+
+  const section = mirrorMatch[1].toLowerCase();
+  const leaf = (mirrorMatch[2] || "").toLowerCase();
+
+  // Для /ru/topic/skins/best-* и /ru/topic/skins/cheapest-* mirror НЕ делаем
+  if (
+    section === "skins" &&
+    (leaf.startsWith("best-") || leaf.startsWith("cheapest-"))
+  ) {
+    return { html, changed:false };
+  }
+
+  // Исходная EN-страница-зеркало
+  const srcUrlPath = urlPath.replace(/^\/ru(?=\/)/i, "");
+  const srcFile = urlToFile.get(srcUrlPath);
+  if (!srcFile || srcFile === file) {
+    return { html, changed:false };
+  }
+
+  let srcHtml;
+  try {
+    srcHtml = await fs.readFile(srcFile, "utf8");
+  } catch {
+    return { html, changed:false };
+  }
+
+  const srcMasked = maskSegments(srcHtml);
+  const dstMasked = maskSegments(html);
+
+  const srcBoxes = findAllTagsByClass(srcMasked, "box-skins", ["div","section"]);
+  const dstBoxes = findAllTagsByClass(dstMasked, "box-skins", ["div","section"]);
+
+  if (!srcBoxes.length || !dstBoxes.length) {
+    return { html, changed:false };
+  }
+
+  const srcByKey = new Map();
+  srcBoxes.forEach((box, i) => {
+    const open = readTag(srcHtml, box.openStart);
+    const key = buildBoxSkinsKey(open.attrs, i);
+    const arr = srcByKey.get(key) || [];
+    arr.push({ ...box, key, index: i });
+    srcByKey.set(key, arr);
+  });
+
+  const srcUsed = new Set();
+
+  function pickSourceBox(dstOpenAttrs, dstIndex){
+    const wantedKey = buildBoxSkinsKey(dstOpenAttrs, dstIndex);
+
+    // 1) По ключу
+    const arr = srcByKey.get(wantedKey) || [];
+    for (const item of arr){
+      if (!srcUsed.has(item.index)){
+        srcUsed.add(item.index);
+        return item;
+      }
+    }
+
+    // 2) По позиции
+    if (srcBoxes[dstIndex] && !srcUsed.has(dstIndex)){
+      srcUsed.add(dstIndex);
+      return { ...srcBoxes[dstIndex], index: dstIndex };
+    }
+
+    // 3) Первый неиспользованный
+    for (let i = 0; i < srcBoxes.length; i++){
+      if (!srcUsed.has(i)){
+        srcUsed.add(i);
+        return { ...srcBoxes[i], index: i };
+      }
+    }
+
+    return null;
+  }
+
+  const nl = html.includes("\r\n") ? "\r\n" : "\n";
+  let out = html;
+  let shift = 0;
+  let changed = false;
+  let synced = 0;
+
+  for (let i = 0; i < dstBoxes.length; i++){
+    const dstBox = dstBoxes[i];
+    const dstOpenAbs  = dstBox.openStart + shift;
+    const dstOpenEnd  = dstBox.openEnd + shift;
+    const dstCloseAbs = dstBox.closeStart + shift;
+
+    const dstOpen = readTag(out, dstOpenAbs);
+    const dstKey = buildBoxSkinsKey(dstOpen.attrs, i);
+
+    const srcBox = pickSourceBox(dstOpen.attrs, i);
+    if (!srcBox) continue;
+
+    let srcInnerRaw = srcHtml.slice(srcBox.openEnd, srcBox.closeStart);
+
+    // Локализация заголовков на RU-страницах
+    if (section === "skins") {
+      const ruTitle = RU_BOX_TITLE_MAP.get(dstKey);
+      if (ruTitle) {
+        srcInnerRaw = replaceBoxTitleSpan(srcInnerRaw, ruTitle);
+      }
+    }
+
+    const boxIndent = indentBefore(out, dstOpenAbs, nl);
+    const innerIndent = boxIndent + "  ";
+
+    // Нормализация отступов, чтобы повторные прогоны не сдвигали блок вправо
+    const normalizedInner = reindentBlock(srcInnerRaw, innerIndent, nl);
+
+    const replacementInner = normalizedInner
+      ? (nl + normalizedInner + nl + boxIndent)
+      : (nl + boxIndent);
+
+    const next = replaceWithin(out, dstOpenEnd, dstCloseAbs, replacementInner);
+
+    if (collapseWS(next) !== collapseWS(out)){
+      const prevLen = out.length;
+      out = next;
+      shift += out.length - prevLen;
+      changed = true;
+      synced++;
+    }
+  }
+
+  if (changed && verbose) {
+    console.log(`[OK] ${path.relative(root,file)} :: mirrored box-skins from ${path.relative(root,srcFile)} (${section}, ${synced})`);
+  }
+
   return { html: out, changed };
 }
 
@@ -820,6 +1016,7 @@ async function processLoadoutPages({root, file, html, pricesArr, verbose}){
 (async function main(){
   const { root, dry, verbose, prices, paths } = parseArgs(process.argv.slice(2));
   const files = await listHtmlFiles(root);
+  const urlToFile = new Map(files.map(f => [fileToUrlPath(root, f), f]));
   const settings = await safeJson(abs(root, SETTINGS_FILE)) || {};
   const pricesArr = await loadPrices(prices);
 
@@ -844,7 +1041,11 @@ async function processLoadoutPages({root, file, html, pricesArr, verbose}){
       const resLoad = await processLoadoutPages({root, file, html, pricesArr, verbose});
       if (resLoad.changed){ html = resLoad.html; changed = true; }
 
-      // 3) одиночные плейсхолдеры .skin (+ ремонт уже записанных блоков)
+      // 3) зеркалирование /topic/skins/* и /topic/items/* -> /ru/topic/*
+      const resRuMirror = await processRuMirrorPages({root, file, html, urlToFile, verbose});
+      if (resRuMirror.changed){ html = resRuMirror.html; changed = true; }
+
+      // 4) одиночные плейсхолдеры .skin (+ ремонт уже записанных блоков)
       const resSkins = await processSkinPlaceholders({root, html, pricesArr, verbose, file});
       if (resSkins.changed){ html = resSkins.html; changed = true; }
 
