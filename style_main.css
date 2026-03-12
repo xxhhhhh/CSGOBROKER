@@ -2544,6 +2544,16 @@ nav .pages {
     height: auto;
 }
 
+.sitepage.items .box-skins.solo .box-skins-list .skin.extra-list {
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.box-skins.solo .extra-list img {
+    width: 40%;
+}
+
 .box-skins-list {
     width: 100%;
     height: 100%;

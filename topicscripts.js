@@ -668,6 +668,9 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
     });
 
     async function showPreviewWindow(element) {
+      if (!element) return;
+      if ($(element).hasClass("extra-list") || element.getAttribute("data-no-preview") === "1") return;
+
       const previewWindow = $("#preview-window");
       const previewContent = $("#preview-content");
       let skinClasses = [];
@@ -681,7 +684,7 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
       }
 
       const skinBox = $(element).closest("[data-box-id]");
-      const visibleItems = skinBox.find(".skin:not(.disabled):not(.none)");
+      const visibleItems = skinBox.find('.skin:not(.disabled):not(.none):not(.extra-list):not([data-no-preview="1"])');
       const totalItems = visibleItems.length;
       const itemName = element?.querySelector(".skin-desc-name")?.textContent.trim() || "";
       const weaponName = itemName.split("|")[0].trim();
@@ -918,7 +921,7 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
           }
         } else {
           const currentBox = $("[data-box-id='" + currentBoxId + "']");
-          const visibleItems = currentBox.find(".skin:not(.disabled):not(.none)");
+          const visibleItems = currentBox.find('.skin:not(.disabled):not(.none):not(.extra-list):not([data-no-preview="1"])');
           const total = visibleItems.length;
           const currentIndex = +$previewWindow.attr("data-current-index");
 
@@ -939,7 +942,11 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
       switchLock = false;
     }
 
-    $(document).on("click", ".skin", function () {
+    $(document).on("click", ".skin", function (e) {
+      if ($(this).hasClass("extra-list") || $(this).attr("data-no-preview") === "1") {
+        return;
+      }
+
       showPreviewWindow(this);
     });
     $(document).on("click", ".preview-close-button", function () {

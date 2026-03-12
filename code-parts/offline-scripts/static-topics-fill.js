@@ -386,60 +386,351 @@ async function derivePairsByTopicSlug(root, topicId){
   return dedupe(sorted, x=>`${x.weapon}::${x["skin-id"]}`);
 }
 
-async function buildSkinsListForTopic(root, ctx, pricesArr, { verbose=false }={}){
+async function buildSkinsListForTopic(root, ctx, pricesArr, { verbose=false }={}) {
+  const items = await collectSkinsForTopic(root, ctx, { verbose });
+
+  if (!items.length){
+    return () => "";
+  }
+
+  return function render(nl, baseIndent){
+    const indent = baseIndent + "  ";
+    return items.map(({weapon, skinId, skinData}) => {
+      const { html: priceHtml, has } = computePriceHtml(String(skinData.name || ""), pricesArr);
+      return renderSkinBlock({
+        tag:"div",
+        indent,
+        nl,
+        weapon,
+        skinId,
+        skinData,
+        priceHtml,
+        putLoadingClass: !has && !pricesArr
+      });
+    }).join(nl);
+  };
+}
+
+async function collectSkinsForTopic(root, ctx, { verbose=false } = {}){
   const { topicId, mode, section } = ctx;
-  const items=[];
-  if (mode===1){
+  const items = [];
+
+  if (mode === 1){
     const p = abs(root, `${WEAPON_JSON_DIR}/${topicId}.json`);
     const weaponData = await safeJson(p);
-    if (!weaponData || typeof weaponData!=="object" || !Object.keys(weaponData).length){
+
+    if (!weaponData || typeof weaponData !== "object" || !Object.keys(weaponData).length){
       if (verbose) console.warn(`[DATA] ${section}/${topicId}: skins-list missing/empty -> ${path.relative(root,p)}`);
-      return ()=>"";
+      return [];
     }
+
     for (const [skinId, skinData] of Object.entries(weaponData)){
       items.push({ weapon: topicId, skinId, skinData });
     }
-  } else if (mode===2){
-    const presetPath = abs(root, `${PRESETS_DIR}/${topicId}.json`);
-    let preset = await safeJson(presetPath);
+
+    return items;
+  }
+
+  if (mode === 2){
+    const meta = await loadTopicPresetMeta(root, topicId);
+    let preset = meta.itemsRaw;
     let src = "preset";
+
     if (!Array.isArray(preset) || !preset.length){
       preset = await derivePairsByTopicSlug(root, topicId);
       src = "derived";
+
       if (!preset.length){
         if (verbose) console.warn(`[DATA] ${section}/${topicId}: no preset and no derived pairs by topic slug`);
-        return ()=>"";
+        return [];
       }
     }
-    const uniqueWeapons = Array.from(new Set(preset.map(it=>it.weapon).filter(Boolean)));
-    const cache={}; await Promise.all(uniqueWeapons.map(async w=>{
-      const wp = abs(root, `${WEAPON_JSON_DIR}/${w}.json`);
-      cache[w] = await safeJson(wp) || {};
-      if (!Object.keys(cache[w]).length && verbose){
-        console.warn(`[DATA] ${section}/${topicId}: weapon data missing/empty -> ${path.relative(root,wp)}`);
-      }
-    }));
-    let ok=0, miss=0;
-    for (const it of preset){
-      const w   = it.weapon;
-      const sid = it["skin-id"] ?? it.skin_id ?? it.skinId ?? it["skin id"] ?? "";
-      const data = w ? cache[w]?.[sid] : undefined;
-      if (w && sid && data){ items.push({ weapon:w, skinId:sid, skinData:data }); ok++; }
-      else miss++;
+
+    const resolved = await resolveWeaponSkinPairs(root, preset, { verbose, section, topicId });
+
+    if (!resolved.length){
+      if (verbose) console.warn(`[DATA] ${section}/${topicId}: unresolved pairs (src=${src})`);
+      return [];
     }
-    if (!items.length){
-      if (verbose) console.warn(`[DATA] ${section}/${topicId}: unresolved pairs (src=${src}, missing=${miss}/${preset.length})`);
-      return ()=>"";
-    }
-    if (verbose) console.log(`[OK] ${section}/${topicId}: ${items.length} skins (src=${src})`);
+
+    if (verbose) console.log(`[OK] ${section}/${topicId}: ${resolved.length} skins (src=${src})`);
+    return resolved;
   }
-  return function render(nl, baseIndent){
-    const indent = baseIndent + "  ";
-    return items.map(({weapon, skinId, skinData})=>{
-      const { html: priceHtml, has } = computePriceHtml(String(skinData.name||""), pricesArr);
-      return renderSkinBlock({ tag:"div", indent, nl, weapon, skinId, skinData, priceHtml, putLoadingClass: !has && !pricesArr });
-    }).join(nl);
+
+  return [];
+}
+
+async function loadTopicPresetMeta(root, topicId){
+  const presetPath = abs(root, `${PRESETS_DIR}/${topicId}.json`);
+  const raw = await safeJson(presetPath);
+
+  if (Array.isArray(raw)) {
+    return {
+      itemsRaw: raw,
+      showcaseRaw: [],
+    };
+  }
+
+  if (raw && typeof raw === "object") {
+    return {
+      itemsRaw: Array.isArray(raw.items) ? raw.items : [],
+      showcaseRaw: Array.isArray(raw["showcase-list"]) ? raw["showcase-list"] : [],
+    };
+  }
+
+  return {
+    itemsRaw: [],
+    showcaseRaw: [],
   };
+}
+
+async function resolveWeaponSkinPairs(root, pairsRaw, { verbose=false, section="cases", topicId="" } = {}){
+  if (!Array.isArray(pairsRaw) || !pairsRaw.length) return [];
+
+  const uniqueWeapons = Array.from(new Set(pairsRaw.map(it => it.weapon).filter(Boolean)));
+  const cache = {};
+
+  await Promise.all(uniqueWeapons.map(async w => {
+    const wp = abs(root, `${WEAPON_JSON_DIR}/${w}.json`);
+    cache[w] = await safeJson(wp) || {};
+    if (!Object.keys(cache[w]).length && verbose){
+      console.warn(`[DATA] ${section}/${topicId}: weapon data missing/empty -> ${path.relative(root,wp)}`);
+    }
+  }));
+
+  const items = [];
+
+  for (const it of pairsRaw){
+    const w   = it.weapon;
+    const sid = it["skin-id"] ?? it.skin_id ?? it.skinId ?? it["skin id"] ?? "";
+    const data = w ? cache[w]?.[sid] : undefined;
+
+    if (w && sid && data){
+      items.push({ weapon: w, skinId: sid, skinData: data });
+    }
+  }
+
+  return items;
+}
+
+function normalizeUrlPathNoSlash(urlPath){
+  if (!urlPath) return "";
+  return urlPath !== "/" ? urlPath.replace(/\/+$/, "") : "/";
+}
+
+function fileExistsByUrl(urlToFile, urlPath){
+  const a = normalizeUrlPathNoSlash(urlPath);
+  const b = a + "/";
+  return urlToFile.has(a) || urlToFile.has(b);
+}
+
+function padToFour(arr){
+  const out = arr.slice(0, 4);
+  if (!out.length) return [];
+  while (out.length < 4) out.push(out[out.length - 1]);
+  return out;
+}
+
+function renderExtraListLink({ indent, nl, href, label, previewItems }){
+  const imgs = padToFour(previewItems);
+
+  if (!imgs.length) return "";
+
+  const innerIndent = indent + "  ";
+
+  // цвет блока
+  const colorClass = label === "Skins" ? "red" : "gold";
+
+  const lines = [];
+  lines.push(
+    `${indent}<a class="skin extra-list ${colorClass}" data-no-preview="1" href="${escapeAttrDblNoApos(href)}">`
+  );
+
+  for (const item of imgs){
+    const img = item?.skinData?.image || "";
+    const alt = item?.skinData?.name || label;
+    lines.push(`${innerIndent}<img src="${escapeAttrDblNoApos(img)}" draggable="false" alt="${escapeAttrDblNoApos(alt)}">`);
+  }
+
+  lines.push(`${innerIndent}<div class="skin-desc-name">${escapeHtml(label)}</div>`);
+  lines.push(`${indent}</a>`);
+
+  return lines.join(nl);
+}
+
+function stripExtraListAnchors(inner){
+  return inner.replace(
+    /(?:^[ \t]*\r?\n)?[ \t]*<a\b[^>]*class\s*=\s*(?:"[^"]*\bskin\b[^"]*\bextra-list\b[^"]*"|'[^']*\bskin\b[^']*\bextra-list\b[^']*')[^>]*>[\s\S]*?<\/a>[ \t]*(?:\r?\n)?/gi,
+    ""
+  );
+}
+
+async function buildCaseExtraVariantBlocks({ root, urlPath, urlToFile, nl, indent, verbose }){
+  const m = urlPath.match(/^\/(ru\/)?topic\/cases\/([^\/]+)\/?$/i);
+  if (!m) return [];
+
+  const ruPrefix = m[1] ? "/ru" : "";
+  const slug = m[2];
+  const blocks = [];
+
+  const isGlovesPage = /-gloves$/i.test(slug);
+  const isKnivesPage = /-knives$/i.test(slug);
+
+  // 1) Базовая страница -> links to -gloves / -knives
+  if (!isGlovesPage && !isKnivesPage) {
+    const variants = [
+      { suffix: "gloves", label: "Gloves" },
+      { suffix: "knives", label: "Knives" },
+    ];
+
+    for (const variant of variants){
+      const variantSlug = `${slug}-${variant.suffix}`;
+      const variantUrl = `${ruPrefix}/topic/cases/${variantSlug}`;
+
+      if (!fileExistsByUrl(urlToFile, variantUrl)) continue;
+
+      let previewItems = await collectShowcaseSkinsForTopic(root, {
+        section: "cases",
+        topicId: variantSlug,
+        mode: 2,
+      }, { verbose });
+
+      if (!previewItems.length) {
+        const allItems = await collectSkinsForTopic(root, {
+          section: "cases",
+          topicId: variantSlug,
+          mode: 2,
+        }, { verbose });
+
+        previewItems = allItems.filter(x => x?.skinData?.image).slice(0, 4);
+      }
+
+      previewItems = previewItems.filter(x => x?.skinData?.image).slice(0, 4);
+      if (!previewItems.length) continue;
+
+      const block = renderExtraListLink({
+        indent,
+        nl,
+        href: variantUrl,
+        label: variant.label,
+        previewItems,
+      });
+
+      if (block) blocks.push(block);
+    }
+
+    return blocks;
+  }
+
+  // 2) Страница -gloves / -knives -> link back to base case
+  const baseSlug = slug.replace(/-(gloves|knives)$/i, "");
+  const baseUrl = `${ruPrefix}/topic/cases/${baseSlug}`;
+
+  if (!fileExistsByUrl(urlToFile, baseUrl)) return [];
+
+  let basePreviewItems = await collectShowcaseSkinsForTopic(root, {
+    section: "cases",
+    topicId: baseSlug,
+    mode: 2,
+  }, { verbose });
+
+  if (!basePreviewItems.length) {
+    const baseItems = await collectSkinsForTopic(root, {
+      section: "cases",
+      topicId: baseSlug,
+      mode: 2,
+    }, { verbose });
+
+    basePreviewItems = baseItems.filter(x => x?.skinData?.image).slice(0, 4);
+  }
+
+  basePreviewItems = basePreviewItems.filter(x => x?.skinData?.image).slice(0, 4);
+  if (!basePreviewItems.length) return [];
+
+  const label = "Skins";
+
+  const block = renderExtraListLink({
+    indent,
+    nl,
+    href: baseUrl,
+    label,
+    previewItems: basePreviewItems,
+  });
+
+  return block ? [block] : [];
+}
+
+async function collectShowcaseSkinsForTopic(root, ctx, { verbose=false } = {}){
+  const { topicId, mode, section } = ctx;
+
+  if (mode !== 2) return [];
+
+  const meta = await loadTopicPresetMeta(root, topicId);
+
+  if (Array.isArray(meta.showcaseRaw) && meta.showcaseRaw.length){
+    const showcaseItems = await resolveWeaponSkinPairs(root, meta.showcaseRaw, {
+      verbose,
+      section,
+      topicId,
+    });
+
+    if (showcaseItems.length) return showcaseItems;
+  }
+
+  return [];
+}
+
+async function processCaseExtraVariantLinks({ root, file, html, urlToFile, verbose }){
+  const nl = html.includes("\r\n") ? "\r\n" : "\n";
+  const urlPath = fileToUrlPath(root, file);
+  const masked = maskSegments(html);
+  const lists = findAllTagsByClass(masked, "box-skins-list", ["div","ul","section"]);
+
+  if (!lists.length) return { html, changed:false };
+
+  let out = html;
+  let shift = 0;
+  let changed = false;
+
+  for (const list of lists){
+    const openAbs = list.openEnd + shift;
+    const closeAbs = list.closeStart + shift;
+    const baseIndent = indentBefore(out, openAbs, nl);
+    const itemIndent = baseIndent + "  ";
+
+    const blocks = await buildCaseExtraVariantBlocks({
+      root,
+      urlPath,
+      urlToFile,
+      nl,
+      indent: itemIndent,
+      verbose,
+    });
+
+    if (!blocks.length) continue;
+
+    const inner = out.slice(openAbs, closeAbs);
+    const cleanedInner = stripExtraListAnchors(inner).replace(/^(?:[ \t]*\r?\n)+/, "");
+    const prepend = blocks.join(nl);
+
+    const replacementInner = cleanedInner
+      ? (nl + prepend + nl + cleanedInner.replace(/^\r?\n+/, ""))
+      : (nl + prepend + nl + baseIndent);
+
+    const next = out.slice(0, openAbs) + replacementInner + out.slice(closeAbs);
+
+    if (collapseWS(next) !== collapseWS(out)){
+      shift += next.length - out.length;
+      out = next;
+      changed = true;
+    }
+  }
+
+  if (changed && verbose){
+    console.log(`[OK] ${path.relative(root,file)} :: case extra gloves/knives links inserted`);
+  }
+
+  return { html: out, changed };
 }
 
 async function processBoxSkinsLists({root, file, html, pricesArr, settings, verbose}){
@@ -1045,7 +1336,11 @@ async function processLoadoutPages({root, file, html, pricesArr, verbose}){
       const resRuMirror = await processRuMirrorPages({root, file, html, urlToFile, verbose});
       if (resRuMirror.changed){ html = resRuMirror.html; changed = true; }
 
-      // 4) одиночные плейсхолдеры .skin (+ ремонт уже записанных блоков)
+      // 4) extra-list блоки на /topic/cases/<slug> -> <slug>-gloves / <slug>-knives
+      const resExtraCases = await processCaseExtraVariantLinks({root, file, html, urlToFile, verbose});
+      if (resExtraCases.changed){ html = resExtraCases.html; changed = true; }
+
+      // 5) одиночные плейсхолдеры .skin (+ ремонт уже записанных блоков)
       const resSkins = await processSkinPlaceholders({root, html, pricesArr, verbose, file});
       if (resSkins.changed){ html = resSkins.html; changed = true; }
 
