@@ -1,3 +1,4 @@
+
 // ============================================================================
 // File: scripts/static-skins-fill.js
 // Usage:
@@ -13,6 +14,15 @@
 //      + ремонт уже записанных блоков (чинит &#39; → ' и &amp; → &)
 //   3) Оффлайн loadout для /topic/skins/(cheapest|best)-{color}-skins
 //   4) Оффлайн-вставка/ремонт <div class="topic-filter">
+//   5) Генерация topic-boxes-holder.items-type для:
+//      /topic/items-type/cases
+//      /topic/items-type/charms
+//      /topic/items-type/collections
+//      и /ru/ версий этих страниц
+//      из:
+//      /code-parts/topics/cases.json
+//      /code-parts/topics/charms.json
+//      /code-parts/topics/collections.json
 // ---------------------------------------------------------------------------
 // NOTE (why): финальный no-op guard предотвращает лишние перезаписи файлов,
 // когда промежуточные шаги временно меняют контент, но итог возвращается к исходному.
@@ -150,6 +160,11 @@ const WEAPON_JSON_DIR = "/code-parts/topics/skins-list";
 const PRESETS_DIR     = "/code-parts/topics/skins-list/presets";
 const LOADOUT_DIR     = "/code-parts/topics/topic-color-lists/loadout";
 const TOPIC_NAV_FILE  = "/code-parts/topics/topics-nav.json";
+const ITEMS_TYPE_TOPICS_FILES = {
+  cases: "/code-parts/topics/cases.json",
+  charms: "/code-parts/topics/charms.json",
+  collections: "/code-parts/topics/collections.json",
+};
 
 const weaponCache = new Map();
 async function loadWeaponJson(root, weapon){
@@ -232,14 +247,16 @@ function renderSkinBlock({tag="div", indent, nl, weapon, skinId, skinData, price
 
 // ---------------- BOX-SKINS-LIST (mode 1/2) ----------------
 function detectAutoImportContext(urlPath, settings){
-  const m = urlPath.match(/\/(?:ru\/)?topic\/(items|collections|stickers|charms)\/([^\/]+)(?:\/|$)/i);
+  const m = urlPath.match(/\/(?:ru\/)?topic\/(items|collections|cases|stickers|charms)\/([^\/]+)(?:\/|$)/i);
   if (!m) return null;
   const section = m[1].toLowerCase();
   const topicId = m[2];
   let mode = settings?.[topicId];
-  // дефолты: stickers/charms/items -> 1; collections -> 2
+  // дефолты:
+  // stickers/charms/items -> 1
+  // collections/cases     -> 2
   if (!mode) {
-    if (section==="collections") mode=2;
+    if (section==="collections" || section==="cases") mode=2;
     if (section==="stickers" || section==="charms") mode=1;
   }
   if (!mode) return null;
@@ -481,6 +498,10 @@ async function processTopicFilters({root, file, html, verbose}){
     const closeAbs  = h.closeStart+ shift;
     const openTag = readTag(out, openAbs);
     const classes = parseClassAttr(openTag.attrs);
+
+    // items-type страницы имеют свой отдельный кастомный фильтр/рендер
+    if (classes.has("items-type")) continue;
+
     const isRu = urlPath.startsWith("/ru/") || classes.has("lang-ru");
     const baseIndent = indentBefore(out, openEnd, nl);
     const innerIndent = baseIndent + "  ";
@@ -510,6 +531,195 @@ async function processTopicFilters({root, file, html, verbose}){
     }
   }
   return { html: out, changed };
+}
+
+// ---------------- ITEMS-TYPE PAGES ----------------
+function detectItemsTypeIndexContext(urlPath){
+  const m = urlPath.match(/^\/(ru\/)?topic\/items-type\/(cases|charms|collections)\/?$/i);
+  if (!m) return null;
+  return {
+    isRu: Boolean(m[1]),
+    topicType: m[2].toLowerCase(),
+  };
+}
+async function loadItemsTypeTopics(root, topicType){
+  const file = ITEMS_TYPE_TOPICS_FILES[topicType];
+  if (!file) return [];
+  const data = await safeJson(abs(root, file));
+  if (Array.isArray(data)) return data;
+  if (Array.isArray(data?.items)) return data.items;
+  return [];
+}
+function normalizeItemsTypeCard(item, topicType, isRu){
+  const slug =
+    item.id ??
+    item.slug ??
+    item.topicId ??
+    "";
+
+  const hrefRaw =
+    item.href ??
+    item.url ??
+    item.path ??
+    `/topic/${topicType}/${slug}`;
+
+  let href = String(hrefRaw || "").trim();
+  if (!href.startsWith("/")) href = "/" + href.replace(/^\/+/, "");
+  if (isRu && !href.startsWith("/ru/")) href = "/ru" + href;
+
+  const title =
+    item.title ??
+    item.name ??
+    item.alt ??
+    item.label ??
+    slug;
+
+  const img =
+    item.img ??
+    item.image ??
+    item.icon ??
+    item.logo ??
+    "";
+
+  return {
+    href,
+    img: String(img || ""),
+    title: String(title || ""),
+  };
+}
+function renderItemsTypeFilterHtml({ indent, nl, isRu, activeType }){
+  const p = isRu ? "/ru" : "";
+
+  const items = [
+    { key: "all-items", href: `${p}/topic/items`, img: "/img/icons/gamemodes/box-open-full.svg", alt: "All Items", title: isRu ? "Все Предметы" : "All Items" },
+    { key: "knives", href: `${p}/topic/items-type/knives`, img: "/img/icons/gamemodes/knives-category.svg", alt: "All Knives", title: isRu ? "Все Ножи" : "All Knives" },
+    { key: "gloves", href: `${p}/topic/items-type/gloves`, img: "/img/icons/gamemodes/gloves-category.svg", alt: "All Gloves", title: isRu ? "Все Перчатки" : "All Gloves" },
+    { key: "rifles", href: `${p}/topic/items-type/rifles`, img: "/img/icons/gamemodes/rifles-category.png", alt: "All Rifles", title: isRu ? "Все Винтовки" : "All Rifles" },
+    { key: "sniper-rifles", href: `${p}/topic/items-type/sniper-rifles`, img: "/img/icons/gamemodes/snipers-category.svg", alt: "All Sniper Rifles", title: isRu ? "Все Снайпер. Винтовки" : "All Sniper Rifles" },
+    { key: "pistols", href: `${p}/topic/items-type/pistols`, img: "/img/icons/gamemodes/pistols-category.svg", alt: "All Pistols", title: isRu ? "Все Пистолеты" : "All Pistols" },
+    { key: "smgs", href: `${p}/topic/items-type/smgs`, img: "/img/icons/gamemodes/smgs-category.svg", alt: "All SMGS", title: isRu ? "Все ПП" : "All SMGS" },
+    { key: "shotguns", href: `${p}/topic/items-type/shotguns`, img: "/img/icons/gamemodes/shotguns-category.svg", alt: "All Shotguns", title: isRu ? "Все Дробовики" : "All Shotguns" },
+    { key: "machineguns", href: `${p}/topic/items-type/machineguns`, img: "/img/icons/gamemodes/mguns-category.svg", alt: "All Machineguns", title: isRu ? "Все Пулеметы" : "All Machineguns" },
+    { key: "agents", href: `${p}/topic/items/agents`, img: "/img/icons/gamemodes/agents.webp", alt: "All Agents", title: isRu ? "Все Агенты" : "All Agents" },
+    { key: "cases", href: `${p}/topic/items-type/cases`, img: "/img/icons/gamemodes/mods-box/cases.webp", alt: "All Cases", title: isRu ? "Все Кейсы" : "All Cases" },
+    { key: "collections", href: `${p}/topic/items-type/collections`, img: "/img/icons/gamemodes/collections.webp", alt: "All Collections", title: isRu ? "Все Коллекции" : "All Collections" },
+    { key: "sticker-capsules", href: `${p}/topic/items-type/sticker-capsules`, img: "/img/icons/gamemodes/capsule-category.png", alt: "All Sticker Capsules", title: isRu ? "Все Стикер-Капсулы" : "All Sticker Capsules" },
+    { key: "autograph-capsules", href: `${p}/topic/items-type/autograph-capsules`, img: "/img/icons/gamemodes/capsule-category.png", alt: "All Autograph Capsules", title: isRu ? "Все Автограф-Капсулы" : "All Autograph Capsules" },
+    { key: "charms", href: `${p}/topic/items-type/charms`, img: "/img/icons/gamemodes/charms.png", alt: "All Charms", title: isRu ? "Все Брелоки" : "All Charms" },
+    { key: "skins", href: `${p}/topic/skins`, img: "/img/icons/gamemodes/palette.png", alt: "Skins by Color CS2", title: isRu ? "Все Скины по Цвету" : "Skins by Color CS2" },
+    { key: "sticker-crafts", href: `${p}/topic/sticker-crafts`, img: "/img/icons/gamemodes/stickers-category.png", alt: "All Sticker Crafts", title: isRu ? "Все Стикер-Крафты" : "All Sticker Crafts" },
+  ];
+
+  const lines = [];
+  lines.push(`${indent}<div class="topic-filter">`);
+  lines.push(`${indent}  <input class="singlemod-box topic-filter-tab" type="text" placeholder="" aria-label="Filter Topic" autocomplete="off">`);
+
+  for (const item of items){
+    const active = item.key === activeType ? " active" : "";
+    lines.push(`${indent}  <div class="singlemod-box${active}" data-title="${escapeAttrDblNoApos(item.title)}">`);
+    lines.push(`${indent}    <a href="${escapeAttrDblNoApos(item.href)}" class="singlemod-select">`);
+    lines.push(`${indent}      <img src="${escapeAttrDblNoApos(item.img)}" alt="${escapeAttrDblNoApos(item.alt)}">`);
+    lines.push(`${indent}    </a>`);
+    lines.push(`${indent}  </div>`);
+  }
+
+  lines.push(`${indent}</div>`);
+  return lines.join(nl);
+}
+function renderItemsTypeCardsHtml({ indent, nl, items, topicType, isRu }){
+  return items.map(raw => {
+    const item = normalizeItemsTypeCard(raw, topicType, isRu);
+
+    return [
+      `${indent}<a class="topic-box items" href="${escapeAttrDblNoApos(item.href)}">`,
+      `${indent}  <div class="logobg">`,
+      `${indent}    <img src="${escapeAttrDblNoApos(item.img)}" draggable="false" alt="${escapeAttrDblNoApos(item.title)}">`,
+      `${indent}  </div>`,
+      `${indent}  <div class="content">`,
+      `${indent}    <span>${escapeHtml(item.title)}</span>`,
+      `${indent}  </div>`,
+      `${indent}</a>`
+    ].join(nl);
+  }).join(nl);
+}
+function renderItemsTypeHolderHtml({ indent, nl, items, topicType, isRu }){
+  const holderClasses = `topic-boxes-holder items-type${isRu ? " lang-ru" : ""}`;
+  const innerIndent = indent + "  ";
+
+  const filterHtml = renderItemsTypeFilterHtml({
+    indent: innerIndent,
+    nl,
+    isRu,
+    activeType: topicType,
+  });
+
+  const cardsHtml = renderItemsTypeCardsHtml({
+    indent: innerIndent,
+    nl,
+    items,
+    topicType,
+    isRu,
+  });
+
+  return [
+    `${indent}<div class="${holderClasses}">`,
+    filterHtml,
+    cardsHtml ? cardsHtml : "",
+    `${indent}</div>`
+  ].filter(Boolean).join(nl);
+}
+async function processItemsTypeTopicBoxesPages({ root, file, html, verbose }){
+  const nl = html.includes("\r\n") ? "\r\n" : "\n";
+  const urlPath = fileToUrlPath(root, file);
+  const ctx = detectItemsTypeIndexContext(urlPath);
+  if (!ctx) return { html, changed:false };
+
+  const items = await loadItemsTypeTopics(root, ctx.topicType);
+  if (!items.length){
+    if (verbose) console.warn(`[DATA] ${path.relative(root, file)} :: empty items-type data for ${ctx.topicType}`);
+    return { html, changed:false };
+  }
+
+  const masked = maskSegments(html);
+  const holders = findAllTagsByClass(masked, "topic-boxes-holder", ["div","section"]);
+  if (!holders.length) return { html, changed:false };
+
+  let target = null;
+  for (const h of holders){
+    const open = readTag(html, h.openStart);
+    const classes = parseClassAttr(open.attrs);
+    if (classes.has("items-type")){
+      target = h;
+      break;
+    }
+  }
+
+  if (!target) return { html, changed:false };
+
+  // заменяем блок вместе с ведущим отступом строки
+  const lineStart = (() => {
+    const k = html.lastIndexOf(nl, target.openStart - 1);
+    return k === -1 ? 0 : k + nl.length;
+  })();
+
+  const baseIndent = html.slice(lineStart, target.openStart).match(/^[\t ]*/)?.[0] ?? "";
+
+  const newBlock = renderItemsTypeHolderHtml({
+    indent: baseIndent,
+    nl,
+    items,
+    topicType: ctx.topicType,
+    isRu: ctx.isRu,
+  });
+
+  const next = html.slice(0, lineStart) + newBlock + html.slice(target.closeEnd);
+
+  if (next !== html){
+    if (verbose) console.log(`[OK] ${path.relative(root,file)} :: items-type holder rebuilt (${ctx.topicType}${ctx.isRu ? ", ru" : ""})`);
+    return { html: next, changed:true };
+  }
+
+  return { html, changed:false };
 }
 
 // ---------------- LOADOUT PAGES ----------------
@@ -638,7 +848,11 @@ async function processLoadoutPages({root, file, html, pricesArr, verbose}){
       const resSkins = await processSkinPlaceholders({root, html, pricesArr, verbose, file});
       if (resSkins.changed){ html = resSkins.html; changed = true; }
 
-      // 4) topic-filter вставка/ремонт
+      // 4) items-type pages: /items-type/cases, /items-type/charms, /items-type/collections
+      const resItemsType = await processItemsTypeTopicBoxesPages({root, file, html, verbose});
+      if (resItemsType.changed){ html = resItemsType.html; changed = true; }
+
+      // 5) topic-filter вставка/ремонт
       const resFilter = await processTopicFilters({root, file, html, verbose});
       if (resFilter.changed){ html = resFilter.html; changed = true; }
 
