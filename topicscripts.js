@@ -328,12 +328,13 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
   }
 
   async function priceSkinsOnPage() {
-    const $skins = $(".skin");
+    const $skins = $(".skin:not(.extra-list)");
     if (!$skins.length) return;
 
     const skinPrices = await fetchSkinPrices();
 
     $skins.each(function () {
+      if ($(this).hasClass("extra-list")) return;
       const $skinEl = $(this);
       const name = ($skinEl.find(".skin-desc-name").text() || "").trim();
       if (!name) return;
