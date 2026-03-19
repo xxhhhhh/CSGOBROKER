@@ -111,36 +111,15 @@ async function main() {
     if (min == null && max == null) continue;
 
     merged.push({
-      name,
-      currency: "USD",
-      min_price: min,
-      max_price: max,
-      url: lis?.url || null,
-      url_skinport: skinport?.url_skinport || null,
-      market_page_skinport: skinport?.market_page_skinport || null,
-      sources: {
-        lis_skins: lis
-          ? {
-              min_price: lis.min_price,
-              max_price: lis.max_price,
-              url: lis.url || null,
-            }
-          : null,
-        skinport: skinport
-          ? {
-              min_price: skinport.min_price,
-              max_price: skinport.max_price,
-              url_skinport: skinport.url_skinport || null,
-              market_page_skinport: skinport.market_page_skinport || null,
-            }
-          : null,
-      },
+        name,
+        min_price: min,
+        max_price: max
     });
   }
 
   merged.sort((a, b) => a.name.localeCompare(b.name, "en"));
 
-  await fs.writeFile(OUT_FILE, JSON.stringify(merged, null, 2) + "\n", "utf8");
+  await fs.writeFile(OUT_FILE, JSON.stringify(merged), "utf8");
   console.log(`Saved ${merged.length} items to ${OUT_FILE}`);
 }
 

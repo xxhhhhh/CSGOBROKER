@@ -1386,11 +1386,23 @@ nav .pages {
     font-weight: 500;
     position: absolute;
     text-wrap: nowrap;
-    transition: all .15s ease-in-out;
     top: 5px;
     left: 50%;
     transform: translateX(-50%);
+    transition: all .15s ease-in-out;
     opacity: 0;
+}
+
+@keyframes PriceAppear {
+    0% {
+        transform: translateX(-50%) scale(1.05);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: .75;
+    }
 }
 
 .skin-price-info .souvenir-price-info {
@@ -1401,13 +1413,13 @@ nav .pages {
     top: 12px;
 }
 
-.box-skins.solo .box-skins-list.showprice .skin .skin-price-info {
-    opacity: .75;
+.box-skins.solo .box-skins-list.showprice .skin .skin-price-info:not(.loading) {
+    animation: PriceAppear .15s ease-in-out forwards;
 }
 
 .skin:hover .skin-price-info,
 .box-skins.solo .box-skins-list.showprice .skin:hover .skin-price-info {
-    opacity: 1;
+    opacity: 1 !important;
 }
 
 #preview-content .skin-price-info {
