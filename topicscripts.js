@@ -1092,6 +1092,124 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
     });
 
     // ---------- Страницы /skins/ (UI) ----------
+
+        // ---------- Price sorter for /topic/skins/* ----------
+    function isPriceSorterAllowedPath(pathname) {
+      const match = pathname.match(/^\/(?:ru\/)?topic\/skins(?:\/([^\/]+))?\/?$/i);
+      if (!match) return false;
+
+      const leaf = (match[1] || "").toLowerCase();
+      return !leaf.startsWith("best-") && !leaf.startsWith("cheapest-");
+    }
+
+    function ensureOriginalSkinOrder($list) {
+      $list.children(".skin").each(function (index) {
+        if (!this.hasAttribute("data-sort-origin")) {
+          this.setAttribute("data-sort-origin", String(index));
+        }
+      });
+    }
+
+    function getSkinPriceValue($skin) {
+      const $price = $skin.find(".skin-price-info").first();
+      if (!$price.length) return null;
+
+      // Берём только первое число из блока цены:
+      // "12.00$ - 18.00$" -> 12
+      // "7.50$" -> 7.5
+      const text = ($price.text() || "").replace(",", ".").trim();
+      const match = text.match(/\d+(?:\.\d+)?/);
+
+      if (!match) return null;
+
+      const value = Number(match[0]);
+      return Number.isFinite(value) ? value : null;
+    }
+
+    function sortSkinsInList($list, direction) {
+      ensureOriginalSkinOrder($list);
+
+      const skins = $list.children(".skin").get();
+
+      if (!skins.length) return;
+
+      if (direction === "original") {
+        skins.sort((a, b) => {
+          const aIndex = Number(a.getAttribute("data-sort-origin")) || 0;
+          const bIndex = Number(b.getAttribute("data-sort-origin")) || 0;
+          return aIndex - bIndex;
+        });
+      } else {
+        skins.sort((a, b) => {
+          const aPrice = getSkinPriceValue($(a));
+          const bPrice = getSkinPriceValue($(b));
+
+          // Скины без цены всегда в конец
+          const aMissing = aPrice === null;
+          const bMissing = bPrice === null;
+
+          if (aMissing && bMissing) {
+            const aIndex = Number(a.getAttribute("data-sort-origin")) || 0;
+            const bIndex = Number(b.getAttribute("data-sort-origin")) || 0;
+            return aIndex - bIndex;
+          }
+
+          if (aMissing) return 1;
+          if (bMissing) return -1;
+
+          if (direction === "desc") {
+            if (bPrice !== aPrice) return bPrice - aPrice;
+          } else if (direction === "asc") {
+            if (aPrice !== bPrice) return aPrice - bPrice;
+          }
+
+          // одинаковые цены — сохраняем исходный порядок
+          const aIndex = Number(a.getAttribute("data-sort-origin")) || 0;
+          const bIndex = Number(b.getAttribute("data-sort-origin")) || 0;
+          return aIndex - bIndex;
+        });
+      }
+
+      $list.append(skins);
+    }
+
+    $(document).on("click", ".box-skins-list .price-sorter", function () {
+      if (!isPriceSorterAllowedPath(window.location.pathname)) return;
+
+      const $sorter = $(this);
+      const $list = $sorter.closest(".box-skins-list");
+
+      if (!$list.length) return;
+
+      ensureOriginalSkinOrder($list);
+
+      const currentState = Number($list.attr("data-price-sort-state")) || 0;
+      let nextState = 0;
+
+      // 0 -> 1 -> 2 -> 0
+      if (currentState === 0) {
+        nextState = 1; // expensive -> cheap
+      } else if (currentState === 1) {
+        nextState = 2; // cheap -> expensive
+      } else {
+        nextState = 0; // original
+      }
+
+      $list.removeClass("sort-to-highest sort-to-lowest");
+
+      if (nextState === 1) {
+        sortSkinsInList($list, "desc");
+        $list.addClass("sort-to-highest");
+      } else if (nextState === 2) {
+        sortSkinsInList($list, "asc");
+        $list.addClass("sort-to-lowest");
+      } else {
+        sortSkinsInList($list, "original");
+      }
+
+      $list.attr("data-price-sort-state", String(nextState));
+    });
+
     if (currentPath.includes("/skins/")) {
       $(".close-box-skins").on("click", function () {
         const parentBoxSkins = $(this).closest(".box-skins");

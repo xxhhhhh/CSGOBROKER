@@ -762,6 +762,96 @@ async function processBoxSkinsLists({root, file, html, pricesArr, settings, verb
   return { html: out, changed };
 }
 
+// ---------------- PRICE-SORTER FOR /topic/skins/* ----------------
+function detectSkinsPriceSorterContext(urlPath){
+  const m = urlPath.match(/^\/(?:ru\/)?topic\/skins(?:\/([^\/]+))?\/?$/i);
+  if (!m) return null;
+
+  const leaf = (m[1] || "").toLowerCase();
+  const excluded =
+    leaf.startsWith("best-") ||
+    leaf.startsWith("cheapest-");
+
+  return {
+    shouldHaveSorter: !excluded,
+    leaf,
+  };
+}
+
+function stripPriceSorterBlocks(inner){
+  return inner.replace(
+    /(?:^[ \t]*\r?\n)?[ \t]*<div\b[^>]*class\s*=\s*(?:"[^"]*\bprice-sorter\b[^"]*"|'[^']*\bprice-sorter\b[^']*')[^>]*>[\s\S]*?<\/div>[ \t]*(?:\r?\n)?/gi,
+    ""
+  );
+}
+
+function renderPriceSorterHtml({ indent, nl }){
+  return [
+    `${indent}<div class="price-sorter"><i class="officon sort"></i></div>`
+  ].join(nl);
+}
+
+async function processSkinsPriceSorter({ root, file, html, verbose }){
+  const urlPath = fileToUrlPath(root, file);
+  const ctx = detectSkinsPriceSorterContext(urlPath);
+
+  if (!ctx) return { html, changed:false };
+
+  const nl = html.includes("\r\n") ? "\r\n" : "\n";
+  const masked = maskSegments(html);
+  const lists = findAllTagsByClass(masked, "box-skins-list", ["div","ul","section"]);
+
+  if (!lists.length) return { html, changed:false };
+
+  let out = html;
+  let shift = 0;
+  let changed = false;
+
+  for (const list of lists){
+    const openAbs = list.openEnd + shift;
+    const closeAbs = list.closeStart + shift;
+
+    const baseIndent = indentBefore(out, openAbs, nl);
+    const itemIndent = baseIndent + "  ";
+
+    const inner = out.slice(openAbs, closeAbs);
+    const cleanedInner = stripPriceSorterBlocks(inner).replace(/^(?:[ \t]*\r?\n)+/, "");
+
+    let replacementInner = "";
+
+    if (ctx.shouldHaveSorter){
+      const sorterHtml = renderPriceSorterHtml({
+        indent: itemIndent,
+        nl,
+      });
+
+      replacementInner = cleanedInner
+        ? (nl + sorterHtml + nl + cleanedInner.replace(/^\r?\n+/, ""))
+        : (nl + sorterHtml + nl + baseIndent);
+    } else {
+      replacementInner = cleanedInner
+        ? (nl + cleanedInner.replace(/^\r?\n+/, ""))
+        : (nl + baseIndent);
+    }
+
+    const next = out.slice(0, openAbs) + replacementInner + out.slice(closeAbs);
+
+    if (collapseWS(next) !== collapseWS(out)){
+      shift += next.length - out.length;
+      out = next;
+      changed = true;
+    }
+  }
+
+  if (changed && verbose){
+    console.log(
+      `[OK] ${path.relative(root,file)} :: price-sorter ${ctx.shouldHaveSorter ? "inserted" : "removed"}`
+    );
+  }
+
+  return { html: out, changed };
+}
+
 async function processRuMirrorPages({ root, file, html, urlToFile, verbose }){
   const urlPath = fileToUrlPath(root, file);
 
@@ -1332,7 +1422,11 @@ async function processLoadoutPages({root, file, html, pricesArr, verbose}){
       const resLoad = await processLoadoutPages({root, file, html, pricesArr, verbose});
       if (resLoad.changed){ html = resLoad.html; changed = true; }
 
-      // 3) зеркалирование /topic/skins/* и /topic/items/* -> /ru/topic/*
+      // 3) price-sorter inside .box-skins-list for /topic/skins/*
+      const resPriceSorter = await processSkinsPriceSorter({root, file, html, verbose});
+      if (resPriceSorter.changed){ html = resPriceSorter.html; changed = true; }
+
+      // 4) зеркалирование /topic/skins/* и /topic/items/* -> /ru/topic/*
       const resRuMirror = await processRuMirrorPages({root, file, html, urlToFile, verbose});
       if (resRuMirror.changed){ html = resRuMirror.html; changed = true; }
 

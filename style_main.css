@@ -1418,7 +1418,8 @@ nav .pages {
 }
 
 .skin:hover .skin-price-info,
-.box-skins.solo .box-skins-list.showprice .skin:hover .skin-price-info {
+.box-skins.solo .box-skins-list.showprice .skin:hover .skin-price-info,
+.box-skins-list.sort-to-highest .skin:hover .skin-desc-name {
     opacity: 1 !important;
 }
 
@@ -1854,7 +1855,8 @@ nav .pages {
 .route-semi::before,
 .defbutton span,
 .mirror-visit span,
-.content-buttons .copy span {
+.content-buttons .copy span,
+.box-skins-list .price-sorter:after {
     content: '';
     position: absolute;
     width: max-content;
@@ -1878,6 +1880,7 @@ nav .pages {
 
 .site-searcher-box[data-title]:hover:after,
 .navigation-weapon-sort[data-title]:hover:after,
+.box-skins-list .price-sorter:hover:after,
 .topic-grandbox .skin:hover .skin-desc-name,
 .defbutton:hover span,
 .mirror-visit:hover span,
@@ -1886,6 +1889,16 @@ nav .pages {
     transform: translateX(-50%);
     transition: all .15s ease-in-out;
     opacity: 1;
+}
+
+.box-skins-list .price-sorter:hover:after {
+    content: 'Sort';
+    margin: unset;
+    bottom: 40px;
+}
+
+.lang-ru .box-skins-list .price-sorter:hover:after {
+    content: 'Сорт';
 }
 
 .defbutton span,
@@ -2569,12 +2582,74 @@ nav .pages {
 .box-skins-list {
     width: 100%;
     height: 100%;
+    position: relative;
     display: inline-flex;
     justify-content: flex-start;
     align-items: center;
     overflow-x: scroll;
     border-radius: 5px;
     user-select: none;
+}
+
+.box-skins-list.sort-to-highest .skin .skin-price-info,
+.box-skins-list.sort-to-highest .skin .skin-desc-name,
+.box-skins-list.sort-to-lowest .skin .skin-price-info,
+.box-skins-list.sort-to-lowest .skin .skin-desc-name {
+    opacity: .75;
+}
+
+.box-skins-list.sort-to-highest .skin,
+.box-skins-list.sort-to-lowest .skin{
+    animation: Appear .15s ease-in-out forwards;
+}
+
+@keyframes Appear {
+    0% {
+        transform: scale(1.05);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.box-skins-list .price-sorter {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 8px;
+    bottom: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--minor-border);
+    background-color: rgb(14, 14, 14);
+    cursor: pointer;
+    z-index: 101;
+}
+
+.box-skins-list .price-sorter i::before {
+    transform: rotate(90deg);
+    width: 15px;
+    height: 15px;
+}
+
+.box-skins-list .price-sorter:hover i::before {
+    opacity: 1;
+}
+
+.box-skins-list .price-sorter::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    z-index: -1;
+    background: linear-gradient(150deg, var(--darkygray) 0%, var(--darkgray) 100%);
+    border-radius: var(--minor-border) !important;
 }
 
 .box-skins-list::-webkit-scrollbar {
@@ -9694,7 +9769,8 @@ a.extra-abox:active .officon,
 .newest-boxes-more:active,
 .instruction li a:active,
 nav img:active,
-.copyright a img:active {
+.copyright a img:active,
+.box-skins-list .price-sorter:active {
     scale: .9;
     transform-origin: center center;
     transition: all .1s ease-in-out;

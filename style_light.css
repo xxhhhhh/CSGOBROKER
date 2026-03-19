@@ -211,14 +211,14 @@ nav img {
 .smallreview.criteria
 .shortinfo .features,
 .boxreview .plusminus .criteria,
-.ratingway,
 .ratingsumm,
 .main-infobox-content-block,
 .criteria-descriptions h2,
 .editorial-note,
 .alternates-title,
 .nav-review,
-.sitepage .box.main .logobg .rating {
+.sitepage .box.main .logobg .rating,
+.cent-title {
     filter: drop-shadow(0 1px 1px rgb(200 200 200));
     box-shadow: unset;
 }
@@ -515,11 +515,6 @@ h3,
 
 .close-button .officon::before {
     filter: brightness(.1);
-}
-
-.box-skins .skin .skin-desc-name,
-.skin-price-info {
-    color: rgb(40 40 40);
 }
 
 .smallreview.criteria ol li strong {
@@ -911,7 +906,6 @@ h3,
     filter: brightness(.1);
 }
 
-.color-box-selection-button,
 .color-box-overview-button {
     background: linear-gradient(180deg, var(--opacback) 0%, var(--main-theme) 100%);
 }
@@ -1306,7 +1300,8 @@ ul .submenu li .nonredir,
 .site-attention::after,
 .payment-close-button .officon::before,
 .pagination-button.arrow .officon.chevron::before,
-.main-mode-selection button .officon.chevron::before {
+.main-mode-selection button .officon.chevron::before,
+.box-skins-list .price-sorter:after {
     filter: brightness(.2) grayscale(1);
     opacity: .95;
 }
@@ -1663,9 +1658,12 @@ ul .submenu li .nonredir,
     background-color: unset;
 }
 
-.box-skins .skin .skin-desc-name {
-    filter: none;
+.box-skins .skin .skin-desc-name,
+.skin-price-info,
+.box-skins-list .price-sorter:hover:after {
+    color: rgb(40 40 40);
     font-weight: 500;
+    filter: none;
 }
 
 .skins-category-switch::after {
@@ -1713,4 +1711,21 @@ ul .submenu li .nonredir,
 
 .box-skins.character .skin .skin-desc-name {
     filter: none;
+}
+
+.box-skins-list .price-sorter {
+    background: linear-gradient(180deg, var(--opacback) 0%, var(--main-theme) 100%);
+}
+
+.box-skins-list .price-sorter i::before {
+    filter: brightness(.2);
+}
+
+.box-skins-list .price-sorter i::before {
+    opacity: .5;
+}
+
+.colors-box-selection::after {
+    filter: brightness(.3);
+    opacity: 1;
 }
