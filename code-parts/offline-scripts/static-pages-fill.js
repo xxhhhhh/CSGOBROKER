@@ -1353,42 +1353,42 @@ function renderEditorialNoteBlock(indent, nl, lang){
  */
 function upsertEditorialNoteInBoxreview(html, boxreview, lang, nl, data, urlPath){
   if (!html || !boxreview) return html;
-
-  // Only for specific Main Modes
   if (!shouldShowEditorialNote(data)) return html;
 
   const isMirrors = /\/mirrors\//.test(String(urlPath));
 
   const { inner } = sliceBoxreviewInner(html, boxreview);
-  let content = removeNestedBoxreview(inner);
-
-  // remove old notes (idempotent)
-  content = removeAllBlocksByClass(content, "editorial-note");
-
+  const content = removeNestedBoxreview(inner);
   const masked = maskSegments(content);
+
+  // ✅ если editorial-note уже есть — ничего не трогаем
+  if (findFirstByClass(masked, "editorial-note")) {
+    return html;
+  }
 
   let anchor = null;
 
   if (isMirrors){
-    // Mirrors: after .instruction-mirrors
     anchor = findFirstByClass(masked, "instruction-mirrors");
   } else {
-    // Reviews: after criteria or ratings
     const criteria = findFirstByClass(masked, "criteria-descriptions");
     const ratings = findFirstByClass(masked, "ratingsumm");
     anchor = criteria || ratings;
   }
 
-  if (!anchor) return replaceBoxreviewInner(html, boxreview, content);
+  if (!anchor) return html;
 
   const insertPos = anchor.closeEnd;
   const indent = indentBefore(content, insertPos, nl);
   const block = renderEditorialNoteBlock(indent, nl, lang);
 
   const before = content.slice(0, insertPos);
-  const after = content.slice(insertPos);
+  const after  = content.slice(insertPos);
 
-  const newInner = joinBlocksNoBlank(before, block, after, nl);
+  // ✅ без joinBlocksNoBlank, без лишней "нормализации"
+  const needsNl = !before.endsWith(nl);
+  const newInner = before + (needsNl ? nl : "") + block + nl + after;
+
   return replaceBoxreviewInner(html, boxreview, newInner);
 }
 
@@ -3766,20 +3766,15 @@ function upsertMainInfobox(html, urlPath, lang, nl, translations){
   const texts = translations[lang] || translations["en"];
   if (!texts) return html;
 
-  const isReviewLike = /\/(reviews|mirrors)\//.test(String(urlPath));
   const masked = maskSegments(html);
+  const isReviewLike = /\/(reviews|mirrors)\//.test(String(urlPath));
 
-  function buildWithIndent(indent){
-    return buildInfoboxHtml(texts, indent, nl);
+  // если уже есть хоть один инфобокс — вообще ничего не трогаем
+  if (findFirstByClass(masked, "main-infobox")) {
+    return html;
   }
 
-  function replaceExact(source, block, replacement){
-    return source.slice(0, block.openStart) + replacement + source.slice(block.closeEnd);
-  }
-
-  function insertBeforePos(source, pos, text){
-    return source.slice(0, pos) + text + source.slice(pos);
-  }
+  const blockFor = (indent) => buildInfoboxHtml(texts, indent, nl);
 
   if (isReviewLike) {
     const boxreview = findFirstByClass(masked, "boxreview");
@@ -3787,113 +3782,35 @@ function upsertMainInfobox(html, urlPath, lang, nl, translations){
 
     const inner = html.slice(boxreview.openEnd, boxreview.closeStart);
     const innerMasked = maskSegments(inner);
-    const infoboxes = findAllDivByClass(innerMasked, "main-infobox");
 
-    // Уже есть инфобокс — ничего не делать, если совпадает
-    if (infoboxes.length === 1) {
-      const block = infoboxes[0];
-      const current = inner.slice(block.openStart, block.closeEnd);
-      const indent = indentBefore(inner, block.openStart, nl);
-      const expected = buildWithIndent(indent);
-
-      if (collapseWS(current) === collapseWS(expected)) {
-        return html;
-      }
-
-      const newInner = replaceExact(inner, block, expected);
-      return html.slice(0, boxreview.openEnd) + newInner + html.slice(boxreview.closeStart);
-    }
-
-    // Если есть несколько — оставим первый, но без форматирующих склеек
-    if (infoboxes.length > 1) {
-      let newInner = inner;
-      const first = infoboxes[0];
-      const current = newInner.slice(first.openStart, first.closeEnd);
-      const indent = indentBefore(newInner, first.openStart, nl);
-      const expected = buildWithIndent(indent);
-
-      if (collapseWS(current) !== collapseWS(expected)) {
-        newInner = replaceExact(newInner, first, expected);
-      }
-
-      // Удалим остальные exact-удалением, без чистки whitespace
-      while (true) {
-        const m = maskSegments(newInner);
-        const all = findAllDivByClass(m, "main-infobox");
-        if (all.length <= 1) break;
-        const b = all[1];
-        newInner = newInner.slice(0, b.openStart) + newInner.slice(b.closeEnd);
-      }
-
-      if (newInner === inner) return html;
-      return html.slice(0, boxreview.openEnd) + newInner + html.slice(boxreview.closeStart);
-    }
-
-    // Нет инфобокса — вставляем максимально нейтрально, без join/helper-ов
-    const indent = indentBefore(html, boxreview.closeStart, nl);
-    const expected = buildWithIndent(indent);
-
-    let prefix = "";
-    if (!inner.endsWith(nl)) prefix = nl;
-
-    const newInner = inner + prefix + expected;
-    return html.slice(0, boxreview.openEnd) + newInner + html.slice(boxreview.closeStart);
-  }
-
-  // Обычные страницы
-  const allInfoboxes = findAllDivByClass(masked, "main-infobox");
-
-  if (allInfoboxes.length === 1) {
-    const block = allInfoboxes[0];
-    const current = html.slice(block.openStart, block.closeEnd);
-    const indent = indentBefore(html, block.openStart, nl);
-    const expected = buildWithIndent(indent);
-
-    if (collapseWS(current) === collapseWS(expected)) {
+    if (findFirstByClass(innerMasked, "main-infobox")) {
       return html;
     }
 
-    return replaceExact(html, block, expected);
-  }
+    const indent = indentBefore(html, boxreview.closeStart, nl);
+    const closeIndent = indent;
+    const block = buildInfoboxHtml(texts, indent, nl);
 
-  if (allInfoboxes.length > 1) {
-    let out = html;
-    while (true) {
-      const m = maskSegments(out);
-      const all = findAllDivByClass(m, "main-infobox");
-      if (all.length <= 1) break;
-      const b = all[1];
-      out = out.slice(0, b.openStart) + out.slice(b.closeEnd);
-    }
+    const beforeTrimmed = inner.replace(/[ \t]+$/g, "");
+    const sepBefore = beforeTrimmed.endsWith(nl) ? "" : nl;
 
-    const m2 = maskSegments(out);
-    const one = findFirstByClass(m2, "main-infobox");
-    if (one) {
-      const current = out.slice(one.openStart, one.closeEnd);
-      const indent = indentBefore(out, one.openStart, nl);
-      const expected = buildWithIndent(indent);
+    const newInner = beforeTrimmed + sepBefore + block + nl + closeIndent;
 
-      if (collapseWS(current) === collapseWS(expected)) {
-        return out;
-      }
-
-      return replaceExact(out, one, expected);
-    }
-
-    return out;
+    return html.slice(0, boxreview.openEnd) + newInner + html.slice(boxreview.closeStart);
   }
 
   const holders = findAllDivByClass(masked, "boxes-holder");
-  if (!holders.length) return html;
+  if (holders.length){
+    const h = holders[0];
+    const indent = indentBefore(html, h.openStart, nl);
+    const block = blockFor(indent);
 
-  const h = holders[0];
-  const indent = indentBefore(html, h.openStart, nl);
-  const expected = buildWithIndent(indent);
+    const before = html.slice(0, h.closeEnd);
+    const after  = html.slice(h.closeEnd);
 
-  let insert = expected;
-  if (!html.slice(0, h.closeEnd).endsWith(nl)) {
-    insert = nl + insert;
+    const needsNl = !before.endsWith(nl);
+    return before + (needsNl ? nl : "") + block + nl + after;
   }
 
-  return insertBeforePos(html, h.closeEnd, insert);
+  return html;
 }

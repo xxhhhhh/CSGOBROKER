@@ -16401,8 +16401,12 @@ header {
     height: 100%;
     width: 100%;
     flex-grow: unset;
-    animation: SkinPreview .15s ease-in-out forwards;
-    pointer-events: none;
+    animation: SkinDisappear 5s ease-in-out forwards;
+    background: rgba(13, 13, 13, .9);
+}
+
+.box-skins.character .preview-item.skin img {
+    animation: SkinPreview 5s ease-in-out forwards;
 }
 
 .box-skins.character .preview-item.skin img {
@@ -16440,10 +16444,36 @@ header {
 @keyframes SkinPreview {
     0% {
         transform: scale(1.05) translateY(0);
+        opacity: 1;
+    }
+
+    4% {
+        transform: scale(1) translateY(0px);
+        opacity: 1;
+    }
+
+    90% {
+        transform: scale(1) translateY(0px);
+        opacity: 1;
     }
 
     100% {
-        transform: scale(1) translateY(0px);
+        opacity: 0;
+        transform: scale(0) translateY(0);
+    }
+}
+
+@keyframes SkinDisappear {
+    0% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 

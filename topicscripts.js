@@ -1642,6 +1642,154 @@ if (window.location.pathname.includes("/topic")) {
       });
     }
 
+      // ---------- Hover preview для .box-skins.character ----------
+  (function initCharacterSkinPreview() {
+    const isTopicPage = window.location.pathname.includes("/topic");
+    if (!isTopicPage) return;
+
+    const $characterBox = $(".box-skins.character");
+    if (!$characterBox.length) return;
+
+    const previewState = {
+      $preview: null,
+      timerId: null,
+      animTimerId: null,
+      remaining: 5000,
+      startedAt: 0,
+      paused: false,
+    };
+
+    function getCharacterModel($skin) {
+      let $model = $skin.closest(".character-box").find(".character-model").first();
+      if ($model.length) return $model;
+
+      $model = $skin.closest(".topic-grandbox").find(".character-model").first();
+      if ($model.length) return $model;
+
+      $model = $(".character-model").first();
+      return $model;
+    }
+
+    function clearRemoveTimer() {
+      if (previewState.timerId) {
+        clearTimeout(previewState.timerId);
+        previewState.timerId = null;
+      }
+    }
+
+    function clearAnimTimer() {
+      if (previewState.animTimerId) {
+        clearTimeout(previewState.animTimerId);
+        previewState.animTimerId = null;
+      }
+    }
+
+    function removePreview() {
+      clearRemoveTimer();
+      clearAnimTimer();
+
+      if (previewState.$preview && previewState.$preview.length) {
+        previewState.$preview.remove();
+      }
+
+      previewState.$preview = null;
+      previewState.remaining = 5000;
+      previewState.startedAt = 0;
+      previewState.paused = false;
+    }
+
+    function startRemoveTimer(duration) {
+      clearRemoveTimer();
+
+      previewState.remaining = duration;
+      previewState.startedAt = Date.now();
+      previewState.paused = false;
+
+      previewState.timerId = setTimeout(() => {
+        removePreview();
+      }, duration);
+    }
+
+    function pauseRemoveTimer() {
+      if (!previewState.$preview || previewState.paused) return;
+
+      clearRemoveTimer();
+
+      const elapsed = Date.now() - previewState.startedAt;
+      previewState.remaining = Math.max(0, previewState.remaining - elapsed);
+      previewState.paused = true;
+    }
+
+    function resumeRemoveTimer() {
+      if (!previewState.$preview || !previewState.paused) return;
+
+      startRemoveTimer(previewState.remaining || 1);
+    }
+
+    function triggerAnimClass($el) {
+      if (!$el || !$el.length) return;
+
+      clearAnimTimer();
+      $el.removeClass("anim-trigger");
+
+      // форс reflow, чтобы анимация гарантированно перезапустилась
+      void $el[0].offsetWidth;
+
+      $el.addClass("anim-trigger");
+
+      previewState.animTimerId = setTimeout(() => {
+        if ($el && $el.length) {
+          $el.removeClass("anim-trigger");
+        }
+      }, 2000);
+    }
+
+    function showPreviewFromSkin(skinEl) {
+      const $skin = $(skinEl);
+      if (!$skin.length) return;
+      if ($skin.hasClass("preview-item")) return;
+
+      const $characterModel = getCharacterModel($skin);
+      if (!$characterModel.length) return;
+
+      const $clone = $skin.clone(false, false);
+      $clone
+        .removeClass("anim-trigger")
+        .addClass("preview-item");
+
+      if (previewState.$preview && previewState.$preview.length) {
+        previewState.$preview.replaceWith($clone);
+      } else {
+        $characterModel.append($clone);
+      }
+
+      previewState.$preview = $clone;
+
+      triggerAnimClass($clone);
+      startRemoveTimer(5000);
+    }
+
+    $(document).on(
+      "mouseenter",
+      ".box-skins.character .skin:not(.preview-item):not(.extra-list):not(.none):not(.disabled)",
+      function () {
+        showPreviewFromSkin(this);
+      }
+    );
+
+    $(document).on("mouseenter", ".character-model .preview-item", function () {
+      if (previewState.$preview && previewState.$preview.is(this)) {
+        pauseRemoveTimer();
+      }
+    });
+
+    $(document).on("mouseleave", ".character-model .preview-item", function () {
+      if (previewState.$preview && previewState.$preview.is(this)) {
+        resumeRemoveTimer();
+      }
+    });
+  })();
+
     const navList = document.querySelector('.box-skins-nav-list');
 
     if (navList) {

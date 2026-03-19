@@ -1706,3 +1706,11 @@ ul .submenu li .nonredir,
     opacity: .45 !important;
     filter: brightness(.2) grayscale(1) !important;
 }
+
+.box-skins.character .preview-item.skin {
+    background: rgba(255, 255, 255, .9);
+}
+
+.box-skins.character .skin .skin-desc-name {
+    filter: none;
+}
