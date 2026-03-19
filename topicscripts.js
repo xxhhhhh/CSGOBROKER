@@ -286,22 +286,51 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 (() => {
   "use strict";
 
-  // Почему относительный путь: same-origin → меньше CORS/редиректов
   const DATA_URL = "/code-parts/topics/skins-data/skins-prices.json";
-
-  // Простой кэш на сессию, чтобы не долбить API на каждой перерисовке
   const _skinCache = { data: null, ts: 0, ttl: 30_000 };
 
-  /**
-   * Получение массива скинов [{ name, price }, ...].
-   * Почему: таймаут и проверка content-type снижают хрупкость на сторонних сбоях.
-   */
+  function normalizeName(str) {
+    return String(str || "")
+      .replace(/^★\s*/, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function toNum(v) {
+    const n = Number(v);
+    return Number.isFinite(n) ? n : null;
+  }
+
+  function formatRange(min, max) {
+    const hasMin = Number.isFinite(min);
+    const hasMax = Number.isFinite(max);
+
+    if (hasMin && hasMax) {
+      return min === max
+        ? `${min.toFixed(2)}$`
+        : `${min.toFixed(2)}$ - ${max.toFixed(2)}$`;
+    }
+    if (hasMin) return `${min.toFixed(2)}$`;
+    if (hasMax) return `${max.toFixed(2)}$`;
+    return "";
+  }
+
+  function isStrictNameMatch(pageName) {
+    const n = normalizeName(pageName);
+    if (!n) return false;
+    if (!n.includes("|")) return true;
+    if (n.startsWith("Sticker |")) return true;
+    return false;
+  }
+
   async function fetchSkinPrices() {
     const now = Date.now();
-    if (_skinCache.data && now - _skinCache.ts < _skinCache.ttl) return _skinCache.data;
+    if (_skinCache.data && now - _skinCache.ts < _skinCache.ttl) {
+      return _skinCache.data;
+    }
 
     const ctrl = new AbortController();
-    const to = setTimeout(() => ctrl.abort("timeout"), 12_000);
+    const to = setTimeout(() => ctrl.abort("timeout"), 12000);
 
     try {
       const res = await fetch(DATA_URL, {
@@ -309,164 +338,196 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
         signal: ctrl.signal,
         headers: { Accept: "application/json" },
       });
-      if (!res.ok) return [];
+
+      if (!res.ok) return null;
 
       const ct = res.headers.get("content-type") || "";
-      if (!ct.includes("application/json")) return [];
+      if (!ct.includes("application/json")) return null;
 
       const skins = await res.json();
       const data = Array.isArray(skins) ? skins : [];
 
-      _skinCache.data = data;
+      // ===== Строим индекс один раз =====
+      const exactMap = new Map();   // точное совпадение имени
+      const partialList = [];       // только записи с "|" для мягкого поиска
+
+      for (const item of data) {
+        const rawName = item && item.name ? item.name : "";
+        const name = normalizeName(rawName);
+        if (!name) continue;
+
+        const entry = {
+          name,
+          isSouvenir: name.startsWith("Souvenir"),
+          min: toNum(item.min_price),
+          max: toNum(item.max_price),
+        };
+
+        if (!Number.isFinite(entry.min) && !Number.isFinite(entry.max)) continue;
+
+        exactMap.set(name, entry);
+
+        // Для includes-поиска нужны только "полные" названия с |
+        if (name.includes("|")) {
+          partialList.push(entry);
+        }
+      }
+
+      const indexed = { exactMap, partialList };
+      _skinCache.data = indexed;
       _skinCache.ts = now;
-      return data;
+      return indexed;
     } catch {
-      return [];
+      return null;
     } finally {
       clearTimeout(to);
     }
   }
 
-  async function priceSkinsOnPage() {
-    const $skins = $(".skin:not(.extra-list)");
-    if (!$skins.length) return;
+  function buildHtmlFromEntries(entries) {
+    if (!entries || !entries.length) return "";
 
-    const skinPrices = await fetchSkinPrices();
+    const normal = [];
+    const souvenir = [];
 
-    const normalizeName = (str) =>
-      String(str || "")
-        .replace(/^★\s*/, "")   // убираем звезду у ножей
-        .replace(/\s+/g, " ")
-        .trim();
-
-    const toNum = (v) => {
-      const n = Number(v);
-      return Number.isFinite(n) ? n : null;
-    };
-
-    const formatRange = (min, max) => {
-      const hasMin = Number.isFinite(min);
-      const hasMax = Number.isFinite(max);
-
-      if (hasMin && hasMax) {
-        return min === max
-          ? `${min.toFixed(2)}$`
-          : `${min.toFixed(2)}$ - ${max.toFixed(2)}$`;
-      }
-
-      if (hasMin) return `${min.toFixed(2)}$`;
-      if (hasMax) return `${max.toFixed(2)}$`;
-      return "";
-    };
-
-    const isStrictNameMatch = (pageName) => {
-      const n = normalizeName(pageName);
-      if (!n) return false;
-
-      // если нет "|" — ищем строго
-      if (!n.includes("|")) return true;
-
-      // стикеры тоже строго
-      if (n.startsWith("Sticker |")) return true;
-
-      return false;
-    };
-
-    $skins.each(function () {
-      if ($(this).hasClass("extra-list")) return;
-
-      const $skinEl = $(this);
-      const name = normalizeName($skinEl.find(".skin-desc-name").text());
-      if (!name) return;
-
-      const strictMatch = isStrictNameMatch(name);
-
-      const matchedSkins = skinPrices.filter((s) => {
-        const rawName = s && s.name ? s.name : "";
-        const n = normalizeName(rawName);
-        if (!n) return false;
-
-        if (strictMatch) {
-          return n === name;
-        }
-
-        return n.includes(name);
-      });
-
-      const normalRanges = matchedSkins
-        .filter((s) => !normalizeName(s.name).startsWith("Souvenir"))
-        .map((s) => ({
-          min: toNum(s.min_price),
-          max: toNum(s.max_price),
-        }))
-        .filter((x) => Number.isFinite(x.min) || Number.isFinite(x.max));
-
-      const souvRanges = matchedSkins
-        .filter((s) => normalizeName(s.name).startsWith("Souvenir"))
-        .map((s) => ({
-          min: toNum(s.min_price),
-          max: toNum(s.max_price),
-        }))
-        .filter((x) => Number.isFinite(x.min) || Number.isFinite(x.max));
-
-      let html = "";
-
-      if (normalRanges.length) {
-        const mins = normalRanges.map((x) => x.min).filter(Number.isFinite);
-        const maxs = normalRanges.map((x) => x.max).filter(Number.isFinite);
-
-        const min = mins.length ? Math.min(...mins) : null;
-        const max = maxs.length ? Math.max(...maxs) : null;
-
-        const text = formatRange(min, max);
-        if (text) html += text;
-      }
-
-      if (souvRanges.length) {
-        const mins = souvRanges.map((x) => x.min).filter(Number.isFinite);
-        const maxs = souvRanges.map((x) => x.max).filter(Number.isFinite);
-
-        const min = mins.length ? Math.min(...mins) : null;
-        const max = maxs.length ? Math.max(...maxs) : null;
-
-        const text = formatRange(min, max);
-        if (text) {
-          html += `<div class="souvenir-price-info">${text}</div>`;
-        }
-      }
-
-      if (html) {
-        const priceEl = $skinEl.find(".skin-price-info");
-        if (priceEl.length) {
-          priceEl.removeClass("loading").html(html);
-        } else {
-          $skinEl.append(`<div class="skin-price-info">${html}</div>`);
-        }
-      }
-    });
-
-    $(".skin img").each(function () {
-      if (this.complete) {
-        $(this).addClass("imported");
-      } else {
-        $(this).on("load", function () {
-          $(this).addClass("imported");
-        });
-      }
-    });
-
-    checkWeaponTypeAvailabilityForItems();
-    if (location.pathname.includes("/topic/sticker-crafts/")) {
-      updateCraftComponentList();
+    for (const e of entries) {
+      if (e.isSouvenir) souvenir.push(e);
+      else normal.push(e);
     }
+
+    let html = "";
+
+    if (normal.length) {
+      const mins = [];
+      const maxs = [];
+
+      for (const x of normal) {
+        if (Number.isFinite(x.min)) mins.push(x.min);
+        if (Number.isFinite(x.max)) maxs.push(x.max);
+      }
+
+      const min = mins.length ? Math.min(...mins) : null;
+      const max = maxs.length ? Math.max(...maxs) : null;
+      const text = formatRange(min, max);
+      if (text) html += text;
+    }
+
+    if (souvenir.length) {
+      const mins = [];
+      const maxs = [];
+
+      for (const x of souvenir) {
+        if (Number.isFinite(x.min)) mins.push(x.min);
+        if (Number.isFinite(x.max)) maxs.push(x.max);
+      }
+
+      const min = mins.length ? Math.min(...mins) : null;
+      const max = maxs.length ? Math.max(...maxs) : null;
+      const text = formatRange(min, max);
+
+      if (text) {
+        html += `<div class="souvenir-price-info">${text}</div>`;
+      }
+    }
+
+    return html;
   }
 
-  // Инициализация
+  function findMatches(name, priceData) {
+    const normalizedName = normalizeName(name);
+    if (!normalizedName) return [];
+
+    const strictMatch = isStrictNameMatch(normalizedName);
+
+    if (strictMatch) {
+      const exact = priceData.exactMap.get(normalizedName);
+      return exact ? [exact] : [];
+    }
+
+    // Мягкий поиск только по partialList, а не по всему JSON
+    const out = [];
+    for (const item of priceData.partialList) {
+      if (item.name.includes(normalizedName)) out.push(item);
+    }
+    return out;
+  }
+
+  async function priceSkinsOnPage() {
+    const skins = Array.from(document.querySelectorAll(".skin:not(.extra-list)"));
+    if (!skins.length) return;
+
+    const priceData = await fetchSkinPrices();
+    if (!priceData) return;
+
+    // Сначала вычисляем всё в памяти, почти без DOM-операций
+    const pending = [];
+
+    for (const skinEl of skins) {
+      if (skinEl.classList.contains("extra-list")) continue;
+
+      const nameEl = skinEl.querySelector(".skin-desc-name");
+      const name = normalizeName(nameEl ? nameEl.textContent : "");
+      if (!name) continue;
+
+      const matched = findMatches(name, priceData);
+      if (!matched.length) continue;
+
+      const html = buildHtmlFromEntries(matched);
+      if (!html) continue;
+
+      pending.push({ skinEl, html });
+    }
+
+    // Обновляем DOM батчами, чтобы не морозить страницу
+    const BATCH_SIZE = 30;
+    let i = 0;
+
+    function applyBatch() {
+      const end = Math.min(i + BATCH_SIZE, pending.length);
+
+      for (; i < end; i++) {
+        const { skinEl, html } = pending[i];
+        const priceEl = skinEl.querySelector(".skin-price-info");
+
+        if (priceEl) {
+          priceEl.classList.remove("loading");
+          priceEl.innerHTML = html;
+        } else {
+          skinEl.insertAdjacentHTML("beforeend", `<div class="skin-price-info">${html}</div>`);
+        }
+      }
+
+      if (i < pending.length) {
+        requestAnimationFrame(applyBatch);
+      } else {
+        finalize();
+      }
+    }
+
+    function finalize() {
+      $(".skin img").each(function () {
+        if (this.complete) {
+          $(this).addClass("imported");
+        } else {
+          $(this).on("load", function () {
+            $(this).addClass("imported");
+          });
+        }
+      });
+
+      checkWeaponTypeAvailabilityForItems();
+      if (location.pathname.includes("/topic/sticker-crafts/")) {
+        updateCraftComponentList();
+      }
+    }
+
+    requestAnimationFrame(applyBatch);
+  }
+
   if ($(".skin").length) {
     priceSkinsOnPage();
   }
 })();
-
 
     // ---------- КРАФТЫ: работа только с уже существующими .skin ----------
     const updateCraftComponentList = () => {
