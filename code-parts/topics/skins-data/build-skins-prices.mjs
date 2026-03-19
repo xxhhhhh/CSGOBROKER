@@ -1,8 +1,8 @@
 import fs from "node:fs/promises";
 
-const LIS_FILE = "code-parts/topics/lis-skins.raw.json";
-const SKINPORT_FILE = "code-parts/topics/skinport.raw.json";
-const OUT_FILE = "code-parts/topics/skins-prices.json";
+const LIS_FILE = "code-parts/topics/skins-data/lis-skins.raw.json";
+const SKINPORT_FILE = "code-parts/topics/skins-data/skinport.raw.json";
+const OUT_FILE = "code-parts/topics/skins-data/skins-prices.json";
 
 function toNum(v) {
   if (v == null) return null;
