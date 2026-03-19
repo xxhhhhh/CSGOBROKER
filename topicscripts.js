@@ -287,7 +287,7 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
   "use strict";
 
   // Почему относительный путь: same-origin → меньше CORS/редиректов
-  const DATA_URL = "/code-parts/topics/skins-prices.json";
+  const DATA_URL = "/code-parts/topics/skins-data/skins-prices.json";
 
   // Простой кэш на сессию, чтобы не долбить API на каждой перерисовке
   const _skinCache = { data: null, ts: 0, ttl: 30_000 };
@@ -327,77 +327,113 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
     }
   }
 
-  async function priceSkinsOnPage() {
-    const $skins = $(".skin:not(.extra-list)");
-    if (!$skins.length) return;
+async function priceSkinsOnPage() {
+  const $skins = $(".skin:not(.extra-list)");
+  if (!$skins.length) return;
 
-    const skinPrices = await fetchSkinPrices();
+  const skinPrices = await fetchSkinPrices();
 
-    $skins.each(function () {
-      if ($(this).hasClass("extra-list")) return;
-      const $skinEl = $(this);
-      const name = ($skinEl.find(".skin-desc-name").text() || "").trim();
-      if (!name) return;
+  const toNum = (v) => {
+    const n = Number(v);
+    return Number.isFinite(n) ? n : null;
+  };
 
-      const isSticker = name.startsWith("Sticker |");
-      const matchedSkins = skinPrices.filter((s) => {
-        const n = (s && s.name) ? String(s.name) : "";
-        return isSticker ? n === name : n.includes(name);
-      });
+  const formatRange = (min, max) => {
+    const hasMin = Number.isFinite(min);
+    const hasMax = Number.isFinite(max);
 
-      const normal = matchedSkins
-        .filter((s) => !String(s.name).startsWith("Souvenir"))
-        .map((s) => +s.price)
-        .filter(Number.isFinite);
-
-      const souv = matchedSkins
-        .filter((s) => String(s.name).startsWith("Souvenir"))
-        .map((s) => +s.price)
-        .filter(Number.isFinite);
-
-      let html = "";
-
-      if (normal.length) {
-        normal.sort((a, b) => a - b);
-        html += (normal[0] === normal[normal.length - 1])
-          ? `${normal[0].toFixed(2)}$`
-          : `${normal[0].toFixed(2)}$ - ${normal[normal.length - 1].toFixed(2)}$`;
-      }
-
-      if (souv.length) {
-        souv.sort((a, b) => a - b);
-        const t = (souv[0] === souv[souv.length - 1])
-          ? `${souv[0].toFixed(2)}$`
-          : `${souv[0].toFixed(2)}$ - ${souv[souv.length - 1].toFixed(2)}$`;
-        html += `<div class="souvenir-price-info">${t}</div>`;
-      }
-
-      if (html) {
-        const priceEl = $skinEl.find(".skin-price-info");
-        if (priceEl.length) {
-          priceEl.removeClass("loading").html(html);
-        } else {
-          $skinEl.append(`<div class="skin-price-info">${html}</div>`);
-        }
-      }
-    });
-
-    // отметка для img.imported
-    $(".skin img").each(function () {
-      if (this.complete) {
-        $(this).addClass("imported");
-      } else {
-        $(this).on("load", function () {
-          $(this).addClass("imported");
-        });
-      }
-    });
-
-    checkWeaponTypeAvailabilityForItems();
-    if (location.pathname.includes("/topic/sticker-crafts/")) {
-      updateCraftComponentList();
+    if (hasMin && hasMax) {
+      return min === max
+        ? `${min.toFixed(2)}$`
+        : `${min.toFixed(2)}$ - ${max.toFixed(2)}$`;
     }
+
+    if (hasMin) return `${min.toFixed(2)}$`;
+    if (hasMax) return `${max.toFixed(2)}$`;
+    return "";
+  };
+
+  $skins.each(function () {
+    if ($(this).hasClass("extra-list")) return;
+
+    const $skinEl = $(this);
+    const name = ($skinEl.find(".skin-desc-name").text() || "").trim();
+    if (!name) return;
+
+    const isSticker = name.startsWith("Sticker |");
+
+    const matchedSkins = skinPrices.filter((s) => {
+      const n = s && s.name ? String(s.name).trim() : "";
+      return isSticker ? n === name : n.includes(name);
+    });
+
+    const normalRanges = matchedSkins
+      .filter((s) => !String(s.name || "").startsWith("Souvenir"))
+      .map((s) => ({
+        min: toNum(s.min_price),
+        max: toNum(s.max_price),
+      }))
+      .filter((x) => Number.isFinite(x.min) || Number.isFinite(x.max));
+
+    const souvRanges = matchedSkins
+      .filter((s) => String(s.name || "").startsWith("Souvenir"))
+      .map((s) => ({
+        min: toNum(s.min_price),
+        max: toNum(s.max_price),
+      }))
+      .filter((x) => Number.isFinite(x.min) || Number.isFinite(x.max));
+
+    let html = "";
+
+    if (normalRanges.length) {
+      const mins = normalRanges.map((x) => x.min).filter(Number.isFinite);
+      const maxs = normalRanges.map((x) => x.max).filter(Number.isFinite);
+
+      const min = mins.length ? Math.min(...mins) : null;
+      const max = maxs.length ? Math.max(...maxs) : null;
+
+      const text = formatRange(min, max);
+      if (text) html += text;
+    }
+
+    if (souvRanges.length) {
+      const mins = souvRanges.map((x) => x.min).filter(Number.isFinite);
+      const maxs = souvRanges.map((x) => x.max).filter(Number.isFinite);
+
+      const min = mins.length ? Math.min(...mins) : null;
+      const max = maxs.length ? Math.max(...maxs) : null;
+
+      const text = formatRange(min, max);
+      if (text) {
+        html += `<div class="souvenir-price-info">${text}</div>`;
+      }
+    }
+
+    if (html) {
+      const priceEl = $skinEl.find(".skin-price-info");
+      if (priceEl.length) {
+        priceEl.removeClass("loading").html(html);
+      } else {
+        $skinEl.append(`<div class="skin-price-info">${html}</div>`);
+      }
+    }
+  });
+
+  $(".skin img").each(function () {
+    if (this.complete) {
+      $(this).addClass("imported");
+    } else {
+      $(this).on("load", function () {
+        $(this).addClass("imported");
+      });
+    }
+  });
+
+  checkWeaponTypeAvailabilityForItems();
+  if (location.pathname.includes("/topic/sticker-crafts/")) {
+    updateCraftComponentList();
   }
+}
 
   // Инициализация
   if ($(".skin").length) {
