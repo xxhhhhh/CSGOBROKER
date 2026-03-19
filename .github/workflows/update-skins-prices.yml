@@ -22,7 +22,7 @@ jobs:
           node-version: 20
 
       - name: Create target dir
-        run: mkdir -p code-parts/topics skins-data
+        run: mkdir -p code-parts/topics/skins-data
 
       - name: Fetch Lis-Skins raw JSON
         run: |
@@ -43,7 +43,7 @@ jobs:
           jq . code-parts/topics/skins-data/skinport.raw.json > /dev/null
 
       - name: Build merged prices JSON
-        run: node skins-data/build-skins-prices.mjs
+        run: node code-parts/topics/skins-data/build-skins-prices.mjs
 
       - name: Commit changes if any
         run: |
@@ -52,7 +52,7 @@ jobs:
           git add code-parts/topics/skins-data/skins-prices.json
           git add code-parts/topics/skins-data/lis-skins.raw.json
           git add code-parts/topics/skins-data/skinport.raw.json
-          git add skins-data/build-skins-prices.mjs
+          git add code-parts/topics/skins-data/build-skins-prices.mjs
           git diff --cached --quiet || git commit -m "Update skins prices"
 
       - name: Push changes
