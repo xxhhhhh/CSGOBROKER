@@ -28,7 +28,7 @@ function pickMinMax(values) {
 }
 
 function normalizeName(name) {
-  return String(name || "").replace(/\s+/g, " ").trim();
+  return String(name || "").trim();
 }
 
 function parseLisSkins(raw) {
@@ -49,9 +49,16 @@ function parseLisSkins(raw) {
       toNum(item?.price_max) ??
       toNum(item?.price);
 
+    const url =
+      item?.url ||
+      item?.link ||
+      item?.item_page ||
+      null;
+
     map.set(name, {
       min_price: minPrice,
       max_price: maxPrice,
+      url,
     });
   }
 
@@ -72,6 +79,8 @@ function parseSkinport(raw) {
     map.set(name, {
       min_price: minPrice,
       max_price: maxPrice,
+      url_skinport: item?.item_page || null,
+      market_page_skinport: item?.market_page || null,
     });
   }
 
@@ -85,11 +94,8 @@ async function main() {
   const lisMap = parseLisSkins(lisRaw);
   const skinportMap = parseSkinport(skinportRaw);
 
-  const allNames = [...new Set([...lisMap.keys(), ...skinportMap.keys()])].sort((a, b) =>
-    a.localeCompare(b, "en")
-  );
-
-  const merged = {};
+  const allNames = new Set([...lisMap.keys(), ...skinportMap.keys()]);
+  const merged = [];
 
   for (const name of allNames) {
     const lis = lisMap.get(name) || null;
@@ -104,15 +110,17 @@ async function main() {
 
     if (min == null && max == null) continue;
 
-    merged[name] = [min, max];
-
-    if (name.startsWith("★ ")) {
-      merged[name.replace(/^★\s*/, "")] = [min, max];
-    }
+    merged.push({
+        name,
+        min_price: min,
+        max_price: max
+    });
   }
 
+  merged.sort((a, b) => a.name.localeCompare(b.name, "en"));
+
   await fs.writeFile(OUT_FILE, JSON.stringify(merged), "utf8");
-  console.log(`Saved ${Object.keys(merged).length} items to ${OUT_FILE}`);
+  console.log(`Saved ${merged.length} items to ${OUT_FILE}`);
 }
 
 main().catch((err) => {

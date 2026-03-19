@@ -291,6 +291,7 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
   function normalizeName(str) {
     return String(str || "")
+      .replace(/^★\s*/, "")
       .replace(/\s+/g, " ")
       .trim();
   }
@@ -309,10 +310,17 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
         ? `${min.toFixed(2)}$`
         : `${min.toFixed(2)}$ - ${max.toFixed(2)}$`;
     }
-
     if (hasMin) return `${min.toFixed(2)}$`;
     if (hasMax) return `${max.toFixed(2)}$`;
     return "";
+  }
+
+  function isStrictNameMatch(pageName) {
+    const n = normalizeName(pageName);
+    if (!n) return false;
+    if (!n.includes("|")) return true;
+    if (n.startsWith("Sticker |")) return true;
+    return false;
   }
 
   async function fetchSkinPrices() {
@@ -322,7 +330,7 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
     }
 
     const ctrl = new AbortController();
-    const to = setTimeout(() => ctrl.abort("timeout"), 12_000);
+    const to = setTimeout(() => ctrl.abort("timeout"), 12000);
 
     try {
       const res = await fetch(DATA_URL, {
@@ -336,12 +344,39 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
       const ct = res.headers.get("content-type") || "";
       if (!ct.includes("application/json")) return null;
 
-      const json = await res.json();
-      const data = json && typeof json === "object" ? json : null;
+      const skins = await res.json();
+      const data = Array.isArray(skins) ? skins : [];
 
-      _skinCache.data = data;
+      // ===== Строим индекс один раз =====
+      const exactMap = new Map();   // точное совпадение имени
+      const partialList = [];       // только записи с "|" для мягкого поиска
+
+      for (const item of data) {
+        const rawName = item && item.name ? item.name : "";
+        const name = normalizeName(rawName);
+        if (!name) continue;
+
+        const entry = {
+          name,
+          isSouvenir: name.startsWith("Souvenir"),
+          min: toNum(item.min_price),
+          max: toNum(item.max_price),
+        };
+
+        if (!Number.isFinite(entry.min) && !Number.isFinite(entry.max)) continue;
+
+        exactMap.set(name, entry);
+
+        // Для includes-поиска нужны только "полные" названия с |
+        if (name.includes("|")) {
+          partialList.push(entry);
+        }
+      }
+
+      const indexed = { exactMap, partialList };
+      _skinCache.data = indexed;
       _skinCache.ts = now;
-      return data;
+      return indexed;
     } catch {
       return null;
     } finally {
@@ -349,40 +384,101 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
     }
   }
 
+  function buildHtmlFromEntries(entries) {
+    if (!entries || !entries.length) return "";
+
+    const normal = [];
+    const souvenir = [];
+
+    for (const e of entries) {
+      if (e.isSouvenir) souvenir.push(e);
+      else normal.push(e);
+    }
+
+    let html = "";
+
+    if (normal.length) {
+      const mins = [];
+      const maxs = [];
+
+      for (const x of normal) {
+        if (Number.isFinite(x.min)) mins.push(x.min);
+        if (Number.isFinite(x.max)) maxs.push(x.max);
+      }
+
+      const min = mins.length ? Math.min(...mins) : null;
+      const max = maxs.length ? Math.max(...maxs) : null;
+      const text = formatRange(min, max);
+      if (text) html += text;
+    }
+
+    if (souvenir.length) {
+      const mins = [];
+      const maxs = [];
+
+      for (const x of souvenir) {
+        if (Number.isFinite(x.min)) mins.push(x.min);
+        if (Number.isFinite(x.max)) maxs.push(x.max);
+      }
+
+      const min = mins.length ? Math.min(...mins) : null;
+      const max = maxs.length ? Math.max(...maxs) : null;
+      const text = formatRange(min, max);
+
+      if (text) {
+        html += `<div class="souvenir-price-info">${text}</div>`;
+      }
+    }
+
+    return html;
+  }
+
+  function findMatches(name, priceData) {
+    const normalizedName = normalizeName(name);
+    if (!normalizedName) return [];
+
+    const strictMatch = isStrictNameMatch(normalizedName);
+
+    if (strictMatch) {
+      const exact = priceData.exactMap.get(normalizedName);
+      return exact ? [exact] : [];
+    }
+
+    // Мягкий поиск только по partialList, а не по всему JSON
+    const out = [];
+    for (const item of priceData.partialList) {
+      if (item.name.includes(normalizedName)) out.push(item);
+    }
+    return out;
+  }
+
   async function priceSkinsOnPage() {
     const skins = Array.from(document.querySelectorAll(".skin:not(.extra-list)"));
     if (!skins.length) return;
 
-    const skinPrices = await fetchSkinPrices();
-    if (!skinPrices) return;
+    const priceData = await fetchSkinPrices();
+    if (!priceData) return;
 
+    // Сначала вычисляем всё в памяти, почти без DOM-операций
     const pending = [];
 
     for (const skinEl of skins) {
       if (skinEl.classList.contains("extra-list")) continue;
 
       const nameEl = skinEl.querySelector(".skin-desc-name");
-      const rawName = nameEl ? nameEl.textContent : "";
-      const name = normalizeName(rawName);
+      const name = normalizeName(nameEl ? nameEl.textContent : "");
       if (!name) continue;
 
-      let entry = skinPrices[name];
+      const matched = findMatches(name, priceData);
+      if (!matched.length) continue;
 
-      // fallback для ножей без ★ на странице
-      if (!entry) {
-        entry = skinPrices[`★ ${name}`];
-      }
+      const html = buildHtmlFromEntries(matched);
+      if (!html) continue;
 
-      if (!entry || !Array.isArray(entry)) continue;
-
-      const min = toNum(entry[0]);
-      const max = toNum(entry[1]);
-      const text = formatRange(min, max);
-      if (!text) continue;
-
-      pending.push({ skinEl, html: text });
+      pending.push({ skinEl, html });
     }
 
+    // Обновляем DOM батчами, чтобы не морозить страницу
     const BATCH_SIZE = 30;
     let i = 0;
 
