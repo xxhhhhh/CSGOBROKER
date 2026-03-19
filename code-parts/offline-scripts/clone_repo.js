@@ -49,7 +49,7 @@ const FROM_DOMAIN = 'csgobroker.cc';
 const TO_DOMAIN = 'csgobroker.me';
 
 const CF_TOKEN_CC = 'dc243703e5f549b789897d5492ba4571';
-const CF_TOKEN_CO = '5dbdc03b9e994810983628ea14b2de20';
+const CF_TOKEN_CO = '069b635279584b3a960931976d49bc0b';
 
 // --- CLI --------------------------------------------------------------------
 function parseArgs(argv) {

@@ -287,7 +287,7 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
   "use strict";
 
   // Почему относительный путь: same-origin → меньше CORS/редиректов
-  const DATA_URL = "https://cs2broker.cc/api/skins?v=2";
+  const DATA_URL = "/code-parts/topics/skins-prices.json";
 
   // Простой кэш на сессию, чтобы не долбить API на каждой перерисовке
   const _skinCache = { data: null, ts: 0, ttl: 30_000 };
@@ -1125,6 +1125,12 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
           updateNavigationReset();
         }
 
+        function getSkinQualityClass(el) {
+          const order = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];
+          const classList = (el.className || "").split(/\s+/);
+          return order.find(cls => classList.includes(cls)) || "";
+        }
+
         $("#Quality-Filter").click(function () {
           toggleSortFilter($(this), $("#Price-Filter"), (sortState) => {
             const skins = $(".box-skins-list .skin").get();
@@ -1132,11 +1138,19 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
             if (sortState !== "none") {
               skins.sort((a, b) => {
-                const aClass = $(a).attr("class").split(" ")[1];
-                const bClass = $(b).attr("class").split(" ")[1];
-                const diff = sortOrder.indexOf(aClass) - sortOrder.indexOf(bClass);
+                const aClass = getSkinQualityClass(a);
+                const bClass = getSkinQualityClass(b);
+
+                const aIndex = sortOrder.indexOf(aClass);
+                const bIndex = sortOrder.indexOf(bClass);
+
+                const safeA = aIndex === -1 ? -1 : aIndex;
+                const safeB = bIndex === -1 ? -1 : bIndex;
+
+                const diff = safeA - safeB;
                 return sortState === "asc" ? diff : -diff;
               });
+
               $(".box-skins-list").html(skins);
             }
           });
