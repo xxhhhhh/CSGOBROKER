@@ -2652,6 +2652,10 @@ nav .pages {
     border-radius: var(--minor-border) !important;
 }
 
+.box-skins-list:not(:has(> .skin + .skin)) > .price-sorter {
+  display: none;
+}
+
 .box-skins-list::-webkit-scrollbar {
     width: 2px;
 }
@@ -4676,10 +4680,6 @@ nav img {
     margin-top: -8px;
     border-radius: 0 0 var(--main-border) var(--main-border);
     z-index: 10;
-}
-
-.sitepage.cases .topic-grandbox {
-    border-radius: 0 0 5px 5px;
 }
 
 .sitepage.items .topic-grandbox .section {

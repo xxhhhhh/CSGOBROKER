@@ -7,6 +7,7 @@ on:
 
 jobs:
   submit-sitemap:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: IndexNow
@@ -24,3 +25,4 @@ jobs:
             https://csgobroker.cc/sitemap_reviews_es.xml
             https://csgobroker.cc/sitemap_topics.xml
             https://csgobroker.cc/sitemap_topics_ru.xml
+          sitemap_days_ago: 1

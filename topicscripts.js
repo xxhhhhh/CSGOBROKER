@@ -1239,8 +1239,19 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
           .forEach((boxSkinsName) => boxSkinsName.classList.add("visible"));
       });
 
-      $(".navigation-weapon-type").click(function () {
-        const weaponType = $(this).attr("class").split(" ")[1];
+      $(".navigation-weapon-type").on("click", function () {
+        const classList = ($(this).attr("class") || "").split(/\s+/);
+        const weaponType = classList.find(
+          (cls) =>
+            cls &&
+            cls !== "navigation-weapon-type" &&
+            cls !== "enabled" &&
+            cls !== "notexist" &&
+            cls !== "solo-category"
+        );
+
+        if (!weaponType) return;
+
         $(`.box-skins.${weaponType}`).toggleClass("disabled");
         $(this).toggleClass("enabled");
         updateNavigationReset();
@@ -1264,167 +1275,149 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
       currentPath.includes("/skins/") ||
       currentPath.includes("/collections/")
     ) {
-      $.getJSON("/code-parts/topics/items-nav.json", function (navData) {
-        const $grandbox = $(".topic-grandbox");
-        const $navSectionFirst = $('<div class="section first"></div>');
+      const $skinBox = $(".box-skins-list");
+      const $priceToggle = $("#Price-Toggle");
+      const $rarityToggle = $("#Rarity-Toggle");
+      const $qualityFilter = $("#Quality-Filter");
+      const $priceFilter = $("#Price-Filter");
 
-        const stickerTitles = {
-          blue: "High Grade",
-          purple: "Remarkable",
-          pink: "Exotic",
-          red: "Extraordinary"
-        };
+      $(".navigation-weapon-type").on("click", function () {
+        const classList = ($(this).attr("class") || "").split(/\s+/);
+        const weaponType = classList.find(
+          (cls) =>
+            cls &&
+            cls !== "navigation-weapon-type" &&
+            cls !== "enabled" &&
+            cls !== "notexist" &&
+            cls !== "solo-category"
+        );
 
-        navData.types.forEach(type => {
-          let title = type.title;
-          if (currentPath.includes("/stickers/") && stickerTitles[type.class]) {
-            title = stickerTitles[type.class];
-          }
+        if (!weaponType) return;
 
-          $navSectionFirst.append(
-            `<div class="navigation-weapon-type ${type.class} enabled">${title}</div>`
-          );
-        });
+        $(`.skin.${weaponType}`).toggleClass("disabled");
+        $(this).toggleClass("enabled");
+        enabledFiltersState[weaponType] = $(this).hasClass("enabled");
+        updateNavigationReset();
+      });
 
-        const $navSearchers = $('<div class="section searchers"></div>');
-        navData.filters.forEach(filter => {
-          const title = languageTag === "ru" ? filter.title_ru : filter.title_en;
-          $navSearchers.append(
-            `<div class="navigation-weapon-sort" data-title="${title}" id="${filter.id}">
-               <i class="officon ${filter.icon}"></i>
-             </div>`
-          );
-        });
+      checkWeaponTypeAvailabilityForItems();
 
-        $grandbox.prepend($navSectionFirst, $navSearchers);
+      function getSkinsToggleState() {
+        return getLocalStorageState("SkinsToggleState", { showprice: true, showrarity: true });
+      }
 
-        $(".navigation-weapon-type").click(function () {
-          const weaponType = $(this).attr("class").split(" ")[1];
-          $(`.skin.${weaponType}`).toggleClass("disabled");
-          $(this).toggleClass("enabled");
-          enabledFiltersState[weaponType] = $(this).hasClass("enabled");
-          updateNavigationReset();
-        });
+      function setSkinsToggleState(newState) {
+        setLocalStorageState("SkinsToggleState", newState);
+      }
 
-        checkWeaponTypeAvailabilityForItems();
-        translateTypes(languageTag);
+      const toggleState = getSkinsToggleState();
 
-        function getSkinsToggleState() {
-          return getLocalStorageState("SkinsToggleState", { showprice: true, showrarity: true });
-        }
-        function setSkinsToggleState(newState) {
-          setLocalStorageState("SkinsToggleState", newState);
-        }
+      $skinBox.toggleClass("showprice", toggleState.showprice);
+      $skinBox.toggleClass("showrarity", toggleState.showrarity);
 
-        const toggleState = getSkinsToggleState();
+      $priceToggle.toggleClass("enabled", toggleState.showprice);
+      $rarityToggle.toggleClass("enabled", toggleState.showrarity);
 
-        const $skinBox = $(".box-skins-list");
-        const $priceToggle = $("#Price-Toggle");
-        const $rarityToggle = $("#Rarity-Toggle");
+      $priceToggle.on("click", function () {
+        toggleState.showprice = !toggleState.showprice;
+        setSkinsToggleState(toggleState);
 
         $skinBox.toggleClass("showprice", toggleState.showprice);
+        $(this).toggleClass("enabled", toggleState.showprice);
+      });
+
+      $rarityToggle.on("click", function () {
+        toggleState.showrarity = !toggleState.showrarity;
+        setSkinsToggleState(toggleState);
+
         $skinBox.toggleClass("showrarity", toggleState.showrarity);
+        $(this).toggleClass("enabled", toggleState.showrarity);
+      });
 
-        $priceToggle.toggleClass("enabled", toggleState.showprice);
-        $rarityToggle.toggleClass("enabled", toggleState.showrarity);
+      function toggleSortFilter($current, $other, sortCallback) {
+        const isEnabled = $current.hasClass("enabled");
+        const isReversed = $current.hasClass("reversed");
 
-        $priceToggle.on("click", function () {
-          toggleState.showprice = !toggleState.showprice;
-          setSkinsToggleState(toggleState);
+        $other.removeClass("enabled reversed");
 
-          $skinBox.toggleClass("showprice", toggleState.showprice);
-          $(this).toggleClass("enabled", toggleState.showprice);
-        });
+        if (!isEnabled && !isReversed) {
+          $current.addClass("enabled");
+        } else if (isEnabled && !isReversed) {
+          $current.addClass("reversed");
+        } else if (isEnabled && isReversed) {
+          $current.removeClass("reversed");
+        }
 
-        $rarityToggle.on("click", function () {
-          toggleState.showrarity = !toggleState.showrarity;
-          setSkinsToggleState(toggleState);
+        const sortState =
+          $current.hasClass("enabled") && !$current.hasClass("reversed")
+            ? "desc"
+            : $current.hasClass("enabled") && $current.hasClass("reversed")
+              ? "asc"
+              : "none";
 
-          $skinBox.toggleClass("showrarity", toggleState.showrarity);
-          $(this).toggleClass("enabled", toggleState.showrarity);
-        });
+        sortCallback(sortState);
+        updateNavigationReset();
+      }
 
-        function toggleSortFilter($current, $other, sortCallback) {
-          const isEnabled = $current.hasClass("enabled");
-          const isReversed = $current.hasClass("reversed");
+      function getSkinQualityClass(el) {
+        const order = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];
+        const classList = (el.className || "").split(/\s+/);
+        return order.find((cls) => classList.includes(cls)) || "";
+      }
 
-          $other.removeClass("enabled reversed");
+      $qualityFilter.on("click", function () {
+        toggleSortFilter($(this), $priceFilter, (sortState) => {
+          const skins = $(".box-skins-list .skin").get();
+          const sortOrder = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];
 
-          if (!isEnabled && !isReversed) {
-            $current.addClass("enabled");
-          } else if (isEnabled && !isReversed) {
-            $current.addClass("reversed");
-          } else if (isEnabled && isReversed) {
-            $current.removeClass("reversed");
+          if (sortState !== "none") {
+            skins.sort((a, b) => {
+              const aClass = getSkinQualityClass(a);
+              const bClass = getSkinQualityClass(b);
+
+              const aIndex = sortOrder.indexOf(aClass);
+              const bIndex = sortOrder.indexOf(bClass);
+
+              const safeA = aIndex === -1 ? -1 : aIndex;
+              const safeB = bIndex === -1 ? -1 : bIndex;
+
+              const diff = safeA - safeB;
+              return sortState === "asc" ? diff : -diff;
+            });
+
+            $(".box-skins-list").html(skins);
           }
-
-          const sortState = $current.hasClass("enabled") && !$current.hasClass("reversed") ? "desc"
-                         : $current.hasClass("enabled") && $current.hasClass("reversed") ? "asc"
-                         : "none";
-
-          sortCallback(sortState);
-          updateNavigationReset();
-        }
-
-        function getSkinQualityClass(el) {
-          const order = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];
-          const classList = (el.className || "").split(/\s+/);
-          return order.find(cls => classList.includes(cls)) || "";
-        }
-
-        $("#Quality-Filter").click(function () {
-          toggleSortFilter($(this), $("#Price-Filter"), (sortState) => {
-            const skins = $(".box-skins-list .skin").get();
-            const sortOrder = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];
-
-            if (sortState !== "none") {
-              skins.sort((a, b) => {
-                const aClass = getSkinQualityClass(a);
-                const bClass = getSkinQualityClass(b);
-
-                const aIndex = sortOrder.indexOf(aClass);
-                const bIndex = sortOrder.indexOf(bClass);
-
-                const safeA = aIndex === -1 ? -1 : aIndex;
-                const safeB = bIndex === -1 ? -1 : bIndex;
-
-                const diff = safeA - safeB;
-                return sortState === "asc" ? diff : -diff;
-              });
-
-              $(".box-skins-list").html(skins);
-            }
-          });
-        });
-
-        $("#Price-Filter").click(function () {
-          toggleSortFilter($(this), $("#Quality-Filter"), (sortState) => {
-            const skins = $(".box-skins-list .skin").get();
-
-            if (sortState !== "none") {
-              skins.sort((a, b) => {
-                const priceA = parseFloat($(a).find(".skin-price-info").text().replace(/[^0-9.]/g, "")) || 0;
-                const priceB = parseFloat($(b).find(".skin-price-info").text().replace(/[^0-9.]/g, "")) || 0;
-                return sortState === "asc" ? priceA - priceB : priceB - priceA;
-              });
-              $(".box-skins-list").html(skins);
-            }
-          });
-        });
-
-        $(".topic-centralizer").on("click", ".navigation-reset", function () {
-          $(".skin").removeClass("disabled");
-          $(".navigation-weapon-type").addClass("enabled");
-
-          $("#Quality-Filter, #Price-Filter").removeClass("enabled reversed");
-          $(".topic-centralizer .navigation-reset").remove();
-
-          enabledFiltersState = {};
-          checkWeaponTypeAvailabilityForItems?.();
-          checkWeaponTypeAvailability?.();
         });
       });
 
+      $priceFilter.on("click", function () {
+        toggleSortFilter($(this), $qualityFilter, (sortState) => {
+          const skins = $(".box-skins-list .skin").get();
+
+          if (sortState !== "none") {
+            skins.sort((a, b) => {
+              const priceA = parseFloat($(a).find(".skin-price-info").text().replace(/[^0-9.]/g, "")) || 0;
+              const priceB = parseFloat($(b).find(".skin-price-info").text().replace(/[^0-9.]/g, "")) || 0;
+              return sortState === "asc" ? priceA - priceB : priceB - priceA;
+            });
+
+            $(".box-skins-list").html(skins);
+          }
+        });
+      });
+
+      $(".topic-centralizer").on("click", ".navigation-reset", function () {
+        $(".skin").removeClass("disabled");
+        $(".navigation-weapon-type").addClass("enabled");
+
+        $qualityFilter.removeClass("enabled reversed");
+        $priceFilter.removeClass("enabled reversed");
+        $(".topic-centralizer .navigation-reset").remove();
+
+        enabledFiltersState = {};
+        checkWeaponTypeAvailabilityForItems?.();
+        checkWeaponTypeAvailability?.();
+      });
     }
 
     // !!! УДАЛЕНО: авто-импорт .box-skins-list (autoImportFullJsonIfNeeded)
@@ -1434,250 +1427,49 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
 // ------------------- topics-nav и пр. (без изменений функционала) -------------------
 
-// /assets/js/topic-nav-fix.js
-if (
-  window.location.pathname.includes("/items/") ||
-  window.location.pathname.includes("/cases/") ||
-  window.location.pathname.includes("/charms/") ||
-  window.location.pathname.includes("/stickers/") ||
-  window.location.pathname.includes("/collections/")
-) {
-  const isNonEmpty = (v) => typeof v === "string" && v.trim().length > 0;
+(function initTopicNavClickOnly() {
+  if (document.__topicNavBound) return;
+  document.__topicNavBound = true;
 
-  async function loadNavDataWithCache() {
-    const cacheKey = "topicNavCache";
-    const cacheTimeKey = "topicNavCache-time";
-    const maxAge = 24 * 60 * 60 * 1000;
+  const mq = window.matchMedia("(max-width: 1364px)");
 
-    try {
-      const cached = StorageHelper?.get?.(cacheKey);
-      const cachedTime = StorageHelper?.get?.(cacheTimeKey);
-      if (cached && cachedTime && Date.now() - +cachedTime < maxAge) {
-        return JSON.parse(cached);
-      }
-    } catch (e) {
-      console.warn("[topic-nav] cache read failed", e);
-    }
+  document.addEventListener("click", (e) => {
+    if (!mq.matches) return;
 
-    const response = await fetch("/code-parts/topics/topics-nav-items.json", { credentials: "same-origin" });
-    if (!response.ok) throw new Error(`topics-nav-items.json ${response.status}`);
-    const data = await response.json();
+    const currentBtn = e.target.closest(".weapon-current");
+    if (currentBtn) {
+      const container = currentBtn.closest(".weapon-container");
+      if (!container) return;
 
-    try {
-      StorageHelper?.set?.(cacheKey, JSON.stringify(data));
-      StorageHelper?.set?.(cacheTimeKey, Date.now().toString());
-    } catch (e) {
-      console.warn("[topic-nav] cache write failed", e);
-    }
+      const isActive = container.classList.contains("active");
+      document.querySelectorAll(".weapon-container.active").forEach((c) => c.classList.remove("active"));
 
-    return data;
-  }
-
-  function createCategoryDOM(category, isMobileView) {
-    const container = document.createElement("div");
-    container.classList.add("weapon-container");
-
-    const current = document.createElement("div");
-    current.classList.add("weapon-current");
-
-    const currentName =
-      isMobileView && languageTag === "ru" ? category["name-ru"] || category.name : category.name;
-
-    if (isMobileView) {
-      const span = document.createElement("span");
-      span.textContent = currentName;
-      const caret = document.createElement("i");
-      caret.className = "officon oldcarret";
-      current.appendChild(span);
-      current.appendChild(caret);
-    } else {
-      if (isNonEmpty(category.image)) {
-        const img = document.createElement("img");
-        img.src = category.image;
-        img.draggable = false;
-        img.alt = category.alt || currentName || "";
-        current.appendChild(img);
-      } else {
-        const span = document.createElement("span");
-        span.textContent = currentName;
-        current.appendChild(span);
-      }
-    }
-
-    const list = document.createElement("ul");
-    list.classList.add("weapon-selection");
-
-    const frag = document.createDocumentFragment();
-    (category.items || []).forEach((item) => {
-      const localizedHref =
-        languageTag === "ru" && isNonEmpty(item.link) && !item.link.startsWith("/ru/") ? `/ru${item.link}` : item.link;
-
-      const li = document.createElement("li");
-      li.className = "weapon-selection-unite";
-
-      const itemClass = item?.class;
-      if (isNonEmpty(itemClass)) {
-        li.className += ` ${itemClass.trim()}`;
-      }
-
-      const a = document.createElement("a");
-      a.href = localizedHref || "#";
-      a.className = "weapon-selection-redir";
-
-      if (isNonEmpty(item.image)) {
-        const img = document.createElement("img");
-        img.src = item.image;
-        img.draggable = false;
-        img.alt = item.name || "";
-        a.appendChild(img);
-      }
-
-      const span = document.createElement("span");
-      span.textContent = item.name || "";
-      a.appendChild(span);
-
-      li.appendChild(a);
-      frag.appendChild(li);
-    });
-
-    list.appendChild(frag);
-    container.appendChild(current);
-    container.appendChild(list);
-    return container;
-  }
-
-  function bindTopicNavEvents() {
-    if (document.__topicNavBound) return;
-    document.__topicNavBound = true;
-
-    const mq = window.matchMedia("(max-width: 1364px)");
-
-    document.addEventListener("click", (e) => {
-      if (!mq.matches) return;
-
-      const currentBtn = e.target.closest(".weapon-current");
-      if (currentBtn) {
-        const container = currentBtn.closest(".weapon-container");
-        if (!container) return;
-        const isActive = container.classList.contains("active");
-        document.querySelectorAll(".weapon-container.active").forEach((c) => c.classList.remove("active"));
-        if (!isActive) container.classList.add("active");
-        return;
-      }
-
-      if (e.target.closest(".topic-nav-close")) {
-        document.querySelector(".topic-nav-selector")?.classList.remove("active");
-        document.querySelectorAll(".weapon-container.active").forEach((c) => c.classList.remove("active"));
-        document.querySelector(".topic-nav-box")?.classList.remove("active");
-        document.querySelector(".pages")?.classList.remove("hardhidden");
-        return;
-      }
-
-      const navBox = e.target.closest(".topic-nav-box");
-      if (navBox) {
-        const navSelector = document.querySelector(".topic-nav-selector");
-        const nowActive = !navBox.classList.contains("active");
-
-        navBox.classList.toggle("active", nowActive);
-        navSelector?.classList.toggle("active", nowActive);
-        document.querySelector(".pages")?.classList.toggle("hardhidden", nowActive);
-
-        if (!nowActive) {
-          document.querySelectorAll(".weapon-container.active").forEach((c) => c.classList.remove("active"));
-        }
-      }
-    });
-  }
-
-  (async function initTopicNav() {
-    const topicTopPanel = document.querySelector("div.sitetoppannel");
-    const topicPage = document.querySelector("div.topicpage");
-
-    bindTopicNavEvents();
-
-    if (!topicTopPanel || !topicPage) {
+      if (!isActive) container.classList.add("active");
       return;
     }
 
-    const isMobileView = window.innerWidth < 1365;
-
-    try {
-      const data = await loadNavDataWithCache();
-
-      const navElements = [];
-      for (const category of data) {
-        if (category["import-items"]) {
-          try {
-            const resp = await fetch(`/code-parts/topics/${category["import-items"]}.json`, { credentials: "same-origin" });
-            if (!resp.ok) throw new Error(`${category["import-items"]}.json ${resp.status}`);
-            const importedData = await resp.json();
-            const importedItems = Array.isArray(importedData.items) ? [...importedData.items] : [];
-
-            importedItems.sort((a, b) => {
-              const parseDate = (str) => {
-                const [d, m, y] = String(str).split(".");
-                return new Date(`20${y}`, Number(m) - 1 || 0, Number(d) || 1);
-              };
-              const dateA = a?.date ? parseDate(a.date) : new Date(0);
-              const dateB = b?.date ? parseDate(b.date) : new Date(0);
-              return dateB - dateA;
-            });
-
-            const importType = category["import-items"];
-            const pathType = ["autograph-capsules", "sticker-capsules"].includes(importType) ? "stickers" : importType;
-
-            category.items = importedItems.map((item) => ({
-              name: item.title,
-              image: item.img,
-              link: `/topic/${pathType}/${item.id}`,
-            }));
-          } catch (e) {
-            console.error("Failed to import items from", category["import-items"], e);
-            category.items = [];
-          }
-        }
-
-        navElements.push(createCategoryDOM(category, isMobileView));
-      }
-
-      if (isMobileView) {
-        let navWrapper = document.querySelector(".topic-nav-selector");
-        let navMenu;
-
-        if (!navWrapper) {
-          navMenu = document.createElement("div");
-          navMenu.classList.add("topic-nav-menu");
-          navWrapper = document.createElement("div");
-          navWrapper.classList.add("topic-nav-selector");
-          navWrapper.appendChild(navMenu);
-          topicPage.appendChild(navWrapper);
-        } else {
-          navMenu = navWrapper.querySelector(".topic-nav-menu");
-          if (!navMenu) {
-            navMenu = document.createElement("div");
-            navMenu.classList.add("topic-nav-menu");
-            navWrapper.appendChild(navMenu);
-          }
-          navMenu.textContent = "";
-        }
-
-        const frag = document.createDocumentFragment();
-        navElements.forEach((el) => frag.appendChild(el));
-        navMenu.appendChild(frag);
-
-        const closeEl = document.createElement("div");
-        closeEl.className = "topic-nav-close";
-        navMenu.appendChild(closeEl);
-      } else {
-        topicTopPanel.textContent = "";
-        const frag = document.createDocumentFragment();
-        navElements.forEach((el) => frag.appendChild(el));
-        topicTopPanel.appendChild(frag);
-      }
-    } catch (e) {
-      console.error("[topic-nav] init failed:", e);
+    if (e.target.closest(".topic-nav-close")) {
+      document.querySelector(".topic-nav-selector")?.classList.remove("active");
+      document.querySelectorAll(".weapon-container.active").forEach((c) => c.classList.remove("active"));
+      document.querySelector(".topic-nav-box")?.classList.remove("active");
+      document.querySelector(".pages")?.classList.remove("hardhidden");
+      return;
     }
-  })();
+
+    const navBox = e.target.closest(".topic-nav-box");
+    if (navBox) {
+      const navSelector = document.querySelector(".topic-nav-selector");
+      const nowActive = !navBox.classList.contains("active");
+
+      navBox.classList.toggle("active", nowActive);
+      navSelector?.classList.toggle("active", nowActive);
+      document.querySelector(".pages")?.classList.toggle("hardhidden", nowActive);
+
+      if (!nowActive) {
+        document.querySelectorAll(".weapon-container.active").forEach((c) => c.classList.remove("active"));
+      }
+    }
+  });
 
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 1365) {
@@ -1687,7 +1479,7 @@ if (
       document.querySelectorAll(".weapon-container.active").forEach((c) => c.classList.remove("active"));
     }
   });
-}
+})();
 
 // ---------- Разное визуальное для /topic ----------
 if (window.location.pathname.includes("/topic")) {
@@ -2029,13 +1821,6 @@ if (window.location.pathname.includes("/topic")) {
         "SMGs": "ПП",
         "Shotguns": "Дробовики",
         "Machine guns": "Пулеметы",
-        "Consumer Grade": "Ширпотреб",
-        "Industrial Grade": "Промышленное",
-        "Mil-Spec": "Армейское",
-        "Restricted": "Запрещенное",
-        "Classified": "Засекреченное",
-        "Covert": "Тайное",
-        "Contraband": "Контрабанда",
         "Change Color": "Другие Цвета",
         "Expensive": "Дорогой",
         "Cheap": "Дешевый",

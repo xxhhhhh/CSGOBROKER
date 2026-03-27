@@ -1,4 +1,3 @@
-
 // ============================================================================
 // File: scripts/static-skins-fill.js
 // Usage:
@@ -31,263 +30,273 @@
 const fs = require("fs/promises");
 const path = require("path");
 
+const TOPIC_NAV_ITEMS_FILE = "/code-parts/topics/topics-nav-items.json";
+const ITEMS_NAV_FILE = "/code-parts/topics/items-nav.json";
+
+const SETTINGS_FILE   = "/code-parts/topics/skins-settings.json";
+const WEAPON_JSON_DIR = "/code-parts/topics/skins-list";
+const PRESETS_DIR     = "/code-parts/topics/skins-list/presets";
+const LOADOUT_DIR     = "/code-parts/topics/topic-color-lists/loadout";
+const TOPIC_NAV_FILE  = "/code-parts/topics/topics-nav.json";
+
+const ITEMS_TYPE_TOPICS_FILES = {
+  cases: "/code-parts/topics/cases.json",
+  charms: "/code-parts/topics/charms.json",
+  collections: "/code-parts/topics/collections.json",
+};
+
+const RU_BOX_TITLE_MAP = new Map([
+  ["knives", "Ножи"],
+  ["gloves", "Перчатки"],
+]);
+
 // ---------------- CLI ----------------
 function parseArgs(argv){
-  const get=(f)=>{const i=argv.indexOf(f); return i>=0? argv[i+1]:null;};
-  const root   = path.resolve(get("--root") ?? process.cwd());
-  const dry    = argv.includes("--dry-run");
-  const verbose= argv.includes("--verbose");
-  const prices = get("--prices");
-  const paths  = (get("--paths") ?? "/topic,/ru/topic").split(",").map(s=>s.trim()).filter(Boolean);
+  const get = (f) => {
+    const i = argv.indexOf(f);
+    return i >= 0 ? argv[i + 1] : null;
+  };
+
+  const root    = path.resolve(get("--root") ?? process.cwd());
+  const dry     = argv.includes("--dry-run");
+  const verbose = argv.includes("--verbose");
+  const prices  = get("--prices");
+  const paths   = (get("--paths") ?? "/topic,/ru/topic")
+    .split(",")
+    .map(s => s.trim())
+    .filter(Boolean);
+
   return { root, dry, verbose, prices, paths };
 }
 
-// ---------------- FS/HTML UTILS ----------------
-async function listHtmlFiles(root){
-  const out=[]; async function walk(d){
-    for (const e of await fs.readdir(d,{withFileTypes:true})) {
-      const p=path.join(d,e.name);
-      if (e.isDirectory()) await walk(p);
-      else if (e.isFile() && e.name.toLowerCase().endsWith(".html")) out.push(p);
-    }
-  } await walk(root); return out;
+// ---------------- FS / CACHES ----------------
+const jsonCache = new Map();
+const textCache = new Map();
+const weaponCache = new Map();
+
+const listWeaponJsonFilesCache = new Map();
+const topicPresetMetaCache = new Map();
+const collectedSkinsCache = new Map();
+const collectedShowcaseCache = new Map();
+const resolvedPairsCache = new Map();
+
+const topicSlugIndexCache = new Map(); // root -> { ready, groups }
+const topicNavOfflineCache = new Map();
+const itemsTypeTopicsCache = new Map();
+const topicNavCache = new Map();
+const topicNavItemsCache = new Map();
+const itemsNavCache = new Map();
+
+function abs(root, p){
+  return p && p.startsWith("/") ? path.join(root, "." + p) : path.join(root, p);
 }
-function abs(root, p){ return p && p.startsWith("/") ? path.join(root,"."+p) : path.join(root,p); }
+
+async function readTextCached(file){
+  if (textCache.has(file)) return textCache.get(file);
+  const txt = await fs.readFile(file, "utf8");
+  textCache.set(file, txt);
+  return txt;
+}
+
+async function writeTextCached(file, content){
+  await fs.writeFile(file, content, "utf8");
+  textCache.set(file, content);
+}
+
+async function safeJsonCached(file){
+  if (jsonCache.has(file)) return jsonCache.get(file);
+  try {
+    const parsed = JSON.parse(await readTextCached(file));
+    jsonCache.set(file, parsed);
+    return parsed;
+  } catch {
+    jsonCache.set(file, null);
+    return null;
+  }
+}
+
+async function listHtmlFiles(root){
+  const out = [];
+
+  async function walk(d){
+    for (const e of await fs.readdir(d, { withFileTypes:true })) {
+      const p = path.join(d, e.name);
+      if (e.isDirectory()) {
+        await walk(p);
+      } else if (e.isFile() && e.name.toLowerCase().endsWith(".html")) {
+        out.push(p);
+      }
+    }
+  }
+
+  await walk(root);
+  return out;
+}
+
 function fileToUrlPath(root, file){
-  const rel = path.relative(root, file).split(path.sep).join("/").replace(/\\/g,"/");
+  const rel = path.relative(root, file).split(path.sep).join("/").replace(/\\/g, "/");
+
   if (rel.toLowerCase().endsWith("/index.html")) {
     const base = "/" + rel.slice(0, -"/index.html".length);
-    return base.endsWith("/")? base: base + "/";
+    return base.endsWith("/") ? base : base + "/";
   }
-  if (rel.toLowerCase().endsWith(".html")) return "/" + rel.slice(0, -".html".length).replace(/\/{2,}/g,"/");
-  return "/" + rel.replace(/\/{2,}/g,"/");
+
+  if (rel.toLowerCase().endsWith(".html")) {
+    return "/" + rel.slice(0, -".html".length).replace(/\/{2,}/g, "/");
+  }
+
+  return "/" + rel.replace(/\/{2,}/g, "/");
 }
+
+// ---------------- HTML UTILS ----------------
 function maskSegments(s){
   return s
     .replace(/<!--[\s\S]*?-->/g, m => " ".repeat(m.length))
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, m => " ".repeat(m.length))
     .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,  m => " ".repeat(m.length));
 }
-function readTag(s,start){
-  let i=start,inS=false,inD=false;
-  while(i<s.length){
-    const ch=s[i];
-    if (ch==="'" && !inD) inS=!inS; else if (ch==="\"" && !inS) inD=!inD;
-    if (ch===">" && !inS && !inD){ i++; break; }
+
+function readTag(s, start){
+  let i = start;
+  let inS = false;
+  let inD = false;
+
+  while (i < s.length){
+    const ch = s[i];
+    if (ch === "'" && !inD) inS = !inS;
+    else if (ch === "\"" && !inS) inD = !inD;
+
+    if (ch === ">" && !inS && !inD) {
+      i++;
+      break;
+    }
     i++;
   }
-  const tagText=s.slice(start,i);
-  const attrs=tagText.replace(/^<\w+\s*|\s*>$/g,"");
+
+  const tagText = s.slice(start, i);
+  const attrs = tagText.replace(/^<\w+\s*|\s*>$/g, "");
   return { end:i, attrs, tagText };
 }
-function parseClassAttr(attrs){ const m=attrs.match(/\bclass\s*=\s*(?:"([^"]*)"|'([^']*)')/i); const val=m?(m[1]??m[2]??""):""; return new Set(val.split(/\s+/).filter(Boolean)); }
-function findMatchingClose(masked, from, tag){
-  const openRe=new RegExp(`<${tag}\\b`,"gi"), closeRe=new RegExp(`</${tag}\\s*>`,"gi");
-  let depth=1, i=from;
-  while(i<masked.length){
-    const nOpen=masked.slice(i).search(openRe), nClose=masked.slice(i).search(closeRe);
-    if (nClose===-1) return -1;
-    if (nOpen!==-1 && nOpen<nClose){ const abs=i+nOpen; const {end}=readTag(masked,abs); depth++; i=end; continue; }
-    const cabs=i+nClose; depth--; if (depth===0) return cabs; i=cabs+(`</${tag}>`).length;
-  } return -1;
+
+function parseClassAttr(attrs){
+  const m = attrs.match(/\bclass\s*=\s*(?:"([^"]*)"|'([^']*)')/i);
+  const val = m ? (m[1] ?? m[2] ?? "") : "";
+  return new Set(val.split(/\s+/).filter(Boolean));
 }
-function findAllTagsByClass(masked, clsName, tags=["div"], from=0, to=masked.length){
-  const out=[]; let idx=from;
-  while(true){
-    let nextPos=-1, nextTag=null;
+
+function findMatchingClose(masked, from, tag){
+  const openRe = new RegExp(`<${tag}\\b`, "gi");
+  const closeRe = new RegExp(`</${tag}\\s*>`, "gi");
+
+  let depth = 1;
+  let i = from;
+
+  while (i < masked.length){
+    const nOpen = masked.slice(i).search(openRe);
+    const nClose = masked.slice(i).search(closeRe);
+
+    if (nClose === -1) return -1;
+
+    if (nOpen !== -1 && nOpen < nClose){
+      const absPos = i + nOpen;
+      const { end } = readTag(masked, absPos);
+      depth++;
+      i = end;
+      continue;
+    }
+
+    const cabs = i + nClose;
+    depth--;
+    if (depth === 0) return cabs;
+    i = cabs + (`</${tag}>`).length;
+  }
+
+  return -1;
+}
+
+function findAllTagsByClass(masked, clsName, tags = ["div"], from = 0, to = masked.length){
+  const out = [];
+  let idx = from;
+
+  while (true){
+    let nextPos = -1;
+    let nextTag = null;
+
     for (const t of tags){
       const pos = masked.toLowerCase().indexOf(`<${t}`, idx);
-      if (pos !== -1 && (nextPos === -1 || pos < nextPos)) { nextPos = pos; nextTag = t; }
+      if (pos !== -1 && (nextPos === -1 || pos < nextPos)) {
+        nextPos = pos;
+        nextTag = t;
+      }
     }
+
     if (nextPos === -1 || nextPos >= to) break;
-    const { end, attrs }=readTag(masked,nextPos);
-    const cls=parseClassAttr(attrs);
+
+    const { end, attrs } = readTag(masked, nextPos);
+    const cls = parseClassAttr(attrs);
+
     if (cls.has(clsName)){
-      const closeStart=findMatchingClose(masked,end,nextTag);
-      if (closeStart===-1){ idx=end; continue; }
-      out.push({ tag:nextTag, openStart:nextPos, openEnd:end, closeStart, closeEnd:closeStart+(`</${nextTag}>`).length });
-      idx=closeStart+(`</${nextTag}>`).length;
-    } else idx=end;
+      const closeStart = findMatchingClose(masked, end, nextTag);
+      if (closeStart === -1){
+        idx = end;
+        continue;
+      }
+
+      out.push({
+        tag: nextTag,
+        openStart: nextPos,
+        openEnd: end,
+        closeStart,
+        closeEnd: closeStart + (`</${nextTag}>`).length,
+      });
+
+      idx = closeStart + (`</${nextTag}>`).length;
+    } else {
+      idx = end;
+    }
   }
+
   return out;
 }
-function indentBefore(s, idx, nl){ const ls=s.lastIndexOf(nl, idx-1); const lineStart=ls===-1?0:ls+nl.length; const m=s.slice(lineStart, idx).match(/^[\t ]*/); return m? m[0] : ""; }
-function replaceWithin(s, a, b, repl){ return s.slice(0,a) + repl + s.slice(b); }
-function collapseWS(s){ return s.replace(/[ \t]+$/gm,"").replace(/\r?\n{3,}/g,"\n\n"); }
+
+function indentBefore(s, idx, nl){
+  const ls = s.lastIndexOf(nl, idx - 1);
+  const lineStart = ls === -1 ? 0 : ls + nl.length;
+  const m = s.slice(lineStart, idx).match(/^[\t ]*/);
+  return m ? m[0] : "";
+}
+
+function replaceWithin(s, a, b, repl){
+  return s.slice(0, a) + repl + s.slice(b);
+}
+
+function collapseWS(s){
+  return s.replace(/[ \t]+$/gm, "").replace(/\r?\n{3,}/g, "\n\n");
+}
+
 function rstripBlankLinesToOne(s, nl){
-  let i=s.length;
-  while(true){
+  let i = s.length;
+
+  while (true){
     const k = s.lastIndexOf(nl, i - nl.length);
-    if (k===-1) break;
-    const line = s.slice(k+nl.length, i);
-    if (/^[ \t]*$/.test(line)){ i=k; continue; }
+    if (k === -1) break;
+    const line = s.slice(k + nl.length, i);
+    if (/^[ \t]*$/.test(line)) {
+      i = k;
+      continue;
+    }
     break;
   }
-  s = s.slice(0, i).replace(/[ \t]+$/g,"");
+
+  s = s.slice(0, i).replace(/[ \t]+$/g, "");
   if (!s.endsWith(nl)) s += nl;
   return s;
 }
+
 function joinBlocksNoBlank(before, block, after, nl){
-  const left  = rstripBlankLinesToOne(before, nl);
+  const left = rstripBlankLinesToOne(before, nl);
   const right = after.replace(/^(?:[ \t]*\r?\n)+/, "");
   return left + block + nl + right;
-}
-
-function escapeHtml(s=""){ // текст внутри <div> — НЕ кодируем &
-  return String(s).replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
-}
-function decodeHtmlEntities(s = "") {
-  // decode amp last to avoid turning &amp;lt; into < by double-decoding
-  return String(s)
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&amp;/g, "&");
-}
-// атрибуты в двойных кавычках: НЕ кодируем & и ' (как просили)
-function escapeAttrDblNoApos(s=""){
-  return String(s)
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;");
-}
-
-// ---------------- DATA LOADERS / CACHES ----------------
-async function safeJson(p){ try { return JSON.parse(await fs.readFile(p,"utf8")); } catch { return null; } }
-const SETTINGS_FILE   = "/code-parts/topics/skins-settings.json";
-const WEAPON_JSON_DIR = "/code-parts/topics/skins-list";
-const PRESETS_DIR     = "/code-parts/topics/skins-list/presets";
-const LOADOUT_DIR     = "/code-parts/topics/topic-color-lists/loadout";
-const TOPIC_NAV_FILE  = "/code-parts/topics/topics-nav.json";
-const ITEMS_TYPE_TOPICS_FILES = {
-  cases: "/code-parts/topics/cases.json",
-  charms: "/code-parts/topics/charms.json",
-  collections: "/code-parts/topics/collections.json",
-};
-const RU_BOX_TITLE_MAP = new Map([
-  ["knives", "Ножи"],
-  ["gloves", "Перчатки"],
-]);
-
-const weaponCache = new Map();
-async function loadWeaponJson(root, weapon){
-  if (weaponCache.has(weapon)) return weaponCache.get(weapon);
-  const full = abs(root, `${WEAPON_JSON_DIR}/${weapon}.json`);
-  const data = await safeJson(full);
-  weaponCache.set(weapon, data || {});
-  return weaponCache.get(weapon);
-}
-
-// ---------------- PRICES ----------------
-async function loadPrices(pricesArg){
-  if (!pricesArg) return null;
-  try {
-    if (/^https?:\/\//i.test(pricesArg)){
-      const res = await fetch(pricesArg);
-      if (!res.ok) throw new Error(`prices URL ${res.status}`);
-      const json = await res.json();
-      return Array.isArray(json) ? json : null;
-    } else {
-      const txt = await fs.readFile(path.resolve(pricesArg), "utf8");
-      const json = JSON.parse(txt);
-      return Array.isArray(json) ? json : null;
-    }
-  } catch { return null; }
-}
-function formatRange(nums){
-  if (!nums.length) return "";
-  const sorted=[...nums].sort((a,b)=>a-b);
-  const lo=sorted[0], hi=sorted[sorted.length-1];
-  const f=(n)=>`${n.toFixed(2)}$`;
-  return lo===hi? f(lo) : `${f(lo)} - ${f(hi)}`;
-}
-function computePriceHtml(name, pricesArr){
-  if (!pricesArr) return { html: "", has:false };
-  const isSticker = name.startsWith("Sticker |");
-  const matched = pricesArr.filter(s => typeof s?.name==="string" && (isSticker ? s.name === name : s.name.includes(name)));
-  if (!matched.length) return { html:"", has:false };
-  const normal = matched.filter(s=>!String(s.name).startsWith("Souvenir")).map(s=>+s.price).filter(Number.isFinite);
-  const souv   = matched.filter(s=> String(s.name).startsWith("Souvenir")).map(s=>+s.price).filter(Number.isFinite);
-  const normalTxt = formatRange(normal);
-  const souvTxt   = formatRange(souv);
-  let html = "";
-  if (normalTxt) html += `${escapeHtml(normalTxt)}`;
-  if (souvTxt)   html += `<div class="souvenir-price-info">${escapeHtml(souvTxt)}</div>`;
-  return { html, has: Boolean(normalTxt || souvTxt) };
-}
-
-// ---------------- RENDER .skin ----------------
-function normalizeEntitiesInBlock(block){
-  // ремонт существующих блоков: &#39; -> ' и &amp; -> &
-  block = block.replace(
-    /(skin-id|weapon|alt)="([^"]*?)"/g,
-    (_, attr, val) => `${attr}="${val.replace(/&#39;/g, "'").replace(/&amp;/g, "&")}"`
-  );
-  block = block.replace(
-    /(<div class="skin-desc-name">)([\s\S]*?)(<\/div>)/,
-    (_, a, txt, c) => a + txt.replace(/&#39;/g, "'").replace(/&amp;/g, "&") + c
-  );
-  return block;
-}
-
-function renderSkinBlock({tag="div", indent, nl, weapon, skinId, skinData, priceHtml, putLoadingClass}){
-  const classes = ["skin"];
-  if (skinData.class) classes.push(String(skinData.class));
-  const classAttr = classes.join(" ");
-  const innerIndent = indent + "  ";
-  const priceCls = putLoadingClass ? "skin-price-info loading" : "skin-price-info";
-  const img  = skinData.image || "";
-  const name = skinData.name  || (skinId === "Vanilla" ? "Vanilla" : "");
-  const block = [
-    `${indent}<${tag} class="${classAttr}" skin-id="${escapeAttrDblNoApos(skinId)}" weapon="${escapeAttrDblNoApos(weapon)}">`,
-    `${innerIndent}<img src="${escapeAttrDblNoApos(img)}" draggable="false" alt="${escapeAttrDblNoApos(name)}">`,
-    `${innerIndent}<div class="skin-desc-name">${escapeHtml(name)}</div>`,
-    `${innerIndent}<div class="${priceCls}">${priceHtml || ""}</div>`,
-    `${indent}</${tag}>`
-  ].join(nl);
-  return normalizeEntitiesInBlock(block);
-}
-
-// ---------------- BOX-SKINS-LIST (mode 1/2) ----------------
-function detectAutoImportContext(urlPath, settings){
-  const m = urlPath.match(/\/(?:ru\/)?topic\/(items|collections|cases|stickers|charms)\/([^\/]+)(?:\/|$)/i);
-  if (!m) return null;
-  const section = m[1].toLowerCase();
-  const topicId = m[2];
-  let mode = settings?.[topicId];
-  // дефолты:
-  // stickers/charms/items -> 1
-  // collections/cases     -> 2
-  if (!mode) {
-    if (section==="collections" || section==="cases") mode=2;
-    if (section==="stickers" || section==="charms") mode=1;
-  }
-  if (!mode) return null;
-  return { section, topicId, mode };
-}
-
-// ---- slug/token helpers (fallback derive) ----
-const STOP = new Set(["the","collection","collections","case","weapon","capsule","autograph","sticker","stickers","charm","charms","pack","bundle","csgo","cs2","of","and"]);
-function toTokens(str){
-  const s = String(str||"").toLowerCase()
-    .replace(/&/g," and ")
-    .replace(/[«»“”‘’"’]/g," ")
-    .replace(/[^a-z0-9]+/g," ")
-    .trim();
-  if (!s) return [];
-  return s.split(/\s+/).filter(t=>!STOP.has(t));
-}
-function dedupe(arr, keyFn){ const seen=new Set(); const out=[]; for(const x of arr){ const k=keyFn(x); if(seen.has(k)) continue; seen.add(k); out.push(x);} return out; }
-function rarityRank(cls){ const order={red:6,pink:5,purple:4,blue:3,lblue:2,white:1,gold:7}; return order[String(cls||"").toLowerCase()]||0; }
-
-async function listWeaponJsonFiles(root){
-  const dir = abs(root, WEAPON_JSON_DIR);
-  const entries = await fs.readdir(dir, { withFileTypes: true });
-  return entries
-    .filter(e=>e.isFile() && e.name.toLowerCase().endsWith(".json"))
-    .map(e=>path.join(dir, e.name))
-    .filter(p=>!/[\/\\]presets[\/\\]?/i.test(p));
 }
 
 function normalizeNl(s, nl = "\n"){
@@ -296,15 +305,6 @@ function normalizeNl(s, nl = "\n"){
 
 function trimBlankEdges(s){
   return String(s).replace(/^(?:[ \t]*\r?\n)+/, "").replace(/(?:\r?\n[ \t]*)+$/, "");
-}
-
-function replaceBoxTitleSpan(innerHtml, ruTitle){
-  if (!ruTitle) return innerHtml;
-
-  return innerHtml.replace(
-    /(<div\b[^>]*class\s*=\s*(?:"[^"]*\bbox-skins-name\b[^"]*"|'[^']*\bbox-skins-name\b[^']*')[^>]*>[\s\S]*?<span\b[^>]*>)([\s\S]*?)(<\/span>)/i,
-    (_, a, _old, c) => `${a}${escapeHtml(ruTitle)}${c}`
-  );
 }
 
 function reindentBlock(block, indent, nl){
@@ -330,187 +330,330 @@ function reindentBlock(block, indent, nl){
     .join(nl);
 }
 
-function getClassList(attrs){
-  return [...parseClassAttr(attrs)];
+// ---------------- HTML ESCAPE ----------------
+function escapeHtml(s = ""){
+  return String(s)
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
-function buildBoxSkinsKey(attrs, index){
-  const classes = getClassList(attrs)
-    .filter(c => c !== "box-skins" && c !== "lang-ru")
-    .sort();
-
-  return classes.length ? classes.join("::") : `__index_${index}`;
+function decodeHtmlEntities(s = ""){
+  return String(s)
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, "&");
 }
 
-/**
- * Fallback для mode=2: собрать пары по совпадению topicId с skin.collection или skin.case по токенам.
- */
-async function derivePairsByTopicSlug(root, topicId){
-  const topicTokens = toTokens(topicId.replace(/-/g," "));
-  if (!topicTokens.length) return [];
+function escapeAttrDblNoApos(s = ""){
+  return String(s)
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+// ---------------- DATA LOADERS / CACHES ----------------
+async function loadWeaponJson(root, weapon){
+  if (weaponCache.has(weapon)) return weaponCache.get(weapon);
+  const full = abs(root, `${WEAPON_JSON_DIR}/${weapon}.json`);
+  const data = await safeJsonCached(full);
+  weaponCache.set(weapon, data || {});
+  return weaponCache.get(weapon);
+}
+
+async function listWeaponJsonFiles(root){
+  if (listWeaponJsonFilesCache.has(root)) return listWeaponJsonFilesCache.get(root);
+
+  const dir = abs(root, WEAPON_JSON_DIR);
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+
+  const files = entries
+    .filter(e => e.isFile() && e.name.toLowerCase().endsWith(".json"))
+    .map(e => path.join(dir, e.name))
+    .filter(p => !/[\/\\]presets[\/\\]?/i.test(p));
+
+  listWeaponJsonFilesCache.set(root, files);
+  return files;
+}
+
+// ---------------- PRICES ----------------
+async function loadPrices(pricesArg){
+  if (!pricesArg) return null;
+
+  try {
+    if (/^https?:\/\//i.test(pricesArg)){
+      const res = await fetch(pricesArg);
+      if (!res.ok) throw new Error(`prices URL ${res.status}`);
+      const json = await res.json();
+      return Array.isArray(json) ? json : null;
+    }
+
+    const txt = await fs.readFile(path.resolve(pricesArg), "utf8");
+    const json = JSON.parse(txt);
+    return Array.isArray(json) ? json : null;
+  } catch {
+    return null;
+  }
+}
+
+function buildPricesState(pricesArr){
+  if (!Array.isArray(pricesArr) || !pricesArr.length) return null;
+
+  const exact = new Map();
+  const rows = [];
+  const memo = new Map();
+
+  for (const s of pricesArr){
+    const rawName = typeof s?.name === "string" ? s.name : "";
+    const price = +s?.price;
+    if (!rawName || !Number.isFinite(price)) continue;
+
+    const isSouvenir = rawName.startsWith("Souvenir");
+    const lowerName = rawName.toLowerCase();
+
+    rows.push({
+      rawName,
+      lowerName,
+      price,
+      isSouvenir,
+    });
+
+    if (!exact.has(rawName)) {
+      exact.set(rawName, { normal: [], souvenir: [] });
+    }
+
+    const bucket = exact.get(rawName);
+    if (isSouvenir) bucket.souvenir.push(price);
+    else bucket.normal.push(price);
+  }
+
+  return { rows, exact, memo };
+}
+
+function formatRange(nums){
+  if (!nums.length) return "";
+  const sorted = [...nums].sort((a, b) => a - b);
+  const lo = sorted[0];
+  const hi = sorted[sorted.length - 1];
+  const f = (n) => `${n.toFixed(2)}$`;
+  return lo === hi ? f(lo) : `${f(lo)} - ${f(hi)}`;
+}
+
+function computePriceHtml(name, pricesState){
+  if (!pricesState) return { html:"", has:false };
+
+  const key = String(name || "");
+  if (pricesState.memo.has(key)) return pricesState.memo.get(key);
+
+  const isSticker = key.startsWith("Sticker |");
+  let normal = [];
+  let souv = [];
+
+  if (isSticker){
+    const exactMatch = pricesState.exact.get(key);
+    if (exactMatch){
+      normal = exactMatch.normal;
+      souv = exactMatch.souvenir;
+    }
+  } else {
+    const needle = key.toLowerCase();
+    for (const row of pricesState.rows){
+      if (!row.lowerName.includes(needle)) continue;
+      if (row.isSouvenir) souv.push(row.price);
+      else normal.push(row.price);
+    }
+  }
+
+  const normalTxt = formatRange(normal);
+  const souvTxt = formatRange(souv);
+
+  let html = "";
+  if (normalTxt) html += `${escapeHtml(normalTxt)}`;
+  if (souvTxt) html += `<div class="souvenir-price-info">${escapeHtml(souvTxt)}</div>`;
+
+  const result = { html, has: Boolean(normalTxt || souvTxt) };
+  pricesState.memo.set(key, result);
+  return result;
+}
+
+// ---------------- RENDER .skin ----------------
+function normalizeEntitiesInBlock(block){
+  block = block.replace(
+    /(skin-id|weapon|alt)="([^"]*?)"/g,
+    (_, attr, val) => `${attr}="${val.replace(/&#39;/g, "'").replace(/&amp;/g, "&")}"`
+  );
+
+  block = block.replace(
+    /(<div class="skin-desc-name">)([\s\S]*?)(<\/div>)/,
+    (_, a, txt, c) => a + txt.replace(/&#39;/g, "'").replace(/&amp;/g, "&") + c
+  );
+
+  return block;
+}
+
+function renderSkinBlock({tag = "div", indent, nl, weapon, skinId, skinData, priceHtml, putLoadingClass}){
+  const classes = ["skin"];
+  if (skinData.class) classes.push(String(skinData.class));
+
+  const classAttr = classes.join(" ");
+  const innerIndent = indent + "  ";
+  const priceCls = putLoadingClass ? "skin-price-info loading" : "skin-price-info";
+  const img  = skinData.image || "";
+  const name = skinData.name || (skinId === "Vanilla" ? "Vanilla" : "");
+
+  const block = [
+    `${indent}<${tag} class="${classAttr}" skin-id="${escapeAttrDblNoApos(skinId)}" weapon="${escapeAttrDblNoApos(weapon)}">`,
+    `${innerIndent}<img src="${escapeAttrDblNoApos(img)}" draggable="false" alt="${escapeAttrDblNoApos(name)}">`,
+    `${innerIndent}<div class="skin-desc-name">${escapeHtml(name)}</div>`,
+    `${innerIndent}<div class="${priceCls}">${priceHtml || ""}</div>`,
+    `${indent}</${tag}>`
+  ].join(nl);
+
+  return normalizeEntitiesInBlock(block);
+}
+
+// ---------------- BOX-SKINS-LIST (mode 1/2) ----------------
+function detectAutoImportContext(urlPath, settings){
+  const m = urlPath.match(/\/(?:ru\/)?topic\/(items|collections|cases|stickers|charms)\/([^\/]+)(?:\/|$)/i);
+  if (!m) return null;
+
+  const section = m[1].toLowerCase();
+  const topicId = m[2];
+  let mode = settings?.[topicId];
+
+  if (!mode) {
+    if (section === "collections" || section === "cases") mode = 2;
+    if (section === "stickers" || section === "charms") mode = 1;
+  }
+
+  if (!mode) return null;
+  return { section, topicId, mode };
+}
+
+// ---- slug/token helpers (fallback derive) ----
+const STOP = new Set([
+  "the", "collection", "collections", "case", "weapon", "capsule", "autograph",
+  "sticker", "stickers", "charm", "charms", "pack", "bundle", "csgo", "cs2",
+  "of", "and"
+]);
+
+function toTokens(str){
+  const s = String(str || "")
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[«»“”‘’"’]/g, " ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+
+  if (!s) return [];
+  return s.split(/\s+/).filter(t => !STOP.has(t));
+}
+
+function dedupe(arr, keyFn){
+  const seen = new Set();
+  const out = [];
+  for (const x of arr){
+    const k = keyFn(x);
+    if (seen.has(k)) continue;
+    seen.add(k);
+    out.push(x);
+  }
+  return out;
+}
+
+function rarityRank(cls){
+  const order = { red:6, pink:5, purple:4, blue:3, lblue:2, white:1, gold:7 };
+  return order[String(cls || "").toLowerCase()] || 0;
+}
+
+function makeTokenKey(tokens){
+  return [...tokens].sort().join(" ");
+}
+
+async function buildTopicSlugIndex(root){
+  if (topicSlugIndexCache.has(root)) return topicSlugIndexCache.get(root);
+
+  const state = {
+    ready: false,
+    groups: [], // [{ key, tokenSet:Set, items:[{weapon, skin-id, class, name}] }]
+  };
+
   const files = await listWeaponJsonFiles(root);
-  const pairs=[];
+  const byKey = new Map();
+
   for (const fp of files){
     const weapon = path.basename(fp, ".json");
-    const m = await safeJson(fp);
-    if (!m || typeof m!=="object") continue;
+    const m = await safeJsonCached(fp);
+    if (!m || typeof m !== "object") continue;
+
     for (const [skinId, skinData] of Object.entries(m)){
       const cands = [];
       if (skinData?.collection) cands.push(skinData.collection);
-      if (skinData?.case)       cands.push(skinData.case);
-      let matched = false;
+      if (skinData?.case) cands.push(skinData.case);
+
       for (const cand of cands){
-        const ct = toTokens(cand);
-        if (!ct.length) continue;
-        const set = new Set(ct);
-        matched = topicTokens.every(t=>set.has(t));
-        if (matched) break;
-      }
-      if (matched) pairs.push({ weapon, "skin-id": skinId });
-    }
-  }
-  if (!pairs.length) return [];
-  // Отсортируем: редкость ↓, затем имя
-  const weaponCacheLocal = {};
-  const uniqWeapons = Array.from(new Set(pairs.map(p=>p.weapon)));
-  await Promise.all(uniqWeapons.map(async w=>{ weaponCacheLocal[w] = await loadWeaponJson(root, w) || {}; }));
-  const sorted = pairs.slice().sort((a,b)=>{
-    const ca = weaponCacheLocal[a.weapon]?.[a["skin-id"]]?.class;
-    const cb = weaponCacheLocal[b.weapon]?.[b["skin-id"]]?.class;
-    const r = rarityRank(cb) - rarityRank(ca);
-    if (r!==0) return r;
-    const na = weaponCacheLocal[a.weapon]?.[a["skin-id"]]?.name || a["skin-id"];
-    const nb = weaponCacheLocal[b.weapon]?.[b["skin-id"]]?.name || b["skin-id"];
-    return String(na).localeCompare(String(nb), "en");
-  });
-  return dedupe(sorted, x=>`${x.weapon}::${x["skin-id"]}`);
-}
+        const tokens = toTokens(cand);
+        if (!tokens.length) continue;
 
-async function buildSkinsListForTopic(root, ctx, pricesArr, { verbose=false }={}) {
-  const items = await collectSkinsForTopic(root, ctx, { verbose });
+        const key = makeTokenKey(tokens);
+        if (!byKey.has(key)) {
+          byKey.set(key, {
+            key,
+            tokenSet: new Set(key ? key.split(" ") : []),
+            items: [],
+          });
+        }
 
-  if (!items.length){
-    return () => "";
-  }
-
-  return function render(nl, baseIndent){
-    const indent = baseIndent + "  ";
-    return items.map(({weapon, skinId, skinData}) => {
-      const { html: priceHtml, has } = computePriceHtml(String(skinData.name || ""), pricesArr);
-      return renderSkinBlock({
-        tag:"div",
-        indent,
-        nl,
-        weapon,
-        skinId,
-        skinData,
-        priceHtml,
-        putLoadingClass: !has && !pricesArr
-      });
-    }).join(nl);
-  };
-}
-
-async function collectSkinsForTopic(root, ctx, { verbose=false } = {}){
-  const { topicId, mode, section } = ctx;
-  const items = [];
-
-  if (mode === 1){
-    const p = abs(root, `${WEAPON_JSON_DIR}/${topicId}.json`);
-    const weaponData = await safeJson(p);
-
-    if (!weaponData || typeof weaponData !== "object" || !Object.keys(weaponData).length){
-      if (verbose) console.warn(`[DATA] ${section}/${topicId}: skins-list missing/empty -> ${path.relative(root,p)}`);
-      return [];
-    }
-
-    for (const [skinId, skinData] of Object.entries(weaponData)){
-      items.push({ weapon: topicId, skinId, skinData });
-    }
-
-    return items;
-  }
-
-  if (mode === 2){
-    const meta = await loadTopicPresetMeta(root, topicId);
-    let preset = meta.itemsRaw;
-    let src = "preset";
-
-    if (!Array.isArray(preset) || !preset.length){
-      preset = await derivePairsByTopicSlug(root, topicId);
-      src = "derived";
-
-      if (!preset.length){
-        if (verbose) console.warn(`[DATA] ${section}/${topicId}: no preset and no derived pairs by topic slug`);
-        return [];
+        byKey.get(key).items.push({
+          weapon,
+          "skin-id": skinId,
+          class: skinData?.class || "",
+          name: skinData?.name || skinId,
+        });
       }
     }
-
-    const resolved = await resolveWeaponSkinPairs(root, preset, { verbose, section, topicId });
-
-    if (!resolved.length){
-      if (verbose) console.warn(`[DATA] ${section}/${topicId}: unresolved pairs (src=${src})`);
-      return [];
-    }
-
-    if (verbose) console.log(`[OK] ${section}/${topicId}: ${resolved.length} skins (src=${src})`);
-    return resolved;
   }
 
-  return [];
+  state.groups = [...byKey.values()];
+  state.ready = true;
+  topicSlugIndexCache.set(root, state);
+  return state;
 }
 
-async function loadTopicPresetMeta(root, topicId){
-  const presetPath = abs(root, `${PRESETS_DIR}/${topicId}.json`);
-  const raw = await safeJson(presetPath);
+/**
+/**
+ * Fallback для mode=2: собрать пары по СТРОГОМУ совпадению topicId
+ * с skin.collection или skin.case после нормализации токенов.
+ *
+ * Пример:
+ *   gamma-case   -> ["gamma"]      -> key "gamma"
+ *   gamma-2-case -> ["gamma","2"]  -> key "2 gamma"
+ *
+ * Здесь НЕ допускается subset/superset matching,
+ * иначе gamma-case начинает подтягивать скины от gamma-2-case.
+ */
+async function derivePairsByTopicSlug(root, topicId){
+  const topicTokens = toTokens(topicId.replace(/-/g, " "));
+  if (!topicTokens.length) return [];
 
-  if (Array.isArray(raw)) {
-    return {
-      itemsRaw: raw,
-      showcaseRaw: [],
-    };
-  }
+  const wantedKey = makeTokenKey(topicTokens);
+  const index = await buildTopicSlugIndex(root);
 
-  if (raw && typeof raw === "object") {
-    return {
-      itemsRaw: Array.isArray(raw.items) ? raw.items : [],
-      showcaseRaw: Array.isArray(raw["showcase-list"]) ? raw["showcase-list"] : [],
-    };
-  }
+  const exactGroup = index.groups.find(group => group.key === wantedKey);
+  if (!exactGroup || !exactGroup.items.length) return [];
 
-  return {
-    itemsRaw: [],
-    showcaseRaw: [],
-  };
-}
-
-async function resolveWeaponSkinPairs(root, pairsRaw, { verbose=false, section="cases", topicId="" } = {}){
-  if (!Array.isArray(pairsRaw) || !pairsRaw.length) return [];
-
-  const uniqueWeapons = Array.from(new Set(pairsRaw.map(it => it.weapon).filter(Boolean)));
-  const cache = {};
-
-  await Promise.all(uniqueWeapons.map(async w => {
-    const wp = abs(root, `${WEAPON_JSON_DIR}/${w}.json`);
-    cache[w] = await safeJson(wp) || {};
-    if (!Object.keys(cache[w]).length && verbose){
-      console.warn(`[DATA] ${section}/${topicId}: weapon data missing/empty -> ${path.relative(root,wp)}`);
-    }
-  }));
-
-  const items = [];
-
-  for (const it of pairsRaw){
-    const w   = it.weapon;
-    const sid = it["skin-id"] ?? it.skin_id ?? it.skinId ?? it["skin id"] ?? "";
-    const data = w ? cache[w]?.[sid] : undefined;
-
-    if (w && sid && data){
-      items.push({ weapon: w, skinId: sid, skinData: data });
-    }
-  }
-
-  return items;
+  return dedupe(
+    exactGroup.items
+      .slice()
+      .sort((a, b) => {
+        const r = rarityRank(b.class) - rarityRank(a.class);
+        if (r !== 0) return r;
+        return String(a.name).localeCompare(String(b.name), "en");
+      }),
+    x => `${x.weapon}::${x["skin-id"]}`
+  ).map(x => ({ weapon: x.weapon, "skin-id": x["skin-id"] }));
 }
 
 function normalizeUrlPathNoSlash(urlPath){
@@ -533,18 +676,13 @@ function padToFour(arr){
 
 function renderExtraListLink({ indent, nl, href, label, previewItems }){
   const imgs = padToFour(previewItems);
-
   if (!imgs.length) return "";
 
   const innerIndent = indent + "  ";
-
-  // цвет блока
   const colorClass = label === "Skins" ? "red" : "gold";
 
   const lines = [];
-  lines.push(
-    `${indent}<a class="skin extra-list ${colorClass}" data-no-preview="1" href="${escapeAttrDblNoApos(href)}">`
-  );
+  lines.push(`${indent}<a class="skin extra-list ${colorClass}" data-no-preview="1" href="${escapeAttrDblNoApos(href)}">`);
 
   for (const item of imgs){
     const img = item?.skinData?.image || "";
@@ -625,7 +763,6 @@ async function buildCaseExtraVariantBlocks({ root, urlPath, urlToFile, nl, inden
   // 2) Страница -gloves / -knives -> link back to base case
   const baseSlug = slug.replace(/-(gloves|knives)$/i, "");
   const baseUrl = `${ruPrefix}/topic/cases/${baseSlug}`;
-
   if (!fileExistsByUrl(urlToFile, baseUrl)) return [];
 
   let basePreviewItems = await collectShowcaseSkinsForTopic(root, {
@@ -647,44 +784,22 @@ async function buildCaseExtraVariantBlocks({ root, urlPath, urlToFile, nl, inden
   basePreviewItems = basePreviewItems.filter(x => x?.skinData?.image).slice(0, 4);
   if (!basePreviewItems.length) return [];
 
-  const label = "Skins";
-
   const block = renderExtraListLink({
     indent,
     nl,
     href: baseUrl,
-    label,
+    label: "Skins",
     previewItems: basePreviewItems,
   });
 
   return block ? [block] : [];
 }
 
-async function collectShowcaseSkinsForTopic(root, ctx, { verbose=false } = {}){
-  const { topicId, mode, section } = ctx;
-
-  if (mode !== 2) return [];
-
-  const meta = await loadTopicPresetMeta(root, topicId);
-
-  if (Array.isArray(meta.showcaseRaw) && meta.showcaseRaw.length){
-    const showcaseItems = await resolveWeaponSkinPairs(root, meta.showcaseRaw, {
-      verbose,
-      section,
-      topicId,
-    });
-
-    if (showcaseItems.length) return showcaseItems;
-  }
-
-  return [];
-}
-
 async function processCaseExtraVariantLinks({ root, file, html, urlToFile, verbose }){
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const urlPath = fileToUrlPath(root, file);
   const masked = maskSegments(html);
-  const lists = findAllTagsByClass(masked, "box-skins-list", ["div","ul","section"]);
+  const lists = findAllTagsByClass(masked, "box-skins-list", ["div", "ul", "section"]);
 
   if (!lists.length) return { html, changed:false };
 
@@ -719,7 +834,7 @@ async function processCaseExtraVariantLinks({ root, file, html, urlToFile, verbo
 
     const next = out.slice(0, openAbs) + replacementInner + out.slice(closeAbs);
 
-    if (collapseWS(next) !== collapseWS(out)){
+    if (next !== out){
       shift += next.length - out.length;
       out = next;
       changed = true;
@@ -727,38 +842,233 @@ async function processCaseExtraVariantLinks({ root, file, html, urlToFile, verbo
   }
 
   if (changed && verbose){
-    console.log(`[OK] ${path.relative(root,file)} :: case extra gloves/knives links inserted`);
+    console.log(`[OK] ${path.relative(root, file)} :: case extra gloves/knives links inserted`);
   }
 
   return { html: out, changed };
 }
 
-async function processBoxSkinsLists({root, file, html, pricesArr, settings, verbose}){
+async function loadTopicPresetMeta(root, topicId){
+  const cacheKey = `${root}::${topicId}`;
+  if (topicPresetMetaCache.has(cacheKey)) return topicPresetMetaCache.get(cacheKey);
+
+  const presetPath = abs(root, `${PRESETS_DIR}/${topicId}.json`);
+  const raw = await safeJsonCached(presetPath);
+
+  let result;
+  if (Array.isArray(raw)) {
+    result = {
+      itemsRaw: raw,
+      showcaseRaw: [],
+    };
+  } else if (raw && typeof raw === "object") {
+    result = {
+      itemsRaw: Array.isArray(raw.items) ? raw.items : [],
+      showcaseRaw: Array.isArray(raw["showcase-list"]) ? raw["showcase-list"] : [],
+    };
+  } else {
+    result = {
+      itemsRaw: [],
+      showcaseRaw: [],
+    };
+  }
+
+  topicPresetMetaCache.set(cacheKey, result);
+  return result;
+}
+
+async function resolveWeaponSkinPairs(root, pairsRaw, { verbose=false, section="cases", topicId="" } = {}){
+  if (!Array.isArray(pairsRaw) || !pairsRaw.length) return [];
+
+  const cacheKey = `${root}::${section}::${topicId}::${JSON.stringify(pairsRaw)}`;
+  if (resolvedPairsCache.has(cacheKey)) return resolvedPairsCache.get(cacheKey);
+
+  const uniqueWeapons = Array.from(new Set(pairsRaw.map(it => it.weapon).filter(Boolean)));
+  const cache = {};
+
+  await Promise.all(uniqueWeapons.map(async w => {
+    const wp = abs(root, `${WEAPON_JSON_DIR}/${w}.json`);
+    cache[w] = await safeJsonCached(wp) || {};
+    if (!Object.keys(cache[w]).length && verbose){
+      console.warn(`[DATA] ${section}/${topicId}: weapon data missing/empty -> ${path.relative(root, wp)}`);
+    }
+  }));
+
+  const items = [];
+  for (const it of pairsRaw){
+    const w = it.weapon;
+    const sid = it["skin-id"] ?? it.skin_id ?? it.skinId ?? it["skin id"] ?? "";
+    const data = w ? cache[w]?.[sid] : undefined;
+
+    if (w && sid && data){
+      items.push({ weapon: w, skinId: sid, skinData: data });
+    }
+  }
+
+  resolvedPairsCache.set(cacheKey, items);
+  return items;
+}
+
+async function collectSkinsForTopic(root, ctx, { verbose=false } = {}){
+  const key = `${root}::items::${ctx.section}::${ctx.topicId}::${ctx.mode}`;
+  if (collectedSkinsCache.has(key)) return collectedSkinsCache.get(key);
+
+  const promise = (async () => {
+    const { topicId, mode, section } = ctx;
+    const items = [];
+
+    if (mode === 1){
+      const p = abs(root, `${WEAPON_JSON_DIR}/${topicId}.json`);
+      const weaponData = await safeJsonCached(p);
+
+      if (!weaponData || typeof weaponData !== "object" || !Object.keys(weaponData).length){
+        if (verbose) console.warn(`[DATA] ${section}/${topicId}: skins-list missing/empty -> ${path.relative(root, p)}`);
+        return [];
+      }
+
+    return Object.entries(weaponData)
+      .map(([skinId, skinData]) => ({ weapon: topicId, skinId, skinData }))
+      .sort((a, b) => {
+        const r = rarityRank(b?.skinData?.class) - rarityRank(a?.skinData?.class);
+        if (r !== 0) return r;
+
+        const nameA = String(a?.skinData?.name || a?.skinId || "");
+        const nameB = String(b?.skinData?.name || b?.skinId || "");
+
+        return nameA.localeCompare(nameB, "en", {
+          numeric: true,
+          sensitivity: "base",
+        });
+      });
+    }
+
+    if (mode === 2){
+      const meta = await loadTopicPresetMeta(root, topicId);
+      let preset = meta.itemsRaw;
+      let src = "preset";
+
+      if (!Array.isArray(preset) || !preset.length){
+        preset = await derivePairsByTopicSlug(root, topicId);
+        src = "derived";
+
+        if (!preset.length){
+          if (verbose) console.warn(`[DATA] ${section}/${topicId}: no preset and no derived pairs by topic slug`);
+          return [];
+        }
+      }
+
+      const resolved = await resolveWeaponSkinPairs(root, preset, { verbose, section, topicId });
+
+      if (!resolved.length){
+        if (verbose) console.warn(`[DATA] ${section}/${topicId}: unresolved pairs (src=${src})`);
+        return [];
+      }
+
+      if (verbose) console.log(`[OK] ${section}/${topicId}: ${resolved.length} skins (src=${src})`);
+      return resolved;
+    }
+
+    return [];
+  })();
+
+  collectedSkinsCache.set(key, promise);
+  return promise;
+}
+
+async function collectShowcaseSkinsForTopic(root, ctx, { verbose=false } = {}){
+  const key = `${root}::showcase::${ctx.section}::${ctx.topicId}::${ctx.mode}`;
+  if (collectedShowcaseCache.has(key)) return collectedShowcaseCache.get(key);
+
+  const promise = (async () => {
+    const { topicId, mode, section } = ctx;
+    if (mode !== 2) return [];
+
+    const meta = await loadTopicPresetMeta(root, topicId);
+
+    if (Array.isArray(meta.showcaseRaw) && meta.showcaseRaw.length){
+      const showcaseItems = await resolveWeaponSkinPairs(root, meta.showcaseRaw, {
+        verbose,
+        section,
+        topicId,
+      });
+
+      if (showcaseItems.length) return showcaseItems;
+    }
+
+    return [];
+  })();
+
+  collectedShowcaseCache.set(key, promise);
+  return promise;
+}
+
+async function buildSkinsListForTopic(root, ctx, pricesState, { verbose=false } = {}){
+  const items = await collectSkinsForTopic(root, ctx, { verbose });
+
+  if (!items.length){
+    return () => "";
+  }
+
+  return function render(nl, baseIndent){
+    const indent = baseIndent + "  ";
+    return items.map(({ weapon, skinId, skinData }) => {
+      const { html: priceHtml, has } = computePriceHtml(String(skinData.name || ""), pricesState);
+      return renderSkinBlock({
+        tag: "div",
+        indent,
+        nl,
+        weapon,
+        skinId,
+        skinData,
+        priceHtml,
+        putLoadingClass: !has && !pricesState
+      });
+    }).join(nl);
+  };
+}
+
+async function processBoxSkinsLists({ root, file, html, pricesState, settings, verbose }){
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const urlPath = fileToUrlPath(root, file);
   const ctx = detectAutoImportContext(urlPath, settings);
   if (!ctx) return { html, changed:false };
+
   const masked = maskSegments(html);
-  const lists = findAllTagsByClass(masked, "box-skins-list", ["div","ul","section"]);
+  const lists = findAllTagsByClass(masked, "box-skins-list", ["div", "ul", "section"]);
   if (!lists.length) return { html, changed:false };
-  const renderer = await buildSkinsListForTopic(root, ctx, pricesArr, { verbose });
-  let out = html, shift=0, changed=false, injectedCount=0;
+
+  const renderer = await buildSkinsListForTopic(root, ctx, pricesState, { verbose });
+
+  let out = html;
+  let shift = 0;
+  let changed = false;
+  let injectedCount = 0;
+
   for (const list of lists){
-    const openAbs = list.openEnd + shift, closeAbs = list.closeStart + shift;
+    const openAbs = list.openEnd + shift;
+    const closeAbs = list.closeStart + shift;
     const baseIndent = indentBefore(out, openAbs, nl);
     const block = renderer(nl, baseIndent);
+
     if (!block.trim()) continue;
-    const next = joinBlocksNoBlank(out.slice(0,openAbs), block, out.slice(closeAbs), nl);
-    if (collapseWS(next) !== collapseWS(out)){
-      changed=true; shift += next.length - out.length; out = next; injectedCount++;
+
+    const next = joinBlocksNoBlank(out.slice(0, openAbs), block, out.slice(closeAbs), nl);
+    if (next !== out){
+      changed = true;
+      shift += next.length - out.length;
+      out = next;
+      injectedCount++;
     }
   }
+
   if (changed && verbose) {
-    console.log(`[OK] ${path.relative(root,file)} :: .box-skins-list (mode=${ctx.mode}), lists=${injectedCount}`);
+    console.log(`[OK] ${path.relative(root, file)} :: .box-skins-list (mode=${ctx.mode}), lists=${injectedCount}`);
   }
+
   if (!changed && verbose && lists.length){
-    console.warn(`[WARN] ${path.relative(root,file)} :: .box-skins-list found=${lists.length}, but nothing rendered`);
+    console.warn(`[WARN] ${path.relative(root, file)} :: .box-skins-list found=${lists.length}, but nothing rendered`);
   }
+
   return { html: out, changed };
 }
 
@@ -768,9 +1078,7 @@ function detectSkinsPriceSorterContext(urlPath){
   if (!m) return null;
 
   const leaf = (m[1] || "").toLowerCase();
-  const excluded =
-    leaf.startsWith("best-") ||
-    leaf.startsWith("cheapest-");
+  const excluded = leaf.startsWith("best-") || leaf.startsWith("cheapest-");
 
   return {
     shouldHaveSorter: !excluded,
@@ -786,21 +1094,17 @@ function stripPriceSorterBlocks(inner){
 }
 
 function renderPriceSorterHtml({ indent, nl }){
-  return [
-    `${indent}<div class="price-sorter"><i class="officon sort"></i></div>`
-  ].join(nl);
+  return [`${indent}<div class="price-sorter"><i class="officon sort"></i></div>`].join(nl);
 }
 
 async function processSkinsPriceSorter({ root, file, html, verbose }){
   const urlPath = fileToUrlPath(root, file);
   const ctx = detectSkinsPriceSorterContext(urlPath);
-
   if (!ctx) return { html, changed:false };
 
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const masked = maskSegments(html);
-  const lists = findAllTagsByClass(masked, "box-skins-list", ["div","ul","section"]);
-
+  const lists = findAllTagsByClass(masked, "box-skins-list", ["div", "ul", "section"]);
   if (!lists.length) return { html, changed:false };
 
   let out = html;
@@ -820,11 +1124,7 @@ async function processSkinsPriceSorter({ root, file, html, verbose }){
     let replacementInner = "";
 
     if (ctx.shouldHaveSorter){
-      const sorterHtml = renderPriceSorterHtml({
-        indent: itemIndent,
-        nl,
-      });
-
+      const sorterHtml = renderPriceSorterHtml({ indent: itemIndent, nl });
       replacementInner = cleanedInner
         ? (nl + sorterHtml + nl + cleanedInner.replace(/^\r?\n+/, ""))
         : (nl + sorterHtml + nl + baseIndent);
@@ -835,8 +1135,7 @@ async function processSkinsPriceSorter({ root, file, html, verbose }){
     }
 
     const next = out.slice(0, openAbs) + replacementInner + out.slice(closeAbs);
-
-    if (collapseWS(next) !== collapseWS(out)){
+    if (next !== out){
       shift += next.length - out.length;
       out = next;
       changed = true;
@@ -844,44 +1143,74 @@ async function processSkinsPriceSorter({ root, file, html, verbose }){
   }
 
   if (changed && verbose){
-    console.log(
-      `[OK] ${path.relative(root,file)} :: price-sorter ${ctx.shouldHaveSorter ? "inserted" : "removed"}`
-    );
+    console.log(`[OK] ${path.relative(root, file)} :: price-sorter ${ctx.shouldHaveSorter ? "inserted" : "removed"}`);
   }
 
   return { html: out, changed };
 }
 
+function getClassList(attrs){
+  return [...parseClassAttr(attrs)];
+}
+
+function buildBoxSkinsKey(attrs, index){
+  const classes = getClassList(attrs)
+    .filter(c => c !== "box-skins" && c !== "lang-ru")
+    .sort();
+
+  return classes.length ? classes.join("::") : `__index_${index}`;
+}
+
+function replaceAutoBlock(inner, name, block, nl, baseIndent){
+  const startMarker = `${baseIndent}<!-- AUTO:${name}:start -->`;
+  const endMarker = `${baseIndent}<!-- AUTO:${name}:end -->`;
+
+  const normalizedBlock = trimBlankEdges(normalizeNl(block, nl));
+  const wrapped = [startMarker, normalizedBlock, endMarker].join(nl);
+
+  const markerRe = new RegExp(
+    `(^|\\r?\\n)[\\t ]*<!-- AUTO:${name}:start -->[\\s\\S]*?[\\t ]*<!-- AUTO:${name}:end -->`,
+    "m"
+  );
+
+  if (markerRe.test(inner)) {
+    return inner.replace(markerRe, (match, leadingNl) => `${leadingNl || ""}${wrapped}`);
+  }
+
+  const cleaned = inner.replace(/^(?:[ \t]*\r?\n)+/, "");
+  if (!cleaned.trim()) return wrapped;
+  return `${wrapped}${nl}${cleaned}`;
+}
+
+function replaceBoxTitleSpan(innerHtml, ruTitle){
+  if (!ruTitle) return innerHtml;
+
+  return innerHtml.replace(
+    /(<div\b[^>]*class\s*=\s*(?:"[^"]*\bbox-skins-name\b[^"]*"|'[^']*\bbox-skins-name\b[^']*')[^>]*>[\s\S]*?<span\b[^>]*>)([\s\S]*?)(<\/span>)/i,
+    (_, a, _old, c) => `${a}${escapeHtml(ruTitle)}${c}`
+  );
+}
+
 async function processRuMirrorPages({ root, file, html, urlToFile, verbose }){
   const urlPath = fileToUrlPath(root, file);
 
-  // Только ru-страницы разделов /topic/skins/* и /topic/items/*
   const mirrorMatch = urlPath.match(/^\/ru\/topic\/(skins|items)(?:\/([^\/]+))?(?:\/|$)/i);
-  if (!mirrorMatch) {
-    return { html, changed:false };
-  }
+  if (!mirrorMatch) return { html, changed:false };
 
   const section = mirrorMatch[1].toLowerCase();
   const leaf = (mirrorMatch[2] || "").toLowerCase();
 
-  // Для /ru/topic/skins/best-* и /ru/topic/skins/cheapest-* mirror НЕ делаем
-  if (
-    section === "skins" &&
-    (leaf.startsWith("best-") || leaf.startsWith("cheapest-"))
-  ) {
+  if (section === "skins" && (leaf.startsWith("best-") || leaf.startsWith("cheapest-"))) {
     return { html, changed:false };
   }
 
-  // Исходная EN-страница-зеркало
   const srcUrlPath = urlPath.replace(/^\/ru(?=\/)/i, "");
   const srcFile = urlToFile.get(srcUrlPath);
-  if (!srcFile || srcFile === file) {
-    return { html, changed:false };
-  }
+  if (!srcFile || srcFile === file) return { html, changed:false };
 
   let srcHtml;
   try {
-    srcHtml = await fs.readFile(srcFile, "utf8");
+    srcHtml = await readTextCached(srcFile);
   } catch {
     return { html, changed:false };
   }
@@ -889,12 +1218,9 @@ async function processRuMirrorPages({ root, file, html, urlToFile, verbose }){
   const srcMasked = maskSegments(srcHtml);
   const dstMasked = maskSegments(html);
 
-  const srcBoxes = findAllTagsByClass(srcMasked, "box-skins", ["div","section"]);
-  const dstBoxes = findAllTagsByClass(dstMasked, "box-skins", ["div","section"]);
-
-  if (!srcBoxes.length || !dstBoxes.length) {
-    return { html, changed:false };
-  }
+  const srcBoxes = findAllTagsByClass(srcMasked, "box-skins", ["div", "section"]);
+  const dstBoxes = findAllTagsByClass(dstMasked, "box-skins", ["div", "section"]);
+  if (!srcBoxes.length || !dstBoxes.length) return { html, changed:false };
 
   const srcByKey = new Map();
   srcBoxes.forEach((box, i) => {
@@ -910,7 +1236,6 @@ async function processRuMirrorPages({ root, file, html, urlToFile, verbose }){
   function pickSourceBox(dstOpenAttrs, dstIndex){
     const wantedKey = buildBoxSkinsKey(dstOpenAttrs, dstIndex);
 
-    // 1) По ключу
     const arr = srcByKey.get(wantedKey) || [];
     for (const item of arr){
       if (!srcUsed.has(item.index)){
@@ -919,13 +1244,11 @@ async function processRuMirrorPages({ root, file, html, urlToFile, verbose }){
       }
     }
 
-    // 2) По позиции
     if (srcBoxes[dstIndex] && !srcUsed.has(dstIndex)){
       srcUsed.add(dstIndex);
       return { ...srcBoxes[dstIndex], index: dstIndex };
     }
 
-    // 3) Первый неиспользованный
     for (let i = 0; i < srcBoxes.length; i++){
       if (!srcUsed.has(i)){
         srcUsed.add(i);
@@ -956,7 +1279,6 @@ async function processRuMirrorPages({ root, file, html, urlToFile, verbose }){
 
     let srcInnerRaw = srcHtml.slice(srcBox.openEnd, srcBox.closeStart);
 
-    // Локализация заголовков на RU-страницах
     if (section === "skins") {
       const ruTitle = RU_BOX_TITLE_MAP.get(dstKey);
       if (ruTitle) {
@@ -966,8 +1288,6 @@ async function processRuMirrorPages({ root, file, html, urlToFile, verbose }){
 
     const boxIndent = indentBefore(out, dstOpenAbs, nl);
     const innerIndent = boxIndent + "  ";
-
-    // Нормализация отступов, чтобы повторные прогоны не сдвигали блок вправо
     const normalizedInner = reindentBlock(srcInnerRaw, innerIndent, nl);
 
     const replacementInner = normalizedInner
@@ -976,7 +1296,7 @@ async function processRuMirrorPages({ root, file, html, urlToFile, verbose }){
 
     const next = replaceWithin(out, dstOpenEnd, dstCloseAbs, replacementInner);
 
-    if (collapseWS(next) !== collapseWS(out)){
+    if (next !== out){
       const prevLen = out.length;
       out = next;
       shift += out.length - prevLen;
@@ -985,128 +1305,186 @@ async function processRuMirrorPages({ root, file, html, urlToFile, verbose }){
     }
   }
 
-  if (changed && verbose) {
-    console.log(`[OK] ${path.relative(root,file)} :: mirrored box-skins from ${path.relative(root,srcFile)} (${section}, ${synced})`);
+  if (changed && verbose){
+    console.log(`[OK] ${path.relative(root, file)} :: mirrored box-skins from ${path.relative(root, srcFile)} (${section}, ${synced})`);
   }
 
   return { html: out, changed };
 }
 
 // ---------------- PLACEHOLDER <div class="skin"> ----------------
-async function processSkinPlaceholders({root, html, pricesArr, verbose, file}){
+async function processSkinPlaceholders({ root, html, pricesState, verbose, file }){
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const masked = maskSegments(html);
-  const skins = findAllTagsByClass(masked, "skin", ["div","span"]);
+  const skins = findAllTagsByClass(masked, "skin", ["div", "span"]);
   if (!skins.length) return { html, changed:false };
-  let out = html, shift=0, anyChange=false;
+
+  let out = html;
+  let shift = 0;
+  let anyChange = false;
+
   for (const s of skins){
-    const openAbs = s.openStart + shift, closeAbs = s.closeEnd + shift;
+    const openAbs = s.openStart + shift;
+    const closeAbs = s.closeEnd + shift;
     const open = readTag(out, openAbs);
     const attrs = open.attrs;
+
     const weaponRaw = (attrs.match(/\bweapon\s*=\s*(["'])(.*?)\1/i)?.[2] || "").trim();
     const skinIdRaw = (attrs.match(/\bskin-id\s*=\s*(["'])(.*?)\1/i)?.[2] || "").trim();
     const weapon = decodeHtmlEntities(weaponRaw);
     const skinId = decodeHtmlEntities(skinIdRaw);
+
     if (!weapon || !skinId) continue;
+
     const tag = s.tag;
     const indent = indentBefore(out, openAbs, nl);
     const weaponMap = await loadWeaponJson(root, weapon);
     const skinData = weaponMap?.[skinId] || {};
-    const { html: priceHtml, has } = computePriceHtml(String(skinData.name||""), pricesArr);
-    const newBlock = renderSkinBlock({ tag, indent, nl, weapon, skinId, skinData, priceHtml, putLoadingClass: !has && !pricesArr });
-    const next = joinBlocksNoBlank(out.slice(0,openAbs), newBlock, out.slice(closeAbs), nl);
-    if (collapseWS(next) !== collapseWS(out)){ anyChange=true; shift += next.length - out.length; out = next; if (verbose) console.log(`[OK] ${path.relative(root,file)} :: <${tag}.skin> ${weapon}/${skinId}`); }
+    const { html: priceHtml, has } = computePriceHtml(String(skinData.name || ""), pricesState);
+
+    const newBlock = renderSkinBlock({
+      tag,
+      indent,
+      nl,
+      weapon,
+      skinId,
+      skinData,
+      priceHtml,
+      putLoadingClass: !has && !pricesState
+    });
+
+    const next = joinBlocksNoBlank(out.slice(0, openAbs), newBlock, out.slice(closeAbs), nl);
+    if (next !== out){
+      anyChange = true;
+      shift += next.length - out.length;
+      out = next;
+      if (verbose) console.log(`[OK] ${path.relative(root, file)} :: <${tag}.skin> ${weapon}/${skinId}`);
+    }
   }
+
   return { html: out, changed:anyChange };
 }
 
 // ---------------- TOPIC-FILTER (topic-boxes-holder) ----------------
 async function loadTopicNav(root){
-  const data = await safeJson(abs(root, TOPIC_NAV_FILE));
-  return Array.isArray(data) ? data : [];
+  if (topicNavCache.has(root)) return topicNavCache.get(root);
+  const data = await safeJsonCached(abs(root, TOPIC_NAV_FILE));
+  const result = Array.isArray(data) ? data : [];
+  topicNavCache.set(root, result);
+  return result;
 }
+
 function localizeHrefForRu(href, isRu){
   if (!href) return "#";
   if (isRu && /^\/(?!ru\/)/.test(href)) return "/ru" + href;
   return href;
 }
+
 function pickActiveIndex(nav, urlPath, isRu){
-  let bestIdx = -1, bestLen = -1;
-  nav.forEach((btn, i)=>{
-    const h = localizeHrefForRu(String(btn.href||""), isRu);
+  let bestIdx = -1;
+  let bestLen = -1;
+
+  nav.forEach((btn, i) => {
+    const h = localizeHrefForRu(String(btn.href || ""), isRu);
     if (!h) return;
     if (urlPath.includes(h) && h.length > bestLen){
-      bestLen = h.length; bestIdx = i;
+      bestLen = h.length;
+      bestIdx = i;
     }
   });
+
   return bestIdx;
 }
-function renderTopicFilterHtml({nav, indent, nl, urlPath, isRu}){
+
+async function loadTopicNavItems(root){
+  if (topicNavItemsCache.has(root)) return topicNavItemsCache.get(root);
+  const data = await safeJsonCached(abs(root, TOPIC_NAV_ITEMS_FILE));
+  const result = Array.isArray(data) ? data : [];
+  topicNavItemsCache.set(root, result);
+  return result;
+}
+
+function renderTopicFilterHtml({ nav, indent, nl, urlPath, isRu }){
   const lines = [];
   lines.push(`${indent}<div class="topic-filter">`);
   lines.push(`${indent}  <input class="singlemod-box topic-filter-tab" type="text" placeholder="" aria-label="Filter Topic" autocomplete="off">`);
+
   const activeIdx = pickActiveIndex(nav, urlPath, isRu);
-  nav.forEach((btn, i)=>{
+  nav.forEach((btn, i) => {
     const boxTitle = isRu && btn["data-title-ru"] ? btn["data-title-ru"] : (btn.alt || "");
-    const href = localizeHrefForRu(String(btn.href||"#"), isRu);
-    const img  = String(btn.img||"");
-    const alt  = String(btn.alt||"");
-    lines.push(`${indent}  <div class="singlemod-box${i===activeIdx ? " active" : ""}" data-title="${escapeAttrDblNoApos(boxTitle)}">`);
+    const href = localizeHrefForRu(String(btn.href || "#"), isRu);
+    const img = String(btn.img || "");
+    const alt = String(btn.alt || "");
+
+    lines.push(`${indent}  <div class="singlemod-box${i === activeIdx ? " active" : ""}" data-title="${escapeAttrDblNoApos(boxTitle)}">`);
     lines.push(`${indent}    <a href="${escapeAttrDblNoApos(href)}" class="singlemod-select">`);
     lines.push(`${indent}      <img src="${escapeAttrDblNoApos(img)}" alt="${escapeAttrDblNoApos(alt)}">`);
     lines.push(`${indent}    </a>`);
     lines.push(`${indent}  </div>`);
   });
+
   lines.push(`${indent}</div>`);
   return lines.join(nl);
 }
-async function processTopicFilters({root, file, html, verbose}){
+
+async function processTopicFilters({ root, file, html, verbose }){
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const urlPath = fileToUrlPath(root, file);
   const masked = maskSegments(html);
-  const holders = findAllTagsByClass(masked, "topic-boxes-holder", ["div","section"]);
+  const holders = findAllTagsByClass(masked, "topic-boxes-holder", ["div", "section"]);
   if (!holders.length) return { html, changed:false };
+
   const nav = await loadTopicNav(root);
   if (!nav.length) return { html, changed:false };
-  let out = html, shift = 0, changed = false;
+
+  let out = html;
+  let shift = 0;
+  let changed = false;
+
   for (const h of holders){
-    const openAbs   = h.openStart + shift;
-    const openEnd   = h.openEnd   + shift;
-    const closeAbs  = h.closeStart+ shift;
+    const openAbs = h.openStart + shift;
+    const openEnd = h.openEnd + shift;
+    const closeAbs = h.closeStart + shift;
+
     const openTag = readTag(out, openAbs);
     const classes = parseClassAttr(openTag.attrs);
 
-    // items-type страницы имеют свой отдельный кастомный фильтр/рендер
     if (classes.has("items-type")) continue;
 
     const isRu = urlPath.startsWith("/ru/") || classes.has("lang-ru");
     const baseIndent = indentBefore(out, openEnd, nl);
     const innerIndent = baseIndent + "  ";
+
     const maskedAll = maskSegments(out);
     const filters = findAllTagsByClass(maskedAll, "topic-filter", ["div"], openEnd, closeAbs);
+
     let innerBefore = out.slice(openEnd, closeAbs);
     if (filters.length){
-      let parts = []; let cursor = openEnd;
-      for (const f of filters){ const fOpen = f.openStart, fClose = f.closeEnd; parts.push(out.slice(cursor, fOpen)); cursor = fClose; }
+      let parts = [];
+      let cursor = openEnd;
+      for (const f of filters){
+        const fOpen = f.openStart;
+        const fClose = f.closeEnd;
+        parts.push(out.slice(cursor, fOpen));
+        cursor = fClose;
+      }
       parts.push(out.slice(cursor, closeAbs));
       innerBefore = parts.join("");
     }
-    // убираем ВСЕ пустые строки (включая "пробелы + \n") в начале контента
+
     const rest = innerBefore.replace(/^(?:[ \t]*\r?\n)+/, "");
-
     const filterHtml = renderTopicFilterHtml({ nav, indent: innerIndent, nl, urlPath, isRu });
-
-    // Всегда ровно ОДНА пустая граница между фильтром и остальным контентом
     const newInner = rest ? (filterHtml + nl + rest) : filterHtml;
-
-    // Ровно один перевод строки сразу после открывающего тега holder'а
     const next = out.slice(0, openEnd) + nl + newInner + out.slice(closeAbs);
 
-    if (collapseWS(next) !== collapseWS(out)){
-      if (verbose) console.log(`[OK] ${path.relative(root,file)} :: topic-filter fixed/inserted`);
-      changed = true; shift += next.length - out.length; out = next;
+    if (next !== out){
+      if (verbose) console.log(`[OK] ${path.relative(root, file)} :: topic-filter fixed/inserted`);
+      changed = true;
+      shift += next.length - out.length;
+      out = next;
     }
   }
+
   return { html: out, changed };
 }
 
@@ -1119,14 +1497,24 @@ function detectItemsTypeIndexContext(urlPath){
     topicType: m[2].toLowerCase(),
   };
 }
+
 async function loadItemsTypeTopics(root, topicType){
+  const key = `${root}::${topicType}`;
+  if (itemsTypeTopicsCache.has(key)) return itemsTypeTopicsCache.get(key);
+
   const file = ITEMS_TYPE_TOPICS_FILES[topicType];
   if (!file) return [];
-  const data = await safeJson(abs(root, file));
-  if (Array.isArray(data)) return data;
-  if (Array.isArray(data?.items)) return data.items;
-  return [];
+
+  const data = await safeJsonCached(abs(root, file));
+  let result = [];
+
+  if (Array.isArray(data)) result = data;
+  else if (Array.isArray(data?.items)) result = data.items;
+
+  itemsTypeTopicsCache.set(key, result);
+  return result;
 }
+
 function normalizeItemsTypeCard(item, topicType, isRu){
   const slug =
     item.id ??
@@ -1164,6 +1552,7 @@ function normalizeItemsTypeCard(item, topicType, isRu){
     title: String(title || ""),
   };
 }
+
 function renderItemsTypeFilterHtml({ indent, nl, isRu, activeType }){
   const p = isRu ? "/ru" : "";
 
@@ -1203,6 +1592,7 @@ function renderItemsTypeFilterHtml({ indent, nl, isRu, activeType }){
   lines.push(`${indent}</div>`);
   return lines.join(nl);
 }
+
 function renderItemsTypeCardsHtml({ indent, nl, items, topicType, isRu }){
   return items.map(raw => {
     const item = normalizeItemsTypeCard(raw, topicType, isRu);
@@ -1219,6 +1609,7 @@ function renderItemsTypeCardsHtml({ indent, nl, items, topicType, isRu }){
     ].join(nl);
   }).join(nl);
 }
+
 function renderItemsTypeHolderHtml({ indent, nl, items, topicType, isRu }){
   const holderClasses = `topic-boxes-holder items-type${isRu ? " lang-ru" : ""}`;
   const innerIndent = indent + "  ";
@@ -1245,6 +1636,7 @@ function renderItemsTypeHolderHtml({ indent, nl, items, topicType, isRu }){
     `${indent}</div>`
   ].filter(Boolean).join(nl);
 }
+
 async function processItemsTypeTopicBoxesPages({ root, file, html, verbose }){
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const urlPath = fileToUrlPath(root, file);
@@ -1258,7 +1650,7 @@ async function processItemsTypeTopicBoxesPages({ root, file, html, verbose }){
   }
 
   const masked = maskSegments(html);
-  const holders = findAllTagsByClass(masked, "topic-boxes-holder", ["div","section"]);
+  const holders = findAllTagsByClass(masked, "topic-boxes-holder", ["div", "section"]);
   if (!holders.length) return { html, changed:false };
 
   let target = null;
@@ -1273,14 +1665,12 @@ async function processItemsTypeTopicBoxesPages({ root, file, html, verbose }){
 
   if (!target) return { html, changed:false };
 
-  // заменяем блок вместе с ведущим отступом строки
   const lineStart = (() => {
     const k = html.lastIndexOf(nl, target.openStart - 1);
     return k === -1 ? 0 : k + nl.length;
   })();
 
   const baseIndent = html.slice(lineStart, target.openStart).match(/^[\t ]*/)?.[0] ?? "";
-
   const newBlock = renderItemsTypeHolderHtml({
     indent: baseIndent,
     nl,
@@ -1292,7 +1682,7 @@ async function processItemsTypeTopicBoxesPages({ root, file, html, verbose }){
   const next = html.slice(0, lineStart) + newBlock + html.slice(target.closeEnd);
 
   if (next !== html){
-    if (verbose) console.log(`[OK] ${path.relative(root,file)} :: items-type holder rebuilt (${ctx.topicType}${ctx.isRu ? ", ru" : ""})`);
+    if (verbose) console.log(`[OK] ${path.relative(root, file)} :: items-type holder rebuilt (${ctx.topicType}${ctx.isRu ? ", ru" : ""})`);
     return { html: next, changed:true };
   }
 
@@ -1303,10 +1693,12 @@ async function processItemsTypeTopicBoxesPages({ root, file, html, verbose }){
 function detectLoadoutContext(urlPath){
   const m = urlPath.match(/\/(?:ru\/)?topic\/skins\/(cheapest|best)-([a-z]+)-skins(?:\/|$)/i);
   if (!m) return null;
-  const mode = m[1].toLowerCase();
-  const color = m[2].toLowerCase();
-  return { mode, color };
+  return {
+    mode: m[1].toLowerCase(),
+    color: m[2].toLowerCase(),
+  };
 }
+
 function pickLoadoutPairsFromValue(value, mode){
   if (value && typeof value === "object" && ("best" in value || "cheapest" in value)){
     const pair = mode === "best" ? value.best : value.cheapest;
@@ -1315,41 +1707,60 @@ function pickLoadoutPairsFromValue(value, mode){
     if (!skinId || !String(skinId).trim()) skinId = "Vanilla";
     return { weapon, skinId };
   }
+
   const arr = Array.isArray(value) ? value : [value];
   const safe = arr.length === 1 ? [arr[0], arr[0]] : arr;
   let skinId = mode === "cheapest" ? safe[1] : safe[0];
   if (!skinId || !String(skinId).trim()) skinId = "Vanilla";
   return { weapon:null, skinId };
 }
-async function buildLoadoutHtml(root, ctx, pricesArr, nl, baseIndent){
+
+async function buildLoadoutHtml(root, ctx, pricesState, nl, baseIndent){
   const jsonPath = abs(root, `${LOADOUT_DIR}/${ctx.color}.json`);
-  const data = await safeJson(jsonPath); if (!data || typeof data!=="object") return "";
+  const data = await safeJsonCached(jsonPath);
+  if (!data || typeof data !== "object") return "";
+
   const pairs = [];
-  for (const [key,value] of Object.entries(data)){
+  for (const [key, value] of Object.entries(data)){
     const picked = pickLoadoutPairsFromValue(value, ctx.mode);
     const weapon = picked.weapon || key;
     pairs.push({ weapon, skinId: picked.skinId });
   }
-  const top7   = pairs.slice(0, 7);
-  const left11 = pairs.slice(7, 18);
-  const right11= pairs.slice(18, 29);
-  const bottom7= pairs.slice(29, 36);
-  const allWeapons = Array.from(new Set(pairs.map(p=>p.weapon)));
+
+  const top7    = pairs.slice(0, 7);
+  const left11  = pairs.slice(7, 18);
+  const right11 = pairs.slice(18, 29);
+  const bottom7 = pairs.slice(29, 36);
+
+  const allWeapons = Array.from(new Set(pairs.map(p => p.weapon)));
   const cache = {};
   await Promise.all(allWeapons.map(async w => { cache[w] = await loadWeaponJson(root, w); }));
+
   function renderSection(cls, list){
     const secIndent = baseIndent + "  ";
-    const items = list.map(({weapon, skinId})=>{
-      const data = cache[weapon]?.[skinId] || (skinId==="Vanilla" ? { name:"Vanilla", image:"", class:"" } : {});
-      const { html: priceHtml, has } = computePriceHtml(String(data.name||""), pricesArr);
-      return renderSkinBlock({ tag:"div", indent: secIndent + "  ", nl, weapon, skinId, skinData:data, priceHtml, putLoadingClass: !has && !pricesArr });
+
+    const items = list.map(({ weapon, skinId }) => {
+      const data = cache[weapon]?.[skinId] || (skinId === "Vanilla" ? { name:"Vanilla", image:"", class:"" } : {});
+      const { html: priceHtml, has } = computePriceHtml(String(data.name || ""), pricesState);
+      return renderSkinBlock({
+        tag: "div",
+        indent: secIndent + "  ",
+        nl,
+        weapon,
+        skinId,
+        skinData: data,
+        priceHtml,
+        putLoadingClass: !has && !pricesState
+      });
     }).join(nl);
+
     return [
       `${secIndent}<div class="character-items-list ${cls}">`,
       items,
       `${secIndent}</div>`
     ].join(nl);
   }
+
   const lines = [];
   lines.push(`${baseIndent}<!-- loadout auto-filled -->`);
   lines.push(renderSection("top", top7));
@@ -1359,107 +1770,614 @@ async function buildLoadoutHtml(root, ctx, pricesArr, nl, baseIndent){
   lines.push(renderSection("bottom", bottom7));
   return lines.join(nl);
 }
-async function processLoadoutPages({root, file, html, pricesArr, verbose}){
+
+async function processLoadoutPages({ root, file, html, pricesState, verbose }){
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const urlPath = fileToUrlPath(root, file);
   const ctx = detectLoadoutContext(urlPath);
   if (!ctx) return { html, changed:false };
+
   const masked = maskSegments(html);
-  const sitepages = findAllTagsByClass(masked, "sitepage", ["div","section"]);
-  let box=null;
+  const sitepages = findAllTagsByClass(masked, "sitepage", ["div", "section"]);
+
+  let box = null;
   for (const sp of sitepages){
     const open = readTag(html, sp.openStart);
     if (parseClassAttr(open.attrs).has("loadout")){
       const regionMasked = maskSegments(html.slice(sp.openEnd, sp.closeStart));
-      const charBoxes = findAllTagsByClass(regionMasked, "character-box", ["div","section"]);
+      const charBoxes = findAllTagsByClass(regionMasked, "character-box", ["div", "section"]);
       if (charBoxes.length){
         const c = charBoxes[0];
-        box = { absOpenEnd: sp.openEnd + c.openEnd, absCloseStart: sp.openEnd + c.closeStart };
+        box = {
+          absOpenEnd: sp.openEnd + c.openEnd,
+          absCloseStart: sp.openEnd + c.closeStart
+        };
         break;
       }
     }
   }
+
   if (!box) return { html, changed:false };
+
   const baseIndent = indentBefore(html, box.absOpenEnd, nl);
-  const built = await buildLoadoutHtml(root, ctx, pricesArr, nl, baseIndent);
+  const built = await buildLoadoutHtml(root, ctx, pricesState, nl, baseIndent);
   if (!built) return { html, changed:false };
+
   const before = html.slice(0, box.absOpenEnd);
-  const after  = html.slice(box.absCloseStart);
-  const next   = joinBlocksNoBlank(before, built, after, nl);
-  if (collapseWS(next) !== collapseWS(html)){
-    if (verbose) console.log(`[OK] ${path.relative(root,file)} :: loadout ${ctx.mode}/${ctx.color}`);
+  const after = html.slice(box.absCloseStart);
+  const next = joinBlocksNoBlank(before, built, after, nl);
+
+  if (next !== html){
+    if (verbose) console.log(`[OK] ${path.relative(root, file)} :: loadout ${ctx.mode}/${ctx.color}`);
     return { html: next, changed:true };
   }
+
+  return { html, changed:false };
+}
+
+// ---------------- TOPIC NAV STATIC FILL ----------------
+function isNonEmptyString(v){
+  return typeof v === "string" && v.trim().length > 0;
+}
+
+function parseShortDate(str){
+  const [d, m, y] = String(str || "").split(".");
+  return new Date(`20${y}`, Number(m) - 1 || 0, Number(d) || 1);
+}
+
+function localizeTopicLink(link, isRu){
+  const href = String(link || "").trim();
+  if (!href) return "#";
+  if (isRu && href.startsWith("/") && !href.startsWith("/ru/")) return `/ru${href}`;
+  return href;
+}
+
+async function buildTopicNavDataOffline(root){
+  if (topicNavOfflineCache.has(root)) return topicNavOfflineCache.get(root);
+
+  const data = await loadTopicNavItems(root);
+  if (!data.length){
+    topicNavOfflineCache.set(root, []);
+    return [];
+  }
+
+  const out = [];
+
+  for (const rawCategory of data){
+    const category = { ...rawCategory };
+
+    if (category["import-items"]) {
+      try {
+        const importType = String(category["import-items"]).trim();
+        const importedData = await safeJsonCached(abs(root, `/code-parts/topics/${importType}.json`));
+        const importedItems = Array.isArray(importedData?.items) ? [...importedData.items] : [];
+
+        importedItems.sort((a, b) => {
+          const dateA = a?.date ? parseShortDate(a.date) : new Date(0);
+          const dateB = b?.date ? parseShortDate(b.date) : new Date(0);
+          return dateB - dateA;
+        });
+
+        const pathType = ["autograph-capsules", "sticker-capsules"].includes(importType)
+          ? "stickers"
+          : importType;
+
+        category.items = importedItems.map((item) => ({
+          name: item.title,
+          image: item.img,
+          link: `/topic/${pathType}/${item.id}`,
+        }));
+      } catch {
+        category.items = [];
+      }
+    }
+
+    if (!Array.isArray(category.items)) {
+      category.items = [];
+    }
+
+    out.push(category);
+  }
+
+  topicNavOfflineCache.set(root, out);
+  return out;
+}
+
+function renderTopicNavCategory(category, { indent, nl, isRu, isMobileView }){
+  const lines = [];
+
+  const currentName =
+    isMobileView && isRu
+      ? (category["name-ru"] || category.name || "")
+      : (category.name || "");
+
+  lines.push(`${indent}<div class="weapon-container">`);
+  lines.push(`${indent}  <div class="weapon-current">`);
+
+  if (isMobileView) {
+    lines.push(`${indent}    <span>${escapeHtml(currentName)}</span>`);
+    lines.push(`${indent}    <i class="officon oldcarret"></i>`);
+  } else {
+    if (isNonEmptyString(category.image)) {
+      const alt = category.alt || currentName || "";
+      lines.push(`${indent}    <img src="${escapeAttrDblNoApos(category.image)}" draggable="false" alt="${escapeAttrDblNoApos(alt)}">`);
+    } else {
+      lines.push(`${indent}    <span>${escapeHtml(currentName)}</span>`);
+    }
+  }
+
+  lines.push(`${indent}  </div>`);
+  lines.push(`${indent}  <ul class="weapon-selection">`);
+
+  for (const item of category.items || []){
+    const localizedHref = localizeTopicLink(item.link, isRu);
+    const liClasses = ["weapon-selection-unite"];
+
+    if (isNonEmptyString(item?.class)) {
+      liClasses.push(item.class.trim());
+    }
+
+    lines.push(`${indent}    <li class="${escapeAttrDblNoApos(liClasses.join(" "))}">`);
+    lines.push(`${indent}      <a href="${escapeAttrDblNoApos(localizedHref)}" class="weapon-selection-redir">`);
+
+    if (isNonEmptyString(item.image)) {
+      lines.push(`${indent}        <img src="${escapeAttrDblNoApos(item.image)}" draggable="false" alt="${escapeAttrDblNoApos(item.name || "")}">`);
+    }
+
+    lines.push(`${indent}        <span>${escapeHtml(item.name || "")}</span>`);
+    lines.push(`${indent}      </a>`);
+    lines.push(`${indent}    </li>`);
+  }
+
+  lines.push(`${indent}  </ul>`);
+  lines.push(`${indent}</div>`);
+
+  return lines.join(nl);
+}
+
+function renderTopicNavDesktopHtml(categories, { indent, nl, isRu }){
+  return categories
+    .map((category) => renderTopicNavCategory(category, {
+      indent,
+      nl,
+      isRu,
+      isMobileView: false,
+    }))
+    .join(nl);
+}
+
+function renderTopicNavMobileHtml(categories, { indent, nl, isRu }){
+  const lines = [];
+  lines.push(`${indent}<div class="topic-nav-selector">`);
+  lines.push(`${indent}  <div class="topic-nav-menu">`);
+
+  for (const category of categories){
+    lines.push(renderTopicNavCategory(category, {
+      indent: indent + "    ",
+      nl,
+      isRu,
+      isMobileView: true,
+    }));
+  }
+
+  lines.push(`${indent}    <div class="topic-nav-close"></div>`);
+  lines.push(`${indent}  </div>`);
+  lines.push(`${indent}</div>`);
+  return lines.join(nl);
+}
+
+function findDesktopTopicNavTarget(html){
+  const masked = maskSegments(html);
+  const centralizers = findAllTagsByClass(masked, "topic-centralizer", ["div", "section"]);
+
+  for (const c of centralizers){
+    const boxSkins = findAllTagsByClass(masked, "box-skins", ["div", "section"], c.openEnd, c.closeStart);
+    for (const b of boxSkins){
+      const panels = findAllTagsByClass(masked, "sitetoppannel", ["div", "section"], b.openEnd, b.closeStart);
+      if (panels.length) return panels[0];
+    }
+  }
+
+  return null;
+}
+
+function findMobileTopicNavTarget(html){
+  const masked = maskSegments(html);
+  const pages = findAllTagsByClass(masked, "topicpage", ["div", "section"]);
+  return pages.length ? pages[0] : null;
+}
+
+async function processTopicNavStaticFill({ root, file, html, verbose }){
+  const urlPath = fileToUrlPath(root, file);
+  const normalizedPath = urlPath.toLowerCase();
+
+  const shouldInjectNav =
+    normalizedPath.includes("/items/") ||
+    normalizedPath.includes("/cases/") ||
+    normalizedPath.includes("/charms/") ||
+    normalizedPath.includes("/stickers/") ||
+    normalizedPath.includes("/collections/");
+
+  if (!shouldInjectNav) return { html, changed:false };
+
+  const categories = await buildTopicNavDataOffline(root);
+  if (!categories.length) return { html, changed:false };
+
+  const isRu = urlPath.startsWith("/ru/");
+  const nl = html.includes("\r\n") ? "\r\n" : "\n";
+  let out = html;
+  let changed = false;
+
+  // ================= DESKTOP =================
+  {
+    const target = findDesktopTopicNavTarget(out);
+
+    if (target){
+      const openEnd = target.openEnd;
+      const closeStart = target.closeStart;
+      const baseIndent = indentBefore(out, openEnd, nl);
+      const innerIndent = baseIndent + "  ";
+
+      const built = renderTopicNavDesktopHtml(categories, {
+        indent: innerIndent,
+        nl,
+        isRu,
+      });
+
+      const inner = out.slice(openEnd, closeStart);
+      const rebuiltInner = replaceAutoBlock(inner, "topic-nav-desktop", built, nl, baseIndent);
+      const next = out.slice(0, openEnd) + rebuiltInner + out.slice(closeStart);
+
+      if (next !== out){
+        out = next;
+        changed = true;
+        if (verbose) console.log(`[OK] ${path.relative(root, file)} :: desktop topic nav safe`);
+      }
+    }
+  }
+
+  // ================= MOBILE =================
+  {
+    const target = findMobileTopicNavTarget(out);
+
+    if (target){
+      const openEnd = target.openEnd;
+      const closeStart = target.closeStart;
+      const baseIndent = indentBefore(out, openEnd, nl);
+      const innerIndent = baseIndent + "  ";
+
+      const built = renderTopicNavMobileHtml(categories, {
+        indent: innerIndent,
+        nl,
+        isRu,
+      });
+
+      const inner = out.slice(openEnd, closeStart);
+      const rebuiltInner = replaceAutoBlock(inner, "topic-nav-mobile", built, nl, baseIndent);
+      const next = out.slice(0, openEnd) + rebuiltInner + out.slice(closeStart);
+
+      if (next !== out){
+        out = next;
+        changed = true;
+        if (verbose) console.log(`[OK] ${path.relative(root, file)} :: mobile topic nav safe`);
+      }
+    }
+  }
+
+  return { html: out, changed };
+}
+
+function getAvailableSkinTypesFromHtml(html){
+  const out = new Set();
+  const masked = maskSegments(html);
+
+  const skinClassRe = /<(?:(?:div)|(?:span)|(?:a))\b[^>]*class\s*=\s*(?:"([^"]*\bskin\b[^"]*)"|'([^']*\bskin\b[^']*)')[^>]*>/gi;
+
+  let m;
+  while ((m = skinClassRe.exec(masked))) {
+    const classAttr = m[1] ?? m[2] ?? "";
+    const classes = classAttr.split(/\s+/).filter(Boolean);
+
+    for (const cls of classes){
+      if (cls !== "skin") out.add(cls);
+    }
+  }
+
+  return out;
+}
+
+// ---------------- ITEMS NAV STATIC FILL ----------------
+async function loadItemsNav(root){
+  if (itemsNavCache.has(root)) return itemsNavCache.get(root);
+  const data = await safeJsonCached(abs(root, ITEMS_NAV_FILE));
+  const result = data && typeof data === "object" ? data : null;
+  itemsNavCache.set(root, result);
+  return result;
+}
+
+function detectItemsNavContext(urlPath){
+  const m = urlPath.match(/^\/(ru\/)?topic\/(items|stickers|cases|charms|collections)(?:\/|$)/i);
+  if (!m) return null;
+
+  return {
+    isRu: Boolean(m[1]),
+    section: String(m[2] || "").toLowerCase(),
+  };
+}
+
+function getItemsNavTypeTitle(type, { isRu, section }){
+  const cls = String(type?.class || "").trim();
+  const rawTitle = String(type?.title || "").trim();
+
+  const stickerTitlesEn = {
+    blue: "High Grade",
+    purple: "Remarkable",
+    pink: "Exotic",
+    red: "Extraordinary",
+  };
+
+  const stickerTitlesRu = {
+    blue: "Высший класс",
+    purple: "Примечательное",
+    pink: "Экзотичное",
+    red: "Экстраординарное",
+  };
+
+  if (section === "stickers" && cls) {
+    if (isRu && stickerTitlesRu[cls]) return stickerTitlesRu[cls];
+    if (!isRu && stickerTitlesEn[cls]) return stickerTitlesEn[cls];
+  }
+
+  const ruMap = {
+    "Knives": "Ножи",
+    "Gloves": "Перчатки",
+    "Pistols": "Пистолеты",
+    "Rifles": "Винтовки",
+    "Sniper Rifles": "Снайперские винтовки",
+    "SMGs": "ПП",
+    "Shotguns": "Дробовики",
+    "Machine guns": "Пулеметы",
+    "Consumer Grade": "Ширпотреб",
+    "Industrial Grade": "Промышленное",
+    "Mil-Spec": "Армейское",
+    "Restricted": "Запрещенное",
+    "Classified": "Засекреченное",
+    "Covert": "Тайное",
+    "Contraband": "Контрабанда",
+    "Change Color": "Другие Цвета",
+    "Expensive": "Дорогой",
+    "Cheap": "Дешевый",
+    "All Skins": "Все Скины",
+  };
+
+  if (isRu && ruMap[rawTitle]) return ruMap[rawTitle];
+  return rawTitle;
+}
+
+function getItemsNavFilterTitle(filter, isRu){
+  return String(
+    isRu
+      ? (filter?.title_ru || filter?.title_en || "")
+      : (filter?.title_en || filter?.title_ru || "")
+  ).trim();
+}
+
+function renderItemsNavFirstSection(types, { indent, nl, isRu, section, availableSkinTypes = null }){
+  const lines = [];
+  lines.push(`${indent}<div class="section first">`);
+
+  for (const type of types){
+    const cls = String(type?.class || "").trim();
+    if (!cls) continue;
+
+    const title = getItemsNavTypeTitle(type, { isRu, section });
+
+    const exists = availableSkinTypes instanceof Set
+      ? availableSkinTypes.has(cls)
+      : true;
+
+    const stateClass = exists ? "enabled" : "notexist";
+
+    lines.push(
+      `${indent}  <div class="navigation-weapon-type ${escapeAttrDblNoApos(cls)} ${stateClass}">${escapeHtml(title)}</div>`
+    );
+  }
+
+  lines.push(`${indent}</div>`);
+  return lines.join(nl);
+}
+
+function renderItemsNavSearchersSection(filters, { indent, nl, isRu }){
+  const lines = [];
+  lines.push(`${indent}<div class="section searchers">`);
+
+  for (const filter of filters){
+    const id = String(filter?.id || "").trim();
+    const icon = String(filter?.icon || "").trim();
+    const title = getItemsNavFilterTitle(filter, isRu);
+    if (!id) continue;
+
+    lines.push(`${indent}  <div class="navigation-weapon-sort" data-title="${escapeAttrDblNoApos(title)}" id="${escapeAttrDblNoApos(id)}">`);
+    lines.push(`${indent}    <i class="officon ${escapeAttrDblNoApos(icon)}"></i>`);
+    lines.push(`${indent}  </div>`);
+  }
+
+  lines.push(`${indent}</div>`);
+  return lines.join(nl);
+}
+
+function findItemsNavTarget(html){
+  const masked = maskSegments(html);
+  const leftPanels = findAllTagsByClass(masked, "siteleftpannel", ["div", "section"]);
+
+  for (const left of leftPanels) {
+    const siteblocks = findAllTagsByClass(masked, "siteblock", ["div", "section"], left.openEnd, left.closeStart);
+    for (const block of siteblocks) {
+      const grandboxes = findAllTagsByClass(masked, "topic-grandbox", ["div", "section"], block.openEnd, block.closeStart);
+      for (const gb of grandboxes) {
+        return gb;
+      }
+    }
+  }
+
+  return null;
+}
+
+async function processItemsNavStaticFill({ root, file, html, verbose }){
+  const urlPath = fileToUrlPath(root, file);
+  const ctx = detectItemsNavContext(urlPath);
+  if (!ctx) return { html, changed:false };
+
+  const navData = await loadItemsNav(root);
+  const types = Array.isArray(navData?.types) ? navData.types : [];
+  const filters = Array.isArray(navData?.filters) ? navData.filters : [];
+  if (!types.length && !filters.length) return { html, changed:false };
+
+  const grandbox = findItemsNavTarget(html);
+  if (!grandbox) return { html, changed:false };
+
+  const nl = html.includes("\r\n") ? "\r\n" : "\n";
+  const parentOpenEnd = grandbox.openEnd;
+  const parentCloseStart = grandbox.closeStart;
+  const baseIndent = indentBefore(html, parentOpenEnd, nl);
+  const innerIndent = baseIndent + "  ";
+
+  const availableSkinTypes = getAvailableSkinTypesFromHtml(html);
+
+  const parts = [];
+  if (types.length) {
+    parts.push(renderItemsNavFirstSection(types, {
+      indent: innerIndent,
+      nl,
+      isRu: ctx.isRu,
+      section: ctx.section,
+      availableSkinTypes,
+    }));
+  }
+  if (filters.length) {
+    parts.push(renderItemsNavSearchersSection(filters, {
+      indent: innerIndent,
+      nl,
+      isRu: ctx.isRu,
+    }));
+  }
+
+  const builtBlock = parts.join(nl);
+  const inner = html.slice(parentOpenEnd, parentCloseStart);
+  const rebuiltInner = replaceAutoBlock(inner, "items-nav", builtBlock, nl, baseIndent);
+  const next = html.slice(0, parentOpenEnd) + rebuiltInner + html.slice(parentCloseStart);
+
+  if (next !== html) {
+    if (verbose) console.log(`[OK] ${path.relative(root, file)} :: items-nav rebuilt safely`);
+    return { html: next, changed:true };
+  }
+
   return { html, changed:false };
 }
 
 // ---------------- MAIN ----------------
 (async function main(){
   const { root, dry, verbose, prices, paths } = parseArgs(process.argv.slice(2));
+
   const files = await listHtmlFiles(root);
   const urlToFile = new Map(files.map(f => [fileToUrlPath(root, f), f]));
-  const settings = await safeJson(abs(root, SETTINGS_FILE)) || {};
-  const pricesArr = await loadPrices(prices);
 
-  let updated=0, skipped=0;
+  const settings = await safeJsonCached(abs(root, SETTINGS_FILE)) || {};
+  const pricesArr = await loadPrices(prices);
+  const pricesState = buildPricesState(pricesArr);
+
+  let updated = 0;
+  let skipped = 0;
 
   for (const file of files){
     const urlPath = fileToUrlPath(root, file);
     const allowed = paths.some(p => urlPath.toLowerCase().startsWith(p.toLowerCase()));
-    if (!allowed){ skipped++; continue; }
 
-    try{
-      // --- финальный no-op guard начинается здесь ---
-      const origHtml = await fs.readFile(file,"utf8"); // исходник
+    if (!allowed){
+      skipped++;
+      continue;
+    }
+
+    try {
+      const origHtml = await readTextCached(file);
       let html = origHtml;
-      let changed = false;
 
       // 1) .box-skins-list
-      const resList = await processBoxSkinsLists({root, file, html, pricesArr, settings, verbose});
-      if (resList.changed){ html = resList.html; changed = true; }
+      {
+        const res = await processBoxSkinsLists({ root, file, html, pricesState, settings, verbose });
+        if (res.changed) html = res.html;
+      }
 
       // 2) loadout pages
-      const resLoad = await processLoadoutPages({root, file, html, pricesArr, verbose});
-      if (resLoad.changed){ html = resLoad.html; changed = true; }
+      {
+        const res = await processLoadoutPages({ root, file, html, pricesState, verbose });
+        if (res.changed) html = res.html;
+      }
 
       // 3) price-sorter inside .box-skins-list for /topic/skins/*
-      const resPriceSorter = await processSkinsPriceSorter({root, file, html, verbose});
-      if (resPriceSorter.changed){ html = resPriceSorter.html; changed = true; }
+      {
+        const res = await processSkinsPriceSorter({ root, file, html, verbose });
+        if (res.changed) html = res.html;
+      }
 
       // 4) зеркалирование /topic/skins/* и /topic/items/* -> /ru/topic/*
-      const resRuMirror = await processRuMirrorPages({root, file, html, urlToFile, verbose});
-      if (resRuMirror.changed){ html = resRuMirror.html; changed = true; }
+      {
+        const res = await processRuMirrorPages({ root, file, html, urlToFile, verbose });
+        if (res.changed) html = res.html;
+      }
 
-      // 4) extra-list блоки на /topic/cases/<slug> -> <slug>-gloves / <slug>-knives
-      const resExtraCases = await processCaseExtraVariantLinks({root, file, html, urlToFile, verbose});
-      if (resExtraCases.changed){ html = resExtraCases.html; changed = true; }
+      // 5) extra-list блоки на /topic/cases/<slug> -> <slug>-gloves / <slug>-knives
+      {
+        const res = await processCaseExtraVariantLinks({ root, file, html, urlToFile, verbose });
+        if (res.changed) html = res.html;
+      }
 
-      // 5) одиночные плейсхолдеры .skin (+ ремонт уже записанных блоков)
-      const resSkins = await processSkinPlaceholders({root, html, pricesArr, verbose, file});
-      if (resSkins.changed){ html = resSkins.html; changed = true; }
+      // 6) одиночные плейсхолдеры .skin (+ ремонт уже записанных блоков)
+      {
+        const res = await processSkinPlaceholders({ root, html, pricesState, verbose, file });
+        if (res.changed) html = res.html;
+      }
 
-      // 4) items-type pages: /items-type/cases, /items-type/charms, /items-type/collections
-      const resItemsType = await processItemsTypeTopicBoxesPages({root, file, html, verbose});
-      if (resItemsType.changed){ html = resItemsType.html; changed = true; }
+      // 7) items-type pages: /items-type/cases, /items-type/charms, /items-type/collections
+      {
+        const res = await processItemsTypeTopicBoxesPages({ root, file, html, verbose });
+        if (res.changed) html = res.html;
+      }
 
-      // 5) topic-filter вставка/ремонт
-      const resFilter = await processTopicFilters({root, file, html, verbose});
-      if (resFilter.changed){ html = resFilter.html; changed = true; }
+      // 8) topic-filter вставка/ремонт
+      {
+        const res = await processTopicFilters({ root, file, html, verbose });
+        if (res.changed) html = res.html;
+      }
 
-      // --- ключ: писать только если ПО-ИТОГУ контент реально изменился ---
+      // 9) static topic nav from topics-nav-items.json
+      {
+        const res = await processTopicNavStaticFill({ root, file, html, verbose });
+        if (res.changed) html = res.html;
+      }
+
+      // 10) items-nav static fill in .topic-grandbox
+      {
+        const res = await processItemsNavStaticFill({ root, file, html, verbose });
+        if (res.changed) html = res.html;
+      }
+
       const finalChanged = html !== origHtml;
 
       if (finalChanged){
-        if (!dry) await fs.writeFile(file, html, "utf8");
+        if (!dry) await writeTextCached(file, html);
         updated++;
       } else {
         skipped++;
       }
-    } catch(e){
-      console.error(`[ERR] ${path.relative(root,file)}:`, e.message);
+    } catch (e){
+      console.error(`[ERR] ${path.relative(root, file)}:`, e.message);
       skipped++;
     }
   }
 
   console.log(`\nDone. Updated: ${updated}, skipped: ${skipped}, total: ${files.length}`);
-})().catch(e=>{ console.error(e); process.exit(1); });
+})().catch(e => {
+  console.error(e);
+  process.exit(1);
+});
