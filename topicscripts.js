@@ -848,9 +848,26 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
         previewExtras.prepend(skinAltInfoDiv);
       }
 
+      const skinId = element.getAttribute("skin-id");
+      const skinsDataResponse = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
+      const skinsData = await skinsDataResponse.json();
+      const skinData = skinsData[skinId];
+
+      const isAgentsCollection =
+        typeof skinData?.collection === "string" &&
+        skinData.collection.toLowerCase().includes("agents");
+
+      const altInfoHref = isAgentsCollection
+        ? (languageTag === "ru" ? `/ru/topic/items/agents` : `/topic/items/agents`)
+        : (languageTag === "ru" ? `/ru/topic/items/${weapon}` : `/topic/items/${weapon}`);
+
+      const altInfoTitle = isAgentsCollection
+        ? (languageTag === "ru" ? `Все Агенты` : `All Agents`)
+        : (languageTag === "ru" ? `Все Скины на ${weaponName}` : `All Skins on ${weaponName}`);
+
       skinAltInfoDiv.attr({
-        href: languageTag === "ru" ? `/ru/topic/items/${weapon}` : `/topic/items/${weapon}`,
-        "data-title": languageTag === "ru" ? `Все Скины на ${weaponName}` : `All Skins on ${weaponName}`,
+        href: altInfoHref,
+        "data-title": altInfoTitle,
       }).toggleClass("hidden", isSticker);
 
       let skinColorInfo = previewExtras.find(".skin-color-info");
@@ -906,11 +923,6 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
         });
         previewExtras.prepend(skinCraftInfoDiv);
       }
-
-      const skinId = element.getAttribute("skin-id");
-      const skinsDataResponse = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
-      const skinsData = await skinsDataResponse.json();
-      const skinData = skinsData[skinId];
 
       if (skinData) {
         const imgElement = previewContent.find("img");
