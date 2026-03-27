@@ -1966,6 +1966,50 @@ function renderTopicNavMobileHtml(categories, { indent, nl, isRu }){
   return lines.join(nl);
 }
 
+function isSkinsTopicPage(urlPath){
+  return /^\/(?:ru\/)?topic\/skins(?:\/|$)/i.test(urlPath);
+}
+
+function findDesktopTopicNavContainer(html, urlPath){
+  const masked = maskSegments(html);
+  const centralizers = findAllTagsByClass(masked, "topic-centralizer", ["div", "section"]);
+
+  if (!centralizers.length) return null;
+
+  const skinsPage = isSkinsTopicPage(urlPath);
+
+  for (const c of centralizers){
+    if (skinsPage) {
+      return c; // /topic/skins* -> вставляем в .topic-centralizer
+    }
+
+    const boxSkins = findAllTagsByClass(masked, "box-skins", ["div", "section"], c.openEnd, c.closeStart);
+    if (boxSkins.length) {
+      return boxSkins[0]; // обычные страницы -> вставляем в .topic-centralizer .box-skins
+    }
+  }
+
+  return null;
+}
+
+function renderDesktopTopicNavPanel({ categories, indent, nl, isRu }){
+  const navIndent = indent + "  ";
+
+  const built = renderTopicNavDesktopHtml(categories, {
+    indent: navIndent + "  ",
+    nl,
+    isRu,
+  });
+
+  const inner = replaceAutoBlock("", "topic-nav-desktop", built, nl, navIndent);
+
+  return [
+    `${indent}<div class="sitetoppannel">`,
+    inner,
+    `${indent}</div>`
+  ].join(nl);
+}
+
 function findDesktopTopicNavTarget(html){
   const masked = maskSegments(html);
   const centralizers = findAllTagsByClass(masked, "topic-centralizer", ["div", "section"]);
@@ -1996,7 +2040,8 @@ async function processTopicNavStaticFill({ root, file, html, verbose }){
     normalizedPath.includes("/cases/") ||
     normalizedPath.includes("/charms/") ||
     normalizedPath.includes("/stickers/") ||
-    normalizedPath.includes("/collections/");
+    normalizedPath.includes("/collections/") ||
+    normalizedPath.includes("/skins/");
 
   if (!shouldInjectNav) return { html, changed:false };
 
@@ -2010,28 +2055,62 @@ async function processTopicNavStaticFill({ root, file, html, verbose }){
 
   // ================= DESKTOP =================
   {
-    const target = findDesktopTopicNavTarget(out);
+    const container = findDesktopTopicNavContainer(out, urlPath);
 
-    if (target){
-      const openEnd = target.openEnd;
-      const closeStart = target.closeStart;
+    if (container){
+      const openEnd = container.openEnd;
+      const closeStart = container.closeStart;
       const baseIndent = indentBefore(out, openEnd, nl);
       const innerIndent = baseIndent + "  ";
 
-      const built = renderTopicNavDesktopHtml(categories, {
-        indent: innerIndent,
-        nl,
-        isRu,
-      });
+      const currentMasked = maskSegments(out);
+      const panels = findAllTagsByClass(currentMasked, "sitetoppannel", ["div", "section"], openEnd, closeStart);
 
-      const inner = out.slice(openEnd, closeStart);
-      const rebuiltInner = replaceAutoBlock(inner, "topic-nav-desktop", built, nl, baseIndent);
-      const next = out.slice(0, openEnd) + rebuiltInner + out.slice(closeStart);
+      let next = out;
+
+      if (panels.length){
+        // если sitetoppannel уже есть внутри нужного контейнера — просто обновляем его
+        const panel = panels[0];
+        const panelOpenEnd = panel.openEnd;
+        const panelCloseStart = panel.closeStart;
+        const panelIndent = indentBefore(out, panelOpenEnd, nl);
+        const navIndent = panelIndent + "  ";
+
+        const built = renderTopicNavDesktopHtml(categories, {
+          indent: navIndent + "  ",
+          nl,
+          isRu,
+        });
+
+        const inner = out.slice(panelOpenEnd, panelCloseStart);
+        const rebuiltInner = replaceAutoBlock(inner, "topic-nav-desktop", built, nl, panelIndent);
+
+        next = out.slice(0, panelOpenEnd) + rebuiltInner + out.slice(panelCloseStart);
+      } else {
+        // если sitetoppannel нет — вставляем первым элементом в контейнер
+        const panelHtml = renderDesktopTopicNavPanel({
+          categories,
+          indent: innerIndent,
+          nl,
+          isRu,
+        });
+
+        const inner = out.slice(openEnd, closeStart).replace(/^(?:[ \t]*\r?\n)+/, "");
+        const replacementInner = inner
+          ? (nl + panelHtml + nl + inner.replace(/^\r?\n+/, ""))
+          : (nl + panelHtml + nl + baseIndent);
+
+        next = out.slice(0, openEnd) + replacementInner + out.slice(closeStart);
+      }
 
       if (next !== out){
         out = next;
         changed = true;
-        if (verbose) console.log(`[OK] ${path.relative(root, file)} :: desktop topic nav safe`);
+        if (verbose) {
+          console.log(
+            `[OK] ${path.relative(root, file)} :: desktop topic nav inserted/updated in ${isSkinsTopicPage(urlPath) ? ".topic-centralizer" : ".topic-centralizer .box-skins"}`
+          );
+        }
       }
     }
   }
