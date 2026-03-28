@@ -17,7 +17,7 @@
     --darkygray: rgb(15, 15, 15);
     --main-theme: rgb(17, 17, 17);
     --buttonbg: linear-gradient(180deg, var(--main-color) 0%, #b11d35 100%);
-    --defbuttonbg: linear-gradient(180deg, rgb(23 23 23) 0%, rgb(21 21 21) 100%);
+    --defbuttonbg: linear-gradient(180deg, rgb(21 21 21) 0%, rgb(19 19 19) 100%);
     --defbuttonbg_hover: linear-gradient(180deg, rgb(27 27 27) 0%, rgb(24 24 24) 100%);
     --icongradient: linear-gradient(-45deg, var(--darkgray), var(--main-theme));
     --icongradient2: linear-gradient(-45deg, var(--darkgray), var(--darkygray));
@@ -147,15 +147,18 @@ header {
 .nondef header {
     width: 81.8%;
     max-width: 2000px;
+    width: calc(65.715% + 8px + 300px );
 }
 
 .nondef.review header {
     max-width: 1340px;
 }
-
-.review header,
 .nondef:has(.topic-craft) header {
-    width: 69.6%;
+    width: calc(1000px + 8px + 300px );
+}
+
+.review header {
+    width: calc(1022px + 8px + 300px );
 }
 
 .nondef:has(.ptype) header {
@@ -163,7 +166,7 @@ header {
 }
 
 .nondef:has(.boxdefaultpage) header {
-    width: 1120px;
+    width: 1100px;
 }
 
 nav {
@@ -327,7 +330,7 @@ nav .pages {
     right: 4px;
     top: 4px;
     bottom: 4px;
-    background: var(--icongradient3);
+    background: linear-gradient(-45deg, var(--darkgray) 50%, rgb(14, 14, 14) 100%);
     opacity: .8;
     border-radius: var(--main-border);
 }
@@ -373,7 +376,7 @@ nav .pages {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: var(--icongradient);
+    background: var(--icongradient2);
     border-radius: var(--main-border);
     margin-left: 11px;
     transition: all .15s ease-in-out;
@@ -657,7 +660,7 @@ nav .pages {
 .skininspect-placeholder .skin-text {
     width: 300px;
     border-radius: 5px 0 0 5px;
-    background-color: rgb(9 9 9);
+    background: rgb(11, 11, 11);
 }
 
 .skininspect-placeholder .skin-text {
@@ -716,7 +719,7 @@ nav .pages {
 }
 
 .email-copy button {
-    background-color: rgb(8 8 8);
+    background: rgb(10, 10, 10);
 }
 
 .email-copy button:hover::after,
@@ -5151,7 +5154,7 @@ nav img {
     align-items: center;
     margin: 0 4px;
     margin-right: 18px;
-    background: var(--icongradient);
+    background: var(--icongradient2);
     box-shadow: 0 1px 2px 0 rgba(13, 13, 13, .4);
     transition: all .15s ease-in-out;
 }
@@ -7192,21 +7195,6 @@ footer .centralizer .footer-content {
     content: unset;
 }
 
-.sitepage .content .review-button:first-child,
-.sitepage .content .review-button:first-child::after,
-.sitepage .content .review-button:first-child::before {
-    background-color: rgb(18 18 18);
-}
-
-.sitepage .content .review-button:hover:first-child,
-.sitepage .content .review-button:hover:first-child::after,
-.sitepage .content .review-button:hover:first-child::before,
-.sitepage.topic .content .review-button:first-child,
-.sitepage.topic .content .review-button:first-child::after,
-.sitepage.topic .content .review-button:first-child::before {
-    background-color: rgb(22 22 22);
-}
-
 .content .review-button.visit::after,
 .content .review-button.visit::before {
     background-color: var(--main-color);
@@ -7396,6 +7384,12 @@ footer .centralizer .footer-content {
     z-index: 1;
 }
 
+header .singlemod-box {
+    flex-grow: unset;
+    position: absolute;
+    left: -64px;
+}
+
 .singlemod-box[data-title]:after {
     content: attr(data-title);
     position: absolute;
@@ -7536,22 +7530,6 @@ footer .centralizer .footer-content {
 
 .mods-box.topic .singlemod-select img {
     width: 50%;
-}
-
-.mods-box:has(.back-button) {
-    top: 18px;
-    left: 260px;
-}
-
-.siteleftpannel .mods-box:has(.back-button) {
-    left: unset;
-    margin-left: -69px;
-    position: fixed;
-    top: 18px;
-}
-
-.nondef:has(.topic-craft) .siteleftpannel .mods-box:has(.back-button) {
-    margin-left: -79px;
 }
 
 .singlemod-select {
@@ -13706,7 +13684,7 @@ header {
     }
 
     .topic-box .content {
-        background-color: rgba(0, 0, 0, .25);
+        background-color: rgba(0, 0, 0, .1);
     }
 
     .box .logobg img {
@@ -13788,12 +13766,11 @@ header {
     }
 
     body {
-        background: unset;
-        background-color: rgb(22 22 22);
+        background: rgb(17 17 17);
     }
 
     .redirect-loader .redirect-card {
-        background-color: rgb(22 22 22);
+        background: rgb(17 17 17);
     }
 
     .mods-box {
@@ -15086,6 +15063,11 @@ header {
 
     nav {
         width: 96%;
+        justify-content: flex-start;
+    }
+
+    .nav-content {
+        margin-left: auto;
     }
 
     .category-selector {
@@ -16929,6 +16911,20 @@ header {
 }
 
 @media screen and (max-width: 1280px) {
+
+    header .singlemod-box {
+        position: relative;
+        left: unset;
+        margin-right: 4px;
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+    }
+
+    header .singlemod-box .singlemod-select img {
+        max-height: 40%;
+        max-width: 50%;
+    }
 
     .skins-category-switch {
         margin: 0 65px;

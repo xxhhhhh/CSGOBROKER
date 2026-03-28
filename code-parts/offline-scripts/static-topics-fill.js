@@ -2354,6 +2354,172 @@ async function processItemsNavStaticFill({ root, file, html, verbose }){
   return { html, changed:false };
 }
 
+// ---------------- HEADER BACK BUTTON (/topic/* only) ----------------
+function normalizeUrlPathForMatch(urlPath){
+  if (!urlPath) return "";
+  return urlPath === "/" ? "/" : urlPath.replace(/\/+$/, "");
+}
+
+function getTopicBackHref(urlPath){
+  const p = normalizeUrlPathForMatch(urlPath);
+
+  const isRu = p.startsWith("/ru/topic");
+  const base = isRu ? "/ru/topic" : "/topic";
+
+  // только /topic/* и /ru/topic/*
+  if (!p.startsWith(base)) return null;
+  if (p === base) return null;
+
+  // более специфичные правила — выше
+  if (new RegExp(`^${base}/items-type/[^/]+$`, "i").test(p)) {
+    return `${base}/items`;
+  }
+
+  if (new RegExp(`^${base}/items/[^/]+$`, "i").test(p)) {
+    return `${base}/items`;
+  }
+
+  if (new RegExp(`^${base}/skins/[^/]+$`, "i").test(p)) {
+    return `${base}/skins`;
+  }
+
+  if (new RegExp(`^${base}/stickers/[^/]+$`, "i").test(p)) {
+    return `${base}/items`;
+  }
+
+  if (new RegExp(`^${base}/sticker-crafts/[^/]+$`, "i").test(p)) {
+    return `${base}/sticker-crafts`;
+  }
+
+  if (new RegExp(`^${base}/charms/[^/]+$`, "i").test(p)) {
+    return `${base}/items`;
+  }
+
+  if (new RegExp(`^${base}/collections/[^/]+$`, "i").test(p)) {
+    return `${base}/items-type/collections`;
+  }
+
+  if (new RegExp(`^${base}/cases/[^/]+$`, "i").test(p)) {
+    return `${base}/items-type/cases`;
+  }
+
+  // fallback для одноуровневых страниц
+  if (new RegExp(`^${base}/[^/]+$`, "i").test(p)) {
+    return base;
+  }
+
+  return null;
+}
+
+function renderTopicBackButtonHtml({ indent, nl, href }){
+  return [
+    `${indent}<div class="singlemod-box">`,
+    `${indent}  <a href="${escapeAttrDblNoApos(href)}" class="singlemod-select back-button">`,
+    `${indent}    <img src="/img/icons/back.webp" alt="Back Button">`,
+    `${indent}  </a>`,
+    `${indent}</div>`
+  ].join(nl);
+}
+
+function stripBackButtonBlocks(inner){
+  return inner.replace(
+    /(?:^[ \t]*\r?\n)?[ \t]*<div\b[^>]*class\s*=\s*(?:"[^"]*\bsinglemod-box\b[^"]*"|'[^']*\bsinglemod-box\b[^']*')[^>]*>\s*[\s\S]*?<a\b[^>]*class\s*=\s*(?:"[^"]*\bback-button\b[^"]*"|'[^']*\bback-button\b[^']*')[^>]*>[\s\S]*?<\/a>\s*<\/div>[ \t]*(?:\r?\n)?/gi,
+    ""
+  );
+}
+
+function findFirstTagInRange(masked, tag, from = 0, to = masked.length){
+  const needle = `<${String(tag).toLowerCase()}`;
+  let idx = from;
+
+  while (idx < to){
+    const pos = masked.toLowerCase().indexOf(needle, idx);
+    if (pos === -1 || pos >= to) return null;
+
+    const { end } = readTag(masked, pos);
+    const closeStart = findMatchingClose(masked, end, tag);
+    if (closeStart === -1) {
+      idx = end;
+      continue;
+    }
+
+    return {
+      tag,
+      openStart: pos,
+      openEnd: end,
+      closeStart,
+      closeEnd: closeStart + (`</${tag}>`).length,
+    };
+  }
+
+  return null;
+}
+
+function findHeaderNavTarget(html){
+  const masked = maskSegments(html);
+  const header = findFirstTagInRange(masked, "header");
+  if (!header) return null;
+
+  const nav = findFirstTagInRange(masked, "nav", header.openEnd, header.closeStart);
+  return nav || null;
+}
+
+async function processTopicHeaderBackButton({ root, file, html, verbose }){
+  const urlPath = fileToUrlPath(root, file);
+  const normalized = normalizeUrlPathForMatch(urlPath);
+
+  // только /topic/* и /ru/topic/*
+  if (!normalized.startsWith("/topic") && !normalized.startsWith("/ru/topic")) {
+    return { html, changed:false };
+  }
+
+  const nl = html.includes("\r\n") ? "\r\n" : "\n";
+  const target = findHeaderNavTarget(html);
+  if (!target) return { html, changed:false };
+
+  const href = getTopicBackHref(normalized);
+
+  const openEnd = target.openEnd;
+  const closeStart = target.closeStart;
+  const baseIndent = indentBefore(html, openEnd, nl);
+  const itemIndent = baseIndent + "  ";
+
+  const inner = html.slice(openEnd, closeStart);
+  const cleanedInner = stripBackButtonBlocks(inner).replace(/^(?:[ \t]*\r?\n)+/, "");
+
+  let replacementInner = "";
+
+  // если для страницы кнопка не нужна — просто удаляем старую, если была
+  if (!href) {
+    replacementInner = cleanedInner
+      ? (nl + cleanedInner.replace(/^\r?\n+/, ""))
+      : (nl + baseIndent);
+  } else {
+    const buttonHtml = renderTopicBackButtonHtml({
+      indent: itemIndent,
+      nl,
+      href,
+    });
+
+    replacementInner = cleanedInner
+      ? (nl + buttonHtml + nl + cleanedInner.replace(/^\r?\n+/, ""))
+      : (nl + buttonHtml + nl + baseIndent);
+  }
+
+  const next = html.slice(0, openEnd) + replacementInner + html.slice(closeStart);
+
+  if (next !== html){
+    if (verbose) {
+      console.log(
+        `[OK] ${path.relative(root, file)} :: header back-button ${href ? `inserted (${href})` : "removed"}`
+      );
+    }
+    return { html: next, changed:true };
+  }
+
+  return { html, changed:false };
+}
+
 // ---------------- MAIN ----------------
 (async function main(){
   const { root, dry, verbose, prices, paths } = parseArgs(process.argv.slice(2));
@@ -2426,6 +2592,12 @@ async function processItemsNavStaticFill({ root, file, html, verbose }){
       // 8) topic-filter вставка/ремонт
       {
         const res = await processTopicFilters({ root, file, html, verbose });
+        if (res.changed) html = res.html;
+      }
+
+      // 8.5) back-button в header nav только для /topic/*
+      {
+        const res = await processTopicHeaderBackButton({ root, file, html, verbose });
         if (res.changed) html = res.html;
       }
 
