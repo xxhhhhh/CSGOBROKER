@@ -1396,6 +1396,29 @@ nav .pages {
     opacity: 0;
 }
 
+.skin-amount {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 600;
+    position: absolute;
+    text-wrap: nowrap;
+    right: 15px;
+    top: 15px;
+    width: 24px;
+    height: 24px;
+    border-radius: var(--main-border);
+    background: var(--darkgray);
+    transition: all .15s ease-in-out;
+    justify-content: center;
+    opacity: .75;
+}
+
+.skin-amount::before {
+    content: 'x';
+    position: relative;
+}
+
 @keyframes PriceAppear {
     0% {
         transform: translateX(-50%) scale(1.05);
@@ -1408,8 +1431,16 @@ nav .pages {
     }
 }
 
-.skin-price-info .souvenir-price-info {
+.skin:hover .skin-price-info .souvenir-price-info {
     color: #ffd700;
+}
+
+.skin:hover .skin-price-info.stattrak {
+    color: #f89406; 
+}
+
+.showprice .skin-price-info.stattrak {
+    opacity: 1 !important;
 }
 
 .box-skins.solo .box-skins-list .skin .skin-price-info {
@@ -4680,6 +4711,11 @@ nav img {
     user-select: none;
 }
 
+.inventories .item-topic-grandbox .logobg img {
+    height: 210%;
+    margin-top: 100px;
+}
+
 .sitepage.items .topic-grandbox {
     height: auto;
     min-height: unset;
@@ -7388,6 +7424,10 @@ header .singlemod-box {
     flex-grow: unset;
     position: absolute;
     left: -64px;
+}
+
+header .singlemod-box .singlemod-select img {
+    width: 45%;
 }
 
 .singlemod-box[data-title]:after {

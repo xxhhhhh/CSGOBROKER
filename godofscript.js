@@ -1558,14 +1558,7 @@ boxes.forEach((box) => {
 
 document.addEventListener("DOMContentLoaded", function () {
   if (
-    !window.location.pathname.includes("/skins/") &&
-    !window.location.pathname.includes("/items/") &&
-    !window.location.pathname.includes("/cases/") &&
-    !window.location.pathname.includes("/charms/") &&
-    !window.location.pathname.includes("/stickers/") &&
-    !window.location.pathname.includes("/collections/") &&
-    !window.location.pathname.includes("/guides/") &&
-    !window.location.pathname.includes("/sticker-crafts/") &&
+    !window.location.pathname.includes("/topic/") &&
     !window.location.pathname.includes("/reviews") &&
     !window.location.pathname.includes("/mirrors") &&
     !window.location.pathname.includes("/privacy-policy") &&

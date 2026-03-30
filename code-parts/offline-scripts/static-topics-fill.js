@@ -17,11 +17,15 @@
 //      /topic/items-type/cases
 //      /topic/items-type/charms
 //      /topic/items-type/collections
+//      /topic/items-type/sticker-capsules
+//      /topic/items-type/autograph-capsules
 //      и /ru/ версий этих страниц
 //      из:
 //      /code-parts/topics/cases.json
 //      /code-parts/topics/charms.json
 //      /code-parts/topics/collections.json
+//      /code-parts/topics/sticker-capsules.json
+//      /code-parts/topics/autograph-capsules.json
 // ---------------------------------------------------------------------------
 // NOTE (why): финальный no-op guard предотвращает лишние перезаписи файлов,
 // когда промежуточные шаги временно меняют контент, но итог возвращается к исходному.
@@ -43,6 +47,8 @@ const ITEMS_TYPE_TOPICS_FILES = {
   cases: "/code-parts/topics/cases.json",
   charms: "/code-parts/topics/charms.json",
   collections: "/code-parts/topics/collections.json",
+  "sticker-capsules": "/code-parts/topics/sticker-capsules.json",
+  "autograph-capsules": "/code-parts/topics/autograph-capsules.json",
 };
 
 const RU_BOX_TITLE_MAP = new Map([
@@ -1490,8 +1496,12 @@ async function processTopicFilters({ root, file, html, verbose }){
 
 // ---------------- ITEMS-TYPE PAGES ----------------
 function detectItemsTypeIndexContext(urlPath){
-  const m = urlPath.match(/^\/(ru\/)?topic\/items-type\/(cases|charms|collections)\/?$/i);
+  const m = urlPath.match(
+    /^\/(ru\/)?topic\/items-type\/(cases|charms|collections|sticker-capsules|autograph-capsules)\/?$/i
+  );
+
   if (!m) return null;
+
   return {
     isRu: Boolean(m[1]),
     topicType: m[2].toLowerCase(),
@@ -1522,11 +1532,16 @@ function normalizeItemsTypeCard(item, topicType, isRu){
     item.topicId ??
     "";
 
+  const pathType =
+    topicType === "sticker-capsules" || topicType === "autograph-capsules"
+      ? "stickers"
+      : topicType;
+
   const hrefRaw =
     item.href ??
     item.url ??
     item.path ??
-    `/topic/${topicType}/${slug}`;
+    `/topic/${pathType}/${slug}`;
 
   let href = String(hrefRaw || "").trim();
   if (!href.startsWith("/")) href = "/" + href.replace(/^\/+/, "");
@@ -2387,6 +2402,10 @@ function getTopicBackHref(urlPath){
     return `${base}/items`;
   }
 
+  if (new RegExp(`^${base}/sticker-crafts/skin/[^/]+$`, "i").test(p)) {
+    return `${base}/sticker-crafts`;
+  }
+
   if (new RegExp(`^${base}/sticker-crafts/[^/]+$`, "i").test(p)) {
     return `${base}/sticker-crafts`;
   }
@@ -2583,7 +2602,12 @@ async function processTopicHeaderBackButton({ root, file, html, verbose }){
         if (res.changed) html = res.html;
       }
 
-      // 7) items-type pages: /items-type/cases, /items-type/charms, /items-type/collections
+      // 7) items-type pages:
+      //    /items-type/cases
+      //    /items-type/charms
+      //    /items-type/collections
+      //    /items-type/sticker-capsules
+      //    /items-type/autograph-capsules
       {
         const res = await processItemsTypeTopicBoxesPages({ root, file, html, verbose });
         if (res.changed) html = res.html;

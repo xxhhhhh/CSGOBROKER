@@ -1,15 +1,16 @@
 $(document).ready(function () {
   const currentPath = window.location.pathname;
   if (
-    currentPath.includes("/topic/items/") ||
-    currentPath.includes("/topic/stickers/") ||
-    currentPath.includes("/topic/cases/") ||
-    currentPath.includes("/topic/charms/") ||
-    currentPath.includes("/topic/collections/") ||
-    currentPath.includes("/topic/skins/") ||
-    currentPath.includes("/topic/guides/") ||
-    currentPath.includes("/topic/sticker-crafts/") &&
-    !currentPath.includes("/topic/sticker-crafts/skin/") ||
+    currentPath.includes("items/") ||
+    currentPath.includes("stickers/") ||
+    currentPath.includes("cases/") ||
+    currentPath.includes("players/inventories/") ||
+    currentPath.includes("charms/") ||
+    currentPath.includes("collections/") ||
+    currentPath.includes("skins/") ||
+    currentPath.includes("guides/") ||
+    currentPath.includes("sticker-crafts/") &&
+    !currentPath.includes("sticker-crafts/skin/") ||
     currentPath.endsWith("sticker-crafts.html") ||
     currentPath.endsWith("sticker-crafts")
   ) {
@@ -292,6 +293,9 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
   function normalizeName(str) {
     return String(str || "")
       .replace(/^★\s*/, "")
+      .replace(/StatTrak™/gi, "StatTrak")
+      .replace(/Souvenir/gi, "Souvenir")
+      .replace(/[™®]/g, "")
       .replace(/\s+/g, " ")
       .trim();
   }
@@ -323,6 +327,19 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
     return false;
   }
 
+  function hasExterior(name) {
+    const n = normalizeName(name);
+    return /\((Factory New|Minimal Wear|Field-Tested|Well-Worn|Battle-Scarred)\)$/i.test(n);
+  }
+
+  function isStatTrakName(name) {
+    return /StatTrak/i.test(normalizeName(name));
+  }
+
+  function isSouvenirName(name) {
+    return /^Souvenir\b/i.test(normalizeName(name));
+  }
+
   async function fetchSkinPrices() {
     const now = Date.now();
     if (_skinCache.data && now - _skinCache.ts < _skinCache.ttl) {
@@ -347,9 +364,8 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
       const skins = await res.json();
       const data = Array.isArray(skins) ? skins : [];
 
-      // ===== Строим индекс один раз =====
-      const exactMap = new Map();   // точное совпадение имени
-      const partialList = [];       // только записи с "|" для мягкого поиска
+      const exactMap = new Map();
+      const partialList = [];
 
       for (const item of data) {
         const rawName = item && item.name ? item.name : "";
@@ -358,7 +374,9 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
         const entry = {
           name,
-          isSouvenir: name.startsWith("Souvenir"),
+          isSouvenir: /^Souvenir\b/i.test(name),
+          isStatTrak: /\bStatTrak\b/i.test(name),
+          isStickerSlab: /^Sticker Slab\s*\|/i.test(name),
           min: toNum(item.min_price),
           max: toNum(item.max_price),
         };
@@ -367,7 +385,6 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
         exactMap.set(name, entry);
 
-        // Для includes-поиска нужны только "полные" названия с |
         if (name.includes("|")) {
           partialList.push(entry);
         }
@@ -384,8 +401,15 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
     }
   }
 
-  function buildHtmlFromEntries(entries) {
-    if (!entries || !entries.length) return "";
+  function buildPriceParts(entries, options = {}) {
+    if (!entries || !entries.length) {
+      return { normalText: "", souvenirText: "" };
+    }
+
+    const {
+      allowNormal = true,
+      allowSouvenir = true,
+    } = options;
 
     const normal = [];
     const souvenir = [];
@@ -395,9 +419,10 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
       else normal.push(e);
     }
 
-    let html = "";
+    let normalText = "";
+    let souvenirText = "";
 
-    if (normal.length) {
+    if (allowNormal && normal.length) {
       const mins = [];
       const maxs = [];
 
@@ -408,11 +433,10 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
       const min = mins.length ? Math.min(...mins) : null;
       const max = maxs.length ? Math.max(...maxs) : null;
-      const text = formatRange(min, max);
-      if (text) html += text;
+      normalText = formatRange(min, max);
     }
 
-    if (souvenir.length) {
+    if (allowSouvenir && souvenir.length) {
       const mins = [];
       const maxs = [];
 
@@ -423,14 +447,10 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
       const min = mins.length ? Math.min(...mins) : null;
       const max = maxs.length ? Math.max(...maxs) : null;
-      const text = formatRange(min, max);
-
-      if (text) {
-        html += `<div class="souvenir-price-info">${text}</div>`;
-      }
+      souvenirText = formatRange(min, max);
     }
 
-    return html;
+    return { normalText, souvenirText };
   }
 
   function findMatches(name, priceData) {
@@ -441,12 +461,13 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
     if (strictMatch) {
       const exact = priceData.exactMap.get(normalizedName);
-      return exact ? [exact] : [];
+      if (!exact || exact.isStickerSlab) return [];
+      return [exact];
     }
 
-    // Мягкий поиск только по partialList, а не по всему JSON
     const out = [];
     for (const item of priceData.partialList) {
+      if (item.isStickerSlab) continue;
       if (item.name.includes(normalizedName)) out.push(item);
     }
     return out;
@@ -459,7 +480,6 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
     const priceData = await fetchSkinPrices();
     if (!priceData) return;
 
-    // Сначала вычисляем всё в памяти, почти без DOM-операций
     const pending = [];
 
     for (const skinEl of skins) {
@@ -469,16 +489,35 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
       const name = normalizeName(nameEl ? nameEl.textContent : "");
       if (!name) continue;
 
-      const matched = findMatches(name, priceData);
+      const nameHasExterior = hasExterior(name);
+      const nameIsStatTrak = isStatTrakName(name);
+      const nameIsSouvenir = isSouvenirName(name);
+
+      let matched = findMatches(name, priceData);
       if (!matched.length) continue;
 
-      const html = buildHtmlFromEntries(matched);
-      if (!html) continue;
+      if (nameHasExterior && !nameIsStatTrak) {
+        matched = matched.filter(item => !item.isStatTrak);
+      }
 
-      pending.push({ skinEl, html });
+      if (!matched.length) continue;
+
+      const parts = buildPriceParts(matched, {
+        allowNormal: !nameIsSouvenir,
+        allowSouvenir: !nameHasExterior,
+      });
+
+      if (!parts.normalText && !parts.souvenirText) continue;
+
+      pending.push({
+        skinEl,
+        normalText: parts.normalText,
+        souvenirText: parts.souvenirText,
+        addStatTrakClass: nameIsStatTrak,
+        isSouvenirCard: nameIsSouvenir,
+      });
     }
 
-    // Обновляем DOM батчами, чтобы не морозить страницу
     const BATCH_SIZE = 30;
     let i = 0;
 
@@ -486,14 +525,49 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
       const end = Math.min(i + BATCH_SIZE, pending.length);
 
       for (; i < end; i++) {
-        const { skinEl, html } = pending[i];
-        const priceEl = skinEl.querySelector(".skin-price-info");
+        const {
+          skinEl,
+          normalText,
+          souvenirText,
+          addStatTrakClass,
+          isSouvenirCard,
+        } = pending[i];
 
-        if (priceEl) {
-          priceEl.classList.remove("loading");
-          priceEl.innerHTML = html;
+        let priceEl = skinEl.querySelector(".skin-price-info");
+
+        if (!priceEl) {
+          skinEl.insertAdjacentHTML("beforeend", `<div class="skin-price-info"></div>`);
+          priceEl = skinEl.querySelector(".skin-price-info:last-of-type");
+        }
+
+        if (!priceEl) continue;
+
+        priceEl.classList.remove("loading");
+
+        if (!isSouvenirCard) {
+          priceEl.textContent = normalText || "";
         } else {
-          skinEl.insertAdjacentHTML("beforeend", `<div class="skin-price-info">${html}</div>`);
+          priceEl.textContent = "";
+        }
+
+        if (addStatTrakClass) {
+          priceEl.classList.add("stattrak");
+        } else {
+          priceEl.classList.remove("stattrak");
+        }
+
+        let souvenirEl = priceEl.querySelector(".souvenir-price-info");
+
+        if (souvenirText) {
+          if (!souvenirEl) {
+            priceEl.insertAdjacentHTML("beforeend", `<div class="souvenir-price-info"></div>`);
+            souvenirEl = priceEl.querySelector(".souvenir-price-info");
+          }
+          if (souvenirEl) {
+            souvenirEl.textContent = souvenirText;
+          }
+        } else if (souvenirEl) {
+          souvenirEl.remove();
         }
       }
 
@@ -1283,6 +1357,7 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
       currentPath.includes("/items/") ||
       currentPath.includes("/stickers/") ||
       currentPath.includes("/cases/") ||
+      currentPath.includes("/players/inventories/") ||
       currentPath.includes("/charms/") ||
       currentPath.includes("/skins/") ||
       currentPath.includes("/collections/")
