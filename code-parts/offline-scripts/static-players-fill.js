@@ -245,6 +245,7 @@ function looksLikeAgentItem(item){
     "swat",
     "fbi",
     "seal team 6",
+    "nzsas",
     "ksk",
     "gendarmerie nationale",
     "sas",
@@ -269,9 +270,11 @@ function normalizeAgentGroupSlug(groupName = ""){
     "SWAT": "fbi",
     "FBI": "fbi",
 
+
     "SEAL Team 6": "seal-team-6",
     "KSK": "ksk",
     "Gendarmerie Nationale": "gendarmerie-nationale",
+    "nzsas": "sas",
     "SAS": "sas",
     "NSWC SEAL": "nswc-seal",
   };
@@ -1145,12 +1148,11 @@ function buildResolvedDisplayName(rawName, resolvedSkinId){
   const exteriorMatch = raw.match(/\s+\((Factory New|Minimal Wear|Field-Tested|Well-Worn|Battle-Scarred)\)\s*$/i);
   const exterior = exteriorMatch ? exteriorMatch[0] : "";
 
-  const { hasStar, hasStatTrak, hasSouvenir } = getInventoryNamePrefixes(raw);
+  const { hasStatTrak, hasSouvenir } = getInventoryNamePrefixes(raw);
 
   let left = weaponName;
   if (hasSouvenir) left = `Souvenir ${left}`;
   if (hasStatTrak) left = `StatTrak™ ${left}`;
-  if (hasStar) left = `★ ${left}`;
 
   let right = String(resolvedSkinId || "").trim();
 

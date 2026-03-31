@@ -4734,6 +4734,11 @@ nav img {
     margin-top: 70px;
 }
 
+.inventories .item-topic-grandbox .logobg.nonhltv img {
+    height: 150%;
+    margin-top: 10px !important;
+}
+
 .sitepage.items .topic-grandbox {
     height: auto;
     min-height: unset;
@@ -13247,7 +13252,20 @@ header {
     }
 
     .box-skins.solo .box-skins-list .skin .skin-price-info {
-        margin-left: 14px;
+        z-index: 10;
+    }
+
+    .box-skins.solo .skin::after {
+        top: unset;
+        bottom: 15px;
+    }
+
+    .sitepage.items .box-skins .skin::before {
+        left: -35px;
+        bottom: -14px;
+        top: 70px;
+        transform: rotate(280deg);
+        height: 200px;
     }
 
     .preview-extras .skin-price-info {
@@ -16029,7 +16047,7 @@ header {
     }
 
     .sitepage.items .box-skins.solo .box-skins-list .skin {
-        height: 120px;
+        height: auto;
         width: 30%;
         max-width: 200px;
         flex-grow: 1;
