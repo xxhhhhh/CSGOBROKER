@@ -2206,7 +2206,7 @@ async function loadItemsNav(root){
 }
 
 function detectItemsNavContext(urlPath){
-  const m = urlPath.match(/^\/(ru\/)?topic\/(items|stickers|cases|charms|collections)(?:\/|$)/i);
+  const m = urlPath.match(/^\/(ru\/)?topic\/((items|stickers|cases|charms|collections)|players\/inventories)(?:\/|$)/i);
   if (!m) return null;
 
   return {
@@ -2273,8 +2273,7 @@ function getItemsNavFilterTitle(filter, isRu){
 }
 
 function renderItemsNavFirstSection(types, { indent, nl, isRu, section, availableSkinTypes = null }){
-  const lines = [];
-  lines.push(`${indent}<div class="section first">`);
+  const items = [];
 
   for (const type of types){
     const cls = String(type?.class || "").trim();
@@ -2288,8 +2287,32 @@ function renderItemsNavFirstSection(types, { indent, nl, isRu, section, availabl
 
     const stateClass = exists ? "enabled" : "notexist";
 
+    items.push({
+      cls,
+      title,
+      exists,
+      stateClass,
+    });
+  }
+
+  const enabledCount = items.filter(item => item.exists).length;
+
+  const lines = [];
+  lines.push(`${indent}<div class="section first">`);
+
+  for (const item of items){
+    const extraClasses = [
+      "navigation-weapon-type",
+      item.cls,
+      item.stateClass,
+    ];
+
+    if (enabledCount === 1 && item.exists) {
+      extraClasses.push("solo-category");
+    }
+
     lines.push(
-      `${indent}  <div class="navigation-weapon-type ${escapeAttrDblNoApos(cls)} ${stateClass}">${escapeHtml(title)}</div>`
+      `${indent}  <div class="${escapeAttrDblNoApos(extraClasses.join(" "))}">${escapeHtml(item.title)}</div>`
     );
   }
 
