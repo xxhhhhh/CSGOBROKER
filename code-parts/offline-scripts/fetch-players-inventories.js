@@ -43,6 +43,7 @@ const PLAYERS = [
   { nickname: "KSCERATO", steamid64: "76561198058500492" },
   { nickname: "molodoy", steamid64: "76561198200982290" },
   { nickname: "StRoGo", steamid64: "76561198132414056" },
+  { nickname: "deko", steamid64: "76561198287546191" },
   { nickname: "Evelone192", steamid64: "76561198254034941" },
   { nickname: "Brollan", steamid64: "76561198138828475" },
   { nickname: "torzsi", steamid64: "76561198355739212" },

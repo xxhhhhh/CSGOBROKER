@@ -599,6 +599,11 @@ $(document).ready(function(){
 window.onload = function () {
   (function () {
     const pathname = window.location.pathname;
+
+    function isRuPage(pathname) {
+      return pathname.startsWith('/ru/') || pathname === '/ru' || pathname === '/ru.html';
+    }
+
     const excludedPaths = [
       '/ru/reviews',
       '/ru/mirrors',
@@ -608,27 +613,27 @@ window.onload = function () {
       '/contact-us',
       '/responsibility'
     ];
+
     const isExcludedPath = excludedPaths.some(path => pathname.includes(path));
 
     let buttonsContainer = document.querySelector('.buttons-container-page');
     let parentElement = document.querySelector('.ssiodox');
-    
+
     if (!buttonsContainer) {
       buttonsContainer = document.createElement('div');
       buttonsContainer.className = 'buttons-container-page';
-    
+
       if (parentElement) {
         parentElement.appendChild(buttonsContainer);
-      } else {
       }
     }
-    
-    if (isRuPage && !isExcludedPath && !document.querySelector('#button-route-filter')) {
+
+    if (isRuPage(pathname) && !isExcludedPath && !document.querySelector('#button-route-filter')) {
       const routeButtonContainer = document.createElement('div');
       routeButtonContainer.className = 'settings-menu';
       routeButtonContainer.innerHTML =
         '<div class="settings-button" id="button-route-filter" data-title="Скрыть сайты с Ограниченным Доступом"><i id="globe-icon" class="officon route-shield"></i></div>';
-    
+
       buttonsContainer.appendChild(routeButtonContainer);
     
       const routeIcon = document.getElementById('globe-icon');
