@@ -369,6 +369,14 @@ async function loadWeaponJson(root, weapon){
   return weaponCache.get(weapon);
 }
 
+async function hasPresetForTopic(root, topicId){
+  const meta = await loadTopicPresetMeta(root, topicId);
+  return Boolean(
+    (Array.isArray(meta?.itemsRaw) && meta.itemsRaw.length) ||
+    (Array.isArray(meta?.showcaseRaw) && meta.showcaseRaw.length)
+  );
+}
+
 async function listWeaponJsonFiles(root){
   if (listWeaponJsonFilesCache.has(root)) return listWeaponJsonFilesCache.get(root);
 
@@ -521,21 +529,28 @@ function renderSkinBlock({tag = "div", indent, nl, weapon, skinId, skinData, pri
 }
 
 // ---------------- BOX-SKINS-LIST (mode 1/2) ----------------
-function detectAutoImportContext(urlPath, settings){
+async function detectAutoImportContext(root, urlPath){
   const m = urlPath.match(/\/(?:ru\/)?topic\/(items|collections|cases|stickers|charms)\/([^\/]+)(?:\/|$)/i);
   if (!m) return null;
 
   const section = m[1].toLowerCase();
   const topicId = m[2];
-  let mode = settings?.[topicId];
 
-  if (!mode) {
-    if (section === "collections" || section === "cases") mode = 2;
-    if (section === "stickers" || section === "charms") mode = 1;
+  // 1) если есть одноимённый preset -> всегда mode 2
+  if (await hasPresetForTopic(root, topicId)) {
+    return { section, topicId, mode: 2 };
   }
 
-  if (!mode) return null;
-  return { section, topicId, mode };
+  // 2) старые дефолты по секциям
+  if (section === "collections" || section === "cases") {
+    return { section, topicId, mode: 2 };
+  }
+
+  if (section === "stickers" || section === "charms") {
+    return { section, topicId, mode: 1 };
+  }
+
+  return null;
 }
 
 // ---- slug/token helpers (fallback derive) ----
@@ -1033,10 +1048,10 @@ async function buildSkinsListForTopic(root, ctx, pricesState, { verbose=false } 
   };
 }
 
-async function processBoxSkinsLists({ root, file, html, pricesState, settings, verbose }){
+async function processBoxSkinsLists({ root, file, html, pricesState, verbose }){
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const urlPath = fileToUrlPath(root, file);
-  const ctx = detectAutoImportContext(urlPath, settings);
+  const ctx = await detectAutoImportContext(root, urlPath);
   if (!ctx) return { html, changed:false };
 
   const masked = maskSegments(html);
@@ -2056,6 +2071,7 @@ async function processTopicNavStaticFill({ root, file, html, verbose }){
     normalizedPath.includes("/charms/") ||
     normalizedPath.includes("/stickers/") ||
     normalizedPath.includes("/collections/") ||
+    normalizedPath.includes("/players/inventories/") ||
     normalizedPath.includes("/skins/");
 
   if (!shouldInjectNav) return { html, changed:false };
@@ -2546,7 +2562,6 @@ async function processTopicHeaderBackButton({ root, file, html, verbose }){
   const files = await listHtmlFiles(root);
   const urlToFile = new Map(files.map(f => [fileToUrlPath(root, f), f]));
 
-  const settings = await safeJsonCached(abs(root, SETTINGS_FILE)) || {};
   const pricesArr = await loadPrices(prices);
   const pricesState = buildPricesState(pricesArr);
 
@@ -2568,7 +2583,7 @@ async function processTopicHeaderBackButton({ root, file, html, verbose }){
 
       // 1) .box-skins-list
       {
-        const res = await processBoxSkinsLists({ root, file, html, pricesState, settings, verbose });
+        const res = await processBoxSkinsLists({ root, file, html, pricesState, verbose });
         if (res.changed) html = res.html;
       }
 
@@ -2584,25 +2599,19 @@ async function processTopicHeaderBackButton({ root, file, html, verbose }){
         if (res.changed) html = res.html;
       }
 
-      // 4) зеркалирование /topic/skins/* и /topic/items/* -> /ru/topic/*
-      {
-        const res = await processRuMirrorPages({ root, file, html, urlToFile, verbose });
-        if (res.changed) html = res.html;
-      }
-
-      // 5) extra-list блоки на /topic/cases/<slug> -> <slug>-gloves / <slug>-knives
+      // 4) extra-list блоки на /topic/cases/<slug> -> <slug>-gloves / <slug>-knives
       {
         const res = await processCaseExtraVariantLinks({ root, file, html, urlToFile, verbose });
         if (res.changed) html = res.html;
       }
 
-      // 6) одиночные плейсхолдеры .skin (+ ремонт уже записанных блоков)
+      // 5) одиночные плейсхолдеры .skin (+ ремонт уже записанных блоков)
       {
         const res = await processSkinPlaceholders({ root, html, pricesState, verbose, file });
         if (res.changed) html = res.html;
       }
 
-      // 7) items-type pages:
+      // 6) items-type pages:
       //    /items-type/cases
       //    /items-type/charms
       //    /items-type/collections
@@ -2613,27 +2622,33 @@ async function processTopicHeaderBackButton({ root, file, html, verbose }){
         if (res.changed) html = res.html;
       }
 
-      // 8) topic-filter вставка/ремонт
+      // 7) topic-filter вставка/ремонт
       {
         const res = await processTopicFilters({ root, file, html, verbose });
         if (res.changed) html = res.html;
       }
 
-      // 8.5) back-button в header nav только для /topic/*
+      // 7.5) back-button в header nav только для /topic/*
       {
         const res = await processTopicHeaderBackButton({ root, file, html, verbose });
         if (res.changed) html = res.html;
       }
 
-      // 9) static topic nav from topics-nav-items.json
+      // 8) static topic nav from topics-nav-items.json
       {
         const res = await processTopicNavStaticFill({ root, file, html, verbose });
         if (res.changed) html = res.html;
       }
 
-      // 10) items-nav static fill in .topic-grandbox
+      // 9) items-nav static fill in .topic-grandbox
       {
         const res = await processItemsNavStaticFill({ root, file, html, verbose });
+        if (res.changed) html = res.html;
+      }
+
+      // 10) зеркалирование /topic/skins/* и /topic/items/* -> /ru/topic/*
+      {
+        const res = await processRuMirrorPages({ root, file, html, urlToFile, verbose });
         if (res.changed) html = res.html;
       }
 

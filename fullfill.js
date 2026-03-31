@@ -25,6 +25,7 @@ const ORDER = [
   "freebies-fill.js",
   "generate-go-redirects.js",
   "static-pages-fill.js",
+  "static-players-fill.js",
   "alt-langs.js",
   "build-search-config.js",
   "meta-and-sitemap.js",

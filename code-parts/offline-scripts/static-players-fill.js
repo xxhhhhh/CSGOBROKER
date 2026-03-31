@@ -19,8 +19,13 @@ const path = require("path");
 // ---------------- PATHS ----------------
 const PLAYERS_LIST_DIR = "/code-parts/topics/players-data/players-list";
 const PLAYERS_INV_DIR  = "/code-parts/topics/players-data/players-inventories";
-const DEFAULT_TEMPLATE = "/ru/topic/players/inventories/zywoo.html";
-const OUTPUT_DIR       = "/ru/topic/players/inventories";
+
+const DEFAULT_TEMPLATE_RU = "/ru/topic/players/inventories/zywoo.html";
+const DEFAULT_TEMPLATE_EN = "/topic/players/inventories/zywoo.html";
+
+const OUTPUT_DIR_RU = "/ru/topic/players/inventories";
+const OUTPUT_DIR_EN = "/topic/players/inventories";
+
 const WEAPON_JSON_DIR = "/code-parts/topics/skins-list";
 const DOPPLER_MAPPING_FILE = "/code-parts/topics/players-data/doppler-mapping.json";
 const STICKER_CAPSULES_FILE = "/code-parts/topics/sticker-capsules.json";
@@ -110,21 +115,32 @@ async function resolveCharmByFiles(root, item){
 }
 
 function resolveSpecialSkinId(item, parsed, dopplerMap){
-  let skinId = parsed.skinId;
+  const originalSkinId = String(parsed?.skinId || "").trim();
 
-  if (!isSpecialPhaseCandidate(skinId)) {
-    return skinId;
+  if (!isSpecialPhaseCandidate(originalSkinId)) {
+    return originalSkinId;
   }
 
   const keys = buildPhaseLookupKeys(item);
 
   for (const key of keys){
-    if (dopplerMap[key]) {
-      return String(dopplerMap[key]).trim();
+    if (!dopplerMap[key]) continue;
+
+    let mapped = String(dopplerMap[key]).trim();
+    if (!mapped) continue;
+
+    const rawName = String(item?.market_hash_name || item?.name || "").trim();
+    const { hasStatTrak } = getInventoryNamePrefixes(rawName);
+
+    // сохраняем StatTrak у phase-предметов
+    if (hasStatTrak && !/^StatTrak(?:™)?\s*/i.test(mapped)) {
+      mapped = `StatTrak ${mapped}`;
     }
+
+    return mapped;
   }
 
-  return skinId;
+  return originalSkinId;
 }
 
 // ---------------- CLI ----------------
@@ -134,17 +150,18 @@ function parseArgs(argv){
     return i >= 0 ? argv[i + 1] : null;
   };
 
-  const root     = path.resolve(get("--root") ?? process.cwd());
-  const dry      = argv.includes("--dry-run");
-  const verbose  = argv.includes("--verbose");
-  const prices   = get("--prices");
-  const template = get("--template") ?? DEFAULT_TEMPLATE;
-  const only     = (get("--only") ?? "")
+  const root       = path.resolve(get("--root") ?? process.cwd());
+  const dry        = argv.includes("--dry-run");
+  const verbose    = argv.includes("--verbose");
+  const prices     = get("--prices");
+  const templateRu = get("--template-ru") ?? DEFAULT_TEMPLATE_RU;
+  const templateEn = get("--template-en") ?? DEFAULT_TEMPLATE_EN;
+  const only       = (get("--only") ?? "")
     .split(",")
     .map(s => s.trim())
     .filter(Boolean);
 
-  return { root, dry, verbose, prices, template, only };
+  return { root, dry, verbose, prices, templateRu, templateEn, only };
 }
 
 // ---------------- CACHES ----------------
@@ -182,14 +199,117 @@ function parseAgentMarketName(rawName = ""){
 
   if (parts.length < 2) return null;
 
-  const skinId = parts[0];
-  const groupName = parts.slice(1).join(" | ");
+  const left = parts[0];
+  const right = parts.slice(1).join(" | ");
 
   return {
-    skinId,
-    groupName,
+    left,
+    right,
     displayName: pickItemName({ market_hash_name: rawName, amount: 1 }),
   };
+}
+
+function looksLikeAgentItem(item){
+  const rawName = String(item?.market_hash_name || item?.name || "").trim();
+  const type = String(item?.type || "").toLowerCase();
+  const tags = Array.isArray(item?.tags) ? item.tags : [];
+
+  if (type.includes("agent")) return true;
+
+  for (const tag of tags){
+    const cat = String(tag?.category || "").toLowerCase();
+    const name = String(tag?.name || "").toLowerCase();
+
+    if (cat.includes("type") && name.includes("agent")) return true;
+    if (cat.includes("character")) return true;
+  }
+
+  if (!rawName.includes(" | ")) return false;
+
+  const parsed = parseAgentMarketName(rawName);
+  if (!parsed) return false;
+
+  const right = String(parsed.right || "").trim();
+
+  if (/^FBI\b/i.test(right)) return true;
+  if (/^USAF\b/i.test(right)) return true;
+
+  const knownGroups = new Set([
+    "usaf tacp",
+    "seal frogman",
+    "sabre",
+    "the professionals",
+    "phoenix",
+    "fbi swat",
+    "fbi hrt",
+    "swat",
+    "fbi",
+    "seal team 6",
+    "ksk",
+    "gendarmerie nationale",
+    "sas",
+    "nswc seal",
+  ]);
+
+  return knownGroups.has(right.toLowerCase());
+}
+
+function normalizeAgentGroupSlug(groupName = ""){
+  const g = String(groupName).trim();
+
+  const directMap = {
+    "USAF TACP": "tacp",
+    "SEAL Frogman": "seal-frogman",
+    "Sabre": "sabre",
+    "The Professionals": "the-professionals",
+    "Phoenix": "phoenix",
+
+    "FBI SWAT": "fbi",
+    "FBI HRT": "fbi",
+    "SWAT": "fbi",
+    "FBI": "fbi",
+
+    "SEAL Team 6": "seal-team-6",
+    "KSK": "ksk",
+    "Gendarmerie Nationale": "gendarmerie-nationale",
+    "SAS": "sas",
+    "NSWC SEAL": "nswc-seal",
+  };
+
+  if (directMap[g]) return directMap[g];
+
+  return toSlug(g);
+}
+
+function buildAgentKeyVariants(left = "", right = ""){
+  const l = String(left).trim();
+  const r = String(right).trim();
+
+  const variants = [];
+
+  if (l) variants.push(l);
+
+  // "'Two Times' McCoy | USAF TACP" -> "'Two Times' McCoy (USAF)"
+  if (/^USAF\b/i.test(r) && !/\(USAF\)/i.test(l)) {
+    variants.push(`${l} (USAF)`);
+  }
+
+  // FBI варианты
+  // "Markus Delrow | FBI HRT" -> "Markus Delrow"
+  // "Operator | FBI SWAT" -> "Operator"
+  if (/^FBI\b/i.test(r)) {
+    variants.push(`${l} (FBI)`);
+    variants.push(`${l} (FBI HRT)`);
+    variants.push(`${l} (FBI SWAT)`);
+  }
+
+  // Иногда ключи могут лежать и в полном виде
+  if (l && r) {
+    variants.push(`${l} | ${r}`);
+    variants.push(`${l} (${r})`);
+  }
+
+  return [...new Set(variants.filter(Boolean))];
 }
 
 async function resolveAgentByGroup(root, item){
@@ -197,25 +317,69 @@ async function resolveAgentByGroup(root, item){
   const parsed = parseAgentMarketName(rawName);
   if (!parsed) return null;
 
-  const weapon = `agent-${toSlug(parsed.groupName)}`;
-  const weaponMap = await loadWeaponJson(root, weapon);
-  if (!weaponMap || typeof weaponMap !== "object") return null;
-
-  const matched = weaponMap?.[parsed.skinId];
-  if (!matched) return null;
-
+  const groupSlug = normalizeAgentGroupSlug(parsed.right);
   const amount = Number(item?.amount || 1) || 1;
-  const displayName = amount > 1 ? `${parsed.displayName} ×${amount}` : parsed.displayName;
+  const displayName = amount > 1
+    ? `${parsed.displayName} ×${amount}`
+    : parsed.displayName;
 
-  return {
-    weapon,
-    skinId: parsed.skinId,
-    skinData: {
-      name: displayName,
-      image: matched?.image || "",
-      class: matched?.class || detectItemClass(item),
+  const weaponCandidates = [
+    `agents-${groupSlug}`,
+    `agent-${groupSlug}`, // fallback для старых файлов
+  ];
+
+  const keyVariants = buildAgentKeyVariants(parsed.left, parsed.right);
+
+  // 1) Сначала ищем в ожидаемой группе
+  for (const weapon of weaponCandidates){
+    const weaponMap = await loadWeaponJson(root, weapon);
+    if (!weaponMap || typeof weaponMap !== "object") continue;
+
+    for (const key of keyVariants){
+      const matched = weaponMap?.[key];
+      if (!matched) continue;
+
+      return {
+        weapon,
+        skinId: key,
+        skinData: {
+          name: displayName,
+          image: matched?.image || "",
+          class: matched?.class || detectItemClass(item),
+        }
+      };
     }
-  };
+  }
+
+  // 2) Fallback: ищем по всем agent/agents json
+  const files = await listWeaponJsonFiles(root);
+  const agentFiles = files.filter(fp => {
+    const base = path.basename(fp, ".json").toLowerCase();
+    return base.startsWith("agents-") || base.startsWith("agent-");
+  });
+
+  for (const fp of agentFiles){
+    const weapon = path.basename(fp, ".json");
+    const weaponMap = await safeJsonCached(fp);
+    if (!weaponMap || typeof weaponMap !== "object") continue;
+
+    for (const key of keyVariants){
+      const matched = weaponMap?.[key];
+      if (!matched) continue;
+
+      return {
+        weapon,
+        skinId: key,
+        skinData: {
+          name: displayName,
+          image: matched?.image || "",
+          class: matched?.class || detectItemClass(item),
+        }
+      };
+    }
+  }
+
+  return null;
 }
 
 function parseStickerMarketName(rawName = ""){
@@ -323,6 +487,15 @@ async function readTextCached(file){
   const txt = await fs.readFile(file, "utf8");
   textCache.set(file, txt);
   return txt;
+}
+
+async function fileExists(file){
+  try {
+    await fs.access(file);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 async function writeTextCached(file, content){
@@ -788,6 +961,22 @@ function stripStarPrefix(name = ""){
   return String(name).replace(/^★\s*/u, "");
 }
 
+function getInventoryNamePrefixes(rawName = ""){
+  const raw = String(rawName).trim();
+
+  return {
+    hasStar: /^★\s*/u.test(raw),
+    hasStatTrak: /^StatTrak™\s*/u.test(
+      stripStarPrefix(
+        stripSouvenirPrefix(raw)
+      )
+    ),
+    hasSouvenir: /^Souvenir\s*/u.test(
+      stripStarPrefix(raw)
+    ),
+  };
+}
+
 function normalizeInventoryMarketName(name = ""){
   return stripExteriorSuffix(
     stripSouvenirPrefix(
@@ -943,15 +1132,35 @@ function pickItemImage(item){
 }
 
 function buildResolvedDisplayName(rawName, resolvedSkinId){
-  const normalized = normalizeInventoryMarketName(rawName);
+  const raw = String(rawName || "").trim();
+  const normalized = normalizeInventoryMarketName(raw);
 
-  if (!normalized.includes(" | ")) return stripStarPrefix(stripStatTrakPrefix(stripSouvenirPrefix(rawName)));
+  if (!normalized.includes(" | ")) {
+    return raw;
+  }
 
-  const [weaponName] = normalized.split(" | ");
-  const exteriorMatch = String(rawName).match(/\s+\((Factory New|Minimal Wear|Field-Tested|Well-Worn|Battle-Scarred)\)\s*$/i);
+  const [weaponNameRaw] = normalized.split(" | ");
+  const weaponName = String(weaponNameRaw || "").trim();
+
+  const exteriorMatch = raw.match(/\s+\((Factory New|Minimal Wear|Field-Tested|Well-Worn|Battle-Scarred)\)\s*$/i);
   const exterior = exteriorMatch ? exteriorMatch[0] : "";
 
-  return `${weaponName} | ${resolvedSkinId}${exterior}`;
+  const { hasStar, hasStatTrak, hasSouvenir } = getInventoryNamePrefixes(raw);
+
+  let left = weaponName;
+  if (hasSouvenir) left = `Souvenir ${left}`;
+  if (hasStatTrak) left = `StatTrak™ ${left}`;
+  if (hasStar) left = `★ ${left}`;
+
+  let right = String(resolvedSkinId || "").trim();
+
+  // если resolveSpecialSkinId уже вернул "StatTrak Doppler Ruby",
+  // не дублируем StatTrak справа
+  if (hasStatTrak) {
+    right = right.replace(/^StatTrak(?:™)?\s*/i, "");
+  }
+
+  return `${left} | ${right}${exterior}`;
 }
 
 function pickItemName(item){
@@ -964,25 +1173,28 @@ function pickItemName(item){
 function resolveMusicKitSkinId(displayName = "") {
   const raw = String(displayName).trim();
 
-  if (!raw.startsWith("Music Kit | ")) return "";
+  let rest = raw;
 
-  const rest = raw.slice("Music Kit | ".length).trim();
+  rest = rest.replace(/^StatTrak™\s*/u, "");
+  if (!rest.startsWith("Music Kit | ")) return "";
 
-  // 1) специальные music kit с двоеточием:
+  rest = rest.slice("Music Kit | ".length).trim();
+
+  // 1) спец-кейсы с двоеточием
   // "Scarlxrd: King, Scar" -> "King, Scar"
   const colonIndex = rest.indexOf(":");
   if (colonIndex !== -1) {
     return rest.slice(colonIndex + 1).trim();
   }
 
-  // 2) обычные cases:
+  // 2) обычные кейсы с исполнителем и названием через запятую
+  // "The Verkkars, EZ4ENCE" -> "EZ4ENCE"
   // "Perfect World, 花脸 Hua Lian (Painted Face)" -> "花脸 Hua Lian (Painted Face)"
   const commaIndex = rest.indexOf(",");
   if (commaIndex !== -1) {
     return rest.slice(commaIndex + 1).trim();
   }
 
-  // 3) fallback
   return rest;
 }
 
@@ -1070,7 +1282,7 @@ async function buildPlayerSkinRenderData(root, item){
   }
 
   // 3) agents
-  if (type.includes("agent")){
+  if (looksLikeAgentItem(item)){
     const agentResolved = await resolveAgentByGroup(root, item);
     if (agentResolved){
       return agentResolved;
@@ -1099,7 +1311,14 @@ async function buildPlayerSkinRenderData(root, item){
   }
 
   const weaponMap = await loadWeaponJson(root, weapon);
-  const matchedSkin = weaponMap?.[skinId] || weaponMap?.[parsed.skinId] || null;
+  const skinIdBase = String(skinId).replace(/^StatTrak(?:™)?\s*/i, "").trim();
+
+  const matchedSkin =
+    weaponMap?.[skinId] ||
+    weaponMap?.[skinIdBase] ||
+    weaponMap?.[parsed.skinId] ||
+    weaponMap?.[String(parsed.skinId).replace(/^StatTrak(?:™)?\s*/i, "").trim()] ||
+    null;
 
   const className = matchedSkin?.class || detectItemClass(item);
   const image = matchedSkin?.image || pickItemImage(item) || "";
@@ -1172,7 +1391,8 @@ function getResolvedCategoryRank(renderData){
 
   if (
     image.includes("/img/skins/agents/") ||
-    weapon.startsWith("agent-")
+    weapon.startsWith("agent-") ||
+    weapon.startsWith("agents-")
   ) {
     return 4; // agents
   }
@@ -1293,22 +1513,19 @@ async function fillBoxSkinsListInHtml(root, html, items, pricesState){
   return { html: out, changed };
 }
 
-// ---------------- MAIN ----------------
-(async function main(){
-  const { root, dry, verbose, prices, template, only } = parseArgs(process.argv.slice(2));
-
-  const templateFile = abs(root, template);
-  const outputDir = abs(root, OUTPUT_DIR);
+async function generatePlayerPagesForVersion({
+  root,
+  dry,
+  verbose,
+  players,
+  pricesState,
+  templatePath,
+  outputDirPath,
+}) {
+  const templateFile = abs(root, templatePath);
+  const outputDir = abs(root, outputDirPath);
 
   const templateHtml = await readTextCached(templateFile);
-  const pricesArr = await loadPrices(root, prices);
-  const pricesState = buildPricesState(pricesArr);
-
-  const players = await loadPlayersList(root);
-  if (!players.length){
-    console.error("[ERR] No players found in players-list");
-    process.exit(1);
-  }
 
   const templateBaseName = path.basename(templateFile, ".html");
   const templateNicknameMatch = templateHtml.match(/ZywOo/);
@@ -1327,11 +1544,6 @@ async function fillBoxSkinsListInHtml(root, html, items, pricesState){
       continue;
     }
 
-    if (only.length && !only.includes(slug) && !only.includes(nickname)){
-      skipped++;
-      continue;
-    }
-
     const inventory = await loadPlayerInventory(root, slug);
     if (!inventory || !inventory.length){
       if (verbose) console.warn(`[WARN] inventory missing/empty for ${slug}`);
@@ -1345,29 +1557,111 @@ async function fillBoxSkinsListInHtml(root, html, items, pricesState){
       continue;
     }
 
-    let html = templateHtml;
+    const outFile = path.join(outputDir, `${slug}.html`);
+    const existsAlready = await fileExists(outFile);
 
-    html = replaceNicknameAndSlug(
-      html,
-      templateNickname,
-      nickname,
-      templateSlug,
-      slug
-    );
+    let html;
+
+    if (existsAlready) {
+      // Уже есть страница игрока -> не трогаем head/title/description и прочее
+      // Используем существующий html и обновляем только список предметов
+      html = await readTextCached(outFile);
+    } else {
+      // Страницы ещё нет -> создаём из шаблона
+      html = templateHtml;
+
+      html = replaceNicknameAndSlug(
+        html,
+        templateNickname,
+        nickname,
+        templateSlug,
+        slug
+      );
+    }
 
     {
       const res = await fillBoxSkinsListInHtml(root, html, inventory, pricesState);
       if (res.changed) html = res.html;
     }
 
-    const outFile = path.join(outputDir, `${slug}.html`);
-    if (!dry) await writeTextCached(outFile, html);
+      let prevHtml = null;
 
-    created++;
-    if (verbose) console.log(`[OK] ${path.relative(root, outFile)} :: generated for ${nickname} (${inventory.length} items)`);
+      if (existsAlready) {
+        prevHtml = await readTextCached(outFile);
+      }
+
+      // если файл новый → считаем как created
+      if (!existsAlready) {
+        if (!dry) await writeTextCached(outFile, html);
+        created++;
+      } else {
+        // если уже есть — проверяем, изменился ли реально html
+        if (prevHtml !== html) {
+          if (!dry) await writeTextCached(outFile, html);
+          created++; // можно переименовать в updated, но оставим как есть
+        } else {
+          skipped++; // НИЧЕГО не поменялось
+        }
+      }
+    if (verbose) {
+      console.log(`[OK] ${path.relative(root, outFile)} :: generated for ${nickname} (${inventory.length} items)`);
+    }
   }
 
-  console.log(`\nDone. Created/updated: ${created}, skipped: ${skipped}`);
+  return { created, skipped };
+}
+
+// ---------------- MAIN ----------------
+(async function main(){
+  const { root, dry, verbose, prices, templateRu, templateEn, only } = parseArgs(process.argv.slice(2));
+
+  const pricesArr = await loadPrices(root, prices);
+  const pricesState = buildPricesState(pricesArr);
+
+  const allPlayers = await loadPlayersList(root);
+  if (!allPlayers.length){
+    console.error("[ERR] No players found in players-list");
+    process.exit(1);
+  }
+
+  const players = only.length
+    ? allPlayers.filter(player => {
+        const nickname = String(player.nickname || "").trim();
+        const slug = String(player.slug || slugifyNickname(nickname)).trim();
+        return only.includes(slug) || only.includes(nickname);
+      })
+    : allPlayers;
+
+  if (!players.length){
+    console.error("[ERR] No matching players after --only filter");
+    process.exit(1);
+  }
+
+  const ruStats = await generatePlayerPagesForVersion({
+    root,
+    dry,
+    verbose,
+    players,
+    pricesState,
+    templatePath: templateRu,
+    outputDirPath: OUTPUT_DIR_RU,
+  });
+
+  const enStats = await generatePlayerPagesForVersion({
+    root,
+    dry,
+    verbose,
+    players,
+    pricesState,
+    templatePath: templateEn,
+    outputDirPath: OUTPUT_DIR_EN,
+  });
+
+  console.log(
+    `\nDone.` +
+    `\nRU -> created/updated: ${ruStats.created}, skipped: ${ruStats.skipped}` +
+    `\nEN -> created/updated: ${enStats.created}, skipped: ${enStats.skipped}`
+  );
 })().catch(e => {
   console.error(e);
   process.exit(1);
