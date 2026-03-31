@@ -857,14 +857,14 @@ nav .pages {
 }
 
 .navigation-weapon-sort {
-    height: 40px;
-    width: 50px;
+    height: 30px;
+    width: 40px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #0f0f0f;
-    filter: drop-shadow(0 0 1px rgb(35 35 35));
+    /* background: #0f0f0f;
+    filter: drop-shadow(0 0 1px rgb(35 35 35)); */
     border-radius: var(--main-border);
     transition: .15s all ease-in-out;
     cursor: pointer;
@@ -2074,7 +2074,6 @@ nav .pages {
 /* .navigation-weapon-name::before, */
 .color-box-selection-button::before,
 .color-box-overview-button::before,
-.navigation-weapon-sort::before,
 .navigation-reset::before,
 .box-skins-name::before {
     content: '';
@@ -4759,6 +4758,11 @@ nav img {
     align-content: flex-start;
     margin-bottom: 11px;
     gap: 8px;
+
+    border-radius: var(--main-border);
+    margin-bottom: unset;
+    padding: 6px;
+    /* background: var(--darkygray); */
 }
 
 .sitepage.cases .section.searchers {
