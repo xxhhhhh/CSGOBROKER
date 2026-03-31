@@ -1,12 +1,15 @@
 // ============================================================================
 // File: scripts/fetch-players-inventories.js
 // Usage:
-//   node scripts/fetch-players-inventories.js [--root path] [--only apEX,ropz] [--delay 1800] [--verbose]
+//   node scripts/fetch-players-inventories.js [--root path] [--only apEX,ropz] [--only-failed-fetch] [--delay 1800] [--verbose]
+//   node scripts/fetch-players-inventories.js [--retry-visible-failed 2] [--retry-visible-failed-delay 2500]
 //
 // Behavior:
 //   - Successful fetch => full refresh of player's inventory file
 //   - Failed/private fetch => keep previous items, only update fetch metadata
 //   - Retries transient Steam failures
+//   - Extra retries full inventory fetch for players with fetchOk=false while inventoryVisible=true
+//   - Can run only for players whose existing inventory file has fetchOk=false
 // ============================================================================
 
 const fs = require("fs/promises");
@@ -18,6 +21,9 @@ const LANGUAGE = "english";
 const PAGE_COUNT = 2000;
 const REQUEST_TIMEOUT_MS = 20000;
 const MAX_FETCH_RETRIES = 4;
+
+const DEFAULT_RETRY_VISIBLE_FAILED = 2;
+const DEFAULT_RETRY_VISIBLE_FAILED_DELAY = 2500;
 
 const PLAYERS = [
   { nickname: "apEX", steamid64: "76561197989744167" },
@@ -37,7 +43,32 @@ const PLAYERS = [
   { nickname: "KSCERATO", steamid64: "76561198058500492" },
   { nickname: "molodoy", steamid64: "76561198200982290" },
   { nickname: "StRoGo", steamid64: "76561198132414056" },
-  { nickname: "Evelone192", steamid64: "76561198254034941" }
+  { nickname: "Evelone192", steamid64: "76561198254034941" },
+  { nickname: "Brollan", steamid64: "76561198138828475" },
+  { nickname: "torzsi", steamid64: "76561198355739212" },
+  { nickname: "Spinx", steamid64: "76561198063336407" },
+  { nickname: "Jimpphat", steamid64: "76561198855375325" },
+  { nickname: "xertioN", steamid64: "76561198193174134" },
+  { nickname: "NiKo", steamid64: "76561198041683378" },
+  { nickname: "TeSeS", steamid64: "76561197996678278" },
+  { nickname: "m0NESY", steamid64: "76561198074762801" },
+  { nickname: "kyxsan", steamid64: "76561198057282432" },
+  { nickname: "kyousuke", steamid64: "76561199032006224" },
+  { nickname: "Aleksib", steamid64: "76561198013243326" },
+  { nickname: "iM", steamid64: "76561198050250233" },
+  { nickname: "b1t", steamid64: "76561198246607476" },
+  { nickname: "w0nderful", steamid64: "76561199063068840" },
+  { nickname: "makazze", steamid64: "76561199076189612" },
+  { nickname: "MAJ3R", steamid64: "76561197967432889" },
+  { nickname: "XANTARES", steamid64: "76561198044118796" },
+  { nickname: "woxic", steamid64: "76561198083485506" },
+  { nickname: "soulfly", steamid64: "76561198327068178" },
+  { nickname: "Wicadia", steamid64: "76561198812513923" },
+  { nickname: "Jame", steamid64: "76561198036125584" },
+  { nickname: "BELCHONOKK", steamid64: "76561198253670517" },
+  { nickname: "xiELO", steamid64: "76561198141272052" },
+  { nickname: "nota", steamid64: "76561198975070027" },
+  { nickname: "zweih", steamid64: "76561198210626739" }
 ];
 
 const PLAYERS_LIST_DIR = "code-parts/topics/players-data/players-list";
@@ -49,14 +80,20 @@ function parseArgs(argv) {
     return i >= 0 ? argv[i + 1] : null;
   };
 
+  const retryVisibleFailed = Number(get("--retry-visible-failed") ?? DEFAULT_RETRY_VISIBLE_FAILED);
+  const retryVisibleFailedDelay = Number(get("--retry-visible-failed-delay") ?? DEFAULT_RETRY_VISIBLE_FAILED_DELAY);
+
   return {
     root: path.resolve(get("--root") ?? process.cwd()),
     only: (get("--only") ?? "")
       .split(",")
       .map((s) => s.trim())
       .filter(Boolean),
+    onlyFailedFetch: argv.includes("--only-failed-fetch"),
     delay: Number(get("--delay") ?? 1800),
     verbose: argv.includes("--verbose"),
+    retryVisibleFailed: Number.isFinite(retryVisibleFailed) ? Math.max(0, retryVisibleFailed) : DEFAULT_RETRY_VISIBLE_FAILED,
+    retryVisibleFailedDelay: Number.isFinite(retryVisibleFailedDelay) ? Math.max(0, retryVisibleFailedDelay) : DEFAULT_RETRY_VISIBLE_FAILED_DELAY,
   };
 }
 
@@ -312,30 +349,107 @@ function sortItems(items) {
   });
 }
 
+function textIncludesAny(text, needles) {
+  const hay = String(text || "").toLowerCase();
+  return needles.some((needle) => hay.includes(String(needle).toLowerCase()));
+}
+
 function isPrivateOrUnavailablePayload(payload, status, rawText = "") {
-  const errText = String(
-    payload?.Error ||
-    payload?.error ||
-    rawText ||
-    ""
-  ).toLowerCase();
+  const errorParts = [
+    payload?.Error,
+    payload?.error,
+    payload?.message,
+    payload?.msg,
+    rawText,
+  ]
+    .filter(Boolean)
+    .join(" | ")
+    .toLowerCase();
 
-  if (status === 403) return true;
+  if (status === 401 || status === 403) return true;
 
-  return (
-    errText.includes("private") ||
-    errText.includes("not public") ||
-    errText.includes("inventory is unavailable") ||
-    errText.includes("profile is private") ||
-    errText.includes("this profile is private")
-  );
+  if (
+    textIncludesAny(errorParts, [
+      "private",
+      "not public",
+      "inventory is unavailable",
+      "profile is private",
+      "this profile is private",
+      "the profile is private",
+      "requested profile is private",
+      "inventory not available",
+      "inventory unavailable",
+      "access denied",
+      "permission",
+      "friends only",
+    ])
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
+function looksLikePrivateInventorySuccessPayload(payload) {
+  if (!payload || typeof payload !== "object") return false;
+
+  const success = Number(payload.success);
+  const totalInventoryCount = Number(payload.total_inventory_count);
+  const assets = Array.isArray(payload.assets) ? payload.assets : null;
+  const descriptions = Array.isArray(payload.descriptions) ? payload.descriptions : null;
+
+  const joinedText = [
+    payload?.Error,
+    payload?.error,
+    payload?.message,
+    payload?.msg,
+  ]
+    .filter(Boolean)
+    .join(" | ")
+    .toLowerCase();
+
+  if (
+    textIncludesAny(joinedText, [
+      "private",
+      "not public",
+      "inventory is unavailable",
+      "profile is private",
+      "friends only",
+      "access denied",
+    ])
+  ) {
+    return true;
+  }
+
+  // Steam иногда отдает success=1, но без нормального содержимого.
+  // Для CS2 inventory ожидаем хотя бы согласованную структуру.
+  if (success === 1) {
+    const assetsMissing = !Array.isArray(assets);
+    const descriptionsMissing = !Array.isArray(descriptions);
+
+    if (assetsMissing || descriptionsMissing) {
+      return true;
+    }
+
+    // Если total_inventory_count > 0, но assets/descriptions пустые,
+    // это очень похоже на restricted/private response.
+    if (
+      totalInventoryCount > 0 &&
+      assets.length === 0 &&
+      descriptions.length === 0
+    ) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 function isTransientFetchFailure(result) {
   if (result.networkError) return true;
   if ([408, 429, 500, 502, 503, 504].includes(result.status)) return true;
   if (!result.ok && result.status === 0) return true;
-  if (result.ok && !result.json) return true; // bad/incomplete JSON
+  if (result.ok && !result.json) return true;
   return false;
 }
 
@@ -393,11 +507,32 @@ async function fetchFullInventory(steamid64, { verbose = false } = {}) {
 
     if (payload && payload.success !== 1) {
       const privateFlag = isPrivateOrUnavailablePayload(payload, res.status, res.raw);
+
       return {
         ok: false,
         status: res.status || 200,
-        error: payload?.Error || payload?.error || "Steam returned success != 1",
+        error:
+          payload?.Error ||
+          payload?.error ||
+          payload?.message ||
+          "Steam returned success != 1",
         isPrivate: privateFlag,
+        pages: page,
+        assets: [],
+        descriptions: [],
+      };
+    }
+
+    if (looksLikePrivateInventorySuccessPayload(payload)) {
+      return {
+        ok: false,
+        status: res.status || 200,
+        error:
+          payload?.Error ||
+          payload?.error ||
+          payload?.message ||
+          "Inventory is private or unavailable",
+        isPrivate: true,
         pages: page,
         assets: [],
         descriptions: [],
@@ -512,18 +647,15 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
     steamid64: player.steamid64,
     updatedAt: now,
 
-    // metadata from failed fetch
     fetchOk: false,
     fetchStatus: failedDoc.fetchStatus,
     fetchError: failedDoc.fetchError,
 
-    // if profile is private -> false, otherwise keep previous visibility
     inventoryVisible:
       failedDoc.inventoryVisible === false
         ? false
         : (existingDoc.inventoryVisible ?? true),
 
-    // keep previous counts/items
     totalItemsRaw: Number(existingDoc.totalItemsRaw || 0),
     totalItemsGrouped: Array.isArray(existingDoc.items)
       ? existingDoc.items.length
@@ -532,8 +664,94 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
   };
 }
 
+function shouldRetryVisibleFailedFetch(existingDoc, failedDoc) {
+  if (!failedDoc || failedDoc.fetchOk) return false;
+
+  // Если уже определили как private/unavailable — не ретраим
+  if (failedDoc.inventoryVisible === false) return false;
+
+  // Ретраим только когда раньше инвентарь был публичным
+  // и текущий фейл выглядит как временный сбой, а не приватность.
+  return existingDoc?.inventoryVisible === true;
+}
+
+async function fetchInventoryWithVisibleFailedRetry(player, existingDoc, options = {}) {
+  const {
+    verbose = false,
+    retryVisibleFailed = 0,
+    retryVisibleFailedDelay = 0,
+  } = options;
+
+  let inventoryResult = await fetchFullInventory(player.steamid64, { verbose });
+  let inventoryDocRaw = buildInventoryDocument(player, inventoryResult);
+
+  if (
+    shouldRetryVisibleFailedFetch(existingDoc, inventoryDocRaw) &&
+    retryVisibleFailed > 0
+  ) {
+    for (let attempt = 1; attempt <= retryVisibleFailed; attempt++) {
+      if (verbose) {
+        console.log(
+          `[VISIBLE_FAILED_RETRY] ${player.nickname} :: extra_attempt=${attempt}/${retryVisibleFailed}, prevStatus=${inventoryDocRaw.fetchStatus}, prevError=${inventoryDocRaw.fetchError || "-"}`
+        );
+      }
+
+      if (retryVisibleFailedDelay > 0) {
+        await sleep(retryVisibleFailedDelay);
+      }
+
+      inventoryResult = await fetchFullInventory(player.steamid64, { verbose });
+      inventoryDocRaw = buildInventoryDocument(player, inventoryResult);
+
+      if (inventoryDocRaw.fetchOk) {
+        if (verbose) {
+          console.log(`[VISIBLE_FAILED_RETRY_OK] ${player.nickname} recovered on extra attempt ${attempt}`);
+        }
+        break;
+      }
+
+      if (inventoryDocRaw.inventoryVisible === false) {
+        if (verbose) {
+          console.log(`[VISIBLE_FAILED_RETRY_STOP] ${player.nickname} became private/unavailable, stop extra retries`);
+        }
+        break;
+      }
+    }
+  }
+
+  return inventoryDocRaw;
+}
+
+async function filterPlayersByFailedFetch(players, playersInvDir, { verbose = false } = {}) {
+  const filtered = [];
+
+  for (const player of players) {
+    const slug = safeSlug(player.nickname);
+    const invFile = path.join(playersInvDir, `${slug}.json`);
+    const existingDoc = await readJsonSafe(invFile);
+
+    if (existingDoc?.fetchOk === false) {
+      filtered.push(player);
+    }
+  }
+
+  if (verbose) {
+    console.log(`[FILTER] only-failed-fetch matched ${filtered.length}/${players.length} players`);
+  }
+
+  return filtered;
+}
+
 async function main() {
-  const { root, only, delay, verbose } = parseArgs(process.argv.slice(2));
+  const {
+    root,
+    only,
+    onlyFailedFetch,
+    delay,
+    verbose,
+    retryVisibleFailed,
+    retryVisibleFailedDelay,
+  } = parseArgs(process.argv.slice(2));
 
   const playersListDir = path.join(root, PLAYERS_LIST_DIR);
   const playersInvDir = path.join(root, PLAYERS_INV_DIR);
@@ -546,9 +764,13 @@ async function main() {
     await readJsonSafe(playersListFile)
   );
 
-  const selectedPlayers = only.length
+  let selectedPlayers = only.length
     ? PLAYERS.filter((p) => only.includes(p.nickname) || only.includes(safeSlug(p.nickname)))
     : PLAYERS;
+
+  if (onlyFailedFetch) {
+    selectedPlayers = await filterPlayersByFailedFetch(selectedPlayers, playersInvDir, { verbose });
+  }
 
   const playersListOutput = [];
   let successCount = 0;
@@ -564,8 +786,16 @@ async function main() {
     }
 
     const existingDoc = await readJsonSafe(invFile);
-    const inventoryResult = await fetchFullInventory(player.steamid64, { verbose });
-    const inventoryDocRaw = buildInventoryDocument(player, inventoryResult);
+
+    const inventoryDocRaw = await fetchInventoryWithVisibleFailedRetry(
+      player,
+      existingDoc,
+      {
+        verbose,
+        retryVisibleFailed,
+        retryVisibleFailedDelay,
+      }
+    );
 
     const inventoryDoc = inventoryDocRaw.fetchOk
       ? inventoryDocRaw
@@ -600,12 +830,12 @@ async function main() {
     }
   }
 
-  const finalPlayers = only.length
+  const finalPlayers = (only.length || onlyFailedFetch)
     ? mergePlayersList(existingPlayersListDoc.players, playersListOutput)
     : playersListOutput;
 
-  const finalSuccessCount = finalPlayers.filter(p => p?.fetchOk).length;
-  const finalFailedCount = finalPlayers.filter(p => !p?.fetchOk).length;
+  const finalSuccessCount = finalPlayers.filter((p) => p?.fetchOk).length;
+  const finalFailedCount = finalPlayers.filter((p) => !p?.fetchOk).length;
 
   const playersListDoc = {
     updatedAt: new Date().toISOString(),
