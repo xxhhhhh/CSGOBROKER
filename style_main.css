@@ -4711,9 +4711,27 @@ nav img {
     user-select: none;
 }
 
+.inventories .item-topic-grandbox .logobg {
+    background: var(--icongradient3);
+    margin: 4px;
+    width: calc(100% - 8px);
+    border-radius: var(--main-border);
+    mask-image: unset;
+}
+
+.inventories .item-topic-grandbox {
+    height: 120px;
+    overflow: unset;
+}
+
+.inventories .item-topic-grandbox:hover .logobg {
+    transform: unset !important;
+    margin: 4px 6px 4px 6px !important;
+}
+
 .inventories .item-topic-grandbox .logobg img {
-    height: 210%;
-    margin-top: 100px;
+    height: 200%;
+    margin-top: 70px;
 }
 
 .sitepage.items .topic-grandbox {
