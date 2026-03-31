@@ -4690,15 +4690,18 @@ nav img {
 
 .item-topic-grandbox .logobg {
     height: 100%;
-    width: 100%;
+    width: calc(100% - 8px);
     display: flex;
     align-items: center;
     justify-content: center;
     padding-bottom: 10px;
     transition: all .3s ease-in-out;
-    mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
+    background: var(--icongradient3);
+    border-radius: var(--main-border);
+    margin: 4px;
+    /* mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
     -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
-    -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, .5), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, .5), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
 }
 
 .item-topic-grandbox .logobg img {
@@ -4707,15 +4710,8 @@ nav img {
     width: auto;
     z-index: 10;
     pointer-events: none;
+    transition: all .15s ease-in-out;
     user-select: none;
-}
-
-.inventories .item-topic-grandbox .logobg {
-    background: var(--icongradient3);
-    margin: 4px;
-    width: calc(100% - 8px);
-    border-radius: var(--main-border);
-    mask-image: unset;
 }
 
 .inventories .item-topic-grandbox {
@@ -4723,9 +4719,14 @@ nav img {
     overflow: unset;
 }
 
-.inventories .item-topic-grandbox:hover .logobg {
+.inventories .item-topic-grandbox:hover .logobg img {
     transform: unset !important;
-    margin: 4px 6px 4px 6px !important;
+    margin-top: 70px !important;
+}
+
+.item-topic-grandbox .logobg img {
+    height: 140%;
+    margin-top: 20px;
 }
 
 .inventories .item-topic-grandbox .logobg img {
@@ -5475,19 +5476,18 @@ nav img {
 
 .topic-boxes-holder .topic-box:hover .logobg,
 .topic-boxes-holder .topic-grandbox:hover .topic-box .logobg,
-.item-topic-grandbox:hover .logobg,
 .topic-box.maestro:hover .logobg {
     transform: scale(1.03) !important;
     margin: 6px 8px 9px 8px !important;
     margin: 4px 6px 4px 6px !important;
 }
 
-.topic-box.maestro:hover .logobg {
-    margin: 4px !important;
+.item-topic-grandbox:hover .logobg img {
+    transform: scale(1.03) !important;
 }
 
-.item-topic-grandbox:hover .logobg {
-    margin: unset !important;
+.topic-box.maestro:hover .logobg {
+    margin: 4px !important;
 }
 
 .topic-boxes-holder .topic-box .logobg:hover img {

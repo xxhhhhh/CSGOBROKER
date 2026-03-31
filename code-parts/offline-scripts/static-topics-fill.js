@@ -585,7 +585,7 @@ function dedupe(arr, keyFn){
 }
 
 function rarityRank(cls){
-  const order = { red:6, pink:5, purple:4, blue:3, lblue:2, white:1, gold:7 };
+  const order = { gold:7, red:6, pink:5, purple:4, blue:3, lblue:2, white:1 };
   return order[String(cls || "").toLowerCase()] || 0;
 }
 

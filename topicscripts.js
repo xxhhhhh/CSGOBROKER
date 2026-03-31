@@ -742,7 +742,7 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
     }
 
     function checkWeaponTypeAvailabilityForItems() {
-      const skinTypes = ["white", "lblue", "blue", "purple", "pink", "red"];
+      const skinTypes = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];
 
       skinTypes.forEach((type) => {
         const allNotExist = $(
