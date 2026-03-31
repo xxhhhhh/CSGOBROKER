@@ -109,6 +109,10 @@ async function writeTextCached(file, content){
   textCache.set(file, content);
 }
 
+function isPlayersInventoryPage(urlPath){
+  return /^\/(?:ru\/)?topic\/players\/inventories\/[^\/]+\/?$/i.test(urlPath);
+}
+
 async function safeJsonCached(file){
   if (jsonCache.has(file)) return jsonCache.get(file);
   try {
@@ -272,12 +276,20 @@ function indentBefore(s, idx, nl){
   return m ? m[0] : "";
 }
 
-function replaceWithin(s, a, b, repl){
-  return s.slice(0, a) + repl + s.slice(b);
+function localizeAutoTopicNavDesktopBlock(innerHtml, isRu){
+  if (!isRu || !innerHtml) return innerHtml;
+
+  return innerHtml.replace(
+    /<!-- AUTO:topic-nav-desktop:start -->[\s\S]*?<!-- AUTO:topic-nav-desktop:end -->/g,
+    (block) => block.replace(
+      /\bhref="\/(?!ru\/)([^"]*)"/gi,
+      'href="/ru/$1"'
+    )
+  );
 }
 
-function collapseWS(s){
-  return s.replace(/[ \t]+$/gm, "").replace(/\r?\n{3,}/g, "\n\n");
+function replaceWithin(s, a, b, repl){
+  return s.slice(0, a) + repl + s.slice(b);
 }
 
 function rstripBlankLinesToOne(s, nl){
@@ -1212,7 +1224,7 @@ function replaceBoxTitleSpan(innerHtml, ruTitle){
   );
 }
 
-async function processRuMirrorPages({ root, file, html, urlToFile, verbose }){
+async function processRuMirrorPages({ root, file, html, urlToFile, verbose, processedHtmlByFile }){
   const urlPath = fileToUrlPath(root, file);
 
   const mirrorMatch = urlPath.match(/^\/ru\/topic\/(skins|items)(?:\/([^\/]+))?(?:\/|$)/i);
@@ -1231,7 +1243,9 @@ async function processRuMirrorPages({ root, file, html, urlToFile, verbose }){
 
   let srcHtml;
   try {
-    srcHtml = await readTextCached(srcFile);
+    srcHtml =
+      processedHtmlByFile?.get(srcFile)?.html ??
+      await readTextCached(srcFile);
   } catch {
     return { html, changed:false };
   }
@@ -1306,6 +1320,8 @@ async function processRuMirrorPages({ root, file, html, urlToFile, verbose }){
         srcInnerRaw = replaceBoxTitleSpan(srcInnerRaw, ruTitle);
       }
     }
+
+    srcInnerRaw = localizeAutoTopicNavDesktopBlock(srcInnerRaw, true);
 
     const boxIndent = indentBefore(out, dstOpenAbs, nl);
     const innerIndent = boxIndent + "  ";
@@ -2040,21 +2056,6 @@ function renderDesktopTopicNavPanel({ categories, indent, nl, isRu }){
   ].join(nl);
 }
 
-function findDesktopTopicNavTarget(html){
-  const masked = maskSegments(html);
-  const centralizers = findAllTagsByClass(masked, "topic-centralizer", ["div", "section"]);
-
-  for (const c of centralizers){
-    const boxSkins = findAllTagsByClass(masked, "box-skins", ["div", "section"], c.openEnd, c.closeStart);
-    for (const b of boxSkins){
-      const panels = findAllTagsByClass(masked, "sitetoppannel", ["div", "section"], b.openEnd, b.closeStart);
-      if (panels.length) return panels[0];
-    }
-  }
-
-  return null;
-}
-
 function findMobileTopicNavTarget(html){
   const masked = maskSegments(html);
   const pages = findAllTagsByClass(masked, "topicpage", ["div", "section"]);
@@ -2591,6 +2592,8 @@ async function processTopicHeaderBackButton({ root, file, html, verbose }){
   let updated = 0;
   let skipped = 0;
 
+const processedHtmlByFile = new Map();
+
   for (const file of files){
     const urlPath = fileToUrlPath(root, file);
     const allowed = paths.some(p => urlPath.toLowerCase().startsWith(p.toLowerCase()));
@@ -2604,76 +2607,97 @@ async function processTopicHeaderBackButton({ root, file, html, verbose }){
       const origHtml = await readTextCached(file);
       let html = origHtml;
 
-      // 1) .box-skins-list
       {
         const res = await processBoxSkinsLists({ root, file, html, pricesState, verbose });
         if (res.changed) html = res.html;
       }
 
-      // 2) loadout pages
       {
         const res = await processLoadoutPages({ root, file, html, pricesState, verbose });
         if (res.changed) html = res.html;
       }
 
-      // 3) price-sorter inside .box-skins-list for /topic/skins/*
       {
         const res = await processSkinsPriceSorter({ root, file, html, verbose });
         if (res.changed) html = res.html;
       }
 
-      // 4) extra-list блоки на /topic/cases/<slug> -> <slug>-gloves / <slug>-knives
       {
         const res = await processCaseExtraVariantLinks({ root, file, html, urlToFile, verbose });
         if (res.changed) html = res.html;
       }
 
-      // 5) одиночные плейсхолдеры .skin (+ ремонт уже записанных блоков)
-      {
+      if (!isPlayersInventoryPage(urlPath)) {
         const res = await processSkinPlaceholders({ root, html, pricesState, verbose, file });
         if (res.changed) html = res.html;
       }
 
-      // 6) items-type pages:
-      //    /items-type/cases
-      //    /items-type/charms
-      //    /items-type/collections
-      //    /items-type/sticker-capsules
-      //    /items-type/autograph-capsules
       {
         const res = await processItemsTypeTopicBoxesPages({ root, file, html, verbose });
         if (res.changed) html = res.html;
       }
 
-      // 7) topic-filter вставка/ремонт
       {
         const res = await processTopicFilters({ root, file, html, verbose });
         if (res.changed) html = res.html;
       }
 
-      // 7.5) back-button в header nav только для /topic/*
       {
         const res = await processTopicHeaderBackButton({ root, file, html, verbose });
         if (res.changed) html = res.html;
       }
 
-      // 8) static topic nav from topics-nav-items.json
       {
         const res = await processTopicNavStaticFill({ root, file, html, verbose });
         if (res.changed) html = res.html;
       }
 
-      // 9) items-nav static fill in .topic-grandbox
       {
         const res = await processItemsNavStaticFill({ root, file, html, verbose });
         if (res.changed) html = res.html;
       }
 
-      // 10) зеркалирование /topic/skins/* и /topic/items/* -> /ru/topic/*
-      {
-        const res = await processRuMirrorPages({ root, file, html, urlToFile, verbose });
-        if (res.changed) html = res.html;
-      }
+      processedHtmlByFile.set(file, {
+        origHtml,
+        html,
+        allowed: true,
+      });
+
+    } catch (e){
+      console.error(`[ERR] ${path.relative(root, file)}:`, e.message);
+      processedHtmlByFile.set(file, {
+        origHtml: null,
+        html: null,
+        allowed: true,
+        error: true,
+      });
+    }
+  }
+
+  updated = 0;
+  skipped = 0;
+
+  for (const file of files){
+    const saved = processedHtmlByFile.get(file);
+
+    if (!saved?.allowed || saved?.error || typeof saved.html !== "string"){
+      skipped++;
+      continue;
+    }
+
+    try {
+      let html = saved.html;
+      const origHtml = saved.origHtml;
+
+      const res = await processRuMirrorPages({
+        root,
+        file,
+        html,
+        urlToFile,
+        verbose,
+        processedHtmlByFile,
+      });
+      if (res.changed) html = res.html;
 
       const finalChanged = html !== origHtml;
 
