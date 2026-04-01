@@ -5,6 +5,7 @@
 //   node scripts/fetch-players-inventories.js [--retry-visible-failed 2] [--retry-visible-failed-delay 2500]
 //
 // Behavior:
+//   - Loads players from code-parts/topics/players-data/players-list/fetch-players.json
 //   - Successful fetch => full refresh of player's inventory file
 //   - Failed/private fetch => keep previous items, only update fetch metadata
 //   - Retries transient Steam failures
@@ -25,55 +26,9 @@ const MAX_FETCH_RETRIES = 4;
 const DEFAULT_RETRY_VISIBLE_FAILED = 2;
 const DEFAULT_RETRY_VISIBLE_FAILED_DELAY = 2500;
 
-const PLAYERS = [
-  { nickname: "apEX", steamid64: "76561197989744167" },
-  { nickname: "ropz", steamid64: "76561197991272318" },
-  { nickname: "ZywOo", steamid64: "76561198113666193" },
-  { nickname: "flameZ", steamid64: "76561197978835160" },
-  { nickname: "mezii", steamid64: "76561197973140692" },
-  { nickname: "Snax", steamid64: "76561197982141573" },
-  { nickname: "sh1ro", steamid64: "76561198081484775" },
-  { nickname: "magixx", steamid64: "76561199028549977" },
-  { nickname: "tN1R", steamid64: "76561198872013168" },
-  { nickname: "zont1x", steamid64: "76561198995880877" },
-  { nickname: "donk", steamid64: "76561198386265483" },
-  { nickname: "FalleN", steamid64: "76561197960690195" },
-  { nickname: "yuurih", steamid64: "76561198164970560" },
-  { nickname: "YEKINDAR", steamid64: "76561198134401925" },
-  { nickname: "KSCERATO", steamid64: "76561198058500492" },
-  { nickname: "molodoy", steamid64: "76561198200982290" },
-  { nickname: "StRoGo", steamid64: "76561198132414056" },
-  { nickname: "deko", steamid64: "76561198287546191" },
-  { nickname: "Evelone192", steamid64: "76561198254034941" },
-  { nickname: "ohnePixel", steamid64: "76561198045277210" },
-  { nickname: "Brollan", steamid64: "76561198138828475" },
-  { nickname: "torzsi", steamid64: "76561198355739212" },
-  { nickname: "Spinx", steamid64: "76561198063336407" },
-  { nickname: "Jimpphat", steamid64: "76561198855375325" },
-  { nickname: "xertioN", steamid64: "76561198193174134" },
-  { nickname: "NiKo", steamid64: "76561198041683378" },
-  { nickname: "TeSeS", steamid64: "76561197996678278" },
-  { nickname: "m0NESY", steamid64: "76561198074762801" },
-  { nickname: "kyxsan", steamid64: "76561198057282432" },
-  { nickname: "kyousuke", steamid64: "76561199032006224" },
-  { nickname: "Aleksib", steamid64: "76561198013243326" },
-  { nickname: "iM", steamid64: "76561198050250233" },
-  { nickname: "b1t", steamid64: "76561198246607476" },
-  { nickname: "w0nderful", steamid64: "76561199063068840" },
-  { nickname: "makazze", steamid64: "76561199076189612" },
-  { nickname: "MAJ3R", steamid64: "76561197967432889" },
-  { nickname: "XANTARES", steamid64: "76561198044118796" },
-  { nickname: "woxic", steamid64: "76561198083485506" },
-  { nickname: "soulfly", steamid64: "76561198327068178" },
-  { nickname: "Wicadia", steamid64: "76561198812513923" },
-  { nickname: "Jame", steamid64: "76561198036125584" },
-  { nickname: "BELCHONOKK", steamid64: "76561198253670517" },
-  { nickname: "xiELO", steamid64: "76561198141272052" },
-  { nickname: "nota", steamid64: "76561198975070027" },
-  { nickname: "zweih", steamid64: "76561198210626739" }
-];
-
 const PLAYERS_LIST_DIR = "code-parts/topics/players-data/players-list";
+const PLAYERS_SOURCE_FILE = "fetch-players.json";
+const PLAYERS_LIST_OUTPUT_FILE = "players.json";
 const PLAYERS_INV_DIR = "code-parts/topics/players-data/players-inventories";
 
 function parseArgs(argv) {
@@ -94,8 +49,12 @@ function parseArgs(argv) {
     onlyFailedFetch: argv.includes("--only-failed-fetch"),
     delay: Number(get("--delay") ?? 1800),
     verbose: argv.includes("--verbose"),
-    retryVisibleFailed: Number.isFinite(retryVisibleFailed) ? Math.max(0, retryVisibleFailed) : DEFAULT_RETRY_VISIBLE_FAILED,
-    retryVisibleFailedDelay: Number.isFinite(retryVisibleFailedDelay) ? Math.max(0, retryVisibleFailedDelay) : DEFAULT_RETRY_VISIBLE_FAILED_DELAY,
+    retryVisibleFailed: Number.isFinite(retryVisibleFailed)
+      ? Math.max(0, retryVisibleFailed)
+      : DEFAULT_RETRY_VISIBLE_FAILED,
+    retryVisibleFailedDelay: Number.isFinite(retryVisibleFailedDelay)
+      ? Math.max(0, retryVisibleFailedDelay)
+      : DEFAULT_RETRY_VISIBLE_FAILED_DELAY,
   };
 }
 
@@ -117,6 +76,40 @@ async function ensureDir(dir) {
 
 async function writeJson(file, data) {
   await fs.writeFile(file, JSON.stringify(data, null, 2), "utf8");
+}
+
+async function readJsonSafe(file) {
+  try {
+    const txt = await fs.readFile(file, "utf8");
+    return JSON.parse(txt);
+  } catch {
+    return null;
+  }
+}
+
+function normalizePlayer(player) {
+  return {
+    nickname: String(player?.nickname || "").trim(),
+    steamid64: String(player?.steamid64 || "").trim(),
+    team: String(player?.team || "").trim(),
+    isStreamer: Boolean(player?.isStreamer),
+  };
+}
+
+function validatePlayersSource(doc) {
+  if (!doc || typeof doc !== "object" || !Array.isArray(doc.players)) {
+    throw new Error("Invalid players source JSON: expected { players: [] }");
+  }
+
+  const players = doc.players
+    .map(normalizePlayer)
+    .filter((p) => p.nickname && p.steamid64);
+
+  if (!players.length) {
+    throw new Error("Players source JSON has no valid players");
+  }
+
+  return players;
 }
 
 function normalizeExistingPlayersListDoc(doc) {
@@ -163,15 +156,6 @@ function mergePlayersList(existingPlayers, updatedPlayers) {
   });
 
   return merged;
-}
-
-async function readJsonSafe(file) {
-  try {
-    const txt = await fs.readFile(file, "utf8");
-    return JSON.parse(txt);
-  } catch {
-    return null;
-  }
 }
 
 function buildInventoryUrl(steamid64, startAssetId = null) {
@@ -295,6 +279,12 @@ function normalizeItem(asset, desc) {
   };
 }
 
+function stripInternalFields(item) {
+  const copy = { ...item };
+  delete copy.__desc;
+  return copy;
+}
+
 function collapseItems(rawItems) {
   const out = [];
   const grouped = new Map();
@@ -326,12 +316,6 @@ function collapseItems(rawItems) {
   }
 
   return out;
-}
-
-function stripInternalFields(item) {
-  const copy = { ...item };
-  delete copy.__desc;
-  return copy;
 }
 
 function sortItems(items) {
@@ -423,8 +407,6 @@ function looksLikePrivateInventorySuccessPayload(payload) {
     return true;
   }
 
-  // Steam иногда отдает success=1, но без нормального содержимого.
-  // Для CS2 inventory ожидаем хотя бы согласованную структуру.
   if (success === 1) {
     const assetsMissing = !Array.isArray(assets);
     const descriptionsMissing = !Array.isArray(descriptions);
@@ -433,8 +415,6 @@ function looksLikePrivateInventorySuccessPayload(payload) {
       return true;
     }
 
-    // Если total_inventory_count > 0, но assets/descriptions пустые,
-    // это очень похоже на restricted/private response.
     if (
       totalInventoryCount > 0 &&
       assets.length === 0 &&
@@ -582,6 +562,8 @@ function buildInventoryDocument(player, inventoryResult) {
       nickname: player.nickname,
       slug: safeSlug(player.nickname),
       steamid64: player.steamid64,
+      team: player.team || "",
+      isStreamer: Boolean(player.isStreamer),
       appid: APP_ID,
       contextid: String(CONTEXT_ID),
       updatedAt: now,
@@ -615,6 +597,8 @@ function buildInventoryDocument(player, inventoryResult) {
     nickname: player.nickname,
     slug: safeSlug(player.nickname),
     steamid64: player.steamid64,
+    team: player.team || "",
+    isStreamer: Boolean(player.isStreamer),
     appid: APP_ID,
     contextid: String(CONTEXT_ID),
     updatedAt: now,
@@ -639,6 +623,7 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
       nickname: player.nickname,
       slug: safeSlug(player.nickname),
       steamid64: player.steamid64,
+      team: player.team || "",
     };
   }
 
@@ -647,6 +632,7 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
     nickname: player.nickname,
     slug: safeSlug(player.nickname),
     steamid64: player.steamid64,
+    team: player.team || existingDoc.team || "",
     updatedAt: now,
 
     fetchOk: false,
@@ -668,12 +654,7 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
 
 function shouldRetryVisibleFailedFetch(existingDoc, failedDoc) {
   if (!failedDoc || failedDoc.fetchOk) return false;
-
-  // Если уже определили как private/unavailable — не ретраим
   if (failedDoc.inventoryVisible === false) return false;
-
-  // Ретраим только когда раньше инвентарь был публичным
-  // и текущий фейл выглядит как временный сбой, а не приватность.
   return existingDoc?.inventoryVisible === true;
 }
 
@@ -744,6 +725,11 @@ async function filterPlayersByFailedFetch(players, playersInvDir, { verbose = fa
   return filtered;
 }
 
+async function loadPlayersSource(playersSourceFile) {
+  const sourceDoc = await readJsonSafe(playersSourceFile);
+  return validatePlayersSource(sourceDoc);
+}
+
 async function main() {
   const {
     root,
@@ -757,11 +743,14 @@ async function main() {
 
   const playersListDir = path.join(root, PLAYERS_LIST_DIR);
   const playersInvDir = path.join(root, PLAYERS_INV_DIR);
+  const playersSourceFile = path.join(playersListDir, PLAYERS_SOURCE_FILE);
+  const playersListFile = path.join(playersListDir, PLAYERS_LIST_OUTPUT_FILE);
 
   await ensureDir(playersListDir);
   await ensureDir(playersInvDir);
 
-  const playersListFile = path.join(playersListDir, "players.json");
+  const PLAYERS = await loadPlayersSource(playersSourceFile);
+
   const existingPlayersListDoc = normalizeExistingPlayersListDoc(
     await readJsonSafe(playersListFile)
   );
@@ -784,7 +773,7 @@ async function main() {
     const invFile = path.join(playersInvDir, `${slug}.json`);
 
     if (verbose) {
-      console.log(`\n[FETCH] ${player.nickname} (${player.steamid64})`);
+      console.log(`\n[FETCH] ${player.nickname} (${player.steamid64})${player.team ? ` [${player.team}]` : ""}`);
     }
 
     const existingDoc = await readJsonSafe(invFile);
@@ -809,6 +798,8 @@ async function main() {
       nickname: player.nickname,
       slug,
       steamid64: player.steamid64,
+      team: player.team || "",
+      isStreamer: Boolean(player.isStreamer),
       inventoryJson: `/code-parts/topics/players-data/players-inventories/${slug}.json`,
       updatedAt: inventoryDoc.updatedAt,
       inventoryVisible: inventoryDoc.inventoryVisible,

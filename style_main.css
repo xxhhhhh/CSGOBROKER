@@ -3138,9 +3138,6 @@ h3 {
     justify-content: center;
     background: var(--darkgray);
     padding: 6px 2px 6px 2px;
-}
-
-.topicpage:has(.box-skins-nav) .sitetoppannel {
     margin-bottom: 8px;
 }
 
@@ -4810,6 +4807,10 @@ nav img {
     margin-top: -8px;
     border-radius: 0 0 var(--main-border) var(--main-border);
     z-index: 10;
+}
+
+.sitepage.items.inventories .topic-grandbox {
+    min-height: 90px;
 }
 
 .sitepage.items .topic-grandbox .section {

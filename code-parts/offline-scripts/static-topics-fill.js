@@ -2016,26 +2016,10 @@ function isSkinsTopicPage(urlPath){
   return /^\/(?:ru\/)?topic\/skins(?:\/|$)/i.test(urlPath);
 }
 
-function findDesktopTopicNavContainer(html, urlPath){
+function findDesktopTopicNavContainer(html){
   const masked = maskSegments(html);
   const centralizers = findAllTagsByClass(masked, "topic-centralizer", ["div", "section"]);
-
-  if (!centralizers.length) return null;
-
-  const skinsPage = isSkinsTopicPage(urlPath);
-
-  for (const c of centralizers){
-    if (skinsPage) {
-      return c; // /topic/skins* -> вставляем в .topic-centralizer
-    }
-
-    const boxSkins = findAllTagsByClass(masked, "box-skins", ["div", "section"], c.openEnd, c.closeStart);
-    if (boxSkins.length) {
-      return boxSkins[0]; // обычные страницы -> вставляем в .topic-centralizer .box-skins
-    }
-  }
-
-  return null;
+  return centralizers.length ? centralizers[0] : null;
 }
 
 function renderDesktopTopicNavPanel({ categories, indent, nl, isRu }){
@@ -2087,7 +2071,7 @@ async function processTopicNavStaticFill({ root, file, html, verbose }){
 
   // ================= DESKTOP =================
   {
-    const container = findDesktopTopicNavContainer(out, urlPath);
+    const container = findDesktopTopicNavContainer(out);
 
     if (container){
       const openEnd = container.openEnd;
@@ -2095,53 +2079,43 @@ async function processTopicNavStaticFill({ root, file, html, verbose }){
       const baseIndent = indentBefore(out, openEnd, nl);
       const innerIndent = baseIndent + "  ";
 
-      const currentMasked = maskSegments(out);
-      const panels = findAllTagsByClass(currentMasked, "sitetoppannel", ["div", "section"], openEnd, closeStart);
+      // после удаления нужно заново найти контейнер, потому что индексы могли сдвинуться
+      const freshContainer = findDesktopTopicNavContainer(out);
+      if (freshContainer){
+        const freshOpenEnd = freshContainer.openEnd;
+        const freshCloseStart = freshContainer.closeStart;
+        const freshBaseIndent = indentBefore(out, freshOpenEnd, nl);
+        const freshInnerIndent = freshBaseIndent + "  ";
 
-      let next = out;
-
-      if (panels.length){
-        // если sitetoppannel уже есть внутри нужного контейнера — просто обновляем его
-        const panel = panels[0];
-        const panelOpenEnd = panel.openEnd;
-        const panelCloseStart = panel.closeStart;
-        const panelIndent = indentBefore(out, panelOpenEnd, nl);
-        const navIndent = panelIndent + "  ";
-
-        const built = renderTopicNavDesktopHtml(categories, {
-          indent: navIndent + "  ",
-          nl,
-          isRu,
-        });
-
-        const inner = out.slice(panelOpenEnd, panelCloseStart);
-        const rebuiltInner = replaceAutoBlock(inner, "topic-nav-desktop", built, nl, panelIndent);
-
-        next = out.slice(0, panelOpenEnd) + rebuiltInner + out.slice(panelCloseStart);
-      } else {
-        // если sitetoppannel нет — вставляем первым элементом в контейнер
         const panelHtml = renderDesktopTopicNavPanel({
           categories,
-          indent: innerIndent,
+          indent: freshInnerIndent,
           nl,
           isRu,
         });
 
-        const inner = out.slice(openEnd, closeStart).replace(/^(?:[ \t]*\r?\n)+/, "");
+        const inner = out.slice(freshOpenEnd, freshCloseStart).replace(/^(?:[ \t]*\r?\n)+/, "");
         const replacementInner = inner
           ? (nl + panelHtml + nl + inner.replace(/^\r?\n+/, ""))
-          : (nl + panelHtml + nl + baseIndent);
+          : (nl + panelHtml + nl + freshBaseIndent);
 
-        next = out.slice(0, openEnd) + replacementInner + out.slice(closeStart);
-      }
+        const next = out.slice(0, freshOpenEnd) + replacementInner + out.slice(freshCloseStart);
 
-      if (next !== out){
-        out = next;
-        changed = true;
-        if (verbose) {
-          console.log(
-            `[OK] ${path.relative(root, file)} :: desktop topic nav inserted/updated in ${isSkinsTopicPage(urlPath) ? ".topic-centralizer" : ".topic-centralizer .box-skins"}`
-          );
+        if (next !== out){
+          out = next;
+          changed = true;
+          if (verbose) {
+            console.log(
+              `[OK] ${path.relative(root, file)} :: desktop topic nav regenerated in .topic-centralizer (moved to first child if needed)`
+            );
+          }
+        } else if (removed.changed) {
+          changed = true;
+          if (verbose) {
+            console.log(
+              `[OK] ${path.relative(root, file)} :: legacy desktop sitetoppannel removed from old location`
+            );
+          }
         }
       }
     }

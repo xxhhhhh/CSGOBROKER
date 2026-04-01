@@ -4,11 +4,11 @@
   "steamid64": "76561198036125584",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-03-31T07:04:07.745Z",
+  "updatedAt": "2026-04-01T02:49:25.105Z",
   "inventoryVisible": true,
-  "fetchOk": true,
-  "fetchStatus": 200,
-  "fetchError": "",
+  "fetchOk": false,
+  "fetchStatus": 429,
+  "fetchError": "HTTP 429",
   "pagesFetched": 1,
   "totalItemsRaw": 336,
   "totalItemsGrouped": 251,
@@ -9329,5 +9329,6 @@
         }
       ]
     }
-  ]
+  ],
+  "team": "PARIVISION"
 }
