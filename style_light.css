@@ -1713,11 +1713,13 @@ ul .submenu li .nonredir,
     filter: none;
 }
 
-.box-skins-list .price-sorter {
+.box-skins-list .price-sorter,
+.steam-profile {
     background: linear-gradient(180deg, var(--opacback) 0%, var(--main-theme) 100%);
 }
 
-.box-skins-list .price-sorter i::before {
+.box-skins-list .price-sorter i::before,
+.steam-profile::after {
     filter: brightness(.2);
 }
 

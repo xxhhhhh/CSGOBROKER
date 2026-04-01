@@ -114,7 +114,7 @@ header {
     position: fixed;
     display: flex;
     justify-content: center;
-    backdrop-filter: blur(3px);
+    /* backdrop-filter: blur(3px); */
     /* background: rgba(13, 13, 13, .98); */
     background: transparent;
     height: 68px;
@@ -2405,7 +2405,7 @@ nav .pages {
 }
 
 .box-skins-list.showrarity .skin::before {
-    opacity: .35;
+    opacity: .2;
 }
 
 .skin::before {
@@ -2468,6 +2468,20 @@ nav .pages {
     filter: blur(20px);
     transition: all .15s ease-in-out;
 }
+
+/* .sitepage.items .box-skins .skin::before {
+    content: '';
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 50%;
+    filter: blur(10px);
+    transition: all .15s ease-in-out;
+    transform: translateX(-50%) translateY(-50%);
+    mask-image: url(img/icons/ambassador-mask2.png);
+    mask-size: cover;
+    opacity: .7;
+} */
 
 .sitepage.items .box-skins .skin {
     /* background: var(--icongradient3); */
@@ -2657,10 +2671,46 @@ nav .pages {
     bottom: 8px;
     width: 40px;
     height: 40px;
-    border-radius: var(--minor-border);
+    border-radius: var(--main-border);
     background-color: rgb(14, 14, 14);
     cursor: pointer;
     z-index: 101;
+}
+
+.steam-profile {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 30px;
+    bottom: 50%;
+    transform: translateY(50%);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--main-border);
+    background-color: rgb(14, 14, 14);
+    transition: all .15s ease-in-out;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.steam-profile:hover {
+    transform: scale(1.03) translateY(50%);
+}
+
+.steam-profile:hover::after {
+    opacity: 1;
+}
+
+.steam-profile::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .15s ease-in-out;
+    opacity: .3;
 }
 
 .box-skins-list .price-sorter i::before {
@@ -2673,7 +2723,8 @@ nav .pages {
     opacity: 1;
 }
 
-.box-skins-list .price-sorter::before {
+.box-skins-list .price-sorter::before,
+.steam-profile::before {
     content: '';
     position: absolute;
     top: 2px;
@@ -4655,14 +4706,27 @@ nav img {
 .sitepage.items .box-skins {
     justify-content: flex-start;
     flex-direction: column;
-    background: rgba(0, 0, 0, .15);
+    background: rgba(13, 13, 13, .7);
+}
+
+.topic-extra-info {
+    position: absolute;
+    color: var(--text-darkgray);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    top: -35px;
+}
+
+.topic-extra-info span {
+    color: var(--text-darkgray);
 }
 
 .sitepage.items .box-skins.solo .box-skins-list {
     justify-content: flex-start;
     overflow: hidden;
     margin: 0 auto;
-    margin-top: 4px;
+    margin-top: 8px;
     width: calc(100% - 16px);
     padding-bottom: 8px;
     min-height: 500px;
@@ -6675,7 +6739,7 @@ h2:has(.boxtitle) {
     left: -10px;
     z-index: -1;
     padding: 10px;
-    background: radial-gradient(50% 100% at 50% 100%, rgba(172, 26, 50, .2), transparent 100%);
+    background: radial-gradient(50% 65% at 50% 100%, rgba(172, 26, 50, .1), transparent 100%);
     filter: blur(5px);
 }
 
@@ -8470,7 +8534,8 @@ a[data-title]:after,
 }
 
 .typesinside .steamlvlup::before,
-.main-mode.steamlvlup .main-mode-icon::before {
+.main-mode.steamlvlup .main-mode-icon::before,
+.steam-profile::after {
     background-image: url(/img/icons/gamemodes/steamlvlup.webp);
 }
 

@@ -1415,6 +1415,29 @@ function getResolvedCategoryRank(renderData){
   return 10; // etc
 }
 
+async function buildInventoryStats(root, items, pricesState){
+  let totalItems = 0;
+  let totalValue = 0;
+
+  for (const item of items){
+    if (!isRenderableSkinLikeItem(item)) continue;
+
+    const renderData = await buildPlayerSkinRenderData(root, item);
+
+    const priceSourceName =
+      renderData?.skinData?.name ||
+      String(item?.market_hash_name || item?.name || "").trim();
+
+    const priceMeta = computePriceHtml(priceSourceName, pricesState);
+    const amount = Number(item?.amount || 1) || 1;
+
+    totalItems += amount;
+    totalValue += (Number(priceMeta?.sortPrice || 0) * amount);
+  }
+
+  return { totalItems, totalValue };
+}
+
 async function buildPlayerSkinsHtml(root, items, pricesState, nl, baseIndent){
   const indent = baseIndent + "  ";
   const resolved = [];
@@ -1515,6 +1538,178 @@ async function fillBoxSkinsListInHtml(root, html, items, pricesState){
   return { html: out, changed };
 }
 
+function formatInventoryTotal(value, lang = "ru"){
+  const num = Number(value || 0);
+
+  const formatted = new Intl.NumberFormat(
+    lang === "en" ? "en-US" : "ru-RU",
+    {
+      maximumFractionDigits: 0,
+    }
+  ).format(num);
+
+  return `${formatted}$`;
+}
+
+function buildInventorySummary(items, pricesState, lang = "ru"){
+  let totalItems = 0;
+  let totalValue = 0;
+
+  for (const item of items){
+    if (!isRenderableSkinLikeItem(item)) continue;
+
+    const amount = Number(item?.amount || 1) || 1;
+    totalItems += amount;
+
+    const priceSourceName = String(item?.market_hash_name || item?.name || "").trim();
+    const priceMeta = computePriceHtml(priceSourceName, pricesState);
+
+    const itemPrice = Number(priceMeta?.sortPrice || 0);
+    if (itemPrice > 0) {
+      totalValue += itemPrice * amount;
+    }
+  }
+
+  const labelItems = lang === "en" ? "Total Items" : "Всего Предметов";
+  const labelValue = lang === "en" ? "Total Value" : "Общая Стоимость";
+
+  return `<div class="topic-extra-info">${labelItems}: <span>${escapeHtml(String(totalItems))}</span>, ${labelValue}: <span>${escapeHtml(formatInventoryTotal(totalValue, lang))}</span></div>`;
+}
+
+function upsertTopicExtraInfo(html, summaryHtml){
+  const nl = html.includes("\r\n") ? "\r\n" : "\n";
+  const masked = maskSegments(html);
+  const centralizers = findAllTagsByClass(masked, "topic-centralizer", ["div", "section"]);
+
+  if (!centralizers.length) return { html, changed: false };
+
+  const target = centralizers[0];
+  const innerStart = target.openEnd;
+  const innerEnd = target.closeStart;
+
+  const innerHtml = html.slice(innerStart, innerEnd);
+  const innerMasked = maskSegments(innerHtml);
+
+  const existing = findAllTagsByClass(innerMasked, "topic-extra-info", ["div"]);
+
+  let nextInner;
+  if (existing.length) {
+    const info = existing[0];
+    nextInner =
+      innerHtml.slice(0, info.openStart) +
+      summaryHtml +
+      innerHtml.slice(info.closeEnd);
+  } else {
+    const baseIndent = indentBefore(html, innerStart, nl) + "  ";
+    nextInner = rstripBlankLinesToOne(innerHtml, nl) + `${baseIndent}${summaryHtml}${nl}`;
+  }
+
+  const nextHtml =
+    html.slice(0, innerStart) +
+    nextInner +
+    html.slice(innerEnd);
+
+  return {
+    html: nextHtml,
+    changed: nextHtml !== html,
+  };
+}
+
+function buildSteamProfileUrl(steamid64 = ""){
+  const id = String(steamid64 || "").trim();
+  if (!id) return "";
+  return `https://steamcommunity.com/profiles/${id}`;
+}
+
+function setOrReplaceAttr(tagHtml, attrName, attrValue){
+  const escapedValue = escapeAttrDblNoApos(attrValue);
+
+  const dblRe = new RegExp(`\\b${attrName}\\s*=\\s*"[^"]*"`, "i");
+  const sglRe = new RegExp(`\\b${attrName}\\s*=\\s*'[^']*'`, "i");
+
+  if (dblRe.test(tagHtml)) {
+    return tagHtml.replace(dblRe, `${attrName}="${escapedValue}"`);
+  }
+
+  if (sglRe.test(tagHtml)) {
+    return tagHtml.replace(sglRe, `${attrName}="${escapedValue}"`);
+  }
+
+  return tagHtml.replace(/<a\b/i, `<a ${attrName}="${escapedValue}"`);
+}
+
+function buildSteamProfileAnchor(nickname, steamUrl, indent, nl){
+  return [
+    `${indent}<a rel="noopener" target="_blank" href="${escapeAttrDblNoApos(steamUrl)}" alt="Visit ${escapeAttrDblNoApos(nickname)} Steam Profile" class="steam-profile"></a>`
+  ].join(nl);
+}
+
+function updateSteamProfileLink(html, player){
+  const steamUrl = buildSteamProfileUrl(player?.steamid64);
+  const nickname = String(player?.nickname || "").trim();
+
+  if (!steamUrl || !nickname) {
+    return { html, changed: false };
+  }
+
+  const nl = html.includes("\r\n") ? "\r\n" : "\n";
+  const masked = maskSegments(html);
+
+  // 1) если steam-profile уже есть -> обновляем все найденные
+  const links = findAllTagsByClass(masked, "steam-profile", ["a"]);
+
+  if (links.length) {
+    let out = html;
+    let shift = 0;
+    let changed = false;
+
+    for (const link of links){
+      const openStart = link.openStart + shift;
+      const openEnd = link.openEnd + shift;
+
+      const tagHtml = out.slice(openStart, openEnd);
+
+      let newTag = tagHtml;
+      newTag = setOrReplaceAttr(newTag, "href", steamUrl);
+      newTag = setOrReplaceAttr(newTag, "target", "_blank");
+      newTag = setOrReplaceAttr(newTag, "rel", "noopener");
+      newTag = setOrReplaceAttr(newTag, "alt", `Visit ${nickname} Steam Profile`);
+
+      if (newTag !== tagHtml) {
+        out = out.slice(0, openStart) + newTag + out.slice(openEnd);
+        shift += newTag.length - tagHtml.length;
+        changed = true;
+      }
+    }
+
+    return { html: out, changed };
+  }
+
+  // 2) если steam-profile нет -> создаём внутри .logobg
+  const logobgs = findAllTagsByClass(masked, "logobg", ["div"]);
+
+  if (!logobgs.length) {
+    return { html, changed: false };
+  }
+
+  const target = logobgs[0];
+  const insertPos = target.closeStart;
+  const baseIndent = indentBefore(html, target.openStart, nl);
+  const childIndent = baseIndent + "    ";
+
+  const anchorHtml = buildSteamProfileAnchor(nickname, steamUrl, childIndent, nl);
+
+  const before = html.slice(0, insertPos).replace(/[ \t]*$/, "");
+  const after = html.slice(insertPos);
+
+  const nextHtml = `${before}${nl}${anchorHtml}${nl}${baseIndent}${after}`;
+
+  return {
+    html: nextHtml,
+    changed: nextHtml !== html,
+  };
+}
+
 async function generatePlayerPagesForVersion({
   root,
   dry,
@@ -1523,6 +1718,7 @@ async function generatePlayerPagesForVersion({
   pricesState,
   templatePath,
   outputDirPath,
+  lang,
 }) {
   const templateFile = abs(root, templatePath);
   const outputDir = abs(root, outputDirPath);
@@ -1583,6 +1779,23 @@ async function generatePlayerPagesForVersion({
 
     {
       const res = await fillBoxSkinsListInHtml(root, html, inventory, pricesState);
+      if (res.changed) html = res.html;
+    }
+
+    {
+      const stats = await buildInventoryStats(root, inventory, pricesState);
+
+      const labelItems = lang === "en" ? "Total Items" : "Всего Предметов";
+      const labelValue = lang === "en" ? "Total Value" : "Общая Стоимость";
+
+      const summaryHtml = `<div class="topic-extra-info">${labelItems}: <span>${escapeHtml(String(stats.totalItems))}</span>, ${labelValue}: <span>${escapeHtml(formatInventoryTotal(stats.totalValue, lang))}</span></div>`;
+
+      const res = upsertTopicExtraInfo(html, summaryHtml);
+      if (res.changed) html = res.html;
+    }
+
+    {
+      const res = updateSteamProfileLink(html, player);
       if (res.changed) html = res.html;
     }
 
@@ -1647,6 +1860,7 @@ async function generatePlayerPagesForVersion({
     pricesState,
     templatePath: templateRu,
     outputDirPath: OUTPUT_DIR_RU,
+    lang: "ru",
   });
 
   const enStats = await generatePlayerPagesForVersion({
@@ -1657,6 +1871,7 @@ async function generatePlayerPagesForVersion({
     pricesState,
     templatePath: templateEn,
     outputDirPath: OUTPUT_DIR_EN,
+    lang: "en",
   });
 
   console.log(
