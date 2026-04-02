@@ -2,16 +2,23 @@
   "nickname": "BELCHONOKK",
   "slug": "belchonokk",
   "steamid64": "76561198253670517",
+  "team": "PARIVISION",
+  "name": "Andrey Yasinskiy",
+  "nationality": "Russia",
+  "born": "14.01.2004",
+  "isContentCreator": false,
+  "twitch": "belchonokk_cs",
+  "faceit": "https://www.faceit.com/en/players/31051afd-a752-4e8e-bf1c-17718f453101",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-01T02:49:59.241Z",
+  "updatedAt": "2026-04-02T07:09:24.286Z",
   "inventoryVisible": true,
-  "fetchOk": false,
-  "fetchStatus": 429,
-  "fetchError": "HTTP 429",
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
   "pagesFetched": 1,
-  "totalItemsRaw": 527,
-  "totalItemsGrouped": 192,
+  "totalItemsRaw": 526,
+  "totalItemsGrouped": 191,
   "items": [
     {
       "assetid": "50272479703",
@@ -32,37 +39,6 @@
         },
         {
           "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49975741750",
-      "classid": "7993044870",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Gamma Doppler",
-      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
           "name": ""
         },
         {
@@ -8830,6 +8806,5 @@
         }
       ]
     }
-  ],
-  "team": "PARIVISION"
+  ]
 }

@@ -1,16 +1,117 @@
 // ============================================================================
-// File: scripts/fetch-players-inventories.js
-// Usage:
-//   node scripts/fetch-players-inventories.js [--root path] [--only apEX,ropz] [--only-failed-fetch] [--delay 1800] [--verbose]
-//   node scripts/fetch-players-inventories.js [--retry-visible-failed 2] [--retry-visible-failed-delay 2500]
+// File: code-parts/offline-scripts/fetch-players-inventories.js
 //
-// Behavior:
-//   - Loads players from code-parts/topics/players-data/players-list/fetch-players.json
-//   - Successful fetch => full refresh of player's inventory file
-//   - Failed/private fetch => keep previous items, only update fetch metadata
-//   - Retries transient Steam failures
-//   - Extra retries full inventory fetch for players with fetchOk=false while inventoryVisible=true
-//   - Can run only for players whose existing inventory file has fetchOk=false
+// КОМАНДЫ ЗАПУСКА
+//
+// 1) Полный запуск: обновить Liquipedia-данные игроков, затем заново фетчить
+//    Steam-инвентари, затем пересобрать players.json и teams.json
+//    node code-parts/offline-scripts/fetch-players-inventories.js --verbose
+//
+// 2) Полный запуск с принудительным рефетчем Liquipedia:
+//    игнорирует уже сохранённые Liquipedia-поля и тянет их заново,
+//    после чего всё равно идёт фетчить инвентари
+//    node code-parts/offline-scripts/fetch-players-inventories.js --refetch-liquipedia --verbose
+//
+// 3) Только Liquipedia + команды, БЕЗ фетча инвентарей:
+//    обновляет данные игроков из Liquipedia,
+//    сохраняет изменения в fetch-players.json,
+//    пересобирает teams.json,
+//    Steam-инвентари не трогает
+//    node code-parts/offline-scripts/fetch-players-inventories.js --liquipedia-only --verbose
+//
+// 4) Только Liquipedia + команды c принудительным рефетчем:
+//    заново тянет Liquipedia даже если поля уже заполнены,
+//    затем обновляет fetch-players.json и teams.json,
+//    инвентари не трогает
+//    node code-parts/offline-scripts/fetch-players-inventories.js --refetch-liquipedia --liquipedia-only --verbose
+//
+// 5) Только пересобрать teams.json из уже имеющихся данных:
+//    не фетчит Liquipedia,
+//    не фетчит инвентари,
+//    просто заново строит файл teams.json
+//    node code-parts/offline-scripts/fetch-players-inventories.js --teams-only --verbose
+//
+// 6) Обработать только конкретных игроков:
+//    можно передать никнеймы через запятую
+//    node code-parts/offline-scripts/fetch-players-inventories.js --only apEX,ropz --verbose
+//
+// 7) Только конкретные игроки + только Liquipedia:
+//    удобно для быстрой проверки одного или нескольких игроков
+//    node code-parts/offline-scripts/fetch-players-inventories.js --only apEX,ropz --liquipedia-only --verbose
+//
+// 8) Только конкретные игроки + принудительный рефетч Liquipedia:
+//    заново перетянет данные с Liquipedia только для указанных игроков,
+//    затем пересоберёт fetch-players.json / teams.json,
+//    инвентари не тронет
+//    node code-parts/offline-scripts/fetch-players-inventories.js --only apEX,ropz --refetch-liquipedia --liquipedia-only --verbose
+//
+// 9) Только игроки с неудачным fetch инвентаря:
+//    берёт только тех, у кого существующий inventory json имеет fetchOk=false
+//    node code-parts/offline-scripts/fetch-players-inventories.js --only-failed-fetch --verbose
+//
+// 10) Только игроки с неудачным fetch инвентаря + Liquipedia refresh:
+//     заново обновляет Liquipedia и затем пробует снова фетчить только проблемные инвентари
+//     node code-parts/offline-scripts/fetch-players-inventories.js --only-failed-fetch --refetch-liquipedia --verbose
+//
+// 11) Запуск с кастомной задержкой между игроками:
+//     полезно если нужно снизить нагрузку
+//     node code-parts/offline-scripts/fetch-players-inventories.js --delay 2500 --verbose
+//
+// 12) Запуск с дополнительными ретраями для случаев,
+//     когда inventoryVisible=true, но fetch временно не удался
+//     node code-parts/offline-scripts/fetch-players-inventories.js --retry-visible-failed 3 --retry-visible-failed-delay 3000 --verbose
+//
+// 13) Указать корневую папку проекта вручную:
+//     удобно если запуск идёт не из корня репозитория
+//     node code-parts/offline-scripts/fetch-players-inventories.js --root "C:\\path\\to\\project" --verbose
+//
+// ОСНОВНЫЕ ФЛАГИ
+//
+// --verbose
+//   Показывает подробные логи по Liquipedia, Steam fetch и сборке файлов.
+//
+// --refetch-liquipedia
+//   Принудительно заново тянет Liquipedia-данные, даже если у игрока уже
+//   заполнены name / nationality / born / team / twitch / faceit.
+//
+// --liquipedia-only
+//   Режим без Steam-инвентарей.
+//   Скрипт только обновляет данные игроков из Liquipedia,
+//   сохраняет fetch-players.json и пересобирает teams.json.
+//
+// --teams-only
+//   Только пересобирает teams.json из уже имеющихся данных.
+//   Liquipedia и Steam не вызываются.
+//
+// --only apEX,ropz
+//   Ограничивает запуск только указанными игроками.
+//
+// --only-failed-fetch
+//   Берёт только тех игроков, у кого существующий inventory-файл имеет fetchOk=false.
+//
+// --delay 1800
+//   Задержка между обработкой игроков в миллисекундах.
+//
+// --retry-visible-failed 2
+//   Сколько раз дополнительно повторять Steam fetch,
+//   если инвентарь игрока публичный, но запрос временно не удался.
+//
+// --retry-visible-failed-delay 2500
+//   Задержка между дополнительными повторами Steam fetch.
+//
+// --root path
+//   Явно задаёт корень проекта.
+//
+// РЕКОМЕНДУЕМЫЙ СЦЕНАРИЙ РАБОТЫ
+//
+// 1. Сначала обновить только Liquipedia и команды:
+//    node code-parts/offline-scripts/fetch-players-inventories.js --refetch-liquipedia --liquipedia-only --verbose
+//
+// 2. Потом отдельным запуском обновить инвентари:
+//    node code-parts/offline-scripts/fetch-players-inventories.js --verbose
+//
+// 3. Если нужно добить только проблемные инвентари:
+//    node code-parts/offline-scripts/fetch-players-inventories.js --only-failed-fetch --verbose
 // ============================================================================
 
 const fs = require("fs/promises");
@@ -29,7 +130,12 @@ const DEFAULT_RETRY_VISIBLE_FAILED_DELAY = 2500;
 const PLAYERS_LIST_DIR = "code-parts/topics/players-data/players-list";
 const PLAYERS_SOURCE_FILE = "fetch-players.json";
 const PLAYERS_LIST_OUTPUT_FILE = "players.json";
+const TEAMS_LIST_OUTPUT_FILE = "teams.json";
 const PLAYERS_INV_DIR = "code-parts/topics/players-data/players-inventories";
+
+const LIQUIPEDIA_CS_BASE = "https://liquipedia.net/counterstrike";
+const LIQUIPEDIA_REQUEST_DELAY_MS = 1100;
+const LIQUIPEDIA_TIMEOUT_MS = 20000;
 
 function parseArgs(argv) {
   const get = (flag) => {
@@ -49,6 +155,13 @@ function parseArgs(argv) {
     onlyFailedFetch: argv.includes("--only-failed-fetch"),
     delay: Number(get("--delay") ?? 1800),
     verbose: argv.includes("--verbose"),
+    refetchLiquipedia: argv.includes("--refetch-liquipedia"),
+
+    liquipediaOnly: argv.includes("--liquipedia-only"),
+    teamsOnly: argv.includes("--teams-only"),
+
+    noRetries: argv.includes("--no-retries"),
+
     retryVisibleFailed: Number.isFinite(retryVisibleFailed)
       ? Math.max(0, retryVisibleFailed)
       : DEFAULT_RETRY_VISIBLE_FAILED,
@@ -66,8 +179,17 @@ function safeSlug(input) {
   return String(input || "")
     .trim()
     .toLowerCase()
+    .replace(/['"`]/g, "")
     .replace(/[^a-z0-9]+/gi, "-")
     .replace(/^-+|-+$/g, "") || "player";
+}
+
+function slugForFile(input) {
+  return safeSlug(input);
+}
+
+function encodeWikiTitle(input) {
+  return encodeURIComponent(String(input || "").trim().replace(/ /g, "_"));
 }
 
 async function ensureDir(dir) {
@@ -92,7 +214,197 @@ function normalizePlayer(player) {
     nickname: String(player?.nickname || "").trim(),
     steamid64: String(player?.steamid64 || "").trim(),
     team: String(player?.team || "").trim(),
-    isStreamer: Boolean(player?.isStreamer),
+
+    isContentCreator: Boolean(
+      player?.isContentCreator ?? player?.isStreamer ?? false
+    ),
+
+    liquipedia: String(player?.liquipedia || "").trim().toLowerCase(),
+
+    name: String(player?.name || "").trim(),
+    nationality: String(player?.nationality || "").trim(),
+    born: String(player?.born || "").trim(),
+
+    twitch: String(player?.twitch || "").trim(),
+    faceit: String(player?.faceit || "").trim(),
+  };
+}
+
+function shouldSkipLiquipediaByMarker(player) {
+  return String(player?.liquipedia || "").trim().toLowerCase() === "none";
+}
+
+function extractTeamLinkFromHtml(html) {
+  const source = String(html || "");
+
+  // Ищем блок Team: <a href="/counterstrike/Team_Vitality"...>Team Vitality</a>
+  const re = /Team\s*:\s*<\/div>\s*<div[^>]*class=["'][^"']*infobox-cell-2[^"']*["'][^>]*>[\s\S]*?<a[^>]+href=["']([^"']*\/counterstrike\/([^"'#?]+))["'][^>]*>([\s\S]*?)<\/a>/i;
+  const m = source.match(re);
+
+  if (!m) {
+    return {
+      teamName: "",
+      teamLiquipediaUrl: "",
+      teamLiquipediaSlug: "",
+    };
+  }
+
+  const href = htmlDecode(m[1]).trim();
+  const slug = htmlDecode(m[2]).trim();
+  const label = stripTags(m[3]).trim();
+
+  const absoluteUrl = href.startsWith("http")
+    ? href
+    : `https://liquipedia.net${href}`;
+
+  return {
+    teamName: label,
+    teamLiquipediaUrl: absoluteUrl,
+    teamLiquipediaSlug: slug,
+  };
+}
+
+function extractCurrentTeamFromTeamHistoryRaw(raw) {
+  const text = String(raw || "");
+  if (!text) {
+    return {
+      teamName: "",
+      teamLiquipediaUrl: "",
+      teamLiquipediaSlug: "",
+    };
+  }
+
+  const cs2HeaderMatch = text.match(/'''Counter-Strike 2'''/i);
+  if (!cs2HeaderMatch) {
+    return {
+      teamName: "",
+      teamLiquipediaUrl: "",
+      teamLiquipediaSlug: "",
+    };
+  }
+
+  const startIndex = cs2HeaderMatch.index;
+  const afterCs2 = text.slice(startIndex);
+
+  const endCandidates = [
+    afterCs2.indexOf("\n|"),
+    afterCs2.indexOf("\n}}"),
+    afterCs2.indexOf("\r\n|"),
+    afterCs2.indexOf("\r\n}}"),
+  ].filter((i) => i > 0);
+
+  const endIndex = endCandidates.length ? Math.min(...endCandidates) : afterCs2.length;
+  const cs2Section = afterCs2.slice(0, endIndex);
+
+  const thRegex = /\{\{TH\|([^}]*)\}\}/gi;
+  const matches = [...cs2Section.matchAll(thRegex)];
+
+  if (!matches.length) {
+    return {
+      teamName: "",
+      teamLiquipediaUrl: "",
+      teamLiquipediaSlug: "",
+    };
+  }
+
+  const parsed = matches
+    .map((m) => {
+      const full = m[1] || "";
+      const parts = full.split("|").map((s) => String(s || "").trim());
+      return {
+        raw: full,
+        datePart: parts[0] || "",
+        teamPart: parts[1] || "",
+        statusPart: parts[2] || "",
+      };
+    })
+    .filter((x) => x.teamPart);
+
+  if (!parsed.length) {
+    return {
+      teamName: "",
+      teamLiquipediaUrl: "",
+      teamLiquipediaSlug: "",
+    };
+  }
+
+  const presentRows = parsed.filter((x) => /present/i.test(x.datePart));
+  const selected = (presentRows.length ? presentRows : parsed)[(presentRows.length ? presentRows : parsed).length - 1];
+
+  const cleanedTeam = cleanWikitextValue(selected.teamPart).trim();
+  if (!cleanedTeam) {
+    return {
+      teamName: "",
+      teamLiquipediaUrl: "",
+      teamLiquipediaSlug: "",
+    };
+  }
+
+  return {
+    teamName: cleanedTeam,
+    teamLiquipediaUrl: `${LIQUIPEDIA_CS_BASE}/${encodeWikiTitle(cleanedTeam)}`,
+    teamLiquipediaSlug: cleanedTeam.replace(/ /g, "_"),
+  };
+}
+
+function extractTeamLinkFromRaw(raw) {
+  const text = String(raw || "");
+  const teamField =
+    extractWikitextField(text, "team") ||
+    extractWikitextField(text, "current_team") ||
+    extractWikitextField(text, "team1");
+
+  if (!teamField) {
+    return {
+      teamName: "",
+      teamLiquipediaUrl: "",
+      teamLiquipediaSlug: "",
+    };
+  }
+
+  const m = teamField.match(/\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/);
+
+  if (!m) {
+    const cleaned = cleanWikitextValue(teamField);
+    return {
+      teamName: cleaned,
+      teamLiquipediaUrl: cleaned
+        ? `${LIQUIPEDIA_CS_BASE}/${encodeWikiTitle(cleaned)}`
+        : "",
+      teamLiquipediaSlug: cleaned ? cleaned.replace(/ /g, "_") : "",
+    };
+  }
+
+  const pageTitle = String(m[1] || "").trim();
+  const label = String(m[2] || m[1] || "").trim();
+
+  // Берём именно отображаемый текст, а не alias типа gl
+  const canonicalName = label || pageTitle;
+
+  return {
+    teamName: canonicalName,
+    teamLiquipediaUrl: canonicalName
+      ? `${LIQUIPEDIA_CS_BASE}/${encodeWikiTitle(canonicalName)}`
+      : "",
+    teamLiquipediaSlug: canonicalName
+      ? canonicalName.replace(/ /g, "_")
+      : "",
+  };
+}
+
+function normalizeExistingTeamsDoc(doc) {
+  if (!doc || typeof doc !== "object" || !Array.isArray(doc.teams)) {
+    return {
+      updatedAt: "",
+      count: 0,
+      teams: [],
+    };
+  }
+
+  return {
+    updatedAt: String(doc.updatedAt || ""),
+    count: Number(doc.count || 0),
+    teams: Array.isArray(doc.teams) ? doc.teams : [],
   };
 }
 
@@ -181,7 +493,7 @@ async function fetchJson(url) {
     const res = await fetch(url, {
       headers: {
         "Accept": "application/json",
-        "User-Agent": "Mozilla/5.0 (compatible; CS2InventoryFetcher/1.1)",
+        "User-Agent": "Mozilla/5.0 (compatible; CS2InventoryFetcher/1.2; +https://example.local)",
         "Cache-Control": "no-cache",
         "Pragma": "no-cache",
       },
@@ -210,6 +522,42 @@ async function fetchJson(url) {
       status: 0,
       json: null,
       raw: "",
+      networkError: true,
+      errorMessage: err?.name === "AbortError" ? "Request timeout" : String(err?.message || err),
+    };
+  } finally {
+    clear();
+  }
+}
+
+async function fetchText(url, extraHeaders = {}, timeoutMs = REQUEST_TIMEOUT_MS) {
+  const { signal, clear } = withTimeoutSignal(timeoutMs);
+
+  try {
+    const res = await fetch(url, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (compatible; CS2InventoryFetcher/1.2; +https://example.local)",
+        "Accept": "text/html, text/plain, */*",
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache",
+        ...extraHeaders,
+      },
+      signal,
+    });
+
+    const text = await res.text();
+
+    return {
+      ok: res.ok,
+      status: res.status,
+      text,
+      networkError: false,
+    };
+  } catch (err) {
+    return {
+      ok: false,
+      status: 0,
+      text: "",
       networkError: true,
       errorMessage: err?.name === "AbortError" ? "Request timeout" : String(err?.message || err),
     };
@@ -435,21 +783,61 @@ function isTransientFetchFailure(result) {
   return false;
 }
 
-async function fetchJsonWithRetry(url, { verbose = false } = {}) {
-  let lastResult = null;
+function isDefinitelyPrivateInventoryResponse(result) {
+  if (!result) return false;
 
-  for (let attempt = 1; attempt <= MAX_FETCH_RETRIES; attempt++) {
+  if (result.status === 401 || result.status === 403) {
+    return true;
+  }
+
+  if (result.json) {
+    if (isPrivateOrUnavailablePayload(result.json, result.status, result.raw)) {
+      return true;
+    }
+
+    if (looksLikePrivateInventorySuccessPayload(result.json)) {
+      return true;
+    }
+  }
+
+  const rawText = String(result.raw || "").toLowerCase();
+
+  return textIncludesAny(rawText, [
+    "private",
+    "not public",
+    "inventory is unavailable",
+    "profile is private",
+    "friends only",
+    "access denied",
+  ]);
+}
+
+async function fetchJsonWithRetry(url, { verbose = false, noRetries = false } = {}) {
+  let lastResult = null;
+  const maxAttempts = noRetries ? 1 : MAX_FETCH_RETRIES;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     const result = await fetchJson(url);
     lastResult = result;
 
-    const shouldRetry = isTransientFetchFailure(result) && attempt < MAX_FETCH_RETRIES;
+    const privateDetected = isDefinitelyPrivateInventoryResponse(result);
+    const shouldRetry =
+      !privateDetected &&
+      isTransientFetchFailure(result) &&
+      attempt < maxAttempts;
 
     if (verbose) {
-      const suffix = shouldRetry ? " -> retry" : "";
-      console.log(`[HTTP] attempt=${attempt}/${MAX_FETCH_RETRIES} status=${result.status || "ERR"}${suffix}`);
+      const suffix = privateDetected
+        ? " -> private/no-retry"
+        : shouldRetry
+          ? " -> retry"
+          : "";
+      console.log(
+        `[HTTP] attempt=${attempt}/${maxAttempts} status=${result.status || "ERR"}${suffix}`
+      );
     }
 
-    if (!shouldRetry) {
+    if (privateDetected || !shouldRetry) {
       return result;
     }
 
@@ -460,7 +848,7 @@ async function fetchJsonWithRetry(url, { verbose = false } = {}) {
   return lastResult;
 }
 
-async function fetchFullInventory(steamid64, { verbose = false } = {}) {
+async function fetchFullInventory(steamid64, { verbose = false, noRetries = false } = {}) {
   let startAssetId = null;
   let page = 0;
 
@@ -469,7 +857,7 @@ async function fetchFullInventory(steamid64, { verbose = false } = {}) {
 
   while (true) {
     const url = buildInventoryUrl(steamid64, startAssetId);
-    const res = await fetchJsonWithRetry(url, { verbose });
+    const res = await fetchJsonWithRetry(url, { verbose, noRetries });
 
     page++;
 
@@ -554,6 +942,761 @@ async function fetchFullInventory(steamid64, { verbose = false } = {}) {
   };
 }
 
+// ============================================================================
+// Liquipedia helpers
+// ============================================================================
+
+function htmlDecode(input) {
+  return String(input || "")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
+}
+
+function stripTags(input) {
+  return htmlDecode(String(input || "").replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+}
+
+function normalizeWhitespace(input) {
+  return String(input || "").replace(/\s+/g, " ").trim();
+}
+
+function extractWikitextField(raw, fieldName) {
+  const re = new RegExp(`\\|\\s*${fieldName}\\s*=\\s*([^\\n\\r]*)`, "i");
+  const m = String(raw || "").match(re);
+  return m ? m[1].trim() : "";
+}
+
+function cleanWikitextValue(value) {
+  let out = String(value || "");
+
+  out = out.replace(/<ref[^>]*>.*?<\/ref>/gi, "");
+  out = out.replace(/<ref[^/>]*\/>/gi, "");
+  out = out.replace(/<!--.*?-->/gs, "");
+  out = out.replace(/\{\{!}}/g, "|");
+
+  // {{flag|France}} => France
+  out = out.replace(/\{\{\s*flag(?:icon)?\s*\|\s*([^|}]+).*?\}\}/gi, "$1");
+  // {{birth date and age|1993|2|22}} => 1993|2|22 (temporary)
+  out = out.replace(/\[\[(?:[^|\]]+\|)?([^\]]+)\]\]/g, "$1");
+  out = out.replace(/\{\{(?:team|Team)\|([^|}]+).*?\}\}/g, "$1");
+  out = out.replace(/\{\{([^{}]+)\}\}/g, "$1");
+  out = out.replace(/'''/g, "");
+  out = out.replace(/''/g, "");
+  out = out.replace(/\s+/g, " ").trim();
+
+  return out;
+}
+
+function parseBirthDateFromRaw(raw) {
+  const fields = [
+    extractWikitextField(raw, "birth_date"),
+    extractWikitextField(raw, "birthdate"),
+    extractWikitextField(raw, "born"),
+  ].filter(Boolean);
+
+  for (const value of fields) {
+    const original = String(value);
+
+    // {{Birth date and age|1993|2|22}}
+    let m = original.match(/\{\{\s*birth date(?: and age)?\s*\|\s*(\d{4})\s*\|\s*(\d{1,2})\s*\|\s*(\d{1,2})/i);
+    if (m) {
+      return formatDateParts(m[1], m[2], m[3]);
+    }
+
+    // 1993-02-22
+    m = original.match(/\b(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})\b/);
+    if (m) {
+      return formatDateParts(m[1], m[2], m[3]);
+    }
+
+    const cleaned = cleanWikitextValue(original);
+    const parsed = formatHumanDateToDot(cleaned);
+    if (parsed) return parsed;
+  }
+
+  return "";
+}
+
+function formatDateParts(year, month, day) {
+  const y = String(year).padStart(4, "0");
+  const m = String(month).padStart(2, "0");
+  const d = String(day).padStart(2, "0");
+  return `${d}.${m}.${y}`;
+}
+
+function formatHumanDateToDot(input) {
+  const text = normalizeWhitespace(String(input || "").replace(/\(.*?\)/g, "").trim());
+  if (!text) return "";
+
+  const months = {
+    january: "01",
+    february: "02",
+    march: "03",
+    april: "04",
+    may: "05",
+    june: "06",
+    july: "07",
+    august: "08",
+    september: "09",
+    october: "10",
+    november: "11",
+    december: "12",
+  };
+
+  let m = text.match(/^([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})$/);
+  if (m) {
+    const month = months[m[1].toLowerCase()];
+    if (month) return `${String(m[2]).padStart(2, "0")}.${month}.${m[3]}`;
+  }
+
+  m = text.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
+  if (m) {
+    return `${String(m[1]).padStart(2, "0")}.${String(m[2]).padStart(2, "0")}.${m[3]}`;
+  }
+
+  return "";
+}
+
+function extractPlayerNameFromRaw(raw) {
+  const romanized = cleanWikitextValue(extractWikitextField(raw, "romanized_name"));
+  const name = cleanWikitextValue(extractWikitextField(raw, "name"));
+  const realName = cleanWikitextValue(extractWikitextField(raw, "real_name"));
+
+  return normalizeWhitespace(romanized || name || realName || "");
+}
+
+function extractNationalityFromRaw(raw) {
+  const candidates = [
+    extractWikitextField(raw, "nationality"),
+    extractWikitextField(raw, "country"),
+  ]
+    .map(cleanWikitextValue)
+    .map(normalizeWhitespace)
+    .filter(Boolean);
+
+  if (!candidates.length) return "";
+
+  let out = candidates[0];
+  out = out.split(",")[0].trim();
+  out = out.replace(/\b[A-Z]{2,3}\b/g, (m) => m); // keep country abbreviations if they appear
+  return out;
+}
+
+function extractTeamFromRaw(raw) {
+  const candidates = [
+    extractWikitextField(raw, "team"),
+    extractWikitextField(raw, "current_team"),
+    extractWikitextField(raw, "team1"),
+  ]
+    .map(cleanWikitextValue)
+    .map(normalizeWhitespace)
+    .filter(Boolean);
+
+  if (!candidates.length) return "";
+  let out = candidates[0];
+
+  // Often can be "Team Vitality"
+  out = out.replace(/\s+\(.*?\)\s*$/, "").trim();
+  return out;
+}
+
+function extractLinkFieldFromRaw(raw, fieldName) {
+  const value = cleanWikitextValue(extractWikitextField(raw, fieldName));
+  return normalizeWhitespace(value);
+}
+
+function parseTwitchValue(value) {
+  const v = String(value || "").trim();
+  if (!v) return "";
+
+  const fromUrl = v.match(/twitch\.tv\/([A-Za-z0-9_]+)/i);
+  if (fromUrl) return fromUrl[1];
+
+  return v.replace(/^@/, "").trim();
+}
+
+function parseFaceit(value) {
+  const v = String(value || "").trim();
+  if (!v) return "";
+
+  // faceitdb → преобразуем в обычный FACEIT профиль
+  let m = v.match(/faceitdb\.com\/profile\/faceit\/([a-f0-9-]{36})/i);
+  if (m) {
+    return `https://www.faceit.com/en/players/${m[1]}`;
+  }
+
+  // обычный FACEIT профиль
+  m = v.match(/faceit\.com\/(?:[a-z]{2}\/)?players\/([^/?#&]+)/i);
+  if (m) {
+    return `https://www.faceit.com/en/players/${m[1]}`;
+  }
+
+  // если вдруг просто ник (редко)
+  if (/^[a-zA-Z0-9_-]{3,}$/.test(v)) {
+    return `https://www.faceit.com/en/players/${v}`;
+  }
+
+  return "";
+}
+
+function extractMetaContent(html, propertyOrName) {
+  const re1 = new RegExp(`<meta[^>]+property=["']${propertyOrName}["'][^>]+content=["']([^"']+)["']`, "i");
+  const re2 = new RegExp(`<meta[^>]+name=["']${propertyOrName}["'][^>]+content=["']([^"']+)["']`, "i");
+  const m = html.match(re1) || html.match(re2);
+  return m ? htmlDecode(m[1]) : "";
+}
+
+function extractHtmlInfoboxCell(html, label) {
+  const re = new RegExp(
+    `<div[^>]*class=["'][^"']*infobox-cell-2[^"']*["'][^>]*>\\s*${label}\\s*:\\s*<\/div>\\s*<div[^>]*class=["'][^"']*infobox-cell-2[^"']*["'][^>]*>([\\s\\S]*?)<\/div>`,
+    "i"
+  );
+  const m = html.match(re);
+  return m ? stripTags(m[1]) : "";
+}
+
+async function fetchLiquipediaRawPage(pageTitle, { verbose = false } = {}) {
+  const url = `${LIQUIPEDIA_CS_BASE}/${encodeWikiTitle(pageTitle)}?action=raw`;
+  const res = await fetchText(url, {}, LIQUIPEDIA_TIMEOUT_MS);
+
+  if (verbose) {
+    console.log(
+      `[LIQUIPEDIA RAW] ${pageTitle} -> ${res.status || "ERR"}${res.errorMessage ? ` :: ${res.errorMessage}` : ""}`
+    );
+  }
+
+  return {
+    ...res,
+    url,
+  };
+}
+
+async function fetchLiquipediaHtmlPage(pageTitle, { verbose = false } = {}) {
+  const url = `${LIQUIPEDIA_CS_BASE}/${encodeWikiTitle(pageTitle)}`;
+  const res = await fetchText(url, {}, LIQUIPEDIA_TIMEOUT_MS);
+
+  if (verbose) {
+    console.log(
+      `[LIQUIPEDIA HTML] ${pageTitle} -> ${res.status || "ERR"}${res.errorMessage ? ` :: ${res.errorMessage}` : ""}`
+    );
+  }
+
+  return {
+    ...res,
+    url,
+  };
+}
+
+function hasEnoughLiquipediaFields(player) {
+  return Boolean(
+    String(player?.name || "").trim() &&
+    String(player?.nationality || "").trim() &&
+    String(player?.born || "").trim() &&
+    String(player?.team || "").trim() &&
+    (
+      String(player?.twitch || "").trim() ||
+      String(player?.faceit || "").trim()
+    )
+  );
+}
+
+function candidateLiquipediaTitles(player) {
+  const raw = String(player?.liquipediaSlug || "").trim();
+  const nickname = String(player?.nickname || "").trim();
+
+  const set = new Set();
+
+  if (raw) {
+    set.add(raw);
+    set.add(raw.replace(/-/g, " "));
+  }
+
+  if (nickname) {
+    set.add(nickname);
+    set.add(nickname.replace(/ /g, "_"));
+    set.add(nickname.toLowerCase());
+    set.add(safeSlug(nickname).replace(/-/g, " "));
+    set.add(safeSlug(nickname));
+  }
+
+  return [...set].filter(Boolean);
+}
+
+async function fetchLiquipediaPlayerData(player, { verbose = false } = {}) {
+  const titles = candidateLiquipediaTitles(player);
+
+  for (const title of titles) {
+    const rawRes = await fetchLiquipediaRawPage(title, { verbose });
+
+    if (rawRes.ok && rawRes.text && !/There is currently no text in this page/i.test(rawRes.text)) {
+      const raw = rawRes.text;
+
+      const name = extractPlayerNameFromRaw(raw);
+      const nationality = extractNationalityFromRaw(raw);
+      const born = parseBirthDateFromRaw(raw);
+      const historyTeamLink = extractCurrentTeamFromTeamHistoryRaw(raw);
+      const rawTeamLink = extractTeamLinkFromRaw(raw);
+
+      const finalTeamLink =
+        historyTeamLink.teamName
+          ? historyTeamLink
+          : rawTeamLink;
+
+      const team = finalTeamLink.teamName || extractTeamFromRaw(raw);
+
+      const twitchRaw = extractLinkFieldFromRaw(raw, "twitch");
+      const faceitRaw = extractLinkFieldFromRaw(raw, "faceit");
+
+      let twitch = parseTwitchValue(twitchRaw);
+      let faceit = parseFaceit(faceitRaw);
+
+      const rawExternalLinks = extractExternalLinksFromRaw(raw);
+
+      if (!twitch) {
+        const twitchUrl = rawExternalLinks.find((url) => /twitch\.tv\/[A-Za-z0-9_]+/i.test(url));
+        if (twitchUrl) {
+          twitch = parseTwitchValue(twitchUrl);
+        }
+      }
+
+      if (!faceit) {
+        faceit = findFaceitFromLinks(rawExternalLinks);
+      }
+
+      const hasUsefulData = Boolean(name || nationality || born || team || twitch || faceit);
+
+      if (hasUsefulData) {
+        return {
+          found: true,
+          source: "raw",
+          name,
+          nationality,
+          born,
+          team,
+          twitch,
+          faceit,
+        };
+      }
+    }
+
+    const htmlRes = await fetchLiquipediaHtmlPage(title, { verbose });
+
+    if (htmlRes.ok && htmlRes.text) {
+      const html = htmlRes.text;
+
+      const notFound =
+        /There is currently no text in this page/i.test(html) ||
+        /Page does not exist/i.test(html);
+
+      if (notFound) {
+        await sleep(LIQUIPEDIA_REQUEST_DELAY_MS);
+        continue;
+      }
+
+      const name = extractHtmlInfoboxCell(html, "Name");
+      const nationality = extractHtmlInfoboxCell(html, "Nationality");
+      const born = formatHumanDateToDot(extractHtmlInfoboxCell(html, "Born"));
+      const htmlTeamLink = extractTeamLinkFromHtml(html);
+      const team = htmlTeamLink.teamName || extractHtmlInfoboxCell(html, "Team");
+
+      let twitch = "";
+      let faceit = "";
+
+      const htmlLinks = extractExternalLinksFromHtml(html);
+
+      const twitchUrl = htmlLinks.find((url) => /twitch\.tv\/[A-Za-z0-9_]+/i.test(url));
+      if (twitchUrl) {
+        twitch = parseTwitchValue(twitchUrl);
+      }
+
+      faceit = findFaceitFromLinks(htmlLinks);
+
+      const hasUsefulData = Boolean(name || nationality || born || team || twitch || faceit);
+
+      if (hasUsefulData) {
+        return {
+          found: true,
+          source: "html",
+          name,
+          nationality,
+          born,
+          team,
+          twitch,
+          faceit,
+        };
+      }
+    }
+
+    await sleep(LIQUIPEDIA_REQUEST_DELAY_MS);
+  }
+
+  return {
+    found: false,
+    source: "",
+    name: "",
+    nationality: "",
+    born: "",
+    team: "",
+    twitch: "",
+    faceit: "",
+  };
+}
+
+function extractExternalLinksFromRaw(raw) {
+  const text = String(raw || "");
+  const links = [];
+
+  // [https://site.com label]
+  const bracketLinks = text.match(/\[(https?:\/\/[^\s\]]+)(?:\s+[^\]]*)?\]/gi) || [];
+  for (const item of bracketLinks) {
+    const m = item.match(/\[(https?:\/\/[^\s\]]+)/i);
+    if (m) links.push(m[1]);
+  }
+
+  // bare urls
+  const bareLinks = text.match(/https?:\/\/[^\s|}\]]+/gi) || [];
+  links.push(...bareLinks);
+
+  // raw UUIDs for FACEITDB
+  const uuids =
+    text.match(/\b[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}\b/gi) || [];
+
+  for (const id of uuids) {
+    links.push(`https://faceitdb.com/profile/faceit/${id}`);
+  }
+
+  return [...new Set(links)];
+}
+
+function extractExternalLinksFromHtml(html) {
+  const text = String(html || "");
+  const links = [];
+
+  // href="..."
+  const hrefRegex = /href=["']([^"']+)["']/gi;
+  let match;
+
+  while ((match = hrefRegex.exec(text)) !== null) {
+    let href = htmlDecode(match[1]).trim();
+    if (!href) continue;
+
+    // absolute
+    if (/^https?:\/\//i.test(href)) {
+      links.push(href);
+      continue;
+    }
+
+    // protocol-relative
+    if (/^\/\//.test(href)) {
+      links.push(`https:${href}`);
+      continue;
+    }
+
+    // Liquipedia relative redirect or special links
+    if (href.startsWith("/")) {
+      links.push(`https://liquipedia.net${href}`);
+      continue;
+    }
+  }
+
+  // direct UUID anywhere in html
+  const uuids =
+    text.match(/\b[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}\b/gi) || [];
+
+  for (const id of uuids) {
+    links.push(`https://faceitdb.com/profile/faceit/${id}`);
+  }
+
+  return [...new Set(links)];
+}
+
+function findFaceitFromLinks(links) {
+  for (const url of links) {
+    const parsed = parseFaceit(url);
+    if (parsed) return parsed;
+
+    const decoded = decodeURIComponent(String(url || ""));
+    const parsedDecoded = parseFaceit(decoded);
+    if (parsedDecoded) return parsedDecoded;
+  }
+
+  return "";
+}
+
+function mergeLiquipediaDataIntoPlayer(player, lpData, { force = false } = {}) {
+  const merged = { ...player };
+
+  const assign = (key, value) => {
+    const next = String(value || "").trim();
+    if (!next) return;
+    if (force || !String(merged[key] || "").trim()) {
+      merged[key] = next;
+    }
+  };
+
+  assign("name", lpData.name);
+  assign("nationality", lpData.nationality);
+  assign("born", lpData.born);
+  assign("team", lpData.team);
+  assign("twitch", lpData.twitch);
+  assign("faceit", lpData.faceit);
+
+  return merged;
+}
+
+async function savePlayersSource(playersSourceFile, players) {
+  const doc = {
+    updatedAt: new Date().toISOString(),
+    players: players.map((p) => {
+      const out = {
+        nickname: p.nickname,
+        steamid64: p.steamid64,
+        team: p.team || "",
+        isContentCreator: Boolean(p.isContentCreator),
+      };
+
+      const isLiquipediaNone = String(p.liquipedia || "").trim().toLowerCase() === "none";
+
+      if (isLiquipediaNone) {
+        out.liquipedia = "none";
+      }
+
+      out.name = p.name || "";
+      out.nationality = p.nationality || "";
+      out.born = p.born || "";
+      out.twitch = p.twitch || "";
+      out.faceit = p.faceit || "";
+
+      return out;
+    }),
+  };
+
+  await writeJson(playersSourceFile, doc);
+}
+
+async function enrichPlayersWithLiquipedia(players, { verbose = false, refetchLiquipedia = false } = {}) {
+  const out = [];
+
+    for (let i = 0; i < players.length; i++) {
+      const player = players[i];
+
+      if (shouldSkipLiquipediaByMarker(player)) {
+        if (verbose) {
+          console.log(`[LIQUIPEDIA MANUAL SKIP] ${player.nickname} :: liquipedia=none`);
+        }
+        out.push(player);
+        continue;
+      }
+
+      const shouldSkipFetch = !refetchLiquipedia && hasEnoughLiquipediaFields(player);
+
+      if (shouldSkipFetch) {
+        if (verbose) {
+          console.log(`[LIQUIPEDIA SKIP] ${player.nickname} :: already has required fields`);
+        }
+        out.push(player);
+        continue;
+      }
+
+      if (verbose) {
+        console.log(`[LIQUIPEDIA FETCH] ${player.nickname}`);
+      }
+
+    const lpData = await fetchLiquipediaPlayerData(player, { verbose });
+
+    if (!lpData.found) {
+      if (verbose) {
+        console.log(`[LIQUIPEDIA MISS] ${player.nickname}`);
+      }
+      out.push(player);
+      await sleep(LIQUIPEDIA_REQUEST_DELAY_MS);
+      continue;
+    }
+
+    const merged = mergeLiquipediaDataIntoPlayer(player, lpData, {
+      force: refetchLiquipedia,
+    });
+
+    if (verbose) {
+      console.log(
+        `[LIQUIPEDIA OK] ${player.nickname} :: name=${merged.name || "-"}, nationality=${merged.nationality || "-"}, born=${merged.born || "-"}, team=${merged.team || "-"}, twitch=${merged.twitch || "-"}, faceit=${ merged.faceit || "-"}`
+      );
+    }
+
+    out.push(merged);
+    await sleep(LIQUIPEDIA_REQUEST_DELAY_MS);
+  }
+
+  return out;
+}
+
+function extractTeamRegionFromRaw(raw) {
+  const candidates = [
+    extractWikitextField(raw, "region"),
+    extractWikitextField(raw, "region2"),
+    extractWikitextField(raw, "location"),
+    extractWikitextField(raw, "country"),
+  ]
+    .map(cleanWikitextValue)
+    .map(normalizeWhitespace)
+    .filter(Boolean);
+
+  return candidates[0] || "";
+}
+
+async function fetchTeamMeta(teamRef, root, { verbose = false } = {}) {
+  const teamName = String(teamRef?.team || "").trim();
+  const teamLiquipediaSlug = String(teamRef?.teamLiquipediaSlug || "").trim();
+  const previous = teamRef?.previous || {};
+  const liquipediaMode = String(teamRef?.liquipedia || previous?.liquipedia || "").trim().toLowerCase();
+
+  const slugBase = teamLiquipediaSlug || teamName || previous.team || "";
+  const slug = safeSlug(slugBase);
+
+  let region = previous.region || "";
+  const logoPath = `/img/skins/teams/${slug}.webp`;
+
+  if (liquipediaMode === "none") {
+    return {
+      team: teamName || previous.team || "",
+      liquipedia: "none",
+      region,
+      logoPath,
+    };
+  }
+
+  const pageTitle = teamLiquipediaSlug
+    ? teamLiquipediaSlug.replace(/_/g, " ")
+    : teamName;
+
+  if (pageTitle) {
+    const rawRes = await fetchLiquipediaRawPage(pageTitle, { verbose });
+    if (rawRes.ok && rawRes.text) {
+      const nextRegion = extractTeamRegionFromRaw(rawRes.text || "");
+      if (nextRegion) {
+        region = nextRegion;
+      }
+    }
+  }
+
+  return {
+    team: teamName || previous.team || "",
+    liquipedia: "",
+    region,
+    logoPath,
+  };
+}
+
+async function buildTeamsDocument(players, root, { verbose = false, existingTeamsDoc = null } = {}) {
+  const previousByKey = new Map();
+  const prevTeams = Array.isArray(existingTeamsDoc?.teams) ? existingTeamsDoc.teams : [];
+
+  for (const t of prevTeams) {
+    const key = safeSlug(String(t?.slug || t?.team || ""));
+    if (!key) continue;
+    previousByKey.set(key, t);
+  }
+
+  const incomingByKey = new Map();
+
+  for (const player of players) {
+    const teamName = String(player?.team || "").trim();
+    const teamLiquipediaSlug = String(player?.teamLiquipediaSlug || "").trim();
+    const liquipediaMode = String(player?.liquipedia || "").trim().toLowerCase();
+
+    if (!teamName && !teamLiquipediaSlug) continue;
+
+    const teamKey = safeSlug(teamLiquipediaSlug || teamName);
+
+    if (!incomingByKey.has(teamKey)) {
+      incomingByKey.set(teamKey, {
+        team: teamName,
+        teamLiquipediaSlug,
+        liquipedia: liquipediaMode === "none" ? "none" : "",
+        previous: previousByKey.get(teamKey) || null,
+        players: [],
+      });
+    }
+
+    const group = incomingByKey.get(teamKey);
+
+    if (!group.team && teamName) group.team = teamName;
+    if (!group.teamLiquipediaSlug && teamLiquipediaSlug) {
+      group.teamLiquipediaSlug = teamLiquipediaSlug;
+    }
+    if (!group.liquipedia && liquipediaMode === "none") {
+      group.liquipedia = "none";
+    }
+
+    group.players.push({
+      nickname: player.nickname,
+      slug: safeSlug(player.nickname),
+      steamid64: player.steamid64,
+    });
+  }
+
+  const updatedTeamsByKey = new Map(previousByKey);
+
+  for (const [teamKey, group] of incomingByKey.entries()) {
+    const meta = await fetchTeamMeta(
+      {
+        team: group.team,
+        teamLiquipediaSlug: group.teamLiquipediaSlug,
+        liquipedia: group.liquipedia,
+        previous: group.previous,
+      },
+      root,
+      { verbose }
+    );
+
+    group.players.sort((a, b) =>
+      String(a.nickname || "").localeCompare(String(b.nickname || ""), "en", {
+        sensitivity: "base",
+        numeric: true,
+      })
+    );
+
+    const teamDoc = {
+      team: group.team || group.previous?.team || "",
+      slug: safeSlug(group.teamLiquipediaSlug || group.team || group.previous?.team || ""),
+      region: meta.region || group.previous?.region || "",
+      logoPath: meta.logoPath || group.previous?.logoPath || `/img/skins/teams/${safeSlug(group.team || group.previous?.team || "")}.webp`,
+      players: group.players,
+    };
+
+    if (group.liquipedia === "none" || group.previous?.liquipedia === "none") {
+      teamDoc.liquipedia = "none";
+    }
+
+    updatedTeamsByKey.set(teamKey, teamDoc);
+
+    await sleep(LIQUIPEDIA_REQUEST_DELAY_MS);
+  }
+
+  const teams = [...updatedTeamsByKey.values()];
+
+  teams.sort((a, b) =>
+    String(a.team || "").localeCompare(String(b.team || ""), "en", {
+      sensitivity: "base",
+      numeric: true,
+    })
+  );
+
+  return {
+    updatedAt: new Date().toISOString(),
+    count: teams.length,
+    teams,
+  };
+}
+
+// ============================================================================
+// Inventory documents
+// ============================================================================
+
 function buildInventoryDocument(player, inventoryResult) {
   const now = new Date().toISOString();
 
@@ -562,8 +1705,16 @@ function buildInventoryDocument(player, inventoryResult) {
       nickname: player.nickname,
       slug: safeSlug(player.nickname),
       steamid64: player.steamid64,
+
       team: player.team || "",
-      isStreamer: Boolean(player.isStreamer),
+      name: player.name || "",
+      nationality: player.nationality || "",
+      born: player.born || "",
+
+      isContentCreator: Boolean(player.isContentCreator),
+      twitch: player.twitch || "",
+      faceit: player.faceit || "",
+
       appid: APP_ID,
       contextid: String(CONTEXT_ID),
       updatedAt: now,
@@ -597,8 +1748,16 @@ function buildInventoryDocument(player, inventoryResult) {
     nickname: player.nickname,
     slug: safeSlug(player.nickname),
     steamid64: player.steamid64,
+
     team: player.team || "",
-    isStreamer: Boolean(player.isStreamer),
+    name: player.name || "",
+    nationality: player.nationality || "",
+    born: player.born || "",
+
+    isContentCreator: Boolean(player.isContentCreator),
+    twitch: player.twitch || "",
+    faceit: player.faceit || "",
+
     appid: APP_ID,
     contextid: String(CONTEXT_ID),
     updatedAt: now,
@@ -624,6 +1783,16 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
       slug: safeSlug(player.nickname),
       steamid64: player.steamid64,
       team: player.team || "",
+      name: player.name || "",
+      nationality: player.nationality || "",
+      born: player.born || "",
+      liquipediaSlug: player.liquipediaSlug || "",
+      liquipediaUrl: player.liquipediaUrl || "",
+      teamLiquipediaUrl: player.teamLiquipediaUrl || "",
+      teamLiquipediaSlug: player.teamLiquipediaSlug || "",
+      twitch: player.twitch || "",
+      faceit: player.faceit || "",
+      isContentCreator: Boolean(player.isContentCreator),
     };
   }
 
@@ -632,9 +1801,23 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
     nickname: player.nickname,
     slug: safeSlug(player.nickname),
     steamid64: player.steamid64,
-    team: player.team || existingDoc.team || "",
-    updatedAt: now,
 
+    team: player.team || existingDoc.team || "",
+    name: player.name || existingDoc.name || "",
+    nationality: player.nationality || existingDoc.nationality || "",
+    born: player.born || existingDoc.born || "",
+
+    liquipediaSlug: player.liquipediaSlug || existingDoc.liquipediaSlug || "",
+    liquipediaUrl: player.liquipediaUrl || existingDoc.liquipediaUrl || "",
+    teamLiquipediaUrl: player.teamLiquipediaUrl || existingDoc.teamLiquipediaUrl || "",
+    teamLiquipediaSlug: player.teamLiquipediaSlug || existingDoc.teamLiquipediaSlug || "",
+    twitch: player.twitch || existingDoc.twitch || "",
+    faceit: player.faceit || existingDoc.faceit || "",
+    isContentCreator: Boolean(
+      player.isContentCreator ?? existingDoc.isContentCreator ?? false
+    ),
+
+    updatedAt: now,
     fetchOk: false,
     fetchStatus: failedDoc.fetchStatus,
     fetchError: failedDoc.fetchError,
@@ -663,12 +1846,17 @@ async function fetchInventoryWithVisibleFailedRetry(player, existingDoc, options
     verbose = false,
     retryVisibleFailed = 0,
     retryVisibleFailedDelay = 0,
+    noRetries = false,
   } = options;
 
-  let inventoryResult = await fetchFullInventory(player.steamid64, { verbose });
+  let inventoryResult = await fetchFullInventory(player.steamid64, {
+    verbose,
+    noRetries,
+  });
   let inventoryDocRaw = buildInventoryDocument(player, inventoryResult);
 
   if (
+    !noRetries &&
     shouldRetryVisibleFailedFetch(existingDoc, inventoryDocRaw) &&
     retryVisibleFailed > 0
   ) {
@@ -683,7 +1871,10 @@ async function fetchInventoryWithVisibleFailedRetry(player, existingDoc, options
         await sleep(retryVisibleFailedDelay);
       }
 
-      inventoryResult = await fetchFullInventory(player.steamid64, { verbose });
+      inventoryResult = await fetchFullInventory(player.steamid64, {
+        verbose,
+        noRetries,
+      });
       inventoryDocRaw = buildInventoryDocument(player, inventoryResult);
 
       if (inventoryDocRaw.fetchOk) {
@@ -737,30 +1928,89 @@ async function main() {
     onlyFailedFetch,
     delay,
     verbose,
+    refetchLiquipedia,
+    liquipediaOnly,
+    teamsOnly,
     retryVisibleFailed,
     retryVisibleFailedDelay,
+    noRetries,
   } = parseArgs(process.argv.slice(2));
 
   const playersListDir = path.join(root, PLAYERS_LIST_DIR);
   const playersInvDir = path.join(root, PLAYERS_INV_DIR);
+
   const playersSourceFile = path.join(playersListDir, PLAYERS_SOURCE_FILE);
   const playersListFile = path.join(playersListDir, PLAYERS_LIST_OUTPUT_FILE);
+  const teamsListFile = path.join(playersListDir, TEAMS_LIST_OUTPUT_FILE);
 
   await ensureDir(playersListDir);
   await ensureDir(playersInvDir);
 
-  const PLAYERS = await loadPlayersSource(playersSourceFile);
+  const PLAYERS_SOURCE = await loadPlayersSource(playersSourceFile);
 
   const existingPlayersListDoc = normalizeExistingPlayersListDoc(
     await readJsonSafe(playersListFile)
   );
 
+  const existingTeamsDoc = normalizeExistingTeamsDoc(
+    await readJsonSafe(teamsListFile)
+  );
+
   let selectedPlayers = only.length
-    ? PLAYERS.filter((p) => only.includes(p.nickname) || only.includes(safeSlug(p.nickname)))
-    : PLAYERS;
+    ? PLAYERS_SOURCE.filter((p) => only.includes(p.nickname) || only.includes(safeSlug(p.nickname)))
+    : PLAYERS_SOURCE;
 
   if (onlyFailedFetch) {
     selectedPlayers = await filterPlayersByFailedFetch(selectedPlayers, playersInvDir, { verbose });
+  }
+
+  // Liquipedia enrichment layer
+  selectedPlayers = await enrichPlayersWithLiquipedia(selectedPlayers, {
+    verbose,
+    refetchLiquipedia,
+  });
+
+    // persist corrected player/team metadata back to fetch-players.json
+  if (!only.length && !onlyFailedFetch) {
+    await savePlayersSource(playersSourceFile, selectedPlayers);
+  } else {
+    // merge partial updates into original source when running subset
+    const allPlayersMap = new Map(
+      PLAYERS_SOURCE.map((p) => [safeSlug(p.nickname), { ...p }])
+    );
+
+    for (const p of selectedPlayers) {
+      allPlayersMap.set(safeSlug(p.nickname), p);
+    }
+
+    await savePlayersSource(playersSourceFile, [...allPlayersMap.values()]);
+  }
+  const FULL_PLAYERS_SOURCE = await loadPlayersSource(playersSourceFile);
+  // teams-only mode: rebuild only teams.json from current selected players/source data
+  if (teamsOnly) {
+    const teamsDoc = await buildTeamsDocument(FULL_PLAYERS_SOURCE, root, {
+      verbose,
+      existingTeamsDoc,
+    });
+    await writeJson(teamsListFile, teamsDoc);
+
+    console.log(`\nDone. Teams only mode.`);
+    console.log(`Teams list written: ${teamsListFile}`);
+    return;
+  }
+
+  // liquipedia-only mode: enrich players, persist source, rebuild teams.json, skip inventories
+  if (liquipediaOnly) {
+    const teamsDoc = await buildTeamsDocument(FULL_PLAYERS_SOURCE, root, {
+      verbose,
+      existingTeamsDoc,
+    });
+    await writeJson(teamsListFile, teamsDoc);
+
+    console.log(`\nDone. Liquipedia only mode.`);
+    console.log(`Players source updated: ${playersSourceFile}`);
+    console.log(`Teams list written: ${teamsListFile}`);
+    return;
   }
 
   const playersListOutput = [];
@@ -785,6 +2035,7 @@ async function main() {
         verbose,
         retryVisibleFailed,
         retryVisibleFailedDelay,
+        noRetries,
       }
     );
 
@@ -799,7 +2050,8 @@ async function main() {
       slug,
       steamid64: player.steamid64,
       team: player.team || "",
-      isStreamer: Boolean(player.isStreamer),
+      isContentCreator: Boolean(player.isContentCreator),
+
       inventoryJson: `/code-parts/topics/players-data/players-inventories/${slug}.json`,
       updatedAt: inventoryDoc.updatedAt,
       inventoryVisible: inventoryDoc.inventoryVisible,
@@ -840,7 +2092,18 @@ async function main() {
 
   await writeJson(playersListFile, playersListDoc);
 
+  // teams.json is built from the final players list output
+  const FULL_PLAYERS_SOURCE_AFTER_SAVE = await loadPlayersSource(playersSourceFile);
+
+  const teamsDoc = await buildTeamsDocument(FULL_PLAYERS_SOURCE_AFTER_SAVE, root, {
+    verbose,
+    existingTeamsDoc,
+  });
+  await writeJson(teamsListFile, teamsDoc);
+
   console.log(`\nDone. Players: ${playersListOutput.length}, success: ${successCount}, failed: ${failedCount}`);
+  console.log(`Players list written: ${playersListFile}`);
+  console.log(`Teams list written: ${teamsListFile}`);
 }
 
 main().catch((err) => {
