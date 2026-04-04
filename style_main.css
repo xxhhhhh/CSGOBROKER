@@ -1997,6 +1997,7 @@ nav .pages {
     position: relative;
     background: var(--main-theme);
     filter: drop-shadow(0 0 1px rgb(35 35 35));
+    color: var(--text-lightgray);
     display: flex;
     align-items: center;
     border-radius: var(--main-border);
@@ -2012,7 +2013,6 @@ nav .pages {
 .section:has(.navigation-weapon-name),
 .section:has(.navigation-weapon-type) {
     gap: 6px;
-    margin-bottom: 3px;
 }
 
 .navigation-weapon-type {
@@ -2677,36 +2677,140 @@ nav .pages {
     z-index: 101;
 }
 
-.steam-profile {
+.inventories .item-topic-grandbox .logobg {
+    justify-content: flex-start;
+    overflow: unset;
+}
+
+.player-links {
     position: absolute;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(6, auto);
+    gap: 3px;
+
+    /* direction: rtl; */
+
+    top: 11px;
+    left: 11px;
+    transition: all .15s ease-in-out;
+    z-index: 101;
+}
+
+/* .player-status {
+    position: absolute;
+    gap: 3px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    transition: all .15s ease-in-out;
+    z-index: 101;
+    cursor: pointer;
+} */
+
+.player-status {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    transition: all .15s ease-in-out;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    
+}
+
+.player-status img {
+    opacity: .06;
+}
+
+.player-status img.content-creator {
+    opacity: .03;
+}
+
+.inventories .item-topic-grandbox:hover .logobg .player-status img {
+    transform: unset;
+    margin:  unset;
+}
+
+/* .inventories .item-topic-grandbox:hover .logobg .player-status:hover img {
+    opacity: 1;
+    transform: scale(1.03);
+} */
+
+.inventories .item-topic-grandbox .logobg .player-status img {
+    width: 100%;
+    height: auto;
+    margin: unset;
+}
+
+.player-bio {
+    font-size: 14px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    right: 16px;
+    z-index: 9;
+    font-weight: 500;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 125px;
+    width: 125px;
+}
+
+.player-bio span {
+    color: var(--text-darkgray);
+    max-width: 125px;
+    white-space: nowrap;     /* запрещает перенос */
+    overflow: hidden;        /* скрывает лишнее */
+    text-overflow: ellipsis; /* добавляет ... */
+}
+
+.player-bio span:first-child {
+    color: var(--text-lightgray);
+}
+
+.player-bio span:nth-child(2) {
+    margin-left: 5px;
+}
+
+.player-bio span:nth-child(3) {
+    margin-left: 10px;
+}
+
+.player-line {
+    width: 100%;
+    height: 40px;
+}
+
+.media-link {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    right: 30px;
-    bottom: 50%;
-    transform: translateY(50%);
-    width: 40px;
-    height: 40px;
+    width: 26px;
+    height: 26px;
     border-radius: var(--main-border);
     background-color: rgb(14, 14, 14);
     transition: all .15s ease-in-out;
     cursor: pointer;
-    z-index: 101;
+    transform: scale(1.01);
 }
 
-.steam-profile:hover {
-    transform: scale(1.03) translateY(50%);
+.media-link:hover {
+    transform: scale(1.15);
 }
 
-.steam-profile:hover::after {
+.media-link:hover::after {
     opacity: 1;
 }
 
-.steam-profile::after {
+.media-link::after {
     content: '';
     width: 100%;
     height: 100%;
-    background-size: 60%;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
     transition: all .15s ease-in-out;
@@ -2724,7 +2828,7 @@ nav .pages {
 }
 
 .box-skins-list .price-sorter::before,
-.steam-profile::before {
+.media-link::before {
     content: '';
     position: absolute;
     top: 2px;
@@ -4733,37 +4837,38 @@ nav img {
 .item-topic-grandbox {
     position: relative;
     width: 300px;
-    height: 100px;
-    border-radius: var(--main-border) var(--main-border) 0 0;
+    height: auto;
+    border-radius: var(--main-border);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     background: var(--darkgray);
     transition: all .15s ease-in-out;
     margin: 0 !important;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .item-topic-grandbox .logobg {
-    height: 100%;
+    position: relative;
+    height: 120px;
     width: calc(100% - 8px);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     transition: all .3s ease-in-out;
     background: var(--icongradient3);
     border-radius: var(--main-border);
     margin: 4px;
+    overflow: hidden;
     /* mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
     -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
     -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, .5), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
 }
 
 .item-topic-grandbox .logobg img {
-    height: 160%;
-    margin-top: 30px;
+    height: 120%;
+    margin-top: 10px;
     width: auto;
     z-index: 10;
     pointer-events: none;
@@ -4772,18 +4877,12 @@ nav img {
 }
 
 .inventories .item-topic-grandbox {
-    height: 120px;
     overflow: unset;
 }
 
 .inventories .item-topic-grandbox:hover .logobg img {
-    transform: unset !important;
-    margin-top: 70px !important;
-}
-
-.item-topic-grandbox .logobg img {
-    height: 140%;
-    margin-top: 20px;
+    transform: unset;
+    margin-top: 70px;
 }
 
 .inventories .item-topic-grandbox .logobg img {
@@ -4791,28 +4890,22 @@ nav img {
     margin-top: 70px;
 }
 
-.inventories .item-topic-grandbox .logobg.nonhltv img {
-    height: 150%;
-    margin-top: 10px !important;
-}
-
 .sitepage.items .topic-grandbox {
     height: auto;
     min-height: unset;
     transition: unset;
-    margin-top: -8px;
     border-radius: 0 0 var(--main-border) var(--main-border);
     z-index: 10;
+    position: unset;
+}
+
+.sitepage.items .topic-grandbox:has(.navigation-weapon-type.solo-category) .section.first,
+.sitepage.items .topic-grandbox:has(.navigation-weapon-type.solo-category) .section.searchers #Quality-Filter {
+    display: none;
 }
 
 .sitepage.items.inventories .topic-grandbox {
     min-height: 90px;
-}
-
-.sitepage.items .topic-grandbox .section {
-    top: unset;
-    border-radius: 5px;
-    top: -20px;
 }
 
 .sitepage.items .section {
@@ -4821,21 +4914,20 @@ nav img {
 }
 
 .sitepage.items .section.searchers {
-    height: 30%;
-    align-content: flex-start;
-    margin-bottom: 11px;
-    gap: 8px;
-
-    border-radius: var(--main-border);
-    margin-bottom: unset;
+    position: absolute;
+    height: calc(100% - 16px);
+    width: 45px;
+    border-radius: var(--main-border) 0 0 var(--main-border);
+    margin: unset;
     padding: 6px;
-    /* background: var(--darkygray); */
-}
-
-.sitepage.cases .section.searchers {
-    margin-top: 10px;
-    z-index: 100;
-    height: auto;
+    left: -40px;
+    bottom: 50%;
+    margin-top: unset;
+    max-width: unset;
+    background: var(--darkgray);
+    align-content: space-around;
+    top: unset;
+    transform: translateY(50%);
 }
 
 .siteblock {
@@ -5549,7 +5641,7 @@ nav img {
 }
 
 .item-topic-grandbox:hover .logobg img {
-    transform: scale(1.03) !important;
+    transform: scale(1.03);
 }
 
 .topic-box.maestro:hover .logobg {
@@ -8532,8 +8624,16 @@ a[data-title]:after,
 
 .typesinside .steamlvlup::before,
 .main-mode.steamlvlup .main-mode-icon::before,
-.steam-profile::after {
+.steam-link::after {
     background-image: url(/img/icons/gamemodes/steamlvlup.webp);
+}
+
+.twitch-link::after {
+    background-image: url(/img/icons/gamemodes/twitch.webp);
+}
+
+.faceit-link::after {
+    background-image: url(/img/icons/gamemodes/faceit.webp);
 }
 
 .typesinside .steamtopup::before,
@@ -13712,6 +13812,17 @@ header {
         max-width: 90%;
     }
 
+    .sitepage.items .section.searchers {
+        left: unset;
+        height: 45px;
+        width: auto;
+        position: relative;
+        bottom: unset;
+        transform: unset;
+        margin-top: -20px;
+        gap: 8px;
+    }
+
     .weapon-selection-unite {
         border-bottom: 2px solid rgba(0, 0, 0, .35);
     }
@@ -17305,6 +17416,7 @@ label.skins-category-switch:active {
     font-size: 11px;
     text-transform: uppercase;
     font-weight: 500;
+    color: var(--text-lightgray);
 }
 
 .lang-ru .skins-category-switch::before {

@@ -1032,17 +1032,113 @@ function slugifyNickname(nickname = ""){
 }
 
 function normalizePlayersList(raw){
-  if (Array.isArray(raw)) return raw;
+  const rawPlayers =
+    Array.isArray(raw) ? raw :
+    Array.isArray(raw?.players) ? raw.players :
+    Array.isArray(raw?.items) ? raw.items :
+    [];
 
-  if (raw && Array.isArray(raw.players)) {
-    return raw.players.map(p => ({
-      nickname: p.nickname,
-      slug: p.slug || slugifyNickname(p.nickname || ""),
-      steamid64: p.steamid64 || "",
-    }));
-  }
+  return rawPlayers.map((p) => {
+    const nickname =
+      String(
+        p?.nickname ||
+        p?.nick ||
+        p?.player_nickname ||
+        ""
+      ).trim();
 
-  return [];
+    const slug =
+      String(
+        p?.slug ||
+        p?.player_slug ||
+        slugifyNickname(nickname)
+      ).trim();
+
+    const steamid64 =
+      String(
+        p?.steamid64 ||
+        p?.steam_id_64 ||
+        p?.steamId64 ||
+        p?.steamid ||
+        ""
+      ).trim();
+
+    const realName =
+      String(
+        p?.real_name ||
+        p?.realName ||
+        p?.name ||
+        p?.player_name ||
+        ""
+      ).trim();
+
+    const rawTeam =
+      String(
+        p?.team ||
+        p?.organization ||
+        p?.org ||
+        ""
+      ).trim();
+
+    const isContentCreator =
+      p?.isContentCreator === true ||
+      p?.is_content_creator === true;
+
+    const team = rawTeam || (isContentCreator ? "Content Creator" : "");
+
+    const image =
+      String(
+        p?.photo ||
+        p?.image ||
+        p?.avatar ||
+        p?.img ||
+        `/img/skins/players/${slug}.webp`
+      ).trim();
+
+    const steam =
+      String(
+        p?.links?.steam ||
+        p?.steam_url ||
+        p?.steam ||
+        ""
+      ).trim();
+
+    // FACEIT: берем готовую полную ссылку как есть
+    const faceit =
+      String(
+        p?.faceit ||
+        p?.links?.faceit ||
+        p?.faceit_url ||
+        ""
+      ).trim();
+
+    // TWITCH: берем только username
+    const twitch =
+      String(
+        p?.twitch ||
+        p?.links?.twitch ||
+        p?.twitch_url ||
+        ""
+      ).trim()
+        .replace(/^https?:\/\/(?:www\.)?twitch\.tv\//i, "")
+        .replace(/^@/, "")
+        .replace(/\/+$/, "");
+
+    return {
+      nickname,
+      slug,
+      steamid64,
+      realName,
+      team,
+      isContentCreator,
+      image,
+      links: {
+        steam,
+        faceit,
+        twitch,
+      },
+    };
+  }).filter(p => p.nickname && p.slug);
 }
 
 async function loadPlayersList(root){
@@ -1615,12 +1711,6 @@ function upsertTopicExtraInfo(html, summaryHtml){
   };
 }
 
-function buildSteamProfileUrl(steamid64 = ""){
-  const id = String(steamid64 || "").trim();
-  if (!id) return "";
-  return `https://steamcommunity.com/profiles/${id}`;
-}
-
 function setOrReplaceAttr(tagHtml, attrName, attrValue){
   const escapedValue = escapeAttrDblNoApos(attrValue);
 
@@ -1638,54 +1728,177 @@ function setOrReplaceAttr(tagHtml, attrName, attrValue){
   return tagHtml.replace(/<a\b/i, `<a ${attrName}="${escapedValue}"`);
 }
 
-function buildSteamProfileAnchor(nickname, steamUrl, indent, nl){
+function escapeRegExp(s = ""){
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function buildPlayerSteamUrl(player){
+  if (player?.links?.steam) return String(player.links.steam).trim();
+
+  const id = String(player?.steamid64 || "").trim();
+  if (!id) return "";
+  return `https://steamcommunity.com/profiles/${id}`;
+}
+
+function resolvePlayerImage(player){
+  const img = String(player?.image || "").trim();
+  if (img) return img;
+
+  const slug = String(player?.slug || "").trim();
+  if (slug) return `/img/skins/players/${slug}.webp`;
+
+  return "";
+}
+
+function resolvePlayerRealName(player){
+  return String(player?.realName || "").trim();
+}
+
+function resolvePlayerTeam(player){
+  const rawTeam = String(player?.team || "").trim();
+  const isContentCreator = player?.isContentCreator === true;
+
+  if (rawTeam) return rawTeam;
+  if (isContentCreator) return "Content Creator";
+
+  return "";
+}
+
+function resolvePlayerStatusMeta(player){
+  const isContentCreator = player?.isContentCreator === true;
+  const team = String(player?.team || "").trim();
+
+  if (!team && isContentCreator) {
+    return {
+      className: "content-creator",
+      src: "/img/skins/teams/content-creator.webp",
+      alt: "Content Creator",
+    };
+  }
+
+  if (!team) return null;
+
+  const teamSlug = toSlug(team);
+
+  return {
+    className: teamSlug,
+    src: `/img/skins/teams/${teamSlug}.webp`,
+    alt: team,
+  };
+}
+
+function resolvePlayerStatus(player, indent, nl){
+  const meta = resolvePlayerStatusMeta(player);
+  if (!meta) return "";
+
   return [
-    `${indent}<a rel="noopener" target="_blank" href="${escapeAttrDblNoApos(steamUrl)}" alt="Visit ${escapeAttrDblNoApos(nickname)} Steam Profile" class="steam-profile"></a>`
+    `${indent}<div class="player-status">`,
+    `${indent}  <img class="${escapeAttrDblNoApos(meta.className)}" src="${escapeAttrDblNoApos(meta.src)}" alt="${escapeAttrDblNoApos(meta.alt)}">`,
+    `${indent}</div>`
   ].join(nl);
 }
 
-function updateSteamProfileLink(html, player){
-  const steamUrl = buildSteamProfileUrl(player?.steamid64);
+function buildPlayerLinksHtml(player, indent, nl){
   const nickname = String(player?.nickname || "").trim();
+  const steamUrl = buildPlayerSteamUrl(player);
+  const faceitUrl = String(player?.links?.faceit || "").trim();
 
-  if (!steamUrl || !nickname) {
+  const twitchUsername = String(player?.links?.twitch || "").trim()
+    .replace(/^https?:\/\/(?:www\.)?twitch\.tv\//i, "")
+    .replace(/^@/, "")
+    .replace(/\/+$/, "");
+
+  const twitchUrl = twitchUsername
+    ? `https://www.twitch.tv/${twitchUsername}`
+    : "";
+
+  const links = [];
+
+  if (steamUrl) {
+    links.push(
+      `${indent}  <a rel="noopener" target="_blank" href="${escapeAttrDblNoApos(steamUrl)}" alt="Visit ${escapeAttrDblNoApos(nickname)} Steam Profile" class="media-link steam-link"></a>`
+    );
+  }
+
+  if (faceitUrl) {
+    links.push(
+      `${indent}  <a rel="noopener" target="_blank" href="${escapeAttrDblNoApos(faceitUrl)}" alt="Visit ${escapeAttrDblNoApos(nickname)} FACEIT Profile" class="media-link faceit-link"></a>`
+    );
+  }
+
+  if (twitchUrl) {
+    links.push(
+      `${indent}  <a rel="noopener" target="_blank" href="${escapeAttrDblNoApos(twitchUrl)}" alt="Visit ${escapeAttrDblNoApos(nickname)} Twitch Channel" class="media-link twitch-link"></a>`
+    );
+  }
+
+  if (!links.length) return "";
+
+  return [
+    `${indent}<div class="player-links">`,
+    ...links,
+    `${indent}</div>`
+  ].join(nl);
+}
+
+function buildPlayerBioHtml(player, indent, nl){
+  const nickname = String(player?.nickname || "").trim();
+  const realName = String(player?.realName || "").trim();
+  const team = resolvePlayerTeam(player);
+  const statusHtml = resolvePlayerStatus(player, indent + "  ", nl);
+
+  const lines = [];
+  lines.push(`${indent}<div class="player-bio">`);
+  lines.push(`${indent}  <span class="player-nickname">${escapeHtml(nickname)}</span>`);
+
+  if (realName) {
+    lines.push(`${indent}  <span class="player-name">${escapeHtml(realName)}</span>`);
+  }
+
+  if (team) {
+    lines.push(`${indent}  <span class="player-team">${escapeHtml(team)}</span>`);
+  }
+
+  if (statusHtml) {
+    lines.push(statusHtml);
+  }
+
+  lines.push(`${indent}</div>`);
+
+  return lines.join(nl);
+}
+
+function buildLogobgInnerHtml(player, baseIndent, nl){
+  const nickname = String(player?.nickname || "").trim();
+  const image = resolvePlayerImage(player);
+
+  const innerIndent = baseIndent + "  ";
+  const blocks = [];
+
+  if (image) {
+    blocks.push(
+      `${innerIndent}<img alt="${escapeAttrDblNoApos(nickname)} Photo" draggable="false" src="${escapeAttrDblNoApos(image)}">`
+    );
+  }
+
+  const linksHtml = buildPlayerLinksHtml(player, innerIndent, nl);
+  if (linksHtml) {
+    blocks.push(linksHtml);
+  }
+
+  blocks.push(buildPlayerBioHtml(player, innerIndent, nl));
+
+  return blocks.join(nl);
+}
+
+function updateLogobgBlock(html, player){
+  const nickname = String(player?.nickname || "").trim();
+  if (!nickname) {
     return { html, changed: false };
   }
 
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const masked = maskSegments(html);
-
-  // 1) если steam-profile уже есть -> обновляем все найденные
-  const links = findAllTagsByClass(masked, "steam-profile", ["a"]);
-
-  if (links.length) {
-    let out = html;
-    let shift = 0;
-    let changed = false;
-
-    for (const link of links){
-      const openStart = link.openStart + shift;
-      const openEnd = link.openEnd + shift;
-
-      const tagHtml = out.slice(openStart, openEnd);
-
-      let newTag = tagHtml;
-      newTag = setOrReplaceAttr(newTag, "href", steamUrl);
-      newTag = setOrReplaceAttr(newTag, "target", "_blank");
-      newTag = setOrReplaceAttr(newTag, "rel", "noopener");
-      newTag = setOrReplaceAttr(newTag, "alt", `Visit ${nickname} Steam Profile`);
-
-      if (newTag !== tagHtml) {
-        out = out.slice(0, openStart) + newTag + out.slice(openEnd);
-        shift += newTag.length - tagHtml.length;
-        changed = true;
-      }
-    }
-
-    return { html: out, changed };
-  }
-
-  // 2) если steam-profile нет -> создаём внутри .logobg
   const logobgs = findAllTagsByClass(masked, "logobg", ["div"]);
 
   if (!logobgs.length) {
@@ -1693,16 +1906,18 @@ function updateSteamProfileLink(html, player){
   }
 
   const target = logobgs[0];
-  const insertPos = target.closeStart;
+  const innerStart = target.openEnd;
+  const innerEnd = target.closeStart;
   const baseIndent = indentBefore(html, target.openStart, nl);
-  const childIndent = baseIndent + "    ";
 
-  const anchorHtml = buildSteamProfileAnchor(nickname, steamUrl, childIndent, nl);
+  const newInner = nl +
+    buildLogobgInnerHtml(player, baseIndent, nl) +
+    nl + baseIndent;
 
-  const before = html.slice(0, insertPos).replace(/[ \t]*$/, "");
-  const after = html.slice(insertPos);
-
-  const nextHtml = `${before}${nl}${anchorHtml}${nl}${baseIndent}${after}`;
+  const nextHtml =
+    html.slice(0, innerStart) +
+    newInner +
+    html.slice(innerEnd);
 
   return {
     html: nextHtml,
@@ -1795,7 +2010,7 @@ async function generatePlayerPagesForVersion({
     }
 
     {
-      const res = updateSteamProfileLink(html, player);
+      const res = updateLogobgBlock(html, player);
       if (res.changed) html = res.html;
     }
 

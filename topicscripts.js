@@ -16,6 +16,14 @@ $(document).ready(function () {
   ) {
     let enabledFiltersState = {};
 
+    function getTopicInsertTarget(root = document) {
+      return root.querySelector(".item-topic-grandbox") || root.querySelector(".topic-grandbox");
+    }
+
+    function getTopicContainer(root = document) {
+      return root.querySelector(".item-topic-grandbox") || root.querySelector(".topic-grandbox");
+    }
+
     // ---------- PREVIEW WINDOW (оставляем как есть) ----------
     const previewWindowHTML = `
       <div id="preview-window" class="hidden">
@@ -112,9 +120,9 @@ $(document).ready(function () {
 
           boxExtraLinks.appendChild(moreCraftsLink);
 
-          const topicGrandbox = document.querySelector(".topic-grandbox");
-          if (topicGrandbox) {
-            topicGrandbox.insertAdjacentElement("afterend", boxExtraLinks);
+          const insertTarget = getTopicInsertTarget();
+          if (insertTarget) {
+            insertTarget.insertAdjacentElement("afterend", boxExtraLinks);
           }
         } catch {}
       }
@@ -177,7 +185,10 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
         const isMobile = window.innerWidth < 1365;
         const topicPage = document.querySelector(".topicpage");
-        const insertAfterElement = document.querySelector(".topic-grandbox");
+        const insertAfterElement =
+          document.querySelector(".item-topic-grandbox") ||
+          document.querySelector(".topic-grandbox");
+
         if (!insertAfterElement && !topicPage) return;
 
         const labels = lang === "ru"
@@ -605,7 +616,9 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
     // ---------- КРАФТЫ: работа только с уже существующими .skin ----------
     const updateCraftComponentList = () => {
-      const boxes = document.querySelectorAll('.siteblock .topic-grandbox');
+    const boxes = Array.from(document.querySelectorAll('.siteblock')).map(siteblock =>
+      siteblock.querySelector('.item-topic-grandbox') || siteblock.querySelector('.topic-grandbox')
+    ).filter(Boolean);
 
       boxes.forEach(box => {
         const thirdSection = box.querySelector('.section.third');
@@ -858,7 +871,7 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
     $(document).ready(function () {
       let boxCounter = 0;
-      $(".box-skins-list, .topic-grandbox, .introduce-craft, .character-box, .preview-craft").each(function () {
+      $(".box-skins-list, .item-topic-grandbox, .topic-grandbox, .introduce-craft, .character-box, .preview-craft").each(function () {
         if (!$(this).attr("data-box-id")) {
           $(this).attr("data-box-id", `box-${boxCounter++}`);
         }
@@ -1721,7 +1734,7 @@ if (window.location.pathname.includes("/topic")) {
       let $model = $skin.closest(".character-box").find(".character-model").first();
       if ($model.length) return $model;
 
-      $model = $skin.closest(".topic-grandbox").find(".character-model").first();
+      $model = $skin.closest(".item-topic-grandbox, .topic-grandbox").find(".character-model").first();
       if ($model.length) return $model;
 
       $model = $(".character-model").first();
@@ -1946,7 +1959,8 @@ if (window.location.pathname.includes('/sticker-crafts/')) {
       const data = await response.json();
       if (!Array.isArray(data) || data.length === 0) return;
 
-      const currentPageSpan = document.querySelector('.siteblock .topic-grandbox .section.first span');
+      const currentPageSpan = document.querySelector('.siteblock .item-topic-grandbox .section.first span')
+        || document.querySelector('.siteblock .topic-grandbox .section.first span');
       const currentPageText = currentPageSpan ? currentPageSpan.textContent.trim() : '';
 
       const filteredTopics = data.filter(sticker => sticker.title.trim() !== currentPageText);
@@ -2000,7 +2014,7 @@ if (window.location.pathname.includes('/sticker-crafts/')) {
 if (window.location.pathname.includes('/topic/skins/')) {
   document.addEventListener('DOMContentLoaded', () => {
     const colorsBox = document.querySelector('.colors-box-selection');
-    const grandBox = document.querySelector('.topic-grandbox');
+    const grandBox = document.querySelector('.item-topic-grandbox') || document.querySelector('.topic-grandbox');
 
     if (colorsBox) {
       const existingColorList = colorsBox.querySelector('#color-list');

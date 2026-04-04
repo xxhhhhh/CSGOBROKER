@@ -444,6 +444,33 @@ function normalizeExistingPlayersListDoc(doc) {
   };
 }
 
+function mergeTeamPlayers(existingPlayers, updatedPlayers) {
+  const bySlug = new Map();
+
+  for (const p of Array.isArray(existingPlayers) ? existingPlayers : []) {
+    const slug = String(p?.slug || safeSlug(p?.nickname || ""));
+    if (!slug) continue;
+    bySlug.set(slug, p);
+  }
+
+  for (const p of Array.isArray(updatedPlayers) ? updatedPlayers : []) {
+    const slug = String(p?.slug || safeSlug(p?.nickname || ""));
+    if (!slug) continue;
+    bySlug.set(slug, p);
+  }
+
+  const merged = [...bySlug.values()];
+
+  merged.sort((a, b) =>
+    String(a?.nickname || "").localeCompare(String(b?.nickname || ""), "en", {
+      sensitivity: "base",
+      numeric: true,
+    })
+  );
+
+  return merged;
+}
+
 function mergePlayersList(existingPlayers, updatedPlayers) {
   const bySlug = new Map();
 
@@ -466,6 +493,33 @@ function mergePlayersList(existingPlayers, updatedPlayers) {
     const nb = String(b?.nickname || "");
     return na.localeCompare(nb, "en", { sensitivity: "base", numeric: true });
   });
+
+  return merged;
+}
+
+function mergeTeamsList(existingTeams, updatedTeams) {
+  const bySlug = new Map();
+
+  for (const t of Array.isArray(existingTeams) ? existingTeams : []) {
+    const slug = String(t?.slug || safeSlug(t?.team || ""));
+    if (!slug) continue;
+    bySlug.set(slug, t);
+  }
+
+  for (const t of Array.isArray(updatedTeams) ? updatedTeams : []) {
+    const slug = String(t?.slug || safeSlug(t?.team || ""));
+    if (!slug) continue;
+    bySlug.set(slug, t);
+  }
+
+  const merged = [...bySlug.values()];
+
+  merged.sort((a, b) =>
+    String(a?.team || "").localeCompare(String(b?.team || ""), "en", {
+      sensitivity: "base",
+      numeric: true,
+    })
+  );
 
   return merged;
 }
@@ -1061,12 +1115,73 @@ function formatHumanDateToDot(input) {
   return "";
 }
 
+function normalizeLiquipediaPlayerName(fullName) {
+  const raw = normalizeWhitespace(String(fullName || ""));
+  if (!raw) return "";
+
+  const parts = raw
+    .split(/\s+/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+
+  if (parts.length <= 2) {
+    return raw;
+  }
+
+  const firstName = parts[0];
+
+  const particles = new Set([
+    "de", "da", "do", "dos", "das",
+    "del", "della", "di", "du",
+    "van", "von", "der", "den",
+    "la", "le"
+  ]);
+
+  const isPatronymic = (word) => {
+    const w = String(word || "").toLowerCase();
+
+    return (
+      w.endsWith("ovich") ||
+      w.endsWith("evich") ||
+      w.endsWith("ich") ||
+      w.endsWith("ovna") ||
+      w.endsWith("evna") ||
+      w.endsWith("ichna") ||
+      w.endsWith("uly") ||
+      w.endsWith("ogly")
+    );
+  };
+
+  const significant = parts.filter((p, i) => i === 0 || !particles.has(p.toLowerCase()));
+
+  if (significant.length <= 2) {
+    return significant.join(" ");
+  }
+
+  // Кейсы типа: Dmitriy Eduardovich Sokolov -> Dmitriy Sokolov
+  if (significant.length === 3 && isPatronymic(significant[1])) {
+    return `${significant[0]} ${significant[2]}`;
+  }
+
+  // Кейсы типа: Yuri Gomes dos Santos Boian -> Yuri Santos
+  // Если есть частицы (dos/de/da...), берём предпоследнюю значимую фамилию
+  const hasParticles = parts.some((p) => particles.has(p.toLowerCase()));
+  if (hasParticles && significant.length >= 3) {
+    return `${significant[0]} ${significant[significant.length - 2]}`;
+  }
+
+  // Базовый fallback: имя + последняя фамилия
+  return `${significant[0]} ${significant[significant.length - 1]}`;
+}
+
 function extractPlayerNameFromRaw(raw) {
   const romanized = cleanWikitextValue(extractWikitextField(raw, "romanized_name"));
   const name = cleanWikitextValue(extractWikitextField(raw, "name"));
   const realName = cleanWikitextValue(extractWikitextField(raw, "real_name"));
 
-  return normalizeWhitespace(romanized || name || realName || "");
+  return normalizeLiquipediaPlayerName(
+    normalizeWhitespace(romanized || name || realName || "")
+  );
 }
 
 function extractNationalityFromRaw(raw) {
@@ -1123,16 +1238,14 @@ function parseFaceit(value) {
   const v = String(value || "").trim();
   if (!v) return "";
 
-  // faceitdb → преобразуем в обычный FACEIT профиль
-  let m = v.match(/faceitdb\.com\/profile\/faceit\/([a-f0-9-]{36})/i);
-  if (m) {
-    return `https://www.faceit.com/en/players/${m[1]}`;
+  // оставляем faceitdb как есть
+  if (/faceitdb\.com\/profile\/faceit\/[a-f0-9-]{36}/i.test(v)) {
+    return v;
   }
 
-  // обычный FACEIT профиль
-  m = v.match(/faceit\.com\/(?:[a-z]{2}\/)?players\/([^/?#&]+)/i);
-  if (m) {
-    return `https://www.faceit.com/en/players/${m[1]}`;
+  // обычный FACEIT профиль тоже оставляем как есть
+  if (/faceit\.com\/(?:[a-z]{2}\/)?players\/[^/?#&]+/i.test(v)) {
+    return v;
   }
 
   // если вдруг просто ник (редко)
@@ -1591,7 +1704,7 @@ async function fetchTeamMeta(teamRef, root, { verbose = false } = {}) {
   };
 }
 
-async function buildTeamsDocument(players, root, { verbose = false, existingTeamsDoc = null } = {}) {
+async function buildTeamsDocument(players, root, { verbose = false, existingTeamsDoc = null, mergeWithExisting = true } = {}) {
   const previousByKey = new Map();
   const prevTeams = Array.isArray(existingTeamsDoc?.teams) ? existingTeamsDoc.teams : [];
 
@@ -1639,7 +1752,9 @@ async function buildTeamsDocument(players, root, { verbose = false, existingTeam
     });
   }
 
-  const updatedTeamsByKey = new Map(previousByKey);
+  const updatedTeamsByKey = mergeWithExisting
+    ? new Map(previousByKey)
+    : new Map();
 
   for (const [teamKey, group] of incomingByKey.entries()) {
     const meta = await fetchTeamMeta(
@@ -1660,12 +1775,20 @@ async function buildTeamsDocument(players, root, { verbose = false, existingTeam
       })
     );
 
+    const mergedPlayers = mergeTeamPlayers(
+      group.previous?.players || [],
+      group.players
+    );
+
     const teamDoc = {
       team: group.team || group.previous?.team || "",
       slug: safeSlug(group.teamLiquipediaSlug || group.team || group.previous?.team || ""),
       region: meta.region || group.previous?.region || "",
-      logoPath: meta.logoPath || group.previous?.logoPath || `/img/skins/teams/${safeSlug(group.team || group.previous?.team || "")}.webp`,
-      players: group.players,
+      logoPath:
+        meta.logoPath ||
+        group.previous?.logoPath ||
+        `/img/skins/teams/${safeSlug(group.team || group.previous?.team || "")}.webp`,
+      players: mergedPlayers,
     };
 
     if (group.liquipedia === "none" || group.previous?.liquipedia === "none") {
@@ -1986,11 +2109,17 @@ async function main() {
     await savePlayersSource(playersSourceFile, [...allPlayersMap.values()]);
   }
   const FULL_PLAYERS_SOURCE = await loadPlayersSource(playersSourceFile);
+
+  if (!teamsOnly && !liquipediaOnly && selectedPlayers.length === 0) {
+  console.log(`\nDone. No selected players to process, teams.json not rebuilt.`);
+  return;
+}
   // teams-only mode: rebuild only teams.json from current selected players/source data
   if (teamsOnly) {
     const teamsDoc = await buildTeamsDocument(FULL_PLAYERS_SOURCE, root, {
       verbose,
       existingTeamsDoc,
+      mergeWithExisting: true,
     });
     await writeJson(teamsListFile, teamsDoc);
 
@@ -2004,6 +2133,7 @@ async function main() {
     const teamsDoc = await buildTeamsDocument(FULL_PLAYERS_SOURCE, root, {
       verbose,
       existingTeamsDoc,
+      mergeWithExisting: true,
     });
     await writeJson(teamsListFile, teamsDoc);
 
@@ -2093,13 +2223,28 @@ async function main() {
   await writeJson(playersListFile, playersListDoc);
 
   // teams.json is built from the final players list output
-  const FULL_PLAYERS_SOURCE_AFTER_SAVE = await loadPlayersSource(playersSourceFile);
+  if (selectedPlayers.length > 0) {
+    const partialTeamsDoc = await buildTeamsDocument(selectedPlayers, root, {
+      verbose,
+      existingTeamsDoc,
+      mergeWithExisting: false,
+    });
 
-  const teamsDoc = await buildTeamsDocument(FULL_PLAYERS_SOURCE_AFTER_SAVE, root, {
-    verbose,
-    existingTeamsDoc,
-  });
-  await writeJson(teamsListFile, teamsDoc);
+    const mergedTeams = mergeTeamsList(
+      existingTeamsDoc?.teams || [],
+      partialTeamsDoc?.teams || []
+    );
+
+    const teamsDoc = {
+      updatedAt: new Date().toISOString(),
+      count: mergedTeams.length,
+      teams: mergedTeams,
+    };
+
+    await writeJson(teamsListFile, teamsDoc);
+  } else if (verbose) {
+    console.log(`[TEAMS SKIP] No processed players, teams.json unchanged`);
+  }
 
   console.log(`\nDone. Players: ${playersListOutput.length}, success: ${successCount}, failed: ${failedCount}`);
   console.log(`Players list written: ${playersListFile}`);
