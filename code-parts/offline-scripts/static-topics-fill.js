@@ -33,6 +33,7 @@
 
 const fs = require("fs/promises");
 const path = require("path");
+const { performance } = require("perf_hooks");
 
 const TOPIC_NAV_ITEMS_FILE = "/code-parts/topics/topics-nav-items.json";
 const ITEMS_NAV_FILE = "/code-parts/topics/items-nav.json";
@@ -63,6 +64,7 @@ function parseArgs(argv){
     return i >= 0 ? argv[i + 1] : null;
   };
 
+
   const root    = path.resolve(get("--root") ?? process.cwd());
   const dry     = argv.includes("--dry-run");
   const verbose = argv.includes("--verbose");
@@ -74,6 +76,27 @@ function parseArgs(argv){
 
   return { root, dry, verbose, prices, paths };
 }
+
+  async function mapLimit(items, limit, worker){
+    const results = new Array(items.length);
+    let cursor = 0;
+
+    async function runner(){
+      while (true){
+        const i = cursor++;
+        if (i >= items.length) break;
+        results[i] = await worker(items[i], i);
+      }
+    }
+
+    const workers = Array.from(
+      { length: Math.min(limit, items.length || 1) },
+      () => runner()
+    );
+
+    await Promise.all(workers);
+    return results;
+  }
 
 // ---------------- FS / CACHES ----------------
 const jsonCache = new Map();
@@ -202,23 +225,28 @@ function findMatchingClose(masked, from, tag){
   let i = from;
 
   while (i < masked.length){
-    const nOpen = masked.slice(i).search(openRe);
-    const nClose = masked.slice(i).search(closeRe);
+    openRe.lastIndex = i;
+    closeRe.lastIndex = i;
 
-    if (nClose === -1) return -1;
+    const openMatch = openRe.exec(masked);
+    const closeMatch = closeRe.exec(masked);
 
-    if (nOpen !== -1 && nOpen < nClose){
-      const absPos = i + nOpen;
-      const { end } = readTag(masked, absPos);
+    const openPos = openMatch ? openMatch.index : -1;
+    const closePos = closeMatch ? closeMatch.index : -1;
+
+    if (closePos === -1) return -1;
+
+    if (openPos !== -1 && openPos < closePos){
+      const { end } = readTag(masked, openPos);
       depth++;
       i = end;
       continue;
     }
 
-    const cabs = i + nClose;
     depth--;
-    if (depth === 0) return cabs;
-    i = cabs + (`</${tag}>`).length;
+    if (depth === 0) return closePos;
+
+    i = closePos + closeMatch[0].length;
   }
 
   return -1;
@@ -2012,8 +2040,44 @@ function renderTopicNavMobileHtml(categories, { indent, nl, isRu }){
   return lines.join(nl);
 }
 
-function isSkinsTopicPage(urlPath){
-  return /^\/(?:ru\/)?topic\/skins(?:\/|$)/i.test(urlPath);
+function findAllDesktopTopicNavPanels(html){
+  const masked = maskSegments(html);
+  return findAllTagsByClass(masked, "sitetoppannel", ["div", "section"]);
+}
+
+function getInnerHtmlByTagRange(html, tagRange){
+  return html.slice(tagRange.openEnd, tagRange.closeStart);
+}
+
+function normalizeHtmlForCompare(s){
+  return String(s || "")
+    .replace(/\r\n/g, "\n")
+    .replace(/\r/g, "\n")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+function isManagedDesktopTopicNavPanel(panelInnerHtml){
+  const s = String(panelInnerHtml || "");
+  return (
+    s.includes("<!-- AUTO:topic-nav-desktop:start -->") ||
+    s.includes("<!-- AUTO:topic-nav-desktop:end -->")
+  );
+}
+
+function removeRangesFromHtml(html, ranges){
+  if (!Array.isArray(ranges) || !ranges.length) return html;
+
+  const sorted = [...ranges]
+    .filter(r => r && Number.isFinite(r.start) && Number.isFinite(r.end) && r.end > r.start)
+    .sort((a, b) => b.start - a.start);
+
+  let out = html;
+  for (const r of sorted){
+    out = out.slice(0, r.start) + out.slice(r.end);
+  }
+  return out;
 }
 
 function findDesktopTopicNavContainer(html){
@@ -2071,50 +2135,155 @@ async function processTopicNavStaticFill({ root, file, html, verbose }){
 
   // ================= DESKTOP =================
   {
-    const container = findDesktopTopicNavContainer(out);
+    let container = findDesktopTopicNavContainer(out);
 
     if (container){
-      const openEnd = container.openEnd;
-      const closeStart = container.closeStart;
-      const baseIndent = indentBefore(out, openEnd, nl);
-      const innerIndent = baseIndent + "  ";
+      const desiredPanelHtml = renderDesktopTopicNavPanel({
+        categories,
+        indent: indentBefore(out, container.openStart, nl) + "  ",
+        nl,
+        isRu,
+      });
 
-      // после удаления нужно заново найти контейнер, потому что индексы могли сдвинуться
-      const freshContainer = findDesktopTopicNavContainer(out);
-      if (freshContainer){
-        const freshOpenEnd = freshContainer.openEnd;
-        const freshCloseStart = freshContainer.closeStart;
-        const freshBaseIndent = indentBefore(out, freshOpenEnd, nl);
-        const freshInnerIndent = freshBaseIndent + "  ";
+      // 1) Удаляем управляемые desktop-nav панели вне .topic-centralizer
+      {
+        const allPanels = findAllDesktopTopicNavPanels(out);
+        const rangesToRemove = [];
 
-        const panelHtml = renderDesktopTopicNavPanel({
-          categories,
-          indent: freshInnerIndent,
-          nl,
-          isRu,
-        });
+        for (const panel of allPanels){
+          const insideContainer =
+            panel.openStart >= container.openEnd &&
+            panel.closeEnd <= container.closeStart;
 
-        const inner = out.slice(freshOpenEnd, freshCloseStart).replace(/^(?:[ \t]*\r?\n)+/, "");
-        const replacementInner = inner
-          ? (nl + panelHtml + nl + inner.replace(/^\r?\n+/, ""))
-          : (nl + panelHtml + nl + freshBaseIndent);
+          if (insideContainer) continue;
 
-        const next = out.slice(0, freshOpenEnd) + replacementInner + out.slice(freshCloseStart);
+          const panelInner = getInnerHtmlByTagRange(out, panel);
+          if (isManagedDesktopTopicNavPanel(panelInner)){
+            rangesToRemove.push({
+              start: panel.openStart,
+              end: panel.closeEnd,
+            });
+          }
+        }
 
-        if (next !== out){
-          out = next;
+        if (rangesToRemove.length){
+          out = removeRangesFromHtml(out, rangesToRemove);
           changed = true;
-          if (verbose) {
+
+          if (verbose){
             console.log(
-              `[OK] ${path.relative(root, file)} :: desktop topic nav regenerated in .topic-centralizer (moved to first child if needed)`
+              `[OK] ${path.relative(root, file)} :: removed legacy desktop topic nav panels outside .topic-centralizer (${rangesToRemove.length})`
             );
           }
-        } else if (removed.changed) {
+
+          container = findDesktopTopicNavContainer(out);
+        }
+      }
+
+      // 2) Работаем только с панелями внутри .topic-centralizer
+      if (container){
+        const containerInnerMasked = maskSegments(out.slice(container.openEnd, container.closeStart));
+        const innerPanelsRel = findAllTagsByClass(containerInnerMasked, "sitetoppannel", ["div", "section"]);
+        const innerPanels = innerPanelsRel.map(p => ({
+          ...p,
+          openStart: p.openStart + container.openEnd,
+          openEnd: p.openEnd + container.openEnd,
+          closeStart: p.closeStart + container.openEnd,
+          closeEnd: p.closeEnd + container.openEnd,
+        }));
+
+        const managedPanels = innerPanels.filter(panel => {
+          const panelInner = getInnerHtmlByTagRange(out, panel);
+          return isManagedDesktopTopicNavPanel(panelInner);
+        });
+
+        // 2a) Если managed-панелей несколько — оставляем первую, остальные удаляем
+        if (managedPanels.length > 1){
+          const dupRanges = managedPanels.slice(1).map(panel => ({
+            start: panel.openStart,
+            end: panel.closeEnd,
+          }));
+
+          out = removeRangesFromHtml(out, dupRanges);
           changed = true;
-          if (verbose) {
+
+          if (verbose){
             console.log(
-              `[OK] ${path.relative(root, file)} :: legacy desktop sitetoppannel removed from old location`
+              `[OK] ${path.relative(root, file)} :: removed duplicate desktop topic nav panels in .topic-centralizer (${dupRanges.length})`
             );
+          }
+
+          container = findDesktopTopicNavContainer(out);
+        }
+
+        // перечитываем после удаления дублей
+        if (container){
+          const refreshedInnerMasked = maskSegments(out.slice(container.openEnd, container.closeStart));
+          const refreshedPanelsRel = findAllTagsByClass(refreshedInnerMasked, "sitetoppannel", ["div", "section"]);
+          const refreshedPanels = refreshedPanelsRel.map(p => ({
+            ...p,
+            openStart: p.openStart + container.openEnd,
+            openEnd: p.openEnd + container.openEnd,
+            closeStart: p.closeStart + container.openEnd,
+            closeEnd: p.closeEnd + container.openEnd,
+          }));
+
+          const currentManaged = refreshedPanels.find(panel => {
+            const panelInner = getInnerHtmlByTagRange(out, panel);
+            return isManagedDesktopTopicNavPanel(panelInner);
+          });
+
+          // 2b) Если панели нет — вставляем первой
+          if (!currentManaged){
+            const openEnd = container.openEnd;
+            const closeStart = container.closeStart;
+            const baseIndent = indentBefore(out, openEnd, nl);
+
+            const inner = out.slice(openEnd, closeStart).replace(/^(?:[ \t]*\r?\n)+/, "");
+            const replacementInner = inner
+              ? (nl + desiredPanelHtml + nl + inner.replace(/^\r?\n+/, ""))
+              : (nl + desiredPanelHtml + nl + baseIndent);
+
+            const next = out.slice(0, openEnd) + replacementInner + out.slice(closeStart);
+
+            if (next !== out){
+              out = next;
+              changed = true;
+
+              if (verbose){
+                console.log(
+                  `[OK] ${path.relative(root, file)} :: desktop topic nav inserted into .topic-centralizer`
+                );
+              }
+            }
+          } else {
+            // 2c) Панель уже есть — сравниваем и заменяем только если отличается
+            const currentHtml = out.slice(currentManaged.openStart, currentManaged.closeEnd);
+
+            if (
+              normalizeHtmlForCompare(currentHtml) !==
+              normalizeHtmlForCompare(desiredPanelHtml)
+            ){
+              const next =
+                out.slice(0, currentManaged.openStart) +
+                desiredPanelHtml +
+                out.slice(currentManaged.closeEnd);
+
+              if (next !== out){
+                out = next;
+                changed = true;
+
+                if (verbose){
+                  console.log(
+                    `[OK] ${path.relative(root, file)} :: desktop topic nav updated in .topic-centralizer (content changed)`
+                  );
+                }
+              }
+            } else if (verbose) {
+              console.log(
+                `[SKIP] ${path.relative(root, file)} :: desktop topic nav already up to date`
+              );
+            }
           }
         }
       }
@@ -2568,101 +2737,118 @@ async function processTopicHeaderBackButton({ root, file, html, verbose }){
 
 const processedHtmlByFile = new Map();
 
-  for (const file of files){
-    const urlPath = fileToUrlPath(root, file);
-    const allowed = paths.some(p => urlPath.toLowerCase().startsWith(p.toLowerCase()));
+const CONCURRENCY = 10;
 
-    if (!allowed){
-      skipped++;
-      continue;
-    }
+await mapLimit(files, CONCURRENCY, async (file) => {
+  const urlPath = fileToUrlPath(root, file);
+  const lowerUrlPath = urlPath.toLowerCase();
+  const allowed = paths.some(p => lowerUrlPath.startsWith(p.toLowerCase()));
 
-    try {
-      const origHtml = await readTextCached(file);
-      let html = origHtml;
-
-      {
-        const res = await processBoxSkinsLists({ root, file, html, pricesState, verbose });
-        if (res.changed) html = res.html;
-      }
-
-      {
-        const res = await processLoadoutPages({ root, file, html, pricesState, verbose });
-        if (res.changed) html = res.html;
-      }
-
-      {
-        const res = await processSkinsPriceSorter({ root, file, html, verbose });
-        if (res.changed) html = res.html;
-      }
-
-      {
-        const res = await processCaseExtraVariantLinks({ root, file, html, urlToFile, verbose });
-        if (res.changed) html = res.html;
-      }
-
-      if (!isPlayersInventoryPage(urlPath)) {
-        const res = await processSkinPlaceholders({ root, html, pricesState, verbose, file });
-        if (res.changed) html = res.html;
-      }
-
-      {
-        const res = await processItemsTypeTopicBoxesPages({ root, file, html, verbose });
-        if (res.changed) html = res.html;
-      }
-
-      {
-        const res = await processTopicFilters({ root, file, html, verbose });
-        if (res.changed) html = res.html;
-      }
-
-      {
-        const res = await processTopicHeaderBackButton({ root, file, html, verbose });
-        if (res.changed) html = res.html;
-      }
-
-      {
-        const res = await processTopicNavStaticFill({ root, file, html, verbose });
-        if (res.changed) html = res.html;
-      }
-
-      {
-        const res = await processItemsNavStaticFill({ root, file, html, verbose });
-        if (res.changed) html = res.html;
-      }
-
-      processedHtmlByFile.set(file, {
-        origHtml,
-        html,
-        allowed: true,
-      });
-
-    } catch (e){
-      console.error(`[ERR] ${path.relative(root, file)}:`, e.message);
-      processedHtmlByFile.set(file, {
-        origHtml: null,
-        html: null,
-        allowed: true,
-        error: true,
-      });
-    }
+  if (!allowed){
+    processedHtmlByFile.set(file, { allowed: false });
+    return;
   }
+
+  try {
+    const origHtml = await readTextCached(file);
+    let html = origHtml;
+
+    const isTopicPage = lowerUrlPath.startsWith("/topic") || lowerUrlPath.startsWith("/ru/topic");
+    const isSkinsPage = lowerUrlPath.includes("/skins/");
+    const isCasesPage = lowerUrlPath.includes("/cases/");
+    const isItemsTypePage = lowerUrlPath.includes("/items-type/");
+    const isItemsOrRelatedPage =
+      lowerUrlPath.includes("/items/") ||
+      lowerUrlPath.includes("/stickers/") ||
+      lowerUrlPath.includes("/cases/") ||
+      lowerUrlPath.includes("/charms/") ||
+      lowerUrlPath.includes("/collections/") ||
+      lowerUrlPath.includes("/players/inventories/");
+
+    {
+      const res = await processBoxSkinsLists({ root, file, html, pricesState, verbose });
+      if (res.changed) html = res.html;
+    }
+
+    if (isSkinsPage){
+      const res = await processLoadoutPages({ root, file, html, pricesState, verbose });
+      if (res.changed) html = res.html;
+    }
+
+    if (isSkinsPage){
+      const res = await processSkinsPriceSorter({ root, file, html, verbose });
+      if (res.changed) html = res.html;
+    }
+
+    if (isCasesPage){
+      const res = await processCaseExtraVariantLinks({ root, file, html, urlToFile, verbose });
+      if (res.changed) html = res.html;
+    }
+
+    if (!isPlayersInventoryPage(urlPath) && html.includes('class="skin"')){
+      const res = await processSkinPlaceholders({ root, html, pricesState, verbose, file });
+      if (res.changed) html = res.html;
+    }
+
+    if (isItemsTypePage){
+      const res = await processItemsTypeTopicBoxesPages({ root, file, html, verbose });
+      if (res.changed) html = res.html;
+    }
+
+    if (isTopicPage){
+      const res = await processTopicFilters({ root, file, html, verbose });
+      if (res.changed) html = res.html;
+    }
+
+    if (isTopicPage){
+      const res = await processTopicHeaderBackButton({ root, file, html, verbose });
+      if (res.changed) html = res.html;
+    }
+
+    if (isSkinsPage || isItemsOrRelatedPage){
+      const res = await processTopicNavStaticFill({ root, file, html, verbose });
+      if (res.changed) html = res.html;
+    }
+
+    if (isItemsOrRelatedPage){
+      const res = await processItemsNavStaticFill({ root, file, html, verbose });
+      if (res.changed) html = res.html;
+    }
+
+    processedHtmlByFile.set(file, {
+      origHtml,
+      html,
+      allowed: true,
+    });
+
+  } catch (e){
+    console.error(`[ERR] ${path.relative(root, file)}:`, e.message);
+    processedHtmlByFile.set(file, {
+      origHtml: null,
+      html: null,
+      allowed: true,
+      error: true,
+    });
+  }
+});
 
   updated = 0;
   skipped = 0;
 
-  for (const file of files){
-    const saved = processedHtmlByFile.get(file);
+await mapLimit(files, CONCURRENCY, async (file) => {
+  const saved = processedHtmlByFile.get(file);
 
-    if (!saved?.allowed || saved?.error || typeof saved.html !== "string"){
-      skipped++;
-      continue;
-    }
+  if (!saved?.allowed || saved?.error || typeof saved.html !== "string"){
+    skipped++;
+    return;
+  }
 
-    try {
-      let html = saved.html;
-      const origHtml = saved.origHtml;
+  try {
+    let html = saved.html;
+    const origHtml = saved.origHtml;
+    const urlPath = fileToUrlPath(root, file);
 
+    if (urlPath.startsWith("/ru/")){
       const res = await processRuMirrorPages({
         root,
         file,
@@ -2672,20 +2858,21 @@ const processedHtmlByFile = new Map();
         processedHtmlByFile,
       });
       if (res.changed) html = res.html;
+    }
 
-      const finalChanged = html !== origHtml;
+    const finalChanged = html !== origHtml;
 
-      if (finalChanged){
-        if (!dry) await writeTextCached(file, html);
-        updated++;
-      } else {
-        skipped++;
-      }
-    } catch (e){
-      console.error(`[ERR] ${path.relative(root, file)}:`, e.message);
+    if (finalChanged){
+      if (!dry) await writeTextCached(file, html);
+      updated++;
+    } else {
       skipped++;
     }
+  } catch (e){
+    console.error(`[ERR] ${path.relative(root, file)}:`, e.message);
+    skipped++;
   }
+});
 
   console.log(`\nDone. Updated: ${updated}, skipped: ${skipped}, total: ${files.length}`);
 })().catch(e => {
