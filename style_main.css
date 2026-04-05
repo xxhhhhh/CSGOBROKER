@@ -4904,6 +4904,10 @@ nav img {
     display: none;
 }
 
+.sitepage.items .topic-grandbox:has(.navigation-weapon-type.solo-category) .section.searchers {
+    gap: unset;
+}
+
 .sitepage.items.inventories .topic-grandbox {
     min-height: 90px;
 }
@@ -4925,7 +4929,7 @@ nav img {
     margin-top: unset;
     max-width: unset;
     background: var(--darkgray);
-    align-content: space-around;
+    gap: 16px;
     top: unset;
     transform: translateY(50%);
 }
