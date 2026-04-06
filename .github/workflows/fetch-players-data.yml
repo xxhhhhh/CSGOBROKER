@@ -1,0 +1,168 @@
+name: Fetch players data
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_liquipedia:
+        description: "Run Liquipedia sync"
+        required: false
+        default: true
+        type: boolean
+      run_inventories:
+        description: "Run Steam inventory fetch"
+        required: false
+        default: true
+        type: boolean
+      shard_total:
+        description: "How many shards to use for inventory fetch (1-6)"
+        required: false
+        default: "6"
+        type: string
+      max_parallel:
+        description: "Max parallel shard jobs"
+        required: false
+        default: "2"
+        type: string
+      delay_ms:
+        description: "Delay between players"
+        required: false
+        default: "1800"
+        type: string
+      use_browser_fallback:
+        description: "Enable Steam UI fallback with Puppeteer"
+        required: false
+        default: false
+        type: boolean
+      resolve_doppler_phase:
+        description: "Enable CSFloat checker phase resolve"
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: fetch-players-data-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  liquipedia:
+    if: ${{ inputs.run_liquipedia }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Run Liquipedia sync
+        run: |
+          node code-parts/topics/players-data/players-list/festch-workflow.js \
+            --refetch-liquipedia \
+            --liquipedia-only \
+            --verbose
+
+      - name: Upload Liquipedia base artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: liquipedia-base
+          path: |
+            code-parts/topics/players-data/players-list/fetch-players.json
+            code-parts/topics/players-data/players-list/teams.json
+          if-no-files-found: error
+
+  inventory-shards:
+    if: ${{ always() && inputs.run_inventories }}
+    needs: [liquipedia]
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    strategy:
+      fail-fast: false
+      max-parallel: ${{ fromJSON(inputs.max_parallel) }}
+      matrix:
+        shard_index: [0, 1, 2, 3, 4, 5]
+
+    steps:
+      - name: Skip unused shard indexes
+        if: ${{ matrix.shard_index >= fromJSON(inputs.shard_total) }}
+        run: |
+          echo "Skipping shard ${{ matrix.shard_index }} because shard_total=${{ inputs.shard_total }}"
+          exit 0
+
+      - uses: actions/checkout@v4
+        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) }}
+
+      - name: Download Liquipedia artifact
+        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) && inputs.run_liquipedia }}
+        uses: actions/download-artifact@v4
+        with:
+          name: liquipedia-base
+          path: .
+
+      - uses: actions/setup-node@v4
+        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) }}
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) }}
+
+      - name: Run inventory shard
+        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) }}
+        env:
+          CSFLOAT_CHECKER_ENABLED: ${{ inputs.resolve_doppler_phase && '1' || '0' }}
+          USE_STEAM_UI_FALLBACK: ${{ inputs.use_browser_fallback && '1' || '0' }}
+        run: |
+          node code-parts/topics/players-data/players-list/festch-workflow.js \
+            --delay ${{ inputs.delay_ms }} \
+            --shard-index ${{ matrix.shard_index }} \
+            --shard-total ${{ inputs.shard_total }} \
+            --verbose
+
+      - name: Upload shard artifact
+        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: shard-${{ matrix.shard_index }}
+          path: |
+            code-parts/topics/players-data/players-inventories
+            _workflow/shards
+          if-no-files-found: error
+
+  merge:
+    if: ${{ always() && inputs.run_inventories }}
+    needs: [inventory-shards]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: _downloaded
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Merge shard results
+        run: |
+          node code-parts/topics/players-data/merge-fetch-results.js
+
+      - name: Commit generated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add code-parts/topics/players-data
+          git diff --cached --quiet || git commit -m "chore: update player data"
+          git push

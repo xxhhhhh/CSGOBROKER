@@ -2714,7 +2714,7 @@ nav .pages {
     height: 80px;
     transition: all .15s ease-in-out;
     z-index: -1;
-    left: 50%;
+    left: 40%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
     
@@ -2728,11 +2728,6 @@ nav .pages {
     opacity: .03;
 }
 
-.inventories .item-topic-grandbox:hover .logobg .player-status img {
-    transform: unset;
-    margin:  unset;
-}
-
 /* .inventories .item-topic-grandbox:hover .logobg .player-status:hover img {
     opacity: 1;
     transform: scale(1.03);
@@ -2742,6 +2737,12 @@ nav .pages {
     width: 100%;
     height: auto;
     margin: unset;
+    transform: unset;
+}
+
+.inventories .item-topic-grandbox:hover .logobg .player-status img {
+    transform: unset;
+    margin:  unset;
 }
 
 .player-bio {
@@ -2750,7 +2751,7 @@ nav .pages {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    right: 12px;
+    right: 9px;
     z-index: 9;
     font-weight: 500;
     top: 50%;
@@ -4881,13 +4882,16 @@ nav img {
 }
 
 .inventories .item-topic-grandbox:hover .logobg img {
-    transform: unset;
+    transform: scale(.5);
     margin-top: 70px;
 }
 
 .inventories .item-topic-grandbox .logobg img {
-    height: 200%;
+    height: 417px;
     margin-top: 70px;
+    position: absolute;
+    transform: scale(.5);
+    transform-origin: left;
 }
 
 .sitepage.items .topic-grandbox {

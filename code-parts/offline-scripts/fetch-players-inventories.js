@@ -416,13 +416,32 @@ function validatePlayersSource(doc) {
 
   const players = doc.players
     .map(normalizePlayer)
-    .filter((p) => p.nickname && p.steamid64);
+    .filter((p) => p.nickname);
 
   if (!players.length) {
     throw new Error("Players source JSON has no valid players");
   }
 
   return players;
+}
+
+function extractSteamId64FromRaw(raw) {
+  const text = String(raw || "");
+
+  // основной ожидаемый формат:
+  // |steam64ID=76561197989744167
+  let m = text.match(/\|\s*steam64ID\s*=\s*(765\d{14})\b/i);
+  if (m) {
+    return m[1];
+  }
+
+  // запасной вариант на случай другого регистра / названия поля
+  m = text.match(/\|\s*steamid64\s*=\s*(765\d{14})\b/i);
+  if (m) {
+    return m[1];
+  }
+
+  return "";
 }
 
 function normalizeExistingPlayersListDoc(doc) {
@@ -856,6 +875,7 @@ async function getSharedCsfloatBrowser() {
 
   __csfloatBrowser = await puppeteer.launch({
     headless: true,
+    executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
     defaultViewport: { width: 1600, height: 1200 },
   });
@@ -1183,40 +1203,38 @@ function textIncludesAny(text, needles) {
   return needles.some((needle) => hay.includes(String(needle).toLowerCase()));
 }
 
-function isPrivateOrUnavailablePayload(payload, status, rawText = "") {
+function isPrivateOrUnavailablePayload(payload, status) {
+  if (status === 401 || status === 403) {
+    return true;
+  }
+
   const errorParts = [
     payload?.Error,
     payload?.error,
     payload?.message,
     payload?.msg,
-    rawText,
   ]
     .filter(Boolean)
     .join(" | ")
     .toLowerCase();
 
-  if (status === 401 || status === 403) return true;
-
-  if (
-    textIncludesAny(errorParts, [
-      "private",
-      "not public",
-      "inventory is unavailable",
-      "profile is private",
-      "this profile is private",
-      "the profile is private",
-      "requested profile is private",
-      "inventory not available",
-      "inventory unavailable",
-      "access denied",
-      "permission",
-      "friends only",
-    ])
-  ) {
-    return true;
+  if (!errorParts) {
+    return false;
   }
 
-  return false;
+  return textIncludesAny(errorParts, [
+    "private",
+    "not public",
+    "inventory is unavailable",
+    "profile is private",
+    "this profile is private",
+    "the profile is private",
+    "requested profile is private",
+    "inventory not available",
+    "inventory unavailable",
+    "access denied",
+    "friends only",
+  ]);
 }
 
 function looksLikePrivateInventorySuccessPayload(payload) {
@@ -1285,26 +1303,19 @@ function isDefinitelyPrivateInventoryResponse(result) {
     return true;
   }
 
-  if (result.json) {
-    if (isPrivateOrUnavailablePayload(result.json, result.status, result.raw)) {
-      return true;
-    }
-
-    if (looksLikePrivateInventorySuccessPayload(result.json)) {
-      return true;
-    }
+  if (!result.json || typeof result.json !== "object") {
+    return false;
   }
 
-  const rawText = String(result.raw || "").toLowerCase();
+  if (isPrivateOrUnavailablePayload(result.json, result.status)) {
+    return true;
+  }
 
-  return textIncludesAny(rawText, [
-    "private",
-    "not public",
-    "inventory is unavailable",
-    "profile is private",
-    "friends only",
-    "access denied",
-  ]);
+  if (looksLikePrivateInventorySuccessPayload(result.json)) {
+    return true;
+  }
+
+  return false;
 }
 
 async function fetchJsonWithRetry(url, { verbose = false, noRetries = false } = {}) {
@@ -1786,6 +1797,7 @@ async function fetchLiquipediaPlayerData(player, { verbose = false } = {}) {
     if (rawRes.ok && rawRes.text && !/There is currently no text in this page/i.test(rawRes.text)) {
       const raw = rawRes.text;
 
+      const steamid64 = extractSteamId64FromRaw(raw);
       const name = extractPlayerNameFromRaw(raw);
       const nationality = extractNationalityFromRaw(raw);
       const born = parseBirthDateFromRaw(raw);
@@ -1818,12 +1830,13 @@ async function fetchLiquipediaPlayerData(player, { verbose = false } = {}) {
         faceit = findFaceitFromLinks(rawExternalLinks);
       }
 
-      const hasUsefulData = Boolean(name || nationality || born || team || twitch || faceit);
+      const hasUsefulData = Boolean(steamid64 || name || nationality || born || team || twitch || faceit);
 
       if (hasUsefulData) {
         return {
           found: true,
           source: "raw",
+          steamid64,
           name,
           nationality,
           born,
@@ -1872,6 +1885,7 @@ async function fetchLiquipediaPlayerData(player, { verbose = false } = {}) {
         return {
           found: true,
           source: "html",
+          steamid64: "",
           name,
           nationality,
           born,
@@ -1888,6 +1902,7 @@ async function fetchLiquipediaPlayerData(player, { verbose = false } = {}) {
   return {
     found: false,
     source: "",
+    steamid64: "",
     name: "",
     nationality: "",
     born: "",
@@ -1978,6 +1993,14 @@ function findFaceitFromLinks(links) {
   return "";
 }
 
+function needsSteamId64Lookup(player) {
+  return !hasSteamId64(player);
+}
+
+function hasSteamId64(player) {
+  return /^765\d{14}$/.test(String(player?.steamid64 || "").trim());
+}
+
 function mergeLiquipediaDataIntoPlayer(player, lpData, { force = false } = {}) {
   const merged = { ...player };
 
@@ -1988,6 +2011,11 @@ function mergeLiquipediaDataIntoPlayer(player, lpData, { force = false } = {}) {
       merged[key] = next;
     }
   };
+
+  // steamid64 подтягиваем только если его не было
+  if (!String(merged.steamid64 || "").trim() && String(lpData.steamid64 || "").trim()) {
+    merged.steamid64 = String(lpData.steamid64).trim();
+  }
 
   assign("name", lpData.name);
   assign("nationality", lpData.nationality);
@@ -2043,7 +2071,10 @@ async function enrichPlayersWithLiquipedia(players, { verbose = false, refetchLi
         continue;
       }
 
-      const shouldSkipFetch = !refetchLiquipedia && hasEnoughLiquipediaFields(player);
+      const shouldSkipFetch =
+        !refetchLiquipedia &&
+        hasEnoughLiquipediaFields(player) &&
+        hasSteamId64(player);
 
       if (shouldSkipFetch) {
         if (verbose) {
@@ -2074,7 +2105,7 @@ async function enrichPlayersWithLiquipedia(players, { verbose = false, refetchLi
 
     if (verbose) {
       console.log(
-        `[LIQUIPEDIA OK] ${player.nickname} :: name=${merged.name || "-"}, nationality=${merged.nationality || "-"}, born=${merged.born || "-"}, team=${merged.team || "-"}, twitch=${merged.twitch || "-"}, faceit=${ merged.faceit || "-"}`
+        `[LIQUIPEDIA OK] ${player.nickname} :: steamid64=${merged.steamid64 || "-"}, name=${merged.name || "-"}, nationality=${merged.nationality || "-"}, born=${merged.born || "-"}, team=${merged.team || "-"}, twitch=${merged.twitch || "-"}, faceit=${merged.faceit || "-"}`
       );
     }
 
@@ -2610,6 +2641,7 @@ async function attachInspectLinksFromSteamInventoryUi(player, rawItems, { verbos
   try {
       browser = await puppeteer.launch({
         headless: true,
+        executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
         defaultViewport: { width: 1600, height: 1200 },
       });
@@ -2621,11 +2653,11 @@ async function attachInspectLinksFromSteamInventoryUi(player, rawItems, { verbos
     );
 
     await page.goto(inventoryUrl, {
-      waitUntil: "networkidle2",
+      waitUntil: "domcontentloaded",
       timeout: 60000,
     });
 
-    await sleep(5000);
+    await page.waitForSelector('a[href^="#730_2_"]', { timeout: 15000 });
 
     const byAssetId = new Map();
     const seenHashes = new Set();
@@ -2786,7 +2818,40 @@ async function attachInspectLinksFromSteamInventoryUi(player, rawItems, { verbos
   }
 }
 
+function buildExistingDopplerDataMap(existingDoc) {
+  const map = new Map();
 
+  const items = Array.isArray(existingDoc?.items) ? existingDoc.items : [];
+  for (const item of items) {
+    const assetid = String(item?.assetid || "").trim();
+
+    if (!assetid) {
+      continue;
+    }
+
+    if (!isDopplerLikeItem(item)) {
+      continue;
+    }
+
+    const hasFloat = typeof item?.float === "number" && Number.isFinite(item.float);
+    const hasSeed = typeof item?.seed === "number" && Number.isFinite(item.seed);
+    const hasPhase =
+      typeof item?.phase === "string" &&
+      item.phase.trim().length > 0;
+
+    if (!hasFloat || !hasSeed || !hasPhase) {
+      continue;
+    }
+
+    map.set(assetid, {
+      float: item.float,
+      seed: item.seed,
+      phase: item.phase.trim(),
+    });
+  }
+
+  return map;
+}
 
 function buildExistingInspectMap(existingDoc) {
   const map = new Map();
@@ -2874,16 +2939,27 @@ async function buildInventoryDocument(player, inventoryResult, { verbose = false
   }
 
     const existingInspectMap = buildExistingInspectMap(existingDoc);
+    const existingDopplerDataMap = buildExistingDopplerDataMap(existingDoc);
 
     for (const item of rawItems) {
+      const assetid = String(item?.assetid || "").trim();
+
       const current = String(item?.inspectLink || "").trim();
-      if (current && isValidGeneratedInspectLink(current)) {
-        continue;
+      if (!current || !isValidGeneratedInspectLink(current)) {
+        const fromExisting = existingInspectMap.get(assetid);
+        if (fromExisting && isValidGeneratedInspectLink(fromExisting)) {
+          item.inspectLink = fromExisting;
+        }
       }
 
-      const fromExisting = existingInspectMap.get(String(item?.assetid || "").trim());
-      if (fromExisting && isValidGeneratedInspectLink(fromExisting)) {
-        item.inspectLink = fromExisting;
+      if (isDopplerLikeItem(item) && assetid) {
+        const existingDopplerData = existingDopplerDataMap.get(assetid);
+
+        if (existingDopplerData) {
+          item.float = existingDopplerData.float;
+          item.seed = existingDopplerData.seed;
+          item.phase = existingDopplerData.phase;
+        }
       }
     }
 
@@ -3230,6 +3306,63 @@ async function main() {
     }
 
     const existingDoc = await readJsonSafe(invFile);
+
+    if (!hasSteamId64(player)) {
+      const inventoryDoc = mergeFailedFetchWithExisting(
+        await readJsonSafe(invFile),
+        {
+          nickname: player.nickname,
+          slug,
+          steamid64: "",
+          team: player.team || "",
+          name: player.name || "",
+          nationality: player.nationality || "",
+          born: player.born || "",
+          isContentCreator: Boolean(player.isContentCreator),
+          twitch: player.twitch || "",
+          faceit: player.faceit || "",
+          updatedAt: new Date().toISOString(),
+          inventoryVisible: null,
+          fetchOk: false,
+          fetchStatus: 0,
+          fetchError: "Missing steamid64 (not found in fetch-players.json or Liquipedia)",
+          totalItemsRaw: 0,
+          totalItemsGrouped: 0,
+          items: [],
+        },
+        player
+      );
+
+      await writeJson(invFile, inventoryDoc);
+
+      playersListOutput.push({
+        nickname: player.nickname,
+        slug,
+        steamid64: "",
+        team: player.team || "",
+        isContentCreator: Boolean(player.isContentCreator),
+
+        inventoryJson: `/code-parts/topics/players-data/players-inventories/${slug}.json`,
+        updatedAt: inventoryDoc.updatedAt,
+        inventoryVisible: inventoryDoc.inventoryVisible,
+        fetchOk: inventoryDoc.fetchOk,
+        fetchStatus: inventoryDoc.fetchStatus,
+        fetchError: inventoryDoc.fetchError,
+        totalItemsGrouped: inventoryDoc.totalItemsGrouped,
+      });
+
+      failedCount++;
+
+      if (verbose) {
+        console.log(`[SKIP] ${player.nickname} :: steamid64 not found, inventory fetch skipped`);
+      }
+
+      if (i < selectedPlayers.length - 1) {
+        await sleep(delay);
+      }
+
+      continue;
+    }
 
     const inventoryDocRaw = await fetchInventoryWithVisibleFailedRetry(
       player,
