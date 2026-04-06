@@ -26,7 +26,7 @@ on:
       delay_ms:
         description: "Delay between players"
         required: false
-        default: "1800"
+        default: "5000"
         type: string
       use_browser_fallback:
         description: "Enable Steam UI fallback with Puppeteer"
