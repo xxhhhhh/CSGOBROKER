@@ -105,6 +105,8 @@ function parseArgs(argv) {
 
     liquipediaOnly: argv.includes("--liquipedia-only"),
     teamsOnly: argv.includes("--teams-only"),
+    skipLiquipedia: argv.includes("--skip-liquipedia"),
+
     noRetries: argv.includes("--no-retries"),
     writeFinalLists: argv.includes("--write-final-lists"),
 
@@ -907,11 +909,19 @@ async function fetchJsonWithRetry(url, { verbose = false, noRetries = false } = 
       return result;
     }
 
-    const backoff = 1200 * attempt + Math.floor(Math.random() * 500);
+    const backoff = getRetryDelayMs(result.status, attempt);
     await sleep(backoff);
   }
 
   return lastResult;
+}
+
+function getRetryDelayMs(status, attempt) {
+  if (status === 429) {
+    return 10000 * attempt + Math.floor(Math.random() * 2000);
+  }
+
+  return 1200 * attempt + Math.floor(Math.random() * 500);
 }
 
 async function fetchFullInventory(steamid64, { verbose = false, noRetries = false } = {}) {
@@ -3149,6 +3159,7 @@ async function main() {
     refetchLiquipedia,
     liquipediaOnly,
     teamsOnly,
+    skipLiquipedia,
     retryVisibleFailed,
     retryVisibleFailedDelay,
     noRetries,
@@ -3191,24 +3202,29 @@ async function main() {
     });
   }
 
-  const playersForLiquipedia = selectedPlayers;
-  const enrichedPlayers = await enrichPlayersWithLiquipedia(playersForLiquipedia, {
-    verbose,
-    refetchLiquipedia,
-  });
+  let playersAfterLiquipedia = selectedPlayers;
 
-  if (!only.length && !onlyFailedFetch) {
-    await savePlayersSource(playersSourceFile, enrichedPlayers);
-  } else {
-    const allPlayersMap = new Map(
-      PLAYERS_SOURCE.map((p) => [safeSlug(p.nickname), { ...p }])
-    );
+  if (!skipLiquipedia) {
+    playersAfterLiquipedia = await enrichPlayersWithLiquipedia(selectedPlayers, {
+      verbose,
+      refetchLiquipedia,
+    });
 
-    for (const p of enrichedPlayers) {
-      allPlayersMap.set(safeSlug(p.nickname), p);
+    if (!only.length && !onlyFailedFetch) {
+      await savePlayersSource(playersSourceFile, playersAfterLiquipedia);
+    } else {
+      const allPlayersMap = new Map(
+        PLAYERS_SOURCE.map((p) => [safeSlug(p.nickname), { ...p }])
+      );
+
+      for (const p of playersAfterLiquipedia) {
+        allPlayersMap.set(safeSlug(p.nickname), p);
+      }
+
+      await savePlayersSource(playersSourceFile, [...allPlayersMap.values()]);
     }
-
-    await savePlayersSource(playersSourceFile, [...allPlayersMap.values()]);
+  } else if (verbose) {
+    console.log("[LIQUIPEDIA] skipped by --skip-liquipedia");
   }
 
   const FULL_PLAYERS_SOURCE = await loadPlayersSource(playersSourceFile);

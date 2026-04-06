@@ -1347,11 +1347,19 @@ async function fetchJsonWithRetry(url, { verbose = false, noRetries = false } = 
       return result;
     }
 
-    const backoff = 1200 * attempt + Math.floor(Math.random() * 500);
+    const backoff = getRetryDelayMs(result.status, attempt);
     await sleep(backoff);
   }
 
   return lastResult;
+}
+
+function getRetryDelayMs(status, attempt) {
+  if (status === 429) {
+    return 10000 * attempt + Math.floor(Math.random() * 2000);
+  }
+
+  return 1200 * attempt + Math.floor(Math.random() * 500);
 }
 
 async function fetchFullInventory(steamid64, { verbose = false, noRetries = false } = {}) {

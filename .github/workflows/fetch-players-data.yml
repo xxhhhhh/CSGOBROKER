@@ -21,22 +21,22 @@ on:
       max_parallel:
         description: "Max parallel shard jobs"
         required: false
-        default: "2"
+        default: "1"
         type: string
       delay_ms:
         description: "Delay between players"
         required: false
-        default: "8000"
+        default: "5000"
         type: string
       use_browser_fallback:
         description: "Enable Steam UI fallback with Puppeteer"
         required: false
-        default: false
+        default: true
         type: boolean
       resolve_doppler_phase:
         description: "Enable CSFloat checker phase resolve"
         required: false
-        default: false
+        default: true
         type: boolean
 
 concurrency:
@@ -123,6 +123,7 @@ jobs:
           USE_STEAM_UI_FALLBACK: ${{ inputs.use_browser_fallback && '1' || '0' }}
         run: |
           node code-parts/topics/players-data/players-list/festch-workflow.js \
+            --skip-liquipedia \
             --delay ${{ inputs.delay_ms }} \
             --shard-index ${{ matrix.shard_index }} \
             --shard-total ${{ inputs.shard_total }} \

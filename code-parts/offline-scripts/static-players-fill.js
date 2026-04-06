@@ -1258,6 +1258,55 @@ async function loadPlayersList(root){
   return [];
 }
 
+function replaceMetaDescription(html, description){
+  if (!description) return html;
+
+  const escaped = escapeAttrDblNoApos(description);
+
+  const replaceMetaByAttr = (input, attrName, attrValue) => {
+    const tagRe = new RegExp(
+      `<meta\\b(?=[^>]*\\b${attrName}=(?:"${attrValue}"|'${attrValue}'))[^>]*>`,
+      "i"
+    );
+
+    return input.replace(tagRe, (tag) => {
+      if (/\bcontent\s*=\s*(?:"[^"]*"|'[^']*')/i.test(tag)) {
+        return tag.replace(
+          /\bcontent\s*=\s*(?:"[^"]*"|'[^']*')/i,
+          `content="${escaped}"`
+        );
+      }
+
+      return tag.replace(/>$/, ` content="${escaped}">`);
+    });
+  };
+
+  html = replaceMetaByAttr(html, "name", "description");
+  html = replaceMetaByAttr(html, "property", "og:description");
+  html = replaceMetaByAttr(html, "name", "twitter:description");
+
+  return html;
+}
+
+function buildPlayerMetaDescription(player, lang = "ru"){
+  const nickname = String(player?.nickname || "").trim();
+  const isContentCreator = player?.isContentCreator === true;
+
+  if (lang === "en") {
+    if (isContentCreator) {
+      return `Explore ${nickname}'s full CS2 inventory, including skins, knives, gloves, and rare items from a popular streamer and content creator. Updated list with prices and rarity.`;
+    }
+
+    return `Explore ${nickname}'s full CS2 inventory, including all skins, knives, gloves, and rare items. Updated list with prices and rarity from one of the world's best players.`;
+  }
+
+  if (isContentCreator) {
+    return `Посмотрите полный инвентарь ${nickname} в CS2: скины, ножи, перчатки и редкие предметы популярного стримера и контент-мейкера. Актуальный список с ценами и редкостью.`;
+  }
+
+  return `Посмотрите полный инвентарь ${nickname} в CS2: все скины, ножи, перчатки и редкие предметы одного из лучших игроков мира. Актуальный список с ценами и редкостью.`;
+}
+
 async function loadPlayerInventory(root, slug){
   const file = abs(root, `${PLAYERS_INV_DIR}/${slug}.json`);
   const data = await safeJsonCached(file);
@@ -2091,8 +2140,7 @@ async function generatePlayerPagesForVersion({
     let html;
 
     if (existsAlready) {
-      // Уже есть страница игрока -> не трогаем head/title/description и прочее
-      // Используем существующий html и обновляем только список предметов
+      // Уже есть страница игрока
       html = await readTextCached(outFile);
     } else {
       // Страницы ещё нет -> создаём из шаблона
@@ -2106,6 +2154,11 @@ async function generatePlayerPagesForVersion({
         slug
       );
     }
+
+    html = replaceMetaDescription(
+      html,
+      buildPlayerMetaDescription(player, lang)
+    );
 
     {
       const res = await fillBoxSkinsListInHtml(root, html, inventory, pricesState);
