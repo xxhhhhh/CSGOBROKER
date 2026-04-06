@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-04-06T17:37:20.884Z",
+  "updatedAt": "2026-04-06T17:57:38.942Z",
   "count": 84,
-  "successCount": 59,
-  "failedCount": 25,
+  "successCount": 60,
+  "failedCount": 24,
   "players": [
     {
       "nickname": "910",
@@ -805,16 +805,16 @@
     {
       "nickname": "ryu",
       "slug": "ryu",
-      "steamid64": "76561198901441669",
+      "steamid64": "76561198168401372",
       "team": "Astralis",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/ryu.json",
-      "updatedAt": "2026-04-06T17:29:53.782Z",
+      "updatedAt": "2026-04-06T17:57:14.830Z",
       "inventoryVisible": true,
-      "fetchOk": false,
-      "fetchStatus": 429,
-      "fetchError": "HTTP 429",
-      "totalItemsGrouped": 0
+      "fetchOk": true,
+      "fetchStatus": 200,
+      "fetchError": "",
+      "totalItemsGrouped": 65
     },
     {
       "nickname": "saadzin",
