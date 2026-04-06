@@ -220,7 +220,7 @@ function normalizePlayer(player) {
       player?.isContentCreator ?? player?.isStreamer ?? false
     ),
 
-    liquipedia: String(player?.liquipedia || "").trim().toLowerCase(),
+    liquipedia: String(player?.liquipedia || "").trim(),
 
     name: String(player?.name || "").trim(),
     nationality: String(player?.nationality || "").trim(),
@@ -1752,16 +1752,20 @@ function hasEnoughLiquipediaFields(player) {
 }
 
 function candidateLiquipediaTitles(player) {
-  const raw = String(player?.liquipediaSlug || "").trim();
+  const manual = String(player?.liquipedia || "").trim();
   const nickname = String(player?.nickname || "").trim();
 
   const set = new Set();
 
-  if (raw) {
-    set.add(raw);
-    set.add(raw.replace(/-/g, " "));
+  // если задан ручной liquipedia и это не "none"
+  if (manual && manual.toLowerCase() !== "none") {
+    set.add(manual);
+    set.add(manual.replace(/_/g, " "));
+    set.add(manual.replace(/ /g, "_"));
+    set.add(manual.replace(/-/g, " "));
   }
 
+  // fallback по nickname
   if (nickname) {
     set.add(nickname);
     set.add(nickname.replace(/ /g, "_"));
@@ -2006,10 +2010,10 @@ async function savePlayersSource(playersSourceFile, players) {
         isContentCreator: Boolean(p.isContentCreator),
       };
 
-      const isLiquipediaNone = String(p.liquipedia || "").trim().toLowerCase() === "none";
+      const liquipediaValue = String(p.liquipedia || "").trim();
 
-      if (isLiquipediaNone) {
-        out.liquipedia = "none";
+      if (liquipediaValue) {
+        out.liquipedia = liquipediaValue;
       }
 
       out.name = p.name || "";
@@ -2422,6 +2426,14 @@ async function readInventoryRightPanel(page) {
   });
 }
 
+function getPlayerLogLabel(playerOrSteamid, fallback = "") {
+  if (playerOrSteamid && typeof playerOrSteamid === "object") {
+    return String(playerOrSteamid.nickname || playerOrSteamid.steamid64 || fallback || "").trim();
+  }
+
+  return String(playerOrSteamid || fallback || "").trim();
+}
+
 async function readInventoryPagerState(page) {
   return await page.evaluate(() => {
     const txt = document.body?.innerText || "";
@@ -2437,7 +2449,7 @@ async function readInventoryPagerState(page) {
   });
 }
 
-async function goToInventoryPageNumber(page, pageNumber, { verbose = false, steamid64 = "" } = {}) {
+async function goToInventoryPageNumber(page, pageNumber, { verbose = false, logLabel = "" } = {}) {
   const before = await readInventoryPagerState(page);
 
   const clicked = await page.evaluate((pageNumber) => {
@@ -2484,7 +2496,7 @@ async function goToInventoryPageNumber(page, pageNumber, { verbose = false, stea
     if (after.current === pageNumber) {
       if (verbose) {
         console.log(
-          `[INVENTORY UI JUMP] ${steamid64} :: ${before.current}/${before.total} -> ${after.current}/${after.total}`
+          `[INVENTORY UI JUMP] ${logLabel} :: ${before.current}/${before.total} -> ${after.current}/${after.total}`
         );
       }
       return true;
@@ -2494,7 +2506,7 @@ async function goToInventoryPageNumber(page, pageNumber, { verbose = false, stea
   return false;
 }
 
-async function goToNextInventoryPage(page, { verbose = false, steamid64 = "" } = {}) {
+async function goToNextInventoryPage(page, { verbose = false, logLabel = "" } = {}) {
   const before = await readInventoryPagerState(page);
 
   if (!before.current || !before.total || before.current >= before.total) {
@@ -2544,7 +2556,7 @@ async function goToNextInventoryPage(page, { verbose = false, steamid64 = "" } =
 
   if (!clicked) {
     if (verbose) {
-      console.log(`[INVENTORY UI NEXT MISS] ${steamid64} :: next control not found on ${before.current}/${before.total}`);
+      console.log(`[INVENTORY UI NEXT MISS] ${logLabel} :: next control not found on ${before.current}/${before.total}`);
     }
     return false;
   }
@@ -2556,7 +2568,7 @@ async function goToNextInventoryPage(page, { verbose = false, steamid64 = "" } =
     if (after.current > before.current) {
       if (verbose) {
         console.log(
-          `[INVENTORY UI NEXT] ${steamid64} :: ${before.current}/${before.total} -> ${after.current}/${after.total} via=${clicked}`
+          `[INVENTORY UI NEXT] ${logLabel} :: ${before.current}/${before.total} -> ${after.current}/${after.total} via=${clicked}`
         );
       }
       return true;
@@ -2565,14 +2577,16 @@ async function goToNextInventoryPage(page, { verbose = false, steamid64 = "" } =
 
   if (verbose) {
     console.log(
-      `[INVENTORY UI NEXT MISS] ${steamid64} :: stayed on ${before.current}/${before.total}`
+      `[INVENTORY UI NEXT MISS] ${logLabel} :: stayed on ${before.current}/${before.total}`
     );
   }
 
   return false;
 }
 
-async function attachInspectLinksFromSteamInventoryUi(steamid64, rawItems, { verbose = false } = {}) {
+async function attachInspectLinksFromSteamInventoryUi(player, rawItems, { verbose = false } = {}) {
+  const steamid64 = String(player?.steamid64 || "").trim();
+  const logLabel = getPlayerLogLabel(player, steamid64);
   const missingTargets = getMissingInspectTargets(rawItems);
 
   const neededAssetIds = new Set(
@@ -2583,7 +2597,7 @@ async function attachInspectLinksFromSteamInventoryUi(steamid64, rawItems, { ver
 
   if (!missingTargets.length) {
     if (verbose) {
-      console.log(`[INVENTORY UI RESOLVER] ${steamid64} :: no missing targets`);
+      console.log(`[INVENTORY UI RESOLVER] ${logLabel} :: no missing targets`);
     }
     return rawItems;
   }
@@ -2626,14 +2640,14 @@ async function attachInspectLinksFromSteamInventoryUi(steamid64, rawItems, { ver
         anchors = await getInventoryAssetAnchors(page);
       } catch (err) {
         if (verbose) {
-          console.log(`[INVENTORY UI PAGE FAIL] ${steamid64} :: pageIndex=${pageIndex} :: ${err?.message || err}`);
+          console.log(`[INVENTORY UI PAGE FAIL] ${logLabel} :: pageIndex=${pageIndex} :: ${err?.message || err}`);
         }
         break;
       }
 
       if (verbose) {
         console.log(
-          `[INVENTORY UI PAGE] ${steamid64} :: pageIndex=${pageIndex}, anchors=${anchors.length}`
+          `[INVENTORY UI PAGE] ${logLabel} :: pageIndex=${pageIndex}, anchors=${anchors.length}`
         );
       }
 
@@ -2658,20 +2672,20 @@ async function attachInspectLinksFromSteamInventoryUi(steamid64, rawItems, { ver
 
         if (!selected?.ok) {
           if (verbose) {
-            console.log(`[INVENTORY UI SELECT FAIL] ${steamid64} :: hash=${hash} :: ${selected?.reason || "-"}`);
+            console.log(`[INVENTORY UI SELECT FAIL] ${logLabel} :: hash=${hash} :: ${selected?.reason || "-"}`);
           }
           continue;
         }
 
         if (verbose) {
-          console.log(`[INVENTORY UI SELECT] ${steamid64} :: hash=${hash}`);
+          console.log(`[INVENTORY UI SELECT] ${logLabel} :: hash=${hash}`);
         }
 
         const resolved = await waitForInventoryPanelUpdate(page, before.title, 4500);
 
         if (!resolved.ok) {
           if (verbose) {
-            console.log(`[INVENTORY UI RESOLVE MISS] ${steamid64} :: hash=${hash}`);
+            console.log(`[INVENTORY UI RESOLVE MISS] ${logLabel} :: hash=${hash}`);
           }
           continue;
         }
@@ -2688,7 +2702,7 @@ async function attachInspectLinksFromSteamInventoryUi(steamid64, rawItems, { ver
 
         if (verbose) {
           console.log(
-            `[INVENTORY UI ITEM] ${steamid64} :: hash=${hash}, assetid=${assetid || "-"}, title=${title || "-"}, inspect=${inspectLink ? "yes" : "no"}`
+            `[INVENTORY UI ITEM] ${logLabel} :: hash=${hash}, assetid=${assetid || "-"}, title=${title || "-"}, inspect=${inspectLink ? "yes" : "no"}`
           );
         }
 
@@ -2706,18 +2720,18 @@ async function attachInspectLinksFromSteamInventoryUi(steamid64, rawItems, { ver
         let moved = false;
 
         try {
-          moved = await goToNextInventoryPage(page, { verbose, steamid64 });
+          moved = await goToNextInventoryPage(page, { verbose, logLabel });
 
           if (!moved && pager.current && pager.total && pager.current < pager.total) {
             moved = await goToInventoryPageNumber(
               page,
               pager.current + 1,
-              { verbose, steamid64 }
+              { verbose, logLabel }
             );
           }
         } catch (err) {
           if (verbose) {
-            console.log(`[INVENTORY UI NEXT FAIL] ${steamid64} :: ${err?.message || err}`);
+            console.log(`[INVENTORY UI NEXT FAIL] ${logLabel} :: ${err?.message || err}`);
           }
           moved = false;
         }
@@ -2753,13 +2767,13 @@ async function attachInspectLinksFromSteamInventoryUi(steamid64, rawItems, { ver
 
       const total = rawItems.filter((x) => isInspectableMarketItem(x)).length;
 
-      console.log(`[INVENTORY UI RESOLVER DONE] ${steamid64} :: attached=${attached}/${total}`);
+      console.log(`[INVENTORY UI RESOLVER DONE] ${logLabel} :: attached=${attached}/${total}`);
     }
 
     return rawItems;
   } catch (err) {
     if (verbose) {
-      console.log(`[INVENTORY UI RESOLVER FAIL] ${steamid64} :: ${err?.message || err}`);
+      console.log(`[INVENTORY UI RESOLVER FAIL] ${logLabel} :: ${err?.message || err}`);
     }
     return rawItems;
   } finally {
@@ -2880,7 +2894,7 @@ async function buildInventoryDocument(player, inventoryResult, { verbose = false
 
   if (missingBeforeDom > 0) {
     await attachInspectLinksFromSteamInventoryUi(
-      player.steamid64,
+      player,
       rawItems,
       { verbose }
     );
