@@ -123,6 +123,11 @@ const LANGUAGE = "english";
 const PAGE_COUNT = 2000;
 const REQUEST_TIMEOUT_MS = 20000;
 const MAX_FETCH_RETRIES = 4;
+const puppeteer = require('puppeteer-extra');
+const CSFLOAT_CHECKER_URL = "https://csfloat.com/checker";
+const CSFLOAT_CHECKER_CONCURRENCY = Number(process.env.CSFLOAT_CHECKER_CONCURRENCY || 1) || 1;
+// const CSFLOAT_CHECKER_ENABLED = String(process.env.CSFLOAT_CHECKER_ENABLED || "").trim() === "1";
+const CSFLOAT_CHECKER_ENABLED = "1";
 
 const DEFAULT_RETRY_VISIBLE_FAILED = 2;
 const DEFAULT_RETRY_VISIBLE_FAILED_DELAY = 2500;
@@ -182,10 +187,6 @@ function safeSlug(input) {
     .replace(/['"`]/g, "")
     .replace(/[^a-z0-9]+/gi, "-")
     .replace(/^-+|-+$/g, "") || "player";
-}
-
-function slugForFile(input) {
-  return safeSlug(input);
 }
 
 function encodeWikiTitle(input) {
@@ -620,6 +621,114 @@ async function fetchText(url, extraHeaders = {}, timeoutMs = REQUEST_TIMEOUT_MS)
   }
 }
 
+function isValidGeneratedInspectLink(link) {
+  const value = normalizeInspectLink(link);
+  if (!value) return false;
+
+  const lower = value.toLowerCase();
+
+  if (!lower.startsWith("steam://run/730//+csgo_econ_action_preview")) {
+    return false;
+  }
+
+  const forbiddenTokens = [
+    "%assetid%",
+    "%owner_steamid%",
+    "%ownersteamid%",
+    "%steamid%",
+    "%propid%",
+    "%propid:",
+    "%listingid%",
+    "%contextid%",
+    "%appid%",
+    "%id%",
+  ];
+
+  if (forbiddenTokens.some((token) => lower.includes(token))) {
+    return false;
+  }
+
+  if (/[<>"']/.test(value)) {
+    return false;
+  }
+
+  const tail = value.split("csgo_econ_action_preview")[1] || "";
+  if (!tail.startsWith("%20")) {
+    return false;
+  }
+
+  const payload = tail.slice(3).trim();
+  if (!payload) return false;
+
+  // blob-like inspect
+  if (/^[0-9a-fA-F]{40,}$/.test(payload)) {
+    return true;
+  }
+
+  // классические inspect-паттерны
+  if (/^S\d+A\d+D\d+$/i.test(payload)) {
+    return true;
+  }
+
+  if (/^M\d+A\d+D\d+$/i.test(payload)) {
+    return true;
+  }
+
+  if (/^(?:S\d+)?(?:M\d+)?A\d+D\d+$/i.test(payload)) {
+    return true;
+  }
+
+  return false;
+}
+
+function decodeJsEscapes(input) {
+  return String(input || "")
+    .replace(/\\u0026/g, "&")
+    .replace(/\\u002F/g, "/")
+    .replace(/\\\//g, "/")
+    .replace(/&amp;/g, "&");
+}
+
+function isInspectableMarketItem(item) {
+  const type = String(item?.type || "").toLowerCase();
+  const name = String(item?.market_hash_name || item?.name || "").toLowerCase();
+
+  const blocked = [
+    "case",
+    "capsule",
+    "package",
+    "pass",
+    "sealed graffiti",
+    "graffiti",
+    "sticker",
+    "patch",
+    "music kit",
+    "souvenir package",
+    "charm",
+    "tool",
+    "key",
+    "tag",
+    "gift",
+    "collectible",
+    "coin",
+  ];
+
+  if (blocked.some((x) => type.includes(x) || name.includes(x))) {
+    return false;
+  }
+
+  return (
+    type.includes("knife") ||
+    type.includes("gloves") ||
+    type.includes("rifle") ||
+    type.includes("pistol") ||
+    type.includes("smg") ||
+    type.includes("sniper") ||
+    type.includes("machinegun") ||
+    type.includes("shotgun")
+  );
+}
+
 function makeDescriptionMap(descriptions) {
   const map = new Map();
 
@@ -659,8 +768,14 @@ function isStackLikeItem(desc) {
   );
 }
 
-function normalizeItem(asset, desc) {
+function normalizeItem(asset, desc, player = null) {
   const amount = Number(asset?.amount || 1) || 1;
+
+  const inspectLinkFromDesc = extractInspectLinkFromDescription(
+    desc,
+    asset,
+    player?.steamid64 || ""
+  );
 
   return {
     assetid: String(asset?.assetid || ""),
@@ -672,6 +787,8 @@ function normalizeItem(asset, desc) {
     market_hash_name: String(desc?.market_hash_name || ""),
     type: String(desc?.type || ""),
 
+    inspectLink: inspectLinkFromDesc || "",
+
     tags: Array.isArray(desc?.tags)
       ? desc.tags.map((t) => ({
           category: String(t?.category || ""),
@@ -679,6 +796,330 @@ function normalizeItem(asset, desc) {
         }))
       : [],
   };
+}
+
+function isDopplerLikeName(name) {
+  const text = String(name || "").toLowerCase();
+
+  return (
+    /\|\s*doppler\b/i.test(text) ||
+    /\|\s*gamma doppler\b/i.test(text)
+  );
+}
+
+function isDopplerLikeItem(item) {
+  return isDopplerLikeName(item?.market_hash_name || item?.name || "");
+}
+
+function extractPhaseFromName(name) {
+  const text = String(name || "").trim();
+  const lower = text.toLowerCase();
+
+  const isDopplerFamily =
+    /\|\s*doppler\b/i.test(text) ||
+    /\|\s*gamma doppler\b/i.test(text);
+
+  if (!isDopplerFamily) {
+    return "";
+  }
+
+  const m1 = text.match(/\((Phase\s*[1-4])\)/i);
+  if (m1) return m1[1].replace(/\s+/g, " ").trim();
+
+  const m2 = text.match(/\b(Phase\s*[1-4])\b/i);
+  if (m2) return m2[1].replace(/\s+/g, " ").trim();
+
+  if (/\bgamma doppler\b/i.test(text) && /\bemerald\b/i.test(text)) {
+    return "Emerald";
+  }
+
+  if (/\bdoppler\b/i.test(text) && /\bruby\b/i.test(text)) {
+    return "Ruby";
+  }
+
+  if (/\bdoppler\b/i.test(text) && /\bsapphire\b/i.test(text)) {
+    return "Sapphire";
+  }
+
+  if (/\bdoppler\b/i.test(text) && /\bblack pearl\b/i.test(text)) {
+    return "Black Pearl"; 
+  }
+
+  return "";
+}
+
+let __csfloatBrowser = null;
+let __csfloatWarmPage = null;
+
+async function getSharedCsfloatBrowser() {
+  if (__csfloatBrowser) return __csfloatBrowser;
+
+  __csfloatBrowser = await puppeteer.launch({
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    defaultViewport: { width: 1600, height: 1200 },
+  });
+
+  return __csfloatBrowser;
+}
+
+async function getSharedCsfloatWarmPage() {
+  if (__csfloatWarmPage && !__csfloatWarmPage.isClosed()) {
+    return __csfloatWarmPage;
+  }
+
+  const browser = await getSharedCsfloatBrowser();
+  const page = await browser.newPage();
+
+  await page.setViewport({ width: 1600, height: 1200 });
+  await page.setUserAgent(
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+  );
+
+  await page.goto(CSFLOAT_CHECKER_URL, {
+    waitUntil: "domcontentloaded",
+    timeout: 45000,
+  });
+
+  await page.waitForSelector("input", { timeout: 20000 });
+  await sleep(2500);
+
+  __csfloatWarmPage = page;
+  return page;
+}
+
+async function closeSharedCsfloatBrowser() {
+  try {
+    if (__csfloatWarmPage && !__csfloatWarmPage.isClosed()) {
+      await __csfloatWarmPage.close();
+    }
+  } catch {}
+
+  __csfloatWarmPage = null;
+
+  try {
+    if (__csfloatBrowser) {
+      await __csfloatBrowser.close();
+    }
+  } catch {}
+
+  __csfloatBrowser = null;
+}
+
+function toNumberOrNull(value) {
+  const n = Number(value);
+  return Number.isFinite(n) ? n : null;
+}
+
+async function fetchInspectDataViaCsfloatChecker(inspectLink, { verbose = false } = {}) {
+  if (!inspectLink) {
+    return {
+      ok: false,
+      float: null,
+      seed: null,
+      phase: "",
+      fullItemName: "",
+      error: "Missing inspect link",
+    };
+  }
+
+  let page = null;
+
+  try {
+    const warmPage = await getSharedCsfloatWarmPage();
+
+    page = await warmPage.browser().newPage();
+    await page.setViewport({ width: 1600, height: 1200 });
+    await page.setUserAgent(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+    );
+
+    await page.goto(CSFLOAT_CHECKER_URL, {
+      waitUntil: "domcontentloaded",
+      timeout: 45000,
+    });
+
+    await page.waitForSelector("input", { timeout: 20000 });
+    await sleep(2000);
+
+    const inputSelector = "input";
+
+    await page.click(inputSelector, { clickCount: 3 });
+    await page.keyboard.press("Backspace");
+    await page.type(inputSelector, inspectLink, { delay: 4 });
+
+    await page.keyboard.press("Enter");
+
+    await page.waitForFunction(() => {
+      const text = document.body.innerText || "";
+      return /PAINT SEED/i.test(text) && /FLOAT VALUE/i.test(text);
+    }, { timeout: 25000 });
+
+    await sleep(1200);
+
+      const parsed = await page.evaluate(() => {
+        const bodyText = document.body.innerText || "";
+
+        const seedMatch = bodyText.match(/PAINT SEED\s*([0-9]+)/i);
+        const floatMatch = bodyText.match(/FLOAT VALUE\s*([0-9]*\.[0-9]+|[0-9]+)/i);
+
+        const nameCandidates = Array.from(document.querySelectorAll("div, span, h1, h2, h3, h4"))
+          .map((el) => String(el.textContent || "").trim())
+          .filter(Boolean)
+          .filter((text) =>
+            /\|\s*(doppler|gamma doppler)\b/i.test(text) ||
+            /\bblack pearl\b/i.test(text) ||
+            /\bruby\b/i.test(text) ||
+            /\bsapphire\b/i.test(text) ||
+            /\bemerald\b/i.test(text) ||
+            /\bphase\s*[1-4]\b/i.test(text)
+          );
+
+        const fullItemName = nameCandidates[0] || "";
+
+        return {
+          seed: seedMatch ? seedMatch[1] : "",
+          float: floatMatch ? floatMatch[1] : "",
+          fullItemName,
+        };
+      });
+
+      const result = {
+        ok: true,
+        float: toNumberOrNull(parsed.float),
+        seed: toNumberOrNull(parsed.seed),
+        phase: extractPhaseFromName(parsed.fullItemName) || "",
+        fullItemName: parsed.fullItemName || "",
+        error: "",
+      };
+
+    if (verbose) {
+      console.log(
+        `[CSFLOAT CHECKER OK] ${inspectLink.slice(0, 80)} :: float=${result.float ?? "-"}, seed=${result.seed ?? "-"}, phase=${result.phase || "-"}`
+      );
+    }
+
+    return result;
+  } catch (err) {
+    if (verbose) {
+      console.log(
+        `[CSFLOAT CHECKER FAIL] ${inspectLink.slice(0, 80)} :: ${err?.message || err}`
+      );
+    }
+
+    return {
+      ok: false,
+      float: null,
+      seed: null,
+      phase: "",
+      fullItemName: "",
+      error: String(err?.message || err),
+    };
+  } finally {
+    if (page) {
+      try {
+        await page.close();
+      } catch {}
+    }
+  }
+}
+
+async function mapLimit(items, limit, mapper) {
+  const out = new Array(items.length);
+  let index = 0;
+
+  async function worker() {
+    while (true) {
+      const current = index++;
+      if (current >= items.length) return;
+      out[current] = await mapper(items[current], current);
+    }
+  }
+
+  const workers = Array.from(
+    { length: Math.max(1, Math.min(limit, items.length || 1)) },
+    () => worker()
+  );
+
+  await Promise.all(workers);
+  return out;
+}
+
+async function enrichGroupedItemsWithInspectData(items, player, { verbose = false } = {}) {
+  const list = Array.isArray(items) ? items : [];
+
+  if (!CSFLOAT_CHECKER_ENABLED) {
+    if (verbose) {
+      console.log(`[FLOAT ENRICH SKIP] ${player.nickname} :: checker disabled`);
+    }
+    return list;
+  }
+
+  const dopplerIndexes = [];
+
+  for (let i = 0; i < list.length; i++) {
+    const item = list[i];
+
+    if (!isDopplerLikeItem(item)) {
+      continue;
+    }
+
+    if (!isValidGeneratedInspectLink(item?.inspectLink || "")) {
+      continue;
+    }
+
+    const hasFloat = typeof item.float === "number" && Number.isFinite(item.float);
+    const hasSeed = typeof item.seed === "number" && Number.isFinite(item.seed);
+    const hasPhase =
+      typeof item.phase === "string" &&
+      item.phase.trim().length > 0;
+
+    if (hasFloat && hasSeed && hasPhase) {
+      if (verbose) {
+        console.log(
+          `[FLOAT CACHE HIT] ${player.nickname} :: ${item.market_hash_name}`
+        );
+      }
+      continue;
+    }
+
+    dopplerIndexes.push(i);
+  }
+
+  if (!dopplerIndexes.length) {
+    return list;
+  }
+
+  await mapLimit(
+    dopplerIndexes,
+    CSFLOAT_CHECKER_CONCURRENCY,
+    async (itemIndex) => {
+      const item = list[itemIndex];
+      const enriched = await fetchInspectDataViaCsfloatChecker(item.inspectLink, { verbose });
+
+      if (!enriched.ok) {
+        return;
+      }
+
+      if (enriched.float !== null) {
+        item.float = enriched.float;
+      }
+
+      if (enriched.seed !== null) {
+        item.seed = enriched.seed;
+      }
+
+      item.phase = enriched.phase || "";
+
+      await sleep(1200);
+    }
+  );
+
+  if (verbose) {
+    console.log(`[FLOAT ENRICH DONE] ${player.nickname} :: doppler_items=${dopplerIndexes.length}`);
+  }
+
+  return list;
 }
 
 function stripInternalFields(item) {
@@ -1256,13 +1697,6 @@ function parseFaceit(value) {
   return "";
 }
 
-function extractMetaContent(html, propertyOrName) {
-  const re1 = new RegExp(`<meta[^>]+property=["']${propertyOrName}["'][^>]+content=["']([^"']+)["']`, "i");
-  const re2 = new RegExp(`<meta[^>]+name=["']${propertyOrName}["'][^>]+content=["']([^"']+)["']`, "i");
-  const m = html.match(re1) || html.match(re2);
-  return m ? htmlDecode(m[1]) : "";
-}
-
 function extractHtmlInfoboxCell(html, label) {
   const re = new RegExp(
     `<div[^>]*class=["'][^"']*infobox-cell-2[^"']*["'][^>]*>\\s*${label}\\s*:\\s*<\/div>\\s*<div[^>]*class=["'][^"']*infobox-cell-2[^"']*["'][^>]*>([\\s\\S]*?)<\/div>`,
@@ -1647,6 +2081,38 @@ async function enrichPlayersWithLiquipedia(players, { verbose = false, refetchLi
   return out;
 }
 
+function extractInspectLinkFromDescription(desc, asset = null, ownerSteamId = "") {
+  const actions = [
+    ...(Array.isArray(desc?.actions) ? desc.actions : []),
+    ...(Array.isArray(desc?.owner_actions) ? desc.owner_actions : []),
+    ...(Array.isArray(desc?.market_actions) ? desc.market_actions : []),
+  ];
+
+  for (const action of actions) {
+    const rawLink = String(action?.link || "").trim();
+    const rawName = String(action?.name || "").trim();
+
+    if (!rawLink) continue;
+    if (!/inspect/i.test(rawName) && !rawLink.includes("csgo_econ_action_preview")) {
+      continue;
+    }
+
+    const candidate = normalizeInspectLink(decodeJsEscapes(rawLink));
+
+    // если ссылка уже готовая — вернуть
+    if (isValidGeneratedInspectLink(candidate)) {
+      return candidate;
+    }
+
+    // если это шаблон с %propid — пропускаем
+    if (/%propid:/i.test(candidate)) {
+      continue;
+    }
+  }
+
+  return "";
+}
+
 function extractTeamRegionFromRaw(raw) {
   const candidates = [
     extractWikitextField(raw, "region"),
@@ -1820,7 +2286,535 @@ async function buildTeamsDocument(players, root, { verbose = false, existingTeam
 // Inventory documents
 // ============================================================================
 
-function buildInventoryDocument(player, inventoryResult) {
+async function resolveSteamInventoryPageUrl(steamid64) {
+  const url = `https://steamcommunity.com/profiles/${steamid64}/?xml=1`;
+  const res = await fetchText(url, {}, REQUEST_TIMEOUT_MS);
+
+  if (res.ok && res.text) {
+    const customUrlMatch = res.text.match(/<customURL><!\[CDATA\[([^\]]+)\]\]><\/customURL>/i);
+    if (customUrlMatch && customUrlMatch[1]) {
+      return `https://steamcommunity.com/id/${customUrlMatch[1]}/inventory#730_2`;
+    }
+  }
+
+  return `https://steamcommunity.com/profiles/${steamid64}/inventory#730_2`;
+}
+
+async function getInventoryAssetAnchors(page) {
+  return await page.evaluate(() => {
+    return Array.from(document.querySelectorAll('a[href^="#730_2_"]'))
+      .map((a) => ({
+        href: String(a.getAttribute("href") || "").trim(),
+        text: String(a.textContent || "").trim(),
+      }))
+      .filter((x) => /^#730_2_\d+$/.test(x.href));
+  });
+}
+
+async function selectInventoryAssetByHash(page, hash) {
+  return await page.evaluate((hash) => {
+    if (!hash || !/^#730_2_\d+$/.test(hash)) {
+      return { ok: false, reason: "bad_hash" };
+    }
+
+    try {
+      window.location.hash = hash;
+
+      try {
+        window.dispatchEvent(new HashChangeEvent("hashchange"));
+      } catch {}
+
+      return {
+        ok: true,
+        reason: "hash_set",
+        hash: window.location.hash,
+      };
+    } catch (err) {
+      return {
+        ok: false,
+        reason: String(err?.message || err),
+      };
+    }
+  }, hash);
+}
+
+async function waitForInventoryPanelUpdate(page, previousTitle = "", timeoutMs = 4000) {
+  const started = Date.now();
+
+  while (Date.now() - started < timeoutMs) {
+    try {
+      const panel = await readInventoryRightPanel(page);
+
+      const title = String(panel?.title || "").trim();
+      const inspectLink = String(panel?.inspectLink || "").trim();
+
+      const titleChanged = title && title !== previousTitle;
+      const inspectReady = inspectLink && isValidGeneratedInspectLink(inspectLink);
+
+      if (titleChanged || inspectReady) {
+        return {
+          ok: true,
+          title,
+          inspectLink,
+        };
+      }
+    } catch (err) {
+      const msg = String(err?.message || err);
+
+      // Для hash-навигации иногда Puppeteer кратко теряет execution context
+      if (/Execution context was destroyed/i.test(msg)) {
+        await sleep(150);
+        continue;
+      }
+    }
+
+    await sleep(150);
+  }
+
+  return {
+    ok: false,
+    title: "",
+    inspectLink: "",
+  };
+}
+
+async function readInventoryRightPanel(page) {
+  return await page.evaluate(() => {
+    const panel =
+      document.querySelector(".inventory_iteminfo") ||
+      document.getElementById("iteminfo0") ||
+      document.querySelector("[class*='iteminfo']");
+
+    if (!panel) {
+      return {
+        title: "",
+        inspectLink: "",
+        hasMarketButton: false,
+      };
+    }
+
+    const title =
+      panel.querySelector(".item_desc_name")?.textContent?.trim() ||
+      panel.querySelector("#iteminfo0_item_name")?.textContent?.trim() ||
+      "";
+
+    const inspectAnchor = Array.from(panel.querySelectorAll("a[href], button"))
+      .find((el) => {
+        const href = String(el.getAttribute?.("href") || el.href || "").trim();
+        const text = String(el.textContent || "").trim();
+        return href.includes("csgo_econ_action_preview") || /inspect|осмотреть/i.test(text);
+      });
+
+    const inspectLink = String(
+      inspectAnchor?.getAttribute?.("href") ||
+      inspectAnchor?.href ||
+      ""
+    ).trim();
+
+    const marketAnchor = Array.from(panel.querySelectorAll("a[href], button"))
+      .find((el) => /market|торгов/i.test(String(el.textContent || "").trim()));
+
+    return {
+      title,
+      inspectLink,
+      hasMarketButton: Boolean(marketAnchor),
+    };
+  });
+}
+
+async function readInventoryPagerState(page) {
+  return await page.evaluate(() => {
+    const txt = document.body?.innerText || "";
+    const m =
+      txt.match(/(\d+)\s+из\s+(\d+)/i) ||
+      txt.match(/(\d+)\s+of\s+(\d+)/i);
+
+    return {
+      current: m ? Number(m[1]) : 0,
+      total: m ? Number(m[2]) : 0,
+      raw: m ? `${m[1]}/${m[2]}` : "",
+    };
+  });
+}
+
+async function goToInventoryPageNumber(page, pageNumber, { verbose = false, steamid64 = "" } = {}) {
+  const before = await readInventoryPagerState(page);
+
+  const clicked = await page.evaluate((pageNumber) => {
+    const nodes = Array.from(document.querySelectorAll("a, button, div, span"));
+
+    const isVisible = (el) => {
+      const rect = el.getBoundingClientRect();
+      const style = window.getComputedStyle(el);
+      return (
+        rect.width > 0 &&
+        rect.height > 0 &&
+        style.display !== "none" &&
+        style.visibility !== "hidden" &&
+        Number(style.opacity || "1") !== 0
+      );
+    };
+
+    const target = nodes.find((el) => {
+      if (!isVisible(el)) return false;
+
+      const text = String(el.textContent || "").trim();
+      return text === String(pageNumber);
+    });
+
+    if (!target) {
+      return false;
+    }
+
+    target.dispatchEvent(new MouseEvent("mousedown", { bubbles: true, cancelable: true, view: window }));
+    target.dispatchEvent(new MouseEvent("mouseup", { bubbles: true, cancelable: true, view: window }));
+    target.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, view: window }));
+
+    return true;
+  }, pageNumber);
+
+  if (!clicked) {
+    return false;
+  }
+
+  for (let i = 0; i < 50; i++) {
+    await sleep(250);
+    const after = await readInventoryPagerState(page);
+
+    if (after.current === pageNumber) {
+      if (verbose) {
+        console.log(
+          `[INVENTORY UI JUMP] ${steamid64} :: ${before.current}/${before.total} -> ${after.current}/${after.total}`
+        );
+      }
+      return true;
+    }
+  }
+
+  return false;
+}
+
+async function goToNextInventoryPage(page, { verbose = false, steamid64 = "" } = {}) {
+  const before = await readInventoryPagerState(page);
+
+  if (!before.current || !before.total || before.current >= before.total) {
+    return false;
+  }
+
+  const clicked = await page.evaluate(() => {
+    const nextBtn = document.querySelector("#pagebtn_next");
+
+    const isVisible = (el) => {
+      if (!el) return false;
+      const rect = el.getBoundingClientRect();
+      const style = window.getComputedStyle(el);
+      return (
+        rect.width > 0 &&
+        rect.height > 0 &&
+        style.display !== "none" &&
+        style.visibility !== "hidden" &&
+        Number(style.opacity || "1") !== 0
+      );
+    };
+
+    const isDisabled = (el) => {
+      if (!el) return true;
+      const cls = String(el.className || "").toLowerCase();
+      return cls.includes("disabled") || cls.includes("inactive");
+    };
+
+    try {
+      if (typeof window.InventoryNextPage === "function") {
+        window.InventoryNextPage();
+        return "fn";
+      }
+
+      if (nextBtn && isVisible(nextBtn) && !isDisabled(nextBtn)) {
+        nextBtn.dispatchEvent(new MouseEvent("mousedown", { bubbles: true, cancelable: true, view: window }));
+        nextBtn.dispatchEvent(new MouseEvent("mouseup", { bubbles: true, cancelable: true, view: window }));
+        nextBtn.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, view: window }));
+        return "click";
+      }
+    } catch (err) {
+      return `err:${String(err?.message || err)}`;
+    }
+
+    return "";
+  });
+
+  if (!clicked) {
+    if (verbose) {
+      console.log(`[INVENTORY UI NEXT MISS] ${steamid64} :: next control not found on ${before.current}/${before.total}`);
+    }
+    return false;
+  }
+
+  for (let i = 0; i < 50; i++) {
+    await sleep(250);
+
+    const after = await readInventoryPagerState(page);
+    if (after.current > before.current) {
+      if (verbose) {
+        console.log(
+          `[INVENTORY UI NEXT] ${steamid64} :: ${before.current}/${before.total} -> ${after.current}/${after.total} via=${clicked}`
+        );
+      }
+      return true;
+    }
+  }
+
+  if (verbose) {
+    console.log(
+      `[INVENTORY UI NEXT MISS] ${steamid64} :: stayed on ${before.current}/${before.total}`
+    );
+  }
+
+  return false;
+}
+
+async function attachInspectLinksFromSteamInventoryUi(steamid64, rawItems, { verbose = false } = {}) {
+  const missingTargets = getMissingInspectTargets(rawItems);
+
+  const neededAssetIds = new Set(
+    missingTargets
+      .map((x) => String(x?.assetid || "").trim())
+      .filter(Boolean)
+  );
+
+  if (!missingTargets.length) {
+    if (verbose) {
+      console.log(`[INVENTORY UI RESOLVER] ${steamid64} :: no missing targets`);
+    }
+    return rawItems;
+  }
+
+  const inventoryUrl = await resolveSteamInventoryPageUrl(steamid64);
+
+  let browser = null;
+  let page = null;
+
+  try {
+      browser = await puppeteer.launch({
+        headless: true,
+        args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        defaultViewport: { width: 1600, height: 1200 },
+      });
+
+    page = await browser.newPage();
+    await page.setViewport({ width: 1600, height: 1200 });
+    await page.setUserAgent(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+    );
+
+    await page.goto(inventoryUrl, {
+      waitUntil: "networkidle2",
+      timeout: 60000,
+    });
+
+    await sleep(5000);
+
+    const byAssetId = new Map();
+    const seenHashes = new Set();
+
+    let pageIndex = 0;
+
+    while (true) {
+      pageIndex++;
+      let anchors = [];
+
+      try {
+        anchors = await getInventoryAssetAnchors(page);
+      } catch (err) {
+        if (verbose) {
+          console.log(`[INVENTORY UI PAGE FAIL] ${steamid64} :: pageIndex=${pageIndex} :: ${err?.message || err}`);
+        }
+        break;
+      }
+
+      if (verbose) {
+        console.log(
+          `[INVENTORY UI PAGE] ${steamid64} :: pageIndex=${pageIndex}, anchors=${anchors.length}`
+        );
+      }
+
+      if (!anchors.length) {
+        break;
+      }
+
+      for (const anchor of anchors) {
+        const hash = String(anchor?.href || "").trim();
+        if (!hash || seenHashes.has(hash)) {
+          continue;
+        }
+
+        seenHashes.add(hash);
+
+        let before = { title: "", inspectLink: "" };
+        try {
+          before = await readInventoryRightPanel(page);
+        } catch {}
+
+        const selected = await selectInventoryAssetByHash(page, hash);
+
+        if (!selected?.ok) {
+          if (verbose) {
+            console.log(`[INVENTORY UI SELECT FAIL] ${steamid64} :: hash=${hash} :: ${selected?.reason || "-"}`);
+          }
+          continue;
+        }
+
+        if (verbose) {
+          console.log(`[INVENTORY UI SELECT] ${steamid64} :: hash=${hash}`);
+        }
+
+        const resolved = await waitForInventoryPanelUpdate(page, before.title, 4500);
+
+        if (!resolved.ok) {
+          if (verbose) {
+            console.log(`[INVENTORY UI RESOLVE MISS] ${steamid64} :: hash=${hash}`);
+          }
+          continue;
+        }
+
+        const title = String(resolved.title || "").trim();
+        const inspectLink = normalizeInspectLink(String(resolved.inspectLink || "").trim());
+
+        const assetIdMatch = hash.match(/^#730_2_(\d+)$/);
+        const assetid = assetIdMatch ? assetIdMatch[1] : "";
+
+        if (!assetid || !neededAssetIds.has(assetid)) {
+          continue;
+        }
+
+        if (verbose) {
+          console.log(
+            `[INVENTORY UI ITEM] ${steamid64} :: hash=${hash}, assetid=${assetid || "-"}, title=${title || "-"}, inspect=${inspectLink ? "yes" : "no"}`
+          );
+        }
+
+        if (assetid && inspectLink && isValidGeneratedInspectLink(inspectLink)) {
+          byAssetId.set(assetid, inspectLink);
+        }
+      }
+
+        const pager = await readInventoryPagerState(page);
+
+        if (pager.total && pager.current >= pager.total) {
+          break;
+        }
+
+        let moved = false;
+
+        try {
+          moved = await goToNextInventoryPage(page, { verbose, steamid64 });
+
+          if (!moved && pager.current && pager.total && pager.current < pager.total) {
+            moved = await goToInventoryPageNumber(
+              page,
+              pager.current + 1,
+              { verbose, steamid64 }
+            );
+          }
+        } catch (err) {
+          if (verbose) {
+            console.log(`[INVENTORY UI NEXT FAIL] ${steamid64} :: ${err?.message || err}`);
+          }
+          moved = false;
+        }
+
+        if (!moved) {
+          break;
+        }
+
+        await sleep(1500);
+      }
+
+    for (const item of rawItems) {
+      const current = String(item?.inspectLink || "").trim();
+      if (current && isValidGeneratedInspectLink(current)) {
+        continue;
+      }
+
+      const assetid = String(item?.assetid || "").trim();
+      if (!assetid) {
+        continue;
+      }
+
+      if (byAssetId.has(assetid)) {
+        item.inspectLink = byAssetId.get(assetid) || "";
+      }
+    }
+
+    if (verbose) {
+      const attached = rawItems.filter((x) => {
+        const inspectLink = String(x?.inspectLink || "").trim();
+        return isInspectableMarketItem(x) && inspectLink && isValidGeneratedInspectLink(inspectLink);
+      }).length;
+
+      const total = rawItems.filter((x) => isInspectableMarketItem(x)).length;
+
+      console.log(`[INVENTORY UI RESOLVER DONE] ${steamid64} :: attached=${attached}/${total}`);
+    }
+
+    return rawItems;
+  } catch (err) {
+    if (verbose) {
+      console.log(`[INVENTORY UI RESOLVER FAIL] ${steamid64} :: ${err?.message || err}`);
+    }
+    return rawItems;
+  } finally {
+    if (page) {
+      await page.close().catch(() => {});
+    }
+    if (browser) {
+      await browser.close().catch(() => {});
+    }
+  }
+}
+
+
+
+function buildExistingInspectMap(existingDoc) {
+  const map = new Map();
+
+  const items = Array.isArray(existingDoc?.items) ? existingDoc.items : [];
+  for (const item of items) {
+    const assetid = String(item?.assetid || "").trim();
+    const inspectLink = String(item?.inspectLink || "").trim();
+
+    if (!assetid || !inspectLink) {
+      continue;
+    }
+
+    if (!isValidGeneratedInspectLink(inspectLink)) {
+      continue;
+    }
+
+    map.set(assetid, inspectLink);
+  }
+
+  return map;
+}
+
+function normalizeInspectLink(link) {
+  let value = decodeJsEscapes(String(link || "").trim());
+
+  if (!value) return "";
+
+  value = value.replace(
+    /^steam:\/\/rungame\/730\/\d+\/\+csgo_econ_action_preview/i,
+    "steam://run/730//+csgo_econ_action_preview"
+  );
+
+  value = value.replace(
+    /^steam:\/\/run\/730\/\+csgo_econ_action_preview/i,
+    "steam://run/730//+csgo_econ_action_preview"
+  );
+
+  return value.trim();
+}
+
+async function buildInventoryDocument(player, inventoryResult, { verbose = false, existingDoc = null } = {}) {
   const now = new Date().toISOString();
 
   if (!inventoryResult.ok) {
@@ -1860,12 +2854,58 @@ function buildInventoryDocument(player, inventoryResult) {
     if (!desc) continue;
 
     rawItems.push({
-      ...normalizeItem(asset, desc),
+      ...normalizeItem(asset, desc, player),
       __desc: desc,
     });
   }
 
+    const existingInspectMap = buildExistingInspectMap(existingDoc);
+
+    for (const item of rawItems) {
+      const current = String(item?.inspectLink || "").trim();
+      if (current && isValidGeneratedInspectLink(current)) {
+        continue;
+      }
+
+      const fromExisting = existingInspectMap.get(String(item?.assetid || "").trim());
+      if (fromExisting && isValidGeneratedInspectLink(fromExisting)) {
+        item.inspectLink = fromExisting;
+      }
+    }
+
+  const missingBeforeDom = rawItems.filter((x) => {
+    const inspectLink = String(x?.inspectLink || "").trim();
+    return isInspectableMarketItem(x) && (!inspectLink || !isValidGeneratedInspectLink(inspectLink));
+  }).length;
+
+  if (missingBeforeDom > 0) {
+    await attachInspectLinksFromSteamInventoryUi(
+      player.steamid64,
+      rawItems,
+      { verbose }
+    );
+  }
+
+  if (verbose) {
+    const withInspectAll = rawItems.filter((x) => {
+      const inspectLink = String(x?.inspectLink || "").trim();
+      return inspectLink && isValidGeneratedInspectLink(inspectLink);
+    }).length;
+
+    const inspectableTotal = rawItems.filter((x) => isInspectableMarketItem(x)).length;
+
+    const withInspectInspectable = rawItems.filter((x) => {
+      const inspectLink = String(x?.inspectLink || "").trim();
+      return isInspectableMarketItem(x) && inspectLink && isValidGeneratedInspectLink(inspectLink);
+    }).length;
+
+    console.log(
+      `[INSPECT ATTACHED] ${player.nickname} :: weapons=${withInspectInspectable}/${inspectableTotal}, all=${withInspectAll}/${rawItems.length}`
+    );
+  }
+
   const groupedItems = sortItems(collapseItems(rawItems));
+  await enrichGroupedItemsWithInspectData(groupedItems, player, { verbose });
 
   return {
     nickname: player.nickname,
@@ -1893,6 +2933,19 @@ function buildInventoryDocument(player, inventoryResult) {
     totalItemsGrouped: groupedItems.length,
     items: groupedItems,
   };
+}
+
+function getMissingInspectTargets(rawItems) {
+  return rawItems.filter((item) => {
+    if (!isInspectableMarketItem(item)) return false;
+
+    const inspectLink = String(item?.inspectLink || "").trim();
+    if (inspectLink && isValidGeneratedInspectLink(inspectLink)) {
+      return false;
+    }
+
+    return Boolean(String(item?.assetid || "").trim());
+  });
 }
 
 function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
@@ -1976,7 +3029,10 @@ async function fetchInventoryWithVisibleFailedRetry(player, existingDoc, options
     verbose,
     noRetries,
   });
-  let inventoryDocRaw = buildInventoryDocument(player, inventoryResult);
+  let inventoryDocRaw = await buildInventoryDocument(player, inventoryResult, {
+    verbose,
+    existingDoc,
+  });
 
   if (
     !noRetries &&
@@ -1998,7 +3054,10 @@ async function fetchInventoryWithVisibleFailedRetry(player, existingDoc, options
         verbose,
         noRetries,
       });
-      inventoryDocRaw = buildInventoryDocument(player, inventoryResult);
+        inventoryDocRaw = await buildInventoryDocument(player, inventoryResult, {
+          verbose,
+          existingDoc,
+        });
 
       if (inventoryDocRaw.fetchOk) {
         if (verbose) {
@@ -2246,12 +3305,15 @@ async function main() {
     console.log(`[TEAMS SKIP] No processed players, teams.json unchanged`);
   }
 
+  await closeSharedCsfloatBrowser();
+
   console.log(`\nDone. Players: ${playersListOutput.length}, success: ${successCount}, failed: ${failedCount}`);
   console.log(`Players list written: ${playersListFile}`);
   console.log(`Teams list written: ${teamsListFile}`);
 }
 
-main().catch((err) => {
+main().catch(async (err) => {
+  await closeSharedCsfloatBrowser();
   console.error("[FATAL]", err);
   process.exit(1);
 });

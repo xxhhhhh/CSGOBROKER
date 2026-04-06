@@ -27,31 +27,9 @@ const OUTPUT_DIR_RU = "/ru/topic/players/inventories";
 const OUTPUT_DIR_EN = "/topic/players/inventories";
 
 const WEAPON_JSON_DIR = "/code-parts/topics/skins-list";
-const DOPPLER_MAPPING_FILE = "/code-parts/topics/players-data/doppler-mapping.json";
 const STICKER_CAPSULES_FILE = "/code-parts/topics/sticker-capsules.json";
 const CHARMS_TOPICS_FILE = "/code-parts/topics/charms.json";
 const SKINS_PRICES_FILE = "/code-parts/topics/skins-data/skins-prices.json";
-
-async function loadDopplerMapping(root){
-  return await safeJsonCached(abs(root, DOPPLER_MAPPING_FILE)) || {};
-}
-
-function isSpecialPhaseCandidate(skinId = ""){
-  const s = String(skinId).trim().toLowerCase();
-  return s === "doppler" || s === "gamma doppler";
-}
-
-function buildPhaseLookupKeys(item){
-  const classid = String(item?.classid || "").trim();
-  const instanceid = String(item?.instanceid || "").trim();
-
-  const keys = [];
-  if (classid && instanceid) keys.push(`${classid}:${instanceid}`);
-  if (classid) keys.push(`classid:${classid}`);
-  if (instanceid) keys.push(`instanceid:${instanceid}`);
-
-  return keys;
-}
 
 async function loadStickerCapsulesTopics(root){
   const data = await safeJsonCached(abs(root, STICKER_CAPSULES_FILE));
@@ -114,33 +92,67 @@ async function resolveCharmByFiles(root, item){
   return null;
 }
 
-function resolveSpecialSkinId(item, parsed, dopplerMap){
-  const originalSkinId = String(parsed?.skinId || "").trim();
+function isDopplerPhaseCandidate(skinId = ""){
+  const s = String(skinId).trim().toLowerCase();
+  return s === "doppler" || s === "gamma doppler";
+}
 
-  if (!isSpecialPhaseCandidate(originalSkinId)) {
+function normalizeDopplerPhaseValue(phase = ""){
+  const p = String(phase).trim();
+  if (!p) return "";
+
+  const lower = p.toLowerCase();
+
+  // уже нормальное значение
+  if (
+    lower === "ruby" ||
+    lower === "sapphire" ||
+    lower === "black pearl" ||
+    lower === "emerald" ||
+    /^phase\s*[1-4]$/i.test(p)
+  ) {
+    return p.replace(/\s+/g, " ").trim();
+  }
+
+  // на всякий случай, если где-то попадёт просто "4" / "3"
+  if (/^[1-4]$/.test(p)) {
+    return `Phase ${p}`;
+  }
+
+  // если в json уже лежит полное имя вроде "Doppler Ruby"
+  if (
+    lower.startsWith("doppler ") ||
+    lower.startsWith("gamma doppler ")
+  ) {
+    return p;
+  }
+
+  return p;
+}
+
+function resolveDopplerSkinId(item, parsed){
+  const originalSkinId = String(parsed?.skinId || "").trim();
+  if (!isDopplerPhaseCandidate(originalSkinId)) {
     return originalSkinId;
   }
 
-  const keys = buildPhaseLookupKeys(item);
-
-  for (const key of keys){
-    if (!dopplerMap[key]) continue;
-
-    let mapped = String(dopplerMap[key]).trim();
-    if (!mapped) continue;
-
-    const rawName = String(item?.market_hash_name || item?.name || "").trim();
-    const { hasStatTrak } = getInventoryNamePrefixes(rawName);
-
-    // сохраняем StatTrak у phase-предметов
-    if (hasStatTrak && !/^StatTrak(?:™)?\s*/i.test(mapped)) {
-      mapped = `StatTrak ${mapped}`;
-    }
-
-    return mapped;
+  const normalizedPhase = normalizeDopplerPhaseValue(item?.phase);
+  if (!normalizedPhase) {
+    return originalSkinId;
   }
 
-  return originalSkinId;
+  // если phase уже полная строка ("Doppler Ruby" / "Gamma Doppler Emerald")
+  if (
+    /^doppler\s+/i.test(normalizedPhase) ||
+    /^gamma doppler\s+/i.test(normalizedPhase)
+  ) {
+    return normalizedPhase;
+  }
+
+  // собираем из базового скина + phase
+  // "Doppler" + "Ruby" => "Doppler Ruby"
+  // "Gamma Doppler" + "Emerald" => "Gamma Doppler Emerald"
+  return `${originalSkinId} ${normalizedPhase}`.trim();
 }
 
 // ---------------- CLI ----------------
@@ -416,6 +428,97 @@ function parseStickerMarketName(rawName = ""){
   };
 }
 
+function parseCapsuleMarketName(rawName = ""){
+  const cleaned = stripSouvenirPrefix(
+    stripStatTrakPrefix(
+      stripStarPrefix(String(rawName).trim())
+    )
+  );
+
+  // Ищем только капсулы, не кейсы
+  if (!/\bCapsule\b/i.test(cleaned)) return null;
+
+  // Для skin-id нужно полное имя без урезаний
+  // пример:
+  // "Autograph Capsule | Luminosity Gaming | Cluj-Napoca 2015"
+  const displayName = cleaned;
+
+  // Autograph Capsule → отдельный json
+  if (/^Autograph Capsule\s*\|/i.test(cleaned)) {
+    return {
+      weapon: "autograph-capsule",
+      skinId: cleaned,
+      displayName: cleaned,
+    };
+  }
+
+  // Все остальные капсулы ведём в sticker-capsules.json
+  // пример:
+  // "Sticker Capsule | ..."
+  // "Legends Capsule | ..."
+  // "Challengers Capsule | ..."
+  // и т.д.
+  return {
+    weapon: "sticker-capsules",
+    skinId: cleaned,
+    displayName: cleaned,
+  };
+}
+
+async function resolveCapsuleByFiles(root, item){
+  const rawName = String(item?.market_hash_name || item?.name || "").trim();
+  const type = String(item?.type || "").trim().toLowerCase();
+
+  // Капсулы в инвентаре лежат как Base Grade Container,
+  // поэтому дополнительно фильтруем по названию
+  if (type !== "base grade container") return null;
+
+  const parsed = parseCapsuleMarketName(rawName);
+  if (!parsed) return null;
+
+  // Сначала пробуем ожидаемый файл
+  const weaponMap = await loadWeaponJson(root, parsed.weapon);
+  if (weaponMap && typeof weaponMap === "object" && weaponMap[parsed.skinId]) {
+    const matched = weaponMap[parsed.skinId];
+
+    return {
+      weapon: parsed.weapon,
+      skinId: parsed.skinId,
+      skinData: {
+        name: parsed.displayName,
+        image: matched?.image || "",
+        class: matched?.class || detectItemClass(item),
+      }
+    };
+  }
+
+  // Fallback: вдруг капсула лежит не в том json
+  const fallbackWeapons = ["autograph-capsule", "sticker-capsules"];
+
+  for (const weapon of fallbackWeapons){
+    if (weapon === parsed.weapon) continue;
+
+    const fallbackMap = await loadWeaponJson(root, weapon);
+    if (!fallbackMap || typeof fallbackMap !== "object") continue;
+
+    if (fallbackMap[parsed.skinId]){
+      const matched = fallbackMap[parsed.skinId];
+
+      return {
+        weapon,
+        skinId: parsed.skinId,
+        skinData: {
+          name: parsed.displayName,
+          image: matched?.image || "",
+          class: matched?.class || detectItemClass(item),
+        }
+      };
+    }
+  }
+
+  return null;
+}
+
 async function resolveStickerByEventPrefix(root, item){
   const rawName = String(item?.market_hash_name || item?.name || "").trim();
   const parsed = parseStickerMarketName(rawName);
@@ -685,15 +788,6 @@ function escapeAttrDblNoApos(s = ""){
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
-}
-
-function decodeHtmlEntities(s = ""){
-  return String(s)
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&amp;/g, "&");
 }
 
 // ---------------- PRICES ----------------
@@ -1359,6 +1453,98 @@ function renderSkinBlock({
   return normalizeEntitiesInBlock(lines.join(nl));
 }
 
+function isStickerOrCapsuleRenderData(renderData){
+  const weapon = String(renderData?.weapon || "").toLowerCase();
+  const name = String(renderData?.skinData?.name || "").trim();
+
+  return (
+    weapon === "sticker" ||
+    weapon === "autograph-capsule" ||
+    weapon === "sticker-capsules" ||
+    weapon.includes("capsule") ||
+    name.startsWith("Sticker | ") ||
+    /\bCapsule\b/i.test(name)
+  );
+}
+
+function buildRenderItemKey(renderData){
+  const weapon = String(renderData?.weapon || "").trim().toLowerCase();
+  const skinId = String(renderData?.skinId || "").trim().toLowerCase();
+  return `${weapon}:::${skinId}`;
+}
+
+async function buildResolvedInventoryEntries(root, items, pricesState){
+  const aggregatedMap = new Map();
+  const regularEntries = [];
+
+  for (const item of items){
+    if (!isRenderableSkinLikeItem(item)) continue;
+
+    const renderData = await buildPlayerSkinRenderData(root, item);
+
+    const priceSourceName =
+      renderData?.skinData?.name ||
+      String(item?.market_hash_name || item?.name || "").trim();
+
+    const priceMeta = computePriceHtml(priceSourceName, pricesState);
+    const amount = Number(item?.amount || 1) || 1;
+
+    const entry = {
+      item,
+      renderData,
+      priceHtml: priceMeta.html || "",
+      has: Boolean(priceMeta.has),
+      sortPrice: Number(priceMeta.sortPrice || 0),
+      categoryRank: getResolvedCategoryRank(renderData),
+      rarityRank: rarityRank(renderData?.skinData?.class || ""),
+      amount,
+    };
+
+    // Стикеры и капсулы объединяем по weapon + skinId
+    if (isStickerOrCapsuleRenderData(renderData)) {
+      const key = buildRenderItemKey(renderData);
+      const existing = aggregatedMap.get(key);
+
+      if (existing) {
+        existing.amount += amount;
+
+        // если у старой записи не было картинки/класса/цены, а у новой есть — дотягиваем
+        if (!existing.renderData?.skinData?.image && renderData?.skinData?.image) {
+          existing.renderData.skinData.image = renderData.skinData.image;
+        }
+
+        if (!existing.renderData?.skinData?.class && renderData?.skinData?.class) {
+          existing.renderData.skinData.class = renderData.skinData.class;
+          existing.rarityRank = rarityRank(renderData?.skinData?.class || "");
+        }
+
+        if (!existing.priceHtml && entry.priceHtml) {
+          existing.priceHtml = entry.priceHtml;
+        }
+
+        if (!existing.has && entry.has) {
+          existing.has = true;
+        }
+
+        if (!existing.sortPrice && entry.sortPrice) {
+          existing.sortPrice = entry.sortPrice;
+        }
+      } else {
+        aggregatedMap.set(key, { ...entry });
+      }
+
+      continue;
+    }
+
+    regularEntries.push(entry);
+  }
+
+  return [
+    ...regularEntries,
+    ...aggregatedMap.values(),
+  ];
+}
+
 async function buildPlayerSkinRenderData(root, item){
   const rawMarketName = String(item?.market_hash_name || item?.name || "").trim();
   const type = String(item?.type || "").toLowerCase();
@@ -1387,12 +1573,17 @@ async function buildPlayerSkinRenderData(root, item){
     }
   }
 
-  // 4) normal skins / knives / gloves / music kits
+  // 4) capsules
+  const capsuleResolved = await resolveCapsuleByFiles(root, item);
+  if (capsuleResolved){
+    return capsuleResolved;
+  }
+
+  // 5) normal skins / knives / gloves / music kits
   const parsed = splitInventoryNameToWeaponAndSkin(rawMarketName);
-  const dopplerMap = await loadDopplerMapping(root);
 
   let weapon = parsed.weapon || "player-item";
-  let resolvedSkinId = resolveSpecialSkinId(item, parsed, dopplerMap);
+  let resolvedSkinId = resolveDopplerSkinId(item, parsed);
 
   const displayName =
     resolvedSkinId && resolvedSkinId !== parsed.skinId
@@ -1498,9 +1689,11 @@ function getResolvedCategoryRank(renderData){
   if (
     image.includes("/img/skins/stickers/") ||
     weapon.includes("capsule") ||
-    weapon === "sticker"
+    weapon === "sticker" ||
+    weapon === "autograph-capsule" ||
+    weapon === "sticker-capsules"
   ) {
-    return 5; // stickers
+    return 5; // stickers / capsules
   }
 
   if (weapon === "graffiti") return 6;
@@ -1515,20 +1708,14 @@ async function buildInventoryStats(root, items, pricesState){
   let totalItems = 0;
   let totalValue = 0;
 
-  for (const item of items){
-    if (!isRenderableSkinLikeItem(item)) continue;
+  const resolved = await buildResolvedInventoryEntries(root, items, pricesState);
 
-    const renderData = await buildPlayerSkinRenderData(root, item);
-
-    const priceSourceName =
-      renderData?.skinData?.name ||
-      String(item?.market_hash_name || item?.name || "").trim();
-
-    const priceMeta = computePriceHtml(priceSourceName, pricesState);
-    const amount = Number(item?.amount || 1) || 1;
+  for (const entry of resolved){
+    const amount = Number(entry?.amount || 1) || 1;
+    const unitPrice = Number(entry?.sortPrice || 0) || 0;
 
     totalItems += amount;
-    totalValue += (Number(priceMeta?.sortPrice || 0) * amount);
+    totalValue += (unitPrice * amount);
   }
 
   return { totalItems, totalValue };
@@ -1536,29 +1723,7 @@ async function buildInventoryStats(root, items, pricesState){
 
 async function buildPlayerSkinsHtml(root, items, pricesState, nl, baseIndent){
   const indent = baseIndent + "  ";
-  const resolved = [];
-
-  for (const item of items){
-    if (!isRenderableSkinLikeItem(item)) continue;
-
-    const renderData = await buildPlayerSkinRenderData(root, item);
-
-    const priceSourceName =
-      renderData?.skinData?.name ||
-      String(item?.market_hash_name || item?.name || "").trim();
-
-    const priceMeta = computePriceHtml(priceSourceName, pricesState);
-
-    resolved.push({
-      item,
-      renderData,
-      priceHtml: priceMeta.html || "",
-      has: Boolean(priceMeta.has),
-      sortPrice: Number(priceMeta.sortPrice || 0),
-      categoryRank: getResolvedCategoryRank(renderData),
-      rarityRank: rarityRank(renderData?.skinData?.class || ""),
-    });
-  }
+  const resolved = await buildResolvedInventoryEntries(root, items, pricesState);
 
   resolved.sort((a, b) => {
     if (a.sortPrice !== b.sortPrice) {
@@ -1578,7 +1743,7 @@ async function buildPlayerSkinsHtml(root, items, pricesState, nl, baseIndent){
     return na.localeCompare(nb, "en", { numeric: true, sensitivity: "base" });
   });
 
-  return resolved.map(({ item, renderData, priceHtml, has }) =>
+  return resolved.map(({ renderData, priceHtml, has, amount }) =>
     renderSkinBlock({
       tag: "div",
       indent,
@@ -1588,7 +1753,7 @@ async function buildPlayerSkinsHtml(root, items, pricesState, nl, baseIndent){
       skinData: renderData.skinData,
       priceHtml,
       putLoadingClass: !has && !pricesState,
-      amount: Number(item?.amount || 1) || 1
+      amount: Number(amount || 1) || 1
     })
   ).join(nl);
 }
@@ -1647,31 +1812,6 @@ function formatInventoryTotal(value, lang = "ru"){
   return `${formatted}$`;
 }
 
-function buildInventorySummary(items, pricesState, lang = "ru"){
-  let totalItems = 0;
-  let totalValue = 0;
-
-  for (const item of items){
-    if (!isRenderableSkinLikeItem(item)) continue;
-
-    const amount = Number(item?.amount || 1) || 1;
-    totalItems += amount;
-
-    const priceSourceName = String(item?.market_hash_name || item?.name || "").trim();
-    const priceMeta = computePriceHtml(priceSourceName, pricesState);
-
-    const itemPrice = Number(priceMeta?.sortPrice || 0);
-    if (itemPrice > 0) {
-      totalValue += itemPrice * amount;
-    }
-  }
-
-  const labelItems = lang === "en" ? "Total Items" : "Всего Предметов";
-  const labelValue = lang === "en" ? "Total Value" : "Общая Стоимость";
-
-  return `<div class="topic-extra-info">${labelItems}: <span>${escapeHtml(String(totalItems))}</span>, ${labelValue}: <span>${escapeHtml(formatInventoryTotal(totalValue, lang))}</span></div>`;
-}
-
 function upsertTopicExtraInfo(html, summaryHtml){
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const masked = maskSegments(html);
@@ -1711,27 +1851,6 @@ function upsertTopicExtraInfo(html, summaryHtml){
   };
 }
 
-function setOrReplaceAttr(tagHtml, attrName, attrValue){
-  const escapedValue = escapeAttrDblNoApos(attrValue);
-
-  const dblRe = new RegExp(`\\b${attrName}\\s*=\\s*"[^"]*"`, "i");
-  const sglRe = new RegExp(`\\b${attrName}\\s*=\\s*'[^']*'`, "i");
-
-  if (dblRe.test(tagHtml)) {
-    return tagHtml.replace(dblRe, `${attrName}="${escapedValue}"`);
-  }
-
-  if (sglRe.test(tagHtml)) {
-    return tagHtml.replace(sglRe, `${attrName}="${escapedValue}"`);
-  }
-
-  return tagHtml.replace(/<a\b/i, `<a ${attrName}="${escapedValue}"`);
-}
-
-function escapeRegExp(s = ""){
-  return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
 function buildPlayerSteamUrl(player){
   if (player?.links?.steam) return String(player.links.steam).trim();
 
@@ -1748,10 +1867,6 @@ function resolvePlayerImage(player){
   if (slug) return `/img/skins/players/${slug}.webp`;
 
   return "";
-}
-
-function resolvePlayerRealName(player){
-  return String(player?.realName || "").trim();
 }
 
 function resolvePlayerTeam(player){

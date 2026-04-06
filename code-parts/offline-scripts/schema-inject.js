@@ -13,7 +13,6 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const { execSync } = require('child_process');
-const { JSDOM } = require('jsdom');
 
 const HTML_BASE_DIR = path.resolve('.');
 const SITE_INFO_DIR = path.join(HTML_BASE_DIR, 'code-parts', 'site-infos');
@@ -713,10 +712,26 @@ function injectReviewSchema(pAbs) {
 // ---------------- GUIDES schema injector ----------------
 function getWordCountFromOl(html) {
   try {
-    const dom = new JSDOM(html);
-    const ol = dom.window.document.querySelector('ol.text-col-info-box');
-    if (!ol) return 0;
-    return ol.textContent.trim().split(/\s+/).filter(Boolean).length;
+    const match = html.match(
+      /<ol\b[^>]*class=["'][^"']*\btext-col-info-box\b[^"']*["'][^>]*>([\s\S]*?)<\/ol>/i
+    );
+    if (!match) return 0;
+
+    const olHtml = match[1];
+
+    const text = olHtml
+      .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
+      .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/&nbsp;/gi, ' ')
+      .replace(/&amp;/gi, '&')
+      .replace(/&#39;/gi, "'")
+      .replace(/&quot;/gi, '"')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    if (!text) return 0;
+    return text.split(/\s+/).length;
   } catch {
     return 0;
   }

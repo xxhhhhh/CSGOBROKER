@@ -11,14 +11,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/168530f8-107a-4e0a-b641-655d2f1594de",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-04T14:38:08.674Z",
+  "updatedAt": "2026-04-05T20:20:55.029Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
   "pagesFetched": 1,
-  "totalItemsRaw": 144,
-  "totalItemsGrouped": 140,
+  "totalItemsRaw": 143,
+  "totalItemsGrouped": 139,
   "items": [
     {
       "assetid": "49875263225",
@@ -28,6 +28,7 @@
       "name": "★ Butterfly Knife | Doppler",
       "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
       "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BCAC45010C5A05BDA43FB89C23BF94BA8CBF84241E2F5CBFFC1EBDD42EBDCCB471888662",
       "tags": [
         {
           "category": "Type",
@@ -53,7 +54,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.00810649246,
+      "seed": 162,
+      "phase": "Ruby"
     },
     {
       "assetid": "47389451625",
@@ -63,6 +67,7 @@
       "name": "★ Flip Knife | Doppler",
       "market_hash_name": "★ Flip Knife | Doppler (Factory New)",
       "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DBCB32115D1E6BDAC322D8FB44D8F3DDEBD8E356754D33D89BA3B3C7ABD30762ACA3",
       "tags": [
         {
           "category": "Type",
@@ -84,42 +89,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "50114478818",
-      "classid": "7993042405",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Stiletto Knife | Doppler",
-      "market_hash_name": "★ Stiletto Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
+      ],
+      "float": 0.032614756376,
+      "seed": 120,
+      "phase": "Ruby"
     },
     {
       "assetid": "48842374799",
@@ -129,6 +102,7 @@
       "name": "★ Specialist Gloves | Crimson Kimono",
       "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242DDAFBFABE7534AF87572E31C7A5462516AA884DBA25112A0573A6F225A5784E61A",
       "tags": [
         {
           "category": "Type",
@@ -156,6 +130,7 @@
       "name": "★ Specialist Gloves | Marble Fade",
       "market_hash_name": "★ Specialist Gloves | Marble Fade (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6D86F2BE91FB7C65D75A5DAC33557B4D7E4592AAA68D7E3D997C155B0D751CCAF0E2",
       "tags": [
         {
           "category": "Type",
@@ -183,6 +158,7 @@
       "name": "★ Sport Gloves | Hedge Maze",
       "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
       "type": "★ Extraordinary Gloves",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206070B1D6BF8FDB6178C64740D62E486650635886A383926320ED64087E106800B28B03",
       "tags": [
         {
           "category": "Type",
@@ -210,6 +186,7 @@
       "name": "★ Sport Gloves | Slingshot",
       "market_hash_name": "★ Sport Gloves | Slingshot (Field-Tested)",
       "type": "★ Extraordinary Gloves",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201808FAB6FBC6B11900BE3F38C156301E281B208ECBC7EB1B58BD1D709B1968102E9A7146",
       "tags": [
         {
           "category": "Type",
@@ -237,6 +214,7 @@
       "name": "★ Sport Gloves | Vice",
       "market_hash_name": "★ Sport Gloves | Vice (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ABBB162C2E3218AAB30D8C8B6BE583AD9BA8933B2C5344A8EB33AAC3FBDBA32E2C3FFC",
       "tags": [
         {
           "category": "Type",
@@ -264,6 +242,7 @@
       "name": "Sticker Slab",
       "market_hash_name": "Sticker Slab",
       "type": "Base Grade Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2021312139813E01210920112549215123E0BB5651",
       "tags": [
         {
           "category": "Type",
@@ -290,6 +269,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -317,6 +297,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -344,6 +325,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -371,6 +353,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -398,6 +381,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -425,6 +409,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -452,6 +437,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -479,6 +465,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -506,6 +493,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -533,6 +521,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -560,6 +549,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -587,6 +577,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -614,6 +605,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -641,6 +633,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -668,6 +661,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -695,6 +689,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -722,6 +717,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -749,6 +745,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -776,6 +773,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -803,6 +801,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -830,6 +829,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -857,6 +857,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -884,6 +885,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -911,6 +913,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -938,6 +941,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -965,6 +969,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -992,6 +997,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1019,6 +1025,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1046,6 +1053,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1073,6 +1081,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1100,6 +1109,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1127,6 +1137,7 @@
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1154,6 +1165,7 @@
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
       "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1181,6 +1193,7 @@
       "name": "Bonus Rank",
       "market_hash_name": "Bonus Rank",
       "type": "Base Grade Pass",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209585958D6AB6B595BD94A591FD95E582B4D2D13B",
       "tags": [
         {
           "category": "Type",
@@ -1204,6 +1217,7 @@
       "name": "Bonus Rank",
       "market_hash_name": "Bonus Rank",
       "type": "Base Grade Pass",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209585958D6AB6B595BD94A591FD95E582B4D2D13B",
       "tags": [
         {
           "category": "Type",
@@ -1227,6 +1241,7 @@
       "name": "Desert Eagle | Cobalt Disruption",
       "market_hash_name": "Desert Eagle | Cobalt Disruption (Minimal Wear)",
       "type": "Classified Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CEDE14324640A8D6CFEE29CFE6CBFECAF67E415B23CD8E55C9ACCBC6CFDE55C6ACCAC6CCDE8BACCBC6CDDE5DCFA6FEBEC60A4EE3EA",
       "tags": [
         {
           "category": "Type",
@@ -1282,6 +1297,7 @@
       "name": "P250 | Mehndi",
       "market_hash_name": "P250 | Mehndi (Field-Tested)",
       "type": "Classified Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BEAE244F6E69FCA69A9E3CBC96BB8EBA860832054FBDFE0ABFD6ADCEBA77C099AE",
       "tags": [
         {
           "category": "Type",
@@ -1317,6 +1333,7 @@
       "name": "AK-47 | Redline",
       "market_hash_name": "AK-47 | Redline (Field-Tested)",
       "type": "Classified Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207565B0EB8ECBFA746D7255EF775D7045714DC7AE84867635A97617707D7665835817707D77658358177A7D74658358487515E6CD307579F2CE177A7D756583584875B5764D3075277D4E177A7D7665F94F4895FEED483085E068481D5E057DF66237B4",
       "tags": [
         {
           "category": "Type",
@@ -1376,6 +1393,7 @@
       "name": "Galil AR | Eco",
       "market_hash_name": "Galil AR | Eco (Field-Tested)",
       "type": "Classified Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204A5AA6EAB3FEE74B52476AE649624F7A4E72F08CDFB8490AAB4D2845424B5ADF6C774EBBE2F70F4A764AF12845424A5ADF6C77CA06B0760F4A4500F12845424B5ADF6C77CAD9C5760F4A0E1BF1284542485ADF6C772A950CF70F4AB2DF71285342495AF7755718F25475674A4A8A0A77AAC101770FEA2478F622ED4B3A42DED7D326",
       "tags": [
         {
           "category": "Type",
@@ -1423,6 +1441,7 @@
       "name": "Galil AR | Rainbow Spoon",
       "market_hash_name": "Galil AR | Rainbow Spoon (Factory New)",
       "type": "Classified Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2093831D07775A04928B9EB3099ABB96A397AB3D3E4A7890D3E1FBF8E3843FA15CF5",
       "tags": [
         {
           "category": "Type",
@@ -1458,6 +1477,7 @@
       "name": "M4A1-S | Hot Rod",
       "market_hash_name": "M4A1-S | Hot Rod (Factory New)",
       "type": "Classified Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208B9B1765160F0C8A93B7AB3688A38EBB8FB35C483C6E88CB3788E3B4FB8F05B6C25F",
       "tags": [
         {
           "category": "Type",
@@ -1493,6 +1513,7 @@
       "name": "M4A4 | Desolate Space",
       "market_hash_name": "M4A4 | Desolate Space (Field-Tested)",
       "type": "Classified Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2055459FA3B4C8034D457599517D5065516DF5C6D4A45615C05237505D5545885937505D5645FF703D542551BEE372C5",
       "tags": [
         {
           "category": "Type",
@@ -1536,6 +1557,7 @@
       "name": "SG 553 | Night Camo",
       "market_hash_name": "SG 553 | Night Camo (Minimal Wear)",
       "type": "Consumer Grade Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204454BF9FAAE1FE455C6364B24D6C4574407CBBD0C7A94704ED422CD745345C5626CCE5",
       "tags": [
         {
           "category": "Type",
@@ -1571,6 +1593,7 @@
       "name": "M4A4 | Howl",
       "market_hash_name": "M4A4 | Howl (Minimal Wear)",
       "type": "Contraband Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204C5C9DB79DCBD24D545C6CF94E644B7C4874DBDF81BC4F0C814E2E49444C5CAD4D246C3C44C63F6913",
       "tags": [
         {
           "category": "Type",
@@ -1614,6 +1637,7 @@
       "name": "Desert Eagle | Code Red",
       "market_hash_name": "Desert Eagle | Code Red (Field-Tested)",
       "type": "Covert Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6D91D2A2EEC67C657C5DBA78557B4D7945A688D8887E3D1315E67C0D75D0439065",
       "tags": [
         {
           "category": "Type",
@@ -1649,6 +1673,7 @@
       "name": "Desert Eagle | Golden Koi",
       "market_hash_name": "Desert Eagle | Golden Koi (Factory New)",
       "type": "Covert Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200111879ADEEC8E00190021B800290731053990F9E1E90241CE0263050900116D69397109C26B308B",
       "tags": [
         {
           "category": "Type",
@@ -1684,6 +1709,7 @@
       "name": "Glock-18 | Gamma Doppler",
       "market_hash_name": "Glock-18 | Gamma Doppler (Minimal Wear)",
       "type": "Covert Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FCEC050F59106FFDE4F8DC23F4D4FACCF8C45C5C0712FFBC4DFA94AB8CEB47FB0EF0",
       "tags": [
         {
           "category": "Type",
@@ -1709,7 +1735,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.108795404434,
+      "seed": 817,
+      "phase": "Emerald"
     },
     {
       "assetid": "26486897552",
@@ -1719,6 +1748,7 @@
       "name": "USP-S | Printstream",
       "market_hash_name": "USP-S | Printstream (Minimal Wear)",
       "type": "Covert Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20150585E2E2C0770D2835E31D3D1325112D8399A1E51655EE177D16651D9C36D0FD",
       "tags": [
         {
           "category": "Type",
@@ -1754,6 +1784,7 @@
       "name": "AK-47 | Asiimov",
       "market_hash_name": "AK-47 | Asiimov (Field-Tested)",
       "type": "Covert Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203323D3CFBBBD552B341392351B3503370BC5D4B8C63073AB3751363B3323F31B51363B3223F31B51363B3123F31B51363B3023F31B5B2E433BEBEC0164",
       "tags": [
         {
           "category": "Type",
@@ -1801,6 +1832,7 @@
       "name": "AK-47 | Fire Serpent",
       "market_hash_name": "AK-47 | Fire Serpent (Field-Tested)",
       "type": "Covert Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203727878DD8A387362F301783361F3107330FB39989C23477DC315F9C36473FF85CFC79",
       "tags": [
         {
           "category": "Type",
@@ -1836,6 +1868,7 @@
       "name": "AK-47 | Gold Arabesque",
       "market_hash_name": "AK-47 | Gold Arabesque (Factory New)",
       "type": "Covert Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C2D21F1F740066C3DAC5E25BC5EAC4F2C6FA5522022BC1824DC6AAEAB2C6BB52AA92",
       "tags": [
         {
           "category": "Type",
@@ -1871,6 +1904,7 @@
       "name": "AK-47 | Vulcan",
       "market_hash_name": "AK-47 | Vulcan (Minimal Wear)",
       "type": "Covert Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C9D955065A2E5DC8D1CEE967CBE1CFF9CDF10F1D2E24CA893BCCABCCC1C9D958E7ABCCC1C8D926EFABCCC1CBD90BE2ABCCC1CAD91FE3A1D1B9C1A6769ED1",
       "tags": [
         {
           "category": "Type",
@@ -1934,6 +1968,7 @@
       "name": "AUG | Akihabara Accept",
       "market_hash_name": "AUG | Akihabara Accept (Minimal Wear)",
       "type": "Covert Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201000C597A6D49111081830D71338162014288CDEC3E01350E61378506007017B3660",
       "tags": [
         {
           "category": "Type",
@@ -1969,6 +2004,7 @@
       "name": "FAMAS | Bad Trip",
       "market_hash_name": "FAMAS | Bad Trip (Field-Tested)",
       "type": "Covert Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2033238ABCCDF09A322B3913933A1B3503370BB39FC6C7307396355B494337430CC7AB",
       "tags": [
         {
           "category": "Type",
@@ -2004,6 +2040,7 @@
       "name": "M4A1-S | Fade",
       "market_hash_name": "M4A1-S | Fade (Factory New)",
       "type": "Covert Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A0B004421F6B04A1B89C8039A988A690A498705B0348A3E074A4C885D0B702A1B7A8A0B0AE9D28F00CE0E518AABC9FEDAB892CE0F07E3FA4B1A61346",
       "tags": [
         {
           "category": "Type",
@@ -2039,6 +2076,7 @@
       "name": "M4A1-S | Printstream",
       "market_hash_name": "M4A1-S | Printstream (Factory New)",
       "type": "Covert Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A6B6185D263039A7BE9A867EA18EA096A29E191D324AA5E676A3CED4D6A2389085E6",
       "tags": [
         {
           "category": "Type",
@@ -2074,6 +2112,7 @@
       "name": "M4A1-S | Welcome to the Jungle",
       "market_hash_name": "M4A1-S | Welcome to the Jungle (Battle-Scarred)",
       "type": "Covert Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209C8C735C54240E9D84A0BC759BB49AAC98A4384744659FDC539AFE99949C8C4FB8FE99949D8C4FB8FE99949E8C4FB8FE99949F8C4FB8F4A0EC8BDD57562C",
       "tags": [
         {
           "category": "Type",
@@ -2109,6 +2148,7 @@
       "name": "MP9 | Starlight Protector",
       "market_hash_name": "MP9 | Starlight Protector (Factory New)",
       "type": "Covert SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20998923347972379881BBB97791B19FA99DA13E5971729AD9219BFB9C919B8928A3FB9C91998928A3FB9C919D8928A3FB9691988928A3A4D91BAF25DCB96E8025F1A7E99D28CB7DCB",
       "tags": [
         {
           "category": "Type",
@@ -2156,6 +2196,7 @@
       "name": "MP9 | Starlight Protector",
       "market_hash_name": "MP9 | Starlight Protector (Minimal Wear)",
       "type": "Covert SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B8A83B721E5037B9A09A9856B090BE88BC80534E2E48BBF878BDD0BCC8B04ACF8BEC",
       "tags": [
         {
           "category": "Type",
@@ -2191,6 +2232,7 @@
       "name": "AWP | Asiimov",
       "market_hash_name": "AWP | Asiimov (Field-Tested)",
       "type": "Covert Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201F0F99B5D28A801E07163F881D37192F1B27CCC694EA1C5F8019771E6F17298E4B2B",
       "tags": [
         {
           "category": "Type",
@@ -2226,6 +2268,7 @@
       "name": "AWP | Asiimov",
       "market_hash_name": "AWP | Asiimov (Field-Tested)",
       "type": "Covert Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20859548671D0C23849D8CA51287AD83B581BD3126237686C56580E7818D8595C3E7818D8495A0E7818D8795CFE7818D8695B0ED0587F581A207A977",
       "tags": [
         {
           "category": "Type",
@@ -2277,6 +2320,7 @@
       "name": "AWP | Chrome Cannon",
       "market_hash_name": "AWP | Chrome Cannon (Factory New)",
       "type": "Covert Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B7A76B663A0207B6AFBE9725BE9FB187B38F323D595CB4F76EB0DFB2C7BF01EB9417",
       "tags": [
         {
           "category": "Type",
@@ -2312,6 +2356,7 @@
       "name": "AWP | Dragon Lore",
       "market_hash_name": "AWP | Dragon Lore (Factory New)",
       "type": "Covert Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200A1AC78AA5A3B60B12032AD208220C3A0E32A6B2C5E1094AB70B680F020B1AA412680F02091ABD1B62207A1D98F92EA2",
       "tags": [
         {
           "category": "Type",
@@ -2371,6 +2416,7 @@
       "name": "AWP | Fade",
       "market_hash_name": "AWP | Fade (Factory New)",
       "type": "Covert Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D2C20C61626044D3CADBF250DAFAD4E2D6EA2A251634D19231D3B0C6DAD2C24EC7FFD2D29212EF86E6BC6C97B287D56EB0C6DAD2C27BFAFFD2D2C293EFD637806C97C2B05D6EB0C6DAD2C264C8FFD2D2C293EFFA559B6C9722FA5A6EB0C6DAD2C20FC8FFD2D2C293EF1297E86C976263746EB0C6DAD3C24CFCFFD2D29293EF025FF36E9792734269BAB5A2D66AA92A56",
       "tags": [
         {
           "category": "Type",
@@ -2450,6 +2496,7 @@
       "name": "AWP | Gungnir",
       "market_hash_name": "AWP | Gungnir (Field-Tested)",
       "type": "Covert Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F0E0611C02246AF1E8F9D004F5D8F6C0F4C8670E6C04F3B02EF5989A80E797FE31C4",
       "tags": [
         {
           "category": "Type",
@@ -2485,6 +2532,7 @@
       "name": "AWP | Hyper Beast",
       "market_hash_name": "AWP | Hyper Beast (Factory New)",
       "type": "Covert Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208E9E51595D26108F9687AE558DA688BE8AB65B1D6E648DCE7088E69CFE8A3F76DE32",
       "tags": [
         {
           "category": "Type",
@@ -2520,6 +2568,7 @@
       "name": "AWP | Printstream",
       "market_hash_name": "AWP | Printstream (Field-Tested)",
       "type": "Covert Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204959A1E9B0FDE448514069FF40614F794D71E9D2C3BA4A09914E2B4C414859BE712B4C414A59BE712B4C414B59BE712B4C414959BE7121E1483941D2C80416",
       "tags": [
         {
           "category": "Type",
@@ -2563,6 +2612,7 @@
       "name": "SSG 08 | Blood in the Water",
       "market_hash_name": "SSG 08 | Blood in the Water (Factory New)",
       "type": "Covert Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209181293D600A2D9089B9B14F90B997A195A9375E197D92D15A93F997E1953FDA86C1",
       "tags": [
         {
           "category": "Type",
@@ -2598,6 +2648,7 @@
       "name": "SSG 08 | Dragonfire",
       "market_hash_name": "SSG 08 | Dragonfire (Minimal Wear)",
       "type": "Covert Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E4F400186C6A82FCCCC414E0CCE2D4E0DC77574C09E7A471E38CFD94EC546958CF",
       "tags": [
         {
           "category": "Type",
@@ -2633,6 +2684,7 @@
       "name": "Sticker Slab | sh1ro (Glitter) | Antwerp 2022",
       "market_hash_name": "Sticker Slab | sh1ro (Glitter) | Antwerp 2022",
       "type": "Customized Remarkable Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C2D2C2DA09C8E2C2EAC6F2CAAAC2B2C260C3C5CAC2D2E7A217E89EDABC52",
       "tags": [
         {
           "category": "Type",
@@ -2667,6 +2719,7 @@
       "name": "Graffiti | Clutch King",
       "market_hash_name": "Graffiti | Clutch King",
       "type": "Exotic Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202A3A2A32EF200A2A022F1A2E482F222A3AA027422A5A22E1DCAC0C",
       "tags": [
         {
           "category": "Type",
@@ -2701,6 +2754,7 @@
       "name": "Sticker | Cloud9 (Foil) | Krakow 2017",
       "market_hash_name": "Sticker | Cloud9 (Foil) | Krakow 2017",
       "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203626362E8F3F16361E33063254333E36268B265E36463E63E183E4",
       "tags": [
         {
           "category": "Type",
@@ -2743,6 +2797,7 @@
       "name": "5 Year Veteran Coin",
       "market_hash_name": "5 Year Veteran Coin",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2766,6 +2821,7 @@
       "name": "10 Year Veteran Coin",
       "market_hash_name": "10 Year Veteran Coin",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2789,6 +2845,7 @@
       "name": "2015 Service Medal",
       "market_hash_name": "2015 Service Medal",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2812,6 +2869,7 @@
       "name": "2016 Service Medal",
       "market_hash_name": "2016 Service Medal",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2835,6 +2893,7 @@
       "name": "2017 Service Medal",
       "market_hash_name": "2017 Service Medal",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2858,6 +2917,7 @@
       "name": "2023 Service Medal",
       "market_hash_name": "2023 Service Medal",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2881,6 +2941,7 @@
       "name": "Champion at Perfect World Shanghai 2024",
       "market_hash_name": "Champion at Perfect World Shanghai 2024",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2908,6 +2969,7 @@
       "name": "Copenhagen 2024 Silver Coin",
       "market_hash_name": "Copenhagen 2024 Silver Coin",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2935,6 +2997,7 @@
       "name": "Global Offensive Badge",
       "market_hash_name": "Global Offensive Badge",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2958,6 +3021,7 @@
       "name": "Loyalty Badge",
       "market_hash_name": "Loyalty Badge",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2981,6 +3045,7 @@
       "name": "Operation Broken Fang Challenge Coin",
       "market_hash_name": "Operation Broken Fang Challenge Coin",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3004,6 +3069,7 @@
       "name": "Operation Riptide Challenge Coin",
       "market_hash_name": "Operation Riptide Challenge Coin",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3027,6 +3093,7 @@
       "name": "Operation Shattered Web Challenge Coin",
       "market_hash_name": "Operation Shattered Web Challenge Coin",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3050,6 +3117,7 @@
       "name": "Premier Season One Medal",
       "market_hash_name": "Premier Season One Medal",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3073,6 +3141,7 @@
       "name": "Quarterfinalist at BLAST.tv Austin 2025",
       "market_hash_name": "Quarterfinalist at BLAST.tv Austin 2025",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3100,6 +3169,7 @@
       "name": "Quarterfinalist at IEM Rio 2022",
       "market_hash_name": "Quarterfinalist at IEM Rio 2022",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3127,6 +3197,7 @@
       "name": "Quarterfinalist at PGL Copenhagen 2024",
       "market_hash_name": "Quarterfinalist at PGL Copenhagen 2024",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3154,6 +3225,7 @@
       "name": "Semifinalist at PGL Stockholm 2021",
       "market_hash_name": "Semifinalist at PGL Stockholm 2021",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3181,6 +3253,7 @@
       "name": "Semifinalist at StarLadder Budapest 2025",
       "market_hash_name": "Semifinalist at StarLadder Budapest 2025",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3208,6 +3281,7 @@
       "name": "Silver Operation Breakout Coin",
       "market_hash_name": "Silver Operation Breakout Coin",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3231,6 +3305,7 @@
       "name": "Silver Operation Hydra Coin",
       "market_hash_name": "Silver Operation Hydra Coin",
       "type": "Extraordinary Collectible",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3254,6 +3329,7 @@
       "name": "Sticker | sh1ro (Gold, Champion) | Shanghai 2024",
       "market_hash_name": "Sticker | sh1ro (Gold, Champion) | Shanghai 2024",
       "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2008180810B1012808200E380C6A0D000818EC4A600878005C4EA50F",
       "tags": [
         {
           "category": "Type",
@@ -3300,6 +3376,7 @@
       "name": "Graffiti | Welcome to the Clutch",
       "market_hash_name": "Graffiti | Welcome to the Clutch",
       "type": "High Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200616061EC30C26062E05360264030E0616910B6E06760E8414DE1A",
       "tags": [
         {
           "category": "Type",
@@ -3334,6 +3411,7 @@
       "name": "Sealed Graffiti | Welcome to the Clutch",
       "market_hash_name": "Sealed Graffiti | Welcome to the Clutch",
       "type": "High Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201707170FD31D37173F14271375121F1707801A7F17671F65E1FB4B",
       "tags": [
         {
           "category": "Type",
@@ -3372,6 +3450,7 @@
       "name": "Music Kit | Perfect World, 花脸 Hua Lian (Painted Face)",
       "market_hash_name": "Music Kit | Perfect World, 花脸 Hua Lian (Painted Face)",
       "type": "High Grade Music Kit",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2051415149F35B71517952615539512153D950150693BE7A",
       "tags": [
         {
           "category": "Type",
@@ -3398,6 +3477,7 @@
       "name": "Music Kit | Valve, CS:GO",
       "market_hash_name": "Music Kit | Valve, CS:GO",
       "type": "High Grade Music Kit",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242524AF05872527A5162563A522252DA531411018CAB",
       "tags": [
         {
           "category": "Type",
@@ -3424,6 +3504,7 @@
       "name": "Sticker | Gen.G | 2020 RMR",
       "market_hash_name": "Sticker | Gen.G | 2020 RMR",
       "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B1A1B1A908B891B199B281B5D3B4B9B1A11C94D9B1C1B9FB290ED0",
       "tags": [
         {
           "category": "Type",
@@ -3466,6 +3547,7 @@
       "name": "Sticker | Team Spirit | Austin 2025",
       "market_hash_name": "Sticker | Team Spirit | Austin 2025",
       "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200E1E0E16B7072E0E260D3E0A6C0B060E1EFC4C660E7E06E48E596E",
       "tags": [
         {
           "category": "Type",
@@ -3508,6 +3590,7 @@
       "name": "Five-SeveN | Candy Apple",
       "market_hash_name": "Five-SeveN | Candy Apple (Minimal Wear)",
       "type": "Industrial Grade Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2084943233741F38859C87A487AC86B480BC1C2A026987C45182ECA3F480AFE430BD",
       "tags": [
         {
           "category": "Type",
@@ -3543,6 +3626,7 @@
       "name": "P250 | Whiteout",
       "market_hash_name": "P250 | Whiteout (Factory New)",
       "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205F4FDE8BA3D8C15E477B7F39775C6F5B67B5F1EEB35C1FE75B37DF5D2F5B3E5E5747",
       "tags": [
         {
           "category": "Type",
@@ -3578,6 +3662,7 @@
       "name": "G3SG1 | Hunter",
       "market_hash_name": "G3SG1 | Hunter (Minimal Wear)",
       "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209B8B53107D262A9A8390BB3E9EB398AB9FA3275F447498DB4698F3D3EB934889E8DB",
       "tags": [
         {
           "category": "Type",
@@ -3613,6 +3698,7 @@
       "name": "Health Pin",
       "market_hash_name": "Health Pin",
       "type": "Remarkable Collectible",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D9C9D9C117FDF9D9F1DDE9DDB1D9A9D167C255F7",
       "tags": [
         {
           "category": "Type",
@@ -3636,6 +3722,7 @@
       "name": "Sticker | GODSENT (Holo) | Stockholm 2021",
       "market_hash_name": "Sticker | GODSENT (Holo) | Stockholm 2021",
       "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202A3A2A3293230A2A022E1A2E482F222A3A810D422A5A2290998345",
       "tags": [
         {
           "category": "Type",
@@ -3678,6 +3765,7 @@
       "name": "Sticker | sh1ro (Glitter, Champion) | Shanghai 2024",
       "market_hash_name": "Sticker | sh1ro (Glitter, Champion) | Shanghai 2024",
       "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D6C6D6CE6FDFF6D6FED2E6D2B4D3DED6C63494BED6A6DE3370C681",
       "tags": [
         {
           "category": "Type",
@@ -3724,6 +3812,7 @@
       "name": "Sticker | sh1ro (Glitter) | Copenhagen 2024",
       "market_hash_name": "Sticker | sh1ro (Glitter) | Copenhagen 2024",
       "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EFFFEFF756E6CFEFC7EBDFEB8DEAE7EFFF5FD587EF9FE7BEAD1934",
       "tags": [
         {
           "category": "Type",
@@ -3770,6 +3859,7 @@
       "name": "Sticker | sh1ro (Holo) | Stockholm 2021",
       "market_hash_name": "Sticker | sh1ro (Holo) | Stockholm 2021",
       "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B7A7B7AF0EBE97B79FB387B3D5B2BFB7A7779FDFB7C7BF34310293",
       "tags": [
         {
           "category": "Type",
@@ -3816,6 +3906,7 @@
       "name": "Zeus x27 | Tosai",
       "market_hash_name": "Zeus x27 | Tosai (Battle-Scarred)",
       "type": "Restricted Equipment",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3851,6 +3942,7 @@
       "name": "Desert Eagle | Blaze",
       "market_hash_name": "Desert Eagle | Blaze (Factory New)",
       "type": "Restricted Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202737F19AAEF5B6263F2607020F2317231FA2A8EFC224678B214F66573006FA431A",
       "tags": [
         {
           "category": "Type",
@@ -3886,6 +3978,7 @@
       "name": "Dual Berettas | Cobalt Quartz",
       "market_hash_name": "Dual Berettas | Cobalt Quartz (Factory New)",
       "type": "Restricted Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209B8B56411A351A9A8399BB629AB39FAB9FA35016227798DB2998F397EB83AB71086B",
       "tags": [
         {
           "category": "Type",
@@ -3921,6 +4014,7 @@
       "name": "Glock-18 | Fade",
       "market_hash_name": "Glock-18 | Fade (Factory New)",
       "type": "Restricted Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201D0DADEDCA95901C05193D3B35192D1925E9ABF9F91E5DEB1E7F14151D0D3D387B7B9B227F19151C0D387F14151F0D3C387B7B9B227F19151E0D3575176D1D899CE1AB",
       "tags": [
         {
           "category": "Type",
@@ -3956,6 +4050,7 @@
       "name": "Tec-9 | Red Quartz",
       "market_hash_name": "Tec-9 | Red Quartz (Minimal Wear)",
       "type": "Restricted Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201E0ED6AA92FA7D06003EE61F361A2E1A26D48BCCF31D5EC21A76376E06E75E0C43",
       "tags": [
         {
           "category": "Type",
@@ -3991,6 +4086,7 @@
       "name": "Galil AR | Connexion",
       "market_hash_name": "Galil AR | Connexion (Field-Tested)",
       "type": "Restricted Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FFEF7C75577659FEE7F2DF33F8D7FBCFFBC729253F0BFCBF59FB977EFD8FF76E55ACF4",
       "tags": [
         {
           "category": "Type",
@@ -4026,6 +4122,7 @@
       "name": "MAC-10 | Sakkaku",
       "market_hash_name": "MAC-10 | Sakkaku (Well-Worn)",
       "type": "Restricted SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20263695F6C1C54B3E3706EB2F0E2216221EFAE3E4D0256698254EBF27562E5E0B69AA",
       "tags": [
         {
           "category": "Type",
@@ -4061,6 +4158,7 @@
       "name": "MP7 | Fade",
       "market_hash_name": "MP7 | Fade (Minimal Wear)",
       "type": "Restricted SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FFEF471511564CFEE7DEDF0FFAD7FBCFFBC716133F0FFCBF21FE97AD8FE70CFE272F",
       "tags": [
         {
           "category": "Type",
@@ -4096,6 +4194,7 @@
       "name": "AWP | Pink DDPAT",
       "market_hash_name": "AWP | Pink DDPAT (Minimal Wear)",
       "type": "Restricted Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200F1F8EA2BFC26017062F5B270B3F0B37E3A59BFF0C4FD40E6D0A070D1FCF276D0A070C1FD82567197F17FDF40927",
       "tags": [
         {
           "category": "Type",
@@ -4151,6 +4250,7 @@
       "name": "Souvenir Sawed-Off | Parched",
       "market_hash_name": "Souvenir Sawed-Off | Parched (Field-Tested)",
       "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D5C565266A796DD4CDC8F525D3FDD4E5D9ED03136021D6950CD2B7D0DDD7C53896B7D0DDD1C54FD8B7D0DDD4C56096B7D0DDD5C51896BDD2A5DDB55836B5",
       "tags": [
         {
           "category": "Type",
@@ -4198,6 +4298,7 @@
       "name": "Souvenir SSG 08 | Detour",
       "market_hash_name": "Souvenir SSG 08 | Detour (Factory New)",
       "type": "Souvenir Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203828E883C68B67201018873A103B08340089AAA5D13B78A13C5A2C303828C91E25383838381D3838B80715383838385A2C303928A63525383838381D3838B80715383838385A2C303A28DD1E25383838381D3838B80715383838385A2C303B28851F25383838381D3838B80715383838385086394830282E47D0",
       "tags": [
         {
           "category": "Type",
@@ -4240,11 +4341,12 @@
     {
       "assetid": "50524333252",
       "classid": "7993047787",
-      "instanceid": "902685776",
+      "instanceid": "903816559",
       "amount": 1,
       "name": "StatTrak™ USP-S | Orion",
       "market_hash_name": "StatTrak™ USP-S | Orion (Minimal Wear)",
       "type": "StatTrak™ Classified Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203B2BFFF2CBA0873A23061B8239133E0B32039AE1F5CB387BB539733B6B40531F4B3F29A2E19B",
       "tags": [
         {
           "category": "Type",
@@ -4275,11 +4377,12 @@
     {
       "assetid": "48842374789",
       "classid": "7993038769",
-      "instanceid": "8344738468",
+      "instanceid": "8349190445",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Redline",
       "market_hash_name": "StatTrak™ AK-47 | Redline (Minimal Wear)",
       "type": "StatTrak™ Classified Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201C0C99E1F1E5A91D041B3C861E34192C1524A6DFEBF21F5C8019541C4CEF317E18141C0C397E18141D0C507E18141E0C397E18141F0C5574566C14CC9A9A3B",
       "tags": [
         {
           "category": "Type",
@@ -4327,6 +4430,7 @@
       "name": "StatTrak™ AWP | Redline",
       "market_hash_name": "StatTrak™ AWP | Redline (Minimal Wear)",
       "type": "StatTrak™ Classified Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20958549691D1BF38D9CB51697BD90A59CAD756C326596D50994DD95C50786F7909D958554B6F79F9D948511B1B06DE917AAF79F9D978510B1B0347918AAF7909D96853FB6FDB9E59D7EAAAF43",
       "tags": [
         {
           "category": "Type",
@@ -4362,6 +4466,7 @@
       "name": "StatTrak™ P2000 | Fire Elemental",
       "market_hash_name": "StatTrak™ P2000 | Fire Elemental (Factory New)",
       "type": "StatTrak™ Covert Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200515DF84CAB3731D252580062D03350C3DD39A87E60645C3004D0555B1086D49750D2BE2B7E5",
       "tags": [
         {
           "category": "Type",
@@ -4397,6 +4502,7 @@
       "name": "StatTrak™ AK-47 | Bloodsport",
       "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Factory New)",
       "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206575858ACAD0F7647D62459A614D63556C5DD4E8E48F6625AA672D6535AF7C0D47156DE9B2759A",
       "tags": [
         {
           "category": "Type",
@@ -4432,6 +4538,7 @@
       "name": "StatTrak™ AK-47 | Inheritance",
       "market_hash_name": "StatTrak™ AK-47 | Inheritance (Factory New)",
       "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E8F8040F746377E9F0EFC87BE1C0EED8E1D02E7C7803EBA83BEFA0E8B84AC8808798ECDC432CF4",
       "tags": [
         {
           "category": "Type",
@@ -4467,6 +4574,7 @@
       "name": "StatTrak™ AK-47 | The Empress",
       "market_hash_name": "StatTrak™ AK-47 | The Empress (Field-Tested)",
       "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20988843641016FE809FB83B9DB09EA891A0755A536C9BD8189ED098C82AA2FA9D909888798BFA9D909988798BFA9D909A88798BFA9D909B88798BF0B7E89CFD669598",
       "tags": [
         {
           "category": "Type",
@@ -4505,11 +4613,12 @@
     {
       "assetid": "50524335109",
       "classid": "7993041807",
-      "instanceid": "188532173",
+      "instanceid": "188532450",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Cyrex",
       "market_hash_name": "StatTrak™ M4A1-S | Cyrex (Minimal Wear)",
       "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208F9F0A577F14338E97B3AF678DA789BF86B76B1851608CCF98C78FDFD5E790FF874F6B8912",
       "tags": [
         {
           "category": "Type",
@@ -4545,6 +4654,7 @@
       "name": "StatTrak™ Five-SeveN | Kami",
       "market_hash_name": "StatTrak™ Five-SeveN | Kami (Minimal Wear)",
       "type": "StatTrak™ Mil-Spec Grade Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BCAC3D5A0903EAA4BF9C35BE94BF8CB58448204B50BFFC68BFF4BCECC2DEB8B4BCACA4D4BDCCB4E42AC0C1",
       "tags": [
         {
           "category": "Type",
@@ -4580,6 +4690,7 @@
       "name": "StatTrak™ P250 | X-Ray",
       "market_hash_name": "StatTrak™ P250 | X-Ray (Factory New)",
       "type": "StatTrak™ Restricted Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D9C91372590B48D8C1FDF9A4F1DDE9D0E1091A4E35DA998991D98932D4B19AA9D163EDB004",
       "tags": [
         {
           "category": "Type",
@@ -4615,6 +4726,7 @@
       "name": "StatTrak™ USP-S | Cyrex",
       "market_hash_name": "StatTrak™ USP-S | Cyrex (Minimal Wear)",
       "type": "StatTrak™ Restricted Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ACBC083D3B671BADB4918C51A884A89CA594701C3442AFECE7E4ACFC6DA5CEA9A4ADBC6188CEA9A4AEBC6188CEA9A4AFBC4DADCEB8A4A8BC138F81ACACECED9156AAA993E9FC409092C422ADDCA80EADBAA4ACBC8991588A3FEDE9F4F4EC93E198EAD3ECCC1E96B7D6F57F",
       "tags": [
         {
           "category": "Type",
@@ -4658,6 +4770,7 @@
       "name": "StatTrak™ Galil AR | Control",
       "market_hash_name": "StatTrak™ Galil AR | Control (Battle-Scarred)",
       "type": "StatTrak™ Restricted Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F7E71702715F52F6EFFAD756FEDFF3C7FECF1160670EF4B777F3BFF7A7D49F56F587FF376C3EF1",
       "tags": [
         {
           "category": "Type",
