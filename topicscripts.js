@@ -314,6 +314,96 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
       .trim();
   }
 
+function getInventoryPriceCandidateNames(skinEl, visibleName) {
+  const weapon = String(skinEl.getAttribute("weapon") || "").trim().toLowerCase();
+  const normalizedVisible = normalizePriceName(visibleName);
+
+  const candidates = [];
+
+  if (normalizedVisible) {
+    candidates.push(normalizedVisible);
+  }
+
+  // Только для стикеров добавляем вариант с префиксом,
+  // потому что на карточке может быть имя без "Sticker |"
+  if (weapon === "sticker" || weapon.includes("sticker")) {
+    if (normalizedVisible && !/^Sticker\s*\|/i.test(normalizedVisible)) {
+      candidates.push(normalizePriceName(`Sticker | ${normalizedVisible}`));
+    }
+  }
+
+  // Только для charms
+  if (weapon.includes("charm")) {
+    if (normalizedVisible && !/^Charm\s*\|/i.test(normalizedVisible)) {
+      candidates.push(normalizePriceName(`Charm | ${normalizedVisible}`));
+    }
+  }
+
+  return uniqStrings(candidates);
+}
+
+function findInventoryPriceMatches(skinEl, visibleName, priceData) {
+  const candidates = getInventoryPriceCandidateNames(skinEl, visibleName);
+  const out = [];
+
+  for (const candidate of candidates) {
+    if (!candidate) continue;
+
+    // Сначала exact
+    const exact = priceData.exactMap.get(candidate);
+    if (exact && !exact.isStickerSlab) {
+      out.push(exact);
+      continue;
+    }
+
+    // Потом old-script partial, но только по ПОЛНОМУ имени карточки
+    for (const item of priceData.partialList) {
+      if (item.isStickerSlab) continue;
+      if (item.name.includes(candidate)) {
+        out.push(item);
+      }
+    }
+  }
+
+  return uniqStrings(out.map(item => item.name))
+    .map(name => priceData.exactMap.get(name))
+    .filter(Boolean);
+}
+
+function stripExteriorSuffix(name) {
+  return String(name || "").replace(
+    /\s+\((Factory New|Minimal Wear|Field-Tested|Well-Worn|Battle-Scarred)\)\s*$/i,
+    ""
+  ).trim();
+}
+
+function extractExteriorSuffix(name) {
+  const match = String(name || "").match(
+    /\s*(\((Factory New|Minimal Wear|Field-Tested|Well-Worn|Battle-Scarred)\))\s*$/i
+  );
+  return match ? ` ${match[1]}` : "";
+}
+
+function uniqStrings(arr) {
+  return [...new Set(
+    arr
+      .map(v => String(v || "").trim())
+      .filter(Boolean)
+  )];
+}
+
+function getSkinDisplayName(skinEl) {
+  return String(
+    skinEl.querySelector(".skin-desc-name")?.textContent || ""
+  ).replace(/\s+/g, " ").trim();
+}
+
+function getSkinAltName(skinEl) {
+  return String(
+    skinEl.querySelector("img")?.getAttribute("alt") || ""
+  ).replace(/\s+/g, " ").trim();
+}
+
   function toNum(v) {
     const n = Number(v);
     return Number.isFinite(n) ? n : null;
@@ -589,31 +679,31 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
     return { normalText, souvenirText, normalMin, souvenirMin };
   }
 
-  function findMatches(name, priceData) {
-    const normalizedName = normalizePriceName(name);
-    if (!normalizedName) return [];
+    function findMatches(name, priceData, skinEl = null) {
+      const normalizedName = normalizePriceName(name);
+      if (!normalizedName) return [];
 
-    if (isPlayersInventoryTopicPath()) {
-      const exact = priceData.exactMap.get(normalizedName);
-      if (!exact || exact.isStickerSlab) return [];
-      return [exact];
+      // Для /players/inventories/ повторяем old-script поведение,
+      // а не отдельный exact-only режим
+      if (isPlayersInventoryTopicPath() && skinEl) {
+        return findInventoryPriceMatches(skinEl, normalizedName, priceData);
+      }
+
+      const strictMatch = isStrictNameMatch(normalizedName);
+
+      if (strictMatch) {
+        const exact = priceData.exactMap.get(normalizedName);
+        if (!exact || exact.isStickerSlab) return [];
+        return [exact];
+      }
+
+      const out = [];
+      for (const item of priceData.partialList) {
+        if (item.isStickerSlab) continue;
+        if (item.name.includes(normalizedName)) out.push(item);
+      }
+      return out;
     }
-
-    const strictMatch = isStrictNameMatch(normalizedName);
-
-    if (strictMatch) {
-      const exact = priceData.exactMap.get(normalizedName);
-      if (!exact || exact.isStickerSlab) return [];
-      return [exact];
-    }
-
-    const out = [];
-    for (const item of priceData.partialList) {
-      if (item.isStickerSlab) continue;
-      if (item.name.includes(normalizedName)) out.push(item);
-    }
-    return out;
-  }
 
   async function priceSkinsOnPage() {
     const skins = Array.from(document.querySelectorAll(".skin:not(.extra-list)"));
@@ -636,18 +726,46 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
       const nameIsStatTrak = isStatTrakName(name);
       const nameIsSouvenir = isSouvenirName(name);
 
-      let matched = findMatches(name, priceData);
+      let matched = findMatches(name, priceData, skinEl);
       if (!matched.length) {
         skinEl.setAttribute("data-price-value", "");
+
+        let priceEl = skinEl.querySelector(".skin-price-info");
+        if (!priceEl) {
+          skinEl.insertAdjacentHTML("beforeend", `<div class="skin-price-info"></div>`);
+          priceEl = skinEl.querySelector(".skin-price-info:last-of-type");
+        }
+
+        if (priceEl) {
+          priceEl.classList.remove("loading");
+          priceEl.textContent = "";
+          const souvenirEl = priceEl.querySelector(".souvenir-price-info");
+          if (souvenirEl) souvenirEl.remove();
+        }
+
         continue;
       }
 
-      if (!isPlayersInventoryTopicPath() && nameHasExterior && !nameIsStatTrak) {
+      if (nameHasExterior && !nameIsStatTrak) {
         matched = matched.filter(item => !item.isStatTrak);
       }
 
       if (!matched.length) {
         skinEl.setAttribute("data-price-value", "");
+
+        let priceEl = skinEl.querySelector(".skin-price-info");
+        if (!priceEl) {
+          skinEl.insertAdjacentHTML("beforeend", `<div class="skin-price-info"></div>`);
+          priceEl = skinEl.querySelector(".skin-price-info:last-of-type");
+        }
+
+        if (priceEl) {
+          priceEl.classList.remove("loading");
+          priceEl.textContent = "";
+          const souvenirEl = priceEl.querySelector(".souvenir-price-info");
+          if (souvenirEl) souvenirEl.remove();
+        }
+
         continue;
       }
 
