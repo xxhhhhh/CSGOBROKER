@@ -2737,7 +2737,7 @@ async function processTopicHeaderBackButton({ root, file, html, verbose }){
 
 const processedHtmlByFile = new Map();
 
-const CONCURRENCY = 10;
+const CONCURRENCY = 30;
 
 await mapLimit(files, CONCURRENCY, async (file) => {
   const urlPath = fileToUrlPath(root, file);
@@ -2805,15 +2805,7 @@ await mapLimit(files, CONCURRENCY, async (file) => {
       if (res.changed) html = res.html;
     }
 
-    if (isSkinsPage || isItemsOrRelatedPage){
-      const res = await processTopicNavStaticFill({ root, file, html, verbose });
-      if (res.changed) html = res.html;
-    }
 
-    if (isItemsOrRelatedPage){
-      const res = await processItemsNavStaticFill({ root, file, html, verbose });
-      if (res.changed) html = res.html;
-    }
 
     processedHtmlByFile.set(file, {
       origHtml,

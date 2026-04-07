@@ -2636,6 +2636,7 @@ nav .pages {
     overflow-x: scroll;
     border-radius: 5px;
     user-select: none;
+    transition: all .15s ease-in-out;
 }
 
 .box-skins-list.sort-to-highest .skin .skin-price-info,
@@ -4820,8 +4821,17 @@ nav img {
     top: -35px;
 }
 
+.topic-extra-info span:nth-child(2) {
+    opacity: 0;
+}
+
+.topic-extra-info.show span:nth-child(2) {
+    opacity: 1;
+}
+
 .topic-extra-info span {
     color: var(--text-darkgray);
+    transition: all .3s ease-in-out;
 }
 
 .sitepage.items .box-skins.solo .box-skins-list {
@@ -4833,6 +4843,16 @@ nav img {
     padding-bottom: 8px;
     min-height: 500px;
     gap: 8px;
+}
+
+.sitepage.items.inventories .box-skins.solo .box-skins-list {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.sitepage.items.inventories .box-skins.solo .box-skins-list.filtered {
+    opacity: 1;
+    transform: unset;
 }
 
 .item-topic-grandbox {

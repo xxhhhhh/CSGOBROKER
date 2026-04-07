@@ -301,11 +301,14 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
   const DATA_URL = "/code-parts/topics/skins-data/skins-prices.json";
   const _skinCache = { data: null, ts: 0, ttl: 30_000 };
 
-  function normalizeName(str) {
+  function isPlayersInventoryTopicPath(pathname = window.location.pathname) {
+    return /\/topic\/players\/inventories\//i.test(pathname);
+  }
+
+  function normalizePriceName(str) {
     return String(str || "")
       .replace(/^★\s*/, "")
       .replace(/StatTrak™/gi, "StatTrak")
-      .replace(/Souvenir/gi, "Souvenir")
       .replace(/[™®]/g, "")
       .replace(/\s+/g, " ")
       .trim();
@@ -331,7 +334,7 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
   }
 
   function isStrictNameMatch(pageName) {
-    const n = normalizeName(pageName);
+    const n = normalizePriceName(pageName);
     if (!n) return false;
     if (!n.includes("|")) return true;
     if (n.startsWith("Sticker |")) return true;
@@ -339,16 +342,132 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
   }
 
   function hasExterior(name) {
-    const n = normalizeName(name);
+    const n = normalizePriceName(name);
     return /\((Factory New|Minimal Wear|Field-Tested|Well-Worn|Battle-Scarred)\)$/i.test(n);
   }
 
   function isStatTrakName(name) {
-    return /StatTrak/i.test(normalizeName(name));
+    return /\bStatTrak\b/i.test(normalizePriceName(name));
   }
 
   function isSouvenirName(name) {
-    return /^Souvenir\b/i.test(normalizeName(name));
+    return /^Souvenir\b/i.test(normalizePriceName(name));
+  }
+
+  function getSkinAmount(skinEl) {
+    const amountEl = skinEl.querySelector(".skin-amount");
+    if (!amountEl) return 1;
+
+    const text = String(amountEl.textContent || "").trim();
+    const value = parseInt(text.replace(/[^\d]/g, ""), 10);
+
+    return Number.isFinite(value) && value > 0 ? value : 1;
+  }
+
+  function updateTopicTotalValue(totalValue) {
+    const info = document.querySelector(".topic-extra-info");
+    if (!info) return;
+
+    const spans = info.querySelectorAll("span");
+    if (!spans[1]) return;
+
+    if (Number.isFinite(totalValue) && totalValue > 0) {
+      spans[1].textContent = `${totalValue.toFixed(2)}$`;
+      info.classList.add("show"); // <-- добавлено
+    } else {
+      spans[1].textContent = "";
+      info.classList.remove("show");
+    }
+  }
+
+  function ensureOriginalTopicSkinOrder($list) {
+    $list.children(".skin").each(function (index) {
+      if (!this.hasAttribute("data-sort-origin")) {
+        this.setAttribute("data-sort-origin", String(index));
+      }
+    });
+  }
+
+  function getTopicSkinPriceValue(el) {
+    const direct = Number(el.getAttribute("data-price-value"));
+    if (Number.isFinite(direct)) return direct;
+
+    const priceEl = el.querySelector(".skin-price-info");
+    if (!priceEl) return null;
+
+    const raw = String(priceEl.textContent || "").replace(",", ".");
+    const match = raw.match(/\d+(?:\.\d+)?/);
+    if (!match) return null;
+
+    const parsed = Number(match[0]);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  function sortTopicSkinsByPrice(direction = "desc") {
+    const $list = $(".box-skins-list");
+    if (!$list.length) return;
+
+    ensureOriginalTopicSkinOrder($list);
+
+    const skins = $list.children(".skin").get();
+    if (!skins.length) return;
+
+    if (direction === "original") {
+      skins.sort((a, b) => {
+        const aIndex = Number(a.getAttribute("data-sort-origin")) || 0;
+        const bIndex = Number(b.getAttribute("data-sort-origin")) || 0;
+        return aIndex - bIndex;
+      });
+    } else {
+      skins.sort((a, b) => {
+        const aPrice = getTopicSkinPriceValue(a);
+        const bPrice = getTopicSkinPriceValue(b);
+
+        const aMissing = aPrice === null;
+        const bMissing = bPrice === null;
+
+        if (aMissing && bMissing) {
+          const aIndex = Number(a.getAttribute("data-sort-origin")) || 0;
+          const bIndex = Number(b.getAttribute("data-sort-origin")) || 0;
+          return aIndex - bIndex;
+        }
+
+        if (aMissing) return 1;
+        if (bMissing) return -1;
+
+        if (direction === "asc") {
+          if (aPrice !== bPrice) return aPrice - bPrice;
+        } else {
+          if (aPrice !== bPrice) return bPrice - aPrice;
+        }
+
+        const aIndex = Number(a.getAttribute("data-sort-origin")) || 0;
+        const bIndex = Number(b.getAttribute("data-sort-origin")) || 0;
+        return aIndex - bIndex;
+      });
+    }
+
+    $list.append(skins);
+  }
+
+  function applyDefaultInventoryPriceSort() {
+    if (!isPlayersInventoryTopicPath()) return;
+
+    const $priceFilter = $("#Price-Filter");
+    const $qualityFilter = $("#Quality-Filter");
+    const $list = $(".box-skins-list");
+
+    $qualityFilter.removeClass("enabled reversed");
+    $priceFilter.addClass("enabled").removeClass("reversed");
+
+    sortTopicSkinsByPrice("desc");
+
+    // ✅ добавлено
+    if ($list.length) {
+      $list.addClass("filtered");
+    }
+
+    updateNavigationReset?.();
   }
 
   async function fetchSkinPrices() {
@@ -380,7 +499,7 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
       for (const item of data) {
         const rawName = item && item.name ? item.name : "";
-        const name = normalizeName(rawName);
+        const name = normalizePriceName(rawName);
         if (!name) continue;
 
         const entry = {
@@ -388,8 +507,8 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
           isSouvenir: /^Souvenir\b/i.test(name),
           isStatTrak: /\bStatTrak\b/i.test(name),
           isStickerSlab: /^Sticker Slab\s*\|/i.test(name),
-          min: toNum(item.min_price),
-          max: toNum(item.max_price),
+          min: toNum(item.min_price ?? item.price),
+          max: toNum(item.max_price ?? item.price),
         };
 
         if (!Number.isFinite(entry.min) && !Number.isFinite(entry.max)) continue;
@@ -414,7 +533,7 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
   function buildPriceParts(entries, options = {}) {
     if (!entries || !entries.length) {
-      return { normalText: "", souvenirText: "" };
+      return { normalText: "", souvenirText: "", normalMin: null, souvenirMin: null };
     }
 
     const {
@@ -432,6 +551,8 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
     let normalText = "";
     let souvenirText = "";
+    let normalMin = null;
+    let souvenirMin = null;
 
     if (allowNormal && normal.length) {
       const mins = [];
@@ -444,6 +565,8 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
       const min = mins.length ? Math.min(...mins) : null;
       const max = maxs.length ? Math.max(...maxs) : null;
+
+      normalMin = min;
       normalText = formatRange(min, max);
     }
 
@@ -458,15 +581,23 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
       const min = mins.length ? Math.min(...mins) : null;
       const max = maxs.length ? Math.max(...maxs) : null;
+
+      souvenirMin = min;
       souvenirText = formatRange(min, max);
     }
 
-    return { normalText, souvenirText };
+    return { normalText, souvenirText, normalMin, souvenirMin };
   }
 
   function findMatches(name, priceData) {
-    const normalizedName = normalizeName(name);
+    const normalizedName = normalizePriceName(name);
     if (!normalizedName) return [];
+
+    if (isPlayersInventoryTopicPath()) {
+      const exact = priceData.exactMap.get(normalizedName);
+      if (!exact || exact.isStickerSlab) return [];
+      return [exact];
+    }
 
     const strictMatch = isStrictNameMatch(normalizedName);
 
@@ -492,12 +623,13 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
     if (!priceData) return;
 
     const pending = [];
+    let totalValue = 0;
 
     for (const skinEl of skins) {
       if (skinEl.classList.contains("extra-list")) continue;
 
       const nameEl = skinEl.querySelector(".skin-desc-name");
-      const name = normalizeName(nameEl ? nameEl.textContent : "");
+      const name = normalizePriceName(nameEl ? nameEl.textContent : "");
       if (!name) continue;
 
       const nameHasExterior = hasExterior(name);
@@ -505,20 +637,42 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
       const nameIsSouvenir = isSouvenirName(name);
 
       let matched = findMatches(name, priceData);
-      if (!matched.length) continue;
+      if (!matched.length) {
+        skinEl.setAttribute("data-price-value", "");
+        continue;
+      }
 
-      if (nameHasExterior && !nameIsStatTrak) {
+      if (!isPlayersInventoryTopicPath() && nameHasExterior && !nameIsStatTrak) {
         matched = matched.filter(item => !item.isStatTrak);
       }
 
-      if (!matched.length) continue;
+      if (!matched.length) {
+        skinEl.setAttribute("data-price-value", "");
+        continue;
+      }
 
       const parts = buildPriceParts(matched, {
         allowNormal: !nameIsSouvenir,
-        allowSouvenir: !nameHasExterior,
+        allowSouvenir: !nameHasExterior || nameIsSouvenir,
       });
 
-      if (!parts.normalText && !parts.souvenirText) continue;
+      if (!parts.normalText && !parts.souvenirText) {
+        skinEl.setAttribute("data-price-value", "");
+        continue;
+      }
+
+      const sortPrice = nameIsSouvenir
+        ? (parts.souvenirMin ?? parts.normalMin)
+        : (parts.normalMin ?? parts.souvenirMin);
+
+      const amount = getSkinAmount(skinEl);
+
+      if (Number.isFinite(sortPrice)) {
+        skinEl.setAttribute("data-price-value", String(sortPrice));
+        totalValue += sortPrice * amount;
+      } else {
+        skinEl.setAttribute("data-price-value", "");
+      }
 
       pending.push({
         skinEl,
@@ -590,6 +744,8 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
     }
 
     function finalize() {
+      updateTopicTotalValue(totalValue);
+
       $(".skin img").each(function () {
         if (this.complete) {
           $(this).addClass("imported");
@@ -600,7 +756,12 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
         }
       });
 
+      if (isPlayersInventoryTopicPath()) {
+        applyDefaultInventoryPriceSort();
+      }
+
       checkWeaponTypeAvailabilityForItems();
+
       if (location.pathname.includes("/topic/sticker-crafts/")) {
         updateCraftComponentList();
       }
@@ -1441,11 +1602,11 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
         $other.removeClass("enabled reversed");
 
         if (!isEnabled && !isReversed) {
-          $current.addClass("enabled");
+          $current.addClass("enabled").removeClass("reversed");
         } else if (isEnabled && !isReversed) {
           $current.addClass("reversed");
-        } else if (isEnabled && isReversed) {
-          $current.removeClass("reversed");
+        } else {
+          $current.removeClass("enabled reversed");
         }
 
         const sortState =
@@ -1453,11 +1614,161 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
             ? "desc"
             : $current.hasClass("enabled") && $current.hasClass("reversed")
               ? "asc"
-              : "none";
+              : "original";
 
         sortCallback(sortState);
         updateNavigationReset();
       }
+
+      function ensureTopicOriginalOrder($list) {
+        $list.children(".skin").each(function (index) {
+          if (!this.hasAttribute("data-sort-origin")) {
+            this.setAttribute("data-sort-origin", String(index));
+          }
+        });
+      }
+
+      function getTopicItemPriceValue($skin) {
+        const attrValue = Number($skin.attr("data-price-value"));
+        if (Number.isFinite(attrValue)) return attrValue;
+
+        const $price = $skin.find(".skin-price-info").first();
+        if (!$price.length) return null;
+
+        const text = ($price.text() || "").replace(",", ".").trim();
+        const match = text.match(/\d+(?:\.\d+)?/);
+
+        if (!match) return null;
+
+        const value = Number(match[0]);
+        return Number.isFinite(value) ? value : null;
+      }
+
+      function sortTopicItemsByPrice(sortState) {
+        const $list = $(".box-skins-list");
+        if (!$list.length) return;
+
+        ensureTopicOriginalOrder($list);
+
+        const skins = $list.children(".skin").get();
+        if (!skins.length) return;
+
+        if (sortState === "original") {
+          skins.sort((a, b) => {
+            const aIndex = Number(a.getAttribute("data-sort-origin")) || 0;
+            const bIndex = Number(b.getAttribute("data-sort-origin")) || 0;
+            return aIndex - bIndex;
+          });
+        } else {
+          skins.sort((a, b) => {
+            const priceA = getTopicItemPriceValue($(a));
+            const priceB = getTopicItemPriceValue($(b));
+
+            const aMissing = priceA === null;
+            const bMissing = priceB === null;
+
+            if (aMissing && bMissing) {
+              const aIndex = Number(a.getAttribute("data-sort-origin")) || 0;
+              const bIndex = Number(b.getAttribute("data-sort-origin")) || 0;
+              return aIndex - bIndex;
+            }
+
+            if (aMissing) return 1;
+            if (bMissing) return -1;
+
+            if (sortState === "asc") {
+              if (priceA !== priceB) return priceA - priceB;
+            } else {
+              if (priceA !== priceB) return priceB - priceA;
+            }
+
+            const aIndex = Number(a.getAttribute("data-sort-origin")) || 0;
+            const bIndex = Number(b.getAttribute("data-sort-origin")) || 0;
+            return aIndex - bIndex;
+          });
+        }
+
+        $list.append(skins);
+      }
+
+      function sortTopicItemsByQuality(sortState) {
+        const $list = $(".box-skins-list");
+        if (!$list.length) return;
+
+        ensureTopicOriginalOrder($list);
+
+        const skins = $list.children(".skin").get();
+        const sortOrder = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];
+
+        if (sortState === "original") {
+          skins.sort((a, b) => {
+            const aIndex = Number(a.getAttribute("data-sort-origin")) || 0;
+            const bIndex = Number(b.getAttribute("data-sort-origin")) || 0;
+            return aIndex - bIndex;
+          });
+        } else {
+          skins.sort((a, b) => {
+            const aClass = getSkinQualityClass(a);
+            const bClass = getSkinQualityClass(b);
+
+            const aIndex = sortOrder.indexOf(aClass);
+            const bIndex = sortOrder.indexOf(bClass);
+
+            const safeA = aIndex === -1 ? -1 : aIndex;
+            const safeB = bIndex === -1 ? -1 : bIndex;
+
+            const diff = safeA - safeB;
+            if (diff !== 0) {
+              return sortState === "asc" ? diff : -diff;
+            }
+
+            const originA = Number(a.getAttribute("data-sort-origin")) || 0;
+            const originB = Number(b.getAttribute("data-sort-origin")) || 0;
+            return originA - originB;
+          });
+        }
+
+        $list.append(skins);
+      }
+
+      function applyDefaultTopicPriceFilterIfNeeded() {
+        if (!/\/topic\/players\/inventories\//i.test(window.location.pathname)) return;
+
+        $qualityFilter.removeClass("enabled reversed");
+        $priceFilter.addClass("enabled").removeClass("reversed");
+
+        sortTopicItemsByPrice("desc");
+        updateNavigationReset();
+      }
+
+      $qualityFilter.off("click").on("click", function () {
+        toggleSortFilter($(this), $priceFilter, (sortState) => {
+          sortTopicItemsByQuality(sortState);
+        });
+      });
+
+      $priceFilter.off("click").on("click", function () {
+        toggleSortFilter($(this), $qualityFilter, (sortState) => {
+          sortTopicItemsByPrice(sortState);
+        });
+      });
+
+      $(".topic-centralizer").off("click", ".navigation-reset").on("click", ".navigation-reset", function () {
+        $(".skin").removeClass("disabled");
+        $(".navigation-weapon-type").addClass("enabled");
+
+        $qualityFilter.removeClass("enabled reversed");
+        $priceFilter.removeClass("enabled reversed");
+        $(".topic-centralizer .navigation-reset").remove();
+
+        enabledFiltersState = {};
+        checkWeaponTypeAvailabilityForItems?.();
+        checkWeaponTypeAvailability?.();
+
+        applyDefaultTopicPriceFilterIfNeeded();
+      });
+
+      applyDefaultTopicPriceFilterIfNeeded();
 
       function getSkinQualityClass(el) {
         const order = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];

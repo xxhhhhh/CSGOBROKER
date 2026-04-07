@@ -29,7 +29,6 @@ const OUTPUT_DIR_EN = "/topic/players/inventories";
 const WEAPON_JSON_DIR = "/code-parts/topics/skins-list";
 const STICKER_CAPSULES_FILE = "/code-parts/topics/sticker-capsules.json";
 const CHARMS_TOPICS_FILE = "/code-parts/topics/charms.json";
-const SKINS_PRICES_FILE = "/code-parts/topics/skins-data/skins-prices.json";
 
 async function loadStickerCapsulesTopics(root){
   const data = await safeJsonCached(abs(root, STICKER_CAPSULES_FILE));
@@ -165,7 +164,6 @@ function parseArgs(argv){
   const root       = path.resolve(get("--root") ?? process.cwd());
   const dry        = argv.includes("--dry-run");
   const verbose    = argv.includes("--verbose");
-  const prices     = get("--prices");
   const templateRu = get("--template-ru") ?? DEFAULT_TEMPLATE_RU;
   const templateEn = get("--template-en") ?? DEFAULT_TEMPLATE_EN;
   const only       = (get("--only") ?? "")
@@ -173,7 +171,7 @@ function parseArgs(argv){
     .map(s => s.trim())
     .filter(Boolean);
 
-  return { root, dry, verbose, prices, templateRu, templateEn, only };
+  return { root, dry, verbose, templateRu, templateEn, only };
 }
 
 // ---------------- CACHES ----------------
@@ -790,229 +788,6 @@ function escapeAttrDblNoApos(s = ""){
     .replace(/"/g, "&quot;");
 }
 
-// ---------------- PRICES ----------------
-
-async function loadPrices(root, pricesArg){
-  const source = pricesArg || SKINS_PRICES_FILE;
-
-  try {
-    if (/^https?:\/\//i.test(source)){
-      const res = await fetch(source);
-      if (!res.ok) throw new Error(`prices URL ${res.status}`);
-      const json = await res.json();
-      return Array.isArray(json) ? json : null;
-    }
-
-    const txt = await fs.readFile(abs(root, source), "utf8");
-    const json = JSON.parse(txt);
-    return Array.isArray(json) ? json : null;
-  } catch {
-    return null;
-  }
-}
-
-function normalizePriceName(str){
-  return String(str || "")
-    .replace(/^★\s*/, "")
-    .replace(/StatTrak™/gi, "StatTrak")
-    .replace(/[™®]/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function toNum(v){
-  const n = Number(v);
-  return Number.isFinite(n) ? n : null;
-}
-
-function isStrictNameMatch(pageName){
-  const n = normalizePriceName(pageName);
-  if (!n) return false;
-  if (!n.includes("|")) return true;
-  if (n.startsWith("Sticker |")) return true;
-  return false;
-}
-
-function hasExterior(name){
-  const n = normalizePriceName(name);
-  return /\((Factory New|Minimal Wear|Field-Tested|Well-Worn|Battle-Scarred)\)$/i.test(n);
-}
-
-function isStatTrakName(name){
-  return /\bStatTrak\b/i.test(normalizePriceName(name));
-}
-
-function isSouvenirName(name){
-  return /^Souvenir\b/i.test(normalizePriceName(name));
-}
-
-function buildPricesState(pricesArr){
-  if (!Array.isArray(pricesArr) || !pricesArr.length) return null;
-
-  const exactMap = new Map();
-  const partialList = [];
-  const memo = new Map();
-
-  for (const item of pricesArr){
-    const rawName = item && item.name ? item.name : "";
-    const name = normalizePriceName(rawName);
-    if (!name) continue;
-
-    const entry = {
-      name,
-      isSouvenir: /^Souvenir\b/i.test(name),
-      isStatTrak: /\bStatTrak\b/i.test(name),
-      isStickerSlab: /^Sticker Slab\s*\|/i.test(name),
-      min: toNum(item.min_price ?? item.price),
-      max: toNum(item.max_price ?? item.price),
-    };
-
-    if (!Number.isFinite(entry.min) && !Number.isFinite(entry.max)) continue;
-
-    exactMap.set(name, entry);
-
-    if (name.includes("|")) {
-      partialList.push(entry);
-    }
-  }
-
-  return { exactMap, partialList, memo };
-}
-
-function findPriceMatches(name, pricesState){
-  const normalizedName = normalizePriceName(name);
-  if (!normalizedName || !pricesState) return [];
-
-  const strictMatch = isStrictNameMatch(normalizedName);
-
-  if (strictMatch) {
-    const exact = pricesState.exactMap.get(normalizedName);
-    if (!exact || exact.isStickerSlab) return [];
-    return [exact];
-  }
-
-  const out = [];
-  for (const item of pricesState.partialList){
-    if (item.isStickerSlab) continue;
-    if (item.name.includes(normalizedName)) out.push(item);
-  }
-  return out;
-}
-
-function buildPriceParts(entries, options = {}){
-  if (!entries || !entries.length) {
-    return { normalText: "", souvenirText: "" };
-  }
-
-  const {
-    allowNormal = true,
-    allowSouvenir = true,
-  } = options;
-
-  const normal = [];
-  const souvenir = [];
-
-  for (const e of entries){
-    if (e.isSouvenir) souvenir.push(e);
-    else normal.push(e);
-  }
-
-  let normalText = "";
-  let souvenirText = "";
-
-  if (allowNormal && normal.length){
-    const mins = [];
-    const maxs = [];
-
-    for (const x of normal){
-      if (Number.isFinite(x.min)) mins.push(x.min);
-      if (Number.isFinite(x.max)) maxs.push(x.max);
-    }
-
-    const min = mins.length ? Math.min(...mins) : null;
-    const max = maxs.length ? Math.max(...maxs) : null;
-    normalText = formatRange(min, max);
-  }
-
-  if (allowSouvenir && souvenir.length){
-    const mins = [];
-    const maxs = [];
-
-    for (const x of souvenir){
-      if (Number.isFinite(x.min)) mins.push(x.min);
-      if (Number.isFinite(x.max)) maxs.push(x.max);
-    }
-
-    const min = mins.length ? Math.min(...mins) : null;
-    const max = maxs.length ? Math.max(...maxs) : null;
-    souvenirText = formatRange(min, max);
-  }
-
-  return { normalText, souvenirText };
-}
-
-function computePriceHtml(name, pricesState){
-  if (!pricesState) return { html:"", has:false, sortPrice:0 };
-
-  const cacheKey = normalizePriceName(name);
-  if (pricesState.memo.has(cacheKey)) return pricesState.memo.get(cacheKey);
-
-  const nameHasExterior = hasExterior(name);
-  const nameIsStatTrak = isStatTrakName(name);
-  const nameIsSouvenir = isSouvenirName(name);
-
-  let matched = findPriceMatches(name, pricesState);
-
-  if (nameHasExterior && !nameIsStatTrak) {
-    matched = matched.filter(item => !item.isStatTrak);
-  }
-
-  const { normalText, souvenirText } = buildPriceParts(matched, {
-    allowNormal: !nameIsSouvenir,
-    allowSouvenir: !nameHasExterior || nameIsSouvenir,
-  });
-
-  let html = "";
-  if (!nameIsSouvenir && normalText) {
-    html += escapeHtml(normalText);
-  }
-  if (souvenirText) {
-    html += `<div class="souvenir-price-info">${escapeHtml(souvenirText)}</div>`;
-  }
-
-  const sortText = !nameIsSouvenir
-    ? (normalText || souvenirText || "")
-    : (souvenirText || normalText || "");
-
-  const sortPrice = (() => {
-    const firstNumber = String(sortText).match(/\d+(?:\.\d+)?/);
-    return firstNumber ? Number(firstNumber[0]) : 0;
-  })();
-
-  const result = {
-    html,
-    has: Boolean(normalText || souvenirText),
-    sortPrice,
-  };
-
-  pricesState.memo.set(cacheKey, result);
-  return result;
-}
-
-function formatRange(min, max){
-  const hasMin = Number.isFinite(min);
-  const hasMax = Number.isFinite(max);
-
-  if (hasMin && hasMax) {
-    return min === max
-      ? `${min.toFixed(2)}$`
-      : `${min.toFixed(2)}$ - ${max.toFixed(2)}$`;
-  }
-  if (hasMin) return `${min.toFixed(2)}$`;
-  if (hasMax) return `${max.toFixed(2)}$`;
-  return "";
-}
-
 // ---------------- PLAYER HELPERS ----------------
 function shouldSkipPlayerInventoryItem(item){
   const type = String(item?.type || "").trim().toLowerCase();
@@ -1474,8 +1249,6 @@ function renderSkinBlock({
   weapon,
   skinId,
   skinData,
-  priceHtml,
-  putLoadingClass,
   amount = 1
 }){
   const classes = ["skin"];
@@ -1483,7 +1256,6 @@ function renderSkinBlock({
 
   const classAttr = classes.join(" ");
   const innerIndent = indent + "  ";
-  const priceCls = putLoadingClass ? "skin-price-info loading" : "skin-price-info";
   const img  = skinData.image || "";
   const name = skinData.name || (skinId === "Vanilla" ? "Vanilla" : "");
 
@@ -1496,7 +1268,7 @@ function renderSkinBlock({
   }
 
   lines.push(`${innerIndent}<div class="skin-desc-name">${escapeHtml(name)}</div>`);
-  lines.push(`${innerIndent}<div class="${priceCls}">${priceHtml || ""}</div>`);
+  lines.push(`${innerIndent}<div class="skin-price-info loading"></div>`);
   lines.push(`${indent}</${tag}>`);
 
   return normalizeEntitiesInBlock(lines.join(nl));
@@ -1522,7 +1294,7 @@ function buildRenderItemKey(renderData){
   return `${weapon}:::${skinId}`;
 }
 
-async function buildResolvedInventoryEntries(root, items, pricesState){
+async function buildResolvedInventoryEntries(root, items){
   const aggregatedMap = new Map();
   const regularEntries = [];
 
@@ -1530,20 +1302,11 @@ async function buildResolvedInventoryEntries(root, items, pricesState){
     if (!isRenderableSkinLikeItem(item)) continue;
 
     const renderData = await buildPlayerSkinRenderData(root, item);
-
-    const priceSourceName =
-      renderData?.skinData?.name ||
-      String(item?.market_hash_name || item?.name || "").trim();
-
-    const priceMeta = computePriceHtml(priceSourceName, pricesState);
     const amount = Number(item?.amount || 1) || 1;
 
     const entry = {
       item,
       renderData,
-      priceHtml: priceMeta.html || "",
-      has: Boolean(priceMeta.has),
-      sortPrice: Number(priceMeta.sortPrice || 0),
       categoryRank: getResolvedCategoryRank(renderData),
       rarityRank: rarityRank(renderData?.skinData?.class || ""),
       amount,
@@ -1557,7 +1320,7 @@ async function buildResolvedInventoryEntries(root, items, pricesState){
       if (existing) {
         existing.amount += amount;
 
-        // если у старой записи не было картинки/класса/цены, а у новой есть — дотягиваем
+        // если у старой записи не было картинки/класса, а у новой есть — дотягиваем
         if (!existing.renderData?.skinData?.image && renderData?.skinData?.image) {
           existing.renderData.skinData.image = renderData.skinData.image;
         }
@@ -1565,18 +1328,6 @@ async function buildResolvedInventoryEntries(root, items, pricesState){
         if (!existing.renderData?.skinData?.class && renderData?.skinData?.class) {
           existing.renderData.skinData.class = renderData.skinData.class;
           existing.rarityRank = rarityRank(renderData?.skinData?.class || "");
-        }
-
-        if (!existing.priceHtml && entry.priceHtml) {
-          existing.priceHtml = entry.priceHtml;
-        }
-
-        if (!existing.has && entry.has) {
-          existing.has = true;
-        }
-
-        if (!existing.sortPrice && entry.sortPrice) {
-          existing.sortPrice = entry.sortPrice;
         }
       } else {
         aggregatedMap.set(key, { ...entry });
@@ -1753,32 +1504,24 @@ function getResolvedCategoryRank(renderData){
   return 10; // etc
 }
 
-async function buildInventoryStats(root, items, pricesState){
+async function buildInventoryStats(root, items){
   let totalItems = 0;
-  let totalValue = 0;
 
-  const resolved = await buildResolvedInventoryEntries(root, items, pricesState);
+  const resolved = await buildResolvedInventoryEntries(root, items);
 
   for (const entry of resolved){
     const amount = Number(entry?.amount || 1) || 1;
-    const unitPrice = Number(entry?.sortPrice || 0) || 0;
-
     totalItems += amount;
-    totalValue += (unitPrice * amount);
   }
 
-  return { totalItems, totalValue };
+  return { totalItems, totalValue: "" };
 }
 
-async function buildPlayerSkinsHtml(root, items, pricesState, nl, baseIndent){
+async function buildPlayerSkinsHtml(root, items, nl, baseIndent){
   const indent = baseIndent + "  ";
-  const resolved = await buildResolvedInventoryEntries(root, items, pricesState);
+  const resolved = await buildResolvedInventoryEntries(root, items);
 
   resolved.sort((a, b) => {
-    if (a.sortPrice !== b.sortPrice) {
-      return b.sortPrice - a.sortPrice;
-    }
-
     if (a.rarityRank !== b.rarityRank) {
       return b.rarityRank - a.rarityRank;
     }
@@ -1792,7 +1535,7 @@ async function buildPlayerSkinsHtml(root, items, pricesState, nl, baseIndent){
     return na.localeCompare(nb, "en", { numeric: true, sensitivity: "base" });
   });
 
-  return resolved.map(({ renderData, priceHtml, has, amount }) =>
+  return resolved.map(({ renderData, amount }) =>
     renderSkinBlock({
       tag: "div",
       indent,
@@ -1800,8 +1543,6 @@ async function buildPlayerSkinsHtml(root, items, pricesState, nl, baseIndent){
       weapon: renderData.weapon,
       skinId: renderData.skinId,
       skinData: renderData.skinData,
-      priceHtml,
-      putLoadingClass: !has && !pricesState,
       amount: Number(amount || 1) || 1
     })
   ).join(nl);
@@ -1819,7 +1560,7 @@ function replaceNicknameAndSlug(html, fromNickname, toNickname, fromSlug, toSlug
   return out;
 }
 
-async function fillBoxSkinsListInHtml(root, html, items, pricesState){
+async function fillBoxSkinsListInHtml(root, html, items){
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const masked = maskSegments(html);
   const lists = findAllTagsByClass(masked, "box-skins-list", ["div", "ul", "section"]);
@@ -1834,7 +1575,7 @@ async function fillBoxSkinsListInHtml(root, html, items, pricesState){
     const openAbs = list.openEnd + shift;
     const closeAbs = list.closeStart + shift;
     const baseIndent = indentBefore(out, openAbs, nl);
-    const block = await buildPlayerSkinsHtml(root, items, pricesState, nl, baseIndent);
+    const block = await buildPlayerSkinsHtml(root, items, nl, baseIndent);
 
     const next = joinBlocksNoBlank(out.slice(0, openAbs), block, out.slice(closeAbs), nl);
 
@@ -1849,16 +1590,7 @@ async function fillBoxSkinsListInHtml(root, html, items, pricesState){
 }
 
 function formatInventoryTotal(value, lang = "ru"){
-  const num = Number(value || 0);
-
-  const formatted = new Intl.NumberFormat(
-    lang === "en" ? "en-US" : "ru-RU",
-    {
-      maximumFractionDigits: 0,
-    }
-  ).format(num);
-
-  return `${formatted}$`;
+  return "";
 }
 
 function upsertTopicExtraInfo(html, summaryHtml){
@@ -2094,7 +1826,6 @@ async function generatePlayerPagesForVersion({
   dry,
   verbose,
   players,
-  pricesState,
   templatePath,
   outputDirPath,
   lang,
@@ -2140,10 +1871,8 @@ async function generatePlayerPagesForVersion({
     let html;
 
     if (existsAlready) {
-      // Уже есть страница игрока
       html = await readTextCached(outFile);
     } else {
-      // Страницы ещё нет -> создаём из шаблона
       html = templateHtml;
 
       html = replaceNicknameAndSlug(
@@ -2161,17 +1890,17 @@ async function generatePlayerPagesForVersion({
     );
 
     {
-      const res = await fillBoxSkinsListInHtml(root, html, inventory, pricesState);
+      const res = await fillBoxSkinsListInHtml(root, html, inventory);
       if (res.changed) html = res.html;
     }
 
     {
-      const stats = await buildInventoryStats(root, inventory, pricesState);
+      const stats = await buildInventoryStats(root, inventory);
 
       const labelItems = lang === "en" ? "Total Items" : "Всего Предметов";
       const labelValue = lang === "en" ? "Total Value" : "Общая Стоимость";
 
-      const summaryHtml = `<div class="topic-extra-info">${labelItems}: <span>${escapeHtml(String(stats.totalItems))}</span>, ${labelValue}: <span>${escapeHtml(formatInventoryTotal(stats.totalValue, lang))}</span></div>`;
+      const summaryHtml = `<div class="topic-extra-info">${labelItems}: <span>${escapeHtml(String(stats.totalItems))}</span>, ${labelValue}: <span></span></div>`;
 
       const res = upsertTopicExtraInfo(html, summaryHtml);
       if (res.changed) html = res.html;
@@ -2182,25 +1911,24 @@ async function generatePlayerPagesForVersion({
       if (res.changed) html = res.html;
     }
 
-      let prevHtml = null;
+    let prevHtml = null;
 
-      if (existsAlready) {
-        prevHtml = await readTextCached(outFile);
-      }
+    if (existsAlready) {
+      prevHtml = await readTextCached(outFile);
+    }
 
-      // если файл новый → считаем как created
-      if (!existsAlready) {
+    if (!existsAlready) {
+      if (!dry) await writeTextCached(outFile, html);
+      created++;
+    } else {
+      if (prevHtml !== html) {
         if (!dry) await writeTextCached(outFile, html);
         created++;
       } else {
-        // если уже есть — проверяем, изменился ли реально html
-        if (prevHtml !== html) {
-          if (!dry) await writeTextCached(outFile, html);
-          created++; // можно переименовать в updated, но оставим как есть
-        } else {
-          skipped++; // НИЧЕГО не поменялось
-        }
+        skipped++;
       }
+    }
+
     if (verbose) {
       console.log(`[OK] ${path.relative(root, outFile)} :: generated for ${nickname} (${inventory.length} items)`);
     }
@@ -2211,10 +1939,7 @@ async function generatePlayerPagesForVersion({
 
 // ---------------- MAIN ----------------
 (async function main(){
-  const { root, dry, verbose, prices, templateRu, templateEn, only } = parseArgs(process.argv.slice(2));
-
-  const pricesArr = await loadPrices(root, prices);
-  const pricesState = buildPricesState(pricesArr);
+  const { root, dry, verbose, templateRu, templateEn, only } = parseArgs(process.argv.slice(2));
 
   const allPlayers = await loadPlayersList(root);
   if (!allPlayers.length){
@@ -2240,7 +1965,6 @@ async function generatePlayerPagesForVersion({
     dry,
     verbose,
     players,
-    pricesState,
     templatePath: templateRu,
     outputDirPath: OUTPUT_DIR_RU,
     lang: "ru",
@@ -2251,7 +1975,6 @@ async function generatePlayerPagesForVersion({
     dry,
     verbose,
     players,
-    pricesState,
     templatePath: templateEn,
     outputDirPath: OUTPUT_DIR_EN,
     lang: "en",
