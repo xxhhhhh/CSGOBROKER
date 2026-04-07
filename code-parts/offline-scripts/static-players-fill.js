@@ -1233,13 +1233,28 @@ function hasRenderableInventoryItems(items){
   return items.some(isRenderableSkinLikeItem);
 }
 
+function isPlainVanillaKnife(item){
+  const rawName = String(item?.market_hash_name || item?.name || "").trim();
+  const normalized = normalizeInventoryMarketName(rawName);
+  const type = String(item?.type || "").toLowerCase();
+
+  // уже обычный скин вида "Karambit | Doppler"
+  if (normalized.includes(" | ")) return false;
+
+  // ванильные ножи в инвентаре обычно идут как "★ Karambit"
+  if (/^★\s*/u.test(rawName)) return true;
+  if (type.includes("knife")) return true;
+
+  return false;
+}
+
 function isRenderableSkinLikeItem(item){
   if (shouldSkipPlayerInventoryItem(item)) return false;
 
   const rawName = String(item?.market_hash_name || item?.name || "").trim();
   const normalized = normalizeInventoryMarketName(rawName);
 
-  return normalized.includes(" | ");
+  return normalized.includes(" | ") || isPlainVanillaKnife(item);
 }
 
 function renderSkinBlock({
@@ -1385,12 +1400,16 @@ async function buildPlayerSkinRenderData(root, item){
   let weapon = parsed.weapon || "player-item";
   let resolvedSkinId = resolveDopplerSkinId(item, parsed);
 
+  const isVanillaKnife = isPlainVanillaKnife(item);
+
   const displayName =
     resolvedSkinId && resolvedSkinId !== parsed.skinId
       ? buildResolvedDisplayName(rawMarketName, resolvedSkinId)
       : pickItemName(item);
 
-  let skinId = resolvedSkinId || parsed.skinId || parsed.normalizedName || "item";
+  let skinId = isVanillaKnife
+    ? "Vanilla"
+    : (resolvedSkinId || parsed.skinId || parsed.normalizedName || "item");
 
   if (weapon === "music-kit") {
     const musicKitSkinId = resolveMusicKitSkinId(displayName);

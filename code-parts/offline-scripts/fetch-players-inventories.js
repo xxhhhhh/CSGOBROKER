@@ -117,6 +117,8 @@
 const fs = require("fs/promises");
 const path = require("path");
 
+const __steamProfilePrivacyCache = new Map();
+
 const APP_ID = 730;
 const CONTEXT_ID = 2;
 const LANGUAGE = "english";
@@ -125,6 +127,16 @@ const REQUEST_TIMEOUT_MS = 20000;
 const MAX_FETCH_RETRIES = 4;
 const puppeteer = require('puppeteer-extra');
 const CSFLOAT_CHECKER_URL = "https://csfloat.com/checker";
+
+const PROXY_ENABLED = true;
+
+// Лучше начни с http/https-прокси:
+const PROXY_SCHEME = "http"; // "http" или "socks5"
+const PROXY_HOST = "46.174.108.167";
+const PROXY_PORT = 64558; // для socks5 будет 64559
+const PROXY_USERNAME = "3D5zgyAQ";
+const PROXY_PASSWORD = "3giL9Jp7";
+
 const CSFLOAT_CHECKER_CONCURRENCY = Number(process.env.CSFLOAT_CHECKER_CONCURRENCY || 1) || 1;
 // const CSFLOAT_CHECKER_ENABLED = String(process.env.CSFLOAT_CHECKER_ENABLED || "").trim() === "1";
 const CSFLOAT_CHECKER_ENABLED = "1";
@@ -141,6 +153,11 @@ const PLAYERS_INV_DIR = "code-parts/topics/players-data/players-inventories";
 const LIQUIPEDIA_CS_BASE = "https://liquipedia.net/counterstrike";
 const LIQUIPEDIA_REQUEST_DELAY_MS = 1100;
 const LIQUIPEDIA_TIMEOUT_MS = 20000;
+
+const INVENTORY_UI_INITIAL_DELAY_MS = 2500;
+const INVENTORY_UI_AFTER_SELECT_DELAY_MS = 700;
+const INVENTORY_UI_FIRST_ITEM_TIMEOUT_MS = 9000;
+const INVENTORY_UI_DEFAULT_ITEM_TIMEOUT_MS = 5000;
 
 function parseArgs(argv) {
   const get = (flag) => {
@@ -178,6 +195,32 @@ function parseArgs(argv) {
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function buildChromeProxyArgs() {
+  if (!PROXY_ENABLED) {
+    return [];
+  }
+
+  const args = [
+    `--proxy-server=${PROXY_SCHEME}://${PROXY_HOST}:${PROXY_PORT}`,
+  ];
+
+  // Для SOCKS5 это часто полезно, чтобы DNS тоже шёл через прокси
+  if (PROXY_SCHEME === "socks5") {
+    args.push(`--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE ${PROXY_HOST}`);
+  }
+
+  return args;
+}
+
+async function applyProxyAuth(page) {
+  if (!PROXY_ENABLED) return;
+
+  await page.authenticate({
+    username: PROXY_USERNAME,
+    password: PROXY_PASSWORD,
+  });
 }
 
 function safeSlug(input) {
@@ -604,42 +647,6 @@ async function fetchJson(url) {
   }
 }
 
-async function fetchText(url, extraHeaders = {}, timeoutMs = REQUEST_TIMEOUT_MS) {
-  const { signal, clear } = withTimeoutSignal(timeoutMs);
-
-  try {
-    const res = await fetch(url, {
-      headers: {
-        "User-Agent": "Mozilla/5.0 (compatible; CS2InventoryFetcher/1.2; +https://example.local)",
-        "Accept": "text/html, text/plain, */*",
-        "Cache-Control": "no-cache",
-        "Pragma": "no-cache",
-        ...extraHeaders,
-      },
-      signal,
-    });
-
-    const text = await res.text();
-
-    return {
-      ok: res.ok,
-      status: res.status,
-      text,
-      networkError: false,
-    };
-  } catch (err) {
-    return {
-      ok: false,
-      status: 0,
-      text: "",
-      networkError: true,
-      errorMessage: err?.name === "AbortError" ? "Request timeout" : String(err?.message || err),
-    };
-  } finally {
-    clear();
-  }
-}
-
 function isValidGeneratedInspectLink(link) {
   const value = normalizeInspectLink(link);
   if (!value) return false;
@@ -709,11 +716,21 @@ function decodeJsEscapes(input) {
 }
 
 function isInspectableMarketItem(item) {
-  const type = String(item?.type || "").toLowerCase();
-  const name = String(item?.market_hash_name || item?.name || "").toLowerCase();
+  const type = String(item?.type || "").toLowerCase().trim();
+  const name = String(item?.market_hash_name || item?.name || "").toLowerCase().trim();
+
+  const blockedExactTypes = new Set([
+    "base grade container",
+    "extraordinary collectible",
+  ]);
+
+  if (blockedExactTypes.has(type)) {
+    return false;
+  }
 
   const blocked = [
     "case",
+    "container",
     "capsule",
     "package",
     "pass",
@@ -730,6 +747,10 @@ function isInspectableMarketItem(item) {
     "gift",
     "collectible",
     "coin",
+    "medal",
+    "trophy",
+    "pin",
+    "viewer pass",
   ];
 
   if (blocked.some((x) => type.includes(x) || name.includes(x))) {
@@ -876,7 +897,11 @@ async function getSharedCsfloatBrowser() {
   __csfloatBrowser = await puppeteer.launch({
     headless: true,
     executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      ...buildChromeProxyArgs(),
+    ],
     defaultViewport: { width: 1600, height: 1200 },
   });
 
@@ -890,6 +915,8 @@ async function getSharedCsfloatWarmPage() {
 
   const browser = await getSharedCsfloatBrowser();
   const page = await browser.newPage();
+
+  await applyProxyAuth(page);
 
   await page.setViewport({ width: 1600, height: 1200 });
   await page.setUserAgent(
@@ -926,6 +953,135 @@ async function closeSharedCsfloatBrowser() {
   __csfloatBrowser = null;
 }
 
+let __liquipediaBrowser = null;
+
+async function getSharedLiquipediaBrowser() {
+  if (__liquipediaBrowser) return __liquipediaBrowser;
+
+  __liquipediaBrowser = await puppeteer.launch({
+    headless: true,
+    executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      ...buildChromeProxyArgs(),
+    ],
+    defaultViewport: { width: 1400, height: 1000 },
+  });
+
+  return __liquipediaBrowser;
+}
+
+async function closeSharedLiquipediaBrowser() {
+  try {
+    if (__liquipediaBrowser) {
+      await __liquipediaBrowser.close();
+    }
+  } catch {}
+
+  __liquipediaBrowser = null;
+}
+
+async function fetchTextViaBrowser(url, { verbose = false, timeoutMs = REQUEST_TIMEOUT_MS } = {}) {
+  let page = null;
+
+  try {
+    const browser = await getSharedLiquipediaBrowser();
+    page = await browser.newPage();
+
+    await applyProxyAuth(page);
+
+    await page.setViewport({ width: 1400, height: 1000 });
+    await page.setUserAgent(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+    );
+
+    const response = await page.goto(url, {
+      waitUntil: "domcontentloaded",
+      timeout: timeoutMs,
+    });
+
+    const text = await page.evaluate(() => document.documentElement.outerHTML || document.body?.innerText || "");
+
+    return {
+      ok: Boolean(response?.ok?.()),
+      status: response?.status?.() || 0,
+      text,
+      networkError: false,
+      via: "browser",
+    };
+  } catch (err) {
+    if (verbose) {
+      console.log(`[BROWSER FETCH FAIL] ${url} :: ${err?.message || err}`);
+    }
+
+    return {
+      ok: false,
+      status: 0,
+      text: "",
+      networkError: true,
+      errorMessage: `${err?.name || "Error"}: ${String(err?.message || err)}`,
+      via: "browser",
+    };
+  } finally {
+    if (page) {
+      try {
+        await page.close();
+      } catch {}
+    }
+  }
+}
+
+async function fetchLiquipediaRawViaBrowser(pageTitle, { verbose = false } = {}) {
+  let page = null;
+
+  try {
+    const browser = await getSharedLiquipediaBrowser();
+    page = await browser.newPage();
+
+    await applyProxyAuth(page);
+
+    await page.setViewport({ width: 1400, height: 1000 });
+    await page.setUserAgent(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+    );
+
+    const url = `${LIQUIPEDIA_CS_BASE}/${encodeWikiTitle(pageTitle)}?action=raw`;
+
+    const response = await page.goto(url, {
+      waitUntil: "domcontentloaded",
+      timeout: LIQUIPEDIA_TIMEOUT_MS,
+    });
+
+    const text = await page.evaluate(() => document.body?.innerText || "");
+
+    return {
+      ok: Boolean(response?.ok?.()),
+      status: response?.status?.() || 0,
+      text,
+      networkError: false,
+      url,
+      via: "browser",
+    };
+  } catch (err) {
+    return {
+      ok: false,
+      status: 0,
+      text: "",
+      networkError: true,
+      errorMessage: `${err?.name || "Error"}: ${String(err?.message || err)}`,
+      url: `${LIQUIPEDIA_CS_BASE}/${encodeWikiTitle(pageTitle)}?action=raw`,
+      via: "browser",
+    };
+  } finally {
+    if (page) {
+      try {
+        await page.close();
+      } catch {}
+    }
+  }
+}
+
 function toNumberOrNull(value) {
   const n = Number(value);
   return Number.isFinite(n) ? n : null;
@@ -949,6 +1105,9 @@ async function fetchInspectDataViaCsfloatChecker(inspectLink, { verbose = false 
     const warmPage = await getSharedCsfloatWarmPage();
 
     page = await warmPage.browser().newPage();
+
+    await applyProxyAuth(page);
+
     await page.setViewport({ width: 1600, height: 1200 });
     await page.setUserAgent(
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
@@ -1356,13 +1515,27 @@ async function fetchJsonWithRetry(url, { verbose = false, noRetries = false } = 
 
 function getRetryDelayMs(status, attempt) {
   if (status === 429) {
-    return 10000 * attempt + Math.floor(Math.random() * 2000);
+    return 35000 * attempt + Math.floor(Math.random() * 1500);
   }
 
   return 1200 * attempt + Math.floor(Math.random() * 500);
 }
 
 async function fetchFullInventory(steamid64, { verbose = false, noRetries = false } = {}) {
+  const profilePrivacy = await checkSteamProfilePrivacy(steamid64, { verbose });
+
+  if (profilePrivacy.known && profilePrivacy.isPrivate) {
+    return {
+      ok: false,
+      status: 403,
+      error: profilePrivacy.reason || "Steam profile is private",
+      isPrivate: true,
+      pages: 0,
+      assets: [],
+      descriptions: [],
+    };
+  }
+
   let startAssetId = null;
   let page = 0;
 
@@ -1376,11 +1549,24 @@ async function fetchFullInventory(steamid64, { verbose = false, noRetries = fals
     page++;
 
     if (!res.ok || !res.json) {
+      const privateFlag = isDefinitelyPrivateInventoryResponse(res);
+
       return {
         ok: false,
         status: res.status,
-        error: res.networkError ? (res.errorMessage || "Network error") : `HTTP ${res.status}`,
-        isPrivate: false,
+        error: privateFlag
+          ? (
+              res.json?.Error ||
+              res.json?.error ||
+              res.json?.message ||
+              `HTTP ${res.status} (inventory private or unavailable)`
+            )
+          : (
+              res.networkError
+                ? (res.errorMessage || "Network error")
+                : `HTTP ${res.status}`
+            ),
+        isPrivate: privateFlag,
         pages: page,
         assets: [],
         descriptions: [],
@@ -1726,28 +1912,24 @@ function extractHtmlInfoboxCell(html, label) {
 }
 
 async function fetchLiquipediaRawPage(pageTitle, { verbose = false } = {}) {
-  const url = `${LIQUIPEDIA_CS_BASE}/${encodeWikiTitle(pageTitle)}?action=raw`;
-  const res = await fetchText(url, {}, LIQUIPEDIA_TIMEOUT_MS);
+  const res = await fetchLiquipediaRawViaBrowser(pageTitle, { verbose });
 
   if (verbose) {
     console.log(
-      `[LIQUIPEDIA RAW] ${pageTitle} -> ${res.status || "ERR"}${res.errorMessage ? ` :: ${res.errorMessage}` : ""}`
+      `[LIQUIPEDIA RAW] ${pageTitle} -> ${res.status || "ERR"}${res.errorMessage ? ` :: ${res.errorMessage}` : ""} :: via=browser`
     );
   }
 
-  return {
-    ...res,
-    url,
-  };
+  return res;
 }
 
 async function fetchLiquipediaHtmlPage(pageTitle, { verbose = false } = {}) {
   const url = `${LIQUIPEDIA_CS_BASE}/${encodeWikiTitle(pageTitle)}`;
-  const res = await fetchText(url, {}, LIQUIPEDIA_TIMEOUT_MS);
+  const res = await fetchTextViaBrowser(url, { verbose, timeoutMs: LIQUIPEDIA_TIMEOUT_MS });
 
   if (verbose) {
     console.log(
-      `[LIQUIPEDIA HTML] ${pageTitle} -> ${res.status || "ERR"}${res.errorMessage ? ` :: ${res.errorMessage}` : ""}`
+      `[LIQUIPEDIA HTML] ${pageTitle} -> ${res.status || "ERR"}${res.errorMessage ? ` :: ${res.errorMessage}` : ""} :: via=browser`
     );
   }
 
@@ -2329,9 +2511,139 @@ async function buildTeamsDocument(players, root, { verbose = false, existingTeam
 // Inventory documents
 // ============================================================================
 
+async function fetchTextDirect(url, extraHeaders = {}, timeoutMs = REQUEST_TIMEOUT_MS) {
+  const { signal, clear } = withTimeoutSignal(timeoutMs);
+
+  try {
+    const res = await fetch(url, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (compatible; CS2InventoryFetcher/1.2; +https://example.local)",
+        "Accept": "text/html, text/plain, */*",
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache",
+        ...extraHeaders,
+      },
+      signal,
+    });
+
+    const text = await res.text();
+
+    return {
+      ok: res.ok,
+      status: res.status,
+      text,
+      networkError: false,
+    };
+  } catch (err) {
+    return {
+      ok: false,
+      status: 0,
+      text: "",
+      networkError: true,
+      errorMessage:
+        err?.name === "AbortError"
+          ? "Request timeout"
+          : `${err?.name || "Error"}: ${String(err?.message || err)}`,
+      cause: err?.cause ? String(err.cause) : "",
+    };
+  } finally {
+    clear();
+  }
+}
+
+function parseSteamProfilePrivacyFromXml(xmlText) {
+  const xml = String(xmlText || "");
+  if (!xml) {
+    return {
+      known: false,
+      isPrivate: false,
+      reason: "",
+    };
+  }
+
+  const privacyState =
+    xml.match(/<privacyState><!\[CDATA\[([^\]]+)\]\]><\/privacyState>/i)?.[1] ||
+    xml.match(/<privacyState>([^<]+)<\/privacyState>/i)?.[1] ||
+    "";
+
+  const visibilityState =
+    xml.match(/<visibilityState><!\[CDATA\[([^\]]+)\]\]><\/visibilityState>/i)?.[1] ||
+    xml.match(/<visibilityState>([^<]+)<\/visibilityState>/i)?.[1] ||
+    "";
+
+  const hasPrivateMarker =
+    /<privacyState><!\[CDATA\[private\]\]><\/privacyState>/i.test(xml) ||
+    /<privacyState>private<\/privacyState>/i.test(xml);
+
+  const isPrivate =
+    hasPrivateMarker ||
+    String(privacyState).trim().toLowerCase() === "private";
+
+  const known = Boolean(privacyState || visibilityState || hasPrivateMarker);
+
+  return {
+    known,
+    isPrivate,
+    reason: isPrivate
+      ? `Steam profile is private${privacyState ? ` (${privacyState})` : ""}`
+      : "",
+    privacyState: String(privacyState || "").trim(),
+    visibilityState: String(visibilityState || "").trim(),
+  };
+}
+
+async function checkSteamProfilePrivacy(steamid64, { verbose = false } = {}) {
+  const key = String(steamid64 || "").trim();
+  if (!key) {
+    return {
+      known: false,
+      isPrivate: false,
+      reason: "Missing steamid64",
+      source: "none",
+    };
+  }
+
+  if (__steamProfilePrivacyCache.has(key)) {
+    return __steamProfilePrivacyCache.get(key);
+  }
+
+  const xmlUrl = `https://steamcommunity.com/profiles/${key}/?xml=1`;
+  const res = await fetchTextDirect(xmlUrl, {}, REQUEST_TIMEOUT_MS);
+
+  let result = {
+    known: false,
+    isPrivate: false,
+    reason: "",
+    source: "xml",
+    status: res.status || 0,
+  };
+
+  if (res.ok && res.text) {
+    const parsed = parseSteamProfilePrivacyFromXml(res.text);
+
+    result = {
+      ...result,
+      known: parsed.known,
+      isPrivate: parsed.isPrivate,
+      reason: parsed.reason,
+      privacyState: parsed.privacyState || "",
+      visibilityState: parsed.visibilityState || "",
+    };
+  }
+
+  if (verbose) {
+    console.log(
+      `[PROFILE PRIVACY] ${steamid64} :: status=${result.status || "ERR"}, known=${result.known}, private=${result.isPrivate}, privacyState=${result.privacyState || "-"}, visibilityState=${result.visibilityState || "-"}`
+    );
+  }
+
+  __steamProfilePrivacyCache.set(key, result);
+  return result;
+}
+
 async function resolveSteamInventoryPageUrl(steamid64) {
   const url = `https://steamcommunity.com/profiles/${steamid64}/?xml=1`;
-  const res = await fetchText(url, {}, REQUEST_TIMEOUT_MS);
+  const res = await fetchTextDirect(url, {}, REQUEST_TIMEOUT_MS);
 
   if (res.ok && res.text) {
     const customUrlMatch = res.text.match(/<customURL><!\[CDATA\[([^\]]+)\]\]><\/customURL>/i);
@@ -2355,22 +2667,41 @@ async function getInventoryAssetAnchors(page) {
 }
 
 async function selectInventoryAssetByHash(page, hash) {
-  return await page.evaluate((hash) => {
+  return await page.evaluate(async (hash) => {
     if (!hash || !/^#730_2_\d+$/.test(hash)) {
       return { ok: false, reason: "bad_hash" };
     }
 
-    try {
-      window.location.hash = hash;
+    const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-      try {
-        window.dispatchEvent(new HashChangeEvent("hashchange"));
-      } catch {}
+    try {
+      const anchor = document.querySelector(`a[href="${hash}"]`);
+
+      if (anchor) {
+        anchor.scrollIntoView({ block: "center", inline: "center" });
+
+        anchor.dispatchEvent(new MouseEvent("mouseover", { bubbles: true, cancelable: true, view: window }));
+        anchor.dispatchEvent(new MouseEvent("mousedown", { bubbles: true, cancelable: true, view: window }));
+        anchor.dispatchEvent(new MouseEvent("mouseup", { bubbles: true, cancelable: true, view: window }));
+        anchor.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, view: window }));
+      }
+
+      const prevHash = String(window.location.hash || "").trim();
+
+      if (prevHash !== hash) {
+        window.location.hash = hash;
+
+        try {
+          window.dispatchEvent(new HashChangeEvent("hashchange"));
+        } catch {}
+      }
+
+      await wait(150);
 
       return {
         ok: true,
-        reason: "hash_set",
-        hash: window.location.hash,
+        reason: anchor ? "anchor_click+hash_set" : "hash_set",
+        hash: String(window.location.hash || "").trim(),
       };
     } catch (err) {
       return {
@@ -2381,37 +2712,84 @@ async function selectInventoryAssetByHash(page, hash) {
   }, hash);
 }
 
-async function waitForInventoryPanelUpdate(page, previousTitle = "", timeoutMs = 4000) {
+async function waitForInventoryPanelUpdate(page, targetHash = "", timeoutMs = 5000) {
   const started = Date.now();
 
   while (Date.now() - started < timeoutMs) {
     try {
-      const panel = await readInventoryRightPanel(page);
+      const state = await page.evaluate((targetHash) => {
+        const panel =
+          document.querySelector(".inventory_iteminfo") ||
+          document.getElementById("iteminfo0") ||
+          document.querySelector("[class*='iteminfo']");
 
-      const title = String(panel?.title || "").trim();
-      const inspectLink = String(panel?.inspectLink || "").trim();
+        const title =
+          panel?.querySelector(".item_desc_name")?.textContent?.trim() ||
+          panel?.querySelector("#iteminfo0_item_name")?.textContent?.trim() ||
+          "";
 
-      const titleChanged = title && title !== previousTitle;
-      const inspectReady = inspectLink && isValidGeneratedInspectLink(inspectLink);
+        const inspectAnchor = panel
+          ? Array.from(panel.querySelectorAll("a[href], button")).find((el) => {
+              const href = String(el.getAttribute?.("href") || el.href || "").trim();
+              const text = String(el.textContent || "").trim();
+              return href.includes("csgo_econ_action_preview") || /inspect|osмотреть|осмотреть/i.test(text);
+            })
+          : null;
 
-      if (titleChanged || inspectReady) {
+        const inspectLink = String(
+          inspectAnchor?.getAttribute?.("href") ||
+          inspectAnchor?.href ||
+          ""
+        ).trim();
+
+        const activeAnchor = targetHash
+          ? document.querySelector(`a[href="${targetHash}"]`)
+          : null;
+
+        const activeClass = activeAnchor
+          ? String(activeAnchor.className || "").toLowerCase()
+          : "";
+
         return {
-          ok: true,
+          currentHash: String(window.location.hash || "").trim(),
           title,
           inspectLink,
+          hasPanel: Boolean(panel),
+          hasActiveAnchor: Boolean(activeAnchor),
+          activeLooksSelected:
+            activeClass.includes("active") ||
+            activeClass.includes("selected"),
         };
+      }, targetHash);
+
+      const inspectReady =
+        state.inspectLink && isValidGeneratedInspectLink(state.inspectLink);
+
+      if (inspectReady) {
+        return {
+          ok: true,
+          title: state.title || "",
+          inspectLink: state.inspectLink,
+        };
+      }
+
+      if (
+        targetHash &&
+        state.currentHash === targetHash &&
+        state.hasPanel &&
+        state.hasActiveAnchor
+      ) {
+        // панель активна, но inspect ещё дорисовывается
       }
     } catch (err) {
       const msg = String(err?.message || err);
-
-      // Для hash-навигации иногда Puppeteer кратко теряет execution context
       if (/Execution context was destroyed/i.test(msg)) {
         await sleep(150);
         continue;
       }
     }
 
-    await sleep(150);
+    await sleep(300);
   }
 
   return {
@@ -2623,6 +3001,114 @@ async function goToNextInventoryPage(page, { verbose = false, logLabel = "" } = 
   return false;
 }
 
+async function waitForSteamInventoryReady(page, {
+  timeoutMs = 30000,
+  verbose = false,
+  logLabel = "",
+} = {}) {
+  const started = Date.now();
+
+  while (Date.now() - started < timeoutMs) {
+    try {
+      const state = await page.evaluate(() => {
+        const anchors = Array.from(document.querySelectorAll('a[href^="#730_2_"]'));
+        const bodyText = document.body?.innerText || "";
+
+        const inventoryRoot =
+          document.querySelector("#inventories") ||
+          document.querySelector(".inventory_page") ||
+          document.querySelector(".games_list_tabs") ||
+          document.querySelector("#inventory_page");
+
+        const hasErrorText =
+          /inventory unavailable|this inventory is not available|private profile|error/i.test(bodyText);
+
+        const hasSteamInventoryGlobals =
+          typeof window.g_rgAppContextData !== "undefined" ||
+          typeof window.UserYou !== "undefined" ||
+          typeof window.CInventory !== "undefined";
+
+        return {
+          anchorsCount: anchors.length,
+          hasInventoryRoot: Boolean(inventoryRoot),
+          hasSteamInventoryGlobals,
+          hasErrorText,
+          url: location.href,
+          readyState: document.readyState,
+        };
+      });
+
+      if (verbose) {
+        console.log(
+          `[INVENTORY UI READY CHECK] ${logLabel} :: anchors=${state.anchorsCount}, root=${state.hasInventoryRoot}, globals=${state.hasSteamInventoryGlobals}, readyState=${state.readyState}`
+        );
+      }
+
+      if (state.anchorsCount > 0) {
+        return { ok: true, reason: "anchors_ready" };
+      }
+
+      if (state.hasErrorText) {
+        return { ok: false, reason: "inventory_error_text" };
+      }
+
+      await sleep(500);
+    } catch (err) {
+      const msg = String(err?.message || err);
+      if (/Execution context was destroyed/i.test(msg)) {
+        await sleep(250);
+        continue;
+      }
+      await sleep(500);
+    }
+  }
+
+  return { ok: false, reason: "timeout_waiting_inventory_items" };
+}
+
+async function openSteamInventoryPage(page, inventoryUrl, { verbose = false, logLabel = "" } = {}) {
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      await page.goto(inventoryUrl, {
+        waitUntil: "domcontentloaded",
+        timeout: 60000,
+      });
+
+      await sleep(2500);
+
+      const ready = await waitForSteamInventoryReady(page, {
+        timeoutMs: 20000,
+        verbose,
+        logLabel,
+      });
+
+      if (ready.ok) {
+        if (verbose) {
+          console.log(`[INVENTORY UI OPEN OK] ${logLabel} :: attempt=${attempt}`);
+        }
+        return true;
+      }
+
+      if (verbose) {
+        console.log(`[INVENTORY UI OPEN MISS] ${logLabel} :: attempt=${attempt}, reason=${ready.reason}`);
+      }
+    } catch (err) {
+      if (verbose) {
+        console.log(`[INVENTORY UI OPEN FAIL] ${logLabel} :: attempt=${attempt}, err=${err?.message || err}`);
+      }
+    }
+
+    if (attempt < 3) {
+      await sleep(2500 * attempt);
+      try {
+        await page.reload({ waitUntil: "domcontentloaded", timeout: 60000 });
+      } catch {}
+    }
+  }
+
+  return false;
+}
+
 async function attachInspectLinksFromSteamInventoryUi(player, rawItems, { verbose = false } = {}) {
   const steamid64 = String(player?.steamid64 || "").trim();
   const logLabel = getPlayerLogLabel(player, steamid64);
@@ -2650,22 +3136,32 @@ async function attachInspectLinksFromSteamInventoryUi(player, rawItems, { verbos
       browser = await puppeteer.launch({
         headless: true,
         executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-        args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        args: [
+          "--no-sandbox",
+          "--disable-setuid-sandbox",
+          ...buildChromeProxyArgs(),
+        ],
         defaultViewport: { width: 1600, height: 1200 },
       });
 
     page = await browser.newPage();
+    await applyProxyAuth(page);
     await page.setViewport({ width: 1600, height: 1200 });
     await page.setUserAgent(
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
     );
 
-    await page.goto(inventoryUrl, {
-      waitUntil: "domcontentloaded",
-      timeout: 60000,
+    const opened = await openSteamInventoryPage(page, inventoryUrl, {
+      verbose,
+      logLabel,
     });
 
-    await page.waitForSelector('a[href^="#730_2_"]', { timeout: 15000 });
+    if (!opened) {
+      if (verbose) {
+        console.log(`[INVENTORY UI RESOLVER FAIL] ${logLabel} :: inventory items did not render`);
+      }
+      return rawItems;
+    }
 
     const byAssetId = new Map();
     const seenHashes = new Set();
@@ -2701,6 +3197,13 @@ async function attachInspectLinksFromSteamInventoryUi(player, rawItems, { verbos
           continue;
         }
 
+        const assetIdMatch = hash.match(/^#730_2_(\d+)$/);
+        const assetid = assetIdMatch ? assetIdMatch[1] : "";
+
+        if (!assetid || !neededAssetIds.has(assetid)) {
+          continue;
+        }
+
         seenHashes.add(hash);
 
         let before = { title: "", inspectLink: "" };
@@ -2721,7 +3224,7 @@ async function attachInspectLinksFromSteamInventoryUi(player, rawItems, { verbos
           console.log(`[INVENTORY UI SELECT] ${logLabel} :: hash=${hash}`);
         }
 
-        const resolved = await waitForInventoryPanelUpdate(page, before.title, 4500);
+        const resolved = await waitForInventoryPanelUpdate(page, hash, 3000);
 
         if (!resolved.ok) {
           if (verbose) {
@@ -2732,13 +3235,6 @@ async function attachInspectLinksFromSteamInventoryUi(player, rawItems, { verbos
 
         const title = String(resolved.title || "").trim();
         const inspectLink = normalizeInspectLink(String(resolved.inspectLink || "").trim());
-
-        const assetIdMatch = hash.match(/^#730_2_(\d+)$/);
-        const assetid = assetIdMatch ? assetIdMatch[1] : "";
-
-        if (!assetid || !neededAssetIds.has(assetid)) {
-          continue;
-        }
 
         if (verbose) {
           console.log(
@@ -2780,7 +3276,7 @@ async function attachInspectLinksFromSteamInventoryUi(player, rawItems, { verbos
           break;
         }
 
-        await sleep(1500);
+        await sleep(1800);
       }
 
     for (const item of rawItems) {
@@ -2796,6 +3292,49 @@ async function attachInspectLinksFromSteamInventoryUi(player, rawItems, { verbos
 
       if (byAssetId.has(assetid)) {
         item.inspectLink = byAssetId.get(assetid) || "";
+      }
+    }
+
+    // ==========================
+    // SECOND PASS (retry unresolved)
+    // ==========================
+    const unresolved = rawItems.filter((item) => {
+      if (!isInspectableMarketItem(item)) return false;
+
+      const inspectLink = String(item?.inspectLink || "").trim();
+      return !inspectLink || !isValidGeneratedInspectLink(inspectLink);
+    });
+
+    if (unresolved.length) {
+      if (verbose) {
+        console.log(`[INVENTORY UI RETRY PASS] ${logLabel} :: unresolved=${unresolved.length}`);
+      }
+
+      for (const item of unresolved) {
+        const assetid = String(item?.assetid || "").trim();
+        if (!assetid) continue;
+
+        const hash = `#730_2_${assetid}`;
+        if (!/^#730_2_\d+$/.test(hash)) continue;
+
+        const selected = await selectInventoryAssetByHash(page, hash);
+        if (!selected?.ok) continue;
+
+        await sleep(600);
+
+        const resolved = await waitForInventoryPanelUpdate(page, hash, 6000);
+        const inspectLink = normalizeInspectLink(String(resolved.inspectLink || "").trim());
+
+        if (inspectLink && isValidGeneratedInspectLink(inspectLink)) {
+          item.inspectLink = inspectLink;
+          byAssetId.set(assetid, inspectLink);
+
+        if (verbose) {
+          console.log(`[INVENTORY UI RETRY SELECT] ${logLabel} :: assetid=${assetid}, reason=${selected?.reason || "-"}`);
+        }
+        } else if (verbose) {
+          console.log(`[INVENTORY UI RETRY MISS] ${logLabel} :: assetid=${assetid}`);
+        }
       }
     }
 
@@ -3461,6 +4000,7 @@ async function main() {
   }
 
   await closeSharedCsfloatBrowser();
+  await closeSharedLiquipediaBrowser();
 
   console.log(`\nDone. Players: ${playersListOutput.length}, success: ${successCount}, failed: ${failedCount}`);
   console.log(`Players list written: ${playersListFile}`);
@@ -3469,6 +4009,7 @@ async function main() {
 
 main().catch(async (err) => {
   await closeSharedCsfloatBrowser();
+  await closeSharedLiquipediaBrowser();
   console.error("[FATAL]", err);
   process.exit(1);
 });

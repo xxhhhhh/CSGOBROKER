@@ -11,14 +11,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/84cd6984-6582-483e-bedb-4ea8366c67fb",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-06T12:47:40.346Z",
+  "updatedAt": "2026-04-07T20:29:15.394Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
   "pagesFetched": 1,
-  "totalItemsRaw": 171,
-  "totalItemsGrouped": 159,
+  "totalItemsRaw": 174,
+  "totalItemsGrouped": 161,
   "items": [
     {
       "assetid": "42130180612",
@@ -86,6 +86,41 @@
       "float": 0.032076157629,
       "seed": 686,
       "phase": "Phase 4"
+    },
+    {
+      "assetid": "50677611047",
+      "classid": "7993045582",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202F3F88DBD4CB932E37D32C0FB02C07291F2C17FBA1A2C82C6FC62E47A42E5F2BF2BC4257",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.027743972838,
+      "seed": 233,
+      "phase": "Ruby"
     },
     {
       "assetid": "50101830591",
@@ -458,6 +493,62 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50678020888",
+      "classid": "7993037606",
+      "instanceid": "7883635765",
+      "amount": 1,
+      "name": "AK-47 | Redline",
+      "market_hash_name": "AK-47 | Redline (Minimal Wear)",
+      "type": "Classified Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242CAA4C6B7EE534A5572C8507A5762566AFDA1C2A25112A45130575A5242845330575A5342845330575A5042845330575A51428453304B5A5142B4194F46FC156D7F525222106F9D49006C1752E6E66F3ADC532256F053445A52424F6F11516A1317FBAABF6C1F9EE12C1202AB3D10AB8706",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1430,7 +1521,7 @@
       "assetid": "49023618439",
       "classid": "7729107948",
       "instanceid": "188530139",
-      "amount": 1,
+      "amount": 2,
       "name": "Sticker | Brollan (Holo) | Budapest 2025",
       "market_hash_name": "Sticker | Brollan (Holo) | Budapest 2025",
       "type": "Exotic Sticker",
@@ -1470,7 +1561,8 @@
         }
       ],
       "assetids": [
-        "49023618439"
+        "49023618439",
+        "50678020917"
       ]
     },
     {
@@ -5390,7 +5482,7 @@
     {
       "assetid": "41458606902",
       "classid": "7993040767",
-      "instanceid": "6518517314",
+      "instanceid": "8352659581",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Neon Rider",
       "market_hash_name": "StatTrak™ MAC-10 | Neon Rider (Factory New)",

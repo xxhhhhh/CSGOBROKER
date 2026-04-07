@@ -16,7 +16,7 @@ on:
       shard_total:
         description: "How many shards to use for inventory fetch (1-6)"
         required: false
-        default: "6"
+        default: "2"
         type: string
       max_parallel:
         description: "Max parallel shard jobs"
@@ -26,7 +26,7 @@ on:
       delay_ms:
         description: "Delay between players"
         required: false
-        default: "5000"
+        default: "3000"
         type: string
       use_browser_fallback:
         description: "Enable Steam UI fallback with Puppeteer"
