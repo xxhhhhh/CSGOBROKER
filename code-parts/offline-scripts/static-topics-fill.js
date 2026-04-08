@@ -1,7 +1,7 @@
 // ============================================================================
-// File: scripts/static-skins-fill.js
+// File: scripts/static-topics-fill.js
 // Usage:
-//   node scripts/static-skins-fill.js \
+//   node scripts/static-topics-fill.js \
 //     [--root path] [--dry-run] [--verbose] \
 //     [--prices pathOrUrl] [--paths "/topic,/ru/topic"]
 // Features:
@@ -2805,7 +2805,10 @@ await mapLimit(files, CONCURRENCY, async (file) => {
       if (res.changed) html = res.html;
     }
 
-
+    if (isItemsOrRelatedPage){
+      const res = await processItemsNavStaticFill({ root, file, html, verbose });
+      if (res.changed) html = res.html;
+    }
 
     processedHtmlByFile.set(file, {
       origHtml,

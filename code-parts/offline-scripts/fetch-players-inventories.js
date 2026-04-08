@@ -313,30 +313,11 @@ function extractCurrentTeamFromTeamHistoryRaw(raw) {
     };
   }
 
-  const cs2HeaderMatch = text.match(/'''Counter-Strike 2'''/i);
-  if (!cs2HeaderMatch) {
-    return {
-      teamName: "",
-      teamLiquipediaUrl: "",
-      teamLiquipediaSlug: "",
-    };
-  }
-
-  const startIndex = cs2HeaderMatch.index;
-  const afterCs2 = text.slice(startIndex);
-
-  const endCandidates = [
-    afterCs2.indexOf("\n|"),
-    afterCs2.indexOf("\n}}"),
-    afterCs2.indexOf("\r\n|"),
-    afterCs2.indexOf("\r\n}}"),
-  ].filter((i) => i > 0);
-
-  const endIndex = endCandidates.length ? Math.min(...endCandidates) : afterCs2.length;
-  const cs2Section = afterCs2.slice(0, endIndex);
+  const teamHistoryField = extractWikitextField(text, "team_history");
+  const source = teamHistoryField || text;
 
   const thRegex = /\{\{TH\|([^}]*)\}\}/gi;
-  const matches = [...cs2Section.matchAll(thRegex)];
+  const matches = [...source.matchAll(thRegex)];
 
   if (!matches.length) {
     return {
@@ -350,6 +331,7 @@ function extractCurrentTeamFromTeamHistoryRaw(raw) {
     .map((m) => {
       const full = m[1] || "";
       const parts = full.split("|").map((s) => String(s || "").trim());
+
       return {
         raw: full,
         datePart: parts[0] || "",
@@ -367,10 +349,20 @@ function extractCurrentTeamFromTeamHistoryRaw(raw) {
     };
   }
 
+  // Берём ТОЛЬКО текущую команду, если в датах есть Present
   const presentRows = parsed.filter((x) => /present/i.test(x.datePart));
-  const selected = (presentRows.length ? presentRows : parsed)[(presentRows.length ? presentRows : parsed).length - 1];
 
+  if (!presentRows.length) {
+    return {
+      teamName: "",
+      teamLiquipediaUrl: "",
+      teamLiquipediaSlug: "",
+    };
+  }
+
+  const selected = presentRows[presentRows.length - 1];
   const cleanedTeam = cleanWikitextValue(selected.teamPart).trim();
+
   if (!cleanedTeam) {
     return {
       teamName: "",
@@ -383,6 +375,85 @@ function extractCurrentTeamFromTeamHistoryRaw(raw) {
     teamName: cleanedTeam,
     teamLiquipediaUrl: `${LIQUIPEDIA_CS_BASE}/${encodeWikiTitle(cleanedTeam)}`,
     teamLiquipediaSlug: cleanedTeam.replace(/ /g, "_"),
+  };
+}
+
+function extractStatusFromRaw(raw) {
+  return normalizeWhitespace(
+    cleanWikitextValue(extractWikitextField(raw, "status"))
+  );
+}
+
+function extractYearsActiveFromRaw(raw) {
+  return normalizeWhitespace(
+    cleanWikitextValue(extractWikitextField(raw, "years_active"))
+  );
+}
+
+function isSpecialPlayerTeamLabel(team) {
+  const value = String(team || "").trim().toLowerCase();
+  return (
+    value === "free agent" ||
+    value === "content creator" ||
+    value === "retired"
+  );
+}
+
+function resolveLiquipediaPlayerTeamState(raw) {
+  const historyTeamLink = extractCurrentTeamFromTeamHistoryRaw(raw);
+  const rawTeamLink = extractTeamLinkFromRaw(raw);
+
+  const explicitTeam = extractTeamFromRaw(raw);
+  const linkedTeam = historyTeamLink.teamName
+    ? historyTeamLink
+    : rawTeamLink;
+
+  const finalTeamName = linkedTeam.teamName || explicitTeam || "";
+
+  const status = extractStatusFromRaw(raw);
+  const yearsActive = extractYearsActiveFromRaw(raw);
+
+  const statusLower = status.toLowerCase();
+  const hasPresent = /\bpresent\b/i.test(yearsActive);
+
+  if (finalTeamName) {
+    return {
+      team: finalTeamName,
+      teamLiquipediaUrl: linkedTeam.teamLiquipediaUrl || "",
+      teamLiquipediaSlug: linkedTeam.teamLiquipediaSlug || "",
+      isContentCreator: false,
+    };
+  }
+
+  if (/\bretired\b/i.test(statusLower)) {
+    return {
+      team: "Retired",
+      teamLiquipediaUrl: "",
+      teamLiquipediaSlug: "",
+      isContentCreator: false,
+    };
+  }
+
+  if (
+    /\bcontent\s*creator\b/i.test(statusLower) ||
+    /\bstreamer\b/i.test(statusLower)
+  ) {
+    return {
+      team: "Content Creator",
+      teamLiquipediaUrl: "",
+      teamLiquipediaSlug: "",
+      isContentCreator: true,
+    };
+  }
+
+  // Нет команды, нет current team в history:
+  // и при Present, и без Present — считаем Free Agent,
+  // если это не Content Creator и не Retired
+  return {
+    team: "Free Agent",
+    teamLiquipediaUrl: "",
+    teamLiquipediaSlug: "",
+    isContentCreator: false,
   };
 }
 
@@ -1510,7 +1581,7 @@ async function fetchJsonWithRetry(url, { verbose = false, noRetries = false } = 
 
 function getRetryDelayMs(status, attempt) {
   if (status === 429) {
-    return 35000 * attempt + Math.floor(Math.random() * 1500);
+    return 120000 * attempt + Math.floor(Math.random() * 1000);
   }
 
   return 1200 * attempt + Math.floor(Math.random() * 500);
@@ -1659,8 +1730,16 @@ function normalizeWhitespace(input) {
   return String(input || "").replace(/\s+/g, " ").trim();
 }
 
+function escapeRegExp(input) {
+  return String(input || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function extractWikitextField(raw, fieldName) {
-  const re = new RegExp(`\\|\\s*${fieldName}\\s*=\\s*([^\\n\\r]*)`, "i");
+  const re = new RegExp(
+    `^\\s*\\|\\s*${escapeRegExp(fieldName)}\\s*=[ \\t]*([^\\r\\n]*)`,
+    "im"
+  );
+
   const m = String(raw || "").match(re);
   return m ? m[1].trim() : "";
 }
@@ -1986,15 +2065,8 @@ async function fetchLiquipediaPlayerData(player, { verbose = false } = {}) {
       const name = extractPlayerNameFromRaw(raw);
       const nationality = extractNationalityFromRaw(raw);
       const born = parseBirthDateFromRaw(raw);
-      const historyTeamLink = extractCurrentTeamFromTeamHistoryRaw(raw);
-      const rawTeamLink = extractTeamLinkFromRaw(raw);
-
-      const finalTeamLink =
-        historyTeamLink.teamName
-          ? historyTeamLink
-          : rawTeamLink;
-
-      const team = finalTeamLink.teamName || extractTeamFromRaw(raw);
+      const teamState = resolveLiquipediaPlayerTeamState(raw);
+      const team = teamState.team;
 
       const twitchRaw = extractLinkFieldFromRaw(raw, "twitch");
       const faceitRaw = extractLinkFieldFromRaw(raw, "faceit");
@@ -2026,8 +2098,11 @@ async function fetchLiquipediaPlayerData(player, { verbose = false } = {}) {
           nationality,
           born,
           team,
+          teamLiquipediaUrl: teamState.teamLiquipediaUrl,
+          teamLiquipediaSlug: teamState.teamLiquipediaSlug,
           twitch,
           faceit,
+          isContentCreator: teamState.isContentCreator,
         };
       }
     }
@@ -2197,7 +2272,6 @@ function mergeLiquipediaDataIntoPlayer(player, lpData, { force = false } = {}) {
     }
   };
 
-  // steamid64 подтягиваем только если его не было
   if (!String(merged.steamid64 || "").trim() && String(lpData.steamid64 || "").trim()) {
     merged.steamid64 = String(lpData.steamid64).trim();
   }
@@ -2208,6 +2282,12 @@ function mergeLiquipediaDataIntoPlayer(player, lpData, { force = false } = {}) {
   assign("team", lpData.team);
   assign("twitch", lpData.twitch);
   assign("faceit", lpData.faceit);
+  assign("teamLiquipediaUrl", lpData.teamLiquipediaUrl);
+  assign("teamLiquipediaSlug", lpData.teamLiquipediaSlug);
+
+  if (typeof lpData.isContentCreator === "boolean") {
+    merged.isContentCreator = lpData.isContentCreator;
+  }
 
   return merged;
 }
@@ -2406,6 +2486,10 @@ async function buildTeamsDocument(players, root, { verbose = false, existingTeam
     const teamName = String(player?.team || "").trim();
     const teamLiquipediaSlug = String(player?.teamLiquipediaSlug || "").trim();
     const liquipediaMode = String(player?.liquipedia || "").trim().toLowerCase();
+
+    if (isSpecialPlayerTeamLabel(teamName)) {
+      continue;
+    }
 
     if (!teamName && !teamLiquipediaSlug) continue;
 

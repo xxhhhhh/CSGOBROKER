@@ -20,6 +20,9 @@ const path = require("path");
 const PLAYERS_LIST_DIR = "/code-parts/topics/players-data/players-list";
 const PLAYERS_INV_DIR  = "/code-parts/topics/players-data/players-inventories";
 
+const PLAYER_UNKNOWN_IMAGE = "/img/skins/players/unknown.webp";
+const PLAYER_UNKNOWN_ALT = "CSGOBROKER Mascotte";
+
 const DEFAULT_TEMPLATE_RU = "/ru/topic/players/inventories/zywoo.html";
 const DEFAULT_TEMPLATE_EN = "/topic/players/inventories/zywoo.html";
 
@@ -1659,14 +1662,42 @@ function buildPlayerSteamUrl(player){
   return `https://steamcommunity.com/profiles/${id}`;
 }
 
-function resolvePlayerImage(player){
-  const img = String(player?.image || "").trim();
-  if (img) return img;
-
+async function resolvePlayerImage(root, player){
+  const candidateRaw = String(player?.image || "").trim();
   const slug = String(player?.slug || "").trim();
-  if (slug) return `/img/skins/players/${slug}.webp`;
 
-  return "";
+  const candidates = [
+    candidateRaw,
+    slug ? `/img/skins/players/${slug}.webp` : "",
+  ].filter(Boolean);
+
+  for (const img of candidates){
+    // локальные пути проверяем через fs.access
+    if (img.startsWith("/")) {
+      const fullPath = abs(root, img);
+      if (await fileExists(fullPath)) {
+        return {
+          src: img,
+          alt: `${String(player?.nickname || "").trim()} Photo`,
+          isFallback: false,
+        };
+      }
+      continue;
+    }
+
+    // внешние URL / относительные нестатические пути оставляем как есть
+    return {
+      src: img,
+      alt: `${String(player?.nickname || "").trim()} Photo`,
+      isFallback: false,
+    };
+  }
+
+  return {
+    src: PLAYER_UNKNOWN_IMAGE,
+    alt: PLAYER_UNKNOWN_ALT,
+    isFallback: true,
+  };
 }
 
 function resolvePlayerTeam(player){
@@ -1679,14 +1710,17 @@ function resolvePlayerTeam(player){
   return "";
 }
 
-function resolvePlayerStatusMeta(player){
+async function resolvePlayerStatusMeta(root, player){
   const isContentCreator = player?.isContentCreator === true;
   const team = String(player?.team || "").trim();
 
   if (!team && isContentCreator) {
+    const src = "/img/skins/teams/content-creator.webp";
+
     return {
+      wrapperClassName: "player-status",
       className: "content-creator",
-      src: "/img/skins/teams/content-creator.webp",
+      src,
       alt: "Content Creator",
     };
   }
@@ -1694,20 +1728,23 @@ function resolvePlayerStatusMeta(player){
   if (!team) return null;
 
   const teamSlug = toSlug(team);
+  const src = `/img/skins/teams/${teamSlug}.webp`;
+  const exists = await fileExists(abs(root, src));
 
   return {
-    className: teamSlug,
-    src: `/img/skins/teams/${teamSlug}.webp`,
+    wrapperClassName: exists ? "player-status" : "player-status unknown",
+    className: exists ? teamSlug : `${teamSlug} unknown`,
+    src,
     alt: team,
   };
 }
 
-function resolvePlayerStatus(player, indent, nl){
-  const meta = resolvePlayerStatusMeta(player);
+async function resolvePlayerStatus(root, player, indent, nl){
+  const meta = await resolvePlayerStatusMeta(root, player);
   if (!meta) return "";
 
   return [
-    `${indent}<div class="player-status">`,
+    `${indent}<div class="${escapeAttrDblNoApos(meta.wrapperClassName)}">`,
     `${indent}  <img class="${escapeAttrDblNoApos(meta.className)}" src="${escapeAttrDblNoApos(meta.src)}" alt="${escapeAttrDblNoApos(meta.alt)}">`,
     `${indent}</div>`
   ].join(nl);
@@ -1756,11 +1793,11 @@ function buildPlayerLinksHtml(player, indent, nl){
   ].join(nl);
 }
 
-function buildPlayerBioHtml(player, indent, nl){
+async function buildPlayerBioHtml(root, player, indent, nl){
   const nickname = String(player?.nickname || "").trim();
   const realName = String(player?.realName || "").trim();
   const team = resolvePlayerTeam(player);
-  const statusHtml = resolvePlayerStatus(player, indent + "  ", nl);
+  const statusHtml = await resolvePlayerStatus(root, player, indent + "  ", nl);
 
   const lines = [];
   lines.push(`${indent}<div class="player-bio">`);
@@ -1783,16 +1820,15 @@ function buildPlayerBioHtml(player, indent, nl){
   return lines.join(nl);
 }
 
-function buildLogobgInnerHtml(player, baseIndent, nl){
-  const nickname = String(player?.nickname || "").trim();
-  const image = resolvePlayerImage(player);
+async function buildLogobgInnerHtml(root, player, baseIndent, nl){
+  const imageMeta = await resolvePlayerImage(root, player);
 
   const innerIndent = baseIndent + "  ";
   const blocks = [];
 
-  if (image) {
+  if (imageMeta?.src) {
     blocks.push(
-      `${innerIndent}<img alt="${escapeAttrDblNoApos(nickname)} Photo" draggable="false" src="${escapeAttrDblNoApos(image)}">`
+      `${innerIndent}<img alt="${escapeAttrDblNoApos(imageMeta.alt)}" draggable="false" src="${escapeAttrDblNoApos(imageMeta.src)}">`
     );
   }
 
@@ -1801,12 +1837,12 @@ function buildLogobgInnerHtml(player, baseIndent, nl){
     blocks.push(linksHtml);
   }
 
-  blocks.push(buildPlayerBioHtml(player, innerIndent, nl));
+  blocks.push(await buildPlayerBioHtml(root, player, innerIndent, nl));
 
   return blocks.join(nl);
 }
 
-function updateLogobgBlock(html, player){
+async function updateLogobgBlock(root, html, player){
   const nickname = String(player?.nickname || "").trim();
   if (!nickname) {
     return { html, changed: false };
@@ -1826,7 +1862,7 @@ function updateLogobgBlock(html, player){
   const baseIndent = indentBefore(html, target.openStart, nl);
 
   const newInner = nl +
-    buildLogobgInnerHtml(player, baseIndent, nl) +
+    await buildLogobgInnerHtml(root, player, baseIndent, nl) +
     nl + baseIndent;
 
   const nextHtml =
@@ -1926,7 +1962,7 @@ async function generatePlayerPagesForVersion({
     }
 
     {
-      const res = updateLogobgBlock(html, player);
+      const res = await updateLogobgBlock(root, html, player);
       if (res.changed) html = res.html;
     }
 

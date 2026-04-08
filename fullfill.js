@@ -20,8 +20,8 @@ const path = require("path");
 const { spawn } = require("child_process");
 
 const ORDER = [
-  "static-topics-fill.js",
   "static-players-fill.js",
+  "static-topics-fill.js",
   "schema-inject.js",
   "freebies-fill.js",
   "generate-go-redirects.js",

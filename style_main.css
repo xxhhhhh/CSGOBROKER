@@ -2721,6 +2721,10 @@ nav .pages {
     
 }
 
+.player-status.unknown img {
+    display: none;
+}
+
 .player-status img {
     opacity: .06;
 }
@@ -2763,7 +2767,7 @@ nav .pages {
 
 .player-bio span {
     color: var(--text-darkgray);
-    max-width: 125px;
+    max-width: 118px;
     white-space: nowrap;     /* запрещает перенос */
     overflow: hidden;        /* скрывает лишнее */
     text-overflow: ellipsis; /* добавляет ... */
