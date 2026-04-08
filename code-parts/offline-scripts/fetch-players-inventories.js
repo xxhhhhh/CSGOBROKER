@@ -154,11 +154,6 @@ const LIQUIPEDIA_CS_BASE = "https://liquipedia.net/counterstrike";
 const LIQUIPEDIA_REQUEST_DELAY_MS = 1100;
 const LIQUIPEDIA_TIMEOUT_MS = 20000;
 
-const INVENTORY_UI_INITIAL_DELAY_MS = 2500;
-const INVENTORY_UI_AFTER_SELECT_DELAY_MS = 700;
-const INVENTORY_UI_FIRST_ITEM_TIMEOUT_MS = 9000;
-const INVENTORY_UI_DEFAULT_ITEM_TIMEOUT_MS = 5000;
-
 function parseArgs(argv) {
   const get = (flag) => {
     const i = argv.indexOf(flag);

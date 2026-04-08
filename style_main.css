@@ -223,7 +223,7 @@ nav .pages {
     display: flex;
     align-items: center;
     position: relative;
-    margin-top: 3px;
+    margin-top: 6px;
     height: 16px;
 }
 
@@ -4818,7 +4818,7 @@ nav img {
     font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
-    top: -35px;
+    top: -33px;
 }
 
 .topic-extra-info span:nth-child(2) {
@@ -4830,7 +4830,7 @@ nav img {
 }
 
 .topic-extra-info span {
-    color: var(--text-darkgray);
+    color: var(--text-lightgray);
     transition: all .3s ease-in-out;
 }
 
@@ -12476,7 +12476,8 @@ header {
 .instruction h2::before,
 .smallreview h2::before,
 .smallreview h3::before,
-.introduce-craft h2::before {
+.introduce-craft h2::before,
+nav .pages::before {
     content: "";
     position: relative;
     display: block;
@@ -12491,6 +12492,10 @@ header {
     transition: all .15s ease-in-out;
     border-radius: 40%;
     top: 7px;
+}
+
+nav .pages::before {
+    top: unset;
 }
 
 .ptype .main-infobox-mascotte {
