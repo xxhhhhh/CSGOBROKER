@@ -919,6 +919,18 @@ function normalizePlayersList(raw){
         ""
       ).trim();
 
+    const realNickname =
+      String(
+        p?.real_nickname ||
+        p?.realNickname ||
+        p?.display_nickname ||
+        p?.displayNickname ||
+        p?.nickname ||
+        p?.nick ||
+        p?.player_nickname ||
+        ""
+      ).trim();
+
     const slug =
       String(
         p?.slug ||
@@ -975,7 +987,6 @@ function normalizePlayersList(raw){
         ""
       ).trim();
 
-    // FACEIT: берем готовую полную ссылку как есть
     const faceit =
       String(
         p?.faceit ||
@@ -984,7 +995,6 @@ function normalizePlayersList(raw){
         ""
       ).trim();
 
-    // TWITCH: берем только username
     const twitch =
       String(
         p?.twitch ||
@@ -997,7 +1007,8 @@ function normalizePlayersList(raw){
         .replace(/\/+$/, "");
 
     return {
-      nickname,
+      nickname, // internal id
+      realNickname, // display nickname
       slug,
       steamid64,
       realName,
@@ -1067,7 +1078,7 @@ function replaceMetaDescription(html, description){
 }
 
 function buildPlayerMetaDescription(player, lang = "ru"){
-  const nickname = String(player?.nickname || "").trim();
+  const nickname = String(player?.realNickname || player?.nickname || "").trim();
   const isContentCreator = player?.isContentCreator === true;
 
   if (lang === "en") {
@@ -1665,6 +1676,7 @@ function buildPlayerSteamUrl(player){
 async function resolvePlayerImage(root, player){
   const candidateRaw = String(player?.image || "").trim();
   const slug = String(player?.slug || "").trim();
+  const displayNickname = String(player?.realNickname || player?.nickname || "").trim();
 
   const candidates = [
     candidateRaw,
@@ -1672,23 +1684,21 @@ async function resolvePlayerImage(root, player){
   ].filter(Boolean);
 
   for (const img of candidates){
-    // локальные пути проверяем через fs.access
     if (img.startsWith("/")) {
       const fullPath = abs(root, img);
       if (await fileExists(fullPath)) {
         return {
           src: img,
-          alt: `${String(player?.nickname || "").trim()} Photo`,
+          alt: `${displayNickname} Photo`,
           isFallback: false,
         };
       }
       continue;
     }
 
-    // внешние URL / относительные нестатические пути оставляем как есть
     return {
       src: img,
-      alt: `${String(player?.nickname || "").trim()} Photo`,
+      alt: `${displayNickname} Photo`,
       isFallback: false,
     };
   }
@@ -1751,7 +1761,7 @@ async function resolvePlayerStatus(root, player, indent, nl){
 }
 
 function buildPlayerLinksHtml(player, indent, nl){
-  const nickname = String(player?.nickname || "").trim();
+  const nickname = String(player?.realNickname || player?.nickname || "").trim();
   const steamUrl = buildPlayerSteamUrl(player);
   const faceitUrl = String(player?.links?.faceit || "").trim();
 
@@ -1794,14 +1804,14 @@ function buildPlayerLinksHtml(player, indent, nl){
 }
 
 async function buildPlayerBioHtml(root, player, indent, nl){
-  const nickname = String(player?.nickname || "").trim();
+  const displayNickname = String(player?.realNickname || player?.nickname || "").trim();
   const realName = String(player?.realName || "").trim();
   const team = resolvePlayerTeam(player);
   const statusHtml = await resolvePlayerStatus(root, player, indent + "  ", nl);
 
   const lines = [];
   lines.push(`${indent}<div class="player-bio">`);
-  lines.push(`${indent}  <span class="player-nickname">${escapeHtml(nickname)}</span>`);
+  lines.push(`${indent}  <span class="player-nickname">${escapeHtml(displayNickname)}</span>`);
 
   if (realName) {
     lines.push(`${indent}  <span class="player-name">${escapeHtml(realName)}</span>`);
@@ -1899,10 +1909,11 @@ async function generatePlayerPagesForVersion({
   let skipped = 0;
 
   for (const player of players){
-    const nickname = String(player.nickname || "").trim();
-    const slug = String(player.slug || slugifyNickname(nickname)).trim();
+    const internalNickname = String(player.nickname || "").trim();
+    const displayNickname = String(player.realNickname || player.nickname || "").trim();
+    const slug = String(player.slug || slugifyNickname(internalNickname)).trim();
 
-    if (!nickname || !slug){
+    if (!internalNickname || !slug){
       skipped++;
       continue;
     }
@@ -1933,7 +1944,7 @@ async function generatePlayerPagesForVersion({
       html = replaceNicknameAndSlug(
         html,
         templateNickname,
-        nickname,
+        displayNickname,
         templateSlug,
         slug
       );
@@ -1985,7 +1996,7 @@ async function generatePlayerPagesForVersion({
     }
 
     if (verbose) {
-      console.log(`[OK] ${path.relative(root, outFile)} :: generated for ${nickname} (${inventory.length} items)`);
+      console.log(`[OK] ${path.relative(root, outFile)} :: generated for ${displayNickname} [id=${internalNickname}] (${inventory.length} items)`);
     }
   }
 
@@ -2005,8 +2016,15 @@ async function generatePlayerPagesForVersion({
   const players = only.length
     ? allPlayers.filter(player => {
         const nickname = String(player.nickname || "").trim();
+        const realNickname = String(player.realNickname || "").trim();
         const slug = String(player.slug || slugifyNickname(nickname)).trim();
-        return only.includes(slug) || only.includes(nickname);
+
+        return (
+          only.includes(slug) ||
+          only.includes(nickname) ||
+          only.includes(realNickname) ||
+          only.includes(slugifyNickname(realNickname))
+        );
       })
     : allPlayers;
 

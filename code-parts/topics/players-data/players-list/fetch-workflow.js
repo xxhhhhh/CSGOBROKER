@@ -1,5 +1,5 @@
 // ============================================================================
-// File: code-parts/offline-scripts/fetch-players-inventories-workflow.js
+// File: code-parts/offline-scripts/fetch-workflow.js
 //
 // WORKFLOW-ONLY VERSION
 //
@@ -9,16 +9,16 @@
 // ОСНОВНЫЕ СЦЕНАРИИ
 //
 // 1) Только Liquipedia + teams:
-//    node code-parts/offline-scripts/fetch-players-inventories-workflow.js --refetch-liquipedia --liquipedia-only --verbose
+//    node code-parts/offline-scripts/fetch-workflow.js --refetch-liquipedia --liquipedia-only --verbose
 //
 // 2) Один shard инвентарей:
-//    node code-parts/offline-scripts/fetch-players-inventories-workflow.js --shard-index 0 --shard-total 6 --verbose
+//    node code-parts/offline-scripts/fetch-workflow.js --shard-index 0 --shard-total 6 --verbose
 //
 // 3) Только проблемные игроки в рамках shard:
-//    node code-parts/offline-scripts/fetch-players-inventories-workflow.js --only-failed-fetch --shard-index 1 --shard-total 6 --verbose
+//    node code-parts/offline-scripts/fetch-workflow.js --only-failed-fetch --shard-index 1 --shard-total 6 --verbose
 //
 // 4) Если нужно всё же писать финальные players.json / teams.json прямо этим раннером:
-//    node code-parts/offline-scripts/fetch-players-inventories-workflow.js --write-final-lists --verbose
+//    node code-parts/offline-scripts/fetch-workflow.js --write-final-lists --verbose
 //
 // ВАЖНЫЕ ENV:
 //
@@ -170,7 +170,9 @@ async function readJsonSafe(file) {
 
 function normalizePlayer(player) {
   return {
-    nickname: String(player?.nickname || "").trim(),
+    nickname: String(player?.nickname || "").trim(), // internal id
+    real_nickname: String(player?.real_nickname || "").trim(), // display nickname
+
     steamid64: String(player?.steamid64 || "").trim(),
     team: String(player?.team || "").trim(),
 
@@ -186,6 +188,9 @@ function normalizePlayer(player) {
 
     twitch: String(player?.twitch || "").trim(),
     faceit: String(player?.faceit || "").trim(),
+
+    teamLiquipediaUrl: String(player?.teamLiquipediaUrl || "").trim(),
+    teamLiquipediaSlug: String(player?.teamLiquipediaSlug || "").trim(),
   };
 }
 
@@ -261,10 +266,14 @@ function mergeTeamPlayers(existingPlayers, updatedPlayers) {
   const merged = [...bySlug.values()];
 
   merged.sort((a, b) =>
-    String(a?.nickname || "").localeCompare(String(b?.nickname || ""), "en", {
-      sensitivity: "base",
-      numeric: true,
-    })
+    String(a?.real_nickname || a?.nickname || "").localeCompare(
+      String(b?.real_nickname || b?.nickname || ""),
+      "en",
+      {
+        sensitivity: "base",
+        numeric: true,
+      }
+    )
   );
 
   return merged;
@@ -288,8 +297,8 @@ function mergePlayersList(existingPlayers, updatedPlayers) {
   const merged = [...bySlug.values()];
 
   merged.sort((a, b) => {
-    const na = String(a?.nickname || "");
-    const nb = String(b?.nickname || "");
+    const na = String(a?.real_nickname || a?.nickname || "");
+    const nb = String(b?.real_nickname || b?.nickname || "");
     return na.localeCompare(nb, "en", {
       sensitivity: "base",
       numeric: true,
@@ -1307,6 +1316,82 @@ async function fetchFullInventory(steamid64, { verbose = false, noRetries = fals
 // Liquipedia helpers
 // ============================================================================
 
+function extractStatusFromRaw(raw) {
+  return normalizeWhitespace(
+    cleanWikitextValue(extractWikitextField(raw, "status"))
+  );
+}
+
+function extractYearsActiveFromRaw(raw) {
+  return normalizeWhitespace(
+    cleanWikitextValue(extractWikitextField(raw, "years_active"))
+  );
+}
+
+function isSpecialPlayerTeamLabel(team) {
+  const value = String(team || "").trim().toLowerCase();
+  return (
+    value === "free agent" ||
+    value === "content creator" ||
+    value === "retired"
+  );
+}
+
+function resolveLiquipediaPlayerTeamState(raw) {
+  const historyTeamLink = extractCurrentTeamFromTeamHistoryRaw(raw);
+  const rawTeamLink = extractTeamLinkFromRaw(raw);
+
+  const explicitTeam = extractTeamFromRaw(raw);
+  const linkedTeam = historyTeamLink.teamName
+    ? historyTeamLink
+    : rawTeamLink;
+
+  const finalTeamName = linkedTeam.teamName || explicitTeam || "";
+
+  const status = extractStatusFromRaw(raw);
+  const yearsActive = extractYearsActiveFromRaw(raw);
+
+  const statusLower = status.toLowerCase();
+  const hasPresent = /\bpresent\b/i.test(yearsActive);
+
+  if (finalTeamName) {
+    return {
+      team: finalTeamName,
+      teamLiquipediaUrl: linkedTeam.teamLiquipediaUrl || "",
+      teamLiquipediaSlug: linkedTeam.teamLiquipediaSlug || "",
+      isContentCreator: false,
+    };
+  }
+
+  if (/\bretired\b/i.test(statusLower)) {
+    return {
+      team: "Retired",
+      teamLiquipediaUrl: "",
+      teamLiquipediaSlug: "",
+      isContentCreator: false,
+    };
+  }
+
+  if (
+    /\bcontent\s*creator\b/i.test(statusLower) ||
+    /\bstreamer\b/i.test(statusLower)
+  ) {
+    return {
+      team: "Content Creator",
+      teamLiquipediaUrl: "",
+      teamLiquipediaSlug: "",
+      isContentCreator: true,
+    };
+  }
+
+  return {
+    team: hasPresent ? "Free Agent" : "Free Agent",
+    teamLiquipediaUrl: "",
+    teamLiquipediaSlug: "",
+    isContentCreator: false,
+  };
+}
+
 function htmlDecode(input) {
   return String(input || "")
     .replace(/&nbsp;/g, " ")
@@ -1816,7 +1901,8 @@ function hasEnoughLiquipediaFields(player) {
 
 function candidateLiquipediaTitles(player) {
   const manual = String(player?.liquipedia || "").trim();
-  const nickname = String(player?.nickname || "").trim();
+  const nickname = String(player?.nickname || "").trim(); // internal id
+  const realNickname = String(player?.real_nickname || "").trim(); // display nickname
 
   const set = new Set();
 
@@ -1825,6 +1911,14 @@ function candidateLiquipediaTitles(player) {
     set.add(manual.replace(/_/g, " "));
     set.add(manual.replace(/ /g, "_"));
     set.add(manual.replace(/-/g, " "));
+  }
+
+  if (realNickname) {
+    set.add(realNickname);
+    set.add(realNickname.replace(/ /g, "_"));
+    set.add(realNickname.toLowerCase());
+    set.add(safeSlug(realNickname).replace(/-/g, " "));
+    set.add(safeSlug(realNickname));
   }
 
   if (nickname) {
@@ -1882,10 +1976,8 @@ async function fetchLiquipediaPlayerData(player, { verbose = false } = {}) {
       const nationality = extractNationalityFromRaw(raw);
       const born = parseBirthDateFromRaw(raw);
 
-      const historyTeamLink = extractCurrentTeamFromTeamHistoryRaw(raw);
-      const rawTeamLink = extractTeamLinkFromRaw(raw);
-      const finalTeamLink = historyTeamLink.teamName ? historyTeamLink : rawTeamLink;
-      const team = finalTeamLink.teamName || extractTeamFromRaw(raw);
+      const teamState = resolveLiquipediaPlayerTeamState(raw);
+      const team = teamState.team;
 
       const twitchRaw = extractLinkFieldFromRaw(raw, "twitch");
       const faceitRaw = extractLinkFieldFromRaw(raw, "faceit");
@@ -1921,8 +2013,11 @@ async function fetchLiquipediaPlayerData(player, { verbose = false } = {}) {
           nationality,
           born,
           team,
+          teamLiquipediaUrl: teamState.teamLiquipediaUrl,
+          teamLiquipediaSlug: teamState.teamLiquipediaSlug,
           twitch,
           faceit,
+          isContentCreator: teamState.isContentCreator,
         };
       }
     }
@@ -1971,6 +2066,8 @@ async function fetchLiquipediaPlayerData(player, { verbose = false } = {}) {
           nationality,
           born,
           team,
+          teamLiquipediaUrl: htmlTeamLink.teamLiquipediaUrl || "",
+          teamLiquipediaSlug: htmlTeamLink.teamLiquipediaSlug || "",
           twitch,
           faceit,
         };
@@ -1988,6 +2085,8 @@ async function fetchLiquipediaPlayerData(player, { verbose = false } = {}) {
     nationality: "",
     born: "",
     team: "",
+    teamLiquipediaUrl: "",
+    teamLiquipediaSlug: "",
     twitch: "",
     faceit: "",
   };
@@ -2014,6 +2113,12 @@ function mergeLiquipediaDataIntoPlayer(player, lpData, { force = false } = {}) {
   assign("team", lpData.team);
   assign("twitch", lpData.twitch);
   assign("faceit", lpData.faceit);
+  assign("teamLiquipediaUrl", lpData.teamLiquipediaUrl);
+  assign("teamLiquipediaSlug", lpData.teamLiquipediaSlug);
+
+  if (typeof lpData.isContentCreator === "boolean") {
+    merged.isContentCreator = lpData.isContentCreator;
+  }
 
   return merged;
 }
@@ -2023,11 +2128,15 @@ async function savePlayersSource(playersSourceFile, players) {
     updatedAt: new Date().toISOString(),
     players: players.map((p) => {
       const out = {
-        nickname: p.nickname,
+        nickname: p.nickname, // internal id
         steamid64: p.steamid64,
         team: p.team || "",
         isContentCreator: Boolean(p.isContentCreator),
       };
+
+      if (String(p.real_nickname || "").trim()) {
+        out.real_nickname = String(p.real_nickname).trim();
+      }
 
       const liquipediaValue = String(p.liquipedia || "").trim();
       if (liquipediaValue) {
@@ -2039,6 +2148,14 @@ async function savePlayersSource(playersSourceFile, players) {
       out.born = p.born || "";
       out.twitch = p.twitch || "";
       out.faceit = p.faceit || "";
+
+      if (String(p.teamLiquipediaUrl || "").trim()) {
+        out.teamLiquipediaUrl = String(p.teamLiquipediaUrl).trim();
+      }
+
+      if (String(p.teamLiquipediaSlug || "").trim()) {
+        out.teamLiquipediaSlug = String(p.teamLiquipediaSlug).trim();
+      }
 
       return out;
     }),
@@ -2192,6 +2309,10 @@ async function buildTeamsDocument(
     const teamLiquipediaSlug = String(player?.teamLiquipediaSlug || "").trim();
     const liquipediaMode = String(player?.liquipedia || "").trim().toLowerCase();
 
+    if (isSpecialPlayerTeamLabel(teamName)) {
+      continue;
+    }
+
     if (!teamName && !teamLiquipediaSlug) continue;
 
     const teamKey = safeSlug(teamLiquipediaSlug || teamName);
@@ -2217,7 +2338,8 @@ async function buildTeamsDocument(
     }
 
     group.players.push({
-      nickname: player.nickname,
+      nickname: player.nickname, // internal id
+      real_nickname: player.real_nickname || player.nickname,
       slug: safeSlug(player.nickname),
       steamid64: player.steamid64,
     });
@@ -2239,10 +2361,14 @@ async function buildTeamsDocument(
     );
 
     group.players.sort((a, b) =>
-      String(a.nickname || "").localeCompare(String(b.nickname || ""), "en", {
-        sensitivity: "base",
-        numeric: true,
-      })
+      String(a.real_nickname || a.nickname || "").localeCompare(
+        String(b.real_nickname || b.nickname || ""),
+        "en",
+        {
+          sensitivity: "base",
+          numeric: true,
+        }
+      )
     );
 
     const mergedPlayers = mergeTeamPlayers(group.previous?.players || [], group.players);
@@ -3243,7 +3369,8 @@ async function buildInventoryDocument(
 
   if (!inventoryResult.ok) {
     return {
-      nickname: player.nickname,
+      nickname: player.nickname, // internal id
+      real_nickname: player.real_nickname || player.nickname, // display nickname
       slug: safeSlug(player.nickname),
       steamid64: player.steamid64,
 
@@ -3255,6 +3382,9 @@ async function buildInventoryDocument(
       isContentCreator: Boolean(player.isContentCreator),
       twitch: player.twitch || "",
       faceit: player.faceit || "",
+
+      teamLiquipediaUrl: player.teamLiquipediaUrl || "",
+      teamLiquipediaSlug: player.teamLiquipediaSlug || "",
 
       appid: APP_ID,
       contextid: String(CONTEXT_ID),
@@ -3345,7 +3475,8 @@ async function buildInventoryDocument(
   await enrichGroupedItemsWithInspectData(groupedItems, player, { verbose });
 
   return {
-    nickname: player.nickname,
+    nickname: player.nickname, // internal id
+    real_nickname: player.real_nickname || player.nickname, // display nickname
     slug: safeSlug(player.nickname),
     steamid64: player.steamid64,
 
@@ -3357,6 +3488,9 @@ async function buildInventoryDocument(
     isContentCreator: Boolean(player.isContentCreator),
     twitch: player.twitch || "",
     faceit: player.faceit || "",
+
+    teamLiquipediaUrl: player.teamLiquipediaUrl || "",
+    teamLiquipediaSlug: player.teamLiquipediaSlug || "",
 
     appid: APP_ID,
     contextid: String(CONTEXT_ID),
@@ -3380,6 +3514,7 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
       ...failedDoc,
       updatedAt: now,
       nickname: player.nickname,
+      real_nickname: player.real_nickname || failedDoc.real_nickname || player.nickname,
       slug: safeSlug(player.nickname),
       steamid64: player.steamid64,
       team: player.team || "",
@@ -3388,6 +3523,8 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
       born: player.born || "",
       twitch: player.twitch || "",
       faceit: player.faceit || "",
+      teamLiquipediaUrl: player.teamLiquipediaUrl || "",
+      teamLiquipediaSlug: player.teamLiquipediaSlug || "",
       isContentCreator: Boolean(player.isContentCreator),
     };
   }
@@ -3395,6 +3532,7 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
   return {
     ...existingDoc,
     nickname: player.nickname,
+    real_nickname: player.real_nickname || existingDoc.real_nickname || player.nickname,
     slug: safeSlug(player.nickname),
     steamid64: player.steamid64,
 
@@ -3405,6 +3543,8 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
 
     twitch: player.twitch || existingDoc.twitch || "",
     faceit: player.faceit || existingDoc.faceit || "",
+    teamLiquipediaUrl: player.teamLiquipediaUrl || existingDoc.teamLiquipediaUrl || "",
+    teamLiquipediaSlug: player.teamLiquipediaSlug || existingDoc.teamLiquipediaSlug || "",
     isContentCreator: Boolean(
       player.isContentCreator ?? existingDoc.isContentCreator ?? false
     ),
@@ -3602,9 +3742,16 @@ async function main() {
   );
 
   let selectedPlayers = only.length
-    ? PLAYERS_SOURCE.filter(
-        (p) => only.includes(p.nickname) || only.includes(safeSlug(p.nickname))
-      )
+    ? PLAYERS_SOURCE.filter((p) => {
+        const nickname = String(p.nickname || "");
+        const realNickname = String(p.real_nickname || "");
+        return (
+          only.includes(nickname) ||
+          only.includes(safeSlug(nickname)) ||
+          only.includes(realNickname) ||
+          only.includes(safeSlug(realNickname))
+        );
+      })
     : PLAYERS_SOURCE;
 
   if (onlyFailedFetch) {
@@ -3712,7 +3859,14 @@ async function main() {
   let inventoryPlayers = only.length || onlyFailedFetch
     ? FULL_PLAYERS_SOURCE.filter((p) => {
         if (only.length) {
-          return only.includes(p.nickname) || only.includes(safeSlug(p.nickname));
+          const nickname = String(p.nickname || "");
+          const realNickname = String(p.real_nickname || "");
+          return (
+            only.includes(nickname) ||
+            only.includes(safeSlug(nickname)) ||
+            only.includes(realNickname) ||
+            only.includes(safeSlug(realNickname))
+          );
         }
         return true;
       })
@@ -3777,6 +3931,7 @@ async function main() {
         await readJsonSafe(invFile),
         {
           nickname: player.nickname,
+          real_nickname: player.real_nickname || player.nickname,
           slug,
           steamid64: "",
           team: player.team || "",
@@ -3786,6 +3941,8 @@ async function main() {
           isContentCreator: Boolean(player.isContentCreator),
           twitch: player.twitch || "",
           faceit: player.faceit || "",
+          teamLiquipediaUrl: player.teamLiquipediaUrl || "",
+          teamLiquipediaSlug: player.teamLiquipediaSlug || "",
           updatedAt: new Date().toISOString(),
           inventoryVisible: null,
           fetchOk: false,
@@ -3803,6 +3960,7 @@ async function main() {
 
       playersListOutput.push({
         nickname: player.nickname,
+        real_nickname: player.real_nickname || player.nickname,
         slug,
         steamid64: "",
         team: player.team || "",
@@ -3849,6 +4007,7 @@ async function main() {
 
     playersListOutput.push({
       nickname: player.nickname,
+      real_nickname: player.real_nickname || player.nickname,
       slug,
       steamid64: player.steamid64,
       team: player.team || "",

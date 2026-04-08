@@ -509,7 +509,11 @@ h3,
 .promo-box:hover code,
 .site-promo-copy:hover,
 .site-promo-copy:hover::after,
-.skin-amount {
+.skin-amount,
+.box .logobg .best-alt .best-alt-unit:hover span, 
+.box .logobg .best-alt .best-alt-unit:hover::before,
+.box .logobg .best-alt .best-alt-unit span, 
+.box .logobg .best-alt .best-alt-unit::before {
     color: #1f1f1f;
 }
 

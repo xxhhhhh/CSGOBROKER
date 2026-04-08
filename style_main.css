@@ -4936,6 +4936,14 @@ nav img {
     gap: unset;
 }
 
+.sitepage.items .topic-grandbox:has(.navigation-weapon-type.solo-category) {
+    min-height: unset;
+}
+
+.sitepage.items.inventories .item-topic-grandbox:has(.navigation-weapon-type.solo-category) .logobg {
+    overflow: hidden;
+}
+
 .sitepage.items.inventories .topic-grandbox {
     min-height: 90px;
 }

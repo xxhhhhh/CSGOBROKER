@@ -250,7 +250,9 @@ async function readJsonSafe(file) {
 
 function normalizePlayer(player) {
   return {
-    nickname: String(player?.nickname || "").trim(),
+    nickname: String(player?.nickname || "").trim(), // уникальный id
+    real_nickname: String(player?.real_nickname || "").trim(), // отображаемый ник
+
     steamid64: String(player?.steamid64 || "").trim(),
     team: String(player?.team || "").trim(),
 
@@ -2028,11 +2030,11 @@ function hasEnoughLiquipediaFields(player) {
 
 function candidateLiquipediaTitles(player) {
   const manual = String(player?.liquipedia || "").trim();
-  const nickname = String(player?.nickname || "").trim();
+  const nickname = String(player?.nickname || "").trim(); // internal id
+  const realNickname = String(player?.real_nickname || "").trim(); // display nickname
 
   const set = new Set();
 
-  // если задан ручной liquipedia и это не "none"
   if (manual && manual.toLowerCase() !== "none") {
     set.add(manual);
     set.add(manual.replace(/_/g, " "));
@@ -2040,7 +2042,16 @@ function candidateLiquipediaTitles(player) {
     set.add(manual.replace(/-/g, " "));
   }
 
-  // fallback по nickname
+  // сначала пробуем реальный ник
+  if (realNickname) {
+    set.add(realNickname);
+    set.add(realNickname.replace(/ /g, "_"));
+    set.add(realNickname.toLowerCase());
+    set.add(safeSlug(realNickname).replace(/-/g, " "));
+    set.add(safeSlug(realNickname));
+  }
+
+  // fallback на internal id
   if (nickname) {
     set.add(nickname);
     set.add(nickname.replace(/ /g, "_"));
@@ -2297,11 +2308,15 @@ async function savePlayersSource(playersSourceFile, players) {
     updatedAt: new Date().toISOString(),
     players: players.map((p) => {
       const out = {
-        nickname: p.nickname,
+        nickname: p.nickname, // уникальный id
         steamid64: p.steamid64,
         team: p.team || "",
         isContentCreator: Boolean(p.isContentCreator),
       };
+
+      if (String(p.real_nickname || "").trim()) {
+        out.real_nickname = String(p.real_nickname).trim();
+      }
 
       const liquipediaValue = String(p.liquipedia || "").trim();
 
@@ -2516,7 +2531,8 @@ async function buildTeamsDocument(players, root, { verbose = false, existingTeam
     }
 
     group.players.push({
-      nickname: player.nickname,
+      nickname: player.nickname, // internal id
+      real_nickname: player.real_nickname || player.nickname,
       slug: safeSlug(player.nickname),
       steamid64: player.steamid64,
     });
@@ -3524,7 +3540,8 @@ async function buildInventoryDocument(player, inventoryResult, { verbose = false
 
   if (!inventoryResult.ok) {
     return {
-      nickname: player.nickname,
+      nickname: player.nickname, // internal id
+      real_nickname: player.real_nickname || player.nickname, // display nickname
       slug: safeSlug(player.nickname),
       steamid64: player.steamid64,
 
@@ -3625,6 +3642,7 @@ async function buildInventoryDocument(player, inventoryResult, { verbose = false
 
   return {
     nickname: player.nickname,
+    real_nickname: player.real_nickname || player.nickname,
     slug: safeSlug(player.nickname),
     steamid64: player.steamid64,
 
@@ -3672,6 +3690,7 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
       ...failedDoc,
       updatedAt: now,
       nickname: player.nickname,
+      real_nickname: player.real_nickname || failedDoc.real_nickname || existingDoc?.real_nickname || player.nickname,
       slug: safeSlug(player.nickname),
       steamid64: player.steamid64,
       team: player.team || "",
@@ -3691,6 +3710,7 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
   return {
     ...existingDoc,
     nickname: player.nickname,
+    real_nickname: player.real_nickname || failedDoc.real_nickname || existingDoc?.real_nickname || player.nickname,
     slug: safeSlug(player.nickname),
     steamid64: player.steamid64,
 
@@ -3855,7 +3875,16 @@ async function main() {
   );
 
   let selectedPlayers = only.length
-    ? PLAYERS_SOURCE.filter((p) => only.includes(p.nickname) || only.includes(safeSlug(p.nickname)))
+    ? PLAYERS_SOURCE.filter((p) => {
+        const nickname = String(p.nickname || "");
+        const realNickname = String(p.real_nickname || "");
+        return (
+          only.includes(nickname) ||
+          only.includes(safeSlug(nickname)) ||
+          only.includes(realNickname) ||
+          only.includes(safeSlug(realNickname))
+        );
+      })
     : PLAYERS_SOURCE;
 
   if (onlyFailedFetch) {
@@ -3937,7 +3966,8 @@ async function main() {
       const inventoryDoc = mergeFailedFetchWithExisting(
         await readJsonSafe(invFile),
         {
-          nickname: player.nickname,
+          nickname: player.nickname, // internal id
+          real_nickname: player.real_nickname || player.nickname, // display nickname
           slug,
           steamid64: "",
           team: player.team || "",
@@ -3962,7 +3992,8 @@ async function main() {
       await writeJson(invFile, inventoryDoc);
 
       playersListOutput.push({
-        nickname: player.nickname,
+        nickname: player.nickname, // internal id
+        real_nickname: player.real_nickname || player.nickname, // display nickname
         slug,
         steamid64: "",
         team: player.team || "",
@@ -4009,6 +4040,7 @@ async function main() {
 
     playersListOutput.push({
       nickname: player.nickname,
+      real_nickname: player.real_nickname || player.nickname,
       slug,
       steamid64: player.steamid64,
       team: player.team || "",
