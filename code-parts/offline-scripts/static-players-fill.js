@@ -968,7 +968,12 @@ function normalizePlayersList(raw){
       p?.isContentCreator === true ||
       p?.is_content_creator === true;
 
-    const team = rawTeam || (isContentCreator ? "Content Creator" : "");
+    const nationality =
+      String(
+        p?.nationality ||
+        p?.country ||
+        ""
+      ).trim();
 
     const image =
       String(
@@ -1007,12 +1012,13 @@ function normalizePlayersList(raw){
         .replace(/\/+$/, "");
 
     return {
-      nickname, // internal id
-      realNickname, // display nickname
+      nickname,
+      realNickname,
       slug,
       steamid64,
       realName,
-      team,
+      team: rawTeam, // <-- ВАЖНО: без автоподмены на "Content Creator"
+      nationality,
       isContentCreator,
       image,
       links: {
@@ -1710,6 +1716,283 @@ async function resolvePlayerImage(root, player){
   };
 }
 
+function shuffleArray(arr = []){
+  const out = Array.from(arr);
+
+  for (let i = out.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+
+  return out;
+}
+
+function pickRelatedPlayers(currentPlayer, allPlayers, limit = 4){
+  const currentNickname = String(currentPlayer?.nickname || "").trim().toLowerCase();
+  const currentTeam = String(currentPlayer?.team || "").trim();
+  const currentNationality = String(currentPlayer?.nationality || "").trim().toLowerCase();
+  const isContentCreator = currentPlayer?.isContentCreator === true;
+
+  const pool = Array.isArray(allPlayers) ? allPlayers : [];
+
+  const withoutSelf = pool.filter(p => {
+    const nick = String(p?.nickname || "").trim().toLowerCase();
+    return nick && nick !== currentNickname;
+  });
+
+  // 1) Content creators without team
+  if (!currentTeam && isContentCreator) {
+    const creators = withoutSelf.filter(p => p?.isContentCreator === true);
+
+    const sameNationality = creators.filter(p => {
+      const nat = String(p?.nationality || "").trim().toLowerCase();
+      return currentNationality && nat && nat === currentNationality;
+    });
+
+    const sameNationalityIds = new Set(
+      sameNationality.map(p => String(p?.nickname || "").trim().toLowerCase())
+    );
+
+    const restCreators = shuffleArray(
+      creators.filter(p => {
+        const nick = String(p?.nickname || "").trim().toLowerCase();
+        return !sameNationalityIds.has(nick);
+      })
+    );
+
+    return [
+      ...shuffleArray(sameNationality),
+      ...restCreators
+    ].slice(0, limit);
+  }
+
+  // 2) Free Agent
+  if (currentTeam.toLowerCase() === "free agent") {
+    const candidates = withoutSelf.filter(p => {
+      const team = String(p?.team || "").trim().toLowerCase();
+      return team !== "free agent";
+    });
+
+    const sameNationality = candidates.filter(p => {
+      const nat = String(p?.nationality || "").trim().toLowerCase();
+      return currentNationality && nat && nat === currentNationality;
+    });
+
+    const sameNationalityIds = new Set(
+      sameNationality.map(p => String(p?.nickname || "").trim().toLowerCase())
+    );
+
+    const restPlayers = shuffleArray(
+      candidates.filter(p => {
+        const nick = String(p?.nickname || "").trim().toLowerCase();
+        return !sameNationalityIds.has(nick);
+      })
+    );
+
+    return [
+      ...shuffleArray(sameNationality),
+      ...restPlayers
+    ].slice(0, limit);
+  }
+
+  // 3) No team and not content creator
+  if (!currentTeam) {
+    return [];
+  }
+
+  // 4) Normal team players
+  return withoutSelf
+    .filter(p => isSameTeamPlayer(currentPlayer, p))
+    .slice(0, limit);
+}
+
+async function canGeneratePlayerPage(root, player){
+  const slug = String(player?.slug || slugifyNickname(player?.nickname || "")).trim();
+  if (!slug) return false;
+
+  const inventory = await loadPlayerInventory(root, slug);
+  if (!inventory || !inventory.length) return false;
+
+  return hasRenderableInventoryItems(inventory);
+}
+
+async function filterPlayersWithPages(root, players){
+  const result = [];
+
+  for (const player of (Array.isArray(players) ? players : [])){
+    if (await canGeneratePlayerPage(root, player)) {
+      result.push(player);
+    }
+  }
+
+  return result;
+}
+
+function isSameTeamPlayer(basePlayer, candidate){
+  const baseTeam = String(basePlayer?.team || "").trim().toLowerCase();
+  const candidateTeam = String(candidate?.team || "").trim().toLowerCase();
+
+  if (!baseTeam || !candidateTeam) return false;
+  if (baseTeam === "free agent" || candidateTeam === "free agent") return false;
+  if (baseTeam === "content creator" || candidateTeam === "content creator") return false;
+
+  return baseTeam === candidateTeam;
+}
+
+async function buildPlayerTeammatesHtml(root, currentPlayer, allPlayers, indent, nl, lang = "en"){
+  const relatedPlayers = pickRelatedPlayers(currentPlayer, allPlayers, 8);
+
+  if (!relatedPlayers.length) {
+    return "";
+  }
+
+  const currentTeam = String(currentPlayer?.team || "").trim();
+  const isContentCreator = currentPlayer?.isContentCreator === true;
+
+  const wrapperClasses = ["player-teammates"];
+
+  if (!currentTeam && isContentCreator) {
+    wrapperClasses.push("content-creator");
+  }
+
+  if (currentTeam.toLowerCase() === "free agent") {
+    wrapperClasses.push("free-agent");
+  }
+
+  const normalized = [];
+
+  for (const teammate of relatedPlayers){
+    const imageMeta = await resolvePlayerImage(root, teammate);
+    const nickname = String(teammate?.nickname || "").trim();
+    const slug = String(teammate?.slug || slugifyNickname(nickname)).trim();
+
+    const hrefPrefix = lang === "ru" ? "/ru" : "";
+    const href = `${hrefPrefix}/topic/players/inventories/${slug}`;
+
+    normalized.push({
+      nickname,
+      slug,
+      href,
+      src: imageMeta?.src || PLAYER_UNKNOWN_IMAGE,
+      alt: imageMeta?.isFallback
+        ? PLAYER_UNKNOWN_ALT
+        : `${nickname} Photo`,
+    });
+  }
+
+  const lines = [];
+  lines.push(`${indent}<div class="${escapeAttrDblNoApos(wrapperClasses.join(" "))}">`);
+  lines.push(`${indent}  <div class="teammates-sign"></div>`);
+
+  for (const teammate of normalized){
+    lines.push(
+      `${indent}  <a href="${escapeAttrDblNoApos(teammate.href)}" class="teammate" data-title="${escapeAttrDblNoApos(teammate.nickname)}"><img src="${escapeAttrDblNoApos(teammate.src)}" alt="${escapeAttrDblNoApos(teammate.alt)}"></a>`
+    );
+  }
+
+  lines.push(`${indent}</div>`);
+
+  return lines.join(nl);
+}
+
+function escapeRegExp(s = ""){
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function normalizeComparableHtml(s = ""){
+  return String(s)
+    .replace(/\r\n/g, "\n")
+    .replace(/[ \t]+\n/g, "\n")
+    .trim();
+}
+
+async function upsertTeammatesBlockAfterGrandbox(root, html, currentPlayer, allPlayers, lang = "en"){
+  const nl = html.includes("\r\n") ? "\r\n" : "\n";
+  const masked = maskSegments(html);
+
+  const grandboxBlocks = findAllTagsByClass(masked, "item-topic-grandbox", ["div", "section"]);
+  if (!grandboxBlocks.length){
+    return { html, changed: false };
+  }
+
+  const targetGrandbox = grandboxBlocks[0];
+  const baseIndent = indentBefore(html, targetGrandbox.openStart, nl);
+
+  const teammatesHtml = await buildPlayerTeammatesHtml(
+    root,
+    currentPlayer,
+    allPlayers,
+    baseIndent,
+    nl,
+    lang
+  );
+
+  const teammatesBlocks = findAllTagsByClass(masked, "player-teammates", ["div"]);
+
+  // если блок уже есть
+  if (teammatesBlocks.length){
+    const existing = teammatesBlocks[0];
+
+    let replaceStart = existing.openStart;
+    let replaceEnd = existing.closeEnd;
+
+    while (
+      replaceStart > 0 &&
+      (html[replaceStart - 1] === " " || html[replaceStart - 1] === "\t")
+    ) {
+      replaceStart--;
+    }
+
+    if (replaceStart >= nl.length && html.slice(replaceStart - nl.length, replaceStart) === nl) {
+      replaceStart -= nl.length;
+    }
+
+    if (html.slice(replaceEnd, replaceEnd + nl.length) === nl) {
+      replaceEnd += nl.length;
+    }
+
+    // если новый блок не нужен — удаляем старый
+    if (!teammatesHtml) {
+      const nextHtml =
+        html.slice(0, replaceStart) +
+        html.slice(replaceEnd);
+
+      return {
+        html: nextHtml,
+        changed: normalizeComparableHtml(nextHtml) !== normalizeComparableHtml(html),
+      };
+    }
+
+    const replacement = `${nl}${teammatesHtml}${nl}`;
+    const nextHtml =
+      html.slice(0, replaceStart) +
+      replacement +
+      html.slice(replaceEnd);
+
+    return {
+      html: nextHtml,
+      changed: normalizeComparableHtml(nextHtml) !== normalizeComparableHtml(html),
+    };
+  }
+
+  // если блока нет и новый тоже не нужен
+  if (!teammatesHtml) {
+    return { html, changed: false };
+  }
+
+  // если блока нет — вставляем
+  const insertPos = targetGrandbox.closeEnd;
+  const before = html.slice(0, insertPos).replace(/[ \t]*$/, "");
+  const after = html.slice(insertPos).replace(/^[ \t]*(\r?\n)?/, nl);
+
+  const nextHtml = `${before}${nl}${teammatesHtml}${after}`;
+
+  return {
+    html: nextHtml,
+    changed: normalizeComparableHtml(nextHtml) !== normalizeComparableHtml(html),
+  };
+}
+
 function resolvePlayerTeam(player){
   const rawTeam = String(player?.team || "").trim();
   const isContentCreator = player?.isContentCreator === true;
@@ -1891,6 +2174,7 @@ async function generatePlayerPagesForVersion({
   dry,
   verbose,
   players,
+  allPlayers,
   templatePath,
   outputDirPath,
   lang,
@@ -1899,6 +2183,7 @@ async function generatePlayerPagesForVersion({
   const outputDir = abs(root, outputDirPath);
 
   const templateHtml = await readTextCached(templateFile);
+  const playersWithPages = await filterPlayersWithPages(root, allPlayers);
 
   const templateBaseName = path.basename(templateFile, ".html");
   const templateNicknameMatch = templateHtml.match(/ZywOo/);
@@ -1977,6 +2262,11 @@ async function generatePlayerPagesForVersion({
       if (res.changed) html = res.html;
     }
 
+    {
+      const res = await upsertTeammatesBlockAfterGrandbox(root, html, player, playersWithPages, lang);
+      if (res.changed) html = res.html;
+    }
+
     let prevHtml = null;
 
     if (existsAlready) {
@@ -2038,6 +2328,7 @@ async function generatePlayerPagesForVersion({
     dry,
     verbose,
     players,
+    allPlayers,
     templatePath: templateRu,
     outputDirPath: OUTPUT_DIR_RU,
     lang: "ru",
@@ -2048,6 +2339,7 @@ async function generatePlayerPagesForVersion({
     dry,
     verbose,
     players,
+    allPlayers,
     templatePath: templateEn,
     outputDirPath: OUTPUT_DIR_EN,
     lang: "en",

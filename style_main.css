@@ -4927,6 +4927,107 @@ nav img {
     position: unset;
 }
 
+
+
+.inventories .item-topic-grandbox {
+    order: -2;
+}
+
+.player-teammates {
+    border-radius: var(--main-border);
+    width: 300px;
+    order: -1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: var(--darkgray);
+    padding: 4px;
+    gap: 4px;
+    position: relative;
+    /* justify-content: flex-end; */
+}
+
+.player-teammates:has(:nth-child(9)) {
+    justify-content: flex-end;
+}
+
+.teammates-sign {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    height: calc(100% - 8px);
+    max-height: 60px;
+    width: 33px;
+    justify-content: center;
+    transition: .2s all ease-in-out;
+    margin-left: 2px;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+}
+
+.teammates-sign::after {
+    content: "TEAM";
+    color: var(--text-darkgray);
+    transform: rotate(90deg);
+    pointer-events: none;
+    user-select: none;
+}
+
+.content-creator .teammates-sign::after,
+.free-agent .teammates-sign::after {
+    content: "RECS";
+}
+
+.player-teammates .teammate:nth-child(2) {
+    margin-left: 40px;
+}
+
+.teammates-sign::before {
+    content: '';
+    background: linear-gradient(180deg, rgb(26 26 26) 0%, rgb(18 18 18) 100%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: var(--main-border);
+    z-index: -1;
+    /* top: 4px;
+    left: 4px;
+    bottom: 4px;
+    right: 4px; */
+    background: linear-gradient(150deg, var(--darkygray) 0%, var(--darkgray) 100%);
+    border-radius: var(--main-border) 5px 5px var(--main-border);
+}
+
+.teammate {
+    height: 60px;
+    width: 60px;
+    background: rgba(0, 0, 0, .1);
+    border-radius: var(--main-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.teammate img {
+    margin-top: 2px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    scale: 1.9;
+    top: 30px;
+    pointer-events: none;
+    user-select: none;
+    transition: all .15s ease-in-out;
+}
+
+.teammate:hover img {
+    transform: scale(1.06);
+}
+
 .sitepage.items .topic-grandbox:has(.navigation-weapon-type.solo-category) .section.first,
 .sitepage.items .topic-grandbox:has(.navigation-weapon-type.solo-category) .section.searchers #Quality-Filter {
     display: none;

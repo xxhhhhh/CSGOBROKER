@@ -93,7 +93,10 @@
 .navigation-weapon-sort.reversed, 
 .navigation-weapon-name:hover,
 .navigation-weapon-sort:hover,
-.navigation-weapon-type.enabled:hover {
+.navigation-weapon-type.enabled:hover,
+.teammate,
+.player-teammates,
+.teammates-sign {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
     box-shadow: unset;
 }
@@ -1753,4 +1756,8 @@ ul .submenu li .nonredir,
 .player-status img.content-creator {
     opacity: .1;
     filter: brightness(.2);
+}
+
+.teammate {
+    background: var(--icongradient2);
 }
