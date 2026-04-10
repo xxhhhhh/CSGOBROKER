@@ -1,5 +1,6 @@
 {
   "nickname": "Magnojez",
+  "real_nickname": "Magnojez",
   "slug": "magnojez",
   "steamid64": "76561198372023214",
   "team": "BetBoom Team",
@@ -9,16 +10,18 @@
   "isContentCreator": false,
   "twitch": "magnojezking",
   "faceit": "https://faceitdb.com/profile/faceit/b0bf2cc2-198a-4a78-988d-2e7ff7ee6815",
+  "teamLiquipediaUrl": "",
+  "teamLiquipediaSlug": "",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-08T10:22:55.468Z",
+  "updatedAt": "2026-04-10T00:47:57.529Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
   "pagesFetched": 1,
-  "totalItemsRaw": 64,
-  "totalItemsGrouped": 64,
+  "totalItemsRaw": 63,
+  "totalItemsGrouped": 63,
   "items": [
     {
       "assetid": "48690386246",
@@ -150,6 +153,37 @@
       ]
     },
     {
+      "assetid": "50961302741",
+      "classid": "1989274187",
+      "instanceid": "1363818010",
+      "amount": 1,
+      "name": "Graffiti | Tombstone (Princess Pink)",
+      "market_hash_name": "Graffiti | Tombstone (Princess Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CADACAD20FC0EACAE2CBFACEA8CDC2CADA7DC7FADBA2CABAD2BDEA2B48",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "50961302741"
+      ]
+    },
+    {
       "assetid": "48482902278",
       "classid": "1989274043",
       "instanceid": "1363818010",
@@ -181,14 +215,14 @@
       ]
     },
     {
-      "assetid": "50325218340",
+      "assetid": "50961399367",
       "classid": "8246919688",
-      "instanceid": "1363818004",
+      "instanceid": "7593051892",
       "amount": 1,
       "name": "P250 | Kintsugi",
       "market_hash_name": "P250 | Kintsugi (Field-Tested)",
       "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201C0CB8D4EBA0A71D04383C901734192C1824A8D5B0ED1F5CB11F740C6C1456620DF4",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1104,37 +1138,6 @@
       ]
     },
     {
-      "assetid": "50418442687",
-      "classid": "7545312020",
-      "instanceid": "1363818008",
-      "amount": 1,
-      "name": "Charm | Dead Weight",
-      "market_hash_name": "Charm | Dead Weight",
-      "type": "High Grade Charm",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "50418442687"
-      ]
-    },
-    {
       "assetid": "33545423082",
       "classid": "5537026493",
       "instanceid": "0",
@@ -1159,42 +1162,6 @@
       ],
       "assetids": [
         "33545423082"
-      ]
-    },
-    {
-      "assetid": "49536336916",
-      "classid": "7993041091",
-      "instanceid": "1363818010",
-      "amount": 1,
-      "name": "Five-SeveN | Hot Shot",
-      "market_hash_name": "Five-SeveN | Hot Shot (Factory New)",
-      "type": "Industrial Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206F7FFBE78DABD76E776C4F966D476D5F6B57B1FEB3886C2FE76C07731F77DF83AD63",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
       ]
     },
     {
@@ -2046,7 +2013,7 @@
     {
       "assetid": "47558203428",
       "classid": "7993046832",
-      "instanceid": "1363867528",
+      "instanceid": "1363984829",
       "amount": 1,
       "name": "StatTrak™ MP9 | Starlight Protector",
       "market_hash_name": "StatTrak™ MP9 | Starlight Protector (Factory New)",
@@ -2109,7 +2076,7 @@
     {
       "assetid": "50410386455",
       "classid": "7993036125",
-      "instanceid": "1363818068",
+      "instanceid": "1363818091",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Sakkaku",
       "market_hash_name": "StatTrak™ MAC-10 | Sakkaku (Field-Tested)",

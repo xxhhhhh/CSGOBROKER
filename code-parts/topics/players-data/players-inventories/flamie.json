@@ -10,45 +10,19 @@
   "isContentCreator": false,
   "twitch": "flamie",
   "faceit": "https://faceitdb.com/profile/faceit/fe480d93-45a1-437e-a8c8-a33a837524ef",
+  "teamLiquipediaUrl": "",
+  "teamLiquipediaSlug": "",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-08T19:25:29.626Z",
+  "updatedAt": "2026-04-10T01:14:17.115Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
   "pagesFetched": 1,
-  "totalItemsRaw": 374,
-  "totalItemsGrouped": 224,
+  "totalItemsRaw": 362,
+  "totalItemsGrouped": 212,
   "items": [
-    {
-      "assetid": "50789187776",
-      "classid": "4717330486",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Dreams & Nightmares Case",
-      "market_hash_name": "Dreams & Nightmares Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "27023610679",
       "classid": "1989271386",
@@ -1144,42 +1118,6 @@
       "market_hash_name": "FAMAS | Colony (Battle-Scarred)",
       "type": "Consumer Grade Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F1E1214C530F63F0E9FBD1DED9F0C1F5C93E517609F2B179F49923F081E9D9FA44E9",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "46882041370",
-      "classid": "7993036943",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "SG 553 | Army Sheen",
-      "market_hash_name": "SG 553 | Army Sheen (Factory New)",
-      "type": "Consumer Grade Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F8E86224742B56F9E0DFD852FAD0F9C8FCC0196D3510FBB85DF9909E88E0F701BAA8",
       "tags": [
         {
           "category": "Type",
@@ -5393,6 +5331,49 @@
       ]
     },
     {
+      "assetid": "50722090795",
+      "classid": "7729093323",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Natus Vincere | Budapest 2025",
+      "market_hash_name": "Sticker | Natus Vincere | Budapest 2025",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209E8E9E862797BE9EB69DAE9AFC9B969E8E2BD4F69EEE96D4ED5221",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "50722090795"
+      ]
+    },
+    {
       "assetid": "43820119780",
       "classid": "5799820100",
       "instanceid": "188530139",
@@ -7170,114 +7151,6 @@
       ]
     },
     {
-      "assetid": "47119887041",
-      "classid": "7993035558",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Negev | Ultralight",
-      "market_hash_name": "Negev | Ultralight (Field-Tested)",
-      "type": "Mil-Spec Grade Machinegun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205949988C989DF658414579E75E715A695D6186C4D1AC5A19D75A31F0582951AD78947C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47237739790",
-      "classid": "7993035996",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P250 | Cassette",
-      "market_hash_name": "P250 | Cassette (Battle-Scarred)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205646D8BC8CAAF9574E72769E517E5566526EB2CFC7AE55169D573EE757265ECE4C2A45",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47119910687",
-      "classid": "7993038704",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P2000 | Gnarled",
-      "market_hash_name": "P2000 | Gnarled (Battle-Scarred)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200F1F9081CCCBA00E172F2FCF08270C3F0B37C3CAEFF50C4F6167B60E7F0752A74ADB",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "47130801943",
       "classid": "7993037597",
       "instanceid": "188530139",
@@ -7286,114 +7159,6 @@
       "market_hash_name": "P2000 | Gnarled (Field-Tested)",
       "type": "Mil-Spec Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%208C9C1B625745238D94ACAC4C8BA48FBC88B4663102788FCC2389E4578DFC845ADEECE6",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47087025747",
-      "classid": "7993036595",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P2000 | Sure Grip",
-      "market_hash_name": "P2000 | Sure Grip (Field-Tested)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200212D1FEE9B6AD031A22229F0B2A0132063AB593B2F60142BD046A73720A1DAB4C3A",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47849238805",
-      "classid": "7993036595",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P2000 | Sure Grip",
-      "market_hash_name": "P2000 | Sure Grip (Field-Tested)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F3E36611565341F2EBD3D36EFADBF0C3F7CB750F6207F0B332F49B3CF283FB9A299753",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47079860678",
-      "classid": "7993035603",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "SG 553 | Ol' Rusty",
-      "market_hash_name": "SG 553 | Ol' Rusty (Field-Tested)",
-      "type": "Mil-Spec Grade Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F8E83E2B4E4957F9E0DFD83EFFD0FBC8FCC01D342A0CFBB80CFB90B388F0F166C80C",
       "tags": [
         {
           "category": "Type",
@@ -7646,150 +7411,6 @@
       "market_hash_name": "SSG 08 | Mainframe 001 (Field-Tested)",
       "type": "Mil-Spec Grade Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%2085952B243A2F2A849DADA54282AD86B581BD4F060B7086C51187EDB0F58D092D7E89",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47087022425",
-      "classid": "7993037406",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "SSG 08 | Memorial",
-      "market_hash_name": "SSG 08 | Memorial (Well-Worn)",
-      "type": "Mil-Spec Grade Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E3F33A0108574CE2FBCBC340EACBE0D3E7DB3F5A6514E0A343E78BB593EB0E3E9703",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47087030510",
-      "classid": "7993037406",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "SSG 08 | Memorial",
-      "market_hash_name": "SSG 08 | Memorial (Well-Worn)",
-      "type": "Mil-Spec Grade Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DECE307F326A71DFC6F6FE7DD7F6DDEEDAE605335529DD9E17DDB6A0AED6BE197E92",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47087032482",
-      "classid": "7993037406",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "SSG 08 | Memorial",
-      "market_hash_name": "SSG 08 | Memorial (Well-Worn)",
-      "type": "Mil-Spec Grade Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2036269487DA8299372E1E16953F1E3506320EB68AD9C03576FB325E4B463E597627B6",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47087042081",
-      "classid": "7993037406",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "SSG 08 | Memorial",
-      "market_hash_name": "SSG 08 | Memorial (Well-Worn)",
-      "type": "Mil-Spec Grade Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A4B4055848100BA5BC8C8407AD8CA794A09C1D026352A7E437A7CC07A5D4ACED356349",
       "tags": [
         {
           "category": "Type",
@@ -8448,42 +8069,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "46882041308",
-      "classid": "7993040226",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ P90 | Freight",
-      "market_hash_name": "StatTrak™ P90 | Freight (Battle-Scarred)",
-      "type": "StatTrak™ Mil-Spec Grade SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202232FEF9AEF18C233A3102EB250A21122B1ABE97D1DA2162AF216A2272224A59522AE44BF082",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]

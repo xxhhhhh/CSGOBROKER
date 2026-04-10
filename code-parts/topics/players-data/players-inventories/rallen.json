@@ -10,16 +10,18 @@
   "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/e05e2128-e0ab-459e-8ee5-4a0249ba508f",
+  "teamLiquipediaUrl": "",
+  "teamLiquipediaSlug": "",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-08T19:47:41.792Z",
+  "updatedAt": "2026-04-10T01:19:20.095Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
   "pagesFetched": 1,
-  "totalItemsRaw": 499,
-  "totalItemsGrouped": 408,
+  "totalItemsRaw": 533,
+  "totalItemsGrouped": 442,
   "items": [
     {
       "assetid": "2739098068",
@@ -2245,6 +2247,42 @@
       "market_hash_name": "AUG | Lil' Pig (Minimal Wear)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%200A1ACCC593E2A60B12022AA70B220F3A0E3281FCE9E6094AD408628B087A1D18D4FFD8",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713291399",
+      "classid": "7993035539",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "FAMAS | Rapid Eye Movement",
+      "market_hash_name": "FAMAS | Rapid Eye Movement (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204454C391B9B1F8455C4E64A34C6C4174407CE8B9D5B14704612CF746344CF9EF90D0",
       "tags": [
         {
           "category": "Type",
@@ -8490,6 +8528,150 @@
       ]
     },
     {
+      "assetid": "50711238373",
+      "classid": "7993036196",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Five-SeveN | Scrawl",
+      "market_hash_name": "Five-SeveN | Scrawl (Battle-Scarred)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DECE3B735E2B62DFC6DDFE36D6F6DDEEDAE67B232027DD9E4CDAB659DCAED6947D9FA8",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713231101",
+      "classid": "7993036196",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Five-SeveN | Scrawl",
+      "market_hash_name": "Five-SeveN | Scrawl (Battle-Scarred)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207A6A8787838FC67B62795A927252794A7E42CDDCC283793AF57B12E2780A72AE79BC08",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713248619",
+      "classid": "7993035499",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Five-SeveN | Scrawl",
+      "market_hash_name": "Five-SeveN | Scrawl (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D1C13A572A246DD0C9D2F139D9F9D2E1D5E951055925D291ABB94CD3A1D9662B3001",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713270512",
+      "classid": "7993035499",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Five-SeveN | Scrawl",
+      "market_hash_name": "Five-SeveN | Scrawl (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208D9D7D3C7178318C958EAD6585A58EBD89B51B736F7C8ECD2B8FE5258FFD8534F94EF0",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49718712730",
       "classid": "241580826",
       "instanceid": "302028390",
@@ -8534,6 +8716,114 @@
       "market_hash_name": "Glock-18 | Off World (Battle-Scarred)",
       "type": "Mil-Spec Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C8D82616171172C9D0CCE860CDE0CBF8CCF011405B33CB8834CEA040CAB8C0868A55DF",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713227781",
+      "classid": "7993036292",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "P2000 | Lifted Spirits",
+      "market_hash_name": "P2000 | Lifted Spirits (Well-Worn)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20100095F4E9E5AC11083030E2183813201428BEB7AFE6135087117887126018A5A1BB23",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713304884",
+      "classid": "7993036292",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "P2000 | Lifted Spirits",
+      "market_hash_name": "P2000 | Lifted Spirits (Well-Worn)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F7E7434909024BF6EFD7D705FFDFF4C7F3CF03067C00F4B749F29F40F587FFDAB0F142",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713311723",
+      "classid": "7993036292",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "P2000 | Lifted Spirits",
+      "market_hash_name": "P2000 | Lifted Spirits (Well-Worn)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C2D229313C377EC3DAE2E230CAEAC1F2C6FA773B7534C1824DC4AA7BC0B2CAC7A3B35D",
       "tags": [
         {
           "category": "Type",
@@ -9218,6 +9508,42 @@
       ]
     },
     {
+      "assetid": "50711225190",
+      "classid": "7993036171",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "FAMAS | Meow 36",
+      "market_hash_name": "FAMAS | Meow 36 (Well-Worn)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ACBC4A6A535810ADB4A68C56A484AF9CA8944C066D5AAFEC4BAEC42EAEDCA4E88F4DF1",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "48831127251",
       "classid": "241622673",
       "instanceid": "302028390",
@@ -9542,6 +9868,150 @@
       "market_hash_name": "M4A4 | Zubastick (Field-Tested)",
       "type": "Mil-Spec Grade Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%206070DB819CC9DB61787040F86B4863506458F186A8936320F66308B262106829EEE8A2",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50711220215",
+      "classid": "7993036358",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "SG 553 | Cyberforce",
+      "market_hash_name": "SG 553 | Cyberforce (Minimal Wear)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BDAD4A22424901BCA59A9D6FB495BE8DB98521206153BEFD6DB9D503BCCDB5E889AAE6",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713251667",
+      "classid": "7993036233",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAG-7 | Foresight",
+      "market_hash_name": "MAG-7 | Foresight (Field-Tested)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201000C38EEBE5AC11080B30FC183813201428B8FFFCE41350B012788E1260184D6DC1CB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713267550",
+      "classid": "7993036233",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAG-7 | Foresight",
+      "market_hash_name": "MAG-7 | Foresight (Field-Tested)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2041519FDBBDB4FD40595A61AD49694271457988F29DB34201824729E6433149642E08E8",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713295049",
+      "classid": "7993036700",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAG-7 | Foresight",
+      "market_hash_name": "MAG-7 | Foresight (Minimal Wear)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DBCB122A262E67DAC3C0FB37D3F3D8EBDFE36D4E6436D89B04DCB36FD9ABD3D2F171FB",
       "tags": [
         {
           "category": "Type",
@@ -10146,6 +10616,78 @@
       ]
     },
     {
+      "assetid": "50713280974",
+      "classid": "7993036911",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAC-10 | Ensnared",
+      "market_hash_name": "MAC-10 | Ensnared (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CEDE004D333B72CFD6DFEE25C6E6CDFECAF60442443ACD8ECCA665CCBEC6C85C68C2",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713298628",
+      "classid": "7993036911",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAC-10 | Ensnared",
+      "market_hash_name": "MAC-10 | Ensnared (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CEDE0A43303B72CFD6DFEE25C6E6CDFECAF67C49253BCD8E28C9A67BCCBEC6B0DC987D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50644375204",
       "classid": "7993036753",
       "instanceid": "188530139",
@@ -10154,6 +10696,42 @@
       "market_hash_name": "MAC-10 | Ensnared (Minimal Wear)",
       "type": "Mil-Spec Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C8D86C65471D74C9D0D9E823C0E0CBF8CCF03B6E0426CB8879CAA049CAB8C097778CE9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713301699",
+      "classid": "7993039043",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAC-10 | Ensnared",
+      "market_hash_name": "MAC-10 | Ensnared (Well-Worn)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C5D506603B3079C4DDD4E52ECDEDC6F5C1FD40666F33C68555C3AD73C7B5CDB64BBDEE",
       "tags": [
         {
           "category": "Type",
@@ -10262,6 +10840,222 @@
       "market_hash_name": "MAC-10 | Pipsqueak (Field-Tested)",
       "type": "Mil-Spec Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%208E9E6D287D68358F969FAE028FA68DBE8AB609254A7D8DCE2C89E60E8CFE9924369882",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713219663",
+      "classid": "7993035761",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP5-SD | Necro Jr.",
+      "market_hash_name": "MP5-SD | Necro Jr. (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201E0ED1BAE7EBA21F06093EEF16361D2E1A26F2B6B2EB1D5EE31A76931C6E16EA88794D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713245219",
+      "classid": "7993035761",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP5-SD | Necro Jr.",
+      "market_hash_name": "MP5-SD | Necro Jr. (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20948437786E6128958C83B4659CBC97A490AC3A40076697D40693FC0896E49CF7E09A8B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713263960",
+      "classid": "7993035761",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP5-SD | Necro Jr.",
+      "market_hash_name": "MP5-SD | Necro Jr. (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CBDB1335303E77CAD3DCEB3AC3E3C8FBCFF3116E2739C88B76CCA36DC9BBC39AB5AB1F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713197775",
+      "classid": "7993036451",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP5-SD | Necro Jr.",
+      "market_hash_name": "MP5-SD | Necro Jr. (Minimal Wear)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203B2BF4C2CCCE873A232C1BCA3313380B3F03D996B1D4387B1353BC394B3377D129EF",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713273934",
+      "classid": "7993036451",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP5-SD | Necro Jr.",
+      "market_hash_name": "MP5-SD | Necro Jr. (Minimal Wear)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209686585A6A632A978E81B6679EBE95A692AE525B216695D60F92FE3F94E69E62299B15",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713216081",
+      "classid": "7993036080",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP5-SD | Necro Jr.",
+      "market_hash_name": "MP5-SD | Necro Jr. (Well-Worn)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EAFA3B62131F56EBF2FDCA1BE2C2E9DAEED22532401CE9AA3CEE8266E89AE23FE73FC2",
       "tags": [
         {
           "category": "Type",
@@ -10662,6 +11456,78 @@
       ]
     },
     {
+      "assetid": "50713204843",
+      "classid": "7993037351",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "SCAR-20 | Poultrygeist",
+      "market_hash_name": "SCAR-20 | Poultrygeist (Factory New)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203929D289C1CC8538211F19CA31113A093D01D1EDBDD03A79893A51B03B49310600A240",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713308119",
+      "classid": "7993036688",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "SCAR-20 | Poultrygeist",
+      "market_hash_name": "SCAR-20 | Poultrygeist (Field-Tested)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201000C7C7EEE5AC11083630E3183813201428BBD794E61350971778A81260183FE83560",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49172718390",
       "classid": "7993038182",
       "instanceid": "188530139",
@@ -10801,9 +11667,9 @@
       ]
     },
     {
-      "assetid": "50645094867",
+      "assetid": "50647896354",
       "classid": "6216347003",
-      "instanceid": "519977179",
+      "instanceid": "0",
       "amount": 6,
       "name": "Charm | Die-cast AK",
       "market_hash_name": "Charm | Die-cast AK",
@@ -10828,12 +11694,12 @@
         }
       ],
       "assetids": [
+        "50647896354",
         "50645094867",
         "50645042445",
         "50644864376",
         "50644771158",
-        "50525804639",
-        "50647896354"
+        "50525804639"
       ]
     },
     {
@@ -11688,6 +12554,42 @@
       ]
     },
     {
+      "assetid": "50713201238",
+      "classid": "7993035802",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "USP-S | Ticket to Hell",
+      "market_hash_name": "USP-S | Ticket to Hell (Minimal Wear)",
+      "type": "Restricted Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20475791D3BFB2FB465F7A67B74F6F4377437F96C7AAAB440798442FCF45374F1C29E922",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49340902138",
       "classid": "7993036732",
       "instanceid": "480085569",
@@ -12012,6 +12914,42 @@
       ]
     },
     {
+      "assetid": "50713241848",
+      "classid": "7993035763",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M4A1-S | Night Terror",
+      "market_hash_name": "M4A1-S | Night Terror (Field-Tested)",
+      "type": "Restricted Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209F8F674E656A239E87A3BF7597B79BAF9BA73924156E9CDF2A9DF7049DEF972807A286",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50279310726",
       "classid": "8246949659",
       "instanceid": "188530139",
@@ -12236,6 +13174,78 @@
       "market_hash_name": "P90 | Wave Breaker (Minimal Wear)",
       "type": "Restricted SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%206D7D95C9DCFADA6C757E4DCB6445695D6955CBD9E79D6E2DDA6B05E06F1D65B5CB8110",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713234156",
+      "classid": "7993037019",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "PP-Bizon | Space Cat",
+      "market_hash_name": "PP-Bizon | Space Cat (Battle-Scarred)",
+      "type": "Restricted SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E6F60A731C135AE7FEFCC603EECEE2D6E2DE2B39371EE5A62BE58E7FE496EE0B0C5941",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713254826",
+      "classid": "7993037376",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "PP-Bizon | Space Cat",
+      "market_hash_name": "PP-Bizon | Space Cat (Field-Tested)",
+      "type": "Restricted SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209888322F636D24998082B87D90B09CA89CA00F5130699BD8089CF0079AE890E11AACCB",
       "tags": [
         {
           "category": "Type",
@@ -13600,6 +14610,42 @@
       ]
     },
     {
+      "assetid": "50713237920",
+      "classid": "7993036464",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ FAMAS | Rapid Eye Movement",
+      "market_hash_name": "StatTrak™ FAMAS | Rapid Eye Movement (Field-Tested)",
+      "type": "StatTrak™ Classified Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A5B505165F5019A4BDAF8542AD8DA095AC9D35247B54A6E5E3EDA5F5A5CD3FA7D5ADAE785885",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "15846032269",
       "classid": "7993045746",
       "instanceid": "7246160084",
@@ -14328,6 +15374,42 @@
       ]
     },
     {
+      "assetid": "50713207931",
+      "classid": "7993037944",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ MAG-7 | Foresight",
+      "market_hash_name": "StatTrak™ MAG-7 | Foresight (Field-Tested)",
+      "type": "StatTrak™ Mil-Spec Grade Shotgun",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204050BB88B8B5FC41585B60AC486843704978CEB393B243009F430840104028CA42304895065943",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49171906295",
       "classid": "7993038464",
       "instanceid": "188530170",
@@ -14336,6 +15418,42 @@
       "market_hash_name": "StatTrak™ MAG-7 | Resupply (Field-Tested)",
       "type": "StatTrak™ Mil-Spec Grade Shotgun",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CDDD3A30335B7ACCD5D6ED69C4E5CEFDC4F56E152038CE8D36C985CD9DCDA528CCBDC5A335CA32",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713277429",
+      "classid": "7993037543",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ Sawed-Off | Spirit Board",
+      "market_hash_name": "StatTrak™ Sawed-Off | Spirit Board (Minimal Wear)",
+      "type": "StatTrak™ Mil-Spec Grade Shotgun",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203323C6D4CFC68F322B2E13C73B1B30033A0BF5C1ABC33073C9317B3363335B9931433BC5F6DC51",
       "tags": [
         {
           "category": "Type",
@@ -14408,6 +15526,42 @@
       "market_hash_name": "StatTrak™ UMP-45 | Fragment (Minimal Wear)",
       "type": "StatTrak™ Mil-Spec Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EAFA7C28411251EBF2F2CA78E1C2E9DAE3D204773C1AE9AA05E8A2EABAEA826BE89AE23A7CD507",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50711234969",
+      "classid": "7993039301",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ SCAR-20 | Poultrygeist",
+      "market_hash_name": "StatTrak™ SCAR-20 | Poultrygeist (Field-Tested)",
+      "type": "StatTrak™ Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E9F9707A691C55E8F1CFC91AE1C1EAD9E0D14308051AEAA963EFA1E9B9E9816FEB99E1D04086B6",
       "tags": [
         {
           "category": "Type",
@@ -14708,6 +15862,42 @@
       ]
     },
     {
+      "assetid": "50711241612",
+      "classid": "7993036423",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ M4A1-S | Night Terror",
+      "market_hash_name": "StatTrak™ M4A1-S | Night Terror (Field-Tested)",
+      "type": "StatTrak™ Restricted Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209888145F186D249980A4B87290B09CA891A04D531F699BD84C9BD098C898F0109AE890EBAF2D1E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "29036602679",
       "classid": "7993038867",
       "instanceid": "188530170",
@@ -14788,6 +15978,42 @@
       "market_hash_name": "StatTrak™ MAG-7 | Heat (Minimal Wear)",
       "type": "StatTrak™ Restricted Shotgun",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ACBC6C0D6F4C97B4B78C03AF84A89CA594271F615CAFECBBE4ACFC62ABCEA9A4ACBC5EB2CEA9A4ADBC5CB2CEA9A4AEBC45B2CEA9A4AFBC72BEC404AFDCA4211C1574",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50713211591",
+      "classid": "7993036962",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ G3SG1 | Dream Glade",
+      "market_hash_name": "StatTrak™ G3SG1 | Dream Glade (Field-Tested)",
+      "type": "StatTrak™ Restricted Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20504097B5A8A5EC51485B70B9587854605968B3ABC6A55310B3541850005038DB52205888BCA7AC",
       "tags": [
         {
           "category": "Type",

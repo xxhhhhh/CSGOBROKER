@@ -12,11 +12,11 @@
   "faceit": "https://faceitdb.com/profile/faceit/f8580374-5c09-43bc-bef2-463f1fde9aff",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-08T20:04:06.499Z",
-  "inventoryVisible": true,
-  "fetchOk": true,
-  "fetchStatus": 200,
-  "fetchError": "",
+  "updatedAt": "2026-04-10T01:23:34.983Z",
+  "inventoryVisible": false,
+  "fetchOk": false,
+  "fetchStatus": 403,
+  "fetchError": "Steam profile is private (private)",
   "pagesFetched": 1,
   "totalItemsRaw": 368,
   "totalItemsGrouped": 196,
@@ -8570,5 +8570,7 @@
         }
       ]
     }
-  ]
+  ],
+  "teamLiquipediaUrl": "",
+  "teamLiquipediaSlug": ""
 }

@@ -1,5 +1,6 @@
 {
   "nickname": "noway",
+  "real_nickname": "noway",
   "slug": "noway",
   "steamid64": "76561198800209567",
   "team": "Imperial Esports",
@@ -9,16 +10,18 @@
   "isContentCreator": false,
   "twitch": "nowayzao",
   "faceit": "https://faceitdb.com/profile/faceit/91396c85-8498-429e-bf1a-5f8da3c2336b",
+  "teamLiquipediaUrl": "",
+  "teamLiquipediaSlug": "",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-08T15:19:39.667Z",
+  "updatedAt": "2026-04-10T01:05:29.110Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
   "pagesFetched": 1,
-  "totalItemsRaw": 69,
-  "totalItemsGrouped": 68,
+  "totalItemsRaw": 70,
+  "totalItemsGrouped": 69,
   "items": [
     {
       "assetid": "49785024853",
@@ -672,6 +675,30 @@
       "amount": 1,
       "name": "2025 Service Medal",
       "market_hash_name": "2025 Service Medal",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50952176606",
+      "classid": "7917182209",
+      "instanceid": "8360140049",
+      "amount": 1,
+      "name": "2026 Service Medal",
+      "market_hash_name": "2026 Service Medal",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -1833,7 +1860,7 @@
     {
       "assetid": "49771815204",
       "classid": "7993037679",
-      "instanceid": "1363818116",
+      "instanceid": "1363821729",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Monkey Business",
       "market_hash_name": "StatTrak™ Five-SeveN | Monkey Business (Field-Tested)",
@@ -1869,7 +1896,7 @@
     {
       "assetid": "49889044862",
       "classid": "7993037525",
-      "instanceid": "1363818053",
+      "instanceid": "1363870645",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
@@ -1941,7 +1968,7 @@
     {
       "assetid": "49610624764",
       "classid": "7993041740",
-      "instanceid": "1363820219",
+      "instanceid": "1363821709",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Neo-Noir",
       "market_hash_name": "StatTrak™ M4A4 | Neo-Noir (Minimal Wear)",
@@ -1977,7 +2004,7 @@
     {
       "assetid": "49818020887",
       "classid": "7993040590",
-      "instanceid": "8355852777",
+      "instanceid": "8363170930",
       "amount": 1,
       "name": "StatTrak™ MP9 | Starlight Protector",
       "market_hash_name": "StatTrak™ MP9 | Starlight Protector (Field-Tested)",
@@ -2029,7 +2056,7 @@
     {
       "assetid": "49838427804",
       "classid": "7993041448",
-      "instanceid": "1363821410",
+      "instanceid": "1363848463",
       "amount": 1,
       "name": "StatTrak™ AWP | Neo-Noir",
       "market_hash_name": "StatTrak™ AWP | Neo-Noir (Minimal Wear)",
@@ -2065,7 +2092,7 @@
     {
       "assetid": "49458447076",
       "classid": "7993042258",
-      "instanceid": "8356246063",
+      "instanceid": "8363598773",
       "amount": 1,
       "name": "StatTrak™ USP-S | Guardian",
       "market_hash_name": "StatTrak™ USP-S | Guardian (Factory New)",
