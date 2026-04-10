@@ -12590,7 +12590,7 @@ header {
 .smallreview h2::before,
 .smallreview h3::before,
 .introduce-craft h2::before,
-nav .pages::before {
+.ssiodox:has(.sitepage.topic) nav .pages::before {
     content: "";
     position: relative;
     display: block;
@@ -12607,7 +12607,7 @@ nav .pages::before {
     top: 7px;
 }
 
-nav .pages::before {
+.ssiodox:has(.sitepage.topic) nav .pages::before {
     top: unset;
 }
 

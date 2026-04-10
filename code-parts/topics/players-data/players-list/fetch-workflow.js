@@ -170,8 +170,8 @@ async function readJsonSafe(file) {
 
 function normalizePlayer(player) {
   return {
-    nickname: String(player?.nickname || "").trim(), // internal id
-    real_nickname: String(player?.real_nickname || "").trim(), // display nickname
+    nickname: String(player?.nickname || "").trim(),
+    real_nickname: String(player?.real_nickname || "").trim(),
 
     steamid64: String(player?.steamid64 || "").trim(),
     team: String(player?.team || "").trim(),
@@ -188,9 +188,6 @@ function normalizePlayer(player) {
 
     twitch: String(player?.twitch || "").trim(),
     faceit: String(player?.faceit || "").trim(),
-
-    teamLiquipediaUrl: String(player?.teamLiquipediaUrl || "").trim(),
-    teamLiquipediaSlug: String(player?.teamLiquipediaSlug || "").trim(),
   };
 }
 
@@ -1338,15 +1335,10 @@ function isSpecialPlayerTeamLabel(team) {
 }
 
 function resolveLiquipediaPlayerTeamState(raw) {
-  const historyTeamLink = extractCurrentTeamFromTeamHistoryRaw(raw);
-  const rawTeamLink = extractTeamLinkFromRaw(raw);
+  const historyTeam = extractCurrentTeamFromTeamHistoryRaw(raw);
+  const rawTeam = extractTeamFromRaw(raw);
 
-  const explicitTeam = extractTeamFromRaw(raw);
-  const linkedTeam = historyTeamLink.teamName
-    ? historyTeamLink
-    : rawTeamLink;
-
-  const finalTeamName = linkedTeam.teamName || explicitTeam || "";
+  const finalTeamName = historyTeam || rawTeam || "";
 
   const status = extractStatusFromRaw(raw);
   const yearsActive = extractYearsActiveFromRaw(raw);
@@ -1357,8 +1349,6 @@ function resolveLiquipediaPlayerTeamState(raw) {
   if (finalTeamName) {
     return {
       team: finalTeamName,
-      teamLiquipediaUrl: linkedTeam.teamLiquipediaUrl || "",
-      teamLiquipediaSlug: linkedTeam.teamLiquipediaSlug || "",
       isContentCreator: false,
     };
   }
@@ -1366,8 +1356,6 @@ function resolveLiquipediaPlayerTeamState(raw) {
   if (/\bretired\b/i.test(statusLower)) {
     return {
       team: "Retired",
-      teamLiquipediaUrl: "",
-      teamLiquipediaSlug: "",
       isContentCreator: false,
     };
   }
@@ -1378,16 +1366,12 @@ function resolveLiquipediaPlayerTeamState(raw) {
   ) {
     return {
       team: "Content Creator",
-      teamLiquipediaUrl: "",
-      teamLiquipediaSlug: "",
       isContentCreator: true,
     };
   }
 
   return {
     team: hasPresent ? "Free Agent" : "Free Agent",
-    teamLiquipediaUrl: "",
-    teamLiquipediaSlug: "",
     isContentCreator: false,
   };
 }
@@ -1601,51 +1585,23 @@ function extractSteamId64FromRaw(raw) {
 function extractTeamLinkFromHtml(html) {
   const source = String(html || "");
   const re =
-    /Team\s*:\s*<\/div>\s*<div[^>]*class=["'][^"']*infobox-cell-2[^"']*["'][^>]*>[\s\S]*?<a[^>]+href=["']([^"']*\/counterstrike\/([^"'#?]+))["'][^>]*>([\s\S]*?)<\/a>/i;
+    /Team\s*:\s*<\/div>\s*<div[^>]*class=["'][^"']*infobox-cell-2[^"']*["'][^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/i;
 
   const m = source.match(re);
 
   if (!m) {
-    return {
-      teamName: "",
-      teamLiquipediaUrl: "",
-      teamLiquipediaSlug: "",
-    };
+    return "";
   }
 
-  const href = htmlDecode(m[1]).trim();
-  const slug = htmlDecode(m[2]).trim();
-  const label = stripTags(m[3]).trim();
-
-  const absoluteUrl = href.startsWith("http")
-    ? href
-    : `https://liquipedia.net${href}`;
-
-  return {
-    teamName: label,
-    teamLiquipediaUrl: absoluteUrl,
-    teamLiquipediaSlug: slug,
-  };
+  return stripTags(m[1]).trim();
 }
 
 function extractCurrentTeamFromTeamHistoryRaw(raw) {
   const text = String(raw || "");
-  if (!text) {
-    return {
-      teamName: "",
-      teamLiquipediaUrl: "",
-      teamLiquipediaSlug: "",
-    };
-  }
+  if (!text) return "";
 
   const cs2HeaderMatch = text.match(/'''Counter-Strike 2'''/i);
-  if (!cs2HeaderMatch) {
-    return {
-      teamName: "",
-      teamLiquipediaUrl: "",
-      teamLiquipediaSlug: "",
-    };
-  }
+  if (!cs2HeaderMatch) return "";
 
   const startIndex = cs2HeaderMatch.index;
   const afterCs2 = text.slice(startIndex);
@@ -1663,53 +1619,27 @@ function extractCurrentTeamFromTeamHistoryRaw(raw) {
   const thRegex = /\{\{TH\|([^}]*)\}\}/gi;
   const matches = [...cs2Section.matchAll(thRegex)];
 
-  if (!matches.length) {
-    return {
-      teamName: "",
-      teamLiquipediaUrl: "",
-      teamLiquipediaSlug: "",
-    };
-  }
+  if (!matches.length) return "";
 
   const parsed = matches
     .map((m) => {
       const full = m[1] || "";
       const parts = full.split("|").map((s) => String(s || "").trim());
       return {
-        raw: full,
         datePart: parts[0] || "",
         teamPart: parts[1] || "",
       };
     })
     .filter((x) => x.teamPart);
 
-  if (!parsed.length) {
-    return {
-      teamName: "",
-      teamLiquipediaUrl: "",
-      teamLiquipediaSlug: "",
-    };
-  }
+  if (!parsed.length) return "";
 
   const presentRows = parsed.filter((x) => /present/i.test(x.datePart));
   const selected = (presentRows.length ? presentRows : parsed)[
     (presentRows.length ? presentRows : parsed).length - 1
   ];
 
-  const cleanedTeam = cleanWikitextValue(selected.teamPart).trim();
-  if (!cleanedTeam) {
-    return {
-      teamName: "",
-      teamLiquipediaUrl: "",
-      teamLiquipediaSlug: "",
-    };
-  }
-
-  return {
-    teamName: cleanedTeam,
-    teamLiquipediaUrl: `${LIQUIPEDIA_CS_BASE}/${encodeWikiTitle(cleanedTeam)}`,
-    teamLiquipediaSlug: cleanedTeam.replace(/ /g, "_"),
-  };
+  return cleanWikitextValue(selected.teamPart).trim();
 }
 
 function extractTeamLinkFromRaw(raw) {
@@ -1720,37 +1650,19 @@ function extractTeamLinkFromRaw(raw) {
     extractWikitextField(text, "team1");
 
   if (!teamField) {
-    return {
-      teamName: "",
-      teamLiquipediaUrl: "",
-      teamLiquipediaSlug: "",
-    };
+    return "";
   }
 
   const m = teamField.match(/\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/);
 
   if (!m) {
-    const cleaned = cleanWikitextValue(teamField);
-    return {
-      teamName: cleaned,
-      teamLiquipediaUrl: cleaned
-        ? `${LIQUIPEDIA_CS_BASE}/${encodeWikiTitle(cleaned)}`
-        : "",
-      teamLiquipediaSlug: cleaned ? cleaned.replace(/ /g, "_") : "",
-    };
+    return cleanWikitextValue(teamField).trim();
   }
 
   const pageTitle = String(m[1] || "").trim();
   const label = String(m[2] || m[1] || "").trim();
-  const canonicalName = label || pageTitle;
 
-  return {
-    teamName: canonicalName,
-    teamLiquipediaUrl: canonicalName
-      ? `${LIQUIPEDIA_CS_BASE}/${encodeWikiTitle(canonicalName)}`
-      : "",
-    teamLiquipediaSlug: canonicalName ? canonicalName.replace(/ /g, "_") : "",
-  };
+  return (label || pageTitle || "").trim();
 }
 
 function extractTeamFromRaw(raw) {
@@ -2013,8 +1925,6 @@ async function fetchLiquipediaPlayerData(player, { verbose = false } = {}) {
           nationality,
           born,
           team,
-          teamLiquipediaUrl: teamState.teamLiquipediaUrl,
-          teamLiquipediaSlug: teamState.teamLiquipediaSlug,
           twitch,
           faceit,
           isContentCreator: teamState.isContentCreator,
@@ -2038,8 +1948,8 @@ async function fetchLiquipediaPlayerData(player, { verbose = false } = {}) {
       const name = extractHtmlInfoboxCell(html, "Name");
       const nationality = extractHtmlInfoboxCell(html, "Nationality");
       const born = formatHumanDateToDot(extractHtmlInfoboxCell(html, "Born"));
-      const htmlTeamLink = extractTeamLinkFromHtml(html);
-      const team = htmlTeamLink.teamName || extractHtmlInfoboxCell(html, "Team");
+      const linkedTeam = extractTeamLinkFromHtml(html);
+      const team = linkedTeam || extractHtmlInfoboxCell(html, "Team");
 
       let twitch = "";
       let faceit = "";
@@ -2066,8 +1976,6 @@ async function fetchLiquipediaPlayerData(player, { verbose = false } = {}) {
           nationality,
           born,
           team,
-          teamLiquipediaUrl: htmlTeamLink.teamLiquipediaUrl || "",
-          teamLiquipediaSlug: htmlTeamLink.teamLiquipediaSlug || "",
           twitch,
           faceit,
         };
@@ -2085,8 +1993,6 @@ async function fetchLiquipediaPlayerData(player, { verbose = false } = {}) {
     nationality: "",
     born: "",
     team: "",
-    teamLiquipediaUrl: "",
-    teamLiquipediaSlug: "",
     twitch: "",
     faceit: "",
   };
@@ -2113,8 +2019,6 @@ function mergeLiquipediaDataIntoPlayer(player, lpData, { force = false } = {}) {
   assign("team", lpData.team);
   assign("twitch", lpData.twitch);
   assign("faceit", lpData.faceit);
-  assign("teamLiquipediaUrl", lpData.teamLiquipediaUrl);
-  assign("teamLiquipediaSlug", lpData.teamLiquipediaSlug);
 
   if (typeof lpData.isContentCreator === "boolean") {
     merged.isContentCreator = lpData.isContentCreator;
@@ -2148,14 +2052,6 @@ async function savePlayersSource(playersSourceFile, players) {
       out.born = p.born || "";
       out.twitch = p.twitch || "";
       out.faceit = p.faceit || "";
-
-      if (String(p.teamLiquipediaUrl || "").trim()) {
-        out.teamLiquipediaUrl = String(p.teamLiquipediaUrl).trim();
-      }
-
-      if (String(p.teamLiquipediaSlug || "").trim()) {
-        out.teamLiquipediaSlug = String(p.teamLiquipediaSlug).trim();
-      }
 
       return out;
     }),
@@ -2242,7 +2138,6 @@ function extractTeamRegionFromRaw(raw) {
 
 async function fetchTeamMeta(teamRef, { verbose = false } = {}) {
   const teamName = String(teamRef?.team || "").trim();
-  const teamLiquipediaSlug = String(teamRef?.teamLiquipediaSlug || "").trim();
   const previous = teamRef?.previous || {};
   const liquipediaMode = String(
     teamRef?.liquipedia || previous?.liquipedia || ""
@@ -2250,9 +2145,7 @@ async function fetchTeamMeta(teamRef, { verbose = false } = {}) {
     .trim()
     .toLowerCase();
 
-  const slugBase = teamLiquipediaSlug || teamName || previous.team || "";
-  const slug = safeSlug(slugBase);
-
+  const slug = safeSlug(teamName || previous.team || "");
   let region = previous.region || "";
   const logoPath = `/img/skins/teams/${slug}.webp`;
 
@@ -2265,9 +2158,7 @@ async function fetchTeamMeta(teamRef, { verbose = false } = {}) {
     };
   }
 
-  const pageTitle = teamLiquipediaSlug
-    ? teamLiquipediaSlug.replace(/_/g, " ")
-    : teamName;
+  const pageTitle = teamName;
 
   if (pageTitle) {
     const rawRes = await fetchLiquipediaRawPage(pageTitle, { verbose });
@@ -2306,21 +2197,16 @@ async function buildTeamsDocument(
 
   for (const player of players) {
     const teamName = String(player?.team || "").trim();
-    const teamLiquipediaSlug = String(player?.teamLiquipediaSlug || "").trim();
     const liquipediaMode = String(player?.liquipedia || "").trim().toLowerCase();
 
-    if (isSpecialPlayerTeamLabel(teamName)) {
-      continue;
-    }
+    if (isSpecialPlayerTeamLabel(teamName)) continue;
+    if (!teamName) continue;
 
-    if (!teamName && !teamLiquipediaSlug) continue;
-
-    const teamKey = safeSlug(teamLiquipediaSlug || teamName);
+    const teamKey = safeSlug(teamName);
 
     if (!incomingByKey.has(teamKey)) {
       incomingByKey.set(teamKey, {
         team: teamName,
-        teamLiquipediaSlug,
         liquipedia: liquipediaMode === "none" ? "none" : "",
         previous: previousByKey.get(teamKey) || null,
         players: [],
@@ -2329,16 +2215,16 @@ async function buildTeamsDocument(
 
     const group = incomingByKey.get(teamKey);
 
-    if (!group.team && teamName) group.team = teamName;
-    if (!group.teamLiquipediaSlug && teamLiquipediaSlug) {
-      group.teamLiquipediaSlug = teamLiquipediaSlug;
+    if (!group.team && teamName) {
+      group.team = teamName;
     }
+
     if (!group.liquipedia && liquipediaMode === "none") {
       group.liquipedia = "none";
     }
 
     group.players.push({
-      nickname: player.nickname, // internal id
+      nickname: player.nickname,
       real_nickname: player.real_nickname || player.nickname,
       slug: safeSlug(player.nickname),
       steamid64: player.steamid64,
@@ -2353,7 +2239,6 @@ async function buildTeamsDocument(
     const meta = await fetchTeamMeta(
       {
         team: group.team,
-        teamLiquipediaSlug: group.teamLiquipediaSlug,
         liquipedia: group.liquipedia,
         previous: group.previous,
       },
@@ -2364,20 +2249,18 @@ async function buildTeamsDocument(
       String(a.real_nickname || a.nickname || "").localeCompare(
         String(b.real_nickname || b.nickname || ""),
         "en",
-        {
-          sensitivity: "base",
-          numeric: true,
-        }
+        { sensitivity: "base", numeric: true }
       )
     );
 
-    const mergedPlayers = mergeTeamPlayers(group.previous?.players || [], group.players);
+    const mergedPlayers = mergeTeamPlayers(
+      group.previous?.players || [],
+      group.players
+    );
 
     const teamDoc = {
       team: group.team || group.previous?.team || "",
-      slug: safeSlug(
-        group.teamLiquipediaSlug || group.team || group.previous?.team || ""
-      ),
+      slug: safeSlug(group.team || group.previous?.team || ""),
       region: meta.region || group.previous?.region || "",
       logoPath:
         meta.logoPath ||
@@ -2391,6 +2274,7 @@ async function buildTeamsDocument(
     }
 
     updatedTeamsByKey.set(teamKey, teamDoc);
+
     await sleep(LIQUIPEDIA_REQUEST_DELAY_MS);
   }
 
@@ -3369,8 +3253,8 @@ async function buildInventoryDocument(
 
   if (!inventoryResult.ok) {
     return {
-      nickname: player.nickname, // internal id
-      real_nickname: player.real_nickname || player.nickname, // display nickname
+      nickname: player.nickname,
+      real_nickname: player.real_nickname || player.nickname,
       slug: safeSlug(player.nickname),
       steamid64: player.steamid64,
 
@@ -3382,9 +3266,6 @@ async function buildInventoryDocument(
       isContentCreator: Boolean(player.isContentCreator),
       twitch: player.twitch || "",
       faceit: player.faceit || "",
-
-      teamLiquipediaUrl: player.teamLiquipediaUrl || "",
-      teamLiquipediaSlug: player.teamLiquipediaSlug || "",
 
       appid: APP_ID,
       contextid: String(CONTEXT_ID),
@@ -3475,8 +3356,8 @@ async function buildInventoryDocument(
   await enrichGroupedItemsWithInspectData(groupedItems, player, { verbose });
 
   return {
-    nickname: player.nickname, // internal id
-    real_nickname: player.real_nickname || player.nickname, // display nickname
+    nickname: player.nickname,
+    real_nickname: player.real_nickname || player.nickname,
     slug: safeSlug(player.nickname),
     steamid64: player.steamid64,
 
@@ -3488,9 +3369,6 @@ async function buildInventoryDocument(
     isContentCreator: Boolean(player.isContentCreator),
     twitch: player.twitch || "",
     faceit: player.faceit || "",
-
-    teamLiquipediaUrl: player.teamLiquipediaUrl || "",
-    teamLiquipediaSlug: player.teamLiquipediaSlug || "",
 
     appid: APP_ID,
     contextid: String(CONTEXT_ID),
@@ -3523,8 +3401,6 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
       born: player.born || "",
       twitch: player.twitch || "",
       faceit: player.faceit || "",
-      teamLiquipediaUrl: player.teamLiquipediaUrl || "",
-      teamLiquipediaSlug: player.teamLiquipediaSlug || "",
       isContentCreator: Boolean(player.isContentCreator),
     };
   }
@@ -3543,8 +3419,6 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
 
     twitch: player.twitch || existingDoc.twitch || "",
     faceit: player.faceit || existingDoc.faceit || "",
-    teamLiquipediaUrl: player.teamLiquipediaUrl || existingDoc.teamLiquipediaUrl || "",
-    teamLiquipediaSlug: player.teamLiquipediaSlug || existingDoc.teamLiquipediaSlug || "",
     isContentCreator: Boolean(
       player.isContentCreator ?? existingDoc.isContentCreator ?? false
     ),
@@ -3941,8 +3815,6 @@ async function main() {
           isContentCreator: Boolean(player.isContentCreator),
           twitch: player.twitch || "",
           faceit: player.faceit || "",
-          teamLiquipediaUrl: player.teamLiquipediaUrl || "",
-          teamLiquipediaSlug: player.teamLiquipediaSlug || "",
           updatedAt: new Date().toISOString(),
           inventoryVisible: null,
           fetchOk: false,

@@ -21,12 +21,12 @@ on:
       max_parallel:
         description: "Max parallel shard jobs"
         required: false
-        default: "1"
+        default: "2"
         type: string
       delay_ms:
         description: "Delay between players"
         required: false
-        default: "3000"
+        default: "500"
         type: string
       use_browser_fallback:
         description: "Enable Steam UI fallback with Puppeteer"
