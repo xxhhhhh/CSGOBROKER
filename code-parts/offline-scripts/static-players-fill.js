@@ -21,6 +21,7 @@ const PLAYERS_LIST_DIR = "/code-parts/topics/players-data/players-list";
 const PLAYERS_INV_DIR  = "/code-parts/topics/players-data/players-inventories";
 
 const PLAYER_UNKNOWN_IMAGE = "/img/skins/players/unknown.webp";
+const PLAYER_UNKNOWN_IMAGE_CROP = "/img/skins/players/crop/unknown.webp";
 const PLAYER_UNKNOWN_ALT = "CSGOBROKER Mascotte";
 
 const DEFAULT_TEMPLATE_RU = "/ru/topic/players/inventories/zywoo.html";
@@ -1716,91 +1717,74 @@ async function resolvePlayerImage(root, player){
   };
 }
 
-function shuffleArray(arr = []){
-  const out = Array.from(arr);
+function toCroppedPlayerImagePath(src = ""){
+  const value = String(src || "").trim();
+  if (!value) return value;
 
-  for (let i = out.length - 1; i > 0; i--){
-    const j = Math.floor(Math.random() * (i + 1));
-    [out[i], out[j]] = [out[j], out[i]];
-  }
+  if (!value.startsWith("/")) return value;
+  if (value.includes("/img/skins/players/crop/")) return value;
+  if (!value.startsWith("/img/skins/players/")) return value;
 
-  return out;
+  return value.replace("/img/skins/players/", "/img/skins/players/crop/");
 }
 
-function pickRelatedPlayers(currentPlayer, allPlayers, limit = 4){
+async function resolvePlayersBoxImage(root, player){
+  const candidateRaw = String(player?.image || "").trim();
+  const slug = String(player?.slug || "").trim();
+  const displayNickname = String(player?.realNickname || player?.nickname || "").trim();
+
+  const baseCandidates = [
+    candidateRaw,
+    slug ? `/img/skins/players/${slug}.webp` : "",
+  ].filter(Boolean);
+
+  const candidates = [];
+
+  for (const img of baseCandidates){
+    const cropped = toCroppedPlayerImagePath(img);
+
+    if (cropped && cropped !== img) {
+      candidates.push(cropped);
+    }
+
+    candidates.push(img);
+  }
+
+  for (const img of candidates){
+    if (img.startsWith("/")) {
+      const fullPath = abs(root, img);
+      if (await fileExists(fullPath)) {
+        return {
+          src: img,
+          alt: `${displayNickname} Photo`,
+          isFallback: false,
+        };
+      }
+      continue;
+    }
+
+    return {
+      src: img,
+      alt: `${displayNickname} Photo`,
+      isFallback: false,
+    };
+  }
+
+  return {
+    src: PLAYER_UNKNOWN_IMAGE_CROP,
+    alt: PLAYER_UNKNOWN_ALT,
+    isFallback: true,
+  };
+}
+
+function pickTeamPlayers(currentPlayer, allPlayers, limit = 8){
   const currentNickname = String(currentPlayer?.nickname || "").trim().toLowerCase();
-  const currentTeam = String(currentPlayer?.team || "").trim();
-  const currentNationality = String(currentPlayer?.nationality || "").trim().toLowerCase();
-  const isContentCreator = currentPlayer?.isContentCreator === true;
 
-  const pool = Array.isArray(allPlayers) ? allPlayers : [];
-
-  const withoutSelf = pool.filter(p => {
+  const withoutSelf = (Array.isArray(allPlayers) ? allPlayers : []).filter(p => {
     const nick = String(p?.nickname || "").trim().toLowerCase();
     return nick && nick !== currentNickname;
   });
 
-  // 1) Content creators without team
-  if (!currentTeam && isContentCreator) {
-    const creators = withoutSelf.filter(p => p?.isContentCreator === true);
-
-    const sameNationality = creators.filter(p => {
-      const nat = String(p?.nationality || "").trim().toLowerCase();
-      return currentNationality && nat && nat === currentNationality;
-    });
-
-    const sameNationalityIds = new Set(
-      sameNationality.map(p => String(p?.nickname || "").trim().toLowerCase())
-    );
-
-    const restCreators = shuffleArray(
-      creators.filter(p => {
-        const nick = String(p?.nickname || "").trim().toLowerCase();
-        return !sameNationalityIds.has(nick);
-      })
-    );
-
-    return [
-      ...shuffleArray(sameNationality),
-      ...restCreators
-    ].slice(0, limit);
-  }
-
-  // 2) Free Agent
-  if (currentTeam.toLowerCase() === "free agent") {
-    const candidates = withoutSelf.filter(p => {
-      const team = String(p?.team || "").trim().toLowerCase();
-      return team !== "free agent";
-    });
-
-    const sameNationality = candidates.filter(p => {
-      const nat = String(p?.nationality || "").trim().toLowerCase();
-      return currentNationality && nat && nat === currentNationality;
-    });
-
-    const sameNationalityIds = new Set(
-      sameNationality.map(p => String(p?.nickname || "").trim().toLowerCase())
-    );
-
-    const restPlayers = shuffleArray(
-      candidates.filter(p => {
-        const nick = String(p?.nickname || "").trim().toLowerCase();
-        return !sameNationalityIds.has(nick);
-      })
-    );
-
-    return [
-      ...shuffleArray(sameNationality),
-      ...restPlayers
-    ].slice(0, limit);
-  }
-
-  // 3) No team and not content creator
-  if (!currentTeam) {
-    return [];
-  }
-
-  // 4) Normal team players
   return withoutSelf
     .filter(p => isSameTeamPlayer(currentPlayer, p))
     .slice(0, limit);
@@ -1839,30 +1823,17 @@ function isSameTeamPlayer(basePlayer, candidate){
   return baseTeam === candidateTeam;
 }
 
-async function buildPlayerTeammatesHtml(root, currentPlayer, allPlayers, indent, nl, lang = "en"){
-  const relatedPlayers = pickRelatedPlayers(currentPlayer, allPlayers, 8);
+async function buildPlayersTeamBoxHtml(root, currentPlayer, allPlayers, indent, nl, lang = "en"){
+  const teamPlayers = pickTeamPlayers(currentPlayer, allPlayers, 8);
 
-  if (!relatedPlayers.length) {
+  if (!teamPlayers.length) {
     return "";
-  }
-
-  const currentTeam = String(currentPlayer?.team || "").trim();
-  const isContentCreator = currentPlayer?.isContentCreator === true;
-
-  const wrapperClasses = ["player-teammates"];
-
-  if (!currentTeam && isContentCreator) {
-    wrapperClasses.push("content-creator");
-  }
-
-  if (currentTeam.toLowerCase() === "free agent") {
-    wrapperClasses.push("free-agent");
   }
 
   const normalized = [];
 
-  for (const teammate of relatedPlayers){
-    const imageMeta = await resolvePlayerImage(root, teammate);
+  for (const teammate of teamPlayers){
+    const imageMeta = await resolvePlayersBoxImage(root, teammate);
     const nickname = String(teammate?.nickname || "").trim();
     const slug = String(teammate?.slug || slugifyNickname(nickname)).trim();
 
@@ -1881,12 +1852,12 @@ async function buildPlayerTeammatesHtml(root, currentPlayer, allPlayers, indent,
   }
 
   const lines = [];
-  lines.push(`${indent}<div class="${escapeAttrDblNoApos(wrapperClasses.join(" "))}">`);
-  lines.push(`${indent}  <div class="teammates-sign"></div>`);
+  lines.push(`${indent}<div class="players-box team">`);
+  lines.push(`${indent}  <div class="players-sign"></div>`);
 
   for (const teammate of normalized){
     lines.push(
-      `${indent}  <a href="${escapeAttrDblNoApos(teammate.href)}" class="teammate" data-title="${escapeAttrDblNoApos(teammate.nickname)}"><img src="${escapeAttrDblNoApos(teammate.src)}" alt="${escapeAttrDblNoApos(teammate.alt)}"></a>`
+      `${indent}  <a href="${escapeAttrDblNoApos(teammate.href)}" class="player" data-title="${escapeAttrDblNoApos(teammate.nickname)}"><div class="player-photo"><img src="${escapeAttrDblNoApos(teammate.src)}" alt="${escapeAttrDblNoApos(teammate.alt)}"></div></a>`
     );
   }
 
@@ -1906,7 +1877,7 @@ function normalizeComparableHtml(s = ""){
     .trim();
 }
 
-async function upsertTeammatesBlockAfterGrandbox(root, html, currentPlayer, allPlayers, lang = "en"){
+async function upsertPlayersTeamBlockAfterGrandbox(root, html, currentPlayer, allPlayers, lang = "en"){
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const masked = maskSegments(html);
 
@@ -1918,7 +1889,7 @@ async function upsertTeammatesBlockAfterGrandbox(root, html, currentPlayer, allP
   const targetGrandbox = grandboxBlocks[0];
   const baseIndent = indentBefore(html, targetGrandbox.openStart, nl);
 
-  const teammatesHtml = await buildPlayerTeammatesHtml(
+  const teamBoxHtml = await buildPlayersTeamBoxHtml(
     root,
     currentPlayer,
     allPlayers,
@@ -1927,11 +1898,19 @@ async function upsertTeammatesBlockAfterGrandbox(root, html, currentPlayer, allP
     lang
   );
 
-  const teammatesBlocks = findAllTagsByClass(masked, "player-teammates", ["div"]);
+  // ищем новый блок .players-box.team
+  const teamBlocks = findAllTagsByClass(masked, "team", ["div"]).filter(block => {
+    const fragment = html.slice(block.openStart, block.openEnd);
+    return /\bplayers-box\b/.test(fragment);
+  });
 
-  // если блок уже есть
-  if (teammatesBlocks.length){
-    const existing = teammatesBlocks[0];
+  // legacy fallback: старый .player-teammates тоже считаем заменяемым
+  const legacyBlocks = findAllTagsByClass(masked, "player-teammates", ["div"]);
+
+  const existingBlocks = [...teamBlocks, ...legacyBlocks].sort((a, b) => a.openStart - b.openStart);
+
+  if (existingBlocks.length){
+    const existing = existingBlocks[0];
 
     let replaceStart = existing.openStart;
     let replaceEnd = existing.closeEnd;
@@ -1951,8 +1930,7 @@ async function upsertTeammatesBlockAfterGrandbox(root, html, currentPlayer, allP
       replaceEnd += nl.length;
     }
 
-    // если новый блок не нужен — удаляем старый
-    if (!teammatesHtml) {
+    if (!teamBoxHtml) {
       const nextHtml =
         html.slice(0, replaceStart) +
         html.slice(replaceEnd);
@@ -1963,7 +1941,7 @@ async function upsertTeammatesBlockAfterGrandbox(root, html, currentPlayer, allP
       };
     }
 
-    const replacement = `${nl}${teammatesHtml}${nl}`;
+    const replacement = `${nl}${teamBoxHtml}${nl}`;
     const nextHtml =
       html.slice(0, replaceStart) +
       replacement +
@@ -1975,17 +1953,15 @@ async function upsertTeammatesBlockAfterGrandbox(root, html, currentPlayer, allP
     };
   }
 
-  // если блока нет и новый тоже не нужен
-  if (!teammatesHtml) {
+  if (!teamBoxHtml) {
     return { html, changed: false };
   }
 
-  // если блока нет — вставляем
   const insertPos = targetGrandbox.closeEnd;
   const before = html.slice(0, insertPos).replace(/[ \t]*$/, "");
   const after = html.slice(insertPos).replace(/^[ \t]*(\r?\n)?/, nl);
 
-  const nextHtml = `${before}${nl}${teammatesHtml}${after}`;
+  const nextHtml = `${before}${nl}${teamBoxHtml}${after}`;
 
   return {
     html: nextHtml,
@@ -2263,7 +2239,7 @@ async function generatePlayerPagesForVersion({
     }
 
     {
-      const res = await upsertTeammatesBlockAfterGrandbox(root, html, player, playersWithPages, lang);
+      const res = await upsertPlayersTeamBlockAfterGrandbox(root, html, player, playersWithPages, lang);
       if (res.changed) html = res.html;
     }
 

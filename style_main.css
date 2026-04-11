@@ -320,6 +320,7 @@ nav .pages {
     flex-direction: column;
     opacity: 0;
     z-index: 1;
+    order: 1;
 }
 
 .rec-box::before {
@@ -343,7 +344,8 @@ nav .pages {
     left: 0;
 }
 
-.rec-box.active {
+.rec-box.active,
+.players-box.recs {
   animation: fadeIn .2s ease-in-out forwards;
 }
 
@@ -4668,7 +4670,8 @@ nav img {
     font-size: 11px;
 }
 
-.topic-filter .singlemod-box[data-title]:hover::after {
+.topic-filter .singlemod-box[data-title]:hover::after,
+.player[data-title]:hover::after {
     content: attr(data-title);
     transform: translateX(-50%) translateY(100%) !important;
     transition: all .15s ease-in-out;
@@ -4927,16 +4930,9 @@ nav img {
     position: unset;
 }
 
-
-
-.inventories .item-topic-grandbox {
-    order: -2;
-}
-
-.player-teammates {
+.players-box {
     border-radius: var(--main-border);
     width: 300px;
-    order: -1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -4944,14 +4940,22 @@ nav img {
     padding: 4px;
     gap: 4px;
     position: relative;
-    /* justify-content: flex-end; */
+    z-index: 10;
 }
 
-.player-teammates:has(:nth-child(9)) {
+.players-box:hover {
+    z-index: 11 !important;
+}
+
+.players-box.recs {
+    opacity: 0;
+}
+
+.players-box:has(:nth-child(9)) {
     justify-content: flex-end;
 }
 
-.teammates-sign {
+.players-sign {
     font-size: 12px;
     text-transform: uppercase;
     font-weight: 500;
@@ -4962,13 +4966,17 @@ nav img {
     width: 33px;
     justify-content: center;
     transition: .2s all ease-in-out;
-    margin-left: 2px;
+    margin-left: 4px;
     position: absolute;
     z-index: 1;
     left: 0;
 }
 
-.teammates-sign::after {
+.recs .players-sign {
+    max-height: unset;
+}
+
+.players-sign::after {
     content: "TEAM";
     color: var(--text-darkgray);
     transform: rotate(90deg);
@@ -4976,16 +4984,16 @@ nav img {
     user-select: none;
 }
 
-.content-creator .teammates-sign::after,
-.free-agent .teammates-sign::after {
-    content: "RECS";
+.recs .players-sign::after {
+    content: "Random Recs";
+    text-wrap: nowrap;
 }
 
-.player-teammates .teammate:nth-child(2) {
+.players-box .player:nth-child(2) {
     margin-left: 40px;
 }
 
-.teammates-sign::before {
+.players-sign::before {
     content: '';
     background: linear-gradient(180deg, rgb(26 26 26) 0%, rgb(18 18 18) 100%);
     position: absolute;
@@ -5003,16 +5011,23 @@ nav img {
     border-radius: var(--main-border) 5px 5px var(--main-border);
 }
 
-.teammate {
+.player {
     height: 60px;
     width: 60px;
     background: rgba(0, 0, 0, .1);
     border-radius: var(--main-border);
     position: relative;
-    overflow: hidden;
 }
 
-.teammate img {
+.player-photo {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--main-border);
+}
+
+/* .player .player-photo img {
     margin-top: 2px;
     width: 100%;
     height: auto;
@@ -5022,9 +5037,17 @@ nav img {
     pointer-events: none;
     user-select: none;
     transition: all .15s ease-in-out;
+} */
+
+.player .player-photo img {
+    width: auto;
+    height: 100%;
+    pointer-events: none;
+    user-select: none;
+    transition: all .15s ease-in-out;
 }
 
-.teammate:hover img {
+.player:hover .player-photo img {
     transform: scale(1.06);
 }
 
@@ -7751,7 +7774,8 @@ header .singlemod-box .singlemod-select img {
     width: 45%;
 }
 
-.singlemod-box[data-title]:after {
+.singlemod-box[data-title]:after,
+.player[data-title]:after {
     content: attr(data-title);
     position: absolute;
     display: flex;
@@ -7773,6 +7797,27 @@ header .singlemod-box .singlemod-select img {
     right: 60px;
     width: auto;
     text-wrap: nowrap;
+}
+
+.player[data-title]::after {
+    right: 50%;
+    bottom: -6px;
+    transform: translateY(70%) translateX(50%);
+    filter: unset;
+    padding: unset;
+    background: unset;
+}
+
+.recs .player[data-title]:nth-child(2):after,
+.recs .player[data-title]:nth-child(3):after,
+.recs .player[data-title]:nth-child(4):after,
+.recs .player[data-title]:nth-child(5):after {
+    bottom: unset;
+    top: -24px;
+}
+
+.player[data-title]:hover::after {
+    transform: translateY(100%) translateX(50%) !important;
 }
 
 .mods-box.skins-box .singlemod-box[data-title]:after {

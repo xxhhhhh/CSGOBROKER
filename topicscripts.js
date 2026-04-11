@@ -678,6 +678,430 @@ function getSkinAltName(skinEl) {
 
     return { normalText, souvenirText, normalMin, souvenirMin };
   }
+    // ---------- Players recs for /players/inventories/ ----------
+    (function initPlayersRecsBox() {
+      const PLAYERS_LIST_URL = "/code-parts/topics/players-data/players-list/fetch-players.json";
+      const PLAYERS_META_URL = "/code-parts/topics/players-data/players-list/players.json";
+      const UNKNOWN_IMAGE = "/img/skins/players/unknown.webp";
+      const UNKNOWN_IMAGE_CROP = "/img/skins/players/crop/unknown.webp";
+      const isPlayerInventoryPage = /\/topic\/players\/inventories\/[^/]+(?:\.html)?$/i.test(window.location.pathname);
+
+      if (!isPlayerInventoryPage) return;
+
+      function getCurrentPlayerSlug() {
+        return window.location.pathname
+          .split("/")
+          .pop()
+          .replace(/\.html$/i, "")
+          .trim()
+          .toLowerCase();
+      }
+
+      function toCroppedPlayerImagePath(src = "") {
+        const value = String(src || "").trim();
+        if (!value) return value;
+
+        if (!value.startsWith("/")) return value;
+        if (value.includes("/img/skins/players/crop/")) return value;
+        if (!value.startsWith("/img/skins/players/")) return value;
+
+        return value.replace("/img/skins/players/", "/img/skins/players/crop/");
+      }
+
+      function normalizePlayerSlug(value = "") {
+        return String(value)
+          .trim()
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+      }
+
+      function normalizeNationality(value = "") {
+        return String(value || "")
+          .trim()
+          .toLowerCase();
+      }
+
+      function shuffleArray(arr = []) {
+        const out = Array.from(arr);
+        for (let i = out.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [out[i], out[j]] = [out[j], out[i]];
+        }
+        return out;
+      }
+
+      function normalizePlayersList(raw) {
+        const rawPlayers =
+          Array.isArray(raw) ? raw :
+          Array.isArray(raw?.players) ? raw.players :
+          Array.isArray(raw?.items) ? raw.items :
+          [];
+
+        return rawPlayers
+          .map((p) => {
+            const nickname = String(
+              p?.nickname ||
+              p?.nick ||
+              p?.player_nickname ||
+              ""
+            ).trim();
+
+            const realNickname = String(
+              p?.real_nickname ||
+              p?.realNickname ||
+              p?.display_nickname ||
+              p?.displayNickname ||
+              nickname
+            ).trim();
+
+            const slug = String(
+              p?.slug ||
+              p?.player_slug ||
+              normalizePlayerSlug(nickname)
+            ).trim();
+
+            const team = String(
+              p?.team ||
+              p?.organization ||
+              p?.org ||
+              ""
+            ).trim();
+
+            const nationality = String(
+              p?.nationality ||
+              p?.country ||
+              ""
+            ).trim();
+
+            const isContentCreator =
+              p?.isContentCreator === true ||
+              p?.is_content_creator === true;
+
+            const imageRaw = String(
+              p?.photo ||
+              p?.image ||
+              p?.avatar ||
+              p?.img ||
+              `/img/skins/players/${slug}.webp`
+            ).trim();
+
+            const image = toCroppedPlayerImagePath(imageRaw);
+
+            return {
+              nickname,
+              realNickname,
+              slug,
+              team,
+              nationality,
+              isContentCreator,
+              image,
+            };
+          })
+          .filter((p) => p.nickname && p.slug);
+      }
+
+      function normalizePlayersMetaList(raw) {
+        const rawPlayers =
+          Array.isArray(raw) ? raw :
+          Array.isArray(raw?.players) ? raw.players :
+          Array.isArray(raw?.items) ? raw.items :
+          [];
+
+        return rawPlayers
+          .map((p) => {
+            const nickname = String(
+              p?.nickname ||
+              p?.nick ||
+              p?.player_nickname ||
+              ""
+            ).trim();
+
+            const slug = String(
+              p?.slug ||
+              p?.player_slug ||
+              normalizePlayerSlug(nickname)
+            ).trim();
+
+            const totalItemsGrouped = Number(p?.totalItemsGrouped || 0) || 0;
+
+            return {
+              nickname,
+              slug,
+              totalItemsGrouped,
+            };
+          })
+          .filter((p) => p.nickname && p.slug);
+      }
+
+      function isUnknownPlayerImage(src = "") {
+        const value = String(src || "").trim().toLowerCase();
+        if (!value) return true;
+
+        return (
+          value.endsWith("/unknown.webp") ||
+          value === "/img/skins/players/unknown.webp" ||
+          value.includes("players/unknown.webp")
+        );
+      }
+
+      function getPlayerPriorityGroups(players, nationality) {
+        const nat = normalizeNationality(nationality);
+
+        const groups = {
+          sameWithPhoto: [],
+          sameUnknown: [],
+          otherWithPhoto: [],
+          otherUnknown: [],
+        };
+
+        players.forEach((p) => {
+          const pNat = normalizeNationality(p?.nationality);
+          const sameNationality = !!nat && !!pNat && pNat === nat;
+          const unknownImage = isUnknownPlayerImage(p?.image);
+
+          if (sameNationality && !unknownImage) {
+            groups.sameWithPhoto.push(p);
+            return;
+          }
+
+          if (sameNationality && unknownImage) {
+            groups.sameUnknown.push(p);
+            return;
+          }
+
+          if (!sameNationality && !unknownImage) {
+            groups.otherWithPhoto.push(p);
+            return;
+          }
+
+          groups.otherUnknown.push(p);
+        });
+
+        return groups;
+      }
+
+      function pickFromPriorityGroups(players, nationality, limit) {
+        const groups = getPlayerPriorityGroups(players, nationality);
+        const picked = [];
+
+        function takeFrom(list, amount) {
+          if (amount <= 0 || !list.length) return [];
+          return shuffleArray(list).slice(0, amount);
+        }
+
+        // 1) Сначала той же nationality с фото
+        const sameWithPhoto = takeFrom(groups.sameWithPhoto, limit);
+        picked.push(...sameWithPhoto);
+
+        // 2) Потом той же nationality без фото
+        if (picked.length < limit) {
+          const sameUnknown = takeFrom(groups.sameUnknown, limit - picked.length);
+          picked.push(...sameUnknown);
+        }
+
+        // 3) Потом другие nationality с фото
+        if (picked.length < limit) {
+          const otherWithPhoto = takeFrom(groups.otherWithPhoto, limit - picked.length);
+          picked.push(...otherWithPhoto);
+        }
+
+        // 4) И только потом другие nationality без фото
+        if (picked.length < limit) {
+          const otherUnknown = takeFrom(groups.otherUnknown, limit - picked.length);
+          picked.push(...otherUnknown);
+        }
+
+        return picked.slice(0, limit);
+      }
+
+      function getExcludedPlayerSlugs() {
+        const out = new Set();
+        const currentSlug = getCurrentPlayerSlug();
+        if (currentSlug) out.add(currentSlug);
+
+        document.querySelectorAll(".players-box.team .player[href], .player-teammates .teammate[href]").forEach((a) => {
+          const href = a.getAttribute("href") || "";
+          const slug = href.split("/").pop()?.replace(/\.html$/i, "").trim().toLowerCase();
+          if (slug) out.add(slug);
+        });
+
+        return out;
+      }
+
+      function buildPlayerHref(slug) {
+        const prefix = typeof languageTag !== "undefined" && languageTag === "ru" ? "/ru" : "";
+        return `${prefix}/topic/players/inventories/${slug}`;
+      }
+
+      function createPlayerNode(player) {
+        const a = document.createElement("a");
+        a.className = "player";
+        a.href = buildPlayerHref(player.slug);
+        a.setAttribute("data-title", player.realNickname || player.nickname || "");
+
+        const photo = document.createElement("div");
+        photo.className = "player-photo";
+
+        const img = document.createElement("img");
+        img.src = player.image || `/img/skins/players/crop/${player.slug}.webp`;
+        img.alt = `${player.realNickname || player.nickname} Photo`;
+
+        img.onerror = function () {
+          this.onerror = null;
+          this.src = UNKNOWN_IMAGE_CROP;
+          this.alt = "CSGOBROKER Mascotte";
+        };
+
+        photo.appendChild(img);
+        a.appendChild(photo);
+
+        return a;
+      }
+
+      function buildPlayersBox(type, players) {
+        const box = document.createElement("div");
+        box.className = `players-box ${type}`;
+
+        const sign = document.createElement("div");
+        sign.className = "players-sign";
+
+        box.appendChild(sign);
+        players.forEach((player) => box.appendChild(createPlayerNode(player)));
+
+        return box;
+      }
+
+      async function fetchPlayers() {
+        const res = await fetch(PLAYERS_LIST_URL, { cache: "force-cache" });
+        if (!res.ok) throw new Error(`Players fetch failed: ${res.status}`);
+        const json = await res.json();
+        return normalizePlayersList(json);
+      }
+
+      async function fetchPlayersMeta() {
+        const res = await fetch(PLAYERS_META_URL, { cache: "force-cache" });
+        if (!res.ok) throw new Error(`Players meta fetch failed: ${res.status}`);
+        const json = await res.json();
+        return normalizePlayersMetaList(json);
+      }
+
+      function filterPlayersWithPages(players, playersMeta) {
+        const metaBySlug = new Map();
+        const metaByNickname = new Map();
+
+        (Array.isArray(playersMeta) ? playersMeta : []).forEach((player) => {
+          const slug = String(player?.slug || "").trim().toLowerCase();
+          const nickname = String(player?.nickname || "").trim().toLowerCase();
+
+          if (slug) {
+            metaBySlug.set(slug, player);
+          }
+
+          if (nickname) {
+            metaByNickname.set(nickname, player);
+          }
+        });
+
+        return (Array.isArray(players) ? players : []).filter((player) => {
+          const slug = String(player?.slug || "").trim().toLowerCase();
+          const nickname = String(player?.nickname || "").trim().toLowerCase();
+
+          const meta =
+            metaBySlug.get(slug) ||
+            metaByNickname.get(nickname) ||
+            null;
+
+          if (!meta) return false;
+
+          return Number(meta.totalItemsGrouped || 0) > 0;
+        });
+      }
+
+      function pickRecPlayers(currentPlayer, allPlayers, excludedSlugs) {
+        const currentSlug = String(currentPlayer?.slug || "").trim().toLowerCase();
+        const currentNationality = String(currentPlayer?.nationality || "").trim();
+
+        const pool = (Array.isArray(allPlayers) ? allPlayers : []).filter((p) => {
+          const slug = String(p?.slug || "").trim().toLowerCase();
+          return slug && slug !== currentSlug && !excludedSlugs.has(slug);
+        });
+
+        const creatorsPool = pool.filter((p) => p.isContentCreator === true);
+        const pickedCreators = pickFromPriorityGroups(creatorsPool, currentNationality, 2);
+
+        const used = new Set(pickedCreators.map((p) => String(p.slug).toLowerCase()));
+
+        const remainingPool = pool.filter((p) => !used.has(String(p.slug).toLowerCase()));
+        const pickedRest = pickFromPriorityGroups(remainingPool, currentNationality, 6);
+
+        return [...pickedCreators, ...pickedRest].slice(0, 8);
+      }
+
+      function insertRecsBox(recsBox) {
+        const existingRecs = document.querySelector(".players-box.recs");
+        if (existingRecs) {
+          existingRecs.replaceWith(recsBox);
+          return;
+        }
+
+        const teamBox = document.querySelector(".players-box.team");
+        if (teamBox) {
+          teamBox.insertAdjacentElement("afterend", recsBox);
+          return;
+        }
+
+        const legacyTeamBox = document.querySelector(".player-teammates");
+        if (legacyTeamBox) {
+          legacyTeamBox.insertAdjacentElement("afterend", recsBox);
+          return;
+        }
+
+        const insertTarget = getTopicInsertTarget(document) || getTopicContainer(document);
+        if (insertTarget) {
+          insertTarget.insertAdjacentElement("afterend", recsBox);
+        }
+      }
+
+      async function run() {
+        try {
+          const [allPlayersRaw, playersMeta] = await Promise.all([
+            fetchPlayers(),
+            fetchPlayersMeta(),
+          ]);
+
+          if (!allPlayersRaw.length || !playersMeta.length) return;
+
+          const allPlayers = filterPlayersWithPages(allPlayersRaw, playersMeta);
+          if (!allPlayers.length) return;
+
+          const currentSlug = getCurrentPlayerSlug();
+          if (!currentSlug) return;
+
+          const currentPlayer = allPlayers.find((p) => String(p.slug).toLowerCase() === currentSlug);
+          if (!currentPlayer) return;
+
+          const excludedSlugs = getExcludedPlayerSlugs();
+          const recPlayers = pickRecPlayers(currentPlayer, allPlayers, excludedSlugs);
+
+          if (!recPlayers.length) {
+            document.querySelector(".players-box.recs")?.remove();
+            return;
+          }
+
+          const recsBox = buildPlayersBox("recs", recPlayers);
+          insertRecsBox(recsBox);
+
+          if (typeof languageTag !== "undefined" && languageTag === "ru") {
+            updateURLs(recsBox);
+          }
+        } catch (err) {
+          console.error("players recs init error:", err);
+        }
+      }
+
+      run();
+    })();
 
     function findMatches(name, priceData, skinEl = null) {
       const normalizedName = normalizePriceName(name);
@@ -1862,12 +2286,6 @@ function getSkinAltName(skinEl) {
       $qualityFilter.off("click").on("click", function () {
         toggleSortFilter($(this), $priceFilter, (sortState) => {
           sortTopicItemsByQuality(sortState);
-        });
-      });
-
-      $priceFilter.off("click").on("click", function () {
-        toggleSortFilter($(this), $qualityFilter, (sortState) => {
-          sortTopicItemsByPrice(sortState);
         });
       });
 
