@@ -1258,6 +1258,8 @@ if (!isExcludedPage) {
   const alt = lang === 'ru' ? `Логотип ${entry.site}` : `${entry.site} logo`;
   const labelReview = lang === 'ru' ? `Читать Обзор ${entry.site}` : `Read Review ${entry.site}`;
   const labelVisit = lang === 'ru' ? `Перейти на ${entry.site}` : `Visit ${entry.site}`;
+  const ReviewSpan = lang === 'ru' ? `Подробнее` : `Read Review`;
+  const VisitSpan = lang === 'ru' ? `Перейти` : `Visit`;
 
   const box = document.createElement('div');
   box.className = 'box';
@@ -1271,8 +1273,8 @@ if (!isExcludedPage) {
       ${bonusHTML}
     </div>
     <div class="content">
-      <a href="${reviewHref}" class="review-button" aria-label="${labelReview}"><span>Read Review</span></a>
-      <a href="${visitHref}" aria-label="${labelVisit}" target="_blank" rel="noopener" class="review-button visit"><span>Visit</span></a>
+      <a href="${reviewHref}" class="review-button" aria-label="${labelReview}"><span>${ReviewSpan}</span></a>
+      <a href="${visitHref}" aria-label="${labelVisit}" target="_blank" rel="noopener" class="review-button visit"><span>${VisitSpan}</span></a>
     </div>
   `;
 
