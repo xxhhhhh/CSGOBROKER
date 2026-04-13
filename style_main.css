@@ -11951,7 +11951,7 @@ header {
 }
 
 .main-page .box .logobg .best:hover,
-.newest-boxes .box .logobg .best:hover {
+.newest-boxes .box .logobg .best {
     font-size: 12px;
     filter: grayscale(0);
     background: var(--buttonbg);
@@ -11963,7 +11963,7 @@ header {
 }
 
 .main-page .box .logobg .best:hover::after,
-.newest-boxes .box .logobg .best:hover::after {
+.newest-boxes .box .logobg .best::after {
     margin-left: 8px;
     filter: brightness(1) drop-shadow(1px 1px 3px rgb(100 100 100));
     opacity: 1;

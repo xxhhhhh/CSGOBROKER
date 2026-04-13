@@ -1920,7 +1920,7 @@ function relocateOrInsertMainMode(boxHtml, lang, mainModeFromData, nl){
   }
 
   const modeFromSaved = savedBlock ? extractMainModeClass(savedBlock) : "";
-  let mode = modeFromSaved || mainModeFromData || "";
+  let mode = mainModeFromData || modeFromSaved || "";
 
   const { attrs } = readTag(boxHtml, 0);
   const cls = parseClassAttr(attrs);
@@ -1939,6 +1939,7 @@ function relocateOrInsertMainMode(boxHtml, lang, mainModeFromData, nl){
   const after  = work.slice(insertPos);
   return joinBeforeCloseKeepIndent(before, block, after, nl);
 }
+
 function ensureMainModeInLogobg(html, lang, mainMode, nl){
   const masked = maskSegments(html);
   const sitepage = findFirstByClass(masked, "sitepage");
@@ -1954,7 +1955,15 @@ function ensureMainModeInLogobg(html, lang, mainMode, nl){
     if (!box) break;
 
     const boxHtml = inner.slice(box.openStart, box.closeEnd);
-    const moved   = relocateOrInsertMainMode(boxHtml, lang, mainMode, nl);
+    const open = readTag(boxHtml, 0);
+    const cls = parseClassAttr(open.attrs);
+
+    if (!cls.has("main")) {
+      searchFrom = box.closeEnd;
+      continue;
+    }
+
+    const moved = relocateOrInsertMainMode(boxHtml, lang, mainMode, nl);
 
     if (moved !== boxHtml){
       inner = replaceWithin(inner, box.openStart, box.closeEnd, moved);
@@ -1962,6 +1971,8 @@ function ensureMainModeInLogobg(html, lang, mainMode, nl){
     } else {
       searchFrom = box.closeEnd;
     }
+
+    break; // главный бокс один
   }
 
   if (!sitepage) return inner;
@@ -2561,6 +2572,14 @@ async function renderAlternatesBlock(indent, nl, root, lang, urlPath, mainName, 
       lines.push(`${indent}        <div class="rating-case-single">`);
       lines.push(`${indent}          <div class="star_rating officon"></div>`);
       lines.push(`${indent}          <div class="rating-summ">${(Math.round(avg*100)/100).toFixed(2)}</div>`);
+      lines.push(`${indent}        </div>`);
+    }
+    const altMainMode = sj?.["Main Mode"] || aj?.["Main Mode"] || "";
+    if (altMainMode) {
+      lines.push(`${indent}        <div class="main-mode ${escapeAttr(altMainMode)} lang-${escapeAttr(lang)}">`);
+      lines.push(`${indent}          <div class="main-mode-box">`);
+      lines.push(`${indent}            <div class="main-mode-icon"></div>`);
+      lines.push(`${indent}          </div>`);
       lines.push(`${indent}        </div>`);
     }
     lines.push(`${indent}      </div>`);
