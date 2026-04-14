@@ -963,6 +963,7 @@ nav .pages {
     background: rgba(13, 13, 13, .9);
     border-radius: var(--main-border);
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .2);
+    overflow: hidden;
     top: 120px;
 }
 
@@ -1000,6 +1001,7 @@ nav .pages {
     align-items: center;
     position: relative;
     background: var(--icongradient2);
+    /* background: linear-gradient(-45deg, var(--darkgray) 50%, rgb(14, 14, 14) 100%); */
     border-radius: var(--main-border) 0 0 var(--main-border);
 }
 
@@ -1037,11 +1039,13 @@ nav .pages {
     font-size: 15px;
     font-weight: 500;
     user-select: none;
+    color: var(--text-darkgray);
 }
 
 .menu-nav-item.active,
 .menu-nav-item:hover {
-    background: var(--darkygray);
+    background: var(--darkgray);
+    color: var(--white);
 }
 
 .menu-nav-item span {
@@ -1077,7 +1081,8 @@ nav .pages {
     height: 100%;
     position: relative;
     border-radius: var(--main-border);
-    background: linear-gradient(250deg, var(--darkgray), var(--darkygray), var(--darkgray));
+    background: linear-gradient(250deg, var(--darkgray), rgb(14, 14, 14), var(--darkgray));
+    background: none;
 }
 
 .menu-main-part {
@@ -1102,7 +1107,7 @@ nav .pages {
     border-radius: var(--main-border);
     font-size: 14px;
     font-weight: 500;
-    color: rgb(100 100 100);
+    color: var(--text-darkgray);
     height: auto;
     display: flex;
     width: fit-content;
@@ -1128,7 +1133,7 @@ nav .pages {
     text-decoration: unset;
     font-size: 14px;
     font-weight: 500;
-    color: rgb(100 100 100);
+    color: var(--text-darkgray);
     transition: all .1s ease-in-out;
 }
 
@@ -1149,12 +1154,16 @@ nav .pages {
 
     width: 96px;
     height: 60px;
-    background: var(--darkgray);
+    background: var(--darkygray);
     cursor: pointer;
     position: relative;
     overflow: hidden;
     border-radius: var(--minor-border);
     transition: all .15s ease-in-out;
+}
+
+.menu-main-reviews-item:hover {
+    transform: scale(1.06);
 }
 
 .menu-main-reviews-item:hover,
@@ -1175,8 +1184,8 @@ nav .pages {
     /* max-width: 70%;
     max-height: 55%; */
 
-    max-width: 70%;
     max-height: 50%;
+    max-width: 75%;
 }
 
 .menu-main-reviews-item .content {

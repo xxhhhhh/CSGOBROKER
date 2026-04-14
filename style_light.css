@@ -96,7 +96,9 @@
 .navigation-weapon-type.enabled:hover,
 .teammate,
 .player-teammates,
-.teammates-sign {
+.teammates-sign,
+.menu-main-reviews-item,
+.menu-main-solid-item {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
     box-shadow: unset;
 }
@@ -202,6 +204,10 @@ nav img {
 .boxreview .smallreview,
 .instruction {
     background: var(--darkygray);
+}
+
+.site-item a::before {
+    background-color: var(--darkgray) !important;
 }
 
 .site-attention:hover {
@@ -516,7 +522,8 @@ h3,
 .box .logobg .best-alt .best-alt-unit:hover span, 
 .box .logobg .best-alt .best-alt-unit:hover::before,
 .box .logobg .best-alt .best-alt-unit span, 
-.box .logobg .best-alt .best-alt-unit::before {
+.box .logobg .best-alt .best-alt-unit::before,
+.menu-nav-item {
     color: #1f1f1f;
 }
 
@@ -810,12 +817,24 @@ h3,
 .rec-box .logobg a img,
 .main-page .box .logobg img,
 .box .logobg a:active img, 
-.rec-box .logobg a:active img  {
-    filter: drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, 0.2)) !important;
+.rec-box .logobg a:active img {
+    filter: drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 0.1rem 0.15rem rgba(55, 55, 55, 0.2)) !important;
+}
+
+.menu-main-solid-item {
+    background: var(--darkygray);
+}
+
+.menu-main-reviews-item .logobg img  {
+    filter: drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 0.1rem 0.1rem rgba(55, 55, 55, 0.2)) !important;
+}
+
+.menu-main-section-name span {
+    background: unset;
 }
 
 .newest-boxes .box .logobg a img {
-        filter: drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, 0.2)) !important;
+    filter: drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 0.1rem 0.15rem rgba(55, 55, 55, 0.2)) !important;
 }
 
 .boxreview .plusminus .criteria i,
@@ -1199,9 +1218,7 @@ ul .submenu li .nonredir,
     transition: none;
 }
 
-.menu-main-reviews-item {
-    background: rgb(20 20 20);
-}
+
 
 .menu-search-section span {
     opacity: 1;
@@ -1477,14 +1494,26 @@ ul .submenu li .nonredir,
 
 .weapon-selection::-webkit-scrollbar-thumb,
 .box-skins-list::-webkit-scrollbar-thumb, 
-.box-skins-nav-list::-webkit-scrollbar-thumb {
-    background: rgb(200 200 200);
+.box-skins-nav-list::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+    background: rgb(200 200 200) !important;
 }
 
 .weapon-selection::-webkit-scrollbar-thumb:hover,
 .box-skins-list::-webkit-scrollbar-thumb:hover, 
-.box-skins-nav-list::-webkit-scrollbar-thumb:hover {
-    background: rgb(150 150 150);
+.box-skins-nav-list::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(150 150 150) !important;
+}
+
+::-webkit-scrollbar-track,
+#site-list::-webkit-scrollbar-thumb {
+    background: var(--darkygray) !important;
+}
+
+#site-list::-webkit-scrollbar-track,
+.box-skins-list::-webkit-scrollbar-track {
+    background: transparent !important;
 }
 
 .crafting-table-screen .skin:hover {
@@ -1758,6 +1787,15 @@ ul .submenu li .nonredir,
     filter: brightness(.2);
 }
 
+.menu-box {
+    background: rgba(230, 230, 230, .6);
+}
+
 .teammate {
     background: var(--icongradient2);
+}
+
+.menu-main-parts,
+.menu-search-section .search-field {
+    background: rgba(255, 255, 255, .8);
 }
