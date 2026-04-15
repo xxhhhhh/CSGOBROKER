@@ -1302,8 +1302,6 @@ function getSkinAltName(skinEl) {
         applyDefaultInventoryPriceSort();
       }
 
-      checkWeaponTypeAvailabilityForItems();
-
       if (location.pathname.includes("/topic/sticker-crafts/")) {
         updateCraftComponentList();
       }
@@ -1426,66 +1424,6 @@ function getSkinAltName(skinEl) {
         }
       } else {
         $resetButton.remove();
-      }
-    }
-
-    function checkWeaponTypeAvailability() {
-      const weaponTypes = [
-        "knives","gloves","pistols","rifles","srifles","smgs","shotguns","mguns",
-      ];
-
-      weaponTypes.forEach((type) => {
-        const allNotExist = $(`.box-skins.${type}`)
-          .toArray()
-          .every((element) => $(element).hasClass("notexist"));
-        const navigationType = $(`.navigation-weapon-type.${type}`);
-
-        if (allNotExist) {
-          navigationType.removeClass("enabled").addClass("notexist");
-          $(`.box-skins.${type}`).addClass("disabled");
-        } else {
-          navigationType.addClass("enabled").removeClass("notexist");
-          $(`.box-skins.${type}`).removeClass("disabled");
-        }
-      });
-
-      const enabledTypes = $(".navigation-weapon-type.enabled");
-      if (enabledTypes.length === 1) {
-        enabledTypes.addClass("solo-category");
-      } else {
-        enabledTypes.removeClass("solo-category");
-      }
-    }
-
-    function checkWeaponTypeAvailabilityForItems() {
-      const skinTypes = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];
-
-      skinTypes.forEach((type) => {
-        const allNotExist = $(
-          `.box-skins-list .skin.${type}`
-        )
-          .toArray()
-          .every((element) => $(element).hasClass("notexist"));
-        const navigationType = $(`.navigation-weapon-type.${type}`);
-
-        if (allNotExist) {
-          navigationType.removeClass("enabled").addClass("notexist");
-          $(
-            `.box-skins-list .skin.${type}`
-          ).addClass("disabled");
-        } else {
-          navigationType.addClass("enabled").removeClass("notexist");
-          $(
-            `.box-skins-list .skin.${type}`
-          ).removeClass("disabled");
-        }
-      });
-
-      const enabledTypes = $(".navigation-weapon-type.enabled");
-      if (enabledTypes.length === 1) {
-        enabledTypes.addClass("solo-category");
-      } else {
-        enabledTypes.removeClass("solo-category");
       }
     }
 
@@ -2061,12 +1999,10 @@ function getSkinAltName(skinEl) {
 
       $(".topic-centralizer").on("click", ".navigation-reset", function () {
         $(".box-skins").removeClass("disabled selected");
-        $(".navigation-weapon-type").addClass("enabled");
+        $(".navigation-weapon-type").not(".notexist").addClass("enabled");
+        $(".navigation-weapon-type.notexist").removeClass("enabled");
         $(".topic-centralizer .navigation-reset").remove();
-        checkWeaponTypeAvailability();
       });
-
-      checkWeaponTypeAvailability();
     }
     // ---------- Навигация внутри items/stickers/cases/charms/skins/collections ----------
     else if (
@@ -2102,8 +2038,6 @@ function getSkinAltName(skinEl) {
         enabledFiltersState[weaponType] = $(this).hasClass("enabled");
         updateNavigationReset();
       });
-
-      checkWeaponTypeAvailabilityForItems();
 
       function getSkinsToggleState() {
         return getLocalStorageState("SkinsToggleState", { showprice: true, showrarity: true });
@@ -2291,15 +2225,14 @@ function getSkinAltName(skinEl) {
 
       $(".topic-centralizer").off("click", ".navigation-reset").on("click", ".navigation-reset", function () {
         $(".skin").removeClass("disabled");
-        $(".navigation-weapon-type").addClass("enabled");
+        $(".navigation-weapon-type").not(".notexist").addClass("enabled");
+        $(".navigation-weapon-type.notexist").removeClass("enabled");
 
         $qualityFilter.removeClass("enabled reversed");
         $priceFilter.removeClass("enabled reversed");
         $(".topic-centralizer .navigation-reset").remove();
 
         enabledFiltersState = {};
-        checkWeaponTypeAvailabilityForItems?.();
-        checkWeaponTypeAvailability?.();
 
         applyDefaultTopicPriceFilterIfNeeded();
       });
@@ -2355,15 +2288,14 @@ function getSkinAltName(skinEl) {
 
       $(".topic-centralizer").on("click", ".navigation-reset", function () {
         $(".skin").removeClass("disabled");
-        $(".navigation-weapon-type").addClass("enabled");
+        $(".navigation-weapon-type").not(".notexist").addClass("enabled");
+        $(".navigation-weapon-type.notexist").removeClass("enabled");
 
         $qualityFilter.removeClass("enabled reversed");
         $priceFilter.removeClass("enabled reversed");
         $(".topic-centralizer .navigation-reset").remove();
 
         enabledFiltersState = {};
-        checkWeaponTypeAvailabilityForItems?.();
-        checkWeaponTypeAvailability?.();
       });
     }
 
@@ -2430,45 +2362,67 @@ function getSkinAltName(skinEl) {
 
 // ---------- Разное визуальное для /topic ----------
 if (window.location.pathname.includes("/topic")) {
-
   document.addEventListener('DOMContentLoaded', function () {
     const boxSkinsElements = document.querySelectorAll('.box-skins');
+
     boxSkinsElements.forEach(function(boxSkinsElement) {
       const boxSkinsList = boxSkinsElement.querySelector('.box-skins-list');
 
       if (boxSkinsList && boxSkinsList.scrollWidth > boxSkinsList.clientWidth) {
-        const boxSkinsControl = document.createElement('div');
-        boxSkinsControl.className = 'box-skins-control';
-        boxSkinsControl.innerHTML = `
-        <div class="box-skins-button left hidden"><i class="officon chevron left"></i></div>
-        <div class="box-skins-button right hidden"><i class="officon chevron right"></i></div>
-        `;
-        boxSkinsElement.appendChild(boxSkinsControl);
+        let boxSkinsControl = boxSkinsElement.querySelector('.box-skins-control');
+
+        if (!boxSkinsControl) {
+          boxSkinsControl = document.createElement('div');
+          boxSkinsControl.className = 'box-skins-control';
+          boxSkinsControl.innerHTML = `
+            <div class="box-skins-button left hidden"><i class="officon chevron left"></i></div>
+            <div class="box-skins-button right hidden"><i class="officon chevron right"></i></div>
+          `;
+          boxSkinsElement.appendChild(boxSkinsControl);
+        }
 
         const leftButton = boxSkinsControl.querySelector('.box-skins-button.left');
         const rightButton = boxSkinsControl.querySelector('.box-skins-button.right');
 
+        function getSkinWidth() {
+          const skin = boxSkinsList.querySelector('.skin');
+          return skin ? (skin.offsetWidth + 10) : 0;
+        }
+
+        function updateBoxSkinsButtons() {
+          const skinWidth = getSkinWidth();
+          if (!skinWidth) {
+            leftButton.classList.add('hidden');
+            rightButton.classList.add('hidden');
+            return;
+          }
+
+          leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft <= skinWidth);
+          rightButton.classList.toggle(
+            'hidden',
+            boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth
+          );
+        }
+
         leftButton.addEventListener('click', function () {
+          const skinWidth = getSkinWidth();
           boxSkinsList.scrollBy({
-            left: -boxSkinsList.querySelector('.skin').offsetWidth - 10,
+            left: -skinWidth,
             behavior: 'smooth'
           });
         });
 
         rightButton.addEventListener('click', function () {
+          const skinWidth = getSkinWidth();
           boxSkinsList.scrollBy({
-            left: boxSkinsList.querySelector('.skin').offsetWidth + 10,
+            left: skinWidth,
             behavior: 'smooth'
           });
         });
 
-        boxSkinsList.addEventListener('scroll', function () {
-          leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft <= boxSkinsList.querySelector('.skin').offsetWidth);
-          rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
-        });
-
-        leftButton.classList.toggle('hidden', boxSkinsList.scrollLeft <= boxSkinsList.querySelector('.skin').offsetWidth);
-        rightButton.classList.toggle('hidden', boxSkinsList.scrollLeft + boxSkinsList.clientWidth >= boxSkinsList.scrollWidth);
+        boxSkinsList.addEventListener('scroll', updateBoxSkinsButtons);
+        window.addEventListener('resize', updateBoxSkinsButtons);
+        updateBoxSkinsButtons();
       }
     });
 
@@ -2480,28 +2434,28 @@ if (window.location.pathname.includes("/topic")) {
       let scrollLeft;
 
       container.addEventListener('mousedown', (e) => {
-          isDown = true;
-          container.classList.add('active');
-          startX = e.pageX - container.offsetLeft;
-          scrollLeft = container.scrollLeft;
+        isDown = true;
+        container.classList.add('active');
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
       });
 
       container.addEventListener('mouseleave', () => {
-          isDown = false;
-          container.classList.remove('active');
+        isDown = false;
+        container.classList.remove('active');
       });
 
       container.addEventListener('mouseup', () => {
-          isDown = false;
-          container.classList.remove('active');
+        isDown = false;
+        container.classList.remove('active');
       });
 
       container.addEventListener('mousemove', (e) => {
-          if (!isDown) return;
-          e.preventDefault();
-          const x = e.pageX - container.offsetLeft;
-          const walk = (x - startX) * 1;
-          container.scrollLeft = scrollLeft - walk;
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = x - startX;
+        container.scrollLeft = scrollLeft - walk;
       });
     }
 
@@ -2511,46 +2465,19 @@ if (window.location.pathname.includes("/topic")) {
     });
 
     const boxSkinsNav = document.querySelector('.box-skins-nav');
-    const weaponNames = [
-      "Gloves", "Knives", "Перчатки", "Ножи", "AWP", "AK-47", "M4A4", "M4A1-S", "SSG 08", "Desert Eagle", "P250",
-      "Glock-18", "USP-S", "P2000", "CZ75-Auto", "Dual Berettas", "Five-SeveN", "Tec-9",
-      "R8 Revolver", "Zeus x27", "MP9", "MAC-10", "MP7", "MP5-SD", "UMP-45", "P90", "PP-Bizon", "Galil AR",
-      "FAMAS", "SG 553", "AUG", "Nova", "XM1014", "MAG-7", "Sawed-Off", "SCAR-20", "G3SG1",
-      "Negev", "M249"
-    ];
-
-    function populateNavList(navList) {
-      weaponNames.forEach(function(weapon) {
-        const boxSkins = document.querySelectorAll('.box-skins');
-        let isWeaponExist = false;
-
-        boxSkins.forEach(function(box) {
-          const skinNameSpan = box.querySelector('.box-skins-name span');
-          if (skinNameSpan && skinNameSpan.textContent.trim() === weapon && !box.classList.contains('notexist')) {
-            isWeaponExist = true;
-          }
-        });
-
-        if (isWeaponExist) {
-          const navItem = document.createElement('div');
-          navItem.className = 'navigation-weapon-name';
-          navItem.textContent = weapon;
-          navList.appendChild(navItem);
-
-          navItem.addEventListener('click', function() {
-            scrollToBoxSkins(weapon);
-          });
-        }
-      });
-    }
-
+    const navList = document.querySelector('.box-skins-nav-list');
     let scrollOffset = 115;
 
     function scrollToBoxSkins(weaponName) {
       const boxSkins = document.querySelectorAll('.box-skins');
+
       boxSkins.forEach(function(box) {
+        if (box.classList.contains('notexist')) return;
+
         const skinNameSpan = box.querySelector('.box-skins-name span');
-        if (skinNameSpan && skinNameSpan.textContent.trim() === weaponName && !box.classList.contains('notexist')) {
+        if (!skinNameSpan) return;
+
+        if (skinNameSpan.textContent.trim() === weaponName) {
           const boxPosition = box.getBoundingClientRect().top + window.pageYOffset;
           window.scrollTo({
             top: boxPosition - scrollOffset,
@@ -2560,231 +2487,210 @@ if (window.location.pathname.includes("/topic")) {
       });
     }
 
-      // ---------- Hover preview для .box-skins.character ----------
-  (function initCharacterSkinPreview() {
-    const isTopicPage = window.location.pathname.includes("/topic");
-    if (!isTopicPage) return;
+    // ---------- Hover preview для .box-skins.character ----------
+    (function initCharacterSkinPreview() {
+      const isTopicPage = window.location.pathname.includes("/topic");
+      if (!isTopicPage) return;
 
-    const $characterBox = $(".box-skins.character");
-    if (!$characterBox.length) return;
+      const $characterBox = $(".box-skins.character");
+      if (!$characterBox.length) return;
 
-    const previewState = {
-      $preview: null,
-      timerId: null,
-      animTimerId: null,
-      remaining: 5000,
-      startedAt: 0,
-      paused: false,
-    };
+      const previewState = {
+        $preview: null,
+        timerId: null,
+        animTimerId: null,
+        remaining: 5000,
+        startedAt: 0,
+        paused: false,
+      };
 
-    function getCharacterModel($skin) {
-      let $model = $skin.closest(".character-box").find(".character-model").first();
-      if ($model.length) return $model;
+      function getCharacterModel($skin) {
+        let $model = $skin.closest(".character-box").find(".character-model").first();
+        if ($model.length) return $model;
 
-      $model = $skin.closest(".item-topic-grandbox, .topic-grandbox").find(".character-model").first();
-      if ($model.length) return $model;
+        $model = $skin.closest(".item-topic-grandbox, .topic-grandbox").find(".character-model").first();
+        if ($model.length) return $model;
 
-      $model = $(".character-model").first();
-      return $model;
-    }
-
-    function clearRemoveTimer() {
-      if (previewState.timerId) {
-        clearTimeout(previewState.timerId);
-        previewState.timerId = null;
-      }
-    }
-
-    function clearAnimTimer() {
-      if (previewState.animTimerId) {
-        clearTimeout(previewState.animTimerId);
-        previewState.animTimerId = null;
-      }
-    }
-
-    function removePreview() {
-      clearRemoveTimer();
-      clearAnimTimer();
-
-      if (previewState.$preview && previewState.$preview.length) {
-        previewState.$preview.remove();
+        $model = $(".character-model").first();
+        return $model;
       }
 
-      previewState.$preview = null;
-      previewState.remaining = 5000;
-      previewState.startedAt = 0;
-      previewState.paused = false;
-    }
-
-    function startRemoveTimer(duration) {
-      clearRemoveTimer();
-
-      previewState.remaining = duration;
-      previewState.startedAt = Date.now();
-      previewState.paused = false;
-
-      previewState.timerId = setTimeout(() => {
-        removePreview();
-      }, duration);
-    }
-
-    function pauseRemoveTimer() {
-      if (!previewState.$preview || previewState.paused) return;
-
-      clearRemoveTimer();
-
-      const elapsed = Date.now() - previewState.startedAt;
-      previewState.remaining = Math.max(0, previewState.remaining - elapsed);
-      previewState.paused = true;
-    }
-
-    function resumeRemoveTimer() {
-      if (!previewState.$preview || !previewState.paused) return;
-
-      startRemoveTimer(previewState.remaining || 1);
-    }
-
-    function triggerAnimClass($el) {
-      if (!$el || !$el.length) return;
-
-      clearAnimTimer();
-      $el.removeClass("anim-trigger");
-
-      // форс reflow, чтобы анимация гарантированно перезапустилась
-      void $el[0].offsetWidth;
-
-      $el.addClass("anim-trigger");
-
-      previewState.animTimerId = setTimeout(() => {
-        if ($el && $el.length) {
-          $el.removeClass("anim-trigger");
+      function clearRemoveTimer() {
+        if (previewState.timerId) {
+          clearTimeout(previewState.timerId);
+          previewState.timerId = null;
         }
-      }, 2000);
-    }
-
-    function showPreviewFromSkin(skinEl) {
-      const $skin = $(skinEl);
-      if (!$skin.length) return;
-      if ($skin.hasClass("preview-item")) return;
-
-      const $characterModel = getCharacterModel($skin);
-      if (!$characterModel.length) return;
-
-      const $clone = $skin.clone(false, false);
-      $clone
-        .removeClass("anim-trigger")
-        .addClass("preview-item");
-
-      if (previewState.$preview && previewState.$preview.length) {
-        previewState.$preview.replaceWith($clone);
-      } else {
-        $characterModel.append($clone);
       }
 
-      previewState.$preview = $clone;
-
-      triggerAnimClass($clone);
-      startRemoveTimer(5000);
-    }
-
-    $(document).on(
-      "mouseenter",
-      ".box-skins.character .skin:not(.preview-item):not(.extra-list):not(.none):not(.disabled)",
-      function () {
-        showPreviewFromSkin(this);
+      function clearAnimTimer() {
+        if (previewState.animTimerId) {
+          clearTimeout(previewState.animTimerId);
+          previewState.animTimerId = null;
+        }
       }
-    );
 
-    $(document).on("mouseenter", ".character-model .preview-item", function () {
-      if (previewState.$preview && previewState.$preview.is(this)) {
-        pauseRemoveTimer();
+      function removePreview() {
+        clearRemoveTimer();
+        clearAnimTimer();
+
+        if (previewState.$preview && previewState.$preview.length) {
+          previewState.$preview.remove();
+        }
+
+        previewState.$preview = null;
+        previewState.remaining = 5000;
+        previewState.startedAt = 0;
+        previewState.paused = false;
       }
-    });
 
-    $(document).on("mouseleave", ".character-model .preview-item", function () {
-      if (previewState.$preview && previewState.$preview.is(this)) {
-        resumeRemoveTimer();
+      function startRemoveTimer(duration) {
+        clearRemoveTimer();
+
+        previewState.remaining = duration;
+        previewState.startedAt = Date.now();
+        previewState.paused = false;
+
+        previewState.timerId = setTimeout(() => {
+          removePreview();
+        }, duration);
       }
-    });
-  })();
 
-    const navList = document.querySelector('.box-skins-nav-list');
+      function pauseRemoveTimer() {
+        if (!previewState.$preview || previewState.paused) return;
+
+        clearRemoveTimer();
+
+        const elapsed = Date.now() - previewState.startedAt;
+        previewState.remaining = Math.max(0, previewState.remaining - elapsed);
+        previewState.paused = true;
+      }
+
+      function resumeRemoveTimer() {
+        if (!previewState.$preview || !previewState.paused) return;
+        startRemoveTimer(previewState.remaining || 1);
+      }
+
+      function triggerAnimClass($el) {
+        if (!$el || !$el.length) return;
+
+        clearAnimTimer();
+        $el.removeClass("anim-trigger");
+        void $el[0].offsetWidth;
+        $el.addClass("anim-trigger");
+
+        previewState.animTimerId = setTimeout(() => {
+          if ($el && $el.length) {
+            $el.removeClass("anim-trigger");
+          }
+        }, 2000);
+      }
+
+      function showPreviewFromSkin(skinEl) {
+        const $skin = $(skinEl);
+        if (!$skin.length) return;
+        if ($skin.hasClass("preview-item")) return;
+
+        const $characterModel = getCharacterModel($skin);
+        if (!$characterModel.length) return;
+
+        const $clone = $skin.clone(false, false);
+        $clone
+          .removeClass("anim-trigger")
+          .addClass("preview-item");
+
+        if (previewState.$preview && previewState.$preview.length) {
+          previewState.$preview.replaceWith($clone);
+        } else {
+          $characterModel.append($clone);
+        }
+
+        previewState.$preview = $clone;
+
+        triggerAnimClass($clone);
+        startRemoveTimer(5000);
+      }
+
+      $(document).on(
+        "mouseenter",
+        ".box-skins.character .skin:not(.preview-item):not(.extra-list):not(.none):not(.disabled)",
+        function () {
+          showPreviewFromSkin(this);
+        }
+      );
+
+      $(document).on("mouseenter", ".character-model .preview-item", function () {
+        if (previewState.$preview && previewState.$preview.is(this)) {
+          pauseRemoveTimer();
+        }
+      });
+
+      $(document).on("mouseleave", ".character-model .preview-item", function () {
+        if (previewState.$preview && previewState.$preview.is(this)) {
+          resumeRemoveTimer();
+        }
+      });
+    })();
 
     if (navList) {
-      populateNavList(navList);
-
       enableMouseDragScroll(navList);
 
       const navItems = navList.querySelectorAll('.navigation-weapon-name');
+      navItems.forEach(function(navItem) {
+        navItem.addEventListener('click', function() {
+          scrollToBoxSkins(navItem.textContent.trim());
+        });
+      });
+
+      const navControl = boxSkinsNav?.querySelector('.box-skins-nav-control');
+      const leftNavButton = navControl?.querySelector('.box-skins-button.left');
+      const rightNavButton = navControl?.querySelector('.box-skins-button.right');
       const itemsToScroll = 5;
 
-      if (navItems.length > itemsToScroll) {
-        const navControl = document.createElement('div');
-        navControl.className = 'box-skins-nav-control';
-        navControl.innerHTML = `
-            <div class="box-skins-button left hidden"><i class="officon chevron left"></i></div>
-            <div class="box-skins-button right"><i class="officon chevron right"></i></div>
-        `;
-        boxSkinsNav.appendChild(navControl);
+      function getNavItemWidth() {
+        const first = navItems[0];
+        return first ? (first.offsetWidth + 10) : 0;
+      }
 
-        const leftNavButton = navControl.querySelector('.box-skins-button.left');
-        const rightNavButton = navControl.querySelector('.box-skins-button.right');
+      function updateNavButtons() {
+        if (!leftNavButton || !rightNavButton) return;
 
-        const itemWidth = navItems[0].offsetWidth + 10;
+        const itemWidth = getNavItemWidth();
+        if (!itemWidth) {
+          leftNavButton.classList.add('hidden');
+          rightNavButton.classList.add('hidden');
+          return;
+        }
 
+        leftNavButton.classList.toggle('hidden', navList.scrollLeft <= itemWidth);
+        rightNavButton.classList.toggle(
+          'hidden',
+          navList.scrollLeft + navList.clientWidth >= navList.scrollWidth
+        );
+      }
+
+      if (leftNavButton && rightNavButton) {
         leftNavButton.addEventListener('click', function () {
+          const itemWidth = getNavItemWidth();
           navList.scrollBy({
-              left: -(itemWidth * itemsToScroll),
-              behavior: 'smooth'
+            left: -(itemWidth * itemsToScroll),
+            behavior: 'smooth'
           });
         });
 
         rightNavButton.addEventListener('click', function () {
+          const itemWidth = getNavItemWidth();
           navList.scrollBy({
-              left: itemWidth * itemsToScroll,
-              behavior: 'smooth'
+            left: itemWidth * itemsToScroll,
+            behavior: 'smooth'
           });
         });
 
-        navList.addEventListener('scroll', function () {
-          leftNavButton.classList.toggle('hidden', navList.scrollLeft <= itemWidth);
-          rightNavButton.classList.toggle('hidden', navList.scrollLeft + navList.clientWidth >= navList.scrollWidth);
-        });
-
-        leftNavButton.classList.toggle('hidden', navList.scrollLeft <= itemWidth);
-        rightNavButton.classList.toggle('hidden', navList.scrollLeft + navList.clientWidth >= navList.scrollWidth);
+        navList.addEventListener('scroll', updateNavButtons);
+        window.addEventListener('resize', updateNavButtons);
+        updateNavButtons();
       }
     }
   });
-
-  function translateTypes(languageTag) {
-    if (languageTag === "ru") {
-      var translations_items = {
-        "Knives": "Ножи",
-        "Gloves": "Перчатки",
-        "Pistols": "Пистолеты",
-        "Rifles": "Винтовки",
-        "Sniper Rifles": "Снайперские винтовки",
-        "SMGs": "ПП",
-        "Shotguns": "Дробовики",
-        "Machine guns": "Пулеметы",
-        "Change Color": "Другие Цвета",
-        "Expensive": "Дорогой",
-        "Cheap": "Дешевый",
-        "All Skins": "Все Скины"
-      };
-
-      var elementsToTranslate = document.querySelectorAll('.navigation-weapon-type, .category-switch, .color-box-selection-button, .color-box-overview-button, .navigation-weapon-name, .box-skins-name span');
-      elementsToTranslate.forEach(function(element) {
-        var originalText = element.textContent.trim();
-        if (translations_items.hasOwnProperty(originalText)) {
-          element.textContent = translations_items[originalText];
-        }
-      });
-    }
-  }
-
-  translateTypes(languageTag)
 }
 
 // ---------- misc хранилище ----------

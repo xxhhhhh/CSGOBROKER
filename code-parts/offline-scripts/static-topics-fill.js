@@ -57,6 +57,15 @@ const RU_BOX_TITLE_MAP = new Map([
   ["gloves", "Перчатки"],
 ]);
 
+const BOX_SKINS_NAV_ORDER = [
+  "Gloves", "Knives", "Перчатки", "Ножи",
+  "AWP", "AK-47", "M4A4", "M4A1-S", "SSG 08", "Desert Eagle", "P250",
+  "Glock-18", "USP-S", "P2000", "CZ75-Auto", "Dual Berettas", "Five-SeveN", "Tec-9",
+  "R8 Revolver", "Zeus x27", "MP9", "MAC-10", "MP7", "MP5-SD", "UMP-45", "P90",
+  "PP-Bizon", "Galil AR", "FAMAS", "SG 553", "AUG", "Nova", "XM1014", "MAG-7",
+  "Sawed-Off", "SCAR-20", "G3SG1", "Negev", "M249"
+];
+
 // ---------------- CLI ----------------
 function parseArgs(argv){
   const get = (f) => {
@@ -1377,6 +1386,107 @@ async function processRuMirrorPages({ root, file, html, urlToFile, verbose, proc
   return { html: out, changed };
 }
 
+// ---------------- RU TOPIC TEXT STATIC TRANSLATION ----------------
+const RU_TOPIC_TEXT_TRANSLATIONS = new Map([
+  ["Knives", "Ножи"],
+  ["Gloves", "Перчатки"],
+  ["Pistols", "Пистолеты"],
+  ["Rifles", "Винтовки"],
+  ["Sniper Rifles", "Снайперские винтовки"],
+  ["SMGs", "ПП"],
+  ["Shotguns", "Дробовики"],
+  ["Machine guns", "Пулеметы"],
+  ["Change Color", "Другие Цвета"],
+  ["Expensive", "Дорогой"],
+  ["Cheap", "Дешевый"],
+  ["All Skins", "Все Скины"],
+]);
+
+function replaceInnerTextForClassNames(html, classNames, translateMap){
+  let out = html;
+
+  for (const cls of classNames){
+    const re = new RegExp(
+      `(<([a-z0-9]+)\\b[^>]*class\\s*=\\s*(?:"[^"]*\\b${cls}\\b[^"]*"|'[^']*\\b${cls}\\b[^']*')[^>]*>)([\\s\\S]*?)(<\\/\\2>)`,
+      "gi"
+    );
+
+    out = out.replace(re, (full, openTag, tagName, inner, closeTag) => {
+      const plain = decodeHtmlEntities(String(inner).replace(/<[^>]*>/g, "").trim());
+      if (!translateMap.has(plain)) return full;
+
+      return `${openTag}${escapeHtml(translateMap.get(plain))}${closeTag}`;
+    });
+  }
+
+  return out;
+}
+
+function replaceBoxSkinsNameSpanTexts(html, translateMap){
+  return html.replace(
+    /(<div\b[^>]*class\s*=\s*(?:"[^"]*\bbox-skins-name\b[^"]*"|'[^']*\bbox-skins-name\b[^']*')[^>]*>[\s\S]*?<span\b[^>]*>)([\s\S]*?)(<\/span>)/gi,
+    (full, a, text, c) => {
+      const plain = decodeHtmlEntities(String(text).replace(/<[^>]*>/g, "").trim());
+      if (!translateMap.has(plain)) return full;
+      return `${a}${escapeHtml(translateMap.get(plain))}${c}`;
+    }
+  );
+}
+
+function replaceSimpleTagTextByClass(html, className, translateMap){
+  const re = /<([a-z0-9]+)\b([^>]*)>([^<]*)<\/\1>/gi;
+
+  return html.replace(re, (full, tagName, attrs, text) => {
+    const classMatch = attrs.match(/\bclass\s*=\s*(?:"([^"]*)"|'([^']*)')/i);
+    const classAttr = classMatch ? (classMatch[1] ?? classMatch[2] ?? "") : "";
+    const classes = classAttr.split(/\s+/).filter(Boolean);
+
+    if (!classes.includes(className)) return full;
+
+    const plain = decodeHtmlEntities(String(text || "").trim());
+    if (!translateMap.has(plain)) return full;
+
+    return `<${tagName}${attrs}>${escapeHtml(translateMap.get(plain))}</${tagName}>`;
+  });
+}
+
+async function processRuTopicStaticTranslations({ root, file, html, verbose }){
+  const urlPath = fileToUrlPath(root, file);
+  if (!urlPath.startsWith("/ru/topic")) {
+    return { html, changed:false };
+  }
+
+  let out = html;
+
+  out = replaceInnerTextForClassNames(
+    out,
+    [
+      "navigation-weapon-type",
+      "color-box-selection-button",
+      "color-box-overview-button",
+      "navigation-weapon-name",
+    ],
+    RU_TOPIC_TEXT_TRANSLATIONS
+  );
+
+  out = replaceSimpleTagTextByClass(out, "category-switch", RU_TOPIC_TEXT_TRANSLATIONS);
+  out = replaceSimpleTagTextByClass(out, "navigation-weapon-type", RU_TOPIC_TEXT_TRANSLATIONS);
+  out = replaceSimpleTagTextByClass(out, "color-box-selection-button", RU_TOPIC_TEXT_TRANSLATIONS);
+  out = replaceSimpleTagTextByClass(out, "color-box-overview-button", RU_TOPIC_TEXT_TRANSLATIONS);
+  out = replaceSimpleTagTextByClass(out, "navigation-weapon-name", RU_TOPIC_TEXT_TRANSLATIONS);
+
+  out = replaceBoxSkinsNameSpanTexts(out, RU_TOPIC_TEXT_TRANSLATIONS);
+
+  if (out !== html){
+    if (verbose){
+      console.log(`[OK] ${path.relative(root, file)} :: ru topic static text translations applied`);
+    }
+    return { html: out, changed:true };
+  }
+
+  return { html, changed:false };
+}
+
 // ---------------- PLACEHOLDER <div class="skin"> ----------------
 async function processSkinPlaceholders({ root, html, pricesState, verbose, file }){
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
@@ -2552,6 +2662,464 @@ async function processItemsNavStaticFill({ root, file, html, verbose }){
   return { html, changed:false };
 }
 
+// ---------------- OFFLINE NAVIGATION-WEAPON-TYPE STATE ----------------
+
+function getNavigationWeaponTypeStateMapForSkinsPage(html){
+  const masked = maskSegments(html);
+  const boxSkins = findAllTagsByClass(masked, "box-skins", ["div", "section"]);
+
+  const types = ["knives", "gloves", "pistols", "rifles", "srifles", "smgs", "shotguns", "mguns"];
+  const state = new Map(types.map(type => [type, false]));
+
+  for (const box of boxSkins){
+    const open = readTag(html, box.openStart);
+    const classes = parseClassAttr(open.attrs);
+
+    for (const type of types){
+      if (!classes.has(type)) continue;
+      if (classes.has("notexist")) continue;
+      state.set(type, true);
+    }
+  }
+
+  return state;
+}
+
+function getNavigationWeaponTypeStateMapForItemsLikePage(html){
+  const availableSkinTypes = getAvailableSkinTypesFromHtml(html);
+  const rarities = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];
+
+  return new Map(
+    rarities.map(type => [type, availableSkinTypes.has(type)])
+  );
+}
+
+function rebuildNavigationWeaponTypeClassesInHtml(html, existsMap){
+  const masked = maskSegments(html);
+  const navTypes = findAllTagsByClass(masked, "navigation-weapon-type", ["div", "a", "span"]);
+
+  if (!navTypes.length) return html;
+
+  const activeKeys = [];
+
+  let out = html;
+  let shift = 0;
+
+  for (const tag of navTypes){
+    const openAbs = tag.openStart + shift;
+    const open = readTag(out, openAbs);
+    const attrs = open.attrs;
+
+    const classMatch = attrs.match(/\bclass\s*=\s*(?:"([^"]*)"|'([^']*)')/i);
+    if (!classMatch) continue;
+
+    const quote = classMatch[1] != null ? `"` : `'`;
+    const classAttr = classMatch[1] ?? classMatch[2] ?? "";
+    const classes = classAttr.split(/\s+/).filter(Boolean);
+
+    const key = classes.find(cls =>
+      cls !== "navigation-weapon-type" &&
+      cls !== "enabled" &&
+      cls !== "notexist" &&
+      cls !== "solo-category"
+    );
+
+    if (!key || !existsMap.has(key)) continue;
+
+    const exists = Boolean(existsMap.get(key));
+    let newClasses = classes.filter(cls => cls !== "enabled" && cls !== "notexist" && cls !== "solo-category");
+
+    if (exists) {
+      newClasses.push("enabled");
+      activeKeys.push(key);
+    } else {
+      newClasses.push("notexist");
+    }
+
+    const newClassAttr = `class=${quote}${newClasses.join(" ")}${quote}`;
+    const newAttrs = attrs.replace(/\bclass\s*=\s*(?:"[^"]*"|'[^']*')/i, newClassAttr);
+    const newOpenTag = open.tagText.replace(attrs, newAttrs);
+
+    out = out.slice(0, openAbs) + newOpenTag + out.slice(open.end);
+    shift += newOpenTag.length - open.tagText.length;
+  }
+
+  const enabledCount = [...existsMap.values()].filter(Boolean).length;
+  if (enabledCount === 1 && activeKeys.length === 1) {
+    const onlyKey = activeKeys[0];
+
+    const masked2 = maskSegments(out);
+    const navTypes2 = findAllTagsByClass(masked2, "navigation-weapon-type", ["div", "a", "span"]);
+
+    let out2 = out;
+    let shift2 = 0;
+
+    for (const tag of navTypes2){
+      const openAbs = tag.openStart + shift2;
+      const open = readTag(out2, openAbs);
+      const attrs = open.attrs;
+
+      const classMatch = attrs.match(/\bclass\s*=\s*(?:"([^"]*)"|'([^']*)')/i);
+      if (!classMatch) continue;
+
+      const quote = classMatch[1] != null ? `"` : `'`;
+      const classAttr = classMatch[1] ?? classMatch[2] ?? "";
+      const classes = classAttr.split(/\s+/).filter(Boolean);
+
+      const key = classes.find(cls =>
+        cls !== "navigation-weapon-type" &&
+        cls !== "enabled" &&
+        cls !== "notexist" &&
+        cls !== "solo-category"
+      );
+
+      if (key !== onlyKey) continue;
+      if (!classes.includes("enabled")) continue;
+      if (classes.includes("solo-category")) continue;
+
+      const newClasses = [...classes, "solo-category"];
+      const newClassAttr = `class=${quote}${newClasses.join(" ")}${quote}`;
+      const newAttrs = attrs.replace(/\bclass\s*=\s*(?:"[^"]*"|'[^']*')/i, newClassAttr);
+      const newOpenTag = open.tagText.replace(attrs, newAttrs);
+
+      out2 = out2.slice(0, openAbs) + newOpenTag + out2.slice(open.end);
+      shift2 += newOpenTag.length - open.tagText.length;
+    }
+
+    return out2;
+  }
+
+  return out;
+}
+
+function rebuildBoxSkinsDisabledStateForSkinsPage(html, existsMap){
+  const masked = maskSegments(html);
+  const boxSkins = findAllTagsByClass(masked, "box-skins", ["div", "section"]);
+  if (!boxSkins.length) return html;
+
+  let out = html;
+  let shift = 0;
+
+  for (const box of boxSkins){
+    const openAbs = box.openStart + shift;
+    const open = readTag(out, openAbs);
+    const attrs = open.attrs;
+
+    const classMatch = attrs.match(/\bclass\s*=\s*(?:"([^"]*)"|'([^']*)')/i);
+    if (!classMatch) continue;
+
+    const quote = classMatch[1] != null ? `"` : `'`;
+    const classAttr = classMatch[1] ?? classMatch[2] ?? "";
+    const classes = classAttr.split(/\s+/).filter(Boolean);
+
+    const key = classes.find(cls =>
+      cls !== "box-skins" &&
+      cls !== "selected" &&
+      cls !== "disabled" &&
+      cls !== "notexist" &&
+      cls !== "lang-ru"
+    );
+
+    if (!key || !existsMap.has(key)) continue;
+
+    const exists = Boolean(existsMap.get(key));
+    let newClasses = classes.filter(cls => cls !== "disabled");
+
+    if (!exists && !newClasses.includes("disabled")) {
+      newClasses.push("disabled");
+    }
+
+    const newClassAttr = `class=${quote}${newClasses.join(" ")}${quote}`;
+    const newAttrs = attrs.replace(/\bclass\s*=\s*(?:"[^"]*"|'[^']*')/i, newClassAttr);
+    const newOpenTag = open.tagText.replace(attrs, newAttrs);
+
+    out = out.slice(0, openAbs) + newOpenTag + out.slice(open.end);
+    shift += newOpenTag.length - open.tagText.length;
+  }
+
+  return out;
+}
+
+function rebuildSkinDisabledStateForItemsLikePage(html, existsMap){
+  const masked = maskSegments(html);
+  const skins = findAllTagsByClass(masked, "skin", ["div", "span", "a"]);
+  if (!skins.length) return html;
+
+  let out = html;
+  let shift = 0;
+
+  for (const skin of skins){
+    const openAbs = skin.openStart + shift;
+    const open = readTag(out, openAbs);
+    const attrs = open.attrs;
+
+    const classMatch = attrs.match(/\bclass\s*=\s*(?:"([^"]*)"|'([^']*)')/i);
+    if (!classMatch) continue;
+
+    const quote = classMatch[1] != null ? `"` : `'`;
+    const classAttr = classMatch[1] ?? classMatch[2] ?? "";
+    const classes = classAttr.split(/\s+/).filter(Boolean);
+
+    const rarity = classes.find(cls => existsMap.has(cls));
+    if (!rarity) continue;
+
+    const exists = Boolean(existsMap.get(rarity));
+    let newClasses = classes.filter(cls => cls !== "disabled");
+
+    if (!exists && !newClasses.includes("disabled")) {
+      newClasses.push("disabled");
+    }
+
+    const newClassAttr = `class=${quote}${newClasses.join(" ")}${quote}`;
+    const newAttrs = attrs.replace(/\bclass\s*=\s*(?:"[^"]*"|'[^']*')/i, newClassAttr);
+    const newOpenTag = open.tagText.replace(attrs, newAttrs);
+
+    out = out.slice(0, openAbs) + newOpenTag + out.slice(open.end);
+    shift += newOpenTag.length - open.tagText.length;
+  }
+
+  return out;
+}
+
+function detectOfflineNavigationWeaponTypeContext(urlPath){
+  const p = urlPath.toLowerCase();
+
+  if (/^\/(?:ru\/)?topic\/skins(?:\/|$)/i.test(p)) {
+    return { mode: "skins" };
+  }
+
+  if (
+    p.includes("/items/") ||
+    p.includes("/stickers/") ||
+    p.includes("/cases/") ||
+    p.includes("/charms/") ||
+    p.includes("/collections/") ||
+    p.includes("/players/inventories/")
+  ) {
+    return { mode: "items_like" };
+  }
+
+  return null;
+}
+
+async function processOfflineNavigationWeaponTypeState({ root, file, html, verbose }){
+  const urlPath = fileToUrlPath(root, file);
+  const ctx = detectOfflineNavigationWeaponTypeContext(urlPath);
+  if (!ctx) return { html, changed:false };
+
+  let out = html;
+
+  if (ctx.mode === "skins") {
+    const existsMap = getNavigationWeaponTypeStateMapForSkinsPage(out);
+    out = rebuildNavigationWeaponTypeClassesInHtml(out, existsMap);
+    out = rebuildBoxSkinsDisabledStateForSkinsPage(out, existsMap);
+  } else if (ctx.mode === "items_like") {
+    const existsMap = getNavigationWeaponTypeStateMapForItemsLikePage(out);
+    out = rebuildNavigationWeaponTypeClassesInHtml(out, existsMap);
+    out = rebuildSkinDisabledStateForItemsLikePage(out, existsMap);
+  }
+
+  if (out !== html){
+    if (verbose){
+      console.log(`[OK] ${path.relative(root, file)} :: navigation-weapon-type state rebuilt offline (${ctx.mode})`);
+    }
+    return { html: out, changed:true };
+  }
+
+  return { html, changed:false };
+}
+
+// ---------------- BOX-SKINS NAV STATIC FILL ----------------
+function extractFirstSpanTextFromBoxSkinsName(innerHtml){
+  const m = innerHtml.match(
+    /<div\b[^>]*class\s*=\s*(?:"[^"]*\bbox-skins-name\b[^"]*"|'[^']*\bbox-skins-name\b[^']*')[^>]*>[\s\S]*?<span\b[^>]*>([\s\S]*?)<\/span>/i
+  );
+
+  if (!m) return "";
+  return decodeHtmlEntities(
+    String(m[1] || "")
+      .replace(/<[^>]*>/g, "")
+      .trim()
+  );
+}
+
+function countRenderableSkinsInHtml(html){
+  const masked = maskSegments(html);
+
+  const skins = findAllTagsByClass(masked, "skin", ["div", "span", "a"]);
+
+  let count = 0;
+
+  for (const s of skins){
+    const open = readTag(html, s.openStart);
+    const attrs = open.attrs;
+
+    // проверяем наличие weapon и skin-id
+    const hasWeapon = /\bweapon\s*=\s*(["']).*?\1/i.test(attrs);
+    const hasSkinId = /\bskin-id\s*=\s*(["']).*?\1/i.test(attrs);
+
+    if (hasWeapon && hasSkinId) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+function extractBoxSkinsNavData(html){
+  const masked = maskSegments(html);
+  const boxes = findAllTagsByClass(masked, "box-skins", ["div", "section"]);
+  if (!boxes.length) return { names: [], totalSkins: 0 };
+
+  const foundNames = [];
+  const seenNames = new Set();
+  let totalSkins = 0;
+
+  for (const box of boxes){
+    const open = readTag(html, box.openStart);
+    const classes = parseClassAttr(open.attrs);
+
+    if (classes.has("notexist")) continue;
+
+    const innerHtml = html.slice(box.openEnd, box.closeStart);
+    const name = extractFirstSpanTextFromBoxSkinsName(innerHtml);
+    if (!name) continue;
+
+    if (!seenNames.has(name)){
+      seenNames.add(name);
+      foundNames.push(name);
+    }
+
+    totalSkins += countRenderableSkinsInHtml(innerHtml);
+  }
+
+  const orderMap = new Map(BOX_SKINS_NAV_ORDER.map((name, i) => [name, i]));
+
+  foundNames.sort((a, b) => {
+    const ai = orderMap.has(a) ? orderMap.get(a) : Number.MAX_SAFE_INTEGER;
+    const bi = orderMap.has(b) ? orderMap.get(b) : Number.MAX_SAFE_INTEGER;
+    if (ai !== bi) return ai - bi;
+    return a.localeCompare(b, "ru");
+  });
+
+  return { names: foundNames, totalSkins };
+}
+
+function renderBoxSkinsNavHtml({ indent, nl, isRu, names, totalSkins }){
+  const totalLabel = isRu ? "Всего Скинов" : "Total Skins";
+
+  const lines = [];
+  lines.push(`${indent}<div class="box-skins-nav">`);
+  lines.push(`${indent}  <div class="box-skins-name">`);
+  lines.push(`${indent}    <span class="optional">Nav</span>`);
+  lines.push(`${indent}    <span>${escapeHtml(totalLabel)}: ${escapeHtml(String(totalSkins))}</span>`);
+  lines.push(`${indent}  </div>`);
+  lines.push(`${indent}  <div class="box-skins-nav-list">`);
+
+  for (const name of names){
+    lines.push(`${indent}    <div class="navigation-weapon-name">${escapeHtml(name)}</div>`);
+  }
+
+  lines.push(`${indent}  </div>`);
+  lines.push(`${indent}  <div class="box-skins-nav-control">`);
+  lines.push(`${indent}    <div class="box-skins-button left hidden"><i class="officon chevron left"></i></div>`);
+  lines.push(`${indent}    <div class="box-skins-button right hidden"><i class="officon chevron right"></i></div>`);
+  lines.push(`${indent}  </div>`);
+  lines.push(`${indent}</div>`);
+
+  return lines.join(nl);
+}
+
+function findTopicGrandboxInSiteblock(html){
+  const masked = maskSegments(html);
+  const siteblocks = findAllTagsByClass(masked, "siteblock", ["div", "section"]);
+
+  for (const siteblock of siteblocks){
+    const grandboxes = findAllTagsByClass(masked, "topic-grandbox", ["div", "section"], siteblock.openEnd, siteblock.closeStart);
+    if (!grandboxes.length) continue;
+
+    const siteblockInnerMasked = maskSegments(html.slice(siteblock.openEnd, siteblock.closeStart));
+    const navsRel = findAllTagsByClass(siteblockInnerMasked, "box-skins-nav", ["div", "section"]);
+
+    const navs = navsRel.map(nav => ({
+      ...nav,
+      openStart: nav.openStart + siteblock.openEnd,
+      openEnd: nav.openEnd + siteblock.openEnd,
+      closeStart: nav.closeStart + siteblock.openEnd,
+      closeEnd: nav.closeEnd + siteblock.openEnd,
+    }));
+
+    return {
+      siteblock,
+      grandbox: grandboxes[0],
+      existingNavs: navs,
+    };
+  }
+
+  return null;
+}
+
+async function processTopicBoxSkinsNavStaticFill({ root, file, html, verbose }){
+  const urlPath = fileToUrlPath(root, file);
+  const lowerUrlPath = urlPath.toLowerCase();
+
+  if (!lowerUrlPath.startsWith("/topic") && !lowerUrlPath.startsWith("/ru/topic")) {
+    return { html, changed:false };
+  }
+
+  const target = findTopicGrandboxInSiteblock(html);
+  if (!target) return { html, changed:false };
+
+  const { names, totalSkins } = extractBoxSkinsNavData(html);
+  const nl = html.includes("\r\n") ? "\r\n" : "\n";
+  const isRu = lowerUrlPath.startsWith("/ru/");
+  const baseIndent = indentBefore(html, target.grandbox.openStart, nl);
+  const navIndent = baseIndent + "  ";
+
+  let out = html;
+
+  if (target.existingNavs.length){
+    out = removeRangesFromHtml(
+      out,
+      target.existingNavs.map(nav => ({ start: nav.openStart, end: nav.closeEnd }))
+    );
+  }
+
+  if (!names.length){
+    if (out !== html){
+      if (verbose) {
+        console.log(`[OK] ${path.relative(root, file)} :: box-skins-nav removed`);
+      }
+      return { html: out, changed:true };
+    }
+    return { html, changed:false };
+  }
+
+  const built = renderBoxSkinsNavHtml({
+    indent: navIndent,
+    nl,
+    isRu,
+    names,
+    totalSkins,
+  });
+
+  const insertAt = target.grandbox.closeEnd;
+  const before = out.slice(0, insertAt).replace(/[ \t]+$/g, "");
+  const after = out.slice(insertAt).replace(/^(?:[ \t]*\r?\n)+/, "");
+  const next = before + nl + built + nl + after;
+
+  if (next !== html){
+    if (verbose){
+      console.log(
+        `[OK] ${path.relative(root, file)} :: box-skins-nav rebuilt (${names.length} groups, ${totalSkins} skins)`
+      );
+    }
+    return { html: next, changed:true };
+  }
+
+  return { html, changed:false };
+}
+
 // ---------------- HEADER BACK BUTTON (/topic/* only) ----------------
 function normalizeUrlPathForMatch(urlPath){
   if (!urlPath) return "";
@@ -2810,6 +3378,11 @@ await mapLimit(files, CONCURRENCY, async (file) => {
       if (res.changed) html = res.html;
     }
 
+    if (isTopicPage){
+      const res = await processOfflineNavigationWeaponTypeState({ root, file, html, verbose });
+      if (res.changed) html = res.html;
+    }
+
     processedHtmlByFile.set(file, {
       origHtml,
       html,
@@ -2851,6 +3424,26 @@ await mapLimit(files, CONCURRENCY, async (file) => {
         urlToFile,
         verbose,
         processedHtmlByFile,
+      });
+      if (res.changed) html = res.html;
+    }
+
+    {
+      const res = await processRuTopicStaticTranslations({
+        root,
+        file,
+        html,
+        verbose,
+      });
+      if (res.changed) html = res.html;
+    }
+
+    {
+      const res = await processTopicBoxSkinsNavStaticFill({
+        root,
+        file,
+        html,
+        verbose,
       });
       if (res.changed) html = res.html;
     }

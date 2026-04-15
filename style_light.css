@@ -35,7 +35,8 @@
 .main-infobox,
 .main-infobox-content-block,
 .payments-button,
-.box .logobg .best, .main-page .box .logobg .best:hover, .newest-boxes .box .logobg .best:hover,
+.box .logobg .best, .main-page .box .logobg .best:hover, 
+.newest-boxes .box .logobg .best,
 .boxreview .plusminus .criteria,
 .box.main,
 .extra-abox,
@@ -135,7 +136,7 @@ header #logo:hover {
 }
 
 nav img {
-    filter: grayscale(1) brightness(0.1);
+    filter: grayscale(1) brightness(0.2);
 }
 
 .search-container {
@@ -752,8 +753,8 @@ h3,
 
 .box .logobg .best,
 .box .logobg .best::before,
-.main-page .box .logobg .best:hover, 
-.newest-boxes .box .logobg .best:hover {
+.main-page .box .logobg .best, 
+.newest-boxes .box .logobg .best {
     background: var(--darkygray);
     text-shadow: none;
 }
@@ -767,7 +768,6 @@ h3,
 }
 
 .main-page .box .logobg .best,
-.newest-boxes .box .logobg .best,
 #button-route-filter[data-title]:after {
     filter: none;
 }
@@ -1731,7 +1731,7 @@ ul .submenu li .nonredir,
     color: #1a1a1a;
 }
 
-.skins-category-switch::before {
+.skins-category-switch::after {
     background: linear-gradient(180deg, var(--main-theme) 0%, var(--main-theme) 100%);
 }
 

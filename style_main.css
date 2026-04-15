@@ -87,6 +87,57 @@ img {
     background: rgb(2 2 2);
 }
 
+.sitepage.topic ::-webkit-scrollbar-thumb:hover {
+    background: rgb(30 30 30);
+}
+
+.sitepage.topic ::-webkit-scrollbar-track,
+.box-skins-nav-list::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.sitepage.topic ::-webkit-scrollbar-thumb {
+    background: rgb(20 20 20);
+    border-radius: 5px;
+}
+
+.sitepage.topic ::-webkit-scrollbar {
+    width: 6px;
+}
+
+.box-skins::-webkit-scrollbar {
+    width: 4px;
+}
+
+.weapon-selection::-webkit-scrollbar-thumb {
+    background: #2e2e2e;
+    border-radius: 5px;
+}
+
+.weapon-selection::-webkit-scrollbar-thumb:hover {
+    background: #414141;
+}
+
+.weapon-container:hover .weapon-selection {
+    visibility: visible;
+    opacity: 1;
+}
+
+.box-skins::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+    transition: .15s background ease-in-out;
+}
+
+.box-skins::-webkit-scrollbar-thumb:hover {
+    background: rgba(206, 32, 61, .8);
+}
+
+.site-list::-webkit-scrollbar-thumb {
+    background: rgb(55, 55, 55);
+    border-radius: 2px !important;
+}
+
 i {
     font-style: normal;
 }
@@ -2081,6 +2132,10 @@ nav .pages {
     opacity: 1;
 }
 
+.box-skins-nav .navigation-weapon-name:hover {
+    color: var(--white);
+}
+
 .navigation-weapon-type::after,
 /* .navigation-weapon-name::before, */
 .color-box-selection-button::before,
@@ -2275,24 +2330,6 @@ nav .pages {
     }
 }
 
-.box-skins::-webkit-scrollbar {
-    width: 4px;
-}
-
-.box-skins::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, .1);
-    border-radius: 5px;
-    transition: .15s background ease-in-out;
-}
-
-.box-skins::-webkit-scrollbar-thumb:hover {
-    background: rgba(206, 32, 61, .8);
-}
-
-.box-skins::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, .2);
-}
-
 .topic-centralizer {
     width: 100%;
     min-height: 600px;
@@ -2329,21 +2366,6 @@ nav .pages {
 
 .box-skins-list::-webkit-scrollbar-track {
     background: transparent;
-}
-
-.box-skins-list::-webkit-scrollbar-thumb,
-.box-skins-nav-list::-webkit-scrollbar-thumb {
-    background: rgb(20 20 20);
-    border-radius: 5px;
-}
-
-.box-skins-nav-list::-webkit-scrollbar-thumb {
-    background: transparent;
-}
-
-
-.box-skins-list::-webkit-scrollbar-thumb:hover {
-    background: rgb(30 30 30);
 }
 
 .box-skins .skin {
@@ -2520,6 +2542,10 @@ nav .pages {
     height: 0 !important;
     margin: 0 !important;
     overflow: hidden;
+}
+
+.box-skins.notexist {
+    display: none;
 }
 
 .box-skins.disabled .box-skins-list,
@@ -2927,7 +2953,7 @@ nav .pages {
     display: flex;
     align-items: center;
     height: 33px;
-    min-width: 120px;
+    white-space: nowrap;
     justify-content: center;
     transition: .2s all ease-in-out;
     margin-left: 2px;
@@ -3279,6 +3305,8 @@ h3 {
     opacity: 0;
     background-color: var(--darkgray);
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .25);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
     padding-left: 3px;
 }
 
@@ -3297,20 +3325,6 @@ h3 {
 .weapon-selection::-webkit-scrollbar-track,
 .box-skins-nav-list::-webkit-scrollbar-track {
     background: transparent;
-}
-
-.weapon-selection::-webkit-scrollbar-thumb {
-    background: #2e2e2e;
-    border-radius: 5px;
-}
-
-.weapon-selection::-webkit-scrollbar-thumb:hover {
-    background: #414141;
-}
-
-.weapon-container:hover .weapon-selection {
-    visibility: visible;
-    opacity: 1;
 }
 
 .weapon-selection-redir {
@@ -10204,11 +10218,6 @@ div#results {
     width: 200px;
 }
 
-.site-list::-webkit-scrollbar-thumb {
-    background: rgb(55, 55, 55);
-    border-radius: 2px !important;
-}
-
 .site-list::-webkit-scrollbar {
     width: 4px;
 }
@@ -10427,6 +10436,11 @@ div#results {
 
 .color-box-selection-button::before {
     content: unset;
+}
+
+.topic-grandbox:has(.color-box-selection-button.clicked),
+.topic-grandbox:hover {
+    z-index: 102;
 }
 
 .color-box-selection-button.clicked {
@@ -17772,5 +17786,99 @@ a[href*="/?aff="][target="_blank"] {
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
+    }
+}
+
+@media screen and (min-width: 1280px) {
+.siteblock .box-skins-nav {
+    width: 300px;
+    height: auto;
+    max-height: 226px;
+    padding: unset;
+    flex-direction: column;
+}
+
+.siteblock .box-skins-nav-list {
+    height: auto;
+    max-height: 420px;
+    width: calc(100% - 32px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    position: relative;
+    overflow-x: unset;
+    overflow-y: scroll;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+    gap: 8px;
+    margin: 8px 14px 12px 16px;
+    align-content: start;
+}
+
+.siteblock .box-skins-nav .box-skins-nav-list::-webkit-scrollbar-thumb {
+    background: transparent;
+    transition: all .15s ease-in-out;
+}
+
+.siteblock .box-skins-nav:hover .box-skins-nav-list::-webkit-scrollbar-thumb {
+    background: rgb(20 20 20);
+}
+
+.siteblock .box-skins-nav .navigation-weapon-name {
+    text-wrap: nowrap;
+    background: unset;
+    filter: unset;
+    opacity: 1;
+    padding: 0;
+    margin: unset;
+    width: fit-content;
+}
+
+.siteblock .box-skins-name {
+    width: 100%;
+    min-height: 40px;
+    height: 40px;
+    margin-right: -4px;
+}
+
+.siteblock .box-skins-name::before {
+    border-radius: var(--main-border) var(--main-border) 5px 5px;
+    background: linear-gradient(150deg, var(--darkygray) 50%, var(--darkgray) 100%);
+}
+
+.siteblock .box-skins-name span {
+    transform: unset;
+}
+}
+
+.siteblock .box-skins-name span.optional {
+    display: none;
+}
+
+@media screen and (max-width: 1280px) {
+    .box-skins-nav {
+        overflow: unset;
+        z-index: 101;
+    }
+
+    .box-skins-button.left {
+        left: 0;
+    }
+
+    .box-skins-name {
+        width: auto;
+        height: 35px;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .box-skins-name::before {
+        content: unset;
+    }
+
+    .box-skins-name span {
+        transform: unset;
     }
 }
