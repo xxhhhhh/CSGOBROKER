@@ -33,7 +33,6 @@
 
 const fs = require("fs/promises");
 const path = require("path");
-const { performance } = require("perf_hooks");
 
 const TOPIC_NAV_ITEMS_FILE = "/code-parts/topics/topics-nav-items.json";
 const ITEMS_NAV_FILE = "/code-parts/topics/items-nav.json";
@@ -603,6 +602,28 @@ async function detectAutoImportContext(root, urlPath){
 }
 
 // ---- slug/token helpers (fallback derive) ----
+
+function getReplaceRangeWithLeadingIndent(html, tagStart, tagEnd, nl){
+  const lineStartIdx = html.lastIndexOf(nl, tagStart - 1);
+  const lineStart = lineStartIdx === -1 ? 0 : lineStartIdx + nl.length;
+
+  const leading = html.slice(lineStart, tagStart);
+
+  if (/^[\t ]*$/.test(leading)) {
+    return {
+      start: lineStart,
+      end: tagEnd,
+      indent: leading,
+    };
+  }
+
+  return {
+    start: tagStart,
+    end: tagEnd,
+    indent: "",
+  };
+}
+
 const STOP = new Set([
   "the", "collection", "collections", "case", "weapon", "capsule", "autograph",
   "sticker", "stickers", "charm", "charms", "pack", "bundle", "csgo", "cs2",
@@ -1451,8 +1472,20 @@ function replaceSimpleTagTextByClass(html, className, translateMap){
 }
 
 async function processRuTopicStaticTranslations({ root, file, html, verbose }){
+
   const urlPath = fileToUrlPath(root, file);
+
   if (!urlPath.startsWith("/ru/topic")) {
+    return { html, changed:false };
+  }
+  if (
+    !html.includes("navigation-weapon-type") &&
+    !html.includes("category-switch") &&
+    !html.includes("color-box-selection-button") &&
+    !html.includes("color-box-overview-button") &&
+    !html.includes("navigation-weapon-name") &&
+    !html.includes("box-skins-name")
+  ) {
     return { html, changed:false };
   }
 
@@ -1607,6 +1640,11 @@ async function processTopicFilters({ root, file, html, verbose }){
   const urlPath = fileToUrlPath(root, file);
   const masked = maskSegments(html);
   const holders = findAllTagsByClass(masked, "topic-boxes-holder", ["div", "section"]);
+
+  if (!html.includes("topic-boxes-holder")) {
+    return { html, changed:false };
+  }
+
   if (!holders.length) return { html, changed:false };
 
   const nav = await loadTopicNav(root);
@@ -2615,6 +2653,13 @@ async function processItemsNavStaticFill({ root, file, html, verbose }){
   const ctx = detectItemsNavContext(urlPath);
   if (!ctx) return { html, changed:false };
 
+  if (!html.includes("topic-grandbox") && !html.includes("item-topic-grandbox")) {
+    return { html, changed:false };
+  }
+  if (!html.includes("navigation-weapon-type") && !html.includes("section first")) {
+    // optional, если хочешь совсем агрессивно сокращать
+  }
+
   const navData = await loadItemsNav(root);
   const types = Array.isArray(navData?.types) ? navData.types : [];
   const filters = Array.isArray(navData?.filters) ? navData.filters : [];
@@ -2683,15 +2728,6 @@ function getNavigationWeaponTypeStateMapForSkinsPage(html){
   }
 
   return state;
-}
-
-function getNavigationWeaponTypeStateMapForItemsLikePage(html){
-  const availableSkinTypes = getAvailableSkinTypesFromHtml(html);
-  const rarities = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];
-
-  return new Map(
-    rarities.map(type => [type, availableSkinTypes.has(type)])
-  );
 }
 
 function rebuildNavigationWeaponTypeClassesInHtml(html, existsMap){
@@ -2840,63 +2876,11 @@ function rebuildBoxSkinsDisabledStateForSkinsPage(html, existsMap){
   return out;
 }
 
-function rebuildSkinDisabledStateForItemsLikePage(html, existsMap){
-  const masked = maskSegments(html);
-  const skins = findAllTagsByClass(masked, "skin", ["div", "span", "a"]);
-  if (!skins.length) return html;
-
-  let out = html;
-  let shift = 0;
-
-  for (const skin of skins){
-    const openAbs = skin.openStart + shift;
-    const open = readTag(out, openAbs);
-    const attrs = open.attrs;
-
-    const classMatch = attrs.match(/\bclass\s*=\s*(?:"([^"]*)"|'([^']*)')/i);
-    if (!classMatch) continue;
-
-    const quote = classMatch[1] != null ? `"` : `'`;
-    const classAttr = classMatch[1] ?? classMatch[2] ?? "";
-    const classes = classAttr.split(/\s+/).filter(Boolean);
-
-    const rarity = classes.find(cls => existsMap.has(cls));
-    if (!rarity) continue;
-
-    const exists = Boolean(existsMap.get(rarity));
-    let newClasses = classes.filter(cls => cls !== "disabled");
-
-    if (!exists && !newClasses.includes("disabled")) {
-      newClasses.push("disabled");
-    }
-
-    const newClassAttr = `class=${quote}${newClasses.join(" ")}${quote}`;
-    const newAttrs = attrs.replace(/\bclass\s*=\s*(?:"[^"]*"|'[^']*')/i, newClassAttr);
-    const newOpenTag = open.tagText.replace(attrs, newAttrs);
-
-    out = out.slice(0, openAbs) + newOpenTag + out.slice(open.end);
-    shift += newOpenTag.length - open.tagText.length;
-  }
-
-  return out;
-}
-
 function detectOfflineNavigationWeaponTypeContext(urlPath){
   const p = urlPath.toLowerCase();
 
   if (/^\/(?:ru\/)?topic\/skins(?:\/|$)/i.test(p)) {
     return { mode: "skins" };
-  }
-
-  if (
-    p.includes("/items/") ||
-    p.includes("/stickers/") ||
-    p.includes("/cases/") ||
-    p.includes("/charms/") ||
-    p.includes("/collections/") ||
-    p.includes("/players/inventories/")
-  ) {
-    return { mode: "items_like" };
   }
 
   return null;
@@ -2907,16 +2891,16 @@ async function processOfflineNavigationWeaponTypeState({ root, file, html, verbo
   const ctx = detectOfflineNavigationWeaponTypeContext(urlPath);
   if (!ctx) return { html, changed:false };
 
+  if (!html.includes("navigation-weapon-type") && !html.includes('class="box-skins')) {
+    return { html, changed:false };
+  }
+
   let out = html;
 
   if (ctx.mode === "skins") {
     const existsMap = getNavigationWeaponTypeStateMapForSkinsPage(out);
     out = rebuildNavigationWeaponTypeClassesInHtml(out, existsMap);
     out = rebuildBoxSkinsDisabledStateForSkinsPage(out, existsMap);
-  } else if (ctx.mode === "items_like") {
-    const existsMap = getNavigationWeaponTypeStateMapForItemsLikePage(out);
-    out = rebuildNavigationWeaponTypeClassesInHtml(out, existsMap);
-    out = rebuildSkinDisabledStateForItemsLikePage(out, existsMap);
   }
 
   if (out !== html){
@@ -3060,8 +3044,13 @@ function findTopicGrandboxInSiteblock(html){
 }
 
 async function processTopicBoxSkinsNavStaticFill({ root, file, html, verbose }){
+
   const urlPath = fileToUrlPath(root, file);
   const lowerUrlPath = urlPath.toLowerCase();
+
+  if (!html.includes("box-skins")) {
+    return { html, changed:false };
+  }
 
   if (!lowerUrlPath.startsWith("/topic") && !lowerUrlPath.startsWith("/ru/topic")) {
     return { html, changed:false };
@@ -3290,6 +3279,472 @@ async function processTopicHeaderBackButton({ root, file, html, verbose }){
   return { html, changed:false };
 }
 
+// ---------------- PAGE CONTEXT / BATCH REPLACEMENTS ----------------
+function applyReplacements(html, replacements){
+  if (!Array.isArray(replacements) || !replacements.length) return html;
+
+  const sorted = [...replacements]
+    .filter(r => r && Number.isFinite(r.start) && Number.isFinite(r.end) && r.end >= r.start)
+    .sort((a, b) => b.start - a.start);
+
+  let out = html;
+  for (const r of sorted){
+    out = out.slice(0, r.start) + r.value + out.slice(r.end);
+  }
+  return out;
+}
+
+function createPageContext({ root, file, html, urlToFile, pricesState, verbose }){
+  const urlPath = fileToUrlPath(root, file);
+  const lowerUrlPath = urlPath.toLowerCase();
+  const nl = html.includes("\r\n") ? "\r\n" : "\n";
+
+  let currentHtml = html;
+  let masked = null;
+  let index = null;
+
+  const classCache = new Map();
+
+  function getHtml(){
+    return currentHtml;
+  }
+
+  function getMasked(){
+    if (masked == null) masked = maskSegments(currentHtml);
+    return masked;
+  }
+
+  function buildIndex(){
+    const m = getMasked();
+
+    return {
+      boxSkinsList: findAllTagsByClass(m, "box-skins-list", ["div", "ul", "section"]),
+      boxSkins: findAllTagsByClass(m, "box-skins", ["div", "section"]),
+      skins: findAllTagsByClass(m, "skin", ["div", "span", "a"]),
+      topicBoxesHolder: findAllTagsByClass(m, "topic-boxes-holder", ["div", "section"]),
+      topicGrandboxes: findAllTagsByClass(m, "topic-grandbox", ["div", "section"]),
+      topicPages: findAllTagsByClass(m, "topicpage", ["div", "section"]),
+      sitePages: findAllTagsByClass(m, "sitepage", ["div", "section"]),
+      navWeaponTypes: findAllTagsByClass(m, "navigation-weapon-type", ["div", "a", "span"]),
+      siteTopPanels: findAllTagsByClass(m, "sitetoppannel", ["div", "section"]),
+      siteLeftPanels: findAllTagsByClass(m, "siteleftpannel", ["div", "section"]),
+      siteBlocks: findAllTagsByClass(m, "siteblock", ["div", "section"]),
+    };
+  }
+
+  function getIndex(){
+    if (index == null) index = buildIndex();
+    return index;
+  }
+
+  function findByClass(cls, tags = ["div"], from = 0, to = null){
+    const end = to == null ? currentHtml.length : to;
+    const key = `${cls}::${tags.join(",")}::${from}::${end}`;
+    if (classCache.has(key)) return classCache.get(key);
+    const res = findAllTagsByClass(getMasked(), cls, tags, from, end);
+    classCache.set(key, res);
+    return res;
+  }
+
+  function replaceHtml(nextHtml){
+    if (nextHtml === currentHtml) return false;
+    currentHtml = nextHtml;
+    masked = null;
+    index = null;
+    classCache.clear();
+    return true;
+  }
+
+  function applyBatch(replacements){
+    if (!replacements?.length) return false;
+    const nextHtml = applyReplacements(currentHtml, replacements);
+    return replaceHtml(nextHtml);
+  }
+
+  const flags = {
+    isTopicPage: lowerUrlPath.startsWith("/topic") || lowerUrlPath.startsWith("/ru/topic"),
+    isRu: lowerUrlPath.startsWith("/ru/"),
+    isSkinsPage: lowerUrlPath.includes("/skins/"),
+    isCasesPage: lowerUrlPath.includes("/cases/"),
+    isItemsTypePage: lowerUrlPath.includes("/items-type/"),
+    isItemsOrRelatedPage:
+      lowerUrlPath.includes("/items/") ||
+      lowerUrlPath.includes("/stickers/") ||
+      lowerUrlPath.includes("/cases/") ||
+      lowerUrlPath.includes("/charms/") ||
+      lowerUrlPath.includes("/collections/") ||
+      lowerUrlPath.includes("/players/inventories/"),
+
+    isPlayersInventoryPage: isPlayersInventoryPage(urlPath),
+
+    hasSkinClass:
+      currentHtml.includes('class="skin"') ||
+      currentHtml.includes("class='skin'") ||
+      currentHtml.includes(" skin "),
+
+    hasBoxSkins: currentHtml.includes("box-skins"),
+    hasTopicBoxesHolder: currentHtml.includes("topic-boxes-holder"),
+    hasTopicGrandbox:
+      currentHtml.includes("topic-grandbox") ||
+      currentHtml.includes("item-topic-grandbox"),
+    hasNavWeaponType: currentHtml.includes("navigation-weapon-type"),
+    hasHeader: currentHtml.includes("<header"),
+    hasNav: currentHtml.includes("<nav"),
+  };
+
+  return {
+    root,
+    file,
+    urlToFile,
+    pricesState,
+    verbose,
+    urlPath,
+    lowerUrlPath,
+    nl,
+    flags,
+    meta: {
+      boxSkinsRendered: false,
+    },
+
+    get html(){ return getHtml(); },
+    set html(v){ replaceHtml(v); },
+
+    getHtml,
+    getMasked,
+    getIndex,
+    findByClass,
+    replaceHtml,
+    applyBatch,
+  };
+}
+
+async function processSkinPlaceholdersCtx(ctx){
+  if (ctx.flags.isPlayersInventoryPage) return false;
+
+  if (ctx.meta?.boxSkinsRendered) {
+    if (ctx.verbose){
+      console.log(`[SKIP] ${path.relative(ctx.root, ctx.file)} :: skin placeholders skipped (already rendered by .box-skins-list)`);
+    }
+    return false;
+  }
+
+  if (!ctx.flags.hasSkinClass) return false;
+
+  return runLegacyProcessor(ctx, processSkinPlaceholders);
+}
+
+async function processSkinsPriceSorterCtx(ctx){
+  if (!ctx.flags.isSkinsPage) return false;
+
+  const pageCtx = detectSkinsPriceSorterContext(ctx.urlPath);
+  if (!pageCtx) return false;
+
+  const lists = ctx.getIndex().boxSkinsList;
+  if (!lists.length) return false;
+
+  const html = ctx.html;
+  const replacements = [];
+
+  for (const list of lists){
+    const openAbs = list.openEnd;
+    const closeAbs = list.closeStart;
+
+    const baseIndent = indentBefore(html, openAbs, ctx.nl);
+    const itemIndent = baseIndent + "  ";
+
+    const inner = html.slice(openAbs, closeAbs);
+    const cleanedInner = stripPriceSorterBlocks(inner).replace(/^(?:[ \t]*\r?\n)+/, "");
+
+    let replacementInner = "";
+
+    if (pageCtx.shouldHaveSorter){
+      const sorterHtml = renderPriceSorterHtml({ indent: itemIndent, nl: ctx.nl });
+      replacementInner = cleanedInner
+        ? (ctx.nl + sorterHtml + ctx.nl + cleanedInner.replace(/^\r?\n+/, ""))
+        : (ctx.nl + sorterHtml + ctx.nl + baseIndent);
+    } else {
+      replacementInner = cleanedInner
+        ? (ctx.nl + cleanedInner.replace(/^\r?\n+/, ""))
+        : (ctx.nl + baseIndent);
+    }
+
+    const currentInner = html.slice(openAbs, closeAbs);
+    if (currentInner !== replacementInner){
+      replacements.push({
+        start: openAbs,
+        end: closeAbs,
+        value: replacementInner,
+      });
+    }
+  }
+
+  const changed = ctx.applyBatch(replacements);
+
+  if (changed && ctx.verbose){
+    console.log(`[OK] ${path.relative(ctx.root, ctx.file)} :: price-sorter ${pageCtx.shouldHaveSorter ? "inserted" : "removed"}`);
+  }
+
+  return changed;
+}
+
+async function processTopicHeaderBackButtonCtx(ctx){
+  if (!ctx.flags.isTopicPage) return false;
+  if (!ctx.flags.hasHeader || !ctx.flags.hasNav) return false;
+
+  const normalized = normalizeUrlPathForMatch(ctx.urlPath);
+  if (!normalized.startsWith("/topic") && !normalized.startsWith("/ru/topic")) {
+    return false;
+  }
+
+  const target = findHeaderNavTarget(ctx.html);
+  if (!target) return false;
+
+  const href = getTopicBackHref(normalized);
+  const openEnd = target.openEnd;
+  const closeStart = target.closeStart;
+  const baseIndent = indentBefore(ctx.html, openEnd, ctx.nl);
+  const itemIndent = baseIndent + "  ";
+
+  const inner = ctx.html.slice(openEnd, closeStart);
+  const cleanedInner = stripBackButtonBlocks(inner).replace(/^(?:[ \t]*\r?\n)+/, "");
+
+  let replacementInner = "";
+
+  if (!href){
+    replacementInner = cleanedInner
+      ? (ctx.nl + cleanedInner.replace(/^\r?\n+/, ""))
+      : (ctx.nl + baseIndent);
+  } else {
+    const buttonHtml = renderTopicBackButtonHtml({
+      indent: itemIndent,
+      nl: ctx.nl,
+      href,
+    });
+
+    replacementInner = cleanedInner
+      ? (ctx.nl + buttonHtml + ctx.nl + cleanedInner.replace(/^\r?\n+/, ""))
+      : (ctx.nl + buttonHtml + ctx.nl + baseIndent);
+  }
+
+  const next = ctx.html.slice(0, openEnd) + replacementInner + ctx.html.slice(closeStart);
+  const changed = ctx.replaceHtml(next);
+
+  if (changed && ctx.verbose){
+    console.log(
+      `[OK] ${path.relative(ctx.root, ctx.file)} :: header back-button ${href ? `inserted (${href})` : "removed"}`
+    );
+  }
+
+  return changed;
+}
+
+async function processTopicFiltersCtx(ctx){
+  if (!ctx.flags.isTopicPage) return false;
+  if (!ctx.flags.hasTopicBoxesHolder) return false;
+
+  const holders = ctx.getIndex().topicBoxesHolder;
+  if (!holders.length) return false;
+
+  const nav = await loadTopicNav(ctx.root);
+  if (!nav.length) return false;
+
+  const html = ctx.html;
+  const replacements = [];
+
+  for (const h of holders){
+    const openTag = readTag(html, h.openStart);
+    const classes = parseClassAttr(openTag.attrs);
+
+    if (classes.has("items-type")) continue;
+
+    const isRu = ctx.flags.isRu || classes.has("lang-ru");
+    const openAbs = h.openEnd;
+    const closeAbs = h.closeStart;
+    const baseIndent = indentBefore(html, openAbs, ctx.nl);
+    const innerIndent = baseIndent + "  ";
+
+    const filters = findAllTagsByClass(
+      ctx.getMasked(),
+      "topic-filter",
+      ["div"],
+      h.openEnd,
+      h.closeStart
+    );
+
+    let innerBefore = html.slice(openAbs, closeAbs);
+
+    if (filters.length){
+      const parts = [];
+      let cursor = openAbs;
+
+      for (const f of filters){
+        parts.push(html.slice(cursor, f.openStart));
+        cursor = f.closeEnd;
+      }
+
+      parts.push(html.slice(cursor, closeAbs));
+      innerBefore = parts.join("");
+    }
+
+    const rest = innerBefore.replace(/^(?:[ \t]*\r?\n)+/, "");
+    const filterHtml = renderTopicFilterHtml({
+      nav,
+      indent: innerIndent,
+      nl: ctx.nl,
+      urlPath: ctx.urlPath,
+      isRu,
+    });
+
+    const replacementInner = rest
+      ? (ctx.nl + filterHtml + ctx.nl + rest.replace(/^\r?\n+/, ""))
+      : (ctx.nl + filterHtml + ctx.nl + baseIndent);
+
+    const currentInner = html.slice(openAbs, closeAbs);
+    if (currentInner !== replacementInner){
+      replacements.push({
+        start: openAbs,
+        end: closeAbs,
+        value: replacementInner,
+      });
+    }
+  }
+
+  const changed = ctx.applyBatch(replacements);
+
+  if (changed && ctx.verbose){
+    console.log(`[OK] ${path.relative(ctx.root, ctx.file)} :: topic-filter fixed/inserted (${replacements.length})`);
+  }
+
+  return changed;
+}
+
+// ---------------- LEGACY ADAPTERS ----------------
+async function runLegacyProcessor(ctx, fn){
+  const res = await fn({
+    root: ctx.root,
+    file: ctx.file,
+    html: ctx.html,
+    pricesState: ctx.pricesState,
+    verbose: ctx.verbose,
+    urlToFile: ctx.urlToFile,
+  });
+
+  if (res?.changed && typeof res.html === "string"){
+    ctx.html = res.html;
+    return true;
+  }
+
+  return false;
+}
+
+async function processBoxSkinsListsCtx(ctx){
+  const changed = await runLegacyProcessor(ctx, processBoxSkinsLists);
+  if (changed) ctx.meta.boxSkinsRendered = true;
+  return changed;
+}
+
+async function processLoadoutPagesCtx(ctx){
+  return runLegacyProcessor(ctx, processLoadoutPages);
+}
+
+async function processCaseExtraVariantLinksCtx(ctx){
+  return runLegacyProcessor(ctx, processCaseExtraVariantLinks);
+}
+
+async function processItemsTypeTopicBoxesPagesCtx(ctx){
+  return runLegacyProcessor(ctx, processItemsTypeTopicBoxesPages);
+}
+
+async function processItemsNavStaticFillCtx(ctx){
+  return runLegacyProcessor(ctx, processItemsNavStaticFill);
+}
+
+async function processOfflineNavigationWeaponTypeStateCtx(ctx){
+  return runLegacyProcessor(ctx, processOfflineNavigationWeaponTypeState);
+}
+
+async function processRuTopicStaticTranslationsCtx(ctx){
+  return runLegacyProcessor(ctx, processRuTopicStaticTranslations);
+}
+
+async function processTopicBoxSkinsNavStaticFillCtx(ctx){
+  return runLegacyProcessor(ctx, processTopicBoxSkinsNavStaticFill);
+}
+
+async function processRuMirrorPagesCtx(ctx, processedHtmlByFile){
+  const res = await processRuMirrorPages({
+    root: ctx.root,
+    file: ctx.file,
+    html: ctx.html,
+    urlToFile: ctx.urlToFile,
+    verbose: ctx.verbose,
+    processedHtmlByFile,
+  });
+
+  if (res?.changed && typeof res.html === "string"){
+    ctx.html = res.html;
+    return true;
+  }
+
+  return false;
+}
+
+function getStage1Processors(ctx){
+  const out = [];
+
+  out.push(processBoxSkinsListsCtx);
+
+  if (ctx.flags.isSkinsPage){
+    out.push(processLoadoutPagesCtx);
+    out.push(processSkinsPriceSorterCtx);
+  }
+
+  if (ctx.flags.isCasesPage){
+    out.push(processCaseExtraVariantLinksCtx);
+  }
+
+  if (!ctx.flags.isPlayersInventoryPage && ctx.flags.hasSkinClass){
+    out.push(processSkinPlaceholdersCtx);
+  }
+
+  if (ctx.flags.isItemsTypePage){
+    out.push(processItemsTypeTopicBoxesPagesCtx);
+  }
+
+  if (ctx.flags.isTopicPage && ctx.flags.hasTopicBoxesHolder){
+    out.push(processTopicFiltersCtx);
+  }
+
+  if (ctx.flags.isTopicPage){
+    out.push(processTopicHeaderBackButtonCtx);
+  }
+
+  if (ctx.flags.isItemsOrRelatedPage && ctx.flags.hasTopicGrandbox){
+    out.push(processItemsNavStaticFillCtx);
+  }
+
+  if (ctx.flags.isTopicPage && (ctx.flags.hasNavWeaponType || ctx.flags.hasBoxSkins)){
+    out.push(processOfflineNavigationWeaponTypeStateCtx);
+  }
+
+  return out;
+}
+
+function getStage2Processors(ctx){
+  const out = [];
+
+  if (ctx.flags.isRu){
+    out.push("ru-mirror");
+    out.push(processRuTopicStaticTranslationsCtx);
+  }
+
+  if (ctx.flags.isTopicPage && ctx.flags.hasBoxSkins){
+    out.push(processTopicBoxSkinsNavStaticFillCtx);
+  }
+
+  return out;
+}
+
 // ---------------- MAIN ----------------
 (async function main(){
   const { root, dry, verbose, prices, paths } = parseArgs(process.argv.slice(2));
@@ -3303,164 +3758,110 @@ async function processTopicHeaderBackButton({ root, file, html, verbose }){
   let updated = 0;
   let skipped = 0;
 
-const processedHtmlByFile = new Map();
+  const processedHtmlByFile = new Map();
 
-const CONCURRENCY = 30;
+  const os = require("os");
+  const CPU = os.availableParallelism?.() ?? os.cpus().length ?? 8;
+  const CONCURRENCY = Math.max(4, Math.min(12, Math.floor(CPU * 0.75)));
 
-await mapLimit(files, CONCURRENCY, async (file) => {
-  const urlPath = fileToUrlPath(root, file);
-  const lowerUrlPath = urlPath.toLowerCase();
-  const allowed = paths.some(p => lowerUrlPath.startsWith(p.toLowerCase()));
+  // ---------- STAGE 1: local page transforms ----------
+  await mapLimit(files, CONCURRENCY, async (file) => {
+    const urlPath = fileToUrlPath(root, file);
+    const lowerUrlPath = urlPath.toLowerCase();
+    const allowed = paths.some(p => lowerUrlPath.startsWith(p.toLowerCase()));
 
-  if (!allowed){
-    processedHtmlByFile.set(file, { allowed: false });
-    return;
-  }
-
-  try {
-    const origHtml = await readTextCached(file);
-    let html = origHtml;
-
-    const isTopicPage = lowerUrlPath.startsWith("/topic") || lowerUrlPath.startsWith("/ru/topic");
-    const isSkinsPage = lowerUrlPath.includes("/skins/");
-    const isCasesPage = lowerUrlPath.includes("/cases/");
-    const isItemsTypePage = lowerUrlPath.includes("/items-type/");
-    const isItemsOrRelatedPage =
-      lowerUrlPath.includes("/items/") ||
-      lowerUrlPath.includes("/stickers/") ||
-      lowerUrlPath.includes("/cases/") ||
-      lowerUrlPath.includes("/charms/") ||
-      lowerUrlPath.includes("/collections/") ||
-      lowerUrlPath.includes("/players/inventories/");
-
-    {
-      const res = await processBoxSkinsLists({ root, file, html, pricesState, verbose });
-      if (res.changed) html = res.html;
+    if (!allowed){
+      processedHtmlByFile.set(file, { allowed: false });
+      return;
     }
 
-    if (isSkinsPage){
-      const res = await processLoadoutPages({ root, file, html, pricesState, verbose });
-      if (res.changed) html = res.html;
+    try {
+      const origHtml = await readTextCached(file);
+
+      const ctx = createPageContext({
+        root,
+        file,
+        html: origHtml,
+        urlToFile,
+        pricesState,
+        verbose,
+      });
+
+      const processors = getStage1Processors(ctx);
+
+      for (const processor of processors){
+        await runProcessor(
+          ctx,
+          processor.name || "anonymous",
+          processor
+        );
+      }
+
+      processedHtmlByFile.set(file, {
+        origHtml,
+        html: ctx.html,
+        allowed: true,
+      });
+    } catch (e){
+      console.error(`[ERR] ${path.relative(root, file)}:`, e.message);
+      processedHtmlByFile.set(file, {
+        origHtml: null,
+        html: null,
+        allowed: true,
+        error: true,
+      });
     }
-
-    if (isSkinsPage){
-      const res = await processSkinsPriceSorter({ root, file, html, verbose });
-      if (res.changed) html = res.html;
-    }
-
-    if (isCasesPage){
-      const res = await processCaseExtraVariantLinks({ root, file, html, urlToFile, verbose });
-      if (res.changed) html = res.html;
-    }
-
-    if (!isPlayersInventoryPage(urlPath) && html.includes('class="skin"')){
-      const res = await processSkinPlaceholders({ root, html, pricesState, verbose, file });
-      if (res.changed) html = res.html;
-    }
-
-    if (isItemsTypePage){
-      const res = await processItemsTypeTopicBoxesPages({ root, file, html, verbose });
-      if (res.changed) html = res.html;
-    }
-
-    if (isTopicPage){
-      const res = await processTopicFilters({ root, file, html, verbose });
-      if (res.changed) html = res.html;
-    }
-
-    if (isTopicPage){
-      const res = await processTopicHeaderBackButton({ root, file, html, verbose });
-      if (res.changed) html = res.html;
-    }
-
-    if (isItemsOrRelatedPage){
-      const res = await processItemsNavStaticFill({ root, file, html, verbose });
-      if (res.changed) html = res.html;
-    }
-
-    if (isTopicPage){
-      const res = await processOfflineNavigationWeaponTypeState({ root, file, html, verbose });
-      if (res.changed) html = res.html;
-    }
-
-    processedHtmlByFile.set(file, {
-      origHtml,
-      html,
-      allowed: true,
-    });
-
-  } catch (e){
-    console.error(`[ERR] ${path.relative(root, file)}:`, e.message);
-    processedHtmlByFile.set(file, {
-      origHtml: null,
-      html: null,
-      allowed: true,
-      error: true,
-    });
-  }
-});
+  });
 
   updated = 0;
   skipped = 0;
 
-await mapLimit(files, CONCURRENCY, async (file) => {
-  const saved = processedHtmlByFile.get(file);
-
-  if (!saved?.allowed || saved?.error || typeof saved.html !== "string"){
-    skipped++;
-    return;
+  async function runProcessor(ctx, name, fn){
+    return await fn(ctx);
   }
 
-  try {
-    let html = saved.html;
-    const origHtml = saved.origHtml;
-    const urlPath = fileToUrlPath(root, file);
+  // ---------- STAGE 2: dependent transforms ----------
+  await mapLimit(files, CONCURRENCY, async (file) => {
+    const saved = processedHtmlByFile.get(file);
 
-    if (urlPath.startsWith("/ru/")){
-      const res = await processRuMirrorPages({
+    if (!saved?.allowed || saved?.error || typeof saved.html !== "string"){
+      skipped++;
+      return;
+    }
+
+    try {
+      const ctx = createPageContext({
         root,
         file,
-        html,
+        html: saved.html,
         urlToFile,
-        verbose,
-        processedHtmlByFile,
-      });
-      if (res.changed) html = res.html;
-    }
-
-    {
-      const res = await processRuTopicStaticTranslations({
-        root,
-        file,
-        html,
+        pricesState,
         verbose,
       });
-      if (res.changed) html = res.html;
-    }
 
-    {
-      const res = await processTopicBoxSkinsNavStaticFill({
-        root,
-        file,
-        html,
-        verbose,
-      });
-      if (res.changed) html = res.html;
-    }
+      const processors = getStage2Processors(ctx);
 
-    const finalChanged = html !== origHtml;
+      for (const processor of processors){
+        if (processor === "ru-mirror"){
+          await processRuMirrorPagesCtx(ctx, processedHtmlByFile);
+        } else {
+          await runProcessor(ctx, processor.name || "anonymous", processor);
+        }
+      }
 
-    if (finalChanged){
-      if (!dry) await writeTextCached(file, html);
-      updated++;
-    } else {
+      const finalChanged = ctx.html !== saved.origHtml;
+
+      if (finalChanged){
+        if (!dry) await writeTextCached(file, ctx.html);
+        updated++;
+      } else {
+        skipped++;
+      }
+    } catch (e){
+      console.error(`[ERR] ${path.relative(root, file)}:`, e.message);
       skipped++;
     }
-  } catch (e){
-    console.error(`[ERR] ${path.relative(root, file)}:`, e.message);
-    skipped++;
-  }
-});
+  });
 
   console.log(`\nDone. Updated: ${updated}, skipped: ${skipped}, total: ${files.length}`);
 })().catch(e => {
