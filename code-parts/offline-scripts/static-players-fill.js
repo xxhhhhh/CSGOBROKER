@@ -158,6 +158,35 @@ function resolveDopplerSkinId(item, parsed){
   return `${originalSkinId} ${normalizedPhase}`.trim();
 }
 
+function buildPlayersUpdatedMarker(updatedAt = ""){
+  const value = String(updatedAt || "").trim();
+  if (!value) return "";
+  return `<!-- players-updated-at: ${value} -->`;
+}
+
+function extractPlayersUpdatedMarker(html = ""){
+  const m = String(html).match(/<!--\s*players-updated-at:\s*([^\s]+)\s*-->/i);
+  return m ? String(m[1]).trim() : "";
+}
+
+function upsertPlayersUpdatedMarker(html, updatedAt){
+  const marker = buildPlayersUpdatedMarker(updatedAt);
+  if (!marker) return html;
+
+  if (/<!--\s*players-updated-at:\s*[^\s]+\s*-->/i.test(html)) {
+    return html.replace(
+      /<!--\s*players-updated-at:\s*[^\s]+\s*-->/i,
+      marker
+    );
+  }
+
+  if (/<head\b[^>]*>/i.test(html)) {
+    return html.replace(/<head\b[^>]*>/i, (m) => `${m}\n  ${marker}`);
+  }
+
+  return `${marker}\n${html}`;
+}
+
 // ---------------- CLI ----------------
 function parseArgs(argv){
   const get = (f) => {
@@ -168,6 +197,7 @@ function parseArgs(argv){
   const root       = path.resolve(get("--root") ?? process.cwd());
   const dry        = argv.includes("--dry-run");
   const verbose    = argv.includes("--verbose");
+  const force      = argv.includes("--force");
   const templateRu = get("--template-ru") ?? DEFAULT_TEMPLATE_RU;
   const templateEn = get("--template-en") ?? DEFAULT_TEMPLATE_EN;
   const only       = (get("--only") ?? "")
@@ -175,7 +205,7 @@ function parseArgs(argv){
     .map(s => s.trim())
     .filter(Boolean);
 
-  return { root, dry, verbose, templateRu, templateEn, only };
+  return { root, dry, verbose, force, templateRu, templateEn, only };
 }
 
 // ---------------- CACHES ----------------
@@ -926,9 +956,6 @@ function normalizePlayersList(raw){
         p?.realNickname ||
         p?.display_nickname ||
         p?.displayNickname ||
-        p?.nickname ||
-        p?.nick ||
-        p?.player_nickname ||
         ""
       ).trim();
 
@@ -1031,6 +1058,124 @@ function normalizePlayersList(raw){
   }).filter(p => p.nickname && p.slug);
 }
 
+function normalizePlayersPayload(raw){
+  const players = normalizePlayersList(raw);
+
+  const updatedAt = String(
+    raw?.updatedAt ||
+    raw?.updated_at ||
+    ""
+  ).trim();
+
+  return {
+    players,
+    updatedAt,
+  };
+}
+
+function extractNicknameCountryCode(nickname = ""){
+  const m = String(nickname).trim().match(/-([a-z]{2})$/i);
+  return m ? m[1].toUpperCase() : "";
+}
+
+function formatBaseNickname(raw = ""){
+  return String(raw || "").trim();
+}
+
+function getPlayerDisplayName(player){
+  const nickname = String(player?.nickname || "").trim();
+  const realNickname = String(player?.realNickname || "").trim();
+  const countryCode = extractNicknameCountryCode(nickname);
+
+  if (realNickname) {
+    return countryCode
+      ? `${realNickname} (${countryCode})`
+      : realNickname;
+  }
+
+  return formatBaseNickname(nickname);
+}
+
+function buildPlayerMetaTitle(player, lang = "ru"){
+  const displayName = getPlayerDisplayName(player);
+  const isContentCreator = player?.isContentCreator === true;
+
+  if (lang === "en") {
+    if (isContentCreator) {
+      return `${displayName} CS2 Inventory (Steam) — All Skins, Knives & Prices`;
+    }
+
+    return `${displayName} CS2 Inventory (Steam) — All Skins, Knives & Prices`;
+  }
+
+  if (isContentCreator) {
+    return `Инвентарь ${displayName} в CS2 (Steam) — Все Скины, Ножи и Цены`;
+  }
+
+  return `Инвентарь ${displayName} в CS2 (Steam) — Все Скины, Ножи и Цены`;
+}
+
+function buildPlayerMetaDescription(player, lang = "ru"){
+  const displayName = getPlayerDisplayName(player);
+  const isContentCreator = player?.isContentCreator === true;
+
+  if (lang === "en") {
+    if (isContentCreator) {
+      return `Explore ${displayName}'s full Steam inventory in CS2 — all skins, knives, and gloves. Check prices, rarity, and the most expensive items in the collection.`;
+    }
+
+    return `Explore ${displayName}'s full Steam inventory in CS2 — all skins, knives, and gloves used by the pro player. Check prices, rarity, and the most valuable items in the loadout.`;
+  }
+
+  if (isContentCreator) {
+    return `Полный Steam инвентарь ${displayName} в CS2 — все скины, ножи и перчатки стримера. Узнайте цены, редкость и самые дорогие предметы коллекции.`;
+  }
+
+  return `Смотрите полный Steam инвентарь ${displayName} в CS2 — все скины, ножи и перчатки, используемые про-игроком. Узнайте цены, редкость и самые дорогие предметы в его коллекции.`;
+}
+
+
+function escapeTitleText(s = ""){
+  return String(s)
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function replaceMetaTitle(html, title){
+  if (!title) return html;
+
+  const escapedTitleText = escapeTitleText(title);
+  const escapedAttr = escapeAttrPreserveAmp(title);
+
+  html = html.replace(
+    /<title>[\s\S]*?<\/title>/i,
+    `<title>${escapedTitleText}</title>`
+  );
+
+  const replaceMetaByAttr = (input, attrName, attrValue) => {
+    const tagRe = new RegExp(
+      `<meta\\b(?=[^>]*\\b${attrName}=(?:"${attrValue}"|'${attrValue}'))[^>]*>`,
+      "i"
+    );
+
+    return input.replace(tagRe, (tag) => {
+      if (/\bcontent\s*=\s*(?:"[^"]*"|'[^']*')/i.test(tag)) {
+        return tag.replace(
+          /\bcontent\s*=\s*(?:"[^"]*"|'[^']*')/i,
+          `content="${escapedAttr}"`
+        );
+      }
+
+      return tag.replace(/>$/, ` content="${escapedAttr}">`);
+    });
+  };
+
+  html = replaceMetaByAttr(html, "property", "og:title");
+  html = replaceMetaByAttr(html, "name", "twitter:title");
+
+  return html;
+}
+
 async function loadPlayersList(root){
   const dir = abs(root, PLAYERS_LIST_DIR);
 
@@ -1042,22 +1187,45 @@ async function loadPlayersList(root){
 
     for (const file of jsonFiles){
       const data = await safeJsonCached(file);
-      const players = normalizePlayersList(data);
-      if (players.length) return players;
+      const payload = normalizePlayersPayload(data);
+
+      if (payload.players.length) {
+        return payload;
+      }
     }
   } catch {}
 
   const fallback1 = await safeJsonCached(path.join(dir, "players.json"));
-  const players1 = normalizePlayersList(fallback1);
-  if (players1.length) return players1;
+  const payload1 = normalizePlayersPayload(fallback1);
 
-  return [];
+  if (payload1.players.length) {
+    return payload1;
+  }
+
+  return {
+    players: [],
+    updatedAt: "",
+  };
+}
+
+function formatPlayersUpdatedAt(updatedAt = ""){
+  const value = String(updatedAt || "").trim();
+  if (!value) return "";
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "";
+
+  const dd = String(date.getUTCDate()).padStart(2, "0");
+  const mm = String(date.getUTCMonth() + 1).padStart(2, "0");
+  const yy = String(date.getUTCFullYear()).slice(-2);
+
+  return `${dd}.${mm}.${yy}`;
 }
 
 function replaceMetaDescription(html, description){
   if (!description) return html;
 
-  const escaped = escapeAttrDblNoApos(description);
+  const escaped = escapeAttrPreserveAmp(description);
 
   const replaceMetaByAttr = (input, attrName, attrValue) => {
     const tagRe = new RegExp(
@@ -1084,23 +1252,11 @@ function replaceMetaDescription(html, description){
   return html;
 }
 
-function buildPlayerMetaDescription(player, lang = "ru"){
-  const nickname = String(player?.realNickname || player?.nickname || "").trim();
-  const isContentCreator = player?.isContentCreator === true;
-
-  if (lang === "en") {
-    if (isContentCreator) {
-      return `Explore ${nickname}'s full CS2 inventory, including skins, knives, gloves, and rare items from a popular streamer and content creator. Updated list with prices and rarity.`;
-    }
-
-    return `Explore ${nickname}'s full CS2 inventory, including all skins, knives, gloves, and rare items. Updated list with prices and rarity from one of the world's best players.`;
-  }
-
-  if (isContentCreator) {
-    return `Посмотрите полный инвентарь ${nickname} в CS2: скины, ножи, перчатки и редкие предметы популярного стримера и контент-мейкера. Актуальный список с ценами и редкостью.`;
-  }
-
-  return `Посмотрите полный инвентарь ${nickname} в CS2: все скины, ножи, перчатки и редкие предметы одного из лучших игроков мира. Актуальный список с ценами и редкостью.`;
+function escapeAttrPreserveAmp(s = ""){
+  return String(s)
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
 async function loadPlayerInventory(root, slug){
@@ -1683,7 +1839,7 @@ function buildPlayerSteamUrl(player){
 async function resolvePlayerImage(root, player){
   const candidateRaw = String(player?.image || "").trim();
   const slug = String(player?.slug || "").trim();
-  const displayNickname = String(player?.realNickname || player?.nickname || "").trim();
+  const displayNickname = getPlayerDisplayName(player);
 
   const candidates = [
     candidateRaw,
@@ -1731,7 +1887,7 @@ function toCroppedPlayerImagePath(src = ""){
 async function resolvePlayersBoxImage(root, player){
   const candidateRaw = String(player?.image || "").trim();
   const slug = String(player?.slug || "").trim();
-  const displayNickname = String(player?.realNickname || player?.nickname || "").trim();
+  const displayNickname = getPlayerDisplayName(player);
 
   const baseCandidates = [
     candidateRaw,
@@ -2020,7 +2176,7 @@ async function resolvePlayerStatus(root, player, indent, nl){
 }
 
 function buildPlayerLinksHtml(player, indent, nl){
-  const nickname = String(player?.realNickname || player?.nickname || "").trim();
+  const nickname = getPlayerDisplayName(player);
   const steamUrl = buildPlayerSteamUrl(player);
   const faceitUrl = String(player?.links?.faceit || "").trim();
 
@@ -2063,7 +2219,7 @@ function buildPlayerLinksHtml(player, indent, nl){
 }
 
 async function buildPlayerBioHtml(root, player, indent, nl){
-  const displayNickname = String(player?.realNickname || player?.nickname || "").trim();
+  const displayNickname = getPlayerDisplayName(player);
   const realName = String(player?.realName || "").trim();
   const team = resolvePlayerTeam(player);
   const statusHtml = await resolvePlayerStatus(root, player, indent + "  ", nl);
@@ -2145,12 +2301,37 @@ async function updateLogobgBlock(root, html, player){
   };
 }
 
+function buildTopicExtraInfoHtml({ totalItems, updatedAt, lang = "ru" }){
+  const labelItems = lang === "en" ? "Total Items" : "Всего Предметов";
+  const labelValue = lang === "en" ? "Total Value" : "Общая Стоимость";
+  const labelUpdated = lang === "en" ? "Last Update" : "Последнее Обновление";
+
+  const formattedDate = formatPlayersUpdatedAt(updatedAt);
+
+  if (formattedDate) {
+    return [
+      `<div class="topic-extra-info">`,
+      `  <div class="topic-inventory-summary">${labelItems}: <span>${escapeHtml(String(totalItems))}</span>, ${labelValue}: <span></span></div>`,
+      `  <div class="topic-inventory-update">${labelUpdated}: <span>${escapeHtml(formattedDate)}</span></div>`,
+      `</div>`
+    ].join("\n");
+  }
+
+  return [
+    `<div class="topic-extra-info">`,
+    `  <div class="topic-inventory-summary">${labelItems}: <span>${escapeHtml(String(totalItems))}</span>, ${labelValue}: <span></span></div>`,
+    `</div>`
+  ].join("\n");
+}
+
 async function generatePlayerPagesForVersion({
   root,
   dry,
   verbose,
+  force,
   players,
   allPlayers,
+  playersUpdatedAt,
   templatePath,
   outputDirPath,
   lang,
@@ -2171,7 +2352,7 @@ async function generatePlayerPagesForVersion({
 
   for (const player of players){
     const internalNickname = String(player.nickname || "").trim();
-    const displayNickname = String(player.realNickname || player.nickname || "").trim();
+    const displayNickname = getPlayerDisplayName(player);
     const slug = String(player.slug || slugifyNickname(internalNickname)).trim();
 
     if (!internalNickname || !slug){
@@ -2195,10 +2376,29 @@ async function generatePlayerPagesForVersion({
     const outFile = path.join(outputDir, `${slug}.html`);
     const existsAlready = await fileExists(outFile);
 
+    let prevHtml = null;
+
+    if (existsAlready) {
+      prevHtml = await readTextCached(outFile);
+
+      const existingUpdatedAt = extractPlayersUpdatedMarker(prevHtml);
+      const currentUpdatedAt = String(playersUpdatedAt || "").trim();
+
+      if (!force && currentUpdatedAt && existingUpdatedAt === currentUpdatedAt) {
+        skipped++;
+
+        if (verbose) {
+          console.log(`[SKIP] ${path.relative(root, outFile)} :: up-to-date (${currentUpdatedAt})`);
+        }
+
+        continue;
+      }
+    }
+
     let html;
 
     if (existsAlready) {
-      html = await readTextCached(outFile);
+      html = prevHtml;
     } else {
       html = templateHtml;
 
@@ -2210,6 +2410,11 @@ async function generatePlayerPagesForVersion({
         slug
       );
     }
+
+    html = replaceMetaTitle(
+      html,
+      buildPlayerMetaTitle(player, lang)
+    );
 
     html = replaceMetaDescription(
       html,
@@ -2224,10 +2429,11 @@ async function generatePlayerPagesForVersion({
     {
       const stats = await buildInventoryStats(root, inventory);
 
-      const labelItems = lang === "en" ? "Total Items" : "Всего Предметов";
-      const labelValue = lang === "en" ? "Total Value" : "Общая Стоимость";
-
-      const summaryHtml = `<div class="topic-extra-info">${labelItems}: <span>${escapeHtml(String(stats.totalItems))}</span>, ${labelValue}: <span></span></div>`;
+      const summaryHtml = buildTopicExtraInfoHtml({
+        totalItems: stats.totalItems,
+        updatedAt: playersUpdatedAt,
+        lang,
+      });
 
       const res = upsertTopicExtraInfo(html, summaryHtml);
       if (res.changed) html = res.html;
@@ -2243,11 +2449,7 @@ async function generatePlayerPagesForVersion({
       if (res.changed) html = res.html;
     }
 
-    let prevHtml = null;
-
-    if (existsAlready) {
-      prevHtml = await readTextCached(outFile);
-    }
+    html = upsertPlayersUpdatedMarker(html, playersUpdatedAt);
 
     if (!existsAlready) {
       if (!dry) await writeTextCached(outFile, html);
@@ -2271,9 +2473,12 @@ async function generatePlayerPagesForVersion({
 
 // ---------------- MAIN ----------------
 (async function main(){
-  const { root, dry, verbose, templateRu, templateEn, only } = parseArgs(process.argv.slice(2));
+  const { root, dry, verbose, force, templateRu, templateEn, only } = parseArgs(process.argv.slice(2));
 
-  const allPlayers = await loadPlayersList(root);
+  const playersPayload = await loadPlayersList(root);
+  const allPlayers = playersPayload.players;
+  const playersUpdatedAt = playersPayload.updatedAt;
+
   if (!allPlayers.length){
     console.error("[ERR] No players found in players-list");
     process.exit(1);
@@ -2303,8 +2508,10 @@ async function generatePlayerPagesForVersion({
     root,
     dry,
     verbose,
+    force,
     players,
     allPlayers,
+    playersUpdatedAt,
     templatePath: templateRu,
     outputDirPath: OUTPUT_DIR_RU,
     lang: "ru",
@@ -2314,8 +2521,10 @@ async function generatePlayerPagesForVersion({
     root,
     dry,
     verbose,
+    force,
     players,
     allPlayers,
+    playersUpdatedAt,
     templatePath: templateEn,
     outputDirPath: OUTPUT_DIR_EN,
     lang: "en",
