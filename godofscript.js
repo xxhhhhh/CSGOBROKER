@@ -1563,10 +1563,69 @@ boxes.forEach((box) => {
   h2.appendChild(a);
 });
 
+  const mq = window.matchMedia("(min-width: 1281px)");
+
+  function initLeftPanelScroll() {
+    const leftBlock = document.querySelector(".siteleftpannel .siteblock");
+    if (!leftBlock) return;
+
+    let isScrolled = false;
+
+    function updateLeftPanel() {
+      const y = window.scrollY;
+
+      if (!isScrolled && y > 70) {
+        isScrolled = true;
+        leftBlock.classList.add("is-animated");
+        leftBlock.classList.add("is-offset");
+        leftBlock.classList.remove("no-animate");
+      } else if (isScrolled && y < 40) {
+        isScrolled = false;
+        leftBlock.classList.add("no-animate");
+        leftBlock.classList.remove("is-offset");
+      }
+    }
+
+    requestAnimationFrame(() => {
+      leftBlock.classList.add("is-ready");
+      updateLeftPanel();
+    });
+
+    window.addEventListener("scroll", updateLeftPanel, { passive: true });
+
+    // вернём функцию очистки (важно для ресайза)
+    return () => {
+      window.removeEventListener("scroll", updateLeftPanel);
+      leftBlock.classList.remove("is-offset", "is-animated", "no-animate", "is-ready");
+      isScrolled = false;
+    };
+  }
+
+  let destroyFn = null;
+
+  function handleWidthChange(e) {
+    if (e.matches) {
+      // >=1281px
+      if (!destroyFn) {
+        destroyFn = initLeftPanelScroll();
+      }
+    } else {
+      // <=1280px
+      if (destroyFn) {
+        destroyFn();
+        destroyFn = null;
+      }
+    }
+  }
+
+  // init
+  handleWidthChange(mq);
+
+  // слушаем изменение ширины
+  mq.addEventListener("change", handleWidthChange);
+
 document.addEventListener("DOMContentLoaded", function () {
   if (
-    !window.location.pathname.includes("/reviews") &&
-    !window.location.pathname.includes("/mirrors") &&
     !window.location.pathname.includes("/privacy-policy") &&
     !window.location.pathname.includes("/terms-of-service") &&
     !window.location.pathname.includes("/contact-us") &&

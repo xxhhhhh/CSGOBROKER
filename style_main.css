@@ -204,11 +204,9 @@ header {
 .nondef.review header {
     max-width: 1340px;
 }
-.nondef:has(.topic-craft) header {
-    width: calc(1000px + 8px + 300px );
-}
 
-.review header {
+.review header,
+.nondef:has(.topic-craft) header {
     width: calc(1022px + 8px + 300px );
 }
 
@@ -303,9 +301,9 @@ nav .pages {
     height: 156px;
 }
 
-.review .spaceblock {
+/* .review .spaceblock {
     height: 76px;
-}
+} */
 
 .cookie-widget {
     width: 100%;
@@ -4469,9 +4467,10 @@ nav img {
     right: unset;
 }
 
+.review .category-selector,
 .nondef:has(.topic-craft) .category-selector {
     --visible-cards: 4;
-    max-width: 1318px;
+    max-width: 1340px;
 }
 
 .sitepage .category-selector .category:has(.category-box.wiki),
@@ -4481,7 +4480,8 @@ nav img {
   min-width: var(--small-width);
 }
 
-.category-selector .category {
+.category-selector .category,
+.review .sitepage .category-selector .category {
   flex: 0 0 calc(
     (100% - (var(--gap) * var(--gaps-count))) / var(--visible-cards)
   );
@@ -4540,6 +4540,12 @@ nav img {
 .nondef .buttons-container {
     width: calc(65.715% + 300px + 96px);
     max-width: calc(65.715% + 300px + 96px);
+}
+
+.review.nondef .buttons-container,
+.nondef:has(.topic-craft) .buttons-container {
+    width: 1420px;
+    max-width: 1420px;
 }
 
 .controls-button {
@@ -10810,7 +10816,7 @@ div#results {
 
 .sitepage.topic-craft .topicpage {
     background: linear-gradient(180deg, var(--darkgray) 50%, rgba(0, 0, 0, 0) 100%);
-    width: 1000px;
+    width: 1022px;
     padding-bottom: 9px;
 }
 
@@ -14993,7 +14999,8 @@ header {
     }
 
     .category-selector,
-    .sitepage .category-selector {
+    .sitepage .category-selector,
+    .nondef:has(.topic-craft) .category-selector {
         max-width: 96%;
         width: unset !important;
         justify-content: center;
@@ -15009,7 +15016,8 @@ header {
         justify-content: center !important;
     }
 
-    .category-selector.current {
+    .category-selector.current,
+    .nondef:has(.topic-craft) .category-selector.current {
         height: 100%;
         background-color: rgba(12, 12, 12, .9);
         transform: translateZ(0);
@@ -15559,7 +15567,7 @@ header {
         min-height: 130px;
     }
 
-    .siteblock {
+    .siteleftpannel .siteblock {
         position: relative;
         background: var(--darkgray);
         top: unset;
@@ -16750,7 +16758,8 @@ header {
     }
 
     .category-selector,
-    .category-selector, .sitepage .category-selector {
+    .category-selector, .sitepage .category-selector,
+    .nondef:has(.topic-craft) .category-selector {
         justify-content: flex-start;
     }
 

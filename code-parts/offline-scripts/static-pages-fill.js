@@ -1767,6 +1767,9 @@ function catShouldAutoInsert(urlPath, builder){
     .split("#")[0].split("?")[0]
     .toLowerCase();
 
+  // NEW: category-selector нужен и на reviews/mirrors
+  if (p.startsWith("/reviews/") || p.startsWith("/mirrors/")) return true;
+
   if (p === "/" || p === "") return true;
 
   if (p === "/topic" || p.startsWith("/topic/")) return true;
@@ -1874,7 +1877,13 @@ function upsertCategoryImportOffline(html, urlPath, lang, nl, builder, contents,
   let insertPos = -1;
   let indent = "";
 
-  if (holders.length) {
+  const isReviewLike = /\/(reviews|mirrors)\//.test(String(urlPath || ""));
+
+  // NEW: reviews/mirrors — всегда внутрь .sitepage
+  if (isReviewLike && sitepage) {
+    insertPos = sitepage.openEnd;
+    indent = indentBefore(out, sitepage.openStart, nl) + "  ";
+  } else if (holders.length) {
     insertPos = holders[0].openStart;
     indent = indentBefore(out, insertPos, nl);
   } else if (isTopicPage && sitepage) {
@@ -1902,7 +1911,7 @@ function upsertCategoryImportOffline(html, urlPath, lang, nl, builder, contents,
   const before = out.slice(0, insertPos);
   const after  = out.slice(insertPos);
 
-  if (isTopicPage && !holders.length && sitepage){
+  if ((isTopicPage && !holders.length && sitepage) || (isReviewLike && sitepage)){
     const needsNl = !before.endsWith(nl);
     return before + (needsNl ? nl : "") + expected + nl + after.replace(/^\s*/, "");
   }
