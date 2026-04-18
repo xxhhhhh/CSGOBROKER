@@ -120,8 +120,9 @@ function withLangForReview(href, lang){
 
     const hasCategories = findAllDivByClass(masked, "category").length > 0;
     const hasCategorySelector = findAllDivByClass(masked, "category-selector").length > 0;
+    const isTopicPage = catIsTopicPage(urlPath);
 
-    if (!hasBoxesHolder && !isReviewPage && !hasCategories && !hasCategorySelector) {
+    if (!hasBoxesHolder && !isReviewPage && !hasCategories && !hasCategorySelector && !isTopicPage) {
       skipped++;
       continue;
     }

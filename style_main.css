@@ -303,10 +303,6 @@ nav .pages {
     height: 156px;
 }
 
-.nondef:has(.topic-craft) .spaceblock {
-    height: 84px;
-}
-
 .cookie-widget {
     width: 100%;
     height: 40px;
@@ -4467,6 +4463,11 @@ nav img {
     max-width: calc(65.715% + 300px + 18px);
     left: unset;
     right: unset;
+}
+
+.nondef:has(.topic-craft) .category-selector {
+    --visible-cards: 4;
+    max-width: 1318px;
 }
 
 .sitepage .category-selector .category:has(.category-box.wiki),
