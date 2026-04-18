@@ -439,7 +439,7 @@ function main() {
     const ni = hasNoindex(html);
     const stats = fs.statSync(fp);
     const yoastDM = extractYoastDateModified(html);
-    const lastmod = yoastDM || getGitCommitTimeISO(fp);
+    const lastmod = fs.statSync(fp).mtime.toISOString();
 
     pages.push({ filePath: fp, urlPath, lang, key, abs, lastmod, noindex: ni });
 

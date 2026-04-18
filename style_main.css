@@ -7773,6 +7773,9 @@ footer .centralizer .footer-content {
     .content .review-button.mirror-visit {
         display: none;
     }
+}
+
+@media screen and (max-width: 2350px) {
     .sitepage .category-selector {
         --visible-cards: 5;
     }
