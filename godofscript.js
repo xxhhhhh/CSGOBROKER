@@ -1654,6 +1654,38 @@ document.addEventListener("DOMContentLoaded", function () {
     let startY = 0;
     let scrollLeft = 0;
 
+    function updateLastVisibleCategory() {
+      const items = getItemMetrics();
+      const currentLeft = boxContainer.scrollLeft;
+      const viewportRight = currentLeft + boxContainer.clientWidth;
+      const tolerance = 2;
+
+      // Сначала очищаем прошлый last
+      items.forEach(({ element }) => {
+        const categoryBox = element.querySelector("a.category-box, div.category-box");
+        if (categoryBox) {
+          categoryBox.classList.remove("last");
+        }
+      });
+
+      // Берем все видимые элементы
+      const visibleItems = items.filter(
+        (item) => item.right > currentLeft + tolerance && item.left < viewportRight - tolerance
+      );
+
+      if (!visibleItems.length) return;
+
+      // Последний видимый
+      const lastVisibleItem = visibleItems[visibleItems.length - 1];
+      const lastCategoryBox = lastVisibleItem.element.querySelector(
+        "a.category-box, div.category-box"
+      );
+
+      if (lastCategoryBox) {
+        lastCategoryBox.classList.add("last");
+      }
+    }
+
     buttonsContainer.classList.add("buttons-container");
     prevButtonContainer.classList.add("controls-button");
     prevButtonContainer.setAttribute("aria-label", "Prev Category");
@@ -1682,6 +1714,8 @@ document.addEventListener("DOMContentLoaded", function () {
       boxContainer.scrollTo({ left: target, behavior: "smooth" });
       buttonScrollPosition = target;
       scrollPosition = target;
+
+      requestAnimationFrame(updateLastVisibleCategory);
     });
 
     nextButtonContainer.addEventListener("click", () => {
@@ -1691,6 +1725,8 @@ document.addEventListener("DOMContentLoaded", function () {
       boxContainer.scrollTo({ left: target, behavior: "smooth" });
       buttonScrollPosition = target;
       scrollPosition = target;
+
+      requestAnimationFrame(updateLastVisibleCategory);
     });
 
     boxContainer.addEventListener("click", (e) => {
@@ -1820,6 +1856,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       nextButtonContainer.classList.remove("disabled");
     }
+    updateLastVisibleCategory();
   });
 
     if (boxContainer.scrollLeft === 0) {
@@ -1830,6 +1867,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
       nextButtonContainer.classList.add("disabled");
     }
+
+    updateLastVisibleCategory();
 
     boxContainer.addEventListener("mousedown", (e) => {
       e.preventDefault();
@@ -1927,6 +1966,8 @@ document.addEventListener("DOMContentLoaded", function () {
       categoryElements.forEach(function (element) {
         boxContainer.appendChild(element);
       });
+
+      updateLastVisibleCategory();
     }
 
     buttonsContainer.scrollLeft = buttonScrollPosition;

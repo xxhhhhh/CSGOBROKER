@@ -3038,7 +3038,7 @@ h3 {
 .category-selector .big-category {
     text-align: start;
     display: flex;
-    justify-content: flex-start !important;
+    justify-content: flex-start;
 }
 
 .boxreview .plusminus .criteria h2,
@@ -9752,8 +9752,6 @@ a[data-title]:after,
 .category-selector .submenu2 {
     position: absolute;
     width: 314px;
-    left: 50%;
-    transform: translateX(-50%);
     margin-top: 100px;
     opacity: 0;
     z-index: -999;
@@ -9798,6 +9796,30 @@ ul .big-category.active .submenu2 {
     visibility: visible;
     padding-right: 2px;
     padding-bottom: 2px;
+}
+
+@media screen and (min-width: 1280px) {
+    .category:has(.category-box.last) .big-category {
+        justify-content: flex-end !important;
+    }
+
+    .category:has(.last) ul .big-category:hover .submenu2,
+    .category:has(.last) ul .big-category.active .submenu2 {
+        margin-left: unset;
+        margin-right: 313px;
+        padding-left: 2px;
+        padding-right: unset;
+    }
+
+    .category:has(.category-box.last) .big-category a:first-child {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
+    .category:has(.category-box.last) .big-category a::after {
+        transform: rotate(180deg);
+    }
 }
 
 .category .submenu li:first-child {
