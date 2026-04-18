@@ -3,7 +3,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+// const { execSync } = require('child_process');
 
 const ROOT_DIR = path.resolve(__dirname, '../../');
 const BASE_ORIGIN = 'https://csgobroker.cc';
@@ -11,29 +11,38 @@ const BASE_ORIGIN = 'https://csgobroker.cc';
 const LANGS = ['en', 'ru', 'pt', 'es', 'hi', 'tr'];
 const ALT_ORDER = ['en', 'ru', 'pt', 'es', 'hi', 'tr'];
 
+const OG_LOCALE_MAP = {
+  en: 'en_US',
+  ru: 'ru_RU',
+  pt: 'pt_PT',
+  es: 'es_ES',
+  hi: 'hi_IN',
+  tr: 'tr_TR',
+};
+
 // ---------- FS utils ----------
 
-function getGitCommitTimeISO(filePath) {
-  try {
-    const out = execSync(`git log -1 --format=%cI -- "${filePath}"`, { stdio: ['ignore', 'pipe', 'ignore'] })
-      .toString()
-      .trim();
-    if (out) return out;
-  } catch {}
-  try { return fs.statSync(filePath).mtime.toISOString(); } catch {}
-  return new Date().toISOString();
-}
+// function getGitCommitTimeISO(filePath) {
+//   try {
+//     const out = execSync(`git log -1 --format=%cI -- "${filePath}"`, { stdio: ['ignore', 'pipe', 'ignore'] })
+//       .toString()
+//       .trim();
+//     if (out) return out;
+//   } catch {}
+//   try { return fs.statSync(filePath).mtime.toISOString(); } catch {}
+//   return new Date().toISOString();
+// }
 
-function extractYoastDateModified(html) {
-  const m = html.match(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*class=["']yoast-schema-graph["'][^>]*>([\s\S]*?)<\/script>/i);
-  if (!m) return null;
-  try {
-    const obj = JSON.parse((m[1] || '').trim());
-    return obj?.['@graph']?.[0]?.dateModified || obj?.['@graph']?.[0]?.['dateModified'] || null;
-  } catch {
-    return null;
-  }
-}
+// function extractYoastDateModified(html) {
+//   const m = html.match(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*class=["']yoast-schema-graph["'][^>]*>([\s\S]*?)<\/script>/i);
+//   if (!m) return null;
+//   try {
+//     const obj = JSON.parse((m[1] || '').trim());
+//     return obj?.['@graph']?.[0]?.dateModified || obj?.['@graph']?.[0]?.['dateModified'] || null;
+//   } catch {
+//     return null;
+//   }
+// }
 
 const readFile = (fp) => fs.readFileSync(fp, 'utf-8');
 const ensureDir = (d) => { if (!fs.existsSync(d)) fs.mkdirSync(d, { recursive: true }); };
@@ -267,7 +276,7 @@ function upsertCoreSeoHeadTags(html, canonicalHref, lang) {
     ogInsertIdx,
     0,
     `${indentOg}<meta property="og:url" content="${canonicalHref}">`,
-    `${indentOg}<meta property="og:locale" content="${lang}">`
+    `${indentOg}<meta property="og:locale" content="${OG_LOCALE_MAP[lang] || 'en_US'}">`
   );
 
 
@@ -360,10 +369,6 @@ function makeFallbackAlternatesForKeyWithOrigin(keyNoLocale, presentLangs, origi
   return res;
 }
 
-function isNonRuBucket(bucketName) {
-  return !/_ru$/.test(bucketName);
-}
-
 // ---------- category & sitemap ----------
 function isReviewsPath(urlPath) {
   return /^\/(?:[a-z]{2}\/)?reviews\/|^\/(?:[a-z]{2}\/)?mirrors\//i.test(urlPath);
@@ -425,8 +430,9 @@ function main() {
 
   /** @type {Array<{filePath:string,urlPath:string,lang:string,key:string,abs:string,lastmod:string,noindex:boolean}>} */
   const pages = [];
-  const presentLangsByKey = new Map(); // все локали (вкл. noindex) для alternate
-  const alternatesByKey = new Map();   // key -> Array<{lang,href}>
+  const presentLangsByKey = new Map();          // все локали
+  const indexableLangsByKey = new Map();        // только индексируемые локали
+  const alternatesByKey = new Map();            // key -> Array<{lang,href}>
 
   for (const fp of files) {
     const urlPath = filePathToUrlPath(fp);
@@ -437,36 +443,52 @@ function main() {
     const abs = absoluteUrlNormalized(urlPath);
     const html = readFile(fp);
     const ni = hasNoindex(html);
-    const stats = fs.statSync(fp);
-    const yoastDM = extractYoastDateModified(html);
     const lastmod = fs.statSync(fp).mtime.toISOString();
 
     pages.push({ filePath: fp, urlPath, lang, key, abs, lastmod, noindex: ni });
 
-    // учитываем локали
-    const set = presentLangsByKey.get(key) || new Set();
-    set.add(lang);
-    presentLangsByKey.set(key, set);
+    // все локали
+    const allSet = presentLangsByKey.get(key) || new Set();
+    allSet.add(lang);
+    presentLangsByKey.set(key, allSet);
+
+    // только индексируемые локали
+    if (!ni) {
+      const idxSet = indexableLangsByKey.get(key) || new Set();
+      idxSet.add(lang);
+      indexableLangsByKey.set(key, idxSet);
+    }
 
     // парсим hreflang из HEAD
     const parsed = parseAlternatesFromHead(html);
     if (parsed.length) {
+      const allowedLangs = indexableLangsByKey.get(key) || new Set();
       const cur = alternatesByKey.get(key) || [];
       const seen = new Map(cur.map(x => [x.lang, x.href]));
-      for (const a of parsed) if (!seen.has(a.lang)) seen.set(a.lang, a.href);
-      const ordered = [];
-      for (const l of ALT_ORDER) if (seen.has(l)) ordered.push({ lang: l, href: seen.get(l) });
-      if (seen.has('x-default')) ordered.push({ lang: 'x-default', href: seen.get('x-default') });
-      for (const [l, h] of seen.entries()) {
-        if (ALT_ORDER.includes(l) || l === 'x-default') continue;
-        ordered.push({ lang: l, href: h });
+
+      for (const a of parsed) {
+        if (a.lang === 'x-default') {
+          if (!seen.has(a.lang)) seen.set(a.lang, a.href);
+          continue;
+        }
+        if (!allowedLangs.has(a.lang)) continue;
+        if (!seen.has(a.lang)) seen.set(a.lang, a.href);
       }
+
+      const ordered = [];
+      for (const l of ALT_ORDER) {
+        if (allowedLangs.has(l) && seen.has(l)) {
+          ordered.push({ lang: l, href: seen.get(l) });
+        }
+      }
+      if (seen.has('x-default')) ordered.push({ lang: 'x-default', href: seen.get('x-default') });
+
       alternatesByKey.set(key, ordered);
     }
   }
 
   // Фолбэк для key без альтов
-  for (const [key, langs] of presentLangsByKey.entries()) {
+  for (const [key, langs] of indexableLangsByKey.entries()) {
     if (!alternatesByKey.has(key) || alternatesByKey.get(key).length === 0) {
       alternatesByKey.set(key, makeFallbackAlternatesForKey(key, langs));
     }
@@ -475,7 +497,7 @@ function main() {
   // Step 1: обновляем head (все страницы)
   let changedHtmlCount = 0;
   for (const p of pages) {
-    const present = presentLangsByKey.get(p.key) || new Set([p.lang]);
+    const present = indexableLangsByKey.get(p.key) || (p.noindex ? new Set() : new Set([p.lang]));
     const canonicalHref = absoluteUrlNormalized(p.urlPath);
 
     const before = readFile(p.filePath);
@@ -535,11 +557,11 @@ function main() {
   // Писатель под таргет-оригин/директорию
   function writeBucketSitemaps(targetDir, origin, opts = {}) {
     const inRoot = !targetDir;
-    const altByKey = inRoot ? alternatesByKey : buildAlternatesByKeyForOrigin(presentLangsByKey, origin);
+    const altByKey = inRoot ? alternatesByKey : buildAlternatesByKeyForOrigin(indexableLangsByKey, origin);
     let changed = 0;
 
     for (const [bucket, name] of Object.entries(rootNames)) {
-      const includeAlternates = isNonRuBucket(bucket);
+      const includeAlternates = true;
       const sourceEntries = buckets[bucket] || [];
       const entries = inRoot ? sourceEntries : remapEntriesOrigin(sourceEntries, origin);
       const xml = buildSitemapXml(entries, { includeAlternates, alternatesByKey: altByKey });
