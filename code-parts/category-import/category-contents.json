@@ -1,5 +1,49 @@
 {
   "categories": {
+    "topic": {
+      "items": [
+        {
+          "title": "All Items",
+          "url": "/topic/items",
+          "children": [
+            { "title": "Knives", "url": "/topic/items-type/knives" },
+            { "title": "Gloves", "url": "/topic/items-type/gloves" },
+            { "title": "SMGs", "url": "/topic/items-type/smgs" },
+            { "title": "Shotguns", "url": "/topic/items-type/shotguns" },
+            { "title": "Machineguns", "url": "/topic/items-type/machineguns" },
+            { "title": "Rifles", "url": "/topic/items-type/rifles" },
+            { "title": "Sniper Rifles", "url": "/topic/items-type/sniper-rifles" },
+            { "title": "Agents", "url": "/topic/items/agents" },
+            { "title": "Cases", "url": "/topic/items-type/cases" },
+            { "title": "Charms", "url": "/items-type/charms" },
+            { "title": "Sticker Capsules", "url": "/topic/items-type/sticker-capsules" },
+            { "title": "Autograph Capsules", "url": "/topic/items-type/autograph-capsules" }
+          ]
+        },
+        {
+          "title": "Skins By Color",
+          "url": "/topic/skins",
+          "children": [
+            { "title": "White Skins", "url": "/topic/skins/white-skins" },
+            { "title": "Gray Skins", "url": "/topic/skins/gray-skins" },
+            { "title": "Black Skins", "url": "/topic/skins/black-skins" },
+            { "title": "Brown Skins", "url": "/topic/skins/brown-skins" },
+            { "title": "Orange Skins", "url": "/topic/skins/orange-skins" },
+            { "title": "Golden Skins", "url": "/topic/skins/golden-skins" },
+            { "title": "Yellow Skins", "url": "/topic/skins/yellow-skins" },
+            { "title": "Green Skins", "url": "/topic/skins/green-skins" },
+            { "title": "Cyan Skins", "url": "/topic/skins/cyan-skins" },
+            { "title": "Blue Skins", "url": "/topic/skins/blue-skins" },
+            { "title": "Purple Skins", "url": "/topic/skins/purple-skins" },
+            { "title": "Pink Skins", "url": "/topic/skins/pink-skins" }
+          ]
+        },
+        {
+          "title": "Sticker-Crafts",
+          "url": "/topic/sticker-crafts"
+        }
+      ]
+    },
     "cs2": {
       "items": [
         {

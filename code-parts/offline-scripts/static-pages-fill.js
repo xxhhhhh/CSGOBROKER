@@ -1616,6 +1616,26 @@ function catCategoryKeyFromHref(href){
   return segs[0] || null;
 }
 
+function catIsTopicPage(urlPath){
+  const p = catNormalizePathForMatch(urlPath);
+  return !!p && (p === "/topic" || p.startsWith("/topic/"));
+}
+
+function catIsTopicCategoryHref(href){
+  const p = catNormalizePathForMatch(href);
+  return p === "/topic";
+}
+
+function catGetBuilderCategoriesForPage(builder, urlPath){
+  const cats = Array.isArray(builder?.categories) ? builder.categories : [];
+  const isTopic = catIsTopicPage(urlPath);
+
+  return cats.filter(c => {
+    const isTopicCat = catIsTopicCategoryHref(c?.href);
+    return isTopic ? true : !isTopicCat;
+  });
+}
+
 function catAltFromHref(href){
   const key = (catCategoryKeyFromHref(href) || "").toLowerCase();
 
@@ -1669,8 +1689,10 @@ function catBuildSubmenuHtml(items, lang, translationsForLang, indent, nl){
 }
 
 function catBuildCategorySelectorHtml(builder, contents, lang, translationsForLang, urlPath, indent, nl){
-  const cats = Array.isArray(builder?.categories) ? builder.categories : [];
+  const cats = catGetBuilderCategoriesForPage(builder, urlPath);
   if (!cats.length) return "";
+
+  const isTopicPage = catIsTopicPage(urlPath);
 
   const lines = [];
   const rootCls = catIs404Page(urlPath) ? "category-selector notexist" : "category-selector";
@@ -1689,18 +1711,26 @@ function catBuildCategorySelectorHtml(builder, contents, lang, translationsForLa
     const logo = String(c?.logo ?? "").trim();
     const classes = Array.isArray(c?.classes) ? c.classes.filter(Boolean) : [];
 
-    const currentNorm = catNormalizePathForMatch(urlPath); // текущая страница (без /ru,/es и т.п.)
+    const currentNorm = catNormalizePathForMatch(urlPath);
     const key = catCategoryKeyFromHref(hrefRaw);
     const items = key ? contents?.categories?.[key]?.items : null;
 
+    const isTopicCategory = catIsTopicCategoryHref(hrefRaw);
     const isActiveBySubmenu = !!currentNorm && catCategoryHasActiveItem(items, currentNorm);
+    const isForcedTopicActive = isTopicPage && isTopicCategory;
 
     const clsSet = new Set(["category-box", ...classes]);
-    if (isActiveBySubmenu) clsSet.add("active");
+
+    if (isTopicPage) {
+      // на /topic active только у wiki
+      if (isForcedTopicActive) clsSet.add("active");
+    } else {
+      // обычная логика для остальных страниц
+      if (isActiveBySubmenu) clsSet.add("active");
+    }
 
     const aClass = Array.from(clsSet).join(" ").trim();
 
-    // alt: поддержим alt/altLabel если есть в builder, иначе — вычислим как в примере
     const alt = String(c?.alt || c?.altLabel || catAltFromHref(hrefRaw));
 
     lines.push(`${innerIndent}<div class="category">`);
@@ -1709,7 +1739,6 @@ function catBuildCategorySelectorHtml(builder, contents, lang, translationsForLa
     lines.push(`${innerIndent}    <div class="category-box-content"><span>${escapeHtml(label)}</span></div>`);
     lines.push(`${innerIndent}  </a>`);
 
-    // submenu из contents по ключу (как в старом client: первый сегмент href)
     if (Array.isArray(items) && items.length){
       const submenu = catBuildSubmenuHtml(items, lang, translationsForLang, innerIndent + "  ", nl);
       if (submenu) lines.push(submenu);
@@ -1733,26 +1762,24 @@ function catIs404Page(urlPath){
 }
 
 function catShouldAutoInsert(urlPath, builder){
-  // авто-вставка только на “категорийные/листинговые” урлы:
-  // если первый сегмент совпадает с одним из builder.href (или home)
   const p = stripKnownLangPrefix(String(urlPath||""))
     .split("#")[0].split("?")[0]
     .toLowerCase();
 
   if (p === "/" || p === "") return true;
 
+  if (p === "/topic" || p.startsWith("/topic/")) return true;
+
   const segs = p.split("/").filter(Boolean);
   const first = (segs[0] || "").toLowerCase();
   if (!first) return true;
 
-  const cats = Array.isArray(builder?.categories) ? builder.categories : [];
+  const cats = catGetBuilderCategoriesForPage(builder, urlPath);
   for (const c of cats){
     const key = (catCategoryKeyFromHref(c?.href) || "").toLowerCase();
     if (!key) continue;
 
-    // cs2/csgo взаимозаменяемо
     if ((key === "cs2" && first === "csgo") || (key === "csgo" && first === "cs2")) return true;
-
     if (first === key) return true;
   }
   return false;
@@ -1796,13 +1823,14 @@ function upsertCategoryImportOffline(html, urlPath, lang, nl, builder, contents,
   if (!html || !builder) return html;
 
   const translationsForLang = allTranslations?.[lang] || null;
+  const isTopicPage = catIsTopicPage(urlPath);
 
   let out = html;
   const masked = maskSegments(out);
 
   const selectors = findAllDivByClass(masked, "category-selector");
 
-  // 1) Если category-selector уже есть — заменяем целиком на ожидаемый (идемпотентно)
+  // 1) Если selector уже есть — пересобираем под текущий тип страницы
   if (selectors.length){
     let shift = 0;
 
@@ -1810,11 +1838,8 @@ function upsertCategoryImportOffline(html, urlPath, lang, nl, builder, contents,
       const absOpen  = s.openStart + shift;
       const absClose = s.closeEnd   + shift;
 
-      // ✅ ВАЖНО: берём начало строки, чтобы удалить старые пробелы/табы перед <div>
       const ls = out.lastIndexOf(nl, absOpen - 1);
       const lineStart = (ls === -1) ? 0 : (ls + nl.length);
-
-      // отступ строки (то, что было перед "<div")
       const indent = (out.slice(lineStart, absOpen).match(/^[\t ]*/)?.[0]) ?? "";
 
       const expected = catBuildCategorySelectorHtml(
@@ -1838,8 +1863,7 @@ function upsertCategoryImportOffline(html, urlPath, lang, nl, builder, contents,
     return out;
   }
 
-  // 2) Если нет — можно автогенерировать (чтобы “всё-всё” делал оффлайн)
-  //    Вставляем перед первым .boxes-holder (или внутрь .sitepage если boxes-holder нет)
+  // 2) Если selector нет — решаем, надо ли автодобавлять
   if (!catShouldAutoInsert(urlPath, builder)) return out;
 
   const m2 = maskSegments(out);
@@ -1847,16 +1871,41 @@ function upsertCategoryImportOffline(html, urlPath, lang, nl, builder, contents,
   const sitepage = findFirstByClass(m2, "sitepage");
 
   let insertPos = -1;
-  if (holders.length) insertPos = holders[0].openStart;
-  else if (sitepage) insertPos = sitepage.openEnd;
-  else return out;
+  let indent = "";
 
-  const indent = indentBefore(out, insertPos, nl);
-  const expected = catBuildCategorySelectorHtml(builder, contents, lang, translationsForLang, urlPath, indent, nl);
+  if (holders.length) {
+    insertPos = holders[0].openStart;
+    indent = indentBefore(out, insertPos, nl);
+  } else if (isTopicPage && sitepage) {
+    // для /topic без boxes-holder вставляем первым блоком внутрь .sitepage
+    insertPos = sitepage.openEnd;
+    indent = indentBefore(out, sitepage.openStart, nl) + "  ";
+  } else if (sitepage) {
+    insertPos = sitepage.openEnd;
+    indent = indentBefore(out, sitepage.openStart, nl) + "  ";
+  } else {
+    return out;
+  }
+
+  const expected = catBuildCategorySelectorHtml(
+    builder,
+    contents,
+    lang,
+    translationsForLang,
+    urlPath,
+    indent,
+    nl
+  );
   if (!expected) return out;
 
   const before = out.slice(0, insertPos);
   const after  = out.slice(insertPos);
+
+  if (isTopicPage && !holders.length && sitepage){
+    const needsNl = !before.endsWith(nl);
+    return before + (needsNl ? nl : "") + expected + nl + after.replace(/^\s*/, "");
+  }
+
   return joinBlocksNoBlank(before, expected, after, nl);
 }
 

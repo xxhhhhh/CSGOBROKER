@@ -1565,7 +1565,6 @@ boxes.forEach((box) => {
 
 document.addEventListener("DOMContentLoaded", function () {
   if (
-    !window.location.pathname.includes("/topic/") &&
     !window.location.pathname.includes("/reviews") &&
     !window.location.pathname.includes("/mirrors") &&
     !window.location.pathname.includes("/privacy-policy") &&
@@ -1573,24 +1572,34 @@ document.addEventListener("DOMContentLoaded", function () {
     !window.location.pathname.includes("/contact-us") &&
     !window.location.pathname.includes("/responsibility") &&
     !isErrorPage
-    
   ) {
     const boxContainer = document.querySelector(".category-selector");
+    if (!boxContainer) return;
+
     const pages = document.querySelector(".pages");
-    const SpaceboxContainer = document.querySelector(".spaceblock");
+    const spaceboxContainer = document.querySelector(".spaceblock");
+
     const buttonsContainer = document.createElement("div");
     const prevButtonContainer = document.createElement("button");
     const nextButtonContainer = document.createElement("button");
-    const boxes = boxContainer.querySelectorAll(".category-box");
-    const boxWidth = boxes[0].offsetWidth + 2 * 9;
-    const containerWidth = boxWidth * 4;
+
+    const categoryItems = () =>
+      Array.from(boxContainer.querySelectorAll(":scope > div.category"));
+
+    const hasBoxes = () => categoryItems().length > 0;
+
     let scrollPosition = 0;
     let buttonScrollPosition = 0;
+    let isMouseDown = false;
+    let startX = 0;
+    let startY = 0;
+    let scrollLeft = 0;
 
     buttonsContainer.classList.add("buttons-container");
     prevButtonContainer.classList.add("controls-button");
     prevButtonContainer.setAttribute("aria-label", "Prev Category");
     prevButtonContainer.innerHTML = '<i class="officon chevron left"></i>';
+
     nextButtonContainer.classList.add("controls-button");
     nextButtonContainer.setAttribute("aria-label", "Next Category");
     nextButtonContainer.innerHTML = '<i class="officon chevron right"></i>';
@@ -1598,160 +1607,166 @@ document.addEventListener("DOMContentLoaded", function () {
     buttonsContainer.appendChild(prevButtonContainer);
     buttonsContainer.appendChild(nextButtonContainer);
 
-    boxContainer.parentNode.insertBefore(buttonsContainer, SpaceboxContainer);
-
-    boxContainer.style.width = `${containerWidth}px`;
+    // Вставка кнопок:
+    // 1) перед .spaceblock если он есть
+    // 2) иначе сразу после .category-selector
+    if (spaceboxContainer && spaceboxContainer.parentNode) {
+      spaceboxContainer.parentNode.insertBefore(buttonsContainer, spaceboxContainer);
+    } else {
+      boxContainer.insertAdjacentElement("afterend", buttonsContainer);
+    }
 
     prevButtonContainer.addEventListener("click", () => {
-      scrollPosition -= boxWidth;
-      scrollPosition = Math.max(scrollPosition, 0);
-      boxContainer.scroll({ left: scrollPosition, behavior: "smooth" });
-      buttonScrollPosition = scrollPosition;
+      if (!hasBoxes()) return;
+
+      const target = getPrevScrollPosition();
+      boxContainer.scrollTo({ left: target, behavior: "smooth" });
+      buttonScrollPosition = target;
+      scrollPosition = target;
     });
 
     nextButtonContainer.addEventListener("click", () => {
-      scrollPosition += boxWidth;
-      scrollPosition = Math.min(
-        scrollPosition,
-        boxContainer.scrollWidth - containerWidth
-      );
-      boxContainer.scroll({ left: scrollPosition, behavior: "smooth" });
-      buttonScrollPosition = scrollPosition;
-    });
+      if (!hasBoxes()) return;
 
-    let isMouseDown = false;
-    let startX = 0;
-    let scrollLeft = 0;
+      const target = getNextScrollPosition();
+      boxContainer.scrollTo({ left: target, behavior: "smooth" });
+      buttonScrollPosition = target;
+      scrollPosition = target;
+    });
 
     boxContainer.addEventListener("click", (e) => {
       const targetBox = e.target.closest(".category-box");
       const bigCategoryLink = e.target.closest(".big-category a");
       const submenu2 = e.target.closest(".submenu2");
 
-      if (submenu2) {
-          return;
-      }
+      if (submenu2) return;
 
       if (targetBox) {
-          const parentListItem = targetBox.closest(".category");
-          const submenu = parentListItem.querySelector(".submenu");
+        const parentListItem = targetBox.closest(".category");
+        const submenu = parentListItem ? parentListItem.querySelector(".submenu") : null;
 
-          const isTargetBoxNewest = targetBox.classList.contains("newest");
+        const isTargetBoxNewest = targetBox.classList.contains("newest");
 
-          if (!isTargetBoxNewest && window.innerWidth <= 1365) {
-              e.preventDefault();
+        if (!isTargetBoxNewest && window.innerWidth <= 1365) {
+          e.preventDefault();
+        }
+
+        const allTargetBoxes = boxContainer.querySelectorAll(".category-box");
+        allTargetBoxes.forEach((box) => {
+          if (box !== targetBox) {
+            box.classList.remove("current");
+            const parent = box.closest(".category");
+            const siblingSubmenu = parent ? parent.querySelector(".submenu") : null;
+            if (siblingSubmenu) {
+              siblingSubmenu.classList.remove("current");
+            }
           }
+        });
 
-          const allTargetBoxes = document.querySelectorAll(".category-box");
-          allTargetBoxes.forEach((box) => {
-              if (box !== targetBox) {
-                  box.classList.remove("current");
-                  const parentListItem = box.closest(".category");
-                  const siblingSubmenu = parentListItem.querySelector(".submenu");
-                  if (siblingSubmenu) {
-                      siblingSubmenu.classList.remove("current");
-                  }
-              }
-          });
-          boxContainer.classList.remove("current");
+        boxContainer.classList.remove("current");
+        targetBox.classList.toggle("current");
 
-          targetBox.classList.toggle("current");
+        const isActive = Array.from(allTargetBoxes).some((box) =>
+          box.classList.contains("current")
+        );
 
-          const isActive = Array.from(allTargetBoxes).some((box) =>
-              box.classList.contains("current")
-          );
+        if (isActive) {
+          boxContainer.classList.add("current");
+          if (pages) pages.classList.add("hardplaced");
+        } else {
+          if (pages) pages.classList.remove("hardplaced");
+        }
 
-          if (isActive) {
-              boxContainer.classList.add("current");
-              pages.classList.add("hardplaced");
-          }
-
-          if (submenu && window.innerWidth <= 1365) {
-              submenu.classList.toggle("current");
-              centerSubmenu(submenu);
-          }
+        if (submenu && window.innerWidth <= 1365) {
+          submenu.classList.toggle("current");
+          centerSubmenu(submenu);
+        }
       }
 
       if (bigCategoryLink) {
         const bigCategory = bigCategoryLink.closest(".big-category");
+        if (!bigCategory) return;
+
         const hasSubmenu2 = bigCategory.querySelector(".submenu2");
-    
+
         if (hasSubmenu2 && window.innerWidth <= 1365) {
-            e.preventDefault();
+          e.preventDefault();
         }
-    
+
         const isActive = bigCategory.classList.contains("active");
-    
+
         const bigCategories = document.querySelectorAll(".big-category.active");
         bigCategories.forEach((item) => {
-            item.classList.remove("active");
-            const submenu2 = item.querySelector(".submenu2");
-            if (submenu2) {
-                submenu2.classList.remove("current");
-            }
+          item.classList.remove("active");
+          const submenu2 = item.querySelector(".submenu2");
+          if (submenu2) {
+            submenu2.classList.remove("current");
+          }
         });
-    
+
         if (!isActive) {
-            bigCategory.classList.add("active");
-            const submenu2 = bigCategory.querySelector(".submenu2");
-            if (submenu2) {
-                submenu2.classList.add("current");
-            }
+          bigCategory.classList.add("active");
+          const submenu2El = bigCategory.querySelector(".submenu2");
+          if (submenu2El) {
+            submenu2El.classList.add("current");
+          }
         }
-    }
-    
+      }
 
       if (e.target.closest(".submenu2 a")) {
-          return;
+        return;
       }
+    });
+
+    boxContainer.addEventListener("click", function (event) {
+      if (event.target === boxContainer) {
+        const boxesCurrent = boxContainer.querySelectorAll(".category-box.current");
+        const submenuCurrent = boxContainer.querySelectorAll(".submenu.current");
+
+        boxContainer.classList.remove("current");
+        if (pages) pages.classList.remove("hardplaced");
+
+        boxesCurrent.forEach(function (box) {
+          box.classList.remove("current");
+        });
+
+        submenuCurrent.forEach(function (submenu) {
+          submenu.classList.remove("current");
+        });
+
+        const activeBigCategories = document.querySelectorAll(".big-category.active");
+        activeBigCategories.forEach((item) => {
+          item.classList.remove("active");
+          const submenu2 = item.querySelector(".submenu2");
+          if (submenu2) {
+            submenu2.classList.remove("current");
+          }
+        });
+      }
+    });
+
+  boxContainer.addEventListener("scroll", () => {
+    scrollPosition = boxContainer.scrollLeft;
+    buttonScrollPosition = boxContainer.scrollLeft;
+
+    if (boxContainer.scrollLeft === 0) {
+      prevButtonContainer.classList.add("disabled");
+    } else {
+      prevButtonContainer.classList.remove("disabled");
+    }
+
+    const maxScrollLeft = boxContainer.scrollWidth - boxContainer.clientWidth;
+    if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
+      nextButtonContainer.classList.add("disabled");
+    } else {
+      nextButtonContainer.classList.remove("disabled");
+    }
   });
-  
-  var categorySelector = document.querySelector('.category-selector');
-    categorySelector.addEventListener('click', function(event) {
-        if (event.target === categorySelector) {
-            const boxescurrent = boxContainer.querySelectorAll('.category-box.current');
-            const submenucurrent = boxContainer.querySelectorAll('.submenu.current');
-            boxContainer.classList.remove('current');
-            pages.classList.remove("hardplaced");
-
-            boxescurrent.forEach(function(box) {
-                box.classList.remove('current');
-            });
-
-            submenucurrent.forEach(function(submenu) {
-                submenu.classList.remove('current');
-            });
-
-            const activeBigCategories = document.querySelectorAll('.big-category.active');
-            activeBigCategories.forEach((item) => {
-                item.classList.remove('active');
-                const submenu2 = item.querySelector(".submenu2");
-                if (submenu2) {
-                    submenu2.classList.remove('current');
-                }
-            });
-        }
-    });
-  
-    boxContainer.addEventListener("scroll", () => {
-      if (boxContainer.scrollLeft === 0) {
-        prevButtonContainer.classList.add("disabled");
-      } else {
-        prevButtonContainer.classList.remove("disabled");
-      }
-
-      const maxScrollLeft =
-        boxContainer.scrollWidth - boxContainer.clientWidth;
-      if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
-        nextButtonContainer.classList.add("disabled");
-      } else {
-        nextButtonContainer.classList.remove("disabled");
-      }
-    });
 
     if (boxContainer.scrollLeft === 0) {
       prevButtonContainer.classList.add("disabled");
     }
+
     const maxScrollLeft = boxContainer.scrollWidth - boxContainer.clientWidth;
     if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
       nextButtonContainer.classList.add("disabled");
@@ -1788,68 +1803,146 @@ document.addEventListener("DOMContentLoaded", function () {
       startX = touch.pageX - boxContainer.offsetLeft;
       scrollLeft = boxContainer.scrollLeft;
       startY = touch.pageY;
-  });
-  
-  boxContainer.addEventListener("touchmove", (e) => {
+    });
+
+    boxContainer.addEventListener("touchmove", (e) => {
       if (!isMouseDown) return;
-  
+
       const touch = e.touches[0];
       const x = touch.pageX - boxContainer.offsetLeft;
       const y = touch.pageY;
-  
+
       const horizontalMove = Math.abs(x - startX);
       const verticalMove = Math.abs(y - startY);
-  
+
       if (horizontalMove > verticalMove) {
-          const walk = (x - startX) * 1.2;
-          const newScrollLeft = scrollLeft - walk;
-          boxContainer.scrollLeft = newScrollLeft;
-          buttonScrollPosition = newScrollLeft;
+        const walk = (x - startX) * 1.2;
+        const newScrollLeft = scrollLeft - walk;
+        boxContainer.scrollLeft = newScrollLeft;
+        buttonScrollPosition = newScrollLeft;
       }
-  });
-  
-  boxContainer.addEventListener("touchend", () => {
+    });
+
+    boxContainer.addEventListener("touchend", () => {
       isMouseDown = false;
-  });
-  
+    });
 
-  var categorySelector = document.querySelector("div.category-selector");
-  var categoryElements = Array.from(
-    categorySelector.querySelectorAll("div.category-selector > div.category")
-  );
-  
-  categoryElements.sort(function (a, b) {
-    var aCategoryBox = a.querySelector("a.category-box, div.category-box");
-    var bCategoryBox = b.querySelector("a.category-box, div.category-box");
-  
-    var aWeight = (aCategoryBox.classList.contains("active") || aCategoryBox.classList.contains("locked") ? -2 : 0) +
-    (aCategoryBox.classList.contains("last") ? 1 : 0);
-    var bWeight = (bCategoryBox.classList.contains("active") || bCategoryBox.classList.contains("locked") ? -2 : 0) +
-    (bCategoryBox.classList.contains("last") ? 1 : 0);
+    const categoryElements = Array.from(
+      boxContainer.querySelectorAll(":scope > div.category")
+    );
 
-    if (aWeight !== bWeight) {
-      return aWeight - bWeight;
+    if (categoryElements.length) {
+      categoryElements.sort(function (a, b) {
+        const aCategoryBox = a.querySelector("a.category-box, div.category-box");
+        const bCategoryBox = b.querySelector("a.category-box, div.category-box");
+
+        if (!aCategoryBox || !bCategoryBox) return 0;
+
+        function getWeight(categoryBox) {
+          let weight = 0;
+
+          if (categoryBox.classList.contains("active")) {
+            weight -= 3; // выше всего
+          } else if (categoryBox.classList.contains("locked")) {
+            weight -= 2; // ниже active
+          }
+
+          if (categoryBox.classList.contains("last")) {
+            weight += 1;
+          }
+
+          return weight;
+        }
+
+        const aWeight = getWeight(aCategoryBox);
+        const bWeight = getWeight(bCategoryBox);
+
+        if (aWeight !== bWeight) {
+          return aWeight - bWeight;
+        }
+
+        return Math.random() - 0.5;
+      });
+
+      boxContainer.innerHTML = "";
+      categoryElements.forEach(function (element) {
+        boxContainer.appendChild(element);
+      });
     }
-  
-    return Math.random() - 0.5;
-  });
-  
-  categorySelector.innerHTML = "";
-  
-  categoryElements.forEach(function (element) {
-    categorySelector.appendChild(element);
-  });
-  
-  
 
     buttonsContainer.scrollLeft = buttonScrollPosition;
+
+    function getContainerPaddingLeft() {
+      const styles = window.getComputedStyle(boxContainer);
+      return parseFloat(styles.paddingLeft) || 0;
+    }
+
+    function getItemMetrics() {
+      const items = categoryItems();
+      const containerPaddingLeft = getContainerPaddingLeft();
+
+      return items.map((item) => {
+        const style = window.getComputedStyle(item);
+        const marginLeft = parseFloat(style.marginLeft) || 0;
+        const marginRight = parseFloat(style.marginRight) || 0;
+
+        // Компенсируем padding контейнера
+        const left = item.offsetLeft - containerPaddingLeft - marginLeft;
+        const width = item.offsetWidth + marginLeft + marginRight;
+        const right = left + width;
+
+        return {
+          element: item,
+          left,
+          right,
+          width
+        };
+      });
+    }
+
+    function clampScroll(value) {
+      const maxScrollLeft = boxContainer.scrollWidth - boxContainer.clientWidth;
+
+      if (value <= 2) return 0;
+      if (value >= maxScrollLeft - 2) return maxScrollLeft;
+
+      return Math.max(0, Math.min(value, maxScrollLeft));
+    }
+
+    function getNextScrollPosition() {
+      const items = getItemMetrics();
+      const currentLeft = boxContainer.scrollLeft;
+      const viewportRight = currentLeft + boxContainer.clientWidth;
+      const maxScrollLeft = boxContainer.scrollWidth - boxContainer.clientWidth;
+      const tolerance = 6;
+
+      const nextItem = items.find((item) => item.right > viewportRight + tolerance);
+
+      if (!nextItem) return maxScrollLeft;
+
+      return clampScroll(nextItem.left);
+    }
+
+    function getPrevScrollPosition() {
+      const items = getItemMetrics();
+      const currentLeft = boxContainer.scrollLeft;
+      const tolerance = 6;
+
+      const prevItems = items.filter((item) => item.left < currentLeft - tolerance);
+
+      if (!prevItems.length) return 0;
+
+      const prevItem = prevItems[prevItems.length - 1];
+
+      return clampScroll(prevItem.left);
+    }
 
     function centerSubmenu(submenu) {
       const screenWidth = window.innerWidth;
       const submenuWidth = submenu.offsetWidth;
-      const scrollLeft = boxContainer.scrollLeft;
+      const currentScrollLeft = boxContainer.scrollLeft;
 
-      const offsetX = (screenWidth - submenuWidth) / 2 + scrollLeft;
+      const offsetX = (screenWidth - submenuWidth) / 2 + currentScrollLeft;
       submenu.style.left = `${offsetX}px`;
     }
   }

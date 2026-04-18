@@ -1522,6 +1522,10 @@ ul .submenu li .nonredir,
 
 @media screen and (max-width: 1280px) {
 
+    .sitepage {
+        background: linear-gradient(180deg, var(--darkygray) 0%, transparent 10%);
+    }
+
     .nondef .spaceblock {
         background: var(--darkygray);
     }
