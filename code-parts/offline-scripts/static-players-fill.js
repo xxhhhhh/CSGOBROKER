@@ -34,6 +34,9 @@ const WEAPON_JSON_DIR = "/code-parts/topics/skins-list";
 const STICKER_CAPSULES_FILE = "/code-parts/topics/sticker-capsules.json";
 const CHARMS_TOPICS_FILE = "/code-parts/topics/charms.json";
 
+const PLAYERS_INDEX_FILE_RU = "/ru/topic/players/inventories.html";
+const PLAYERS_INDEX_FILE_EN = "/topic/players/inventories.html";
+
 async function loadStickerCapsulesTopics(root){
   const data = await safeJsonCached(abs(root, STICKER_CAPSULES_FILE));
   if (Array.isArray(data)) return data;
@@ -2022,6 +2025,176 @@ async function buildPlayersTeamBoxHtml(root, currentPlayer, allPlayers, indent, 
   return lines.join(nl);
 }
 
+function buildPlayerInventoryHref(player, lang = "en"){
+  const slug = String(player?.slug || slugifyNickname(player?.nickname || "")).trim();
+  const hrefPrefix = lang === "ru" ? "/ru" : "";
+  return `${hrefPrefix}/topic/players/inventories/${slug}`;
+}
+
+async function buildPlayerTopicBoxHtml(root, player, indent, nl, lang = "en"){
+  const nickname = String(player?.nickname || "").trim();
+  const realName = String(player?.realName || "").trim();
+  const team = resolvePlayerTeam(player);
+  const href = buildPlayerInventoryHref(player, lang);
+  const imageMeta = await resolvePlayerImage(root, player);
+  const statusHtml = await resolvePlayerStatus(root, player, indent + "      ", nl);
+
+  const lines = [];
+  lines.push(`${indent}<a href="${escapeAttrDblNoApos(href)}" class="topic-box player-box">`);
+  lines.push(`${indent}  <div class="logobg">`);
+  lines.push(`${indent}    <img alt="${escapeAttrDblNoApos(imageMeta.alt)}" draggable="false" src="${escapeAttrDblNoApos(imageMeta.src)}">`);
+  lines.push(`${indent}    <div class="player-bio">`);
+  lines.push(`${indent}      <span class="player-nickname">${escapeHtml(nickname)}</span>`);
+
+  if (realName) {
+    lines.push(`${indent}      <span class="player-name">${escapeHtml(realName)}</span>`);
+  }
+
+  if (team) {
+    lines.push(`${indent}      <span class="player-team">${escapeHtml(team)}</span>`);
+  }
+
+  if (statusHtml) {
+    lines.push(statusHtml);
+  }
+
+  lines.push(`${indent}    </div>`);
+  lines.push(`${indent}  </div>`);
+  lines.push(`${indent}</a>`);
+
+  return lines.join(nl);
+}
+
+async function buildPlayersTopicBoxesHtml(root, players, indent, nl, lang = "en"){
+  const blocks = [];
+
+  for (const player of (Array.isArray(players) ? players : [])){
+    blocks.push(await buildPlayerTopicBoxHtml(root, player, indent, nl, lang));
+  }
+
+  return blocks.join(nl);
+}
+
+async function upsertPlayersTopicBoxesHolder(root, html, players, lang = "en"){
+  const nl = html.includes("\r\n") ? "\r\n" : "\n";
+  const masked = maskSegments(html);
+  const holders = findAllTagsByClass(masked, "topic-boxes-holder", ["div", "section"]);
+
+  if (!holders.length) {
+    return { html, changed: false };
+  }
+
+  const holder = holders[0];
+  const holderInnerStart = holder.openEnd;
+  const holderInnerEnd = holder.closeStart;
+  const holderInnerHtml = html.slice(holderInnerStart, holderInnerEnd);
+  const holderInnerMasked = maskSegments(holderInnerHtml);
+
+  const baseIndent = indentBefore(html, holder.openStart, nl);
+  const itemIndent = baseIndent + "  ";
+
+  const boxesHtml = await buildPlayersTopicBoxesHtml(root, players, itemIndent, nl, lang);
+
+  const existingPlayerBoxes = findAllTagsByClass(holderInnerMasked, "player-box", ["a", "div"]);
+  let cleanedInnerHtml = holderInnerHtml;
+
+  if (existingPlayerBoxes.length) {
+    let cursor = 0;
+    const parts = [];
+
+    for (const block of existingPlayerBoxes){
+      parts.push(cleanedInnerHtml.slice(cursor, block.openStart));
+      cursor = block.closeEnd;
+    }
+
+    parts.push(cleanedInnerHtml.slice(cursor));
+    cleanedInnerHtml = parts.join("");
+  }
+
+  const cleanedMasked = maskSegments(cleanedInnerHtml);
+  const filters = findAllTagsByClass(cleanedMasked, "topic-filter", ["div", "section"]);
+
+  let nextInnerHtml;
+
+  if (filters.length) {
+    const filter = filters[0];
+    const insertPos = filter.closeEnd;
+
+    const before = cleanedInnerHtml.slice(0, insertPos).replace(/[ \t]*$/, "");
+    const after = cleanedInnerHtml.slice(insertPos).replace(/^[ \t]*(\r?\n)?/, nl);
+
+    nextInnerHtml = `${before}${nl}${boxesHtml}${nl}${after}`;
+  } else {
+    const trimmedStart = cleanedInnerHtml.replace(/^(?:[ \t]*\r?\n)+/, "");
+    nextInnerHtml = `${nl}${boxesHtml}${nl}${trimmedStart}`;
+  }
+
+  const nextHtml =
+    html.slice(0, holderInnerStart) +
+    nextInnerHtml +
+    html.slice(holderInnerEnd);
+
+  return {
+    html: nextHtml,
+    changed: normalizeComparableHtml(nextHtml) !== normalizeComparableHtml(html),
+  };
+}
+
+async function updatePlayersIndexPage({
+  root,
+  dry,
+  verbose,
+  force,
+  players,
+  playersUpdatedAt,
+  filePath,
+  lang,
+}){
+  const fullPath = abs(root, filePath);
+  const exists = await fileExists(fullPath);
+
+  if (!exists) {
+    if (verbose) {
+      console.warn(`[WARN] players index file missing: ${path.relative(root, fullPath)}`);
+    }
+    return { updated: 0, skipped: 1 };
+  }
+
+  let html = await readTextCached(fullPath);
+  const prevHtml = html;
+
+  const existingUpdatedAt = extractPlayersUpdatedMarker(html);
+  const currentUpdatedAt = String(playersUpdatedAt || "").trim();
+
+  if (!force && currentUpdatedAt && existingUpdatedAt === currentUpdatedAt) {
+    if (verbose) {
+      console.log(`[SKIP] ${path.relative(root, fullPath)} :: up-to-date (${currentUpdatedAt})`);
+    }
+    return { updated: 0, skipped: 1 };
+  }
+
+  {
+    const res = await upsertPlayersTopicBoxesHolder(root, html, players, lang);
+    if (res.changed) html = res.html;
+  }
+
+  html = upsertPlayersUpdatedMarker(html, playersUpdatedAt);
+
+  if (html === prevHtml) {
+    return { updated: 0, skipped: 1 };
+  }
+
+  if (!dry) {
+    await writeTextCached(fullPath, html);
+  }
+
+  if (verbose) {
+    console.log(`[OK] ${path.relative(root, fullPath)} :: players index updated (${players.length} players)`);
+  }
+
+  return { updated: 1, skipped: 0 };
+}
+
 function escapeRegExp(s = ""){
   return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
@@ -2331,6 +2504,7 @@ async function generatePlayerPagesForVersion({
   force,
   players,
   allPlayers,
+  playersWithPages,
   playersUpdatedAt,
   templatePath,
   outputDirPath,
@@ -2340,7 +2514,6 @@ async function generatePlayerPagesForVersion({
   const outputDir = abs(root, outputDirPath);
 
   const templateHtml = await readTextCached(templateFile);
-  const playersWithPages = await filterPlayersWithPages(root, allPlayers);
 
   const templateBaseName = path.basename(templateFile, ".html");
   const templateNicknameMatch = templateHtml.match(/ZywOo/);
@@ -2478,6 +2651,7 @@ async function generatePlayerPagesForVersion({
   const playersPayload = await loadPlayersList(root);
   const allPlayers = playersPayload.players;
   const playersUpdatedAt = playersPayload.updatedAt;
+  const playersWithPages = await filterPlayersWithPages(root, allPlayers);
 
   if (!allPlayers.length){
     console.error("[ERR] No players found in players-list");
@@ -2511,6 +2685,7 @@ async function generatePlayerPagesForVersion({
     force,
     players,
     allPlayers,
+    playersWithPages,
     playersUpdatedAt,
     templatePath: templateRu,
     outputDirPath: OUTPUT_DIR_RU,
@@ -2524,16 +2699,41 @@ async function generatePlayerPagesForVersion({
     force,
     players,
     allPlayers,
+    playersWithPages,
     playersUpdatedAt,
     templatePath: templateEn,
     outputDirPath: OUTPUT_DIR_EN,
     lang: "en",
   });
 
+  const ruIndexStats = await updatePlayersIndexPage({
+    root,
+    dry,
+    verbose,
+    force,
+    players: playersWithPages,
+    playersUpdatedAt,
+    filePath: PLAYERS_INDEX_FILE_RU,
+    lang: "ru",
+  });
+
+  const enIndexStats = await updatePlayersIndexPage({
+    root,
+    dry,
+    verbose,
+    force,
+    players: playersWithPages,
+    playersUpdatedAt,
+    filePath: PLAYERS_INDEX_FILE_EN,
+    lang: "en",
+  });
+
   console.log(
     `\nDone.` +
     `\nRU -> created/updated: ${ruStats.created}, skipped: ${ruStats.skipped}` +
-    `\nEN -> created/updated: ${enStats.created}, skipped: ${enStats.skipped}`
+    `\nEN -> created/updated: ${enStats.created}, skipped: ${enStats.skipped}` +
+    `\nRU index -> updated: ${ruIndexStats.updated}, skipped: ${ruIndexStats.skipped}` +
+    `\nEN index -> updated: ${enIndexStats.updated}, skipped: ${enIndexStats.skipped}`
   );
 })().catch(e => {
   console.error(e);

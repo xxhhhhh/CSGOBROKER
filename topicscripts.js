@@ -2848,8 +2848,22 @@ if (window.location.pathname.includes('/topic/skins/')) {
 
 document.addEventListener("DOMContentLoaded", async function () {
   const res = $(window).width();
-  const itemsPerPage = res < 1365 ? 6 : 12;
   const path = window.location.pathname;
+
+  // Кастомные значения пагинации по страницам
+  const paginationRules = [
+    {
+      match: (path) => path.endsWith("/inventories.html"),
+      mobile: 8,
+      desktop: 20,
+    },
+  ];
+
+  const matchedRule = paginationRules.find((rule) => rule.match(path));
+
+  const itemsPerPage = matchedRule
+    ? (res < 1365 ? matchedRule.mobile : matchedRule.desktop)
+    : (res < 1365 ? 6 : 12);
 
   const topicBoxesHolder = document.querySelector(".topic-boxes-holder");
   if (!topicBoxesHolder) return;
@@ -2867,16 +2881,31 @@ document.addEventListener("DOMContentLoaded", async function () {
   setupPagination();
 
   function setupPagination() {
+    const existingPagination = topicBoxesHolder.querySelector(".pagination-holder");
+    if (existingPagination) {
+      existingPagination.remove();
+    }
+
     const isSticker = isStickerCraftsPage;
     const itemSelector = isSticker ? ".topic-grandbox.sticker" : ".topic-box";
     const boxTopics = Array.from(topicBoxesHolder.querySelectorAll(itemSelector));
     if (!boxTopics.length) return;
 
+    const totalPages = Math.ceil(boxTopics.length / itemsPerPage);
+
+    if (totalPages <= 1) {
+      boxTopics.forEach((box) => {
+        box.classList.remove("hidden");
+        box.classList.add("visible");
+      });
+      return;
+    }
+
+    topicBoxesHolder.classList.add("pagination");
+
     const paginationHolder = document.createElement("div");
     paginationHolder.classList.add("pagination-holder");
     topicBoxesHolder.appendChild(paginationHolder);
-
-    const totalPages = Math.ceil(boxTopics.length / itemsPerPage);
 
     function showPage(page) {
       const start = (page - 1) * itemsPerPage;
@@ -2886,6 +2915,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (index >= start && index < end) {
           const delay = ((index % itemsPerPage) + 1) * 0.025;
           box.style.animationDelay = `${delay}s`;
+          box.style.display = "";
           box.classList.remove("hidden");
           box.classList.add("fade-in");
           box.addEventListener(
@@ -2897,6 +2927,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             { once: true }
           );
         } else {
+          box.style.display = "";
           box.classList.add("hidden");
           box.classList.remove("fade-in", "visible");
         }
@@ -2908,6 +2939,18 @@ document.addEventListener("DOMContentLoaded", async function () {
     function updatePaginationButtons(activePage) {
       paginationHolder.innerHTML = "";
 
+      // Кнопка "в первую страницу"
+      const firstButton = document.createElement("button");
+      firstButton.classList.add("pagination-button", "arrow", "force");
+      firstButton.innerHTML = `<i class="officon chevron double left"></i>`;
+      if (activePage === 1) {
+        firstButton.classList.add("disabled");
+      } else {
+        firstButton.addEventListener("click", () => showPage(1));
+      }
+      paginationHolder.appendChild(firstButton);
+
+      // Кнопка "предыдущая"
       const prevButton = document.createElement("button");
       prevButton.classList.add("pagination-button", "arrow");
       prevButton.innerHTML = `<i class="officon chevron left"></i>`;
@@ -2920,6 +2963,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       let startPage = Math.max(1, activePage - 1);
       let endPage = Math.min(totalPages, startPage + 2);
+
       if (endPage - startPage < 2 && startPage > 1) {
         startPage = Math.max(1, endPage - 2);
       }
@@ -2928,14 +2972,17 @@ document.addEventListener("DOMContentLoaded", async function () {
         const button = document.createElement("button");
         button.textContent = i;
         button.classList.add("pagination-button");
+
         if (i === activePage) {
           button.classList.add("active");
         } else {
           button.addEventListener("click", () => showPage(i));
         }
+
         paginationHolder.appendChild(button);
       }
 
+      // Кнопка "следующая"
       const nextButton = document.createElement("button");
       nextButton.classList.add("pagination-button", "arrow");
       nextButton.innerHTML = `<i class="officon chevron right"></i>`;
@@ -2945,6 +2992,17 @@ document.addEventListener("DOMContentLoaded", async function () {
         nextButton.addEventListener("click", () => showPage(activePage + 1));
       }
       paginationHolder.appendChild(nextButton);
+
+      // Кнопка "в последнюю страницу"
+      const lastButton = document.createElement("button");
+      lastButton.classList.add("pagination-button", "arrow", "force");
+      lastButton.innerHTML = `<i class="officon chevron double right"></i>`;
+      if (activePage === totalPages) {
+        lastButton.classList.add("disabled");
+      } else {
+        lastButton.addEventListener("click", () => showPage(totalPages));
+      }
+      paginationHolder.appendChild(lastButton);
     }
 
     if (languageTag === "ru") {
@@ -2959,99 +3017,98 @@ document.addEventListener("DOMContentLoaded", async function () {
   // ================================
   // topic-filter: ввод и фильтрация
   // ================================
-  (function () {
-    const scopedHolder =
-      document.querySelector(".topic-boxes-holder.items-type, .topic-boxes-holder.sticker-crafts") ||
-      (["skins", "items", "sticker-crafts"].includes(location.pathname.split("/").pop().replace(".html", "")) &&
-        document.querySelector(".topic-boxes-holder"));
+(function () {
+  const scopedHolder =
+    document.querySelector(".topic-boxes-holder.items-type, .topic-boxes-holder.sticker-crafts") ||
+    (["skins", "items", "sticker-crafts", "inventories"].includes(location.pathname.split("/").pop().replace(".html", "")) &&
+      document.querySelector(".topic-boxes-holder"));
 
-    if (!scopedHolder) return;
+  if (!scopedHolder) return;
 
-    const isStickerCrafts = location.pathname.includes("sticker-crafts");
-    const filterInput = scopedHolder.querySelector(".topic-filter .topic-filter-tab");
-    if (!filterInput) return; // topic-filter уже в статике
+  const isStickerCrafts = location.pathname.includes("sticker-crafts");
+  const filterInput = scopedHolder.querySelector(".topic-filter .topic-filter-tab");
+  if (!filterInput) return;
 
-    filterInput.addEventListener("input", () => {
-      const value = filterInput.value.trim().toLowerCase();
-      const itemSelector = isStickerCrafts ? ".topic-grandbox.sticker" : ".topic-box";
-      const allBoxes = Array.from(scopedHolder.querySelectorAll(itemSelector));
-      const paginationHolder = document.querySelector(".pagination-holder");
+  filterInput.addEventListener("input", () => {
+    const value = filterInput.value.trim().toLowerCase();
+    const itemSelector = isStickerCrafts ? ".topic-grandbox.sticker" : ".topic-box";
+    const allBoxes = Array.from(scopedHolder.querySelectorAll(itemSelector));
+    const paginationHolder = document.querySelector(".pagination-holder");
 
-      if (value !== "") {
-        // режим поиска: убираем пагинацию, но ограничиваем число результатов itemsPerPage
-        scopedHolder.classList.remove("pagination");
-        paginationHolder?.remove();
+    if (value !== "") {
+      scopedHolder.classList.remove("pagination");
+      paginationHolder?.remove();
 
-        const fuseData = allBoxes.map((box, idx) => {
-          if (isStickerCrafts) {
-            const spans = Array.from(box.querySelectorAll(".section.first span"));
-            const spanTexts = spans.map(s => s.textContent.trim()).filter(Boolean);
-            const skinElements = Array.from(box.querySelectorAll(".section.third .skin"));
-            const skinIds = skinElements.map(el => el.getAttribute("skin-id") || "").filter(Boolean);
-            return { idx, spanTexts, skinIds };
-          } else {
-            const text = box.querySelector("span")?.textContent.trim() || "";
-            return { idx, text };
-          }
-        });
+      const fuseData = allBoxes.map((box, idx) => {
+        if (isStickerCrafts) {
+          const spans = Array.from(box.querySelectorAll(".section.first span"));
+          const spanTexts = spans.map((s) => s.textContent.trim()).filter(Boolean);
+          const skinElements = Array.from(box.querySelectorAll(".section.third .skin"));
+          const skinIds = skinElements.map((el) => el.getAttribute("skin-id") || "").filter(Boolean);
 
-        // Поиск (Fuse если есть, иначе простой includes)
-        let matchedIdx = new Set();
-        if (typeof Fuse !== "undefined") {
-          const fuse = new Fuse(fuseData, {
-            keys: isStickerCrafts ? ["spanTexts", "skinIds"] : ["text"],
-            threshold: 0.4,
-            minMatchCharLength: 1,
-          });
-          const results = fuse.search(value);
-          matchedIdx = new Set(results.map(r => r.item.idx));
+          return { idx, spanTexts, skinIds };
         } else {
-          fuseData.forEach((item) => {
-            const hay = isStickerCrafts
-              ? (item.spanTexts.join(" ") + " " + item.skinIds.join(" "))
-              : item.text;
-            if ((hay || "").toLowerCase().includes(value)) matchedIdx.add(item.idx);
-          });
+          const mainText = box.querySelector("span")?.textContent.trim() || "";
+          const playerNickname = box.querySelector(".player-nickname")?.textContent.trim() || "";
+          const playerTeam = box.querySelector(".player-team")?.textContent.trim() || "";
+
+          return {
+            idx,
+            text: [mainText, playerNickname, playerTeam].filter(Boolean).join(" "),
+          };
         }
+      });
 
-        // Показать только первые itemsPerPage совпадений
-        let shown = 0;
-        allBoxes.forEach((box, idx) => {
-          const isMatch = matchedIdx.has(idx);
-          // сброс анима/классов
-          box.classList.remove("hidden", "fade-in", "visible");
-          box.style.animationDelay = "0s";
-          box.classList.toggle("visible_sort", isMatch);
+      let matchedIdx = new Set();
 
-          if (isMatch && shown < itemsPerPage) {
-            box.style.display = "";
-            shown++;
-          } else {
-            box.style.display = "none";
-          }
+      if (typeof Fuse !== "undefined") {
+        const fuse = new Fuse(fuseData, {
+          keys: isStickerCrafts ? ["spanTexts", "skinIds"] : ["text"],
+          threshold: 0.4,
+          minMatchCharLength: 1,
         });
+
+        const results = fuse.search(value);
+        matchedIdx = new Set(results.map((r) => r.item.idx));
       } else {
-        // режим без поиска: возвращаем дефолт и пагинацию
-        allBoxes.forEach((box) => {
-          box.style.display = "";
-          box.classList.add("hidden");
-          box.classList.remove("fade-in", "visible", "visible_sort");
+        fuseData.forEach((item) => {
+          const hay = isStickerCrafts
+            ? item.spanTexts.join(" ") + " " + item.skinIds.join(" ")
+            : item.text;
+
+          if ((hay || "").toLowerCase().includes(value)) matchedIdx.add(item.idx);
         });
-
-        scopedHolder.classList.add("pagination");
-
-        if (!document.querySelector(".pagination-holder")) {
-          const newPagination = document.createElement("div");
-          newPagination.className = "pagination-holder";
-          scopedHolder.appendChild(newPagination);
-        }
-
-        if (typeof setupPagination === "function") {
-          setupPagination();
-        }
       }
-    });
-  })();
+
+      let shown = 0;
+      allBoxes.forEach((box, idx) => {
+        const isMatch = matchedIdx.has(idx);
+        box.classList.remove("hidden", "fade-in", "visible");
+        box.style.animationDelay = "0s";
+        box.classList.toggle("visible_sort", isMatch);
+
+        if (isMatch && shown < itemsPerPage) {
+          box.style.display = "";
+          shown++;
+        } else {
+          box.style.display = "none";
+        }
+      });
+    } else {
+      allBoxes.forEach((box) => {
+        box.style.display = "";
+        box.classList.add("hidden");
+        box.classList.remove("fade-in", "visible", "visible_sort");
+      });
+
+      scopedHolder.classList.add("pagination");
+
+      if (typeof setupPagination === "function") {
+        setupPagination();
+      }
+    }
+  });
+})();
 });
 
 

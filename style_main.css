@@ -2717,7 +2717,8 @@ nav .pages {
     z-index: 101;
 }
 
-.inventories .item-topic-grandbox .logobg {
+.inventories .item-topic-grandbox .logobg,
+.topic-box.player-box .logobg {
     justify-content: flex-start;
     overflow: unset;
 }
@@ -2777,7 +2778,8 @@ nav .pages {
     transform: scale(1.03);
 } */
 
-.inventories .item-topic-grandbox .logobg .player-status img {
+.inventories .item-topic-grandbox .logobg .player-status img,
+.topic-box.player-box .logobg .player-status img {
     width: 100%;
     height: auto;
     margin: unset;
@@ -2802,6 +2804,10 @@ nav .pages {
     transform: translateY(-50%);
     max-width: 125px;
     width: 125px;
+}
+
+.player-box .player-bio {
+    right: 0;
 }
 
 .player-bio span {
@@ -4704,6 +4710,11 @@ nav img {
     /* gap: 18px 9px; */
 }
 
+.topic-boxes-holder:has(.player-box) {
+    min-height: 657px;
+    max-height: 657px;
+}
+
 .topic-boxes-holder.sticker-crafts {
     min-height: 818px;
     max-height: 818px;
@@ -5015,12 +5026,18 @@ nav img {
     margin-top: 70px;
 }
 
-.inventories .item-topic-grandbox .logobg img {
+.inventories .item-topic-grandbox .logobg img,
+.topic-box.player-box .logobg img {
     height: 417px;
     margin-top: 70px;
     position: absolute;
     transform: scale(.5);
     transform-origin: left;
+}
+
+.topic-box.player-box .logobg img {
+    margin-left: -50px;
+    margin-top: 80px;
 }
 
 .sitepage.items .topic-grandbox {
@@ -5901,6 +5918,18 @@ nav img {
     width: auto;
 }
 
+.topic-box.player-box {
+    width: unset;
+    flex: 0 0 calc(20% - 18px);
+}
+
+.topic-box.player-box .logobg {
+    position: relative;
+    height: 120px;
+    border-radius: var(--main-border);
+    overflow: hidden;
+}
+
 /* .sticker .topic-box .logobg,
 .topic-craft:not(.loadout) .topic-grandbox .topic-box .logobg {
     margin: 8px 8px 0 8px;
@@ -5910,7 +5939,7 @@ nav img {
     -webkit-mask-image: unset;
 } */
 
-.topic-boxes-holder .topic-box:hover .logobg,
+.topic-boxes-holder .topic-box:not(.player-box):hover .logobg,
 .topic-boxes-holder .topic-grandbox:hover .topic-box .logobg,
 .topic-box.maestro:hover .logobg {
     transform: scale(1.03) !important;
@@ -5926,7 +5955,7 @@ nav img {
     margin: 4px !important;
 }
 
-.topic-boxes-holder .topic-box .logobg:hover img {
+.topic-boxes-holder .topic-box:not(.player-box) .logobg:hover img {
     transform: scale(1.05) rotate(3deg);
 }
 
@@ -9436,6 +9465,10 @@ a[data-title]:after,
     width: 32px;
 }
 
+.force .officon.chevron::before {
+    background-image: url(/img/icons/gamemodes/chevron-double.svg);
+}
+
 .officon.mirror::before {
     background-image: url(/img/icons/gamemodes/mirror.svg);
 }
@@ -9468,6 +9501,14 @@ a[data-title]:after,
 
 .officon.chevron.left::before {
     transform: rotate(-90deg);
+}
+
+.force .officon.chevron.right::before {
+    transform: rotate(270deg);
+}
+
+.force .officon.chevron.left::before {
+    transform: rotate(-270deg);
 }
 
 .search::before {
@@ -13065,11 +13106,16 @@ header {
 }
 
 .pagination-button.arrow {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.pagination-button.arrow.force {
+    width: 30px;
+    height: 30px;
 }
 
 .pagination-button.arrow::before {
@@ -13077,8 +13123,13 @@ header {
 }
 
 .pagination-button.arrow .officon.chevron::before {
-    height: 20px;
-    width: 20px;
+    height: 22px;
+    width: 22px;
+}
+
+.pagination-button.arrow.force .officon.chevron::before {
+    height: 10px;
+    width: 10px;   
 }
 
 .pagination-button.disabled .officon::before,
@@ -13512,6 +13563,10 @@ header {
 }
 
 @media screen and (max-width: 1280px) {
+    .topic-box.player-box {
+        flex: 0 0 calc(50% - 18px);
+    }
+
     .best-alternates {
         flex-direction: row;
         justify-content: center;
@@ -13577,6 +13632,7 @@ header {
     .topic-boxes-holder:has(.pagination-holder) {
         min-height: unset;
         padding-bottom: 45px;
+        max-height: unset;
     }
 
     .promo-box::after {
@@ -15009,6 +15065,10 @@ header {
         margin-top: 4px;
     }
 
+    .topic-box.player-box {
+        flex: 0 0 calc(50% - 8px);
+    }
+
     .boxes-holder {
         max-width: 98%;
         margin: 0 auto;
@@ -16429,6 +16489,7 @@ header {
 }
 
 @media screen and (max-width: 695px) {
+
     #preview-showcase #preview-content img {
         height: auto;
         margin-top: 30px;
@@ -16636,6 +16697,10 @@ header {
         gap: 6px;
     }
 
+    .topic-box.player-box {
+        flex: 0 0 calc(50% - 6px);
+    }
+
     .topic-filter {
         gap: 2px;
     }
@@ -16840,6 +16905,11 @@ header {
 }
 
 @media screen and (max-width: 460px) {
+    .player-box .player-bio {
+        max-width: 80px;
+        width: 80px;
+        right: 10px;
+    }
 
     .mods-box.mods-box.skins-box {
         min-height: 132px;

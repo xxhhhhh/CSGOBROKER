@@ -72,14 +72,18 @@ function parseArgs(argv){
     return i >= 0 ? argv[i + 1] : null;
   };
 
-
   const root    = path.resolve(get("--root") ?? process.cwd());
   const dry     = argv.includes("--dry-run");
   const verbose = argv.includes("--verbose");
   const prices  = get("--prices");
-  const paths   = (get("--paths") ?? "/topic,/ru/topic")
+
+  const pathsRaw = (get("--paths") ?? "/topic/,/ru/topic/")
     .split(",")
     .map(s => s.trim())
+    .filter(Boolean);
+
+  const paths = pathsRaw
+    .map(normalizeSitePathSelector)
     .filter(Boolean);
 
   return { root, dry, verbose, prices, paths };
@@ -156,22 +160,90 @@ async function safeJsonCached(file){
   }
 }
 
-async function listHtmlFiles(root){
-  const out = [];
+async function existsPath(p){
+  try {
+    await fs.access(p);
+    return true;
+  } catch {
+    return false;
+  }
+}
 
-  async function walk(d){
-    for (const e of await fs.readdir(d, { withFileTypes:true })) {
-      const p = path.join(d, e.name);
-      if (e.isDirectory()) {
-        await walk(p);
-      } else if (e.isFile() && e.name.toLowerCase().endsWith(".html")) {
-        out.push(p);
+async function statSafe(p){
+  try {
+    return await fs.stat(p);
+  } catch {
+    return null;
+  }
+}
+
+async function walkHtmlFiles(startDir, out = []){
+  const entries = await fs.readdir(startDir, { withFileTypes: true });
+
+  for (const e of entries){
+    const p = path.join(startDir, e.name);
+
+    // можно сразу отсечь тяжёлые папки
+    if (e.isDirectory()){
+      const low = e.name.toLowerCase();
+      if (
+        low === "node_modules" ||
+        low === ".git" ||
+        low === ".next" ||
+        low === "dist" ||
+        low === "build"
+      ) {
+        continue;
       }
+
+      await walkHtmlFiles(p, out);
+      continue;
+    }
+
+    if (e.isFile() && e.name.toLowerCase().endsWith(".html")) {
+      out.push(p);
     }
   }
 
-  await walk(root);
   return out;
+}
+
+async function collectHtmlFilesBySelectors(root, selectors){
+  const found = new Set();
+
+  for (const selector of selectors){
+    if (!selector) continue;
+
+    if (selector.isDir){
+      const dirFsPath = path.join(root, "." + selector.normalized);
+      const st = await statSafe(dirFsPath);
+
+      if (st?.isDirectory()){
+        const files = await walkHtmlFiles(dirFsPath);
+        for (const f of files) found.add(path.resolve(f));
+      }
+
+      continue;
+    }
+
+    // Явно передали .html -> считаем это точным файлом
+    if (selector.explicitHtml){
+      const exactFile = path.join(root, "." + selector.normalized);
+      if (await existsPath(exactFile)) {
+        found.add(path.resolve(exactFile));
+      }
+      continue;
+    }
+
+    // Обычный site path без расширения
+    const htmlFile = path.join(root, "." + selector.normalized + ".html");
+    const indexFile = path.join(root, "." + selector.normalized, "index.html");
+
+    if (await existsPath(htmlFile)) found.add(path.resolve(htmlFile));
+    if (await existsPath(indexFile)) found.add(path.resolve(indexFile));
+  }
+
+  return [...found];
 }
 
 function fileToUrlPath(root, file){
@@ -187,6 +259,57 @@ function fileToUrlPath(root, file){
   }
 
   return "/" + rel.replace(/\/{2,}/g, "/");
+}
+
+function normalizeSitePathSelector(input){
+  let s = String(input || "").trim();
+  if (!s) return null;
+
+  s = s.replace(/\\/g, "/");
+  s = s.replace(/[?#].*$/, "");
+
+  if (!s.startsWith("/")) s = "/" + s;
+
+  const explicitHtml = /\.html?$/i.test(s);
+  const isDir = !explicitHtml && s.endsWith("/");
+
+  s = s.replace(/\/{2,}/g, "/");
+
+  if (isDir) {
+    return {
+      raw: input,
+      normalized: s,
+      isDir: true,
+      explicitHtml: false,
+    };
+  }
+
+  s = s.replace(/\/+$/, "");
+  if (!s) s = "/";
+
+  return {
+    raw: input,
+    normalized: s,
+    isDir: false,
+    explicitHtml,
+  };
+}
+
+function matchesSitePathSelector(urlPath, selector){
+  if (!selector) return false;
+
+  const pagePath =
+    urlPath === "/"
+      ? "/"
+      : String(urlPath || "").replace(/\/+$/, "");
+
+  if (selector.isDir) {
+    // directory selector: /ru/topic/players/
+    return urlPath.startsWith(selector.normalized);
+  }
+
+  // exact page selector: /ru/topic/players/inventories
+  return pagePath === selector.normalized;
 }
 
 // ---------------- HTML UTILS ----------------
@@ -3162,6 +3285,14 @@ function getTopicBackHref(urlPath){
     return `${base}/items-type/cases`;
   }
 
+  if (new RegExp(`^${base}/players/inventories/[^/]+$`, "i").test(p)) {
+    return `${base}/players/inventories`;
+  }
+
+  if (new RegExp(`^${base}/players/inventories$`, "i").test(p)) {
+    return base;
+  }
+
   // fallback для одноуровневых страниц
   if (new RegExp(`^${base}/[^/]+$`, "i").test(p)) {
     return base;
@@ -3749,7 +3880,7 @@ function getStage2Processors(ctx){
 (async function main(){
   const { root, dry, verbose, prices, paths } = parseArgs(process.argv.slice(2));
 
-  const files = await listHtmlFiles(root);
+  const files = await collectHtmlFilesBySelectors(root, paths);
   const urlToFile = new Map(files.map(f => [fileToUrlPath(root, f), f]));
 
   const pricesArr = await loadPrices(prices);
@@ -3766,14 +3897,7 @@ function getStage2Processors(ctx){
 
   // ---------- STAGE 1: local page transforms ----------
   await mapLimit(files, CONCURRENCY, async (file) => {
-    const urlPath = fileToUrlPath(root, file);
-    const lowerUrlPath = urlPath.toLowerCase();
-    const allowed = paths.some(p => lowerUrlPath.startsWith(p.toLowerCase()));
-
-    if (!allowed){
-      processedHtmlByFile.set(file, { allowed: false });
-      return;
-    }
+  const urlPath = fileToUrlPath(root, file);
 
     try {
       const origHtml = await readTextCached(file);
