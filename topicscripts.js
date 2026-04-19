@@ -2850,10 +2850,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   const res = $(window).width();
   const path = window.location.pathname;
 
-  // Кастомные значения пагинации по страницам
   const paginationRules = [
     {
-      match: (path) => path.endsWith("/inventories"),
+      match: (path) => /\/inventories(?:\.html)?\/?$/.test(path),
       mobile: 8,
       desktop: 20,
     },

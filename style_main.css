@@ -5920,7 +5920,7 @@ nav img {
 
 .topic-box.player-box {
     width: unset;
-    flex: 0 0 calc(20% - 18px);
+    flex: 0 0 calc((100% - 72px) / 5);
 }
 
 .topic-box.player-box .logobg {
