@@ -77,7 +77,7 @@ function parseArgs(argv){
   const verbose = argv.includes("--verbose");
   const prices  = get("--prices");
 
-  const pathsRaw = (get("--paths") ?? "/topic/,/ru/topic/")
+  const pathsRaw = (get("--paths") ?? "/topic,/ru/topic")
     .split(",")
     .map(s => s.trim())
     .filter(Boolean);
@@ -1647,7 +1647,7 @@ async function processRuTopicStaticTranslations({ root, file, html, verbose }){
 async function processSkinPlaceholders({ root, html, pricesState, verbose, file }){
   const nl = html.includes("\r\n") ? "\r\n" : "\n";
   const masked = maskSegments(html);
-  const skins = findAllTagsByClass(masked, "skin", ["div", "span"]);
+  const skins = findAllTagsByClass(masked, "skin", ["div", "span", "strong"]);
   if (!skins.length) return { html, changed:false };
 
   let out = html;
