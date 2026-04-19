@@ -2853,7 +2853,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   // Кастомные значения пагинации по страницам
   const paginationRules = [
     {
-      match: (path) => path.endsWith("/inventories.html"),
+      match: (path) => path.endsWith("/inventories"),
       mobile: 8,
       desktop: 20,
     },
