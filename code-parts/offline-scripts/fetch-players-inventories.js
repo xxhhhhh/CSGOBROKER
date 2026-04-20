@@ -1266,6 +1266,8 @@ async function waitForSteamInventoryReady(page, {
   logLabel = "",
 } = {}) {
   const started = Date.now();
+  let lastLoggedSignature = "";
+  let lastLoggedAt = 0;
 
   while (Date.now() - started < timeoutMs) {
     try {
@@ -1280,7 +1282,7 @@ async function waitForSteamInventoryReady(page, {
           document.querySelector("#inventory_page");
 
         const hasErrorText =
-          /inventory unavailable|this inventory is not available|private profile|error/i.test(bodyText);
+          /inventory unavailable|this inventory is not available|private profile|error|too many requests|429/i.test(bodyText);
 
         const hasSteamInventoryGlobals =
           typeof window.g_rgAppContextData !== "undefined" ||
@@ -1294,13 +1296,32 @@ async function waitForSteamInventoryReady(page, {
           hasErrorText,
           url: location.href,
           readyState: document.readyState,
+          bodySnippet: bodyText.slice(0, 200),
         };
       });
 
       if (verbose) {
-        console.log(
-          `[INVENTORY UI READY CHECK] ${logLabel} :: anchors=${state.anchorsCount}, root=${state.hasInventoryRoot}, globals=${state.hasSteamInventoryGlobals}, readyState=${state.readyState}`
-        );
+        const signature = [
+          state.anchorsCount,
+          state.hasInventoryRoot,
+          state.hasSteamInventoryGlobals,
+          state.readyState,
+          state.hasErrorText,
+        ].join("|");
+
+        const now = Date.now();
+        const shouldLog =
+          !lastLoggedAt ||
+          state.anchorsCount > 0 ||
+          state.hasErrorText;
+
+        if (shouldLog) {
+          console.log(
+            `[INVENTORY UI READY CHECK] ${logLabel} :: anchors=${state.anchorsCount}, root=${state.hasInventoryRoot}, globals=${state.hasSteamInventoryGlobals}, readyState=${state.readyState}`
+          );
+          lastLoggedSignature = signature;
+          lastLoggedAt = now;
+        }
       }
 
       if (state.anchorsCount > 0) {
@@ -1322,7 +1343,13 @@ async function waitForSteamInventoryReady(page, {
     }
   }
 
-  return { ok: false, reason: "timeout_waiting_inventory_items" };
+    if (verbose) {
+      console.log(
+        `[INVENTORY UI READY TIMEOUT] ${logLabel} :: timeoutMs=${timeoutMs}`
+      );
+    }
+
+    return { ok: false, reason: "timeout_waiting_inventory_items" };
 }
 
 async function openSteamInventoryPage(page, inventoryUrl, { verbose = false, logLabel = "" } = {}) {
