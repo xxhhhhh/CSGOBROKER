@@ -826,16 +826,18 @@ function isInspectableMarketItem(item) {
     return true;
   }
 
-  return (
-    type.includes("knife") ||
-    type.includes("gloves") ||
-    type.includes("rifle") ||
-    type.includes("pistol") ||
-    type.includes("smg") ||
-    type.includes("sniper") ||
-    type.includes("machinegun") ||
-    type.includes("shotgun")
-  );
+  return isDopplerLikeItem(item);
+
+  // return (
+  //   type.includes("knife") ||
+  //   type.includes("gloves") ||
+  //   type.includes("rifle") ||
+  //   type.includes("pistol") ||
+  //   type.includes("smg") ||
+  //   type.includes("sniper") ||
+  //   type.includes("machinegun") ||
+  //   type.includes("shotgun")
+  // );
 }
 
 function makeDescriptionMap(descriptions) {
