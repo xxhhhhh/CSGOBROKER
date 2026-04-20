@@ -1457,6 +1457,7 @@ nav .pages {
     left: 50%;
     transform: translateX(-50%);
     transition: all .15s ease-in-out;
+    z-index: 1;
     opacity: 0;
 }
 
@@ -9626,6 +9627,10 @@ a[data-title]:after,
     overflow: hidden;
     margin-top: 18px;
     border-radius: var(--main-border);
+}
+
+.slider-container .slick-slide {
+    background: var(--darkgray);
 }
 
 .screens.slick-slider {

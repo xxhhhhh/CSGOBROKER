@@ -9,6 +9,10 @@
     --buttonbg:linear-gradient(180deg, var(--main-color) 0%, rgb(204, 21, 52) 100%);
 }
 
+body {
+    background: var(--main-theme);
+}
+
 .ssiodox {
     /* background: linear-gradient(180deg, var(--main-theme), rgb(235 235 235)); */
     background: var(--main-theme);
@@ -99,7 +103,8 @@
 .player-teammates,
 .teammates-sign,
 .menu-main-reviews-item,
-.menu-main-solid-item {
+.menu-main-solid-item,
+.slider-container.slick-dotted.slick-slider  {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
     box-shadow: unset;
 }
@@ -1802,4 +1807,22 @@ ul .submenu li .nonredir,
 .menu-main-parts,
 .menu-search-section .search-field {
     background: rgba(255, 255, 255, .8);
+}
+
+.slider-container .slick-slide img {
+    filter: drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 1px 0 rgb(150 150 150)) drop-shadow(0 0.1rem 0.15rem rgba(55, 55, 55, 0.1)) !important;
+}
+
+.slider-container .slick-dots li button {
+    box-shadow: unset;
+    border: solid 2px rgba(55, 55, 55, .1) !important;
+}
+
+.screens button i, 
+.slider-container button i {
+    filter: none;
+}
+
+.slider-container button i {
+    filter: brightness(.5);
 }

@@ -1342,16 +1342,16 @@ $(document).ready(function() {
   }
 
   var sliderItems = [
-    { href: '/', src: '/img/best-gambling-sites-slide-2024.webp', label: 'Best Gambling Sites' },
-    { href: '/rust', src: '/img/best-rust-sites-slide-2024.webp', label: 'Best Rust Sites' },
-    { href: '/earning/offerwalls', src: '/img/earn-skins-slider-2024.webp', label: 'Best Offerwall Sites' }
+    { href: '/', src: '/img/best-gambling-sites-slide-2026.webp', label: 'Best Gambling Sites' },
+    { href: '/rust', src: '/img/best-rust-sites-slide-2026.webp', label: 'Best Rust Sites' },
+    { href: '/earning/offerwalls', src: '/img/earn-skins-slider-2026.webp', label: 'Best Offerwall Sites' }
   ];
 
   if (languageTag === 'ru') {
     sliderItems = [
-      { href: '/ru', src: '/img/best-gambling-sites-slide-2024-ru.webp', label: 'Лучшие Гемблинг Сайты CS2' },
-      { href: '/ru/rust', src: '/img/best-rust-sites-slide-2024-ru.webp', label: 'Лучшие Сайты Rust' },
-      { href: '/ru/earning/offerwalls', src: '/img/earn-skins-slider-2024-ru.webp', label: 'Лучшие Сайты с Заданиями' }
+      { href: '/ru', src: '/img/best-gambling-sites-slide-2026-ru.webp', label: 'Лучшие Гемблинг Сайты CS2' },
+      { href: '/ru/rust', src: '/img/best-rust-sites-slide-2026-ru.webp', label: 'Лучшие Сайты Rust' },
+      { href: '/ru/earning/offerwalls', src: '/img/earn-skins-slider-2026-ru.webp', label: 'Лучшие Сайты с Заданиями' }
     ];
   }
 
