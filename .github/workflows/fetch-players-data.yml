@@ -24,7 +24,7 @@ on:
       shard_total:
         description: "How many shards to use for inventory fetch (1-6)"
         required: false
-        default: "2"
+        default: "1"
         type: string
 
       max_parallel:
@@ -59,7 +59,7 @@ on:
 
 concurrency:
   group: fetch-players-data-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 permissions:
   contents: write
