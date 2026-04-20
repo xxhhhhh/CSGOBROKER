@@ -105,7 +105,7 @@ jobs:
           if-no-files-found: error
 
   inventory-shards:
-    if: ${{ inputs.run_inventories }}
+    if: ${{ always() && inputs.run_inventories }}
     needs: [liquipedia]
     runs-on: ubuntu-latest
     timeout-minutes: 180
