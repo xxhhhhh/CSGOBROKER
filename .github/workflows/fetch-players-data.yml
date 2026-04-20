@@ -8,35 +8,53 @@ on:
         required: false
         default: true
         type: boolean
+
       run_inventories:
         description: "Run Steam inventory fetch"
         required: false
         default: true
         type: boolean
+
+      only_players:
+        description: "Optional nicknames for --only (comma separated, e.g. apEX,ropz)"
+        required: false
+        default: ""
+        type: string
+
       shard_total:
         description: "How many shards to use for inventory fetch (1-6)"
         required: false
         default: "2"
         type: string
+
       max_parallel:
         description: "Max parallel shard jobs"
         required: false
         default: "2"
         type: string
+
       delay_ms:
         description: "Delay between players"
         required: false
-        default: "500"
+        default: "200"
         type: string
+
       use_browser_fallback:
         description: "Enable Steam UI fallback with Puppeteer"
         required: false
         default: true
         type: boolean
+
       resolve_doppler_phase:
         description: "Enable CSFloat checker phase resolve"
         required: false
         default: true
+        type: boolean
+
+      fetch_inspect_for_all_items:
+        description: "Fetch inspect links for all inspectable items"
+        required: false
+        default: false
         type: boolean
 
 concurrency:
@@ -63,11 +81,19 @@ jobs:
       - run: npm ci
 
       - name: Run Liquipedia sync
+        env:
+          PROXY_ENABLED: "0"
         run: |
-          node code-parts/topics/players-data/players-list/fetch-workflow.js \
+          ONLY_ARGS=""
+          if [ -n "${{ inputs.only_players }}" ]; then
+            ONLY_ARGS="--only ${{ inputs.only_players }}"
+          fi
+
+          node code-parts/offline-scripts/fetch-players-inventories.js \
             --refetch-liquipedia \
             --liquipedia-only \
-            --verbose
+            --verbose \
+            $ONLY_ARGS
 
       - name: Upload Liquipedia base artifact
         uses: actions/upload-artifact@v4
@@ -79,7 +105,7 @@ jobs:
           if-no-files-found: error
 
   inventory-shards:
-    if: ${{ always() && inputs.run_inventories }}
+    if: ${{ inputs.run_inventories }}
     needs: [liquipedia]
     runs-on: ubuntu-latest
     timeout-minutes: 180
@@ -119,15 +145,34 @@ jobs:
       - name: Run inventory shard
         if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) }}
         env:
+          PROXY_ENABLED: "0"
           CSFLOAT_CHECKER_ENABLED: ${{ inputs.resolve_doppler_phase && '1' || '0' }}
           USE_STEAM_UI_FALLBACK: ${{ inputs.use_browser_fallback && '1' || '0' }}
+          FETCH_INSPECT_FOR_ALL_ITEMS: ${{ inputs.fetch_inspect_for_all_items && '1' || '0' }}
+          PRESERVE_EXISTING_FLOAT_SEED_FOR_ALL_ITEMS: "1"
         run: |
-          node code-parts/topics/players-data/players-list/fetch-workflow.js \
+          ONLY_ARGS=""
+          if [ -n "${{ inputs.only_players }}" ]; then
+            ONLY_ARGS="--only ${{ inputs.only_players }}"
+          fi
+
+          EFFECTIVE_SHARD_TOTAL="${{ inputs.shard_total }}"
+          if [ -n "${{ inputs.only_players }}" ]; then
+            EFFECTIVE_SHARD_TOTAL="1"
+          fi
+
+          if [ "${{ matrix.shard_index }}" -ge "$EFFECTIVE_SHARD_TOTAL" ]; then
+            echo "Skipping shard ${{ matrix.shard_index }} because effective shard_total=$EFFECTIVE_SHARD_TOTAL"
+            exit 0
+          fi
+
+          node code-parts/offline-scripts/fetch-players-inventories.js \
             --skip-liquipedia \
             --delay ${{ inputs.delay_ms }} \
             --shard-index ${{ matrix.shard_index }} \
-            --shard-total ${{ inputs.shard_total }} \
-            --verbose
+            --shard-total $EFFECTIVE_SHARD_TOTAL \
+            --verbose \
+            $ONLY_ARGS
 
       - name: Upload shard artifact
         if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) }}

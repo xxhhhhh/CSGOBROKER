@@ -2099,16 +2099,36 @@ async function upsertPlayersTopicBoxesHolder(root, html, players, lang = "en"){
   let cleanedInnerHtml = holderInnerHtml;
 
   if (existingPlayerBoxes.length) {
-    let cursor = 0;
-    const parts = [];
+    const first = existingPlayerBoxes[0];
+    const last = existingPlayerBoxes[existingPlayerBoxes.length - 1];
 
-    for (const block of existingPlayerBoxes){
-      parts.push(cleanedInnerHtml.slice(cursor, block.openStart));
-      cursor = block.closeEnd;
+    let removeStart = first.openStart;
+    let removeEnd = last.closeEnd;
+
+    // забираем отступы перед первым блоком
+    while (
+      removeStart > 0 &&
+      (cleanedInnerHtml[removeStart - 1] === " " || cleanedInnerHtml[removeStart - 1] === "\t")
+    ) {
+      removeStart--;
     }
 
-    parts.push(cleanedInnerHtml.slice(cursor));
-    cleanedInnerHtml = parts.join("");
+    // забираем перевод строки перед первым блоком
+    if (
+      removeStart >= nl.length &&
+      cleanedInnerHtml.slice(removeStart - nl.length, removeStart) === nl
+    ) {
+      removeStart -= nl.length;
+    }
+
+    // забираем перевод строки после последнего блока
+    if (cleanedInnerHtml.slice(removeEnd, removeEnd + nl.length) === nl) {
+      removeEnd += nl.length;
+    }
+
+    cleanedInnerHtml =
+      cleanedInnerHtml.slice(0, removeStart) +
+      cleanedInnerHtml.slice(removeEnd);
   }
 
   const cleanedMasked = maskSegments(cleanedInnerHtml);
