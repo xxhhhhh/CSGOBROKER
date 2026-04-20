@@ -1292,17 +1292,9 @@ async function waitForSteamInventoryReady(page, {
           hasInventoryRoot: Boolean(inventoryRoot),
           hasSteamInventoryGlobals,
           hasErrorText,
-          url: location.href,
           readyState: document.readyState,
-          bodySnippet: bodyText.slice(0, 200),
         };
       });
-
-      if (verbose && (state.anchorsCount > 0 || state.hasErrorText)) {
-        console.log(
-          `[INVENTORY UI READY CHECK] ${logLabel} :: anchors=${state.anchorsCount}, root=${state.hasInventoryRoot}, globals=${state.hasSteamInventoryGlobals}, readyState=${state.readyState}`
-        );
-      }
 
       if (state.anchorsCount > 0) {
         return { ok: true, reason: "anchors_ready" };
