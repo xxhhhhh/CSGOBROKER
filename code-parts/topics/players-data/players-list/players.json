@@ -1,9 +1,24 @@
 {
-  "updatedAt": "2026-04-20T21:20:44.210Z",
-  "count": 4,
-  "successCount": 3,
+  "updatedAt": "2026-04-20T21:35:02.487Z",
+  "count": 7,
+  "successCount": 6,
   "failedCount": 1,
   "players": [
+    {
+      "nickname": "apEX",
+      "real_nickname": "apEX",
+      "slug": "apex",
+      "steamid64": "76561197989744167",
+      "team": "Team Vitality",
+      "isContentCreator": false,
+      "inventoryJson": "/code-parts/topics/players-data/players-inventories/apex.json",
+      "updatedAt": "2026-04-20T21:33:36.828Z",
+      "inventoryVisible": true,
+      "fetchOk": true,
+      "fetchStatus": 200,
+      "fetchError": "",
+      "totalItemsGrouped": 218
+    },
     {
       "nickname": "dav1deuS",
       "real_nickname": "dav1deuS",
@@ -50,6 +65,21 @@
       "totalItemsGrouped": 399
     },
     {
+      "nickname": "ropz",
+      "real_nickname": "ropz",
+      "slug": "ropz",
+      "steamid64": "76561197991272318",
+      "team": "Team Vitality",
+      "isContentCreator": false,
+      "inventoryJson": "/code-parts/topics/players-data/players-inventories/ropz.json",
+      "updatedAt": "2026-04-20T21:33:37.361Z",
+      "inventoryVisible": true,
+      "fetchOk": true,
+      "fetchStatus": 200,
+      "fetchError": "",
+      "totalItemsGrouped": 65
+    },
+    {
       "nickname": "sh1ro",
       "real_nickname": "sh1ro",
       "slug": "sh1ro",
@@ -63,6 +93,21 @@
       "fetchStatus": 200,
       "fetchError": "",
       "totalItemsGrouped": 141
+    },
+    {
+      "nickname": "ZywOo",
+      "real_nickname": "ZywOo",
+      "slug": "zywoo",
+      "steamid64": "76561198113666193",
+      "team": "Team Vitality",
+      "isContentCreator": false,
+      "inventoryJson": "/code-parts/topics/players-data/players-inventories/zywoo.json",
+      "updatedAt": "2026-04-20T21:33:46.588Z",
+      "inventoryVisible": true,
+      "fetchOk": true,
+      "fetchStatus": 200,
+      "fetchError": "",
+      "totalItemsGrouped": 889
     }
   ]
 }
