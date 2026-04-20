@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-04-20T21:04:13.526Z",
-  "count": 1,
-  "successCount": 1,
-  "failedCount": 0,
+  "updatedAt": "2026-04-20T21:20:44.210Z",
+  "count": 4,
+  "successCount": 3,
+  "failedCount": 1,
   "players": [
     {
       "nickname": "dav1deuS",
@@ -18,6 +18,51 @@
       "fetchStatus": 200,
       "fetchError": "",
       "totalItemsGrouped": 32
+    },
+    {
+      "nickname": "donk",
+      "real_nickname": "donk",
+      "slug": "donk",
+      "steamid64": "76561198386265483",
+      "team": "Team Spirit",
+      "isContentCreator": false,
+      "inventoryJson": "/code-parts/topics/players-data/players-inventories/donk.json",
+      "updatedAt": "2026-04-20T21:20:06.742Z",
+      "inventoryVisible": false,
+      "fetchOk": false,
+      "fetchStatus": 403,
+      "fetchError": "Steam profile is private (private)",
+      "totalItemsGrouped": 113
+    },
+    {
+      "nickname": "magixx",
+      "real_nickname": "magixx",
+      "slug": "magixx",
+      "steamid64": "76561199028549977",
+      "team": "Team Spirit",
+      "isContentCreator": false,
+      "inventoryJson": "/code-parts/topics/players-data/players-inventories/magixx.json",
+      "updatedAt": "2026-04-20T21:20:01.994Z",
+      "inventoryVisible": true,
+      "fetchOk": true,
+      "fetchStatus": 200,
+      "fetchError": "",
+      "totalItemsGrouped": 399
+    },
+    {
+      "nickname": "sh1ro",
+      "real_nickname": "sh1ro",
+      "slug": "sh1ro",
+      "steamid64": "76561198081484775",
+      "team": "Team Spirit",
+      "isContentCreator": false,
+      "inventoryJson": "/code-parts/topics/players-data/players-inventories/sh1ro.json",
+      "updatedAt": "2026-04-20T21:19:31.096Z",
+      "inventoryVisible": true,
+      "fetchOk": true,
+      "fetchStatus": 200,
+      "fetchError": "",
+      "totalItemsGrouped": 141
     }
   ]
 }
