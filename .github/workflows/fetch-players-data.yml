@@ -174,13 +174,30 @@ jobs:
             --verbose \
             $ONLY_ARGS
 
+      - name: Collect changed inventory files
+        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) }}
+        run: |
+          mkdir -p _artifact/players-inventories
+
+          if [ -n "${{ inputs.only_players }}" ]; then
+            IFS=',' read -ra NICKS <<< "${{ inputs.only_players }}"
+            for nick in "${NICKS[@]}"; do
+              slug=$(echo "$nick" | tr '[:upper:]' '[:lower:]' | sed "s/['\"\` ]//g" | sed 's/[^a-z0-9]/-/g' | sed 's/-\+/-/g' | sed 's/^-//' | sed 's/-$//')
+              if [ -f "code-parts/topics/players-data/players-inventories/${slug}.json" ]; then
+                cp "code-parts/topics/players-data/players-inventories/${slug}.json" "_artifact/players-inventories/"
+              fi
+            done
+          else
+            cp -r code-parts/topics/players-data/players-inventories/* _artifact/players-inventories/ || true
+          fi
+          
       - name: Upload shard artifact
         if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) }}
         uses: actions/upload-artifact@v4
         with:
           name: shard-${{ matrix.shard_index }}
           path: |
-            code-parts/topics/players-data/players-inventories
+            _artifact/players-inventories
             _workflow/shards
           if-no-files-found: error
 
