@@ -12,24 +12,23 @@
   "faceit": "https://faceitdb.com/profile/faceit/8cb8a9d9-1b0b-4a12-bd3f-1a0eee43ca55",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-08T19:02:58.037Z",
+  "updatedAt": "2026-04-21T00:52:28.870Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 44,
-  "totalItemsGrouped": 44,
+  "totalItemsRaw": 49,
+  "totalItemsGrouped": 48,
   "items": [
     {
-      "assetid": "49866844335",
-      "classid": "7993040007",
-      "instanceid": "188530139",
+      "assetid": "50897770262",
+      "classid": "7993036202",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Butterfly Knife | Gamma Doppler",
-      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "name": "★ Butterfly Knife | Damascus Steel",
+      "market_hash_name": "★ Butterfly Knife | Damascus Steel (Field-Tested)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202C3C83FD82CE952D34AF280C9428042A1C2F14BCDBA1C62F6C8C2D442B5C24C777F2E1",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -55,10 +54,7 @@
           "category": "Exterior",
           "name": ""
         }
-      ],
-      "float": 0.047725260258,
-      "seed": 160,
-      "phase": "Emerald"
+      ]
     },
     {
       "assetid": "48218661247",
@@ -91,6 +87,41 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "51017640521",
+      "classid": "7993042978",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Karambit | Doppler",
+      "market_hash_name": "★ Karambit | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206272ABB6EFE5DC637A996142FD614A6452615AE69AE18A6122F4610A7E126614F998C5",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.031490340829,
+      "seed": 406,
+      "phase": "Ruby"
     },
     {
       "assetid": "49866844314",
@@ -565,6 +596,45 @@
       ]
     },
     {
+      "assetid": "50973104216",
+      "classid": "7993039096",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Glock-18 | Gamma Doppler",
+      "market_hash_name": "Glock-18 | Gamma Doppler (Factory New)",
+      "type": "Covert Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BAAA620A554B07BBA2BE9A65B292BC8ABE827E143856B9FA0FBDD2A9CAAD0838FFEA",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.062788516283,
+      "seed": 949,
+      "phase": "Emerald"
+    },
+    {
       "assetid": "45152942670",
       "classid": "7993040076",
       "instanceid": "480085569",
@@ -947,6 +1017,50 @@
       ]
     },
     {
+      "assetid": "50966389395",
+      "classid": "4839650795",
+      "instanceid": "8360842852",
+      "amount": 2,
+      "name": "Sticker | Ninjas in Pyjamas | Antwerp 2022",
+      "market_hash_name": "Sticker | Ninjas in Pyjamas | Antwerp 2022",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207F6F7F67C6765F7F577C4F7B1D7A777F6FD056177F0F77E5856234",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "50966389395",
+        "50966389384"
+      ]
+    },
+    {
       "assetid": "44763558336",
       "classid": "188549982",
       "instanceid": "6276728711",
@@ -1205,7 +1319,7 @@
     {
       "assetid": "43933912681",
       "classid": "7993049214",
-      "instanceid": "7279028373",
+      "instanceid": "6288235806",
       "amount": 1,
       "name": "StatTrak™ P250 | Undertow",
       "market_hash_name": "StatTrak™ P250 | Undertow (Minimal Wear)",
@@ -1321,7 +1435,7 @@
     {
       "assetid": "44994724279",
       "classid": "7993042201",
-      "instanceid": "8348634586",
+      "instanceid": "8374910324",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Well-Worn)",
@@ -1373,7 +1487,7 @@
     {
       "assetid": "50254156237",
       "classid": "7993041046",
-      "instanceid": "8348634585",
+      "instanceid": "8374910322",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Cyrex",
       "market_hash_name": "StatTrak™ M4A1-S | Cyrex (Factory New)",
@@ -1547,9 +1661,45 @@
       ]
     },
     {
+      "assetid": "50835301927",
+      "classid": "7993043907",
+      "instanceid": "902679193",
+      "amount": 1,
+      "name": "StatTrak™ Negev | dev_texture",
+      "market_hash_name": "StatTrak™ Negev | dev_texture (Factory New)",
+      "type": "StatTrak™ Restricted Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "42916680889",
       "classid": "7993044796",
-      "instanceid": "6754953338",
+      "instanceid": "7083226961",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Crimson Web",
       "market_hash_name": "StatTrak™ Desert Eagle | Crimson Web (Factory New)",

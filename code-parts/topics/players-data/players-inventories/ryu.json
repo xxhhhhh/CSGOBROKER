@@ -1,5 +1,6 @@
 {
   "nickname": "ryu",
+  "real_nickname": "ryu",
   "slug": "ryu",
   "steamid64": "76561198168401372",
   "team": "Astralis",
@@ -11,14 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/d5fa1a5b-9fde-4996-bd1e-bab0aa9bb0d2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-08T10:08:56.589Z",
+  "updatedAt": "2026-04-21T00:09:51.220Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 64,
-  "totalItemsGrouped": 64,
+  "totalItemsRaw": 63,
+  "totalItemsGrouped": 63,
   "items": [
     {
       "assetid": "48260726582",
@@ -124,25 +124,17 @@
       ]
     },
     {
-      "assetid": "49410632534",
-      "classid": "7993036736",
+      "assetid": "50713825592",
+      "classid": "7993039831",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Skeleton Knife | Crimson Web",
-      "market_hash_name": "★ Skeleton Knife | Crimson Web (Field-Tested)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208A9A5C5C6302328B92078EAA86A28CBA89B21A1D677E89CAB2E2A8FA82600F6248",
+      "name": "★ Driver Gloves | Snow Leopard",
+      "market_hash_name": "★ Driver Gloves | Snow Leopard (Well-Worn)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -188,21 +180,17 @@
       ]
     },
     {
-      "assetid": "41080475422",
-      "classid": "4901046679",
-      "instanceid": "302028390",
+      "assetid": "50906737490",
+      "classid": "7993040558",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "Recoil Case",
-      "market_hash_name": "Recoil Case",
-      "type": "Base Grade Container",
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Battle-Scarred)",
+      "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -211,6 +199,10 @@
         },
         {
           "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -503,42 +495,6 @@
       ]
     },
     {
-      "assetid": "50502529023",
-      "classid": "7993036541",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "AK-47 | B the Monster",
-      "market_hash_name": "AK-47 | B the Monster (Battle-Scarred)",
-      "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F2E20D2D4F634EF3EAF5D27CF3DAF4C2F6CA675E0D0AF1B233F79AC282E50319ADEE",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50571784680",
       "classid": "7993038008",
       "instanceid": "188530139",
@@ -547,42 +503,6 @@
       "market_hash_name": "AK-47 | Bloodsport (Field-Tested)",
       "type": "Covert Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%202F3FC7CCEF9D932E37280FD02B07291F2B17F0F8AFDD2C6FB22B47395F27735A261B",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49566493994",
-      "classid": "7993037807",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "M4A1-S | Chantico's Fire",
-      "market_hash_name": "M4A1-S | Chantico's Fire (Minimal Wear)",
-      "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B7A71D6D25640FB6AF8B9713B39FB187B38F39723C47B4F754B0DF84C7B3632D751F",
       "tags": [
         {
           "category": "Type",
@@ -1416,6 +1336,42 @@
       ]
     },
     {
+      "assetid": "51064726492",
+      "classid": "7993036107",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "FAMAS | Grey Ghost",
+      "market_hash_name": "FAMAS | Grey Ghost (Minimal Wear)",
+      "type": "Industrial Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "46517557399",
       "classid": "241580826",
       "instanceid": "302028390",
@@ -1670,7 +1626,7 @@
     {
       "assetid": "30865322620",
       "classid": "7993038641",
-      "instanceid": "8204642271",
+      "instanceid": "8399772920",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Water Elemental",
       "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Field-Tested)",
@@ -1722,7 +1678,7 @@
     {
       "assetid": "45872339636",
       "classid": "7993039005",
-      "instanceid": "8347574645",
+      "instanceid": "8382718883",
       "amount": 1,
       "name": "StatTrak™ USP-S | Cortex",
       "market_hash_name": "StatTrak™ USP-S | Cortex (Field-Tested)",
@@ -1758,7 +1714,7 @@
     {
       "assetid": "30896644061",
       "classid": "7993041229",
-      "instanceid": "480125627",
+      "instanceid": "480124952",
       "amount": 1,
       "name": "StatTrak™ MP9 | Food Chain",
       "market_hash_name": "StatTrak™ MP9 | Food Chain (Well-Worn)",
@@ -1794,7 +1750,7 @@
     {
       "assetid": "38236617600",
       "classid": "7993040836",
-      "instanceid": "188578913",
+      "instanceid": "480088337",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Angry Mob",
       "market_hash_name": "StatTrak™ Five-SeveN | Angry Mob (Field-Tested)",
@@ -1830,7 +1786,7 @@
     {
       "assetid": "43054074088",
       "classid": "7993040153",
-      "instanceid": "480088127",
+      "instanceid": "480087963",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Emphorosaur-S",
       "market_hash_name": "StatTrak™ M4A1-S | Emphorosaur-S (Minimal Wear)",

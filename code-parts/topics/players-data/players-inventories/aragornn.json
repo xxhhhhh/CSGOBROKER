@@ -10,19 +10,111 @@
   "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/36bc4b9f-ba4d-468e-bcb6-36a22126fba5",
-  "teamLiquipediaUrl": "",
-  "teamLiquipediaSlug": "",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-10T01:05:18.734Z",
+  "updatedAt": "2026-04-21T00:45:15.889Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 38,
-  "totalItemsGrouped": 34,
+  "totalItemsRaw": 47,
+  "totalItemsGrouped": 43,
   "items": [
+    {
+      "assetid": "50726561145",
+      "classid": "7993042567",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Skeleton Knife | Doppler",
+      "market_hash_name": "★ Skeleton Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C5D53C0F623979C4DD48C1E55AC6EDC3F5C6FD154B252FC68510C2ADE6B5C1D40EC687",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.052741348743,
+      "seed": 981,
+      "phase": "Ruby"
+    },
+    {
+      "assetid": "50947078793",
+      "classid": "7993037104",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Nocts",
+      "market_hash_name": "★ Sport Gloves | Nocts (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50999447372",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "48357843093",
       "classid": "1989275556",
@@ -55,7 +147,38 @@
       ]
     },
     {
-      "assetid": "50288090751",
+      "assetid": "50946993555",
+      "classid": "1989296003",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Quickdraw (Blood Red)",
+      "market_hash_name": "Sealed Graffiti | Quickdraw (Blood Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2090809088549AB090B891A094F297989080239DA092F890E088B3044FB1",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "50946993555"
+      ]
+    },
+    {
+      "assetid": "50288090883",
       "classid": "1989311038",
       "instanceid": "302028390",
       "amount": 5,
@@ -82,11 +205,59 @@
         }
       ],
       "assetids": [
-        "50288090751",
-        "50288090723",
         "50288090883",
         "50288090866",
-        "50288090830"
+        "50288090830",
+        "50288090751",
+        "50288090723"
+      ]
+    },
+    {
+      "assetid": "50988202275",
+      "classid": "7993036958",
+      "instanceid": "6279134712",
+      "amount": 1,
+      "name": "AK-47 | Redline",
+      "market_hash_name": "AK-47 | Redline (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
       ]
     },
     {
@@ -134,6 +305,78 @@
       "market_hash_name": "P90 | Blue Tac (Field-Tested)",
       "type": "Consumer Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20687891E5BEF2D569707B4895614069586C509AB1CE9C6B28F26A00E9E8E8E8641870450EDC88",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51140054561",
+      "classid": "7993037649",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "SSG 08 | Green Ceramic",
+      "market_hash_name": "SSG 08 | Green Ceramic (Factory New)",
+      "type": "Consumer Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50999447373",
+      "classid": "7993067785",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "SSG 08 | Sans Comic",
+      "market_hash_name": "SSG 08 | Sans Comic (Minimal Wear)",
+      "type": "Consumer Grade Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -429,6 +672,37 @@
       ]
     },
     {
+      "assetid": "50946993492",
+      "classid": "6216352776",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Boom Epicenter",
+      "market_hash_name": "Sticker | Boom Epicenter",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F1E1F1E948F8D1F1D9F2C1F593F4F9F1E124CC99F181E6D6B6717E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "50946993492"
+      ]
+    },
+    {
       "assetid": "50628356408",
       "classid": "7993038521",
       "instanceid": "188530139",
@@ -437,6 +711,42 @@
       "market_hash_name": "Dual Berettas | Angel Eyes (Field-Tested)",
       "type": "Restricted Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%2084943C56394938859C86A4478EAC80B480BC0E524F7687C46780ECA6F48C27BB6F48",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50790294386",
+      "classid": "7993040018",
+      "instanceid": "188530398",
+      "amount": 1,
+      "name": "StatTrak™ MP5-SD | Necro Jr.",
+      "market_hash_name": "StatTrak™ MP5-SD | Necro Jr. (Battle-Scarred)",
+      "type": "StatTrak™ Mil-Spec Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

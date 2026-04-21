@@ -10,28 +10,25 @@
   "isContentCreator": false,
   "twitch": "phzy1",
   "faceit": "https://faceitdb.com/profile/faceit/0411cac3-a510-4af0-96d1-b032a4e766ac",
-  "teamLiquipediaUrl": "",
-  "teamLiquipediaSlug": "",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-10T00:35:34.988Z",
+  "updatedAt": "2026-04-21T00:09:38.633Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 119,
-  "totalItemsGrouped": 118,
+  "totalItemsRaw": 138,
+  "totalItemsGrouped": 137,
   "items": [
     {
-      "assetid": "50055825596",
-      "classid": "7993043455",
-      "instanceid": "480085569",
+      "assetid": "50937298267",
+      "classid": "7993041986",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Karambit | Gamma Doppler",
-      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
+      "name": "★ Butterfly Knife | Doppler",
+      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204151FDD0FCFDFB4059BA4261F945694771427983E0EBA24201A14629CA403145D28AEADF",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201000CBEAF5F0AD1108931430FA143816201328D2B1D1F01350A91578676018DEFEB417",
       "tags": [
         {
           "category": "Type",
@@ -39,6 +36,10 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -54,9 +55,9 @@
           "name": ""
         }
       ],
-      "float": 0.014316739514,
-      "seed": 992,
-      "phase": "Emerald"
+      "float": 0.008808316663,
+      "seed": 697,
+      "phase": "Phase 2"
     },
     {
       "assetid": "50715070254",
@@ -212,6 +213,30 @@
       ],
       "assetids": [
         "33969752278"
+      ]
+    },
+    {
+      "assetid": "50985049756",
+      "classid": "7729110306",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Name Tag",
+      "market_hash_name": "Name Tag",
+      "type": "Base Grade Tag",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2011011109A11831113910211579116113D1570CDF",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
       ]
     },
     {
@@ -438,42 +463,6 @@
       ]
     },
     {
-      "assetid": "50720671706",
-      "classid": "7993038524",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "USP-S | Target Acquired",
-      "market_hash_name": "USP-S | Target Acquired (Factory New)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BDAD67327D4401BCA5809D3EB595B88DB9853E07045ABEFD4CBFD5E5CDB983D303CD",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "37091606549",
       "classid": "7993041398",
       "instanceid": "6276363913",
@@ -554,6 +543,42 @@
       ]
     },
     {
+      "assetid": "50735249456",
+      "classid": "7993041183",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "M4A1-S | Stratosphere",
+      "market_hash_name": "M4A1-S | Stratosphere (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50410628822",
       "classid": "7993037072",
       "instanceid": "188530139",
@@ -562,6 +587,78 @@
       "market_hash_name": "Sawed-Off | Kiss♥Love (Field-Tested)",
       "type": "Classified Shotgun",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BCAC6A71685907BDA4A19C3FB594B98CB88458667F49BFFC67BFD429BDCCB4797BEFBD",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50735248498",
+      "classid": "7993037978",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAC-10 | Disco Tech",
+      "market_hash_name": "MAC-10 | Disco Tech (Minimal Wear)",
+      "type": "Classified SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50849614692",
+      "classid": "7993037703",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP5-SD | Phosphor",
+      "market_hash_name": "MP5-SD | Phosphor (Minimal Wear)",
+      "type": "Classified SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -626,14 +723,58 @@
       ]
     },
     {
-      "assetid": "50722722565",
-      "classid": "7993038089",
-      "instanceid": "480085569",
+      "assetid": "50833859754",
+      "classid": "7993039939",
+      "instanceid": "6276322136",
       "amount": 1,
-      "name": "SSG 08 | Turbo Peek",
-      "market_hash_name": "SSG 08 | Turbo Peek (Minimal Wear)",
+      "name": "G3SG1 | Flux",
+      "market_hash_name": "G3SG1 | Flux (Minimal Wear)",
       "type": "Classified Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F8E87D5E450244F9E0D0D835F0D0FDC8FCC07E073108FBB80AFC90AF88FCB9F22DC0",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50875055147",
+      "classid": "7993045621",
+      "instanceid": "6277019079",
+      "amount": 1,
+      "name": "SSG 08 | Bloodshot",
+      "market_hash_name": "SSG 08 | Bloodshot (Minimal Wear)",
+      "type": "Classified Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -662,14 +803,14 @@
       ]
     },
     {
-      "assetid": "50710355903",
-      "classid": "7993036922",
-      "instanceid": "519977179",
+      "assetid": "50722722565",
+      "classid": "7993038089",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "AK-47 | B the Monster",
-      "market_hash_name": "AK-47 | B the Monster (Minimal Wear)",
-      "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204B5BF4F481BFF74A534C6BC54A634D7B4F73D991FAA6480B994823884A3B5C3D3802B9",
+      "name": "SSG 08 | Turbo Peek",
+      "market_hash_name": "SSG 08 | Turbo Peek (Minimal Wear)",
+      "type": "Classified Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F8E87D5E450244F9E0D0D835F0D0FDC8FCC07E073108FBB80AFC90AF88FCB9F22DC0",
       "tags": [
         {
           "category": "Type",
@@ -734,6 +875,114 @@
       ]
     },
     {
+      "assetid": "50731408938",
+      "classid": "7993036534",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "M4A1-S | Fade",
+      "market_hash_name": "M4A1-S | Fade (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50806481130",
+      "classid": "7993036833",
+      "instanceid": "6276318358",
+      "amount": 1,
+      "name": "M4A1-S | Vaporwave",
+      "market_hash_name": "M4A1-S | Vaporwave (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50728002382",
+      "classid": "7993040088",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "M4A4 | In Living Color",
+      "market_hash_name": "M4A4 | In Living Color (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50713386264",
       "classid": "7993036796",
       "instanceid": "188530139",
@@ -742,6 +991,42 @@
       "market_hash_name": "M4A4 | Temukau (Factory New)",
       "type": "Covert Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%204151D9FBC2B7FD405951618D486947714579CCE4EEAD420181472975314958F18B15",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50728003380",
+      "classid": "7993041146",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAC-10 | Neon Rider",
+      "market_hash_name": "MAC-10 | Neon Rider (Factory New)",
+      "type": "Covert SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -822,6 +1107,50 @@
       ]
     },
     {
+      "assetid": "50985064528",
+      "classid": "188530250",
+      "instanceid": "8398290068",
+      "amount": 1,
+      "name": "AWP | Lightning Strike",
+      "market_hash_name": "AWP | Lightning Strike (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "47868207091",
       "classid": "7732421591",
       "instanceid": "0",
@@ -829,7 +1158,7 @@
       "name": "Sticker Slab | phzy (Holo) | Austin 2025",
       "market_hash_name": "Sticker Slab | phzy (Holo) | Austin 2025",
       "type": "Customized Exotic Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ABBBABB360A18BAB83AE9BA3C3ABDBAB09AAACA3ABBB8ECB46ED834D9EEB",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EAFAEAF221E0CAEAC2EFDAE282EA9AEA48EBEDE2EAFACF8A07ACB135FE8A",
       "tags": [
         {
           "category": "Type",
@@ -927,14 +1256,14 @@
       ]
     },
     {
-      "assetid": "48439827990",
+      "assetid": "47783569360",
       "classid": "7731372711",
       "instanceid": "0",
-      "amount": 2,
+      "amount": 1,
       "name": "Sticker Slab | phzy (Gold) | Shanghai 2024",
       "market_hash_name": "Sticker Slab | phzy (Gold) | Shanghai 2024",
       "type": "Customized Extraordinary Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DFCFDFC714D5FFDFF7D9EFD7B7DFAFDF7DDED8D7DFCFFABF779D3687C2C7",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20918191895A9BB191B997A199F991E191339096999181B4F139D31622F0E9",
       "tags": [
         {
           "category": "Type",
@@ -958,7 +1287,6 @@
         }
       ],
       "assetids": [
-        "48439827990",
         "47783569360"
       ]
     },
@@ -1040,7 +1368,7 @@
       "name": "Sticker Slab | phzy (Foil) | Austin 2025",
       "market_hash_name": "Sticker Slab | phzy (Foil) | Austin 2025",
       "type": "Customized Remarkable Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F8E8F8E033F2D8F8D0FCC8F090F888F85AF9FFF0F8E8DD9814BEA520DED0",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2029392931E2230929012D1921412959298B282E2129390C49C56F0F095E59",
       "tags": [
         {
           "category": "Type",
@@ -1100,6 +1428,30 @@
       ],
       "assetids": [
         "47783584926"
+      ]
+    },
+    {
+      "assetid": "50729925084",
+      "classid": "2750358421",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Aces High Pin",
+      "market_hash_name": "Aces High Pin",
+      "type": "Exotic Collectible",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201404140CE63B34143C1124107C14641C21D93A1A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
       ]
     },
     {
@@ -1833,7 +2185,7 @@
       "name": "Baggage Pin",
       "market_hash_name": "Baggage Pin",
       "type": "High Grade Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20988898807AB7B898B09BA89CF098E8909A4120D6",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FEEEFEE61CD1DEFED6FDCEFA96FE8EF64562FB62",
       "tags": [
         {
           "category": "Type",
@@ -1857,7 +2209,7 @@
       "name": "Bravo Pin",
       "market_hash_name": "Bravo Pin",
       "type": "High Grade Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CFDFCFD72EE0EFCFE7CCFFCBA7CFBFC79199AE77",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202232223AC30D02220A2112264A22522A63242EFE",
       "tags": [
         {
           "category": "Type",
@@ -2097,7 +2449,7 @@
       "name": "Tactics Pin",
       "market_hash_name": "Tactics Pin",
       "type": "High Grade Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AEBEAEB671818EAE86AD9EAAC6AEDEA6F5EDAFDE",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208B9B8B9354A4AB8BA388BB8FE38BFB839B33ECA5",
       "tags": [
         {
           "category": "Type",
@@ -2259,6 +2611,78 @@
       ]
     },
     {
+      "assetid": "50827502329",
+      "classid": "7993037207",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "XM1014 | Gum Wall Camo",
+      "market_hash_name": "XM1014 | Gum Wall Camo (Factory New)",
+      "type": "Industrial Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50937164484",
+      "classid": "7993036938",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "P2000 | Royal Baroque",
+      "market_hash_name": "P2000 | Royal Baroque (Factory New)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "40635262765",
       "classid": "7993037496",
       "instanceid": "7755476488",
@@ -2390,7 +2814,7 @@
       "name": "Headcrab Glyph Pin",
       "market_hash_name": "Headcrab Glyph Pin",
       "type": "Remarkable Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2070607068BD545070587440741870007860E5172C",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20819181994CA5A181A985B185E981F189BC26CFDD",
       "tags": [
         {
           "category": "Type",
@@ -2438,7 +2862,7 @@
       "name": "Italy Pin",
       "market_hash_name": "Italy Pin",
       "type": "Remarkable Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C3D3C3DB1AECE3C3EBC7F3C7ABC3B3CB340362B3",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208696869E5FA9A686AE82B682EE86F68E8C8C8CBE",
       "tags": [
         {
           "category": "Type",
@@ -2462,7 +2886,7 @@
       "name": "Militia Pin",
       "market_hash_name": "Militia Pin",
       "type": "Remarkable Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EEFEEEF635C1CEEEC6EADEEA86EE9EE62B722340",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204B5B4B5390646B4B634F7B4F234B3B43D5FE3C73",
       "tags": [
         {
           "category": "Type",
@@ -2486,7 +2910,7 @@
       "name": "Wildfire Pin",
       "market_hash_name": "Wildfire Pin",
       "type": "Remarkable Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207E6E7E668E515E7E567A4E7A167E0E765B82B970",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A9B9A9B1598689A981AD99ADC1A9D9A1002E8835",
       "tags": [
         {
           "category": "Type",
@@ -2538,6 +2962,50 @@
       ]
     },
     {
+      "assetid": "50943553742",
+      "classid": "2135301169",
+      "instanceid": "188530139",
+      "amount": 2,
+      "name": "Sticker | SK Gaming (Holo) | Atlanta 2017",
+      "market_hash_name": "Sticker | SK Gaming (Holo) | Atlanta 2017",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D3C3D3CB6ADAF3D3FBD7E3D7B1D6DBD3C32CDEBBD3A3DBFC59935A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "50943553742",
+        "50943550750"
+      ]
+    },
+    {
       "assetid": "50720588299",
       "classid": "7993037662",
       "instanceid": "6278005097",
@@ -2577,6 +3045,78 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50827506924",
+      "classid": "7993038304",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Dual Berettas | Sweet Little Angels",
+      "market_hash_name": "Dual Berettas | Sweet Little Angels (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50735245830",
+      "classid": "7993038509",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Glock-18 | Moonrise",
+      "market_hash_name": "Glock-18 | Moonrise (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -2826,6 +3366,86 @@
       ]
     },
     {
+      "assetid": "50827499756",
+      "classid": "7993045069",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ Dual Berettas | Melondrama",
+      "market_hash_name": "StatTrak™ Dual Berettas | Melondrama (Factory New)",
+      "type": "StatTrak™ Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50985121109",
+      "classid": "7993044196",
+      "instanceid": "8399960055",
+      "amount": 1,
+      "name": "StatTrak™ AK-47 | Neon Rider",
+      "market_hash_name": "StatTrak™ AK-47 | Neon Rider (Factory New)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "32940743309",
       "classid": "7993038050",
       "instanceid": "6448270423",
@@ -2878,6 +3498,78 @@
       "market_hash_name": "StatTrak™ CZ75-Auto | Tacticat (Factory New)",
       "type": "StatTrak™ Restricted Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DECE2B5D2C2B62DFC6E1FE71DBF6DAEED7E6706B6232DD9E43DF96DE8EFCBCD4D6DDCE08FBFB532C51E1B6EBAED6BBB9141E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50827504891",
+      "classid": "7993040044",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ PP-Bizon | Space Cat",
+      "market_hash_name": "StatTrak™ PP-Bizon | Space Cat (Factory New)",
+      "type": "StatTrak™ Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50735247201",
+      "classid": "7993041851",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ UMP-45 | Moonrise",
+      "market_hash_name": "StatTrak™ UMP-45 | Moonrise (Factory New)",
+      "type": "StatTrak™ Restricted SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

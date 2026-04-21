@@ -1,5 +1,6 @@
 {
   "nickname": "ArtFr0st",
+  "real_nickname": "ArtFr0st",
   "slug": "artfr0st",
   "steamid64": "76561198156778414",
   "team": "BetBoom Team",
@@ -11,27 +12,30 @@
   "faceit": "https://faceitdb.com/profile/faceit/0ab98e48-776d-4ec4-86be-0d3bc0f4f06d",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-08T10:22:53.098Z",
+  "updatedAt": "2026-04-21T00:23:21.791Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 305,
-  "totalItemsGrouped": 133,
+  "totalItemsRaw": 303,
+  "totalItemsGrouped": 132,
   "items": [
     {
-      "assetid": "48994090477",
-      "classid": "7993039772",
+      "assetid": "50829441551",
+      "classid": "7993042312",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Broken Fang Gloves | Yellow-banded",
-      "market_hash_name": "★ Broken Fang Gloves | Yellow-banded (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2090807D6B095226918865B4B076DEB896A093A8062F4F7F93D089F81192E0982E3E020E",
+      "name": "★ Flip Knife | Gamma Doppler",
+      "market_hash_name": "★ Flip Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CDDD4239636070CCD534CEED75C9E5CBFDCEF5487B3B2DCE8D2ACAA5C2BDC59266D81B",
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
           "name": ""
         },
         {
@@ -46,17 +50,55 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.009619479068,
+      "seed": 999,
+      "phase": "Emerald"
     },
     {
-      "assetid": "48681999547",
-      "classid": "7993036899",
+      "assetid": "50899114219",
+      "classid": "7993043148",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Sport Gloves | Pandora's Box",
-      "market_hash_name": "★ Sport Gloves | Pandora's Box (Field-Tested)",
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205C4CB7ED9792E15D44A05F7CFC5F745A6C5F64B2DCF6B95F1C8D58343A2C5450739F46",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.020813193172,
+      "seed": 593,
+      "phase": "Sapphire"
+    },
+    {
+      "assetid": "48994090477",
+      "classid": "7993039772",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Broken Fang Gloves | Yellow-banded",
+      "market_hash_name": "★ Broken Fang Gloves | Yellow-banded (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200B1BB0B2BAA6BE0A13AD2C2BBE45230D3B0833FAE2E9F9084BEA0C63697B03727D6EB0",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2090807D6B095226918865B4B076DEB896A093A8062F4F7F93D089F81192E0982E3E020E",
       "tags": [
         {
           "category": "Type",
@@ -469,7 +511,69 @@
       ]
     },
     {
-      "assetid": "49388410882",
+      "assetid": "51177306891",
+      "classid": "1989274466",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | 8-Ball (Bazooka Pink)",
+      "market_hash_name": "Graffiti | 8-Ball (Bazooka Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2010001008D51A3010381120147217181000A91D200078106008ED0895BE",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51177306891"
+      ]
+    },
+    {
+      "assetid": "51177305962",
+      "classid": "1989274207",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Double (Monster Purple)",
+      "market_hash_name": "Graffiti | Double (Monster Purple)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20495949518C4369496148794D2B4E414959EF4479462149395106F3B7AD",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51177305962"
+      ]
+    },
+    {
+      "assetid": "51195470362",
       "classid": "1989275183",
       "instanceid": "302028390",
       "amount": 1,
@@ -496,7 +600,7 @@
         }
       ],
       "assetids": [
-        "49388410882"
+        "51195470362"
       ]
     },
     {
@@ -538,7 +642,7 @@
       "name": "Graffiti | Noscope (Violent Violet)",
       "market_hash_name": "Graffiti | Noscope (Violent Violet)",
       "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B5A5B5AD70BF95B59DB485B1D7B2BDB5A574B885BBDDB5C5ADAC95AEA7",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204C5C4C5489466C4C644D7C482E4B444C5C8D417C42244C3C5460BA9D67",
       "tags": [
         {
           "category": "Type",
@@ -559,107 +663,6 @@
       ],
       "assetids": [
         "31754621618"
-      ]
-    },
-    {
-      "assetid": "31844911794",
-      "classid": "3600674066",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Graffiti | Smirk (Bazooka Pink)",
-      "market_hash_name": "Graffiti | Smirk (Bazooka Pink)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209686968E539CB696BE97A692F4919E96863989A686FE96E68178DE25BF",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        },
-        {
-          "category": "SprayCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "31844911794"
-      ]
-    },
-    {
-      "assetid": "31844912629",
-      "classid": "3600666610",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Graffiti | Smirk (Violent Violet)",
-      "market_hash_name": "Graffiti | Smirk (Violent Violet)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202535253DE02F05250D24152147222D25358A3A152B4D25553287776925",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        },
-        {
-          "category": "SprayCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "31844912629"
-      ]
-    },
-    {
-      "assetid": "47119131065",
-      "classid": "1989286467",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Graffiti | 8-Ball (Bazooka Pink)",
-      "market_hash_name": "Sealed Graffiti | 8-Ball (Bazooka Pink)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20889888904C82A888A089B88CEA8F8088983185B898E088F89054F09CF2",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "47119131065"
       ]
     },
     {
@@ -691,38 +694,6 @@
       ],
       "assetids": [
         "50659905741"
-      ]
-    },
-    {
-      "assetid": "20335768311",
-      "classid": "1989296092",
-      "instanceid": "302028390",
-      "amount": 2,
-      "name": "Sealed Graffiti | Double (Monster Purple)",
-      "market_hash_name": "Sealed Graffiti | Double (Monster Purple)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203424342CF03E14341C35043056333C34249239043B5C34442CA3C3BFEF",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "20335768311",
-        "20026824285"
       ]
     },
     {
@@ -1925,7 +1896,7 @@
       "name": "Sticker | Spirit (Foil) | 2020 RMR",
       "market_hash_name": "Sticker | Spirit (Foil) | 2020 RMR",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B4A4B4AC0DBD94B49CB184B0D6B1BCB4A43F91DCB4C4BCA022766B",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D5C5D5CD6CDCF5D5FDD0E5D1B7D0DDD5C55EF0BDD5A5DD666A1B7E",
       "tags": [
         {
           "category": "Type",
@@ -2725,7 +2696,7 @@
       "name": "Sticker | Liquid (Gold) | 2020 RMR",
       "market_hash_name": "Sticker | Liquid (Gold) | 2020 RMR",
       "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E4F4E4FC5DEDC4E4CCE2D4E086E1ECE4F448C18CE494ECD6CF4694",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2009190911B0002909210F390D6B0C010919A52C61097901B0D2A056",
       "tags": [
         {
           "category": "Type",
@@ -2912,7 +2883,7 @@
       "name": "Sticker | donk | Copenhagen 2024",
       "market_hash_name": "Sticker | donk | Copenhagen 2024",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2078687860C1715878507B487C1A7D707868DF4210780870719A3AF4",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EEFEEEF657E7CEEEC6EDDEEA8CEBE6EEFE49D486EE9EE6E4CB9920",
       "tags": [
         {
           "category": "Type",
@@ -3077,7 +3048,7 @@
       "name": "Sticker | magixx | Rio 2022",
       "market_hash_name": "Sticker | magixx | Rio 2022",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E6F6E6FE5FEFC6E6CEE5D6E284E3EEE6F630D68EE696EE696844B1",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B5A5B5AD0CBC95B59DB685B1D7B0BDB5A56385DDB5C5BD89D66E35",
       "tags": [
         {
           "category": "Type",
@@ -4338,7 +4309,7 @@
     {
       "assetid": "39145674510",
       "classid": "7993040817",
-      "instanceid": "8339541701",
+      "instanceid": "8400069636",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Factory New)",
@@ -4386,7 +4357,7 @@
     {
       "assetid": "39054013534",
       "classid": "7993036844",
-      "instanceid": "8339771095",
+      "instanceid": "8400069637",
       "amount": 1,
       "name": "StatTrak™ USP-S | Neo-Noir",
       "market_hash_name": "StatTrak™ USP-S | Neo-Noir (Minimal Wear)",
@@ -4482,7 +4453,7 @@
     {
       "assetid": "39527696170",
       "classid": "7993043676",
-      "instanceid": "905726571",
+      "instanceid": "905503143",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Factory New)",
@@ -4566,7 +4537,7 @@
     {
       "assetid": "17539298663",
       "classid": "7993041222",
-      "instanceid": "7615075562",
+      "instanceid": "7037368820",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Violent Daimyo",
       "market_hash_name": "StatTrak™ Five-SeveN | Violent Daimyo (Minimal Wear)",

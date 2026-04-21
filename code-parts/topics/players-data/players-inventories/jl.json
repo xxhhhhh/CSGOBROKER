@@ -1,5 +1,6 @@
 {
   "nickname": "jL",
+  "real_nickname": "jL",
   "slug": "jl",
   "steamid64": "76561198176878303",
   "team": "Natus Vincere",
@@ -11,14 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/23b6ffbb-86ec-47ab-acaa-9c76bed0af66",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-08T15:27:53.013Z",
+  "updatedAt": "2026-04-21T00:52:51.902Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 163,
-  "totalItemsGrouped": 160,
+  "totalItemsRaw": 162,
+  "totalItemsGrouped": 159,
   "items": [
     {
       "assetid": "47272389846",
@@ -447,34 +447,6 @@
       ]
     },
     {
-      "assetid": "44448041950",
-      "classid": "7993039885",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Vice",
-      "market_hash_name": "★ Sport Gloves | Vice (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AABA743D17600FABB20C8D8A6AE482AC9AA99240443B44A9EA09A9C2B4DAA2569E7E73",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49928952644",
       "classid": "7993054871",
       "instanceid": "188530170",
@@ -526,7 +498,7 @@
       "name": "Sticker Slab",
       "market_hash_name": "Sticker Slab",
       "type": "Base Grade Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2021312139813E01210920112549215123E0BB5651",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CDDDCDD56DD2EDCDE5CCFDC9A5CDBDCF1677E103",
       "tags": [
         {
           "category": "Type",
@@ -543,37 +515,6 @@
       ],
       "assetids": [
         "48012725531"
-      ]
-    },
-    {
-      "assetid": "49857322194",
-      "classid": "1989301588",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Graffiti | Backstab (Monster Purple)",
-      "market_hash_name": "Sealed Graffiti | Backstab (Monster Purple)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206D7D6D75A9674D6D456C5D690F6A656D7DD9605D62056D1D75D7E7CC0E",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "49857322194"
       ]
     },
     {
@@ -1766,14 +1707,14 @@
       ]
     },
     {
-      "assetid": "50560631871",
+      "assetid": "51157726082",
       "classid": "7993036942",
-      "instanceid": "8347889799",
+      "instanceid": "6299873236",
       "amount": 1,
       "name": "USP-S | Printstream",
       "market_hash_name": "USP-S | Printstream (Factory New)",
       "type": "Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2030208FB8A89D8C31280D10C6381836003408E2C88EE933707D5235383020B3315235383120B3315235383220B3315235383320B3315224383420F1362DBA5F4E0F0D0C6FBA0E7530EA098B58234038923126383020150D913CC30F756202BC0E7D0A5E5C7050DB7903595C56",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2167,6 +2108,77 @@
           "category": "Exterior",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "50882904980",
+      "classid": "7993037689",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AWP | Printstream",
+      "market_hash_name": "AWP | Printstream (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51157719298",
+      "classid": "7729239562",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Sticker Slab | Candy Apples",
+      "market_hash_name": "Sticker Slab | Candy Apples",
+      "type": "Customized High Grade Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BEAEBEA675B49EBE96BD8EB6D6BECEBE1CBFB9B6BEAE9BDE55F701C79C2E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51157719298"
       ]
     },
     {
@@ -3111,7 +3123,7 @@
       "name": "Bravo Pin",
       "market_hash_name": "Bravo Pin",
       "type": "High Grade Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CFDFCFD72EE0EFCFE7CCFFCBA7CFBFC79199AE77",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202232223AC30D02220A2112264A22522A63242EFE",
       "tags": [
         {
           "category": "Type",
@@ -3135,7 +3147,7 @@
       "name": "Bravo Pin",
       "market_hash_name": "Bravo Pin",
       "type": "High Grade Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CFDFCFD72EE0EFCFE7CCFFCBA7CFBFC79199AE77",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202232223AC30D02220A2112264A22522A63242EFE",
       "tags": [
         {
           "category": "Type",
@@ -3159,7 +3171,7 @@
       "name": "Bravo Pin",
       "market_hash_name": "Bravo Pin",
       "type": "High Grade Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CFDFCFD72EE0EFCFE7CCFFCBA7CFBFC79199AE77",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202232223AC30D02220A2112264A22522A63242EFE",
       "tags": [
         {
           "category": "Type",
@@ -3470,7 +3482,7 @@
       ]
     },
     {
-      "assetid": "50560625063",
+      "assetid": "50560625073",
       "classid": "7545311983",
       "instanceid": "519977179",
       "amount": 4,
@@ -3497,10 +3509,10 @@
         }
       ],
       "assetids": [
-        "50560625063",
-        "50560625049",
         "50560625073",
-        "50560625069"
+        "50560625069",
+        "50560625063",
+        "50560625049"
       ]
     },
     {
@@ -3926,37 +3938,6 @@
       ]
     },
     {
-      "assetid": "40745100883",
-      "classid": "6216370068",
-      "instanceid": "0",
-      "amount": 1,
-      "name": "Charm | Glamour Shot",
-      "market_hash_name": "Charm | Glamour Shot",
-      "type": "Remarkable Charm",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "40745100883"
-      ]
-    },
-    {
       "assetid": "45215658696",
       "classid": "1988109701",
       "instanceid": "188530139",
@@ -4012,7 +3993,7 @@
       "name": "Militia Pin",
       "market_hash_name": "Militia Pin",
       "type": "Remarkable Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EEFEEEF635C1CEEEC6EADEEA86EE9EE62B722340",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204B5B4B5390646B4B634F7B4F234B3B43D5FE3C73",
       "tags": [
         {
           "category": "Type",
@@ -4036,7 +4017,7 @@
       "name": "Militia Pin",
       "market_hash_name": "Militia Pin",
       "type": "Remarkable Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EEFEEEF635C1CEEEC6EADEEA86EE9EE62B722340",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204B5B4B5390646B4B634F7B4F234B3B43D5FE3C73",
       "tags": [
         {
           "category": "Type",
@@ -4060,7 +4041,7 @@
       "name": "Militia Pin",
       "market_hash_name": "Militia Pin",
       "type": "Remarkable Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EEFEEEF635C1CEEEC6EADEEA86EE9EE62B722340",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204B5B4B5390646B4B634F7B4F234B3B43D5FE3C73",
       "tags": [
         {
           "category": "Type",
@@ -4108,7 +4089,7 @@
       "name": "Victory Pin",
       "market_hash_name": "Victory Pin",
       "type": "Remarkable Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A8B8A8B0728788A880AC98ACC0A8D8A063576EB4",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20415141599B6E61416945714529413149893092CF",
       "tags": [
         {
           "category": "Type",
@@ -4979,7 +4960,7 @@
     {
       "assetid": "39932469240",
       "classid": "7993043744",
-      "instanceid": "8355823678",
+      "instanceid": "8387458402",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Fuel Injector",
       "market_hash_name": "StatTrak™ Tec-9 | Fuel Injector (Factory New)",
@@ -5151,7 +5132,7 @@
     {
       "assetid": "39460646389",
       "classid": "7993043816",
-      "instanceid": "7117738236",
+      "instanceid": "8365497785",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Neon Rider",
       "market_hash_name": "StatTrak™ AK-47 | Neon Rider (Field-Tested)",
@@ -5247,7 +5228,7 @@
     {
       "assetid": "42810275961",
       "classid": "7993038809",
-      "instanceid": "7129223748",
+      "instanceid": "6476896233",
       "amount": 1,
       "name": "StatTrak™ M4A4 | In Living Color",
       "market_hash_name": "StatTrak™ M4A4 | In Living Color (Factory New)",
@@ -5443,7 +5424,7 @@
     {
       "assetid": "29697533601",
       "classid": "7993042418",
-      "instanceid": "6384806235",
+      "instanceid": "8360196687",
       "amount": 1,
       "name": "StatTrak™ P250 | Supernova",
       "market_hash_name": "StatTrak™ P250 | Supernova (Factory New)",

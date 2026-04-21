@@ -1,5 +1,6 @@
 {
   "nickname": "device",
+  "real_nickname": "device",
   "slug": "device",
   "steamid64": "76561197987713664",
   "team": "100 Thieves",
@@ -11,14 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/d6bc4849-5256-4463-a38e-bcd77fc31ff9",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-08T10:52:26.114Z",
+  "updatedAt": "2026-04-21T00:38:58.136Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 100,
-  "totalItemsGrouped": 100,
+  "totalItemsRaw": 101,
+  "totalItemsGrouped": 101,
   "items": [
     {
       "assetid": "49995792243",
@@ -54,6 +54,34 @@
       "float": 0.03498788178,
       "seed": 8,
       "phase": "Sapphire"
+    },
+    {
+      "assetid": "50826827717",
+      "classid": "8247439252",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Driver Gloves | Garden",
+      "market_hash_name": "★ Driver Gloves | Garden (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "50564551420",
@@ -198,7 +226,7 @@
     {
       "assetid": "50564551425",
       "classid": "7993043109",
-      "instanceid": "188530329",
+      "instanceid": "188530937",
       "amount": 1,
       "name": "★ StatTrak™ M9 Bayonet | Doppler",
       "market_hash_name": "★ StatTrak™ M9 Bayonet | Doppler (Factory New)",
@@ -3320,7 +3348,7 @@
     {
       "assetid": "47919483237",
       "classid": "7993040817",
-      "instanceid": "8357494852",
+      "instanceid": "8398734756",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Factory New)",
@@ -3436,7 +3464,7 @@
     {
       "assetid": "43430887464",
       "classid": "7993039194",
-      "instanceid": "188532419",
+      "instanceid": "188531566",
       "amount": 1,
       "name": "StatTrak™ MP9 | Nexus",
       "market_hash_name": "StatTrak™ MP9 | Nexus (Minimal Wear)",

@@ -12,24 +12,23 @@
   "faceit": "https://faceitdb.com/profile/faceit/34f2fbd3-f206-46c5-bb93-30a865950d59",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-08T19:25:08.333Z",
+  "updatedAt": "2026-04-21T00:57:21.952Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 69,
-  "totalItemsGrouped": 69,
+  "totalItemsRaw": 70,
+  "totalItemsGrouped": 70,
   "items": [
     {
-      "assetid": "49822782314",
-      "classid": "7993097009",
-      "instanceid": "480085569",
+      "assetid": "50967226527",
+      "classid": "7993041144",
+      "instanceid": "8360842852",
       "amount": 1,
-      "name": "★ Classic Knife | Crimson Web",
-      "market_hash_name": "★ Classic Knife | Crimson Web (Factory New)",
+      "name": "★ Karambit | Gamma Doppler",
+      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208F9F65292242368E97788CAF83A789BF8CB7477A37638CCF2F8EE798FF8BDE1C63C3",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204858D799C0A7F54950B34B68F34C604E784B70FAC4D3A04B08D14E207E38408B7CC49E",
       "tags": [
         {
           "category": "Type",
@@ -37,10 +36,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -55,17 +50,20 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.032903857529,
+      "seed": 793,
+      "phase": "Phase 3"
     },
     {
-      "assetid": "25069575036",
-      "classid": "7993108655",
-      "instanceid": "188530139",
+      "assetid": "50977824990",
+      "classid": "7993047541",
+      "instanceid": "8360842852",
       "amount": 1,
-      "name": "★ Karambit | Crimson Web",
-      "market_hash_name": "★ Karambit | Crimson Web (Factory New)",
+      "name": "★ Shadow Daggers | Scorched",
+      "market_hash_name": "★ Shadow Daggers | Scorched (Well-Worn)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200313FFB58EB15E1BF800230F2B0533003BB4D7B7EF00438B066B20730B1BBFEC5C",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -73,6 +71,10 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -127,6 +129,42 @@
       "float": 0.033647499979,
       "seed": 334,
       "phase": "Ruby"
+    },
+    {
+      "assetid": "50953996002",
+      "classid": "7993047120",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Survival Knife | Scorched",
+      "market_hash_name": "★ Survival Knife | Scorched (Well-Worn)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "9889361932",
@@ -372,14 +410,14 @@
       ]
     },
     {
-      "assetid": "49840512402",
+      "assetid": "50970608125",
       "classid": "7993037248",
       "instanceid": "8183197796",
       "amount": 1,
       "name": "M4A1-S | Hot Rod",
       "market_hash_name": "M4A1-S | Hot Rod (Factory New)",
       "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B5A5270E52600CB4AD899508B69DB085B18D0B734455B6F527B7D7B0BDB4A51892D7B0BDB7A57ABEDD97C5AD17B4A2BDB5A5B288EBE05AF5F0A241998AF8339F15F5E51806B7652E187D",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -535,42 +573,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "33296474038",
-      "classid": "7993037829",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AWP | Wildfire",
-      "market_hash_name": "AWP | Wildfire (Factory New)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2027379198D8A35B3F2E07B2200F2117231FCCB693C624679C244FA126572F19C18677",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1582,6 +1584,42 @@
       ]
     },
     {
+      "assetid": "50954642516",
+      "classid": "7993038982",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "M4A4 | Sheet Lightning",
+      "market_hash_name": "M4A4 | Sheet Lightning (Factory New)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "7020518458",
       "classid": "7993043882",
       "instanceid": "7628479903",
@@ -1840,7 +1878,7 @@
     {
       "assetid": "33296469568",
       "classid": "7993039759",
-      "instanceid": "8356642561",
+      "instanceid": "8385141772",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Water Elemental",
       "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Factory New)",
@@ -1948,7 +1986,7 @@
     {
       "assetid": "33296447651",
       "classid": "7993044659",
-      "instanceid": "8353132638",
+      "instanceid": "8385141773",
       "amount": 1,
       "name": "StatTrak™ AWP | BOOM",
       "market_hash_name": "StatTrak™ AWP | BOOM (Factory New)",
@@ -2000,7 +2038,7 @@
     {
       "assetid": "33296477876",
       "classid": "7993042872",
-      "instanceid": "8356642560",
+      "instanceid": "8385141771",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Minimal Wear)",
@@ -2052,7 +2090,7 @@
     {
       "assetid": "49743474799",
       "classid": "7993043736",
-      "instanceid": "8356642559",
+      "instanceid": "8385141770",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Minimal Wear)",
@@ -2152,7 +2190,7 @@
     {
       "assetid": "40184804711",
       "classid": "7993042139",
-      "instanceid": "188537245",
+      "instanceid": "188537359",
       "amount": 1,
       "name": "StatTrak™ Dual Berettas | Hemoglobin",
       "market_hash_name": "StatTrak™ Dual Berettas | Hemoglobin (Factory New)",
@@ -2188,7 +2226,7 @@
     {
       "assetid": "7020382089",
       "classid": "7993043248",
-      "instanceid": "8303649581",
+      "instanceid": "8380275385",
       "amount": 1,
       "name": "StatTrak™ P250 | Splash",
       "market_hash_name": "StatTrak™ P250 | Splash (Minimal Wear)",
@@ -2248,7 +2286,7 @@
     {
       "assetid": "7020328954",
       "classid": "7993041816",
-      "instanceid": "8353295084",
+      "instanceid": "8377404668",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Valence",
       "market_hash_name": "StatTrak™ FAMAS | Valence (Field-Tested)",

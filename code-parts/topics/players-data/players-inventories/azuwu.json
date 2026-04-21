@@ -10,28 +10,25 @@
   "isContentCreator": false,
   "twitch": "azuwucs",
   "faceit": "https://faceitdb.com/profile/faceit/004181c4-494a-44a6-be60-3c80264e84aa",
-  "teamLiquipediaUrl": "",
-  "teamLiquipediaSlug": "",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-10T00:44:07.679Z",
+  "updatedAt": "2026-04-21T00:20:31.767Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 187,
-  "totalItemsGrouped": 186,
+  "totalItemsRaw": 189,
+  "totalItemsGrouped": 188,
   "items": [
     {
-      "assetid": "50271683542",
-      "classid": "7993040630",
-      "instanceid": "480085569",
+      "assetid": "50879847724",
+      "classid": "7993197600",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Butterfly Knife | Gamma Doppler",
-      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "name": "★ Butterfly Knife | Doppler",
+      "market_hash_name": "★ Butterfly Knife | Doppler (Minimal Wear)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20554583D2E1F6EE544DD65175EF517D5365566D888CDBB156158C523DE054255139EE188B",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201505B9AFA6D0A8140D961135FE113D1325162D92E890F81655A9137D79651DC8D19EAC",
       "tags": [
         {
           "category": "Type",
@@ -58,9 +55,41 @@
           "name": ""
         }
       ],
-      "float": 0.016073638573,
-      "seed": 985,
-      "phase": "Phase 2"
+      "float": 0.078854613006,
+      "seed": 828,
+      "phase": "Sapphire"
+    },
+    {
+      "assetid": "50941854423",
+      "classid": "7993045832",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Case Hardened",
+      "market_hash_name": "★ Karambit | Case Hardened (Battle-Scarred)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "50699297279",
@@ -96,42 +125,6 @@
       "float": 0.032572817057,
       "seed": 450,
       "phase": "Phase 1"
-    },
-    {
-      "assetid": "49245493814",
-      "classid": "7993036736",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Skeleton Knife | Crimson Web",
-      "market_hash_name": "★ Skeleton Knife | Crimson Web (Field-Tested)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D7C761635D6D60D6CF5AD3F7DBFFD1E7D4EF233C2822D49723D3BFA1A7DF002A101B",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "50180925578",
@@ -173,34 +166,6 @@
       "phase": "Sapphire"
     },
     {
-      "assetid": "47050376980",
-      "classid": "7993037136",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Driver Gloves | King Snake",
-      "market_hash_name": "★ Driver Gloves | King Snake (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C9D95D47666A66C8D16EEEE97087E1CFF9CAF16D7D6838CA8956CDA1E5B9C18A6C47EF",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49004303068",
       "classid": "7993039146",
       "instanceid": "188530139",
@@ -237,6 +202,34 @@
       "market_hash_name": "★ Sport Gloves | Nocts (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%202737E4D6949894263F810007FB690F2117241F9D95F3DE24675A4F9326572FC4DC9668",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50959351679",
+      "classid": "8247408161",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Battle-Scarred)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -487,6 +480,37 @@
       ],
       "assetids": [
         "43834362104"
+      ]
+    },
+    {
+      "assetid": "50959965478",
+      "classid": "1989363418",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Karambit (Cash Green)",
+      "market_hash_name": "Sealed Graffiti | Karambit (Cash Green)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208595859D418FA585AD84B581E7828D85953888B58FED85F59DFA40940C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "50959965478"
       ]
     },
     {
@@ -2451,6 +2475,42 @@
       "market_hash_name": "AK-47 | The Empress (Field-Tested)",
       "type": "Covert Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%202636BBEBB8C092273E210685230E2016221E968DE8D22566B0244E8027562ECF542741",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50804305326",
+      "classid": "7993041658",
+      "instanceid": "6289119177",
+      "amount": 1,
+      "name": "AK-47 | The Oligarch",
+      "market_hash_name": "AK-47 | The Oligarch (Well-Worn)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -5143,7 +5203,7 @@
       "name": "Sticker | Into The Breach (Glitter) | Paris 2023",
       "market_hash_name": "Sticker | Into The Breach (Glitter) | Paris 2023",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201505150DAC1C35153D11251177101D1505FC267D15651D8BE88D65",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F4E4F4EC4DFDD4F4DCF0C4F096F1FCF4E41DC79CF484FCA4C9D7F0",
       "tags": [
         {
           "category": "Type",

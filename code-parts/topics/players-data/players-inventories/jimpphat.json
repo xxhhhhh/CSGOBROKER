@@ -10,62 +10,20 @@
   "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/0cf9c7b8-2003-404d-97d4-fa9b5fae1878",
-  "teamLiquipediaUrl": "",
-  "teamLiquipediaSlug": "",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-10T00:30:46.031Z",
+  "updatedAt": "2026-04-21T00:02:08.604Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 131,
-  "totalItemsGrouped": 120,
+  "totalItemsRaw": 142,
+  "totalItemsGrouped": 113,
   "items": [
-    {
-      "assetid": "49096442478",
-      "classid": "7993040524",
-      "instanceid": "1363818004",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Doppler",
-      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203222DCB6B3C184332AB13612D9361A3402310AEABCA5DB3172E9335A4C423AB1C0BCC7",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.04047331214,
-      "seed": 219,
-      "phase": "Sapphire"
-    },
     {
       "assetid": "47266325356",
       "classid": "7993041144",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Karambit | Gamma Doppler",
       "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
@@ -98,44 +56,9 @@
       "phase": "Phase 3"
     },
     {
-      "assetid": "49096442500",
-      "classid": "7993043148",
-      "instanceid": "1363818004",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Doppler",
-      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206474E0E1E597D2657C986744C4674C6254675CBBE9F78C6724E4620C13146C0549BD13",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.032416220754,
-      "seed": 768,
-      "phase": "Sapphire"
-    },
-    {
       "assetid": "47266325368",
       "classid": "7993040299",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Sport Gloves | Hedge Maze",
       "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
@@ -161,37 +84,9 @@
       ]
     },
     {
-      "assetid": "49096442474",
-      "classid": "7993045165",
-      "instanceid": "1363818004",
-      "amount": 1,
-      "name": "★ Sport Gloves | Pandora's Box",
-      "market_hash_name": "★ Sport Gloves | Pandora's Box (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20697983EDE89ADF6871CF4E49DC27416F596A51B8EA8A996A29FA6F01161961E5B40215",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "45973947271",
       "classid": "5710094579",
-      "instanceid": "1363818010",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Kilowatt Case",
       "market_hash_name": "Kilowatt Case",
@@ -217,14 +112,76 @@
       ]
     },
     {
+      "assetid": "51091819567",
+      "classid": "1989275444",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Heart (Bazooka Pink)",
+      "market_hash_name": "Graffiti | Heart (Bazooka Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20495949518C4369496148794D2B4E414959F14479592149395182EC83D7",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51091819567"
+      ]
+    },
+    {
+      "assetid": "51091815040",
+      "classid": "1989274104",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Heart (Blood Red)",
+      "market_hash_name": "Graffiti | Heart (Blood Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206676667EA36C46664E67566204616E6676DE6B56640E66167EF4AE14E1",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51091815040"
+      ]
+    },
+    {
       "assetid": "50305589219",
       "classid": "1989270593",
-      "instanceid": "1363818010",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Graffiti | NaCl (Shark White)",
       "market_hash_name": "Graffiti | NaCl (Shark White)",
       "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209F8F9F875A95BF9FB79EAF9BFD98979F8F5A92AF8CF79FEF870DC885FA",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D7C7D7CF12DDF7D7FFD6E7D3B5D0DFD7C712DAE7C4BFD7A7CF4A303C8C",
       "tags": [
         {
           "category": "Type",
@@ -250,12 +207,12 @@
     {
       "assetid": "49424408900",
       "classid": "1989279141",
-      "instanceid": "1363818010",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Sealed Graffiti | NaCl (Shark White)",
       "market_hash_name": "Sealed Graffiti | NaCl (Shark White)",
       "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D0C0D0C814DAF0D0F8D1E0D4B2D7D8D0C015DDE0C3B8D0A0C8C03CBE0D",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206D7D6D75A9674D6D456C5D690F6A656D7DA8605D7E056D1D755B13A01B",
       "tags": [
         {
           "category": "Type",
@@ -281,12 +238,12 @@
     {
       "assetid": "40377755760",
       "classid": "6195246388",
-      "instanceid": "1363818010",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D7C7D7CF01F1F7D7FFD6E7D3BFD7A7CFF02DBF4B",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208090809856A6A080A881B084E880F098B91C08EE",
       "tags": [
         {
           "category": "Type",
@@ -308,7 +265,7 @@
     {
       "assetid": "40153717987",
       "classid": "7993036740",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "Desert Eagle | Heat Treated",
       "market_hash_name": "Desert Eagle | Heat Treated (Field-Tested)",
@@ -344,7 +301,7 @@
     {
       "assetid": "31631600402",
       "classid": "7993039746",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Desert Eagle | Mecha Industries",
       "market_hash_name": "Desert Eagle | Mecha Industries (Well-Worn)",
@@ -380,7 +337,7 @@
     {
       "assetid": "38629680671",
       "classid": "7993036602",
-      "instanceid": "6276302144",
+      "instanceid": "6276469583",
       "amount": 1,
       "name": "Glock-18 | Vogue",
       "market_hash_name": "Glock-18 | Vogue (Field-Tested)",
@@ -428,7 +385,7 @@
     {
       "assetid": "48690754450",
       "classid": "188530330",
-      "instanceid": "7887683488",
+      "instanceid": "7794119016",
       "amount": 1,
       "name": "AK-47 | Case Hardened",
       "market_hash_name": "AK-47 | Case Hardened (Field-Tested)",
@@ -476,7 +433,7 @@
     {
       "assetid": "47266325407",
       "classid": "7993042330",
-      "instanceid": "6324194695",
+      "instanceid": "6276517627",
       "amount": 1,
       "name": "AK-47 | Hydroponic",
       "market_hash_name": "AK-47 | Hydroponic (Factory New)",
@@ -518,53 +475,9 @@
       ]
     },
     {
-      "assetid": "49096442496",
-      "classid": "7993037248",
-      "instanceid": "6324234839",
-      "amount": 1,
-      "name": "M4A1-S | Hot Rod",
-      "market_hash_name": "M4A1-S | Hot Rod (Factory New)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205444D4D1D5A7E2554C6874E9577C5164506CA78CFC825714E35736515C5444825536515C5544825536515C5644825536515C574482553C2D24434AE6DB4C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50149735341",
       "classid": "7993040718",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "UMP-45 | Wild Child",
       "market_hash_name": "UMP-45 | Wild Child (Minimal Wear)",
@@ -600,7 +513,7 @@
     {
       "assetid": "49040291289",
       "classid": "7993036217",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "AWP | Duality",
       "market_hash_name": "AWP | Duality (Battle-Scarred)",
@@ -636,7 +549,7 @@
     {
       "assetid": "36402234895",
       "classid": "7993037009",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "R8 Revolver | Inlay",
       "market_hash_name": "R8 Revolver | Inlay (Field-Tested)",
@@ -672,7 +585,7 @@
     {
       "assetid": "36402241158",
       "classid": "7993039014",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "R8 Revolver | Inlay",
       "market_hash_name": "R8 Revolver | Inlay (Minimal Wear)",
@@ -708,7 +621,7 @@
     {
       "assetid": "48080144809",
       "classid": "241576941",
-      "instanceid": "1363818010",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Tec-9 | Army Mesh",
       "market_hash_name": "Tec-9 | Army Mesh (Field-Tested)",
@@ -744,7 +657,7 @@
     {
       "assetid": "36402245247",
       "classid": "7993038433",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "XM1014 | Hieroglyph",
       "market_hash_name": "XM1014 | Hieroglyph (Field-Tested)",
@@ -780,7 +693,7 @@
     {
       "assetid": "36402248909",
       "classid": "7993037539",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "XM1014 | Hieroglyph",
       "market_hash_name": "XM1014 | Hieroglyph (Well-Worn)",
@@ -816,7 +729,7 @@
     {
       "assetid": "48915255379",
       "classid": "241581349",
-      "instanceid": "1363818010",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "MP7 | Army Recon",
       "market_hash_name": "MP7 | Army Recon (Field-Tested)",
@@ -852,7 +765,7 @@
     {
       "assetid": "36402237923",
       "classid": "7993036628",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "MP7 | Sunbaked",
       "market_hash_name": "MP7 | Sunbaked (Field-Tested)",
@@ -888,7 +801,7 @@
     {
       "assetid": "49267387683",
       "classid": "7993036083",
-      "instanceid": "1363818010",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "MP9 | Pine",
       "market_hash_name": "MP9 | Pine (Minimal Wear)",
@@ -924,7 +837,7 @@
     {
       "assetid": "49106810109",
       "classid": "7993035575",
-      "instanceid": "1363818010",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "PP-Bizon | Facility Sketch",
       "market_hash_name": "PP-Bizon | Facility Sketch (Field-Tested)",
@@ -960,7 +873,7 @@
     {
       "assetid": "40298791312",
       "classid": "241580033",
-      "instanceid": "1363818010",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "G3SG1 | Polar Camo",
       "market_hash_name": "G3SG1 | Polar Camo (Battle-Scarred)",
@@ -996,7 +909,7 @@
     {
       "assetid": "45057108026",
       "classid": "241576322",
-      "instanceid": "1363818010",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "SCAR-20 | Contractor",
       "market_hash_name": "SCAR-20 | Contractor (Field-Tested)",
@@ -1032,7 +945,7 @@
     {
       "assetid": "40078582780",
       "classid": "7993036126",
-      "instanceid": "6276764994",
+      "instanceid": "6276434117",
       "amount": 1,
       "name": "Desert Eagle | Printstream",
       "market_hash_name": "Desert Eagle | Printstream (Field-Tested)",
@@ -1076,7 +989,7 @@
     {
       "assetid": "50679775681",
       "classid": "7993036942",
-      "instanceid": "8353913612",
+      "instanceid": "8384867746",
       "amount": 1,
       "name": "USP-S | Printstream",
       "market_hash_name": "USP-S | Printstream (Factory New)",
@@ -1122,130 +1035,6 @@
       ]
     },
     {
-      "assetid": "49096442467",
-      "classid": "7993043505",
-      "instanceid": "7823956956",
-      "amount": 1,
-      "name": "AK-47 | Wild Lotus",
-      "market_hash_name": "AK-47 | Wild Lotus (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201606F59297E5A0170E1136C2133E1026122EDDC7CEF61556D41374131E1606C91474131E1706C91474131E1406C91474131E1506C9147E96176612B417001E16061F2BCE09FD56531C795D295B2461AB2946C83CCC71F4EC",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49096442498",
-      "classid": "7993039273",
-      "instanceid": "7823956950",
-      "amount": 1,
-      "name": "AWP | Gungnir",
-      "market_hash_name": "AWP | Gungnir (Factory New)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206F7FEDEAEE9CD96E77664F9B6A47695F6B57A8ADF8836C2FEA6B0D6A676D7FEC6E0D6A676B7FEC6E0D6A676F7FEC6E0D6A676C7FEC6E07171F78CD6E78676F7F7B52A509B52F2A2E0EED502209495D2E3FEB956BC8D0058D",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49096442463",
-      "classid": "7993036179",
-      "instanceid": "1363818004",
-      "amount": 1,
-      "name": "SSG 08 | Dragonfire",
-      "market_hash_name": "SSG 08 | Dragonfire (Factory New)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C0D01F44413376C1D8E8E030C4E8C6F0C4F80F700A2AC38041C2A841C1B0C808654E38",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "47780527734",
       "classid": "7729290754",
       "instanceid": "0",
@@ -1253,7 +1042,7 @@
       "name": "Sticker Slab | NiKo (Embroidered) | Budapest 2025",
       "market_hash_name": "Sticker Slab | NiKo (Embroidered) | Budapest 2025",
       "type": "Customized Remarkable Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E9F9E9F122E3C9E9C1EDD9E181E999E94BE8EEE1E9F9CC8902A29A94D989",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201A0A1A02D1103A1A321E2A12721A6A1AB81B1D121A0A3F7AF151052C0C32",
       "tags": [
         {
           "category": "Type",
@@ -1307,7 +1096,7 @@
     {
       "assetid": "17256641839",
       "classid": "3134148842",
-      "instanceid": "3852554735",
+      "instanceid": "3608809642",
       "amount": 1,
       "name": "2019 Service Medal",
       "market_hash_name": "2019 Service Medal",
@@ -1331,7 +1120,7 @@
     {
       "assetid": "40306514456",
       "classid": "5671992528",
-      "instanceid": "6258719263",
+      "instanceid": "6258715905",
       "amount": 1,
       "name": "2024 Service Medal",
       "market_hash_name": "2024 Service Medal",
@@ -1427,7 +1216,7 @@
     {
       "assetid": "38824393766",
       "classid": "6063039321",
-      "instanceid": "1363818003",
+      "instanceid": "565664004",
       "amount": 1,
       "name": "Quarterfinalist at PGL Copenhagen 2024",
       "market_hash_name": "Quarterfinalist at PGL Copenhagen 2024",
@@ -1455,7 +1244,7 @@
     {
       "assetid": "48492133278",
       "classid": "7862426529",
-      "instanceid": "1363818003",
+      "instanceid": "565664004",
       "amount": 1,
       "name": "Quarterfinalist at StarLadder Budapest 2025",
       "market_hash_name": "Quarterfinalist at StarLadder Budapest 2025",
@@ -1511,7 +1300,7 @@
     {
       "assetid": "47221939816",
       "classid": "7615102361",
-      "instanceid": "1363818003",
+      "instanceid": "565664004",
       "amount": 1,
       "name": "Semifinalist at BLAST.tv Austin 2025",
       "market_hash_name": "Semifinalist at BLAST.tv Austin 2025",
@@ -1539,7 +1328,7 @@
     {
       "assetid": "41640713823",
       "classid": "6612389753",
-      "instanceid": "1363818003",
+      "instanceid": "565664004",
       "amount": 1,
       "name": "Semifinalist at Perfect World Shanghai 2024",
       "market_hash_name": "Semifinalist at Perfect World Shanghai 2024",
@@ -1613,14 +1402,14 @@
       ]
     },
     {
-      "assetid": "50679738419",
+      "assetid": "50962660221",
       "classid": "7729157891",
-      "instanceid": "1363818004",
-      "amount": 4,
+      "instanceid": "8360842852",
+      "amount": 22,
       "name": "Sticker | Jimpphat (Gold) | Budapest 2025",
       "market_hash_name": "Sticker | Jimpphat (Gold) | Budapest 2025",
       "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203424342C8D3D14341C32043056313C3424B9785C34443C09807795",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200C1C0C14B5052C0C240A3C086E09040C1C8140640C7C04F25574AB",
       "tags": [
         {
           "category": "Type",
@@ -1656,16 +1445,34 @@
         }
       ],
       "assetids": [
+        "50962660221",
+        "50947159121",
+        "50891158670",
+        "50890332411",
+        "50881046550",
+        "50876008143",
+        "50874441449",
+        "50867820820",
+        "50852829897",
+        "50827150246",
+        "50826583526",
+        "50814758221",
+        "50751763139",
+        "50741577017",
+        "50733338223",
+        "50731742829",
+        "50729129707",
+        "50698223391",
+        "50679738467",
         "50679738419",
         "50679714599",
-        "50698223391",
-        "50679738467"
+        "50967503776"
       ]
     },
     {
       "assetid": "50642688299",
       "classid": "7545311765",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "Charm | Fluffy",
       "market_hash_name": "Charm | Fluffy",
@@ -1696,12 +1503,12 @@
     {
       "assetid": "36792650454",
       "classid": "3759394749",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Black Mesa Pin",
       "market_hash_name": "Black Mesa Pin",
       "type": "High Grade Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209D8D9D854FB9BD9DB59EAD99F59DED9514AFE913",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242524A807672527A5162563A52225A0DD0F43C",
       "tags": [
         {
           "category": "Type",
@@ -1720,12 +1527,12 @@
     {
       "assetid": "36792654005",
       "classid": "3759394750",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "CMB Pin",
       "market_hash_name": "CMB Pin",
       "type": "High Grade Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E2F2E2FA33C6C2E2CAE1D2E68AE292EA26A335E2",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202434243CF50004240C2714204C24542CF01D1278",
       "tags": [
         {
           "category": "Type",
@@ -1744,12 +1551,12 @@
     {
       "assetid": "38643240126",
       "classid": "1999672579",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sealed Graffiti | Banana",
       "market_hash_name": "Sealed Graffiti | Banana",
       "type": "High Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CDDDCDD509C7EDCDE5CEFDC9AFC8C5CDDD45C0A5CDBDC5CA182772",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242524A965872527A51625630575A5242DA5F3A52225AB0B4CD51",
       "tags": [
         {
           "category": "Type",
@@ -1806,12 +1613,12 @@
     {
       "assetid": "27326012257",
       "classid": "4975155074",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Music Kit | Meechy Darko, Gothic Luxury",
       "market_hash_name": "Music Kit | Meechy Darko, Gothic Luxury",
       "type": "High Grade Music Kit",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E9F9E9F14BE3C9E9C1EAD9ED81E999E161E8ABE4F169AC",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206575657DC76F45654D6655610D65156DED6427424622C9",
       "tags": [
         {
           "category": "Type",
@@ -1860,12 +1667,12 @@
     {
       "assetid": "47780385457",
       "classid": "7729097808",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | 910 | Budapest 2025",
       "market_hash_name": "Sticker | 910 | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C2D2C2DA7BCBE2C2EAC1F2C6A0C7CAC2D23089AAC2B2CAE67E4D8E",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DFCFDFC766D6FFDFF7DCEFDBBDDAD7DFCF2D94B7DFAFD7D4C738E0",
       "tags": [
         {
           "category": "Type",
@@ -1907,12 +1714,12 @@
     {
       "assetid": "47780473826",
       "classid": "7729093823",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | apEX | Budapest 2025",
       "market_hash_name": "Sticker | apEX | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202232223A9B2B02220A21122640272A2232E8694A22522A3458A236",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207262726ACB7B52725A71427610777A7262B8391A72027A130747B2",
       "tags": [
         {
           "category": "Type",
@@ -1954,12 +1761,12 @@
     {
       "assetid": "47780468526",
       "classid": "7729102976",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 2,
       "name": "Sticker | bLitz | Budapest 2025",
       "market_hash_name": "Sticker | bLitz | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207B6B7B63C2725B7B53784B7F197E737B6B8D30137B0B73B6539987",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201404140CAD1D34143C17241076111C1404E25F7C14641C40EFC188",
       "tags": [
         {
           "category": "Type",
@@ -2002,12 +1809,12 @@
     {
       "assetid": "47780381998",
       "classid": "7729100101",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | Brollan | Budapest 2025",
       "market_hash_name": "Sticker | Brollan | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A8B8A8B011A188A880AB98ACCAADA0A8B82EE4C0A8D8A0F637CD84",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C5D5C5DD7CCCE5C5EDC6F5C1A7C0CDC5D54389ADC5B5CD6CB2E866",
       "tags": [
         {
           "category": "Type",
@@ -2049,7 +1856,7 @@
     {
       "assetid": "47780476457",
       "classid": "7729087743",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | chopper | Budapest 2025",
       "market_hash_name": "Sticker | chopper | Budapest 2025",
@@ -2096,12 +1903,12 @@
     {
       "assetid": "47780460127",
       "classid": "7729092361",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | FalleN | Budapest 2025",
       "market_hash_name": "Sticker | FalleN | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203D2D3D2584341D3D153E0D395F38353D2D8B76553D4D354786CDD3",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200C1C0C14B5052C0C240F3C086E09040C1CBA47640C7C04212CDCE2",
       "tags": [
         {
           "category": "Type",
@@ -2143,12 +1950,12 @@
     {
       "assetid": "47780474825",
       "classid": "7729088481",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | kyousuke | Budapest 2025",
       "market_hash_name": "Sticker | kyousuke | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203828382081311838103B083C5A3D303828E67350384830B6C20B46",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208797879F3E8EA787AF84B783E5828F879759CCEF87F78F1CC380BD",
       "tags": [
         {
           "category": "Type",
@@ -2190,12 +1997,12 @@
     {
       "assetid": "47780421054",
       "classid": "7729093007",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | kyxsan | Budapest 2025",
       "market_hash_name": "Sticker | kyxsan | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FCECFCE445F5DCFCD4FFCCF89EF9F4FCEC1EB794FC8CF45E479381",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202B3B2B3392220B2B03281B2F492E232B3BC960432B5B231FF12870",
       "tags": [
         {
           "category": "Type",
@@ -2237,12 +2044,12 @@
     {
       "assetid": "47780451763",
       "classid": "7729094542",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | MATYS | Budapest 2025",
       "market_hash_name": "Sticker | MATYS | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201606160EAF1F36163E15261274131E1606AC5A7E16661E3F7F3F20",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205444544CED5D74547C57645036515C5444EE183C54245C94C8D8C5",
       "tags": [
         {
           "category": "Type",
@@ -2284,12 +2091,12 @@
     {
       "assetid": "47780490639",
       "classid": "7729095044",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 2,
       "name": "Sticker | mezii | Budapest 2025",
       "market_hash_name": "Sticker | mezii | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205D4D5D45E4547D5D755E6D593F58555D4D8F16355D2D5571F272BF",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BDADBDA504B49DBD95BE8DB9DFB8B5BDAD6FF6D5BDCDB59196D4A7",
       "tags": [
         {
           "category": "Type",
@@ -2332,12 +2139,12 @@
     {
       "assetid": "47780480950",
       "classid": "7729093324",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 2,
       "name": "Sticker | molodoy | Budapest 2025",
       "market_hash_name": "Sticker | molodoy | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201606160EAF1F36163E15261274131E1606A85D7E16661E3AF1FD72",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20908090882999B090B893A094F2959890802EDBF890E098E5A9BA82",
       "tags": [
         {
           "category": "Type",
@@ -2380,12 +2187,12 @@
     {
       "assetid": "47780466324",
       "classid": "7729102229",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 3,
       "name": "Sticker | NQZ | Budapest 2025",
       "market_hash_name": "Sticker | NQZ | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EAFAEAF253E3CAEAC2E9DAEE88EFE2EAFA24A682EA9AE28D35BF2E",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203121312988381131193201355334393121FF7D59314139FE082508",
       "tags": [
         {
           "category": "Type",
@@ -2429,12 +2236,12 @@
     {
       "assetid": "47780392986",
       "classid": "7729094544",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | Senzu | Budapest 2025",
       "market_hash_name": "Sticker | Senzu | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D4C4D4CC6DDDF4D4FCD7E4D0B6D1DCD4C42A9FBCD4A4DC3C42BDCB",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2051415149E8587151795261553354595141AF1A39512159C91A391B",
       "tags": [
         {
           "category": "Type",
@@ -2476,12 +2283,12 @@
     {
       "assetid": "47780412922",
       "classid": "7729109331",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | Spinx | Budapest 2025",
       "market_hash_name": "Sticker | Spinx | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C1D1C1D978C8E1C1E9C2F1C5A3C4C9C1D14F8DA9C1B1C93077F860",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D8C8D8C061D1F8D8F0DBE8DCBADDD0D8C85694B0D8A8D019B22CBB",
       "tags": [
         {
           "category": "Type",
@@ -2523,12 +2330,12 @@
     {
       "assetid": "47780456153",
       "classid": "7729088476",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | SunPayus | Budapest 2025",
       "market_hash_name": "Sticker | SunPayus | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207262726ACB7B52725A71427610777A7262CC3E1A72027A0C81FC6F",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205747574FEE5E77577F54675335525F5747E91B3F57275F3E1D0C9F",
       "tags": [
         {
           "category": "Type",
@@ -2570,12 +2377,12 @@
     {
       "assetid": "47780436698",
       "classid": "7729099634",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | torzsi | Budapest 2025",
       "market_hash_name": "Sticker | torzsi | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207A6A7A62C3735A7A52794A7E187F727A6AE836127A0A7275E7BDDE",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206C7C6C74D5654C6C446F5C680E69646C7CFE20046C1C6458CC150A",
       "tags": [
         {
           "category": "Type",
@@ -2617,12 +2424,12 @@
     {
       "assetid": "47780433289",
       "classid": "7729099478",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 2,
       "name": "Sticker | xertioN | Budapest 2025",
       "market_hash_name": "Sticker | xertioN | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F9E9F9E140F0D9F9D1FAC9FD9BFCF1F9E96FB591F989F14F216304",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209E8E9E862797BE9EB69DAE9AFC9B969E8E08D2F69EEE96EA06BCE9",
       "tags": [
         {
           "category": "Type",
@@ -2665,12 +2472,12 @@
     {
       "assetid": "47780497020",
       "classid": "7729095087",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 2,
       "name": "Sticker | YEKINDAR | Budapest 2025",
       "market_hash_name": "Sticker | YEKINDAR | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F3E3F3EB4AFAD3F3DBF0C3F791F6FBF3E331B89BF383FB1684904C",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200414041CBD0D24042C07340066010C0414C64F6C04740CC89FC6D5",
       "tags": [
         {
           "category": "Type",
@@ -2713,12 +2520,12 @@
     {
       "assetid": "47780467257",
       "classid": "7729099630",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | yuurih | Budapest 2025",
       "market_hash_name": "Sticker | yuurih | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200F1F0F17B6062F0F270C3F0B6D0A070F1FC944670F7F07A93986E5",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207464746CCD7D54745C77447016717C7464B23F1C74047C326867A3",
       "tags": [
         {
           "category": "Type",
@@ -2760,12 +2567,12 @@
     {
       "assetid": "47780485945",
       "classid": "7729088199",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | zont1x | Budapest 2025",
       "market_hash_name": "Sticker | zont1x | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201404140CAD1D34143C17241076111C1404B2587C14641C1A2896B5",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BAAABAA203B39ABA92B98ABED8BFB2BAAA1CF6D2BACAB21CD2A327",
       "tags": [
         {
           "category": "Type",
@@ -2807,12 +2614,12 @@
     {
       "assetid": "47780428987",
       "classid": "7729097809",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | ZywOo | Budapest 2025",
       "market_hash_name": "Sticker | ZywOo | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209A8A9A822393BA9AB299AA9EF89F929A8A40D1F29AEA92E1A18421",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204757475FFE4E67476F44774325424F47579D0C2F47374F6B96FC3F",
       "tags": [
         {
           "category": "Type",
@@ -2854,7 +2661,7 @@
     {
       "assetid": "43391589449",
       "classid": "7993036842",
-      "instanceid": "1363818010",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Tec-9 | Citric Acid",
       "market_hash_name": "Tec-9 | Citric Acid (Factory New)",
@@ -2890,7 +2697,7 @@
     {
       "assetid": "41779773877",
       "classid": "7993037020",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "Tec-9 | Tiger Stencil",
       "market_hash_name": "Tec-9 | Tiger Stencil (Minimal Wear)",
@@ -2926,7 +2733,7 @@
     {
       "assetid": "40119828660",
       "classid": "7993035630",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "AK-47 | Olive Polycam",
       "market_hash_name": "AK-47 | Olive Polycam (Field-Tested)",
@@ -2962,7 +2769,7 @@
     {
       "assetid": "40207309347",
       "classid": "7993035630",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "AK-47 | Olive Polycam",
       "market_hash_name": "AK-47 | Olive Polycam (Field-Tested)",
@@ -2998,7 +2805,7 @@
     {
       "assetid": "40207309904",
       "classid": "7993035630",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "AK-47 | Olive Polycam",
       "market_hash_name": "AK-47 | Olive Polycam (Field-Tested)",
@@ -3034,7 +2841,7 @@
     {
       "assetid": "40396246574",
       "classid": "7993035630",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "AK-47 | Olive Polycam",
       "market_hash_name": "AK-47 | Olive Polycam (Field-Tested)",
@@ -3070,7 +2877,7 @@
     {
       "assetid": "41779775444",
       "classid": "7993036507",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "FAMAS | Half Sleeve",
       "market_hash_name": "FAMAS | Half Sleeve (Field-Tested)",
@@ -3106,7 +2913,7 @@
     {
       "assetid": "40207307800",
       "classid": "7993037511",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "FAMAS | Half Sleeve",
       "market_hash_name": "FAMAS | Half Sleeve (Minimal Wear)",
@@ -3142,7 +2949,7 @@
     {
       "assetid": "40396244988",
       "classid": "7993037511",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "FAMAS | Half Sleeve",
       "market_hash_name": "FAMAS | Half Sleeve (Minimal Wear)",
@@ -3178,7 +2985,7 @@
     {
       "assetid": "41779777698",
       "classid": "7993037511",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "FAMAS | Half Sleeve",
       "market_hash_name": "FAMAS | Half Sleeve (Minimal Wear)",
@@ -3214,7 +3021,7 @@
     {
       "assetid": "40576609531",
       "classid": "7993036924",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "FAMAS | Half Sleeve",
       "market_hash_name": "FAMAS | Half Sleeve (Well-Worn)",
@@ -3250,7 +3057,7 @@
     {
       "assetid": "41779772271",
       "classid": "7993036349",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "MAG-7 | Wildwood",
       "market_hash_name": "MAG-7 | Wildwood (Field-Tested)",
@@ -3286,7 +3093,7 @@
     {
       "assetid": "41779776264",
       "classid": "7993036349",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "MAG-7 | Wildwood",
       "market_hash_name": "MAG-7 | Wildwood (Field-Tested)",
@@ -3322,7 +3129,7 @@
     {
       "assetid": "39170707829",
       "classid": "241579807",
-      "instanceid": "1363818010",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "MAC-10 | Palm",
       "market_hash_name": "MAC-10 | Palm (Field-Tested)",
@@ -3358,7 +3165,7 @@
     {
       "assetid": "49317809433",
       "classid": "7993067235",
-      "instanceid": "1363818010",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "MP5-SD | Picnic",
       "market_hash_name": "MP5-SD | Picnic (Field-Tested)",
@@ -3394,7 +3201,7 @@
     {
       "assetid": "41779778580",
       "classid": "7993038591",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "MP5-SD | Savannah Halftone",
       "market_hash_name": "MP5-SD | Savannah Halftone (Well-Worn)",
@@ -3430,7 +3237,7 @@
     {
       "assetid": "41463911893",
       "classid": "7993037497",
-      "instanceid": "1363818010",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "PP-Bizon | Candy Apple",
       "market_hash_name": "PP-Bizon | Candy Apple (Field-Tested)",
@@ -3466,7 +3273,7 @@
     {
       "assetid": "41779773091",
       "classid": "7993037298",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "PP-Bizon | Cold Cell",
       "market_hash_name": "PP-Bizon | Cold Cell (Factory New)",
@@ -3502,7 +3309,7 @@
     {
       "assetid": "43393447948",
       "classid": "7993040051",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Five-SeveN | Flame Test",
       "market_hash_name": "Five-SeveN | Flame Test (Battle-Scarred)",
@@ -3538,7 +3345,7 @@
     {
       "assetid": "43393441790",
       "classid": "7993039277",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Five-SeveN | Flame Test",
       "market_hash_name": "Five-SeveN | Flame Test (Factory New)",
@@ -3574,7 +3381,7 @@
     {
       "assetid": "50149760983",
       "classid": "7993036392",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Five-SeveN | Scrawl",
       "market_hash_name": "Five-SeveN | Scrawl (Minimal Wear)",
@@ -3610,7 +3417,7 @@
     {
       "assetid": "50409348271",
       "classid": "7993042429",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "P2000 | Urban Hazard",
       "market_hash_name": "P2000 | Urban Hazard (Well-Worn)",
@@ -3646,7 +3453,7 @@
     {
       "assetid": "50149777757",
       "classid": "7993038992",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "SG 553 | Aloha",
       "market_hash_name": "SG 553 | Aloha (Field-Tested)",
@@ -3682,7 +3489,7 @@
     {
       "assetid": "41341846274",
       "classid": "7993035506",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "SG 553 | Cyberforce",
       "market_hash_name": "SG 553 | Cyberforce (Field-Tested)",
@@ -3718,7 +3525,7 @@
     {
       "assetid": "48087801387",
       "classid": "7993042204",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "MAG-7 | MAGnitude",
       "market_hash_name": "MAG-7 | MAGnitude (Battle-Scarred)",
@@ -3754,7 +3561,7 @@
     {
       "assetid": "41341843867",
       "classid": "7993036111",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Nova | Dark Sigil",
       "market_hash_name": "Nova | Dark Sigil (Field-Tested)",
@@ -3790,7 +3597,7 @@
     {
       "assetid": "41779779272",
       "classid": "7993037209",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "Nova | Yorkshire",
       "market_hash_name": "Nova | Yorkshire (Well-Worn)",
@@ -3826,7 +3633,7 @@
     {
       "assetid": "43393445027",
       "classid": "7993035759",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "XM1014 | Oxide Blaze",
       "market_hash_name": "XM1014 | Oxide Blaze (Minimal Wear)",
@@ -3862,7 +3669,7 @@
     {
       "assetid": "41341847852",
       "classid": "7993036679",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "MAC-10 | Light Box",
       "market_hash_name": "MAC-10 | Light Box (Minimal Wear)",
@@ -3898,7 +3705,7 @@
     {
       "assetid": "50409356977",
       "classid": "7993041275",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "PP-Bizon | Night Riot",
       "market_hash_name": "PP-Bizon | Night Riot (Battle-Scarred)",
@@ -3934,7 +3741,7 @@
     {
       "assetid": "41779776939",
       "classid": "7993036511",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "SSG 08 | Zeno",
       "market_hash_name": "SSG 08 | Zeno (Field-Tested)",
@@ -3970,12 +3777,12 @@
     {
       "assetid": "47780469805",
       "classid": "7729123135",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | dgt (Embroidered) | Budapest 2025",
       "market_hash_name": "Sticker | dgt (Embroidered) | Budapest 2025",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2008180810B1012808200C380C6A0D000818C34460087800E4D05882",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202131213998280121092511254324292131EA6D49215129772FD9AD",
       "tags": [
         {
           "category": "Type",
@@ -4017,12 +3824,12 @@
     {
       "assetid": "47780463806",
       "classid": "7729111006",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 2,
       "name": "Sticker | kyxsan (Embroidered) | Budapest 2025",
       "market_hash_name": "Sticker | kyxsan (Embroidered) | Budapest 2025",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D8C8D8C061D1F8D8F0DCE8DCBADDD0D8C83B93B0D8A8D054175ED7",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242524AEB5B72527A56625630575A5242B1193A52225A01528F70",
       "tags": [
         {
           "category": "Type",
@@ -4065,12 +3872,12 @@
     {
       "assetid": "36768664895",
       "classid": "5327976613",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | torzsi (Glitter) | Paris 2023",
       "market_hash_name": "Sticker | torzsi (Glitter) | Paris 2023",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E4F4E4FC5DEDC4E4CCE0D4E086E1ECE4F40ED38CE494EC7C112B3E",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20998999812090B999B19DA99DFB9C91998973AEF199E991CF49AE80",
       "tags": [
         {
           "category": "Type",
@@ -4110,53 +3917,9 @@
       ]
     },
     {
-      "assetid": "49096442482",
-      "classid": "188530424",
-      "instanceid": "6391701398",
-      "amount": 1,
-      "name": "Desert Eagle | Blaze",
-      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20647496E0E597D2657C6544414C6054605CE7C2AC846724C16606616C6474FA6606616C6574FA6606616C6674FA6606616C6774FA660C181460C665736C64747859E90B6FDB2112FC725B29EC53152434D7AD61AA935F0A",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "40207306992",
       "classid": "7993037585",
-      "instanceid": "1363818008",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "Five-SeveN | Heat Treated",
       "market_hash_name": "Five-SeveN | Heat Treated (Field-Tested)",
@@ -4190,45 +3953,9 @@
       ]
     },
     {
-      "assetid": "49096442491",
-      "classid": "188530425",
-      "instanceid": "6973053940",
-      "amount": 1,
-      "name": "Glock-18 | Fade",
-      "market_hash_name": "Glock-18 | Fade (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207A6A81FEFB89CC7B627E5A5C527E4A7E42B5BEC493793AF17D187E72796A5F187F727B6A8F5F187F727A6A825F187F72786A8C5F12000A7AD87B6D727A6A7947F2D0C03A3F110C8E443710AC92452A92F1799479B25A",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "42906620610",
       "classid": "7993039278",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Glock-18 | Umbral Rabbit",
       "market_hash_name": "Glock-18 | Umbral Rabbit (Well-Worn)",
@@ -4264,7 +3991,7 @@
     {
       "assetid": "43393430655",
       "classid": "7993037781",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "R8 Revolver | Banana Cannon",
       "market_hash_name": "R8 Revolver | Banana Cannon (Well-Worn)",
@@ -4300,7 +4027,7 @@
     {
       "assetid": "36009986252",
       "classid": "7993035561",
-      "instanceid": "1363818004",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Galil AR | Connexion",
       "market_hash_name": "Galil AR | Connexion (Field-Tested)",
@@ -4336,12 +4063,12 @@
     {
       "assetid": "40706355638",
       "classid": "6360304502",
-      "instanceid": "1363852635",
+      "instanceid": "1310152245",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Perfect World, Ay Hey",
       "market_hash_name": "StatTrak™ Music Kit | Perfect World, Ay Hey",
       "type": "StatTrak™ High Grade Music Kit",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204656465EE44C66466E45764F0E4716482E463644CE47100AAFB9D0",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20988898803A92B898B09BA891D099C896F098E89A1099CEA5C159CE",
       "tags": [
         {
           "category": "Type",
@@ -4363,12 +4090,12 @@
     {
       "assetid": "29781542070",
       "classid": "5001787061",
-      "instanceid": "1363895227",
+      "instanceid": "1319152570",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Perfect World, 花脸 Hua Lian (Painted Face)",
       "market_hash_name": "StatTrak™ Music Kit | Perfect World, 花脸 Hua Lian (Painted Face)",
       "type": "StatTrak™ High Grade Music Kit",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2080908098228AA080A883B089C881D0DEE880F0820881C4BB0B369A",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203727372F953D17371F34073E7F3667695F374735BF3673E25E61BB",
       "tags": [
         {
           "category": "Type",
@@ -4390,12 +4117,12 @@
     {
       "assetid": "28992038264",
       "classid": "2076473904",
-      "instanceid": "1363818145",
+      "instanceid": "188530697",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Roam, Backbone",
       "market_hash_name": "StatTrak™ Music Kit | Roam, Backbone",
       "type": "StatTrak™ High Grade Music Kit",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DCCCDCC47ED6FCDCF4DFECD594DD8C83B4DCACD454DDF80E6A17B7",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2090809088329AB090B893A099D891C0CFF890E0981891B4F2F99110",
       "tags": [
         {
           "category": "Type",
@@ -4417,7 +4144,7 @@
     {
       "assetid": "50409360226",
       "classid": "7993041427",
-      "instanceid": "1363818028",
+      "instanceid": "188530170",
       "amount": 1,
       "name": "StatTrak™ R8 Revolver | Grip",
       "market_hash_name": "StatTrak™ R8 Revolver | Grip (Battle-Scarred)",

@@ -1,5 +1,6 @@
 {
   "nickname": "br0",
+  "real_nickname": "br0",
   "slug": "br0",
   "steamid64": "76561198060483793",
   "team": "NRG",
@@ -11,14 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/77ab6707-1c01-4309-ab6a-2e4b6b27053f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-08T10:31:52.483Z",
+  "updatedAt": "2026-04-21T00:32:35.066Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 101,
-  "totalItemsGrouped": 99,
+  "totalItemsRaw": 103,
+  "totalItemsGrouped": 101,
   "items": [
     {
       "assetid": "50593230851",
@@ -310,6 +310,34 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51065445924",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -2521,6 +2549,42 @@
       ]
     },
     {
+      "assetid": "51065445390",
+      "classid": "7993038148",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "FAMAS | Yeti Camo",
+      "market_hash_name": "FAMAS | Yeti Camo (Field-Tested)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "39996593123",
       "classid": "7993036447",
       "instanceid": "519977179",
@@ -2919,7 +2983,7 @@
     {
       "assetid": "41903729736",
       "classid": "7993046824",
-      "instanceid": "8328490850",
+      "instanceid": "8381048631",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Case Hardened",
       "market_hash_name": "StatTrak™ AK-47 | Case Hardened (Minimal Wear)",
@@ -3011,7 +3075,7 @@
     {
       "assetid": "40529524767",
       "classid": "7993040539",
-      "instanceid": "8347398039",
+      "instanceid": "8391663461",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Neo-Noir",
       "market_hash_name": "StatTrak™ Glock-18 | Neo-Noir (Field-Tested)",
@@ -3055,7 +3119,7 @@
     {
       "assetid": "46399977645",
       "classid": "7993042053",
-      "instanceid": "8353872015",
+      "instanceid": "8391663460",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Inheritance",
       "market_hash_name": "StatTrak™ AK-47 | Inheritance (Factory New)",
@@ -3103,7 +3167,7 @@
     {
       "assetid": "49080760317",
       "classid": "7993043286",
-      "instanceid": "188732883",
+      "instanceid": "480130225",
       "amount": 1,
       "name": "StatTrak™ AK-47 | The Oligarch",
       "market_hash_name": "StatTrak™ AK-47 | The Oligarch (Minimal Wear)",
@@ -3263,7 +3327,7 @@
     {
       "assetid": "45997623264",
       "classid": "7993041653",
-      "instanceid": "188557146",
+      "instanceid": "188625598",
       "amount": 1,
       "name": "StatTrak™ MP9 | Rose Iron",
       "market_hash_name": "StatTrak™ MP9 | Rose Iron (Minimal Wear)",

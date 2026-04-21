@@ -10,18 +10,15 @@
   "isContentCreator": false,
   "twitch": "Swisher",
   "faceit": "https://faceitdb.com/profile/faceit/27d1a137-8bf2-4b21-844e-ff2b7131ae74",
-  "teamLiquipediaUrl": "",
-  "teamLiquipediaSlug": "",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-10T00:47:43.502Z",
+  "updatedAt": "2026-04-21T00:23:01.158Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 148,
-  "totalItemsGrouped": 129,
+  "totalItemsRaw": 149,
+  "totalItemsGrouped": 130,
   "items": [
     {
       "assetid": "48845348844",
@@ -182,7 +179,7 @@
     {
       "assetid": "49737375108",
       "classid": "7993055801",
-      "instanceid": "188532426",
+      "instanceid": "188532885",
       "amount": 1,
       "name": "★ StatTrak™ M9 Bayonet | Doppler",
       "market_hash_name": "★ StatTrak™ M9 Bayonet | Doppler (Factory New)",
@@ -1186,6 +1183,42 @@
       ]
     },
     {
+      "assetid": "51042648080",
+      "classid": "7993061170",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "PP-Bizon | Thermal Currents",
+      "market_hash_name": "PP-Bizon | Thermal Currents (Minimal Wear)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "32886667164",
       "classid": "7993036126",
       "instanceid": "480085569",
@@ -1313,14 +1346,14 @@
       ]
     },
     {
-      "assetid": "27126675422",
+      "assetid": "51190973026",
       "classid": "7993040793",
-      "instanceid": "6527442935",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "USP-S | Kill Confirmed",
       "market_hash_name": "USP-S | Kill Confirmed (Battle-Scarred)",
       "type": "Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200818D6E7888F6D103528F00B200E380C30EFDEABF00B48A10E6A0D000918C52C6A0D000A18B22D6A0D000B18B22D6009780C43965398",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1344,14 +1377,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1365,42 +1390,6 @@
       "market_hash_name": "USP-S | Neo-Noir (Minimal Wear)",
       "type": "Covert Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A8B83D2C3865F9B0958825AD80AE98AC902C016644ABE862AFC0F0D8AC94506133",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "40036354318",
-      "classid": "7993036089",
-      "instanceid": "6276360493",
-      "amount": 1,
-      "name": "USP-S | Printstream",
-      "market_hash_name": "USP-S | Printstream (Minimal Wear)",
-      "type": "Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205949D7CBB0CBCC58416479AF51715F695D619490F1B65A19955D31E9582951FB584E5159494664A2B17A181C0D66A167149E6F241909EF8558242F3251",
       "tags": [
         {
           "category": "Type",
@@ -1719,7 +1708,7 @@
       "name": "Sticker | M80 (Holo) | Austin 2025",
       "market_hash_name": "Sticker | M80 (Holo) | Austin 2025",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208B9B8B933282AB8BA38EBB8FE98E838B9B23C8E38BFB83B157D8FB",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AABAAAB213A38AAA82AF9AAEC8AFA2AABA02E9C2AADAA29E005D1E",
       "tags": [
         {
           "category": "Type",
@@ -1953,6 +1942,30 @@
       "amount": 1,
       "name": "2022 Service Medal",
       "market_hash_name": "2022 Service Medal",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51042655107",
+      "classid": "7917182209",
+      "instanceid": "8373901267",
+      "amount": 1,
+      "name": "2026 Service Medal",
+      "market_hash_name": "2026 Service Medal",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -2875,7 +2888,7 @@
       "name": "Graffiti | Ace",
       "market_hash_name": "Graffiti | Ace",
       "type": "High Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EDFDEDF528E7CDEDC5EEDDE98FE8E5EDFD6AE085ED9DE54E0D6C69",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200212021AC70822022A01320660070A0212850F6A02720ACDF5FA46",
       "tags": [
         {
           "category": "Type",
@@ -3325,7 +3338,7 @@
       "name": "Wildfire Pin",
       "market_hash_name": "Wildfire Pin",
       "type": "Remarkable Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207E6E7E668E515E7E567A4E7A167E0E765B82B970",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A9B9A9B1598689A981AD99ADC1A9D9A1002E8835",
       "tags": [
         {
           "category": "Type",
@@ -3995,7 +4008,7 @@
     {
       "assetid": "41233184373",
       "classid": "7993042347",
-      "instanceid": "8277960599",
+      "instanceid": "7085255617",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Neo-Noir",
       "market_hash_name": "StatTrak™ M4A4 | Neo-Noir (Factory New)",
@@ -4139,12 +4152,12 @@
     {
       "assetid": "18427313577",
       "classid": "3790926076",
-      "instanceid": "480100962",
+      "instanceid": "480130225",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Dren, Gunman Taco Truck",
       "market_hash_name": "StatTrak™ Music Kit | Dren, Gunman Taco Truck",
       "type": "StatTrak™ High Grade Music Kit",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CBDBCBD369C1EBCBE3C8FBC283CA9B3BC5A3CBBBC343CAE705FDDCDD",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208797879F258DA787AF84B78ECF86D77C89EF87F78F0F86ABC10AF437",
       "tags": [
         {
           "category": "Type",

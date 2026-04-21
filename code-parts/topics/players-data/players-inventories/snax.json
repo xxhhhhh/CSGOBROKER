@@ -10,16 +10,13 @@
   "isContentCreator": false,
   "twitch": "snax",
   "faceit": "https://faceitdb.com/profile/faceit/5ad1783f-f978-4501-8708-b9a04ba47ee9",
-  "teamLiquipediaUrl": "",
-  "teamLiquipediaSlug": "",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-10T00:27:14.384Z",
+  "updatedAt": "2026-04-20T23:57:26.330Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
   "totalItemsRaw": 314,
   "totalItemsGrouped": 299,
   "items": [
@@ -425,84 +422,6 @@
       "phase": "Sapphire"
     },
     {
-      "assetid": "33243032704",
-      "classid": "7993062117",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Talon Knife | Doppler",
-      "market_hash_name": "★ Talon Knife | Doppler (Minimal Wear)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ABBB2B726A40D0B320AF8B34A883AD9BA8933E0A6547A8EB7BA9C32BA9DBA3EF237BFB",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.07205311209,
-      "seed": 336,
-      "phase": "Ruby"
-    },
-    {
-      "assetid": "50720196716",
-      "classid": "7993044869",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Ursus Knife | Doppler",
-      "market_hash_name": "★ Ursus Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205141BDC1F2A8ED5049D65571F15279576152699AB2C0B8521191563989502159958AEB0F",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.040147583932,
-      "seed": 960,
-      "phase": "Sapphire"
-    },
-    {
       "assetid": "50620433528",
       "classid": "8246989043",
       "instanceid": "188530139",
@@ -539,34 +458,6 @@
       "market_hash_name": "★ Specialist Gloves | Lime Polycam (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%204D5D9FF0C78EF14C55E76A6DC846654B7D4E75D9FFDFB94E0DD84A25C74F3D45AD2FD3F1",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50645695450",
-      "classid": "8247053652",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Specialist Gloves | Pillow Punchers",
-      "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200515DFF2DAD0B9041DAF22259B0E2D0335063DC7F7A5F00645426D85077501C4F769EC",
       "tags": [
         {
           "category": "Type",
@@ -731,7 +622,7 @@
     {
       "assetid": "49636811834",
       "classid": "7993099886",
-      "instanceid": "188531406",
+      "instanceid": "188531370",
       "amount": 1,
       "name": "★ StatTrak™ Nomad Knife | Doppler",
       "market_hash_name": "★ StatTrak™ Nomad Knife | Doppler (Factory New)",
@@ -3412,6 +3303,68 @@
       ]
     },
     {
+      "assetid": "50855661733",
+      "classid": "7545311765",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Charm | Fluffy",
+      "market_hash_name": "Charm | Fluffy",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "50855661733"
+      ]
+    },
+    {
+      "assetid": "50855664663",
+      "classid": "7545309814",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Charm | Gritty",
+      "market_hash_name": "Charm | Gritty",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "50855664663"
+      ]
+    },
+    {
       "assetid": "40860722786",
       "classid": "6216350895",
       "instanceid": "519977179",
@@ -3898,7 +3851,7 @@
       "name": "Sticker | Fluxo | Budapest 2025",
       "market_hash_name": "Sticker | Fluxo | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202030203899290020082310244225282030DD6A4820502804C597F0",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DDCDDDC564D4FDDDF5DEEDD9BFD8D5DDCD2097B5DDADD5710E4886",
       "tags": [
         {
           "category": "Type",
@@ -4271,7 +4224,7 @@
       "name": "Sticker | M80 | Budapest 2025",
       "market_hash_name": "Sticker | M80 | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204454445CFD4D64446C47744026414C4454BD0E2C44344C6B33CFE7",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208D9D8D953484AD8DA58EBD89EF88858D9D74C7E58DFD850E064298",
       "tags": [
         {
           "category": "Type",
@@ -4362,7 +4315,7 @@
       "name": "Sticker | mezii | Austin 2025",
       "market_hash_name": "Sticker | mezii | Austin 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208E9E8E963787AE8EA68DBE8AEC8B868E9E15CAE68EFE8611ED6FB0",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206676667EDF6F46664E65566204636E6676FD220E66166EF1EAC912",
       "tags": [
         {
           "category": "Type",
@@ -4410,7 +4363,7 @@
       "name": "Sticker | NertZ | Austin 2025",
       "market_hash_name": "Sticker | NertZ | Austin 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204252425AFB4B62426A41724620474A4252E1072A42324A3AAEFCFF",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203424342C8D3D14341C37043056313C342497715C34443C03B188AB",
       "tags": [
         {
           "category": "Type",
@@ -4575,7 +4528,7 @@
       "name": "Sticker | ropz | Shanghai 2024",
       "market_hash_name": "Sticker | ropz | Shanghai 2024",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AEBEAEB617A78EAE86AD9EAACCABA6AEBE4F91C6AEDEA6FAE94B1F",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209E8E9E862797BE9EB69DAE9AFC9B969E8E7FA1F69EEE96FEDA6D43",
       "tags": [
         {
           "category": "Type",
@@ -4718,7 +4671,7 @@
       "name": "Sticker | The Huns | Budapest 2025",
       "market_hash_name": "Sticker | The Huns | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204353435BFA4A63436B40734721464B4353C6082B43334BE56B8EDC",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AEBEAEB617A78EAE86AD9EAACCABA6AEBE2BE5C6AEDEA6DED7E91E",
       "tags": [
         {
           "category": "Type",
@@ -4953,7 +4906,7 @@
       "name": "Sticker | ZywOo | Austin 2025",
       "market_hash_name": "Sticker | ZywOo | Austin 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20889888903181A888A08BB88CEA8D8088981BCCE088F880F4D2BAC3",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209F8F9F872696BF9FB79CAF9BFD9A979F8F0CDBF79FEF97AB3F9802",
       "tags": [
         {
           "category": "Type",
@@ -5709,6 +5662,42 @@
       "market_hash_name": "Tec-9 | Rebel (Field-Tested)",
       "type": "Mil-Spec Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%200717F8E9D1AABD061F1927D40E2F0437033FA58AC7F2044786056FEB06770FDD21C830",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50855550386",
+      "classid": "7993037648",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "USP-S | Alpine Camo",
+      "market_hash_name": "USP-S | Alpine Camo (Battle-Scarred)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -9994,7 +9983,7 @@
     {
       "assetid": "40372397838",
       "classid": "7993045048",
-      "instanceid": "8312628316",
+      "instanceid": "8365059401",
       "amount": 1,
       "name": "StatTrak™ P250 | Muertos",
       "market_hash_name": "StatTrak™ P250 | Muertos (Minimal Wear)",
@@ -10098,7 +10087,7 @@
     {
       "assetid": "40738413438",
       "classid": "7993047787",
-      "instanceid": "8362314883",
+      "instanceid": "8399934305",
       "amount": 1,
       "name": "StatTrak™ USP-S | Orion",
       "market_hash_name": "StatTrak™ USP-S | Orion (Minimal Wear)",
@@ -10910,7 +10899,7 @@
     {
       "assetid": "50567928750",
       "classid": "8246945314",
-      "instanceid": "188531175",
+      "instanceid": "188531615",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Galigator",
       "market_hash_name": "StatTrak™ Galil AR | Galigator (Minimal Wear)",
@@ -10982,7 +10971,7 @@
     {
       "assetid": "39893658568",
       "classid": "7993044956",
-      "instanceid": "8355882049",
+      "instanceid": "8399033965",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Heat",
       "market_hash_name": "StatTrak™ MAC-10 | Heat (Field-Tested)",
@@ -11030,7 +11019,7 @@
     {
       "assetid": "50293204976",
       "classid": "8246996800",
-      "instanceid": "188531307",
+      "instanceid": "188532451",
       "amount": 1,
       "name": "StatTrak™ MP9 | Urban Sovereign",
       "market_hash_name": "StatTrak™ MP9 | Urban Sovereign (Minimal Wear)",

@@ -1,5 +1,6 @@
 {
   "nickname": "story",
+  "real_nickname": "story",
   "slug": "story",
   "steamid64": "76561198065448360",
   "team": "FlyQuest",
@@ -11,24 +12,58 @@
   "faceit": "https://faceitdb.com/profile/faceit/e1051e60-443e-4dfb-be63-67338e479ffc",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-08T15:22:24.665Z",
+  "updatedAt": "2026-04-21T00:50:03.400Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 64,
-  "totalItemsGrouped": 64,
+  "totalItemsRaw": 65,
+  "totalItemsGrouped": 65,
   "items": [
     {
-      "assetid": "49720919829",
-      "classid": "7993041878",
-      "instanceid": "480085569",
+      "assetid": "50724459298",
+      "classid": "7993038920",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Specialist Gloves | Crimson Kimono",
-      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C2D2606465397EC3DA3EC1E261C1EAC4F2C1FA35184123C18230C0AAE4B2CADBC38EBC",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.009822241031,
+      "seed": 370,
+      "phase": "Phase 2"
+    },
+    {
+      "assetid": "50964581466",
+      "classid": "7993040145",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Emerald Web",
+      "market_hash_name": "★ Specialist Gloves | Emerald Web (Field-Tested)",
       "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207F6FEAF19BE3C67E67D5585FCE3157794F7C47CDDFFF8E7C3FDC7917520F7B509F00B5",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -79,7 +114,7 @@
     {
       "assetid": "48525607306",
       "classid": "7993043355",
-      "instanceid": "188772564",
+      "instanceid": "188577966",
       "amount": 1,
       "name": "★ StatTrak™ Butterfly Knife | Fade",
       "market_hash_name": "★ StatTrak™ Butterfly Knife | Fade (Factory New)",
@@ -789,6 +824,66 @@
       ]
     },
     {
+      "assetid": "50975985941",
+      "classid": "7993043175",
+      "instanceid": "6690928402",
+      "amount": 1,
+      "name": "AWP | The Prince",
+      "market_hash_name": "AWP | The Prince (Field-Tested)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "17424810039",
       "classid": "778383679",
       "instanceid": "0",
@@ -1451,7 +1546,7 @@
       "name": "Sticker | Gambit Gaming (Holo) | Stockholm 2021",
       "market_hash_name": "Sticker | Gambit Gaming (Holo) | Stockholm 2021",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207C6C7C64C5755C7C54784C781E79747C6C935A147C0C7455C746F7",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209787978F2E9EB797BF93A793F5929F978778B1FF97E79F041BE6C5",
       "tags": [
         {
           "category": "Type",
@@ -1800,7 +1895,7 @@
     {
       "assetid": "26300364855",
       "classid": "7993041682",
-      "instanceid": "480086534",
+      "instanceid": "480089787",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Fowl Play",
       "market_hash_name": "StatTrak™ Five-SeveN | Fowl Play (Field-Tested)",
@@ -1880,48 +1975,12 @@
     {
       "assetid": "47287272166",
       "classid": "7993040447",
-      "instanceid": "188530306",
+      "instanceid": "188531175",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Bad Trip",
       "market_hash_name": "StatTrak™ FAMAS | Bad Trip (Field-Tested)",
       "type": "StatTrak™ Covert Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ACBC4A2906381CADB4A68C0CA584AA9CA59442322259AFEC4EADE4ACFCACC48BDCA4BBBD25EC",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47503110566",
-      "classid": "7993036820",
-      "instanceid": "188534773",
-      "amount": 1,
-      "name": "StatTrak™ AWP | Chromatic Aberration",
-      "market_hash_name": "StatTrak™ AWP | Chromatic Aberration (Field-Tested)",
-      "type": "StatTrak™ Covert Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CDDD6B2E52367DCCD5C4ED35C5E5CBFDC4F518134D38CE8D49CF85CD9DA3A5E4BDC5774214CD",
       "tags": [
         {
           "category": "Type",
@@ -1979,7 +2038,7 @@
     {
       "assetid": "25303467072",
       "classid": "7993036443",
-      "instanceid": "480114049",
+      "instanceid": "480153081",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Bamboozle",
       "market_hash_name": "StatTrak™ Tec-9 | Bamboozle (Minimal Wear)",

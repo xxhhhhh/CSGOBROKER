@@ -12,16 +12,941 @@
   "faceit": "https://www.faceit.com/en/players/smooya",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-10T01:23:14.690Z",
-  "inventoryVisible": false,
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "totalItemsRaw": 0,
-  "totalItemsGrouped": 0,
-  "items": [],
-  "liquipediaSlug": "",
-  "liquipediaUrl": "",
-  "teamLiquipediaUrl": "",
-  "teamLiquipediaSlug": ""
+  "updatedAt": "2026-04-21T01:06:12.034Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 32,
+  "totalItemsGrouped": 32,
+  "items": [
+    {
+      "assetid": "50731025617",
+      "classid": "7993040630",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Gamma Doppler",
+      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203C2CEDB584C2803D24BF381C8638143A0C3F0488F6C4DE3F7CFC38542F4C34A8699419",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.013558674604,
+      "seed": 576,
+      "phase": "Phase 2"
+    },
+    {
+      "assetid": "51201412776",
+      "classid": "6195246388",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Charm Detachment Pack",
+      "market_hash_name": "Charm Detachment Pack",
+      "type": "Base Grade Tool",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208090809856A6A080A881B084E880F098B91C08EE",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51201412776"
+      ]
+    },
+    {
+      "assetid": "49678102133",
+      "classid": "188530330",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AK-47 | Case Hardened",
+      "market_hash_name": "AK-47 | Case Hardened (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "48414287149",
+      "classid": "7993039096",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Glock-18 | Gamma Doppler",
+      "market_hash_name": "Glock-18 | Gamma Doppler (Factory New)",
+      "type": "Covert Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DACA771007776EDBC2DEFA05D2F2DCEADEE27A626732D99ABBB2DBAADE2CB5FDE6",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.034999966621,
+      "seed": 97,
+      "phase": "Emerald"
+    },
+    {
+      "assetid": "49825775180",
+      "classid": "7993039803",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "M4A1-S | Printstream",
+      "market_hash_name": "M4A1-S | Printstream (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "48414287858",
+      "classid": "7993044645",
+      "instanceid": "6276904276",
+      "amount": 1,
+      "name": "AWP | Containment Breach",
+      "market_hash_name": "AWP | Containment Breach (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "17491594791",
+      "classid": "778383679",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "5 Year Veteran Coin",
+      "market_hash_name": "5 Year Veteran Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26906717989",
+      "classid": "4956553487",
+      "instanceid": "565664004",
+      "amount": 1,
+      "name": "10 Year Birthday Coin",
+      "market_hash_name": "10 Year Birthday Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "41159618375",
+      "classid": "3117298605",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "10 Year Veteran Coin",
+      "market_hash_name": "10 Year Veteran Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "5744467820",
+      "classid": "1465854320",
+      "instanceid": "1654457525",
+      "amount": 1,
+      "name": "2016 Service Medal",
+      "market_hash_name": "2016 Service Medal",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "15755769276",
+      "classid": "3134148842",
+      "instanceid": "3224734674",
+      "amount": 1,
+      "name": "2019 Service Medal",
+      "market_hash_name": "2019 Service Medal",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "28161819658",
+      "classid": "5136977003",
+      "instanceid": "5138329580",
+      "amount": 1,
+      "name": "2023 Service Medal",
+      "market_hash_name": "2023 Service Medal",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "48749109680",
+      "classid": "7917182209",
+      "instanceid": "7917182214",
+      "amount": 1,
+      "name": "2026 Service Medal",
+      "market_hash_name": "2026 Service Medal",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "25615120097",
+      "classid": "6276298858",
+      "instanceid": "6276299629",
+      "amount": 1,
+      "name": "Antwerp 2022 Silver Coin",
+      "market_hash_name": "Antwerp 2022 Silver Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44222549291",
+      "classid": "7153576678",
+      "instanceid": "7104640662",
+      "amount": 1,
+      "name": "Austin 2025 Silver Coin",
+      "market_hash_name": "Austin 2025 Silver Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "36411320386",
+      "classid": "6276298458",
+      "instanceid": "6276298607",
+      "amount": 1,
+      "name": "Copenhagen 2024 Silver Coin",
+      "market_hash_name": "Copenhagen 2024 Silver Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "33543431176",
+      "classid": "5537026494",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Global Offensive Badge",
+      "market_hash_name": "Global Offensive Badge",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "15158534733",
+      "classid": "3106076676",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Loyalty Badge",
+      "market_hash_name": "Loyalty Badge",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "20027181074",
+      "classid": "4114513706",
+      "instanceid": "4114513707",
+      "amount": 1,
+      "name": "Operation Broken Fang Challenge Coin",
+      "market_hash_name": "Operation Broken Fang Challenge Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "23392739843",
+      "classid": "4571505089",
+      "instanceid": "4571505090",
+      "amount": 1,
+      "name": "Operation Riptide Challenge Coin",
+      "market_hash_name": "Operation Riptide Challenge Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "17180573003",
+      "classid": "6280326182",
+      "instanceid": "6276694981",
+      "amount": 1,
+      "name": "Operation Shattered Web Challenge Coin",
+      "market_hash_name": "Operation Shattered Web Challenge Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30105545223",
+      "classid": "6276298784",
+      "instanceid": "6276300099",
+      "amount": 1,
+      "name": "Paris 2023 Gold Coin",
+      "market_hash_name": "Paris 2023 Gold Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "41633356717",
+      "classid": "6610970132",
+      "instanceid": "565664004",
+      "amount": 1,
+      "name": "Premier Season One Medal",
+      "market_hash_name": "Premier Season One Medal",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "14897275238",
+      "classid": "3027018013",
+      "instanceid": "565664004",
+      "amount": 1,
+      "name": "Quarterfinalist at FACEIT London 2018",
+      "market_hash_name": "Quarterfinalist at FACEIT London 2018",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27480723001",
+      "classid": "6276298693",
+      "instanceid": "6276300237",
+      "amount": 1,
+      "name": "Rio 2022 Silver Coin",
+      "market_hash_name": "Rio 2022 Silver Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "40619036428",
+      "classid": "6409281019",
+      "instanceid": "6360306306",
+      "amount": 1,
+      "name": "Shanghai 2024 Gold Coin",
+      "market_hash_name": "Shanghai 2024 Gold Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "23688145506",
+      "classid": "6276303447",
+      "instanceid": "6276343284",
+      "amount": 1,
+      "name": "Stockholm 2021 Silver Coin",
+      "market_hash_name": "Stockholm 2021 Silver Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "33552058699",
+      "classid": "2697297554",
+      "instanceid": "338584038",
+      "amount": 1,
+      "name": "Genuine Hydra Pin",
+      "market_hash_name": "Genuine Hydra Pin",
+      "type": "Genuine Exotic Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "14624900929",
+      "classid": "2697222735",
+      "instanceid": "338584038",
+      "amount": 1,
+      "name": "Genuine Welcome to the Clutch Pin",
+      "market_hash_name": "Genuine Welcome to the Clutch Pin",
+      "type": "Genuine High Grade Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "33543431177",
+      "classid": "5537026493",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Music Kit | Valve, CS:GO",
+      "market_hash_name": "Music Kit | Valve, CS:GO",
+      "type": "High Grade Music Kit",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242524AF05872527A5162563A522252DA531411018CAB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "33543431177"
+      ]
+    },
+    {
+      "assetid": "48655333070",
+      "classid": "7993040607",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Desert Eagle | Emerald Jörmungandr",
+      "market_hash_name": "Desert Eagle | Emerald Jörmungandr (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "48414288944",
+      "classid": "7993058025",
+      "instanceid": "7673084140",
+      "amount": 1,
+      "name": "Souvenir USP-S | Road Rash",
+      "market_hash_name": "Souvenir USP-S | Road Rash (Factory New)",
+      "type": "Souvenir Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    }
+  ]
 }

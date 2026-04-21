@@ -10,18 +10,15 @@
   "isContentCreator": false,
   "twitch": "cmtrycs",
   "faceit": "https://faceitdb.com/profile/faceit/42afba06-399e-4c2d-aaff-77595526ad70",
-  "teamLiquipediaUrl": "",
-  "teamLiquipediaSlug": "",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-10T00:38:13.044Z",
+  "updatedAt": "2026-04-21T00:11:59.023Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 156,
-  "totalItemsGrouped": 126,
+  "totalItemsRaw": 148,
+  "totalItemsGrouped": 119,
   "items": [
     {
       "assetid": "48329632745",
@@ -61,6 +58,41 @@
       "float": 0.02952548489,
       "seed": 662,
       "phase": "Phase 3"
+    },
+    {
+      "assetid": "50814907817",
+      "classid": "7993036088",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Doppler",
+      "market_hash_name": "★ Karambit | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E5F54C0E524358E4FD1EE6C540E6CDE3D5E6DD10557D0DE6A568E18D73E495EDBE78C3D9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.032738167793,
+      "seed": 525,
+      "phase": "Phase 4"
     },
     {
       "assetid": "50032938614",
@@ -210,99 +242,6 @@
       ]
     },
     {
-      "assetid": "50703535163",
-      "classid": "1989275444",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Graffiti | Heart (Bazooka Pink)",
-      "market_hash_name": "Graffiti | Heart (Bazooka Pink)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20495949518C4369496148794D2B4E414959F14479592149395182EC83D7",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "50703535163"
-      ]
-    },
-    {
-      "assetid": "50645439233",
-      "classid": "1989272537",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Graffiti | Piggles (Dust Brown)",
-      "market_hash_name": "Graffiti | Piggles (Dust Brown)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204656465E834C66466E47764224414E4656844B76422E46365E237AB785",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "50645439233"
-      ]
-    },
-    {
-      "assetid": "50645441985",
-      "classid": "1989275625",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Graffiti | X-Axes (Shark White)",
-      "market_hash_name": "Graffiti | X-Axes (Shark White)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201C0C1C04D9163C1C341D2C187E1B141C0CBD112C0F741C6C04E7F8F8C0",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "50645441985"
-      ]
-    },
-    {
       "assetid": "44000207803",
       "classid": "1989280625",
       "instanceid": "302028390",
@@ -337,14 +276,14 @@
       ]
     },
     {
-      "assetid": "49509119156",
+      "assetid": "49509119148",
       "classid": "1989285202",
       "instanceid": "302028390",
-      "amount": 4,
+      "amount": 3,
       "name": "Sealed Graffiti | X-Axes (Shark White)",
       "market_hash_name": "Sealed Graffiti | X-Axes (Shark White)",
       "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20899989914D83A989A188B98DEB8E8189992884B99AE189F99169FF43B3",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200313031BC70923032B02330761040B0313A20E33106B03731B7EC1B258",
       "tags": [
         {
           "category": "Type",
@@ -364,7 +303,6 @@
         }
       ],
       "assetids": [
-        "49509119156",
         "49509119148",
         "49509119142",
         "49509119137"
@@ -555,78 +493,6 @@
       ]
     },
     {
-      "assetid": "50207840168",
-      "classid": "7993181274",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "M4A1-S | Party Animal",
-      "market_hash_name": "M4A1-S | Party Animal (Minimal Wear)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201000B8BFEB94AB11082C30F01A3815201428C3E2ADE013505F78416008003F460C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49075024020",
-      "classid": "7993037580",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "M4A4 | Hellish",
-      "market_hash_name": "M4A4 | Hellish (Factory New)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206878FC898D80DE69707848D161406D586C508BB0DC846B28CA690036186C2EC112E4",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49627615859",
       "classid": "7993064074",
       "instanceid": "302028390",
@@ -694,54 +560,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48839297977",
-      "classid": "7993036573",
-      "instanceid": "7938774002",
-      "amount": 1,
-      "name": "AK-47 | The Oligarch",
-      "market_hash_name": "AK-47 | The Oligarch (Minimal Wear)",
-      "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205E4EE7C9ECA6EB5F46597E965476586E5A66B0ECB8AE5D1EB95C3C5B565E4EEF6E3C5B565C4EEF6E3C5B565F4EEF6E3C5B565D4EEF6E3C4A565F4EEF6E735E5E1E9E633E538EE31B98207860361D2E5AC63722B0",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -854,42 +672,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50325557081",
-      "classid": "7993036896",
-      "instanceid": "6276501539",
-      "amount": 1,
-      "name": "AWP | Dragon Lore",
-      "market_hash_name": "AWP | Dragon Lore (Factory New)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204C5C95D2C0F1F74D54456C944E644A7C4874ADEAF3A64F0C592E48444F5C6924373C4839BC3737",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1117,7 +899,7 @@
       "name": "Sticker | 910 | Budapest 2025",
       "market_hash_name": "Sticker | 910 | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206373637BDA6A43634B60536701666B637391280B63136B3BBBB26B",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DFCFDFC766D6FFDFF7DCEFDBBDDAD7DFCF2D94B7DFAFD7D4C738E0",
       "tags": [
         {
           "category": "Type",
@@ -4595,42 +4377,6 @@
       "market_hash_name": "MAC-10 | Sakkaku (Field-Tested)",
       "type": "Restricted SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F6E67D69091140F7EEE7D63BFFDEF2C6F2CE3B735302F5B627F49E8F86FEC353CD8E",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49680485771",
-      "classid": "7993042157",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "SSG 08 | Death's Head",
-      "market_hash_name": "SSG 08 | Death's Head (Factory New)",
-      "type": "Restricted Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DBCB50401B5262DAC3F3FB45DEF3DFEBDFE349515137D89B50DAB3D8ABDFDC4EC233",
       "tags": [
         {
           "category": "Type",

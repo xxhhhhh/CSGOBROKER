@@ -1,5 +1,6 @@
 {
   "nickname": "Kvem",
+  "real_nickname": "Kvem",
   "slug": "kvem",
   "steamid64": "76561198845436666",
   "team": "Passion UA",
@@ -11,14 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/93261b1a-d731-4466-b0d6-f0455f97f9a9",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-08T10:28:10.721Z",
+  "updatedAt": "2026-04-21T00:30:23.193Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 72,
-  "totalItemsGrouped": 72,
+  "totalItemsRaw": 71,
+  "totalItemsGrouped": 71,
   "items": [
     {
       "assetid": "40282976094",
@@ -145,21 +145,17 @@
       ]
     },
     {
-      "assetid": "50891310155",
-      "classid": "5710094579",
-      "instanceid": "302028390",
+      "assetid": "50947343418",
+      "classid": "7993036899",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "Kilowatt Case",
-      "market_hash_name": "Kilowatt Case",
-      "type": "Base Grade Container",
+      "name": "★ Sport Gloves | Pandora's Box",
+      "market_hash_name": "★ Sport Gloves | Pandora's Box (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -168,6 +164,10 @@
         },
         {
           "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -889,62 +889,6 @@
       ]
     },
     {
-      "assetid": "49164941662",
-      "classid": "7993037176",
-      "instanceid": "7998884425",
-      "amount": 1,
-      "name": "AWP | Crakow!",
-      "market_hash_name": "AWP | Crakow! (Field-Tested)",
-      "type": "Classified Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B6A66844632501B7AEBF963FB79EB386B28E42383544B5F63CB3D4A2BEB4A652FA9BB6B6F6F68BBFC82A0BF3FE1B350BD4A2BEB6A64DFAABBC6195888B2A413108F36EE7020BDEBAC6B214B7A1BEB6A6AA8B3E2AE2F7F340863589FBBABC84F7E66B76B463266D1C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49164957890",
       "classid": "7993037937",
       "instanceid": "7998884424",
@@ -1173,14 +1117,14 @@
       ]
     },
     {
-      "assetid": "49385202234",
-      "classid": "7993035494",
-      "instanceid": "8042321641",
+      "assetid": "51199116804",
+      "classid": "7993036534",
+      "instanceid": "6276465858",
       "amount": 1,
-      "name": "M4A1-S | Printstream",
-      "market_hash_name": "M4A1-S | Printstream (Field-Tested)",
+      "name": "M4A1-S | Fade",
+      "market_hash_name": "M4A1-S | Fade (Factory New)",
       "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AABA106E73561DABB2968A72AD82AC9AAE92500C4358A9EA60ADC8AFA2AABA6299C8AFA2ABBA6299C8AFA2A8BA6299C8AFA2A9BA6299C8A5A2ABBA5AE797AA746111EFD61B2597C297DAAE08ABBDA2AABAA197291A20EAEF9EB96694E75C361DEAFA595EAF1F3FCAF1",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1205,18 +1149,6 @@
         {
           "category": "Exterior",
           "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
         }
       ]
     },
@@ -1228,7 +1160,7 @@
       "name": "Sticker | Kvem (Holo) | Budapest 2025",
       "market_hash_name": "Sticker | Kvem (Holo) | Budapest 2025",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A6B6A6BE1FAF86A68EA396A2C4A3AEA6B656EBCEA6D6AE2752E538",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2051415149E8587151795461553354595141A11C395121594BC9C0B9",
       "tags": [
         {
           "category": "Type",
@@ -2150,7 +2082,7 @@
     {
       "assetid": "27176292811",
       "classid": "7993040836",
-      "instanceid": "188629550",
+      "instanceid": "188606352",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Angry Mob",
       "market_hash_name": "StatTrak™ Five-SeveN | Angry Mob (Field-Tested)",
@@ -2222,7 +2154,7 @@
     {
       "assetid": "49014910025",
       "classid": "7993036176",
-      "instanceid": "188531615",
+      "instanceid": "188530422",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Ensnared",
       "market_hash_name": "StatTrak™ MAC-10 | Ensnared (Minimal Wear)",
@@ -2294,7 +2226,7 @@
     {
       "assetid": "35368799910",
       "classid": "7993043248",
-      "instanceid": "927730299",
+      "instanceid": "917844843",
       "amount": 1,
       "name": "StatTrak™ P250 | Splash",
       "market_hash_name": "StatTrak™ P250 | Splash (Minimal Wear)",

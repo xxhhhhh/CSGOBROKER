@@ -10,23 +10,20 @@
   "isContentCreator": false,
   "twitch": "launx_",
   "faceit": "https://faceitdb.com/profile/faceit/7afa70ed-066f-4336-adf7-03890d8e22b1",
-  "teamLiquipediaUrl": "",
-  "teamLiquipediaSlug": "",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-10T00:38:09.551Z",
+  "updatedAt": "2026-04-21T00:11:57.814Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "pagesFetched": 1,
-  "totalItemsRaw": 42,
-  "totalItemsGrouped": 41,
+  "totalItemsRaw": 49,
+  "totalItemsGrouped": 48,
   "items": [
     {
       "assetid": "50413828002",
       "classid": "7993040869",
-      "instanceid": "188530139",
+      "instanceid": "1363818004",
       "amount": 1,
       "name": "★ Karambit | Doppler",
       "market_hash_name": "★ Karambit | Doppler (Factory New)",
@@ -61,7 +58,7 @@
     {
       "assetid": "50697146086",
       "classid": "8246991328",
-      "instanceid": "188530139",
+      "instanceid": "1363818004",
       "amount": 1,
       "name": "★ Specialist Gloves | Blackbook",
       "market_hash_name": "★ Specialist Gloves | Blackbook (Field-Tested)",
@@ -87,17 +84,21 @@
       ]
     },
     {
-      "assetid": "50448978230",
-      "classid": "7993038922",
-      "instanceid": "188530139",
+      "assetid": "50912364724",
+      "classid": "4717330486",
+      "instanceid": "1363818010",
       "amount": 1,
-      "name": "★ Sport Gloves | Pandora's Box",
-      "market_hash_name": "★ Sport Gloves | Pandora's Box (Battle-Scarred)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200717B1A5FEF0BC061FA12027B2492F0137043FC6B090FD0447BE016F16770FAD12079D",
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -107,9 +108,61 @@
         {
           "category": "Rarity",
           "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51061035448",
+      "classid": "4717330486",
+      "instanceid": "1363818010",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
         },
         {
-          "category": "Exterior",
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50912364702",
+      "classid": "5710094579",
+      "instanceid": "1363818010",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -117,12 +170,12 @@
     {
       "assetid": "50273595276",
       "classid": "6195246388",
-      "instanceid": "302028390",
+      "instanceid": "1363818010",
       "amount": 2,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208090809856A6A080A881B084E880F098B91C08EE",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D7C7D7CF01F1F7D7FFD6E7D3BFD7A7CFF02DBF4B",
       "tags": [
         {
           "category": "Type",
@@ -145,7 +198,7 @@
     {
       "assetid": "48915026368",
       "classid": "7993037577",
-      "instanceid": "480085569",
+      "instanceid": "1363818011",
       "amount": 1,
       "name": "Galil AR | Rainbow Spoon",
       "market_hash_name": "Galil AR | Rainbow Spoon (Minimal Wear)",
@@ -181,7 +234,7 @@
     {
       "assetid": "50585030015",
       "classid": "7993038185",
-      "instanceid": "6896026421",
+      "instanceid": "6951174384",
       "amount": 1,
       "name": "M4A1-S | Blue Phosphor",
       "market_hash_name": "M4A1-S | Blue Phosphor (Factory New)",
@@ -225,7 +278,7 @@
     {
       "assetid": "48970455625",
       "classid": "7993038244",
-      "instanceid": "188530139",
+      "instanceid": "1363818004",
       "amount": 1,
       "name": "AWP | Mortis",
       "market_hash_name": "AWP | Mortis (Field-Tested)",
@@ -259,9 +312,45 @@
       ]
     },
     {
+      "assetid": "51061035449",
+      "classid": "7993035975",
+      "instanceid": "1363818010",
+      "amount": 1,
+      "name": "Tec-9 | Blue Blast",
+      "market_hash_name": "Tec-9 | Blue Blast (Field-Tested)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50002320561",
       "classid": "7993038286",
-      "instanceid": "302028390",
+      "instanceid": "1363818010",
       "amount": 1,
       "name": "MAC-10 | Storm Camo",
       "market_hash_name": "MAC-10 | Storm Camo (Factory New)",
@@ -297,7 +386,7 @@
     {
       "assetid": "50658121103",
       "classid": "7993037769",
-      "instanceid": "302028390",
+      "instanceid": "1363818010",
       "amount": 1,
       "name": "PP-Bizon | Wood Block Camo",
       "market_hash_name": "PP-Bizon | Wood Block Camo (Minimal Wear)",
@@ -333,7 +422,7 @@
     {
       "assetid": "50652120877",
       "classid": "7993035493",
-      "instanceid": "6276374870",
+      "instanceid": "6276987599",
       "amount": 1,
       "name": "USP-S | Printstream",
       "market_hash_name": "USP-S | Printstream (Field-Tested)",
@@ -369,7 +458,7 @@
     {
       "assetid": "50415286464",
       "classid": "7993041669",
-      "instanceid": "7707452856",
+      "instanceid": "7943415081",
       "amount": 1,
       "name": "AK-47 | Fuel Injector",
       "market_hash_name": "AK-47 | Fuel Injector (Minimal Wear)",
@@ -413,7 +502,7 @@
     {
       "assetid": "50582269360",
       "classid": "7993038229",
-      "instanceid": "7598380496",
+      "instanceid": "7692096885",
       "amount": 1,
       "name": "M4A4 | Eye of Horus",
       "market_hash_name": "M4A4 | Eye of Horus (Field-Tested)",
@@ -457,7 +546,7 @@
     {
       "assetid": "50472488308",
       "classid": "7993037372",
-      "instanceid": "6276592927",
+      "instanceid": "6347186767",
       "amount": 1,
       "name": "AWP | Printstream",
       "market_hash_name": "AWP | Printstream (Minimal Wear)",
@@ -517,7 +606,7 @@
     {
       "assetid": "17350235565",
       "classid": "3134148842",
-      "instanceid": "3623701267",
+      "instanceid": "3852552185",
       "amount": 1,
       "name": "2019 Service Medal",
       "market_hash_name": "2019 Service Medal",
@@ -541,7 +630,7 @@
     {
       "assetid": "18643722707",
       "classid": "3653202725",
-      "instanceid": "3817829929",
+      "instanceid": "3852552528",
       "amount": 1,
       "name": "2020 Service Medal",
       "market_hash_name": "2020 Service Medal",
@@ -565,7 +654,7 @@
     {
       "assetid": "23681624303",
       "classid": "4249616005",
-      "instanceid": "4605508653",
+      "instanceid": "5780356373",
       "amount": 1,
       "name": "2021 Service Medal",
       "market_hash_name": "2021 Service Medal",
@@ -589,7 +678,7 @@
     {
       "assetid": "48557553361",
       "classid": "6498789714",
-      "instanceid": "7877310052",
+      "instanceid": "7877313555",
       "amount": 1,
       "name": "2025 Service Medal",
       "market_hash_name": "2025 Service Medal",
@@ -969,12 +1058,12 @@
     {
       "assetid": "45839912909",
       "classid": "7378657666",
-      "instanceid": "188530139",
+      "instanceid": "1363818004",
       "amount": 1,
       "name": "Music Kit | Killer Mike, MICHAEL",
       "market_hash_name": "Music Kit | Killer Mike, MICHAEL",
       "type": "High Grade Music Kit",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202C3C2C348E260C2C042F1C28442C5C24A42D71A2403F80",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206C7C6C74CE664C6C446F5C68046C1C64E46D31956BA5B8",
       "tags": [
         {
           "category": "Type",
@@ -996,12 +1085,12 @@
     {
       "assetid": "50160309216",
       "classid": "7378656497",
-      "instanceid": "188530139",
+      "instanceid": "1363818004",
       "amount": 1,
       "name": "Music Kit | Selective Response, No Love Only Pleasure",
       "market_hash_name": "Music Kit | Selective Response, No Love Only Pleasure",
       "type": "High Grade Music Kit",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202E3E2E368C240E2E062D1E2A462E5E26A62F71FD6CFB55",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A4B4A4BC06AE84A48CA794A0CCA4D4AC2CA5FB345B06F3",
       "tags": [
         {
           "category": "Type",
@@ -1050,7 +1139,7 @@
     {
       "assetid": "50002320562",
       "classid": "7993036479",
-      "instanceid": "302028390",
+      "instanceid": "1363818010",
       "amount": 1,
       "name": "Dual Berettas | Polished Malachite",
       "market_hash_name": "Dual Berettas | Polished Malachite (Field-Tested)",
@@ -1086,7 +1175,7 @@
     {
       "assetid": "49079446877",
       "classid": "7993035625",
-      "instanceid": "6277191436",
+      "instanceid": "6296738447",
       "amount": 1,
       "name": "MAC-10 | Silver",
       "market_hash_name": "MAC-10 | Silver (Factory New)",
@@ -1120,9 +1209,93 @@
       ]
     },
     {
+      "assetid": "50912449917",
+      "classid": "7993074335",
+      "instanceid": "8398284894",
+      "amount": 1,
+      "name": "MP5-SD | Picnic",
+      "market_hash_name": "MP5-SD | Picnic (Factory New)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50912319708",
+      "classid": "7993036143",
+      "instanceid": "1363818004",
+      "amount": 1,
+      "name": "SG 553 | Cyberforce",
+      "market_hash_name": "SG 553 | Cyberforce (Factory New)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49565143769",
       "classid": "7993036491",
-      "instanceid": "188530139",
+      "instanceid": "1363818004",
       "amount": 1,
       "name": "PP-Bizon | Night Riot",
       "market_hash_name": "PP-Bizon | Night Riot (Field-Tested)",
@@ -1156,14 +1329,14 @@
       ]
     },
     {
-      "assetid": "49946058842",
-      "classid": "188530424",
-      "instanceid": "7758745826",
+      "assetid": "50912394889",
+      "classid": "7993037406",
+      "instanceid": "1363818004",
       "amount": 1,
-      "name": "Desert Eagle | Blaze",
-      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206979B3A9F8E1D3687168494C416D596D5196CBDC816A299A6F0B66616A7988635489AF43552C69FF8CD20B66616A79CE4E5415B1F7572CA9EFE0520B7D616D79D92C74E6AB5C5654CCB3C4D72C8ABDE1D70B7D616D79A92D746969E956547557F9D42CE73807D7017F197ECB687E6169797954DAD46D282C42208C5724EA1A4E2939C8CB6DF8B9C40D",
+      "name": "SSG 08 | Memorial",
+      "market_hash_name": "SSG 08 | Memorial (Well-Worn)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1188,41 +1361,41 @@
         {
           "category": "Exterior",
           "name": ""
-        },
+        }
+      ]
+    },
+    {
+      "assetid": "50968676766",
+      "classid": "7993036318",
+      "instanceid": "6276369074",
+      "amount": 1,
+      "name": "Negev | Lionfish",
+      "market_hash_name": "Negev | Lionfish (Minimal Wear)",
+      "type": "Restricted Machinegun",
+      "inspectLink": "",
+      "tags": [
         {
-          "category": "Tournament",
+          "category": "Type",
           "name": ""
         },
         {
-          "category": "Tournament",
+          "category": "Weapon",
           "name": ""
         },
         {
-          "category": "Tournament",
+          "category": "ItemSet",
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "Quality",
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "Rarity",
           "name": ""
         },
         {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1266,12 +1439,48 @@
     {
       "assetid": "48915026348",
       "classid": "226270437",
-      "instanceid": "6490387822",
+      "instanceid": "6860380813",
       "amount": 1,
       "name": "MP9 | Hypnotic",
       "market_hash_name": "MP9 | Hypnotic (Factory New)",
       "type": "Restricted SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B1A11D12712D07B0A993918C99B581B58902277F56B2F133B5D3B4B9B3A16489D3B4B9B0A16489D3B4B9B1A16489D9ACC1B913B0A6B9B1A1B78CBA2748F1F49892FC8EFC6FE239F1E16D4BB54AEE211B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50912305462",
+      "classid": "7993042574",
+      "instanceid": "1363818028",
+      "amount": 1,
+      "name": "StatTrak™ Nova | Dark Sigil",
+      "market_hash_name": "StatTrak™ Nova | Dark Sigil (Factory New)",
+      "type": "StatTrak™ Mil-Spec Grade Shotgun",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
