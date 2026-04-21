@@ -126,6 +126,22 @@
         }
       ]
     },
+    "crypto": {
+      "items": [
+        {
+          "title": "Gambling Sites",
+          "url": "/crypto",
+          "children": [
+            { "title": "All Sites", "url": "/crypto" },
+            { "title": "Match Betting", "url": "/crypto/matchbetting" },
+            { "title": "Slots", "url": "/crypto/casino" },
+            { "title": "Roulette", "url": "/crypto/roulette" },
+            { "title": "Coinflip", "url": "/crypto/coinflip" },
+            { "title": "Crash", "url": "/crypto/crash" }
+          ]
+        }
+      ]
+    },
     "dota": {
       "items": [
         {
@@ -148,22 +164,6 @@
             { "title": "Buy Items", "url": "/dota/buy-items" },
             { "title": "Sell Items", "url": "/dota/sell-items" },
             { "title": "Trade Items", "url": "/dota/trade-items" }
-          ]
-        }
-      ]
-    },
-    "crypto": {
-      "items": [
-        {
-          "title": "Gambling Sites",
-          "url": "/crypto",
-          "children": [
-            { "title": "All Sites", "url": "/crypto" },
-            { "title": "Match Betting", "url": "/crypto/matchbetting" },
-            { "title": "Slots", "url": "/crypto/casino" },
-            { "title": "Roulette", "url": "/crypto/roulette" },
-            { "title": "Coinflip", "url": "/crypto/coinflip" },
-            { "title": "Crash", "url": "/crypto/crash" }
           ]
         }
       ]

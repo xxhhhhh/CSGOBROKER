@@ -163,7 +163,13 @@ function withLangForReview(href, lang){
       }
     }
 
-    // ✅ ВОТ СЮДА ВСТАВЬ category-pass
+    // ----- Integrated "slider-banner" pass (server-side, idempotent) -----
+    const sliderNew = upsertSliderBanner(html, urlPath, lang, nl);
+    if (sliderNew !== html) {
+      html = sliderNew;
+      changed = true;
+    }
+
     if (presets.categoryBuilder && presets.categoryContents) {
       const catNew = upsertCategoryImportOffline(
         html,
@@ -3888,6 +3894,216 @@ function upsertMainInfobox(html, urlPath, lang, nl, translations){
 
     const needsNl = !before.endsWith(nl);
     return before + (needsNl ? nl : "") + block + nl + after;
+  }
+
+  return html;
+}
+
+/* ========================================================================== */
+/* ====================== SERVER-SIDE SLIDER-BANNER ========================= */
+/* ========================================================================== */
+
+function buildSliderItems(lang) {
+  const L = String(lang || "en").toLowerCase();
+
+  if (L === "ru") {
+    return [
+      {
+        href: "/ru",
+        src: "/img/best-gambling-sites-slide-2026-ru.webp",
+        label: "Лучшие Гемблинг Сайты CS2"
+      },
+      {
+        href: "/ru/rust",
+        src: "/img/best-rust-sites-slide-2026-ru.webp",
+        label: "Лучшие Сайты Rust"
+      },
+      {
+        href: "/ru/earning/offerwalls",
+        src: "/img/earn-skins-slider-2026-ru.webp",
+        label: "Лучшие Сайты с Заданиями"
+      }
+    ];
+  }
+
+  return [
+    {
+      href: "/",
+      src: "/img/best-gambling-sites-slide-2026.webp",
+      label: "Best Gambling Sites"
+    },
+    {
+      href: "/rust",
+      src: "/img/best-rust-sites-slide-2026.webp",
+      label: "Best Rust Sites"
+    },
+    {
+      href: "/earning/offerwalls",
+      src: "/img/earn-skins-slider-2026.webp",
+      label: "Best Offerwall Sites"
+    }
+  ];
+}
+
+function buildSliderBannerHtml(lang, indent, nl) {
+  const items = buildSliderItems(lang);
+
+  const lines = [];
+  lines.push(`${indent}<div class="slider-container">`);
+
+  for (const item of items) {
+    lines.push(
+      `${indent}  <a href="${escapeAttr(item.href)}" class="slider-banner" aria-label="${escapeAttr(`Visit ${item.label}`)}">` +
+      `<img src="${escapeAttr(item.src)}" alt="${escapeAttr(item.label)}" draggable="false"></a>`
+    );
+  }
+
+  lines.push(`${indent}</div>`);
+  return lines.join(nl);
+}
+
+function stripAllSliderContainers(html) {
+  return removeAllBlocksByClass(html, "slider-container");
+}
+
+/**
+ * Перенос client-side вставки slider-banner в static generation.
+ *
+ * Порядок максимально повторяет текущую client-side логику:
+ * 1. если есть .boxes-holder -> после .main-infobox (fallback: после .boxes-holder)
+ * 2. иначе если есть .main-infobox -> перед .main-infobox
+ * 3. иначе если /reviews|mirrors/ и есть .boxreview -> внутрь .boxreview в конец
+ * 4. иначе если /topic/ и есть .topicpage -> внутрь .topicpage в конец
+ * 5. иначе если есть .newest-boxes -> перед .newest-boxes
+ * 6. иначе перед <footer>
+ *
+ * Идемпотентность:
+ * - если .slider-container уже есть, ничего не делаем
+ */
+function upsertSliderBanner(html, urlPath, lang, nl) {
+  const pathStr = String(urlPath || "");
+
+  const excludedPages = [
+    "/terms-of-service",
+    "/privacy-policy",
+    "/contact-us",
+    "/responsibility"
+  ];
+
+  const excluded = excludedPages.some(p =>
+    pathStr.endsWith(p) || pathStr.endsWith(`${p}.html`)
+  );
+
+  if (excluded) return html;
+
+  const masked = maskSegments(html);
+
+  // Уже существует -> ничего не трогаем
+  if (findFirstByClass(masked, "slider-container")) {
+    return html;
+  }
+
+  const isReviewLike = /\/(reviews|mirrors)\//.test(pathStr);
+  const isTopicLike  = pathStr.includes("/topic/");
+
+  // 1) .boxes-holder -> after .main-infobox (fallback: after first .boxes-holder)
+  const holders = findAllDivByClass(masked, "boxes-holder");
+  if (holders.length) {
+    const infobox = findFirstByClass(masked, "main-infobox");
+
+    if (infobox) {
+      const indent = indentBefore(html, infobox.openStart, nl);
+      const block = buildSliderBannerHtml(lang, indent, nl);
+
+      const before = html.slice(0, infobox.closeEnd);
+      const after  = html.slice(infobox.closeEnd);
+
+      return before + (before.endsWith(nl) ? "" : nl) + block + nl + after;
+    }
+
+    // fallback, если на странице есть boxes-holder, но нет infobox
+    const h = holders[0];
+    const indent = indentBefore(html, h.openStart, nl);
+    const block = buildSliderBannerHtml(lang, indent, nl);
+
+    const before = html.slice(0, h.closeEnd);
+    const after  = html.slice(h.closeEnd);
+
+    return before + (before.endsWith(nl) ? "" : nl) + block + nl + after;
+  }
+
+  // 2) .main-infobox -> before .main-infobox
+  const infobox = findFirstByClass(masked, "main-infobox");
+  if (infobox) {
+    const lineStart = html.lastIndexOf(nl, infobox.openStart - 1);
+    const start = lineStart === -1 ? 0 : lineStart + nl.length;
+    const indent = indentBefore(html, infobox.openStart, nl);
+    const block = buildSliderBannerHtml(lang, indent, nl);
+
+    const before = html.slice(0, start);
+    const after  = html.slice(start);
+
+    return before + block + nl + after;
+  }
+
+  // 3) review/mirrors -> append into .boxreview
+  if (isReviewLike) {
+    const boxreview = findFirstByClass(masked, "boxreview");
+    if (boxreview) {
+      const inner = html.slice(boxreview.openEnd, boxreview.closeStart);
+      const indent = indentBefore(html, boxreview.closeStart, nl);
+      const block = buildSliderBannerHtml(lang, indent, nl);
+
+      const beforeTrimmed = inner.replace(/[ \t]+$/g, "");
+      const sepBefore = beforeTrimmed.endsWith(nl) ? "" : nl;
+      const newInner = beforeTrimmed + sepBefore + block + nl + indent;
+
+      return html.slice(0, boxreview.openEnd) + newInner + html.slice(boxreview.closeStart);
+    }
+  }
+
+  // 4) topic -> append into .topicpage
+  if (isTopicLike) {
+    const topicpage = findFirstByClass(masked, "topicpage");
+    if (topicpage) {
+      const inner = html.slice(topicpage.openEnd, topicpage.closeStart);
+      const indent = indentBefore(html, topicpage.closeStart, nl);
+      const block = buildSliderBannerHtml(lang, indent, nl);
+
+      const beforeTrimmed = inner.replace(/[ \t]+$/g, "");
+      const sepBefore = beforeTrimmed.endsWith(nl) ? "" : nl;
+      const newInner = beforeTrimmed + sepBefore + block + nl + indent;
+
+      return html.slice(0, topicpage.openEnd) + newInner + html.slice(topicpage.closeStart);
+    }
+  }
+
+  // 5) before .newest-boxes
+  const newest = findFirstByClass(masked, "newest-boxes");
+  if (newest) {
+    const lineStart = html.lastIndexOf(nl, newest.openStart - 1);
+    const start = lineStart === -1 ? 0 : lineStart + nl.length;
+    const indent = indentBefore(html, newest.openStart, nl);
+    const block = buildSliderBannerHtml(lang, indent, nl);
+
+    const before = html.slice(0, start);
+    const after  = html.slice(start);
+
+    return before + block + nl + after;
+  }
+
+  // 6) before <footer>
+  const footerIdx = masked.search(/<footer\b/i);
+  if (footerIdx !== -1) {
+    const lineStart = html.lastIndexOf(nl, footerIdx - 1);
+    const start = lineStart === -1 ? 0 : lineStart + nl.length;
+    const indent = indentBefore(html, footerIdx, nl);
+    const block = buildSliderBannerHtml(lang, indent, nl);
+
+    const before = html.slice(0, start);
+    const after  = html.slice(start);
+
+    return before + block + nl + after;
   }
 
   return html;

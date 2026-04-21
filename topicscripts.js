@@ -652,7 +652,7 @@ async function updateTopicTotalValue(totalValue) {
     );
 
     let expander = listEl.querySelector('.skin.expander');
-    const hiddenCheapItems = cheapItems.filter((el) => el.classList.contains("disabled"));
+    const hiddenCheapItems = cheapItems.filter((el) => el.classList.contains("disabled-cheap"));
     const remainingCount = hiddenCheapItems.length;
 
     if (!cheapItems.length) {
@@ -674,7 +674,7 @@ async function updateTopicTotalValue(totalValue) {
     expander.classList.toggle("disabled", remainingCount <= 0);
 
     const visibleSkins = Array.from(
-      listEl.querySelectorAll('.skin:not(.disabled):not(.expander)')
+      listEl.querySelectorAll('.skin:not(.disabled):not(.disabled-cheap):not(.expander)')
     );
 
     const lastVisibleSkin = visibleSkins[visibleSkins.length - 1];
@@ -719,7 +719,7 @@ async function updateTopicTotalValue(totalValue) {
     }
 
     cheapPricedItems.forEach((skinEl) => {
-      skinEl.classList.add("inventory-hidden-cheap", "disabled");
+      skinEl.classList.add("inventory-hidden-cheap", "disabled-cheap");
       skinEl.setAttribute("data-no-preview", "1");
     });
 
@@ -1492,11 +1492,11 @@ async function updateTopicTotalValue(totalValue) {
     const batchSize = 24;
 
     const hiddenCheapItems = Array.from(
-      listEl.querySelectorAll(".skin.inventory-hidden-cheap.disabled:not(.expander)")
+      listEl.querySelectorAll(".skin.inventory-hidden-cheap.disabled-cheap:not(.expander)")
     ).slice(0, batchSize);
 
     hiddenCheapItems.forEach((skinEl) => {
-      skinEl.classList.remove("disabled");
+      skinEl.classList.remove("disabled-cheap");
       skinEl.removeAttribute("data-no-preview");
     });
 
@@ -1729,7 +1729,7 @@ async function updateTopicTotalValue(totalValue) {
       }
 
       const skinBox = $(element).closest("[data-box-id]");
-      const visibleItems = skinBox.find('.skin:not(.disabled):not(.none):not(.extra-list):not(.expander):not([data-no-preview="1"])');
+      const visibleItems = skinBox.find('.skin:not(.disabled):not(.disabled-cheap):not(.none):not(.extra-list):not(.expander):not([data-no-preview="1"])');
       const totalItems = visibleItems.length;
       const itemName = element?.querySelector(".skin-desc-name")?.textContent.trim() || "";
       const weaponName = itemName.split("|")[0].trim();

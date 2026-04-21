@@ -2270,6 +2270,7 @@ nav .pages {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    order: 1;
 }
 
 .sitepage.items .box-skins.solo .box-skins-list .skin.expander.disabled {
@@ -2322,7 +2323,8 @@ nav .pages {
     transition: all .35s ease-in-out !important;
 }
 
-.sitepage.items .skin.disabled {
+.sitepage.items .skin.disabled,
+.sitepage.items .skin.disabled-cheap {
     /* height: 0 !important;
     width: 0 !important;
     min-width: 0 !important;
@@ -4771,6 +4773,7 @@ nav img {
 .topic-boxes-holder {
     min-height: 718px;
     max-height: 718px;
+    margin-bottom: 50px;
     /* gap: 18px 9px; */
 }
 
@@ -4784,9 +4787,9 @@ nav img {
     max-height: 818px;
 }
 
-.topic-boxes-holder:has(.pagination-holder) {
+/* .topic-boxes-holder:has(.pagination-holder) {
     margin-bottom: 50px;
-}
+} */
 
 .topic-boxes-holder.sticker-crafts.pagination {
     min-height: 812px;
@@ -7491,8 +7494,10 @@ h2:has(.boxtitle) {
 
 footer {
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: 100px;
     margin-top: 50px;
+    position: relative;
 }
 
 footer .centralizer {
@@ -9679,14 +9684,6 @@ a[data-title]:after,
 .sitepage.topic-craft .slick-slider {
     margin-top: unset;
     width: 98.5%;
-}
-
-.slick-slider {
-    width: 1050px;
-    margin: 0 auto;
-    overflow: hidden;
-    margin-top: 18px;
-    border-radius: var(--main-border);
 }
 
 .slider-container .slick-slide {
@@ -11917,7 +11914,8 @@ header {
 /* EDIT */
 /* EDIT */
 
-.slick-slider {
+.slick-slider,
+.slider-container  {
     position: relative;
     display: block;
     box-sizing: border-box;
@@ -11929,7 +11927,48 @@ header {
     -khtml-user-select: none;
     -ms-touch-action: pan-y;
     touch-action: pan-y;
-    -webkit-tap-highlight-color: transparent
+    -webkit-tap-highlight-color: transparent;
+
+    width: 1050px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 18px;
+    border-radius: var(--main-border);
+}
+
+/* ДО инициализации slick */
+.slider-container:not(.slick-initialized) {
+    position: relative;
+    display: block;
+    width: 1050px;
+    margin: 18px auto 0;
+    overflow: hidden;
+    border-radius: var(--main-border);
+    background: var(--darkgray);
+
+    aspect-ratio: 1050 / 229.25;
+}
+
+.boxreview .slider-container:not(.slick-initialized) {
+    margin: 8px auto 0;
+}
+
+/* скрываем все слайды до инициализации */
+.slider-container:not(.slick-initialized) .slider-banner {
+    display: none;
+}
+
+/* оставляем только первый */
+.slider-container:not(.slick-initialized) .slider-banner:first-child {
+    display: block;
+    width: 100%;
+}
+
+/* картинка занимает всю ширину */
+.slider-container:not(.slick-initialized) .slider-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .slick-list {
@@ -14538,7 +14577,8 @@ header {
         width: auto;
     }
 
-    .slider-container {
+    .slider-container,
+    .slider-container:not(.slick-initialized) {
         width: 85%;
     }
 
@@ -16646,7 +16686,8 @@ header {
 
     }
 
-    .slider-container {
+    .slider-container,
+    .slider-container:not(.slick-initialized) {
         width: 96%;
         margin-top: 2px;
     }

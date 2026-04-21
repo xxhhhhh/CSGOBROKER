@@ -1327,84 +1327,50 @@ if (!isExcludedPage) {
   }
 }
 
-$(document).ready(function() {
+// $(document).ready(function() {
+//   var excludedPages = ['/terms-of-service', '/privacy-policy', '/contact-us', '/responsibility'];
+//   var path = window.location.pathname;
+//   var excluded = false;
 
-  var excludedPages = ['/terms-of-service', '/privacy-policy', '/contact-us', '/responsibility'];
-  var path = window.location.pathname;
-  var excluded = false;
-  excludedPages.forEach(function(excludedPage) {
-    if (path.endsWith(excludedPage) || path.endsWith(excludedPage + '.html')) {
-      excluded = true;
-    }
-  });
-  if (excluded) {
-    return;
-  }
+//   excludedPages.forEach(function(excludedPage) {
+//     if (path.endsWith(excludedPage) || path.endsWith(excludedPage + '.html')) {
+//       excluded = true;
+//     }
+//   });
 
-  var sliderItems = [
-    { href: '/', src: '/img/best-gambling-sites-slide-2026.webp', label: 'Best Gambling Sites' },
-    { href: '/rust', src: '/img/best-rust-sites-slide-2026.webp', label: 'Best Rust Sites' },
-    { href: '/earning/offerwalls', src: '/img/earn-skins-slider-2026.webp', label: 'Best Offerwall Sites' }
-  ];
+//   if (excluded) {
+//     return;
+//   }
 
-  if (languageTag === 'ru') {
-    sliderItems = [
-      { href: '/ru', src: '/img/best-gambling-sites-slide-2026-ru.webp', label: 'Лучшие Гемблинг Сайты CS2' },
-      { href: '/ru/rust', src: '/img/best-rust-sites-slide-2026-ru.webp', label: 'Лучшие Сайты Rust' },
-      { href: '/ru/earning/offerwalls', src: '/img/earn-skins-slider-2026-ru.webp', label: 'Лучшие Сайты с Заданиями' }
-    ];
-  }
+//   var sliderContainer = $('.slider-container');
 
-  var sliderContainer = $('<div class="slider-container"></div>');
-  sliderItems.forEach(function(item) {
-    sliderContainer.append(createSliderItem(item.href, item.src, item.label));
-  });
+//   if (!sliderContainer.length) {
+//     return;
+//   }
 
-  if ($('.boxes-holder').length > 0) {
-    var mainInfobox = $('.main-infobox');
-    sliderContainer.insertAfter(mainInfobox);
-  } else if ($('.main-infobox').length > 0) {
-    var mainInfobox = $('.main-infobox');
-    sliderContainer.insertBefore(mainInfobox);
-} else if (path.includes('/reviews/') || path.includes('/mirrors/')) {
-    var boxReview = $('.boxreview');
-    boxReview.append(sliderContainer);
-}  else if (path.includes('/topic/') && $('.topicpage').length > 0) {
-    var boxTopic = $('.topicpage');
-    boxTopic.append(sliderContainer);
-} else if ($('.newest-boxes').length > 0) {
-    var newestBoxes = $('.newest-boxes');
-    sliderContainer.insertBefore(newestBoxes);
-} else {
-    var footer = $('footer');
-    sliderContainer.insertBefore(footer);
-}
+//   if (!sliderContainer.hasClass('slick-initialized')) {
+//     sliderContainer.slick({
+//       slidesToShow: 1,
+//       slidesToScroll: 1,
+//       autoplay: true,
+//       speed: 450,
+//       autoplaySpeed: 6000,
+//       pauseOnHover: true,
+//       pauseOnDotsHover: true,
+//       prevArrow: '<button aria-label="Prev Slide" class="prev-button"><i class="officon chevron left"></i></button>',
+//       nextArrow: '<button aria-label="Next Slide" class="next-button"><i class="officon chevron right"></i></button>',
+//       dots: true,
+//       customPaging: function(slider, i) {
+//         return '<button class="slider-dot">' + (i + 1) + '</button>';
+//       },
+//     });
+//   }
 
-
-  sliderContainer.slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 450,
-    autoplaySpeed: 6000,
-    pauseOnHover: true,
-    pauseOnDotsHover: true,
-    prevArrow: '<button aria-label="Prev Slide" class="prev-button"><i class="officon chevron left"></i></button>',
-    nextArrow: '<button aria-label="Next Slide" class="next-button"><i class="officon chevron right"></i></button>',
-    dots: true,
-    customPaging: function(slider, i) {
-      return '<button class="slider-dot">' + (i + 1) + '</button>';
-    },
-  });
-
-  function createSliderItem(href, src, label) {
-    return '<a href="' + href + '" class="slider-banner" aria-label="Visit ' + label + '"><img src="' + src + '" alt="' + label + '" draggable="false"></a>';
-  }
-  const sliderlinks = document.querySelector('.slider-container');
-  if (!languageTag === 'pl') { 
-    updateURLs(sliderlinks);
-  }
-});
+//   const sliderlinks = sliderContainer.get(0);
+//   if (sliderlinks && languageTag !== 'pl') {
+//     updateURLs(sliderlinks);
+//   }
+// });
 
 $(document).ready(function() {
   $(window).on('scroll resize', function() {

@@ -115,38 +115,38 @@ jobs:
 
     strategy:
       fail-fast: false
-      max-parallel: ${{ fromJSON(inputs.max_parallel) }}
+      max-parallel: ${{ fromJSON(inputs.max_parallel || '2') }}
       matrix:
         shard_index: [0, 1, 2, 3, 4, 5]
 
     steps:
       - name: Skip unused shard indexes
-        if: ${{ matrix.shard_index >= fromJSON(inputs.shard_total) }}
+        if: ${{ matrix.shard_index >= fromJSON(inputs.shard_total || '2') }}
         run: |
-          echo "Skipping shard ${{ matrix.shard_index }} because shard_total=${{ inputs.shard_total }}"
+          echo "Skipping shard ${{ matrix.shard_index }} because shard_total=${{ inputs.shard_total || '1' }}"
           exit 0
 
       - uses: actions/checkout@v4
-        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) }}
+        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total || '2') }}
 
       - name: Download Liquipedia artifact
-        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) && inputs.run_liquipedia }}
+        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total || '1') && inputs.run_liquipedia }}
         uses: actions/download-artifact@v4
         with:
           name: liquipedia-base
           path: .
 
       - uses: actions/setup-node@v4
-        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) }}
+        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total || '1') }}
         with:
           node-version: 20
           cache: npm
 
       - run: npm ci
-        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) }}
+        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total || '1') }}
 
       - name: Run inventory shard
-        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) }}
+        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total || '1') }}
         env:
           PROXY_ENABLED: "0"
           CSFLOAT_CHECKER_ENABLED: ${{ inputs.resolve_doppler_phase && '1' || '0' }}
@@ -159,7 +159,7 @@ jobs:
             ONLY_ARGS="--only ${{ inputs.only_players }}"
           fi
 
-          EFFECTIVE_SHARD_TOTAL="${{ inputs.shard_total }}"
+          EFFECTIVE_SHARD_TOTAL="${{ inputs.shard_total || '1' }}"
           if [ -n "${{ inputs.only_players }}" ]; then
             EFFECTIVE_SHARD_TOTAL="1"
           fi
@@ -171,14 +171,14 @@ jobs:
 
           node code-parts/offline-scripts/fetch-players-inventories.js \
             --skip-liquipedia \
-            --delay ${{ inputs.delay_ms }} \
+            --delay ${{ inputs.delay_ms || '200' }}
             --shard-index ${{ matrix.shard_index }} \
             --shard-total $EFFECTIVE_SHARD_TOTAL \
             --verbose \
             $ONLY_ARGS
 
       - name: Collect changed inventory files
-        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) }}
+        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total || '1') }}
         run: |
           mkdir -p _artifact/code-parts/topics/players-data/players-inventories
 
@@ -195,7 +195,7 @@ jobs:
           fi
 
       - name: Upload shard artifact
-        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total) }}
+        if: ${{ matrix.shard_index < fromJSON(inputs.shard_total || '1') }}
         uses: actions/upload-artifact@v4
         with:
           name: shard-${{ matrix.shard_index }}

@@ -9,7 +9,7 @@
  * Примеры:
  *   node scripts/run-offline-scripts.js
  *   node scripts/run-offline-scripts.js --start schema_main.js
- *   node scripts/run-offline-scripts.js --only schema_main.js,schema_review.js --continue-on-error
+ *   node fullfill.js --only schema-inject.js,freebies-fill.js,generate-go-redirects.js,static-pages-fill.js,alt-langs.js,build-search-config.js,meta-and-sitemap.js,clone_repo.js --continue-on-error
  *   node scripts/run-offline-scripts.js --dir ./code-parts/offline-scripts --timeout 600000
  *
  * Почему spawn(node, file): единый способ исполнения .js с текущей версией Node, без зависимости от execute-битов.
@@ -20,8 +20,8 @@ const path = require("path");
 const { spawn } = require("child_process");
 
 const ORDER = [
-  // "static-topics-fill",
-  // "static-players-fill",
+  "static-topics-fill",
+  "static-players-fill",
   "schema-inject.js",
   "freebies-fill.js",
   "generate-go-redirects.js",
