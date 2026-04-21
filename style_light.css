@@ -529,7 +529,8 @@ h3,
 .box .logobg .best-alt .best-alt-unit:hover::before,
 .box .logobg .best-alt .best-alt-unit span, 
 .box .logobg .best-alt .best-alt-unit::before,
-.menu-nav-item {
+.menu-nav-item,
+.skin.expander:hover span {
     color: #1f1f1f;
 }
 
@@ -1826,3 +1827,9 @@ ul .submenu li .nonredir,
 .slider-container button i {
     filter: brightness(.5);
 }
+
+.skin.expander .officon::before {
+    filter: brightness(.2);
+    opacity: .6;
+}
+

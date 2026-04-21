@@ -2265,6 +2265,55 @@ nav .pages {
     padding-left: unset;
 }
 
+.sitepage.items .box-skins.solo .box-skins-list .skin.expander {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sitepage.items .box-skins.solo .box-skins-list .skin.expander.disabled {
+    display: none;
+}
+
+.sitepage.items .box-skins.solo .box-skins-list .skin.expander > * {
+    transform: rotate(-3deg);
+}
+
+.skin.expander:hover span {
+    color: var(--white);
+}
+
+.skin.expander:hover .officon::before {
+    opacity: 1;
+}
+
+.skin.expander span {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--text-darkgray);
+    transition: all .15s ease-in-out;
+    font-weight: 500;
+}
+
+.skin-expander-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 16px;
+}
+
+
+.skin.expander .officon {
+    margin-right: 15px;
+}
+
+.skin.expander .officon.click::before {
+    width: 50px;
+    height: 50px;
+}
+
 .sitepage.items .skin img {
     transition: all .2s ease-in-out !important;
 }
@@ -2455,11 +2504,11 @@ nav .pages {
     opacity: .2;
 }
 
-.skin::before {
+.skin:not(.expander)::before {
     content: '';
 }
 
-.box-skins .skin::before,
+.box-skins .skin:not(.expander)::before,
 .box-skins .skin .skin-desc-name {
     position: absolute;
     display: flex;
@@ -2487,15 +2536,18 @@ nav .pages {
     filter: blur(10px);
 }
 
-.skin::after {
+.skin:not(.expander)::after {
     content: '';
+}
+
+.skin::after {
     position: absolute;
     width: 16px;
     height: 8px;
     left: 15px;
     top: 15px;
     border-radius: 5px;
-    background-color: var(--white);
+    background: var(--white);
     transition: opacity .15s ease-in-out;
     display: none;
     opacity: 0;
@@ -2505,7 +2557,7 @@ nav .pages {
     display: block;
 }
 
-.sitepage.items .box-skins .skin::before {
+.sitepage.items .box-skins .skin:not(.expander)::before {
     content: '';
     width: 150px;
     height: 125px;
@@ -9451,6 +9503,12 @@ a[data-title]:after,
 
 .officon.library::before {
     background-image: url(/img/icons/gamemodes/apps.svg);
+    height: 20px;
+    width: 20px;
+}
+
+.officon.click::before {
+    background-image: url(/img/icons/gamemodes/mouse-pointer-click.svg);
     height: 20px;
     width: 20px;
 }

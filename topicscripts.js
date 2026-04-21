@@ -545,7 +545,7 @@ async function updateTopicTotalValue(totalValue) {
 
     ensureOriginalTopicSkinOrder($list);
 
-    const skins = $list.children(".skin").get();
+    const skins = $list.children(".skin").not(".expander").get();
     if (!skins.length) return;
 
     if (direction === "original") {
@@ -604,6 +604,126 @@ async function updateTopicTotalValue(totalValue) {
     }
 
     updateNavigationReset?.();
+  }
+
+  const INVENTORY_EXPAND_PRICE_LIMIT = 1.0;
+  const INVENTORY_EXPAND_BATCH_SIZE = 24;
+
+  function getInventoryExpanderWord(count) {
+    if (typeof languageTag !== "undefined" && languageTag === "ru") {
+      const mod10 = count % 10;
+      const mod100 = count % 100;
+
+      if (mod10 === 1 && mod100 !== 11) return "предмет";
+      if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return "предмета";
+      return "предметов";
+    }
+
+    return count === 1 ? "item" : "items";
+  }
+
+  function createInventoryExpander(remainingCount) {
+    const el = document.createElement("div");
+    el.className = "skin expander";
+    el.setAttribute("data-no-preview", "1");
+
+    const word = getInventoryExpanderWord(remainingCount);
+    const belowText =
+      typeof languageTag !== "undefined" && languageTag === "ru"
+        ? `до ${INVENTORY_EXPAND_PRICE_LIMIT.toFixed(2)}$`
+        : `below ${INVENTORY_EXPAND_PRICE_LIMIT.toFixed(2)}$`;
+
+    el.innerHTML = `
+      <i class="officon click"></i>
+      <div class="skin-expander-text">
+        <span>${remainingCount} ${word}</span>
+        <span>${belowText}</span>
+      </div>
+    `;
+
+    return el;
+  }
+
+  function updateInventoryExpanderState(listEl) {
+    if (!listEl || !isPlayersInventoryTopicPath()) return;
+
+    const cheapItems = Array.from(
+      listEl.querySelectorAll('.skin.inventory-hidden-cheap:not(.expander)')
+    );
+
+    let expander = listEl.querySelector('.skin.expander');
+    const hiddenCheapItems = cheapItems.filter((el) => el.classList.contains("disabled"));
+    const remainingCount = hiddenCheapItems.length;
+
+    if (!cheapItems.length) {
+      if (expander) expander.remove();
+      return;
+    }
+
+    if (!expander) {
+      expander = createInventoryExpander(remainingCount);
+    }
+
+    const word = getInventoryExpanderWord(remainingCount);
+    const textSpans = expander.querySelectorAll(".skin-expander-text span");
+
+    if (textSpans[0]) {
+      textSpans[0].textContent = `${remainingCount} ${word}`;
+    }
+
+    expander.classList.toggle("disabled", remainingCount <= 0);
+
+    const visibleSkins = Array.from(
+      listEl.querySelectorAll('.skin:not(.disabled):not(.expander)')
+    );
+
+    const lastVisibleSkin = visibleSkins[visibleSkins.length - 1];
+
+    if (remainingCount <= 0) {
+      if (!expander.parentNode) {
+        listEl.appendChild(expander);
+      } else {
+        listEl.appendChild(expander);
+      }
+      return;
+    }
+
+    if (!expander.parentNode) {
+      listEl.appendChild(expander);
+    }
+
+    if (lastVisibleSkin && lastVisibleSkin !== expander.previousElementSibling) {
+      lastVisibleSkin.insertAdjacentElement("afterend", expander);
+    } else if (!lastVisibleSkin) {
+      listEl.prepend(expander);
+    }
+  }
+
+  function initInventoryCheapItemsExpander() {
+    if (!isPlayersInventoryTopicPath()) return;
+
+    const listEl = document.querySelector(".box-skins-list");
+    if (!listEl) return;
+
+    const skins = Array.from(listEl.querySelectorAll(".skin:not(.expander)"));
+
+    const cheapPricedItems = skins.filter((skinEl) => {
+      const price = getTopicSkinPriceValue(skinEl);
+      if (price === null) return false; // без цены не учитываем
+      return price < INVENTORY_EXPAND_PRICE_LIMIT;
+    });
+
+    if (!cheapPricedItems.length) {
+      listEl.querySelector(".skin.expander")?.remove();
+      return;
+    }
+
+    cheapPricedItems.forEach((skinEl) => {
+      skinEl.classList.add("inventory-hidden-cheap", "disabled");
+      skinEl.setAttribute("data-no-preview", "1");
+    });
+
+    updateInventoryExpanderState(listEl);
   }
 
   async function fetchSkinPrices() {
@@ -1346,6 +1466,7 @@ async function updateTopicTotalValue(totalValue) {
 
       if (isPlayersInventoryTopicPath()) {
         applyDefaultInventoryPriceSort();
+        initInventoryCheapItemsExpander();
       }
 
       if (location.pathname.includes("/topic/sticker-crafts/")) {
@@ -1359,6 +1480,28 @@ async function updateTopicTotalValue(totalValue) {
   if ($(".skin").length) {
     priceSkinsOnPage();
   }
+  $(document).on("click", ".skin.expander", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if ($(this).hasClass("disabled")) return;
+
+    const listEl = this.closest(".box-skins-list");
+    if (!listEl) return;
+
+    const batchSize = 24;
+
+    const hiddenCheapItems = Array.from(
+      listEl.querySelectorAll(".skin.inventory-hidden-cheap.disabled:not(.expander)")
+    ).slice(0, batchSize);
+
+    hiddenCheapItems.forEach((skinEl) => {
+      skinEl.classList.remove("disabled");
+      skinEl.removeAttribute("data-no-preview");
+    });
+
+    updateInventoryExpanderState(listEl);
+  });
 })();
 
     // ---------- КРАФТЫ: работа только с уже существующими .skin ----------
@@ -1567,7 +1710,11 @@ async function updateTopicTotalValue(totalValue) {
 
     async function showPreviewWindow(element) {
       if (!element) return;
-      if ($(element).hasClass("extra-list") || element.getAttribute("data-no-preview") === "1") return;
+      if (
+        $(element).hasClass("extra-list") ||
+        $(element).hasClass("expander") ||
+        element.getAttribute("data-no-preview") === "1"
+      ) return;
 
       const previewWindow = $("#preview-window");
       const previewContent = $("#preview-content");
@@ -1582,7 +1729,7 @@ async function updateTopicTotalValue(totalValue) {
       }
 
       const skinBox = $(element).closest("[data-box-id]");
-      const visibleItems = skinBox.find('.skin:not(.disabled):not(.none):not(.extra-list):not([data-no-preview="1"])');
+      const visibleItems = skinBox.find('.skin:not(.disabled):not(.none):not(.extra-list):not(.expander):not([data-no-preview="1"])');
       const totalItems = visibleItems.length;
       const itemName = element?.querySelector(".skin-desc-name")?.textContent.trim() || "";
       const weaponName = itemName.split("|")[0].trim();
@@ -1831,7 +1978,7 @@ async function updateTopicTotalValue(totalValue) {
           }
         } else {
           const currentBox = $("[data-box-id='" + currentBoxId + "']");
-          const visibleItems = currentBox.find('.skin:not(.disabled):not(.none):not(.extra-list):not([data-no-preview="1"])');
+          const visibleItems = currentBox.find('.skin:not(.disabled):not(.none):not(.extra-list):not(.expander):not([data-no-preview="1"])');
           const total = visibleItems.length;
           const currentIndex = +$previewWindow.attr("data-current-index");
 
@@ -1853,12 +2000,17 @@ async function updateTopicTotalValue(totalValue) {
     }
 
     $(document).on("click", ".skin", function (e) {
-      if ($(this).hasClass("extra-list") || $(this).attr("data-no-preview") === "1") {
+      if (
+        $(this).hasClass("extra-list") ||
+        $(this).hasClass("expander") ||
+        $(this).attr("data-no-preview") === "1"
+      ) {
         return;
       }
 
       showPreviewWindow(this);
     });
+
     $(document).on("click", ".preview-close-button", function () {
       closePreviewWindow();
     });
@@ -1915,7 +2067,7 @@ async function updateTopicTotalValue(totalValue) {
     function sortSkinsInList($list, direction) {
       ensureOriginalSkinOrder($list);
 
-      const skins = $list.children(".skin").get();
+      const skins = $list.children(".skin").not(".expander").get();
 
       if (!skins.length) return;
 
@@ -2172,7 +2324,7 @@ async function updateTopicTotalValue(totalValue) {
 
         ensureTopicOriginalOrder($list);
 
-        const skins = $list.children(".skin").get();
+        const skins = $list.children(".skin").not(".expander").get();
         if (!skins.length) return;
 
         if (sortState === "original") {
@@ -2219,7 +2371,7 @@ async function updateTopicTotalValue(totalValue) {
 
         ensureTopicOriginalOrder($list);
 
-        const skins = $list.children(".skin").get();
+        const skins = $list.children(".skin").not(".expander").get();
         const sortOrder = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];
 
         if (sortState === "original") {
