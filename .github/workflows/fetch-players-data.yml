@@ -57,6 +57,9 @@ on:
         default: false
         type: boolean
 
+  schedule:
+    - cron: "0 3 * * *"  # раз в сутки
+    
 concurrency:
   group: fetch-players-data-${{ github.ref }}
   cancel-in-progress: true
@@ -105,7 +108,7 @@ jobs:
           if-no-files-found: error
 
   inventory-shards:
-    if: ${{ always() && inputs.run_inventories }}
+    if: ${{ always() && (inputs.run_inventories || github.event_name == 'schedule') }}
     needs: [liquipedia]
     runs-on: ubuntu-latest
     timeout-minutes: 180
@@ -202,7 +205,7 @@ jobs:
           if-no-files-found: error
 
   merge:
-    if: ${{ always() && inputs.run_inventories }}
+    if: ${{ always() && (inputs.run_inventories || github.event_name == 'schedule') }}
     needs: [inventory-shards]
     runs-on: ubuntu-latest
     timeout-minutes: 60
@@ -222,10 +225,26 @@ jobs:
         run: |
           node code-parts/topics/players-data/players-list/merge-fetch-results.js
 
+      - name: Generate player pages
+        run: |
+          ONLY_ARGS=""
+          if [ -n "${{ inputs.only_players }}" ]; then
+            ONLY_ARGS="--only ${{ inputs.only_players }}"
+          fi
+
+          node code-parts/offline-scripts/static-players-fill.js \
+            --root . \
+            --verbose \
+            $ONLY_ARGS
+
       - name: Commit generated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add code-parts/topics/players-data
+          git add ru/topic/players/inventories
+          git add topic/players/inventories
+          git add ru/topic/players/inventories.html
+          git add topic/players/inventories.html
           git diff --cached --quiet || git commit -m "chore: update player data"
           git push
