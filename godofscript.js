@@ -1327,50 +1327,50 @@ if (!isExcludedPage) {
   }
 }
 
-// $(document).ready(function() {
-//   var excludedPages = ['/terms-of-service', '/privacy-policy', '/contact-us', '/responsibility'];
-//   var path = window.location.pathname;
-//   var excluded = false;
+$(document).ready(function() {
+  var excludedPages = ['/terms-of-service', '/privacy-policy', '/contact-us', '/responsibility'];
+  var path = window.location.pathname;
+  var excluded = false;
 
-//   excludedPages.forEach(function(excludedPage) {
-//     if (path.endsWith(excludedPage) || path.endsWith(excludedPage + '.html')) {
-//       excluded = true;
-//     }
-//   });
+  excludedPages.forEach(function(excludedPage) {
+    if (path.endsWith(excludedPage) || path.endsWith(excludedPage + '.html')) {
+      excluded = true;
+    }
+  });
 
-//   if (excluded) {
-//     return;
-//   }
+  if (excluded) {
+    return;
+  }
 
-//   var sliderContainer = $('.slider-container');
+  var sliderContainer = $('.slider-container');
 
-//   if (!sliderContainer.length) {
-//     return;
-//   }
+  if (!sliderContainer.length) {
+    return;
+  }
 
-//   if (!sliderContainer.hasClass('slick-initialized')) {
-//     sliderContainer.slick({
-//       slidesToShow: 1,
-//       slidesToScroll: 1,
-//       autoplay: true,
-//       speed: 450,
-//       autoplaySpeed: 6000,
-//       pauseOnHover: true,
-//       pauseOnDotsHover: true,
-//       prevArrow: '<button aria-label="Prev Slide" class="prev-button"><i class="officon chevron left"></i></button>',
-//       nextArrow: '<button aria-label="Next Slide" class="next-button"><i class="officon chevron right"></i></button>',
-//       dots: true,
-//       customPaging: function(slider, i) {
-//         return '<button class="slider-dot">' + (i + 1) + '</button>';
-//       },
-//     });
-//   }
+  if (!sliderContainer.hasClass('slick-initialized')) {
+    sliderContainer.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      speed: 450,
+      autoplaySpeed: 6000,
+      pauseOnHover: true,
+      pauseOnDotsHover: true,
+      prevArrow: '<button aria-label="Prev Slide" class="prev-button"><i class="officon chevron left"></i></button>',
+      nextArrow: '<button aria-label="Next Slide" class="next-button"><i class="officon chevron right"></i></button>',
+      dots: true,
+      customPaging: function(slider, i) {
+        return '<button class="slider-dot">' + (i + 1) + '</button>';
+      },
+    });
+  }
 
-//   const sliderlinks = sliderContainer.get(0);
-//   if (sliderlinks && languageTag !== 'pl') {
-//     updateURLs(sliderlinks);
-//   }
-// });
+  const sliderlinks = sliderContainer.get(0);
+  if (sliderlinks && languageTag !== 'pl') {
+    updateURLs(sliderlinks);
+  }
+});
 
 $(document).ready(function() {
   $(window).on('scroll resize', function() {
