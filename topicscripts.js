@@ -454,21 +454,67 @@ function getSkinAltName(skinEl) {
     return Number.isFinite(value) && value > 0 ? value : 1;
   }
 
-  function updateTopicTotalValue(totalValue) {
-    const info = document.querySelector(".topic-extra-info");
-    if (!info) return;
+function formatInventoryUpdatedAt(value) {
+  if (!value) return "";
 
-    const spans = info.querySelectorAll("span");
-    if (!spans[1]) return;
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "";
 
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = date.getFullYear();
+
+  return `${day}.${month}.${year}`;
+}
+
+async function updateTopicTotalValue(totalValue) {
+  const info = document.querySelector(".topic-extra-info");
+  if (!info) return;
+
+  const summarySpans = info.querySelectorAll(".topic-inventory-summary span");
+  const updateSpan = info.querySelector(".topic-inventory-update span");
+
+  if (summarySpans[1]) {
     if (Number.isFinite(totalValue) && totalValue > 0) {
-      spans[1].textContent = `${totalValue.toFixed(2)}$`;
-      info.classList.add("show"); // <-- добавлено
+      summarySpans[1].textContent = `${totalValue.toFixed(2)}$`;
+      info.classList.add("show");
     } else {
-      spans[1].textContent = "";
+      summarySpans[1].textContent = "";
       info.classList.remove("show");
     }
   }
+
+  if (!isPlayersInventoryTopicPath() || !updateSpan) return;
+
+  try {
+    const slug = window.location.pathname
+      .split("/")
+      .pop()
+      .replace(/\.html$/i, "")
+      .trim()
+      .toLowerCase();
+
+    if (!slug) {
+      updateSpan.textContent = "";
+      return;
+    }
+
+    const res = await fetch(
+      `/code-parts/topics/players-data/players-inventories/${slug}.json`,
+      { cache: "no-store" }
+    );
+
+    if (!res.ok) {
+      updateSpan.textContent = "";
+      return;
+    }
+
+    const data = await res.json();
+    updateSpan.textContent = formatInventoryUpdatedAt(data?.updatedAt);
+  } catch {
+    updateSpan.textContent = "";
+  }
+}
 
   function ensureOriginalTopicSkinOrder($list) {
     $list.children(".skin").each(function (index) {
@@ -1285,8 +1331,8 @@ function getSkinAltName(skinEl) {
       }
     }
 
-    function finalize() {
-      updateTopicTotalValue(totalValue);
+    async function finalize() {
+      await updateTopicTotalValue(totalValue);
 
       $(".skin img").each(function () {
         if (this.complete) {

@@ -2505,7 +2505,7 @@ function buildTopicExtraInfoHtml({ totalItems, updatedAt, lang = "ru" }){
     return [
       `<div class="topic-extra-info">`,
       `  <div class="topic-inventory-summary">${labelItems}: <span>${escapeHtml(String(totalItems))}</span>, ${labelValue}: <span></span></div>`,
-      `  <div class="topic-inventory-update">${labelUpdated}: <span>${escapeHtml(formattedDate)}</span></div>`,
+      `  <div class="topic-inventory-update">${labelUpdated}: <span></span></div>`,
       `</div>`
     ].join("\n");
   }

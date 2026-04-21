@@ -4953,17 +4953,19 @@ nav img {
     color: var(--text-darkgray);
 }
 
-.topic-extra-info span:nth-child(2) {
+.topic-extra-info span:nth-child(2),
+.topic-extra-info .topic-inventory-update span {
     opacity: 0;
 }
 
-.topic-extra-info.show span:nth-child(2) {
+.topic-extra-info.show span:nth-child(2),
+.topic-extra-info .topic-inventory-update span {
     opacity: 1;
 }
 
 .topic-extra-info span {
     color: var(--text-lightgray);
-    transition: all .3s ease-in-out;
+    transition: all .25s ease-in-out;
 }
 
 .sitepage.items .box-skins.solo .box-skins-list {
