@@ -2900,6 +2900,10 @@ function normalizeWhitespace(text) {
     .trim();
 }
 
+function escapeRegExp(input) {
+  return String(input || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function stripTags(html) {
   return normalizeWhitespace(String(html || "").replace(/<[^>]*>/g, " "));
 }
@@ -2927,20 +2931,20 @@ function cleanWikitextValue(value) {
 }
 
 function extractWikitextField(raw, fieldName) {
-  const text = String(raw || "");
-  if (!text) return "";
+  const re = new RegExp(
+    `^\\s*\\|\\s*${escapeRegExp(fieldName)}\\s*=[ \\t]*([^\\r\\n]*)`,
+    "im"
+  );
 
-  const pattern = new RegExp(`\\|\\s*${fieldName}\\s*=([\\s\\S]*?)(?=\\n\\|\\s*[a-zA-Z0-9_]+\\s*=|$)`, "i");
-  const match = text.match(pattern);
-
-  return match ? String(match[1] || "").trim() : "";
+  const m = String(raw || "").match(re);
+  return m ? m[1].trim() : "";
 }
 
 function extractTeamFromRaw(raw) {
   return cleanWikitextValue(
     extractWikitextField(raw, "team") ||
     extractWikitextField(raw, "current_team") ||
-    extractWikitextField(raw, "team1")
+    extractWikitextField(raw, "team1")  
   );
 }
 
@@ -3291,6 +3295,12 @@ async function fetchLiquipediaPlayerData(player, { verbose = false, refetchLiqui
 
     let parsedTwitch = parseTwitchValue(twitchRaw);
     let parsedFaceit = parseFaceit(faceitRaw);
+    
+    if (verbose) {
+      console.log(
+        `[LIQUIPEDIA PARSE DONE] ${current.nickname} :: team=${teamState.team || "-"}, name=${current.name || "-"}`
+      );
+    }
 
     const rawExternalLinks = extractExternalLinksFromRaw(raw);
 
@@ -3431,6 +3441,12 @@ async function buildTeamsDocument(
 
   for (const [teamKey, group] of incomingByKey.entries()) {
     if (verbose) {
+      console.log(
+        `[TEAM META START] ${group.team} :: players=${group.players.length}`
+      );
+    }
+
+    if (verbose) {
       console.log(`[TEAM META] ${group.team} :: players=${group.players.length}`);
     }
     const meta = await fetchTeamMeta(
@@ -3442,6 +3458,12 @@ async function buildTeamsDocument(
       root,
       { verbose }
     );
+
+    if (verbose) {
+      console.log(
+        `[TEAM META DONE] ${group.team} :: region=${meta.region || "-"}, logoPath=${meta.logoPath || "-"}`
+      );
+    }
 
     group.players.sort((a, b) =>
       String(a.nickname || "").localeCompare(String(b.nickname || ""), "en", {
@@ -3678,28 +3700,76 @@ async function main() {
   }
 
   if (liquipediaOnly) {
-    const teamsDoc = await buildTeamsDocument(FULL_PLAYERS_SOURCE, {
+    const teamsPlayersSource = only.length || onlyFailedFetch
+      ? playersAfterLiquipedia
+      : FULL_PLAYERS_SOURCE;
+
+    const builtTeamsDoc = await buildTeamsDocument(teamsPlayersSource, {
       verbose,
       existingTeamsDoc,
-      mergeWithExisting: true,
+      mergeWithExisting: false,
     });
 
-  if (workflowMode) {
-    await writeWorkflowShardOutputs({
-      workflowShardsDir,
-      shardIndex,
-      shardTotal,
-      playersListDoc: {
-        updatedAt: new Date().toISOString(),
-        count: 0,
-        successCount: 0,
-        failedCount: 0,
-        players: [],
-      },
-      teamsDoc,
-      mode: "liquipedia-only",
-    });
-  }
+    let teamsToWrite = builtTeamsDoc?.teams || [];
+
+    if (only.length || onlyFailedFetch) {
+      const existingTeamsMap = new Map();
+
+      for (const team of Array.isArray(existingTeamsDoc?.teams) ? existingTeamsDoc.teams : []) {
+        const slug = String(team?.slug || safeSlug(team?.team || ""));
+        if (!slug) continue;
+        existingTeamsMap.set(slug, { ...team });
+      }
+
+      for (const incomingTeam of Array.isArray(builtTeamsDoc?.teams) ? builtTeamsDoc.teams : []) {
+        const slug = String(incomingTeam?.slug || safeSlug(incomingTeam?.team || ""));
+        if (!slug) continue;
+
+        const existingTeam = existingTeamsMap.get(slug);
+
+        if (!existingTeam) {
+          existingTeamsMap.set(slug, incomingTeam);
+          continue;
+        }
+
+        existingTeamsMap.set(slug, {
+          ...existingTeam,
+          ...incomingTeam,
+          players: mergeTeamPlayers(existingTeam.players || [], incomingTeam.players || []),
+          playerCount: mergeTeamPlayers(existingTeam.players || [], incomingTeam.players || []).length,
+        });
+      }
+
+      teamsToWrite = [...existingTeamsMap.values()].sort((a, b) =>
+        String(a?.team || "").localeCompare(String(b?.team || ""), "en", {
+          sensitivity: "base",
+          numeric: true,
+        })
+      );
+    }
+
+    const teamsDoc = {
+      updatedAt: new Date().toISOString(),
+      count: teamsToWrite.length,
+      teams: teamsToWrite,
+    };
+
+    if (workflowMode) {
+      await writeWorkflowShardOutputs({
+        workflowShardsDir,
+        shardIndex,
+        shardTotal,
+        playersListDoc: {
+          updatedAt: new Date().toISOString(),
+          count: 0,
+          successCount: 0,
+          failedCount: 0,
+          players: [],
+        },
+        teamsDoc,
+        mode: "liquipedia-only",
+      });
+    }
 
     if (!workflowMode || writeFinalLists) {
       await writeJson(teamsListFile, teamsDoc);
@@ -3708,7 +3778,7 @@ async function main() {
     console.log(`\nDone. Liquipedia only mode.`);
     console.log(`Players source updated: ${playersSourceFile}`);
     console.log(`Workflow shard outputs written: ${workflowShardsDir}`);
-    if (writeFinalLists) {
+    if (!workflowMode || writeFinalLists) {
       console.log(`Teams list written: ${teamsListFile}`);
     }
     return;
