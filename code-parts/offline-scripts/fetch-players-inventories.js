@@ -292,6 +292,23 @@ async function readJsonSafe(file) {
   }
 }
 
+function stableStringify(value) {
+  return JSON.stringify(value, null, 2);
+}
+
+function buildComparableInventoryDoc(doc) {
+  if (!doc || typeof doc !== "object") return null;
+
+  const copy = JSON.parse(JSON.stringify(doc));
+  delete copy.updatedAt;
+  return copy;
+}
+
+function inventoryDocChanged(existingDoc, nextDoc) {
+  return stableStringify(buildComparableInventoryDoc(existingDoc)) !==
+         stableStringify(buildComparableInventoryDoc(nextDoc));
+}
+
 function normalizePlayer(player) {
   return {
     nickname: String(player?.nickname || "").trim(),
@@ -2328,7 +2345,7 @@ async function buildInventoryDocument(player, inventoryResult, { verbose = false
 
       appid: APP_ID,
       contextid: String(CONTEXT_ID),
-      updatedAt: now,
+      updatedAt: String(existingDoc?.updatedAt || now),
       inventoryVisible: !inventoryResult.isPrivate ? null : false,
       fetchOk: false,
       fetchStatus: inventoryResult.status,
@@ -2353,7 +2370,15 @@ async function buildInventoryDocument(player, inventoryResult, { verbose = false
     const normalized = normalizeItem(asset, desc);
     const assetid = String(normalized.assetid || "").trim();
 
-    if ((!normalized.inspectLink || !isValidGeneratedInspectLink(normalized.inspectLink)) && assetid) {
+    const shouldPreserveExistingInspect =
+      assetid &&
+      (
+        !isInspectableMarketItem(normalized) ||
+        !normalized.inspectLink ||
+        !isValidGeneratedInspectLink(normalized.inspectLink)
+      );
+
+    if (shouldPreserveExistingInspect) {
       const fromExisting = existingInspectMap.get(assetid);
       if (fromExisting && isValidGeneratedInspectLink(fromExisting)) {
         normalized.inspectLink = fromExisting;
@@ -2459,7 +2484,7 @@ async function buildInventoryDocument(player, inventoryResult, { verbose = false
 
     appid: APP_ID,
     contextid: String(CONTEXT_ID),
-    updatedAt: now,
+    updatedAt: String(existingDoc?.updatedAt || now),
     inventoryVisible: true,
     fetchOk: true,
     fetchStatus: inventoryResult.status,
@@ -2520,7 +2545,7 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
   ) {
     return {
       ...failedDoc,
-      updatedAt: now,
+      updatedAt: String(existingDoc?.updatedAt || failedDoc?.updatedAt || now),
     };
   }
 
@@ -2541,7 +2566,7 @@ function mergeFailedFetchWithExisting(existingDoc, failedDoc, player) {
       player.isContentCreator ?? existingDoc.isContentCreator ?? false
     ),
 
-    updatedAt: now,
+    updatedAt: String(existingDoc?.updatedAt || failedDoc?.updatedAt || now),
     fetchOk: false,
     fetchStatus: failedDoc.fetchStatus,
     fetchError: failedDoc.fetchError,
@@ -3891,7 +3916,21 @@ async function main() {
         player
       );
 
-      await writeJson(invFile, inventoryDoc);
+      const hasRealInventoryChanges = inventoryDocChanged(existingDoc, inventoryDoc);
+
+      const finalInventoryDoc = hasRealInventoryChanges
+        ? {
+            ...inventoryDoc,
+            updatedAt: new Date().toISOString(),
+          }
+        : {
+            ...inventoryDoc,
+            updatedAt: String(existingDoc?.updatedAt || inventoryDoc.updatedAt || new Date().toISOString()),
+          };
+
+      if (hasRealInventoryChanges || !existingDoc) {
+        await writeJson(invFile, finalInventoryDoc);
+      }
 
       playersListOutput.push({
         nickname: player.nickname,
@@ -3934,11 +3973,25 @@ async function main() {
       }
     );
 
-    const inventoryDoc = inventoryDocRaw.fetchOk
+    const inventoryDocBase = inventoryDocRaw.fetchOk
       ? inventoryDocRaw
       : mergeFailedFetchWithExisting(existingDoc, inventoryDocRaw, player);
 
-    await writeJson(invFile, inventoryDoc);
+    const hasRealInventoryChanges = inventoryDocChanged(existingDoc, inventoryDocBase);
+
+    const inventoryDoc = hasRealInventoryChanges
+      ? {
+          ...inventoryDocBase,
+          updatedAt: new Date().toISOString(),
+        }
+      : {
+          ...inventoryDocBase,
+          updatedAt: String(existingDoc?.updatedAt || inventoryDocBase.updatedAt || new Date().toISOString()),
+        };
+
+    if (hasRealInventoryChanges || !existingDoc) {
+      await writeJson(invFile, inventoryDoc);
+    }
 
     playersListOutput.push({
       nickname: player.nickname,
@@ -3981,7 +4034,7 @@ async function main() {
   const finalFailedCount = finalPlayers.filter((p) => !p?.fetchOk).length;
 
   const playersListDoc = {
-    updatedAt: new Date().toISOString(),
+    updatedAt: String(existingPlayersListDoc?.updatedAt || ""),
     count: finalPlayers.length,
     successCount: finalSuccessCount,
     failedCount: finalFailedCount,
