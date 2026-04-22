@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/6417459b-053f-40d0-b2f5-8a26e7f05750",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-21T00:34:40.407Z",
+  "updatedAt": "2026-04-22T13:00:53.837Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 42,
-  "totalItemsGrouped": 42,
+  "totalItemsRaw": 47,
+  "totalItemsGrouped": 45,
   "items": [
     {
       "assetid": "51157847614",
@@ -88,7 +88,7 @@
       "name": "Graffiti | Heart (Brick Red)",
       "market_hash_name": "Graffiti | Heart (Brick Red)",
       "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A6B6A6BE63AC86A68EA796A2C4A1AEA6B61EAB96A7CEA6D6BEA555982B",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BFAFBFA77AB59FBF97BE8FBBDDB8B7BFAF07B28FBED7BFCFA731E1C02D",
       "tags": [
         {
           "category": "Type",
@@ -215,54 +215,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51134073387",
-      "classid": "7993038008",
-      "instanceid": "8398486080",
-      "amount": 1,
-      "name": "AK-47 | Bloodsport",
-      "market_hash_name": "AK-47 | Bloodsport (Field-Tested)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -864,6 +816,53 @@
       ]
     },
     {
+      "assetid": "51213538232",
+      "classid": "7729666301",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | venomzera (Gold) | Budapest 2025",
+      "market_hash_name": "Sticker | venomzera (Gold) | Budapest 2025",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EDFDEDF554E4CDEDC5EBDDE98FE8E5EDFD14A285ED9DE59753DDFB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51213538232"
+      ]
+    },
+    {
       "assetid": "33543322202",
       "classid": "5537026493",
       "instanceid": "0",
@@ -871,7 +870,7 @@
       "name": "Music Kit | Valve, CS:GO",
       "market_hash_name": "Music Kit | Valve, CS:GO",
       "type": "High Grade Music Kit",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242524AF05872527A5162563A522252DA531411018CAB",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C3D3C3DB61C9E3C3EBC0F3C7ABC3B3C34BC285513CC81C",
       "tags": [
         {
           "category": "Type",
@@ -888,6 +887,134 @@
       ],
       "assetids": [
         "33543322202"
+      ]
+    },
+    {
+      "assetid": "48158747785",
+      "classid": "7729108243",
+      "instanceid": "188530139",
+      "amount": 3,
+      "name": "Sticker | venomzera | Budapest 2025",
+      "market_hash_name": "Sticker | venomzera | Budapest 2025",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2049594951F0406949614A794D2B4C414959BF06214939410F7AABF6",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "48158747785",
+        "48056089094",
+        "48056089083"
+      ]
+    },
+    {
+      "assetid": "51213532902",
+      "classid": "6216347003",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Charm | Die-cast AK",
+      "market_hash_name": "Charm | Die-cast AK",
+      "type": "Remarkable Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51213532902"
+      ]
+    },
+    {
+      "assetid": "51185637385",
+      "classid": "188530161",
+      "instanceid": "8402711452",
+      "amount": 1,
+      "name": "Glock-18 | Dragon Tattoo",
+      "market_hash_name": "Glock-18 | Dragon Tattoo (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
       ]
     },
     {
@@ -1013,7 +1140,7 @@
     {
       "assetid": "50972850635",
       "classid": "7993041858",
-      "instanceid": "188532051",
+      "instanceid": "188530670",
       "amount": 1,
       "name": "StatTrak™ MP7 | Smoking Kills",
       "market_hash_name": "StatTrak™ MP7 | Smoking Kills (Field-Tested)",
@@ -1085,7 +1212,7 @@
     {
       "assetid": "51137863985",
       "classid": "7993037525",
-      "instanceid": "8399461694",
+      "instanceid": "8404910297",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
@@ -1121,7 +1248,7 @@
     {
       "assetid": "51134090916",
       "classid": "7993042201",
-      "instanceid": "6279340654",
+      "instanceid": "6281782541",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Well-Worn)",
@@ -1157,7 +1284,7 @@
     {
       "assetid": "51134146301",
       "classid": "7993040447",
-      "instanceid": "188530248",
+      "instanceid": "188530448",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Bad Trip",
       "market_hash_name": "StatTrak™ FAMAS | Bad Trip (Field-Tested)",
@@ -1193,7 +1320,7 @@
     {
       "assetid": "51137822237",
       "classid": "7993044091",
-      "instanceid": "8399461695",
+      "instanceid": "8402885013",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Field-Tested)",

@@ -7,16 +7,18 @@
   "name": "Helvijs Saukants",
   "nationality": "Latvia",
   "born": "14.02.2001",
+  "isContentCreator": false,
   "twitch": "brokycs",
   "faceit": "https://faceitdb.com/profile/faceit/8f5be263-c0cf-48b8-8f8c-f79e386bbd6b",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-21T00:11:54.655Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 45,
-  "totalItemsGrouped": 45,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-04-22T12:39:48.835Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 46,
+  "totalItemsGrouped": 46,
   "items": [
     {
       "assetid": "49090422567",
@@ -90,7 +92,7 @@
       "name": "Graffiti | King Me (Desert Amber)",
       "market_hash_name": "Graffiti | King Me (Desert Amber)",
       "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AEBEAEB66BA48EAE86AF9EAACCA9A6AEBE0AA39EABC6AEDEB6E9B4EA58",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2018081800DD1238183019281C7A1F101808BC15281D70186800044643C1",
       "tags": [
         {
           "category": "Type",
@@ -1045,7 +1047,7 @@
       "name": "Graffiti | Welcome to the Clutch",
       "market_hash_name": "Graffiti | Welcome to the Clutch",
       "type": "High Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200616061EC30C26062E05360264030E0616910B6E06760E8414DE1A",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204A5A4A528F406A4A62497A4E284F424A5ADD47224A3A4277864E9D",
       "tags": [
         {
           "category": "Type",
@@ -1080,7 +1082,7 @@
       "name": "Music Kit | Valve, CS:GO",
       "market_hash_name": "Music Kit | Valve, CS:GO",
       "type": "High Grade Music Kit",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242524AF05872527A5162563A522252DA531411018CAB",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C3D3C3DB61C9E3C3EBC0F3C7ABC3B3C34BC285513CC81C",
       "tags": [
         {
           "category": "Type",
@@ -1097,6 +1099,42 @@
       ],
       "assetids": [
         "33547384416"
+      ]
+    },
+    {
+      "assetid": "50912327903",
+      "classid": "8246898628",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M249 | Bock Blocks",
+      "market_hash_name": "M249 | Bock Blocks (Field-Tested)",
+      "type": "Mil-Spec Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
       ]
     },
     {
@@ -1222,7 +1260,7 @@
     {
       "assetid": "48002855361",
       "classid": "7993042053",
-      "instanceid": "8351668739",
+      "instanceid": "8402629246",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Inheritance",
       "market_hash_name": "StatTrak™ AK-47 | Inheritance (Factory New)",
@@ -1342,7 +1380,7 @@
     {
       "assetid": "48049546475",
       "classid": "7993043676",
-      "instanceid": "8349410249",
+      "instanceid": "8402629245",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Factory New)",

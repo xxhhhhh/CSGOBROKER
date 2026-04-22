@@ -7,14 +7,16 @@
   "name": "Danil Kryshkovets",
   "nationality": "Russia",
   "born": "25.01.2007",
+  "isContentCreator": false,
   "twitch": "donk1437",
   "faceit": "https://faceitdb.com/profile/faceit/e5e8e2a6-d716-4493-b949-e16965f41654",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-20T23:59:31.689Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-04-22T12:28:29.067Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
   "totalItemsRaw": 232,
   "totalItemsGrouped": 113,
   "items": [
@@ -97,14 +99,14 @@
       "phase": "Emerald"
     },
     {
-      "assetid": "47574022484",
-      "classid": "7993040637",
+      "assetid": "50716291544",
+      "classid": "7993036088",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Butterfly Knife | Night",
-      "market_hash_name": "★ Butterfly Knife | Night (Field-Tested)",
+      "name": "★ Karambit | Doppler",
+      "market_hash_name": "★ Karambit | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204E5E9ABCC9D3FF4F56CD4A6E6666487E4D76BFF9F9BD4D0EC34D267F3E466D32C10E",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B8A8605B0C4F04B9A043BB981DBB90BE88BB807F2D3F5EBBF805BDD051B9C8B098B02558",
       "tags": [
         {
           "category": "Type",
@@ -112,10 +114,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -130,7 +128,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.023656262085,
+      "seed": 701,
+      "phase": "Phase 4"
     },
     {
       "assetid": "45587465948",
@@ -274,6 +275,34 @@
       ]
     },
     {
+      "assetid": "50998451781",
+      "classid": "7993041350",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Driver Gloves | Snow Leopard",
+      "market_hash_name": "★ Driver Gloves | Snow Leopard (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49894033341",
       "classid": "7993041878",
       "instanceid": "188530139",
@@ -310,6 +339,34 @@
       "market_hash_name": "★ Specialist Gloves | Emerald Web (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FAEA5B4E092742FBE250DDDA48B4D2FCCAF9C2316D7A0FF9BA13FB9220FB8AFEA83D4824",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50753110304",
+      "classid": "7993037311",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Amphibious",
+      "market_hash_name": "★ Sport Gloves | Amphibious (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -386,34 +443,6 @@
       ]
     },
     {
-      "assetid": "50548658957",
-      "classid": "8247703130",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Ultra Violent",
-      "market_hash_name": "★ Sport Gloves | Ultra Violent (Well-Worn)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208D9D002B302A318C952BAAAD0F86A58BBD8EB53723067B8ECD658FE57F8CFD85F398E113",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49951176578",
       "classid": "1989275327",
       "instanceid": "302028390",
@@ -421,7 +450,7 @@
       "name": "Graffiti | GLHF (Desert Amber)",
       "market_hash_name": "Graffiti | GLHF (Desert Amber)",
       "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B7A7B7AF72BD97B79FB687B3D5B0BFB7A705BA87B2DFB7C7AF7F633412",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ECFCECF429E6CCECC4EDDCE88EEBE4ECFC5EE1DCE984EC9CF4070AA6D2",
       "tags": [
         {
           "category": "Type",
@@ -1337,42 +1366,6 @@
       ]
     },
     {
-      "assetid": "50291803010",
-      "classid": "8246921455",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AWP | Queen's Gambit",
-      "market_hash_name": "AWP | Queen's Gambit (Well-Worn)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F0E07277705D4BF1E8F9D07EFBD8F6C0F4C85E367307F3B071F4982FF180F823F9265B",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49442313207",
       "classid": "7729369258",
       "instanceid": "0",
@@ -1380,7 +1373,7 @@
       "name": "Sticker Slab | Vox Eminor (Holo) | Katowice 2014",
       "market_hash_name": "Sticker Slab | Vox Eminor (Holo) | Katowice 2014",
       "type": "Customized Remarkable Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ACBCACB467A68CAC84A89CA4C4ACDCAC0EADAAA4ACBC89CCFCD3368D89",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20899989914283A989A18DB981E189F9892B888F818999ACE9D9876D52DD",
       "tags": [
         {
           "category": "Type",
@@ -1477,7 +1470,7 @@
       "name": "Sticker | chopper (Holo, Champion) | Shanghai 2024",
       "market_hash_name": "Sticker | chopper (Holo, Champion) | Shanghai 2024",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204757475FFE4E67476F42774325424F475790052F47374F50BCE2E0",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BAAABAA203B39ABA92BF8ABED8BFB2BAAA6DF8D2BACAB23F073576",
       "tags": [
         {
           "category": "Type",
@@ -1524,7 +1517,7 @@
       "name": "Sticker | Team Spirit (Holo) | Copenhagen 2024",
       "market_hash_name": "Sticker | Team Spirit (Holo) | Copenhagen 2024",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CBDBCBD372C2EBCBE3CEFBCFA9CEC3CBDB23F3A3CBBBC31D4AFBD5",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206777677FDE6E47674F62576305626F67778F5F0F67176F2E540C92",
       "tags": [
         {
           "category": "Type",
@@ -1751,7 +1744,7 @@
       "name": "Howl Pin",
       "market_hash_name": "Howl Pin",
       "type": "Extraordinary Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E7F7E7FF13C8C7E7CFE1D7E38FE797EF4E979249",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203D2D3D25C9121D3D153B0D39553D4D35B7044CF3",
       "tags": [
         {
           "category": "Type",
@@ -1914,7 +1907,7 @@
       "name": "Phoenix Pin",
       "market_hash_name": "Phoenix Pin",
       "type": "High Grade Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206777677F844847674F6457630F67176F300F7CC9",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D0C0D0C833FFF0D0F8D3E0D4B8D0A0D879DF4D1E",
       "tags": [
         {
           "category": "Type",
@@ -1938,7 +1931,7 @@
       "name": "Welcome to the Clutch Pin",
       "market_hash_name": "Welcome to the Clutch Pin",
       "type": "High Grade Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202F3F2F37C2000F2F072C1F2B472F5F2727E98273",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ECFCECF401C3CCECC4EFDCE884EC9CE4712CA1B0",
       "tags": [
         {
           "category": "Type",
@@ -1962,7 +1955,7 @@
       "name": "Music Kit | Scarlxrd: King, Scar",
       "market_hash_name": "Music Kit | Scarlxrd: King, Scar",
       "type": "High Grade Music Kit",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CCDCCCD46EC6ECCCE4CFFCC8A4CCBCCE44CDE579B7F867",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209484948C369EB494BC97A490FC94E4961C95BD8F7A4A06",
       "tags": [
         {
           "category": "Type",
@@ -1989,7 +1982,7 @@
       "name": "Music Kit | Valve, CS:GO",
       "market_hash_name": "Music Kit | Valve, CS:GO",
       "type": "High Grade Music Kit",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242524AF05872527A5162563A522252DA531411018CAB",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C3D3C3DB61C9E3C3EBC0F3C7ABC3B3C34BC285513CC81C",
       "tags": [
         {
           "category": "Type",
@@ -2016,7 +2009,7 @@
       "name": "Sticker | chopper (Champion) | Shanghai 2024",
       "market_hash_name": "Sticker | chopper (Champion) | Shanghai 2024",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201505150DAC1C35153D16251177101D1505C0577D15651D99F9CE0A",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20918191892898B191B992A195F39499918144D3F991E1996883FEC7",
       "tags": [
         {
           "category": "Type",
@@ -2063,7 +2056,7 @@
       "name": "Sticker | donk (Champion) | Shanghai 2024",
       "market_hash_name": "Sticker | donk (Champion) | Shanghai 2024",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201202120AAB1B32123A11221670171A1202CF507A12621A601A5A54",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206A7A6A72D3634A6A42695A6E086F626A7AB728026A1A62FC73D742",
       "tags": [
         {
           "category": "Type",
@@ -2111,7 +2104,7 @@
       "name": "Sticker | Jee | Austin 2025",
       "market_hash_name": "Sticker | Jee | Austin 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203727372F8E3E17371F34073355323F3727807F5F37473F622A089F",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209E8E9E862797BE9EB69DAE9AFC9B969E8E29D6F69EEE964D5F25A0",
       "tags": [
         {
           "category": "Type",
@@ -2158,7 +2151,7 @@
       "name": "Sticker | magixx (Champion) | Shanghai 2024",
       "market_hash_name": "Sticker | magixx (Champion) | Shanghai 2024",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205646564EEF5F76567E55665234535E56468F143E56265EB811B213",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203424342C8D3D14341C37043056313C3424ED765C34443C2E5211CE",
       "tags": [
         {
           "category": "Type",
@@ -2217,7 +2210,7 @@
       "name": "Sticker | rallen | Paris 2023",
       "market_hash_name": "Sticker | rallen | Paris 2023",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FCECFCE445F5DCFCD4FFCCF89EF9F4FCEC31C994FC8CF4BF88068A",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200E1E0E16B7072E0E260D3E0A6C0B060E1EC33B660E7E0672D90B93",
       "tags": [
         {
           "category": "Type",
@@ -2264,7 +2257,7 @@
       "name": "Sticker | sh1ro (Champion) | Shanghai 2024",
       "market_hash_name": "Sticker | sh1ro (Champion) | Shanghai 2024",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2010001008A9193010381320147215181000F15278106018FAD3B0FB",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2041514159F8486141694271452344494151A00329413149157F4EB2",
       "tags": [
         {
           "category": "Type",
@@ -2312,7 +2305,7 @@
       "name": "Sticker | Sting Like A Butterfly",
       "market_hash_name": "Sticker | Sting Like A Butterfly",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E5F5E5FD5CECC5E5CDE6D5E187E0EDE5F558D68DE595ED81F4A4DE",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201606160EAF1F36163E15261274131E1606AB257E16661EE1C22912",
       "tags": [
         {
           "category": "Type",
@@ -2343,7 +2336,7 @@
       "name": "Sticker | Taste Bud",
       "market_hash_name": "Sticker | Taste Bud",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D4C4D4CC6DDDF4D4FCD7E4D0B6D1DCD4C43CE9BCD4A4C319703C1F",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202737273F9E2E07270F24172345222F2737CF1A4F275730EC5E7D13",
       "tags": [
         {
           "category": "Type",
@@ -2374,7 +2367,7 @@
       "name": "Sticker | TYLOO | 2020 RMR",
       "market_hash_name": "Sticker | TYLOO | 2020 RMR",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208696869E3F8FA686AE85B682E4838E86963FA3EE86F68EA6C4252A",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FEEEFEE647F7DEFED6FDCEFA9CFBF6FEEE47DB96FE8EF6584FFE4C",
       "tags": [
         {
           "category": "Type",
@@ -2520,7 +2513,7 @@
       "name": "Sticker | zont1x (Champion) | Shanghai 2024",
       "market_hash_name": "Sticker | zont1x (Champion) | Shanghai 2024",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2001110119B8082101290231056304090111E44369017109C966A4F8",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B0A0B0A809B990B098B380B4D2B5B8B0A055F2D8B0C0B8C4BD8AE9",
       "tags": [
         {
           "category": "Type",
@@ -2888,7 +2881,7 @@
       "name": "Sticker | Boom Blast (Glitter)",
       "market_hash_name": "Sticker | Boom Blast (Glitter)",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B4A4B4AC0DBD94B49CB084B0D6B1BCB4A46F89DCB4C4A33A0A438E",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202E3E2E3697270E2E062A1E2A4C2B262E3EF513462E5E390E5B289D",
       "tags": [
         {
           "category": "Type",
@@ -2919,7 +2912,7 @@
       "name": "Sticker | sh1ro (Glitter, Champion) | Shanghai 2024",
       "market_hash_name": "Sticker | sh1ro (Glitter, Champion) | Shanghai 2024",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D6C6D6CE6FDFF6D6FED2E6D2B4D3DED6C63494BED6A6DE3370C681",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DDCDDDC564D4FDDDF5D9EDD9BFD8D5DDCD3F9FB5DDADD50FA529BB",
       "tags": [
         {
           "category": "Type",
@@ -4033,7 +4026,7 @@
     {
       "assetid": "49602687745",
       "classid": "7993040817",
-      "instanceid": "8054692794",
+      "instanceid": "8374004460",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Factory New)",
@@ -4081,7 +4074,7 @@
     {
       "assetid": "50700876960",
       "classid": "7993045027",
-      "instanceid": "906646472",
+      "instanceid": "905938477",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Factory New)",
