@@ -161,24 +161,31 @@ function resolveDopplerSkinId(item, parsed){
   return `${originalSkinId} ${normalizedPhase}`.trim();
 }
 
-function buildPlayersUpdatedMarker(updatedAt = ""){
+function buildInventoryUpdatedMarker(updatedAt = ""){
   const value = String(updatedAt || "").trim();
   if (!value) return "";
-  return `<!-- players-updated-at: ${value} -->`;
+  return `<!-- inventory-updated-at: ${value} -->`;
 }
 
-function extractPlayersUpdatedMarker(html = ""){
-  const m = String(html).match(/<!--\s*players-updated-at:\s*([^\s]+)\s*-->/i);
-  return m ? String(m[1]).trim() : "";
+function extractInventoryUpdatedMarker(html = ""){
+  const source = String(html || "");
+
+  let m = source.match(/<!--\s*inventory-updated-at:\s*([^\s]+)\s*-->/i);
+  if (m) return String(m[1]).trim();
+
+  m = source.match(/<!--\s*players-updated-at:\s*([^\s]+)\s*-->/i);
+  if (m) return String(m[1]).trim();
+
+  return "";
 }
 
-function upsertPlayersUpdatedMarker(html, updatedAt){
-  const marker = buildPlayersUpdatedMarker(updatedAt);
+function upsertInventoryUpdatedMarker(html, updatedAt){
+  const marker = buildInventoryUpdatedMarker(updatedAt);
   if (!marker) return html;
 
-  if (/<!--\s*players-updated-at:\s*[^\s]+\s*-->/i.test(html)) {
+  if (/<!--\s*inventory-updated-at:\s*[^\s]+\s*-->/i.test(html)) {
     return html.replace(
-      /<!--\s*players-updated-at:\s*[^\s]+\s*-->/i,
+      /<!--\s*inventory-updated-at:\s*[^\s]+\s*-->/i,
       marker
     );
   }
@@ -1273,6 +1280,13 @@ async function loadPlayerInventory(root, slug){
   return null;
 }
 
+async function loadPlayerInventoryDoc(root, slug){
+  const file = abs(root, `${PLAYERS_INV_DIR}/${slug}.json`);
+  const data = await safeJsonCached(file);
+  if (!data || typeof data !== "object") return null;
+  return data;
+}
+
 function detectItemClass(item){
   const tags = Array.isArray(item?.tags) ? item.tags : [];
   const type = String(item?.type || "").toLowerCase();
@@ -1953,7 +1967,9 @@ async function canGeneratePlayerPage(root, player){
   const slug = String(player?.slug || slugifyNickname(player?.nickname || "")).trim();
   if (!slug) return false;
 
-  const inventory = await loadPlayerInventory(root, slug);
+  const inventoryDoc = await loadPlayerInventoryDoc(root, slug);
+  const inventory = Array.isArray(inventoryDoc?.items) ? inventoryDoc.items : null;
+  const inventoryUpdatedAt = String(inventoryDoc?.updatedAt || "").trim();
   if (!inventory || !inventory.length) return false;
 
   return hasRenderableInventoryItems(inventory);
@@ -2183,13 +2199,9 @@ async function updatePlayersIndexPage({
   let html = await readTextCached(fullPath);
   const prevHtml = html;
 
-  const existingUpdatedAt = extractPlayersUpdatedMarker(html);
   const currentUpdatedAt = String(playersUpdatedAt || "").trim();
 
-  if (!force && currentUpdatedAt && existingUpdatedAt === currentUpdatedAt) {
-    if (verbose) {
-      console.log(`[SKIP] ${path.relative(root, fullPath)} :: up-to-date (${currentUpdatedAt})`);
-    }
+  if (!force && !currentUpdatedAt) {
     return { updated: 0, skipped: 1 };
   }
 
@@ -2198,7 +2210,6 @@ async function updatePlayersIndexPage({
     if (res.changed) html = res.html;
   }
 
-  html = upsertPlayersUpdatedMarker(html, playersUpdatedAt);
 
   if (html === prevHtml) {
     return { updated: 0, skipped: 1 };
@@ -2553,7 +2564,10 @@ async function generatePlayerPagesForVersion({
       continue;
     }
 
-    const inventory = await loadPlayerInventory(root, slug);
+    const inventoryDoc = await loadPlayerInventoryDoc(root, slug);
+    const inventory = Array.isArray(inventoryDoc?.items) ? inventoryDoc.items : null;
+    const inventoryUpdatedAt = String(inventoryDoc?.updatedAt || "").trim();
+
     if (!inventory || !inventory.length){
       if (verbose) console.warn(`[WARN] inventory missing/empty for ${slug}`);
       skipped++;
@@ -2570,22 +2584,11 @@ async function generatePlayerPagesForVersion({
     const existsAlready = await fileExists(outFile);
 
     let prevHtml = null;
+    let existingUpdatedAt = "";
 
     if (existsAlready) {
       prevHtml = await readTextCached(outFile);
-
-      const existingUpdatedAt = extractPlayersUpdatedMarker(prevHtml);
-      const currentUpdatedAt = String(playersUpdatedAt || "").trim();
-
-      if (!force && currentUpdatedAt && existingUpdatedAt === currentUpdatedAt) {
-        skipped++;
-
-        if (verbose) {
-          console.log(`[SKIP] ${path.relative(root, outFile)} :: up-to-date (${currentUpdatedAt})`);
-        }
-
-        continue;
-      }
+      existingUpdatedAt = extractInventoryUpdatedMarker(prevHtml);
     }
 
     let html;
@@ -2642,22 +2645,61 @@ async function generatePlayerPagesForVersion({
       if (res.changed) html = res.html;
     }
 
-    html = upsertPlayersUpdatedMarker(html, playersUpdatedAt);
+    const currentUpdatedAt = inventoryUpdatedAt;
+    const normalizedPrevHtml = normalizeComparableHtml(prevHtml || html);
+    const normalizedHtmlWithoutMarker = normalizeComparableHtml(html);
+    const markerChanged =
+      currentUpdatedAt &&
+      existingUpdatedAt !== currentUpdatedAt;
 
-    if (!existsAlready) {
-      if (!dry) await writeTextCached(outFile, html);
-      created++;
-    } else {
-      if (prevHtml !== html) {
-        if (!dry) await writeTextCached(outFile, html);
-        created++;
-      } else {
+    // если html не изменился и marker менять не нужно — вообще ничего не трогаем
+    if (existsAlready && !force) {
+      if (
+        normalizedPrevHtml === normalizedHtmlWithoutMarker &&
+        !markerChanged
+      ) {
         skipped++;
+
+        if (verbose) {
+          console.log(
+            `[SKIP] ${path.relative(root, outFile)} :: no inventory changes (${currentUpdatedAt || "-"})`
+          );
+        }
+
+        continue;
       }
     }
 
+    // marker обновляем только если дата реально отличается
+    if (markerChanged) {
+      html = upsertInventoryUpdatedMarker(html, currentUpdatedAt);
+    }
+
+    const finalPrevHtml = normalizeComparableHtml(prevHtml || "");
+    const finalHtml = normalizeComparableHtml(html);
+
+    if (existsAlready && finalPrevHtml === finalHtml) {
+      skipped++;
+
+      if (verbose) {
+        console.log(
+          `[SKIP] ${path.relative(root, outFile)} :: unchanged after marker check`
+        );
+      }
+
+      continue;
+    }
+
+    if (!dry) {
+      await writeTextCached(outFile, html);
+    }
+
+    created++;
+
     if (verbose) {
-      console.log(`[OK] ${path.relative(root, outFile)} :: generated for ${displayNickname} [id=${internalNickname}] (${inventory.length} items)`);
+      console.log(
+        `[OK] ${path.relative(root, outFile)} :: generated for ${displayNickname} [id=${internalNickname}] (${inventory.length} items, updatedAt=${currentUpdatedAt || "-"})`
+      );
     }
   }
 

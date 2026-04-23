@@ -4777,6 +4777,10 @@ nav img {
     /* gap: 18px 9px; */
 }
 
+.topic-boxes-holder:has(.topic-box.maestro) {
+    justify-content: flex-start;
+}
+
 .topic-boxes-holder:has(.player-box) {
     min-height: 657px;
     max-height: 657px;
@@ -11213,10 +11217,10 @@ div#results {
 }
 
 .topic-box.maestro {
-    width: 30.3%;
-    height: fit-content;
+    /* width: 30.3%;
+    height: fit-content; */
+    flex: 0 0 calc((100% - 2 * 18px) / 3);
     border-radius: var(--main-border);
-    flex-grow: 1;
 }
 
 .topic-box.maestro:hover {
@@ -16515,9 +16519,7 @@ header {
     }
 
     .topic-box.maestro {
-        width: 45%;
-        max-width: 300px;
-        border-radius: var(--main-border);
+        flex: 0 0 calc((100% - 1 * 18px) / 2);
     }
 
     .site-attention span {
@@ -17007,8 +17009,7 @@ header {
         font-size: 18px;
     }
 
-    .topic-box,
-    .topic-box.maestro {
+    .topic-box {
         width: 48%;
     }
 
