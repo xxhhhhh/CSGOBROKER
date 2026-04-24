@@ -1051,11 +1051,6 @@ h3,
     background: radial-gradient(50% 65% at 50% 100%, rgba(228, 174, 57, .4), transparent 100%);
 }
 
-.topic-box.maestro .content,
-.topic-box.maestro:hover .content {
-    filter: brightness(5);
-}
-
 .topic-box.maestro {
     background: unset !important;
 }
