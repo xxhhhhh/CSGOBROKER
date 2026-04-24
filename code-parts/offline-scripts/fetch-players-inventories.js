@@ -292,21 +292,31 @@ async function readJsonSafe(file) {
   }
 }
 
-function stableStringify(value) {
-  return JSON.stringify(value, null, 2);
+function getInventoryAssetIdSet(doc) {
+  const items = Array.isArray(doc?.items) ? doc.items : [];
+
+  return new Set(
+    items
+      .map((item) => String(item?.assetid || "").trim())
+      .filter(Boolean)
+  );
 }
 
-function buildComparableInventoryDoc(doc) {
-  if (!doc || typeof doc !== "object") return null;
+function inventoryAssetIdsChanged(existingDoc, nextDoc) {
+  const prev = getInventoryAssetIdSet(existingDoc);
+  const next = getInventoryAssetIdSet(nextDoc);
 
-  const copy = JSON.parse(JSON.stringify(doc));
-  delete copy.updatedAt;
-  return copy;
+  if (prev.size !== next.size) return true;
+
+  for (const assetid of prev) {
+    if (!next.has(assetid)) return true;
+  }
+
+  return false;
 }
 
 function inventoryDocChanged(existingDoc, nextDoc) {
-  return stableStringify(buildComparableInventoryDoc(existingDoc)) !==
-         stableStringify(buildComparableInventoryDoc(nextDoc));
+  return inventoryAssetIdsChanged(existingDoc, nextDoc);
 }
 
 function normalizePlayer(player) {
@@ -4024,10 +4034,14 @@ async function main() {
     }
   }
 
-  const finalPlayers = writeFinalLists
-    ? (only.length || onlyFailedFetch || shardTotal > 1)
-      ? mergePlayersList(existingPlayersListDoc.players, playersListOutput)
-      : playersListOutput
+  const shouldMergePlayersList =
+    only.length ||
+    onlyFailedFetch ||
+    shardTotal > 1 ||
+    workflowMode;
+
+  const finalPlayers = shouldMergePlayersList
+    ? mergePlayersList(existingPlayersListDoc.players, playersListOutput)
     : playersListOutput;
 
   const finalSuccessCount = finalPlayers.filter((p) => p?.fetchOk).length;
