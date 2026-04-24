@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e0f4debc-ed3b-4936-85ea-1fbbb334e136",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-22T13:20:13.235Z",
+  "updatedAt": "2026-04-24T06:25:10.272Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 731,
-  "totalItemsGrouped": 433,
+  "totalItemsRaw": 736,
+  "totalItemsGrouped": 437,
   "items": [
     {
       "assetid": "47484660523",
@@ -576,6 +576,34 @@
       "market_hash_name": "★ Sport Gloves | Omega (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%205848A5E8A3E4E85940FE7F78E716705E685B60B2A7AFB75B188E5B30D85A285CA24BD286",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51040154630",
+      "classid": "8247168486",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2520,6 +2548,42 @@
       "market_hash_name": "AK-47 | Crane Flight (Minimal Wear)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E5F53D022A795EE4FDE2C574EECDE0D5E1DD12172515E6A543E18D67E795ED44AF4387",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51039798427",
+      "classid": "7993038842",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AK-47 | The Outsiders",
+      "market_hash_name": "AK-47 | The Outsiders (Minimal Wear)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -4744,6 +4808,42 @@
       ]
     },
     {
+      "assetid": "51039797864",
+      "classid": "7993037198",
+      "instanceid": "6521834601",
+      "amount": 1,
+      "name": "AWP | Wildfire",
+      "market_hash_name": "AWP | Wildfire (Field-Tested)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "28991964099",
       "classid": "226333081",
       "instanceid": "480085569",
@@ -6385,7 +6485,7 @@
       "assetid": "51021854670",
       "classid": "6216346414",
       "instanceid": "519977179",
-      "amount": 2,
+      "amount": 3,
       "name": "Charm | Whittle Knife",
       "market_hash_name": "Charm | Whittle Knife",
       "type": "High Grade Charm",
@@ -6410,7 +6510,8 @@
       ],
       "assetids": [
         "51021854670",
-        "43539877454"
+        "43539877454",
+        "51040448348"
       ]
     },
     {
@@ -12624,6 +12725,62 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51040221418",
+      "classid": "7993036333",
+      "instanceid": "6301200611",
+      "amount": 1,
+      "name": "AK-47 | Emerald Pinstripe",
+      "market_hash_name": "AK-47 | Emerald Pinstripe (Field-Tested)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]

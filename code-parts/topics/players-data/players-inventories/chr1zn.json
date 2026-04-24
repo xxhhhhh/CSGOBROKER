@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c6ab629f-9142-4edb-9cb9-a88d5b6ac7ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-22T12:44:01.481Z",
+  "updatedAt": "2026-04-24T05:49:13.652Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 157,
-  "totalItemsGrouped": 157,
+  "totalItemsRaw": 159,
+  "totalItemsGrouped": 159,
   "items": [
     {
       "assetid": "47157176402",
@@ -129,6 +129,34 @@
     },
     {
       "assetid": "49621402672",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51262595573",
       "classid": "4717330486",
       "instanceid": "302028390",
       "amount": 1,
@@ -2120,6 +2148,37 @@
       ],
       "assetids": [
         "50215483048"
+      ]
+    },
+    {
+      "assetid": "51262595574",
+      "classid": "1989307604",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Sheriff (Cash Green)",
+      "market_hash_name": "Sealed Graffiti | Sheriff (Cash Green)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F3E3F3EB37F9D3F3DBF2C3F791F4FBF3E345FEC3F99BF383EB0BB25EA9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51262595574"
       ]
     },
     {
@@ -5033,7 +5092,7 @@
     {
       "assetid": "48420355837",
       "classid": "7993038769",
-      "instanceid": "8402807994",
+      "instanceid": "8407984204",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Redline",
       "market_hash_name": "StatTrak™ AK-47 | Redline (Minimal Wear)",
@@ -5077,7 +5136,7 @@
     {
       "assetid": "36834339579",
       "classid": "7993041974",
-      "instanceid": "480921199",
+      "instanceid": "484115452",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Black Lotus",
       "market_hash_name": "StatTrak™ M4A1-S | Black Lotus (Battle-Scarred)",
@@ -5113,7 +5172,7 @@
     {
       "assetid": "24674954712",
       "classid": "7993043535",
-      "instanceid": "188551735",
+      "instanceid": "188543700",
       "amount": 1,
       "name": "StatTrak™ MAG-7 | Justice",
       "market_hash_name": "StatTrak™ MAG-7 | Justice (Well-Worn)",

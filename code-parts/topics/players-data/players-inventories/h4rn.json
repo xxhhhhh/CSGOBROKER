@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/8f151c97-d096-40f1-b3ae-3afaaca644bb",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-23T06:33:10.630Z",
+  "updatedAt": "2026-04-24T06:37:53.908Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 165,
-  "totalItemsGrouped": 117,
+  "totalItemsRaw": 163,
+  "totalItemsGrouped": 115,
   "items": [
     {
       "assetid": "17213288388",
@@ -100,6 +100,30 @@
       ]
     },
     {
+      "assetid": "51262306600",
+      "classid": "7729110306",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Name Tag",
+      "market_hash_name": "Name Tag",
+      "type": "Base Grade Tag",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E1F1E1F951E8C1E1C9E0D1E589E191E384B62F3D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "43773846072",
       "classid": "6195246388",
       "instanceid": "302028390",
@@ -135,42 +159,6 @@
       "market_hash_name": "M4A1-S | Solitude (Field-Tested)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%206B7BBD94A987D96A73574BD161436E5B6F539BAEFF99682BE06D032C1B7C3BA7AE9B",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50071008447",
-      "classid": "7993036956",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "M4A1-S | Stratosphere",
-      "market_hash_name": "M4A1-S | Stratosphere (Field-Tested)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20263699CFFDE59C273E1A06E62F0E2316221EEEC7EDD22566C1254E03563E8D2734B2",
       "tags": [
         {
           "category": "Type",
@@ -238,50 +226,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50070868889",
-      "classid": "7993040793",
-      "instanceid": "6315612501",
-      "amount": 1,
-      "name": "USP-S | Kill Confirmed",
-      "market_hash_name": "USP-S | Kill Confirmed (Battle-Scarred)",
-      "type": "Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C6D65F6115057CC7DEFBE63EC5EEC0F6C2FE412C603CC58613C7A4C3CEC6D617F5A4C3CEC7D614F5A4C3CEC4D614F5A4C3CEC5D606E8AEE8B6CE513CCBDE",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
           "name": ""
         },
         {
@@ -376,37 +320,6 @@
           "category": "TournamentTeam",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "49126652304",
-      "classid": "6216486244",
-      "instanceid": "0",
-      "amount": 1,
-      "name": "Charm | Diamond Dog",
-      "market_hash_name": "Charm | Diamond Dog",
-      "type": "Exotic Charm",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "49126652304"
       ]
     },
     {
@@ -3660,9 +3573,40 @@
       ]
     },
     {
-      "assetid": "51124155409",
+      "assetid": "51038488170",
+      "classid": "7545312803",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Charm | Lil' Moments",
+      "market_hash_name": "Charm | Lil' Moments",
+      "type": "Remarkable Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51038488170"
+      ]
+    },
+    {
+      "assetid": "50075662256",
       "classid": "7545312263",
-      "instanceid": "0",
+      "instanceid": "519977179",
       "amount": 2,
       "name": "Charm | Magmatude",
       "market_hash_name": "Charm | Magmatude",
@@ -3687,8 +3631,8 @@
         }
       ],
       "assetids": [
-        "51124155409",
-        "50075662256"
+        "50075662256",
+        "51124155409"
       ]
     },
     {
@@ -3857,7 +3801,7 @@
     {
       "assetid": "46841752076",
       "classid": "7993041406",
-      "instanceid": "6313251553",
+      "instanceid": "6286692383",
       "amount": 1,
       "name": "StatTrak™ P250 | Asiimov",
       "market_hash_name": "StatTrak™ P250 | Asiimov (Field-Tested)",
@@ -3901,7 +3845,7 @@
     {
       "assetid": "44964068926",
       "classid": "7993037037",
-      "instanceid": "8405623077",
+      "instanceid": "8409561501",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Black Lotus",
       "market_hash_name": "StatTrak™ M4A1-S | Black Lotus (Field-Tested)",
@@ -3949,7 +3893,7 @@
     {
       "assetid": "49053541762",
       "classid": "7993037525",
-      "instanceid": "8405245407",
+      "instanceid": "8409561500",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
@@ -4133,7 +4077,7 @@
     {
       "assetid": "47814879233",
       "classid": "7993038080",
-      "instanceid": "188538805",
+      "instanceid": "188561833",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Crypsis",
       "market_hash_name": "StatTrak™ FAMAS | Crypsis (Field-Tested)",
@@ -4205,7 +4149,7 @@
     {
       "assetid": "47814967395",
       "classid": "7993036362",
-      "instanceid": "188531205",
+      "instanceid": "188538340",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Memorial",
       "market_hash_name": "StatTrak™ SSG 08 | Memorial (Well-Worn)",
@@ -4241,7 +4185,7 @@
     {
       "assetid": "49164162857",
       "classid": "7993039300",
-      "instanceid": "7186554335",
+      "instanceid": "6298041835",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Grinder",
       "market_hash_name": "StatTrak™ Glock-18 | Grinder (Minimal Wear)",
@@ -4343,53 +4287,9 @@
       ]
     },
     {
-      "assetid": "49089539581",
-      "classid": "7993041765",
-      "instanceid": "6324244278",
-      "amount": 1,
-      "name": "StatTrak™ Galil AR | Stone Cold",
-      "market_hash_name": "StatTrak™ Galil AR | Stone Cold (Minimal Wear)",
-      "type": "StatTrak™ Restricted Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F8E8052323174EF9E0F5D816FBD0FCC8F1C02C160315FBB8A5B0F8A8829AFDF0F8E86ACC9AFDF0FAE86ACC9AFDF0F9E86ACC9AFDF0FBE86ACC90F488F09C153624",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "23812042295",
       "classid": "7993038258",
-      "instanceid": "480088724",
+      "instanceid": "480092364",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Allure",
       "market_hash_name": "StatTrak™ MAC-10 | Allure (Field-Tested)",
