@@ -107,7 +107,7 @@ const DEFAULT_OFFLINE_PROXY_USERNAME = "3D5zgyAQ";
 const DEFAULT_OFFLINE_PROXY_PASSWORD = "3giL9Jp7";
 
 const PROXY_ENABLED =
-  String(process.env.PROXY_ENABLED || DEFAULT_OFFLINE_PROXY_ENABLED).trim() === "0";
+  String(process.env.PROXY_ENABLED || DEFAULT_OFFLINE_PROXY_ENABLED).trim() === "1";
 
 const PROXY_SCHEME = String(process.env.PROXY_SCHEME || DEFAULT_OFFLINE_PROXY_SCHEME).trim() || "http";
 const PROXY_HOST = String(process.env.PROXY_HOST || DEFAULT_OFFLINE_PROXY_HOST).trim();
@@ -317,6 +317,23 @@ function inventoryAssetIdsChanged(existingDoc, nextDoc) {
 
 function inventoryDocChanged(existingDoc, nextDoc) {
   return inventoryAssetIdsChanged(existingDoc, nextDoc);
+}
+
+function stableStringifyForWriteCompare(value) {
+  return JSON.stringify(value, null, 2);
+}
+
+function stripUpdatedAtForWriteCompare(doc) {
+  if (!doc || typeof doc !== "object") return null;
+
+  const copy = JSON.parse(JSON.stringify(doc));
+  delete copy.updatedAt;
+  return copy;
+}
+
+function inventoryDocContentChanged(existingDoc, nextDoc) {
+  return stableStringifyForWriteCompare(stripUpdatedAtForWriteCompare(existingDoc)) !==
+         stableStringifyForWriteCompare(stripUpdatedAtForWriteCompare(nextDoc));
 }
 
 function normalizePlayer(player) {
@@ -811,6 +828,12 @@ function isInspectableMarketItem(item) {
   const type = String(item?.type || "").toLowerCase().trim();
   const name = String(item?.market_hash_name || item?.name || "").toLowerCase().trim();
 
+  // Doppler должен проходить ДО blocked-фильтра.
+  // Иначе нож может быть случайно отсеян по type/name и не попасть в Steam UI fallback.
+  if (isDopplerLikeItem(item)) {
+    return true;
+  }
+
   const blockedExactTypes = new Set([
     "base grade container",
     "extraordinary collectible",
@@ -853,18 +876,7 @@ function isInspectableMarketItem(item) {
     return true;
   }
 
-  return isDopplerLikeItem(item);
-
-  // return (
-  //   type.includes("knife") ||
-  //   type.includes("gloves") ||
-  //   type.includes("rifle") ||
-  //   type.includes("pistol") ||
-  //   type.includes("smg") ||
-  //   type.includes("sniper") ||
-  //   type.includes("machinegun") ||
-  //   type.includes("shotgun")
-  // );
+  return false;
 }
 
 function makeDescriptionMap(descriptions) {
@@ -1693,6 +1705,131 @@ async function waitForInventoryPanelUpdate(page, targetHash = "", timeoutMs = 50
   };
 }
 
+async function readInventoryPagerState(page) {
+  return await page.evaluate(() => {
+    const text = document.body?.innerText || "";
+
+    const currentInput =
+      document.querySelector("#pagecontrol_cur") ||
+      document.querySelector(".inventory_pagecurrent") ||
+      document.querySelector('input[name="page"]');
+
+    const totalEl =
+      document.querySelector("#pagecontrol_max") ||
+      document.querySelector(".inventory_pagemax");
+
+    const current = Number(String(currentInput?.value || currentInput?.textContent || "1").replace(/\D+/g, "")) || 1;
+    const total = Number(String(totalEl?.textContent || "").replace(/\D+/g, "")) || 0;
+
+    const textMatch = text.match(/(\d+)\s*(?:of|из)\s*(\d+)/i);
+
+    return {
+      current: textMatch ? Number(textMatch[1]) : current,
+      total: textMatch ? Number(textMatch[2]) : total,
+    };
+  });
+}
+
+async function goToNextInventoryPage(page, { verbose = false, logLabel = "" } = {}) {
+  const before = await readInventoryPagerState(page);
+
+  const clicked = await page.evaluate(() => {
+    const candidates = [
+      "#pagebtn_next",
+      ".pagebtn.next",
+      ".inventory_page_right",
+      "[id*='next']",
+      "[class*='next']",
+    ];
+
+    const buttons = candidates
+      .flatMap((selector) => Array.from(document.querySelectorAll(selector)))
+      .filter(Boolean);
+
+    const nextBtn = buttons.find((el) => {
+      const cls = String(el.className || "").toLowerCase();
+      const id = String(el.id || "").toLowerCase();
+      const text = String(el.textContent || "").toLowerCase();
+
+      return (
+        id.includes("next") ||
+        cls.includes("next") ||
+        text.includes(">") ||
+        text.includes("next")
+      );
+    });
+
+    const isVisible = (el) => {
+      if (!el) return false;
+      const style = window.getComputedStyle(el);
+      const rect = el.getBoundingClientRect();
+
+      return (
+        rect.width > 0 &&
+        rect.height > 0 &&
+        style.display !== "none" &&
+        style.visibility !== "hidden" &&
+        Number(style.opacity || "1") !== 0
+      );
+    };
+
+    const isDisabled = (el) => {
+      if (!el) return true;
+      const cls = String(el.className || "").toLowerCase();
+      return cls.includes("disabled") || cls.includes("inactive");
+    };
+
+    try {
+      if (typeof window.InventoryNextPage === "function") {
+        window.InventoryNextPage();
+        return "fn";
+      }
+
+      if (nextBtn && isVisible(nextBtn) && !isDisabled(nextBtn)) {
+        nextBtn.dispatchEvent(new MouseEvent("mousedown", { bubbles: true, cancelable: true, view: window }));
+        nextBtn.dispatchEvent(new MouseEvent("mouseup", { bubbles: true, cancelable: true, view: window }));
+        nextBtn.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, view: window }));
+        return "click";
+      }
+    } catch (err) {
+      return `err:${String(err?.message || err)}`;
+    }
+
+    return "";
+  });
+
+  if (!clicked) {
+    if (verbose) {
+      console.log(
+        `[INVENTORY UI NEXT MISS] ${logLabel} :: next control not found on ${before.current}/${before.total}`
+      );
+    }
+    return false;
+  }
+
+  for (let i = 0; i < 50; i++) {
+    await sleep(250);
+    const after = await readInventoryPagerState(page);
+
+    if (after.current > before.current) {
+      if (verbose) {
+        console.log(
+          `[INVENTORY UI NEXT] ${logLabel} :: ${before.current}/${before.total} -> ${after.current}/${after.total} via=${clicked}`
+        );
+      }
+      return true;
+    }
+  }
+
+  if (verbose) {
+    console.log(
+      `[INVENTORY UI NEXT MISS] ${logLabel} :: stayed on ${before.current}/${before.total}`
+    );
+  }
+
+  return false;
+}
+
 async function fetchMissingInspectLinksViaSteamUi({
   steamid64,
   items,
@@ -1749,6 +1886,8 @@ async function fetchMissingInspectLinksViaSteamUi({
     }
 
     const byAssetId = new Map();
+    const seenHashes = new Set();
+
     let pageIndex = 0;
 
     while (true) {
@@ -1774,16 +1913,21 @@ async function fetchMissingInspectLinksViaSteamUi({
         break;
       }
 
-      let foundOnThisPage = 0;
-
       for (const anchor of anchors) {
         const hash = String(anchor?.href || "").trim();
+
+        if (!hash || seenHashes.has(hash)) {
+          continue;
+        }
+
         const assetIdMatch = hash.match(/^#730_2_(\d+)$/);
         const assetid = assetIdMatch ? assetIdMatch[1] : "";
 
         if (!assetid || !neededAssetIds.has(assetid)) {
           continue;
         }
+
+        seenHashes.add(hash);
 
         const selected = await selectInventoryAssetByHash(page, hash);
 
@@ -1817,7 +1961,6 @@ async function fetchMissingInspectLinksViaSteamUi({
 
         if (inspectLink && isValidGeneratedInspectLink(inspectLink)) {
           byAssetId.set(assetid, inspectLink);
-          foundOnThisPage++;
         }
       }
 
@@ -1825,11 +1968,22 @@ async function fetchMissingInspectLinksViaSteamUi({
         break;
       }
 
-      if (foundOnThisPage === 0) {
+      const pager = await readInventoryPagerState(page);
+
+      if (pager.total && pager.current >= pager.total) {
         break;
       }
 
-      break;
+      const moved = await goToNextInventoryPage(page, {
+        verbose,
+        logLabel,
+      });
+
+      if (!moved) {
+        break;
+      }
+
+      await sleep(700);
     }
 
     for (const item of items) {
@@ -3926,9 +4080,10 @@ async function main() {
         player
       );
 
-      const hasRealInventoryChanges = inventoryDocChanged(existingDoc, inventoryDoc);
+      const hasAssetChanges = inventoryDocChanged(existingDoc, inventoryDoc);
+      const hasContentChanges = inventoryDocContentChanged(existingDoc, inventoryDoc);
 
-      const finalInventoryDoc = hasRealInventoryChanges
+      const finalInventoryDoc = hasAssetChanges
         ? {
             ...inventoryDoc,
             updatedAt: new Date().toISOString(),
@@ -3938,7 +4093,7 @@ async function main() {
             updatedAt: String(existingDoc?.updatedAt || inventoryDoc.updatedAt || new Date().toISOString()),
           };
 
-      if (hasRealInventoryChanges || !existingDoc) {
+      if (hasContentChanges || !existingDoc) {
         await writeJson(invFile, finalInventoryDoc);
       }
 
@@ -3987,9 +4142,10 @@ async function main() {
       ? inventoryDocRaw
       : mergeFailedFetchWithExisting(existingDoc, inventoryDocRaw, player);
 
-    const hasRealInventoryChanges = inventoryDocChanged(existingDoc, inventoryDocBase);
+    const hasAssetChanges = inventoryDocChanged(existingDoc, inventoryDocBase);
+    const hasContentChanges = inventoryDocContentChanged(existingDoc, inventoryDocBase);
 
-    const inventoryDoc = hasRealInventoryChanges
+    const inventoryDoc = hasAssetChanges
       ? {
           ...inventoryDocBase,
           updatedAt: new Date().toISOString(),
@@ -3999,7 +4155,7 @@ async function main() {
           updatedAt: String(existingDoc?.updatedAt || inventoryDocBase.updatedAt || new Date().toISOString()),
         };
 
-    if (hasRealInventoryChanges || !existingDoc) {
+    if (hasContentChanges || !existingDoc) {
       await writeJson(invFile, inventoryDoc);
     }
 

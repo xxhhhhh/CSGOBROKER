@@ -237,6 +237,10 @@ jobs:
             --verbose \
             $ONLY_ARGS
 
+      - name: Refresh meta and sitemaps
+        run: |
+          node code-parts/offline-scripts/meta-and-sitemap.js
+          
       - name: Commit generated data
         run: |
           git config user.name "github-actions[bot]"

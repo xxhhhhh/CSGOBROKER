@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/16415504-b381-41e4-b257-b083b97c3dd5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-26T06:25:11.104Z",
+  "updatedAt": "2026-04-26T20:26:26.296Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 938,
-  "totalItemsGrouped": 409,
+  "totalItemsRaw": 932,
+  "totalItemsGrouped": 404,
   "items": [
     {
       "assetid": "50848446305",
@@ -64,7 +64,7 @@
       "name": "★ Karambit | Doppler",
       "market_hash_name": "★ Karambit | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203A2AC0A7FDC98C3B22C1391A9839123C0A3902EBC8F2DE397A4E52084A32F473170E",
       "tags": [
         {
           "category": "Type",
@@ -86,7 +86,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.017849596217,
+      "seed": 116,
+      "phase": "Phase 1"
     },
     {
       "assetid": "46524953645",
@@ -919,53 +922,6 @@
       ]
     },
     {
-      "assetid": "44298916630",
-      "classid": "7104680916",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | 1eeR (Holo) | Austin 2025",
-      "market_hash_name": "Sticker | 1eeR (Holo) | Austin 2025",
-      "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C1D1C1D978C8E1C1E9C4F1C5A3C4C9C1D17486A9C1B1C968EBB0B7",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "44298916630"
-      ]
-    },
-    {
       "assetid": "31138956539",
       "classid": "5327976671",
       "instanceid": "188530139",
@@ -1637,49 +1593,6 @@
       ]
     },
     {
-      "assetid": "23687502676",
-      "classid": "4614639342",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | Team Liquid (Foil) | Stockholm 2021",
-      "market_hash_name": "Sticker | Team Liquid (Foil) | Stockholm 2021",
-      "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BDADBDA504B49DBD95B88DB9DFB8B5BDAD519BD5BDCDB5BA3EEA22",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "23687502676"
-      ]
-    },
-    {
       "assetid": "31842638783",
       "classid": "5327976439",
       "instanceid": "188530139",
@@ -1720,53 +1633,6 @@
       ],
       "assetids": [
         "31842638783"
-      ]
-    },
-    {
-      "assetid": "31281298384",
-      "classid": "5327977116",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | WOOD7 (Holo) | Paris 2023",
-      "market_hash_name": "Sticker | WOOD7 (Holo) | Paris 2023",
-      "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207C6C7C64C5755C7C54794C781E79747C6CEB44147C0C744F0DE888",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "31281298384"
       ]
     },
     {
@@ -2382,10 +2248,10 @@
       ]
     },
     {
-      "assetid": "31819187515",
+      "assetid": "31138878422",
       "classid": "5327976334",
       "instanceid": "188530139",
-      "amount": 2,
+      "amount": 1,
       "name": "Sticker | BLAST.tv (Gold) | Paris 2023",
       "market_hash_name": "Sticker | BLAST.tv (Gold) | Paris 2023",
       "type": "Extraordinary Sticker",
@@ -2425,7 +2291,6 @@
         }
       ],
       "assetids": [
-        "31819187515",
         "31138878422"
       ]
     },
@@ -14200,42 +14065,6 @@
       ]
     },
     {
-      "assetid": "49686393369",
-      "classid": "7993035657",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "PP-Bizon | Space Cat",
-      "market_hash_name": "PP-Bizon | Space Cat (Minimal Wear)",
-      "type": "Restricted SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49053095177",
       "classid": "241583760",
       "instanceid": "8024720687",
@@ -17602,42 +17431,6 @@
       "amount": 1,
       "name": "StatTrak™ PP-Bizon | Runic",
       "market_hash_name": "StatTrak™ PP-Bizon | Runic (Well-Worn)",
-      "type": "StatTrak™ Mil-Spec Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "31776898989",
-      "classid": "7993046466",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ UMP-45 | Delusion",
-      "market_hash_name": "StatTrak™ UMP-45 | Delusion (Field-Tested)",
       "type": "StatTrak™ Mil-Spec Grade SMG",
       "inspectLink": "",
       "tags": [

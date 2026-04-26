@@ -1,4 +1,4 @@
-// /code-parts/offline-scripts/refreshMetaAndSitemaps.js
+// /code-parts/offline-scripts/meta-and-sitemap.js
 /* eslint-disable no-console */
 
 const fs = require('fs');
@@ -577,10 +577,6 @@ function main() {
   // Корень (старое поведение)
   let changedSitemaps = 0;
   changedSitemaps += writeBucketSitemaps('', BASE_ORIGIN);
-
-  // changedSitemaps += writeBucketSitemaps('sitemaps_me', 'https://csgobroker.me');
-  // Replaced cs2freebies.com -> csgobroker.co and sitemaps_com -> sitemaps_co
-  changedSitemaps += writeBucketSitemaps('sitemaps_co', 'https://csgobroker.co');
 
   console.log(`🏁 Done. HTML changed: ${changedHtmlCount}, sitemaps changed: ${changedSitemaps}.`);
 }
