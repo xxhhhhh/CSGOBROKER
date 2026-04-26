@@ -7,16 +7,18 @@
   "name": "Adones Nobre",
   "nationality": "Portugal",
   "born": "29.12.2003",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/94f5114b-b7b9-445f-be26-1a60f54d22de",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-24T06:16:42.408Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 190,
-  "totalItemsGrouped": 173,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-04-26T06:20:57.155Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 189,
+  "totalItemsGrouped": 172,
   "items": [
     {
       "assetid": "50460638762",
@@ -106,37 +108,6 @@
       ],
       "assetids": [
         "23363767465"
-      ]
-    },
-    {
-      "assetid": "50939522079",
-      "classid": "1989311038",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Graffiti | Quickdraw (Brick Red)",
-      "market_hash_name": "Sealed Graffiti | Quickdraw (Brick Red)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D1C1D1C915DBF1D1F9D0E1D5B3D6D9D1C162DCE1D0B9D1A1C92AD7145F",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "50939522079"
       ]
     },
     {
@@ -5617,7 +5588,7 @@
     {
       "assetid": "49635508777",
       "classid": "7993039768",
-      "instanceid": "8406882338",
+      "instanceid": "8416426056",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Dragon Tattoo",
       "market_hash_name": "StatTrak™ Glock-18 | Dragon Tattoo (Factory New)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c6154c13-83dd-4d8d-997c-e8bbb8ae5199",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-23T06:07:44.904Z",
+  "updatedAt": "2026-04-26T06:18:45.825Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 70,
-  "totalItemsGrouped": 67,
+  "totalItemsRaw": 72,
+  "totalItemsGrouped": 69,
   "items": [
     {
       "assetid": "47565749468",
@@ -54,6 +54,34 @@
       "float": 0.045558109879,
       "seed": 3,
       "phase": "Black Pearl"
+    },
+    {
+      "assetid": "51317959242",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "43495890672",
@@ -420,6 +448,37 @@
       ],
       "assetids": [
         "50861076110"
+      ]
+    },
+    {
+      "assetid": "51321084857",
+      "classid": "1989291256",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Mr. Teeth (Battle Green)",
+      "market_hash_name": "Sealed Graffiti | Mr. Teeth (Battle Green)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DBCBDBC31FD1FBDBF3DAEBDFB9DCD3DBCB70D6EBDCB3DBABC3041780A1",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51321084857"
       ]
     },
     {
@@ -2035,7 +2094,7 @@
     {
       "assetid": "42996142838",
       "classid": "7993045267",
-      "instanceid": "8406726414",
+      "instanceid": "8416750119",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Case Hardened",
       "market_hash_name": "StatTrak™ AK-47 | Case Hardened (Factory New)",

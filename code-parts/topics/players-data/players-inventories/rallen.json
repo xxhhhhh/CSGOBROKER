@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e05e2128-e0ab-459e-8ee5-4a0249ba508f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-25T06:07:56.810Z",
+  "updatedAt": "2026-04-26T06:35:48.048Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 561,
-  "totalItemsGrouped": 458,
+  "totalItemsRaw": 565,
+  "totalItemsGrouped": 459,
   "items": [
     {
       "assetid": "2739098068",
@@ -4912,7 +4912,7 @@
       "assetid": "50327516725",
       "classid": "4839650973",
       "instanceid": "188530139",
-      "amount": 1,
+      "amount": 3,
       "name": "Sticker | G2 Esports (Holo) | Antwerp 2022",
       "market_hash_name": "Sticker | G2 Esports (Holo) | Antwerp 2022",
       "type": "Exotic Sticker",
@@ -4948,7 +4948,9 @@
         }
       ],
       "assetids": [
-        "50327516725"
+        "50327516725",
+        "51064974942",
+        "51064974936"
       ]
     },
     {
@@ -6608,10 +6610,10 @@
       ]
     },
     {
-      "assetid": "49499718863",
+      "assetid": "51048807541",
       "classid": "7545312654",
       "instanceid": "519977179",
-      "amount": 6,
+      "amount": 7,
       "name": "Charm | Lil' No. 2",
       "market_hash_name": "Charm | Lil' No. 2",
       "type": "High Grade Charm",
@@ -6635,12 +6637,13 @@
         }
       ],
       "assetids": [
+        "51048807541",
         "49499718863",
         "49391024962",
         "49367280355",
         "49344874883",
         "49311667075",
-        "51048807541"
+        "51064736468"
       ]
     },
     {
@@ -8363,6 +8366,42 @@
       "market_hash_name": "P90 | Wash me (Field-Tested)",
       "type": "Industrial Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%202535B0EDE0B399243D3605A0240D2715211DD49182D7266599204DA5275532EAFF2F83",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51064734001",
+      "classid": "7993036050",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "P90 | Wash me",
+      "market_hash_name": "P90 | Wash me (Field-Tested)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -15115,7 +15154,7 @@
     {
       "assetid": "50589667139",
       "classid": "7993038769",
-      "instanceid": "8411867509",
+      "instanceid": "8414945197",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Redline",
       "market_hash_name": "StatTrak™ AK-47 | Redline (Minimal Wear)",
@@ -15683,7 +15722,7 @@
     {
       "assetid": "46149536084",
       "classid": "7993037775",
-      "instanceid": "480127043",
+      "instanceid": "480149949",
       "amount": 1,
       "name": "StatTrak™ M4A4 | The Emperor",
       "market_hash_name": "StatTrak™ M4A4 | The Emperor (Field-Tested)",
@@ -16675,7 +16714,7 @@
     {
       "assetid": "45573720169",
       "classid": "7993043403",
-      "instanceid": "188535088",
+      "instanceid": "188593988",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Rapid Transit",
       "market_hash_name": "StatTrak™ SSG 08 | Rapid Transit (Factory New)",
