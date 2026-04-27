@@ -39,7 +39,37 @@ function redirectHtml(targetUrl) {
 <meta charset="utf-8">
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link id="main-style" rel="stylesheet" href="/style_main.css">
+<script>
+    (function () {
+      try {
+        var settings = JSON.parse(localStorage.getItem('theme_settings') || '{}');
+        var theme = settings.theme || localStorage.getItem('theme') || 'dark';
+
+        document.documentElement.setAttribute('data-theme', theme);
+
+        window.__theme = theme;
+      } catch (e) {
+        window.__theme = 'dark';
+      }
+    })();
+    </script>
+    <link id="main-style" rel="stylesheet" href="/style_main.css">
+    <script>
+    (function () {
+      var link = document.createElement('link');
+      link.id = 'theme-style';
+      link.rel = 'stylesheet';
+
+      if (window.__theme === 'light') {
+        link.href = '/style_light.css';
+      } else {
+        link.href = '';
+        link.disabled = true;
+      }
+
+      document.head.appendChild(link);
+    })();
+    </script>
 <link rel="stylesheet" href="/fonts/TTNormsPro.css">
 <title>Redirecting…</title>
 </head>

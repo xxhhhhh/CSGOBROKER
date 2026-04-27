@@ -189,67 +189,74 @@ function showCopied(copyButton) {
   });
 
   const themeToggleBtn = document.getElementById('theme-toggle');
-  const themeIcon = themeToggleBtn.querySelector('i');
+  const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
 
   let currentTheme =
     (StorageHelper.getJSON('theme_settings') || {}).theme ||
     localStorage.getItem('theme') ||
     'dark';
 
-  applyTheme(currentTheme, false);
+  syncThemeUI(currentTheme);
 
-  window.addEventListener('DOMContentLoaded', () => {
-    if (document.documentElement.classList.contains('transitions-disabled')) {
-      replaceTransitionClass();
-    }
-  });
-
-  function replaceTransitionClass() {
+  function disableTransitionsForOneSecond() {
     const html = document.documentElement;
+
+    html.classList.add('transitions-disabled');
 
     setTimeout(() => {
       html.classList.remove('transitions-disabled');
-      html.classList.add('transitions-enabled');
-
-      setTimeout(() => {
-        html.classList.remove('transitions-enabled');
-      }, 200);
-    }, 100);
+    }, 300);
   }
 
-  function temporarilyDisableTransitions() {
-    const html = document.documentElement;
-
-    html.classList.remove('transitions-enabled');
-    html.classList.add('transitions-disabled');
-
-    replaceTransitionClass();
-  }
-
-  function applyTheme(theme, withTransition = true) {
-    if (withTransition) temporarilyDisableTransitions();
-
+  function applyTheme(theme, isManualSwitch = false) {
     currentTheme = theme;
+
+    if (isManualSwitch) {
+      disableTransitionsForOneSecond();
+    }
+
     document.documentElement.setAttribute('data-theme', theme);
 
-    StorageHelper.setJSON('theme_settings', { ...(StorageHelper.getJSON('theme_settings') || {}), theme });
+    StorageHelper.setJSON('theme_settings', {
+      ...(StorageHelper.getJSON('theme_settings') || {}),
+      theme
+    });
+
     localStorage.setItem('theme', theme);
 
     const link = document.getElementById('theme-style');
 
     if (theme === 'light') {
-      if (link) { link.href = '/style_light.css'; link.disabled = false; }
+      if (link) {
+        link.href = '/style_light.css';
+        link.disabled = false;
+      }
+    } else {
+      if (link) {
+        link.disabled = true;
+        link.href = '';
+      }
+    }
+
+    syncThemeUI(theme);
+  }
+
+  function syncThemeUI(theme) {
+    if (!themeIcon) return;
+
+    if (theme === 'light') {
       themeIcon.classList.replace('lightbulb-off', 'lightbulb-on');
     } else {
-      if (link) { link.disabled = true; link.href = ''; }
       themeIcon.classList.replace('lightbulb-on', 'lightbulb-off');
     }
   }
 
-  themeToggleBtn.addEventListener('click', () => {
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    applyTheme(newTheme, true);
-  });
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      applyTheme(newTheme, true);
+    });
+  }
 
 
   const sitesList = document.querySelector('.boxes-holder');

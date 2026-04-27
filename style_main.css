@@ -2367,7 +2367,7 @@ nav .pages {
     opacity: 0;
 }
 
-.box-skins.selected .skin::before {
+.box-skins.selected .skin:not(.expander)::before {
     width: 100%;
 }
 
@@ -2488,7 +2488,7 @@ nav .pages {
     opacity: 1;
 }
 
-.box-skins .skin:hover::before,
+.box-skins .skin:not(.expander):hover::before,
 .box-skins .skin:hover .skin-desc-name,
 .box-skins .skin:hover::after,
 .box-skins-list.showrarity .skin:hover::before,
