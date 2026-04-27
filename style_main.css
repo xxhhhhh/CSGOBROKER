@@ -15058,8 +15058,6 @@ header {
         width: 98%;
         padding-left: unset;
         background-color: unset;
-        margin: unset !important;
-        margin-top: 8px !important;
     }
 
     .settings-menu {
@@ -15767,7 +15765,7 @@ header {
         margin-right: 0;
         z-index: 12;
         left: 0;
-        top: 8px;
+        margin-top: 8px;
     }
 
     .topic .siteleftpannel {
@@ -18224,7 +18222,7 @@ a[href*="/?aff="][target="_blank"] {
         left: 0;
     }
 
-    .box-skins-name {
+    .box-skins-nav .box-skins-name {
         width: auto;
         height: 35px;
         position: absolute;
@@ -18233,11 +18231,11 @@ a[href*="/?aff="][target="_blank"] {
         transform: translateX(-50%);
     }
 
-    .box-skins-name::before {
+    .box-skins-nav .box-skins-name::before {
         content: unset;
     }
 
-    .box-skins-name span {
+    .box-skins-nav .box-skins-name span {
         transform: unset;
     }
 }
