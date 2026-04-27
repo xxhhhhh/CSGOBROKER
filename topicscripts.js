@@ -848,11 +848,72 @@ async function updateTopicTotalValue(totalValue) {
     (function initPlayersRecsBox() {
       const PLAYERS_LIST_URL = "/code-parts/topics/players-data/players-list/fetch-players.json";
       const PLAYERS_META_URL = "/code-parts/topics/players-data/players-list/players.json";
-      const UNKNOWN_IMAGE = "/img/skins/players/unknown.webp";
       const UNKNOWN_IMAGE_CROP = "/img/skins/players/crop/unknown.webp";
+      const CACHE_TTL_MS = 5 * 60 * 1000;
+
       const isPlayerInventoryPage = /\/topic\/players\/inventories\/[^/]+(?:\.html)?$/i.test(window.location.pathname);
 
       if (!isPlayerInventoryPage) return;
+
+      async function fetchJsonWithSmartCache(url, storageKey) {
+        const now = Date.now();
+        let cached = null;
+
+        try {
+          cached = JSON.parse(localStorage.getItem(storageKey) || "null");
+        } catch (_) {
+          cached = null;
+        }
+
+        if (cached?.data && cached?.time && now - cached.time < CACHE_TTL_MS) {
+          return cached.data;
+        }
+
+        const headers = {};
+
+        if (cached?.etag) {
+          headers["If-None-Match"] = cached.etag;
+        }
+
+        if (cached?.lastModified) {
+          headers["If-Modified-Since"] = cached.lastModified;
+        }
+
+        try {
+          const res = await fetch(url, {
+            cache: "no-cache",
+            headers,
+          });
+
+          if (res.status === 304 && cached?.data) {
+            localStorage.setItem(storageKey, JSON.stringify({
+              ...cached,
+              time: now,
+            }));
+
+            return cached.data;
+          }
+
+          if (!res.ok) {
+            if (cached?.data) return cached.data;
+            throw new Error(`Fetch failed: ${res.status}`);
+          }
+
+          const data = await res.json();
+
+          localStorage.setItem(storageKey, JSON.stringify({
+            data,
+            time: now,
+            etag: res.headers.get("ETag"),
+            lastModified: res.headers.get("Last-Modified"),
+          }));
+
+          return data;
+        } catch (err) {
+          if (cached?.data) return cached.data;
+          throw err;
+        }
+      }
 
       function getCurrentPlayerSlug() {
         return window.location.pathname
@@ -890,10 +951,12 @@ async function updateTopicTotalValue(totalValue) {
 
       function shuffleArray(arr = []) {
         const out = Array.from(arr);
+
         for (let i = out.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [out[i], out[j]] = [out[j], out[i]];
         }
+
         return out;
       }
 
@@ -1002,6 +1065,7 @@ async function updateTopicTotalValue(totalValue) {
 
       function isUnknownPlayerImage(src = "") {
         const value = String(src || "").trim().toLowerCase();
+
         if (!value) return true;
 
         return (
@@ -1056,26 +1120,18 @@ async function updateTopicTotalValue(totalValue) {
           return shuffleArray(list).slice(0, amount);
         }
 
-        // 1) Сначала той же nationality с фото
-        const sameWithPhoto = takeFrom(groups.sameWithPhoto, limit);
-        picked.push(...sameWithPhoto);
+        picked.push(...takeFrom(groups.sameWithPhoto, limit));
 
-        // 2) Потом той же nationality без фото
         if (picked.length < limit) {
-          const sameUnknown = takeFrom(groups.sameUnknown, limit - picked.length);
-          picked.push(...sameUnknown);
+          picked.push(...takeFrom(groups.sameUnknown, limit - picked.length));
         }
 
-        // 3) Потом другие nationality с фото
         if (picked.length < limit) {
-          const otherWithPhoto = takeFrom(groups.otherWithPhoto, limit - picked.length);
-          picked.push(...otherWithPhoto);
+          picked.push(...takeFrom(groups.otherWithPhoto, limit - picked.length));
         }
 
-        // 4) И только потом другие nationality без фото
         if (picked.length < limit) {
-          const otherUnknown = takeFrom(groups.otherUnknown, limit - picked.length);
-          picked.push(...otherUnknown);
+          picked.push(...takeFrom(groups.otherUnknown, limit - picked.length));
         }
 
         return picked.slice(0, limit);
@@ -1084,11 +1140,18 @@ async function updateTopicTotalValue(totalValue) {
       function getExcludedPlayerSlugs() {
         const out = new Set();
         const currentSlug = getCurrentPlayerSlug();
+
         if (currentSlug) out.add(currentSlug);
 
         document.querySelectorAll(".players-box.team .player[href], .player-teammates .teammate[href]").forEach((a) => {
           const href = a.getAttribute("href") || "";
-          const slug = href.split("/").pop()?.replace(/\.html$/i, "").trim().toLowerCase();
+          const slug = href
+            .split("/")
+            .pop()
+            ?.replace(/\.html$/i, "")
+            .trim()
+            .toLowerCase();
+
           if (slug) out.add(slug);
         });
 
@@ -1139,16 +1202,20 @@ async function updateTopicTotalValue(totalValue) {
       }
 
       async function fetchPlayers() {
-        const res = await fetch(PLAYERS_LIST_URL, { cache: "force-cache" });
-        if (!res.ok) throw new Error(`Players fetch failed: ${res.status}`);
-        const json = await res.json();
+        const json = await fetchJsonWithSmartCache(
+          PLAYERS_LIST_URL,
+          "players_recs_players_list_v1"
+        );
+
         return normalizePlayersList(json);
       }
 
       async function fetchPlayersMeta() {
-        const res = await fetch(PLAYERS_META_URL, { cache: "force-cache" });
-        if (!res.ok) throw new Error(`Players meta fetch failed: ${res.status}`);
-        const json = await res.json();
+        const json = await fetchJsonWithSmartCache(
+          PLAYERS_META_URL,
+          "players_recs_players_meta_v1"
+        );
+
         return normalizePlayersMetaList(json);
       }
 
@@ -1160,13 +1227,8 @@ async function updateTopicTotalValue(totalValue) {
           const slug = String(player?.slug || "").trim().toLowerCase();
           const nickname = String(player?.nickname || "").trim().toLowerCase();
 
-          if (slug) {
-            metaBySlug.set(slug, player);
-          }
-
-          if (nickname) {
-            metaByNickname.set(nickname, player);
-          }
+          if (slug) metaBySlug.set(slug, player);
+          if (nickname) metaByNickname.set(nickname, player);
         });
 
         return (Array.isArray(players) ? players : []).filter((player) => {
@@ -1206,24 +1268,28 @@ async function updateTopicTotalValue(totalValue) {
 
       function insertRecsBox(recsBox) {
         const existingRecs = document.querySelector(".players-box.recs");
+
         if (existingRecs) {
           existingRecs.replaceWith(recsBox);
           return;
         }
 
         const teamBox = document.querySelector(".players-box.team");
+
         if (teamBox) {
           teamBox.insertAdjacentElement("afterend", recsBox);
           return;
         }
 
         const legacyTeamBox = document.querySelector(".player-teammates");
+
         if (legacyTeamBox) {
           legacyTeamBox.insertAdjacentElement("afterend", recsBox);
           return;
         }
 
         const insertTarget = getTopicInsertTarget(document) || getTopicContainer(document);
+
         if (insertTarget) {
           insertTarget.insertAdjacentElement("afterend", recsBox);
         }
