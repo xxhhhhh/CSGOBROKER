@@ -191,10 +191,17 @@ function showCopied(copyButton) {
   const themeToggleBtn = document.getElementById('theme-toggle');
   const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
 
-  let currentTheme =
+  const savedTheme =
     (StorageHelper.getJSON('theme_settings') || {}).theme ||
-    localStorage.getItem('theme') ||
-    'dark';
+    localStorage.getItem('theme');
+
+  const systemPrefersLight =
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: light)').matches;
+
+  let currentTheme =
+    savedTheme ||
+    (systemPrefersLight ? 'light' : 'dark');
 
   syncThemeUI(currentTheme);
 
