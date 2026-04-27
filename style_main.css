@@ -2502,7 +2502,7 @@ nav .pages {
     opacity: 1;
 }
 
-.box-skins-list.showrarity .skin::before {
+.box-skins-list.showrarity .skin:not(.expander)::before {
     opacity: .2;
 }
 
@@ -14008,7 +14008,6 @@ header {
     .singlemod-select span,
     .boxes-holder-name .boxes-holder-more,
     .main-page .box .logobg .best,
-    .newest-boxes .box .logobg .best,
     .boxes-holder-modes,
     .boxes-holder-name a {
         color: rgb(255, 255, 255, .35);
