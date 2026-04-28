@@ -12,49 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/f2013a83-2603-41a4-a6f0-0c716d52258c",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-27T05:53:31.507Z",
+  "updatedAt": "2026-04-28T05:58:17.105Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 76,
-  "totalItemsGrouped": 76,
+  "totalItemsRaw": 77,
+  "totalItemsGrouped": 77,
   "items": [
-    {
-      "assetid": "50411704939",
-      "classid": "7993039715",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Bayonet | Doppler",
-      "market_hash_name": "★ Bayonet | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202434CF80B2C29F253CD0270487270C2214271C9EE88FCC2764A5214C235420915E3E53",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.03391096741,
-      "seed": 641,
-      "phase": "Phase 2"
-    },
     {
       "assetid": "48867818711",
       "classid": "7993042582",
@@ -265,6 +230,34 @@
       "float": 0.019855035469,
       "seed": 599,
       "phase": "Emerald"
+    },
+    {
+      "assetid": "51121906705",
+      "classid": "8247439252",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Driver Gloves | Garden",
+      "market_hash_name": "★ Driver Gloves | Garden (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "48844631527",
@@ -2138,6 +2131,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51122681618",
+      "classid": "7993035746",
+      "instanceid": "6276340031",
+      "amount": 1,
+      "name": "USP-S | Bleeding Edge",
+      "market_hash_name": "USP-S | Bleeding Edge (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

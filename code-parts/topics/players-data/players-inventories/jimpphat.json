@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/0cf9c7b8-2003-404d-97d4-fa9b5fae1878",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-25T05:13:22.355Z",
+  "updatedAt": "2026-04-28T06:00:29.302Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 149,
-  "totalItemsGrouped": 113,
+  "totalItemsRaw": 151,
+  "totalItemsGrouped": 115,
   "items": [
     {
       "assetid": "47266325356",
@@ -1402,7 +1402,7 @@
       ]
     },
     {
-      "assetid": "51047182878",
+      "assetid": "51047460564",
       "classid": "7729157891",
       "instanceid": "188530139",
       "amount": 29,
@@ -1445,6 +1445,7 @@
         }
       ],
       "assetids": [
+        "51047460564",
         "51047182878",
         "51041135007",
         "51036369485",
@@ -1472,8 +1473,7 @@
         "50698223391",
         "50679738467",
         "50679738419",
-        "50679714599",
-        "51047460564"
+        "50679714599"
       ]
     },
     {
@@ -3566,6 +3566,42 @@
       ]
     },
     {
+      "assetid": "51125175136",
+      "classid": "7993037881",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAG-7 | Resupply",
+      "market_hash_name": "MAG-7 | Resupply (Battle-Scarred)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "41341843867",
       "classid": "7993036111",
       "instanceid": "188530139",
@@ -4157,6 +4193,42 @@
       "market_hash_name": "StatTrak™ R8 Revolver | Grip (Battle-Scarred)",
       "type": "StatTrak™ Mil-Spec Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%209686740011732D978ED6B62B93BE95A69FAE01726D6195D66993DE96C696FE90E69E2A05DB16",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51125170576",
+      "classid": "7993039699",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ XM1014 | Mockingbird",
+      "market_hash_name": "StatTrak™ XM1014 | Mockingbird (Well-Worn)",
+      "type": "StatTrak™ Mil-Spec Grade Shotgun",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
