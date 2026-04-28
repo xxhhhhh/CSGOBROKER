@@ -1,6 +1,7 @@
 {
     "gamemodesContent": [
         "<a href=\"/csgo/jackpot\" aria-label=\"Jackpot\" class=\"jackpot\"></a>",
+        "<a href=\"/csgo/caseopening\" aria-label=\"Case Opening\" class=\"cases\"></a>",
         "<a href=\"/csgo/mines\" aria-label=\"Mines\" class=\"mines\"></a>",
         "<a href=\"/csgo/roulette\" aria-label=\"Wheel of Fortune\" class=\"wheel\"></a>",
         "<a href=\"/csgo/roulette\" aria-label=\"Roulette\" class=\"roulette\"></a>",
@@ -44,17 +45,19 @@
         "Playability": 4.5
     },
     "codes": {
-        "Free Else": "Бесплатный Кейс до 200$",
+        "Free Else": "Бесплатный «Эко Раунд» Кейс",
         "Deposit Bonus": "+5%",
-        "Free Else 3": "3 Прокрута Барабана"
+        "Free Else 3": "Скидка 50% на кейс «10 LVL»",
+        "Free Else 4": "3 Прокрута Барабана"
     },
     "name": "CSFAIL",
     "languages": "en, ru, tr, es",
     "link": "https://ggband.gg/referral/brokerfail",
-    "featuresContent": ["DepositBonus", "DailyRewards", "Giveaways"],
-    "code": "BROKERCASE",
+    "featuresContent": ["SignUpBonus", "DepositBonus", "DailyRewards", "Giveaways"],
+    "code": "BROKERFREE",
     "code-2": "CSGOBROKER",
-    "code-3": "BROKERSPIN",
+    "code-3": "BROKER50",
+    "code-4": "BROKERSPIN",
     "Main Mode": "classic",
     "Sites Alternatives"  : ["upgrader", "csgopolygon", "csgofast", "csgorun"]
 }

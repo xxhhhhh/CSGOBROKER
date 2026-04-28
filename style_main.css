@@ -3292,8 +3292,8 @@ h3 {
 
 .site-attention.event::after {
     mask-image: url(/img/icons/gamemodes/party-horn.svg);
-    height: 150px !important;
-    width: 150px !important;
+    height: 150px;
+    width: 150px;
     top: 20px;
     left: 11px;
 }
@@ -8496,7 +8496,8 @@ input {
 }
 
 .screens button,
-.slider-container button {
+.slider-container button,
+.site-attention-multiple button {
     content: '';
     position: absolute;
     background-color: transparent;
@@ -8533,7 +8534,8 @@ input {
     height: auto;
 }
 
-.screens button {
+.screens button,
+.site-attention-multiple {
     transition: all .15s ease-in-out, opacity .5s;
 }
 
@@ -8548,7 +8550,9 @@ input {
 }
 
 .screens:hover .next-button,
-.screens:hover .prev-button {
+.screens:hover .prev-button,
+.site-attention-multiple:hover .next-button,
+.site-attention-multiple:hover .prev-button {
     transform: translateX(0);
     opacity: 1;
 }
@@ -13325,10 +13329,47 @@ header {
     width: 100%;
 }
 
+.site-attention-multiple {
+    width: 100%;
+    margin-top: 8px;
+    overflow: hidden;
+    user-select: all;
+}
+
+.site-attention-multiple .site-attention {
+    margin: unset;
+    display: flex;
+    transition: none;
+}
+
+.site-attention-multiple .slick-dots {
+    display: none !important;
+}
+
+.site-attention-multiple:not(.slick-initialized) .site-attention {
+    display: none;
+}
+
+/* оставляем только первый */
+.site-attention-multiple:not(.slick-initialized) .site-attention:first-child {
+    display: flex;
+    width: 100%;
+}
+
+.site-attention-multiple .slick-track {
+  display: flex;
+}
+
+.site-attention-multiple .slick-slide {
+  height: auto;
+  display: flex;
+}
+
 .site-attention.event {
     overflow: hidden;
     line-height: 22px;
     flex-direction: column;
+    user-select: none;
 }
 
 .site-attention.event span {
@@ -13343,6 +13384,10 @@ header {
     z-index: 1;
     color: #2988ff;
     font-weight: 600;
+}
+
+.site-attention.event.extra a.styled {
+    color: #8ad33d;
 }
 
 .site-attention.event strong.code {
@@ -13362,6 +13407,7 @@ header {
     font-family: TTNormsPro;
     background: rgb(17 17 17);
     color: rgb(155, 155, 155);
+    user-select: all;
 }
 
 .site-attention.event strong.item {
@@ -13378,6 +13424,7 @@ header {
     max-width: 80%;
     position: relative;
     display: block;
+    max-width: 70%;
 }
 
 /* .site-attention.event::after {
@@ -13398,8 +13445,7 @@ header {
 .site-attention.event::after {
     mask-image: unset;
     background-repeat: no-repeat;
-    /* background-image: url(/img/csfail-event.png); */
-    background-image: url(/img/chicken-rush-cutted.png);
+    background-image: url(/img/csfail-chicken-rush-cutted.png);
     background-position: bottom;
     background-size: contain;
     background-color: unset;
@@ -13407,9 +13453,22 @@ header {
     position: absolute;
     left: 10px;
     top: 0px;
-    height: 150px !important;
-    width: 150px !important;
+    height: 150px;
+    width: 150px;
     opacity: 1;
+}
+
+.site-attention.event.extra::after {
+    background-image: url(/img/csfail-coin.webp);
+    height: 125px;
+    width: 125px;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%)  rotate(5deg);
+}
+
+.site-attention.event.extra::before {
+    background: linear-gradient(135deg, #7ab73a 0%, #8ad33d 100%);
 }
 
 .site-attention.event::before {
@@ -13812,7 +13871,8 @@ header {
         top: 12px;
     }
 
-    .site-attention {
+    .site-attention,
+    .site-attention-multiple {
         width: 96%;
     }
 

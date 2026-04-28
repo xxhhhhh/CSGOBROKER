@@ -609,6 +609,21 @@ $(document).ready(function(){
     dots: true
   });
 });
+
+$(document).ready(function(){
+  $('.site-attention-multiple').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 450,
+    autoplaySpeed: 7000,
+    pauseOnHover: true,
+    pauseOnDotsHover: true,
+    prevArrow: '<button aria-label="Prev Slide" class="prev-button"><i class="officon chevron left"></i></button>',
+    nextArrow: '<button aria-label="Next Slide" class="next-button"><i class="officon chevron right"></i></button>',
+    dots: true
+  });
+});
   
 window.onload = function () {
   (function () {
