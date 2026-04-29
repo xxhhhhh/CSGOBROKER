@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/388eb8d9-7cd4-49fd-80e3-a9961627d77e",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-22T12:54:34.863Z",
+  "updatedAt": "2026-04-29T06:19:19.349Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 687,
-  "totalItemsGrouped": 224,
+  "totalItemsRaw": 689,
+  "totalItemsGrouped": 226,
   "items": [
     {
       "assetid": "40483877129",
@@ -254,6 +254,34 @@
     },
     {
       "assetid": "51091135727",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51369849454",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -1273,6 +1301,42 @@
       "market_hash_name": "AUG | Sweeper (Field-Tested)",
       "type": "Consumer Grade Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%2099893C00541F16988191B9039FB198A99DA10D34596A9AF1199BE981F6A07E39",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51369849455",
+      "classid": "7993036098",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MP9 | Multi-Terrain",
+      "market_hash_name": "MP9 | Multi-Terrain (Minimal Wear)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -9313,7 +9377,7 @@
     {
       "assetid": "26217425760",
       "classid": "7993044384",
-      "instanceid": "8419540917",
+      "instanceid": "8425716147",
       "amount": 1,
       "name": "StatTrak™ AK-47 | The Empress",
       "market_hash_name": "StatTrak™ AK-47 | The Empress (Well-Worn)",

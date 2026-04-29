@@ -12,14 +12,50 @@
   "faceit": "https://faceitdb.com/profile/faceit/27d1a137-8bf2-4b21-844e-ff2b7131ae74",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-24T05:55:32.819Z",
+  "updatedAt": "2026-04-29T06:15:02.620Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 149,
-  "totalItemsGrouped": 130,
+  "totalItemsRaw": 153,
+  "totalItemsGrouped": 134,
   "items": [
+    {
+      "assetid": "51145027757",
+      "classid": "7993037888",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Blue Steel",
+      "market_hash_name": "★ Butterfly Knife | Blue Steel (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "48845348844",
       "classid": "7993042582",
@@ -542,6 +578,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51145027734",
+      "classid": "7993041176",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Desert Eagle | Fennec Fox",
+      "market_hash_name": "Desert Eagle | Fennec Fox (Field-Tested)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1470,6 +1542,42 @@
       "market_hash_name": "AK-47 | Fire Serpent (Field-Tested)",
       "type": "Covert Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20829278205D6439839A85A23683AA84B286BA4E710E7381C21780E08C8A8192EEBF0274E03EC7821ED938EA81F28A2083948A8292A7BFC68DB5C2C7451FECBDCF665267BDE253CD6AABD5D4",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51145027749",
+      "classid": "7993036534",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "M4A1-S | Fade",
+      "market_hash_name": "M4A1-S | Fade (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2607,7 +2715,7 @@
       ]
     },
     {
-      "assetid": "49617324883",
+      "assetid": "50284816163",
       "classid": "7729149492",
       "instanceid": "188530139",
       "amount": 10,
@@ -2646,6 +2754,7 @@
         }
       ],
       "assetids": [
+        "50284816163",
         "49617324883",
         "49617321819",
         "49593732944",
@@ -2654,8 +2763,7 @@
         "49590543635",
         "49542876555",
         "49516076676",
-        "49515937662",
-        "50284816163"
+        "49515937662"
       ]
     },
     {
@@ -3878,6 +3986,62 @@
       ]
     },
     {
+      "assetid": "51145027741",
+      "classid": "7993037966",
+      "instanceid": "6293478821",
+      "amount": 1,
+      "name": "StatTrak™ AK-47 | Redline",
+      "market_hash_name": "StatTrak™ AK-47 | Redline (Field-Tested)",
+      "type": "StatTrak™ Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49138770169",
       "classid": "7993045088",
       "instanceid": "188546267",
@@ -4008,7 +4172,7 @@
     {
       "assetid": "41233184373",
       "classid": "7993042347",
-      "instanceid": "8422762925",
+      "instanceid": "8425692060",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Neo-Noir",
       "market_hash_name": "StatTrak™ M4A4 | Neo-Noir (Factory New)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/5157fde3-01e1-4eeb-886b-ae2185569711",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-27T06:10:21.387Z",
+  "updatedAt": "2026-04-29T06:10:52.500Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 616,
-  "totalItemsGrouped": 488,
+  "totalItemsRaw": 618,
+  "totalItemsGrouped": 490,
   "items": [
     {
       "assetid": "49987560305",
@@ -365,6 +365,34 @@
     },
     {
       "assetid": "51066957023",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51361354955",
       "classid": "4717330486",
       "instanceid": "302028390",
       "amount": 1,
@@ -2346,6 +2374,37 @@
       ],
       "assetids": [
         "49406049182"
+      ]
+    },
+    {
+      "assetid": "51361354956",
+      "classid": "1989294001",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Jump Shot (Princess Pink)",
+      "market_hash_name": "Sealed Graffiti | Jump Shot (Princess Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202E3E2E36EA240E2E062F1E2A4C29262E3E92231E3F462E5E36A2AC6C91",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51361354956"
       ]
     },
     {
