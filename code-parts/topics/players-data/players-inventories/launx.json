@@ -7,17 +7,47 @@
   "name": "Laurențiu Țârlea",
   "nationality": "Romania",
   "born": "10.05.2005",
+  "isContentCreator": false,
   "twitch": "launx_",
   "faceit": "https://faceitdb.com/profile/faceit/7afa70ed-066f-4336-adf7-03890d8e22b1",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-25T05:21:44.810Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 40,
-  "totalItemsGrouped": 39,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-04-30T06:08:37.050Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 42,
+  "totalItemsGrouped": 41,
   "items": [
+    {
+      "assetid": "51379174413",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "50273595276",
       "classid": "6195246388",
@@ -135,6 +165,42 @@
       "market_hash_name": "AWP | Mortis (Field-Tested)",
       "type": "Classified Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E8F8215C1F5E5EE9F0E1C85BEDC0EDD8ECD068500F1CEBA87BEF80FA98E0E323D0D0",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51379174414",
+      "classid": "7993036481",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "P250 | Copper Oxide",
+      "market_hash_name": "P250 | Copper Oxide (Field-Tested)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/f8580374-5c09-43bc-bef2-463f1fde9aff",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-26T06:42:07.716Z",
+  "updatedAt": "2026-04-30T07:01:36.992Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 75,
-  "totalItemsGrouped": 68,
+  "totalItemsRaw": 82,
+  "totalItemsGrouped": 75,
   "items": [
     {
       "assetid": "49990153794",
@@ -100,6 +100,78 @@
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51167966744",
+      "classid": "7993040129",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP7 | Smoking Kills",
+      "market_hash_name": "MP7 | Smoking Kills (Well-Worn)",
+      "type": "Classified SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51168015233",
+      "classid": "8246922595",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "P90 | Deathgaze",
+      "market_hash_name": "P90 | Deathgaze (Field-Tested)",
+      "type": "Classified SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -1374,6 +1446,42 @@
       ]
     },
     {
+      "assetid": "51167790498",
+      "classid": "7993035933",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "P2000 | Red Wing",
+      "market_hash_name": "P2000 | Red Wing (Well-Worn)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "24416865808",
       "classid": "7993037495",
       "instanceid": "519977179",
@@ -1382,6 +1490,86 @@
       "market_hash_name": "R8 Revolver | Blaze (Factory New)",
       "type": "Mil-Spec Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%208393131F6C79D99BC3A3A6AB80B387BB6756046280C31480EB82F394A6E3D7C3",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51167826613",
+      "classid": "7993037405",
+      "instanceid": "6276437123",
+      "amount": 1,
+      "name": "MP9 | Broken Record",
+      "market_hash_name": "MP9 | Broken Record (Minimal Wear)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51185465583",
+      "classid": "8246900129",
+      "instanceid": "8394825134",
+      "amount": 1,
+      "name": "Desert Eagle | Firebreathing",
+      "market_hash_name": "Desert Eagle | Firebreathing (Well-Worn)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1505,6 +1693,50 @@
         },
         {
           "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51185519452",
+      "classid": "7993035945",
+      "instanceid": "8395523349",
+      "amount": 1,
+      "name": "M4A1-S | Liquidation",
+      "market_hash_name": "M4A1-S | Liquidation (Field-Tested)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         },
         {
@@ -2510,6 +2742,42 @@
       "name": "StatTrak™ Sawed-Off | Fusion",
       "market_hash_name": "StatTrak™ Sawed-Off | Fusion (Battle-Scarred)",
       "type": "StatTrak™ Mil-Spec Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51168131482",
+      "classid": "7993037327",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ Nova | Ocular",
+      "market_hash_name": "StatTrak™ Nova | Ocular (Field-Tested)",
+      "type": "StatTrak™ Restricted Shotgun",
       "inspectLink": "",
       "tags": [
         {

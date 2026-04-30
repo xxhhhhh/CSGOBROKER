@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e05e2128-e0ab-459e-8ee5-4a0249ba508f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-28T06:55:24.226Z",
+  "updatedAt": "2026-04-30T06:57:19.606Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 575,
-  "totalItemsGrouped": 459,
+  "totalItemsRaw": 577,
+  "totalItemsGrouped": 461,
   "items": [
     {
       "assetid": "2739098068",
@@ -4769,7 +4769,7 @@
       ]
     },
     {
-      "assetid": "51091414327",
+      "assetid": "51091416112",
       "classid": "5327976203",
       "instanceid": "188530139",
       "amount": 7,
@@ -4808,13 +4808,13 @@
         }
       ],
       "assetids": [
+        "51091416112",
         "51091414327",
         "50888924332",
         "50888923273",
         "50888922804",
         "50253785930",
-        "51116256808",
-        "51091416112"
+        "51116256808"
       ]
     },
     {
@@ -4863,7 +4863,7 @@
       ]
     },
     {
-      "assetid": "50862661187",
+      "assetid": "51091418358",
       "classid": "5327976360",
       "instanceid": "188530139",
       "amount": 10,
@@ -4902,6 +4902,7 @@
         }
       ],
       "assetids": [
+        "51091418358",
         "50862661187",
         "50327567173",
         "50327552628",
@@ -4910,8 +4911,7 @@
         "50129727384",
         "50129487285",
         "51091418404",
-        "51091418391",
-        "51091418358"
+        "51091418391"
       ]
     },
     {
@@ -5278,6 +5278,53 @@
       "assetids": [
         "50659118628",
         "50659118127"
+      ]
+    },
+    {
+      "assetid": "51165042232",
+      "classid": "5327978873",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | ropz (Holo) | Paris 2023",
+      "market_hash_name": "Sticker | ropz (Holo) | Paris 2023",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C7D7C7DF7ECEE7C7EFC2F7C3A5C2CFC7D768F0AFC7B7CFB9D0A809",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51165042232"
       ]
     },
     {
@@ -13658,6 +13705,50 @@
       ]
     },
     {
+      "assetid": "51155461697",
+      "classid": "7993035910",
+      "instanceid": "6276307204",
+      "amount": 1,
+      "name": "MP9 | Mount Fuji",
+      "market_hash_name": "MP9 | Mount Fuji (Factory New)",
+      "type": "Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "45573739214",
       "classid": "7993037925",
       "instanceid": "188530139",
@@ -15164,7 +15255,7 @@
     {
       "assetid": "50589667139",
       "classid": "7993038769",
-      "instanceid": "8424916025",
+      "instanceid": "8427399185",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Redline",
       "market_hash_name": "StatTrak™ AK-47 | Redline (Minimal Wear)",
@@ -15520,7 +15611,7 @@
     {
       "assetid": "10987244968",
       "classid": "7993042460",
-      "instanceid": "8424613514",
+      "instanceid": "8427399186",
       "amount": 1,
       "name": "StatTrak™ AWP | Redline",
       "market_hash_name": "StatTrak™ AWP | Redline (Field-Tested)",
@@ -15732,7 +15823,7 @@
     {
       "assetid": "46149536084",
       "classid": "7993037775",
-      "instanceid": "480172147",
+      "instanceid": "480091891",
       "amount": 1,
       "name": "StatTrak™ M4A4 | The Emperor",
       "market_hash_name": "StatTrak™ M4A4 | The Emperor (Field-Tested)",
@@ -16724,7 +16815,7 @@
     {
       "assetid": "45573720169",
       "classid": "7993043403",
-      "instanceid": "188531885",
+      "instanceid": "188560604",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Rapid Transit",
       "market_hash_name": "StatTrak™ SSG 08 | Rapid Transit (Factory New)",
