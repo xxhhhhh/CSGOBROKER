@@ -149,7 +149,7 @@ jobs:
         if: ${{ matrix.shard_index < fromJSON(inputs.shard_total || '1') }}
         env:
           PROXY_ENABLED: "0"
-          CSFLOAT_CHECKER_ENABLED: ${{ github.event_name == 'schedule' && '1' || (inputs.resolve_doppler_phase && '1' || '0') }}
+          CSFLOAT_CHECKER_ENABLED: "1"
           USE_STEAM_UI_FALLBACK: ${{ inputs.use_browser_fallback && '1' || '0' }}
           FETCH_INSPECT_FOR_ALL_ITEMS: ${{ inputs.fetch_inspect_for_all_items && '1' || '0' }}
           PRESERVE_EXISTING_FLOAT_SEED_FOR_ALL_ITEMS: "1"
