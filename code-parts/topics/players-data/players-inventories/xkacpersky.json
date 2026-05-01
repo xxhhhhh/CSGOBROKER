@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/7cfd2312-1ff0-434c-a4b1-be10b033636f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-30T06:23:24.975Z",
+  "updatedAt": "2026-05-01T06:41:12.649Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 71,
-  "totalItemsGrouped": 70,
+  "totalItemsRaw": 73,
+  "totalItemsGrouped": 72,
   "items": [
     {
       "assetid": "51151028971",
@@ -126,6 +126,34 @@
       "amount": 1,
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51423252661",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -424,6 +452,37 @@
       ],
       "assetids": [
         "50909044176"
+      ]
+    },
+    {
+      "assetid": "51423252662",
+      "classid": "1989299270",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | 8-Ball (Monarch Blue)",
+      "market_hash_name": "Sealed Graffiti | 8-Ball (Monarch Blue)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208595859D418FA585AD84B581E7828D85953C88B589ED85F59DF2B7E1C6",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51423252662"
       ]
     },
     {
