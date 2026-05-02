@@ -107,7 +107,7 @@ const DEFAULT_OFFLINE_PROXY_USERNAME = "3D5zgyAQ";
 const DEFAULT_OFFLINE_PROXY_PASSWORD = "3giL9Jp7";
 
 const PROXY_ENABLED =
-  String(process.env.PROXY_ENABLED || DEFAULT_OFFLINE_PROXY_ENABLED).trim() === "0";
+  String(process.env.PROXY_ENABLED || DEFAULT_OFFLINE_PROXY_ENABLED).trim() === "1";
 
 const PROXY_SCHEME = String(process.env.PROXY_SCHEME || DEFAULT_OFFLINE_PROXY_SCHEME).trim() || "http";
 const PROXY_HOST = String(process.env.PROXY_HOST || DEFAULT_OFFLINE_PROXY_HOST).trim();
