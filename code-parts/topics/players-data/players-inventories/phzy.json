@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/0411cac3-a510-4af0-96d1-b032a4e766ac",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-01T06:24:26.861Z",
+  "updatedAt": "2026-05-02T05:44:50.086Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 136,
-  "totalItemsGrouped": 136,
+  "totalItemsRaw": 146,
+  "totalItemsGrouped": 141,
   "items": [
     {
       "assetid": "50937298267",
@@ -603,6 +603,42 @@
       ]
     },
     {
+      "assetid": "51364083234",
+      "classid": "7993041183",
+      "instanceid": "6276479817",
+      "amount": 1,
+      "name": "M4A1-S | Stratosphere",
+      "market_hash_name": "M4A1-S | Stratosphere (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50410628822",
       "classid": "7993037072",
       "instanceid": "188530139",
@@ -786,6 +822,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51199875439",
+      "classid": "7993036942",
+      "instanceid": "7787714529",
+      "amount": 1,
+      "name": "USP-S | Printstream",
+      "market_hash_name": "USP-S | Printstream (Factory New)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1175,10 +1255,10 @@
       ]
     },
     {
-      "assetid": "47868207091",
+      "assetid": "51192347054",
       "classid": "7732421591",
       "instanceid": "0",
-      "amount": 1,
+      "amount": 3,
       "name": "Sticker Slab | phzy (Holo) | Austin 2025",
       "market_hash_name": "Sticker Slab | phzy (Holo) | Austin 2025",
       "type": "Customized Exotic Charm",
@@ -1206,7 +1286,9 @@
         }
       ],
       "assetids": [
-        "47868207091"
+        "51192347054",
+        "47868207091",
+        "51192347813"
       ]
     },
     {
@@ -2635,6 +2717,42 @@
       ]
     },
     {
+      "assetid": "51194321197",
+      "classid": "7993035801",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Five-SeveN | Sky Blue",
+      "market_hash_name": "Five-SeveN | Sky Blue (Factory New)",
+      "type": "Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50827502329",
       "classid": "7993037207",
       "instanceid": "302028390",
@@ -2986,6 +3104,56 @@
       ]
     },
     {
+      "assetid": "51192188139",
+      "classid": "7104663165",
+      "instanceid": "188530139",
+      "amount": 4,
+      "name": "Sticker | phzy (Foil) | Austin 2025",
+      "market_hash_name": "Sticker | phzy (Foil) | Austin 2025",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207E6E7E66C7775E7E567A4E7A1C7B767E6E9238167E0E764A1CCFDB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51192188139",
+        "51192187500",
+        "51192182317",
+        "51192178775"
+      ]
+    },
+    {
       "assetid": "50720588299",
       "classid": "7993037662",
       "instanceid": "6278005097",
@@ -3147,6 +3315,42 @@
     },
     {
       "assetid": "50710107244",
+      "classid": "7993130794",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "USP-S | Sleeping Potion",
+      "market_hash_name": "USP-S | Sleeping Potion (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51194322045",
       "classid": "7993130794",
       "instanceid": "302028390",
       "amount": 1,

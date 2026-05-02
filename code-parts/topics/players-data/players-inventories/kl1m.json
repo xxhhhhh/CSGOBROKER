@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/a280ed8a-3e2b-4305-8e71-fb4c9cc7fa98",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-30T06:29:51.275Z",
+  "updatedAt": "2026-05-02T06:08:01.985Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 252,
-  "totalItemsGrouped": 131,
+  "totalItemsRaw": 256,
+  "totalItemsGrouped": 134,
   "items": [
     {
       "assetid": "50645129805",
@@ -58,6 +58,34 @@
       "float": 0.029321679845,
       "seed": 667,
       "phase": "Emerald"
+    },
+    {
+      "assetid": "51196165032",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "50293729752",
@@ -2737,6 +2765,50 @@
       ]
     },
     {
+      "assetid": "51196165052",
+      "classid": "7729090113",
+      "instanceid": "188530139",
+      "amount": 2,
+      "name": "Sticker | MIBR | Budapest 2025",
+      "market_hash_name": "Sticker | MIBR | Budapest 2025",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207363736BCA7A53735B70437711767B7363BA391B73037BD88D7325",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51196165052",
+        "51196165045"
+      ]
+    },
+    {
       "assetid": "48230081224",
       "classid": "7729089780",
       "instanceid": "188530139",
@@ -4860,6 +4932,58 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51196165038",
+      "classid": "7993036766",
+      "instanceid": "7907008452",
+      "amount": 1,
+      "name": "Souvenir PP-Bizon | Anolis",
+      "market_hash_name": "Souvenir PP-Bizon | Anolis (Factory New)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
           "name": ""
         },
         {

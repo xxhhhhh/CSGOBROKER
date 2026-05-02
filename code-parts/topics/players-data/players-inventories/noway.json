@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/91396c85-8498-429e-bf1a-5f8da3c2336b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-01T07:00:05.733Z",
+  "updatedAt": "2026-05-02T06:20:38.573Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 62,
-  "totalItemsGrouped": 60,
+  "totalItemsRaw": 60,
+  "totalItemsGrouped": 58,
   "items": [
     {
       "assetid": "51179981152",
@@ -298,50 +298,6 @@
       ]
     },
     {
-      "assetid": "51185849352",
-      "classid": "259074725",
-      "instanceid": "6283680966",
-      "amount": 1,
-      "name": "AWP | Redline",
-      "market_hash_name": "AWP | Redline (Minimal Wear)",
-      "type": "Classified Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49178868528",
       "classid": "7993060330",
       "instanceid": "302028390",
@@ -350,42 +306,6 @@
       "market_hash_name": "SSG 08 | Sans Comic (Factory New)",
       "type": "Consumer Grade Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%203E2E8EC899A4893F26161EE234163F0E3A06F1BA99D23D7EF83856124E26D775FA4A",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51185854248",
-      "classid": "7993036534",
-      "instanceid": "6282877389",
-      "amount": 1,
-      "name": "M4A1-S | Fade",
-      "market_hash_name": "M4A1-S | Fade (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1197,6 +1117,49 @@
       ]
     },
     {
+      "assetid": "44072519736",
+      "classid": "7104637862",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Imperial Esports | Austin 2025",
+      "market_hash_name": "Sticker | Imperial Esports | Austin 2025",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203C2C3C2485351C3C143F0C385E39343C2CFA7F543C4C34843BA14E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "44072519736"
+      ]
+    },
+    {
       "assetid": "49437740532",
       "classid": "7993037957",
       "instanceid": "188530139",
@@ -1497,45 +1460,9 @@
       ]
     },
     {
-      "assetid": "51185850015",
-      "classid": "7993038430",
-      "instanceid": "188604750",
-      "amount": 1,
-      "name": "StatTrak™ MP9 | Airlock",
-      "market_hash_name": "StatTrak™ MP9 | Airlock (Minimal Wear)",
-      "type": "StatTrak™ Classified SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51129114954",
       "classid": "7993042962",
-      "instanceid": "8431085240",
+      "instanceid": "8434460265",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Bloodsport",
       "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Minimal Wear)",
@@ -1595,7 +1522,7 @@
     {
       "assetid": "49610624764",
       "classid": "7993041740",
-      "instanceid": "480087799",
+      "instanceid": "480095879",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Neo-Noir",
       "market_hash_name": "StatTrak™ M4A4 | Neo-Noir (Minimal Wear)",
@@ -1703,7 +1630,7 @@
     {
       "assetid": "50901036518",
       "classid": "7993036246",
-      "instanceid": "188564787",
+      "instanceid": "188556910",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Ensnared",
       "market_hash_name": "StatTrak™ MAC-10 | Ensnared (Field-Tested)",
@@ -1739,7 +1666,7 @@
     {
       "assetid": "50997499201",
       "classid": "7993037458",
-      "instanceid": "902809824",
+      "instanceid": "902755355",
       "amount": 1,
       "name": "StatTrak™ Zeus x27 | Tosai",
       "market_hash_name": "StatTrak™ Zeus x27 | Tosai (Field-Tested)",
@@ -1775,7 +1702,7 @@
     {
       "assetid": "49458447076",
       "classid": "7993042258",
-      "instanceid": "8428279160",
+      "instanceid": "8434460266",
       "amount": 1,
       "name": "StatTrak™ USP-S | Guardian",
       "market_hash_name": "StatTrak™ USP-S | Guardian (Factory New)",

@@ -7,16 +7,18 @@
   "name": "Edouard Dubourdeaux",
   "nationality": "France",
   "born": "17.12.1988",
+  "isContentCreator": false,
   "twitch": "smithzz",
   "faceit": "https://faceitdb.com/profile/faceit/5a4e258d-c912-46b6-94f1-984d59150f82",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-25T06:10:00.130Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 325,
-  "totalItemsGrouped": 301,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-05-02T06:35:29.024Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 326,
+  "totalItemsGrouped": 302,
   "items": [
     {
       "assetid": "48699702436",
@@ -7662,6 +7664,42 @@
       ]
     },
     {
+      "assetid": "51143549666",
+      "classid": "7993044994",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Dual Berettas | Dezastre",
+      "market_hash_name": "Dual Berettas | Dezastre (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49622340827",
       "classid": "7993038476",
       "instanceid": "519977179",
@@ -9868,7 +9906,7 @@
     {
       "assetid": "14792369647",
       "classid": "7993038472",
-      "instanceid": "8413523592",
+      "instanceid": "8433990429",
       "amount": 1,
       "name": "StatTrak™ USP-S | Orion",
       "market_hash_name": "StatTrak™ USP-S | Orion (Factory New)",
@@ -10104,7 +10142,7 @@
     {
       "assetid": "49426880521",
       "classid": "7993036413",
-      "instanceid": "8412611191",
+      "instanceid": "8433990426",
       "amount": 1,
       "name": "StatTrak™ AWP | Printstream",
       "market_hash_name": "StatTrak™ AWP | Printstream (Field-Tested)",
@@ -10152,7 +10190,7 @@
     {
       "assetid": "16816713271",
       "classid": "7993045159",
-      "instanceid": "8098065236",
+      "instanceid": "8433990427",
       "amount": 1,
       "name": "StatTrak™ P250 | Valence",
       "market_hash_name": "StatTrak™ P250 | Valence (Factory New)",
@@ -10588,7 +10626,7 @@
     {
       "assetid": "14792372310",
       "classid": "7993041152",
-      "instanceid": "8406047835",
+      "instanceid": "8433990428",
       "amount": 1,
       "name": "StatTrak™ MP9 | Ruby Poison Dart",
       "market_hash_name": "StatTrak™ MP9 | Ruby Poison Dart (Minimal Wear)",
