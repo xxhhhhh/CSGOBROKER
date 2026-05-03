@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/players/MegaRush--",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-01T07:23:16.637Z",
+  "updatedAt": "2026-05-03T07:27:10.869Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 62,
-  "totalItemsGrouped": 62,
+  "totalItemsRaw": 65,
+  "totalItemsGrouped": 65,
   "items": [
     {
       "assetid": "50877464989",
@@ -67,7 +67,7 @@
       "name": "★ Stiletto Knife | Doppler",
       "market_hash_name": "★ Stiletto Knife | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208A9A37792D54348B92008EAA2B89A28CBA89B2381D426289CA9CE29AFA82FB04C816",
       "tags": [
         {
           "category": "Type",
@@ -79,6 +79,37 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.035655684769,
+      "seed": 22,
+      "phase": "Black Pearl"
+    },
+    {
+      "assetid": "51232493806",
+      "classid": "8247249534",
+      "instanceid": "8403974626",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Lime Polycam",
+      "market_hash_name": "★ Specialist Gloves | Lime Polycam (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
           "name": ""
         },
         {
@@ -715,6 +746,42 @@
       ]
     },
     {
+      "assetid": "51248027938",
+      "classid": "7993039191",
+      "instanceid": "8403974626",
+      "amount": 1,
+      "name": "R8 Revolver | Fade",
+      "market_hash_name": "R8 Revolver | Fade (Field-Tested)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51121651000",
       "classid": "7993048815",
       "instanceid": "302028390",
@@ -1304,6 +1371,54 @@
         },
         {
           "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51210672006",
+      "classid": "188530424",
+      "instanceid": "6294069768",
+      "amount": 1,
+      "name": "Desert Eagle | Blaze",
+      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]

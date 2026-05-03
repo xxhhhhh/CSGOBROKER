@@ -12,12 +12,12 @@
   "faceit": "https://faceitdb.com/profile/faceit/0ab98e48-776d-4ec4-86be-0d3bc0f4f06d",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-02T05:57:30.533Z",
+  "updatedAt": "2026-05-03T06:29:58.361Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 308,
+  "totalItemsRaw": 316,
   "totalItemsGrouped": 137,
   "items": [
     {
@@ -28,7 +28,7 @@
       "name": "★ Butterfly Knife | Doppler",
       "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DECE3E5A147760DFC65DDAFE34DAF6D8EEDDE65778763EDD9E51D8B65EDCAED689DFDA00",
       "tags": [
         {
           "category": "Type",
@@ -54,7 +54,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.008427389897,
+      "seed": 783,
+      "phase": "Phase 2"
     },
     {
       "assetid": "50829441551",
@@ -869,10 +872,10 @@
       ]
     },
     {
-      "assetid": "51202974513",
+      "assetid": "51217538249",
       "classid": "1989310496",
       "instanceid": "302028390",
-      "amount": 1,
+      "amount": 9,
       "name": "Sealed Graffiti | Heart (Monster Purple)",
       "market_hash_name": "Sealed Graffiti | Heart (Monster Purple)",
       "type": "Base Grade Graffiti",
@@ -896,6 +899,14 @@
         }
       ],
       "assetids": [
+        "51217538249",
+        "51217434466",
+        "51217206777",
+        "51214248853",
+        "51213713705",
+        "51213712272",
+        "51213697555",
+        "51213512006",
         "51202974513"
       ]
     },
@@ -4450,7 +4461,7 @@
     {
       "assetid": "39145674510",
       "classid": "7993040817",
-      "instanceid": "8433904272",
+      "instanceid": "8437171192",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Factory New)",
@@ -4498,7 +4509,7 @@
     {
       "assetid": "39054013534",
       "classid": "7993036844",
-      "instanceid": "8430661099",
+      "instanceid": "8437171193",
       "amount": 1,
       "name": "StatTrak™ USP-S | Neo-Noir",
       "market_hash_name": "StatTrak™ USP-S | Neo-Noir (Minimal Wear)",

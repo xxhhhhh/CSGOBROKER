@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e0f4debc-ed3b-4936-85ea-1fbbb334e136",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-01T07:06:26.537Z",
+  "updatedAt": "2026-05-03T07:07:23.118Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 732,
-  "totalItemsGrouped": 433,
+  "totalItemsRaw": 743,
+  "totalItemsGrouped": 440,
   "items": [
     {
       "assetid": "47484660523",
@@ -2956,6 +2956,42 @@
       ]
     },
     {
+      "assetid": "51216023801",
+      "classid": "7993040063",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "M4A4 | Hellish",
+      "market_hash_name": "M4A4 | Hellish (Battle-Scarred)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "38091042095",
       "classid": "7993039644",
       "instanceid": "6276770738",
@@ -4295,6 +4331,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51215989014",
+      "classid": "7993036321",
+      "instanceid": "6276538284",
+      "amount": 1,
+      "name": "AK-47 | Neon Rider",
+      "market_hash_name": "AK-47 | Neon Rider (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -5760,10 +5840,10 @@
       ]
     },
     {
-      "assetid": "44373006876",
+      "assetid": "51216513645",
       "classid": "4839660958",
       "instanceid": "188530139",
-      "amount": 2,
+      "amount": 4,
       "name": "Sticker | degster (Gold) | Antwerp 2022",
       "market_hash_name": "Sticker | degster (Gold) | Antwerp 2022",
       "type": "Extraordinary Sticker",
@@ -5803,6 +5883,8 @@
         }
       ],
       "assetids": [
+        "51216513645",
+        "51216512452",
         "44373006876",
         "39538478446"
       ]
@@ -7378,6 +7460,37 @@
       ]
     },
     {
+      "assetid": "51216908793",
+      "classid": "6216375799",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Clown Nose",
+      "market_hash_name": "Sticker | Clown Nose",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D1C1D1C968D8F1D1F9D2E1D5B3D4D9D1C133ECB9D1A1C6EFB1AC4D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51216908793"
+      ]
+    },
+    {
       "assetid": "41967045732",
       "classid": "4647765486",
       "instanceid": "188530139",
@@ -7820,6 +7933,51 @@
       ],
       "assetids": [
         "30687009565"
+      ]
+    },
+    {
+      "assetid": "51216915672",
+      "classid": "5327976193",
+      "instanceid": "188530139",
+      "amount": 3,
+      "name": "Sticker | Fluxo | Paris 2023",
+      "market_hash_name": "Sticker | Fluxo | Paris 2023",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20908090882999B090B893A094F29598908038A4F890E098F193AC4A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51216915672",
+        "51216915669",
+        "51216915677"
       ]
     },
     {
@@ -8720,6 +8878,37 @@
       "assetids": [
         "41323186301",
         "41323186298"
+      ]
+    },
+    {
+      "assetid": "51216911924",
+      "classid": "7545310457",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Sent With Love",
+      "market_hash_name": "Sticker | Sent With Love",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205747574FEE5E77577F54675335525F5747A31E3F5727406A70E4FA",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51216911924"
       ]
     },
     {
@@ -11674,6 +11863,37 @@
       ],
       "assetids": [
         "28804433861"
+      ]
+    },
+    {
+      "assetid": "51216903350",
+      "classid": "6216373568",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Hypnoteyes (Holo)",
+      "market_hash_name": "Sticker | Hypnoteyes (Holo)",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206272627ADB6B42624A66526600676A6272935F0A62127517D7D78A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51216903350"
       ]
     },
     {
@@ -15320,7 +15540,7 @@
     {
       "assetid": "42122898196",
       "classid": "7993041773",
-      "instanceid": "8433385664",
+      "instanceid": "8437506597",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
@@ -15681,6 +15901,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51217214599",
+      "classid": "8246925237",
+      "instanceid": "8435093286",
+      "amount": 1,
+      "name": "StatTrak™ USP-S | Silent Shot",
+      "market_hash_name": "StatTrak™ USP-S | Silent Shot (Minimal Wear)",
+      "type": "StatTrak™ Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

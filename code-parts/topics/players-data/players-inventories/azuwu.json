@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/004181c4-494a-44a6-be60-3c80264e84aa",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-02T05:55:19.669Z",
+  "updatedAt": "2026-05-03T06:23:18.624Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 192,
-  "totalItemsGrouped": 191,
+  "totalItemsRaw": 193,
+  "totalItemsGrouped": 192,
   "items": [
     {
       "assetid": "50879847724",
@@ -125,45 +125,6 @@
       "float": 0.032572817057,
       "seed": 450,
       "phase": "Phase 1"
-    },
-    {
-      "assetid": "50180925578",
-      "classid": "7993042134",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Stiletto Knife | Doppler",
-      "market_hash_name": "★ Stiletto Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D6C65C07462E6CD7CE5CD2F676D5FED0E6D5EE2B620530D59646D5BE64D7A6DE11B47FAE",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.025983089581,
-      "seed": 400,
-      "phase": "Sapphire"
     },
     {
       "assetid": "51204343195",
@@ -2365,6 +2326,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51216832049",
+      "classid": "7993047307",
+      "instanceid": "6276409668",
+      "amount": 1,
+      "name": "AK-47 | Leet Museo",
+      "market_hash_name": "AK-47 | Leet Museo (Well-Worn)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -4971,6 +4976,42 @@
       "market_hash_name": "M4A1-S | VariCamo (Field-Tested)",
       "type": "Mil-Spec Grade Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DFCF116E15634CDEC7E3FF34DEF7DCEFDBE72346552ADC9F24DEB7BFAFC7FED6ED4B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51206788741",
+      "classid": "7993037255",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M4A4 | Magnesium",
+      "market_hash_name": "M4A4 | Magnesium (Field-Tested)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

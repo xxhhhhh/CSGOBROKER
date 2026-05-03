@@ -12,7 +12,7 @@
   "faceit": "https://faceitdb.com/profile/faceit/a20678de-0c2d-4a9f-bf8e-3c856bceab45",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-29T05:58:15.472Z",
+  "updatedAt": "2026-05-03T06:06:42.835Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
@@ -67,7 +67,7 @@
       "name": "★ Karambit | Gamma Doppler",
       "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201707F3C8B5EBAA160FEC1437AF133F1127142FD59496F71457CA167FB316671F0FF5562B",
       "tags": [
         {
           "category": "Type",
@@ -89,7 +89,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.007828177884,
+      "seed": 221,
+      "phase": "Emerald"
     },
     {
       "assetid": "47633887698",
@@ -401,6 +404,37 @@
       ]
     },
     {
+      "assetid": "51455986033",
+      "classid": "1989274201",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | King Me (Blood Red)",
+      "market_hash_name": "Graffiti | King Me (Blood Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B6A6B6AE73BC96B69EB786B2D4B1BEB6A612BB86B4DEB6C6AE6D8E5371",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51455986033"
+      ]
+    },
+    {
       "assetid": "48594871424",
       "classid": "1989339604",
       "instanceid": "302028390",
@@ -491,37 +525,6 @@
       ],
       "assetids": [
         "49473971259"
-      ]
-    },
-    {
-      "assetid": "50854754008",
-      "classid": "1989290490",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Graffiti | King Me (Blood Red)",
-      "market_hash_name": "Sealed Graffiti | King Me (Blood Red)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202D3D2D35E9270D2D052C1D294F2A252D3D89201D2F452D5D356E3F88E5",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "50854754008"
       ]
     },
     {

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/91396c85-8498-429e-bf1a-5f8da3c2336b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-02T06:20:38.573Z",
+  "updatedAt": "2026-05-03T06:55:27.645Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 60,
-  "totalItemsGrouped": 58,
+  "totalItemsRaw": 61,
+  "totalItemsGrouped": 59,
   "items": [
     {
       "assetid": "51179981152",
@@ -28,7 +28,7 @@
       "name": "★ Butterfly Knife | Doppler",
       "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200919E99BCBDDB708118A0D29AB0A210F390A31B294D4E90A49D10D61017901906822A0",
       "tags": [
         {
           "category": "Type",
@@ -54,7 +54,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.0092350794,
+      "seed": 600,
+      "phase": "Phase 1"
     },
     {
       "assetid": "51091107070",
@@ -1455,6 +1458,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51211015816",
+      "classid": "7993045048",
+      "instanceid": "188533386",
+      "amount": 1,
+      "name": "StatTrak™ P250 | Muertos",
+      "market_hash_name": "StatTrak™ P250 | Muertos (Minimal Wear)",
+      "type": "StatTrak™ Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c0a979a3-7128-4a06-ba7a-8d6f7e8fbd2f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-01T06:47:31.422Z",
+  "updatedAt": "2026-05-03T06:42:16.217Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 91,
-  "totalItemsGrouped": 73,
+  "totalItemsRaw": 93,
+  "totalItemsGrouped": 74,
   "items": [
     {
       "assetid": "51099202120",
@@ -28,7 +28,7 @@
       "name": "★ M9 Bayonet | Gamma Doppler",
       "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D5C51D312A786BD4CD29D6F569D1FDD3E5D6ED43581730D69517D3BDDDA5D12DB116B3",
       "tags": [
         {
           "category": "Type",
@@ -50,7 +50,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.021548550576,
+      "seed": 834,
+      "phase": "Phase 4"
     },
     {
       "assetid": "51099202098",
@@ -480,7 +483,7 @@
       "name": "Glock-18 | Gamma Doppler",
       "market_hash_name": "Glock-18 | Gamma Doppler (Minimal Wear)",
       "type": "Covert Pistol",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EDFD73675E5753ECF5E9CD32E5C5EBDDE9D545080C1DEEADF985FE9DE94FECFAE5EDFDF0D05BE92A52A8312DF2D1A036D0C3ADBD0241ECF8EED97B",
       "tags": [
         {
           "category": "Type",
@@ -506,7 +509,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.148874878883,
+      "seed": 20,
+      "phase": "Emerald"
     },
     {
       "assetid": "50886095260",
@@ -928,6 +934,38 @@
           "category": "Rarity",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "51213455476",
+      "classid": "7545312020",
+      "instanceid": "519977179",
+      "amount": 2,
+      "name": "Charm | Dead Weight",
+      "market_hash_name": "Charm | Dead Weight",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51213455476",
+        "51213453700"
       ]
     },
     {
@@ -2775,7 +2813,7 @@
     {
       "assetid": "47217992705",
       "classid": "7993037525",
-      "instanceid": "8434008850",
+      "instanceid": "8436661777",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
@@ -2823,7 +2861,7 @@
     {
       "assetid": "47397853570",
       "classid": "7993042570",
-      "instanceid": "8433743295",
+      "instanceid": "8435746131",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Battle-Scarred)",
