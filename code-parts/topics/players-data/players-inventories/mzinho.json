@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/009623b1-dd6e-4551-959e-990a21657f93",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-30T06:06:26.052Z",
+  "updatedAt": "2026-05-04T06:22:45.601Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 101,
-  "totalItemsGrouped": 100,
+  "totalItemsRaw": 104,
+  "totalItemsGrouped": 103,
   "items": [
     {
       "assetid": "49602543907",
@@ -99,12 +99,72 @@
       "phase": "Emerald"
     },
     {
+      "assetid": "51235147670",
+      "classid": "7993044870",
+      "instanceid": "8403974604",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Gamma Doppler",
+      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50748667052",
       "classid": "8247668937",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ Specialist Gloves | Pillow Punchers",
       "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51235147693",
+      "classid": "7993042207",
+      "instanceid": "8403974604",
+      "amount": 1,
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1168,6 +1228,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51235222413",
+      "classid": "188530251",
+      "instanceid": "8429083687",
+      "amount": 1,
+      "name": "AK-47 | Case Hardened",
+      "market_hash_name": "AK-47 | Case Hardened (Minimal Wear)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

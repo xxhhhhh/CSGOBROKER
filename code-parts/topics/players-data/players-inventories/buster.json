@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/en/players/buster",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-02T06:31:18.311Z",
+  "updatedAt": "2026-05-04T07:14:50.177Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 150,
-  "totalItemsGrouped": 150,
+  "totalItemsRaw": 151,
+  "totalItemsGrouped": 151,
   "items": [
     {
       "assetid": "50854452504",
@@ -28,7 +28,7 @@
       "name": "★ Butterfly Knife | Gamma Doppler",
       "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F8E860425D4145F9E07BFCD840FCD0FEC8FBC04C153D10FBB86EFD90FB88F077C4CEAE",
       "tags": [
         {
           "category": "Type",
@@ -54,7 +54,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.035513594747,
+      "seed": 662,
+      "phase": "Emerald"
     },
     {
       "assetid": "51061605296",
@@ -232,7 +235,7 @@
       "name": "★ M9 Bayonet | Doppler",
       "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B0A02C1474090DB1A84CB39011B398B680B38822680451B3F0F1D8A0C0B8364A6AFC",
       "tags": [
         {
           "category": "Type",
@@ -254,7 +257,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.010569589213,
+      "seed": 65,
+      "phase": "Black Pearl"
     },
     {
       "assetid": "50965828125",
@@ -2681,6 +2687,37 @@
       ]
     },
     {
+      "assetid": "51473750123",
+      "classid": "1989273684",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Cocky (Bazooka Pink)",
+      "market_hash_name": "Graffiti | Cocky (Bazooka Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204D5D4D5588476D4D654C7D492F4A454D5D89407D5D254D3D559C291F57",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51473750123"
+      ]
+    },
+    {
       "assetid": "50970419212",
       "classid": "8247060188",
       "instanceid": "188530139",
@@ -4104,7 +4141,7 @@
     {
       "assetid": "39597581058",
       "classid": "7993047665",
-      "instanceid": "480087901",
+      "instanceid": "480092085",
       "amount": 1,
       "name": "StatTrak™ USP-S | Monster Mashup",
       "market_hash_name": "StatTrak™ USP-S | Monster Mashup (Factory New)",
@@ -4248,7 +4285,7 @@
     {
       "assetid": "42646683070",
       "classid": "7993043001",
-      "instanceid": "188536442",
+      "instanceid": "188557578",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Golden Koi",
       "market_hash_name": "StatTrak™ Desert Eagle | Golden Koi (Factory New)",
@@ -4284,7 +4321,7 @@
     {
       "assetid": "39950248078",
       "classid": "7993042913",
-      "instanceid": "188565474",
+      "instanceid": "188725272",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Gold Toof",
       "market_hash_name": "StatTrak™ Glock-18 | Gold Toof (Factory New)",
@@ -4320,7 +4357,7 @@
     {
       "assetid": "39584343842",
       "classid": "7993047996",
-      "instanceid": "480088294",
+      "instanceid": "188666541",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Chantico's Fire",
       "market_hash_name": "StatTrak™ M4A1-S | Chantico's Fire (Factory New)",
@@ -4392,7 +4429,7 @@
     {
       "assetid": "48531465926",
       "classid": "7993044128",
-      "instanceid": "902809824",
+      "instanceid": "902712637",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Stone Cold",
       "market_hash_name": "StatTrak™ Galil AR | Stone Cold (Factory New)",

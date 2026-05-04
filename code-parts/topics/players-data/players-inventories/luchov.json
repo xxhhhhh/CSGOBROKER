@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e91a3b9c-d1f0-4c6d-8500-f37c92c16b80",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-22T12:46:04.234Z",
+  "updatedAt": "2026-05-04T06:31:06.006Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 29,
-  "totalItemsGrouped": 29,
+  "totalItemsRaw": 31,
+  "totalItemsGrouped": 31,
   "items": [
     {
       "assetid": "50021371912",
@@ -113,6 +113,37 @@
           "category": "Rarity",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "51253353916",
+      "classid": "1989288098",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Heart (Princess Pink)",
+      "market_hash_name": "Sealed Graffiti | Heart (Princess Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D3C3D3CB17D9F3D3FBD2E3D7B1D4DBD3C36BDEE3C2BBD3A3CB80E6EF2C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51253353916"
       ]
     },
     {
@@ -234,6 +265,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51253353930",
+      "classid": "8246917616",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AK-47 | Crane Flight",
+      "market_hash_name": "AK-47 | Crane Flight (Minimal Wear)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
