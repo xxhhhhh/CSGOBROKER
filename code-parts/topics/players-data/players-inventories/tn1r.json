@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/f2013a83-2603-41a4-a6f0-0c716d52258c",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-04T06:11:21.436Z",
+  "updatedAt": "2026-05-05T05:42:00.484Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 74,
-  "totalItemsGrouped": 74,
+  "totalItemsRaw": 76,
+  "totalItemsGrouped": 76,
   "items": [
     {
       "assetid": "48867818711",
@@ -248,6 +248,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51491388934",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -642,6 +670,42 @@
       "market_hash_name": "MP9 | Latte Rush (Field-Tested)",
       "type": "Classified SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B3A3654B0C600EB2AB919308BA9BB683B78B33623746B0F36AB7DB30333333BFC3A418016993",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51491388935",
+      "classid": "7993064165",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "R8 Revolver | Mauve Aside",
+      "market_hash_name": "R8 Revolver | Mauve Aside (Minimal Wear)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2259,7 +2323,7 @@
     {
       "assetid": "50627901835",
       "classid": "8247141804",
-      "instanceid": "188530170",
+      "instanceid": "188530398",
       "amount": 1,
       "name": "StatTrak™ M249 | Bock Blocks",
       "market_hash_name": "StatTrak™ M249 | Bock Blocks (Battle-Scarred)",
