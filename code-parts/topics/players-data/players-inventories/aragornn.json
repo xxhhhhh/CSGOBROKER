@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/36bc4b9f-ba4d-468e-bcb6-36a22126fba5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-02T06:18:34.905Z",
+  "updatedAt": "2026-05-07T06:48:40.927Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 49,
-  "totalItemsGrouped": 45,
+  "totalItemsRaw": 51,
+  "totalItemsGrouped": 47,
   "items": [
     {
       "assetid": "50999447372",
@@ -50,6 +50,34 @@
     },
     {
       "assetid": "51422508958",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51539613107",
       "classid": "5189384637",
       "instanceid": "302028390",
       "amount": 1,
@@ -729,6 +757,42 @@
       ],
       "assetids": [
         "50946993492"
+      ]
+    },
+    {
+      "assetid": "51539613108",
+      "classid": "7993036577",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "M4A4 | Steel Work",
+      "market_hash_name": "M4A4 | Steel Work (Field-Tested)",
+      "type": "Industrial Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
       ]
     },
     {

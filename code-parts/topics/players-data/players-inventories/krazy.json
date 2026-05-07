@@ -7,17 +7,55 @@
   "name": "Adones Nobre",
   "nationality": "Portugal",
   "born": "29.12.2003",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/94f5114b-b7b9-445f-be26-1a60f54d22de",
-  "isContentCreator": false,
-  "updatedAt": "2026-05-02T06:18:35.438Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 191,
-  "totalItemsGrouped": 174,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-05-07T06:48:41.511Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 195,
+  "totalItemsGrouped": 178,
   "items": [
+    {
+      "assetid": "51311168418",
+      "classid": "7993042582",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Fade",
+      "market_hash_name": "★ Butterfly Knife | Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "51189238248",
       "classid": "7993038920",
@@ -98,6 +136,62 @@
       "market_hash_name": "★ Hand Wraps | Cobalt Skulls (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E4F44E1824195FE5FC4CC3C421AACCE2D4E7DC6E5D3814E7A469E78C9994E001864E0E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51311882604",
+      "classid": "7993041878",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Crimson Kimono",
+      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51317846838",
+      "classid": "7993037104",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Nocts",
+      "market_hash_name": "★ Sport Gloves | Nocts (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1712,6 +1806,30 @@
       ]
     },
     {
+      "assetid": "51318446147",
+      "classid": "3759394945",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Civil Protection Pin",
+      "market_hash_name": "Civil Protection Pin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205F4F5F47957B7F5F77596F5B375F2F57C1297AD1",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "33545442066",
       "classid": "5537026494",
       "instanceid": "0",
@@ -2798,53 +2916,6 @@
       ],
       "assetids": [
         "28448105463"
-      ]
-    },
-    {
-      "assetid": "47846000509",
-      "classid": "7729098861",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | m0NESY | Budapest 2025",
-      "market_hash_name": "Sticker | m0NESY | Budapest 2025",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203727372F8E3E17371F34073355323F3727D17C5F37473F6E335431",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "47846000509"
       ]
     },
     {
@@ -5427,6 +5498,58 @@
       ]
     },
     {
+      "assetid": "51311882579",
+      "classid": "7993042644",
+      "instanceid": "7677092620",
+      "amount": 1,
+      "name": "Souvenir MP9 | Hot Rod",
+      "market_hash_name": "Souvenir MP9 | Hot Rod (Factory New)",
+      "type": "Souvenir Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49635508724",
       "classid": "7993047345",
       "instanceid": "7628745412",
@@ -5657,7 +5780,7 @@
     {
       "assetid": "49635508777",
       "classid": "7993039768",
-      "instanceid": "8439789928",
+      "instanceid": "8448346880",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Dragon Tattoo",
       "market_hash_name": "StatTrak™ Glock-18 | Dragon Tattoo (Factory New)",

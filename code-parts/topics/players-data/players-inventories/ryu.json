@@ -12,23 +12,23 @@
   "faceit": "https://faceitdb.com/profile/faceit/d5fa1a5b-9fde-4996-bd1e-bab0aa9bb0d2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-06T06:06:34.152Z",
+  "updatedAt": "2026-05-07T06:12:19.571Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 66,
-  "totalItemsGrouped": 66,
+  "totalItemsRaw": 67,
+  "totalItemsGrouped": 67,
   "items": [
     {
       "assetid": "51294715612",
       "classid": "7993040630",
-      "instanceid": "8410338292",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Butterfly Knife | Gamma Doppler",
       "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C4D41839584F7BC5DC47C0E47EC0ECC2F4C7FC16482625C78496ACC3B4CC6346E688",
       "tags": [
         {
           "category": "Type",
@@ -54,7 +54,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.011262493208,
+      "seed": 82,
+      "phase": "Phase 2"
     },
     {
       "assetid": "50276126179",
@@ -107,6 +110,42 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51308912430",
+      "classid": "7993036736",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Skeleton Knife | Crimson Web",
+      "market_hash_name": "★ Skeleton Knife | Crimson Web (Field-Tested)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -1766,7 +1805,7 @@
     {
       "assetid": "30865322620",
       "classid": "7993038641",
-      "instanceid": "8399772920",
+      "instanceid": "8448194625",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Water Elemental",
       "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Field-Tested)",
@@ -1890,7 +1929,7 @@
     {
       "assetid": "38236617600",
       "classid": "7993040836",
-      "instanceid": "188569691",
+      "instanceid": "188682247",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Angry Mob",
       "market_hash_name": "StatTrak™ Five-SeveN | Angry Mob (Field-Tested)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e0f4debc-ed3b-4936-85ea-1fbbb334e136",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-03T07:07:23.118Z",
+  "updatedAt": "2026-05-07T06:57:33.201Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 743,
-  "totalItemsGrouped": 440,
+  "totalItemsRaw": 745,
+  "totalItemsGrouped": 442,
   "items": [
     {
       "assetid": "47484660523",
@@ -2926,6 +2926,42 @@
       "amount": 1,
       "name": "M4A1-S | Stratosphere",
       "market_hash_name": "M4A1-S | Stratosphere (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51319294462",
+      "classid": "7993038356",
+      "instanceid": "8413609125",
+      "amount": 1,
+      "name": "M4A4 | Desolate Space",
+      "market_hash_name": "M4A4 | Desolate Space (Battle-Scarred)",
       "type": "Classified Rifle",
       "inspectLink": "",
       "tags": [
@@ -7936,7 +7972,7 @@
       ]
     },
     {
-      "assetid": "51216915672",
+      "assetid": "51216915677",
       "classid": "5327976193",
       "instanceid": "188530139",
       "amount": 3,
@@ -7975,9 +8011,9 @@
         }
       ],
       "assetids": [
+        "51216915677",
         "51216915672",
-        "51216915669",
-        "51216915677"
+        "51216915669"
       ]
     },
     {
@@ -11461,6 +11497,30 @@
       ],
       "assetids": [
         "47270551244"
+      ]
+    },
+    {
+      "assetid": "51316900001",
+      "classid": "3759394947",
+      "instanceid": "8413609125",
+      "amount": 1,
+      "name": "Health Pin",
+      "market_hash_name": "Health Pin",
+      "type": "Remarkable Collectible",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200B1B0B13C52F2B0B230F3B0F630B7B03ABD4B197",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
       ]
     },
     {

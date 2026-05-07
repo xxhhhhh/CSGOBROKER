@@ -7,17 +7,55 @@
   "name": "Amin Azimov",
   "nationality": "Azerbaijan",
   "born": "19.01.1999",
+  "isContentCreator": false,
   "twitch": "sugarcs2",
   "faceit": "https://faceitdb.com/profile/faceit/5dc82bc6-b798-48ae-86f3-77da30c099fa",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-24T06:23:05.700Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 294,
-  "totalItemsGrouped": 233,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-05-07T06:55:28.432Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 296,
+  "totalItemsGrouped": 235,
   "items": [
+    {
+      "assetid": "51266121298",
+      "classid": "7993042582",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Fade",
+      "market_hash_name": "★ Butterfly Knife | Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "36633800210",
       "classid": "6276298352",
@@ -1941,6 +1979,37 @@
       ],
       "assetids": [
         "39884118951"
+      ]
+    },
+    {
+      "assetid": "51271857205",
+      "classid": "6216349484",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Charm | Lil' SAS",
+      "market_hash_name": "Charm | Lil' SAS",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51271857205"
       ]
     },
     {
@@ -9138,7 +9207,7 @@
     {
       "assetid": "32672459754",
       "classid": "7993039918",
-      "instanceid": "480086724",
+      "instanceid": "480088852",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Disco Tech",
       "market_hash_name": "StatTrak™ MAC-10 | Disco Tech (Minimal Wear)",
