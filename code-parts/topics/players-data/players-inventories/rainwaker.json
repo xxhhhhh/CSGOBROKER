@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/5157fde3-01e1-4eeb-886b-ae2185569711",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-04T06:33:10.139Z",
+  "updatedAt": "2026-05-09T06:09:07.342Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 620,
-  "totalItemsGrouped": 492,
+  "totalItemsRaw": 622,
+  "totalItemsGrouped": 494,
   "items": [
     {
       "assetid": "49987560305",
@@ -1009,6 +1009,34 @@
     },
     {
       "assetid": "49093906942",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51577266791",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -2681,6 +2709,37 @@
       ],
       "assetids": [
         "18047006824"
+      ]
+    },
+    {
+      "assetid": "51577266792",
+      "classid": "1989294091",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | King Me (Brick Red)",
+      "market_hash_name": "Sealed Graffiti | King Me (Brick Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204E5E4E568A446E4E664F7E4A2C49464E5EEA437E4F264E3E56AB0E3AB0",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51577266792"
       ]
     },
     {

@@ -7,16 +7,18 @@
   "name": "Usukhbayar Banzragch",
   "nationality": "Mongolia",
   "born": "05.07.2002",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/ff84801a-34c2-4318-9fcc-b5f7abf091f6",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-22T12:37:43.263Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 69,
-  "totalItemsGrouped": 67,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-05-09T05:57:18.883Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 70,
+  "totalItemsGrouped": 68,
   "items": [
     {
       "assetid": "50191953374",
@@ -545,6 +547,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51452988251",
+      "classid": "7993036631",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "SCAR-20 | Short Ochre",
+      "market_hash_name": "SCAR-20 | Short Ochre (Field-Tested)",
+      "type": "Consumer Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -2530,7 +2568,7 @@
     {
       "assetid": "45439531252",
       "classid": "7993035937",
-      "instanceid": "480096742",
+      "instanceid": "480091192",
       "amount": 1,
       "name": "StatTrak™ USP-S | Ticket to Hell",
       "market_hash_name": "StatTrak™ USP-S | Ticket to Hell (Field-Tested)",
@@ -2602,7 +2640,7 @@
     {
       "assetid": "44518178460",
       "classid": "7993036125",
-      "instanceid": "188531307",
+      "instanceid": "188531884",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Sakkaku",
       "market_hash_name": "StatTrak™ MAC-10 | Sakkaku (Field-Tested)",

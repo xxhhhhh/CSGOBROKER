@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/2be37d17-f9fb-42e2-8143-bcdb5f1239b2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-29T06:46:46.455Z",
+  "updatedAt": "2026-05-09T06:45:21.742Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 321,
-  "totalItemsGrouped": 254,
+  "totalItemsRaw": 323,
+  "totalItemsGrouped": 256,
   "items": [
     {
       "assetid": "51099595401",
@@ -134,6 +134,34 @@
     },
     {
       "assetid": "50603049262",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51586264697",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -493,6 +521,37 @@
       ],
       "assetids": [
         "18227164177"
+      ]
+    },
+    {
+      "assetid": "51586264698",
+      "classid": "1989327289",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Backstab (Violent Violet)",
+      "market_hash_name": "Sealed Graffiti | Backstab (Violent Violet)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209686968E529CB696BE97A692F4919E9686229BA698FE96E68E444798F9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51586264698"
       ]
     },
     {
@@ -9292,7 +9351,7 @@
     {
       "assetid": "48397983084",
       "classid": "7993045650",
-      "instanceid": "903591449",
+      "instanceid": "904301396",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Snack Attack",
       "market_hash_name": "StatTrak™ Glock-18 | Snack Attack (Minimal Wear)",
@@ -9364,7 +9423,7 @@
     {
       "assetid": "51050772309",
       "classid": "7993045990",
-      "instanceid": "8449001606",
+      "instanceid": "8454672666",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Asiimov",
       "market_hash_name": "StatTrak™ AK-47 | Asiimov (Minimal Wear)",
@@ -9464,7 +9523,7 @@
     {
       "assetid": "50292736895",
       "classid": "8246907682",
-      "instanceid": "188530914",
+      "instanceid": "188532419",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Dark Polymer",
       "market_hash_name": "StatTrak™ Five-SeveN | Dark Polymer (Minimal Wear)",
@@ -9536,7 +9595,7 @@
     {
       "assetid": "17002596668",
       "classid": "7993042935",
-      "instanceid": "480118593",
+      "instanceid": "480099293",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Flash Out",
       "market_hash_name": "StatTrak™ Tec-9 | Flash Out (Battle-Scarred)",
