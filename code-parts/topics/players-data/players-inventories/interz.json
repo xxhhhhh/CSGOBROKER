@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/1b341bfd-268b-4f87-ae93-a0339e6185c6",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-29T06:48:52.301Z",
+  "updatedAt": "2026-05-10T07:11:51.372Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 818,
-  "totalItemsGrouped": 271,
+  "totalItemsRaw": 820,
+  "totalItemsGrouped": 272,
   "items": [
     {
       "assetid": "51113390873",
@@ -477,6 +477,62 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51358668040",
+      "classid": "7993036958",
+      "instanceid": "6358222368",
+      "amount": 1,
+      "name": "AK-47 | Redline",
+      "market_hash_name": "AK-47 | Redline (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -5826,10 +5882,10 @@
       ]
     },
     {
-      "assetid": "47176145533",
+      "assetid": "51358668030",
       "classid": "4638743463",
       "instanceid": "188530139",
-      "amount": 2,
+      "amount": 3,
       "name": "Sticker | interz | Stockholm 2021",
       "market_hash_name": "Sticker | interz | Stockholm 2021",
       "type": "High Grade Sticker",
@@ -5869,6 +5925,7 @@
         }
       ],
       "assetids": [
+        "51358668030",
         "47176145533",
         "45569317212"
       ]

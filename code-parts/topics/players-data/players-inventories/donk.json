@@ -7,16 +7,18 @@
   "name": "Danil Kryshkovets",
   "nationality": "Russia",
   "born": "25.01.2007",
+  "isContentCreator": false,
   "twitch": "donk1437",
   "faceit": "https://faceitdb.com/profile/faceit/e5e8e2a6-d716-4493-b949-e16965f41654",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-23T05:29:33.802Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 232,
-  "totalItemsGrouped": 113,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-05-10T06:11:00.453Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 233,
+  "totalItemsGrouped": 114,
   "items": [
     {
       "assetid": "50394882850",
@@ -97,14 +99,53 @@
       "phase": "Emerald"
     },
     {
-      "assetid": "50716291544",
-      "classid": "7993036088",
+      "assetid": "51033324181",
+      "classid": "7993040007",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Gamma Doppler",
+      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202333B6D6E9AD9D223BA027039B270B2513201BC8CFEACA2063AD254BC322532B5ED5643D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.043569963425,
+      "seed": 782,
+      "phase": "Emerald"
+    },
+    {
+      "assetid": "51038588701",
+      "classid": "7993042978",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ Karambit | Doppler",
       "market_hash_name": "★ Karambit | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B8A8605B0C4F04B9A043BB981DBB90BE88BB807F2D3F5EBBF805BDD051B9C8B098B02558",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F8E86566746946F9E003FBD867FBD0FEC8FBC028061B18FBB867FD9014F988F08BB13AC4",
       "tags": [
         {
           "category": "Type",
@@ -127,9 +168,9 @@
           "name": ""
         }
       ],
-      "float": 0.023656262085,
-      "seed": 701,
-      "phase": "Phase 4"
+      "float": 0.009338214993,
+      "seed": 671,
+      "phase": "Ruby"
     },
     {
       "assetid": "45587465948",
@@ -245,6 +286,34 @@
       "phase": "Ruby"
     },
     {
+      "assetid": "51242768874",
+      "classid": "8247419295",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Driver Gloves | Garden",
+      "market_hash_name": "★ Driver Gloves | Garden (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "46676632859",
       "classid": "7993037136",
       "instanceid": "188530139",
@@ -301,14 +370,14 @@
       ]
     },
     {
-      "assetid": "49894033341",
-      "classid": "7993041878",
-      "instanceid": "188530139",
+      "assetid": "51356380731",
+      "classid": "7993043849",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "★ Specialist Gloves | Crimson Kimono",
-      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
+      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205C4CE1D3F6B3E55D44F67B7CED12745A6C5F64F18FF0A85F1C835A34E25D2C546350CEC2",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -438,37 +507,6 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "49951176578",
-      "classid": "1989275327",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Graffiti | GLHF (Desert Amber)",
-      "market_hash_name": "Graffiti | GLHF (Desert Amber)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ECFCECF429E6CCECC4EDDCE88EEBE4ECFC5EE1DCE984EC9CF4070AA6D2",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "49951176578"
       ]
     },
     {
@@ -4072,7 +4110,7 @@
     {
       "assetid": "50700876960",
       "classid": "7993045027",
-      "instanceid": "905938477",
+      "instanceid": "913318425",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Factory New)",
@@ -4408,7 +4446,7 @@
     {
       "assetid": "36741404107",
       "classid": "7993040543",
-      "instanceid": "8355794722",
+      "instanceid": "8456050607",
       "amount": 1,
       "name": "StatTrak™ Dual Berettas | Dualing Dragons",
       "market_hash_name": "StatTrak™ Dual Berettas | Dualing Dragons (Battle-Scarred)",
