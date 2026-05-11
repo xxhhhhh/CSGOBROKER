@@ -12,12 +12,1460 @@
   "faceit": "https://faceitdb.com/profile/faceit/a9f83a8f-a0f9-4b6c-bcaf-8dff7aee6951",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-22T13:11:34.212Z",
-  "inventoryVisible": false,
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "totalItemsRaw": 0,
-  "totalItemsGrouped": 0,
-  "items": []
+  "updatedAt": "2026-05-11T07:23:52.997Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 45,
+  "totalItemsGrouped": 43,
+  "items": [
+    {
+      "assetid": "50376981569",
+      "classid": "7993040008",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Fade",
+      "market_hash_name": "★ M9 Bayonet | Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "48230212109",
+      "classid": "7993037605",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Amphibious",
+      "market_hash_name": "★ Sport Gloves | Amphibious (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51500189731",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37040032837",
+      "classid": "1989280088",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Double (Monarch Blue)",
+      "market_hash_name": "Sealed Graffiti | Double (Monarch Blue)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203E2E3E26FA341E3E163F0E3A5C39363E2E98330E32563E4E26F862F0CF",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "37040032837"
+      ]
+    },
+    {
+      "assetid": "37040032869",
+      "classid": "1989274949",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Eye Spy (Wire Blue)",
+      "market_hash_name": "Sealed Graffiti | Eye Spy (Wire Blue)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205646564E925C76567E57665234515E5646F95B665D3E56264E69B60ED6",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "37040032869"
+      ]
+    },
+    {
+      "assetid": "37040032884",
+      "classid": "1989291103",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | GTG (Frog Green)",
+      "market_hash_name": "Sealed Graffiti | GTG (Frog Green)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208292829A4688A282AA83B286E0858A82924B8FB28BEA82F29AD0B6D3C9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "37040032884"
+      ]
+    },
+    {
+      "assetid": "51500189732",
+      "classid": "1989278517",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Ninja (Monster Purple)",
+      "market_hash_name": "Sealed Graffiti | Ninja (Monster Purple)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AFBFAFB76BA58FAF87AE9FABCDA8A7AFBF03A29FA0C7AFDFB720D3777D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51500189732"
+      ]
+    },
+    {
+      "assetid": "37040032849",
+      "classid": "1989283482",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Sheriff (War Pig Pink)",
+      "market_hash_name": "Sealed Graffiti | Sheriff (War Pig Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E0F0E0F824EAC0E0C8E1D0E482E7E8E0F056EDD0F288E090F8CC5844D4",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "37040032849"
+      ]
+    },
+    {
+      "assetid": "43941589583",
+      "classid": "1989290571",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Sorry (Monster Purple)",
+      "market_hash_name": "Sealed Graffiti | Sorry (Monster Purple)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206373637BA76943634B62536701646B6373A56E536C0B63137BF89907DC",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "43941589583"
+      ]
+    },
+    {
+      "assetid": "47124682030",
+      "classid": "1989281185",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Tilt (Monarch Blue)",
+      "market_hash_name": "Sealed Graffiti | Tilt (Monarch Blue)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200D1D0D15C9072D0D250C3D096F0A050D1DA5003D01650D7D1507B2A287",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "47124682030"
+      ]
+    },
+    {
+      "assetid": "37040032880",
+      "classid": "1989271542",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Toasted (Tiger Orange)",
+      "market_hash_name": "Sealed Graffiti | Toasted (Tiger Orange)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207767776FB37D57775F76477315707F7767C87A47741F77076F2AF6F68F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "37040032880"
+      ]
+    },
+    {
+      "assetid": "39639768020",
+      "classid": "241581542",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "P250 | Sand Dune",
+      "market_hash_name": "P250 | Sand Dune (Field-Tested)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47840271530",
+      "classid": "7993035620",
+      "instanceid": "6276306479",
+      "amount": 1,
+      "name": "AK-47 | Asiimov",
+      "market_hash_name": "AK-47 | Asiimov (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "14602151812",
+      "classid": "778383679",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "5 Year Veteran Coin",
+      "market_hash_name": "5 Year Veteran Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "31123450827",
+      "classid": "3117298605",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "10 Year Veteran Coin",
+      "market_hash_name": "10 Year Veteran Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "10633329938",
+      "classid": "2112356270",
+      "instanceid": "2342096061",
+      "amount": 1,
+      "name": "2017 Service Medal",
+      "market_hash_name": "2017 Service Medal",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "13314297631",
+      "classid": "2748422605",
+      "instanceid": "2861735537",
+      "amount": 1,
+      "name": "2018 Service Medal",
+      "market_hash_name": "2018 Service Medal",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "15798479818",
+      "classid": "3134148842",
+      "instanceid": "3231977784",
+      "amount": 1,
+      "name": "2019 Service Medal",
+      "market_hash_name": "2019 Service Medal",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "33543321773",
+      "classid": "5537026494",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Global Offensive Badge",
+      "market_hash_name": "Global Offensive Badge",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "15158559255",
+      "classid": "3106076676",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Loyalty Badge",
+      "market_hash_name": "Loyalty Badge",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "12237364270",
+      "classid": "6276300328",
+      "instanceid": "6278238070",
+      "amount": 1,
+      "name": "Operation Hydra Challenge Coin",
+      "market_hash_name": "Operation Hydra Challenge Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "41632544562",
+      "classid": "6610970132",
+      "instanceid": "565664004",
+      "amount": 1,
+      "name": "Premier Season One Medal",
+      "market_hash_name": "Premier Season One Medal",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "33543321774",
+      "classid": "5537026493",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Music Kit | Valve, CS:GO",
+      "market_hash_name": "Music Kit | Valve, CS:GO",
+      "type": "High Grade Music Kit",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C3D3C3DB61C9E3C3EBC0F3C7ABC3B3C34BC285513CC81C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "33543321774"
+      ]
+    },
+    {
+      "assetid": "37040033025",
+      "classid": "4302203142",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | ESPADA | 2020 RMR",
+      "market_hash_name": "Sticker | ESPADA | 2020 RMR",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203D2D3D2584341D3D153E0D395F38353D2DA418553D4D3566587EAE",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "37040033025"
+      ]
+    },
+    {
+      "assetid": "37040033017",
+      "classid": "4302203083",
+      "instanceid": "188530139",
+      "amount": 3,
+      "name": "Sticker | FURIA | 2020 RMR",
+      "market_hash_name": "Sticker | FURIA | 2020 RMR",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202F3F2F3796260F2F072C1F2B4D2A272F3F8A0A472F5F27C3BB6B05",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "37040033017",
+        "37040032997",
+        "37040032979"
+      ]
+    },
+    {
+      "assetid": "37040033037",
+      "classid": "4302203115",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | G2 | 2020 RMR",
+      "market_hash_name": "Sticker | G2 | 2020 RMR",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D7C7D7CF6EDEF7D7FFD4E7D3B5D2DFD7C722F3BFD7A7DF0FCF859E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "37040033037"
+      ]
+    },
+    {
+      "assetid": "37040032901",
+      "classid": "4302203124",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Liquid | 2020 RMR",
+      "market_hash_name": "Sticker | Liquid | 2020 RMR",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D6C6D6CE6FDFF6D6FED5E6D2B4D3DED6C67FF3BED6A6DE50ED8BC7",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "37040032901"
+      ]
+    },
+    {
+      "assetid": "37040033031",
+      "classid": "4302203078",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Spirit | 2020 RMR",
+      "market_hash_name": "Sticker | Spirit | 2020 RMR",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206575657DDC6C45654D66556107606D6575EC400D65156D9449EAA1",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "37040033031"
+      ]
+    },
+    {
+      "assetid": "37040032983",
+      "classid": "4302203171",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | TYLOO | 2020 RMR",
+      "market_hash_name": "Sticker | TYLOO | 2020 RMR",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FEEEFEE647F7DEFED6FDCEFA9CFBF6FEEE47DB96FE8EF6584FFE4C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "37040032983"
+      ]
+    },
+    {
+      "assetid": "43288977043",
+      "classid": "7993036116",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Negev | Drop Me",
+      "market_hash_name": "Negev | Drop Me (Field-Tested)",
+      "type": "Mil-Spec Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37040032917",
+      "classid": "7993035744",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Negev | Drop Me",
+      "market_hash_name": "Negev | Drop Me (Minimal Wear)",
+      "type": "Mil-Spec Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47545740003",
+      "classid": "7993035558",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Negev | Ultralight",
+      "market_hash_name": "Negev | Ultralight (Field-Tested)",
+      "type": "Mil-Spec Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37040032927",
+      "classid": "7993036082",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "P2000 | Lifted Spirits",
+      "market_hash_name": "P2000 | Lifted Spirits (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "39937006595",
+      "classid": "7993036251",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Tec-9 | Rebel",
+      "market_hash_name": "Tec-9 | Rebel (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37040032857",
+      "classid": "7993035745",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "FAMAS | Meow 36",
+      "market_hash_name": "FAMAS | Meow 36 (Field-Tested)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "39937018645",
+      "classid": "7993036485",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "FAMAS | Meow 36",
+      "market_hash_name": "FAMAS | Meow 36 (Minimal Wear)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37040033041",
+      "classid": "7993036233",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAG-7 | Foresight",
+      "market_hash_name": "MAG-7 | Foresight (Field-Tested)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "43288972912",
+      "classid": "7993037881",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAG-7 | Resupply",
+      "market_hash_name": "MAG-7 | Resupply (Battle-Scarred)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45952382361",
+      "classid": "7993035634",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "PP-Bizon | Runic",
+      "market_hash_name": "PP-Bizon | Runic (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37040032854",
+      "classid": "7993036990",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Dual Berettas | Flora Carnivora",
+      "market_hash_name": "Dual Berettas | Flora Carnivora (Field-Tested)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37040032904",
+      "classid": "7993036317",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ PP-Bizon | Runic",
+      "market_hash_name": "StatTrak™ PP-Bizon | Runic (Field-Tested)",
+      "type": "StatTrak™ Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "35380535155",
+      "classid": "7993036727",
+      "instanceid": "483522172",
+      "amount": 1,
+      "name": "StatTrak™ USP-S | Ticket to Hell",
+      "market_hash_name": "StatTrak™ USP-S | Ticket to Hell (Minimal Wear)",
+      "type": "StatTrak™ Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "29097067976",
+      "classid": "5835582127",
+      "instanceid": "6278238068",
+      "amount": 1,
+      "name": "AK-47",
+      "market_hash_name": "AK-47",
+      "type": "Stock Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    }
+  ]
 }
