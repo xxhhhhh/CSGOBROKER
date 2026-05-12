@@ -12,7 +12,7 @@
   "faceit": "https://faceitdb.com/profile/faceit/36bc4b9f-ba4d-468e-bcb6-36a22126fba5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-07T06:48:40.927Z",
+  "updatedAt": "2026-05-11T07:24:04.178Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
@@ -21,17 +21,21 @@
   "totalItemsGrouped": 47,
   "items": [
     {
-      "assetid": "50999447372",
-      "classid": "5710094579",
-      "instanceid": "302028390",
+      "assetid": "51417660560",
+      "classid": "7993040835",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "Kilowatt Case",
-      "market_hash_name": "Kilowatt Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
+      "name": "★ Butterfly Knife | Gamma Doppler",
+      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FBEB6B02173E44FAE378FFDB42FFD3FDCBF8C3521E5D17F8BB47FD93C98BF3CBC5D06B",
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
           "name": ""
         },
         {
@@ -44,26 +48,29 @@
         },
         {
           "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.067235298455,
+      "seed": 828,
+      "phase": "Phase 1"
     },
     {
-      "assetid": "51422508958",
-      "classid": "5189384637",
-      "instanceid": "302028390",
+      "assetid": "51413444717",
+      "classid": "8246944780",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "Revolution Case",
-      "market_hash_name": "Revolution Case",
-      "type": "Base Grade Container",
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -73,33 +80,9 @@
         {
           "category": "Rarity",
           "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51539613107",
-      "classid": "5189384637",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Revolution Case",
-      "market_hash_name": "Revolution Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
         },
         {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -840,6 +823,42 @@
       "market_hash_name": "Dual Berettas | Angel Eyes (Field-Tested)",
       "type": "Restricted Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%2084943C56394938859C86A4478EAC80B480BC0E524F7687C46780ECA6F48C27BB6F48",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51419525656",
+      "classid": "7993130794",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "USP-S | Sleeping Potion",
+      "market_hash_name": "USP-S | Sleeping Potion (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

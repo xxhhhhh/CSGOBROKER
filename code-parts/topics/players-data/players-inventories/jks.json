@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9a8ea9d5-61c7-4b38-b64f-35f4945048fa",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-09T06:00:42.191Z",
+  "updatedAt": "2026-05-11T06:52:01.912Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 51,
-  "totalItemsGrouped": 49,
+  "totalItemsRaw": 52,
+  "totalItemsGrouped": 50,
   "items": [
     {
       "assetid": "14557724330",
@@ -64,7 +64,7 @@
       "name": "★ Karambit | Gamma Doppler",
       "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ACBC055B530D13ADB457AF8C16A884AA9CAF943F05604BAFEC39A9C494DCA8F7AE7D01",
       "tags": [
         {
           "category": "Type",
@@ -86,7 +86,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.02967289649,
+      "seed": 661,
+      "phase": "Phase 2"
     },
     {
       "assetid": "42036197284",
@@ -224,6 +227,42 @@
       "name": "M4A1-S | Hot Rod",
       "market_hash_name": "M4A1-S | Hot Rod (Factory New)",
       "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51468830095",
+      "classid": "201965307",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "AWP | Graphite",
+      "market_hash_name": "AWP | Graphite (Factory New)",
+      "type": "Classified Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -1216,7 +1255,7 @@
     {
       "assetid": "44035721211",
       "classid": "7993043980",
-      "instanceid": "188577966",
+      "instanceid": "188570409",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Fairy Tale",
       "market_hash_name": "StatTrak™ Five-SeveN | Fairy Tale (Minimal Wear)",
@@ -1252,7 +1291,7 @@
     {
       "assetid": "26965750398",
       "classid": "7993038713",
-      "instanceid": "8452880202",
+      "instanceid": "8460643621",
       "amount": 1,
       "name": "StatTrak™ MP9 | Airlock",
       "market_hash_name": "StatTrak™ MP9 | Airlock (Field-Tested)",
@@ -1324,7 +1363,7 @@
     {
       "assetid": "41865696807",
       "classid": "7993041773",
-      "instanceid": "8452830497",
+      "instanceid": "8460643620",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
@@ -1360,7 +1399,7 @@
     {
       "assetid": "51358541996",
       "classid": "7993040029",
-      "instanceid": "8452880201",
+      "instanceid": "8463181257",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Field-Tested)",
@@ -1408,7 +1447,7 @@
     {
       "assetid": "41865689587",
       "classid": "7993038697",
-      "instanceid": "481789154",
+      "instanceid": "481097207",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Grinder",
       "market_hash_name": "StatTrak™ Glock-18 | Grinder (Factory New)",
@@ -1444,7 +1483,7 @@
     {
       "assetid": "51363118501",
       "classid": "7993044971",
-      "instanceid": "6305721159",
+      "instanceid": "6282545993",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Brother",
       "market_hash_name": "StatTrak™ Tec-9 | Brother (Factory New)",
@@ -1480,7 +1519,7 @@
     {
       "assetid": "41519993457",
       "classid": "7993040946",
-      "instanceid": "188690248",
+      "instanceid": "480085971",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Saibā Oni",
       "market_hash_name": "StatTrak™ MAC-10 | Saibā Oni (Field-Tested)",

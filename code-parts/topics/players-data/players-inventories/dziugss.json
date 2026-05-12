@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/dc49b288-2a75-485a-91b1-ee81ce2f25de",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-24T05:47:03.130Z",
+  "updatedAt": "2026-05-10T06:26:47.382Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 53,
-  "totalItemsGrouped": 53,
+  "totalItemsRaw": 55,
+  "totalItemsGrouped": 55,
   "items": [
     {
       "assetid": "50960090560",
@@ -120,6 +120,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51601634373",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -733,6 +761,42 @@
       "market_hash_name": "MAG-7 | Rust Coat (Battle-Scarred)",
       "type": "Consumer Grade Shotgun",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DBCB553230597BDAC3C0FB29DEF3DAEBDFE34B230420D89B35DAB3F0ABC3A0E0B2A7",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51601634374",
+      "classid": "7993036220",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MP7 | Short Ochre",
+      "market_hash_name": "MP7 | Short Ochre (Field-Tested)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

@@ -12,21 +12,21 @@
   "faceit": "https://faceitdb.com/profile/faceit/9c3e501d-132c-42c8-b808-7641acfdc0ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-06T05:56:51.504Z",
+  "updatedAt": "2026-05-12T06:16:30.497Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 248,
-  "totalItemsGrouped": 248,
+  "totalItemsRaw": 250,
+  "totalItemsGrouped": 250,
   "items": [
     {
-      "assetid": "51181751949",
-      "classid": "7993038461",
+      "assetid": "51394919949",
+      "classid": "7993042413",
       "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Flip Knife | Marble Fade",
-      "market_hash_name": "★ Flip Knife | Marble Fade (Factory New)",
+      "name": "★ Butterfly Knife | Crimson Web",
+      "market_hash_name": "★ Butterfly Knife | Crimson Web (Minimal Wear)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -36,6 +36,10 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -125,38 +129,6 @@
       "float": 0.053742825985,
       "seed": 342,
       "phase": "Phase 1"
-    },
-    {
-      "assetid": "47575968950",
-      "classid": "7993046501",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Black Laminate",
-      "market_hash_name": "★ M9 Bayonet | Black Laminate (Battle-Scarred)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C6D6701F385B77C7DE3AC5E671C2EEC0F6C5FE4B19223CC58636C3AEC7B6C29F4F388E",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "49018127281",
@@ -297,6 +269,45 @@
       ]
     },
     {
+      "assetid": "43171648859",
+      "classid": "7993052639",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Paracord Knife | Doppler",
+      "market_hash_name": "★ Paracord Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20495992E3A5A0E94851CC4D69E84A614F794A71A18BF7A94A09834B214839411E0612CB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.008766509593,
+      "seed": 330,
+      "phase": "Black Pearl"
+    },
+    {
       "assetid": "47574365663",
       "classid": "7993050211",
       "instanceid": "480085569",
@@ -369,14 +380,14 @@
       ]
     },
     {
-      "assetid": "47574848779",
-      "classid": "7993038261",
-      "instanceid": "480085569",
+      "assetid": "43282635857",
+      "classid": "7993037968",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Survival Knife | Doppler",
       "market_hash_name": "★ Survival Knife | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205B4BD0F1E1C6EA5A43DD5F7BF858735D6B5863E3A292B2581BAD5F335A2B5FF309CD6E",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206575B4DD87FBC4647DE36145C5664D6355665DEAFEC582662583600D64156DDF1CBAB6",
       "tags": [
         {
           "category": "Type",
@@ -403,9 +414,9 @@
           "name": ""
         }
       ],
-      "float": 0.043575972319,
-      "seed": 630,
-      "phase": "Phase 2"
+      "float": 0.028326777741,
+      "seed": 742,
+      "phase": "Sapphire"
     },
     {
       "assetid": "47598491834",
@@ -688,6 +699,34 @@
       ]
     },
     {
+      "assetid": "51394919948",
+      "classid": "7993042929",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Sport Gloves | Slingshot",
+      "market_hash_name": "★ Sport Gloves | Slingshot (Well-Worn)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49018142407",
       "classid": "7993045036",
       "instanceid": "188530139",
@@ -742,6 +781,53 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "43282638301",
+      "classid": "7993047144",
+      "instanceid": "188604750",
+      "amount": 1,
+      "name": "★ StatTrak™ Skeleton Knife | Doppler",
+      "market_hash_name": "★ StatTrak™ Skeleton Knife | Doppler (Factory New)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D6C60B1D344877D7CE5BD2F674D5FED0E6D5EE794D4537D59677D39ED68669D7BED7A6DEE3BB7964",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.010058804415,
+      "seed": 673,
+      "phase": "Phase 1"
     },
     {
       "assetid": "43288069483",

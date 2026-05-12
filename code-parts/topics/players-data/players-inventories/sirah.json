@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b6daa950-11e5-4f51-b58e-b4e01e112500",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-07T06:42:13.417Z",
+  "updatedAt": "2026-05-11T07:19:39.185Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 49,
-  "totalItemsGrouped": 49,
+  "totalItemsRaw": 52,
+  "totalItemsGrouped": 52,
   "items": [
     {
       "assetid": "50735565905",
@@ -435,6 +435,78 @@
       "market_hash_name": "Desert Eagle | Printstream (Minimal Wear)",
       "type": "Covert Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%200E1EC1FB859DB50F160F2ECC0926083E0A368FF0AEFE0D4E9D0D660B7E0ABA86017A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51407106112",
+      "classid": "7993039825",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AK-47 | Vulcan",
+      "market_hash_name": "AK-47 | Vulcan (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51356462425",
+      "classid": "7993041870",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M4A1-S | Printstream",
+      "market_hash_name": "M4A1-S | Printstream (Battle-Scarred)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1362,6 +1434,42 @@
       ]
     },
     {
+      "assetid": "51356461083",
+      "classid": "188530424",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Desert Eagle | Blaze",
+      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "42239337280",
       "classid": "7993039093",
       "instanceid": "6410524093",
@@ -1612,7 +1720,7 @@
     {
       "assetid": "49697654155",
       "classid": "7993040284",
-      "instanceid": "480698392",
+      "instanceid": "480542296",
       "amount": 1,
       "name": "StatTrak™ USP-S | Cortex",
       "market_hash_name": "StatTrak™ USP-S | Cortex (Minimal Wear)",

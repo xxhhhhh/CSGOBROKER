@@ -12,14 +12,49 @@
   "faceit": "https://faceitdb.com/profile/faceit/25415280-a9a9-45ed-98a7-556ba835de34",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-07T06:38:05.593Z",
+  "updatedAt": "2026-05-11T07:15:31.263Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 46,
-  "totalItemsGrouped": 46,
+  "totalItemsRaw": 56,
+  "totalItemsGrouped": 56,
   "items": [
+    {
+      "assetid": "51360103370",
+      "classid": "7993043455",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Gamma Doppler",
+      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ABBB615C180114AAB350A88B13AF83AD9BA8934E131474A8EB78AAC3AEDBA3DCDB3CDB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.007319974247,
+      "seed": 211,
+      "phase": "Emerald"
+    },
     {
       "assetid": "51305383893",
       "classid": "7993040299",
@@ -217,6 +252,42 @@
       "market_hash_name": "MP9 | Hydra (Minimal Wear)",
       "type": "Classified SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%209E8E706D3556D786BCBE1099B69BAE9AA65B650D6E9DDEE1F61F9CEE96169E9CB1",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51517235373",
+      "classid": "7993041214",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "USP-S | Kill Confirmed",
+      "market_hash_name": "USP-S | Kill Confirmed (Factory New)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -462,6 +533,139 @@
           "category": "Rarity",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "38643349495",
+      "classid": "5327976209",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | headtr1ck (Holo) | Paris 2023",
+      "market_hash_name": "Sticker | headtr1ck (Holo) | Paris 2023",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EAFAEAF253E3CAEAC2EFDAEE88EFE2EAFA1DDF82EA9AE2294B8A1D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "38643349495"
+      ]
+    },
+    {
+      "assetid": "23795960316",
+      "classid": "4614639228",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Natus Vincere (Foil) | Stockholm 2021",
+      "market_hash_name": "Sticker | Natus Vincere (Foil) | Stockholm 2021",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202838283091210828002D182C4A2D202838CC0E4028582034B7BC3D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "23795960316"
+      ]
+    },
+    {
+      "assetid": "23795973798",
+      "classid": "4614639326",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Ninjas in Pyjamas (Foil) | Stockholm 2021",
+      "market_hash_name": "Sticker | Ninjas in Pyjamas (Foil) | Stockholm 2021",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208393839B3A8AA383AB86B387E1868B83935FA5EB83F38B3DCE3FB7",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "23795973798"
       ]
     },
     {
@@ -1046,6 +1250,49 @@
       ]
     },
     {
+      "assetid": "45681366793",
+      "classid": "7104650531",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | B8 (Foil) | Austin 2025",
+      "market_hash_name": "Sticker | B8 (Foil) | Austin 2025",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204353435BFA4A63436B47734721464B4353F4002B43334B4E2BDE09",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "45681366793"
+      ]
+    },
+    {
       "assetid": "45709680742",
       "classid": "7104663169",
       "instanceid": "188530139",
@@ -1353,6 +1600,54 @@
       ]
     },
     {
+      "assetid": "51372647270",
+      "classid": "7993042158",
+      "instanceid": "6287093743",
+      "amount": 1,
+      "name": "Souvenir SSG 08 | Death Strike",
+      "market_hash_name": "Souvenir SSG 08 | Death Strike (Field-Tested)",
+      "type": "Souvenir Classified Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "47538950807",
       "classid": "7993045069",
       "instanceid": "188532028",
@@ -1391,7 +1686,7 @@
     {
       "assetid": "25376126060",
       "classid": "7993039869",
-      "instanceid": "188538026",
+      "instanceid": "480085975",
       "amount": 1,
       "name": "StatTrak™ MP7 | Nemesis",
       "market_hash_name": "StatTrak™ MP7 | Nemesis (Minimal Wear)",
@@ -1427,7 +1722,7 @@
     {
       "assetid": "40117408894",
       "classid": "7993046239",
-      "instanceid": "480211735",
+      "instanceid": "480919640",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Ocean Drive",
       "market_hash_name": "StatTrak™ Desert Eagle | Ocean Drive (Minimal Wear)",
@@ -1469,6 +1764,42 @@
       "market_hash_name": "StatTrak™ P250 | See Ya Later (Minimal Wear)",
       "type": "StatTrak™ Covert Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C1D10C210F2986D9E5E167C4E9C7F1C8F9673D192FC28159C789C1917ADEA97CC0B1C59C06333C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51362574083",
+      "classid": "7993044178",
+      "instanceid": "188531245",
+      "amount": 1,
+      "name": "StatTrak™ M4A4 | The Emperor",
+      "market_hash_name": "StatTrak™ M4A4 | The Emperor (Minimal Wear)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1556,6 +1887,78 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51521737307",
+      "classid": "7993039465",
+      "instanceid": "902709503",
+      "amount": 1,
+      "name": "StatTrak™ Five-SeveN | Boost Protocol",
+      "market_hash_name": "StatTrak™ Five-SeveN | Boost Protocol (Factory New)",
+      "type": "StatTrak™ Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51364063833",
+      "classid": "7993043574",
+      "instanceid": "188530248",
+      "amount": 1,
+      "name": "StatTrak™ MAC-10 | Heat",
+      "market_hash_name": "StatTrak™ MAC-10 | Heat (Factory New)",
+      "type": "StatTrak™ Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

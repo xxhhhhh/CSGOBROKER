@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/daed0b59-b3f3-4c4d-812f-f57d57e60f05",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-01T07:21:07.575Z",
+  "updatedAt": "2026-05-12T07:21:59.335Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 934,
-  "totalItemsGrouped": 445,
+  "totalItemsRaw": 936,
+  "totalItemsGrouped": 447,
   "items": [
     {
       "assetid": "49114016190",
@@ -371,6 +371,34 @@
       "amount": 1,
       "name": "Fracture Case",
       "market_hash_name": "Fracture Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51634429866",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -9776,6 +9804,42 @@
       "amount": 1,
       "name": "AUG | Amber Slipstream",
       "market_hash_name": "AUG | Amber Slipstream (Field-Tested)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51634429867",
+      "classid": "7993036672",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "FAMAS | Yeti Camo",
+      "market_hash_name": "FAMAS | Yeti Camo (Minimal Wear)",
       "type": "Mil-Spec Grade Rifle",
       "inspectLink": "",
       "tags": [

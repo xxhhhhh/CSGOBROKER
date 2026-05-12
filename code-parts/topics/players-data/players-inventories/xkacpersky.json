@@ -12,7 +12,7 @@
   "faceit": "https://faceitdb.com/profile/faceit/7cfd2312-1ff0-434c-a4b1-be10b033636f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-05T06:11:37.829Z",
+  "updatedAt": "2026-05-12T06:39:49.672Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
@@ -36,6 +36,42 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51378486572",
+      "classid": "7993040838",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Kukri Knife | Fade",
+      "market_hash_name": "★ Kukri Knife | Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -92,45 +128,6 @@
       "phase": "Ruby"
     },
     {
-      "assetid": "51201963819",
-      "classid": "7993042405",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Stiletto Knife | Doppler",
-      "market_hash_name": "★ Stiletto Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E7F74C09183959E6FF6DE3C778E4CFE1D7E4DF4A43630FE4A757E58FF197E368BA6FA4",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.031511474401,
-      "seed": 304,
-      "phase": "Ruby"
-    },
-    {
       "assetid": "49540334877",
       "classid": "7993036899",
       "instanceid": "188530139",
@@ -154,34 +151,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51103648918",
-      "classid": "4717330486",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Dreams & Nightmares Case",
-      "market_hash_name": "Dreams & Nightmares Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
           "name": ""
         }
       ]
@@ -494,6 +463,37 @@
       ],
       "assetids": [
         "51423252662"
+      ]
+    },
+    {
+      "assetid": "51600235625",
+      "classid": "1989309372",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Loser (Jungle Green)",
+      "market_hash_name": "Sealed Graffiti | Loser (Jungle Green)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C2D2C2DA06C8E2C2EAC3F2C6A0C5CAC2D277CFF2CAAAC2B2DA154B88AF",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51600235625"
       ]
     },
     {
