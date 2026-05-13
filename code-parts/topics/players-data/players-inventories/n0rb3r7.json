@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/075ed300-7ed3-4377-88ba-9572f9ea8e3d",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-12T06:44:07.719Z",
+  "updatedAt": "2026-05-13T06:59:17.211Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 43,
-  "totalItemsGrouped": 43,
+  "totalItemsRaw": 48,
+  "totalItemsGrouped": 48,
   "items": [
     {
       "assetid": "50196342710",
@@ -91,6 +91,34 @@
       "phase": "Phase 3"
     },
     {
+      "assetid": "51442269568",
+      "classid": "7993037847",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Driver Gloves | King Snake",
+      "market_hash_name": "★ Driver Gloves | King Snake (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "48764339536",
       "classid": "7993039096",
       "instanceid": "7921278493",
@@ -150,6 +178,42 @@
       "market_hash_name": "M4A1-S | Imminent Danger (Field-Tested)",
       "type": "Covert Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%207464B098C489CE756C4854C57C5C7244704CBEF9D08177341A1C600463D675627C7464514922FCE44B31031CB14A392CAF9934148E4D1DBD0CB4",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51443052671",
+      "classid": "7993035947",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "M4A4 | The Emperor",
+      "market_hash_name": "M4A4 | The Emperor (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1005,6 +1069,42 @@
       ]
     },
     {
+      "assetid": "51443668978",
+      "classid": "226232651",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Five-SeveN | Case Hardened",
+      "market_hash_name": "Five-SeveN | Case Hardened (Well-Worn)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "48436125673",
       "classid": "7993040268",
       "instanceid": "7628652167",
@@ -1259,7 +1359,7 @@
     {
       "assetid": "51286675813",
       "classid": "7993038769",
-      "instanceid": "8462941095",
+      "instanceid": "8465136045",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Redline",
       "market_hash_name": "StatTrak™ AK-47 | Redline (Minimal Wear)",
@@ -1321,9 +1421,105 @@
       ]
     },
     {
+      "assetid": "51444513214",
+      "classid": "7993040252",
+      "instanceid": "8465136044",
+      "amount": 1,
+      "name": "StatTrak™ Galil AR | Chromatic Aberration",
+      "market_hash_name": "StatTrak™ Galil AR | Chromatic Aberration (Field-Tested)",
+      "type": "StatTrak™ Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51443052018",
+      "classid": "7993041520",
+      "instanceid": "188541197",
+      "amount": 1,
+      "name": "StatTrak™ Desert Eagle | Code Red",
+      "market_hash_name": "StatTrak™ Desert Eagle | Code Red (Field-Tested)",
+      "type": "StatTrak™ Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "41167427980",
       "classid": "7993038824",
-      "instanceid": "8462941098",
+      "instanceid": "8465136046",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Isaac",
       "market_hash_name": "StatTrak™ Tec-9 | Isaac (Minimal Wear)",

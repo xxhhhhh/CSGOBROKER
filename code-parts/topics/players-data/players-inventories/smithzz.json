@@ -7,16 +7,18 @@
   "name": "Edouard Dubourdeaux",
   "nationality": "France",
   "born": "17.12.1988",
+  "isContentCreator": false,
   "twitch": "smithzz",
   "faceit": "https://faceitdb.com/profile/faceit/5a4e258d-c912-46b6-94f1-984d59150f82",
-  "isContentCreator": false,
-  "updatedAt": "2026-05-08T06:32:07.141Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 330,
-  "totalItemsGrouped": 303,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-05-13T07:31:52.764Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 329,
+  "totalItemsGrouped": 305,
   "items": [
     {
       "assetid": "48699702436",
@@ -223,6 +225,34 @@
     },
     {
       "assetid": "48466825734",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51627824230",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -3856,9 +3886,9 @@
       ]
     },
     {
-      "assetid": "50995977632",
+      "assetid": "51626574615",
       "classid": "188536488",
-      "instanceid": "480085569",
+      "instanceid": "8465314681",
       "amount": 1,
       "name": "AK-47 | Case Hardened",
       "market_hash_name": "AK-47 | Case Hardened (Factory New)",
@@ -3887,6 +3917,14 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -4864,6 +4902,42 @@
       ]
     },
     {
+      "assetid": "51627824231",
+      "classid": "7993037789",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "G3SG1 | Green Cell",
+      "market_hash_name": "G3SG1 | Green Cell (Minimal Wear)",
+      "type": "Consumer Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "46786330162",
       "classid": "7993037485",
       "instanceid": "188530139",
@@ -5109,41 +5183,6 @@
           "category": "ProPlayer",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "51296979147",
-      "classid": "7729279282",
-      "instanceid": "0",
-      "amount": 1,
-      "name": "Sticker Slab | Team LDLC.com (Holo) | Cologne 2014",
-      "market_hash_name": "Sticker Slab | Team LDLC.com (Holo) | Cologne 2014",
-      "type": "Customized Remarkable Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A3B3A3BB68A983A38BA793ABCBA3D3A301A2A4ABA3B386C326A214EA03BB",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51296979147"
       ]
     },
     {
@@ -6361,52 +6400,6 @@
       ]
     },
     {
-      "assetid": "51296979196",
-      "classid": "549051216",
-      "instanceid": "188530139",
-      "amount": 4,
-      "name": "Sticker | Team LDLC.com | Cologne 2014",
-      "market_hash_name": "Sticker | Team LDLC.com | Cologne 2014",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202838283091210828002B182C4A2D202838AC29402858203FDC24B5",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51296979196",
-        "51296979184",
-        "51296979170",
-        "51296979157"
-      ]
-    },
-    {
       "assetid": "10993653139",
       "classid": "2416963541",
       "instanceid": "188530139",
@@ -7506,6 +7499,78 @@
       "market_hash_name": "AWP | Arsenic Spill (Factory New)",
       "type": "Mil-Spec Grade Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%206B7BBD9BD98DC66A73624BC76143685B6F53F4F4E880682BFF6E03EA691B730729A725",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51442280577",
+      "classid": "7993039975",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "SSG 08 | Dark Water",
+      "market_hash_name": "SSG 08 | Dark Water (Minimal Wear)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51442285138",
+      "classid": "7993039975",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "SSG 08 | Dark Water",
+      "market_hash_name": "SSG 08 | Dark Water (Minimal Wear)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -9949,7 +10014,7 @@
     {
       "assetid": "14792369647",
       "classid": "7993038472",
-      "instanceid": "8454418487",
+      "instanceid": "8465314682",
       "amount": 1,
       "name": "StatTrak™ USP-S | Orion",
       "market_hash_name": "StatTrak™ USP-S | Orion (Factory New)",
@@ -10133,7 +10198,7 @@
     {
       "assetid": "16438466200",
       "classid": "7993042380",
-      "instanceid": "8406047834",
+      "instanceid": "8456913770",
       "amount": 1,
       "name": "StatTrak™ AWP | Asiimov",
       "market_hash_name": "StatTrak™ AWP | Asiimov (Battle-Scarred)",
