@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/2be37d17-f9fb-42e2-8143-bcdb5f1239b2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-12T07:11:21.538Z",
+  "updatedAt": "2026-05-14T07:20:44.492Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 327,
-  "totalItemsGrouped": 260,
+  "totalItemsRaw": 329,
+  "totalItemsGrouped": 261,
   "items": [
     {
       "assetid": "51423313418",
@@ -453,6 +453,34 @@
     },
     {
       "assetid": "50761896164",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51682279158",
       "classid": "5189384637",
       "instanceid": "302028390",
       "amount": 1,
@@ -1725,10 +1753,10 @@
       ]
     },
     {
-      "assetid": "50256465425",
+      "assetid": "51682279159",
       "classid": "6195246388",
       "instanceid": "302028390",
-      "amount": 4,
+      "amount": 5,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
@@ -1748,6 +1776,7 @@
         }
       ],
       "assetids": [
+        "51682279159",
         "50256465425",
         "49900993156",
         "49775001526",
@@ -9474,7 +9503,7 @@
     {
       "assetid": "48397983084",
       "classid": "7993045650",
-      "instanceid": "904272604",
+      "instanceid": "903021075",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Snack Attack",
       "market_hash_name": "StatTrak™ Glock-18 | Snack Attack (Minimal Wear)",
@@ -9546,7 +9575,7 @@
     {
       "assetid": "51050772309",
       "classid": "7993045990",
-      "instanceid": "8465986899",
+      "instanceid": "8469063733",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Asiimov",
       "market_hash_name": "StatTrak™ AK-47 | Asiimov (Minimal Wear)",
@@ -9646,7 +9675,7 @@
     {
       "assetid": "50292736895",
       "classid": "8246907682",
-      "instanceid": "188531566",
+      "instanceid": "188530669",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Dark Polymer",
       "market_hash_name": "StatTrak™ Five-SeveN | Dark Polymer (Minimal Wear)",
@@ -9718,7 +9747,7 @@
     {
       "assetid": "17002596668",
       "classid": "7993042935",
-      "instanceid": "480207147",
+      "instanceid": "480095121",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Flash Out",
       "market_hash_name": "StatTrak™ Tec-9 | Flash Out (Battle-Scarred)",

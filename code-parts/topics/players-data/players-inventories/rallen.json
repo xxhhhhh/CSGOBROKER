@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e05e2128-e0ab-459e-8ee5-4a0249ba508f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-10T07:16:01.908Z",
+  "updatedAt": "2026-05-14T07:24:59.145Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 609,
-  "totalItemsGrouped": 475,
+  "totalItemsRaw": 611,
+  "totalItemsGrouped": 477,
   "items": [
     {
       "assetid": "2739098068",
@@ -876,6 +876,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51676560114",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -5085,7 +5113,7 @@
       ]
     },
     {
-      "assetid": "51091487666",
+      "assetid": "51332650190",
       "classid": "5327976562",
       "instanceid": "188530139",
       "amount": 9,
@@ -5124,6 +5152,7 @@
         }
       ],
       "assetids": [
+        "51332650190",
         "51091487666",
         "51091486657",
         "51091485783",
@@ -5131,8 +5160,7 @@
         "50471649654",
         "50471649633",
         "50471648890",
-        "51332651032",
-        "51332650190"
+        "51332651032"
       ]
     },
     {
@@ -8409,6 +8437,42 @@
       "market_hash_name": "MP7 | Coral Paisley (Factory New)",
       "type": "Industrial Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C7D72C781F0570C6DFE6E72DCDEFC5F7C3FF4D79652FC48796AFF1B7DFFB90F3B9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51676560115",
+      "classid": "7993038510",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "P90 | Mustard Gas",
+      "market_hash_name": "P90 | Mustard Gas (Battle-Scarred)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -15889,7 +15953,7 @@
     {
       "assetid": "50589667139",
       "classid": "7993038769",
-      "instanceid": "8465389692",
+      "instanceid": "8468415053",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Redline",
       "market_hash_name": "StatTrak™ AK-47 | Redline (Minimal Wear)",
@@ -16245,7 +16309,7 @@
     {
       "assetid": "10987244968",
       "classid": "7993042460",
-      "instanceid": "8465303238",
+      "instanceid": "8468415054",
       "amount": 1,
       "name": "StatTrak™ AWP | Redline",
       "market_hash_name": "StatTrak™ AWP | Redline (Field-Tested)",
@@ -16457,7 +16521,7 @@
     {
       "assetid": "46149536084",
       "classid": "7993037775",
-      "instanceid": "480123924",
+      "instanceid": "480222479",
       "amount": 1,
       "name": "StatTrak™ M4A4 | The Emperor",
       "market_hash_name": "StatTrak™ M4A4 | The Emperor (Field-Tested)",
@@ -17081,7 +17145,7 @@
     {
       "assetid": "1076503680",
       "classid": "7993045301",
-      "instanceid": "8451127110",
+      "instanceid": "8468415055",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Pulse",
       "market_hash_name": "StatTrak™ FAMAS | Pulse (Minimal Wear)",

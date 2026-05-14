@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/2a82893f-3a7e-4458-9141-0b19673fa049",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-07T06:51:09.840Z",
+  "updatedAt": "2026-05-14T07:08:53.036Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 171,
-  "totalItemsGrouped": 164,
+  "totalItemsRaw": 187,
+  "totalItemsGrouped": 180,
   "items": [
     {
       "assetid": "47387890846",
@@ -907,6 +907,42 @@
       "name": "FAMAS | Mecha Industries",
       "market_hash_name": "FAMAS | Mecha Industries (Minimal Wear)",
       "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51472202544",
+      "classid": "7993037566",
+      "instanceid": "8437684678",
+      "amount": 1,
+      "name": "MP7 | Abyssal Apparition",
+      "market_hash_name": "MP7 | Abyssal Apparition (Field-Tested)",
+      "type": "Classified SMG",
       "inspectLink": "",
       "tags": [
         {
@@ -2921,6 +2957,42 @@
       ]
     },
     {
+      "assetid": "51472168189",
+      "classid": "7993037317",
+      "instanceid": "8437684678",
+      "amount": 1,
+      "name": "Negev | Drop Me",
+      "market_hash_name": "Negev | Drop Me (Well-Worn)",
+      "type": "Mil-Spec Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "45161043028",
       "classid": "7993035558",
       "instanceid": "188530139",
@@ -2963,6 +3035,42 @@
       "amount": 1,
       "name": "CZ75-Auto | Imprint",
       "market_hash_name": "CZ75-Auto | Imprint (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51472188993",
+      "classid": "7993036392",
+      "instanceid": "8437684678",
+      "amount": 1,
+      "name": "Five-SeveN | Scrawl",
+      "market_hash_name": "Five-SeveN | Scrawl (Minimal Wear)",
       "type": "Mil-Spec Grade Pistol",
       "inspectLink": "",
       "tags": [
@@ -3101,12 +3209,84 @@
       ]
     },
     {
+      "assetid": "51472191543",
+      "classid": "7993036082",
+      "instanceid": "8437684678",
+      "amount": 1,
+      "name": "P2000 | Lifted Spirits",
+      "market_hash_name": "P2000 | Lifted Spirits (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "38674551919",
       "classid": "7993036466",
       "instanceid": "188530139",
       "amount": 1,
       "name": "P2000 | Lifted Spirits",
       "market_hash_name": "P2000 | Lifted Spirits (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51472195314",
+      "classid": "7993036292",
+      "instanceid": "8437684678",
+      "amount": 1,
+      "name": "P2000 | Lifted Spirits",
+      "market_hash_name": "P2000 | Lifted Spirits (Well-Worn)",
       "type": "Mil-Spec Grade Pistol",
       "inspectLink": "",
       "tags": [
@@ -3425,6 +3605,42 @@
       ]
     },
     {
+      "assetid": "51472170961",
+      "classid": "7993036347",
+      "instanceid": "8437684678",
+      "amount": 1,
+      "name": "Galil AR | Destroyer",
+      "market_hash_name": "Galil AR | Destroyer (Minimal Wear)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "39955087863",
       "classid": "7993038230",
       "instanceid": "519977179",
@@ -3467,6 +3683,78 @@
       "amount": 1,
       "name": "Galil AR | Tuxedo",
       "market_hash_name": "Galil AR | Tuxedo (Factory New)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51472148050",
+      "classid": "7993036739",
+      "instanceid": "8437684678",
+      "amount": 1,
+      "name": "M4A4 | Poly Mag",
+      "market_hash_name": "M4A4 | Poly Mag (Battle-Scarred)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51472154146",
+      "classid": "7993037008",
+      "instanceid": "8437684678",
+      "amount": 1,
+      "name": "M4A4 | Poly Mag",
+      "market_hash_name": "M4A4 | Poly Mag (Minimal Wear)",
       "type": "Mil-Spec Grade Rifle",
       "inspectLink": "",
       "tags": [
@@ -3713,12 +4001,84 @@
       ]
     },
     {
+      "assetid": "51472186167",
+      "classid": "7993035762",
+      "instanceid": "8437684678",
+      "amount": 1,
+      "name": "Sawed-Off | Spirit Board",
+      "market_hash_name": "Sawed-Off | Spirit Board (Minimal Wear)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "38555643315",
       "classid": "7993037843",
       "instanceid": "6276911957",
       "amount": 1,
       "name": "MAC-10 | Fade",
       "market_hash_name": "MAC-10 | Fade (Factory New)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51472162527",
+      "classid": "7993036528",
+      "instanceid": "8437684678",
+      "amount": 1,
+      "name": "MAC-10 | Monkeyflage",
+      "market_hash_name": "MAC-10 | Monkeyflage (Field-Tested)",
       "type": "Mil-Spec Grade SMG",
       "inspectLink": "",
       "tags": [
@@ -3863,6 +4223,42 @@
       "amount": 1,
       "name": "P90 | Freight",
       "market_hash_name": "P90 | Freight (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51472151119",
+      "classid": "7993035555",
+      "instanceid": "8437684678",
+      "amount": 1,
+      "name": "UMP-45 | Roadblock",
+      "market_hash_name": "UMP-45 | Roadblock (Minimal Wear)",
       "type": "Mil-Spec Grade SMG",
       "inspectLink": "",
       "tags": [
@@ -4434,6 +4830,42 @@
       ]
     },
     {
+      "assetid": "51472144233",
+      "classid": "7993035941",
+      "instanceid": "8437684678",
+      "amount": 1,
+      "name": "M249 | Downtown",
+      "market_hash_name": "M249 | Downtown (Field-Tested)",
+      "type": "Restricted Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "43385830862",
       "classid": "7993036900",
       "instanceid": "7029262731",
@@ -4516,6 +4948,42 @@
       "amount": 1,
       "name": "Desert Eagle | Trigger Discipline",
       "market_hash_name": "Desert Eagle | Trigger Discipline (Minimal Wear)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51472165486",
+      "classid": "7993036803",
+      "instanceid": "8437684678",
+      "amount": 1,
+      "name": "Dual Berettas | Flora Carnivora",
+      "market_hash_name": "Dual Berettas | Flora Carnivora (Battle-Scarred)",
       "type": "Restricted Pistol",
       "inspectLink": "",
       "tags": [
@@ -5462,12 +5930,120 @@
       ]
     },
     {
+      "assetid": "51472159744",
+      "classid": "7993038460",
+      "instanceid": "8437684716",
+      "amount": 1,
+      "name": "StatTrak™ FAMAS | Meow 36",
+      "market_hash_name": "StatTrak™ FAMAS | Meow 36 (Minimal Wear)",
+      "type": "StatTrak™ Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51472198657",
+      "classid": "7993038086",
+      "instanceid": "8437684716",
+      "amount": 1,
+      "name": "StatTrak™ MP5-SD | Necro Jr.",
+      "market_hash_name": "StatTrak™ MP5-SD | Necro Jr. (Minimal Wear)",
+      "type": "StatTrak™ Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "45878462212",
       "classid": "7993044423",
       "instanceid": "915479240",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Crimson Web",
       "market_hash_name": "StatTrak™ Desert Eagle | Crimson Web (Minimal Wear)",
+      "type": "StatTrak™ Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51472156919",
+      "classid": "7993037391",
+      "instanceid": "8437684716",
+      "amount": 1,
+      "name": "StatTrak™ Dual Berettas | Flora Carnivora",
+      "market_hash_name": "StatTrak™ Dual Berettas | Flora Carnivora (Field-Tested)",
       "type": "StatTrak™ Restricted Pistol",
       "inspectLink": "",
       "tags": [

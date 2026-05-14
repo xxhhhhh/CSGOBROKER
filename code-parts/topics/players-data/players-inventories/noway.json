@@ -12,23 +12,23 @@
   "faceit": "https://faceitdb.com/profile/faceit/91396c85-8498-429e-bf1a-5f8da3c2336b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-13T07:14:11.972Z",
+  "updatedAt": "2026-05-14T07:08:50.470Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 58,
-  "totalItemsGrouped": 51,
+  "totalItemsRaw": 59,
+  "totalItemsGrouped": 52,
   "items": [
     {
-      "assetid": "50913232224",
-      "classid": "1989274744",
-      "instanceid": "302028390",
+      "assetid": "51473271921",
+      "classid": "8247668937",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "Graffiti | Heart (Brick Red)",
-      "market_hash_name": "Graffiti | Heart (Brick Red)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BFAFBFA77AB59FBF97BE8FBBDDB8B7BFAF07B28FBED7BFCFA731E1C02D",
+      "name": "★ Specialist Gloves | Pillow Punchers",
+      "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -43,12 +43,9 @@
           "name": ""
         },
         {
-          "category": "SprayColorCategory",
+          "category": "Exterior",
           "name": ""
         }
-      ],
-      "assetids": [
-        "50913232224"
       ]
     },
     {
@@ -178,6 +175,42 @@
       "name": "CZ75-Auto | Honey Paisley",
       "market_hash_name": "CZ75-Auto | Honey Paisley (Field-Tested)",
       "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51641147820",
+      "classid": "7993037085",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "AWP | Asiimov",
+      "market_hash_name": "AWP | Asiimov (Field-Tested)",
+      "type": "Covert Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -1032,7 +1065,7 @@
       ]
     },
     {
-      "assetid": "51436760176",
+      "assetid": "51436760202",
       "classid": "7104655063",
       "instanceid": "188530139",
       "amount": 7,
@@ -1075,13 +1108,13 @@
         }
       ],
       "assetids": [
+        "51436760202",
+        "51436760179",
         "51436760176",
         "51436760085",
         "51436760081",
         "51436760078",
-        "51436760223",
-        "51436760202",
-        "51436760179"
+        "51436760223"
       ]
     },
     {
@@ -1291,7 +1324,7 @@
     {
       "assetid": "51528408971",
       "classid": "7993037525",
-      "instanceid": "7534548136",
+      "instanceid": "8469092223",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
@@ -1411,7 +1444,7 @@
     {
       "assetid": "50901036518",
       "classid": "7993036246",
-      "instanceid": "188566521",
+      "instanceid": "188539935",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Ensnared",
       "market_hash_name": "StatTrak™ MAC-10 | Ensnared (Field-Tested)",
@@ -1483,7 +1516,7 @@
     {
       "assetid": "49458447076",
       "classid": "7993042258",
-      "instanceid": "8465267817",
+      "instanceid": "8469092227",
       "amount": 1,
       "name": "StatTrak™ USP-S | Guardian",
       "market_hash_name": "StatTrak™ USP-S | Guardian (Factory New)",
