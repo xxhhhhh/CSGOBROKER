@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/7cfd2312-1ff0-434c-a4b1-be10b033636f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-13T06:52:59.810Z",
+  "updatedAt": "2026-05-15T07:03:27.013Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 71,
-  "totalItemsGrouped": 70,
+  "totalItemsRaw": 73,
+  "totalItemsGrouped": 72,
   "items": [
     {
       "assetid": "51378486572",
@@ -310,6 +310,37 @@
       ]
     },
     {
+      "assetid": "51691148471",
+      "classid": "1989274001",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Loser (Jungle Green)",
+      "market_hash_name": "Graffiti | Loser (Jungle Green)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203424342CF13E14341C35043056333C34248139043C5C34442C52496899",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51691148471"
+      ]
+    },
+    {
       "assetid": "48051547234",
       "classid": "1989271456",
       "instanceid": "302028390",
@@ -431,37 +462,6 @@
       ],
       "assetids": [
         "51423252662"
-      ]
-    },
-    {
-      "assetid": "51600235625",
-      "classid": "1989309372",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Graffiti | Loser (Jungle Green)",
-      "market_hash_name": "Sealed Graffiti | Loser (Jungle Green)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C2D2C2DA06C8E2C2EAC3F2C6A0C5CAC2D277CFF2CAAAC2B2DA154B88AF",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51600235625"
       ]
     },
     {
@@ -1684,6 +1684,78 @@
       "name": "USP-S | Silent Shot",
       "market_hash_name": "USP-S | Silent Shot (Well-Worn)",
       "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51492691862",
+      "classid": "7993035506",
+      "instanceid": "8440618895",
+      "amount": 1,
+      "name": "SG 553 | Cyberforce",
+      "market_hash_name": "SG 553 | Cyberforce (Field-Tested)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51492704075",
+      "classid": "7993035506",
+      "instanceid": "8440618895",
+      "amount": 1,
+      "name": "SG 553 | Cyberforce",
+      "market_hash_name": "SG 553 | Cyberforce (Field-Tested)",
+      "type": "Mil-Spec Grade Rifle",
       "inspectLink": "",
       "tags": [
         {
