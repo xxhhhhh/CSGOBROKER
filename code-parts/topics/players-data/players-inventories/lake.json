@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9880d90c-6de2-4d6b-8781-63fe2ee391ca",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-03T06:27:46.627Z",
+  "updatedAt": "2026-05-16T06:17:28.190Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 315,
-  "totalItemsGrouped": 254,
+  "totalItemsRaw": 317,
+  "totalItemsGrouped": 256,
   "items": [
     {
       "assetid": "44537588433",
@@ -148,6 +148,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51720723628",
+      "classid": "8246873714",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Dead Hand Terminal",
+      "market_hash_name": "Sealed Dead Hand Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -679,6 +707,37 @@
       ],
       "assetids": [
         "39721687544"
+      ]
+    },
+    {
+      "assetid": "51720723907",
+      "classid": "1989276953",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Backstab (Princess Pink)",
+      "market_hash_name": "Sealed Graffiti | Backstab (Princess Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205B4B5B439F517B5B735A6B5F395C535B4BEF566B4A335B2B430D63F267",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51720723907"
       ]
     },
     {
@@ -9371,7 +9430,7 @@
     {
       "assetid": "49499372341",
       "classid": "7993044094",
-      "instanceid": "8465739450",
+      "instanceid": "8474637234",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fuel Injector",
       "market_hash_name": "StatTrak™ AK-47 | Fuel Injector (Minimal Wear)",

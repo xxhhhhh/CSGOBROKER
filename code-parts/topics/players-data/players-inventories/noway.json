@@ -12,18 +12,18 @@
   "faceit": "https://faceitdb.com/profile/faceit/91396c85-8498-429e-bf1a-5f8da3c2336b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-15T07:23:04.197Z",
+  "updatedAt": "2026-05-16T06:38:43.364Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
   "totalItemsRaw": 60,
-  "totalItemsGrouped": 53,
+  "totalItemsGrouped": 54,
   "items": [
     {
       "assetid": "51493527921",
       "classid": "7993040351",
-      "instanceid": "8440619585",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "★ Butterfly Knife | Gamma Doppler",
       "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
@@ -85,6 +85,37 @@
           "category": "Exterior",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "51713907193",
+      "classid": "1989274104",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Heart (Blood Red)",
+      "market_hash_name": "Graffiti | Heart (Blood Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205B4B5B439E517B5B735A6B5F395C535B4BE3566B59335B2B4378701DAC",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51713907193"
       ]
     },
     {
@@ -1104,10 +1135,10 @@
       ]
     },
     {
-      "assetid": "51436760223",
+      "assetid": "51436760202",
       "classid": "7104655063",
       "instanceid": "188530139",
-      "amount": 7,
+      "amount": 6,
       "name": "Sticker | noway | Austin 2025",
       "market_hash_name": "Sticker | noway | Austin 2025",
       "type": "High Grade Sticker",
@@ -1147,7 +1178,6 @@
         }
       ],
       "assetids": [
-        "51436760223",
         "51436760202",
         "51436760179",
         "51436760176",
@@ -1363,7 +1393,7 @@
     {
       "assetid": "51528408971",
       "classid": "7993037525",
-      "instanceid": "7186008099",
+      "instanceid": "8473931684",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
@@ -1483,7 +1513,7 @@
     {
       "assetid": "50901036518",
       "classid": "7993036246",
-      "instanceid": "188573350",
+      "instanceid": "188587705",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Ensnared",
       "market_hash_name": "StatTrak™ MAC-10 | Ensnared (Field-Tested)",
@@ -1553,14 +1583,14 @@
       ]
     },
     {
-      "assetid": "49458447076",
+      "assetid": "51711048505",
       "classid": "7993042258",
-      "instanceid": "8471253701",
+      "instanceid": "8473931683",
       "amount": 1,
       "name": "StatTrak™ USP-S | Guardian",
       "market_hash_name": "StatTrak™ USP-S | Guardian (Factory New)",
       "type": "StatTrak™ Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208D9D69085D12358C95B0AD2F8FA589BD84B5506113658ECD568EC58DDD35DCEF88858D9D2A8FEF88858C9D3787EF89858F9DC1EF89858E9DB8E586FD856301B54A",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1599,7 +1629,7 @@
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "Tournament",
           "name": ""
         },
         {
@@ -1612,6 +1642,18 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
