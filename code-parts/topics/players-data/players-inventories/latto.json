@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/0c715f3d-bd25-4e2a-af9d-2477f0ec3aa4",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-10T06:26:49.231Z",
+  "updatedAt": "2026-05-17T06:37:17.328Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 41,
-  "totalItemsGrouped": 41,
+  "totalItemsRaw": 45,
+  "totalItemsGrouped": 44,
   "items": [
     {
       "assetid": "51186906955",
@@ -841,14 +841,14 @@
       ]
     },
     {
-      "assetid": "49532667250",
+      "assetid": "51501212606",
       "classid": "7104663168",
       "instanceid": "188530139",
-      "amount": 1,
+      "amount": 2,
       "name": "Sticker | latto (Gold) | Austin 2025",
       "market_hash_name": "Sticker | latto (Gold) | Austin 2025",
       "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202535253D9C2C05250D23152147202D2535A36C4D25552D15D3CE1D",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B4A4B4AC0DBD94B49CB284B0D6B1BCB4A432FDDCB4C4BC05A81764",
       "tags": [
         {
           "category": "Type",
@@ -884,7 +884,82 @@
         }
       ],
       "assetids": [
+        "51501212606",
         "49532667250"
+      ]
+    },
+    {
+      "assetid": "51501211990",
+      "classid": "5799847456",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | latto (Gold) | Copenhagen 2024",
+      "market_hash_name": "Sticker | latto (Gold) | Copenhagen 2024",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2051415149E8587151795761553354595141CB6C39512159A3432221",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51501211990"
+      ]
+    },
+    {
+      "assetid": "51501211366",
+      "classid": "4975155032",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Music Kit | Knock2, dashstar*",
+      "market_hash_name": "Music Kit | Knock2, dashstar*",
+      "type": "High Grade Music Kit",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A9B9A9B10BA389A981AA99ADC1A9D9A121A8E88D56163A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51501211366"
       ]
     },
     {
@@ -1045,6 +1120,50 @@
       ]
     },
     {
+      "assetid": "51501209742",
+      "classid": "7993036150",
+      "instanceid": "8045255500",
+      "amount": 1,
+      "name": "StatTrak™ CZ75-Auto | The Fuschia Is Now",
+      "market_hash_name": "StatTrak™ CZ75-Auto | The Fuschia Is Now (Field-Tested)",
+      "type": "StatTrak™ Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50892787424",
       "classid": "7993039467",
       "instanceid": "8474008170",
@@ -1147,7 +1266,7 @@
     {
       "assetid": "51602371164",
       "classid": "7993037434",
-      "instanceid": "188604644",
+      "instanceid": "480086418",
       "amount": 1,
       "name": "StatTrak™ USP-S | Printstream",
       "market_hash_name": "StatTrak™ USP-S | Printstream (Field-Tested)",
@@ -1183,7 +1302,7 @@
     {
       "assetid": "51035895835",
       "classid": "7993037550",
-      "instanceid": "188566869",
+      "instanceid": "188565388",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Neo-Noir",
       "market_hash_name": "StatTrak™ M4A4 | Neo-Noir (Field-Tested)",
@@ -1219,7 +1338,7 @@
     {
       "assetid": "51387546829",
       "classid": "7993039768",
-      "instanceid": "7356093990",
+      "instanceid": "7356539253",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Dragon Tattoo",
       "market_hash_name": "StatTrak™ Glock-18 | Dragon Tattoo (Factory New)",
