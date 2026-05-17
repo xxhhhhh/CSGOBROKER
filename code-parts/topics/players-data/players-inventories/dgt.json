@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/20e9f61c-8072-4f50-b257-b6b4219669d2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-11T06:56:17.019Z",
+  "updatedAt": "2026-05-17T06:39:26.830Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 141,
-  "totalItemsGrouped": 107,
+  "totalItemsRaw": 144,
+  "totalItemsGrouped": 110,
   "items": [
     {
       "assetid": "51273346197",
@@ -89,38 +89,6 @@
       "float": 0.034026239067,
       "seed": 932,
       "phase": "Emerald"
-    },
-    {
-      "assetid": "51298863302",
-      "classid": "7993043605",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Crimson Web",
-      "market_hash_name": "★ M9 Bayonet | Crimson Web (Well-Worn)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "47289886779",
@@ -195,6 +163,34 @@
       "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F1E17D6F3A285DF0E95BD6D140BFD9F7C1F2C9037A5C00F2B151F69976F081F9318007CD",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51471248940",
+      "classid": "7993040299",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -801,6 +797,62 @@
       ]
     },
     {
+      "assetid": "51501248922",
+      "classid": "7993038225",
+      "instanceid": "7802701170",
+      "amount": 1,
+      "name": "AK-47 | Hydroponic",
+      "market_hash_name": "AK-47 | Hydroponic (Minimal Wear)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50416912422",
       "classid": "7993038004",
       "instanceid": "302028390",
@@ -1197,6 +1249,42 @@
       ]
     },
     {
+      "assetid": "51508198279",
+      "classid": "7993042360",
+      "instanceid": "6276514532",
+      "amount": 1,
+      "name": "M4A4 | Howl",
+      "market_hash_name": "M4A4 | Howl (Minimal Wear)",
+      "type": "Contraband Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "43823433728",
       "classid": "202170645",
       "instanceid": "6392473789",
@@ -1324,6 +1412,50 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51500280766",
+      "classid": "7993036534",
+      "instanceid": "6297264573",
+      "amount": 1,
+      "name": "M4A1-S | Fade",
+      "market_hash_name": "M4A1-S | Fade (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -3302,7 +3434,7 @@
     {
       "assetid": "51312527175",
       "classid": "7993037966",
-      "instanceid": "8449198129",
+      "instanceid": "8470413392",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Redline",
       "market_hash_name": "StatTrak™ AK-47 | Redline (Field-Tested)",
@@ -3490,7 +3622,7 @@
     {
       "assetid": "51297473188",
       "classid": "7993042943",
-      "instanceid": "480087523",
+      "instanceid": "188542132",
       "amount": 1,
       "name": "StatTrak™ USP-S | Overgrowth",
       "market_hash_name": "StatTrak™ USP-S | Overgrowth (Minimal Wear)",
@@ -3526,7 +3658,7 @@
     {
       "assetid": "49753114299",
       "classid": "7993044935",
-      "instanceid": "188535029",
+      "instanceid": "188549647",
       "amount": 1,
       "name": "StatTrak™ MP7 | Impire",
       "market_hash_name": "StatTrak™ MP7 | Impire (Field-Tested)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/4b28e4aa-5c47-44d2-bcae-1e93ff01f896",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-04-29T06:23:30.341Z",
+  "updatedAt": "2026-05-17T06:52:11.997Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 247,
-  "totalItemsGrouped": 239,
+  "totalItemsRaw": 249,
+  "totalItemsGrouped": 241,
   "items": [
     {
       "assetid": "43678902267",
@@ -675,6 +675,34 @@
     },
     {
       "assetid": "47460404342",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51738988424",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -2694,6 +2722,33 @@
       ],
       "assetids": [
         "39896612450"
+      ]
+    },
+    {
+      "assetid": "51738987791",
+      "classid": "6195246388",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Charm Detachment Pack",
+      "market_hash_name": "Charm Detachment Pack",
+      "type": "Base Grade Tool",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D5C5D5CD03F3F5D5FDD4E5D1BDD5A5CD1E4E08FB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51738987791"
       ]
     },
     {

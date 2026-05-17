@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b0bf2cc2-198a-4a78-988d-2e7ff7ee6815",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-13T06:50:51.848Z",
+  "updatedAt": "2026-05-17T06:45:48.376Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 65,
-  "totalItemsGrouped": 65,
+  "totalItemsRaw": 66,
+  "totalItemsGrouped": 66,
   "items": [
     {
       "assetid": "51600579420",
@@ -57,41 +57,6 @@
       ],
       "float": 0.020242623985,
       "seed": 230,
-      "phase": "Ruby"
-    },
-    {
-      "assetid": "51431097493",
-      "classid": "7993042978",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Doppler",
-      "market_hash_name": "★ Karambit | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2081911408204D3E80997A82A11E82A987B182B9066F0C6982C10287E99EF1897CE32921",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.032095935196,
-      "seed": 771,
       "phase": "Ruby"
     },
     {
@@ -157,6 +122,34 @@
       "amount": 1,
       "name": "★ Sport Gloves | Ultra Violent",
       "market_hash_name": "★ Sport Gloves | Ultra Violent (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51499847943",
+      "classid": "7993038043",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Vice",
+      "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -335,6 +328,30 @@
       ],
       "assetids": [
         "51296447585"
+      ]
+    },
+    {
+      "assetid": "50967371450",
+      "classid": "191923205",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Name Tag",
+      "market_hash_name": "Name Tag",
+      "type": "Base Grade Tag",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6D7D65CD745D7D557C4D79157D0D7FE512B99D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
       ]
     },
     {
@@ -1736,42 +1753,6 @@
       ]
     },
     {
-      "assetid": "38497150219",
-      "classid": "7993039140",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "XM1014 | Seasons",
-      "market_hash_name": "XM1014 | Seasons (Minimal Wear)",
-      "type": "Restricted Shotgun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2017079CDDF8A398160F0E3799123F1327132FCFDD8AE71457FF127F16671F546D0E3F",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "39486761756",
       "classid": "7993042653",
       "instanceid": "188530139",
@@ -1946,7 +1927,7 @@
     {
       "assetid": "39485819560",
       "classid": "7993041685",
-      "instanceid": "8457186671",
+      "instanceid": "8474804909",
       "amount": 1,
       "name": "StatTrak™ P250 | Undertow",
       "market_hash_name": "StatTrak™ P250 | Undertow (Factory New)",
@@ -1996,9 +1977,61 @@
       ]
     },
     {
+      "assetid": "51501158427",
+      "classid": "7993048056",
+      "instanceid": "7249186032",
+      "amount": 1,
+      "name": "StatTrak™ M4A4 | Howl",
+      "market_hash_name": "StatTrak™ M4A4 | Howl (Factory New)",
+      "type": "StatTrak™ Contraband Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "47558203428",
       "classid": "7993046832",
-      "instanceid": "480101196",
+      "instanceid": "480090538",
       "amount": 1,
       "name": "StatTrak™ MP9 | Starlight Protector",
       "market_hash_name": "StatTrak™ MP9 | Starlight Protector (Factory New)",
@@ -2061,7 +2094,7 @@
     {
       "assetid": "50410386455",
       "classid": "7993036125",
-      "instanceid": "188543069",
+      "instanceid": "188531444",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Sakkaku",
       "market_hash_name": "StatTrak™ MAC-10 | Sakkaku (Field-Tested)",

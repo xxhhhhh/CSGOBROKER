@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/35086d74-6e47-4367-8d56-422f03f037e0",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-08T06:04:22.463Z",
+  "updatedAt": "2026-05-16T06:28:06.963Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 124,
-  "totalItemsGrouped": 112,
+  "totalItemsRaw": 119,
+  "totalItemsGrouped": 107,
   "items": [
     {
       "assetid": "49972793082",
@@ -191,14 +191,14 @@
       ]
     },
     {
-      "assetid": "43095196434",
+      "assetid": "51720264102",
       "classid": "7993036602",
-      "instanceid": "188530139",
+      "instanceid": "7583351348",
       "amount": 1,
       "name": "Glock-18 | Vogue",
       "market_hash_name": "Glock-18 | Vogue (Field-Tested)",
       "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206D7DFFEBDFA8CD6C75694DAE6A45685D6955D1E4FB986E2DBA6B050B1D65582F4279",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -736,37 +736,6 @@
           "category": "Tournament",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "47024822330",
-      "classid": "7545312149",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Charm | Lil' Cackle",
-      "market_hash_name": "Charm | Lil' Cackle",
-      "type": "High Grade Charm",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "47024822330"
       ]
     },
     {
@@ -1552,158 +1521,14 @@
       ]
     },
     {
-      "assetid": "46063088056",
-      "classid": "7993035635",
-      "instanceid": "188530139",
+      "assetid": "51719176418",
+      "classid": "7993067744",
+      "instanceid": "302028390",
       "amount": 1,
-      "name": "P250 | Cassette",
-      "market_hash_name": "P250 | Cassette (Field-Tested)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208B9B33684047208A93AFAB438CA388BB8FB3570E7A7B88CBA2E3BBFB83E90840DE",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50533035466",
-      "classid": "7993036626",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P250 | Cassette",
-      "market_hash_name": "P250 | Cassette (Minimal Wear)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BAAA7061391A06BBA29E9A72BD92B98ABE82675F0B55B9FAEFD2D1CAB253BA645D",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50533019273",
-      "classid": "7993035603",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "SG 553 | Ol' Rusty",
-      "market_hash_name": "SG 553 | Ol' Rusty (Field-Tested)",
-      "type": "Mil-Spec Grade Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242DB8FD0F2EE534A757294557A5162566ADB8088A65112F1553A33225A6CE1BCDE",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50533028865",
-      "classid": "7993037548",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P90 | Freight",
-      "market_hash_name": "P90 | Freight (Battle-Scarred)",
-      "type": "Mil-Spec Grade SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B3A3321B30130FB2ABA0937AB49BB083B78B17740748B0F312B4DBD1C3BB46BC040F",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50533015099",
-      "classid": "7993037371",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P90 | Freight",
-      "market_hash_name": "P90 | Freight (Field-Tested)",
-      "type": "Mil-Spec Grade SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207565CEC9F7D5C9746D6655BC725D7645714DEFD5C4807635B4761D7E057DAB8270A1",
+      "name": "SSG 08 | Calligrafaux",
+      "market_hash_name": "SSG 08 | Calligrafaux (Well-Worn)",
+      "type": "Industrial Grade Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -4534,7 +4359,7 @@
     {
       "assetid": "43447756858",
       "classid": "7993037251",
-      "instanceid": "905683814",
+      "instanceid": "902763003",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Etch Lord",
       "market_hash_name": "StatTrak™ M4A4 | Etch Lord (Field-Tested)",

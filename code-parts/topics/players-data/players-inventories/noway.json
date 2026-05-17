@@ -12,14 +12,53 @@
   "faceit": "https://faceitdb.com/profile/faceit/91396c85-8498-429e-bf1a-5f8da3c2336b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-14T07:08:50.470Z",
+  "updatedAt": "2026-05-17T07:10:26.211Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 59,
-  "totalItemsGrouped": 52,
+  "totalItemsRaw": 63,
+  "totalItemsGrouped": 57,
   "items": [
+    {
+      "assetid": "51493527921",
+      "classid": "7993040351",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Gamma Doppler",
+      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208999784B0A633688910A8DA9358DA18FB98AB1574427628AC9CBE1A3F98D5543AF15",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.057532183826,
+      "seed": 66,
+      "phase": "Phase 4"
+    },
     {
       "assetid": "51473271921",
       "classid": "8247668937",
@@ -46,6 +85,37 @@
           "category": "Exterior",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "51713907193",
+      "classid": "1989274104",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Heart (Blood Red)",
+      "market_hash_name": "Graffiti | Heart (Blood Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205B4B5B439E517B5B735A6B5F395C535B4BE3566B59335B2B4378701DAC",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51713907193"
       ]
     },
     {
@@ -1068,11 +1138,11 @@
       "assetid": "51436760202",
       "classid": "7104655063",
       "instanceid": "188530139",
-      "amount": 7,
+      "amount": 6,
       "name": "Sticker | noway | Austin 2025",
       "market_hash_name": "Sticker | noway | Austin 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209282928A2B9BB292BA91A296F0979A928279D5FA92E29A92FDD4B4",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203424342C8D3D14341C37043056313C3424DF735C34443C3F5BB9BC",
       "tags": [
         {
           "category": "Type",
@@ -1113,8 +1183,7 @@
         "51436760176",
         "51436760085",
         "51436760081",
-        "51436760078",
-        "51436760223"
+        "51436760078"
       ]
     },
     {
@@ -1162,6 +1231,42 @@
       "market_hash_name": "Glock-18 | Nuclear Garden (Minimal Wear)",
       "type": "Restricted Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%207363E7CC89D6C0726B7753E6755B7743774BF0E9F29C7033C5761B7203773B53318B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51528229663",
+      "classid": "7993038465",
+      "instanceid": "8230236310",
+      "amount": 1,
+      "name": "Galil AR | Cerberus",
+      "market_hash_name": "Galil AR | Cerberus (Field-Tested)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1322,9 +1427,45 @@
       ]
     },
     {
+      "assetid": "51528251790",
+      "classid": "7993047494",
+      "instanceid": "188532780",
+      "amount": 1,
+      "name": "StatTrak™ P250 | Epicenter",
+      "market_hash_name": "StatTrak™ P250 | Epicenter (Minimal Wear)",
+      "type": "StatTrak™ Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51528408971",
       "classid": "7993037525",
-      "instanceid": "8469092223",
+      "instanceid": "8473931684",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
@@ -1408,7 +1549,7 @@
     {
       "assetid": "50997535650",
       "classid": "7993040139",
-      "instanceid": "188531926",
+      "instanceid": "188530564",
       "amount": 1,
       "name": "StatTrak™ MAG-7 | Insomnia",
       "market_hash_name": "StatTrak™ MAG-7 | Insomnia (Minimal Wear)",
@@ -1444,7 +1585,7 @@
     {
       "assetid": "50901036518",
       "classid": "7993036246",
-      "instanceid": "188539935",
+      "instanceid": "188587705",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Ensnared",
       "market_hash_name": "StatTrak™ MAC-10 | Ensnared (Field-Tested)",
@@ -1514,14 +1655,14 @@
       ]
     },
     {
-      "assetid": "49458447076",
+      "assetid": "51711048505",
       "classid": "7993042258",
-      "instanceid": "8469092227",
+      "instanceid": "8473931683",
       "amount": 1,
       "name": "StatTrak™ USP-S | Guardian",
       "market_hash_name": "StatTrak™ USP-S | Guardian (Factory New)",
       "type": "StatTrak™ Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208D9D69085D12358C95B0AD2F8FA589BD84B5506113658ECD568EC58DDD35DCEF88858D9D2A8FEF88858C9D3787EF89858F9DC1EF89858E9DB8E586FD856301B54A",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1560,7 +1701,7 @@
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "Tournament",
           "name": ""
         },
         {
@@ -1573,6 +1714,54 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51528238804",
+      "classid": "7993038837",
+      "instanceid": "8477788123",
+      "amount": 1,
+      "name": "StatTrak™ MP9 | Goo",
+      "market_hash_name": "StatTrak™ MP9 | Goo (Factory New)",
+      "type": "StatTrak™ Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

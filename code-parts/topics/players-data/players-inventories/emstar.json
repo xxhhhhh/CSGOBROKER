@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/10cba186-49d9-4351-bd3f-45bc7b0de76c",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-08T06:19:14.174Z",
+  "updatedAt": "2026-05-17T07:14:42.507Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 50,
-  "totalItemsGrouped": 50,
+  "totalItemsRaw": 52,
+  "totalItemsGrouped": 52,
   "items": [
     {
       "assetid": "50141649138",
@@ -36,6 +36,34 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51530982257",
+      "classid": "7993038111",
+      "instanceid": "8446086544",
+      "amount": 1,
+      "name": "★ Driver Gloves | Imperial Plaid",
+      "market_hash_name": "★ Driver Gloves | Imperial Plaid (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
           "name": ""
         },
         {
@@ -648,6 +676,42 @@
       "market_hash_name": "Galil AR | Chromatic Aberration (Battle-Scarred)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%2084945141797424859C89A40A8CAC81B480BC0D05317387C47182EC98F48C816A1A04",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51526457022",
+      "classid": "7993035498",
+      "instanceid": "8446086756",
+      "amount": 1,
+      "name": "MP9 | Buff Blue",
+      "market_hash_name": "MP9 | Buff Blue (Minimal Wear)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
