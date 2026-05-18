@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/936a539c-ef03-4fb2-b5d6-97218f5d464d",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-01T07:12:40.547Z",
+  "updatedAt": "2026-05-18T07:57:20.766Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 144,
-  "totalItemsGrouped": 139,
+  "totalItemsRaw": 145,
+  "totalItemsGrouped": 140,
   "items": [
     {
       "assetid": "50035423373",
@@ -249,14 +249,14 @@
       ]
     },
     {
-      "assetid": "48833410782",
+      "assetid": "51559473523",
       "classid": "6195246388",
       "instanceid": "302028390",
       "amount": 4,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E3F3E3FB35C5C3E3CBE2D3E78BE393FBB3523EFF",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D5C5D5CD03F3F5D5FDD4E5D1BDD5A5CD1E4E08FB",
       "tags": [
         {
           "category": "Type",
@@ -272,10 +272,10 @@
         }
       ],
       "assetids": [
+        "51559473523",
         "48833410782",
         "42994344932",
-        "41114746916",
-        "51559473523"
+        "41114746916"
       ]
     },
     {
@@ -2894,6 +2894,42 @@
       "market_hash_name": "MAG-7 | Resupply (Well-Worn)",
       "type": "Mil-Spec Grade Shotgun",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%206373F8B9FAF9D8627B7843C76A4B6053675BEE87F094602394620B1D136B1FBD9CC3",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51559487425",
+      "classid": "7993036737",
+      "instanceid": "8449002360",
+      "amount": 1,
+      "name": "XM1014 | Irezumi",
+      "market_hash_name": "XM1014 | Irezumi (Field-Tested)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
