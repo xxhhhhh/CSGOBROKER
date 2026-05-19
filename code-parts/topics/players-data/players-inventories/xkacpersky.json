@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/7cfd2312-1ff0-434c-a4b1-be10b033636f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-18T07:25:25.372Z",
+  "updatedAt": "2026-05-19T07:17:57.724Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 71,
-  "totalItemsGrouped": 70,
+  "totalItemsRaw": 73,
+  "totalItemsGrouped": 72,
   "items": [
     {
       "assetid": "51378486572",
@@ -57,6 +57,38 @@
       ]
     },
     {
+      "assetid": "51579543649",
+      "classid": "7993047175",
+      "instanceid": "8451825716",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Slaughter",
+      "market_hash_name": "★ M9 Bayonet | Slaughter (Field-Tested)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51529875474",
       "classid": "7993042573",
       "instanceid": "480085569",
@@ -64,7 +96,7 @@
       "name": "★ Talon Knife | Doppler",
       "market_hash_name": "★ Talon Knife | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CBDB594B653074CAD340CFEB54C8E3CDFBC8F30B687823C88BEDA3DCBBCFBC5DF023",
       "tags": [
         {
           "category": "Type",
@@ -90,7 +122,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.034379720688,
+      "seed": 38,
+      "phase": "Ruby"
     },
     {
       "assetid": "49540334877",
@@ -712,6 +747,42 @@
       "market_hash_name": "SG 553 | Integrale (Factory New)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%2067778A9BBBB2C8667F404789624F6257635FD7BC9E8C6427C4620F2B17635B5F578F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51579543980",
+      "classid": "7993037176",
+      "instanceid": "8451826687",
+      "amount": 1,
+      "name": "AWP | Crakow!",
+      "market_hash_name": "AWP | Crakow! (Field-Tested)",
+      "type": "Classified Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

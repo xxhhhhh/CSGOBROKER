@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/players/meowsui/",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-16T05:56:03.483Z",
+  "updatedAt": "2026-05-19T06:52:29.905Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 783,
-  "totalItemsGrouped": 704,
+  "totalItemsRaw": 761,
+  "totalItemsGrouped": 703,
   "items": [
     {
       "assetid": "47476789264",
@@ -8484,42 +8484,6 @@
       ]
     },
     {
-      "assetid": "51670028389",
-      "classid": "7993061652",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "PP-Bizon | Thermal Currents",
-      "market_hash_name": "PP-Bizon | Thermal Currents (Field-Tested)",
-      "type": "Consumer Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "25081688227",
       "classid": "7993045954",
       "instanceid": "7083625831",
@@ -10204,7 +10168,7 @@
       "assetid": "46265508261",
       "classid": "6216554000",
       "instanceid": "0",
-      "amount": 24,
+      "amount": 3,
       "name": "Charm | Semi-Precious",
       "market_hash_name": "Charm | Semi-Precious",
       "type": "Exotic Charm",
@@ -10230,28 +10194,7 @@
       "assetids": [
         "46265508261",
         "46265486615",
-        "46265428796",
-        "50749355155",
-        "50749355139",
-        "50749355126",
-        "50749355115",
-        "50749355094",
-        "50749354834",
-        "50749297997",
-        "50735751278",
-        "50735192516",
-        "50735192493",
-        "50735192482",
-        "50735192465",
-        "50735192450",
-        "50735192436",
-        "50735192429",
-        "50735090919",
-        "50735090708",
-        "50735090435",
-        "50735090423",
-        "50735090409",
-        "50735090401"
+        "46265428796"
       ]
     },
     {
@@ -12857,86 +12800,6 @@
       ],
       "assetids": [
         "26799362849"
-      ]
-    },
-    {
-      "assetid": "50414931175",
-      "classid": "7862362157",
-      "instanceid": "7907014571",
-      "amount": 1,
-      "name": "Budapest 2025 Train Souvenir Highlight Package",
-      "market_hash_name": "Budapest 2025 Train Souvenir Highlight Package",
-      "type": "Highlight Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50414931182",
-      "classid": "7862362157",
-      "instanceid": "7907014571",
-      "amount": 1,
-      "name": "Budapest 2025 Train Souvenir Highlight Package",
-      "market_hash_name": "Budapest 2025 Train Souvenir Highlight Package",
-      "type": "Highlight Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
       ]
     },
     {
@@ -22550,6 +22413,110 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51760585837",
+      "classid": "7993037722",
+      "instanceid": "7907008034",
+      "amount": 1,
+      "name": "Souvenir Galil AR | Green Apple",
+      "market_hash_name": "Souvenir Galil AR | Green Apple (Minimal Wear)",
+      "type": "Souvenir Industrial Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51761306410",
+      "classid": "7993039537",
+      "instanceid": "7907047941",
+      "amount": 1,
+      "name": "Souvenir Nova | Rain Station",
+      "market_hash_name": "Souvenir Nova | Rain Station (Factory New)",
+      "type": "Souvenir Industrial Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
           "name": ""
         },
         {

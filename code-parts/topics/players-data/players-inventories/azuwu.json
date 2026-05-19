@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/004181c4-494a-44a6-be60-3c80264e84aa",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-18T07:17:48.986Z",
+  "updatedAt": "2026-05-19T07:09:18.417Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 198,
-  "totalItemsGrouped": 197,
+  "totalItemsRaw": 199,
+  "totalItemsGrouped": 198,
   "items": [
     {
       "assetid": "51204343197",
@@ -379,6 +379,34 @@
       ]
     },
     {
+      "assetid": "51764416321",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "23185871028",
       "classid": "1989274131",
       "instanceid": "302028390",
@@ -593,37 +621,6 @@
       ],
       "assetids": [
         "40558543942"
-      ]
-    },
-    {
-      "assetid": "42897064933",
-      "classid": "1989283415",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Graffiti | Tombstone (Frog Green)",
-      "market_hash_name": "Sealed Graffiti | Tombstone (Frog Green)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201303130BD71933133B12231771141B1303A41E231A7B13630BA086B5D1",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "42897064933"
       ]
     },
     {
@@ -1755,6 +1752,42 @@
       "market_hash_name": "MP9 | Buff Blue (Battle-Scarred)",
       "type": "Consumer Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EAFA7B34657A40EBF2C8CA14E3C2EBDAEED262705713E9AA4EE88262EB9AF2C6492297",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51764416322",
+      "classid": "7993035498",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MP9 | Buff Blue",
+      "market_hash_name": "MP9 | Buff Blue (Minimal Wear)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
