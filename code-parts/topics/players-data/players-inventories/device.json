@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/d6bc4849-5256-4463-a38e-bcd77fc31ff9",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-17T07:00:48.024Z",
+  "updatedAt": "2026-05-20T07:30:25.169Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 101,
-  "totalItemsGrouped": 101,
+  "totalItemsRaw": 100,
+  "totalItemsGrouped": 100,
   "items": [
     {
       "assetid": "50987663909",
@@ -60,17 +60,21 @@
       "phase": "Sapphire"
     },
     {
-      "assetid": "51469319131",
-      "classid": "8246975941",
-      "instanceid": "480085569",
+      "assetid": "51589944762",
+      "classid": "7993044319",
+      "instanceid": "8454734414",
       "amount": 1,
-      "name": "★ Specialist Gloves | Cloud Chaser",
-      "market_hash_name": "★ Specialist Gloves | Cloud Chaser (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
+      "name": "★ Karambit | Slaughter",
+      "market_hash_name": "★ Karambit | Slaughter (Factory New)",
+      "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
           "name": ""
         },
         {
@@ -1281,14 +1285,14 @@
       ]
     },
     {
-      "assetid": "50827999602",
+      "assetid": "51772931479",
       "classid": "7993037085",
-      "instanceid": "188530139",
+      "instanceid": "6276404030",
       "amount": 1,
       "name": "AWP | Asiimov",
       "market_hash_name": "AWP | Asiimov (Field-Tested)",
       "type": "Covert Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2092826060443E2F938A9BB20590BA94A296AA3917076791D26D91FAB2E29A627755E6",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1478,37 +1482,6 @@
           "category": "Rarity",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "51629025500",
-      "classid": "6216487158",
-      "instanceid": "0",
-      "amount": 1,
-      "name": "Charm | Baby Karat T",
-      "market_hash_name": "Charm | Baby Karat T",
-      "type": "Extraordinary Charm",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51629025500"
       ]
     },
     {
@@ -3339,7 +3312,7 @@
     {
       "assetid": "47919483237",
       "classid": "7993040817",
-      "instanceid": "8481430306",
+      "instanceid": "8484538247",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Factory New)",
@@ -3455,7 +3428,7 @@
     {
       "assetid": "43430887464",
       "classid": "7993039194",
-      "instanceid": "188551735",
+      "instanceid": "188543700",
       "amount": 1,
       "name": "StatTrak™ MP9 | Nexus",
       "market_hash_name": "StatTrak™ MP9 | Nexus (Minimal Wear)",
