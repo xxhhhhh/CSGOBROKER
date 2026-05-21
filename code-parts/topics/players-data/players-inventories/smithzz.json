@@ -7,16 +7,18 @@
   "name": "Edouard Dubourdeaux",
   "nationality": "France",
   "born": "17.12.1988",
+  "isContentCreator": false,
   "twitch": "smithzz",
   "faceit": "https://faceitdb.com/profile/faceit/5a4e258d-c912-46b6-94f1-984d59150f82",
-  "isContentCreator": false,
-  "updatedAt": "2026-05-17T07:25:18.326Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 326,
-  "totalItemsGrouped": 302,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-05-21T08:02:57.048Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 325,
+  "totalItemsGrouped": 301,
   "items": [
     {
       "assetid": "48699702436",
@@ -7918,50 +7920,6 @@
       ]
     },
     {
-      "assetid": "46454861408",
-      "classid": "259070040",
-      "instanceid": "6276342048",
-      "amount": 1,
-      "name": "AK-47 | Blue Laminate",
-      "market_hash_name": "AK-47 | Blue Laminate (Minimal Wear)",
-      "type": "Restricted Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EBFB0B37586C46EAF3ECCB09EAC3EFDBEFD373607F1BE8AB69ED89EEE3EBFB09CD836BE99BE301E2F1C7",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49283780805",
       "classid": "7993043892",
       "instanceid": "519977179",
@@ -9896,7 +9854,7 @@
     {
       "assetid": "14792369647",
       "classid": "7993038472",
-      "instanceid": "8480139724",
+      "instanceid": "8487901188",
       "amount": 1,
       "name": "StatTrak™ USP-S | Orion",
       "market_hash_name": "StatTrak™ USP-S | Orion (Factory New)",
@@ -10080,7 +10038,7 @@
     {
       "assetid": "16438466200",
       "classid": "7993042380",
-      "instanceid": "8480139723",
+      "instanceid": "8487901185",
       "amount": 1,
       "name": "StatTrak™ AWP | Asiimov",
       "market_hash_name": "StatTrak™ AWP | Asiimov (Battle-Scarred)",
@@ -10616,7 +10574,7 @@
     {
       "assetid": "14792372310",
       "classid": "7993041152",
-      "instanceid": "8473885414",
+      "instanceid": "8487901187",
       "amount": 1,
       "name": "StatTrak™ MP9 | Ruby Poison Dart",
       "market_hash_name": "StatTrak™ MP9 | Ruby Poison Dart (Minimal Wear)",

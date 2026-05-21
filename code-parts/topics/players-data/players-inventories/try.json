@@ -7,16 +7,18 @@
   "name": "Santino Bruno",
   "nationality": "Argentina",
   "born": "23.09.2004",
+  "isContentCreator": false,
   "twitch": "TRYZSE",
   "faceit": "https://faceitdb.com/profile/faceit/1830d4f8-a243-47d8-b8b8-943f7170b163",
-  "isContentCreator": false,
-  "updatedAt": "2026-05-15T07:05:32.049Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 364,
-  "totalItemsGrouped": 363,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-05-21T07:27:09.615Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 363,
+  "totalItemsGrouped": 362,
   "items": [
     {
       "assetid": "51467778357",
@@ -260,34 +262,6 @@
       "amount": 1,
       "name": "★ Sport Gloves | Ultra Violent",
       "market_hash_name": "★ Sport Gloves | Ultra Violent (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50199252644",
-      "classid": "7993038043",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Vice",
-      "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -12317,7 +12291,7 @@
     {
       "assetid": "46235807539",
       "classid": "7993040284",
-      "instanceid": "480097021",
+      "instanceid": "480089302",
       "amount": 1,
       "name": "StatTrak™ USP-S | Cortex",
       "market_hash_name": "StatTrak™ USP-S | Cortex (Minimal Wear)",
@@ -12389,7 +12363,7 @@
     {
       "assetid": "51414714962",
       "classid": "7993040297",
-      "instanceid": "8465484884",
+      "instanceid": "8488524312",
       "amount": 1,
       "name": "StatTrak™ AWP | Graphite",
       "market_hash_name": "StatTrak™ AWP | Graphite (Factory New)",
@@ -12445,7 +12419,7 @@
     {
       "assetid": "50556994645",
       "classid": "8247137616",
-      "instanceid": "188536206",
+      "instanceid": "188541521",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Fully Tuned",
       "market_hash_name": "StatTrak™ Glock-18 | Fully Tuned (Field-Tested)",
@@ -12481,7 +12455,7 @@
     {
       "assetid": "49571276163",
       "classid": "7993041773",
-      "instanceid": "8465484885",
+      "instanceid": "8488524313",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
@@ -13321,7 +13295,7 @@
     {
       "assetid": "33421738305",
       "classid": "7993041851",
-      "instanceid": "188573106",
+      "instanceid": "188643448",
       "amount": 1,
       "name": "StatTrak™ UMP-45 | Moonrise",
       "market_hash_name": "StatTrak™ UMP-45 | Moonrise (Factory New)",
