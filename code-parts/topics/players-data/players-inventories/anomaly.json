@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/players/anomaly/",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-21T07:01:08.877Z",
+  "updatedAt": "2026-05-22T06:56:23.999Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 326,
-  "totalItemsGrouped": 315,
+  "totalItemsRaw": 325,
+  "totalItemsGrouped": 314,
   "items": [
     {
       "assetid": "44874654051",
@@ -90,38 +90,6 @@
       "float": 0.007866431028,
       "seed": 19,
       "phase": "Phase 2"
-    },
-    {
-      "assetid": "51601199000",
-      "classid": "7993042523",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Fade",
-      "market_hash_name": "★ Karambit | Fade (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "45577595294",
@@ -772,34 +740,6 @@
       ]
     },
     {
-      "assetid": "51602830890",
-      "classid": "8247419295",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Driver Gloves | Garden",
-      "market_hash_name": "★ Driver Gloves | Garden (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51236943652",
       "classid": "7993037847",
       "instanceid": "188530139",
@@ -867,46 +807,6 @@
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51616650809",
-      "classid": "7993043289",
-      "instanceid": "8457712135",
-      "amount": 1,
-      "name": "★ StatTrak™ Bayonet | Case Hardened",
-      "market_hash_name": "★ StatTrak™ Bayonet | Case Hardened (Field-Tested)",
-      "type": "★ StatTrak™ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
           "name": ""
         },
         {
@@ -2668,30 +2568,6 @@
       ]
     },
     {
-      "assetid": "51631118256",
-      "classid": "7729110306",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Name Tag",
-      "market_hash_name": "Name Tag",
-      "type": "Base Grade Tag",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E1F1E1F951E8C1E1C9E0D1E589E191E384B62F3D",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51631118257",
       "classid": "7729110306",
       "instanceid": "143865972",
@@ -4325,6 +4201,34 @@
       ]
     },
     {
+      "assetid": "51829898786",
+      "classid": "8490781882",
+      "instanceid": "8490796023",
+      "amount": 1,
+      "name": "Cologne 2026 Coin",
+      "market_hash_name": "Cologne 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "36426075842",
       "classid": "6276298458",
       "instanceid": "6276299353",
@@ -5640,6 +5544,42 @@
       "amount": 1,
       "name": "M249 | Bock Blocks",
       "market_hash_name": "M249 | Bock Blocks (Factory New)",
+      "type": "Mil-Spec Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51829416903",
+      "classid": "7993048195",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "M249 | Humidor",
+      "market_hash_name": "M249 | Humidor (Field-Tested)",
       "type": "Mil-Spec Grade Machinegun",
       "inspectLink": "",
       "tags": [
@@ -7374,6 +7314,42 @@
       ]
     },
     {
+      "assetid": "51829853361",
+      "classid": "7993048505",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "G3SG1 | New Roots",
+      "market_hash_name": "G3SG1 | New Roots (Field-Tested)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "29258484136",
       "classid": "241578325",
       "instanceid": "6276366558",
@@ -8540,7 +8516,7 @@
     {
       "assetid": "51616688027",
       "classid": "259070040",
-      "instanceid": "8480616222",
+      "instanceid": "8437713671",
       "amount": 1,
       "name": "AK-47 | Blue Laminate",
       "market_hash_name": "AK-47 | Blue Laminate (Minimal Wear)",
@@ -9567,7 +9543,7 @@
     {
       "assetid": "40909335732",
       "classid": "7993037772",
-      "instanceid": "8459843786",
+      "instanceid": "8489047869",
       "amount": 1,
       "name": "StatTrak™ M4A4 | 龍王 (Dragon King)",
       "market_hash_name": "StatTrak™ M4A4 | 龍王 (Dragon King) (Factory New)",
@@ -9907,7 +9883,7 @@
     {
       "assetid": "51597986962",
       "classid": "8451071999",
-      "instanceid": "1310403798",
+      "instanceid": "1310152245",
       "amount": 1,
       "name": "StatTrak™ Music Kit | borne, Give It To Me",
       "market_hash_name": "StatTrak™ Music Kit | borne, Give It To Me",
