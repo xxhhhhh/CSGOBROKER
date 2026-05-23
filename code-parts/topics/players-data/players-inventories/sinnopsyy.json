@@ -12,21 +12,56 @@
   "faceit": "https://faceitdb.com/profile/faceit/f8580374-5c09-43bc-bef2-463f1fde9aff",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-22T08:00:06.534Z",
+  "updatedAt": "2026-05-23T07:22:50.801Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 89,
-  "totalItemsGrouped": 82,
+  "totalItemsRaw": 257,
+  "totalItemsGrouped": 250,
   "items": [
     {
       "assetid": "51625418444",
       "classid": "7993037378",
-      "instanceid": "8460631031",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Flip Knife | Gamma Doppler",
       "market_hash_name": "★ Flip Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2096865A2B633E56978E6F95B62F92BE90A695AE5D705C7E95D6EEFE9AE69E86F5CEF6",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.035815518349,
+      "seed": 120,
+      "phase": "Phase 1"
+    },
+    {
+      "assetid": "51625418445",
+      "classid": "7993044544",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Case Hardened",
+      "market_hash_name": "★ Karambit | Case Hardened (Well-Worn)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -53,12 +88,12 @@
       ]
     },
     {
-      "assetid": "51625418445",
-      "classid": "7993044544",
-      "instanceid": "8460631031",
+      "assetid": "51637811822",
+      "classid": "7993042531",
+      "instanceid": "8463267659",
       "amount": 1,
-      "name": "★ Karambit | Case Hardened",
-      "market_hash_name": "★ Karambit | Case Hardened (Well-Worn)",
+      "name": "★ Stiletto Knife | Urban Masked",
+      "market_hash_name": "★ Stiletto Knife | Urban Masked (Minimal Wear)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -68,6 +103,38 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51639589664",
+      "classid": "8247053652",
+      "instanceid": "8463265334",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Pillow Punchers",
+      "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
           "name": ""
         },
         {
@@ -1342,14 +1409,14 @@
       ]
     },
     {
-      "assetid": "46173619473",
-      "classid": "7993036467",
-      "instanceid": "7495299370",
+      "assetid": "51850301949",
+      "classid": "7993041164",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "Desert Eagle | Tilted",
-      "market_hash_name": "Desert Eagle | Tilted (Factory New)",
+      "name": "CZ75-Auto | Midnight Palm",
+      "market_hash_name": "CZ75-Auto | Midnight Palm (Field-Tested)",
       "type": "Industrial Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ECFC7D664A6D40EDF4EDCC66EDC4EEDCE8D43606520AEFAC3EE88EF8E4EDFC01D1C1ECECFC2DD154E56151A94C5CBC508EE3E4EFFC44C8D194A1ACD1A94CD674D08EF8E4E8FC44C8C1ECECC7AFD1D4A0EE53A9C53F6F528EF8E4E8FC44C8C1ECECC7AFD1EDDF0B52A97BEA69528EF8E4EEFC44C8C1ECECACACD104E5C852A9EC11CDD08469ED9CFBE930978C",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1378,14 +1445,14 @@
       ]
     },
     {
-      "assetid": "45671935782",
-      "classid": "7993037205",
-      "instanceid": "519977179",
+      "assetid": "46173619473",
+      "classid": "7993036467",
+      "instanceid": "7495299370",
       "amount": 1,
-      "name": "Tec-9 | Tiger Stencil",
-      "market_hash_name": "Tec-9 | Tiger Stencil (Field-Tested)",
+      "name": "Desert Eagle | Tilted",
+      "market_hash_name": "Desert Eagle | Tilted (Factory New)",
       "type": "Industrial Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201A0ABCC49388B01B02043AE41F32182A1E22F2ABB9EB195AED1872406A0D04C41722",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ECFC7D664A6D40EDF4EDCC66EDC4EEDCE8D43606520AEFAC3EE88EF8E4EDFC01D1C1ECECFC2DD154E56151A94C5CBC508EE3E4EFFC44C8D194A1ACD1A94CD674D08EF8E4E8FC44C8C1ECECC7AFD1D4A0EE53A9C53F6F528EF8E4E8FC44C8C1ECECC7AFD1EDDF0B52A97BEA69528EF8E4EEFC44C8C1ECECACACD104E5C852A9EC11CDD08469ED9CFBE930978C",
       "tags": [
         {
           "category": "Type",
@@ -1450,13 +1517,49 @@
       ]
     },
     {
-      "assetid": "51201476595",
-      "classid": "8246893290",
+      "assetid": "51850396637",
+      "classid": "7993042345",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "MP9 | Old Roots",
+      "market_hash_name": "MP9 | Old Roots (Field-Tested)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30247666799",
+      "classid": "7993041082",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "Five-SeveN | Dark Polymer",
-      "market_hash_name": "Five-SeveN | Dark Polymer (Field-Tested)",
-      "type": "Mil-Spec Grade Pistol",
+      "name": "SSG 08 | Azure Glyph",
+      "market_hash_name": "SSG 08 | Azure Glyph (Well-Worn)",
+      "type": "Industrial Grade Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -1558,85 +1661,13 @@
       ]
     },
     {
-      "assetid": "51201342741",
-      "classid": "8246892803",
-      "instanceid": "188530139",
+      "assetid": "51850368211",
+      "classid": "7993042926",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "USP-S | Silent Shot",
-      "market_hash_name": "USP-S | Silent Shot (Minimal Wear)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51201529333",
-      "classid": "8246894415",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "M4A4 | Zubastick",
-      "market_hash_name": "M4A4 | Zubastick (Battle-Scarred)",
-      "type": "Mil-Spec Grade Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51201536172",
-      "classid": "8246927976",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "M4A4 | Zubastick",
-      "market_hash_name": "M4A4 | Zubastick (Well-Worn)",
-      "type": "Mil-Spec Grade Rifle",
+      "name": "Nova | Quick Sand",
+      "market_hash_name": "Nova | Quick Sand (Field-Tested)",
+      "type": "Mil-Spec Grade Shotgun",
       "inspectLink": "",
       "tags": [
         {
@@ -1705,6 +1736,78 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51850331690",
+      "classid": "7993043836",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "MP9 | Music Box",
+      "market_hash_name": "MP9 | Music Box (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51850407136",
+      "classid": "7993043836",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "MP9 | Music Box",
+      "market_hash_name": "MP9 | Music Box (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1962,6 +2065,94 @@
       ]
     },
     {
+      "assetid": "25611450998",
+      "classid": "7993035629",
+      "instanceid": "7797221789",
+      "amount": 1,
+      "name": "AK-47 | Slate",
+      "market_hash_name": "AK-47 | Slate (Field-Tested)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51850345217",
+      "classid": "8246908559",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Galil AR | Galigator",
+      "market_hash_name": "Galil AR | Galigator (Well-Worn)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51185519452",
       "classid": "7993035945",
       "instanceid": "6276566845",
@@ -2102,6 +2293,150 @@
       ]
     },
     {
+      "assetid": "31480328184",
+      "classid": "7993038899",
+      "instanceid": "6277263179",
+      "amount": 1,
+      "name": "Souvenir M249 | Contrast Spray",
+      "market_hash_name": "Souvenir M249 | Contrast Spray (Field-Tested)",
+      "type": "Souvenir Consumer Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30424987337",
+      "classid": "7993042875",
+      "instanceid": "6278116230",
+      "amount": 1,
+      "name": "Souvenir M249 | Contrast Spray",
+      "market_hash_name": "Souvenir M249 | Contrast Spray (Well-Worn)",
+      "type": "Souvenir Consumer Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27987860847",
+      "classid": "7993042479",
+      "instanceid": "6277593692",
+      "amount": 1,
+      "name": "Souvenir CZ75-Auto | Framework",
+      "market_hash_name": "Souvenir CZ75-Auto | Framework (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "27580482325",
       "classid": "7993040448",
       "instanceid": "6277497838",
@@ -2110,6 +2445,54 @@
       "market_hash_name": "Souvenir Dual Berettas | Oil Change (Field-Tested)",
       "type": "Souvenir Consumer Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%202434B1A297FB423C26049A2C0C2514281CBCDEDBD62764B82746302C2434A80B3924242424012424A41B092424242446302C2534D40A3924242424012424A41B092424242446302C2634BB293924242424012424A41B092424242446302C2734880B3924242424012424A41B09242424244C25542CDDD864AE",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612845165",
+      "classid": "7993040448",
+      "instanceid": "6276879770",
+      "amount": 1,
+      "name": "Souvenir Dual Berettas | Oil Change",
+      "market_hash_name": "Souvenir Dual Berettas | Oil Change (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2202,6 +2585,1642 @@
       ]
     },
     {
+      "assetid": "36553739087",
+      "classid": "7993038156",
+      "instanceid": "6276304564",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Factory New)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45610475434",
+      "classid": "7993038156",
+      "instanceid": "7274761097",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Factory New)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26505045261",
+      "classid": "7993037153",
+      "instanceid": "6276816110",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27818099541",
+      "classid": "7993037153",
+      "instanceid": "6276931235",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27827045494",
+      "classid": "7993037153",
+      "instanceid": "6276660724",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27834228596",
+      "classid": "7993037153",
+      "instanceid": "6276491490",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27928373673",
+      "classid": "7993037153",
+      "instanceid": "6276324161",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30247498867",
+      "classid": "7993037153",
+      "instanceid": "6276416005",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30465220962",
+      "classid": "7993037153",
+      "instanceid": "6276311736",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30978814248",
+      "classid": "7993037153",
+      "instanceid": "6276453896",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "31749360774",
+      "classid": "7993037153",
+      "instanceid": "6276408540",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "32605728310",
+      "classid": "7993037153",
+      "instanceid": "6276398109",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "33357439358",
+      "classid": "7993037153",
+      "instanceid": "6276594808",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "36893514085",
+      "classid": "7993037153",
+      "instanceid": "6276299088",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612849108",
+      "classid": "7993036313",
+      "instanceid": "6276592114",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "28169034629",
+      "classid": "7993036313",
+      "instanceid": "6276593632",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "28194138602",
+      "classid": "7993036313",
+      "instanceid": "6276931235",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30229080663",
+      "classid": "7993036313",
+      "instanceid": "6276311964",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "36808491321",
+      "classid": "7993038559",
+      "instanceid": "6276299088",
+      "amount": 1,
+      "name": "Souvenir P250 | Drought",
+      "market_hash_name": "Souvenir P250 | Drought (Well-Worn)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612888230",
+      "classid": "7993038483",
+      "instanceid": "6281753765",
+      "amount": 1,
+      "name": "Souvenir R8 Revolver | Desert Brush",
+      "market_hash_name": "Souvenir R8 Revolver | Desert Brush (Factory New)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "25919133471",
+      "classid": "7993036161",
+      "instanceid": "6276542980",
+      "amount": 1,
+      "name": "Souvenir R8 Revolver | Desert Brush",
+      "market_hash_name": "Souvenir R8 Revolver | Desert Brush (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26270162618",
+      "classid": "7993036161",
+      "instanceid": "6276310969",
+      "amount": 1,
+      "name": "Souvenir R8 Revolver | Desert Brush",
+      "market_hash_name": "Souvenir R8 Revolver | Desert Brush (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27313356445",
+      "classid": "7993036161",
+      "instanceid": "6276473865",
+      "amount": 1,
+      "name": "Souvenir R8 Revolver | Desert Brush",
+      "market_hash_name": "Souvenir R8 Revolver | Desert Brush (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612861753",
+      "classid": "7993036161",
+      "instanceid": "6276317870",
+      "amount": 1,
+      "name": "Souvenir R8 Revolver | Desert Brush",
+      "market_hash_name": "Souvenir R8 Revolver | Desert Brush (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612887194",
+      "classid": "7993036161",
+      "instanceid": "6280576782",
+      "amount": 1,
+      "name": "Souvenir R8 Revolver | Desert Brush",
+      "market_hash_name": "Souvenir R8 Revolver | Desert Brush (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27987883201",
+      "classid": "7993036161",
+      "instanceid": "6278059868",
+      "amount": 1,
+      "name": "Souvenir R8 Revolver | Desert Brush",
+      "market_hash_name": "Souvenir R8 Revolver | Desert Brush (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "28202806980",
+      "classid": "7993036161",
+      "instanceid": "6285644876",
+      "amount": 1,
+      "name": "Souvenir R8 Revolver | Desert Brush",
+      "market_hash_name": "Souvenir R8 Revolver | Desert Brush (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "40887853179",
+      "classid": "7993036161",
+      "instanceid": "6478103416",
+      "amount": 1,
+      "name": "Souvenir R8 Revolver | Desert Brush",
+      "market_hash_name": "Souvenir R8 Revolver | Desert Brush (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45671988844",
+      "classid": "7993036161",
+      "instanceid": "7274761019",
+      "amount": 1,
+      "name": "Souvenir R8 Revolver | Desert Brush",
+      "market_hash_name": "Souvenir R8 Revolver | Desert Brush (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27987989704",
+      "classid": "7993038892",
+      "instanceid": "6278734729",
+      "amount": 1,
+      "name": "Souvenir R8 Revolver | Desert Brush",
+      "market_hash_name": "Souvenir R8 Revolver | Desert Brush (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "28788394733",
+      "classid": "7993041163",
+      "instanceid": "6280576782",
+      "amount": 1,
+      "name": "Souvenir R8 Revolver | Desert Brush",
+      "market_hash_name": "Souvenir R8 Revolver | Desert Brush (Well-Worn)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "25940567207",
+      "classid": "7993039809",
+      "instanceid": "6279399331",
+      "amount": 1,
+      "name": "Souvenir R8 Revolver | Night",
+      "market_hash_name": "Souvenir R8 Revolver | Night (Battle-Scarred)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26398440853",
+      "classid": "7993039809",
+      "instanceid": "6281455678",
+      "amount": 1,
+      "name": "Souvenir R8 Revolver | Night",
+      "market_hash_name": "Souvenir R8 Revolver | Night (Battle-Scarred)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27495769948",
+      "classid": "7993044139",
+      "instanceid": "6277858319",
+      "amount": 1,
+      "name": "Souvenir R8 Revolver | Night",
+      "market_hash_name": "Souvenir R8 Revolver | Night (Well-Worn)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "30236450169",
       "classid": "7993038724",
       "instanceid": "6276367218",
@@ -2210,6 +4229,1018 @@
       "market_hash_name": "Souvenir AUG | Snake Pit (Factory New)",
       "type": "Souvenir Consumer Grade Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%202636DF9CC8F7563E2E06C72F0E27162A1EC7AED3CF25668C2744322E2636B1123B26262626032626A6190B2626262644322E2736BD123B26262626032626A6190B2626262644322E243695123B26262626032626A6190B2626262644322E2536E9153B26262626032626A6190B262626264E27562E59D9D743",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44481797432",
+      "classid": "7993038724",
+      "instanceid": "7190694987",
+      "amount": 1,
+      "name": "Souvenir AUG | Snake Pit",
+      "market_hash_name": "Souvenir AUG | Snake Pit (Factory New)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44481794319",
+      "classid": "7993036042",
+      "instanceid": "7190694987",
+      "amount": 1,
+      "name": "Souvenir AUG | Snake Pit",
+      "market_hash_name": "Souvenir AUG | Snake Pit (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612866589",
+      "classid": "7993040620",
+      "instanceid": "6277223251",
+      "amount": 1,
+      "name": "Souvenir FAMAS | Faulty Wiring",
+      "market_hash_name": "Souvenir FAMAS | Faulty Wiring (Field-Tested)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27818084934",
+      "classid": "7993040620",
+      "instanceid": "6278872797",
+      "amount": 1,
+      "name": "Souvenir FAMAS | Faulty Wiring",
+      "market_hash_name": "Souvenir FAMAS | Faulty Wiring (Field-Tested)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26329104747",
+      "classid": "7993036713",
+      "instanceid": "6276478107",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Factory New)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612858464",
+      "classid": "7993036713",
+      "instanceid": "6276317870",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Factory New)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612874565",
+      "classid": "7993036713",
+      "instanceid": "6276367227",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Factory New)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612839951",
+      "classid": "7993036805",
+      "instanceid": "6276426156",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Field-Tested)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612873269",
+      "classid": "7993036805",
+      "instanceid": "6276321278",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Field-Tested)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612890089",
+      "classid": "7993036805",
+      "instanceid": "6276317870",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Field-Tested)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612934070",
+      "classid": "7993036805",
+      "instanceid": "6276321278",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Field-Tested)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44481689489",
+      "classid": "7993036805",
+      "instanceid": "7195000027",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Field-Tested)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44481713607",
+      "classid": "7993036805",
+      "instanceid": "7194950075",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Field-Tested)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44963210922",
+      "classid": "7993036805",
+      "instanceid": "7274761026",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Field-Tested)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "25919127263",
+      "classid": "7993036038",
+      "instanceid": "6276353457",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26548443238",
+      "classid": "7993036038",
+      "instanceid": "6276330446",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26763715035",
+      "classid": "7993036038",
+      "instanceid": "6276353457",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612889187",
+      "classid": "7993036038",
+      "instanceid": "6276317870",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612936277",
+      "classid": "7993036038",
+      "instanceid": "6276583800",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "28174050373",
+      "classid": "7993036038",
+      "instanceid": "6277022817",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "31578103220",
+      "classid": "7993036038",
+      "instanceid": "6276309101",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2302,6 +5333,3034 @@
       ]
     },
     {
+      "assetid": "48291158089",
+      "classid": "7993036038",
+      "instanceid": "7843591223",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27580481526",
+      "classid": "7993038251",
+      "instanceid": "6276375798",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Bleached",
+      "market_hash_name": "Souvenir SG 553 | Bleached (Well-Worn)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612842311",
+      "classid": "7993037433",
+      "instanceid": "6279168704",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Lush Ruins",
+      "market_hash_name": "Souvenir SG 553 | Lush Ruins (Field-Tested)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612864349",
+      "classid": "7993037433",
+      "instanceid": "6279168704",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Lush Ruins",
+      "market_hash_name": "Souvenir SG 553 | Lush Ruins (Field-Tested)",
+      "type": "Souvenir Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26282792106",
+      "classid": "7993037167",
+      "instanceid": "6277398249",
+      "amount": 1,
+      "name": "Souvenir MAG-7 | Navy Sheen",
+      "market_hash_name": "Souvenir MAG-7 | Navy Sheen (Factory New)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "31480323199",
+      "classid": "7993037167",
+      "instanceid": "6276348244",
+      "amount": 1,
+      "name": "Souvenir MAG-7 | Navy Sheen",
+      "market_hash_name": "Souvenir MAG-7 | Navy Sheen (Factory New)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37211565020",
+      "classid": "7993037167",
+      "instanceid": "6276299088",
+      "amount": 1,
+      "name": "Souvenir MAG-7 | Navy Sheen",
+      "market_hash_name": "Souvenir MAG-7 | Navy Sheen (Factory New)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "28202806783",
+      "classid": "7993036949",
+      "instanceid": "6276931235",
+      "amount": 1,
+      "name": "Souvenir MAG-7 | Navy Sheen",
+      "market_hash_name": "Souvenir MAG-7 | Navy Sheen (Field-Tested)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "33357445711",
+      "classid": "7993036949",
+      "instanceid": "6276453900",
+      "amount": 1,
+      "name": "Souvenir MAG-7 | Navy Sheen",
+      "market_hash_name": "Souvenir MAG-7 | Navy Sheen (Field-Tested)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26316432201",
+      "classid": "7993038740",
+      "instanceid": "6276685459",
+      "amount": 1,
+      "name": "Souvenir MAG-7 | Navy Sheen",
+      "market_hash_name": "Souvenir MAG-7 | Navy Sheen (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26548443750",
+      "classid": "7993038740",
+      "instanceid": "6276672124",
+      "amount": 1,
+      "name": "Souvenir MAG-7 | Navy Sheen",
+      "market_hash_name": "Souvenir MAG-7 | Navy Sheen (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "33167146456",
+      "classid": "7993038740",
+      "instanceid": "6276348244",
+      "amount": 1,
+      "name": "Souvenir MAG-7 | Navy Sheen",
+      "market_hash_name": "Souvenir MAG-7 | Navy Sheen (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37132048923",
+      "classid": "7993038740",
+      "instanceid": "6276299088",
+      "amount": 1,
+      "name": "Souvenir MAG-7 | Navy Sheen",
+      "market_hash_name": "Souvenir MAG-7 | Navy Sheen (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27928372944",
+      "classid": "7993039387",
+      "instanceid": "6276310526",
+      "amount": 1,
+      "name": "Souvenir MAG-7 | Navy Sheen",
+      "market_hash_name": "Souvenir MAG-7 | Navy Sheen (Well-Worn)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "25822218241",
+      "classid": "7993040700",
+      "instanceid": "6276335588",
+      "amount": 1,
+      "name": "Souvenir MAG-7 | Rust Coat",
+      "market_hash_name": "Souvenir MAG-7 | Rust Coat (Battle-Scarred)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30424991278",
+      "classid": "7993038647",
+      "instanceid": "6279057425",
+      "amount": 1,
+      "name": "Souvenir MAG-7 | Storm",
+      "market_hash_name": "Souvenir MAG-7 | Storm (Field-Tested)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30424988772",
+      "classid": "7993041706",
+      "instanceid": "6278116230",
+      "amount": 1,
+      "name": "Souvenir MAG-7 | Storm",
+      "market_hash_name": "Souvenir MAG-7 | Storm (Well-Worn)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "25919158064",
+      "classid": "7993038085",
+      "instanceid": "6277703846",
+      "amount": 1,
+      "name": "Souvenir Nova | Mandrel",
+      "market_hash_name": "Souvenir Nova | Mandrel (Field-Tested)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26270161704",
+      "classid": "7993038143",
+      "instanceid": "6276353457",
+      "amount": 1,
+      "name": "Souvenir Sawed-Off | Parched",
+      "market_hash_name": "Souvenir Sawed-Off | Parched (Factory New)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "48130520214",
+      "classid": "7993036910",
+      "instanceid": "7825366864",
+      "amount": 1,
+      "name": "Souvenir Sawed-Off | Parched",
+      "market_hash_name": "Souvenir Sawed-Off | Parched (Field-Tested)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612896902",
+      "classid": "7993038592",
+      "instanceid": "6276444288",
+      "amount": 1,
+      "name": "Souvenir Sawed-Off | Parched",
+      "market_hash_name": "Souvenir Sawed-Off | Parched (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "40765293941",
+      "classid": "7993038592",
+      "instanceid": "6434594104",
+      "amount": 1,
+      "name": "Souvenir Sawed-Off | Parched",
+      "market_hash_name": "Souvenir Sawed-Off | Parched (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30424989975",
+      "classid": "7993044242",
+      "instanceid": "6276863428",
+      "amount": 1,
+      "name": "Souvenir Sawed-Off | Sage Spray",
+      "market_hash_name": "Souvenir Sawed-Off | Sage Spray (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612848039",
+      "classid": "7993037152",
+      "instanceid": "6277223251",
+      "amount": 1,
+      "name": "Souvenir XM1014 | Blue Tire",
+      "market_hash_name": "Souvenir XM1014 | Blue Tire (Factory New)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44317717381",
+      "classid": "7993041187",
+      "instanceid": "7177695199",
+      "amount": 1,
+      "name": "Souvenir XM1014 | Hieroglyph",
+      "market_hash_name": "Souvenir XM1014 | Hieroglyph (Field-Tested)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44481800322",
+      "classid": "7993039635",
+      "instanceid": "7190694987",
+      "amount": 1,
+      "name": "Souvenir XM1014 | Hieroglyph",
+      "market_hash_name": "Souvenir XM1014 | Hieroglyph (Well-Worn)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37263481417",
+      "classid": "7993036249",
+      "instanceid": "6276299088",
+      "amount": 1,
+      "name": "Souvenir MAC-10 | Sienna Damask",
+      "market_hash_name": "Souvenir MAC-10 | Sienna Damask (Battle-Scarred)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30978809747",
+      "classid": "7993036989",
+      "instanceid": "6276323524",
+      "amount": 1,
+      "name": "Souvenir MAC-10 | Sienna Damask",
+      "market_hash_name": "Souvenir MAC-10 | Sienna Damask (Factory New)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27987882335",
+      "classid": "7993037768",
+      "instanceid": "6276500999",
+      "amount": 1,
+      "name": "Souvenir MAC-10 | Sienna Damask",
+      "market_hash_name": "Souvenir MAC-10 | Sienna Damask (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "31480320010",
+      "classid": "7993037768",
+      "instanceid": "6276308560",
+      "amount": 1,
+      "name": "Souvenir MAC-10 | Sienna Damask",
+      "market_hash_name": "Souvenir MAC-10 | Sienna Damask (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37812400618",
+      "classid": "7993037768",
+      "instanceid": "6276299088",
+      "amount": 1,
+      "name": "Souvenir MAC-10 | Sienna Damask",
+      "market_hash_name": "Souvenir MAC-10 | Sienna Damask (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37812394382",
+      "classid": "7993037893",
+      "instanceid": "6276299088",
+      "amount": 1,
+      "name": "Souvenir MAC-10 | Sienna Damask",
+      "market_hash_name": "Souvenir MAC-10 | Sienna Damask (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "40699494610",
+      "classid": "7993037893",
+      "instanceid": "6423182584",
+      "amount": 1,
+      "name": "Souvenir MAC-10 | Sienna Damask",
+      "market_hash_name": "Souvenir MAC-10 | Sienna Damask (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "32605730109",
+      "classid": "7993040323",
+      "instanceid": "6276594808",
+      "amount": 1,
+      "name": "Souvenir MAC-10 | Sienna Damask",
+      "market_hash_name": "Souvenir MAC-10 | Sienna Damask (Well-Worn)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27111019272",
+      "classid": "7993039189",
+      "instanceid": "6278750380",
+      "amount": 1,
+      "name": "Souvenir MAC-10 | Strats",
+      "market_hash_name": "Souvenir MAC-10 | Strats (Factory New)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "25945249885",
+      "classid": "7993036174",
+      "instanceid": "6276369420",
+      "amount": 1,
+      "name": "Souvenir MP7 | Prey",
+      "market_hash_name": "Souvenir MP7 | Prey (Factory New)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612937257",
+      "classid": "7993036174",
+      "instanceid": "6276583800",
+      "amount": 1,
+      "name": "Souvenir MP7 | Prey",
+      "market_hash_name": "Souvenir MP7 | Prey (Factory New)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26293117984",
+      "classid": "7993035646",
+      "instanceid": "6276311126",
+      "amount": 1,
+      "name": "Souvenir MP7 | Prey",
+      "market_hash_name": "Souvenir MP7 | Prey (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26582799177",
+      "classid": "7993035646",
+      "instanceid": "6276353457",
+      "amount": 1,
+      "name": "Souvenir MP7 | Prey",
+      "market_hash_name": "Souvenir MP7 | Prey (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27580483049",
+      "classid": "7993035646",
+      "instanceid": "6276321079",
+      "amount": 1,
+      "name": "Souvenir MP7 | Prey",
+      "market_hash_name": "Souvenir MP7 | Prey (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "28281261004",
+      "classid": "7993035646",
+      "instanceid": "6276321079",
+      "amount": 1,
+      "name": "Souvenir MP7 | Prey",
+      "market_hash_name": "Souvenir MP7 | Prey (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44963207120",
+      "classid": "7993035646",
+      "instanceid": "7274761056",
+      "amount": 1,
+      "name": "Souvenir MP7 | Prey",
+      "market_hash_name": "Souvenir MP7 | Prey (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45610462383",
+      "classid": "7993035646",
+      "instanceid": "7274761078",
+      "amount": 1,
+      "name": "Souvenir MP7 | Prey",
+      "market_hash_name": "Souvenir MP7 | Prey (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "25945827784",
+      "classid": "7993035632",
+      "instanceid": "6276369420",
+      "amount": 1,
+      "name": "Souvenir MP7 | Prey",
+      "market_hash_name": "Souvenir MP7 | Prey (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612868598",
+      "classid": "7993035632",
+      "instanceid": "6276583800",
+      "amount": 1,
+      "name": "Souvenir MP7 | Prey",
+      "market_hash_name": "Souvenir MP7 | Prey (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "31578100501",
+      "classid": "7993035632",
+      "instanceid": "6276322687",
+      "amount": 1,
+      "name": "Souvenir MP7 | Prey",
+      "market_hash_name": "Souvenir MP7 | Prey (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45385574331",
+      "classid": "7993035632",
+      "instanceid": "7274761078",
+      "amount": 1,
+      "name": "Souvenir MP7 | Prey",
+      "market_hash_name": "Souvenir MP7 | Prey (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45610461462",
+      "classid": "7993039603",
+      "instanceid": "7274761078",
+      "amount": 1,
+      "name": "Souvenir MP7 | Prey",
+      "market_hash_name": "Souvenir MP7 | Prey (Well-Worn)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30247500715",
+      "classid": "7993038629",
+      "instanceid": "6276339359",
+      "amount": 1,
+      "name": "Souvenir MP7 | Sunbaked",
+      "market_hash_name": "Souvenir MP7 | Sunbaked (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44317721721",
+      "classid": "7993038629",
+      "instanceid": "7177694325",
+      "amount": 1,
+      "name": "Souvenir MP7 | Sunbaked",
+      "market_hash_name": "Souvenir MP7 | Sunbaked (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30236518960",
+      "classid": "7993037794",
+      "instanceid": "6276348544",
+      "amount": 1,
+      "name": "Souvenir MP7 | Sunbaked",
+      "market_hash_name": "Souvenir MP7 | Sunbaked (Well-Worn)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "31480325588",
+      "classid": "7993039206",
+      "instanceid": "6277903113",
+      "amount": 1,
+      "name": "Souvenir MP9 | Storm",
+      "market_hash_name": "Souvenir MP9 | Storm (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27495771826",
+      "classid": "7993040362",
+      "instanceid": "6276937268",
+      "amount": 1,
+      "name": "Souvenir P90 | Ancient Earth",
+      "market_hash_name": "Souvenir P90 | Ancient Earth (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30424992461",
+      "classid": "7993040362",
+      "instanceid": "6276432391",
+      "amount": 1,
+      "name": "Souvenir P90 | Ancient Earth",
+      "market_hash_name": "Souvenir P90 | Ancient Earth (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "25702153629",
+      "classid": "7993037273",
+      "instanceid": "6276322622",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Factory New)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26500760745",
+      "classid": "7993037273",
+      "instanceid": "6276348195",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Factory New)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27606777367",
+      "classid": "7993037273",
+      "instanceid": "6276321278",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Factory New)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612859592",
+      "classid": "7993037273",
+      "instanceid": "6276444288",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Factory New)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612897600",
+      "classid": "7993037273",
+      "instanceid": "6276375798",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Factory New)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45610459453",
+      "classid": "7993037273",
+      "instanceid": "7274761078",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Factory New)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "25945247977",
+      "classid": "7993036114",
+      "instanceid": "6276353457",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612843155",
+      "classid": "7993036114",
+      "instanceid": "6276858781",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612863494",
+      "classid": "7993036114",
+      "instanceid": "6277022817",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "28174051112",
       "classid": "7993036114",
       "instanceid": "6276367227",
@@ -2310,6 +8369,1446 @@
       "market_hash_name": "Souvenir P90 | Desert DDPAT (Field-Tested)",
       "type": "Souvenir Consumer Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C5D56D0B723FADDDD6E558C2EDC4F5C9FD27057B30C685BCA7D1CDC5D535EBD8C5C5C5C5E0C5C545FAE8C5C5C5C5A7D1CDC4D569EAD8C5C5C5C5E0C5C545FAE8C5C5C5C5A7D1CDC7D55FC8D8C5C5C5C5E0C5C545FAE8C5C5C5C5A7D1CDC6D531EBD8C5C5C5C5E0C5C545FAE8C5C5C5C5ADC4B5CDEC2FE147",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "40887855860",
+      "classid": "7993036114",
+      "instanceid": "6478103416",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44481691644",
+      "classid": "7993036114",
+      "instanceid": "7195000027",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45385570193",
+      "classid": "7993036114",
+      "instanceid": "7274761078",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45610477102",
+      "classid": "7993036114",
+      "instanceid": "7274761078",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "48037078908",
+      "classid": "7993036114",
+      "instanceid": "7809721545",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "25702186991",
+      "classid": "7993035639",
+      "instanceid": "6276422830",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26316430946",
+      "classid": "7993035639",
+      "instanceid": "6276338594",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27987858819",
+      "classid": "7993035639",
+      "instanceid": "6276316428",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "31578107980",
+      "classid": "7993035639",
+      "instanceid": "6276306610",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45610476154",
+      "classid": "7993035639",
+      "instanceid": "7274761078",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612877284",
+      "classid": "7993038318",
+      "instanceid": "6276753216",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Well-Worn)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27612897240",
+      "classid": "7993038318",
+      "instanceid": "6276321278",
+      "amount": 1,
+      "name": "Souvenir P90 | Desert DDPAT",
+      "market_hash_name": "Souvenir P90 | Desert DDPAT (Well-Worn)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "36553743791",
+      "classid": "7993036766",
+      "instanceid": "6276304564",
+      "amount": 1,
+      "name": "Souvenir PP-Bizon | Anolis",
+      "market_hash_name": "Souvenir PP-Bizon | Anolis (Factory New)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37132055139",
+      "classid": "7993036766",
+      "instanceid": "6276299088",
+      "amount": 1,
+      "name": "Souvenir PP-Bizon | Anolis",
+      "market_hash_name": "Souvenir PP-Bizon | Anolis (Factory New)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "28194139759",
+      "classid": "7993036224",
+      "instanceid": "6276544347",
+      "amount": 1,
+      "name": "Souvenir PP-Bizon | Anolis",
+      "market_hash_name": "Souvenir PP-Bizon | Anolis (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30236521619",
+      "classid": "7993036224",
+      "instanceid": "6276302689",
+      "amount": 1,
+      "name": "Souvenir PP-Bizon | Anolis",
+      "market_hash_name": "Souvenir PP-Bizon | Anolis (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30406325830",
+      "classid": "7993036224",
+      "instanceid": "6276604488",
+      "amount": 1,
+      "name": "Souvenir PP-Bizon | Anolis",
+      "market_hash_name": "Souvenir PP-Bizon | Anolis (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30424997977",
+      "classid": "7993036224",
+      "instanceid": "6276594808",
+      "amount": 1,
+      "name": "Souvenir PP-Bizon | Anolis",
+      "market_hash_name": "Souvenir PP-Bizon | Anolis (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30978812333",
+      "classid": "7993036224",
+      "instanceid": "6276453900",
+      "amount": 1,
+      "name": "Souvenir PP-Bizon | Anolis",
+      "market_hash_name": "Souvenir PP-Bizon | Anolis (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30236527902",
+      "classid": "7993036322",
+      "instanceid": "6276319497",
+      "amount": 1,
+      "name": "Souvenir PP-Bizon | Anolis",
+      "market_hash_name": "Souvenir PP-Bizon | Anolis (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37076904225",
+      "classid": "7993036872",
+      "instanceid": "6276299088",
+      "amount": 1,
+      "name": "Souvenir PP-Bizon | Anolis",
+      "market_hash_name": "Souvenir PP-Bizon | Anolis (Well-Worn)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30236532595",
+      "classid": "7993044839",
+      "instanceid": "6276726514",
+      "amount": 1,
+      "name": "Souvenir PP-Bizon | Facility Sketch",
+      "market_hash_name": "Souvenir PP-Bizon | Facility Sketch (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30424993564",
+      "classid": "7993039215",
+      "instanceid": "6276734870",
+      "amount": 1,
+      "name": "Souvenir SSG 08 | Jungle Dashed",
+      "market_hash_name": "Souvenir SSG 08 | Jungle Dashed (Field-Tested)",
+      "type": "Souvenir Consumer Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37263475298",
+      "classid": "7993036875",
+      "instanceid": "6276299088",
+      "amount": 1,
+      "name": "Souvenir SSG 08 | Prey",
+      "market_hash_name": "Souvenir SSG 08 | Prey (Factory New)",
+      "type": "Souvenir Consumer Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30920701410",
+      "classid": "7993036164",
+      "instanceid": "6276311736",
+      "amount": 1,
+      "name": "Souvenir SSG 08 | Prey",
+      "market_hash_name": "Souvenir SSG 08 | Prey (Field-Tested)",
+      "type": "Souvenir Consumer Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37132052026",
+      "classid": "7993036164",
+      "instanceid": "6276299088",
+      "amount": 1,
+      "name": "Souvenir SSG 08 | Prey",
+      "market_hash_name": "Souvenir SSG 08 | Prey (Field-Tested)",
+      "type": "Souvenir Consumer Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37263478123",
+      "classid": "7993036164",
+      "instanceid": "6276299088",
+      "amount": 1,
+      "name": "Souvenir SSG 08 | Prey",
+      "market_hash_name": "Souvenir SSG 08 | Prey (Field-Tested)",
+      "type": "Souvenir Consumer Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "37812397512",
+      "classid": "7993036164",
+      "instanceid": "6276299088",
+      "amount": 1,
+      "name": "Souvenir SSG 08 | Prey",
+      "market_hash_name": "Souvenir SSG 08 | Prey (Field-Tested)",
+      "type": "Souvenir Consumer Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "32605731566",
+      "classid": "7993037873",
+      "instanceid": "6276323524",
+      "amount": 1,
+      "name": "Souvenir SSG 08 | Prey",
+      "market_hash_name": "Souvenir SSG 08 | Prey (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "32605724069",
+      "classid": "7993038296",
+      "instanceid": "6276328813",
+      "amount": 1,
+      "name": "Souvenir SSG 08 | Prey",
+      "market_hash_name": "Souvenir SSG 08 | Prey (Well-Worn)",
+      "type": "Souvenir Consumer Grade Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2496,6 +9995,246 @@
       ]
     },
     {
+      "assetid": "30424999920",
+      "classid": "7993039325",
+      "instanceid": "6276326760",
+      "amount": 1,
+      "name": "Souvenir CZ75-Auto | Midnight Palm",
+      "market_hash_name": "Souvenir CZ75-Auto | Midnight Palm (Factory New)",
+      "type": "Souvenir Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "26505046006",
+      "classid": "7993038350",
+      "instanceid": "6276372656",
+      "amount": 1,
+      "name": "Souvenir Five-SeveN | Withered Vine",
+      "market_hash_name": "Souvenir Five-SeveN | Withered Vine (Field-Tested)",
+      "type": "Souvenir Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45385561663",
+      "classid": "7993038350",
+      "instanceid": "7274761078",
+      "amount": 1,
+      "name": "Souvenir Five-SeveN | Withered Vine",
+      "market_hash_name": "Souvenir Five-SeveN | Withered Vine (Field-Tested)",
+      "type": "Souvenir Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27313353504",
+      "classid": "7993040936",
+      "instanceid": "6276330446",
+      "amount": 1,
+      "name": "Souvenir Five-SeveN | Withered Vine",
+      "market_hash_name": "Souvenir Five-SeveN | Withered Vine (Minimal Wear)",
+      "type": "Souvenir Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30424995193",
+      "classid": "7993040691",
+      "instanceid": "6276535431",
+      "amount": 1,
+      "name": "Souvenir FAMAS | CaliCamo",
+      "market_hash_name": "Souvenir FAMAS | CaliCamo (Minimal Wear)",
+      "type": "Souvenir Industrial Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "27495770806",
       "classid": "7993041793",
       "instanceid": "6277272036",
@@ -2544,14 +10283,110 @@
       ]
     },
     {
-      "assetid": "25918553169",
-      "classid": "7993045962",
-      "instanceid": "6276711173",
+      "assetid": "27987859911",
+      "classid": "7993039390",
+      "instanceid": "6276460784",
       "amount": 1,
-      "name": "Souvenir UMP-45 | Mechanism",
-      "market_hash_name": "Souvenir UMP-45 | Mechanism (Field-Tested)",
+      "name": "Souvenir MP9 | Old Roots",
+      "market_hash_name": "Souvenir MP9 | Old Roots (Minimal Wear)",
       "type": "Souvenir Industrial Grade SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D7C7062F2111B7CFCFF76ADFFFD5E7DBEF1D692125D4974DD6B5C3DFD7C705FECAD7D7D7D7F2D7D757E8FAD7D7D7D7B5C3DFD6C701FECAD7D7D7D7F2D7D757E8FAD7D7D7D7B5C3DFD5C748DACAD7D7D7D7F2D7D757E8FAD7D7D7D7B5C3DFD4C72DFECAD7D7D7D7F2D7D757E8FAD7D7D7D7BFD6A7DF281F3AC5",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27818086364",
+      "classid": "7993038607",
+      "instanceid": "6276458092",
+      "amount": 1,
+      "name": "Souvenir P90 | Verdant Growth",
+      "market_hash_name": "Souvenir P90 | Verdant Growth (Factory New)",
+      "type": "Souvenir Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30236447045",
+      "classid": "7993041993",
+      "instanceid": "6276411461",
+      "amount": 1,
+      "name": "Souvenir SSG 08 | Azure Glyph",
+      "market_hash_name": "Souvenir SSG 08 | Azure Glyph (Well-Worn)",
+      "type": "Souvenir Industrial Grade Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2600,6 +10435,54 @@
       "market_hash_name": "Souvenir USP-S | Purple DDPAT (Factory New)",
       "type": "Souvenir Mil-Spec Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%204B5BDAA1E6982953766BF94D63487B4773B5B9CCAF480B844D295F434B5B9D62564B4B4B4B6E4B4BCB74664B4B4B4B295F434A5B9962564B4B4B4B6E4B4BCB74664B4B4B4B295F43495BB162564B4B4B4B6E4B4BCB74664B4B4B4B295F43485BD746564B4B4B4B6E4B4BCB74664B4B4B4B234A3B43E3621C12",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "30920691489",
+      "classid": "7993040674",
+      "instanceid": "6276453896",
+      "amount": 1,
+      "name": "Souvenir SG 553 | Desert Blossom",
+      "market_hash_name": "Souvenir SG 553 | Desert Blossom (Field-Tested)",
+      "type": "Souvenir Mil-Spec Grade Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2928,6 +10811,106 @@
       ]
     },
     {
+      "assetid": "27842638241",
+      "classid": "7993043928",
+      "instanceid": "6276544347",
+      "amount": 1,
+      "name": "Souvenir XM1014 | Elegant Vines",
+      "market_hash_name": "Souvenir XM1014 | Elegant Vines (Field-Tested)",
+      "type": "Souvenir Restricted Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44963205035",
+      "classid": "7993041142",
+      "instanceid": "7274761025",
+      "amount": 1,
+      "name": "Souvenir MAC-10 | Case Hardened",
+      "market_hash_name": "Souvenir MAC-10 | Case Hardened (Field-Tested)",
+      "type": "Souvenir Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "38514994789",
       "classid": "5721066240",
       "instanceid": "188530598",
@@ -2998,6 +10981,42 @@
       "name": "StatTrak™ Sawed-Off | Fusion",
       "market_hash_name": "StatTrak™ Sawed-Off | Fusion (Battle-Scarred)",
       "type": "StatTrak™ Mil-Spec Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "46136373526",
+      "classid": "7993037199",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ SSG 08 | Memorial",
+      "market_hash_name": "StatTrak™ SSG 08 | Memorial (Field-Tested)",
+      "type": "StatTrak™ Mil-Spec Grade Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {

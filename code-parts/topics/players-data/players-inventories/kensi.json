@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/7fe48ae7-5c9b-4136-adeb-7dd5d04083fb",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-17T07:27:26.279Z",
+  "updatedAt": "2026-05-23T07:20:34.490Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 426,
-  "totalItemsGrouped": 151,
+  "totalItemsRaw": 417,
+  "totalItemsGrouped": 142,
   "items": [
     {
       "assetid": "51499205870",
@@ -585,42 +585,6 @@
       "market_hash_name": "AUG | Stymphalian (Field-Tested)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D1C1583B043887C9D9F163D4F9D4E1D5E944612122D29160D2B9CFA1D935BFCFFD",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "12374322764",
-      "classid": "241577707",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Dual Berettas | Colony",
-      "market_hash_name": "Dual Berettas | Colony (Minimal Wear)",
-      "type": "Consumer Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207767BBABB3FB596F7557585F7647734FB8DACA8774378D751F71076F01B489D3",
       "tags": [
         {
           "category": "Type",
@@ -4364,6 +4328,42 @@
       ]
     },
     {
+      "assetid": "51836300833",
+      "classid": "7993040306",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "FAMAS | CaliCamo",
+      "market_hash_name": "FAMAS | CaliCamo (Field-Tested)",
+      "type": "Industrial Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "29236074670",
       "classid": "7993036682",
       "instanceid": "302028390",
@@ -5810,438 +5810,6 @@
         },
         {
           "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "30614994611",
-      "classid": "7993038899",
-      "instanceid": "6276324211",
-      "amount": 1,
-      "name": "Souvenir M249 | Contrast Spray",
-      "market_hash_name": "Souvenir M249 | Contrast Spray (Field-Tested)",
-      "type": "Souvenir Consumer Grade Machinegun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201B0BA8E6B59D6903153B0D331A2B1723FDBB93E8185BB519790F131B0B8516061B1B1B1B3E1B1B9B24361B1B1B1B790F131A0B9C2F061B1B1B1B3E1B1B9B24361B1B1B1B790F13190BA82F061B1B1B1B3E1B1B9B24361B1B1B1B790F13180BC428061B1B1B1B3E1B1B9B24361B1B1B1B739A196B13DCAB0CD7",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "25781111098",
-      "classid": "7993039636",
-      "instanceid": "6276521424",
-      "amount": 1,
-      "name": "Souvenir Five-SeveN | Coolant",
-      "market_hash_name": "Souvenir Five-SeveN | Coolant (Field-Tested)",
-      "type": "Souvenir Consumer Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207565CFE7C7F0156D7655E5735D7445794D9FDC85877635CB7017617D75658F5C6875757575507575F54A587575757517617D7465B75C6875757575507575F54A587575757517617D7765BF5C6875757575507575F54A587575757517617D7665E8786875757575507575F54A58757575751DF177057DB4F530A9",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "40290548481",
-      "classid": "7993039636",
-      "instanceid": "6276325994",
-      "amount": 1,
-      "name": "Souvenir Five-SeveN | Coolant",
-      "market_hash_name": "Souvenir Five-SeveN | Coolant (Field-Tested)",
-      "type": "Souvenir Consumer Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206979E89FEAE5FF68716A49F96F41685965518CDCC3986A292C0B7D616979F46474696969694C6969E95644696969690B7D616879EE5D74696969694C6969E95644696969690B7D616B79B65A74696969694C6969E95644696969690B7D616A79DA5D74696969694C6969E9564469696969018D6819616D99BE69",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "23746627998",
-      "classid": "7993037153",
-      "instanceid": "6276421764",
-      "amount": 1,
-      "name": "Souvenir P250 | Drought",
-      "market_hash_name": "Souvenir P250 | Drought (Field-Tested)",
-      "type": "Souvenir Consumer Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D6C64845756D8ECEF2F66FD0FED7E6DAEE153A3027D59646D4B4C2DED6C673F1CBD6D6D6D6F3D6D656E9FBD6D6D6D6B4C2DED7C66BF1CBD6D6D6D6F3D6D656E9FBD6D6D6D6B4C2DED4C64ADBCBD6D6D6D6F3D6D656E9FBD6D6D6D6B4C2DED5C64FF1CBD6D6D6D6F3D6D656E9FBD6D6D6D6BEC9A6DE9059F0D4",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "23842792295",
-      "classid": "7993037153",
-      "instanceid": "6276300362",
-      "amount": 1,
-      "name": "Souvenir P250 | Drought",
-      "market_hash_name": "Souvenir P250 | Drought (Field-Tested)",
-      "type": "Souvenir Consumer Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BAAA5D7C2A53E2A29E9A03BC92BB8AB6826C292F48B9FA36BBD8AEB2BAAA079DA7BABABABA9FBABA3A8597BABABABAD8AEB2BBAA26B7A7BABABABA9FBABA3A8597BABABABAD8AEB2B8AA679CA7BABABABA9FBABA3A8597BABABABAD8AEB2B9AA4F9CA7BABABABA9FBABA3A8597BABABABAD282CAB244FC94A4",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "23737115306",
-      "classid": "7993036949",
-      "instanceid": "6276314744",
-      "amount": 1,
-      "name": "Souvenir MAG-7 | Navy Sheen",
-      "market_hash_name": "Souvenir MAG-7 | Navy Sheen (Field-Tested)",
-      "type": "Souvenir Consumer Grade Shotgun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E8F8422D365EB0F0F3C85EEEC0E9D8E4D06D146A1AEBA80FEF8AFCE0E8F855CFF5E8E8E8E8CDE8E868D7C5E8E8E8E88AFCE0E9F859CFF5E8E8E8E8CDE8E868D7C5E8E8E8E88AFCE0EAF874E5F5E8E8E8E8CDE8E868D7C5E8E8E8E88AFCE0EBF851CFF5E8E8E8E8CDE8E868D7C5E8E8E8E880C098E01A82B8EC",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "23842791727",
-      "classid": "7993038740",
-      "instanceid": "6276314807",
-      "amount": 1,
-      "name": "Souvenir MAG-7 | Navy Sheen",
-      "market_hash_name": "Souvenir MAG-7 | Navy Sheen (Minimal Wear)",
-      "type": "Souvenir Consumer Grade Shotgun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205545FA97C5BC0D4D4E75E3537D5465596DC8E5DFB856157A37415D5545A0734855555555705555D56A785555555537415D544588734855555555705555D56A785555555537415D5745C9584855555555705555D56A785555555537415D5645E8724855555555705555D56A78555555553D6C255DFB4479E1",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "37837129643",
-      "classid": "7993041706",
-      "instanceid": "6276310168",
-      "amount": 1,
-      "name": "Souvenir MAG-7 | Storm",
-      "market_hash_name": "Souvenir MAG-7 | Storm (Well-Worn)",
-      "type": "Souvenir Consumer Grade Shotgun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BCAC17332F4630BDA4A79CD894BD8CB084227B224ABFFC65BEDEB9B4BDAC0585DEB9B4BFAC6E81DEB9B4BCAC6184DEB9B4BEAC5D84D43CBECCB48D6CB7FC",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "27719853860",
-      "classid": "7993037768",
-      "instanceid": "6276347975",
-      "amount": 1,
-      "name": "Souvenir MAC-10 | Sienna Damask",
-      "market_hash_name": "Souvenir MAC-10 | Sienna Damask (Field-Tested)",
-      "type": "Souvenir Consumer Grade SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FBEB5F35165A9CE3EADB41FDD3FACBF7C33E235A0FF8BB77FC99EFF3FBEB67F6E6FBFBFBFBDEFBFB7BC4D6FBFBFBFB99EFF3FAEB23D5E6FBFBFBFBDEFBFB7BC4D6FBFBFBFB99EFF3F9EB6FD4E6FBFBFBFBDEFBFB7BC4D6FBFBFBFB99EFF3F8EB57D4E6FBFBFBFBDEFBFB7BC4D6FBFBFBFB937DF98BF31AD4B513",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         },
         {

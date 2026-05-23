@@ -12,7 +12,7 @@
   "faceit": "https://faceitdb.com/profile/faceit/93d9c1d3-b266-4119-9333-aaaf99f2afde",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-18T07:17:47.161Z",
+  "updatedAt": "2026-05-23T06:33:40.411Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
@@ -132,34 +132,6 @@
       ]
     },
     {
-      "assetid": "51518721285",
-      "classid": "7993041008",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Hand Wraps | Badlands",
-      "market_hash_name": "★ Hand Wraps | Badlands (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49059560244",
       "classid": "7993045165",
       "instanceid": "188530139",
@@ -183,34 +155,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48194272676",
-      "classid": "4717330486",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Dreams & Nightmares Case",
-      "market_hash_name": "Dreams & Nightmares Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
           "name": ""
         }
       ]
@@ -815,7 +759,7 @@
       "assetid": "23627871481",
       "classid": "1835727981",
       "instanceid": "188530139",
-      "amount": 1,
+      "amount": 2,
       "name": "Sticker | mousesports (Foil) | Cologne 2016",
       "market_hash_name": "Sticker | mousesports (Foil) | Cologne 2016",
       "type": "Exotic Sticker",
@@ -851,7 +795,8 @@
         }
       ],
       "assetids": [
-        "23627871481"
+        "23627871481",
+        "23627871441"
       ]
     },
     {
@@ -1089,6 +1034,34 @@
       "amount": 1,
       "name": "Budapest 2025 Silver Coin",
       "market_hash_name": "Budapest 2025 Silver Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51837976763",
+      "classid": "8490781882",
+      "instanceid": "8490781883",
+      "amount": 1,
+      "name": "Cologne 2026 Coin",
+      "market_hash_name": "Cologne 2026 Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -1395,6 +1368,49 @@
       ]
     },
     {
+      "assetid": "32851255790",
+      "classid": "5327976101",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Into The Breach (Gold) | Paris 2023",
+      "market_hash_name": "Sticker | Into The Breach (Gold) | Paris 2023",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205343534BEA5A73537B55635731565B5343B8603B53235B3D6A3507",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "32851255790"
+      ]
+    },
+    {
       "assetid": "33543542228",
       "classid": "5537026493",
       "instanceid": "0",
@@ -1646,14 +1662,14 @@
       ]
     },
     {
-      "assetid": "43003372625",
-      "classid": "1626193359",
+      "assetid": "23627563052",
+      "classid": "2135301532",
       "instanceid": "188530139",
-      "amount": 2,
-      "name": "Sticker | mousesports (Holo) | MLG Columbus 2016",
-      "market_hash_name": "Sticker | mousesports (Holo) | MLG Columbus 2016",
+      "amount": 1,
+      "name": "Sticker | mousesports (Holo) | Atlanta 2017",
+      "market_hash_name": "Sticker | mousesports (Holo) | Atlanta 2017",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205B4B5B43E2527B5B735F6B5F395E535B4BD353335B2B53D51A68F7",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EDFDEDF554E4CDEDC5E9DDE98FE8E5EDFD02E085ED9DE58EE00F95",
       "tags": [
         {
           "category": "Type",
@@ -1685,8 +1701,7 @@
         }
       ],
       "assetids": [
-        "43003372625",
-        "23612560405"
+        "23627563052"
       ]
     },
     {

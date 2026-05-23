@@ -12,18 +12,18 @@
   "faceit": "https://faceitdb.com/profile/faceit/8be7173f-2cc9-445a-892d-c942d66fb938",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-22T07:09:07.728Z",
+  "updatedAt": "2026-05-23T06:31:33.835Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 43,
-  "totalItemsGrouped": 43,
+  "totalItemsRaw": 44,
+  "totalItemsGrouped": 44,
   "items": [
     {
       "assetid": "51625669409",
       "classid": "7993042413",
-      "instanceid": "8460631031",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Butterfly Knife | Crimson Web",
       "market_hash_name": "★ Butterfly Knife | Crimson Web (Minimal Wear)",
@@ -117,6 +117,34 @@
       ]
     },
     {
+      "assetid": "51856687691",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "19135026891",
       "classid": "1989274104",
       "instanceid": "302028390",
@@ -145,6 +173,33 @@
       ],
       "assetids": [
         "19135026891"
+      ]
+    },
+    {
+      "assetid": "51856687692",
+      "classid": "6195246388",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Charm Detachment Pack",
+      "market_hash_name": "Charm Detachment Pack",
+      "type": "Base Grade Tool",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203C2C3C24EA1A1C3C143D0C38543C4C24A33F8E4C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51856687692"
       ]
     },
     {
@@ -230,7 +285,7 @@
     {
       "assetid": "51625669407",
       "classid": "201965307",
-      "instanceid": "8483231398",
+      "instanceid": "7755754127",
       "amount": 1,
       "name": "AWP | Graphite",
       "market_hash_name": "AWP | Graphite (Factory New)",
@@ -387,54 +442,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47153497915",
-      "classid": "7993037689",
-      "instanceid": "6277577440",
-      "amount": 1,
-      "name": "AWP | Printstream",
-      "market_hash_name": "AWP | Printstream (Factory New)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200F1FB481CADBA00E17062FB90627093F0B378DB1A1E40C4F1D6D0A070C1FED2267277F0BF8E44E9B",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1217,7 +1224,7 @@
     {
       "assetid": "51625669408",
       "classid": "7993040029",
-      "instanceid": "8490211553",
+      "instanceid": "8492779185",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Field-Tested)",
