@@ -12,78 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/91396c85-8498-429e-bf1a-5f8da3c2336b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-24T07:26:27.689Z",
+  "updatedAt": "2026-05-25T08:04:34.354Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 67,
-  "totalItemsGrouped": 61,
+  "totalItemsRaw": 61,
+  "totalItemsGrouped": 56,
   "items": [
-    {
-      "assetid": "51582020559",
-      "classid": "7993042582",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Fade",
-      "market_hash_name": "★ Butterfly Knife | Fade (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51584438263",
-      "classid": "7993041878",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Specialist Gloves | Crimson Kimono",
-      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "51473271921",
       "classid": "8247668937",
@@ -178,7 +114,7 @@
       "assetid": "49440579248",
       "classid": "6195246388",
       "instanceid": "302028390",
-      "amount": 3,
+      "amount": 2,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
@@ -199,8 +135,7 @@
       ],
       "assetids": [
         "49440579248",
-        "45835784770",
-        "51832880923"
+        "45835784770"
       ]
     },
     {
@@ -307,7 +242,7 @@
       "name": "Glock-18 | Gamma Doppler",
       "market_hash_name": "Glock-18 | Gamma Doppler (Factory New)",
       "type": "Covert Pistol",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D9C93B0F676919D8C1DDF93AD1F1DFE9DDE1784C6031DA9940DEB1C9A9DDE1B30729",
       "tags": [
         {
           "category": "Type",
@@ -333,12 +268,15 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.034739140421,
+      "seed": 921,
+      "phase": "Phase 4"
     },
     {
       "assetid": "51665000707",
       "classid": "7993039287",
-      "instanceid": "8466005294",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "FAMAS | Bad Trip",
       "market_hash_name": "FAMAS | Bad Trip (Field-Tested)",
@@ -415,42 +353,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51641147820",
-      "classid": "7993037085",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "AWP | Asiimov",
-      "market_hash_name": "AWP | Asiimov (Field-Tested)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1683,54 +1585,6 @@
       ]
     },
     {
-      "assetid": "51528408971",
-      "classid": "7993037525",
-      "instanceid": "7261713170",
-      "amount": 1,
-      "name": "StatTrak™ Desert Eagle | Printstream",
-      "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
-      "type": "StatTrak™ Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50997535650",
       "classid": "7993040139",
       "instanceid": "188530324",
@@ -1841,7 +1695,7 @@
     {
       "assetid": "51711048505",
       "classid": "7993042258",
-      "instanceid": "8493749308",
+      "instanceid": "8500285468",
       "amount": 1,
       "name": "StatTrak™ USP-S | Guardian",
       "market_hash_name": "StatTrak™ USP-S | Guardian (Factory New)",
@@ -1910,42 +1764,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51528238804",
-      "classid": "7993038837",
-      "instanceid": "8216190235",
-      "amount": 1,
-      "name": "StatTrak™ MP9 | Goo",
-      "market_hash_name": "StatTrak™ MP9 | Goo (Factory New)",
-      "type": "StatTrak™ Restricted SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]

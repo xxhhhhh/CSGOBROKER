@@ -7,53 +7,19 @@
   "name": "Oleksandr Kostyliev",
   "nationality": "Ukraine",
   "born": "02.10.1997",
+  "isContentCreator": false,
   "twitch": "s1mple",
   "faceit": "https://faceitdb.com/profile/faceit/ac71ba3c-d3d4-45e7-8be2-26aa3986867d",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-24T06:16:41.177Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 578,
-  "totalItemsGrouped": 560,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-05-25T08:02:19.789Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 579,
+  "totalItemsGrouped": 561,
   "items": [
-    {
-      "assetid": "50837221687",
-      "classid": "7993044611",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Damascus Steel",
-      "market_hash_name": "★ Butterfly Knife | Damascus Steel (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "42136519048",
       "classid": "7993040883",
@@ -128,6 +94,41 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "51437267292",
+      "classid": "7993040869",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Karambit | Doppler",
+      "market_hash_name": "★ Karambit | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2043539F91DA8CFC425BB84063E0406B4573407BC2B7F4AB4003AA452BC0413347443C607F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.034662250429,
+      "seed": 873,
+      "phase": "Phase 2"
     },
     {
       "assetid": "46871901222",
@@ -3406,6 +3407,37 @@
       ],
       "assetids": [
         "17180813324"
+      ]
+    },
+    {
+      "assetid": "51437143618",
+      "classid": "1989273978",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Piggles (Monster Purple)",
+      "market_hash_name": "Sealed Graffiti | Piggles (Monster Purple)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CEDECED60AC4EECEE6CFFECAACC9C6CEDE0CC3FEC1A6CEBED6415DDA8E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51437143618"
       ]
     },
     {
@@ -17844,7 +17876,7 @@
     {
       "assetid": "27251592488",
       "classid": "5001787061",
-      "instanceid": "1397840708",
+      "instanceid": "1398303792",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Perfect World, 花脸 Hua Lian (Painted Face)",
       "market_hash_name": "StatTrak™ Music Kit | Perfect World, 花脸 Hua Lian (Painted Face)",
@@ -18483,7 +18515,7 @@
     {
       "assetid": "23096904570",
       "classid": "7993038271",
-      "instanceid": "480173650",
+      "instanceid": "480130897",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Trigger Discipline",
       "market_hash_name": "StatTrak™ Desert Eagle | Trigger Discipline (Well-Worn)",
@@ -18519,7 +18551,7 @@
     {
       "assetid": "25325548387",
       "classid": "7993041334",
-      "instanceid": "903838055",
+      "instanceid": "902911213",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Boost Protocol",
       "market_hash_name": "StatTrak™ Five-SeveN | Boost Protocol (Minimal Wear)",
@@ -18915,7 +18947,7 @@
     {
       "assetid": "15765195495",
       "classid": "7993039639",
-      "instanceid": "902713254",
+      "instanceid": "902712337",
       "amount": 1,
       "name": "StatTrak™ UMP-45 | Moonrise",
       "market_hash_name": "StatTrak™ UMP-45 | Moonrise (Minimal Wear)",
