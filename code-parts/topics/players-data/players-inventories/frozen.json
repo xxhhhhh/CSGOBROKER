@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/18911949-a23d-4b42-bd0b-7a970b51824c",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-12T06:25:01.056Z",
+  "updatedAt": "2026-05-26T06:58:28.422Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 728,
-  "totalItemsGrouped": 569,
+  "totalItemsRaw": 730,
+  "totalItemsGrouped": 571,
   "items": [
     {
       "assetid": "36264955674",
@@ -254,6 +254,34 @@
       "amount": 1,
       "name": "Recoil Case",
       "market_hash_name": "Recoil Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51894911565",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -648,6 +676,37 @@
       ],
       "assetids": [
         "50536128243"
+      ]
+    },
+    {
+      "assetid": "51894911566",
+      "classid": "1989315463",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Mr. Teeth (Bazooka Pink)",
+      "market_hash_name": "Sealed Graffiti | Mr. Teeth (Bazooka Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201606160ED21C36163E17261274111E1606BD1B26067E16660EE1F23886",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51894911566"
       ]
     },
     {
@@ -23653,7 +23712,7 @@
     {
       "assetid": "50729226915",
       "classid": "7993041807",
-      "instanceid": "8499748620",
+      "instanceid": "8501381528",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Cyrex",
       "market_hash_name": "StatTrak™ M4A1-S | Cyrex (Minimal Wear)",

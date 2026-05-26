@@ -7,16 +7,18 @@
   "name": "Edouard Dubourdeaux",
   "nationality": "France",
   "born": "17.12.1988",
+  "isContentCreator": false,
   "twitch": "smithzz",
   "faceit": "https://faceitdb.com/profile/faceit/5a4e258d-c912-46b6-94f1-984d59150f82",
-  "isContentCreator": false,
-  "updatedAt": "2026-05-21T08:02:57.048Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 325,
-  "totalItemsGrouped": 301,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-05-26T07:48:12.516Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 327,
+  "totalItemsGrouped": 303,
   "items": [
     {
       "assetid": "48699702436",
@@ -3884,6 +3886,42 @@
       ]
     },
     {
+      "assetid": "51672817865",
+      "classid": "7993038568",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Glock-18 | Shinobu",
+      "market_hash_name": "Glock-18 | Shinobu (Minimal Wear)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "42934379343",
       "classid": "7993036574",
       "instanceid": "188530139",
@@ -5422,6 +5460,34 @@
       "amount": 1,
       "name": "Champion at DreamHack Winter 2014",
       "market_hash_name": "Champion at DreamHack Winter 2014",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51847682315",
+      "classid": "8490781882",
+      "instanceid": "8490783177",
+      "amount": 1,
+      "name": "Cologne 2026 Coin",
+      "market_hash_name": "Cologne 2026 Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -9852,7 +9918,7 @@
     {
       "assetid": "14792369647",
       "classid": "7993038472",
-      "instanceid": "8487901188",
+      "instanceid": "8502840161",
       "amount": 1,
       "name": "StatTrak™ USP-S | Orion",
       "market_hash_name": "StatTrak™ USP-S | Orion (Factory New)",
@@ -10088,7 +10154,7 @@
     {
       "assetid": "49426880521",
       "classid": "7993036413",
-      "instanceid": "8433990426",
+      "instanceid": "8491073810",
       "amount": 1,
       "name": "StatTrak™ AWP | Printstream",
       "market_hash_name": "StatTrak™ AWP | Printstream (Field-Tested)",
@@ -10572,7 +10638,7 @@
     {
       "assetid": "14792372310",
       "classid": "7993041152",
-      "instanceid": "8487901187",
+      "instanceid": "8502840160",
       "amount": 1,
       "name": "StatTrak™ MP9 | Ruby Poison Dart",
       "market_hash_name": "StatTrak™ MP9 | Ruby Poison Dart (Minimal Wear)",
@@ -10632,7 +10698,7 @@
     {
       "assetid": "43000584559",
       "classid": "7993040944",
-      "instanceid": "188531175",
+      "instanceid": "188530931",
       "amount": 1,
       "name": "StatTrak™ P90 | Wave Breaker",
       "market_hash_name": "StatTrak™ P90 | Wave Breaker (Minimal Wear)",
