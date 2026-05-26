@@ -24,7 +24,7 @@ jobs:
       - name: Create target dir
         run: mkdir -p code-parts/topics/skins-data
 
-      - name: Fetch Lis-Skins raw JSON
+      - name: Fetch LIS-SKINS raw JSON
         run: |
           curl -L --fail --silent --show-error \
             "https://lis-skins.com/market_export_json/csgo.json" \

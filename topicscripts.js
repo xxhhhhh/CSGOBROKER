@@ -37,7 +37,7 @@ $(document).ready(function () {
               <div id="preview-content"></div>
               <div class="site-searcher-buttons">
                   ${[
-                    "Lis-Skins",
+                    "LIS-SKINS",
                     "AvanMarket",
                     "MoonMarket",
                     "CSMoney",
