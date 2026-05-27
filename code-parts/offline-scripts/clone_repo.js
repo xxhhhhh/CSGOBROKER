@@ -253,6 +253,10 @@ function transformTextByPath(relPosix, text, opts) {
     return 'csgobroker.me\n';
   }
 
+  if (base.endsWith('.txt')) {
+    return text;
+  }
+
   if (relPosix.toLowerCase().endsWith('public/seo-rewrite.js') || base === 'seo-rewrite.js') {
     return transformSeoRewriteJs(text);
   }
