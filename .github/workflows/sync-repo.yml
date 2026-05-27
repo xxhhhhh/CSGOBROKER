@@ -1,0 +1,19 @@
+name: Trigger BROKERCO Sync
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger BROKERCO workflow
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer ${{ secrets.CROSS_REPO_PAT }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/xxhhhhh/BROKERCO/dispatches \
+            -d '{"event_type":"sync-from-csgobroker"}'

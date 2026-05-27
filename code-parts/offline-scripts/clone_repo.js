@@ -282,7 +282,7 @@ async function saveManifest(destRoot, manifest) {
 // --- Core sync --------------------------------------------------------------
 async function removeExcludedDirsInDest(destRoot) {
   // IMPORTANT: do NOT touch DEST .git EVER
-  for (const name of Array.from(EXCLUDED_ROOT_DIRS)) {
+  for (const name of Array.from(EXCLUDED_ROOT_DIRS).filter(name => name !== '.github')) {
     const target = path.join(destRoot, name);
     await fs.rm(target, { recursive: true, force: true });
   }

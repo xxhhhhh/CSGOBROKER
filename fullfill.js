@@ -28,8 +28,7 @@ const ORDER = [
   "static-pages-fill.js",
   "alt-langs.js",
   "build-search-config.js",
-  "meta-and-sitemap.js",
-  "clone_repo.js"
+  "meta-and-sitemap.js"
 ];
 
 const HELP_TEXT = `
