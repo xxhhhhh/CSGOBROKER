@@ -99,6 +99,9 @@ function isExcludedRootForSrc(relPosix, excludeGitInSrc) {
   const first = firstSegment(relPosix);
   if (EXCLUDED_ROOT_DIRS.has(first)) return true;
   if (excludeGitInSrc && first === '.git') return true;
+
+  if (/^[a-f0-9]{32}\.txt$/i.test(path.basename(relPosix))) return true;
+
   return false;
 }
 
