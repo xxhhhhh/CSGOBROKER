@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9f689672-0886-4d26-a9d7-416cb5ab6115",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-17T06:47:54.339Z",
+  "updatedAt": "2026-05-27T07:33:27.787Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 52,
-  "totalItemsGrouped": 52,
+  "totalItemsRaw": 49,
+  "totalItemsGrouped": 49,
   "items": [
     {
       "assetid": "50276301783",
@@ -395,42 +395,6 @@
       ]
     },
     {
-      "assetid": "51718477551",
-      "classid": "7993037077",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "MP5-SD | Lime Hex",
-      "market_hash_name": "MP5-SD | Lime Hex (Minimal Wear)",
-      "type": "Consumer Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "48818531450",
       "classid": "202111975",
       "instanceid": "6284020568",
@@ -506,50 +470,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51500476250",
-      "classid": "7993036156",
-      "instanceid": "6276390882",
-      "amount": 1,
-      "name": "M4A1-S | Cyrex",
-      "market_hash_name": "M4A1-S | Cyrex (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -841,6 +761,34 @@
       "amount": 1,
       "name": "Berlin 2019 Gold Coin",
       "market_hash_name": "Berlin 2019 Gold Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51914494689",
+      "classid": "8490781882",
+      "instanceid": "8490781883",
+      "amount": 1,
+      "name": "Cologne 2026 Coin",
+      "market_hash_name": "Cologne 2026 Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -1254,68 +1202,6 @@
       ]
     },
     {
-      "assetid": "51510439385",
-      "classid": "7545311983",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Sticker | Candy Apples",
-      "market_hash_name": "Sticker | Candy Apples",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A1B1A1B918A881A189A291A5C3A4A9A1B14AE8C9A1D1B61DCAFD1C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51510439385"
-      ]
-    },
-    {
-      "assetid": "51510440576",
-      "classid": "7545312652",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Sticker | Pop Pup",
-      "market_hash_name": "Sticker | Pop Pup",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AFBFAFB716A68FAF87AC9FABCDAAA7AFBF5DE6C7AFDFB86683FD37",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51510440576"
-      ]
-    },
-    {
       "assetid": "46454325055",
       "classid": "7993038787",
       "instanceid": "188530139",
@@ -1625,7 +1511,7 @@
     {
       "assetid": "45383609716",
       "classid": "7993043066",
-      "instanceid": "480429594",
+      "instanceid": "480299386",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Grinder",
       "market_hash_name": "StatTrak™ Glock-18 | Grinder (Field-Tested)",
@@ -1661,7 +1547,7 @@
     {
       "assetid": "33099867381",
       "classid": "7993041653",
-      "instanceid": "8489516321",
+      "instanceid": "8505377287",
       "amount": 1,
       "name": "StatTrak™ MP9 | Rose Iron",
       "market_hash_name": "StatTrak™ MP9 | Rose Iron (Minimal Wear)",
