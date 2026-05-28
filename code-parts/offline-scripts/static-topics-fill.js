@@ -77,7 +77,10 @@ function parseArgs(argv){
   const verbose = argv.includes("--verbose");
   const prices  = get("--prices");
 
-  const pathsRaw = (get("--paths") ?? "/topic,/ru/topic")
+  const pathsRaw = (
+    get("--paths") ??
+    "/topic,/ru/topic,/topic/,/ru/topic/"
+  )
     .split(",")
     .map(s => s.trim())
     .filter(Boolean);
