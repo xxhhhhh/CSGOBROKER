@@ -39,6 +39,8 @@ const EXCLUDED_ROOT_DIRS = new Set([
   '.codegpt',
   '.tmp',
   'cn',
+
+  'node_modules',
 ]);
 
 // By default we do NOT copy SRC .git folder. Enable via --include-git (but DEST .git is always protected)
