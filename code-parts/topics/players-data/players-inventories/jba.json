@@ -7,16 +7,18 @@
   "name": "Joshua Barutt",
   "nationality": "United States",
   "born": "10.06.2004",
+  "isContentCreator": false,
   "twitch": "JBaa",
   "faceit": "https://faceitdb.com/profile/faceit/4053b992-4f7e-4073-a503-934ae63de9f6",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-26T05:59:43.832Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 47,
-  "totalItemsGrouped": 47,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-05-28T07:17:48.371Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 45,
+  "totalItemsGrouped": 45,
   "items": [
     {
       "assetid": "50417130641",
@@ -115,37 +117,6 @@
       ]
     },
     {
-      "assetid": "51200605372",
-      "classid": "1989273786",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Graffiti | Cocky (War Pig Pink)",
-      "market_hash_name": "Graffiti | Cocky (War Pig Pink)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209484948C519EB494BC95A490F6939C94845099A486FC94E48CC062D4AB",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51200605372"
-      ]
-    },
-    {
       "assetid": "32550127926",
       "classid": "7993038407",
       "instanceid": "302028390",
@@ -218,54 +189,6 @@
       ]
     },
     {
-      "assetid": "50408136967",
-      "classid": "8246900320",
-      "instanceid": "7839514864",
-      "amount": 1,
-      "name": "AK-47 | Crane Flight",
-      "market_hash_name": "AK-47 | Crane Flight (Well-Worn)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202939AEEB95CD9228312E09B822012C192D11C1F4E6DF2A69EF284B302128398D6B347B91371604292969E81490C059976CC99EEB95412B5921BCBCF428",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "45130047596",
       "classid": "7993035800",
       "instanceid": "7051387367",
@@ -314,14 +237,14 @@
       ]
     },
     {
-      "assetid": "46329923716",
-      "classid": "7993036534",
-      "instanceid": "6785188043",
+      "assetid": "51199941899",
+      "classid": "7993036089",
+      "instanceid": "6276360493",
       "amount": 1,
-      "name": "M4A1-S | Fade",
-      "market_hash_name": "M4A1-S | Fade (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201F0F9B8EF5D4B31E07233F861637192F1B27EAA9B5F51C5F3D7D1A171E0FF8227D15171D0FF82202797939207D1A171C0FF8227D1A171F0FF82277066F08E47A3F03",
+      "name": "USP-S | Printstream",
+      "market_hash_name": "USP-S | Printstream (Minimal Wear)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -350,14 +273,14 @@
       ]
     },
     {
-      "assetid": "45055518799",
-      "classid": "7993038229",
-      "instanceid": "188530139",
+      "assetid": "46329923716",
+      "classid": "7993036534",
+      "instanceid": "6785188043",
       "amount": 1,
-      "name": "M4A4 | Eye of Horus",
-      "market_hash_name": "M4A4 | Eye of Horus (Field-Tested)",
+      "name": "M4A1-S | Fade",
+      "market_hash_name": "M4A1-S | Fade (Factory New)",
       "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206373ACB3F18FC4627B7343846A4B6553675BB2A6A1906023D8640B64136BE8967757",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201F0F9B8EF5D4B31E07233F861637192F1B27EAA9B5F51C5F3D7D1A171E0FF8227D15171D0FF82202797939207D1A171C0FF8227D1A171F0FF82277066F08E47A3F03",
       "tags": [
         {
           "category": "Type",
@@ -668,6 +591,34 @@
       "amount": 1,
       "name": "Budapest 2025 Coin",
       "market_hash_name": "Budapest 2025 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51942895464",
+      "classid": "8490781882",
+      "instanceid": "8490781883",
+      "amount": 1,
+      "name": "Cologne 2026 Coin",
+      "market_hash_name": "Cologne 2026 Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -1152,6 +1103,42 @@
       ]
     },
     {
+      "assetid": "51582390953",
+      "classid": "7993062167",
+      "instanceid": "6299332501",
+      "amount": 1,
+      "name": "Five-SeveN | Fraise Crane",
+      "market_hash_name": "Five-SeveN | Fraise Crane (Factory New)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "26449964776",
       "classid": "7993035488",
       "instanceid": "6276735751",
@@ -1196,105 +1183,9 @@
       ]
     },
     {
-      "assetid": "47842867554",
-      "classid": "188530161",
-      "instanceid": "7781981979",
-      "amount": 1,
-      "name": "Glock-18 | Dragon Tattoo",
-      "market_hash_name": "Glock-18 | Dragon Tattoo (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2088986A7A28153A89908CA8B8A08CB88CB06A6D416A8BC8DAEA82808A9871C295BBBBBBB7EA8280899871C29564D9B0B7EA9C808B980FC39564D9B0B7B588D60DB3CD6097ADB5E08EF88036D04FE0",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51061816221",
-      "classid": "7993046554",
-      "instanceid": "7907011755",
-      "amount": 1,
-      "name": "Souvenir AK-47 | Gold Arabesque",
-      "market_hash_name": "Souvenir AK-47 | Gold Arabesque (Field-Tested)",
-      "type": "Souvenir Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "42804867439",
       "classid": "7993043335",
-      "instanceid": "8431857382",
+      "instanceid": "8509470250",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Hypnotic",
       "market_hash_name": "StatTrak™ Desert Eagle | Hypnotic (Factory New)",
@@ -1342,7 +1233,7 @@
     {
       "assetid": "46390610084",
       "classid": "7993038436",
-      "instanceid": "188645228",
+      "instanceid": "188537557",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Light Box",
       "market_hash_name": "StatTrak™ MAC-10 | Light Box (Well-Worn)",

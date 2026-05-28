@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/4cd0d638-8cf3-4770-8b44-d6576f69d2a5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-19T07:45:33.903Z",
+  "updatedAt": "2026-05-28T07:50:35.667Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 377,
-  "totalItemsGrouped": 375,
+  "totalItemsRaw": 378,
+  "totalItemsGrouped": 376,
   "items": [
     {
       "assetid": "47305074419",
@@ -1312,6 +1312,30 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51743120740",
+      "classid": "2750358421",
+      "instanceid": "8477748376",
+      "amount": 1,
+      "name": "Aces High Pin",
+      "market_hash_name": "Aces High Pin",
+      "type": "Exotic Collectible",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205444544CA67B74547C5164503C54245CB795EC1A",
+      "tags": [
+        {
+          "category": "Type",
           "name": ""
         },
         {

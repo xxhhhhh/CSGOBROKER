@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/79aa3fc4-4e7b-4852-bed9-e5c9cf3801f6",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-23T06:29:29.830Z",
+  "updatedAt": "2026-05-28T07:10:30.955Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
   "totalItemsRaw": 199,
-  "totalItemsGrouped": 166,
+  "totalItemsGrouped": 167,
   "items": [
     {
       "assetid": "47324912525",
@@ -4941,7 +4941,7 @@
       "assetid": "22953869835",
       "classid": "4302203081",
       "instanceid": "188530139",
-      "amount": 2,
+      "amount": 1,
       "name": "Sticker | Evil Geniuses (Holo) | 2020 RMR",
       "market_hash_name": "Sticker | Evil Geniuses (Holo) | 2020 RMR",
       "type": "Remarkable Sticker",
@@ -4977,8 +4977,7 @@
         }
       ],
       "assetids": [
-        "22953869835",
-        "22953869812"
+        "22953869835"
       ]
     },
     {
@@ -6314,6 +6313,46 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51930024318",
+      "classid": "5835582127",
+      "instanceid": "6276351356",
+      "amount": 1,
+      "name": "AK-47",
+      "market_hash_name": "AK-47",
+      "type": "Stock Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

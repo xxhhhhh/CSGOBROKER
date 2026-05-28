@@ -7,16 +7,18 @@
   "name": "John Tregillgas",
   "nationality": "Australia",
   "born": "30.08.1997",
+  "isContentCreator": false,
   "twitch": "liazzz",
   "faceit": "https://faceitdb.com/profile/faceit/018df5fb-0948-40af-99b0-baba0887e62b",
-  "isContentCreator": false,
-  "updatedAt": "2026-05-10T07:09:41.056Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 123,
-  "totalItemsGrouped": 121,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-05-28T07:50:38.667Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 122,
+  "totalItemsGrouped": 120,
   "items": [
     {
       "assetid": "42637776371",
@@ -117,7 +119,7 @@
     {
       "assetid": "36338393525",
       "classid": "7622298514",
-      "instanceid": "188720840",
+      "instanceid": "480099128",
       "amount": 1,
       "name": "★ StatTrak™ Butterfly Knife",
       "market_hash_name": "★ StatTrak™ Butterfly Knife",
@@ -370,42 +372,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "45114448058",
-      "classid": "7993035533",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "M4A1-S | Black Lotus",
-      "market_hash_name": "M4A1-S | Black Lotus (Minimal Wear)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201000AAA18F98B811082C309E193815201428B5D4C5FE135063782F6018C8446806",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -3630,6 +3596,54 @@
       ]
     },
     {
+      "assetid": "41439378743",
+      "classid": "7993041441",
+      "instanceid": "6652269627",
+      "amount": 1,
+      "name": "Souvenir M4A1-S | VariCamo",
+      "market_hash_name": "Souvenir M4A1-S | VariCamo (Field-Tested)",
+      "type": "Souvenir Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "44735238501",
       "classid": "7993043442",
       "instanceid": "7216030412",
@@ -3680,7 +3694,7 @@
     {
       "assetid": "28771346802",
       "classid": "7993039759",
-      "instanceid": "188723723",
+      "instanceid": "188544295",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Water Elemental",
       "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Factory New)",
@@ -3836,7 +3850,7 @@
     {
       "assetid": "41323321086",
       "classid": "7993039572",
-      "instanceid": "8475969069",
+      "instanceid": "8507736428",
       "amount": 1,
       "name": "StatTrak™ MP9 | Hydra",
       "market_hash_name": "StatTrak™ MP9 | Hydra (Field-Tested)",
@@ -3920,7 +3934,7 @@
     {
       "assetid": "45212304369",
       "classid": "7993039416",
-      "instanceid": "8475969068",
+      "instanceid": "8507736427",
       "amount": 1,
       "name": "StatTrak™ USP-S | Printstream",
       "market_hash_name": "StatTrak™ USP-S | Printstream (Minimal Wear)",
@@ -3964,7 +3978,7 @@
     {
       "assetid": "42838982646",
       "classid": "7993041309",
-      "instanceid": "482616865",
+      "instanceid": "482498390",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Nightwish",
       "market_hash_name": "StatTrak™ AK-47 | Nightwish (Factory New)",
@@ -4109,45 +4123,9 @@
       ]
     },
     {
-      "assetid": "34318676973",
-      "classid": "7993040748",
-      "instanceid": "188536206",
-      "amount": 1,
-      "name": "StatTrak™ Nova | Toy Soldier",
-      "market_hash_name": "StatTrak™ Nova | Toy Soldier (Minimal Wear)",
-      "type": "StatTrak™ Restricted Shotgun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201303FEF4A6FF6C0B3033DF163B17231A2BDCA8BEE31053DB145B134383127B12631BB132CC53",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "32863412875",
       "classid": "7993036125",
-      "instanceid": "480085826",
+      "instanceid": "480087694",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Sakkaku",
       "market_hash_name": "StatTrak™ MAC-10 | Sakkaku (Field-Tested)",
