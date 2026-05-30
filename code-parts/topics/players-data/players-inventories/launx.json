@@ -7,16 +7,18 @@
   "name": "Laurențiu Țârlea",
   "nationality": "Romania",
   "born": "10.05.2005",
+  "isContentCreator": false,
   "twitch": "launx_",
   "faceit": "https://faceitdb.com/profile/faceit/7afa70ed-066f-4336-adf7-03890d8e22b1",
-  "isContentCreator": false,
-  "updatedAt": "2026-05-28T07:08:20.849Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 44,
-  "totalItemsGrouped": 43,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-05-30T06:37:57.174Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 45,
+  "totalItemsGrouped": 44,
   "items": [
     {
       "assetid": "51284396233",
@@ -972,6 +974,42 @@
       "market_hash_name": "Dual Berettas | Polished Malachite (Field-Tested)",
       "type": "Industrial Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FEEE4C47055C44FFE6FCDE74F4D6FCCEFAC60643630AFDBE29FD96D78EE6394C3F16",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51983773749",
+      "classid": "7993036384",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "SG 553 | Basket Halftone",
+      "market_hash_name": "SG 553 | Basket Halftone (Factory New)",
+      "type": "Industrial Grade Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
