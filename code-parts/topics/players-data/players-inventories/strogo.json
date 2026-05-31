@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9c3e501d-132c-42c8-b808-7641acfdc0ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-24T06:40:07.771Z",
+  "updatedAt": "2026-05-31T06:59:53.250Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 176,
-  "totalItemsGrouped": 176,
+  "totalItemsRaw": 179,
+  "totalItemsGrouped": 179,
   "items": [
     {
       "assetid": "51626467705",
@@ -814,6 +814,38 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51768974527",
+      "classid": "7993036674",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Boreal Forest",
+      "market_hash_name": "★ Karambit | Boreal Forest (Field-Tested)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
           "name": ""
         },
         {
@@ -2994,6 +3026,50 @@
       ]
     },
     {
+      "assetid": "39802947743",
+      "classid": "7993036958",
+      "instanceid": "6284370389",
+      "amount": 1,
+      "name": "AK-47 | Redline",
+      "market_hash_name": "AK-47 | Redline (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "48550136986",
       "classid": "7993037336",
       "instanceid": "480085569",
@@ -4340,6 +4416,30 @@
       ]
     },
     {
+      "assetid": "51776343495",
+      "classid": "2750357614",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Welcome to the Clutch Pin",
+      "market_hash_name": "Welcome to the Clutch Pin",
+      "type": "High Grade Collectible",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202333233BCE0C03230B2013274B23532B7F334EFF",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "43288074096",
       "classid": "2521818047",
       "instanceid": "188530139",
@@ -5226,7 +5326,7 @@
     {
       "assetid": "30901947563",
       "classid": "7993043106",
-      "instanceid": "6358363437",
+      "instanceid": "6339766999",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Chatterbox",
       "market_hash_name": "StatTrak™ Galil AR | Chatterbox (Well-Worn)",

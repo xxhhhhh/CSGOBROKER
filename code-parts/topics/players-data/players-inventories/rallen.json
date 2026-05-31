@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e05e2128-e0ab-459e-8ee5-4a0249ba508f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-28T07:57:07.038Z",
+  "updatedAt": "2026-05-31T08:03:39.594Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 630,
-  "totalItemsGrouped": 491,
+  "totalItemsRaw": 638,
+  "totalItemsGrouped": 493,
   "items": [
     {
       "assetid": "2739098068",
@@ -805,6 +805,34 @@
       "market_hash_name": "★ Specialist Gloves | Marble Fade (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%201F0F9382C8EBAF1E07B5383FCE5137192F1C27E9D1A4EF1C5FF41E779C1D6F17F494E967",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50279416179",
+      "classid": "8247339288",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Frosty",
+      "market_hash_name": "★ Sport Gloves | Frosty (Battle-Scarred)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -4372,6 +4400,42 @@
       ]
     },
     {
+      "assetid": "50284968795",
+      "classid": "8246922509",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Glock-18 | Fully Tuned",
+      "market_hash_name": "Glock-18 | Fully Tuned (Minimal Wear)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50280114169",
       "classid": "8246910892",
       "instanceid": "188530139",
@@ -5371,7 +5435,7 @@
       "assetid": "50113590525",
       "classid": "5327976361",
       "instanceid": "188530139",
-      "amount": 1,
+      "amount": 7,
       "name": "Sticker | OG (Holo) | Paris 2023",
       "market_hash_name": "Sticker | OG (Holo) | Paris 2023",
       "type": "Exotic Sticker",
@@ -5407,7 +5471,13 @@
         }
       ],
       "assetids": [
-        "50113590525"
+        "50113590525",
+        "51797880480",
+        "51797879892",
+        "51797879891",
+        "51797879418",
+        "51797878819",
+        "51797878818"
       ]
     },
     {
@@ -7101,7 +7171,7 @@
       ]
     },
     {
-      "assetid": "50888413998",
+      "assetid": "51555103057",
       "classid": "7545309815",
       "instanceid": "519977179",
       "amount": 4,
@@ -7128,10 +7198,10 @@
         }
       ],
       "assetids": [
+        "51555103057",
         "50888413998",
         "49689135746",
-        "49560556876",
-        "51555103057"
+        "49560556876"
       ]
     },
     {
@@ -16398,7 +16468,7 @@
     {
       "assetid": "50589667139",
       "classid": "7993038769",
-      "instanceid": "8514540748",
+      "instanceid": "8517080590",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Redline",
       "market_hash_name": "StatTrak™ AK-47 | Redline (Minimal Wear)",
@@ -16754,7 +16824,7 @@
     {
       "assetid": "10987244968",
       "classid": "7993042460",
-      "instanceid": "8514540749",
+      "instanceid": "8517021545",
       "amount": 1,
       "name": "StatTrak™ AWP | Redline",
       "market_hash_name": "StatTrak™ AWP | Redline (Field-Tested)",
@@ -16966,7 +17036,7 @@
     {
       "assetid": "46149536084",
       "classid": "7993037775",
-      "instanceid": "480191159",
+      "instanceid": "480112893",
       "amount": 1,
       "name": "StatTrak™ M4A4 | The Emperor",
       "market_hash_name": "StatTrak™ M4A4 | The Emperor (Field-Tested)",
