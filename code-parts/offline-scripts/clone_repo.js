@@ -110,9 +110,16 @@ function isExcludedRootForSrc(relPosix, excludeGitInSrc) {
 // DEST: .git is ALWAYS protected, regardless of flags
 function isExcludedRootForDest(relPosix) {
   if (!relPosix) return false;
+
   const first = firstSegment(relPosix);
+  const base = path.basename(relPosix);
+
   if (first === '.git') return true;
   if (EXCLUDED_ROOT_DIRS.has(first)) return true;
+
+  // Protect IndexNow key files in BROKERCO root
+  if (!relPosix.includes('/') && /^[a-f0-9]{32}\.txt$/i.test(base)) return true;
+
   return false;
 }
 
