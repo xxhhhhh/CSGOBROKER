@@ -12,18 +12,18 @@
   "faceit": "https://faceitdb.com/profile/faceit/74df0e6b-5b41-42d7-93b4-05dc78b9a699",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-01T08:48:09.922Z",
+  "updatedAt": "2026-06-02T07:39:18.480Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 300,
-  "totalItemsGrouped": 162,
+  "totalItemsRaw": 308,
+  "totalItemsGrouped": 167,
   "items": [
     {
       "assetid": "51825506681",
       "classid": "7993047043",
-      "instanceid": "8488629390",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Butterfly Knife | Doppler",
       "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
@@ -185,7 +185,7 @@
     {
       "assetid": "51825719157",
       "classid": "7993045165",
-      "instanceid": "8488629390",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Sport Gloves | Pandora's Box",
       "market_hash_name": "★ Sport Gloves | Pandora's Box (Minimal Wear)",
@@ -567,6 +567,62 @@
       ]
     },
     {
+      "assetid": "51838846945",
+      "classid": "259106970",
+      "instanceid": "8492143201",
+      "amount": 1,
+      "name": "Desert Eagle | Cobalt Disruption",
+      "market_hash_name": "Desert Eagle | Cobalt Disruption (Minimal Wear)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "35529323386",
       "classid": "7993039933",
       "instanceid": "188530139",
@@ -605,7 +661,7 @@
     {
       "assetid": "51825929196",
       "classid": "7993042330",
-      "instanceid": "8488629418",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "AK-47 | Hydroponic",
       "market_hash_name": "AK-47 | Hydroponic (Factory New)",
@@ -1719,6 +1775,55 @@
       ]
     },
     {
+      "assetid": "51838548612",
+      "classid": "8490855838",
+      "instanceid": "8491547721",
+      "amount": 3,
+      "name": "Sticker | dem0n (Holo) | Cologne 2026",
+      "market_hash_name": "Sticker | dem0n (Holo) | Cologne 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D1C1D1C968D8F1D1F9D4E1D5B3D4D9D1C11982B9D1A1D3DBCF611A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51838548612",
+        "51838548610",
+        "51838548609"
+      ]
+    },
+    {
       "assetid": "34902175812",
       "classid": "778383679",
       "instanceid": "0",
@@ -2239,6 +2344,53 @@
       ]
     },
     {
+      "assetid": "51838548613",
+      "classid": "8491256541",
+      "instanceid": "8491547721",
+      "amount": 1,
+      "name": "Sticker | dem0n (Gold) | Cologne 2026",
+      "market_hash_name": "Sticker | dem0n (Gold) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209C8C9C842595BC9CB49AAC98FE99949C8C55CFF49CEC9E90C0E38A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51838548613"
+      ]
+    },
+    {
       "assetid": "33544001293",
       "classid": "5537026493",
       "instanceid": "0",
@@ -2384,6 +2536,53 @@
       ],
       "assetids": [
         "50861862451"
+      ]
+    },
+    {
+      "assetid": "51838548606",
+      "classid": "8491040647",
+      "instanceid": "8491547721",
+      "amount": 1,
+      "name": "Sticker | dem0n | Cologne 2026",
+      "market_hash_name": "Sticker | dem0n | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203525352D8C3C15351D36053157303D3525F3665D3545379ACFBC9D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51838548606"
       ]
     },
     {
@@ -4557,6 +4756,54 @@
       ]
     },
     {
+      "assetid": "51838548608",
+      "classid": "8490886237",
+      "instanceid": "8491547721",
+      "amount": 2,
+      "name": "Sticker | dem0n (Foil) | Cologne 2026",
+      "market_hash_name": "Sticker | dem0n (Foil) | Cologne 2026",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C1D1C1D978C8E1C1E9C5F1C5A3C4C9C1D10692A9C1B1C3EF961597",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51838548608",
+        "51838548607"
+      ]
+    },
+    {
       "assetid": "46173468517",
       "classid": "7993036876",
       "instanceid": "188530139",
@@ -5838,7 +6085,7 @@
     {
       "assetid": "43926376697",
       "classid": "7993044374",
-      "instanceid": "927525437",
+      "instanceid": "913982638",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Bright Water",
       "market_hash_name": "StatTrak™ M4A1-S | Bright Water (Minimal Wear)",
