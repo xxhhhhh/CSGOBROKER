@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/84cd6984-6582-483e-bedb-4ea8366c67fb",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-05-31T07:02:28.774Z",
+  "updatedAt": "2026-06-02T07:29:54.151Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 180,
-  "totalItemsGrouped": 167,
+  "totalItemsRaw": 182,
+  "totalItemsGrouped": 169,
   "items": [
     {
       "assetid": "50743293089",
@@ -169,6 +169,34 @@
       "amount": 1,
       "name": "★ Driver Gloves | Garden",
       "market_hash_name": "★ Driver Gloves | Garden (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51837765981",
+      "classid": "7993037847",
+      "instanceid": "8491547970",
+      "amount": 1,
+      "name": "★ Driver Gloves | King Snake",
+      "market_hash_name": "★ Driver Gloves | King Snake (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1616,6 +1644,53 @@
       "assetids": [
         "50678020917",
         "49023618439"
+      ]
+    },
+    {
+      "assetid": "51842259618",
+      "classid": "8490855140",
+      "instanceid": "8491547721",
+      "amount": 1,
+      "name": "Sticker | Brollan (Holo) | Cologne 2026",
+      "market_hash_name": "Sticker | Brollan (Holo) | Cologne 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209282928A2B9BB292BA97A296F0979A92822AC1FA92E290AB918BBD",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51842259618"
       ]
     },
     {
