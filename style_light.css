@@ -529,7 +529,10 @@ h3,
 .box .logobg .best-alt .best-alt-unit::before,
 .menu-nav-item,
 .skin.expander:hover span,
-.extra-abox span {
+.extra-abox span,
+.rec-box p, 
+.rec-box .content p, 
+.rec-box .content p:nth-child(2) {
     color: #1f1f1f;
 }
 
@@ -1540,6 +1543,11 @@ ul .submenu li .nonredir,
 
     .nondef .spaceblock {
         background: var(--darkygray);
+    }
+
+    .best-alternates .cent-title {
+        box-shadow: unset;
+        color: var(--text-lightgray);
     }
 
     .shortinfo .features::before {
