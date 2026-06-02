@@ -528,7 +528,8 @@ h3,
 .box .logobg .best-alt .best-alt-unit span, 
 .box .logobg .best-alt .best-alt-unit::before,
 .menu-nav-item,
-.skin.expander:hover span {
+.skin.expander:hover span,
+.extra-abox span {
     color: #1f1f1f;
 }
 
@@ -1165,7 +1166,7 @@ ul .submenu li .nonredir,
     background: var(--main-theme) !important;
 }
 
-.box-extra-links .rec-box .logobg a {
+.rec-box .logobg a {
     background: unset !important;
 }
 
@@ -1351,9 +1352,17 @@ ul .submenu li .nonredir,
     filter: unset;
 }
 
-.officon.mirror::before {
+.officon.mirror::before,
+.extra-abox .officon::before,
+.extra-abox.more-promos .content .officon,
+.extra-abox:active .officon {
     filter: brightness(.2);
     opacity: .5;
+}
+
+.promo-box .content .bonus-type i::before {
+    filter: brightness(.8);
+    opacity: 1;
 }
 
 .features .typesinside a .officon {

@@ -525,6 +525,12 @@ function toGoHref(goKey){
   return `${GO_PREFIX}/${k}`.replace(/\/{2,}/g, "/");
 }
 
+function getCustomLinkVariantFromTag(openTag){
+  const m = String(openTag || "").match(/\blink\s*=\s*(["'])(.*?)\1/i);
+  const v = m ? String(m[2] || "").trim() : "";
+  return v ? v.replace(/^link-/, "") : "";
+}
+
 /* ======================================================================= */
 /* === NEW: ОФФЛАЙН РЕНДЕР МОД-БОКСОВ (перенос client-side forcemodsboxes) === */
 /* ======================================================================= */
@@ -1551,7 +1557,7 @@ async function processReviewMirrors(html, urlPath, lang, root, presets, ratingsM
   })();
 
   out = ensureMainLogobgLink(out, visitHrefMain, nl);
-  out = upsertInstructionSiteLinks(out, visitHrefMain);
+  out = upsertInstructionSiteLinks(out, visitHrefMain, pageKey, data);
   out = ensureTGButtonInMainBox(out, data, lang, nl);
   out = ensureMainBoxLiverating(out, data.ratings || {}, nl);
 
@@ -2186,60 +2192,107 @@ async function upsertPromoBoxesInSitepage(html, urlPath, lang, pageKey, data, re
 }
 function truthy(v){ return v===true || v==="true" || v===1 || v==="1"; }
 
+function promoBoxesToggleText(lang = "en") {
+  const L = String(lang || "en").toLowerCase();
+
+  const dict = {
+    ru: {
+      moreHtml: 'Еще <span>{count}</span> Промокода',
+      hide: "Скрыть Промокоды"
+    },
+    en: {
+      moreHtml: '<span>{count}</span> More Promo Codes',
+      hide: "Hide Promo Codes"
+    },
+    tr: {
+      moreHtml: '<span>{count}</span> Daha Fazla Promosyon Kodu',
+      hide: "Promosyon Kodlarını Gizle"
+    },
+    es: {
+      moreHtml: '<span>{count}</span> Más Códigos Promocionales',
+      hide: "Ocultar Códigos Promocionales"
+    }
+  };
+
+  return dict[L] || dict.en;
+}
+
 async function renderPromoNavMirrorBlock(fullHtmlAfterSections, urlPath, lang, pageKey, data, reviewSettings, nl, indent, isMirrors, root){
   const lines = [];
   lines.push(`${indent}<div class="box-extra-links">`);
 
   const codes = data.codes || {};
   const basePromoCode = getPromoBaseCode(data);
-  const hasCodes = codes && Object.keys(codes).length > 0 && !!basePromoCode;
+  const codeEntries = Object.entries(codes).filter(([, v]) => String(v ?? "").trim().length > 0);
+  const hasCodes = codeEntries.length > 0 && !!basePromoCode;
 
-  const I0 = indent;        // .box-extra-links children level is decided by caller
-  const I1 = indent + "  "; // inside each promo-box
-  const I2 = I1 + "  ";     // inside .content
+  const I0 = indent;
+  const I1 = indent + "  ";
+  const I2 = I1 + "  ";
+  const I3 = I2 + "  ";
 
   if (hasCodes){
+    const t = promoBoxesToggleText(lang);
+    const desktopHiddenCount = Math.max(0, codeEntries.length - 3);
+    const mobileHiddenCount = Math.max(0, codeEntries.length - 1);
+
+    lines.push(`${I0}<div class="promo-boxes-list">`);
+
     let idx = 1;
-    for (const [codeName, codeDisplay] of Object.entries(codes)){
+    for (const [codeName, codeDisplay] of codeEntries){
       const cls = (reviewSettings?.codesBinding || {})[codeName] || "default-bonus";
       const cnt = `counter-${idx}`;
+      const hiddenCls = idx > 3 ? " hidden" : "";
       const promoCodeValue = getPromoCodeByIndex(data, idx);
-      const promoText = (lang==="ru") ? "Промокод" : "Promo";
+      const promoText = (lang === "ru") ? "Промокод" : "Promo";
 
-      lines.push(`${I0}<div class="promo-box extra-abox ${cls} ${cnt}">`);
+      lines.push(`${I1}<div class="promo-box extra-abox ${cls} ${cnt}${hiddenCls}">`);
+      lines.push(`${I2}<div class="content">`);
+      lines.push(`${I3}<p>${escapeHtml(promoText)}</p>`);
+      lines.push(`${I3}<code class="promo-code">${escapeHtml(String(promoCodeValue))}</code>`);
+      lines.push(`${I3}<div class="promo-code-desc"><span>${escapeHtml(String(codeDisplay))}</span></div>`);
+      lines.push(`${I3}<div class="bonus-type"><i class="officon"></i></div>`);
+      lines.push(`${I3}<button class="copy site-promo-copy defbutton" aria-label="Copy Code" code="${escapeAttr(String(promoCodeValue))}"></button>`);
+      lines.push(`${I2}</div>`);
+      lines.push(`${I1}</div>`);
+
+      idx++;
+    }
+
+    lines.push(`${I0}</div>`);
+
+    if (codeEntries.length > 3){
+      lines.push(`${I0}<div class="extra-abox more-promos" data-desktop-hidden-count="${desktopHiddenCount}" data-mobile-hidden-count="${mobileHiddenCount}" data-more-html="${escapeAttr(t.moreHtml)}" data-hide-text="${escapeAttr(t.hide)}">`);
+      lines.push(`${I1}<div class="officon signupbonus"></div>`);
       lines.push(`${I1}<div class="content">`);
-      lines.push(`${I2}<p>${escapeHtml(promoText)}</p>`);
-      lines.push(`${I2}<code class="promo-code">${escapeHtml(String(promoCodeValue))}</code>`);
-      lines.push(`${I2}<div class="promo-code-desc"><span>${escapeHtml(String(codeDisplay))}</span></div>`);
-      lines.push(`${I2}<div class="bonus-type"><i class="officon"></i></div>`);
-      lines.push(`${I2}<button class="copy site-promo-copy defbutton" aria-label="Copy Code" code="${escapeAttr(String(promoCodeValue))}"></button>`);
+      lines.push(`${I2}<p>${t.moreHtml.replace("{count}", desktopHiddenCount)}</p>`);
+      lines.push(`${I2}<div class="officon rightcarret"></div>`);
       lines.push(`${I1}</div>`);
       lines.push(`${I0}</div>`);
-      idx++;
     }
   }
 
-
   if (!isMirrors && truthy(data.mirror)){
     const href = (`${lang==="ru" ? "/ru" : ""}/mirrors/${pageKey}`).replace(/\/{2,}/g,"/");
-    const span = (lang==="ru") ? "Не переходит на сайт?" : (lang==="tr") ? "Siteye erişemiyor musun?" : (lang==="es") ? "¿No puedes acceder al sitio?" : "Can't Access the Site?";
-    lines.push(`${indent} <a href="${escapeAttr(href)}" class="mirror-redirect extra-abox">`);
-    lines.push(`${indent} <div class="officon mirror"></div>`);
-    lines.push(`${indent} <span>${escapeHtml(span)}</span>`);
-    lines.push(`${indent} </a>`);
+    const span = (lang==="ru") ? "Не переходит на сайт?" : (lang==="tr") ? "Siteye erişilemiyor mu?" : (lang==="es") ? "¿No puedes acceder al sitio?" : "Site not opening?";
+
+    lines.push(`${I0}<a class="extra-abox mirror-redirect" href="${escapeAttr(href)}">`);
+    lines.push(`${I1}<div class="officon mirror"></div>`);
+    lines.push(`${I1}<div class="content">`);
+    lines.push(`${I2}<span>${escapeHtml(span)}</span>`);
+    lines.push(`${I1}</div>`);
+    lines.push(`${I0}</a>`);
   }
 
   if (!isMirrors){
-    // nav-review (only on reviews)
-    const nav = renderNavReviewBlock(fullHtmlAfterSections, lang, indent+" ", nl);
+    const nav = renderNavReviewBlock(fullHtmlAfterSections, lang, indent + " ", nl);
     if (nav) lines.push(nav);
   }
 
-  // NEW: best-alternates ALWAYS (reviews + mirrors), always last inside .box-extra-links
-  const bestAlts = await renderBestAlternatesExtraBlock(
-    root, urlPath, lang, pageKey, data, reviewSettings, nl, indent + " "
-  );
-  if (bestAlts) lines.push(bestAlts);
+  if (root && data){
+    const bestAlts = await renderBestAlternatesExtraBlock(root, urlPath, lang, pageKey, data, reviewSettings, nl, indent);
+    if (bestAlts) lines.push(bestAlts);
+  }
 
   lines.push(`${indent}</div>`);
   return lines.join(nl);
@@ -2691,23 +2744,23 @@ function bestAlternatesTitle(lang="en"){
 async function renderBestAlternatesExtraBlock(root, urlPath, lang, pageKey, data, reviewSettings, nl, indent){
   if (!root || !data) return "";
   const alts = Array.isArray(data["Sites Alternatives"]) ? data["Sites Alternatives"] : [];
-  const firstTwo = alts.filter(Boolean).slice(0, 2);
-  if (!firstTwo.length) return "";
+  const firstFour = alts.filter(Boolean).slice(0, 4);
+  if (!firstFour.length) return "";
 
   const reviewTxt = buttonSpanLabel(lang, "review") || (lang==="ru" ? "Подробнее" : "Read More");
   const visitTxt  = buttonSpanLabel(lang, "visit")  || (lang==="ru" ? "Перейти" : "Visit");
   const titleTxt  = bestAlternatesTitle(lang);
 
-  const I0 = indent;          // best-alternates
-  const I1 = indent + "  ";   // children of best-alternates
-  const I2 = I1 + "  ";       // children of rec-box
-  const I3 = I2 + "  ";       // deeper children
+  const I0 = indent;
+  const I1 = indent + "  ";
+  const I2 = I1 + "  ";
+  const I3 = I2 + "  ";
 
   const lines = [];
   lines.push(`${I0}<div class="best-alternates">`);
   lines.push(`${I1}<span class="cent-title">${escapeHtml(titleTxt)}</span>`);
 
-  for (const altKey of firstTwo){
+  for (const altKey of firstFour){
     const aj = await altJson(root, altKey);
     if (!aj) continue;
 
@@ -2722,7 +2775,11 @@ async function renderBestAlternatesExtraBlock(root, urlPath, lang, pageKey, data
     const ariaVisit = visitAriaLabel(aj.name || "", lang);
 
     const noBonus = isNoBonusReward(aj, lang);
-    const recBoxClass = noBonus ? "rec-box nobonus" : "rec-box";
+    const isFirst = firstFour.indexOf(altKey) === 0;
+
+    let recBoxClass = "rec-box";
+    if (noBonus) recBoxClass += " nobonus";
+    if (isFirst) recBoxClass += " active";
 
     lines.push(`${I1}<div class="${recBoxClass}">`);
 
@@ -2730,11 +2787,11 @@ async function renderBestAlternatesExtraBlock(root, urlPath, lang, pageKey, data
     lines.push(`${I3}<a href="${escapeAttr(reviewLink)}">`);
     lines.push(`${I3}  <img src="${escapeAttr(aj.logo)}" loading="lazy" draggable="false" alt="${escapeAttr(`Логотип ${aj.name}`)}">`);
     lines.push(`${I3}</a>`);
-    lines.push(`${I3}<p>${reward}</p>`);
-    lines.push(`${I3}<a class="boxtitle" href="${escapeAttr(reviewLink)}">${escapeHtml(aj.name)}</a>`);
     lines.push(`${I2}</div>`);
 
     lines.push(`${I2}<div class="content">`);
+    lines.push(`${I3}<a class="boxtitle" href="${escapeAttr(reviewLink)}">${escapeHtml(aj.name)}</a>`);
+    lines.push(`${I3}<p>${reward}</p>`);
     lines.push(`${I3}<div class="content-buttons">`);
     lines.push(`${I3}  <a href="${escapeAttr(reviewLink)}" class="review-button" aria-label="${escapeAttr(ariaReview)}"><span>${escapeHtml(reviewTxt)}</span></a>`);
     lines.push(`${I3}  <a href="${escapeAttr(visitHref)}" target="_blank" rel="noopener" class="review-button visit" aria-label="${escapeAttr(ariaVisit)}"><span>${escapeHtml(visitTxt)}</span></a>`);
@@ -3465,9 +3522,8 @@ function ensureMainLogobgLink(html, visitHref, nl){
   return out;
 }
 
-function upsertInstructionSiteLinks(html, visitHref){
+function upsertInstructionSiteLinks(html, visitHref, baseKey = "", data = {}){
   if (!visitHref) return html;
-  const hrefValue = String(visitHref);
 
   let out = html;
   const masked = maskSegments(out);
@@ -3484,6 +3540,19 @@ function upsertInstructionSiteLinks(html, visitHref){
       const m = open.match(/\bclass\s*=\s*(["'])([^"']*)\1/i);
       const classes = new Set((m ? m[2] : "").split(/\s+/).filter(Boolean));
       if (!classes.has("site-link")) return open;
+
+      let hrefValue = String(visitHref);
+
+      const customVariant = getCustomLinkVariantFromTag(open);
+      if (
+        customVariant &&
+        baseKey &&
+        Object.prototype.hasOwnProperty.call(data, `link-${customVariant}`) &&
+        data[`link-${customVariant}`]
+      ) {
+        hrefValue = toGoHref(`${baseKey}-${customVariant}`);
+      }
+
       let tag = upsertAttrInTag(open, "href", hrefValue);
       tag = upsertAttrInTag(tag, "target", "_blank");
       tag = upsertAttrInTag(tag, "rel", "noopener");

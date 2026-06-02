@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+    (function () {
+      try {
+        var settings = JSON.parse(localStorage.getItem('theme_settings') || '{}');
+        var theme = settings.theme || localStorage.getItem('theme') || 'dark';
+
+        document.documentElement.setAttribute('data-theme', theme);
+
+        window.__theme = theme;
+      } catch (e) {
+        window.__theme = 'dark';
+      }
+    })();
+    </script>
+    <link id="main-style" rel="stylesheet" href="/style_main.css">
+    <script>
+    (function () {
+      var link = document.createElement('link');
+      link.id = 'theme-style';
+      link.rel = 'stylesheet';
+
+      if (window.__theme === 'light') {
+        link.href = '/style_light.css';
+      } else {
+        link.href = '';
+        link.disabled = true;
+      }
+
+      document.head.appendChild(link);
+    })();
+    </script>
+<link rel="stylesheet" href="/fonts/TTNormsPro.css">
+<title>Redirecting…</title>
+</head>
+
+<body>
+
+<div class="redirect-loader" id="redirectLoader" aria-live="polite" aria-busy="true">
+  <div class="redirect-card">
+    <div class="spinner" aria-hidden="true"></div>
+    <div class="title" data-i18n="title"></div>
+    <div class="subtitle" data-i18n="subtitle"></div>
+    <div class="subtitle extra" id="redirectExtra" hidden data-i18n="extra"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const url = "https://ggband.gg/referral/brokerfail?utm_source=brokerpick";
+
+  const i18n = {
+    ru: {
+      title: "Перенаправляем…",
+      subtitle: "Пожалуйста, подождите",
+      extra: "Если перенаправление занимает слишком много времени, возможно, сайт недоступен в вашем регионе или доступ к нему ограничен вашим интернет-провайдером."
+    },
+    en: {
+      title: "Redirecting…",
+      subtitle: "Please wait",
+      extra: "If the redirect is taking too long, the site may be unavailable in your region or blocked by your internet provider."
+    }
+  };
+
+  function detectLang(){
+    const langs = navigator.languages || [navigator.language || "en"];
+    const l = String(langs[0]).toLowerCase();
+    return l.startsWith("ru") ? "ru" : "en";
+  }
+
+  const lang = detectLang();
+  const dict = i18n[lang] || i18n.en;
+
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k = el.getAttribute("data-i18n");
+    if (dict[k]) el.textContent = dict[k];
+  });
+
+  const loaderEl = document.getElementById("redirectLoader");
+  if (loaderEl) loaderEl.classList.add("is-open");
+
+  setTimeout(() => {
+    const extraEl = document.getElementById("redirectExtra");
+    if (!extraEl) return;
+    extraEl.hidden = false;
+    extraEl.classList.add("popOut");
+  }, 1900);
+
+  window.location.replace(url);
+})();
+</script>
+
+<noscript>
+<meta http-equiv="refresh" content="0; url=https://ggband.gg/referral/brokerfail?utm_source=brokerpick">
+</noscript>
+
+</body>
+</html>

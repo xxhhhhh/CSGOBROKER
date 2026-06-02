@@ -174,7 +174,7 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
       if (location.href.endsWith("sticker-crafts") || location.href.endsWith("sticker-crafts.html")) return;
 
       const lang = typeof languageTag !== "undefined" ? languageTag : "en";
-      const recCount = 3;
+      const recCount = 4;
       const cacheKey = "rec_boxes";
       const cacheDuration = 24 * 60 * 60 * 1000;
 
@@ -192,14 +192,54 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
         if (!insertAfterElement && !topicPage) return;
 
         const labels = lang === "ru"
-          ? { review: "Подробнее", visit: "Перейти" }
-          : { review: "Read More", visit: "Visit" };
+          ? { review: "Подробнее", visit: "Перейти", title: "Случайные Бонусы" }
+          : { review: "Read More", visit: "Visit", title: "Random Bonuses" };
 
         let available = recData.slice();
 
-        const useWrapper = isMobile && !!topicPage;
-        const wrapper = useWrapper ? document.createElement("div") : null;
-        if (wrapper) wrapper.className = "rec-boxes";
+        const wrapper = document.createElement("div");
+        wrapper.className = "best-alternates";
+
+        const title = document.createElement("span");
+        title.className = "cent-title";
+        title.textContent = labels.title;
+        wrapper.appendChild(title);
+
+      const initLocalBestAlternatesSlider = () => {
+        const boxes = Array.from(wrapper.querySelectorAll(".rec-box"));
+        if (boxes.length < 2) return;
+
+        let activeIndex = Math.max(0, boxes.findIndex(box => box.classList.contains("active")));
+        let timer = null;
+
+        const setActive = (index) => {
+          boxes.forEach(box => box.classList.remove("active"));
+          boxes[index].classList.add("active");
+          activeIndex = index;
+        };
+
+        const start = () => {
+          if (timer) return;
+          timer = setInterval(() => {
+            setActive((activeIndex + 1) % boxes.length);
+          }, 10000);
+        };
+
+        const stop = () => {
+          clearInterval(timer);
+          timer = null;
+        };
+
+        boxes.forEach((box, index) => {
+          box.addEventListener("mouseenter", () => setActive(index));
+        });
+
+        wrapper.addEventListener("mouseenter", stop);
+        wrapper.addEventListener("mouseleave", start);
+
+        setActive(activeIndex);
+        start();
+      };
 
         const createdBoxes = [];
 
@@ -212,7 +252,7 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
           usedIds.add(box.id);
 
           const recBox = document.createElement("div");
-          recBox.className = "rec-box";
+          recBox.className = i === 0 ? "rec-box active" : "rec-box";
           recBox.setAttribute("data-box-id", String(box.id));
 
           const description =
@@ -233,9 +273,10 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
               <a href="${reviewHref}">
                 <img src="${box.logoSrc}" loading="lazy" draggable="false" alt="${alt}">
               </a>
-              <p>${description ?? ""}</p>
             </div>
             <div class="content">
+              <a class="boxtitle" href="${reviewHref}">${box.site}</a>
+              <p>${description ?? ""}</p>
               <div class="content-buttons">
                 <a href="${reviewHref}" class="review-button"><span>${labels.review}</span></a>
                 <a href="${box.visitHref}" target="_blank" rel="noopener" class="review-button visit"><span>${labels.visit}</span></a>
@@ -252,21 +293,18 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
           if (reviewBtn) reviewBtn.setAttribute("aria-label", reviewLabel);
           if (visitBtn) visitBtn.setAttribute("aria-label", visitLabel);
 
-          if (useWrapper && wrapper) {
-            wrapper.appendChild(recBox);
-          } else if (insertAfterElement && insertAfterElement.parentNode) {
-            insertAfterElement.parentNode.insertBefore(recBox, insertAfterElement.nextSibling);
-            createdBoxes.push(recBox);
-          }
+          wrapper.appendChild(recBox);
+          createdBoxes.push(recBox);
         }
 
-        if (useWrapper && wrapper && wrapper.children.length > 0 && topicPage) {
+        if (!createdBoxes.length) return;
+
+        if (isMobile && topicPage) {
           topicPage.appendChild(wrapper);
-          wrapper.querySelectorAll(".rec-box").forEach((el) => createdBoxes.push(el));
+        } else if (insertAfterElement && insertAfterElement.parentNode) {
+          insertAfterElement.parentNode.insertBefore(wrapper, insertAfterElement.nextSibling);
         }
-
-        // Гарантированный старт анимации после вставки в DOM
-        createdBoxes.forEach(startFadeIn);
+        initLocalBestAlternatesSlider();
       };
 
       const cached = SafeStorage.getWithExpiry(cacheKey);

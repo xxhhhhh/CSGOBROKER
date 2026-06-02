@@ -45,19 +45,29 @@
         "Playability": 4.5
     },
     "codes": {
-        "Free Else": "Бесплатный «Эко Раунд» Кейс",
+        "Deposit Bonus 2": "+75%",
+        "Free Else": "Фриспин на кейс «Pick'em»",
+        "Free Else 2": "Скидка 25% на кейс «Шпили Кёльна»",
+
+        "Free Else 3": "Бесплатный «Эко Раунд» Кейс",
         "Deposit Bonus": "+5%",
-        "Free Else 3": "Скидка 50% на кейс «10 LVL»",
-        "Free Else 4": "3 Прокрута Барабана"
+        "Free Else 4": "Скидка 50% на кейс «10 LVL»",
+        "Free Else 5": "3 Прокрута Барабана"
     },
     "name": "CSFAIL",
     "languages": "en, ru, tr, es",
     "link": "https://ggband.gg/referral/brokerfail",
+    "link-broker75": "https://ggband.gg/referral/brokerfail?utm_source=broker75",
+    "link-brokerdis": "https://ggband.gg/referral/brokerfail?utm_source=brokerdis",
+    "link-brokerpick": "https://ggband.gg/referral/brokerfail?utm_source=brokerpick",
     "featuresContent": ["SignUpBonus", "DepositBonus", "DailyRewards", "Giveaways"],
-    "code": "BROKERFREE",
-    "code-2": "CSGOBROKER",
-    "code-3": "BROKER50",
-    "code-4": "BROKERSPIN",
+    "code": "BROKER75",
+    "code-2": "BROKERPICK",
+    "code-3": "BROKERDIS",
+    "code-4": "BROKERFREE",
+    "code-5": "CSGOBROKER",
+    "code-6": "BROKER50",
+    "code-7": "BROKERSPIN",
     "Main Mode": "classic",
     "Sites Alternatives"  : ["upgrader", "csgopolygon", "csgofast", "csgorun"]
 }

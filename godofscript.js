@@ -2737,3 +2737,145 @@ function saveToCache(key, data) {
 
   update();
 })();
+document.addEventListener("DOMContentLoaded", () => {
+  const BREAKPOINT = 1280;
+
+  function getHiddenLimit() {
+    return window.innerWidth <= BREAKPOINT ? 1 : 3;
+  }
+
+  function getHiddenCount(btn) {
+    return window.innerWidth <= BREAKPOINT
+      ? Number(btn.dataset.mobileHiddenCount || 0)
+      : Number(btn.dataset.desktopHiddenCount || 0);
+  }
+
+function getRuPromoWord(count) {
+  const n = Math.abs(count) % 100;
+  const n1 = n % 10;
+
+  if (n > 10 && n < 20) return "Промокодов";
+  if (n1 > 1 && n1 < 5) return "Промокода";
+  if (n1 === 1) return "Промокод";
+
+  return "Промокодов";
+}
+
+function renderMoreText(btn) {
+  const count = getHiddenCount(btn);
+
+  const lang = document.documentElement.lang || "en";
+
+  if (lang === "ru") {
+    btn.querySelector("p").innerHTML =
+      `Еще <span>${count}</span> ${getRuPromoWord(count)}`;
+    return;
+  }
+
+  const template =
+    btn.dataset.moreHtml ||
+    '<span>{count}</span> More Promo Codes';
+
+  btn.querySelector("p").innerHTML =
+    template.replace("{count}", count);
+}
+
+  function renderHideText(btn) {
+    const hideText = btn.dataset.hideText || "Hide Promo Codes";
+    btn.querySelector("p").textContent = hideText;
+  }
+
+  document.querySelectorAll(".box-extra-links").forEach(section => {
+    const list = section.querySelector(".promo-boxes-list");
+    const btn = section.querySelector(".more-promos");
+
+    if (!list || !btn) return;
+
+    const promos = [...list.querySelectorAll(".promo-box")];
+
+    function collapsePromos() {
+      const limit = getHiddenLimit();
+
+      promos.forEach((promo, index) => {
+        const shouldHide = index >= limit;
+
+        promo.classList.toggle("hidden", shouldHide);
+
+        if (shouldHide) {
+          promo.classList.remove("show");
+        }
+      });
+
+      btn.classList.remove("active");
+      renderMoreText(btn);
+    }
+
+    function expandPromos() {
+      const limit = getHiddenLimit();
+
+      promos.forEach((promo, index) => {
+        if (index >= limit) {
+          promo.classList.remove("hidden");
+          promo.classList.add("show");
+        }
+      });
+
+      btn.classList.add("active");
+      renderHideText(btn);
+    }
+
+    collapsePromos();
+
+    btn.addEventListener("click", () => {
+      if (btn.classList.contains("active")) {
+        collapsePromos();
+      } else {
+        expandPromos();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (!btn.classList.contains("active")) {
+        collapsePromos();
+      }
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".best-alternates").forEach((block) => {
+    const boxes = Array.from(block.querySelectorAll(".rec-box"));
+    if (boxes.length < 2) return;
+
+    let activeIndex = Math.max(0, boxes.findIndex(box => box.classList.contains("active")));
+    let timer = null;
+
+    const setActive = (index) => {
+      boxes.forEach(box => box.classList.remove("active"));
+      boxes[index].classList.add("active");
+      activeIndex = index;
+    };
+
+    const start = () => {
+      if (timer) return;
+      timer = setInterval(() => {
+        setActive((activeIndex + 1) % boxes.length);
+      }, 10000);
+    };
+
+    const stop = () => {
+      clearInterval(timer);
+      timer = null;
+    };
+
+    boxes.forEach((box, index) => {
+      box.addEventListener("mouseenter", () => setActive(index));
+    });
+
+    block.addEventListener("mouseenter", stop);
+    block.addEventListener("mouseleave", start);
+
+    setActive(activeIndex);
+    start();
+  });
+});

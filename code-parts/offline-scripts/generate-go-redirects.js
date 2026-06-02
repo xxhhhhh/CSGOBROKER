@@ -160,7 +160,20 @@ function buildVariantsForSite(key, data) {
 
   if (isHttpUrl(data["link-en"])) variants.set(`${key}-en`, data["link-en"]);
 
-  // page-type variants (как у тебя в computeGoKey/computeVisitHref)
+  // custom link-* variants:
+  // "link-broker75" -> /go/sitekey-broker75.html
+  for (const [field, url] of Object.entries(data || {})) {
+    if (!field.startsWith("link-")) continue;
+    if (field === "link-en") continue;
+    if (!isHttpUrl(url)) continue;
+
+    const suffix = field.slice("link-".length).trim();
+    if (!suffix) continue;
+
+    variants.set(`${key}-${suffix}`, url);
+  }
+
+  // page-type variants
   if (isHttpUrl(data["marketplaces"])) variants.set(`${key}-marketplaces`, data["marketplaces"]);
   if (isHttpUrl(data["instant-sell"])) variants.set(`${key}-instant-sell`, data["instant-sell"]);
   if (isHttpUrl(data["buy-skins"])) variants.set(`${key}-buy-skins`, data["buy-skins"]);
