@@ -7,17 +7,54 @@
   "name": "Adones Nobre",
   "nationality": "Portugal",
   "born": "29.12.2003",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/94f5114b-b7b9-445f-be26-1a60f54d22de",
-  "isContentCreator": false,
-  "updatedAt": "2026-05-26T07:30:09.235Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 188,
-  "totalItemsGrouped": 171,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-06-03T09:02:28.988Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 186,
+  "totalItemsGrouped": 169,
   "items": [
+    {
+      "assetid": "51756927366",
+      "classid": "7993041228",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Gamma Doppler",
+      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2005158396D5E2C5041DFE0625B9012D0335063DFCEC8FE50645A1006DCC04750D10E12739",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.007977717556,
+      "seed": 676,
+      "phase": "Phase 4"
+    },
     {
       "assetid": "51122398704",
       "classid": "7993043419",
@@ -173,42 +210,6 @@
       ]
     },
     {
-      "assetid": "51483888949",
-      "classid": "7993042024",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Desert Eagle | Kumicho Dragon",
-      "market_hash_name": "Desert Eagle | Kumicho Dragon (Minimal Wear)",
-      "type": "Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50416283173",
       "classid": "7993039126",
       "instanceid": "188530139",
@@ -289,42 +290,6 @@
       "market_hash_name": "USP-S | Cortex (Well-Worn)",
       "type": "Classified Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%206A7AD29D92BEDF6B72574AAB6F426F5A6E5286BFFE9D692AE26E02F86B1A622F165CFF",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49958414573",
-      "classid": "7993038650",
-      "instanceid": "6276381292",
-      "amount": 1,
-      "name": "Galil AR | Eco",
-      "market_hash_name": "Galil AR | Eco (Field-Tested)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20998974481A1723988194B9359AB19CA99DA17D2A776D9AD97D9AFB96919A894CA1A4FBF85727DC41689124FB96919A894CA1A445613C27DC29666025FB96919A894CA1A4010AE227DC29746625FB96919B894CA1A499B50625DC99A70CA2F12598E991E48C318B",
       "tags": [
         {
           "category": "Type",
@@ -1592,50 +1557,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51360830868",
-      "classid": "7993035490",
-      "instanceid": "6276382090",
-      "amount": 1,
-      "name": "M4A4 | The Emperor",
-      "market_hash_name": "M4A4 | The Emperor (Field-Tested)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]

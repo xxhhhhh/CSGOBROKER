@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b68b677e-562e-456d-9c27-3ebf437e7bd5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-02T07:45:46.810Z",
+  "updatedAt": "2026-06-03T08:33:55.708Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 124,
-  "totalItemsGrouped": 86,
+  "totalItemsRaw": 131,
+  "totalItemsGrouped": 91,
   "items": [
     {
       "assetid": "50721011954",
@@ -735,6 +735,42 @@
       ]
     },
     {
+      "assetid": "51866922999",
+      "classid": "7993037941",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Tec-9 | Fuel Injector",
+      "market_hash_name": "Tec-9 | Fuel Injector (Well-Worn)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51778456323",
       "classid": "7993038838",
       "instanceid": "188530139",
@@ -874,6 +910,62 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51866980580",
+      "classid": "7993042827",
+      "instanceid": "6361622020",
+      "amount": 1,
+      "name": "MP9 | Airlock",
+      "market_hash_name": "MP9 | Airlock (Minimal Wear)",
+      "type": "Classified SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1322,6 +1414,54 @@
         },
         {
           "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52043207711",
+      "classid": "7993038211",
+      "instanceid": "8526639115",
+      "amount": 1,
+      "name": "M4A4 | Full Throttle",
+      "market_hash_name": "M4A4 | Full Throttle (Well-Worn)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         },
         {
@@ -1893,6 +2033,53 @@
       ]
     },
     {
+      "assetid": "51866806295",
+      "classid": "8490786845",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | HUASOPEEK (Gold) | Cologne 2026",
+      "market_hash_name": "Sticker | HUASOPEEK (Gold) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ADBDADB514A48DAD85AB9DA9CFA8A5ADBD48F9C5ADDDAF57BDDE40",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51866806295"
+      ]
+    },
+    {
       "assetid": "33543775115",
       "classid": "5537026493",
       "instanceid": "0",
@@ -2019,10 +2206,10 @@
       ]
     },
     {
-      "assetid": "51843262203",
+      "assetid": "51866806292",
       "classid": "8490823626",
       "instanceid": "143865972",
-      "amount": 1,
+      "amount": 2,
       "name": "Sticker | HUASOPEEK | Cologne 2026",
       "market_hash_name": "Sticker | HUASOPEEK | Cologne 2026",
       "type": "High Grade Sticker",
@@ -2062,6 +2249,7 @@
         }
       ],
       "assetids": [
+        "51866806292",
         "51843262203"
       ]
     },
@@ -2542,10 +2730,10 @@
       ]
     },
     {
-      "assetid": "51843262204",
+      "assetid": "51866806293",
       "classid": "8490836636",
       "instanceid": "143865972",
-      "amount": 1,
+      "amount": 2,
       "name": "Sticker | HUASOPEEK (Foil) | Cologne 2026",
       "market_hash_name": "Sticker | HUASOPEEK (Foil) | Cologne 2026",
       "type": "Remarkable Sticker",
@@ -2585,6 +2773,7 @@
         }
       ],
       "assetids": [
+        "51866806293",
         "51843262204"
       ]
     },
@@ -2767,6 +2956,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51866948260",
+      "classid": "7993040447",
+      "instanceid": "902713254",
+      "amount": 1,
+      "name": "StatTrak™ FAMAS | Bad Trip",
+      "market_hash_name": "StatTrak™ FAMAS | Bad Trip (Field-Tested)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
