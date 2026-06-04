@@ -7,16 +7,18 @@
   "name": "Danil Kryshkovets",
   "nationality": "Russia",
   "born": "25.01.2007",
+  "isContentCreator": false,
   "twitch": "donk1437",
   "faceit": "https://faceitdb.com/profile/faceit/e5e8e2a6-d716-4493-b949-e16965f41654",
-  "isContentCreator": false,
-  "updatedAt": "2026-05-18T06:58:21.960Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 231,
-  "totalItemsGrouped": 112,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-06-04T07:24:39.485Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 233,
+  "totalItemsGrouped": 114,
   "items": [
     {
       "assetid": "50394882850",
@@ -502,6 +504,50 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51777556951",
+      "classid": "7993036958",
+      "instanceid": "6960728085",
+      "amount": 1,
+      "name": "AK-47 | Redline",
+      "market_hash_name": "AK-47 | Redline (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1576,6 +1622,34 @@
       "amount": 1,
       "name": "Champion at Perfect World Shanghai 2024",
       "market_hash_name": "Champion at Perfect World Shanghai 2024",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51928878475",
+      "classid": "8490781882",
+      "instanceid": "8490796689",
+      "amount": 1,
+      "name": "Cologne 2026 Coin",
+      "market_hash_name": "Cologne 2026 Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -4031,7 +4105,7 @@
     {
       "assetid": "50700876960",
       "classid": "7993045027",
-      "instanceid": "927697305",
+      "instanceid": "911989363",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Factory New)",

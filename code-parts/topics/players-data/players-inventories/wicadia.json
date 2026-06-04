@@ -12,14 +12,46 @@
   "faceit": "https://faceitdb.com/profile/faceit/3a44d401-6f83-40b2-8cdf-c764813abbd6",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-01T08:41:29.357Z",
+  "updatedAt": "2026-06-04T07:33:09.823Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 88,
-  "totalItemsGrouped": 88,
+  "totalItemsRaw": 92,
+  "totalItemsGrouped": 92,
   "items": [
+    {
+      "assetid": "51886505698",
+      "classid": "7993045582",
+      "instanceid": "8497878190",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "49073170455",
       "classid": "7993044566",
@@ -63,6 +95,34 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Pillow Punchers",
       "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51886505699",
+      "classid": "8247311471",
+      "instanceid": "8497878190",
+      "amount": 1,
+      "name": "★ Sport Gloves | Occult",
+      "market_hash_name": "★ Sport Gloves | Occult (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -460,42 +520,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50322272914",
-      "classid": "8246934171",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AWP | Queen's Gambit",
-      "market_hash_name": "AWP | Queen's Gambit (Minimal Wear)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204C5CDEA98FF7F74D54456CC247644A7C4874A0E69BBC4F0CEF4D24193C44AD993DCC",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1498,6 +1522,42 @@
       ]
     },
     {
+      "assetid": "51885042147",
+      "classid": "241608185",
+      "instanceid": "8497877883",
+      "amount": 1,
+      "name": "MP9 | Hot Rod",
+      "market_hash_name": "MP9 | Hot Rod (Factory New)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50340894562",
       "classid": "7993037677",
       "instanceid": "188530139",
@@ -1772,6 +1832,50 @@
       "amount": 1,
       "name": "Dual Berettas | Sweet Little Angels",
       "market_hash_name": "Dual Berettas | Sweet Little Angels (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51885042146",
+      "classid": "188530425",
+      "instanceid": "8521177914",
+      "amount": 1,
+      "name": "Glock-18 | Fade",
+      "market_hash_name": "Glock-18 | Fade (Factory New)",
       "type": "Restricted Pistol",
       "inspectLink": "",
       "tags": [
@@ -2418,6 +2522,42 @@
       "market_hash_name": "StatTrak™ AK-47 | Crane Flight (Well-Worn)",
       "type": "StatTrak™ Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A6B66A6150081DA7BEA18637AD8EA396AF9E50794650A5E632A1EEA6F6B6CEE8D6AEFD123166",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51889082664",
+      "classid": "7993051533",
+      "instanceid": "8525150219",
+      "amount": 1,
+      "name": "StatTrak™ M4A4 | Howl",
+      "market_hash_name": "StatTrak™ M4A4 | Howl (Field-Tested)",
+      "type": "StatTrak™ Contraband Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

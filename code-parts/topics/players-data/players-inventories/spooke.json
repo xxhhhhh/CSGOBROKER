@@ -12,18 +12,18 @@
   "faceit": "https://faceitdb.com/profile/faceit/834d25d1-5171-4f32-b217-8e1673c5d13c",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-03T09:06:41.027Z",
+  "updatedAt": "2026-06-04T08:18:33.765Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 59,
-  "totalItemsGrouped": 59,
+  "totalItemsRaw": 63,
+  "totalItemsGrouped": 63,
   "items": [
     {
       "assetid": "51868213708",
       "classid": "7993040008",
-      "instanceid": "8494666628",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "★ M9 Bayonet | Fade",
       "market_hash_name": "★ M9 Bayonet | Fade (Factory New)",
@@ -415,6 +415,42 @@
       "market_hash_name": "SG 553 | Integrale (Well-Worn)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%201909A1BB9CDC9418013E39F71C311C291D21E083EDEF1A59A01A710B690125044155",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47270520280",
+      "classid": "7993040718",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "UMP-45 | Wild Child",
+      "market_hash_name": "UMP-45 | Wild Child (Minimal Wear)",
+      "type": "Classified SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1122,6 +1158,37 @@
       ]
     },
     {
+      "assetid": "45586179171",
+      "classid": "6216369515",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Ruby Wave (Lenticular)",
+      "market_hash_name": "Sticker | Ruby Wave (Lenticular)",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F7E7F7EF4EFED7F7DFF1C7F395F2FFF7E701CA9FF787E0ECBDF9B5",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "45586179171"
+      ]
+    },
+    {
       "assetid": "33544116213",
       "classid": "5537026493",
       "instanceid": "0",
@@ -1527,6 +1594,42 @@
       ]
     },
     {
+      "assetid": "29831543779",
+      "classid": "7993044322",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP7 | Impire",
+      "market_hash_name": "MP7 | Impire (Factory New)",
+      "type": "Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "46980870271",
       "classid": "7993039502",
       "instanceid": "7755521366",
@@ -1677,7 +1780,7 @@
     {
       "assetid": "51868375985",
       "classid": "7993038769",
-      "instanceid": "8519208278",
+      "instanceid": "8528418088",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Redline",
       "market_hash_name": "StatTrak™ AK-47 | Redline (Minimal Wear)",
@@ -1966,6 +2069,54 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "49137896012",
+      "classid": "7993043425",
+      "instanceid": "8528418091",
+      "amount": 1,
+      "name": "StatTrak™ MP7 | Ocean Foam",
+      "market_hash_name": "StatTrak™ MP7 | Ocean Foam (Factory New)",
+      "type": "StatTrak™ Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]

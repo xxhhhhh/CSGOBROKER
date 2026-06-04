@@ -7,17 +7,90 @@
   "name": "Radut Cristian",
   "nationality": "Romania",
   "born": "03.02.2005",
+  "isContentCreator": false,
   "twitch": "7kick",
   "faceit": "https://faceitdb.com/profile/faceit/5782b2ef-ca50-413c-bcac-470bf2c27283",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-27T06:33:25.922Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 82,
-  "totalItemsGrouped": 81,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-06-04T08:12:16.307Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 84,
+  "totalItemsGrouped": 83,
   "items": [
+    {
+      "assetid": "51775959665",
+      "classid": "8247703130",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Well-Worn)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51885066518",
+      "classid": "7993041219",
+      "instanceid": "8498195958",
+      "amount": 1,
+      "name": "★ StatTrak™ Karambit | Doppler",
+      "market_hash_name": "★ StatTrak™ Karambit | Doppler (Factory New)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204B5BDDD996EF8A4A53B0486BE948634D7B48738CE8F8AC480BE149034B1B4723523B43F755BB9D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.028908623382,
+      "seed": 298,
+      "phase": "Phase 1"
+    },
     {
       "assetid": "49811079936",
       "classid": "1989273925",
