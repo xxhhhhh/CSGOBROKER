@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/671a813b-7428-4e2e-8d2b-34065ed57ffb",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-02T07:52:19.554Z",
+  "updatedAt": "2026-06-05T07:33:36.776Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 50,
-  "totalItemsGrouped": 50,
+  "totalItemsRaw": 51,
+  "totalItemsGrouped": 51,
   "items": [
     {
       "assetid": "48794462312",
@@ -155,14 +155,14 @@
       ]
     },
     {
-      "assetid": "49263668469",
-      "classid": "7993037782",
-      "instanceid": "480085569",
+      "assetid": "47368161017",
+      "classid": "7993038838",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "M4A1-S | Atomic Alloy",
-      "market_hash_name": "M4A1-S | Atomic Alloy (Minimal Wear)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206E7E9BB7B1ACD96F76524EC36C466B5E6A56DFE6BA816D2EBD6806471E6A343F2E3E",
+      "name": "USP-S | Jawbreaker",
+      "market_hash_name": "USP-S | Jawbreaker (Well-Worn)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -191,13 +191,13 @@
       ]
     },
     {
-      "assetid": "51770647338",
-      "classid": "7993036126",
-      "instanceid": "7775805913",
+      "assetid": "47562732788",
+      "classid": "7993038030",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "Desert Eagle | Printstream",
-      "market_hash_name": "Desert Eagle | Printstream (Field-Tested)",
-      "type": "Covert Pistol",
+      "name": "M4A1-S | Nightmare",
+      "market_hash_name": "M4A1-S | Nightmare (Field-Tested)",
+      "type": "Classified Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -222,18 +222,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1165,6 +1153,42 @@
       ]
     },
     {
+      "assetid": "51126422710",
+      "classid": "8246988671",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Desert Eagle | Firebreathing",
+      "market_hash_name": "Desert Eagle | Firebreathing (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51127439946",
       "classid": "7993038174",
       "instanceid": "188530139",
@@ -1279,6 +1303,42 @@
       "amount": 1,
       "name": "AK-47 | Midnight Laminate",
       "market_hash_name": "AK-47 | Midnight Laminate (Field-Tested)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "43725583081",
+      "classid": "7993037505",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M4A4 | Etch Lord",
+      "market_hash_name": "M4A4 | Etch Lord (Field-Tested)",
       "type": "Restricted Rifle",
       "inspectLink": "",
       "tags": [
@@ -1453,42 +1513,6 @@
       ]
     },
     {
-      "assetid": "49263667154",
-      "classid": "7993038517",
-      "instanceid": "7846194671",
-      "amount": 1,
-      "name": "StatTrak™ M4A4 | Temukau",
-      "market_hash_name": "StatTrak™ M4A4 | Temukau (Field-Tested)",
-      "type": "StatTrak™ Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206676B4A9B9A4D1677E7646AA6F4E60566F5EFD87AF936526E8612E6636B465047F6E6276902F7B6666E6594B666696275B66F3C35D230643A9DA0E4A166E38A68D5A",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50944215085",
       "classid": "8247359851",
       "instanceid": "188530937",
@@ -1527,7 +1551,7 @@
     {
       "assetid": "47537781823",
       "classid": "7993044741",
-      "instanceid": "188712584",
+      "instanceid": "188674306",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Black Sand",
       "market_hash_name": "StatTrak™ Galil AR | Black Sand (Well-Worn)",
