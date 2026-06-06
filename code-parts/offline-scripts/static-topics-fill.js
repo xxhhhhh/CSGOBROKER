@@ -3356,6 +3356,10 @@ function getTopicBackHref(urlPath){
     return `${base}/items`;
   }
 
+  if (new RegExp(`^${base}/tournament-stickers/[^/]+$`, "i").test(p)) {
+    return `${base}/items-type/tournament-stickers`;
+  }
+
   if (new RegExp(`^${base}/sticker-crafts/skin/[^/]+$`, "i").test(p)) {
     return `${base}/sticker-crafts`;
   }
