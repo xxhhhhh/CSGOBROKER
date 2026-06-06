@@ -49,7 +49,10 @@ const ITEMS_TYPE_TOPICS_FILES = {
   collections: "/code-parts/topics/collections.json",
   "sticker-capsules": "/code-parts/topics/sticker-capsules.json",
   "autograph-capsules": "/code-parts/topics/autograph-capsules.json",
+  "tournament-stickers": "/code-parts/topics/tournament-stickers.json",
 };
+
+const STATIC_TOPIC_BATCH_SIZE = 80;
 
 const RU_BOX_TITLE_MAP = new Map([
   ["knives", "Ножи"],
@@ -681,7 +684,20 @@ function normalizeEntitiesInBlock(block){
   return block;
 }
 
-function renderSkinBlock({tag = "div", indent, nl, weapon, skinId, skinData, priceHtml, putLoadingClass}){
+function getSkinDisplayNameForStaticTopic(name, weapon = "") {
+  const value = String(name || "");
+
+  if (
+    /^Sticker\s*\|\s*/i.test(value) ||
+    String(weapon || "").toLowerCase().includes("sticker")
+  ) {
+    return value.replace(/^Sticker\s*\|\s*/i, "");
+  }
+
+  return value;
+}
+
+function renderSkinBlock({tag = "div", indent, nl, weapon, skinId, skinData, priceHtml, putLoadingClass, lazyImage=false}){
   const classes = ["skin"];
   if (skinData.class) classes.push(String(skinData.class));
 
@@ -689,11 +705,13 @@ function renderSkinBlock({tag = "div", indent, nl, weapon, skinId, skinData, pri
   const innerIndent = indent + "  ";
   const priceCls = putLoadingClass ? "skin-price-info loading" : "skin-price-info";
   const img  = skinData.image || "";
-  const name = skinData.name || (skinId === "Vanilla" ? "Vanilla" : "");
+  const rawName = skinData.name || (skinId === "Vanilla" ? "Vanilla" : "");
+  const name = getSkinDisplayNameForStaticTopic(rawName, weapon);
+  const loadingAttr = lazyImage ? ` loading="lazy"` : "";
 
   const block = [
     `${indent}<${tag} class="${classAttr}" skin-id="${escapeAttrDblNoApos(skinId)}" weapon="${escapeAttrDblNoApos(weapon)}">`,
-    `${innerIndent}<img src="${escapeAttrDblNoApos(img)}" draggable="false" alt="${escapeAttrDblNoApos(name)}">`,
+    `${innerIndent}<img src="${escapeAttrDblNoApos(img)}"${loadingAttr} draggable="false" alt="${escapeAttrDblNoApos(rawName)}">`,
     `${innerIndent}<div class="skin-desc-name">${escapeHtml(name)}</div>`,
     `${innerIndent}<div class="${priceCls}">${priceHtml || ""}</div>`,
     `${indent}</${tag}>`
@@ -704,23 +722,22 @@ function renderSkinBlock({tag = "div", indent, nl, weapon, skinId, skinData, pri
 
 // ---------------- BOX-SKINS-LIST (mode 1/2) ----------------
 async function detectAutoImportContext(root, urlPath){
-  const m = urlPath.match(/\/(?:ru\/)?topic\/(items|collections|cases|stickers|charms)\/([^\/]+)(?:\/|$)/i);
+  const m = urlPath.match(/\/(?:ru\/)?topic\/(items|collections|cases|stickers|tournament-stickers|charms)\/([^\/]+)(?:\/|$)/i);
   if (!m) return null;
 
-  const section = m[1].toLowerCase();
+  const rawSection = m[1].toLowerCase();
+  const section = rawSection === "tournament-stickers" ? "stickers" : rawSection;
   const topicId = m[2];
 
-  // 1) если есть одноимённый preset -> всегда mode 2
   if (await hasPresetForTopic(root, topicId)) {
     return { section, topicId, mode: 2 };
   }
 
-  // 2) старые дефолты по секциям
   if (section === "collections" || section === "cases") {
     return { section, topicId, mode: 2 };
   }
 
-  if (section === "stickers" || section === "charms") {
+  if (section === "stickers" || section === "tournament-stickers" || section === "charms") {
     return { section, topicId, mode: 1 };
   }
 
@@ -1219,6 +1236,39 @@ async function collectShowcaseSkinsForTopic(root, ctx, { verbose=false } = {}){
   return promise;
 }
 
+function shouldBatchStaticTopicItems(ctx){
+  return ctx?.section === "stickers" || ctx?.section === "tournament-stickers";
+}
+
+function escapeJsonForHtmlScript(value){
+  return JSON.stringify(value)
+    .replace(/</g, "\\u003c")
+    .replace(/>/g, "\\u003e")
+    .replace(/&/g, "\\u0026");
+}
+
+function renderStaticTopicExpander({ indent, nl, remainingCount, listId }){
+  const word = remainingCount === 1 ? "item" : "items";
+
+  return [
+    `${indent}<div class="skin expander topic-static-expander" data-no-preview="1" data-topic-static-list="${escapeAttrDblNoApos(listId)}">`,
+    `${indent}  <i class="officon click"></i>`,
+    `${indent}  <div class="skin-expander-text">`,
+    `${indent}    <span>${remainingCount} ${word}</span>`,
+    `${indent}    <span>show more</span>`,
+    `${indent}  </div>`,
+    `${indent}</div>`
+  ].join(nl);
+}
+
+function renderDeferredStaticTopicItemsScript({ indent, nl, listId, chunks }){
+  return [
+    `${indent}<script type="application/json" class="topic-static-deferred-items" data-topic-static-list="${escapeAttrDblNoApos(listId)}">`,
+    `${indent}${escapeJsonForHtmlScript(chunks)}`,
+    `${indent}</script>`
+  ].join(nl);
+}
+
 async function buildSkinsListForTopic(root, ctx, pricesState, { verbose=false } = {}){
   const items = await collectSkinsForTopic(root, ctx, { verbose });
 
@@ -1226,10 +1276,17 @@ async function buildSkinsListForTopic(root, ctx, pricesState, { verbose=false } 
     return () => "";
   }
 
+  let renderIndex = 0;
+
   return function render(nl, baseIndent){
     const indent = baseIndent + "  ";
-    return items.map(({ weapon, skinId, skinData }) => {
+    const shouldBatch = shouldBatchStaticTopicItems(ctx) && items.length > STATIC_TOPIC_BATCH_SIZE;
+    const visibleItems = shouldBatch ? items.slice(0, STATIC_TOPIC_BATCH_SIZE) : items;
+    const deferredItems = shouldBatch ? items.slice(STATIC_TOPIC_BATCH_SIZE) : [];
+
+    const renderItem = ({ weapon, skinId, skinData }, { lazyImage=false } = {}) => {
       const { html: priceHtml, has } = computePriceHtml(String(skinData.name || ""), pricesState);
+
       return renderSkinBlock({
         tag: "div",
         indent,
@@ -1238,9 +1295,44 @@ async function buildSkinsListForTopic(root, ctx, pricesState, { verbose=false } 
         skinId,
         skinData,
         priceHtml,
-        putLoadingClass: !has && !pricesState
+        putLoadingClass: !has && !pricesState,
+        lazyImage
       });
-    }).join(nl);
+    };
+
+    const visibleHtml = visibleItems
+      .map(item => renderItem(item, { lazyImage:false }))
+      .join(nl);
+
+    if (!shouldBatch) return visibleHtml;
+
+    const listId = `${ctx.section}-${ctx.topicId}-${renderIndex++}`;
+    const chunks = [];
+
+    for (let i = 0; i < deferredItems.length; i += STATIC_TOPIC_BATCH_SIZE){
+      chunks.push(
+        deferredItems
+          .slice(i, i + STATIC_TOPIC_BATCH_SIZE)
+          .map(item => renderItem(item, { lazyImage:true }))
+          .join(nl)
+      );
+    }
+
+    const expander = renderStaticTopicExpander({
+      indent,
+      nl,
+      remainingCount: deferredItems.length,
+      listId,
+    });
+
+    const dataScript = renderDeferredStaticTopicItemsScript({
+      indent,
+      nl,
+      listId,
+      chunks,
+    });
+
+    return [visibleHtml, expander, dataScript].filter(Boolean).join(nl);
   };
 }
 
@@ -1830,7 +1922,7 @@ async function processTopicFilters({ root, file, html, verbose }){
 // ---------------- ITEMS-TYPE PAGES ----------------
 function detectItemsTypeIndexContext(urlPath){
   const m = urlPath.match(
-    /^\/(ru\/)?topic\/items-type\/(cases|charms|collections|sticker-capsules|autograph-capsules)\/?$/i
+    /^\/(ru\/)?topic\/items-type\/(cases|charms|collections|sticker-capsules|autograph-capsules|tournament-stickers)\/?$/i
   );
 
   if (!m) return null;
@@ -1901,46 +1993,6 @@ function normalizeItemsTypeCard(item, topicType, isRu){
   };
 }
 
-function renderItemsTypeFilterHtml({ indent, nl, isRu, activeType }){
-  const p = isRu ? "/ru" : "";
-
-  const items = [
-    { key: "all-items", href: `${p}/topic/items`, img: "/img/icons/gamemodes/box-open-full.svg", alt: "All Items", title: isRu ? "Все Предметы" : "All Items" },
-    { key: "knives", href: `${p}/topic/items-type/knives`, img: "/img/icons/gamemodes/knives-category.svg", alt: "All Knives", title: isRu ? "Все Ножи" : "All Knives" },
-    { key: "gloves", href: `${p}/topic/items-type/gloves`, img: "/img/icons/gamemodes/gloves-category.svg", alt: "All Gloves", title: isRu ? "Все Перчатки" : "All Gloves" },
-    { key: "rifles", href: `${p}/topic/items-type/rifles`, img: "/img/icons/gamemodes/rifles-category.png", alt: "All Rifles", title: isRu ? "Все Винтовки" : "All Rifles" },
-    { key: "sniper-rifles", href: `${p}/topic/items-type/sniper-rifles`, img: "/img/icons/gamemodes/snipers-category.svg", alt: "All Sniper Rifles", title: isRu ? "Все Снайпер. Винтовки" : "All Sniper Rifles" },
-    { key: "pistols", href: `${p}/topic/items-type/pistols`, img: "/img/icons/gamemodes/pistols-category.svg", alt: "All Pistols", title: isRu ? "Все Пистолеты" : "All Pistols" },
-    { key: "smgs", href: `${p}/topic/items-type/smgs`, img: "/img/icons/gamemodes/smgs-category.svg", alt: "All SMGS", title: isRu ? "Все ПП" : "All SMGS" },
-    { key: "shotguns", href: `${p}/topic/items-type/shotguns`, img: "/img/icons/gamemodes/shotguns-category.svg", alt: "All Shotguns", title: isRu ? "Все Дробовики" : "All Shotguns" },
-    { key: "machineguns", href: `${p}/topic/items-type/machineguns`, img: "/img/icons/gamemodes/mguns-category.svg", alt: "All Machineguns", title: isRu ? "Все Пулеметы" : "All Machineguns" },
-    { key: "agents", href: `${p}/topic/items/agents`, img: "/img/icons/gamemodes/agents.webp", alt: "All Agents", title: isRu ? "Все Агенты" : "All Agents" },
-    { key: "cases", href: `${p}/topic/items-type/cases`, img: "/img/icons/gamemodes/mods-box/cases.webp", alt: "All Cases", title: isRu ? "Все Кейсы" : "All Cases" },
-    { key: "collections", href: `${p}/topic/items-type/collections`, img: "/img/icons/gamemodes/collections.webp", alt: "All Collections", title: isRu ? "Все Коллекции" : "All Collections" },
-    { key: "sticker-capsules", href: `${p}/topic/items-type/sticker-capsules`, img: "/img/icons/gamemodes/capsule-category.png", alt: "All Sticker Capsules", title: isRu ? "Все Стикер-Капсулы" : "All Sticker Capsules" },
-    { key: "autograph-capsules", href: `${p}/topic/items-type/autograph-capsules`, img: "/img/icons/gamemodes/capsule-category.png", alt: "All Autograph Capsules", title: isRu ? "Все Автограф-Капсулы" : "All Autograph Capsules" },
-    { key: "charms", href: `${p}/topic/items-type/charms`, img: "/img/icons/gamemodes/charms.png", alt: "All Charms", title: isRu ? "Все Брелоки" : "All Charms" },
-    { key: "skins", href: `${p}/topic/skins`, img: "/img/icons/gamemodes/palette.png", alt: "Skins by Color CS2", title: isRu ? "Все Скины по Цвету" : "Skins by Color CS2" },
-    { key: "sticker-crafts", href: `${p}/topic/sticker-crafts`, img: "/img/icons/gamemodes/stickers-category.png", alt: "All Sticker Crafts", title: isRu ? "Все Стикер-Крафты" : "All Sticker Crafts" },
-  ];
-
-  const lines = [];
-  lines.push(`${indent}<div class="topic-filter">`);
-  lines.push(`${indent}  <input class="singlemod-box topic-filter-tab" type="text" placeholder="" aria-label="Filter Topic" autocomplete="off">`);
-
-  for (const item of items){
-    const active = item.key === activeType ? " active" : "";
-    lines.push(`${indent}  <div class="singlemod-box${active}" data-title="${escapeAttrDblNoApos(item.title)}">`);
-    lines.push(`${indent}    <a href="${escapeAttrDblNoApos(item.href)}" class="singlemod-select">`);
-    lines.push(`${indent}      <img src="${escapeAttrDblNoApos(item.img)}" alt="${escapeAttrDblNoApos(item.alt)}">`);
-    lines.push(`${indent}    </a>`);
-    lines.push(`${indent}  </div>`);
-  }
-
-  lines.push(`${indent}</div>`);
-  return lines.join(nl);
-}
-
 function renderItemsTypeCardsHtml({ indent, nl, items, topicType, isRu }){
   return items.map(raw => {
     const item = normalizeItemsTypeCard(raw, topicType, isRu);
@@ -1958,15 +2010,16 @@ function renderItemsTypeCardsHtml({ indent, nl, items, topicType, isRu }){
   }).join(nl);
 }
 
-function renderItemsTypeHolderHtml({ indent, nl, items, topicType, isRu }){
+function renderItemsTypeHolderHtml({ indent, nl, items, topicType, isRu, nav, urlPath }){
   const holderClasses = `topic-boxes-holder items-type${isRu ? " lang-ru" : ""}`;
   const innerIndent = indent + "  ";
 
-  const filterHtml = renderItemsTypeFilterHtml({
+  const filterHtml = renderTopicFilterHtml({
+    nav,
     indent: innerIndent,
     nl,
+    urlPath,
     isRu,
-    activeType: topicType,
   });
 
   const cardsHtml = renderItemsTypeCardsHtml({
@@ -1990,6 +2043,9 @@ async function processItemsTypeTopicBoxesPages({ root, file, html, verbose }){
   const urlPath = fileToUrlPath(root, file);
   const ctx = detectItemsTypeIndexContext(urlPath);
   if (!ctx) return { html, changed:false };
+
+  const nav = await loadTopicNav(root);
+  if (!nav.length) return { html, changed:false };
 
   const items = await loadItemsTypeTopics(root, ctx.topicType);
   if (!items.length){
@@ -2025,6 +2081,8 @@ async function processItemsTypeTopicBoxesPages({ root, file, html, verbose }){
     items,
     topicType: ctx.topicType,
     isRu: ctx.isRu,
+    nav,
+    urlPath,
   });
 
   const next = html.slice(0, lineStart) + newBlock + html.slice(target.closeEnd);
@@ -2393,6 +2451,7 @@ async function processTopicNavStaticFill({ root, file, html, verbose }){
     normalizedPath.includes("/cases/") ||
     normalizedPath.includes("/charms/") ||
     normalizedPath.includes("/stickers/") ||
+    normalizedPath.includes("/tournament-stickers/") ||
     normalizedPath.includes("/collections/") ||
     normalizedPath.includes("/players/inventories/") ||
     normalizedPath.includes("/skins/");
@@ -2595,20 +2654,47 @@ async function processTopicNavStaticFill({ root, file, html, verbose }){
   return { html: out, changed };
 }
 
-function getAvailableSkinTypesFromHtml(html){
-  const out = new Set();
-  const masked = maskSegments(html);
-
+function addSkinTypesFromHtmlFragment(fragmentHtml, out){
   const skinClassRe = /<(?:(?:div)|(?:span)|(?:a))\b[^>]*class\s*=\s*(?:"([^"]*\bskin\b[^"]*)"|'([^']*\bskin\b[^']*)')[^>]*>/gi;
 
   let m;
-  while ((m = skinClassRe.exec(masked))) {
+  while ((m = skinClassRe.exec(String(fragmentHtml || "")))) {
     const classAttr = m[1] ?? m[2] ?? "";
     const classes = classAttr.split(/\s+/).filter(Boolean);
 
     for (const cls of classes){
-      if (cls !== "skin") out.add(cls);
+      if (
+        cls !== "skin" &&
+        cls !== "expander" &&
+        cls !== "extra-list" &&
+        cls !== "topic-static-expander"
+      ) {
+        out.add(cls);
+      }
     }
+  }
+}
+
+function getAvailableSkinTypesFromHtml(html){
+  const out = new Set();
+
+  // 1) Обычные уже вставленные карточки, без script/style
+  addSkinTypesFromHtmlFragment(maskSegments(html), out);
+
+  // 2) Deferred chunks внутри topic-static-deferred-items
+  const deferredRe =
+    /<script\b[^>]*class\s*=\s*(?:"[^"]*\btopic-static-deferred-items\b[^"]*"|'[^']*\btopic-static-deferred-items\b[^']*')[^>]*>([\s\S]*?)<\/script>/gi;
+
+  let m;
+  while ((m = deferredRe.exec(String(html || "")))) {
+    try {
+      const chunks = JSON.parse(String(m[1] || "").trim());
+      if (!Array.isArray(chunks)) continue;
+
+      for (const chunkHtml of chunks){
+        addSkinTypesFromHtmlFragment(chunkHtml, out);
+      }
+    } catch {}
   }
 
   return out;
@@ -2624,12 +2710,14 @@ async function loadItemsNav(root){
 }
 
 function detectItemsNavContext(urlPath){
-  const m = urlPath.match(/^\/(ru\/)?topic\/((items|stickers|cases|charms|collections)|players\/inventories)(?:\/|$)/i);
+  const m = urlPath.match(/^\/(ru\/)?topic\/((items|stickers|tournament-stickers|cases|charms|collections)|players\/inventories)(?:\/|$)/i);
   if (!m) return null;
+
+  const rawSection = String(m[2] || "").toLowerCase();
 
   return {
     isRu: Boolean(m[1]),
-    section: String(m[2] || "").toLowerCase(),
+    section: rawSection === "tournament-stickers" ? "stickers" : rawSection,
   };
 }
 
@@ -3504,6 +3592,7 @@ function createPageContext({ root, file, html, urlToFile, pricesState, verbose }
     isItemsOrRelatedPage:
       lowerUrlPath.includes("/items/") ||
       lowerUrlPath.includes("/stickers/") ||
+      lowerUrlPath.includes("/tournament-stickers/") ||
       lowerUrlPath.includes("/cases/") ||
       lowerUrlPath.includes("/charms/") ||
       lowerUrlPath.includes("/collections/") ||
@@ -3823,6 +3912,10 @@ async function processRuMirrorPagesCtx(ctx, processedHtmlByFile){
   return false;
 }
 
+async function processTopicNavStaticFillCtx(ctx){
+  return runLegacyProcessor(ctx, processTopicNavStaticFill);
+}
+
 function getStage1Processors(ctx){
   const out = [];
 
@@ -3870,6 +3963,10 @@ function getStage2Processors(ctx){
   if (ctx.flags.isRu){
     out.push("ru-mirror");
     out.push(processRuTopicStaticTranslationsCtx);
+  }
+
+  if (ctx.flags.isTopicPage){
+    out.push(processTopicNavStaticFillCtx);
   }
 
   if (ctx.flags.isTopicPage && ctx.flags.hasBoxSkins){

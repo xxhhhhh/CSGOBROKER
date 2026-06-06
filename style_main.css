@@ -3483,7 +3483,6 @@ h3 {
 
 .weapon-container:hover {
     background: var(--darkygray);
-    border-radius: var(--main-border);
     transition: background .15s ease-in-out;
     z-index: 1;
 }
@@ -3507,7 +3506,7 @@ h3 {
 
 .weapon-container {
     margin: 0 4px;
-    border-radius: var(--main-border);
+    border-radius: var(--minor-border);
     width: 15%;
     background: var(--darkgray);
     cursor: pointer;
@@ -3526,7 +3525,7 @@ h3 {
 
 .weapon-container:hover .weapon-current img {
     filter: grayscale(0);
-    transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1);
 }
 
 .weapon-current img {
@@ -3568,9 +3567,10 @@ h3 {
 }
 
 .weapon-selection-unite img {
-    width: 35px;
+    width: auto;
     height: auto;
-    filter: drop-shadow(0px 0px 4px black);
+    max-height: 70%;
+    filter: drop-shadow(0px 0px 4px rgb(9, 9, 9));
     margin-left: 10px;
 }
 
@@ -5316,17 +5316,17 @@ nav img {
 
 .sitepage.items .section.searchers {
     position: absolute;
-    height: calc(100% - 16px);
+    height: auto;
     width: 45px;
     border-radius: var(--main-border) 0 0 var(--main-border);
     margin: unset;
-    padding: 6px;
+    padding: 12px 6px;
     left: -40px;
     bottom: 50%;
     margin-top: unset;
     max-width: unset;
     background: var(--darkgray);
-    gap: 16px;
+    gap: 8px;
     top: unset;
     transform: translateY(50%);
 }
@@ -9152,7 +9152,7 @@ a[data-title]:after,
 
 .typesinside .playing::before,
 .main-mode.playing .main-mode-icon::before {
-    background-image: url(/img/icons/gamemodes/playing.webp);
+    background-image: url(/img/icons/gamemodes/trophy.svg);
 }
 
 .typesinside .trade-skins::before,
@@ -13585,7 +13585,7 @@ header {
     font-family: TTNormsPro;
     background: rgb(17 17 17);
     color: rgb(155, 155, 155);
-    user-select: auto;
+    user-select: all;
 }
 
 .site-attention.event strong.item {

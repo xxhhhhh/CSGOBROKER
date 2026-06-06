@@ -2,6 +2,7 @@ $(document).ready(function () {
   const currentPath = window.location.pathname;
   if (
     currentPath.includes("items/") ||
+    currentPath.includes("tournament-stickers/") ||
     currentPath.includes("stickers/") ||
     currentPath.includes("cases/") ||
     currentPath.includes("players/inventories/") ||
@@ -352,6 +353,10 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
       .trim();
   }
 
+  function normalizePriceLookupKey(str) {
+    return normalizePriceName(str).toLowerCase();
+  }
+
 function getInventoryPriceCandidateNames(skinEl, visibleName) {
   const weapon = String(skinEl.getAttribute("weapon") || "").trim().toLowerCase();
   const normalizedVisible = normalizePriceName(visibleName);
@@ -388,7 +393,8 @@ function findInventoryPriceMatches(skinEl, visibleName, priceData) {
     if (!candidate) continue;
 
     // Сначала exact
-    const exact = priceData.exactMap.get(candidate);
+    const candidateKey = normalizePriceLookupKey(candidate);
+    const exact = priceData.exactMap.get(candidateKey);
     if (exact && !exact.isStickerSlab) {
       out.push(exact);
       continue;
@@ -397,14 +403,14 @@ function findInventoryPriceMatches(skinEl, visibleName, priceData) {
     // Потом old-script partial, но только по ПОЛНОМУ имени карточки
     for (const item of priceData.partialList) {
       if (item.isStickerSlab) continue;
-      if (item.name.includes(candidate)) {
+      if (item.lookupName.includes(candidateKey)) {
         out.push(item);
       }
     }
   }
 
   return uniqStrings(out.map(item => item.name))
-    .map(name => priceData.exactMap.get(name))
+    .map(name => priceData.exactMap.get(normalizePriceLookupKey(name)))
     .filter(Boolean);
 }
 
@@ -622,6 +628,9 @@ async function updateTopicTotalValue(totalValue) {
     }
 
     $list.append(skins);
+    $list.each(function () {
+      window.keepStaticTopicExpanderLast?.(this);
+    });
   }
 
   function applyDefaultInventoryPriceSort() {
@@ -680,6 +689,91 @@ async function updateTopicTotalValue(totalValue) {
     `;
 
     return el;
+  }
+
+  const STATIC_TOPIC_EXPAND_BATCH_SIZE = 160;
+
+  function createStaticTopicExpander(remainingCount) {
+    const el = createInventoryExpander(remainingCount);
+    el.classList.add("topic-static-expander");
+
+    const textSpans = el.querySelectorAll(".skin-expander-text span");
+    if (textSpans[1]) {
+      textSpans[1].textContent =
+        typeof languageTag !== "undefined" && languageTag === "ru"
+          ? "показать ещё"
+          : "show more";
+    }
+
+    return el;
+  }
+
+  function countStaticTopicSkinsInHtml(html) {
+    const tpl = document.createElement("template");
+    tpl.innerHTML = String(html || "");
+
+    return Array.from(tpl.content.children).filter((el) => {
+      return el.classList && el.classList.contains("skin") && !el.classList.contains("expander");
+    }).length;
+  }
+
+  function updateStaticTopicExpanderText(expander, remainingCount) {
+    if (!expander) return;
+
+    const word = getInventoryExpanderWord(remainingCount);
+    const textSpans = expander.querySelectorAll(".skin-expander-text span");
+
+    if (textSpans[0]) {
+      textSpans[0].textContent = `${remainingCount} ${word}`;
+    }
+
+    if (textSpans[1]) {
+      textSpans[1].textContent =
+        typeof languageTag !== "undefined" && languageTag === "ru"
+          ? "показать ещё"
+          : "show more";
+    }
+
+    expander.classList.toggle("disabled", remainingCount <= 0);
+  }
+
+  function initStaticTopicDeferredExpanders() {
+    document.querySelectorAll(".box-skins-list").forEach((listEl) => {
+      const expander = listEl.querySelector(".skin.expander.topic-static-expander");
+      if (!expander) return;
+
+      const listId = expander.getAttribute("data-topic-static-list") || "";
+      const dataEl = listId
+        ? listEl.querySelector(`script.topic-static-deferred-items[data-topic-static-list="${CSS.escape(listId)}"]`)
+        : listEl.querySelector("script.topic-static-deferred-items");
+
+      if (!dataEl) {
+        expander.remove();
+        return;
+      }
+
+      let chunks = [];
+      try {
+        chunks = JSON.parse(dataEl.textContent || "[]");
+      } catch {
+        chunks = [];
+      }
+
+      if (!Array.isArray(chunks) || !chunks.length) {
+        expander.remove();
+        dataEl.remove();
+        return;
+      }
+
+      dataEl.__topicStaticChunks = chunks;
+      dataEl.__topicStaticLoaded = 0;
+
+      const remaining = chunks.reduce((sum, chunk) => {
+        return sum + countStaticTopicSkinsInHtml(chunk);
+      }, 0);
+
+      updateStaticTopicExpanderText(expander, remaining);
+    });
   }
 
   function updateInventoryExpanderState(listEl) {
@@ -798,6 +892,7 @@ async function updateTopicTotalValue(totalValue) {
 
         const entry = {
           name,
+          lookupName: normalizePriceLookupKey(name),
           isSouvenir: /^Souvenir\b/i.test(name),
           isStatTrak: /\bStatTrak\b/i.test(name),
           isStickerSlab: /^Sticker Slab\s*\|/i.test(name),
@@ -807,7 +902,7 @@ async function updateTopicTotalValue(totalValue) {
 
         if (!Number.isFinite(entry.min) && !Number.isFinite(entry.max)) continue;
 
-        exactMap.set(name, entry);
+        exactMap.set(entry.lookupName, entry);
 
         if (name.includes("|")) {
           partialList.push(entry);
@@ -1373,31 +1468,57 @@ async function updateTopicTotalValue(totalValue) {
       run();
     })();
 
-    function findMatches(name, priceData, skinEl = null) {
-      const normalizedName = normalizePriceName(name);
-      if (!normalizedName) return [];
+function findMatches(name, priceData, skinEl = null) {
+  const normalizedName = normalizePriceName(name);
+  if (!normalizedName) return [];
 
-      // Для /players/inventories/ повторяем old-script поведение,
-      // а не отдельный exact-only режим
-      if (isPlayersInventoryTopicPath() && skinEl) {
-        return findInventoryPriceMatches(skinEl, normalizedName, priceData);
+  if (isPlayersInventoryTopicPath() && skinEl) {
+    return findInventoryPriceMatches(skinEl, normalizedName, priceData);
+  }
+
+  const candidates = [normalizedName];
+
+  const weapon = String(skinEl?.getAttribute("weapon") || "").toLowerCase();
+  if (
+    weapon.includes("sticker") &&
+    !/^Sticker\s*\|/i.test(normalizedName)
+  ) {
+    candidates.push(normalizePriceName(`Sticker | ${normalizedName}`));
+  }
+
+  if (
+    weapon.includes("charm") &&
+    !/^Charm\s*\|/i.test(normalizedName)
+  ) {
+    candidates.push(normalizePriceName(`Charm | ${normalizedName}`));
+  }
+
+  const out = [];
+
+  for (const candidate of candidates) {
+    const candidateKey = normalizePriceLookupKey(candidate);
+    const strictMatch = isStrictNameMatch(candidate);
+
+    if (strictMatch) {
+      const exact = priceData.exactMap.get(candidateKey);
+      if (exact && !exact.isStickerSlab) {
+        out.push(exact);
+        continue;
       }
-
-      const strictMatch = isStrictNameMatch(normalizedName);
-
-      if (strictMatch) {
-        const exact = priceData.exactMap.get(normalizedName);
-        if (!exact || exact.isStickerSlab) return [];
-        return [exact];
-      }
-
-      const out = [];
-      for (const item of priceData.partialList) {
-        if (item.isStickerSlab) continue;
-        if (item.name.includes(normalizedName)) out.push(item);
-      }
-      return out;
     }
+
+    for (const item of priceData.partialList) {
+      if (item.isStickerSlab) continue;
+      if (item.lookupName.includes(candidateKey)) {
+        out.push(item);
+      }
+    }
+  }
+
+  return uniqStrings(out.map(item => item.lookupName))
+    .map(key => priceData.exactMap.get(key))
+    .filter(Boolean);
+}
 
   async function priceSkinsOnPage() {
     const skins = Array.from(document.querySelectorAll(".skin:not(.extra-list)"));
@@ -1584,6 +1705,130 @@ async function updateTopicTotalValue(totalValue) {
   if ($(".skin").length) {
     priceSkinsOnPage();
   }
+
+  function keepStaticTopicExpanderLast(listEl) {
+    if (!listEl) return;
+
+    const expander = listEl.querySelector(".skin.expander.topic-static-expander");
+    if (!expander) return;
+
+    const dataEl = listEl.querySelector("script.topic-static-deferred-items");
+
+    if (dataEl) {
+      listEl.appendChild(dataEl);
+    }
+
+    listEl.appendChild(expander);
+    syncStaticTopicExpanderVisibility(listEl);
+  }
+
+  window.keepStaticTopicExpanderLast = keepStaticTopicExpanderLast;
+
+  function syncStaticTopicExpanderVisibility(listEl) {
+    if (!listEl) return;
+
+    const expander = listEl.querySelector(".skin.expander.topic-static-expander");
+    if (!expander) return;
+
+    const hasVisibleSkins = !!listEl.querySelector(
+      ".skin:not(.expander):not(.disabled):not(.disabled-cheap):not(.none)"
+    );
+
+    expander.classList.toggle("hidden", !hasVisibleSkins);
+  }
+
+    function getTopicFilterClassFromButton(button) {
+      const classList = ($(button).attr("class") || "").split(/\s+/);
+
+      return classList.find(
+        (cls) =>
+          cls &&
+          cls !== "navigation-weapon-type" &&
+          cls !== "enabled" &&
+          cls !== "notexist" &&
+          cls !== "solo-category"
+      );
+    }
+
+    function syncStaticTopicItemsWithNavigation(listEl) {
+      if (!listEl) return;
+
+      $(".navigation-weapon-type").each(function () {
+        const filterClass = getTopicFilterClassFromButton(this);
+        if (!filterClass) return;
+
+        const enabled = $(this).hasClass("enabled");
+
+        $(listEl)
+          .find(`.skin.${filterClass}:not(.expander)`)
+          .toggleClass("disabled", !enabled);
+      });
+
+      syncStaticTopicExpanderVisibility(listEl);
+      keepStaticTopicExpanderLast(listEl);
+    }
+    
+    window.syncStaticTopicItemsWithNavigation = syncStaticTopicItemsWithNavigation;
+
+  initStaticTopicDeferredExpanders();
+
+  $(document).on("click", ".skin.expander.topic-static-expander", function (e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
+    if (this.classList.contains("disabled")) return;
+
+    const listEl = this.closest(".box-skins-list");
+    if (!listEl) return;
+
+    const listId = this.getAttribute("data-topic-static-list") || "";
+    const dataEl = listId
+      ? listEl.querySelector(`script.topic-static-deferred-items[data-topic-static-list="${CSS.escape(listId)}"]`)
+      : listEl.querySelector("script.topic-static-deferred-items");
+
+    if (!dataEl) {
+      this.remove();
+      return;
+    }
+
+    const chunks = Array.isArray(dataEl.__topicStaticChunks)
+      ? dataEl.__topicStaticChunks
+      : [];
+
+    const loadedIndex = Number(dataEl.__topicStaticLoaded || 0);
+    const html = chunks[loadedIndex];
+
+    if (!html) {
+      this.classList.add("disabled");
+      this.remove();
+      dataEl.remove();
+      return;
+    }
+
+    this.insertAdjacentHTML("beforebegin", html);
+    
+    syncStaticTopicItemsWithNavigation(listEl);
+
+    keepStaticTopicExpanderLast(listEl);
+    dataEl.__topicStaticLoaded = loadedIndex + 1;
+
+    const remainingChunks = chunks.slice(dataEl.__topicStaticLoaded);
+    const remaining = remainingChunks.reduce((sum, chunk) => {
+      return sum + countStaticTopicSkinsInHtml(chunk);
+    }, 0);
+
+    if (remaining <= 0) {
+      this.remove();
+      dataEl.remove();
+    } else {
+      updateStaticTopicExpanderText(this, remaining);
+      keepStaticTopicExpanderLast(listEl);
+    }
+
+    if (typeof priceSkinsOnPage === "function") {
+      priceSkinsOnPage();
+    }
+  });
   $(document).on("click", ".skin.expander", function (e) {
     e.preventDefault();
     e.stopPropagation();
@@ -1861,39 +2106,61 @@ async function updateTopicTotalValue(totalValue) {
 
       previewExtras.find(".skin-alt-info, .skin-craft-info").remove();
 
-      const weapon = element.getAttribute("weapon");
-      const isSticker = weapon.includes("sticker") || weapon.includes("capsule");
+      const weapon = element.getAttribute("weapon") || "";
+      const weaponLower = weapon.toLowerCase();
 
-      let skinAltInfoDiv = previewExtras.find(".skin-alt-info");
-      if (skinAltInfoDiv.length === 0) {
-        skinAltInfoDiv = $("<a>", {
-          class: "skin-alt-info titled",
-          html: '<i class="officon library"></i>',
-        });
-        previewExtras.prepend(skinAltInfoDiv);
+      const isTournamentStickerWeapon =
+        /^[a-z0-9]+(?:-[a-z0-9]+)*-\d{4}$/i.test(weaponLower) ||
+        /^\d{4}-[a-z0-9]+(?:-[a-z0-9]+)*$/i.test(weaponLower);
+
+      const isSticker =
+        weaponLower.includes("sticker") ||
+        weaponLower.includes("capsule") ||
+        isTournamentStickerWeapon;
+
+      if (isSticker) {
+        previewExtras.find(".skin-alt-info").remove();
       }
 
       const skinId = element.getAttribute("skin-id");
-      const skinsDataResponse = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
-      const skinsData = await skinsDataResponse.json();
-      const skinData = skinsData[skinId];
 
-      const isAgentsCollection =
-        typeof skinData?.collection === "string" &&
-        skinData.collection.toLowerCase().includes("agents");
+      let skinData = null;
+      try {
+        const skinsDataResponse = await fetch(`/code-parts/topics/skins-list/${weapon}.json`);
+        const skinsData = await skinsDataResponse.json();
+        skinData = skinsData?.[skinId] || null;
+      } catch {
+        skinData = null;
+      }
 
-      const altInfoHref = isAgentsCollection
-        ? (languageTag === "ru" ? `/ru/topic/items/agents` : `/topic/items/agents`)
-        : (languageTag === "ru" ? `/ru/topic/items/${weapon}` : `/topic/items/${weapon}`);
+      if (!isSticker) {
+        let skinAltInfoDiv = previewExtras.find(".skin-alt-info");
 
-      const altInfoTitle = isAgentsCollection
-        ? (languageTag === "ru" ? `Все Агенты` : `All Agents`)
-        : (languageTag === "ru" ? `Все Скины на ${weaponName}` : `All Skins on ${weaponName}`);
+        if (skinAltInfoDiv.length === 0) {
+          skinAltInfoDiv = $("<a>", {
+            class: "skin-alt-info titled",
+            html: '<i class="officon library"></i>',
+          });
+          previewExtras.prepend(skinAltInfoDiv);
+        }
 
-      skinAltInfoDiv.attr({
-        href: altInfoHref,
-        "data-title": altInfoTitle,
-      }).toggleClass("hidden", isSticker);
+        const isAgentsCollection =
+          typeof skinData?.collection === "string" &&
+          skinData.collection.toLowerCase().includes("agents");
+
+        const altInfoHref = isAgentsCollection
+          ? (languageTag === "ru" ? `/ru/topic/items/agents` : `/topic/items/agents`)
+          : (languageTag === "ru" ? `/ru/topic/items/${weapon}` : `/topic/items/${weapon}`);
+
+        const altInfoTitle = isAgentsCollection
+          ? (languageTag === "ru" ? `Все Агенты` : `All Agents`)
+          : (languageTag === "ru" ? `Все Скины на ${weaponName}` : `All Skins on ${weaponName}`);
+
+        skinAltInfoDiv.attr({
+          href: altInfoHref,
+          "data-title": altInfoTitle,
+        });
+      }
 
       let skinColorInfo = previewExtras.find(".skin-color-info");
       if (skinColorInfo.length === 0) {
@@ -1901,14 +2168,21 @@ async function updateTopicTotalValue(totalValue) {
         previewExtras.append(skinColorInfo);
       }
 
-      let skinExtraInfo = previewExtras.find(".skin-extra-info");
+      let skinExtraInfo = previewExtras.find(".skin-extra-info.main-extra-info");
       if (skinExtraInfo.length === 0) {
-        skinExtraInfo = $("<div>", { class: "skin-extra-info" }).css({ display: "flex", opacity: 0 });
+        skinExtraInfo = $("<div>", { class: "skin-extra-info main-extra-info" }).css({ display: "flex", opacity: 0 });
         previewExtras.append(skinExtraInfo);
+      }
+
+      let tournamentExtraInfo = previewExtras.find(".skin-extra-info.tournament-extra-info");
+      if (tournamentExtraInfo.length === 0) {
+        tournamentExtraInfo = $("<div>", { class: "skin-extra-info tournament-extra-info" }).css({ display: "flex", opacity: 0 });
+        previewExtras.append(tournamentExtraInfo);
       }
 
       skinColorInfo.stop(true, true);
       skinExtraInfo.stop(true, true);
+      tournamentExtraInfo.stop(true, true);
 
       const hideAnimations = [];
 
@@ -1927,9 +2201,18 @@ async function updateTopicTotalValue(totalValue) {
         );
       }
 
+      if (parseFloat(tournamentExtraInfo.css("opacity")) > 0) {
+        hideAnimations.push(
+          tournamentExtraInfo.animate({ opacity: 0 }, 100).promise().then(() => {
+            tournamentExtraInfo.css({ display: "none" });
+          })
+        );
+      }
+
       await Promise.all(hideAnimations);
       skinColorInfo.empty();
       skinExtraInfo.empty();
+      tournamentExtraInfo.empty();
 
       const bindsDataResponse = await fetch("/code-parts/topics/sticker-crafts-binds.json");
       const bindsData = await bindsDataResponse.json();
@@ -1974,58 +2257,133 @@ async function updateTopicTotalValue(totalValue) {
           });
         }
 
-        async function handleCollectionOrCase(type) {
-          const file = type === "collection" ? "collections" : "cases";
-          const searchTitle = skinData[type];
-          if (!searchTitle) return;
+      function getTopicItemsArray(data) {
+        if (Array.isArray(data)) return data;
+        if (Array.isArray(data?.items)) return data.items;
+        return [];
+      }
 
-          const response = await fetch(`/code-parts/topics/${file}.json`);
-          const data = await response.json();
-          const match = data.items.find(item => item.title === searchTitle);
+      function createPreviewExtraLink({ href, img, title }) {
+        return $("<a>", { href }).append(
+          $("<img>", { src: img, alt: title }),
+          $("<span>").text(title)
+        );
+      }
 
-          if (match) {
-            const link = $("<a>", {
-              href: `/topic/${file}/${match.id}`,
-            }).append(
-              $("<img>", { src: match.img, alt: match.title }),
-              $("<span>").text(match.title)
-            );
-            skinExtraInfo.append(link);
-          }
+      async function findTopicItemByTitle(file, title) {
+        if (!title) return null;
+
+        const response = await fetch(`/code-parts/topics/${file}.json`);
+        if (!response.ok) return null;
+
+        const data = await response.json();
+        const items = getTopicItemsArray(data);
+
+        return items.find(item => String(item.title || "").trim() === String(title).trim()) || null;
+      }
+
+      async function handleCollectionOrCase(type) {
+        const file = type === "collection" ? "collections" : "cases";
+        const searchTitle = skinData[type];
+        const match = await findTopicItemByTitle(file, searchTitle);
+
+        if (!match) return;
+
+        const link = createPreviewExtraLink({
+          href: `/topic/${file}/${match.id}`,
+          img: match.img,
+          title: match.title,
+        });
+
+        skinExtraInfo.append(link);
+      }
+
+      async function handleStickerCapsuleByField(field, file, pathType) {
+        const searchTitle = skinData?.[field];
+        const weaponId = String(weapon || "").toLowerCase();
+
+        const response = await fetch(`/code-parts/topics/${file}.json`);
+        if (!response.ok) return;
+
+        const data = await response.json();
+        const items = getTopicItemsArray(data);
+
+        let match = null;
+
+        if (searchTitle) {
+          match = items.find(item => String(item.title || "").trim() === String(searchTitle).trim()) || null;
         }
 
-        async function handleStickerOrCapsule() {
-          if (!weapon.includes("sticker") && !weapon.includes("capsule")) return;
-
-          const filesToCheck = [
-            "/code-parts/topics/sticker-capsules.json",
-            "/code-parts/topics/autograph-capsules.json"
-          ];
-
-          for (const filePath of filesToCheck) {
-            const response = await fetch(filePath);
-            const data = await response.json();
-            const match = data.items.find(item => item.id === weapon);
-            if (match) {
-              const link = $("<a>", {
-                href: `/topic/stickers/${match.id}`,
-              }).append(
-                $("<img>", { src: match.img, alt: match.title }),
-                $("<span>").text(match.title)
-              );
-              skinExtraInfo.append(link);
-              break;
-            }
-          }
+        if (!match && weaponId) {
+          match = items.find(item => {
+            const id = String(item.id || "").toLowerCase();
+            return id && id === weaponId;
+          }) || null;
         }
 
-        await handleCollectionOrCase("collection");
-        await handleCollectionOrCase("case");
-        await handleStickerOrCapsule();
+        if (!match) return;
+
+        const link = createPreviewExtraLink({
+          href: `/topic/${pathType}/${match.id}`,
+          img: match.img,
+          title: match.title,
+        });
+
+        skinExtraInfo.append(link);
+      }
+
+        async function handleTournamentStickerGroup() {
+
+        const weaponId = String(weapon || "").toLowerCase();
+        if (!weaponId) return;
+
+        const response = await fetch("/code-parts/topics/tournament-stickers.json");
+        if (!response.ok) return;
+
+        const data = await response.json();
+        const items = getTopicItemsArray(data);
+
+        const match = items
+          .slice()
+          .sort((a, b) => String(b.id || "").length - String(a.id || "").length)
+          .find(item => {
+            const id = String(item.id || "").toLowerCase();
+            return id && (weaponId === id || weaponId.startsWith(`${id}-`));
+          });
+
+        if (!match) return;
+
+        const link = createPreviewExtraLink({
+          href: `/topic/tournament-stickers/${match.id}`,
+          img: match.img,
+          title: match.title,
+        });
+
+        tournamentExtraInfo.append(link);
+      }
+
+      await handleCollectionOrCase("collection");
+      await handleCollectionOrCase("case");
+
+      await handleStickerCapsuleByField("sticker-capsule", "sticker-capsules", "stickers");
+      await handleStickerCapsuleByField("autograph-capsule", "autograph-capsules", "stickers");
+
+      await handleTournamentStickerGroup();
       }
 
       skinColorInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
-      skinExtraInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
+
+      if (skinExtraInfo.children().length) {
+        skinExtraInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
+      } else {
+        skinExtraInfo.css({ display: "none", opacity: 0 });
+      }
+
+      if (tournamentExtraInfo.children().length) {
+        tournamentExtraInfo.css({ display: "flex", opacity: 0 }).animate({ opacity: 1 }, 100);
+      } else {
+        tournamentExtraInfo.css({ display: "none", opacity: 0 });
+      }
 
       $(".site-searcher-box")
         .off("click")
@@ -2213,6 +2571,10 @@ async function updateTopicTotalValue(totalValue) {
       }
 
       $list.append(skins);
+
+    $list.each(function () {
+      window.keepStaticTopicExpanderLast?.(this);
+    });
     }
 
     $(document).on("click", ".box-skins-list .price-sorter", function () {
@@ -2310,6 +2672,7 @@ async function updateTopicTotalValue(totalValue) {
     else if (
       currentPath.includes("/items/") ||
       currentPath.includes("/stickers/") ||
+      currentPath.includes("/tournament-stickers/") ||
       currentPath.includes("/cases/") ||
       currentPath.includes("/players/inventories/") ||
       currentPath.includes("/charms/") ||
@@ -2339,6 +2702,12 @@ async function updateTopicTotalValue(totalValue) {
         $(this).toggleClass("enabled");
         enabledFiltersState[weaponType] = $(this).hasClass("enabled");
         updateNavigationReset();
+
+        $(".box-skins-list").each(function () {
+          if (typeof syncStaticTopicItemsWithNavigation === "function") {
+            syncStaticTopicItemsWithNavigation(this);
+          }
+        });
       });
 
       function getSkinsToggleState() {
@@ -2467,6 +2836,9 @@ async function updateTopicTotalValue(totalValue) {
         }
 
         $list.append(skins);
+        $list.each(function () {
+          window.keepStaticTopicExpanderLast?.(this);
+        });
       }
 
       function sortTopicItemsByQuality(sortState) {
@@ -2507,6 +2879,9 @@ async function updateTopicTotalValue(totalValue) {
         }
 
         $list.append(skins);
+        $list.each(function () {
+          window.keepStaticTopicExpanderLast?.(this);
+        });
       }
 
       function applyDefaultTopicPriceFilterIfNeeded() {
@@ -2525,6 +2900,12 @@ async function updateTopicTotalValue(totalValue) {
         });
       });
 
+      $priceFilter.off("click").on("click", function () {
+        toggleSortFilter($(this), $qualityFilter, (sortState) => {
+          sortTopicItemsByPrice(sortState === "none" ? "original" : sortState);
+        });
+      });
+
       $(".topic-centralizer").off("click", ".navigation-reset").on("click", ".navigation-reset", function () {
         $(".skin").removeClass("disabled");
         $(".navigation-weapon-type").not(".notexist").addClass("enabled");
@@ -2537,6 +2918,10 @@ async function updateTopicTotalValue(totalValue) {
         enabledFiltersState = {};
 
         applyDefaultTopicPriceFilterIfNeeded();
+
+        $(".box-skins-list").each(function () {
+          syncStaticTopicItemsWithNavigation(this);
+        });
       });
 
       applyDefaultTopicPriceFilterIfNeeded();
@@ -2546,59 +2931,6 @@ async function updateTopicTotalValue(totalValue) {
         const classList = (el.className || "").split(/\s+/);
         return order.find((cls) => classList.includes(cls)) || "";
       }
-
-      $qualityFilter.on("click", function () {
-        toggleSortFilter($(this), $priceFilter, (sortState) => {
-          const skins = $(".box-skins-list .skin").get();
-          const sortOrder = ["white", "lblue", "blue", "purple", "pink", "red", "gold"];
-
-          if (sortState !== "none") {
-            skins.sort((a, b) => {
-              const aClass = getSkinQualityClass(a);
-              const bClass = getSkinQualityClass(b);
-
-              const aIndex = sortOrder.indexOf(aClass);
-              const bIndex = sortOrder.indexOf(bClass);
-
-              const safeA = aIndex === -1 ? -1 : aIndex;
-              const safeB = bIndex === -1 ? -1 : bIndex;
-
-              const diff = safeA - safeB;
-              return sortState === "asc" ? diff : -diff;
-            });
-
-            $(".box-skins-list").html(skins);
-          }
-        });
-      });
-
-      $priceFilter.on("click", function () {
-        toggleSortFilter($(this), $qualityFilter, (sortState) => {
-          const skins = $(".box-skins-list .skin").get();
-
-          if (sortState !== "none") {
-            skins.sort((a, b) => {
-              const priceA = parseFloat($(a).find(".skin-price-info").text().replace(/[^0-9.]/g, "")) || 0;
-              const priceB = parseFloat($(b).find(".skin-price-info").text().replace(/[^0-9.]/g, "")) || 0;
-              return sortState === "asc" ? priceA - priceB : priceB - priceA;
-            });
-
-            $(".box-skins-list").html(skins);
-          }
-        });
-      });
-
-      $(".topic-centralizer").on("click", ".navigation-reset", function () {
-        $(".skin").removeClass("disabled");
-        $(".navigation-weapon-type").not(".notexist").addClass("enabled");
-        $(".navigation-weapon-type.notexist").removeClass("enabled");
-
-        $qualityFilter.removeClass("enabled reversed");
-        $priceFilter.removeClass("enabled reversed");
-        $(".topic-centralizer .navigation-reset").remove();
-
-        enabledFiltersState = {};
-      });
     }
 
     // !!! УДАЛЕНО: авто-импорт .box-skins-list (autoImportFullJsonIfNeeded)
