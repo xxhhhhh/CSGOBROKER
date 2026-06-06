@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/6417459b-053f-40d0-b2f5-8a26e7f05750",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-04T08:03:38.905Z",
+  "updatedAt": "2026-06-06T07:04:51.676Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 39,
-  "totalItemsGrouped": 39,
+  "totalItemsRaw": 40,
+  "totalItemsGrouped": 40,
   "items": [
     {
       "assetid": "51157847614",
@@ -488,11 +488,11 @@
     },
     {
       "assetid": "51834738567",
-      "classid": "8490781882",
+      "classid": "8534113218",
       "instanceid": "8490823738",
       "amount": 1,
-      "name": "Cologne 2026 Coin",
-      "market_hash_name": "Cologne 2026 Coin",
+      "name": "Cologne 2026 Silver Coin",
+      "market_hash_name": "Cologne 2026 Silver Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -846,14 +846,14 @@
       ]
     },
     {
-      "assetid": "51835332415",
+      "assetid": "51835332416",
       "classid": "8491521251",
       "instanceid": "143865972",
       "amount": 1,
       "name": "Sticker | venomzera (Gold) | Cologne 2026",
       "market_hash_name": "Sticker | venomzera (Gold) | Cologne 2026",
       "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B6A6B6AE0FBF96B69EB086B2D4B3BEB6A65BE3DEB6C6B40154D455",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ECFCECF455E5CCECC4EADCE88EE9E4ECFC01B984EC9CEE8B759536",
       "tags": [
         {
           "category": "Type",
@@ -889,7 +889,7 @@
         }
       ],
       "assetids": [
-        "51835332415"
+        "51835332416"
       ]
     },
     {
@@ -971,6 +971,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51912748719",
+      "classid": "7993037006",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "P90 | Neoqueen",
+      "market_hash_name": "P90 | Neoqueen (Field-Tested)",
+      "type": "Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
