@@ -12,78 +12,14 @@
   "faceit": "https://www.faceit.com/players/anomaly/",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-05T07:11:31.992Z",
+  "updatedAt": "2026-06-06T06:32:25.549Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 352,
-  "totalItemsGrouped": 348,
+  "totalItemsRaw": 332,
+  "totalItemsGrouped": 328,
   "items": [
-    {
-      "assetid": "51863303779",
-      "classid": "7993042363",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Bayonet | Doppler",
-      "market_hash_name": "★ Bayonet | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51863489222",
-      "classid": "7993038844",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Bayonet | Gamma Doppler",
-      "market_hash_name": "★ Bayonet | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "51836729361",
       "classid": "7993040594",
@@ -122,42 +58,6 @@
       "float": 0.013981756754,
       "seed": 773,
       "phase": "Ruby"
-    },
-    {
-      "assetid": "51836729357",
-      "classid": "7993040322",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Slaughter",
-      "market_hash_name": "★ Butterfly Knife | Slaughter (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "51877750252",
@@ -199,7 +99,7 @@
       "name": "★ Gut Knife | Gamma Doppler",
       "market_hash_name": "★ Gut Knife | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208D9D656121174C8C95778EAD3589A58BBD8EB55D380F6A8ECD7B8CE5138FFD89BA03AF53",
       "tags": [
         {
           "category": "Type",
@@ -221,7 +121,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.027417570353,
+      "seed": 246,
+      "phase": "Emerald"
     },
     {
       "assetid": "44874654051",
@@ -906,42 +809,6 @@
       ]
     },
     {
-      "assetid": "51863303780",
-      "classid": "7993036811",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Skeleton Knife | Doppler",
-      "market_hash_name": "★ Skeleton Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "47931553122",
       "classid": "7993039447",
       "instanceid": "480085569",
@@ -1232,34 +1099,6 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Crimson Web",
       "market_hash_name": "★ Specialist Gloves | Crimson Web (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51877750253",
-      "classid": "7993038455",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Big Game",
-      "market_hash_name": "★ Sport Gloves | Big Game (Well-Worn)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1627,34 +1466,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51864374843",
-      "classid": "5189384637",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Revolution Case",
-      "market_hash_name": "Revolution Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
           "name": ""
         }
       ]
@@ -3193,42 +3004,6 @@
       ]
     },
     {
-      "assetid": "51863455563",
-      "classid": "7993036430",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Glock-18 | AXIA",
-      "market_hash_name": "Glock-18 | AXIA (Minimal Wear)",
-      "type": "Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51863303775",
       "classid": "7993044439",
       "instanceid": "480085569",
@@ -3952,7 +3727,7 @@
       "name": "Glock-18 | Gamma Doppler",
       "market_hash_name": "Glock-18 | Gamma Doppler (Factory New)",
       "type": "Covert Pistol",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2045559DA9E9DF84445D41659A4D6D4375417DC6DBF6AD4605F4412DEB47354104571429",
       "tags": [
         {
           "category": "Type",
@@ -3978,7 +3753,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.034377109259,
+      "seed": 561,
+      "phase": "Emerald"
     },
     {
       "assetid": "23415888634",
@@ -4306,42 +4084,6 @@
       ]
     },
     {
-      "assetid": "51877750254",
-      "classid": "7993041135",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AK-47 | Fuel Injector",
-      "market_hash_name": "AK-47 | Fuel Injector (Well-Worn)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51863489213",
       "classid": "7993036263",
       "instanceid": "188530139",
@@ -4509,42 +4251,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51863303771",
-      "classid": "7993037246",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "AK-47 | Vulcan",
-      "market_hash_name": "AK-47 | Vulcan (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -4772,42 +4478,6 @@
       "amount": 1,
       "name": "M4A1-S | Fade",
       "market_hash_name": "M4A1-S | Fade (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51863419214",
-      "classid": "7993035494",
-      "instanceid": "6281125198",
-      "amount": 1,
-      "name": "M4A1-S | Printstream",
-      "market_hash_name": "M4A1-S | Printstream (Field-Tested)",
       "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
@@ -7012,34 +6682,6 @@
       ]
     },
     {
-      "assetid": "51836726570",
-      "classid": "4141779349",
-      "instanceid": "6276322213",
-      "amount": 1,
-      "name": "Sir Bloody Darryl Royale | The Professionals",
-      "market_hash_name": "Sir Bloody Darryl Royale | The Professionals",
-      "type": "Master Agent",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "46042262303",
       "classid": "4141779073",
       "instanceid": "6276305005",
@@ -8100,42 +7742,6 @@
       ]
     },
     {
-      "assetid": "30013903346",
-      "classid": "7993037843",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "MAC-10 | Fade",
-      "market_hash_name": "MAC-10 | Fade (Factory New)",
-      "type": "Mil-Spec Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "32486358153",
       "classid": "7993037843",
       "instanceid": "6276305120",
@@ -8520,50 +8126,6 @@
       ]
     },
     {
-      "assetid": "29258484136",
-      "classid": "241578325",
-      "instanceid": "6276366558",
-      "amount": 1,
-      "name": "SSG 08 | Acid Fade",
-      "market_hash_name": "SSG 08 | Acid Fade (Factory New)",
-      "type": "Mil-Spec Grade Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "30711723679",
       "classid": "7993042212",
       "instanceid": "6276593176",
@@ -8671,50 +8233,6 @@
       "assetid": "51562885887",
       "classid": "188530424",
       "instanceid": "7761851026",
-      "amount": 1,
-      "name": "Desert Eagle | Blaze",
-      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51863303765",
-      "classid": "188530424",
-      "instanceid": "6276419588",
       "amount": 1,
       "name": "Desert Eagle | Blaze",
       "market_hash_name": "Desert Eagle | Blaze (Factory New)",
@@ -10856,42 +10374,6 @@
       ]
     },
     {
-      "assetid": "51863489220",
-      "classid": "7993037071",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ M4A1-S | Black Lotus",
-      "market_hash_name": "StatTrak™ M4A1-S | Black Lotus (Factory New)",
-      "type": "StatTrak™ Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "40909335732",
       "classid": "7993037772",
       "instanceid": "8531460401",
@@ -12075,86 +11557,6 @@
       ]
     },
     {
-      "assetid": "29826496592",
-      "classid": "7993042167",
-      "instanceid": "6276316705",
-      "amount": 1,
-      "name": "StatTrak™ M249 | Downtown",
-      "market_hash_name": "StatTrak™ M249 | Downtown (Factory New)",
-      "type": "StatTrak™ Restricted Machinegun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "29826510083",
-      "classid": "7993043880",
-      "instanceid": "7155390211",
-      "amount": 1,
-      "name": "StatTrak™ Negev | Power Loader",
-      "market_hash_name": "StatTrak™ Negev | Power Loader (Factory New)",
-      "type": "StatTrak™ Restricted Machinegun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "17572376173",
       "classid": "7993043248",
       "instanceid": "7155390059",
@@ -12423,42 +11825,6 @@
       ]
     },
     {
-      "assetid": "29826448839",
-      "classid": "7993046477",
-      "instanceid": "6369088406",
-      "amount": 1,
-      "name": "StatTrak™ MAG-7 | BI83 Spectrum",
-      "market_hash_name": "StatTrak™ MAG-7 | BI83 Spectrum (Factory New)",
-      "type": "StatTrak™ Restricted Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "17395098441",
       "classid": "7993044041",
       "instanceid": "6497831769",
@@ -12643,42 +12009,6 @@
       ]
     },
     {
-      "assetid": "29826471778",
-      "classid": "7993037726",
-      "instanceid": "6522988710",
-      "amount": 1,
-      "name": "StatTrak™ SSG 08 | Fever Dream",
-      "market_hash_name": "StatTrak™ SSG 08 | Fever Dream (Factory New)",
-      "type": "StatTrak™ Restricted Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49434443891",
       "classid": "5835568404",
       "instanceid": "8044965093",
@@ -12758,34 +12088,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51863489216",
-      "classid": "4578724251",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Bloody Darryl The Strapped | The Professionals",
-      "market_hash_name": "Bloody Darryl The Strapped | The Professionals",
-      "type": "Superior Agent",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
           "name": ""
         }
       ]
