@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/02806bfb-af15-4b0f-a9ac-ca033e220626",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-05T07:37:56.550Z",
+  "updatedAt": "2026-06-07T07:42:45.329Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 205,
-  "totalItemsGrouped": 120,
+  "totalItemsRaw": 207,
+  "totalItemsGrouped": 122,
   "items": [
     {
       "assetid": "49256765064",
@@ -280,7 +280,7 @@
     {
       "assetid": "51893139355",
       "classid": "7993040301",
-      "instanceid": "8500835304",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "M4A1-S | Master Piece",
       "market_hash_name": "M4A1-S | Master Piece (Well-Worn)",
@@ -316,11 +316,47 @@
     {
       "assetid": "51893164647",
       "classid": "7993037883",
-      "instanceid": "8500835304",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "M4A4 | Hellish",
       "market_hash_name": "M4A4 | Hellish (Well-Worn)",
       "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51929707757",
+      "classid": "7993041615",
+      "instanceid": "8506318141",
+      "amount": 1,
+      "name": "SSG 08 | Big Iron",
+      "market_hash_name": "SSG 08 | Big Iron (Battle-Scarred)",
+      "type": "Classified Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -4977,6 +5013,54 @@
       "market_hash_name": "Souvenir G3SG1 | Ancient Ritual (Well-Worn)",
       "type": "Souvenir Industrial Grade Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%204050D7EE8DD5D841584B60CA486842704C78B4CC94B64300A04122454840509B7E2245484350D94D2245484150D37E2245484250BF7D28FD4130480BB405DF",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51929780838",
+      "classid": "7993038347",
+      "instanceid": "8506692276",
+      "amount": 1,
+      "name": "Souvenir FAMAS | 2A2F",
+      "market_hash_name": "Souvenir FAMAS | 2A2F (Field-Tested)",
+      "type": "Souvenir Mil-Spec Grade Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
