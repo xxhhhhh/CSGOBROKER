@@ -12,23 +12,23 @@
   "faceit": "https://faceitdb.com/profile/faceit/2aa89fae-a656-4663-a139-3d4665dee951",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-07T07:50:02.975Z",
+  "updatedAt": "2026-06-08T08:11:08.681Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 44,
-  "totalItemsGrouped": 44,
+  "totalItemsRaw": 45,
+  "totalItemsGrouped": 45,
   "items": [
     {
       "assetid": "51926600734",
       "classid": "7993040084",
-      "instanceid": "8506318141",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Karambit | Doppler",
       "market_hash_name": "★ Karambit | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205747C9CF93EF96564FAC5477F3547F5167546FD5B2B9BC5417FB503F53275FC9A25B9B",
       "tags": [
         {
           "category": "Type",
@@ -50,7 +50,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.061449535191,
+      "seed": 940,
+      "phase": "Phase 3"
     },
     {
       "assetid": "51475446597",
@@ -380,6 +383,42 @@
       "name": "MP9 | Bee-Tron",
       "market_hash_name": "MP9 | Bee-Tron (Battle-Scarred)",
       "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51967867559",
+      "classid": "202170645",
+      "instanceid": "6532691516",
+      "amount": 1,
+      "name": "Desert Eagle | Golden Koi",
+      "market_hash_name": "Desert Eagle | Golden Koi (Factory New)",
+      "type": "Covert Pistol",
       "inspectLink": "",
       "tags": [
         {

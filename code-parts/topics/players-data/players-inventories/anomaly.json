@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/players/anomaly/",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-07T07:11:15.718Z",
+  "updatedAt": "2026-06-08T07:32:55.493Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 368,
-  "totalItemsGrouped": 364,
+  "totalItemsRaw": 361,
+  "totalItemsGrouped": 358,
   "items": [
     {
       "assetid": "51909939205",
@@ -54,6 +54,41 @@
       "float": 0.024929122999,
       "seed": 554,
       "phase": "Sapphire"
+    },
+    {
+      "assetid": "51964081332",
+      "classid": "7993038844",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Bayonet | Gamma Doppler",
+      "market_hash_name": "★ Bayonet | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204A5AFEA3F9808B4B52BE496AF64E624C7A4972ACBCF0AF490AD84F22AA4B3A4EC0B7F194",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.021329592913,
+      "seed": 658,
+      "phase": "Phase 4"
     },
     {
       "assetid": "51836729361",
@@ -333,12 +368,12 @@
       ]
     },
     {
-      "assetid": "45577595294",
-      "classid": "7993045054",
-      "instanceid": "188530139",
+      "assetid": "51965695775",
+      "classid": "7993037094",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Kukri Knife | Case Hardened",
-      "market_hash_name": "★ Kukri Knife | Case Hardened (Battle-Scarred)",
+      "name": "★ Karambit | Rust Coat",
+      "market_hash_name": "★ Karambit | Rust Coat (Battle-Scarred)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -348,10 +383,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -369,12 +400,12 @@
       ]
     },
     {
-      "assetid": "42888546911",
-      "classid": "7993038418",
+      "assetid": "45577595294",
+      "classid": "7993045054",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ Kukri Knife | Case Hardened",
-      "market_hash_name": "★ Kukri Knife | Case Hardened (Field-Tested)",
+      "market_hash_name": "★ Kukri Knife | Case Hardened (Battle-Scarred)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -5426,6 +5457,42 @@
       ]
     },
     {
+      "assetid": "51965695777",
+      "classid": "7993038229",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M4A4 | Eye of Horus",
+      "market_hash_name": "M4A4 | Eye of Horus (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51953439424",
       "classid": "7993035662",
       "instanceid": "188530139",
@@ -5778,6 +5845,42 @@
       ]
     },
     {
+      "assetid": "51965695776",
+      "classid": "7993045672",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "AWP | Medusa",
+      "market_hash_name": "AWP | Medusa (Well-Worn)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51836729369",
       "classid": "7993037372",
       "instanceid": "188530139",
@@ -5934,132 +6037,12 @@
       ]
     },
     {
-      "assetid": "51953439434",
-      "classid": "3608084119",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Operator | FBI SWAT",
-      "market_hash_name": "Operator | FBI SWAT",
-      "type": "Distinguished Agent",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51953439423",
-      "classid": "4578727098",
-      "instanceid": "6276311472",
-      "amount": 1,
-      "name": "Primeiro Tenente | Brazilian 1st Battalion",
-      "market_hash_name": "Primeiro Tenente | Brazilian 1st Battalion",
-      "type": "Distinguished Agent",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "30158684442",
       "classid": "4141780207",
       "instanceid": "6276353336",
       "amount": 1,
       "name": "'Blueberries' Buckshot | NSWC SEAL",
       "market_hash_name": "'Blueberries' Buckshot | NSWC SEAL",
-      "type": "Exceptional Agent",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51953439430",
-      "classid": "4141780207",
-      "instanceid": "6276298604",
-      "amount": 1,
-      "name": "'Blueberries' Buckshot | NSWC SEAL",
-      "market_hash_name": "'Blueberries' Buckshot | NSWC SEAL",
-      "type": "Exceptional Agent",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51953439404",
-      "classid": "3608084872",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Markus Delrow | FBI HRT",
-      "market_hash_name": "Markus Delrow | FBI HRT",
       "type": "Exceptional Agent",
       "inspectLink": "",
       "tags": [
@@ -7138,81 +7121,6 @@
       ],
       "assetids": [
         "33543330128"
-      ]
-    },
-    {
-      "assetid": "50616198452",
-      "classid": "1440506285",
-      "instanceid": "188530139",
-      "amount": 2,
-      "name": "Sticker | Tamara",
-      "market_hash_name": "Sticker | Tamara",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F3E3F3EB4AFAD3F3DBF0C3F791F6FBF3E334F49BF383FB1425A1FD",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "50616198452",
-        "50614613132"
-      ]
-    },
-    {
-      "assetid": "50311036414",
-      "classid": "846288178",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Sticker | Titan | Katowice 2015",
-      "market_hash_name": "Sticker | Titan | Katowice 2015",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B5A5B5AD0CBC95B59DB685B1D7B0BDB5A563B7DDB5C5B7151E119D",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "50311036414"
       ]
     },
     {
@@ -9712,6 +9620,42 @@
       ]
     },
     {
+      "assetid": "51965695778",
+      "classid": "188530425",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glock-18 | Fade",
+      "market_hash_name": "Glock-18 | Fade (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "30892888651",
       "classid": "7993036691",
       "instanceid": "188530139",
@@ -12018,7 +11962,7 @@
     {
       "assetid": "51597986962",
       "classid": "8451071999",
-      "instanceid": "1311280064",
+      "instanceid": "1311574274",
       "amount": 1,
       "name": "StatTrak™ Music Kit | borne, Give It To Me",
       "market_hash_name": "StatTrak™ Music Kit | borne, Give It To Me",
@@ -12543,54 +12487,6 @@
       ]
     },
     {
-      "assetid": "30340322680",
-      "classid": "7993042199",
-      "instanceid": "7155388573",
-      "amount": 1,
-      "name": "StatTrak™ M4A4 | Faded Zebra",
-      "market_hash_name": "StatTrak™ M4A4 | Faded Zebra (Field-Tested)",
-      "type": "StatTrak™ Mil-Spec Grade Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "25315100369",
       "classid": "7993044209",
       "instanceid": "6321905300",
@@ -12837,50 +12733,6 @@
       "amount": 1,
       "name": "StatTrak™ P250 | Splash",
       "market_hash_name": "StatTrak™ P250 | Splash (Minimal Wear)",
-      "type": "StatTrak™ Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "25099184120",
-      "classid": "7993049949",
-      "instanceid": "6276490455",
-      "amount": 1,
-      "name": "StatTrak™ USP-S | Overgrowth",
-      "market_hash_name": "StatTrak™ USP-S | Overgrowth (Battle-Scarred)",
       "type": "StatTrak™ Restricted Pistol",
       "inspectLink": "",
       "tags": [
@@ -13329,62 +13181,6 @@
       "amount": 1,
       "name": "Chem-Haz Capitaine | Gendarmerie Nationale",
       "market_hash_name": "Chem-Haz Capitaine | Gendarmerie Nationale",
-      "type": "Superior Agent",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51953439421",
-      "classid": "3608084982",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Michael Syfers  | FBI Sniper",
-      "market_hash_name": "Michael Syfers  | FBI Sniper",
-      "type": "Superior Agent",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "32360493684",
-      "classid": "4141779051",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Number K | The Professionals",
-      "market_hash_name": "Number K | The Professionals",
       "type": "Superior Agent",
       "inspectLink": "",
       "tags": [
