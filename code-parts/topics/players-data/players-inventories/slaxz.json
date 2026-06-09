@@ -12,14 +12,53 @@
   "faceit": "https://faceitdb.com/profile/faceit/e1c8511d-52b8-4c21-a781-1157d201a9f6",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-03T08:38:10.171Z",
+  "updatedAt": "2026-06-07T07:36:12.299Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 151,
-  "totalItemsGrouped": 147,
+  "totalItemsRaw": 158,
+  "totalItemsGrouped": 151,
   "items": [
+    {
+      "assetid": "51916067224",
+      "classid": "7993040524",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Doppler",
+      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206070F8C3A1D3A16178E364408B64486650635894D883866320DB67080B106445EB636A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.026472307742,
+      "seed": 955,
+      "phase": "Sapphire"
+    },
     {
       "assetid": "43636339776",
       "classid": "7993041446",
@@ -54,6 +93,34 @@
       "float": 0.031366020441,
       "seed": 747,
       "phase": "Phase 1"
+    },
+    {
+      "assetid": "51916067223",
+      "classid": "7993040145",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Emerald Web",
+      "market_hash_name": "★ Specialist Gloves | Emerald Web (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "51578395373",
@@ -2865,6 +2932,56 @@
       ]
     },
     {
+      "assetid": "51917596715",
+      "classid": "8491542880",
+      "instanceid": "143865972",
+      "amount": 4,
+      "name": "Sticker | slaxz- (Gold) | Cologne 2026",
+      "market_hash_name": "Sticker | slaxz- (Gold) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2049594951F0406949614F794D2B4C414959941C2149394B0749D85D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51917596715",
+        "51917596713",
+        "51917596711",
+        "51917596710"
+      ]
+    },
+    {
       "assetid": "9038831846",
       "classid": "1989292451",
       "instanceid": "188530139",
@@ -4857,6 +4974,66 @@
       ]
     },
     {
+      "assetid": "51917625785",
+      "classid": "7993040646",
+      "instanceid": "8543019422",
+      "amount": 1,
+      "name": "StatTrak™ AWP | Asiimov",
+      "market_hash_name": "StatTrak™ AWP | Asiimov (Well-Worn)",
+      "type": "StatTrak™ Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "34415669519",
       "classid": "7993040919",
       "instanceid": "188530170",
@@ -4967,7 +5144,7 @@
     {
       "assetid": "28391452351",
       "classid": "7993042519",
-      "instanceid": "8533005624",
+      "instanceid": "8542749152",
       "amount": 1,
       "name": "StatTrak™ USP-S | Blueprint",
       "market_hash_name": "StatTrak™ USP-S | Blueprint (Minimal Wear)",
@@ -5139,7 +5316,7 @@
     {
       "assetid": "4782984825",
       "classid": "7993038697",
-      "instanceid": "8533005629",
+      "instanceid": "8543019423",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Grinder",
       "market_hash_name": "StatTrak™ Glock-18 | Grinder (Factory New)",

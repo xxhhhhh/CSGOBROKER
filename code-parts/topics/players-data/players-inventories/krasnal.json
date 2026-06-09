@@ -7,16 +7,18 @@
   "name": "Szymon Mrozek",
   "nationality": "Poland",
   "born": "02.04.2003",
+  "isContentCreator": false,
   "twitch": "krasnalcs",
   "faceit": "https://faceitdb.com/profile/faceit/a1d1b853-0d85-437f-9e21-2e9dea4976f5",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-29T06:46:41.318Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-06-09T07:48:00.898Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
   "totalItemsRaw": 354,
-  "totalItemsGrouped": 186,
+  "totalItemsGrouped": 187,
   "items": [
     {
       "assetid": "51129630316",
@@ -88,7 +90,7 @@
       "assetid": "50917574454",
       "classid": "3608084145",
       "instanceid": "519977179",
-      "amount": 4,
+      "amount": 3,
       "name": "Sealed Graffiti | Choke (Jungle Green)",
       "market_hash_name": "Sealed Graffiti | Choke (Jungle Green)",
       "type": "Base Grade Graffiti",
@@ -118,7 +120,6 @@
       "assetids": [
         "50917574454",
         "48737950094",
-        "48737950075",
         "48726738256"
       ]
     },
@@ -1800,6 +1801,34 @@
       "amount": 1,
       "name": "Budapest 2025 Gold Coin",
       "market_hash_name": "Budapest 2025 Gold Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52046761571",
+      "classid": "8490781882",
+      "instanceid": "8490788548",
+      "amount": 1,
+      "name": "Cologne 2026 Coin",
+      "market_hash_name": "Cologne 2026 Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -7826,7 +7855,7 @@
     {
       "assetid": "36796161678",
       "classid": "7993038803",
-      "instanceid": "480099388",
+      "instanceid": "480182252",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Chromatic Aberration",
       "market_hash_name": "StatTrak™ Galil AR | Chromatic Aberration (Minimal Wear)",

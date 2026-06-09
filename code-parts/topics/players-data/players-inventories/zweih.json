@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/898780b2-bf70-4c28-8e0d-b9600be8397e",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-01T08:43:32.986Z",
+  "updatedAt": "2026-06-08T07:39:21.350Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 65,
-  "totalItemsGrouped": 65,
+  "totalItemsRaw": 66,
+  "totalItemsGrouped": 66,
   "items": [
     {
       "assetid": "51398393635",
@@ -56,14 +56,14 @@
       "phase": "Phase 2"
     },
     {
-      "assetid": "49814876833",
-      "classid": "7993038698",
+      "assetid": "51971583686",
+      "classid": "7993040883",
       "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Butterfly Knife | Freehand",
-      "market_hash_name": "★ Butterfly Knife | Freehand (Field-Tested)",
+      "name": "★ Butterfly Knife | Doppler",
+      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205D4D9B80A0909C5C45DE597DC25E755B6D5E658ED7F8B45E1DF55A357E2D59CB1378DC",
       "tags": [
         {
           "category": "Type",
@@ -89,7 +89,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.041325878352,
+      "seed": 936,
+      "phase": "Ruby"
     },
     {
       "assetid": "51657784314",
@@ -251,34 +254,6 @@
       ]
     },
     {
-      "assetid": "51653871842",
-      "classid": "8247658952",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Driver Gloves | Wave Chaser",
-      "market_hash_name": "★ Driver Gloves | Wave Chaser (Battle-Scarred)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51683135278",
       "classid": "7993043341",
       "instanceid": "188530139",
@@ -313,6 +288,34 @@
       "amount": 1,
       "name": "★ Hand Wraps | Giraffe",
       "market_hash_name": "★ Hand Wraps | Giraffe (Battle-Scarred)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51950051541",
+      "classid": "7993044914",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Crimson Kimono",
+      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1416,7 +1419,7 @@
     {
       "assetid": "51831130229",
       "classid": "8534113218",
-      "instanceid": "8490787601",
+      "instanceid": "8490795240",
       "amount": 1,
       "name": "Cologne 2026 Silver Coin",
       "market_hash_name": "Cologne 2026 Silver Coin",
@@ -1852,6 +1855,42 @@
       ]
     },
     {
+      "assetid": "51911555591",
+      "classid": "188530424",
+      "instanceid": "6278590096",
+      "amount": 1,
+      "name": "Desert Eagle | Blaze",
+      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50157786107",
       "classid": "188530425",
       "instanceid": "6276620064",
@@ -2122,7 +2161,7 @@
     {
       "assetid": "51831459379",
       "classid": "7993035946",
-      "instanceid": "8534436536",
+      "instanceid": "8542089599",
       "amount": 1,
       "name": "StatTrak™ MP7 | Smoking Kills",
       "market_hash_name": "StatTrak™ MP7 | Smoking Kills (Factory New)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e5b855bd-3dbc-4928-a216-241d615b431b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-05T07:27:15.556Z",
+  "updatedAt": "2026-06-09T07:06:14.354Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 65,
-  "totalItemsGrouped": 65,
+  "totalItemsRaw": 70,
+  "totalItemsGrouped": 70,
   "items": [
     {
       "assetid": "49295437759",
@@ -58,6 +58,41 @@
       "float": 0.036839116365,
       "seed": 780,
       "phase": "Sapphire"
+    },
+    {
+      "assetid": "51982216135",
+      "classid": "7993040841",
+      "instanceid": "8512144605",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F0E03727762331F1E80CF3D051F3D8F6C0F3C8480C5610F3B07AF398CB80F8A665D612",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.00840716809,
+      "seed": 394,
+      "phase": "Black Pearl"
     },
     {
       "assetid": "51755299069",
@@ -280,6 +315,113 @@
       ]
     },
     {
+      "assetid": "51939994588",
+      "classid": "7993035748",
+      "instanceid": "7037060914",
+      "amount": 1,
+      "name": "Desert Eagle | Printstream",
+      "market_hash_name": "Desert Eagle | Printstream (Factory New)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51958344092",
+      "classid": "7993039689",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Glock-18 | Gamma Doppler",
+      "market_hash_name": "Glock-18 | Gamma Doppler (Field-Tested)",
+      "type": "Covert Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203828A4EBEDFFF939203C18D830103E083C008EEAB4CB3B7884395017482F38C1422C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.221836894751,
+      "seed": 188,
+      "phase": "Phase 1"
+    },
+    {
       "assetid": "51836565458",
       "classid": "7993036593",
       "instanceid": "8524006913",
@@ -356,13 +498,13 @@
       ]
     },
     {
-      "assetid": "51805286708",
-      "classid": "7993037246",
-      "instanceid": "6876148611",
+      "assetid": "51939997454",
+      "classid": "7993037971",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "AK-47 | Vulcan",
-      "market_hash_name": "AK-47 | Vulcan (Factory New)",
-      "type": "Covert Rifle",
+      "name": "USP-S | Neo-Noir",
+      "market_hash_name": "USP-S | Neo-Noir (Factory New)",
+      "type": "Covert Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -388,25 +530,41 @@
         {
           "category": "Exterior",
           "name": ""
-        },
+        }
+      ]
+    },
+    {
+      "assetid": "51958426219",
+      "classid": "7993038555",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "AK-47 | B the Monster",
+      "market_hash_name": "AK-47 | B the Monster (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
         {
-          "category": "Tournament",
+          "category": "Type",
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "Weapon",
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "ItemSet",
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "Quality",
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -455,6 +613,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51949131619",
+      "classid": "7993037696",
+      "instanceid": "6276644599",
+      "amount": 1,
+      "name": "M4A4 | Desert-Strike",
+      "market_hash_name": "M4A4 | Desert-Strike (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -766,7 +960,7 @@
     {
       "assetid": "51910149289",
       "classid": "8534113218",
-      "instanceid": "8490781883",
+      "instanceid": "8490787601",
       "amount": 1,
       "name": "Cologne 2026 Silver Coin",
       "market_hash_name": "Cologne 2026 Silver Coin",
@@ -1890,7 +2084,7 @@
     {
       "assetid": "51836531332",
       "classid": "7993040683",
-      "instanceid": "8533986193",
+      "instanceid": "8542372105",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Shinobu",
       "market_hash_name": "StatTrak™ Glock-18 | Shinobu (Factory New)",
@@ -1974,7 +2168,7 @@
     {
       "assetid": "30584769830",
       "classid": "7993044178",
-      "instanceid": "8524957752",
+      "instanceid": "8540076491",
       "amount": 1,
       "name": "StatTrak™ M4A4 | The Emperor",
       "market_hash_name": "StatTrak™ M4A4 | The Emperor (Minimal Wear)",

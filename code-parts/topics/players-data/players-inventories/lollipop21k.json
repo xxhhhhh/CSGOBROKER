@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/eaa62bd7-bf8d-43a1-8d85-ff029c0ade9b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-04T08:40:01.711Z",
+  "updatedAt": "2026-06-07T08:23:52.180Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 141,
-  "totalItemsGrouped": 141,
+  "totalItemsRaw": 143,
+  "totalItemsGrouped": 143,
   "items": [
     {
       "assetid": "51285565317",
@@ -66,6 +66,34 @@
       "amount": 1,
       "name": "Fever Case",
       "market_hash_name": "Fever Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52160053607",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -1485,6 +1513,42 @@
       "market_hash_name": "Nova | Polar Mesh (Battle-Scarred)",
       "type": "Consumer Grade Shotgun",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%201A0AC197AC9D8F1B02393A71321B2A1E22B5F6B9E2195A811B72326A02A0E6B2FD",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52160053608",
+      "classid": "7993062661",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sawed-Off | Crimson Batik",
+      "market_hash_name": "Sawed-Off | Crimson Batik (Field-Tested)",
+      "type": "Consumer Grade Shotgun",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

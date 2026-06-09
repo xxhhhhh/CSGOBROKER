@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/3a44d401-6f83-40b2-8cdf-c764813abbd6",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-04T07:33:09.823Z",
+  "updatedAt": "2026-06-07T07:17:47.904Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 92,
-  "totalItemsGrouped": 92,
+  "totalItemsRaw": 93,
+  "totalItemsGrouped": 93,
   "items": [
     {
       "assetid": "51886505698",
@@ -28,7 +28,7 @@
       "name": "★ M9 Bayonet | Doppler",
       "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201404F6E9A0B1D5150CE817348B173C1224172C88CFE7F51754C6167C40641C2BE4C740",
       "tags": [
         {
           "category": "Type",
@@ -50,7 +50,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.011531259865,
+      "seed": 338,
+      "phase": "Ruby"
     },
     {
       "assetid": "49073170455",
@@ -320,6 +323,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51909101472",
+      "classid": "7993037248",
+      "instanceid": "7089635707",
+      "amount": 1,
+      "name": "M4A1-S | Hot Rod",
+      "market_hash_name": "M4A1-S | Hot Rod (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -2552,7 +2599,7 @@
     {
       "assetid": "51889082664",
       "classid": "7993051533",
-      "instanceid": "8534532310",
+      "instanceid": "8537670283",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Howl",
       "market_hash_name": "StatTrak™ M4A4 | Howl (Field-Tested)",
@@ -2588,7 +2635,7 @@
     {
       "assetid": "48838390845",
       "classid": "7993041222",
-      "instanceid": "188531653",
+      "instanceid": "188530670",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Violent Daimyo",
       "market_hash_name": "StatTrak™ Five-SeveN | Violent Daimyo (Minimal Wear)",
