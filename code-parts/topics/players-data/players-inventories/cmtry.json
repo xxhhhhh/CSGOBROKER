@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/42afba06-399e-4c2d-aaff-77595526ad70",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-08T07:43:44.915Z",
+  "updatedAt": "2026-06-09T07:01:43.401Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 167,
-  "totalItemsGrouped": 129,
+  "totalItemsRaw": 169,
+  "totalItemsGrouped": 131,
   "items": [
     {
       "assetid": "48329632745",
@@ -97,7 +97,7 @@
     {
       "assetid": "51955966945",
       "classid": "7993045582",
-      "instanceid": "8509397098",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "★ M9 Bayonet | Doppler",
       "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
@@ -922,6 +922,42 @@
       ]
     },
     {
+      "assetid": "51983286480",
+      "classid": "7993044593",
+      "instanceid": "8535305184",
+      "amount": 1,
+      "name": "AWP | Gungnir",
+      "market_hash_name": "AWP | Gungnir (Field-Tested)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51845921354",
       "classid": "188530250",
       "instanceid": "7802842063",
@@ -1100,11 +1136,11 @@
     },
     {
       "assetid": "51834926852",
-      "classid": "8490781882",
-      "instanceid": "8490781883",
+      "classid": "8534113218",
+      "instanceid": "8490799919",
       "amount": 1,
-      "name": "Cologne 2026 Coin",
-      "market_hash_name": "Cologne 2026 Coin",
+      "name": "Cologne 2026 Silver Coin",
+      "market_hash_name": "Cologne 2026 Silver Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -1232,6 +1268,53 @@
           "category": "Tournament",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "51990394943",
+      "classid": "8491309028",
+      "instanceid": "8512144745",
+      "amount": 1,
+      "name": "Sticker | cmtry (Gold) | Cologne 2026",
+      "market_hash_name": "Sticker | cmtry (Gold) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2079697961C0705979517F497D1B7C717969AC2A1179097B7A34A172",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51990394943"
       ]
     },
     {
@@ -5193,7 +5276,7 @@
     {
       "assetid": "48626166647",
       "classid": "7993048409",
-      "instanceid": "188533161",
+      "instanceid": "188531024",
       "amount": 1,
       "name": "StatTrak™ MP9 | Hydra",
       "market_hash_name": "StatTrak™ MP9 | Hydra (Well-Worn)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9f689672-0886-4d26-a9d7-416cb5ab6115",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-07T07:40:40.881Z",
+  "updatedAt": "2026-06-09T07:19:22.008Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 50,
-  "totalItemsGrouped": 50,
+  "totalItemsRaw": 53,
+  "totalItemsGrouped": 53,
   "items": [
     {
       "assetid": "50276301783",
@@ -40,6 +40,38 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51990124249",
+      "classid": "7993042523",
+      "instanceid": "8512144605",
+      "amount": 1,
+      "name": "★ Karambit | Fade",
+      "market_hash_name": "★ Karambit | Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
           "name": ""
         },
         {
@@ -90,6 +122,34 @@
       "float": 0.046611607075,
       "seed": 543,
       "phase": "Phase 1"
+    },
+    {
+      "assetid": "51989059610",
+      "classid": "8246975941",
+      "instanceid": "8512144605",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Cloud Chaser",
+      "market_hash_name": "★ Specialist Gloves | Cloud Chaser (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "34155131848",
@@ -624,6 +684,37 @@
           "category": "Rarity",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "51990375211",
+      "classid": "7545327497",
+      "instanceid": "8512144728",
+      "amount": 1,
+      "name": "Charm | Butane Buddy",
+      "market_hash_name": "Charm | Butane Buddy",
+      "type": "Extraordinary Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51990375211"
       ]
     },
     {
@@ -1559,7 +1650,7 @@
     {
       "assetid": "45383609716",
       "classid": "7993043066",
-      "instanceid": "480086100",
+      "instanceid": "480374599",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Grinder",
       "market_hash_name": "StatTrak™ Glock-18 | Grinder (Field-Tested)",

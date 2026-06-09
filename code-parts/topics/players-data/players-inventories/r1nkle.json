@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/6889e786-da29-4069-ba9d-f32d9e6821bd",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-05T07:35:51.840Z",
+  "updatedAt": "2026-06-09T07:19:23.420Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 134,
-  "totalItemsGrouped": 134,
+  "totalItemsRaw": 136,
+  "totalItemsGrouped": 136,
   "items": [
     {
       "assetid": "51904776822",
@@ -178,6 +178,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51981459299",
+      "classid": "5710094579",
+      "instanceid": "8512145022",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -557,6 +585,30 @@
       ],
       "assetids": [
         "50951347405"
+      ]
+    },
+    {
+      "assetid": "52189135588",
+      "classid": "7729110306",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Name Tag",
+      "market_hash_name": "Name Tag",
+      "type": "Base Grade Tag",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201303130BA31A33133B1223177B13631138B7142B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
       ]
     },
     {
@@ -4090,7 +4142,7 @@
     {
       "assetid": "51080180323",
       "classid": "7993044207",
-      "instanceid": "8540940119",
+      "instanceid": "8543006968",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Eco",
       "market_hash_name": "StatTrak™ Galil AR | Eco (Minimal Wear)",
@@ -4170,7 +4222,7 @@
     {
       "assetid": "46167847724",
       "classid": "7993041773",
-      "instanceid": "8540725568",
+      "instanceid": "8543675091",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
@@ -4214,7 +4266,7 @@
     {
       "assetid": "47865808882",
       "classid": "7993040029",
-      "instanceid": "8540940120",
+      "instanceid": "8543675090",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Field-Tested)",
@@ -4617,7 +4669,7 @@
     {
       "assetid": "50874976731",
       "classid": "7993041155",
-      "instanceid": "8522882221",
+      "instanceid": "8543006970",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Pulse",
       "market_hash_name": "StatTrak™ FAMAS | Pulse (Field-Tested)",
