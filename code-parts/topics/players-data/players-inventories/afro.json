@@ -12,18 +12,18 @@
   "faceit": "https://faceitdb.com/profile/faceit/8e3fd235-f41f-427c-b2af-d29db1d6860a",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-09T07:09:24.596Z",
+  "updatedAt": "2026-06-10T07:30:37.851Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 156,
+  "totalItemsRaw": 155,
   "totalItemsGrouped": 113,
   "items": [
     {
       "assetid": "51986333799",
       "classid": "7993040835",
-      "instanceid": "8512144605",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Butterfly Knife | Gamma Doppler",
       "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
@@ -126,7 +126,7 @@
     {
       "assetid": "51986189036",
       "classid": "7993037104",
-      "instanceid": "8512144605",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Sport Gloves | Nocts",
       "market_hash_name": "★ Sport Gloves | Nocts (Field-Tested)",
@@ -1278,14 +1278,14 @@
       ]
     },
     {
-      "assetid": "49570706090",
+      "assetid": "52202871015",
       "classid": "7993037198",
-      "instanceid": "8068969320",
+      "instanceid": "8544753715",
       "amount": 1,
       "name": "AWP | Wildfire",
       "market_hash_name": "AWP | Wildfire (Field-Tested)",
       "type": "Covert Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ADBD07483E7815ACB5A48D38AA85AB9DA995492F4E5EAEED4AABCFB4A5A9BD27ECB0D6B9839280ADAD75EC9046EC7810E86D104696CFB4A5ADBD26ECB0B228869280ADADBD6C90E588AA13E86DC0FA11C587DDA9BA7E6457",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1313,6 +1313,14 @@
         },
         {
           "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         },
         {
@@ -1476,11 +1484,11 @@
     },
     {
       "assetid": "51836924037",
-      "classid": "8490781882",
+      "classid": "8534113218",
       "instanceid": "8490792496",
       "amount": 1,
-      "name": "Cologne 2026 Coin",
-      "market_hash_name": "Cologne 2026 Coin",
+      "name": "Cologne 2026 Silver Coin",
+      "market_hash_name": "Cologne 2026 Silver Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -2371,7 +2379,7 @@
       "assetid": "51836955276",
       "classid": "8490849127",
       "instanceid": "143865972",
-      "amount": 3,
+      "amount": 2,
       "name": "Sticker | Monte | Cologne 2026",
       "market_hash_name": "Sticker | Monte | Cologne 2026",
       "type": "High Grade Sticker",
@@ -2408,7 +2416,6 @@
       ],
       "assetids": [
         "51836955276",
-        "51836955275",
         "51836955274"
       ]
     },

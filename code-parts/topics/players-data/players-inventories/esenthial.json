@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/a7774769-fb6a-4244-94b2-5a012b7df012",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-09T07:09:11.904Z",
+  "updatedAt": "2026-06-10T07:30:34.296Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 129,
-  "totalItemsGrouped": 121,
+  "totalItemsRaw": 136,
+  "totalItemsGrouped": 125,
   "items": [
     {
       "assetid": "49655693368",
@@ -148,6 +148,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52206517519",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -342,7 +370,7 @@
       "assetid": "47758501799",
       "classid": "6195246388",
       "instanceid": "302028390",
-      "amount": 1,
+      "amount": 2,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
@@ -362,7 +390,8 @@
         }
       ],
       "assetids": [
-        "47758501799"
+        "47758501799",
+        "52206517520"
       ]
     },
     {
@@ -1365,6 +1394,55 @@
       ]
     },
     {
+      "assetid": "52005929079",
+      "classid": "8491421137",
+      "instanceid": "8515223041",
+      "amount": 3,
+      "name": "Sticker | esenthial (Holo) | Cologne 2026",
+      "market_hash_name": "Sticker | esenthial (Holo) | Cologne 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E8F8E8F051E1C8E8C0EDD8EC8AEDE0E8F86CBD80E898EAA43530E4",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52005929079",
+        "52005929078",
+        "52005929077"
+      ]
+    },
+    {
       "assetid": "42208428713",
       "classid": "5327977354",
       "instanceid": "188530139",
@@ -1608,6 +1686,53 @@
       ],
       "assetids": [
         "48974616385"
+      ]
+    },
+    {
+      "assetid": "52005929081",
+      "classid": "8492086050",
+      "instanceid": "8515223041",
+      "amount": 1,
+      "name": "Sticker | esenthial (Gold) | Cologne 2026",
+      "market_hash_name": "Sticker | esenthial (Gold) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FCECFCE445F5DCFCD4FACCF89EF9F4FCEC79A994FC8CFEA6CACCE7",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52005929081"
       ]
     },
     {
@@ -3741,7 +3866,7 @@
     {
       "assetid": "49684791436",
       "classid": "7993042625",
-      "instanceid": "8542373131",
+      "instanceid": "8545267015",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Kumicho Dragon",
       "market_hash_name": "StatTrak™ Desert Eagle | Kumicho Dragon (Factory New)",
@@ -3821,7 +3946,7 @@
     {
       "assetid": "48988990657",
       "classid": "7993042570",
-      "instanceid": "487115893",
+      "instanceid": "500958796",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Battle-Scarred)",
@@ -3850,6 +3975,62 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52195039513",
+      "classid": "7993042962",
+      "instanceid": "8543326863",
+      "amount": 1,
+      "name": "StatTrak™ AK-47 | Bloodsport",
+      "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Minimal Wear)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -3956,7 +4137,7 @@
     {
       "assetid": "43154542072",
       "classid": "7993042483",
-      "instanceid": "480099105",
+      "instanceid": "480098515",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Serpent Strike",
       "market_hash_name": "StatTrak™ Desert Eagle | Serpent Strike (Battle-Scarred)",

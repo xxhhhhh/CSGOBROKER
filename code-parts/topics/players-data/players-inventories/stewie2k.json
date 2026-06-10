@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/2be37d17-f9fb-42e2-8143-bcdb5f1239b2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-07T08:11:13.437Z",
+  "updatedAt": "2026-06-10T08:10:11.233Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 337,
-  "totalItemsGrouped": 269,
+  "totalItemsRaw": 339,
+  "totalItemsGrouped": 270,
   "items": [
     {
       "assetid": "51423313418",
@@ -145,6 +145,34 @@
     },
     {
       "assetid": "51874259661",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52218548762",
       "classid": "4717330486",
       "instanceid": "302028390",
       "amount": 1,
@@ -1784,14 +1812,14 @@
       ]
     },
     {
-      "assetid": "51682279159",
+      "assetid": "52218548763",
       "classid": "6195246388",
       "instanceid": "302028390",
-      "amount": 5,
+      "amount": 6,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E3F3E3FB35C5C3E3CBE2D3E78BE393FBB3523EFF",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201303130BC53533133B1223177B13630B8E7BFD1D",
       "tags": [
         {
           "category": "Type",
@@ -1807,6 +1835,7 @@
         }
       ],
       "assetids": [
+        "52218548763",
         "51682279159",
         "50256465425",
         "49900993156",
@@ -9786,7 +9815,7 @@
     {
       "assetid": "48397983084",
       "classid": "7993045650",
-      "instanceid": "903351157",
+      "instanceid": "904085871",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Snack Attack",
       "market_hash_name": "StatTrak™ Glock-18 | Snack Attack (Minimal Wear)",
@@ -9822,7 +9851,7 @@
     {
       "assetid": "48397983942",
       "classid": "7993040829",
-      "instanceid": "480344224",
+      "instanceid": "480464121",
       "amount": 1,
       "name": "StatTrak™ USP-S | Jawbreaker",
       "market_hash_name": "StatTrak™ USP-S | Jawbreaker (Factory New)",
@@ -9858,7 +9887,7 @@
     {
       "assetid": "51810613603",
       "classid": "7993042053",
-      "instanceid": "480174722",
+      "instanceid": "480181218",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Inheritance",
       "market_hash_name": "StatTrak™ AK-47 | Inheritance (Factory New)",
@@ -10002,7 +10031,7 @@
     {
       "assetid": "17002596668",
       "classid": "7993042935",
-      "instanceid": "480149949",
+      "instanceid": "480136204",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Flash Out",
       "market_hash_name": "StatTrak™ Tec-9 | Flash Out (Battle-Scarred)",

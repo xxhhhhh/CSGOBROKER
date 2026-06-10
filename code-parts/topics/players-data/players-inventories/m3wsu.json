@@ -12,7 +12,7 @@
   "faceit": "https://faceitdb.com/profile/faceit/0372e659-5677-4481-aff7-496d2596e5cf",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-08T08:26:53.965Z",
+  "updatedAt": "2026-06-10T08:03:54.124Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
@@ -277,7 +277,7 @@
       "name": "★ M9 Bayonet | Gamma Doppler",
       "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B8A81515367579B9A044BB9802BC90BE88BB800A3D1451BBF811B9D038BAC8BCC16D5426",
       "tags": [
         {
           "category": "Type",
@@ -299,7 +299,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.041750617325,
+      "seed": 169,
+      "phase": "Phase 2"
     },
     {
       "assetid": "47539082500",
@@ -7137,6 +7140,37 @@
       ]
     },
     {
+      "assetid": "52202341932",
+      "classid": "1989297441",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Sorry (Brick Red)",
+      "market_hash_name": "Sealed Graffiti | Sorry (Brick Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206373637BA76943634B62536701646B6373A56E53620B63137B16E4B085",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52202341932"
+      ]
+    },
+    {
       "assetid": "35002349969",
       "classid": "1989295275",
       "instanceid": "302028390",
@@ -10585,11 +10619,11 @@
     },
     {
       "assetid": "52005218039",
-      "classid": "8490781882",
-      "instanceid": "8490786945",
+      "classid": "8534113218",
+      "instanceid": "8490792660",
       "amount": 1,
-      "name": "Cologne 2026 Coin",
-      "market_hash_name": "Cologne 2026 Coin",
+      "name": "Cologne 2026 Silver Coin",
+      "market_hash_name": "Cologne 2026 Silver Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -17766,7 +17800,7 @@
     {
       "assetid": "49014479870",
       "classid": "7993045575",
-      "instanceid": "188530170",
+      "instanceid": "188530305",
       "amount": 1,
       "name": "StatTrak™ Zeus x27 | Olympus",
       "market_hash_name": "StatTrak™ Zeus x27 | Olympus (Battle-Scarred)",
@@ -17795,50 +17829,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51521072918",
-      "classid": "7993039145",
-      "instanceid": "7138799159",
-      "amount": 1,
-      "name": "StatTrak™ M4A4 | Desolate Space",
-      "market_hash_name": "StatTrak™ M4A4 | Desolate Space (Field-Tested)",
-      "type": "StatTrak™ Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -17954,7 +17944,7 @@
     {
       "assetid": "45507914663",
       "classid": "7993036750",
-      "instanceid": "940010420",
+      "instanceid": "946473363",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Vulcan",
       "market_hash_name": "StatTrak™ AK-47 | Vulcan (Minimal Wear)",
@@ -17990,7 +17980,7 @@
     {
       "assetid": "38805962525",
       "classid": "7993044012",
-      "instanceid": "903559273",
+      "instanceid": "903697461",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Commemoration",
       "market_hash_name": "StatTrak™ FAMAS | Commemoration (Field-Tested)",

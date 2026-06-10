@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/5157fde3-01e1-4eeb-886b-ae2185569711",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-06T06:50:02.333Z",
+  "updatedAt": "2026-06-10T07:30:36.766Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 672,
-  "totalItemsGrouped": 505,
+  "totalItemsRaw": 674,
+  "totalItemsGrouped": 506,
   "items": [
     {
       "assetid": "49987560305",
@@ -2100,6 +2100,34 @@
       ]
     },
     {
+      "assetid": "52210752328",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "25250378302",
       "classid": "4418618853",
       "instanceid": "0",
@@ -2576,14 +2604,14 @@
       ]
     },
     {
-      "assetid": "13446160107",
+      "assetid": "52210752329",
       "classid": "1989274746",
       "instanceid": "302028390",
-      "amount": 1,
+      "amount": 2,
       "name": "Sealed Graffiti | Eat It (Princess Pink)",
       "market_hash_name": "Sealed Graffiti | Eat It (Princess Pink)",
       "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ABBBABB36FA18BAB83AA9BAFC9ACA3ABBB6CA69BBAC3ABDBB314E35394",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205646564E925C76567E57665234515E5646915B66473E56264E895AC6C3",
       "tags": [
         {
           "category": "Type",
@@ -2603,6 +2631,7 @@
         }
       ],
       "assetids": [
+        "52210752329",
         "13446160107"
       ]
     },

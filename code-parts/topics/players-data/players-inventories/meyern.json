@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/8be7173f-2cc9-445a-892d-c942d66fb938",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-04T07:43:59.756Z",
+  "updatedAt": "2026-06-10T07:28:20.205Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 77,
-  "totalItemsGrouped": 53,
+  "totalItemsRaw": 78,
+  "totalItemsGrouped": 54,
   "items": [
     {
       "assetid": "51625669409",
@@ -95,6 +95,34 @@
       "amount": 1,
       "name": "★ Sport Gloves | Nocts",
       "market_hash_name": "★ Sport Gloves | Nocts (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52011160215",
+      "classid": "8247703130",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Well-Worn)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1503,14 +1531,14 @@
       ]
     },
     {
-      "assetid": "51886060836",
+      "assetid": "51886060837",
       "classid": "8490923054",
       "instanceid": "143865972",
       "amount": 17,
       "name": "Sticker | meyern (Foil) | Cologne 2026",
       "market_hash_name": "Sticker | meyern (Foil) | Cologne 2026",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203525352D8C3C15351D31053157303D3525EE615D354537A79F3D06",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F7E7F7EF4EFED7F7DFF3C7F395F2FFF7E72CA39FF787F5D638E81B",
       "tags": [
         {
           "category": "Type",
@@ -1546,6 +1574,7 @@
         }
       ],
       "assetids": [
+        "51886060837",
         "51886060836",
         "51886060835",
         "51886060834",
@@ -1561,8 +1590,7 @@
         "51844166509",
         "51844166508",
         "51844166507",
-        "51844166506",
-        "51886060837"
+        "51844166506"
       ]
     },
     {

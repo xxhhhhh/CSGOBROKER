@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b68b677e-562e-456d-9c27-3ebf437e7bd5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-07T07:28:53.797Z",
+  "updatedAt": "2026-06-10T07:28:21.311Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 143,
-  "totalItemsGrouped": 103,
+  "totalItemsRaw": 146,
+  "totalItemsGrouped": 104,
   "items": [
     {
       "assetid": "51937876781",
@@ -2448,10 +2448,53 @@
       ]
     },
     {
-      "assetid": "51866806295",
-      "classid": "8490786845",
+      "assetid": "52005042484",
+      "classid": "8491008867",
       "instanceid": "143865972",
       "amount": 1,
+      "name": "Sticker | 9z Team (Gold) | Cologne 2026",
+      "market_hash_name": "Sticker | 9z Team (Gold) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BFAFBFA706B69FBF97B98FBBDDBAB7BFAF7FEED7BFCFBDBEABF1E2",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52005042484"
+      ]
+    },
+    {
+      "assetid": "52005042483",
+      "classid": "8490786845",
+      "instanceid": "143865972",
+      "amount": 3,
       "name": "Sticker | HUASOPEEK (Gold) | Cologne 2026",
       "market_hash_name": "Sticker | HUASOPEEK (Gold) | Cologne 2026",
       "type": "Extraordinary Sticker",
@@ -2491,7 +2534,9 @@
         }
       ],
       "assetids": [
-        "51866806295"
+        "52005042483",
+        "51866806295",
+        "52005042486"
       ]
     },
     {
@@ -3378,7 +3423,7 @@
     {
       "assetid": "51866948260",
       "classid": "7993040447",
-      "instanceid": "902727540",
+      "instanceid": "902757689",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Bad Trip",
       "market_hash_name": "StatTrak™ FAMAS | Bad Trip (Field-Tested)",
@@ -3414,7 +3459,7 @@
     {
       "assetid": "40283627198",
       "classid": "7993044416",
-      "instanceid": "8542696799",
+      "instanceid": "8546024228",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Minimal Wear)",

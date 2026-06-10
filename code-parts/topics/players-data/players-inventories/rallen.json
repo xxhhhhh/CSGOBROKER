@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e05e2128-e0ab-459e-8ee5-4a0249ba508f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-04T08:31:33.671Z",
+  "updatedAt": "2026-06-10T08:14:25.435Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 643,
-  "totalItemsGrouped": 493,
+  "totalItemsRaw": 648,
+  "totalItemsGrouped": 498,
   "items": [
     {
       "assetid": "2739098068",
@@ -5436,7 +5436,7 @@
       ]
     },
     {
-      "assetid": "51797878818",
+      "assetid": "51797880480",
       "classid": "5327976361",
       "instanceid": "188530139",
       "amount": 8,
@@ -5475,14 +5475,14 @@
         }
       ],
       "assetids": [
-        "51797878818",
-        "50113590525",
-        "51825680498",
         "51797880480",
         "51797879892",
         "51797879891",
         "51797879418",
-        "51797878819"
+        "51797878819",
+        "51797878818",
+        "50113590525",
+        "51825680498"
       ]
     },
     {
@@ -7303,6 +7303,68 @@
       ]
     },
     {
+      "assetid": "52012551902",
+      "classid": "6216352776",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Boom Epicenter",
+      "market_hash_name": "Sticker | Boom Epicenter",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203626362E8F3F16361E35063254333E3626E30B5E364621F2FA72BB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52012551902"
+      ]
+    },
+    {
+      "assetid": "52012550907",
+      "classid": "6216353402",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Hydro Stream",
+      "market_hash_name": "Sticker | Hydro Stream",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DACADAC263D3FADAF2D9EADEB8DFD2DACA29E7B2DAAACDF713B3ED",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52012550907"
+      ]
+    },
+    {
       "assetid": "49339263896",
       "classid": "7993037551",
       "instanceid": "302028390",
@@ -7383,6 +7445,42 @@
       "market_hash_name": "Negev | Sour Grapes (Factory New)",
       "type": "Industrial Grade Machinegun",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A6B6477A464011A7BEBA864AAF8EA496A29E4978294AA5E622A5CEC3D6BED572393E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52012539388",
+      "classid": "7993037384",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Negev | Wall Bang",
+      "market_hash_name": "Negev | Wall Bang (Battle-Scarred)",
+      "type": "Industrial Grade Machinegun",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -9584,6 +9682,78 @@
     },
     {
       "assetid": "50747369064",
+      "classid": "7993038752",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Desert Eagle | Mint Fan",
+      "market_hash_name": "Desert Eagle | Mint Fan (Factory New)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52002813133",
+      "classid": "7993038752",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Desert Eagle | Mint Fan",
+      "market_hash_name": "Desert Eagle | Mint Fan (Factory New)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52002814930",
       "classid": "7993038752",
       "instanceid": "302028390",
       "amount": 1,
@@ -16473,7 +16643,7 @@
     {
       "assetid": "50589667139",
       "classid": "7993038769",
-      "instanceid": "8541976235",
+      "instanceid": "8546405449",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Redline",
       "market_hash_name": "StatTrak™ AK-47 | Redline (Minimal Wear)",
@@ -17041,7 +17211,7 @@
     {
       "assetid": "46149536084",
       "classid": "7993037775",
-      "instanceid": "480094856",
+      "instanceid": "480150483",
       "amount": 1,
       "name": "StatTrak™ M4A4 | The Emperor",
       "market_hash_name": "StatTrak™ M4A4 | The Emperor (Field-Tested)",
@@ -17997,7 +18167,7 @@
     {
       "assetid": "45573720169",
       "classid": "7993043403",
-      "instanceid": "188530308",
+      "instanceid": "188531205",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Rapid Transit",
       "market_hash_name": "StatTrak™ SSG 08 | Rapid Transit (Factory New)",
