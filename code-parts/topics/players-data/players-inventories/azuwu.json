@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/004181c4-494a-44a6-be60-3c80264e84aa",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-07T07:31:00.328Z",
+  "updatedAt": "2026-06-11T07:52:45.098Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 202,
-  "totalItemsGrouped": 201,
+  "totalItemsRaw": 204,
+  "totalItemsGrouped": 203,
   "items": [
     {
       "assetid": "51883051429",
@@ -330,6 +330,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52235256322",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -1567,6 +1595,42 @@
       "market_hash_name": "P250 | Sand Dune (Minimal Wear)",
       "type": "Consumer Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%202C3CE281DFDEAF2D34080C4F042D1C2814E8DEC9DC2F6CA828446C5C34952BB3E9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52235256323",
+      "classid": "7993035988",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "AUG | Commando Company",
+      "market_hash_name": "AUG | Commando Company (Field-Tested)",
+      "type": "Consumer Grade Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c42c7477-0d5f-4deb-b5a5-a61178e7e5ab",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-03T09:04:38.561Z",
+  "updatedAt": "2026-06-11T08:21:25.658Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 730,
-  "totalItemsGrouped": 704,
+  "totalItemsRaw": 732,
+  "totalItemsGrouped": 706,
   "items": [
     {
       "assetid": "49070151012",
@@ -472,6 +472,34 @@
       "amount": 1,
       "name": "Kilowatt Case",
       "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52229595407",
+      "classid": "8246873714",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Dead Hand Terminal",
+      "market_hash_name": "Sealed Dead Hand Terminal",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -2555,6 +2583,37 @@
       ],
       "assetids": [
         "32024913304"
+      ]
+    },
+    {
+      "assetid": "52229595408",
+      "classid": "1989288318",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Cocky (Bazooka Pink)",
+      "market_hash_name": "Sealed Graffiti | Cocky (Bazooka Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207767776FB37D57775F76477315707F7767B37A47671F77076F228D837B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52229595408"
       ]
     },
     {
@@ -8859,11 +8918,11 @@
     },
     {
       "assetid": "51832942263",
-      "classid": "8490781882",
+      "classid": "8534113218",
       "instanceid": "8490796689",
       "amount": 1,
-      "name": "Cologne 2026 Coin",
-      "market_hash_name": "Cologne 2026 Coin",
+      "name": "Cologne 2026 Silver Coin",
+      "market_hash_name": "Cologne 2026 Silver Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -23775,7 +23834,7 @@
     {
       "assetid": "48285704595",
       "classid": "7993045027",
-      "instanceid": "8544529569",
+      "instanceid": "8548371397",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Factory New)",
@@ -23966,7 +24025,7 @@
     {
       "assetid": "51832957311",
       "classid": "8451073687",
-      "instanceid": "1312861394",
+      "instanceid": "1315754920",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Altare, Change My Mind",
       "market_hash_name": "StatTrak™ Music Kit | Altare, Change My Mind",
@@ -24839,7 +24898,7 @@
     {
       "assetid": "18463181797",
       "classid": "7993042418",
-      "instanceid": "480087616",
+      "instanceid": "480095879",
       "amount": 1,
       "name": "StatTrak™ P250 | Supernova",
       "market_hash_name": "StatTrak™ P250 | Supernova (Factory New)",

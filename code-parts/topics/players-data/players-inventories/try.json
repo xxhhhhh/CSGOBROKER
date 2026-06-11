@@ -7,16 +7,18 @@
   "name": "Santino Bruno",
   "nationality": "Argentina",
   "born": "23.09.2004",
+  "isContentCreator": false,
   "twitch": "TRYZSE",
   "faceit": "https://faceitdb.com/profile/faceit/1830d4f8-a243-47d8-b8b8-943f7170b163",
-  "isContentCreator": false,
-  "updatedAt": "2026-05-23T06:42:10.247Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 363,
-  "totalItemsGrouped": 362,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-06-11T08:02:08.750Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 368,
+  "totalItemsGrouped": 367,
   "items": [
     {
       "assetid": "51616267850",
@@ -144,34 +146,6 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Fade",
       "market_hash_name": "★ Specialist Gloves | Fade (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50763613047",
-      "classid": "8246944780",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Ultra Violent",
-      "market_hash_name": "★ Sport Gloves | Ultra Violent (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -564,34 +538,6 @@
       "amount": 1,
       "name": "Anubis Collection Package",
       "market_hash_name": "Anubis Collection Package",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51835933913",
-      "classid": "4717330486",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Dreams & Nightmares Case",
-      "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -1740,6 +1686,42 @@
       "amount": 1,
       "name": "Dual Berettas | BorDeux",
       "market_hash_name": "Dual Berettas | BorDeux (Battle-Scarred)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52223930648",
+      "classid": "7993068723",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "P250 | Sleet",
+      "market_hash_name": "P250 | Sleet (Minimal Wear)",
       "type": "Consumer Grade Pistol",
       "inspectLink": "",
       "tags": [
@@ -3101,11 +3083,11 @@
     },
     {
       "assetid": "51829005700",
-      "classid": "8490781882",
-      "instanceid": "8490799919",
+      "classid": "8534113218",
+      "instanceid": "8490781883",
       "amount": 1,
-      "name": "Cologne 2026 Coin",
-      "market_hash_name": "Cologne 2026 Coin",
+      "name": "Cologne 2026 Silver Coin",
+      "market_hash_name": "Cologne 2026 Silver Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -3412,6 +3394,37 @@
       ]
     },
     {
+      "assetid": "51894861909",
+      "classid": "7545309816",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Charm | Biomech",
+      "market_hash_name": "Charm | Biomech",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51894861909"
+      ]
+    },
+    {
       "assetid": "47388022426",
       "classid": "7545309814",
       "instanceid": "519977179",
@@ -3533,6 +3546,37 @@
       ],
       "assetids": [
         "41780222968"
+      ]
+    },
+    {
+      "assetid": "51894862839",
+      "classid": "7545310511",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Charm | Splatter Cat",
+      "market_hash_name": "Charm | Splatter Cat",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51894862839"
       ]
     },
     {
@@ -4544,6 +4588,42 @@
       ]
     },
     {
+      "assetid": "52056938614",
+      "classid": "7993067216",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MP7 | Coral Paisley",
+      "market_hash_name": "MP7 | Coral Paisley (Minimal Wear)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "45585062937",
       "classid": "7993037905",
       "instanceid": "188530139",
@@ -5301,6 +5381,42 @@
     },
     {
       "assetid": "46019903287",
+      "classid": "7993036466",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "P2000 | Lifted Spirits",
+      "market_hash_name": "P2000 | Lifted Spirits (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51894341634",
       "classid": "7993036466",
       "instanceid": "188530139",
       "amount": 1,
@@ -6416,6 +6532,42 @@
       ]
     },
     {
+      "assetid": "51894345521",
+      "classid": "7993036700",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAG-7 | Foresight",
+      "market_hash_name": "MAG-7 | Foresight (Minimal Wear)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "45062169227",
       "classid": "7993035992",
       "instanceid": "188530139",
@@ -6674,6 +6826,42 @@
       "amount": 1,
       "name": "MAG-7 | Sonar",
       "market_hash_name": "MAG-7 | Sonar (Minimal Wear)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51894348985",
+      "classid": "7993037005",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Nova | Dark Sigil",
+      "market_hash_name": "Nova | Dark Sigil (Minimal Wear)",
       "type": "Mil-Spec Grade Shotgun",
       "inspectLink": "",
       "tags": [
@@ -12412,7 +12600,7 @@
     {
       "assetid": "50556994645",
       "classid": "8247137616",
-      "instanceid": "188541521",
+      "instanceid": "188593988",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Fully Tuned",
       "market_hash_name": "StatTrak™ Glock-18 | Fully Tuned (Field-Tested)",
@@ -12484,7 +12672,7 @@
     {
       "assetid": "48247175793",
       "classid": "7993041410",
-      "instanceid": "902801238",
+      "instanceid": "903570064",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Bloodsport",
       "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Factory New)",
@@ -13216,7 +13404,7 @@
     {
       "assetid": "50557077319",
       "classid": "8247025056",
-      "instanceid": "188532451",
+      "instanceid": "188532028",
       "amount": 1,
       "name": "StatTrak™ MP9 | Urban Sovereign",
       "market_hash_name": "StatTrak™ MP9 | Urban Sovereign (Well-Worn)",

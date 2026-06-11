@@ -12,14 +12,50 @@
   "faceit": "https://www.faceit.com/en/players/smooya",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-10T08:16:36.559Z",
+  "updatedAt": "2026-06-11T08:37:35.358Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 42,
-  "totalItemsGrouped": 39,
+  "totalItemsRaw": 41,
+  "totalItemsGrouped": 38,
   "items": [
+    {
+      "assetid": "52023029745",
+      "classid": "7993040009",
+      "instanceid": "8518225745",
+      "amount": 1,
+      "name": "★ Bowie Knife | Ultraviolet",
+      "market_hash_name": "★ Bowie Knife | Ultraviolet (Field-Tested)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "51601400272",
       "classid": "7993042312",
@@ -89,42 +125,6 @@
       "float": 0.027246784419,
       "seed": 759,
       "phase": "Phase 2"
-    },
-    {
-      "assetid": "52005696642",
-      "classid": "7993041817",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Kukri Knife | Stained",
-      "market_hash_name": "★ Kukri Knife | Stained (Battle-Scarred)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "51735653296",
@@ -296,54 +296,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51735674045",
-      "classid": "7993037085",
-      "instanceid": "7172455124",
-      "amount": 1,
-      "name": "AWP | Asiimov",
-      "market_hash_name": "AWP | Asiimov (Field-Tested)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1180,7 +1132,7 @@
     {
       "assetid": "39567838081",
       "classid": "7993044648",
-      "instanceid": "8534513836",
+      "instanceid": "8549263488",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Mecha Industries",
       "market_hash_name": "StatTrak™ M4A1-S | Mecha Industries (Factory New)",

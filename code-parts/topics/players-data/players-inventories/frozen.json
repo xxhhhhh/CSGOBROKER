@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/18911949-a23d-4b42-bd0b-7a970b51824c",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-07T07:22:07.740Z",
+  "updatedAt": "2026-06-11T07:41:47.253Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 731,
-  "totalItemsGrouped": 572,
+  "totalItemsRaw": 733,
+  "totalItemsGrouped": 574,
   "items": [
     {
       "assetid": "36264955674",
@@ -226,6 +226,34 @@
       "amount": 1,
       "name": "Dreams & Nightmares Case",
       "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52240291986",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -459,6 +487,37 @@
       ],
       "assetids": [
         "35142278942"
+      ]
+    },
+    {
+      "assetid": "52240291987",
+      "classid": "1989300101",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Eco (Monarch Blue)",
+      "market_hash_name": "Sealed Graffiti | Eco (Monarch Blue)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209787978F539DB797BF96A793F5909F9787309AA79BFF97E78F1EB93FEE",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52240291987"
       ]
     },
     {
@@ -23604,7 +23663,7 @@
     {
       "assetid": "51928652000",
       "classid": "7993040004",
-      "instanceid": "8546061019",
+      "instanceid": "8549202636",
       "amount": 1,
       "name": "StatTrak™ USP-S | Neo-Noir",
       "market_hash_name": "StatTrak™ USP-S | Neo-Noir (Factory New)",
@@ -23780,7 +23839,7 @@
     {
       "assetid": "50729226915",
       "classid": "7993041807",
-      "instanceid": "8546061020",
+      "instanceid": "8549202637",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Cyrex",
       "market_hash_name": "StatTrak™ M4A1-S | Cyrex (Minimal Wear)",
@@ -24184,7 +24243,7 @@
     {
       "assetid": "50729226908",
       "classid": "7993039768",
-      "instanceid": "8083928518",
+      "instanceid": "7301637698",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Dragon Tattoo",
       "market_hash_name": "StatTrak™ Glock-18 | Dragon Tattoo (Factory New)",
