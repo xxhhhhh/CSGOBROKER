@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c6ab629f-9142-4edb-9cb9-a88d5b6ac7ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-09T07:03:54.590Z",
+  "updatedAt": "2026-06-12T07:38:40.456Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 133,
-  "totalItemsGrouped": 126,
+  "totalItemsRaw": 137,
+  "totalItemsGrouped": 130,
   "items": [
     {
       "assetid": "47157176402",
@@ -2719,14 +2719,14 @@
       ]
     },
     {
-      "assetid": "51869446249",
+      "assetid": "51869446254",
       "classid": "8491587240",
       "instanceid": "143865972",
       "amount": 8,
       "name": "Sticker | Chr1zN (Holo) | Cologne 2026",
       "market_hash_name": "Sticker | Chr1zN (Holo) | Cologne 2026",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F7E7F7EF4EFED7F7DFF2C7F395F2FFF7E76BA29FF787F546386935",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A1B1A1B918A881A189A491A5C3A4A9A1B13DF4C9A1D1A36FECADE1",
       "tags": [
         {
           "category": "Type",
@@ -2762,14 +2762,14 @@
         }
       ],
       "assetids": [
+        "51869446254",
+        "51869446250",
         "51869446249",
         "51869446248",
         "51869446247",
         "51869446246",
         "51869446245",
-        "51834946868",
-        "51869446254",
-        "51869446250"
+        "51834946868"
       ]
     },
     {
@@ -3600,6 +3600,53 @@
       ]
     },
     {
+      "assetid": "52040348742",
+      "classid": "8490878815",
+      "instanceid": "8521092078",
+      "amount": 1,
+      "name": "Sticker | nilo | Cologne 2026",
+      "market_hash_name": "Sticker | nilo | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201F0F1F07A6163F1F371C2F1B7D1A171F0F8D4A771F6F1D83DA3685",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52040348742"
+      ]
+    },
+    {
       "assetid": "51186631198",
       "classid": "5721066184",
       "instanceid": "188530139",
@@ -3628,6 +3675,147 @@
       ],
       "assetids": [
         "51186631198"
+      ]
+    },
+    {
+      "assetid": "52040348740",
+      "classid": "8490878817",
+      "instanceid": "8521092078",
+      "amount": 1,
+      "name": "Sticker | susp | Cologne 2026",
+      "market_hash_name": "Sticker | susp | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203E2E3E2687371E3E163D0E3A5C3B363E2EA86B563E4E3CF61D0CF2",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52040348740"
+      ]
+    },
+    {
+      "assetid": "52040348741",
+      "classid": "8490878814",
+      "instanceid": "8521092078",
+      "amount": 1,
+      "name": "Sticker | xfl0ud | Cologne 2026",
+      "market_hash_name": "Sticker | xfl0ud | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A8B8A8B011A188A880AB98ACCAADA0A8B826FDC0A8D8AA29866204",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52040348741"
+      ]
+    },
+    {
+      "assetid": "52040348739",
+      "classid": "8490878819",
+      "instanceid": "8521092078",
+      "amount": 1,
+      "name": "Sticker | yxngstxr | Cologne 2026",
+      "market_hash_name": "Sticker | yxngstxr | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20809080983989A080A883B084E2858880901ED5E880F0820B25DC87",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52040348739"
       ]
     },
     {
@@ -3881,7 +4069,7 @@
     {
       "assetid": "36834339579",
       "classid": "7993041974",
-      "instanceid": "481258043",
+      "instanceid": "480680615",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Black Lotus",
       "market_hash_name": "StatTrak™ M4A1-S | Black Lotus (Battle-Scarred)",

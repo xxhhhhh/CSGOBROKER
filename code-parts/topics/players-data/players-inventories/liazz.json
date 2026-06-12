@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/018df5fb-0948-40af-99b0-baba0887e62b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-07T08:09:09.427Z",
+  "updatedAt": "2026-06-12T08:20:18.229Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 130,
-  "totalItemsGrouped": 125,
+  "totalItemsRaw": 131,
+  "totalItemsGrouped": 126,
   "items": [
     {
       "assetid": "42637776371",
@@ -1316,14 +1316,14 @@
       ]
     },
     {
-      "assetid": "51833239677",
+      "assetid": "51833239678",
       "classid": "8490843774",
       "instanceid": "143865972",
       "amount": 3,
       "name": "Sticker | Liazz (Holo) | Cologne 2026",
       "market_hash_name": "Sticker | Liazz (Holo) | Cologne 2026",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206676667EDF6F46664E63566204636E6676E2310E6616649185C4BE",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DCCCDCC465D5FCDCF4D9ECD8BED9D4DCCC588BB4DCACDEAEC3EA2D",
       "tags": [
         {
           "category": "Type",
@@ -1359,9 +1359,9 @@
         }
       ],
       "assetids": [
+        "51833239678",
         "51833239677",
-        "51833239676",
-        "51833239678"
+        "51833239676"
       ]
     },
     {
@@ -2822,6 +2822,78 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52041038316",
+      "classid": "7993037344",
+      "instanceid": "8544252084",
+      "amount": 1,
+      "name": "AK-47 | Wintergreen",
+      "market_hash_name": "AK-47 | Wintergreen (Minimal Wear)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]

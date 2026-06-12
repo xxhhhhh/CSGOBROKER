@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/a280ed8a-3e2b-4305-8e71-fb4c9cc7fa98",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-11T08:08:38.184Z",
+  "updatedAt": "2026-06-12T07:58:59.876Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 34,
-  "totalItemsGrouped": 34,
+  "totalItemsRaw": 37,
+  "totalItemsGrouped": 37,
   "items": [
     {
       "assetid": "50645129805",
@@ -58,6 +58,41 @@
       "float": 0.029321679845,
       "seed": 667,
       "phase": "Emerald"
+    },
+    {
+      "assetid": "52041273404",
+      "classid": "7993038920",
+      "instanceid": "8521092095",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206D7DD1CDF682AC6C75916E4DCE6E456B5D6E5586F7C08C6E2DA569054C1D656D2E2F35",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.010455469601,
+      "seed": 584,
+      "phase": "Phase 2"
     },
     {
       "assetid": "51757744411",
@@ -102,6 +137,34 @@
       "amount": 1,
       "name": "★ Sport Gloves | Slingshot",
       "market_hash_name": "★ Sport Gloves | Slingshot (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52041273403",
+      "classid": "7993039885",
+      "instanceid": "8521092095",
+      "amount": 1,
+      "name": "★ Sport Gloves | Vice",
+      "market_hash_name": "★ Sport Gloves | Vice (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -203,6 +266,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52039702370",
+      "classid": "202170645",
+      "instanceid": "8544214681",
+      "amount": 1,
+      "name": "Desert Eagle | Golden Koi",
+      "market_hash_name": "Desert Eagle | Golden Koi (Factory New)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e0f4debc-ed3b-4936-85ea-1fbbb334e136",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-11T08:26:59.724Z",
+  "updatedAt": "2026-06-12T08:18:13.013Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 727,
-  "totalItemsGrouped": 424,
+  "totalItemsRaw": 730,
+  "totalItemsGrouped": 427,
   "items": [
     {
       "assetid": "47484660523",
@@ -249,7 +249,7 @@
       "name": "★ Karambit | Gamma Doppler",
       "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C7D7152F4D2A06C6DF3CC4E77FC3EFC1F7C4FF330D0423C4872BC6AF47C5B7C330BC27BF",
       "tags": [
         {
           "category": "Type",
@@ -271,7 +271,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.017687536776,
+      "seed": 236,
+      "phase": "Emerald"
     },
     {
       "assetid": "51464788063",
@@ -1294,6 +1297,62 @@
     },
     {
       "assetid": "51845942855",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52049979952",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52049981549",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -9847,6 +9906,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52049979504",
+      "classid": "241585251",
+      "instanceid": "6276343969",
+      "amount": 1,
+      "name": "Glock-18 | Candy Apple",
+      "market_hash_name": "Glock-18 | Candy Apple (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
