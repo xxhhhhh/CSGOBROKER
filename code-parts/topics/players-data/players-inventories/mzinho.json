@@ -7,16 +7,18 @@
   "name": "Ayush Batbold",
   "nationality": "Mongolia",
   "born": "28.06.2007",
+  "isContentCreator": false,
   "twitch": "mzinhocsgo",
   "faceit": "https://faceitdb.com/profile/faceit/009623b1-dd6e-4551-959e-990a21657f93",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-07T07:19:52.785Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 110,
-  "totalItemsGrouped": 110,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-06-14T07:32:03.655Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 115,
+  "totalItemsGrouped": 114,
   "items": [
     {
       "assetid": "51810159452",
@@ -56,6 +58,41 @@
       "float": 0.051967255771,
       "seed": 425,
       "phase": "Ruby"
+    },
+    {
+      "assetid": "52079236651",
+      "classid": "7993043455",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Karambit | Gamma Doppler",
+      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204858E3E4E0C98A4950B34B68F04C604E784B70868D91A04B08FA49206B384CDAC2A9A9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.036715321243,
+      "seed": 178,
+      "phase": "Emerald"
     },
     {
       "assetid": "51235147670",
@@ -99,6 +136,34 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Pillow Punchers",
       "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52101816336",
+      "classid": "7993040299",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -175,6 +240,49 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "52079236650",
+      "classid": "7993043109",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "★ StatTrak™ M9 Bayonet | Doppler",
+      "market_hash_name": "★ StatTrak™ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206C7CC6C0C4EDAE6D74906F4CF36F446A5C6F54AD8790B66F2C8A6F246C3C6C04461C64728DCBB3",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.003405913943,
+      "seed": 486,
+      "phase": "Ruby"
     },
     {
       "assetid": "41025968191",
@@ -1244,6 +1352,42 @@
       ]
     },
     {
+      "assetid": "52194409613",
+      "classid": "7993036194",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "R8 Revolver | Cobalt Grip",
+      "market_hash_name": "R8 Revolver | Cobalt Grip (Minimal Wear)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51585704065",
       "classid": "7993043562",
       "instanceid": "6289338963",
@@ -1311,50 +1455,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51831536298",
-      "classid": "7993037027",
-      "instanceid": "8521823068",
-      "amount": 1,
-      "name": "AK-47 | X-Ray",
-      "market_hash_name": "AK-47 | X-Ray (Field-Tested)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1827,6 +1927,54 @@
       ],
       "assetids": [
         "44374945367"
+      ]
+    },
+    {
+      "assetid": "52026948523",
+      "classid": "8490866845",
+      "instanceid": "143865972",
+      "amount": 2,
+      "name": "Sticker | mzinho (Holo) | Cologne 2026",
+      "market_hash_name": "Sticker | mzinho (Holo) | Cologne 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AFBFAFB716A68FAF87AA9FABCDAAA7AFBF5FFDC7AFDFAD39B33BDC",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52026948523",
+        "52026948524"
       ]
     },
     {
@@ -3533,7 +3681,7 @@
     {
       "assetid": "50315460054",
       "classid": "8246999731",
-      "instanceid": "188530422",
+      "instanceid": "188531654",
       "amount": 1,
       "name": "StatTrak™ P250 | Kintsugi",
       "market_hash_name": "StatTrak™ P250 | Kintsugi (Well-Worn)",
@@ -3569,7 +3717,7 @@
     {
       "assetid": "51487010820",
       "classid": "7993047873",
-      "instanceid": "188531501",
+      "instanceid": "188530914",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Eye of Athena",
       "market_hash_name": "StatTrak™ FAMAS | Eye of Athena (Minimal Wear)",
@@ -3605,7 +3753,7 @@
     {
       "assetid": "50315509894",
       "classid": "8247059305",
-      "instanceid": "188540573",
+      "instanceid": "188534043",
       "amount": 1,
       "name": "StatTrak™ MP7 | Amberline",
       "market_hash_name": "StatTrak™ MP7 | Amberline (Minimal Wear)",

@@ -12,12 +12,12 @@
   "faceit": "https://faceitdb.com/profile/faceit/ecd004fa-0215-4a42-965b-07ebefd69f0c",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-12T08:22:26.209Z",
+  "updatedAt": "2026-06-14T08:21:59.036Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 430,
+  "totalItemsRaw": 437,
   "totalItemsGrouped": 377,
   "items": [
     {
@@ -428,34 +428,6 @@
       "market_hash_name": "★ Broken Fang Gloves | Jade (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%203929ABAFE9B96321CC1D19DC77113F093A0184BAE8D63A79F63D51B93B4931B6B2A4E6",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50983827259",
-      "classid": "7993038266",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Driver Gloves | Black Tie",
-      "market_hash_name": "★ Driver Gloves | Black Tie (Well-Worn)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1245,6 +1217,62 @@
       "amount": 1,
       "name": "Recoil Case",
       "market_hash_name": "Recoil Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52077245971",
+      "classid": "5189384637",
+      "instanceid": "8526465936",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52075078910",
+      "classid": "7488632023",
+      "instanceid": "8526465936",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -2480,6 +2508,42 @@
       "market_hash_name": "P250 | Asiimov (Field-Tested)",
       "type": "Classified Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%202C3CEAAF81A80834080C8B2804291C2814948EA4DE2F6CE62F44FA2D5C248CCE7FF8",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52077132218",
+      "classid": "7993039561",
+      "instanceid": "8526466471",
+      "amount": 1,
+      "name": "P250 | Muertos",
+      "market_hash_name": "P250 | Muertos (Factory New)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3753,65 +3817,6 @@
       "float": 0.008236587979,
       "seed": 988,
       "phase": "Emerald"
-    },
-    {
-      "assetid": "34794235099",
-      "classid": "7993042303",
-      "instanceid": "6285833256",
-      "amount": 1,
-      "name": "Glock-18 | Gamma Doppler",
-      "market_hash_name": "Glock-18 | Gamma Doppler (Field-Tested)",
-      "type": "Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202434FFEDB3EBA5253C2004C62C0C2214201CE09FD8D62764B02346212C2434800846212C2534F4084CA42654334753DC5F",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ],
-      "float": 0.217886984348,
-      "seed": 916,
-      "phase": "Phase 3"
     },
     {
       "assetid": "20038834401",
@@ -6894,6 +6899,56 @@
         "22067637819",
         "22067637609",
         "22067637602"
+      ]
+    },
+    {
+      "assetid": "52077124992",
+      "classid": "5327976231",
+      "instanceid": "8526466471",
+      "amount": 8,
+      "name": "Sticker | Vitality | Paris 2023",
+      "market_hash_name": "Sticker | Vitality | Paris 2023",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203828382081311838103B083C5A3D303828E40B5038483017AD8DB5",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52077124992",
+        "52077124991",
+        "52077124990",
+        "52077124989",
+        "52077124988",
+        "52077124987",
+        "52077124986",
+        "52077124985"
       ]
     },
     {
@@ -13398,66 +13453,6 @@
       ]
     },
     {
-      "assetid": "32458303223",
-      "classid": "7993042356",
-      "instanceid": "7755433459",
-      "amount": 1,
-      "name": "StatTrak™ M4A4 | Hellfire",
-      "market_hash_name": "StatTrak™ M4A4 | Hellfire (Field-Tested)",
-      "type": "StatTrak™ Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B4A443791D41CCACA4942CB19CB184BD8C59686440B7F43BB5FCB4E428B3D6BEBCB4A4189DA944DCE78BD6B1BCB5A442B1D6B1BCB6A47597D6B1BCB7A444B1DC34B6C4B0FABDC6FE",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "32480496302",
       "classid": "7993045324",
       "instanceid": "6285833258",
@@ -13669,50 +13664,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "33625558916",
-      "classid": "7993041138",
-      "instanceid": "6276670095",
-      "amount": 1,
-      "name": "StatTrak™ AK-47 | Legion of Anubis",
-      "market_hash_name": "StatTrak™ AK-47 | Legion of Anubis (Minimal Wear)",
-      "type": "StatTrak™ Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FDED7962085C80E5FADD42FAD5FBCDF4C5185C5812FEBD26F8B5FDADFD9FF8F5FEED19CE957DFF8DF5E91E763B",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]

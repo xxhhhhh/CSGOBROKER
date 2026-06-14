@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/5157fde3-01e1-4eeb-886b-ae2185569711",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-11T07:50:41.903Z",
+  "updatedAt": "2026-06-14T07:42:49.567Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 660,
-  "totalItemsGrouped": 492,
+  "totalItemsRaw": 663,
+  "totalItemsGrouped": 495,
   "items": [
     {
       "assetid": "49987560305",
@@ -90,6 +90,34 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Crimson Kimono",
       "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Well-Worn)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52060994251",
+      "classid": "8247311471",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Occult",
+      "market_hash_name": "★ Sport Gloves | Occult (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -449,6 +477,34 @@
     },
     {
       "assetid": "51980284478",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52282066198",
       "classid": "4717330486",
       "instanceid": "302028390",
       "amount": 1,
@@ -2147,6 +2203,37 @@
       "assetids": [
         "50881909178",
         "17616121069"
+      ]
+    },
+    {
+      "assetid": "52282066199",
+      "classid": "1989313568",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | 8-Ball (Tracer Yellow)",
+      "market_hash_name": "Sealed Graffiti | 8-Ball (Tracer Yellow)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B7A7B7AF73BD97B79FB687B3D5B0BFB7A70EBA87B1DFB7C7AFA5F22BCA",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52282066199"
       ]
     },
     {

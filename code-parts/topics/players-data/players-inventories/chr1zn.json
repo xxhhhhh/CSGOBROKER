@@ -12,53 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/c6ab629f-9142-4edb-9cb9-a88d5b6ac7ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-12T07:38:40.456Z",
+  "updatedAt": "2026-06-14T07:40:30.802Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 137,
-  "totalItemsGrouped": 130,
+  "totalItemsRaw": 139,
+  "totalItemsGrouped": 131,
   "items": [
-    {
-      "assetid": "47157176402",
-      "classid": "7993040883",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Doppler",
-      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209383414336453C928B1097B30C90BB95A390AB7973684D90D35896FBDEE39BD3B0728B",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.006803561933,
-      "seed": 715,
-      "phase": "Ruby"
-    },
     {
       "assetid": "51197729520",
       "classid": "7993042582",
@@ -3602,7 +3563,7 @@
     {
       "assetid": "52040348742",
       "classid": "8490878815",
-      "instanceid": "8521092078",
+      "instanceid": "143865972",
       "amount": 1,
       "name": "Sticker | nilo | Cologne 2026",
       "market_hash_name": "Sticker | nilo | Cologne 2026",
@@ -3650,7 +3611,7 @@
       "assetid": "51186631198",
       "classid": "5721066184",
       "instanceid": "188530139",
-      "amount": 1,
+      "amount": 2,
       "name": "Sticker | Please Return To",
       "market_hash_name": "Sticker | Please Return To",
       "type": "High Grade Sticker",
@@ -3674,13 +3635,14 @@
         }
       ],
       "assetids": [
-        "51186631198"
+        "51186631198",
+        "52053134425"
       ]
     },
     {
       "assetid": "52040348740",
       "classid": "8490878817",
-      "instanceid": "8521092078",
+      "instanceid": "143865972",
       "amount": 1,
       "name": "Sticker | susp | Cologne 2026",
       "market_hash_name": "Sticker | susp | Cologne 2026",
@@ -3727,7 +3689,7 @@
     {
       "assetid": "52040348741",
       "classid": "8490878814",
-      "instanceid": "8521092078",
+      "instanceid": "143865972",
       "amount": 1,
       "name": "Sticker | xfl0ud | Cologne 2026",
       "market_hash_name": "Sticker | xfl0ud | Cologne 2026",
@@ -3774,7 +3736,7 @@
     {
       "assetid": "52040348739",
       "classid": "8490878819",
-      "instanceid": "8521092078",
+      "instanceid": "143865972",
       "amount": 1,
       "name": "Sticker | yxngstxr | Cologne 2026",
       "market_hash_name": "Sticker | yxngstxr | Cologne 2026",
@@ -3850,6 +3812,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52053168327",
+      "classid": "3608084360",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Special Agent Ava | FBI",
+      "market_hash_name": "Special Agent Ava | FBI",
+      "type": "Master Agent",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -4069,7 +4059,7 @@
     {
       "assetid": "36834339579",
       "classid": "7993041974",
-      "instanceid": "480680615",
+      "instanceid": "480427370",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Black Lotus",
       "market_hash_name": "StatTrak™ M4A1-S | Black Lotus (Battle-Scarred)",
@@ -4382,6 +4372,34 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52053174164",
+      "classid": "4141779051",
+      "instanceid": "6276305253",
+      "amount": 1,
+      "name": "Number K | The Professionals",
+      "market_hash_name": "Number K | The Professionals",
+      "type": "Superior Agent",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]

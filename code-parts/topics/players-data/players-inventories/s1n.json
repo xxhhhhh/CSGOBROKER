@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/55d2d6a0-aed2-46de-99b6-6a1381a7ab99",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-12T07:45:00.897Z",
+  "updatedAt": "2026-06-14T07:47:01.674Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 93,
-  "totalItemsGrouped": 93,
+  "totalItemsRaw": 92,
+  "totalItemsGrouped": 92,
   "items": [
     {
       "assetid": "51967049966",
@@ -130,62 +130,6 @@
       "amount": 1,
       "name": "★ Driver Gloves | King Snake",
       "market_hash_name": "★ Driver Gloves | King Snake (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51967049967",
-      "classid": "7993040299",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Hedge Maze",
-      "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50431096226",
-      "classid": "8248450262",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Violet Beadwork",
-      "market_hash_name": "★ Sport Gloves | Violet Beadwork (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -758,7 +702,7 @@
     {
       "assetid": "52038217674",
       "classid": "201965307",
-      "instanceid": "8521716654",
+      "instanceid": "8553414223",
       "amount": 1,
       "name": "AWP | Graphite",
       "market_hash_name": "AWP | Graphite (Factory New)",
@@ -856,9 +800,9 @@
       ]
     },
     {
-      "assetid": "50408227636",
+      "assetid": "52274832323",
       "classid": "7993036942",
-      "instanceid": "8378770413",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "USP-S | Printstream",
       "market_hash_name": "USP-S | Printstream (Factory New)",
@@ -888,19 +832,77 @@
         {
           "category": "Exterior",
           "name": ""
-        },
+        }
+      ]
+    },
+    {
+      "assetid": "52274212427",
+      "classid": "8490952187",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Sticker Slab | M80 (Holo) | Cologne 2026",
+      "market_hash_name": "Sticker Slab | M80 (Holo) | Cologne 2026",
+      "type": "Customized Exotic Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2011011109DA1B31113914211979116111B310161911013471C64039750709",
+      "tags": [
         {
-          "category": "Tournament",
+          "category": "Type",
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "Type",
           "name": ""
         },
         {
-          "category": "ProPlayer",
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
           "name": ""
         }
+      ],
+      "assetids": [
+        "52274212427"
+      ]
+    },
+    {
+      "assetid": "52274244121",
+      "classid": "7803517958",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Sticker Slab | s1n (Gold) | Budapest 2025",
+      "market_hash_name": "Sticker Slab | s1n (Gold) | Budapest 2025",
+      "type": "Customized Extraordinary Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B1A1B1A97ABB91B199B781B9D9B1C1B113B0B6B9B1A194D178FE07BAAB09",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52274244121"
       ]
     },
     {
@@ -1038,6 +1040,37 @@
       ],
       "assetids": [
         "51858039973"
+      ]
+    },
+    {
+      "assetid": "52274832324",
+      "classid": "7545319832",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Charm | Lil' Boo",
+      "market_hash_name": "Charm | Lil' Boo",
+      "type": "Extraordinary Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52274832324"
       ]
     },
     {
@@ -2376,7 +2409,7 @@
     {
       "assetid": "52042467705",
       "classid": "188530424",
-      "instanceid": "8522178359",
+      "instanceid": "8553414222",
       "amount": 1,
       "name": "Desert Eagle | Blaze",
       "market_hash_name": "Desert Eagle | Blaze (Factory New)",
@@ -2470,9 +2503,9 @@
       ]
     },
     {
-      "assetid": "52020145667",
+      "assetid": "52274216254",
       "classid": "188530425",
-      "instanceid": "8552226709",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "Glock-18 | Fade",
       "market_hash_name": "Glock-18 | Fade (Factory New)",
@@ -2501,18 +2534,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -2958,57 +2979,9 @@
       ]
     },
     {
-      "assetid": "51858140274",
-      "classid": "7993042872",
-      "instanceid": "8536191288",
-      "amount": 1,
-      "name": "StatTrak™ USP-S | Kill Confirmed",
-      "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Minimal Wear)",
-      "type": "StatTrak™ Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51858052091",
+      "assetid": "52274085509",
       "classid": "7993042170",
-      "instanceid": "902658099",
+      "instanceid": "1987444932",
       "amount": 1,
       "name": "StatTrak™ USP-S | The Traitor",
       "market_hash_name": "StatTrak™ USP-S | The Traitor (Field-Tested)",
@@ -3042,57 +3015,9 @@
       ]
     },
     {
-      "assetid": "49496406014",
-      "classid": "7993042053",
-      "instanceid": "8489229856",
-      "amount": 1,
-      "name": "StatTrak™ AK-47 | Inheritance",
-      "market_hash_name": "StatTrak™ AK-47 | Inheritance (Factory New)",
-      "type": "StatTrak™ Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48227498781",
+      "assetid": "52274136831",
       "classid": "7993039753",
-      "instanceid": "7808808521",
+      "instanceid": "1011847063",
       "amount": 1,
       "name": "StatTrak™ AK-47 | The Empress",
       "market_hash_name": "StatTrak™ AK-47 | The Empress (Minimal Wear)",
@@ -3121,18 +3046,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]

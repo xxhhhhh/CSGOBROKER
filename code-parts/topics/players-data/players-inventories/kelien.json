@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/bee37ed7-b8ef-4364-a9d3-f2fbe42fb564",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-12T08:15:55.697Z",
+  "updatedAt": "2026-06-14T08:15:26.865Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 733,
-  "totalItemsGrouped": 280,
+  "totalItemsRaw": 736,
+  "totalItemsGrouped": 283,
   "items": [
     {
       "assetid": "51898751770",
@@ -72,42 +72,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52046854997",
-      "classid": "7993039162",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Shadow Daggers | Autotronic",
-      "market_hash_name": "★ Shadow Daggers | Autotronic (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -964,6 +928,42 @@
       "market_hash_name": "Dual Berettas | Twin Turbo (Well-Worn)",
       "type": "Classified Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%206777FE8CA8DCE3667F65478C624F6257635FAFB8859164278F640F0C177FE518A54F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52069599181",
+      "classid": "7993040253",
+      "instanceid": "6276505205",
+      "amount": 1,
+      "name": "USP-S | Whiteout",
+      "market_hash_name": "USP-S | Whiteout (Field-Tested)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -6636,6 +6636,49 @@
       ]
     },
     {
+      "assetid": "52069247815",
+      "classid": "5799820707",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Virtus.pro | Copenhagen 2024",
+      "market_hash_name": "Sticker | Virtus.pro | Copenhagen 2024",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209F8F9F872696BF9FB79CAF9BFD9A979F8F45A7F79FEF97AEAD1BAC",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52069247815"
+      ]
+    },
+    {
       "assetid": "36555226745",
       "classid": "5799820243",
       "instanceid": "188530139",
@@ -7994,6 +8037,42 @@
       "market_hash_name": "Tec-9 | Rebel (Well-Worn)",
       "type": "Mil-Spec Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CCDC3E5F706B46CDD4D2EC1FC5E4CFFCC8F46916463BCF8C44C8A4DFBCC405CB04D8",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52069533462",
+      "classid": "7993035982",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "USP-S | Alpine Camo",
+      "market_hash_name": "USP-S | Alpine Camo (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -9943,6 +10022,53 @@
       ],
       "assetids": [
         "30135608527"
+      ]
+    },
+    {
+      "assetid": "52069245066",
+      "classid": "6360306948",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | jL (Glitter) | Shanghai 2024",
+      "market_hash_name": "Sticker | jL (Glitter) | Shanghai 2024",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BFAFBFA706B69FBF97BB8FBBDDBAB7BFAF2D80D7BFCFB79B4BFB83",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52069245066"
       ]
     },
     {
