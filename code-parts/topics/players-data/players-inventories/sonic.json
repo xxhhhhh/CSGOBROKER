@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/4b28e4aa-5c47-44d2-bcae-1e93ff01f896",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-14T07:56:00.478Z",
+  "updatedAt": "2026-06-15T09:31:20.334Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 254,
-  "totalItemsGrouped": 246,
+  "totalItemsRaw": 257,
+  "totalItemsGrouped": 248,
   "items": [
     {
       "assetid": "43678902267",
@@ -4752,7 +4752,7 @@
       "assetid": "47409165619",
       "classid": "7545310506",
       "instanceid": "519977179",
-      "amount": 1,
+      "amount": 2,
       "name": "Charm | Lil' Curse",
       "market_hash_name": "Charm | Lil' Curse",
       "type": "High Grade Charm",
@@ -4776,7 +4776,8 @@
         }
       ],
       "assetids": [
-        "47409165619"
+        "47409165619",
+        "52111237693"
       ]
     },
     {
@@ -6565,6 +6566,42 @@
       ]
     },
     {
+      "assetid": "52111222842",
+      "classid": "7993037020",
+      "instanceid": "8529426342",
+      "amount": 1,
+      "name": "Tec-9 | Tiger Stencil",
+      "market_hash_name": "Tec-9 | Tiger Stencil (Minimal Wear)",
+      "type": "Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "47427905723",
       "classid": "7993038374",
       "instanceid": "519977179",
@@ -7005,6 +7042,42 @@
       "market_hash_name": "UMP-45 | Fragment (Minimal Wear)",
       "type": "Mil-Spec Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%202C3CFC9BE380972D34340CBE27042F1C28149099E3DC2F6CEA2A448C2D5C24A1692F72",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52111224547",
+      "classid": "7993036511",
+      "instanceid": "8529426342",
+      "amount": 1,
+      "name": "SSG 08 | Zeno",
+      "market_hash_name": "SSG 08 | Zeno (Field-Tested)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -8391,7 +8464,7 @@
     {
       "assetid": "51981472661",
       "classid": "7993041912",
-      "instanceid": "8555452523",
+      "instanceid": "8561196006",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Aquamarine Revenge",
       "market_hash_name": "StatTrak™ AK-47 | Aquamarine Revenge (Field-Tested)",
@@ -8447,7 +8520,7 @@
     {
       "assetid": "40634984433",
       "classid": "7993036789",
-      "instanceid": "8555137975",
+      "instanceid": "8561196007",
       "amount": 1,
       "name": "StatTrak™ AWP | Neo-Noir",
       "market_hash_name": "StatTrak™ AWP | Neo-Noir (Factory New)",
@@ -8495,7 +8568,7 @@
     {
       "assetid": "24732336593",
       "classid": "7993036404",
-      "instanceid": "480087130",
+      "instanceid": "480086719",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Scrawl",
       "market_hash_name": "StatTrak™ Five-SeveN | Scrawl (Field-Tested)",
