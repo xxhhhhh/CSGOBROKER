@@ -7,16 +7,18 @@
   "name": "Adones Nobre",
   "nationality": "Portugal",
   "born": "29.12.2003",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/94f5114b-b7b9-445f-be26-1a60f54d22de",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-04T08:14:22.710Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 185,
-  "totalItemsGrouped": 168,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-06-16T09:30:51.073Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 186,
+  "totalItemsGrouped": 169,
   "items": [
     {
       "assetid": "51756927366",
@@ -90,14 +92,14 @@
       ]
     },
     {
-      "assetid": "51687861961",
-      "classid": "7993035711",
-      "instanceid": "188530139",
+      "assetid": "50460638762",
+      "classid": "7993039756",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Driver Gloves | Snow Leopard",
-      "market_hash_name": "★ Driver Gloves | Snow Leopard (Field-Tested)",
+      "name": "★ Hand Wraps | Cobalt Skulls",
+      "market_hash_name": "★ Hand Wraps | Cobalt Skulls (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E4F44E1824195FE5FC4CC3C421AACCE2D4E7DC6E5D3814E7A469E78C9994E001864E0E",
       "tags": [
         {
           "category": "Type",
@@ -118,14 +120,14 @@
       ]
     },
     {
-      "assetid": "50460638762",
-      "classid": "7993039756",
-      "instanceid": "480085569",
+      "assetid": "52055867779",
+      "classid": "7993038043",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Hand Wraps | Cobalt Skulls",
-      "market_hash_name": "★ Hand Wraps | Cobalt Skulls (Minimal Wear)",
+      "name": "★ Sport Gloves | Vice",
+      "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
       "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E4F44E1824195FE5FC4CC3C421AACCE2D4E7DC6E5D3814E7A469E78C9994E001864E0E",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -208,6 +210,37 @@
       ]
     },
     {
+      "assetid": "51900223062",
+      "classid": "1989311038",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Quickdraw (Brick Red)",
+      "market_hash_name": "Sealed Graffiti | Quickdraw (Brick Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E2F2E2FA26E8C2E2CAE3D2E680E5EAE2F251EFD2E38AE292FA340CF9B5",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51900223062"
+      ]
+    },
+    {
       "assetid": "50402728559",
       "classid": "7993036473",
       "instanceid": "480085569",
@@ -252,6 +285,42 @@
       "market_hash_name": "USP-S | Cortex (Well-Worn)",
       "type": "Classified Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%206A7AD29D92BEDF6B72574AAB6F426F5A6E5286BFFE9D692AE26E02F86B1A622F165CFF",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51908742378",
+      "classid": "7993035539",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "FAMAS | Rapid Eye Movement",
+      "market_hash_name": "FAMAS | Rapid Eye Movement (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1652,30 +1721,6 @@
       "market_hash_name": "2025 Service Medal",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51318446147",
-      "classid": "3759394945",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Civil Protection Pin",
-      "market_hash_name": "Civil Protection Pin",
-      "type": "Extraordinary Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205F4F5F47957B7F5F77596F5B375F2F57C1297AD1",
       "tags": [
         {
           "category": "Type",
@@ -5310,7 +5355,7 @@
     {
       "assetid": "49853323190",
       "classid": "7993045315",
-      "instanceid": "6423767558",
+      "instanceid": "6316837389",
       "amount": 1,
       "name": "StatTrak™ USP-S | The Traitor",
       "market_hash_name": "StatTrak™ USP-S | The Traitor (Minimal Wear)",

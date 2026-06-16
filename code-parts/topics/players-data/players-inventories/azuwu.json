@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/004181c4-494a-44a6-be60-3c80264e84aa",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-15T09:20:33.304Z",
+  "updatedAt": "2026-06-16T09:05:13.725Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 209,
-  "totalItemsGrouped": 206,
+  "totalItemsRaw": 211,
+  "totalItemsGrouped": 207,
   "items": [
     {
       "assetid": "51883051429",
@@ -5611,6 +5611,42 @@
       ]
     },
     {
+      "assetid": "52131170766",
+      "classid": "7993037203",
+      "instanceid": "8532244171",
+      "amount": 1,
+      "name": "MP9 | Featherweight",
+      "market_hash_name": "MP9 | Featherweight (Well-Worn)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "34018514581",
       "classid": "7993042824",
       "instanceid": "6276478631",
@@ -5826,14 +5862,14 @@
       ]
     },
     {
-      "assetid": "52103004140",
+      "assetid": "52129623416",
       "classid": "5721066246",
-      "instanceid": "8529426104",
-      "amount": 3,
+      "instanceid": "8532244171",
+      "amount": 4,
       "name": "Sticker | Lotus (Glitter)",
       "market_hash_name": "Sticker | Lotus (Glitter)",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205A4A5A42E3537A5A725E6A5E385F525A4A8962325A2A529F0717E4",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200313031BBA0A23032B07330761060B0313D03B6B03730BF3A6B857",
       "tags": [
         {
           "category": "Type",
@@ -5853,6 +5889,7 @@
         }
       ],
       "assetids": [
+        "52129623416",
         "52103004140",
         "52103004139",
         "52100329203"
