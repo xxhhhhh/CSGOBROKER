@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/7c813070-0422-44b1-8cc0-0e8e1229390f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-15T09:46:08.685Z",
+  "updatedAt": "2026-06-19T09:16:45.294Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 591,
-  "totalItemsGrouped": 406,
+  "totalItemsRaw": 593,
+  "totalItemsGrouped": 408,
   "items": [
     {
       "assetid": "50973156455",
@@ -27,6 +27,42 @@
       "amount": 1,
       "name": "★ Butterfly Knife | Black Laminate",
       "market_hash_name": "★ Butterfly Knife | Black Laminate (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52192705229",
+      "classid": "7993046489",
+      "instanceid": "8541322282",
+      "amount": 1,
+      "name": "★ Falchion Knife | Lore",
+      "market_hash_name": "★ Falchion Knife | Lore (Well-Worn)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -89,6 +125,45 @@
       ],
       "float": 0.010891208425,
       "seed": 651,
+      "phase": "Phase 3"
+    },
+    {
+      "assetid": "52192705228",
+      "classid": "7993038662",
+      "instanceid": "8541322282",
+      "amount": 1,
+      "name": "★ Shadow Daggers | Gamma Doppler",
+      "market_hash_name": "★ Shadow Daggers | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207262BE87C7C5B0736AF67652C9765A7442714A9F8FD89A7132AD771A8F7302766436E5F2",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.033873487264,
+      "seed": 735,
       "phase": "Phase 3"
     },
     {
@@ -17228,7 +17303,7 @@
     {
       "assetid": "50314689644",
       "classid": "8246974891",
-      "instanceid": "480091161",
+      "instanceid": "480123881",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Firebreathing",
       "market_hash_name": "StatTrak™ Desert Eagle | Firebreathing (Field-Tested)",
@@ -17264,7 +17339,7 @@
     {
       "assetid": "42758935126",
       "classid": "7993039436",
-      "instanceid": "480092870",
+      "instanceid": "480085682",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Brother",
       "market_hash_name": "StatTrak™ Tec-9 | Brother (Well-Worn)",

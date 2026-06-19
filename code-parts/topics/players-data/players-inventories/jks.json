@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9a8ea9d5-61c7-4b38-b64f-35f4945048fa",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-15T09:12:06.808Z",
+  "updatedAt": "2026-06-19T08:42:26.040Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 47,
-  "totalItemsGrouped": 46,
+  "totalItemsRaw": 49,
+  "totalItemsGrouped": 48,
   "items": [
     {
       "assetid": "14557724330",
@@ -117,6 +117,65 @@
           "category": "Exterior",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "52391676628",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52391678001",
+      "classid": "1989296922",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Noscope (SWAT Blue)",
+      "market_hash_name": "Sealed Graffiti | Noscope (SWAT Blue)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EDFDEDF529E7CDEDC5ECDDE98FEAE5EDFD2CE0DDE085ED9DF5F6103481",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52391678001"
       ]
     },
     {
@@ -1239,7 +1298,7 @@
     {
       "assetid": "26965750398",
       "classid": "7993038713",
-      "instanceid": "8561484422",
+      "instanceid": "8572964850",
       "amount": 1,
       "name": "StatTrak™ MP9 | Airlock",
       "market_hash_name": "StatTrak™ MP9 | Airlock (Field-Tested)",
@@ -1311,7 +1370,7 @@
     {
       "assetid": "41865689587",
       "classid": "7993038697",
-      "instanceid": "504961360",
+      "instanceid": "484815003",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Grinder",
       "market_hash_name": "StatTrak™ Glock-18 | Grinder (Factory New)",

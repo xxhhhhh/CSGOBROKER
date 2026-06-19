@@ -12,18 +12,18 @@
   "faceit": "https://faceitdb.com/profile/faceit/10cba186-49d9-4351-bd3f-45bc7b0de76c",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-18T08:56:16.879Z",
+  "updatedAt": "2026-06-19T09:20:58.524Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 46,
-  "totalItemsGrouped": 46,
+  "totalItemsRaw": 53,
+  "totalItemsGrouped": 53,
   "items": [
     {
       "assetid": "52340883177",
       "classid": "7993044973",
-      "instanceid": "8538237432",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "★ Butterfly Knife | Case Hardened",
       "market_hash_name": "★ Butterfly Knife | Case Hardened (Minimal Wear)",
@@ -40,6 +40,34 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52194852394",
+      "classid": "7993037104",
+      "instanceid": "8541322282",
+      "amount": 1,
+      "name": "★ Sport Gloves | Nocts",
+      "market_hash_name": "★ Sport Gloves | Nocts (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
           "name": ""
         },
         {
@@ -644,12 +672,92 @@
       ]
     },
     {
+      "assetid": "52192795022",
+      "classid": "7993037278",
+      "instanceid": "8541320642",
+      "amount": 1,
+      "name": "AK-47 | Vulcan",
+      "market_hash_name": "AK-47 | Vulcan (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50842785905",
       "classid": "7993041870",
       "instanceid": "6276345805",
       "amount": 1,
       "name": "M4A1-S | Printstream",
       "market_hash_name": "M4A1-S | Printstream (Battle-Scarred)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52194908062",
+      "classid": "7993036472",
+      "instanceid": "8541541180",
+      "amount": 1,
+      "name": "M4A4 | Temukau",
+      "market_hash_name": "M4A4 | Temukau (Field-Tested)",
       "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
@@ -1054,9 +1162,153 @@
       ]
     },
     {
+      "assetid": "52196550531",
+      "classid": "7993036354",
+      "instanceid": "8541320642",
+      "amount": 1,
+      "name": "Glock-18 | Winterized",
+      "market_hash_name": "Glock-18 | Winterized (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52195597690",
+      "classid": "7993038932",
+      "instanceid": "8541322282",
+      "amount": 1,
+      "name": "P250 | Nevermore",
+      "market_hash_name": "P250 | Nevermore (Minimal Wear)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52195597433",
+      "classid": "7993036817",
+      "instanceid": "8564824436",
+      "amount": 1,
+      "name": "Tec-9 | Re-Entry",
+      "market_hash_name": "Tec-9 | Re-Entry (Minimal Wear)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52195597840",
+      "classid": "7993037970",
+      "instanceid": "8541320642",
+      "amount": 1,
+      "name": "FAMAS | Valence",
+      "market_hash_name": "FAMAS | Valence (Field-Tested)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52176394162",
       "classid": "7993036330",
-      "instanceid": "8538236753",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "MP9 | Arctic Tri-Tone",
       "market_hash_name": "MP9 | Arctic Tri-Tone (Factory New)",
