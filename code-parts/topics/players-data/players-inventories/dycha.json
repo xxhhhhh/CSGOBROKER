@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/ff5a0714-0b89-4646-a6b3-34fc571913ff",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-18T08:47:54.576Z",
+  "updatedAt": "2026-06-20T07:45:59.911Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 288,
-  "totalItemsGrouped": 263,
+  "totalItemsRaw": 308,
+  "totalItemsGrouped": 266,
   "items": [
     {
       "assetid": "36455956753",
@@ -4878,11 +4878,11 @@
     },
     {
       "assetid": "51828976449",
-      "classid": "8534113218",
+      "classid": "8564022767",
       "instanceid": "8490783177",
       "amount": 1,
-      "name": "Cologne 2026 Silver Coin",
-      "market_hash_name": "Cologne 2026 Silver Coin",
+      "name": "Cologne 2026 Gold Coin",
+      "market_hash_name": "Cologne 2026 Gold Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -5807,14 +5807,14 @@
       ]
     },
     {
-      "assetid": "52174806081",
+      "assetid": "52174806083",
       "classid": "5327989613",
       "instanceid": "188530139",
       "amount": 3,
       "name": "Sticker | Dycha (Gold) | Paris 2023",
       "market_hash_name": "Sticker | Dycha (Gold) | Paris 2023",
       "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209585958D2C9CB595BD93A591F7909D95852DA2FD95E59D92E2F310",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E7F7E7FF5EEEC7E7CFE1D7E385E2EFE7F75FD08FE797EFA2EC4209",
       "tags": [
         {
           "category": "Type",
@@ -5850,9 +5850,9 @@
         }
       ],
       "assetids": [
+        "52174806083",
         "52174806081",
-        "52174806080",
-        "52174806083"
+        "52174806080"
       ]
     },
     {
@@ -6710,6 +6710,164 @@
           "category": "TournamentTeam",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "52208193375",
+      "classid": "8490836636",
+      "instanceid": "8544093562",
+      "amount": 10,
+      "name": "Sticker | HUASOPEEK (Foil) | Cologne 2026",
+      "market_hash_name": "Sticker | HUASOPEEK (Foil) | Cologne 2026",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207A6A7A62C3735A7A527E4A7E187F727A6A992E127A0A7829D9A7A1",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52208193375",
+        "52208193374",
+        "52208193373",
+        "52208193372",
+        "52208193381",
+        "52208193380",
+        "52208193379",
+        "52208193378",
+        "52208193377",
+        "52208193376"
+      ]
+    },
+    {
+      "assetid": "52208213855",
+      "classid": "8491213456",
+      "instanceid": "8544093562",
+      "amount": 5,
+      "name": "Sticker | NertZ (Foil) | Cologne 2026",
+      "market_hash_name": "Sticker | NertZ (Foil) | Cologne 2026",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F0E0F0E849F9D0F0D8F4C0F492F5F8F0E07BA498F080F271AEE563",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52208213855",
+        "52208213854",
+        "52208213853",
+        "52208213852",
+        "52208213851"
+      ]
+    },
+    {
+      "assetid": "52208218271",
+      "classid": "8491020019",
+      "instanceid": "8544093562",
+      "amount": 5,
+      "name": "Sticker | SunPayus (Foil) | Cologne 2026",
+      "market_hash_name": "Sticker | SunPayus (Foil) | Cologne 2026",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206676667EDF6F46664E62566204636E6676E9320E661664FF945235",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52208218271",
+        "52208218270",
+        "52208218269",
+        "52208218268",
+        "52208218267"
       ]
     },
     {
