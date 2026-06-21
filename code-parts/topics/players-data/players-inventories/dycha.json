@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/ff5a0714-0b89-4646-a6b3-34fc571913ff",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-20T07:45:59.911Z",
+  "updatedAt": "2026-06-21T08:47:18.504Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 308,
-  "totalItemsGrouped": 266,
+  "totalItemsRaw": 309,
+  "totalItemsGrouped": 267,
   "items": [
     {
       "assetid": "36455956753",
@@ -6713,7 +6713,7 @@
       ]
     },
     {
-      "assetid": "52208193375",
+      "assetid": "52208193376",
       "classid": "8490836636",
       "instanceid": "8544093562",
       "amount": 10,
@@ -6756,6 +6756,7 @@
         }
       ],
       "assetids": [
+        "52208193376",
         "52208193375",
         "52208193374",
         "52208193373",
@@ -6764,8 +6765,7 @@
         "52208193380",
         "52208193379",
         "52208193378",
-        "52208193377",
-        "52208193376"
+        "52208193377"
       ]
     },
     {
@@ -7538,6 +7538,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52241452738",
+      "classid": "8246941130",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "M4A1-S | Electrum",
+      "market_hash_name": "M4A1-S | Electrum (Factory New)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

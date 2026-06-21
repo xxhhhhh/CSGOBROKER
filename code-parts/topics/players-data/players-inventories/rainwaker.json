@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/5157fde3-01e1-4eeb-886b-ae2185569711",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-14T07:42:49.567Z",
+  "updatedAt": "2026-06-21T08:23:59.942Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 663,
-  "totalItemsGrouped": 495,
+  "totalItemsRaw": 679,
+  "totalItemsGrouped": 511,
   "items": [
     {
       "assetid": "49987560305",
@@ -1149,6 +1149,34 @@
     },
     {
       "assetid": "51577266791",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52421247896",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -2607,6 +2635,37 @@
       ],
       "assetids": [
         "44007097389"
+      ]
+    },
+    {
+      "assetid": "52421247897",
+      "classid": "1989279141",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | NaCl (Shark White)",
+      "market_hash_name": "Sealed Graffiti | NaCl (Shark White)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201B0B1B03DF113B1B331A2B1F791C131B0BDE162B08731B6B0374E38C18",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52421247897"
       ]
     },
     {
@@ -13409,6 +13468,78 @@
       ]
     },
     {
+      "assetid": "52239520078",
+      "classid": "7993036189",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "P250 | Re.built",
+      "market_hash_name": "P250 | Re.built (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52239526075",
+      "classid": "7993035924",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "P250 | Re.built",
+      "market_hash_name": "P250 | Re.built (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "45262421955",
       "classid": "7993041949",
       "instanceid": "480085569",
@@ -13777,6 +13908,42 @@
       "market_hash_name": "P2000 | Sure Grip (Field-Tested)",
       "type": "Mil-Spec Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%201404B89A9686B4150C3434891D3C1724102CA080B4E11754CB127C9316641CD8840384",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52239568496",
+      "classid": "7993037366",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "Tec-9 | Rebel",
+      "market_hash_name": "Tec-9 | Rebel (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -14885,6 +15052,42 @@
       ]
     },
     {
+      "assetid": "52239556533",
+      "classid": "7993036203",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "MP5-SD | Liquidation",
+      "market_hash_name": "MP5-SD | Liquidation (Minimal Wear)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "33295103053",
       "classid": "7993037817",
       "instanceid": "188530139",
@@ -15145,6 +15348,42 @@
       "market_hash_name": "MP9 | Featherweight (Field-Tested)",
       "type": "Mil-Spec Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D6C620227C52AACEF4F61FDFFED5E6D2EE46341B23D5961BD4BE42D4A6DEAFCAC776",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52239586011",
+      "classid": "7993035925",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "MP9 | Featherweight",
+      "market_hash_name": "MP9 | Featherweight (Minimal Wear)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -15477,6 +15716,150 @@
       "market_hash_name": "SCAR-20 | Fragments (Battle-Scarred)",
       "type": "Mil-Spec Grade Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A2B22B740926DEBA848268AB8AA192A69A1A5B2958A1E263A0CA3BA0D2AADEE552B6",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52239532211",
+      "classid": "7993035743",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "SCAR-20 | Fragments",
+      "market_hash_name": "SCAR-20 | Fragments (Field-Tested)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52239538503",
+      "classid": "7993035743",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "SCAR-20 | Fragments",
+      "market_hash_name": "SCAR-20 | Fragments (Field-Tested)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52239550926",
+      "classid": "7993035743",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "SCAR-20 | Fragments",
+      "market_hash_name": "SCAR-20 | Fragments (Field-Tested)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52239505328",
+      "classid": "7993035663",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "SCAR-20 | Fragments",
+      "market_hash_name": "SCAR-20 | Fragments (Minimal Wear)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -17425,6 +17808,78 @@
       ]
     },
     {
+      "assetid": "52239513116",
+      "classid": "7993036288",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "M4A1-S | Emphorosaur-S",
+      "market_hash_name": "M4A1-S | Emphorosaur-S (Field-Tested)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52239574994",
+      "classid": "7993035796",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "M4A1-S | Emphorosaur-S",
+      "market_hash_name": "M4A1-S | Emphorosaur-S (Minimal Wear)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "44007215184",
       "classid": "7993037558",
       "instanceid": "519977179",
@@ -17433,6 +17888,78 @@
       "market_hash_name": "MAC-10 | Derailment (Factory New)",
       "type": "Restricted SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%203323E39390CB90322B2213873A1B3703370BBEB0EBD83073625BB03143245FC04AC7",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52239580608",
+      "classid": "7993038017",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "MAC-10 | Sakkaku",
+      "market_hash_name": "MAC-10 | Sakkaku (Battle-Scarred)",
+      "type": "Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52239545291",
+      "classid": "7993037292",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "P90 | Neoqueen",
+      "market_hash_name": "P90 | Neoqueen (Minimal Wear)",
+      "type": "Restricted SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -18453,6 +18980,42 @@
       "market_hash_name": "StatTrak™ M4A4 | Choppa (Minimal Wear)",
       "type": "StatTrak™ Mil-Spec Grade Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%2023338C9A98DBBC223B3303992A0B20132A1BEC8DCBCE2063576B2373384B8221532B1B5DAB03",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52239562447",
+      "classid": "7993038349",
+      "instanceid": "8547016162",
+      "amount": 1,
+      "name": "StatTrak™ SG 553 | Cyberforce",
+      "market_hash_name": "StatTrak™ SG 553 | Cyberforce (Field-Tested)",
+      "type": "StatTrak™ Mil-Spec Grade Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
