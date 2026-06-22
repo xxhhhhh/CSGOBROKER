@@ -12,49 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/e1051e60-443e-4dfb-be63-67338e479ffc",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-12T08:13:50.904Z",
+  "updatedAt": "2026-06-21T08:53:39.839Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 69,
-  "totalItemsGrouped": 69,
+  "totalItemsRaw": 66,
+  "totalItemsGrouped": 66,
   "items": [
-    {
-      "assetid": "51485626086",
-      "classid": "7993043717",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Flip Knife | Doppler",
-      "market_hash_name": "★ Flip Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6D9BE0DC9BC27C65847E5DDE7E557B4D7E45A3A3C0967E3D977C15500D792DE716CB",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.058455817401,
-      "seed": 234,
-      "phase": "Phase 2"
-    },
     {
       "assetid": "51345034556",
       "classid": "7993040869",
@@ -126,34 +91,6 @@
       "phase": "Phase 2"
     },
     {
-      "assetid": "50964581466",
-      "classid": "7993040145",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Specialist Gloves | Emerald Web",
-      "market_hash_name": "★ Specialist Gloves | Emerald Web (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51452989182",
       "classid": "7993037104",
       "instanceid": "480085569",
@@ -162,34 +99,6 @@
       "market_hash_name": "★ Sport Gloves | Nocts (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49874266725",
-      "classid": "7993044468",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Pandora's Box",
-      "market_hash_name": "★ Sport Gloves | Pandora's Box (Well-Worn)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B6A6536245530FB7AE10919603F89EB086B58E6A6E5940B5F678B0DEA0C6BEC7C02306",
       "tags": [
         {
           "category": "Type",
@@ -790,6 +699,42 @@
       ]
     },
     {
+      "assetid": "52090979610",
+      "classid": "7993035494",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M4A1-S | Printstream",
+      "market_hash_name": "M4A1-S | Printstream (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "48842066049",
       "classid": "7993037350",
       "instanceid": "480085569",
@@ -878,9 +823,9 @@
       ]
     },
     {
-      "assetid": "52150425769",
+      "assetid": "52425776353",
       "classid": "7993043175",
-      "instanceid": "8535703022",
+      "instanceid": "6690928402",
       "amount": 1,
       "name": "AWP | The Prince",
       "market_hash_name": "AWP | The Prince (Field-Tested)",
@@ -920,23 +865,11 @@
           "name": ""
         },
         {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
           "category": "TournamentTeam",
           "name": ""
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         },
         {
@@ -2013,7 +1946,7 @@
     {
       "assetid": "26300364855",
       "classid": "7993041682",
-      "instanceid": "480089799",
+      "instanceid": "480089461",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Fowl Play",
       "market_hash_name": "StatTrak™ Five-SeveN | Fowl Play (Field-Tested)",
@@ -2047,53 +1980,9 @@
       ]
     },
     {
-      "assetid": "47236215702",
-      "classid": "7993044497",
-      "instanceid": "8534153874",
-      "amount": 1,
-      "name": "StatTrak™ AWP | BOOM",
-      "market_hash_name": "StatTrak™ AWP | BOOM (Minimal Wear)",
-      "type": "StatTrak™ Classified Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205141C7B6ACAAFE50495871FF507954615869F1B2BABC5211AD55195101D64233555952416A39482159CFCD09B0",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "47287272166",
       "classid": "7993040447",
-      "instanceid": "188532028",
+      "instanceid": "188530292",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Bad Trip",
       "market_hash_name": "StatTrak™ FAMAS | Bad Trip (Field-Tested)",
@@ -2156,7 +2045,7 @@
     {
       "assetid": "25303467072",
       "classid": "7993036443",
-      "instanceid": "480100619",
+      "instanceid": "480097190",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Bamboozle",
       "market_hash_name": "StatTrak™ Tec-9 | Bamboozle (Minimal Wear)",

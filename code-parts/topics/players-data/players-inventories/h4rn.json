@@ -12,21 +12,21 @@
   "faceit": "https://faceitdb.com/profile/faceit/8f151c97-d096-40f1-b3ae-3afaaca644bb",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-12T08:32:16.058Z",
+  "updatedAt": "2026-06-21T09:10:56.030Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 171,
-  "totalItemsGrouped": 127,
+  "totalItemsRaw": 173,
+  "totalItemsGrouped": 129,
   "items": [
     {
-      "assetid": "52241379449",
-      "classid": "7993040712",
-      "instanceid": "188530139",
+      "assetid": "52122908236",
+      "classid": "7993040637",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Talon Knife | Slaughter",
-      "market_hash_name": "★ Talon Knife | Slaughter (Minimal Wear)",
+      "name": "★ Butterfly Knife | Night",
+      "market_hash_name": "★ Butterfly Knife | Night (Field-Tested)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -63,6 +63,34 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Fade",
       "market_hash_name": "★ Specialist Gloves | Fade (Battle-Scarred)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52127199187",
+      "classid": "8248450262",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Violet Beadwork",
+      "market_hash_name": "★ Sport Gloves | Violet Beadwork (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -484,66 +512,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52142299469",
-      "classid": "7993042932",
-      "instanceid": "7758150209",
-      "amount": 1,
-      "name": "M4A4 | Eye of Horus",
-      "market_hash_name": "M4A4 | Eye of Horus (Battle-Scarred)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -2128,6 +2096,53 @@
       ]
     },
     {
+      "assetid": "52143982892",
+      "classid": "6449453188",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | sh1ro (Gold, Champion) | Shanghai 2024",
+      "market_hash_name": "Sticker | sh1ro (Gold, Champion) | Shanghai 2024",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ECFCECF455E5CCECC4EADCE88EE9E4ECFC08AE84EC9CE4E685969A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52143982892"
+      ]
+    },
+    {
       "assetid": "29098025317",
       "classid": "4839654531",
       "instanceid": "188530139",
@@ -2752,49 +2767,6 @@
       ]
     },
     {
-      "assetid": "37675279944",
-      "classid": "5799820597",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | ENCE | Copenhagen 2024",
-      "market_hash_name": "Sticker | ENCE | Copenhagen 2024",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F1E1F1E948F8D1F1D9F2C1F593F4F9F1E10BC999F181F9B5E1A454",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "37675279944"
-      ]
-    },
-    {
       "assetid": "32468257287",
       "classid": "5327976194",
       "instanceid": "188530139",
@@ -3021,6 +2993,53 @@
         "31984674426",
         "31984622380",
         "31651355404"
+      ]
+    },
+    {
+      "assetid": "52197112675",
+      "classid": "5862369794",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | iM (Champion) | Copenhagen 2024",
+      "market_hash_name": "Sticker | iM (Champion) | Copenhagen 2024",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208C9C8C943585AC8CA48FBC88EE89848C9C33B1E48CFC84A40B1467",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52197112675"
       ]
     },
     {
@@ -4104,7 +4123,7 @@
     {
       "assetid": "46841752076",
       "classid": "7993041406",
-      "instanceid": "6335913258",
+      "instanceid": "6346038190",
       "amount": 1,
       "name": "StatTrak™ P250 | Asiimov",
       "market_hash_name": "StatTrak™ P250 | Asiimov (Field-Tested)",
@@ -4196,7 +4215,7 @@
     {
       "assetid": "44964068926",
       "classid": "7993037037",
-      "instanceid": "8550840525",
+      "instanceid": "8578572251",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Black Lotus",
       "market_hash_name": "StatTrak™ M4A1-S | Black Lotus (Field-Tested)",
@@ -4242,9 +4261,53 @@
       ]
     },
     {
+      "assetid": "52195987913",
+      "classid": "7993041854",
+      "instanceid": "8573989981",
+      "amount": 1,
+      "name": "StatTrak™ M4A4 | Tooth Fairy",
+      "market_hash_name": "StatTrak™ M4A4 | Tooth Fairy (Minimal Wear)",
+      "type": "StatTrak™ Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49053541762",
       "classid": "7993037525",
-      "instanceid": "8550840524",
+      "instanceid": "8579366388",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
@@ -4292,7 +4355,7 @@
     {
       "assetid": "52203969943",
       "classid": "7993039606",
-      "instanceid": "7228166886",
+      "instanceid": "6522469828",
       "amount": 1,
       "name": "StatTrak™ USP-S | Printstream",
       "market_hash_name": "StatTrak™ USP-S | Printstream (Battle-Scarred)",
@@ -4336,7 +4399,7 @@
     {
       "assetid": "51439386088",
       "classid": "7993038179",
-      "instanceid": "8550840523",
+      "instanceid": "8579186796",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Inheritance",
       "market_hash_name": "StatTrak™ AK-47 | Inheritance (Battle-Scarred)",
@@ -4384,7 +4447,7 @@
     {
       "assetid": "52144136361",
       "classid": "8247473707",
-      "instanceid": "188607754",
+      "instanceid": "188581951",
       "amount": 1,
       "name": "StatTrak™ AWP | Queen's Gambit",
       "market_hash_name": "StatTrak™ AWP | Queen's Gambit (Battle-Scarred)",
@@ -4420,7 +4483,7 @@
     {
       "assetid": "48009104867",
       "classid": "7993042047",
-      "instanceid": "6562152557",
+      "instanceid": "6577995745",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Jambiya",
       "market_hash_name": "StatTrak™ Tec-9 | Jambiya (Field-Tested)",
@@ -4468,7 +4531,7 @@
     {
       "assetid": "47814879233",
       "classid": "7993038080",
-      "instanceid": "188575814",
+      "instanceid": "188537367",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Crypsis",
       "market_hash_name": "StatTrak™ FAMAS | Crypsis (Field-Tested)",
@@ -4538,50 +4601,14 @@
       ]
     },
     {
-      "assetid": "47814967395",
-      "classid": "7993036362",
-      "instanceid": "188537708",
+      "assetid": "52197129871",
+      "classid": "7993039960",
+      "instanceid": "8579366387",
       "amount": 1,
-      "name": "StatTrak™ SSG 08 | Memorial",
-      "market_hash_name": "StatTrak™ SSG 08 | Memorial (Well-Worn)",
+      "name": "StatTrak™ SSG 08 | Dezastre",
+      "market_hash_name": "StatTrak™ SSG 08 | Dezastre (Factory New)",
       "type": "StatTrak™ Mil-Spec Grade Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242B1D2A8DDE0534A7A72F15B7A51625B6AA2CC9FA45112A1501A5202F6533A48225ABF92E66D",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49164162857",
-      "classid": "7993039300",
-      "instanceid": "6800884788",
-      "amount": 1,
-      "name": "StatTrak™ Glock-18 | Grinder",
-      "market_hash_name": "StatTrak™ Glock-18 | Grinder (Minimal Wear)",
-      "type": "StatTrak™ Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D7C77E79714460D6CFD3F72AD5FFD3E7DEEF3F0A3138D4976AD09FD78724D6B5D2DFD7C73BD3B5D2DFD6C73BD3B5D2DFD5C73BD3B5D2DFD4C73BD3BF92A7DFE425A084",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -4613,6 +4640,50 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47814967395",
+      "classid": "7993036362",
+      "instanceid": "188537708",
+      "amount": 1,
+      "name": "StatTrak™ SSG 08 | Memorial",
+      "market_hash_name": "StatTrak™ SSG 08 | Memorial (Well-Worn)",
+      "type": "StatTrak™ Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242B1D2A8DDE0534A7A72F15B7A51625B6AA2CC9FA45112A1501A5202F6533A48225ABF92E66D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -4680,7 +4751,7 @@
     {
       "assetid": "52048946311",
       "classid": "7993041474",
-      "instanceid": "8553339969",
+      "instanceid": "7209312330",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Signal",
       "market_hash_name": "StatTrak™ Galil AR | Signal (Factory New)",
@@ -4776,7 +4847,7 @@
     {
       "assetid": "23812042295",
       "classid": "7993038258",
-      "instanceid": "480085572",
+      "instanceid": "480090490",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Allure",
       "market_hash_name": "StatTrak™ MAC-10 | Allure (Field-Tested)",
@@ -4812,7 +4883,7 @@
     {
       "assetid": "50835878857",
       "classid": "8246991029",
-      "instanceid": "188530323",
+      "instanceid": "188538004",
       "amount": 1,
       "name": "StatTrak™ MP9 | Urban Sovereign",
       "market_hash_name": "StatTrak™ MP9 | Urban Sovereign (Field-Tested)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e942341f-24df-45d9-ac6d-9817cfa6ad0b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-06T07:02:48.275Z",
+  "updatedAt": "2026-06-19T09:03:46.014Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 38,
-  "totalItemsGrouped": 36,
+  "totalItemsRaw": 49,
+  "totalItemsGrouped": 38,
   "items": [
     {
       "assetid": "48679779279",
@@ -354,6 +354,58 @@
       ]
     },
     {
+      "assetid": "51830780411",
+      "classid": "8490799087",
+      "instanceid": "143865972",
+      "amount": 10,
+      "name": "Sticker | TYLOO (Holo) | Cologne 2026",
+      "market_hash_name": "Sticker | TYLOO (Holo) | Cologne 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207C6C7C64C5755C7C54794C781E79747C6C9B2D147C0C7EB48E60E9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51830780411",
+        "51830780410",
+        "51830780409",
+        "51830780408",
+        "51830780407",
+        "51830780406",
+        "51830780405",
+        "51830780404",
+        "51830780403",
+        "51830780412"
+      ]
+    },
+    {
       "assetid": "31739619320",
       "classid": "778383679",
       "instanceid": "0",
@@ -511,11 +563,11 @@
     },
     {
       "assetid": "51830754584",
-      "classid": "8534113218",
+      "classid": "8564022767",
       "instanceid": "8490788405",
       "amount": 1,
-      "name": "Cologne 2026 Silver Coin",
-      "market_hash_name": "Cologne 2026 Silver Coin",
+      "name": "Cologne 2026 Gold Coin",
+      "market_hash_name": "Cologne 2026 Gold Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -1088,13 +1140,13 @@
       ]
     },
     {
-      "assetid": "51785107290",
-      "classid": "8246900129",
-      "instanceid": "188530139",
+      "assetid": "51830160313",
+      "classid": "7993040700",
+      "instanceid": "7852481853",
       "amount": 1,
-      "name": "Desert Eagle | Firebreathing",
-      "market_hash_name": "Desert Eagle | Firebreathing (Well-Worn)",
-      "type": "Restricted Pistol",
+      "name": "Souvenir MAG-7 | Rust Coat",
+      "market_hash_name": "Souvenir MAG-7 | Rust Coat (Battle-Scarred)",
+      "type": "Souvenir Consumer Grade Shotgun",
       "inspectLink": "",
       "tags": [
         {
@@ -1119,18 +1171,30 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
     },
     {
-      "assetid": "48387877539",
-      "classid": "7993035913",
-      "instanceid": "188530139",
+      "assetid": "51830161623",
+      "classid": "7993040700",
+      "instanceid": "7274765726",
       "amount": 1,
-      "name": "Glock-18 | Umbral Rabbit",
-      "market_hash_name": "Glock-18 | Umbral Rabbit (Field-Tested)",
-      "type": "Restricted Pistol",
+      "name": "Souvenir MAG-7 | Rust Coat",
+      "market_hash_name": "Souvenir MAG-7 | Rust Coat (Battle-Scarred)",
+      "type": "Souvenir Consumer Grade Shotgun",
       "inspectLink": "",
       "tags": [
         {
@@ -1155,6 +1219,66 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51830330203",
+      "classid": "7993036322",
+      "instanceid": "6276300184",
+      "amount": 1,
+      "name": "Souvenir PP-Bizon | Anolis",
+      "market_hash_name": "Souvenir PP-Bizon | Anolis (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

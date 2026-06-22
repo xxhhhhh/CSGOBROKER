@@ -7,61 +7,24 @@
   "name": "Santino Bruno",
   "nationality": "Argentina",
   "born": "23.09.2004",
-  "isContentCreator": false,
   "twitch": "TRYZSE",
   "faceit": "https://faceitdb.com/profile/faceit/1830d4f8-a243-47d8-b8b8-943f7170b163",
-  "appid": 730,
-  "contextid": "2",
-  "updatedAt": "2026-06-11T08:02:08.750Z",
-  "inventoryVisible": true,
-  "fetchOk": true,
-  "fetchStatus": 200,
-  "fetchError": "",
-  "totalItemsRaw": 368,
-  "totalItemsGrouped": 367,
+  "isContentCreator": false,
+  "updatedAt": "2026-06-15T09:29:11.512Z",
+  "fetchOk": false,
+  "fetchStatus": 403,
+  "fetchError": "Inventory is private or unavailable",
+  "inventoryVisible": false,
+  "totalItemsRaw": 370,
+  "totalItemsGrouped": 369,
   "items": [
     {
-      "assetid": "51616267850",
-      "classid": "7993042978",
+      "assetid": "48381038830",
+      "classid": "7993038502",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Karambit | Doppler",
-      "market_hash_name": "★ Karambit | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203828F2C4FE9CF83920C33B18A73B103E083B00DD8BCCDD3B78DE3B5068483089B0E452",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.023083636537,
-      "seed": 486,
-      "phase": "Ruby"
-    },
-    {
-      "assetid": "49595870175",
-      "classid": "7993042727",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Bloodhound Gloves | Charred",
-      "market_hash_name": "★ Bloodhound Gloves | Charred (Field-Tested)",
+      "name": "★ Hand Wraps | Cobalt Skulls",
+      "market_hash_name": "★ Hand Wraps | Cobalt Skulls (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -84,12 +47,12 @@
       ]
     },
     {
-      "assetid": "48381038830",
-      "classid": "7993038502",
+      "assetid": "52063044953",
+      "classid": "8246975941",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Hand Wraps | Cobalt Skulls",
-      "market_hash_name": "★ Hand Wraps | Cobalt Skulls (Field-Tested)",
+      "name": "★ Specialist Gloves | Cloud Chaser",
+      "market_hash_name": "★ Specialist Gloves | Cloud Chaser (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -146,6 +109,34 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Fade",
       "market_hash_name": "★ Specialist Gloves | Fade (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52052974755",
+      "classid": "7993040299",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -3487,6 +3478,37 @@
       ]
     },
     {
+      "assetid": "52067973183",
+      "classid": "7545312149",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Charm | Lil' Cackle",
+      "market_hash_name": "Charm | Lil' Cackle",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52067973183"
+      ]
+    },
+    {
       "assetid": "50409202609",
       "classid": "7545310506",
       "instanceid": "519977179",
@@ -3950,6 +3972,37 @@
       ],
       "assetids": [
         "47417380278"
+      ]
+    },
+    {
+      "assetid": "52067977938",
+      "classid": "6216348688",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | High Heat",
+      "market_hash_name": "Sticker | High Heat",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205A4A5A42E3537A5A72596A5E385F525A4A9767325A2A4D9487216E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52067977938"
       ]
     },
     {
@@ -12600,7 +12653,7 @@
     {
       "assetid": "50556994645",
       "classid": "8247137616",
-      "instanceid": "188593988",
+      "instanceid": "188559024",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Fully Tuned",
       "market_hash_name": "StatTrak™ Glock-18 | Fully Tuned (Field-Tested)",
@@ -12636,7 +12689,7 @@
     {
       "assetid": "49571276163",
       "classid": "7993041773",
-      "instanceid": "8552709200",
+      "instanceid": "8571039634",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
@@ -12672,7 +12725,7 @@
     {
       "assetid": "48247175793",
       "classid": "7993041410",
-      "instanceid": "903570064",
+      "instanceid": "905628624",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Bloodsport",
       "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Factory New)",
@@ -13332,7 +13385,7 @@
     {
       "assetid": "47912416861",
       "classid": "7993036423",
-      "instanceid": "188531311",
+      "instanceid": "188537024",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Night Terror",
       "market_hash_name": "StatTrak™ M4A1-S | Night Terror (Field-Tested)",
@@ -13404,7 +13457,7 @@
     {
       "assetid": "50557077319",
       "classid": "8247025056",
-      "instanceid": "188532028",
+      "instanceid": "188543202",
       "amount": 1,
       "name": "StatTrak™ MP9 | Urban Sovereign",
       "market_hash_name": "StatTrak™ MP9 | Urban Sovereign (Well-Worn)",

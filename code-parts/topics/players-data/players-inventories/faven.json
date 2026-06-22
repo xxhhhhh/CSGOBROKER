@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/77a0ca34-3de2-45be-86ec-3efe375d4ff2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-08T08:06:41.769Z",
+  "updatedAt": "2026-06-18T08:37:22.686Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 110,
-  "totalItemsGrouped": 85,
+  "totalItemsRaw": 104,
+  "totalItemsGrouped": 79,
   "items": [
     {
       "assetid": "41204122947",
@@ -57,17 +57,25 @@
       ]
     },
     {
-      "assetid": "51772647053",
-      "classid": "8247379564",
+      "assetid": "52179010740",
+      "classid": "7993042134",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Specialist Gloves | Cloud Chaser",
-      "market_hash_name": "★ Specialist Gloves | Cloud Chaser (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
+      "name": "★ Stiletto Knife | Doppler",
+      "market_hash_name": "★ Stiletto Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208C9C38057E3C4E8D940688AC2C8FA48ABC8FB44E752F6A8FCC7189E4C7FC842E0CA7CB",
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -82,7 +90,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.024534586817,
+      "seed": 765,
+      "phase": "Sapphire"
     },
     {
       "assetid": "49092428003",
@@ -93,34 +104,6 @@
       "market_hash_name": "★ Sport Gloves | Nocts (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%201505F69499E4A3140DB33235C95B3D1325162DDCD7C7EC1655D8167D06651DE9952770",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49116750405",
-      "classid": "7993038043",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Vice",
-      "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205A4A9F9E82A6EC5B42FC7D7A9A14725C6A5962C6DA9EA8591A8859327B2A528081BCEE",
       "tags": [
         {
           "category": "Type",
@@ -424,50 +407,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49633967336",
-      "classid": "259081652",
-      "instanceid": "6276337756",
-      "amount": 1,
-      "name": "P250 | Mehndi",
-      "market_hash_name": "P250 | Mehndi (Well-Worn)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20819169782972398099A5A10383A984B185B909774E7782C13483E385898291B8E9A8F1896FA6928B",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1140,106 +1079,6 @@
         },
         {
           "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49633967416",
-      "classid": "7993039913",
-      "instanceid": "6291620469",
-      "amount": 1,
-      "name": "AWP | Fade",
-      "market_hash_name": "AWP | Fade (Factory New)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A6B61E5C0E551EA7BEAF8624AE8EA096A29E41637D47A5E671A7C4A3AEA5B62B81C4A3AEA4B62B81C4A3AEA7B62B81CEBAD6A2B4DC9A1C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51959794052",
-      "classid": "7993044593",
-      "instanceid": "8496281874",
-      "amount": 1,
-      "name": "AWP | Gungnir",
-      "market_hash_name": "AWP | Gungnir (Field-Tested)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         },
         {
@@ -2570,42 +2409,6 @@
       ]
     },
     {
-      "assetid": "49485674306",
-      "classid": "7993037739",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Zeus x27 | Tosai",
-      "market_hash_name": "Zeus x27 | Tosai (Minimal Wear)",
-      "type": "Restricted Equipment",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "38926676346",
       "classid": "7993036990",
       "instanceid": "188530139",
@@ -2709,50 +2512,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49485674292",
-      "classid": "188530425",
-      "instanceid": "6299828430",
-      "amount": 1,
-      "name": "Glock-18 | Fade",
-      "market_hash_name": "Glock-18 | Fade (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209282267C5F3E2A938A96B2B4BA96A296AA393F3E7191D26293F0979A91827393F0869A90827393BF92923AD3AFA3475DACD72EE954AFFA89E2923453DEC2",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -3116,7 +2875,7 @@
     {
       "assetid": "51837292017",
       "classid": "7993047832",
-      "instanceid": "8545895701",
+      "instanceid": "8573440216",
       "amount": 1,
       "name": "StatTrak™ AK-47 | The Oligarch",
       "market_hash_name": "StatTrak™ AK-47 | The Oligarch (Field-Tested)",
@@ -3216,7 +2975,7 @@
     {
       "assetid": "48934786726",
       "classid": "7993045705",
-      "instanceid": "188591177",
+      "instanceid": "480089063",
       "amount": 1,
       "name": "StatTrak™ P250 | Wingshot",
       "market_hash_name": "StatTrak™ P250 | Wingshot (Battle-Scarred)",
@@ -3252,7 +3011,7 @@
     {
       "assetid": "31988309912",
       "classid": "7993039350",
-      "instanceid": "904161578",
+      "instanceid": "903593604",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Pipe Down",
       "market_hash_name": "StatTrak™ MAC-10 | Pipe Down (Field-Tested)",

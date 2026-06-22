@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/players/skywhywalker",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-08T07:32:34.651Z",
+  "updatedAt": "2026-06-21T08:02:16.749Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 227,
-  "totalItemsGrouped": 173,
+  "totalItemsRaw": 230,
+  "totalItemsGrouped": 176,
   "items": [
     {
       "assetid": "49576732935",
@@ -250,45 +250,6 @@
       "float": 0.034055117518,
       "seed": 902,
       "phase": "Emerald"
-    },
-    {
-      "assetid": "49062111226",
-      "classid": "7993040463",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Gamma Doppler",
-      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201101EBDEC0F3A71009921531AA153917211229A1EC8AF71251C81379636115B6C11E55",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.024291366339,
-      "seed": 345,
-      "phase": "Phase 3"
     },
     {
       "assetid": "51052816559",
@@ -570,6 +531,38 @@
       "market_hash_name": "★ Karambit | Marble Fade (Factory New)",
       "type": "★ Covert Knife",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%204353BBFEC2F7F8425BB84063DE406B4573407BC1F9FA9C40037A2BC041334BD5D01546",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52195721219",
+      "classid": "7993048578",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Night",
+      "market_hash_name": "★ Karambit | Night (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1131,14 +1124,14 @@
       ]
     },
     {
-      "assetid": "42182687723",
-      "classid": "7993040109",
-      "instanceid": "188530139",
+      "assetid": "52179287401",
+      "classid": "7993038768",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Specialist Gloves | Emerald Web",
-      "market_hash_name": "★ Specialist Gloves | Emerald Web (Minimal Wear)",
+      "name": "★ Specialist Gloves | Foundation",
+      "market_hash_name": "★ Specialist Gloves | Foundation (Field-Tested)",
       "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ACBC475B0E3E31ADB4068B8C1EE284AA9CAF943C5B6E5CAFEC6AAAC4B1DCA475F29D63",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3355,6 +3348,37 @@
       ]
     },
     {
+      "assetid": "52240371401",
+      "classid": "6217544542",
+      "instanceid": "8547015404",
+      "amount": 1,
+      "name": "Charm | Hot Howl",
+      "market_hash_name": "Charm | Hot Howl",
+      "type": "Extraordinary Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52240371401"
+      ]
+    },
+    {
       "assetid": "51828116471",
       "classid": "778383679",
       "instanceid": "0",
@@ -3460,11 +3484,11 @@
     },
     {
       "assetid": "51845025723",
-      "classid": "8534113218",
+      "classid": "8564022767",
       "instanceid": "8490785265",
       "amount": 1,
-      "name": "Cologne 2026 Silver Coin",
-      "market_hash_name": "Cologne 2026 Silver Coin",
+      "name": "Cologne 2026 Gold Coin",
+      "market_hash_name": "Cologne 2026 Gold Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -4216,6 +4240,41 @@
       ]
     },
     {
+      "assetid": "52424882991",
+      "classid": "1989338735",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Graffiti | Rising Skull",
+      "market_hash_name": "Graffiti | Rising Skull",
+      "type": "Remarkable Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201606160ED31C36163E12261274131E1606951B7E16661E2A330A3D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        },
+        {
+          "category": "SprayCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52424882991"
+      ]
+    },
+    {
       "assetid": "43882250228",
       "classid": "6449447162",
       "instanceid": "188530139",
@@ -4782,6 +4841,58 @@
       ]
     },
     {
+      "assetid": "52195567919",
+      "classid": "7993046174",
+      "instanceid": "7907022553",
+      "amount": 1,
+      "name": "Souvenir AWP | LongDog",
+      "market_hash_name": "Souvenir AWP | LongDog (Well-Worn)",
+      "type": "Souvenir Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51401184224",
       "classid": "7993044206",
       "instanceid": "7628640174",
@@ -4936,7 +5047,7 @@
     {
       "assetid": "43883147717",
       "classid": "7993038813",
-      "instanceid": "8220815453",
+      "instanceid": "8555382557",
       "amount": 1,
       "name": "StatTrak™ Zeus x27 | Olympus",
       "market_hash_name": "StatTrak™ Zeus x27 | Olympus (Factory New)",
@@ -5268,7 +5379,7 @@
     {
       "assetid": "42049466837",
       "classid": "7993043351",
-      "instanceid": "188531839",
+      "instanceid": "188532173",
       "amount": 1,
       "name": "StatTrak™ XM1014 | Incinegator",
       "market_hash_name": "StatTrak™ XM1014 | Incinegator (Minimal Wear)",
@@ -5340,7 +5451,7 @@
     {
       "assetid": "29724782067",
       "classid": "7993043001",
-      "instanceid": "7782100321",
+      "instanceid": "8559821412",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Golden Koi",
       "market_hash_name": "StatTrak™ Desert Eagle | Golden Koi (Factory New)",
@@ -5652,7 +5763,7 @@
     {
       "assetid": "43883195965",
       "classid": "7993042053",
-      "instanceid": "8445232685",
+      "instanceid": "8559821405",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Inheritance",
       "market_hash_name": "StatTrak™ AK-47 | Inheritance (Factory New)",
@@ -5940,7 +6051,7 @@
     {
       "assetid": "42052048031",
       "classid": "7993040767",
-      "instanceid": "6700837911",
+      "instanceid": "7537663636",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Neon Rider",
       "market_hash_name": "StatTrak™ MAC-10 | Neon Rider (Factory New)",
@@ -6211,7 +6322,7 @@
     {
       "assetid": "40078034208",
       "classid": "7993038994",
-      "instanceid": "8549003377",
+      "instanceid": "8564354286",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Kami",
       "market_hash_name": "StatTrak™ Five-SeveN | Kami (Factory New)",
@@ -6351,7 +6462,7 @@
     {
       "assetid": "40579040581",
       "classid": "7993039768",
-      "instanceid": "8552630395",
+      "instanceid": "8579697784",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Dragon Tattoo",
       "market_hash_name": "StatTrak™ Glock-18 | Dragon Tattoo (Factory New)",
@@ -6539,7 +6650,7 @@
     {
       "assetid": "31611578202",
       "classid": "7993044115",
-      "instanceid": "7769825229",
+      "instanceid": "8559821411",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Blue Laminate",
       "market_hash_name": "StatTrak™ AK-47 | Blue Laminate (Minimal Wear)",
@@ -6591,7 +6702,7 @@
     {
       "assetid": "31926317392",
       "classid": "7993044686",
-      "instanceid": "8552630397",
+      "instanceid": "8555382559",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Dark Water",
       "market_hash_name": "StatTrak™ M4A1-S | Dark Water (Minimal Wear)",

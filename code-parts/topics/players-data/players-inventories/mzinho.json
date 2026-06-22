@@ -7,98 +7,26 @@
   "name": "Ayush Batbold",
   "nationality": "Mongolia",
   "born": "28.06.2007",
+  "isContentCreator": false,
   "twitch": "mzinhocsgo",
   "faceit": "https://faceitdb.com/profile/faceit/009623b1-dd6e-4551-959e-990a21657f93",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-07T07:19:52.785Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 110,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-06-21T08:12:56.433Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 111,
   "totalItemsGrouped": 110,
   "items": [
     {
-      "assetid": "51810159452",
-      "classid": "7993040883",
+      "assetid": "52101816336",
+      "classid": "7993040299",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Butterfly Knife | Doppler",
-      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209888440E19195999801B9CB8079BB09EA89BA0062F4B729BD8319BF084E890D4AA45B8",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.051967255771,
-      "seed": 425,
-      "phase": "Ruby"
-    },
-    {
-      "assetid": "51235147670",
-      "classid": "7993044870",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Gamma Doppler",
-      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2019098F86F0F7A71801E51A39A11D311F291A21B09FE8FC1A59D01C7139691D27E426AD",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.022981243208,
-      "seed": 713,
-      "phase": "Emerald"
-    },
-    {
-      "assetid": "50748667052",
-      "classid": "8247668937",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Specialist Gloves | Pillow Punchers",
-      "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Minimal Wear)",
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -175,6 +103,49 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "52079236650",
+      "classid": "7993043109",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "★ StatTrak™ M9 Bayonet | Doppler",
+      "market_hash_name": "★ StatTrak™ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206C7CC6C0C4EDAE6D74906F4CF36F446A5C6F54AD8790B66F2C8A6F246C3C6C04461C64728DCBB3",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.003405913943,
+      "seed": 486,
+      "phase": "Ruby"
     },
     {
       "assetid": "41025968191",
@@ -1128,42 +1099,6 @@
       ]
     },
     {
-      "assetid": "51704118670",
-      "classid": "188530251",
-      "instanceid": "7778253086",
-      "amount": 1,
-      "name": "AK-47 | Case Hardened",
-      "market_hash_name": "AK-47 | Case Hardened (Minimal Wear)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51604836608",
       "classid": "7993038185",
       "instanceid": "519977179",
@@ -1200,14 +1135,14 @@
       ]
     },
     {
-      "assetid": "49132356952",
-      "classid": "7993040074",
-      "instanceid": "6276384721",
+      "assetid": "52194409613",
+      "classid": "7993036194",
+      "instanceid": "302028390",
       "amount": 1,
-      "name": "MP9 | Wild Lily",
-      "market_hash_name": "MP9 | Wild Lily (Factory New)",
-      "type": "Classified SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E5F53D6F746152E4FDC7C53BE0CDE0D5E1DD2176050CE6A5D787E0EDE1F50ECB8D40E495E1DDB4DF05",
+      "name": "R8 Revolver | Cobalt Grip",
+      "market_hash_name": "R8 Revolver | Cobalt Grip (Minimal Wear)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1231,14 +1166,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1316,12 +1243,12 @@
       ]
     },
     {
-      "assetid": "51831536298",
-      "classid": "7993037027",
-      "instanceid": "8521823068",
+      "assetid": "52137404491",
+      "classid": "7993051188",
+      "instanceid": "8022275873",
       "amount": 1,
-      "name": "AK-47 | X-Ray",
-      "market_hash_name": "AK-47 | X-Ray (Field-Tested)",
+      "name": "AK-47 | Wild Lotus",
+      "market_hash_name": "AK-47 | Wild Lotus (Minimal Wear)",
       "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
@@ -1435,62 +1362,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50105663833",
-      "classid": "7993038484",
-      "instanceid": "7781396703",
-      "amount": 1,
-      "name": "AWP | CMYK",
-      "market_hash_name": "AWP | CMYK (Minimal Wear)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C2D21B405D1678C3DACBE261C3EAC4F2C6FA677A142EC1822DC0A0C7CAC1D26DC0A0D6CAC2D22EFFDFC2C242FDFFF6A7937C87828E707EA0DBCAC2D219E3DF7ADC87FDEFC2C28E00FF426EA37E8782AB5BF9AA27C3B2D5719AB33B",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1827,6 +1698,54 @@
       ],
       "assetids": [
         "44374945367"
+      ]
+    },
+    {
+      "assetid": "52026948524",
+      "classid": "8490866845",
+      "instanceid": "143865972",
+      "amount": 2,
+      "name": "Sticker | mzinho (Holo) | Cologne 2026",
+      "market_hash_name": "Sticker | mzinho (Holo) | Cologne 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AFBFAFB716A68FAF87AA9FABCDAAA7AFBF5FFDC7AFDFAD39B33BDC",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52026948524",
+        "52026948523"
       ]
     },
     {
@@ -2356,11 +2275,11 @@
     },
     {
       "assetid": "51830888907",
-      "classid": "8534113218",
-      "instanceid": "8490847162",
+      "classid": "8564022767",
+      "instanceid": "8490788405",
       "amount": 1,
-      "name": "Cologne 2026 Silver Coin",
-      "market_hash_name": "Cologne 2026 Silver Coin",
+      "name": "Cologne 2026 Gold Coin",
+      "market_hash_name": "Cologne 2026 Gold Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -2675,6 +2594,37 @@
       ]
     },
     {
+      "assetid": "52194565104",
+      "classid": "7545312148",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Charm | Lil' Baller",
+      "market_hash_name": "Charm | Lil' Baller",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52194565104"
+      ]
+    },
+    {
       "assetid": "42042565268",
       "classid": "2750358583",
       "instanceid": "188530139",
@@ -2962,13 +2912,44 @@
       ]
     },
     {
-      "assetid": "51722027348",
-      "classid": "7993037374",
-      "instanceid": "8291940617",
+      "assetid": "52235847119",
+      "classid": "7545312261",
+      "instanceid": "8547015772",
       "amount": 1,
-      "name": "MAC-10 | Pipsqueak",
-      "market_hash_name": "MAC-10 | Pipsqueak (Factory New)",
-      "type": "Mil-Spec Grade SMG",
+      "name": "Sticker | Lock In",
+      "market_hash_name": "Sticker | Lock In",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204454445CFD4D64446C47744026414C4454B40D2C44345310B70DD4",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52235847119"
+      ]
+    },
+    {
+      "assetid": "52208525093",
+      "classid": "7993037129",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "CZ75-Auto | Copper Fiber",
+      "market_hash_name": "CZ75-Auto | Copper Fiber (Field-Tested)",
+      "type": "Industrial Grade Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -2994,13 +2975,77 @@
         {
           "category": "Exterior",
           "name": ""
-        },
+        }
+      ]
+    },
+    {
+      "assetid": "52154530512",
+      "classid": "7993036760",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "CZ75-Auto | Copper Fiber",
+      "market_hash_name": "CZ75-Auto | Copper Fiber (Minimal Wear)",
+      "type": "Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
         {
-          "category": "Tournament",
+          "category": "Type",
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52207484069",
+      "classid": "7993036648",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "XM1014 | Irezumi",
+      "market_hash_name": "XM1014 | Irezumi (Battle-Scarred)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -3275,102 +3320,6 @@
       ]
     },
     {
-      "assetid": "49132356964",
-      "classid": "188530425",
-      "instanceid": "6284641574",
-      "amount": 1,
-      "name": "Glock-18 | Fade",
-      "market_hash_name": "Glock-18 | Fade (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201202F6988396A5130A1632343A1622162AF6A383F71152B71070171A100287147A716212B013051A12020F2F6A1030525771E7E92C5FAE5A185242979C170FF01862",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49132356947",
-      "classid": "7993041010",
-      "instanceid": "6478449914",
-      "amount": 1,
-      "name": "Souvenir UMP-45 | Fade",
-      "market_hash_name": "Souvenir UMP-45 | Fade (Factory New)",
-      "type": "Souvenir Classified SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208595560F140132849D9DA56A83AD80B589BD52163C6486C51B83E7808D84955EBBE7808D85951F88E7808D869502BBE7808D87950ABBED3584F58D2784938D859589B8247BFCC4C08FC02DBAC8A15D1EC5D53FBC4DC2DAC5",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "46312671026",
       "classid": "7993036949",
       "instanceid": "7274761035",
@@ -3475,65 +3424,9 @@
       ]
     },
     {
-      "assetid": "50105663870",
-      "classid": "7993036839",
-      "instanceid": "8219909941",
-      "amount": 1,
-      "name": "Souvenir Galil AR | Green Apple",
-      "market_hash_name": "Souvenir Galil AR | Green Apple (Factory New)",
-      "type": "Souvenir Industrial Grade Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2071618FF3EEA5CB70697C51D7735973417D499E88E4D67231F374137479726198331374797161DF731374797061DF731374797361DF7319AD70017925393C72",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50315460054",
       "classid": "8246999731",
-      "instanceid": "188530422",
+      "instanceid": "188531654",
       "amount": 1,
       "name": "StatTrak™ P250 | Kintsugi",
       "market_hash_name": "StatTrak™ P250 | Kintsugi (Well-Worn)",
@@ -3569,7 +3462,7 @@
     {
       "assetid": "51487010820",
       "classid": "7993047873",
-      "instanceid": "188531501",
+      "instanceid": "188530914",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Eye of Athena",
       "market_hash_name": "StatTrak™ FAMAS | Eye of Athena (Minimal Wear)",
@@ -3603,9 +3496,45 @@
       ]
     },
     {
+      "assetid": "52150283995",
+      "classid": "7993044241",
+      "instanceid": "6288070397",
+      "amount": 1,
+      "name": "StatTrak™ AK-47 | Leet Museo",
+      "market_hash_name": "StatTrak™ AK-47 | Leet Museo (Minimal Wear)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50315509894",
       "classid": "8247059305",
-      "instanceid": "188540573",
+      "instanceid": "188534043",
       "amount": 1,
       "name": "StatTrak™ MP7 | Amberline",
       "market_hash_name": "StatTrak™ MP7 | Amberline (Minimal Wear)",

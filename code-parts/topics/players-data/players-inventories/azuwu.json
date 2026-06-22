@@ -12,53 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/004181c4-494a-44a6-be60-3c80264e84aa",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-11T07:52:45.098Z",
+  "updatedAt": "2026-06-21T08:24:02.232Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 204,
-  "totalItemsGrouped": 203,
+  "totalItemsRaw": 208,
+  "totalItemsGrouped": 204,
   "items": [
-    {
-      "assetid": "51883051429",
-      "classid": "7993197600",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Doppler",
-      "market_hash_name": "★ Butterfly Knife | Doppler (Minimal Wear)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201505B086F7B6D4140D961135FE113D1325162D92E890F81655A9137D79651D3577D4B6",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.078854613006,
-      "seed": 828,
-      "phase": "Sapphire"
-    },
     {
       "assetid": "51880888870",
       "classid": "7993037250",
@@ -167,12 +128,12 @@
       "phase": "Ruby"
     },
     {
-      "assetid": "51653029617",
-      "classid": "7993037136",
+      "assetid": "52058884313",
+      "classid": "8247419295",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Driver Gloves | King Snake",
-      "market_hash_name": "★ Driver Gloves | King Snake (Field-Tested)",
+      "name": "★ Driver Gloves | Garden",
+      "market_hash_name": "★ Driver Gloves | Garden (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -257,34 +218,6 @@
       "amount": 1,
       "name": "★ Sport Gloves | Hedge Maze",
       "market_hash_name": "★ Sport Gloves | Hedge Maze (Battle-Scarred)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51886746905",
-      "classid": "8247408161",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Ultra Violent",
-      "market_hash_name": "★ Sport Gloves | Ultra Violent (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1043,6 +976,42 @@
       "market_hash_name": "AK-47 | Cartel (Field-Tested)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D3C35F4E5E1E47D2CBD4F359D0FBD6E3D7EB5D282422D09367D1BB53D2A3D751A7C5AE",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52054127571",
+      "classid": "8246907255",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AK-47 | Crane Flight",
+      "market_hash_name": "AK-47 | Crane Flight (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -5547,6 +5516,42 @@
       ]
     },
     {
+      "assetid": "52131170766",
+      "classid": "7993037203",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP9 | Featherweight",
+      "market_hash_name": "MP9 | Featherweight (Well-Worn)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "34018514581",
       "classid": "7993042824",
       "instanceid": "6276478631",
@@ -5759,6 +5764,40 @@
       ],
       "assetids": [
         "40011695670"
+      ]
+    },
+    {
+      "assetid": "52129623416",
+      "classid": "5721066246",
+      "instanceid": "188530139",
+      "amount": 4,
+      "name": "Sticker | Lotus (Glitter)",
+      "market_hash_name": "Sticker | Lotus (Glitter)",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200313031BBA0A23032B07330761060B0313D03B6B03730BF3A6B857",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52129623416",
+        "52103004140",
+        "52103004139",
+        "52100329203"
       ]
     },
     {

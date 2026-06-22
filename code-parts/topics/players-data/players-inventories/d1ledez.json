@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/51f40bd6-d466-408e-8036-be7647e9c344",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-05T07:33:33.423Z",
+  "updatedAt": "2026-06-21T08:28:12.730Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 103,
-  "totalItemsGrouped": 103,
+  "totalItemsRaw": 111,
+  "totalItemsGrouped": 111,
   "items": [
     {
       "assetid": "51877365455",
@@ -94,6 +94,34 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Blackbook",
       "market_hash_name": "★ Specialist Gloves | Blackbook (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52210219921",
+      "classid": "7993042207",
+      "instanceid": "8544094117",
+      "amount": 1,
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1334,6 +1362,82 @@
       ]
     },
     {
+      "assetid": "52210219920",
+      "classid": "7993043505",
+      "instanceid": "8567964683",
+      "amount": 1,
+      "name": "AK-47 | Wild Lotus",
+      "market_hash_name": "AK-47 | Wild Lotus (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "46240808303",
       "classid": "7993036534",
       "instanceid": "6276300779",
@@ -1638,6 +1742,37 @@
       ]
     },
     {
+      "assetid": "52093546396",
+      "classid": "7545310510",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Charm | Lil' Zen",
+      "market_hash_name": "Charm | Lil' Zen",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52093546396"
+      ]
+    },
+    {
       "assetid": "38399332227",
       "classid": "2648567087",
       "instanceid": "143865972",
@@ -1701,6 +1836,42 @@
       ],
       "assetids": [
         "33545853122"
+      ]
+    },
+    {
+      "assetid": "52093542082",
+      "classid": "7993037129",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "CZ75-Auto | Copper Fiber",
+      "market_hash_name": "CZ75-Auto | Copper Fiber (Field-Tested)",
+      "type": "Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
       ]
     },
     {
@@ -1792,6 +1963,42 @@
       ]
     },
     {
+      "assetid": "52093538249",
+      "classid": "7993036655",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Nova | Rain Station",
+      "market_hash_name": "Nova | Rain Station (Factory New)",
+      "type": "Industrial Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49482345491",
       "classid": "7993036516",
       "instanceid": "519977179",
@@ -1800,6 +2007,42 @@
       "market_hash_name": "P90 | Straight Dimes (Field-Tested)",
       "type": "Industrial Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%202434B7FCA68F9C253C37048B2D0C2614201CBAE485D527641C4C28543304B7F80E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52093540361",
+      "classid": "7993037477",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "P90 | Straight Dimes",
+      "market_hash_name": "P90 | Straight Dimes (Well-Worn)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1988,6 +2231,42 @@
       "market_hash_name": "CZ75-Auto | Eco (Minimal Wear)",
       "type": "Restricted Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B1A10812501D31B0A98E9174B499B581B5892F561641B2F10BB2D930B0C1B912FB5DAA",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52108429032",
+      "classid": "188530424",
+      "instanceid": "6277698392",
+      "amount": 1,
+      "name": "Desert Eagle | Blaze",
+      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3052,6 +3331,54 @@
       ]
     },
     {
+      "assetid": "52241222499",
+      "classid": "7993037988",
+      "instanceid": "8570923429",
+      "amount": 1,
+      "name": "AWP | PAW",
+      "market_hash_name": "AWP | PAW (Minimal Wear)",
+      "type": "Restricted Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "35674842585",
       "classid": "7993038530",
       "instanceid": "188530139",
@@ -3198,7 +3525,7 @@
     {
       "assetid": "26544163857",
       "classid": "7993040252",
-      "instanceid": "480140454",
+      "instanceid": "480156258",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Chromatic Aberration",
       "market_hash_name": "StatTrak™ Galil AR | Chromatic Aberration (Field-Tested)",
@@ -3234,7 +3561,7 @@
     {
       "assetid": "22980690102",
       "classid": "7993046831",
-      "instanceid": "480198798",
+      "instanceid": "480121404",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Roll Cage",
       "market_hash_name": "StatTrak™ FAMAS | Roll Cage (Well-Worn)",
@@ -3306,7 +3633,7 @@
     {
       "assetid": "39487030798",
       "classid": "7993041501",
-      "instanceid": "6336576804",
+      "instanceid": "6363500783",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Copper Galaxy",
       "market_hash_name": "StatTrak™ Five-SeveN | Copper Galaxy (Minimal Wear)",

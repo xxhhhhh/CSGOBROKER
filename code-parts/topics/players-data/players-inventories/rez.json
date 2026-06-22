@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/86a88e1b-4b9a-4cc0-908f-0ab2dd73268a",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-01T08:32:07.369Z",
+  "updatedAt": "2026-06-18T08:05:41.313Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 469,
-  "totalItemsGrouped": 436,
+  "totalItemsRaw": 471,
+  "totalItemsGrouped": 438,
   "items": [
     {
       "assetid": "42038255766",
@@ -2702,6 +2702,34 @@
     },
     {
       "assetid": "51194051802",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52372209957",
       "classid": "5189384637",
       "instanceid": "302028390",
       "amount": 1,
@@ -10822,6 +10850,42 @@
       ]
     },
     {
+      "assetid": "52372209958",
+      "classid": "7993036779",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MP9 | Cobalt Paisley",
+      "market_hash_name": "MP9 | Cobalt Paisley (Minimal Wear)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "43193731432",
       "classid": "7993036830",
       "instanceid": "188530139",
@@ -11244,14 +11308,14 @@
       ]
     },
     {
-      "assetid": "51829004440",
+      "assetid": "51829004441",
       "classid": "8490840483",
       "instanceid": "143865972",
       "amount": 3,
       "name": "Sticker | REZ (Foil) | Cologne 2026",
       "market_hash_name": "Sticker | REZ (Foil) | Cologne 2026",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2060706078D96940604864506402656860708B3408601062347D0509",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209383938B2A9AB393BB97A397F1969B938378C7FB93E391F09CAE7D",
       "tags": [
         {
           "category": "Type",
@@ -11287,9 +11351,9 @@
         }
       ],
       "assetids": [
+        "51829004441",
         "51829004440",
-        "51829004439",
-        "51829004441"
+        "51829004439"
       ]
     },
     {
@@ -14045,7 +14109,7 @@
     {
       "assetid": "16231708876",
       "classid": "7993036615",
-      "instanceid": "188583999",
+      "instanceid": "188674306",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Flame Test",
       "market_hash_name": "StatTrak™ Five-SeveN | Flame Test (Field-Tested)",

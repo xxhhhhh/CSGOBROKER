@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/95f73c68-c323-4097-939e-397cc31a86af",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-04T08:14:18.807Z",
+  "updatedAt": "2026-06-21T08:47:21.365Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 51,
-  "totalItemsGrouped": 48,
+  "totalItemsRaw": 55,
+  "totalItemsGrouped": 52,
   "items": [
     {
       "assetid": "47916518402",
@@ -156,6 +156,42 @@
       "market_hash_name": "M4A1-S | Decimator (Minimal Wear)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FCEC41526D206BFDE4C0DC78F9D4F9CCF8C428674E13FFBC20FE94E18CF464971FE0",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52053648068",
+      "classid": "188530255",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AWP | BOOM",
+      "market_hash_name": "AWP | BOOM (Minimal Wear)",
+      "type": "Classified Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -395,6 +431,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52053649084",
+      "classid": "7993036534",
+      "instanceid": "8521938311",
+      "amount": 1,
+      "name": "M4A1-S | Fade",
+      "market_hash_name": "M4A1-S | Fade (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -669,6 +749,53 @@
           "category": "Tournament",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "52244038180",
+      "classid": "8491515409",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | maxxkor (Gold) | Cologne 2026",
+      "market_hash_name": "Sticker | maxxkor (Gold) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205545554DEC5C75557D53655137505D5545EC033D552557A9452BAA",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52244038180"
       ]
     },
     {
@@ -1704,9 +1831,81 @@
       ]
     },
     {
+      "assetid": "52053648067",
+      "classid": "7993042460",
+      "instanceid": "8560260892",
+      "amount": 1,
+      "name": "StatTrak™ AWP | Redline",
+      "market_hash_name": "StatTrak™ AWP | Redline (Field-Tested)",
+      "type": "StatTrak™ Classified Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "44285926943",
       "classid": "7993037200",
-      "instanceid": "188531935",
+      "instanceid": "188566521",
       "amount": 1,
       "name": "StatTrak™ P250 | Re.built",
       "market_hash_name": "StatTrak™ P250 | Re.built (Minimal Wear)",

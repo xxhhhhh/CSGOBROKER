@@ -7,18 +7,16 @@
   "name": "Daniel Sá",
   "nationality": "Brazil",
   "born": "23.04.2003",
-  "isContentCreator": false,
   "twitch": "rdnzao",
   "faceit": "https://faceitdb.com/profile/faceit/9645c4ed-b24b-4bac-b793-f2f777379325",
-  "appid": 730,
-  "contextid": "2",
-  "updatedAt": "2026-06-04T08:14:19.347Z",
-  "inventoryVisible": true,
-  "fetchOk": true,
-  "fetchStatus": 200,
-  "fetchError": "",
-  "totalItemsRaw": 28,
-  "totalItemsGrouped": 25,
+  "isContentCreator": false,
+  "updatedAt": "2026-06-14T08:08:52.189Z",
+  "fetchOk": false,
+  "fetchStatus": 403,
+  "fetchError": "Inventory is private or unavailable",
+  "inventoryVisible": false,
+  "totalItemsRaw": 24,
+  "totalItemsGrouped": 23,
   "items": [
     {
       "assetid": "49735207693",
@@ -124,83 +122,13 @@
       ]
     },
     {
-      "assetid": "50880542659",
-      "classid": "7729078028",
-      "instanceid": "143865972",
+      "assetid": "47272079787",
+      "classid": "7993038478",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "Budapest 2025 Challengers Autograph Capsule",
-      "market_hash_name": "Budapest 2025 Challengers Autograph Capsule",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "50880542659"
-      ]
-    },
-    {
-      "assetid": "50880516157",
-      "classid": "7729078026",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Budapest 2025 Contenders Sticker Capsule",
-      "market_hash_name": "Budapest 2025 Contenders Sticker Capsule",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "50880516157"
-      ]
-    },
-    {
-      "assetid": "51840571994",
-      "classid": "7993036319",
-      "instanceid": "8524332707",
-      "amount": 1,
-      "name": "AK-47 | Inheritance",
-      "market_hash_name": "AK-47 | Inheritance (Field-Tested)",
-      "type": "Covert Rifle",
+      "name": "Zeus x27 | Olympus",
+      "market_hash_name": "Zeus x27 | Olympus (Minimal Wear)",
+      "type": "Classified Equipment",
       "inspectLink": "",
       "tags": [
         {
@@ -226,17 +154,41 @@
         {
           "category": "Exterior",
           "name": ""
-        },
+        }
+      ]
+    },
+    {
+      "assetid": "47222305811",
+      "classid": "7993038019",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAC-10 | Disco Tech",
+      "market_hash_name": "MAC-10 | Disco Tech (Well-Worn)",
+      "type": "Classified SMG",
+      "inspectLink": "",
+      "tags": [
         {
-          "category": "Tournament",
+          "category": "Type",
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "Weapon",
           "name": ""
         },
         {
-          "category": "ProPlayer",
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -589,7 +541,7 @@
       "assetid": "51860457939",
       "classid": "8492261539",
       "instanceid": "143865972",
-      "amount": 3,
+      "amount": 1,
       "name": "Sticker | rdnzao (Gold) | Cologne 2026",
       "market_hash_name": "Sticker | rdnzao (Gold) | Cologne 2026",
       "type": "Extraordinary Sticker",
@@ -629,9 +581,7 @@
         }
       ],
       "assetids": [
-        "51860457939",
-        "51840774084",
-        "51840564141"
+        "51860457939"
       ]
     },
     {
@@ -707,42 +657,6 @@
       "assetids": [
         "51851064516",
         "51851064515"
-      ]
-    },
-    {
-      "assetid": "50300539947",
-      "classid": "7993038972",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P2000 | Sure Grip",
-      "market_hash_name": "P2000 | Sure Grip (Minimal Wear)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C3D3686B567278C2DBE3E35ECAEBC0F3C7FB7461402DC08371C1ABCFB3CBDA79F313",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
       ]
     },
     {

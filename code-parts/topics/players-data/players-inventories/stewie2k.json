@@ -12,14 +12,49 @@
   "faceit": "https://faceitdb.com/profile/faceit/2be37d17-f9fb-42e2-8143-bcdb5f1239b2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-10T08:10:11.233Z",
+  "updatedAt": "2026-06-21T09:00:11.067Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 339,
-  "totalItemsGrouped": 270,
+  "totalItemsRaw": 341,
+  "totalItemsGrouped": 271,
   "items": [
+    {
+      "assetid": "52222363021",
+      "classid": "7993040914",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BEAE3335767B7CBFA642BD9E1CBD96B88EBD861E5F0859BDFEBDD668BFCEBAF0187E0B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.029014885426,
+      "seed": 3,
+      "phase": "Phase 1"
+    },
     {
       "assetid": "51423313418",
       "classid": "7993042567",
@@ -514,6 +549,34 @@
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52413646960",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -1812,10 +1875,10 @@
       ]
     },
     {
-      "assetid": "52218548763",
+      "assetid": "52413647518",
       "classid": "6195246388",
       "instanceid": "302028390",
-      "amount": 6,
+      "amount": 7,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
@@ -1835,36 +1898,13 @@
         }
       ],
       "assetids": [
+        "52413647518",
         "52218548763",
         "51682279159",
         "50256465425",
         "49900993156",
         "49775001526",
         "46822002352"
-      ]
-    },
-    {
-      "assetid": "44986693571",
-      "classid": "914869806",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "StatTrak™ Swap Tool",
-      "market_hash_name": "StatTrak™ Swap Tool",
-      "type": "Base Grade Tool",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205B4B5B43F7517B5B735A6B5F335B2B597CB9F975",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
       ]
     },
     {
@@ -9815,7 +9855,7 @@
     {
       "assetid": "48397983084",
       "classid": "7993045650",
-      "instanceid": "905151551",
+      "instanceid": "905477655",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Snack Attack",
       "market_hash_name": "StatTrak™ Glock-18 | Snack Attack (Minimal Wear)",
@@ -9851,7 +9891,7 @@
     {
       "assetid": "48397983942",
       "classid": "7993040829",
-      "instanceid": "480107578",
+      "instanceid": "480448150",
       "amount": 1,
       "name": "StatTrak™ USP-S | Jawbreaker",
       "market_hash_name": "StatTrak™ USP-S | Jawbreaker (Factory New)",
@@ -9885,9 +9925,9 @@
       ]
     },
     {
-      "assetid": "51810613603",
+      "assetid": "52374648774",
       "classid": "7993042053",
-      "instanceid": "480086299",
+      "instanceid": "1331790249",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Inheritance",
       "market_hash_name": "StatTrak™ AK-47 | Inheritance (Factory New)",
@@ -9959,7 +9999,7 @@
     {
       "assetid": "50292736895",
       "classid": "8246907682",
-      "instanceid": "188548400",
+      "instanceid": "188530486",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Dark Polymer",
       "market_hash_name": "StatTrak™ Five-SeveN | Dark Polymer (Minimal Wear)",
@@ -10031,7 +10071,7 @@
     {
       "assetid": "17002596668",
       "classid": "7993042935",
-      "instanceid": "480092147",
+      "instanceid": "480108301",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Flash Out",
       "market_hash_name": "StatTrak™ Tec-9 | Flash Out (Battle-Scarred)",
@@ -10065,9 +10105,9 @@
       ]
     },
     {
-      "assetid": "51099602448",
+      "assetid": "52374648775",
       "classid": "7993036683",
-      "instanceid": "1331790249",
+      "instanceid": "480111996",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Uncharted",
       "market_hash_name": "StatTrak™ AK-47 | Uncharted (Field-Tested)",

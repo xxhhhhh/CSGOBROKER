@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/0411cac3-a510-4af0-96d1-b032a4e766ac",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-12T07:32:17.905Z",
+  "updatedAt": "2026-06-18T08:16:11.712Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 200,
-  "totalItemsGrouped": 175,
+  "totalItemsRaw": 207,
+  "totalItemsGrouped": 179,
   "items": [
     {
       "assetid": "51169818262",
@@ -474,6 +474,50 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52170864015",
+      "classid": "8246941774",
+      "instanceid": "8458889770",
+      "amount": 1,
+      "name": "AK-47 | Crane Flight",
+      "market_hash_name": "AK-47 | Crane Flight (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1197,7 +1241,7 @@
     {
       "assetid": "52043288562",
       "classid": "7993037085",
-      "instanceid": "8522231230",
+      "instanceid": "8562169708",
       "amount": 1,
       "name": "AWP | Asiimov",
       "market_hash_name": "AWP | Asiimov (Field-Tested)",
@@ -1950,6 +1994,54 @@
       ]
     },
     {
+      "assetid": "52114645580",
+      "classid": "8490844726",
+      "instanceid": "143865972",
+      "amount": 2,
+      "name": "Sticker | Staehr (Holo) | Cologne 2026",
+      "market_hash_name": "Sticker | Staehr (Holo) | Cologne 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EDFDEDF554E4CDEDC5E8DDE98FE8E5EDFD6DB985ED9DEFB1D1A036",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52114645580",
+        "52114645579"
+      ]
+    },
+    {
       "assetid": "26620093116",
       "classid": "778383679",
       "instanceid": "0",
@@ -2207,11 +2299,11 @@
     },
     {
       "assetid": "51828868275",
-      "classid": "8534113218",
+      "classid": "8564022767",
       "instanceid": "8490789248",
       "amount": 1,
-      "name": "Cologne 2026 Silver Coin",
-      "market_hash_name": "Cologne 2026 Silver Coin",
+      "name": "Cologne 2026 Gold Coin",
+      "market_hash_name": "Cologne 2026 Gold Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -3599,6 +3691,55 @@
       ]
     },
     {
+      "assetid": "52114663236",
+      "classid": "8490799178",
+      "instanceid": "143865972",
+      "amount": 3,
+      "name": "Sticker | Staehr | Cologne 2026",
+      "market_hash_name": "Sticker | Staehr | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BFAFBFA706B69FBF97BC8FBBDDBAB7BFAF41ECD7BFCFBD3D9472D2",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52114663236",
+        "52114663238",
+        "52114663237"
+      ]
+    },
+    {
       "assetid": "48008955552",
       "classid": "7729129791",
       "instanceid": "188530139",
@@ -3841,6 +3982,50 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52170864016",
+      "classid": "7993037223",
+      "instanceid": "6277138563",
+      "amount": 1,
+      "name": "AWP | Black Nile",
+      "market_hash_name": "AWP | Black Nile (Factory New)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

@@ -12,23 +12,23 @@
   "faceit": "https://faceitdb.com/profile/faceit/7dbf107a-1199-4932-823e-e38ccc46288e",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-12T07:48:04.913Z",
+  "updatedAt": "2026-06-19T08:55:06.160Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 155,
-  "totalItemsGrouped": 151,
+  "totalItemsRaw": 163,
+  "totalItemsGrouped": 159,
   "items": [
     {
-      "assetid": "51959765311",
-      "classid": "7993041446",
-      "instanceid": "188530139",
+      "assetid": "52150546999",
+      "classid": "7993042567",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Karambit | Gamma Doppler",
-      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
+      "name": "★ Skeleton Knife | Doppler",
+      "market_hash_name": "★ Skeleton Knife | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A8B8171A046069A9B053AB8811AC80AE98AB9003361D4CABE8BBC028AAD8A07FD6463A",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201606A1F2BEB5D4170E9B123689153E1026152EE4DA9CFE1556F6147E586612A1CA20A5",
       "tags": [
         {
           "category": "Type",
@@ -36,6 +36,10 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -51,41 +55,9 @@
           "name": ""
         }
       ],
-      "float": 0.017249664292,
-      "seed": 19,
-      "phase": "Phase 1"
-    },
-    {
-      "assetid": "52038219343",
-      "classid": "7993045582",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Doppler",
-      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
+      "float": 0.03189701587,
+      "seed": 352,
+      "phase": "Ruby"
     },
     {
       "assetid": "50457587065",
@@ -180,6 +152,34 @@
       "market_hash_name": "★ Sport Gloves | Amphibious (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%2083931722115D3A829B25A4A33ECDAB85B380BB57396F7780C33287EB8BF38B608501C5",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52106410172",
+      "classid": "7993040876",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Omega",
+      "market_hash_name": "★ Sport Gloves | Omega (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1344,6 +1344,42 @@
       ]
     },
     {
+      "assetid": "52106410171",
+      "classid": "7993041257",
+      "instanceid": "6276607458",
+      "amount": 1,
+      "name": "AK-47 | Gold Arabesque",
+      "market_hash_name": "AK-47 | Gold Arabesque (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "46054958773",
       "classid": "7993036276",
       "instanceid": "188530139",
@@ -2094,7 +2130,7 @@
     {
       "assetid": "52042522946",
       "classid": "8534113218",
-      "instanceid": "8490788405",
+      "instanceid": "8490794407",
       "amount": 1,
       "name": "Cologne 2026 Silver Coin",
       "market_hash_name": "Cologne 2026 Silver Coin",
@@ -2439,6 +2475,53 @@
       ]
     },
     {
+      "assetid": "52170045316",
+      "classid": "8490839790",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | AZUWU | Cologne 2026",
+      "market_hash_name": "Sticker | AZUWU | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E9F9E9F150E0C9E9C1EAD9ED8BECE1E9F927BD81E999EB47F6CD0D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52170045316"
+      ]
+    },
+    {
       "assetid": "20680912390",
       "classid": "4141779054",
       "instanceid": "519977179",
@@ -2467,6 +2550,53 @@
       ],
       "assetids": [
         "20680912390"
+      ]
+    },
+    {
+      "assetid": "52170045311",
+      "classid": "8490857685",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | brnz4n | Cologne 2026",
+      "market_hash_name": "Sticker | brnz4n | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2041514159F8486141694271452344494151A71429413143C593E17E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52170045311"
       ]
     },
     {
@@ -2577,37 +2707,6 @@
       ],
       "assetids": [
         "20639123403"
-      ]
-    },
-    {
-      "assetid": "21293462797",
-      "classid": "4141795579",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Sticker | Hello MP9",
-      "market_hash_name": "Sticker | Hello MP9",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A4B4A4BC1DAD84A48CA794A0C6A1ACA4B41B80CCA4D4B3103C03A7",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "21293462797"
       ]
     },
     {
@@ -2814,6 +2913,147 @@
       ]
     },
     {
+      "assetid": "52170045310",
+      "classid": "8490878815",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | nilo | Cologne 2026",
+      "market_hash_name": "Sticker | nilo | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D4C4D4CC6DDDF4D4FCD7E4D0B6D1DCD4C44681BCD4A4D6B874705F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52170045310"
+      ]
+    },
+    {
+      "assetid": "52170045313",
+      "classid": "8490918900",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | PR | Cologne 2026",
+      "market_hash_name": "Sticker | PR | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A2B2A2BA1BAB82A28AA192A6C0A7AAA2B250F6CAA2D2A012073485",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52170045313"
+      ]
+    },
+    {
+      "assetid": "52170045312",
+      "classid": "8490840481",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | REZ | Cologne 2026",
+      "market_hash_name": "Sticker | REZ | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EFFFEFF756E6CFEFC7ECDFEB8DEAE7EFFF05BB87EF9FED997A65BD",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52170045312"
+      ]
+    },
+    {
       "assetid": "28445328486",
       "classid": "4839651152",
       "instanceid": "188530139",
@@ -2889,6 +3129,100 @@
       ],
       "assetids": [
         "29707903805"
+      ]
+    },
+    {
+      "assetid": "52170045314",
+      "classid": "8490881340",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | westmelon | Cologne 2026",
+      "market_hash_name": "Sticker | westmelon | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B0A0B0A809B990B098B380B4D2B5B8B0A05AE6D8B0C0B2AFB72A3E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52170045314"
+      ]
+    },
+    {
+      "assetid": "52170045315",
+      "classid": "8490859660",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | z4KR | Cologne 2026",
+      "market_hash_name": "Sticker | z4KR | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203C2C3C2485351C3C143F0C385E39343C2CD26A543C4C3E800649CB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52170045315"
       ]
     },
     {
@@ -4570,6 +4904,42 @@
       ]
     },
     {
+      "assetid": "52054632944",
+      "classid": "7993036908",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AK-47 | Slate",
+      "market_hash_name": "AK-47 | Slate (Well-Worn)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "7311922186",
       "classid": "7993037970",
       "instanceid": "480085569",
@@ -4964,7 +5334,7 @@
     {
       "assetid": "46234751427",
       "classid": "7993040935",
-      "instanceid": "8552535907",
+      "instanceid": "8571697376",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Water Elemental",
       "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Battle-Scarred)",
@@ -5008,7 +5378,7 @@
     {
       "assetid": "51356706580",
       "classid": "7993038991",
-      "instanceid": "904400228",
+      "instanceid": "904153342",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Decimator",
       "market_hash_name": "StatTrak™ M4A1-S | Decimator (Factory New)",
@@ -5092,7 +5462,7 @@
     {
       "assetid": "35749895747",
       "classid": "7993045362",
-      "instanceid": "8549223243",
+      "instanceid": "8568969179",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Big Iron",
       "market_hash_name": "StatTrak™ SSG 08 | Big Iron (Field-Tested)",
@@ -5144,7 +5514,7 @@
     {
       "assetid": "51838521519",
       "classid": "7993038902",
-      "instanceid": "585982970",
+      "instanceid": "963803160",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Leet Museo",
       "market_hash_name": "StatTrak™ AK-47 | Leet Museo (Field-Tested)",
@@ -5216,7 +5586,7 @@
     {
       "assetid": "6068340640",
       "classid": "7993038122",
-      "instanceid": "480148879",
+      "instanceid": "480163854",
       "amount": 1,
       "name": "StatTrak™ P250 | Valence",
       "market_hash_name": "StatTrak™ P250 | Valence (Field-Tested)",

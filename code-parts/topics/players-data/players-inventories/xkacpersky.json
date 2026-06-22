@@ -12,7 +12,7 @@
   "faceit": "https://faceitdb.com/profile/faceit/7cfd2312-1ff0-434c-a4b1-be10b033636f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-09T07:19:34.364Z",
+  "updatedAt": "2026-06-21T08:30:31.365Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
@@ -20,6 +20,42 @@
   "totalItemsRaw": 80,
   "totalItemsGrouped": 79,
   "items": [
+    {
+      "assetid": "52225802089",
+      "classid": "7993040030",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Crimson Web",
+      "market_hash_name": "★ Butterfly Knife | Crimson Web (Field-Tested)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "51992936372",
       "classid": "7993044866",
@@ -54,38 +90,6 @@
       "float": 0.031346142292,
       "seed": 200,
       "phase": "Ruby"
-    },
-    {
-      "assetid": "51937978892",
-      "classid": "7993043388",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Lore",
-      "market_hash_name": "★ Karambit | Lore (Field-Tested)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "51378486572",
@@ -199,45 +203,6 @@
       ],
       "float": 0.031511474401,
       "seed": 304,
-      "phase": "Ruby"
-    },
-    {
-      "assetid": "51529875474",
-      "classid": "7993042573",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Talon Knife | Doppler",
-      "market_hash_name": "★ Talon Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CBDB594B653074CAD340CFEB54C8E3CDFBC8F30B687823C88BEDA3DCBBCFBC5DF023",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.034379720688,
-      "seed": 38,
       "phase": "Ruby"
     },
     {
@@ -739,6 +704,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52225763555",
+      "classid": "7993038004",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "AK-47 | Nouveau Rouge",
+      "market_hash_name": "AK-47 | Nouveau Rouge (Minimal Wear)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1475,11 +1476,11 @@
     },
     {
       "assetid": "51837258314",
-      "classid": "8534113218",
+      "classid": "8564022767",
       "instanceid": "8490794605",
       "amount": 1,
-      "name": "Cologne 2026 Silver Coin",
-      "market_hash_name": "Cologne 2026 Silver Coin",
+      "name": "Cologne 2026 Gold Coin",
+      "market_hash_name": "Cologne 2026 Gold Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [

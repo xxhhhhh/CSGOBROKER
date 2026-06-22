@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/44850e33-c35e-4cc0-a386-ef946502a3ae",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-11T08:43:57.320Z",
+  "updatedAt": "2026-06-21T09:15:05.437Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 95,
-  "totalItemsGrouped": 77,
+  "totalItemsRaw": 94,
+  "totalItemsGrouped": 76,
   "items": [
     {
       "assetid": "50570229895",
@@ -57,21 +57,17 @@
       ]
     },
     {
-      "assetid": "52226632623",
-      "classid": "5710094579",
-      "instanceid": "302028390",
+      "assetid": "52087190860",
+      "classid": "7993039756",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "Kilowatt Case",
-      "market_hash_name": "Kilowatt Case",
-      "type": "Base Grade Container",
+      "name": "★ Hand Wraps | Cobalt Skulls",
+      "market_hash_name": "★ Hand Wraps | Cobalt Skulls (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -80,6 +76,10 @@
         },
         {
           "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -430,42 +430,6 @@
       "name": "MP9 | Buff Blue",
       "market_hash_name": "MP9 | Buff Blue (Field-Tested)",
       "type": "Consumer Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52226632624",
-      "classid": "7993036401",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "SSG 08 | Green Ceramic",
-      "market_hash_name": "SSG 08 | Green Ceramic (Field-Tested)",
-      "type": "Consumer Grade Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -1088,11 +1052,11 @@
     },
     {
       "assetid": "51905762279",
-      "classid": "8534113218",
+      "classid": "8564022767",
       "instanceid": "8490788405",
       "amount": 1,
-      "name": "Cologne 2026 Silver Coin",
-      "market_hash_name": "Cologne 2026 Silver Coin",
+      "name": "Cologne 2026 Gold Coin",
+      "market_hash_name": "Cologne 2026 Gold Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -2395,42 +2359,6 @@
       ]
     },
     {
-      "assetid": "44858968196",
-      "classid": "7993038885",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "CZ75-Auto | Eco",
-      "market_hash_name": "CZ75-Auto | Eco (Field-Tested)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E5F56174536B42E4FDDAC520E0CDE1D5E1DD05646210E6A57FE08D8995E10A6688FD",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "27536190739",
       "classid": "7993036302",
       "instanceid": "6292141178",
@@ -2486,6 +2414,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52224777869",
+      "classid": "7993035750",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "P250 | X-Ray",
+      "market_hash_name": "P250 | X-Ray (Minimal Wear)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -2641,7 +2605,7 @@
     {
       "assetid": "25866681993",
       "classid": "7993036844",
-      "instanceid": "8551055133",
+      "instanceid": "8577989799",
       "amount": 1,
       "name": "StatTrak™ USP-S | Neo-Noir",
       "market_hash_name": "StatTrak™ USP-S | Neo-Noir (Minimal Wear)",
@@ -2689,7 +2653,7 @@
     {
       "assetid": "27242331446",
       "classid": "7993041410",
-      "instanceid": "1539087948",
+      "instanceid": "1730122029",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Bloodsport",
       "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Factory New)",

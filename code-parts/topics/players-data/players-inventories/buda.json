@@ -7,14 +7,16 @@
   "name": "Nicolás Kramer",
   "nationality": "Argentina",
   "born": "24.02.2003",
+  "isContentCreator": false,
   "twitch": "budafps",
   "faceit": "https://faceitdb.com/profile/faceit/47c0672a-92ce-4196-9d7a-68238c698b09",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-04T08:03:40.948Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-06-20T07:37:35.547Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
   "totalItemsRaw": 85,
   "totalItemsGrouped": 85,
   "items": [
@@ -89,6 +91,34 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Fade",
       "market_hash_name": "★ Specialist Gloves | Fade (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52099178793",
+      "classid": "7993038043",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Vice",
+      "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -457,42 +487,6 @@
       ]
     },
     {
-      "assetid": "50533011355",
-      "classid": "7993035953",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "AK-47 | Ice Coaled",
-      "market_hash_name": "AK-47 | Ice Coaled (Field-Tested)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "45213405949",
       "classid": "259106102",
       "instanceid": "6276318358",
@@ -607,6 +601,42 @@
       "amount": 1,
       "name": "Dual Berettas | Silver Pour",
       "market_hash_name": "Dual Berettas | Silver Pour (Field-Tested)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52278107940",
+      "classid": "7993035990",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "P250 | Plum Netting",
+      "market_hash_name": "P250 | Plum Netting (Minimal Wear)",
       "type": "Consumer Grade Pistol",
       "inspectLink": "",
       "tags": [
@@ -1096,42 +1126,6 @@
       "name": "MP9 | Starlight Protector",
       "market_hash_name": "MP9 | Starlight Protector (Factory New)",
       "type": "Covert SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50532939847",
-      "classid": "7993037475",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AWP | Chrome Cannon",
-      "market_hash_name": "AWP | Chrome Cannon (Battle-Scarred)",
-      "type": "Covert Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -1940,6 +1934,42 @@
       ]
     },
     {
+      "assetid": "52063639544",
+      "classid": "7993035499",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Five-SeveN | Scrawl",
+      "market_hash_name": "Five-SeveN | Scrawl (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51867620643",
       "classid": "7993035922",
       "instanceid": "188530139",
@@ -2608,13 +2638,13 @@
       ]
     },
     {
-      "assetid": "49222800058",
-      "classid": "7993035655",
+      "assetid": "50532971013",
+      "classid": "7993037343",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "M4A1-S | Night Terror",
-      "market_hash_name": "M4A1-S | Night Terror (Minimal Wear)",
-      "type": "Restricted Rifle",
+      "name": "MP7 | Just Smile",
+      "market_hash_name": "MP7 | Just Smile (Minimal Wear)",
+      "type": "Restricted SMG",
       "inspectLink": "",
       "tags": [
         {
@@ -2644,12 +2674,12 @@
       ]
     },
     {
-      "assetid": "50532971013",
-      "classid": "7993037343",
+      "assetid": "52063642091",
+      "classid": "7993037006",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "MP7 | Just Smile",
-      "market_hash_name": "MP7 | Just Smile (Minimal Wear)",
+      "name": "P90 | Neoqueen",
+      "market_hash_name": "P90 | Neoqueen (Field-Tested)",
       "type": "Restricted SMG",
       "inspectLink": "",
       "tags": [
@@ -2830,7 +2860,7 @@
     {
       "assetid": "45801874282",
       "classid": "7993036832",
-      "instanceid": "6276757409",
+      "instanceid": "6283787457",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Mecha Industries",
       "market_hash_name": "StatTrak™ FAMAS | Mecha Industries (Field-Tested)",
@@ -2907,42 +2937,6 @@
       "name": "StatTrak™ MAG-7 | Insomnia",
       "market_hash_name": "StatTrak™ MAG-7 | Insomnia (Well-Worn)",
       "type": "StatTrak™ Mil-Spec Grade Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49993389071",
-      "classid": "7993040870",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ SCAR-20 | Fragments",
-      "market_hash_name": "StatTrak™ SCAR-20 | Fragments (Factory New)",
-      "type": "StatTrak™ Mil-Spec Grade Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {

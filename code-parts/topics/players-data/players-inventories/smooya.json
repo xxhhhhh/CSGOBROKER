@@ -12,23 +12,23 @@
   "faceit": "https://www.faceit.com/en/players/smooya",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-12T08:30:04.751Z",
+  "updatedAt": "2026-06-21T09:08:45.929Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 41,
-  "totalItemsGrouped": 38,
+  "totalItemsRaw": 32,
+  "totalItemsGrouped": 32,
   "items": [
     {
-      "assetid": "51601400272",
-      "classid": "7993042312",
-      "instanceid": "480085569",
+      "assetid": "52059347504",
+      "classid": "7993040630",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Flip Knife | Gamma Doppler",
-      "market_hash_name": "★ Flip Knife | Gamma Doppler (Factory New)",
+      "name": "★ Butterfly Knife | Gamma Doppler",
+      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2082925241391F42839A7B81A23A86AA84B281BA6B0D056581C21D81EAACF28641CE3947",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20908020247A675191881394B02A94B896A093A8245A687293D05094F882E098570C1A70",
       "tags": [
         {
           "category": "Type",
@@ -36,6 +36,10 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -51,9 +55,45 @@
           "name": ""
         }
       ],
-      "float": 0.027561144903,
-      "seed": 415,
-      "phase": "Emerald"
+      "float": 0.013558674604,
+      "seed": 576,
+      "phase": "Phase 2"
+    },
+    {
+      "assetid": "52228879026",
+      "classid": "7993046494",
+      "instanceid": "8547015804",
+      "amount": 1,
+      "name": "★ Huntsman Knife | Ultraviolet",
+      "market_hash_name": "★ Huntsman Knife | Ultraviolet (Battle-Scarred)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "51574459122",
@@ -91,42 +131,6 @@
       "phase": "Phase 2"
     },
     {
-      "assetid": "51735653296",
-      "classid": "7993037832",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Skeleton Knife | Fade",
-      "market_hash_name": "★ Skeleton Knife | Fade (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51201412776",
       "classid": "6195246388",
       "instanceid": "302028390",
@@ -161,81 +165,6 @@
       "name": "AK-47 | Case Hardened",
       "market_hash_name": "AK-47 | Case Hardened (Field-Tested)",
       "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48414287149",
-      "classid": "7993039096",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Glock-18 | Gamma Doppler",
-      "market_hash_name": "Glock-18 | Gamma Doppler (Factory New)",
-      "type": "Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F9E9543324544DF8E1FDD926F1D1FFC9FDC159414411FAB99891F889FDA5FC1A06",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.034999966621,
-      "seed": 97,
-      "phase": "Emerald"
-    },
-    {
-      "assetid": "49825775180",
-      "classid": "7993039803",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "M4A1-S | Printstream",
-      "market_hash_name": "M4A1-S | Printstream (Factory New)",
-      "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -306,56 +235,6 @@
           "category": "TournamentTeam",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "51879294952",
-      "classid": "8490827318",
-      "instanceid": "143865972",
-      "amount": 4,
-      "name": "Sticker | blameF (Holo) | Cologne 2026",
-      "market_hash_name": "Sticker | blameF (Holo) | Cologne 2026",
-      "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C9D9C9D170C0E9C9E1CCF9CDABCCC1C9D90D9CA1C9B9CBE1245325",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51879294952",
-        "51879294955",
-        "51879294954",
-        "51879294953"
       ]
     },
     {
@@ -998,42 +877,6 @@
       ]
     },
     {
-      "assetid": "48655333070",
-      "classid": "7993040607",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Desert Eagle | Emerald Jörmungandr",
-      "market_hash_name": "Desert Eagle | Emerald Jörmungandr (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "48414288944",
       "classid": "7993058025",
       "instanceid": "7673084140",
@@ -1081,102 +924,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "39567838081",
-      "classid": "7993044648",
-      "instanceid": "8552559999",
-      "amount": 1,
-      "name": "StatTrak™ M4A1-S | Mecha Industries",
-      "market_hash_name": "StatTrak™ M4A1-S | Mecha Industries (Factory New)",
-      "type": "StatTrak™ Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "30301143379",
-      "classid": "7993044325",
-      "instanceid": "8017575010",
-      "amount": 1,
-      "name": "StatTrak™ AWP | Containment Breach",
-      "market_hash_name": "StatTrak™ AWP | Containment Breach (Field-Tested)",
-      "type": "StatTrak™ Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
           "name": ""
         },
         {

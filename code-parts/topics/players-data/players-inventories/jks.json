@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9a8ea9d5-61c7-4b38-b64f-35f4945048fa",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-01T08:45:58.322Z",
+  "updatedAt": "2026-06-19T08:42:26.040Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 54,
-  "totalItemsGrouped": 52,
+  "totalItemsRaw": 49,
+  "totalItemsGrouped": 48,
   "items": [
     {
       "assetid": "14557724330",
@@ -120,14 +120,42 @@
       ]
     },
     {
-      "assetid": "50070767995",
-      "classid": "7729086074",
-      "instanceid": "143865972",
-      "amount": 2,
-      "name": "Sticker Slab",
-      "market_hash_name": "Sticker Slab",
-      "type": "Base Grade Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208393839B239CA383AB82B387EB83F381C095A25F",
+      "assetid": "52391676628",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52391678001",
+      "classid": "1989296922",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Noscope (SWAT Blue)",
+      "market_hash_name": "Sealed Graffiti | Noscope (SWAT Blue)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EDFDEDF529E7CDEDC5ECDDE98FEAE5EDFD2CE0DDE085ED9DF5F6103481",
       "tags": [
         {
           "category": "Type",
@@ -140,11 +168,14 @@
         {
           "category": "Rarity",
           "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
         }
       ],
       "assetids": [
-        "50070767995",
-        "50070767994"
+        "52391678001"
       ]
     },
     {
@@ -292,86 +323,14 @@
       ]
     },
     {
-      "assetid": "51374915524",
-      "classid": "7993037248",
-      "instanceid": "6276562797",
-      "amount": 1,
-      "name": "M4A1-S | Hot Rod",
-      "market_hash_name": "M4A1-S | Hot Rod (Factory New)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51468830095",
-      "classid": "201965307",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "AWP | Graphite",
-      "market_hash_name": "AWP | Graphite (Factory New)",
-      "type": "Classified Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "41865693002",
+      "assetid": "52293487700",
       "classid": "7993043562",
       "instanceid": "6299557977",
       "amount": 1,
       "name": "M4A4 | Howl",
       "market_hash_name": "M4A4 | Howl (Field-Tested)",
       "type": "Contraband Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202B3BE1A5A4D0B02A333B0B9E29032C1B2F13BBB6A1DA286BA728492E232B3BDD3643025B230C11F79D",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -409,77 +368,6 @@
           "category": "ProPlayer",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "44019167634",
-      "classid": "7993039484",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "FAMAS | Bad Trip",
-      "market_hash_name": "FAMAS | Bad Trip (Minimal Wear)",
-      "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ACBC3E4F50510FADB4A68C0CA584AA9CA8944E2A1442AFEC44A8C4ECDCA4211584B0",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51374915525",
-      "classid": "7729814567",
-      "instanceid": "0",
-      "amount": 1,
-      "name": "Sticker Slab | jks (Gold) | Paris 2023",
-      "market_hash_name": "Sticker Slab | jks (Gold) | Paris 2023",
-      "type": "Customized Extraordinary Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E1F1E1F92AEBC1E1C9E7D1E989E191E143E0E6E9E1F1C4816DD792434871",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51374915525"
       ]
     },
     {
@@ -1115,6 +1003,53 @@
       ]
     },
     {
+      "assetid": "52293397339",
+      "classid": "5327976454",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | jks (Gold) | Paris 2023",
+      "market_hash_name": "Sticker | jks (Gold) | Paris 2023",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6D7D65C4745D7D557B4D791F78757D6DF14B157D0D7550CFAB4B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52293397339"
+      ]
+    },
+    {
       "assetid": "2063896849",
       "classid": "822948191",
       "instanceid": "338584038",
@@ -1363,7 +1298,7 @@
     {
       "assetid": "26965750398",
       "classid": "7993038713",
-      "instanceid": "8551744253",
+      "instanceid": "8572964850",
       "amount": 1,
       "name": "StatTrak™ MP9 | Airlock",
       "market_hash_name": "StatTrak™ MP9 | Airlock (Field-Tested)",
@@ -1433,93 +1368,9 @@
       ]
     },
     {
-      "assetid": "41865696807",
-      "classid": "7993041773",
-      "instanceid": "8551744252",
-      "amount": 1,
-      "name": "StatTrak™ USP-S | Kill Confirmed",
-      "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
-      "type": "StatTrak™ Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2035259299BACEAE342D0815CD361D33053C0D81D0A2C43675D2337D3565EF813C57303D3425A3375D3B453DC4F847BB",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51358541996",
-      "classid": "7993040029",
-      "instanceid": "8552617617",
-      "amount": 1,
-      "name": "StatTrak™ AK-47 | Fire Serpent",
-      "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Field-Tested)",
-      "type": "StatTrak™ Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "41865689587",
       "classid": "7993038697",
-      "instanceid": "492928500",
+      "instanceid": "484815003",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Grinder",
       "market_hash_name": "StatTrak™ Glock-18 | Grinder (Factory New)",
@@ -1591,7 +1442,7 @@
     {
       "assetid": "41519993457",
       "classid": "7993040946",
-      "instanceid": "188565474",
+      "instanceid": "188532018",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Saibā Oni",
       "market_hash_name": "StatTrak™ MAC-10 | Saibā Oni (Field-Tested)",
