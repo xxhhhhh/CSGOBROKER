@@ -12,7 +12,7 @@
   "faceit": "https://faceitdb.com/profile/faceit/965a1057-5c19-401f-89c5-748a0ded30d1",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-16T09:37:12.736Z",
+  "updatedAt": "2026-06-23T07:42:21.774Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
@@ -57,41 +57,6 @@
       ]
     },
     {
-      "assetid": "51700934866",
-      "classid": "7993042312",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Flip Knife | Gamma Doppler",
-      "market_hash_name": "★ Flip Knife | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204B5B999ABD878B4A53B2486BF34F634D7B4873ECBFAEAF480BE64E23653B431F5B3634",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.018735004589,
-      "seed": 685,
-      "phase": "Emerald"
-    },
-    {
       "assetid": "52076462467",
       "classid": "7993042978",
       "instanceid": "188530139",
@@ -125,34 +90,6 @@
       "float": 0.014541315846,
       "seed": 26,
       "phase": "Ruby"
-    },
-    {
-      "assetid": "52093644076",
-      "classid": "7993043849",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Specialist Gloves | Crimson Kimono",
-      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "28416208493",
@@ -314,6 +251,65 @@
       ]
     },
     {
+      "assetid": "52432944329",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52432946727",
+      "classid": "1989275545",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | GTG (Jungle Green)",
+      "market_hash_name": "Graffiti | GTG (Jungle Green)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ECFCECF429E6CCECC4EDDCE88EEBE4ECFC25E1DCE484EC9CF4E73C3FAD",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52432946727"
+      ]
+    },
+    {
       "assetid": "52323367770",
       "classid": "7993039561",
       "instanceid": "6277459097",
@@ -470,12 +466,48 @@
       ]
     },
     {
-      "assetid": "52108148565",
-      "classid": "7993036958",
-      "instanceid": "6281892162",
+      "assetid": "45863851591",
+      "classid": "7993035539",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "AK-47 | Redline",
-      "market_hash_name": "AK-47 | Redline (Field-Tested)",
+      "name": "FAMAS | Rapid Eye Movement",
+      "market_hash_name": "FAMAS | Rapid Eye Movement (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200C1CCBA0C7E1A60D14062CEB0424093C0834F7D091FE0F4CE90B64547C0494613318",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52283729044",
+      "classid": "7993043696",
+      "instanceid": "8576965628",
+      "amount": 1,
+      "name": "M4A1-S | Knight",
+      "market_hash_name": "M4A1-S | Knight (Factory New)",
       "type": "Classified Rifle",
       "inspectLink": "",
       "tags": [
@@ -509,42 +541,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "45863851591",
-      "classid": "7993035539",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "FAMAS | Rapid Eye Movement",
-      "market_hash_name": "FAMAS | Rapid Eye Movement (Field-Tested)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200C1CCBA0C7E1A60D14062CEB0424093C0834F7D091FE0F4CE90B64547C0494613318",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -3619,6 +3615,50 @@
       ]
     },
     {
+      "assetid": "52283729043",
+      "classid": "188530424",
+      "instanceid": "8576965630",
+      "amount": 1,
+      "name": "Desert Eagle | Blaze",
+      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "27068634614",
       "classid": "7993037387",
       "instanceid": "6291563203",
@@ -4470,62 +4510,6 @@
         },
         {
           "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52108148564",
-      "classid": "7993127229",
-      "instanceid": "6324025681",
-      "amount": 1,
-      "name": "Souvenir M4A4 | Radiation Hazard",
-      "market_hash_name": "Souvenir M4A4 | Radiation Hazard (Factory New)",
-      "type": "Souvenir Mil-Spec Grade Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         },
         {

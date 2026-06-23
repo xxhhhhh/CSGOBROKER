@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/en/players/smooya",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-21T09:08:45.929Z",
+  "updatedAt": "2026-06-23T07:55:10.509Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 32,
-  "totalItemsGrouped": 32,
+  "totalItemsRaw": 36,
+  "totalItemsGrouped": 36,
   "items": [
     {
       "assetid": "52059347504",
@@ -62,7 +62,7 @@
     {
       "assetid": "52228879026",
       "classid": "7993046494",
-      "instanceid": "8547015804",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Huntsman Knife | Ultraviolet",
       "market_hash_name": "★ Huntsman Knife | Ultraviolet (Battle-Scarred)",
@@ -131,6 +131,69 @@
       "phase": "Phase 2"
     },
     {
+      "assetid": "52268839092",
+      "classid": "7993040441",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Gamma Doppler",
+      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204151F5A09D9A834059BD4261FB456947714279AFFCADA74201C84629673149F97114EE",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.026748146862,
+      "seed": 905,
+      "phase": "Phase 2"
+    },
+    {
+      "assetid": "52266388358",
+      "classid": "7993042153",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Hand Wraps | Constrictor",
+      "market_hash_name": "★ Hand Wraps | Constrictor (Battle-Scarred)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51201412776",
       "classid": "6195246388",
       "instanceid": "302028390",
@@ -165,6 +228,42 @@
       "name": "AK-47 | Case Hardened",
       "market_hash_name": "AK-47 | Case Hardened (Field-Tested)",
       "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52258817748",
+      "classid": "7993037561",
+      "instanceid": "6276300551",
+      "amount": 1,
+      "name": "USP-S | Printstream",
+      "market_hash_name": "USP-S | Printstream (Battle-Scarred)",
+      "type": "Covert Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -233,6 +332,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52266328952",
+      "classid": "8246925102",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "AWP | Queen's Gambit",
+      "market_hash_name": "AWP | Queen's Gambit (Field-Tested)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

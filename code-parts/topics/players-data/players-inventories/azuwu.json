@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/004181c4-494a-44a6-be60-3c80264e84aa",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-21T08:24:02.232Z",
+  "updatedAt": "2026-06-23T07:10:08.714Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 208,
-  "totalItemsGrouped": 204,
+  "totalItemsRaw": 215,
+  "totalItemsGrouped": 207,
   "items": [
     {
       "assetid": "51880888870",
@@ -269,6 +269,34 @@
     },
     {
       "assetid": "52235256322",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52455020686",
       "classid": "5189384637",
       "instanceid": "302028390",
       "amount": 1,
@@ -3734,6 +3762,57 @@
       ]
     },
     {
+      "assetid": "52276993775",
+      "classid": "8491530667",
+      "instanceid": "8553142245",
+      "amount": 5,
+      "name": "Sticker | AZUWU (Gold) | Cologne 2026",
+      "market_hash_name": "Sticker | AZUWU (Gold) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6D7D65C4745D7D557B4D791F78757D6DAC29157D0D7F225DE0ED",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52276993775",
+        "52276993774",
+        "52276993773",
+        "52276993772",
+        "52276993771"
+      ]
+    },
+    {
       "assetid": "36947759157",
       "classid": "5328019128",
       "instanceid": "188530139",
@@ -4452,6 +4531,42 @@
       "market_hash_name": "AUG | Condemned (Minimal Wear)",
       "type": "Industrial Grade Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%206070A6A8D59FF5617868400E4862506458B7CFED906320816708E76110786CD73CDC",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52455020687",
+      "classid": "7993073027",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "FAMAS | Vendetta",
+      "market_hash_name": "FAMAS | Vendetta (Field-Tested)",
+      "type": "Industrial Grade Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

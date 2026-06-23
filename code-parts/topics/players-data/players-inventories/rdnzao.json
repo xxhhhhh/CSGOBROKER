@@ -7,16 +7,18 @@
   "name": "Daniel Sá",
   "nationality": "Brazil",
   "born": "23.04.2003",
+  "isContentCreator": false,
   "twitch": "rdnzao",
   "faceit": "https://faceitdb.com/profile/faceit/9645c4ed-b24b-4bac-b793-f2f777379325",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-14T08:08:52.189Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 24,
-  "totalItemsGrouped": 23,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-06-23T07:33:47.250Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 23,
+  "totalItemsGrouped": 22,
   "items": [
     {
       "assetid": "49735207693",
@@ -94,41 +96,13 @@
       "phase": "Ruby"
     },
     {
-      "assetid": "50912826751",
-      "classid": "7993042027",
-      "instanceid": "188530139",
+      "assetid": "52451317071",
+      "classid": "7993035493",
+      "instanceid": "8584122876",
       "amount": 1,
-      "name": "★ Sport Gloves | Slingshot",
-      "market_hash_name": "★ Sport Gloves | Slingshot (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47272079787",
-      "classid": "7993038478",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Zeus x27 | Olympus",
-      "market_hash_name": "Zeus x27 | Olympus (Minimal Wear)",
-      "type": "Classified Equipment",
+      "name": "USP-S | Printstream",
+      "market_hash_name": "USP-S | Printstream (Field-Tested)",
+      "type": "Covert Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -154,17 +128,25 @@
         {
           "category": "Exterior",
           "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
         }
       ]
     },
     {
-      "assetid": "47222305811",
-      "classid": "7993038019",
-      "instanceid": "188530139",
+      "assetid": "52346511513",
+      "classid": "7993036319",
+      "instanceid": "8567916413",
       "amount": 1,
-      "name": "MAC-10 | Disco Tech",
-      "market_hash_name": "MAC-10 | Disco Tech (Well-Worn)",
-      "type": "Classified SMG",
+      "name": "AK-47 | Inheritance",
+      "market_hash_name": "AK-47 | Inheritance (Field-Tested)",
+      "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -189,6 +171,18 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -315,11 +309,11 @@
     },
     {
       "assetid": "51840760884",
-      "classid": "8534113218",
+      "classid": "8564022767",
       "instanceid": "8490800845",
       "amount": 1,
-      "name": "Cologne 2026 Silver Coin",
-      "market_hash_name": "Cologne 2026 Silver Coin",
+      "name": "Cologne 2026 Gold Coin",
+      "market_hash_name": "Cologne 2026 Gold Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [

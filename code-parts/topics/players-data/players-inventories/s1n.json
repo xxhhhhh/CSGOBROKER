@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/55d2d6a0-aed2-46de-99b6-6a1381a7ab99",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-16T09:09:22.768Z",
+  "updatedAt": "2026-06-23T07:12:16.999Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 90,
-  "totalItemsGrouped": 90,
+  "totalItemsRaw": 93,
+  "totalItemsGrouped": 93,
   "items": [
     {
       "assetid": "51967049966",
@@ -130,6 +130,34 @@
       "amount": 1,
       "name": "★ Driver Gloves | King Snake",
       "market_hash_name": "★ Driver Gloves | King Snake (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52271044658",
+      "classid": "8247668937",
+      "instanceid": "8553142307",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Pillow Punchers",
+      "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -432,9 +460,9 @@
       ]
     },
     {
-      "assetid": "51833799765",
+      "assetid": "52448373549",
       "classid": "7993036958",
-      "instanceid": "8521378810",
+      "instanceid": "8583531361",
       "amount": 1,
       "name": "AK-47 | Redline",
       "market_hash_name": "AK-47 | Redline (Field-Tested)",
@@ -700,6 +728,42 @@
       ]
     },
     {
+      "assetid": "52275803479",
+      "classid": "7993035771",
+      "instanceid": "8553142307",
+      "amount": 1,
+      "name": "M4A4 | 龍王 (Dragon King)",
+      "market_hash_name": "M4A4 | 龍王 (Dragon King) (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52038217674",
       "classid": "201965307",
       "instanceid": "8553414223",
@@ -836,21 +900,25 @@
       ]
     },
     {
-      "assetid": "52274212427",
-      "classid": "8490952187",
-      "instanceid": "0",
+      "assetid": "52448376899",
+      "classid": "7993039803",
+      "instanceid": "8553563539",
       "amount": 1,
-      "name": "Sticker Slab | M80 (Holo) | Cologne 2026",
-      "market_hash_name": "Sticker Slab | M80 (Holo) | Cologne 2026",
-      "type": "Customized Exotic Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2011011109DA1B31113914211979116111B310161911013471C64039750709",
+      "name": "M4A1-S | Printstream",
+      "market_hash_name": "M4A1-S | Printstream (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
           "name": ""
         },
         {
-          "category": "Type",
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -862,12 +930,9 @@
           "name": ""
         },
         {
-          "category": "KeychainCapsule",
+          "category": "Exterior",
           "name": ""
         }
-      ],
-      "assetids": [
-        "52274212427"
       ]
     },
     {
@@ -993,6 +1058,49 @@
       ],
       "assetids": [
         "35389750320"
+      ]
+    },
+    {
+      "assetid": "52448387126",
+      "classid": "8490802374",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | M80 (Holo) | Cologne 2026",
+      "market_hash_name": "Sticker | M80 (Holo) | Cologne 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F1E1F1E948F8D1F1D9F4C1F593F4F9F1E126A099F181F38C72FA00",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52448387126"
       ]
     },
     {

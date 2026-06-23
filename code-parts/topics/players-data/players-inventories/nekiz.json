@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e50676d1-ea6c-4876-893f-53aac4b6dc6f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-16T09:28:40.907Z",
+  "updatedAt": "2026-06-23T07:31:40.450Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 139,
-  "totalItemsGrouped": 120,
+  "totalItemsRaw": 159,
+  "totalItemsGrouped": 121,
   "items": [
     {
       "assetid": "49512962082",
@@ -54,6 +54,34 @@
       "float": 0.014842160977,
       "seed": 27,
       "phase": "Phase 4"
+    },
+    {
+      "assetid": "52259574706",
+      "classid": "7993038616",
+      "instanceid": "8550099535",
+      "amount": 1,
+      "name": "★ Driver Gloves | Overtake",
+      "market_hash_name": "★ Driver Gloves | Overtake (Well-Worn)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "49831814639",
@@ -1120,7 +1148,7 @@
       "assetid": "51972912395",
       "classid": "8491250811",
       "instanceid": "143865972",
-      "amount": 5,
+      "amount": 7,
       "name": "Sticker | NEKiZ (Holo) | Cologne 2026",
       "market_hash_name": "Sticker | NEKiZ (Holo) | Cologne 2026",
       "type": "Exotic Sticker",
@@ -1164,7 +1192,9 @@
         "51840036668",
         "51840036666",
         "51840036665",
-        "51840036664"
+        "51840036664",
+        "52263385023",
+        "52263385022"
       ]
     },
     {
@@ -1794,7 +1824,7 @@
       "assetid": "51840036661",
       "classid": "8491287097",
       "instanceid": "143865972",
-      "amount": 1,
+      "amount": 2,
       "name": "Sticker | NEKiZ (Gold) | Cologne 2026",
       "market_hash_name": "Sticker | NEKiZ (Gold) | Cologne 2026",
       "type": "Extraordinary Sticker",
@@ -1834,7 +1864,8 @@
         }
       ],
       "assetids": [
-        "51840036661"
+        "51840036661",
+        "52263385024"
       ]
     },
     {
@@ -2416,14 +2447,14 @@
       ]
     },
     {
-      "assetid": "51972925468",
+      "assetid": "52263385015",
       "classid": "8491216172",
-      "instanceid": "143865972",
-      "amount": 7,
+      "instanceid": "8550100267",
+      "amount": 17,
       "name": "Sticker | NEKiZ | Cologne 2026",
       "market_hash_name": "Sticker | NEKiZ | Cologne 2026",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B9A9B9A100B099B991BA89BDDBBCB1B9A973EFD1B9C9BBD70297DB",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E0F0E0F859E9C0E0C8E3D0E482E5E8E0F02AB688E090E23BA3C138",
       "tags": [
         {
           "category": "Type",
@@ -2459,13 +2490,23 @@
         }
       ],
       "assetids": [
+        "52263385015",
+        "52263385014",
+        "52263385013",
+        "52263385012",
+        "52263385011",
+        "52263385010",
+        "52263385009",
+        "52263385008",
+        "52263385007",
+        "52263385006",
+        "51972925471",
+        "51972925470",
+        "51972925469",
         "51972925468",
         "51972925467",
         "51840036659",
-        "51840036658",
-        "51972925471",
-        "51972925470",
-        "51972925469"
+        "51840036658"
       ]
     },
     {
@@ -3542,14 +3583,14 @@
       ]
     },
     {
-      "assetid": "51840036663",
+      "assetid": "52263385021",
       "classid": "8491421132",
-      "instanceid": "143865972",
-      "amount": 2,
+      "instanceid": "8550100267",
+      "amount": 8,
       "name": "Sticker | NEKiZ (Foil) | Cologne 2026",
       "market_hash_name": "Sticker | NEKiZ (Foil) | Cologne 2026",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207C6C7C64C5755C7C54784C781E79747C6CB72A147C0C7E1504AD10",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BFAFBFA706B69FBF97BB8FBBDDBAB7BFAF74E9D7BFCFBD191FAB60",
       "tags": [
         {
           "category": "Type",
@@ -3585,6 +3626,12 @@
         }
       ],
       "assetids": [
+        "52263385021",
+        "52263385020",
+        "52263385019",
+        "52263385018",
+        "52263385017",
+        "52263385016",
         "51840036663",
         "51840036662"
       ]

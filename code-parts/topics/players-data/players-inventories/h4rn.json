@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/8f151c97-d096-40f1-b3ae-3afaaca644bb",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-21T09:10:56.030Z",
+  "updatedAt": "2026-06-23T07:57:21.072Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 173,
-  "totalItemsGrouped": 129,
+  "totalItemsRaw": 185,
+  "totalItemsGrouped": 140,
   "items": [
     {
       "assetid": "52122908236",
@@ -85,17 +85,21 @@
       ]
     },
     {
-      "assetid": "52127199187",
-      "classid": "8248450262",
-      "instanceid": "188530139",
+      "assetid": "52275750208",
+      "classid": "5771944784",
+      "instanceid": "8553142245",
       "amount": 1,
-      "name": "★ Sport Gloves | Violet Beadwork",
-      "market_hash_name": "★ Sport Gloves | Violet Beadwork (Battle-Scarred)",
-      "type": "★ Extraordinary Gloves",
+      "name": "Copenhagen 2024 Legends Sticker Capsule",
+      "market_hash_name": "Copenhagen 2024 Legends Sticker Capsule",
+      "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
           "name": ""
         },
         {
@@ -107,13 +111,128 @@
           "name": ""
         },
         {
-          "category": "Exterior",
+          "category": "Tournament",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52275750208"
+      ]
+    },
+    {
+      "assetid": "52263323346",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
     },
     {
       "assetid": "51931221714",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52263323344",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52263323345",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52263323347",
       "classid": "7488632023",
       "instanceid": "302028390",
       "amount": 1,
@@ -172,6 +291,69 @@
       ]
     },
     {
+      "assetid": "52263323340",
+      "classid": "1989283331",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Death Sentence (Monster Purple)",
+      "market_hash_name": "Sealed Graffiti | Death Sentence (Monster Purple)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2009190911CD0329092108390D6B0E010919AB043906610979114B8A3F48",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52263323340"
+      ]
+    },
+    {
+      "assetid": "52263323343",
+      "classid": "1989283094",
+      "instanceid": "302028390",
+      "amount": 2,
+      "name": "Sealed Graffiti | Keep the Change (Frog Green)",
+      "market_hash_name": "Sealed Graffiti | Keep the Change (Frog Green)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2040504058844A6040684170442247484050E54D7049284030582C8065A0",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52263323343",
+        "52263323339"
+      ]
+    },
+    {
       "assetid": "51742983697",
       "classid": "1989322885",
       "instanceid": "302028390",
@@ -203,6 +385,68 @@
       ]
     },
     {
+      "assetid": "52263323341",
+      "classid": "1989289860",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Mr. Teeth (War Pig Pink)",
+      "market_hash_name": "Sealed Graffiti | Mr. Teeth (War Pig Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202232223AE62802220A23122640252A2232892F12304A22523A046DF843",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52263323341"
+      ]
+    },
+    {
+      "assetid": "52263323342",
+      "classid": "1989280745",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Ninja (Shark White)",
+      "market_hash_name": "Sealed Graffiti | Ninja (Shark White)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F8E8F8E03CF2D8F8D0F9C8FC9AFFF0F8E854F5C8EB90F888E035F66776",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52263323342"
+      ]
+    },
+    {
       "assetid": "51082718303",
       "classid": "1989303693",
       "instanceid": "302028390",
@@ -231,6 +475,37 @@
       ],
       "assetids": [
         "51082718303"
+      ]
+    },
+    {
+      "assetid": "52263323338",
+      "classid": "1989327304",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Rage Mode (Dust Brown)",
+      "market_hash_name": "Sealed Graffiti | Rage Mode (Dust Brown)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2069796971AD6349694168596D0B6E616979C764596D01691971B8FACD3B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52263323338"
       ]
     },
     {
@@ -4085,6 +4360,58 @@
       ]
     },
     {
+      "assetid": "52275616936",
+      "classid": "7993038370",
+      "instanceid": "8576875459",
+      "amount": 1,
+      "name": "StatTrak™ Desert Eagle | Mecha Industries",
+      "market_hash_name": "StatTrak™ Desert Eagle | Mecha Industries (Field-Tested)",
+      "type": "StatTrak™ Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "48236968105",
       "classid": "7993035810",
       "instanceid": "906244117",
@@ -4740,6 +5067,50 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52275698617",
+      "classid": "7993040601",
+      "instanceid": "8576875458",
+      "amount": 1,
+      "name": "StatTrak™ FAMAS | ZX Spectron",
+      "market_hash_name": "StatTrak™ FAMAS | ZX Spectron (Battle-Scarred)",
+      "type": "StatTrak™ Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
           "name": ""
         },
         {
