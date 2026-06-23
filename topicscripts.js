@@ -3752,3 +3752,675 @@ if (languageTag === "ru") {
   updateURLs(topicBoxesHolder);
   updateURLs(backbutton);
 }
+
+document.addEventListener('DOMContentLoaded', async () => {
+  let mapGrenadesData = [];
+
+  try {
+    const response = await fetch('/code-parts/topics/grenades-guides/mirage-smokes.json');
+
+    if (!response.ok) {
+      throw new Error(`JSON loading error: ${response.status}`);
+    }
+
+    mapGrenadesData = await response.json();
+  } catch (error) {
+    console.error('Failed to load grenades JSON:', error);
+    return;
+  }
+
+  const grenadesById = new Map(
+    mapGrenadesData.map((grenade) => [grenade['grenade-id'], grenade])
+  );
+
+  document.querySelectorAll('.topicpage').forEach((topicPage) => {
+    const mapRadar = topicPage.querySelector('.map-radar');
+    const guide = topicPage.querySelector('.map-radar-guide');
+
+    if (!mapRadar || !guide) return;
+
+    const linkedSelector = [
+      '.radar-smoke-icon[grenade-id]',
+      '.map-grenade-unit[grenade-id]',
+      '.radar-grenades-pos-list[grenade-id]'
+    ].join(', ');
+
+    const grenadeClickableSelector = [
+      '.radar-smoke-icon[grenade-id]',
+      '.map-grenade-unit[grenade-id]'
+    ].join(', ');
+
+    const posClickableSelector = [
+      '.radar-pos-spot[pos-id]',
+      '.map-pos-spot[pos-id]'
+    ].join(', ');
+
+    function getGrenadeId(element) {
+      const grenadeParent = element.closest('[grenade-id]');
+      return grenadeParent ? grenadeParent.getAttribute('grenade-id') : null;
+    }
+
+    function getLinkedGrenadeElements(grenadeId) {
+      return [...topicPage.querySelectorAll(linkedSelector)].filter(
+        (element) => element.getAttribute('grenade-id') === grenadeId
+      );
+    }
+
+    function getLinkedGrenadeHoverElements(grenadeId) {
+      return getLinkedGrenadeElements(grenadeId).filter((element) =>
+        element.classList.contains('radar-smoke-icon') ||
+        element.classList.contains('map-grenade-unit')
+      );
+    }
+
+    function getLinkedPosElements(grenadeId, posId) {
+      return [...topicPage.querySelectorAll(posClickableSelector)].filter((element) => {
+        const elementGrenadeId = getGrenadeId(element);
+
+        return (
+          elementGrenadeId === grenadeId &&
+          element.getAttribute('pos-id') === posId
+        );
+      });
+    }
+
+    function showLinkedPosElements(posElement) {
+      const grenadeId = getGrenadeId(posElement);
+      const posId = posElement.getAttribute('pos-id');
+
+      if (!grenadeId || !posId) return;
+
+      getLinkedPosElements(grenadeId, posId).forEach((element) => {
+        element.classList.add('show');
+      });
+    }
+
+    function hideLinkedPosElements(posElement) {
+      const grenadeId = getGrenadeId(posElement);
+      const posId = posElement.getAttribute('pos-id');
+
+      if (!grenadeId || !posId) return;
+
+      getLinkedPosElements(grenadeId, posId).forEach((element) => {
+        element.classList.remove('show');
+      });
+    }
+
+    function showLinkedGrenadeElements(grenadeElement) {
+      const grenadeId = grenadeElement.getAttribute('grenade-id');
+
+      if (!grenadeId) return;
+
+      getLinkedGrenadeHoverElements(grenadeId).forEach((element) => {
+        element.classList.add('show');
+      });
+    }
+
+    function hideLinkedGrenadeElements(grenadeElement) {
+      const grenadeId = grenadeElement.getAttribute('grenade-id');
+
+      if (!grenadeId) return;
+
+      getLinkedGrenadeHoverElements(grenadeId).forEach((element) => {
+        element.classList.remove('show');
+      });
+    }
+
+    function updateMapRadarState() {
+      const hasActiveGrenade = [...topicPage.querySelectorAll(linkedSelector)]
+        .some((element) => element.classList.contains('active'));
+
+      const hasActiveGuide = guide.classList.contains('active');
+
+      mapRadar.classList.toggle('selected', hasActiveGrenade || hasActiveGuide);
+    }
+
+    function clearActivePositions() {
+      topicPage
+        .querySelectorAll('.radar-pos-spot.active, .map-pos-spot.active')
+        .forEach((element) => {
+          element.classList.remove('active');
+        });
+    }
+
+    function clearShownPositions() {
+      topicPage
+        .querySelectorAll('.radar-pos-spot.show, .map-pos-spot.show')
+        .forEach((element) => {
+          element.classList.remove('show');
+        });
+    }
+
+    function addDisablingClass(element) {
+      if (element.disablingTimer) {
+        window.clearTimeout(element.disablingTimer);
+      }
+
+      element.classList.add('disabling');
+
+      element.disablingTimer = window.setTimeout(() => {
+        element.classList.remove('disabling');
+        element.disablingTimer = null;
+      }, 100);
+    }
+
+    function clearActiveGrenades() {
+      topicPage
+        .querySelectorAll(
+          '.radar-smoke-icon.active, .map-grenade-unit.active, .radar-grenades-pos-list.active'
+        )
+        .forEach((element) => {
+          element.classList.remove('active');
+
+          if (
+            element.classList.contains('radar-smoke-icon') ||
+            element.classList.contains('map-grenade-unit')
+          ) {
+            addDisablingClass(element);
+          }
+        });
+    }
+
+    function clearGuideContent() {
+      guide.className = 'map-radar-guide';
+      guide.innerHTML = '';
+
+      clearActivePositions();
+      clearShownPositions();
+    }
+
+    function setActiveGrenade(grenadeId) {
+      clearActiveGrenades();
+
+      getLinkedGrenadeElements(grenadeId).forEach((element) => {
+        element.classList.add('active');
+      });
+    }
+
+    function closeGuide() {
+      clearGuideContent();
+      updateMapRadarState();
+    }
+
+    function getPositionData(grenadeId, posId) {
+      const grenadeData = grenadesById.get(grenadeId);
+
+      if (!grenadeData) return null;
+
+      const positionData = grenadeData.positions.find(
+        (position) => position['pos-id'] === posId
+      );
+
+      if (!positionData) return null;
+
+      return {
+        grenade: grenadeData,
+        position: positionData
+      };
+    }
+
+    function renderKeybinds(keybinds) {
+      if (!keybinds) return '';
+
+      return keybinds
+        .split('+')
+        .map((part) => part.trim())
+        .filter(Boolean)
+        .map((part) => `<span>${part}</span>`)
+        .join(' + ');
+    }
+
+    function getLangValue(value, lang = 'ru') {
+      if (!value) return '';
+
+      if (typeof value === 'string') {
+        return value;
+      }
+
+      return value[lang] || value.ru || value.en || '';
+    }
+
+    function getGuideExtraImages(guideData) {
+      const extraImages = [];
+
+      if (guideData.extraImg) {
+        extraImages.push({
+          src: guideData.extraImg,
+          className: ''
+        });
+      }
+
+      Object.keys(guideData)
+        .filter((key) => /^extraImg-\d+$/.test(key))
+        .sort((a, b) => {
+          const numberA = Number(a.replace('extraImg-', ''));
+          const numberB = Number(b.replace('extraImg-', ''));
+
+          return numberA - numberB;
+        })
+        .forEach((key) => {
+          const number = Number(key.replace('extraImg-', ''));
+
+          if (!guideData[key]) return;
+
+          extraImages.push({
+            src: guideData[key],
+            className: `extra-${number}`
+          });
+        });
+
+      return extraImages;
+    }
+
+    function renderGuideExtraImages(guideData, title) {
+      const extraImages = getGuideExtraImages(guideData);
+
+      if (!extraImages.length) return '';
+
+      return extraImages
+        .map((image) => {
+          const extraClass = image.className ? ` ${image.className}` : '';
+
+          return `
+            <div class="map-radar-extra${extraClass}">
+              <img src="${image.src}" alt="${title}">
+            </div>
+          `;
+        })
+        .join('');
+    }
+
+    function renderGuideExtraDesc(extraDesc) {
+      const text = getLangValue(extraDesc);
+
+      if (!text) return '';
+
+      return `
+        <div class="map-radar-extra-desc">
+          <span>${text}</span>
+        </div>
+      `;
+    }
+
+    function openGuide(grenadeId, posId) {
+      const data = getPositionData(grenadeId, posId);
+
+      if (!data) {
+        closeGuide();
+        return;
+      }
+
+      const { grenade, position } = data;
+      const guideData = position.guide || {};
+
+      setActiveGrenade(grenadeId);
+
+      const grenadeExtraClasses = Array.isArray(grenade.extra)
+        ? grenade.extra
+        : [];
+
+      const positionExtraClasses = Array.isArray(position.extra)
+        ? position.extra
+        : [];
+
+      const guideClasses = [
+        'map-radar-guide',
+        'active',
+        ...grenadeExtraClasses,
+        ...positionExtraClasses
+      ];
+
+      const title =
+        getLangValue(guideData.title) ||
+        getLangValue(position.name) ||
+        getLangValue(grenade.name);
+
+      const image = guideData.img || '';
+      const keybinds = guideData.keybinds || '';
+      const extraDesc = guideData.extraDesc || '';
+
+      guide.className = guideClasses.join(' ');
+
+      guide.innerHTML = `
+        <div class="map-radar-guide-block">
+          <div class="map-radar-guide-left">
+            <div class="map-radar-guide-title">
+              <span>${title}</span>
+            </div>
+
+            ${renderGuideExtraImages(guideData, title)}
+          </div>
+
+          <div class="map-radar-guide-right">
+            ${renderGuideExtraDesc(extraDesc)}
+          </div>
+        </div>
+
+        <div class="map-radar-guide-close">
+          <i class="officon cross"></i>
+        </div>
+
+        <div class="map-radar-guide-screenshot">
+          <div class="map-radar-guide-zoom">
+            <img src="${image}" alt="${title}">
+          </div>
+          <img src="${image}" alt="${title}">
+        </div>
+
+        <div class="map-radar-guide-binds">
+          ${renderKeybinds(keybinds)}
+        </div>
+      `;
+
+      clearActivePositions();
+
+      getLinkedPosElements(grenadeId, posId).forEach((element) => {
+        element.classList.add('active');
+      });
+
+      updateMapRadarState();
+    }
+
+    function toggleGrenade(grenadeId) {
+      const linkedElements = getLinkedGrenadeElements(grenadeId);
+
+      const isCurrentlyActive = linkedElements.some((element) =>
+        element.classList.contains('active')
+      );
+
+      clearActiveGrenades();
+      clearGuideContent();
+
+      if (!isCurrentlyActive) {
+        linkedElements.forEach((element) => {
+          element.classList.add('active');
+        });
+      }
+
+      updateMapRadarState();
+    }
+
+    topicPage.addEventListener('pointerover', (event) => {
+      const posElement = event.target.closest(posClickableSelector);
+
+      if (posElement && topicPage.contains(posElement)) {
+        showLinkedPosElements(posElement);
+        return;
+      }
+
+      const grenadeElement = event.target.closest(grenadeClickableSelector);
+
+      if (!grenadeElement || !topicPage.contains(grenadeElement)) return;
+
+      showLinkedGrenadeElements(grenadeElement);
+    });
+
+    topicPage.addEventListener('pointerout', (event) => {
+      const posElement = event.target.closest(posClickableSelector);
+
+      if (posElement && topicPage.contains(posElement)) {
+        if (event.relatedTarget && posElement.contains(event.relatedTarget)) {
+          return;
+        }
+
+        hideLinkedPosElements(posElement);
+        return;
+      }
+
+      const grenadeElement = event.target.closest(grenadeClickableSelector);
+
+      if (!grenadeElement || !topicPage.contains(grenadeElement)) return;
+
+      if (event.relatedTarget && grenadeElement.contains(event.relatedTarget)) {
+        return;
+      }
+
+      hideLinkedGrenadeElements(grenadeElement);
+    });
+
+    topicPage.addEventListener('click', (event) => {
+      const closeButton = event.target.closest('.map-radar-guide-close');
+
+      if (closeButton && topicPage.contains(closeButton)) {
+        closeGuide();
+        return;
+      }
+
+      const posElement = event.target.closest(posClickableSelector);
+
+      if (posElement && topicPage.contains(posElement)) {
+        event.stopPropagation();
+
+        const grenadeId = getGrenadeId(posElement);
+        const posId = posElement.getAttribute('pos-id');
+
+        if (!grenadeId || !posId) return;
+
+        openGuide(grenadeId, posId);
+        return;
+      }
+
+      const grenadeElement = event.target.closest(grenadeClickableSelector);
+
+      if (!grenadeElement || !topicPage.contains(grenadeElement)) return;
+
+      if (grenadeElement.classList.contains('map-grenade-unit')) {
+        const nestedUl = event.target.closest('ul');
+
+        if (nestedUl && grenadeElement.contains(nestedUl)) {
+          return;
+        }
+      }
+
+      const grenadeId = grenadeElement.getAttribute('grenade-id');
+
+      if (!grenadeId) return;
+
+      toggleGrenade(grenadeId);
+    });
+
+    updateMapRadarState();
+  });
+});
+
+/* DRAGGABLE */
+
+// (() => {
+//     const DRAGGABLE_SELECTOR = '.radar-smoke-icon, .radar-pos-spot';
+//     const PRECISION = 2;
+
+//     let activeDrag = null;
+
+//     const coordinatesLabel = document.createElement('div');
+
+//     Object.assign(coordinatesLabel.style, {
+//         position: 'fixed',
+//         left: '10px',
+//         bottom: '10px',
+//         padding: '8px 12px',
+//         background: 'rgba(0, 0, 0, 0.85)',
+//         color: '#fff',
+//         font: '13px monospace',
+//         borderRadius: '5px',
+//         zIndex: '999999',
+//         pointerEvents: 'none',
+//         display: 'none'
+//     });
+
+//     document.body.appendChild(coordinatesLabel);
+
+//     function getPercentPosition(element, parent) {
+//         const inlineLeft = element.style.left;
+//         const inlineTop = element.style.top;
+
+//         const left = inlineLeft.includes('%')
+//             ? parseFloat(inlineLeft)
+//             : element.offsetLeft / parent.clientWidth * 100;
+
+//         const top = inlineTop.includes('%')
+//             ? parseFloat(inlineTop)
+//             : element.offsetTop / parent.clientHeight * 100;
+
+//         return {
+//             left: Number.isFinite(left) ? left : 0,
+//             top: Number.isFinite(top) ? top : 0
+//         };
+//     }
+
+//     function updateLabel(element, top, left) {
+//         const type = element.classList.contains('radar-pos-spot')
+//             ? 'radar-pos-spot'
+//             : 'radar-smoke-icon';
+
+//         coordinatesLabel.textContent =
+//             `${type} | top: ${top.toFixed(PRECISION)}%; left: ${left.toFixed(PRECISION)}%;`;
+
+//         coordinatesLabel.style.display = 'block';
+//     }
+
+//     document.addEventListener('pointerdown', event => {
+//         const element = event.target.closest(DRAGGABLE_SELECTOR);
+
+//         if (!element || event.button !== 0) {
+//             return;
+//         }
+
+//         /*
+//          * offsetParent — реальный родитель, относительно которого
+//          * работают position:absolute, top и left.
+//          *
+//          * Для radar-pos-spot это обычно radar-grenades-pos-list,
+//          * а для smoke — map-radar.
+//          */
+//         const parent = element.offsetParent;
+
+//         if (!parent) {
+//             console.warn('Для элемента не найден offsetParent:', element);
+//             return;
+//         }
+
+//         const parentRect = parent.getBoundingClientRect();
+//         const position = getPercentPosition(element, parent);
+
+//         activeDrag = {
+//             element,
+//             parent,
+//             parentRect,
+//             pointerId: event.pointerId,
+//             startMouseX: event.clientX,
+//             startMouseY: event.clientY,
+//             startLeft: position.left,
+//             startTop: position.top
+//         };
+
+//         element.classList.add('dragging');
+//         element.setPointerCapture(event.pointerId);
+
+//         updateLabel(element, position.top, position.left);
+
+//         event.preventDefault();
+//     });
+
+//     document.addEventListener('pointermove', event => {
+//         if (!activeDrag || event.pointerId !== activeDrag.pointerId) {
+//             return;
+//         }
+
+//         const {
+//             element,
+//             parentRect,
+//             startMouseX,
+//             startMouseY,
+//             startLeft,
+//             startTop
+//         } = activeDrag;
+
+//         const deltaXPercent =
+//             (event.clientX - startMouseX) / parentRect.width * 100;
+
+//         const deltaYPercent =
+//             (event.clientY - startMouseY) / parentRect.height * 100;
+
+//         let left = startLeft + deltaXPercent;
+//         let top = startTop + deltaYPercent;
+
+//         left = Math.max(0, Math.min(100, left));
+//         top = Math.max(0, Math.min(100, top));
+
+//         element.style.left = `${left.toFixed(PRECISION)}%`;
+//         element.style.top = `${top.toFixed(PRECISION)}%`;
+
+//         updateLabel(element, top, left);
+
+//         event.preventDefault();
+//     });
+
+//     function stopDragging(event) {
+//         if (!activeDrag || event.pointerId !== activeDrag.pointerId) {
+//             return;
+//         }
+
+//         const { element, pointerId } = activeDrag;
+
+//         element.classList.remove('dragging');
+
+//         if (element.hasPointerCapture(pointerId)) {
+//             element.releasePointerCapture(pointerId);
+//         }
+
+//         const type = element.classList.contains('radar-pos-spot')
+//             ? 'radar-pos-spot'
+//             : 'radar-smoke-icon';
+
+//         console.log(
+//             `${type}: top: ${element.style.top}; left: ${element.style.left};`
+//         );
+
+//         activeDrag = null;
+//         coordinatesLabel.style.display = 'none';
+//     }
+
+//     document.addEventListener('pointerup', stopDragging);
+//     document.addEventListener('pointercancel', stopDragging);
+
+//     /*
+//      * Вызови copyRadarPositions() в консоли,
+//      * чтобы скопировать координаты всех элементов.
+//      */
+//     window.copyRadarPositions = async function () {
+//         const elements = [
+//             ...document.querySelectorAll(DRAGGABLE_SELECTOR)
+//         ];
+
+//         const smokeElements = elements.filter(element =>
+//             element.classList.contains('radar-smoke-icon')
+//         );
+
+//         const spotElements = elements.filter(element =>
+//             element.classList.contains('radar-pos-spot')
+//         );
+
+//         const result = [];
+
+//         spotElements.forEach((element, index) => {
+//             result.push(
+//                 `radar-pos-spot ${index + 1}: ` +
+//                 `top: ${element.style.top}; left: ${element.style.left};`
+//             );
+//         });
+
+//         smokeElements.forEach((element, index) => {
+//             result.push(
+//                 `radar-smoke-icon ${index + 1}: ` +
+//                 `top: ${element.style.top}; left: ${element.style.left};`
+//             );
+//         });
+
+//         const text = result.join('\n');
+
+//         await navigator.clipboard.writeText(text);
+
+//         console.log(text);
+//         console.log('Координаты скопированы в буфер обмена');
+//     };
+// })();

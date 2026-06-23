@@ -206,7 +206,8 @@ header {
 }
 
 .review header,
-.nondef:has(.topic-craft) header {
+.nondef:has(.topic-craft) header,
+.nondef:has(.grenades) header {
     width: calc(1022px + 8px + 300px );
 }
 
@@ -4593,7 +4594,8 @@ nav img {
 }
 
 .review .category-selector,
-.nondef:has(.topic-craft) .category-selector {
+.nondef:has(.topic-craft) .category-selector,
+.nondef:has(.grenades) .category-selector {
     --visible-cards: 4;
     max-width: 1340px;
 }
@@ -4668,7 +4670,8 @@ nav img {
 }
 
 .review.nondef .buttons-container,
-.nondef:has(.topic-craft) .buttons-container {
+.nondef:has(.topic-craft) .buttons-container,
+.nondef:has(.grenades) .buttons-container {
     width: 1420px;
     max-width: 1420px;
 }
@@ -5314,7 +5317,7 @@ nav img {
     height: auto;
 }
 
-.sitepage.items .section.searchers {
+.sitepage .section.searchers {
     position: absolute;
     height: auto;
     width: 45px;
@@ -13939,7 +13942,8 @@ header {
   }
 
   .review header,
-  .nondef:has(.topic-craft) header {
+  .nondef:has(.topic-craft) header,
+  .nondef:has(.grenades) header {
     width: max(69.6vw, min(90vw, 1336px)); /* 69.6% of 1920 ≈ 1336px */
   }
 
@@ -15495,7 +15499,8 @@ header {
 
     .category-selector,
     .sitepage .category-selector,
-    .nondef:has(.topic-craft) .category-selector {
+    .nondef:has(.topic-craft) .category-selector,
+    .nondef:has(.grenades) .category-selector {
         max-width: 96%;
         width: unset !important;
         justify-content: center;
@@ -15512,7 +15517,8 @@ header {
     }
 
     .category-selector.current,
-    .nondef:has(.topic-craft) .category-selector.current {
+    .nondef:has(.topic-craft) .category-selector.current,
+    .nondef:has(.grenades) .category-selector.current {
         height: 100%;
         background-color: rgba(12, 12, 12, .9);
         transform: translateZ(0);
@@ -15824,7 +15830,8 @@ header {
     .boxreview,
     .topicpage,
     .sitepage.items .topicpage,
-    .sitepage.topic-craft .topicpage {
+    .sitepage.topic-craft .topicpage,
+    .sitepage.grenades .topicpage {
         left: 0;
         margin: 0 auto;
         width: 100%;
@@ -16134,6 +16141,7 @@ header {
     .nondef header,
     .review header,
     .nondef:has(.topic-craft) header,
+    .nondef:has(.grenades) header,
     .nondef:has(.boxdefaultpage) header,
     .nondef:has(.ptype) header {
         width: 100%;
@@ -17256,7 +17264,8 @@ header {
 
     .category-selector,
     .category-selector, .sitepage .category-selector,
-    .nondef:has(.topic-craft) .category-selector {
+    .nondef:has(.topic-craft) .category-selector,
+    .nondef:has(.grenades) .category-selector {
         justify-content: flex-start;
     }
 
@@ -18505,4 +18514,744 @@ a[href*="/?aff="][target="_blank"] {
     .box-skins-nav .box-skins-name span {
         transform: unset;
     }
+}
+
+.map-radar-box {
+    width: 90%;
+    left: 50%;
+    top: 50%;
+    position: relative;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.map-radar {
+    width: 80.2761%;
+    position: relative;
+    background: var(--darkgray);
+    border-radius: var(--main-border);
+    height: 800px;
+}
+
+.map-smokes-list {
+    width: 19.7239%;
+    max-height: 800px;
+    background: var(--darkgray);
+    /* background: var(--icongradient2); */
+    border-radius: var(--minor-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    gap: 4px;
+}
+
+.map-smokes-list::-webkit-scrollbar {
+    width: 0;
+}
+
+.map-smokes-list .map-grenade-unit:first-child {
+    margin-top: 4px;
+}
+
+.map-smokes-list .map-grenade-unit:last-child {
+    margin-bottom: 4px;
+}
+
+.map-grenade-unit,
+.map-pos-spot {
+    position: relative;
+    width: calc(100% - 8px);
+    background: var(--darkgray);
+    border-radius: var(--minor-border);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all .15s ease-in-out, padding 0s ease-in-out;
+    flex-wrap: wrap;
+}
+
+.map-grenade-unit {
+    max-height: 40px;
+}
+
+.map-grenade-unit.active {
+    max-height: unset;
+    padding-bottom: unset;
+    padding-top: 10px;
+    height: auto;
+}
+
+.map-pos-spot {
+    min-height: 40px;
+    width: 100%;
+}
+
+.map-pos-spot::after {
+    content: "";
+    height: 11px;
+    width: 11px;
+    margin-left: 11.5px;
+    margin-right: 12px;
+    pointer-events: none;
+    user-select: none;
+    transition: all .15s ease-in-out;
+    order: -1;
+
+    background: rgba(206, 32, 61, .2);
+    border: 2px solid var(--main-color);
+    opacity: .6;
+    filter: grayscale(1);
+    border-radius: 5px;
+    transition: all .15s ease-in-out;
+}
+
+.map-pos-spot:hover::after,
+.map-pos-spot.active::after,
+.map-pos-spot.show::after {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+.map-grenade-unit ul {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--darkgray);
+    border-radius: var(--minor-border);
+    margin-top: 12px;
+    display: none;
+}
+
+.map-grenade-unit ul .map-pos-spot:first-child {
+    margin-top: 4px;
+}
+
+.map-grenade-unit.active ul {
+    display: flex;
+}
+
+.map-grenade-unit::before,
+.map-pos-spot::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: var(--main-border);
+    background: var(--icongradient3);
+    transition: all .15s ease-in-out;
+    z-index: -1;
+}
+
+.map-grenade-unit:hover::before,
+.map-grenade-unit.active::before {
+    filter: brightness(1.1);
+}
+
+.map-grenade-unit:hover span,
+.map-grenade-unit:hover::after,
+.map-grenade-unit.active span,
+.map-grenade-unit.active span::before {
+    opacity: 1;
+}
+
+.map-grenade-unit:hover .map-pos-spot span,
+.map-grenade-unit.active .map-pos-spot span {
+    opacity: .5;
+}
+
+.map-grenade-unit .map-pos-spot:hover span,
+.map-grenade-unit .map-pos-spot.active span,
+.map-grenade-unit .map-pos-spot.show span {
+    opacity: 1;
+}
+
+.map-grenade-unit span {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+    opacity: .3;
+    pointer-events: none;
+    user-select: none;
+    transition: all .15s ease-in-out;
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.map-grenade-unit span::before {
+    content: "";
+    display: flex;
+    /* background-image: url(/img/skins/cs2-smokes/smoke_white.png); */
+    background-size: cover;
+    height: 15px;
+    width: 15px;
+    border: 2px dashed var(--white);
+    border-radius: 50%;
+    margin: 0 10px;
+    pointer-events: none;
+    user-select: none;
+    opacity: .3;
+    transition: all .15s ease-in-out;
+}
+
+.map-grenade-unit:hover span::before,
+.map-grenade-unit.active span::before {
+    opacity: 1;
+    border: 2px dashed var(--main-color);
+}
+
+.map-pos-spot span::before {
+    content: unset;
+}
+
+.radar-image {
+    width: 100%;
+    position: relative;
+    user-select: none;
+    pointer-events: none;
+    opacity: .3;
+}
+
+.radar-grenades-pos-list,
+.radar-smokes-list {
+    width: 100%;
+    position: absolute;
+    transition: all .15s ease-in-out;
+    user-select: none;
+    pointer-events: none;
+    height: 100%;
+    opacity: 0;
+    top: 0;
+}
+
+.radar-smokes-list {
+    opacity: unset;
+}
+
+.radar-grenades-pos-list.active {
+    opacity: 1;
+}
+
+.radar-pos-spot {
+    width: 15px;
+    height: 15px;
+    background: rgba(206, 32, 61, .2);
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    position: absolute;
+    transition: all .15s ease-in-out;
+    cursor: pointer;
+    user-select: auto;
+    pointer-events: all;
+}
+
+.radar-pos-spot:hover,
+.radar-pos-spot.show {
+    filter: brightness(1.25);
+}
+
+.radar-smoke-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background: rgba(13, 13, 13, .8);
+    border: none;
+
+    transition: all .15s ease-in-out;
+    cursor: pointer;
+    pointer-events: all;
+    user-select: auto;
+}
+
+.radar-smoke-icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 4px;
+    filter: grayscale(1);
+    transition: all .15s ease-in-out;
+
+    --dash-length: 47deg;
+    --dash-gap: 25deg;
+
+    background: repeating-conic-gradient(
+        from -90deg,
+        var(--main-color) 0 var(--dash-length),
+        transparent var(--dash-length) calc(var(--dash-length) + var(--dash-gap))
+    );
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+.radar-smoke-icon:hover:before,
+.radar-smoke-icon.active:before {
+    filter: grayscale(0);
+    animation: spin 5s linear infinite;
+}
+
+.radar-smoke-icon:hover,
+.radar-smoke-icon.active {
+    z-index: 5;
+}
+
+.map-radar.selected .radar-smoke-icon:not(.active):not(:hover) {
+    opacity: .3;
+}
+
+.radar-smoke-icon img {
+    width: 50%;
+    height: auto;
+    user-select: none;
+    pointer-events: none;
+}
+
+.radar-smoke-icon.active {
+    z-index: 1;
+}
+
+.radar-smoke-info {
+    position: absolute;
+    border-radius: var(--main-border);
+    background: var(--icongradient);
+    bottom: 55px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .3);
+    cursor: default;
+    flex-wrap: wrap;
+    transition: all .05s ease-in-out;
+    padding: 0;
+    width: 0;
+    width: 240px;
+    padding: 4px;
+    opacity: 0;
+    overflow: hidden;
+    transform: scale(1.1);
+    user-select: none;
+    pointer-events: none;
+}
+
+.radar-smoke-icon:hover .radar-smoke-info {
+    opacity: 1;
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+}
+
+.radar-smoke-showcase {
+    border-radius: var(--main-border);
+    height: 110px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.radar-smoke-info span {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+    pointer-events: none;
+    user-select: none;
+    text-shadow: 1px 1px 3px rgb(33 33 33);
+
+    position: absolute;
+}
+
+.radar-smoke-info span.smoke-title {
+    left: 6px;
+    bottom: 6px;
+}
+
+.radar-smoke-info span.smoke-instant {
+    left: 6px;
+    top: 6px;
+}
+
+.radar-smoke-info span.smoke-various {
+    right: 6px;
+    bottom: 6px;
+}
+
+.radar-smoke-info span.smoke-instant::before {
+    content: '';
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    filter: drop-shadow(0 0 3px black);
+    transition: filter .15s ease-in-out;
+    border-radius: unset;
+    background-size: cover;
+    margin-right: 4px;
+
+    background-image: url(/img/icons/gamemodes/bolt.svg);
+}
+
+.radar-smoke-info img {
+    width: 100%;
+}
+
+.sitepage.grenades .topic-centralizer {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.sitepage.grenades .topic-grandbox {
+    height: unset;
+    min-height: unset;
+}
+
+.sitepage.grenades .topicpage {
+    width: 1022px;
+    padding-bottom: 9px;
+}
+
+.sitepage.grenades .topic-box .logobg img {
+    transform: unset;
+    height: 60%;
+}
+
+.sitepage.topic-craft .slick-slider, .sitepage.grenades .slider-container {
+    width: 100%;
+}
+
+.radar-smoke-icon.dragging,
+.radar-pos-spot.dragging {
+    transition: none !important;
+}
+
+.map-radar-guide {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--main-border);
+    background: rgba(13, 13, 13, .98);
+    position: absolute;
+    z-index: 100;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    display: none;
+}
+
+.map-radar-guide.active {
+    display: flex;
+}
+
+.map-radar-guide-screenshot {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-radar-guide img {
+    height: 100%;
+    border-radius: var(--main-border);
+    bottom: 0;
+    position: relative;
+}
+
+.map-radar-guide-zoom {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* border: 2px var(--darkgray) solid; */
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .8);
+    transition: all .2s ease-in-out;
+
+    display: none;
+}
+
+.map-radar-guide-zoom:hover img {
+    scale: 17.7;
+}
+
+.map-radar-guide-zoom img {
+    scale: 45;
+    position: relative;
+    transition: all .15s ease-in-out;
+    width: 100%;
+    height: auto;
+}
+
+.map-radar-guide-screenshot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--main-border);
+    z-index: 1;
+    pointer-events: none;
+    background: rgba(0, 0, 0, .35);
+    -webkit-mask-image: radial-gradient(ellipse 60% 55% at 50% 50%, transparent 0%, transparent 35%, rgba(0, 0, 0, 0.35) 55%, #000 100%);
+    mask-image: radial-gradient(ellipse 60% 55% at 50% 50%, transparent 0%, transparent 35%, rgba(0, 0, 0, 0.35) 55%, #000 100%);
+    scale: 1.02;
+}
+
+.map-radar-extra {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--main-border);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .35);
+    width: 170px;
+    height: 170px;
+    z-index: 2;
+    user-select: none;
+    overflow: hidden;
+}
+
+.map-radar-guide-left:has(.map-radar-extra.extra-2) .map-radar-extra::before {
+    content: "";
+    position: absolute;
+    display: flex;
+    background: rgba(13, 13, 13, .9);
+    width: 80px;
+    height: 80px;
+    top: -35px;
+    left: -35px;
+    border-radius: var(--main-border);
+    z-index: 1;
+}
+
+.map-radar-guide-left:has(.map-radar-extra.extra-2) .map-radar-extra::after {
+    content: "1";
+    position: absolute;
+    display: flex;
+    width: 44px;
+    height: 44px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.map-radar-guide-left:has(.map-radar-extra.extra-2) .map-radar-extra.extra-2::after {
+    content: "2";
+}
+
+.map-radar-extra-desc {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--main-border);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .35);
+    width: 320px;
+    height: auto;
+    z-index: 2;
+    user-select: none;
+    overflow: hidden;
+    background: rgba(13, 13, 13, .9);
+}
+
+.map-radar-extra-desc span {
+    font-size: 16px;
+    padding: 20px;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.map-radar-extra img {
+    border-radius: unset;
+    transition: all .15s ease-in-out;
+}
+
+.map-radar-extra:hover img {
+    scale: 10;
+}
+
+.tip-zoomed .map-radar-extra:hover img {
+    scale: 1;
+} 
+
+.map-radar-guide-binds {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgb(33 33 33);
+    color: var(--white);
+    z-index: 2;
+    user-select: none;
+    pointer-events: none;
+}
+
+.map-radar-guide-title,
+.map-radar-guide-close {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgb(33 33 33);
+    z-index: 2;
+    user-select: none;
+    pointer-events: none;
+
+    border-radius: var(--minor-border);
+
+}
+
+.map-radar-guide-title {
+    position: relative;
+    left: unset;
+    top: unset;
+}
+
+.map-radar-guide-block {
+    display: flex;
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.map-radar-guide-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.map-radar-guide-right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.map-radar-guide-title::after {
+    content: "T";
+    position: relative;
+    background: rgba(13, 13, 13, .9);
+    color: var(--white);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .3);
+    border-radius: var(--minor-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 12px;
+    height: 40px;
+    width: auto;
+}
+
+.instant .map-radar-guide-title span::before {
+    content: '';
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    filter: drop-shadow(0 0 3px black);
+    transition: filter .15s ease-in-out;
+    border-radius: unset;
+    background-size: cover;
+    margin-right: 8px;
+    background-image: url(/img/icons/gamemodes/bolt.svg);
+    opacity: .81;
+}
+
+.team-ct .map-radar-guide-title::after {
+    content: "CT";
+}
+
+.map-radar-guide-close {
+    left: unset;
+    right: 16px;
+    min-width: 50px;
+    user-select: auto;
+    pointer-events: all;
+    cursor: pointer;
+    height: 50px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .3);
+    background: rgba(13, 13, 13, .9);
+}
+
+.map-radar-guide-close .officon.cross::before {
+    height: 35px;
+    width: 35px;
+}
+
+.map-radar-guide-title span {
+    color: var(--white);
+    font-size: 16px;
+}
+
+.map-radar-guide-binds span,
+.map-radar-guide-title span {
+    position: relative;
+    display: flex;
+    min-width: 50px;
+    height: 50px;
+    padding: 0 16px;
+    border-radius: var(--minor-border);
+    background: rgba(13, 13, 13, .9);
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .3);
+}
+
+.map-grenade-unit.disabling,
+.map-grenade-unit.disabling *,
+.radar-smoke-icon.disabling,
+.radar-smoke-icon.disabling *,
+.map-grenade-unit.disabling::before,
+.radar-smoke-icon.disabling::before,
+.map-grenade-unit.disabling::after,
+.radar-smoke-icon.disabling::after {
+    transition: unset !important;
 }
