@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/f2ed6218-a243-473e-8619-604dad4539d0",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-23T07:27:19.835Z",
+  "updatedAt": "2026-06-24T07:27:14.747Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 61,
-  "totalItemsGrouped": 61,
+  "totalItemsRaw": 75,
+  "totalItemsGrouped": 66,
   "items": [
     {
       "assetid": "51209508407",
@@ -36,6 +36,34 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52300848572",
+      "classid": "8247439252",
+      "instanceid": "8556050954",
+      "amount": 1,
+      "name": "★ Driver Gloves | Garden",
+      "market_hash_name": "★ Driver Gloves | Garden (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
           "name": ""
         },
         {
@@ -78,6 +106,42 @@
           "category": "Exterior",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "52291112595",
+      "classid": "7729086074",
+      "instanceid": "8556051214",
+      "amount": 10,
+      "name": "Sticker Slab",
+      "market_hash_name": "Sticker Slab",
+      "type": "Base Grade Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FFEFFFE75FE0DFFFD7FECFFB97FF8FFDC8735B31",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52291112595",
+        "52291112594",
+        "52291112593",
+        "52291112592",
+        "52291112591",
+        "52291112590",
+        "52291112589",
+        "52291112588",
+        "52291112587",
+        "52291112586"
       ]
     },
     {
@@ -724,6 +788,37 @@
       ]
     },
     {
+      "assetid": "52291751944",
+      "classid": "7545321211",
+      "instanceid": "8556051008",
+      "amount": 1,
+      "name": "Charm | Lil' Hero",
+      "market_hash_name": "Charm | Lil' Hero",
+      "type": "Exotic Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52291751944"
+      ]
+    },
+    {
       "assetid": "50431591648",
       "classid": "469458272",
       "instanceid": "188530139",
@@ -1239,6 +1334,53 @@
       ]
     },
     {
+      "assetid": "52290868663",
+      "classid": "7862383646",
+      "instanceid": "8556050954",
+      "amount": 1,
+      "name": "Sticker | ropz (Gold, Champion) | Budapest 2025",
+      "market_hash_name": "Sticker | ropz (Gold, Champion) | Budapest 2025",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C7D7C7DF7ECEE7C7EFC1F7C3A5C2CFC7D70297AFC7B7CFB3B62D4F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52290868663"
+      ]
+    },
+    {
       "assetid": "46170235669",
       "classid": "7378657666",
       "instanceid": "188530139",
@@ -1357,6 +1499,37 @@
       ],
       "assetids": [
         "49656639053"
+      ]
+    },
+    {
+      "assetid": "52291266023",
+      "classid": "7545315231",
+      "instanceid": "8556051123",
+      "amount": 1,
+      "name": "Charm | Lil' Goop",
+      "market_hash_name": "Charm | Lil' Goop",
+      "type": "Remarkable Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52291266023"
       ]
     },
     {
@@ -1758,7 +1931,7 @@
     {
       "assetid": "50584047656",
       "classid": "7993042872",
-      "instanceid": "6306700555",
+      "instanceid": "6332329430",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Minimal Wear)",
@@ -1794,7 +1967,7 @@
     {
       "assetid": "52426051450",
       "classid": "7993044513",
-      "instanceid": "7775806313",
+      "instanceid": "8586846220",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Bloodsport",
       "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Field-Tested)",
@@ -1838,7 +2011,7 @@
     {
       "assetid": "49443006869",
       "classid": "7993045794",
-      "instanceid": "188548697",
+      "instanceid": "188545324",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Stalker",
       "market_hash_name": "StatTrak™ MAC-10 | Stalker (Field-Tested)",
