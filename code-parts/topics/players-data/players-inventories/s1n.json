@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/55d2d6a0-aed2-46de-99b6-6a1381a7ab99",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-23T07:12:16.999Z",
+  "updatedAt": "2026-06-25T07:08:24.701Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 93,
-  "totalItemsGrouped": 93,
+  "totalItemsRaw": 99,
+  "totalItemsGrouped": 99,
   "items": [
     {
       "assetid": "51967049966",
@@ -60,12 +60,12 @@
       "phase": "Sapphire"
     },
     {
-      "assetid": "50111332654",
-      "classid": "7993037250",
-      "instanceid": "188530139",
+      "assetid": "52311482806",
+      "classid": "7993042523",
+      "instanceid": "8559029821",
       "amount": 1,
-      "name": "★ Karambit | Marble Fade",
-      "market_hash_name": "★ Karambit | Marble Fade (Factory New)",
+      "name": "★ Karambit | Fade",
+      "market_hash_name": "★ Karambit | Fade (Factory New)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -92,12 +92,12 @@
       ]
     },
     {
-      "assetid": "49671535139",
-      "classid": "7993047581",
+      "assetid": "50111332654",
+      "classid": "7993037250",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ M9 Bayonet | Crimson Web",
-      "market_hash_name": "★ M9 Bayonet | Crimson Web (Minimal Wear)",
+      "name": "★ Karambit | Marble Fade",
+      "market_hash_name": "★ Karambit | Marble Fade (Factory New)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -394,6 +394,42 @@
       "amount": 1,
       "name": "Glock-18 | Shinobu",
       "market_hash_name": "Glock-18 | Shinobu (Factory New)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52313453414",
+      "classid": "8247060188",
+      "instanceid": "8559029821",
+      "amount": 1,
+      "name": "P250 | Kintsugi",
+      "market_hash_name": "P250 | Kintsugi (Factory New)",
       "type": "Classified Pistol",
       "inspectLink": "",
       "tags": [
@@ -2479,6 +2515,53 @@
       ]
     },
     {
+      "assetid": "52497139451",
+      "classid": "7729113163",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | skullz (Embroidered) | Budapest 2025",
+      "market_hash_name": "Sticker | skullz (Embroidered) | Budapest 2025",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205343534BEA5A73537B57635731565B5343D81C3B53235B748A2278",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52497139451"
+      ]
+    },
+    {
       "assetid": "52042467705",
       "classid": "188530424",
       "instanceid": "8553414222",
@@ -2534,6 +2617,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52312417170",
+      "classid": "7993037662",
+      "instanceid": "8559029874",
+      "amount": 1,
+      "name": "Desert Eagle | Mulberry",
+      "market_hash_name": "Desert Eagle | Mulberry (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -2618,6 +2737,42 @@
       "name": "Tec-9 | Whiteout",
       "market_hash_name": "Tec-9 | Whiteout (Minimal Wear)",
       "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52311683885",
+      "classid": "7993038522",
+      "instanceid": "8559029821",
+      "amount": 1,
+      "name": "MAC-10 | Saibā Oni",
+      "market_hash_name": "MAC-10 | Saibā Oni (Factory New)",
+      "type": "Restricted SMG",
       "inspectLink": "",
       "tags": [
         {
@@ -3051,6 +3206,42 @@
       ]
     },
     {
+      "assetid": "52448383639",
+      "classid": "7993052384",
+      "instanceid": "8559345710",
+      "amount": 1,
+      "name": "StatTrak™ Galil AR | Sugar Rush",
+      "market_hash_name": "StatTrak™ Galil AR | Sugar Rush (Minimal Wear)",
+      "type": "StatTrak™ Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52274085509",
       "classid": "7993042170",
       "instanceid": "2068861536",
@@ -3087,9 +3278,45 @@
       ]
     },
     {
+      "assetid": "52312080998",
+      "classid": "7993041198",
+      "instanceid": "8559031588",
+      "amount": 1,
+      "name": "StatTrak™ MP5-SD | Liquidation",
+      "market_hash_name": "StatTrak™ MP5-SD | Liquidation (Factory New)",
+      "type": "StatTrak™ Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "40057209924",
       "classid": "7993044423",
-      "instanceid": "480106526",
+      "instanceid": "480093581",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Crimson Web",
       "market_hash_name": "StatTrak™ Desert Eagle | Crimson Web (Minimal Wear)",
