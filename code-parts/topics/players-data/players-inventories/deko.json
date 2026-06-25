@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/f133beae-a158-4fd2-a991-76c1769c0ab5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-20T07:03:37.157Z",
+  "updatedAt": "2026-06-25T06:48:45.310Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 75,
-  "totalItemsGrouped": 75,
+  "totalItemsRaw": 76,
+  "totalItemsGrouped": 76,
   "items": [
     {
       "assetid": "47972735460",
@@ -1341,14 +1341,14 @@
       ]
     },
     {
-      "assetid": "46811644664",
-      "classid": "7993051188",
-      "instanceid": "519977179",
+      "assetid": "52302519942",
+      "classid": "7993036321",
+      "instanceid": "6508154712",
       "amount": 1,
-      "name": "AK-47 | Wild Lotus",
-      "market_hash_name": "AK-47 | Wild Lotus (Minimal Wear)",
+      "name": "AK-47 | Neon Rider",
+      "market_hash_name": "AK-47 | Neon Rider (Minimal Wear)",
       "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208D9D7508493C238C958AAD5988A58BBD89B5327E4B7D8ECD7D88E5ADFD9AB6712F7D",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1372,6 +1372,22 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1424,6 +1440,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52302140099",
+      "classid": "7993041168",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "AWP | Desert Hydra",
+      "market_hash_name": "AWP | Desert Hydra (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

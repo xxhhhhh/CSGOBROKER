@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/players/MegaRush--",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-24T07:59:07.461Z",
+  "updatedAt": "2026-06-25T07:57:45.946Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 139,
-  "totalItemsGrouped": 139,
+  "totalItemsRaw": 138,
+  "totalItemsGrouped": 138,
   "items": [
     {
       "assetid": "52258059005",
@@ -54,62 +54,6 @@
       "float": 0.02131790109,
       "seed": 676,
       "phase": "Emerald"
-    },
-    {
-      "assetid": "52116244399",
-      "classid": "7993036718",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Moto Gloves | Spearmint",
-      "market_hash_name": "★ Moto Gloves | Spearmint (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52208991555",
-      "classid": "7993040299",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Hedge Maze",
-      "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "48161925079",
@@ -151,6 +95,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52315579759",
+      "classid": "4717330486",
+      "instanceid": "8559029874",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -327,6 +299,34 @@
       "assetid": "52060525016",
       "classid": "5710094579",
       "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52315576470",
+      "classid": "5710094579",
+      "instanceid": "8559029874",
       "amount": 1,
       "name": "Kilowatt Case",
       "market_hash_name": "Kilowatt Case",
@@ -1418,7 +1418,7 @@
     {
       "assetid": "52299390482",
       "classid": "5189384637",
-      "instanceid": "8556051123",
+      "instanceid": "0",
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
@@ -1446,7 +1446,7 @@
     {
       "assetid": "52299390483",
       "classid": "5189384637",
-      "instanceid": "8556051123",
+      "instanceid": "0",
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
@@ -1474,7 +1474,7 @@
     {
       "assetid": "52299390484",
       "classid": "5189384637",
-      "instanceid": "8556051123",
+      "instanceid": "0",
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
@@ -1502,7 +1502,7 @@
     {
       "assetid": "52299390485",
       "classid": "5189384637",
-      "instanceid": "8556050909",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
@@ -1530,7 +1530,7 @@
     {
       "assetid": "52299390486",
       "classid": "5189384637",
-      "instanceid": "8556050909",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
@@ -1558,7 +1558,7 @@
     {
       "assetid": "52299390487",
       "classid": "5189384637",
-      "instanceid": "8556050909",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
@@ -1586,7 +1586,7 @@
     {
       "assetid": "52299390488",
       "classid": "5189384637",
-      "instanceid": "8556050909",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
@@ -1614,7 +1614,7 @@
     {
       "assetid": "52299390489",
       "classid": "5189384637",
-      "instanceid": "8556050909",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
@@ -1642,7 +1642,7 @@
     {
       "assetid": "52299390490",
       "classid": "5189384637",
-      "instanceid": "8556050909",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
@@ -1670,7 +1670,7 @@
     {
       "assetid": "52299390491",
       "classid": "5189384637",
-      "instanceid": "8556050909",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
@@ -1698,7 +1698,7 @@
     {
       "assetid": "52299390492",
       "classid": "5189384637",
-      "instanceid": "8556050909",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
@@ -1726,7 +1726,7 @@
     {
       "assetid": "52299390493",
       "classid": "5189384637",
-      "instanceid": "8556050909",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
@@ -1754,7 +1754,7 @@
     {
       "assetid": "52299390494",
       "classid": "5189384637",
-      "instanceid": "8556050909",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
@@ -1782,7 +1782,91 @@
     {
       "assetid": "52299390495",
       "classid": "5189384637",
-      "instanceid": "8556050909",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52315576468",
+      "classid": "5189384637",
+      "instanceid": "8559029874",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52315577577",
+      "classid": "5189384637",
+      "instanceid": "8559029874",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52315579758",
+      "classid": "5189384637",
+      "instanceid": "8559029874",
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
@@ -2418,118 +2502,6 @@
       ]
     },
     {
-      "assetid": "52209918299",
-      "classid": "7993043838",
-      "instanceid": "8216445423",
-      "amount": 1,
-      "name": "AK-47 | Hydroponic",
-      "market_hash_name": "AK-47 | Hydroponic (Field-Tested)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52177239650",
-      "classid": "7993037248",
-      "instanceid": "6276371463",
-      "amount": 1,
-      "name": "M4A1-S | Hot Rod",
-      "market_hash_name": "M4A1-S | Hot Rod (Factory New)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51148057982",
       "classid": "7993036332",
       "instanceid": "302028390",
@@ -2561,94 +2533,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52298827664",
-      "classid": "7993048815",
-      "instanceid": "8579779970",
-      "amount": 1,
-      "name": "AWP | Dragon Lore",
-      "market_hash_name": "AWP | Dragon Lore (Minimal Wear)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52139248698",
-      "classid": "7993044593",
-      "instanceid": "6279276681",
-      "amount": 1,
-      "name": "AWP | Gungnir",
-      "market_hash_name": "AWP | Gungnir (Field-Tested)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -2990,6 +2874,49 @@
       ]
     },
     {
+      "assetid": "52315579756",
+      "classid": "5327976467",
+      "instanceid": "8559029821",
+      "amount": 1,
+      "name": "Sticker | ENCE (Gold) | Paris 2023",
+      "market_hash_name": "Sticker | ENCE (Gold) | Paris 2023",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203727372F8E3E17371F31073355323F3727AC035F37473F2CB2F6C5",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52315579756"
+      ]
+    },
+    {
       "assetid": "25847884685",
       "classid": "2697224543",
       "instanceid": "338584038",
@@ -3011,6 +2938,37 @@
           "category": "Rarity",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "52315576469",
+      "classid": "7545309815",
+      "instanceid": "8559030659",
+      "amount": 1,
+      "name": "Charm | Lil' Vino",
+      "market_hash_name": "Charm | Lil' Vino",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52315576469"
       ]
     },
     {
@@ -3065,6 +3023,49 @@
       ],
       "assetids": [
         "51066428508"
+      ]
+    },
+    {
+      "assetid": "52315579754",
+      "classid": "7729096791",
+      "instanceid": "8559029821",
+      "amount": 1,
+      "name": "Sticker | B8 | Budapest 2025",
+      "market_hash_name": "Sticker | B8 | Budapest 2025",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208B9B8B933282AB8BA388BB8FE98E838B9B52C1E38BFB835BCE2F5A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52315579754"
       ]
     },
     {
@@ -3288,6 +3289,42 @@
       ]
     },
     {
+      "assetid": "52315579760",
+      "classid": "7993067216",
+      "instanceid": "8559029874",
+      "amount": 1,
+      "name": "MP7 | Coral Paisley",
+      "market_hash_name": "MP7 | Coral Paisley (Minimal Wear)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52093593935",
       "classid": "4141779073",
       "instanceid": "6277962301",
@@ -3316,25 +3353,17 @@
       ]
     },
     {
-      "assetid": "51293424122",
-      "classid": "7993035499",
-      "instanceid": "188530139",
+      "assetid": "52315433390",
+      "classid": "7545312331",
+      "instanceid": "8559030659",
       "amount": 1,
-      "name": "Five-SeveN | Scrawl",
-      "market_hash_name": "Five-SeveN | Scrawl (Field-Tested)",
-      "type": "Mil-Spec Grade Pistol",
+      "name": "Charm | Lil' Dumplin'",
+      "market_hash_name": "Charm | Lil' Dumplin'",
+      "type": "Remarkable Charm",
       "inspectLink": "",
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -3346,31 +3375,26 @@
           "name": ""
         },
         {
-          "category": "Exterior",
+          "category": "KeychainCapsule",
           "name": ""
         }
+      ],
+      "assetids": [
+        "52315433390"
       ]
     },
     {
-      "assetid": "51293418042",
-      "classid": "7993035762",
-      "instanceid": "188530139",
+      "assetid": "52315579757",
+      "classid": "5327976109",
+      "instanceid": "8559029821",
       "amount": 1,
-      "name": "Sawed-Off | Spirit Board",
-      "market_hash_name": "Sawed-Off | Spirit Board (Minimal Wear)",
-      "type": "Mil-Spec Grade Shotgun",
-      "inspectLink": "",
+      "name": "Sticker | MOUZ (Glitter) | Paris 2023",
+      "market_hash_name": "Sticker | MOUZ (Glitter) | Paris 2023",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204C5C4C54F5456C4C64487C482E49444C5CED78244C3C44D3F65789",
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -3382,31 +3406,38 @@
           "name": ""
         },
         {
-          "category": "Exterior",
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
           "name": ""
         }
+      ],
+      "assetids": [
+        "52315579757"
       ]
     },
     {
-      "assetid": "51293376295",
-      "classid": "7993038060",
-      "instanceid": "188530139",
+      "assetid": "52315579755",
+      "classid": "5327976234",
+      "instanceid": "8559029821",
       "amount": 1,
-      "name": "MAC-10 | Aloha",
-      "market_hash_name": "MAC-10 | Aloha (Factory New)",
-      "type": "Mil-Spec Grade SMG",
-      "inspectLink": "",
+      "name": "Sticker | rigoN (Glitter) | Paris 2023",
+      "market_hash_name": "Sticker | rigoN (Glitter) | Paris 2023",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202333233B9A2A03230B27132741262B233399164B23532B4F44917E",
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -3418,51 +3449,34 @@
           "name": ""
         },
         {
-          "category": "Exterior",
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "51293430516",
-      "classid": "7993036911",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "MAC-10 | Ensnared",
-      "market_hash_name": "MAC-10 | Ensnared (Field-Tested)",
-      "type": "Mil-Spec Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
+      ],
+      "assetids": [
+        "52315579755"
       ]
     },
     {
       "assetid": "52299390481",
       "classid": "3186047715",
-      "instanceid": "8556050954",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | s1mple (Foil) | Katowice 2019",
       "market_hash_name": "Sticker | s1mple (Foil) | Katowice 2019",
@@ -3742,90 +3756,6 @@
       ]
     },
     {
-      "assetid": "51293415270",
-      "classid": "7993037376",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "PP-Bizon | Space Cat",
-      "market_hash_name": "PP-Bizon | Space Cat (Field-Tested)",
-      "type": "Restricted SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49818073706",
-      "classid": "7993038748",
-      "instanceid": "6309287277",
-      "amount": 1,
-      "name": "SSG 08 | Parallax",
-      "market_hash_name": "SSG 08 | Parallax (Minimal Wear)",
-      "type": "Restricted Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "45233018590",
       "classid": "7993038740",
       "instanceid": "6276298355",
@@ -3970,54 +3900,6 @@
       ]
     },
     {
-      "assetid": "44737042600",
-      "classid": "7993038997",
-      "instanceid": "7216029589",
-      "amount": 1,
-      "name": "Souvenir MP9 | Music Box",
-      "market_hash_name": "Souvenir MP9 | Music Box (Field-Tested)",
-      "type": "Souvenir Mil-Spec Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51019001865",
       "classid": "7993049503",
       "instanceid": "188530248",
@@ -4056,7 +3938,7 @@
     {
       "assetid": "52045425590",
       "classid": "7993071018",
-      "instanceid": "6563657533",
+      "instanceid": "6508634576",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Howl",
       "market_hash_name": "StatTrak™ M4A4 | Howl (Minimal Wear)",
@@ -4307,7 +4189,7 @@
     {
       "assetid": "50318443274",
       "classid": "8246939604",
-      "instanceid": "188530931",
+      "instanceid": "188530611",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Galigator",
       "market_hash_name": "StatTrak™ Galil AR | Galigator (Field-Tested)",

@@ -7,16 +7,18 @@
   "name": "Adones Nobre",
   "nationality": "Portugal",
   "born": "29.12.2003",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/94f5114b-b7b9-445f-be26-1a60f54d22de",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-17T09:13:46.290Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 185,
-  "totalItemsGrouped": 168,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-06-25T07:32:06.940Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 183,
+  "totalItemsGrouped": 166,
   "items": [
     {
       "assetid": "51756927366",
@@ -1427,42 +1429,6 @@
       ]
     },
     {
-      "assetid": "51199794838",
-      "classid": "7993037709",
-      "instanceid": "6276464489",
-      "amount": 1,
-      "name": "USP-S | Kill Confirmed",
-      "market_hash_name": "USP-S | Kill Confirmed (Field-Tested)",
-      "type": "Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50598682657",
       "classid": "7993043011",
       "instanceid": "7983412133",
@@ -1784,37 +1750,6 @@
           "category": "Rarity",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "48209131413",
-      "classid": "6216352183",
-      "instanceid": "0",
-      "amount": 1,
-      "name": "Charm | Baby's AK",
-      "market_hash_name": "Charm | Baby's AK",
-      "type": "High Grade Charm",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "48209131413"
       ]
     },
     {
@@ -6331,14 +6266,14 @@
       ]
     },
     {
-      "assetid": "27773456833",
+      "assetid": "52455879863",
       "classid": "5835584507",
-      "instanceid": "6276720551",
+      "instanceid": "8585201447",
       "amount": 1,
       "name": "M4A4",
       "market_hash_name": "M4A4",
       "type": "Stock Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207969B8DACCC21E616959795179497D1B7C717969EB5C1B7C717869EB5C1B7C717B69EB5C114E096FDCDD816F",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
