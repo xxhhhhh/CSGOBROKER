@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e0f4debc-ed3b-4936-85ea-1fbbb334e136",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-23T07:44:28.130Z",
+  "updatedAt": "2026-06-26T07:46:05.314Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 767,
-  "totalItemsGrouped": 458,
+  "totalItemsRaw": 771,
+  "totalItemsGrouped": 461,
   "items": [
     {
       "assetid": "47484660523",
@@ -1485,6 +1485,34 @@
     },
     {
       "assetid": "52138548535",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52333339334",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -5041,9 +5069,9 @@
       ]
     },
     {
-      "assetid": "52050902417",
+      "assetid": "52518075915",
       "classid": "7993051188",
-      "instanceid": "6276307255",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "AK-47 | Wild Lotus",
       "market_hash_name": "AK-47 | Wild Lotus (Minimal Wear)",
@@ -5667,7 +5695,7 @@
       "assetid": "51663945709",
       "classid": "6216554000",
       "instanceid": "0",
-      "amount": 1,
+      "amount": 2,
       "name": "Charm | Semi-Precious",
       "market_hash_name": "Charm | Semi-Precious",
       "type": "Exotic Charm",
@@ -5691,7 +5719,8 @@
         }
       ],
       "assetids": [
-        "51663945709"
+        "51663945709",
+        "52518075916"
       ]
     },
     {
@@ -10534,6 +10563,50 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52333340564",
+      "classid": "7993035756",
+      "instanceid": "6276300745",
+      "amount": 1,
+      "name": "Desert Eagle | Blue Ply",
+      "market_hash_name": "Desert Eagle | Blue Ply (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -17016,6 +17089,58 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52333340565",
+      "classid": "7993037945",
+      "instanceid": "6694131990",
+      "amount": 1,
+      "name": "StatTrak™ M4A1-S | Emphorosaur-S",
+      "market_hash_name": "StatTrak™ M4A1-S | Emphorosaur-S (Field-Tested)",
+      "type": "StatTrak™ Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
