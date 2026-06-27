@@ -7,26 +7,28 @@
   "name": "Gytis Glušauskas",
   "nationality": "Lithuania",
   "born": "25.07.2004",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/d5fa1a5b-9fde-4996-bd1e-bab0aa9bb0d2",
-  "isContentCreator": false,
-  "updatedAt": "2026-05-14T06:34:54.409Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 68,
-  "totalItemsGrouped": 68,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-06-27T06:40:18.456Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 64,
+  "totalItemsGrouped": 64,
   "items": [
     {
-      "assetid": "51294715612",
-      "classid": "7993040630",
+      "assetid": "51924838128",
+      "classid": "7993042582",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Butterfly Knife | Gamma Doppler",
-      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "name": "★ Butterfly Knife | Fade",
+      "market_hash_name": "★ Butterfly Knife | Fade (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C4D41839584F7BC5DC47C0E47EC0ECC2F4C7FC16482625C78496ACC3B4CC6346E688",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -38,76 +40,6 @@
         },
         {
           "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.011262493208,
-      "seed": 82,
-      "phase": "Phase 2"
-    },
-    {
-      "assetid": "50276126179",
-      "classid": "7993040834",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Doppler",
-      "market_hash_name": "★ Karambit | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FBEB1860385E40FAE300F8DB59F8D3FDCBF8C3635E2325F8BBF693D48BF3C7651DF7",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.006532978266,
-      "seed": 13,
-      "phase": "Phase 1"
-    },
-    {
-      "assetid": "50594050113",
-      "classid": "7993042789",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Lore",
-      "market_hash_name": "★ M9 Bayonet | Lore (Minimal Wear)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204E5E8FAEC1F3F24F56B24D6EFC4A66487E4D768BAEBDA04D0E26264B3E4AE8110A9E",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
           "name": ""
         },
         {
@@ -125,12 +57,12 @@
       ]
     },
     {
-      "assetid": "51308912430",
-      "classid": "7993036736",
+      "assetid": "51833644163",
+      "classid": "7993039061",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Skeleton Knife | Crimson Web",
-      "market_hash_name": "★ Skeleton Knife | Crimson Web (Field-Tested)",
+      "name": "★ Butterfly Knife | Tiger Tooth",
+      "market_hash_name": "★ Butterfly Knife | Tiger Tooth (Factory New)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -144,6 +76,38 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52088962692",
+      "classid": "7993042296",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Freehand",
+      "market_hash_name": "★ Karambit | Freehand (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
           "name": ""
         },
         {
@@ -167,62 +131,6 @@
       "amount": 1,
       "name": "★ Driver Gloves | Snow Leopard",
       "market_hash_name": "★ Driver Gloves | Snow Leopard (Well-Worn)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50276126158",
-      "classid": "7993041878",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Specialist Gloves | Crimson Kimono",
-      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202939E7B2EA8C922831830E099867012F192A1197B9E4DD2A692A411759213ECE2511",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51462592899",
-      "classid": "7993040558",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Hedge Maze",
-      "market_hash_name": "★ Sport Gloves | Hedge Maze (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -324,50 +232,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51114575985",
-      "classid": "7993036958",
-      "instanceid": "6276360841",
-      "amount": 1,
-      "name": "AK-47 | Redline",
-      "market_hash_name": "AK-47 | Redline (Field-Tested)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -573,9 +437,9 @@
       ]
     },
     {
-      "assetid": "51086973102",
+      "assetid": "51831501222",
       "classid": "201966840",
-      "instanceid": "6276401351",
+      "instanceid": "8521322074",
       "amount": 1,
       "name": "AK-47 | Fire Serpent",
       "market_hash_name": "AK-47 | Fire Serpent (Field-Tested)",
@@ -611,56 +475,32 @@
           "name": ""
         },
         {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
           "category": "TournamentTeam",
           "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50192552812",
-      "classid": "7993036534",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "M4A1-S | Fade",
-      "market_hash_name": "M4A1-S | Fade (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202737CB81F1DA9D263F1B07BE2E0F2117231FB080E1C42467DF244F2B57309ABA945B",
-      "tags": [
+        },
         {
-          "category": "Type",
+          "category": "TournamentTeam",
           "name": ""
         },
         {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
+          "category": "ProPlayer",
           "name": ""
         }
       ]
     },
     {
-      "assetid": "48441260032",
-      "classid": "7993039458",
-      "instanceid": "188530139",
+      "assetid": "52312030986",
+      "classid": "7993035494",
+      "instanceid": "6276582960",
       "amount": 1,
-      "name": "M4A4 | Neo-Noir",
-      "market_hash_name": "M4A4 | Neo-Noir (Field-Tested)",
+      "name": "M4A1-S | Printstream",
+      "market_hash_name": "M4A1-S | Printstream (Field-Tested)",
       "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B6A636467D0C02B7AEA69601B39EB086B28E22031242B5F621B3DE97C6BE7527C622",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -697,6 +537,42 @@
       "market_hash_name": "M4A4 | Royal Paladin (Factory New)",
       "type": "Covert Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%207666998EF498DE776E6656F6725E7046724E9CB4859F75369E701E6F067ECEC75D0E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52290869743",
+      "classid": "7993036472",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "M4A4 | Temukau",
+      "market_hash_name": "M4A4 | Temukau (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1831,7 +1707,7 @@
     {
       "assetid": "30865322620",
       "classid": "7993038641",
-      "instanceid": "8477447692",
+      "instanceid": "8595320466",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Water Elemental",
       "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Field-Tested)",
@@ -1883,7 +1759,7 @@
     {
       "assetid": "45872339636",
       "classid": "7993039005",
-      "instanceid": "8477447690",
+      "instanceid": "8482437245",
       "amount": 1,
       "name": "StatTrak™ USP-S | Cortex",
       "market_hash_name": "StatTrak™ USP-S | Cortex (Field-Tested)",
@@ -1919,7 +1795,7 @@
     {
       "assetid": "30896644061",
       "classid": "7993041229",
-      "instanceid": "480091752",
+      "instanceid": "480101924",
       "amount": 1,
       "name": "StatTrak™ MP9 | Food Chain",
       "market_hash_name": "StatTrak™ MP9 | Food Chain (Well-Worn)",
@@ -1955,7 +1831,7 @@
     {
       "assetid": "38236617600",
       "classid": "7993040836",
-      "instanceid": "188628044",
+      "instanceid": "480087522",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Angry Mob",
       "market_hash_name": "StatTrak™ Five-SeveN | Angry Mob (Field-Tested)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/1ace868a-d60c-46b8-a61e-f51d40d0305b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-16T08:45:46.512Z",
+  "updatedAt": "2026-06-27T06:29:42.408Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 406,
-  "totalItemsGrouped": 406,
+  "totalItemsRaw": 408,
+  "totalItemsGrouped": 408,
   "items": [
     {
       "assetid": "52331151320",
@@ -77,6 +77,37 @@
       ],
       "assetids": [
         "50339417242"
+      ]
+    },
+    {
+      "assetid": "52330441145",
+      "classid": "1989326413",
+      "instanceid": "8561969319",
+      "amount": 1,
+      "name": "Sealed Graffiti | X-Knives (Monster Purple)",
+      "market_hash_name": "Sealed Graffiti | X-Knives (Monster Purple)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209585958D519FB595BD94A591F7929D95852B98A59AFD95E58D31E85459",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52330441145"
       ]
     },
     {
@@ -1233,6 +1264,42 @@
       "market_hash_name": "XM1014 | XoooM (Factory New)",
       "type": "Industrial Grade Shotgun",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%200F1FE2DBB08CB20E17162FEA05270D3F0B37DC99EAE40C4F2D678E8F8F8F037F176D26B3B6",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52330441934",
+      "classid": "7993067737",
+      "instanceid": "8561969319",
+      "amount": 1,
+      "name": "MAC-10 | Snow Splash",
+      "market_hash_name": "MAC-10 | Snow Splash (Factory New)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/36bc4b9f-ba4d-468e-bcb6-36a22126fba5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-12T08:09:34.210Z",
+  "updatedAt": "2026-06-27T07:12:13.096Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 40,
-  "totalItemsGrouped": 40,
+  "totalItemsRaw": 42,
+  "totalItemsGrouped": 42,
   "items": [
     {
       "assetid": "51417660560",
@@ -83,6 +83,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52532941929",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -571,6 +599,42 @@
       ],
       "assetids": [
         "33543600036"
+      ]
+    },
+    {
+      "assetid": "52532941930",
+      "classid": "7993035653",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "AK-47 | Wintergreen",
+      "market_hash_name": "AK-47 | Wintergreen (Field-Tested)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
       ]
     },
     {

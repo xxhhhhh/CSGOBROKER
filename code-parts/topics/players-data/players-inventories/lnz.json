@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/8a1b0b79-995c-4313-97c6-7855c4f5a23e",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-23T07:23:05.205Z",
+  "updatedAt": "2026-06-27T07:01:34.683Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 341,
-  "totalItemsGrouped": 280,
+  "totalItemsRaw": 352,
+  "totalItemsGrouped": 283,
   "items": [
     {
       "assetid": "51614104188",
@@ -784,14 +784,14 @@
       ]
     },
     {
-      "assetid": "51837338559",
+      "assetid": "52334702903",
       "classid": "8490962307",
-      "instanceid": "143865972",
-      "amount": 3,
+      "instanceid": "8564799473",
+      "amount": 5,
       "name": "Sticker | LNZ (Holo) | Cologne 2026",
       "market_hash_name": "Sticker | LNZ (Holo) | Cologne 2026",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C8D8C8D071C1E8C8E0CDF8CCAACDC0C8D8289DA0C8B8CAC52BCD28",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DCCCDCC465D5FCDCF4D9ECD8BED9D4DCCC3C89B4DCACDE26FD4FC9",
       "tags": [
         {
           "category": "Type",
@@ -827,6 +827,8 @@
         }
       ],
       "assetids": [
+        "52334702903",
+        "52334702902",
         "51837338559",
         "51837338558",
         "51837338557"
@@ -1520,14 +1522,14 @@
       ]
     },
     {
-      "assetid": "52130840348",
+      "assetid": "52334699164",
       "classid": "8491552489",
-      "instanceid": "143865972",
-      "amount": 6,
+      "instanceid": "8564799473",
+      "amount": 7,
       "name": "Sticker | LNZ (Gold) | Cologne 2026",
       "market_hash_name": "Sticker | LNZ (Gold) | Cologne 2026",
       "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206575657DDC6C45654D63556107606D657584300D651567EF892FB8",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206676667EDF6F46664E60566204636E667687330E661664C9FA17E0",
       "tags": [
         {
           "category": "Type",
@@ -1563,12 +1565,13 @@
         }
       ],
       "assetids": [
+        "52334699164",
+        "52146201220",
         "52130840348",
         "52130840334",
         "51837338572",
         "51837338571",
-        "51837338570",
-        "52146201220"
+        "51837338570"
       ]
     },
     {
@@ -4333,6 +4336,51 @@
         "44450190126",
         "44450165203",
         "44097508782"
+      ]
+    },
+    {
+      "assetid": "52334706651",
+      "classid": "8490798409",
+      "instanceid": "8564799473",
+      "amount": 3,
+      "name": "Sticker | MIBR | Cologne 2026",
+      "market_hash_name": "Sticker | MIBR | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205C4C5C44E5557C5C745F6C583E59545C4C850D345C2C5EC6F339D8",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52334706651",
+        "52334706650",
+        "52334706649"
       ]
     },
     {
@@ -8409,6 +8457,52 @@
       ]
     },
     {
+      "assetid": "52334706655",
+      "classid": "8490923331",
+      "instanceid": "8564799473",
+      "amount": 4,
+      "name": "Sticker | MIBR (Foil) | Cologne 2026",
+      "market_hash_name": "Sticker | MIBR (Foil) | Cologne 2026",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202C3C2C3495250C2C04281C284E29242C3CF67D442C5C2E407DBCAE",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52334706655",
+        "52334706654",
+        "52334706653",
+        "52334706652"
+      ]
+    },
+    {
       "assetid": "44097650583",
       "classid": "7104667464",
       "instanceid": "188530139",
@@ -9239,6 +9333,66 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52429662642",
+      "classid": "7993038625",
+      "instanceid": "8579727983",
+      "amount": 1,
+      "name": "Souvenir Desert Eagle | Fennec Fox",
+      "market_hash_name": "Souvenir Desert Eagle | Fennec Fox (Minimal Wear)",
+      "type": "Souvenir Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -10169,7 +10323,7 @@
     {
       "assetid": "46991613624",
       "classid": "7993041822",
-      "instanceid": "188533161",
+      "instanceid": "188531024",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Fowl Play",
       "market_hash_name": "StatTrak™ Five-SeveN | Fowl Play (Minimal Wear)",
@@ -10325,7 +10479,7 @@
     {
       "assetid": "51555409667",
       "classid": "7993044134",
-      "instanceid": "7611508479",
+      "instanceid": "7629303352",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Bullet Queen",
       "market_hash_name": "StatTrak™ Glock-18 | Bullet Queen (Minimal Wear)",
@@ -10361,7 +10515,7 @@
     {
       "assetid": "48418501065",
       "classid": "7993042570",
-      "instanceid": "8588115084",
+      "instanceid": "8597937296",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Battle-Scarred)",

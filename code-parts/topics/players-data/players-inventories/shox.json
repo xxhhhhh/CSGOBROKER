@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/ecd004fa-0215-4a42-965b-07ebefd69f0c",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-24T07:46:18.752Z",
+  "updatedAt": "2026-06-27T07:25:01.850Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 429,
-  "totalItemsGrouped": 370,
+  "totalItemsRaw": 431,
+  "totalItemsGrouped": 372,
   "items": [
     {
       "assetid": "38828525924",
@@ -301,6 +301,42 @@
       "float": 0.033547166735,
       "seed": 334,
       "phase": "Phase 1"
+    },
+    {
+      "assetid": "52335615429",
+      "classid": "7993038396",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Nomad Knife | Marble Fade",
+      "market_hash_name": "★ Nomad Knife | Marble Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "50470457033",
@@ -6754,14 +6790,14 @@
       ]
     },
     {
-      "assetid": "52077124991",
+      "assetid": "52077124992",
       "classid": "5327976231",
       "instanceid": "188530139",
       "amount": 7,
       "name": "Sticker | Vitality | Paris 2023",
       "market_hash_name": "Sticker | Vitality | Paris 2023",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F6E6F6EE4FFFD6F6DEF5C6F294F3FEF6E62AC59EF686FED99434DF",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FFEFFFE746F6DFFFD7FCCFFB9DFAF7FFEF23CC97FF8FF7438C8E70",
       "tags": [
         {
           "category": "Type",
@@ -6793,13 +6829,13 @@
         }
       ],
       "assetids": [
+        "52077124992",
         "52077124991",
         "52077124990",
         "52077124989",
         "52077124988",
         "52077124987",
-        "52077124986",
-        "52077124992"
+        "52077124986"
       ]
     },
     {
@@ -7302,6 +7338,54 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52335608094",
+      "classid": "7993042695",
+      "instanceid": "6872580151",
+      "amount": 1,
+      "name": "AK-47 | Green Laminate",
+      "market_hash_name": "AK-47 | Green Laminate (Minimal Wear)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

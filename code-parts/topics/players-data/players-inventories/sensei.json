@@ -7,16 +7,18 @@
   "name": "Dmytro Shvorak",
   "nationality": "Ukraine",
   "born": "31.10.1998",
+  "isContentCreator": false,
   "twitch": "senseics2",
   "faceit": "https://faceitdb.com/profile/faceit/9ee83de5-4ef1-411c-8c6e-dc50b1116975",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-05T08:19:22.911Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 124,
-  "totalItemsGrouped": 123,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-06-27T07:35:49.737Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 125,
+  "totalItemsGrouped": 124,
   "items": [
     {
       "assetid": "51362814776",
@@ -25,42 +27,6 @@
       "amount": 1,
       "name": "★ Butterfly Knife | Freehand",
       "market_hash_name": "★ Butterfly Knife | Freehand (Field-Tested)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51344513140",
-      "classid": "7993039522",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Stiletto Knife | Ultraviolet",
-      "market_hash_name": "★ Stiletto Knife | Ultraviolet (Minimal Wear)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -154,40 +120,12 @@
       ]
     },
     {
-      "assetid": "47287843213",
-      "classid": "5189384637",
+      "assetid": "52237345890",
+      "classid": "7488632023",
       "instanceid": "302028390",
       "amount": 1,
-      "name": "Revolution Case",
-      "market_hash_name": "Revolution Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50269245090",
-      "classid": "5189384637",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Revolution Case",
-      "market_hash_name": "Revolution Case",
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -1853,6 +1791,42 @@
       "market_hash_name": "SG 553 | Cyrex (Minimal Wear)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CBDB1918075ABAD3ECEB2CC8E3CEFBCFF344034F25C88B6ACFA9CEC3C9DB32D1A3E0BBC3628701A1",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52237345891",
+      "classid": "7993061323",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "P250 | Sleet",
+      "market_hash_name": "P250 | Sleet (Field-Tested)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3901,9 +3875,45 @@
       ]
     },
     {
+      "assetid": "52121179345",
+      "classid": "7993039657",
+      "instanceid": "188530398",
+      "amount": 1,
+      "name": "StatTrak™ Zeus x27 | Olympus",
+      "market_hash_name": "StatTrak™ Zeus x27 | Olympus (Field-Tested)",
+      "type": "StatTrak™ Classified Equipment",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49294121285",
       "classid": "7993039529",
-      "instanceid": "8525396420",
+      "instanceid": "8598367744",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Asiimov",
       "market_hash_name": "StatTrak™ AK-47 | Asiimov (Field-Tested)",
@@ -3939,7 +3949,7 @@
     {
       "assetid": "18939432698",
       "classid": "7993039305",
-      "instanceid": "188602803",
+      "instanceid": "188667465",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Violent Daimyo",
       "market_hash_name": "StatTrak™ Five-SeveN | Violent Daimyo (Battle-Scarred)",
@@ -3975,7 +3985,7 @@
     {
       "assetid": "33082786719",
       "classid": "7993039942",
-      "instanceid": "188555620",
+      "instanceid": "188769370",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Destroyer",
       "market_hash_name": "StatTrak™ Galil AR | Destroyer (Factory New)",
@@ -4011,7 +4021,7 @@
     {
       "assetid": "36565819251",
       "classid": "7993039449",
-      "instanceid": "8525396421",
+      "instanceid": "8561130338",
       "amount": 1,
       "name": "StatTrak™ MP9 | Goo",
       "market_hash_name": "StatTrak™ MP9 | Goo (Field-Tested)",
@@ -4075,6 +4085,34 @@
       "amount": 1,
       "name": "'Two Times' McCoy | USAF TACP",
       "market_hash_name": "'Two Times' McCoy | USAF TACP",
+      "type": "Superior Agent",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "22250295400",
+      "classid": "4141780734",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Safecracker Voltzmann | The Professionals",
+      "market_hash_name": "Safecracker Voltzmann | The Professionals",
       "type": "Superior Agent",
       "inspectLink": "",
       "tags": [
