@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/players/meowsui/",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-27T06:31:52.129Z",
+  "updatedAt": "2026-06-28T07:05:31.924Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 843,
-  "totalItemsGrouped": 725,
+  "totalItemsRaw": 847,
+  "totalItemsGrouped": 726,
   "items": [
     {
       "assetid": "47476789264",
@@ -1499,6 +1499,38 @@
       "assetid": "52326814656",
       "classid": "7993043388",
       "instanceid": "8561970281",
+      "amount": 1,
+      "name": "★ Karambit | Lore",
+      "market_hash_name": "★ Karambit | Lore (Field-Tested)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52336790645",
+      "classid": "7993043388",
+      "instanceid": "8564799361",
       "amount": 1,
       "name": "★ Karambit | Lore",
       "market_hash_name": "★ Karambit | Lore (Field-Tested)",
@@ -10931,7 +10963,7 @@
       ]
     },
     {
-      "assetid": "52322194634",
+      "assetid": "52322194852",
       "classid": "6216350378",
       "instanceid": "8561969521",
       "amount": 26,
@@ -10958,6 +10990,10 @@
         }
       ],
       "assetids": [
+        "52322194852",
+        "52322194851",
+        "52322194636",
+        "52322194635",
         "52322194634",
         "52322194633",
         "52326817054",
@@ -10979,18 +11015,14 @@
         "52322195498",
         "52322195220",
         "52322195010",
-        "52322194853",
-        "52322194852",
-        "52322194851",
-        "52322194636",
-        "52322194635"
+        "52322194853"
       ]
     },
     {
       "assetid": "52322194396",
       "classid": "6216487158",
       "instanceid": "8561969376",
-      "amount": 32,
+      "amount": 34,
       "name": "Charm | Baby Karat T",
       "market_hash_name": "Charm | Baby Karat T",
       "type": "Extraordinary Charm",
@@ -11027,8 +11059,10 @@
         "52322192441",
         "52322191812",
         "52322191811",
-        "52326816766",
+        "52336790304",
+        "52336789924",
         "46265435871",
+        "52326816766",
         "52326816162",
         "52326815668",
         "52326815212",
@@ -11052,7 +11086,7 @@
       "assetid": "52322192102",
       "classid": "7545318572",
       "instanceid": "8561969376",
-      "amount": 5,
+      "amount": 6,
       "name": "Charm | Quick Silver",
       "market_hash_name": "Charm | Quick Silver",
       "type": "Extraordinary Charm",
@@ -11079,6 +11113,7 @@
         "52322192102",
         "52322192101",
         "52322192100",
+        "52336789464",
         "52326815418",
         "52322210873"
       ]

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/4053b992-4f7e-4073-a503-934ae63de9f6",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-26T07:16:35.029Z",
+  "updatedAt": "2026-06-28T07:27:04.298Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 61,
-  "totalItemsGrouped": 59,
+  "totalItemsRaw": 66,
+  "totalItemsGrouped": 64,
   "items": [
     {
       "assetid": "50417130641",
@@ -40,6 +40,38 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52374394091",
+      "classid": "7993042523",
+      "instanceid": "8567636397",
+      "amount": 1,
+      "name": "★ Karambit | Fade",
+      "market_hash_name": "★ Karambit | Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
           "name": ""
         },
         {
@@ -774,6 +806,50 @@
       ]
     },
     {
+      "assetid": "52374415041",
+      "classid": "259092368",
+      "instanceid": "8592315270",
+      "amount": 1,
+      "name": "M4A4 | Asiimov",
+      "market_hash_name": "M4A4 | Asiimov (Battle-Scarred)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51943075456",
       "classid": "8490839141",
       "instanceid": "143865972",
@@ -1488,6 +1564,147 @@
           "category": "Tournament",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "52375495902",
+      "classid": "7104685839",
+      "instanceid": "8567636267",
+      "amount": 1,
+      "name": "Sticker | JBa (Gold) | Austin 2025",
+      "market_hash_name": "Sticker | JBa (Gold) | Austin 2025",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F3E3F3EB4AFAD3F3DBF5C3F791F6FBF3E305B59BF383FB26F755D9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52375495902"
+      ]
+    },
+    {
+      "assetid": "52375481512",
+      "classid": "8491202876",
+      "instanceid": "8567636512",
+      "amount": 1,
+      "name": "Sticker | JBa (Gold) | Cologne 2026",
+      "market_hash_name": "Sticker | JBa (Gold) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202434243C9D2D04240C22142046212C2434F1714C245426BE0B08AC",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52375481512"
+      ]
+    },
+    {
+      "assetid": "52375488118",
+      "classid": "6360355996",
+      "instanceid": "8567636267",
+      "amount": 1,
+      "name": "Sticker | JBa (Gold) | Shanghai 2024",
+      "market_hash_name": "Sticker | JBa (Gold) | Shanghai 2024",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2041514159F8486141694771452344494151E503294131494E476374",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52375488118"
       ]
     },
     {
