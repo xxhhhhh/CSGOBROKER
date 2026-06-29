@@ -5626,7 +5626,7 @@ nav img {
 }
 
 .promo-box.extra-abox {
-    height: 100px;
+    height: auto;
     transition: all .15s ease-in-out;
 }
 
@@ -5649,7 +5649,7 @@ nav img {
     height: 100%;
     z-index: 1;
     width: 100%;
-    padding: 0 20px;
+    padding: 20px;
     gap: 8px;
     display: flex;
     flex-direction: column;
@@ -5667,6 +5667,7 @@ nav img {
     flex-direction: row;
     align-items: center;
     gap: 6px;
+    width: 100%;
 }
 
 /* .promo-box::after {
@@ -5811,6 +5812,11 @@ nav img {
     user-select: none;
     text-transform: uppercase;
     text-wrap: nowrap;
+}
+
+.promo-box.extra-abox span {
+    text-wrap: unset;
+    text-align: start;
 }
 
 .promo-box code {
@@ -13150,6 +13156,7 @@ header {
     margin-right: 10px;
     width: 9px;
     height: 9px;
+    min-width: 9px;
     font-size: 24px;
     color: transparent;
     background: linear-gradient(90deg, rgb(141, 21, 41), var(--main-color));
@@ -13157,6 +13164,7 @@ header {
     background-clip: initial;
     transition: all .15s ease-in-out;
     border-radius: 40%;
+    flex-shrink: unset;
     top: 7px;
 }
 
@@ -18749,6 +18757,10 @@ a[href*="/?aff="][target="_blank"] {
     transition: all .15s ease-in-out;
     cursor: pointer;
     user-select: auto;
+    pointer-events: none;
+}
+
+.active .radar-pos-spot {
     pointer-events: all;
 }
 
@@ -18807,12 +18819,14 @@ a[href*="/?aff="][target="_blank"] {
 }
 
 .radar-smoke-icon:hover:before,
-.radar-smoke-icon.active:before {
+.radar-smoke-icon.active:before,
+.radar-smoke-icon.show:before {
     filter: grayscale(0);
     animation: spin 5s linear infinite;
 }
 
 .radar-smoke-icon:hover,
+.radar-smoke-icon.show,
 .radar-smoke-icon.active {
     z-index: 5;
 }
