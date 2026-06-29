@@ -12,18 +12,18 @@
   "faceit": "https://faceitdb.com/profile/faceit/dcc5bb48-c74c-413e-9773-20d3294dcbb0",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-28T07:32:33.373Z",
+  "updatedAt": "2026-06-29T07:59:02.863Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 76,
-  "totalItemsGrouped": 76,
+  "totalItemsRaw": 77,
+  "totalItemsGrouped": 77,
   "items": [
     {
       "assetid": "52336653490",
       "classid": "7993040637",
-      "instanceid": "8564799361",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Butterfly Knife | Night",
       "market_hash_name": "★ Butterfly Knife | Night (Field-Tested)",
@@ -91,7 +91,7 @@
     {
       "assetid": "52336662979",
       "classid": "7993042766",
-      "instanceid": "8564799361",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Karambit | Night",
       "market_hash_name": "★ Karambit | Night (Field-Tested)",
@@ -123,12 +123,12 @@
     {
       "assetid": "52336983275",
       "classid": "7993059880",
-      "instanceid": "8564799361",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ M9 Bayonet | Gamma Doppler",
       "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Minimal Wear)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204858A3B1D3B48A4950B44B68F34C604E784B70EED28EA44B089149200D3840DB6B2106",
       "tags": [
         {
           "category": "Type",
@@ -150,12 +150,15 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.071070000529,
+      "seed": 217,
+      "phase": "Phase 3"
     },
     {
       "assetid": "52336983274",
       "classid": "8247439252",
-      "instanceid": "8564799361",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Driver Gloves | Garden",
       "market_hash_name": "★ Driver Gloves | Garden (Minimal Wear)",
@@ -183,7 +186,7 @@
     {
       "assetid": "52336662978",
       "classid": "7993040045",
-      "instanceid": "8564799361",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Hand Wraps | Cobalt Skulls",
       "market_hash_name": "★ Hand Wraps | Cobalt Skulls (Battle-Scarred)",
@@ -211,7 +214,7 @@
     {
       "assetid": "52336654472",
       "classid": "7993035828",
-      "instanceid": "8564799361",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Sport Gloves | Vice",
       "market_hash_name": "★ Sport Gloves | Vice (Battle-Scarred)",
@@ -239,12 +242,12 @@
     {
       "assetid": "52336654473",
       "classid": "7993044170",
-      "instanceid": "8564799472",
+      "instanceid": "188530170",
       "amount": 1,
       "name": "★ StatTrak™ Flip Knife | Doppler",
       "market_hash_name": "★ StatTrak™ Flip Knife | Doppler (Factory New)",
       "type": "★ StatTrak™ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2095851C64126957948D6C96B53096BD93A596AD4D764B7496D50893DD95C595FD90E59D183541A0",
       "tags": [
         {
           "category": "Type",
@@ -274,7 +277,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.011211834848,
+      "seed": 797,
+      "phase": "Phase 4"
     },
     {
       "assetid": "38301758308",
@@ -347,6 +353,42 @@
       "market_hash_name": "Dual Berettas | Melondrama (Minimal Wear)",
       "type": "Classified Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B1A10534522ECEA9B39157B999B481B5894A1B7C5CB2F132B4D998C1B9DC822645",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52566022014",
+      "classid": "7993061725",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "M249 | Sleet",
+      "market_hash_name": "M249 | Sleet (Factory New)",
+      "type": "Consumer Grade Machinegun",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1384,7 +1426,7 @@
     {
       "assetid": "52337037319",
       "classid": "8490834401",
-      "instanceid": "8564799473",
+      "instanceid": "143865972",
       "amount": 1,
       "name": "Sticker | SINNERS | Cologne 2026",
       "market_hash_name": "Sticker | SINNERS | Cologne 2026",
