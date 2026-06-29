@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b6daa950-11e5-4f51-b58e-b4e01e112500",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-23T07:29:34.994Z",
+  "updatedAt": "2026-06-29T08:09:42.738Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 48,
-  "totalItemsGrouped": 48,
+  "totalItemsRaw": 46,
+  "totalItemsGrouped": 46,
   "items": [
     {
       "assetid": "51898805987",
@@ -397,6 +397,30 @@
       "amount": 1,
       "name": "5 Year Veteran Coin",
       "market_hash_name": "5 Year Veteran Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52558650508",
+      "classid": "3117298605",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "10 Year Veteran Coin",
+      "market_hash_name": "10 Year Veteran Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -846,49 +870,6 @@
       ]
     },
     {
-      "assetid": "21577915453",
-      "classid": "4302203091",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | 100 Thieves | 2020 RMR",
-      "market_hash_name": "Sticker | 100 Thieves | 2020 RMR",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208393839B3A8AA383AB80B387E1868B839322A6EB83F38BA28FC208",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "21577915453"
-      ]
-    },
-    {
       "assetid": "47337019318",
       "classid": "6216348446",
       "instanceid": "519977179",
@@ -1026,53 +1007,6 @@
       ],
       "assetids": [
         "45390075895"
-      ]
-    },
-    {
-      "assetid": "24108106665",
-      "classid": "4638743461",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | sh1ro | Stockholm 2021",
-      "market_hash_name": "Sticker | sh1ro | Stockholm 2021",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208292829A3B8BA282AA81B286E0878A82923DAAEA82F28A9FFD211B",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "24108106665"
       ]
     },
     {
@@ -1618,42 +1552,6 @@
       "market_hash_name": "StatTrak™ Dual Berettas | Elite 1.6 (Battle-Scarred)",
       "type": "StatTrak™ Mil-Spec Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A7B70B6E4A3104A6BFA58720A08FA497AE9F6F650E5FA4E73EA5EFA7F79BCFA6D7AF28D0B7A7",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50700909646",
-      "classid": "7993036183",
-      "instanceid": "188531245",
-      "amount": 1,
-      "name": "StatTrak™ Glock-18 | Winterized",
-      "market_hash_name": "StatTrak™ Glock-18 | Winterized (Minimal Wear)",
-      "type": "StatTrak™ Mil-Spec Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2085954B7D0C7539849D81A5038CAD86B58CBD2327716B86C50B87CD85D5A9ED96F58DD22232E5",
       "tags": [
         {
           "category": "Type",
