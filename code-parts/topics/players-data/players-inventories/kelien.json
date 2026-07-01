@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/bee37ed7-b8ef-4364-a9d3-f2fbe42fb564",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-30T07:47:39.083Z",
+  "updatedAt": "2026-07-01T08:06:55.255Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 753,
-  "totalItemsGrouped": 300,
+  "totalItemsRaw": 754,
+  "totalItemsGrouped": 301,
   "items": [
     {
       "assetid": "51898751770",
@@ -59,12 +59,12 @@
     {
       "assetid": "52413754225",
       "classid": "7993041101",
-      "instanceid": "8573812502",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ M9 Bayonet | Doppler",
       "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20839372556A2340829B7F80A32680AB85B380BB4C31026B80C31487EB3382F38B6B5D56BF",
       "tags": [
         {
           "category": "Type",
@@ -86,12 +86,15 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.031335171312,
+      "seed": 535,
+      "phase": "Phase 4"
     },
     {
       "assetid": "52413754224",
       "classid": "7993037605",
-      "instanceid": "8573812502",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Sport Gloves | Amphibious",
       "market_hash_name": "★ Sport Gloves | Amphibious (Field-Tested)",
@@ -100,6 +103,50 @@
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52416670840",
+      "classid": "7993045235",
+      "instanceid": "902684101",
+      "amount": 1,
+      "name": "★ StatTrak™ Falchion Knife | Bright Water",
+      "market_hash_name": "★ StatTrak™ Falchion Knife | Bright Water (Field-Tested)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
           "name": ""
         },
         {
@@ -12248,7 +12295,7 @@
     {
       "assetid": "52201726955",
       "classid": "7993044759",
-      "instanceid": "188531024",
+      "instanceid": "188530299",
       "amount": 1,
       "name": "StatTrak™ MP9 | Mount Fuji",
       "market_hash_name": "StatTrak™ MP9 | Mount Fuji (Factory New)",

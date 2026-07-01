@@ -12,12 +12,12 @@
   "faceit": "https://faceitdb.com/profile/faceit/b68b677e-562e-456d-9c27-3ebf437e7bd5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-26T07:12:20.603Z",
+  "updatedAt": "2026-07-01T07:28:57.846Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 150,
+  "totalItemsRaw": 152,
   "totalItemsGrouped": 110,
   "items": [
     {
@@ -92,34 +92,6 @@
       "market_hash_name": "★ Specialist Gloves | Mogul (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49611318299",
-      "classid": "7993042191",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Vice",
-      "market_hash_name": "★ Sport Gloves | Vice (Well-Worn)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B8A823707A5000B9A01E9F9878F690BE88BB8025222E4EBBF86DBCD0B5C8B029A2B9D1",
       "tags": [
         {
           "category": "Type",
@@ -1922,9 +1894,9 @@
       ]
     },
     {
-      "assetid": "51893506078",
+      "assetid": "52591255071",
       "classid": "7993035493",
-      "instanceid": "188530139",
+      "instanceid": "8611648930",
       "amount": 1,
       "name": "USP-S | Printstream",
       "market_hash_name": "USP-S | Printstream (Field-Tested)",
@@ -1948,11 +1920,31 @@
           "name": ""
         },
         {
+          "category": "Quality",
+          "name": ""
+        },
+        {
           "category": "Rarity",
           "name": ""
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -2159,7 +2151,7 @@
       "assetid": "51846373753",
       "classid": "8490876872",
       "instanceid": "143865972",
-      "amount": 29,
+      "amount": 25,
       "name": "Sticker | HUASOPEEK (Holo) | Cologne 2026",
       "market_hash_name": "Sticker | HUASOPEEK (Holo) | Cologne 2026",
       "type": "Exotic Sticker",
@@ -2201,14 +2193,11 @@
       "assetids": [
         "51846373753",
         "51846373752",
-        "51846373751",
         "51846373750",
-        "51846373749",
         "51846373748",
         "51846373747",
         "51846373746",
         "51846373744",
-        "51846278282",
         "51846278281",
         "51846278280",
         "51846278279",
@@ -2226,8 +2215,7 @@
         "51846194810",
         "51846194809",
         "51846194808",
-        "51846194807",
-        "51843262205"
+        "51846194807"
       ]
     },
     {
@@ -3507,6 +3495,59 @@
       ]
     },
     {
+      "assetid": "52591228417",
+      "classid": "8611503191",
+      "instanceid": "143865972",
+      "amount": 7,
+      "name": "Souvenir Charm | Cologne 2026 Highlight | HUASOPEEK ACE",
+      "market_hash_name": "Souvenir Charm | Cologne 2026 Highlight | HUASOPEEK ACE",
+      "type": "Souvenir High Grade Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CBDBCBD300C1EBCBE3C8FBC7A3CBBBC969CACCC3CBDB9F9343CC0149D833",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52591228417",
+        "52591228416",
+        "52591228415",
+        "52591228414",
+        "52591228413",
+        "52591228412",
+        "52591228418"
+      ]
+    },
+    {
       "assetid": "47765283381",
       "classid": "7993037966",
       "instanceid": "8513235285",
@@ -3681,7 +3722,7 @@
     {
       "assetid": "40283627198",
       "classid": "7993044416",
-      "instanceid": "8572792487",
+      "instanceid": "8609763440",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Minimal Wear)",

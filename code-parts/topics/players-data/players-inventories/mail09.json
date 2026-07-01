@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/7dbf107a-1199-4932-823e-e38ccc46288e",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-29T07:54:29.632Z",
+  "updatedAt": "2026-07-01T07:38:07.129Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 173,
-  "totalItemsGrouped": 169,
+  "totalItemsRaw": 175,
+  "totalItemsGrouped": 171,
   "items": [
     {
       "assetid": "52278540308",
@@ -97,6 +97,41 @@
       "float": 0.027376355603,
       "seed": 602,
       "phase": "Ruby"
+    },
+    {
+      "assetid": "52423660957",
+      "classid": "7993040869",
+      "instanceid": "8576788613",
+      "amount": 1,
+      "name": "★ Karambit | Doppler",
+      "market_hash_name": "★ Karambit | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203727AA9CF192F4362FCC341794341F3107340FB0AC8EDF3477B6335F57473F1FD62977",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.034741904587,
+      "seed": 513,
+      "phase": "Phase 2"
     },
     {
       "assetid": "52150546999",
@@ -5187,6 +5222,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52423660956",
+      "classid": "259070040",
+      "instanceid": "8602749412",
+      "amount": 1,
+      "name": "AK-47 | Blue Laminate",
+      "market_hash_name": "AK-47 | Blue Laminate (Minimal Wear)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

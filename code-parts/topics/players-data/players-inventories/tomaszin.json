@@ -7,14 +7,16 @@
   "name": "Martín Corna",
   "nationality": "Argentina",
   "born": "15.02.2004",
+  "isContentCreator": false,
   "twitch": "tomaszincs",
   "faceit": "https://faceitdb.com/profile/faceit/35086d74-6e47-4367-8d56-422f03f037e0",
-  "isContentCreator": false,
-  "updatedAt": "2026-05-23T06:48:30.081Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-01T07:49:25.570Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
   "totalItemsRaw": 75,
   "totalItemsGrouped": 63,
   "items": [
@@ -56,34 +58,6 @@
       "float": 0.016350289807,
       "seed": 502,
       "phase": "Phase 2"
-    },
-    {
-      "assetid": "49972793043",
-      "classid": "7993040299",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Hedge Maze",
-      "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D0C0034D21446AD1C876F7F0669EF8D6E0D3E8784F7924D3904DD4B8DEA0D8599123C3",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "51565659619",
@@ -815,53 +789,6 @@
       ]
     },
     {
-      "assetid": "42178492182",
-      "classid": "6449443157",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | donk (Champion) | Shanghai 2024",
-      "market_hash_name": "Sticker | donk (Champion) | Shanghai 2024",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206A7A6A72D3634A6A42695A6E086F626A7AB728026A1A62FC73D742",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "42178492182"
-      ]
-    },
-    {
       "assetid": "42178533144",
       "classid": "4741262101",
       "instanceid": "188530139",
@@ -1547,6 +1474,42 @@
       ]
     },
     {
+      "assetid": "51719199605",
+      "classid": "7993036288",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "M4A1-S | Emphorosaur-S",
+      "market_hash_name": "M4A1-S | Emphorosaur-S (Field-Tested)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "47716196319",
       "classid": "7993041486",
       "instanceid": "188530139",
@@ -2057,7 +2020,7 @@
     {
       "assetid": "50533011180",
       "classid": "7993039394",
-      "instanceid": "188530170",
+      "instanceid": "188530306",
       "amount": 1,
       "name": "StatTrak™ P250 | Cassette",
       "market_hash_name": "StatTrak™ P250 | Cassette (Field-Tested)",
@@ -2199,6 +2162,42 @@
       ]
     },
     {
+      "assetid": "51719184041",
+      "classid": "7993036865",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ Tec-9 | Slag",
+      "market_hash_name": "StatTrak™ Tec-9 | Slag (Well-Worn)",
+      "type": "StatTrak™ Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "43452878127",
       "classid": "7993036398",
       "instanceid": "188530329",
@@ -2237,7 +2236,7 @@
     {
       "assetid": "47716188488",
       "classid": "7993039838",
-      "instanceid": "188530170",
+      "instanceid": "188532885",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Choppa",
       "market_hash_name": "StatTrak™ M4A4 | Choppa (Minimal Wear)",
@@ -2345,7 +2344,7 @@
     {
       "assetid": "43309333048",
       "classid": "7993039095",
-      "instanceid": "188530980",
+      "instanceid": "188558190",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Allure",
       "market_hash_name": "StatTrak™ MAC-10 | Allure (Minimal Wear)",
