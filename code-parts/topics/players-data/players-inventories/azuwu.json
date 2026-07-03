@@ -12,12 +12,12 @@
   "faceit": "https://faceitdb.com/profile/faceit/004181c4-494a-44a6-be60-3c80264e84aa",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-01T07:31:18.163Z",
+  "updatedAt": "2026-07-03T06:49:23.053Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 215,
+  "totalItemsRaw": 211,
   "totalItemsGrouped": 207,
   "items": [
     {
@@ -2412,9 +2412,9 @@
       ]
     },
     {
-      "assetid": "51521838120",
+      "assetid": "52626458919",
       "classid": "7993037466",
-      "instanceid": "188530139",
+      "instanceid": "8616867855",
       "amount": 1,
       "name": "AK-47 | Inheritance",
       "market_hash_name": "AK-47 | Inheritance (Battle-Scarred)",
@@ -2443,6 +2443,18 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -3762,14 +3774,14 @@
       ]
     },
     {
-      "assetid": "52276993775",
+      "assetid": "52276993771",
       "classid": "8491530667",
       "instanceid": "143865972",
-      "amount": 5,
+      "amount": 1,
       "name": "Sticker | AZUWU (Gold) | Cologne 2026",
       "market_hash_name": "Sticker | AZUWU (Gold) | Cologne 2026",
       "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6D7D65C4745D7D557B4D791F78757D6DAC29157D0D7F225DE0ED",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BEAEBEA607B79EBE96B88EBADCBBB6BEAE6FEAD6BECEBCB7BB889D",
       "tags": [
         {
           "category": "Type",
@@ -3805,10 +3817,6 @@
         }
       ],
       "assetids": [
-        "52276993775",
-        "52276993774",
-        "52276993773",
-        "52276993772",
         "52276993771"
       ]
     },

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9a5ff08b-4b66-4797-998b-d78713979945",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-02T07:35:26.533Z",
+  "updatedAt": "2026-07-03T07:23:22.709Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 172,
-  "totalItemsGrouped": 170,
+  "totalItemsRaw": 173,
+  "totalItemsGrouped": 169,
   "items": [
     {
       "assetid": "43280548952",
@@ -810,42 +810,6 @@
       ]
     },
     {
-      "assetid": "35911760807",
-      "classid": "7993036307",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "USP-S | Jawbreaker",
-      "market_hash_name": "USP-S | Jawbreaker (Field-Tested)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205444F3A3D3B0D1554C6974C15D7C5164506C86E289A55714783C55245C91F07DBD",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "36914775101",
       "classid": "7993036086",
       "instanceid": "6800156942",
@@ -905,42 +869,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "36244755174",
-      "classid": "7993036345",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "M4A1-S | Black Lotus",
-      "market_hash_name": "M4A1-S | Black Lotus (Field-Tested)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205141B7F4BDD3D650496D71DF587954615569E79AE1A55211E0503950215989720211",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -2553,7 +2481,7 @@
       "assetid": "52615408912",
       "classid": "4638743438",
       "instanceid": "188530139",
-      "amount": 1,
+      "amount": 2,
       "name": "Sticker | b1t | Stockholm 2021",
       "market_hash_name": "Sticker | b1t | Stockholm 2021",
       "type": "High Grade Sticker",
@@ -2593,7 +2521,8 @@
         }
       ],
       "assetids": [
-        "52615408912"
+        "52615408912",
+        "52635561993"
       ]
     },
     {
@@ -2647,7 +2576,7 @@
       "assetid": "52615405320",
       "classid": "4638743441",
       "instanceid": "188530139",
-      "amount": 1,
+      "amount": 2,
       "name": "Sticker | s1mple | Stockholm 2021",
       "market_hash_name": "Sticker | s1mple | Stockholm 2021",
       "type": "High Grade Sticker",
@@ -2687,7 +2616,8 @@
         }
       ],
       "assetids": [
-        "52615405320"
+        "52615405320",
+        "52635563893"
       ]
     },
     {
@@ -4177,6 +4107,53 @@
       ]
     },
     {
+      "assetid": "52635559638",
+      "classid": "4638743469",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | s1mple (Holo) | Stockholm 2021",
+      "market_hash_name": "Sticker | s1mple (Holo) | Stockholm 2021",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203E2E3E2687371E3E163A0E3A5C3B363E2EB416563E4E36D0E12032",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52635559638"
+      ]
+    },
+    {
       "assetid": "31781995519",
       "classid": "7993037322",
       "instanceid": "188530139",
@@ -5251,7 +5228,7 @@
     {
       "assetid": "32190893601",
       "classid": "7993037107",
-      "instanceid": "480106259",
+      "instanceid": "480093029",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Temukau",
       "market_hash_name": "StatTrak™ M4A4 | Temukau (Minimal Wear)",
