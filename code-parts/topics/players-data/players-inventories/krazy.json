@@ -7,16 +7,18 @@
   "name": "Adones Nobre",
   "nationality": "Portugal",
   "born": "29.12.2003",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/94f5114b-b7b9-445f-be26-1a60f54d22de",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-25T07:32:06.940Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 183,
-  "totalItemsGrouped": 166,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-03T07:12:49.057Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 184,
+  "totalItemsGrouped": 167,
   "items": [
     {
       "assetid": "51756927366",
@@ -98,34 +100,6 @@
       "market_hash_name": "★ Hand Wraps | Cobalt Skulls (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E4F44E1824195FE5FC4CC3C421AACCE2D4E7DC6E5D3814E7A469E78C9994E001864E0E",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52055867779",
-      "classid": "7993038043",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Vice",
-      "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -4085,6 +4059,42 @@
       ]
     },
     {
+      "assetid": "52344179430",
+      "classid": "241585251",
+      "instanceid": "6350545957",
+      "amount": 1,
+      "name": "Glock-18 | Candy Apple",
+      "market_hash_name": "Glock-18 | Candy Apple (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "47050575848",
       "classid": "7993038116",
       "instanceid": "519977179",
@@ -5072,6 +5082,42 @@
       ]
     },
     {
+      "assetid": "52344586964",
+      "classid": "226270437",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP9 | Hypnotic",
+      "market_hash_name": "MP9 | Hypnotic (Factory New)",
+      "type": "Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50490977062",
       "classid": "8246963891",
       "instanceid": "188530139",
@@ -5242,7 +5288,7 @@
     {
       "assetid": "49853323190",
       "classid": "7993045315",
-      "instanceid": "6376945024",
+      "instanceid": "6368755358",
       "amount": 1,
       "name": "StatTrak™ USP-S | The Traitor",
       "market_hash_name": "StatTrak™ USP-S | The Traitor (Minimal Wear)",
