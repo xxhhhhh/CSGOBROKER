@@ -202,7 +202,7 @@ const BAD_SITE_SLUGS = new Set([
   'bitsler', 'shuffle', 'jackbit', 'betfury', 'wolfbet', 'wildio', '500casino',
   'fortunejack', 'sportsbet', 'stake', 'rustclash', 'rustchance', 'rustyloot',
   'rustcases', 'rustypot', 'csgorun', 'caser', 'csgocases', 'csgocase',
-  'skinrave', 'csgo-skins', 'lootbear-cases',
+  'skinrave', 'csgo-skins', 'lootbear-cases', 'upgrade-battle',
 
   'banditcamp', 'bets4pro', 'bsite', 'chickengg', 'cobaltlab', 'csbattle',
   'csfail', 'csgopositive', 'csgostake', 'daddyskins', 'farmskins',
