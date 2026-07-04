@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/3e1ad541-454e-425d-bf97-ac8c2b6ee363",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-27T07:18:36.559Z",
+  "updatedAt": "2026-07-04T07:06:45.128Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 91,
-  "totalItemsGrouped": 91,
+  "totalItemsRaw": 93,
+  "totalItemsGrouped": 93,
   "items": [
     {
       "assetid": "50481245381",
@@ -79,6 +79,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52654362801",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -614,6 +642,42 @@
       "market_hash_name": "UMP-45 | Mudder (Battle-Scarred)",
       "type": "Consumer Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ABBB035F364F1EAAB3B38BF183AA9BAF93150C1A5CA8EB6FAEC38EDBB36EBE95B9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52654362802",
+      "classid": "7993036629",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "SSG 08 | Grey Smoke",
+      "market_hash_name": "SSG 08 | Grey Smoke (Field-Tested)",
+      "type": "Consumer Grade Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
