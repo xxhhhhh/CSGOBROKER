@@ -7,16 +7,18 @@
   "name": "Emil Moskvitin",
   "nationality": "Russia",
   "born": "28.04.2007",
+  "isContentCreator": false,
   "twitch": "nnnota",
   "faceit": "https://faceitdb.com/profile/faceit/b70ee3b9-88f0-4177-a5c6-9381a63a8695",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-23T06:56:36.257Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 23,
-  "totalItemsGrouped": 23,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-05T06:47:09.318Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 33,
+  "totalItemsGrouped": 31,
   "items": [
     {
       "assetid": "40419181186",
@@ -81,14 +83,14 @@
       ]
     },
     {
-      "assetid": "48912847564",
+      "assetid": "52490767776",
       "classid": "6195246388",
       "instanceid": "302028390",
-      "amount": 1,
+      "amount": 3,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E3F3E3FB35C5C3E3CBE2D3E78BE393FBB3523EFF",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209383938B45B5B393BB92A397FB93E38B06EABD3D",
       "tags": [
         {
           "category": "Type",
@@ -104,6 +106,8 @@
         }
       ],
       "assetids": [
+        "52490767776",
+        "52468493840",
         "48912847564"
       ]
     },
@@ -310,7 +314,7 @@
     {
       "assetid": "52116149609",
       "classid": "8490781882",
-      "instanceid": "8490802337",
+      "instanceid": "8490783177",
       "amount": 1,
       "name": "Cologne 2026 Coin",
       "market_hash_name": "Cologne 2026 Coin",
@@ -463,13 +467,87 @@
       ]
     },
     {
-      "assetid": "48198751354",
-      "classid": "7993036161",
-      "instanceid": "7833232663",
+      "assetid": "52489053770",
+      "classid": "6360299206",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "Souvenir R8 Revolver | Desert Brush",
-      "market_hash_name": "Souvenir R8 Revolver | Desert Brush (Field-Tested)",
-      "type": "Souvenir Consumer Grade Pistol",
+      "name": "Sticker | magixx | Shanghai 2024",
+      "market_hash_name": "Sticker | magixx | Shanghai 2024",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C6D6C6DE7FCFE6C6EEC5F6C2A4C3CEC6D673F9AEC6B6CE6CC8DC12",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52489053770"
+      ]
+    },
+    {
+      "assetid": "52489053771",
+      "classid": "778383693",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | T On Cat",
+      "market_hash_name": "Sticker | T On Cat",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209686968E2F9FB696BE95A692F4939E96862E97FE96E6942D33E0EB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52489053771"
+      ]
+    },
+    {
+      "assetid": "52491256132",
+      "classid": "7993035924",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "P250 | Re.built",
+      "market_hash_name": "P250 | Re.built (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -494,30 +572,18 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
     },
     {
-      "assetid": "48026656788",
-      "classid": "7993038740",
-      "instanceid": "7809721065",
+      "assetid": "52491143442",
+      "classid": "7993037366",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "Souvenir MAG-7 | Navy Sheen",
-      "market_hash_name": "Souvenir MAG-7 | Navy Sheen (Minimal Wear)",
-      "type": "Souvenir Consumer Grade Shotgun",
+      "name": "Tec-9 | Rebel",
+      "market_hash_name": "Tec-9 | Rebel (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -542,30 +608,18 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
     },
     {
-      "assetid": "48526408105",
-      "classid": "7993038592",
-      "instanceid": "7907049565",
+      "assetid": "52491070819",
+      "classid": "7993040820",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "Souvenir Sawed-Off | Parched",
-      "market_hash_name": "Souvenir Sawed-Off | Parched (Minimal Wear)",
-      "type": "Souvenir Consumer Grade Shotgun",
+      "name": "SG 553 | Heavy Metal",
+      "market_hash_name": "SG 553 | Heavy Metal (Field-Tested)",
+      "type": "Mil-Spec Grade Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -585,39 +639,23 @@
           "name": ""
         },
         {
-          "category": "Quality",
-          "name": ""
-        },
-        {
           "category": "Rarity",
           "name": ""
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
     },
     {
-      "assetid": "48026656360",
-      "classid": "7993036164",
-      "instanceid": "7809721065",
+      "assetid": "52491263936",
+      "classid": "7993036218",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "Souvenir SSG 08 | Prey",
-      "market_hash_name": "Souvenir SSG 08 | Prey (Field-Tested)",
-      "type": "Souvenir Consumer Grade Sniper Rifle",
+      "name": "MAG-7 | Insomnia",
+      "market_hash_name": "MAG-7 | Insomnia (Well-Worn)",
+      "type": "Mil-Spec Grade Shotgun",
       "inspectLink": "",
       "tags": [
         {
@@ -642,30 +680,18 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
     },
     {
-      "assetid": "48146453707",
-      "classid": "7993037962",
-      "instanceid": "7829811017",
+      "assetid": "52491313746",
+      "classid": "7993036737",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "Souvenir Five-SeveN | Midnight Paintover",
-      "market_hash_name": "Souvenir Five-SeveN | Midnight Paintover (Field-Tested)",
-      "type": "Souvenir Industrial Grade Pistol",
+      "name": "XM1014 | Irezumi",
+      "market_hash_name": "XM1014 | Irezumi (Field-Tested)",
+      "type": "Mil-Spec Grade Shotgun",
       "inspectLink": "",
       "tags": [
         {
@@ -691,17 +717,221 @@
         {
           "category": "Exterior",
           "name": ""
-        },
+        }
+      ]
+    },
+    {
+      "assetid": "52491299092",
+      "classid": "7993036679",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAC-10 | Light Box",
+      "market_hash_name": "MAC-10 | Light Box (Minimal Wear)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
         {
-          "category": "Tournament",
+          "category": "Type",
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "Weapon",
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52491084555",
+      "classid": "7993036641",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "SSG 08 | Dezastre",
+      "market_hash_name": "SSG 08 | Dezastre (Minimal Wear)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52491051508",
+      "classid": "7993039078",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M249 | Downtown",
+      "market_hash_name": "M249 | Downtown (Factory New)",
+      "type": "Restricted Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52491150153",
+      "classid": "7993035796",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M4A1-S | Emphorosaur-S",
+      "market_hash_name": "M4A1-S | Emphorosaur-S (Minimal Wear)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52491306226",
+      "classid": "7993036097",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sawed-Off | Analog Input",
+      "market_hash_name": "Sawed-Off | Analog Input (Battle-Scarred)",
+      "type": "Restricted Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52491058537",
+      "classid": "7993036183",
+      "instanceid": "188531653",
+      "amount": 1,
+      "name": "StatTrak™ Glock-18 | Winterized",
+      "market_hash_name": "StatTrak™ Glock-18 | Winterized (Minimal Wear)",
+      "type": "StatTrak™ Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

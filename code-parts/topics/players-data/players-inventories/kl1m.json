@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/a280ed8a-3e2b-4305-8e71-fb4c9cc7fa98",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-01T07:49:23.424Z",
+  "updatedAt": "2026-07-05T07:16:56.813Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 98,
-  "totalItemsGrouped": 98,
+  "totalItemsRaw": 100,
+  "totalItemsGrouped": 100,
   "items": [
     {
       "assetid": "50645129805",
@@ -160,6 +160,54 @@
       ]
     },
     {
+      "assetid": "52461219985",
+      "classid": "7993035493",
+      "instanceid": "7945763711",
+      "amount": 1,
+      "name": "USP-S | Printstream",
+      "market_hash_name": "USP-S | Printstream (Field-Tested)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51616053330",
       "classid": "7993051188",
       "instanceid": "480085569",
@@ -167,6 +215,42 @@
       "name": "AK-47 | Wild Lotus",
       "market_hash_name": "AK-47 | Wild Lotus (Minimal Wear)",
       "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52461182245",
+      "classid": "7993036209",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "AWP | Neo-Noir",
+      "market_hash_name": "AWP | Neo-Noir (Field-Tested)",
+      "type": "Covert Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -2977,7 +3061,7 @@
     {
       "assetid": "52156082808",
       "classid": "7993043196",
-      "instanceid": "188531175",
+      "instanceid": "188530482",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Rapid Eye Movement",
       "market_hash_name": "StatTrak™ FAMAS | Rapid Eye Movement (Minimal Wear)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/0c715f3d-bd25-4e2a-af9d-2477f0ec3aa4",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-03T06:43:05.334Z",
+  "updatedAt": "2026-07-05T06:54:35.183Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 35,
-  "totalItemsGrouped": 35,
+  "totalItemsRaw": 40,
+  "totalItemsGrouped": 38,
   "items": [
     {
       "assetid": "52290156274",
@@ -145,6 +145,45 @@
       ]
     },
     {
+      "assetid": "52498643622",
+      "classid": "7993035772",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Glock-18 | Gamma Doppler",
+      "market_hash_name": "Glock-18 | Gamma Doppler (Minimal Wear)",
+      "type": "Covert Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D6C67023701F15D7CED2F637DEFED0E6D2EE015C2F38D59659D4BE8CA6C13E1FA57E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.108530692756,
+      "seed": 271,
+      "phase": "Phase 2"
+    },
+    {
       "assetid": "52095621123",
       "classid": "7993035662",
       "instanceid": "188530139",
@@ -181,9 +220,9 @@
       ]
     },
     {
-      "assetid": "52281624547",
+      "assetid": "52673207306",
       "classid": "7993037085",
-      "instanceid": "8548066778",
+      "instanceid": "8624869202",
       "amount": 1,
       "name": "AWP | Asiimov",
       "market_hash_name": "AWP | Asiimov (Field-Tested)",
@@ -212,6 +251,10 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
           "name": ""
         },
         {
@@ -779,6 +822,53 @@
       ]
     },
     {
+      "assetid": "52498671024",
+      "classid": "7104663168",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | latto (Gold) | Austin 2025",
+      "market_hash_name": "Sticker | latto (Gold) | Austin 2025",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205444544CED5D74547C52645036515C5444D21D3C54245CEB53B83C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52498671024"
+      ]
+    },
+    {
       "assetid": "33544262283",
       "classid": "5537026493",
       "instanceid": "0",
@@ -803,6 +893,55 @@
       ],
       "assetids": [
         "33544262283"
+      ]
+    },
+    {
+      "assetid": "52498674465",
+      "classid": "7104673767",
+      "instanceid": "188530139",
+      "amount": 3,
+      "name": "Sticker | latto (Foil) | Austin 2025",
+      "market_hash_name": "Sticker | latto (Foil) | Austin 2025",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208C9C8C943585AC8CA488BC88EE89848C9C08C5E48CFC84E1F851B0",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52498674465",
+        "52498673985",
+        "52498673378"
       ]
     },
     {
@@ -948,7 +1087,7 @@
     {
       "assetid": "52455383122",
       "classid": "7993044408",
-      "instanceid": "8585214646",
+      "instanceid": "8625286079",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Case Hardened",
       "market_hash_name": "StatTrak™ AK-47 | Case Hardened (Field-Tested)",
@@ -1000,7 +1139,7 @@
     {
       "assetid": "51934247647",
       "classid": "7993037434",
-      "instanceid": "8560844097",
+      "instanceid": "8625286080",
       "amount": 1,
       "name": "StatTrak™ USP-S | Printstream",
       "market_hash_name": "StatTrak™ USP-S | Printstream (Field-Tested)",
