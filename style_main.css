@@ -3127,7 +3127,6 @@ h2,
 h3 {
     font-weight: 500;
     font-size: 16px;
-    width: 95%;
 }
 
 .boxreview .plusminus {
@@ -3391,7 +3390,7 @@ h3 {
     align-items: center;
     flex-wrap: wrap;
     align-content: flex-start;
-    padding: 30px 0;
+    padding: 30px;
     background: var(--darkgray);
     border-radius: var(--main-border);
     margin-top: 8px;
@@ -3868,6 +3867,7 @@ h2,
 h3 {
     font-weight: 600;
     font-size: 20px;
+    width: 100%;
     /* color: var(--main-color); */
 }
 
@@ -3917,7 +3917,7 @@ h3 {
     height: auto;
     font-weight: 500;
     font-size: 16px;
-    width: 95%;
+    width: 100%;
     display: block;
     position: relative;
     line-height: 1.4;
@@ -4143,12 +4143,13 @@ h3 {
 
 .instruction.double {
     width: 50%;
-    padding-left: 14px;
+    padding-right: 10px;
     border-radius: var(--main-border) 0 0 var(--main-border);
 }
 
 .instruction.notmain {
     width: 50%;
+    padding-left: 10px;
     transition: all .15s ease-in-out;
     border-radius: 0 var(--main-border) var(--main-border) 0;
 }
@@ -4158,8 +4159,9 @@ h3 {
 }
 
 .instruction ol {
-    width: 96%;
+    width: 100%;
     counter-reset: item1;
+    margin-left: -17px;
 }
 
 .ptype .instruction ol {
@@ -4177,7 +4179,7 @@ h3 {
     position: relative;
     line-height: 35px;
     color: var(--text-lightgray);
-    width: 70%;
+    width: 80%;
 }
 
 .instruction ol li:before {
@@ -15906,6 +15908,12 @@ header {
         width: 96%;
     }
 
+    .boxreview .smallreview,
+    .instruction,
+    .instruction.double {
+        width: 90%;
+    }
+
     .boxreview .main-infobox {
         margin-top: 6px;
         width: 98%;
@@ -15920,7 +15928,7 @@ header {
     .instruction.notmain {
         opacity: 1;
         filter: unset;
-        width: 96%;
+        width: 90%;
         margin-left: unset;
         padding: 30px 0;
         border-radius: var(--main-border);
@@ -17025,11 +17033,6 @@ header {
     .instruction h2,
     .instruction h3 {
         font-size: 20px !important;
-    }
-
-    .instruction h2,
-    .instruction h3 {
-        margin-left: 13px;
     }
 
     .newest-boxes {
