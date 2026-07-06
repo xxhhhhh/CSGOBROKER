@@ -12,18 +12,18 @@
   "faceit": "https://www.faceit.com/players/anomaly/",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-05T06:42:00.922Z",
+  "updatedAt": "2026-07-06T07:13:09.326Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 333,
-  "totalItemsGrouped": 325,
+  "totalItemsRaw": 325,
+  "totalItemsGrouped": 317,
   "items": [
     {
       "assetid": "52501046604",
       "classid": "7993039055",
-      "instanceid": "8592080738",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Bayonet | Autotronic",
       "market_hash_name": "★ Bayonet | Autotronic (Minimal Wear)",
@@ -55,7 +55,7 @@
     {
       "assetid": "52501062046",
       "classid": "7993038790",
-      "instanceid": "8592080738",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Falchion Knife | Forest DDPAT",
       "market_hash_name": "★ Falchion Knife | Forest DDPAT (Field-Tested)",
@@ -91,7 +91,7 @@
     {
       "assetid": "52500976887",
       "classid": "7993041030",
-      "instanceid": "8592080738",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Huntsman Knife | Freehand",
       "market_hash_name": "★ Huntsman Knife | Freehand (Minimal Wear)",
@@ -127,7 +127,7 @@
     {
       "assetid": "52500976889",
       "classid": "7993035503",
-      "instanceid": "8592080738",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Karambit | Autotronic",
       "market_hash_name": "★ Karambit | Autotronic (Field-Tested)",
@@ -733,7 +733,7 @@
     {
       "assetid": "52501056088",
       "classid": "7993039973",
-      "instanceid": "8592080738",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Paracord Knife | Crimson Web",
       "market_hash_name": "★ Paracord Knife | Crimson Web (Field-Tested)",
@@ -913,7 +913,7 @@
     {
       "assetid": "52500976890",
       "classid": "7993040677",
-      "instanceid": "8592080738",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Hand Wraps | CAUTION!",
       "market_hash_name": "★ Hand Wraps | CAUTION! (Field-Tested)",
@@ -945,6 +945,34 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Big Swell",
       "market_hash_name": "★ Specialist Gloves | Big Swell (Factory New)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52501957883",
+      "classid": "7993042929",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Slingshot",
+      "market_hash_name": "★ Sport Gloves | Slingshot (Well-Worn)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -2094,90 +2122,6 @@
       ]
     },
     {
-      "assetid": "52169548218",
-      "classid": "8246873714",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Dead Hand Terminal",
-      "market_hash_name": "Sealed Dead Hand Terminal",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52169548299",
-      "classid": "8246873714",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Dead Hand Terminal",
-      "market_hash_name": "Sealed Dead Hand Terminal",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52169548314",
-      "classid": "8246873714",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Dead Hand Terminal",
-      "market_hash_name": "Sealed Dead Hand Terminal",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52249038163",
       "classid": "8246873714",
       "instanceid": "302028390",
@@ -2207,62 +2151,6 @@
     },
     {
       "assetid": "52249038170",
-      "classid": "8246873714",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Dead Hand Terminal",
-      "market_hash_name": "Sealed Dead Hand Terminal",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52249038172",
-      "classid": "8246873714",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Dead Hand Terminal",
-      "market_hash_name": "Sealed Dead Hand Terminal",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52288705574",
       "classid": "8246873714",
       "instanceid": "302028390",
       "amount": 1,
@@ -2402,34 +2290,6 @@
       ]
     },
     {
-      "assetid": "52288710827",
-      "classid": "8246873714",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Dead Hand Terminal",
-      "market_hash_name": "Sealed Dead Hand Terminal",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52288711292",
       "classid": "8246873714",
       "instanceid": "302028390",
@@ -2458,91 +2318,7 @@
       ]
     },
     {
-      "assetid": "52288712014",
-      "classid": "8246873714",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Dead Hand Terminal",
-      "market_hash_name": "Sealed Dead Hand Terminal",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52288712015",
-      "classid": "8246873714",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Dead Hand Terminal",
-      "market_hash_name": "Sealed Dead Hand Terminal",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52288714054",
-      "classid": "8246873714",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Dead Hand Terminal",
-      "market_hash_name": "Sealed Dead Hand Terminal",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52288714059",
       "classid": "8246873714",
       "instanceid": "302028390",
       "amount": 1,
@@ -4349,7 +4125,7 @@
     {
       "assetid": "52500976886",
       "classid": "7993038953",
-      "instanceid": "8592080738",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Desert Eagle | Code Red",
       "market_hash_name": "Desert Eagle | Code Red (Minimal Wear)",
@@ -4714,7 +4490,7 @@
     {
       "assetid": "52500976891",
       "classid": "7993035486",
-      "instanceid": "8592081380",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "AK-47 | Nightwish",
       "market_hash_name": "AK-47 | Nightwish (Field-Tested)",
@@ -5010,7 +4786,7 @@
     {
       "assetid": "52500976888",
       "classid": "7993039330",
-      "instanceid": "8592080738",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "MP9 | Starlight Protector",
       "market_hash_name": "MP9 | Starlight Protector (Field-Tested)",
@@ -5143,6 +4919,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52517987734",
+      "classid": "7993036758",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "AWP | Chromatic Aberration",
+      "market_hash_name": "AWP | Chromatic Aberration (Field-Tested)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -7450,62 +7262,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "26604152652",
-      "classid": "7993037910",
-      "instanceid": "6461151321",
-      "amount": 1,
-      "name": "USP-S | Stainless",
-      "market_hash_name": "USP-S | Stainless (Field-Tested)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -10075,7 +9831,7 @@
     {
       "assetid": "52501046605",
       "classid": "7993044637",
-      "instanceid": "8592080392",
+      "instanceid": "188530170",
       "amount": 1,
       "name": "StatTrak™ AK-47 | The Outsiders",
       "market_hash_name": "StatTrak™ AK-47 | The Outsiders (Factory New)",
@@ -10111,7 +9867,7 @@
     {
       "assetid": "40909335732",
       "classid": "7993037772",
-      "instanceid": "8622917118",
+      "instanceid": "8626855587",
       "amount": 1,
       "name": "StatTrak™ M4A4 | 龍王 (Dragon King)",
       "market_hash_name": "StatTrak™ M4A4 | 龍王 (Dragon King) (Factory New)",
@@ -11259,7 +11015,7 @@
     {
       "assetid": "17662209109",
       "classid": "7993043588",
-      "instanceid": "7155391390",
+      "instanceid": "6427108027",
       "amount": 1,
       "name": "StatTrak™ MP9 | Rose Iron",
       "market_hash_name": "StatTrak™ MP9 | Rose Iron (Factory New)",

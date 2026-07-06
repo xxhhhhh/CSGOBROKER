@@ -7,16 +7,18 @@
   "name": "Matias Kivistö",
   "nationality": "Finland",
   "born": "15.05.2004",
+  "isContentCreator": false,
   "twitch": "banjocs",
   "faceit": "https://faceitdb.com/profile/faceit/cdcfe090-8bde-418d-ae04-e3ca204769b8",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-18T08:41:37.222Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 964,
-  "totalItemsGrouped": 643,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-06T07:48:52.698Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 966,
+  "totalItemsGrouped": 645,
   "items": [
     {
       "assetid": "48810099566",
@@ -815,6 +817,34 @@
     },
     {
       "assetid": "45950723603",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52632547372",
       "classid": "4717330486",
       "instanceid": "302028390",
       "amount": 1,
@@ -8264,6 +8294,42 @@
       "market_hash_name": "FAMAS | Colony (Well-Worn)",
       "type": "Consumer Grade Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%206373A2E1DEE41C7B69434C4B6253675B84CBC0956023F1650BE361137B4F4B9F4F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52632547373",
+      "classid": "7993037286",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Galil AR | Grey Smoke",
+      "market_hash_name": "Galil AR | Grey Smoke (Minimal Wear)",
+      "type": "Consumer Grade Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -23785,7 +23851,7 @@
     {
       "assetid": "26372602142",
       "classid": "7993037482",
-      "instanceid": "8591586418",
+      "instanceid": "8619857321",
       "amount": 1,
       "name": "StatTrak™ USP-S | Cyrex",
       "market_hash_name": "StatTrak™ USP-S | Cyrex (Minimal Wear)",
@@ -23841,7 +23907,7 @@
     {
       "assetid": "11850401372",
       "classid": "7993037310",
-      "instanceid": "480175871",
+      "instanceid": "480429594",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Stone Cold",
       "market_hash_name": "StatTrak™ Galil AR | Stone Cold (Field-Tested)",
@@ -23877,7 +23943,7 @@
     {
       "assetid": "17732023658",
       "classid": "7993041152",
-      "instanceid": "905213726",
+      "instanceid": "931474084",
       "amount": 1,
       "name": "StatTrak™ MP9 | Ruby Poison Dart",
       "market_hash_name": "StatTrak™ MP9 | Ruby Poison Dart (Minimal Wear)",
