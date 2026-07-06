@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/en/players/smooya",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-04T07:19:25.819Z",
+  "updatedAt": "2026-07-06T08:16:46.519Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 34,
-  "totalItemsGrouped": 34,
+  "totalItemsRaw": 36,
+  "totalItemsGrouped": 36,
   "items": [
     {
       "assetid": "52059347504",
@@ -95,14 +95,14 @@
       "phase": "Phase 2"
     },
     {
-      "assetid": "52268839092",
-      "classid": "7993040441",
-      "instanceid": "188530139",
+      "assetid": "52505132785",
+      "classid": "7993045353",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "★ M9 Bayonet | Gamma Doppler",
-      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
+      "name": "★ Kukri Knife | Stained",
+      "market_hash_name": "★ Kukri Knife | Stained (Well-Worn)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204151F5A09D9A834059BD4261FB456947714279AFFCADA74201C84629673149F97114EE",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -110,6 +110,10 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -124,10 +128,7 @@
           "category": "Exterior",
           "name": ""
         }
-      ],
-      "float": 0.026748146862,
-      "seed": 905,
-      "phase": "Phase 2"
+      ]
     },
     {
       "assetid": "52327609332",
@@ -316,6 +317,54 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52506797671",
+      "classid": "7993036942",
+      "instanceid": "6276364565",
+      "amount": 1,
+      "name": "USP-S | Printstream",
+      "market_hash_name": "USP-S | Printstream (Factory New)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -957,6 +1006,58 @@
       ],
       "assetids": [
         "33543431177"
+      ]
+    },
+    {
+      "assetid": "52506824837",
+      "classid": "7993037381",
+      "instanceid": "7628482473",
+      "amount": 1,
+      "name": "Souvenir P250 | Facility Draft",
+      "market_hash_name": "Souvenir P250 | Facility Draft (Field-Tested)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
       ]
     }
   ]

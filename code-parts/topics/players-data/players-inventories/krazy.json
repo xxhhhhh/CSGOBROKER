@@ -7,16 +7,18 @@
   "name": "Adones Nobre",
   "nationality": "Portugal",
   "born": "29.12.2003",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/94f5114b-b7b9-445f-be26-1a60f54d22de",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-03T07:12:49.057Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 184,
-  "totalItemsGrouped": 167,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-06T07:57:23.519Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 183,
+  "totalItemsGrouped": 166,
   "items": [
     {
       "assetid": "51756927366",
@@ -3013,53 +3015,6 @@
       ]
     },
     {
-      "assetid": "41832116712",
-      "classid": "5799821150",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | roman | Copenhagen 2024",
-      "market_hash_name": "Sticker | roman | Copenhagen 2024",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FDEDFDE544F4DDFDD5FECDF99FF8F5FDED76C195FD8DF5AF77D917",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "41832116712"
-      ]
-    },
-    {
       "assetid": "46524849201",
       "classid": "7104641811",
       "instanceid": "188530139",
@@ -5008,14 +4963,14 @@
       ]
     },
     {
-      "assetid": "50702192231",
+      "assetid": "52685882578",
       "classid": "7993035763",
-      "instanceid": "480085569",
+      "instanceid": "6276780017",
       "amount": 1,
       "name": "M4A1-S | Night Terror",
       "market_hash_name": "M4A1-S | Night Terror (Field-Tested)",
       "type": "Restricted Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D1C1364D09216DD0C9EDF13BD9F9D5E1D5E948580E25D29127D5B915D0A1D5C66B57D6",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -5039,6 +4994,18 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -5286,7 +5253,7 @@
     {
       "assetid": "49853323190",
       "classid": "7993045315",
-      "instanceid": "6386858907",
+      "instanceid": "6389097069",
       "amount": 1,
       "name": "StatTrak™ USP-S | The Traitor",
       "market_hash_name": "StatTrak™ USP-S | The Traitor (Minimal Wear)",
