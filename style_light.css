@@ -103,7 +103,13 @@ body {
 .teammates-sign,
 .menu-main-reviews-item,
 .menu-main-solid-item,
-.slider-container.slick-dotted.slick-slider  {
+.slider-container.slick-dotted.slick-slider,
+.sitepage:has(.box-skins-nav) .topic-grandbox,
+.siteblock .box-skins-nav,
+.best-alternates,
+.player,
+.players-sign::before,
+.players-box  {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
     box-shadow: unset;
 }
@@ -179,7 +185,8 @@ nav img {
 .nav-review.ptype,
 .newest-boxes .box .content,
 .box-skins .skin,
-.box .logobg .best-alt {
+.box .logobg .best-alt,
+.skin-color-info .skin-color {
     filter: unset;
     box-shadow: unset;
 }
@@ -302,17 +309,22 @@ nav img {
 }
 
 .box-skins .skin img {
-    filter: drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, 0.15));
+    filter: drop-shadow(0 0.4rem 0.15rem rgba(0, 0, 0, .2));
 }
 
 .topic-box .logobg img,
 .box-skins.solo .skin img,
-.box-skins.character .preview-item.skin img  {
-    filter: drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, 0.2));
+.box-skins.character .preview-item.skin img,
+.box-skins .skin img  {
+    filter: drop-shadow(0 0.4rem 0.15rem rgba(0, 0, 0, .2));
 }
 
 .box-skins .skin-price-info .souvenir-price-info {
     color: #584b00;
+}
+
+.skin:hover .skin-price-info .souvenir-price-info {
+    color: #887400;
 }
 
 .topic-box .logobg,
@@ -1018,9 +1030,11 @@ h3,
 .box-skins-list {
     background: var(--darkygray);
     border-radius: 8px var(--main-border) var(--main-border) 8px;
-    margin: 4px 0;
-    height: calc(100% - 8px);
-    margin-right: 4px;
+}
+
+.box-skins.selected .box-skins-list {
+    margin: 4px;
+    border-radius: var(--main-border);
 }
 
 .weapon-selection-unite img {
@@ -1798,6 +1812,10 @@ ul .submenu li .nonredir,
 .box-skins-list .price-sorter i::before,
 .media-link::after {
     filter: brightness(.2);
+}
+
+.media-link::after {
+    opacity: .5;
 }
 
 .box-skins-list .price-sorter i::before {
