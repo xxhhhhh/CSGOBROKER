@@ -591,6 +591,7 @@ const MBX_TRANSLATIONS = {
   "Case Opening": { ru: "Открытие Кейсов" },
   Crash: { ru: "Краш" },
   Jackpot: { ru: "Джекпот" },
+  Upgrader: { ru: "Апгрейдер" },
   Coinflip: { ru: "Монетка" },
   "Case Battle": { ru: "" },
   Slots: { ru: "" },

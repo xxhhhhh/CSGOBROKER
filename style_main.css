@@ -3107,6 +3107,11 @@ nav .pages {
     z-index: 100;
 }
 
+.box-skins-nav-control .box-skins-button {
+    height: 51px;
+    border-radius: var(--minor-border);
+}
+
 .box-skins-button.hidden {
     display: none;
 }
@@ -4598,7 +4603,7 @@ nav img {
 .review .category-selector,
 .nondef:has(.topic-craft) .category-selector,
 .nondef:has(.grenades) .category-selector {
-    --visible-cards: 4;
+    --visible-cards: 5;
     max-width: 1340px;
 }
 
@@ -9066,6 +9071,10 @@ a[data-title]:after,
 .typesinside .upgrader::before {
     background-image: url(/img/icons/gamemodes/upgrader.webp);
     transform: scale(.9);
+}
+
+.boxes-holder-modes.upgrader .officon::before {
+    background-image: url(/img/icons/gamemodes/upgrader.webp);
 }
 
 .typesinside .duels::before {
@@ -15599,7 +15608,7 @@ header {
     .submenu li .nonredir {
         box-shadow: 0 0 8px 0 rgba(0, 0, 0, .3);
         background-color: rgb(23 23 23);
-        margin: 2px;
+        margin: 1px;
     }
 
     .category-selector .submenu,
@@ -18508,6 +18517,7 @@ a[href*="/?aff="][target="_blank"] {
     .box-skins-nav {
         overflow: unset;
         z-index: 101;
+        padding: unset;
     }
 
     .box-skins-button.left {

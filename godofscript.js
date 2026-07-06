@@ -1682,7 +1682,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     buttonsContainer.classList.add("buttons-container");
-    prevButtonContainer.classList.add("controls-button");
+    prevButtonContainer.classList.add("controls-button", "disabled");
     prevButtonContainer.setAttribute("aria-label", "Prev Category");
     prevButtonContainer.innerHTML = '<i class="officon chevron left"></i>';
 
@@ -1714,14 +1714,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     nextButtonContainer.addEventListener("click", () => {
-      if (!hasBoxes()) return;
+      if (!hasBoxes() || !hasNextHiddenItem()) return;
 
       const target = getNextScrollPosition();
+
+      if (Math.abs(target - boxContainer.scrollLeft) <= 2) {
+        updateControlsState();
+        return;
+      }
+
       boxContainer.scrollTo({ left: target, behavior: "smooth" });
       buttonScrollPosition = target;
       scrollPosition = target;
 
-      requestAnimationFrame(updateLastVisibleCategory);
+      requestAnimationFrame(() => {
+        updateControlsState();
+        updateLastVisibleCategory();
+      });
     });
 
     boxContainer.addEventListener("click", (e) => {
@@ -1835,34 +1844,62 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-  boxContainer.addEventListener("scroll", () => {
-    scrollPosition = boxContainer.scrollLeft;
-    buttonScrollPosition = boxContainer.scrollLeft;
-
-    if (boxContainer.scrollLeft === 0) {
-      prevButtonContainer.classList.add("disabled");
-    } else {
-      prevButtonContainer.classList.remove("disabled");
+    function getContainerPaddingRight() {
+      const styles = window.getComputedStyle(boxContainer);
+      return parseFloat(styles.paddingRight) || 0;
     }
 
-    const maxScrollLeft = boxContainer.scrollWidth - boxContainer.clientWidth;
-    if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
-      nextButtonContainer.classList.add("disabled");
-    } else {
-      nextButtonContainer.classList.remove("disabled");
-    }
-    updateLastVisibleCategory();
-  });
-
-    if (boxContainer.scrollLeft === 0) {
-      prevButtonContainer.classList.add("disabled");
+    function getMaxScrollLeft() {
+      return boxContainer.scrollWidth - boxContainer.clientWidth;
     }
 
-    const maxScrollLeft = boxContainer.scrollWidth - boxContainer.clientWidth;
-    if (boxContainer.scrollLeft >= maxScrollLeft - 1) {
-      nextButtonContainer.classList.add("disabled");
+    function getVisibleContentWidth() {
+      const styles = window.getComputedStyle(boxContainer);
+      const paddingLeft = parseFloat(styles.paddingLeft) || 0;
+      const paddingRight = parseFloat(styles.paddingRight) || 0;
+
+      return boxContainer.clientWidth - paddingLeft - paddingRight;
     }
 
+    function getRightScrollTolerance() {
+      const rightPadding = getContainerPaddingRight();
+
+      return Math.max(8, rightPadding + 2);
+    }
+
+    function hasNextHiddenItem() {
+      const items = getItemMetrics();
+      const currentLeft = boxContainer.scrollLeft;
+      const visibleContentWidth = getVisibleContentWidth();
+      const viewportRight = currentLeft + visibleContentWidth;
+      const tolerance = getRightScrollTolerance();
+
+      return items.some((item) => item.right > viewportRight + tolerance);
+    }
+
+    function updateControlsState() {
+      if (boxContainer.scrollLeft <= 1) {
+        prevButtonContainer.classList.add("disabled");
+      } else {
+        prevButtonContainer.classList.remove("disabled");
+      }
+
+      if (hasNextHiddenItem()) {
+        nextButtonContainer.classList.remove("disabled");
+      } else {
+        nextButtonContainer.classList.add("disabled");
+      }
+    }
+
+    boxContainer.addEventListener("scroll", () => {
+      scrollPosition = boxContainer.scrollLeft;
+      buttonScrollPosition = boxContainer.scrollLeft;
+
+      updateControlsState();
+      updateLastVisibleCategory();
+    });
+
+    updateControlsState();
     updateLastVisibleCategory();
 
     boxContainer.addEventListener("mousedown", (e) => {
@@ -1995,27 +2032,44 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
+    function getEffectiveMaxScrollLeft() {
+      const items = getItemMetrics();
+      const visibleContentWidth = getVisibleContentWidth();
+
+      if (!items.length) return 0;
+
+      const lastItem = items[items.length - 1];
+
+      return Math.max(0, Math.round(lastItem.right - visibleContentWidth));
+    }
+
     function clampScroll(value) {
-      const maxScrollLeft = boxContainer.scrollWidth - boxContainer.clientWidth;
+      const effectiveMaxScrollLeft = getEffectiveMaxScrollLeft();
 
       if (value <= 2) return 0;
-      if (value >= maxScrollLeft - 2) return maxScrollLeft;
 
-      return Math.max(0, Math.min(value, maxScrollLeft));
+      return Math.max(0, Math.min(Math.round(value), effectiveMaxScrollLeft));
     }
 
     function getNextScrollPosition() {
       const items = getItemMetrics();
       const currentLeft = boxContainer.scrollLeft;
-      const viewportRight = currentLeft + boxContainer.clientWidth;
-      const maxScrollLeft = boxContainer.scrollWidth - boxContainer.clientWidth;
-      const tolerance = 6;
+      const visibleContentWidth = getVisibleContentWidth();
+      const viewportRight = currentLeft + visibleContentWidth;
+      const tolerance = getRightScrollTolerance();
 
       const nextItem = items.find((item) => item.right > viewportRight + tolerance);
 
-      if (!nextItem) return maxScrollLeft;
+      if (!nextItem) return currentLeft;
 
-      return clampScroll(nextItem.left);
+      const target = nextItem.right - visibleContentWidth;
+      const normalizedTarget = clampScroll(target);
+
+      if (normalizedTarget <= currentLeft + 2) {
+        return currentLeft;
+      }
+
+      return normalizedTarget;
     }
 
     function getPrevScrollPosition() {

@@ -80,7 +80,6 @@ body {
 .boxreview .smallreview.criteria,
 .smallreview.criteria,
 .instruction ol li:before,
-.shortinfo .features,
 .box-skins.character .skin,
 .character-model,
 .promo-box.extra-abox,
@@ -206,7 +205,8 @@ nav img {
 .site-attention.blocked,
 .site-attention,
 .boxreview .smallreview,
-.instruction {
+.instruction,
+.shortinfo .features {
     background: var(--darkygray);
 }
 
@@ -217,10 +217,6 @@ nav img {
 .site-attention:hover {
     background-color: unset;
     background: var(--main-theme);
-}
-
-.shortinfo .features {
-    background: var(--darkgray);
 }
 
 .site-attention.blocked,
@@ -239,7 +235,8 @@ nav img {
 .alternates-title,
 .nav-review,
 .sitepage .box.main .logobg .rating,
-.cent-title {
+.cent-title,
+.shortinfo .features {
     filter: drop-shadow(0 1px 1px rgb(200 200 200));
     box-shadow: unset;
 }
@@ -291,6 +288,11 @@ nav img {
     background: var(--icongradient);
 }
 
+.topic-grandbox .topic-box .logobg.skincolors,
+.topic-grandbox .topic-box:hover .logobg.skincolors {
+    background: var(--darkgray);
+}
+
 .boxes-holder-name .boxes-holder-more {
     margin-right: 3px;
 }
@@ -325,7 +327,8 @@ nav img {
     background-size: cover;
 }
 
-#color-list li {
+#color-list li,
+.shortinfo .features::before {
     background: unset
 }
 
@@ -1013,7 +1016,11 @@ h3,
 }
 
 .box-skins-list {
-    background-color: unset;
+    background: var(--darkygray);
+    border-radius: 8px var(--main-border) var(--main-border) 8px;
+    margin: 4px 0;
+    height: calc(100% - 8px);
+    margin-right: 4px;
 }
 
 .weapon-selection-unite img {
