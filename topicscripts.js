@@ -3505,33 +3505,152 @@ document.addEventListener("DOMContentLoaded", async function () {
   const isStickerCraftsListPage = /\/topic\/sticker-crafts(?:\.html)?$/.test(path);
   const isStickerCraftsPage = isStickerCraftsSkinPage || isStickerCraftsListPage;
 
-  let pageData = [];
+  const isSticker = isStickerCraftsPage;
+  const itemSelector = isSticker ? ".topic-grandbox.sticker" : ".topic-box";
 
-  if (pageData.length > itemsPerPage) {
-    topicBoxesHolder.classList.add("pagination");
-  }
+  let currentSearch = getSearchFromURL();
 
   setupPagination();
 
-  function setupPagination() {
+  function getURLParams() {
+    return new URLSearchParams(window.location.search);
+  }
+
+  function getPageFromURL(totalPages = Infinity) {
+    const params = getURLParams();
+    const page = parseInt(params.get("page"), 10);
+
+    if (Number.isNaN(page) || page < 1) {
+      return 1;
+    }
+
+    return Math.min(page, totalPages);
+  }
+
+  function getSearchFromURL() {
+    return getURLParams().get("search") || "";
+  }
+
+  function updateURL({ page = 1, search = currentSearch, replace = false } = {}) {
+    const url = new URL(window.location.href);
+
+    if (page > 1) {
+      url.searchParams.set("page", page);
+    } else {
+      url.searchParams.delete("page");
+    }
+
+    if (search && search.trim() !== "") {
+      url.searchParams.set("search", search.trim());
+    } else {
+      url.searchParams.delete("search");
+    }
+
+    if (replace) {
+      window.history.replaceState({ page, search }, "", url);
+    } else {
+      window.history.pushState({ page, search }, "", url);
+    }
+  }
+
+  function getFuseData(boxes) {
+    return boxes.map((box, idx) => {
+      if (isSticker) {
+        const spans = Array.from(box.querySelectorAll(".section.first span"));
+        const spanTexts = spans.map((s) => s.textContent.trim()).filter(Boolean);
+        const skinElements = Array.from(box.querySelectorAll(".section.third .skin"));
+        const skinIds = skinElements.map((el) => el.getAttribute("skin-id") || "").filter(Boolean);
+
+        return { idx, spanTexts, skinIds };
+      }
+
+      const mainText = box.querySelector("span")?.textContent.trim() || "";
+      const playerNickname = box.querySelector(".player-nickname")?.textContent.trim() || "";
+      const playerTeam = box.querySelector(".player-team")?.textContent.trim() || "";
+
+      return {
+        idx,
+        text: [mainText, playerNickname, playerTeam].filter(Boolean).join(" "),
+      };
+    });
+  }
+
+  function getFilteredBoxes(allBoxes, searchValue) {
+    const value = searchValue.trim().toLowerCase();
+
+    if (!value) {
+      return allBoxes;
+    }
+
+    const fuseData = getFuseData(allBoxes);
+    let matchedIdx = new Set();
+
+    if (typeof Fuse !== "undefined") {
+      const fuse = new Fuse(fuseData, {
+        keys: isSticker ? ["spanTexts", "skinIds"] : ["text"],
+        threshold: 0.3,
+        minMatchCharLength: 1,
+      });
+
+      const results = fuse.search(value);
+      matchedIdx = new Set(results.map((r) => r.item.idx));
+    } else {
+      fuseData.forEach((item) => {
+        const hay = isSticker
+          ? item.spanTexts.join(" ") + " " + item.skinIds.join(" ")
+          : item.text;
+
+        if ((hay || "").toLowerCase().includes(value)) {
+          matchedIdx.add(item.idx);
+        }
+      });
+    }
+
+    return allBoxes.filter((_, idx) => matchedIdx.has(idx));
+  }
+
+  function setupPagination(options = {}) {
+    const replaceURL = options.replaceURL || false;
+    const updateURLState = options.updateURL !== false;
+
     const existingPagination = topicBoxesHolder.querySelector(".pagination-holder");
     if (existingPagination) {
       existingPagination.remove();
     }
 
-    const isSticker = isStickerCraftsPage;
-    const itemSelector = isSticker ? ".topic-grandbox.sticker" : ".topic-box";
-    const boxTopics = Array.from(topicBoxesHolder.querySelectorAll(itemSelector));
-    if (!boxTopics.length) return;
+    const allBoxes = Array.from(topicBoxesHolder.querySelectorAll(itemSelector));
+    if (!allBoxes.length) return 1;
 
-    const totalPages = Math.ceil(boxTopics.length / itemsPerPage);
+    const filteredBoxes = getFilteredBoxes(allBoxes, currentSearch);
+    const totalPages = Math.ceil(filteredBoxes.length / itemsPerPage);
+
+    allBoxes.forEach((box) => {
+      box.style.display = "none";
+      box.classList.remove("hidden", "fade-in", "visible", "visible_sort");
+    });
+
+    if (currentSearch) {
+      topicBoxesHolder.classList.remove("pagination");
+    } else {
+      topicBoxesHolder.classList.add("pagination");
+    }
 
     if (totalPages <= 1) {
-      boxTopics.forEach((box) => {
-        box.classList.remove("hidden");
-        box.classList.add("visible");
+      filteredBoxes.forEach((box, index) => {
+        box.style.display = "";
+        box.style.animationDelay = `${((index % itemsPerPage) + 1) * 0.025}s`;
+        box.classList.add(currentSearch ? "visible_sort" : "visible");
       });
-      return;
+
+      if (updateURLState) {
+        updateURL({
+          page: 1,
+          search: currentSearch,
+          replace: replaceURL,
+        });
+      }
+
+      return 1;
     }
 
     topicBoxesHolder.classList.add("pagination");
@@ -3540,58 +3659,87 @@ document.addEventListener("DOMContentLoaded", async function () {
     paginationHolder.classList.add("pagination-holder");
     topicBoxesHolder.appendChild(paginationHolder);
 
-    function showPage(page) {
+    function showPage(page, showOptions = {}) {
+      const pageReplaceURL = showOptions.replaceURL || false;
+      const pageUpdateURL = showOptions.updateURL !== false;
+
+      page = Math.max(1, Math.min(page, totalPages));
+
       const start = (page - 1) * itemsPerPage;
       const end = page * itemsPerPage;
 
-      boxTopics.forEach((box, index) => {
+      allBoxes.forEach((box) => {
+        box.style.display = "none";
+        box.classList.add("hidden");
+        box.classList.remove("fade-in", "visible", "visible_sort");
+      });
+
+      filteredBoxes.forEach((box, index) => {
         if (index >= start && index < end) {
           const delay = ((index % itemsPerPage) + 1) * 0.025;
+
           box.style.animationDelay = `${delay}s`;
           box.style.display = "";
           box.classList.remove("hidden");
-          box.classList.add("fade-in");
-          box.addEventListener(
-            "animationend",
-            () => {
-              box.classList.remove("fade-in");
-              box.classList.add("visible");
-            },
-            { once: true }
-          );
-        } else {
-          box.style.display = "";
-          box.classList.add("hidden");
-          box.classList.remove("fade-in", "visible");
+
+          if (currentSearch) {
+            box.classList.add("visible_sort");
+          } else {
+            box.classList.add("fade-in");
+            box.addEventListener(
+              "animationend",
+              () => {
+                box.classList.remove("fade-in");
+                box.classList.add("visible");
+              },
+              { once: true }
+            );
+          }
         }
       });
 
       updatePaginationButtons(page);
+
+      if (pageUpdateURL) {
+        updateURL({
+          page,
+          search: currentSearch,
+          replace: pageReplaceURL,
+        });
+      }
+
+      return page;
     }
 
     function updatePaginationButtons(activePage) {
       paginationHolder.innerHTML = "";
 
-      // Кнопка "в первую страницу"
-      const firstButton = document.createElement("button");
-      firstButton.classList.add("pagination-button", "arrow", "force");
-      firstButton.innerHTML = `<i class="officon chevron double left"></i>`;
-      if (activePage === 1) {
-        firstButton.classList.add("disabled");
-      } else {
-        firstButton.addEventListener("click", () => showPage(1));
-      }
-      paginationHolder.appendChild(firstButton);
+      const showForceButtons = totalPages > 3;
 
-      // Кнопка "предыдущая"
+      if (showForceButtons) {
+        const firstButton = document.createElement("button");
+        firstButton.classList.add("pagination-button", "arrow", "force");
+        firstButton.innerHTML = `<i class="officon chevron double left"></i>`;
+
+        if (activePage === 1) {
+          firstButton.classList.add("disabled");
+        } else {
+          firstButton.addEventListener("click", () => showPage(1));
+        }
+
+        paginationHolder.appendChild(firstButton);
+      }
+
       const prevButton = document.createElement("button");
       prevButton.classList.add("pagination-button", "arrow");
       prevButton.innerHTML = `<i class="officon chevron left"></i>`;
+
       if (activePage === 1) {
         prevButton.classList.add("disabled");
       } else {
         prevButton.addEventListener("click", () => showPage(activePage - 1));
       }
+
       paginationHolder.appendChild(prevButton);
 
       let startPage = Math.max(1, activePage - 1);
@@ -3615,133 +3763,86 @@ document.addEventListener("DOMContentLoaded", async function () {
         paginationHolder.appendChild(button);
       }
 
-      // Кнопка "следующая"
       const nextButton = document.createElement("button");
       nextButton.classList.add("pagination-button", "arrow");
       nextButton.innerHTML = `<i class="officon chevron right"></i>`;
+
       if (activePage === totalPages) {
         nextButton.classList.add("disabled");
       } else {
         nextButton.addEventListener("click", () => showPage(activePage + 1));
       }
+
       paginationHolder.appendChild(nextButton);
 
-      // Кнопка "в последнюю страницу"
-      const lastButton = document.createElement("button");
-      lastButton.classList.add("pagination-button", "arrow", "force");
-      lastButton.innerHTML = `<i class="officon chevron double right"></i>`;
-      if (activePage === totalPages) {
-        lastButton.classList.add("disabled");
-      } else {
-        lastButton.addEventListener("click", () => showPage(totalPages));
+      if (showForceButtons) {
+        const lastButton = document.createElement("button");
+        lastButton.classList.add("pagination-button", "arrow", "force");
+        lastButton.innerHTML = `<i class="officon chevron double right"></i>`;
+
+        if (activePage === totalPages) {
+          lastButton.classList.add("disabled");
+        } else {
+          lastButton.addEventListener("click", () => showPage(totalPages));
+        }
+
+        paginationHolder.appendChild(lastButton);
       }
-      paginationHolder.appendChild(lastButton);
     }
+
+    const startPage = getPageFromURL(totalPages);
+    const activePage = showPage(startPage, {
+      replaceURL,
+      updateURL: updateURLState,
+    });
 
     if (languageTag === "ru") {
       updateURLs(topicBoxesHolder);
     }
 
-    showPage(1);
-
-    // РАНЬШЕ здесь подгружались обложки .skin для sticker-crafts — удалено.
+    return activePage;
   }
 
   // ================================
   // topic-filter: ввод и фильтрация
   // ================================
-(function () {
-  const scopedHolder =
-    document.querySelector(".topic-boxes-holder.items-type, .topic-boxes-holder.sticker-crafts") ||
-    (["skins", "items", "sticker-crafts", "inventories"].includes(location.pathname.split("/").pop().replace(".html", "")) &&
-      document.querySelector(".topic-boxes-holder"));
+  (function () {
+    const scopedHolder =
+      document.querySelector(".topic-boxes-holder.items-type, .topic-boxes-holder.sticker-crafts") ||
+      (["skins", "items", "sticker-crafts", "inventories"].includes(location.pathname.split("/").pop().replace(".html", "")) &&
+        document.querySelector(".topic-boxes-holder"));
 
-  if (!scopedHolder) return;
+    if (!scopedHolder) return;
 
-  const isStickerCrafts = location.pathname.includes("sticker-crafts");
-  const filterInput = scopedHolder.querySelector(".topic-filter .topic-filter-tab");
-  if (!filterInput) return;
+    const filterInput = scopedHolder.querySelector(".topic-filter .topic-filter-tab");
+    if (!filterInput) return;
 
-  filterInput.addEventListener("input", () => {
-    const value = filterInput.value.trim().toLowerCase();
-    const itemSelector = isStickerCrafts ? ".topic-grandbox.sticker" : ".topic-box";
-    const allBoxes = Array.from(scopedHolder.querySelectorAll(itemSelector));
-    const paginationHolder = document.querySelector(".pagination-holder");
+    filterInput.value = currentSearch;
 
-    if (value !== "") {
-      scopedHolder.classList.remove("pagination");
-      paginationHolder?.remove();
+    filterInput.addEventListener("input", () => {
+      currentSearch = filterInput.value.trim().toLowerCase();
 
-      const fuseData = allBoxes.map((box, idx) => {
-        if (isStickerCrafts) {
-          const spans = Array.from(box.querySelectorAll(".section.first span"));
-          const spanTexts = spans.map((s) => s.textContent.trim()).filter(Boolean);
-          const skinElements = Array.from(box.querySelectorAll(".section.third .skin"));
-          const skinIds = skinElements.map((el) => el.getAttribute("skin-id") || "").filter(Boolean);
-
-          return { idx, spanTexts, skinIds };
-        } else {
-          const mainText = box.querySelector("span")?.textContent.trim() || "";
-          const playerNickname = box.querySelector(".player-nickname")?.textContent.trim() || "";
-          const playerTeam = box.querySelector(".player-team")?.textContent.trim() || "";
-
-          return {
-            idx,
-            text: [mainText, playerNickname, playerTeam].filter(Boolean).join(" "),
-          };
-        }
+      const activePage = setupPagination({
+        replaceURL: false,
+        updateURL: false,
       });
 
-      let matchedIdx = new Set();
-
-      if (typeof Fuse !== "undefined") {
-        const fuse = new Fuse(fuseData, {
-          keys: isStickerCrafts ? ["spanTexts", "skinIds"] : ["text"],
-          threshold: 0.4,
-          minMatchCharLength: 1,
-        });
-
-        const results = fuse.search(value);
-        matchedIdx = new Set(results.map((r) => r.item.idx));
-      } else {
-        fuseData.forEach((item) => {
-          const hay = isStickerCrafts
-            ? item.spanTexts.join(" ") + " " + item.skinIds.join(" ")
-            : item.text;
-
-          if ((hay || "").toLowerCase().includes(value)) matchedIdx.add(item.idx);
-        });
-      }
-
-      let shown = 0;
-      allBoxes.forEach((box, idx) => {
-        const isMatch = matchedIdx.has(idx);
-        box.classList.remove("hidden", "fade-in", "visible");
-        box.style.animationDelay = "0s";
-        box.classList.toggle("visible_sort", isMatch);
-
-        if (isMatch && shown < itemsPerPage) {
-          box.style.display = "";
-          shown++;
-        } else {
-          box.style.display = "none";
-        }
+      updateURL({
+        page: activePage,
+        search: currentSearch,
+        replace: false,
       });
-    } else {
-      allBoxes.forEach((box) => {
-        box.style.display = "";
-        box.classList.add("hidden");
-        box.classList.remove("fade-in", "visible", "visible_sort");
+    });
+
+    window.addEventListener("popstate", () => {
+      currentSearch = getSearchFromURL();
+      filterInput.value = currentSearch;
+
+      setupPagination({
+        updateURL: false,
       });
-
-      scopedHolder.classList.add("pagination");
-
-      if (typeof setupPagination === "function") {
-        setupPagination();
-      }
-    }
-  });
-})();
+    });
+  })();
 });
 
 
@@ -4225,202 +4326,202 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 /* DRAGGABLE */
 
-// (() => {
-//     const DRAGGABLE_SELECTOR = '.radar-smoke-icon, .radar-pos-spot';
-//     const PRECISION = 2;
+(() => {
+    const DRAGGABLE_SELECTOR = '.radar-smoke-icon, .radar-pos-spot';
+    const PRECISION = 2;
 
-//     let activeDrag = null;
+    let activeDrag = null;
 
-//     const coordinatesLabel = document.createElement('div');
+    const coordinatesLabel = document.createElement('div');
 
-//     Object.assign(coordinatesLabel.style, {
-//         position: 'fixed',
-//         left: '10px',
-//         bottom: '10px',
-//         padding: '8px 12px',
-//         background: 'rgba(0, 0, 0, 0.85)',
-//         color: '#fff',
-//         font: '13px monospace',
-//         borderRadius: '5px',
-//         zIndex: '999999',
-//         pointerEvents: 'none',
-//         display: 'none'
-//     });
+    Object.assign(coordinatesLabel.style, {
+        position: 'fixed',
+        left: '10px',
+        bottom: '10px',
+        padding: '8px 12px',
+        background: 'rgba(0, 0, 0, 0.85)',
+        color: '#fff',
+        font: '13px monospace',
+        borderRadius: '5px',
+        zIndex: '999999',
+        pointerEvents: 'none',
+        display: 'none'
+    });
 
-//     document.body.appendChild(coordinatesLabel);
+    document.body.appendChild(coordinatesLabel);
 
-//     function getPercentPosition(element, parent) {
-//         const inlineLeft = element.style.left;
-//         const inlineTop = element.style.top;
+    function getPercentPosition(element, parent) {
+        const inlineLeft = element.style.left;
+        const inlineTop = element.style.top;
 
-//         const left = inlineLeft.includes('%')
-//             ? parseFloat(inlineLeft)
-//             : element.offsetLeft / parent.clientWidth * 100;
+        const left = inlineLeft.includes('%')
+            ? parseFloat(inlineLeft)
+            : element.offsetLeft / parent.clientWidth * 100;
 
-//         const top = inlineTop.includes('%')
-//             ? parseFloat(inlineTop)
-//             : element.offsetTop / parent.clientHeight * 100;
+        const top = inlineTop.includes('%')
+            ? parseFloat(inlineTop)
+            : element.offsetTop / parent.clientHeight * 100;
 
-//         return {
-//             left: Number.isFinite(left) ? left : 0,
-//             top: Number.isFinite(top) ? top : 0
-//         };
-//     }
+        return {
+            left: Number.isFinite(left) ? left : 0,
+            top: Number.isFinite(top) ? top : 0
+        };
+    }
 
-//     function updateLabel(element, top, left) {
-//         const type = element.classList.contains('radar-pos-spot')
-//             ? 'radar-pos-spot'
-//             : 'radar-smoke-icon';
+    function updateLabel(element, top, left) {
+        const type = element.classList.contains('radar-pos-spot')
+            ? 'radar-pos-spot'
+            : 'radar-smoke-icon';
 
-//         coordinatesLabel.textContent =
-//             `${type} | top: ${top.toFixed(PRECISION)}%; left: ${left.toFixed(PRECISION)}%;`;
+        coordinatesLabel.textContent =
+            `${type} | top: ${top.toFixed(PRECISION)}%; left: ${left.toFixed(PRECISION)}%;`;
 
-//         coordinatesLabel.style.display = 'block';
-//     }
+        coordinatesLabel.style.display = 'block';
+    }
 
-//     document.addEventListener('pointerdown', event => {
-//         const element = event.target.closest(DRAGGABLE_SELECTOR);
+    document.addEventListener('pointerdown', event => {
+        const element = event.target.closest(DRAGGABLE_SELECTOR);
 
-//         if (!element || event.button !== 0) {
-//             return;
-//         }
+        if (!element || event.button !== 0) {
+            return;
+        }
 
-//         /*
-//          * offsetParent — реальный родитель, относительно которого
-//          * работают position:absolute, top и left.
-//          *
-//          * Для radar-pos-spot это обычно radar-grenades-pos-list,
-//          * а для smoke — map-radar.
-//          */
-//         const parent = element.offsetParent;
+        /*
+         * offsetParent — реальный родитель, относительно которого
+         * работают position:absolute, top и left.
+         *
+         * Для radar-pos-spot это обычно radar-grenades-pos-list,
+         * а для smoke — map-radar.
+         */
+        const parent = element.offsetParent;
 
-//         if (!parent) {
-//             console.warn('Для элемента не найден offsetParent:', element);
-//             return;
-//         }
+        if (!parent) {
+            console.warn('Для элемента не найден offsetParent:', element);
+            return;
+        }
 
-//         const parentRect = parent.getBoundingClientRect();
-//         const position = getPercentPosition(element, parent);
+        const parentRect = parent.getBoundingClientRect();
+        const position = getPercentPosition(element, parent);
 
-//         activeDrag = {
-//             element,
-//             parent,
-//             parentRect,
-//             pointerId: event.pointerId,
-//             startMouseX: event.clientX,
-//             startMouseY: event.clientY,
-//             startLeft: position.left,
-//             startTop: position.top
-//         };
+        activeDrag = {
+            element,
+            parent,
+            parentRect,
+            pointerId: event.pointerId,
+            startMouseX: event.clientX,
+            startMouseY: event.clientY,
+            startLeft: position.left,
+            startTop: position.top
+        };
 
-//         element.classList.add('dragging');
-//         element.setPointerCapture(event.pointerId);
+        element.classList.add('dragging');
+        element.setPointerCapture(event.pointerId);
 
-//         updateLabel(element, position.top, position.left);
+        updateLabel(element, position.top, position.left);
 
-//         event.preventDefault();
-//     });
+        event.preventDefault();
+    });
 
-//     document.addEventListener('pointermove', event => {
-//         if (!activeDrag || event.pointerId !== activeDrag.pointerId) {
-//             return;
-//         }
+    document.addEventListener('pointermove', event => {
+        if (!activeDrag || event.pointerId !== activeDrag.pointerId) {
+            return;
+        }
 
-//         const {
-//             element,
-//             parentRect,
-//             startMouseX,
-//             startMouseY,
-//             startLeft,
-//             startTop
-//         } = activeDrag;
+        const {
+            element,
+            parentRect,
+            startMouseX,
+            startMouseY,
+            startLeft,
+            startTop
+        } = activeDrag;
 
-//         const deltaXPercent =
-//             (event.clientX - startMouseX) / parentRect.width * 100;
+        const deltaXPercent =
+            (event.clientX - startMouseX) / parentRect.width * 100;
 
-//         const deltaYPercent =
-//             (event.clientY - startMouseY) / parentRect.height * 100;
+        const deltaYPercent =
+            (event.clientY - startMouseY) / parentRect.height * 100;
 
-//         let left = startLeft + deltaXPercent;
-//         let top = startTop + deltaYPercent;
+        let left = startLeft + deltaXPercent;
+        let top = startTop + deltaYPercent;
 
-//         left = Math.max(0, Math.min(100, left));
-//         top = Math.max(0, Math.min(100, top));
+        left = Math.max(0, Math.min(100, left));
+        top = Math.max(0, Math.min(100, top));
 
-//         element.style.left = `${left.toFixed(PRECISION)}%`;
-//         element.style.top = `${top.toFixed(PRECISION)}%`;
+        element.style.left = `${left.toFixed(PRECISION)}%`;
+        element.style.top = `${top.toFixed(PRECISION)}%`;
 
-//         updateLabel(element, top, left);
+        updateLabel(element, top, left);
 
-//         event.preventDefault();
-//     });
+        event.preventDefault();
+    });
 
-//     function stopDragging(event) {
-//         if (!activeDrag || event.pointerId !== activeDrag.pointerId) {
-//             return;
-//         }
+    function stopDragging(event) {
+        if (!activeDrag || event.pointerId !== activeDrag.pointerId) {
+            return;
+        }
 
-//         const { element, pointerId } = activeDrag;
+        const { element, pointerId } = activeDrag;
 
-//         element.classList.remove('dragging');
+        element.classList.remove('dragging');
 
-//         if (element.hasPointerCapture(pointerId)) {
-//             element.releasePointerCapture(pointerId);
-//         }
+        if (element.hasPointerCapture(pointerId)) {
+            element.releasePointerCapture(pointerId);
+        }
 
-//         const type = element.classList.contains('radar-pos-spot')
-//             ? 'radar-pos-spot'
-//             : 'radar-smoke-icon';
+        const type = element.classList.contains('radar-pos-spot')
+            ? 'radar-pos-spot'
+            : 'radar-smoke-icon';
 
-//         console.log(
-//             `${type}: top: ${element.style.top}; left: ${element.style.left};`
-//         );
+        console.log(
+            `${type}: top: ${element.style.top}; left: ${element.style.left};`
+        );
 
-//         activeDrag = null;
-//         coordinatesLabel.style.display = 'none';
-//     }
+        activeDrag = null;
+        coordinatesLabel.style.display = 'none';
+    }
 
-//     document.addEventListener('pointerup', stopDragging);
-//     document.addEventListener('pointercancel', stopDragging);
+    document.addEventListener('pointerup', stopDragging);
+    document.addEventListener('pointercancel', stopDragging);
 
-//     /*
-//      * Вызови copyRadarPositions() в консоли,
-//      * чтобы скопировать координаты всех элементов.
-//      */
-//     window.copyRadarPositions = async function () {
-//         const elements = [
-//             ...document.querySelectorAll(DRAGGABLE_SELECTOR)
-//         ];
+    /*
+     * Вызови copyRadarPositions() в консоли,
+     * чтобы скопировать координаты всех элементов.
+     */
+    window.copyRadarPositions = async function () {
+        const elements = [
+            ...document.querySelectorAll(DRAGGABLE_SELECTOR)
+        ];
 
-//         const smokeElements = elements.filter(element =>
-//             element.classList.contains('radar-smoke-icon')
-//         );
+        const smokeElements = elements.filter(element =>
+            element.classList.contains('radar-smoke-icon')
+        );
 
-//         const spotElements = elements.filter(element =>
-//             element.classList.contains('radar-pos-spot')
-//         );
+        const spotElements = elements.filter(element =>
+            element.classList.contains('radar-pos-spot')
+        );
 
-//         const result = [];
+        const result = [];
 
-//         spotElements.forEach((element, index) => {
-//             result.push(
-//                 `radar-pos-spot ${index + 1}: ` +
-//                 `top: ${element.style.top}; left: ${element.style.left};`
-//             );
-//         });
+        spotElements.forEach((element, index) => {
+            result.push(
+                `radar-pos-spot ${index + 1}: ` +
+                `top: ${element.style.top}; left: ${element.style.left};`
+            );
+        });
 
-//         smokeElements.forEach((element, index) => {
-//             result.push(
-//                 `radar-smoke-icon ${index + 1}: ` +
-//                 `top: ${element.style.top}; left: ${element.style.left};`
-//             );
-//         });
+        smokeElements.forEach((element, index) => {
+            result.push(
+                `radar-smoke-icon ${index + 1}: ` +
+                `top: ${element.style.top}; left: ${element.style.left};`
+            );
+        });
 
-//         const text = result.join('\n');
+        const text = result.join('\n');
 
-//         await navigator.clipboard.writeText(text);
+        await navigator.clipboard.writeText(text);
 
-//         console.log(text);
-//         console.log('Координаты скопированы в буфер обмена');
-//     };
-// })();
+        console.log(text);
+        console.log('Координаты скопированы в буфер обмена');
+    };
+})();

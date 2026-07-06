@@ -15890,6 +15890,7 @@ header {
 
     .boxreview .smallreview {
         margin-top: 8px;
+        padding: 30px 0px 0px 0px;
     }
 
     .smallreview::after {
@@ -15914,6 +15915,10 @@ header {
         width: 90%;
     }
 
+    .instruction ol {
+        width: 95%;
+    }
+
     .boxreview .main-infobox {
         margin-top: 6px;
         width: 98%;
@@ -15930,7 +15935,7 @@ header {
         filter: unset;
         width: 90%;
         margin-left: unset;
-        padding: 30px 0;
+
         border-radius: var(--main-border);
     }
 
