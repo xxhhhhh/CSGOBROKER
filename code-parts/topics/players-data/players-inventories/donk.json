@@ -7,16 +7,18 @@
   "name": "Danil Kryshkovets",
   "nationality": "Russia",
   "born": "25.01.2007",
+  "isContentCreator": false,
   "twitch": "donk1437",
   "faceit": "https://faceitdb.com/profile/faceit/e5e8e2a6-d716-4493-b949-e16965f41654",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-10T07:09:13.743Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 237,
-  "totalItemsGrouped": 118,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-09T06:43:56.893Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 248,
+  "totalItemsGrouped": 119,
   "items": [
     {
       "assetid": "50394882850",
@@ -58,50 +60,14 @@
       "phase": "Ruby"
     },
     {
-      "assetid": "51928325195",
-      "classid": "7993042582",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Fade",
-      "market_hash_name": "★ Butterfly Knife | Fade (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51033324181",
+      "assetid": "52449058514",
       "classid": "7993040007",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ Butterfly Knife | Gamma Doppler",
       "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202333B6D6E9AD9D223BA027039B270B2513201BC8CFEACA2063AD254BC322532B5ED5643D",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B9A96B046D087AB8A13ABD9901BD91BF89BA8152557050BAF937BFD1A9C9B1BD54655A",
       "tags": [
         {
           "category": "Type",
@@ -501,12 +467,12 @@
       ]
     },
     {
-      "assetid": "52002756079",
-      "classid": "7993036899",
+      "assetid": "51897685211",
+      "classid": "8247168486",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Sport Gloves | Pandora's Box",
-      "market_hash_name": "★ Sport Gloves | Pandora's Box (Field-Tested)",
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -529,12 +495,12 @@
       ]
     },
     {
-      "assetid": "51897685211",
-      "classid": "8247168486",
+      "assetid": "52427145773",
+      "classid": "7993039885",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Sport Gloves | Ultra Violent",
-      "market_hash_name": "★ Sport Gloves | Ultra Violent (Minimal Wear)",
+      "name": "★ Sport Gloves | Vice",
+      "market_hash_name": "★ Sport Gloves | Vice (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -664,6 +630,50 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52539256683",
+      "classid": "7993036958",
+      "instanceid": "6960728085",
+      "amount": 1,
+      "name": "AK-47 | Redline",
+      "market_hash_name": "AK-47 | Redline (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -997,6 +1007,54 @@
       ]
     },
     {
+      "assetid": "52086533390",
+      "classid": "7993036601",
+      "instanceid": "8440988889",
+      "amount": 1,
+      "name": "M4A4 | Howl",
+      "market_hash_name": "M4A4 | Howl (Factory New)",
+      "type": "Contraband Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49922032047",
       "classid": "202170645",
       "instanceid": "8196271081",
@@ -1168,50 +1226,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "43981133568",
-      "classid": "7993043505",
-      "instanceid": "6277656792",
-      "amount": 1,
-      "name": "AK-47 | Wild Lotus",
-      "market_hash_name": "AK-47 | Wild Lotus (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206171E1CF8A8AC260796641B5644967516559998DC9BD6221A56603656962712D03656961712D03656963712D036F6960712D5C616179D624E1A2C7DA09131165D0524B1D",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1761,11 +1775,11 @@
     },
     {
       "assetid": "51928878475",
-      "classid": "8534113218",
+      "classid": "8564022767",
       "instanceid": "8490789003",
       "amount": 1,
-      "name": "Cologne 2026 Silver Coin",
-      "market_hash_name": "Cologne 2026 Silver Coin",
+      "name": "Cologne 2026 Gold Coin",
+      "market_hash_name": "Cologne 2026 Gold Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -1922,6 +1936,34 @@
       "amount": 1,
       "name": "Quarterfinalist at PGL Copenhagen 2024",
       "market_hash_name": "Quarterfinalist at PGL Copenhagen 2024",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52738783568",
+      "classid": "8637434715",
+      "instanceid": "565664004",
+      "amount": 1,
+      "name": "Semifinalist at IEM Cologne 2026",
+      "market_hash_name": "Semifinalist at IEM Cologne 2026",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -2350,6 +2392,63 @@
       ],
       "assetids": [
         "48421949790"
+      ]
+    },
+    {
+      "assetid": "52321849679",
+      "classid": "6360320880",
+      "instanceid": "188530139",
+      "amount": 11,
+      "name": "Sticker | s-chilla | Shanghai 2024",
+      "market_hash_name": "Sticker | s-chilla | Shanghai 2024",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20819181993888A181A982B185E38489819110C3E981F1893C954F15",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52321849679",
+        "52321849678",
+        "52321849677",
+        "52321849676",
+        "52321849675",
+        "52321849674",
+        "52321849673",
+        "52321849672",
+        "52321849671",
+        "52321849670",
+        "52253060889"
       ]
     },
     {
@@ -3098,50 +3197,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51493068467",
-      "classid": "188530424",
-      "instanceid": "6277879471",
-      "amount": 1,
-      "name": "Desert Eagle | Blaze",
-      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
           "name": ""
         },
         {
@@ -4173,7 +4228,7 @@
     {
       "assetid": "49602687745",
       "classid": "7993040817",
-      "instanceid": "8374004460",
+      "instanceid": "8620514559",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Factory New)",
@@ -4221,7 +4276,7 @@
     {
       "assetid": "50700876960",
       "classid": "7993045027",
-      "instanceid": "920142062",
+      "instanceid": "927787517",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Factory New)",
@@ -4257,7 +4312,7 @@
     {
       "assetid": "42657088883",
       "classid": "7993040686",
-      "instanceid": "188719637",
+      "instanceid": "480087918",
       "amount": 1,
       "name": "StatTrak™ USP-S | Printstream",
       "market_hash_name": "StatTrak™ USP-S | Printstream (Factory New)",

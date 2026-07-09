@@ -12,7 +12,7 @@
   "faceit": "https://faceitdb.com/profile/faceit/591e26a3-eb86-4d4c-afa8-b5754455dc03",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-08T05:56:22.408Z",
+  "updatedAt": "2026-07-09T06:50:53.142Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
@@ -28,7 +28,7 @@
       "name": "★ Butterfly Knife | Doppler",
       "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FEEE1E076C003DFFE67DFADE15FAD6F8CEFDC67310171EFDBE29FC96FC8EF6EBA90831",
       "tags": [
         {
           "category": "Type",
@@ -54,7 +54,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.009427797981,
+      "seed": 343,
+      "phase": "Sapphire"
     },
     {
       "assetid": "52526649838",
@@ -1510,6 +1513,50 @@
       ]
     },
     {
+      "assetid": "45567216002",
+      "classid": "241580826",
+      "instanceid": "6279460749",
+      "amount": 1,
+      "name": "Glock-18 | Candy Apple",
+      "market_hash_name": "Glock-18 | Candy Apple (Factory New)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "38265715222",
       "classid": "7993039135",
       "instanceid": "302028390",
@@ -1618,48 +1665,12 @@
       ]
     },
     {
-      "assetid": "39936938784",
-      "classid": "7993037102",
-      "instanceid": "188530139",
+      "assetid": "44154078832",
+      "classid": "7993040745",
+      "instanceid": "7755411047",
       "amount": 1,
-      "name": "Dual Berettas | Hydro Strike",
-      "market_hash_name": "Dual Berettas | Hydro Strike (Field-Tested)",
-      "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "45940731230",
-      "classid": "188530161",
-      "instanceid": "6286482898",
-      "amount": 1,
-      "name": "Glock-18 | Dragon Tattoo",
-      "market_hash_name": "Glock-18 | Dragon Tattoo (Factory New)",
+      "name": "Desert Eagle | Sunset Storm 壱",
+      "market_hash_name": "Desert Eagle | Sunset Storm 壱 (Factory New)",
       "type": "Restricted Pistol",
       "inspectLink": "",
       "tags": [
@@ -1692,7 +1703,7 @@
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "Tournament",
           "name": ""
         },
         {
@@ -1700,11 +1711,43 @@
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "39936938784",
+      "classid": "7993037102",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Dual Berettas | Hydro Strike",
+      "market_hash_name": "Dual Berettas | Hydro Strike (Field-Tested)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
           "name": ""
         },
         {
-          "category": "TournamentTeam",
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1913,50 +1956,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49538203098",
-      "classid": "7993038800",
-      "instanceid": "8396306028",
-      "amount": 1,
-      "name": "StatTrak™ Desert Eagle | Printstream",
-      "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Minimal Wear)",
-      "type": "StatTrak™ Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F5E52F0E26304DF4EDF4D537F2DDF3C5FCCD062D2E18F6B53FF6BDF5A578F997F0FDF4E542F797F0FDF7E542F797F0FDF6E542F797F0FDF5E542F79DAC85FDA2CCD20C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]

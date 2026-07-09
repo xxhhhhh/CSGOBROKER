@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/eaa62bd7-bf8d-43a1-8d85-ff029c0ade9b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-05T07:53:08.413Z",
+  "updatedAt": "2026-07-09T07:54:50.844Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 144,
-  "totalItemsGrouped": 144,
+  "totalItemsRaw": 147,
+  "totalItemsGrouped": 147,
   "items": [
     {
       "assetid": "51285565317",
@@ -122,6 +122,34 @@
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52558014756",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -3094,6 +3122,49 @@
       ]
     },
     {
+      "assetid": "52557907158",
+      "classid": "6360298332",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Team Liquid | Shanghai 2024",
+      "market_hash_name": "Sticker | Team Liquid | Shanghai 2024",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200616061EBF0F26062E05360264030E0616A6386E06760EE0EF42CA",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52557907158"
+      ]
+    },
+    {
       "assetid": "51776705634",
       "classid": "7993036681",
       "instanceid": "519977179",
@@ -4504,6 +4575,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52558051222",
+      "classid": "7993036731",
+      "instanceid": "7791077959",
+      "amount": 1,
+      "name": "AK-47 | Slate",
+      "market_hash_name": "AK-47 | Slate (Battle-Scarred)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

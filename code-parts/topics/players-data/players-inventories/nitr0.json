@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b077f54e-fbca-41ce-9e80-58b9e2f11495",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-02T07:10:39.087Z",
+  "updatedAt": "2026-07-09T07:16:34.797Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 156,
-  "totalItemsGrouped": 133,
+  "totalItemsRaw": 150,
+  "totalItemsGrouped": 129,
   "items": [
     {
       "assetid": "51616339746",
@@ -559,9 +559,9 @@
       ]
     },
     {
-      "assetid": "51766590780",
+      "assetid": "52741481554",
       "classid": "7993036593",
-      "instanceid": "480085569",
+      "instanceid": "7774628135",
       "amount": 1,
       "name": "USP-S | Kill Confirmed",
       "market_hash_name": "USP-S | Kill Confirmed (Minimal Wear)",
@@ -591,13 +591,21 @@
         {
           "category": "Exterior",
           "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
         }
       ]
     },
     {
-      "assetid": "51837676003",
+      "assetid": "52741665544",
       "classid": "201966840",
-      "instanceid": "6276373308",
+      "instanceid": "7101908955",
       "amount": 1,
       "name": "AK-47 | Fire Serpent",
       "market_hash_name": "AK-47 | Fire Serpent (Field-Tested)",
@@ -1975,14 +1983,14 @@
       ]
     },
     {
-      "assetid": "47760595735",
+      "assetid": "47760562380",
       "classid": "7729091438",
       "instanceid": "188530139",
-      "amount": 2,
+      "amount": 1,
       "name": "Sticker | M80 | Budapest 2025",
       "market_hash_name": "Sticker | M80 | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201D0D1D05A4143D1D351E2D197F18151D0DE457751D6D150622E1EC",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CFDFCFD776C6EFCFE7CCFFCBADCAC7CFDF3685A7CFBFC7376CD8AD",
       "tags": [
         {
           "category": "Type",
@@ -2014,7 +2022,6 @@
         }
       ],
       "assetids": [
-        "47760595735",
         "47760562380"
       ]
     },
@@ -2153,81 +2160,6 @@
       ]
     },
     {
-      "assetid": "47760625780",
-      "classid": "7729095688",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | Rare Atom | Budapest 2025",
-      "market_hash_name": "Sticker | Rare Atom | Budapest 2025",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209F8F9F872696BF9FB79CAF9BFD9A979F8F12D4F79FEF9770CBA99C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "47760625780"
-      ]
-    },
-    {
-      "assetid": "17180576524",
-      "classid": "3608083923",
-      "instanceid": "519977179",
-      "amount": 2,
-      "name": "Sticker | Shattered Web",
-      "market_hash_name": "Sticker | Shattered Web",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A5B5A5BD1CAC85A58DA695A1C7A0ADA5B53E86CDA5D5B2E076F6DA",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "17180576524",
-        "17180576514"
-      ]
-    },
-    {
       "assetid": "47760605902",
       "classid": "7729089228",
       "instanceid": "188530139",
@@ -2276,49 +2208,6 @@
         "47760598239",
         "47760581551",
         "47760577358"
-      ]
-    },
-    {
-      "assetid": "47760585696",
-      "classid": "7729091436",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | The Huns | Budapest 2025",
-      "market_hash_name": "Sticker | The Huns | Budapest 2025",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208797879F3E8EA787AF84B783E5828F879702CCEF87F78F5DD83541",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "47760585696"
       ]
     },
     {
@@ -2406,37 +2295,6 @@
       ],
       "assetids": [
         "44073241878"
-      ]
-    },
-    {
-      "assetid": "17180576501",
-      "classid": "3608083938",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Sticker | Web Stuck",
-      "market_hash_name": "Sticker | Web Stuck",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208F9F8F973686AF8FA78CBF8BED8A878F9F12ACE78FFF98E6B653BE",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "17180576501"
       ]
     },
     {
@@ -4737,9 +4595,9 @@
       ]
     },
     {
-      "assetid": "51068264996",
+      "assetid": "52741616496",
       "classid": "7993038026",
-      "instanceid": "903561269",
+      "instanceid": "8637826535",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Tooth Fairy",
       "market_hash_name": "StatTrak™ M4A4 | Tooth Fairy (Factory New)",
@@ -4768,6 +4626,18 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
