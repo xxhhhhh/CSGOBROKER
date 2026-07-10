@@ -7,16 +7,18 @@
   "name": "Ayush Batbold",
   "nationality": "Mongolia",
   "born": "28.06.2007",
+  "isContentCreator": false,
   "twitch": "mzinhocsgo",
   "faceit": "https://faceitdb.com/profile/faceit/009623b1-dd6e-4551-959e-990a21657f93",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-02T06:49:18.546Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 97,
-  "totalItemsGrouped": 96,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-10T06:53:18.214Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 98,
+  "totalItemsGrouped": 97,
   "items": [
     {
       "assetid": "52101816336",
@@ -47,37 +49,9 @@
       ]
     },
     {
-      "assetid": "51740751511",
-      "classid": "7993037104",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Nocts",
-      "market_hash_name": "★ Sport Gloves | Nocts (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52079236650",
       "classid": "7993043109",
-      "instanceid": "188530248",
+      "instanceid": "188530329",
       "amount": 1,
       "name": "★ StatTrak™ M9 Bayonet | Doppler",
       "market_hash_name": "★ StatTrak™ M9 Bayonet | Doppler (Factory New)",
@@ -863,6 +837,68 @@
       ],
       "assetids": [
         "41545584017"
+      ]
+    },
+    {
+      "assetid": "52749342901",
+      "classid": "1989299897",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Death Sentence (Tracer Yellow)",
+      "market_hash_name": "Sealed Graffiti | Death Sentence (Tracer Yellow)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201D0D1D05D9173D1D351C2D197F1A151D0DBF102D1B751D6D0502095958",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52749342901"
+      ]
+    },
+    {
+      "assetid": "52700912252",
+      "classid": "1989275830",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Sorry (Violent Violet)",
+      "market_hash_name": "Sealed Graffiti | Sorry (Violent Violet)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202C3C2C34E8260C2C042D1C284E2B242C3CEA211C22442C5C34D67651F5",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52700912252"
       ]
     },
     {
@@ -2890,7 +2926,7 @@
     {
       "assetid": "50315460054",
       "classid": "8246999731",
-      "instanceid": "188530485",
+      "instanceid": "188531557",
       "amount": 1,
       "name": "StatTrak™ P250 | Kintsugi",
       "market_hash_name": "StatTrak™ P250 | Kintsugi (Well-Worn)",
@@ -2926,7 +2962,7 @@
     {
       "assetid": "51487010820",
       "classid": "7993047873",
-      "instanceid": "188530914",
+      "instanceid": "188532028",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Eye of Athena",
       "market_hash_name": "StatTrak™ FAMAS | Eye of Athena (Minimal Wear)",
@@ -2998,7 +3034,7 @@
     {
       "assetid": "50315509894",
       "classid": "8247059305",
-      "instanceid": "188532375",
+      "instanceid": "188538004",
       "amount": 1,
       "name": "StatTrak™ MP7 | Amberline",
       "market_hash_name": "StatTrak™ MP7 | Amberline (Minimal Wear)",

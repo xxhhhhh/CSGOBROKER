@@ -7,14 +7,16 @@
   "name": "Vincent Cayonte",
   "nationality": "United States",
   "born": "22.05.1998",
+  "isContentCreator": false,
   "twitch": "brehze",
   "faceit": "https://faceitdb.com/profile/faceit/ebf239ef-40ca-48ce-966a-4502d2d7570c",
-  "isContentCreator": false,
+  "appid": 730,
+  "contextid": "2",
   "updatedAt": "2026-07-08T06:51:15.612Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
   "totalItemsRaw": 72,
   "totalItemsGrouped": 72,
   "items": [
@@ -62,7 +64,7 @@
       "name": "★ Butterfly Knife | Gamma Doppler",
       "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BEAE1F50200C00BFA63DBA9E05BA96B88EBD8608706C5ABDFE16BCD68CCEB68EE4FB4A",
       "tags": [
         {
           "category": "Type",
@@ -88,7 +90,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.018146138638,
+      "seed": 296,
+      "phase": "Phase 3"
     },
     {
       "assetid": "51108099889",
@@ -98,7 +103,7 @@
       "name": "★ M9 Bayonet | Doppler",
       "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F6E64718684448F7EE0AF5D654F5DEF0C6F5CE01477B1FF5B65EF39EC686FE91E5E047",
       "tags": [
         {
           "category": "Type",
@@ -120,7 +125,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.039879765362,
+      "seed": 680,
+      "phase": "Phase 1"
     },
     {
       "assetid": "51108099867",
@@ -1879,7 +1887,7 @@
     {
       "assetid": "47402032135",
       "classid": "7993046056",
-      "instanceid": "8634092511",
+      "instanceid": "8640962318",
       "amount": 1,
       "name": "StatTrak™ AWP | Hyper Beast",
       "market_hash_name": "StatTrak™ AWP | Hyper Beast (Battle-Scarred)",
@@ -1963,7 +1971,7 @@
     {
       "assetid": "51424902012",
       "classid": "8247009535",
-      "instanceid": "188560661",
+      "instanceid": "188530601",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Firebreathing",
       "market_hash_name": "StatTrak™ Desert Eagle | Firebreathing (Well-Worn)",

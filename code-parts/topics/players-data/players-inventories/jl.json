@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/23b6ffbb-86ec-47ab-acaa-9c76bed0af66",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-09T07:37:46.088Z",
+  "updatedAt": "2026-07-10T07:36:55.797Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 173,
-  "totalItemsGrouped": 166,
+  "totalItemsRaw": 175,
+  "totalItemsGrouped": 168,
   "items": [
     {
       "assetid": "47272389846",
@@ -518,14 +518,14 @@
       ]
     },
     {
-      "assetid": "45419402612",
-      "classid": "1989283643",
+      "assetid": "52755360523",
+      "classid": "1989273217",
       "instanceid": "302028390",
       "amount": 1,
-      "name": "Sealed Graffiti | Ninja (War Pig Pink)",
-      "market_hash_name": "Sealed Graffiti | Ninja (War Pig Pink)",
+      "name": "Graffiti | Ninja (War Pig Pink)",
+      "market_hash_name": "Graffiti | Ninja (War Pig Pink)",
       "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E8F8E8F02CE2C8E8C0E9D8EC8AEFE0E8F844E5D8FA80E898F0FEAD2D68",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203A2A3A22FF301A3A123B0A3E583D323A2A96370A28523A4A22045812F5",
       "tags": [
         {
           "category": "Type",
@@ -545,7 +545,38 @@
         }
       ],
       "assetids": [
-        "45419402612"
+        "52755360523"
+      ]
+    },
+    {
+      "assetid": "52755314654",
+      "classid": "1989274456",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Tombstone (Frog Green)",
+      "market_hash_name": "Graffiti | Tombstone (Frog Green)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E4F4E4FC21EEC4E4CCE5D4E086E3ECE4F453E9D4ED8CE494FC378845F8",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52755314654"
       ]
     },
     {
@@ -673,6 +704,33 @@
           "category": "Rarity",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "52755312114",
+      "classid": "6195246388",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Charm Detachment Pack",
+      "market_hash_name": "Charm Detachment Pack",
+      "type": "Base Grade Tool",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205646564E807076567E5766523E56264E45E21B58",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52755312114"
       ]
     },
     {

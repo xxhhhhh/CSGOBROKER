@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/0ab98e48-776d-4ec4-86be-0d3bc0f4f06d",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-04T06:39:25.093Z",
+  "updatedAt": "2026-07-10T07:07:23.361Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 319,
-  "totalItemsGrouped": 141,
+  "totalItemsRaw": 320,
+  "totalItemsGrouped": 142,
   "items": [
     {
       "assetid": "51089932896",
@@ -259,34 +259,6 @@
       "amount": 1,
       "name": "★ Sport Gloves | Hedge Maze",
       "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52394559568",
-      "classid": "7993042486",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Nocts",
-      "market_hash_name": "★ Sport Gloves | Nocts (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -566,6 +538,34 @@
     },
     {
       "assetid": "50659905740",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52767926291",
       "classid": "5189384637",
       "instanceid": "302028390",
       "amount": 1,
@@ -881,6 +881,37 @@
       ],
       "assetids": [
         "31754621618"
+      ]
+    },
+    {
+      "assetid": "52767926292",
+      "classid": "1989295972",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Backstab (War Pig Pink)",
+      "market_hash_name": "Sealed Graffiti | Backstab (War Pig Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202A3A2A32EE200A2A022B1A2E482D222A3A9E271A38422A5A32D994C5FB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52767926292"
       ]
     },
     {
@@ -4669,7 +4700,7 @@
     {
       "assetid": "39145674510",
       "classid": "7993040817",
-      "instanceid": "8636792080",
+      "instanceid": "8641223019",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Factory New)",
@@ -4717,7 +4748,7 @@
     {
       "assetid": "39054013534",
       "classid": "7993036844",
-      "instanceid": "8630436868",
+      "instanceid": "8641208784",
       "amount": 1,
       "name": "StatTrak™ USP-S | Neo-Noir",
       "market_hash_name": "StatTrak™ USP-S | Neo-Noir (Minimal Wear)",
@@ -4849,7 +4880,7 @@
     {
       "assetid": "25268734052",
       "classid": "7993039708",
-      "instanceid": "8636792081",
+      "instanceid": "8641345431",
       "amount": 1,
       "name": "StatTrak™ AWP | Neo-Noir",
       "market_hash_name": "StatTrak™ AWP | Neo-Noir (Field-Tested)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/0411cac3-a510-4af0-96d1-b032a4e766ac",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-05T06:49:14.130Z",
+  "updatedAt": "2026-07-10T06:53:20.662Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 206,
-  "totalItemsGrouped": 178,
+  "totalItemsRaw": 205,
+  "totalItemsGrouped": 177,
   "items": [
     {
       "assetid": "51169818262",
@@ -327,42 +327,6 @@
       ]
     },
     {
-      "assetid": "46500464601",
-      "classid": "7993038692",
-      "instanceid": "6276309020",
-      "amount": 1,
-      "name": "Glock-18 | Mirror Mosaic",
-      "market_hash_name": "Glock-18 | Mirror Mosaic (Minimal Wear)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202434FDABB7B989253C2004E02E0C2114201CE0FF9CCB27646A4C4B542C8625332C24342F19EBF89A6461A531D71A694C65C31B74B19520D32328F2",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51063288991",
       "classid": "7993035507",
       "instanceid": "188530139",
@@ -547,42 +511,6 @@
       "market_hash_name": "M4A1-S | Party Animal (Field-Tested)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%207464FDBBCED2CF756C4854947E5C7144704CB880AB85773482701C2E0470569234B4",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51364083234",
-      "classid": "7993041183",
-      "instanceid": "6276479817",
-      "amount": 1,
-      "name": "M4A1-S | Stratosphere",
-      "market_hash_name": "M4A1-S | Stratosphere (Factory New)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3663,14 +3591,14 @@
       ]
     },
     {
-      "assetid": "52114663236",
+      "assetid": "52114663237",
       "classid": "8490799178",
       "instanceid": "143865972",
       "amount": 3,
       "name": "Sticker | Staehr | Cologne 2026",
       "market_hash_name": "Sticker | Staehr | Cologne 2026",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BFAFBFA706B69FBF97BC8FBBDDBAB7BFAF41ECD7BFCFBD3D9472D2",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202838283091210828002B182C4A2D202838D67B4028582A77B18CF3",
       "tags": [
         {
           "category": "Type",
@@ -3706,9 +3634,9 @@
         }
       ],
       "assetids": [
+        "52114663237",
         "52114663236",
-        "52114663238",
-        "52114663237"
+        "52114663238"
       ]
     },
     {
@@ -5234,6 +5162,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52572185697",
+      "classid": "7993042513",
+      "instanceid": "8640750499",
+      "amount": 1,
+      "name": "StatTrak™ AWP | PAW",
+      "market_hash_name": "StatTrak™ AWP | PAW (Factory New)",
+      "type": "StatTrak™ Restricted Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

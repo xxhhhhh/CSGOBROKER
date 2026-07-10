@@ -12,14 +12,49 @@
   "faceit": "https://faceitdb.com/profile/faceit/2be37d17-f9fb-42e2-8143-bcdb5f1239b2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-09T07:42:07.866Z",
+  "updatedAt": "2026-07-10T07:41:22.539Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 340,
-  "totalItemsGrouped": 270,
+  "totalItemsRaw": 343,
+  "totalItemsGrouped": 273,
   "items": [
+    {
+      "assetid": "52567798743",
+      "classid": "7993039715",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Bayonet | Doppler",
+      "market_hash_name": "★ Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F4E42313571E37F5EC00F7D457F7DCF2C4F7CC41535B1CF7B471F59C8184FC23E50548",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.034137446433,
+      "seed": 133,
+      "phase": "Phase 2"
+    },
     {
       "assetid": "52734145683",
       "classid": "7993040914",
@@ -599,6 +634,34 @@
       ]
     },
     {
+      "assetid": "52771759821",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "13795728993",
       "classid": "1989275815",
       "instanceid": "302028390",
@@ -891,6 +954,37 @@
       ],
       "assetids": [
         "46237502323"
+      ]
+    },
+    {
+      "assetid": "52771759822",
+      "classid": "1989289433",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Chess King (Brick Red)",
+      "market_hash_name": "Sealed Graffiti | Chess King (Brick Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209A8A9A825E90BA9AB29BAA9EF89D929A8A3997AA9BF29AEA829508A932",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52771759822"
       ]
     },
     {
@@ -9843,7 +9937,7 @@
     {
       "assetid": "48397983084",
       "classid": "7993045650",
-      "instanceid": "903709555",
+      "instanceid": "903511450",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Snack Attack",
       "market_hash_name": "StatTrak™ Glock-18 | Snack Attack (Minimal Wear)",
@@ -9879,7 +9973,7 @@
     {
       "assetid": "52374648774",
       "classid": "7993042053",
-      "instanceid": "4274539327",
+      "instanceid": "1510787005",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Inheritance",
       "market_hash_name": "StatTrak™ AK-47 | Inheritance (Factory New)",
@@ -10023,7 +10117,7 @@
     {
       "assetid": "17002596668",
       "classid": "7993042935",
-      "instanceid": "480174229",
+      "instanceid": "480086862",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Flash Out",
       "market_hash_name": "StatTrak™ Tec-9 | Flash Out (Battle-Scarred)",

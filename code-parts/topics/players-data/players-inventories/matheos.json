@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/2aa89fae-a656-4663-a139-3d4665dee951",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-01T07:51:32.182Z",
+  "updatedAt": "2026-07-10T07:20:00.616Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 40,
-  "totalItemsGrouped": 40,
+  "totalItemsRaw": 42,
+  "totalItemsGrouped": 42,
   "items": [
     {
       "assetid": "52378474089",
@@ -142,6 +142,34 @@
     },
     {
       "assetid": "52386702988",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52769013401",
       "classid": "5189384637",
       "instanceid": "302028390",
       "amount": 1,
@@ -363,6 +391,42 @@
       "amount": 1,
       "name": "G3SG1 | Green Cell",
       "market_hash_name": "G3SG1 | Green Cell (Minimal Wear)",
+      "type": "Consumer Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52769013402",
+      "classid": "7993036193",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "G3SG1 | Red Jasper",
+      "market_hash_name": "G3SG1 | Red Jasper (Field-Tested)",
       "type": "Consumer Grade Sniper Rifle",
       "inspectLink": "",
       "tags": [
@@ -1222,7 +1286,7 @@
     {
       "assetid": "52423840583",
       "classid": "7993044744",
-      "instanceid": "902824614",
+      "instanceid": "902917172",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Vaporwave",
       "market_hash_name": "StatTrak™ M4A1-S | Vaporwave (Factory New)",
