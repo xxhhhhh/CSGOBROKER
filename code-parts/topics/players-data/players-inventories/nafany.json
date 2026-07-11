@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/7d441097-f75b-43b0-b0f6-3d1242a0e173",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-25T07:38:34.040Z",
+  "updatedAt": "2026-07-11T06:35:01.372Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 235,
-  "totalItemsGrouped": 230,
+  "totalItemsRaw": 237,
+  "totalItemsGrouped": 232,
   "items": [
     {
       "assetid": "49553708267",
@@ -315,6 +315,34 @@
     },
     {
       "assetid": "52275524444",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52783034751",
       "classid": "5189384637",
       "instanceid": "302028390",
       "amount": 1,
@@ -2495,6 +2523,42 @@
       "name": "M249 | Sleet",
       "market_hash_name": "M249 | Sleet (Field-Tested)",
       "type": "Consumer Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52783034752",
+      "classid": "7993036408",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "CZ75-Auto | Pink Pearl",
+      "market_hash_name": "CZ75-Auto | Pink Pearl (Field-Tested)",
+      "type": "Consumer Grade Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -7575,7 +7639,7 @@
     {
       "assetid": "40035340878",
       "classid": "7993045850",
-      "instanceid": "8589872527",
+      "instanceid": "8643969053",
       "amount": 1,
       "name": "StatTrak™ MP9 | Starlight Protector",
       "market_hash_name": "StatTrak™ MP9 | Starlight Protector (Minimal Wear)",

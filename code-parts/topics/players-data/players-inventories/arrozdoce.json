@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c2909bae-8d95-4573-a9b3-d292aeae9802",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-10T07:32:41.584Z",
+  "updatedAt": "2026-07-11T06:30:31.872Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 114,
-  "totalItemsGrouped": 114,
+  "totalItemsRaw": 115,
+  "totalItemsGrouped": 115,
   "items": [
     {
       "assetid": "47157176420",
@@ -211,6 +211,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52776365009",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -670,25 +698,17 @@
       ]
     },
     {
-      "assetid": "41741256082",
-      "classid": "7993039570",
-      "instanceid": "519977179",
+      "assetid": "52776365010",
+      "classid": "6195246388",
+      "instanceid": "302028390",
       "amount": 1,
-      "name": "Desert Eagle | Starcade",
-      "market_hash_name": "Desert Eagle | Starcade (Factory New)",
-      "type": "Classified Pistol",
-      "inspectLink": "",
+      "name": "Charm Detachment Pack",
+      "market_hash_name": "Charm Detachment Pack",
+      "type": "Base Grade Tool",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205646564E807076567E5766523E56264E45E21B58",
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -698,11 +718,10 @@
         {
           "category": "Rarity",
           "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
         }
+      ],
+      "assetids": [
+        "52776365010"
       ]
     },
     {
@@ -3789,7 +3808,7 @@
     {
       "assetid": "42275184547",
       "classid": "7993037503",
-      "instanceid": "8637267297",
+      "instanceid": "8644102020",
       "amount": 1,
       "name": "StatTrak™ USP-S | Torque",
       "market_hash_name": "StatTrak™ USP-S | Torque (Factory New)",

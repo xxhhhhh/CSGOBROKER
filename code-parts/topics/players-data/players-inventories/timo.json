@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/d0006176-6704-465e-8c7a-524e42c3a477",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-09T07:20:46.046Z",
+  "updatedAt": "2026-07-11T06:15:49.516Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 30,
-  "totalItemsGrouped": 30,
+  "totalItemsRaw": 42,
+  "totalItemsGrouped": 42,
   "items": [
     {
       "assetid": "52402866170",
@@ -36,6 +36,34 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52589166149",
+      "classid": "8247053652",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Pillow Punchers",
+      "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
           "name": ""
         },
         {
@@ -137,6 +165,62 @@
       ]
     },
     {
+      "assetid": "52591334681",
+      "classid": "7488632023",
+      "instanceid": "8611612002",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52591334683",
+      "classid": "7488632023",
+      "instanceid": "8611612002",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "44694305553",
       "classid": "1989274744",
       "instanceid": "302028390",
@@ -195,12 +279,156 @@
       ]
     },
     {
+      "assetid": "52591334682",
+      "classid": "7993066513",
+      "instanceid": "8611612002",
+      "amount": 1,
+      "name": "M249 | Sleet",
+      "market_hash_name": "M249 | Sleet (Field-Tested)",
+      "type": "Consumer Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52589345920",
       "classid": "7993036969",
       "instanceid": "302028390",
       "amount": 1,
       "name": "CZ75-Auto | Pink Pearl",
       "market_hash_name": "CZ75-Auto | Pink Pearl (Minimal Wear)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52591334685",
+      "classid": "7993035983",
+      "instanceid": "8611612002",
+      "amount": 1,
+      "name": "Five-SeveN | Autumn Thicket",
+      "market_hash_name": "Five-SeveN | Autumn Thicket (Field-Tested)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52591334684",
+      "classid": "7993035990",
+      "instanceid": "8611612002",
+      "amount": 1,
+      "name": "P250 | Plum Netting",
+      "market_hash_name": "P250 | Plum Netting (Minimal Wear)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52591334680",
+      "classid": "241576941",
+      "instanceid": "8611612002",
+      "amount": 1,
+      "name": "Tec-9 | Army Mesh",
+      "market_hash_name": "Tec-9 | Army Mesh (Field-Tested)",
       "type": "Consumer Grade Pistol",
       "inspectLink": "",
       "tags": [
@@ -267,6 +495,114 @@
       ]
     },
     {
+      "assetid": "52591334678",
+      "classid": "7993036905",
+      "instanceid": "8611612002",
+      "amount": 1,
+      "name": "MP7 | Short Ochre",
+      "market_hash_name": "MP7 | Short Ochre (Minimal Wear)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52591334677",
+      "classid": "7993035492",
+      "instanceid": "8611612002",
+      "amount": 1,
+      "name": "MP9 | Slide",
+      "market_hash_name": "MP9 | Slide (Field-Tested)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52591334686",
+      "classid": "7993035597",
+      "instanceid": "8611612002",
+      "amount": 1,
+      "name": "P90 | Desert Halftone",
+      "market_hash_name": "P90 | Desert Halftone (Factory New)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52574181150",
       "classid": "7993062177",
       "instanceid": "302028390",
@@ -274,6 +610,78 @@
       "name": "PP-Bizon | Bizoom",
       "market_hash_name": "PP-Bizon | Bizoom (Field-Tested)",
       "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52591334679",
+      "classid": "241580262",
+      "instanceid": "8611612002",
+      "amount": 1,
+      "name": "G3SG1 | Desert Storm",
+      "market_hash_name": "G3SG1 | Desert Storm (Field-Tested)",
+      "type": "Consumer Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52591334687",
+      "classid": "7993035774",
+      "instanceid": "8611612002",
+      "amount": 1,
+      "name": "SSG 08 | Green Ceramic",
+      "market_hash_name": "SSG 08 | Green Ceramic (Minimal Wear)",
+      "type": "Consumer Grade Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {

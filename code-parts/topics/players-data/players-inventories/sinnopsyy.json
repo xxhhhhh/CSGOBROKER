@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/f8580374-5c09-43bc-bef2-463f1fde9aff",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-23T07:57:18.518Z",
+  "updatedAt": "2026-07-11T06:47:43.817Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 205,
-  "totalItemsGrouped": 198,
+  "totalItemsRaw": 199,
+  "totalItemsGrouped": 192,
   "items": [
     {
       "assetid": "51958330340",
@@ -118,6 +118,65 @@
           "category": "Exterior",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "52783728308",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52783730226",
+      "classid": "1989275707",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Backstab (Princess Pink)",
+      "market_hash_name": "Graffiti | Backstab (Princess Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204A5A4A528F406A4A624B7A4E284D424A5AFE477A5B224A3A526A203018",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52783730226"
       ]
     },
     {
@@ -1500,42 +1559,6 @@
       ]
     },
     {
-      "assetid": "52273566084",
-      "classid": "7993045734",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "M249 | Midnight Palm",
-      "market_hash_name": "M249 | Midnight Palm (Field-Tested)",
-      "type": "Industrial Grade Machinegun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "46173619473",
       "classid": "7993036467",
       "instanceid": "7495299370",
@@ -1544,258 +1567,6 @@
       "market_hash_name": "Desert Eagle | Tilted (Factory New)",
       "type": "Industrial Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ECFC7D664A6D40EDF4EDCC66EDC4EEDCE8D43606520AEFAC3EE88EF8E4EDFC01D1C1ECECFC2DD154E56151A94C5CBC508EE3E4EFFC44C8D194A1ACD1A94CD674D08EF8E4E8FC44C8C1ECECC7AFD1D4A0EE53A9C53F6F528EF8E4E8FC44C8C1ECECC7AFD1EDDF0B52A97BEA69528EF8E4EEFC44C8C1ECECACACD104E5C852A9EC11CDD08469ED9CFBE930978C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52273561292",
-      "classid": "7993042517",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Dual Berettas | Drift Wood",
-      "market_hash_name": "Dual Berettas | Drift Wood (Field-Tested)",
-      "type": "Industrial Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52273568474",
-      "classid": "7993044871",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Five-SeveN | Withered Vine",
-      "market_hash_name": "Five-SeveN | Withered Vine (Field-Tested)",
-      "type": "Industrial Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52273563460",
-      "classid": "7993041355",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Five-SeveN | Withered Vine",
-      "market_hash_name": "Five-SeveN | Withered Vine (Minimal Wear)",
-      "type": "Industrial Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51037875683",
-      "classid": "7993035903",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "M4A1-S | Wash me plz",
-      "market_hash_name": "M4A1-S | Wash me plz (Factory New)",
-      "type": "Industrial Grade Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51850396637",
-      "classid": "7993042345",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "MP9 | Old Roots",
-      "market_hash_name": "MP9 | Old Roots (Field-Tested)",
-      "type": "Industrial Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52273547814",
-      "classid": "7993037905",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "SSG 08 | Azure Glyph",
-      "market_hash_name": "SSG 08 | Azure Glyph (Field-Tested)",
-      "type": "Industrial Grade Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "30247666799",
-      "classid": "7993041082",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "SSG 08 | Azure Glyph",
-      "market_hash_name": "SSG 08 | Azure Glyph (Well-Worn)",
-      "type": "Industrial Grade Sniper Rifle",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -8352,7 +8123,7 @@
     {
       "assetid": "38514994789",
       "classid": "5721066240",
-      "instanceid": "188536415",
+      "instanceid": "188533478",
       "amount": 1,
       "name": "StatTrak™ Music Kit | DRYDEN, Feel The Power",
       "market_hash_name": "StatTrak™ Music Kit | DRYDEN, Feel The Power",

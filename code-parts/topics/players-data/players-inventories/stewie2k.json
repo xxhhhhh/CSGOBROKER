@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/2be37d17-f9fb-42e2-8143-bcdb5f1239b2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-10T07:41:22.539Z",
+  "updatedAt": "2026-07-11T06:39:14.062Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 343,
-  "totalItemsGrouped": 273,
+  "totalItemsRaw": 345,
+  "totalItemsGrouped": 275,
   "items": [
     {
       "assetid": "52567798743",
@@ -243,6 +243,34 @@
     },
     {
       "assetid": "52218548762",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52772098609",
       "classid": "4717330486",
       "instanceid": "302028390",
       "amount": 1,
@@ -1140,6 +1168,37 @@
       ],
       "assetids": [
         "20864285888"
+      ]
+    },
+    {
+      "assetid": "52772098610",
+      "classid": "1989281827",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | GLHF (Wire Blue)",
+      "market_hash_name": "Sealed Graffiti | GLHF (Wire Blue)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D7C7D7CF13DDF7D7FFD6E7D3B5D0DFD7C765DAE7DCBFD7A7CF82CB4CB8",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52772098610"
       ]
     },
     {
@@ -9973,7 +10032,7 @@
     {
       "assetid": "52374648774",
       "classid": "7993042053",
-      "instanceid": "1510787005",
+      "instanceid": "1058869998",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Inheritance",
       "market_hash_name": "StatTrak™ AK-47 | Inheritance (Factory New)",
