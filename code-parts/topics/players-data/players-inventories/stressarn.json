@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/24f68939-d90a-4e47-8e43-7e5137c86f48",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-04T06:43:36.764Z",
+  "updatedAt": "2026-07-12T06:23:45.908Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 41,
-  "totalItemsGrouped": 33,
+  "totalItemsRaw": 44,
+  "totalItemsGrouped": 36,
   "items": [
     {
       "assetid": "51824285702",
@@ -27,6 +27,34 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Fade",
       "market_hash_name": "★ Specialist Gloves | Fade (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52600470904",
+      "classid": "8247738977",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Blaze",
+      "market_hash_name": "★ Sport Gloves | Blaze (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -68,6 +96,46 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52601022499",
+      "classid": "7993043067",
+      "instanceid": "902693207",
+      "amount": 1,
+      "name": "★ StatTrak™ M9 Bayonet | Autotronic",
+      "market_hash_name": "★ StatTrak™ M9 Bayonet | Autotronic (Field-Tested)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
           "name": ""
         },
         {
@@ -548,6 +616,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52600766292",
+      "classid": "7993037866",
+      "instanceid": "6276749993",
+      "amount": 1,
+      "name": "M4A4 | The Coalition",
+      "market_hash_name": "M4A4 | The Coalition (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
