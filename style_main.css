@@ -1406,7 +1406,7 @@ nav .pages {
     border-radius: 12px;
     position: relative;
     margin-right: 12px;
-    background: linear-gradient(140deg, var(--skin-color) 0%, rgb(35, 35, 35) 100%) !important;
+    background: linear-gradient(140deg, var(--skin-color) 0%, transparent 100%) !important;
     border-left: var(--skin-color) 1px solid;
     border-top: var(--skin-color) 1px solid;
 }
