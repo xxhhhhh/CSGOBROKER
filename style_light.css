@@ -109,7 +109,9 @@ body {
 .best-alternates,
 .player,
 .players-sign::before,
-.players-box  {
+.players-box,
+.box-skins .default-price-info, 
+.box-skins .souvenir-price-info  {
     filter: drop-shadow(0 1px 1px rgb(175 175 175)) blur(0);
     box-shadow: unset;
 }
@@ -547,7 +549,8 @@ h3,
 .extra-abox span,
 .rec-box p, 
 .rec-box .content p, 
-.rec-box .content p:nth-child(2) {
+.rec-box .content p:nth-child(2),
+.default-price-info {
     color: #1f1f1f;
 }
 
@@ -1872,3 +1875,20 @@ ul .submenu li .nonredir,
     opacity: .6;
 }
 
+.skin::after {
+    background: linear-gradient(140deg, var(--skin-color) 0%, rgb(125, 125, 125) 100%) !important;
+}
+
+#preview-window .default-price-info {
+    color: var(--white);
+}
+
+.box-skins .default-price-info, 
+.box-skins .souvenir-price-info {
+    background: var(--darkgray);
+}
+
+.box-skins.solo .skin-price-info {
+    animation: unset !important;
+    opacity: 1;
+}

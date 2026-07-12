@@ -1553,9 +1553,24 @@ function findMatches(name, priceData, skinEl = null) {
 
         if (priceEl) {
           priceEl.classList.remove("loading");
-          priceEl.textContent = "";
+
+          const defaultPriceEl = priceEl.querySelector(".default-price-info");
           const souvenirEl = priceEl.querySelector(".souvenir-price-info");
-          if (souvenirEl) souvenirEl.remove();
+
+          if (defaultPriceEl) {
+            defaultPriceEl.remove();
+          }
+
+          if (souvenirEl) {
+            souvenirEl.remove();
+          }
+
+          // Удаляем старый текстовый узел цены, если он остался
+          Array.from(priceEl.childNodes).forEach((node) => {
+            if (node.nodeType === Node.TEXT_NODE) {
+              node.remove();
+            }
+          });
         }
 
         continue;
@@ -1576,9 +1591,24 @@ function findMatches(name, priceData, skinEl = null) {
 
         if (priceEl) {
           priceEl.classList.remove("loading");
-          priceEl.textContent = "";
+
+          const defaultPriceEl = priceEl.querySelector(".default-price-info");
           const souvenirEl = priceEl.querySelector(".souvenir-price-info");
-          if (souvenirEl) souvenirEl.remove();
+
+          if (defaultPriceEl) {
+            defaultPriceEl.remove();
+          }
+
+          if (souvenirEl) {
+            souvenirEl.remove();
+          }
+
+          // Удаляем старый текстовый узел цены, если он остался
+          Array.from(priceEl.childNodes).forEach((node) => {
+            if (node.nodeType === Node.TEXT_NODE) {
+              node.remove();
+            }
+          });
         }
 
         continue;
@@ -1642,10 +1672,33 @@ function findMatches(name, priceData, skinEl = null) {
 
         priceEl.classList.remove("loading");
 
-        if (!isSouvenirCard) {
-          priceEl.textContent = normalText || "";
-        } else {
-          priceEl.textContent = "";
+        // Удаляем старые текстовые узлы цены,
+        // которые могли остаться от прежней версии скрипта
+        Array.from(priceEl.childNodes).forEach((node) => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            node.remove();
+          }
+        });
+
+        let defaultPriceEl = priceEl.querySelector(".default-price-info");
+        let souvenirEl = priceEl.querySelector(".souvenir-price-info");
+
+        if (!isSouvenirCard && normalText) {
+          if (!defaultPriceEl) {
+            defaultPriceEl = document.createElement("div");
+            defaultPriceEl.className = "default-price-info";
+
+            if (souvenirEl) {
+              priceEl.insertBefore(defaultPriceEl, souvenirEl);
+            } else {
+              priceEl.appendChild(defaultPriceEl);
+            }
+          }
+
+          defaultPriceEl.textContent = normalText;
+        } else if (defaultPriceEl) {
+          defaultPriceEl.remove();
+          defaultPriceEl = null;
         }
 
         if (addStatTrakClass) {
@@ -1654,16 +1707,14 @@ function findMatches(name, priceData, skinEl = null) {
           priceEl.classList.remove("stattrak");
         }
 
-        let souvenirEl = priceEl.querySelector(".souvenir-price-info");
-
         if (souvenirText) {
           if (!souvenirEl) {
-            priceEl.insertAdjacentHTML("beforeend", `<div class="souvenir-price-info"></div>`);
-            souvenirEl = priceEl.querySelector(".souvenir-price-info");
+            souvenirEl = document.createElement("div");
+            souvenirEl.className = "souvenir-price-info";
+            priceEl.appendChild(souvenirEl);
           }
-          if (souvenirEl) {
-            souvenirEl.textContent = souvenirText;
-          }
+
+          souvenirEl.textContent = souvenirText;
         } else if (souvenirEl) {
           souvenirEl.remove();
         }

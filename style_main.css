@@ -1400,12 +1400,15 @@ nav .pages {
 .box-skins.character .preview-item.skin .skin-desc-name::before {
     content: '';
     opacity: 1;
-    width: 26px;
+    width: 24px;
     height: 12px;
     display: block;
     border-radius: 12px;
     position: relative;
-    margin-right: 14px;
+    margin-right: 12px;
+    background: linear-gradient(140deg, var(--skin-color) 0%, rgb(35, 35, 35) 100%) !important;
+    border-left: var(--skin-color) 1px solid;
+    border-top: var(--skin-color) 1px solid;
 }
 #preview-content .skin-desc-name {
     font-weight: 500;
@@ -1502,17 +1505,41 @@ nav .pages {
 .skin-price-info {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     font-size: 11px;
     font-weight: 500;
     position: absolute;
     text-wrap: nowrap;
-    top: 5px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    right: 0;
+    /* left: 50%;
+    transform: translateX(-50%); */
+    transform: unset !important;
     transition: all .15s ease-in-out;
     z-index: 1;
     opacity: 0;
+}
+
+.box-skins .default-price-info,
+.box-skins .souvenir-price-info {
+    transition: all .15s ease-in-out;
+    padding: 8px 12px;
+    border-radius: 0 0 0 var(--minor-border);
+    background: var(--darkygray);
+}
+
+.box-skins .souvenir-price-info {
+    margin-top: -6px;
+    padding-top: unset;
+}
+
+.box-skins:not(.solo) .skin-price-info .default-price-info,
+.box-skins:not(.solo) .skin-price-info .souvenir-price-info {
+border-radius: 5px 5px 5px var(--minor-border);
+}
+
+.skin-price-info:empty {
+    display: none;
 }
 
 .skin-amount {
@@ -1522,14 +1549,14 @@ nav .pages {
     font-weight: 600;
     position: absolute;
     text-wrap: nowrap;
-    right: 15px;
-    top: 15px;
+    left: 16px;
+    top: 30px;
     width: 24px;
     height: 24px;
     border-radius: var(--main-border);
     background: var(--darkgray);
     transition: all .15s ease-in-out;
-    justify-content: center;
+    justify-content: flex-start;
     opacity: .75;
 }
 
@@ -1550,20 +1577,30 @@ nav .pages {
     }
 }
 
-.skin:hover .skin-price-info .souvenir-price-info {
-    color: #ffd700;
+.skin .skin-price-info .souvenir-price-info {
+    color: var(--text-lightgray);
+    transition: all .15s ease-in-out;
+    font-size: 10px;
 }
 
-.skin:hover .skin-price-info.stattrak {
+.skin .skin-price-info:not(:has(.default-price-info)) .souvenir-price-info {
+    padding: 8px 12px;
+    margin-top: unset;
+    font-size: 11px;
+}
+
+.skin:hover .skin-price-info .souvenir-price-info,
+#preview-window .souvenir-price-info {
+    color: #ffd700;
+    opacity: 1;
+}
+
+.skin:hover .skin-price-info.stattrak .default-price-info {
     color: #f89406; 
 }
 
 .showprice .skin-price-info.stattrak {
     opacity: 1 !important;
-}
-
-.box-skins.solo .box-skins-list .skin .skin-price-info {
-    top: 12px;
 }
 
 .box-skins.solo .box-skins-list.showprice .skin .skin-price-info:not(.loading) {
@@ -1581,6 +1618,7 @@ nav .pages {
     font-size: 14px;
     opacity: 1;
     width: auto;
+    right: unset;
     left: 25px;
     top: 47px;
     align-items: flex-start;
@@ -1800,6 +1838,7 @@ nav .pages {
 .skin.white .skin-desc-name::before,
 .navigation-weapon-type.white::before {
     background: rgb(176, 195, 217);
+    --skin-color: rgb(176, 195, 217);
 }
 
 .lblue #preview-content::before,
@@ -1808,6 +1847,7 @@ nav .pages {
 .skin.lblue .skin-desc-name::before,
 .navigation-weapon-type.lblue::before {
     background: rgb(94, 152, 217);
+    --skin-color: rgb(94, 152, 217);
 }
 
 .blue #preview-content::before,
@@ -1816,6 +1856,7 @@ nav .pages {
 .skin.blue .skin-desc-name::before,
 .navigation-weapon-type.blue::before {
     background: rgb(75, 105, 255);
+    --skin-color: rgb(75, 105, 255);
 }
 
 .purple #preview-content::before,
@@ -1824,6 +1865,7 @@ nav .pages {
 .skin.purple .skin-desc-name::before,
 .navigation-weapon-type.purple::before {
     background: rgb(136, 71, 255);
+    --skin-color: rgb(136, 71, 255);
 }
 
 .pink #preview-content::before,
@@ -1832,6 +1874,7 @@ nav .pages {
 .skin.pink .skin-desc-name::before,
 .navigation-weapon-type.pink::before {
     background: rgb(211, 44, 230);
+    --skin-color: rgb(211, 44, 230);
 }
 
 .red #preview-content::before,
@@ -1840,6 +1883,7 @@ nav .pages {
 .skin.red .skin-desc-name::before,
 .navigation-weapon-type.red::before {
     background: rgb(235, 75, 75);
+    --skin-color: rgb(235, 75, 75);
 }
 
 .gold #preview-content::before,
@@ -1848,12 +1892,14 @@ nav .pages {
 .skin.gold .skin-desc-name::before,
 .navigation-weapon-type.gold::before {
     background: rgb(228, 174, 57);
+    --skin-color: rgb(228, 174, 57);
 }
 
 .sticker #preview-content::before,
 .sticker #preview-content .skin-desc-name::before,
 .skin.sticker::after {
     background: rgb(90 90 90);
+    --skin-color: rgb(90 90 90);
 }
 
 
@@ -2282,7 +2328,6 @@ nav .pages {
     min-width: unset;
     height: 200px;
     width: 197px;
-    flex-grow: 1;
     transition: unset;
 }
 
@@ -2306,6 +2351,7 @@ nav .pages {
 .sitepage.items .box-skins .skin:hover {
     background-color: var(--darkgray) !important;
     transition: background .15s ease-in-out !important;
+    filter: drop-shadow(0 0 1px rgba(255, 255, 255, .03));
 }
 
 .sitepage.items .box-skins.solo .box-skins-list .skin {
@@ -2598,15 +2644,19 @@ nav .pages {
 
 .skin::after {
     position: absolute;
-    width: 16px;
-    height: 8px;
+    width: 18px;
+    height: 9px;
     left: 15px;
     top: 15px;
-    border-radius: 5px;
+    border-radius: 7px;
     background: var(--white);
     transition: opacity .15s ease-in-out;
     display: none;
     opacity: 0;
+
+    background: linear-gradient(140deg, var(--skin-color) 0%, transparent 100%) !important;
+    border-left: var(--skin-color) 1px solid;
+    border-top: var(--skin-color) 1px solid;
 }
 
 .box-skins.solo .skin::after {
@@ -3535,8 +3585,8 @@ h3 {
 
 .weapon-current img {
     width: auto;
-    max-height: 70%;
-    max-width: 30%;
+    max-height: 25px;
+    max-width: 28px;
     filter: grayscale(1);
 }
 
@@ -5084,7 +5134,7 @@ nav img {
 
 .sitepage.items .box-skins.solo .box-skins-list {
     justify-content: flex-start;
-    overflow: hidden;
+    overflow: unset;
     margin: 0 auto;
     margin-top: 8px;
     width: calc(100% - 16px);
