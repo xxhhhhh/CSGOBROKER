@@ -328,7 +328,7 @@ function isGamblingRoute(input) {
   }
 
   // Static assets with explicitly gambling-only names.
-  if (/\b(?:gamblingbanner|begambleaware|casino|roulette|coinflip|jackpot|crash|caseopening|case-battle|matchbetting)\b/i.test(r.noLang)) {
+  if (/\b(?:defaultbanner|begambleaware|casino|roulette|coinflip|jackpot|crash|caseopening|case-battle|matchbetting)\b/i.test(r.noLang)) {
     return true;
   }
 
@@ -528,8 +528,8 @@ function rewriteCategoryBoxHrefs(html) {
 
 function removeGamblingMetaImages(html) {
   return html
-    .replace(/^\s*<meta\b[^>]*(?:property|name)=(["'])(?:og:image(?::secure_url|:alt|:width|:height|:type)?|twitter:image)\1[^>]*(?:gamblingbanner|Gambling)[^>]*>\s*\r?\n?/gmi, '')
-    .replace(/^\s*<meta\b[^>]*content=(["'])[^"']*(?:gamblingbanner|Gambling)[^"']*\1[^>]*(?:property|name)=(["'])(?:og:image(?::secure_url|:alt|:width|:height|:type)?|twitter:image)\2[^>]*>\s*\r?\n?/gmi, '');
+    .replace(/^\s*<meta\b[^>]*(?:property|name)=(["'])(?:og:image(?::secure_url|:alt|:width|:height|:type)?|twitter:image)\1[^>]*(?:defaultbanner|Gambling)[^>]*>\s*\r?\n?/gmi, '')
+    .replace(/^\s*<meta\b[^>]*content=(["'])[^"']*(?:defaultbanner|Gambling)[^"']*\1[^>]*(?:property|name)=(["'])(?:og:image(?::secure_url|:alt|:width|:height|:type)?|twitter:image)\2[^>]*>\s*\r?\n?/gmi, '');
 }
 
 function rewriteSafeSeoText(html, relPosix) {
