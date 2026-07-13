@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/5a4e258d-c912-46b6-94f1-984d59150f82",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-09T07:46:24.258Z",
+  "updatedAt": "2026-07-13T07:16:35.562Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 327,
-  "totalItemsGrouped": 303,
+  "totalItemsRaw": 330,
+  "totalItemsGrouped": 306,
   "items": [
     {
       "assetid": "48699702436",
@@ -225,6 +225,34 @@
     },
     {
       "assetid": "51627824230",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52813067124",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -3774,6 +3802,42 @@
       ]
     },
     {
+      "assetid": "52633608136",
+      "classid": "8246907255",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AK-47 | Crane Flight",
+      "market_hash_name": "AK-47 | Crane Flight (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "42934379343",
       "classid": "7993036574",
       "instanceid": "188530139",
@@ -6529,6 +6593,42 @@
       "market_hash_name": "Five-SeveN | Orange Peel (Field-Tested)",
       "type": "Industrial Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B9A94644160F2DB8A1BA9934B891BB89BD812C58784ABAF97ABAD1F9C9BDD9828FA1",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52813067125",
+      "classid": "7993036842",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Tec-9 | Citric Acid",
+      "market_hash_name": "Tec-9 | Citric Acid (Factory New)",
+      "type": "Industrial Grade Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -9947,7 +10047,7 @@
     {
       "assetid": "14792369647",
       "classid": "7993038472",
-      "instanceid": "8637786152",
+      "instanceid": "8653703259",
       "amount": 1,
       "name": "StatTrak™ USP-S | Orion",
       "market_hash_name": "StatTrak™ USP-S | Orion (Factory New)",
@@ -10183,7 +10283,7 @@
     {
       "assetid": "49426880521",
       "classid": "7993036413",
-      "instanceid": "8637786151",
+      "instanceid": "8653629243",
       "amount": 1,
       "name": "StatTrak™ AWP | Printstream",
       "market_hash_name": "StatTrak™ AWP | Printstream (Field-Tested)",
@@ -10231,7 +10331,7 @@
     {
       "assetid": "52515987412",
       "classid": "7993043564",
-      "instanceid": "8637786150",
+      "instanceid": "8653629242",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Blood in the Water",
       "market_hash_name": "StatTrak™ SSG 08 | Blood in the Water (Minimal Wear)",
@@ -10719,7 +10819,7 @@
     {
       "assetid": "14792372310",
       "classid": "7993041152",
-      "instanceid": "8637250116",
+      "instanceid": "8653629244",
       "amount": 1,
       "name": "StatTrak™ MP9 | Ruby Poison Dart",
       "market_hash_name": "StatTrak™ MP9 | Ruby Poison Dart (Minimal Wear)",
