@@ -48,10 +48,10 @@ const DEFAULT_EXCLUDE_GIT_IN_SRC = true;
 
 // Domain/token rewrite
 const FROM_DOMAIN = 'csgobroker.cc';
-const TO_DOMAIN = 'csgobroker.me';
+const TO_DOMAIN = 'csgobroker.net';
 
 const CF_TOKEN_CC = 'dc243703e5f549b789897d5492ba4571';
-const CF_TOKEN_CO = '069b635279584b3a960931976d49bc0b';
+const CF_TOKEN_CO = '2d497f228e8d43a6bdfd57fe256a88ba';
 
 // --- CLI --------------------------------------------------------------------
 function parseArgs(argv) {
@@ -209,7 +209,7 @@ function maybeInsertYandexNoindexAfterRobots(content, yandexNoindexFlag) {
 }
 
 function rewriteDomainAndTokensEverywhere(content, relPosix, opts) {
-  content = content.replace(/csgobroker\.cc/gi, 'csgobroker.me');
+  content = content.replace(/csgobroker\.cc/gi, 'csgobroker.net');
   content = content.replace(new RegExp(CF_TOKEN_CC, 'g'), CF_TOKEN_CO);
 
   const ext = path.extname(relPosix).toLowerCase();
@@ -230,17 +230,17 @@ function transformSeoRewriteJs(content) {
 
   content = content.replace(
     /var\s+DOMAINS\s*=\s*\[[\s\S]*?\]\s*;/,
-    `var DOMAINS = ['csgobroker.me'];`
+    `var DOMAINS = ['csgobroker.net'];`
   );
 
   content = content.replace(
     /var\s+TOKENS\s*=\s*\{[\s\S]*?\}\s*;/,
-    `var TOKENS = { 'csgobroker.me': '${CF_TOKEN_CO}' };`
+    `var TOKENS = { 'csgobroker.net': '${CF_TOKEN_CO}' };`
   );
 
   content = content.replace(
     /var\s+SITE_NAMES\s*=\s*\{[\s\S]*?\}\s*;/,
-    `var SITE_NAMES = { 'csgobroker.me': 'CSGOBROKER' };`
+    `var SITE_NAMES = { 'csgobroker.net': 'CSGOBROKER' };`
   );
 
   content = content.replace(/var\s+isCc\s*=\s*[^;]+;/, `var isCc = false;`);
@@ -251,7 +251,7 @@ function transformSeoRewriteJs(content) {
   );
 
   content = content.replace(/d\s*!==\s*['"]csgobroker\.cc['"]\s*&&\s*/gi, '');
-  content = content.replace(/csgobroker\.cc/gi, 'csgobroker.me');
+  content = content.replace(/csgobroker\.cc/gi, 'csgobroker.net');
   content = content.replace(new RegExp(CF_TOKEN_CC, 'g'), CF_TOKEN_CO);
   content = stripYandexMetrica(content);
 
@@ -262,7 +262,7 @@ function transformTextByPath(relPosix, text, opts) {
   const base = path.basename(relPosix).toLowerCase();
 
   if (base === 'cname') {
-    return 'csgobroker.me\n';
+    return 'csgobroker.net\n';
   }
 
   if (base.endsWith('.txt')) {
