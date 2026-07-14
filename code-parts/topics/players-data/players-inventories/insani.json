@@ -12,14 +12,53 @@
   "faceit": "https://faceitdb.com/profile/faceit/c58c4e47-645a-4a40-a208-01bfdbcdeadd",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-09T07:18:42.315Z",
+  "updatedAt": "2026-07-14T06:00:00.047Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 47,
-  "totalItemsGrouped": 42,
+  "totalItemsRaw": 50,
+  "totalItemsGrouped": 45,
   "items": [
+    {
+      "assetid": "52641228786",
+      "classid": "7993040883",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Doppler",
+      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204D5DBF82E8C0894C55CE496DD24E654B7D4E75D3FA9EA74E0DE44E25693D459DECE65F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.051967255771,
+      "seed": 425,
+      "phase": "Ruby"
+    },
     {
       "assetid": "51574391910",
       "classid": "7993040835",
@@ -60,6 +99,41 @@
       "phase": "Phase 1"
     },
     {
+      "assetid": "52641228787",
+      "classid": "7993042912",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Karambit | Doppler",
+      "market_hash_name": "★ Karambit | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201909EAD6BC94DD1801E21A39B91A311F291A21AE9BD6FF1A595B713A691DF4E417E9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.025848967955,
+      "seed": 66,
+      "phase": "Sapphire"
+    },
+    {
       "assetid": "47365028383",
       "classid": "7993044806",
       "instanceid": "480085569",
@@ -68,6 +142,34 @@
       "market_hash_name": "★ Hand Wraps | Spruce DDPAT (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CADA553E79737ACBD262EDEA5084E2CCFAC9F20B105830C98A52CDA2C4BACE3B52E9F9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52641228785",
+      "classid": "7993041878",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Crimson Kimono",
+      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -282,50 +384,6 @@
       ]
     },
     {
-      "assetid": "52744699679",
-      "classid": "8246941774",
-      "instanceid": "8637862947",
-      "amount": 1,
-      "name": "AK-47 | Crane Flight",
-      "market_hash_name": "AK-47 | Crane Flight (Factory New)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50584273930",
       "classid": "7993038185",
       "instanceid": "8304958234",
@@ -413,6 +471,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52641228788",
+      "classid": "7993043562",
+      "instanceid": "6289338963",
+      "amount": 1,
+      "name": "M4A4 | Howl",
+      "market_hash_name": "M4A4 | Howl (Field-Tested)",
+      "type": "Contraband Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

@@ -7,16 +7,18 @@
   "name": "Danil Kryshkovets",
   "nationality": "Russia",
   "born": "25.01.2007",
+  "isContentCreator": false,
   "twitch": "donk1437",
   "faceit": "https://faceitdb.com/profile/faceit/e5e8e2a6-d716-4493-b949-e16965f41654",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-11T05:39:06.628Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 245,
-  "totalItemsGrouped": 116,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-14T05:27:59.170Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 243,
+  "totalItemsGrouped": 114,
   "items": [
     {
       "assetid": "50394882850",
@@ -97,41 +99,6 @@
       "phase": "Emerald"
     },
     {
-      "assetid": "51894074727",
-      "classid": "7993042978",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Doppler",
-      "market_hash_name": "★ Karambit | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C8D82F324A6109C9D033CBE857CBE0CEF8CBF018362B28CB8857CDA088B8C0E503A4D9",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.009338214993,
-      "seed": 671,
-      "phase": "Ruby"
-    },
-    {
       "assetid": "45587465948",
       "classid": "7993045582",
       "instanceid": "188530139",
@@ -169,7 +136,7 @@
     {
       "assetid": "52588129430",
       "classid": "7993044870",
-      "instanceid": "8611193046",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ M9 Bayonet | Gamma Doppler",
       "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
@@ -633,7 +600,7 @@
       ]
     },
     {
-      "assetid": "52783170984",
+      "assetid": "52793190483",
       "classid": "7993036958",
       "instanceid": "6960728085",
       "amount": 1,
@@ -3068,58 +3035,6 @@
       ]
     },
     {
-      "assetid": "39654891286",
-      "classid": "7993040607",
-      "instanceid": "7757210513",
-      "amount": 1,
-      "name": "Desert Eagle | Emerald Jörmungandr",
-      "market_hash_name": "Desert Eagle | Emerald Jörmungandr (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209D8D0B236B410E9C859CBD6898B599AD99A5373F72769EDD249BFF98959D8D2CB5FF98959C8D3ABAFF98959F8D3ABAFF98959E8D3ABAF583ED994FEB368D",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "42632091257",
       "classid": "188530425",
       "instanceid": "0",
@@ -4174,7 +4089,7 @@
     {
       "assetid": "42657088883",
       "classid": "7993040686",
-      "instanceid": "480085702",
+      "instanceid": "480090298",
       "amount": 1,
       "name": "StatTrak™ USP-S | Printstream",
       "market_hash_name": "StatTrak™ USP-S | Printstream (Factory New)",
@@ -4262,7 +4177,7 @@
     {
       "assetid": "43981133575",
       "classid": "7993043676",
-      "instanceid": "8280400354",
+      "instanceid": "8654774746",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Factory New)",

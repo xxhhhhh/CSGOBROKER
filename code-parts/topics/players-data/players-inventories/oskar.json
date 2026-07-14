@@ -12,14 +12,46 @@
   "faceit": "https://www.faceit.com/en/players/oskar",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-13T07:14:28.531Z",
+  "updatedAt": "2026-07-14T06:25:14.391Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 321,
-  "totalItemsGrouped": 297,
+  "totalItemsRaw": 325,
+  "totalItemsGrouped": 301,
   "items": [
+    {
+      "assetid": "52646272014",
+      "classid": "7993043457",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Bayonet | Black Laminate",
+      "market_hash_name": "★ Bayonet | Black Laminate (Battle-Scarred)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "28217441791",
       "classid": "7993041588",
@@ -103,7 +135,7 @@
     {
       "assetid": "52629504414",
       "classid": "2727227113",
-      "instanceid": "8617038002",
+      "instanceid": "0",
       "amount": 1,
       "name": "Clutch Case",
       "market_hash_name": "Clutch Case",
@@ -131,10 +163,38 @@
     {
       "assetid": "52629504415",
       "classid": "2727227113",
-      "instanceid": "8617038002",
+      "instanceid": "0",
       "amount": 1,
       "name": "Clutch Case",
       "market_hash_name": "Clutch Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52645976802",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -859,7 +919,7 @@
     {
       "assetid": "52629504416",
       "classid": "5710094579",
-      "instanceid": "8617037818",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Kilowatt Case",
       "market_hash_name": "Kilowatt Case",
@@ -2366,6 +2426,42 @@
       ]
     },
     {
+      "assetid": "52645985675",
+      "classid": "188530423",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "P90 | Death by Kitty",
+      "market_hash_name": "P90 | Death by Kitty (Field-Tested)",
+      "type": "Covert SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49358906742",
       "classid": "7729355822",
       "instanceid": "0",
@@ -2469,7 +2565,7 @@
     {
       "assetid": "52629553560",
       "classid": "4839651211",
-      "instanceid": "8617037802",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sticker | Cloud9 (Holo) | Antwerp 2022",
       "market_hash_name": "Sticker | Cloud9 (Holo) | Antwerp 2022",
@@ -9014,7 +9110,7 @@
     {
       "assetid": "16420046516",
       "classid": "7993046933",
-      "instanceid": "8646812510",
+      "instanceid": "8656305935",
       "amount": 1,
       "name": "StatTrak™ XM1014 | Tranquility",
       "market_hash_name": "StatTrak™ XM1014 | Tranquility (Minimal Wear)",
@@ -9278,7 +9374,7 @@
     {
       "assetid": "16187856286",
       "classid": "7993039701",
-      "instanceid": "480093204",
+      "instanceid": "480101685",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Isaac",
       "market_hash_name": "StatTrak™ Tec-9 | Isaac (Field-Tested)",
@@ -9386,7 +9482,7 @@
     {
       "assetid": "25323766369",
       "classid": "7993050073",
-      "instanceid": "480092437",
+      "instanceid": "188548256",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Hexane",
       "market_hash_name": "StatTrak™ FAMAS | Hexane (Minimal Wear)",
@@ -9674,7 +9770,7 @@
     {
       "assetid": "15960496565",
       "classid": "7993044423",
-      "instanceid": "8652429723",
+      "instanceid": "8656305936",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Crimson Web",
       "market_hash_name": "StatTrak™ Desert Eagle | Crimson Web (Minimal Wear)",
@@ -9764,9 +9860,45 @@
       ]
     },
     {
+      "assetid": "52645976801",
+      "classid": "7993037934",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ Five-SeveN | Hybrid",
+      "market_hash_name": "StatTrak™ Five-SeveN | Hybrid (Field-Tested)",
+      "type": "StatTrak™ Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "30314482699",
       "classid": "7993038697",
-      "instanceid": "480140968",
+      "instanceid": "480107540",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Grinder",
       "market_hash_name": "StatTrak™ Glock-18 | Grinder (Factory New)",
@@ -9874,7 +10006,7 @@
     {
       "assetid": "20503341683",
       "classid": "7993041622",
-      "instanceid": "8652429720",
+      "instanceid": "8656305934",
       "amount": 1,
       "name": "StatTrak™ USP-S | Cyrex",
       "market_hash_name": "StatTrak™ USP-S | Cyrex (Factory New)",

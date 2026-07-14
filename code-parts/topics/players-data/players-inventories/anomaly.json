@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/players/anomaly/",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-13T06:16:39.989Z",
+  "updatedAt": "2026-07-14T05:30:07.129Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 372,
-  "totalItemsGrouped": 364,
+  "totalItemsRaw": 390,
+  "totalItemsGrouped": 382,
   "items": [
     {
       "assetid": "52501046604",
@@ -36,6 +36,42 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52643156995",
+      "classid": "7993037321",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Rust Coat",
+      "market_hash_name": "★ Butterfly Knife | Rust Coat (Battle-Scarred)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -334,6 +370,38 @@
       "float": 0.007866431028,
       "seed": 19,
       "phase": "Phase 2"
+    },
+    {
+      "assetid": "52649849695",
+      "classid": "7993037250",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Marble Fade",
+      "market_hash_name": "★ Karambit | Marble Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "45577595294",
@@ -800,6 +868,42 @@
       "float": 0.000070000882,
       "seed": 645,
       "phase": "Phase 1"
+    },
+    {
+      "assetid": "52643157599",
+      "classid": "7993038557",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Nomad Knife | Rust Coat",
+      "market_hash_name": "★ Nomad Knife | Rust Coat (Battle-Scarred)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "52555704413",
@@ -1328,6 +1432,34 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52643156990",
+      "classid": "7993036154",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Driver Gloves | Racing Green",
+      "market_hash_name": "★ Driver Gloves | Racing Green (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
           "name": ""
         },
         {
@@ -4496,6 +4628,54 @@
       ]
     },
     {
+      "assetid": "52643156987",
+      "classid": "7993037010",
+      "instanceid": "6276784985",
+      "amount": 1,
+      "name": "AWP | Crakow!",
+      "market_hash_name": "AWP | Crakow! (Minimal Wear)",
+      "type": "Classified Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51953439427",
       "classid": "259067130",
       "instanceid": "7757175189",
@@ -4784,6 +4964,42 @@
       "market_hash_name": "Desert Eagle | Printstream (Minimal Wear)",
       "type": "Covert Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%203F2FC697DAF7913E273E1FFD3817390F3B07CACCDFCF3C7FA33A573E4F37CE08466F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52643156991",
+      "classid": "7993040054",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Desert Eagle | Printstream",
+      "market_hash_name": "Desert Eagle | Printstream (Well-Worn)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -5181,6 +5397,54 @@
       ]
     },
     {
+      "assetid": "52643156989",
+      "classid": "7993042663",
+      "instanceid": "7299705637",
+      "amount": 1,
+      "name": "USP-S | Printstream",
+      "market_hash_name": "USP-S | Printstream (Well-Worn)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49182895682",
       "classid": "7993059380",
       "instanceid": "6276363285",
@@ -5189,6 +5453,42 @@
       "market_hash_name": "AK-47 | Aphrodite (Minimal Wear)",
       "type": "Covert Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B3A3716F2E2F04B2ABB49346B99BB583B78B4978785EB0F300B0DBB2C3A411B2A5BBB3A3A38EC0B55BF3F62C559E8CFE9F924D8CE301E04FBD817F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52643157600",
+      "classid": "7993054457",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "AK-47 | Aphrodite",
+      "market_hash_name": "AK-47 | Aphrodite (Well-Worn)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -5453,6 +5753,102 @@
       ]
     },
     {
+      "assetid": "52643156988",
+      "classid": "7993041367",
+      "instanceid": "7138809384",
+      "amount": 1,
+      "name": "AK-47 | Vulcan",
+      "market_hash_name": "AK-47 | Vulcan (Well-Worn)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52643156992",
+      "classid": "7993041177",
+      "instanceid": "6278095754",
+      "amount": 1,
+      "name": "Galil AR | Chatterbox",
+      "market_hash_name": "Galil AR | Chatterbox (Well-Worn)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51210247712",
       "classid": "7993036534",
       "instanceid": "519977179",
@@ -5603,6 +5999,42 @@
       "amount": 1,
       "name": "M4A1-S | Golden Coil",
       "market_hash_name": "M4A1-S | Golden Coil (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52643156994",
+      "classid": "7993041870",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M4A1-S | Printstream",
+      "market_hash_name": "M4A1-S | Printstream (Battle-Scarred)",
       "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
@@ -5785,6 +6217,78 @@
       ]
     },
     {
+      "assetid": "52654441561",
+      "classid": "7993036472",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "M4A4 | Temukau",
+      "market_hash_name": "M4A4 | Temukau (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52643156986",
+      "classid": "7993039598",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "M4A4 | The Coalition",
+      "market_hash_name": "M4A4 | The Coalition (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52556204914",
       "classid": "7993037866",
       "instanceid": "6276433153",
@@ -5932,6 +6436,42 @@
       "assetid": "52581936728",
       "classid": "7993039330",
       "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP9 | Starlight Protector",
+      "market_hash_name": "MP9 | Starlight Protector (Field-Tested)",
+      "type": "Covert SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52643156985",
+      "classid": "7993039330",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "MP9 | Starlight Protector",
       "market_hash_name": "MP9 | Starlight Protector (Field-Tested)",
@@ -6256,6 +6796,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52643156993",
+      "classid": "7993035515",
+      "instanceid": "6276300551",
+      "amount": 1,
+      "name": "AWP | Printstream",
+      "market_hash_name": "AWP | Printstream (Field-Tested)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -8054,6 +8630,62 @@
       "amount": 1,
       "name": "Sir Bloody Silent Darryl | The Professionals",
       "market_hash_name": "Sir Bloody Silent Darryl | The Professionals",
+      "type": "Master Agent",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52643156983",
+      "classid": "3608084360",
+      "instanceid": "6276299426",
+      "amount": 1,
+      "name": "Special Agent Ava | FBI",
+      "market_hash_name": "Special Agent Ava | FBI",
+      "type": "Master Agent",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52643156984",
+      "classid": "4578724347",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Vypa Sista of the Revolution | Guerrilla Warfare",
+      "market_hash_name": "Vypa Sista of the Revolution | Guerrilla Warfare",
       "type": "Master Agent",
       "inspectLink": "",
       "tags": [
@@ -11881,6 +12513,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52643156996",
+      "classid": "7993044609",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ SSG 08 | Dragonfire",
+      "market_hash_name": "StatTrak™ SSG 08 | Dragonfire (Minimal Wear)",
+      "type": "StatTrak™ Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

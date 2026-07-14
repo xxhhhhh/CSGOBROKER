@@ -7,16 +7,18 @@
   "name": "Joshua Ohm",
   "nationality": "United States",
   "born": "31.05.1999",
+  "isContentCreator": false,
   "twitch": "oSeecs",
   "faceit": "https://faceitdb.com/profile/faceit/faf7743e-7e28-4426-ac67-1dba6bbaccd1",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-30T07:27:24.800Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 973,
-  "totalItemsGrouped": 933,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-14T05:57:39.248Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 974,
+  "totalItemsGrouped": 934,
   "items": [
     {
       "assetid": "50593230858",
@@ -942,6 +944,34 @@
     },
     {
       "assetid": "47427033858",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52763294592",
       "classid": "4717330486",
       "instanceid": "302028390",
       "amount": 1,
@@ -3747,6 +3777,42 @@
       "market_hash_name": "MP9 | Slide (Well-Worn)",
       "type": "Consumer Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%203C2CF1D1BCAB69241E1CCF39143D0C380486F5BBCB3F7CCD3A54BC3E4C24933B1A0C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52763296844",
+      "classid": "7993037241",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "P90 | Desert Halftone",
+      "market_hash_name": "P90 | Desert Halftone (Minimal Wear)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -30197,42 +30263,6 @@
       ]
     },
     {
-      "assetid": "43752452119",
-      "classid": "7993044916",
-      "instanceid": "8522213490",
-      "amount": 1,
-      "name": "StatTrak™ AK-47 | Frontside Misty",
-      "market_hash_name": "StatTrak™ AK-47 | Frontside Misty (Factory New)",
-      "type": "StatTrak™ Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E3F37403061D41E2FBE4C309E0CBE6D3EADB0F535E0FE0A347E7ABE3B305A181E6EBE0F34CCD81E6EBE1F34CCD81E6EBE2F34CCD81E6EBE3F34CCD8B63E193E741E2F4EBE3F3FEDE838F2BA2A6926DB0DDAE071F3CDCB32E01E16B226653",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "45893571898",
       "classid": "7993037966",
       "instanceid": "8334682599",
@@ -30391,7 +30421,7 @@
     {
       "assetid": "32268641399",
       "classid": "7993040462",
-      "instanceid": "481726285",
+      "instanceid": "484927600",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Code Red",
       "market_hash_name": "StatTrak™ Desert Eagle | Code Red (Minimal Wear)",
@@ -30463,7 +30493,7 @@
     {
       "assetid": "32268716062",
       "classid": "7993041773",
-      "instanceid": "630173371",
+      "instanceid": "495354125",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
@@ -33203,7 +33233,7 @@
     {
       "assetid": "32267020580",
       "classid": "7993041474",
-      "instanceid": "480104471",
+      "instanceid": "480100813",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Signal",
       "market_hash_name": "StatTrak™ Galil AR | Signal (Factory New)",
