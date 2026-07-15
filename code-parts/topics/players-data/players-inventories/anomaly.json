@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/players/anomaly/",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-14T05:30:07.129Z",
+  "updatedAt": "2026-07-15T05:30:58.942Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 390,
-  "totalItemsGrouped": 382,
+  "totalItemsRaw": 379,
+  "totalItemsGrouped": 371,
   "items": [
     {
       "assetid": "52501046604",
@@ -36,6 +36,42 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52662503736",
+      "classid": "7993042971",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Autotronic",
+      "market_hash_name": "★ Butterfly Knife | Autotronic (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -5064,42 +5100,6 @@
       ]
     },
     {
-      "assetid": "52524310831",
-      "classid": "7993040159",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Five-SeveN | Angry Mob",
-      "market_hash_name": "Five-SeveN | Angry Mob (Minimal Wear)",
-      "type": "Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "23415888634",
       "classid": "7993042303",
       "instanceid": "519977179",
@@ -5227,50 +5227,6 @@
       "float": 0.13637791574,
       "seed": 226,
       "phase": "Phase 4"
-    },
-    {
-      "assetid": "52524310830",
-      "classid": "7993044289",
-      "instanceid": "6276304995",
-      "amount": 1,
-      "name": "P250 | See Ya Later",
-      "market_hash_name": "P250 | See Ya Later (Battle-Scarred)",
-      "type": "Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "52556204908",
@@ -5517,78 +5473,6 @@
       ]
     },
     {
-      "assetid": "52524307173",
-      "classid": "7993037728",
-      "instanceid": "6276308846",
-      "amount": 1,
-      "name": "AK-47 | Aquamarine Revenge",
-      "market_hash_name": "AK-47 | Aquamarine Revenge (Field-Tested)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52582062506",
-      "classid": "7993036351",
-      "instanceid": "6276306357",
-      "amount": 1,
-      "name": "AK-47 | Asiimov",
-      "market_hash_name": "AK-47 | Asiimov (Battle-Scarred)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "20570983962",
       "classid": "7993036023",
       "instanceid": "6276571599",
@@ -5687,42 +5571,6 @@
       "amount": 1,
       "name": "AK-47 | Nightwish",
       "market_hash_name": "AK-47 | Nightwish (Field-Tested)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52581936729",
-      "classid": "7993041376",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AK-47 | Nightwish",
-      "market_hash_name": "AK-47 | Nightwish (Well-Worn)",
       "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
@@ -6217,42 +6065,6 @@
       ]
     },
     {
-      "assetid": "52654441561",
-      "classid": "7993036472",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "M4A4 | Temukau",
-      "market_hash_name": "M4A4 | Temukau (Field-Tested)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52643156986",
       "classid": "7993039598",
       "instanceid": "519977179",
@@ -6325,79 +6137,7 @@
       ]
     },
     {
-      "assetid": "52555979418",
-      "classid": "7993038287",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "MP7 | Bloodsport",
-      "market_hash_name": "MP7 | Bloodsport (Field-Tested)",
-      "type": "Covert SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52500976888",
-      "classid": "7993039330",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "MP9 | Starlight Protector",
-      "market_hash_name": "MP9 | Starlight Protector (Field-Tested)",
-      "type": "Covert SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52555979417",
       "classid": "7993039330",
       "instanceid": "188530139",
       "amount": 1,
@@ -6475,42 +6215,6 @@
       "amount": 1,
       "name": "MP9 | Starlight Protector",
       "market_hash_name": "MP9 | Starlight Protector (Field-Tested)",
-      "type": "Covert SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52524323845",
-      "classid": "7993041151",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P90 | Asiimov",
-      "market_hash_name": "P90 | Asiimov (Field-Tested)",
       "type": "Covert SMG",
       "inspectLink": "",
       "tags": [
@@ -6645,78 +6349,6 @@
       ]
     },
     {
-      "assetid": "52517987734",
-      "classid": "7993036758",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "AWP | Chromatic Aberration",
-      "market_hash_name": "AWP | Chromatic Aberration (Field-Tested)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52551328906",
-      "classid": "7993037475",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AWP | Chrome Cannon",
-      "market_hash_name": "AWP | Chrome Cannon (Battle-Scarred)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52523608879",
       "classid": "7993035791",
       "instanceid": "6304217433",
@@ -6801,9 +6433,9 @@
       ]
     },
     {
-      "assetid": "52643156993",
+      "assetid": "52832665113",
       "classid": "7993035515",
-      "instanceid": "6276300551",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "AWP | Printstream",
       "market_hash_name": "AWP | Printstream (Field-Tested)",
@@ -9280,9 +8912,9 @@
       ]
     },
     {
-      "assetid": "52580692507",
+      "assetid": "52832666137",
       "classid": "7993046794",
-      "instanceid": "6305123233",
+      "instanceid": "6276304595",
       "amount": 1,
       "name": "AK-47 | Green Laminate",
       "market_hash_name": "AK-47 | Green Laminate (Well-Worn)",
@@ -11988,7 +11620,7 @@
     {
       "assetid": "40909335732",
       "classid": "7993037772",
-      "instanceid": "8633427407",
+      "instanceid": "8658097537",
       "amount": 1,
       "name": "StatTrak™ M4A4 | 龍王 (Dragon King)",
       "market_hash_name": "StatTrak™ M4A4 | 龍王 (Dragon King) (Factory New)",
@@ -12236,42 +11868,6 @@
       "amount": 1,
       "name": "StatTrak™ MP7 | Bloodsport",
       "market_hash_name": "StatTrak™ MP7 | Bloodsport (Field-Tested)",
-      "type": "StatTrak™ Covert SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52556204907",
-      "classid": "7993045850",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ MP9 | Starlight Protector",
-      "market_hash_name": "StatTrak™ MP9 | Starlight Protector (Minimal Wear)",
       "type": "StatTrak™ Covert SMG",
       "inspectLink": "",
       "tags": [
@@ -13356,7 +12952,7 @@
     {
       "assetid": "17662209109",
       "classid": "7993043588",
-      "instanceid": "6427108027",
+      "instanceid": "7343580871",
       "amount": 1,
       "name": "StatTrak™ MP9 | Rose Iron",
       "market_hash_name": "StatTrak™ MP9 | Rose Iron (Factory New)",

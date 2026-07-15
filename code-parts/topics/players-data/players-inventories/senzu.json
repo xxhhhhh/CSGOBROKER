@@ -7,14 +7,16 @@
   "name": "Azbayar Munkhbold",
   "nationality": "Mongolia",
   "born": "11.08.2006",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/53771794-0678-4e00-b12b-605404c711f0",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-04T07:57:21.695Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-15T05:54:21.462Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
   "totalItemsRaw": 64,
   "totalItemsGrouped": 61,
   "items": [
@@ -53,41 +55,6 @@
           "name": ""
         }
       ]
-    },
-    {
-      "assetid": "50749473847",
-      "classid": "7993043455",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Karambit | Gamma Doppler",
-      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B1A106392F360CB0A94AB29109B599B781B2891818775AB2F164B4D986C1B59CB103B5",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.058979663998,
-      "seed": 725,
-      "phase": "Emerald"
     },
     {
       "assetid": "49730473202",
@@ -513,6 +480,42 @@
       "market_hash_name": "M4A4 | The Emperor (Factory New)",
       "type": "Covert Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%203727F6D7A1DB8E362F2717FB311F3107330F94B9F4EA3477B23555333F37271255333F36271255333F35271255333F3427125F01473FE9A9CC63",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52016779846",
+      "classid": "7993039670",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "AWP | The Prince",
+      "market_hash_name": "AWP | The Prince (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2028,7 +2031,7 @@
     {
       "assetid": "49748482260",
       "classid": "7993036844",
-      "instanceid": "905886203",
+      "instanceid": "911709349",
       "amount": 1,
       "name": "StatTrak™ USP-S | Neo-Noir",
       "market_hash_name": "StatTrak™ USP-S | Neo-Noir (Minimal Wear)",
