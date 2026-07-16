@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/en/players/adam2K-",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-08T06:34:56.241Z",
+  "updatedAt": "2026-07-16T06:18:50.107Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 298,
-  "totalItemsGrouped": 183,
+  "totalItemsRaw": 300,
+  "totalItemsGrouped": 185,
   "items": [
     {
       "assetid": "47406466652",
@@ -305,6 +305,34 @@
     },
     {
       "assetid": "52710593215",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52862152531",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -2561,6 +2589,33 @@
       ],
       "assetids": [
         "27791021766"
+      ]
+    },
+    {
+      "assetid": "52862152532",
+      "classid": "6195246388",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Charm Detachment Pack",
+      "market_hash_name": "Charm Detachment Pack",
+      "type": "Base Grade Tool",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205646564E807076567E5766523E56264E45E21B58",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52862152532"
       ]
     },
     {
@@ -6532,7 +6587,7 @@
     {
       "assetid": "48861666521",
       "classid": "7993037525",
-      "instanceid": "8644643545",
+      "instanceid": "8306648902",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",

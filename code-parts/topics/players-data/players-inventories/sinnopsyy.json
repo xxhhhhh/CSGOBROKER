@@ -7,16 +7,18 @@
   "name": "Dionis Budeci",
   "nationality": "Kosovo",
   "born": "24.07.1995",
+  "isContentCreator": false,
   "twitch": "sinnopsyy",
   "faceit": "https://faceitdb.com/profile/faceit/f8580374-5c09-43bc-bef2-463f1fde9aff",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-11T06:47:43.817Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 199,
-  "totalItemsGrouped": 192,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-16T06:42:04.626Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 183,
+  "totalItemsGrouped": 177,
   "items": [
     {
       "assetid": "51958330340",
@@ -119,34 +121,6 @@
       ]
     },
     {
-      "assetid": "52783728308",
-      "classid": "5710094579",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Kilowatt Case",
-      "market_hash_name": "Kilowatt Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52783730226",
       "classid": "1989275707",
       "instanceid": "302028390",
@@ -175,6 +149,37 @@
       ],
       "assetids": [
         "52783730226"
+      ]
+    },
+    {
+      "assetid": "52866402158",
+      "classid": "1989296045",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | GTG (Battle Green)",
+      "market_hash_name": "Sealed Graffiti | GTG (Battle Green)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207B6B7B63BF715B7B537A4B7F197C737B6BB2764B7C137B0B63E514A710",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52866402158"
       ]
     },
     {
@@ -641,7 +646,7 @@
       "assetid": "39723175199",
       "classid": "5327977229",
       "instanceid": "188530139",
-      "amount": 2,
+      "amount": 1,
       "name": "Sticker | sinnopsyy (Holo) | Paris 2023",
       "market_hash_name": "Sticker | sinnopsyy (Holo) | Paris 2023",
       "type": "Exotic Sticker",
@@ -681,8 +686,7 @@
         }
       ],
       "assetids": [
-        "39723175199",
-        "30465299105"
+        "39723175199"
       ]
     },
     {
@@ -1174,49 +1178,6 @@
       ]
     },
     {
-      "assetid": "26550904373",
-      "classid": "4839651170",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | Bad News Eagles (Gold) | Antwerp 2022",
-      "market_hash_name": "Sticker | Bad News Eagles (Gold) | Antwerp 2022",
-      "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203020302889391030183600345235383020E61958304038DEE632EF",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "26550904373"
-      ]
-    },
-    {
       "assetid": "39947916017",
       "classid": "5327976911",
       "instanceid": "188530139",
@@ -1593,42 +1554,6 @@
       ]
     },
     {
-      "assetid": "51167790498",
-      "classid": "7993035933",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P2000 | Red Wing",
-      "market_hash_name": "P2000 | Red Wing (Well-Worn)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "24416865808",
       "classid": "7993037495",
       "instanceid": "519977179",
@@ -1637,78 +1562,6 @@
       "market_hash_name": "R8 Revolver | Blaze (Factory New)",
       "type": "Mil-Spec Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%208393131F6C79D99BC3A3A6AB80B387BB6756046280C31480EB82F394A6E3D7C3",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52273555475",
-      "classid": "7993040080",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "MAG-7 | Copper Coated",
-      "market_hash_name": "MAG-7 | Copper Coated (Field-Tested)",
-      "type": "Mil-Spec Grade Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51850368211",
-      "classid": "7993042926",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Nova | Quick Sand",
-      "market_hash_name": "Nova | Quick Sand (Field-Tested)",
-      "type": "Mil-Spec Grade Shotgun",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1781,150 +1634,6 @@
       ]
     },
     {
-      "assetid": "51850331690",
-      "classid": "7993043836",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "MP9 | Music Box",
-      "market_hash_name": "MP9 | Music Box (Field-Tested)",
-      "type": "Mil-Spec Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51850407136",
-      "classid": "7993043836",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "MP9 | Music Box",
-      "market_hash_name": "MP9 | Music Box (Field-Tested)",
-      "type": "Mil-Spec Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51201355005",
-      "classid": "8246923500",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "PP-Bizon | RMX",
-      "market_hash_name": "PP-Bizon | RMX (Well-Worn)",
-      "type": "Mil-Spec Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51201516404",
-      "classid": "8246892212",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "UMP-45 | Fragment",
-      "market_hash_name": "UMP-45 | Fragment (Field-Tested)",
-      "type": "Mil-Spec Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52273601769",
       "classid": "7993038018",
       "instanceid": "7603503372",
@@ -1932,42 +1641,6 @@
       "name": "AWP | Arsenic Spill",
       "market_hash_name": "AWP | Arsenic Spill (Factory New)",
       "type": "Mil-Spec Grade Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51185465583",
-      "classid": "8246900129",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Desert Eagle | Firebreathing",
-      "market_hash_name": "Desert Eagle | Firebreathing (Well-Worn)",
-      "type": "Restricted Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -2092,138 +1765,6 @@
         },
         {
           "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "25611450998",
-      "classid": "7993035629",
-      "instanceid": "7797221789",
-      "amount": 1,
-      "name": "AK-47 | Slate",
-      "market_hash_name": "AK-47 | Slate (Field-Tested)",
-      "type": "Restricted Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51850345217",
-      "classid": "8246908559",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Galil AR | Galigator",
-      "market_hash_name": "Galil AR | Galigator (Well-Worn)",
-      "type": "Restricted Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51185519452",
-      "classid": "7993035945",
-      "instanceid": "6276566845",
-      "amount": 1,
-      "name": "M4A1-S | Liquidation",
-      "market_hash_name": "M4A1-S | Liquidation (Field-Tested)",
-      "type": "Restricted Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         },
         {
@@ -7779,54 +7320,6 @@
       ]
     },
     {
-      "assetid": "33357440684",
-      "classid": "7993040368",
-      "instanceid": "6276336551",
-      "amount": 1,
-      "name": "Souvenir Glock-18 | Pink DDPAT",
-      "market_hash_name": "Souvenir Glock-18 | Pink DDPAT (Field-Tested)",
-      "type": "Souvenir Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "26053372722",
       "classid": "7993046461",
       "instanceid": "6276915851",
@@ -8019,109 +7512,9 @@
       ]
     },
     {
-      "assetid": "27842638241",
-      "classid": "7993043928",
-      "instanceid": "6276544347",
-      "amount": 1,
-      "name": "Souvenir XM1014 | Elegant Vines",
-      "market_hash_name": "Souvenir XM1014 | Elegant Vines (Field-Tested)",
-      "type": "Souvenir Restricted Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "44963205035",
-      "classid": "7993041142",
-      "instanceid": "7274761025",
-      "amount": 1,
-      "name": "Souvenir MAC-10 | Case Hardened",
-      "market_hash_name": "Souvenir MAC-10 | Case Hardened (Field-Tested)",
-      "type": "Souvenir Restricted SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "38514994789",
       "classid": "5721066240",
-      "instanceid": "188535173",
+      "instanceid": "188587020",
       "amount": 1,
       "name": "StatTrak™ Music Kit | DRYDEN, Feel The Power",
       "market_hash_name": "StatTrak™ Music Kit | DRYDEN, Feel The Power",
