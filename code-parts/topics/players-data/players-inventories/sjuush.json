@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/a4dcf63b-874f-481e-8416-d71e14664e5f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-11T06:06:29.206Z",
+  "updatedAt": "2026-07-17T06:04:33.623Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 86,
-  "totalItemsGrouped": 85,
+  "totalItemsRaw": 90,
+  "totalItemsGrouped": 88,
   "items": [
     {
       "assetid": "42168841596",
@@ -1330,6 +1330,37 @@
       ]
     },
     {
+      "assetid": "52692294813",
+      "classid": "8620778784",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | The Magic Trick",
+      "market_hash_name": "Sticker | The Magic Trick",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BAAABAA203B39ABA92B98ABED8BFB2BAAA71EDD2BACAB29505DCCA",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52692294813"
+      ]
+    },
+    {
       "assetid": "50456902885",
       "classid": "7993036182",
       "instanceid": "302028390",
@@ -1615,6 +1646,69 @@
           "category": "Exterior",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "52692291252",
+      "classid": "8620778787",
+      "instanceid": "188530139",
+      "amount": 2,
+      "name": "Sticker | Airhorn (Glitter)",
+      "market_hash_name": "Sticker | Airhorn (Glitter)",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A5B5A5BD1CAC85A58DA195A1C7A0ADA5B56BF2CDA5D5ADDFF19A58",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52692291252",
+        "52692292811"
+      ]
+    },
+    {
+      "assetid": "52692289723",
+      "classid": "8620778798",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Boner Snap (Holo)",
+      "market_hash_name": "Sticker | Boner Snap (Holo)",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2048584850F1416848604C784C2A4D4048589D1F20483840E938417A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52692289723"
       ]
     },
     {
@@ -2051,7 +2145,7 @@
     {
       "assetid": "41435786503",
       "classid": "7993038472",
-      "instanceid": "8661256951",
+      "instanceid": "8665666043",
       "amount": 1,
       "name": "StatTrak™ USP-S | Orion",
       "market_hash_name": "StatTrak™ USP-S | Orion (Factory New)",

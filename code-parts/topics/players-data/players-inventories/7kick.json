@@ -7,16 +7,18 @@
   "name": "Radut Cristian",
   "nationality": "Romania",
   "born": "03.02.2005",
+  "isContentCreator": false,
   "twitch": "7kick",
   "faceit": "https://faceitdb.com/profile/faceit/5782b2ef-ca50-413c-bcac-470bf2c27283",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-01T07:58:08.890Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 80,
-  "totalItemsGrouped": 79,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-17T06:21:23.367Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 81,
+  "totalItemsGrouped": 80,
   "items": [
     {
       "assetid": "49811079936",
@@ -1822,6 +1824,30 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52820127832",
+      "classid": "778383679",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "5 Year Veteran Coin",
+      "market_hash_name": "5 Year Veteran Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
