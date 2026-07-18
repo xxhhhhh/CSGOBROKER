@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c365e0fe-ae29-41d7-b331-ed8904e32d2b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-09T06:43:59.721Z",
+  "updatedAt": "2026-07-18T05:23:08.075Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 69,
-  "totalItemsGrouped": 57,
+  "totalItemsRaw": 73,
+  "totalItemsGrouped": 61,
   "items": [
     {
       "assetid": "47097043357",
@@ -93,6 +93,62 @@
       "float": 0.026433901861,
       "seed": 99,
       "phase": "Ruby"
+    },
+    {
+      "assetid": "52709662833",
+      "classid": "7993042207",
+      "instanceid": "8633781585",
+      "amount": 1,
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50749655004",
+      "classid": "8247168486",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "40136169652",
@@ -274,6 +330,54 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "41687717941",
+      "classid": "7993042471",
+      "instanceid": "7776785576",
+      "amount": 1,
+      "name": "AK-47 | Wild Lotus",
+      "market_hash_name": "AK-47 | Wild Lotus (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1301,7 +1405,7 @@
       ]
     },
     {
-      "assetid": "52337756056",
+      "assetid": "52337756058",
       "classid": "8490902552",
       "instanceid": "143865972",
       "amount": 8,
@@ -1344,14 +1448,14 @@
         }
       ],
       "assetids": [
+        "52337756058",
         "52337756056",
         "52337756055",
         "52337756054",
         "52337756053",
         "52337756051",
         "52337756060",
-        "52337756059",
-        "52337756058"
+        "52337756059"
       ]
     },
     {
@@ -1733,7 +1837,7 @@
     {
       "assetid": "47986446421",
       "classid": "7993039979",
-      "instanceid": "6283392774",
+      "instanceid": "6407072181",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Shinobu",
       "market_hash_name": "StatTrak™ Glock-18 | Shinobu (Well-Worn)",
@@ -1762,6 +1866,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "18694600037",
+      "classid": "7993040848",
+      "instanceid": "8671687682",
+      "amount": 1,
+      "name": "StatTrak™ Galil AR | Eco",
+      "market_hash_name": "StatTrak™ Galil AR | Eco (Field-Tested)",
+      "type": "StatTrak™ Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1805,7 +1953,7 @@
     {
       "assetid": "44345001612",
       "classid": "7993038824",
-      "instanceid": "8665508710",
+      "instanceid": "8671687681",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Isaac",
       "market_hash_name": "StatTrak™ Tec-9 | Isaac (Minimal Wear)",

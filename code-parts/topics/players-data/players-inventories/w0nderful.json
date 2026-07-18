@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/591e26a3-eb86-4d4c-afa8-b5754455dc03",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-17T05:45:16.435Z",
+  "updatedAt": "2026-07-18T05:27:43.031Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 65,
-  "totalItemsGrouped": 65,
+  "totalItemsRaw": 70,
+  "totalItemsGrouped": 70,
   "items": [
     {
       "assetid": "52764648048",
@@ -60,12 +60,12 @@
       "phase": "Sapphire"
     },
     {
-      "assetid": "50892227730",
-      "classid": "7993037847",
+      "assetid": "52271528474",
+      "classid": "7993037311",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Driver Gloves | King Snake",
-      "market_hash_name": "★ Driver Gloves | King Snake (Minimal Wear)",
+      "name": "★ Sport Gloves | Amphibious",
+      "market_hash_name": "★ Sport Gloves | Amphibious (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -88,12 +88,12 @@
       ]
     },
     {
-      "assetid": "52526649838",
-      "classid": "7993041878",
+      "assetid": "47673651313",
+      "classid": "7993038043",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Specialist Gloves | Crimson Kimono",
-      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
+      "name": "★ Sport Gloves | Vice",
+      "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -210,6 +210,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52712827575",
+      "classid": "7993036958",
+      "instanceid": "8660419541",
+      "amount": 1,
+      "name": "AK-47 | Redline",
+      "market_hash_name": "AK-47 | Redline (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -403,6 +447,42 @@
       "market_hash_name": "P250 | See Ya Later (Field-Tested)",
       "type": "Covert Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%205B4BCE86F5F003437F7BFD5E735D6B5F63ECB9B7AB581BFE5833652B53E9C69318",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52706643144",
+      "classid": "7993051188",
+      "instanceid": "6983353952",
+      "amount": 1,
+      "name": "AK-47 | Wild Lotus",
+      "market_hash_name": "AK-47 | Wild Lotus (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1537,6 +1617,98 @@
       ]
     },
     {
+      "assetid": "52712950286",
+      "classid": "7993038580",
+      "instanceid": "8660419539",
+      "amount": 1,
+      "name": "USP-S | Stainless",
+      "market_hash_name": "USP-S | Stainless (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52712827574",
+      "classid": "188530606",
+      "instanceid": "8660419542",
+      "amount": 1,
+      "name": "M4A4 | Radiation Hazard",
+      "market_hash_name": "M4A4 | Radiation Hazard (Field-Tested)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "36402589133",
       "classid": "1778517510",
       "instanceid": "188530139",
@@ -1907,11 +2079,55 @@
     {
       "assetid": "40869826458",
       "classid": "7993039759",
-      "instanceid": "8665701728",
+      "instanceid": "8672149937",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Water Elemental",
       "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Factory New)",
       "type": "StatTrak™ Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52712827576",
+      "classid": "7993044659",
+      "instanceid": "8672149936",
+      "amount": 1,
+      "name": "StatTrak™ AWP | BOOM",
+      "market_hash_name": "StatTrak™ AWP | BOOM (Factory New)",
+      "type": "StatTrak™ Classified Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
