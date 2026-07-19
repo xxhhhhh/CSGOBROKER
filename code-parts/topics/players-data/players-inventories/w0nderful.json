@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/591e26a3-eb86-4d4c-afa8-b5754455dc03",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-18T05:27:43.031Z",
+  "updatedAt": "2026-07-19T05:54:46.542Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 70,
-  "totalItemsGrouped": 70,
+  "totalItemsRaw": 67,
+  "totalItemsGrouped": 67,
   "items": [
     {
       "assetid": "52764648048",
@@ -60,12 +60,12 @@
       "phase": "Sapphire"
     },
     {
-      "assetid": "52271528474",
-      "classid": "7993037311",
+      "assetid": "52526649838",
+      "classid": "7993041878",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Sport Gloves | Amphibious",
-      "market_hash_name": "★ Sport Gloves | Amphibious (Minimal Wear)",
+      "name": "★ Specialist Gloves | Crimson Kimono",
+      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -88,14 +88,14 @@
       ]
     },
     {
-      "assetid": "47673651313",
-      "classid": "7993038043",
-      "instanceid": "188530139",
+      "assetid": "52914557091",
+      "classid": "7729110306",
+      "instanceid": "143865972",
       "amount": 1,
-      "name": "★ Sport Gloves | Vice",
-      "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
+      "name": "Name Tag",
+      "market_hash_name": "Name Tag",
+      "type": "Base Grade Tag",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20889888903881A888A089B88CE088F88AC311BC26",
       "tags": [
         {
           "category": "Type",
@@ -107,10 +107,6 @@
         },
         {
           "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -179,49 +175,13 @@
       ]
     },
     {
-      "assetid": "43932070231",
-      "classid": "7993037805",
-      "instanceid": "480085569",
+      "assetid": "38603211489",
+      "classid": "7993039328",
+      "instanceid": "6286482902",
       "amount": 1,
-      "name": "Desert Eagle | Conspiracy",
-      "market_hash_name": "Desert Eagle | Conspiracy (Factory New)",
+      "name": "Glock-18 | Twilight Galaxy",
+      "market_hash_name": "Glock-18 | Twilight Galaxy (Factory New)",
       "type": "Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52712827575",
-      "classid": "7993036958",
-      "instanceid": "8660419541",
-      "amount": 1,
-      "name": "AK-47 | Redline",
-      "market_hash_name": "AK-47 | Redline (Field-Tested)",
-      "type": "Classified Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -255,16 +215,60 @@
         {
           "category": "TournamentTeam",
           "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
         }
       ]
     },
     {
-      "assetid": "31097204078",
-      "classid": "7993036791",
+      "assetid": "35872539997",
+      "classid": "7993039888",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "FAMAS | Waters of Nephthys",
+      "market_hash_name": "FAMAS | Waters of Nephthys (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "40576366995",
+      "classid": "7993035771",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "FAMAS | Mecha Industries",
-      "market_hash_name": "FAMAS | Mecha Industries (Factory New)",
+      "name": "M4A4 | 龍王 (Dragon King)",
+      "market_hash_name": "M4A4 | 龍王 (Dragon King) (Factory New)",
       "type": "Classified Rifle",
       "inspectLink": "",
       "tags": [
@@ -642,6 +646,54 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "49569329224",
+      "classid": "7993037829",
+      "instanceid": "6276485711",
+      "amount": 1,
+      "name": "AWP | Wildfire",
+      "market_hash_name": "AWP | Wildfire (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1617,98 +1669,6 @@
       ]
     },
     {
-      "assetid": "52712950286",
-      "classid": "7993038580",
-      "instanceid": "8660419539",
-      "amount": 1,
-      "name": "USP-S | Stainless",
-      "market_hash_name": "USP-S | Stainless (Minimal Wear)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52712827574",
-      "classid": "188530606",
-      "instanceid": "8660419542",
-      "amount": 1,
-      "name": "M4A4 | Radiation Hazard",
-      "market_hash_name": "M4A4 | Radiation Hazard (Field-Tested)",
-      "type": "Mil-Spec Grade Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "36402589133",
       "classid": "1778517510",
       "instanceid": "188530139",
@@ -1781,12 +1741,12 @@
       ]
     },
     {
-      "assetid": "44154078832",
-      "classid": "7993040745",
-      "instanceid": "7755411047",
+      "assetid": "52526649837",
+      "classid": "188530424",
+      "instanceid": "6277096620",
       "amount": 1,
-      "name": "Desert Eagle | Sunset Storm 壱",
-      "market_hash_name": "Desert Eagle | Sunset Storm 壱 (Factory New)",
+      "name": "Desert Eagle | Blaze",
+      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
       "type": "Restricted Pistol",
       "inspectLink": "",
       "tags": [
@@ -1819,15 +1779,7 @@
           "name": ""
         },
         {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
           "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -2072,94 +2024,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "40869826458",
-      "classid": "7993039759",
-      "instanceid": "8672149937",
-      "amount": 1,
-      "name": "StatTrak™ Glock-18 | Water Elemental",
-      "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Factory New)",
-      "type": "StatTrak™ Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52712827576",
-      "classid": "7993044659",
-      "instanceid": "8672149936",
-      "amount": 1,
-      "name": "StatTrak™ AWP | BOOM",
-      "market_hash_name": "StatTrak™ AWP | BOOM (Factory New)",
-      "type": "StatTrak™ Classified Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]

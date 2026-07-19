@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e01b53f7-5f95-4a14-8de2-7093932e6c43",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-12T06:44:00.745Z",
+  "updatedAt": "2026-07-19T06:34:47.842Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 77,
-  "totalItemsGrouped": 77,
+  "totalItemsRaw": 79,
+  "totalItemsGrouped": 79,
   "items": [
     {
       "assetid": "49420013330",
@@ -54,6 +54,34 @@
     },
     {
       "assetid": "50651744832",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52914743300",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -295,6 +323,37 @@
       ],
       "assetids": [
         "50843495458"
+      ]
+    },
+    {
+      "assetid": "52914743301",
+      "classid": "1989280625",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Piggles (Dust Brown)",
+      "market_hash_name": "Sealed Graffiti | Piggles (Dust Brown)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2030203028F43A1030183100345237383020F23D003458304028EE7466C8",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52914743301"
       ]
     },
     {
@@ -2537,7 +2596,7 @@
     {
       "assetid": "52614236060",
       "classid": "7993042347",
-      "instanceid": "8639168344",
+      "instanceid": "8678452591",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Neo-Noir",
       "market_hash_name": "StatTrak™ M4A4 | Neo-Noir (Factory New)",
