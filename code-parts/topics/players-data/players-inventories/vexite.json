@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/4cbb1255-b9bc-4ce1-88dc-937a67d6fc8d",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-19T06:36:56.783Z",
+  "updatedAt": "2026-07-20T07:02:51.010Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 413,
-  "totalItemsGrouped": 267,
+  "totalItemsRaw": 425,
+  "totalItemsGrouped": 270,
   "items": [
     {
       "assetid": "41987463847",
@@ -2950,7 +2950,7 @@
       ]
     },
     {
-      "assetid": "49758381233",
+      "assetid": "52699937204",
       "classid": "6216554000",
       "instanceid": "0",
       "amount": 2,
@@ -2977,8 +2977,8 @@
         }
       ],
       "assetids": [
-        "49758381233",
-        "52699937204"
+        "52699937204",
+        "49758381233"
       ]
     },
     {
@@ -3081,14 +3081,14 @@
       ]
     },
     {
-      "assetid": "52618013769",
+      "assetid": "52768582897",
       "classid": "8491016812",
-      "instanceid": "143865972",
-      "amount": 3,
+      "instanceid": "8641335204",
+      "amount": 12,
       "name": "Sticker | vexite (Holo) | Cologne 2026",
       "market_hash_name": "Sticker | vexite (Holo) | Cologne 2026",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200F1F0F17B6062F0F270A3F0B6D0A070F1F9358670F7F0D0BA72753",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209787978F2E9EB797BF92A793F5929F97870BC0FF97E795EC0F53AD",
       "tags": [
         {
           "category": "Type",
@@ -3124,9 +3124,18 @@
         }
       ],
       "assetids": [
+        "52768582897",
         "52618013769",
         "52618013768",
-        "51908359561"
+        "51908359561",
+        "52768583098",
+        "52768583064",
+        "52768583024",
+        "52768582999",
+        "52768582975",
+        "52768582928",
+        "52768582923",
+        "52768582913"
       ]
     },
     {
@@ -7246,6 +7255,53 @@
       ]
     },
     {
+      "assetid": "52768594425",
+      "classid": "7862375424",
+      "instanceid": "8641337854",
+      "amount": 1,
+      "name": "Souvenir Charm | Budapest 2025 Highlight | donk vs Vitality on Mirage",
+      "market_hash_name": "Souvenir Charm | Budapest 2025 Highlight | donk vs Vitality on Mirage",
+      "type": "Souvenir High Grade Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F4E4F4EC3FFED4F4DCF7C4F89CF484E156F5F3FCF4E4A7AC38F1B24AE584",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52768594425"
+      ]
+    },
+    {
       "assetid": "48039036531",
       "classid": "7993039403",
       "instanceid": "7812521333",
@@ -8254,6 +8310,66 @@
       ]
     },
     {
+      "assetid": "52768642779",
+      "classid": "8247137616",
+      "instanceid": "8680851577",
+      "amount": 1,
+      "name": "StatTrak™ Glock-18 | Fully Tuned",
+      "market_hash_name": "StatTrak™ Glock-18 | Fully Tuned (Field-Tested)",
+      "type": "StatTrak™ Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "46196580205",
       "classid": "7993040539",
       "instanceid": "8639550425",
@@ -8852,6 +8968,54 @@
       "amount": 1,
       "name": "StatTrak™ AK-47 | Neon Rider",
       "market_hash_name": "StatTrak™ AK-47 | Neon Rider (Field-Tested)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52768648560",
+      "classid": "7993037213",
+      "instanceid": "8642592360",
+      "amount": 1,
+      "name": "StatTrak™ AK-47 | Nightwish",
+      "market_hash_name": "StatTrak™ AK-47 | Nightwish (Minimal Wear)",
       "type": "StatTrak™ Covert Rifle",
       "inspectLink": "",
       "tags": [
