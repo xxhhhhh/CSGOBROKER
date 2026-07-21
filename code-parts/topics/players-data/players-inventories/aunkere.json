@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/f2fa001a-13ca-4a80-9873-04146a07cc8a",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-16T06:29:25.154Z",
+  "updatedAt": "2026-07-21T06:42:07.446Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 122,
-  "totalItemsGrouped": 114,
+  "totalItemsRaw": 127,
+  "totalItemsGrouped": 119,
   "items": [
     {
       "assetid": "52562911807",
@@ -270,41 +270,6 @@
       "phase": "Ruby"
     },
     {
-      "assetid": "44170590235",
-      "classid": "7993045582",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Doppler",
-      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F5E56E05633351F4ED09F6D56AF6DDF3C5F6CD3E54722AF6B564F79D75F785FD0372A98D",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.00689134514,
-      "seed": 273,
-      "phase": "Ruby"
-    },
-    {
       "assetid": "51459181998",
       "classid": "7993042789",
       "instanceid": "480085569",
@@ -420,34 +385,6 @@
       "market_hash_name": "★ Specialist Gloves | Chocolate Chesterfield (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B7A72B434C460CB6AF1D909730BC9FB187B48F12633F41B4F72AB6DFD7C7BF1D60A782",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "45355371724",
-      "classid": "7993041878",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Specialist Gloves | Crimson Kimono",
-      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208F9F43161F74278E9725A8AF3EC1A789BF8CB72B74587C8CCF018AE70F8DFF872F4E0491",
       "tags": [
         {
           "category": "Type",
@@ -2497,6 +2434,150 @@
       ]
     },
     {
+      "assetid": "52783303473",
+      "classid": "8637414963",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Tec-9 | Perimeter",
+      "market_hash_name": "Tec-9 | Perimeter (Battle-Scarred)",
+      "type": "Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52783308337",
+      "classid": "8637408570",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "FAMAS | Corp Defense",
+      "market_hash_name": "FAMAS | Corp Defense (Well-Worn)",
+      "type": "Industrial Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52783307463",
+      "classid": "8637408567",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "MAC-10 | Video Cam",
+      "market_hash_name": "MAC-10 | Video Cam (Minimal Wear)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52783305006",
+      "classid": "8637413074",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "MAC-10 | Video Cam",
+      "market_hash_name": "MAC-10 | Video Cam (Well-Worn)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "25107011281",
       "classid": "241580826",
       "instanceid": "6286739948",
@@ -2573,6 +2654,42 @@
       "market_hash_name": "Glock-18 | Candy Apple (Field-Tested)",
       "type": "Mil-Spec Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B2A21130706C24B3AAB692B19AB182B68A1A516246B1F20FB5D0A6BAB2A2538F9FB2B222708F3A69078FF70818E08CD0A6BAB0A2538F9FB2B222708F28F35D8CF75EA6ED8CD0A6BAB0A2468F9FB2B242F38FE068448CF7A8B7FF8CD0A6BAB0A27BB59FB2B21AF38F45CD7F8CF726B8608FDA31B1C2AAC317203E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52783306291",
+      "classid": "8637413654",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "M4A4 | Dark Operative",
+      "market_hash_name": "M4A4 | Dark Operative (Minimal Wear)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3496,6 +3613,78 @@
       "name": "StatTrak™ MP9 | Starlight Protector",
       "market_hash_name": "StatTrak™ MP9 | Starlight Protector (Field-Tested)",
       "type": "StatTrak™ Covert SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52785239278",
+      "classid": "7993036404",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ Five-SeveN | Scrawl",
+      "market_hash_name": "StatTrak™ Five-SeveN | Scrawl (Field-Tested)",
+      "type": "StatTrak™ Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52785249452",
+      "classid": "7993036404",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ Five-SeveN | Scrawl",
+      "market_hash_name": "StatTrak™ Five-SeveN | Scrawl (Field-Tested)",
+      "type": "StatTrak™ Mil-Spec Grade Pistol",
       "inspectLink": "",
       "tags": [
         {

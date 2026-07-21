@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/7cfd2312-1ff0-434c-a4b1-be10b033636f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-20T06:41:24.105Z",
+  "updatedAt": "2026-07-21T06:16:21.718Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 86,
-  "totalItemsGrouped": 85,
+  "totalItemsRaw": 94,
+  "totalItemsGrouped": 93,
   "items": [
     {
       "assetid": "51378486572",
@@ -197,6 +197,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52946731851",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -540,6 +568,37 @@
       ],
       "assetids": [
         "51423252662"
+      ]
+    },
+    {
+      "assetid": "52946731852",
+      "classid": "1989294059",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Death Sentence (SWAT Blue)",
+      "market_hash_name": "Sealed Graffiti | Death Sentence (SWAT Blue)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2019091901DD1339193118291D7B1E111909BB142914711969019A5EBB26",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52946731852"
       ]
     },
     {
@@ -984,6 +1043,42 @@
       "name": "USP-S | Printstream",
       "market_hash_name": "USP-S | Printstream (Minimal Wear)",
       "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52779845339",
+      "classid": "7993048308",
+      "instanceid": "7737814676",
+      "amount": 1,
+      "name": "AK-47 | Wild Lotus",
+      "market_hash_name": "AK-47 | Wild Lotus (Well-Worn)",
+      "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -1790,6 +1885,42 @@
       ]
     },
     {
+      "assetid": "52781668759",
+      "classid": "8637413208",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Tec-9 | Perimeter",
+      "market_hash_name": "Tec-9 | Perimeter (Well-Worn)",
+      "type": "Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52767104019",
       "classid": "8637410552",
       "instanceid": "519977179",
@@ -1797,6 +1928,42 @@
       "name": "FAMAS | Corp Defense",
       "market_hash_name": "FAMAS | Corp Defense (Field-Tested)",
       "type": "Industrial Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52781668062",
+      "classid": "8637408571",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "XM1014 | Black Site",
+      "market_hash_name": "XM1014 | Black Site (Minimal Wear)",
+      "type": "Industrial Grade Shotgun",
       "inspectLink": "",
       "tags": [
         {
@@ -1898,9 +2065,81 @@
       ]
     },
     {
+      "assetid": "52781667253",
+      "classid": "8637415183",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "MP7 | Base-2",
+      "market_hash_name": "MP7 | Base-2 (Well-Worn)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52753206966",
       "classid": "8637410468",
       "instanceid": "519977179",
+      "amount": 1,
+      "name": "SCAR-20 | Arctic Camo Panels",
+      "market_hash_name": "SCAR-20 | Arctic Camo Panels (Minimal Wear)",
+      "type": "Industrial Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52786633785",
+      "classid": "8637410468",
+      "instanceid": "8645242397",
       "amount": 1,
       "name": "SCAR-20 | Arctic Camo Panels",
       "market_hash_name": "SCAR-20 | Arctic Camo Panels (Minimal Wear)",
@@ -2442,6 +2681,42 @@
       "name": "Zeus x27 | Tosai",
       "market_hash_name": "Zeus x27 | Tosai (Minimal Wear)",
       "type": "Restricted Equipment",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52781665331",
+      "classid": "8637414646",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "CZ75-Auto | Hydraulics",
+      "market_hash_name": "CZ75-Auto | Hydraulics (Minimal Wear)",
+      "type": "Restricted Pistol",
       "inspectLink": "",
       "tags": [
         {

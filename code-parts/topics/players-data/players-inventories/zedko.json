@@ -7,17 +7,51 @@
   "name": "Jindřich Chyba",
   "nationality": "Czech Republic",
   "born": "03.05.1998",
+  "isContentCreator": false,
   "twitch": "zedkoborec",
   "faceit": "https://faceitdb.com/profile/faceit/93ed2657-eb8c-44cf-8c2d-71db68b3f06b",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-24T06:35:46.628Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-21T06:52:47.096Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
   "totalItemsRaw": 981,
   "totalItemsGrouped": 241,
   "items": [
+    {
+      "assetid": "52544453842",
+      "classid": "7993038411",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Stained",
+      "market_hash_name": "★ Karambit | Stained (Well-Worn)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "50712298335",
       "classid": "4717330486",
@@ -6654,42 +6688,6 @@
       ]
     },
     {
-      "assetid": "47119620523",
-      "classid": "241577283",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Galil AR | VariCamo",
-      "market_hash_name": "Galil AR | VariCamo (Field-Tested)",
-      "type": "Industrial Grade Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203A2A91898BFE953B22371AD13B12380A3E02BA8BCBCB397A3252E63B4A2244A433EE",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "28852462557",
       "classid": "7993037926",
       "instanceid": "188530139",
@@ -10233,7 +10231,7 @@
     {
       "assetid": "23475958186",
       "classid": "7993044970",
-      "instanceid": "480133128",
+      "instanceid": "480211888",
       "amount": 1,
       "name": "StatTrak™ P250 | Contaminant",
       "market_hash_name": "StatTrak™ P250 | Contaminant (Field-Tested)",

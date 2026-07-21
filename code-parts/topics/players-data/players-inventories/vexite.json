@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/4cbb1255-b9bc-4ce1-88dc-937a67d6fc8d",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-20T07:02:51.010Z",
+  "updatedAt": "2026-07-21T06:37:51.992Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 425,
-  "totalItemsGrouped": 270,
+  "totalItemsRaw": 426,
+  "totalItemsGrouped": 271,
   "items": [
     {
       "assetid": "41987463847",
@@ -3081,7 +3081,7 @@
       ]
     },
     {
-      "assetid": "52768582897",
+      "assetid": "52768582913",
       "classid": "8491016812",
       "instanceid": "8641335204",
       "amount": 12,
@@ -3124,6 +3124,7 @@
         }
       ],
       "assetids": [
+        "52768582913",
         "52768582897",
         "52618013769",
         "52618013768",
@@ -3134,8 +3135,7 @@
         "52768582999",
         "52768582975",
         "52768582928",
-        "52768582923",
-        "52768582913"
+        "52768582923"
       ]
     },
     {
@@ -5180,6 +5180,42 @@
       "market_hash_name": "PP-Bizon | Cold Cell (Minimal Wear)",
       "type": "Industrial Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%207363E1FE97D7C7726B6953F1755B7143774BA6C9FF9D7033DB721BF3710364D42BE9B2",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52778945879",
+      "classid": "8637410226",
+      "instanceid": "8643599595",
+      "amount": 1,
+      "name": "PP-Bizon | Traitor",
+      "market_hash_name": "PP-Bizon | Traitor (Field-Tested)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
