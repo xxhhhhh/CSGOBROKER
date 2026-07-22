@@ -7,16 +7,18 @@
   "name": "Liam Tügel",
   "nationality": "Sweden",
   "born": "30.05.2009",
+  "isContentCreator": false,
   "twitch": "mail09cs",
   "faceit": "https://faceitdb.com/profile/faceit/7dbf107a-1199-4932-823e-e38ccc46288e",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-14T05:51:20.759Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 192,
-  "totalItemsGrouped": 179,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-22T06:39:53.646Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 200,
+  "totalItemsGrouped": 187,
   "items": [
     {
       "assetid": "52278540308",
@@ -58,14 +60,14 @@
       "phase": "Sapphire"
     },
     {
-      "assetid": "52423660957",
-      "classid": "7993040869",
+      "assetid": "52756503113",
+      "classid": "7993041446",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Karambit | Doppler",
-      "market_hash_name": "★ Karambit | Doppler (Factory New)",
+      "name": "★ Karambit | Gamma Doppler",
+      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203727AA9CF192F4362FCC341794341F3107340FB0AC8EDF3477B6335F57473F1FD62977",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BAAA730E1B7E7EBBA241B99A03BE92BC8AB98211240F5EB9FAA9D2B0CAB24044BB7A",
       "tags": [
         {
           "category": "Type",
@@ -88,8 +90,43 @@
           "name": ""
         }
       ],
-      "float": 0.034741904587,
-      "seed": 513,
+      "float": 0.017249664292,
+      "seed": 19,
+      "phase": "Phase 1"
+    },
+    {
+      "assetid": "52756503112",
+      "classid": "7993040441",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Gamma Doppler",
+      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BEAE760A1F7A7ABFA642BD9E04BA96B88EBD8669684D56BDFE4AB8D633BFCEBA263B2320",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.038310375065,
+      "seed": 884,
       "phase": "Phase 2"
     },
     {
@@ -740,6 +777,42 @@
       "market_hash_name": "USP-S | Jawbreaker (Minimal Wear)",
       "type": "Classified Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%208292006C155911839ABFA2178BAA87B286BA6C45546D81C24B84EA0083F28A28CCB6EE",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52757349031",
+      "classid": "7993043761",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "USP-S | Target Acquired",
+      "market_hash_name": "USP-S | Target Acquired (Minimal Wear)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1444,6 +1517,57 @@
       ]
     },
     {
+      "assetid": "52773203537",
+      "classid": "7993039096",
+      "instanceid": "7507856495",
+      "amount": 1,
+      "name": "Glock-18 | Gamma Doppler",
+      "market_hash_name": "Glock-18 | Gamma Doppler (Factory New)",
+      "type": "Covert Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208A9A5B5616464E8B928EAA5582A28CBA8EB21B20126689CA108FE89E82889A7BCB9766DBB2B5B7AAB8AB37CFCAB84831E89E82889A66B7978A8A0AB5B7828DCAB7CFEA599637E21D8BFA8EFA25B420",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ],
+      "float": 0.065469868481,
+      "seed": 666,
+      "phase": "Emerald"
+    },
+    {
       "assetid": "51622701019",
       "classid": "7993037709",
       "instanceid": "7809046919",
@@ -1943,50 +2067,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52385339016",
-      "classid": "7993039273",
-      "instanceid": "6430591917",
-      "amount": 1,
-      "name": "AWP | Gungnir",
-      "market_hash_name": "AWP | Gungnir (Factory New)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -3231,53 +3311,6 @@
       ]
     },
     {
-      "assetid": "52042607233",
-      "classid": "8490800356",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Sticker | Magnojez | Cologne 2026",
-      "market_hash_name": "Sticker | Magnojez | Cologne 2026",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207E6E7E66C7775E7E567D4E7A1C7B767E6ECC2B167E0E7C855ACFC2",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "52042607233"
-      ]
-    },
-    {
       "assetid": "49266143802",
       "classid": "7729098202",
       "instanceid": "188530139",
@@ -3597,53 +3630,6 @@
       ],
       "assetids": [
         "52170045314"
-      ]
-    },
-    {
-      "assetid": "52483680814",
-      "classid": "8490806431",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Sticker | YEKINDAR | Cologne 2026",
-      "market_hash_name": "Sticker | YEKINDAR | Cologne 2026",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204C5C4C54F5456C4C644F7C482E49444C5CD21F244C3C4ECBBD99C0",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "52483680814"
       ]
     },
     {
@@ -6264,6 +6250,42 @@
       ]
     },
     {
+      "assetid": "52773226017",
+      "classid": "7993047665",
+      "instanceid": "6282140518",
+      "amount": 1,
+      "name": "StatTrak™ USP-S | Monster Mashup",
+      "market_hash_name": "StatTrak™ USP-S | Monster Mashup (Factory New)",
+      "type": "StatTrak™ Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51356706580",
       "classid": "7993038991",
       "instanceid": "904062655",
@@ -6350,7 +6372,7 @@
     {
       "assetid": "35749895747",
       "classid": "7993045362",
-      "instanceid": "8627410907",
+      "instanceid": "8678563962",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Big Iron",
       "market_hash_name": "StatTrak™ SSG 08 | Big Iron (Field-Tested)",
@@ -6400,9 +6422,81 @@
       ]
     },
     {
+      "assetid": "52773203538",
+      "classid": "7993040817",
+      "instanceid": "188530611",
+      "amount": 1,
+      "name": "StatTrak™ Desert Eagle | Printstream",
+      "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Factory New)",
+      "type": "StatTrak™ Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52773226014",
+      "classid": "7993043782",
+      "instanceid": "188530248",
+      "amount": 1,
+      "name": "StatTrak™ P250 | See Ya Later",
+      "market_hash_name": "StatTrak™ P250 | See Ya Later (Minimal Wear)",
+      "type": "StatTrak™ Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51838521519",
       "classid": "7993038902",
-      "instanceid": "833416934",
+      "instanceid": "1075591605",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Leet Museo",
       "market_hash_name": "StatTrak™ AK-47 | Leet Museo (Field-Tested)",
@@ -6431,6 +6525,122 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52773226018",
+      "classid": "7993043891",
+      "instanceid": "904228290",
+      "amount": 1,
+      "name": "StatTrak™ AK-47 | Vulcan",
+      "market_hash_name": "StatTrak™ AK-47 | Vulcan (Factory New)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52773203536",
+      "classid": "7993044091",
+      "instanceid": "6298335941",
+      "amount": 1,
+      "name": "StatTrak™ M4A1-S | Printstream",
+      "market_hash_name": "StatTrak™ M4A1-S | Printstream (Field-Tested)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52773226016",
+      "classid": "7993043538",
+      "instanceid": "8689856637",
+      "amount": 1,
+      "name": "StatTrak™ M4A4 | Full Throttle",
+      "market_hash_name": "StatTrak™ M4A4 | Full Throttle (Factory New)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -6515,6 +6725,82 @@
       "name": "StatTrak™ AK-47 | Uncharted",
       "market_hash_name": "StatTrak™ AK-47 | Uncharted (Battle-Scarred)",
       "type": "StatTrak™ Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52773226015",
+      "classid": "7993045510",
+      "instanceid": "8686013265",
+      "amount": 1,
+      "name": "StatTrak™ MP9 | Deadly Poison",
+      "market_hash_name": "StatTrak™ MP9 | Deadly Poison (Factory New)",
+      "type": "StatTrak™ Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52773226013",
+      "classid": "7993039768",
+      "instanceid": "902673237",
+      "amount": 1,
+      "name": "StatTrak™ Glock-18 | Dragon Tattoo",
+      "market_hash_name": "StatTrak™ Glock-18 | Dragon Tattoo (Factory New)",
+      "type": "StatTrak™ Restricted Pistol",
       "inspectLink": "",
       "tags": [
         {

@@ -7,17 +7,58 @@
   "name": "Ana Dumbravă",
   "nationality": "Romania",
   "born": "20.06.1999",
+  "isContentCreator": false,
   "twitch": "anaofficial",
   "faceit": "https://faceitdb.com/profile/faceit/d414d5f8-80f0-4799-8ae7-0290dffd85d9",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-09T07:58:38.747Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 89,
-  "totalItemsGrouped": 88,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-22T07:20:48.227Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 94,
+  "totalItemsGrouped": 92,
   "items": [
+    {
+      "assetid": "52125268559",
+      "classid": "7993040630",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Gamma Doppler",
+      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2091815E6530065390891295B12B95B997A192A92A02037792D11794F9DFE195598F3D5E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.023991456255,
+      "seed": 646,
+      "phase": "Phase 2"
+    },
     {
       "assetid": "44292689233",
       "classid": "7993041101",
@@ -60,6 +101,34 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Fade",
       "market_hash_name": "★ Specialist Gloves | Fade (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52138220478",
+      "classid": "8247053652",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Pillow Punchers",
+      "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -442,6 +511,34 @@
       ]
     },
     {
+      "assetid": "52959476559",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "27705573728",
       "classid": "6276308383",
       "instanceid": "6276324371",
@@ -633,10 +730,41 @@
       ]
     },
     {
+      "assetid": "52317309080",
+      "classid": "1989286390",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Mr. Teeth (Tiger Orange)",
+      "market_hash_name": "Sealed Graffiti | Mr. Teeth (Tiger Orange)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D2C2D2CA16D8F2D2FAD3E2D6B0D5DAD2C279DFE2D1BAD2A2CA2D075EE9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52317309080"
+      ]
+    },
+    {
       "assetid": "40480359251",
       "classid": "6195246388",
       "instanceid": "302028390",
-      "amount": 2,
+      "amount": 3,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
@@ -657,7 +785,8 @@
       ],
       "assetids": [
         "40480359251",
-        "39933676012"
+        "39933676012",
+        "52959476560"
       ]
     },
     {
@@ -917,6 +1046,42 @@
       ]
     },
     {
+      "assetid": "52126102995",
+      "classid": "8247025554",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "P90 | Deathgaze",
+      "market_hash_name": "P90 | Deathgaze (Factory New)",
+      "type": "Classified SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "44841926014",
       "classid": "201965307",
       "instanceid": "6276344996",
@@ -953,13 +1118,13 @@
       ]
     },
     {
-      "assetid": "22296207432",
-      "classid": "7993043281",
-      "instanceid": "188530139",
+      "assetid": "52126022315",
+      "classid": "7993036193",
+      "instanceid": "302028390",
       "amount": 1,
-      "name": "P2000 | Fire Elemental",
-      "market_hash_name": "P2000 | Fire Elemental (Factory New)",
-      "type": "Covert Pistol",
+      "name": "G3SG1 | Red Jasper",
+      "market_hash_name": "G3SG1 | Red Jasper (Field-Tested)",
+      "type": "Consumer Grade Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -989,12 +1154,12 @@
       ]
     },
     {
-      "assetid": "18819833581",
-      "classid": "7993037709",
+      "assetid": "22296207432",
+      "classid": "7993043281",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "USP-S | Kill Confirmed",
-      "market_hash_name": "USP-S | Kill Confirmed (Field-Tested)",
+      "name": "P2000 | Fire Elemental",
+      "market_hash_name": "P2000 | Fire Elemental (Factory New)",
       "type": "Covert Pistol",
       "inspectLink": "",
       "tags": [
@@ -1429,11 +1594,11 @@
     },
     {
       "assetid": "52049891608",
-      "classid": "8534113218",
+      "classid": "8564022767",
       "instanceid": "8490787549",
       "amount": 1,
-      "name": "Cologne 2026 Silver Coin",
-      "market_hash_name": "Cologne 2026 Silver Coin",
+      "name": "Cologne 2026 Gold Coin",
+      "market_hash_name": "Cologne 2026 Gold Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -1603,6 +1768,30 @@
         },
         {
           "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52735389416",
+      "classid": "8637405878",
+      "instanceid": "565664004",
+      "amount": 1,
+      "name": "Premier Season Four Medal",
+      "market_hash_name": "Premier Season Four Medal",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -2118,114 +2307,6 @@
       ]
     },
     {
-      "assetid": "51996081264",
-      "classid": "7993037205",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Tec-9 | Tiger Stencil",
-      "market_hash_name": "Tec-9 | Tiger Stencil (Field-Tested)",
-      "type": "Industrial Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51996083473",
-      "classid": "7993035630",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "AK-47 | Olive Polycam",
-      "market_hash_name": "AK-47 | Olive Polycam (Field-Tested)",
-      "type": "Industrial Grade Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51996080329",
-      "classid": "7993036255",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "AK-47 | Olive Polycam",
-      "market_hash_name": "AK-47 | Olive Polycam (Minimal Wear)",
-      "type": "Industrial Grade Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "18819833783",
       "classid": "3608084106",
       "instanceid": "519977179",
@@ -2345,42 +2426,6 @@
       "name": "UMP-45 | Blaze",
       "market_hash_name": "UMP-45 | Blaze (Factory New)",
       "type": "Mil-Spec Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51996081957",
-      "classid": "7993036656",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "SSG 08 | Zeno",
-      "market_hash_name": "SSG 08 | Zeno (Minimal Wear)",
-      "type": "Mil-Spec Grade Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -2557,6 +2602,50 @@
       ]
     },
     {
+      "assetid": "52126087370",
+      "classid": "188534044",
+      "instanceid": "7309152642",
+      "amount": 1,
+      "name": "P250 | Nuclear Threat",
+      "market_hash_name": "P250 | Nuclear Threat (Minimal Wear)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "26703659851",
       "classid": "188530185",
       "instanceid": "0",
@@ -2711,7 +2800,7 @@
     {
       "assetid": "46386474714",
       "classid": "7378658447",
-      "instanceid": "188625597",
+      "instanceid": "188757246",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Adam Beyer, Red Room",
       "market_hash_name": "StatTrak™ Music Kit | Adam Beyer, Red Room",
@@ -2787,6 +2876,42 @@
       ],
       "assetids": [
         "34157950907"
+      ]
+    },
+    {
+      "assetid": "52125426956",
+      "classid": "7993041192",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ SG 553 | Cyberforce",
+      "market_hash_name": "StatTrak™ SG 553 | Cyberforce (Well-Worn)",
+      "type": "StatTrak™ Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
       ]
     },
     {
