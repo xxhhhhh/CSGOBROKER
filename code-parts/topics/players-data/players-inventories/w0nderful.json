@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/591e26a3-eb86-4d4c-afa8-b5754455dc03",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-20T06:20:08.009Z",
+  "updatedAt": "2026-07-23T05:57:27.640Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 66,
-  "totalItemsGrouped": 66,
+  "totalItemsRaw": 63,
+  "totalItemsGrouped": 63,
   "items": [
     {
       "assetid": "52764648048",
@@ -60,17 +60,25 @@
       "phase": "Sapphire"
     },
     {
-      "assetid": "52526649838",
-      "classid": "7993041878",
-      "instanceid": "188530139",
+      "assetid": "52813975727",
+      "classid": "7993041233",
+      "instanceid": "8653330037",
       "amount": 1,
-      "name": "★ Specialist Gloves | Crimson Kimono",
-      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
+      "name": "★ Skeleton Knife | Tiger Tooth",
+      "market_hash_name": "★ Skeleton Knife | Tiger Tooth (Factory New)",
+      "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -88,14 +96,14 @@
       ]
     },
     {
-      "assetid": "52914557091",
-      "classid": "7729110306",
-      "instanceid": "143865972",
+      "assetid": "47673651313",
+      "classid": "7993038043",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "Name Tag",
-      "market_hash_name": "Name Tag",
-      "type": "Base Grade Tag",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20889888903881A888A089B88CE088F88AC311BC26",
+      "name": "★ Sport Gloves | Vice",
+      "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -107,6 +115,10 @@
         },
         {
           "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -175,12 +187,12 @@
       ]
     },
     {
-      "assetid": "38603211489",
-      "classid": "7993039328",
-      "instanceid": "6286482902",
+      "assetid": "42316047041",
+      "classid": "259074184",
+      "instanceid": "6485648331",
       "amount": 1,
-      "name": "Glock-18 | Twilight Galaxy",
-      "market_hash_name": "Glock-18 | Twilight Galaxy (Factory New)",
+      "name": "Desert Eagle | Cobalt Disruption",
+      "market_hash_name": "Desert Eagle | Cobalt Disruption (Factory New)",
       "type": "Classified Pistol",
       "inspectLink": "",
       "tags": [
@@ -223,41 +235,9 @@
         {
           "category": "TournamentTeam",
           "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "35872539997",
-      "classid": "7993039888",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "FAMAS | Waters of Nephthys",
-      "market_hash_name": "FAMAS | Waters of Nephthys (Factory New)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
         },
         {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -443,14 +423,14 @@
       ]
     },
     {
-      "assetid": "23713263253",
-      "classid": "7993039611",
-      "instanceid": "188530139",
+      "assetid": "42220406604",
+      "classid": "7993037875",
+      "instanceid": "6818875620",
       "amount": 1,
-      "name": "P250 | See Ya Later",
-      "market_hash_name": "P250 | See Ya Later (Field-Tested)",
+      "name": "Glock-18 | Gamma Doppler",
+      "market_hash_name": "Glock-18 | Gamma Doppler (Minimal Wear)",
       "type": "Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205B4BCE86F5F003437F7BFD5E735D6B5F63ECB9B7AB581BFE5833652B53E9C69318",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202131EDAF8085BC20392501FE29092711251986FEE5CD22619B224335292031D2603C73993F1E1CA1A15B9A6481C1C99C4338292231D3603C5A350F1E0C2121B1E01C903A6A9F64E0BC819F492051258320372921313C1CAC25E69E64A1CC5E1A6CA31E0F6171ED7787090041",
       "tags": [
         {
           "category": "Type",
@@ -475,8 +455,23 @@
         {
           "category": "Exterior",
           "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
         }
-      ]
+      ],
+      "float": 0.070891670883,
+      "seed": 442,
+      "phase": "Emerald"
     },
     {
       "assetid": "52706643144",
@@ -515,62 +510,6 @@
       ]
     },
     {
-      "assetid": "42534970004",
-      "classid": "7993036156",
-      "instanceid": "6894553097",
-      "amount": 1,
-      "name": "M4A1-S | Cyrex",
-      "market_hash_name": "M4A1-S | Cyrex (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "38265757268",
       "classid": "7993041146",
       "instanceid": "480085569",
@@ -602,50 +541,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "25656937620",
-      "classid": "7993040551",
-      "instanceid": "6276336362",
-      "amount": 1,
-      "name": "MP7 | Bloodsport",
-      "market_hash_name": "MP7 | Bloodsport (Minimal Wear)",
-      "type": "Covert SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2088981C111F42D790A9A8308DA08EB88CB0521959648BC8498DEA8D8089983AADE07B89F880C57466F1",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1693,12 +1588,48 @@
       ]
     },
     {
-      "assetid": "52526649837",
-      "classid": "188530424",
-      "instanceid": "6277096620",
+      "assetid": "39936938784",
+      "classid": "7993037102",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "Desert Eagle | Blaze",
-      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
+      "name": "Dual Berettas | Hydro Strike",
+      "market_hash_name": "Dual Berettas | Hydro Strike (Field-Tested)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "35881348899",
+      "classid": "7993040786",
+      "instanceid": "6286482907",
+      "amount": 1,
+      "name": "P250 | Digital Architect",
+      "market_hash_name": "P250 | Digital Architect (Factory New)",
       "type": "Restricted Pistol",
       "inspectLink": "",
       "tags": [
@@ -1732,42 +1663,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "39936938784",
-      "classid": "7993037102",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Dual Berettas | Hydro Strike",
-      "market_hash_name": "Dual Berettas | Hydro Strike (Field-Tested)",
-      "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1817,42 +1712,6 @@
       "market_hash_name": "MAG-7 | Monster Call (Factory New)",
       "type": "Restricted Shotgun",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EFFF063B625988F7F4CF2EE8C7EBDFEBD7171F4903ECAF23EA8DEAE7ECFF46C987B19FEB8E37D245",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "25136003711",
-      "classid": "7993038133",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "G3SG1 | Dream Glade",
-      "market_hash_name": "G3SG1 | Dream Glade (Minimal Wear)",
-      "type": "Restricted Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2064749B9087B5397C6F448D6C4C6054605CC2E9EA8A6724EB650CD365146CD581B484",
       "tags": [
         {
           "category": "Type",
@@ -1968,6 +1827,54 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "48418804361",
+      "classid": "7993044380",
+      "instanceid": "7295661843",
+      "amount": 1,
+      "name": "StatTrak™ M4A1-S | Hyper Beast",
+      "market_hash_name": "StatTrak™ M4A1-S | Hyper Beast (Factory New)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
           "name": ""
         },
         {
