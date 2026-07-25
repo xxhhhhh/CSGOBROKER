@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e50676d1-ea6c-4876-893f-53aac4b6dc6f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-22T06:57:05.895Z",
+  "updatedAt": "2026-07-25T06:23:32.070Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 176,
-  "totalItemsGrouped": 119,
+  "totalItemsRaw": 178,
+  "totalItemsGrouped": 121,
   "items": [
     {
       "assetid": "49512962082",
@@ -953,6 +953,78 @@
       "float": 0.150146886706,
       "seed": 897,
       "phase": "Phase 1"
+    },
+    {
+      "assetid": "52841234320",
+      "classid": "201966840",
+      "instanceid": "8660014107",
+      "amount": 1,
+      "name": "AK-47 | Fire Serpent",
+      "market_hash_name": "AK-47 | Fire Serpent (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "44075544472",
@@ -3528,14 +3600,14 @@
       ]
     },
     {
-      "assetid": "52802843558",
+      "assetid": "52802843560",
       "classid": "8491421132",
       "instanceid": "143865972",
       "amount": 18,
       "name": "Sticker | NEKiZ (Foil) | Cologne 2026",
       "market_hash_name": "Sticker | NEKiZ (Foil) | Cologne 2026",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D9C9D9C160D0F9D9F1DDE9DDBBDCD1D9C9128FB1D9A9DBE3080000",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C7D7C7DF7ECEE7C7EFC3F7C3A5C2CFC7D70C91AFC7B7C5B50072AE",
       "tags": [
         {
           "category": "Type",
@@ -3571,6 +3643,8 @@
         }
       ],
       "assetids": [
+        "52802843560",
+        "52802843559",
         "52802843558",
         "52802843557",
         "52802843556",
@@ -3586,9 +3660,7 @@
         "52263385016",
         "51840036663",
         "51840036662",
-        "52802843561",
-        "52802843560",
-        "52802843559"
+        "52802843561"
       ]
     },
     {
@@ -3679,6 +3751,70 @@
       ],
       "assetids": [
         "44687773547"
+      ]
+    },
+    {
+      "assetid": "52841244736",
+      "classid": "7993040177",
+      "instanceid": "8660014106",
+      "amount": 1,
+      "name": "M4A1-S | Icarus Fell",
+      "market_hash_name": "M4A1-S | Icarus Fell (Factory New)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
       ]
     },
     {
@@ -4484,7 +4620,7 @@
     {
       "assetid": "41777742573",
       "classid": "7993037525",
-      "instanceid": "912598371",
+      "instanceid": "915447912",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
@@ -4556,7 +4692,7 @@
     {
       "assetid": "43307847859",
       "classid": "7993045461",
-      "instanceid": "6357673753",
+      "instanceid": "6366143339",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Malachite",
       "market_hash_name": "StatTrak™ MAC-10 | Malachite (Factory New)",
