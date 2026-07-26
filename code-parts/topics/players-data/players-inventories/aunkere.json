@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/f2fa001a-13ca-4a80-9873-04146a07cc8a",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-25T06:36:07.369Z",
+  "updatedAt": "2026-07-26T06:53:35.781Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 155,
-  "totalItemsGrouped": 147,
+  "totalItemsRaw": 154,
+  "totalItemsGrouped": 146,
   "items": [
     {
       "assetid": "52834537153",
@@ -55,7 +55,7 @@
     {
       "assetid": "52976722845",
       "classid": "7993052504",
-      "instanceid": "8659823083",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Bayonet | Urban Masked",
       "market_hash_name": "★ Bayonet | Urban Masked (Battle-Scarred)",
@@ -237,7 +237,7 @@
     {
       "assetid": "52976729170",
       "classid": "7993046423",
-      "instanceid": "8659826175",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "★ Flip Knife | Lore",
       "market_hash_name": "★ Flip Knife | Lore (Battle-Scarred)",
@@ -507,7 +507,7 @@
     {
       "assetid": "52976724264",
       "classid": "7993044773",
-      "instanceid": "8659823083",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Ursus Knife | Ultraviolet",
       "market_hash_name": "★ Ursus Knife | Ultraviolet (Battle-Scarred)",
@@ -711,10 +711,50 @@
     {
       "assetid": "52976727505",
       "classid": "7993048687",
-      "instanceid": "8659825483",
+      "instanceid": "188530170",
       "amount": 1,
       "name": "★ StatTrak™ Bayonet | Bright Water",
       "market_hash_name": "★ StatTrak™ Bayonet | Bright Water (Battle-Scarred)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52867257837",
+      "classid": "7993038589",
+      "instanceid": "8662851815",
+      "amount": 1,
+      "name": "★ StatTrak™ Bayonet | Bright Water",
+      "market_hash_name": "★ StatTrak™ Bayonet | Bright Water (Field-Tested)",
       "type": "★ StatTrak™ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -822,7 +862,7 @@
     {
       "assetid": "52840787106",
       "classid": "7993036710",
-      "instanceid": "8659826175",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "Dual Berettas | Melondrama",
       "market_hash_name": "Dual Berettas | Melondrama (Well-Worn)",
@@ -1046,7 +1086,7 @@
     {
       "assetid": "52840761861",
       "classid": "7993036958",
-      "instanceid": "8691013793",
+      "instanceid": "6376070896",
       "amount": 1,
       "name": "AK-47 | Redline",
       "market_hash_name": "AK-47 | Redline (Field-Tested)",
@@ -1090,7 +1130,7 @@
     {
       "assetid": "52840762222",
       "classid": "7993036958",
-      "instanceid": "8691013792",
+      "instanceid": "6276335632",
       "amount": 1,
       "name": "AK-47 | Redline",
       "market_hash_name": "AK-47 | Redline (Field-Tested)",
@@ -1126,7 +1166,7 @@
     {
       "assetid": "52840762838",
       "classid": "7993036958",
-      "instanceid": "8691013791",
+      "instanceid": "6277653187",
       "amount": 1,
       "name": "AK-47 | Redline",
       "market_hash_name": "AK-47 | Redline (Field-Tested)",
@@ -1170,7 +1210,7 @@
     {
       "assetid": "52840763387",
       "classid": "7993036958",
-      "instanceid": "8691013789",
+      "instanceid": "7138819172",
       "amount": 1,
       "name": "AK-47 | Redline",
       "market_hash_name": "AK-47 | Redline (Field-Tested)",
@@ -1218,7 +1258,7 @@
     {
       "assetid": "52840763866",
       "classid": "7993036958",
-      "instanceid": "8691013786",
+      "instanceid": "8375341390",
       "amount": 1,
       "name": "AK-47 | Redline",
       "market_hash_name": "AK-47 | Redline (Field-Tested)",
@@ -3606,42 +3646,6 @@
       ]
     },
     {
-      "assetid": "50399486371",
-      "classid": "8246893602",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "M4A1-S | Electrum",
-      "market_hash_name": "M4A1-S | Electrum (Field-Tested)",
-      "type": "Restricted Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DACA7919763A61DBC2E6FA43D1F2DEEADEE24A5C1628D99A66DBB2F5AAD222C856AA",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50476841501",
       "classid": "8246893602",
       "instanceid": "188530139",
@@ -3866,42 +3870,6 @@
       "market_hash_name": "M4A1-S | Electrum (Minimal Wear)",
       "type": "Restricted Rifle",
       "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50338032068",
-      "classid": "8246900971",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "M4A1-S | Electrum",
-      "market_hash_name": "M4A1-S | Electrum (Well-Worn)",
-      "type": "Restricted Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202737E3F4A2E49C263F1B07BE2C0F2317231FDC9D88D12467C6264F0D572F19DC4E33",
       "tags": [
         {
           "category": "Type",
@@ -4448,7 +4416,7 @@
     {
       "assetid": "52840783621",
       "classid": "7993038231",
-      "instanceid": "8659825483",
+      "instanceid": "188530170",
       "amount": 1,
       "name": "StatTrak™ P2000 | Lifted Spirits",
       "market_hash_name": "StatTrak™ P2000 | Lifted Spirits (Minimal Wear)",
@@ -4736,7 +4704,7 @@
     {
       "assetid": "52840773956",
       "classid": "7993036246",
-      "instanceid": "8659825483",
+      "instanceid": "188530170",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Ensnared",
       "market_hash_name": "StatTrak™ MAC-10 | Ensnared (Field-Tested)",
@@ -5056,7 +5024,7 @@
     {
       "assetid": "52840778519",
       "classid": "7993037874",
-      "instanceid": "8659825483",
+      "instanceid": "188530170",
       "amount": 1,
       "name": "StatTrak™ PP-Bizon | Space Cat",
       "market_hash_name": "StatTrak™ PP-Bizon | Space Cat (Field-Tested)",
