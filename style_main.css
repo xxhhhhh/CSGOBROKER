@@ -5019,8 +5019,9 @@ nav img {
     max-width: var(--centralized);
     overflow: unset;
     position: relative;
+    top: 0;
+    gap: 4px;
     left: unset;
-    top: 38px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
