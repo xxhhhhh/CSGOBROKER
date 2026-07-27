@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/3a6be5c7-4229-49b2-9e4f-7f6165f0b58e",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-03T07:33:58.585Z",
+  "updatedAt": "2026-07-27T07:31:49.869Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 64,
-  "totalItemsGrouped": 61,
+  "totalItemsRaw": 66,
+  "totalItemsGrouped": 63,
   "items": [
     {
       "assetid": "49981007260",
@@ -48,6 +48,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53043426765",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -1526,6 +1554,42 @@
       "market_hash_name": "AUG | Condemned (Minimal Wear)",
       "type": "Industrial Grade Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EFFF092630325CEEF7E7CF81C7EDDFEBD7055B3E00ECAF4BE887E29FF71AD848A8",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53043426766",
+      "classid": "7993066319",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "M4A4 | Aeolian Dark",
+      "market_hash_name": "M4A4 | Aeolian Dark (Factory New)",
+      "type": "Industrial Grade Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

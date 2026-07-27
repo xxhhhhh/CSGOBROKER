@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c365e0fe-ae29-41d7-b331-ed8904e32d2b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-25T05:42:28.278Z",
+  "updatedAt": "2026-07-27T06:28:19.715Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 40,
-  "totalItemsGrouped": 39,
+  "totalItemsRaw": 38,
+  "totalItemsGrouped": 37,
   "items": [
     {
       "assetid": "47097043357",
@@ -60,21 +60,17 @@
       "phase": "Sapphire"
     },
     {
-      "assetid": "44122267727",
-      "classid": "7993042978",
-      "instanceid": "188530139",
+      "assetid": "52709662833",
+      "classid": "7993042207",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Karambit | Doppler",
-      "market_hash_name": "★ Karambit | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200F1FC0CF9EA0AB0E17F40C2F900C27093F0C37E698EDE90C4F6C670E7F07DFFF643F",
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
           "name": ""
         },
         {
@@ -89,18 +85,15 @@
           "category": "Exterior",
           "name": ""
         }
-      ],
-      "float": 0.026433901861,
-      "seed": 99,
-      "phase": "Ruby"
+      ]
     },
     {
-      "assetid": "52709662833",
-      "classid": "7993042207",
-      "instanceid": "480085569",
+      "assetid": "50749655004",
+      "classid": "8247168486",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Sport Gloves | Hedge Maze",
-      "market_hash_name": "★ Sport Gloves | Hedge Maze (Minimal Wear)",
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -151,48 +144,12 @@
       ]
     },
     {
-      "assetid": "21990500821",
-      "classid": "7993036096",
-      "instanceid": "6276299352",
+      "assetid": "42208534984",
+      "classid": "7993039570",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "P250 | Franklin",
-      "market_hash_name": "P250 | Franklin (Factory New)",
-      "type": "Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "42072901975",
-      "classid": "7993037608",
-      "instanceid": "7755435881",
-      "amount": 1,
-      "name": "USP-S | Whiteout",
-      "market_hash_name": "USP-S | Whiteout (Minimal Wear)",
+      "name": "Desert Eagle | Starcade",
+      "market_hash_name": "Desert Eagle | Starcade (Factory New)",
       "type": "Classified Pistol",
       "inspectLink": "",
       "tags": [
@@ -266,6 +223,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50806961762",
+      "classid": "8246925102",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "AWP | Queen's Gambit",
+      "market_hash_name": "AWP | Queen's Gambit (Field-Tested)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -882,6 +875,42 @@
       ]
     },
     {
+      "assetid": "49668594084",
+      "classid": "7993062167",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Five-SeveN | Fraise Crane",
+      "market_hash_name": "Five-SeveN | Fraise Crane (Factory New)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "48642006172",
       "classid": "241608185",
       "instanceid": "6276586489",
@@ -918,141 +947,13 @@
       ]
     },
     {
-      "assetid": "52337771523",
-      "classid": "188530424",
-      "instanceid": "8605229124",
+      "assetid": "44608363187",
+      "classid": "7993038304",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "Desert Eagle | Blaze",
-      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
+      "name": "Dual Berettas | Sweet Little Angels",
+      "market_hash_name": "Dual Berettas | Sweet Little Angels (Factory New)",
       "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "39049164756",
-      "classid": "7993039195",
-      "instanceid": "188530299",
-      "amount": 1,
-      "name": "StatTrak™ Dual Berettas | Melondrama",
-      "market_hash_name": "StatTrak™ Dual Berettas | Melondrama (Minimal Wear)",
-      "type": "StatTrak™ Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "18694600037",
-      "classid": "7993040848",
-      "instanceid": "8699802588",
-      "amount": 1,
-      "name": "StatTrak™ Galil AR | Eco",
-      "market_hash_name": "StatTrak™ Galil AR | Eco (Field-Tested)",
-      "type": "StatTrak™ Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "31212147406",
-      "classid": "7993042460",
-      "instanceid": "503776275",
-      "amount": 1,
-      "name": "StatTrak™ AWP | Redline",
-      "market_hash_name": "StatTrak™ AWP | Redline (Field-Tested)",
-      "type": "StatTrak™ Classified Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -1084,7 +985,7 @@
     {
       "assetid": "43862070364",
       "classid": "7993046572",
-      "instanceid": "8699894904",
+      "instanceid": "8706133845",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Factory New)",
@@ -1140,7 +1041,7 @@
     {
       "assetid": "42274130399",
       "classid": "7993037236",
-      "instanceid": "8595034073",
+      "instanceid": "8706048900",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Dark Water",
       "market_hash_name": "StatTrak™ SSG 08 | Dark Water (Minimal Wear)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/1d019806-0cb6-43b7-af40-555fd51a2ff2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-17T06:00:15.548Z",
+  "updatedAt": "2026-07-27T06:47:20.890Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 63,
-  "totalItemsGrouped": 63,
+  "totalItemsRaw": 66,
+  "totalItemsGrouped": 66,
   "items": [
     {
       "assetid": "50168794773",
@@ -60,6 +60,45 @@
       "phase": "Ruby"
     },
     {
+      "assetid": "52873154780",
+      "classid": "7993040007",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Gamma Doppler",
+      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209E8E423F6F655A9F861D9ABE269AB698AE9DA65A4E09789DDE5B9FF6A4EE9A9ED13AD6",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.024158604443,
+      "seed": 197,
+      "phase": "Emerald"
+    },
+    {
       "assetid": "48887462154",
       "classid": "7993041878",
       "instanceid": "188530139",
@@ -68,6 +107,34 @@
       "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%209989136B34162F988133BEB928D7B19FA99AA127177A689AD97998F1B9E991A22C4076",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52873154781",
+      "classid": "7993042207",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -658,6 +725,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52873154779",
+      "classid": "7993043505",
+      "instanceid": "6276409285",
+      "amount": 1,
+      "name": "AK-47 | Wild Lotus",
+      "market_hash_name": "AK-47 | Wild Lotus (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

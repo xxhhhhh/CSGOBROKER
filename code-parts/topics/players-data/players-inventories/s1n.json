@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/55d2d6a0-aed2-46de-99b6-6a1381a7ab99",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-26T06:21:32.233Z",
+  "updatedAt": "2026-07-27T06:49:27.183Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 88,
-  "totalItemsGrouped": 88,
+  "totalItemsRaw": 83,
+  "totalItemsGrouped": 83,
   "items": [
     {
       "assetid": "52767490060",
@@ -513,9 +513,9 @@
       ]
     },
     {
-      "assetid": "51842825023",
+      "assetid": "53047673617",
       "classid": "7993037248",
-      "instanceid": "8523885887",
+      "instanceid": "8706157951",
       "amount": 1,
       "name": "M4A1-S | Hot Rod",
       "market_hash_name": "M4A1-S | Hot Rod (Factory New)",
@@ -551,47 +551,15 @@
           "name": ""
         },
         {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
           "category": "TournamentTeam",
           "name": ""
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48003397871",
-      "classid": "7993037221",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "M4A1-S | Solitude",
-      "market_hash_name": "M4A1-S | Solitude (Factory New)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -849,72 +817,6 @@
       ]
     },
     {
-      "assetid": "52624705865",
-      "classid": "8491630385",
-      "instanceid": "0",
-      "amount": 1,
-      "name": "Sticker Slab | s1n (Gold) | Cologne 2026",
-      "market_hash_name": "Sticker Slab | s1n (Gold) | Cologne 2026",
-      "type": "Customized Extraordinary Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2068786870A3624868406E586000681868CA696F6068784D08B13D9F3876C0",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "52624705865"
-      ]
-    },
-    {
-      "assetid": "51857921274",
-      "classid": "6216486244",
-      "instanceid": "0",
-      "amount": 1,
-      "name": "Charm | Diamond Dog",
-      "market_hash_name": "Charm | Diamond Dog",
-      "type": "Exotic Charm",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51857921274"
-      ]
-    },
-    {
       "assetid": "41960969776",
       "classid": "2750358421",
       "instanceid": "188530139",
@@ -971,49 +873,6 @@
       ],
       "assetids": [
         "35389750320"
-      ]
-    },
-    {
-      "assetid": "52448387126",
-      "classid": "8490802374",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Sticker | M80 (Holo) | Cologne 2026",
-      "market_hash_name": "Sticker | M80 (Holo) | Cologne 2026",
-      "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F1E1F1E948F8D1F1D9F4C1F593F4F9F1E126A099F181F38C72FA00",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "52448387126"
       ]
     },
     {
@@ -1784,6 +1643,53 @@
       ]
     },
     {
+      "assetid": "53047439432",
+      "classid": "8491702042",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | s1n (Gold) | Cologne 2026",
+      "market_hash_name": "Sticker | s1n (Gold) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D7C7D7CF6EDEF7D7FFD1E7D3B5D2DFD7C70E82BFD7A7D5D1853531",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53047439432"
+      ]
+    },
+    {
       "assetid": "5083729889",
       "classid": "822948194",
       "instanceid": "338584038",
@@ -1946,42 +1852,6 @@
       ]
     },
     {
-      "assetid": "44625676334",
-      "classid": "7993035801",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Five-SeveN | Sky Blue",
-      "market_hash_name": "Five-SeveN | Sky Blue (Factory New)",
-      "type": "Industrial Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49445234173",
       "classid": "7993040398",
       "instanceid": "188530139",
@@ -2126,14 +1996,14 @@
       ]
     },
     {
-      "assetid": "52780454538",
-      "classid": "6216347003",
-      "instanceid": "0",
+      "assetid": "41539040884",
+      "classid": "4839651183",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "Charm | Die-cast AK",
-      "market_hash_name": "Charm | Die-cast AK",
-      "type": "Remarkable Charm",
-      "inspectLink": "",
+      "name": "Sticker | Ax1Le (Glitter) | Antwerp 2022",
+      "market_hash_name": "Sticker | Ax1Le (Glitter) | Antwerp 2022",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204B5B4B53F2426B4B634F7B4F294E434B5B9661234B3B430D55E663",
       "tags": [
         {
           "category": "Type",
@@ -2148,12 +2018,122 @@
           "name": ""
         },
         {
-          "category": "KeychainCapsule",
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
           "name": ""
         }
       ],
       "assetids": [
-        "52780454538"
+        "41539040884"
+      ]
+    },
+    {
+      "assetid": "40788169660",
+      "classid": "6360299673",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Perfect World (Glitter) | Shanghai 2024",
+      "market_hash_name": "Sticker | Perfect World (Glitter) | Shanghai 2024",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20809080983989A080A884B084E28588809059BEE880F08873FA953D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "40788169660"
+      ]
+    },
+    {
+      "assetid": "41623576731",
+      "classid": "4839650991",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | sh1ro (Glitter) | Antwerp 2022",
+      "market_hash_name": "Sticker | sh1ro (Glitter) | Antwerp 2022",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200A1A0A12B3032A0A220E3A0E680F020A1ADF20620A7A0290E9A24D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "41623576731"
       ]
     },
     {
@@ -2193,9 +2173,9 @@
       ]
     },
     {
-      "assetid": "52274216254",
+      "assetid": "53047449896",
       "classid": "188530425",
-      "instanceid": "480085569",
+      "instanceid": "8705724277",
       "amount": 1,
       "name": "Glock-18 | Fade",
       "market_hash_name": "Glock-18 | Fade (Factory New)",
@@ -2224,6 +2204,18 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -2497,58 +2489,6 @@
       ]
     },
     {
-      "assetid": "22454023288",
-      "classid": "7993040873",
-      "instanceid": "7628437939",
-      "amount": 1,
-      "name": "Souvenir P250 | Metallic DDPAT",
-      "market_hash_name": "Souvenir P250 | Metallic DDPAT (Factory New)",
-      "type": "Souvenir Industrial Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52838060386",
       "classid": "8524735377",
       "instanceid": "8535183621",
@@ -2649,58 +2589,6 @@
       ]
     },
     {
-      "assetid": "52448415560",
-      "classid": "8524555889",
-      "instanceid": "8535183621",
-      "amount": 1,
-      "name": "Souvenir MP9 | Urban Sovereign",
-      "market_hash_name": "Souvenir MP9 | Urban Sovereign (Factory New)",
-      "type": "Souvenir Restricted SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "26417071486",
       "classid": "7993039759",
       "instanceid": "914508232",
@@ -2708,42 +2596,6 @@
       "name": "StatTrak™ Glock-18 | Water Elemental",
       "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Factory New)",
       "type": "StatTrak™ Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52624951477",
-      "classid": "7993052384",
-      "instanceid": "905498203",
-      "amount": 1,
-      "name": "StatTrak™ Galil AR | Sugar Rush",
-      "market_hash_name": "StatTrak™ Galil AR | Sugar Rush (Minimal Wear)",
-      "type": "StatTrak™ Classified Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -2809,9 +2661,9 @@
       ]
     },
     {
-      "assetid": "52952332158",
+      "assetid": "53046371194",
       "classid": "7993039753",
-      "instanceid": "981884901",
+      "instanceid": "8705533299",
       "amount": 1,
       "name": "StatTrak™ AK-47 | The Empress",
       "market_hash_name": "StatTrak™ AK-47 | The Empress (Minimal Wear)",
@@ -2917,9 +2769,9 @@
       ]
     },
     {
-      "assetid": "52707259946",
+      "assetid": "53047184978",
       "classid": "7993041344",
-      "instanceid": "188531307",
+      "instanceid": "480096498",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Crimson Tsunami",
       "market_hash_name": "StatTrak™ Galil AR | Crimson Tsunami (Factory New)",
