@@ -7,16 +7,18 @@
   "name": "Nils Smidebrant",
   "nationality": "Sweden",
   "born": "24.09.2002",
+  "isContentCreator": false,
   "twitch": "phzy1",
   "faceit": "https://faceitdb.com/profile/faceit/0411cac3-a510-4af0-96d1-b032a4e766ac",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-24T05:57:40.371Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 218,
-  "totalItemsGrouped": 190,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-28T05:56:22.339Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 212,
+  "totalItemsGrouped": 184,
   "items": [
     {
       "assetid": "51169818262",
@@ -659,6 +661,42 @@
       "amount": 1,
       "name": "Five-SeveN | Coolant",
       "market_hash_name": "Five-SeveN | Coolant (Well-Worn)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53056998418",
+      "classid": "7993036748",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Tec-9 | Blue Blast",
+      "market_hash_name": "Tec-9 | Blue Blast (Minimal Wear)",
       "type": "Consumer Grade Pistol",
       "inspectLink": "",
       "tags": [
@@ -3685,42 +3723,6 @@
       ]
     },
     {
-      "assetid": "51984654574",
-      "classid": "7993041164",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "CZ75-Auto | Midnight Palm",
-      "market_hash_name": "CZ75-Auto | Midnight Palm (Field-Tested)",
-      "type": "Industrial Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51194321197",
       "classid": "7993035801",
       "instanceid": "302028390",
@@ -3793,42 +3795,6 @@
       ]
     },
     {
-      "assetid": "52826420517",
-      "classid": "7993037429",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "FAMAS | Grey Ghost",
-      "market_hash_name": "FAMAS | Grey Ghost (Battle-Scarred)",
-      "type": "Industrial Grade Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50827502329",
       "classid": "7993037207",
       "instanceid": "302028390",
@@ -3836,186 +3802,6 @@
       "name": "XM1014 | Gum Wall Camo",
       "market_hash_name": "XM1014 | Gum Wall Camo (Factory New)",
       "type": "Industrial Grade Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52826416913",
-      "classid": "8637411889",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "MP9 | Dune Asp",
-      "market_hash_name": "MP9 | Dune Asp (Field-Tested)",
-      "type": "Industrial Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52823403350",
-      "classid": "8637411908",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "MP9 | Dune Asp",
-      "market_hash_name": "MP9 | Dune Asp (Minimal Wear)",
-      "type": "Industrial Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52823404123",
-      "classid": "8637409506",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "PP-Bizon | Traitor",
-      "market_hash_name": "PP-Bizon | Traitor (Battle-Scarred)",
-      "type": "Industrial Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52826417910",
-      "classid": "8637411714",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "PP-Bizon | Traitor",
-      "market_hash_name": "PP-Bizon | Traitor (Minimal Wear)",
-      "type": "Industrial Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52826951591",
-      "classid": "8637410227",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "SCAR-20 | Sirocco Script",
-      "market_hash_name": "SCAR-20 | Sirocco Script (Battle-Scarred)",
-      "type": "Industrial Grade Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -4081,12 +3867,84 @@
       ]
     },
     {
+      "assetid": "52838180251",
+      "classid": "8637410990",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Tec-9 | Sultan",
+      "market_hash_name": "Tec-9 | Sultan (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52822113328",
       "classid": "8637412501",
       "instanceid": "519977179",
       "amount": 1,
       "name": "Tec-9 | Sultan",
       "market_hash_name": "Tec-9 | Sultan (Well-Worn)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53056998419",
+      "classid": "7993036215",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "USP-S | Tropical Breeze",
+      "market_hash_name": "USP-S | Tropical Breeze (Field-Tested)",
       "type": "Mil-Spec Grade Pistol",
       "inspectLink": "",
       "tags": [
@@ -5185,102 +5043,6 @@
       ]
     },
     {
-      "assetid": "48024085139",
-      "classid": "7993038711",
-      "instanceid": "7809721509",
-      "amount": 1,
-      "name": "Souvenir P90 | Verdant Growth",
-      "market_hash_name": "Souvenir P90 | Verdant Growth (Field-Tested)",
-      "type": "Souvenir Industrial Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "44593782717",
-      "classid": "7993042058",
-      "instanceid": "7180935519",
-      "amount": 1,
-      "name": "Souvenir PP-Bizon | Candy Apple",
-      "market_hash_name": "Souvenir PP-Bizon | Candy Apple (Factory New)",
-      "type": "Souvenir Industrial Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "45714124754",
       "classid": "7993036478",
       "instanceid": "6276308824",
@@ -5487,7 +5249,7 @@
     {
       "assetid": "50985121109",
       "classid": "7993044196",
-      "instanceid": "8697099538",
+      "instanceid": "8708466311",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Neon Rider",
       "market_hash_name": "StatTrak™ AK-47 | Neon Rider (Factory New)",

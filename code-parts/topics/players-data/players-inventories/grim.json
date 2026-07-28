@@ -7,16 +7,18 @@
   "name": "Michael Wince",
   "nationality": "United States",
   "born": "22.11.2000",
+  "isContentCreator": false,
   "twitch": "1grimcs",
   "faceit": "https://faceitdb.com/profile/faceit/1af92135-87f8-46bd-bfc2-676e3d8e980b",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-25T07:17:07.865Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 731,
-  "totalItemsGrouped": 667,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-28T06:17:25.528Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 729,
+  "totalItemsGrouped": 665,
   "items": [
     {
       "assetid": "46180182370",
@@ -85,7 +87,7 @@
     {
       "assetid": "51777368776",
       "classid": "7993046648",
-      "instanceid": "188532450",
+      "instanceid": "188531625",
       "amount": 1,
       "name": "★ StatTrak™ Huntsman Knife | Gamma Doppler",
       "market_hash_name": "★ StatTrak™ Huntsman Knife | Gamma Doppler (Factory New)",
@@ -128,50 +130,6 @@
       "float": 0.026810593903,
       "seed": 175,
       "phase": "Emerald"
-    },
-    {
-      "assetid": "47320293026",
-      "classid": "7993046037",
-      "instanceid": "902658099",
-      "amount": 1,
-      "name": "★ StatTrak™ Stiletto Knife | Damascus Steel",
-      "market_hash_name": "★ StatTrak™ Stiletto Knife | Damascus Steel (Minimal Wear)",
-      "type": "★ StatTrak™ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D8C87A65517C68D9C052DCF801DEF0DEE8DBE041730F34DB980ADF90D888D8B04CD9A8DC8F38685A",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "51223496660",
@@ -24243,7 +24201,7 @@
     {
       "assetid": "50712145844",
       "classid": "7993042460",
-      "instanceid": "8558857572",
+      "instanceid": "8674469616",
       "amount": 1,
       "name": "StatTrak™ AWP | Redline",
       "market_hash_name": "StatTrak™ AWP | Redline (Field-Tested)",
@@ -24323,7 +24281,7 @@
     {
       "assetid": "51959814079",
       "classid": "7993045027",
-      "instanceid": "8618588167",
+      "instanceid": "8709027480",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Factory New)",
@@ -24377,65 +24335,9 @@
       ]
     },
     {
-      "assetid": "52308659168",
-      "classid": "7993039416",
-      "instanceid": "8592355124",
-      "amount": 1,
-      "name": "StatTrak™ USP-S | Printstream",
-      "market_hash_name": "StatTrak™ USP-S | Printstream (Minimal Wear)",
-      "type": "StatTrak™ Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "47940867892",
       "classid": "7993040029",
-      "instanceid": "8618588168",
+      "instanceid": "8709118517",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Field-Tested)",
@@ -24562,7 +24464,7 @@
     {
       "assetid": "49329933093",
       "classid": "6140433887",
-      "instanceid": "188532901",
+      "instanceid": "188532438",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Dren McDonald, Coffee! Kofe! Kahveh!",
       "market_hash_name": "StatTrak™ Music Kit | Dren McDonald, Coffee! Kofe! Kahveh!",
