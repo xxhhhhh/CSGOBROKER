@@ -7,26 +7,28 @@
   "name": "Paweł Dycha",
   "nationality": "Poland",
   "born": "11.08.1997",
+  "isContentCreator": false,
   "twitch": "dychacs",
   "faceit": "https://faceitdb.com/profile/faceit/ff5a0714-0b89-4646-a6b3-34fc571913ff",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-18T06:04:09.966Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 102,
-  "totalItemsGrouped": 92,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-29T06:30:27.974Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 112,
+  "totalItemsGrouped": 102,
   "items": [
     {
-      "assetid": "32793724043",
-      "classid": "7993074848",
-      "instanceid": "188530139",
+      "assetid": "52895872286",
+      "classid": "7993041062",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Bowie Knife | Gamma Doppler",
-      "market_hash_name": "★ Bowie Knife | Gamma Doppler (Minimal Wear)",
+      "name": "★ Flip Knife | Gamma Doppler",
+      "market_hash_name": "★ Flip Knife | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208292090B2017F89A0086A23B86AA84B281BA372F6C6E81C26A84EA83F28A5F0AACF6",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6DE397A6FBB87C65847E5DC179557B4D7E45A583D6987E3D6415750D79115D8B95",
       "tags": [
         {
           "category": "Type",
@@ -34,10 +36,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -53,9 +51,37 @@
           "name": ""
         }
       ],
-      "float": 0.0759710446,
-      "seed": 872,
-      "phase": "Phase 1"
+      "float": 0.020873710513,
+      "seed": 25,
+      "phase": "Phase 4"
+    },
+    {
+      "assetid": "43467077128",
+      "classid": "7993035787",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Driver Gloves | Black Tie",
+      "market_hash_name": "★ Driver Gloves | Black Tie (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "33314624254",
@@ -120,7 +146,7 @@
       ]
     },
     {
-      "assetid": "44483331013",
+      "assetid": "47501752558",
       "classid": "6195246388",
       "instanceid": "302028390",
       "amount": 11,
@@ -143,6 +169,8 @@
         }
       ],
       "assetids": [
+        "47501752558",
+        "47266053631",
         "44483331013",
         "43495231580",
         "43261369307",
@@ -151,9 +179,7 @@
         "40251005864",
         "40106215884",
         "39987912123",
-        "48566385087",
-        "47501752558",
-        "47266053631"
+        "48566385087"
       ]
     },
     {
@@ -272,6 +298,42 @@
       "name": "M4A1-S | Solitude",
       "market_hash_name": "M4A1-S | Solitude (Battle-Scarred)",
       "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51589628755",
+      "classid": "7993037424",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "M4A1-S | Golden Coil",
+      "market_hash_name": "M4A1-S | Golden Coil (Factory New)",
+      "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -1999,6 +2061,50 @@
       ]
     },
     {
+      "assetid": "49261317200",
+      "classid": "241626037",
+      "instanceid": "6276354517",
+      "amount": 1,
+      "name": "M4A4 | Urban DDPAT",
+      "market_hash_name": "M4A4 | Urban DDPAT (Minimal Wear)",
+      "type": "Industrial Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49258581133",
       "classid": "7993074335",
       "instanceid": "302028390",
@@ -2138,6 +2244,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45738085247",
+      "classid": "188560475",
+      "instanceid": "6277482716",
+      "amount": 1,
+      "name": "Glock-18 | Brass",
+      "market_hash_name": "Glock-18 | Brass (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -2359,12 +2509,140 @@
       ]
     },
     {
+      "assetid": "14206776453",
+      "classid": "202003977",
+      "instanceid": "7757678961",
+      "amount": 1,
+      "name": "M4A4 | Zirka",
+      "market_hash_name": "M4A4 | Zirka (Minimal Wear)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "46724874733",
       "classid": "7993036567",
       "instanceid": "188530139",
       "amount": 1,
       "name": "MAC-10 | Cat Fight",
       "market_hash_name": "MAC-10 | Cat Fight (Field-Tested)",
+      "type": "Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50737454943",
+      "classid": "7993036442",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAC-10 | Sakkaku",
+      "market_hash_name": "MAC-10 | Sakkaku (Well-Worn)",
+      "type": "Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51241864670",
+      "classid": "8246912433",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP7 | Amberline",
+      "market_hash_name": "MP7 | Amberline (Minimal Wear)",
       "type": "Restricted SMG",
       "inspectLink": "",
       "tags": [
@@ -2563,9 +2841,97 @@
       ]
     },
     {
+      "assetid": "52434499037",
+      "classid": "7993049459",
+      "instanceid": "8611678226",
+      "amount": 1,
+      "name": "Souvenir AK-47 | Safety Net",
+      "market_hash_name": "Souvenir AK-47 | Safety Net (Factory New)",
+      "type": "Souvenir Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "39954000653",
+      "classid": "7993041773",
+      "instanceid": "1411712447",
+      "amount": 1,
+      "name": "StatTrak™ USP-S | Kill Confirmed",
+      "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
+      "type": "StatTrak™ Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "44366205887",
       "classid": "7993037884",
-      "instanceid": "6438794428",
+      "instanceid": "6490913800",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Moonrise",
       "market_hash_name": "StatTrak™ Glock-18 | Moonrise (Factory New)",
@@ -2599,9 +2965,57 @@
       ]
     },
     {
+      "assetid": "25793183930",
+      "classid": "7993040112",
+      "instanceid": "8191853792",
+      "amount": 1,
+      "name": "StatTrak™ M4A1-S | Night Terror",
+      "market_hash_name": "StatTrak™ M4A1-S | Night Terror (Factory New)",
+      "type": "StatTrak™ Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50737561652",
       "classid": "8247059305",
-      "instanceid": "188530485",
+      "instanceid": "188530722",
       "amount": 1,
       "name": "StatTrak™ MP7 | Amberline",
       "market_hash_name": "StatTrak™ MP7 | Amberline (Minimal Wear)",
@@ -2637,7 +3051,7 @@
     {
       "assetid": "40480524831",
       "classid": "7993040133",
-      "instanceid": "188538340",
+      "instanceid": "188578445",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Rapid Transit",
       "market_hash_name": "StatTrak™ SSG 08 | Rapid Transit (Minimal Wear)",

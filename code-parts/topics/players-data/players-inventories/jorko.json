@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/81c00116-0f95-4fb5-9e22-e1132f38ebab",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-28T06:21:37.497Z",
+  "updatedAt": "2026-07-29T06:23:58.785Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 110,
-  "totalItemsGrouped": 110,
+  "totalItemsRaw": 114,
+  "totalItemsGrouped": 112,
   "items": [
     {
       "assetid": "52703655900",
@@ -130,7 +130,7 @@
     {
       "assetid": "52902659793",
       "classid": "7993040008",
-      "instanceid": "8672365767",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ M9 Bayonet | Fade",
       "market_hash_name": "★ M9 Bayonet | Fade (Factory New)",
@@ -702,7 +702,7 @@
     {
       "assetid": "52902659792",
       "classid": "259074725",
-      "instanceid": "8699849894",
+      "instanceid": "6281200163",
       "amount": 1,
       "name": "AWP | Redline",
       "market_hash_name": "AWP | Redline (Minimal Wear)",
@@ -874,7 +874,7 @@
     {
       "assetid": "52902659794",
       "classid": "202170645",
-      "instanceid": "8699849892",
+      "instanceid": "6277320226",
       "amount": 1,
       "name": "Desert Eagle | Golden Koi",
       "market_hash_name": "Desert Eagle | Golden Koi (Factory New)",
@@ -2063,6 +2063,51 @@
       ],
       "assetids": [
         "48317824361"
+      ]
+    },
+    {
+      "assetid": "52911385914",
+      "classid": "8490814247",
+      "instanceid": "143865972",
+      "amount": 3,
+      "name": "Sticker | Team Liquid | Cologne 2026",
+      "market_hash_name": "Sticker | Team Liquid | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205A4A5A42E3537A5A72596A5E385F525A4AAB0B325A2A5840171629",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52911385914",
+        "52911385913",
+        "52911385916"
       ]
     },
     {
@@ -3293,6 +3338,50 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52911405306",
+      "classid": "8247005394",
+      "instanceid": "8711268420",
+      "amount": 1,
+      "name": "StatTrak™ AWP | Queen's Gambit",
+      "market_hash_name": "StatTrak™ AWP | Queen's Gambit (Minimal Wear)",
+      "type": "StatTrak™ Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

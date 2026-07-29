@@ -7,16 +7,18 @@
   "name": "Epitácio Melo",
   "nationality": "Brazil",
   "born": "24.01.1995",
+  "isContentCreator": false,
   "twitch": "tacocs",
   "faceit": "https://faceitdb.com/profile/faceit/34f2fbd3-f206-46c5-bb93-30a865950d59",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-11T06:39:14.572Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 72,
-  "totalItemsGrouped": 72,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-07-29T06:45:07.795Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 71,
+  "totalItemsGrouped": 71,
   "items": [
     {
       "assetid": "51006192748",
@@ -97,74 +99,6 @@
       "amount": 1,
       "name": "★ Classic Knife | Fade",
       "market_hash_name": "★ Classic Knife | Fade (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52176137290",
-      "classid": "7993038821",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Flip Knife | Autotronic",
-      "market_hash_name": "★ Flip Knife | Autotronic (Field-Tested)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51975432667",
-      "classid": "7993042557",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Huntsman Knife | Bright Water",
-      "market_hash_name": "★ Huntsman Knife | Bright Water (Minimal Wear)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -2047,7 +1981,7 @@
     {
       "assetid": "33296469568",
       "classid": "7993039759",
-      "instanceid": "8654317291",
+      "instanceid": "8712288508",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Water Elemental",
       "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Factory New)",
@@ -2093,9 +2027,69 @@
       ]
     },
     {
+      "assetid": "6936704029",
+      "classid": "7993037966",
+      "instanceid": "8031458700",
+      "amount": 1,
+      "name": "StatTrak™ AK-47 | Redline",
+      "market_hash_name": "StatTrak™ AK-47 | Redline (Field-Tested)",
+      "type": "StatTrak™ Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "33296447651",
       "classid": "7993044659",
-      "instanceid": "8654317292",
+      "instanceid": "8712288510",
       "amount": 1,
       "name": "StatTrak™ AWP | BOOM",
       "market_hash_name": "StatTrak™ AWP | BOOM (Factory New)",
@@ -2147,7 +2141,7 @@
     {
       "assetid": "33296477876",
       "classid": "7993042872",
-      "instanceid": "8654317290",
+      "instanceid": "8712288507",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Minimal Wear)",
@@ -2199,7 +2193,7 @@
     {
       "assetid": "49743474799",
       "classid": "7993043736",
-      "instanceid": "8654317289",
+      "instanceid": "8712288506",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Minimal Wear)",
@@ -2287,7 +2281,7 @@
     {
       "assetid": "7020382089",
       "classid": "7993043248",
-      "instanceid": "8634253803",
+      "instanceid": "8690312605",
       "amount": 1,
       "name": "StatTrak™ P250 | Splash",
       "market_hash_name": "StatTrak™ P250 | Splash (Minimal Wear)",
