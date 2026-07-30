@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b077f54e-fbca-41ce-9e80-58b9e2f11495",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-29T06:19:44.900Z",
+  "updatedAt": "2026-07-30T06:08:36.437Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 152,
-  "totalItemsGrouped": 130,
+  "totalItemsRaw": 154,
+  "totalItemsGrouped": 132,
   "items": [
     {
       "assetid": "52619749140",
@@ -643,6 +643,42 @@
       "amount": 1,
       "name": "AK-47 | Fire Serpent",
       "market_hash_name": "AK-47 | Fire Serpent (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52932975408",
+      "classid": "7993036833",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "M4A1-S | Vaporwave",
+      "market_hash_name": "M4A1-S | Vaporwave (Minimal Wear)",
       "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
@@ -4164,6 +4200,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52932976680",
+      "classid": "7993046110",
+      "instanceid": "6276304827",
+      "amount": 1,
+      "name": "CZ75-Auto | Red Astor",
+      "market_hash_name": "CZ75-Auto | Red Astor (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
