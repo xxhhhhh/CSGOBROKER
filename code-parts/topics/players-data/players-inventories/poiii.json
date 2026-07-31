@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/ac37a5e3-e934-42c7-9bba-09e69ff6c1a7",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-18T06:02:01.579Z",
+  "updatedAt": "2026-07-31T06:49:37.027Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 138,
-  "totalItemsGrouped": 133,
+  "totalItemsRaw": 140,
+  "totalItemsGrouped": 135,
   "items": [
     {
       "assetid": "49919020445",
@@ -118,6 +118,34 @@
     },
     {
       "assetid": "45739961356",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53115564890",
       "classid": "4717330486",
       "instanceid": "302028390",
       "amount": 1,
@@ -1315,6 +1343,37 @@
       ],
       "assetids": [
         "18035725452"
+      ]
+    },
+    {
+      "assetid": "53115564891",
+      "classid": "1989285137",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Lambda (Desert Amber)",
+      "market_hash_name": "Sealed Graffiti | Lambda (Desert Amber)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BDADBDA579B79DBD95BC8DB9DFBAB5BDAD07B08DB8D5BDCDA5ED3BBDC1",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53115564891"
       ]
     },
     {
@@ -4021,7 +4080,7 @@
     {
       "assetid": "11755067380",
       "classid": "7993038122",
-      "instanceid": "8714072964",
+      "instanceid": "8717547134",
       "amount": 1,
       "name": "StatTrak™ P250 | Valence",
       "market_hash_name": "StatTrak™ P250 | Valence (Field-Tested)",
@@ -4209,7 +4268,7 @@
     {
       "assetid": "39534061745",
       "classid": "7993036298",
-      "instanceid": "8714005872",
+      "instanceid": "8716765969",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Moonrise",
       "market_hash_name": "StatTrak™ Glock-18 | Moonrise (Field-Tested)",
