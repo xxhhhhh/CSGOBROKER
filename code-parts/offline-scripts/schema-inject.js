@@ -655,7 +655,7 @@ function injectReviewSchema(pAbs) {
       "@type": "Rating",
       "ratingValue": avgRating,
       "bestRating": "5",
-      "worstRating": "0"
+      "worstRating": "1"
     }
   };
 
