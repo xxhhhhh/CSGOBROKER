@@ -86,17 +86,19 @@ jobs:
       - name: Run Liquipedia sync
         env:
           PROXY_ENABLED: "0"
+          ONLY_PLAYERS: ${{ inputs.only_players }}
         run: |
-          ONLY_ARGS=""
-          if [ -n "${{ inputs.only_players }}" ]; then
-            ONLY_ARGS="--only ${{ inputs.only_players }}"
+          ARGS=(
+            --refetch-liquipedia
+            --liquipedia-only
+            --verbose
+          )
+
+          if [ -n "$ONLY_PLAYERS" ]; then
+            ARGS+=(--only "$ONLY_PLAYERS")
           fi
 
-          node code-parts/offline-scripts/fetch-players-inventories.js \
-            --refetch-liquipedia \
-            --liquipedia-only \
-            --verbose \
-            $ONLY_ARGS
+          node code-parts/offline-scripts/fetch-players-inventories.js "${ARGS[@]}"
 
       - name: Upload Liquipedia base artifact
         uses: actions/upload-artifact@v4
@@ -106,6 +108,16 @@ jobs:
             code-parts/topics/players-data/players-list/fetch-players.json
             code-parts/topics/players-data/players-list/teams.json
           if-no-files-found: error
+
+      - name: Commit Liquipedia data
+        if: ${{ !inputs.run_inventories }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add code-parts/topics/players-data/players-list/fetch-players.json
+          git add code-parts/topics/players-data/players-list/teams.json
+          git diff --cached --quiet || git commit -m "chore: update Liquipedia player data"
+          git push
 
   inventory-shards:
     if: ${{ always() && (inputs.run_inventories || github.event_name == 'schedule') }}

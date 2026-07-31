@@ -3893,7 +3893,7 @@ async function main() {
       ? playersAfterLiquipedia
       : FULL_PLAYERS_SOURCE;
 
-    const builtTeamsDoc = await buildTeamsDocument(teamsPlayersSource, {
+    const builtTeamsDoc = await buildTeamsDocument(teamsPlayersSource, root, {
       verbose,
       existingTeamsDoc,
       mergeWithExisting: false,
@@ -4264,10 +4264,6 @@ if (!workflowMode || writeFinalLists) {
   }
 }
 
-  await closeSharedCsfloatBrowser();
-  await closeSharedSteamUiBrowser();
-  await closeSharedLiquipediaBrowser();
-
   console.log(
     `\nDone. Players in shard: ${playersListOutput.length}, success: ${successCount}, failed: ${failedCount}`
   );
@@ -4280,11 +4276,27 @@ if (!workflowMode || writeFinalLists) {
   }
 }
 
-main().catch(async (err) => {
-  await closeSharedCsfloatBrowser();
-  await closeSharedSteamUiBrowser();
-  await closeSharedLiquipediaBrowser();
+async function closeAllSharedBrowsers() {
+  await Promise.allSettled([
+    closeSharedCsfloatBrowser(),
+    closeSharedSteamUiBrowser(),
+    closeSharedLiquipediaBrowser(),
+  ]);
+}
+
+async function run() {
+  try {
+    await main();
+  } finally {
+    // Liquipedia browser создаётся как shared fallback после HTTP 403.
+    // finally гарантирует закрытие Chromium даже при раннем return
+    // в режимах --liquipedia-only и --teams-only.
+    await closeAllSharedBrowsers();
+  }
+}
+
+run().catch((err) => {
   console.error("[FATAL]", err);
-  process.exit(1);
+  process.exitCode = 1;
 });
 
