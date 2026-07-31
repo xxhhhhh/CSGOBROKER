@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/a55ef48c-ee6a-4801-a2b2-31dd1638123a",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-19T05:56:59.137Z",
+  "updatedAt": "2026-07-31T06:17:13.898Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 71,
-  "totalItemsGrouped": 71,
+  "totalItemsRaw": 73,
+  "totalItemsGrouped": 73,
   "items": [
     {
       "assetid": "52715660133",
@@ -54,6 +54,34 @@
       "float": 0.031535446644,
       "seed": 384,
       "phase": "Phase 2"
+    },
+    {
+      "assetid": "53105472338",
+      "classid": "8246873714",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Dead Hand Terminal",
+      "market_hash_name": "Sealed Dead Hand Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "51194495509",
@@ -115,6 +143,33 @@
       ],
       "assetids": [
         "26289289140"
+      ]
+    },
+    {
+      "assetid": "53105472339",
+      "classid": "6195246388",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Charm Detachment Pack",
+      "market_hash_name": "Charm Detachment Pack",
+      "type": "Base Grade Tool",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205646564E807076567E5766523E56264E45E21B58",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53105472339"
       ]
     },
     {
