@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b6daa950-11e5-4f51-b58e-b4e01e112500",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-26T06:38:41.698Z",
+  "updatedAt": "2026-08-01T06:32:56.565Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 48,
-  "totalItemsGrouped": 48,
+  "totalItemsRaw": 49,
+  "totalItemsGrouped": 49,
   "items": [
     {
       "assetid": "52847558322",
@@ -90,6 +90,34 @@
       "amount": 1,
       "name": "Kilowatt Case",
       "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53131139796",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -1201,6 +1229,42 @@
       ]
     },
     {
+      "assetid": "53131139797",
+      "classid": "7993067356",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "UMP-45 | Warm Blooded",
+      "market_hash_name": "UMP-45 | Warm Blooded (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "40730505249",
       "classid": "6360313220",
       "instanceid": "188530139",
@@ -1326,54 +1390,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "42239337280",
-      "classid": "7993039093",
-      "instanceid": "6410524093",
-      "amount": 1,
-      "name": "Tec-9 | Brother",
-      "market_hash_name": "Tec-9 | Brother (Battle-Scarred)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BFAF7F791B1222BEA7A19F7BB897BB8FBB8746361444BCFF01B9DDBAB7BCAF2880D7BECFB7AE24BA3C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1617,7 +1633,7 @@
     {
       "assetid": "52554706890",
       "classid": "7993036183",
-      "instanceid": "8717281100",
+      "instanceid": "8721013754",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Winterized",
       "market_hash_name": "StatTrak™ Glock-18 | Winterized (Minimal Wear)",

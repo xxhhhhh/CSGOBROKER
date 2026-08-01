@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c42c7477-0d5f-4deb-b5a5-a61178e7e5ab",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-19T06:34:52.140Z",
+  "updatedAt": "2026-08-01T06:39:19.557Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 749,
-  "totalItemsGrouped": 723,
+  "totalItemsRaw": 753,
+  "totalItemsGrouped": 725,
   "items": [
     {
       "assetid": "49070151012",
@@ -265,7 +265,7 @@
     {
       "assetid": "51593412579",
       "classid": "7993048621",
-      "instanceid": "188531654",
+      "instanceid": "188532616",
       "amount": 1,
       "name": "★ StatTrak™ Karambit | Gamma Doppler",
       "market_hash_name": "★ StatTrak™ Karambit | Gamma Doppler (Factory New)",
@@ -335,6 +335,34 @@
     },
     {
       "assetid": "51389274589",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53122967094",
       "classid": "4717330486",
       "instanceid": "302028390",
       "amount": 1,
@@ -508,34 +536,6 @@
       "amount": 1,
       "name": "Kilowatt Case",
       "market_hash_name": "Kilowatt Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52229595407",
-      "classid": "8246873714",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Dead Hand Terminal",
-      "market_hash_name": "Sealed Dead Hand Terminal",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -4206,6 +4206,37 @@
       ],
       "assetids": [
         "23803159184"
+      ]
+    },
+    {
+      "assetid": "53122967095",
+      "classid": "1989288177",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Take Flight (Desert Amber)",
+      "market_hash_name": "Sealed Graffiti | Take Flight (Desert Amber)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A9B9A9B16DA389A981A899ADCBAEA1A9B961A499ACC1A9D9B1F5D0D16D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53122967095"
       ]
     },
     {
@@ -9467,6 +9498,55 @@
         "45447252112",
         "45447252109",
         "44240813359"
+      ]
+    },
+    {
+      "assetid": "52962776748",
+      "classid": "8490946029",
+      "instanceid": "8691509721",
+      "amount": 3,
+      "name": "Sticker | C4LLM3SU3 (Gold) | Cologne 2026",
+      "market_hash_name": "Sticker | C4LLM3SU3 (Gold) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206373637BDA6A43634B65536701666B63739E350B631361F09F0AF0",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52962776748",
+        "52962776747",
+        "52962776746"
       ]
     },
     {
@@ -24329,7 +24409,7 @@
     {
       "assetid": "48285704580",
       "classid": "7993044207",
-      "instanceid": "8713814478",
+      "instanceid": "8719568854",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Eco",
       "market_hash_name": "StatTrak™ Galil AR | Eco (Minimal Wear)",
@@ -24457,7 +24537,7 @@
     {
       "assetid": "48285704595",
       "classid": "7993045027",
-      "instanceid": "8717720312",
+      "instanceid": "8719568853",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Factory New)",
@@ -24573,7 +24653,7 @@
     {
       "assetid": "44098931527",
       "classid": "7993043676",
-      "instanceid": "8717720313",
+      "instanceid": "8719568855",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Factory New)",
@@ -25593,7 +25673,7 @@
     {
       "assetid": "28345908838",
       "classid": "7993037666",
-      "instanceid": "902709503",
+      "instanceid": "902697357",
       "amount": 1,
       "name": "StatTrak™ MAG-7 | Monster Call",
       "market_hash_name": "StatTrak™ MAG-7 | Monster Call (Field-Tested)",

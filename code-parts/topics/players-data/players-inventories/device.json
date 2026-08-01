@@ -12,14 +12,77 @@
   "faceit": "https://faceitdb.com/profile/faceit/d6bc4849-5256-4463-a38e-bcd77fc31ff9",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-31T06:49:35.337Z",
+  "updatedAt": "2026-08-01T06:32:55.245Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 99,
-  "totalItemsGrouped": 99,
+  "totalItemsRaw": 103,
+  "totalItemsGrouped": 103,
   "items": [
+    {
+      "assetid": "52949889549",
+      "classid": "7993044870",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Gamma Doppler",
+      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2003138EE7BFA3C6021BFF0023BB072B0533003BEDE994E40043C3056B1F73071B0B5F45",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.028071131557,
+      "seed": 832,
+      "phase": "Emerald"
+    },
+    {
+      "assetid": "52949889548",
+      "classid": "7993045165",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Pandora's Box",
+      "market_hash_name": "★ Sport Gloves | Pandora's Box (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "51981213987",
       "classid": "6918191812",
@@ -553,6 +616,54 @@
         },
         {
           "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52949889547",
+      "classid": "188530330",
+      "instanceid": "7774400235",
+      "amount": 1,
+      "name": "AK-47 | Case Hardened",
+      "market_hash_name": "AK-47 | Case Hardened (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         },
         {
@@ -1273,6 +1384,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52951033668",
+      "classid": "7993044645",
+      "instanceid": "6293827306",
+      "amount": 1,
+      "name": "AWP | Containment Breach",
+      "market_hash_name": "AWP | Containment Breach (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

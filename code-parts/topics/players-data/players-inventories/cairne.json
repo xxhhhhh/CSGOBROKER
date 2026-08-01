@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/0965c421-4957-4e48-86e2-2c3966abae3f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-29T06:15:23.464Z",
+  "updatedAt": "2026-08-01T06:20:06.884Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 48,
-  "totalItemsGrouped": 48,
+  "totalItemsRaw": 59,
+  "totalItemsGrouped": 59,
   "items": [
     {
       "assetid": "52912982670",
@@ -113,12 +113,68 @@
       ]
     },
     {
+      "assetid": "51459411408",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52264537056",
       "classid": "5189384637",
       "instanceid": "302028390",
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45765465446",
+      "classid": "4418618853",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Snakebite Case",
+      "market_hash_name": "Snakebite Case",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -441,6 +497,42 @@
       ]
     },
     {
+      "assetid": "45765465447",
+      "classid": "7993037766",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "M249 | Sage Camo",
+      "market_hash_name": "M249 | Sage Camo (Minimal Wear)",
+      "type": "Consumer Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "47803441681",
       "classid": "7993036141",
       "instanceid": "302028390",
@@ -449,6 +541,42 @@
       "market_hash_name": "MAC-10 | Bronzer (Minimal Wear)",
       "type": "Consumer Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FAEA6B3E407048FBE2EBDA4CF0D2FBCAFEC27D507515F9BA0BF992DA8AE21EB7D07A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50743955340",
+      "classid": "7993036193",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "G3SG1 | Red Jasper",
+      "market_hash_name": "G3SG1 | Red Jasper (Field-Tested)",
+      "type": "Consumer Grade Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1247,42 +1375,6 @@
       ]
     },
     {
-      "assetid": "52582231817",
-      "classid": "8246908041",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "USP-S | Silent Shot",
-      "market_hash_name": "USP-S | Silent Shot (Battle-Scarred)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "42156985677",
       "classid": "241608185",
       "instanceid": "6276728665",
@@ -1379,6 +1471,350 @@
       ]
     },
     {
+      "assetid": "44962409984",
+      "classid": "7993036949",
+      "instanceid": "7274770813",
+      "amount": 1,
+      "name": "Souvenir MAG-7 | Navy Sheen",
+      "market_hash_name": "Souvenir MAG-7 | Navy Sheen (Field-Tested)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51293523064",
+      "classid": "7993038143",
+      "instanceid": "6434591417",
+      "amount": 1,
+      "name": "Souvenir Sawed-Off | Parched",
+      "market_hash_name": "Souvenir Sawed-Off | Parched (Factory New)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44938089376",
+      "classid": "7993037893",
+      "instanceid": "7274761097",
+      "amount": 1,
+      "name": "Souvenir MAC-10 | Sienna Damask",
+      "market_hash_name": "Souvenir MAC-10 | Sienna Damask (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44962411009",
+      "classid": "7993044839",
+      "instanceid": "7274774989",
+      "amount": 1,
+      "name": "Souvenir PP-Bizon | Facility Sketch",
+      "market_hash_name": "Souvenir PP-Bizon | Facility Sketch (Minimal Wear)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44937419575",
+      "classid": "7993039541",
+      "instanceid": "7274763220",
+      "amount": 1,
+      "name": "Souvenir UMP-45 | Mudder",
+      "market_hash_name": "Souvenir UMP-45 | Mudder (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53135263753",
+      "classid": "7993036875",
+      "instanceid": "6276298635",
+      "amount": 1,
+      "name": "Souvenir SSG 08 | Prey",
+      "market_hash_name": "Souvenir SSG 08 | Prey (Factory New)",
+      "type": "Souvenir Consumer Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51415957751",
+      "classid": "7993040295",
+      "instanceid": "6478103724",
+      "amount": 1,
+      "name": "Souvenir G3SG1 | Ancient Ritual",
+      "market_hash_name": "Souvenir G3SG1 | Ancient Ritual (Field-Tested)",
+      "type": "Souvenir Industrial Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "44934948031",
       "classid": "7993041993",
       "instanceid": "7212050507",
@@ -1398,6 +1834,58 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44937330376",
+      "classid": "7993040318",
+      "instanceid": "7274761063",
+      "amount": 1,
+      "name": "Souvenir Galil AR | Amber Fade",
+      "market_hash_name": "Souvenir Galil AR | Amber Fade (Factory New)",
+      "type": "Souvenir Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
           "name": ""
         },
         {
@@ -1456,7 +1944,7 @@
     {
       "assetid": "47400629748",
       "classid": "7993043481",
-      "instanceid": "8713944622",
+      "instanceid": "8719680122",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Isaac",
       "market_hash_name": "StatTrak™ Tec-9 | Isaac (Factory New)",
@@ -1504,7 +1992,7 @@
     {
       "assetid": "51069061199",
       "classid": "7993044533",
-      "instanceid": "7645407258",
+      "instanceid": "8222451847",
       "amount": 1,
       "name": "StatTrak™ FAMAS | ZX Spectron",
       "market_hash_name": "StatTrak™ FAMAS | ZX Spectron (Minimal Wear)",
