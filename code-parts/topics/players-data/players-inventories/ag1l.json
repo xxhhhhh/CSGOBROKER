@@ -7,16 +7,18 @@
   "name": "André Silva",
   "nationality": "Portugal",
   "born": "02.03.2003",
+  "isContentCreator": false,
   "twitch": "ag1l_",
   "faceit": "https://faceitdb.com/profile/faceit/cab254a5-ff3b-4257-8f3d-cc586e798d2b",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-23T07:29:34.498Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 53,
-  "totalItemsGrouped": 53,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-02T06:33:20.631Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 52,
+  "totalItemsGrouped": 52,
   "items": [
     {
       "assetid": "52250484755",
@@ -173,6 +175,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52784040818",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -686,42 +716,6 @@
       "market_hash_name": "M4A4 | Eye of Horus (Field-Tested)",
       "type": "Covert Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C4D46F68336868C5DCD4E423CDECC2F4C0FC780D7230C78401C3ACE2B4CC91119994",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51266112913",
-      "classid": "8246934171",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AWP | Queen's Gambit",
-      "market_hash_name": "AWP | Queen's Gambit (Minimal Wear)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1266,49 +1260,6 @@
       ]
     },
     {
-      "assetid": "22797904860",
-      "classid": "4302203507",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | 100 Thieves (Gold) | 2020 RMR",
-      "market_hash_name": "Sticker | 100 Thieves (Gold) | 2020 RMR",
-      "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C4D4C4DC7DCDE4C4ECC2F4C0A6C1CCC4D460E1ACC4B4CCD856228F",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "22797904860"
-      ]
-    },
-    {
       "assetid": "48894809003",
       "classid": "2697297554",
       "instanceid": "338584038",
@@ -1357,6 +1308,42 @@
       ],
       "assetids": [
         "33543575192"
+      ]
+    },
+    {
+      "assetid": "52784040819",
+      "classid": "7993035682",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "P250 | Red Tide",
+      "market_hash_name": "P250 | Red Tide (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
       ]
     },
     {
@@ -1540,61 +1527,9 @@
       ]
     },
     {
-      "assetid": "50053162652",
-      "classid": "7993038769",
-      "instanceid": "8588007283",
-      "amount": 1,
-      "name": "StatTrak™ AK-47 | Redline",
-      "market_hash_name": "StatTrak™ AK-47 | Redline (Minimal Wear)",
-      "type": "StatTrak™ Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C8D85405527372C9D0CFE852CAE0CDF8C1F01F786238CB8860CE80C8982FCDAACDC0C9D829C9AACDC0CAD829C9AACDC0CBD829C9AADCC0C8D83EF5E5C8C8DB8BF5C8D842718D48F61CF3AADCC0CBD878CFD5C8C848F7F50E7361F68DB80C43F4A0DAB8C0CA416958",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50590324972",
       "classid": "7993037434",
-      "instanceid": "8588286048",
+      "instanceid": "8722587979",
       "amount": 1,
       "name": "StatTrak™ USP-S | Printstream",
       "market_hash_name": "StatTrak™ USP-S | Printstream (Field-Tested)",
@@ -1630,7 +1565,7 @@
     {
       "assetid": "35739605749",
       "classid": "7993039300",
-      "instanceid": "6566285178",
+      "instanceid": "7200845367",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Grinder",
       "market_hash_name": "StatTrak™ Glock-18 | Grinder (Minimal Wear)",

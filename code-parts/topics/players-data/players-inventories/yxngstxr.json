@@ -12,14 +12,42 @@
   "faceit": "https://faceitdb.com/profile/faceit/ab2bf7fd-7997-4a7a-9c94-6b7d52ffd200",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-01T06:09:26.763Z",
+  "updatedAt": "2026-08-02T06:09:54.391Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 40,
-  "totalItemsGrouped": 40,
+  "totalItemsRaw": 42,
+  "totalItemsGrouped": 42,
   "items": [
+    {
+      "assetid": "53141129818",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "52696151564",
       "classid": "5710094579",
@@ -46,6 +74,37 @@
           "category": "Rarity",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "53141130497",
+      "classid": "1989289186",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Bling (Frog Green)",
+      "market_hash_name": "Sealed Graffiti | Bling (Frog Green)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C7D7C7DF03CDE7C7EFC6F7C3A5C0CFC7D707CAF7CEAFC7B7DF219CDF83",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53141130497"
       ]
     },
     {
@@ -993,7 +1052,7 @@
     {
       "assetid": "50285411980",
       "classid": "7993036474",
-      "instanceid": "188578445",
+      "instanceid": "188556910",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Destroyer",
       "market_hash_name": "StatTrak™ Galil AR | Destroyer (Field-Tested)",
