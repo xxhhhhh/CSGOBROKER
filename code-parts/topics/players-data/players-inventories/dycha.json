@@ -12,49 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/ff5a0714-0b89-4646-a6b3-34fc571913ff",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-29T06:30:27.974Z",
+  "updatedAt": "2026-08-03T07:01:18.456Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 112,
-  "totalItemsGrouped": 102,
+  "totalItemsRaw": 115,
+  "totalItemsGrouped": 105,
   "items": [
-    {
-      "assetid": "52895872286",
-      "classid": "7993041062",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Flip Knife | Gamma Doppler",
-      "market_hash_name": "★ Flip Knife | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6DE397A6FBB87C65847E5DC179557B4D7E45A583D6987E3D6415750D79115D8B95",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.020873710513,
-      "seed": 25,
-      "phase": "Phase 4"
-    },
     {
       "assetid": "43467077128",
       "classid": "7993035787",
@@ -146,7 +111,7 @@
       ]
     },
     {
-      "assetid": "47501752558",
+      "assetid": "48566385087",
       "classid": "6195246388",
       "instanceid": "302028390",
       "amount": 11,
@@ -169,6 +134,7 @@
         }
       ],
       "assetids": [
+        "48566385087",
         "47501752558",
         "47266053631",
         "44483331013",
@@ -178,8 +144,7 @@
         "40646439495",
         "40251005864",
         "40106215884",
-        "39987912123",
-        "48566385087"
+        "39987912123"
       ]
     },
     {
@@ -2437,6 +2402,42 @@
       ]
     },
     {
+      "assetid": "52767693119",
+      "classid": "7993038520",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "M4A1-S | Basilisk",
+      "market_hash_name": "M4A1-S | Basilisk (Factory New)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "46712886819",
       "classid": "7993037385",
       "instanceid": "188530139",
@@ -2893,9 +2894,45 @@
       ]
     },
     {
+      "assetid": "52128288837",
+      "classid": "7993037758",
+      "instanceid": "6418757067",
+      "amount": 1,
+      "name": "StatTrak™ AK-47 | Cartel",
+      "market_hash_name": "StatTrak™ AK-47 | Cartel (Field-Tested)",
+      "type": "StatTrak™ Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "39954000653",
       "classid": "7993041773",
-      "instanceid": "1462483425",
+      "instanceid": "1694961778",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
@@ -2926,6 +2963,60 @@
           "category": "Exterior",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "51561837877",
+      "classid": "8451074885",
+      "instanceid": "1309594166",
+      "amount": 1,
+      "name": "StatTrak™ Music Kit | Repiet & Julia Kleijn, On And On",
+      "market_hash_name": "StatTrak™ Music Kit | Repiet & Julia Kleijn, On And On",
+      "type": "StatTrak™ High Grade Music Kit",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F5E5F5ED57FFD5F5DDF6C5FCBDF4A5F59DF585F77DF49314E07CD6",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51561837877"
+      ]
+    },
+    {
+      "assetid": "51561835532",
+      "classid": "8451070313",
+      "instanceid": "1309594166",
+      "amount": 1,
+      "name": "StatTrak™ Music Kit | ShockOne, Voices",
+      "market_hash_name": "StatTrak™ Music Kit | ShockOne, Voices",
+      "type": "StatTrak™ High Grade Music Kit",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EFFFEFF74DE5CFEFC7ECDFE6A7EEBFEF87EF9FED67EE8841980317",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "51561835532"
       ]
     },
     {
@@ -3015,7 +3106,7 @@
     {
       "assetid": "50737561652",
       "classid": "8247059305",
-      "instanceid": "188530722",
+      "instanceid": "188530653",
       "amount": 1,
       "name": "StatTrak™ MP7 | Amberline",
       "market_hash_name": "StatTrak™ MP7 | Amberline (Minimal Wear)",

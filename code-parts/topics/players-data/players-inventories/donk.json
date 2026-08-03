@@ -7,95 +7,19 @@
   "name": "Danil Kryshkovets",
   "nationality": "Russia",
   "born": "25.01.2007",
+  "isContentCreator": false,
   "twitch": "donk1437",
   "faceit": "https://faceitdb.com/profile/faceit/e5e8e2a6-d716-4493-b949-e16965f41654",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-26T05:59:35.825Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 246,
-  "totalItemsGrouped": 117,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-03T06:19:59.856Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 244,
+  "totalItemsGrouped": 115,
   "items": [
-    {
-      "assetid": "50394882850",
-      "classid": "7993040883",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Doppler",
-      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A7B7056134791CA6BF24A38738A48FA197A49F4F7F6D4FA4E71BA5CF46A6D7AFFAC7CF57",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.035808950663,
-      "seed": 316,
-      "phase": "Ruby"
-    },
-    {
-      "assetid": "52449058514",
-      "classid": "7993040007",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Gamma Doppler",
-      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B9A96B046D087AB8A13ABD9901BD91BF89BA8152557050BAF937BFD1A9C9B1BD54655A",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.043569963425,
-      "seed": 782,
-      "phase": "Emerald"
-    },
     {
       "assetid": "52854086964",
       "classid": "7993036088",
@@ -167,41 +91,6 @@
       "phase": "Ruby"
     },
     {
-      "assetid": "52588129430",
-      "classid": "7993044870",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Gamma Doppler",
-      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F9E96F20050A3AF8E105FAD941FDD1FFC9FAC10F7B351DFAB947FE918B89F104A4D2B1",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.017945032567,
-      "seed": 958,
-      "phase": "Emerald"
-    },
-    {
       "assetid": "46667688808",
       "classid": "7993042405",
       "instanceid": "188530139",
@@ -269,34 +158,6 @@
       ]
     },
     {
-      "assetid": "52783140743",
-      "classid": "8250644078",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Driver Gloves | Hand Sweaters",
-      "market_hash_name": "★ Driver Gloves | Hand Sweaters (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "46676632859",
       "classid": "7993037136",
       "instanceid": "188530139",
@@ -331,6 +192,34 @@
       "amount": 1,
       "name": "★ Driver Gloves | Snow Leopard",
       "market_hash_name": "★ Driver Gloves | Snow Leopard (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52918128045",
+      "classid": "7993044914",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Crimson Kimono",
+      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -473,6 +362,34 @@
       "market_hash_name": "★ Sport Gloves | Nocts (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%206777FFFB81D9C3667FC14047BB294F6157645FE693A1976427C6620FB466176F9A1534A7",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52942743400",
+      "classid": "7993036899",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Pandora's Box",
+      "market_hash_name": "★ Sport Gloves | Pandora's Box (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -4186,7 +4103,7 @@
     {
       "assetid": "43981133575",
       "classid": "7993043676",
-      "instanceid": "8697205986",
+      "instanceid": "8726123970",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Factory New)",
@@ -4362,7 +4279,7 @@
     {
       "assetid": "52855043588",
       "classid": "7993038809",
-      "instanceid": "7783937380",
+      "instanceid": "8233754149",
       "amount": 1,
       "name": "StatTrak™ M4A4 | In Living Color",
       "market_hash_name": "StatTrak™ M4A4 | In Living Color (Factory New)",

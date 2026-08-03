@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/d414d5f8-80f0-4799-8ae7-0290dffd85d9",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-02T06:58:50.200Z",
+  "updatedAt": "2026-08-03T07:24:57.644Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 98,
-  "totalItemsGrouped": 96,
+  "totalItemsRaw": 95,
+  "totalItemsGrouped": 93,
   "items": [
     {
       "assetid": "52125268559",
@@ -643,14 +643,14 @@
       ]
     },
     {
-      "assetid": "51995242055",
-      "classid": "1989291089",
+      "assetid": "53161899914",
+      "classid": "1989274052",
       "instanceid": "302028390",
       "amount": 1,
-      "name": "Sealed Graffiti | Backstab (Monarch Blue)",
-      "market_hash_name": "Sealed Graffiti | Backstab (Monarch Blue)",
+      "name": "Graffiti | Backstab (Monarch Blue)",
+      "market_hash_name": "Graffiti | Backstab (Monarch Blue)",
       "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CADACAD20EC0EACAE2CBFACEA8CDC2CADA7EC7FAC6A2CABAD256A6BB16",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242524A975872527A53625630555A5242E65F625E3A52224A5B9FF21A",
       "tags": [
         {
           "category": "Type",
@@ -670,7 +670,7 @@
         }
       ],
       "assetids": [
-        "51995242055"
+        "53161899914"
       ]
     },
     {
@@ -776,6 +776,42 @@
       "amount": 1,
       "name": "Desert Eagle | Heat Treated",
       "market_hash_name": "Desert Eagle | Heat Treated (Well-Worn)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53003717087",
+      "classid": "7993038942",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Dual Berettas | Twin Turbo",
+      "market_hash_name": "Dual Berettas | Twin Turbo (Factory New)",
       "type": "Classified Pistol",
       "inspectLink": "",
       "tags": [
@@ -1038,6 +1074,50 @@
       ]
     },
     {
+      "assetid": "53001971871",
+      "classid": "7993036881",
+      "instanceid": "6277524451",
+      "amount": 1,
+      "name": "SG 553 | Integrale",
+      "market_hash_name": "SG 553 | Integrale (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52126102995",
       "classid": "8247025554",
       "instanceid": "480085569",
@@ -1105,6 +1185,58 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53001296879",
+      "classid": "7993047039",
+      "instanceid": "8287297610",
+      "amount": 1,
+      "name": "MP9 | Storm",
+      "market_hash_name": "MP9 | Storm (Factory New)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -2347,114 +2479,6 @@
       ]
     },
     {
-      "assetid": "52966622869",
-      "classid": "8637410226",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "PP-Bizon | Traitor",
-      "market_hash_name": "PP-Bizon | Traitor (Field-Tested)",
-      "type": "Industrial Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52964024205",
-      "classid": "8637411714",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "PP-Bizon | Traitor",
-      "market_hash_name": "PP-Bizon | Traitor (Minimal Wear)",
-      "type": "Industrial Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52963603747",
-      "classid": "8637411849",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "SCAR-20 | Sirocco Script",
-      "market_hash_name": "SCAR-20 | Sirocco Script (Well-Worn)",
-      "type": "Industrial Grade Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "18819833783",
       "classid": "3608084106",
       "instanceid": "519977179",
@@ -2562,78 +2586,6 @@
         },
         {
           "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52964026340",
-      "classid": "8637413010",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Sawed-Off | Lunar Wyrm",
-      "market_hash_name": "Sawed-Off | Lunar Wyrm (Field-Tested)",
-      "type": "Mil-Spec Grade Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52961257406",
-      "classid": "8637410986",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Sawed-Off | Lunar Wyrm",
-      "market_hash_name": "Sawed-Off | Lunar Wyrm (Well-Worn)",
-      "type": "Mil-Spec Grade Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -2866,42 +2818,6 @@
       ]
     },
     {
-      "assetid": "52964022032",
-      "classid": "8637416572",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "AUG | Lapis Lazuli",
-      "market_hash_name": "AUG | Lapis Lazuli (Well-Worn)",
-      "type": "Restricted Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "18819833530",
       "classid": "7993038732",
       "instanceid": "519977179",
@@ -2976,7 +2892,7 @@
     {
       "assetid": "18819833676",
       "classid": "7993039009",
-      "instanceid": "8711684826",
+      "instanceid": "8727521625",
       "amount": 1,
       "name": "StatTrak™ AWP | Lightning Strike",
       "market_hash_name": "StatTrak™ AWP | Lightning Strike (Factory New)",
@@ -3020,7 +2936,7 @@
     {
       "assetid": "46386474714",
       "classid": "7378658447",
-      "instanceid": "188734383",
+      "instanceid": "480103371",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Adam Beyer, Red Room",
       "market_hash_name": "StatTrak™ Music Kit | Adam Beyer, Red Room",
