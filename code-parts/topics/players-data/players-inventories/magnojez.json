@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b0bf2cc2-198a-4a78-988d-2e7ff7ee6815",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-02T06:16:16.892Z",
+  "updatedAt": "2026-08-04T06:09:29.904Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 68,
-  "totalItemsGrouped": 63,
+  "totalItemsRaw": 64,
+  "totalItemsGrouped": 60,
   "items": [
     {
       "assetid": "52938758583",
@@ -207,37 +207,6 @@
       ],
       "assetids": [
         "50961302741"
-      ]
-    },
-    {
-      "assetid": "51296447585",
-      "classid": "1989320919",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Graffiti | Backstab (Wire Blue)",
-      "market_hash_name": "Sealed Graffiti | Backstab (Wire Blue)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205D4D5D4599577D5D755C6D593F5A555D4DE9506D56355D2D4527B4431C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51296447585"
       ]
     },
     {
@@ -1334,53 +1303,6 @@
       ]
     },
     {
-      "assetid": "52821488388",
-      "classid": "8490800356",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Sticker | Magnojez | Cologne 2026",
-      "market_hash_name": "Sticker | Magnojez | Cologne 2026",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200717071FBE0E27072F04370365020F0717B5526F07770575E169F9",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "52821488388"
-      ]
-    },
-    {
       "assetid": "41980260428",
       "classid": "241585251",
       "instanceid": "6277366399",
@@ -1464,42 +1386,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51236558138",
-      "classid": "7993037416",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "P2000 | Royal Baroque",
-      "market_hash_name": "P2000 | Royal Baroque (Minimal Wear)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1856,14 +1742,14 @@
       ]
     },
     {
-      "assetid": "52676699341",
+      "assetid": "52676282000",
       "classid": "8611523028",
       "instanceid": "143865972",
-      "amount": 6,
+      "amount": 5,
       "name": "Souvenir Charm | Cologne 2026 Highlight | Magnojez 1v3 Clutch",
       "market_hash_name": "Souvenir Charm | Cologne 2026 Highlight | Magnojez 1v3 Clutch",
       "type": "Souvenir High Grade Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20918191895A9BB191B992A19DF991E193339096999181C5C97A971A867F89",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201E0E1E06D5143E1E361D2E12761E6E1CBC1F19161E0E4A46F5185DAB5D6E",
       "tags": [
         {
           "category": "Type",
@@ -1899,7 +1785,6 @@
         }
       ],
       "assetids": [
-        "52676699341",
         "52676282000",
         "52676281999",
         "52676281998",
@@ -2010,7 +1895,7 @@
     {
       "assetid": "47558203428",
       "classid": "7993046832",
-      "instanceid": "480086868",
+      "instanceid": "480087813",
       "amount": 1,
       "name": "StatTrak™ MP9 | Starlight Protector",
       "market_hash_name": "StatTrak™ MP9 | Starlight Protector (Factory New)",
@@ -2073,7 +1958,7 @@
     {
       "assetid": "50410386455",
       "classid": "7993036125",
-      "instanceid": "188690406",
+      "instanceid": "188623808",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Sakkaku",
       "market_hash_name": "StatTrak™ MAC-10 | Sakkaku (Field-Tested)",

@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/players/meowsui/",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-28T07:05:31.924Z",
+  "updatedAt": "2026-08-04T05:48:20.534Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 847,
-  "totalItemsGrouped": 726,
+  "totalItemsRaw": 849,
+  "totalItemsGrouped": 728,
   "items": [
     {
       "assetid": "47476789264",
@@ -10963,9 +10963,9 @@
       ]
     },
     {
-      "assetid": "52322194852",
+      "assetid": "52322195010",
       "classid": "6216350378",
-      "instanceid": "519977179",
+      "instanceid": "0",
       "amount": 26,
       "name": "Charm | Baby Karat CT",
       "market_hash_name": "Charm | Baby Karat CT",
@@ -10990,6 +10990,8 @@
         }
       ],
       "assetids": [
+        "52322195010",
+        "52322194853",
         "52322194852",
         "52322194851",
         "52322194636",
@@ -11013,9 +11015,7 @@
         "52322335224",
         "52322335223",
         "52322195498",
-        "52322195220",
-        "52322195010",
-        "52322194853"
+        "52322195220"
       ]
     },
     {
@@ -13014,6 +13014,49 @@
       ]
     },
     {
+      "assetid": "53164786447",
+      "classid": "7729092946",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | G2 esports | Budapest 2025",
+      "market_hash_name": "Sticker | G2 esports | Budapest 2025",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208D9D8D953484AD8DA58EBD89EF88858D9D24C7E58DFD851A32A735",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53164786447"
+      ]
+    },
+    {
       "assetid": "46518730372",
       "classid": "6216349297",
       "instanceid": "519977179",
@@ -13342,6 +13385,53 @@
       ],
       "assetids": [
         "26799362849"
+      ]
+    },
+    {
+      "assetid": "53164681697",
+      "classid": "7729089228",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | StarLadder | Budapest 2025",
+      "market_hash_name": "Sticker | StarLadder | Budapest 2025",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EDFDEDF554E4CDEDC5EEDDE98FE8E5EDFD7CA685ED9DE5BE8181DD",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53164681697"
       ]
     },
     {

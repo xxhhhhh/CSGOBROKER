@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e50676d1-ea6c-4876-893f-53aac4b6dc6f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-29T06:30:16.594Z",
+  "updatedAt": "2026-08-04T06:26:28.170Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 177,
-  "totalItemsGrouped": 120,
+  "totalItemsRaw": 179,
+  "totalItemsGrouped": 122,
   "items": [
     {
       "assetid": "49512962082",
@@ -146,6 +146,34 @@
       "amount": 1,
       "name": "Kilowatt Case",
       "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53170819895",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -880,6 +908,42 @@
       "market_hash_name": "G3SG1 | Desert Storm (Battle-Scarred)",
       "type": "Consumer Grade Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%2068788CA2BB80C469706348604069586C50FEDBC69F6B28AF6F006B1870F2FC7B4C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53170821194",
+      "classid": "7993036193",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "G3SG1 | Red Jasper",
+      "market_hash_name": "G3SG1 | Red Jasper (Field-Tested)",
+      "type": "Consumer Grade Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3600,7 +3664,7 @@
       ]
     },
     {
-      "assetid": "52802843560",
+      "assetid": "52802843561",
       "classid": "8491421132",
       "instanceid": "143865972",
       "amount": 18,
@@ -3643,6 +3707,7 @@
         }
       ],
       "assetids": [
+        "52802843561",
         "52802843560",
         "52802843559",
         "52802843558",
@@ -3659,8 +3724,7 @@
         "52263385017",
         "52263385016",
         "51840036663",
-        "51840036662",
-        "52802843561"
+        "51840036662"
       ]
     },
     {
@@ -4656,7 +4720,7 @@
     {
       "assetid": "43307847859",
       "classid": "7993045461",
-      "instanceid": "6366143339",
+      "instanceid": "6321368381",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Malachite",
       "market_hash_name": "StatTrak™ MAC-10 | Malachite (Factory New)",
