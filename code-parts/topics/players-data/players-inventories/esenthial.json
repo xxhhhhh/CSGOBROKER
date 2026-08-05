@@ -7,16 +7,18 @@
   "name": "Dmytro Tsvir",
   "nationality": "Ukraine",
   "born": "26.02.2006",
+  "isContentCreator": false,
   "twitch": "esenthial",
   "faceit": "https://faceitdb.com/profile/faceit/a7774769-fb6a-4244-94b2-5a012b7df012",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-30T05:55:53.363Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 133,
-  "totalItemsGrouped": 121,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-05T06:02:19.988Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 122,
+  "totalItemsGrouped": 110,
   "items": [
     {
       "assetid": "52209323972",
@@ -116,7 +118,7 @@
     {
       "assetid": "51326262258",
       "classid": "7993051857",
-      "instanceid": "188533911",
+      "instanceid": "188531245",
       "amount": 1,
       "name": "★ StatTrak™ Karambit | Fade",
       "market_hash_name": "★ StatTrak™ Karambit | Fade (Factory New)",
@@ -467,258 +469,6 @@
       ]
     },
     {
-      "assetid": "47293889812",
-      "classid": "7993037579",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "P250 | Asiimov",
-      "market_hash_name": "P250 | Asiimov (Field-Tested)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E0F0741A5D7750E1F8C4C047E4C8E5D0E4D80B486416E3A07DE588CA90E4A0E5F0D4",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47968141322",
-      "classid": "7993038079",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P2000 | Wicked Sick",
-      "market_hash_name": "P2000 | Wicked Sick (Field-Tested)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2007178D87F8DFB5061F2727CF0E2F0237033FE2A8A8F50447F4036F61770F193E02AF",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "41592749367",
-      "classid": "7993040510",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Tec-9 | Fuel Injector",
-      "market_hash_name": "Tec-9 | Fuel Injector (Battle-Scarred)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20213196DBDAD9BB20393F01C7250924112519DBE1FCD9226167496D5129B6BCA59F",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50276805752",
-      "classid": "8246907255",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AK-47 | Crane Flight",
-      "market_hash_name": "AK-47 | Crane Flight (Field-Tested)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200A1AF2D2E6AFB10B120D2A9B01220F3A0E32A8B0F7F9094ACD0B62497A0278598716",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "42281790578",
-      "classid": "7993036868",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "AK-47 | Ice Coaled",
-      "market_hash_name": "AK-47 | Ice Coaled (Minimal Wear)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205545A78D9694C8544D5275A25D7D5065516D89BFE2A55615573D102551D468165F",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "43154739032",
-      "classid": "7993037324",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AK-47 | Searing Rage",
-      "market_hash_name": "AK-47 | Searing Rage (Factory New)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A8B870364C4908A9B0AF881FA180AD98AC9055433341ABE80EAAC047A9D8A0F4A88FBA",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47293907004",
-      "classid": "7993041077",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "AUG | Syd Mead",
-      "market_hash_name": "AUG | Syd Mead (Field-Tested)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20392985B986AE8938213119E03D113C093D01E5ACCDCD3A79C8385133493D8449AA01",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "42209399400",
       "classid": "7993037577",
       "instanceid": "6276326098",
@@ -775,42 +525,6 @@
       "market_hash_name": "M4A1-S | Black Lotus (Field-Tested)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%208C9C05131C471A8D94B0AC0285A489BC88B42827707D8FCC158EE49CFC841E029D2C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47293900798",
-      "classid": "7993039121",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "UMP-45 | Primal Saber",
-      "market_hash_name": "UMP-45 | Primal Saber (Field-Tested)",
-      "type": "Classified SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BDAD4372032A0DBCA5A59D11B995B88DB9851D6A514EBEFD7CBBD5DCCDB973DF01D5",
       "tags": [
         {
           "category": "Type",
@@ -3281,78 +2995,6 @@
       ]
     },
     {
-      "assetid": "47293723598",
-      "classid": "7993038989",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "CZ75-Auto | Red Astor",
-      "market_hash_name": "CZ75-Auto | Red Astor (Field-Tested)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A1B16F46123611A0B99E813EA589A591A599233E7355A2E168A7C908A0D1A5D2067907",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "45310915845",
-      "classid": "7993036900",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Desert Eagle | Serpent Strike",
-      "market_hash_name": "Desert Eagle | Serpent Strike (Field-Tested)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BAAA3F504C5F12BBA2BB9A1FB392BE8ABE821B6F444AB9FA39BDD238B8CAB243A07B88",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "40849631197",
       "classid": "7993037942",
       "instanceid": "188530139",
@@ -3361,42 +3003,6 @@
       "market_hash_name": "Dual Berettas | Hydro Strike (Minimal Wear)",
       "type": "Restricted Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E1F13C2E2E7779E0F9E3C191C9E5D1E5D9245A5D0CE2A130E789C991E97AF5FA27",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49493811407",
-      "classid": "7993038476",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Five-SeveN | Heat Treated",
-      "market_hash_name": "Five-SeveN | Heat Treated (Minimal Wear)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6DB2BCC3CDC57C657E5DC27B55794D7945B8ACC9907E3D9A79154E0D6A068CBCFD",
       "tags": [
         {
           "category": "Type",
@@ -3743,7 +3349,7 @@
     {
       "assetid": "40833557398",
       "classid": "7993040539",
-      "instanceid": "6578080577",
+      "instanceid": "6368467394",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Neo-Noir",
       "market_hash_name": "StatTrak™ Glock-18 | Neo-Noir (Field-Tested)",
@@ -3779,7 +3385,7 @@
     {
       "assetid": "48988990657",
       "classid": "7993042570",
-      "instanceid": "518268429",
+      "instanceid": "482504718",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Battle-Scarred)",
@@ -3815,7 +3421,7 @@
     {
       "assetid": "52195039513",
       "classid": "7993042962",
-      "instanceid": "8713986169",
+      "instanceid": "8722778663",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Bloodsport",
       "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Minimal Wear)",
@@ -3871,7 +3477,7 @@
     {
       "assetid": "40638391841",
       "classid": "7993039530",
-      "instanceid": "6312636407",
+      "instanceid": "6281797834",
       "amount": 1,
       "name": "StatTrak™ M4A4 | In Living Color",
       "market_hash_name": "StatTrak™ M4A4 | In Living Color (Minimal Wear)",
@@ -3907,7 +3513,7 @@
     {
       "assetid": "42315536011",
       "classid": "1325750685",
-      "instanceid": "1324613437",
+      "instanceid": "1332139175",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Sasha, LNOE",
       "market_hash_name": "StatTrak™ Music Kit | Sasha, LNOE",
@@ -3970,7 +3576,7 @@
     {
       "assetid": "43154542072",
       "classid": "7993042483",
-      "instanceid": "480103897",
+      "instanceid": "480123363",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Serpent Strike",
       "market_hash_name": "StatTrak™ Desert Eagle | Serpent Strike (Battle-Scarred)",
@@ -4042,7 +3648,7 @@
     {
       "assetid": "47293931417",
       "classid": "7993037934",
-      "instanceid": "903900585",
+      "instanceid": "903924571",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Hybrid",
       "market_hash_name": "StatTrak™ Five-SeveN | Hybrid (Field-Tested)",
@@ -4222,7 +3828,7 @@
     {
       "assetid": "42281572544",
       "classid": "7993038840",
-      "instanceid": "188548697",
+      "instanceid": "188545324",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Ghost Crusader",
       "market_hash_name": "StatTrak™ SSG 08 | Ghost Crusader (Minimal Wear)",

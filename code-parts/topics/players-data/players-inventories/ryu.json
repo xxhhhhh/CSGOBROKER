@@ -7,24 +7,26 @@
   "name": "Gytis Glušauskas",
   "nationality": "Lithuania",
   "born": "25.07.2004",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/d5fa1a5b-9fde-4996-bd1e-bab0aa9bb0d2",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-10T06:54:38.104Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 63,
-  "totalItemsGrouped": 63,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-05T05:53:54.663Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 68,
+  "totalItemsGrouped": 68,
   "items": [
     {
-      "assetid": "51924838128",
-      "classid": "7993042582",
+      "assetid": "52660964628",
+      "classid": "304272494",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Butterfly Knife | Fade",
-      "market_hash_name": "★ Butterfly Knife | Fade (Factory New)",
+      "name": "★ Gut Knife",
+      "market_hash_name": "★ Gut Knife",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -34,10 +36,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -55,14 +53,14 @@
       ]
     },
     {
-      "assetid": "52568760910",
-      "classid": "7993038712",
+      "assetid": "52773912149",
+      "classid": "7993045582",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Talon Knife | Doppler",
-      "market_hash_name": "★ Talon Knife | Doppler (Factory New)",
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E1F1341D262D25E0F91DE2C17EE2C9E7D1E2D90D60130BE2A1FA89CC91E9556843F9",
       "tags": [
         {
           "category": "Type",
@@ -70,10 +68,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -88,15 +82,18 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.053833886981,
+      "seed": 27,
+      "phase": "Ruby"
     },
     {
-      "assetid": "50713825592",
-      "classid": "7993039831",
+      "assetid": "52720930989",
+      "classid": "7993041878",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Driver Gloves | Snow Leopard",
-      "market_hash_name": "★ Driver Gloves | Snow Leopard (Well-Worn)",
+      "name": "★ Specialist Gloves | Crimson Kimono",
+      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -125,6 +122,34 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Lime Polycam",
       "market_hash_name": "★ Specialist Gloves | Lime Polycam (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53033807891",
+      "classid": "7993040558",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -487,12 +512,120 @@
       ]
     },
     {
+      "assetid": "52644326894",
+      "classid": "7993040411",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AK-47 | Neon Rider",
+      "market_hash_name": "AK-47 | Neon Rider (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52312030986",
       "classid": "7993035494",
       "instanceid": "6276582960",
       "amount": 1,
       "name": "M4A1-S | Printstream",
       "market_hash_name": "M4A1-S | Printstream (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52644326896",
+      "classid": "7993038229",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M4A4 | Eye of Horus",
+      "market_hash_name": "M4A4 | Eye of Horus (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52644326893",
+      "classid": "7993039458",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M4A4 | Neo-Noir",
+      "market_hash_name": "M4A4 | Neo-Noir (Field-Tested)",
       "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
@@ -1519,6 +1652,70 @@
       ]
     },
     {
+      "assetid": "52644326895",
+      "classid": "7993039496",
+      "instanceid": "8550849869",
+      "amount": 1,
+      "name": "Desert Eagle | Crimson Web",
+      "market_hash_name": "Desert Eagle | Crimson Web (Minimal Wear)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "36268567181",
       "classid": "7993036644",
       "instanceid": "188530139",
@@ -1717,7 +1914,7 @@
     {
       "assetid": "45872339636",
       "classid": "7993039005",
-      "instanceid": "8482437245",
+      "instanceid": "8722182026",
       "amount": 1,
       "name": "StatTrak™ USP-S | Cortex",
       "market_hash_name": "StatTrak™ USP-S | Cortex (Field-Tested)",
@@ -1753,7 +1950,7 @@
     {
       "assetid": "30896644061",
       "classid": "7993041229",
-      "instanceid": "480096022",
+      "instanceid": "480087260",
       "amount": 1,
       "name": "StatTrak™ MP9 | Food Chain",
       "market_hash_name": "StatTrak™ MP9 | Food Chain (Well-Worn)",
@@ -1789,7 +1986,7 @@
     {
       "assetid": "38236617600",
       "classid": "7993040836",
-      "instanceid": "188741507",
+      "instanceid": "188678355",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Angry Mob",
       "market_hash_name": "StatTrak™ Five-SeveN | Angry Mob (Field-Tested)",

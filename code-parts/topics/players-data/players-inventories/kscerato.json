@@ -12,53 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/c365e0fe-ae29-41d7-b331-ed8904e32d2b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-04T05:46:15.060Z",
+  "updatedAt": "2026-08-05T05:44:52.149Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 42,
-  "totalItemsGrouped": 41,
+  "totalItemsRaw": 35,
+  "totalItemsGrouped": 34,
   "items": [
-    {
-      "assetid": "47097043357",
-      "classid": "7993040524",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Doppler",
-      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200F1F92BCC0B6A00E178C0B2FE40B27093F0C3792CB9EE80C4FC90D670E7F075B75EBF3",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.027878815308,
-      "seed": 326,
-      "phase": "Sapphire"
-    },
     {
       "assetid": "53014686470",
       "classid": "7993040007",
@@ -99,75 +60,12 @@
       "phase": "Emerald"
     },
     {
-      "assetid": "44122267727",
-      "classid": "7993042978",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Doppler",
-      "market_hash_name": "★ Karambit | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C1D10E01506E65C0D93AC2E15EC2E9C7F1C2F928562327C281A2A9C0B1C9C6A24AE9",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.026433901861,
-      "seed": 99,
-      "phase": "Ruby"
-    },
-    {
       "assetid": "52709662833",
       "classid": "7993042207",
       "instanceid": "480085569",
       "amount": 1,
       "name": "★ Sport Gloves | Hedge Maze",
       "market_hash_name": "★ Sport Gloves | Hedge Maze (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50159610680",
-      "classid": "7993045165",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Sport Gloves | Pandora's Box",
-      "market_hash_name": "★ Sport Gloves | Pandora's Box (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -246,13 +144,13 @@
       ]
     },
     {
-      "assetid": "42208534984",
-      "classid": "7993039570",
-      "instanceid": "480085569",
+      "assetid": "39186637244",
+      "classid": "201965307",
+      "instanceid": "7776785575",
       "amount": 1,
-      "name": "Desert Eagle | Starcade",
-      "market_hash_name": "Desert Eagle | Starcade (Factory New)",
-      "type": "Classified Pistol",
+      "name": "AWP | Graphite",
+      "market_hash_name": "AWP | Graphite (Factory New)",
+      "type": "Classified Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -278,41 +176,17 @@
         {
           "category": "Exterior",
           "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50806961762",
-      "classid": "8246925102",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "AWP | Queen's Gambit",
-      "market_hash_name": "AWP | Queen's Gambit (Field-Tested)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
+        },
         {
-          "category": "Type",
+          "category": "Tournament",
           "name": ""
         },
         {
-          "category": "Weapon",
+          "category": "TournamentTeam",
           "name": ""
         },
         {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -929,114 +803,6 @@
       ]
     },
     {
-      "assetid": "49668594084",
-      "classid": "7993062167",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Five-SeveN | Fraise Crane",
-      "market_hash_name": "Five-SeveN | Fraise Crane (Factory New)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48642006172",
-      "classid": "241608185",
-      "instanceid": "6276586489",
-      "amount": 1,
-      "name": "MP9 | Hot Rod",
-      "market_hash_name": "MP9 | Hot Rod (Factory New)",
-      "type": "Mil-Spec Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "44608363187",
-      "classid": "7993038304",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Dual Berettas | Sweet Little Angels",
-      "market_hash_name": "Dual Berettas | Sweet Little Angels (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53014686471",
       "classid": "7993044046",
       "instanceid": "480085569",
@@ -1133,9 +899,53 @@
       ]
     },
     {
+      "assetid": "18694600037",
+      "classid": "7993040848",
+      "instanceid": "8699802588",
+      "amount": 1,
+      "name": "StatTrak™ Galil AR | Eco",
+      "market_hash_name": "StatTrak™ Galil AR | Eco (Field-Tested)",
+      "type": "StatTrak™ Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "43862070364",
       "classid": "7993046572",
-      "instanceid": "8729230906",
+      "instanceid": "8731922796",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Factory New)",
@@ -1180,70 +990,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "42274130399",
-      "classid": "7993037236",
-      "instanceid": "8706048900",
-      "amount": 1,
-      "name": "StatTrak™ SSG 08 | Dark Water",
-      "market_hash_name": "StatTrak™ SSG 08 | Dark Water (Minimal Wear)",
-      "type": "StatTrak™ Mil-Spec Grade Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         },
         {
