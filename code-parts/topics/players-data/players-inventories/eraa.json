@@ -7,16 +7,18 @@
   "name": "Sean Knutsson",
   "nationality": "Sweden",
   "born": "12.08.2001",
+  "isContentCreator": false,
   "twitch": "eraab0b",
   "faceit": "https://faceitdb.com/profile/faceit/aa479f4d-cefa-4bee-a1fa-8d2c9ed5d092",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-30T06:02:13.845Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 77,
-  "totalItemsGrouped": 76,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-06T06:10:56.188Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 78,
+  "totalItemsGrouped": 77,
   "items": [
     {
       "assetid": "52658881615",
@@ -56,6 +58,38 @@
       "float": 0.0199497547,
       "seed": 963,
       "phase": "Sapphire"
+    },
+    {
+      "assetid": "53048429957",
+      "classid": "7993038461",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Flip Knife | Marble Fade",
+      "market_hash_name": "★ Flip Knife | Marble Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "50434055359",
@@ -391,6 +425,50 @@
       ]
     },
     {
+      "assetid": "53048433273",
+      "classid": "7993038650",
+      "instanceid": "6276509575",
+      "amount": 1,
+      "name": "Galil AR | Eco",
+      "market_hash_name": "Galil AR | Eco (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "41886430760",
       "classid": "7993038030",
       "instanceid": "6278076364",
@@ -567,6 +645,42 @@
       ]
     },
     {
+      "assetid": "53048433627",
+      "classid": "7993035767",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "SSG 08 | Bloodshot",
+      "market_hash_name": "SSG 08 | Bloodshot (Field-Tested)",
+      "type": "Classified Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50375828688",
       "classid": "7993036126",
       "instanceid": "6302324304",
@@ -598,50 +712,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52865468518",
-      "classid": "7993036593",
-      "instanceid": "6294130349",
-      "amount": 1,
-      "name": "USP-S | Kill Confirmed",
-      "market_hash_name": "USP-S | Kill Confirmed (Minimal Wear)",
-      "type": "Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1508,54 +1578,6 @@
       ]
     },
     {
-      "assetid": "52865615177",
-      "classid": "7993038625",
-      "instanceid": "7755909680",
-      "amount": 1,
-      "name": "Souvenir Desert Eagle | Fennec Fox",
-      "market_hash_name": "Souvenir Desert Eagle | Fennec Fox (Minimal Wear)",
-      "type": "Souvenir Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "40844761483",
       "classid": "7993042464",
       "instanceid": "6472927931",
@@ -1834,7 +1856,7 @@
     {
       "assetid": "51049023471",
       "classid": "7993039979",
-      "instanceid": "6322786452",
+      "instanceid": "6313041624",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Shinobu",
       "market_hash_name": "StatTrak™ Glock-18 | Shinobu (Well-Worn)",
@@ -1914,7 +1936,7 @@
     {
       "assetid": "38386976540",
       "classid": "7993044408",
-      "instanceid": "8690391497",
+      "instanceid": "8736339598",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Case Hardened",
       "market_hash_name": "StatTrak™ AK-47 | Case Hardened (Field-Tested)",
@@ -2014,7 +2036,7 @@
     {
       "assetid": "52938656309",
       "classid": "8247005394",
-      "instanceid": "7596445899",
+      "instanceid": "7596910036",
       "amount": 1,
       "name": "StatTrak™ AWP | Queen's Gambit",
       "market_hash_name": "StatTrak™ AWP | Queen's Gambit (Minimal Wear)",
@@ -2605,7 +2627,7 @@
     {
       "assetid": "44260801730",
       "classid": "7993039771",
-      "instanceid": "8646746025",
+      "instanceid": "8736339597",
       "amount": 1,
       "name": "StatTrak™ USP-S | Ticket to Hell",
       "market_hash_name": "StatTrak™ USP-S | Ticket to Hell (Factory New)",
@@ -2837,7 +2859,7 @@
     {
       "assetid": "22621438904",
       "classid": "7993038202",
-      "instanceid": "8705793229",
+      "instanceid": "6537673432",
       "amount": 1,
       "name": "StatTrak™ MP9 | Ruby Poison Dart",
       "market_hash_name": "StatTrak™ MP9 | Ruby Poison Dart (Factory New)",
