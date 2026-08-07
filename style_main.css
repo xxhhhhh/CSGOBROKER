@@ -13416,6 +13416,10 @@ header {
     display: none;
 }
 
+.box.ggband {
+    display: none;
+}
+
 .box.animate-in {
     animation: fadeInBoxes .4s ease-in-out forwards;
 }
