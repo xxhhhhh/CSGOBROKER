@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b0bf2cc2-198a-4a78-988d-2e7ff7ee6815",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-07T05:16:34.740Z",
+  "updatedAt": "2026-08-08T04:31:38.425Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 67,
-  "totalItemsGrouped": 63,
+  "totalItemsRaw": 99,
+  "totalItemsGrouped": 71,
   "items": [
     {
       "assetid": "52938758583",
@@ -98,6 +98,34 @@
       "amount": 1,
       "name": "★ Moto Gloves | Spearmint",
       "market_hash_name": "★ Moto Gloves | Spearmint (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53065027864",
+      "classid": "7993035749",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Fade",
+      "market_hash_name": "★ Specialist Gloves | Fade (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -825,6 +853,100 @@
       ]
     },
     {
+      "assetid": "53072192427",
+      "classid": "8711931850",
+      "instanceid": "8711949318",
+      "amount": 2,
+      "name": "Sticker | BetBoom (Holo, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | BetBoom (Holo, Ranked) | Cologne 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ACBCACB415A58CAC84A99CA8CEA9A4ACBC31F4C4ACDCAEE8FFB697",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53072192427",
+        "53072192426"
+      ]
+    },
+    {
+      "assetid": "53072192443",
+      "classid": "8711948474",
+      "instanceid": "8711949318",
+      "amount": 4,
+      "name": "Sticker | Magnojez (Holo, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | Magnojez (Holo, Ranked) | Cologne 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201F0F1F07A6163F1F371A2F1B7D1A171F0FEF45771F6F1DC024CA57",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53072192443",
+        "53072192442",
+        "53072192441",
+        "53072192444"
+      ]
+    },
+    {
       "assetid": "48178084286",
       "classid": "7104843408",
       "instanceid": "188530139",
@@ -1308,6 +1430,53 @@
       ]
     },
     {
+      "assetid": "53072192440",
+      "classid": "8711958206",
+      "instanceid": "8711949318",
+      "amount": 1,
+      "name": "Sticker | Magnojez (Gold, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | Magnojez (Gold, Ranked) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E4F4E4FC5DEDC4E4CCE2D4E086E1ECE4F415BE8CE494E61AACA83B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53072192440"
+      ]
+    },
+    {
       "assetid": "33545423082",
       "classid": "5537026493",
       "instanceid": "0",
@@ -1585,6 +1754,158 @@
       ]
     },
     {
+      "assetid": "53072192429",
+      "classid": "8711940494",
+      "instanceid": "8711949318",
+      "amount": 2,
+      "name": "Sticker | BetBoom (Foil, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | BetBoom (Foil, Ranked) | Cologne 2026",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ACBCACB415A58CAC84A89CA8CEA9A4ACBC30F4C4ACDCAEE5286B0E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53072192429",
+        "53072192428"
+      ]
+    },
+    {
+      "assetid": "53072192439",
+      "classid": "8711954597",
+      "instanceid": "8711949318",
+      "amount": 11,
+      "name": "Sticker | Magnojez (Foil, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | Magnojez (Foil, Ranked) | Cologne 2026",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200515051DBC0C25052D01350167000D0515EA5F6D0575079384E3E4",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53072192439",
+        "53072192438",
+        "53072192437",
+        "53072192436",
+        "53072192435",
+        "53072192434",
+        "53072192433",
+        "53072192432",
+        "53072192431",
+        "53072192430",
+        "53072140219"
+      ]
+    },
+    {
+      "assetid": "53072192420",
+      "classid": "8490816229",
+      "instanceid": "8711949318",
+      "amount": 5,
+      "name": "Sticker | Magnojez (Foil) | Cologne 2026",
+      "market_hash_name": "Sticker | Magnojez (Foil) | Cologne 2026",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D3C3D3CB6ADAF3D3FBD7E3D7B1D6DBD3C36086BBD3A3D102E9B21B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53072192420",
+        "53072192419",
+        "53072192418",
+        "53072192417",
+        "53072192416"
+      ]
+    },
+    {
       "assetid": "49532556762",
       "classid": "188530424",
       "instanceid": "8077993848",
@@ -1841,14 +2162,78 @@
       ]
     },
     {
-      "assetid": "52676282000",
+      "assetid": "53065027865",
+      "classid": "7993039502",
+      "instanceid": "7755546208",
+      "amount": 1,
+      "name": "Souvenir M4A1-S | Knight",
+      "market_hash_name": "Souvenir M4A1-S | Knight (Factory New)",
+      "type": "Souvenir Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53072192425",
       "classid": "8611523028",
-      "instanceid": "143865972",
-      "amount": 5,
+      "instanceid": "8711949318",
+      "amount": 10,
       "name": "Souvenir Charm | Cologne 2026 Highlight | Magnojez 1v3 Clutch",
       "market_hash_name": "Souvenir Charm | Cologne 2026 Highlight | Magnojez 1v3 Clutch",
       "type": "Souvenir High Grade Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201E0E1E06D5143E1E361D2E12761E6E1CBC1F19161E0E4A46F5185DAB5D6E",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203525352DFE3F15351D3605395D3545379734323D3525616DDE33031F611D",
       "tags": [
         {
           "category": "Type",
@@ -1884,6 +2269,11 @@
         }
       ],
       "assetids": [
+        "53072192425",
+        "53072192424",
+        "53072192423",
+        "53072192422",
+        "53072192421",
         "52676282000",
         "52676281999",
         "52676281998",
@@ -1994,7 +2384,7 @@
     {
       "assetid": "47558203428",
       "classid": "7993046832",
-      "instanceid": "480090259",
+      "instanceid": "188689634",
       "amount": 1,
       "name": "StatTrak™ MP9 | Starlight Protector",
       "market_hash_name": "StatTrak™ MP9 | Starlight Protector (Factory New)",
@@ -2057,7 +2447,7 @@
     {
       "assetid": "50410386455",
       "classid": "7993036125",
-      "instanceid": "188542656",
+      "instanceid": "188577966",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Sakkaku",
       "market_hash_name": "StatTrak™ MAC-10 | Sakkaku (Field-Tested)",
