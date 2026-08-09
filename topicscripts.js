@@ -172,7 +172,9 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
   function insertRandomRecBox() {
     try {
-      if (location.href.endsWith("sticker-crafts") || location.href.endsWith("sticker-crafts.html")) return;
+      const pathname = window.location.pathname.replace(/\/+$/, "");
+
+      if (/\/topic\/sticker-crafts(?:\.html)?$/i.test(pathname)) return;
 
       const lang = typeof languageTag !== "undefined" ? languageTag : "en";
       const recCount = 4;

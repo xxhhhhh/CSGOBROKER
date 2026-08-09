@@ -375,27 +375,6 @@ nav .pages {
     order: 1;
 }
 
-/* .rec-box::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    left: 4px;
-    right: 4px;
-    top: 4px;
-    bottom: 4px;
-    background: linear-gradient(-45deg, var(--darkgray) 50%, rgb(14, 14, 14) 100%);
-    opacity: .8;
-    border-radius: var(--main-border);
-} */
-
-.topic-boxes-holder .rec-box {
-    height: 250px;
-    order: -1;
-    margin: 18px 9px 0 9px;
-    top: 0;
-    left: 0;
-}
-
 .rec-box.active,
 .players-box.recs {
   animation: fadeIn .3s ease-in-out forwards;
@@ -587,6 +566,10 @@ nav .pages {
     z-index: 1;
     gap: 8px;
     order: 2;
+}
+
+.topic-boxes-holder .best-alternates {
+    width: 300px;
 }
 
 .best-alternates .rec-box:nth-child(3) .content {
@@ -919,6 +902,10 @@ nav .pages {
     position: relative;
     top: -20px;
     max-width: 90%;
+}
+
+.topic-craft .section {
+    z-index: 12;
 }
 
 .section.second:not(.character) {
@@ -6224,17 +6211,8 @@ nav img {
     overflow: hidden;
 }
 
-/* .sticker .topic-box .logobg,
-.topic-craft:not(.loadout) .topic-grandbox .topic-box .logobg {
-    margin: 8px 8px 0 8px;
-    background: var(--icongradient);
-    background: var(--icongradient3);
-    mask-image: unset;
-    -webkit-mask-image: unset;
-} */
-
-.topic-boxes-holder .topic-box:not(.player-box):hover .logobg,
-.topic-boxes-holder .topic-grandbox:hover .topic-box .logobg {
+.topic-boxes-holder .topic-grandbox:not(.sticker) .topic-box:not(.player-box):hover .logobg,
+.topic-boxes-holder .topic-grandbox:not(.sticker):hover .topic-box .logobg {
     transform: scale(1.03);
     margin: 6px 8px 9px 8px;
     margin: 4px 6px 4px 6px;
@@ -11459,8 +11437,7 @@ div#results {
     content: 'Дорого';
 }
 
-.sitepage.topic-craft .topic-box:hover .logobg,
-.topic-boxes-holder .topic-grandbox.sticker .topic-box:hover .logobg {
+.sitepage.topic-craft .topic-box:hover .logobg {
     transform: unset;
 }
 
