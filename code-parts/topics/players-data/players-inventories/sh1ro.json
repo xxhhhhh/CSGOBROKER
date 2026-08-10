@@ -12,49 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/168530f8-107a-4e0a-b641-655d2f1594de",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-08T04:10:26.636Z",
+  "updatedAt": "2026-08-10T04:28:41.399Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 164,
-  "totalItemsGrouped": 160,
+  "totalItemsRaw": 167,
+  "totalItemsGrouped": 162,
   "items": [
-    {
-      "assetid": "47389451625",
-      "classid": "7993044866",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Flip Knife | Doppler",
-      "market_hash_name": "★ Flip Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DBCB32115D1E6BDAC322D8FB44D8F3DDEBD8E356754D33D89BA3B3C7ABD30762ACA3",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.032614756376,
-      "seed": 120,
-      "phase": "Ruby"
-    },
     {
       "assetid": "50858440493",
       "classid": "7993045582",
@@ -128,7 +93,7 @@
     {
       "assetid": "53068939291",
       "classid": "7993037832",
-      "instanceid": "8711119547",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Skeleton Knife | Fade",
       "market_hash_name": "★ Skeleton Knife | Fade (Factory New)",
@@ -198,34 +163,6 @@
       "market_hash_name": "★ Specialist Gloves | Marble Fade (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6D86F2BE91FB7C65D75A5DAC33557B4D7E4592AAA68D7E3D997C155B0D751CCAF0E2",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52418012460",
-      "classid": "8256297577",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Specialist Gloves | Pillow Punchers",
-      "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Factory New)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -382,6 +319,42 @@
       ],
       "assetids": [
         "50010282573"
+      ]
+    },
+    {
+      "assetid": "53080348725",
+      "classid": "4292377292",
+      "instanceid": "143865972",
+      "amount": 2,
+      "name": "2020 RMR Legends",
+      "market_hash_name": "2020 RMR Legends",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53080348725",
+        "53080348724"
       ]
     },
     {
@@ -1254,6 +1227,62 @@
     },
     {
       "assetid": "50008402322",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53080348721",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53080348723",
       "classid": "4717330486",
       "instanceid": "302028390",
       "amount": 1,
@@ -3095,6 +3124,53 @@
       ]
     },
     {
+      "assetid": "53080348722",
+      "classid": "5799824878",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | NiKo (Holo) | Copenhagen 2024",
+      "market_hash_name": "Sticker | NiKo (Holo) | Copenhagen 2024",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203424342C8D3D14341C31043056313C3424B90E5C34443C54A674D9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53080348722"
+      ]
+    },
+    {
       "assetid": "13381228653",
       "classid": "778383679",
       "instanceid": "0",
@@ -4918,7 +4994,7 @@
     {
       "assetid": "50524333252",
       "classid": "7993047787",
-      "instanceid": "918337683",
+      "instanceid": "904283284",
       "amount": 1,
       "name": "StatTrak™ USP-S | Orion",
       "market_hash_name": "StatTrak™ USP-S | Orion (Minimal Wear)",
@@ -4954,7 +5030,7 @@
     {
       "assetid": "48842374789",
       "classid": "7993038769",
-      "instanceid": "8741623500",
+      "instanceid": "8747630669",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Redline",
       "market_hash_name": "StatTrak™ AK-47 | Redline (Minimal Wear)",
@@ -5426,7 +5502,7 @@
     {
       "assetid": "44375849696",
       "classid": "7993040405",
-      "instanceid": "188530765",
+      "instanceid": "188532780",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Control",
       "market_hash_name": "StatTrak™ Galil AR | Control (Battle-Scarred)",

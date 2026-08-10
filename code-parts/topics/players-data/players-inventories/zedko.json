@@ -7,105 +7,19 @@
   "name": "Jindřich Chyba",
   "nationality": "Czech Republic",
   "born": "03.05.1998",
+  "isContentCreator": false,
   "twitch": "zedkoborec",
   "faceit": "https://faceitdb.com/profile/faceit/93ed2657-eb8c-44cf-8c2d-71db68b3f06b",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-21T06:52:47.096Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 981,
-  "totalItemsGrouped": 241,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-10T05:31:15.817Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 980,
+  "totalItemsGrouped": 240,
   "items": [
-    {
-      "assetid": "52544453842",
-      "classid": "7993038411",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Stained",
-      "market_hash_name": "★ Karambit | Stained (Well-Worn)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50712298335",
-      "classid": "4717330486",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Dreams & Nightmares Case",
-      "market_hash_name": "Dreams & Nightmares Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49274244545",
-      "classid": "5710094579",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Kilowatt Case",
-      "market_hash_name": "Kilowatt Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "49497253857",
       "classid": "5710094579",
@@ -659,6 +573,42 @@
       ],
       "assetids": [
         "14655968414"
+      ]
+    },
+    {
+      "assetid": "52937806278",
+      "classid": "7993035656",
+      "instanceid": "6276306352",
+      "amount": 1,
+      "name": "M4A1-S | Solitude",
+      "market_hash_name": "M4A1-S | Solitude (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
       ]
     },
     {
@@ -10023,6 +9973,42 @@
       ]
     },
     {
+      "assetid": "52937805602",
+      "classid": "7993036583",
+      "instanceid": "6276298710",
+      "amount": 1,
+      "name": "Glock-18 | Block-18",
+      "market_hash_name": "Glock-18 | Block-18 (Field-Tested)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "42621835977",
       "classid": "241707023",
       "instanceid": "6861473053",
@@ -10229,7 +10215,7 @@
     {
       "assetid": "23475958186",
       "classid": "7993044970",
-      "instanceid": "480220788",
+      "instanceid": "480091324",
       "amount": 1,
       "name": "StatTrak™ P250 | Contaminant",
       "market_hash_name": "StatTrak™ P250 | Contaminant (Field-Tested)",

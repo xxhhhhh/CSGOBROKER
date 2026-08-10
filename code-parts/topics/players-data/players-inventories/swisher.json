@@ -12,50 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/27d1a137-8bf2-4b21-844e-ff2b7131ae74",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-08T04:31:33.872Z",
+  "updatedAt": "2026-08-10T04:50:21.234Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 180,
+  "totalItemsRaw": 184,
   "totalItemsGrouped": 156,
   "items": [
-    {
-      "assetid": "53064056632",
-      "classid": "7993037888",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Blue Steel",
-      "market_hash_name": "★ Butterfly Knife | Blue Steel (Minimal Wear)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "51634205615",
       "classid": "7993042582",
@@ -215,7 +179,7 @@
     {
       "assetid": "49737375108",
       "classid": "7993055801",
-      "instanceid": "188538279",
+      "instanceid": "188543069",
       "amount": 1,
       "name": "★ StatTrak™ M9 Bayonet | Doppler",
       "market_hash_name": "★ StatTrak™ M9 Bayonet | Doppler (Factory New)",
@@ -637,42 +601,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51145027734",
-      "classid": "7993041176",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Desert Eagle | Fennec Fox",
-      "market_hash_name": "Desert Eagle | Fennec Fox (Field-Tested)",
-      "type": "Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -3119,6 +3047,57 @@
       ]
     },
     {
+      "assetid": "53079548507",
+      "classid": "8711968532",
+      "instanceid": "143865972",
+      "amount": 5,
+      "name": "Sticker | Swisher (Gold, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | Swisher (Gold, Ranked) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209F8F9F872696BF9FB799AF9BFD9A979F8F1CC4F79FEF9DE794A30B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53079548507",
+        "53079548506",
+        "53079548505",
+        "53079548504",
+        "53079548503"
+      ]
+    },
+    {
       "assetid": "46962343299",
       "classid": "7104675319",
       "instanceid": "188530139",
@@ -4675,6 +4654,53 @@
       ]
     },
     {
+      "assetid": "53079616005",
+      "classid": "8611495042",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Souvenir Charm | Cologne 2026 Highlight | Falcons Trophy-lifting Moment",
+      "market_hash_name": "Souvenir Charm | Cologne 2026 Highlight | Falcons Trophy-lifting Moment",
+      "type": "Souvenir High Grade Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204353435B884963436B40734F2B433341E142444B4353171BDD446FCCF36B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53079616005"
+      ]
+    },
+    {
       "assetid": "23789485914",
       "classid": "7993039325",
       "instanceid": "6276355030",
@@ -5133,7 +5159,7 @@
     {
       "assetid": "41233184373",
       "classid": "7993042347",
-      "instanceid": "8741639136",
+      "instanceid": "8747745032",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Neo-Noir",
       "market_hash_name": "StatTrak™ M4A4 | Neo-Noir (Factory New)",

@@ -12,18 +12,18 @@
   "faceit": "https://faceitdb.com/profile/faceit/a7774769-fb6a-4244-94b2-5a012b7df012",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-08T04:27:22.221Z",
+  "updatedAt": "2026-08-10T04:46:08.363Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 122,
-  "totalItemsGrouped": 110,
+  "totalItemsRaw": 153,
+  "totalItemsGrouped": 141,
   "items": [
     {
       "assetid": "53071614289",
       "classid": "7993039423",
-      "instanceid": "8711761430",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Butterfly Knife | Slaughter",
       "market_hash_name": "★ Butterfly Knife | Slaughter (Minimal Wear)",
@@ -401,14 +401,14 @@
       ]
     },
     {
-      "assetid": "52206517520",
+      "assetid": "53088625090",
       "classid": "6195246388",
       "instanceid": "302028390",
       "amount": 3,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201303130BC53533133B1223177B13630B8E7BFD1D",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205646564E807076567E5766523E56264E45E21B58",
       "tags": [
         {
           "category": "Type",
@@ -424,9 +424,9 @@
         }
       ],
       "assetids": [
+        "53088625090",
         "52206517520",
-        "47758501799",
-        "53088625090"
+        "47758501799"
       ]
     },
     {
@@ -2560,6 +2560,42 @@
       ]
     },
     {
+      "assetid": "53086025481",
+      "classid": "7993042039",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "CZ75-Auto | Imprint",
+      "market_hash_name": "CZ75-Auto | Imprint (Battle-Scarred)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "40757271370",
       "classid": "7993040089",
       "instanceid": "188530139",
@@ -2632,12 +2668,372 @@
       ]
     },
     {
+      "assetid": "53086016661",
+      "classid": "7993040089",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "CZ75-Auto | Imprint",
+      "market_hash_name": "CZ75-Auto | Imprint (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53086036195",
+      "classid": "7993038847",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "CZ75-Auto | Imprint",
+      "market_hash_name": "CZ75-Auto | Imprint (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53086041044",
+      "classid": "7993039952",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "CZ75-Auto | Imprint",
+      "market_hash_name": "CZ75-Auto | Imprint (Well-Worn)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51766374844",
       "classid": "7993039346",
       "instanceid": "188530139",
       "amount": 1,
       "name": "Dual Berettas | Hideout",
       "market_hash_name": "Dual Berettas | Hideout (Battle-Scarred)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53086027332",
+      "classid": "7993036522",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Five-SeveN | Scumbria",
+      "market_hash_name": "Five-SeveN | Scumbria (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53086034868",
+      "classid": "7993036522",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Five-SeveN | Scumbria",
+      "market_hash_name": "Five-SeveN | Scumbria (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110543466",
+      "classid": "7993036522",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Five-SeveN | Scumbria",
+      "market_hash_name": "Five-SeveN | Scumbria (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110544169",
+      "classid": "7993036522",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Five-SeveN | Scumbria",
+      "market_hash_name": "Five-SeveN | Scumbria (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110544896",
+      "classid": "7993036522",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Five-SeveN | Scumbria",
+      "market_hash_name": "Five-SeveN | Scumbria (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53086037962",
+      "classid": "7993040595",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Five-SeveN | Scumbria",
+      "market_hash_name": "Five-SeveN | Scumbria (Well-Worn)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110437202",
+      "classid": "7993040595",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Five-SeveN | Scumbria",
+      "market_hash_name": "Five-SeveN | Scumbria (Well-Worn)",
       "type": "Mil-Spec Grade Pistol",
       "inspectLink": "",
       "tags": [
@@ -2920,6 +3316,582 @@
       ]
     },
     {
+      "assetid": "53110538462",
+      "classid": "7993036538",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "XM1014 | Slipstream",
+      "market_hash_name": "XM1014 | Slipstream (Factory New)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110428121",
+      "classid": "7993041289",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "XM1014 | Slipstream",
+      "market_hash_name": "XM1014 | Slipstream (Field-Tested)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110539664",
+      "classid": "7993041289",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "XM1014 | Slipstream",
+      "market_hash_name": "XM1014 | Slipstream (Field-Tested)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110541979",
+      "classid": "7993041289",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "XM1014 | Slipstream",
+      "market_hash_name": "XM1014 | Slipstream (Field-Tested)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53086023835",
+      "classid": "7993036151",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "P90 | Grim",
+      "market_hash_name": "P90 | Grim (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110540602",
+      "classid": "7993036151",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "P90 | Grim",
+      "market_hash_name": "P90 | Grim (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110537833",
+      "classid": "7993037773",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "P90 | Grim",
+      "market_hash_name": "P90 | Grim (Minimal Wear)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110546563",
+      "classid": "7993037773",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "P90 | Grim",
+      "market_hash_name": "P90 | Grim (Minimal Wear)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53086029043",
+      "classid": "7993036645",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "UMP-45 | Briefing",
+      "market_hash_name": "UMP-45 | Briefing (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110536732",
+      "classid": "7993036645",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "UMP-45 | Briefing",
+      "market_hash_name": "UMP-45 | Briefing (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53086021843",
+      "classid": "7993039282",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "UMP-45 | Briefing",
+      "market_hash_name": "UMP-45 | Briefing (Minimal Wear)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53086033415",
+      "classid": "7993039282",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "UMP-45 | Briefing",
+      "market_hash_name": "UMP-45 | Briefing (Minimal Wear)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110443688",
+      "classid": "7993039282",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "UMP-45 | Briefing",
+      "market_hash_name": "UMP-45 | Briefing (Minimal Wear)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110551066",
+      "classid": "7993039282",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "UMP-45 | Briefing",
+      "market_hash_name": "UMP-45 | Briefing (Minimal Wear)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53086030584",
+      "classid": "7993039269",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "UMP-45 | Briefing",
+      "market_hash_name": "UMP-45 | Briefing (Well-Worn)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110551919",
+      "classid": "7993039269",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "UMP-45 | Briefing",
+      "market_hash_name": "UMP-45 | Briefing (Well-Worn)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "47968143677",
       "classid": "7993036514",
       "instanceid": "188530139",
@@ -2928,6 +3900,78 @@
       "market_hash_name": "G3SG1 | Orange Crash (Factory New)",
       "type": "Mil-Spec Grade Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C1D17C533E1973C0D9CAE160C5E9C2F1C5F9570F482DC2814EC0A9ADB1C9EF0609D9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110542820",
+      "classid": "7993037367",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "G3SG1 | Ventilator",
+      "market_hash_name": "G3SG1 | Ventilator (Factory New)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53086031911",
+      "classid": "7993040965",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "G3SG1 | Ventilator",
+      "market_hash_name": "G3SG1 | Ventilator (Field-Tested)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3346,7 +4390,7 @@
     {
       "assetid": "40833557398",
       "classid": "7993040539",
-      "instanceid": "6662676736",
+      "instanceid": "6796773824",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Neo-Noir",
       "market_hash_name": "StatTrak™ Glock-18 | Neo-Noir (Field-Tested)",
@@ -3418,7 +4462,7 @@
     {
       "assetid": "52195039513",
       "classid": "7993042962",
-      "instanceid": "8742248170",
+      "instanceid": "8748324198",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Bloodsport",
       "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Minimal Wear)",
@@ -3474,7 +4518,7 @@
     {
       "assetid": "40638391841",
       "classid": "7993039530",
-      "instanceid": "6317598301",
+      "instanceid": "6278119307",
       "amount": 1,
       "name": "StatTrak™ M4A4 | In Living Color",
       "market_hash_name": "StatTrak™ M4A4 | In Living Color (Minimal Wear)",
@@ -3543,6 +4587,42 @@
       "market_hash_name": "StatTrak™ Dual Berettas | Hideout (Field-Tested)",
       "type": "StatTrak™ Mil-Spec Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B6A6421A714613B7AEB49627BF9EB586BF8E204A4D42B5F667B1FEB6E6B6DE40B7C6BE026BE8FA",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110436171",
+      "classid": "7993040733",
+      "instanceid": "188581951",
+      "amount": 1,
+      "name": "StatTrak™ Desert Eagle | Directive",
+      "market_hash_name": "StatTrak™ Desert Eagle | Directive (Well-Worn)",
+      "type": "StatTrak™ Restricted Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3645,7 +4725,7 @@
     {
       "assetid": "47293931417",
       "classid": "7993037934",
-      "instanceid": "902789149",
+      "instanceid": "906057258",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Hybrid",
       "market_hash_name": "StatTrak™ Five-SeveN | Hybrid (Field-Tested)",
@@ -3795,6 +4875,42 @@
       "market_hash_name": "StatTrak™ P90 | Wave Breaker (Minimal Wear)",
       "type": "StatTrak™ Restricted SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%206A7AA584B48BCA6B72794ACC63426E5A6352E4E0DD87692AC56F226A3A6A028B6B1A62775DB02A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53110504301",
+      "classid": "7993042541",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ SCAR-20 | Powercore",
+      "market_hash_name": "StatTrak™ SCAR-20 | Powercore (Field-Tested)",
+      "type": "StatTrak™ Restricted Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
