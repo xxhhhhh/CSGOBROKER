@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/20e9f61c-8072-4f50-b257-b6b4219669d2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-10T04:44:03.101Z",
+  "updatedAt": "2026-08-12T05:01:57.234Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 132,
-  "totalItemsGrouped": 101,
+  "totalItemsRaw": 131,
+  "totalItemsGrouped": 100,
   "items": [
     {
       "assetid": "51825839228",
@@ -58,41 +58,6 @@
       "float": 0.021526884288,
       "seed": 62,
       "phase": "Ruby"
-    },
-    {
-      "assetid": "52944374055",
-      "classid": "7993043455",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Gamma Doppler",
-      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A5B50237493860A4BD5EA6851DA18DA395A69D3C1B084DA6E501A2CDAED5AD95461846",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.034026239067,
-      "seed": 932,
-      "phase": "Emerald"
     },
     {
       "assetid": "47289886779",
@@ -1059,42 +1024,6 @@
       "market_hash_name": "SSG 08 | Blue Spruce (Field-Tested)",
       "type": "Consumer Grade Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%2038288AF3E4F26B201018581039083C0081C2B7C93B78B93E501A4820AA39981C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53244960256",
-      "classid": "7993042360",
-      "instanceid": "6276514532",
-      "amount": 1,
-      "name": "M4A4 | Howl",
-      "market_hash_name": "M4A4 | Howl (Minimal Wear)",
-      "type": "Contraband Rifle",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2799,6 +2728,50 @@
       "assetids": [
         "43333259833",
         "43333255889"
+      ]
+    },
+    {
+      "assetid": "53145608602",
+      "classid": "188530425",
+      "instanceid": "8745069147",
+      "amount": 1,
+      "name": "Glock-18 | Fade",
+      "market_hash_name": "Glock-18 | Fade (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
       ]
     },
     {

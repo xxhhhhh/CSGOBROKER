@@ -7,16 +7,18 @@
   "name": "Danil Kryshkovets",
   "nationality": "Russia",
   "born": "25.01.2007",
+  "isContentCreator": false,
   "twitch": "donk1437",
   "faceit": "https://faceitdb.com/profile/faceit/e5e8e2a6-d716-4493-b949-e16965f41654",
-  "isContentCreator": false,
-  "updatedAt": "2026-08-07T04:54:14.227Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 247,
-  "totalItemsGrouped": 119,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-12T04:46:55.257Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 248,
+  "totalItemsGrouped": 120,
   "items": [
     {
       "assetid": "53060974247",
@@ -164,6 +166,45 @@
       ],
       "float": 0.013705794699,
       "seed": 808,
+      "phase": "Ruby"
+    },
+    {
+      "assetid": "53110688400",
+      "classid": "7993042405",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Stiletto Knife | Doppler",
+      "market_hash_name": "★ Stiletto Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203F2FAFAAACD2FA3E27B53B1FA03C17390F3C07BBE79ED73C7FDE3D572F4F370F80E217",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.033306136727,
+      "seed": 353,
       "phase": "Ruby"
     },
     {
@@ -514,50 +555,6 @@
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52781097014",
-      "classid": "7993051106",
-      "instanceid": "188531519",
-      "amount": 1,
-      "name": "★ StatTrak™ Talon Knife | Fade",
-      "market_hash_name": "★ StatTrak™ Talon Knife | Fade (Factory New)",
-      "type": "★ StatTrak™ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
           "name": ""
         },
         {
@@ -1159,6 +1156,42 @@
       ]
     },
     {
+      "assetid": "53079745702",
+      "classid": "7993042471",
+      "instanceid": "6306113436",
+      "amount": 1,
+      "name": "AK-47 | Wild Lotus",
+      "market_hash_name": "AK-47 | Wild Lotus (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "46915593508",
       "classid": "7993043394",
       "instanceid": "6280219852",
@@ -1596,7 +1629,7 @@
     {
       "assetid": "51928878475",
       "classid": "8564022767",
-      "instanceid": "8490789003",
+      "instanceid": "8490786945",
       "amount": 1,
       "name": "Cologne 2026 Gold Coin",
       "market_hash_name": "Cologne 2026 Gold Coin",
@@ -3951,7 +3984,7 @@
     {
       "assetid": "53012889002",
       "classid": "7993043193",
-      "instanceid": "903286774",
+      "instanceid": "905380241",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Cobalt Disruption",
       "market_hash_name": "StatTrak™ Desert Eagle | Cobalt Disruption (Factory New)",
@@ -4115,7 +4148,7 @@
     {
       "assetid": "53020027539",
       "classid": "7993045027",
-      "instanceid": "8075603236",
+      "instanceid": "7558501210",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Factory New)",

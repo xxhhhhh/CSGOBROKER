@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e1051e60-443e-4dfb-be63-67338e479ffc",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-06T06:34:34.768Z",
+  "updatedAt": "2026-08-12T05:34:19.963Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 62,
-  "totalItemsGrouped": 62,
+  "totalItemsRaw": 64,
+  "totalItemsGrouped": 64,
   "items": [
     {
       "assetid": "52490317289",
@@ -54,6 +54,41 @@
       "float": 0.061205107719,
       "seed": 770,
       "phase": "Ruby"
+    },
+    {
+      "assetid": "53146303492",
+      "classid": "7993040869",
+      "instanceid": "8723895592",
+      "amount": 1,
+      "name": "★ Karambit | Doppler",
+      "market_hash_name": "★ Karambit | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205B4BDFA3CBA59E5A43A0587BF858735D6B5863BFA1C9BE581BD45C33482B5387E4C6AF",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.020109839737,
+      "seed": 911,
+      "phase": "Phase 2"
     },
     {
       "assetid": "52462721461",
@@ -439,6 +474,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53146303491",
+      "classid": "7993035493",
+      "instanceid": "8723895592",
+      "amount": 1,
+      "name": "USP-S | Printstream",
+      "market_hash_name": "USP-S | Printstream (Field-Tested)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

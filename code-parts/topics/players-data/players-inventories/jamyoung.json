@@ -7,26 +7,28 @@
   "name": "Yang Yi",
   "nationality": "China",
   "born": "23.07.2001",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/775f4105-de70-4d88-ae5d-5ffff72d7bba",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-10T07:32:49.076Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 53,
-  "totalItemsGrouped": 46,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-12T05:06:16.275Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 52,
+  "totalItemsGrouped": 47,
   "items": [
     {
-      "assetid": "51727482702",
-      "classid": "7993040007",
-      "instanceid": "480085569",
+      "assetid": "53079530482",
+      "classid": "7993040524",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Butterfly Knife | Gamma Doppler",
-      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "name": "★ Butterfly Knife | Doppler",
+      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202D3DE3D3E7F4ED2C35AE290D9529052B1D2E1591D789C42E6DAE2A45255D29623780A8",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FBEB094C5E253EFAE378FFDB10FFD3FDCBF8C35461201FF8BB51FA93F48BF3987DC425",
       "tags": [
         {
           "category": "Type",
@@ -53,9 +55,9 @@
           "name": ""
         }
       ],
-      "float": 0.041318163276,
-      "seed": 899,
-      "phase": "Emerald"
+      "float": 0.018408386037,
+      "seed": 170,
+      "phase": "Sapphire"
     },
     {
       "assetid": "41217834373",
@@ -89,7 +91,7 @@
       "assetid": "51877992791",
       "classid": "7729086074",
       "instanceid": "143865972",
-      "amount": 3,
+      "amount": 1,
       "name": "Sticker Slab",
       "market_hash_name": "Sticker Slab",
       "type": "Base Grade Charm",
@@ -109,9 +111,7 @@
         }
       ],
       "assetids": [
-        "51877992791",
-        "51877992790",
-        "51877992789"
+        "51877992791"
       ]
     },
     {
@@ -239,9 +239,9 @@
       ]
     },
     {
-      "assetid": "52159567614",
+      "assetid": "52423542719",
       "classid": "7993037248",
-      "instanceid": "8544480919",
+      "instanceid": "8582839364",
       "amount": 1,
       "name": "M4A1-S | Hot Rod",
       "market_hash_name": "M4A1-S | Hot Rod (Factory New)",
@@ -1005,6 +1005,53 @@
       ]
     },
     {
+      "assetid": "52325085669",
+      "classid": "8490886889",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | JamYoung | Cologne 2026",
+      "market_hash_name": "Sticker | JamYoung | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203929392180301939113A093D5B3C3139299B6F5139493B798EDCFE",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52325085669"
+      ]
+    },
+    {
       "assetid": "38070535513",
       "classid": "7993040799",
       "instanceid": "7764091064",
@@ -1367,7 +1414,7 @@
     {
       "assetid": "42105359000",
       "classid": "7993045315",
-      "instanceid": "480342041",
+      "instanceid": "481036571",
       "amount": 1,
       "name": "StatTrak™ USP-S | The Traitor",
       "market_hash_name": "StatTrak™ USP-S | The Traitor (Minimal Wear)",
@@ -1403,7 +1450,7 @@
     {
       "assetid": "46164091486",
       "classid": "7993044752",
-      "instanceid": "516914316",
+      "instanceid": "3742722314",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Leet Museo",
       "market_hash_name": "StatTrak™ AK-47 | Leet Museo (Factory New)",
@@ -1487,7 +1534,7 @@
     {
       "assetid": "37331653972",
       "classid": "7993040023",
-      "instanceid": "7398346016",
+      "instanceid": "8562222866",
       "amount": 1,
       "name": "StatTrak™ P250 | Valence",
       "market_hash_name": "StatTrak™ P250 | Valence (Minimal Wear)",
@@ -1587,7 +1634,7 @@
     {
       "assetid": "39635804520",
       "classid": "7993038470",
-      "instanceid": "8545417376",
+      "instanceid": "8752864531",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Magnesium",
       "market_hash_name": "StatTrak™ M4A4 | Magnesium (Well-Worn)",
