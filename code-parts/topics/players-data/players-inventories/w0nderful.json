@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/591e26a3-eb86-4d4c-afa8-b5754455dc03",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-12T04:51:22.890Z",
+  "updatedAt": "2026-08-13T04:54:26.834Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 70,
-  "totalItemsGrouped": 70,
+  "totalItemsRaw": 69,
+  "totalItemsGrouped": 69,
   "items": [
     {
       "assetid": "52764648048",
@@ -58,41 +58,6 @@
       "float": 0.009427797981,
       "seed": 343,
       "phase": "Sapphire"
-    },
-    {
-      "assetid": "53028238733",
-      "classid": "7993045582",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Doppler",
-      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206878E58382ADAD6970946B48F76B406E586B508290E8826B28F46D007C186C848BE63F",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.04693261534,
-      "seed": 668,
-      "phase": "Ruby"
     },
     {
       "assetid": "52813975727",
@@ -250,62 +215,6 @@
       ]
     },
     {
-      "assetid": "42316047041",
-      "classid": "259074184",
-      "instanceid": "6485648331",
-      "amount": 1,
-      "name": "Desert Eagle | Cobalt Disruption",
-      "market_hash_name": "Desert Eagle | Cobalt Disruption (Factory New)",
-      "type": "Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52938383007",
       "classid": "7993036958",
       "instanceid": "6281470162",
@@ -345,42 +254,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53027531161",
-      "classid": "7993037248",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "M4A1-S | Hot Rod",
-      "market_hash_name": "M4A1-S | Hot Rod (Factory New)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -681,6 +554,62 @@
         },
         {
           "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "42534970004",
+      "classid": "7993036156",
+      "instanceid": "6894553097",
+      "amount": 1,
+      "name": "M4A1-S | Cyrex",
+      "market_hash_name": "M4A1-S | Cyrex (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         },
         {
@@ -2102,11 +2031,47 @@
     {
       "assetid": "53040254945",
       "classid": "7993038472",
-      "instanceid": "6845667618",
+      "instanceid": "6526758387",
       "amount": 1,
       "name": "StatTrak™ USP-S | Orion",
       "market_hash_name": "StatTrak™ USP-S | Orion (Factory New)",
       "type": "StatTrak™ Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "43600181829",
+      "classid": "7993046239",
+      "instanceid": "480118975",
+      "amount": 1,
+      "name": "StatTrak™ Desert Eagle | Ocean Drive",
+      "market_hash_name": "StatTrak™ Desert Eagle | Ocean Drive (Minimal Wear)",
+      "type": "StatTrak™ Covert Pistol",
       "inspectLink": "",
       "tags": [
         {

@@ -7,17 +7,51 @@
   "name": "Deyvid Benchev",
   "nationality": "Bulgaria",
   "born": "07.06.2000",
+  "isContentCreator": false,
   "twitch": "h4rncs",
   "faceit": "https://faceitdb.com/profile/faceit/8f151c97-d096-40f1-b3ae-3afaaca644bb",
-  "isContentCreator": false,
-  "updatedAt": "2026-08-11T05:24:47.469Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 221,
-  "totalItemsGrouped": 147,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-13T05:56:23.244Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 222,
+  "totalItemsGrouped": 148,
   "items": [
+    {
+      "assetid": "53153061600",
+      "classid": "7993038693",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Karambit | Slaughter",
+      "market_hash_name": "★ Karambit | Slaughter (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "51134699674",
       "classid": "7993038598",
@@ -47,29 +81,17 @@
       ]
     },
     {
-      "assetid": "52966811966",
-      "classid": "7993046565",
-      "instanceid": "188531406",
+      "assetid": "53151968119",
+      "classid": "7993043606",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "★ StatTrak™ M9 Bayonet | Doppler",
-      "market_hash_name": "★ StatTrak™ M9 Bayonet | Doppler (Factory New)",
-      "type": "★ StatTrak™ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20372789E5F29FF2362FCB341795341F3107340FBEBDE5D73477697F3767325F0C473F090792D7",
+      "name": "★ Sport Gloves | Slingshot",
+      "market_hash_name": "★ Sport Gloves | Slingshot (Battle-Scarred)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
           "name": ""
         },
         {
@@ -84,10 +106,7 @@
           "category": "Exterior",
           "name": ""
         }
-      ],
-      "float": 0.009064921178,
-      "seed": 94,
-      "phase": "Phase 1"
+      ]
     },
     {
       "assetid": "52667349335",
@@ -4630,7 +4649,7 @@
     {
       "assetid": "48236968105",
       "classid": "7993035810",
-      "instanceid": "905510764",
+      "instanceid": "905830358",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Shinobu",
       "market_hash_name": "StatTrak™ Glock-18 | Shinobu (Field-Tested)",
@@ -4666,7 +4685,7 @@
     {
       "assetid": "46841752076",
       "classid": "7993041406",
-      "instanceid": "6321202917",
+      "instanceid": "6321616581",
       "amount": 1,
       "name": "StatTrak™ P250 | Asiimov",
       "market_hash_name": "StatTrak™ P250 | Asiimov (Field-Tested)",
@@ -4806,7 +4825,7 @@
     {
       "assetid": "52195987913",
       "classid": "7993041854",
-      "instanceid": "8743973856",
+      "instanceid": "8753633362",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Tooth Fairy",
       "market_hash_name": "StatTrak™ M4A4 | Tooth Fairy (Minimal Wear)",
@@ -4850,7 +4869,7 @@
     {
       "assetid": "49053541762",
       "classid": "7993037525",
-      "instanceid": "8747008588",
+      "instanceid": "8757217964",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
@@ -4942,7 +4961,7 @@
     {
       "assetid": "51439386088",
       "classid": "7993038179",
-      "instanceid": "8747008587",
+      "instanceid": "8753496343",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Inheritance",
       "market_hash_name": "StatTrak™ AK-47 | Inheritance (Battle-Scarred)",
@@ -4990,7 +5009,7 @@
     {
       "assetid": "53166083278",
       "classid": "7993040263",
-      "instanceid": "8743973853",
+      "instanceid": "8757217962",
       "amount": 1,
       "name": "StatTrak™ AWP | Asiimov",
       "market_hash_name": "StatTrak™ AWP | Asiimov (Field-Tested)",
@@ -5086,7 +5105,7 @@
     {
       "assetid": "48009104867",
       "classid": "7993042047",
-      "instanceid": "8723486294",
+      "instanceid": "6583960271",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Jambiya",
       "market_hash_name": "StatTrak™ Tec-9 | Jambiya (Field-Tested)",
@@ -5330,7 +5349,7 @@
     {
       "assetid": "49118610012",
       "classid": "7993040194",
-      "instanceid": "8547434122",
+      "instanceid": "8757217963",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Blue Laminate",
       "market_hash_name": "StatTrak™ AK-47 | Blue Laminate (Field-Tested)",
@@ -5390,7 +5409,7 @@
     {
       "assetid": "52048946311",
       "classid": "7993041474",
-      "instanceid": "8746461632",
+      "instanceid": "8756805947",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Signal",
       "market_hash_name": "StatTrak™ Galil AR | Signal (Factory New)",
@@ -5486,7 +5505,7 @@
     {
       "assetid": "23812042295",
       "classid": "7993038258",
-      "instanceid": "480087416",
+      "instanceid": "188588615",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Allure",
       "market_hash_name": "StatTrak™ MAC-10 | Allure (Field-Tested)",
@@ -5522,7 +5541,7 @@
     {
       "assetid": "50835878857",
       "classid": "8246991029",
-      "instanceid": "188530601",
+      "instanceid": "188538279",
       "amount": 1,
       "name": "StatTrak™ MP9 | Urban Sovereign",
       "market_hash_name": "StatTrak™ MP9 | Urban Sovereign (Field-Tested)",
