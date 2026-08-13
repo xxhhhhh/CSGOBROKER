@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b0bf2cc2-198a-4a78-988d-2e7ff7ee6815",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-08T04:31:38.425Z",
+  "updatedAt": "2026-08-12T05:10:29.199Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 99,
-  "totalItemsGrouped": 71,
+  "totalItemsRaw": 102,
+  "totalItemsGrouped": 74,
   "items": [
     {
       "assetid": "52938758583",
@@ -154,6 +154,34 @@
       "amount": 1,
       "name": "★ Sport Gloves | Hedge Maze",
       "market_hash_name": "★ Sport Gloves | Hedge Maze (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53138579325",
+      "classid": "7993045165",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Sport Gloves | Pandora's Box",
+      "market_hash_name": "★ Sport Gloves | Pandora's Box (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -769,6 +797,42 @@
       ]
     },
     {
+      "assetid": "53137097914",
+      "classid": "7993041214",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "USP-S | Kill Confirmed",
+      "market_hash_name": "USP-S | Kill Confirmed (Factory New)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52952657052",
       "classid": "7993043505",
       "instanceid": "7778253088",
@@ -855,7 +919,7 @@
     {
       "assetid": "53072192427",
       "classid": "8711931850",
-      "instanceid": "8711949318",
+      "instanceid": "143865972",
       "amount": 2,
       "name": "Sticker | BetBoom (Holo, Ranked) | Cologne 2026",
       "market_hash_name": "Sticker | BetBoom (Holo, Ranked) | Cologne 2026",
@@ -897,14 +961,14 @@
       ]
     },
     {
-      "assetid": "53072192443",
+      "assetid": "53072192444",
       "classid": "8711948474",
-      "instanceid": "8711949318",
+      "instanceid": "143865972",
       "amount": 4,
       "name": "Sticker | Magnojez (Holo, Ranked) | Cologne 2026",
       "market_hash_name": "Sticker | Magnojez (Holo, Ranked) | Cologne 2026",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201F0F1F07A6163F1F371A2F1B7D1A171F0FEF45771F6F1DC024CA57",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F2E2F2EA4BFBD2F2DAF7C2F690F7FAF2E202A89AF282F06578ED35",
       "tags": [
         {
           "category": "Type",
@@ -940,10 +1004,10 @@
         }
       ],
       "assetids": [
+        "53072192444",
         "53072192443",
         "53072192442",
-        "53072192441",
-        "53072192444"
+        "53072192441"
       ]
     },
     {
@@ -1432,7 +1496,7 @@
     {
       "assetid": "53072192440",
       "classid": "8711958206",
-      "instanceid": "8711949318",
+      "instanceid": "143865972",
       "amount": 1,
       "name": "Sticker | Magnojez (Gold, Ranked) | Cologne 2026",
       "market_hash_name": "Sticker | Magnojez (Gold, Ranked) | Cologne 2026",
@@ -1756,7 +1820,7 @@
     {
       "assetid": "53072192429",
       "classid": "8711940494",
-      "instanceid": "8711949318",
+      "instanceid": "143865972",
       "amount": 2,
       "name": "Sticker | BetBoom (Foil, Ranked) | Cologne 2026",
       "market_hash_name": "Sticker | BetBoom (Foil, Ranked) | Cologne 2026",
@@ -1800,7 +1864,7 @@
     {
       "assetid": "53072192439",
       "classid": "8711954597",
-      "instanceid": "8711949318",
+      "instanceid": "143865972",
       "amount": 11,
       "name": "Sticker | Magnojez (Foil, Ranked) | Cologne 2026",
       "market_hash_name": "Sticker | Magnojez (Foil, Ranked) | Cologne 2026",
@@ -1857,7 +1921,7 @@
     {
       "assetid": "53072192420",
       "classid": "8490816229",
-      "instanceid": "8711949318",
+      "instanceid": "143865972",
       "amount": 5,
       "name": "Sticker | Magnojez (Foil) | Cologne 2026",
       "market_hash_name": "Sticker | Magnojez (Foil) | Cologne 2026",
@@ -2228,7 +2292,7 @@
     {
       "assetid": "53072192425",
       "classid": "8611523028",
-      "instanceid": "8711949318",
+      "instanceid": "143865972",
       "amount": 10,
       "name": "Souvenir Charm | Cologne 2026 Highlight | Magnojez 1v3 Clutch",
       "market_hash_name": "Souvenir Charm | Cologne 2026 Highlight | Magnojez 1v3 Clutch",
@@ -2279,6 +2343,58 @@
         "52676281998",
         "52676281997",
         "52676281996"
+      ]
+    },
+    {
+      "assetid": "53137428117",
+      "classid": "7993041499",
+      "instanceid": "7629196638",
+      "amount": 1,
+      "name": "Souvenir M4A4 | Radiation Hazard",
+      "market_hash_name": "Souvenir M4A4 | Radiation Hazard (Minimal Wear)",
+      "type": "Souvenir Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
       ]
     },
     {
@@ -2384,7 +2500,7 @@
     {
       "assetid": "47558203428",
       "classid": "7993046832",
-      "instanceid": "188689634",
+      "instanceid": "480118598",
       "amount": 1,
       "name": "StatTrak™ MP9 | Starlight Protector",
       "market_hash_name": "StatTrak™ MP9 | Starlight Protector (Factory New)",
@@ -2447,7 +2563,7 @@
     {
       "assetid": "50410386455",
       "classid": "7993036125",
-      "instanceid": "188577966",
+      "instanceid": "188532459",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Sakkaku",
       "market_hash_name": "StatTrak™ MAC-10 | Sakkaku (Field-Tested)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/20e9f61c-8072-4f50-b257-b6b4219669d2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-03T06:35:28.937Z",
+  "updatedAt": "2026-08-12T05:01:57.234Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 134,
-  "totalItemsGrouped": 103,
+  "totalItemsRaw": 131,
+  "totalItemsGrouped": 100,
   "items": [
     {
       "assetid": "51825839228",
@@ -58,41 +58,6 @@
       "float": 0.021526884288,
       "seed": 62,
       "phase": "Ruby"
-    },
-    {
-      "assetid": "52944374055",
-      "classid": "7993043455",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Gamma Doppler",
-      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A5B50237493860A4BD5EA6851DA18DA395A69D3C1B084DA6E501A2CDAED5AD95461846",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.034026239067,
-      "seed": 932,
-      "phase": "Emerald"
     },
     {
       "assetid": "47289886779",
@@ -137,62 +102,6 @@
       "amount": 1,
       "name": "★ Driver Gloves | King Snake",
       "market_hash_name": "★ Driver Gloves | King Snake (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52668933737",
-      "classid": "7993041878",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Specialist Gloves | Crimson Kimono",
-      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51471248940",
-      "classid": "7993040299",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Hedge Maze",
-      "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1115,42 +1024,6 @@
       "market_hash_name": "SSG 08 | Blue Spruce (Field-Tested)",
       "type": "Consumer Grade Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%2038288AF3E4F26B201018581039083C0081C2B7C93B78B93E501A4820AA39981C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51508198279",
-      "classid": "7993042360",
-      "instanceid": "6276514532",
-      "amount": 1,
-      "name": "M4A4 | Howl",
-      "market_hash_name": "M4A4 | Howl (Minimal Wear)",
-      "type": "Contraband Rifle",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2858,6 +2731,50 @@
       ]
     },
     {
+      "assetid": "53145608602",
+      "classid": "188530425",
+      "instanceid": "6278510320",
+      "amount": 1,
+      "name": "Glock-18 | Fade",
+      "market_hash_name": "Glock-18 | Fade (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "39379973285",
       "classid": "7993036328",
       "instanceid": "188530139",
@@ -3192,7 +3109,7 @@
     {
       "assetid": "49641712838",
       "classid": "7993046587",
-      "instanceid": "8741807949",
+      "instanceid": "8746864583",
       "amount": 1,
       "name": "StatTrak™ USP-S | Printstream",
       "market_hash_name": "StatTrak™ USP-S | Printstream (Well-Worn)",
@@ -3356,7 +3273,7 @@
     {
       "assetid": "51297473188",
       "classid": "7993042943",
-      "instanceid": "480086825",
+      "instanceid": "480118934",
       "amount": 1,
       "name": "StatTrak™ USP-S | Overgrowth",
       "market_hash_name": "StatTrak™ USP-S | Overgrowth (Minimal Wear)",

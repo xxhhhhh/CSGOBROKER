@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/898780b2-bf70-4c28-8e0d-b9600be8397e",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-08T04:16:51.709Z",
+  "updatedAt": "2026-08-13T04:56:33.731Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 58,
-  "totalItemsGrouped": 58,
+  "totalItemsRaw": 59,
+  "totalItemsGrouped": 59,
   "items": [
     {
       "assetid": "53060980512",
@@ -58,41 +58,6 @@
       "float": 0.043569963425,
       "seed": 782,
       "phase": "Emerald"
-    },
-    {
-      "assetid": "53196547983",
-      "classid": "7993042912",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Doppler",
-      "market_hash_name": "★ Karambit | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EEFE6121657828EFF615EDCE4EEDC6E8DEEDD66C7F5308EDAE15EF86BD9EE63EA06D50",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.025303129107,
-      "seed": 251,
-      "phase": "Sapphire"
     },
     {
       "assetid": "52850159824",
@@ -220,6 +185,34 @@
       "amount": 1,
       "name": "★ Sport Gloves | Nocts",
       "market_hash_name": "★ Sport Gloves | Nocts (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53128368091",
+      "classid": "8246944780",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -537,12 +530,12 @@
       ]
     },
     {
-      "assetid": "51725523335",
-      "classid": "7993037606",
-      "instanceid": "8401884076",
+      "assetid": "53150220553",
+      "classid": "7993037248",
+      "instanceid": "519977179",
       "amount": 1,
-      "name": "AK-47 | Redline",
-      "market_hash_name": "AK-47 | Redline (Minimal Wear)",
+      "name": "M4A1-S | Hot Rod",
+      "market_hash_name": "M4A1-S | Hot Rod (Factory New)",
       "type": "Classified Rifle",
       "inspectLink": "",
       "tags": [
@@ -568,26 +561,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1636,6 +1609,42 @@
       ]
     },
     {
+      "assetid": "53161712299",
+      "classid": "241608185",
+      "instanceid": "8748547985",
+      "amount": 1,
+      "name": "MP9 | Hot Rod",
+      "market_hash_name": "MP9 | Hot Rod (Factory New)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51858228628",
       "classid": "1989325699",
       "instanceid": "188530139",
@@ -1941,7 +1950,7 @@
     {
       "assetid": "51831459379",
       "classid": "7993035946",
-      "instanceid": "8720434768",
+      "instanceid": "8748215030",
       "amount": 1,
       "name": "StatTrak™ MP7 | Smoking Kills",
       "market_hash_name": "StatTrak™ MP7 | Smoking Kills (Factory New)",

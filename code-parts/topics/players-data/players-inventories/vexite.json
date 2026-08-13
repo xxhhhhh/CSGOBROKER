@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/4cbb1255-b9bc-4ce1-88dc-937a67d6fc8d",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-06T06:34:33.326Z",
+  "updatedAt": "2026-08-10T05:16:12.104Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 420,
-  "totalItemsGrouped": 266,
+  "totalItemsRaw": 421,
+  "totalItemsGrouped": 267,
   "items": [
     {
       "assetid": "41987463847",
@@ -576,7 +576,7 @@
     {
       "assetid": "47520068241",
       "classid": "304815726",
-      "instanceid": "188530766",
+      "instanceid": "188534043",
       "amount": 1,
       "name": "★ StatTrak™ Karambit",
       "market_hash_name": "★ StatTrak™ Karambit",
@@ -1850,6 +1850,42 @@
       ]
     },
     {
+      "assetid": "53076062214",
+      "classid": "8637420575",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "M4A4 | Falak",
+      "market_hash_name": "M4A4 | Falak (Minimal Wear)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "47285337016",
       "classid": "7993038114",
       "instanceid": "480085569",
@@ -2252,70 +2288,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51908392061",
-      "classid": "201966840",
-      "instanceid": "8535249378",
-      "amount": 1,
-      "name": "AK-47 | Fire Serpent",
-      "market_hash_name": "AK-47 | Fire Serpent (Field-Tested)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -2942,7 +2914,7 @@
       ]
     },
     {
-      "assetid": "52768582923",
+      "assetid": "52768582975",
       "classid": "8491016812",
       "instanceid": "143865972",
       "amount": 11,
@@ -2985,6 +2957,8 @@
         }
       ],
       "assetids": [
+        "52768582975",
+        "52768582928",
         "52768582923",
         "52768582913",
         "52768582897",
@@ -2993,9 +2967,7 @@
         "52768583098",
         "52768583064",
         "52768583024",
-        "52768582999",
-        "52768582975",
-        "52768582928"
+        "52768582999"
       ]
     },
     {
@@ -7103,6 +7075,58 @@
       ]
     },
     {
+      "assetid": "53076185472",
+      "classid": "8702565087",
+      "instanceid": "8564960930",
+      "amount": 1,
+      "name": "Souvenir AK-47 | Consequence of the Jinn",
+      "market_hash_name": "Souvenir AK-47 | Consequence of the Jinn (Field-Tested)",
+      "type": "Souvenir Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52460591766",
       "classid": "8524694594",
       "instanceid": "8619896645",
@@ -7688,7 +7712,7 @@
     {
       "assetid": "39954342970",
       "classid": "7993044591",
-      "instanceid": "480087478",
+      "instanceid": "480115820",
       "amount": 1,
       "name": "StatTrak™ P250 | Epicenter",
       "market_hash_name": "StatTrak™ P250 | Epicenter (Field-Tested)",
@@ -7888,7 +7912,7 @@
     {
       "assetid": "52334048086",
       "classid": "8247037103",
-      "instanceid": "8709991269",
+      "instanceid": "8754104773",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Crane Flight",
       "market_hash_name": "StatTrak™ AK-47 | Crane Flight (Minimal Wear)",
@@ -7980,7 +8004,7 @@
     {
       "assetid": "38205144090",
       "classid": "7993037966",
-      "instanceid": "8703915707",
+      "instanceid": "8749725257",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Redline",
       "market_hash_name": "StatTrak™ AK-47 | Redline (Field-Tested)",
@@ -8068,7 +8092,7 @@
     {
       "assetid": "23331073347",
       "classid": "7993036832",
-      "instanceid": "480114220",
+      "instanceid": "480108832",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Mecha Industries",
       "market_hash_name": "StatTrak™ FAMAS | Mecha Industries (Field-Tested)",
@@ -8140,7 +8164,7 @@
     {
       "assetid": "28945296833",
       "classid": "7993042037",
-      "instanceid": "188599862",
+      "instanceid": "188577966",
       "amount": 1,
       "name": "StatTrak™ XM1014 | XOXO",
       "market_hash_name": "StatTrak™ XM1014 | XOXO (Field-Tested)",
@@ -8176,7 +8200,7 @@
     {
       "assetid": "52768642779",
       "classid": "8247137616",
-      "instanceid": "8742726293",
+      "instanceid": "8757463640",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Fully Tuned",
       "market_hash_name": "StatTrak™ Glock-18 | Fully Tuned (Field-Tested)",
@@ -8284,7 +8308,7 @@
     {
       "assetid": "48857195311",
       "classid": "7993041773",
-      "instanceid": "8716314096",
+      "instanceid": "8757596783",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
@@ -8344,7 +8368,7 @@
     {
       "assetid": "45283971842",
       "classid": "7993039416",
-      "instanceid": "8742726296",
+      "instanceid": "8750326398",
       "amount": 1,
       "name": "StatTrak™ USP-S | Printstream",
       "market_hash_name": "StatTrak™ USP-S | Printstream (Minimal Wear)",
@@ -8504,7 +8528,7 @@
     {
       "assetid": "25263442612",
       "classid": "7993045990",
-      "instanceid": "8613379287",
+      "instanceid": "8750326401",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Asiimov",
       "market_hash_name": "StatTrak™ AK-47 | Asiimov (Minimal Wear)",
@@ -8560,7 +8584,7 @@
     {
       "assetid": "49813962854",
       "classid": "7993044513",
-      "instanceid": "8742726295",
+      "instanceid": "8742794545",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Bloodsport",
       "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Field-Tested)",
@@ -8616,7 +8640,7 @@
     {
       "assetid": "52699936417",
       "classid": "7993044513",
-      "instanceid": "8732555641",
+      "instanceid": "8749894750",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Bloodsport",
       "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Field-Tested)",
@@ -8684,7 +8708,7 @@
     {
       "assetid": "49349586222",
       "classid": "7993037670",
-      "instanceid": "8654716765",
+      "instanceid": "8754918765",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Head Shot",
       "market_hash_name": "StatTrak™ AK-47 | Head Shot (Minimal Wear)",
@@ -8720,7 +8744,7 @@
     {
       "assetid": "52663410862",
       "classid": "7993039741",
-      "instanceid": "8741507899",
+      "instanceid": "8757596782",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Inheritance",
       "market_hash_name": "StatTrak™ AK-47 | Inheritance (Minimal Wear)",
@@ -8876,7 +8900,7 @@
     {
       "assetid": "52768648560",
       "classid": "7993037213",
-      "instanceid": "8734523786",
+      "instanceid": "8750158163",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Nightwish",
       "market_hash_name": "StatTrak™ AK-47 | Nightwish (Minimal Wear)",
@@ -8976,7 +9000,7 @@
     {
       "assetid": "51933769371",
       "classid": "7993036750",
-      "instanceid": "8732555644",
+      "instanceid": "8754502545",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Vulcan",
       "market_hash_name": "StatTrak™ AK-47 | Vulcan (Minimal Wear)",
@@ -9024,7 +9048,7 @@
     {
       "assetid": "34850883843",
       "classid": "7993042967",
-      "instanceid": "8709654262",
+      "instanceid": "8754918767",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Asiimov",
       "market_hash_name": "StatTrak™ M4A4 | Asiimov (Battle-Scarred)",
@@ -9120,7 +9144,7 @@
     {
       "assetid": "49284307988",
       "classid": "7993042380",
-      "instanceid": "8741507900",
+      "instanceid": "8757569863",
       "amount": 1,
       "name": "StatTrak™ AWP | Asiimov",
       "market_hash_name": "StatTrak™ AWP | Asiimov (Battle-Scarred)",
@@ -9176,7 +9200,7 @@
     {
       "assetid": "40670901250",
       "classid": "7993038824",
-      "instanceid": "8741207618",
+      "instanceid": "8747227102",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Isaac",
       "market_hash_name": "StatTrak™ Tec-9 | Isaac (Minimal Wear)",
@@ -9676,7 +9700,7 @@
     {
       "assetid": "42569867478",
       "classid": "7993042252",
-      "instanceid": "6539005502",
+      "instanceid": "6542676994",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Heat",
       "market_hash_name": "StatTrak™ MAC-10 | Heat (Minimal Wear)",
@@ -9712,7 +9736,7 @@
     {
       "assetid": "26231870981",
       "classid": "7993037726",
-      "instanceid": "480116272",
+      "instanceid": "480320655",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Fever Dream",
       "market_hash_name": "StatTrak™ SSG 08 | Fever Dream (Factory New)",

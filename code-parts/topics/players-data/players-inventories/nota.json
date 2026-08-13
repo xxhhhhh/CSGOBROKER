@@ -7,18 +7,16 @@
   "name": "Emil Moskvitin",
   "nationality": "Russia",
   "born": "28.04.2007",
-  "isContentCreator": false,
   "twitch": "nnnota",
   "faceit": "https://faceitdb.com/profile/faceit/b70ee3b9-88f0-4177-a5c6-9381a63a8695",
-  "appid": 730,
-  "contextid": "2",
-  "updatedAt": "2026-08-08T04:16:51.220Z",
-  "inventoryVisible": true,
-  "fetchOk": true,
-  "fetchStatus": 200,
-  "fetchError": "",
-  "totalItemsRaw": 37,
-  "totalItemsGrouped": 35,
+  "isContentCreator": false,
+  "updatedAt": "2026-08-11T04:25:24.806Z",
+  "fetchOk": false,
+  "fetchStatus": 403,
+  "fetchError": "Steam profile is private (private)",
+  "inventoryVisible": false,
+  "totalItemsRaw": 36,
+  "totalItemsGrouped": 34,
   "items": [
     {
       "assetid": "40419181186",
@@ -540,53 +538,6 @@
       ]
     },
     {
-      "assetid": "52489053770",
-      "classid": "6360299206",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | magixx | Shanghai 2024",
-      "market_hash_name": "Sticker | magixx | Shanghai 2024",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C6D6C6DE7FCFE6C6EEC5F6C2A4C3CEC6D673F9AEC6B6CE6CC8DC12",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "52489053770"
-      ]
-    },
-    {
       "assetid": "52489053771",
       "classid": "778383693",
       "instanceid": "143865972",
@@ -1104,7 +1055,7 @@
     {
       "assetid": "53017429618",
       "classid": "7993037434",
-      "instanceid": "8732393600",
+      "instanceid": "8744133383",
       "amount": 1,
       "name": "StatTrak™ USP-S | Printstream",
       "market_hash_name": "StatTrak™ USP-S | Printstream (Field-Tested)",
