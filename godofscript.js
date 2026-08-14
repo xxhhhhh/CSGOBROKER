@@ -2933,3 +2933,115 @@ document.addEventListener("DOMContentLoaded", () => {
     start();
   });
 });
+
+// ===== LOCALHOST: добавляем .html к внутренним ссылкам =====
+(() => {
+  const LOCAL_HOSTS = new Set([
+    'localhost',
+    '127.0.0.1',
+    '0.0.0.0',
+    '::1'
+  ]);
+
+  // На реальном сайте код вообще ничего не делает
+  if (!LOCAL_HOSTS.has(window.location.hostname)) {
+    return;
+  }
+
+  function fixLocalLink(link) {
+    if (!link || !link.hasAttribute('href')) return;
+
+    const href = link.getAttribute('href');
+
+    if (
+      !href ||
+      href.startsWith('#') ||
+      /^(mailto:|tel:|javascript:|data:)/i.test(href)
+    ) {
+      return;
+    }
+
+    let url;
+
+    try {
+      url = new URL(href, window.location.href);
+    } catch {
+      return;
+    }
+
+    // Не трогаем внешние ссылки
+    if (url.origin !== window.location.origin) {
+      return;
+    }
+
+    const pathname = url.pathname;
+
+    // Не трогаем:
+    // /
+    // /ru/
+    // уже существующие .html
+    // файлы .css, .js, .json, .png и т.д.
+    if (!pathname || pathname.endsWith('/')) {
+      return;
+    }
+
+    const lastPart = pathname.split('/').pop();
+
+    if (!lastPart || /\.[a-z0-9]+$/i.test(lastPart)) {
+      return;
+    }
+
+    // Добавляем .html перед ?query и #hash
+    url.pathname = pathname + '.html';
+
+    link.setAttribute(
+      'href',
+      url.pathname + url.search + url.hash
+    );
+  }
+
+  function fixAllLinks(root = document) {
+    if (root.matches?.('a[href]')) {
+      fixLocalLink(root);
+    }
+
+    root.querySelectorAll?.('a[href]').forEach(fixLocalLink);
+  }
+
+  function init() {
+    // Исправляем уже существующие ссылки
+    fixAllLinks(document);
+
+    // Исправляем ссылки, которые добавляются динамически
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (
+          mutation.type === 'attributes' &&
+          mutation.attributeName === 'href'
+        ) {
+          fixLocalLink(mutation.target);
+          return;
+        }
+
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            fixAllLinks(node);
+          }
+        });
+      });
+    });
+
+    observer.observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['href']
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

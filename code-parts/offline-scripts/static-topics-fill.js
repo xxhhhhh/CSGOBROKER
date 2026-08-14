@@ -3782,7 +3782,14 @@ async function processTopicFiltersCtx(ctx){
     const openTag = readTag(html, h.openStart);
     const classes = parseClassAttr(openTag.attrs);
 
-    if (classes.has("items-type")) continue;
+    // items-type страницы, которые полностью перестраиваются через
+    // processItemsTypeTopicBoxesPages, уже получают свежий topic-filter там.
+    // Остальные items-type страницы, например /topic/items-type/knives,
+    // должны обновлять topic-filter здесь из TOPIC_NAV_FILE.
+    if (
+      classes.has("items-type") &&
+      detectItemsTypeIndexContext(ctx.urlPath)
+    ) continue;
 
     const isRu = ctx.flags.isRu || classes.has("lang-ru");
     const openAbs = h.openEnd;

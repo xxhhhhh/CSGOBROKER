@@ -69,7 +69,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#0d0d0d">
     <meta name="msapplication-navbutton-color" content="#0d0d0d">
     <script defer src="/tech-scripts.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+    <script defer src="/code-parts/fuse.min.js"></script>
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "dc243703e5f549b789897d5492ba4571"}'></script>
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://csgobroker.cc/img/skins/topics/items.png">
@@ -511,88 +511,98 @@
       <input class="singlemod-box topic-filter-tab" type="text" placeholder="" aria-label="Filter Topic" autocomplete="off">
       <div class="singlemod-box" data-title="All Items">
         <a href="/topic/items" class="singlemod-select">
-                <img src="/img/icons/gamemodes/box-open-full.svg" alt="All Items">
-              </a>
+          <img src="/img/icons/gamemodes/box-open-full.svg" alt="All Items">
+        </a>
       </div>
       <div class="singlemod-box" data-title="All Knives">
         <a href="/topic/items-type/knives" class="singlemod-select">
-                <img src="/img/icons/gamemodes/knives-category.svg" alt="All Knives">
-              </a>
+          <img src="/img/icons/gamemodes/knives-category.svg" alt="All Knives">
+        </a>
       </div>
       <div class="singlemod-box" data-title="All Gloves">
         <a href="/topic/items-type/gloves" class="singlemod-select">
-                <img src="/img/icons/gamemodes/gloves-category.svg" alt="All Gloves">
-              </a>
+          <img src="/img/icons/gamemodes/gloves-category.svg" alt="All Gloves">
+        </a>
       </div>
       <div class="singlemod-box active" data-title="All Rifles">
         <a href="/topic/items-type/rifles" class="singlemod-select">
-                <img src="/img/icons/gamemodes/rifles-category.png" alt="All Rifles">
-              </a>
+          <img src="/img/icons/gamemodes/rifles-category.png" alt="All Rifles">
+        </a>
       </div>
       <div class="singlemod-box" data-title="All Sniper Rifles">
         <a href="/topic/items-type/sniper-rifles" class="singlemod-select">
-                <img src="/img/icons/gamemodes/snipers-category.svg" alt="All Sniper Rifles">
-              </a>
+          <img src="/img/icons/gamemodes/snipers-category.svg" alt="All Sniper Rifles">
+        </a>
       </div>
       <div class="singlemod-box" data-title="All Pistols">
         <a href="/topic/items-type/pistols" class="singlemod-select">
-                <img src="/img/icons/gamemodes/pistols-category.svg" alt="All Pistols">
-              </a>
+          <img src="/img/icons/gamemodes/pistols-category.svg" alt="All Pistols">
+        </a>
       </div>
       <div class="singlemod-box" data-title="All SMGS">
         <a href="/topic/items-type/smgs" class="singlemod-select">
-                <img src="/img/icons/gamemodes/smgs-category.svg" alt="All SMGS">
-              </a>
+          <img src="/img/icons/gamemodes/smgs-category.svg" alt="All SMGS">
+        </a>
       </div>
       <div class="singlemod-box" data-title="All Shotguns">
         <a href="/topic/items-type/shotguns" class="singlemod-select">
-                <img src="/img/icons/gamemodes/shotguns-category.svg" alt="All Shotguns">
-              </a>
+          <img src="/img/icons/gamemodes/shotguns-category.svg" alt="All Shotguns">
+        </a>
       </div>
       <div class="singlemod-box" data-title="All Machineguns">
         <a href="/topic/items-type/machineguns" class="singlemod-select">
-                <img src="/img/icons/gamemodes/mguns-category.svg" alt="All Machineguns">
-              </a>
+          <img src="/img/icons/gamemodes/mguns-category.svg" alt="All Machineguns">
+        </a>
       </div>
       <div class="singlemod-box" data-title="All Agents">
         <a href="/topic/items/agents" class="singlemod-select">
-                <img src="/img/icons/gamemodes/agents.webp" alt="All Agents">
-              </a>
+          <img src="/img/icons/gamemodes/agents.webp" alt="All Agents">
+        </a>
       </div>
       <div class="singlemod-box" data-title="All Cases">
         <a href="/topic/items-type/cases" class="singlemod-select">
-                <img src="/img/icons/gamemodes/mods-box/cases.webp" alt="All Cases">
-              </a>
+          <img src="/img/icons/gamemodes/mods-box/cases.webp" alt="All Cases">
+        </a>
       </div>
       <div class="singlemod-box" data-title="All Collections">
         <a href="/topic/items-type/collections" class="singlemod-select">
-                <img src="/img/icons/gamemodes/collections.webp" alt="All Collections">
-              </a>
+          <img src="/img/icons/gamemodes/collections.webp" alt="All Collections">
+        </a>
+      </div>
+      <div class="singlemod-box" data-title="All Tournament Stickers">
+        <a href="/topic/items-type/tournament-stickers" class="singlemod-select">
+          <img src="/img/icons/gamemodes/trophy.webp" alt="All Tournament Stickers">
+        </a>
       </div>
       <div class="singlemod-box" data-title="All Sticker Capsules">
         <a href="/topic/items-type/sticker-capsules" class="singlemod-select">
-                <img src="/img/icons/gamemodes/capsule-category.png" alt="All Sticker Capsules">
-              </a>
+          <img src="/img/icons/gamemodes/capsule-category.png" alt="All Sticker Capsules">
+        </a>
       </div>
       <div class="singlemod-box" data-title="All Autograph Capsules">
         <a href="/topic/items-type/autograph-capsules" class="singlemod-select">
-                <img src="/img/icons/gamemodes/capsule-category.png" alt="All Autograph Capsules">
-              </a>
+          <img src="/img/icons/gamemodes/capsule-category.png" alt="All Autograph Capsules">
+        </a>
       </div>
       <div class="singlemod-box" data-title="All Charms">
         <a href="/topic/items-type/charms" class="singlemod-select">
-                <img src="/img/icons/gamemodes/charms.png" alt="All Charms">
-              </a>
+          <img src="/img/icons/gamemodes/charms.png" alt="All Charms">
+        </a>
       </div>
       <div class="singlemod-box" data-title="Skins by Color CS2">
         <a href="/topic/skins" class="singlemod-select">
-                <img src="/img/icons/gamemodes/palette.png" alt="Skins by Color CS2">
-              </a>
+          <img src="/img/icons/gamemodes/palette.png" alt="Skins by Color CS2">
+        </a>
+      </div>
+      <div class="singlemod-box" data-title="Player Inventories">
+        <a href="/topic/players/inventories" class="singlemod-select">
+          <img src="/img/icons/gamemodes/backpack.webp" alt="Player Inventories">
+        </a>
       </div>
       <div class="singlemod-box" data-title="All Sticker Crafts">
         <a href="/topic/sticker-crafts" class="singlemod-select">
-                <img src="/img/icons/gamemodes/stickers-category.png" alt="All Sticker Crafts">
-              </a>
+          <img src="/img/icons/gamemodes/stickers-category.png" alt="All Sticker Crafts">
+        </a>
       </div>
     </div>
     <a href="/topic/items/ak-47" class="topic-box items">

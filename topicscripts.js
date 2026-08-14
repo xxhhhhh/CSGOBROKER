@@ -3675,6 +3675,33 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (!allBoxes.length) return 1;
 
     const filteredBoxes = getFilteredBoxes(allBoxes, currentSearch);
+
+    // Отключаем пагинацию для holder с классом no-pagination
+    if (topicBoxesHolder.classList.contains("no-pagination")) {
+      topicBoxesHolder.classList.remove("pagination");
+
+      allBoxes.forEach((box) => {
+        box.style.display = "none";
+        box.classList.remove("hidden", "fade-in", "visible", "visible_sort");
+      });
+
+      filteredBoxes.forEach((box, index) => {
+        box.style.display = "";
+        box.style.animationDelay = `${((index % itemsPerPage) + 1) * 0.025}s`;
+        box.classList.add(currentSearch ? "visible_sort" : "visible");
+      });
+
+      if (updateURLState) {
+        updateURL({
+          page: 1,
+          search: currentSearch,
+          replace: replaceURL,
+        });
+      }
+
+      return 1;
+    }
+
     const totalPages = Math.ceil(filteredBoxes.length / itemsPerPage);
 
     allBoxes.forEach((box) => {
