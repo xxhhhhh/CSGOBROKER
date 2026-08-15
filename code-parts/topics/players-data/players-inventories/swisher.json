@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/27d1a137-8bf2-4b21-844e-ff2b7131ae74",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-10T04:50:21.234Z",
+  "updatedAt": "2026-08-15T03:58:18.819Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 184,
-  "totalItemsGrouped": 156,
+  "totalItemsRaw": 185,
+  "totalItemsGrouped": 157,
   "items": [
     {
       "assetid": "51634205615",
@@ -179,7 +179,7 @@
     {
       "assetid": "49737375108",
       "classid": "7993055801",
-      "instanceid": "188537742",
+      "instanceid": "188536286",
       "amount": 1,
       "name": "★ StatTrak™ M9 Bayonet | Doppler",
       "market_hash_name": "★ StatTrak™ M9 Bayonet | Doppler (Factory New)",
@@ -3047,7 +3047,7 @@
       ]
     },
     {
-      "assetid": "53079548507",
+      "assetid": "53079548503",
       "classid": "8711968532",
       "instanceid": "143865972",
       "amount": 5,
@@ -3090,11 +3090,11 @@
         }
       ],
       "assetids": [
+        "53079548503",
         "53079548507",
         "53079548506",
         "53079548505",
-        "53079548504",
-        "53079548503"
+        "53079548504"
       ]
     },
     {
@@ -5159,7 +5159,7 @@
     {
       "assetid": "41233184373",
       "classid": "7993042347",
-      "instanceid": "8755252888",
+      "instanceid": "8759204451",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Neo-Noir",
       "market_hash_name": "StatTrak™ M4A4 | Neo-Noir (Factory New)",
@@ -5510,6 +5510,38 @@
       "assetid": "39897591502",
       "classid": "5835568404",
       "instanceid": "6276300740",
+      "amount": 1,
+      "name": "C4 Explosive",
+      "market_hash_name": "C4 Explosive",
+      "type": "Stock C4",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53178991626",
+      "classid": "5835568404",
+      "instanceid": "7780848044",
       "amount": 1,
       "name": "C4 Explosive",
       "market_hash_name": "C4 Explosive",

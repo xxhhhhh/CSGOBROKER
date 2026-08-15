@@ -12,14 +12,53 @@
   "faceit": "https://faceitdb.com/profile/faceit/b68b677e-562e-456d-9c27-3ebf437e7bd5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-10T04:46:05.736Z",
+  "updatedAt": "2026-08-15T03:53:54.914Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 213,
-  "totalItemsGrouped": 124,
+  "totalItemsRaw": 217,
+  "totalItemsGrouped": 128,
   "items": [
+    {
+      "assetid": "53181977891",
+      "classid": "7993040630",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Gamma Doppler",
+      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2083932029110C45829B0087A33987AB85B380BB4940196580C36380EB5382F387D2E9515D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.024247068912,
+      "seed": 480,
+      "phase": "Phase 2"
+    },
     {
       "assetid": "50721011954",
       "classid": "7993036088",
@@ -90,6 +129,62 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Mogul",
       "market_hash_name": "★ Specialist Gloves | Mogul (Battle-Scarred)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53181977890",
+      "classid": "7993042301",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Well-Worn)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53181977889",
+      "classid": "8246944780",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -3913,6 +4008,58 @@
       ]
     },
     {
+      "assetid": "53181977892",
+      "classid": "7993046554",
+      "instanceid": "8567765990",
+      "amount": 1,
+      "name": "Souvenir AK-47 | Gold Arabesque",
+      "market_hash_name": "Souvenir AK-47 | Gold Arabesque (Field-Tested)",
+      "type": "Souvenir Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52159726433",
       "classid": "8537210412",
       "instanceid": "8568654794",
@@ -4186,7 +4333,7 @@
     {
       "assetid": "51866948260",
       "classid": "7993040447",
-      "instanceid": "903106301",
+      "instanceid": "902743675",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Bad Trip",
       "market_hash_name": "StatTrak™ FAMAS | Bad Trip (Field-Tested)",
@@ -4222,7 +4369,7 @@
     {
       "assetid": "40283627198",
       "classid": "7993044416",
-      "instanceid": "8717687829",
+      "instanceid": "8762073286",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Minimal Wear)",
@@ -4486,7 +4633,7 @@
     {
       "assetid": "45119594105",
       "classid": "7993038081",
-      "instanceid": "188604750",
+      "instanceid": "188537367",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Sakkaku",
       "market_hash_name": "StatTrak™ MAC-10 | Sakkaku (Battle-Scarred)",

@@ -7,16 +7,18 @@
   "name": "Nikola Kovač",
   "nationality": "Bosnia and Herzegovina",
   "born": "16.02.1997",
+  "isContentCreator": false,
   "twitch": "NiKo",
   "faceit": "https://faceitdb.com/profile/faceit/19606e0c-137b-4885-a904-744fa12d25f6",
-  "isContentCreator": false,
-  "updatedAt": "2026-05-01T06:20:13.394Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 72,
-  "totalItemsGrouped": 72,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-15T03:41:05.163Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 77,
+  "totalItemsGrouped": 77,
   "items": [
     {
       "assetid": "44203583873",
@@ -164,6 +166,34 @@
       ]
     },
     {
+      "assetid": "51405432159",
+      "classid": "8247439252",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Driver Gloves | Garden",
+      "market_hash_name": "★ Driver Gloves | Garden (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "28179879993",
       "classid": "7993043849",
       "instanceid": "188530139",
@@ -192,12 +222,68 @@
       ]
     },
     {
+      "assetid": "51484464446",
+      "classid": "7993040116",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Fade",
+      "market_hash_name": "★ Specialist Gloves | Fade (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "44203583872",
       "classid": "7993048052",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ Sport Gloves | Amphibious",
       "market_hash_name": "★ Sport Gloves | Amphibious (Factory New)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51405434846",
+      "classid": "8247738977",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Blaze",
+      "market_hash_name": "★ Sport Gloves | Blaze (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -709,6 +795,34 @@
       "amount": 1,
       "name": "Budapest 2025 Silver Coin",
       "market_hash_name": "Budapest 2025 Silver Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52738782368",
+      "classid": "8637433899",
+      "instanceid": "565664004",
+      "amount": 1,
+      "name": "Champion at IEM Cologne 2026",
+      "market_hash_name": "Champion at IEM Cologne 2026",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -1746,6 +1860,42 @@
       ]
     },
     {
+      "assetid": "52275208269",
+      "classid": "188544468",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "P2000 | Scorpion",
+      "market_hash_name": "P2000 | Scorpion (Minimal Wear)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "30653439356",
       "classid": "7993035530",
       "instanceid": "480085569",
@@ -2108,7 +2258,7 @@
     {
       "assetid": "6030551108",
       "classid": "7993041822",
-      "instanceid": "904191666",
+      "instanceid": "903883213",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Fowl Play",
       "market_hash_name": "StatTrak™ Five-SeveN | Fowl Play (Minimal Wear)",
@@ -2144,7 +2294,7 @@
     {
       "assetid": "19248216121",
       "classid": "7993041685",
-      "instanceid": "8342482792",
+      "instanceid": "8731409882",
       "amount": 1,
       "name": "StatTrak™ P250 | Undertow",
       "market_hash_name": "StatTrak™ P250 | Undertow (Factory New)",
@@ -2268,7 +2418,7 @@
     {
       "assetid": "49528937429",
       "classid": "7993045267",
-      "instanceid": "8430132952",
+      "instanceid": "8759336629",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Case Hardened",
       "market_hash_name": "StatTrak™ AK-47 | Case Hardened (Factory New)",
@@ -2348,7 +2498,7 @@
     {
       "assetid": "23530883535",
       "classid": "7993050425",
-      "instanceid": "480085796",
+      "instanceid": "480088375",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Toybox",
       "market_hash_name": "StatTrak™ MAC-10 | Toybox (Minimal Wear)",
@@ -2384,7 +2534,7 @@
     {
       "assetid": "27770856656",
       "classid": "7993039416",
-      "instanceid": "2591288699",
+      "instanceid": "3084667396",
       "amount": 1,
       "name": "StatTrak™ USP-S | Printstream",
       "market_hash_name": "StatTrak™ USP-S | Printstream (Minimal Wear)",
@@ -2420,7 +2570,7 @@
     {
       "assetid": "25705590368",
       "classid": "7993037213",
-      "instanceid": "481139411",
+      "instanceid": "496258209",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Nightwish",
       "market_hash_name": "StatTrak™ AK-47 | Nightwish (Minimal Wear)",
@@ -2500,7 +2650,7 @@
     {
       "assetid": "30653638586",
       "classid": "7993036520",
-      "instanceid": "188733293",
+      "instanceid": "188602803",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Decommissioned",
       "market_hash_name": "StatTrak™ FAMAS | Decommissioned (Field-Tested)",
@@ -2536,7 +2686,7 @@
     {
       "assetid": "17072524978",
       "classid": "7993037125",
-      "instanceid": "480635036",
+      "instanceid": "480271765",
       "amount": 1,
       "name": "StatTrak™ MP9 | Modest Threat",
       "market_hash_name": "StatTrak™ MP9 | Modest Threat (Field-Tested)",
