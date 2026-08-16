@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9c3e501d-132c-42c8-b808-7641acfdc0ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-15T03:36:55.719Z",
+  "updatedAt": "2026-08-16T03:46:12.225Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 141,
-  "totalItemsGrouped": 141,
+  "totalItemsRaw": 119,
+  "totalItemsGrouped": 119,
   "items": [
     {
       "assetid": "51394919949",
@@ -27,6 +27,42 @@
       "amount": 1,
       "name": "★ Butterfly Knife | Crimson Web",
       "market_hash_name": "★ Butterfly Knife | Crimson Web (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53199198416",
+      "classid": "7993036202",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Damascus Steel",
+      "market_hash_name": "★ Butterfly Knife | Damascus Steel (Field-Tested)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -221,12 +257,111 @@
       ]
     },
     {
+      "assetid": "53203074982",
+      "classid": "7993050232",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Flip Knife | Gamma Doppler",
+      "market_hash_name": "★ Flip Knife | Gamma Doppler (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201202B4ED8B8BD4130AEB1132AE163A1422112AEDBCD4FE1152DC137AB213621AC2DC2E4C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.071089737117,
+      "seed": 206,
+      "phase": "Phase 4"
+    },
+    {
+      "assetid": "53203070698",
+      "classid": "7993046644",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Lore",
+      "market_hash_name": "★ Karambit | Lore (Battle-Scarred)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53182186641",
       "classid": "7993045955",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ M9 Bayonet | Marble Fade",
       "market_hash_name": "★ M9 Bayonet | Marble Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53203069357",
+      "classid": "7993046401",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Marble Fade",
+      "market_hash_name": "★ M9 Bayonet | Marble Fade (Minimal Wear)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -518,6 +653,34 @@
       "float": 0.063474453986,
       "seed": 886,
       "phase": "Ruby"
+    },
+    {
+      "assetid": "53199265716",
+      "classid": "7993035787",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Driver Gloves | Black Tie",
+      "market_hash_name": "★ Driver Gloves | Black Tie (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "53142265181",
@@ -889,42 +1052,6 @@
       ]
     },
     {
-      "assetid": "52952991815",
-      "classid": "8637412688",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Desert Eagle | Eastern Enigma",
-      "market_hash_name": "Desert Eagle | Eastern Enigma (Well-Worn)",
-      "type": "Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "41802183082",
       "classid": "7993037948",
       "instanceid": "6278993906",
@@ -933,78 +1060,6 @@
       "market_hash_name": "Desert Eagle | Heat Treated (Minimal Wear)",
       "type": "Classified Pistol",
       "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "44751604077",
-      "classid": "188530249",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Desert Eagle | Hypnotic",
-      "market_hash_name": "Desert Eagle | Hypnotic (Factory New)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E5F50877783E43E4FDE4C5D8CDE0D5E1DD4A207201E6A525E78D39E795ED1A8E95A9",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "40322222793",
-      "classid": "7993035507",
-      "instanceid": "6298421599",
-      "amount": 1,
-      "name": "Glock-18 | Vogue",
-      "market_hash_name": "Glock-18 | Vogue (Factory New)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FCEC35696D676AFDE4F8DC3FFBD4F9CCF8C44E7E5710FFBC41FF9EE8F4FFEC1DC1D1FCFC303EC18C4DC9C1B93CD457C79EE8F4FEEC1DC1D1FCFC5E3EC19BD12EC2B94EE5A2C29EE8F4FEEC08C1D1FCFC54BDC1445520C2B90807AFC29EE8F4FEEC3FFBD1FCFCECBDC19F7A41C2B9186BFEC29EE5F4FDEC08C1E1B41DC6C3D1FCFC76BEC126E1AEC2B9BEDAB7C29475FE8CF80FFB65AC",
       "tags": [
         {
           "category": "Type",
@@ -1221,78 +1276,6 @@
       ]
     },
     {
-      "assetid": "48550136986",
-      "classid": "7993037336",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "FAMAS | Mecha Industries",
-      "market_hash_name": "FAMAS | Mecha Industries (Minimal Wear)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DECE44471F306ADFC6D4FE2CDAF6DBEEDAE600683A2EDD9E60DCB6CEAEDA217322BE",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51858433320",
-      "classid": "7993035539",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "FAMAS | Rapid Eye Movement",
-      "market_hash_name": "FAMAS | Rapid Eye Movement (Field-Tested)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "45228330859",
       "classid": "7993038185",
       "instanceid": "6276680362",
@@ -1332,222 +1315,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48347346835",
-      "classid": "7993042327",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sawed-Off | Wasteland Princess",
-      "market_hash_name": "Sawed-Off | Wasteland Princess (Minimal Wear)",
-      "type": "Classified Shotgun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CCDC5F232B4178CDD4D1EC32C8E4C9FCC8F475412920CF8CD4A44BCDBCC4F491BC54",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51142891825",
-      "classid": "7993042125",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P90 | Shallow Grave",
-      "market_hash_name": "P90 | Shallow Grave (Factory New)",
-      "type": "Classified SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48347394168",
-      "classid": "7993039271",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P90 | Shallow Grave",
-      "market_hash_name": "P90 | Shallow Grave (Field-Tested)",
-      "type": "Classified SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203626CED6DCBB82372E2516CA321E3306320E87B892C3357699335E58463E0BCA5706",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51858428835",
-      "classid": "7993039271",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "P90 | Shallow Grave",
-      "market_hash_name": "P90 | Shallow Grave (Field-Tested)",
-      "type": "Classified SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51858429937",
-      "classid": "7993039271",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "P90 | Shallow Grave",
-      "market_hash_name": "P90 | Shallow Grave (Field-Tested)",
-      "type": "Classified SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "41562992736",
-      "classid": "7993037933",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "AWP | Crakow!",
-      "market_hash_name": "AWP | Crakow! (Factory New)",
-      "type": "Classified Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1656,6 +1423,50 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53199202813",
+      "classid": "202194815",
+      "instanceid": "8377863746",
+      "amount": 1,
+      "name": "AWP | Graphite",
+      "market_hash_name": "AWP | Graphite (Minimal Wear)",
+      "type": "Classified Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
           "name": ""
         },
         {
@@ -1812,6 +1623,42 @@
       "phase": "Emerald"
     },
     {
+      "assetid": "53199226891",
+      "classid": "7993037960",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "AK-47 | Asiimov",
+      "market_hash_name": "AK-47 | Asiimov (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "47789055241",
       "classid": "7993038723",
       "instanceid": "7731868714",
@@ -1859,6 +1706,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53199196766",
+      "classid": "7993037278",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AK-47 | Vulcan",
+      "market_hash_name": "AK-47 | Vulcan (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -2011,6 +1894,50 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53199201381",
+      "classid": "7993038205",
+      "instanceid": "6276338313",
+      "amount": 1,
+      "name": "AWP | Asiimov",
+      "market_hash_name": "AWP | Asiimov (Well-Worn)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -3340,150 +3267,6 @@
       ]
     },
     {
-      "assetid": "52952991827",
-      "classid": "8637410990",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Tec-9 | Sultan",
-      "market_hash_name": "Tec-9 | Sultan (Field-Tested)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52952991818",
-      "classid": "8637412501",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Tec-9 | Sultan",
-      "market_hash_name": "Tec-9 | Sultan (Well-Worn)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52952991825",
-      "classid": "8637413664",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Sawed-Off | Lunar Wyrm",
-      "market_hash_name": "Sawed-Off | Lunar Wyrm (Battle-Scarred)",
-      "type": "Mil-Spec Grade Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52952991826",
-      "classid": "8637413664",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Sawed-Off | Lunar Wyrm",
-      "market_hash_name": "Sawed-Off | Lunar Wyrm (Battle-Scarred)",
-      "type": "Mil-Spec Grade Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "45486096299",
       "classid": "6216350126",
       "instanceid": "519977179",
@@ -3512,186 +3295,6 @@
       ],
       "assetids": [
         "45486096299"
-      ]
-    },
-    {
-      "assetid": "51142947105",
-      "classid": "7993038394",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "USP-S | Cyrex",
-      "market_hash_name": "USP-S | Cyrex (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51857582586",
-      "classid": "7993036513",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "USP-S | Ticket to Hell",
-      "market_hash_name": "USP-S | Ticket to Hell (Field-Tested)",
-      "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48810669652",
-      "classid": "7993036658",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "XM1014 | Zombie Offensive",
-      "market_hash_name": "XM1014 | Zombie Offensive (Field-Tested)",
-      "type": "Restricted Shotgun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203727E3DBE9DD82362F2E17D83F1F3307330F87F0F1C234771F5F01473F1E15EB29",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51164185388",
-      "classid": "7993036658",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "XM1014 | Zombie Offensive",
-      "market_hash_name": "XM1014 | Zombie Offensive (Field-Tested)",
-      "type": "Restricted Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51164283894",
-      "classid": "7993036658",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "XM1014 | Zombie Offensive",
-      "market_hash_name": "XM1014 | Zombie Offensive (Field-Tested)",
-      "type": "Restricted Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
       ]
     },
     {
@@ -4043,114 +3646,6 @@
       ]
     },
     {
-      "assetid": "52984095378",
-      "classid": "7993044853",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ CZ75-Auto | Polymer",
-      "market_hash_name": "StatTrak™ CZ75-Auto | Polymer (Factory New)",
-      "type": "StatTrak™ Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53179469873",
-      "classid": "7993042140",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ CZ75-Auto | Polymer",
-      "market_hash_name": "StatTrak™ CZ75-Auto | Polymer (Field-Tested)",
-      "type": "StatTrak™ Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53179750258",
-      "classid": "7993043180",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ Glock-18 | Ironwork",
-      "market_hash_name": "StatTrak™ Glock-18 | Ironwork (Minimal Wear)",
-      "type": "StatTrak™ Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "48810672292",
       "classid": "7993036808",
       "instanceid": "188530170",
@@ -4187,78 +3682,6 @@
       ]
     },
     {
-      "assetid": "49138607298",
-      "classid": "7993042510",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ Galil AR | Black Sand",
-      "market_hash_name": "StatTrak™ Galil AR | Black Sand (Field-Tested)",
-      "type": "StatTrak™ Mil-Spec Grade Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BAAA7873343D0DBBA2B79A4FBE92B98AB3821C7C3A49B9FAAAF2BAEABAD2E5CAB277AD5132",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51164309864",
-      "classid": "7993035520",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ MAG-7 | Foresight",
-      "market_hash_name": "StatTrak™ MAG-7 | Foresight (Minimal Wear)",
-      "type": "StatTrak™ Mil-Spec Grade Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51164312913",
       "classid": "7993037543",
       "instanceid": "188530170",
@@ -4266,42 +3689,6 @@
       "name": "StatTrak™ Sawed-Off | Spirit Board",
       "market_hash_name": "StatTrak™ Sawed-Off | Spirit Board (Minimal Wear)",
       "type": "StatTrak™ Mil-Spec Grade Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53180151426",
-      "classid": "7993044873",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ MP9 | Sand Scale",
-      "market_hash_name": "StatTrak™ MP9 | Sand Scale (Minimal Wear)",
-      "type": "StatTrak™ Mil-Spec Grade SMG",
       "inspectLink": "",
       "tags": [
         {
@@ -4375,186 +3762,6 @@
       "market_hash_name": "StatTrak™ SCAR-20 | Poultrygeist (Minimal Wear)",
       "type": "StatTrak™ Mil-Spec Grade Sniper Rifle",
       "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51163963303",
-      "classid": "7993035937",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ USP-S | Ticket to Hell",
-      "market_hash_name": "StatTrak™ USP-S | Ticket to Hell (Field-Tested)",
-      "type": "StatTrak™ Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51857619270",
-      "classid": "7993047466",
-      "instanceid": "902658099",
-      "amount": 1,
-      "name": "StatTrak™ Nova | Gila",
-      "market_hash_name": "StatTrak™ Nova | Gila (Minimal Wear)",
-      "type": "StatTrak™ Restricted Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51164293640",
-      "classid": "7993041790",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ G3SG1 | Dream Glade",
-      "market_hash_name": "StatTrak™ G3SG1 | Dream Glade (Battle-Scarred)",
-      "type": "StatTrak™ Restricted Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48810674767",
-      "classid": "7993036962",
-      "instanceid": "188530722",
-      "amount": 1,
-      "name": "StatTrak™ G3SG1 | Dream Glade",
-      "market_hash_name": "StatTrak™ G3SG1 | Dream Glade (Field-Tested)",
-      "type": "StatTrak™ Restricted Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B0A07F246F5A05B1A8BB9059B898B480B9887C6F1243B3F07EB2F8B0E0B0D884C0B8D4639530",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48423635663",
-      "classid": "7993041654",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ G3SG1 | Stinger",
-      "market_hash_name": "StatTrak™ G3SG1 | Stinger (Field-Tested)",
-      "type": "StatTrak™ Restricted Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F6E639636E4442F7EEFDD602F2DEF2C6FFCE05033505F5B635F0BEF6A6F69E9D86FE2D055656",
       "tags": [
         {
           "category": "Type",

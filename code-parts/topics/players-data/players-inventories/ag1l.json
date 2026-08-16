@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/cab254a5-ff3b-4257-8f3d-cc586e798d2b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-08T04:48:25.358Z",
+  "updatedAt": "2026-08-16T04:24:30.296Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 52,
-  "totalItemsGrouped": 52,
+  "totalItemsRaw": 54,
+  "totalItemsGrouped": 54,
   "items": [
     {
       "assetid": "52250484755",
@@ -175,6 +175,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53358316919",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -480,6 +508,42 @@
       "market_hash_name": "M4A4 | Desolate Space (Field-Tested)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F8E86421324952F9E0E8D834FCD0FDC8FCC0403A560AFBB80EF990EE88FCBD71A060",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53358316920",
+      "classid": "7993035988",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "AUG | Commando Company",
+      "market_hash_name": "AUG | Commando Company (Field-Tested)",
+      "type": "Consumer Grade Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1537,7 +1601,7 @@
     {
       "assetid": "50590324972",
       "classid": "7993037434",
-      "instanceid": "8741745612",
+      "instanceid": "8765925705",
       "amount": 1,
       "name": "StatTrak™ USP-S | Printstream",
       "market_hash_name": "StatTrak™ USP-S | Printstream (Field-Tested)",

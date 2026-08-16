@@ -7,16 +7,18 @@
   "name": "Mark Zimmermann",
   "nationality": "Germany",
   "born": "",
+  "isContentCreator": true,
   "twitch": "ohnepixel",
   "faceit": "https://www.faceit.com/players/meowsui/",
-  "isContentCreator": true,
-  "updatedAt": "2026-08-08T04:12:35.927Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 848,
-  "totalItemsGrouped": 727,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-16T03:48:16.909Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 835,
+  "totalItemsGrouped": 714,
   "items": [
     {
       "assetid": "47476789264",
@@ -2682,6 +2684,34 @@
       "market_hash_name": "★ Driver Gloves | Overtake (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%203020F4B897A240289717108B7E183600330893DBE5C53370E036583140388F38F218",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53263064969",
+      "classid": "8247057150",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Driver Gloves | Plum Quill",
+      "market_hash_name": "★ Driver Gloves | Plum Quill (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -5887,150 +5917,6 @@
       ]
     },
     {
-      "assetid": "50344304575",
-      "classid": "8246918986",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P250 | Kintsugi",
-      "market_hash_name": "P250 | Kintsugi (Minimal Wear)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207A6AC5C5FEBCC17B625E5AF671527F4A7E42ECB8EA97793ABB7B12B67B0A7248A69CBF",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50453762063",
-      "classid": "8246918986",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P250 | Kintsugi",
-      "market_hash_name": "P250 | Kintsugi (Minimal Wear)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B0A03F102D4A0BB1A894903CBB98B580B4884A1A2B40B3F01BB5D830B1C0B8E4FA6204",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50455171933",
-      "classid": "8246918986",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P250 | Kintsugi",
-      "market_hash_name": "P250 | Kintsugi (Minimal Wear)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203E2EE398CDC4853F261A1EB235163B0E3A06E995B5CE3D7E953C56C93C4E36D502338F",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50554715697",
-      "classid": "8246918986",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P250 | Kintsugi",
-      "market_hash_name": "P250 | Kintsugi (Minimal Wear)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20342485C89A9E88352C1014B83F1C3104300CF6C7BFDB37748F325CF235443C8A5D29C2",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50452186681",
       "classid": "8246965877",
       "instanceid": "188530139",
@@ -6507,42 +6393,6 @@
       "market_hash_name": "AK-47 | Crane Flight (Battle-Scarred)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%202939B08EDAA09528312E09B822012C192D11EBC281D32A69F62F41AD2B5921868447ED",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50570954616",
-      "classid": "8246907255",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AK-47 | Crane Flight",
-      "market_hash_name": "AK-47 | Crane Flight (Field-Tested)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200717FF8989B5BB061F0027960C2F0237033FB7E2D9F20447AF046F8005770FAE45950E",
       "tags": [
         {
           "category": "Type",
@@ -7407,186 +7257,6 @@
       "market_hash_name": "P90 | Deathgaze (Battle-Scarred)",
       "type": "Classified SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%203A2AF3E5AB88863B22291AB131123F0A3E02E1A0ACC3397A4F52B0384A3246D25FDA",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50344281161",
-      "classid": "8246922595",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P90 | Deathgaze",
-      "market_hash_name": "P90 | Deathgaze (Field-Tested)",
-      "type": "Classified SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201C0CD5949FDAA71D040F3C971734192C18248CA6CCE81F5CEE1874D71D6C14FCE4FFAB",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50453480161",
-      "classid": "8246903421",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P90 | Deathgaze",
-      "market_hash_name": "P90 | Deathgaze (Minimal Wear)",
-      "type": "Classified SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DACA3B5F562061DBC2C9FA51D1F2DFEADEE23219642AD99A03DDB214DBAAD2A0BC7826",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50455610664",
-      "classid": "8246903421",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P90 | Deathgaze",
-      "market_hash_name": "P90 | Deathgaze (Minimal Wear)",
-      "type": "Classified SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204D5DE5C7C3B6F64C555E6DC64665487D4975ABBECBBD4E0DD84B25C84F3D4532494FA5",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50456704039",
-      "classid": "8246903421",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P90 | Deathgaze",
-      "market_hash_name": "P90 | Deathgaze (Minimal Wear)",
-      "type": "Classified SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200414A3ECD4FFBF051C17248F0F2C0134003C89B5AFF40744DF026C8406740CA003E319",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51625519542",
-      "classid": "8246903421",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P90 | Deathgaze",
-      "market_hash_name": "P90 | Deathgaze (Minimal Wear)",
-      "type": "Classified SMG",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -8959,78 +8629,6 @@
       ]
     },
     {
-      "assetid": "51625530294",
-      "classid": "8247051250",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Glock-18 | Fully Tuned",
-      "market_hash_name": "Glock-18 | Fully Tuned (Field-Tested)",
-      "type": "Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50855996584",
-      "classid": "8246910892",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Glock-18 | Fully Tuned",
-      "market_hash_name": "Glock-18 | Fully Tuned (Well-Worn)",
-      "type": "Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "47629744708",
       "classid": "7993044063",
       "instanceid": "188530139",
@@ -10103,78 +9701,6 @@
       ]
     },
     {
-      "assetid": "50856514125",
-      "classid": "8246944888",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AWP | Queen's Gambit",
-      "market_hash_name": "AWP | Queen's Gambit (Battle-Scarred)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52190193813",
-      "classid": "8246921455",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AWP | Queen's Gambit",
-      "market_hash_name": "AWP | Queen's Gambit (Well-Worn)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "30086462416",
       "classid": "226801247",
       "instanceid": "6276329698",
@@ -10926,9 +10452,9 @@
       ]
     },
     {
-      "assetid": "52322194853",
+      "assetid": "52322195010",
       "classid": "6216350378",
-      "instanceid": "519977179",
+      "instanceid": "0",
       "amount": 26,
       "name": "Charm | Baby Karat CT",
       "market_hash_name": "Charm | Baby Karat CT",
@@ -10953,6 +10479,7 @@
         }
       ],
       "assetids": [
+        "52322195010",
         "52322194853",
         "52322194852",
         "52322194851",
@@ -10977,8 +10504,7 @@
         "52322335224",
         "52322335223",
         "52322195498",
-        "52322195220",
-        "52322195010"
+        "52322195220"
       ]
     },
     {
