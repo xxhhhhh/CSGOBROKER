@@ -11627,7 +11627,7 @@ div#results {
 }
 
 .topic-inventory-showcase {
-    display: flex;
+    display: grid;
     width: 734px;
     width: 643px;
     background: var(--darkgray);
@@ -11645,11 +11645,13 @@ div#results {
     gap: 6px;
     margin: 6px;
     overflow: unset;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .topic-inventory-showcase .box-skins.solo .box-skins-list .skin {
-    height: 85px;
-    width: 84.9px;
+    height: auto;
+    width: auto;
     min-width: unset;
     background: var(--icongradient2);
 }
