@@ -43,7 +43,6 @@ $(document).ready(function () {
                     "MoonMarket",
                     "CSMoney",
                     "Tradeit",
-                    "BitSkins",
                     "Steam",
                   ]
                     .map(
@@ -1994,7 +1993,6 @@ function findMatches(name, priceData, skinEl = null) {
     function generateSearchUrl(skinName, selectedSite) {
       const siteUrls = {
         Tradeit: `https://tradeit.gg/csgo/store?search=${encodeURIComponent(skinName)}&aff=csgobroker`,
-        BitSkins: `https://bitskins.com/market/cs2?search={"order":[{"field":"price","order":"ASC"}],"where":{"skin_name":"${encodeURIComponent(skinName)}"}}&ref_alias=csgobroker`,
         Steam: `https://steamcommunity.com/market/search?appid=730&q=${encodeURIComponent(skinName)}`,
         CSMoney: `https://cs.money/market/buy/?search=${encodeURIComponent(skinName)}&sort=price&order=asc&utm_source=mediabuy&utm_medium=csgobroker&utm_campaign=market&utm_content=link`,
         "AvanMarket": `https://avan.market/ru/market/cs?name=${encodeURIComponent(skinName)}&r=broker`,
@@ -4604,4 +4602,935 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log(text);
         console.log('Координаты скопированы в буфер обмена');
     };
+})();
+
+// ============================================================================
+// /topic + /ru/topic: главная витрина topic-boxes-holder
+// Игроки/лимит/интервалы/крафты задаются в static-topics-fill.js -> TOPIC_HOME_CONFIG.
+// ============================================================================
+(() => {
+  "use strict";
+
+  const normalizedPath = String(window.location.pathname || "")
+    .replace(/\.html?$/i, "")
+    .replace(/\/+$/, "");
+
+  if (normalizedPath !== "/topic" && normalizedPath !== "/ru/topic") return;
+
+  const showcaseLine = document.querySelector(
+    '.topic-boxes-holder [data-topic-home-line="showcase"]'
+  );
+  if (!showcaseLine) return;
+
+  const playerBox = showcaseLine.querySelector(".topic-box.player-box[data-home-player-box]");
+
+  // player-box на главной /topic — это div, поэтому href у него быть не должно.
+  // Удаляем его и из уже сгенерированного HTML старой версии генератора.
+  if (playerBox) {
+    playerBox.removeAttribute("href");
+  }
+
+  const inventoryShowcase = showcaseLine.querySelector(
+    "[data-home-inventory-showcase], .topic-inventory-showcase"
+  );
+
+  const inventoryList = inventoryShowcase?.querySelector(".box-skins-list") || null;
+  const playerButtons = Array.from(
+    showcaseLine.querySelectorAll(".players-box.recs .player[data-player-slug]")
+  );
+
+  const craftBlock = showcaseLine.querySelector("[data-home-crafts-block]");
+  const craftSlides = craftBlock
+    ? Array.from(craftBlock.querySelectorAll(".topic-home-craft-slide[data-home-craft-index]"))
+    : [];
+  const craftSwitchers = craftBlock
+    ? Array.from(craftBlock.querySelectorAll("[data-home-craft-switch]"))
+    : [];
+
+  const PLAYER_INTERVAL = Math.max(
+    1000,
+    Number(showcaseLine.getAttribute("data-player-interval")) || 13000
+  );
+  const CRAFT_INTERVAL = Math.max(
+    1000,
+    Number(showcaseLine.getAttribute("data-craft-interval")) || 13000
+  );
+  const INVENTORY_LIMIT = Math.max(
+    1,
+    Number(showcaseLine.getAttribute("data-inventory-limit")) || 14
+  );
+
+  const inventoryHtmlCache = new Map();
+  const inventoryPromiseCache = new Map();
+  const transientClassTimers = new WeakMap();
+
+  const LOCAL_STATIC_HOSTS = new Set([
+    "localhost",
+    "127.0.0.1",
+    "0.0.0.0",
+    "::1"
+  ]);
+  let priceIndexPromise = null;
+  let playerTimer = null;
+  let craftTimer = null;
+  let playerRequestToken = 0;
+  let inventoryHasRendered = false;
+  let craftHasRendered = false;
+
+  function pulseTopicHomeClass(el, className, duration = 700) {
+    if (!el || !className) return;
+
+    let timers = transientClassTimers.get(el);
+
+    if (!timers) {
+      timers = new Map();
+      transientClassTimers.set(el, timers);
+    }
+
+    const previousTimer = timers.get(className);
+
+    if (previousTimer) {
+      clearTimeout(previousTimer);
+    }
+
+    // Снимаем класс, чтобы CSS-анимация могла запускаться повторно
+    el.classList.remove(className);
+
+    // force reflow
+    void el.offsetWidth;
+
+    el.classList.add(className);
+
+    const timer = setTimeout(() => {
+      el.classList.remove(className);
+      timers.delete(className);
+    }, duration);
+
+    timers.set(className, timer);
+  }
+
+
+  function setInventoryLoading(isLoading, { initial = false } = {}) {
+    if (!inventoryShowcase) return;
+
+    inventoryShowcase.classList.toggle(
+      "topic-home-loading",
+      isLoading
+    );
+
+    inventoryShowcase.classList.toggle(
+      "topic-home-initializing",
+      isLoading && initial
+    );
+
+    if (isLoading) {
+      inventoryShowcase.classList.remove("topic-home-ready");
+    }
+  }
+
+
+  function revealInventory({ initial = false } = {}) {
+    if (!inventoryShowcase) return;
+
+    inventoryShowcase.classList.remove(
+      "topic-home-loading",
+      "topic-home-initializing"
+    );
+
+    inventoryShowcase.classList.add("topic-home-ready");
+
+    pulseTopicHomeClass(
+      inventoryShowcase,
+      "topic-home-reveal"
+    );
+
+    if (!initial) {
+      pulseTopicHomeClass(
+        inventoryShowcase,
+        "topic-home-switching"
+      );
+    }
+  }
+
+  function normalizePriceName(value) {
+    return String(value || "")
+      .replace(/^★\s*/, "")
+      .replace(/StatTrak™/gi, "StatTrak")
+      .replace(/[™®]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function normalizePriceKey(value) {
+    return normalizePriceName(value).toLowerCase();
+  }
+
+  function numberOrNull(value) {
+    const n = Number(value);
+    return Number.isFinite(n) ? n : null;
+  }
+
+  function getSkinVisibleName(skinEl) {
+    return normalizePriceName(
+      skinEl.querySelector(".skin-desc-name")?.textContent ||
+      skinEl.querySelector("img")?.getAttribute("alt") ||
+      ""
+    );
+  }
+
+  function getSkinExistingPrice(skinEl) {
+    const direct = Number(skinEl.getAttribute("data-price-value"));
+    if (Number.isFinite(direct) && direct > 0) return direct;
+
+    const text = String(
+      skinEl.querySelector(".default-price-info")?.textContent ||
+      skinEl.querySelector(".skin-price-info")?.textContent ||
+      ""
+    ).replace(",", ".");
+
+    const m = text.match(/\d+(?:\.\d+)?/);
+    if (!m) return null;
+
+    const parsed = Number(m[0]);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  function formatTopicHomePrice(min, max) {
+    const hasMin = Number.isFinite(min);
+    const hasMax = Number.isFinite(max);
+    if (!hasMin && !hasMax) return "";
+    if (hasMin && hasMax) {
+      return min === max
+        ? `${min.toFixed(2)}$`
+        : `${min.toFixed(2)}$ - ${max.toFixed(2)}$`;
+    }
+    return `${(hasMin ? min : max).toFixed(2)}$`;
+  }
+
+  async function getPriceIndex() {
+    if (priceIndexPromise) return priceIndexPromise;
+
+    priceIndexPromise = (async () => {
+      try {
+        const res = await fetch("/code-parts/topics/skins-data/skins-prices.json", {
+          cache: "force-cache",
+          headers: { Accept: "application/json" },
+        });
+        if (!res.ok) return null;
+
+        const json = await res.json();
+        const rows = Array.isArray(json) ? json : [];
+        const exact = new Map();
+        const partial = [];
+
+        for (const row of rows) {
+          const name = normalizePriceName(row?.name || "");
+          if (!name) continue;
+
+          const entry = {
+            name,
+            key: normalizePriceKey(name),
+            min: numberOrNull(row?.min_price ?? row?.price),
+            max: numberOrNull(row?.max_price ?? row?.price),
+            isSouvenir: /^Souvenir\b/i.test(name),
+            isStatTrak: /\bStatTrak\b/i.test(name),
+            isStickerSlab: /^Sticker Slab\s*\|/i.test(name),
+          };
+
+          if (!Number.isFinite(entry.min) && !Number.isFinite(entry.max)) continue;
+          if (!exact.has(entry.key)) exact.set(entry.key, []);
+          exact.get(entry.key).push(entry);
+          if (name.includes("|")) partial.push(entry);
+        }
+
+        return { exact, partial };
+      } catch {
+        return null;
+      }
+    })();
+
+    return priceIndexPromise;
+  }
+
+  function buildSkinPriceCandidates(skinEl) {
+    const name = getSkinVisibleName(skinEl);
+    if (!name) return [];
+
+    const weapon = String(skinEl.getAttribute("weapon") || "").toLowerCase();
+    const candidates = [name];
+
+    if (weapon.includes("sticker") && !/^Sticker\s*\|/i.test(name)) {
+      candidates.push(`Sticker | ${name}`);
+    }
+    if (weapon.includes("charm") && !/^Charm\s*\|/i.test(name)) {
+      candidates.push(`Charm | ${name}`);
+    }
+
+    return [...new Set(candidates.map(normalizePriceName).filter(Boolean))];
+  }
+
+  function findPriceMatchesForSkin(skinEl, index) {
+    if (!index) return [];
+
+    const candidates = buildSkinPriceCandidates(skinEl);
+    const matches = [];
+
+    for (const candidate of candidates) {
+      const key = normalizePriceKey(candidate);
+      const exact = index.exact.get(key);
+      if (exact?.length) {
+        matches.push(...exact.filter(row => !row.isStickerSlab));
+        continue;
+      }
+
+      for (const row of index.partial) {
+        if (row.isStickerSlab) continue;
+        if (row.key.includes(key)) matches.push(row);
+      }
+    }
+
+    const seen = new Set();
+    return matches.filter(row => {
+      const key = `${row.key}|${row.min}|${row.max}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  function applyResolvedPriceToSkin(skinEl, matches) {
+    if (!matches.length) return getSkinExistingPrice(skinEl);
+
+    const visibleName = getSkinVisibleName(skinEl);
+    const isSouvenirCard = /^Souvenir\b/i.test(visibleName);
+    const isStatTrakCard = /\bStatTrak\b/i.test(visibleName);
+    const hasExterior = /\((Factory New|Minimal Wear|Field-Tested|Well-Worn|Battle-Scarred)\)$/i.test(visibleName);
+
+    let filtered = matches;
+    if (hasExterior && !isStatTrakCard) {
+      filtered = filtered.filter(row => !row.isStatTrak);
+    }
+    if (isSouvenirCard) {
+      const souvenirOnly = filtered.filter(row => row.isSouvenir);
+      if (souvenirOnly.length) filtered = souvenirOnly;
+    } else {
+      const normalOnly = filtered.filter(row => !row.isSouvenir);
+      if (normalOnly.length) filtered = normalOnly;
+    }
+
+    if (!filtered.length) return getSkinExistingPrice(skinEl);
+
+    const mins = filtered
+      .map(row => Number.isFinite(row.min) ? row.min : row.max)
+      .filter(Number.isFinite);
+    const maxs = filtered
+      .map(row => Number.isFinite(row.max) ? row.max : row.min)
+      .filter(Number.isFinite);
+
+    const min = mins.length ? Math.min(...mins) : null;
+    const max = maxs.length ? Math.max(...maxs) : min;
+    const price = Number.isFinite(min) ? min : getSkinExistingPrice(skinEl);
+
+    if (Number.isFinite(price)) {
+      skinEl.setAttribute("data-price-value", String(price));
+    }
+
+    const priceText = formatTopicHomePrice(min, max);
+    if (priceText) {
+      let priceInfo = skinEl.querySelector(".skin-price-info");
+      if (!priceInfo) {
+        priceInfo = document.createElement("div");
+        priceInfo.className = "skin-price-info";
+        skinEl.appendChild(priceInfo);
+      }
+
+      let defaultPrice = priceInfo.querySelector(".default-price-info");
+      if (!defaultPrice) {
+        defaultPrice = document.createElement("div");
+        defaultPrice.className = "default-price-info";
+        priceInfo.prepend(defaultPrice);
+      }
+      defaultPrice.textContent = priceText;
+      priceInfo.classList.remove("loading");
+    }
+
+    return Number.isFinite(price) ? price : null;
+  }
+
+  async function rankInventorySkins(skinElements) {
+    const index = await getPriceIndex();
+
+    const ranked = skinElements.map((skinEl, order) => {
+      const matches = findPriceMatchesForSkin(skinEl, index);
+      const resolved = applyResolvedPriceToSkin(skinEl, matches);
+      const fallback = getSkinExistingPrice(skinEl);
+      const price = Number.isFinite(resolved) ? resolved : fallback;
+      return { skinEl, price, order };
+    });
+
+    ranked.sort((a, b) => {
+      const ap = Number.isFinite(a.price) ? a.price : -Infinity;
+      const bp = Number.isFinite(b.price) ? b.price : -Infinity;
+      if (ap !== bp) return bp - ap;
+      return a.order - b.order;
+    });
+
+    return ranked.slice(0, INVENTORY_LIMIT).map(x => x.skinEl);
+  }
+
+  function getTemplateSkins(slug) {
+    const templates = Array.from(
+      showcaseLine.querySelectorAll("template.topic-home-player-inventory[data-player-slug]")
+    );
+    const tpl = templates.find(
+      node => String(node.getAttribute("data-player-slug") || "").toLowerCase() === slug
+    );
+    if (!tpl) return [];
+
+    return Array.from(tpl.content.querySelectorAll(".skin:not(.expander):not(.extra-list)"))
+      .map(node => node.cloneNode(true));
+  }
+
+  function addHtmlExtension(url) {
+    const raw = String(url || "").trim();
+
+    if (
+      !raw ||
+      /\.html?(?:[?#]|$)/i.test(raw)
+    ) {
+      return raw;
+    }
+
+    return raw.replace(/([?#].*)?$/, ".html$1");
+  }
+
+
+  function fetchCandidates(url) {
+    const raw = String(url || "").trim();
+
+    if (!raw) return [];
+
+    const htmlUrl = addHtmlExtension(raw);
+
+    // На localhost у нас физические *.html файлы.
+    // Поэтому сразу обращаемся к ним и не создаём лишний 404.
+    if (LOCAL_STATIC_HOSTS.has(window.location.hostname)) {
+      return [htmlUrl];
+    }
+
+    // На реальном сайте сначала clean URL.
+    // .html оставляем fallback на всякий случай.
+    return [...new Set([
+      raw,
+      htmlUrl
+    ])];
+  }
+
+  async function fetchInventoryPageHtml(url) {
+    for (const candidate of fetchCandidates(url)) {
+      try {
+        const res = await fetch(candidate, { cache: "force-cache" });
+        if (res.ok) return await res.text();
+      } catch {
+        // пробуем следующий вариант URL
+      }
+    }
+    return "";
+  }
+
+  async function buildInventoryHtmlForPlayer(button) {
+    const slug = String(button?.getAttribute("data-player-slug") || "")
+      .trim()
+      .toLowerCase();
+    if (!slug) return "";
+
+    if (inventoryHtmlCache.has(slug)) {
+      return inventoryHtmlCache.get(slug);
+    }
+    if (inventoryPromiseCache.has(slug)) {
+      return inventoryPromiseCache.get(slug);
+    }
+
+    const promise = (async () => {
+      let skins = [];
+      const href = button.getAttribute("data-player-href") || button.getAttribute("href") || "";
+      const html = await fetchInventoryPageHtml(href);
+
+      if (html) {
+        const doc = new DOMParser().parseFromString(html, "text/html");
+        const sourceList = doc.querySelector(".box-skins-list");
+        if (sourceList) {
+          skins = Array.from(
+            sourceList.querySelectorAll(".skin:not(.expander):not(.extra-list)")
+          ).map(node => node.cloneNode(true));
+        }
+      }
+
+      if (!skins.length) {
+        skins = getTemplateSkins(slug);
+      }
+
+      if (!skins.length) return "";
+
+      const top = await rankInventorySkins(skins);
+      const htmlResult = top.map(node => node.outerHTML).join("");
+      inventoryHtmlCache.set(slug, htmlResult);
+      return htmlResult;
+    })().finally(() => {
+      inventoryPromiseCache.delete(slug);
+    });
+
+    inventoryPromiseCache.set(slug, promise);
+    return promise;
+  }
+
+  function normalizePlayerStatusSlug(value = "") {
+    return String(value || "")
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+
+  function getPlayerStatusMeta(button, team, teamImage) {
+    const isContentCreator =
+      button.getAttribute("data-player-is-content-creator") === "true" ||
+      button.getAttribute("data-player-content-creator") === "true";
+
+    // Поддерживаем оба формата data-атрибутов.
+    let label =
+      button.getAttribute("data-player-status-alt") ||
+      button.getAttribute("data-player-status-label") ||
+      team ||
+      "";
+
+    if (!label && isContentCreator) {
+      label = "Content Creator";
+    }
+
+    const normalizedLabel = String(label || "").trim();
+    const labelSlug = normalizePlayerStatusSlug(normalizedLabel);
+
+    let image =
+      button.getAttribute("data-player-status-src") ||
+      button.getAttribute("data-player-status-image") ||
+      teamImage ||
+      "";
+
+    // Если src не записан в HTML, строим его для любой команды/статуса.
+    if (!image && labelSlug) {
+      image = `/img/skins/teams/${labelSlug}.webp`;
+    }
+
+    const className =
+      button.getAttribute("data-player-status-class") ||
+      labelSlug;
+
+    const wrapperClassName =
+      button.getAttribute("data-player-status-wrapper") ||
+      button.getAttribute("data-player-status-wrapper-class") ||
+      "player-status";
+
+    return {
+      label: normalizedLabel,
+      image,
+      className,
+      wrapperClassName
+    };
+  }
+
+  function updatePlayerMeta(button) {
+    if (!playerBox || !button) return;
+
+    const slug = String(button.getAttribute("data-player-slug") || "").trim();
+    const nickname = button.getAttribute("data-player-nickname") || button.getAttribute("data-title") || slug;
+    const realName = button.getAttribute("data-player-name") || "";
+    const rawTeam = button.getAttribute("data-player-team") || "";
+    const image = button.getAttribute("data-player-image") || "";
+    const teamImage = button.getAttribute("data-player-team-image") || "";
+
+    const statusMeta = getPlayerStatusMeta(button, rawTeam, teamImage);
+    const team = rawTeam || statusMeta.label || "";
+
+    playerBox.setAttribute("data-player-slug", slug);
+
+    // playerBox остаётся div: при переключении игрока href обратно не добавляем.
+    playerBox.removeAttribute("href");
+
+    const mainImage = playerBox.querySelector("[data-home-player-main-image]");
+    if (mainImage && image) {
+      mainImage.src = image;
+      mainImage.alt = `${nickname} Photo`;
+    }
+
+    const nicknameEl = playerBox.querySelector(".player-nickname");
+    const nameEl = playerBox.querySelector(".player-name");
+    const teamEl = playerBox.querySelector(".player-team");
+    const statusEl = playerBox.querySelector(".player-status");
+
+    if (nicknameEl) nicknameEl.textContent = nickname;
+    if (nameEl) nameEl.textContent = realName;
+    if (teamEl) teamEl.textContent = team;
+
+    if (statusEl) {
+      statusEl.className = statusMeta.wrapperClassName || "player-status";
+      statusEl.replaceChildren();
+
+      if (statusMeta.label && statusMeta.image) {
+        const img = document.createElement("img");
+
+        img.src = statusMeta.image;
+        img.alt = statusMeta.label;
+        img.className = statusMeta.className || normalizePlayerStatusSlug(statusMeta.label);
+
+        // Как на inventory-страницах: если файл статуса/команды отсутствует,
+        // помечаем и wrapper, и img классом unknown.
+        img.addEventListener(
+          "error",
+          () => {
+            statusEl.classList.add("unknown");
+            img.classList.add("unknown");
+          },
+          { once: true }
+        );
+
+        statusEl.appendChild(img);
+      }
+    }
+
+    playerButtons.forEach(other => {
+      const active = other === button;
+      other.classList.toggle("active", active);
+      const photo = other.querySelector(".player-photo");
+      if (photo) {
+        if (active) {
+          photo.style.filter = "grayscale(0)";
+          photo.style.opacity = "1";
+        } else {
+          photo.style.removeProperty("filter");
+          photo.style.removeProperty("opacity");
+        }
+      }
+    });
+  }
+
+  async function showPlayerByButton(
+    button,
+    { initial = false } = {}
+  ) {
+    if (!button) return;
+
+    const slug = String(
+      button.getAttribute("data-player-slug") || ""
+    )
+      .trim()
+      .toLowerCase();
+
+    if (!slug) return;
+
+    const token = ++playerRequestToken;
+
+    const isInitialRender =
+      initial ||
+      !inventoryHasRendered;
+
+    // Сразу обновляем информацию об игроке
+    updatePlayerMeta(button);
+
+    // Класс для анимации player-box
+    pulseTopicHomeClass(
+      playerBox,
+      isInitialRender
+        ? "topic-home-reveal"
+        : "topic-home-switching"
+    );
+
+    // Старый / временный инвентарь скрываем,
+    // пока не будет полностью готов правильный top-14
+    setInventoryLoading(
+      true,
+      {
+        initial: isInitialRender
+      }
+    );
+
+    const html = await buildInventoryHtmlForPlayer(button);
+
+    // Пока шёл fetch пользователь мог уже выбрать
+    // другого игрока. Старый запрос тогда игнорируем.
+    if (token !== playerRequestToken) {
+      return;
+    }
+
+    if (
+      !html ||
+      !inventoryList
+    ) {
+      setInventoryLoading(false);
+
+      if (inventoryShowcase) {
+        inventoryShowcase.classList.add(
+          "topic-home-ready"
+        );
+      }
+
+      return;
+    }
+
+    // Только теперь вставляем полностью готовый
+    // и отсортированный инвентарь
+    inventoryList.innerHTML = html;
+
+    inventoryList
+      .querySelectorAll("img")
+      .forEach(img => {
+        if (img.complete) {
+          img.classList.add("imported");
+        } else {
+          img.addEventListener(
+            "load",
+            () => {
+              img.classList.add("imported");
+            },
+            {
+              once: true
+            }
+          );
+        }
+      });
+
+    inventoryHasRendered = true;
+
+    revealInventory({
+      initial: isInitialRender
+    });
+  }
+
+  function currentPlayerIndex() {
+    const slug = String(playerBox?.getAttribute("data-player-slug") || "").toLowerCase();
+    const idx = playerButtons.findIndex(
+      button => String(button.getAttribute("data-player-slug") || "").toLowerCase() === slug
+    );
+    return idx >= 0 ? idx : 0;
+  }
+
+  function stopPlayerTimer() {
+    if (playerTimer) {
+      clearInterval(playerTimer);
+    }
+
+    playerTimer = null;
+  }
+
+
+  function isPlayerAutoSwitchPaused() {
+    return Boolean(
+      playerBox?.matches(":hover") ||
+      inventoryShowcase?.matches(":hover")
+    );
+  }
+
+
+  function startPlayerTimer() {
+    stopPlayerTimer();
+
+    if (
+      playerButtons.length < 2 ||
+      isPlayerAutoSwitchPaused()
+    ) {
+      return;
+    }
+
+    playerTimer = setInterval(() => {
+      // Дополнительная проверка на случай,
+      // если hover появился уже после старта interval
+      if (isPlayerAutoSwitchPaused()) {
+        stopPlayerTimer();
+        return;
+      }
+
+      const next =
+        (currentPlayerIndex() + 1) %
+        playerButtons.length;
+
+      showPlayerByButton(
+        playerButtons[next]
+      );
+    }, PLAYER_INTERVAL);
+  }
+
+
+  function pausePlayerAutoSwitch() {
+    stopPlayerTimer();
+  }
+
+
+  function resumePlayerAutoSwitch() {
+    // mouseleave player-box может одновременно
+    // означать mouseenter inventory showcase,
+    // поэтому проверяем hover уже на следующем кадре
+    requestAnimationFrame(() => {
+      if (!isPlayerAutoSwitchPaused()) {
+        startPlayerTimer();
+      }
+    });
+  }
+
+  if (playerBox && playerButtons.length) {
+    playerButtons.forEach(button => {
+      button.addEventListener("mouseenter", () => {
+        showPlayerByButton(button);
+      });
+
+      // На главной topic hover переключает витрину, поэтому переход по клику оставляем обычным.
+      button.addEventListener("focus", () => {
+        showPlayerByButton(button);
+      });
+    });
+
+  [
+    playerBox,
+    inventoryShowcase
+  ]
+    .filter(Boolean)
+    .forEach(area => {
+      area.addEventListener(
+        "mouseenter",
+        pausePlayerAutoSwitch
+      );
+
+      area.addEventListener(
+        "mouseleave",
+        resumePlayerAutoSwitch
+      );
+    });
+
+
+  const initial =
+    playerButtons[currentPlayerIndex()] ||
+    playerButtons[0];
+
+  if (initial) {
+    showPlayerByButton(
+      initial,
+      {
+        initial: true
+      }
+    );
+  }
+
+  startPlayerTimer();
+  }
+
+  function showCraft(index) {
+    if (!craftSlides.length) return;
+
+    const normalized =
+      (
+        (Number(index) || 0) %
+        craftSlides.length +
+        craftSlides.length
+      ) %
+      craftSlides.length;
+
+    const isInitialRender =
+      !craftHasRendered;
+
+    craftSlides.forEach((slide, i) => {
+      const active =
+        i === normalized;
+
+      slide.hidden =
+        !active;
+
+      slide.classList.toggle(
+        "visible",
+        active
+      );
+
+      slide.classList.toggle(
+        "active",
+        active
+      );
+    });
+
+    craftSwitchers.forEach((switcher, i) => {
+      switcher.classList.toggle(
+        "active",
+        i === normalized
+      );
+
+      switcher.classList.toggle(
+        "disabled",
+        i >= craftSlides.length
+      );
+
+      switcher.setAttribute(
+        "aria-disabled",
+        i >= craftSlides.length
+          ? "true"
+          : "false"
+      );
+    });
+
+
+    const activeSlide =
+      craftSlides[normalized];
+
+    const transitionClass =
+      isInitialRender
+        ? "topic-home-reveal"
+        : "topic-home-switching";
+
+
+    // Класс на весь craft-блок
+    pulseTopicHomeClass(
+      craftBlock,
+      transitionClass
+    );
+
+    // И одновременно на конкретный появившийся craft
+    pulseTopicHomeClass(
+      activeSlide,
+      transitionClass
+    );
+
+    craftHasRendered = true;
+  }
+
+  function currentCraftIndex() {
+    const idx = craftSlides.findIndex(slide => !slide.hidden && slide.classList.contains("visible"));
+    return idx >= 0 ? idx : 0;
+  }
+
+  function stopCraftTimer() {
+    if (craftTimer) clearInterval(craftTimer);
+    craftTimer = null;
+  }
+
+  function startCraftTimer() {
+    stopCraftTimer();
+    if (craftSlides.length < 2) return;
+
+    craftTimer = setInterval(() => {
+      showCraft((currentCraftIndex() + 1) % craftSlides.length);
+    }, CRAFT_INTERVAL);
+  }
+
+  if (craftBlock && craftSlides.length) {
+    craftSwitchers.forEach((switcher, index) => {
+      switcher.addEventListener("click", event => {
+        event.preventDefault();
+        event.stopPropagation();
+        if (index >= craftSlides.length) return;
+        showCraft(index);
+      });
+    });
+
+    craftBlock.addEventListener("mouseenter", stopCraftTimer);
+    craftBlock.addEventListener("mouseleave", startCraftTimer);
+
+    showCraft(0);
+    startCraftTimer();
+  }
 })();

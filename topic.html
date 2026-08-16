@@ -487,138 +487,873 @@
             </a>
           </div>
         </div>
-        <div class="topic-boxes-holder">
+        <div class="topic-boxes-holder no-pagination">
           <div class="topic-filter">
-            <input class="singlemod-box topic-filter-tab" type="text" placeholder="" aria-label="Filter Topic" autocomplete="off">
-            <div class="singlemod-box" data-title="All Items">
-              <a href="/topic/items" class="singlemod-select">
-                <img src="/img/icons/gamemodes/box-open-full.svg" alt="All Items">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All Knives">
-              <a href="/topic/items-type/knives" class="singlemod-select">
-                <img src="/img/icons/gamemodes/knives-category.svg" alt="All Knives">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All Gloves">
-              <a href="/topic/items-type/gloves" class="singlemod-select">
-                <img src="/img/icons/gamemodes/gloves-category.svg" alt="All Gloves">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All Rifles">
-              <a href="/topic/items-type/rifles" class="singlemod-select">
-                <img src="/img/icons/gamemodes/rifles-category.png" alt="All Rifles">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All Sniper Rifles">
-              <a href="/topic/items-type/sniper-rifles" class="singlemod-select">
-                <img src="/img/icons/gamemodes/snipers-category.svg" alt="All Sniper Rifles">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All Pistols">
-              <a href="/topic/items-type/pistols" class="singlemod-select">
-                <img src="/img/icons/gamemodes/pistols-category.svg" alt="All Pistols">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All SMGS">
-              <a href="/topic/items-type/smgs" class="singlemod-select">
-                <img src="/img/icons/gamemodes/smgs-category.svg" alt="All SMGS">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All Shotguns">
-              <a href="/topic/items-type/shotguns" class="singlemod-select">
-                <img src="/img/icons/gamemodes/shotguns-category.svg" alt="All Shotguns">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All Machineguns">
-              <a href="/topic/items-type/machineguns" class="singlemod-select">
-                <img src="/img/icons/gamemodes/mguns-category.svg" alt="All Machineguns">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All Agents">
-              <a href="/topic/items/agents" class="singlemod-select">
-                <img src="/img/icons/gamemodes/agents.webp" alt="All Agents">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All Cases">
-              <a href="/topic/items-type/cases" class="singlemod-select">
-                <img src="/img/icons/gamemodes/mods-box/cases.webp" alt="All Cases">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All Collections">
-              <a href="/topic/items-type/collections" class="singlemod-select">
-                <img src="/img/icons/gamemodes/collections.webp" alt="All Collections">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All Tournament Stickers">
-              <a href="/topic/items-type/tournament-stickers" class="singlemod-select">
-                <img src="/img/icons/gamemodes/trophy.webp" alt="All Tournament Stickers">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All Sticker Capsules">
-              <a href="/topic/items-type/sticker-capsules" class="singlemod-select">
-                <img src="/img/icons/gamemodes/capsule-category.png" alt="All Sticker Capsules">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All Autograph Capsules">
-              <a href="/topic/items-type/autograph-capsules" class="singlemod-select">
-                <img src="/img/icons/gamemodes/capsule-category.png" alt="All Autograph Capsules">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All Charms">
-              <a href="/topic/items-type/charms" class="singlemod-select">
-                <img src="/img/icons/gamemodes/charms.png" alt="All Charms">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="Skins by Color CS2">
-              <a href="/topic/skins" class="singlemod-select">
-                <img src="/img/icons/gamemodes/palette.png" alt="Skins by Color CS2">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="Player Inventories">
-              <a href="/topic/players/inventories" class="singlemod-select">
-                <img src="/img/icons/gamemodes/backpack.webp" alt="Player Inventories">
-              </a>
-            </div>
-            <div class="singlemod-box" data-title="All Sticker Crafts">
-              <a href="/topic/sticker-crafts" class="singlemod-select">
-                <img src="/img/icons/gamemodes/stickers-category.png" alt="All Sticker Crafts">
-              </a>
-            </div>
-          </div>
-        <a href="/topic/items" class="topic-box maestro">
+                      <input class="singlemod-box topic-filter-tab" type="text" placeholder="" aria-label="Filter Topic" autocomplete="off">
+                      <div class="singlemod-box" data-title="All Items">
+                        <a href="/topic/items" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/box-open-full.svg" alt="All Items">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All Knives">
+                        <a href="/topic/items-type/knives" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/knives-category.svg" alt="All Knives">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All Gloves">
+                        <a href="/topic/items-type/gloves" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/gloves-category.svg" alt="All Gloves">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All Rifles">
+                        <a href="/topic/items-type/rifles" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/rifles-category.png" alt="All Rifles">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All Sniper Rifles">
+                        <a href="/topic/items-type/sniper-rifles" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/snipers-category.svg" alt="All Sniper Rifles">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All Pistols">
+                        <a href="/topic/items-type/pistols" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/pistols-category.svg" alt="All Pistols">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All SMGS">
+                        <a href="/topic/items-type/smgs" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/smgs-category.svg" alt="All SMGS">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All Shotguns">
+                        <a href="/topic/items-type/shotguns" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/shotguns-category.svg" alt="All Shotguns">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All Machineguns">
+                        <a href="/topic/items-type/machineguns" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/mguns-category.svg" alt="All Machineguns">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All Agents">
+                        <a href="/topic/items/agents" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/agents.webp" alt="All Agents">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All Cases">
+                        <a href="/topic/items-type/cases" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/mods-box/cases.webp" alt="All Cases">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All Collections">
+                        <a href="/topic/items-type/collections" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/collections.webp" alt="All Collections">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All Tournament Stickers">
+                        <a href="/topic/items-type/tournament-stickers" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/trophy.webp" alt="All Tournament Stickers">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All Sticker Capsules">
+                        <a href="/topic/items-type/sticker-capsules" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/capsule-category.png" alt="All Sticker Capsules">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All Autograph Capsules">
+                        <a href="/topic/items-type/autograph-capsules" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/capsule-category.png" alt="All Autograph Capsules">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All Charms">
+                        <a href="/topic/items-type/charms" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/charms.png" alt="All Charms">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="Skins by Color CS2">
+                        <a href="/topic/skins" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/palette.png" alt="Skins by Color CS2">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="Player Inventories">
+                        <a href="/topic/players/inventories" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/backpack.webp" alt="Player Inventories">
+                        </a>
+                      </div>
+                      <div class="singlemod-box" data-title="All Sticker Crafts">
+                        <a href="/topic/sticker-crafts" class="singlemod-select">
+                          <img src="/img/icons/gamemodes/stickers-category.png" alt="All Sticker Crafts">
+                        </a>
+                      </div>
+                    </div>
+        <a href="/ru/topic/items" class="topic-box maestro">
             <div class="logobg">
                 <img src="/img/skins/topics/items.png" draggable="false" alt="Skins By Weapon Type">
             </div>
             <div class="content">
-                <span>All Items by Type</span>
+                <span>Все Предметы по Типу</span>
             </div>
         </a>
-        <a href="/topic/skins" class="topic-box maestro">
+        <a href="/ru/topic/skins" class="topic-box maestro">
             <div class="logobg">
                 <img src="/img/skins/topics/skins.png" draggable="false" alt="Skins By Color">
             </div>
             <div class="content">
-                <span>All Skins by Color</span>
+                <span>Все Скины по Цвету</span>
             </div>
         </a>
-        <a href="/topic/sticker-crafts" class="topic-box maestro">
+        <a href="/ru/topic/sticker-crafts" class="topic-box maestro">
             <div class="logobg">
                 <img src="/img/skins/topics/stickers.png" draggable="false" alt="All Sticker-Crafts">
             </div>
             <div class="content">
-                <span>All Sticker-Crafts</span>
+                <span>Все Крафты со Стикерами</span>
             </div>
         </a>
-        <a href="/topic/players/inventories" class="topic-box maestro">
+        <a href="/ru/topic/players/inventories" class="topic-box maestro">
             <div class="logobg">
                 <img src="/img/skins/topics/inventories.png" draggable="false" alt="CS2 Player Inventories">
             </div>
             <div class="content">
-                <span>Player Inventories</span>
+                <span>Инвентари Игроков</span>
             </div>
         </a>
-    </div>
+          <div class="topic-line" data-topic-home-line="showcase" data-player-interval="8000" data-craft-interval="9000" data-inventory-limit="14">
+            <a href="/topic/players/inventories" class="topic-line-icon inventories">
+              <img src="/img/icons/gamemodes/backpack.webp" alt="">
+            </a>
+            <div class="topic-box player-box" data-home-player-box data-player-slug="donk">
+              <div class="logobg">
+                <img alt="donk Photo" draggable="false" src="/img/skins/players/donk.webp" data-home-player-main-image>
+                <div class="player-bio">
+                  <span class="player-nickname">donk</span>
+                  <span class="player-name">Danil Kryshkovets</span>
+                  <span class="player-team">Team Spirit</span>
+                  <div class="player-status">
+                    <img class="team-spirit" src="/img/skins/teams/team-spirit.webp" alt="Team Spirit">
+                  </div>
+                </div>
+              </div>
+              <div class="players-box recs">
+                <a class="player" href="/topic/players/inventories/s1mple" data-title="s1mple" data-player-slug="s1mple" data-player-nickname="s1mple" data-player-name="Oleksandr Kostyliev" data-player-team="BC.Game Esports" data-player-image="/img/skins/players/s1mple.webp" data-player-status-wrapper="player-status" data-player-status-class="bc-game-esports" data-player-status-src="/img/skins/teams/bc-game-esports.webp" data-player-status-alt="BC.Game Esports" data-player-href="/topic/players/inventories/s1mple">
+                  <div class="player-photo"><img src="/img/skins/players/crop/s1mple.webp" alt="s1mple Photo"></div>
+                </a>
+                <a class="player active" href="/topic/players/inventories/donk" data-title="donk" data-player-slug="donk" data-player-nickname="donk" data-player-name="Danil Kryshkovets" data-player-team="Team Spirit" data-player-image="/img/skins/players/donk.webp" data-player-status-wrapper="player-status" data-player-status-class="team-spirit" data-player-status-src="/img/skins/teams/team-spirit.webp" data-player-status-alt="Team Spirit" data-player-href="/topic/players/inventories/donk">
+                  <div class="player-photo" style="filter: grayscale(0); opacity: 1;"><img src="/img/skins/players/crop/donk.webp" alt="donk Photo"></div>
+                </a>
+                <a class="player" href="/topic/players/inventories/strogo" data-title="StRoGo" data-player-slug="strogo" data-player-nickname="StRoGo" data-player-name="Ivan Shurpatov" data-player-team="WW Team" data-player-image="/img/skins/players/strogo.webp" data-player-status-wrapper="player-status" data-player-status-class="ww-team" data-player-status-src="/img/skins/teams/ww-team.webp" data-player-status-alt="WW Team" data-player-href="/topic/players/inventories/strogo">
+                  <div class="player-photo"><img src="/img/skins/players/crop/strogo.webp" alt="StRoGo Photo"></div>
+                </a>
+                <a class="player" href="/topic/players/inventories/evelone192" data-title="Evelone192" data-player-slug="evelone192" data-player-nickname="Evelone192" data-player-name="Vadim Kozakov" data-player-team="Content Creator" data-player-image="/img/skins/players/evelone192.webp" data-player-status-wrapper="player-status" data-player-status-class="content-creator" data-player-status-src="/img/skins/teams/content-creator.webp" data-player-status-alt="Content Creator" data-player-href="/topic/players/inventories/evelone192">
+                  <div class="player-photo"><img src="/img/skins/players/crop/evelone192.webp" alt="Evelone192 Photo"></div>
+                </a>
+              </div>
+            </div>
+            <div class="topic-inventory-showcase" data-home-inventory-showcase>
+              <div class="box-skins solo">
+                <div class="box-skins-list">
+                  <div class="skin red" skin-id="Doppler Sapphire" weapon="butterfly-knife">
+                                <img src="/img/skins/knives/butterfly-doppler-sapphire.webp" draggable="false" alt="Butterfly Knife | Doppler Sapphire (Factory New)">
+                                <div class="skin-desc-name">Butterfly Knife | Doppler Sapphire (Factory New)</div>
+                                <div class="skin-price-info loading"></div>
+                              </div>
+                  <div class="skin red" skin-id="Doppler Phase 4" weapon="karambit">
+                                <img src="/img/skins/knives/karambit-doppler-phase-4.webp" draggable="false" alt="Karambit | Doppler Phase 4 (Factory New)">
+                                <div class="skin-desc-name">Karambit | Doppler Phase 4 (Factory New)</div>
+                                <div class="skin-price-info loading"></div>
+                              </div>
+                  <div class="skin red" skin-id="Doppler Ruby" weapon="m9-bayonet">
+                                <img src="/img/skins/knives/m9-bayonet-ruby.webp" draggable="false" alt="M9 Bayonet | Doppler Ruby (Factory New)">
+                                <div class="skin-desc-name">M9 Bayonet | Doppler Ruby (Factory New)</div>
+                                <div class="skin-price-info loading"></div>
+                              </div>
+                  <div class="skin red" skin-id="Doppler Ruby" weapon="stiletto-knife">
+                                <img src="/img/skins/knives/stiletto-knife-ruby.webp" draggable="false" alt="Stiletto Knife | Doppler Ruby (Factory New)">
+                                <div class="skin-desc-name">Stiletto Knife | Doppler Ruby (Factory New)</div>
+                                <div class="skin-price-info loading"></div>
+                              </div>
+                  <div class="skin red" skin-id="Doppler Ruby" weapon="stiletto-knife">
+                                <img src="/img/skins/knives/stiletto-knife-ruby.webp" draggable="false" alt="Stiletto Knife | Doppler Ruby (Factory New)">
+                                <div class="skin-desc-name">Stiletto Knife | Doppler Ruby (Factory New)</div>
+                                <div class="skin-price-info loading"></div>
+                              </div>
+                  <div class="skin red" skin-id="Garden" weapon="driver-gloves">
+                                <img src="/img/skins/gloves/garden.webp" draggable="false" alt="Driver Gloves | Garden (Field-Tested)">
+                                <div class="skin-desc-name">Driver Gloves | Garden (Field-Tested)</div>
+                                <div class="skin-price-info loading"></div>
+                              </div>
+                  <div class="skin red" skin-id="King Snake" weapon="driver-gloves">
+                                <img src="/img/skins/gloves/king-snake.webp" draggable="false" alt="Driver Gloves | King Snake (Field-Tested)">
+                                <div class="skin-desc-name">Driver Gloves | King Snake (Field-Tested)</div>
+                                <div class="skin-price-info loading"></div>
+                              </div>
+                  <div class="skin red" skin-id="King Snake" weapon="driver-gloves">
+                                <img src="/img/skins/gloves/king-snake.webp" draggable="false" alt="Driver Gloves | King Snake (Minimal Wear)">
+                                <div class="skin-desc-name">Driver Gloves | King Snake (Minimal Wear)</div>
+                                <div class="skin-price-info loading"></div>
+                              </div>
+                  <div class="skin red" skin-id="Snow Leopard" weapon="driver-gloves">
+                                <img src="/img/skins/gloves/snow-leopard.webp" draggable="false" alt="Driver Gloves | Snow Leopard (Minimal Wear)">
+                                <div class="skin-desc-name">Driver Gloves | Snow Leopard (Minimal Wear)</div>
+                                <div class="skin-price-info loading"></div>
+                              </div>
+                  <div class="skin red" skin-id="Crimson Kimono" weapon="specialist-gloves">
+                                <img src="/img/skins/gloves/crimson-kimono.webp" draggable="false" alt="Specialist Gloves | Crimson Kimono (Battle-Scarred)">
+                                <div class="skin-desc-name">Specialist Gloves | Crimson Kimono (Battle-Scarred)</div>
+                                <div class="skin-price-info loading"></div>
+                              </div>
+                  <div class="skin red" skin-id="Emerald Web" weapon="specialist-gloves">
+                                <img src="/img/skins/gloves/emerald-web.webp" draggable="false" alt="Specialist Gloves | Emerald Web (Field-Tested)">
+                                <div class="skin-desc-name">Specialist Gloves | Emerald Web (Field-Tested)</div>
+                                <div class="skin-price-info loading"></div>
+                              </div>
+                  <div class="skin red" skin-id="Fade" weapon="specialist-gloves">
+                                <img src="/img/skins/gloves/fade.webp" draggable="false" alt="Specialist Gloves | Fade (Field-Tested)">
+                                <div class="skin-desc-name">Specialist Gloves | Fade (Field-Tested)</div>
+                                <div class="skin-price-info loading"></div>
+                              </div>
+                  <div class="skin red" skin-id="Amphibious" weapon="sport-gloves">
+                                <img src="/img/skins/gloves/amphibious.webp" draggable="false" alt="Sport Gloves | Amphibious (Minimal Wear)">
+                                <div class="skin-desc-name">Sport Gloves | Amphibious (Minimal Wear)</div>
+                                <div class="skin-price-info loading"></div>
+                              </div>
+                  <div class="skin red" skin-id="Hedge Maze" weapon="sport-gloves">
+                                <img src="/img/skins/gloves/hedge-maze.webp" draggable="false" alt="Sport Gloves | Hedge Maze (Minimal Wear)">
+                                <div class="skin-desc-name">Sport Gloves | Hedge Maze (Minimal Wear)</div>
+                                <div class="skin-price-info loading"></div>
+                              </div>
+                </div>
+              </div>
+              <template class="topic-home-player-inventory" data-player-slug="s1mple">
+                <div class="skin red" skin-id="Doppler Ruby" weapon="butterfly-knife">
+                              <img src="/img/skins/knives/butterfly-ruby.webp" draggable="false" alt="Butterfly Knife | Doppler Ruby (Factory New)">
+                              <div class="skin-desc-name">Butterfly Knife | Doppler Ruby (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Stained" weapon="classic-knife">
+                              <img src="/img/skins/knives/classic-knife-stained.webp" draggable="false" alt="Classic Knife | Stained (Field-Tested)">
+                              <div class="skin-desc-name">Classic Knife | Stained (Field-Tested)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Phase 2" weapon="karambit">
+                              <img src="/img/skins/knives/karambit-doppler-phase-2.webp" draggable="false" alt="Karambit | Doppler Phase 2 (Factory New)">
+                              <div class="skin-desc-name">Karambit | Doppler Phase 2 (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Sapphire" weapon="karambit">
+                              <img src="/img/skins/knives/karambit-doppler-sapphire.webp" draggable="false" alt="Karambit | Doppler Sapphire (Minimal Wear)">
+                              <div class="skin-desc-name">Karambit | Doppler Sapphire (Minimal Wear)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Night Stripe" weapon="skeleton-knife">
+                              <img src="/img/skins/knives/skeleton-night-stripe.webp" draggable="false" alt="Skeleton Knife | Night Stripe (Field-Tested)">
+                              <div class="skin-desc-name">Skeleton Knife | Night Stripe (Field-Tested)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Fade" weapon="talon-knife">
+                              <img src="/img/skins/knives/talon-fade.webp" draggable="false" alt="Talon Knife | Fade (Factory New)">
+                              <div class="skin-desc-name">Talon Knife | Fade (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Fade" weapon="specialist-gloves">
+                              <img src="/img/skins/gloves/fade.webp" draggable="false" alt="Specialist Gloves | Fade (Minimal Wear)">
+                              <div class="skin-desc-name">Specialist Gloves | Fade (Minimal Wear)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Pillow Punchers" weapon="specialist-gloves">
+                              <img src="/img/skins/gloves/pillow-punchers.webp" draggable="false" alt="Specialist Gloves | Pillow Punchers (Minimal Wear)">
+                              <div class="skin-desc-name">Specialist Gloves | Pillow Punchers (Minimal Wear)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Slingshot" weapon="sport-gloves">
+                              <img src="/img/skins/gloves/slingshot.webp" draggable="false" alt="Sport Gloves | Slingshot (Field-Tested)">
+                              <div class="skin-desc-name">Sport Gloves | Slingshot (Field-Tested)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Ultra Violent" weapon="sport-gloves">
+                              <img src="/img/skins/gloves/ultra-violent.webp" draggable="false" alt="Sport Gloves | Ultra Violent (Minimal Wear)">
+                              <div class="skin-desc-name">Sport Gloves | Ultra Violent (Minimal Wear)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Asiimov" weapon="awp">
+                              <img src="/img/skins/awp/asiimov.webp" draggable="false" alt="AWP | Asiimov (Field-Tested)">
+                              <div class="skin-desc-name">AWP | Asiimov (Field-Tested)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Dragon Lore" weapon="awp">
+                              <img src="/img/skins/awp/dragon-lore.webp" draggable="false" alt="AWP | Dragon Lore (Factory New)">
+                              <div class="skin-desc-name">AWP | Dragon Lore (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Fade" weapon="awp">
+                              <img src="/img/skins/awp/fade.webp" draggable="false" alt="AWP | Fade (Factory New)">
+                              <div class="skin-desc-name">AWP | Fade (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Gamma Doppler Phase 2" weapon="glock-18">
+                              <img src="/img/skins/glock-18/gamma-doppler.webp" draggable="false" alt="Glock-18 | Gamma Doppler Phase 2 (Factory New)">
+                              <div class="skin-desc-name">Glock-18 | Gamma Doppler Phase 2 (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+              </template>
+              <template class="topic-home-player-inventory" data-player-slug="donk">
+                <div class="skin red" skin-id="Doppler Sapphire" weapon="butterfly-knife">
+                              <img src="/img/skins/knives/butterfly-doppler-sapphire.webp" draggable="false" alt="Butterfly Knife | Doppler Sapphire (Factory New)">
+                              <div class="skin-desc-name">Butterfly Knife | Doppler Sapphire (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Phase 4" weapon="karambit">
+                              <img src="/img/skins/knives/karambit-doppler-phase-4.webp" draggable="false" alt="Karambit | Doppler Phase 4 (Factory New)">
+                              <div class="skin-desc-name">Karambit | Doppler Phase 4 (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Ruby" weapon="m9-bayonet">
+                              <img src="/img/skins/knives/m9-bayonet-ruby.webp" draggable="false" alt="M9 Bayonet | Doppler Ruby (Factory New)">
+                              <div class="skin-desc-name">M9 Bayonet | Doppler Ruby (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Ruby" weapon="stiletto-knife">
+                              <img src="/img/skins/knives/stiletto-knife-ruby.webp" draggable="false" alt="Stiletto Knife | Doppler Ruby (Factory New)">
+                              <div class="skin-desc-name">Stiletto Knife | Doppler Ruby (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Ruby" weapon="stiletto-knife">
+                              <img src="/img/skins/knives/stiletto-knife-ruby.webp" draggable="false" alt="Stiletto Knife | Doppler Ruby (Factory New)">
+                              <div class="skin-desc-name">Stiletto Knife | Doppler Ruby (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Garden" weapon="driver-gloves">
+                              <img src="/img/skins/gloves/garden.webp" draggable="false" alt="Driver Gloves | Garden (Field-Tested)">
+                              <div class="skin-desc-name">Driver Gloves | Garden (Field-Tested)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="King Snake" weapon="driver-gloves">
+                              <img src="/img/skins/gloves/king-snake.webp" draggable="false" alt="Driver Gloves | King Snake (Field-Tested)">
+                              <div class="skin-desc-name">Driver Gloves | King Snake (Field-Tested)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="King Snake" weapon="driver-gloves">
+                              <img src="/img/skins/gloves/king-snake.webp" draggable="false" alt="Driver Gloves | King Snake (Minimal Wear)">
+                              <div class="skin-desc-name">Driver Gloves | King Snake (Minimal Wear)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Snow Leopard" weapon="driver-gloves">
+                              <img src="/img/skins/gloves/snow-leopard.webp" draggable="false" alt="Driver Gloves | Snow Leopard (Minimal Wear)">
+                              <div class="skin-desc-name">Driver Gloves | Snow Leopard (Minimal Wear)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Crimson Kimono" weapon="specialist-gloves">
+                              <img src="/img/skins/gloves/crimson-kimono.webp" draggable="false" alt="Specialist Gloves | Crimson Kimono (Battle-Scarred)">
+                              <div class="skin-desc-name">Specialist Gloves | Crimson Kimono (Battle-Scarred)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Emerald Web" weapon="specialist-gloves">
+                              <img src="/img/skins/gloves/emerald-web.webp" draggable="false" alt="Specialist Gloves | Emerald Web (Field-Tested)">
+                              <div class="skin-desc-name">Specialist Gloves | Emerald Web (Field-Tested)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Fade" weapon="specialist-gloves">
+                              <img src="/img/skins/gloves/fade.webp" draggable="false" alt="Specialist Gloves | Fade (Field-Tested)">
+                              <div class="skin-desc-name">Specialist Gloves | Fade (Field-Tested)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Amphibious" weapon="sport-gloves">
+                              <img src="/img/skins/gloves/amphibious.webp" draggable="false" alt="Sport Gloves | Amphibious (Minimal Wear)">
+                              <div class="skin-desc-name">Sport Gloves | Amphibious (Minimal Wear)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Hedge Maze" weapon="sport-gloves">
+                              <img src="/img/skins/gloves/hedge-maze.webp" draggable="false" alt="Sport Gloves | Hedge Maze (Minimal Wear)">
+                              <div class="skin-desc-name">Sport Gloves | Hedge Maze (Minimal Wear)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+              </template>
+              <template class="topic-home-player-inventory" data-player-slug="strogo">
+                <div class="skin red" skin-id="Crimson Web" weapon="butterfly-knife">
+                              <img src="/img/skins/knives/butterfly-knife-crimson-web.webp" draggable="false" alt="Butterfly Knife | Crimson Web (Minimal Wear)">
+                              <div class="skin-desc-name">Butterfly Knife | Crimson Web (Minimal Wear)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Marble Fade" weapon="butterfly-knife">
+                              <img src="/img/skins/knives/butterfly-marble-fade.webp" draggable="false" alt="Butterfly Knife | Marble Fade (Factory New)">
+                              <div class="skin-desc-name">Butterfly Knife | Marble Fade (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Autotronic" weapon="flip-knife">
+                              <img src="/img/skins/knives/flip-knife-autotronic.webp" draggable="false" alt="Flip Knife | Autotronic (Battle-Scarred)">
+                              <div class="skin-desc-name">Flip Knife | Autotronic (Battle-Scarred)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Bright Water" weapon="flip-knife">
+                              <img src="/img/skins/knives/flip-bright-water.webp" draggable="false" alt="Flip Knife | Bright Water (Battle-Scarred)">
+                              <div class="skin-desc-name">Flip Knife | Bright Water (Battle-Scarred)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Bright Water" weapon="flip-knife">
+                              <img src="/img/skins/knives/flip-bright-water.webp" draggable="false" alt="Flip Knife | Bright Water (Field-Tested)">
+                              <div class="skin-desc-name">Flip Knife | Bright Water (Field-Tested)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Bright Water" weapon="flip-knife">
+                              <img src="/img/skins/knives/flip-bright-water.webp" draggable="false" alt="Flip Knife | Bright Water (Well-Worn)">
+                              <div class="skin-desc-name">Flip Knife | Bright Water (Well-Worn)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Case Hardened" weapon="nomad-knife">
+                              <img src="/img/skins/knives/nomad-case-hardened.webp" draggable="false" alt="Nomad Knife | Case Hardened (Minimal Wear)">
+                              <div class="skin-desc-name">Nomad Knife | Case Hardened (Minimal Wear)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Black Pearl" weapon="paracord-knife">
+                              <img src="/img/skins/knives/paracord-doppler-black-pearl.webp" draggable="false" alt="Paracord Knife | Doppler Black Pearl (Factory New)">
+                              <div class="skin-desc-name">Paracord Knife | Doppler Black Pearl (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Lore" weapon="shadow-daggers">
+                              <img src="/img/skins/knives/sd-lore.webp" draggable="false" alt="Shadow Daggers | Lore (Minimal Wear)">
+                              <div class="skin-desc-name">Shadow Daggers | Lore (Minimal Wear)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Ruby" weapon="skeleton-knife">
+                              <img src="/img/skins/knives/skeleton-doppler-ruby.webp" draggable="false" alt="Skeleton Knife | Doppler Ruby (Factory New)">
+                              <div class="skin-desc-name">Skeleton Knife | Doppler Ruby (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Ruby" weapon="stiletto-knife">
+                              <img src="/img/skins/knives/stiletto-knife-ruby.webp" draggable="false" alt="Stiletto Knife | Doppler Ruby (Factory New)">
+                              <div class="skin-desc-name">Stiletto Knife | Doppler Ruby (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Ruby" weapon="talon-knife">
+                              <img src="/img/skins/knives/talon-ruby.webp" draggable="false" alt="Talon Knife | Doppler Ruby (Factory New)">
+                              <div class="skin-desc-name">Talon Knife | Doppler Ruby (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Sapphire" weapon="talon-knife">
+                              <img src="/img/skins/knives/talon-doppler-sapphire.webp" draggable="false" alt="Talon Knife | Doppler Sapphire (Factory New)">
+                              <div class="skin-desc-name">Talon Knife | Doppler Sapphire (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Chocolate Chesterfield" weapon="specialist-gloves">
+                              <img src="/img/skins/gloves/chocolate-chesterfield.webp" draggable="false" alt="Specialist Gloves | Chocolate Chesterfield (Well-Worn)">
+                              <div class="skin-desc-name">Specialist Gloves | Chocolate Chesterfield (Well-Worn)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+              </template>
+              <template class="topic-home-player-inventory" data-player-slug="evelone192">
+                <div class="skin gold" skin-id="Howl" weapon="m4a4">
+                              <img src="/img/skins/m4a4/howl.webp" draggable="false" alt="M4A4 | Howl (Minimal Wear)">
+                              <div class="skin-desc-name">M4A4 | Howl (Minimal Wear)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Ruby" weapon="bayonet">
+                              <img src="/img/skins/knives/bayonet-ruby.webp" draggable="false" alt="Bayonet | Doppler Ruby (Factory New)">
+                              <div class="skin-desc-name">Bayonet | Doppler Ruby (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Gamma Doppler Emerald" weapon="bayonet">
+                              <img src="/img/skins/knives/bayonet-emerald.webp" draggable="false" alt="Bayonet | Gamma Doppler Emerald (Factory New)">
+                              <div class="skin-desc-name">Bayonet | Gamma Doppler Emerald (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Ruby" weapon="butterfly-knife">
+                              <img src="/img/skins/knives/butterfly-ruby.webp" draggable="false" alt="Butterfly Knife | Doppler Ruby (Factory New)">
+                              <div class="skin-desc-name">Butterfly Knife | Doppler Ruby (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Gamma Doppler Emerald" weapon="butterfly-knife">
+                              <img src="/img/skins/knives/butterfly-emerald.webp" draggable="false" alt="Butterfly Knife | Gamma Doppler Emerald (Factory New)">
+                              <div class="skin-desc-name">Butterfly Knife | Gamma Doppler Emerald (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Ruby" weapon="karambit">
+                              <img src="/img/skins/knives/karambit-ruby.webp" draggable="false" alt="Karambit | Doppler Ruby (Factory New)">
+                              <div class="skin-desc-name">Karambit | Doppler Ruby (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Gamma Doppler Emerald" weapon="karambit">
+                              <img src="/img/skins/knives/karambit-emerald.webp" draggable="false" alt="Karambit | Gamma Doppler Emerald (Factory New)">
+                              <div class="skin-desc-name">Karambit | Gamma Doppler Emerald (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Gamma Doppler Phase 2" weapon="karambit">
+                              <img src="/img/skins/knives/karambit-gamma-doppler-phase-2.webp" draggable="false" alt="Karambit | Gamma Doppler Phase 2 (Factory New)">
+                              <div class="skin-desc-name">Karambit | Gamma Doppler Phase 2 (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Marble Fade" weapon="karambit">
+                              <img src="/img/skins/knives/karambit-marble-fade.webp" draggable="false" alt="Karambit | Marble Fade (Factory New)">
+                              <div class="skin-desc-name">Karambit | Marble Fade (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Ruby" weapon="m9-bayonet">
+                              <img src="/img/skins/knives/m9-bayonet-ruby.webp" draggable="false" alt="M9 Bayonet | Doppler Ruby (Factory New)">
+                              <div class="skin-desc-name">M9 Bayonet | Doppler Ruby (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Sapphire" weapon="m9-bayonet">
+                              <img src="/img/skins/knives/m9-doppler-sapphire.webp" draggable="false" alt="M9 Bayonet | Doppler Sapphire (Factory New)">
+                              <div class="skin-desc-name">M9 Bayonet | Doppler Sapphire (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Doppler Sapphire" weapon="m9-bayonet">
+                              <img src="/img/skins/knives/m9-doppler-sapphire.webp" draggable="false" alt="M9 Bayonet | Doppler Sapphire (Factory New)">
+                              <div class="skin-desc-name">M9 Bayonet | Doppler Sapphire (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Gamma Doppler Emerald" weapon="m9-bayonet">
+                              <img src="/img/skins/knives/m9bayonet-emerald.webp" draggable="false" alt="M9 Bayonet | Gamma Doppler Emerald (Factory New)">
+                              <div class="skin-desc-name">M9 Bayonet | Gamma Doppler Emerald (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                <div class="skin red" skin-id="Gamma Doppler Emerald" weapon="m9-bayonet">
+                              <img src="/img/skins/knives/m9bayonet-emerald.webp" draggable="false" alt="M9 Bayonet | Gamma Doppler Emerald (Factory New)">
+                              <div class="skin-desc-name">M9 Bayonet | Gamma Doppler Emerald (Factory New)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+              </template>
+            </div>
+            <div class="topic-sticker-crafts-block" data-home-crafts-block>
+              <a href="/topic/sticker-crafts" class="topic-line-icon stickers">
+                <img src="/img/icons/gamemodes/stickers-category.png" alt="">
+              </a>
+              <a class="topic-grandbox sticker topic-home-craft-slide visible" href="/topic/sticker-crafts/ak47-gray-dragon" data-home-craft-index="0">
+                          <div class="topic-box">
+                            <div class="best mid"></div>
+                            <div class="logobg">
+                              <img src="/img/skins/topics/stickers-crafts/ak47-gray-dragon/craft-mini.png" alt="Gray Dragon" draggable="false">
+                            </div>
+                          </div>
+                          <div class="section first">
+                            <span class="craft-name">AK-47 | Slate</span>
+                            <span>(Gray Dragon)</span>
+                          </div>
+                          <div class="section third">
+                            <div class="skin blue" skin-id="Baited" weapon="feral-predators-sticker-capsule">
+                              <img src="/img/skins/stickers/feral-predators/baited.png" draggable="false" alt="Sticker | Baited">
+                              <div class="skin-desc-name">Baited</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin blue" skin-id="First Blood" weapon="feral-predators-sticker-capsule">
+                              <img src="/img/skins/stickers/feral-predators/first-blood.png" draggable="false" alt="Sticker | First Blood">
+                              <div class="skin-desc-name">First Blood</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin blue" skin-id="Broken Fang" weapon="broken-fang-sticker-capsule">
+                              <img src="/img/skins/stickers/broken-fang/broken-fang.webp" draggable="false" alt="Sticker | Broken Fang">
+                              <div class="skin-desc-name">Broken Fang</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin blue" skin-id="Broken Fang" weapon="broken-fang-sticker-capsule">
+                              <img src="/img/skins/stickers/broken-fang/broken-fang.webp" draggable="false" alt="Sticker | Broken Fang">
+                              <div class="skin-desc-name">Broken Fang</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin blue" skin-id="B-Day" weapon="10-year-birthday-sticker-capsule">
+                              <img src="/img/skins/stickers/10-year-birthday/b-day.png" draggable="false" alt="Sticker | B-Day">
+                              <div class="skin-desc-name">B-Day</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                          </div>
+                        </a>
+              <a class="topic-grandbox sticker topic-home-craft-slide" href="/topic/sticker-crafts/fake-ibuypower-holo" data-home-craft-index="1" hidden>
+                          <div class="topic-box">
+                            <div class="best cheap"></div>
+                            <div class="logobg">
+                              <img src="/img/skins/topics/stickers-crafts/fake-ibuypower-holo/craft-mini.png" alt="Fake iBUYPOWER (Holo)" draggable="false">
+                            </div>
+                          </div>
+                          <div class="section first">
+                            <span class="craft-name">AK-47 | Slate</span>
+                            <span>(Fake iBUYPOWER (Holo))</span>
+                          </div>
+                          <div class="section third">
+                            <div class="skin purple" skin-id="Lucky (Glitter)" weapon="shanghai-2024-legends-autograph-capsule">
+                              <img src="/img/skins/stickers/shanghai-2024/lucky-glitter-shanghai-2024.webp" draggable="false" alt="Lucky (Glitter) | Shanghai 2024">
+                              <div class="skin-desc-name">Lucky (Glitter) | Shanghai 2024</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin purple" skin-id="NQZ (Glitter)" weapon="shanghai-2024-challengers-autograph-capsule">
+                              <img src="/img/skins/stickers/shanghai-2024/nqz-glitter-shanghai-2024.webp" draggable="false" alt="NQZ (Glitter) | Shanghai 2024">
+                              <div class="skin-desc-name">NQZ (Glitter) | Shanghai 2024</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin purple" skin-id="ropz (Glitter)" weapon="shanghai-2024-legends-autograph-capsule">
+                              <img src="/img/skins/stickers/shanghai-2024/ropz-glitter-shanghai-2024.webp" draggable="false" alt="ropz (Glitter) | Shanghai 2024">
+                              <div class="skin-desc-name">ropz (Glitter) | Shanghai 2024</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin purple" skin-id="3DMAX (Glitter)" weapon="shanghai-2024-legends-sticker-capsule">
+                              <img src="/img/skins/stickers/shanghai-2024/3dmax-glitter-shanghai-2024.webp" draggable="false" alt="3DMAX (Glitter) | Shanghai 2024">
+                              <div class="skin-desc-name">3DMAX (Glitter) | Shanghai 2024</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin purple" skin-id="ropz (Glitter)" weapon="shanghai-2024-legends-autograph-capsule">
+                              <img src="/img/skins/stickers/shanghai-2024/ropz-glitter-shanghai-2024.webp" draggable="false" alt="ropz (Glitter) | Shanghai 2024">
+                              <div class="skin-desc-name">ropz (Glitter) | Shanghai 2024</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                          </div>
+                        </a>
+              <a class="topic-grandbox sticker topic-home-craft-slide" href="/topic/sticker-crafts/galil-ar-eco-hydra" data-home-craft-index="2" hidden>
+                          <div class="topic-box">
+                            <div class="best cheap"></div>
+                            <div class="logobg">
+                              <img src="/img/skins/topics/stickers-crafts/galil-ar-eco-hydra/craft-mini.png" alt="Hydra" draggable="false">
+                            </div>
+                          </div>
+                          <div class="section first">
+                            <span class="craft-name">Galil AR | Eco</span>
+                            <span>(Hydra)</span>
+                          </div>
+                          <div class="section third">
+                            <div class="skin blue" skin-id="Alpha Legion 1" weapon="warhammer-40000-traitor-astartes-sticker-capsule">
+                              <img src="/img/skins/stickers/warhammer-40000/alpha-legion-1.webp" draggable="false" alt="Sticker | Alpha Legion 1">
+                              <div class="skin-desc-name">Alpha Legion 1</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin blue" skin-id="Alpha Legion 2" weapon="warhammer-40000-traitor-astartes-sticker-capsule">
+                              <img src="/img/skins/stickers/warhammer-40000/alpha-legion-2.webp" draggable="false" alt="Sticker | Alpha Legion 2">
+                              <div class="skin-desc-name">Alpha Legion 2</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin blue" skin-id="Alpha Legion 2" weapon="warhammer-40000-traitor-astartes-sticker-capsule">
+                              <img src="/img/skins/stickers/warhammer-40000/alpha-legion-2.webp" draggable="false" alt="Sticker | Alpha Legion 2">
+                              <div class="skin-desc-name">Alpha Legion 2</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin blue" skin-id="Alpha Legion 1" weapon="warhammer-40000-traitor-astartes-sticker-capsule">
+                              <img src="/img/skins/stickers/warhammer-40000/alpha-legion-1.webp" draggable="false" alt="Sticker | Alpha Legion 1">
+                              <div class="skin-desc-name">Alpha Legion 1</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin" weapon="" skin-id=""></div>
+                          </div>
+                        </a>
+              <a class="topic-grandbox sticker topic-home-craft-slide" href="/topic/sticker-crafts/ak47-halo-chief-master" data-home-craft-index="3" hidden>
+                          <div class="topic-box">
+                            <div class="best cheap"></div>
+                            <div class="logobg">
+                              <img src="/img/skins/topics/stickers-crafts/ak47-halo-chief-master/craft-mini.png" alt="Halo Master Chief" draggable="false">
+                            </div>
+                          </div>
+                          <div class="section first">
+                            <span class="craft-name">AK-47 | Safari Mesh</span>
+                            <span>(Halo Master Chief)</span>
+                          </div>
+                          <div class="section third">
+                            <div class="skin blue" skin-id="Chief" weapon="halo-sticker-capsule">
+                              <img src="/img/skins/stickers/halo-stickers/chief.png" draggable="false" alt="Sticker | Chief">
+                              <div class="skin-desc-name">Chief</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin blue" skin-id="Chief" weapon="halo-sticker-capsule">
+                              <img src="/img/skins/stickers/halo-stickers/chief.png" draggable="false" alt="Sticker | Chief">
+                              <div class="skin-desc-name">Chief</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin blue" skin-id="Ancient Beast" weapon="broken-fang-sticker-capsule">
+                              <img src="/img/skins/stickers/broken-fang/ancient-beast.webp" draggable="false" alt="Sticker | Ancient Beast">
+                              <div class="skin-desc-name">Ancient Beast</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin blue" skin-id="Ancient Beast" weapon="broken-fang-sticker-capsule">
+                              <img src="/img/skins/stickers/broken-fang/ancient-beast.webp" draggable="false" alt="Sticker | Ancient Beast">
+                              <div class="skin-desc-name">Ancient Beast</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                            <div class="skin purple" skin-id="Chief (Holo)" weapon="halo-sticker-capsule">
+                              <img src="/img/skins/stickers/halo-stickers/chief-holo.png" draggable="false" alt="Sticker | Chief (Holo)">
+                              <div class="skin-desc-name">Chief (Holo)</div>
+                              <div class="skin-price-info loading"></div>
+                            </div>
+                          </div>
+                        </a>
+              <div class="topic-sticker-crafts-switch">
+                <div class="topic-switcher active" data-home-craft-switch="0">1</div>
+                <div class="topic-switcher" data-home-craft-switch="1">2</div>
+                <div class="topic-switcher" data-home-craft-switch="2">3</div>
+                <div class="topic-switcher" data-home-craft-switch="3">4</div>
+              </div>
+            </div>
+          </div>
+          <div class="topic-line" data-topic-home-line="colors">
+            <a href="/topic/skins" class="topic-line-icon skins">
+              <img src="/img/icons/gamemodes/palette.png" alt="">
+            </a>
+            <div class="topic-colorize-list">
+              <div class="topic-line-half">
+                <a href="/topic/skins/black-skins" class="topic-box">
+                  <div class="logobg skincolors" data-color="black">
+                    <img src="/img/skins/topics/small/example-black.webp" draggable="false" alt="Black Skins Preview">
+                  </div>
+                  <div class="content">
+                    <span>Black Skins</span>
+                  </div>
+                </a>
+                <a href="/topic/skins/red-skins" class="topic-box">
+                  <div class="logobg skincolors" data-color="red">
+                    <img src="/img/skins/topics/small/example-red.webp" draggable="false" alt="Red Skins Preview">
+                  </div>
+                  <div class="content">
+                    <span>Red Skins</span>
+                  </div>
+                </a>
+                <a href="/topic/skins/green-skins" class="topic-box">
+                  <div class="logobg skincolors" data-color="green">
+                    <img src="/img/skins/topics/small/example-green.webp" draggable="false" alt="Green Skins Preview">
+                  </div>
+                  <div class="content">
+                    <span>Green Skins</span>
+                  </div>
+                </a>
+                <div class="topic-box">
+                  <div class="topic-line-half colors-list">
+                    <a href="/topic/skins/white-skins" class="colors-list-unit singlemod-box white"></a>
+                    <a href="/topic/skins/gray-skins" class="colors-list-unit singlemod-box gray"></a>
+                    <a href="/topic/skins/silver-skins" class="colors-list-unit singlemod-box silver"></a>
+                    <a href="/topic/skins/black-skins" class="colors-list-unit singlemod-box black"></a>
+                    <a href="/topic/skins/brown-skins" class="colors-list-unit singlemod-box brown"></a>
+                    <a href="/topic/skins/red-skins" class="colors-list-unit singlemod-box red"></a>
+                    <a href="/topic/skins/orange-skins" class="colors-list-unit singlemod-box orange"></a>
+                    <a href="/topic/skins/golden-skins" class="colors-list-unit singlemod-box golden"></a>
+                    <a href="/topic/skins/yellow-skins" class="colors-list-unit singlemod-box yellow"></a>
+                    <a href="/topic/skins/green-skins" class="colors-list-unit singlemod-box green"></a>
+                    <a href="/topic/skins/cyan-skins" class="colors-list-unit singlemod-box cyan"></a>
+                    <a href="/topic/skins/blue-skins" class="colors-list-unit singlemod-box blue"></a>
+                    <a href="/topic/skins/purple-skins" class="colors-list-unit singlemod-box purple"></a>
+                    <a href="/topic/skins/pink-skins" class="colors-list-unit singlemod-box pink"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="topic-line wrap" data-topic-home-line="items">
+            <a href="/topic/items" class="topic-line-icon items">
+              <img src="/img/icons/gamemodes/box-open-full.svg" alt="">
+            </a>
+            <a href="/topic/items-type/knives" class="topic-box items">
+                        <div class="logobg">
+                            <img src="/img/skins/knives/butterfly-vanilla.webp" draggable="false" alt="Butterfly Knife | Vanilla">
+                        </div>
+                        <div class="content">
+                            <span>All Knife Skins</span>
+                        </div>
+                    </a>
+            <a href="/topic/items-type/gloves" class="topic-box items">
+                        <div class="logobg">
+                            <img src="/img/skins/gloves/nocts.webp" draggable="false" alt="Sport Gloves | Nocts">
+                        </div>
+                        <div class="content">
+                            <span>All Gloves Skins</span>
+                        </div>
+                    </a>
+            <a href="/topic/items-type/smgs" class="topic-box items">
+                        <div class="logobg">
+                            <img src="/img/skins/mp9/vanilla.webp" draggable="false" alt="MP9">
+                        </div>
+                        <div class="content">
+                            <span>All SMGs Skins</span>
+                        </div>
+                    </a>
+            <a href="/topic/items-type/shotguns" class="topic-box items">
+                        <div class="logobg">
+                            <img src="/img/skins/mag-7/vanilla.webp" draggable="false" alt="MAG-7">
+                        </div>
+                        <div class="content">
+                            <span>All Shotguns Skins</span>
+                        </div>
+                    </a>
+            <a href="/topic/items-type/machineguns" class="topic-box items">
+                        <div class="logobg">
+                            <img src="/img/skins/negev/vanilla.webp" draggable="false" alt="Negev">
+                        </div>
+                        <div class="content">
+                            <span>All Machineguns Skins</span>
+                        </div>
+                    </a>
+            <a href="/topic/items-type/pistols" class="topic-box items">
+                        <div class="logobg">
+                            <img src="/img/skins/usp-s/vanilla.webp" draggable="false" alt="USP-S">
+                        </div>
+                        <div class="content">
+                            <span>All Pistols Skins</span>
+                        </div>
+                    </a>
+            <a href="/topic/items-type/rifles" class="topic-box items">
+                        <div class="logobg">
+                            <img src="/img/skins/m4a4/vanilla.webp" draggable="false" alt="M4A4">
+                        </div>
+                        <div class="content">
+                            <span>All Rifles Skins</span>
+                        </div>
+                    </a>
+            <a href="/topic/items-type/sniper-rifles" class="topic-box items">
+                        <div class="logobg">
+                            <img src="/img/skins/awp/vanilla.webp" draggable="false" alt="AWP">
+                        </div>
+                        <div class="content">
+                            <span>All Sniper Rifles Skins</span>
+                        </div>
+                    </a>
+            <a href="/topic/items/agents" class="topic-box items">
+                        <div class="logobg">
+                            <img src="/img/skins/agents/the-professionals/number-k.webp" draggable="false" alt="Number K | The Professionals">
+                        </div>
+                        <div class="content">
+                            <span>All Agents</span>
+                        </div>
+                    </a>
+            <a href="/topic/items-type/cases" class="topic-box items">
+                        <div class="logobg">
+                            <img src="/img/skins/cases/sealed-dead-hand-terminal.webp" draggable="false" alt="Sealed Dead Hand Terminal">
+                        </div>
+                        <div class="content">
+                            <span>All Cases</span>
+                        </div>
+                    </a>
+            <a href="/topic/items-type/charms" class="topic-box items">
+                        <div class="logobg">
+                            <img src="/img/skins/charms/dr-boom-charms.webp" draggable="false" alt="«Dr Boom Charms»">
+                        </div>
+                        <div class="content">
+                            <span>All Charms</span>
+                        </div>
+                    </a>
+            <a href="/topic/items-type/tournament-stickers" class="topic-box items">
+                        <div class="logobg">
+                            <img src="/img/skins/tournament-stickers/cologne-2026.webp" draggable="false" alt="IEM Cologne 2026">
+                        </div>
+                        <div class="content">
+                            <span>Tournament Stickers</span>
+                        </div>
+                    </a>
+            <a href="/topic/items-type/sticker-capsules" class="topic-box items">
+                        <div class="logobg">
+                            <img src="/img/skins/sticker-capsules/fruits-and-veggies-stickers.webp" draggable="false" alt="Fruits And Veggies Collection">
+                        </div>
+                        <div class="content">
+                            <span>Sticker Capsules</span>
+                        </div>
+                    </a>
+            <a href="/topic/items-type/autograph-capsules" class="topic-box items">
+                        <div class="logobg">
+                            <img src="/img/skins/sticker-capsules/budapest-2025-champions-autograph-capsule.webp" draggable="false" alt="Budapest 2025 Legends Autograph Capsule">
+                        </div>
+                        <div class="content">
+                            <span>Autograph Capsules</span>
+                        </div>
+                    </a>
+            <a href="/topic/items-type/collections" class="topic-box items">
+                        <div class="logobg">
+                            <img src="/img/skins/collections/the-spy-tech-collection.webp" draggable="false" alt="The Spy Tech Collection">
+                        </div>
+                        <div class="content">
+                            <span>All Collections</span>
+                        </div>
+                    </a>
+          </div>
+        </div>
     <div class="slider-container">
       <a href="/" class="slider-banner" aria-label="Visit Best Gambling Sites"><img src="/img/best-gambling-sites-slide-2026.webp" alt="Best Gambling Sites" draggable="false"></a>
       <a href="/rust" class="slider-banner" aria-label="Visit Best Rust Sites"><img src="/img/best-rust-sites-slide-2026.webp" alt="Best Rust Sites" draggable="false"></a>

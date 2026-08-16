@@ -43,6 +43,25 @@ const PRESETS_DIR     = "/code-parts/topics/skins-list/presets";
 const LOADOUT_DIR     = "/code-parts/topics/topic-color-lists/loadout";
 const TOPIC_NAV_FILE  = "/code-parts/topics/topics-nav.json";
 
+
+// ---------------- TOPIC HOME (/topic, /ru/topic) ----------------
+// Менять состав витрины главной topic-страницы удобнее здесь.
+// stickerCrafts принимает slug из URL (/topic/sticker-crafts/<slug>) либо текст/название крафта.
+const TOPIC_HOME_CONFIG = {
+  players: ["s1mple", "donk", "strogo", "evelone192"],
+  defaultPlayer: "donk",
+  inventoryLimit: 14,
+  playerIntervalMs: 8_000,
+  craftIntervalMs: 9_000,
+  stickerCrafts: [
+    "ak47-gray-dragon",
+    // "another-craft-slug",
+    // "Craft Name",
+  ],
+};
+
+const TOPIC_HOME_PLAYERS_INV_DIR = "/code-parts/topics/players-data/players-inventories";
+
 const ITEMS_TYPE_TOPICS_FILES = {
   cases: "/code-parts/topics/cases.json",
   charms: "/code-parts/topics/charms.json",
@@ -3852,6 +3871,672 @@ async function processTopicFiltersCtx(ctx){
   return changed;
 }
 
+
+// ---------------- TOPIC HOME LINES (/topic, /ru/topic) ----------------
+function isTopicLandingPath(urlPath){
+  const p = String(urlPath || "")
+    .replace(/[?#].*$/, "")
+    .replace(/\.html?$/i, "")
+    .replace(/\/+$/, "");
+
+  return p === "/topic" || p === "/ru/topic";
+}
+
+function topicHomeSlugify(value){
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function readHtmlAttr(attrs, name){
+  const escaped = String(name || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re = new RegExp(`\\b${escaped}\\s*=\\s*(?:"([^"]*)"|'([^']*)')`, "i");
+  const m = String(attrs || "").match(re);
+  return m ? (m[1] ?? m[2] ?? "") : "";
+}
+
+function stripHtmlToText(html){
+  return decodeHtmlEntities(
+    String(html || "")
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
+      .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+  );
+}
+
+async function resolveTopicHomeSourceFile(root, urlToFile, urlPath){
+  const clean = String(urlPath || "")
+    .replace(/[?#].*$/, "")
+    .replace(/\.html?$/i, "")
+    .replace(/\/+$/, "") || "/";
+
+  const mapped =
+    urlToFile?.get(clean) ||
+    urlToFile?.get(clean + "/") ||
+    null;
+
+  if (mapped && await existsPath(mapped)) return mapped;
+
+  const candidates = [
+    path.join(root, "." + clean + ".html"),
+    path.join(root, "." + clean, "index.html"),
+  ];
+
+  for (const candidate of candidates){
+    if (await existsPath(candidate)) return candidate;
+  }
+
+  return null;
+}
+
+async function readTopicHomeSourceHtml(root, urlToFile, urlPath){
+  const file = await resolveTopicHomeSourceFile(root, urlToFile, urlPath);
+  if (!file) return "";
+
+  try {
+    return await readTextCached(file);
+  } catch {
+    return "";
+  }
+}
+
+function extractFirstBlockByClass(html, className, tags = ["div", "section", "a"]){
+  if (!html) return "";
+  const masked = maskSegments(html);
+  const found = findAllTagsByClass(masked, className, tags);
+  if (!found.length) return "";
+  const block = found[0];
+  return html.slice(block.openStart, block.closeEnd);
+}
+
+function extractSkinBlocksFromInventoryHtml(html){
+  if (!html) return [];
+
+  const masked = maskSegments(html);
+  const lists = findAllTagsByClass(masked, "box-skins-list", ["div", "ul", "section"]);
+  if (!lists.length) return [];
+
+  const list = lists[0];
+  const skins = findAllTagsByClass(masked, "skin", ["div", "span"], list.openEnd, list.closeStart);
+  const out = [];
+
+  for (const skin of skins){
+    const open = readTag(html, skin.openStart);
+    const classes = parseClassAttr(open.attrs);
+    if (classes.has("expander") || classes.has("extra-list")) continue;
+
+    const block = html.slice(skin.openStart, skin.closeEnd);
+    const direct = Number(readHtmlAttr(open.attrs, "data-price-value"));
+
+    let price = Number.isFinite(direct) && direct > 0 ? direct : null;
+    if (price === null){
+      const priceMatch = block.match(
+        /class\s*=\s*(?:"[^"]*\bdefault-price-info\b[^"]*"|'[^']*\bdefault-price-info\b[^']*')[^>]*>\s*([0-9]+(?:\.[0-9]+)?)/i
+      );
+      if (priceMatch){
+        const n = Number(priceMatch[1]);
+        if (Number.isFinite(n)) price = n;
+      }
+    }
+
+    out.push({
+      html: block,
+      price,
+      order: out.length,
+    });
+  }
+
+  out.sort((a, b) => {
+    const ap = Number.isFinite(a.price) ? a.price : -Infinity;
+    const bp = Number.isFinite(b.price) ? b.price : -Infinity;
+    if (ap !== bp) return bp - ap;
+    return a.order - b.order;
+  });
+
+  return out;
+}
+
+function resolveTopicHomePlayerTeam(data){
+  const rawTeam = String(data?.team || "").trim();
+  const isContentCreator =
+    data?.isContentCreator === true ||
+    data?.is_content_creator === true;
+
+  if (rawTeam) return rawTeam;
+  if (isContentCreator) return "Content Creator";
+  return "";
+}
+
+async function resolveTopicHomePlayerStatusMeta(root, data, team){
+  const rawTeam = String(data?.team || "").trim();
+  const isContentCreator =
+    data?.isContentCreator === true ||
+    data?.is_content_creator === true;
+
+  // Полностью повторяем special-case из static-players-fill.js:
+  // content creator без реальной команды.
+  if (!rawTeam && isContentCreator){
+    return {
+      wrapperClassName: "player-status",
+      className: "content-creator",
+      src: "/img/skins/teams/content-creator.webp",
+      alt: "Content Creator",
+    };
+  }
+
+  if (!team) return null;
+
+  const teamSlug = topicHomeSlugify(team);
+  const src = `/img/skins/teams/${teamSlug}.webp`;
+  const exists = await existsPath(abs(root, src));
+
+  return {
+    wrapperClassName: exists ? "player-status" : "player-status unknown",
+    className: exists ? teamSlug : `${teamSlug} unknown`,
+    src,
+    alt: team,
+  };
+}
+
+async function loadTopicHomePlayer(root, urlToFile, slug, isRu){
+  const cleanSlug = topicHomeSlugify(slug);
+  const invJsonFile = abs(root, `${TOPIC_HOME_PLAYERS_INV_DIR}/${cleanSlug}.json`);
+  const data = await safeJsonCached(invJsonFile) || {};
+
+  const nickname = String(data.real_nickname || data.nickname || slug || cleanSlug).trim();
+  const realName = String(data.name || "").trim();
+  const team = resolveTopicHomePlayerTeam(data);
+  const prefix = isRu ? "/ru" : "";
+  const href = `${prefix}/topic/players/inventories/${cleanSlug}`;
+
+  let inventoryHtml = await readTopicHomeSourceHtml(
+    root,
+    urlToFile,
+    `${prefix}/topic/players/inventories/${cleanSlug}`
+  );
+
+  if (!inventoryHtml && isRu){
+    inventoryHtml = await readTopicHomeSourceHtml(
+      root,
+      urlToFile,
+      `/topic/players/inventories/${cleanSlug}`
+    );
+  }
+
+  const inventory = extractSkinBlocksFromInventoryHtml(inventoryHtml)
+    .slice(0, Math.max(1, Number(TOPIC_HOME_CONFIG.inventoryLimit) || 14))
+    .map(x => x.html);
+
+  const statusMeta = await resolveTopicHomePlayerStatusMeta(root, data, team);
+
+  return {
+    slug: cleanSlug,
+    nickname,
+    realName,
+    team,
+    href,
+    image: `/img/skins/players/${cleanSlug}.webp`,
+    cropImage: `/img/skins/players/crop/${cleanSlug}.webp`,
+    statusMeta,
+    inventory,
+  };
+}
+
+function renderTopicHomePlayerThumbnail(player, active, indent, nl){
+  const activeStyle = active ? ' style="filter: grayscale(0); opacity: 1;"' : "";
+  const status = player.statusMeta || {};
+
+  return [
+    `${indent}<a class="player${active ? " active" : ""}" href="${escapeAttrDblNoApos(player.href)}" data-title="${escapeAttrDblNoApos(player.nickname)}" data-player-slug="${escapeAttrDblNoApos(player.slug)}" data-player-nickname="${escapeAttrDblNoApos(player.nickname)}" data-player-name="${escapeAttrDblNoApos(player.realName)}" data-player-team="${escapeAttrDblNoApos(player.team)}" data-player-image="${escapeAttrDblNoApos(player.image)}" data-player-status-wrapper="${escapeAttrDblNoApos(status.wrapperClassName || "player-status")}" data-player-status-class="${escapeAttrDblNoApos(status.className || "")}" data-player-status-src="${escapeAttrDblNoApos(status.src || "")}" data-player-status-alt="${escapeAttrDblNoApos(status.alt || "")}" data-player-href="${escapeAttrDblNoApos(player.href)}">`,
+    `${indent}  <div class="player-photo"${activeStyle}><img src="${escapeAttrDblNoApos(player.cropImage)}" alt="${escapeAttrDblNoApos(player.nickname)} Photo"></div>`,
+    `${indent}</a>`,
+  ].join(nl);
+}
+
+function renderTopicHomeInventoryTemplate(player, indent, nl){
+  const lines = [
+    `${indent}<template class="topic-home-player-inventory" data-player-slug="${escapeAttrDblNoApos(player.slug)}">`,
+  ];
+
+  for (const skinHtml of player.inventory){
+    lines.push(reindentBlock(skinHtml, indent + "  ", nl));
+  }
+
+  lines.push(`${indent}</template>`);
+  return lines.join(nl);
+}
+
+function patchTopicHomeCraftAnchor(blockHtml, index, isRu){
+  const trimmed = trimBlankEdges(normalizeNl(blockHtml, "\n"));
+  if (!trimmed) return "";
+
+  const open = readTag(trimmed, 0);
+  let tagText = open.tagText;
+
+  tagText = tagText.replace(/\bclass\s*=\s*(?:"([^"]*)"|'([^']*)')/i, (full, a, b) => {
+    const classes = String(a ?? b ?? "").split(/\s+/).filter(Boolean);
+    const set = new Set(classes);
+    set.add("topic-home-craft-slide");
+    if (index === 0) set.add("visible");
+    else set.delete("visible");
+    return `class="${escapeAttrDblNoApos([...set].join(" "))}"`;
+  });
+
+  if (!/\bclass\s*=/i.test(tagText)){
+    tagText = tagText.replace(/^<a\b/i, '<a class="topic-home-craft-slide' + (index === 0 ? ' visible' : '') + '"');
+  }
+
+  if (/\bdata-home-craft-index\s*=/i.test(tagText)){
+    tagText = tagText.replace(/\bdata-home-craft-index\s*=\s*(?:"[^"]*"|'[^']*')/i, `data-home-craft-index="${index}"`);
+  } else {
+    tagText = tagText.replace(/>$/, ` data-home-craft-index="${index}">`);
+  }
+
+  if (index > 0 && !/\bhidden(?:\s|=|>)/i.test(tagText)){
+    tagText = tagText.replace(/>$/, " hidden>");
+  }
+  if (index === 0){
+    tagText = tagText.replace(/\s+hidden(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+))?/i, "");
+  }
+
+  if (isRu){
+    tagText = tagText.replace(
+      /\bhref\s*=\s*"\/(?!ru\/)(topic\/sticker-crafts\/[^\"]*)"/i,
+      'href="/ru/$1"'
+    );
+    tagText = tagText.replace(
+      /\bhref\s*=\s*'\/(?!ru\/)(topic\/sticker-crafts\/[^\']*)'/i,
+      "href='/ru/$1'"
+    );
+  }
+
+  return tagText + trimmed.slice(open.end);
+}
+
+function getTopicHomeCraftKey(html){
+  const trimmed = trimBlankEdges(normalizeNl(html, "\n"));
+  if (!trimmed) return { slug:"", boxId:"", text:"" };
+
+  const open = readTag(trimmed, 0);
+  const href = readHtmlAttr(open.attrs, "href");
+  const boxId = readHtmlAttr(open.attrs, "data-box-id");
+  const slug = String(href || "")
+    .replace(/[?#].*$/, "")
+    .replace(/\.html?$/i, "")
+    .split("/")
+    .filter(Boolean)
+    .pop() || "";
+
+  return {
+    slug: slug.toLowerCase(),
+    boxId: String(boxId || "").toLowerCase(),
+    text: stripHtmlToText(trimmed).toLowerCase(),
+  };
+}
+
+async function collectTopicHomeCrafts(root, urlToFile, isRu){
+  const prefix = isRu ? "/ru" : "";
+  let source = await readTopicHomeSourceHtml(root, urlToFile, `${prefix}/topic/sticker-crafts`);
+  if (!source && isRu){
+    source = await readTopicHomeSourceHtml(root, urlToFile, "/topic/sticker-crafts");
+  }
+  if (!source) return [];
+
+  const masked = maskSegments(source);
+  const blocks = findAllTagsByClass(masked, "topic-grandbox", ["a"])
+    .filter(block => {
+      const open = readTag(source, block.openStart);
+      return parseClassAttr(open.attrs).has("sticker");
+    })
+    .map(block => source.slice(block.openStart, block.closeEnd));
+
+  if (!blocks.length) return [];
+
+  const configured = Array.isArray(TOPIC_HOME_CONFIG.stickerCrafts)
+    ? TOPIC_HOME_CONFIG.stickerCrafts.map(v => String(v || "").trim()).filter(Boolean)
+    : [];
+
+  const selected = [];
+  const used = new Set();
+
+  for (const wantedRaw of configured){
+    const wanted = wantedRaw.toLowerCase().replace(/\.html?$/i, "").replace(/^.*\//, "");
+    const idx = blocks.findIndex((block, i) => {
+      if (used.has(i)) return false;
+      const key = getTopicHomeCraftKey(block);
+      return key.slug === wanted || key.boxId === wanted || key.text.includes(wantedRaw.toLowerCase());
+    });
+
+    if (idx >= 0){
+      used.add(idx);
+      selected.push(blocks[idx]);
+    }
+
+    if (selected.length >= 4) break;
+  }
+
+  for (let i = 0; i < blocks.length && selected.length < 4; i++){
+    if (used.has(i)) continue;
+    used.add(i);
+    selected.push(blocks[i]);
+  }
+
+  return selected.slice(0, 4);
+}
+
+function renderTopicHomeSecondLine({ isRu, indent, nl }){
+  const prefix = isRu ? "/ru" : "";
+  const labels = isRu
+    ? { black:"Черные Скины", red:"Красные Скины", green:"Зеленые Скины" }
+    : { black:"Black Skins", red:"Red Skins", green:"Green Skins" };
+
+  const colors = [
+    "white", "gray", "silver", "black", "brown", "red", "orange",
+    "golden", "yellow", "green", "cyan", "blue", "purple", "pink",
+  ];
+
+  const lines = [
+    `${indent}<div class="topic-line" data-topic-home-line="colors">`,
+    `${indent}  <a href="${prefix}/topic/skins" class="topic-line-icon skins">`,
+    `${indent}    <img src="/img/icons/gamemodes/palette.png" alt="">`,
+    `${indent}  </a>`,
+    `${indent}  <div class="topic-colorize-list">`,
+    `${indent}    <div class="topic-line-half">`,
+  ];
+
+  for (const color of ["black", "red", "green"]){
+    const cap = color.charAt(0).toUpperCase() + color.slice(1);
+    lines.push(
+      `${indent}      <a href="${prefix}/topic/skins/${color}-skins" class="topic-box">`,
+      `${indent}        <div class="logobg skincolors" data-color="${color}">`,
+      `${indent}          <img src="/img/skins/topics/small/example-${color}.webp" draggable="false" alt="${cap} Skins Preview">`,
+      `${indent}        </div>`,
+      `${indent}        <div class="content">`,
+      `${indent}          <span>${labels[color]}</span>`,
+      `${indent}        </div>`,
+      `${indent}      </a>`
+    );
+  }
+
+  lines.push(
+    `${indent}      <div class="topic-box">`,
+    `${indent}        <div class="topic-line-half colors-list">`
+  );
+
+  for (const color of colors){
+    lines.push(
+      `${indent}          <a href="${prefix}/topic/skins/${color}-skins" class="colors-list-unit singlemod-box ${color}"></a>`
+    );
+  }
+
+  lines.push(
+    `${indent}        </div>`,
+    `${indent}      </div>`,
+    `${indent}    </div>`,
+    `${indent}  </div>`,
+    `${indent}</div>`
+  );
+
+  return lines.join(nl);
+}
+
+const TOPIC_HOME_ITEMS_FALLBACK = [
+  ["items-type/knives", "/img/skins/knives/butterfly-vanilla.webp", "Butterfly Knife | Vanilla", "All Knife Skins", "Все Скины на Ножи"],
+  ["items-type/gloves", "/img/skins/gloves/nocts.webp", "Sport Gloves | Nocts", "All Glove Skins", "Все Скины на Перчатки"],
+  ["items-type/smgs", "/img/skins/mp9/vanilla.webp", "MP9", "All SMG Skins", "Все Скины на ПП"],
+  ["items-type/shotguns", "/img/skins/mag-7/vanilla.webp", "MAG-7", "All Shotgun Skins", "Все Скины на Дробовики"],
+  ["items-type/machineguns", "/img/skins/negev/vanilla.webp", "Negev", "All Machine Gun Skins", "Все Скины на Пулемёты"],
+  ["items-type/pistols", "/img/skins/usp-s/vanilla.webp", "USP-S", "All Pistol Skins", "Все Скины на Пистолеты"],
+  ["items-type/rifles", "/img/skins/m4a4/vanilla.webp", "M4A4", "All Rifle Skins", "Все Скины на Винтовки"],
+  ["items-type/sniper-rifles", "/img/skins/awp/vanilla.webp", "AWP", "All Sniper Rifle Skins", "Все Скины на С. Винтовки"],
+  ["items/agents", "/img/skins/agents/the-professionals/number-k.webp", "Number K | The Professionals", "All Agents", "Все Агенты"],
+  ["items-type/cases", "/img/skins/cases/sealed-dead-hand-terminal.webp", "Sealed Dead Hand Terminal", "All Cases", "Все Кейсы"],
+  ["items-type/charms", "/img/skins/charms/dr-boom-charms.webp", "Dr Boom Charms", "All Charms", "Все Брелоки"],
+  ["items-type/tournament-stickers", "/img/skins/tournament-stickers/cologne-2026.webp", "IEM Cologne 2026", "Tournament Stickers", "Турнирные Стикеры"],
+  ["items-type/sticker-capsules", "/img/skins/sticker-capsules/fruits-and-veggies-stickers.webp", "Fruits And Veggies Collection", "Sticker Capsules", "Капсулы со Стикерами"],
+  ["items-type/autograph-capsules", "/img/skins/sticker-capsules/budapest-2025-champions-autograph-capsule.webp", "Budapest 2025 Legends Autograph Capsule", "Autograph Capsules", "Капсулы с Автографами"],
+  ["items-type/collections", "/img/skins/collections/the-spy-tech-collection.webp", "The Spy Tech Collection", "All Collections", "Все Коллекции"],
+];
+
+function renderTopicHomeItemsFallback({ isRu, indent, nl }){
+  const prefix = isRu ? "/ru" : "";
+  return TOPIC_HOME_ITEMS_FALLBACK.map(([href, img, alt, en, ru]) => [
+    `${indent}<a href="${prefix}/topic/${href}" class="topic-box items">`,
+    `${indent}  <div class="logobg">`,
+    `${indent}    <img src="${escapeAttrDblNoApos(img)}" draggable="false" alt="${escapeAttrDblNoApos(alt)}">`,
+    `${indent}  </div>`,
+    `${indent}  <div class="content">`,
+    `${indent}    <span>${escapeHtml(isRu ? ru : en)}</span>`,
+    `${indent}  </div>`,
+    `${indent}</a>`,
+  ].join(nl)).join(nl);
+}
+
+async function renderTopicHomeThirdLine({ root, urlToFile, isRu, indent, nl }){
+  const prefix = isRu ? "/ru" : "";
+  let source = await readTopicHomeSourceHtml(root, urlToFile, `${prefix}/topic/items`);
+  if (!source && isRu){
+    source = await readTopicHomeSourceHtml(root, urlToFile, "/topic/items");
+  }
+
+  let boxesHtml = "";
+
+  if (source){
+    const masked = maskSegments(source);
+    const holders = findAllTagsByClass(masked, "topic-boxes-holder", ["div", "section"]);
+    const range = holders[0] || { openEnd:0, closeStart:source.length };
+    const boxes = findAllTagsByClass(masked, "topic-box", ["a"], range.openEnd, range.closeStart);
+
+    const rendered = [];
+    for (const box of boxes){
+      const open = readTag(source, box.openStart);
+      let block = source.slice(box.openStart, box.closeEnd);
+      if (isRu && !/^\/ru\//i.test(readHtmlAttr(open.attrs, "href"))){
+        block = block.replace(/\bhref=("|')\/(?!ru\/)/i, `href=$1/ru/`);
+      }
+      rendered.push(reindentBlock(block, indent, nl));
+    }
+
+    boxesHtml = rendered.filter(Boolean).join(nl);
+  }
+
+  if (!boxesHtml){
+    boxesHtml = renderTopicHomeItemsFallback({ isRu, indent, nl });
+  }
+
+  return [
+    `${indent}<div class="topic-line wrap" data-topic-home-line="items">`,
+    `${indent}  <a href="${prefix}/topic/items" class="topic-line-icon items">`,
+    `${indent}    <img src="/img/icons/gamemodes/box-open-full.svg" alt="">`,
+    `${indent}  </a>`,
+    reindentBlock(boxesHtml, indent + "  ", nl),
+    `${indent}</div>`,
+  ].filter(Boolean).join(nl);
+}
+
+async function renderTopicHomeFirstLine({ root, urlToFile, isRu, indent, nl }){
+  const configuredPlayers = Array.isArray(TOPIC_HOME_CONFIG.players)
+    ? TOPIC_HOME_CONFIG.players.map(topicHomeSlugify).filter(Boolean)
+    : [];
+
+  if (!configuredPlayers.length) return "";
+
+  const players = [];
+  for (const slug of configuredPlayers){
+    players.push(await loadTopicHomePlayer(root, urlToFile, slug, isRu));
+  }
+
+  const wantedDefault = topicHomeSlugify(TOPIC_HOME_CONFIG.defaultPlayer);
+  const defaultPlayer = players.find(p => p.slug === wantedDefault) || players[0];
+  const prefix = isRu ? "/ru" : "";
+  const crafts = await collectTopicHomeCrafts(root, urlToFile, isRu);
+
+  const lines = [
+    `${indent}<div class="topic-line" data-topic-home-line="showcase" data-player-interval="${Number(TOPIC_HOME_CONFIG.playerIntervalMs) || 8000}" data-craft-interval="${Number(TOPIC_HOME_CONFIG.craftIntervalMs) || 9000}" data-inventory-limit="${Number(TOPIC_HOME_CONFIG.inventoryLimit) || 14}">`,
+    `${indent}  <a href="${prefix}/topic/players/inventories" class="topic-line-icon inventories">`,
+    `${indent}    <img src="/img/icons/gamemodes/backpack.webp" alt="">`,
+    `${indent}  </a>`,
+    `${indent}  <div class="topic-box player-box" data-home-player-box data-player-slug="${escapeAttrDblNoApos(defaultPlayer.slug)}">`,
+    `${indent}    <div class="logobg">`,
+    `${indent}      <img alt="${escapeAttrDblNoApos(defaultPlayer.nickname)} Photo" draggable="false" src="${escapeAttrDblNoApos(defaultPlayer.image)}" data-home-player-main-image>`,
+    `${indent}      <div class="player-bio">`,
+    `${indent}        <span class="player-nickname">${escapeHtml(defaultPlayer.nickname)}</span>`,
+    `${indent}        <span class="player-name">${escapeHtml(defaultPlayer.realName)}</span>`,
+    `${indent}        <span class="player-team">${escapeHtml(defaultPlayer.team)}</span>`,
+    `${indent}        <div class="${escapeAttrDblNoApos(defaultPlayer.statusMeta?.wrapperClassName || "player-status")}">`,
+  ];
+
+  if (defaultPlayer.statusMeta?.src){
+    lines.push(
+      `${indent}          <img class="${escapeAttrDblNoApos(defaultPlayer.statusMeta.className || "")}" src="${escapeAttrDblNoApos(defaultPlayer.statusMeta.src)}" alt="${escapeAttrDblNoApos(defaultPlayer.statusMeta.alt || defaultPlayer.team)}">`
+    );
+  }
+
+  lines.push(
+    `${indent}        </div>`,
+    `${indent}      </div>`,
+    `${indent}    </div>`,
+    `${indent}    <div class="players-box recs">`
+  );
+
+  for (const player of players){
+    lines.push(renderTopicHomePlayerThumbnail(player, player.slug === defaultPlayer.slug, indent + "      ", nl));
+  }
+
+  lines.push(
+    `${indent}    </div>`,
+    `${indent}  </div>`,
+    `${indent}  <div class="topic-inventory-showcase" data-home-inventory-showcase>`,
+    `${indent}    <div class="box-skins solo">`,
+    `${indent}      <div class="box-skins-list">`
+  );
+
+  for (const skinHtml of defaultPlayer.inventory){
+    lines.push(reindentBlock(skinHtml, indent + "        ", nl));
+  }
+
+  lines.push(
+    `${indent}      </div>`,
+    `${indent}    </div>`
+  );
+
+  for (const player of players){
+    lines.push(renderTopicHomeInventoryTemplate(player, indent + "    ", nl));
+  }
+
+  lines.push(
+    `${indent}  </div>`,
+    `${indent}  <div class="topic-sticker-crafts-block" data-home-crafts-block>`,
+    `${indent}    <a href="${prefix}/topic/sticker-crafts" class="topic-line-icon stickers">`,
+    `${indent}      <img src="/img/icons/gamemodes/stickers-category.png" alt="">`,
+    `${indent}    </a>`
+  );
+
+  crafts.forEach((craft, index) => {
+    const patched = patchTopicHomeCraftAnchor(craft, index, isRu);
+    if (patched) lines.push(reindentBlock(patched, indent + "    ", nl));
+  });
+
+  lines.push(`${indent}    <div class="topic-sticker-crafts-switch">`);
+  const switchCount = Math.max(4, crafts.length);
+  for (let i = 0; i < switchCount; i++){
+    lines.push(`${indent}      <div class="topic-switcher${i === 0 ? " active" : ""}" data-home-craft-switch="${i}">${i + 1}</div>`);
+  }
+  lines.push(
+    `${indent}    </div>`,
+    `${indent}  </div>`,
+    `${indent}</div>`
+  );
+
+  return lines.join(nl);
+}
+
+async function processTopicLandingBoxesCtx(ctx){
+  if (!isTopicLandingPath(ctx.urlPath)) return false;
+  if (!ctx.flags.hasTopicBoxesHolder) return false;
+
+  const holders = ctx.getIndex().topicBoxesHolder;
+  if (!holders.length) return false;
+
+  const h = holders[0];
+  const html = ctx.html;
+  const baseIndent = indentBefore(html, h.openEnd, ctx.nl);
+  const innerIndent = baseIndent + "  ";
+  const isRu = ctx.flags.isRu;
+
+  const filters = findAllTagsByClass(
+    ctx.getMasked(),
+    "topic-filter",
+    ["div"],
+    h.openEnd,
+    h.closeStart
+  );
+
+  let filterHtml = "";
+  if (filters.length){
+    const f = filters[0];
+    filterHtml = reindentBlock(html.slice(f.openStart, f.closeEnd), innerIndent, ctx.nl);
+  } else {
+    const nav = await loadTopicNav(ctx.root);
+    if (nav.length){
+      filterHtml = renderTopicFilterHtml({
+        nav,
+        indent: innerIndent,
+        nl: ctx.nl,
+        urlPath: ctx.urlPath,
+        isRu,
+      });
+    }
+  }
+
+  const firstLine = await renderTopicHomeFirstLine({
+    root: ctx.root,
+    urlToFile: ctx.urlToFile,
+    isRu,
+    indent: innerIndent,
+    nl: ctx.nl,
+  });
+
+  const secondLine = renderTopicHomeSecondLine({
+    isRu,
+    indent: innerIndent,
+    nl: ctx.nl,
+  });
+
+  const thirdLine = await renderTopicHomeThirdLine({
+    root: ctx.root,
+    urlToFile: ctx.urlToFile,
+    isRu,
+    indent: innerIndent,
+    nl: ctx.nl,
+  });
+
+  const content = [filterHtml, firstLine, secondLine, thirdLine]
+    .filter(Boolean)
+    .join(ctx.nl);
+
+  const replacementInner = content
+    ? (ctx.nl + content + ctx.nl + baseIndent)
+    : (ctx.nl + baseIndent);
+
+  const changed = ctx.replaceHtml(
+    html.slice(0, h.openEnd) + replacementInner + html.slice(h.closeStart)
+  );
+
+  if (changed && ctx.verbose){
+    console.log(
+      `[OK] ${path.relative(ctx.root, ctx.file)} :: topic landing lines rebuilt ` +
+      `(players=${TOPIC_HOME_CONFIG.players.length}, inventory=${TOPIC_HOME_CONFIG.inventoryLimit})`
+    );
+  }
+
+  return changed;
+}
+
 // ---------------- LEGACY ADAPTERS ----------------
 async function runLegacyProcessor(ctx, fn){
   const res = await fn({
@@ -3951,6 +4636,10 @@ function getStage1Processors(ctx){
 
   if (ctx.flags.isTopicPage && ctx.flags.hasTopicBoxesHolder){
     out.push(processTopicFiltersCtx);
+  }
+
+  if (isTopicLandingPath(ctx.urlPath) && ctx.flags.hasTopicBoxesHolder){
+    out.push(processTopicLandingBoxesCtx);
   }
 
   if (ctx.flags.isTopicPage){
