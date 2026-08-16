@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c365e0fe-ae29-41d7-b331-ed8904e32d2b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-13T04:50:09.387Z",
+  "updatedAt": "2026-08-16T03:45:56.192Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 38,
-  "totalItemsGrouped": 37,
+  "totalItemsRaw": 43,
+  "totalItemsGrouped": 42,
   "items": [
     {
       "assetid": "53014686470",
@@ -141,6 +141,42 @@
       "assetids": [
         "40136169652",
         "39999266255"
+      ]
+    },
+    {
+      "assetid": "42208534984",
+      "classid": "7993039570",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Desert Eagle | Starcade",
+      "market_hash_name": "Desert Eagle | Starcade (Factory New)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
       ]
     },
     {
@@ -875,6 +911,78 @@
       ]
     },
     {
+      "assetid": "39749190734",
+      "classid": "241585241",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "UMP-45 | Blaze",
+      "market_hash_name": "UMP-45 | Blaze (Factory New)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44608363187",
+      "classid": "7993038304",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Dual Berettas | Sweet Little Angels",
+      "market_hash_name": "Dual Berettas | Sweet Little Angels (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53014686471",
       "classid": "7993044046",
       "instanceid": "480085569",
@@ -1009,7 +1117,7 @@
     {
       "assetid": "18694600037",
       "classid": "7993040848",
-      "instanceid": "8755587175",
+      "instanceid": "8178891120",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Eco",
       "market_hash_name": "StatTrak™ Galil AR | Eco (Field-Tested)",
@@ -1053,7 +1161,7 @@
     {
       "assetid": "43862070364",
       "classid": "7993046572",
-      "instanceid": "8756344503",
+      "instanceid": "8764929657",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Factory New)",
@@ -1098,6 +1206,102 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "39082881310",
+      "classid": "7993039465",
+      "instanceid": "7299295069",
+      "amount": 1,
+      "name": "StatTrak™ Five-SeveN | Boost Protocol",
+      "market_hash_name": "StatTrak™ Five-SeveN | Boost Protocol (Factory New)",
+      "type": "StatTrak™ Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "40371761012",
+      "classid": "7993040954",
+      "instanceid": "8692334725",
+      "amount": 1,
+      "name": "StatTrak™ Tec-9 | Avalanche",
+      "market_hash_name": "StatTrak™ Tec-9 | Avalanche (Minimal Wear)",
+      "type": "StatTrak™ Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         },
         {

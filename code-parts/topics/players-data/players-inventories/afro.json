@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/8e3fd235-f41f-427c-b2af-d29db1d6860a",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-10T04:46:11.051Z",
+  "updatedAt": "2026-08-16T04:03:11.655Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 183,
-  "totalItemsGrouped": 112,
+  "totalItemsRaw": 186,
+  "totalItemsGrouped": 115,
   "items": [
     {
       "assetid": "49922355261",
@@ -40,6 +40,34 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53190957803",
+      "classid": "8247419295",
+      "instanceid": "8733978524",
+      "amount": 1,
+      "name": "★ Driver Gloves | Garden",
+      "market_hash_name": "★ Driver Gloves | Garden (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
           "name": ""
         },
         {
@@ -862,6 +890,54 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53191462821",
+      "classid": "201965307",
+      "instanceid": "8734545471",
+      "amount": 1,
+      "name": "AWP | Graphite",
+      "market_hash_name": "AWP | Graphite (Factory New)",
+      "type": "Classified Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1905,6 +1981,37 @@
         "48234496107",
         "48234495370",
         "48234482380"
+      ]
+    },
+    {
+      "assetid": "53191368336",
+      "classid": "6216347377",
+      "instanceid": "8733978429",
+      "amount": 1,
+      "name": "Sticker | Bolt Energy",
+      "market_hash_name": "Sticker | Bolt Energy",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E5F5E5FD5CECC5E5CDE6D5E187E0EDE5F529D88DE595F2D0B97D4E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53191368336"
       ]
     },
     {

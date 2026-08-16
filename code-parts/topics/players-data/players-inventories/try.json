@@ -7,29 +7,39 @@
   "name": "Santino Bruno",
   "nationality": "Argentina",
   "born": "23.09.2004",
+  "isContentCreator": false,
   "twitch": "TRYZSE",
   "faceit": "https://faceitdb.com/profile/faceit/1830d4f8-a243-47d8-b8b8-943f7170b163",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-15T09:29:11.512Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 370,
-  "totalItemsGrouped": 369,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-15T04:02:43.680Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 378,
+  "totalItemsGrouped": 376,
   "items": [
     {
-      "assetid": "48381038830",
-      "classid": "7993038502",
+      "assetid": "52267228877",
+      "classid": "7993040883",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Hand Wraps | Cobalt Skulls",
-      "market_hash_name": "★ Hand Wraps | Cobalt Skulls (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
+      "name": "★ Butterfly Knife | Doppler",
+      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203323FE8EC9E9F1322BB03713AC301B3503300BFFEEFCD530734A5BB331433BCD8557A7",
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -44,15 +54,18 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.025870703161,
+      "seed": 121,
+      "phase": "Ruby"
     },
     {
-      "assetid": "52063044953",
-      "classid": "8246975941",
-      "instanceid": "188530139",
+      "assetid": "52280013356",
+      "classid": "8247002078",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Specialist Gloves | Cloud Chaser",
-      "market_hash_name": "★ Specialist Gloves | Cloud Chaser (Field-Tested)",
+      "name": "★ Driver Gloves | Brocade Crane",
+      "market_hash_name": "★ Driver Gloves | Brocade Crane (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -137,6 +150,34 @@
       "amount": 1,
       "name": "★ Sport Gloves | Hedge Maze",
       "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52639657901",
+      "classid": "8246944780",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -551,6 +592,62 @@
       ]
     },
     {
+      "assetid": "52501727949",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52745482966",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "43738080415",
       "classid": "1989271854",
       "instanceid": "302028390",
@@ -613,6 +710,37 @@
       ]
     },
     {
+      "assetid": "52745482967",
+      "classid": "1989275514",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Heart (Brick Red)",
+      "market_hash_name": "Sealed Graffiti | Heart (Brick Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2078687860BC7258785079487C1A7F707868C075487910780860CB2BD176",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52745482967"
+      ]
+    },
+    {
       "assetid": "51391973139",
       "classid": "1989290387",
       "instanceid": "302028390",
@@ -641,30 +769,6 @@
       ],
       "assetids": [
         "51391973139"
-      ]
-    },
-    {
-      "assetid": "45344941471",
-      "classid": "191923205",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Name Tag",
-      "market_hash_name": "Name Tag",
-      "type": "Base Grade Tag",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201A0A1A02AA133A1A321B2A1E721A6A1810814BC6",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
       ]
     },
     {
@@ -2067,6 +2171,42 @@
       ]
     },
     {
+      "assetid": "52501727950",
+      "classid": "7993059376",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MP9 | Dizzy",
+      "market_hash_name": "MP9 | Dizzy (Field-Tested)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "47375598399",
       "classid": "241580304",
       "instanceid": "302028390",
@@ -2711,9 +2851,9 @@
       ]
     },
     {
-      "assetid": "48374948059",
+      "assetid": "52800296561",
       "classid": "7993037085",
-      "instanceid": "7947041546",
+      "instanceid": "7763525993",
       "amount": 1,
       "name": "AWP | Asiimov",
       "market_hash_name": "AWP | Asiimov (Field-Tested)",
@@ -2761,23 +2901,11 @@
           "name": ""
         },
         {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
           "category": "TournamentTeam",
           "name": ""
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         },
         {
@@ -3074,11 +3202,11 @@
     },
     {
       "assetid": "51829005700",
-      "classid": "8534113218",
+      "classid": "8564022767",
       "instanceid": "8490781883",
       "amount": 1,
-      "name": "Cologne 2026 Silver Coin",
-      "market_hash_name": "Cologne 2026 Silver Coin",
+      "name": "Cologne 2026 Gold Coin",
+      "market_hash_name": "Cologne 2026 Gold Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -3382,6 +3510,53 @@
           "category": "Tournament",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "53151719545",
+      "classid": "8492288796",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | n1ssim (Gold) | Cologne 2026",
+      "market_hash_name": "Sticker | n1ssim (Gold) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200414041CBD0D24042C02340066010C0414AD506C047406E4EFBDD2",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53151719545"
       ]
     },
     {
@@ -4412,14 +4587,14 @@
       ]
     },
     {
-      "assetid": "47891716957",
+      "assetid": "52316382305",
       "classid": "7545311982",
       "instanceid": "519977179",
-      "amount": 1,
+      "amount": 2,
       "name": "Sticker | Skelly Stabby",
       "market_hash_name": "Sticker | Skelly Stabby",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A6B6A6BE1FAF86A68EA596A2C4A3AEA6B653EFCEA6D6B10A162D68",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202E3E2E3697270E2E062D1E2A4C2B262E3EDB67462E5E39C4BE64D2",
       "tags": [
         {
           "category": "Type",
@@ -4439,6 +4614,7 @@
         }
       ],
       "assetids": [
+        "52316382305",
         "47891716957"
       ]
     },
@@ -8824,6 +9000,37 @@
       ]
     },
     {
+      "assetid": "52551201327",
+      "classid": "7545315813",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Charm | Hang Loose",
+      "market_hash_name": "Charm | Hang Loose",
+      "type": "Remarkable Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52551201327"
+      ]
+    },
+    {
       "assetid": "28816143083",
       "classid": "3759394947",
       "instanceid": "188530139",
@@ -8973,6 +9180,37 @@
       ]
     },
     {
+      "assetid": "52316383182",
+      "classid": "7545312800",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Cutie (Holo)",
+      "market_hash_name": "Sticker | Cutie (Holo)",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2048584850F1416848604C784C2A4D404858B4012048385F9F0A5EA2",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52316383182"
+      ]
+    },
+    {
       "assetid": "47759886110",
       "classid": "7729141224",
       "instanceid": "188530139",
@@ -9064,6 +9302,53 @@
       ],
       "assetids": [
         "45500461503"
+      ]
+    },
+    {
+      "assetid": "53151729710",
+      "classid": "8711925469",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | ZywOo (Foil, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | ZywOo (Foil, Ranked) | Cologne 2026",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205B4B5B43E2527B5B735F6B5F395E535B4B9D03335B2B591EDF2478",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53151729710"
       ]
     },
     {
@@ -11943,7 +12228,7 @@
       ]
     },
     {
-      "assetid": "36352341159",
+      "assetid": "52551207122",
       "classid": "7993041053",
       "instanceid": "7628468620",
       "amount": 1,
@@ -12525,7 +12810,7 @@
     {
       "assetid": "46235807539",
       "classid": "7993040284",
-      "instanceid": "480094346",
+      "instanceid": "480100820",
       "amount": 1,
       "name": "StatTrak™ USP-S | Cortex",
       "market_hash_name": "StatTrak™ USP-S | Cortex (Minimal Wear)",
@@ -12597,7 +12882,7 @@
     {
       "assetid": "51414714962",
       "classid": "7993040297",
-      "instanceid": "8553009435",
+      "instanceid": "8765346201",
       "amount": 1,
       "name": "StatTrak™ AWP | Graphite",
       "market_hash_name": "StatTrak™ AWP | Graphite (Factory New)",
@@ -12653,7 +12938,7 @@
     {
       "assetid": "50556994645",
       "classid": "8247137616",
-      "instanceid": "188559024",
+      "instanceid": "188548697",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Fully Tuned",
       "market_hash_name": "StatTrak™ Glock-18 | Fully Tuned (Field-Tested)",
@@ -12689,47 +12974,11 @@
     {
       "assetid": "49571276163",
       "classid": "7993041773",
-      "instanceid": "8571039634",
+      "instanceid": "8765171644",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
       "type": "StatTrak™ Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48247175793",
-      "classid": "7993041410",
-      "instanceid": "905628624",
-      "amount": 1,
-      "name": "StatTrak™ AK-47 | Bloodsport",
-      "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Factory New)",
-      "type": "StatTrak™ Covert Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -13265,7 +13514,7 @@
     {
       "assetid": "33079473317",
       "classid": "7993039650",
-      "instanceid": "8369344634",
+      "instanceid": "8729798554",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Slate",
       "market_hash_name": "StatTrak™ AK-47 | Slate (Factory New)",
@@ -13385,7 +13634,7 @@
     {
       "assetid": "47912416861",
       "classid": "7993036423",
-      "instanceid": "188537024",
+      "instanceid": "188538586",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Night Terror",
       "market_hash_name": "StatTrak™ M4A1-S | Night Terror (Field-Tested)",
@@ -13421,7 +13670,7 @@
     {
       "assetid": "50556933339",
       "classid": "8247059305",
-      "instanceid": "188532461",
+      "instanceid": "188532616",
       "amount": 1,
       "name": "StatTrak™ MP7 | Amberline",
       "market_hash_name": "StatTrak™ MP7 | Amberline (Minimal Wear)",
@@ -13457,7 +13706,7 @@
     {
       "assetid": "50557077319",
       "classid": "8247025056",
-      "instanceid": "188543202",
+      "instanceid": "188537742",
       "amount": 1,
       "name": "StatTrak™ MP9 | Urban Sovereign",
       "market_hash_name": "StatTrak™ MP9 | Urban Sovereign (Well-Worn)",
@@ -13529,7 +13778,7 @@
     {
       "assetid": "33421738305",
       "classid": "7993041851",
-      "instanceid": "188643448",
+      "instanceid": "188572902",
       "amount": 1,
       "name": "StatTrak™ UMP-45 | Moonrise",
       "market_hash_name": "StatTrak™ UMP-45 | Moonrise (Factory New)",

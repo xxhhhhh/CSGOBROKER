@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/910dbae1-76ed-4b6d-bcb8-252bca459687",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-26T06:51:34.021Z",
+  "updatedAt": "2026-08-16T04:37:28.257Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 473,
-  "totalItemsGrouped": 306,
+  "totalItemsRaw": 475,
+  "totalItemsGrouped": 308,
   "items": [
     {
       "assetid": "52834606467",
@@ -250,6 +250,34 @@
     },
     {
       "assetid": "50284295794",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53358623911",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -1148,6 +1176,37 @@
       ],
       "assetids": [
         "36076959968"
+      ]
+    },
+    {
+      "assetid": "53358623912",
+      "classid": "1989279141",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | NaCl (Shark White)",
+      "market_hash_name": "Sealed Graffiti | NaCl (Shark White)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207C6C7C64B8765C7C547D4C781E7B747C6CB9714C6F147C0C648CE8276A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53358623912"
       ]
     },
     {
@@ -11865,7 +11924,7 @@
     {
       "assetid": "47909667750",
       "classid": "7993074744",
-      "instanceid": "8757253664",
+      "instanceid": "8765922279",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Battle-Scarred)",

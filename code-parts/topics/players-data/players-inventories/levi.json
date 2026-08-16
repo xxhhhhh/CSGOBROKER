@@ -7,109 +7,19 @@
   "name": "Guilherme Godoy",
   "nationality": "Brazil",
   "born": "24.01.2005",
+  "isContentCreator": false,
   "twitch": "levi_cs",
   "faceit": "https://faceitdb.com/profile/faceit/b46c5e6d-3858-4ca7-9e2b-6dd418608d61",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-22T13:11:39.094Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 55,
-  "totalItemsGrouped": 53,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-15T04:21:35.648Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 53,
+  "totalItemsGrouped": 51,
   "items": [
-    {
-      "assetid": "45993786010",
-      "classid": "7993036736",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Skeleton Knife | Crimson Web",
-      "market_hash_name": "★ Skeleton Knife | Crimson Web (Field-Tested)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206575FF90A0CECE647DE86145694D6355665D80A0D1906625E8660D6C156D4B6A1A99",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "45993786006",
-      "classid": "7993039924",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Specialist Gloves | Crimson Web",
-      "market_hash_name": "★ Specialist Gloves | Crimson Web (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C7D75132026C6CC6DF6DE0E70A89EFC1F7C4FF7F563835C48758C0AFCBB7CFAFA0A268",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48695725199",
-      "classid": "5710094579",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Kilowatt Case",
-      "market_hash_name": "Kilowatt Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "48695725204",
       "classid": "5710094579",
@@ -539,42 +449,6 @@
       ]
     },
     {
-      "assetid": "46010692722",
-      "classid": "188530330",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "AK-47 | Case Hardened",
-      "market_hash_name": "AK-47 | Case Hardened (Field-Tested)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49626332952",
       "classid": "7993035912",
       "instanceid": "188530139",
@@ -719,6 +593,42 @@
       ]
     },
     {
+      "assetid": "52787456646",
+      "classid": "7993035538",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MP9 | Buff Blue",
+      "market_hash_name": "MP9 | Buff Blue (Field-Tested)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "34438214491",
       "classid": "241579765",
       "instanceid": "302028390",
@@ -791,92 +701,36 @@
       ]
     },
     {
-      "assetid": "46010692733",
-      "classid": "7993036126",
-      "instanceid": "6276309998",
-      "amount": 1,
-      "name": "Desert Eagle | Printstream",
-      "market_hash_name": "Desert Eagle | Printstream (Field-Tested)",
-      "type": "Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E8F81500255B43E9F0E9C82AEFC0EED8ECD02C70631CEBA831ED8AE7E0E9F80DCCD5D8C0E856ADA8626E5380E698E01E1BB2BC",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "46010692728",
-      "classid": "7993035493",
-      "instanceid": "6276301030",
-      "amount": 1,
-      "name": "USP-S | Printstream",
-      "market_hash_name": "USP-S | Printstream (Field-Tested)",
-      "type": "Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204454BCAC89F7EF455C7964B24C6C4274407CB0F7DDB7470489422C4B3440E645534C44546479286829050135C47E7B094C5ACF0414A39440F0F1825C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "22912452515",
       "classid": "778383679",
       "instanceid": "0",
       "amount": 1,
       "name": "5 Year Veteran Coin",
       "market_hash_name": "5 Year Veteran Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52839989435",
+      "classid": "3117298605",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "10 Year Veteran Coin",
+      "market_hash_name": "10 Year Veteran Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -1385,6 +1239,78 @@
       "market_hash_name": "FAMAS | Meow 36 (Well-Worn)",
       "type": "Mil-Spec Grade Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ABBB757351181EAAB3A18B51A383A89BAF933930675DA8EBAFC380DBA393E8EE85",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52840011021",
+      "classid": "7993035506",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "SG 553 | Cyberforce",
+      "market_hash_name": "SG 553 | Cyberforce (Field-Tested)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52787530195",
+      "classid": "7993036648",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "XM1014 | Irezumi",
+      "market_hash_name": "XM1014 | Irezumi (Battle-Scarred)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

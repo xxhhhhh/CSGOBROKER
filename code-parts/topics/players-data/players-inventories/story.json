@@ -12,49 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/e1051e60-443e-4dfb-be63-67338e479ffc",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-12T05:34:19.963Z",
+  "updatedAt": "2026-08-16T04:33:14.299Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 64,
-  "totalItemsGrouped": 64,
+  "totalItemsRaw": 63,
+  "totalItemsGrouped": 63,
   "items": [
-    {
-      "assetid": "52490317289",
-      "classid": "7993044866",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Flip Knife | Doppler",
-      "market_hash_name": "★ Flip Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202737CEFC8DE2E4263FDE2407B8240F2117241F92C3CDCC2467A5214F06572FF185C561",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.061205107719,
-      "seed": 770,
-      "phase": "Ruby"
-    },
     {
       "assetid": "53146303492",
       "classid": "7993040869",
@@ -88,6 +53,41 @@
       ],
       "float": 0.020109839737,
       "seed": 911,
+      "phase": "Phase 2"
+    },
+    {
+      "assetid": "53199484679",
+      "classid": "7993038920",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A5B5224B1B3263A4BD59A68506A68DA395A69D527F2644A6E557A7CDAAD5AD3365BF05",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.009822241031,
+      "seed": 370,
       "phase": "Phase 2"
     },
     {
@@ -562,42 +562,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48842066049",
-      "classid": "7993037350",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "M4A4 | Temukau",
-      "market_hash_name": "M4A4 | Temukau (Minimal Wear)",
-      "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206373E2F2B89AD6627B7343AF6A4B6553675BEACAA1936023D3660B4D1367E43037DF",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1854,7 +1818,7 @@
     {
       "assetid": "26300364855",
       "classid": "7993041682",
-      "instanceid": "480103244",
+      "instanceid": "480086228",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Fowl Play",
       "market_hash_name": "StatTrak™ Five-SeveN | Fowl Play (Field-Tested)",
@@ -1890,7 +1854,7 @@
     {
       "assetid": "47287272166",
       "classid": "7993040447",
-      "instanceid": "188538619",
+      "instanceid": "188533161",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Bad Trip",
       "market_hash_name": "StatTrak™ FAMAS | Bad Trip (Field-Tested)",
@@ -1953,7 +1917,7 @@
     {
       "assetid": "25303467072",
       "classid": "7993036443",
-      "instanceid": "480093144",
+      "instanceid": "480104219",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Bamboozle",
       "market_hash_name": "StatTrak™ Tec-9 | Bamboozle (Minimal Wear)",

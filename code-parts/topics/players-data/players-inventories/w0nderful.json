@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/591e26a3-eb86-4d4c-afa8-b5754455dc03",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-13T04:54:26.834Z",
+  "updatedAt": "2026-08-16T03:50:28.657Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 69,
-  "totalItemsGrouped": 69,
+  "totalItemsRaw": 70,
+  "totalItemsGrouped": 70,
   "items": [
     {
       "assetid": "52764648048",
@@ -563,12 +563,12 @@
       ]
     },
     {
-      "assetid": "42534970004",
-      "classid": "7993036156",
-      "instanceid": "6894553097",
+      "assetid": "47434831646",
+      "classid": "7993036976",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "M4A1-S | Cyrex",
-      "market_hash_name": "M4A1-S | Cyrex (Factory New)",
+      "name": "M4A1-S | Printstream",
+      "market_hash_name": "M4A1-S | Printstream (Minimal Wear)",
       "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
@@ -594,26 +594,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -650,6 +630,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53205318562",
+      "classid": "7993039273",
+      "instanceid": "6484895558",
+      "amount": 1,
+      "name": "AWP | Gungnir",
+      "market_hash_name": "AWP | Gungnir (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1589,50 +1613,6 @@
       ]
     },
     {
-      "assetid": "45567216002",
-      "classid": "241580826",
-      "instanceid": "6279460749",
-      "amount": 1,
-      "name": "Glock-18 | Candy Apple",
-      "market_hash_name": "Glock-18 | Candy Apple (Factory New)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "38265715222",
       "classid": "7993039135",
       "instanceid": "302028390",
@@ -2029,12 +2009,12 @@
       ]
     },
     {
-      "assetid": "53040254945",
-      "classid": "7993038472",
-      "instanceid": "6526758387",
+      "assetid": "40869826458",
+      "classid": "7993039759",
+      "instanceid": "8764070051",
       "amount": 1,
-      "name": "StatTrak™ USP-S | Orion",
-      "market_hash_name": "StatTrak™ USP-S | Orion (Factory New)",
+      "name": "StatTrak™ Glock-18 | Water Elemental",
+      "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Factory New)",
       "type": "StatTrak™ Classified Pistol",
       "inspectLink": "",
       "tags": [
@@ -2061,16 +2041,24 @@
         {
           "category": "Exterior",
           "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
         }
       ]
     },
     {
-      "assetid": "43600181829",
-      "classid": "7993046239",
-      "instanceid": "480118975",
+      "assetid": "49538203098",
+      "classid": "7993038800",
+      "instanceid": "8427864650",
       "amount": 1,
-      "name": "StatTrak™ Desert Eagle | Ocean Drive",
-      "market_hash_name": "StatTrak™ Desert Eagle | Ocean Drive (Minimal Wear)",
+      "name": "StatTrak™ Desert Eagle | Printstream",
+      "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Minimal Wear)",
       "type": "StatTrak™ Covert Pistol",
       "inspectLink": "",
       "tags": [
@@ -2097,13 +2085,65 @@
         {
           "category": "Exterior",
           "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45635311656",
+      "classid": "7993045027",
+      "instanceid": "8764329686",
+      "amount": 1,
+      "name": "StatTrak™ USP-S | Kill Confirmed",
+      "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Factory New)",
+      "type": "StatTrak™ Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
         }
       ]
     },
     {
       "assetid": "34616426284",
       "classid": "5001787061",
-      "instanceid": "1336495336",
+      "instanceid": "1341520290",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Perfect World, 花脸 Hua Lian (Painted Face)",
       "market_hash_name": "StatTrak™ Music Kit | Perfect World, 花脸 Hua Lian (Painted Face)",
