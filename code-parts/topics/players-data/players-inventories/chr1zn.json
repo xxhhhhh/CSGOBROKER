@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c6ab629f-9142-4edb-9cb9-a88d5b6ac7ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-15T03:51:36.456Z",
+  "updatedAt": "2026-08-17T04:03:55.168Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 150,
-  "totalItemsGrouped": 132,
+  "totalItemsRaw": 152,
+  "totalItemsGrouped": 134,
   "items": [
     {
       "assetid": "53166290984",
@@ -52,6 +52,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53369136440",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -1937,6 +1965,37 @@
       ]
     },
     {
+      "assetid": "53369136441",
+      "classid": "1989279388",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Toasted (Bazooka Pink)",
+      "market_hash_name": "Sealed Graffiti | Toasted (Bazooka Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DFCFDFC71BD5FFDFF7DEEFDBBDD8D7DFCF60D2EFCFB7DFAFC78B36525D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53369136441"
+      ]
+    },
+    {
       "assetid": "41319101008",
       "classid": "6195246388",
       "instanceid": "302028390",
@@ -3405,7 +3464,7 @@
       ]
     },
     {
-      "assetid": "53158415211",
+      "assetid": "53158415213",
       "classid": "8712004693",
       "instanceid": "143865972",
       "amount": 11,
@@ -3448,6 +3507,8 @@
         }
       ],
       "assetids": [
+        "53158415213",
+        "53158415212",
         "53158415211",
         "53158415210",
         "53158415209",
@@ -3456,9 +3517,7 @@
         "53158415206",
         "53077963254",
         "53158415215",
-        "53158415214",
-        "53158415213",
-        "53158415212"
+        "53158415214"
       ]
     },
     {
@@ -4211,7 +4270,7 @@
     {
       "assetid": "36834339579",
       "classid": "7993041974",
-      "instanceid": "480432032",
+      "instanceid": "481047301",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Black Lotus",
       "market_hash_name": "StatTrak™ M4A1-S | Black Lotus (Battle-Scarred)",
