@@ -7,24 +7,26 @@
   "name": "Bartosz Niebisz",
   "nationality": "Poland",
   "born": "17.04.2000",
+  "isContentCreator": false,
   "twitch": "bnoxkox",
   "faceit": "https://faceitdb.com/profile/faceit/0a8db208-2e4d-495b-8b86-85661c05f44b",
-  "isContentCreator": false,
-  "updatedAt": "2026-05-06T06:39:15.350Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 171,
-  "totalItemsGrouped": 144,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-17T04:27:32.536Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 173,
+  "totalItemsGrouped": 146,
   "items": [
     {
-      "assetid": "51285106998",
-      "classid": "7993041708",
+      "assetid": "52643620929",
+      "classid": "7993035568",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Butterfly Knife | Case Hardened",
-      "market_hash_name": "★ Butterfly Knife | Case Hardened (Battle-Scarred)",
+      "name": "★ Bayonet | Marble Fade",
+      "market_hash_name": "★ Bayonet | Marble Fade (Factory New)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -34,10 +36,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -55,63 +53,7 @@
       ]
     },
     {
-      "assetid": "22602412287",
-      "classid": "3946324730",
-      "instanceid": "0",
-      "amount": 1,
-      "name": "Fracture Case",
-      "market_hash_name": "Fracture Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "23095192845",
-      "classid": "3946324730",
-      "instanceid": "0",
-      "amount": 1,
-      "name": "Fracture Case",
-      "market_hash_name": "Fracture Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "23752240672",
       "classid": "3946324730",
       "instanceid": "0",
       "amount": 1,
@@ -1109,6 +1051,34 @@
       "amount": 1,
       "name": "Budapest 2025 Silver Coin",
       "market_hash_name": "Budapest 2025 Silver Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51933812579",
+      "classid": "8534113218",
+      "instanceid": "8490785265",
+      "amount": 1,
+      "name": "Cologne 2026 Silver Coin",
+      "market_hash_name": "Cologne 2026 Silver Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -3442,6 +3412,42 @@
       ]
     },
     {
+      "assetid": "52053937466",
+      "classid": "7993035558",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Negev | Ultralight",
+      "market_hash_name": "Negev | Ultralight (Field-Tested)",
+      "type": "Mil-Spec Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "27645869244",
       "classid": "7993038945",
       "instanceid": "6322918764",
@@ -3953,6 +3959,42 @@
       "name": "UMP-45 | Roadblock",
       "market_hash_name": "UMP-45 | Roadblock (Field-Tested)",
       "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51458537934",
+      "classid": "7993039042",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "SSG 08 | Mainframe 001",
+      "market_hash_name": "SSG 08 | Mainframe 001 (Field-Tested)",
+      "type": "Mil-Spec Grade Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -4576,6 +4618,42 @@
       "name": "MAG-7 | Monster Call",
       "market_hash_name": "MAG-7 | Monster Call (Field-Tested)",
       "type": "Restricted Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52053932871",
+      "classid": "7993037305",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP5-SD | Kitbash",
+      "market_hash_name": "MP5-SD | Kitbash (Field-Tested)",
+      "type": "Restricted SMG",
       "inspectLink": "",
       "tags": [
         {
@@ -5471,7 +5549,7 @@
     {
       "assetid": "45132354729",
       "classid": "7993041912",
-      "instanceid": "8458336092",
+      "instanceid": "8768227417",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Aquamarine Revenge",
       "market_hash_name": "StatTrak™ AK-47 | Aquamarine Revenge (Field-Tested)",
@@ -5519,7 +5597,7 @@
     {
       "assetid": "49189812508",
       "classid": "7993044582",
-      "instanceid": "188672127",
+      "instanceid": "480231881",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Mecha Industries",
       "market_hash_name": "StatTrak™ M4A1-S | Mecha Industries (Field-Tested)",

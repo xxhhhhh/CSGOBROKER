@@ -7,24 +7,62 @@
   "name": "João Cabral",
   "nationality": "Brazil",
   "born": "16.12.1996",
+  "isContentCreator": false,
   "twitch": "fpsfelps",
   "faceit": "https://faceitdb.com/profile/faceit/4613e6a8-e551-4e48-bb6c-f7d6569ce45d",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-14T08:06:43.744Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 128,
-  "totalItemsGrouped": 103,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-17T04:27:34.978Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 129,
+  "totalItemsGrouped": 104,
   "items": [
     {
-      "assetid": "52080081877",
-      "classid": "7993040030",
-      "instanceid": "8526466471",
+      "assetid": "52839508795",
+      "classid": "7993047531",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Butterfly Knife | Crimson Web",
-      "market_hash_name": "★ Butterfly Knife | Crimson Web (Field-Tested)",
+      "name": "★ Bowie Knife | Blue Steel",
+      "market_hash_name": "★ Bowie Knife | Blue Steel (Well-Worn)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52629918368",
+      "classid": "7993041061",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Safari Mesh",
+      "market_hash_name": "★ Butterfly Knife | Safari Mesh (Well-Worn)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
