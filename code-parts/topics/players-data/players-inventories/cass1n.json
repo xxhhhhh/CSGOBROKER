@@ -7,26 +7,28 @@
   "name": "Cássio Ferreira",
   "nationality": "Brazil",
   "born": "09.03.2002",
+  "isContentCreator": false,
   "twitch": "cass1n_",
   "faceit": "https://faceitdb.com/profile/faceit/9e90daa5-432f-413f-bd49-30dbc36c13b8",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-24T06:06:10.030Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 37,
-  "totalItemsGrouped": 37,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-18T04:15:58.671Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 32,
+  "totalItemsGrouped": 32,
   "items": [
     {
-      "assetid": "50417395624",
-      "classid": "7993045582",
+      "assetid": "53170022236",
+      "classid": "7993042582",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ M9 Bayonet | Doppler",
-      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "name": "★ Butterfly Knife | Fade",
+      "market_hash_name": "★ Butterfly Knife | Fade (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208090284F71683B81987C83A01F83A886B083B872490C6883C05D82E8A6F08872559F5C",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -37,34 +39,7 @@
           "name": ""
         },
         {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.032017655671,
-      "seed": 349,
-      "phase": "Ruby"
-    },
-    {
-      "assetid": "50118437718",
-      "classid": "7993037847",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Driver Gloves | King Snake",
-      "market_hash_name": "★ Driver Gloves | King Snake (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E4F432324E3E5EE5FC43C3C45DAACCE2D4E7DC49453114E7A475E38CC094E023E1F7B7",
-      "tags": [
-        {
-          "category": "Type",
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -82,42 +57,14 @@
       ]
     },
     {
-      "assetid": "50416401352",
-      "classid": "7993043849",
-      "instanceid": "480085569",
+      "assetid": "53172625670",
+      "classid": "8246944780",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Specialist Gloves | Crimson Kimono",
-      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Minimal Wear)",
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Field-Tested)",
       "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2053439BA4E7BBE8524BF97473E21D7B5563506BB4F397A35013B1513B762357FFADAF09",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50566020353",
-      "classid": "7993038043",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Sport Gloves | Vice",
-      "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209080116A703F2C918836B7B050DEB896A093A872626B6293D04091F888E0946D52563A",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -197,6 +144,37 @@
       ],
       "assetids": [
         "49279619637"
+      ]
+    },
+    {
+      "assetid": "52973092478",
+      "classid": "1989279241",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Eye Spy (Shark White)",
+      "market_hash_name": "Sealed Graffiti | Eye Spy (Shark White)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207464746CB07E54745C75447016737C7464DB7944671C74046CDFE47206",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "52973092478"
       ]
     },
     {
@@ -280,54 +258,6 @@
       ]
     },
     {
-      "assetid": "49705206190",
-      "classid": "188530481",
-      "instanceid": "6281553004",
-      "amount": 1,
-      "name": "AK-47 | Red Laminate",
-      "market_hash_name": "AK-47 | Red Laminate (Minimal Wear)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209686381533032F978E91B698BE93A692AE79493E6695D67397F4939E9686419CF4939E9786419CF4939E9486419CF4939E9586269AFE85E69EDDDF7629",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "45303781689",
       "classid": "7993044371",
       "instanceid": "6276716508",
@@ -372,42 +302,6 @@
       ]
     },
     {
-      "assetid": "45543150140",
-      "classid": "7993036709",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "SSG 08 | Turbo Peek",
-      "market_hash_name": "SSG 08 | Turbo Peek (Factory New)",
-      "type": "Classified Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ACBC1008797805ADB4848C61A484A99CA89424151F4CAFEC0BA9C4BCDCA4972E6CAC",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50969259098",
       "classid": "241580262",
       "instanceid": "302028390",
@@ -444,14 +338,14 @@
       ]
     },
     {
-      "assetid": "49997710858",
-      "classid": "259328171",
-      "instanceid": "7385615983",
+      "assetid": "52811347067",
+      "classid": "7993036534",
+      "instanceid": "6276772001",
       "amount": 1,
-      "name": "M4A4 | Asiimov",
-      "market_hash_name": "M4A4 | Asiimov (Field-Tested)",
+      "name": "M4A1-S | Fade",
+      "market_hash_name": "M4A1-S | Fade (Factory New)",
       "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204656CCCAA4E6FC475E5666B9476E4076427ED7BBFCB24506814224434E4656C14824434E4756C14824434E4456C14824524E4556CC7F6B464672857BD0B7A2F803E6CC34FA24524E4056CC7F6B464672057BB8F377F8036E6136FB2E5B364EE447514E46564C7BEE07C90703BF506D790B0C916F0716DA8F4430F0E0EF",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -479,14 +373,6 @@
         },
         {
           "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         },
         {
@@ -535,42 +421,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49384283788",
-      "classid": "7993037372",
-      "instanceid": "7613284976",
-      "amount": 1,
-      "name": "AWP | Printstream",
-      "market_hash_name": "AWP | Printstream (Minimal Wear)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205E4ED2E3FFA2E95F46577EE85776586E5A66BBFAAFB15D1EC95C3C5B565E4EA5173C5B565C4EA5173C5B565F4EA5173C5B565D4EA51736572E5AFC5F49565E4E5563BF51D31E1B233E3461134052661F0EDBA95FD8DB32FA",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -955,53 +805,9 @@
       ]
     },
     {
-      "assetid": "46523677248",
-      "classid": "7993043501",
-      "instanceid": "7759112695",
-      "amount": 1,
-      "name": "AWP | Pink DDPAT",
-      "market_hash_name": "AWP | Pink DDPAT (Minimal Wear)",
-      "type": "Restricted Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "35857760025",
       "classid": "7993045091",
-      "instanceid": "6338514661",
+      "instanceid": "6421254487",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Snack Attack",
       "market_hash_name": "StatTrak™ Glock-18 | Snack Attack (Field-Tested)",
@@ -1042,42 +848,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "43074461876",
-      "classid": "7993040829",
-      "instanceid": "7048579140",
-      "amount": 1,
-      "name": "StatTrak™ USP-S | Jawbreaker",
-      "market_hash_name": "StatTrak™ USP-S | Jawbreaker (Factory New)",
-      "type": "StatTrak™ Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B9A90D78790219B8A184992CB091BC89B0817F651455BAF953BBF1B9E95A8CD196C9BD1BB8AEB1B9A9AB84AE553AF8FC08108C86F404F8CAF9E92F3CBC4CD29422",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1126,6 +896,66 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52811191899",
+      "classid": "7993043286",
+      "instanceid": "8771367964",
+      "amount": 1,
+      "name": "StatTrak™ AK-47 | The Oligarch",
+      "market_hash_name": "StatTrak™ AK-47 | The Oligarch (Minimal Wear)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         },
         {
