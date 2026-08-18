@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9a5ff08b-4b66-4797-998b-d78713979945",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-15T04:30:27.788Z",
+  "updatedAt": "2026-08-18T04:37:34.178Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 207,
-  "totalItemsGrouped": 199,
+  "totalItemsRaw": 205,
+  "totalItemsGrouped": 200,
   "items": [
     {
       "assetid": "43280548952",
@@ -1264,6 +1264,42 @@
       "phase": "Emerald"
     },
     {
+      "assetid": "53240609499",
+      "classid": "8637428259",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Glock-18 | Ghost Protocol",
+      "market_hash_name": "Glock-18 | Ghost Protocol (Minimal Wear)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "40354267119",
       "classid": "7993036089",
       "instanceid": "6276306357",
@@ -1420,9 +1456,9 @@
       ]
     },
     {
-      "assetid": "53182865025",
+      "assetid": "53379773892",
       "classid": "259328171",
-      "instanceid": "188530139",
+      "instanceid": "7583412567",
       "amount": 1,
       "name": "M4A4 | Asiimov",
       "market_hash_name": "M4A4 | Asiimov (Field-Tested)",
@@ -2474,14 +2510,14 @@
       ]
     },
     {
-      "assetid": "52635561993",
+      "assetid": "52615408912",
       "classid": "4638743438",
       "instanceid": "188530139",
-      "amount": 2,
+      "amount": 1,
       "name": "Sticker | b1t | Stockholm 2021",
       "market_hash_name": "Sticker | b1t | Stockholm 2021",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203D2D3D2584341D3D153E0D395F38353D2DAF15553D4D3513134B28",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201B0B1B03A2123B1B33182B1F791E131B0B8933731B6B1398A7C478",
       "tags": [
         {
           "category": "Type",
@@ -2517,102 +2553,7 @@
         }
       ],
       "assetids": [
-        "52635561993",
         "52615408912"
-      ]
-    },
-    {
-      "assetid": "52808036893",
-      "classid": "4638743467",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | Boombl4 | Stockholm 2021",
-      "market_hash_name": "Sticker | Boombl4 | Stockholm 2021",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2060706078D9694060486350640265686070EF48086010680BEFC39D",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "52808036893"
-      ]
-    },
-    {
-      "assetid": "52808036892",
-      "classid": "4638743437",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | electroNic | Stockholm 2021",
-      "market_hash_name": "Sticker | electroNic | Stockholm 2021",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ABBBABB312A28BAB83A89BAFC9AEA3ABBB3E83C3ABDBA3DE2F4BCC",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "52808036892"
       ]
     },
     {
@@ -2760,7 +2701,7 @@
       "assetid": "52808036895",
       "classid": "4638743466",
       "instanceid": "188530139",
-      "amount": 2,
+      "amount": 1,
       "name": "Sticker | Perfecto | Stockholm 2021",
       "market_hash_name": "Sticker | Perfecto | Stockholm 2021",
       "type": "High Grade Sticker",
@@ -2800,19 +2741,18 @@
         }
       ],
       "assetids": [
-        "52808036895",
-        "52808036894"
+        "52808036895"
       ]
     },
     {
-      "assetid": "52808037937",
+      "assetid": "52635563893",
       "classid": "4638743441",
       "instanceid": "188530139",
-      "amount": 3,
+      "amount": 2,
       "name": "Sticker | s1mple | Stockholm 2021",
       "market_hash_name": "Sticker | s1mple | Stockholm 2021",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AEBEAEB617A78EAE86AD9EAACCABA6AEBE2786C6AEDEA654046FBC",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C0D0C0D879C9E0C0E8C3F0C4A2C5C8C0D049E8A8C0B0C81B4FB72E",
       "tags": [
         {
           "category": "Type",
@@ -2848,7 +2788,6 @@
         }
       ],
       "assetids": [
-        "52808037937",
         "52635563893",
         "52615405320"
       ]
@@ -6325,6 +6264,42 @@
       ]
     },
     {
+      "assetid": "53240644309",
+      "classid": "7993039547",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ USP-S | Jawbreaker",
+      "market_hash_name": "StatTrak™ USP-S | Jawbreaker (Minimal Wear)",
+      "type": "StatTrak™ Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "32159297399",
       "classid": "7993038674",
       "instanceid": "905335046",
@@ -6363,7 +6338,7 @@
     {
       "assetid": "36947806432",
       "classid": "7993038803",
-      "instanceid": "480094346",
+      "instanceid": "480098785",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Chromatic Aberration",
       "market_hash_name": "StatTrak™ Galil AR | Chromatic Aberration (Minimal Wear)",
@@ -7128,6 +7103,42 @@
       "market_hash_name": "StatTrak™ P90 | Chopper (Field-Tested)",
       "type": "StatTrak™ Restricted SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%200B1BE5E3B99F920A13182BDA0F230F3B0233B8F3FDFA084BB008430B5B4863AF097B039BB5DE8A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53240643183",
+      "classid": "7993040732",
+      "instanceid": "6276323800",
+      "amount": 1,
+      "name": "StatTrak™ AWP | Atheris",
+      "market_hash_name": "StatTrak™ AWP | Atheris (Minimal Wear)",
+      "type": "StatTrak™ Restricted Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
