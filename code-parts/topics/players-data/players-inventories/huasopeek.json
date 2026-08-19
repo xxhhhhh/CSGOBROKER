@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b68b677e-562e-456d-9c27-3ebf437e7bd5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-15T03:53:54.914Z",
+  "updatedAt": "2026-08-19T04:02:11.236Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 217,
-  "totalItemsGrouped": 128,
+  "totalItemsRaw": 220,
+  "totalItemsGrouped": 130,
   "items": [
     {
       "assetid": "53181977891",
@@ -230,6 +230,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53391637747",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -1779,6 +1807,42 @@
       "amount": 1,
       "name": "PP-Bizon | Bizoom",
       "market_hash_name": "PP-Bizon | Bizoom (Well-Worn)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53391637748",
+      "classid": "7993035681",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "PP-Bizon | Wood Block Camo",
+      "market_hash_name": "PP-Bizon | Wood Block Camo (Field-Tested)",
       "type": "Consumer Grade SMG",
       "inspectLink": "",
       "tags": [
@@ -4112,14 +4176,14 @@
       ]
     },
     {
-      "assetid": "52591498243",
+      "assetid": "53253422678",
       "classid": "8611503191",
       "instanceid": "143865972",
-      "amount": 37,
+      "amount": 38,
       "name": "Souvenir Charm | Cologne 2026 Highlight | HUASOPEEK ACE",
       "market_hash_name": "Souvenir Charm | Cologne 2026 Highlight | HUASOPEEK ACE",
       "type": "Souvenir High Grade Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203E2E3E26F5341E3E163D0E32563E4E3C9C3F39363E2E6A66B63983D03726",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A0B0A0B86BAA80A088A390ACC8A0D0A202A1A7A8A0B0F4F828A7A3B86F68",
       "tags": [
         {
           "category": "Type",
@@ -4155,6 +4219,7 @@
         }
       ],
       "assetids": [
+        "53253422678",
         "52591498243",
         "52591498242",
         "52591498241",

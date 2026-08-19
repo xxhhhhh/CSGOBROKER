@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/8be7173f-2cc9-445a-892d-c942d66fb938",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-12T05:01:57.749Z",
+  "updatedAt": "2026-08-19T04:00:09.706Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 49,
-  "totalItemsGrouped": 46,
+  "totalItemsRaw": 51,
+  "totalItemsGrouped": 47,
   "items": [
     {
       "assetid": "19135026891",
@@ -139,6 +139,78 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53390922023",
+      "classid": "7993036560",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "P250 | Plum Netting",
+      "market_hash_name": "P250 | Plum Netting (Field-Tested)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53393761908",
+      "classid": "7993035604",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MP9 | Multi-Terrain",
+      "market_hash_name": "MP9 | Multi-Terrain (Field-Tested)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1006,7 +1078,7 @@
       "assetid": "52228635738",
       "classid": "8491018715",
       "instanceid": "143865972",
-      "amount": 4,
+      "amount": 5,
       "name": "Sticker | meyern (Gold) | Cologne 2026",
       "market_hash_name": "Sticker | meyern (Gold) | Cologne 2026",
       "type": "Extraordinary Sticker",
@@ -1049,7 +1121,8 @@
         "52228635738",
         "52228635737",
         "52228635736",
-        "52228635735"
+        "52228635735",
+        "51830532632"
       ]
     },
     {
@@ -1232,49 +1305,6 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "51830546840",
-      "classid": "8490872908",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Sticker | 9z Team (Foil) | Cologne 2026",
-      "market_hash_name": "Sticker | 9z Team (Foil) | Cologne 2026",
-      "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205A4A5A42E3537A5A725E6A5E385F525A4AE40B325A2A580AE23CB6",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51830546840"
       ]
     },
     {
@@ -1483,7 +1513,7 @@
     {
       "assetid": "52576952348",
       "classid": "7993044196",
-      "instanceid": "8767877331",
+      "instanceid": "8774707487",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Neon Rider",
       "market_hash_name": "StatTrak™ AK-47 | Neon Rider (Factory New)",
