@@ -4900,7 +4900,7 @@ nav img {
     display: flex;
     flex-direction: row;
     position: relative;
-    z-index: 3;
+    z-index: 1000;
     width: 100%;
     height: 45px;
     gap: 9px;
@@ -11634,6 +11634,10 @@ div#results {
     border-radius: var(--main-border);
     transition: all .15s ease-in-out;
     position: relative;
+}
+
+.topic-inventory-showcase .box-skins {
+    transition: all .15s ease-in-out;
     opacity: 0;
 }
 
@@ -11699,7 +11703,12 @@ div#results {
     display: flex;
     flex-direction: row;
     width: auto;
-    opacity: 0;
+}
+
+.topic-line .topic-box.player-box,
+.topic-boxes-holder .topic-grandbox.sticker {
+    animation: unset !important; 
+    opacity: 1 !important;
 }
 
 .topic-line .topic-grandbox.sticker {
@@ -11799,34 +11808,43 @@ div#results {
 
 [data-home-inventory-showcase].topic-home-loading,
 [data-home-inventory-showcase].topic-home-initializing {
-  opacity: 0;
   pointer-events: none;
 }
 
-[data-home-inventory-showcase].topic-home-ready {
+[data-home-inventory-showcase].topic-home-ready .box-skins {
   opacity: 1;
 }
 
 [data-home-player-box].topic-home-switching .logobg,
-[data-home-player-box].topic-home-reveal .logobg,
-[data-home-inventory-showcase].topic-home-reveal,
-[data-home-inventory-showcase].topic-home-switching,
+/* [data-home-player-box].topic-home-reveal .logobg, */
 [data-home-crafts-block].topic-home-switching .topic-grandbox,
-[data-home-crafts-block].topic-home-reveal .topic-grandbox,
+/* [data-home-crafts-block].topic-home-reveal .topic-grandbox, */
 .topic-home-craft-slide.topic-home-switching,
 .topic-home-craft-slide.topic-home-reveal {
-  animation: topic-home-show .45s ease;
+  animation: topic-home-show .4s ease;
+}
+
+[data-home-inventory-showcase].topic-home-reveal,
+[data-home-inventory-showcase].topic-home-switching {
+  animation: topic-home-show-inv .4s ease;
 }
 
 @keyframes topic-home-show {
   from {
-    opacity: 0;
-    /* transform: translateY(-10px); */
-    transform: scale(1.1);
+    transform: scale(1.06);
   }
 
   to {
-    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes topic-home-show-inv {
+  from {
+    transform: scale(1.03);
+  }
+
+  to {
     transform: translateY(0);
   }
 }
