@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/2aa89fae-a656-4663-a139-3d4665dee951",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-16T04:20:17.916Z",
+  "updatedAt": "2026-08-20T04:18:58.301Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 31,
-  "totalItemsGrouped": 31,
+  "totalItemsRaw": 33,
+  "totalItemsGrouped": 33,
   "items": [
     {
       "assetid": "52378474089",
@@ -80,6 +80,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53414958593",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -916,6 +944,42 @@
       "market_hash_name": "Dual Berettas | Flora Carnivora (Well-Worn)",
       "type": "Restricted Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D7C71059574E4FD6CFD5F753DEFFD3E7D3EF095A2B21D4974ED1BFE4A7DF634D19A7",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53414958594",
+      "classid": "7993037291",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "M4A4 | Sheet Lightning",
+      "market_hash_name": "M4A4 | Sheet Lightning (Field-Tested)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
