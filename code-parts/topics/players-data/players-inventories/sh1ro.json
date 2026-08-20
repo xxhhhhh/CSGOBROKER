@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/168530f8-107a-4e0a-b641-655d2f1594de",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-11T04:18:44.764Z",
+  "updatedAt": "2026-08-20T03:44:35.438Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 168,
-  "totalItemsGrouped": 163,
+  "totalItemsRaw": 169,
+  "totalItemsGrouped": 164,
   "items": [
     {
       "assetid": "53120612505",
@@ -40,6 +40,38 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53264922647",
+      "classid": "7993046326",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Lore",
+      "market_hash_name": "★ Karambit | Lore (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
           "name": ""
         },
         {
@@ -90,41 +122,6 @@
       "float": 0.008138111793,
       "seed": 711,
       "phase": "Ruby"
-    },
-    {
-      "assetid": "52877472539",
-      "classid": "7993043148",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Doppler",
-      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205444CFB2ACA990554CA85774F4577C5264576C9389D5BD571480573CD556245C044B1A8A",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.039168145508,
-      "seed": 468,
-      "phase": "Sapphire"
     },
     {
       "assetid": "53068939291",
@@ -219,14 +216,14 @@
       ]
     },
     {
-      "assetid": "45564352354",
-      "classid": "7993042027",
+      "assetid": "53264922646",
+      "classid": "7993037605",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Sport Gloves | Slingshot",
-      "market_hash_name": "★ Sport Gloves | Slingshot (Field-Tested)",
+      "name": "★ Sport Gloves | Amphibious",
+      "market_hash_name": "★ Sport Gloves | Amphibious (Field-Tested)",
       "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201808FAB6FBC6B11900BE3F38C156301E281B208ECBC7EB1B58BD1D709B1968102E9A7146",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -247,14 +244,14 @@
       ]
     },
     {
-      "assetid": "52418012462",
-      "classid": "8247168486",
+      "assetid": "45564352354",
+      "classid": "7993042027",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Sport Gloves | Ultra Violent",
-      "market_hash_name": "★ Sport Gloves | Ultra Violent (Minimal Wear)",
+      "name": "★ Sport Gloves | Slingshot",
+      "market_hash_name": "★ Sport Gloves | Slingshot (Field-Tested)",
       "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201808FAB6FBC6B11900BE3F38C156301E281B208ECBC7EB1B58BD1D709B1968102E9A7146",
       "tags": [
         {
           "category": "Type",
@@ -1880,6 +1877,50 @@
       "market_hash_name": "M4A4 | Desolate Space (Field-Tested)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%2055459FA3B4C8034D457599517D5065516DF5C6D4A45615C05237505D5545885937505D5645FF703D542551BEE372C5",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53264906696",
+      "classid": "201965307",
+      "instanceid": "6277613406",
+      "amount": 1,
+      "name": "AWP | Graphite",
+      "market_hash_name": "AWP | Graphite (Factory New)",
+      "type": "Classified Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -5338,7 +5379,7 @@
     {
       "assetid": "50524335109",
       "classid": "7993041807",
-      "instanceid": "188627816",
+      "instanceid": "188667465",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Cyrex",
       "market_hash_name": "StatTrak™ M4A1-S | Cyrex (Minimal Wear)",
@@ -5538,7 +5579,7 @@
     {
       "assetid": "44375849696",
       "classid": "7993040405",
-      "instanceid": "188532702",
+      "instanceid": "188536857",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Control",
       "market_hash_name": "StatTrak™ Galil AR | Control (Battle-Scarred)",

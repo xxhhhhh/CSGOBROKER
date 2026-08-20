@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/f2fa001a-13ca-4a80-9873-04146a07cc8a",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-18T04:35:28.958Z",
+  "updatedAt": "2026-08-20T04:35:59.800Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 131,
-  "totalItemsGrouped": 123,
+  "totalItemsRaw": 129,
+  "totalItemsGrouped": 121,
   "items": [
     {
       "assetid": "52834537153",
@@ -163,38 +163,6 @@
       ]
     },
     {
-      "assetid": "52834537956",
-      "classid": "7993037046",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Flip Knife | Ultraviolet",
-      "market_hash_name": "★ Flip Knife | Ultraviolet (Minimal Wear)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51963070590",
       "classid": "7993042978",
       "instanceid": "188530139",
@@ -300,38 +268,6 @@
       "phase": "Ruby"
     },
     {
-      "assetid": "51459181998",
-      "classid": "7993042789",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Lore",
-      "market_hash_name": "★ M9 Bayonet | Lore (Minimal Wear)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "47491163834",
       "classid": "7993042516",
       "instanceid": "480085569",
@@ -369,34 +305,6 @@
       "float": 0.028224818408,
       "seed": 272,
       "phase": "Emerald"
-    },
-    {
-      "assetid": "52839511530",
-      "classid": "7993040032",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Moto Gloves | Blood Pressure",
-      "market_hash_name": "★ Moto Gloves | Blood Pressure (Battle-Scarred)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "53236173152",
@@ -1199,6 +1107,50 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53260629287",
+      "classid": "7993036319",
+      "instanceid": "6276330661",
+      "amount": 1,
+      "name": "AK-47 | Inheritance",
+      "market_hash_name": "AK-47 | Inheritance (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

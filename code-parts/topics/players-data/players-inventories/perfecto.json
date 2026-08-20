@@ -12,18 +12,18 @@
   "faceit": "https://faceitdb.com/profile/faceit/9a5ff08b-4b66-4797-998b-d78713979945",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-19T04:38:37.702Z",
+  "updatedAt": "2026-08-20T04:38:06.083Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 208,
-  "totalItemsGrouped": 203,
+  "totalItemsRaw": 216,
+  "totalItemsGrouped": 209,
   "items": [
     {
       "assetid": "53249462200",
       "classid": "7993054303",
-      "instanceid": "8743935030",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Bowie Knife | Crimson Web",
       "market_hash_name": "★ Bowie Knife | Crimson Web (Well-Worn)",
@@ -95,7 +95,7 @@
     {
       "assetid": "53249470755",
       "classid": "7993037145",
-      "instanceid": "8743935030",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Huntsman Knife | Tiger Tooth",
       "market_hash_name": "★ Huntsman Knife | Tiger Tooth (Factory New)",
@@ -166,7 +166,7 @@
     {
       "assetid": "53253291231",
       "classid": "7993049282",
-      "instanceid": "8744803982",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Paracord Knife | Blue Steel",
       "market_hash_name": "★ Paracord Knife | Blue Steel (Factory New)",
@@ -305,6 +305,50 @@
       "float": 0.016304684803,
       "seed": 314,
       "phase": "Phase 2"
+    },
+    {
+      "assetid": "53263369949",
+      "classid": "7993047644",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "★ StatTrak™ Paracord Knife | Scorched",
+      "market_hash_name": "★ StatTrak™ Paracord Knife | Scorched (Minimal Wear)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "40010930428",
@@ -932,6 +976,50 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53263886322",
+      "classid": "7993037022",
+      "instanceid": "6427526264",
+      "amount": 1,
+      "name": "M4A1-S | Leaded Glass",
+      "market_hash_name": "M4A1-S | Leaded Glass (Minimal Wear)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -5113,6 +5201,39 @@
       ]
     },
     {
+      "assetid": "53263839775",
+      "classid": "6216373013",
+      "instanceid": "519977179",
+      "amount": 3,
+      "name": "Charm | Lil' Whiskers",
+      "market_hash_name": "Charm | Lil' Whiskers",
+      "type": "Remarkable Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53263839775",
+        "53263838839",
+        "53263837825"
+      ]
+    },
+    {
       "assetid": "36811261776",
       "classid": "1989301090",
       "instanceid": "188530139",
@@ -5588,6 +5709,42 @@
       ]
     },
     {
+      "assetid": "53263883528",
+      "classid": "7993036160",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M4A1-S | Liquidation",
+      "market_hash_name": "M4A1-S | Liquidation (Factory New)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "43052695772",
       "classid": "7993035763",
       "instanceid": "188530139",
@@ -6020,6 +6177,54 @@
       ]
     },
     {
+      "assetid": "53263884313",
+      "classid": "7993038882",
+      "instanceid": "6278187280",
+      "amount": 1,
+      "name": "AWP | Exoskeleton",
+      "market_hash_name": "AWP | Exoskeleton (Well-Worn)",
+      "type": "Restricted Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "41113414252",
       "classid": "7993038011",
       "instanceid": "188530139",
@@ -6446,7 +6651,7 @@
     {
       "assetid": "36947806432",
       "classid": "7993038803",
-      "instanceid": "480098785",
+      "instanceid": "480100139",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Chromatic Aberration",
       "market_hash_name": "StatTrak™ Galil AR | Chromatic Aberration (Minimal Wear)",
@@ -7245,6 +7450,42 @@
       "amount": 1,
       "name": "StatTrak™ AWP | Atheris",
       "market_hash_name": "StatTrak™ AWP | Atheris (Minimal Wear)",
+      "type": "StatTrak™ Restricted Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53263885218",
+      "classid": "7993036517",
+      "instanceid": "6287103337",
+      "amount": 1,
+      "name": "StatTrak™ AWP | Exoskeleton",
+      "market_hash_name": "StatTrak™ AWP | Exoskeleton (Field-Tested)",
       "type": "StatTrak™ Restricted Sniper Rifle",
       "inspectLink": "",
       "tags": [
