@@ -208,7 +208,7 @@ const BAD_SITE_SLUGS = new Set([
   'csfail', 'csgopositive', 'csgostake', 'daddyskins', 'farmskins',
   'flamecases', 'insanegg', 'knifex', 'mycsgo', 'petuh', 'rustgrade',
   'rustly', 'rustmagic', 'rustreaper', 'ruststake', 'skinbet', 'skinbox',
-  'skinfans', 'skinsly', 'splits', 'upgrader', 'bounty-stars'
+  'skinfans', 'skinsly', 'splits', 'upgrader', 'open-stars'
 ]);
 
 const SAFE_SITE_SLUGS = new Set([
