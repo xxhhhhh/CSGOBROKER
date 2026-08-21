@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9c3e501d-132c-42c8-b808-7641acfdc0ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-20T03:44:41.867Z",
+  "updatedAt": "2026-08-21T03:48:52.871Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 115,
-  "totalItemsGrouped": 115,
+  "totalItemsRaw": 121,
+  "totalItemsGrouped": 119,
   "items": [
     {
       "assetid": "53263908820",
@@ -172,6 +172,42 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53272629254",
+      "classid": "7993040312",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Huntsman Knife | Bright Water",
+      "market_hash_name": "★ Huntsman Knife | Bright Water (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -1002,6 +1038,70 @@
       ],
       "assetids": [
         "40480162255"
+      ]
+    },
+    {
+      "assetid": "53272931156",
+      "classid": "1989292337",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Cocky (Blood Red)",
+      "market_hash_name": "Sealed Graffiti | Cocky (Blood Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202D3D2D35E9270D2D052C1D294F2A252D3DE9201D2F452D5D35EBE45856",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53272931156"
+      ]
+    },
+    {
+      "assetid": "53272932903",
+      "classid": "1989314587",
+      "instanceid": "302028390",
+      "amount": 3,
+      "name": "Sealed Graffiti | Rage Mode (Brick Red)",
+      "market_hash_name": "Sealed Graffiti | Rage Mode (Brick Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200C1C0C14C8062C0C240D3C086E0B040C1CA2013C0D640C7C146CDB23FE",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53272932903",
+        "53272932902",
+        "53272932901"
       ]
     },
     {
@@ -1903,6 +2003,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53272975617",
+      "classid": "7993039273",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "AWP | Gungnir",
+      "market_hash_name": "AWP | Gungnir (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
