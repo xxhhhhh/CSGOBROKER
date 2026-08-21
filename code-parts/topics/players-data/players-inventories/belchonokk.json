@@ -7,17 +7,55 @@
   "name": "Andrey Yasinskiy",
   "nationality": "Russia",
   "born": "14.01.2004",
+  "isContentCreator": false,
   "twitch": "belchonokk_cs",
   "faceit": "https://faceitdb.com/profile/faceit/31051afd-a752-4e8e-bf1c-17718f453101",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-26T07:01:53.661Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 531,
-  "totalItemsGrouped": 185,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-21T03:55:29.201Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 533,
+  "totalItemsGrouped": 187,
   "items": [
+    {
+      "assetid": "52925400584",
+      "classid": "2053721338",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife",
+      "market_hash_name": "★ Butterfly Knife",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "50897615408",
       "classid": "7993042567",
@@ -66,34 +104,6 @@
       "market_hash_name": "★ Sport Gloves | Amphibious (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A5B53B6E3D6B0AA4BD03828518EB8DA395A69D72452448A6E512A2CD82D5ADC313AA50",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51569966917",
-      "classid": "7993042486",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Sport Gloves | Nocts",
-      "market_hash_name": "★ Sport Gloves | Nocts (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -234,6 +244,100 @@
       "assetids": [
         "52167580793",
         "52167564704"
+      ]
+    },
+    {
+      "assetid": "53130815645",
+      "classid": "7729230761",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | kye (Holo) | Budapest 2025",
+      "market_hash_name": "Sticker | kye (Holo) | Budapest 2025",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DACADAC263D3FADAF2DFEADEB8DFD2DACA0695B2DAAAD2F1F5A4C0",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53130815645"
+      ]
+    },
+    {
+      "assetid": "53130841556",
+      "classid": "7729228092",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | zevy (Holo) | Budapest 2025",
+      "market_hash_name": "Sticker | zevy (Holo) | Budapest 2025",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2008180810B1012808200D380C6A0D000818EC4760087800B08F9181",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53130841556"
       ]
     },
     {
